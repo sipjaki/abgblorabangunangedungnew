@@ -1,0 +1,13 @@
+     <div style="margin-top: 10px;">
+                                                                                                            @if($item->tandatangan && $item->tandatangan && $item->tandatangan && file_exists(public_path('storage/' . $item->tandatangan)))
+                                                                                                                <!-- Menampilkan gambar dari storage -->
+                                                                                                                <img src="{{ asset('storage/' . $item->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->tandatangan && $item->tandatangan && $item->tandatangan)
+                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                <img src="{{ asset($item->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @else
+                                                                                                                <!-- Placeholder jika tidak ada data -->
+                                                                                                                <p style="font-size: 11px;">Tidak Ada Tanda Tangan !</p>
+
+                                                                                                                @endif
+                                                                                                        </div>

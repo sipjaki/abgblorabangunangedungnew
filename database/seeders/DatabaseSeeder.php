@@ -1,163 +1,36 @@
 <?php
 
 namespace Database\Seeders;
+use Illuminate\Support\Str;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 // namespace App\Models;
 
-use Illuminate\Database\Seeder;
-use App\Models\User;
-use App\Models\peraturan;
-use App\Models\agendaskk;
-use App\Models\pesertapelatihan;
-use App\Models\permenteri;
-use App\Models\perpemerintah;
-use App\Models\perpresiden;
-use App\Models\keputusanmenteri;
-use App\Models\perbupatiwalikota;
-use App\Models\perdaerah;
-use App\Models\referensi;
-use App\Models\suratedaran;
-use App\Models\pergubernur;
-use App\Models\suratkeputusan;
-use App\Models\paketpekerjaanmasjaki;
-use App\Models\paketstatuspekerjaan;
-use App\Models\renstra;
-use App\Models\sbulampiran1;
-use App\Models\sbulampiran2;
-use App\Models\sbulampiran3;
-
-// use App\Models\sertifikasiagenda;
-use App\Models\standarbiayaumum;
+use App\Models\agendasertifikasi;
+use App\Models\agendastatus;
+use App\Models\Agendastatus as ModelsAgendastatus;
+use App\Models\asosiasipengusaha;
+use App\Models\bantuanteknis;
+use App\Models\kelurahandesa;
+use App\Models\rencanagsbblora;
 use App\Models\statusadmin;
-use App\Models\strukturdinas;
-use App\Models\tahunpilihan;
-use App\Models\tupoksi;
-use App\Models\bujkkontraktor;
-use App\Models\bujkkontraktorsub;
-use App\Models\bujkkonsultan;
-use App\Models\bujkkonsultansub;
-use App\Models\namasekolah;
-use App\Models\jenjangpendidikan;
-use App\Models\jurusan;
-use App\Models\jabatankerja;
-use App\Models\jenjang;
-use App\Models\lpspenerbit;
-use App\Models\skktenagakerjablora;
-use App\Models\skktenagakerjabloralist;
-use App\Models\asosiasimasjaki;
-use App\Models\prosespaket;
-use App\Models\pengawasanbujk;
-use App\Models\kecelakaankerjamasjaki;
-use App\Models\penyediastatustertibjakon;
-use App\Models\tertibjasakonstruksi;
-use App\Models\tertibjakonpemanfaatan;
-use App\Models\tertibjakonpenyelenggaraan;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use App\Models\bgkartuinventarisbangunan;
+use App\Models\statushaktanahbangunangedung;
 use App\Models\kecamatanblora;
-use App\Models\rantaipasokblora;
-use App\Models\peralatankonstruksi;
-use App\Models\alatberat;
-use App\Models\tokobangunanblora;
-use App\Models\shstblora;
-use App\Models\profiljenispekerjaan;
-use App\Models\sumberdana;
-use App\Models\satuanhargamaterial;
-use App\Models\satuanhargaupahtenagakerja;
-use App\Models\satuanhargaperalatan;
-use App\Models\hspdivisi;
-use App\Models\hsppaket;
-use App\Models\hspkodepekerjaan;
-use App\Models\hspkonstruksiumum;
-use App\Models\beritajakon;
-use App\Models\allskktenagakerjablora;
-use App\Models\profiljakonidentitasopd;
-use App\Models\profiljakonkepaladinas;
-use App\Models\profiljakonkabid;
-use App\Models\profiljakonsubkoordinator;
-use App\Models\profiljakoninformasi;
-use App\Models\profiljakonsipjaki;
-use App\Models\profiljakonpersonil;
-// use App\Models\artikeljakon;
-
-// atasan
-// hsp harga divisi 1
-use App\Models\artikeljakonmasjaki;
-use App\Models\kategoripelatihan;
-use App\Models\agendapelatihan;
-use App\Models\subhargadiv1;
-use App\Models\subhargadiv1bahan;
-use App\Models\subhargadiv1peralatan;
-
-// hsp harga divisi 2
-use App\Models\hsppaket2;
-use App\Models\hspkodepekerjaan2;
-use App\Models\hspkonstruksiumum2;
-use App\Models\subhargadiv2;
-use App\Models\subhargadiv2bahan;
-use App\Models\subhargadiv2peralatan;
-
-// hsp harga divisi 3
-use App\Models\hsppaket3;
-use App\Models\hspkodepekerjaan3;
-use App\Models\hspkonstruksiumum3;
-use App\Models\subhargadiv3;
-use App\Models\subhargadiv3bahan;
-use App\Models\subhargadiv3peralatan;
-
-// hsp harga divisi 4
-use App\Models\hsppaket4;
-use App\Models\hspkodepekerjaan4;
-use App\Models\hspkonstruksiumum4;
-use App\Models\subhargadiv4;
-use App\Models\subhargadiv4bahan;
-use App\Models\subhargadiv4perlatan;
-
-// hsp harga divisi 5
-use App\Models\hsppaket5;
-use App\Models\hspkodepekerjaan5;
-use App\Models\hspkonstruksiumum5;
-use App\Models\subhargadiv5;
-use App\Models\subhargadiv5bahan;
-use App\Models\subhargadiv5peralatan;
-
-// hsp harga divisi 6
-use App\Models\hsppaket6;
-use App\Models\hspkodepekerjaan6;
-use App\Models\hspkonstruksiumum6;
-use App\Models\subhargadiv6;
-use App\Models\subhargadiv6bahan;
-use App\Models\subhargadiv6peralatan;
-
-// hsp harga divisi 7
-use App\Models\hsppaket7;
-use App\Models\hspkodepekerjaan7;
-use App\Models\hspkonstruksiumum7;
-use App\Models\subhargadiv7;
-use App\Models\subhargadiv7bahan;
-use App\Models\subhargadiv7peralatan;
-
-// hsp harga divisi 8
-use App\Models\hsppaket8;
-use App\Models\hspkodepekerjaan8;
-use App\Models\hspkonstruksiumum8;
-use App\Models\subhargadiv8;
-use App\Models\subhargadiv8bahan;
-use App\Models\subhargadiv8peralatan;
-
-// hsp harga divisi 9
-use App\Models\hsppaket9;
-use App\Models\hspkodepekerjaan9;
-use App\Models\hspkonstruksiumum9;
-use App\Models\subhargadiv9;
-use App\Models\subhargadiv9bahan;
-use App\Models\subhargadiv9peralatan;
-
-// -=============================
-use App\Models\headerberanda;
-
-
-// modelbaru
-
+use App\Models\datastrukturbangunangedung;
+use App\Models\datainstitusibangunangedung;
+use App\Models\statusbangunangedung;
+use App\Models\fungsibangunan;
+use App\Models\klasifikasibangunangedung;
+use App\Models\profiltanahbangunangedung;
+use App\Models\kedinasan;
+use App\Models\kodelokasibangunangedung;
+use App\Models\databangunangedung;
+use App\Models\jenispengajuanbantek;
+use App\Models\kepemilikanbangunangedung;
 // use App\Models\paketpekerjaan;
 use Database\Factories\SkktenagakerjaFactory;
 // use Carbon\Carbon;
@@ -184,14447 +57,10801 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-
-        // asosiasipengusaha::factory(15)->create();
-        // paketpekerjaan::factory(15)->create();
-        // penanggungjawabteknis::factory(15)->create();
-        // ketertiban::factory(15)->create();
-        // beritaagenda::factory(15)->create();
-        // Qa::factory(15)->create();
-        // BAHAN TUKANG TERAMPIL BLORA
-        // Tukangterampil::factory(994)->create();
-
-
-// =============== DATABASE HEADER BERANDA
-headerberanda::create([
-    'judul'  => 'Sistem Informasi <br> Pembina Jasa Konstruksi DPUPR Kabupaten Blora',
-    'header'  => '00_beranda/00_tampilanmuka/jakon4.jpeg',
-]);
-
-headerberanda::create([
-    'judul'  => 'Sasarengan mBangun Blora Unggul dan <br> Berdaya Saing',
-    'header'  => '00_beranda/00_tampilanmuka/masjaki2.png',
-]);
-
-headerberanda::create([
-    'judul'  => 'Blora Mustika <br> Cacana Jaya Kerta Bhumi',
-    'header'  => '00_beranda/00_tampilanmuka/petaindonesiabaru.png',
-]);
-
-
-// =========================================================
         User::create([
             'id'  => 1,
             'name'  => 'Sigit Septiadi',
             'username' => 'Sigit',
             'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
             'email' => 'sigitseptiadi1@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
+
         User::create([
             'id'  => 2,
-            'name'  => 'Anex Fachrian, ST. MT',
-            'username' => 'Anex',
-            'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/foto4.png',
-            'email' => 'sipjakiblora@gmail.com',
-            'password' => bcrypt('adminadmin321')
+            'name'  => 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA',
+            'username' => 'dpuprblora',
+            'statusadmin_id' => '6',
+            'avatar' => '/assets/icon/logokabupatenblora.png',
+            'email' => 'dpuprkabblora@gmail.com',
+            'password' => bcrypt('admindpuprblora')
         ]);
 
         User::create([
             'id'  => 3,
-            'name'  => 'Miftahunnuril Anam',
-            'username' => 'Anam',
-            'statusadmin_id' => '1',
+            'name'  => 'DINAS KESEHATAN',
+            'username' => 'dinaskesehatan',
+            'statusadmin_id' => '6',
             'avatar' => 'user/avatar/foto4.png',
-            'email' => 'masjakiblora@gmail.com',
-            'password' => bcrypt('adminadmin123')
+            'email' => 'dinaskesehatankabblora@gmail.com',
+            'password' => bcrypt('admindinaskesehatanblora')
         ]);
 
         User::create([
             'id'  => 4,
-            'name'  => 'Rahmat Irianto',
-            'username' => 'Sigitpekerja',
-            'statusadmin_id' => '3',
-            'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitpekerja@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
+            'name'  => 'DINAS LINGKUNGAN HIDUP',
+            'username' => 'dinaslingkunganhidup',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaslhkabblora@gmail.com',
+            'password' => bcrypt('adminlhkabblora')
         ]);
 
         User::create([
             'id'  => 5,
-            'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
-            'statusadmin_id' => '4',
-            'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitsupp_pabrik@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
+            'name'  => 'DINAS PANGAN, PERTANIAN, PETERNAKAN, DAN PERIKANAN',
+            'username' => 'dinaspangan',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaspangankabblora@gmail.com',
+            'password' => bcrypt('adminpangankabblora')
         ]);
 
         User::create([
             'id'  => 6,
-            'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
-            'statusadmin_id' => '5',
-            'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitsupp_peralatan@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
+            'name'  => 'DINAS PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA',
+            'username' => 'dinaspengendalian',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaspengendaliankabblora@gmail.com',
+            'password' => bcrypt('admindinaspengendaliankabblora')
         ]);
 
         User::create([
             'id'  => 7,
-            'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
+            'name'  => 'DINAS PERDAGANGAN, KOPERASI USAHA KECIL DAN MENENGAH',
+            'username' => 'dinasperdagangan',
             'statusadmin_id' => '6',
-            'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitsupp_tokobangunan@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinasperdagangankabblora@gmail.com',
+            'password' => bcrypt('admindinasperdagangankabblora')
         ]);
 
         User::create([
             'id'  => 8,
-            'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
-            'statusadmin_id' => '7',
-            'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitlpspenerbit@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
+            'name'  => 'DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN',
+            'username' => 'dinasperumahan',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinasperumahankabblora@gmail.com',
+            'password' => bcrypt('admindinasperumahankabblora')
         ]);
 
         User::create([
             'id'  => 9,
-            'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
-            'statusadmin_id' => '8',
-            'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitoperator@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
+            'name'  => 'DINAS SOSIAL PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK',
+            'username' => 'dinassosial',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinassosialkabblora@gmail.com',
+            'password' => bcrypt('admindinassosialkabblora')
         ]);
 
         User::create([
             'id'  => 10,
-            'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
-            'statusadmin_id' => '9',
-            'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitdinas@gmail.com',
+            'name'  => 'SEKRETARIAT DAERAH',
+            'username' => 'sekdablora',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sekdakabblora@gmail.com',
+            'password' => bcrypt('adminsekdakabblora')
+        ]);
+
+        User::create([
+            'id'  => 11,
+            'name'  => 'DINAS PENDIDIKAN',
+            'username' => 'dinaspendidikan',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaspendidikankabblora@gmail.com',
+            'password' => bcrypt('admindinaspendidikan')
+        ]);
+
+        User::create([
+            'id'  => 12,
+            'name'  => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+            'username' => 'dinasperindustrian',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinasperindustriankabblora@gmail.com',
+            'password' => bcrypt('admindinasperindustrian')
+        ]);
+
+
+        User::create([
+            'id'  => 13,
+            'name'  => 'SEKRETARIAT DEWAN',
+            'username' => 'sekdewan',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sekdewankabblora@gmail.com',
+            'password' => bcrypt('adminsekdewan')
+        ]);
+
+        User::create([
+            'id'  => 14,
+            'name'  => 'DINAS KOMUNIKASI DAN INFORMATIKA',
+            'username' => 'sekdewan',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaskomunikasikabblora@gmail.com',
+            'password' => bcrypt('admindinkominfoblora')
+        ]);
+
+        User::create([
+            'id'  => 15,
+            'name'  => 'DINAS KEPEMUDAAN, OLAH RAGA, KEBUDAYAAN DAN PARIWISATA',
+            'username' => 'dinaspemuda',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaspemudakabblora@gmail.com',
+            'password' => bcrypt('adminsekdewan')
+        ]);
+
+        User::create([
+            'id'  => 16,
+            'name'  => 'BADAN KEPEGAWAIAN DAERAH',
+            'username' => 'dinasbkd',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinasbkdkabblora@gmail.com',
+            'password' => bcrypt('adminbkdblora')
+        ]);
+
+        User::create([
+            'id'  => 17,
+            'name'  => 'BADAN PERENCANAAN PEMBANGUNAN DAERAH',
+            'username' => 'bppd',
+            'statusadmin_id' => '6',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'bppdkabblora@gmail.com',
+            'password' => bcrypt('adminbppdkabblora')
+        ]);
+
+        User::create([
+            'id'  => 18,
+            'name'  => 'Pemohon Sigit Septiadi',
+            'username' => 'sigit',
+            'statusadmin_id' => '3',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sigitseptiadi00@gmail.com',
+            'password' => bcrypt('adminadmin')
+        ]);
+
+        User::create([
+            'id'  => 20, // pemohon
+            'name'  => 'Sigit Septiadi Pemohon',
+            'username' => 'Sigit',
+            'statusadmin_id' => '3',
+            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+            'email' => 'sigitpemohonabgpemohon@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
-        // =================================================================
-        statusadmin::create([
-            'id'  => '1',
-            'statusadmin'  => 'super_admin',
+        User::create([
+            'id'  => 21, // pemohon
+            'name'  => 'Sigit Septiadi Pemohon Bantek',
+            'username' => 'Sigit',
+            'statusadmin_id' => '7',
+            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+            'email' => 'sigitpemohonabg@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
         ]);
 
-        statusadmin::create([
-            'id'  => '2',
-            'statusadmin'  => 'admin',
+        User::create([
+            'id'  => 22, // pemohon
+            'name'  => 'Sigit Septiadi Konsultan Bantek',
+            'username' => 'Sigit',
+            'statusadmin_id' => '4',
+            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+            'email' => 'sigitpemohonabgkonsultan@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
         ]);
 
-        statusadmin::create([
-            'id'  => '3',
-            'statusadmin'  => 'pekerja',
-        ]);
-
-        statusadmin::create([
-            'id'  => '4',
-            'statusadmin'  => 'supp_pabrik',
-        ]);
-
-        statusadmin::create([
-            'id'  => '5',
-            'statusadmin'  => 'supp_peralatan',
-        ]);
-
-        statusadmin::create([
-            'id'  => '6',
-            'statusadmin'  => 'supp_tokobangunan',
-        ]);
-
-        statusadmin::create([
-            'id'  => '7',
-            'statusadmin'  => 'lpspenerbit',
-        ]);
-
-        statusadmin::create([
-            'id'  => '8',
-            'statusadmin'  => 'operator',
-        ]);
-
-        statusadmin::create([
-            'id'  => '9',
-            'statusadmin'  => 'dinas',
+            User::create([
+            'id'  => 23, // pemohon
+            'name'  => 'Sigit Septiadi Pemohon Bantek 2',
+            'username' => 'Sigit',
+            'statusadmin_id' => '7',
+            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+            'email' => 'sigitpemohonabg2@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
         ]);
 
 
-//======================== ===================================================================================
-//======================== ===================================================================================
-strukturdinas::create([
-    'judul' => 'Struktur Organisasi Dinas Pekerjaan Umum Dan Penataan Ruang Pemerintah Kabupaten Blora',
-    'peraturan' => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
-    'keterangan' => 'Dinas Pekerjaan Umum dan Penataan Ruang (PUPR) Pemerintah Kabupaten Blora memiliki peran vital dalam pengelolaan infrastruktur dan penataan ruang yang mendukung pembangunan daerah. Dinas ini bertanggung jawab dalam merencanakan, melaksanakan, serta mengawasi pembangunan berbagai infrastruktur seperti jalan, jembatan, dan gedung, serta fasilitas publik lainnya. Selain itu, Dinas PUPR juga berperan dalam penataan ruang yang berfokus pada pengembangan wilayah yang terencana dan berkelanjutan. Struktur organisasi Dinas PUPR Kabupaten Blora dibangun dengan sistem yang terstruktur dan terorganisir guna memastikan efektivitas dalam pelaksanaan tugas-tugasnya.',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-//======================== ===================================================================================
-renstra::create([
-    'judul' => 'Profil Jakon Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten BLora Provinsi Jawa Tengah',
-    'keterangan' => 'OPD yang menangani Bina Jasa Konstruksi di DPUPR Kab Blora setara dengan Eselon IV di bawah Bidang Bangunan Gedung. Pada Bidang Bangunan Gedung terdapat 2 Sub Koordinator yaitu Sub Koordinator Bangunan dan Lingkungan serta Sub Koordinator Bina Jasa Konstruksi. Hal tersebut tertuang dalam Peraturan Bupati No 66 Tahun 2021 Tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi, Serta Tata Kerja Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora. Sub Koordinator Bina Jasa Konstruksi mempunyai 4 Personil Jabatan Fungsional Bina Jasa Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljakonidentitasopd::create([
-    'namaopd' => 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
-    'alamatopd' => 'Jl. Nusantara No. 62',
-    'rtrw' => null,
-    'kodepos' => '58214',
-    'kelurahan' => 'Jetis',
-    'kecamatan' => 'Blora',
-    'kota' => 'Blora',
-    'provinsi' => 'Jawa Tengah',
-    'negara' => 'Indonesia',
-    'posisigeografis' => '-6.976853 Lintang, 111.410894 Bujur',
-    'tipedinas' => 'B',
-]);
-
-profiljakonkepaladinas::create([
-    'namalengkap' => 'Nidzamudin Al Hudaa, ST',
-    'nip' => null,
-    'ttl' => null,
-    'pangkatgolongan' => null,
-    'jabatan' => 'Plt. Kepala Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
-    'perangkatdaerah' => 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
-    'pendidikanterakhir' => 'Strata 1 (S1)',
-]);
-
-profiljakonkabid::create([
-    'namalengkap' => 'Mohamad Arif Hidayat, ST',
-    'nip' => null,
-    'ttl' => null,
-    'pangkatgolongan' => null,
-    'jabatan' => 'Kepala Bidang Bangunan Gedung Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
-    'perangkatdaerah' => 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
-    'pendidikanterakhir' => 'Strata 1 (S1)',
-]);
-
-profiljakonsubkoordinator::create([
-    'namalengkap' => '	Anex Fachrian ST, MT',
-    'nip' => null,
-    'ttl' => null,
-    'pangkatgolongan' => null,
-    'jabatan' => 'Subkoordinator Bina Jasa Konstruksi Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
-    // 'perangkatdaerah' => 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
-    'pendidikanterakhir' => 'Magister (S2)',
-]);
-
-profiljakoninformasi::create([
-    'informasiopd' => 'OPD yang menangani Bina Jasa Konstruksi di DPUPR Kabupaten Blora setara dengan eselon IV, dibawah Bidang Bangunan Gedung. Pada Bidang Bangunan Gedung terdapat dua subkoordinator yaitu Subkoordinator Bangunan dan Lingkungan serta Subkoordinator Bina Jasa Konstruksi, hal tersebut tertuang dalam Perbup Nomor 66 Tahun 2021 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi Serta Tata Kerja Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora.',
-    'notelepon' => '(0296) 531004',
-    'instagram' => 'dpuprblora',
-    'tiktok' => 'bangunan.gedung.dpupr',
-    'email' => 'bid.bangunan.gedung.blora@gmail.com',
-]);
-
-profiljakonsipjaki::create([
-    'nomor' => '900/008.A/2024 tanggal 2 Januari 2024',
-    'operator1' => 'Miftahunnuril Anam, SE',
-    'operator2' => 'Muhammad Yusuf Zaqi Efendi, SE',
-    'operator3' => null,
-    'operator4' => null,
-]);
-
-profiljakonpersonil::create([
-    'jabatan' => 'Ahli Muda Bina Jasa Konstruksi',
-    'namalengkap' => 'Anex Fachrian, ST, MT',
-]);
-
-profiljakonpersonil::create([
-    'jabatan' => 'Ahli Pertama - Jasa Konstruksi',
-    'namalengkap' => 'Miftahunnuril Anam, SE',
-]);
-
-profiljakonpersonil::create([
-    'jabatan' => 'Ahli Pertama - Jasa Konstruksi',
-    'namalengkap' => 'Maretha Riantiarni, SE',
-]);
-
-profiljakonpersonil::create([
-    'jabatan' => 'Ahli Pertama - Jasa Konstruksi',
-    'namalengkap' => 'Yudha Prasetyowidadi, SE',
-]);
-
-
-
-// makan
-//======================== ===================================================================================
-tupoksi::create([
-    'judul' => 'Tupoksi Program Dan Jasa Konstruksi Dinas Pekerjan Umum dan Penataan Ruang Kabupaten Blora',
-    'keterangan' => 'Dinas Pekerjaan Umum dan Penataan Ruang (DPUPR) Kabupaten Blora memiliki peran strategis dalam pembinaan jasa konstruksi guna mendukung pembangunan infrastruktur yang berkualitas. DPUPR bertugas menyusun kebijakan teknis, mengembangkan sistem informasi konstruksi, serta meningkatkan kapasitas badan usaha konstruksi agar lebih kompetitif dan profesional. Selain itu, DPUPR juga berperan dalam pengawasan dan penjaminan mutu konstruksi, penyuluhan serta bimtek kepada para pelaku jasa konstruksi, serta pengembangan pasar dan kerja sama konstruksi. Dengan pendekatan berbasis regulasi dan inovasi, DPUPR terus berupaya menciptakan ekosistem konstruksi yang tertib, berdaya saing, dan mendukung pertumbuhan ekonomi Kabupaten Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-
-// MAS JAKI DATA JASA KONSTRUKSI
-//======================== ===================================================================================
-bujkkontraktor::create([
-    'id' => 1, // Ganti dengan ID yang sesuai
-    'bujkkontraktorsub_id' => 1, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
-    'namalengkap' => 'Mandra Kanta Unggul',
-    'alamat' => 'Desa Tawangrejo 003/005 Kunduran Kab. Blora Jawa Tengah',
-    'no_telepon' => '082324908547',
-    'email' => 'mandrakantaunggul@gmail.com',
-    'nomorindukberusaha' => '0208220001109',
-    'pju' => 'WINARSIH',
-    'no_akte' => '25',
-    'tanggal' => '2024-07-21',
-    'nama_notaris' => 'DIAH TRIMURTI SALEH S.E., S.H., M.KN',
-    'no_pengesahan' => 'AHU-0049177-AH.01.14',
-    // 'tahunpilihan_id' => 4, // Ganti dengan ID yang sesuai
-]);
-
-// -----------------------
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 1, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'Muhammad Abdul Rozak',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
-    'kode' => 'BG-009',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => ' LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2024-05-08',
-    'masa_berlaku' => '2026-05-07',
-    'nama_psjk' => 'Nizar Sandy Saputra',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Lainnya'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 1, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'Muhammad Abdul Rozak',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
-    'kode' => 'BG-006',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => ' LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2024-05-27',
-    'masa_berlaku' => '2026-05-26',
-    'nama_psjk' => 'Nizar Sandy Saputra',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 1, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'Muhammad Abdul Rozak',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
-    'kode' => 'BS-001',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => ' LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2024-05-08',
-    'masa_berlaku' => '2026-05-07',
-    'nama_psjk' => 'Agus Rizqi Arfianto',
-    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 1, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'Muhammad Abdul Rozak',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
-    'kode' => 'BG-002',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => ' LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2024-06-28',
-    'masa_berlaku' => '2026-06-27',
-    'nama_psjk' => 'Nizar Sandy Saputra',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 1, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'Muhammad Abdul Rozak',
-    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
-    'kode' => 'BS-004',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
-    'tanggal_terbit' => '2024-05-13',
-    'masa_berlaku' => '2026-05-12',
-    'nama_psjk' => 'Agus Rizqi Arfianto',
-    'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase'
-]);
-
-bujkkontraktorsub::create([
-    'bujkkontraktor_id' => 1, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => null, // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => null,
-    'penerbit' => null,
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => null,
-    'sub_kualifikasi_bu' => null
-]);
-
-// ---------------
-
-bujkkontraktor::create([
-    'id' => 2, // Ganti dengan ID yang sesuai
-    'bujkkontraktorsub_id' => 2, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
-    'namalengkap' => 'Ramai Jaya Bumi',
-    'alamat' => 'Jl. Gajah Mada No. 24A 000/000 Cepu Kab. Blora Jawa Tengah',
-    'no_telepon' => '02965104662',
-    'email' => 'ramaijayaabadi18@gmail.com',
-    'nomorindukberusaha' => '9120004380419',
-    'pju' => 'LINDA CRISTIYAWATI',
-    'no_akte' => null,
-    'tanggal' => null,
-    'nama_notaris' => null,
-    'no_pengesahan' => null,
-    // 'tahunpilihan_id' => 4,
-]);
-
-// -----------------------
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'OKTAVIA COKRODIHARJO',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
-    'kode' => 'BS001',
-    'kualifikasi' => 'Menengah',
-    'penerbit' => 'LSBU KONSTRUKSI INDONESIA (ASPEKINDO)',
-    'tanggal_terbit' => '2024-04-22',
-    'masa_berlaku' => '2027-04-21',
-    'nama_psjk' => 'MUHAMMAD KHAFID SAHRONI',
-    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'OKTAVIA COKRODIHARJO',
-    'sub_klasifikasi_layanan' => 'Instalasi Minyak Dan Gas',
-    'kode' => 'IN004',
-    'kualifikasi' => 'Spesialis',
-    'penerbit' => 'LSBU KONSTRUKSI INDONESIA (ASPEKINDO)',
-    'tanggal_terbit' => '2023-07-14',
-    'masa_berlaku' => '2026-07-13',
-    'nama_psjk' => 'Dedi Setyawan',
-    'sub_kualifikasi_bu' => 'Instalasi Minyak Dan Gas'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'OKTAVIA COKRODIHARJO',
-    'sub_klasifikasi_layanan' => 'Instalasi Mekanikal',
-    'kode' => 'IN001',
-    'kualifikasi' => 'Spesialis',
-    'penerbit' => 'LSBU KONSTRUKSI INDONESIA (ASPEKINDO)',
-    'tanggal_terbit' => '2023-07-24',
-    'masa_berlaku' => '2026-07-23',
-    'nama_psjk' => 'Dedi Setyawan',
-    'sub_kualifikasi_bu' => 'Instalasi Mekanikal'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Pengerukan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Hunian',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Industri',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Instalasi Elektronika',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Minyak dan Gas Bumi',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Penyewaan Alat Konstruksi Dengan Operator',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Aktivitas Keinsinyuran dan Konsultasi Teknis YBDI',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Penyiapan Lahan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Pertambangan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Panas Bumi',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Pembongkaran',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Pemasangan Pondasi Dan Tiang Pancang',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Khusus Lainnya Ytdl',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Instalasi Saluran Air (Plambing)',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Pengerjaan Lantai, Dinding, Peralatan Saniter Dan Plafon',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Pengecatan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Penyelesaian Konstruksi Bangunan Lainnya',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Dekorasi Eksterior',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Khusus Lainnya Ytdl',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Aktivitas Arsitektur',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Jalan Rel',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-// ----------------------------
-bujkkontraktor::create([
-    'id' => 3, // Ganti dengan ID yang sesuai
-    'bujkkontraktorsub_id' => 3, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
-    'namalengkap' => 'TRIBAKTI BINTANG SEJAHTERA',
-    'alamat' => 'BERAN 001/003 Blora Kab. Blora Jawa Tengah',
-    'no_telepon' => null,
-    'email' => 'cvtribaktibintangsejahtera@gmail.com',
-    'nomorindukberusaha' => '2601230022904',
-    'pju' => 'IRHAM MUHDLORIN',
-    'no_akte' => '21',
-    'tanggal' => '2024-02-05',
-    'nama_notaris' => 'YANI DWI RAHAYU S.H., M.Kn.',
-    'no_pengesahan' => 'AHU-0006809-AH.01.16',
-    // 'tahunpilihan_id' => 4,
-]);
-
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 3, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'ASKIA AZAMZAMI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
-    'kode' => 'BS001',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
-    'tanggal_terbit' => '2023-04-16',
-    'masa_berlaku' => '2026-04-15',
-    'nama_psjk' => 'WAWAN SUWANDI',
-    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 3, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'ASKIA AZAMZAMI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
-    'kode' => 'BG005',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
-    'tanggal_terbit' => '2024-08-07',
-    'masa_berlaku' => '2027-08-06',
-    'nama_psjk' => 'AHMAD FAIZAL ABADI',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 3, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'ASKIA AZAMZAMI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
-    'kode' => 'BG006',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
-    'tanggal_terbit' => '2024-08-07',
-    'masa_berlaku' => '2027-08-07',
-    'nama_psjk' => 'AHMAD FAIZAL ABADI',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan'
-]);
-
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 3, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 3, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 3, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-// ----------------------------
-bujkkontraktor::create([
-    'id' => 4, // Ganti dengan ID yang sesuai
-    'bujkkontraktorsub_id' => 4, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
-    'namalengkap' => 'DIZA PERMATA HATI',
-    'alamat' => 'DESA BANDUNGROJO RT. 001 RW. 001, Ngawen,Kab. Blora',
-    'no_telepon' => '082138576435',
-    'email' => 'diza_permatahati@yahoo.com',
-    'nomorindukberusaha' => '9120004152754',
-    'pju' => 'MOHAMAD RIDWAN',
-    'no_akte' => '7',
-    'tanggal' => null,
-    'nama_notaris' => 'ERLY MAIDA, SH., M.KN',
-    'no_pengesahan' => 'AHU-0005350-AH.01.17',
-    // 'tahunpilihan_id' => 4,
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'MOHAMAD KHOLIL',
-    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
-    'kode' => 'BS004',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2023-10-20',
-    'masa_berlaku' => '2026-10-19',
-    'nama_psjk' => 'RAHMAT MAULANA',
-    'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'MOHAMAD KHOLIL',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Prasarana Sumber Daya Air',
-    'kode' => 'BS010',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2023-04-30',
-    'masa_berlaku' => '2026-10-19',
-    'nama_psjk' => 'SUPARMAN',
-    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Prasarana Sumber Daya Air'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'MOHAMAD KHOLIL',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
-    'kode' => 'BS001',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2023-04-30',
-    'masa_berlaku' => '2025-04-29',
-    'nama_psjk' => 'RAHMAT MAULANA',
-    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'MOHAMAD KHOLIL',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
-    'kode' => 'BG002',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2022-04-30',
-    'masa_berlaku' => '2025-04-29',
-    'nama_psjk' => 'IMAM MARUF',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'MOHAMAD KHOLIL',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass',
-    'kode' => 'BS002',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2024-02-28',
-    'masa_berlaku' => '2027-02-27',
-    'nama_psjk' => 'RAHMAT MAULANA',
-    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Prasarana dan Sarana Sistem Pengolahan Limbah Padat, Cair, dan Gas',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Jalan Rel',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Terowongan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Hunian',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-// ---- DATA 5 -----------------
-bujkkontraktor::create([
-    'id' => 5, // Ganti dengan ID yang sesuai
-    'bujkkontraktorsub_id' => 5, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
-    'namalengkap' => 'TUNGGAL GUNA KARYA',
-    'alamat' => 'DESA GENENG 003/001 Jepon Kab. Blora Jawa Tengah',
-    'no_telepon' => '082314931935',
-    'email' => 'cvtunggalgunakarya@gmail.com',
-    'nomorindukberusaha' => '2507220064975',
-    'pju' => 'CUNCUN BRIONO',
-    'no_akte' => '360',
-    'tanggal' => '2022-06-20',
-    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.KN.',
-    'no_pengesahan' => 'AHU-0042025-AH.01.14',
-    // 'tahunpilihan_id' => 4,
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'CUNCUN BRIONO',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
-    'kode' => 'BG006',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2022-08-20',
-    'masa_berlaku' => '2025-08-19',
-    'nama_psjk' => 'SRI LESTARI',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'CUNCUN BRIONO',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
-    'kode' => 'BS001',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2022-08-20',
-    'masa_berlaku' => '2025-08-19',
-    'nama_psjk' => 'DWI FINGKI SAPUTRO',
-    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan'
-]);
-
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Hunian',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Industri',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Tempat Hiburan dan Olahraga',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Prasarana dan Sarana Sistem Pengolahan Limbah Padat, Cair, dan Gas',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-// ---- DATA 6 -----------------
-bujkkontraktor::create([
-    'id' => 6, // Ganti dengan ID yang sesuai
-    'bujkkontraktorsub_id' => 6, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
-    'namalengkap' => 'TRI GRAHA MEGAH JAYA',
-    'alamat' => 'DESA PATALAN 003/005 Kab. Blora Jawa Tengah',
-    'no_telepon' => '081325225577',
-    'email' => 'cvtrigrahamegahjayapatalan@yahoo.com',
-    'nomorindukberusaha' => '220102311534',
-    'pju' => 'SUTRISNO',
-    'no_akte' => '413',
-    'tanggal' => '2022-02-21',
-    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
-    'no_pengesahan' => 'AHU-0011469-AH.01.16',
-    // 'tahunpilihan_id' => 4,
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'SUTRISNO',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
-    'kode' => 'BG005',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
-    'tanggal_terbit' => '2023-03-07',
-    'masa_berlaku' => '2026-03-06',
-    'nama_psjk' => 'BANGKIT DWI CAHYO',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'SUTRISNO',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
-    'kode' => 'BG002',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
-    'tanggal_terbit' => '2023-03-07',
-    'masa_berlaku' => '2026-03-06',
-    'nama_psjk' => 'BANGKIT DWI CAHYO',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'SUTRISNO',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
-    'kode' => 'BG006',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
-    'tanggal_terbit' => '2023-02-23',
-    'masa_berlaku' => '2026-06-22',
-    'nama_psjk' => 'BANGKIT DWI CAHYO',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Hunian',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Tempat Hiburan dan Olahraga',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Pembuatan/Pengeboran Sumur Air Tanah',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Prasarana Sumber Daya Air',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-// ---- DATA 7 BUJK KONTRAKTOR -----------------
-bujkkontraktor::create([
-    'id' => 7, // Ganti dengan ID yang sesuai
-    'bujkkontraktorsub_id' => 7, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
-    'namalengkap' => 'BERKAH HPL MANDIRI',
-    'alamat' => 'DESA PENGKOLREJO 001/004 Japah Kab. Blora Jawa Tengah',
-    'no_telepon' => '08122607371',
-    'email' => 'cvberkahhplmandiri@gmail.com',
-    'nomorindukberusaha' => '1305230017493',
-    'pju' => 'RUSMADI',
-    'no_akte' => '16',
-    'tanggal' => '2023-01-16',
-    'nama_notaris' => 'DIAH TRIMURTI SALEH S.E., S.H., M.KN.',
-    'no_pengesahan' => 'AHU-0004908-AH.01.14',
-    // 'tahunpilihan_id' => 4,
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 7, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'RUSMADI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
-    'kode' => 'BG002',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2023-06-12',
-    'masa_berlaku' => '2026-06-11',
-    'nama_psjk' => 'MUKHSIN BUDI IRWANTO',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 7, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'RUSMADI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
-    'kode' => 'BG006',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2023-06-12',
-    'masa_berlaku' => '2026-06-11',
-    'nama_psjk' => 'MUKHSIN BUDI IRWANTO',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 7, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'RUSMADI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
-    'kode' => 'BG009',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2023-06-12',
-    'masa_berlaku' => '2026-06-11',
-    'nama_psjk' => 'MUKHSIN BUDI IRWANTO',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Lainnya'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 7, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'RUSMADI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
-    'kode' => 'BG005',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2023-06-12',
-    'masa_berlaku' => '2026-06-11',
-    'nama_psjk' => 'MUKHSIN BUDI IRWANTO',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 7, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'RUSMADI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perbelanjaan',
-    'kode' => 'BG004',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2024-02-27',
-    'masa_berlaku' => '2026-02-26',
-    'nama_psjk' => 'MUKHSIN BUDI IRWANTO',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perbelanjaan'
-]);
-
-// ---- DATA 8 BUJK KONTRAKTOR -----------------
-bujkkontraktor::create([
-    'id' => 8, // Ganti dengan ID yang sesuai
-    'bujkkontraktorsub_id' => 8, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
-    'namalengkap' => 'KARYA DWI PUTRI',
-    'alamat' => 'DESA TODANAN, Desa/Kelurahan Todanan, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
-    'no_telepon' => '085212848598',
-    'email' => 'cvkaryadwiputri2023@gmail.com',
-    'nomorindukberusaha' => '9120007580891',
-    'pju' => 'SRI WAHYUNI',
-    'no_akte' => '17',
-    'tanggal' => null,
-    'nama_notaris' => 'DIAH TRIMURTI SALEH S.E., S.H., M.Kn.',
-    'no_pengesahan' => 'AHU-0022831-AH.01.16',
-    // 'tahunpilihan_id' => 4,
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 8, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'SRI WAHYUNI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
-    'kode' => 'BG006',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2023-07-21',
-    'masa_berlaku' => '2026-07-20',
-    'nama_psjk' => 'RISQI PUTRA AGUS NUR ALIF',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 8, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'SRI WAHYUNI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
-    'kode' => 'BG009',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2023-07-21',
-    'masa_berlaku' => '2026-07-20',
-    'nama_psjk' => 'RISQI PUTRA AGUS NUR ALIF',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Lainnya'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 8, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'SRI WAHYUNI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
-    'kode' => 'BS001',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2023-07-21',
-    'masa_berlaku' => '2026-07-20',
-    'nama_psjk' => 'RISQI PUTRA AGUS NUR ALIF',
-    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 8, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'SRI WAHYUNI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
-    'kode' => 'BS004',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2023-07-21',
-    'masa_berlaku' => '2026-07-20',
-    'nama_psjk' => 'RISQI PUTRA AGUS NUR ALIF',
-    'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 8, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 8, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 8, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Prasarana Sumber Daya Air',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 8, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Landasan Pacu Pesawat Terbang',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 8, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Jembatan Dan Jalan Layang',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-// ---- DATA 9 BUJK KONTRAKTOR -----------------
-bujkkontraktor::create([
-    'id' => 9, // Ganti dengan ID yang sesuai
-    'bujkkontraktorsub_id' => 9, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
-    'namalengkap' => 'CV. DHA YASA MULIA',
-    'alamat' => 'DUKUH KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
-    'no_telepon' => '81326704319',
-    'email' => 'dhayasamulia@yahoo.co.id',
-    'nomorindukberusaha' => '9120008500283',
-    'pju' => 'MOHAMAD YASIM EFENDI',
-    'no_akte' => '93',
-    'tanggal' => '2023-03-09',
-    'nama_notaris' => 'YANI DWI RAHAYU S.H., M.Kn.',
-    'no_pengesahan' => 'AHU-0012312-AH.01.16',
-    // 'tahunpilihan_id' => 4,
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 9, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'MOHAMAD YASIM EFENDI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
-    'kode' => 'BG005',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2024-05-03',
-    'masa_berlaku' => '2026-05-02',
-    'nama_psjk' => 'ISHLAH YUDHA AHMAD NUYA EFENDI',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 9, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'MOHAMAD YASIM EFENDI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
-    'kode' => 'BG006',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2023-03-02',
-    'masa_berlaku' => '2026-03-01',
-    'nama_psjk' => 'DJUMAIN',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 9, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'MOHAMAD YASIM EFENDI',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
-    'kode' => 'BS001',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2023-05-31',
-    'masa_berlaku' => '2026-05-30',
-    'nama_psjk' => 'AHMAD JUARI',
-    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan'
-]);
-
-// ---- DATA 10 BUJK KONTRAKTOR -----------------
-bujkkontraktor::create([
-    'id' => 10, // Ganti dengan ID yang sesuai
-    'bujkkontraktorsub_id' => 10, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
-    'namalengkap' => 'RASI SINAR RAYA',
-    'alamat' => 'DK. KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
-    'no_telepon' => '085218340935',
-    'email' => 'rasinaraya@yahoo.com',
-    'nomorindukberusaha' => '9120202322819',
-    'pju' => 'WIJI LESTIYOWATI',
-    'no_akte' => null,
-    'tanggal' => '2018-06-06',
-    'nama_notaris' => 'ELIZABETH ESTININGSIH, S.H.',
-    'no_pengesahan' => '72/CV/2018/PN.BLA',
-    // 'tahunpilihan_id' => 4,
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 10, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'WIJI LESTIYOWATI ',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
-    'kode' => 'BG006',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2023-05-08',
-    'masa_berlaku' => '2026-05-07',
-    'nama_psjk' => 'EKO SETYO NUGROHO',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 10, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'WIJI LESTIYOWATI ',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
-    'kode' => 'BS005',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '2023-05-08',
-    'masa_berlaku' => '2026-05-07',
-    'nama_psjk' => 'EDI AGUS SETIAWAN, ST',
-    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 10, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 10, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-bujkkontraktorsub ::create([
-    'bujkkontraktor_id' => 10, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => '-',
-    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass',
-    'kode' => 'Persyaratan Belum Lengkap (OSS)',
-    'kualifikasi' => '-',
-    'penerbit' => '-',
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => '-',
-    'sub_kualifikasi_bu' => '-'
-]);
-
-// bujkkontraktorsub ::create([
-//     'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
-//     'nama_pengurus' => '-',
-//     'sub_klasifikasi_layanan' => 'Konstruksi Gedung Hunian',
-//     'kode' => 'Persyaratan Belum Lengkap (OSS)',
-//     'kualifikasi' => '-',
-//     'penerbit' => '-',
-//     'tanggal_terbit' => null,
-//     'masa_berlaku' => null,
-//     'nama_psjk' => '-',
-//     'sub_kualifikasi_bu' => '-'
-// ]);
-
-
-// DATA BUJK KONSULTAN MAS JAKI APLIKASI
-//======================== ===================================================================================
-bujkkonsultan::create([
-    'id' => 1, // Ganti dengan ID yang sesuai
-    'bujkkonsultansub_id' => 1, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1,
-    'namalengkap' => 'Tiara Energi',
-    'alamat' => 'Desa Gersi, Desa/Kelurahan Gersi, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah',
-    'no_telepon' => '081325657254',
-    'email' => 'tiarasinergi@gmail.com ',
-    'nomorindukberusaha' => '9120312062216',
-    'pju' => 'MOCHAMAD ARIANTO',
-    'no_akte' => '03',
-    'tanggal' => '2024-06-10',
-    'nama_notaris' => 'Selamet Mulyono M.Kn.',
-    'no_pengesahan' => 'AHU-0030674-AH.01.16 Tahun 2022'
-]);
-//
-
-bujkkonsultansub ::create([
-    'bujkkonsultan_id' => 1, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'MOCHAMAD ARIANTO',
-    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
-    'kode' => ' RK001',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'Lembaga Sertiﬁkasi INKINDO',
-    'tanggal_terbit' => '2024-12-23',
-    'masa_berlaku' => '2026-12-22',
-    'nama_psjk' => 'SITI JUMROK ATUN MUALIMAH, ST',
-    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian'
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 1, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => null, // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Aktivitas Arsitektur',
-    'kode' => null,
-    'kualifikasi' => 'Belum Memenuhi Syarat',
-    'penerbit' => null,
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => null,
-    'sub_kualifikasi_bu' => null
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 1, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => null, // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Aktivitas Keinsinyuran dan Konsultasi Teknis YBDI',
-    'kode' => null,
-    'kualifikasi' => 'Belum Memenuhi Syarat',
-    'penerbit' => null,
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => null,
-    'sub_kualifikasi_bu' => null
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 1, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => null, // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Aktivitas Desain Interior',
-    'kode' => null,
-    'kualifikasi' => 'Belum Memenuhi Syarat',
-    'penerbit' => null,
-    'tanggal_terbit' => null,
-    'masa_berlaku' => null,
-    'nama_psjk' => null,
-    'sub_kualifikasi_bu' => null
-]);
-
-//======================== ===================================================================================
-// DATA 2 BUJK KONSULTAN
-bujkkonsultan::create([
-    'id' => 2, // Ganti dengan ID yang sesuai
-    'bujkkonsultansub_id' => 2, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 5,
-    'namalengkap' => 'KARYA INTI KONSULTAN',
-    'alamat' => 'DUKUH SENDANG KLAMPOK, Desa/Kelurahan Tempurejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah ',
-    'no_telepon' => '082133220199',
-    'email' => 'karyaintikonsultan@gmail.com',
-    'nomorindukberusaha' => '2101230013886',
-    'pju' => 'AHMAD FAHRUDIN',
-    'no_akte' => '55',
-    'tanggal' => '2021-01-11',
-    'nama_notaris' => 'YANI DWI RAHAYU S.H., M.KN.',
-    'no_pengesahan' => 'AHU-0004201-AH.01.14'
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'AHMAD FAHRUDIN', // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
-    'kode' =>  'RK001',
-    'kualifikasi' => 'Kecil',
-    'penerbit' =>  'Lembaga Sertiﬁkasi INKINDO',
-    'tanggal_terbit' => '2023-05-16',
-    'masa_berlaku' => '2026-05-15',
-    'nama_psjk' => 'BAGUS SETIYO BUDI, S.T',
-    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian'
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 2, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'AHMAD FAHRUDIN', // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
-    'kode' =>  'RK003',
-    'kualifikasi' => 'Kecil',
-    'penerbit' =>  'Lembaga Sertiﬁkasi INKINDO',
-    'tanggal_terbit' => '2023-04-05',
-    'masa_berlaku' => '2026-04-04',
-    'nama_psjk' => 'BAGUS SETIYO BUDI, S.T',
-    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi'
-]);
-
-
-//======================== ===================================================================================
-// DATA 3 BUJK KONSULTAN
-bujkkonsultan::create([
-    'id' => 3, // Ganti dengan ID yang sesuai
-    'bujkkonsultansub_id' => 3, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 4,
-    'namalengkap' => 'BEGAWAN ABIYOSO',
-    'alamat' => ' DUKUH WUNI, Desa/Kelurahan Balong, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah ',
-    'no_telepon' => '085292559491',
-    'email' => 'begawanabiyoso2023@gmail.com ',
-    'nomorindukberusaha' => '220001632033',
-    'pju' => 'TEJO',
-    'no_akte' => '72',
-    'tanggal' => '2020-06-15',
-    'nama_notaris' => 'YANI DWI RAHAYU S.H., M.KN.',
-    'no_pengesahan' => 'AHU-0019129-AH.01.16'
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 3, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'TEJO, S.T., M.M. ', // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
-    'kode' =>  'RK003',
-    'kualifikasi' => 'Kecil',
-    'penerbit' =>  'Lembaga Sertiﬁkasi INKINDO',
-    'tanggal_terbit' => '2022-05-22',
-    'masa_berlaku' => '2026-05-21',
-    'nama_psjk' => 'FERONIKA MIVONIA, ST',
-    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi'
-]);
-
-
-
-//======================== ===================================================================================
-// DATA 4 BUJK KONSULTAN
-bujkkonsultan::create([
-    'id' => 4, // Ganti dengan ID yang sesuai
-    'bujkkonsultansub_id' => 4, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 2,
-    'namalengkap' => 'GRAHACIPTA PERKASA',
-    'alamat' => ' Ds. Tambahrejo, Desa/Kelurahan Tambahrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
-    'no_telepon' => '081327421757',
-    'email' => 'grahaciptaperkasa@yahoo.co.id',
-    'nomorindukberusaha' => '9120404852668',
-    'pju' => 'TEGUH PRIYANTO',
-    'no_akte' => '152',
-    'tanggal' => '2010-10-23',
-    'nama_notaris' => 'ELIZABETH ESTININGSIH, S.H.',
-    'no_pengesahan' => '14 / CV / 2011 / PN.Bla'
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'TEGUH PRIYANTO, ST.,MT', // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
-    'kode' =>  'RK001',
-    'kualifikasi' => 'Kecil',
-    'penerbit' =>  'Lembaga Sertiﬁkasi INKINDO',
-    'tanggal_terbit' => '2022-10-07',
-    'masa_berlaku' => '2025-10-06',
-    'nama_psjk' => 'SULTON ERBOWO, ST ',
-    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian'
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'TEGUH PRIYANTO, ST.,MT', // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air',
-    'kode' =>  'RK002',
-    'kualifikasi' => 'Kecil',
-    'penerbit' =>  'Lembaga Sertiﬁkasi INKINDO',
-    'tanggal_terbit' => '2023-06-14',
-    'masa_berlaku' => '2026-06-13',
-    'nama_psjk' => 'EDDY SAPTONO, ST ',
-    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air'
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 4, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'TEGUH PRIYANTO, ST.,MT', // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
-    'kode' =>  'RK003',
-    'kualifikasi' => 'Kecil',
-    'penerbit' =>  'Lembaga Sertiﬁkasi INKINDO',
-    'tanggal_terbit' => '2022-07-10',
-    'masa_berlaku' => NULL,
-    'nama_psjk' => 'YOGA ALDI DWI LAKSONO',
-    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi'
-]);
-
-
-//======================== ===================================================================================
-// DATA 5 BUJK KONSULTAN
-bujkkonsultan::create([
-    'id' => 5, // Ganti dengan ID yang sesuai
-    'bujkkonsultansub_id' => 5, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 3,
-    'namalengkap' => 'BEKONS',
-    'alamat' => 'Dukuh Bengir, Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah ',
-    'no_telepon' => '085326420963',
-    'email' => 'gapuro_ireng@yahoo.com ',
-    'nomorindukberusaha' => '220004621089',
-    'pju' => 'UTOMO, SARJANA',
-    'no_akte' => '34',
-    'tanggal' => '2016-03-16',
-    'nama_notaris' => 'BAMBANG HARIJANTO, SH., M.KN',
-    'no_pengesahan' => 'AHU-0028069-AH.01.15 Tahun 2020'
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'UTOMO, ST', // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian',
-    'kode' =>  'AR001',
-    'kualifikasi' => 'Kecil',
-    'penerbit' =>  'Lembaga Sertiﬁkasi INKINDO',
-    'tanggal_terbit' => '2023-08-09',
-    'masa_berlaku' => '2026-08-08',
-    'nama_psjk' => 'AGNIE SWASTIKA NINGRUM, S.Ars',
-    'sub_kualifikasi_bu' => 'Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian'
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'UTOMO, ST', // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
-    'kode' =>  ' RK001 ',
-    'kualifikasi' => 'Kecil',
-    'penerbit' =>  'Lembaga Sertiﬁkasi INKINDO',
-    'tanggal_terbit' => '2022-11-16',
-    'masa_berlaku' => '2025-11-17',
-    'nama_psjk' => 'SETYO NIHANTORO, S.T. ',
-    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian'
-]);
-
-bujkkonsultansub::create([
-    'bujkkonsultan_id' => 5, // Ganti dengan ID yang sesuai
-    'nama_pengurus' => 'UTOMO, ST', // Kosong tapi tetap ada
-    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air',
-    'kode' =>  'RK002',
-    'kualifikasi' => 'Kecil',
-    'penerbit' =>  'Lembaga Sertiﬁkasi INKINDO',
-    'tanggal_terbit' => '2022-11-18',
-    'masa_berlaku' => '2025-11-17',
-    'nama_psjk' => 'LARTO KUNDARTO, ST',
-    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air'
-]);
-
-
-
-//======================== ===================================================================================
-// DATA NAMA SEKOLAH MAS JAKI BLORA
-profiljenispekerjaan::create([
-    'id' => '1',
-    'jenispekerjaan' => 'Checkdam',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '2',
-    'jenispekerjaan' => 'Belanja Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '3',
-    'jenispekerjaan' => 'Drainase',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '4',
-    'jenispekerjaan' => 'Embung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '5',
-    'jenispekerjaan' => 'Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '6',
-    'jenispekerjaan' => 'Irigasi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '7',
-    'jenispekerjaan' => 'Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '8',
-    'jenispekerjaan' => 'Jembatan   ',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '9',
-    'jenispekerjaan' => 'Pasar',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '10',
-    'jenispekerjaan' => 'Ruang Terbuka Hijau',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '11',
-    'jenispekerjaan' => 'SPAM',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '12',
-    'jenispekerjaan' => 'Bangunan Air',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '13',
-    'jenispekerjaan' => 'Belanja Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '14',
-    'jenispekerjaan' => 'Fasilitas Umum',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '15',
-    'jenispekerjaan' => 'Pipanisasi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '16',
-    'jenispekerjaan' => 'Sumur',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-profiljenispekerjaan::create([
-    'id' => '17',
-    'jenispekerjaan' => 'Talud',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-
-//======================== ===================================================================================
-// DATA NAMA SEKOLAH MAS JAKI BLORA
-sumberdana::create([
-    'id' => '1',
-    'sumberdana' => 'APBN',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-sumberdana::create([
-    'id' => '2',
-    'sumberdana' => 'APBD',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-
-//======================== ===================================================================================
-// DATA NAMA SEKOLAH MAS JAKI BLORA
-
-allskktenagakerjablora::create([
-    'agendaskk_id'            => 1,
-    'user_id'                       => 1,
-    'jabatankerja' => 'Personil Keselamatan dan Kesehatan Kerja Jenjang 4',
-    'tempatlahir' => 'Bojonegoro',
-    'ttl' => '1989-04-14',
-    'jeniskelamin' => 'Laki-laki',
-    'nik' => '3522251404890001',
-    'alamat' => 'RT 5 RW 7 dukuh cepu kidul,kelurahan cepu,kec.cepu,kab.blora,jateng',
-    'notelepon' => '087730573343',
-    'email' => 'arifwahyudicc548@gmail.com',
-    'jenjangpendidikan_id' => 3,
-    'namasekolah_id' => 23,
-    'tahunlulus' => '2007',
-    'tahunpilihan_id' => 5,
-    'uploadktp' => 'https://drive.google.com/open?id=1N_6cVJ44YPAzK8Kr5qCQuiCfSXTkB9n6',
-    'uploadfoto' => 'https://drive.google.com/open?id=1FNHTKVU6oowro4CJlzLpj3FG-YdRi6ki',
-    'uploadijazah' => 'https://drive.google.com/open?id=14IoOuj_gp6LDGGnsrha11DARikUWnDHe',
-    'uploadpengalaman' => 'https://drive.google.com/open?id=1rWXn8FTSBirY94dqrT-T8au7R5bWaFrL',
-    'uploadnpwp' => 'https://drive.google.com/open?id=1-3gPp9RYiRCWu1fjqskNzdIFtnzFcBH4',
-    'uploaddaftarriwayathidup' => 'https://drive.google.com/open?id=1plhsgum_GVs_HLtVu--Ke7bku8eKfDEU',
-    'namaasosiasi' => 'Perorangan',
-    'punyaskk' => 'TIDAK',
-    'punyasiki' => 'TIDAK',
-    'siappatuh' => 'BERSEDIA',
-    'verifikasipu' => 'LULUS',
-    'verifikasilps' => 'LULUS',
-]);
-
-allskktenagakerjablora::create([
-    'agendaskk_id'            => 1,
-    'user_id'                       => 2,
-    'jabatankerja' => 'Personil Keselamatan dan Kesehatan Kerja Jenjang 4',
-    'tempatlahir' => 'Bojonegoro',
-    'ttl' => '1989-04-14',
-    'jeniskelamin' => 'Laki-laki',
-    'nik' => '3522251404890034',
-    'alamat' => 'RT 5 RW 7 dukuh cepu kidul,kelurahan cepu,kec.cepu,kab.blora,jateng',
-    'notelepon' => '087730573343',
-    'email' => 'arifwahyudicc548@gmail.com',
-    'jenjangpendidikan_id' => 3,
-    'namasekolah_id' => 23,
-    'tahunlulus' => '2007',
-    'tahunpilihan_id' => 5,
-    'uploadktp' => 'https://drive.google.com/open?id=1N_6cVJ44YPAzK8Kr5qCQuiCfSXTkB9n6',
-    'uploadfoto' => 'https://drive.google.com/open?id=1FNHTKVU6oowro4CJlzLpj3FG-YdRi6ki',
-    'uploadijazah' => 'https://drive.google.com/open?id=14IoOuj_gp6LDGGnsrha11DARikUWnDHe',
-    'uploadpengalaman' => 'https://drive.google.com/open?id=1rWXn8FTSBirY94dqrT-T8au7R5bWaFrL',
-    'uploadnpwp' => 'https://drive.google.com/open?id=1-3gPp9RYiRCWu1fjqskNzdIFtnzFcBH4',
-    'uploaddaftarriwayathidup' => 'https://drive.google.com/open?id=1plhsgum_GVs_HLtVu--Ke7bku8eKfDEU',
-    'namaasosiasi' => 'Perorangan',
-    'punyaskk' => 'TIDAK',
-    'punyasiki' => 'TIDAK',
-    'siappatuh' => 'BERSEDIA',
-    'verifikasipu' => 'LULUS',
-    'verifikasilps' => 'TIDAK LULUS',
-]);
-
-allskktenagakerjablora::create([
-    'agendaskk_id'            => 1,
-    'user_id'                       => 3,
-    'jabatankerja' => 'Personil Keselamatan dan Kesehatan Kerja Jenjang 4',
-    'tempatlahir' => 'Bojonegoro',
-    'ttl' => '1989-04-14',
-    'jeniskelamin' => 'Laki-laki',
-    'nik' => '3522251404890043',
-    'alamat' => 'RT 5 RW 7 dukuh cepu kidul,kelurahan cepu,kec.cepu,kab.blora,jateng',
-    'notelepon' => '087730573343',
-    'email' => 'arifwahyudicc548@gmail.com',
-    'jenjangpendidikan_id' => 3,
-    'namasekolah_id' => 23,
-    'tahunlulus' => '2007',
-    'tahunpilihan_id' => 5,
-    'uploadktp' => 'https://drive.google.com/open?id=1N_6cVJ44YPAzK8Kr5qCQuiCfSXTkB9n6',
-    'uploadfoto' => 'https://drive.google.com/open?id=1FNHTKVU6oowro4CJlzLpj3FG-YdRi6ki',
-    'uploadijazah' => 'https://drive.google.com/open?id=14IoOuj_gp6LDGGnsrha11DARikUWnDHe',
-    'uploadpengalaman' => 'https://drive.google.com/open?id=1rWXn8FTSBirY94dqrT-T8au7R5bWaFrL',
-    'uploadnpwp' => 'https://drive.google.com/open?id=1-3gPp9RYiRCWu1fjqskNzdIFtnzFcBH4',
-    'uploaddaftarriwayathidup' => 'https://drive.google.com/open?id=1plhsgum_GVs_HLtVu--Ke7bku8eKfDEU',
-    'namaasosiasi' => 'Perorangan',
-    'punyaskk' => 'TIDAK',
-    'punyasiki' => 'TIDAK',
-    'siappatuh' => 'BERSEDIA',
-    'verifikasipu' => 'TIDAK LULUS',
-    'verifikasilps' => 'TIDAK LULUS',
-]);
-
-// fort
-//======================== ===================================================================================
-// DATA NAMA SEKOLAH MAS JAKI BLORA
-namasekolah::create([
-    'id' => '1',
-    'namasekolah' => 'Akademi Teknologi Ronggolawe',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '2',
-    'namasekolah' => 'Institut Teknologi Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '3',
-    'namasekolah' => 'Khozinatul Ulum Todanan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '4',
-    'namasekolah' => 'MA Al-Falah Tanakan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '5',
-    'namasekolah' => 'MA Khozinatul Ulum',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '6',
-    'namasekolah' => 'MA Padangan Bojonegoro',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '7',
-    'namasekolah' => 'MAN Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '8',
-    'namasekolah' => 'PKBM Ngudi Luhur Bojonegoro',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '9',
-    'namasekolah' => 'Politeknik Negeri Semarang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '10',
-    'namasekolah' => 'SMK Ma`arif Tunjungan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '11',
-    'namasekolah' => 'Sekolah Teknologi Ronggolawe Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '12',
-    'namasekolah' => 'SKB Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '13',
-    'namasekolah' => 'SMA',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '14',
-    'namasekolah' => 'SMA 1 Ngawen',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '15',
-    'namasekolah' => 'SMA Muhammadiyah 1 Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '16',
-    'namasekolah' => 'SMA Muhammadiyah Prambanan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '17',
-    'namasekolah' => 'SMA Negeri 1 Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '18',
-    'namasekolah' => 'SMA Negeri 1 Jepon',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '19',
-    'namasekolah' => 'SMA Negeri 2 Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '20',
-    'namasekolah' => 'SMA Negeri 1 Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '21',
-    'namasekolah' => 'SMA Negeri 1 Randublatung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '22',
-    'namasekolah' => 'SMA Negeri 2 Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '23',
-    'namasekolah' => 'SMA Negeri 1 Kasiman Bojonegoro',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '24',
-    'namasekolah' => 'SMA PGRI 1 Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '25',
-    'namasekolah' => 'SMA PGRI Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '26',
-    'namasekolah' => 'SMEA Negeri Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '27',
-    'namasekolah' => 'SMK Katolik Santo Plus Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '28',
-    'namasekolah' => 'SMK Khozinatul Ulum Todanan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '29',
-    'namasekolah' => 'SMK Kristen Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '30',
-    'namasekolah' => 'SMK Migas Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '31',
-    'namasekolah' => 'SMK Muhammadiyah 1 Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '32',
-    'namasekolah' => 'SMK Muhammadiyah Rembang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '33',
-    'namasekolah' => 'SMK Muhammadiyah Todanan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '34',
-    'namasekolah' => 'SMK Negeri 1 Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '35',
-    'namasekolah' => 'SMK Negeri 1 Kunduran',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '36',
-    'namasekolah' => 'SMK',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '37',
-    'namasekolah' => 'SMK Negeri 1 Pekalongan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '38',
-    'namasekolah' => 'SMK Negeri Ngraho',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '39',
-    'namasekolah' => 'STM Migas Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '40',
-    'namasekolah' => 'STM Negeri 1 Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '41',
-    'namasekolah' => 'STM Negeri 1 Rembang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '42',
-    'namasekolah' => 'STM Pemda Tingkat II Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '43',
-    'namasekolah' => 'STMIK El-Rahma',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '44',
-    'namasekolah' => 'STTR Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '45',
-    'namasekolah' => 'Universitas An Nuur Purwodadi ',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '46',
-    'namasekolah' => 'Universitas Dipenogoro',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '47',
-    'namasekolah' => 'Universitas Islam Sultan Agung Semarang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-
-namasekolah::create([
-    'id' => '48',
-    'namasekolah' => 'Universitas Muhammadiyah Surakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '49',
-    'namasekolah' => 'Universitas Negeri Malang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '50',
-    'namasekolah' => 'Universitas Negeri Semarang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '51',
-    'namasekolah' => 'Universitas Pembangunan Nasional',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '52',
-    'namasekolah' => 'Universitas Sam Ratulangi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '53',
-    'namasekolah' => 'Universitas Semarang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '54',
-    'namasekolah' => 'Universitas Terbuka',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '55',
-    'namasekolah' => 'Yayasan Yohanes Gabrel',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '56',
-    'namasekolah' => 'Sekolah Tinggi Teknologi Nasional Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '57',
-    'namasekolah' => 'Institut Adhi Thama Surabaya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '58',
-    'namasekolah' => 'Institut Keguruan Dan Ilmu Pendidikan Veteran Semarang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '59',
-    'namasekolah' => 'Institut Sains Dan Teknologi Akprind Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '60',
-    'namasekolah' => 'Institut Teknologi Nasional Malang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '61',
-    'namasekolah' => 'Institut Teknologi PLN',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '62',
-    'namasekolah' => 'Institut Teknologi Sepuluh Nopember Surabaya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '63',
-    'namasekolah' => 'Institut Teknologi Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '64',
-    'namasekolah' => 'Institut Teknologi Pembangunan Surabaya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '65',
-    'namasekolah' => 'Katholik Santo Yosef Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '66',
-    'namasekolah' => 'MA Negeri Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '67',
-    'namasekolah' => 'MA Al-Hidayah',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '68',
-    'namasekolah' => 'MA As Syakur Banjarejo',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '69',
-    'namasekolah' => 'Universitas Gadjah Mada',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '70',
-    'namasekolah' => 'Non Pendidikan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '71',
-    'namasekolah' => 'Paket C',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '72',
-    'namasekolah' => 'PGRI 5 Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '73',
-    'namasekolah' => 'Politeknik Negeri Bandung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '75',
-    'namasekolah' => 'SD Negeri Karangboyo',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '76',
-    'namasekolah' => 'SMK',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '77',
-    'namasekolah' => 'Sekolah Teknologi Menengah Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '78',
-    'namasekolah' => 'Sekolah Teknologi Negeri',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '79',
-    'namasekolah' => 'STAI Al-Muhammad Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '80',
-    'namasekolah' => 'STAI Muhammadiyah Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '81',
-    'namasekolah' => 'Sekolah Tinggi Arsitektur YKPN Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '82',
-    'namasekolah' => 'Sekolah Tinggi Teknik Malang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '83',
-    'namasekolah' => 'Sekolah Tinggi Teknik Malang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '84',
-    'namasekolah' => 'Sekolah Vokasi ITS',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '85',
-    'namasekolah' => 'SMA Negeri 9 Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '86',
-    'namasekolah' => 'SMA Darul Ulum 6 Baureno',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '87',
-    'namasekolah' => 'SMA Islam Sultan Agung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '88',
-    'namasekolah' => 'SMA MAD Negeri Lasem',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '89',
-    'namasekolah' => 'SMA Miftahul Ulum Ngawen',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '90',
-    'namasekolah' => 'SMA Muhamadiyah Kabupaten Sleman',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '91',
-    'namasekolah' => 'SMA Muhamadiyah 5 Todanan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '92',
-    'namasekolah' => 'SMA Negeri 2 Ngawen',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '93',
-    'namasekolah' => 'SMA Negeri 1 Tunjungan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '94',
-    'namasekolah' => 'SMA Negeri 1 Ngawen',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '95',
-    'namasekolah' => 'SMA Negeri 1 Tunjungan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '96',
-    'namasekolah' => 'SMA Negeri 1 Toroh',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '97',
-    'namasekolah' => 'SMA Negeri Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '98',
-    'namasekolah' => 'SMA Negeri Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '99',
-    'namasekolah' => 'SMA Negeri Padangan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '100',
-    'namasekolah' => 'SMA PEMDA Wirosari Grobogan ',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '101',
-    'namasekolah' => 'SMEA Negeri Cepu ',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '102',
-    'namasekolah' => 'SMEA Negeri Blora ',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '103',
-    'namasekolah' => 'SMK Al Alif Tunjungan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '104',
-    'namasekolah' => 'SMK Al-Ghazali Jiken',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '105',
-    'namasekolah' => 'SMK Al-Hikmah Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '106',
-    'namasekolah' => 'SMK Bhakti Husada PGRI Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '107',
-    'namasekolah' => 'SMK Katholik Santo Pius Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '108',
-    'namasekolah' => 'SMK Muhammadiyah 2 Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '109',
-    'namasekolah' => 'SMK Negeri 1 Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '110',
-    'namasekolah' => 'SMA Negeri 1 Kunduran ',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '111',
-    'namasekolah' => 'SMA Negeri 1 Surabaya ',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '112',
-    'namasekolah' => 'SMK Negeri 2 Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '113',
-    'namasekolah' => 'SMK Negeri 2 Bojonegoro',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '114',
-    'namasekolah' => 'SMK Negeri 2 Purwodadi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '115',
-    'namasekolah' => 'SMK Negeri Rembang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '117',
-    'namasekolah' => 'SMK NU Tunjungan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '118',
-    'namasekolah' => 'SMK Pesantren Sabili Muttaqien Randublatung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '119',
-    'namasekolah' => 'SMK Sultan Agung Ngawen',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '120',
-    'namasekolah' => 'SMK Muhammadiyah 1 Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '121',
-    'namasekolah' => 'SMK Pancasila',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '122',
-    'namasekolah' => 'SMP Negeri 1 Menden',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '123',
-    'namasekolah' => 'SMP Negeri 2 Kedungtuban',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '124',
-    'namasekolah' => 'SMA Negeri 1 Ngraho',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '125',
-    'namasekolah' => 'SMA Negeri 1 Tunjungan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '126',
-    'namasekolah' => 'SMA Negeri 16 Bandung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '127',
-    'namasekolah' => 'SMU NU 3 Mallimin Weleri',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '128',
-    'namasekolah' => 'SMU ST. Louis Randublatung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '130',
-    'namasekolah' => 'SMU Katholik Wijayakusuma Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '131',
-    'namasekolah' => 'STIE Dharma Putra',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '132',
-    'namasekolah' => 'STM Berbau Tuan ST Yosep Cepu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '133',
-    'namasekolah' => 'STM Kudus',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '134',
-    'namasekolah' => 'STM Negeri Tunjungan Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '135',
-    'namasekolah' => 'STM Negeri Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '136',
-    'namasekolah' => 'STM Negeri Rembang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '137',
-    'namasekolah' => 'STM Magetan 1 YKP',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '138',
-    'namasekolah' => 'Universitas Dian Nuswantoro',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '139',
-    'namasekolah' => 'Universitas 17 Agustus 1945 Semarang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '140',
-    'namasekolah' => 'Universitas Atmajaya Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '141',
-    'namasekolah' => 'Universitas Brawijaya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '142',
-    'namasekolah' => 'Universitas Cokroaminoto Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '143',
-    'namasekolah' => 'Universitas Darul Ulum Islamic Center Sudirman Guppi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '144',
-    'namasekolah' => 'Universitas DR. Soetomo Surabaya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '145',
-    'namasekolah' => 'Universitas Gresik',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '146',
-    'namasekolah' => 'Universitas Islam Indonesia Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '147',
-    'namasekolah' => 'Universitas Khatolik Soegijapranata',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '148',
-    'namasekolah' => 'Universitas Krisnadwipayana',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '149',
-    'namasekolah' => 'Universitas Muhammadiyah Malang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '150',
-    'namasekolah' => 'Universitas Muhammadiyah Surabaya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '151',
-    'namasekolah' => 'Universitas Muhammadiyah Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '152',
-    'namasekolah' => 'Universitas Meria Kudus',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '153',
-    'namasekolah' => 'Universitas Negeri Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '154',
-    'namasekolah' => 'Universitas Nusa Cendana',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '155',
-    'namasekolah' => 'Universitas Padjadjaran',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '156',
-    'namasekolah' => 'Universitas Persatuan Guru Republik Indonesia Semarang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '157',
-    'namasekolah' => 'Universitas Sebelas Maret Surakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '158',
-    'namasekolah' => 'Universitas Sunan Giri Surabaya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '159',
-    'namasekolah' => 'Universitas Surakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '160',
-    'namasekolah' => 'Universitas Teknologi Yogyakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '161',
-    'namasekolah' => 'Universitas Trisakti',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '162',
-    'namasekolah' => 'Universitas Tunas Pembangunan Surakarta',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '163',
-    'namasekolah' => 'Universitas Veteran Bangun Nusantara Sukoharjo',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '164',
-    'namasekolah' => 'Universitas Widya Gama',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-namasekolah::create([
-    'id' => '165',
-    'namasekolah' => 'Universitas Wijaya Kusuma Surabaya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-//======================== ===================================================================================
-// JENJANG PENDIDIKAN MASA JAKI BLORA
-jenjangpendidikan::create([
-    'id' => '1',
-    'jenjangpendidikan' => 'Diploma 3',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '2',
-    'jenjangpendidikan' => 'Strata 1',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '3',
-    'jenjangpendidikan' => 'SMA/MA',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '4',
-    'jenjangpendidikan' => 'SMK',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '5',
-    'jenjangpendidikan' => 'Diploma 1',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '6',
-    'jenjangpendidikan' => 'Diploma 2',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '7',
-    'jenjangpendidikan' => 'Diploma 4',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '8',
-    'jenjangpendidikan' => 'Profesi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '9',
-    'jenjangpendidikan' => 'Strata 2 ',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '10',
-    'jenjangpendidikan' => 'SD/MI/Sederajat',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '11',
-    'jenjangpendidikan' => 'STM',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '12',
-    'jenjangpendidikan' => 'Non Pendidikan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjangpendidikan::create([
-    'id' => '13',
-    'jenjangpendidikan' => 'SMP/Mts/Sederajat',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-
-//======================== ===================================================================================
-// JURUSAN MASA JAKI BLORA
-jurusan::create([
-    'id' => '1',
-    'jurusan' => 'Akuntansi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '2',
-    'jurusan' => 'Bangunan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '3',
-    'jurusan' => 'Bangunan Air/Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '4',
-    'jurusan' => 'Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '5',
-    'jurusan' => 'IPA',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '6',
-    'jurusan' => 'IPS',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '7',
-    'jurusan' => 'Ekonomi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '8',
-    'jurusan' => 'Keperawatan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '9',
-    'jurusan' => '(PGSD) Pendidikan Guru Sekolah Dasar',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '10',
-    'jurusan' => 'Sistem Informasi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '11',
-    'jurusan' => 'Tata Niaga',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '12',
-    'jurusan' => 'Teknik Audio & Video',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '13',
-    'jurusan' => 'Teknik Bangunan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '14',
-    'jurusan' => 'Teknik Elektro',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '15',
-    'jurusan' => 'Teknik Geografi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '16',
-    'jurusan' => 'Teknik Industri',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '17',
-    'jurusan' => 'Teknik Lingkungan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '18',
-    'jurusan' => 'Teknik Mesin',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '19',
-    'jurusan' => 'Teknik Otomotif',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '20',
-    'jurusan' => 'Teknik Perminyakan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '21',
-    'jurusan' => 'Teknik Sipil',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '22',
-    'jurusan' => 'Teknik Survey dan Pemetaan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '23',
-    'jurusan' => 'Administrasi Perkantoran',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '24',
-    'jurusan' => 'Agrobisnis',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '25',
-    'jurusan' => 'Teknik Arsitektur',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '26',
-    'jurusan' => 'Bahasa',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '27',
-    'jurusan' => 'Bisnis dan Manajemen',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '28',
-    'jurusan' => 'Desain dan Arsitektur',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '29',
-    'jurusan' => 'Geomatika',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '30',
-    'jurusan' => 'Hukum',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '31',
-    'jurusan' => 'Biologi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '32',
-    'jurusan' => 'Kesehatan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '33',
-    'jurusan' => 'Keuangan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '34',
-    'jurusan' => 'Konstruksi Batu dan Beton',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '35',
-    'jurusan' => 'Konstruksi Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '36',
-    'jurusan' => 'Konstruksi Sipil',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '37',
-    'jurusan' => 'Listrik',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '38',
-    'jurusan' => 'Magister Ilmu Lingkungan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '39',
-    'jurusan' => 'Magister Teknik Sipil',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '40',
-    'jurusan' => 'Teknik Mekanik Otomotif',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '41',
-    'jurusan' => 'Multimedia',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '42',
-    'jurusan' => 'Pendidikan Agama Islam',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '43',
-    'jurusan' => 'Pendidikan Guru Taman Kanak-kanak',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '44',
-    'jurusan' => 'Pendidikan Teknik Bangunan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '45',
-    'jurusan' => 'Pendidikan Teknik Sipil dan Perencanaan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '46',
-    'jurusan' => 'Perkantoran',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '47',
-    'jurusan' => 'Magister Teknik Mesin',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '48',
-    'jurusan' => 'Profesi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '49',
-    'jurusan' => 'Teknik Geologi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '50',
-    'jurusan' => 'Surket Tukang',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '51',
-    'jurusan' => 'Teknik Gambar Bangunan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '52',
-    'jurusan' => 'Teknik Geodesi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '53',
-    'jurusan' => 'Teknik Kendaraan Ringan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '54',
-    'jurusan' => 'Teknik Listrik',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '55',
-    'jurusan' => 'Teknik Kimi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '56',
-    'jurusan' => 'Teknik Komputer dan Jaringan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '57',
-    'jurusan' => 'Teknik Konstruksi Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '58',
-    'jurusan' => 'Teknik Konstruksi Kayu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '59',
-    'jurusan' => 'Teknik Perawatan dan Perbaikan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '60',
-    'jurusan' => 'Teknik Perencanaan Wilayah dan Kota',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jurusan::create([
-    'id' => '61',
-    'jurusan' => 'Teknik Perawatan Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-
-
-//======================== ===================================================================================
-// JABATAN KERJA JAKI BLORA
-jabatankerja::create([
-    'id' => '1',
-    'jabatankerja' => 'Pelaksana Konstruksi Bangunan Unit Distribusi SPAM',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '2',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Bangunan Air Limbah Permukiman (setempat dan terpusat)',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '3',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Drainase Perkotaan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '4',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '5',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '6',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Pemasangan Pipa Leachate (Lindi) dan Pipa Gas/Ventilasi Di TPA',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '7',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Saluran Irigasi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '8',
-    'jabatankerja' => 'Pelaksana Lapangan Perkerasan Jalan Beton Muda',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '9',
-    'jabatankerja' => 'Personil Keselamatan dan Kesehatan Kerja',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '10',
-    'jabatankerja' => 'Ahli Geodesi Dan Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '11',
-    'jabatankerja' => 'Ahli Madya Bidang Keahlian Manajemen Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '12',
-    'jabatankerja' => 'Ahli Madya Bidang Keahlian Teknik Mekanikal',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '13',
-    'jabatankerja' => 'Ahli Madya Bidang Keahlian Teknik Sumber Daya Air',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '14',
-    'jabatankerja' => 'Ahli Madya Geoteknik',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '15',
-    'jabatankerja' => 'Ahli Madya K3 Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '16',
-    'jabatankerja' => 'Ahli Madya Perencana Struktur Jalan Rel',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '17',
-    'jabatankerja' => 'Ahli Madya Survei Terestris',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '18',
-    'jabatankerja' => 'Ahli Madya Teknik Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '19',
-    'jabatankerja' => 'Ahli Madya Teknik Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '20',
-    'jabatankerja' => 'Ahli Madya Teknik Jembatan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '21',
-    'jabatankerja' => 'Ahli Muda Bidang Keahlian Manajemen Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '22',
-    'jabatankerja' => 'Ahli Muda Bidang Keahlian Teknik Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '23',
-    'jabatankerja' => 'Ahli Muda Bidang Keahlian Teknik Jembatan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '24',
-    'jabatankerja' => 'Ahli Muda Bidang Keahlian Teknik Mekanikal',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '25',
-    'jabatankerja' => 'Ahli Muda Bidang Keahlian Teknik Sumber Daya Air',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '26',
-    'jabatankerja' => 'Ahli Muda Elektrikal Konstruksi Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '27',
-    'jabatankerja' => 'Ahli Muda Geoteknik',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '28',
-    'jabatankerja' => 'Ahli Muda K3 Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '29',
-    'jabatankerja' => 'Ahli Muda Pemeliharaan Jalan Dan Jembatan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '30',
-    'jabatankerja' => 'Ahli Muda Pengukuran Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '31',
-    'jabatankerja' => 'Ahli Muda Perawatan Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '32',
-    'jabatankerja' => 'Ahli Muda Perencana Beton Pracetak Untuk Struktur Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '33',
-    'jabatankerja' => 'Ahli Muda Perencana Irigasi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '34',
-    'jabatankerja' => 'Ahli Muda Quantity Surveyor',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '35',
-    'jabatankerja' => 'Ahli Muda Teknik Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '36',
-    'jabatankerja' => 'Ahli Muda Teknik Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '37',
-    'jabatankerja' => 'Ahli Muda Teknik Jembatan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '38',
-    'jabatankerja' => 'Ahli Pelaksana Teknik Plambing',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '39',
-    'jabatankerja' => 'Ahli Teknik Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '40',
-    'jabatankerja' => 'Ahli Utama Bidang Keahlian Manajemen Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '41',
-    'jabatankerja' => 'Ahli Utama Bidang Keahlian Teknik Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '42',
-    'jabatankerja' => 'Ahli Utama Bidang Keahlian Teknik Sumber Daya Air',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '43',
-    'jabatankerja' => 'Ahli Utama K3 Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '44',
-    'jabatankerja' => 'Ahli Utama Teknik Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '45',
-    'jabatankerja' => 'Ahli Utama Teknik Jembatan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '46',
-    'jabatankerja' => 'Juru Gambar Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '47',
-    'jabatankerja' => 'Juru Gambar Pekerjaan Jalan dan Jembatan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '48',
-    'jabatankerja' => 'Juru Ukur (Surveyor)',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '49',
-    'jabatankerja' => 'Kepala Pengelola Lingkungan Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '50',
-    'jabatankerja' => 'Manajer Lapangan Pelaksanaan Pekerjaan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '51',
-    'jabatankerja' => 'Manajer Pelaksana Konstruksi Sistem Produksi Air Minum (SPAM)',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '52',
-    'jabatankerja' => 'Manajer Pelaksanaan Pekerjaan Jalan/ Jembatan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '53',
-    'jabatankerja' => 'Manajer pengelolaan Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '54',
-    'jabatankerja' => 'Manajer Produksi Campuran Aspal Panas (Asphalt Mixing Plant Manager)',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '55',
-    'jabatankerja' => 'Operator Scaffolding',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '56',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Gedung Madya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '57',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Jalan Madya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '58',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Pemasangan Jembatan Rangka Baja Standar Madya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '59',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Pemasangan Jembatan Rangka Baja Standar Madya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '60',
-    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Saluran Irigasi Madya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '61',
-    'jabatankerja' => 'Pelaksana Pekerjaan Pemeliharaan Jaringan Irigasi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '62',
-    'jabatankerja' => 'Pelaksana Pekerjaan Pemeliharaan Sungai Muda',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '63',
-    'jabatankerja' => 'Pelaksana Pemeliharaan Jalan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '64',
-    'jabatankerja' => 'Pelaksana Pemeliharaan Jembatan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '65',
-    'jabatankerja' => 'Pelaksana Pemeliharaan Jembatan Madya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '66',
-    'jabatankerja' => 'Pelaksana Pemeliharaan Jembatan Muda',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '67',
-    'jabatankerja' => 'Pemasang Perancah Dan Acuan/Cetakan Beton',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '68',
-    'jabatankerja' => 'Pengawas Lapangan Pekerjaan Drainase Perkotaan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '69',
-    'jabatankerja' => 'Pengawas Pekerjaan Struktur Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '70',
-    'jabatankerja' => 'Pengawas Pekerjaan Struktur Bangunan Gedung Madya',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '71',
-    'jabatankerja' => 'Petugas Keselamatan dan Kesehatan Kerja (K3) Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '72',
-    'jabatankerja' => 'Petugas Keselamatan Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '73',
-    'jabatankerja' => 'Supervisor K3 Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '74',
-    'jabatankerja' => 'Teknisi Laboratorium Beton Aspal',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '75',
-    'jabatankerja' => 'Teknisi Scaffolding',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '76',
-    'jabatankerja' => 'Tukang Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '77',
-    'jabatankerja' => 'Tukang Besi Beton',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '78',
-    'jabatankerja' => 'Tukang Kayu',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '79',
-    'jabatankerja' => 'Tukang Pasang Rangka Atap Baja Ringan',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jabatankerja::create([
-    'id' => '80',
-    'jabatankerja' => 'Tukang Plester Bangunan Gedung',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-//======================== ===================================================================================
-// DATA ASOSIAS KABUPATEN BLORA JAWA TENGAH
-asosiasimasjaki::create([
-    'id' => '1',
-    'namaasosiasi' => 'AK3L',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '2',
-    'namaasosiasi' => 'ASDAMKINDO',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '3',
-    'namaasosiasi' => 'ASTEKINDO',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '4',
-    'namaasosiasi' => 'ASTTATINDO',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '5',
-    'namaasosiasi' => 'ATAKI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '6',
-    'namaasosiasi' => 'ATAKNAS',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '7',
-    'namaasosiasi' => 'ATAKSI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '8',
-    'namaasosiasi' => 'GATAKI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '9',
-    'namaasosiasi' => 'GATENSI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '10',
-    'namaasosiasi' => 'HATSINDO',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '11',
-    'namaasosiasi' => 'HPJI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '12',
-    'namaasosiasi' => 'IAKI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '13',
-    'namaasosiasi' => 'LPJK',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '14',
-    'namaasosiasi' => 'PAKKI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '15',
-    'namaasosiasi' => 'PARABI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '16',
-    'namaasosiasi' => 'PASTALI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '17',
-    'namaasosiasi' => 'PASTI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '18',
-    'namaasosiasi' => 'PERPAKOM',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '19',
-    'namaasosiasi' => 'PERTAHKINDO',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '20',
-    'namaasosiasi' => 'PERTAMA',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '21',
-    'namaasosiasi' => 'PERTAPIN',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '22',
-    'namaasosiasi' => 'PETAKINDO',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '23',
-    'namaasosiasi' => 'PETAKOM',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-
-//======================== ===================================================================================
-// JENJANG PEKERJAAN MAS JAKI BLORA
-jenjang::create([
-    'id' => '1',
-    'jenjang' => '1',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjang::create([
-    'id' => '2',
-    'jenjang' => '2',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjang::create([
-    'id' => '3',
-    'jenjang' => '3',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjang::create([
-    'id' => '4',
-    'jenjang' => '4',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjang::create([
-    'id' => '5',
-    'jenjang' => '5',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjang::create([
-    'id' => '6',
-    'jenjang' => '6',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjang::create([
-    'id' => '7',
-    'jenjang' => '7',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjang::create([
-    'id' => '8',
-    'jenjang' => '8',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-jenjang::create([
-    'id' => '9',
-    'jenjang' => '9',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-//======================== ===================================================================================
-// LPS PENERBIT MAS JAKI BLORA
-
-lpspenerbit::create([
-    'id' => '1',
-    'lpspenerbit' => 'Lembaga Sertifikasi Profesi Ataknas Profesional Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '2',
-    'lpspenerbit' => 'Bina Konstruksi Nusantara',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '3',
-    'lpspenerbit' => 'Infrastruktur Jalan dan Jembatan Indonesia',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '4',
-    'lpspenerbit' => 'LSP ASTEKINDO Konstruksi Mandiri',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '5',
-    'lpspenerbit' => 'LSP Gataki Konstruksi Mandiri',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '6',
-    'lpspenerbit' => 'LSP GATENSI Karya Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '7',
-    'lpspenerbit' => 'LSP HATSINDO Indoensia Teknik',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '8',
-    'lpspenerbit' => 'LSP K3 Konstruksi',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '9',
-    'lpspenerbit' => 'LSP Keselamatan Kesehatan Kerja',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '10',
-    'lpspenerbit' => 'LSP Petakindo Konstruksi Mandiri',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '11',
-    'lpspenerbit' => 'LSP Sertifikasi Konstruksi Teknik IAKI (LSP SAKTI)',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '12',
-    'lpspenerbit' => 'LSP Sumber Daya Manusia Konstruksi Indonesia',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '13',
-    'lpspenerbit' => 'PT LSP PERTAHKINDO Konstruksi Nasional',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '14',
-    'lpspenerbit' => 'PT. ATAKI Konstruksi Indonesia',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-lpspenerbit::create([
-    'id' => '15',
-    'lpspenerbit' => 'PT.Sertifikasi Profesi Konstruksi Asttatindo',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-//
-
-//======================== ===================================================================================
-// DAFTAR TENAGA KERJA MAS JAKI BLORA
-
-skktenagakerjabloralist::create([
-    'nama' => 'SUGIYANTO', // Ganti dengan ID yang sesuai
-    'alamat' => 'Kab. Blora',
-    'namasekolah_id' => 66,
-    'jenjangpendidikan_id' => 3,
-    'jurusan_id' => 6,
-    'tahunlulus' => null,
-    'jabatankerja_id' => 77,
-    'jenjang_id' => 1,
-    'asosiasimasjaki_id' => 1,
-    'lpspenerbit_id' => 2,
-    'tanggalterbit' => '2023-10-08',
-    'tanggalhabis' => '2028-12-07',
-    'statusterbit' => 'TERBIT',
-]);
-
-skktenagakerjabloralist::create([
-    'nama' => 'ANAS FARIDZ ZAMZAMY', // Ganti dengan ID yang sesuai
-    'alamat' => 'Kab. Blora',
-    'namasekolah_id' => 5,
-    'jenjangpendidikan_id' => 3,
-    'jurusan_id' => 6,
-    'tahunlulus' => null,
-    'jabatankerja_id' => 76,
-    'jenjang_id' => 2,
-    'asosiasimasjaki_id' => 13,
-    'lpspenerbit_id' => 2,
-    'tanggalterbit' => '2023-10-08',
-    'tanggalhabis' => '2028-12-28',
-    'statusterbit' => 'TERBIT',
-]);
-
-skktenagakerjabloralist::create([
-    'nama' => 'MOH. MUHTAR', // Ganti dengan ID yang sesuai
-    'alamat' => 'Kab. Blora',
-    'namasekolah_id' => 86,
-    'jenjangpendidikan_id' => 3,
-    'jurusan_id' => 6,
-    'tahunlulus' => null,
-    'jabatankerja_id' => 67,
-    'jenjang_id' => 3,
-    'asosiasimasjaki_id' => 1,
-    'lpspenerbit_id' => 2,
-    'tanggalterbit' => '2023-10-08',
-    'tanggalhabis' => '2028-12-07',
-    'statusterbit' => 'TERBIT',
-]);
-
-skktenagakerjabloralist::create([
-    'nama' => 'BAHARUDDIN YUSUF HABIBI', // Ganti dengan ID yang sesuai
-    'alamat' => 'Kab. Blora',
-    'namasekolah_id' => 50,
-    'jenjangpendidikan_id' => 2,
-    'jurusan_id' => 1,
-    'tahunlulus' => 2010,
-    'jabatankerja_id' => 1,
-    'jenjang_id' => 4,
-    'asosiasimasjaki_id' => 1,
-    'lpspenerbit_id' => 1,
-    'tanggalterbit' => null,
-    'tanggalhabis' => null,
-    'statusterbit' => 'TERBIT',
-]);
-
-skktenagakerjabloralist::create([
-    'nama' => 'PATONI', // Ganti dengan ID yang sesuai
-    'alamat' => 'Kab. Blora',
-    'namasekolah_id' => 34,
-    'jenjangpendidikan_id' => 11,
-    'jurusan_id' => 2,
-    'tahunlulus' => null,
-    'jabatankerja_id' => 57,
-    'jenjang_id' => 5,
-    'asosiasimasjaki_id' => 6,
-    'lpspenerbit_id' => 1,
-    'tanggalterbit' => '2023-10-08',
-    'tanggalhabis' => '2028-07-24',
-    'statusterbit' => 'TERBIT',
-]);
-
-skktenagakerjabloralist::create([
-    'nama' => 'AGUS FAUZAN', // Ganti dengan ID yang sesuai
-    'alamat' => 'Kab. Blora',
-    'namasekolah_id' => 47,
-    'jenjangpendidikan_id' => 2,
-    'jurusan_id' => 21,
-    'tahunlulus' => null,
-    'jabatankerja_id' => 50,
-    'jenjang_id' => 6,
-    'asosiasimasjaki_id' => 6,
-    'lpspenerbit_id' => 1,
-    'tanggalterbit' => '2023-08-10',
-    'tanggalhabis' => '2028-04-18',
-    'statusterbit' => 'TERBIT',
-]);
-
-skktenagakerjabloralist::create([
-    'nama' => 'LAILA NURAINI', // Ganti dengan ID yang sesuai
-    'alamat' => 'Kab. Blora',
-    'namasekolah_id' => 11,
-    'jenjangpendidikan_id' => 2,
-    'jurusan_id' => 21,
-    'tahunlulus' => null,
-    'jabatankerja_id' => 35,
-    'jenjang_id' => 7,
-    'asosiasimasjaki_id' => 3,
-    'lpspenerbit_id' => 2,
-    'tanggalterbit' => '2023-08-10',
-    'tanggalhabis' => '2028-01-12',
-    'statusterbit' => 'TERBIT',
-]);
-
-skktenagakerjabloralist::create([
-    'nama' => 'MUHAMMAD KHAFID SAHRONI', // Ganti dengan ID yang sesuai
-    'alamat' => 'Kab. Blora',
-    'namasekolah_id' => 159,
-    'jenjangpendidikan_id' => 2,
-    'jurusan_id' => 21,
-    'tahunlulus' => null,
-    'jabatankerja_id' => 19,
-    'jenjang_id' => 8,
-    'asosiasimasjaki_id' => 2,
-    'lpspenerbit_id' => 4,
-    'tanggalterbit' => '2023-08-10',
-    'tanggalhabis' => '2028-07-05',
-    'statusterbit' => 'TERBIT',
-]);
-
-skktenagakerjabloralist::create([
-    'nama' => 'HARYANTO', // Ganti dengan ID yang sesuai
-    'alamat' => 'Kab. Blora',
-    'namasekolah_id' => 62,
-    'jenjangpendidikan_id' => 2,
-    'jurusan_id' => 52,
-    'tahunlulus' => null,
-    'jabatankerja_id' => 10,
-    'jenjang_id' => 9,
-    'asosiasimasjaki_id' => 3,
-    'lpspenerbit_id' => 4,
-    'tanggalterbit' => '2023-08-10',
-    'tanggalhabis' => '2027-05-19',
-    'statusterbit' => 'TERBIT',
-]);
-
-
-
-//======================== ===================================================================================
-// PAKET KONSULTASI TENDER MAS JAKI BLORA
-
-satuanhargamaterial::create([
-    'uraian' => 'Agregat Pokok',
-    'satuan' => 'M3',
-    'besaran' => '322200',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Agregat Pengunci',
-    'satuan' => 'M3',
-    'besaran' => '322200',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Agregat Penutup',
-    'satuan' => 'Kg',
-    'besaran' => '239',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Angkur M16 panjang 50 cm',
-    'satuan' => 'Buah',
-    'besaran' => '28600',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Asbes gelombang',
-    'satuan' => 'Lembar',
-    'besaran' => '112200',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Baja L 40.40.4',
-    'satuan' => 'Kg',
-    'besaran' => '18000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Banner plastik 0,6 x 0,8 m2',
-    'satuan' => 'M2',
-    'besaran' => '133900',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Batu kerikil uk. 2-3 cm, 4-5 cm dan 5-7 cm',
-    'satuan' => 'M3',
-    'besaran' => '329200',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Bentonite',
-    'satuan' => 'Kg',
-    'besaran' => '3960',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Besi strip',
-    'satuan' => 'Kg',
-    'besaran' => '17600',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Cuka Bibit',
-    'satuan' => 'Liter',
-    'besaran' => '26800',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Dinding triplek 4mm',
-    'satuan' => 'Lembar',
-    'besaran' => '70700',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Dolken kayu φ 8- 10/400 cm',
-    'satuan' => 'M1',
-    'besaran' => '14600',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Floor lantai (Beton lantai kerja)',
-    'satuan' => 'M3',
-    'besaran' => '915506',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Fondasi pasangan batu',
-    'satuan' => 'M3',
-    'besaran' => '803126',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Frame allum L.10.1',
-    'satuan' => 'Kg',
-    'besaran' => '17600',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Frame besi Kaca Nako',
-    'satuan' => 'Daun',
-    'besaran' => '20460',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Frame besi L.30.30.3',
-    'satuan' => 'Kg',
-    'besaran' => '17600',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Geomembran t = 1,5 mm',
-    'satuan' => 'M2',
-    'besaran' => '11550',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Geosynthetic Liner (GCL)',
-    'satuan' => 'M2',
-    'besaran' => '11550',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Geotextil (> 100 s/d 400 gr/m2)',
-    'satuan' => 'M2',
-    'besaran' => '11550',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'GRC pelat, t=4mm, uk 122x244 cm',
-    'satuan' => 'Lembar',
-    'besaran' => '70000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Jendela naco',
-    'satuan' => 'Buah',
-    'besaran' => '80300',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Kaca Polos tebal 5 mm',
-    'satuan' => 'M2',
-    'besaran' => '133900',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Kaso 5/7 kayu kelas II (Perancah)',
-    'satuan' => 'M3',
-    'besaran' => '1976000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Kawat Duri Silet BTO 30',
-    'satuan' => 'M1',
-    'besaran' => '47200',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Kawat jaring panjang 2,4 m dan aksesoris',
-    'satuan' => 'Lembar',
-    'besaran' => '92800',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Kawat seng 3mm',
-    'satuan' => 'Kg',
-    'besaran' => '26800',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Kayu papan 3/20 cm',
-    'satuan' => 'M3',
-    'besaran' => '1976000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Kayu perancah',
-    'satuan' => 'M3',
-    'besaran' => '1976000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Tiang kayu 5/7 (II) T= 3 m',
-    'satuan' => 'M3',
-    'besaran' => '1976000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Kerikil (Maks 30mm)',
-    'satuan' => 'Kg',
-    'besaran' => '244',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Kolom beton pracetak',
-    'satuan' => 'Batang',
-    'besaran' => '370000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Koral Beton',
-    'satuan' => 'M3',
-    'besaran' => '329200',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Makadam (batu pecah 5/7)',
-    'satuan' => 'M3',
-    'besaran' => '301600',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Marmer graphir 12x12 cm',
-    'satuan' => 'Buah',
-    'besaran' => '532200',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Multiplek tebal 18 mm',
-    'satuan' => 'Lembar',
-    'besaran' => '208333',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Multiplek tebal 9 mm',
-    'satuan' => 'Lembar',
-    'besaran' => '123700',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Paku',
-    'satuan' => 'Kg',
-    'besaran' => '25200',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Paku 5 inch',
-    'satuan' => 'Kg',
-    'besaran' => '16400',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Paku 5 inci',
-    'satuan' => 'Kg',
-    'besaran' => '16400',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Paku 7 cm',
-    'satuan' => 'Kg',
-    'besaran' => '16400',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Paku asbes',
-    'satuan' => 'Kg',
-    'besaran' => '21800',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Paku biasa',
-    'satuan' => 'Kg',
-    'besaran' => '17600',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Paku campuran 2cm dan 5 cm',
-    'satuan' => 'Kg',
-    'besaran' => '20500',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Paku campuran 5cm + 7cm',
-    'satuan' => 'Kg',
-    'besaran' => '16400',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Paku payung',
-    'satuan' => 'Kg',
-    'besaran' => '21800',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Paku seng',
-    'satuan' => 'Kg',
-    'besaran' => '21800',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Panel beton pracetak',
-    'satuan' => 'Lembar',
-    'besaran' => '170000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Papan  Kayu  ukuran 2/20 cm',
-    'satuan' => 'M3',
-    'besaran' => '1976000',
-]);
-// 51
-
-satuanhargamaterial::create([
-    'uraian' => 'Pasangan batu ukuran 20/50, t=40cm',
-    'satuan' => 'M3',
-    'besaran' => '775762',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Pasir urug',
-    'satuan' => 'M3',
-    'besaran' => '244200',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Pasir urug (kg)',
-    'satuan' => 'Kg',
-    'besaran' => '174',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Patok ukur kayu 5/7',
-    'satuan' => 'M3',
-    'besaran' => '1976000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Pen kuningan titik acuan',
-    'satuan' => 'Buah',
-    'besaran' => '130000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Pintu Double teakwood rangka kayu',
-    'satuan' => 'M2',
-    'besaran' => '730157',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Plywood 4mm',
-    'satuan' => 'Lembar',
-    'besaran' => '112000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Residu',
-    'satuan' => 'Liter',
-    'besaran' => '5400',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Seng gelombang',
-    'satuan' => 'Lembar',
-    'besaran' => '55700',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Seng gelombang BJLS-30 (t=0,05) 0,9mx1,8 m’',
-    'satuan' => 'Lembar',
-    'besaran' => '74750',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Seng pelat',
-    'satuan' => 'Lembar',
-    'besaran' => '64000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Sirtu',
-    'satuan' => 'M3',
-    'besaran' => '301000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Tanah Biasa',
-    'satuan' => 'M3',
-    'besaran' => '78800',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Tanah Biasa Berpasir',
-    'satuan' => 'M3',
-    'besaran' => '122100',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Tanah liat (lempung)',
-    'satuan' => 'M3',
-    'besaran' => '112500',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Tiang kayu 8/12 kelas II, tinggi 4m',
-    'satuan' => 'M3',
-    'besaran' => '1976000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Lapis Fondasi Agregat',
-    'satuan' => 'M3',
-    'besaran' => '322200',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Aspal',
-    'satuan' => 'Kg',
-    'besaran' => '16700',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Aspal Emulsi CSS-1  atau SS-1',
-    'satuan' => 'Liter',
-    'besaran' => '14600',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Bahan Bakar Bensin',
-    'satuan' => 'Liter',
-    'besaran' => '9000',
-]);
-
-
-satuanhargamaterial::create([
-    'uraian' => 'Bahan Bakar Solar',
-    'satuan' => 'Liter',
-    'besaran' => '16150',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Minyak Pelumas',
-    'satuan' => 'Liter',
-    'besaran' => '42000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Kawat jaring panjang 2,4 dan aksesoris',
-    'satuan' => 'Lembar',
-    'besaran' => '92800',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Batu Kerikil uk. 2-3 cm',
-    'satuan' => 'M3',
-    'besaran' => '329200',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Tanah Subur',
-    'satuan' => 'M3',
-    'besaran' => '150000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Agregat kasar',
-    'satuan' => 'Kg',
-    'besaran' => '244',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Air',
-    'satuan' => 'Liter',
-    'besaran' => '50',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Air bersih',
-    'satuan' => 'Liter',
-    'besaran' => '50',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung balok Δ 28 cm',
-    'satuan' => 'Buah',
-    'besaran' => '100000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton 20 x 20 cm',
-    'satuan' => 'Buah',
-    'besaran' => '75000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton 30 x 30 cm',
-    'satuan' => 'Buah',
-    'besaran' => '125000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton 35 x 35 cm',
-    'satuan' => 'Buah',
-    'besaran' => '150000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton 40 x 40 cm',
-    'satuan' => 'Buah',
-    'besaran' => '175000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton 45 x 45 cm',
-    'satuan' => 'Buah',
-    'besaran' => '200000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton 50 x 50 cm',
-    'satuan' => 'Buah',
-    'besaran' => '225000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton ø 30',
-    'satuan' => 'Buah',
-    'besaran' => '125000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton ø 35',
-    'satuan' => 'Buah',
-    'besaran' => '150000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton ø 40',
-    'satuan' => 'Buah',
-    'besaran' => '175000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton ø 45',
-    'satuan' => 'Buah',
-    'besaran' => '200000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton ø 50',
-    'satuan' => 'Buah',
-    'besaran' => '225000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat penyambung beton ø 60',
-    'satuan' => 'Buah',
-    'besaran' => '250000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat sambung dolken ø6-8 cm',
-    'satuan' => 'Buah',
-    'besaran' => '10000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Alat sambung kayu terbuat dari baja ø 18-20 cm',
-    'satuan' => 'Buah',
-    'besaran' => '25000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Angkur',
-    'satuan' => 'Kg',
-    'besaran' => '27000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Anyaman bambu (geribig)',
-    'satuan' => 'Lembar',
-    'besaran' => '15000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Bahan Pilihan (Ex Grosok Tahunan)',
-    'satuan' => 'M3',
-    'besaran' => '156000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Baja Profil',
-    'satuan' => 'Kg',
-    'besaran' => '18000',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Baja ringan dingin C75',
-    'satuan' => 'Batang',
-    'besaran' => '148500',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Balok Kayu (Jati Kelas I)',
-    'satuan' => 'M3',
-    'besaran' => '14996800',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Balok Kayu (Jati Kelas II)',
-    'satuan' => 'M3',
-    'besaran' => '12854400',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Balok Kayu (Jati Kelas III)',
-    'satuan' => 'M3',
-    'besaran' => '9640800',
-]);
-
-satuanhargamaterial::create([
-    'uraian' => 'Balok kayu kelas II (Perancah)',
-    'satuan' => 'M3',
-    'besaran' => '1976000',
-]);
-
-//======================== ===================================================================================
-// SATUAN HARGA UPAH MAS JAKI BLORA
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Pekerja',
-    'kode' => 'L.01',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '96000',
-    'besaranperjam' => '13714.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang batu/tembok',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang kayu',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang besi/besi beton',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang cat/pelitur',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang pipa',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang penganyam bronjong',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang tebas',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang las',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang las geotextile',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang listrik/ elektronik',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang alumunium',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang kaca',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang Ereksi',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang tanam',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tukang pemelihara taman',
-    'kode' => 'L.02',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Kepala tukang',
-    'kode' => 'L.03',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '122000.00',
-    'besaranperjam' => '17429.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Mandor',
-    'kode' => 'L.04',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '133000.00',
-    'besaranperjam' => '19000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Juru ukur',
-    'kode' => 'L.05',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '106000.00',
-    'besaranperjam' => '15143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Pembantu juru ukur',
-    'kode' => 'L.06',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '96000.00',
-    'besaranperjam' => '13714.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Mekanik alat berat',
-    'kode' => 'L.07',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '122000.00',
-    'besaranperjam' => '17429.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Operator alat berat',
-    'kode' => 'L.08',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '122000.00',
-    'besaranperjam' => '17429.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Pembantu operator',
-    'kode' => 'L.09',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '96000.00',
-    'besaranperjam' => '13714.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Supir truk',
-    'kode' => 'L.10',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '122000.00',
-    'besaranperjam' => '17429.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Kenek truk',
-    'kode' => 'L.11',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '96000.00',
-    'besaranperjam' => '13714.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tenaga ahli utama',
-    'kode' => 'L.12a',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '300000.00',
-    'besaranperjam' => '42857.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tenaga ahli madya',
-    'kode' => 'L.12b',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '234000.00',
-    'besaranperjam' => '33429.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tenaga ahli muda',
-    'kode' => 'L.12c',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '130000.00',
-    'besaranperjam' => '18571.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tenaga ahli pratama',
-    'kode' => 'L.12d',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '120000.00',
-    'besaranperjam' => '17143.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Narasumber pejabat eselon II',
-    'kode' => 'L.13a',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '7000000.00',
-    'besaranperjam' => '1000000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Narasumber pejabat eselon III',
-    'kode' => 'L.13b',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '6300000.00',
-    'besaranperjam' => '900000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Narasumber praktisi',
-    'kode' => 'L.13c',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '11900000.00',
-    'besaranperjam' => '1700000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tenaga terampil teknisi',
-    'kode' => 'L.14a',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '110000.00',
-    'besaranperjam' => '15714.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tenaga terampil operator',
-    'kode' => 'L.14b',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '110000.00',
-    'besaranperjam' => '15714.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Tenaga terampil operator',
-    'kode' => 'L.14c',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '110000.00',
-    'besaranperjam' => '15714.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaupahtenagakerja::create([
-    'uraian' => 'Lainnya',
-    'kode' => 'L.15',
-    'satuan' => 'Orang/Hari',
-    'besaran' => '110000.00',
-    'besaranperjam' => '15714.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-
-//======================== ===================================================================================
-// SATUAN HARGA PERALATAN MAS JAKI BLORA
-satuanhargaperalatan::create([
-    'uraian' => 'Linggis (baja keras)/bh',
-    'kode' => null,
-    'satuan' => 'Buah',
-    'besaran' => '50000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Pahat beton (baja keras)',
-    'kode' => null,
-    'satuan' => 'Buah',
-    'besaran' => '50000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Palu/godam (baja keras)/bh',
-    'kode' => null,
-    'satuan' => 'Buah',
-    'besaran' => '50000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa pipe support',
-    'kode' => null,
-    'satuan' => 'Buah',
-    'besaran' => '1900',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa scaffolding',
-    'kode' => null,
-    'satuan' => 'Buah',
-    'besaran' => '10000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Alat Pancang Mini Pile Driver (Vibrator) Hammer 500 kg (10 HP)',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '413228.39',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Alat Pancang Mini Pile Driver (Vibratory) Hammer 50 kg (1 HP)',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '413228.39',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Bender baja beton',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '268819.47',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Bor: Auger ∅ 20 cm',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '100000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Bor: Auger ∅ 30 cm',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '100000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Bor: Auger ∅ 40 cm',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '100000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Bor: Auger ∅ 50 cm',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '100000',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Concrete Cutter',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '325462.24',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Crane Truck 3 T',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '3773717.15',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Cutter besi beton',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '268819.47',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Cutter baja beton',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '268819.47',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Flat deck truck kap 7 ton',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '1991352.50',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Gergaji Besi (Baja Keras)',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '50000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Jack  Hammer  Drill- 1,5  KW  +  Genset  3 KWH',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '286000.86',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Jack  Hammer  Drill 2,5  KW  +  Genset  5 KW',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '286000.86',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Jack hammer',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '286000.86',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Jack hammer (5 KW)+ Genset (12 HP)',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '286000.86',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Jack hammer dan genset; 12 HP',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '286000.86',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Kunci momen',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '286000.86',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Linggis (baja keras)',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '50000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mesin Las Geotextile',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '894923.85',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mesin Molen 1m3',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '554168.48',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mobile crane  ≤  3 ton',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '3773717.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Molen 0,35 m3',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '554168.48',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Molen/Beton 0,35 m3 + Bahan',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '554168.48',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Molen 0,35 m3 + Automatic feeder',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '554168.48',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Molen kapasitas 0,35 m3 termasuk feeder',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '554168.48',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Molen/Beton mixer 0,35 m3',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '554168.48',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Molen/Beton mixer 0,35 m3 dilengkapi Automatic Feeder',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '554168.48',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Palu/godam',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '50000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Peralatan potong pipa T1/manual (gergaji) / saw',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '1900.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Peralatan potong pipa T2/mekanik / cilinder saw',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '1900.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Pompa    beton   ∅3", 140KW; 180 bar, T = 75 m / H =150',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '6311421.79',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Pompa  beton  ∅2,5", 20KW; 20 bar, T = 18 m',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '6311421.79',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Pompa beton ∅  2,5", 75KW; 120 bar, T= 50 m/H=80 m',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '6311421.79',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Pompa beton φ 1,5"; 5 KW; 8 bar; T = 5 m',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '6311421.79',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Pompa  sedot  pasir, diesel 7,5 KW; 5',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '370190.15',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Pompa lumpur diesel 10 KW; 5"',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '370190.15',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Pompa lumpur diesel 7,5 KW; 4"',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '370190.15',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Alat Pemasangan',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '10000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa  Tripot/Tackel  & handle crane 2T',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '345000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa crane 2 T',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '3773717.15',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa excavator type 225 kapasitas 0,5 - 1,0 m3',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '2762325.48',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa excavator type kapasitas 0,5 -1,0 m3',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '2762325.48',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Genset 5 KW',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '2206866.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Mesin Hydroseeding 2000L',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '264164.10',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Pompa Sedot  Ø 5”',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '370190.15',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Tripot/Tackel',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '345000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Water Truck*)',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '2284246.61',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Stamper  Kodok  150 kg',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '339533.36',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Stamper D-Drum 550 kg',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '339533.36',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Stamper Kuda 70 kg',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '339533.36',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Stamper Smooth Drum 1,5 Ton',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '339533.36',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Stang bor, batang bor diameter 1 1/4"',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '105000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Stang bor, batang bor diameter 4"',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '105000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Stang bor, batang bor diameter 8"',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '110000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Tandon Air kap. 2 m3',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '10000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Theodolit',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '100000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Tower crane arm 30 m',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '3773717.15',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Tripod tinggi 7 m kap 2 ton',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '345000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Vibrator',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '357769.29',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Waterpass',
-    'kode' => null,
-    'satuan' => 'Hari',
-    'besaran' => '100000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Bull Dozer',
-    'kode' => 'E04',
-    'satuan' => 'Jam',
-    'besaran' => '651069.74',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Compressor',
-    'kode' => 'E05',
-    'satuan' => 'Jam',
-    'besaran' => '157118.99',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Dump Truck',
-    'kode' => 'E09',
-    'satuan' => 'Jam',
-    'besaran' => '229571.18',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Motor Grader',
-    'kode' => 'E13',
-    'satuan' => 'Jam',
-    'besaran' => '404725.97',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Track Loader',
-    'kode' => 'E14',
-    'satuan' => 'Jam',
-    'besaran' => '372272.12',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Wheel Loader',
-    'kode' => 'E15',
-    'satuan' => 'Jam',
-    'besaran' => '472750.77',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Tandem Roller',
-    'kode' => 'E17',
-    'satuan' => 'Jam',
-    'besaran' => '378192.54',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Vibratory Roller',
-    'kode' => 'E19a',
-    'satuan' => 'Jam',
-    'besaran' => '74796.56',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Water Tanker',
-    'kode' => 'E23',
-    'satuan' => 'Jam',
-    'besaran' => '326320.94',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Asp. Distributor',
-    'kode' => 'E41',
-    'satuan' => 'Jam',
-    'besaran' => '316602.16',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Alat las Listrik',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '127846.26',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Alat pancang Hidraulik Pile Driver 2 ton',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '59032.63',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Alat pancang Hidraulik Pile Driver 3 ton',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '59032.63',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'AMP',
-    'kode' => 'E01a',
-    'satuan' => 'Jam',
-    'besaran' => '8809318.35',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Asphalt Distributor',
-    'kode' => 'E41',
-    'satuan' => 'Jam',
-    'besaran' => '316602.16',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Asphalt Finisher',
-    'kode' => 'E02',
-    'satuan' => 'Jam',
-    'besaran' => '1560100.19',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Bored Pile Machine (Hidraulik) Auger ø 100 cm',
-    'kode' => 'E50',
-    'satuan' => 'Jam',
-    'besaran' => '441754.72',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Bored Pile Machine (Hidraulik) Auger ø 120 cm',
-    'kode' => 'E50',
-    'satuan' => 'Jam',
-    'besaran' => '441754.72',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Bored Pile Machine (Hidraulik) Auger ø 60 cm',
-    'kode' => 'E50',
-    'satuan' => 'Jam',
-    'besaran' => '441754.72',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Bored Pile Machine (Hidraulik) Auger ø 80 cm',
-    'kode' => 'E50',
-    'satuan' => 'Jam',
-    'besaran' => '441754.72',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mesin pengeboran',
-    'kode' => 'E50',
-    'satuan' => 'Jam',
-    'besaran' => '441754.72',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Chainsaw 20”; 5,5HP',
-    'kode' => 'E87',
-    'satuan' => 'Jam',
-    'besaran' => '36946.35',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Chainsaw 30”; 10 HP',
-    'kode' => 'E87',
-    'satuan' => 'Jam',
-    'besaran' => '36946.35',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Chainsaw 30”; 7,5HP',
-    'kode' => 'E87',
-    'satuan' => 'Jam',
-    'besaran' => '36946.35',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Compressor',
-    'kode' => 'E05',
-    'satuan' => 'Jam',
-    'besaran' => '157118.99',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Concrete Pump',
-    'kode' => 'E28',
-    'satuan' => 'Jam',
-    'besaran' => '901631.68',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Concrete Vibrator',
-    'kode' => 'E20',
-    'satuan' => 'Jam',
-    'besaran' => '47167.54',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Crane Mobile 7 ton',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '539102.45',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Crane truck 10 Ton, Winch 12 Ton *)',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '539102.45',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Crane truck 3 Ton, Winch 5 Ton *)',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '539102.45',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Crane truck 5 Ton, Winch 8 Ton *)',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '539102.45',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Crane truck 8 Ton, Winch 10 Ton *)',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '539102.45',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Crawler Crane 10 Ton + ladder 14 ton',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '539102.45',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Crawler Crane 20 Ton + ladder 14 ton',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '539102.45',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Driver Hammer 1 Ton',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '132527.17',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Driver Hammer 2 Ton',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '132527.17',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Driver Hammer 3 Ton',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '132527.17',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Dump Truck',
-    'kode' => 'E08',
-    'satuan' => 'Jam',
-    'besaran' => '229571.18',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Dump Truck 1',
-    'kode' => 'E08',
-    'satuan' => 'Jam',
-    'besaran' => '229571.18',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Dump Truck 2',
-    'kode' => 'E08',
-    'satuan' => 'Jam',
-    'besaran' => '229571.18',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Dump Truck 3',
-    'kode' => 'E08',
-    'satuan' => 'Jam',
-    'besaran' => '229571.18',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Excavator  (Std.);  Bucket 0,55 m3; 95 HP *)',
-    'kode' => 'E10',
-    'satuan' => 'Jam',
-    'besaran' => '394617.93',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Genset',
-    'kode' => 'E12',
-    'satuan' => 'Jam',
-    'besaran' => '315266.70',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mesin bor',
-    'kode' => 'E71',
-    'satuan' => 'Jam',
-    'besaran' => '100000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mesin Las listrik 150 A',
-    'kode' => 'E58',
-    'satuan' => 'Jam',
-    'besaran' => '127846.26',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mesin Las listrik 250 A',
-    'kode' => 'E58',
-    'satuan' => 'Jam',
-    'besaran' => '127846.26',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mesin Las listrik 350 A',
-    'kode' => 'E58',
-    'satuan' => 'Jam',
-    'besaran' => '127846.26',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mesin Las listrik 500 A',
-    'kode' => 'E58',
-    'satuan' => 'Jam',
-    'besaran' => '127846.26',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mobil sedot lumpur kapasitas 3 m3',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '229571.18',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'P. Tyre Roller',
-    'kode' => 'E18',
-    'satuan' => 'Jam',
-    'besaran' => '478124.71',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Pressure Grout machine 30 KW; 60 - 75 bar (D)',
-    'kode' => null,
-    'satuan' => 'Jam',
-    'besaran' => '157118.99',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa crane kapasitas 1 ton',
-    'kode' => 'E07',
-    'satuan' => 'Jam',
-    'besaran' => '539102.45',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Tandem Roller',
-    'kode' => 'E17',
-    'satuan' => 'Jam',
-    'besaran' => '37819254',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Three Wheel Roller',
-    'kode' => 'E16',
-    'satuan' => 'Jam',
-    'besaran' => '198152.67',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Wheel Loader',
-    'kode' => 'E15',
-    'satuan' => 'Jam',
-    'besaran' => '472750.77',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Casing Pipa Baja Diameter 30 cm',
-    'kode' => null,
-    'satuan' => 'm1',
-    'besaran' => '10000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Casing Pipa Baja Diameter 40 cm',
-    'kode' => null,
-    'satuan' => 'm1',
-    'besaran' => '10000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Casing Pipa Baja Diameter 50 cm',
-    'kode' => null,
-    'satuan' => 'm1',
-    'besaran' => '10000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Casing PVC Diameter 20 cm',
-    'kode' => null,
-    'satuan' => 'm1',
-    'besaran' => '10000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa Lahan',
-    'kode' => null,
-    'satuan' => 'm2',
-    'besaran' => '50000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Sewa crane',
-    'kode' => null,
-    'satuan' => 'Unit/Hari',
-    'besaran' => '3773717.15',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-satuanhargaperalatan::create([
-    'uraian' => 'Mesin Poles',
-    'kode' => null,
-    'satuan' => 'Unit/Hari',
-    'besaran' => '150000.00',
-    // 'keterangan' => 'AHSP Kab Blora Tahun 2025',
-]);
-
-
-// garut
-
-//======================== ===================================================================================
-// PAKET KONSULTASI TENDER MAS JAKI BLORA
-hspdivisi::create([
+        jenispengajuanbantek::create([
+            'id'  => 1,
+            'jenispengajuan'  => 'BANTUAN ASISTENSI PERENCANAAN',
+        ]);
+
+        jenispengajuanbantek::create([
+            'id'  => 2,
+            'jenispengajuan'  => 'PENELITI KONTRAK',
+        ]);
+
+        jenispengajuanbantek::create([
+            'id'  => 3,
+            'jenispengajuan'  => 'PERHITUNGAN PENYUSUTAN',
+        ]);
+
+        jenispengajuanbantek::create([
+            'id'  => 4,
+            'jenispengajuan'  => 'PERHITUNGAN TINGKAT KERUSAKAN',
+        ]);
+
+        jenispengajuanbantek::create([
+            'id'  => 5,
+            'jenispengajuan'  => 'PERHITUNGAN BIAYA PEMELIHARAAN BGN',
+        ]);
+
+        jenispengajuanbantek::create([
+            'id'  => 6,
+            'jenispengajuan'  => 'PERHITUNGAN BIAYA KONSTRUKSI PEMBANGUNAN BGN',
+        ]);
+
+        jenispengajuanbantek::create([
+            'id'  => 7,
+            'jenispengajuan'  => 'PENGELOLA TEKNIS',
+        ]);
+
+        jenispengajuanbantek::create([
+            'id'  => 8,
+            'jenispengajuan'  => 'PENDAMPINGAN SERAH TERIMA PEKERJAAN',
+        ]);
+
+        jenispengajuanbantek::create([
+            'id'  => 9,
+            'jenispengajuan'  => 'PERMINTAAN PERSONIL TIM TEKNIS',
+        ]);
+
+
+        // MENU KEDINASAN
+
+        statusadmin::create([
+            'id'  => 1,
+            'status' => 'super_admin',
+        ]);
+
+        statusadmin::create([
+            'id'  => 2,
+            'status' => 'admin',
+        ]);
+
+        statusadmin::create([
+            'id'  => 3,
+            'status' => 'pemohon',
+        ]);
+
+        statusadmin::create([
+            'id'  => 4,
+            'status' => 'konsultanbantek',
+        ]);
+
+        statusadmin::create([
+            'id'  => 5,
+            'status' => 'konsultanbangunan',
+        ]);
+
+        statusadmin::create([
+            'id'  => 6,
+            'status' => 'dinas',
+        ]);
+
+        statusadmin::create([
+            'id'  => 7,
+            'status' => 'pemohonbantek',
+        ]);
+
+
+        // AKUN USERS ---------
+
+
+// ---------------------------
+
+        kedinasan::create([
+            'id'  => 1,
+            'kedinasan' => 'Dinas Pendidikan',
+        ]);
+
+        kodelokasibangunangedung::create([
+            'id'  => 1,
+            'kedinasan_id' => 1, // satuan kedinasan
+            'kodelokasi' => '010101',
+            'bidang' => null,
+            'subbidang' => null,
+        ]);
+
+        // MENU DATA KE 3 PENDATAAN BANGUNAN GEDUNG
+        bgkartuinventarisbangunan::create([
+            'id' => 1,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.1969-1.3.3.01.01.10.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'JL. LEDOK KM. 1,5 RT. 09 RW. 01 DS. SAMBONG',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => null,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 281320000.00,
+            'keterangan' => '12450.1289.C / GEDUNG 2',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+        bgkartuinventarisbangunan::create([
+            'id' => 2,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.1969-1.3.3.01.01.10.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'JL. LEDOK KM. 1,5 RT. 09 RW. 01 DS. SAMBONG',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => null,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 255210000.00,
+            'keterangan' => '12451.1289.C / GEDUNG 1',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 3,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2005-1.3.3.01.01.08.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 60,
+            'lokasi' => 'JL. LEDOK KM. 1,5 RT. 09 RW. 01 DS. SAMBONG',
+            'tanggal' => null,
+            'nomor' => 2005,
+            'luasbangunan' => null,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 85000000.00,
+            'keterangan' => '12449.1289.C / MUSOLLA',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 4,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Dk. Dawe Rt. 02/Rw. 02 Ds. Sendang Todanan',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => null,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 87350000.00,
+            'keterangan' => '12436.1289.C / GEDUNG 1',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 5,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 8,
+            'lokasi' => 'Dk. Dawe Rt. 02/Rw. 02 Ds. Sendang Todanan',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => null,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 5000000.00,
+            'keterangan' => '12440.1289.C / Kamar Mandi/Toilet/WC',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+        bgkartuinventarisbangunan::create([
+            'id' => 6,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000003',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 6,
+            'lokasi' => 'Jl. A.Yani No 42 Blora',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 6,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 45271300.00, // koma diganti titik dan jadi float
+            'keterangan' => '5315259.477.C / Bangunan Pos Jaga selatan',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 7,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000004',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 5,
+            'lokasi' => 'Jln.A.Yani No.42 Blora',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 5,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 38800000.00,
+            'keterangan' => '5315260.477.C / Bangunan Pos Jaga utara',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 8,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.01.005',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 12,
+            'lokasi' => 'JL LEDOK KM. 1,5 RT. 09 RW. 01 KEC. SAMBONG',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 48,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 5300000.00,
+            'keterangan' => '12454.1289.C / KAMAR MANDI DAN WC',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 9,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.10.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Dk. Dawe Rt. 02/Rw. 02 Ds. Sendang Todanan',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 144,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 77250000.00,
+            'keterangan' => '12437.1289.C / GEDUNG 2',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 10,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.10.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 63,
+            'lokasi' => 'Dk. Dawe Rt. 02/Rw. 02 Ds. Sendang Todanan',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 63,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 107107000.00,
+            'keterangan' => '12441.1289.C / GEDUNG 3',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 11,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.32.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 15,
+            'lokasi' => 'Dk. Dawe Rt. 02/Rw. 02 Ds. Sendang Todanan',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 15,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 3400000.00,
+            'keterangan' => '12438.1289.C / Parkir',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 12,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Dk. Dawe Rt. 02/Rw.02 Ds. Sendang Todanan',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 50,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 171438000.00,
+            'keterangan' => '12439.1289.C / Pagar',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 13,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.04.01.04.004',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'JL LEDOK KM. 1,5 RT. 09 RW. 01  KEC. SAMBONG',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 30,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 6400000.00,
+            'keterangan' => '12453.1289.C / PAGAR HALAMAN & GAPURA',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 14,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2006-1.3.3.04.01.04.004',
+            'registrasi' => '000006',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 60,
+            'lokasi' => 'Jl.Bhayangkara Timur No.8 Blora',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 60,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 10000000.00,
+            'keterangan' => '8973257.477.C / PAGAR',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 15,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2007-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 50,
+            'lokasi' => 'JL. LEDOK KM. 1,5 RT. 09 RW. 01 KEC. SAMBONG',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 350,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 14200000.00,
+            'keterangan' => '12452.1289.C / PERKERASAN',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 16,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2007-1.3.3.01.01.10.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 168,
+            'lokasi' => 'Jl.bhayangkara timur no.8',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 168,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 150000000.00,
+            'keterangan' => '8973258.477.C / ruang kelas 3, Kantor dan Kelas 2',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 17,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2007-1.3.3.01.01.10.001',
+            'registrasi' => '000003',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 210,
+            'lokasi' => 'Jl.bhayangkara Timur No.8 Blora, RT.5/RW.3, Dk.Nglawiyan, Ds./Kel. KARANGJATI',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 210,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 200000000.00,
+            'keterangan' => '8973259.477.C / Ruang Kelas 1, kelas 4, kelas 6, kelas 5',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 18,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2009-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 8,
+            'lokasi' => 'JL.BHAYANGKARA TIMUR NO.8 BLORA',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 8,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 8000000.00,
+            'keterangan' => '8973256.477.C / WC',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 19,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2010-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jln.A.Yani no.42 BLORA',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 36,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 69144700.00,
+            'keterangan' => '5315262.477.C / Bangunan Gedung Sekretariat Dikpora',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 20,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2010-1.3.3.01.01.01.001',
+            'registrasi' => '000003',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 25,
+            'lokasi' => 'Jl.bhayangkara Timur No.8 Blora, RT.5/RW.3, Dk.Nglawiyan, Ds./Kel. KARANGJATI',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 25,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 15000000.00,
+            'keterangan' => '8973255.477.C / PERKERASAN',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 21,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2011-1.3.3.01.01.16.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'JL. LEDOK KM 1,5 RT. 09 RW. 01 DS. SAMBONG',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 63,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 183026800.00,
+            'keterangan' => '12448.1289.C / GEDUNG PERPUSTAKAAN',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 22,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2012-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 450,
+            'lokasi' => 'Jln. A.Yani No.42 BLORA',
+            'tanggal' => null,
+            'nomor' => 'SPK No.007/SPK/02.42/APBD 2012/RG Kantor/2012',
+            'luasbangunan' => 450,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 190606234.00,
+            'keterangan' => '5315263.477.C / Perkerasan',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 23,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2013-1.3.3.01.01.01.001',
+            'registrasi' => '000003',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 5,
+            'lokasi' => 'Jl.bhayangkara Timur No.8 Blora, RT.5/RW.3, Dk.Nglawiyan, Ds./Kel. KARANGJATI',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 5,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 1147500.00,
+            'keterangan' => '8973254.477.C / perkerasan',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 24,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2014-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 450,
+            'lokasi' => 'Jl. A.Yani No 42 Blora',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 450,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 129889173.00,
+            'keterangan' => '5315235.477.C / Perkerasan Kantor Dindikpora',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 25,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2015-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 475,
+            'lokasi' => 'Jl. Ledok KM.1,5 RT.009 RW.001, RT.9/RW.1, Dk.Sambong, Ds./Kel. Sambong',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 475,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 51961843.00,
+            'keterangan' => '12446.1289.C / Paving',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 26,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2015-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. Ledok KM.1,5 RT.009 RW.001, RT.9/RW.1, Dk.Sambong, Ds./Kel. Sambong',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 27,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 43026338.00,
+            'keterangan' => '12447.1289.C / Pagar',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 27,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2015-1.3.3.04.01.04.004',
+            'registrasi' => '000003',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 60,
+            'lokasi' => 'Jl.bhayangkara Timur No.8 Blora, RT.5/RW.3, Dk.Nglawiyan, Ds./Kel. KARANGJATI',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 60,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 96293826.00,
+            'keterangan' => '8973253.477.C / Pagar',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 28,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2017-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jln. A.Yani No.42 BLORA',
+            'tanggal' => '2017-12-12',
+            'nomor' => '-',
+            'luasbangunan' => 6000,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 4744579194.00,
+            'keterangan' => '8972037.477.C / GEDUNG A (Gedung Sekretariat+PTK)',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 29,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2017-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jln. A.Yani No.42 BLORA',
+            'tanggal' => '2017-12-12',
+            'nomor' => '-',
+            'luasbangunan' => 6000,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 2076466600.00,
+            'keterangan' => '8972038.477.C / GEDUNG C (Gedung Sarpras)',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 30,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2018-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. A.Yani No 42 Blora',
+            'tanggal' => '2018-12-30',
+            'nomor' => null,
+            'luasbangunan' => 6000,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 4327422498.00,
+            'keterangan' => '8972575.477.C / Gedung B (Gedung Dikdas+Paud/Dikmas)',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 31,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2018-1.3.3.01.01.08.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. A.Yani No 42 Blora',
+            'tanggal' => '2018-12-30',
+            'nomor' => null,
+            'luasbangunan' => 6000,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 658829059.00,
+            'keterangan' => '8972574.477.C / Gedung E (Musholla Al Ustadz)',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 32,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2018-1.3.3.01.01.10.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. A.Yani No 42 Blora',
+            'tanggal' => '2018-12-30',
+            'nomor' => null,
+            'luasbangunan' => 6000,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 1606025766.00,
+            'keterangan' => '8972573.477.C / Gedung D (Gedung Parkir dan Ruang Penunjang)',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 33,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2018-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. A.Yani No 42 Blora',
+            'tanggal' => '2018-12-30',
+            'nomor' => null,
+            'luasbangunan' => 6000,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 411868500.00,
+            'keterangan' => '8972577.477.C / Pagar (2018)',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 34,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN PARKIR.BANGUNAN PARKIR TERBUKA PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2019-1.3.3.01.01.33.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. A.Yani No 42 Blora',
+            'tanggal' => '2019-12-31',
+            'nomor' => '-',
+            'luasbangunan' => 6000,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 149180000.00,
+            'keterangan' => '1060.477.C / Kanopi parkir kantor Dinas Pendidikan',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 35,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'TAMAN.TAMAN',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2019-1.3.3.01.01.36.003',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. A.Yani No 42 Blora',
+            'tanggal' => '2019-12-31',
+            'nomor' => '-',
+            'luasbangunan' => 6000,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 101122880.00,
+            'keterangan' => '1053.477.C / Taman',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 36,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'DINAS PENDIDIKAN',
+            'namabangunan' => 'BANGUNAN MENARA TELEKOMUNIKASI.BANGUNAN MENARA TELEKOMUNIKASI',
+            'kodebarang' => '12.01.33.16.010101.00000.00000.2020-1.3.3.03.01.03.006',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. A.Yani No 42 Blora',
+            'tanggal' => '2020-12-16',
+            'nomor' => null,
+            'luasbangunan' => 6,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 42130000.00,
+            'keterangan' => '271.477.C / Tower Pembelajaran Jarak Jauh 2020',
+            'nomorlanjutan' => '010101.00000.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 37,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Banjarejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 71,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 2000000.00,
+            'keterangan' => '3325943.577.C / Perkerasan',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 38,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 35,
+            'lokasi' => 'Dukuh Pruntusan, RT.3/RW.1, Dk.PRUNTUSAN, Ds./Kel. Kebonrejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 35,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 4230000.00,
+            'keterangan' => '8951105.577.C / Gedung Kantor',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 39,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR SEMI PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2006-1.3.3.01.01.01.002',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl.Raya Banjarejo, Mojowetan',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 214,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 327025500.00,
+            'keterangan' => '3325941.577.C / Bangunan Gedung Kantor Semi Permanen',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 40,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2006-1.3.3.01.01.10.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 24,
+            'lokasi' => 'Dukuh Pruntusan, RT.3/RW.1, Dk.PRUNTUSAN, Ds./Kel. Kebonrejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 24,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 11900000.00,
+            'keterangan' => '8951101.577.C / Rumah Dinas',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 41,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2006-1.3.3.01.01.10.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 28,
+            'lokasi' => 'Dukuh Pruntusan, RT.3/RW.1, Dk.PRUNTUSAN, Ds./Kel. Kebonrejo',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 28,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 16800000.00,
+            'keterangan' => '8951103.577.C / Kamar Mandi/WC',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 42,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2006-1.3.3.01.01.10.001',
+            'registrasi' => '000003',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 168,
+            'lokasi' => 'Dukuh Pruntusan, RT.3/RW.1, Dk.PRUNTUSAN, Ds./Kel. Kebonrejo',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 168,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 12520000.00,
+            'keterangan' => '8951104.577.C / Ruang Kelas',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 43,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2006-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl.Raya Banjarejo, Mojowetan',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 41,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 1000000.00,
+            'keterangan' => '3325942.577.C / Pagar',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 44,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2006-1.3.3.04.01.04.004',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 803,
+            'lokasi' => 'Dukuh Pruntusan, RT.3/RW.1, Dk.PRUNTUSAN, Ds./Kel. Kebonrejo',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 803,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 7400000.00,
+            'keterangan' => '8951102.577.C / Pagar',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 45,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2010-1.3.3.01.01.10.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'ds.kebonrejo',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 64,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'MUTASI',
+            'harga' => 262933000.00,
+            'keterangan' => '8951098.577.C / ruang kelas',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 46,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2012-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 91,
+            'lokasi' => 'Dukuh Pruntusan, RT.3/RW.1, Dk.PRUNTUSAN, Ds./Kel. Kebonrejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 91,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 2800000.00,
+            'keterangan' => '8951106.577.C / Paping',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 47,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2012-1.3.3.01.01.10.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Dukuh Pruntusan, RT.3/RW.1, Dk.PRUNTUSAN, Ds./Kel. Kebonrejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 56,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'MUTASI',
+            'harga' => 245978000.00,
+            'keterangan' => '8951100.577.C / gedung sekolah',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 48,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2012-1.3.3.01.01.16.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'ds.kebonrejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 56,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'MUTASI',
+            'harga' => 219851000.00,
+            'keterangan' => '8951099.577.C / gedung perpus',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 49,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2013-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 64,
+            'lokasi' => 'Dukuh Pruntusan, RT.3/RW.1, Dk.PRUNTUSAN, Ds./Kel. Kebonrejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 64,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 937500.00,
+            'keterangan' => '8951107.577.C / Gedung II',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 50,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2013-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 56,
+            'lokasi' => 'Dukuh Pruntusan, RT.3/RW.1, Dk.PRUNTUSAN, Ds./Kel. Kebonrejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 56,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 937500.00,
+            'keterangan' => '8951109.577.C / GEDUNG I',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 51,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BANJAREJO',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00003.00000.2013-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 803,
+            'lokasi' => 'Kebonrejo',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 803,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 1998000.00,
+            'keterangan' => '8951108.577.C / Pagar',
+            'nomorlanjutan' => '010101.00003.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 52,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BLORA',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00001.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. Maluku no. 39',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 1027,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 73800000.00,
+            'keterangan' => '3934659.486.C / kantor UPTD TK/SD Kec.Blora',
+            'nomorlanjutan' => '010101.00001.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 53,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BLORA',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00001.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'jl. Maluku no. 39',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 1027,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 53900000.00,
+            'keterangan' => '3934660.486.C / aula',
+            'nomorlanjutan' => '010101.00001.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 54,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BLORA',
+            'namabangunan' => 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR',
+            'kodebarang' => '12.01.33.16.010101.00001.00000.2006-1.3.3.01.01.32.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. maluku no. 39',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 1027,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 24600000.00,
+            'keterangan' => '3934661.486.C / tempat parkir',
+            'nomorlanjutan' => '010101.00001.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 55,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BLORA',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00001.00000.2010-1.3.3.01.01.08.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl. maluku no.39',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 1027,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 80000000.00,
+            'keterangan' => '3934662.486.C / mushola',
+            'nomorlanjutan' => '010101.00001.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 56,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BOGOREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00005.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Bogorejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 79,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 494586700.00,
+            'keterangan' => '3448774.664.C / BANGUNAN GEDUNG KANTOR',
+            'nomorlanjutan' => '010101.00005.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 57,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BOGOREJO',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00005.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 170,
+            'lokasi' => 'Bogorejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 175,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 353752000.00,
+            'keterangan' => '3448775.664.C / BANGUNAN GEDUNG PERTEMUAN',
+            'nomorlanjutan' => '010101.00005.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 58,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. BOGOREJO',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00005.00000.2018-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Bogorejo',
+            'tanggal' => '2018-12-30',
+            'nomor' => null,
+            'luasbangunan' => 60,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 394028000.00,
+            'keterangan' => '8951074.664.C / Pagar (2018)',
+            'nomorlanjutan' => '010101.00005.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 59,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JAPAH',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00009.00000.2014-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Japah',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 120,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 600242200.00,
+            'keterangan' => '4376326.816.C / Pembangunan Gedung Kantor',
+            'nomorlanjutan' => '010101.00009.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 60,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JATI',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00016.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'Baik',
+            'bertingkat' => 'Bertingkat',
+            'beton' => 'Beton',
+            'luaslantai' => 49,
+            'lokasi' => 'Ds.Doplang, Kec. Jati, Kab. Blora',
+            'tanggal' => '2006-12-30',
+            'nomor' => '--',
+            'luasbangunan' => 390,
+            'statustanah' => 'Hak Pakai',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 444971500.00,
+            'keterangan' => 'Gedung kantor UPTD TK/SD',
+            'nomorlanjutan' => '010101.00016.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 61,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JATI',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00016.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'Baik',
+            'bertingkat' => 'Tidak Bertingkat',
+            'beton' => 'Beton',
+            'luaslantai' => 144,
+            'lokasi' => 'Desa Doplang',
+            'tanggal' => '2019-12-31',
+            'nomor' => null,
+            'luasbangunan' => 144,
+            'statustanah' => 'Hak Milik',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 740243000.00,
+            'keterangan' => 'Gedung Kantor',
+            'nomorlanjutan' => '010101.00016.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 62,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JATI',
+            'namabangunan' => 'BANGUNAN GUDANG.BANGUNAN GUDANG TERTUTUP PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00016.00000.2006-1.3.3.01.01.02.001',
+            'registrasi' => '000001',
+            'kondisi' => 'Baik',
+            'bertingkat' => 'Tidak Bertingkat',
+            'beton' => 'Beton',
+            'luaslantai' => 49,
+            'lokasi' => 'Ds.Doplang, Kec. Jati, Kab. Blora',
+            'tanggal' => '2006-12-30',
+            'nomor' => null,
+            'luasbangunan' => 380,
+            'statustanah' => 'Hak Pakai',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 15000000.00,
+            'keterangan' => 'Gudang',
+            'nomorlanjutan' => '010101.00016.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 63,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JATI',
+            'namabangunan' => 'BANGUNAN GUDANG.BANGUNAN GUDANG TERTUTUP PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00016.00000.2006-1.3.3.01.01.02.001',
+            'registrasi' => '000002',
+            'kondisi' => 'Baik',
+            'bertingkat' => 'Tidak Bertingkat',
+            'beton' => 'Beton',
+            'luaslantai' => 24,
+            'lokasi' => 'Desa Doplang',
+            'tanggal' => '2019-12-31',
+            'nomor' => null,
+            'luasbangunan' => 24,
+            'statustanah' => 'Hak Milik',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 3610000.00,
+            'keterangan' => 'Gudang',
+            'nomorlanjutan' => '010101.00016.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 64,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JATI',
+            'namabangunan' => 'BANGUNAN GUDANG.BANGUNAN GUDANG TERBUKA PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00016.00000.2006-1.3.3.01.01.02.004',
+            'registrasi' => '000001',
+            'kondisi' => 'Baik',
+            'bertingkat' => 'Tidak Bertingkat',
+            'beton' => 'Beton',
+            'luaslantai' => 100,
+            'lokasi' => 'Desa doplang',
+            'tanggal' => '2019-12-31',
+            'nomor' => null,
+            'luasbangunan' => 100,
+            'statustanah' => 'Hak Milik',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 389015800.00,
+            'keterangan' => 'Gedung Pertemuan',
+            'nomorlanjutan' => '010101.00016.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 65,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JATI',
+            'namabangunan' => 'BANGUNAN GEDUNG PERTOKOAN/KOPERASI/PASAR.GEDUNG PERTOKOAN/KOPERASI/PASAR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00016.00000.2006-1.3.3.01.01.12.001',
+            'registrasi' => '000001',
+            'kondisi' => 'Baik',
+            'bertingkat' => 'Tidak Bertingkat',
+            'beton' => 'Beton',
+            'luaslantai' => 49,
+            'lokasi' => 'Ds. Doplang, Kec. Jati, Kab. Blora',
+            'tanggal' => '2006-12-30',
+            'nomor' => null,
+            'luasbangunan' => 380,
+            'statustanah' => 'Hak Pakai',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 3000000.00,
+            'keterangan' => 'Gedung Koperasi PGRI',
+            'nomorlanjutan' => '010101.00016.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 66,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JATI',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00016.00000.2012-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'Baik',
+            'bertingkat' => 'Tidak Bertingkat',
+            'beton' => 'Beton',
+            'luaslantai' => 49,
+            'lokasi' => 'Desa doplang',
+            'tanggal' => '2019-12-31',
+            'nomor' => '--',
+            'luasbangunan' => 54,
+            'statustanah' => 'Hak Milik',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 175810000.00,
+            'keterangan' => 'Gedung Kantor /gedung e KTP',
+            'nomorlanjutan' => '010101.00016.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 67,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.1986-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jepon',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 49,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 7500000.00,
+            'keterangan' => '2886142.618.C / Kamar Mandi/Toilet/WC',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 68,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.1996-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 103,
+            'lokasi' => 'Jln.Damaran Km.05 Jepon',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 103,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'HIBAH',
+            'harga' => 11855000.00,
+            'keterangan' => '2886143.618.C / pagar',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 69,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.2003-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 63,
+            'lokasi' => 'Jepon',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 63,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 9698000.00,
+            'keterangan' => '2886144.618.C / perkerasan',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 70,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.2003-1.3.3.01.01.08.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jl.Damaran Km.05 Jepon',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 105,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'HIBAH',
+            'harga' => 76100000.00,
+            'keterangan' => '2886140.618.C / Mushola',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 71,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PERTEMUAN.BANGUNAN GEDUNG PERTEMUAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.2003-1.3.3.01.01.09.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jln.Damaran Km.05 Jepon',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 203,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 117860600.00,
+            'keterangan' => '2886141.618.C / Bangunan Gedung Pertemuan Permanen',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 72,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 12,
+            'lokasi' => 'JL.JATIROGO, RT.4/RW.3, Dk.NULL, Ds./Kel. jepon',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 45,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 2200000.00,
+            'keterangan' => '8951078.618.C / Km.WC',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 73,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 67,
+            'lokasi' => 'JL.JATIROGO, RT.4/RW.3, Dk.NULL, Ds./Kel. jepon',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 49,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 37900000.00,
+            'keterangan' => '8951080.618.C / BANGUNAN 1',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 74,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR SEMI PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.2006-1.3.3.01.01.01.002',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 78,
+            'lokasi' => 'JL.JATIROGO, RT.4/RW.3, Dk.NULL, Ds./Kel. jepon',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 36,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 6400000.00,
+            'keterangan' => '8951079.618.C / BANGUNAN 2',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 75,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.2006-1.3.3.01.01.10.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 94,
+            'lokasi' => 'Jl. Jatirogo Km 1',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 234,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 44500000.00,
+            'keterangan' => '8951076.618.C / BANGUNAN 3',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 76,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.2006-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 22,
+            'lokasi' => 'JL.JATIROGO, RT.4/RW.3, Dk.NULL, Ds./Kel. jepon',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 22,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 143024000.00,
+            'keterangan' => '8951077.618.C / PAGAR',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 77,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JEPON',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00004.00000.2014-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 70,
+            'lokasi' => 'Jepon',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 70,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 213093000.00,
+            'keterangan' => '2886139.618.C / Pembangunan Gedung Kantor',
+            'nomorlanjutan' => '010101.00004.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 78,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JIKEN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00013.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 6,
+            'lokasi' => 'Jiken',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 15,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 1987000.00,
+            'keterangan' => '3590245.942.C / Perkerasan',
+            'nomorlanjutan' => '010101.00013.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 79,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JIKEN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00013.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 225,
+            'lokasi' => 'Jiken',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 251,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 517345500.00,
+            'keterangan' => '3590246.942.C / Bangunan Gedung kantor permanen',
+            'nomorlanjutan' => '010101.00013.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 80,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JIKEN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00013.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000003',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 100,
+            'lokasi' => 'Jiken',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 122,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 198790000.00,
+            'keterangan' => '3590248.942.C / BANGUNAN AULA',
+            'nomorlanjutan' => '010101.00013.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 81,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JIKEN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00013.00000.2006-1.3.3.01.01.08.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 30,
+            'lokasi' => 'Jiken',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 40,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 77700000.00,
+            'keterangan' => '3590247.942.C / Mushola',
+            'nomorlanjutan' => '010101.00013.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 82,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JIKEN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00013.00000.2006-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 28,
+            'lokasi' => 'Jiken',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 28,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 21340000.00,
+            'keterangan' => '3590244.942.C / PAGAR',
+            'nomorlanjutan' => '010101.00013.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 83,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. JIKEN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR',
+            'kodebarang' => '12.01.33.16.010101.00013.00000.2013-1.3.3.01.01.01.005',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 32,
+            'lokasi' => 'Jiken',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 32,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 19500000.00,
+            'keterangan' => '3590249.942.C / KANOPI',
+            'nomorlanjutan' => '010101.00013.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 84,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KEDUNGTUBAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00011.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 105,
+            'lokasi' => 'Jl. Cepu-Randublatung Km.12',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 88,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 47300000.00,
+            'keterangan' => '4299765.878.C / Gedung Kantor',
+            'nomorlanjutan' => '010101.00011.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 85,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KEDUNGTUBAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00011.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Kedungtuban',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 88,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 254038200.00,
+            'keterangan' => '4299767.878.C / Gedung Kantor',
+            'nomorlanjutan' => '010101.00011.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 86,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KEDUNGTUBAN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00011.00000.2006-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 2,
+            'lokasi' => 'Jl. Cepu-Randublatung Km. 12',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 2,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 2964000.00,
+            'keterangan' => '4299766.878.C / Pagar',
+            'nomorlanjutan' => '010101.00011.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 87,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KEDUNGTUBAN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00011.00000.2006-1.3.3.04.01.04.004',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 2,
+            'lokasi' => 'Kedungtuban',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 2,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 13000000.00,
+            'keterangan' => '4299768.878.C / Pagar',
+            'nomorlanjutan' => '010101.00011.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 88,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KRADENAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00015.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Jalan Randublatung No. 5 Mendenrejo',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 60,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 33400000.00,
+            'keterangan' => '3043996.987.C / Gedung Kantor',
+            'nomorlanjutan' => '010101.00015.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 89,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KRADENAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00015.00000.2013-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'Desa Mendenrejo, Kec. Kradenan',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 72,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 283957650.00,
+            'keterangan' => '3043997.987.C / Gedung Kantor',
+            'nomorlanjutan' => '010101.00015.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 90,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KRADENAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00015.00000.2014-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 82,
+            'lokasi' => 'Kradenan',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 82,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'HIBAH',
+            'harga' => 56500000.00,
+            'keterangan' => '3043998.987.C / GEDUNG KANTOR',
+            'nomorlanjutan' => '010101.00015.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 91,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KRADENAN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00015.00000.2016-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Kradenan',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 60,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 89497000.00,
+            'keterangan' => '6059699.987.C / Pagar Gapura',
+            'nomorlanjutan' => '010101.00015.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 92,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KRADENAN',
+            'namabangunan' => 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR',
+            'kodebarang' => '12.01.33.16.010101.00015.00000.2021-1.3.3.01.01.32.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 49,
+            'lokasi' => 'Kantor Korwil Kradenan',
+            'tanggal' => '2021-12-31',
+            'nomor' => '-',
+            'luasbangunan' => 60,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 9294330.00,
+            'keterangan' => '8951076.987.C / Pembangunan Tempat Parkir',
+            'nomorlanjutan' => '010101.00015.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 93,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KUNDURAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00007.00000.2013-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 80,
+            'lokasi' => 'Jl. Raya Kunduran',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 80,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 199746000.00,
+            'keterangan' => '3686934.726.C / Bangunan Gedung',
+            'nomorlanjutan' => '010101.00007.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 94,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KUNDURAN',
+            'namabangunan' => 'PAGAR.PAGAR',
+            'kodebarang' => '12.01.33.16.010101.00007.00000.2013-1.3.3.04.01.04.004',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 85,
+            'lokasi' => 'Jl. Raya Kunduran',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 85,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 50000000.00,
+            'keterangan' => '3686935.726.C / Pagar',
+            'nomorlanjutan' => '010101.00007.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 95,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KUNDURAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00007.00000.2014-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 120,
+            'lokasi' => 'Kunduran',
+            'tanggal' => null,
+            'nomor' => null,
+            'luasbangunan' => 120,
+            'statustanah' => null,
+            'nomorkodetanah' => null,
+            'asalusul' => 'PEMBELIAN',
+            'harga' => 312951000.00,
+            'keterangan' => '3686932.726.C / Pembangunan Gedung Kantor',
+            'nomorlanjutan' => '010101.00007.00000',
+        ]);
+
+
+        bgkartuinventarisbangunan::create([
+            'id' => 96,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. KUNDURAN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00007.00000.2015-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 16,
+            'lokasi' => 'Kunduran',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 16,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 12000000.00,
+            'keterangan' => '3686936.726.C / KM/WC Baru',
+            'nomorlanjutan' => '010101.00007.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 97,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. NGAWEN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00006.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'BETON',
+            'luaslantai' => 49,
+            'lokasi' => 'JL. RAYA NGAWEN - BLORA',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 1361,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 37600000.00,
+            'keterangan' => '4562932.687.C / Bangunan Gedung Kantor',
+            'nomorlanjutan' => '010101.00006.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 98,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. NGAWEN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00006.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000002',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 8,
+            'lokasi' => 'JL. RAYA NGAWEN - BLORA',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 8,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 3500000.00,
+            'keterangan' => '4562937.687.C / KAMAR MANDI/WC',
+            'nomorlanjutan' => '010101.00006.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 99,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. NGAWEN',
+            'namabangunan' => 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00006.00000.2006-1.3.3.01.01.01.001',
+            'registrasi' => '000003',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 1200,
+            'lokasi' => 'JL. RAYA NGAWEN - BLORA',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 1245,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 7188000.00,
+            'keterangan' => '4562939.687.C / PAVING BLOCK',
+            'nomorlanjutan' => '010101.00006.00000',
+        ]);
+
+        bgkartuinventarisbangunan::create([
+            'id' => 100,
+            'kedinasan_id' => 1,
+            'kodelokasibangunangedung_id' => 1,
+            'namabangunandinas' => 'KANTOR CAB. DINDIK KEC. NGAWEN',
+            'namabangunan' => 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN',
+            'kodebarang' => '12.01.33.16.010101.00006.00000.2006-1.3.3.01.01.08.001',
+            'registrasi' => '000001',
+            'kondisi' => 'BAIK',
+            'bertingkat' => 'TIDAK BERTINGKAT',
+            'beton' => 'TIDAK',
+            'luaslantai' => 36,
+            'lokasi' => 'JL. RAYA NGAWEN - BLORA',
+            'tanggal' => null,
+            'nomor' => '--',
+            'luasbangunan' => 38,
+            'statustanah' => '--',
+            'nomorkodetanah' => null,
+            'asalusul' => 'INVENTARIS',
+            'harga' => 20000000.00,
+            'keterangan' => '4562935.687.C / MUSHOLA',
+            'nomorlanjutan' => '010101.00006.00000',
+        ]);
+
+        fungsibangunan::create([
+            'id'  => 1,
+            'fungsibangunan'  => 'Fungsi Hunian',
+        ]);
+
+        fungsibangunan::create([
+            'id'  => 2,
+            'fungsibangunan'  => 'Fungsi Keagamaan',
+        ]);
+
+        fungsibangunan::create([
+            'id'  => 3,
+            'fungsibangunan'  => 'Fungsi Usaha',
+        ]);
+
+        fungsibangunan::create([
+            'id'  => 4,
+            'fungsibangunan'  => 'Fungsi Sosial Dan Budaya',
+        ]);
+
+        fungsibangunan::create([
+            'id'  => 5,
+            'fungsibangunan'  => 'Fungsi Khusus',
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 1,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 1,
+            'profiltanahbangunangedung_id' => 1,
+            'klasifikasibangunangedung_id' => 1,
+            'datastrukturbangunangedung_id' => 1,
+            'statusbangunangedung_id' => 1,
+            'luastanah' => '2350',
+            'namabangunan' => 'Gedung Kantor',
+            'alamatbangunan' => 'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '456',
+            'luastotallantaidasargedung' => '912',
+            'ketinggianbangunan' => '9',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.974108',
+            'koordinatbangunan2' => '111.415106',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 2,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 2,
+            'profiltanahbangunangedung_id' => 2,
+            'klasifikasibangunangedung_id' => 2,
+            'datastrukturbangunangedung_id' => 2,
+            'statusbangunangedung_id' => 2,
+            'luastanah' => '2350',
+            'namabangunan' => 'Gedung Arsip dan Mushola',
+            'alamatbangunan' => 'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '166.92',
+            'luastotallantaidasargedung' => '333.84',
+            'ketinggianbangunan' => '7',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.974108',
+            'koordinatbangunan2' => '111.415106',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 3,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 3,
+            'profiltanahbangunangedung_id' => 3,
+            'klasifikasibangunangedung_id' => 3,
+            'datastrukturbangunangedung_id' => 3,
+            'statusbangunangedung_id' => 3,
+            'luastanah' => '2350',
+            'namabangunan' => 'Aula',
+            'alamatbangunan' => 'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '165.75',
+            'luastotallantaidasargedung' => '165.75',
+            'ketinggianbangunan' => '3',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.974108',
+            'koordinatbangunan2' => '111.415106',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 4,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 4,
+            'profiltanahbangunangedung_id' => 4,
+            'klasifikasibangunangedung_id' => 4,
+            'datastrukturbangunangedung_id' => 4,
+            'statusbangunangedung_id' => 4,
+            'luastanah' => '2350',
+            'namabangunan' => 'Pos Satpam',
+            'alamatbangunan' => 'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '5',
+            'luastotallantaidasargedung' => '5',
+            'ketinggianbangunan' => '3',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.974108',
+            'koordinatbangunan2' => '111.415106',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 5,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 5,
+            'profiltanahbangunangedung_id' => 5,
+            'klasifikasibangunangedung_id' => 5,
+            'datastrukturbangunangedung_id' => 5,
+            'statusbangunangedung_id' => 5,
+            'luastanah' => '128',
+            'namabangunan' => 'Kantor Balai Penyuluhan Pertanian',
+            'alamatbangunan' => 'Jl. Sonorejo No. 17, Ds. Kunden, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '85',
+            'luastotallantaidasargedung' => '85',
+            'ketinggianbangunan' => '4',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.93392',
+            'koordinatbangunan2' => '111.375718',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 6,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 6,
+            'profiltanahbangunangedung_id' => 6,
+            'klasifikasibangunangedung_id' => 6,
+            'datastrukturbangunangedung_id' => 6,
+            'statusbangunangedung_id' => 6,
+            'luastanah' => '105',
+            'namabangunan' => 'Gedung BPP',
+            'alamatbangunan' => 'Jl. Raya Cepu - Randubelatung km 1, Kec. Cepu. Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '82',
+            'luastotallantaidasargedung' => '82',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-7.148333',
+            'koordinatbangunan2' => '111.590967',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 7,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 7,
+            'profiltanahbangunangedung_id' => 7,
+            'klasifikasibangunangedung_id' => 7,
+            'datastrukturbangunangedung_id' => 7,
+            'statusbangunangedung_id' => 7,
+            'luastanah' => '145',
+            'namabangunan' => 'Gedung Kantor',
+            'alamatbangunan' => 'Jl. Raya Cepu - Randubelatung km 1, Kec. Cepu. Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '104',
+            'luastotallantaidasargedung' => '104',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-7.148333',
+            'koordinatbangunan2' => '111.590967',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 8,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 8,
+            'profiltanahbangunangedung_id' => 8,
+            'klasifikasibangunangedung_id' => 8,
+            'datastrukturbangunangedung_id' => 8,
+            'statusbangunangedung_id' => 8,
+            'luastanah' => '3721',
+            'namabangunan' => 'Gedung Bappeda',
+            'alamatbangunan' => 'Jl. GOR No. 10 Blora, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => null,
+            'luastotallantaidasargedung' => '1058',
+            'ketinggianbangunan' => '7.15',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.964248',
+            'koordinatbangunan2' => '111.420512',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 9,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 9,
+            'profiltanahbangunangedung_id' => 9,
+            'klasifikasibangunangedung_id' => 9,
+            'datastrukturbangunangedung_id' => 9,
+            'statusbangunangedung_id' => 9,
+            'luastanah' => null,
+            'namabangunan' => 'Mushola',
+            'alamatbangunan' => 'Jl. Gatot Subroto No.111, Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '77',
+            'luastotallantaidasargedung' => '77',
+            'ketinggianbangunan' => '6',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.969047',
+            'koordinatbangunan2' => '111.39998',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 10,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 10,
+            'profiltanahbangunangedung_id' => 10,
+            'klasifikasibangunangedung_id' => 10,
+            'datastrukturbangunangedung_id' => 10,
+            'statusbangunangedung_id' => 10,
+            'luastanah' => null,
+            'namabangunan' => 'kantor BPPKAD',
+            'alamatbangunan' => 'Jl. Gatot Subroto No.111, Blora',
+            'jumlahlantai' => '3',
+            'luaslantaidasar' => '272',
+            'luastotallantaidasargedung' => '816',
+            'ketinggianbangunan' => '13',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.969047',
+            'koordinatbangunan2' => '111.39998',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 11,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 11,
+            'profiltanahbangunangedung_id' => 11,
+            'klasifikasibangunangedung_id' => 11,
+            'datastrukturbangunangedung_id' => 11,
+            'statusbangunangedung_id' => 11,
+            'luastanah' => null,
+            'namabangunan' => 'Gudang Arsip',
+            'alamatbangunan' => 'Kel. Karangjati',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '350',
+            'luastotallantaidasargedung' => '700',
+            'ketinggianbangunan' => '8',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.965308',
+            'koordinatbangunan2' => '111.425963',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 12,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 12,
+            'profiltanahbangunangedung_id' => 12,
+            'klasifikasibangunangedung_id' => 12,
+            'datastrukturbangunangedung_id' => 12,
+            'statusbangunangedung_id' => 12,
+            'luastanah' => null,
+            'namabangunan' => 'Gedung BPKB Cepu',
+            'alamatbangunan' => null,
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '92',
+            'luastotallantaidasargedung' => null,
+            'ketinggianbangunan' => '5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-7.152451',
+            'koordinatbangunan2' => '111.582836',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 13,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 13,
+            'profiltanahbangunangedung_id' => 13,
+            'klasifikasibangunangedung_id' => 13,
+            'datastrukturbangunangedung_id' => 13,
+            'statusbangunangedung_id' => 13,
+            'luastanah' => '650',
+            'namabangunan' => 'Gedung Kantor',
+            'alamatbangunan' => 'Jl. KH. Ahmad Dahlan no. 27 Blora',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '272',
+            'luastotallantaidasargedung' => '414',
+            'ketinggianbangunan' => '7',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.967607',
+            'koordinatbangunan2' => '111.41129',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 14,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 14,
+            'profiltanahbangunangedung_id' => 14,
+            'klasifikasibangunangedung_id' => 14,
+            'datastrukturbangunangedung_id' => 14,
+            'statusbangunangedung_id' => 14,
+            'luastanah' => '4053',
+            'namabangunan' => 'Mushola',
+            'alamatbangunan' => 'Jl. Dr. Sutomo No.24, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '28.5',
+            'luastotallantaidasargedung' => '28.5',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.966769',
+            'koordinatbangunan2' => '111.419705',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 15,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 15,
+            'profiltanahbangunangedung_id' => 15,
+            'klasifikasibangunangedung_id' => 15,
+            'datastrukturbangunangedung_id' => 15,
+            'statusbangunangedung_id' => 15,
+            'luastanah' => '4053',
+            'namabangunan' => 'Kantor Dinas Kesehatan II',
+            'alamatbangunan' => 'Jl. Dr. Sutomo No.24, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '147',
+            'luastotallantaidasargedung' => '294',
+            'ketinggianbangunan' => '7',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.966769',
+            'koordinatbangunan2' => '111.419705',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 16,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 16,
+            'profiltanahbangunangedung_id' => 16,
+            'klasifikasibangunangedung_id' => 16,
+            'datastrukturbangunangedung_id' => 16,
+            'statusbangunangedung_id' => 16,
+            'luastanah' => '4053',
+            'namabangunan' => 'Kantor Dinas Kesehatan IV',
+            'alamatbangunan' => 'Jl. Dr. Sutomo No.24, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '160',
+            'luastotallantaidasargedung' => '320',
+            'ketinggianbangunan' => '7',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.966769',
+            'koordinatbangunan2' => '111.419705',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 17,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 17,
+            'profiltanahbangunangedung_id' => 17,
+            'klasifikasibangunangedung_id' => 17,
+            'datastrukturbangunangedung_id' => 17,
+            'statusbangunangedung_id' => 17,
+            'luastanah' => '4053',
+            'namabangunan' => 'Gedung PSC',
+            'alamatbangunan' => 'Jl. Dr. Sutomo No.24, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '120',
+            'luastotallantaidasargedung' => '240',
+            'ketinggianbangunan' => '8',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.966769',
+            'koordinatbangunan2' => '111.419705',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 18,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 18,
+            'profiltanahbangunangedung_id' => 18,
+            'klasifikasibangunangedung_id' => 18,
+            'datastrukturbangunangedung_id' => 18,
+            'statusbangunangedung_id' => 18,
+            'luastanah' => '4053',
+            'namabangunan' => 'Kantor Dinas Kesehatan I',
+            'alamatbangunan' => 'Jl. Dr. Sutomo No.24, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '213.4',
+            'luastotallantaidasargedung' => '213.4',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.966769',
+            'koordinatbangunan2' => '111.419705',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 19,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 19,
+            'profiltanahbangunangedung_id' => 19,
+            'klasifikasibangunangedung_id' => 19,
+            'datastrukturbangunangedung_id' => 19,
+            'statusbangunangedung_id' => 19,
+            'luastanah' => '4053',
+            'namabangunan' => 'KBM',
+            'alamatbangunan' => 'Jl. Dr. Sutomo No.24, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '114.8',
+            'luastotallantaidasargedung' => '114.8',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.966769',
+            'koordinatbangunan2' => '111.419705',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 20,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 20,
+            'profiltanahbangunangedung_id' => 20,
+            'klasifikasibangunangedung_id' => 20,
+            'datastrukturbangunangedung_id' => 20,
+            'statusbangunangedung_id' => 20,
+            'luastanah' => '4053',
+            'namabangunan' => 'Rumah Dinas Dokter',
+            'alamatbangunan' => 'Jl. Dr. Sutomo No.24, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '60',
+            'luastotallantaidasargedung' => '60',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.966769',
+            'koordinatbangunan2' => '111.419705',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 21,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 21,
+            'profiltanahbangunangedung_id' => 21,
+            'klasifikasibangunangedung_id' => 21,
+            'datastrukturbangunangedung_id' => 21,
+            'statusbangunangedung_id' => 21,
+            'luastanah' => '4053',
+            'namabangunan' => 'Rumah Dinas',
+            'alamatbangunan' => 'Jl. Dr. Sutomo No.24, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '60',
+            'luastotallantaidasargedung' => '70',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.966769',
+            'koordinatbangunan2' => '111.419705',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 22,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 22,
+            'profiltanahbangunangedung_id' => 22,
+            'klasifikasibangunangedung_id' => 22,
+            'datastrukturbangunangedung_id' => 22,
+            'statusbangunangedung_id' => 22,
+            'luastanah' => '1090',
+            'namabangunan' => 'Gedung Kantor',
+            'alamatbangunan' => 'Jl. Pemuda No. 46, Ds. Mlangsen, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '496.75',
+            'luastotallantaidasargedung' => '924.7',
+            'ketinggianbangunan' => '10',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.971046',
+            'koordinatbangunan2' => '111.420783',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 23,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 23,
+            'profiltanahbangunangedung_id' => 23,
+            'klasifikasibangunangedung_id' => 23,
+            'datastrukturbangunangedung_id' => 23,
+            'statusbangunangedung_id' => 23,
+            'luastanah' => '2747',
+            'namabangunan' => 'Kantor',
+            'alamatbangunan' => 'Jl. Gunung Wilis No. 24, Kunden, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '1100',
+            'luastotallantaidasargedung' => '2200',
+            'ketinggianbangunan' => '8',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.963827',
+            'koordinatbangunan2' => '111.414513',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 24,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 24,
+            'profiltanahbangunangedung_id' => 24,
+            'klasifikasibangunangedung_id' => 24,
+            'datastrukturbangunangedung_id' => 24,
+            'statusbangunangedung_id' => 24,
+            'luastanah' => '200',
+            'namabangunan' => 'Laboratorium DLH',
+            'alamatbangunan' => 'Jl. Gunung Wilis No. 24, Kunden, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '192',
+            'luastotallantaidasargedung' => '192',
+            'ketinggianbangunan' => null,
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.963844',
+            'koordinatbangunan2' => '111.414287',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 25,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 25,
+            'profiltanahbangunangedung_id' => 25,
+            'klasifikasibangunangedung_id' => 25,
+            'datastrukturbangunangedung_id' => 25,
+            'statusbangunangedung_id' => 25,
+            'luastanah' => '3130',
+            'namabangunan' => 'Kantor',
+            'alamatbangunan' => 'Jl. Blora - Rembang KM 7, Ds. Sendangharjo, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '1048',
+            'luastotallantaidasargedung' => '209.6',
+            'ketinggianbangunan' => '7',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.93394',
+            'koordinatbangunan2' => '111.375718',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 26,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 26,
+            'profiltanahbangunangedung_id' => 26,
+            'klasifikasibangunangedung_id' => 26,
+            'datastrukturbangunangedung_id' => 26,
+            'statusbangunangedung_id' => 26,
+            'luastanah' => '3130',
+            'namabangunan' => 'Laboratorium',
+            'alamatbangunan' => 'Jl. Blora - Rembang KM 7, Ds. Sendangharjo, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '60',
+            'luastotallantaidasargedung' => '120',
+            'ketinggianbangunan' => '7',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.93394',
+            'koordinatbangunan2' => '111.375718',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 27,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 27,
+            'profiltanahbangunangedung_id' => 27,
+            'klasifikasibangunangedung_id' => 27,
+            'datastrukturbangunangedung_id' => 27,
+            'statusbangunangedung_id' => 27,
+            'luastanah' => '3130',
+            'namabangunan' => 'Gedung Pertemuan',
+            'alamatbangunan' => 'Jl. Blora - Rembang KM 7, Ds. Sendangharjo, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '150',
+            'luastotallantaidasargedung' => '300',
+            'ketinggianbangunan' => '8',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.93394',
+            'koordinatbangunan2' => '111.375718',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 28,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 28,
+            'profiltanahbangunangedung_id' => 28,
+            'klasifikasibangunangedung_id' => 28,
+            'datastrukturbangunangedung_id' => 28,
+            'statusbangunangedung_id' => 28,
+            'luastanah' => '3130',
+            'namabangunan' => 'Kantor ex. PPIP',
+            'alamatbangunan' => 'Jl. Blora - Rembang KM 7, Ds. Sendangharjo, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '168',
+            'luastotallantaidasargedung' => '168',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.93394',
+            'koordinatbangunan2' => '111.375718',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 29,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 29,
+            'profiltanahbangunangedung_id' => 29,
+            'klasifikasibangunangedung_id' => 29,
+            'datastrukturbangunangedung_id' => 29,
+            'statusbangunangedung_id' => 29,
+            'luastanah' => '3130',
+            'namabangunan' => 'Gedung Saprodi dan Gudang Peralatan',
+            'alamatbangunan' => 'Jl. Blora - Rembang KM 7, Ds. Sendangharjo, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '48',
+            'luastotallantaidasargedung' => '96',
+            'ketinggianbangunan' => '7',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.93394',
+            'koordinatbangunan2' => '111.375718',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 30,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 30,
+            'profiltanahbangunangedung_id' => 30,
+            'klasifikasibangunangedung_id' => 30,
+            'datastrukturbangunangedung_id' => 30,
+            'statusbangunangedung_id' => 30,
+            'luastanah' => '725',
+            'namabangunan' => 'Dinas PMD',
+            'alamatbangunan' => 'Jl. Gor No. 8, Ds. Karangjati, Kec. Bolra, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '336.76',
+            'luastotallantaidasargedung' => '673.52',
+            'ketinggianbangunan' => '8',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6.964317',
+            'koordinatbangunan2' => '111.430858',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 31,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 31,
+            'profiltanahbangunangedung_id' => 31,
+            'klasifikasibangunangedung_id' => 31,
+            'datastrukturbangunangedung_id' => 31,
+            'statusbangunangedung_id' => 31,
+            'luastanah' => '6715',
+            'namabangunan' => 'Mushola',
+            'alamatbangunan' => 'Jl. A. Yani No. 42, RT: 8/RW: 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '16',
+            'luastotallantaidasargedung' => '16',
+            'ketinggianbangunan' => '4',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964498',
+            'koordinatbangunan2' => '111,424794',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 32,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 32,
+            'profiltanahbangunangedung_id' => 32,
+            'klasifikasibangunangedung_id' => 32,
+            'datastrukturbangunangedung_id' => 32,
+            'statusbangunangedung_id' => 32,
+            'luastanah' => '6715',
+            'namabangunan' => 'Gedung A',
+            'alamatbangunan' => 'Jl. A. Yani No. 42, RT: 8/RW: 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '510',
+            'luastotallantaidasargedung' => '1020',
+            'ketinggianbangunan' => '13',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964498',
+            'koordinatbangunan2' => '111,424794',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 33,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 33,
+            'profiltanahbangunangedung_id' => 33,
+            'klasifikasibangunangedung_id' => 33,
+            'datastrukturbangunangedung_id' => 33,
+            'statusbangunangedung_id' => 33,
+            'luastanah' => '6715',
+            'namabangunan' => 'Gedung B',
+            'alamatbangunan' => 'Jl. A. Yani No. 42, RT: 8/RW: 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '510',
+            'luastotallantaidasargedung' => '1020',
+            'ketinggianbangunan' => '13',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964498',
+            'koordinatbangunan2' => '111,424794',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 34,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 34,
+            'profiltanahbangunangedung_id' => 34,
+            'klasifikasibangunangedung_id' => 34,
+            'datastrukturbangunangedung_id' => 34,
+            'statusbangunangedung_id' => 34,
+            'luastanah' => '6715',
+            'namabangunan' => 'Gedung C',
+            'alamatbangunan' => 'Jl. A. Yani No. 42, RT: 8/RW: 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '512',
+            'luastotallantaidasargedung' => '1024',
+            'ketinggianbangunan' => '13',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964498',
+            'koordinatbangunan2' => '111,424794',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 35,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 35,
+            'profiltanahbangunangedung_id' => 35,
+            'klasifikasibangunangedung_id' => 35,
+            'datastrukturbangunangedung_id' => 35,
+            'statusbangunangedung_id' => 35,
+            'luastanah' => '6715',
+            'namabangunan' => 'Gedung D',
+            'alamatbangunan' => 'Jl. A. Yani No. 42, RT: 8/RW: 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '297',
+            'luastotallantaidasargedung' => '594',
+            'ketinggianbangunan' => '13',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964498',
+            'koordinatbangunan2' => '111,424794',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 36,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 36,
+            'profiltanahbangunangedung_id' => 36,
+            'klasifikasibangunangedung_id' => 36,
+            'datastrukturbangunangedung_id' => 36,
+            'statusbangunangedung_id' => 36,
+            'luastanah' => '1000 m2',
+            'namabangunan' => 'Kantor BPMKB',
+            'alamatbangunan' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '288 m2',
+            'luastotallantaidasargedung' => '576 m2',
+            'ketinggianbangunan' => '10 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,967722',
+            'koordinatbangunan2' => '111,420709',
+            'tanggalmulaikonstruksi' => '2016',
+        ]);
+
+        databangunangedung::create([
+            'id' => 37,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 37,
+            'profiltanahbangunangedung_id' => 37,
+            'klasifikasibangunangedung_id' => 37,
+            'datastrukturbangunangedung_id' => 37,
+            'statusbangunangedung_id' => 37,
+            'luastanah' => '1000 m2',
+            'namabangunan' => 'Gudang',
+            'alamatbangunan' => 'Jl. Cendana No. 58, Ds. Beran, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '126 m2',
+            'luastotallantaidasargedung' => '252 m2',
+            'ketinggianbangunan' => '8 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,968354',
+            'koordinatbangunan2' => '111,408928',
+            'tanggalmulaikonstruksi' => '2016',
+        ]);
+
+        databangunangedung::create([
+            'id' => 38,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 38,
+            'profiltanahbangunangedung_id' => 38,
+            'klasifikasibangunangedung_id' => 38,
+            'datastrukturbangunangedung_id' => 38,
+            'statusbangunangedung_id' => 38,
+            'luastanah' => '1000 m2',
+            'namabangunan' => 'BPKB',
+            'alamatbangunan' => 'Jl. Cendana No. 58, Ds. Beran, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '80 m2',
+            'luastotallantaidasargedung' => '80 m2',
+            'ketinggianbangunan' => '6 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,970879',
+            'koordinatbangunan2' => '111,427678',
+            'tanggalmulaikonstruksi' => '2016',
+        ]);
+
+        databangunangedung::create([
+            'id' => 39,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 39,
+            'profiltanahbangunangedung_id' => 39,
+            'klasifikasibangunangedung_id' => 39,
+            'datastrukturbangunangedung_id' => 39,
+            'statusbangunangedung_id' => 39,
+            'luastanah' => '1000 m2',
+            'namabangunan' => 'Kantor Dinas',
+            'alamatbangunan' => 'Jl. Rembang-Blora KM. 4, Kec. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '486,5 m2',
+            'luastotallantaidasargedung' => '973 m2',
+            'ketinggianbangunan' => '7 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,948568',
+            'koordinatbangunan2' => '111,429657',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 40,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 40,
+            'profiltanahbangunangedung_id' => 40,
+            'klasifikasibangunangedung_id' => 40,
+            'datastrukturbangunangedung_id' => 40,
+            'statusbangunangedung_id' => 40,
+            'luastanah' => '1000 m2',
+            'namabangunan' => 'UPTD Metrologi Legal',
+            'alamatbangunan' => 'Jl. Rembang-Blora KM. 4, Kec. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '264 m2',
+            'luastotallantaidasargedung' => '528 m2',
+            'ketinggianbangunan' => '7 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,948568',
+            'koordinatbangunan2' => '111,429657',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 41,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 41,
+            'profiltanahbangunangedung_id' => 41,
+            'klasifikasibangunangedung_id' => 41,
+            'datastrukturbangunangedung_id' => 41,
+            'statusbangunangedung_id' => 41,
+            'luastanah' => '1310',
+            'namabangunan' => 'Mushola',
+            'alamatbangunan' => 'Jl. Gor No. 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '16',
+            'luastotallantaidasargedung' => '16',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964484',
+            'koordinatbangunan2' => '111,421475',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 42,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 42,
+            'profiltanahbangunangedung_id' => 42,
+            'klasifikasibangunangedung_id' => 42,
+            'datastrukturbangunangedung_id' => 42,
+            'statusbangunangedung_id' => 42,
+            'luastanah' => '446',
+            'namabangunan' => 'Gedung Penelitian A',
+            'alamatbangunan' => 'Jl. Gor No. 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '192',
+            'luastotallantaidasargedung' => '192',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964484',
+            'koordinatbangunan2' => '111,421475',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 43,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 43,
+            'profiltanahbangunangedung_id' => 43,
+            'klasifikasibangunangedung_id' => 43,
+            'datastrukturbangunangedung_id' => 43,
+            'statusbangunangedung_id' => 43,
+            'luastanah' => '446',
+            'namabangunan' => 'BLK',
+            'alamatbangunan' => 'Jl. Gor No. 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '177',
+            'luastotallantaidasargedung' => '177',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964484',
+            'koordinatbangunan2' => '111,421475',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 44,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 44,
+            'profiltanahbangunangedung_id' => 44,
+            'klasifikasibangunangedung_id' => 44,
+            'datastrukturbangunangedung_id' => 44,
+            'statusbangunangedung_id' => 44,
+            'luastanah' => '5000',
+            'namabangunan' => 'Workshop',
+            'alamatbangunan' => 'Jl. Gor No. 1 Ketanggar (Jl. Jepon - Cepu KM 5), Ds. Jepon, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => null,
+            'luastotallantaidasargedung' => null,
+            'ketinggianbangunan' => null,
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964484',
+            'koordinatbangunan2' => '111,421475',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 45,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 45,
+            'profiltanahbangunangedung_id' => 45,
+            'klasifikasibangunangedung_id' => 45,
+            'datastrukturbangunangedung_id' => 45,
+            'statusbangunangedung_id' => 45,
+            'luastanah' => '970',
+            'namabangunan' => 'Aula',
+            'alamatbangunan' => 'Jl. Gor No. 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '177',
+            'luastotallantaidasargedung' => '177',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964484',
+            'koordinatbangunan2' => '111,421475',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 46,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 46,
+            'profiltanahbangunangedung_id' => 46,
+            'klasifikasibangunangedung_id' => 46,
+            'datastrukturbangunangedung_id' => 46,
+            'statusbangunangedung_id' => 46,
+            'luastanah' => '970 m2',
+            'namabangunan' => 'Bidang Pertanian Dan Bidang Industri',
+            'alamatbangunan' => 'Jl. Gor No. 1 Ketanggar, Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '346 m2',
+            'luastotallantaidasargedung' => '346 m2',
+            'ketinggianbangunan' => '3.5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964484',
+            'koordinatbangunan2' => '111,421475',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 47,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 47,
+            'profiltanahbangunangedung_id' => 47,
+            'klasifikasibangunangedung_id' => 47,
+            'datastrukturbangunangedung_id' => 47,
+            'statusbangunangedung_id' => 47,
+            'luastanah' => '446 m2',
+            'namabangunan' => 'Gedung Pelatihan C',
+            'alamatbangunan' => 'Jl. Gor No. 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '198.5 m2',
+            'luastotallantaidasargedung' => '297 m2',
+            'ketinggianbangunan' => '8 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964484',
+            'koordinatbangunan2' => '111,421475',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 48,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 48,
+            'profiltanahbangunangedung_id' => 48,
+            'klasifikasibangunangedung_id' => 48,
+            'datastrukturbangunangedung_id' => 48,
+            'statusbangunangedung_id' => 48,
+            'luastanah' => '1310 m2',
+            'namabangunan' => 'Sekretariat Dan Gedung Pertemuan',
+            'alamatbangunan' => 'Jl. Gor No. 1 Ketanggar, Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '396 m2',
+            'luastotallantaidasargedung' => '396 m2',
+            'ketinggianbangunan' => '4 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964484',
+            'koordinatbangunan2' => '111,421475',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 49,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 49,
+            'profiltanahbangunangedung_id' => 49,
+            'klasifikasibangunangedung_id' => 49,
+            'datastrukturbangunangedung_id' => 49,
+            'statusbangunangedung_id' => 49,
+            'luastanah' => '446 m2',
+            'namabangunan' => 'Gedung Pelatihan B',
+            'alamatbangunan' => 'Jl. Gor No. 1, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '168 m2',
+            'luastotallantaidasargedung' => '336 m2',
+            'ketinggianbangunan' => '8 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964484',
+            'koordinatbangunan2' => '111,421475',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 50,
+            'fungsibangunan_id' => 1,
+            'kepemilikanbangunangedung_id' => 50,
+            'profiltanahbangunangedung_id' => 50,
+            'klasifikasibangunangedung_id' => 50,
+            'datastrukturbangunangedung_id' => 50,
+            'statusbangunangedung_id' => 50,
+            'luastanah' => '446 m2',
+            'namabangunan' => 'Rumah Negara Golongan II Tipe B',
+            'alamatbangunan' => 'Jln. Gor Mustika Komplek Perkantoran Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '48 m2',
+            'luastotallantaidasargedung' => '48 m2',
+            'ketinggianbangunan' => '6 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,96525',
+            'koordinatbangunan2' => '111,421689',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 51,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 51,
+            'profiltanahbangunangedung_id' => 51,
+            'klasifikasibangunangedung_id' => 51,
+            'datastrukturbangunangedung_id' => 51,
+            'statusbangunangedung_id' => 51,
+            'luastanah' => '1283',
+            'namabangunan' => 'Gedung Perpustakaan',
+            'alamatbangunan' => 'Jl. Nusantara No. 23, Ds. Jetis, RT: 04/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '4',
+            'luaslantaidasar' => '749.25',
+            'luastotallantaidasargedung' => '2335.5',
+            'ketinggianbangunan' => '17',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966617',
+            'koordinatbangunan2' => '111,424265',
+            'tanggalmulaikonstruksi' => '2018',
+        ]);
+
+        databangunangedung::create([
+            'id' => 52,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 52,
+            'profiltanahbangunangedung_id' => 52,
+            'klasifikasibangunangedung_id' => 52,
+            'datastrukturbangunangedung_id' => 52,
+            'statusbangunangedung_id' => 52,
+            'luastanah' => '1283',
+            'namabangunan' => 'Gedung Arsip I',
+            'alamatbangunan' => 'Jln. Gor Mustika Komplek Perkantoran Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '147',
+            'luastotallantaidasargedung' => '147',
+            'ketinggianbangunan' => '6',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,96525',
+            'koordinatbangunan2' => '111,421689',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 53,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 53,
+            'profiltanahbangunangedung_id' => 53,
+            'klasifikasibangunangedung_id' => 53,
+            'datastrukturbangunangedung_id' => 53,
+            'statusbangunangedung_id' => 53,
+            'luastanah' => '1283',
+            'namabangunan' => 'Gedung Arsip II',
+            'alamatbangunan' => 'Jln. Gor Mustika Komplek Perkantoran Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '211.6',
+            'luastotallantaidasargedung' => '211.6',
+            'ketinggianbangunan' => '6',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,96525',
+            'koordinatbangunan2' => '111,421689',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 54,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 54,
+            'profiltanahbangunangedung_id' => 54,
+            'klasifikasibangunangedung_id' => 54,
+            'datastrukturbangunangedung_id' => 54,
+            'statusbangunangedung_id' => 54,
+            'luastanah' => '925',
+            'namabangunan' => 'Mushola SDA Blora',
+            'alamatbangunan' => 'Kel. Kedungjenar, Kec. Blora, Kab. Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '124.27',
+            'luastotallantaidasargedung' => '124.27',
+            'ketinggianbangunan' => '4',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,974471',
+            'koordinatbangunan2' => '111,413671',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 55,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 55,
+            'profiltanahbangunangedung_id' => 55,
+            'klasifikasibangunangedung_id' => 55,
+            'datastrukturbangunangedung_id' => 55,
+            'statusbangunangedung_id' => 55,
+            'luastanah' => 'Gedung Smart House',
+            'namabangunan' => 'Jl. Reksodiputro No. 6, Mlangsen, Kec. Blora, Jawa Tengah',
+            'jumlahlantai' => '3',
+            'luaslantaidasar' => '778,22 m2',
+            'luastotallantaidasargedung' => '2.334,66 m2',
+            'ketinggianbangunan' => '12 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,974471',
+            'koordinatbangunan2' => '111,413671',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 56,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 56,
+            'profiltanahbangunangedung_id' => 56,
+            'klasifikasibangunangedung_id' => 56,
+            'datastrukturbangunangedung_id' => 56,
+            'statusbangunangedung_id' => 56,
+            'luastanah' => '925 m2',
+            'namabangunan' => 'Gedung Kantor Sub. Din SDA',
+            'alamatbangunan' => 'Kel. Kedungjenar, Kec. Blora, Kab. Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '314,83 m2',
+            'luastotallantaidasargedung' => '314,83 m2',
+            'ketinggianbangunan' => '4 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,974471',
+            'koordinatbangunan2' => '111,413671',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 57,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 57,
+            'profiltanahbangunangedung_id' => 57,
+            'klasifikasibangunangedung_id' => 57,
+            'datastrukturbangunangedung_id' => 57,
+            'statusbangunangedung_id' => 57,
+            'luastanah' => '925 m2',
+            'namabangunan' => 'Gedung Peternakan SDA Blora',
+            'alamatbangunan' => 'Kel. Kedungjenar, Kec. Blora, Kab. Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '257,08 m2',
+            'luastotallantaidasargedung' => '257,08 m2',
+            'ketinggianbangunan' => '4 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,974471',
+            'koordinatbangunan2' => '111,413671',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 58,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 58,
+            'profiltanahbangunangedung_id' => 58,
+            'klasifikasibangunangedung_id' => 58,
+            'datastrukturbangunangedung_id' => 58,
+            'statusbangunangedung_id' => 58,
+            'luastanah' => '1175 m2',
+            'namabangunan' => 'Gedung Dinsos PPPA',
+            'alamatbangunan' => 'Jl. Pemuda No. 16A, Mlangsen, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '950 m2',
+            'luastotallantaidasargedung' => '1175 m2',
+            'ketinggianbangunan' => '10 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,970096',
+            'koordinatbangunan2' => '111,415723',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 59,
+            'fungsibangunan_id' => 3,
+            'kepemilikanbangunangedung_id' => 59,
+            'profiltanahbangunangedung_id' => 59,
+            'klasifikasibangunangedung_id' => 59,
+            'datastrukturbangunangedung_id' => 59,
+            'statusbangunangedung_id' => 59,
+            'luastanah' => '6945 m2',
+            'namabangunan' => 'blok T',
+            'alamatbangunan' => 'Jl. Rajawali / eks terminal',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '328 m2',
+            'luastotallantaidasargedung' => '328 m2',
+            'ketinggianbangunan' => '5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,970308',
+            'koordinatbangunan2' => '111,424274',
+            'tanggalmulaikonstruksi' => '1990',
+        ]);
+
+        databangunangedung::create([
+            'id' => 60,
+            'fungsibangunan_id' => 3,
+            'kepemilikanbangunangedung_id' => 60,
+            'profiltanahbangunangedung_id' => 60,
+            'klasifikasibangunangedung_id' => 60,
+            'datastrukturbangunangedung_id' => 60,
+            'statusbangunangedung_id' => 60,
+            'luastanah' => '16330 m2',
+            'namabangunan' => 'Pasar Hewan',
+            'alamatbangunan' => 'Kel. Karangjati, kec. Blora, kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '2381 m2',
+            'luastotallantaidasargedung' => '2381 m2',
+            'ketinggianbangunan' => '6 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,958509',
+            'koordinatbangunan2' => '111,420765',
+            'tanggalmulaikonstruksi' => '1971',
+        ]);
+
+        databangunangedung::create([
+            'id' => 61,
+            'fungsibangunan_id' => 3,
+            'kepemilikanbangunangedung_id' => 61,
+            'profiltanahbangunangedung_id' => 61,
+            'klasifikasibangunangedung_id' => 61,
+            'datastrukturbangunangedung_id' => 61,
+            'statusbangunangedung_id' => 61,
+            'luastanah' => '1314',
+            'namabangunan' => 'Pasar Rajawali',
+            'alamatbangunan' => 'Jln. Rajawali Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '583',
+            'luastotallantaidasargedung' => '583',
+            'ketinggianbangunan' => '5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,970489',
+            'koordinatbangunan2' => '111,42409',
+            'tanggalmulaikonstruksi' => '1949',
+        ]);
+
+        databangunangedung::create([
+            'id' => 62,
+            'fungsibangunan_id' => 3,
+            'kepemilikanbangunangedung_id' => 62,
+            'profiltanahbangunangedung_id' => 62,
+            'klasifikasibangunangedung_id' => 62,
+            'datastrukturbangunangedung_id' => 62,
+            'statusbangunangedung_id' => 62,
+            'luastanah' => '41693',
+            'namabangunan' => 'Pasar Sidomakmur (blok A)',
+            'alamatbangunan' => 'Jln. Raya Blora Randublatung km. 2',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '5105',
+            'luastotallantaidasargedung' => '5105',
+            'ketinggianbangunan' => '25',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,989354',
+            'koordinatbangunan2' => '111,4102',
+            'tanggalmulaikonstruksi' => '2016',
+        ]);
+
+        databangunangedung::create([
+            'id' => 63,
+            'fungsibangunan_id' => 3,
+            'kepemilikanbangunangedung_id' => 63,
+            'profiltanahbangunangedung_id' => 63,
+            'klasifikasibangunangedung_id' => 63,
+            'datastrukturbangunangedung_id' => 63,
+            'statusbangunangedung_id' => 63,
+            'luastanah' => '41693',
+            'namabangunan' => 'Pasar Sidomakmur (blok B)',
+            'alamatbangunan' => 'Jln. Raya Blora Randublatung km. 2',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '5105',
+            'luastotallantaidasargedung' => '5105',
+            'ketinggianbangunan' => '25',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,989354',
+            'koordinatbangunan2' => '111,4102',
+            'tanggalmulaikonstruksi' => '2016',
+        ]);
+
+        databangunangedung::create([
+            'id' => 64,
+            'fungsibangunan_id' => 3,
+            'kepemilikanbangunangedung_id' => 64,
+            'profiltanahbangunangedung_id' => 64,
+            'klasifikasibangunangedung_id' => 64,
+            'datastrukturbangunangedung_id' => 64,
+            'statusbangunangedung_id' => 64,
+            'luastanah' => '41693',
+            'namabangunan' => 'Pasar Sidomakmur (blok C)',
+            'alamatbangunan' => 'Jln. Raya Blora Randublatung km. 2',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '4422',
+            'luastotallantaidasargedung' => '4422',
+            'ketinggianbangunan' => '15',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,989354',
+            'koordinatbangunan2' => '111,4102',
+            'tanggalmulaikonstruksi' => '2016',
+        ]);
+
+        databangunangedung::create([
+            'id' => 65,
+            'fungsibangunan_id' => 3,
+            'kepemilikanbangunangedung_id' => 65,
+            'profiltanahbangunangedung_id' => 65,
+            'klasifikasibangunangedung_id' => 65,
+            'datastrukturbangunangedung_id' => 65,
+            'statusbangunangedung_id' => 65,
+            'luastanah' => '41693',
+            'namabangunan' => 'Pasar Sidomakmur (blok D)',
+            'alamatbangunan' => 'Jln. Raya Blora Randublatung km. 2',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '1500',
+            'luastotallantaidasargedung' => '1500',
+            'ketinggianbangunan' => '10',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,989354',
+            'koordinatbangunan2' => '111,4102',
+            'tanggalmulaikonstruksi' => '2016',
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 66,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 66,
+            'profiltanahbangunangedung_id' => 66,
+            'klasifikasibangunangedung_id' => 66,
+            'datastrukturbangunangedung_id' => 66,
+            'statusbangunangedung_id' => 66,
+            'luastanah' => '5505 m2',
+            'namabangunan' => 'Mushola',
+            'alamatbangunan' => 'Jln. Sudarman no. 3 Blora',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '120 m2',
+            'luastotallantaidasargedung' => '180 m2',
+            'ketinggianbangunan' => '8 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,971493',
+            'koordinatbangunan2' => '111,417066',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 67,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 67,
+            'profiltanahbangunangedung_id' => 67,
+            'klasifikasibangunangedung_id' => 67,
+            'datastrukturbangunangedung_id' => 67,
+            'statusbangunangedung_id' => 67,
+            'luastanah' => '5505 m2',
+            'namabangunan' => 'Pos Satpam',
+            'alamatbangunan' => 'Jln. Sudarman no. 3 Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '4 m2',
+            'luastotallantaidasargedung' => '4 m2',
+            'ketinggianbangunan' => '3 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,971493',
+            'koordinatbangunan2' => '111,417066',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 68,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 68,
+            'profiltanahbangunangedung_id' => 68,
+            'klasifikasibangunangedung_id' => 68,
+            'datastrukturbangunangedung_id' => 68,
+            'statusbangunangedung_id' => 68,
+            'luastanah' => '5505 m2',
+            'namabangunan' => 'Gedung Kantor',
+            'alamatbangunan' => 'Jln. Sudarman no. 3 Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '659 m2',
+            'luastotallantaidasargedung' => '659 m2',
+            'ketinggianbangunan' => '6,5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,971493',
+            'koordinatbangunan2' => '111,417066',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 69,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 69,
+            'profiltanahbangunangedung_id' => 69,
+            'klasifikasibangunangedung_id' => 69,
+            'datastrukturbangunangedung_id' => 69,
+            'statusbangunangedung_id' => 69,
+            'luastanah' => '5505 m2',
+            'namabangunan' => 'Sekretariat',
+            'alamatbangunan' => 'Jln. Sudarman no. 3 Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '170 m2',
+            'luastotallantaidasargedung' => '170 m2',
+            'ketinggianbangunan' => '6,5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,971493',
+            'koordinatbangunan2' => '111,417066',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 70,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 70,
+            'profiltanahbangunangedung_id' => 70,
+            'klasifikasibangunangedung_id' => 70,
+            'datastrukturbangunangedung_id' => 70,
+            'statusbangunangedung_id' => 70,
+            'luastanah' => '5505 m2',
+            'namabangunan' => 'Gedung Arsip',
+            'alamatbangunan' => 'Jln. Sudarman no. 3 Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '256 m2',
+            'luastotallantaidasargedung' => '256 m2',
+            'ketinggianbangunan' => '6,5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,971493',
+            'koordinatbangunan2' => '111,417066',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 71,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 71,
+            'profiltanahbangunangedung_id' => 71,
+            'klasifikasibangunangedung_id' => 71,
+            'datastrukturbangunangedung_id' => 71,
+            'statusbangunangedung_id' => 71,
+            'luastanah' => '5505',
+            'namabangunan' => 'Parkir dan Arsip',
+            'alamatbangunan' => 'Jln. Sudarman no. 3 Blora',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '60',
+            'luastotallantaidasargedung' => '120',
+            'ketinggianbangunan' => '8',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,971493',
+            'koordinatbangunan2' => '111,417066',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 72,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 72,
+            'profiltanahbangunangedung_id' => 72,
+            'klasifikasibangunangedung_id' => 72,
+            'datastrukturbangunangedung_id' => 72,
+            'statusbangunangedung_id' => 72,
+            'luastanah' => '12500',
+            'namabangunan' => 'Mushola',
+            'alamatbangunan' => 'Jl. Gor No. 3, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '36',
+            'luastotallantaidasargedung' => '36',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964099',
+            'koordinatbangunan2' => '111,421836',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 73,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 73,
+            'profiltanahbangunangedung_id' => 73,
+            'klasifikasibangunangedung_id' => 73,
+            'datastrukturbangunangedung_id' => 73,
+            'statusbangunangedung_id' => 73,
+            'luastanah' => '496',
+            'namabangunan' => 'Gedung Kantor',
+            'alamatbangunan' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '372',
+            'luastotallantaidasargedung' => '744',
+            'ketinggianbangunan' => '10',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,969425',
+            'koordinatbangunan2' => '111,420695',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 74,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 74,
+            'profiltanahbangunangedung_id' => 74,
+            'klasifikasibangunangedung_id' => 74,
+            'datastrukturbangunangedung_id' => 74,
+            'statusbangunangedung_id' => 74,
+            'luastanah' => '496',
+            'namabangunan' => 'Pendopo Pagelaran',
+            'alamatbangunan' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '299.59',
+            'luastotallantaidasargedung' => '299.59',
+            'ketinggianbangunan' => '7',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,969425',
+            'koordinatbangunan2' => '111,420695',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 75,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 75,
+            'profiltanahbangunangedung_id' => 75,
+            'klasifikasibangunangedung_id' => 75,
+            'datastrukturbangunangedung_id' => 75,
+            'statusbangunangedung_id' => 75,
+            'luastanah' => '496',
+            'namabangunan' => 'Gudang',
+            'alamatbangunan' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '193.39',
+            'luastotallantaidasargedung' => '193.59',
+            'ketinggianbangunan' => '4',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,969425',
+            'koordinatbangunan2' => '111,420695',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 76,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 76,
+            'profiltanahbangunangedung_id' => 76,
+            'klasifikasibangunangedung_id' => 76,
+            'datastrukturbangunangedung_id' => 76,
+            'statusbangunangedung_id' => 76,
+            'luastanah' => '12500 m2',
+            'namabangunan' => 'Gedung GOR Mustika',
+            'alamatbangunan' => 'Jl. Gor No. 3, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '4187 m2',
+            'luastotallantaidasargedung' => '8374 m2',
+            'ketinggianbangunan' => '12 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964099',
+            'koordinatbangunan2' => '111,421836',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 77,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 77,
+            'profiltanahbangunangedung_id' => 77,
+            'klasifikasibangunangedung_id' => 77,
+            'datastrukturbangunangedung_id' => 77,
+            'statusbangunangedung_id' => 77,
+            'luastanah' => '11466 m2',
+            'namabangunan' => 'GOR Kolonel Sunandar',
+            'alamatbangunan' => 'Jl. Ahmad Yani, Kec. Blora, Kab. Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '823 m2',
+            'luastotallantaidasargedung' => '823 m2',
+            'ketinggianbangunan' => '7 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966405',
+            'koordinatbangunan2' => '111,424201',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 78,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 78,
+            'profiltanahbangunangedung_id' => 78,
+            'klasifikasibangunangedung_id' => 78,
+            'datastrukturbangunangedung_id' => 78,
+            'statusbangunangedung_id' => 78,
+            'luastanah' => '500 m2',
+            'namabangunan' => 'Gedung Kantor KONI',
+            'alamatbangunan' => 'Jl. Kol. Sunandar No. 61, Mlangsen, Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '37 m2',
+            'luastotallantaidasargedung' => '37 m2',
+            'ketinggianbangunan' => '3,5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,973408',
+            'koordinatbangunan2' => '111,416022',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 79,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 79,
+            'profiltanahbangunangedung_id' => 79,
+            'klasifikasibangunangedung_id' => 79,
+            'datastrukturbangunangedung_id' => 79,
+            'statusbangunangedung_id' => 79,
+            'luastanah' => '10238 m2',
+            'namabangunan' => 'Mushola',
+            'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '109,2 m2',
+            'luastotallantaidasargedung' => '109,2 m2',
+            'ketinggianbangunan' => '3,5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966169',
+            'koordinatbangunan2' => '111,422581',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 80,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 80,
+            'profiltanahbangunangedung_id' => 80,
+            'klasifikasibangunangedung_id' => 80,
+            'datastrukturbangunangedung_id' => 80,
+            'statusbangunangedung_id' => 80,
+            'luastanah' => '10238 m2',
+            'namabangunan' => 'Pendopo DPRD',
+            'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '292,5 m2',
+            'luastotallantaidasargedung' => '292,5 m2',
+            'ketinggianbangunan' => '5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966169',
+            'koordinatbangunan2' => '111,422581',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 81,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 81,
+            'profiltanahbangunangedung_id' => 81,
+            'klasifikasibangunangedung_id' => 81,
+            'datastrukturbangunangedung_id' => 81,
+            'statusbangunangedung_id' => 81,
+            'luastanah' => '10238 m2',
+            'namabangunan' => 'Lobby (R. Ketua, Wakil Ketua, Sekretaris)',
+            'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '407,38 m2',
+            'luastotallantaidasargedung' => '407,38 m2',
+            'ketinggianbangunan' => '3,5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966169',
+            'koordinatbangunan2' => '111,422581',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 82,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 82,
+            'profiltanahbangunangedung_id' => 82,
+            'klasifikasibangunangedung_id' => 82,
+            'datastrukturbangunangedung_id' => 82,
+            'statusbangunangedung_id' => 82,
+            'luastanah' => '10238 m2',
+            'namabangunan' => 'Kantor DPRD',
+            'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '69,86 m2',
+            'luastotallantaidasargedung' => '139,7 m2',
+            'ketinggianbangunan' => '8 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966169',
+            'koordinatbangunan2' => '111,422581',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 83,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 83,
+            'profiltanahbangunangedung_id' => 83,
+            'klasifikasibangunangedung_id' => 83,
+            'datastrukturbangunangedung_id' => 83,
+            'statusbangunangedung_id' => 83,
+            'luastanah' => '10238 m2',
+            'namabangunan' => 'Gedung Komisi I',
+            'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '326,25 m2',
+            'luastotallantaidasargedung' => '326,25 m2',
+            'ketinggianbangunan' => '3,5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966169',
+            'koordinatbangunan2' => '111,422581',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 84,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 84,
+            'profiltanahbangunangedung_id' => 84,
+            'klasifikasibangunangedung_id' => 84,
+            'datastrukturbangunangedung_id' => 84,
+            'statusbangunangedung_id' => 84,
+            'luastanah' => '10238 m2',
+            'namabangunan' => 'Gedung Komisi II',
+            'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '326,25 m2',
+            'luastotallantaidasargedung' => '326,25 m2',
+            'ketinggianbangunan' => '3,5 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966169',
+            'koordinatbangunan2' => '111,422581',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 85,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 85,
+            'profiltanahbangunangedung_id' => 85,
+            'klasifikasibangunangedung_id' => 85,
+            'datastrukturbangunangedung_id' => 85,
+            'statusbangunangedung_id' => 85,
+            'luastanah' => '10238 m2',
+            'namabangunan' => 'Gedung Fraksi',
+            'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '363 m2',
+            'luastotallantaidasargedung' => '726 m2',
+            'ketinggianbangunan' => '8 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966169',
+            'koordinatbangunan2' => '111,422581',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 86,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 86,
+            'profiltanahbangunangedung_id' => 86,
+            'klasifikasibangunangedung_id' => 86,
+            'datastrukturbangunangedung_id' => 86,
+            'statusbangunangedung_id' => 86,
+            'luastanah' => '10238',
+            'namabangunan' => 'Pos Jaga/Reservasi',
+            'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '30.16',
+            'luastotallantaidasargedung' => '30.16',
+            'ketinggianbangunan' => '3',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966169',
+            'koordinatbangunan2' => '111,422581',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 87,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 87,
+            'profiltanahbangunangedung_id' => 87,
+            'klasifikasibangunangedung_id' => 87,
+            'datastrukturbangunangedung_id' => 87,
+            'statusbangunangedung_id' => 87,
+            'luastanah' => '10238',
+            'namabangunan' => 'Pos Satpam',
+            'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '14',
+            'luastotallantaidasargedung' => '14',
+            'ketinggianbangunan' => '3',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,966169',
+            'koordinatbangunan2' => '111,422581',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 88,
+            'fungsibangunan_id' => 1,
+            'kepemilikanbangunangedung_id' => 88,
+            'profiltanahbangunangedung_id' => 88,
+            'klasifikasibangunangedung_id' => 88,
+            'datastrukturbangunangedung_id' => 88,
+            'statusbangunangedung_id' => 88,
+            'luastanah' => '186',
+            'namabangunan' => 'R. Jaga Pintu, Bd. Gabus',
+            'alamatbangunan' => 'Mlangsen, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '30',
+            'luastotallantaidasargedung' => '30',
+            'ketinggianbangunan' => '4',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,97705',
+            'koordinatbangunan2' => '111,411096',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 89,
+            'fungsibangunan_id' => 1,
+            'kepemilikanbangunangedung_id' => 89,
+            'profiltanahbangunangedung_id' => 89,
+            'klasifikasibangunangedung_id' => 89,
+            'datastrukturbangunangedung_id' => 89,
+            'statusbangunangedung_id' => 89,
+            'luastanah' => '197',
+            'namabangunan' => 'R. Jaga Bd. Glagahan',
+            'alamatbangunan' => 'Ds. Jepangrejo, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '21',
+            'luastotallantaidasargedung' => '21',
+            'ketinggianbangunan' => '3.5',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,97705',
+            'koordinatbangunan2' => '111,411096',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 90,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 90,
+            'profiltanahbangunangedung_id' => 90,
+            'klasifikasibangunangedung_id' => 90,
+            'datastrukturbangunangedung_id' => 90,
+            'statusbangunangedung_id' => 90,
+            'luastanah' => '120',
+            'namabangunan' => 'Kantor DPU Kab. Blora',
+            'alamatbangunan' => 'Jl. Nusantara No. 62, Jetis, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '120',
+            'luastotallantaidasargedung' => '240',
+            'ketinggianbangunan' => '10',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,97705',
+            'koordinatbangunan2' => '111,411096',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 91,
+            'fungsibangunan_id' => 1,
+            'kepemilikanbangunangedung_id' => 91,
+            'profiltanahbangunangedung_id' => 91,
+            'klasifikasibangunangedung_id' => 91,
+            'datastrukturbangunangedung_id' => 91,
+            'statusbangunangedung_id' => 91,
+            'luastanah' => '2474 m2',
+            'namabangunan' => 'Rumah Dinas',
+            'alamatbangunan' => 'Jln. Gor No. 1 Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '81 m2',
+            'luastotallantaidasargedung' => '81 m2',
+            'ketinggianbangunan' => '4 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964351',
+            'koordinatbangunan2' => '111,42103',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 92,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 92,
+            'profiltanahbangunangedung_id' => 92,
+            'klasifikasibangunangedung_id' => 92,
+            'datastrukturbangunangedung_id' => 92,
+            'statusbangunangedung_id' => 92,
+            'luastanah' => '2471 m2',
+            'namabangunan' => 'Mushola',
+            'alamatbangunan' => 'Jln. Gor No. 1 Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '72 m2',
+            'luastotallantaidasargedung' => '72 m2',
+            'ketinggianbangunan' => '4 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964351',
+            'koordinatbangunan2' => '111,42103',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 93,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 93,
+            'profiltanahbangunangedung_id' => 93,
+            'klasifikasibangunangedung_id' => 93,
+            'datastrukturbangunangedung_id' => 93,
+            'statusbangunangedung_id' => 93,
+            'luastanah' => '2470 m2',
+            'namabangunan' => 'Gedung Inspektorat',
+            'alamatbangunan' => 'Jln. Gor No. 11 Karangjati Blora',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '160.5 m2',
+            'luastotallantaidasargedung' => '321 m2',
+            'ketinggianbangunan' => '8 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964351',
+            'koordinatbangunan2' => '111,42103',
+            'tanggalmulaikonstruksi' => '2016',
+        ]);
+
+        databangunangedung::create([
+            'id' => 94,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 94,
+            'profiltanahbangunangedung_id' => 94,
+            'klasifikasibangunangedung_id' => 94,
+            'datastrukturbangunangedung_id' => 94,
+            'statusbangunangedung_id' => 94,
+            'luastanah' => '2472 m2',
+            'namabangunan' => 'kantor (lama)',
+            'alamatbangunan' => 'Jln. Gor No. 1 Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '111 m2',
+            'luastotallantaidasargedung' => '111 m2',
+            'ketinggianbangunan' => '4 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964351',
+            'koordinatbangunan2' => '111,42103',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+        databangunangedung::create([
+            'id' => 95,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 95,
+            'profiltanahbangunangedung_id' => 95,
+            'klasifikasibangunangedung_id' => 95,
+            'datastrukturbangunangedung_id' => 95,
+            'statusbangunangedung_id' => 95,
+            'luastanah' => '2473 m2',
+            'namabangunan' => 'Ruang Pertemuan (lama)',
+            'alamatbangunan' => 'Jln. Gor No. 1 Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '60 m2',
+            'luastotallantaidasargedung' => '60 m2',
+            'ketinggianbangunan' => '4 m',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,964351',
+            'koordinatbangunan2' => '111,42103',
+            'tanggalmulaikonstruksi' => null,
+        ]);
+
+
+        databangunangedung::create([
+            'id' => 96,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 96,
+            'profiltanahbangunangedung_id' => 96,
+            'klasifikasibangunangedung_id' => 96,
+            'datastrukturbangunangedung_id' => 96,
+            'statusbangunangedung_id' => 96,
+            'luastanah' => null,
+            'namabangunan' => 'Mushola',
+            'alamatbangunan' => 'Jl. Jendral Sudirman no. 119, Bangkle, Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '38.57',
+            'luastotallantaidasargedung' => '38.57',
+            'ketinggianbangunan' => '6',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,971045',
+            'koordinatbangunan2' => '111,427791',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 97,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 97,
+            'profiltanahbangunangedung_id' => 97,
+            'klasifikasibangunangedung_id' => 97,
+            'datastrukturbangunangedung_id' => 97,
+            'statusbangunangedung_id' => 97,
+            'luastanah' => null,
+            'namabangunan' => 'Bangunan ex Kec. Blora',
+            'alamatbangunan' => 'Jl. Jendral Sudirman no. 119, Bangkle, Blora',
+            'jumlahlantai' => '2',
+            'luaslantaidasar' => '309.9',
+            'luastotallantaidasargedung' => '619',
+            'ketinggianbangunan' => '9',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,971045',
+            'koordinatbangunan2' => '111,427791',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 98,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 98,
+            'profiltanahbangunangedung_id' => 98,
+            'klasifikasibangunangedung_id' => 98,
+            'datastrukturbangunangedung_id' => 98,
+            'statusbangunangedung_id' => 98,
+            'luastanah' => null,
+            'namabangunan' => 'Pendopo ex Kec. Blora',
+            'alamatbangunan' => 'Jl. Jendral Sudirman no. 119, Bangkle, Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '157.404',
+            'luastotallantaidasargedung' => '157.404',
+            'ketinggianbangunan' => '7',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,971045',
+            'koordinatbangunan2' => '111,427791',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 99,
+            'fungsibangunan_id' => 4,
+            'kepemilikanbangunangedung_id' => 99,
+            'profiltanahbangunangedung_id' => 99,
+            'klasifikasibangunangedung_id' => 99,
+            'datastrukturbangunangedung_id' => 99,
+            'statusbangunangedung_id' => 99,
+            'luastanah' => null,
+            'namabangunan' => 'Rumah Dinas',
+            'alamatbangunan' => 'Jl. Jendral Sudirman no. 119, Bangkle, Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '216.08',
+            'luastotallantaidasargedung' => '216.08',
+            'ketinggianbangunan' => '6',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,971045',
+            'koordinatbangunan2' => '111,427791',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+        databangunangedung::create([
+            'id' => 100,
+            'fungsibangunan_id' => 2,
+            'kepemilikanbangunangedung_id' => 100,
+            'profiltanahbangunangedung_id' => 100,
+            'klasifikasibangunangedung_id' => 100,
+            'datastrukturbangunangedung_id' => 100,
+            'statusbangunangedung_id' => 100,
+            'luastanah' => null,
+            'namabangunan' => 'Mushola Kec. Blora',
+            'alamatbangunan' => 'Jl. Blora - Randublatung KM. 2 Blora',
+            'jumlahlantai' => '1',
+            'luaslantaidasar' => '108',
+            'luastotallantaidasargedung' => '109',
+            'ketinggianbangunan' => '6',
+            'luasbasement' => null,
+            'koordinatbangunan' => '-6,989153',
+            'koordinatbangunan2' => '111,4114',
+            'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+        ]);
+
+
+        datainstitusibangunangedung::create([
+            'id'  => 1,
+            'institusi'  => 'BADAN KEPEGAWAIAN DAERAH',
+        ]);
+
+        datainstitusibangunangedung::create([
+            'id'  => 2,
+            'institusi'  => 'BADAN PENYULUHAN PERTANIAN',
+        ]);
+
+        datainstitusibangunangedung::create([
+            'id'  => 3,
+            'institusi'  => 'BAPPEDA BLORA',
+        ]);
+
+        datainstitusibangunangedung::create([
+            'id'  => 4,
+            'institusi'  => 'BAPPEDA BLORA',
+        ]);
+
+        datainstitusibangunangedung::create([
+            'id'  => 5,
+            'institusi'  => 'DINAS DALDUK & KB',
+        ]);
+
+        datainstitusibangunangedung::create([
+            'id'  => 6,
+            'institusi'  => 'DINAS KESBANGPOL',
+        ]);
+
+        datainstitusibangunangedung::create([
+            'id'  => 7,
+            'institusi'  => 'DINAS KESEHATAN',
+        ]);
+
+        datainstitusibangunangedung::create([
+            'id'  => 8,
+            'institusi'  => 'DINAS KOMINFO',
+        ]);
+
+        datainstitusibangunangedung::create([
+            'id'  => 9,
+            'institusi'  => 'DINAS LINGKUNGAN HIDUP',
+        ]);
+
+
+        // -----------------------------------------------------------------
+        // DATA KEPEMLIKAN BANGUNAN GEDUNG
+
+        kepemilikanbangunangedung::create([
+            'id' => 1,
+            'datainstitusibangunangedung_id' => 1,
+            'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)581284',
+            'email' => 'bkd.blora@gmail.com',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0002',
+        ]);
+
+
+        kepemilikanbangunangedung::create([
+            'id' => 2,
+            'datainstitusibangunangedung_id' => 1,
+            'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)581284',
+            'email' => 'bkd.blora@gmail.com',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0003',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 3,
+            'datainstitusibangunangedung_id' => 1,
+            'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)581284',
+            'email' => 'bkd.blora@gmail.com',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0004',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 4,
+            'datainstitusibangunangedung_id' => 1,
+            'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)581284',
+            'email' => 'bkd.blora@gmail.com',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0005',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 5,
+            'datainstitusibangunangedung_id' => 2,
+            'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)571287',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0001',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 6,
+            'datainstitusibangunangedung_id' => 2,
+            'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(Tidak ada)',
+            'email' => 'bppkeccepu@gmail.co',
+            'nousaha' => '(Tidak ada)',
+            'nohdno' => '33.16.05.0043',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 7,
+            'datainstitusibangunangedung_id' => 2,
+            'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(Tidak ada)',
+            'email' => 'bppkeccepu@gmail.co',
+            'nousaha' => '(Tidak ada)',
+            'nohdno' => '33.16.05.0044',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 8,
+            'datainstitusibangunangedung_id' => 3,
+            'alamat' => 'Jl. GOR No. 10 Blora, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296) 531827',
+            'email' => 'bappedablora@gmail.com',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0165',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 9,
+            'datainstitusibangunangedung_id' => 4,
+            'alamat' => 'Jl. Gatot Subroto No.111, Blora',
+            'no_telepon' => '531202',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0574',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 10,
+            'datainstitusibangunangedung_id' => 4,
+            'alamat' => 'Jl. Gatot Subroto No.111, Blora',
+            'no_telepon' => '531202',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0573',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 11,
+            'datainstitusibangunangedung_id' => 4,
+            'alamat' => 'Jl. Gatot Subroto No.111, Blora',
+            'no_telepon' => '531202',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0575',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 12,
+            'datainstitusibangunangedung_id' => 5,
+            'alamat' => 'Jl Dr. Soetomo No. 52, Blora',
+            'no_telepon' => '0296531213',
+            'email' => '(Tidak ada)',
+            'nousaha' => '(Tidak ada)',
+            'nohdno' => '33.16.05.0354',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 13,
+            'datainstitusibangunangedung_id' => 6,
+            'alamat' => 'Jl. KH. Ahmad Dahlan no. 27 Blora',
+            'no_telepon' => '0296531070',
+            'email' => 'kesbang.blora@gmail.com',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0510',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 14,
+            'datainstitusibangunangedung_id' => 7,
+            'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)531127',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0013',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 15,
+            'datainstitusibangunangedung_id' => 7,
+            'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)531127',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0006',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 16,
+            'datainstitusibangunangedung_id' => 7,
+            'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)531127',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0007',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 17,
+            'datainstitusibangunangedung_id' => 7,
+            'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)531127',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0008',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 18,
+            'datainstitusibangunangedung_id' => 7,
+            'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)531127',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0009',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 19,
+            'datainstitusibangunangedung_id' => 7,
+            'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)531127',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0010',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 20,
+            'datainstitusibangunangedung_id' => 7,
+            'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)531127',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0011',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 21,
+            'datainstitusibangunangedung_id' => 7,
+            'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)531127',
+            'email' => '(tidak ada)',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0012',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 22,
+            'datainstitusibangunangedung_id' => 8,
+            'alamat' => 'Ds. Mlangsen, Kec.Blora, Kab. Blora, Jawa Tengah',
+            'no_telepon' => '(0296)532038',
+            'email' => 'dinkominfo@blorakab.go.id',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0034',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 23,
+            'datainstitusibangunangedung_id' => 9,
+            'alamat' => 'Kunden, Kec. Blora, Kab. Blora',
+            'no_telepon' => '(0296) 5298523',
+            'email' => 'dinasˍlh@blorakab.go.id',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0163',
+        ]);
+
+        kepemilikanbangunangedung::create([
+            'id' => 24,
+            'datainstitusibangunangedung_id' => 9,
+            'alamat' => 'Kunden, Kec. Blora, Kab. Blora',
+            'no_telepon' => '(0296) 5298523',
+            'email' => 'dinasˍlh@blorakab.go.id',
+            'nousaha' => '(tidak ada)',
+            'nohdno' => '33.16.09.0164',
+        ]);
+
+
+        // -------------------------------------------------------------
+        statushaktanahbangunangedung::create([
+            'id' => 1,
+            'status' => 'PEMKAB BLORA',
+        ]);
+
+        statushaktanahbangunangedung::create([
+            'id' => 2,
+            'status' => 'HAK PAKAI',
+        ]);
+
+        statushaktanahbangunangedung::create([
+            'id' => 3,
+            'status' => 'MILIK NEGARA',
+        ]);
+
+        statushaktanahbangunangedung::create([
+            'id' => 4,
+            'status' => '(TIDAK MENGETAHUI)',
+        ]);
+
+        statushaktanahbangunangedung::create([
+            'id' => 5,
+            'status' => 'PEMDA',
+        ]);
+
+        statushaktanahbangunangedung::create([
+            'id' => 6,
+            'status' => 'MILIK PEMKAB/PEMDA/NEGARA',
+        ]);
+
+// =================================================================
+profiltanahbangunangedung::create([
     'id' => 1,
-    'hspdivisi' => 'Persiapan Lapangan/Site Work',
+    'statushaktanahbangunangedung_id' => 1,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '00024',
+    'alamat' => 'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspdivisi::create([
+profiltanahbangunangedung::create([
     'id' => 2,
-    'hspdivisi' => 'Pekerjaan Struktur',
+    'statushaktanahbangunangedung_id' => 1,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '00024',
+    'alamat' => 'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspdivisi::create([
+profiltanahbangunangedung::create([
     'id' => 3,
-    'hspdivisi' => 'Pekerjaan Arsitektur',
+    'statushaktanahbangunangedung_id' => 1,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '00024',
+    'alamat' => 'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspdivisi::create([
+profiltanahbangunangedung::create([
     'id' => 4,
-    'hspdivisi' => 'Pekerjaan Lansekap',
+    'statushaktanahbangunangedung_id' => 1,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '00024',
+    'alamat' => 'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspdivisi::create([
+profiltanahbangunangedung::create([
     'id' => 5,
-    'hspdivisi' => 'Pekerjaan Mekanikal Elektrikal',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Sonorejo No. 17, Ds. Kunden, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspdivisi::create([
+profiltanahbangunangedung::create([
     'id' => 6,
-    'hspdivisi' => 'Pekerjaan Plambing',
+    'statushaktanahbangunangedung_id' => 3,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Raya Cepu - Randubelatung km 1, Kec. Cepu. Kab. Blora, Jawa Tengah',
 ]);
 
-hspdivisi::create([
+profiltanahbangunangedung::create([
     'id' => 7,
-    'hspdivisi' => 'Jalan Pada Permukiman',
+    'statushaktanahbangunangedung_id' => 3,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Raya Cepu - Randubelatung km 1, Kec. Cepu. Kab. Blora, Jawa Tengah',
 ]);
 
-hspdivisi::create([
+profiltanahbangunangedung::create([
     'id' => 8,
-    'hspdivisi' => 'Drainase Jalan',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. GOR No. 10 Blora, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspdivisi::create([
+profiltanahbangunangedung::create([
     'id' => 9,
-    'hspdivisi' => 'Pekerjaan Jaringan Pipa di Luar Bangunan Gedung',
+    'statushaktanahbangunangedung_id' => 1,
+    'statuskepemilikan' => 'Pemkab Blora',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Gatot Subroto No.111, Blora',
 ]);
 
-
-
-//======================== ===================================================================================
-// HSP PAKET HARGA MAS JAKI BLORA
-
-//======================== ===================================================================================
-// HSP PAKET DIVISI 1
-hsppaket::create([
-    'id' => 1,
-    'hspdivisi_id' => 1,
-    'hsppaket' => 'Pekerjaan Persiapan',
-]);
-
-hsppaket::create([
-    'id' => 2,
-    'hspdivisi_id' => 1,
-    'hsppaket' => 'Pekerjaan Galian Tanah',
-]);
-
-hsppaket::create([
-    'id' => 3,
-    'hspdivisi_id' => 1,
-    'hsppaket' => 'PEKERJAAN TIMBUNAN DAN PEMADATAN (TERMASUK PERATAAN DAN PERAPIHAN)',
-]);
-
-hsppaket::create([
-    'id' => 4,
-    'hspdivisi_id' => 1,
-    'hsppaket' => 'PEKERJAAN ANGKUTAN MATERIAL DAN/ATAU HASIL GALIAN',
-]);
-
-hsppaket::create([
-    'id' => 5,
-    'hspdivisi_id' => 1,
-    'hsppaket' => 'PEKERJAAN GEOTEKSTIL DAN GEOMEMBRAN',
-]);
-
-hsppaket::create([
-    'id' => 6,
-    'hspdivisi_id' => 1,
-    'hsppaket' => 'PEKERJAAN PEMBONGKARAN',
-]);
-
-
-
-//======================== ===================================================================================
-// HSP PAKET PEKERJAAN DIVISI 1
-hspkodepekerjaan::create([
-    'id' => 1,
-    'hsppaket_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Pembuatan pagar proyek',
-]);
-
-hspkodepekerjaan::create([
-    'id' => 2,
-    'hsppaket_id' => 1,
-    'kodepekerjaan' => '2',
-    'namapekerjaan' => 'Alat dan/atau sarana penunjang',
-]);
-
-hspkodepekerjaan::create([
-    'id' => 3,
-    'hsppaket_id' => 1,
-    'kodepekerjaan' => '3',
-    'namapekerjaan' => 'Pembersihan dan pengupasan permukaan tanah',
-]);
-
-hspkodepekerjaan::create([
-    'id' => 4,
-    'hsppaket_id' => 1,
-    'kodepekerjaan' => '4',
-    'namapekerjaan' => 'Pengukuran dan pasangan bouwplank',
-]);
-
-//======================== ===================================================================================
-// AHSP KONSTRUKSI UMUM DIVISI 1 DAN DATA LAIN LAIN NYA
-//======================== ===================================================================================
-// HSP PAKET HARGA MAS JAKI BLORA
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 1,
-    'kode' => '1',
-    'subhargadiv1_id' => 1,
-    'subhargadiv1bahan_id' => 1,
-    'subhargadiv1peralatan_id' => 1,
-    'jenispekerjaan' => 'Pembuatan 1 m’ pagar sementara dari kayu tinggi 2 meter',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '380843.37',
-]);
-
-subhargadiv1::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Pekerja',
-    'kode' => 'L.01',
-    'satuan' => 'OH',
-    'koefisien' => 0.600,
-    'hargasatuan' => 96000.00,
-    'jumlah_pagu' => '57600', // **Manual tanpa perhitungan**
-]);
-
-subhargadiv1::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Tukang Kayu',
-    'kode' => 'L.02',
-    'satuan' => 'OH',
-    'koefisien' => 0.200,
-    'hargasatuan' => 106000.00,
-    'jumlah_pagu' => '21200',
-]);
-
-subhargadiv1::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Tukang batu/tembok',
-    'kode' => 'L.02',
-    'satuan' => 'OH',
-    'koefisien' => 0.200,
-    'hargasatuan' => 106000.00,
-    'jumlah_pagu' => '21200',
-]);
-
-subhargadiv1::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Kepala Tukang',
-    'kode' => 'L.03',
-    'satuan' => 'OH',
-    'koefisien' => 0.040,
-    'hargasatuan' => 122000.00,
-    'jumlah_pagu' => '4880',
-]);
-
-subhargadiv1::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Mandor',
-    'kode' => 'L.04',
-    'satuan' => 'OH',
-    'koefisien' => 0.013,
-    'hargasatuan' => 133000.00,
-    'jumlah_pagu' => '1729',
-]);
-
-subhargadiv1bahan::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Kaso 5/7 kayu kelas II (Perancah)',
-    'kode' => null,
-    'satuan' => 'm3',
-    'koefisien' => 0.039,
-    'hargasatuan' => 1976000.00    ,
-    'jumlah_pagu' => '76471.20',
-]);
-
-subhargadiv1bahan::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Papan  Kayu  ukuran 2/20 cm',
-    'kode' => null,
-    'satuan' => 'm3',
-    'koefisien' => 0.040,
-    'hargasatuan' => 1976000.00    ,
-    'jumlah_pagu' => '78249.60',
-]);
-
-subhargadiv1bahan::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Paku 5 inci',
-    'kode' => null,
-    'satuan' => 'kg',
-    'koefisien' => 0.587,
-    'hargasatuan' => 16400.00,
-    'jumlah_pagu' => '9630.08',
-]);
-
-subhargadiv1bahan::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Semen Portland',
-    'kode' => null,
-    'satuan' => 'kg',
-    'koefisien' => 26.406,
-    'hargasatuan' => 1450.00,
-    'jumlah_pagu' => '38288.70',
-]);
-
-subhargadiv1bahan::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Pasir Beton (kg)',
-    'kode' => null,
-    'satuan' => 'kg',
-    'koefisien' => 61.560,
-    'hargasatuan' => 221.00    ,
-    'jumlah_pagu' => '13604.76',
-]);
-
-subhargadiv1bahan::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Kerikil (Maks 30mm)',
-    'kode' => null,
-    'satuan' => 'kg',
-    'koefisien' => 83.349    ,
-    'hargasatuan' => 244.00    ,
-    'jumlah_pagu' => '20337.16',
-]);
-
-subhargadiv1bahan::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Air',
-    'kode' => null,
-    'satuan' => 'liter',
-    'koefisien' => 17.415    ,
-    'hargasatuan' => 50.00    ,
-    'jumlah_pagu' => '870.75',
-]);
-
-subhargadiv1bahan::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => 'Residu',
-    'kode' => null,
-    'satuan' => 'liter',
-    'koefisien' => 0.400    ,
-    'hargasatuan' => 5400.00    ,
-    'jumlah_pagu' => '2160.00',
-]);
-
-subhargadiv1peralatan::create([
-    'hspkonstruksiumum_id' => 1,
-    'uraian' => null,
-    'kode' => null,
-    'satuan' => null,
-    'koefisien' => null,
-    'hargasatuan' => null,
-    'jumlah_pagu' => null,
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 1,
-    'kode' => '2',
-    'subhargadiv1_id' => 2,
-    'subhargadiv1bahan_id' => 2,
-    'subhargadiv1peralatan_id' => 2,
-    'jenispekerjaan' => 'Pembuatan 1 m’ pagar sementara dari seng gelombang rangka kayu tinggi 2 meter ',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '295990.26',
-]);
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 1,
-    'kode' => '3',
-    'subhargadiv1_id' => 3,
-    'subhargadiv1bahan_id' => 3,
-    'subhargadiv1peralatan_id' => 3,
-    'jenispekerjaan' => 'Pembuatan 1 m’ pagar sementara dari kawat duri tinggi 2 meter',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '1254695.60',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 1,
-    'kode' => '4',
-    'subhargadiv1_id' => 4,
-    'subhargadiv1bahan_id' => 4,
-    'subhargadiv1peralatan_id' => 4,
-    'jenispekerjaan' => 'Pembuatan 1 m’ pagar sementara seng gelombang rangka baja L.40.40.4, tinggi pagar 1,8 m’ ',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '550180.75',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 1,
-    'kode' => '5',
-    'subhargadiv1_id' => 5,
-    'subhargadiv1bahan_id' => 5,
-    'subhargadiv1peralatan_id' => 5,
-    'jenispekerjaan' => 'Pembuatan 1 m2 pagar BRC galvanis’ ',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '11395.20',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 1,
-    'kode' => '6',
-    'subhargadiv1_id' => 6,
-    'subhargadiv1bahan_id' => 6,
-    'subhargadiv1peralatan_id' => 6,
-    'jenispekerjaan' => 'Pemasangan 1 m2  Panel Beton Pracetak 50x50x240 untuk Pagar',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '605010.56',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 2,
-    'kode' => '1',
-    'subhargadiv1_id' => 8,
-    'subhargadiv1bahan_id' => 8,
-    'subhargadiv1peralatan_id' => 8,
-    'jenispekerjaan' => '1 buah papan nama pekerjaan ukuran 0,8x1,2 menggunakan multiflex 18 mm, frame besi siku dan tiang kayu 8/12',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '1028388.41',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 2,
-    'kode' => '2',
-    'subhargadiv1_id' => 9,
-    'subhargadiv1bahan_id' => 9,
-    'subhargadiv1peralatan_id' => 9,
-    'jenispekerjaan' => '1 buah papan nama pekerjaan ukuran 0,6x0,8 menggunakan multiplex 10 mm, frame allumunium siku & tiang kayu 5/7, printing banner plastik',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '488860.90',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 2,
-    'kode' => '3',
-    'subhargadiv1_id' => 10,
-    'subhargadiv1bahan_id' => 10,
-    'subhargadiv1peralatan_id' => 10,
-    'jenispekerjaan' => 'Pembuatan 1 m2 kantor sementara/rumah jaga/gudang semen dan peralatan lantai plesteran, dinding setengah tembok',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '1336764.00',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 2,
-    'kode' => '4',
-    'subhargadiv1_id' => 11,
-    'subhargadiv1bahan_id' => 11,
-    'subhargadiv1peralatan_id' => 11,
-    'jenispekerjaan' => 'Pembuatan 1 m2 direksi keet (Kantor), los kerja dan gudang*)',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '2265024.65',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 2,
-    'kode' => '5',
-    'subhargadiv1_id' => 12,
-    'subhargadiv1bahan_id' => 12,
-    'subhargadiv1peralatan_id' => 12,
-    'jenispekerjaan' => 'Pembuatan 1 m2 Jalan sementara Lapis Macadam',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '2262393.94',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 3,
-    'kode' => '1',
-    'subhargadiv1_id' => 13,
-    'subhargadiv1bahan_id' => 13,
-    'subhargadiv1peralatan_id' => 13,
-    'jenispekerjaan' => '1 m2 pembersihan dan pengupasan permukaan tanah (striping) s.d. tanaman ∅ 2 cm ',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '11291.50',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 3,
-    'kode' => '2',
-    'subhargadiv1_id' => 14,
-    'subhargadiv1bahan_id' => 14,
-    'subhargadiv1peralatan_id' => 14,
-    'jenispekerjaan' => 'Tebas tebang 1 m2 tanaman/tumbuhan ∅ < 5 cm ',
-    'satuanmaterial' => 'Batang',
-    'hargasatuan' => '3606.90',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 3,
-    'kode' => '3',
-    'subhargadiv1_id' => 15,
-    'subhargadiv1bahan_id' => 15,
-    'subhargadiv1peralatan_id' => 15,
-    'jenispekerjaan' => 'Tebas tebang 1 m2  tanaman/tumbuhan ∅  >5 s.d. 15 cm',
-    'satuanmaterial' => 'Batang',
-    'hargasatuan' => '6011.50',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 3,
-    'kode' => '4',
-    'subhargadiv1_id' => 15,
-    'subhargadiv1bahan_id' => 15,
-    'subhargadiv1peralatan_id' => 15,
-    'jenispekerjaan' => 'Tebas tebang 1 batang pohon/tumbuhan ∅  >15 s.d. 30 cm',
-    'satuanmaterial' => 'Batang',
-    'hargasatuan' => '6011.50',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 3,
-    'kode' => '5',
-    'subhargadiv1_id' => 16,
-    'subhargadiv1bahan_id' => 16,
-    'subhargadiv1peralatan_id' => 16,
-    'jenispekerjaan' => 'Tebas tebang 1 batang pohon/tumbuhan ∅ > 30 s.d 50 cm ',
-    'satuanmaterial' => 'Batang',
-    'hargasatuan' => '3982.82',
-]);
-
-hspkonstruksiumum::create([
-    'hspdivisi_id' => 1,
-    'hsppaket_id' => 1,
-    'hspkodepekerjaan_id' => 3,
-    'kode' => '5',
-    'subhargadiv1_id' => 17,
-    'subhargadiv1bahan_id' => 17,
-    'subhargadiv1peralatan_id' => 17,
-    'jenispekerjaan' => 'Tebas  tebang  1  batang  pohon/tumbuhan  ∅   >  50  s.d  75  cm (diameter pohon diukur 1 m di atas permukaan tanah) ',
-    'satuanmaterial' => 'Batang',
-    'hargasatuan' => '23690.38',
-]);
-
-
-//======================== ===================================================================================
-// AHSP KONSTRUKSI UMUM DIVISI 1 DAN DATA LAIN LAIN NYA
-//======================== ===================================================================================
-hsppaket2::create([
-    'id' => 1,
-    'hspdivisi_id' => 2,
-    'hsppaket2' => 'Pekerjaan Rangka Atap',
-]);
-
-hsppaket2::create([
-    'id' => 2,
-    'hspdivisi_id' => 2,
-    'hsppaket2' => 'Pekerjaan Struktur Beton',
-]);
-
-hsppaket2::create([
-    'id' => 3,
-    'hspdivisi_id' => 2,
-    'hsppaket2' => 'Pekerjaan Struktur Baja',
-]);
-
-hsppaket2::create([
-    'id' => 4,
-    'hspdivisi_id' => 2,
-    'hsppaket2' => 'Pekerjaan Struktur Beton Pracetak',
-]);
-
-hsppaket2::create([
-    'id' => 5,
-    'hspdivisi_id' => 2,
-    'hsppaket2' => 'Pekerjaan Struktur Beton Prategang',
-]);
-
-hsppaket2::create([
-    'id' => 6,
-    'hspdivisi_id' => 2,
-    'hsppaket2' => 'Pekerjaan Struktur Kayu',
-]);
-
-hsppaket2::create([
-    'id' => 7,
-    'hspdivisi_id' => 2,
-    'hsppaket2' => 'Pekerjaan Dinding Penahan Tanah',
-]);
-
-
-hspkodepekerjaan2::create([
-    'id' => 1,
-    'hsppaket2_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Rangka Atap Baja Ringan',
-]);
-
-hspkodepekerjaan2::create([
-    'id' => 2,
-    'hsppaket2_id' => 1,
-    'kodepekerjaan' => '2',
-    'namapekerjaan' => 'Rangka Atap Kayu',
-]);
-
-// ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 2 ===========================
-
-hspkonstruksiumum2::create([
-    'hspdivisi_id' => 2,
-    'hsppaket2_id' => 1,
-    'hspkodepekerjaan2_id' => 1,
-    'kode' => '1',
-    'subhargadiv2_id' => 1,
-    'subhargadiv2bahan_id' => 1,
-    'subhargadiv2peralatan_id' => 1,
-    'jenispekerjaan' => 'Pemasangan 1 m2  Atap Pelana Rangka Atap Baja Ringan (Canai Dingin) profil C75',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '333267.61',
-]);
-
-hspkonstruksiumum2::create([
-    'hspdivisi_id' => 2,
-    'hsppaket2_id' => 1,
-    'hspkodepekerjaan2_id' => 1,
-    'kode' => '2',
-    'subhargadiv2_id' => 2,
-    'subhargadiv2bahan_id' => 2,
-    'subhargadiv2peralatan_id' => 2,
-    'jenispekerjaan' => 'Pemasangan 1 m2  Atap Jurai/Limasan Rangka Atap Baja Ringan (Canai Dingin) Profil C75',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '339726.48',
-]);
-
-hspkonstruksiumum2::create([
-    'hspdivisi_id' => 2,
-    'hsppaket2_id' => 1,
-    'hspkodepekerjaan2_id' => 1,
-    'kode' => '2.a',
-    'subhargadiv2_id' => 3,
-    'subhargadiv2bahan_id' => 3,
-    'subhargadiv2peralatan_id' => 3,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Usuk dan Reng Rangka Baja Ringan',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '221558.70',
-]);
-
-hspkonstruksiumum2::create([
-    'hspdivisi_id' => 2,
-    'hsppaket2_id' => 1,
-    'hspkodepekerjaan2_id' => 2,
-    'kode' => '1',
-    'subhargadiv2_id' => 4,
-    'subhargadiv2bahan_id' => 4,
-    'subhargadiv2peralatan_id' => 4,
-    'jenispekerjaan' => 'Pemasangan  1  m3   Konstruksi  Kuda-kuda  Konvensional,  Kayu Kelas I, II dan III Bentang Sampai Dengan 6 Meter',
-    'satuanmaterial' => 'M3',
-    'hargasatuan' => '17986408.00',
-]);
-
-hspkonstruksiumum2::create([
-    'hspdivisi_id' => 2,
-    'hsppaket2_id' => 1,
-    'hspkodepekerjaan2_id' => 2,
-    'kode' => '2',
-    'subhargadiv2_id' => 5,
-    'subhargadiv2bahan_id' => 5,
-    'subhargadiv2peralatan_id' => 5,
-    'jenispekerjaan' => 'Pemasangan 1 m3 Konstruksi Kuda-kuda Expose, Kayu Kelas I',
-    'satuanmaterial' => 'M3',
-    'hargasatuan' => '23606143.00',
-]);
-
-hspkonstruksiumum2::create([
-    'hspdivisi_id' => 2,
-    'hsppaket2_id' => 1,
-    'hspkodepekerjaan2_id' => 2,
-    'kode' => '3',
-    'subhargadiv2_id' => 6,
-    'subhargadiv2bahan_id' => 6,
-    'subhargadiv2peralatan_id' => 6,
-    'jenispekerjaan' => 'Pemasangan 1 m3 Konstruksi Gordeng, Kayu kelas II',
-    'satuanmaterial' => 'M3',
-    'hargasatuan' => '17123040.00',
-]);
-
-hspkonstruksiumum2::create([
-    'hspdivisi_id' => 2,
-    'hsppaket2_id' => 1,
-    'hspkodepekerjaan2_id' => 2,
-    'kode' => '4',
-    'subhargadiv2_id' => 7,
-    'subhargadiv2bahan_id' => 7,
-    'subhargadiv2peralatan_id' => 7,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Rangka Atap Genteng Keramik, Kayu kelas II',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '267844.39',
-]);
-
-hspkonstruksiumum2::create([
-    'hspdivisi_id' => 2,
-    'hsppaket2_id' => 1,
-    'hspkodepekerjaan2_id' => 2,
-    'kode' => '5',
-    'subhargadiv2_id' => 8,
-    'subhargadiv2bahan_id' => 8,
-    'subhargadiv2peralatan_id' => 8,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Rangka Atap Genteng Beton, Kayu Kelas II',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '296395.99',
-]);
-
-hspkonstruksiumum2::create([
-    'hspdivisi_id' => 2,
-    'hsppaket2_id' => 1,
-    'hspkodepekerjaan2_id' => 2,
-    'kode' => '6',
-    'subhargadiv2_id' => 9,
-    'subhargadiv2bahan_id' => 9,
-    'subhargadiv2peralatan_id' => 9,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Rangka Atap Sirap, Kayu Kelas II',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '43684.30',
-]);
-
-// ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 3 ===========================
-hsppaket3::create([
-    'id' => 1,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Penutup Atap',
-]);
-
-hsppaket3::create([
-    'id' => 2,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Insulasi',
-]);
-
-hsppaket3::create([
-    'id' => 3,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Aksesoris Atap',
-]);
-
-hsppaket3::create([
-    'id' => 4,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Waterproofing',
-]);
-
-hsppaket3::create([
-    'id' => 5,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Langit-langit (Plafon)',
-]);
-
-hsppaket3::create([
-    'id' => 6,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Pasangan Dinding',
-]);
-
-hsppaket3::create([
-    'id' => 7,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Plesteran dan Acian',
-]);
-
-hsppaket3::create([
-    'id' => 8,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Pengecatan dan Pelituran',
-]);
-
-hsppaket3::create([
-    'id' => 9,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Penutup Lantai',
-]);
-
-hsppaket3::create([
+profiltanahbangunangedung::create([
     'id' => 10,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Penutup Dinding',
+    'statushaktanahbangunangedung_id' => 1,
+    'statuskepemilikan' => 'Pemkab Blora',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Gatot Subroto No.111, Blora',
 ]);
 
-hsppaket3::create([
+
+profiltanahbangunangedung::create([
     'id' => 11,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Pintu dan Jendela',
+    'statushaktanahbangunangedung_id' => 1,
+    'statuskepemilikan' => 'Pemkab Blora',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Kel. Karangjati',
 ]);
 
-hsppaket3::create([
+profiltanahbangunangedung::create([
     'id' => 12,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Kaca',
+    'statushaktanahbangunangedung_id' => 4,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Ronggolawe No. 10 Cepu, Blora',
 ]);
 
-hsppaket3::create([
+profiltanahbangunangedung::create([
     'id' => 13,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Besi dan Alumunium',
+    'statushaktanahbangunangedung_id' => 1,
+    'statuskepemilikan' => 'Kesbangpol',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. KH. Ahmad Dahlan no. 27 Blora',
 ]);
 
-hsppaket3::create([
+profiltanahbangunangedung::create([
     'id' => 14,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Kayu',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Dr. Sutomo No.40, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hsppaket3::create([
-    'id' => 16,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Signage',
-]);
-
-hsppaket3::create([
-    'id' => 18,
-    'hspdivisi_id' => 3,
-    'hsppaket3' => 'Pekerjaan Sanitair',
-]);
-
-hspkodepekerjaan3::create([
-    'id' => 1,
-    'hsppaket3_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Atap Genteng',
-]);
-
-hspkodepekerjaan3::create([
-    'id' => 2,
-    'hsppaket3_id' => 1,
-    'kodepekerjaan' => '2',
-    'namapekerjaan' => 'Atap Serat Semen Gelombang',
-]);
-
-hspkodepekerjaan3::create([
-    'id' => 3,
-    'hsppaket3_id' => 1,
-    'kodepekerjaan' => '3',
-    'namapekerjaan' => 'Penutup Atap Lainnya',
-]);
-
-hspkodepekerjaan3::create([
-    'id' => 4,
-    'hsppaket3_id' => 5,
-    'kodepekerjaan' => '4',
-    'namapekerjaan' => 'Langit=langit (Plafon) Akustik',
-]);
-
-hspkodepekerjaan3::create([
-    'id' => 5,
-    'hsppaket3_id' => 5,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Langit-langit PLAFON) Lainnya',
-]);
-
-hspkonstruksiumum3::create([
-    'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
-    'hspkodepekerjaan3_id' => 1,
-    'kode' => '1',
-'subhargadiv3_id' => 1,
-'subhargadiv3bahan_id' => 1,
-'subhargadiv3peralatan_id' => 1,
-'jenispekerjaan' => 'Pemasangan 1 m2 Atap Genteng Palentong Kecil',
-'satuanmaterial' => 'M2',
-'hargasatuan' => '104607.25',
-]);
-
-hspkonstruksiumum3::create([
-    'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
-    'hspkodepekerjaan3_id' => 1,
-    'kode' => '2',
-    'subhargadiv3_id' => 2,
-    'subhargadiv3bahan_id' => 2,
-    'subhargadiv3peralatan_id' => 2,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Genteng Kodok Glazuur',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '100207.25',
-]);
-
-hspkonstruksiumum3::create([
-    'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
-    'hspkodepekerjaan3_id' => 1,
-    'kode' => '3.a',
-    'subhargadiv3_id' => 3,
-    'subhargadiv3bahan_id' => 3,
-    'subhargadiv3peralatan_id' => 3,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Genteng Palentong Besar Uk. 32,5 cm x 23,5 cm Jarak Reng 26 cm',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '145505.25',
-]);
-
-hspkonstruksiumum3::create([
-    'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
-    'hspkodepekerjaan3_id' => 1,
-    'kode' => '4',
-    'subhargadiv3_id' => 4,
-    'subhargadiv3bahan_id' => 4,
-    'subhargadiv3peralatan_id' => 4,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Genteng Beton',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '162235.59',
-]);
-
-hspkonstruksiumum3::create([
-    'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
-    'hspkodepekerjaan3_id' => 1,
-    'kode' => '5',
-    'subhargadiv3_id' => 5,
-    'subhargadiv3bahan_id' => 5,
-    'subhargadiv3peralatan_id' => 5,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Genteng Palentong Kecil',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '138056.05',
-]);
-
-hspkonstruksiumum3::create([
-    'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
-    'hspkodepekerjaan3_id' => 1,
-    'kode' => '6',
-    'subhargadiv3_id' => 6,
-    'subhargadiv3bahan_id' => 6,
-    'subhargadiv3peralatan_id' => 6,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Genteng Kodok Glazuur',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '147076.05',
-]);
-
-hspkonstruksiumum3::create([
-    'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
-    'hspkodepekerjaan3_id' => 1,
-    'kode' => '7',
-    'subhargadiv3_id' => 7,
-    'subhargadiv3bahan_id' => 7,
-    'subhargadiv3peralatan_id' => 7,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Genteng Palentong Besar',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '162256.05',
-]);
-
-hspkonstruksiumum3::create([
-    'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
-    'hspkodepekerjaan3_id' => 1,
-    'kode' => '8',
-    'subhargadiv3_id' => 8,
-    'subhargadiv3bahan_id' => 8,
-    'subhargadiv3peralatan_id' => 8,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Genteng Beton',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '137970.80',
-]);
-
-// HANYA PERCOBAAN
-hspkonstruksiumum3::create([
-    'hspdivisi_id' => 3,
-    'hsppaket3_id' => 5,
-    'hspkodepekerjaan3_id' => 5,
-    'kode' => '1',
-    'subhargadiv3_id' => 9,
-    'subhargadiv3bahan_id' => 9,
-    'subhargadiv3peralatan_id' => 9,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Langit-langit (Plafon) Akustik Ukuran 30 x 30 cm',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '76874.60',
-]);
-
-// ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 4 ===========================
-hsppaket4::create([
-    'id' => 1,
-    'hspdivisi_id' => 4,
-    'hsppaket4' => 'Pekerjaan Penanaman Tanaman',
-]);
-
-hsppaket4::create([
-    'id' => 2,
-    'hspdivisi_id' => 4,
-    'hsppaket4' => 'Pekerjaan Pemeliharaan Tanaman',
-]);
-
-hspkodepekerjaan4::create([
-    'id' => 1,
-    'hsppaket4_id' => 1,
-    'kodepekerjaan' => '2',
-    'namapekerjaan' => 'Penanaman Pohon',
-]);
-
-hspkodepekerjaan4::create([
-    'id' => 2,
-    'hsppaket4_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Penyiraman Pada Masa Pemeliharaan',
-]);
-
-hspkonstruksiumum4::create([
-    'hspdivisi_id' => 4,
-    'hsppaket4_id' => 1,
-    'hspkodepekerjaan4_id' => 1,
-    'kode' => '3',
-    'subhargadiv4_id' => 1,
-    'jenispekerjaan' => 'Penanaman 1 buah pohon sedang Ketapang Kencana (Terminalia mantaly) Diameter 3-5 cm, tinggi 3-6 meter, polybag 50 L',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '947274.90',
-]);
-
-hspkonstruksiumum4::create([
-    'hspdivisi_id' => 4,
-    'hsppaket4_id' => 1,
-    'hspkodepekerjaan4_id' => 1,
-    'kode' => '4',
-    'subhargadiv4_id' => 2,
-    'jenispekerjaan' => 'Penanaman 1 buah pohon besar Kamboja (Plumeria sp.) Diameter 7-15 cm, tinggi diatas 6 meter, polybag 100 L',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '2010149.55',
-]);
-
-hspkonstruksiumum4::create([
-    'hspdivisi_id' => 4,
-    'hsppaket4_id' => 2,
-    'hspkodepekerjaan4_id' => 2,
-    'kode' => '1',
-    'subhargadiv4_id' => 3,
-    'jenispekerjaan' => 'Penyiraman 1m2 area tanam untuk 1 hari (dengan selang plastik 3/4 inch)',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '317.24',
-]);
-
-// ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 5 ===========================
-hsppaket5::create([
-    'id' => 1,
-    'hspdivisi_id' => 5,
-    'hsppaket5' => 'Pekerjaan Sistem Distribusi Jaringan Listrik',
-]);
-
-hsppaket5::create([
-    'id' => 2,
-    'hspdivisi_id' => 5,
-    'hsppaket5' => 'Pekerjaan Sistem Proteksi Petir',
-]);
-
-hsppaket5::create([
-    'id' => 3,
-    'hspdivisi_id' => 5,
-    'hsppaket5' => 'Pekerjaan Sistem Pencahayaan',
-]);
-
-hsppaket5::create([
-    'id' => 4,
-    'hspdivisi_id' => 5,
-    'hsppaket5' => 'Pekerjaan Sistem Elektronik',
-]);
-
-hsppaket5::create([
-    'id' => 5,
-    'hspdivisi_id' => 5,
-    'hsppaket5' => 'Pekerjaan Sistem Tata Udara',
-]);
-
-hsppaket5::create([
-    'id' => 6,
-    'hspdivisi_id' => 5,
-    'hsppaket5' => 'Pekerjaan Sistem Proteksi Kebakaran',
-]);
-
-// ============================================= AHSP KONSTRUKSI UMUM DIVISI 5 ===========================
-// ===================================================================
-hspkodepekerjaan5::create([
-    'id' => 1,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Pemasangan kabel arus kuat (kabel, kabel tray/ladder)',
-]);
-
-hspkodepekerjaan5::create([
-    'id' => 2,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Kabel Tray / Ladder',
-]);
-
-hspkodepekerjaan5::create([
-    'id' => 3,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '2',
-    'namapekerjaan' => 'Pemasangan panel listrik',
-]);
-
-hspkodepekerjaan5::create([
-    'id' => 4,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '5',
-    'namapekerjaan' => 'Pemasangan saklar dan stop kontak',
-]);
-
-hspkodepekerjaan5::create([
-    'id' => 5,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Pemasangan lampu dan armatur',
-]);
-
-hspkodepekerjaan5::create([
-    'id' => 6,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Sistem alarm kebakaran',
-]);
-
-hspkodepekerjaan5::create([
-    'id' => 7,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '2',
-    'namapekerjaan' => 'Sistem CCTV',
-]);
-
-hspkodepekerjaan5::create([
-    'id' => 8,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '3',
-    'namapekerjaan' => 'Sistem tata suara',
-]);
-
-hspkodepekerjaan5::create([
-    'id' => 9,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Pemasangan unit AC',
-]);
-
-hspkodepekerjaan5::create([
-    'id' => 10,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '4',
-    'namapekerjaan' => 'Pemasangan perpipaan',
-]);
-
-hspkodepekerjaan5::create([
-    'id' => 11,
-    'hsppaket5_id' => 1,
-    'kodepekerjaan' => '3',
-    'namapekerjaan' => 'APAR',
-]);
-
-// ============================================= AHSP KONSTRUKSI UMUM DIVISI 5 ===========================
-hspkonstruksiumum5::create([
-    'id' => 1,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1.26',
-    'subhargadiv5_id' => 1,
-    'subhargadiv5bahan_id' => 1,
-    'subhargadiv5peralatan_id' => 1,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Kabel NYY 3 x 4 mm²',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '38717.80',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 2,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1.35',
-    'subhargadiv5_id' => 2,
-    'subhargadiv5bahan_id' => 2,
-    'subhargadiv5peralatan_id' => 2,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Kabel NYY 4 x 4 mm²',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '69457.30',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 3,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1.36',
-    'subhargadiv5_id' => 3,
-    'subhargadiv5bahan_id' => 3,
-    'subhargadiv5peralatan_id' => 3,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Kabel NYY 4 x 6 mm²',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '93365.80',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 4,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1.37',
-    'subhargadiv5_id' => 4,
-    'subhargadiv5bahan_id' => 4,
-    'subhargadiv5peralatan_id' => 4,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Kabel NYY 4 x 10 mm²',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '145479.40',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 5,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1.38',
-    'subhargadiv5_id' => 5,
-    'subhargadiv5bahan_id' => 5,
-    'subhargadiv5peralatan_id' => 5,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Kabel NYY 4 x 16 mm²',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '209235.40',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 6,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1.39',
-    'subhargadiv5_id' => 6,
-    'subhargadiv5bahan_id' => 6,
-    'subhargadiv5peralatan_id' => 6,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Kabel NYY 4 x 25 mm²',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '318876.80',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 7,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1.40',
-    'subhargadiv5_id' => 7,
-    'subhargadiv5bahan_id' => 7,
-    'subhargadiv5peralatan_id' => 7,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Kabel NYY 4 x 35 mm²',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '432682.80',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 8,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1.41',
-    'subhargadiv5_id' => 8,
-    'subhargadiv5bahan_id' => 8,
-    'subhargadiv5peralatan_id' => 8,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Kabel NYY 4 x 50 mm²',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '571313.60',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 9,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1.42',
-    'subhargadiv5_id' => 9,
-    'subhargadiv5bahan_id' => 9,
-    'subhargadiv5peralatan_id' => 9,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Kabel NYY 4 x 70 mm²',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '812174.00',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 10,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1.43',
-    'subhargadiv5_id' => 10,
-    'subhargadiv5bahan_id' => 10,
-    'subhargadiv5peralatan_id' => 10,
-    'jenispekerjaan' => 'Pemasangan 1 m’ Kabel NYY 4 x 94 mm²',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '1116916.90',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 11,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 2,
-    'kode' => '12.4',
-    'subhargadiv5_id' => 11,
-    'subhargadiv5bahan_id' => 11,
-    'subhargadiv5peralatan_id' => 11,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Kabel Tray (Horizontal) 300 x 100 mm',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '401790.40',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 12,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '4.a',
-    'subhargadiv5_id' => 12,
-    'subhargadiv5bahan_id' => 12,
-    'subhargadiv5peralatan_id' => 12,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Main Distribution Panel (MDP) Wall Mounted ukuran 60 x 100 x 25 Cm',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '3829710.50',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 13,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '4.b',
-    'subhargadiv5_id' => 13,
-    'subhargadiv5bahan_id' => 13,
-    'subhargadiv5peralatan_id' => 13,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Main Distribution Panel (MDP) Wall Mounted ukuran 80 x 120 x 30 Cm',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '6446940.50',
-]);
-
-hspkonstruksiumum5::create([
-    'id' => 14,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '6.a',
-    'subhargadiv5_id' => 14,
-    'subhargadiv5bahan_id' => 14,
-    'subhargadiv5peralatan_id' => 14,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Sub Distribution Panel (SDP) Wall Mounted ukuran 30 x 40 x 20 Cm',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1283029.00',
-]);
-
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 15,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '6.b',
-    'subhargadiv5_id' => 15,
-    'subhargadiv5bahan_id' => 15,
-    'subhargadiv5peralatan_id' => 15,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Sub Distribution Panel (SDP) Wall Mounted ukuran  40 x 60 x 25 Cm',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1832974.00',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Dr. Sutomo No.40, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+
+profiltanahbangunangedung::create([
     'id' => 16,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '6.c',
-    'subhargadiv5_id' => 16,
-    'subhargadiv5bahan_id' => 16,
-    'subhargadiv5peralatan_id' => 16,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Sub Distribution Panel (SDP) Wall Mounted ukuran  50 x 70 x 25 Cm',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '2410144.00',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Dr. Sutomo No.40, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 17,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '6.d',
-    'subhargadiv5_id' => 17,
-    'subhargadiv5bahan_id' => 17,
-    'subhargadiv5peralatan_id' => 17,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Sub Distribution Panel (SDP) Wall Mounted ukuran  60 x 80 x 25 Cm',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '2846954.00',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Dr. Sutomo No.40, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 18,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24',
-    'subhargadiv5_id' => 18,
-    'subhargadiv5bahan_id' => 18,
-    'subhargadiv5peralatan_id' => 18,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCB Box',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '317902.20',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Dr. Sutomo No.40, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 19,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.1',
-    'subhargadiv5_id' => 19,
-    'subhargadiv5bahan_id' => 19,
-    'subhargadiv5peralatan_id' => 19,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCB 6 A; 4,5 KA (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '116284.85',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Dr. Sutomo No.40, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 20,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.2',
-    'subhargadiv5_id' => 20,
-    'subhargadiv5bahan_id' => 20,
-    'subhargadiv5peralatan_id' => 20,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCB 10 A / 6 KA (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '153617.20',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Dr. Sutomo No.40, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+
+profiltanahbangunangedung::create([
     'id' => 21,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.3',
-    'subhargadiv5_id' => 21,
-    'subhargadiv5bahan_id' => 21,
-    'subhargadiv5peralatan_id' => 21,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCB 20 A / 10 KA (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '236552.80',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Dr. Sutomo No.40, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 22,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.4',
-    'subhargadiv5_id' => 22,
-    'subhargadiv5bahan_id' => 22,
-    'subhargadiv5peralatan_id' => 22,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 10 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '861572.25',
+    'statushaktanahbangunangedung_id' => 5,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Pemuda No. 46, Ds. Mlangsen, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 23,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.5',
-    'subhargadiv5_id' => 23,
-    'subhargadiv5bahan_id' => 23,
-    'subhargadiv5peralatan_id' => 23,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 16 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '861572.25',
+    'statushaktanahbangunangedung_id' => 6,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Gunung Wilis No. 24, Kunden, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 24,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.6',
-    'subhargadiv5_id' => 24,
-    'subhargadiv5bahan_id' => 24,
-    'subhargadiv5peralatan_id' => 24,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 20 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1007955.85',
+    'statushaktanahbangunangedung_id' => 6,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Gunung Wilis No. 24, Kunden, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 25,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.7',
-    'subhargadiv5_id' => 25,
-    'subhargadiv5bahan_id' => 25,
-    'subhargadiv5peralatan_id' => 25,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 25 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1007955.85',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Blora - Rembang KM 7, Ds. Sendangharja, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+
+profiltanahbangunangedung::create([
     'id' => 26,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.8',
-    'subhargadiv5_id' => 26,
-    'subhargadiv5bahan_id' => 26,
-    'subhargadiv5peralatan_id' => 26,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 35 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1105337.20',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Blora - Rembang KM 7, Ds. Sendangharja, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 27,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.9',
-    'subhargadiv5_id' => 27,
-    'subhargadiv5bahan_id' => 27,
-    'subhargadiv5peralatan_id' => 27,
-    'jenispekerjaan' => 'Pemasangan 1 Unit  MCCB 40 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1105337.20',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Blora - Rembang KM 7, Ds. Sendangharja, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 28,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.10',
-    'subhargadiv5_id' => 28,
-    'subhargadiv5bahan_id' => 28,
-    'subhargadiv5peralatan_id' => 28,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 50 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1337602.20',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Blora - Rembang KM 7, Ds. Sendangharja, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 29,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.11',
-    'subhargadiv5_id' => 29,
-    'subhargadiv5bahan_id' => 29,
-    'subhargadiv5peralatan_id' => 29,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 60 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1337602.20',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '(Tidak Mengetahui)',
+    'alamat' => 'Jl. Blora - Rembang KM 7, Ds. Sendangharja, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+profiltanahbangunangedung::create([
     'id' => 30,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.12',
-    'subhargadiv5_id' => 30,
-    'subhargadiv5bahan_id' => 30,
-    'subhargadiv5peralatan_id' => 30,
-    'jenispekerjaan' => 'Pemasangan 1 Unit  MCCB 80 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1394252.20',
+    'statushaktanahbangunangedung_id' => 2,
+    'statuskepemilikan' => '(Tidak Mengetahui)',
+    'nobuktitanah' => '1112',
+    'alamat' => 'Jl. Gor No. 8, Ds. Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
-hspkonstruksiumum5::create([
+// =====================================
+
+klasifikasibangunangedung::create([
+    'id' => 1,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 2,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 3,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 4,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 5,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'SEDANG',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 6,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 7,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 8,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 9,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 10,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 11,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 12,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'SEMI PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 13,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => null,
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 14,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 15,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 16,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 17,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 18,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 19,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 20,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+
+klasifikasibangunangedung::create([
+    'id' => 21,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 22,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 23,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 24,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 25,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 26,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 27,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 28,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 29,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 30,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+
+klasifikasibangunangedung::create([
     'id' => 31,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.13',
-    'subhargadiv5_id' => 31,
-    'subhargadiv5bahan_id' => 31,
-    'subhargadiv5peralatan_id' => 31,
-    'jenispekerjaan' => 'Pemasangan 1 Unit  MCCB 100 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1543921.50',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 32,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.14',
-    'subhargadiv5_id' => 32,
-    'subhargadiv5bahan_id' => 32,
-    'subhargadiv5peralatan_id' => 32,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 125 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1614960.60',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 33,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.15',
-    'subhargadiv5_id' => 33,
-    'subhargadiv5bahan_id' => 33,
-    'subhargadiv5peralatan_id' => 33,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 140 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1682260.80',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 34,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.16',
-    'subhargadiv5_id' => 34,
-    'subhargadiv5bahan_id' => 34,
-    'subhargadiv5peralatan_id' => 34,
-    'jenispekerjaan' => 'Pemasangan 1 Unit  MCCB 160 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1682260.80',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 35,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.17',
-    'subhargadiv5_id' => 35,
-    'subhargadiv5bahan_id' => 35,
-    'subhargadiv5peralatan_id' => 35,
-    'jenispekerjaan' => 'Pemasangan 1 Unit  MCCB 200 A / 36 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '2073599.00',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 36,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.18',
-    'subhargadiv5_id' => 36,
-    'subhargadiv5bahan_id' => 36,
-    'subhargadiv5peralatan_id' => 36,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 250 A / 36 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '2073599.00',
+    'tanggalselesai' => '2017-03-01',
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'SEMI PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 37,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.19',
-    'subhargadiv5_id' => 37,
-    'subhargadiv5bahan_id' => 37,
-    'subhargadiv5peralatan_id' => 37,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 300 A / 36 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '3430819.70',
+    'tanggalselesai' => '2017-01-03',
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'SEMI PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 38,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.20',
-    'subhargadiv5_id' => 38,
-    'subhargadiv5bahan_id' => 38,
-    'subhargadiv5peralatan_id' => 38,
-    'jenispekerjaan' => 'Pemasangan 1 Unit  MCCB 350 A / 50 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '4000152.20',
+    'tanggalselesai' => '2017-01-03',
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'SEMI PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 39,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.21',
-    'subhargadiv5_id' => 39,
-    'subhargadiv5bahan_id' => 39,
-    'subhargadiv5peralatan_id' => 39,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 400 A / 50 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '4369283.60',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 40,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.22',
-    'subhargadiv5_id' => 40,
-    'subhargadiv5bahan_id' => 40,
-    'subhargadiv5peralatan_id' => 40,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 500 A / 50 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '8811719.95',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 41,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 3,
-    'kode' => '24.23',
-    'subhargadiv5_id' => 41,
-    'subhargadiv5bahan_id' => 41,
-    'subhargadiv5peralatan_id' => 41,
-    'jenispekerjaan' => 'Pemasangan 1 Unit MCCB 1000 A / 50 KA, 3P (Eks. Schneider / setara)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '19862152.20',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 42,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => 1,
-    'subhargadiv5_id' => 42,
-    'subhargadiv5bahan_id' => 42,
-    'subhargadiv5peralatan_id' => 42,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Saklar Tunggal',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '32080.40',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 43,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => 2,
-    'subhargadiv5_id' => 43,
-    'subhargadiv5bahan_id' => 43,
-    'subhargadiv5peralatan_id' => 43,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Saklar Ganda',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '34500.40',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 44,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => 9,
-    'subhargadiv5_id' => 44,
-    'subhargadiv5bahan_id' => 44,
-    'subhargadiv5peralatan_id' => 44,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Stop Kontak 1 P, 10 A, 200 W',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '41229.10',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 45,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => 12,
-    'subhargadiv5_id' => 45,
-    'subhargadiv5bahan_id' => 45,
-    'subhargadiv5peralatan_id' => 45,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Stop Kontak AC',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '109373.00',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 46,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => 13,
-    'subhargadiv5_id' => 46,
-    'subhargadiv5bahan_id' => 46,
-    'subhargadiv5peralatan_id' => 46,
-    'jenispekerjaan' => 'Pemasangan 1 titik Instalasi Stop Kontak',
-    'satuanmaterial' => 'Titik',
-    'hargasatuan' => '277676.30',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 47,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => '13.a',
-    'subhargadiv5_id' => 47,
-    'subhargadiv5bahan_id' => 47,
-    'subhargadiv5peralatan_id' => 47,
-    'jenispekerjaan' => 'Pemasangan 1 titik Instalasi Stop Kontak AC',
-    'satuanmaterial' => 'Titik',
-    'hargasatuan' => '342466.30',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 48,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => '1',
-    'subhargadiv5_id' => 48,
-    'subhargadiv5bahan_id' => 48,
-    'subhargadiv5peralatan_id' => 48,
-    'jenispekerjaan' => 'Pemasangan 1 Va Daya PLN',
-    'satuanmaterial' => 'Daya',
-    'hargasatuan' => '1650.00',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 49,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => '2',
-    'subhargadiv5_id' => 49,
-    'subhargadiv5bahan_id' => 49,
-    'subhargadiv5peralatan_id' => 49,
-    'jenispekerjaan' => '1 bh Pasang Pilot lamp',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '52023.40',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 50,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => '3',
-    'subhargadiv5_id' => 50,
-    'subhargadiv5bahan_id' => 50,
-    'subhargadiv5peralatan_id' => 50,
-    'jenispekerjaan' => '1 bh Pasang Fuse 2A',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '19136.70',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+
+klasifikasibangunangedung::create([
     'id' => 51,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => '4',
-    'subhargadiv5_id' => 51,
-    'subhargadiv5bahan_id' => 51,
-    'subhargadiv5peralatan_id' => 51,
-    'jenispekerjaan' => '1 bh Pasang CT',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '112636.70',
+    'tanggalselesai' => '2018-01-01',
+    'tanggalrehab' => null,
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => 'SEMI PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 52,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => '5',
-    'subhargadiv5_id' => 52,
-    'subhargadiv5bahan_id' => 52,
-    'subhargadiv5peralatan_id' => 52,
-    'jenispekerjaan' => '1 m1 Pasang Pertanahan / Arde BC 50 mm2 3 ohm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '136092.00',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 53,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => '6',
-    'subhargadiv5_id' => 53,
-    'subhargadiv5bahan_id' => 53,
-    'subhargadiv5peralatan_id' => 53,
-    'jenispekerjaan' => '1 unit Ground 5/8  Panjang 4 meter1',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '2131404.00',
+    'tanggalselesai' => '2022-01-01',
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 54,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => '7',
-    'subhargadiv5_id' => 54,
-    'subhargadiv5bahan_id' => 54,
-    'subhargadiv5peralatan_id' => 54,
-    'jenispekerjaan' => '1 bh Pasang Ampere meter + CT 0 - 1000 A',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '463478.40',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 55,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => '8',
-    'subhargadiv5_id' => 55,
-    'subhargadiv5bahan_id' => 55,
-    'subhargadiv5peralatan_id' => 55,
-    'jenispekerjaan' => '1 bh Pasang Volt meter ',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '490978.40',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 56,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 1,
-    'hspkodepekerjaan5_id' => 4,
-    'kode' => '9',
-    'subhargadiv5_id' => 56,
-    'subhargadiv5bahan_id' => 56,
-    'subhargadiv5peralatan_id' => 56,
-    'jenispekerjaan' => '1 bh Pasang Selektor 380v/220v',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '272989.20',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 57,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 2,
-    'hspkodepekerjaan5_id' => 1,
-    'kode' => '1',
-    'subhargadiv5_id' => 57,
-    'subhargadiv5bahan_id' => 57,
-    'subhargadiv5peralatan_id' => 57,
-    'jenispekerjaan' => 'Pemasangan 1 Set Penangkal Petir Sangkar Faraday Radius ± 120 ',
-    'satuanmaterial' => 'Set',
-    'hargasatuan' => '15212242.10',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 58,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 3,
-    'hspkodepekerjaan5_id' => 5,
-    'kode' => '1',
-    'subhargadiv5_id' => 58,
-    'subhargadiv5bahan_id' => 58,
-    'subhargadiv5peralatan_id' => 58,
-    'jenispekerjaan' => 'Pemasangan 1 titik Instalasi Lampu',
-    'satuanmaterial' => 'Titik',
-    'hargasatuan' => '243611.50',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 59,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 3,
-    'hspkodepekerjaan5_id' => 5,
-    'kode' => '3',
-    'subhargadiv5_id' => 59,
-    'subhargadiv5bahan_id' => 59,
-    'subhargadiv5peralatan_id' => 59,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Downlight 5 Inch 14,5 Watt LED',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '202796.00',
+    'tanggalselesai' => '1990-01-01',
+    'tanggalrehab' => '2000-01-01',
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 60,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 3,
-    'hspkodepekerjaan5_id' => 5,
-    'kode' => '8',
-    'subhargadiv5_id' => 60,
-    'subhargadiv5bahan_id' => 60,
-    'subhargadiv5peralatan_id' => 60,
-    'jenispekerjaan' => 'Pemasangan 1 Unit RM TKI 2 x 16 Watt LED',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '526533.70',
+    'tanggalselesai' => '1971-01-01',
+    'tanggalrehab' => '2000-01-01',
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+
+klasifikasibangunangedung::create([
     'id' => 61,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 3,
-    'hspkodepekerjaan5_id' => 5,
-    'kode' => '9',
-    'subhargadiv5_id' => 61,
-    'subhargadiv5bahan_id' => 61,
-    'subhargadiv5peralatan_id' => 61,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Lampu Sorot LED 100 Watt',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1252533.70',
+    'tanggalselesai' => '1949-01-01',
+    'tanggalrehab' => '2018-01-01',
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 62,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 3,
-    'hspkodepekerjaan5_id' => 5,
-    'kode' => '10',
-    'subhargadiv5_id' => 62,
-    'subhargadiv5bahan_id' => 62,
-    'subhargadiv5peralatan_id' => 62,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Lampu Sorot RGB 30 Watt untuk Outdoor',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '581533.70',
+    'tanggalselesai' => '2017-01-01',
+    'tanggalrehab' => null,
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => 'SEMI PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 63,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 4,
-    'hspkodepekerjaan5_id' => 6,
-    'kode' => '6',
-    'subhargadiv5_id' => 63,
-    'subhargadiv5bahan_id' => 63,
-    'subhargadiv5peralatan_id' => 63,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Terminal Box Fire Alarm (Lengkap Dengan Modul)',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '2750926.20',
+    'tanggalselesai' => '2017-01-01',
+    'tanggalrehab' => null,
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => 'SEMI PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 64,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 4,
-    'hspkodepekerjaan5_id' => 6,
-    'kode' => '7',
-    'subhargadiv5_id' => 64,
-    'subhargadiv5bahan_id' => 64,
-    'subhargadiv5peralatan_id' => 64,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Smoke Detector Addressable',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '262450.10',
+    'tanggalselesai' => '2017-01-01',
+    'tanggalrehab' => null,
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => 'SEMI PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 65,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 4,
-    'hspkodepekerjaan5_id' => 6,
-    'kode' => '13',
-    'subhargadiv5_id' => 65,
-    'subhargadiv5bahan_id' => 65,
-    'subhargadiv5peralatan_id' => 65,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Lamp Indicator',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '483296.00',
+    'tanggalselesai' => '2017-01-01',
+    'tanggalrehab' => null,
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => 'SEMI PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 66,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 4,
-    'hspkodepekerjaan5_id' => 7,
-    'kode' => '2',
-    'subhargadiv5_id' => 66,
-    'subhargadiv5bahan_id' => 66,
-    'subhargadiv5peralatan_id' => 66,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Wiring Management',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '2582750.50',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 67,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 4,
-    'hspkodepekerjaan5_id' => 7,
-    'kode' => '9',
-    'subhargadiv5_id' => 67,
-    'subhargadiv5bahan_id' => 67,
-    'subhargadiv5peralatan_id' => 67,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Indoor Fix Dome IP Camera',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '2026546.50',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 68,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 4,
-    'hspkodepekerjaan5_id' => 8,
-    'kode' => '14',
-    'subhargadiv5_id' => 68,
-    'subhargadiv5bahan_id' => 68,
-    'subhargadiv5peralatan_id' => 68,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Ceilling Speaker',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '181600.10',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 69,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 4,
-    'hspkodepekerjaan5_id' => 8,
-    'kode' => '15',
-    'subhargadiv5_id' => 69,
-    'subhargadiv5bahan_id' => 69,
-    'subhargadiv5peralatan_id' => 69,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Wall Speaker',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '199833.70',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 70,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 9,
-    'kode' => '1',
-    'subhargadiv5_id' => 70,
-    'subhargadiv5bahan_id' => 70,
-    'subhargadiv5peralatan_id' => 70,
-    'jenispekerjaan' => 'Pemasangan 1 Unit AC Wall Mounted Kap : 5.000 BTUH',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '5091970.40',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+
+klasifikasibangunangedung::create([
     'id' => 71,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 9,
-    'kode' => '2',
-    'subhargadiv5_id' => 71,
-    'subhargadiv5bahan_id' => 71,
-    'subhargadiv5peralatan_id' => 71,
-    'jenispekerjaan' => 'Pemasangan 1 Unit AC Wall Mounted Kap : 6.500 BTUH',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '6345462.20',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 72,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 9,
-    'kode' => '4',
-    'subhargadiv5_id' => 72,
-    'subhargadiv5bahan_id' => 72,
-    'subhargadiv5peralatan_id' => 72,
-    'jenispekerjaan' => 'Pemasangan 1 Unit AC Wall Mounted Kap : 9.000 BTUH',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '8160462.20',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 73,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 9,
-    'kode' => '5',
-    'subhargadiv5_id' => 73,
-    'subhargadiv5bahan_id' => 73,
-    'subhargadiv5peralatan_id' => 73,
-    'jenispekerjaan' => 'Pemasangan 1 Unit AC Wall Mounted Kap : 12.000 BTUH',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '9370462.20',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 74,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 10,
-    'kode' => '2',
-    'subhargadiv5_id' => 74,
-    'subhargadiv5bahan_id' => 74,
-    'subhargadiv5peralatan_id' => 74,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Tembaga B280 Dia. 9,5 mm (3/8")',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '146985.30',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 75,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 10,
-    'kode' => '3',
-    'subhargadiv5_id' => 75,
-    'subhargadiv5bahan_id' => 75,
-    'subhargadiv5peralatan_id' => 75,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Tembaga B280 Dia. 12,7 mm (1/2")',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '213422.00',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 76,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 10,
-    'kode' => '4',
-    'subhargadiv5_id' => 76,
-    'subhargadiv5bahan_id' => 76,
-    'subhargadiv5peralatan_id' => 76,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Tembaga B280 Dia. 15,9 mm (5/8")',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '301530.90',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 77,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 10,
-    'kode' => '5',
-    'subhargadiv5_id' => 77,
-    'subhargadiv5bahan_id' => 77,
-    'subhargadiv5peralatan_id' => 77,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Tembaga B280 Dia. 19,1 mm (3/4")',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '363826.10',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 78,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 10,
-    'kode' => '6',
-    'subhargadiv5_id' => 78,
-    'subhargadiv5bahan_id' => 78,
-    'subhargadiv5peralatan_id' => 78,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Tembaga B280 Dia. 22,2 mm (7/8")',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '446985.00',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 79,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 10,
-    'kode' => '7',
-    'subhargadiv5_id' => 79,
-    'subhargadiv5bahan_id' => 79,
-    'subhargadiv5peralatan_id' => 79,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Tembaga B280 Dia. 25,4 mm (1")',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '556409.70',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+klasifikasibangunangedung::create([
     'id' => 80,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 10,
-    'kode' => '8',
-    'subhargadiv5_id' => 80,
-    'subhargadiv5bahan_id' => 80,
-    'subhargadiv5peralatan_id' => 80,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Tembaga B280 Dia. 28,6 mm (1-1/8")',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '627235.40',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-hspkonstruksiumum5::create([
+
+klasifikasibangunangedung::create([
     'id' => 81,
-    'hspdivisi_id' => 5,
-    'hsppaket5_id' => 5,
-    'hspkodepekerjaan5_id' => 11,
-    'kode' => '2',
-    'subhargadiv5_id' => 81,
-    'subhargadiv5bahan_id' => 81,
-    'subhargadiv5peralatan_id' => 81,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Fire Extinguisher 5 Kg',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '1364869.00',
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
 ]);
 
-//======================== ===================================================================================
-// AHSP KONSTRUKSI UMUM DIVISI 6 DAN DATA LAIN LAIN NYA
+klasifikasibangunangedung::create([
+    'id' => 82,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
 
-// ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 6 ===========================
-hsppaket6::create([
+klasifikasibangunangedung::create([
+    'id' => 83,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 84,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 85,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 86,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 87,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 88,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 89,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 90,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+
+klasifikasibangunangedung::create([
+    'id' => 91,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 92,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 93,
+    'tanggalselesai' => '2016-01-01',
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => 'SEMI PERMANEN',
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 94,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 95,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 96,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 97,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'KHUSUS',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 98,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 99,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+klasifikasibangunangedung::create([
+    'id' => 100,
+    'tanggalselesai' => null,
+    'tanggalrehab' => null,
+    'kompleksitas' => 'SEDERHANA',
+    'tingkatpermanen' => null,
+    'resikokebakaran' => 'RENDAH',
+]);
+
+// ============================
+datastrukturbangunangedung::create([
     'id' => 1,
-    'hspdivisi_id' => 6,
-    'hsppaket6' => 'Sistem Air Minum',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hsppaket6::create([
+datastrukturbangunangedung::create([
     'id' => 2,
-    'hspdivisi_id' => 6,
-    'hsppaket6' => 'Grease trap',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hsppaket6::create([
+datastrukturbangunangedung::create([
     'id' => 3,
-    'hspdivisi_id' => 6,
-    'hsppaket6' => 'Bak Kontrol',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hsppaket6::create([
+datastrukturbangunangedung::create([
     'id' => 4,
-    'hspdivisi_id' => 6,
-    'hsppaket6' => 'Sistem Perpipaan Dalam Gedung',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hsppaket6::create([
+datastrukturbangunangedung::create([
     'id' => 5,
-    'hspdivisi_id' => 6,
-    'hsppaket6' => 'Aksesoris Pipa',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hsppaket6::create([
+datastrukturbangunangedung::create([
     'id' => 6,
-    'hspdivisi_id' => 6,
-    'hsppaket6' => 'Valve',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'PADAT',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-// ================================================
-hspkodepekerjaan6::create([
-    'id' => 1,
-    'hsppaket6_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Roof water tank',
-]);
-
-hspkodepekerjaan6::create([
-    'id' => 2,
-    'hsppaket6_id' => 1,
-    'kodepekerjaan' => '2',
-    'namapekerjaan' => 'Pompa transfer dan booster',
-]);
-
-hspkodepekerjaan6::create([
-    'id' => 3,
-    'hsppaket6_id' => 2,
-    'kodepekerjaan' => '3',
-    'namapekerjaan' => 'Grease trap',
-]);
-
-hspkodepekerjaan6::create([
-    'id' => 4,
-    'hsppaket6_id' => 3,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Bak Kontrol',
-]);
-
-hspkodepekerjaan6::create([
-    'id' => 5,
-    'hsppaket6_id' => 4,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Pipa PVC',
-]);
-
-hspkodepekerjaan6::create([
-    'id' => 6,
-    'hsppaket6_id' => 4,
-    'kodepekerjaan' => '2',
-    'namapekerjaan' => 'Pipa Galvanis',
-]);
-
-hspkodepekerjaan6::create([
+datastrukturbangunangedung::create([
     'id' => 7,
-    'hsppaket6_id' => 4,
-    'kodepekerjaan' => '3',
-    'namapekerjaan' => 'Pipa PPR (PolyPropylene Random)',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'PADAT',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkodepekerjaan6::create([
+datastrukturbangunangedung::create([
     'id' => 8,
-    'hsppaket6_id' => 4,
-    'kodepekerjaan' => '4',
-    'namapekerjaan' => 'Pipa BS (Black Steel)',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkodepekerjaan6::create([
+datastrukturbangunangedung::create([
     'id' => 9,
-    'hsppaket6_id' => 6,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Gate valve',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkodepekerjaan6::create([
+datastrukturbangunangedung::create([
     'id' => 10,
-    'hsppaket6_id' => 6,
-    'kodepekerjaan' => '2',
-    'namapekerjaan' => 'Ball valve',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkodepekerjaan6::create([
+datastrukturbangunangedung::create([
     'id' => 11,
-    'hsppaket6_id' => 6,
-    'kodepekerjaan' => '3',
-    'namapekerjaan' => 'Check valve',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkodepekerjaan6::create([
+datastrukturbangunangedung::create([
     'id' => 12,
-    'hsppaket6_id' => 6,
-    'kodepekerjaan' => '11',
-    'namapekerjaan' => 'Water Meter',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'PADAT',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkodepekerjaan6::create([
+datastrukturbangunangedung::create([
     'id' => 13,
-    'hsppaket6_id' => 6,
-    'kodepekerjaan' => '13',
-    'namapekerjaan' => 'Roof Drain',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkodepekerjaan6::create([
+datastrukturbangunangedung::create([
     'id' => 14,
-    'hsppaket6_id' => 6,
-    'kodepekerjaan' => '19',
-    'namapekerjaan' => 'Water Level Control (WLC) & pengkabelan',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkodepekerjaan6::create([
+datastrukturbangunangedung::create([
     'id' => 15,
-    'hsppaket6_id' => 6,
-    'kodepekerjaan' => '24',
-    'namapekerjaan' => 'Dop PVC',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-//======================== ===================================================================================
-// HSP PAKET DIVISI 6  HARGA MAS JAKI BLORA
-
-hspkonstruksiumum6::create([
-    'id' => 1,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 1,
-    'hspkodepekerjaan6_id' => 1,
-    'kode' => '7',
-    'subhargadiv6_id' => 1,
-    'subhargadiv6bahan_id' => 1,
-    'subhargadiv6peralatan_id' => 1,
-    'jenispekerjaan' => 'Pemasangan 1 buah Tangki Toren Kap. 0,7 m3',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '1781487.40',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 2,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 1,
-    'hspkodepekerjaan6_id' => 1,
-    'kode' => '8',
-    'subhargadiv6_id' => 2,
-    'subhargadiv6bahan_id' => 2,
-    'subhargadiv6peralatan_id' => 2,
-    'jenispekerjaan' => 'Pemasangan 1 buah Tangki Toren Kap. 1,5 m3',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '1781487.40',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 3,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 1,
-    'hspkodepekerjaan6_id' => 1,
-    'kode' => '10',
-    'subhargadiv6_id' => 3,
-    'subhargadiv6bahan_id' => 3,
-    'subhargadiv6peralatan_id' => 3,
-    'jenispekerjaan' => 'Pemasangan 1 buah Tangki Toren Kap. 3 m3',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '6334704.20',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 4,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 1,
-    'hspkodepekerjaan6_id' => 1,
-    'kode' => '12',
-    'subhargadiv6_id' => 4,
-    'subhargadiv6bahan_id' => 4,
-    'subhargadiv6peralatan_id' => 4,
-    'jenispekerjaan' => 'Pemasangan 1 buah Tangki Toren Kap. 5 m3',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '11434304.20',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 5,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 1,
-    'hspkodepekerjaan6_id' => 2,
-    'kode' => '3',
-    'subhargadiv6_id' => 5,
-    'subhargadiv6bahan_id' => 5,
-    'subhargadiv6peralatan_id' => 5,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Pompa Booster 150 lpm; Vertical In Line –',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '58170080.10',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 6,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 1,
-    'hspkodepekerjaan6_id' => 2,
-    'kode' => '4',
-    'subhargadiv6_id' => 6,
-    'subhargadiv6bahan_id' => 6,
-    'subhargadiv6peralatan_id' => 6,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Pompa Jet 27 lpm',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '49861724.00',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 7,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 1,
-    'hspkodepekerjaan6_id' => 2,
-    'kode' => '6',
-    'subhargadiv6_id' => 7,
-    'subhargadiv6bahan_id' => 7,
-    'subhargadiv6peralatan_id' => 7,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Pompa Jet 100 lpm',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '4728724.00',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 8,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 1,
-    'hspkodepekerjaan6_id' => 2,
-    'kode' => '8.a',
-    'subhargadiv6_id' => 8,
-    'subhargadiv6bahan_id' => 8,
-    'subhargadiv6peralatan_id' => 8,
-    'jenispekerjaan' => 'Pemasangan  1  Unit  Pompa  Sumbmersible ( Speed For Pump data = 10700 rpm, rateflow 5 m3/h, ratehead = 73 - 100 m  )',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '21030786.70',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 9,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 2,
-    'hspkodepekerjaan6_id' => 3,
-    'kode' => '2',
-    'subhargadiv6_id' => 9,
-    'subhargadiv6bahan_id' => 9,
-    'subhargadiv6peralatan_id' => 9,
-    'jenispekerjaan' => 'Pemasangan 1 Unit Grease Trap Portable Stainless, Kap. 30 Liter',
-    'satuanmaterial' => 'Unit',
-    'hargasatuan' => '623877.10',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 10,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 3,
-    'hspkodepekerjaan6_id' => 4,
-    'kode' => 1,
-    'subhargadiv6_id' => 10,
-    'subhargadiv6bahan_id' => 10,
-    'subhargadiv6peralatan_id' => 10,
-    'jenispekerjaan' => 'Pemasangan 1 buah Bak Kontrol Pasangan Bata 30 cm x 30 cm Tinggi 35 cm dengan Tutup Beton',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '550029.70',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 11,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 3,
-    'hspkodepekerjaan6_id' => 4,
-    'kode' => 2,
-    'subhargadiv6_id' => 11,
-    'subhargadiv6bahan_id' => 11,
-    'subhargadiv6peralatan_id' => 11,
-    'jenispekerjaan' => 'Pemasangan 1 buah Bak Kontrol Pasangan Bata 45 cm x 45 cm Tinggi 50 cm dengan Tutup Beton',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '770319.00',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 12,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 3,
-    'hspkodepekerjaan6_id' => 4,
-    'kode' => 3,
-    'subhargadiv6_id' => 12,
-    'subhargadiv6bahan_id' => 12,
-    'subhargadiv6peralatan_id' => 12,
-    'jenispekerjaan' => 'Pemasangan 1 buah Bak Kontrol Pasangan Bata 60 cm x 60 cm Tinggi 65 cm dengan Tutup Beton',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '935755.04',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 13,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 5,
-    'kode' => 1,
-    'subhargadiv6_id' => 13,
-    'subhargadiv6bahan_id' => 13,
-    'subhargadiv6peralatan_id' => 13,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PVC AW, Dia. 1/2" (15 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '27141.40',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 14,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 5,
-    'kode' => 3,
-    'subhargadiv6_id' => 14,
-    'subhargadiv6bahan_id' => 14,
-    'subhargadiv6peralatan_id' => 14,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PVC AW, Dia. 1/2" (15 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '46187.90',
-]);
-
-hspkonstruksiumum6::create([
-    'id' => 15,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 5,
-    'kode' => 5,
-    'subhargadiv6_id' => 15,
-    'subhargadiv6bahan_id' => 15,
-    'subhargadiv6peralatan_id' => 15,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PVC AW, Dia. 1-1/2" (40 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '71588.00',
-]);
-
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 16,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 5,
-    'kode' => 6,
-    'subhargadiv6_id' => 16,
-    'subhargadiv6bahan_id' => 16,
-    'subhargadiv6peralatan_id' => 16,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PVC AW, Dia. 2" (50 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '82366.35',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 17,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 5,
-    'kode' => 8,
-    'subhargadiv6_id' => 17,
-    'subhargadiv6bahan_id' => 17,
-    'subhargadiv6peralatan_id' => 17,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PVC AW, Dia. 3" (80 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '134786.30',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 18,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 5,
-    'kode' => 11,
-    'subhargadiv6_id' => 18,
-    'subhargadiv6bahan_id' => 18,
-    'subhargadiv6peralatan_id' => 18,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PVC AW, Dia. 6" (150 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '463218.80',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 19,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 5,
-    'kode' => 12,
-    'subhargadiv6_id' => 19,
-    'subhargadiv6bahan_id' => 19,
-    'subhargadiv6peralatan_id' => 19,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PVC AW, Dia. 8" (200 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '711183.00',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 20,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 5,
-    'kode' => 19,
-    'subhargadiv6_id' => 20,
-    'subhargadiv6bahan_id' => 20,
-    'subhargadiv6peralatan_id' => 20,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PVC D, Dia. 2" (50 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '49270.10',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+
+datastrukturbangunangedung::create([
     'id' => 21,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 5,
-    'kode' => 21,
-    'subhargadiv6_id' => 21,
-    'subhargadiv6bahan_id' => 21,
-    'subhargadiv6peralatan_id' => 21,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PVC D, Dia. 3" (80 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '81752.55',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 22,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 5,
-    'kode' => 22,
-    'subhargadiv6_id' => 22,
-    'subhargadiv6bahan_id' => 22,
-    'subhargadiv6peralatan_id' => 22,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PVC D, Dia. 4" (100 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '159415.30',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 23,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 6,
-    'kode' => 1,
-    'subhargadiv6_id' => 23,
-    'subhargadiv6bahan_id' => 23,
-    'subhargadiv6peralatan_id' => 23,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Galvanis MED CLASS Dia. 1/2" (15 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '32731.60',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 24,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 6,
-    'kode' => 5,
-    'subhargadiv6_id' => 24,
-    'subhargadiv6bahan_id' => 24,
-    'subhargadiv6peralatan_id' => 24,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Galvanis MED CLASS, Dia. 1-1/2" (40 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '70858.70',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 25,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 6,
-    'kode' => 6,
-    'subhargadiv6_id' => 25,
-    'subhargadiv6bahan_id' => 25,
-    'subhargadiv6peralatan_id' => 25,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Galvanis MED CLASS, Dia. 2" (50 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '108476.50',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 26,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 6,
-    'kode' => 7,
-    'subhargadiv6_id' => 26,
-    'subhargadiv6bahan_id' => 26,
-    'subhargadiv6peralatan_id' => 26,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Galvanis MED CLASS, Dia. 2-1/2" (65 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '136247.10',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 27,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 6,
-    'kode' => 8,
-    'subhargadiv6_id' => 27,
-    'subhargadiv6bahan_id' => 27,
-    'subhargadiv6peralatan_id' => 27,
-    'jenispekerjaan' => 'Pemasangan 1 m Pipa Galvanis MED CLASS, Dia. 3" (80 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '226221.60',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 28,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 7,
-    'kode' => 1,
-    'subhargadiv6_id' => 28,
-    'subhargadiv6bahan_id' => 28,
-    'subhargadiv6peralatan_id' => 28,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PPR PN 10, Dia. 1/2" (15 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '26712.68',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 29,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 7,
-    'kode' => 3,
-    'subhargadiv6_id' => 29,
-    'subhargadiv6bahan_id' => 29,
-    'subhargadiv6peralatan_id' => 29,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PPR PN 10, Dia. 1" (25 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '56216.88',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 30,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 7,
-    'kode' => 5,
-    'subhargadiv6_id' => 30,
-    'subhargadiv6bahan_id' => 30,
-    'subhargadiv6peralatan_id' => 30,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PPR PN 10, Dia. 1-1/2", (40 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '124191.65',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+
+datastrukturbangunangedung::create([
     'id' => 31,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 7,
-    'kode' => 6,
-    'subhargadiv6_id' => 31,
-    'subhargadiv6bahan_id' => 31,
-    'subhargadiv6peralatan_id' => 31,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PPR PN 10, Dia. 2", (50 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '188267.06',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 32,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 7,
-    'kode' => 8,
-    'subhargadiv6_id' => 32,
-    'subhargadiv6bahan_id' => 32,
-    'subhargadiv6peralatan_id' => 32,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PPR PN 10, Dia. 3", (80 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '371361.93',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BAJA',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 33,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 7,
-    'kode' => 9,
-    'subhargadiv6_id' => 33,
-    'subhargadiv6bahan_id' => 33,
-    'subhargadiv6peralatan_id' => 33,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa PPR PN 10, Dia. 4", (100 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '545368.86',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BAJA',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 34,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 8,
-    'kode' => 1,
-    'subhargadiv6_id' => 34,
-    'subhargadiv6bahan_id' => 34,
-    'subhargadiv6peralatan_id' => 34,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa BS MED CLASS Dia. 1/2" (15 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '51538.85',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 35,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 8,
-    'kode' => 3,
-    'subhargadiv6_id' => 35,
-    'subhargadiv6bahan_id' => 35,
-    'subhargadiv6peralatan_id' => 35,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa BS MED CLASS, Dia. 1" (25 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '98994.50',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 36,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 8,
-    'kode' => 6,
-    'subhargadiv6_id' => 36,
-    'subhargadiv6bahan_id' => 36,
-    'subhargadiv6peralatan_id' => 36,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa BS MED CLASS, Dia. 2" (50 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '202446.75',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 37,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 8,
-    'kode' => 8,
-    'subhargadiv6_id' => 37,
-    'subhargadiv6bahan_id' => 37,
-    'subhargadiv6peralatan_id' => 37,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa BS MED CLASS, Dia. 3" (80 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '336939.35',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 38,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 4,
-    'hspkodepekerjaan6_id' => 8,
-    'kode' => 9,
-    'subhargadiv6_id' => 38,
-    'subhargadiv6bahan_id' => 38,
-    'subhargadiv6peralatan_id' => 38,
-    'jenispekerjaan' => 'Pemasangan 1 m pipa BS MED CLASS, Dia. 4" (100 mm)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '478289.17',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 39,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 9,
-    'kode' => 1,
-    'subhargadiv6_id' => 39,
-    'subhargadiv6bahan_id' => 39,
-    'subhargadiv6peralatan_id' => 39,
-    'jenispekerjaan' => 'Pemasangan 1 buah gate valve 10 K, Dia. 1/2" (15 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '126704.60',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 40,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 9,
-    'kode' => 3,
-    'subhargadiv6_id' => 40,
-    'subhargadiv6bahan_id' => 40,
-    'subhargadiv6peralatan_id' => 40,
-    'jenispekerjaan' => 'Pemasangan 1 buah gate valve 10 K, Dia. 1" (25 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '312805.90',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+
+datastrukturbangunangedung::create([
     'id' => 41,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 9,
-    'kode' => 5,
-    'subhargadiv6_id' => 41,
-    'subhargadiv6bahan_id' => 41,
-    'subhargadiv6peralatan_id' => 41,
-    'jenispekerjaan' => 'Pemasangan 1 buah gate valve 10 K, Dia. 1-1/2" (40 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '551463.00',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 42,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 9,
-    'kode' => 6,
-    'subhargadiv6_id' => 42,
-    'subhargadiv6bahan_id' => 42,
-    'subhargadiv6peralatan_id' => 42,
-    'jenispekerjaan' => 'Pemasangan 1 buah gate valve 10 K, Dia. 2" (50 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '688212.80',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 43,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 9,
-    'kode' => 8,
-    'subhargadiv6_id' => 43,
-    'subhargadiv6bahan_id' => 43,
-    'subhargadiv6peralatan_id' => 43,
-    'jenispekerjaan' => 'Pemasangan 1 buah gate valve 10 K, Dia. 3" (80 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '2060374.80',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 44,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 9,
-    'kode' => 9,
-    'subhargadiv6_id' => 44,
-    'subhargadiv6bahan_id' => 44,
-    'subhargadiv6peralatan_id' => 44,
-    'jenispekerjaan' => 'Pemasangan 1 buah gate valve 10 K, Dia. 4" (100 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '2628935.10',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 45,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 10,
-    'kode' => 1,
-    'subhargadiv6_id' => 45,
-    'subhargadiv6bahan_id' => 45,
-    'subhargadiv6peralatan_id' => 45,
-    'jenispekerjaan' => 'Pemasangan 1 buah ball valve, Dia. 1/2" (15 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '169082.10',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 46,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 10,
-    'kode' => 3,
-    'subhargadiv6_id' => 46,
-    'subhargadiv6bahan_id' => 46,
-    'subhargadiv6peralatan_id' => 46,
-    'jenispekerjaan' => 'Pemasangan 1 buah ball valve, Dia. 1" (25 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '293830.90',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 47,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 10,
-    'kode' => 5,
-    'subhargadiv6_id' => 47,
-    'subhargadiv6bahan_id' => 47,
-    'subhargadiv6peralatan_id' => 47,
-    'jenispekerjaan' => 'Pemasangan 1 buah ball valve, Dia. 1-1/2" (40 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '631158.00',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 48,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 10,
-    'kode' => 6,
-    'subhargadiv6_id' => 48,
-    'subhargadiv6bahan_id' => 48,
-    'subhargadiv6peralatan_id' => 48,
-    'jenispekerjaan' => 'Pemasangan 1 buah ball valve, Dia. 2" (50 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '1244812.80',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 49,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 10,
-    'kode' => 8,
-    'subhargadiv6_id' => 49,
-    'subhargadiv6bahan_id' => 49,
-    'subhargadiv6peralatan_id' => 49,
-    'jenispekerjaan' => 'Pemasangan 1 buah ball valve, Dia. 3" (80 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '4438464.80',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 50,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 10,
-    'kode' => 9,
-    'subhargadiv6_id' => 50,
-    'subhargadiv6bahan_id' => 50,
-    'subhargadiv6peralatan_id' => 50,
-    'jenispekerjaan' => 'Pemasangan 1 buah ball valve, Dia. 4" (100 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '8287802.60',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkonstruksiumum6::create([
+
+datastrukturbangunangedung::create([
     'id' => 51,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 11,
-    'kode' => 1,
-    'subhargadiv6_id' => 51,
-    'subhargadiv6bahan_id' => 51,
-    'subhargadiv6peralatan_id' => 51,
-    'jenispekerjaan' => 'Pemasangan 1 buah check valve 10 K, Dia. 1/2" (15 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '156432.10',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DALAM',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 52,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 11,
-    'kode' => 3,
-    'subhargadiv6_id' => 52,
-    'subhargadiv6bahan_id' => 52,
-    'subhargadiv6peralatan_id' => 52,
-    'jenispekerjaan' => 'Pemasangan 1 buah check valve 10 K, Dia. 1" (25 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '370110.40',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 53,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 11,
-    'kode' => 5,
-    'subhargadiv6_id' => 53,
-    'subhargadiv6bahan_id' => 53,
-    'subhargadiv6peralatan_id' => 53,
-    'jenispekerjaan' => 'Pemasangan 1 buah check valve 10 K, Dia. 1-1/2" (40 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '583088.00',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 54,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 11,
-    'kode' => 6,
-    'subhargadiv6_id' => 54,
-    'subhargadiv6bahan_id' => 54,
-    'subhargadiv6peralatan_id' => 54,
-    'jenispekerjaan' => 'Pemasangan 1 buah check valve 10 K, Dia. 2" (50 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '1133492.80',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 55,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 11,
-    'kode' => 8,
-    'subhargadiv6_id' => 55,
-    'subhargadiv6bahan_id' => 55,
-    'subhargadiv6peralatan_id' => 55,
-    'jenispekerjaan' => 'Pemasangan 1 buah check valve 10 K, Dia. 3" (80 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '2515114.80',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DALAM',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 56,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 11,
-    'kode' => 9,
-    'subhargadiv6_id' => 56,
-    'subhargadiv6bahan_id' => 56,
-    'subhargadiv6peralatan_id' => 56,
-    'jenispekerjaan' => 'Pemasangan 1 buah check valve 10 K, Dia. 4" (100 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '3386077.20',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 57,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 11,
-    'kode' => 11,
-    'subhargadiv6_id' => 57,
-    'subhargadiv6bahan_id' => 57,
-    'subhargadiv6peralatan_id' => 57,
-    'jenispekerjaan' => 'Pemasangan 1 buah check valve 10 K, Dia. 6" (150 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '7835928.10',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 58,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 12,
-    'kode' => '1.a',
-    'subhargadiv6_id' => 58,
-    'subhargadiv6bahan_id' => 58,
-    'subhargadiv6peralatan_id' => 58,
-    'jenispekerjaan' => 'Pemasangan 1 buah Water Meter Kuningan, Dia. 1/2" (15 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '491657.10',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DALAM',
+    'bahan_fondasi' => 'BETON',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 59,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 13,
-    'kode' => '1',
-    'subhargadiv6_id' => 59,
-    'subhargadiv6bahan_id' => 59,
-    'subhargadiv6peralatan_id' => 59,
-    'jenispekerjaan' => 'Pemasangan 1 buah roof drain, Dia. 2" (50 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '381118.10',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 60,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 13,
-    'kode' => '3',
-    'subhargadiv6_id' => 60,
-    'subhargadiv6bahan_id' => 60,
-    'subhargadiv6peralatan_id' => 60,
-    'jenispekerjaan' => 'Pemasangan 1 buah roof drain, Dia. 3" (80 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '488076.60',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkonstruksiumum6::create([
+
+datastrukturbangunangedung::create([
     'id' => 61,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 13,
-    'kode' => '4',
-    'subhargadiv6_id' => 61,
-    'subhargadiv6bahan_id' => 61,
-    'subhargadiv6peralatan_id' => 61,
-    'jenispekerjaan' => 'Pemasangan 1 buah roof drain, Dia. 4" (100 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '530075.70',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 62,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 14,
-    'kode' => '1',
-    'subhargadiv6_id' => 62,
-    'subhargadiv6bahan_id' => 62,
-    'subhargadiv6peralatan_id' => 62,
-    'jenispekerjaan' => 'Pemasangan 1 buah WLC & pengkabelan',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '3528344.60',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
 ]);
 
-hspkonstruksiumum6::create([
+datastrukturbangunangedung::create([
     'id' => 63,
-    'hspdivisi_id' => 6,
-    'hsppaket6_id' => 6,
-    'hspkodepekerjaan6_id' => 15,
-    'kode' => '1.a',
-    'subhargadiv6_id' => 63,
-    'subhargadiv6bahan_id' => 63,
-    'subhargadiv6peralatan_id' => 63,
-    'jenispekerjaan' => 'Pemasangan 1 buah DOP PVC, Dia. 3" (80 mm)',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '20603.00',
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 64,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 65,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 66,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 67,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 68,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 69,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 70,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
 ]);
 
 
-//======================== ===================================================================================
-// ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 7 ===========================
-hsppaket7::create([
+datastrukturbangunangedung::create([
+    'id' => 71,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 72,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 73,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 74,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 75,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 76,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 77,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 78,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 79,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 80,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+
+datastrukturbangunangedung::create([
+    'id' => 81,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 82,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 83,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 84,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 85,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 86,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 87,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 88,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 89,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 90,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+
+datastrukturbangunangedung::create([
+    'id' => 91,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 92,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 93,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 94,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 95,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'BETON',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 96,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 97,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 98,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 99,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
+]);
+
+datastrukturbangunangedung::create([
+    'id' => 100,
+    'zona' => 'ZONA 3',
+    'jenis_tanah' => 'SEDANG',
+    'tipe_fondasi' => 'FONDASI DANGKAL',
+    'bahan_fondasi' => 'KAYU',
+]);
+
+// DATA STATUS BANGUNAN GEDUNG ---------------------------
+statusbangunangedung::create([
     'id' => 1,
-    'hspdivisi_id' => 7,
-    'hsppaket7' => 'Jalan Paving Block',
+    'strukturatas' => 'BAJA',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0002',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkodepekerjaan7::create([
-    'id' => 1,
-    'hsppaket7_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Pemasangan Paving Block',
-]);
-
-hspkodepekerjaan7::create([
+statusbangunangedung::create([
     'id' => 2,
-    'hsppaket7_id' => 1,
-    'kodepekerjaan' => '2',
-    'namapekerjaan' => 'Pemasangan Kanstin',
+    'strukturatas' => 'BAJA',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0003',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-
-//======================== ===================================================================================
-// AHSP KONSTRUKSI UMUM DIVISI 7 DAN DATA LAIN LAIN NYA
-
-hspkonstruksiumum7::create([
-    'id' => 1,
-    'hspdivisi_id' => 7,
-    'hsppaket7_id' => 1,
-    'hspkodepekerjaan7_id' => 1,
-    'kode' => '1',
-    'subhargadiv7_id' => 1,
-    'subhargadiv7bahan_id' => 1,
-    'subhargadiv7peralatan_id' => 1,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Paving block (Blok Beton) Natural Tebal 6 cm fc 20 MPa untuk Jalan Lingkungan (Jalan Lokal) secara manual',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '140093.25',
-]);
-
-hspkonstruksiumum7::create([
-    'id' => 2,
-    'hspdivisi_id' => 7,
-    'hsppaket7_id' => 1,
-    'hspkodepekerjaan7_id' => 1,
-    'kode' => '1.a',
-    'subhargadiv7_id' => 2,
-    'subhargadiv7bahan_id' => 2,
-    'subhargadiv7peralatan_id' => 2,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Pengunci Topi Uskup Tebal 6 cm fc 20 MPa untuk Jalan Lingkungan (Jalan Lokal) secara manual',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '193509.25',
-]);
-
-hspkonstruksiumum7::create([
+statusbangunangedung::create([
     'id' => 3,
-    'hspdivisi_id' => 7,
-    'hsppaket7_id' => 1,
-    'hspkodepekerjaan7_id' => 1,
-    'kode' => '2',
-    'subhargadiv7_id' => 3,
-    'subhargadiv7bahan_id' => 3,
-    'subhargadiv7peralatan_id' => 3,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Paving block (Blok Beton) Natural Tebal 6 cm 25 MPa untuk Jalan Akses/Penghubung (Jalan Kolektor) secara manual ',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '142403.25',
+    'strukturatas' => 'BAJA',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0004',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum7::create([
+statusbangunangedung::create([
     'id' => 4,
-    'hspdivisi_id' => 7,
-    'hsppaket7_id' => 1,
-    'hspkodepekerjaan7_id' => 1,
-    'kode' => '2.a',
-    'subhargadiv7_id' => 4,
-    'subhargadiv7bahan_id' => 4,
-    'subhargadiv7peralatan_id' => 4,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Pengunci Topi Uskup Tebal 6 cm 25 MPa dan Pengunci Topi Uskup untuk Jalan Akses/Penghubung (Jalan Kolektor) secara manual ',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '248509.25',
+    'strukturatas' => 'BETON',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0005',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum7::create([
+statusbangunangedung::create([
     'id' => 5,
-    'hspdivisi_id' => 7,
-    'hsppaket7_id' => 1,
-    'hspkodepekerjaan7_id' => 1,
-    'kode' => '3',
-    'subhargadiv7_id' => 5,
-    'subhargadiv7bahan_id' => 5,
-    'subhargadiv7peralatan_id' => 5,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Paving block (Blok Beton) Natural Tebal 6 cm fc 20 MPa untuk Jalan Lingkungan (Jalan Lokal) secara semi mekanis',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '144481.72',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0001',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum7::create([
+
+statusbangunangedung::create([
     'id' => 6,
-    'hspdivisi_id' => 7,
-    'hsppaket7_id' => 1,
-    'hspkodepekerjaan7_id' => 1,
-    'kode' => '3.a',
-    'subhargadiv7_id' => 6,
-    'subhargadiv7bahan_id' => 6,
-    'subhargadiv7peralatan_id' => 6,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Pengunci Topi Uskup Tebal 6 cm fc 20 MPa untuk Jalan Lingkungan (Jalan Lokal) secara semi mekanis',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '197897.72',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.05.0043',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum7::create([
+statusbangunangedung::create([
     'id' => 7,
-    'hspdivisi_id' => 7,
-    'hsppaket7_id' => 1,
-    'hspkodepekerjaan7_id' => 1,
-    'kode' => '4',
-    'subhargadiv7_id' => 7,
-    'subhargadiv7bahan_id' => 7,
-    'subhargadiv7peralatan_id' => 7,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Paving block (Blok Beton) Natural Tebal 6 cm 25 MPa untuk Jalan Akses/Penghubung (Jalan Kolektor) secara semi mekanis',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '146791.72',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.05.0044',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum7::create([
+statusbangunangedung::create([
     'id' => 8,
-    'hspdivisi_id' => 7,
-    'hsppaket7_id' => 1,
-    'hspkodepekerjaan7_id' => 1,
-    'kode' => '4.a',
-    'subhargadiv7_id' => 8,
-    'subhargadiv7bahan_id' => 8,
-    'subhargadiv7peralatan_id' => 8,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Pengunci Topi Uskup Tebal 6 cm fc 25 MPa untuk Jalan Akses/Penghubung (Jalan Kolektor) secara semi mekanis',
-    'satuanmaterial' => 'M2',
-    'hargasatuan' => '252897.72',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0165',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum7::create([
+statusbangunangedung::create([
     'id' => 9,
-    'hspdivisi_id' => 7,
-    'hsppaket7_id' => 1,
-    'hspkodepekerjaan7_id' => 2,
-    'kode' => '1',
-    'subhargadiv7_id' => 9,
-    'subhargadiv7bahan_id' => 9,
-    'subhargadiv7peralatan_id' => 9,
-    'jenispekerjaan' => 'Pemasangan  1  m1  Kanstin,  tebal  10x18x40  cm  untuk  Jalan Lingkungan (Jalan Lokal)',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '60570.37',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => 'BAIK',
+    'balok' => 'BAIK',
+    'kolom' => 'BAIK',
+    'pondasi' => 'BAIK',
+    'dinding' => 'BAIK',
+    'genteng' => 'BAIK',
+    'plafon' => 'T1',
+    'lantai' => 'BAIK',
+    'pintu' => 'BAIK',
+    'jendela' => 'BAIK',
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0008',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-
-//======================== ===================================================================================
-// AHSP KONSTRUKSI UMUM DIVISI 8 DAN DATA LAIN LAIN NYA
-
-// ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 8 ===========================
-hsppaket8::create([
-    'id' => 1,
-    'hspdivisi_id' => 8,
-    'hsppaket8' => null,
-]);
-
-hsppaket8::create([
-    'id' => 2,
-    'hspdivisi_id' => 8,
-    'hsppaket8' => 'Saluran Buis Beton',
-]);
-
-hspkodepekerjaan8::create([
-    'id' => 1,
-    'hsppaket8_id' => 2,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Saluran Buis Beton',
-]);
-
-hspkonstruksiumum8::create([
-    'id' => 1,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '1',
-    'subhargadiv8_id' => 1,
-    'subhargadiv8bahan_id' => 1,
-    'subhargadiv8peralatan_id' => 1,
-    'jenispekerjaan' => '1 m’ Buis Beton 1/2 D 30 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '73291.41',
-]);
-
-hspkonstruksiumum8::create([
-    'id' => 2,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '2',
-    'subhargadiv8_id' => 2,
-    'subhargadiv8bahan_id' => 2,
-    'subhargadiv8peralatan_id' => 2,
-    'jenispekerjaan' => '1 m’ Buis Beton 1/2 D 40 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '95929.28',
-]);
-
-hspkonstruksiumum8::create([
-    'id' => 3,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '3',
-    'subhargadiv8_id' => 3,
-    'subhargadiv8bahan_id' => 3,
-    'subhargadiv8peralatan_id' => 3,
-    'jenispekerjaan' => '1 m’ Buis Beton 1/2 D 50 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '136723.65',
-]);
-
-hspkonstruksiumum8::create([
-    'id' => 4,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '4',
-    'subhargadiv8_id' => 4,
-    'subhargadiv8bahan_id' => 4,
-    'subhargadiv8peralatan_id' => 4,
-    'jenispekerjaan' => '1 m’ Buis Beton 1/2 D 60 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '204680.03',
-]);
-
-hspkonstruksiumum8::create([
-    'id' => 5,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '5',
-    'subhargadiv8_id' => 5,
-    'subhargadiv8bahan_id' => 5,
-    'subhargadiv8peralatan_id' => 5,
-    'jenispekerjaan' => '1 m’ Buis Beton 1/2 D 80 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '227324.33',
-]);
-
-hspkonstruksiumum8::create([
-    'id' => 6,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '6',
-    'subhargadiv8_id' => 6,
-    'subhargadiv8bahan_id' => 6,
-    'subhargadiv8peralatan_id' => 6,
-    'jenispekerjaan' => '1 m’ Buis Beton 1/2 D 100 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '248192.04',
-]);
-
-hspkonstruksiumum8::create([
-    'id' => 7,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '7',
-    'subhargadiv8_id' => 7,
-    'subhargadiv8bahan_id' => 7,
-    'subhargadiv8peralatan_id' => 7,
-    'jenispekerjaan' => '1 m’ Buis Beton D 30 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '139304.64',
-]);
-
-hspkonstruksiumum8::create([
-    'id' => 8,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '8',
-    'subhargadiv8_id' => 8,
-    'subhargadiv8bahan_id' => 8,
-    'subhargadiv8peralatan_id' => 8,
-    'jenispekerjaan' => '1 m’ Buis Beton D 40 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '196589.22',
-]);
-
-hspkonstruksiumum8::create([
-    'id' => 9,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '9',
-    'subhargadiv8_id' => 9,
-    'subhargadiv8bahan_id' => 9,
-    'subhargadiv8peralatan_id' => 9,
-    'jenispekerjaan' => '1 m’ Buis Beton D 50 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '287201.75',
-]);
-
-hspkonstruksiumum8::create([
+statusbangunangedung::create([
     'id' => 10,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '10',
-    'subhargadiv8_id' => 10,
-    'subhargadiv8bahan_id' => 10,
-    'subhargadiv8peralatan_id' => 10,
-    'jenispekerjaan' => '1 m’ Buis Beton D 60 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '381067.98',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => 'BAIK',
+    'balok' => 'BAIK',
+    'kolom' => 'BAIK',
+    'pondasi' => 'BAIK',
+    'dinding' => 'BAIK',
+    'genteng' => 'BAIK',
+    'plafon' => 'BAIK',
+    'lantai' => 'BAIK',
+    'pintu' => 'BAIK',
+    'jendela' => 'BAIK',
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0009',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum8::create([
+
+statusbangunangedung::create([
     'id' => 11,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '11',
-    'subhargadiv8_id' => 11,
-    'subhargadiv8bahan_id' => 11,
-    'subhargadiv8peralatan_id' => 11,
-    'jenispekerjaan' => '1 m’ Buis Beton D 80 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '405534.38',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => 'BAIK',
+    'balok' => 'BAIK',
+    'kolom' => 'BAIK',
+    'pondasi' => 'BAIK',
+    'dinding' => 'BAIK',
+    'genteng' => 'BAIK',
+    'plafon' => 'BAIK',
+    'lantai' => 'BAIK',
+    'pintu' => 'BAIK',
+    'jendela' => 'BAIK',
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0010',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum8::create([
+statusbangunangedung::create([
     'id' => 12,
-    'hspdivisi_id' => 8,
-    'hsppaket8_id' => 2,
-    'hspkodepekerjaan8_id' => 1,
-    'kode' => '12',
-    'subhargadiv8_id' => 12,
-    'subhargadiv8bahan_id' => 12,
-    'subhargadiv8peralatan_id' => 12,
-    'jenispekerjaan' => '1 m’ Buis Beton D 100 - 100 cm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '485505.48',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => 'BAIK',
+    'balok' => 'BAIK',
+    'kolom' => 'BAIK',
+    'pondasi' => 'BAIK',
+    'dinding' => 'BAIK',
+    'genteng' => 'BAIK',
+    'plafon' => 'BAIK',
+    'lantai' => 'BAIK',
+    'pintu' => 'BAIK',
+    'jendela' => 'BAIK',
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => null,
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-
-//======================== ===================================================================================
-// AHSP KONSTRUKSI UMUM DIVISI 9 DAN DATA LAIN LAIN NYA
-
-hsppaket9::create([
-    'id' => 1,
-    'hspdivisi_id' => 9,
-    'hsppaket9' => 'Pipa PVC',
-]);
-
-hsppaket9::create([
-    'id' => 2,
-    'hspdivisi_id' => 9,
-    'hsppaket9' => 'Pipa Galvanis',
-]);
-
-hsppaket9::create([
-    'id' => 3,
-    'hspdivisi_id' => 9,
-    'hsppaket9' => 'Pipa HDPE/PE',
-]);
-
-hsppaket9::create([
-    'id' => 7,
-    'hspdivisi_id' => 9,
-    'hsppaket9' => 'Aksesoris Pipa',
-]);
-
-// ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 9 ===========================
-hspkodepekerjaan9::create([
-    'id' => 1,
-    'hsppaket9_id' => 1,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Pemasangan Pipa PVC',
-]);
-
-hspkodepekerjaan9::create([
-    'id' => 2,
-    'hsppaket9_id' => 2,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Pemasangan Pipa Galvanis',
-]);
-
-hspkodepekerjaan9::create([
-    'id' => 3,
-    'hsppaket9_id' => 3,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Pemasangan Pipa HDPE',
-]);
-
-hspkodepekerjaan9::create([
-    'id' => 4,
-    'hsppaket9_id' => 7,
-    'kodepekerjaan' => '3',
-    'namapekerjaan' => 'Pasangan Aksesoris Tee',
-]);
-
-
-//======================== ===================================================================================
-// AHSP KONSTRUKSI UMUM DIVISI 9 DAN DATA LAIN LAIN NYA
-hspkonstruksiumum9::create([
-    'id' => 1,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 1,
-    'hspkodepekerjaan9_id' => 1,
-    'kode' => '1.a',
-    'subhargadiv9_id' => 1,
-    'subhargadiv9bahan_id' => 1,
-    'subhargadiv9peralatan_id' => 1,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa PVC Ø 12,5 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '29354.60',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 2,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 1,
-    'hspkodepekerjaan9_id' => 1,
-    'kode' => '1.b',
-    'subhargadiv9_id' => 2,
-    'subhargadiv9bahan_id' => 2,
-    'subhargadiv9peralatan_id' => 2,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa PVC Ø 25 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '39254.60',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 3,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 1,
-    'hspkodepekerjaan9_id' => 1,
-    'kode' => '1.c',
-    'subhargadiv9_id' => 3,
-    'subhargadiv9bahan_id' => 3,
-    'subhargadiv9peralatan_id' => 3,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa PVC Ø 37,5 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '53004.60',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 4,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 1,
-    'hspkodepekerjaan9_id' => 1,
-    'kode' => '1.d',
-    'subhargadiv9_id' => 4,
-    'subhargadiv9bahan_id' => 4,
-    'subhargadiv9peralatan_id' => 4,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa PVC Ø 50 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '56854.60',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 5,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 1,
-    'hspkodepekerjaan9_id' => 1,
-    'kode' => '1.e',
-    'subhargadiv9_id' => 5,
-    'subhargadiv9bahan_id' => 5,
-    'subhargadiv9peralatan_id' => 5,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa PVC Ø 75 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '86004.60',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 6,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 1,
-    'hspkodepekerjaan9_id' => 1,
-    'kode' => '2.a',
-    'subhargadiv9_id' => 6,
-    'subhargadiv9bahan_id' => 6,
-    'subhargadiv9peralatan_id' => 6,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa PVC Ø 100 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '200973.30',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 7,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 2,
-    'hspkodepekerjaan9_id' => 2,
-    'kode' => '1.a',
-    'subhargadiv9_id' => 7,
-    'subhargadiv9bahan_id' => 7,
-    'subhargadiv9peralatan_id' => 7,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa Galvanis Ø 12,5 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '82788.57',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 8,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 2,
-    'hspkodepekerjaan9_id' => 2,
-    'kode' => '1.c',
-    'subhargadiv9_id' => 8,
-    'subhargadiv9bahan_id' => 8,
-    'subhargadiv9peralatan_id' => 8,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa Galvanis Ø 37,5 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '93055.23',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 9,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 2,
-    'hspkodepekerjaan9_id' => 2,
-    'kode' => '1.d',
-    'subhargadiv9_id' => 9,
-    'subhargadiv9bahan_id' => 9,
-    'subhargadiv9peralatan_id' => 9,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa Galvanis Ø 50 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '110655.23',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 10,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 2,
-    'hspkodepekerjaan9_id' => 2,
-    'kode' => '1',
-    'subhargadiv9_id' => 10,
-    'subhargadiv9bahan_id' => 10,
-    'subhargadiv9peralatan_id' => 10,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa Galvanis Ø 63 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '121838.57',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 11,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 2,
-    'hspkodepekerjaan9_id' => 2,
-    'kode' => '1.e',
-    'subhargadiv9_id' => 11,
-    'subhargadiv9bahan_id' => 11,
-    'subhargadiv9peralatan_id' => 11,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa Galvanis Ø 75 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '167121.90',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 12,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 3,
-    'hspkodepekerjaan9_id' => 3,
-    'kode' => '1.a',
-    'subhargadiv9_id' => 12,
-    'subhargadiv9bahan_id' => 12,
-    'subhargadiv9peralatan_id' => 12,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa HDPE Ø 12,5 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '21027.60',
-]);
-
-hspkonstruksiumum9::create([
+statusbangunangedung::create([
     'id' => 13,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 3,
-    'hspkodepekerjaan9_id' => 3,
-    'kode' => '1.b',
-    'subhargadiv9_id' => 13,
-    'subhargadiv9bahan_id' => 13,
-    'subhargadiv9peralatan_id' => 13,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa HDPE Ø 37,5 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '44677.60',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => 'BAIK',
+    'balok' => 'BAIK',
+    'kolom' => 'BAIK',
+    'pondasi' => 'BAIK',
+    'dinding' => 'BAIK',
+    'genteng' => 'T1',
+    'plafon' => 'T2',
+    'lantai' => 'T2',
+    'pintu' => 'T1',
+    'jendela' => 'BAIK',
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0012',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum9::create([
+statusbangunangedung::create([
     'id' => 14,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 3,
-    'hspkodepekerjaan9_id' => 3,
-    'kode' => '1.c',
-    'subhargadiv9_id' => 14,
-    'subhargadiv9bahan_id' => 14,
-    'subhargadiv9peralatan_id' => 14,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa HDPE Ø 50 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '53807.60',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0013',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum9::create([
+statusbangunangedung::create([
     'id' => 15,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 3,
-    'hspkodepekerjaan9_id' => 3,
-    'kode' => '1.d',
-    'subhargadiv9_id' => 15,
-    'subhargadiv9bahan_id' => 15,
-    'subhargadiv9peralatan_id' => 15,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa HDPE Ø 75 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '95827.60',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0006',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum9::create([
+
+statusbangunangedung::create([
     'id' => 16,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 3,
-    'hspkodepekerjaan9_id' => 3,
-    'kode' => '2',
-    'subhargadiv9_id' => 16,
-    'subhargadiv9bahan_id' => 16,
-    'subhargadiv9peralatan_id' => 16,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa HDPE Ø 100 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '137661.70',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0007',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum9::create([
+statusbangunangedung::create([
     'id' => 17,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 3,
-    'hspkodepekerjaan9_id' => 3,
-    'kode' => '4',
-    'subhargadiv9_id' => 17,
-    'subhargadiv9bahan_id' => 17,
-    'subhargadiv9peralatan_id' => 17,
-    'jenispekerjaan' => 'Pasangan 1 m Pipa HDPE  Ø 150 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '277630.10',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0008',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum9::create([
+statusbangunangedung::create([
     'id' => 18,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.a',
-    'subhargadiv9_id' => 18,
-    'subhargadiv9bahan_id' => 18,
-    'subhargadiv9peralatan_id' => 18,
-    'jenispekerjaan' => 'Pasangan 1 Buah Tee galvanish Ø 12,5 mm',
-    'satuanmaterial' => 'M1',
-    'hargasatuan' => '51608.70',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0009',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum9::create([
+statusbangunangedung::create([
     'id' => 19,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.b',
-    'subhargadiv9_id' => 19,
-    'subhargadiv9bahan_id' => 19,
-    'subhargadiv9peralatan_id' => 19,
-    'jenispekerjaan' => 'Pasangan 1 Buah Valve socket Ø 12,5 mm',
-    'satuanmaterial' => 'Buah',
-    // 'satuanmaterial' => 'M1',
-    'hargasatuan' => '51608.70',
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0010',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
-hspkonstruksiumum9::create([
+statusbangunangedung::create([
     'id' => 20,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.c',
-    'subhargadiv9_id' => 20,
-    'subhargadiv9bahan_id' => 20,
-    'subhargadiv9peralatan_id' => 20,
-    'jenispekerjaan' => 'Pasangan 1 Buah Clam sadle 2x 1,5 "',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '73608.70',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 21,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.d',
-    'subhargadiv9_id' => 21,
-    'subhargadiv9bahan_id' => 21,
-    'subhargadiv9peralatan_id' => 21,
-    'jenispekerjaan' => 'Pasangan 1 Buah Knee galvanish 0,5"',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '51608.70',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 22,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.e',
-    'subhargadiv9_id' => 22,
-    'subhargadiv9bahan_id' => 22,
-    'subhargadiv9peralatan_id' => 22,
-    'jenispekerjaan' => 'Pasangan 1 Buah Water moor kuningan 0,5"',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '54358.70',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 23,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.f',
-    'subhargadiv9_id' => 23,
-    'subhargadiv9bahan_id' => 23,
-    'subhargadiv9peralatan_id' => 23,
-    'jenispekerjaan' => 'Pasangan 1 Buah Double nippel galvanish 0,5"',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '51608.70',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 24,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.g',
-    'subhargadiv9_id' => 24,
-    'subhargadiv9bahan_id' => 24,
-    'subhargadiv9peralatan_id' => 24,
-    'jenispekerjaan' => 'Pasangan 1 Buah Fouket socket galvanish 0,5"',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '68108.70',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 25,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.h',
-    'subhargadiv9_id' => 25,
-    'subhargadiv9bahan_id' => 25,
-    'subhargadiv9peralatan_id' => 25,
-    'jenispekerjaan' => 'Pasangan 1 Buah Fouket socket galvanish 0,5"',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '57108.70',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 26,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.i',
-    'subhargadiv9_id' => 26,
-    'subhargadiv9bahan_id' => 26,
-    'subhargadiv9peralatan_id' => 26,
-    'jenispekerjaan' => 'Pasangan 1 Buah Fit kran kuningan 0,5"',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '51608.70',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 27,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.j',
-    'subhargadiv9_id' => 27,
-    'subhargadiv9bahan_id' => 27,
-    'subhargadiv9peralatan_id' => 27,
-    'jenispekerjaan' => 'Pasangan 1 Buah Bok meter air + Logo',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '194608.70',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 28,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.k',
-    'subhargadiv9_id' => 28,
-    'subhargadiv9bahan_id' => 28,
-    'subhargadiv9peralatan_id' => 28,
-    'jenispekerjaan' => 'Pasangan 1 Buah Katup searah kuningan 0,5"',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '111008.70',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 29,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.l',
-    'subhargadiv9_id' => 29,
-    'subhargadiv9bahan_id' => 29,
-    'subhargadiv9peralatan_id' => 29,
-    'jenispekerjaan' => 'Pasangan 1 Buah Plug kran kuningan 0,5"',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '117608.70',
-]);
-
-hspkonstruksiumum9::create([
-    'id' => 30,
-    'hspdivisi_id' => 9,
-    'hsppaket9_id' => 7,
-    'hspkodepekerjaan9_id' => 4,
-    'kode' => '1.m',
-    'subhargadiv9_id' => 30,
-    'subhargadiv9bahan_id' => 30,
-    'subhargadiv9peralatan_id' => 30,
-    'jenispekerjaan' => 'Pasangan 1 Buah Fouket elbow galvanish 0,5"',
-    'satuanmaterial' => 'Buah',
-    'hargasatuan' => '51608.70',
-]);
-
-
-
-// BATAS DATABASE AHSP
-
-paketstatuspekerjaan::create([
-    'id' => 1,
-    'paketstatuspekerjaan' => 'Pekerjaan Konstruksi Tender',
-]);
-
-paketstatuspekerjaan::create([
-    'id' => 2,
-    'paketstatuspekerjaan' => 'Pekerjaan Konstruksi Non Tender',
-]);
-
-paketstatuspekerjaan::create([
-    'id' => 3,
-    'paketstatuspekerjaan' => 'Pekerjaan Konsultasi Konstruksi Tender',
-]);
-
-paketstatuspekerjaan::create([
-    'id' => 4,
-    'paketstatuspekerjaan' => 'Pekerjaan Konsultasi Konstruksi Non Tender',
-]);
-
-
-//==========================================================================================================
-// DATA PAKET PEERJAAN MASJAKI
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 1,
-    'namapekerjaan'              => 'Rehabilitasi Checkdam Talokwohmojo Kec Ngawen Lanjutan',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV Restu Bumi Mustika',
-    'nib'                        => '1105240037134',
-    'nilaikontrak'               => 691260716.59,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Agustus',
-    'bulanselesai'               => 'Desember',
-    'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
-]);
-
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 2,
-    'namapekerjaan'              => 'BELANJA MODAL BANGUNAN KESEHATAN-BELANJA MODAL PAGAR',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV. REZEKY MUJI KONSTRUKSI',
-    'nib'                        => '3011220047491',
-    'nilaikontrak'               => 857589920.00,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Oktober',
-    'bulanselesai'               => 'Desember',
-    'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
-]);
-
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 3,
-    'namapekerjaan'              => 'Pembangunan Saluran Pengendali Banjir Kecamatan Cepu Lanjutan',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV. KINAN KARYA GEMILANG',
-    'nib'                        => '0260010050988',
-    'nilaikontrak'               => 763241000.00,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Juli',
-    'bulanselesai'               => 'Desember',
-    'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
-]);
-
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 3,
-    'namapekerjaan'              => 'Pembangunan Saluran Pengendali Banjir Ruas Jalan Sonokidul Kecamatan Kunduran',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV Restu Bumi Mustika',
-    'nib'                        => '1105240037134',
-    'nilaikontrak'               => 451076000.00,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Agustus',
-    'bulanselesai'               => 'Desember',
-    'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
-]);
-
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 3,
-    'namapekerjaan'              => 'PEMBANGUNAN SARANA DAN PRASARANA DRAINASE LINGKUNGAN PERMUKIMAN KUMUH DRAINASE LINGKUNGAN RT 2 RW 9 KELURAHAN CEPU KECAMATAN CEPU KAB. BLORA',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV.KEMBAR DUA',
-    'nib'                        => '0246000912019',
-    'nilaikontrak'               => 161453878.91,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Agustus',
-    'bulanselesai'               => 'November',
-    'dinas'                      => 'DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN'
-]);
-
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 3,
-    'namapekerjaan'              => 'Pembangunan Saluran Pengendali Banjir Kel. Kunduran Kec. Kunduran Lanjutan',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV. WIRATAMA GEMILANG',
-    'nib'                        => 'N/A',
-    'nilaikontrak'               =>  421000000.00,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => 'Agustus',
-    'bulanselesai'               => 'Desember',
-    'dinas'                      => 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG'
-]);
-
-//==========================================================================================================
-// DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 1,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'SETUJU',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 2,
-    'user_id'                       => 2,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'SETUJU',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 3,
-    'user_id'                       => 3,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'SETUJU',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 2,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'SETUJU',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 3,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'SETUJU',
-]);
-
-
-
-//==========================================================================================================
-// DATA BERITA
-
-beritajakon::create([
-    'user_id' => '3',
-    'judulberita' => 'Pelatihan dan Uji Kompetensi SKK Jenjang 4 bagi Tenaga Kerja Konstruksi di Kabupaten Blora',
-    'tanggal' => '2025-03-05',
-    'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora menggelar Pelatihan dan Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 bagi tenaga kerja konstruksi untuk meningkatkan kualitas dan profesionalisme sesuai standar nasional. Kegiatan ini diikuti oleh puluhan peserta dari berbagai sektor konstruksi dengan pembekalan teori dan praktik oleh instruktur serta asesor kompetensi bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menegaskan pentingnya sertifikasi ini dalam meningkatkan daya saing tenaga kerja konstruksi, sejalan dengan regulasi pemerintah yang mewajibkan kepemilikan SKK. Salah satu peserta,  menyatakan bahwa pelatihan ini sangat bermanfaat dalam meningkatkan pemahaman dan keterampilannya di bidang konstruksi. Uji kompetensi dilakukan secara ketat untuk menilai pemahaman terhadap standar konstruksi, keselamatan kerja, dan kemampuan teknis. Dengan pelatihan ini, diharapkan tenaga kerja konstruksi di Blora semakin berkualitas dan siap bersaing dalam industri nasional.',
-    'foto' => '00_beranda/01_berita/berita1.JPG',
-]);
-
-beritajakon::create([
-    'user_id' => '3',
-    'judulberita' => 'Meningkatkan Kualitas Tenaga Kerja: Pelatihan dan Uji Kompetensi SKK Digelar di Blora',
-    'tanggal' => '2025-03-05',
-    'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora mengadakan Pelatihan dan Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 bagi tenaga kerja konstruksi guna meningkatkan profesionalisme dan daya saing mereka. Kegiatan ini diikuti oleh puluhan peserta dari berbagai sektor konstruksi yang mendapatkan pembekalan teori serta praktik langsung oleh instruktur dan asesor kompetensi bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menegaskan pentingnya sertifikasi ini dalam mendukung standar nasional dan meningkatkan peluang kerja tenaga konstruksi di berbagai proyek. Salah satu peserta,  menyatakan bahwa pelatihan ini sangat membantu dalam meningkatkan keterampilan dan kepercayaan diri menghadapi dunia kerja. Dengan terselenggaranya kegiatan ini, diharapkan tenaga kerja konstruksi di Blora semakin berkualitas dan mampu bersaing dalam industri nasional.',
-    'foto' => '00_beranda/01_berita/berita2.JPG',
-]);
-
-beritajakon::create([
-    'user_id' => '3',
-    'judulberita' => 'Puluhan Tenaga Konstruksi Blora Ikuti Sertifikasi Kompetensi Kerja Jenjang 4',
-    'tanggal' => '2025-03-05',
-    'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora menggelar Pelatihan dan Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 untuk meningkatkan kualitas tenaga kerja konstruksi sesuai standar nasional. Kegiatan ini diikuti oleh puluhan peserta dari berbagai sektor konstruksi yang mendapatkan pembekalan teori dan praktik langsung dari instruktur serta asesor bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menyampaikan bahwa sertifikasi ini penting untuk meningkatkan daya saing tenaga kerja dan membuka peluang kerja lebih luas di sektor konstruksi. Salah satu peserta, mengaku pelatihan ini sangat bermanfaat dalam meningkatkan keterampilan dan kepercayaan diri di dunia kerja. Dengan adanya kegiatan ini, diharapkan tenaga kerja konstruksi di Blora semakin kompeten dan siap bersaing dalam industri nasional',
-    'foto' => '00_beranda/01_berita/berita3.JPG',
-]);
-
-beritajakon::create([
-    'user_id' => '3',
-    'judulberita' => 'Dorong Profesionalisme, Dinas PUPR Blora Selenggarakan Uji Kompetensi SKK Konstruksi',
-    'tanggal' => '2025-03-05',
-    'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora mengadakan Pelatihan dan Sertifikasi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 sebagai langkah strategis dalam meningkatkan standar tenaga kerja konstruksi di daerah ini. Kegiatan ini diikuti oleh puluhan peserta dari berbagai sektor yang mendapatkan pembekalan teori dan praktik langsung oleh instruktur serta asesor bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menyatakan bahwa sertifikasi ini bertujuan untuk memastikan tenaga kerja konstruksi memiliki kompetensi sesuai standar nasional dan mampu bersaing di industri konstruksi. Salah satu peserta, menyampaikan bahwa pelatihan ini sangat bermanfaat dalam meningkatkan keterampilan dan peluang kerja di sektor konstruksi. Dengan adanya program ini, diharapkan tenaga kerja konstruksi di Blora semakin profesional dan berkontribusi dalam pembangunan yang berkualitas.',
-    'foto' => '00_beranda/01_berita/berita4.JPG',
-]);
-
-beritajakon::create([
-    'user_id' => '3',
-    'judulberita' => 'Pelatihan dan Sertifikasi SKK di Blora: Upaya Meningkatkan Standar Tenaga Konstruksi',
-    'tanggal' => '2025-03-05',
-    'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora mengadakan Pelatihan dan Sertifikasi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 untuk meningkatkan standar tenaga kerja konstruksi di daerah tersebut. Kegiatan ini diikuti oleh puluhan peserta yang mendapatkan pembekalan teori dan praktik langsung dari instruktur serta asesor bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menyatakan bahwa sertifikasi ini penting untuk memastikan tenaga kerja memiliki kompetensi sesuai standar nasional dan dapat bersaing di industri konstruksi. Salah satu peserta, mengungkapkan bahwa pelatihan ini sangat membantu dalam meningkatkan keterampilan dan peluang kerja. Dengan adanya program ini, diharapkan tenaga kerja konstruksi di Blora semakin profesional dan berkontribusi dalam pembangunan infrastruktur yang berkualitas.',
-    'foto' => '00_beranda/01_berita/berita5.jpg',
-]);
-
-beritajakon::create([
-    'user_id' => '3',
-    'judulberita' => 'Dinas PUPR Blora Gelar Pelatihan dan Uji Kompetensi SKK Jenjang 4 bagi Tenaga Konstruksi',
-    'tanggal' => '2025-03-05',
-    'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora menyelenggarakan Pelatihan dan Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 untuk meningkatkan kualitas tenaga kerja konstruksi di daerah tersebut. Kegiatan ini diikuti oleh puluhan peserta dari berbagai sektor yang mendapatkan pembekalan teori dan praktik dari instruktur serta asesor bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menyampaikan bahwa sertifikasi ini bertujuan untuk memastikan tenaga kerja memiliki kompetensi sesuai standar nasional dan siap bersaing di industri konstruksi. Salah satu peserta, mengungkapkan bahwa pelatihan ini sangat membantu dalam meningkatkan keterampilan dan peluang kerja. Dengan adanya program ini, diharapkan tenaga kerja konstruksi di Blora semakin profesional dan mampu mendukung pembangunan infrastruktur yang berkualitas.',
-    'foto' => '00_beranda/01_berita/berita6.JPG',
-]);
-
-//======================== ===================================================================================
-// DATA ARTIKEL JAKON MAS JAKI
-artikeljakonmasjaki::create([
-    'user_id' => '3',
-    'judul' => 'Mengenal Sistem Informasi Jasa Konstruksi: Manfaat dan Implementasinya',
-    'foto1' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto2' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto3' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'berkas' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-    'tanggal' => null,
-    'keterangan' => 'Sistem informasi dalam jasa konstruksi memberikan berbagai manfaat, termasuk peningkatan efisiensi, transparansi, serta pengelolaan proyek yang lebih baik. Artikel ini membahas bagaimana implementasi sistem ini dapat membantu industri konstruksi berkembang lebih optimal.',
-]);
-
-artikeljakonmasjaki::create([
-    'user_id' => '3',
-    'judul' => 'Digitalisasi Manajemen Proyek: Peran Sistem Informasi dalam Jasa Konstruksi',
-    'foto1' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto2' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto3' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'berkas' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-    'tanggal' => null,
-    'keterangan' => 'Dalam era digital, manajemen proyek konstruksi semakin bergantung pada sistem informasi untuk meningkatkan efisiensi, akurasi data, dan pengambilan keputusan yang lebih baik. Artikel ini mengulas berbagai manfaat digitalisasi dalam pengelolaan proyek.',
-]);
-
-artikeljakonmasjaki::create([
-    'user_id' => '3',
-    'judul' => 'Panduan Memilih Sistem Informasi yang Tepat untuk Perusahaan Konstruksi',
-    'foto1' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto2' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto3' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'berkas' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-    'tanggal' => null,
-    'keterangan' => 'Pemilihan sistem informasi yang tepat sangat penting bagi perusahaan konstruksi agar operasional berjalan lebih efektif dan efisien. Artikel ini memberikan panduan dalam menentukan sistem yang sesuai dengan kebutuhan perusahaan.',
-]);
-
-artikeljakonmasjaki::create([
-    'user_id' => '3',
-    'judul' => 'Keamanan Data dalam Sistem Informasi Jasa Konstruksi: Tantangan dan Solusi',
-    'foto1' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto2' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto3' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'berkas' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-    'tanggal' => null,
-    'keterangan' => 'Keamanan data dalam sistem informasi jasa konstruksi menjadi tantangan utama di era digital. Artikel ini membahas berbagai risiko keamanan dan solusi untuk melindungi data dari ancaman siber serta kebocoran informasi.',
-]);
-
-artikeljakonmasjaki::create([
-    'user_id' => '3',
-    'judul' => 'Meningkatkan Produktivitas Konstruksi dengan Sistem Manajemen Informasi',
-    'foto1' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto2' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto3' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'berkas' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-    'tanggal' => null,
-    'keterangan' => 'Penggunaan sistem manajemen informasi dalam industri konstruksi dapat meningkatkan produktivitas, mempercepat proses kerja, dan mengurangi kesalahan manusia. Artikel ini mengulas bagaimana teknologi ini membantu sektor konstruksi berkembang lebih baik.',
-]);
-
-artikeljakonmasjaki::create([
-    'user_id' => '3',
-    'judul' => 'Tren Digital dalam Industri Konstruksi: Integrasi BIM dan Sistem Informasi',
-    'foto1' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto2' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto3' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'berkas' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-    'tanggal' => null,
-    'keterangan' => 'Integrasi Building Information Modeling (BIM) dengan sistem informasi membuka peluang baru dalam industri konstruksi. Artikel ini membahas tren digitalisasi dan bagaimana teknologi ini mengoptimalkan proses pembangunan.',
-]);
-
-artikeljakonmasjaki::create([
-    'user_id' => '3',
-    'judul' => 'Regulasi dan Standar dalam Sistem Informasi Jasa Konstruksi di Indonesia',
-    'foto1' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto2' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto3' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'berkas' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-    'tanggal' => null,
-    'keterangan' => 'Di Indonesia, penggunaan sistem informasi jasa konstruksi harus mematuhi regulasi dan standar yang telah ditetapkan. Artikel ini mengulas aturan yang berlaku serta pentingnya kepatuhan dalam implementasi sistem tersebut.',
-]);
-
-artikeljakonmasjaki::create([
-    'user_id' => '3',
-    'judul' => 'Strategi Implementasi Sistem Informasi untuk Optimalisasi Pengelolaan Proyek Konstruksi',
-    'foto1' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto2' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'foto3' => '00_beranda/02_artikeljakon/artikeljakon.jpg',
-    'berkas' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-    'tanggal' => null,
-    'keterangan' => 'Implementasi sistem informasi dalam pengelolaan proyek konstruksi dapat meningkatkan efisiensi, mengurangi biaya, dan mempercepat penyelesaian proyek. Artikel ini membahas strategi terbaik dalam penerapannya.',
-]);
-
-// ARIS AKHIR
-// ===============================
-// DATA TAHUN PILIHAN
-
-tahunpilihan::create([
-    'id' => 1,
-    'tahunpilihan' => '2021',
-]);
-
-tahunpilihan::create([
-    'id' => 2,
-    'tahunpilihan' => '2022',
-]);
-
-tahunpilihan::create([
-    'id' => 3,
-    'tahunpilihan' => '2023',
-]);
-
-tahunpilihan::create([
-    'id' => 4,
-    'tahunpilihan' => '2024',
-]);
-
-tahunpilihan::create([
-    'id' => 5,
-    'tahunpilihan' => '2025',
-]);
-
-tahunpilihan::create([
-    'id' => 6,
-    'tahunpilihan' => '2026',
-]);
-
-tahunpilihan::create([
-    'id' => 7,
-    'tahunpilihan' => '2027',
-]);
-
-// ===============================
-// DATA KATEGORI PELATIHAN
-
-kategoripelatihan::create([
-    'id' => 1,
-    'kategoripelatihan' => 'Workshop',
-]);
-
-kategoripelatihan::create([
-    'id' => 2,
-    'kategoripelatihan' => 'Pelatihan',
-]);
-
-kategoripelatihan::create([
-    'id' => 3,
-    'kategoripelatihan' => 'Sosialisasi',
-]);
-
-// ===============================
-// DATA AGENDA PELATIHAN
-// ===============================
-// DATA AGENDA PELATIHAN
-agendapelatihan::create([
-    'id' => 1,
-    'kategoripelatihan_id' => '1',
-    'namakegiatan' => 'Pelatihan Manajemen Konstruksi',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    // 'jenjang_id' => '4',
-    'penutupan' => '2025-02-13',
-    'waktupelaksanaan' => '2025-02-15',
-    'jumlahpeserta' => 40,
-    'lokasi' => 'Jln Blora No. 10',
-    'Keterangan' => 'Pelatihan untuk meningkatkan kualitas tenaga kerja konstruksi.',
-    'isiagenda' => 'Pelatihan ini bertujuan untuk meningkatkan kemampuan manajemen konstruksi bagi tenaga kerja di bidang konstruksi. Materi yang diberikan mencakup perencanaan proyek, pengendalian biaya, dan strategi pengawasan yang efektif. Dengan pelatihan ini, diharapkan para peserta dapat lebih profesional dalam mengelola proyek konstruksi secara efisien.',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendapelatihan::create([
-    'id' => 2,
-    'kategoripelatihan_id' => '2',
-    'namakegiatan' => 'Pelatihan Ahli K3 Konstruksi',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    // 'jenjang_id' => '5',
-    'penutupan' => '2025-02-08',
-    'waktupelaksanaan' => '2025-02-10',
-    'jumlahpeserta' => 30,
-    'lokasi' => 'Balai Latihan Kerja Blora',
-    'Keterangan' => 'Pelatihan sertifikasi ahli K3 di bidang konstruksi.',
-    'isiagenda' => 'Pelatihan ini ditujukan bagi tenaga kerja konstruksi yang ingin mendapatkan sertifikasi Ahli K3. Materi meliputi identifikasi risiko kerja, prosedur keselamatan, serta penerapan standar K3 dalam proyek konstruksi. Dengan mengikuti pelatihan ini, peserta diharapkan mampu meningkatkan keselamatan dan kesehatan kerja di lingkungan konstruksi.',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendapelatihan::create([
-    'id' => 3,
-    'kategoripelatihan_id' => '3',
-    'namakegiatan' => 'Workshop Teknologi Konstruksi',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    // 'jenjang_id' => '4',
-    'penutupan' => '2025-02-26', // Tanggal 30 diubah ke 28 agar valid
-    'waktupelaksanaan' => '2025-02-28', // Tanggal 30 diubah ke 28 agar valid
-    'jumlahpeserta' => 50,
-    'lokasi' => 'Hotel Blora Indah',
-    'Keterangan' => 'Pengenalan teknologi terbaru dalam konstruksi.',
-    'isiagenda' => 'Workshop ini akan membahas perkembangan terbaru dalam teknologi konstruksi, termasuk penggunaan material inovatif, teknik pembangunan modern, dan pemanfaatan digitalisasi dalam proyek konstruksi. Para peserta akan mendapatkan wawasan langsung dari para ahli di bidang konstruksi dan inovasi teknologi.',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendapelatihan::create([
-    'id' => 4,
-    'kategoripelatihan_id' => '1',
-    'namakegiatan' => 'Pelatihan Pengawasan Proyek',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    // 'jenjang_id' => '4',
-    'penutupan' => '2025-05-10',
-    'waktupelaksanaan' => '2025-05-12',
-    'jumlahpeserta' => 25,
-    'lokasi' => 'Gedung Serbaguna Blora',
-    'Keterangan' => 'Pelatihan bagi tenaga pengawas proyek konstruksi.',
-    'isiagenda' => 'Pelatihan ini memberikan pemahaman mendalam mengenai metode pengawasan proyek konstruksi, termasuk teknik inspeksi, pemantauan jadwal proyek, serta pengelolaan risiko di lapangan. Peserta akan mendapatkan studi kasus nyata untuk memperdalam pemahaman mereka dalam bidang ini.',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendapelatihan::create([
-    'id' => 5,
-    'kategoripelatihan_id' => '2',
-    'namakegiatan' => 'Bimbingan Teknis Konstruksi',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    // 'jenjang_id' => '4',
-    'penutupan' => '2025-06-18',
-    'waktupelaksanaan' => '2025-06-20',
-    'jumlahpeserta' => 60,
-    'lokasi' => 'Aula Kantor PU Blora',
-    'Keterangan' => 'Bimtek peningkatan kapasitas tenaga konstruksi.',
-    'isiagenda' => 'Bimbingan teknis ini bertujuan untuk meningkatkan kompetensi tenaga kerja konstruksi dengan memberikan pemahaman tentang regulasi, teknik pelaksanaan, serta manajemen proyek konstruksi. Para peserta akan dilatih secara langsung oleh tenaga ahli berpengalaman.',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendapelatihan::create([
-    'id' => 6,
-    'kategoripelatihan_id' => '3',
-    'namakegiatan' => 'Seminar Keselamatan Kerja',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    // 'jenjang_id' => '4',
-    'penutupan' => '2025-07-13',
-    'waktupelaksanaan' => '2025-07-15',
-    'jumlahpeserta' => 35,
-    'lokasi' => 'Universitas Blora',
-    'Keterangan' => 'Seminar terkait pentingnya keselamatan kerja dalam konstruksi.',
-    'isiagenda' => 'Seminar ini akan membahas pentingnya keselamatan kerja dalam industri konstruksi, mencakup strategi pencegahan kecelakaan, peraturan keselamatan yang berlaku, serta studi kasus insiden kerja. Tujuannya adalah untuk meningkatkan kesadaran dan penerapan standar keselamatan dalam proyek konstruksi.',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-// 'foto' => '00_dokmasjaki/03_datajakon/agendapelatihan.jpg',
-// iqlima
-// profilpaketkonsultasi::create([
-    //     'prosespaketkonsultasi_id' => 1,
-    //     'jenispekerjaan' => 'Pekerjaan Pembangunan Pasar Tradisional',
-//     'namapekerjaan' => 'Pembangunan Pasar Tradisional Blora',
-//     'tahunpelaksanaan' => 2025,
-//     'cvptpenyedia' => 'PT. Pasar Makmur',
-//     'nib' => '8899001122',
-//     'nilaikontrak' => 800000000.00,
-//     'sumberdana' => 'APBD',
-//     'jeniskontrak' => 'Kontrak Pembangunan',
-//     'karakteristikkontrak' => 'Pembangunan Pasar Tradisional Modern',
-//     'bulanmulai' => '2025-03-01',
-//     'bulanselesai' => '2025-09-30',
-//     'dinas' => 'Dinas Perdagangan Blora',
-// ]);
-
-//======================== ===================================================================================
-// AGENDA SKK TENAGA KERJA KONSTRUKSI
-agendaskk::create([
-    'id' => 1,
-    'namakegiatan' => 'Sertifikasi Keahlian Tenaga Kerja Konstruksi Bangunan Gedung - Jenjang 4',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    'penutupan' => '2025-02-13',
-    'waktupelaksanaan' => '2025-02-15',
-    'jumlahpeserta' => 40,
-    'lokasi' => 'Jln Blora No. 10',
-    'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja konstruksi bangunan gedung.',
-    'isiagenda' => 'Peserta akan diberikan pemahaman mendalam tentang konstruksi bangunan gedung...',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendaskk::create([
-    'id' => 2,
-    'namakegiatan' => 'Sertifikasi Keterampilan Tukang Bangunan Sipil - Jenjang 6',
-    'penyelenggara' => 'Balai Jasa Konstruksi Wilayah IV Surabaya',
-    'penutupan' => '2025-03-10',
-    'waktupelaksanaan' => '2025-03-12',
-    'jumlahpeserta' => 50,
-    'lokasi' => 'Jln Raya Semarang No. 22',
-    'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja di bidang tukang bangunan sipil.',
-    'isiagenda' => 'Materi meliputi teknik pemasangan struktur beton dan perawatan bangunan...',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendaskk::create([
-    'id' => 3,
-    'namakegiatan' => 'Sertifikasi Tenaga Ahli Struktur Baja dalam Konstruksi - Jenjang 7',
-    'penyelenggara' => 'Kementerian PUPR',
-    'penutupan' => '2025-04-05',
-    'waktupelaksanaan' => '2025-04-07',
-    'jumlahpeserta' => 35,
-    'lokasi' => 'Jln Solo No. 18',
-    'Keterangan' => 'Pelatihan dan sertifikasi tenaga ahli struktur baja dalam konstruksi.',
-    'isiagenda' => 'Peserta akan belajar teknik perhitungan beban dan pemasangan struktur baja...',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendaskk::create([
-    'id' => 4,
-    'namakegiatan' => 'Sertifikasi Pengawas Konstruksi Bangunan dan Jalan - Jenjang 8',
-    'penyelenggara' => 'Asosiasi Kontraktor Indonesia',
-    'penutupan' => '2025-05-20',
-    'waktupelaksanaan' => '2025-05-22',
-    'jumlahpeserta' => 45,
-    'lokasi' => 'Jln Bandung No. 5',
-    'Keterangan' => 'Pelatihan dan sertifikasi pengawas konstruksi bangunan dan jalan.',
-    'isiagenda' => 'Peserta akan dibekali keterampilan dalam pengawasan proyek konstruksi...',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendaskk::create([
-    'id' => 5,
-    'namakegiatan' => 'Sertifikasi Ahli Keselamatan dan Kesehatan Kerja Konstruksi - Jenjang 9',
-    'penyelenggara' => 'Universitas Teknologi Bandung',
-    'penutupan' => '2025-06-15',
-    'waktupelaksanaan' => '2025-06-17',
-    'jumlahpeserta' => 30,
-    'lokasi' => 'Jln Cirebon No. 8',
-    'Keterangan' => 'Pelatihan tentang standar keselamatan kerja dalam proyek konstruksi.',
-    'isiagenda' => 'Peserta akan memahami prosedur keselamatan dalam setiap tahap konstruksi...',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-
-subhargadiv2::create([
-    'hspkonstruksiumum2_id' => 1,
-    'uraian' => 'Pekerja',
-    'kode' => 'L.01',
-    'satuan' => 'OH',
-    'koefisien' => 0.600,
-    'hargasatuan' => 96000.00,
-    'jumlah_pagu' => '57600', // **Manual tanpa perhitungan**
-]);
-
-
-subhargadiv3::create([
-    'hspkonstruksiumum3_id' => 1,
-    'uraian' => 'Pekerja',
-    'kode' => 'L.01',
-    'satuan' => 'OH',
-    'koefisien' => 0.600,
-    'hargasatuan' => 96000.00,
-    'jumlah_pagu' => '57600', // **Manual tanpa perhitungan**
-]);
-
-
-
-// profilpaketkonsultasinontender::create([
-//     'prosespaketkonsultasinontender_id' => 1,
-//     'jenispekerjaan' => 'Pekerjaan Studi Medis',
-//     'namapekerjaan' => 'Kajian Pengadaan Alat Medis Puskesmas',
-//     'tahunpelaksanaan' => 2026,
-//     'cvptpenyedia' => 'PT. Medika Konsultan',
-//     'nib' => '5566778899',
-//     'nilaikontrak' => 120000000.00,
-//     'sumberdana' => 'DAK',
-//     'jeniskontrak' => 'Kontrak Konsultasi',
-//     'karakteristikkontrak' => 'Analisis Kebutuhan dan Spesifikasi Alat Medis',
-//     'bulanmulai' => '2026-01-01',
-//     'bulanselesai' => '2026-06-30',
-//     'dinas' => 'Dinas Kesehatan Blora',
-// ]);
-
-
-// =========================================================
-// PROSES PAKET PEKERJAAN TENDER
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 1, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 2, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 3, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 4, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 5, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 6, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 7, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 8, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 9, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 10, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-//======================== ===================================================================================
-// PENGAWASAN BUJK MAS JAKI BLORA
-// kecelakaankerjamasjaki::create([
-//     'namapaketpekerjaan' => 'PAKET PEKERJAAN KONSTRUKSI PEMBANGUNAN BENDUNGAN RANDUGUNTING',
-//     'tahun' => '2022',
-//     'namaperusahaan' => 'WIJAYA KARYA 2022',
-//     'namatenagakerja' => 'MISLANI',
-//     'lokasikecelakaan' => 'AREA PEKERJAAN BENDUNGAN RANDUGUNTING',
-//     'waktukecelakaan' => '2024-08-12',
-//     'keterangan' => 'PEKERJA',
-//     'nilaikerugian' => ' Rp825.031 ',
-// ]);
-
-kecelakaankerjamasjaki::create([
-    'namapaketpekerjaan' => 'PAKET PEKERJAAN KONSTRUKSI PEMBANGUNAN BENDUNGAN RANDUGUNTING',
-    'tahun' => 2022,  // Menggunakan angka tahun, bukan string
-    'namaperusahaan' => 'WIJAYA KARYA 2022',
-    'namatenagakerja' => 'MISLANI',
-    'lokasikecelakaan' => 'AREA PEKERJAAN BENDUNGAN RANDUGUNTING',
-    'waktukecelakaan' => '2024-08-12',  // Format datetime lengkap
-    'keterangan' => 'PEKERJA',
-    'nilaikerugian' => 825031.00,  // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-kecelakaankerjamasjaki::create([
-    'namapaketpekerjaan' => 'PAKET PEKERJAAN KONSTRUKSI PEMBANGUNAN BENDUNGAN RANDUGUNTING',
-    'tahun' => 2022,  // Menggunakan angka tahun, bukan string
-    'namaperusahaan' => 'WIJAYA KARYA 2022',
-    'namatenagakerja' => 'EKO WILO ANDRIANTO',
-    'lokasikecelakaan' => 'AREA PEKERJAAN BENDUNGAN RANDUGUNTING',
-    'waktukecelakaan' => '2024-08-12',  // Format datetime lengkap
-    'keterangan' => 'PEKERJA',
-    'nilaikerugian' => 825031.00,  // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
+    'strukturatas' => 'KAYU',
+    'rangkaatap' => null,
+    'balok' => null,
+    'kolom' => null,
+    'pondasi' => null,
+    'dinding' => null,
+    'genteng' => null,
+    'plafon' => null,
+    'lantai' => null,
+    'pintu' => null,
+    'jendela' => null,
+    'dokumenteknistanah' => 'TIDAK MENGETAHUI',
+    'nohdno' => '33.16.09.0011',
+    'noimb' => 'TIDAK MENGETAHUI',
+    'noslf' => 'TIDAK MENGETAHUI',
 ]);
 
 
 //======================== ===================================================================================
-// PENYEDIA STATUS TERTIB JAKON MAS JAKI BLORA
-penyediastatustertibjakon::create([
-    'id' => '1',
-    'penyedia' => 'PU',
-]);
-
-penyediastatustertibjakon::create([
-    'id' => '2',
-    'penyedia' => 'NON-PU',
-]);
-
-penyediastatustertibjakon::create([
-    'id' => '3',
-    'penyedia' => 'SWASTA',
-]);
-
-//======================== ===================================================================================
-// TERTIB JAKON BIDAN USAHA MAS JAKI BLORA
-tertibjasakonstruksi::create([
-    'penyediastatustertibjakon_id' => '1',
-    'nib' => '0208220001109',
-    'namapekerjaan' => null,
-    'namabadanusaha' => 'CV MANDRA KANTA UNGGUL',
-    'pjbu' => 'Muhammad Abdul Rozak',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'TERTIB',      // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-tertibjasakonstruksi::create([
-    'penyediastatustertibjakon_id' => '2',
-    'nib' => '0911220321514',
-    'namapekerjaan' => null,
-    'namabadanusaha' => 'CV. ADITIYA JAYA PERKASA',
-    'pjbu' => 'Agus Supriadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'TERTIB',      // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-tertibjasakonstruksi::create([
-    'penyediastatustertibjakon_id' => '3',
-    'nib' => '1261000381957',
-    'namapekerjaan' => null,
-    'namabadanusaha' => 'CV. ADHI KARYA MANDIRI',
-    'pjbu' => 'Santoso',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'TERTIB',      // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-//======================== ===================================================================================
-// TERTIB JAKON PEMANFAATAN MAS JAKI
-
-tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => '1',
-    'namapekerjaan' => null,
-    'namabangunan' => 'Kawasan Taman Budaya Cepu',
-    'nomorkontrak' => '640/BG.080/2023',
-    'lokasi' => 'Kec. Cepu Kab. Blora',
-    'tanggalpembangunan' => '2023-07-06',
-    'tanggalpemanfaatan' => '2023-11-02',
-    'umurkonstruksi' => '5',
-    'peruntukan_fungsi' => 'TERTIB',
-    'peruntukan_lokasi' => 'TERTIB',
-    'rencanaumur' => 'TERTIB',
-    'kapasitasdanbeban' => 'BELUM TERTIB',
-    'pemeliharaan_konstruksi' => 'BELUM TERTIB',
-    'pemeliharaan_struktur' => 'BELUM TERTIB',
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => '2',
-    'namapekerjaan' => null,
-    'namabangunan' => 'RSUD Randublatung Type D Blora',
-    'nomorkontrak' => '050/03.1/RS.RAN/2020',
-    'lokasi' => 'Gang Kabayan RT 06 RW 01',
-    'tanggalpembangunan' => '2020-06-06',
-    'tanggalpemanfaatan' => '2020-12-20',
-    'umurkonstruksi' => '5',
-    'peruntukan_fungsi' => 'TERTIB',
-    'peruntukan_lokasi' => 'TERTIB',
-    'rencanaumur' => 'TERTIB',
-    'kapasitasdanbeban' => 'BELUM TERTIB',
-    'pemeliharaan_konstruksi' => 'BELUM TERTIB',
-    'pemeliharaan_struktur' => 'BELUM TERTIB',
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => '3',
-    'namapekerjaan' => null,
-    'namabangunan' => 'KANTOR PT POS PROPERTI INDONESIA',
-    'nomorkontrak' => '-',
-    'lokasi' => 'Jl. Ronggolawe No. 37',
-    'tanggalpembangunan' => '2024-01-25',
-    'tanggalpemanfaatan' => '2024-06-25',
-    'umurkonstruksi' => '5',
-    'peruntukan_fungsi' => 'TERTIB',
-    'peruntukan_lokasi' => 'TERTIB',
-    'rencanaumur' => 'TERTIB',
-    'kapasitasdanbeban' => 'BELUM TERTIB',
-    'pemeliharaan_konstruksi' => 'BELUM TERTIB',
-    'pemeliharaan_struktur' => 'BELUM TERTIB',
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-// DATA TERTIB JASA KONSTRUKSI PENYELENGGARAAN MAS JAKI BLORA
-// ================================================================================================
-tertibjakonpenyelenggaraan::create([
-    'penyediastatustertibjakon_id' => '1',
-    'namapekerjaan' => null,
-    'kegiatankonstruksi' => 'Peningkatan Jalan Adirejo - Sembungin - Karangtalun',
-    'nomorkontrak' => '620/BM.827/2024',
-    'bujk' => 'CV. TRIBHAKTI',
-    'prosespemilihan' => 'TERTIB',
-    'pengawasan_standarkontrak' => 'TERTIB',
-    'pengawasan_tenagakerja' => 'TERTIB',
-    'pengawasan_penunjang' => 'TERTIB',
-    'pengawasan_dokumenk4' => 'TERTIB',
-    'pengawasan_smkk' => 'TERTIB',
-    'pengawasan_kecelakaankerja' => 'TERTIB',
-
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-tertibjakonpenyelenggaraan::create([
-    'penyediastatustertibjakon_id' => '2',
-    'namapekerjaan' => null,
-    'kegiatankonstruksi' => 'Rehabilitasi Ruang Kelas SMPN 2 BLORA',
-    'nomorkontrak' => '12894257/SPK/02.0014/DAU/2024',
-    'bujk' => 'CV. ANUGERAH ABADI',
-    'prosespemilihan' => 'TERTIB',
-    'pengawasan_standarkontrak' => 'TERTIB',
-    'pengawasan_tenagakerja' => 'TERTIB',
-    'pengawasan_penunjang' => 'TERTIB',
-    'pengawasan_dokumenk4' => 'TERTIB',
-    'pengawasan_smkk' => 'TERTIB',
-    'pengawasan_kecelakaankerja' => 'TERTIB',
-
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-tertibjakonpenyelenggaraan::create([
-    'penyediastatustertibjakon_id' => '3',
-    'namapekerjaan' => null,
-    'kegiatankonstruksi' => 'KANTOR PT POS PROPERTI INDONESIA',
-    'nomorkontrak' => '-',
-    'bujk' => 'CV. CRYSTAL DESIGN',
-    'prosespemilihan' => 'BELUM TERTIB',
-    'pengawasan_standarkontrak' => 'BELUM TERTIB',
-    'pengawasan_tenagakerja' => 'BELUM TERTIB',
-    'pengawasan_penunjang' => 'BELUM TERTIB',
-    'pengawasan_dokumenk4' => 'TERTIB',
-    'pengawasan_smkk' => 'BELUM',
-    'pengawasan_kecelakaankerja' => 'BELUM TERTIB',
-
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-
-// DATA RANTAI PASOK MATERIL BANGUNAN MAS JAKI
-rantaipasokblora::create([
-    'distributor' => 'PT. VARIA USAHA UNIT BLORA',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'SEMEN',
-    'submaterialproduk' => 'PCC',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Semen Indonesia',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'PT. VARIA USAHA UNIT BLORA',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'SEMEN',
-    'submaterialproduk' => 'PCC',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Semen Indonesia',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'PT. SEMEN HOLCIM',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'SEMEN',
-    'submaterialproduk' => 'OPC',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Holcim',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'UD. TIGA PUTRA',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'PASIR',
-    'submaterialproduk' => 'PASIR SUNGAI',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Lokal',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'CV. ANUGERAH MAKMUR',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'BATU SPLIT',
-    'submaterialproduk' => '5-10 MM',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Lokal',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'PT. BAJA MAJU SEJAHTERA',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'BAJA',
-    'submaterialproduk' => 'WF',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Gunung Garuda',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'CV. SUKSES ABADI',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'BATU BATA',
-    'submaterialproduk' => 'MERAH',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Lokal',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'UD. JAYA BETON',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'BETON READY MIX',
-    'submaterialproduk' => 'K-225',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'SCG',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'PT. KERAMIK MEGAH JAYA',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'KERAMIK',
-    'submaterialproduk' => '60x60 cm',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Roman',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'CV. CAT WARNA INDAH',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'CAT',
-    'submaterialproduk' => 'EKSTERIOR',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Dulux',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'UD. RANGKAI BESI',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'BESI BETON',
-    'submaterialproduk' => 'D 10',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Krakatau Steel',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'UD. RANGKAI BESI',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'BESI BETON',
-    'submaterialproduk' => 'D 10',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'Krakatau Steel',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'PT. TEKNIK ATAP SEJAHTERA',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'ATAP',
-    'submaterialproduk' => 'SPANDREL',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'merkproduk' => 'BjLS',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'CV. PINTU KARYA',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'PINTU',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'submaterialproduk' => 'KAYU JATI',
-    'merkproduk' => 'Lokal',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-rantaipasokblora::create([
-    'distributor' => 'UD. KACA MULIA',
-    'nib' => '-',
-    'alamat' => '-',
-    'notelepon' => '-',
-    'materialproduk' => 'KACA',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'submaterialproduk' => 'TEMPERED',
-    'merkproduk' => 'Asahimas',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-//======================== ===================================================================================
-// PERALATAN KONSTRUKSI MAS JAKI BLORA
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '14',
-    'alatberat_id' => '1',
-    'namabadanusaha' => 'CV. Anugrah Jaya Makmur',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'nib' => '4765753435',
-    'notelepon' => '081321455855',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '2',
-    'alatberat_id' => '2',
-    'namabadanusaha' => 'PT. Djawa Murni Kontraktor',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-peralatankonstruksi::create([
-    'kecamatanblora_id' => '3',
-    'alatberat_id' => '3',
-    'namabadanusaha' => 'PT. Lintas Konstruksi Abadi',
-    'nib' => '4353466346',
-    'foto' => 'tokobangunan/tokobangunanblora.jpg',
-    'notelepon' => '089345435435',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-//======================== ===================================================================================
-// PENGAWASAN BUJK MAS JAKI BLORA
-    alatberat::create([
-    'peralatankonstruksi_id' => '1',
-    'alatberat' => '',
-    'jumlahalatberat' => '7',           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal           // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '1',
-        'alatberat' => 'Excavator',
-        'jumlahalatberat' => 7,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '1',
-        'alatberat' => 'Bulldozer',
-        'jumlahalatberat' => 4,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '1',
-        'alatberat' => 'Crane',
-        'jumlahalatberat' => 3,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '1',
-        'alatberat' => 'Dump Truck',
-        'jumlahalatberat' => 10,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '2',
-        'alatberat' => 'Motor Grader',
-        'jumlahalatberat' => 2,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '2',
-        'alatberat' => 'Vibro Roller',
-        'jumlahalatberat' => 5,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '2',
-        'alatberat' => 'Concrete Pump',
-        'jumlahalatberat' => 3,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '3',
-        'alatberat' => 'Tower Crane',
-        'jumlahalatberat' => 2,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '4',
-        'alatberat' => 'Hydraulic Breaker',
-        'jumlahalatberat' => 1,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '3',
-        'alatberat' => 'Asphalt Paver',
-        'jumlahalatberat' => 2,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '3',
-        'alatberat' => 'Skid Steer Loader',
-        'jumlahalatberat' => 3,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '3',
-        'alatberat' => 'Wheel Loader',
-        'jumlahalatberat' => 2,
-    ]);
-
-    alatberat::create([
-        'peralatankonstruksi_id' => '3',
-        'alatberat' => 'Backhoe Loader',
-        'jumlahalatberat' => 4,
-    ]);
-
-    //======================== ===================================================================================
-    // PENGAWASAN BUJK MAS JAKI BLORA
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '1',
-        'namatokobangunan' => 'Toko Bangunan Sumber Jaya',
-        'pemilik' => 'Budi Santoso',
-        'alamat' => 'Jl. Pemuda No. 10, Blora',
-        'notelepon' => '081234567890',
-        'email' => 'sumberjaya@email.com',
-        'jenisprodukbangunan' => 'UMUM',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Menyediakan bahan bangunan lengkap dengan layanan antar',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '1',
-        'namatokobangunan' => 'Toko Bangunan Makmur',
-        'pemilik' => 'Siti Rohmah',
-        'alamat' => 'Jl. Raya Randublatung No. 25, Blora',
-        'notelepon' => '082112345678',
-        'email' => 'tokomakmur@email.com',
-        'jenisprodukbangunan' => 'KHUSUS',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Melayani pembelian dalam jumlah besar dan kecil',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '2',
-        'namatokobangunan' => 'Toko Bangunan Sejahtera',
-        'pemilik' => 'Agus Wijaya',
-        'alamat' => 'Jl. Blora Cepu KM 7, Blora',
-        'notelepon' => '085678901234',
-        'email' => 'sejahtera_bangunan@email.com',
-        'jenisprodukbangunan' => 'UMUM',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Tersedia berbagai jenis kayu dan material finishing',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '2',
-        'namatokobangunan' => 'Toko Bangunan Maju Jaya',
-        'pemilik' => 'Hendro Prasetyo',
-        'alamat' => 'Jl. Ronggolawe No. 45, Blora',
-        'notelepon' => '087876543210',
-        'email' => 'tokomajujaya@email.com',
-        'jenisprodukbangunan' => 'KHUSUS',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Menyediakan bahan material konstruksi berat',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '3',
-        'namatokobangunan' => 'Toko Bangunan Sentosa',
-        'pemilik' => 'Rina Kartika',
-        'alamat' => 'Jl. Veteran No. 15, Blora',
-        'notelepon' => '081356789012',
-        'email' => 'tokosentosa@email.com',
-        'jenisprodukbangunan' => 'UMUM',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Diskon spesial untuk pembelian partai besar',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '3',
-        'namatokobangunan' => 'Toko Bangunan Jaya Abadi',
-        'pemilik' => 'Slamet Riyadi',
-        'alamat' => 'Jl. Sukarno Hatta No. 11, Blora',
-        'notelepon' => '081245678901',
-        'email' => 'jayaabadi@email.com',
-        'jenisprodukbangunan' => 'KHUSUS',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Melayani pembelian eceran dan grosir',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '4',
-        'namatokobangunan' => 'Toko Bangunan Cipta Karya',
-        'pemilik' => 'Teguh Prasetyo',
-        'alamat' => 'Jl. Gajah Mada No. 22, Blora',
-        'notelepon' => '081356789013',
-        'email' => 'ciptakarya@email.com',
-        'jenisprodukbangunan' => 'UMUM',
-        'fototokobangunan' => 'tokobangunan/contohtokobangunan.jpg',
-        'keterangan' => 'Spesialis dalam material finishing rumah',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '4',
-        'namatokobangunan' => 'Toko Bangunan Mitra Sejati',
-        'pemilik' => 'Rudi Hartanto',
-        'alamat' => 'Jl. Pemuda No. 77, Blora',
-        'notelepon' => '082312345678',
-        'email' => 'mitrasejati@email.com',
-        'jenisprodukbangunan' => 'KHUSUS',
-        'fototokobangunan' => 'tokobangunan/contohtokobangunan.jpg',
-        'keterangan' => 'Menyediakan layanan konsultasi bahan bangunan',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '5',
-        'namatokobangunan' => 'Toko Bangunan Bina Karya',
-        'pemilik' => 'Hadi Susanto',
-        'alamat' => 'Jl. Kartini No. 5, Blora',
-        'notelepon' => '083112345678',
-        'email' => 'binakarya@email.com',
-        'jenisprodukbangunan' => 'UMUM',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Diskon untuk kontraktor dan proyek besar',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '5',
-        'namatokobangunan' => 'Toko Bangunan Sukses Mandiri',
-        'pemilik' => 'Dian Setiawan',
-        'alamat' => 'Jl. Raden Patah No. 33, Blora',
-        'notelepon' => '085267890123',
-        'email' => 'suksesmandiri@email.com',
-        'jenisprodukbangunan' => 'KHUSUS',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Menyediakan bahan interior dan eksterior',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '6',
-        'namatokobangunan' => 'Toko Bangunan Mulia Jaya',
-        'pemilik' => 'Eka Putra',
-        'alamat' => 'Jl. Sultan Agung No. 19, Blora',
-        'notelepon' => '081278901234',
-        'email' => 'muliajaya@email.com',
-        'jenisprodukbangunan' => 'UMUM',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Pusat bahan konstruksi interior dan eksterior',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '6',
-        'namatokobangunan' => 'Toko Bangunan Sejahtera Baru',
-        'pemilik' => 'Sri Hartini',
-        'alamat' => 'Jl. Diponegoro No. 55, Blora',
-        'notelepon' => '081345678912',
-        'email' => 'sejahterabaru@email.com',
-        'jenisprodukbangunan' => 'KHUSUS',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Menjual berbagai jenis paving berkualitas',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '7',
-        'namatokobangunan' => 'Toko Bangunan Lancar Jaya',
-        'pemilik' => 'Sutrisno',
-        'alamat' => 'Jl. Jendral Sudirman No. 88, Blora',
-        'notelepon' => '085678912345',
-        'email' => 'lancarjaya@email.com',
-        'jenisprodukbangunan' => 'UMUM',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Bahan material dasar bangunan tersedia lengkap',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '7',
-        'namatokobangunan' => 'Toko Bangunan Berkah Mulia',
-        'pemilik' => 'Siti Aminah',
-        'alamat' => 'Jl. KH. Ahmad Dahlan No. 17, Blora',
-        'notelepon' => '082345678901',
-        'email' => 'berkahmulia@email.com',
-        'jenisprodukbangunan' => 'KHUSUS',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Menjual produk berkualitas dengan harga terjangkau',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '8',
-        'namatokobangunan' => 'Toko Bangunan Mandiri Jaya',
-        'pemilik' => 'Teguh Santoso',
-        'alamat' => 'Jl. Kyai Mojo No. 42, Blora',
-        'notelepon' => '083456789012',
-        'email' => 'mandirijaya@email.com',
-        'jenisprodukbangunan' => 'UMUM',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Banyak pilihan motif keramik dan granit tersedia',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '8',
-        'namatokobangunan' => 'Toko Bangunan Citra Abadi',
-        'pemilik' => 'Rina Sari',
-        'alamat' => 'Jl. Pattimura No. 60, Blora',
-        'notelepon' => '081289012345',
-        'email' => 'citraabadi@email.com',
-        'jenisprodukbangunan' => 'KHUSUS',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Spesialis bahan bangunan interior rumah',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '9',
-        'namatokobangunan' => 'Toko Bangunan Putra Bangsa',
-        'pemilik' => 'Andi Wijaya',
-        'alamat' => 'Jl. Wahid Hasyim No. 14, Blora',
-        'notelepon' => '081567890123',
-        'email' => 'putrabangsa@email.com',
-        'jenisprodukbangunan' => 'UMUM',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Menjual berbagai perlengkapan finishing rumah',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '9',
-        'namatokobangunan' => 'Toko Bangunan Karya Sejati',
-        'pemilik' => 'Bambang Setiawan',
-        'alamat' => 'Jl. Ahmad Yani No. 32, Blora',
-        'notelepon' => '081678901234',
-        'email' => 'karyasejati@email.com',
-        'jenisprodukbangunan' => 'KHUSUS',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Harga grosir dan eceran tersedia',
-    ]);
-
-    tokobangunanblora::create([
-        'kecamatanblora_id' => '10',
-        'namatokobangunan' => 'Toko Bangunan Gemilang',
-        'pemilik' => 'Yuni Rahmawati',
-        'alamat' => 'Jl. Letjen Suprapto No. 99, Blora',
-        'notelepon' => '081789012345',
-        'email' => 'tokogemilang@email.com',
-        'jenisprodukbangunan' => 'UMUM',
-        'fototokobangunan' => 'tokobangunan/tokobangunanblora.jpg',
-        'keterangan' => 'Melayani pengiriman ke seluruh wilayah Blora',
-    ]);
-
-
-
-
-    //======================== ===================================================================================
-    // PENGAWASAN BUJK MAS JAKI BLORA
-    shstblora::create([
-        'kabupaten' => 'Blora',
-        'bangunankantortidaksederhana' => '6080000',
-        'bangunankantorsederhana' => '5050000',
-        'rumahnegaratipea' => '5940000',
-        'rumahnegaratipeb' => '5370000',
-        'rumahnegaratipecde' => '4630000',
-        'pagarrumahdepan' => '2730000',
-        'pagarrumahbelakang' => '2090000',
-        'pagarrumahsamping' => '1440000',
-        'pagarrumahnegaradepan' => '2310000',
-        'pagarrumahnegarabelakang' => '2030000',
-        'pagarrumahnegarasamping' => '1380000',
-    ]);
-
-
-//======================== ===================================================================================
-// PENGAWASAN BUJK MAS JAKI BLORA
+// DAFTAR KECAMATAN BLORA
 kecamatanblora::create([
     'id' => '1',
+    'kelurahandesa_id' => 1,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'BANJAREJO 58253',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '2',
+    'kelurahandesa_id' => 2,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'BLORA (BLORA KOTA) 58211 - 58219',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '3',
+    'kelurahandesa_id' => 3,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'BOGOREJO 58262',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '4',
+    'kelurahandesa_id' => 4,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'CEPU 58311',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '5',
+    'kelurahandesa_id' => 5,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'JAPAH 58257',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '6',
+    'kelurahandesa_id' => 6,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'JATI 58384',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '7',
+    'kelurahandesa_id' => 7,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'JEPON 58261',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '8',
+    'kelurahandesa_id' => 8,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'JIKEN 58372',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '9',
+    'kelurahandesa_id' => 9,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'KEDUNGTUBAN 58381',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '10',
+    'kelurahandesa_id' => 10,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'KRADENAN 58383',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '11',
+    'kelurahandesa_id' => 11,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'KUNDURAN 58255',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '12',
+    'kelurahandesa_id' => 12,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'NGAWEN 58254',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '13',
+    'kelurahandesa_id' => 13,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'RANDUBLATUNG 58382',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '14',
+    'kelurahandesa_id' => 14,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'SAMBONG 58371',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '15',
+    'kelurahandesa_id' => 15,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'TODANAN 58256',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 kecamatanblora::create([
     'id' => '16',
+    'kelurahandesa_id' => 16,          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
     'kecamatanblora' => 'TUNJUNGAN 58252',          // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
-//======================== ===================================================================================
-// PENGAWASAN BUJK MAS JAKI BLORA
-
-pengawasanbujk::create([
-      'kodeproyek' => '202011-0312-2806-8464-555',
-            'namaperusahaan' => 'AGUSTINUS SETYAWAN',
-            'alamatperusahaan' => 'JL MR ISKANDAR 70',
-            'statusmodal' => 'Penanaman Modal Dalam Negeri (PMDN)',
-            'jenisperusahaan' => 'Perorangan',
-            'nib' => '9120001950836',
-            'kbli' => '23953(KBLI 2017)',
-            'uraiankbli' => 'INDUSTRI BARANG DARI SEMEN DAN KAPUR UNTUK KONSTRUKSI',
-            'sektor' => ' Perindustrian',
-            'alamatproyek' => 'Jl. Kamolan ',
-            'wilayah' => 'Kab. Blora',
-            'luastanah' => 1300.25,  // Menggunakan tipe data decimal
-            'tki_lakilaki' => 2,    // Jumlah TKI laki-laki
-            'tki_perempuan' => 33,   // Jumlah TKI perempuan
-            'tka_lakilaki' => 0,    // Jumlah TKA laki-laki
-            'tka_perempuan' => 0,    // Jumlah TKA perempuan
-            'resiko' => 'Tinggi',
-            'sumberdata' => 'OSS Migrasi1.1',
-            'investasi' => 50000000.00,  // Nilai investasi
-            'skalausahaperusahaan' => 'Kecil',
-            'skalausahaproyek' => 'Menengah',
-            'kewenangankoordinator' => 'DPMPTSP Kab. Blora',
-            'kewenanganpengawas' => 'OPD Pengawas Kab. Blora (Sektor Perindustrian)',
-            'PSN' => 'Tidak',
-
+// =====================================================
+rencanagsbblora::create([
+    'id' => '1',
+    'ruasjalan' => 'KUNDURAN - TODANAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-//======================== ===================================================================================
-// SKK TENAGA KERJA MAS JAKI BLORA
-skktenagakerjablora::create([
-    'nama' => 'AFILIA NANDA DWI NOVIANTI', // Ganti dengan ID yang sesuai
-    'alamat' => 'Dk.sendang klampok rt.01 rw.09 tempurejo blora',
-    'namasekolah_id' => 53,
-    'jenjangpendidikan_id' => 2,
-    'jurusan_id' => 21,
-    'tahunlulus' => 2023,
-    'jabatankerja_id' => 4,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-11',
-    'tanggalhabis' => '2024-03-10',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '2',
+    'ruasjalan' => 'KEDUNGWARU - BALONG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'AHMAD FAHRUDIN', // Ganti dengan ID yang sesuai
-    'alamat' => 'Dk.sendang klampok rt.01 rw.09 tempurejo blora',
-    'namasekolah_id' => 34,
-    'jenjangpendidikan_id' => 4,
-    'jurusan_id' => 13,
-    'tahunlulus' => 2010,
-    'jabatankerja_id' => 4,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-16',
-    'tanggalhabis' => '2029-03-15',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '3',
+    'ruasjalan' => 'KUNDURAN - DOPLANG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'ALFINO WILIAM PUTRA', // Ganti dengan ID yang sesuai
-    'alamat' => 'RT 10 RW 2 DUKUH SORONINI DESA SONOKULON KECAMATAN TODANAN KABUPATEN BLORA',
-    'namasekolah_id' => 33,
-    'jenjangpendidikan_id' => 4,
-    'jurusan_id' => 19,
-    'tahunlulus' => 2019,
-    'jabatankerja_id' => 4,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-11',
-    'tanggalhabis' => '2029-03-10',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '4',
+    'ruasjalan' => 'NGILEN - PLOSOREJO - CUNGKUP',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'ANDI SUSANTO', // Ganti dengan ID yang sesuai
-    'alamat' => 'JL. CAMAR II NO. 2 RT 009 RW 005 KEL. KARANGJATI KEC. BLORA KAB. BLORA',
-    'namasekolah_id' => 44,
-    'jenjangpendidikan_id' => 2,
-    'jurusan_id' => 21,
-    'tahunlulus' => 2015,
-    'jabatankerja_id' => 4,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-16',
-    'tanggalhabis' => '2029-03-15',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '5',
+    'ruasjalan' => 'NGRONGGAH - BATAS KAB. PURWODADI',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'BAGUS SUTRISNO', // Ganti dengan ID yang sesuai
-    'alamat' => 'RT01/06 Dk.Krabyakan Ds.Temurejo Kec.Blora Kab.Blora Provinsi Jawa Tengah',
-    'namasekolah_id' => 24,
-    'jenjangpendidikan_id' => 3,
-    'jurusan_id' => 5,
-    'tahunlulus' => 1994,
-    'jabatankerja_id' => 4,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-16',
-    'tanggalhabis' => '2029-03-15',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '6',
+    'ruasjalan' => 'BOTORECO - SEMPU',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'BANU SULISTIYONO', // Ganti dengan ID yang sesuai
-    'alamat' => 'Dk. Ketangar RT 002 RW 001 Karangjati Blora',
-    'namasekolah_id' => 17,
-    'jenjangpendidikan_id' => 3,
-    'jurusan_id' => 5,
-    'tahunlulus' => 1990,
-    'jabatankerja_id' => 4,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-11',
-    'tanggalhabis' => '2029-03-10',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '7',
+    'ruasjalan' => 'NGRONGGAH - BULOH - KEMIRI',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'EKO ZAINUL ARIFIN', // Ganti dengan ID yang sesuai
-    'alamat' => 'Gang Swadaya Rt 01/Rw 11 Balun cepu',
-    'namasekolah_id' => 30,
-    'jenjangpendidikan_id' => 4,
-    'jurusan_id' => 14,
-    'tahunlulus' => 2004,
-    'jabatankerja_id' => 4,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-16',
-    'tanggalhabis' => '2029-03-15',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '8',
+    'ruasjalan' => 'JAGONG - KARANGGENENG - SRIGADING',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'HERU PUJIYANTO', // Ganti dengan ID yang sesuai
-    'alamat' => 'JL. BERINGIN TIMUR RT 008 RW 003 KEL. MLANGSEN KEC. BLORA KAB. BLORA',
-    'namasekolah_id' => 31,
-    'jenjangpendidikan_id' => 4,
-    'jurusan_id' => 18,
-    'tahunlulus' => 2002,
-    'jabatankerja_id' => 4,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-16',
-    'tanggalhabis' => '2029-03-15',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '9',
+    'ruasjalan' => 'MURAHARJO - JETAK - KARANGGENENG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'ILHAM KRISTUAJI', // Ganti dengan ID yang sesuai
-    'alamat' => 'RT 002/RW 001 Dk. Ketangar Kel. Karangjati Kec. Blora Kab. Blora',
-    'namasekolah_id' => 34,
-    'jenjangpendidikan_id' => 4,
-    'jurusan_id' => 18,
-    'tahunlulus' => 2019,
-    'jabatankerja_id' => 4,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-16',
-    'tanggalhabis' => '2029-03-15',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '10',
+    'ruasjalan' => 'MURAHARJO - KARANGREJO - KUNDURAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'IRIYANTO', // Ganti dengan ID yang sesuai
-    'alamat' => 'RT 003 RW 004 Jl. Jenderal Sudirman No. 177 Kel. Bangkle Kec. Blora Kab. Blora',
-    'namasekolah_id' => 34,
-    'jenjangpendidikan_id' => 4,
-    'jurusan_id' => 3,
-    'tahunlulus' => 1982,
-    'jabatankerja_id' => 4,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-16',
-    'tanggalhabis' => '2029-03-15',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '11',
+    'ruasjalan' => 'GOATERAWANG - PELEMSENGIR',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'AGUS KURNIAWAN', // Ganti dengan ID yang sesuai
-    'alamat' => 'Dk. Pesantren Rt.01/04 Ds. Sembongin Banjarejo Blora',
-    'namasekolah_id' => 5,
-    'jenjangpendidikan_id' => 3,
-    'jurusan_id' => 5,
-    'tahunlulus' => 2009,
-    'jabatankerja_id' => 5,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-11',
-    'tanggalhabis' => '2029-03-10',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '12',
+    'ruasjalan' => 'KETILENG - TODANAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'PUJI SUBIANTORO', // Ganti dengan ID yang sesuai
-    'alamat' => 'DS. TAMBAKSARI RT 001 RW 001 DESA TAMBAKSARI BLORA',
-    'namasekolah_id' => 22,
-    'jenjangpendidikan_id' => 3,
-    'jurusan_id' => 6,
-    'tahunlulus' => 2008,
-    'jabatankerja_id' => 7,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-30',
-    'tanggalhabis' => '2029-03-29',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '13',
+    'ruasjalan' => 'NGUMBUL - KARANGANYAR',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-skktenagakerjablora::create([
-    'nama' => 'REYHAN WIDYA PERMANA', // Ganti dengan ID yang sesuai
-    'alamat' => 'RT 5 RW 3 Dukuh karangnongkp Desa Buluroto Kec. banjarejo Kabupaten Blora Provinsi Jawa Tengah',
-    'namasekolah_id' => 34,
-    'jenjangpendidikan_id' => 4,
-    'jurusan_id' => 22,
-    'tahunlulus' => 2015,
-    'jabatankerja_id' => 3,
-    'jenjang_id' => 4,
-    'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
-    'tanggalterbit' => '2024-03-16',
-    'tanggalhabis' => '2029-03-15',
-    'statusterbit' => 'TERBIT',
+rencanagsbblora::create([
+    'id' => '14',
+    'ruasjalan' => 'NGUMBUL - SONOKULON',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-//======================== ===================================================================================
-//======================== ===================================================================================
-//======================== ===================================================================================
-standarbiayaumum::create([
-    'judul' => 'Permen PUPR Nomor 08 Tahun 2023',
-    'peraturan' => 'standarbiayaumum/Permen_PUPR_Nomor_8_Tahun_2023.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '15',
+    'ruasjalan' => 'TODANAN - SENDANG - KACANGAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-standarbiayaumum::create([
-    'judul' => 'Permen PUPR Nomor 14 Tahun 2020',
-    'peraturan' => 'standarbiayaumum/Permen_PUPR_Nomor_14_Tahun_2020.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-//======================== ===================================================================================
-
-//======================== ===================================================================================
-sbulampiran1::create([
-    'judul' => '0_COVER_LAMPIRAN_I_PL',
-    'peraturan' => 'standarbiayaumum/lampiran1/0_COVER_LAMPIRAN_I_PL.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '16',
+    'ruasjalan' => 'DALANGAN - BEDINGIN - KEDUNGBACIN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran1::create([
-    'judul' => 'A_SDP_Pengadaan_Langsung_JKK_Perorangan',
-    'peraturan' => 'standarbiayaumum/lampiran1/A_SDP_Pengadaan_Langsung_JKK_Perorangan.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '17',
+    'ruasjalan' => 'KEDUNGBACIN - BATAS KAB. PATI',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran1::create([
-    'judul' => 'B_SDP_Pengadaan_Langsung_JKK_BUJK',
-    'peraturan' => 'standarbiayaumum/lampiran1/B_SDP_Pengadaan_Langsung_JKK_BUJK.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '18',
+    'ruasjalan' => 'KETILENG - SAMBENG - PELEMSENGIR',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran1::create([
-    'judul' => 'C_SDP_Pengadaan_Langsung_PK_Perorangan',
-    'peraturan' => 'standarbiayaumum/lampiran1/C_SDP_Pengadaan_Langsung_PK_Perorangan.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '19',
+    'ruasjalan' => 'JAPAH - KALINANAS - KEDUNGBACIN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran1::create([
-    'judul' => 'D_SDP_Pengadaan_Langsung_PK_BUJK',
-    'peraturan' => 'standarbiayaumum/lampiran1/D_SDP_Pengadaan_Langsung_PK_BUJK.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '20',
+    'ruasjalan' => 'BOGEM - SUMBEREJO - NGIYONO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-//======================== ===================================================================================
-sbulampiran2::create([
-    'judul' => '0_COVER_LAMPIRAN_II_JK',
-    'peraturan' => 'standarbiayaumum/lampiran2/0_COVER_LAMPIRAN_II_JK.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 21
+rencanagsbblora::create([
+    'id' => '21',
+    'ruasjalan' => 'KALINANAS - BATAS KAB. REMBANG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'A_Dok_Kualifikasi',
-    'peraturan' => 'standarbiayaumum/lampiran2/A_Dok_Kualifikasi.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 22
+rencanagsbblora::create([
+    'id' => '22',
+    'ruasjalan' => 'KALINANAS - BATAS KAB. PATI',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'B_Seleksi_Kualitas_Biaya_WP',
-    'peraturan' => 'standarbiayaumum/lampiran2/B_Seleksi_Kualitas_Biaya_WP.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 23
+rencanagsbblora::create([
+    'id' => '23',
+    'ruasjalan' => 'DOLOGAN - BEDINGIN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'C_Seleksi_BU_Kualitas_Biaya_LS',
-    'peraturan' => 'standarbiayaumum/lampiran2/C_Seleksi_BU_Kualitas_Biaya_LS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 24
+rencanagsbblora::create([
+    'id' => '24',
+    'ruasjalan' => 'JAPAH - BRADAG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'D_Seleksi_BU_Kualitas_WP',
-    'peraturan' => 'standarbiayaumum/lampiran2/D_Seleksi_BU_Kualitas_WP.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 25
+rencanagsbblora::create([
+    'id' => '25',
+    'ruasjalan' => 'JAPAH - TUNJUNGAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'E_Seleksi_BU_Kualitas_LS',
-    'peraturan' => 'standarbiayaumum/lampiran2/E_Seleksi_BU_Kualitas_LS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 26
+rencanagsbblora::create([
+    'id' => '26',
+    'ruasjalan' => 'NGRAMBITAN - PENGKOLREJO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'F_Seleksi_BU_Pagu_Anggaran_WP',
-    'peraturan' => 'standarbiayaumum/lampiran2/F_Seleksi_BU_Pagu_Anggaran_WP.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 27
+rencanagsbblora::create([
+    'id' => '27',
+    'ruasjalan' => 'TREMBULREJO - ROWOBUNGKUL - SONOKIDUL',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'G_Seleksi_BU_Pagu_Anggaran_LS',
-    'peraturan' => 'standarbiayaumum/lampiran2/G_Seleksi_BU_Pagu_Anggaran_LS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 28
+rencanagsbblora::create([
+    'id' => '28',
+    'ruasjalan' => 'NGAWEN - SEMAWUR - SRIGADING',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'H_Seleksi_BU_Biaya_Terendah_WP',
-    'peraturan' => 'standarbiayaumum/lampiran2/H_Seleksi_BU_Biaya_Terendah_WP.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 29
+rencanagsbblora::create([
+    'id' => '29',
+    'ruasjalan' => 'SEMAWUR - BRADAG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'I_Seleksi_BU_Biaya_Terendah_LS',
-    'peraturan' => 'standarbiayaumum/lampiran2/I_Seleksi_BU_Biaya_Terendah_LS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 30
+rencanagsbblora::create([
+    'id' => '30',
+    'ruasjalan' => 'BRADAG - KROCOK - SRIGADING',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'J_Seleksi_TA_Kualitas_WP',
-    'peraturan' => 'standarbiayaumum/lampiran2/J_Seleksi_TA_Kualitas_WP.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 31
+rencanagsbblora::create([
+    'id' => '31',
+    'ruasjalan' => 'NGAWEN - KARANGTALUN - BANJAREJO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran2::create([
-    'judul' => 'K_Seleksi_TA_Kualitas_LS',
-    'peraturan' => 'standarbiayaumum/lampiran2/K_Seleksi_TA_Kualitas_LS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 32
+rencanagsbblora::create([
+    'id' => '32',
+    'ruasjalan' => 'NGAWEN - GOTPUTUK - TENGGER',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-//======================== ===================================================================================
-sbulampiran3::create([
-    'judul' => '0_COVER_LAMPIRAN_III_PK',
-    'peraturan' => 'standarbiayaumum/lampiran3/0_COVER_LAMPIRAN_III_PK.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 33
+rencanagsbblora::create([
+    'id' => '33',
+    'ruasjalan' => 'SARIMULYO - PENGKOLREJO - WOTBAKAH',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'A_SDP_PK_Pasca_Harga_Terendah_Gab',
-    'peraturan' => 'standarbiayaumum/lampiran3/A_SDP_PK_Pasca_Harga_Terendah_Gab.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 34
+rencanagsbblora::create([
+    'id' => '34',
+    'ruasjalan' => 'SAMBONGREJO - BOGOWANTI',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'B_SDP_PK_Pasca_Harga_Terendah_LS',
-    'peraturan' => 'standarbiayaumum/lampiran3/B_SDP_PK_Pasca_Harga_Terendah_LS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 35
+rencanagsbblora::create([
+    'id' => '35',
+    'ruasjalan' => 'JALAN SAWAHAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'C_SDP_PK_Pasca_Harga_Terendah_HS',
-    'peraturan' => 'standarbiayaumum/lampiran3/C_SDP_PK_Pasca_Harga_Terendah_HS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 36
+rencanagsbblora::create([
+    'id' => '36',
+    'ruasjalan' => 'BANJAREJO - SAMBONGANYAR - ROWOBUNGKUL',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'D_SDP_PK_Pasca_Harga_Terendah_Ambang_Batas_Gab',
-    'peraturan' => 'standarbiayaumum/lampiran3/D_SDP_PK_Pasca_Harga_Terendah_Ambang_Batas_Gab.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 37
+rencanagsbblora::create([
+    'id' => '37',
+    'ruasjalan' => 'BANJAREJO - BALONGSARI - MOJOWETAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'E_SDP_PK_Pasca_Harga_Terendah_Ambang_Batas_LS',
-    'peraturan' => 'standarbiayaumum/lampiran3/E_SDP_PK_Pasca_Harga_Terendah_Ambang_Batas_LS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 38
+rencanagsbblora::create([
+    'id' => '38',
+    'ruasjalan' => 'BANJAREJO - SENDANGAGUNG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'F_SDP_PK_Pasca_Harga_Terendah_Ambang_Batas_HS',
-    'peraturan' => 'standarbiayaumum/lampiran3/F_SDP_PK_Pasca_Harga_Terendah_Ambang_Batas_HS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 39
+rencanagsbblora::create([
+    'id' => '39',
+    'ruasjalan' => 'MOJOWETAN - SIDOMULYO - LEMAHPUTIH',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'G_SDP_PK_Pasca_Sistem_Nilai_Gab',
-    'peraturan' => 'standarbiayaumum/lampiran3/G_SDP_PK_Pasca_Sistem_Nilai_Gab.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 40
+rencanagsbblora::create([
+    'id' => '40',
+    'ruasjalan' => 'SUMENGKO - SUMBERAGUNG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'H_SDP_PK_Pasca_Sistem_Nilai_LS',
-    'peraturan' => 'standarbiayaumum/lampiran3/H_SDP_PK_Pasca_Sistem_Nilai_LS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 41
+rencanagsbblora::create([
+    'id' => '41',
+    'ruasjalan' => 'SENDANGWUNGU - BALONGREJO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'I_SDP_PK_Pasca_Sistem_Nilai_HS',
-    'peraturan' => 'standarbiayaumum/lampiran3/I_SDP_PK_Pasca_Sistem_Nilai_HS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 42
+rencanagsbblora::create([
+    'id' => '42',
+    'ruasjalan' => 'POJOK - PLOSOREJO - SENDANGWUNGU',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'J_SDP_PK_Prakualifikasi',
-    'peraturan' => 'standarbiayaumum/lampiran3/J_SDP_PK_Prakualifikasi.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 43
+rencanagsbblora::create([
+    'id' => '43',
+    'ruasjalan' => 'PLOSOREJO - SEMBONGIN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'K_SDP_PK_Pra_Sistem_Harga_Terendah_Ambang_Batas_Gab',
-    'peraturan' => 'standarbiayaumum/lampiran3/K_SDP_PK_Pra_Sistem_Harga_Terendah_Ambang_Batas_Gab.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 44
+rencanagsbblora::create([
+    'id' => '44',
+    'ruasjalan' => 'KEMBANG - PLOSOREJO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'L_SDP_PK_Pra_Sistem_Harga_Terendah_Ambang_Batas_LS',
-    'peraturan' => 'standarbiayaumum/lampiran3/L_SDP_PK_Pra_Sistem_Harga_Terendah_Ambang_Batas_LS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 45
+rencanagsbblora::create([
+    'id' => '45',
+    'ruasjalan' => 'JATISARI - JATIKLAMPOK',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'M_SDP_PK_Pra_Sistem_Harga_Terendah_Ambang_Batas_HS',
-    'peraturan' => 'standarbiayaumum/lampiran3/M_SDP_PK_Pra_Sistem_Harga_Terendah_Ambang_Batas_HS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 46
+rencanagsbblora::create([
+    'id' => '46',
+    'ruasjalan' => 'TEMANJANG - JATIKLAMPOK',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'N_SDP_PK_Pra_Sistem_Nilai_Gab',
-    'peraturan' => 'standarbiayaumum/lampiran3/N_SDP_PK_Pra_Sistem_Nilai_Gab.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 47
+rencanagsbblora::create([
+    'id' => '47',
+    'ruasjalan' => 'TAWANGREJO - KARANGTALUN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'O_SDP_PK_Pra_Sistem_Nilai_LS',
-    'peraturan' => 'standarbiayaumum/lampiran3/O_SDP_PK_Pra_Sistem_Nilai_LS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 48
+rencanagsbblora::create([
+    'id' => '48',
+    'ruasjalan' => 'TAMBAHREJO - KALANGAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-sbulampiran3::create([
-    'judul' => 'P_SDP_PK_Pra_Sistem_Nilai_HS',
-    'peraturan' => 'standarbiayaumum/lampiran3/P_SDP_PK_Pra_Sistem_Nilai_HS.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+// Record 49
+rencanagsbblora::create([
+    'id' => '49',
+    'ruasjalan' => 'MAGUAN - TUNJUNGAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
+// Record 50
+rencanagsbblora::create([
+    'id' => '50',
+    'ruasjalan' => 'ADIREJO - SEMBUNGIN - KARANGTALUN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
+// Record 51
+rencanagsbblora::create([
+    'id' => '51',
+    'ruasjalan' => 'KALANGAN - SUKOREJO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-//  ================================================================
+// Record 52
+rencanagsbblora::create([
+    'id' => '52',
+    'ruasjalan' => 'KESER - NGLANGITAN - TUNJUNGAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
+// Record 53
+rencanagsbblora::create([
+    'id' => '53',
+    'ruasjalan' => 'KESER - PURWOSARI',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        peraturan::create([
-            'judul' => 'UNDANG- UNDANG JASA KONSTRUKSI',
-            'peraturan' => 'peraturan/01_uud/UU_NO_02_TAHUN_2017.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 54
+rencanagsbblora::create([
+    'id' => '54',
+    'ruasjalan' => 'SESO - SOKO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-        // ======================================================
-        perpemerintah::create([
-            'judul' => 'PERATURAN PEMERINTAH NOMOR 29 TAHUN 2000',
-            'peraturan' => 'peraturan/02_pemerintah/PERATURAN_PEMERINTAH_NO_29_TAHUN_2000.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-        // ======================================================
-        perpresiden::create([
-            'judul' => 'PERATURAN PRESIDEN NOMOR 12 TAHUN 2021',
-            'peraturan' => 'peraturan/03_presiden/PERATURAN_PRESIDEN_NOMOR_12_TAHUN_2021.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 55
+rencanagsbblora::create([
+    'id' => '55',
+    'ruasjalan' => 'SOKO - BATAS KAB. REMBANG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-// ==========================================================================================
-// ==========================================================================================
+// Record 56
+rencanagsbblora::create([
+    'id' => '56',
+    'ruasjalan' => 'PULEDAGEL - KARANG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_1_A_COVER_LAMPIRAN_I_PL',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_1_A_COVER_LAMPIRAN_I_PL.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 57
+rencanagsbblora::create([
+    'id' => '57',
+    'ruasjalan' => 'BACEM - KARANG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_1_A_SDP_PENGADAAN_LANGSUNG_JKK_PERORANGAN',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_1_A_SDP_PENGADAAN_LANGSUNG_JKK_PERORANGAN.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 58
+rencanagsbblora::create([
+    'id' => '58',
+    'ruasjalan' => 'SOKO - KARANG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_1_B_SDP_PENGADAAN_LANGSUNG_JKK_BUJK',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_1_B_SDP_PENGADAAN_LANGSUNG_JKK_BUJK.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 59
+rencanagsbblora::create([
+    'id' => '59',
+    'ruasjalan' => 'SESO - SUMURBOTO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_1_C_SDP_PENGADAAN_LANGSUNG_PK_PERORANGAN',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_1_C_SDP_PENGADAAN_LANGSUNG_PK_PERORANGAN.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 60
+rencanagsbblora::create([
+    'id' => '60',
+    'ruasjalan' => 'JEPON - BRUMBUNG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_1_D_SDP_PENGADAAN_LANGSUNG_PK_BUJK',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_1_D_SDP_PENGADAAN_LANGSUNG_PK_BUJK.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 61
+rencanagsbblora::create([
+    'id' => '61',
+    'ruasjalan' => 'JEPON - BOGOREJO - BATAS KAB. TUBAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_A_COVER_LAMPIRAN_II_JK',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_A_COVER_LAMPIRAN_II_JK.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 62
+rencanagsbblora::create([
+    'id' => '62',
+    'ruasjalan' => 'KEMLOKO - WUNI',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_B_DOK_KUALIFIKASI',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_B_DOK_KUALIFIKASI.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 63
+rencanagsbblora::create([
+    'id' => '63',
+    'ruasjalan' => 'JEPON - TURIREJO - BANGSRI',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_C_SELEKSI_KUALITAS_BIAYA_WP',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_C_SELEKSI_KUALITAS_BIAYA_WP.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 64
+rencanagsbblora::create([
+    'id' => '64',
+    'ruasjalan' => 'TURIREJO - PALON - NGLOBO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_D_SELEKSI_BU_KUALITAS_BIAYA_LS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_D_SELEKSI_BU_KUALITAS_BIAYA_LS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 65
+rencanagsbblora::create([
+    'id' => '65',
+    'ruasjalan' => 'TURIREJO - SUMURBOTO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_E_SELEKSI_BU_KUALITAS_WP',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_E_SELEKSI_BU_KUALITAS_WP.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 66
+rencanagsbblora::create([
+    'id' => '66',
+    'ruasjalan' => 'TEMPEL - SINGONEGORO - KETRINGAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_F_SELEKSI_BU_KUALITAS_LS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_F_SELEKSI_BU_KUALITAS_LS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 67
+rencanagsbblora::create([
+    'id' => '67',
+    'ruasjalan' => 'TEMPELEMAHBANG - PRANTAAN - BANGOWAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_G_SELEKSI_BU_PAGU_ANGGARAN_WP',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_G_SELEKSI_BU_PAGU_ANGGARAN_WP.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 68
+rencanagsbblora::create([
+    'id' => '68',
+    'ruasjalan' => 'KARANG - NGLENGKIR',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_H_SELEKSI_BU_PAGU_ANGGARAN_LS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_H_SELEKSI_BU_PAGU_ANGGARAN_LS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 69
+rencanagsbblora::create([
+    'id' => '69',
+    'ruasjalan' => 'NGLENGKIR - TEMPUREJO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_I_SELEKSI_BU_BIAYA_TERENDAH_WP',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_I_SELEKSI_BU_BIAYA_TERENDAH_WP.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+// Record 70
+rencanagsbblora::create([
+    'id' => '70',
+    'ruasjalan' => 'BOGOREJO - JERUK - KARANG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_J_SELEKSI_BU_BIAYA_TERENDAH_LS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_J_SELEKSI_BU_BIAYA_TERENDAH_LS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+rencanagsbblora::create([
+    'id' => '71',
+    'ruasjalan' => 'BOGOREJO - SINGONEGORO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_K_SELEKSI_TA_KUALITAS_WP',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_K_SELEKSI_TA_KUALITAS_WP.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+rencanagsbblora::create([
+    'id' => '72',
+    'ruasjalan' => 'BOGOREJO - KETRINGAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_2_L_SELEKSI_TA_KUALITAS_LS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_L_SELEKSI_TA_KUALITAS_LS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+rencanagsbblora::create([
+    'id' => '73',
+    'ruasjalan' => 'GAYAM - GANDU - BATAS KAB. REMBANG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_A_COVER_LAMPIRAN_III_PK',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_A_COVER_LAMPIRAN_III_PK.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+rencanagsbblora::create([
+    'id' => '74',
+    'ruasjalan' => 'DONO - JURANGJERO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_B_SDP_PK_PASCA_HARGA_TERENDAH_GAB',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_B_SDP_PK_PASCA_HARGA_TERENDAH_GAB.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+rencanagsbblora::create([
+    'id' => '75',
+    'ruasjalan' => 'SENDANGREJO - TAHUNAN - BATAS KAB. REMBANG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_C_SDP_PK_PASCA_HARGA_TERENDAH_LS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_C_SDP_PK_PASCA_HARGA_TERENDAH_LS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+rencanagsbblora::create([
+    'id' => '76',
+    'ruasjalan' => 'GENJAHAN - TURIREJO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_D_SDP_PK_PASCA_HARGA_TERENDAH_HS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_D_SDP_PK_PASCA_HARGA_TERENDAH_HS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+rencanagsbblora::create([
+    'id' => '77',
+    'ruasjalan' => 'JIKEN - GENJAHAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_E_SDP_PK_PASCA_HARGA_TERENDA_AMBANG_BATAS_GAB',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_E_SDP_PK_PASCA_HARGA_TERENDA_AMBANG_BATAS_GAB.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+rencanagsbblora::create([
+    'id' => '78',
+    'ruasjalan' => 'CABAK - NGLOBO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_F_SDP_PK_PASCA_HARGA_TERENDAH_AMBANG_BATAS_LS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_F_SDP_PK_PASCA_HARGA_TERENDAH_AMBANG_BATAS_LS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+rencanagsbblora::create([
+    'id' => '79',
+    'ruasjalan' => 'NGLOBO - GUBUK PAYUNG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
 
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_G_SDP_PK_PASCA_HARGA_TERENDAH_AMBANG_BATAS_HS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_G_SDP_PK_PASCA_HARGA_TERENDAH_AMBANG_BATAS_HS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_H_SDP_PK_PASCA_SISTEM_NILAI_GAB',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_H_SDP_PK_PASCA_SISTEM_NILAI_GAB.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_I_SDP_PK_PASCA_SISTEM_NILAI_LS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_I_SDP_PK_PASCA_SISTEM_NILAI_LS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_J_SDP_PK_PASCA_SISTEM_NILAI_HS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_J_SDP_PK_PASCA_SISTEM_NILAI_HS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_K_SDP_PK_PRAKUALIFIKASI',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_K_SDP_PK_PRAKUALIFIKASI.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_L_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_GAB',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_L_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_GAB.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_M_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_LS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_M_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_LS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_N_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_HS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_N_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_HS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_O_SDP_PK_PRA_SISTEM_NILAI_GAB',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_O_SDP_PK_PRA_SISTEM_NILAI_GAB.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_P_SDP_PK_PRA_SISTEM_NILAI_LS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_P_SDP_PK_PRA_SISTEM_NILAI_LS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        permenteri::create([
-            'judul' => 'LAMPIRAN_3_Q_SDP_PK_PRA_SISTEM_NILAI_HS',
-            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_Q_SDP_PK_PRA_SISTEM_NILAI_HS.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-// ============================================================================================================
-        keputusanmenteri::create([
-            'judul' => 'KEPUTUSAN_DIRJEN_BINAKOS_NO_89_PENETAPAN_STANDAR_SKEMA_SERTIFIKAT_BUJK',
-            'peraturan' => 'peraturan/05_keputusanmenteri/KEPUTUSAN_DIRJEN_BINAKOS_NO_89_PENETAPAN_STANDAR_SKEMA_SERTIFIKAT_BUJK.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        keputusanmenteri::create([
-            'judul' => 'KEPUTUSAN_DIRJEN_PENETAPAN_SKEMA_BUJK_NOMOR_144_TAHUN_2022',
-            'peraturan' => 'peraturan/05_keputusanmenteri/KEPUTUSAN_DIRJEN_PENETAPAN_SKEMA_BUJK_NOMOR_144_TAHUN_2022.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        keputusanmenteri::create([
-            'judul' => 'KEPUTUSAN_MENTERI_PUPR_NO_713_TAHUN_2022',
-            'peraturan' => 'peraturan/05_keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_713_TAHUN_2022.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        keputusanmenteri::create([
-            'judul' => 'KEPUTUSAN_MENTERI_PUPR_NO_1410_KPTS_M_2020',
-            'peraturan' => 'peraturan/05_keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_1410_KPTS_M_2020.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        // ====================================================================================================================================================================================
-        suratedaran::create([
-            'judul' => 'SURAT_EDARAN_DIRJEN_BINKON_NO_54_TAHUN_2024',
-            'peraturan' => 'peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_54_TAHUN_2024.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        suratedaran::create([
-            'judul' => 'SURAT_EDARAN_DIRJEN_BK_NOMOR_33_TAHUN_2023',
-            'peraturan' => 'peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BK_NOMOR_33_TAHUN_2023.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        suratedaran::create([
-            'judul' => 'SURAT_EDARAN_DIRJEN_KEMENTERIAN_2022_SE_DJB_TATA_CARA_PELAKSANAAN_SERTIFIKASI_KOMPETENSI_FINAL',
-            'peraturan' => 'peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_KEMENTERIAN_2022_SE_DJB_TATA_CARA_PELAKSANAAN_SERTIFIKASI_KOMPETENSI_FINAL.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        suratedaran::create([
-            'judul' => 'SURAT_EDARAN_PENCABUTAN_DIRJEN_BK_NO_59_2022',
-            'peraturan' => 'peraturan/06_suratedaran/SURAT_EDARAN_PENCABUTAN_DIRJEN_BK_NO_59_2022.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        suratedaran::create([
-            'judul' => 'SURAT_EDARAN_DIRJEN_BINKON_NO_73_TAHUN_2023',
-            'peraturan' => 'peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_73_TAHUN_2023.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        // ===========================================================================================================================================================
-
-        referensi::create([
-            'judul' => 'PERATURAN_PEMERINTAH_NOMOR_22_TAHUN_2020',
-            'peraturan' => 'peraturan/07_suratreferensi/PERATURAN_PEMERINTAH_NOMOR_22_TAHUN_2020.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        // ===========================================================================================================================================================
-
-        perdaerah::create([
-            'judul' => 'PERATURAN_DAERAH_NO_11-TAHUN_2019',
-            'peraturan' => 'peraturan/08_daerah/PERATURAN_DAERAH_NO_11-TAHUN_2019.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-        perdaerah::create([
-            'judul' => 'PERATURAN_DAERAH_NOMOR_01_TAHUN_2021_OCR',
-            'peraturan' => 'peraturan/08_daerah/PERATURAN_DAERAH_NOMOR_01_TAHUN_2021_OCR.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-
-// ===========================================================================================================================================================
-
-pergubernur::create([
-    'judul' => 'PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009',
-    'peraturan' => 'peraturan/09_gubernur/PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '80',
+    'ruasjalan' => 'CABAK - BLEBOH - BATAS KAB. BOJONEGORO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
 
-// ===========================================================================================================================================================
-
-perbupatiwalikota::create([
-    'judul' => 'PERATURAN_BUPATI_NOMOR_71_TAHUN_2023',
-    'peraturan' => 'peraturan/10_bupatiwalikota/PERATURAN_BUPATI_NOMOR_71_TAHUN_2023.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '81',
+    'ruasjalan' => 'BLEBOH - JANJANG - KATESAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-perbupatiwalikota::create([
-    'judul' => 'PERATURAN_BUPATI_NOMOR_72_TAHUN_2023_LANJUTAN',
-    'peraturan' => 'peraturan/10_bupatiwalikota/PERATURAN_BUPATI_NOMOR_72_TAHUN_2023_LANJUTAN.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '82',
+    'ruasjalan' => 'NGAWENAN - PASARSORE - GUBUK PAYUNG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '83',
+    'ruasjalan' => 'POJOKWATU - JENU',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '84',
+    'ruasjalan' => 'SAMBONG - NGROTO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '85',
+    'ruasjalan' => 'KENDILAN - JENU - SAMBONGREJO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '86',
+    'ruasjalan' => 'SAMBONG - LEDOK',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '87',
+    'ruasjalan' => 'LEDOK - GIYANTI',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '88',
+    'ruasjalan' => 'NGRAHO - KETUWAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '89',
+    'ruasjalan' => 'SIDOREJO - KENONGOGONG - KLAGEN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '90',
+    'ruasjalan' => 'KETUWAN - PANOLAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '91',
+    'ruasjalan' => 'KETUWAN - GONDEL - MOJOREMBUN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '92',
+    'ruasjalan' => 'BAJO - SUGIHWARAS - CABEAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '93',
+    'ruasjalan' => 'KEDUNGTUBAN - SOGO - GONDEL',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '94',
+    'ruasjalan' => 'KEDUNGTUBAN - GALUK',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '95',
+    'ruasjalan' => 'GALUK - BLUNGUN - GUBUK PAYUNG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '96',
+    'ruasjalan' => 'GALUK - TEMENGENG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '97',
+    'ruasjalan' => 'WADO - TANDURAN - KEMANTREN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '98',
+    'ruasjalan' => 'MENDEN - KETUWAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '99',
+    'ruasjalan' => 'MEDALEM - BATAS KAB. BOJONEGORO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '100',
+    'ruasjalan' => 'MENDEN - MEGERI',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
 
-// ===========================================================================================================================================================
-
-suratkeputusan::create([
-    'judul' => 'PERATURAN MENTERI PEKERJAAN UMUM DAN PERUMAHAN RAKYAT REPUBLIK INDONESIA NOMOR 8 TAHUN 2022 TENTANG TATA CARA PELAKSANAAN PEMENUHAN SERTIFIKAT STANDAR JASA KONSTRUKSI',
-    'peraturan' => 'peraturan/11_keputusan/01.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '101',
+    'ruasjalan' => 'GETAS - GEMPOL - BANGKLEYAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-suratkeputusan::create([
-    'judul' => 'PERATURAN MENTERI PEKERJAAN UMUM DAN PERUMAHAN RAKYAT REPUBLIK INDONESIA NOMOR 8 TAHUN 2022 TENTANG TATA CARA PELAKSANAAN PEMENUHAN SERTIFIKAT STANDAR JASA KONSTRUKSI DALAM RANGKA MENDUKUNG KEMUDAHAN PERIZINAN BERUSAHA BAGI PELAKU USAHA JASA KONSTRUKSI - RELAKSASI',
-    'peraturan' => 'peraturan/11_keputusan/02.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '102',
+    'ruasjalan' => 'PETING - SUMBER - MENDEN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-suratkeputusan::create([
-    'judul' => 'PERMEN PUPR NO. 8 TAHUN 2022 TENTANG TATA CARA PELAKSANAAN PEMENUHAN SERTIFIKAT STANDAR JASA KONSTRUKSI DALAM RANGKA MENDUKUNG KEMUDAHAN PERIZINAN BERUSAHA BAGI PELAKU USAHA JASA KONSTRUKSI',
-    'peraturan' => 'peraturan/11_keputusan/03.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '103',
+    'ruasjalan' => 'MEGERI - SETREN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-
-suratkeputusan::create([
-    'judul' => 'SURAT EDARAN LPJK NOMOR : 07/SE/LPJK/2022 TENTANG PEDOMAN PEMBERIAN REKOMENDASI LISENSI LSP, PENCATATAN LSP TERLISENSI, SERTA DAFTAR PENYESUAIAN STANDAR KOMPETENSI DAN JABKER KONSTRUKSI',
-    'peraturan' => 'peraturan/11_keputusan/04.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '104',
+    'ruasjalan' => 'GETAS - NGLEBAK',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-suratkeputusan::create([
-    'judul' => 'KEPUTUSAN DIRJEN BIKON NO. 12.1/KPTS/Dk/2022 - TENTANG PENETAPAN JABATAN KERJA DAN KONVERSI JABATAN KERJA EKSISTING SERTA JENJANG KUALIFIKASI BIDANG JASA KONSTRUKSI - TAHUN 2022',
-    'peraturan' => 'peraturan/11_keputusan/05.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '105',
+    'ruasjalan' => 'RANDUBLATUNG - MENDEN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-suratkeputusan::create([
-    'judul' => 'KEPUTUSAN DIREKTUR JENDERAL BINA KONSTRUKSI, KEMENTERIAN PEKERJAAN UMUM DAN PERUMAHAN RAKYAT NOMOR 144/KPTS/DK/2022 TENTANG PENETAPAN STANDAR SKEMA SERTIFIKASI BADAN USAHA JASA KONSTRUKSI',
-    'peraturan' => 'peraturan/11_keputusan/06.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '106',
+    'ruasjalan' => 'TEMULUS - SUMBER',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-suratkeputusan::create([
-    'judul' => 'SE MENTERI PUPR NO. 05 TAHUN 2022 PERUBAHAN ATAS SE NO. 03/SE/M/2022 TENTANG PEDOMAN PERPANJANGAN MASA BERLAKU SKK JASA KONSTRUKSI',
-    'peraturan' => 'peraturan/11_keputusan/07.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '107',
+    'ruasjalan' => 'KEDIREN - SUMBER',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
 ]);
 
-suratkeputusan::create([
-    'judul' => 'SE MENTERI PUPR NO. 02 TAHUN 2021 TENTANG PERUBAHAN SE MENTERI PUPR NO. 30 TAHUN 2020',
-    'peraturan' => 'peraturan/11_keputusan/08.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '108',
+    'ruasjalan' => 'RANDUBLATUNG - GETAS - BATAS KAB. NGAWI',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
-suratkeputusan::create([
-    'judul' => 'KEPUTUSAN NO. 89 DIREKTUR JENDERAL DJBK PUPR TAHUN 2021',
-    'peraturan' => 'peraturan/11_keputusan/09.pdf',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+rencanagsbblora::create([
+    'id' => '109',
+    'ruasjalan' => 'BALONG - KEPOH - BODEH',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '110',
+    'ruasjalan' => 'WULUNG - KLATAK',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
 ]);
 
 
-
-// uijk::create([
-//     'nama_perusahaan' => '',
-//     'kategori_perusahaan' => '',
-//     'klasifikasi_bidang_usaha' => '',
-//     'sub_klasifikasi_bidang_usaha' => '',
-//     'keterangan' => '2018',
-//     'created_at' => Carbon::now(),
-//     'updated_at' => Carbon::now(),
-// ]);
-
-// kegiatanjaskon::create([
-//                 // 'laporankegiatan_id' => 2, // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                 'id' => 2,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                 'user_id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                 'judul_kegiatan' => '2 - 3 DESEMBER 2024, KECAMATAN CIKALONG WETAN BIMBINGAN TEKNIS KESELAMATAN DAN KESEHATAN KERJA PARA PEKERJA KONSTRUKSI',
-//                 'alamat_kegiatan' => 'DESA CISOMANG BARAT 40556 JAWA BARAT INDONESIA',
-//                 'pengawasanlokasi_id' => '11',
-//                 'tanggal' => '',
-//                 'berita1' => 'dokumentasipelatihan/new/01_CB.jpg',
-//                 'berita2' => 'dokumentasipelatihan/new/02_CB.jpg',
-//                 'berita3' => 'dokumentasipelatihan/new/03_CB.jpg',
-//                 'berita4' => 'dokumentasipelatihan/new/04_CB.jpg',
-//                 'berita5' => 'dokumentasipelatihan/new/05_CB.jpg',
-//                 'berita6' => 'dokumentasipelatihan/new/06_CB.jpg',
-//                 'berita7' => 'dokumentasipelatihan/new/07_CB.jpg',
-//                 'berita8' => 'dokumentasipelatihan/new/08_CB.jpg',
-//                 'berita9' => 'dokumentasipelatihan/new/09_CB.jpg',
-//                 'berita10' => 'dokumentasipelatihan/new/10_CB.jpg',
-//                 'berita11' => 'dokumentasipelatihan/new/11_CB.jpg',
-//                 'berita12' => 'dokumentasipelatihan/new/12_CB.jpg',
-//                 'berita13' => 'dokumentasipelatihan/new/13_CB.jpg',
-//                 'berita14' => 'dokumentasipelatihan/new/14_CB.jpg',
-//                 'berita15' => 'dokumentasipelatihan/new/15_CB.jpg',
-//                 'berita16' => 'dokumentasipelatihan/new/16_CB.jpg',
-//                 'berita17' => 'dokumentasipelatihan/new/17_CB.jpg',
-//                 'berita18' => 'dokumentasipelatihan/new/18_CB.jpg',
-//                 'berita19' => 'dokumentasipelatihan/new/19_CB.jpg',
-//                 'berita20' => 'dokumentasipelatihan/new/20_CB.jpg',
-
-//                 'tanggal' => '2024-12-02', // Format tanggal YYYY-MM-DD
-//                 'created_at' => now(),
-//                 'updated_at' => now(),
-// ]);
-
-
-// ==========================================================================================================
-// DATA YANG DIRUBAH DARI PEMERINTAH KABUPATEN BANDUNG BARAT
-// laporankegiatan::create([
-//                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                 'kegiatanjaskon_id' => '1',
-//                 'user_id' => '1',
-//                 'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
-//                 'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-//                 'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-//                 'keterangan_berita' => '
-
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-// <p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-// <p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-//                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//                 'created_at' => now(),
-//                 'updated_at' => now(),
-// ]);
-
-// laporankegiatan::create([
-//                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                     'kegiatanjaskon_id' => '1',
-//                     'user_id' => '1',
-//                     'judul_kegiatan' => 'sambutan oleh camat cililin kabupaten bandung barat  ',
-//                 'jabatan' => 'camat kecamatan cililin kabupaten bandung barat',
-//                 'gambar' => 'acarasertifikasi/beritaacara/PA_CAMAT.jpeg',
-//                 'keterangan_berita' => '
-
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Camat Cililin, dalam sambutannya, mengapresiasi penyelenggaraan acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) yang diadakan di Desa Batulayang. Acara ini merupakan inisiatif penting dari Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) untuk mendukung peningkatan kualitas dan keselamatan dalam proyek-proyek konstruksi di wilayah kami. Dengan adanya bimbingan teknis ini, diharapkan semua pihak dapat memahami dan menerapkan standar keselamatan yang tinggi serta mengikuti semua regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Camat Cililin menegaskan betapa pentingnya implementasi standar K3 dalam sektor konstruksi untuk mencegah risiko dan kecelakaan kerja. Pelatihan ini dirancang untuk memberi peserta pengetahuan mendalam tentang praktik terbaik dalam keselamatan kerja dan bagaimana cara mengelola risiko secara efektif. Peserta diharapkan tidak hanya mendapatkan informasi teoritis, tetapi juga keterampilan praktis yang berguna dalam menghadapi tantangan di lapangan.</p>
-
-// <p>Selama bimbingan, berbagai topik teknis yang berkaitan dengan keselamatan konstruksi dibahas secara mendetail. Narasumber yang berpengalaman diundang untuk memberikan wawasan dan solusi terhadap berbagai masalah yang sering muncul dalam proyek konstruksi. Tujuan dari kegiatan ini adalah untuk meningkatkan kesadaran dan kemampuan semua peserta sehingga dapat menciptakan lingkungan kerja yang lebih aman dan produktif di wilayah Kecamatan Cililin.</p>
-
-// <p>Di akhir acara, Camat Cililin menyampaikan terima kasih kepada semua pihak yang telah berkontribusi dalam pelaksanaan bimbingan teknis ini. Diharapkan bahwa pelatihan ini memberikan manfaat besar dan dapat diterapkan dalam setiap proyek konstruksi yang dilakukan. Komitmen bersama untuk mencapai standar keselamatan yang tinggi akan mendukung kesuksesan proyek dan meningkatkan keselamatan kerja di Kabupaten Bandung Barat.</p>
-
-
-
-// ',
-//                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//                 'created_at' => now(),
-//                 'updated_at' => now(),
-// ]);
-
-// laporankegiatan::create([
-//                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                     'kegiatanjaskon_id' => '1',
-//                     'user_id' => '1',
-//                     'judul_kegiatan' => 'sambutan oleh bpk yuyu yuhana, ST., MM pembina jasa konstruksi ahli muda pemerintah kabupaten bandung barat',
-//                 'jabatan' => 'kepala putr kabupaten bandung barat',
-//                 'gambar' => 'acarasertifikasi/beritaacara/PA_YUYU.jpeg',
-//                 'keterangan_berita' => '
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Kepala Dinas Pekerjaan Umum dan Tata Ruang (PUTR) Kabupaten Bandung Barat, dalam sambutannya, mengapresiasi pelaksanaan acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) yang diselenggarakan di Desa Batulayang. Acara ini merupakan bagian dari upaya berkelanjutan Dinas PUTR untuk meningkatkan kualitas dan keselamatan di sektor konstruksi. Kegiatan ini bertujuan memastikan bahwa semua aspek pekerjaan konstruksi dilakukan sesuai dengan standar yang tinggi dan mematuhi regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Kepala Dinas PUTR menekankan betapa pentingnya penerapan standar K3 dalam industri konstruksi untuk mencegah risiko dan kecelakaan di tempat kerja. Bimbingan teknis ini dirancang untuk memberikan peserta pengetahuan mendalam mengenai praktik terbaik dalam keselamatan kerja serta cara-cara efektif untuk mengelola risiko. Harapannya, peserta dapat memperoleh keterampilan praktis yang diperlukan untuk menghadapi berbagai tantangan di lapangan dan mencegah terjadinya kecelakaan.</p>
-
-// <p>Selama sesi bimbingan, berbagai topik teknis yang berkaitan dengan keselamatan dalam konstruksi akan dibahas secara komprehensif. Narasumber berpengalaman akan berbagi wawasan dan solusi terkait tantangan dalam pelaksanaan proyek konstruksi. Kegiatan ini bertujuan untuk meningkatkan kesadaran dan kompetensi semua pihak terkait, sehingga dapat menciptakan lingkungan kerja yang lebih aman dan produktif.</p>
-
-// <p>Penutupan acara ditandai dengan ucapan terima kasih dari Kepala Dinas PUTR kepada semua pihak yang telah berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, hasil dari pelatihan ini akan memberikan manfaat yang signifikan dan dapat diterapkan dalam setiap proyek konstruksi. Komitmen bersama untuk mencapai standar keselamatan yang tinggi merupakan langkah penting menuju kesuksesan dan keamanan dalam industri konstruksi di Kabupaten Bandung Barat.</p>
-
-
-// ',
-//                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//                 'created_at' => now(),
-//                 'updated_at' => now(),
-// ]);
-
-// laporankegiatan::create([
-//                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                     'kegiatanjaskon_id' => '1',
-//                     'user_id' => '1',
-//                     'judul_kegiatan' => 'Sambutan oleh bpk Laswono, ST PEMBEKALAN PEKERJA/TUKANG KONSTRUKSI REGULASI SERTIFIKASI KOMPETENSI KERJA (SKK) ',
-//                 'jabatan' => 'Pembina Jasa Konstruksi Ahli Muda Dinas Bina Marga dan Tata Ruang Provinsi Jawa Barat',
-//                 'gambar' => 'acarasertifikasi/beritaacara/PA_LASWONO.jpeg',
-//                 'keterangan_berita' => '
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Pembina Jasa Konstruksi Ahli Muda Dinas Bina Marga dan Tata Ruang Provinsi Jawa Barat, Bapak Laswono, ST, memberikan sambutan pada acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) yang diselenggarakan di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini merupakan bagian dari upaya Dinas Bina Marga dan Tata Ruang Provinsi Jawa Barat untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa semua pekerjaan konstruksi dilakukan dengan mematuhi standar yang tinggi dan regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Bapak Laswono menekankan pentingnya penerapan regulasi dan sertifikasi kompetensi kerja (SKK) dalam industri konstruksi. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-// <p>Selama bimbingan, berbagai topik teknis yang berkaitan dengan keselamatan dalam konstruksi dan regulasi SKK akan dibahas secara mendalam. Narasumber berpengalaman akan memberikan wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Kegiatan ini bertujuan untuk meningkatkan kesadaran dan kompetensi semua pihak terkait sehingga dapat menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-// <p>Penutupan acara diwarnai dengan ucapan terima kasih dari Bapak Laswono kepada semua pihak yang telah berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, pelatihan dan bimbingan ini akan memberikan manfaat yang signifikan dan dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan dan kualitas yang tinggi di Kabupaten Bandung Barat.</p>
-
-// ',
-//                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//                 'created_at' => now(),
-//                 'updated_at' => now(),
-// ]);
-
-// laporankegiatan::create([
-//                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                     'kegiatanjaskon_id' => '1',
-//                     'user_id' => '1',
-//                     'judul_kegiatan' => 'sambutan oleh ibu Dra. Fauzia Mulyawati, ST., MT tentang Pembekalan Pekerja/Tukang Konstruksi Terkait Keselamatan Kerja dan Kesehatan (K3)',
-//                 'jabatan' => 'Dosen Universitas Langlangbuana Bandung',
-//                 'gambar' => 'acarasertifikasi/beritaacara/BU_FAUZIA.jpeg',
-//                 'keterangan_berita' => '
-
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Dra. Fauzia Mulyawati, ST., MT, Dosen Universitas Langlangbuana Bandung, memberikan bimbingan dan pengarahan pada acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) yang diselenggarakan di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini merupakan bagian dari upaya untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini bertujuan memastikan bahwa semua pekerjaan konstruksi dilakukan dengan mematuhi standar tinggi dan regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Dra. Fauzia Mulyawati menekankan pentingnya pemahaman mengenai Keselamatan Kerja dan Kesehatan (K3) di sektor konstruksi. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai penerapan praktik K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko serta menerapkan standar keselamatan dan kesehatan di lokasi kerja.</p>
-
-// <p>Selama bimbingan, berbagai topik teknis terkait K3 akan dibahas secara mendalam. Narasumber berpengalaman akan memberikan wawasan dan solusi mengenai tantangan dalam penerapan K3 serta praktik keselamatan yang efektif di industri konstruksi. Kegiatan ini bertujuan untuk meningkatkan kesadaran dan kompetensi semua pihak terkait, sehingga dapat menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-// <p>Penutupan acara diwarnai dengan ucapan terima kasih dari Dra. Fauzia Mulyawati kepada semua pihak yang telah berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, pelatihan dan bimbingan ini akan memberikan manfaat signifikan dan dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan dan kesehatan kerja yang tinggi di Kabupaten Bandung Barat.</p>
-
-// ',
-//                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//                 'created_at' => now(),
-//                 'updated_at' => now(),
-// ]);
-
-// laporankegiatan::create([
-//                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                     'kegiatanjaskon_id' => '1',
-//                     'user_id' => '1',
-//                     'judul_kegiatan' => 'sambutan oleh ibu Rosita, SE., MM tentang Pembekalan Pekerja/Tukang Konstruksi Terkait Regulasi Badan Penjaminan Jaminan Sosial (BPJS) Ketenagakerjaan',
-//                 'jabatan' => 'Badan Penyelenggara Jaminan Sosial',
-//                 'gambar' => 'acarasertifikasi/beritaacara/BU_ROSITA.jpg',
-//                 'keterangan_berita' => '
-
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Ibu Rosita, SE., MM, dari BPJS Ketenagakerjaan, memberikan bimbingan dan pengarahan dalam acara bimbingan teknis mengenai Regulasi Badan Penjaminan Jaminan Sosial (BPJS) Ketenagakerjaan yang diselenggarakan di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini merupakan bagian dari komitmen untuk meningkatkan pemahaman tentang regulasi dan jaminan sosial di sektor konstruksi, serta memastikan bahwa setiap pekerja konstruksi memahami hak dan kewajiban mereka di bawah BPJS Ketenagakerjaan.</p>
-
-// <p>Dalam sambutannya, Ibu Rosita menekankan pentingnya pemahaman mengenai regulasi BPJS Ketenagakerjaan untuk pekerja dan tukang konstruksi. Bimbingan ini dirancang untuk memberikan informasi mendalam mengenai cara BPJS Ketenagakerjaan berfungsi dan bagaimana pekerja dapat memanfaatkan jaminan sosial untuk perlindungan mereka. Peserta diharapkan memperoleh pengetahuan dan keterampilan yang diperlukan untuk mengelola dan memanfaatkan manfaat BPJS secara efektif.</p>
-
-// <p>Selama sesi bimbingan, berbagai aspek teknis terkait regulasi BPJS Ketenagakerjaan akan dibahas secara rinci. Ibu Rosita akan membagikan wawasan mengenai hak-hak pekerja, prosedur klaim, serta mekanisme perlindungan yang disediakan oleh BPJS. Tujuan utama dari kegiatan ini adalah untuk meningkatkan pemahaman dan kesadaran semua pihak terkait, sehingga mereka dapat memanfaatkan perlindungan sosial dengan maksimal.</p>
-
-// <p>Penutupan acara diwarnai dengan ucapan terima kasih dari Ibu Rosita kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan ini. Diharapkan, pelatihan dan bimbingan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung kepatuhan terhadap regulasi BPJS Ketenagakerjaan di Kabupaten Bandung Barat.</p>
-
-// ',
-//                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//                 'created_at' => now(),
-//                 'updated_at' => now(),
-//             ]);
-
-// ============== ============== ============== ============== ============== ============== ==============
-//             laporankegiatan::create([
-//                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//             'kegiatanjaskon_id' => '2',
-//             'user_id' => '1',
-//             'judul_kegiatan' => 'Sigit  ',
-//             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-//             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-//             'keterangan_berita' => '
-
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-// <p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-// <p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-//             'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//             'created_at' => now(),
-//             'updated_at' => now(),
-// ]);
-
-
-
-//             laporankegiatan::create([
-//                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//             'kegiatanjaskon_id' => '2',
-//             'user_id' => '1',
-//             'judul_kegiatan' => 'Sigit  ',
-//             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-//             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-//             'keterangan_berita' => '
-
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-// <p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-// <p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-//             'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//             'created_at' => now(),
-//             'updated_at' => now(),
-// ]);
-//             laporankegiatan::create([
-//                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//             'kegiatanjaskon_id' => '2',
-//             'user_id' => '1',
-//             'judul_kegiatan' => 'Sigit  ',
-//             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-//             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-//             'keterangan_berita' => '
-
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-// <p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-// <p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-//             'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//             'created_at' => now(),
-//             'updated_at' => now(),
-// ]);
-//             laporankegiatan::create([
-//                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//             'kegiatanjaskon_id' => '2',
-//             'user_id' => '1',
-//             'judul_kegiatan' => 'Sigit  ',
-//             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-//             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-//             'keterangan_berita' => '
-
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-// <p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-// <p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-//             'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//             'created_at' => now(),
-//             'updated_at' => now(),
-// ]);
-//             laporankegiatan::create([
-//                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//             'kegiatanjaskon_id' => '2',
-//             'user_id' => '1',
-//             'judul_kegiatan' => 'Sigit  ',
-//             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-//             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-//             'keterangan_berita' => '
-
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-// <p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-// <p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-//             'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//             'created_at' => now(),
-//             'updated_at' => now(),
-// ]);
-//             laporankegiatan::create([
-//                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//             'kegiatanjaskon_id' => '2',
-//             'user_id' => '1',
-//             'judul_kegiatan' => 'Sigit  ',
-//             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-//             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-//             'keterangan_berita' => '
-
-// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-// <p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-// <p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-// <p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-// <p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-//             'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-//             'created_at' => now(),
-//             'updated_at' => now(),
-// ]);
-
-            // ================= =====================================================================================
-
-
-
-
+rencanagsbblora::create([
+    'id' => '111',
+    'ruasjalan' => 'KADENGAN - TANGGEL',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '112',
+    'ruasjalan' => 'PILANG - BULAKAN - TEMULUS',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '113',
+    'ruasjalan' => 'WULUNG - KEDUNGJAMBU',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '114',
+    'ruasjalan' => 'KALISARI - KALIWADER - TALKIDANG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '115',
+    'ruasjalan' => 'DOPLANG - JATI - BANGKLEYAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '116',
+    'ruasjalan' => 'KARANGMOJO - PELEM - JATI',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '117',
+    'ruasjalan' => 'JATI - SINGGET',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '118',
+    'ruasjalan' => 'GABUSAN - BATAS KAB. GROBOGAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '119',
+    'ruasjalan' => 'JL. MISTER ISKANDAR',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '120',
+    'ruasjalan' => 'BLORA - RANDUBLATUNG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+
+rencanagsbblora::create([
+    'id' => '121',
+    'ruasjalan' => 'KALIWANGAN - PAKIS',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '122',
+    'ruasjalan' => 'PAKIS - BANGSRI',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '123',
+    'ruasjalan' => 'MLANGSEN - BULUROTO - SENDANGWUNGU',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '124',
+    'ruasjalan' => 'KAMOLAN - BANJAREJO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '125',
+    'ruasjalan' => 'BADONG - KENDURUHAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '126',
+    'ruasjalan' => 'BANGKLE - PELEM - KAMOLAN',
+    'jenisjalan' => 'Jalan Arteri Sekunder',
+    'gsb' => 20.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '127',
+    'ruasjalan' => 'PELEM - PURWOREJO - BANGSRI',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '128',
+    'ruasjalan' => 'PELEM - NGAMPON - JEPANGREJO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '129',
+    'ruasjalan' => 'NGAMPON - JOMBLANG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '130',
+    'ruasjalan' => 'GLAGAHAN - NGAMPON',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+
+rencanagsbblora::create([
+    'id' => '131',
+    'ruasjalan' => 'KAMOLAN - JEPANGREJO - BADONG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '132',
+    'ruasjalan' => 'KARANGJATI - BANGKLE',
+    'jenisjalan' => 'Jalan Arteri Sekunder',
+    'gsb' => 20.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '133',
+    'ruasjalan' => 'BANGKLE - BALONG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '134',
+    'ruasjalan' => 'NGLAWIYAN - BALONG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '135',
+    'ruasjalan' => 'KARANGJATI - TEMPUREJO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '136',
+    'ruasjalan' => 'TAMBAKSARI - PULEDAGEL',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '137',
+    'ruasjalan' => 'PATALAN - TEMPURAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '138',
+    'ruasjalan' => 'PATALAN - TEMPUREJO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '139',
+    'ruasjalan' => 'TAMBAKSARI - BELIK',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '140',
+    'ruasjalan' => 'MEDANG - JATIREJO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '141',
+    'ruasjalan' => 'MEDANG - NGLANGITAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '142',
+    'ruasjalan' => 'NGAMPEL - PLANTUNGAN - NGADIPURWO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '143',
+    'ruasjalan' => 'KARANGJATI - TEMUREJO - TEGALGUNUNG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '144',
+    'ruasjalan' => 'BLORA - NGLANGITAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '145',
+    'ruasjalan' => 'TEMUREJO - GEMPOLREJO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '146',
+    'ruasjalan' => 'TAMANREJO - KUNDEN',
+    'jenisjalan' => 'Jalan Arteri Sekunder',
+    'gsb' => 20.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '147',
+    'ruasjalan' => 'KUNDEN - SONOREJO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '148',
+    'ruasjalan' => 'KAJANGAN - GROWONG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '149',
+    'ruasjalan' => 'JL. ALUN - ALUN',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.5,
+]);
+
+rencanagsbblora::create([
+    'id' => '150',
+    'ruasjalan' => 'JL. LAPANGAN KRIDOSONO',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.5,
+]);
+
+
+
+rencanagsbblora::create([
+    'id' => '151',
+    'ruasjalan' => 'JL. KEDUNGJENAR - BERAN',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '152',
+    'ruasjalan' => 'JL. BERAN - GABUS',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '153',
+    'ruasjalan' => 'JL. GATOT SUBROTO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '154',
+    'ruasjalan' => 'JL. AGIL KUSUMADYA',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '155',
+    'ruasjalan' => 'JL. TAMAN MAKAM PAHLAWAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '156',
+    'ruasjalan' => 'JL. HALMAHERA',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '157',
+    'ruasjalan' => 'JL. NUSANTARA',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '158',
+    'ruasjalan' => 'JL K.H. AHMAD DAHKLAN',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '159',
+    'ruasjalan' => 'JL. PEMUDA',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '160',
+    'ruasjalan' => 'JL. SUMODARSONO',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+
+rencanagsbblora::create([
+    'id' => '161',
+    'ruasjalan' => 'JL. TENTARA PELAJAR',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '162',
+    'ruasjalan' => 'JL. GUNUNG - SINDORO',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '163',
+    'ruasjalan' => 'JL. ARUMDALU',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '164',
+    'ruasjalan' => 'JL. GUNUNG SUMBING',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '165',
+    'ruasjalan' => 'JL. GUNUNG LAWU',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '166',
+    'ruasjalan' => 'JL. GUNUNG WILIS',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '167',
+    'ruasjalan' => 'JL.GOR',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '168',
+    'ruasjalan' => 'JL GUNUNG SLAMET',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '169',
+    'ruasjalan' => 'JL. SUDARMAN',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '170',
+    'ruasjalan' => 'JL. KOLONEL SUNANDAR',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+
+rencanagsbblora::create([
+    'id' => '171',
+    'ruasjalan' => 'JL. GUNANDAR',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '172',
+    'ruasjalan' => 'JL. REKSODIPUTRO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '173',
+    'ruasjalan' => 'JL. MALUKU',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '174',
+    'ruasjalan' => 'JL. SUMBAWA',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '175',
+    'ruasjalan' => 'JL. R.A KARTINI',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '176',
+    'ruasjalan' => 'JL. ABU UMAR',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '177',
+    'ruasjalan' => 'JL. DR SUTOMO',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '178',
+    'ruasjalan' => 'JL. BHAYANGKARA',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '179',
+    'ruasjalan' => 'JL. RAJAWALI',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '180',
+    'ruasjalan' => 'JL. KENANGA',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+
+rencanagsbblora::create([
+    'id' => '181',
+    'ruasjalan' => 'JL. RONGGOLAWE',
+    'jenisjalan' => 'Jalan Arteri Sekunder',
+    'gsb' => 20.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '182',
+    'ruasjalan' => 'JL. RONGGOLAWE II',
+    'jenisjalan' => 'Jalan Arteri Sekunder',
+    'gsb' => 20.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '183',
+    'ruasjalan' => 'BALUN - TAMBAKROMO',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '184',
+    'ruasjalan' => 'TAMBAKROMO - KENTONG',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '185',
+    'ruasjalan' => 'MULYOREJO - NGLORAM',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '186',
+    'ruasjalan' => 'NGLORAM - SIDOREJO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '187',
+    'ruasjalan' => 'NGLORAM - JIPANG - JUDAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '188',
+    'ruasjalan' => 'KENTONG - CABEAN',
+    'jenisjalan' => 'Jalan Lokal Primer',
+    'gsb' => 10.75,
+]);
+
+rencanagsbblora::create([
+    'id' => '189',
+    'ruasjalan' => 'BALUN - NGLANJUK - KAPUAN',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '190',
+    'ruasjalan' => 'NGROTO - GIYANTI - BATAS KAB. BOJONEGORO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+
+rencanagsbblora::create([
+    'id' => '191',
+    'ruasjalan' => 'JL. GAJAHMADA',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '192',
+    'ruasjalan' => 'JL. SOROGO',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '193',
+    'ruasjalan' => 'JL. GIYANTI',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '194',
+    'ruasjalan' => 'JL. NGARENG',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '195',
+    'ruasjalan' => 'JL. PASAR',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '196',
+    'ruasjalan' => 'JL. STASIUN KOTA',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '197',
+    'ruasjalan' => 'JL. PAHLAWAN',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '198',
+    'ruasjalan' => 'JL. DIPONEGORO',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '199',
+    'ruasjalan' => 'JL. DIPONEGORO I',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '200',
+    'ruasjalan' => 'JL. DIPONEGORO II',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+
+rencanagsbblora::create([
+    'id' => '201',
+    'ruasjalan' => 'JL. DIPONEGORO III',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '202',
+    'ruasjalan' => 'JL. PRAMUKA',
+    'jenisjalan' => 'Jalan Arteri Sekunder',
+    'gsb' => 20.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '203',
+    'ruasjalan' => 'JL. HAYAMWURUK',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '204',
+    'ruasjalan' => 'JL. TUK BUNTUNG',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '205',
+    'ruasjalan' => 'JL. TAMAN BAHAGIA',
+    'jenisjalan' => 'Jalan Kolektor Sekunder',
+    'gsb' => 9.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '206',
+    'ruasjalan' => 'NGLEBOK - JAMBE - TAMBAKROMO',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '207',
+    'ruasjalan' => 'JALAN LINGKUNGAN PRIMER',
+    'jenisjalan' => 'Jalan Lingkungan Primer',
+    'gsb' => 9.00,
+]);
+
+rencanagsbblora::create([
+    'id' => '208',
+    'ruasjalan' => 'JALAN LINGKUNGAN SEKUNDER',
+    'jenisjalan' => 'Jalan Lingkungan Sekunder',
+    'gsb' => 4.00,
+]);
+
+rencanagsbblora::create([
+    'id' => '209',
+    'ruasjalan' => 'WIROSARI - KUNDURAN (JL. PROVINSI)',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '210',
+    'ruasjalan' => 'KUNDURAN - NGAWEN - BLORA (JL. PROVINSI)',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+
+rencanagsbblora::create([
+    'id' => '211',
+    'ruasjalan' => 'WIROSARI - SULURSARI - SINGGET/BATAS KAB. BLORA (JL. PROVINSI)',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '212',
+    'ruasjalan' => 'SINGGET/BATAS KAB. GROBOGAN - DOPLANG - CEPU (JL. PROVINSI)',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '213',
+    'ruasjalan' => 'JUWANA - TODANAN/BATAS KAB. BLORA (JL. PROVINSI)',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '214',
+    'ruasjalan' => 'TODANAN - NGAWEN (JL. PROVINSI)',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '215',
+    'ruasjalan' => 'BTS. KOTA REMBANG - BTS. KAB. BLORA/REMBANG',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '216',
+    'ruasjalan' => 'BTS. KAB. BLORA/REMBANG - BTS. KOTA BLORA',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '217',
+    'ruasjalan' => 'JLN. A. YANI (BLORA)',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '218',
+    'ruasjalan' => 'JLN. JEND. SUDIRMAN (BLORA)',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '219',
+    'ruasjalan' => 'BTS. KOTA BLORA - CEPU',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+rencanagsbblora::create([
+    'id' => '220',
+    'ruasjalan' => 'CEPU - BTS. PROV. JAWA TIMUR',
+    'jenisjalan' => 'Jalan Kolektor Primer',
+    'gsb' => 14.50,
+]);
+
+// ===========================================
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Bangkleyan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Gempol',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Kepoh',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Pelem',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Jegong',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Jati',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Singget',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Gabusan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Doplang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Randulawang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Tobo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 6,
+    'desa' => 'Pengkoljagong',
+]);
+
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Tlogotuwung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Bodeh',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Gembyungan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Sambongwangan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Pilang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Temulus',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Sumberejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Kutukan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Kediren',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Kadengan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Bekutuk',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Plosorejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Jeruk',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Tanggel',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Randublatung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Wulung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Kalisari',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 13,
+    'desa' => 'Ngliron',
+]);
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 10,
+    'desa' => 'Megeri',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 10,
+    'desa' => 'Nglebak',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 10,
+    'desa' => 'Getas',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 10,
+    'desa' => 'Nginggil',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 10,
+    'desa' => 'Ngrawoh',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 10,
+    'desa' => 'Mendenrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 10,
+    'desa' => 'Sumber',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 10,
+    'desa' => 'Mojorembun',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 10,
+    'desa' => 'Nglungger',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 10,
+    'desa' => 'Medalem',
+]);
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Gondel',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Ketuwan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Jimbung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Panolan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Klagen',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Kemantren',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Sidorejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Wado',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Pulo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Tanjung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Sogo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Bajo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Nglandeyan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Kalen',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Ngraho',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Kedungtuban',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 9,
+    'desa' => 'Galuk',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Gadon',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Ngloram',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Cabean',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Kapuan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Jipang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Getas',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Sumberpitu',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Kentong',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Mernung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Mulyorejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Nglanjuk',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Tambakromo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Balun',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Cepu',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Ngelo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Karangboyo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 4,
+    'desa' => 'Ngroto',
+]);
+
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 14,
+    'desa' => 'Temengeng',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 14,
+    'desa' => 'Sambongrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 14,
+    'desa' => 'Gadu',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 14,
+    'desa' => 'Sambong',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 14,
+    'desa' => 'Pojokwatu',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 14,
+    'desa' => 'Gagakan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 14,
+    'desa' => 'Biting',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 14,
+    'desa' => 'Brabowan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 14,
+    'desa' => 'Ledok',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 14,
+    'desa' => 'Giyanti',
+]);
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Nglobo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Cabak',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Nglebur',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Janjang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Bleboh',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Ketringan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Singonegoro',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Jiken',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Genjahan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Jiworejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 8,
+    'desa' => 'Bangowan',
+]);
+
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Jepon',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Blungun',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Semanggi',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Ngampon',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Jomblang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Palon',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Bangsri',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Sumurboto',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Brumbung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Turirejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Semampir',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Kemiri',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Tempellemahbang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Seso',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Balong',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Geneng',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Nglarohgunung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Kawengan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Gersi',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Gedangdowo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Puledagel',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Bacem',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Jatirejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Soko',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 7,
+    'desa' => 'Waru',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Jepangrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Kamolan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Pelem',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Purworejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Andongrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Jejeruk',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Temurejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Tempurejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Patalan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Tambaksari',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Purwosari',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Ngadipurwo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Sendangharjo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Tempuran',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Plantungan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Ngampel',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Beran',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Bangkle',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Kedungjenar',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Mlangsen',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Jetis',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Tambahrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Kauman',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Sonorejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Kunden',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Tempelan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Tegalgunung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 2,
+    'desa' => 'Karangjati',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Tawangrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Kedungringin',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Adirejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Tamanrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Tutup',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Sukorejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Tambahrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Kalangan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Sambongrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Tunjungan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Kedungrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Gempolrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Nglangitan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Keser',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 16,
+    'desa' => 'Sitirejo',
+]);
+
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Jatisari',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Jatiklampok',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Klopoduwur',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Sidomulyo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Balongsari',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Bacem',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Wonosemi',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Sendanggayam',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Banjarejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Mojowetan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Sumberagung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Gedongsari',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Sendangwungu',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Balongrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Karangtalun',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Kebonrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Kembang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Sembongin',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Plosorejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 1,
+    'desa' => 'Buluroto',
+]);
+
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Rowobungkul',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Gedebeg',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Sambonganyar',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Kendayaan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Plumbon',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Bergolo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Bandungrojo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Kedungsatriyan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Karangtengah',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Jetakwanger',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Sumberejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Sendangagung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Talokwohmojo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Trembulrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Gondang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Sendangrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Semawur',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Bradag',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Gotputuk',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Berbak',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Sarimulyo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Sendangmulyo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Wantilgung',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Bogowanti',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Sambongrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Punggursugih',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Ngawen',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Srigading',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 12,
+    'desa' => 'Karangjong',
+]);
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Botoreco',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Buloh',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Kemiri',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Kodokan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Sonokidul',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Sempu',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Cungkup',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Plosorejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Ngilen',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Bakah',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Kalangrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Blumbangrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Tawangrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Klokah',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Muraharjo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Jagong',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Gagaan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Sambiroto',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Bejirejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Jetak',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Karanggeneng',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Balong',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Ngawenombo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Sendangwates',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Kunduran',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 11,
+    'desa' => 'Kedungwaru',
+]);
+
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Tinapan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Sambeng',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Prigi',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Pelemsengir',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Kacangan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Sonokulon',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Kedungwungu',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Gunungan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Kajengan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Dringo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Cokrowati',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Ketileng',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Todanan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Ngumbul',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Wukirsari',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Bicak',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Sendang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Karanganyar',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Dalangan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Candi',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Gondoriyo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Kembang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Bedingin',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Ledok',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 15,
+    'desa' => 'Kedungbacin',
+]);
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Gombang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Sarirejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Karanganyar',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Karang',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Prantaan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Jeruk',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Bogorejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Gembol',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Tempurejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Gayam',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Sendangrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Gandu',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Nglengkir',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 3,
+    'desa' => 'Jurangjero',
+]);
+
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Harjowinangun',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Tengger',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Krocok',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Ngapus',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Dologan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Tlogowungu',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Japah',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Beganjing',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Ngrambitan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Pengkolrejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Bogorejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Wotbakah',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Padaan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Bogem',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Sumberejo',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Ngiyono',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Gaplokan',
+]);
+
+kelurahandesa::create([
+    'kecamatanblora_id' => 5,
+    'desa' => 'Kalinanas',
+]);
+
+
+// DATABASE BANTUAN TEKNIS
+// LAPAR
+ for ($i = 1; $i <= 100; $i++) {
+            bantuanteknis::create([
+                'dinas_id' => rand(1, 15),
+                'jenispengajuanbantek_id' => rand(1, 9),
+                'pemohon_id' => 21,
+                'nosurat' => '0' . rand(100, 999) . '/DPUPR/VI/2025',
+                'tanggalsurat' => now()->subDays(rand(0, 30)),
+                'nama_pemohon' => 'Pemohon ' . $i,
+                'no_telepon' => '08123' . rand(100000, 999999),
+
+                'namapaket' => 'Paket Proyek ' . Str::random(5),
+                'kategoribangunan' => 'Bangunan Umum',
+                'luasbangunan' => rand(50, 300),
+                'luastanahtotal' => rand(100, 1000),
+                'jumlahlantai' => rand(1, 5),
+                'tinggibangunan' => rand(3, 15),
+                'bassement' => rand(0, 1),
+                'kepemilikan' => 'Pemerintah Daerah',
+                'tahunpembangunan' => rand(2000, 2022),
+                'tahunrenovasi' => rand(2010, 2025),
+
+                'pengelola' => 'DPUPR Unit ' . rand(1, 5),
+                'alamatlokasi' => 'Jl. Proyek No. ' . rand(1, 100),
+                'rt' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
+                'rw' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
+                'kabupaten' => 'Blora',
+                'kecamatanblora_id' => rand(1, 10),
+                'kelurahandesa_id' => rand(1, 10),
+            ]);
+        }
+
+
+
+
+
+
+
+
+// makanyu
     }
  /**
      * Menghitung usia berdasarkan tanggal lahir.
@@ -14636,9 +10863,4 @@ suratkeputusan::create([
     {
         return Carbon::parse($birthDate)->age;
     }
-
-
-    // PEMERINTAH KABUPATEN BLORA PROVINSI JAWA TENGAH
-
-
 }
