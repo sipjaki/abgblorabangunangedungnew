@@ -326,7 +326,7 @@
 
         <!-- Versi Android -->
         <li class="nav-item">
-            <a href="/android" target="_blank" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem 0.5rem 2rem;">
+            <a href="/" target="_blank" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem 0.5rem 2rem;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" viewBox="0 0 16 16" style="flex-shrink: 0;">
                     <path d="M4.5 0a.5.5 0 0 1 .5.5V2h6V.5a.5.5 0 0 1 1 0V2a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V3a1 1 0 0 1 1-1V.5a.5.5 0 0 1 .5-.5zM6 4v9h4V4H6z"/>
                 </svg>
@@ -954,6 +954,120 @@
     </li>
 </ul>
 </li>
+
+    <li class="nav-header" style="color: white;">Pengaturan Data </li>
+            <li class="nav-item">
+
+              <a href="#" class="nav-link">
+    <!-- Ganti SVG dengan Bootstrap Icon -->
+    <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+
+    <p style="color: white; margin-left: 8px;">
+        Berita
+        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
+    </p>
+</a>
+
+                <ul class="nav nav-treeview" style="margin-left: 15px;">
+
+    <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Berita</p>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="/bekrkindex" class="nav-link">
+            <i class="bi bi-card-list nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Artikel</p>
+        </a>
+    </li>
+
+</ul>
+
+            </li>
+            <li class="nav-item">
+
+              <a href="#" class="nav-link">
+    <!-- Ganti SVG dengan Bootstrap Icon -->
+    <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+
+    <p style="color: white; margin-left: 8px;">
+        Data ABG Blora
+        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
+    </p>
+</a>
+
+                <ul class="nav nav-treeview" style="margin-left: 15px;">
+<li class="nav-item">
+    <a href="/bestrukturdinas" class="nav-link">
+        <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">PBG/SLF</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link">
+        <i class="bi bi-clipboard-data nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Pendataan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link">
+        <i class="bi bi-people nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Bantek</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link">
+        <i class="bi bi-megaphone nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Sosialisasi</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">KRK</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link">
+        <i class="bi bi-person-check nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Penilik</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link">
+        <i class="bi bi-house-heart nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">MBR</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link">
+        <i class="bi bi-brush nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Bantuan Gambar</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link">
+        <i class="bi bi-gift nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Hibah Bangunan</p>
+    </a>
+</li>
+
+
+</ul>
+
+            </li>
+
 
 @endcan
             {{-- ---------------------------------------------  --}}
