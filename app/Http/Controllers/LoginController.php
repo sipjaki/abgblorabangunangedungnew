@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\statusadmin;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -23,13 +24,15 @@ class LoginController extends Controller
         ]);
     }
 
-    public function showRegisterForm()
-    {
-        //
-        return view('login.register',[
-            'title' => 'Silahkan Daftar',
-        ]);
-    }
+ public function showRegisterForm()
+{
+    $datastatus = statusadmin::whereIn('id', [3, 7])->get();
+
+    return view('login.register', [
+        'title' => 'Silahkan Daftar',
+        'datastatusadmin' => $datastatus,
+    ]);
+}
 
     // public function authenticate(Request $request)
     // {
@@ -102,10 +105,12 @@ public function authenticate(Request $request)
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'username' => 'required|string|unique:users,username|max:255',
+            'statusadmin_id' => 'required|string',
             'phone_number' => 'required|numeric|unique:users,phone_number',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string',
         ], [
+            'statusadmin_id.required' => 'Pilih akun !.',
             'name.required' => 'Nama Lengkap wajib diisi.',
             'username.required' => 'Username wajib diisi.',
             'username.unique' => 'Username sudah terdaftar, silakan pilih yang lain.',
@@ -131,7 +136,8 @@ public function authenticate(Request $request)
         $user->phone_number = $request->phone_number;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->statusadmin_id = 3; // Menetapkan statusadmin_id
+        $user->statusadmin_id = $request->statusadmin_id;
+        // $user->statusadmin_id = 3; // Menetapkan statusadmin_id
         $user->avatar = 'assets/abgblora/logo/iconabgblora.png'; // Menetapkan avatar default
         $user->save();
 

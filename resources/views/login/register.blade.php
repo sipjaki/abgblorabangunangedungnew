@@ -274,6 +274,23 @@
                     @enderror
                 </div>
 
+
+<div class="input-group">
+    <select name="statusadmin_id"
+        style="width: 100%; background-color: #e0edff; color: black; border: none; border-radius: 8px; padding: 12px; margin-bottom: 10px; font-family: 'Poppins', sans-serif;">
+        <option value="">-- Pilih Akun --</option>
+        @foreach ($datastatusadmin as $status)
+            <option value="{{ $status->id }}" {{ old('statusadmin_id') == $status->id ? 'selected' : '' }}>
+                {{ $status->status ?? 'Status ' . $status->id }}
+            </option>
+        @endforeach
+    </select>
+    @error('statusadmin_id')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
+
                 <div class="input-group">
                     <input type="text" name="phone_number" placeholder="Nomor HP" value="{{ old('phone_number') }}" />
                     @error('phone_number')

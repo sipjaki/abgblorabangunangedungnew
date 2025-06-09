@@ -51,7 +51,7 @@ Route::get('/resbgindex', [FedashboardController::class, 'menuresbangunangedungi
 // 04_ MENU BANTUAN TEKNIS
 // ----------------------------------------------------------------------------------------
 Route::get('/resbantekindex', [FedashboardController::class, 'resbantekindex']);
-Route::get('/resbantekpermohonan', [FedashboardController::class, 'resbantekpermohonan']);
+Route::get('/resbantekpermohonan', [FedashboardController::class, 'resbantekpermohonan'])->middleware('auth');
 
 // WEB 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------
