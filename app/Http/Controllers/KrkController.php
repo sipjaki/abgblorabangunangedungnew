@@ -401,19 +401,19 @@ public function validateBerkashunian($id)
 
     }
 
-            public function bekrkindex()
-        {
+public function bekrkindex()
+{
+    $user = Auth::user();
+    $data = krkusaha::paginate(15); // Data paginasi
+    $datajumlahkrkusaha = krkusaha::count(); // Hitung total semua data
 
-            $user = Auth::user();
-            $data = krkusaha::paginate(15); // Mengirimkan data paginasi ke view
-
-
-            return view('backend.06_krk.02_berkaspermohonan.index', [
-                'title' => 'Permohonan KRK Bangunan Gedung',
-                'data' => $data, // Mengirimkan data paginasi ke view
-                'user' => $user, // Mengirimkan data paginasi ke view
-            ]);
-        }
+    return view('backend.06_krk.02_berkaspermohonan.index', [
+        'title' => 'Permohonan KRK Bangunan Gedung',
+        'data' => $data,
+        'user' => $user,
+        'datajumlahkrkusaha' => $datajumlahkrkusaha,
+    ]);
+}
 
         public function bekrkusaha()
         {

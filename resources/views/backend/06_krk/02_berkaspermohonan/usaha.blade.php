@@ -53,6 +53,7 @@ th {
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 {{-- ---------------------------------------------------------------------- --}}
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
@@ -265,12 +266,13 @@ th {
 
 <!-- Tombol KTP -->
 <td style="text-align: center;">
-    <button class="btn btn-secondary btn-sm"
-        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+      <div style="display: flex; flex-direction: column; align-items: center;">
+    <button class="button-kembali"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='black'; this.style.border='none';"
         data-bs-toggle="modal" data-bs-target="#modalKtp{{$item->id}}">
-        <i class="fas fa-eye"></i> Lihat
+        <i class="fas fa-eye" style="margin-right:5px;"></i> Lihat
     </button>
 
     <!-- Modal KTP -->
@@ -294,16 +296,18 @@ th {
             </div>
         </div>
     </div>
+    </div>
 </td>
 
 <!-- Tombol NPWP -->
 <td style="text-align: center;">
-    <button class="btn btn-secondary btn-sm"
-        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+      <div style="display: flex; flex-direction: column; align-items: center;">
+    <button class="button-kembali"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='black'; this.style.border='none';"
         data-bs-toggle="modal" data-bs-target="#modalNpwp{{$item->id}}">
-        <i class="fas fa-eye"></i> Lihat
+        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat
     </button>
 
     <!-- Modal NPWP -->
@@ -327,16 +331,18 @@ th {
             </div>
         </div>
     </div>
+    </div>
 </td>
 
 <!-- Tombol Sertifikat Tanah -->
 <td style="text-align: center;">
-    <button class="btn btn-secondary btn-sm"
-        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+      <div style="display: flex; flex-direction: column; align-items: center;">
+    <button class="button-kembali"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='black'; this.style.border='none';"
         data-bs-toggle="modal" data-bs-target="#modalSertifikat{{$item->id}}">
-        <i class="fas fa-eye"></i> Lihat
+        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat
     </button>
 
     <!-- Modal Sertifikat Tanah -->
@@ -360,18 +366,20 @@ th {
             </div>
         </div>
     </div>
+    </div>
 </td>
 
 
 
                                                                         <!-- Tombol Lampiran OSS -->
 <td style="text-align: center;">
-    <button class="btn btn-secondary btn-sm"
-        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+      <div style="display: flex; flex-direction: column; align-items: center;">
+    <button class="button-kembali"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='black'; this.style.border='none';"
         data-bs-toggle="modal" data-bs-target="#modalLampiranOSS{{ $item->id }}">
-        <i class="fas fa-eye"></i> Lihat
+        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat
     </button>
 
     <!-- Modal Lampiran OSS -->
@@ -395,16 +403,18 @@ th {
             </div>
         </div>
     </div>
+    </div>
 </td>
 
 <!-- Tombol Bukti PBB -->
 <td style="text-align: center;">
-    <button class="btn btn-secondary btn-sm"
-        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+      <div style="display: flex; flex-direction: column; align-items: center;">
+    <button class="button-kembali"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='black'; this.style.border='none';"
         data-bs-toggle="modal" data-bs-target="#modalBuktiPBB{{ $item->id }}">
-        <i class="fas fa-eye"></i> Lihat
+        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat
     </button>
 
     <!-- Modal Bukti PBB -->
@@ -428,18 +438,20 @@ th {
             </div>
         </div>
     </div>
+    </div>
 </td>
 
 
 
                             <!-- Tombol Dokumen Validasi -->
 <td style="text-align: center;">
-    <button class="btn btn-secondary btn-sm"
-        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+      <div style="display: flex; flex-direction: column; align-items: center;">
+    <button class="button-kembali"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='black'; this.style.border='none';"
         data-bs-toggle="modal" data-bs-target="#modalDokValidasi{{ $item->id }}">
-        <i class="fas fa-eye"></i> Lihat
+        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat
     </button>
 
     <!-- Modal Dokumen Validasi -->
@@ -463,16 +475,18 @@ th {
             </div>
         </div>
     </div>
+    </div>
 </td>
 
 <!-- Tombol Siteplan -->
 <td style="text-align: center;">
-    <button class="btn btn-secondary btn-sm"
-        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+      <div style="display: flex; flex-direction: column; align-items: center;">
+    <button class="button-kembali"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='black'; this.style.border='none';"
         data-bs-toggle="modal" data-bs-target="#modalSiteplan{{ $item->id }}">
-        <i class="fas fa-eye"></i> Lihat
+        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat
     </button>
 
     <!-- Modal Siteplan -->
@@ -496,15 +510,17 @@ th {
             </div>
         </div>
     </div>
+    </div>
 </td>
 
                             <td style="text-align: center;">
-                                <button class="btn btn-secondary btn-sm"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                  <div style="display: flex; flex-direction: column; align-items: center;">
+                                <button class="button-kembali"
+                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='black'; this.style.border='none';"
                                     data-bs-toggle="modal" data-bs-target="#modalTandatangan{{ $item->id }}">
-                                    <i class="fas fa-signature"></i> Lihat
+                                    <i class="fas fa-signature" style="margin-right: 5px;"></i> Lihat
                                 </button>
 
                                 <!-- Modal Tanda Tangan -->
@@ -527,6 +543,7 @@ th {
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                                 </div>
                             </td>
 
@@ -552,25 +569,27 @@ th {
                             </td> --}}
 
                             <td>
+                                  <div style="display: flex; flex-direction: column; align-items: center;">
                                 @if (!$item->is_validated)
                                 <!-- Tombol Triger Modal -->
                                 <button type="button"
                                     onclick="openValidationModal({{ $item->id }})"
-                                    class="btn btn-danger btn-sm"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #dc3545; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                    class="button-belum"
+                                    style="border-radius: 15px; padding: 8px 16px; background-color: #dc3545; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#dc3545'; this.style.border='1px solid #dc3545';"
-                                    onmouseout="this.style.backgroundColor='#dc3545'; this.style.color='white'; this.style.border='none';">
-                                    <i class="bi bi-file-earmark-check"></i> BELUM DI SETUJUI
+                                    onmouseout="this.style.backgroundColor='#dc3545'; this.style.color='black'; this.style.border='none';">
+                                    <i class="bi bi-file-earmark-check" style="margin-right: 5px;"></i> BELUM DI SETUJUI
                                 </button>
                                 @else
                                 <!-- Tombol SUDAH Validasi -->
-                                <button class="btn btn-success btn-sm"
+                                <button class="button-sudah"
                                     style="border-radius: 15px; padding: 8px 16px; background-color: #28a745; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#28a745'; this.style.border='1px solid #28a745';"
                                     onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white'; this.style.border='none';">
-                                    <i class="bi bi-check-circle-fill"></i> SUDAH DIVALIDASI
+                                    <i class="bi bi-check-circle-fill" style="margin-right: 5px;"></i> SUDAH DIVALIDASI
                                 </button>
                                 @endif
+                                </div>
                             </td>
 
                             <!-- Modal Validasi -->
@@ -656,10 +675,12 @@ th {
         }
     });
 </script>
+
 <td style="text-align: center; vertical-align: middle; width: 100%;">
+      <div style="display: flex; flex-direction: column; align-items: center;">
     @if (!$item->is_validated)
         <!-- Jika BELUM DIVALIDASI, tombol nonaktif -->
-        <button
+        <button class="button-belum"
             disabled
             style="background-color: #dc3545; color: white; border: none; padding: 10px 25px;
                    border-radius: 15px; font-size: 14px; cursor: not-allowed;
@@ -667,12 +688,12 @@ th {
                    opacity: 0.6;"
             title="Silakan validasi terlebih dahulu"
         >
-            <i class="bi bi-pencil-fill" style="margin-right: 8px;"></i> PENGESAHAN
+            <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> PENGESAHAN
         </button>
     @else
         <!-- Jika SUDAH DIVALIDASI, tombol aktif -->
         <a href="{{ route('permohonan.pengesahanusaha', $item->id) }}" style="text-decoration: none;">
-            <button
+            <button class="button-sudah"
                 onmouseover="this.style.backgroundColor='#D1FAE5'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
                 style="background-color:#28a745; color: white; border: none; padding: 10px 25px;
@@ -683,18 +704,19 @@ th {
             </button>
         </a>
     @endif
+    </div>
 </td>
 
 
 
 
                                     <td style="text-align: center; vertical-align: middle;">
-                                        <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
+                                        {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
                                             <i class="bi bi-eye"></i>
-                                        </a>
-                                        <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
+                                        </a> --}}
+                                        {{-- <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
-                                        </a>
+                                        </a> --}}
                                         <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
                                            data-judul="{{ $item->namalengkap }}"

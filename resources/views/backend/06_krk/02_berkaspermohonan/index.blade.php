@@ -60,7 +60,7 @@
                 </span>
                 <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
                     <span class="info-box-text" style="color: white;">Fungsi Usaha</span>
-                    <span class="info-box-number fw-bold" style="font-size: 16px;">70% Tercapai</span>
+                    <span class="info-box-number fw-bold" style="font-size: 16px;">{{$datajumlahkrkusaha}} Berkas Permohonan</span>
                 </div>
             </div>
         </a>

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('krkusahas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('krkusahasurat_id')->nullable()->index(); // BELUM DI BUATKAN
-            $table->foreignId('user_id')->nullable()->index(); // BELUM DI BUATKAN
-            $table->foreignId('kecamatanblora_id', 255)->nullable();
-            $table->foreignId('kelurahandesa_id', 255)->nullable();
+            $table->foreignId('krkusahasurat_id')->nullable()->index(); // PEMOHON
+            $table->foreignId('user_id')->nullable()->index(); // PEMOHON
+            $table->foreignId('kecamatanblora_id', 255)->nullable()->index();
+            $table->foreignId('kelurahandesa_id', 255)->nullable()->index();
             $table->string('perorangan', 255)->nullable();
             $table->string('perusahaan', 255)->nullable();
             $table->string('nik', 16)->nullable();
@@ -38,6 +38,17 @@ return new class extends Migration
             $table->string('siteplan')->nullable();
             $table->string('tandatangan')->nullable();
             $table->boolean('is_validated')->default(false);
+
+            // untuk verivikasi berkas
+            $table->string('verifikasi1')->nullable();
+            $table->string('verifikasi2')->nullable();
+            $table->string('verifikasi3')->nullable();
+            $table->string('verifikasi4')->nullable();
+            // untuk cadangan data
+            $table->string('cadangankrkusaha1')->nullable();
+            $table->string('cadangankrkusaha2')->nullable();
+            $table->string('cadangankrkusaha3')->nullable();
+            $table->string('cadangankrkusaha4')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
