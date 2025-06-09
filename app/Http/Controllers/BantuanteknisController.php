@@ -1042,15 +1042,17 @@ public function bebantekakundinasistensi(Request $request)
     $search = $request->input('search');
     $perPage = $request->input('perPage', 20);
 
-    // Query dasar: data milik user login, dengan pemohon statusadmin_id = 6
-    $query = bantuanteknis::whereHas('pemohon', function ($q) use ($user) {
-        $q->where('pemohon_id', $user->id)
-          ->where('statusadmin_id', 6);  // <-- ubah dari 7 jadi 6
-    })
-    ->whereHas('jenispengajuanbantek', function ($q) {
-        $q->where('id', '=', 1); // tetap id=1
+    // Cek apakah user punya relasi dinas dan statusadmin_id-nya 7
+    if (!$user->dinas || $user->dinas->statusadmin_id != 7) {
+        abort(403, 'Akses ditolak. Anda tidak memiliki izin.');
+    }
+
+    // Query data bantuanteknis dengan jenis pengajuan id = 1
+    $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 1);
     });
 
+    // Filter pencarian jika ada keyword
     if ($search) {
         $query->where(function ($q) use ($search) {
             $q->where('nama_pemohon', 'like', "%{$search}%")
