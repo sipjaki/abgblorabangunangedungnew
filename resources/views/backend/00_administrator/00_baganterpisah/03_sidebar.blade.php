@@ -602,54 +602,38 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
-                    <li class="nav-item">
-                        <a href="/bestrukturdinas" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                                <path d="M8 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">PBG/SLF</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/bestrukturdinas" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M1 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm0 1v2h14V3H1zm0 3v2h14V6H1zm0 3v2h14V9H1zm0 3v2h14v-2H1z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">Bantuan Teknis</p>
-                        </a>
-                    </li>
+    <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-geo-alt nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">PBG/SLF</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-journal-text nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Bantuan Teknis</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/pemohonkrk" class="nav-link">
+            <i class="bi bi-card-list nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">KRK</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-house nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">MBR</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-image nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Bantuan Gambar</p>
+        </a>
+    </li>
+</ul>
 
-                    <li class="nav-item">
-                        <a href="/pemohonkrk" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                                <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">KRK</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="/bestrukturdinas" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M1 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm0 1v2h14V3H1zm0 3v2h14V6H1zm0 3v2h14V9H1zm0 3v2h14v-2H1z"/>
-                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">MBR</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="/bestrukturdinas" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M1 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm0 1v2h14V3H1zm0 3v2h14V6H1zm0 3v2h14V9H1zm0 3v2h14v-2H1z"/>
-                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">Bantuan Gambar</p>
-                        </a>
-                    </li>
-                </ul>
             </li>
 
 
@@ -693,298 +677,282 @@
 
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
 
-                    <li class="nav-item">
-                        <a href="/bestrukturdinas" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M1 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm0 1v2h14V3H1zm0 3v2h14V6H1zm0 3v2h14V9H1zm0 3v2h14v-2H1z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">Informasi SLF</p>
-                        </a>
-                    </li>
+    <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Informasi SLF</p>
+        </a>
+    </li>
 
-                    <li class="nav-item">
-                        <a href="/bekrkindex" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                                <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">Permohonan PBG</p>
-                        </a>
-                    </li>
+    <li class="nav-item">
+        <a href="/bekrkindex" class="nav-link">
+            <i class="bi bi-card-list nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Permohonan PBG</p>
+        </a>
+    </li>
 
-                    <li class="nav-item">
-                        <a href="/bestrukturdinas" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M1 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm0 1v2h14V3H1zm0 3v2h14V6H1zm0 3v2h14V9H1zm0 3v2h14v-2H1z"/>
-                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">Permohonan SLF</p>
-                        </a>
-                    </li>
-                </ul>
+    <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-building nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Permohonan SLF</p>
+        </a>
+    </li>
+
+</ul>
+
             </li>
 
             <!-- Tracking PBG -->
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                        <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-                        <path d="M5 5h1v1H5V5zm2 0h1v1H7V5zm2 0h1v1H9V5zm-4 3h1v1H5V8zm2 0h1v1H7V8zm2 0h1v1H9V8z"/>
-                    </svg>
-                    <p style="color: white; margin-left: 8px;">
-                        Tracking PBG
-                        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-                    </p>
-                </a>
+             <a href="#" class="nav-link">
+    <i class="bi bi-search nav-icon" style="color: white;"></i>
+    <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        Tracking Berkas
+        <i class="nav-arrow bi bi-chevron-right" style="color: white;"></i>
+    </p>
+</a>
+
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
-                    <li class="nav-item">
-                        <a href="/404" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm0 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z"/>
-                                <path d="M8 4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0v-4A.5.5 0 0 1 8 4z"/>
-                                <path d="M8 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">Coming Soon</p>
-                        </a>
-                    </li>
+                     <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-geo-alt nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">PBG/SLF</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-journal-text nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Bantuan Teknis</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/pemohonkrk" class="nav-link">
+            <i class="bi bi-card-list nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">KRK</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-house nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">MBR</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/bestrukturdinas" class="nav-link">
+            <i class="bi bi-image nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Bantuan Gambar</p>
+        </a>
+    </li>
                 </ul>
             </li>
 
             <!-- Pendataan -->
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                        <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-                        <path d="M5 5h1v1H5V5zm2 0h1v1H7V5zm2 0h1v1H9V5zm-4 3h1v1H5V8zm2 0h1v1H7V8zm2 0h1v1H9V8z"/>
-                    </svg>
-                    <p style="color: white; margin-left: 8px;">
-                        Pendataan
-                        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-                    </p>
-                </a>
+    <i class="bi bi-folder nav-icon" style="color: white; font-size: 16px;"></i>
+    <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        Pendataan
+        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
+    </p>
+</a>
+
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
-                    <li class="nav-item">
-                        <a href="/404" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
-                                <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">Bangunan Gedung</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/404" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
-                                <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
-                                <circle cx="12" cy="5" r="1"/>
-                                <circle cx="12" cy="8" r="1"/>
-                                <circle cx="12" cy="11" r="1"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">KIC Bangunan Gedung</p>
-                        </a>
-                    </li>
-                </ul>
+    <li class="nav-item">
+        <a href="/404" class="nav-link">
+            <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px;"></i>
+            <p style="color: white; margin-left: 8px;">Informasi</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/404" class="nav-link">
+            <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+            <p style="color: white; margin-left: 8px;">Pendataan</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/404" class="nav-link">
+            <i class="bi bi-columns-gap nav-icon" style="color: white; font-size: 16px;"></i>
+            <p style="color: white; margin-left: 8px;">Kartu Identitas</p>
+        </a>
+    </li>
+</ul>
+
             </li>
 
             <!-- Bantek -->
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                        <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm0 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z"/>
-                        <path d="M10.5 5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5zM6 5.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z"/>
-                        <path d="M8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                        <path d="M8 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                    </svg>
-                    <p style="color: white; margin-left: 8px;">
-                        Bantek
-                        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview" style="margin-left: 15px;">
-                    <li class="nav-item">
-                        <a href="/404" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm0 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z"/>
-                                <path d="M8 4a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 4zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">Informasi</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/bebantuanteknisindex" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm0 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z"/>
-                                <path d="M8 4a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 4zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                            </svg>
-                            <p style="color: white; margin-left: 8px;">Permohonan</p>
-                        </a>
-                    </li>
-                </ul>
+             <a href="#" class="nav-link">
+    <i class="bi bi-tools nav-icon" style="color: white; font-size: 16px;"></i>
+    <p style="color: white; margin-left: 8px;">
+        Bantek
+        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
+    </p>
+</a>
+
+<ul class="nav nav-treeview" style="margin-left: 15px;">
+    <li class="nav-item">
+        <a href="/404" class="nav-link">
+            <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px;"></i>
+            <p style="color: white; margin-left: 8px;">Informasi</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/bebantuanteknisindex" class="nav-link">
+            <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px;"></i>
+            <p style="color: white; margin-left: 8px;">Permohonan</p>
+        </a>
+    </li>
+</ul>
             </li>
 
             {{-- =====================================  --}}
          <!-- Sosialisasi -->
 <!-- Sosialisasi -->
 <li class="nav-item">
-    <a href="#" class="nav-link" style="display: flex; align-items: center;">
-        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-            <defs>
-                <linearGradient id="deepseek-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#0066FF;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#00BFFF;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0 8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1z"/>
-        </svg>
-        <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Sosialisasi</p>
-        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-    </a>
-    <ul class="nav nav-treeview" style="margin-left: 15px;">
-        <li class="nav-item">
-            <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0 8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1z"/>
-                </svg>
-                <p style="color: white; margin: 0 0 0 8px;">Informasi Sosialisasi</p>
-            </a>
-        </li>
-    </ul>
+   <a href="#" class="nav-link" style="display: flex; align-items: center;">
+    <i class="bi bi-megaphone nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Sosialisasi</p>
+    <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
+</a>
+
+
+<ul class="nav nav-treeview" style="margin-left: 15px;">
+   <li class="nav-item">
+      <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+          <i class="bi bi-calendar-event nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+          <p style="color: white; margin: 0 0 0 8px;">Agenda</p>
+      </a>
+   </li>
+   <li class="nav-item">
+      <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+          <i class="bi bi-people nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+          <p style="color: white; margin: 0 0 0 8px;">Peserta</p>
+      </a>
+   </li>
+</ul>
+
 </li>
 
 <!-- KRK -->
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center;">
-        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-            <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-            <path d="M5 5h1v1H5V5zm2 0h1v1H7V5zm2 0h1v1H9V5zm-4 3h1v1H5V8zm2 0h1v1H7V8zm2 0h1v1H9V8z"/>
-        </svg>
-        <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">KRK</p>
-        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-    </a>
-    <ul class="nav nav-treeview" style="margin-left: 15px;">
-        <li class="nav-item">
-            <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0 8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1z"/>
-                </svg>
-                <p style="color: white; margin: 0 0 0 8px;">Informasi KRK</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                    <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-                </svg>
-                <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
-            </a>
-        </li>
-    </ul>
+    <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">KRK</p>
+    <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
+</a>
+
+<ul class="nav nav-treeview" style="margin-left: 15px;">
+    <li class="nav-item">
+        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Informasi KRK</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
+        </a>
+    </li>
+</ul>
+
 </li>
 
 <!-- Penilik Bangunan Gedung -->
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center;">
-        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 0 1-4-4h1a3 3 0 0 0 6 0h1a4 4 0 0 1-4 4z"/>
-        </svg>
-        <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Penilik</p>
-        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-    </a>
+    <i class="bi bi-person-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Penilik</p>
+    <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
+</a>
+
     <ul class="nav nav-treeview" style="margin-left: 15px;">
-        <li class="nav-item">
-            <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0 8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1z"/>
-                </svg>
-                <p style="color: white; margin: 0 0 0 8px;">Informasi Penilik</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                    <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-                </svg>
-                <p style="color: white; margin: 0 0 0 8px;">Berkas Penilik</p>
-            </a>
-        </li>
-    </ul>
+    <li class="nav-item">
+        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Informasi Penilik</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Berkas Penilik</p>
+        </a>
+    </li>
+</ul>
+
 </li>
 <!-- MBG Gambar -->
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
-        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-            <defs>
-                <linearGradient id="deepseek-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#0066FF;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#00BFFF;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-            <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-            <path d="M5 5h1v1H5V5zm2 0h1v1H7V5zm2 0h1v1H9V5zm-4 3h1v1H5V8zm2 0h1v1H7V8zm2 0h1v1H9V8z"/>
-        </svg>
-        <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">MBG Gambar</p>
-        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-    </a>
+    <i class="bi bi-file-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">MBR Gambar</p>
+    <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
+</a>
+
+
     <ul class="nav nav-treeview" style="margin-left: 15px;">
-        <li class="nav-item">
-            <a href="/404" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem 0.5rem 2rem;">
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                    <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
-                </svg>
-                <p style="color: white; margin: 0 0 0 8px;">Dokumen MBG</p>
-            </a>
-        </li>
-    </ul>
+    <li class="nav-item">
+        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Informasi MBR</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
+        </a>
+    </li>
+</ul>
 </li>
 
 <!-- Bantuan Gambar -->
 <li class="nav-item">
-    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
-        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0-1a1 1 0 1 1-2 0V6a1 1 0 0 1 2 0v2z"/>
-        </svg>
-        <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Bantuan Gambar</p>
-        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-    </a>
+  <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
+    <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Bantuan Gambar</p>
+    <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
+</a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
-        <li class="nav-item">
-            <a href="/404" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem 0.5rem 2rem;">
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0 8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1z"/>
-                </svg>
-                <p style="color: white; margin: 0 0 0 8px;">Panduan Gambar</p>
-            </a>
-        </li>
-    </ul>
+    <li class="nav-item">
+        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Informasi </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
+        </a>
+    </li>
+</ul>
+
+
 </li>
 
 <!-- Hibah Bangunan -->
 <li class="nav-item">
-    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
-        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0-1a1 1 0 1 1-2 0V6a1 1 0 0 1 2 0v2z"/>
-        </svg>
-        <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Hibah Bangunan</p>
-        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-    </a>
-    <ul class="nav nav-treeview" style="margin-left: 15px;">
-        <li class="nav-item">
-            <a href="/404" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem 0.5rem 2rem;">
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" viewBox="0 0 16 16" style="flex-shrink: 0;">
-                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0 8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1z"/>
-                </svg>
-                <p style="color: white; margin: 0 0 0 8px;">Informasi Hibah</p>
-            </a>
-        </li>
-    </ul>
+  <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
+    <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Hibah Bangunan</p>
+    <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
+</a>
+  <ul class="nav nav-treeview" style="margin-left: 15px;">
+    <li class="nav-item">
+        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Informasi </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
+        </a>
+    </li>
+</ul>
 </li>
 
 @endcan
