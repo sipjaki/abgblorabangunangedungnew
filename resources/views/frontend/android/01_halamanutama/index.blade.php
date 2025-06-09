@@ -42,19 +42,25 @@
     @include('frontend.android.00_fiturmenu.04_menunavigasi')
 
     {{-- ================================================================== --}}
-<div id="Promo" style="
+{{-- <div id="Promo" style="
   margin-top: 1.5rem;
   width: 100%;
-  background-color: #3B2F63;
+  background: linear-gradient(to bottom right, rgba(43, 42, 90, 0.85), rgba(58, 74, 128, 0.85)), url('/path/to/sesuaikan.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   box-sizing: border-box;
-  color: white;
-    border-radius:15px;
+  color: #E0E6FF;
+  border-radius: 15px;
   font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px) brightness(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 ">
       <div class="flex justify-between items-center px-[18px]">
         <h1 class="font-semibold leading-[27px]" style="font-size: 16px;">Agenda Sosialisasi</h1>
@@ -67,8 +73,6 @@
               <img src="/assets/android/thumbnails/gambar001.png" class="object-cover w-full h-full" alt="thumbnail">
             </div>
             <div class="flex flex-col gap-1">
-              {{-- <p class="font-semibold">Wonderful Indonesia</p> --}}
-              {{-- <p class="text-[#757C98] font-semibold text-sm leading-[21px]">Available 9 Promos</p> --}}
             </div>
           </div>
         </a>
@@ -78,8 +82,6 @@
               <img src="/assets/android/thumbnails/gambar002.png" class="object-cover w-full h-full" alt="thumbnail">
             </div>
             <div class="flex flex-col gap-1">
-              {{-- <p class="font-semibold">Majestic Thailand</p>
-              <p class="text-[#757C98] font-semibold text-sm leading-[21px]">Available 25 Promos</p> --}}
             </div>
           </div>
         </a>
@@ -89,31 +91,36 @@
               <img src="/assets/android/thumbnails/gambar003.png" class="object-cover w-full h-full" alt="thumbnail">
             </div>
             <div class="flex flex-col gap-1">
-              {{-- <p class="font-semibold">Amazing Singapore</p>
-              <p class="text-[#757C98] font-semibold text-sm leading-[21px]">Available 22 Promos</p> --}}
             </div>
           </div>
         </a>
       </div>
-    </div>
+    </div> --}}
 
     {{-- ================================================================== --}}
 
     {{-- ================================================================== --}}
-  <div id="Promo" style="
+  {{-- <div id="Promo" style="
   margin-top: 1.5rem;
   width: 100%;
-  background-color: #3B2F63;
+  background: linear-gradient(to bottom right, rgba(43, 42, 90, 0.85), rgba(58, 74, 128, 0.85)), url('/path/to/sesuaikan.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   box-sizing: border-box;
-  color: white;
-  border-radius:15px;
+  color: #E0E6FF;
+  border-radius: 15px;
   font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px) brightness(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 ">
+
       <div class="flex justify-between items-center px-[18px]">
         <h1 class="font-semibold leading-[27px]" style="font-size:16px;">Berita Bangunan Gedung</h1>
         <a href="" class="font-semibold text-sm leading-[21px]" style="color: white;">See All</a>
@@ -126,8 +133,6 @@
               <img src="/assets/android/thumbnails/gambar004.png" class="object-cover w-full h-full" alt="thumbnail">
             </div>
             <div class="flex flex-col gap-1">
-              {{-- <p class="font-semibold">Majestic Thailand</p>
-              <p class="text-[#757C98] font-semibold text-sm leading-[21px]">Available 25 Promos</p> --}}
             </div>
           </div>
         </a>
@@ -138,8 +143,6 @@
                 <img src="/assets/android/thumbnails/gambar005.png" class="object-cover w-full h-full" alt="thumbnail">
               </div>
               <div class="flex flex-col gap-1">
-                {{-- <p class="font-semibold">Wonderful Indonesia</p>/
-                <p class="text-[#757C98] font-semibold text-sm leading-[21px]">Available 9 Promos</p> --}}
               </div>
             </div>
           </a>
@@ -150,13 +153,11 @@
                 <img src="/assets/android/thumbnails/gambar006.png" class="object-cover w-full h-full" alt="thumbnail">
               </div>
               <div class="flex flex-col gap-1">
-                {{-- <p class="font-semibold">Amazing Singapore</p>
-                <p class="text-[#757C98] font-semibold text-sm leading-[21px]">Available 22 Promos</p> --}}
               </div>
             </div>
           </a>
       </div>
-    </div>
+    </div> --}}
 
     <br><br>
 

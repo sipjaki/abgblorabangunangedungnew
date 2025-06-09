@@ -7,12 +7,12 @@
   <div class="bg-white p-3 rounded-full flex items-center justify-between gap-4 shadow-[0_8px_30px_0_#0A093212]">
 
     <!-- Item 1 -->
-    <a href="/404">
+    <a href="/dashboard">
       <div class="flex flex-col items-center gap-1">
         <div class="w-6 h-6">
           <img src="/assets/android/icons/setting-linear-grey.svg" alt="Berkas">
         </div>
-        <p class="text-xs font-medium text-[#757C98]">Menu</p>
+        <p class="text-xs font-medium text-[#757C98]">Dashboard</p>
       </div>
     </a>
 
@@ -22,7 +22,7 @@
         <div class="w-6 h-6">
           <img src="/assets/android/icons/home-nonactive.svg" alt="Menu">
         </div>
-        <p class="text-xs font-medium text-[#757C98]">Berkas</p>
+        <p class="text-xs font-medium text-[#757C98]">Tracking</p>
       </div>
     </a>
     <a href="/">
@@ -50,7 +50,7 @@
         <div class="w-6 h-6">
           <img src="/assets/android/icons/key-grey.svg" alt="Login">
         </div>
-        <p class="text-xs font-medium text-[#757C98]">Login</p>
+        <p class="text-xs font-medium text-[#757C98]">Masuk</p>
       </div>
     </a>
 

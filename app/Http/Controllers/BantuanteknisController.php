@@ -1092,7 +1092,7 @@ public function bebantekakundinasistensi(Request $request)
     $berkasbantek = $query->latest()->paginate($perPage)->appends($request->query());
 
     return view('backend.04_bantuanteknis.04_akundinas.01_berkasasistensi', [
-        'title' => 'Akun Dinas | Permohonan Bantuan Teknis Asistensi Penyelenggaraan Bangunan Gedung',
+        'title' => 'Permohonan Bantuan Teknis Asistensi Penyelenggaraan Bangunan Gedung',
         'data'  => $berkasbantek,
         'user'  => $user,
     ]);
@@ -1157,7 +1157,7 @@ public function bebantekakunkonsultan(Request $request)
     $berkasbantek = $query->latest()->paginate($perPage)->appends($request->query());
 
     return view('backend.04_bantuanteknis.04_akundinas.01_berkasasistensi', [
-        'title' => 'Akun Dinas | Permohonan Bantuan Teknis Asistensi Penyelenggaraan Bangunan Gedung',
+        'title' => 'Permohonan Bantuan Teknis Asistensi Penyelenggaraan Bangunan Gedung',
         'data'  => $berkasbantek,
         'user'  => $user,
     ]);
@@ -1322,7 +1322,7 @@ public function bebantekdaftarkonsultanproses(Request $request)
     $berkasbantek = $query->latest()->paginate($perPage)->appends($request->query());
 
     return view('backend.04_bantuanteknis.04_akundinas.01_berkasasistensi', [
-        'title' => 'Akun Dinas | Permohonan Bantuan Teknis Asistensi Penyelenggaraan Bangunan Gedung',
+        'title' => 'Permohonan Bantuan Teknis Asistensi Penyelenggaraan Bangunan Gedung',
         'data'  => $berkasbantek,
         'user'  => $user,
     ]);
