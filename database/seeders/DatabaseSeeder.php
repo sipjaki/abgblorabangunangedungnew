@@ -280,6 +280,17 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        User::create([
+            'id'  => 24, // pemohon
+            'name'  => 'Sigit Septiadi Konsultan Bantek',
+            'username' => 'Sigit',
+            'statusadmin_id' => '4',
+            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+            'email' => 'sigitpemohonabgkonsultan@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
+        ]);
+
+
         jenispengajuanbantek::create([
             'id'  => 1,
             'jenispengajuan'  => 'BANTUAN ASISTENSI PERENCANAAN',

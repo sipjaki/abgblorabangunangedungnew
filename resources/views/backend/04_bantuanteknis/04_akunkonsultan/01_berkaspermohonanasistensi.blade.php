@@ -283,9 +283,10 @@ th {
             <th style="background-color: #ADD8E6;"><i class="bi bi-geo"></i> Kecamatan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th> --}}
+            <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Status</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Lihat Berkas</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Asistensi</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Berita Acara</th>
+            {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Pilih Asistensi</th> --}}
+            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Pilih Asistensi</th>
             {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Lapangan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Pengolahan Data</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Upload Berkas Bantek</th>
@@ -326,86 +327,53 @@ th {
 
 
             <td style="text-align: center;">
+     <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
                 <a href="{{ route('beasistensishow.show', $item->id) }}"
                     class="button-kembali"
                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Berkas
                 </a>
+        </div>
             </td>
             <!-- Tombol KTP -->
 
-
-  <td style="text-align: center;">
-                <a href="{{ route('bebantuanasistensilap.show', $item->id) }}"
-                    class="button-kembali"
-                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
-                </a>
-            </td>
-
-
-
-
 <td style="text-align: center;">
-    <button type="button"
-        class="button-kembali"
-        data-bs-toggle="modal"
-        data-bs-target="#modalLihatBerkas{{ $item->id }}"
-        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
-        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Berkas
-    </button>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+        @if ($item->asistensibantek)
+            <a class="button-sudah">
+                <i class="fas fa-check-circle" style="margin-right: 5px;"></i> Sudah Diproses
+            </a>
+        @else
+            <span class="button-belum">
+                <i class="fas fa-times-circle" style="margin-right: 5px;"></i> Belum Diproses
+            </span>
+        @endif
+    </div>
 </td>
 
-<!-- Modal -->
-<div class="modal fade" id="modalLihatBerkas{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
-<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
-        <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-      </div>
-      <div class="modal-body">
-   <div style="margin-top: 10px;">
-    @php
-        $berkasPath = public_path('storage/' . $item->uploadsuratbantek);
-        $isFileExists = $item->uploadsuratbantek && file_exists($berkasPath);
-    @endphp
 
-    @if ($isFileExists)
-        <!-- Menampilkan PDF dari storage -->
-        <iframe
-            src="{{ asset('storage/' . $item->uploadsuratbantek) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @elseif ($item->uploadsuratbantek)
-        <!-- Menampilkan PDF dari path luar storage -->
-        <iframe
-            src="{{ asset($item->uploadsuratbantek) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @else
-        <!-- Placeholder jika tidak ada data -->
-        <p style="font-size: 20px; color: red;">Berkas Bantek Belum Diterbitkan!</p>
-    @endif
-</div>
-
-</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-      </div>
+  <td style="text-align: center;">
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+        @if($item->asistensibantek_id)
+            <button class="button-sudah" style="border: 1px solid #2e7d32; cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #388e3c; color: white;" disabled>
+                <i class="fas fa-check" style="margin-right: 5px;"></i> Proses
+            </button>
+        @else
+            <a href="{{ route('bebantekdaftarkonsultapilih.show', $item->id) }}"
+               class="button-pilih"
+               style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
+               onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+               onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+               <i class="fas fa-eye" style="margin-right: 5px;"></i> Pilih Asistensi
+            </a>
+        @endif
     </div>
-  </div>
-</div>
+</td>
+
+
+
 
 
 @can('superadmin')

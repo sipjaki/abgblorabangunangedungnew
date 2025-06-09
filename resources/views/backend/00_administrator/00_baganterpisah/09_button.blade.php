@@ -128,3 +128,94 @@
         }
     }
 </style>
+
+<style>
+    .button-pilih {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: color 0.3s, background-color 0.3s, border 0.3s;
+        background: linear-gradient(120deg, rgb(2, 88, 248), silver, whitesmoke);
+        background-size: 200% auto;
+        animation: gradientMove 6s linear infinite;
+    }
+
+    .button-pilih:hover {
+        color: midnightblue;
+        background: white;
+        border: 1px solid midnightblue;
+    }
+
+    @keyframes gradientMove {
+        0% {
+            background-position: 200% center;
+        }
+        100% {
+            background-position: -200% center;
+        }
+    }
+</style>
+
+
+<style>
+    /* BUTTON PILIH (navy-silver) */
+    /* BUTTON SUDAH (green elegant) */
+    .button-sudah {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-size: 16px;
+        color: white;
+        background: linear-gradient(120deg, #006400, #32CD32, #90EE90); /* darkgreen to limegreen */
+        background-size: 200% auto;
+        animation: gradientMove 6s linear infinite;
+        text-decoration: none;
+        transition: background 0.3s, color 0.3s, border 0.3s;
+        display: flex;
+        align-items: center;
+    }
+
+    .button-sudah:hover {
+        color: #006400;
+        background: white;
+        border: 1px solid #006400;
+    }
+
+    /* BUTTON BELUM (red elegant) */
+    .button-belum {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-size: 16px;
+        color: white;
+        background: linear-gradient(120deg, #8B0000, #FF6347, #FFA07A); /* darkred to light salmon */
+        background-size: 200% auto;
+        animation: gradientMove 6s linear infinite;
+        text-decoration: none;
+        transition: background 0.3s, color 0.3s, border 0.3s;
+        display: flex;
+        align-items: center;
+    }
+
+    .button-belum:hover {
+        color: #8B0000;
+        background: white;
+        border: 1px solid #8B0000;
+    }
+
+    /* Animasi gradasi */
+    @keyframes gradientMove {
+        0% {
+            background-position: 200% center;
+        }
+        100% {
+            background-position: -200% center;
+        }
+    }
+</style>

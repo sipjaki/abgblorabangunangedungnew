@@ -1223,4 +1223,110 @@ public function bebantekdaftarkonsultan(Request $request)
 
 
 
+public function bebantekdaftarkonsultapilih($id)
+{
+    $databantuanteknis = bantuanteknis::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.04_bantuanteknis.04_akunkonsultan.02_createpilihasistensi', [
+        'title' => 'Pilih Asistensi Anda !',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebantekdaftarkonsultapilihnew(Request $request, $id)
+{
+    $bantek = bantuanteknis::findOrFail($id);
+    $user = Auth::user();
+
+    // Karena inputnya readonly, biasanya gak perlu validasi, tapi kalau mau bisa ditambahkan
+
+    // Update field sesuai form
+    $bantek->nosurat = $request->input('nosurat', $bantek->nosurat);
+    $bantek->tanggalsurat = $request->input('tanggalsurat', $bantek->tanggalsurat);
+    $bantek->nama_pemohon = $request->input('nama_pemohon', $bantek->nama_pemohon);
+    $bantek->no_telepon = $request->input('no_telepon', $bantek->no_telepon);
+    $bantek->asistensibantek_id = $request->input('asistensibantek_id', $bantek->asistensibantek_id);
+
+    $bantek->save();
+
+    session()->flash('create', 'Data Bantek berhasil diperbarui!');
+
+    return redirect("/bebantekdaftarkonsultan");
+}
+
+
+public function bebantekdaftarkonsultanproses(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    // Query dasar: data dengan relasi asistensibantek yang id-nya sama dengan user login,
+    // dan statusadmin_id = 4 pada asistensibantek, juga jenispengajuanbantek id = 1
+    $query = bantuanteknis::whereHas('asistensibantek', function ($q) use ($user) {
+        $q->where('id', $user->id)  // Filter yang sesuai user login
+          ->where('statusadmin_id', 4);
+    })
+    ->whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 1);
+    });
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('nama_pemohon', 'like', "%{$search}%")
+              ->orWhere('no_telepon', 'like', "%{$search}%")
+              ->orWhere('namapaket', 'like', "%{$search}%")
+              ->orWhere('kategoribangunan', 'like', "%{$search}%")
+              ->orWhere('kepemilikan', 'like', "%{$search}%")
+              ->orWhere('pengelola', 'like', "%{$search}%")
+              ->orWhere('alamatlokasi', 'like', "%{$search}%")
+              ->orWhere('rt', 'like', "%{$search}%")
+              ->orWhere('rw', 'like', "%{$search}%")
+              ->orWhere('kabupaten', 'like', "%{$search}%")
+              ->orWhere('nosurat', 'like', "%{$search}%")
+              ->orWhereYear('tahunpembangunan', $search)
+              ->orWhereYear('tahunrenovasi', $search);
+        });
+
+        $query->orWhereHas('pemohon', function ($q) use ($search) {
+            $q->where('name', 'like', "%{$search}%");
+        });
+
+        $query->orWhereHas('dinas', function ($q) use ($search) {
+            $q->where('name', 'like', "%{$search}%");
+        });
+
+        $query->orWhereHas('jenispengajuanbantek', function ($q) use ($search) {
+            $q->where('jenispengajuan', 'like', "%{$search}%");
+        });
+
+        $query->orWhereHas('kecamatanblora', function ($q) use ($search) {
+            $q->where('kecamatanblora', 'like', "%{$search}%");
+        });
+
+        $query->orWhereHas('kelurahandesa', function ($q) use ($search) {
+            $q->where('desa', 'like', "%{$search}%");
+        });
+    }
+
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->query());
+
+    return view('backend.04_bantuanteknis.04_akundinas.01_berkasasistensi', [
+        'title' => 'Akun Dinas | Permohonan Bantuan Teknis Asistensi Penyelenggaraan Bangunan Gedung',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+
 }

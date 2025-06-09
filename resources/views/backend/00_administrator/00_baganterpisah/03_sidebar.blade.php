@@ -538,7 +538,7 @@
         </li>
 
         <li class="nav-item">
-            <a href="/bebantekakunkonsultan" class="nav-link">
+            <a href="/bebantekdaftarkonsultanproses" class="nav-link">
                 <!-- Icon Clipboard (Asistensi) -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
                     <path d="M10 1.5v1h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1h3v-1A1.5 1.5 0 0 1 7.5 0h1A1.5 1.5 0 0 1 10 1.5zM6 1.5V3h4V1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5z"/>
