@@ -286,7 +286,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'Sigit',
             'statusadmin_id' => '4',
             'avatar' => 'assets/abgblora/logo/iconabgblora.png',
-            'email' => 'sigitpemohonabgkonsultan@gmail.com',
+            'email' => 'sigitpemohonabgkonsultan2@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 

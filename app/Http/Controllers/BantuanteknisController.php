@@ -433,7 +433,7 @@ public function bebantuanteknisceklapangan($id)
         $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
 
     return view('backend.04_bantuanteknis.01_berkaspemohon.03_berkasceklapangan', [
-        'title' => 'Dokumentasi Cek Lapangan Permohonan Bantuan Teknis',
+        'title' => 'Dokumentasi Permohonan Bantuan Teknis',
         'subdata' => $dataceklapangan,
         'data' => $databantuanteknis,
         'user' => Auth::user()
@@ -452,7 +452,7 @@ public function bebantuanteknislapangancreate($id)
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
     return view('backend.04_bantuanteknis.02_createdata.create', [
-        'title' => 'Form Tambah Dokumentasi Cek Lapangan',
+        'title' => 'Form Tambah Dokumentasi',
         'data' => $databantuanteknis,
         'user' => Auth::user()
     ]);
@@ -545,7 +545,7 @@ public function bebantuanteknislapangancreatenew(Request $request)
 
     $data->save();
 
-    session()->flash('create', 'Dokumentasi Cek Lapangan Berhasil Di Buat !');
+    session()->flash('create', 'Dokumentasi Berhasil Di Buat !');
 
     // *** PENTING ***
     // Variabel $id harus kamu ambil dari request atau dari $validated['bantuanteknis_id']
@@ -965,7 +965,7 @@ public function bebantuanasistensilap($id)
         $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
 
     return view('backend.04_bantuanteknis.01_berkaspemohon.07_berkasceklapanganasistensi', [
-        'title' => 'Dokumentasi Cek Lapangan Permohonan Bantuan Teknis',
+        'title' => 'Dokumentasi Permohonan Bantuan Teknis',
         'subdata' => $dataceklapangan,
         'data' => $databantuanteknis,
         'user' => Auth::user()
