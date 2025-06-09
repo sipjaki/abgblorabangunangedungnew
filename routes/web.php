@@ -129,6 +129,9 @@ Route::post('/bebantekpemohondinasperbaikans/{id}', [BantuanteknisController::cl
 
 // AKUN DINAS BANTUAN TEKNIS
 Route::get('/bebantekakundinas', [BantuanteknisController::class, 'bebantekakundinasistensi'])->middleware('auth')->name('bebantekakundinasindex');
+Route::get('/bebantekakunkonsultan', [BantuanteknisController::class, 'bebantekakunkonsultan'])->middleware('auth')->name('bebantekakunkonsultanindex');
+
+Route::get('/bebantekdaftarkonsultan', [BantuanteknisController::class, 'bebantekdaftarkonsultan'])->middleware('auth')->name('bebantekdaftarkonsultanindex');
 
 
 Route::get('/datapermohonandinas', [AdminDashboardController::class, 'dashboarddinas']);
