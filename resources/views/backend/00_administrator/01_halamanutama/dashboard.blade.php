@@ -41,6 +41,67 @@
             <div class="container-fluid">
 
 
+@can('dinas')
+<!-- Info boxes -->
+<div class="row">
+    @php
+        $boxes = [
+            ['title' => 'BANTUAN ASISTENSI PERENCANAAN', 'jumlah' => $jumlahdata1],
+            ['title' => 'PENELITI KONTRAK', 'jumlah' => $jumlahdata2],
+            ['title' => 'PERHITUNGAN PENYUSUTAN', 'jumlah' => $jumlahdata3],
+            ['title' => 'PERHITUNGAN TINGKAT KERUSAKAN', 'jumlah' => $jumlahdata4],
+            ['title' => 'PERHITUNGAN BIAYA PEMELIHARAAN BGN', 'jumlah' => $jumlahdata5],
+            ['title' => 'BIAYA KONSTRUKSI PEMBANGUNAN BGN', 'jumlah' => $jumlahdata6],
+            ['title' => 'PENGELOLA TEKNIS', 'jumlah' => $jumlahdata7],
+            ['title' => 'PENDAMPINGAN SERAH TERIMA PEKERJAAN', 'jumlah' => $jumlahdata8],
+            ['title' => 'PERMINTAAN PERSONIL TIM TEKNIS', 'jumlah' => $jumlahdata9],
+        ];
+    @endphp
+
+    @foreach ($boxes as $index => $box)
+        <div class="col-12 col-sm-6 col-md-3 mb-4" data-aos="zoom-out" data-aos-delay="{{ $index * 100 }}">
+            <div class="info-box shadow-lg rounded-3 p-4 transition-custom" style="background: #000080; color: white;">
+                <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                        <path fill="green" d="M14 4V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h-2V2H4v12h8V6h2z"/>
+                    </svg>
+                </span>
+                <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                    <span class="info-box-text" style="color: white; font-size: 14px;">{{ $box['title'] }}</span>
+                    <span class="info-box-number fw-bold" style="font-size: 16px;">{{ $box['jumlah'] }} Permohonan</span>
+                </div>
+            </div>
+        </div>
+    @endforeach
+</div>
+
+<!-- Hover style -->
+<style>
+    .transition-custom {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .info-box:hover {
+        background-color: white !important;
+        color: #000080 !important;
+        transform: translateY(-10px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .info-box:hover .info-box-text,
+    .info-box:hover .info-box-number {
+        color: #000080 !important;
+    }
+</style>
+
+<!-- AOS animation init -->
+<script>
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+</script>
+@endcan
 @can('pemohonbantek')
 <!-- Info boxes -->
 <div class="row">

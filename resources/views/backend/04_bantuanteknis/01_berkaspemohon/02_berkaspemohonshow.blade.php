@@ -100,6 +100,18 @@ th {
     @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                      </div>
 
+         @canany(['dinas'])
+    <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
+        <button class="button-kembali"
+                type="button"
+                onclick="location.href='{{ route('bebantekpemohondinasindex') }}';"
+                style="cursor: pointer; color:black;">
+            <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
+        </button>
+    </div>
+
+@endcanany
+
          @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
         <button class="button-kembali"

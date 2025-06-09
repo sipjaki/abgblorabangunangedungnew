@@ -31,10 +31,22 @@ class AdminDashboardController extends Controller
         })->count();
     }
 
+    $jumlahdatadinas = [];
+
+    for ($i = 1; $i <= 9; $i++) {
+        $jumlahdatadinas['jumlahdata' . $i] = bantuanteknis::whereHas('dinas.statusadmin', function ($query) {
+            $query->where('id', 6);
+        })->whereHas('jenispengajuanbantek', function ($query) use ($i) {
+            $query->where('id', $i);
+        })->whereHas('dinas', function ($query) use ($user) {
+            $query->where('id', $user->id); // langsung cek pemohon.id user login
+        })->count();
+    }
+
     return view('backend.00_administrator.01_halamanutama.dashboard', array_merge([
         'title' => 'Admin Dashboard ABG Blora Bangunan Gedung',
         'user' => $user,
-    ], $jumlahdata));
+    ],  $jumlahdata,  $jumlahdatadinas));
 }
 
 

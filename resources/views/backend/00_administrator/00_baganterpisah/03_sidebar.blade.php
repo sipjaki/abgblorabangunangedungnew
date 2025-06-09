@@ -376,8 +376,9 @@
             </a>
         </li>
 
+
         <!-- Submenu: Permohonan -->
-        {{-- <li class="nav-item">
+        <li class="nav-item">
             <a href="/bebantekpemohondinas" class="nav-link">
                 <!-- Icon File EarMark (Permohonan) -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
@@ -385,7 +386,7 @@
                 </svg>
                 <p style="color: white; margin-left: 8px;">Permohonan</p>
             </a>
-        </li> --}}
+        </li>
     </ul>
 </li>
 
@@ -411,6 +412,20 @@
 
             <li class="nav-header" style="color: white;">Dashboard Dinas</li>
 
+
+           <li class="nav-item has-treeview">
+    <a href="/dashboard" class="nav-link">
+        <!-- Icon Dokumen Checklist (Status Berkas) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+            <path d="M10.854 6.146a.5.5 0 0 1 0 .708L7.707 10l-1.854-1.854a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zM13 5h-3a1 1 0 0 1-1-1V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5z"/>
+        </svg>
+        <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            Data Permohonan
+            <i class="bi bi-chevron-right nav-arrow"></i>
+        </p>
+    </a>
+    </li>
            <li class="nav-item has-treeview">
     <a href="#" class="nav-link">
         <!-- Icon Dokumen Checklist (Status Berkas) -->

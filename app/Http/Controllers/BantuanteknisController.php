@@ -776,9 +776,9 @@ public function bebantekpemohondinas(Request $request)
     $perPage = $request->input('perPage', 20);
 
     // Query dasar: hanya data dengan statusadmin_id = 7, milik user yang login
-    $query = bantuanteknis::whereHas('pemohon', function ($q) use ($user) {
-        $q->where('pemohon_id', $user->id)
-          ->where('statusadmin_id', 7);
+    $query = bantuanteknis::whereHas('dinas', function ($q) use ($user) {
+        $q->where('dinas_id', $user->id)
+          ->where('statusadmin_id', 6);
     })
     ->whereHas('jenispengajuanbantek', function ($q) {
         $q->where('id', '!=', 1); // mengecualikan id = 1
@@ -824,7 +824,7 @@ public function bebantekpemohondinas(Request $request)
 
     $berkasbantek = $query->latest()->paginate($perPage)->appends($request->query());
 
-    return view('backend.04_bantuanteknis.03_akunpemohonbantek.01_berkaspemohonindex', [
+    return view('backend.04_bantuanteknis.04_akundinas.02_berkaspermohonanindex', [
         'title' => 'Permohonan Bantuan Teknis Penyelenggaraan Bangunan Gedung',
         'data'  => $berkasbantek,
         'user'  => $user,
@@ -1042,17 +1042,15 @@ public function bebantekakundinasistensi(Request $request)
     $search = $request->input('search');
     $perPage = $request->input('perPage', 20);
 
-    // Cek apakah user punya relasi dinas dan statusadmin_id-nya 7
-    if (!$user->dinas || $user->dinas->statusadmin_id != 7) {
-        abort(403, 'Akses ditolak. Anda tidak memiliki izin.');
-    }
-
-    // Query data bantuanteknis dengan jenis pengajuan id = 1
-    $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
-        $q->where('id', 1);
+    // Query dasar: data milik user login, dengan pemohon statusadmin_id = 6
+    $query = bantuanteknis::whereHas('dinas', function ($q) use ($user) {
+        $q->where('dinas_id', $user->id)
+          ->where('statusadmin_id', 6);  // <-- ubah dari 7 jadi 6
+    })
+    ->whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', '=', 1); // tetap id=1
     });
 
-    // Filter pencarian jika ada keyword
     if ($search) {
         $query->where(function ($q) use ($search) {
             $q->where('nama_pemohon', 'like', "%{$search}%")

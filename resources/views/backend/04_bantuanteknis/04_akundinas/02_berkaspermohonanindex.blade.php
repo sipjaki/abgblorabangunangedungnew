@@ -262,12 +262,11 @@ th {
         <th style="background-color: #ADD8E6;">No</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Jenis Pengajuan</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Pemohon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Dinas</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-calendar"></i> Tanggal Surat</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-toolbox"></i> Nama Paket</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Kategori Bangunan</th>
+        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Kategori Bangunan</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-ruler-combined"></i> Luas Bangunan</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Jumlah Lantai</th>
@@ -283,13 +282,14 @@ th {
             <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt"></i> Kabupaten</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-geo"></i> Kecamatan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
+            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th> --}}
+            <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Lihat Berkas</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Lapangan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Lapangan</th>
+            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Berkas Bantek</th>
+            {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Lapangan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Pengolahan Data</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Upload Berkas Bantek</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-journal-check"></i> Terbitkan Surat</th>
+            <th style="background-color: #ADD8E6;"><i class="bi bi-journal-check"></i> Dokumentasi Lapangan</th> --}}
             @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
             @endcan
@@ -303,12 +303,11 @@ th {
                                  <td>{{ $loop->iteration }}</td>
             <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td>
             <td>{{ $item->nama_pemohon ?? '-' }}</td>
-            <td style="text-align: left;">{{ $item->dinas->name ?? '-' }}</td>
             <td>{{ $item->no_telepon ?? '-' }}</td>
             <td>{{ $item->nosurat ?? '-' }}</td>
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
             <td>{{ $item->namapaket ?? '-' }}</td>
-            <td>{{ $item->kategoribangunan ?? '-' }}</td>
+            {{-- <td>{{ $item->kategoribangunan ?? '-' }}</td>
             <td>{{ $item->luasbangunan ?? '-' }} m²</td>
             <td>{{ $item->luastanahtotal ?? '-' }} m²</td>
             <td>{{ $item->jumlahlantai ?? '-' }}</td>
@@ -323,7 +322,7 @@ th {
             <td>{{ $item->rw ?? '-' }}</td>
             <td>{{ $item->kabupaten ?? '-' }}</td>
             <td>{{ optional($item->kecamatanblora)->kecamatanblora ?? '-' }}</td>
-            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td>
+            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td> --}}
 
 
             <td style="text-align: center;">
@@ -332,95 +331,10 @@ th {
                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Permohonan
+                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
             <!-- Tombol KTP -->
-
-<!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-  @if($item->validasiberkas1 == 'lolos')
-    <button
-        class="button-create"
-        type="button"
-        style="background-color: #10B981; color: black; cursor: not-allowed;"
-        disabled
-    >
-        <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
-    </button>
-    @elseif($item->validasiberkas1 == 'dikembalikan')
-        <button class="button-dikembalikan" type="button" onclick="openModal({{ $item->id }})" style="background-color: #0400ff; color: black;">
-            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
-        </button>
-    @else
-        <button class="button-kembali" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary" style="color: black">
-            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
-        </button>
-    @endif
-</td>
-
-<!-- Modal Konfirmasi -->
-<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai?</p>
-
-        <form id="validasiForm" method="POST">
-            @csrf
-            @method('PUT')
-
-<!-- Tombol Lolos -->
-<button
-    type="submit"
-    name="validasiberkas1"
-    value="lolos"
-    style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';"
->
-    <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Lolos
-</button>
-
-<!-- Tombol Dikembalikan -->
-<button
-    type="submit"
-    name="validasiberkas1"
-    value="dikembalikan"
-    style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';"
->
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Dikembalikan
-</button>
-
-        </form>
-
-        <br><br>
-
-        <!-- Tombol Batal -->
-        <button
-    type="button"
-    onclick="closeModal()"
-    style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';"
->
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
-</button>
-
-    </div>
-</div>
-
-<script>
-    function openModal(itemId) {
-        const form = document.getElementById("validasiForm");
-        form.action = `/validasiberkas1/${itemId}`;
-        document.getElementById("confirmModal").style.display = "flex";
-    }
-
-    function closeModal() {
-        document.getElementById("confirmModal").style.display = "none";
-    }
-</script>
 
 
   <td style="text-align: center;">
@@ -433,278 +347,65 @@ th {
                 </a>
             </td>
 
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-      <div style="display: flex; justify-content: center;">
-
- @if($item->validasiberkas2 == 'sudah')
-    <button
-        class="button-create"
-        type="button"
-        style="background-color: #10B981; color: black; cursor: not-allowed;"
-        disabled
-    >
-        <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
-    </button>
-    @elseif($item->validasiberkas2 == 'belum')
-        <button class="button-dikembalikan" type="button" onclick="openModal2({{ $item->id }})" style="background-color: #ff0000; color: black;">
-            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
-        </button>
-    @else
-        <button class="button-kembali" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
-            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Cek Lapangan
-        </button>
-    @endif
-</div>
-</td>
-
-<!-- Modal Konfirmasi validasiberkas2 -->
-<div id="confirmModal2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah sudah cek lapangan ?</p>
-
-        <form id="validasiForm2" method="POST">
-            @csrf
-            @method('PUT')
-<!-- Tombol Sudah -->
-<button
-    type="submit"
-    name="validasiberkas2"
-    value="sudah"
-    style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';"
->
-    <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Sudah
-</button>
-
-<!-- Tombol Belum -->
-<button
-    type="submit"
-    name="validasiberkas2"
-    value="belum"
-    style="background-color: #ff0000; color: black; padding: 8px 16px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#ff0000'; this.style.color='white';"
->
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Belum
-</button>
-
-        </form>
-
-        <br><br>
-
-        <!-- Tombol Batal -->
-<button
-    type="button"
-    onclick="closeModal2()"
-    style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';"
->
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
-</button>
-
-</div>
-</div>
-
-<script>
-    function openModal2(itemId) {
-        const form = document.getElementById("validasiForm2");
-        form.action = `/validasiberkas2/${itemId}`;
-        document.getElementById("confirmModal2").style.display = "flex";
-    }
-
-    function closeModal2() {
-        document.getElementById("confirmModal2").style.display = "none";
-    }
-</script>
-
-
-<td style="text-align: center;">
-      <div style="display: flex; justify-content: center;">
-
-       @if($item->validasiberkas3 == 'sudah')
-    <button
-        class="button-create"
-        type="button"
-        style="background-color: #10B981; color: black; cursor: not-allowed;"
-        disabled
-    >
-        <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
-    </button>
-     @elseif($item->validasiberkas3 == 'belum')
-        <button class="button-dikembalikan" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #ff0000; color: black;">
-            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
-        </button>
-        @else
-        <button class="button-kembali" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
-            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Pengolahan Data
-        </button>
-        @endif
-</div>
-    </td>
-<!-- Modal Konfirmasi validasiberkas3 -->
-<div id="confirmModal3" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah data sudah di Kaji ?</p>
-
-        <form id="validasiForm3" method="POST">
-            @csrf
-            @method('PUT')
-
-            <!-- Tombol Sudah -->
-         <button
-    type="submit"
-    name="validasiberkas3"
-    value="sudah"
-    style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';"
->
-    <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Sudah
-</button>
-
-<button
-    type="submit"
-    name="validasiberkas3"
-    value="belum"
-    style="background-color: #ff0000; color: white; padding: 8px 16px; border-radius: 8px; border: none;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#ff0000'; this.style.color='white';"
->
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Belum
-</button>
-
-
-        </form>
-
-        <br><br>
-
-        <!-- Tombol Batal -->
-<button
-    type="button"
-    onclick="closeModal3()"
-    style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';"
->
-    <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
-</button>
-
-</div>
-</div>
-
-<script>
-    function openModal3(itemId) {
-        const form = document.getElementById("validasiForm3");
-        form.action = `/validasiberkas3/${itemId}`;
-        document.getElementById("confirmModal3").style.display = "flex";
-    }
-
-    function closeModal3() {
-        document.getElementById("confirmModal3").style.display = "none";
-    }
-</script>
 
 
 
 <td style="text-align: center;">
-      <div style="display: flex; justify-content: center;">
-
-    @if($item->validasiberkas4 == 'sudah')
-        <button
-            class="button-create"
-            type="button"
-            style="background-color: #10B981; color: black;"
-            {{-- cursor: not-allowed; --}}
-            disabled
-        >
-            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbit
-        </button>
-    @elseif($item->validasiberkas4 == 'belum')
-        <button class="button-dikembalikan" type="button" onclick="openModal4({{ $item->id }})" style="background-color: #ff0000; color: black;">
-            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
-        </button>
-    @else
-        <button class="button-kembali" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
-            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Terbitkan !
-        </button>
-    @endif
-</div>
+    <button type="button"
+        class="button-kembali"
+        data-bs-toggle="modal"
+        data-bs-target="#modalLihatBerkas{{ $item->id }}"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
+        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Berkas
+    </button>
 </td>
 
-<!-- Modal Konfirmasi verifikasiberkas4 -->
-<div id="confirmModal4" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Terbitkan berkas ini?</p>
+<!-- Modal -->
+<div class="modal fade" id="modalLihatBerkas{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
+<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
+        <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+   <div style="margin-top: 10px;">
+    @php
+        $berkasPath = public_path('storage/' . $item->uploadsuratbantek);
+        $isFileExists = $item->uploadsuratbantek && file_exists($berkasPath);
+    @endphp
 
-        <form id="validasiForm4" method="POST">
-            @csrf
-            @method('PUT')
+    @if ($isFileExists)
+        <!-- Menampilkan PDF dari storage -->
+        <iframe
+            src="{{ asset('storage/' . $item->uploadsuratbantek) }}"
+            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
+            loading="lazy">
+        </iframe>
+    @elseif ($item->uploadsuratbantek)
+        <!-- Menampilkan PDF dari path luar storage -->
+        <iframe
+            src="{{ asset($item->uploadsuratbantek) }}"
+            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
+            loading="lazy">
+        </iframe>
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p style="font-size: 20px; color: red;">Berkas Bantek Belum Diterbitkan!</p>
+    @endif
+</div>
 
-            <!-- Tombol Terbitkan -->
-            <button
-                type="submit"
-                name="validasiberkas4"
-                value="sudah"
-                style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';"
-            >
-                <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Terbitkan
-            </button>
-
-            <!-- Tombol Tidak -->
-            <button
-                type="submit"
-                name="validasiberkas4"
-                value="belum"
-                style="background-color: #ff0000; color: white; padding: 8px 16px; border-radius: 8px; border: none;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#ff0000'; this.style.color='white';"
-            >
-                <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Tidak
-            </button>
-        </form>
-
-        <br><br>
-
-        <!-- Tombol Batal -->
-        <button
-            type="button"
-            onclick="closeModal4()"
-            style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';"
-        >
-            <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
-        </button>
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
     </div>
+  </div>
 </div>
-
-<script>
-    function openModal4(itemId) {
-        const form = document.getElementById("validasiForm4");
-        form.action = `/validasiberkas4/${itemId}`;
-        document.getElementById("confirmModal4").style.display = "flex";
-    }
-
-    function closeModal4() {
-        document.getElementById("confirmModal4").style.display = "none";
-    }
-</script>
-
-
-
-  <td style="text-align: center;">
-                <a href="{{ route('bebantuanteknislapangan.uploadberkasnew', $item->id) }}"
-                    class="button-kembali"
-                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Upload Berkas
-                </a>
-            </td>
 
 
 @can('superadmin')
