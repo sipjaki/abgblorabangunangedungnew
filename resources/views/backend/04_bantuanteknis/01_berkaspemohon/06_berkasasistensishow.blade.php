@@ -775,6 +775,13 @@ th {
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->kelurahandesa->desa ?? '-' }}</td>
     </tr>
+    <tr>
+        <td style="text-align: center;">23</td>
+        <td style="text-align: left;"><i class="bi bi-map-pin" style="margin-right:6px;"></i> Dinas</td>
+        <td style="text-align: center;">:</td>
+        <td style="text-align: center;">
+            <span class="custom-status">{{ $data->dinas->name ?? '-' }}</span></td>
+    </tr>
 </table>
 
 </div>

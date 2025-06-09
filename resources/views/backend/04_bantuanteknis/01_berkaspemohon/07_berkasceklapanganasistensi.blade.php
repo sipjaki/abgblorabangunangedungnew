@@ -235,7 +235,9 @@ th {
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 4</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 5</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 6</th>
+@canany(['superadmin', 'admin'])
 <th style="background-color: #ADD8E6; width:150px;"><i class="bi bi-tools"></i> Aksi</th>
+@endcanany
 
     </tr>
                             </thead>
@@ -350,28 +352,31 @@ th {
     </div>
 </td>
 
-        <td class="text-center align-middle">
-            {{-- <a href="/bebujkkonstruksi/show/{{ $item->id }}" class="btn btn-sm btn-info me-2" title="Lihat Detail">
-                <i class="bi bi-eye"></i>
-            </a>
+@canany(['superadmin', 'admin'])
+
+<td class="text-center align-middle">
+    {{-- <a href="/bebujkkonstruksi/show/{{ $item->id }}" class="btn btn-sm btn-info me-2" title="Lihat Detail">
+        <i class="bi bi-eye"></i>
+    </a>
             <a href="/bebujkkonstruksi/update/{{ $item->id }}" class="btn btn-sm btn-warning me-2" title="Ubah Data">
                 <i class="bi bi-pencil-square"></i>
             </a> --}}
             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
-   data-bs-toggle="modal" data-bs-target="#deleteModal"
-   data-id="{{ $item->id }}"
-   onclick="setDeleteUrl(this)">
-    <i class="bi bi-trash"></i>
-</a>
+            data-bs-toggle="modal" data-bs-target="#deleteModal"
+            data-id="{{ $item->id }}"
+            onclick="setDeleteUrl(this)">
+            <i class="bi bi-trash"></i>
+        </a>
 
-            {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
-               data-bs-toggle="modal" data-bs-target="#deleteModal"
-               data-id="{{ $item->id }}"
-               onclick="setDeleteUrl(this)">
-                <i class="bi bi-trash"></i>
-            </a> --}}
-        </td>
-    </tr>
+        {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
+        data-bs-toggle="modal" data-bs-target="#deleteModal"
+        data-id="{{ $item->id }}"
+        onclick="setDeleteUrl(this)">
+        <i class="bi bi-trash"></i>
+    </a> --}}
+</td>
+@endcanany
+</tr>
 @endforeach
 @endif
 
