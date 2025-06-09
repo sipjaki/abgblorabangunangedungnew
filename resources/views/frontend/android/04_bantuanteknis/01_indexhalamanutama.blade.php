@@ -20,7 +20,7 @@
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
               <div class="flex items-center">
                 <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="photo">
+                  <img src="/assets/android/menunavigasi/004.png" class="object-cover w-full h-full" alt="photo">
                 </div>
               </div>
               <div class="flex flex-col flex-1 gap-[2px] text-left">
@@ -34,56 +34,31 @@
 
         <div class="flex flex-col space-y-3 px-[18px]">
             <!-- Card 1 -->
-            <a href="/4040" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="thumbnail">
+                  <img src="/assets/android/menunavigasi/004.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Bangunan Gedung</p>
-                  <p class="font-semibold">Kartu Inventaris Barang Gedung & Bangunan</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Bantuan Tekni</p>
+                  <p class="font-semibold">Informasi Bantuan Teknis</p>
                 </div>
               </div>
             </a>
 
             <!-- Card 2 -->
-            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+            <a href="/resbantekpermohonan" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="thumbnail">
+                  <img src="/assets/android/menunavigasi/004.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Bangunan Gedung</p>
-                  <p class="font-semibold">Aset Bangunan Gedung Kabupaten Blora</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Form Permohonan</p>
+                  <p class="font-semibold">Ajukan Permohonan</p>
                 </div>
               </div>
             </a>
 
-            <!-- Card 3 -->
-            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
-                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Bangunan Gedung</p>
-                  <p class="font-semibold">Data Statistik KIC Barang & Bangunan</p>
-                </div>
-              </div>
-            </a>
-
-            <!-- Card 4 -->
-            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
-                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Bangunan Gedung</p>
-                  <p class="font-semibold">Data Statistik Jumlah Bangunan Gedung</p>
-                </div>
-              </div>
-            </a>
           </div>
 
 

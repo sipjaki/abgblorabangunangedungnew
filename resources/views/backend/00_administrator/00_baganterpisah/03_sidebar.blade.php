@@ -466,7 +466,7 @@
 
         <!-- Submenu: Permohonan -->
         <li class="nav-item">
-            <a href="/bebantekpemohondinas" class="nav-link">
+            <a href="/bebantekakundinasberkas" class="nav-link">
                 <!-- Icon File EarMark (Permohonan) -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
                     <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zM9.5 0v4a1 1 0 0 0 1 1h4l-5-5z"/>

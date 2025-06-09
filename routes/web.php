@@ -51,6 +51,7 @@ Route::get('/resbgindex', [FedashboardController::class, 'menuresbangunangedungi
 // 04_ MENU BANTUAN TEKNIS
 // ----------------------------------------------------------------------------------------
 Route::get('/resbantekindex', [FedashboardController::class, 'resbantekindex']);
+Route::get('/resbantekpermohonan', [FedashboardController::class, 'resbantekpermohonan']);
 
 // WEB 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------
@@ -134,6 +135,7 @@ Route::post('/bebantekpemohondinasperbaikans/{id}', [BantuanteknisController::cl
 // AKUN DINAS BANTUAN TEKNIS
 Route::get('/bebantekakundinas', [BantuanteknisController::class, 'bebantekakundinasistensi'])->middleware('auth')->name('bebantekakundinasindex');
 Route::get('/bebantekakunkonsultan', [BantuanteknisController::class, 'bebantekakunkonsultan'])->middleware('auth')->name('bebantekakunkonsultanindex');
+Route::get('/bebantekakundinasberkas', [BantuanteknisController::class, 'bebantekakundinasberkas'])->middleware('auth')->name('bebantekakundinasberkasindex');
 
 Route::get('/datapermohonandinas', [AdminDashboardController::class, 'dashboarddinas']);
 

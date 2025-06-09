@@ -263,6 +263,7 @@ th {
         <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Jenis Pengajuan</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Pemohon</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
+        <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Dinas</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-calendar"></i> Tanggal Surat</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-toolbox"></i> Nama Paket</th>
@@ -303,6 +304,7 @@ th {
             <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td>
             <td>{{ $item->nama_pemohon ?? '-' }}</td>
             <td>{{ $item->no_telepon ?? '-' }}</td>
+            <td>{{ $item->dinas->name ?? '-' }}</td>
             <td>{{ $item->nosurat ?? '-' }}</td>
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
             <td>{{ $item->namapaket ?? '-' }}</td>

@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\bgkartuinventarisbangunan;
-
+use App\Models\jenispengajuanbantek;
+use App\Models\kecamatanblora;
+use App\Models\kelurahandesa;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class FedashboardController extends Controller
@@ -105,11 +108,34 @@ class FedashboardController extends Controller
         // return view('frontend.00_full.index', [
         return view('frontend.android.04_bantuanteknis.01_indexhalamanutama', [
         // return view('frontend.android.01_halamanutama.index', [
-            'title' => 'Menu Pendataan Bangunan Gedung ',
+            'title' => 'Permohonan Bantuan Teknis ',
             'user' => $user,
         ]);
     }
 
+
+    public function resbantekpermohonan()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
+    $datapilihanpengajuan = jenispengajuanbantek::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
+
+    $user = Auth::user();
+
+    // Ambil data user yang statusadmin_id = 3 beserta relasi statusadmin
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.android.04_bantuanteknis.02_formpermohonanbantek', [
+        'title' => 'Permohonan Bantuan Teknis',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'user' => $user,
+        'statusadimindinas' => $statusadimindinas, // kirim ke view juga
+    ]);
+}
 
 }
 
