@@ -48,6 +48,10 @@ Route::get('/respbgslfindex', [FedashboardController::class, 'menurespbgslfindex
 // ----------------------------------------------------------------------------------------
 Route::get('/resbgindex', [FedashboardController::class, 'menuresbangunangedungindex']);
 
+// 04_ MENU BANTUAN TEKNIS
+// ----------------------------------------------------------------------------------------
+Route::get('/resbantekindex', [FedashboardController::class, 'resbantekindex']);
+
 // WEB 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------
 Route::get('/pendataankicbangunangedung', [PendataanBangunanGedungController::class, 'datakicbangunan']);

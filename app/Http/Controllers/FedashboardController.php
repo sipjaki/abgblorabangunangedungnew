@@ -94,5 +94,22 @@ class FedashboardController extends Controller
     }
 
 
+
+    // MENU 04 BANTEK
+
+        public function resbantekindex()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.04_bantuanteknis.01_indexhalamanutama', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Menu Pendataan Bangunan Gedung ',
+            'user' => $user,
+        ]);
+    }
+
+
 }
 
