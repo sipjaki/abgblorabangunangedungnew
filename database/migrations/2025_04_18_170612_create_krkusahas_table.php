@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('krkusahas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->index(); // BELUM DI BUATKAN
             $table->foreignId('krkusahasurat_id')->nullable()->index(); // BELUM DI BUATKAN
+            $table->foreignId('user_id')->nullable()->index(); // BELUM DI BUATKAN
             $table->foreignId('kecamatanblora_id', 255)->nullable();
             $table->foreignId('kelurahandesa_id', 255)->nullable();
             $table->string('perorangan', 255)->nullable();
