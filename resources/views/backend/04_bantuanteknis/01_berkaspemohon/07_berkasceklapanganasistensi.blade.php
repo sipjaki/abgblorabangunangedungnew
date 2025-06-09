@@ -144,6 +144,15 @@ th {
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
+                            @can('dinas')
+                        <button class="button-kembali"
+                        type="button"
+
+                        onclick="location.href='{{ url('/bebantekakundinas') }}';"
+                        style="cursor: pointer; color:black; margin-left:5px;">
+                        <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
+                        </button>
+                    @endcan
                             @can('pemohonbantek')
                         <button class="button-kembali"
                         type="button"

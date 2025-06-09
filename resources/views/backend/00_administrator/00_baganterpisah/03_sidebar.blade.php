@@ -349,9 +349,22 @@
 
             @can('pemohonbantek')
 
-            {{-- <li class="nav-header" style="color: white;">Dashboard Pemohon Bantek</li> --}}
-
+            <li class="nav-header" style="color: white;">Dashboard Pemohon Bantek</li>
+  <li class="nav-item has-treeview">
+    <a href="/dashboard" class="nav-link">
+        <!-- Icon Dokumen Checklist (Status Berkas) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+            <path d="M10.854 6.146a.5.5 0 0 1 0 .708L7.707 10l-1.854-1.854a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zM13 5h-3a1 1 0 0 1-1-1V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5z"/>
+        </svg>
+        <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            Data Permohonan
+            <i class="bi bi-chevron-right nav-arrow"></i>
+        </p>
+    </a>
+    </li>
            <li class="nav-item has-treeview">
+
     <a href="#" class="nav-link">
         <!-- Icon Dokumen Checklist (Status Berkas) -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
@@ -392,7 +405,7 @@
 
 
 <li class="nav-item">
-    <a href="#" class="nav-link">
+    <a href="/404" class="nav-link">
         <!-- Icon User -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3z"/>
@@ -414,7 +427,7 @@
 
 
            <li class="nav-item has-treeview">
-    <a href="/dashboard" class="nav-link">
+    <a href="/datapermohonandinas" class="nav-link">
         <!-- Icon Dokumen Checklist (Status Berkas) -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
             <path d="M10.854 6.146a.5.5 0 0 1 0 .708L7.707 10l-1.854-1.854a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
@@ -465,8 +478,8 @@
 </li>
 
 
-{{-- <li class="nav-item">
-    <a href="#" class="nav-link">
+<li class="nav-item">
+    <a href="/404" class="nav-link">
         <!-- Icon User -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3z"/>
@@ -477,7 +490,80 @@
             <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
         </p>
     </a>
-</li> --}}
+</li>
+
+
+            @endcan
+            @can('konsultanbantek')
+
+            <li class="nav-header" style="color: white;">Dashboard Konsultan Asistensi</li>
+
+
+           <li class="nav-item has-treeview">
+    <a href="/dashboard" class="nav-link">
+        <!-- Icon Dokumen Checklist (Status Berkas) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+            <path d="M10.854 6.146a.5.5 0 0 1 0 .708L7.707 10l-1.854-1.854a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zM13 5h-3a1 1 0 0 1-1-1V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5z"/>
+        </svg>
+        <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            Permohonan
+            <i class="bi bi-chevron-right nav-arrow"></i>
+        </p>
+    </a>
+    </li>
+           <li class="nav-item has-treeview">
+    <a href="#" class="nav-link">
+        <!-- Icon Dokumen Checklist (Status Berkas) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+            <path d="M10.854 6.146a.5.5 0 0 1 0 .708L7.707 10l-1.854-1.854a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zM13 5h-3a1 1 0 0 1-1-1V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5z"/>
+        </svg>
+        <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            Status Berkas
+            <i class="bi bi-chevron-right nav-arrow"></i>
+        </p>
+    </a>
+
+    <ul class="nav nav-treeview" style="margin-left: 15px;">
+        <!-- Submenu: Asistensi -->
+        <li class="nav-item">
+            <a href="/bebantekakundinas" class="nav-link">
+                <!-- Icon Clipboard (Asistensi) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+                    <path d="M10 1.5v1h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1h3v-1A1.5 1.5 0 0 1 7.5 0h1A1.5 1.5 0 0 1 10 1.5zM6 1.5V3h4V1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5z"/>
+                </svg>
+                <p style="color: white; margin-left: 8px;">Asistensi</p>
+            </a>
+        </li>
+
+        <!-- Submenu: Permohonan -->
+        <li class="nav-item">
+            <a href="/bebantekpemohondinas" class="nav-link">
+                <!-- Icon File EarMark (Permohonan) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zM9.5 0v4a1 1 0 0 0 1 1h4l-5-5z"/>
+                </svg>
+                <p style="color: white; margin-left: 8px;">Permohonan</p>
+            </a>
+        </li>
+    </ul>
+</li>
+
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <!-- Icon User -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3z"/>
+            <path fill-rule="evenodd" d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        </svg>
+        <p style="color: white; margin-left: 8px;">
+            Profil Dinas Anda
+            <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
+        </p>
+    </a>
+</li>
 
 
             @endcan
@@ -559,7 +645,7 @@
 
               <li class="nav-item">
 
-                <a href="#" class="nav-link">
+                <a href="/404" class="nav-link">
                     <!-- Main Building Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
                         <defs>

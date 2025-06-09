@@ -131,6 +131,8 @@ Route::post('/bebantekpemohondinasperbaikans/{id}', [BantuanteknisController::cl
 Route::get('/bebantekakundinas', [BantuanteknisController::class, 'bebantekakundinasistensi'])->middleware('auth')->name('bebantekakundinasindex');
 
 
+Route::get('/datapermohonandinas', [AdminDashboardController::class, 'dashboarddinas']);
+
 
 // Route::get('/portalberita', function ()
 //     // return view('welcome');

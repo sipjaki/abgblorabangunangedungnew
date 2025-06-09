@@ -34,7 +34,7 @@ class AdminDashboardController extends Controller
     $jumlahdatadinas = [];
 
     for ($i = 1; $i <= 9; $i++) {
-        $jumlahdatadinas['jumlahdata' . $i] = bantuanteknis::whereHas('dinas.statusadmin', function ($query) {
+        $jumlahdata['jumlahdatadinas' . $i] = bantuanteknis::whereHas('dinas.statusadmin', function ($query) {
             $query->where('id', 6);
         })->whereHas('jenispengajuanbantek', function ($query) use ($i) {
             $query->where('id', $i);
@@ -43,10 +43,47 @@ class AdminDashboardController extends Controller
         })->count();
     }
 
+    $jumlahdataasistensi = [];
+
+    for ($i = 1; $i <= 9; $i++) {
+        $jumlahdata['jumlahdataasistensi' . $i] = bantuanteknis::whereHas('asistensibantek.statusadmin', function ($query) {
+            $query->where('id', 4);
+        })->whereHas('jenispengajuanbantek', function ($query) use ($i) {
+            $query->where('id', $i);
+        })->whereHas('asistensibantek', function ($query) use ($user) {
+            $query->where('id', $user->id); // langsung cek pemohon.id user login
+        })->count();
+    }
+
     return view('backend.00_administrator.01_halamanutama.dashboard', array_merge([
         'title' => 'Admin Dashboard ABG Blora Bangunan Gedung',
         'user' => $user,
-    ],  $jumlahdata,  $jumlahdatadinas));
+    ],
+    $jumlahdatadinas,
+    $jumlahdataasistensi,
+    $jumlahdata,));
+}
+
+public function dashboarddinas()
+{
+    $user = Auth::user();
+
+    $jumlahdata = [];
+
+    for ($i = 1; $i <= 9; $i++) {
+        $jumlahdata['jumlahdata' . $i] = bantuanteknis::whereHas('dinas.statusadmin', function ($query) {
+            $query->where('id', 6);
+        })->whereHas('jenispengajuanbantek', function ($query) use ($i) {
+            $query->where('id', $i);
+        })->whereHas('dinas', function ($query) use ($user) {
+            $query->where('id', $user->id); // langsung cek pemohon.id user login
+        })->count();
+    }
+
+    return view('backend.00_administrator.01_halamanutama.dashboarddinas', array_merge([
+        'title' => 'Admin Dashboard ABG Blora Bangunan Gedung',
+        'user' => $user,
+    ], $jumlahdata));
 }
 
 

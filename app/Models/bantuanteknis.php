@@ -15,7 +15,7 @@ class bantuanteknis extends Model
 
     public function asistensibantek()
     {
-        return $this->belongsTo(asistensibantek::class, 'asistensibantek_id');
+        return $this->belongsTo(User::class, 'asistensibantek_id');
     }
 
        public function pemohon()
