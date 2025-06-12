@@ -61,7 +61,16 @@ th {
 
 
    <!--begin::App Main-->
-   <main class="app-main">
+   <main class="app-main"
+   style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;"
+   >
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -145,14 +154,12 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-
-
-
 <button class="button-kembali" type="button"
-    onclick="history.back();"
+    onclick="location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </button>
+
 
                                 <!-- Tombol Create -->
                                 {{-- <a href="/settingssekolah/create">
@@ -208,6 +215,17 @@ th {
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
+<div class="mb-3">
+    <label class="form-label" for="tanggalkegiatan">
+        <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Kegiatan
+    </label>
+    <input type="date" id="tanggalkegiatan" name="tanggalkegiatan" class="form-control @error('tanggalkegiatan') is-invalid @enderror" value="{{ old('tanggalkegiatan') }}" />
+    @error('tanggalkegiatan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+
 
                                 <div class="mb-3">
                                     <label class="form-label" for="foto1">

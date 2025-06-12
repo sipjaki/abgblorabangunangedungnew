@@ -61,7 +61,15 @@ th {
 
 
    <!--begin::App Main-->
-   <main class="app-main">
+   <main class="app-main"
+           style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+  "
+>
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -180,13 +188,13 @@ th {
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
 </button>
 
-        <button class="button-kembali"
+    <button class="button-kembali"
                 type="button"
-                onclick="location.href='{{ url('/bebantuanteknis') }}';"
+                onclick="location.href='{{ url()->previous() }}';"
                 style="cursor: pointer; color:black; margin-left:5px;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
-        @endcanany
+    @endcanany
 
     </div>
                                                                 <!-- Tombol Create -->

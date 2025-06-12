@@ -13,7 +13,14 @@
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
       <!--begin::App Main-->
-      <main class="app-main">
+      <main class="app-main"
+         style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+  ">
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -68,7 +75,7 @@
 </div>
 
 
-    <div class="col-12 col-sm-6 col-md-3">
+    {{-- <div class="col-12 col-sm-6 col-md-3">
         <a href="/bebantuanteknis">
             <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
                 <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
@@ -87,10 +94,10 @@
                 </div>
             </div>
         </a>
-    </div>
+    </div> --}}
 
        <div class="col-12 col-sm-6 col-md-3">
-    <a href="/404">
+    <a href="/bepenelitikontrak">
 
         <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
             <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
@@ -111,7 +118,7 @@
 </div>
 
        <div class="col-12 col-sm-6 col-md-3">
-    <a href="/404">
+    <a href="/beperhitunganpenyusutan">
 
         <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
             <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
@@ -132,7 +139,7 @@
 </div>
 
 <div class="col-12 col-sm-6 col-md-3">
-    <a href="/404">
+    <a href="/beperhitungankerusakan">
 
         <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
             <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
@@ -153,7 +160,7 @@
 </div>
 
 <div class="col-12 col-sm-6 col-md-3">
-    <a href="/404">
+    <a href="/beperhitunganbgn">
 
         <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
             <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
@@ -174,7 +181,7 @@
 </div>
 
 <div class="col-12 col-sm-6 col-md-3">
-    <a href="/404">
+    <a href="/bekonstruksiperhitunganbgn">
 
         <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
             <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
@@ -195,7 +202,7 @@
 </div>
 
 <div class="col-12 col-sm-6 col-md-3">
-    <a href="/404">
+    <a href="/beserahterima">
 
         <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
             <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
@@ -216,7 +223,7 @@
 </div>
 
 <div class="col-12 col-sm-6 col-md-3">
-    <a href="/404">
+    <a href="/bepersontimteknis">
 
         <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
             <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">

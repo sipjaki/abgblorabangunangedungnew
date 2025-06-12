@@ -61,7 +61,15 @@ th {
 
 
    <!--begin::App Main-->
-   <main class="app-main">
+   <main class="app-main"
+      style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+  "
+>
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -415,7 +423,7 @@ th {
 <script>
     function openModal(itemId) {
         const form = document.getElementById("validasiForm");
-        form.action = `/validasiberkas1/${itemId}`;
+        form.action = `/validasiberkas1permohonan1/${itemId}`;
         document.getElementById("confirmModal").style.display = "flex";
     }
 
@@ -502,7 +510,7 @@ th {
 <script>
     function openModal2(itemId) {
         const form = document.getElementById("validasiForm2");
-        form.action = `/validasiberkas2/${itemId}`;
+        form.action = `/validasiberkas1permohonan2/${itemId}`;
         document.getElementById("confirmModal2").style.display = "flex";
     }
 
@@ -599,7 +607,7 @@ th {
 <script>
     function openModal3(itemId) {
         const form = document.getElementById("validasiForm3");
-        form.action = `/validasiberkas3/${itemId}`;
+        form.action = `/validasiberkas1permohonan3/${itemId}`;
         document.getElementById("confirmModal3").style.display = "flex";
     }
 
@@ -689,7 +697,7 @@ th {
 <script>
     function openModal4(itemId) {
         const form = document.getElementById("validasiForm4");
-        form.action = `/validasiberkas4/${itemId}`;
+        form.action = `/validasiberkas1permohonan4/${itemId}`;
         document.getElementById("confirmModal4").style.display = "flex";
     }
 

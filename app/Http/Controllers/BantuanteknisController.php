@@ -435,7 +435,7 @@ public function beasistensishow($id)
 
 // verifikasi berkas ke 1
 
-  public function validasiberkas1update(Request $request, $id)
+  public function valsuratpermohonan1(Request $request, $id)
     {
         $data = bantuanteknis::findOrFail($id);
 
@@ -451,7 +451,7 @@ public function beasistensishow($id)
     } else {
         session()->flash('gagal', '❌ Data Di Kembalikan Ke Pemohon !');
     }
-           return redirect('/bebantuanteknisindex');
+           return redirect('/bebantuanteknisassistensi');
 
         // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
     }
@@ -520,7 +520,7 @@ public function bebantuanteknislapangancreate($id)
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
     return view('backend.04_bantuanteknis.02_createdata.create', [
-        'title' => 'Form Tambah Dokumentasi',
+        'title' => 'Form Dokumentasi Asistensi Bantuan Teknis Penyelenggaran Bangunan Gedung',
         'data' => $databantuanteknis,
         'user' => Auth::user()
     ]);
@@ -533,6 +533,7 @@ public function bebantuanteknislapangancreatenew(Request $request)
     $validated = $request->validate([
         'bantuanteknis_id' => 'required|string',
         'kegiatan' => 'required|string',
+        'tanggalkegiatan' => 'required|date',
         'foto1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
         'foto2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
         'foto3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
@@ -540,8 +541,9 @@ public function bebantuanteknislapangancreatenew(Request $request)
         'foto5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
         'foto6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
     ], [
-        'bantuanteknis_id.required' => 'Field bantuanteknis_id wajib diisi.',
-        'kegiatan.required' => 'Field kegiatan wajib diisi.',
+        'bantuanteknis_id.required' => 'bantuanteknis_id wajib diisi.',
+        'kegiatan.required' => 'Nama Kegiatan wajib diisi.',
+        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
         'foto1.required' => 'Foto Dokumentasi 1 wajib diunggah.',
         'foto1.image' => 'Foto Dokumentasi 1 harus berupa file gambar.',
         'foto1.mimes' => 'Foto Dokumentasi 1 harus berformat jpeg, png, jpg, gif, atau svg.',
@@ -567,6 +569,7 @@ public function bebantuanteknislapangancreatenew(Request $request)
 
     $data->bantuanteknis_id = $validated['bantuanteknis_id'] ?? null;
     $data->kegiatan = $validated['kegiatan'] ?? null;
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'] ?? null;
 
     // Upload foto1 sampai foto6 jika ada
     if ($request->hasFile('foto1')) {
@@ -620,11 +623,12 @@ public function bebantuanteknislapangancreatenew(Request $request)
     // supaya redirect ke route berikut ini bisa benar
     $id = $validated['bantuanteknis_id']; // <--- *** ID INI BERWARNA MERAH ***
 
-    return redirect()->route('bebantuanteknislapangan.show', ['id' => $id]);
+    return redirect()->route('bebantuanasistensilap.show', ['id' => $id]);
 }
 
 // VERIFIKASI KE 2 BANTUAN TEKNIS PERMOHONAN
-public function validasiberkas2update(Request $request, $id)
+
+public function valsuratpermohonan2(Request $request, $id)
 {
     $data = bantuanteknis::findOrFail($id);
 
@@ -636,14 +640,14 @@ public function validasiberkas2update(Request $request, $id)
     $data->save();
 
       if ($request->validasiberkas2 === 'sudah') {
-        session()->flash('create', '✅ Sudah Cek !');
+        session()->flash('create', '✅ Berkas Perencanaan Sudah Cek !');
     } else {
-        session()->flash('gagal', '❌ Belum !');
+        session()->flash('gagal', '❌ Berkas Perencanaan Belum di Cek !');
     }
-    return redirect('/bebantuanteknisindex');
+    return redirect('/bebantuanteknisassistensi');
 }
 
-public function validasiberkas3update(Request $request, $id)
+public function valsuratpermohonan3(Request $request, $id)
 {
     $data = bantuanteknis::findOrFail($id);
 
@@ -655,14 +659,14 @@ public function validasiberkas3update(Request $request, $id)
     $data->save();
 
       if ($request->validasiberkas3 === 'sudah') {
-        session()->flash('create', '✅ Data Selesai !');
+        session()->flash('create', '✅ Asistensi Sudah Selesai !');
     } else {
-        session()->flash('gagal', '❌ Berkas di Pending !');
+        session()->flash('gagal', '❌ Berkas Asistensi belum selesai !');
     }
-    return redirect('/bebantuanteknisindex');
+    return redirect('/bebantuanteknisassistensi');
 }
 
-public function validasiberkas4update(Request $request, $id)
+public function valsuratpermohonan4(Request $request, $id)
 {
     $data = bantuanteknis::findOrFail($id);
 
@@ -675,12 +679,12 @@ public function validasiberkas4update(Request $request, $id)
 
     // Logika untuk pesan berdasarkan input
     if ($request->validasiberkas4 === 'sudah') {
-        session()->flash('create', '✅ Berkas Sudah Di Terbitkan !');
+        session()->flash('create', '✅ Berkas Bantek Sudah Di Terbitkan !');
     } else {
-        session()->flash('gagal', '❌ Berkas Tidak Di Terbitkan !');
+        session()->flash('gagal', '❌ Berkas Bantek Tidak Di Terbitkan !');
     }
 
-    return redirect('/bebantuanteknisindex');
+    return redirect('/bebantuanteknisassistensi');
 }
 
 
@@ -1012,7 +1016,7 @@ public function bebantuanteknislapangandelete($id)
         $entry->delete();
 
         // Redirect ke halaman detail lapangan terkait
-        return redirect()->route('bebantuanteknislapangan.show', ['id' => $lapanganId])
+        return redirect()->route('bebantuanasistensilap.show', ['id' => $lapanganId])
                          ->with('delete', 'Data berhasil dihapus!');
     }
 
@@ -1034,7 +1038,7 @@ public function bebantuanasistensilap($id)
         $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
 
     return view('backend.04_bantuanteknis.01_berkaspemohon.07_berkasceklapanganasistensi', [
-        'title' => 'Dokumentasi Permohonan Bantuan Teknis',
+        'title' => 'Dokumentasi Asistensi Bantuan Teknis',
         'subdata' => $dataceklapangan,
         'data' => $databantuanteknis,
         'user' => Auth::user()
@@ -1498,6 +1502,1059 @@ public function bebantekkonsultandata(Request $request)
         'data'  => $bujk,
         'user'  => $user,
     ]);
+}
+
+
+
+// ---------------------------------------------------------------
+
+
+public function bepenelitikontrak(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
+    $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 2);
+    });
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where(function ($sub) use ($search) {
+                $sub->where('nama_pemohon', 'like', "%{$search}%")
+                    ->orWhere('no_telepon', 'like', "%{$search}%")
+                    ->orWhere('namapaket', 'like', "%{$search}%")
+                    ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                    ->orWhere('kepemilikan', 'like', "%{$search}%")
+                    ->orWhere('pengelola', 'like', "%{$search}%")
+                    ->orWhere('alamatlokasi', 'like', "%{$search}%")
+                    ->orWhere('rt', 'like', "%{$search}%")
+                    ->orWhere('rw', 'like', "%{$search}%")
+                    ->orWhere('kabupaten', 'like', "%{$search}%")
+                    ->orWhere('nosurat', 'like', "%{$search}%")
+                    ->orWhereYear('tahunpembangunan', $search)
+                    ->orWhereYear('tahunrenovasi', $search);
+            });
+
+            $q->orWhereHas('bujkkonsultan', function ($sub) use ($search) {
+                $sub->where('namalengkap', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('dinas', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('jenispengajuanbantek', function ($sub) use ($search) {
+                $sub->where('jenispengajuan', 'like', "%{$search}%")
+                     ->where('id', 1); // Tetap pastikan ID = 1
+            });
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.02_penelitikontrak.01_berkaspermohonan', [
+        'title' => 'Permohonan Bantuan Teknis Penliti Kontrak',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+
+
+
+  public function valsurat2permohonan1(Request $request, $id)
+    {
+        $data = bantuanteknis::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas1' => 'required|in:lolos,dikembalikan',
+        ]);
+
+        $data->validasiberkas1 = $request->validasiberkas1;
+        $data->save();
+
+     if ($request->validasiberkas1 === 'lolos') {
+        session()->flash('create', '✅ Data Lolos Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Data Di Kembalikan Ke Pemohon !');
+    }
+           return redirect('/bepenelitikontrak');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+    public function valsurat2permohonan2(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas2' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas2 = $request->validasiberkas2;
+    $data->save();
+
+      if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Sudah Selesai Verifikasi Lapangan !');
+    } else {
+        session()->flash('gagal', '❌ Belum Selesai Verifikasi Lapangan !');
+    }
+    return redirect('/bepenelitikontrak');
+}
+
+
+
+public function valsurat2permohonan3(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas3' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas3 = $request->validasiberkas3;
+    $data->save();
+
+      if ($request->validasiberkas3 === 'sudah') {
+        session()->flash('create', '✅ Pengolahan Data Sudah Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Pengolahan Data Belum di lakukan !');
+    }
+    return redirect('/bepenelitikontrak');
+}
+
+
+
+public function valsurat2permohonan4(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas4' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas4 = $request->validasiberkas4;
+    $data->save();
+
+    // Logika untuk pesan berdasarkan input
+    if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Berkas Bantek Sudah Di Terbitkan !');
+    } else {
+        session()->flash('gagal', '❌ Berkas Bantek Tidak Di Terbitkan !');
+    }
+
+    return redirect('/bepenelitikontrak');
+}
+
+
+// ---------------------------------------------------------------
+
+
+public function beperhitunganpenyusutan(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
+    $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 3);
+    });
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where(function ($sub) use ($search) {
+                $sub->where('nama_pemohon', 'like', "%{$search}%")
+                    ->orWhere('no_telepon', 'like', "%{$search}%")
+                    ->orWhere('namapaket', 'like', "%{$search}%")
+                    ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                    ->orWhere('kepemilikan', 'like', "%{$search}%")
+                    ->orWhere('pengelola', 'like', "%{$search}%")
+                    ->orWhere('alamatlokasi', 'like', "%{$search}%")
+                    ->orWhere('rt', 'like', "%{$search}%")
+                    ->orWhere('rw', 'like', "%{$search}%")
+                    ->orWhere('kabupaten', 'like', "%{$search}%")
+                    ->orWhere('nosurat', 'like', "%{$search}%")
+                    ->orWhereYear('tahunpembangunan', $search)
+                    ->orWhereYear('tahunrenovasi', $search);
+            });
+
+            $q->orWhereHas('bujkkonsultan', function ($sub) use ($search) {
+                $sub->where('namalengkap', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('dinas', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('jenispengajuanbantek', function ($sub) use ($search) {
+                $sub->where('jenispengajuan', 'like', "%{$search}%")
+                     ->where('id', 1); // Tetap pastikan ID = 1
+            });
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.03_perhitunganpenyusutan.01_berkaspermohonan', [
+        'title' => 'Permohonan Bantuan Teknis Perhitungan Penyusutan Bangunan Gedung',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+
+
+
+  public function valsurat3permohonan1(Request $request, $id)
+    {
+        $data = bantuanteknis::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas1' => 'required|in:lolos,dikembalikan',
+        ]);
+
+        $data->validasiberkas1 = $request->validasiberkas1;
+        $data->save();
+
+     if ($request->validasiberkas1 === 'lolos') {
+        session()->flash('create', '✅ Data Lolos Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Data Di Kembalikan Ke Pemohon !');
+    }
+           return redirect('/beperhitunganpenyusutan');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
+
+    public function valsurat3permohonan2(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas2' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas2 = $request->validasiberkas2;
+    $data->save();
+
+      if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Sudah Selesai Verifikasi Lapangan !');
+    } else {
+        session()->flash('gagal', '❌ Belum Selesai Verifikasi Lapangan !');
+    }
+    return redirect('/beperhitunganpenyusutan');
+}
+
+
+
+public function valsurat3permohonan3(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas3' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas3 = $request->validasiberkas3;
+    $data->save();
+
+      if ($request->validasiberkas3 === 'sudah') {
+        session()->flash('create', '✅ Pengolahan Data Sudah Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Pengolahan Data Belum di lakukan !');
+    }
+    return redirect('/beperhitunganpenyusutan');
+}
+
+public function valsurat3permohonan4(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas4' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas4 = $request->validasiberkas4;
+    $data->save();
+
+    // Logika untuk pesan berdasarkan input
+    if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Berkas Bantek Sudah Di Terbitkan !');
+    } else {
+        session()->flash('gagal', '❌ Berkas Bantek Tidak Di Terbitkan !');
+    }
+
+    return redirect('/beperhitunganpenyusutan');
+}
+
+
+
+
+// ---------------------------------------------------------------
+
+
+public function beperhitungankerusakan(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
+    $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 4);
+    });
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where(function ($sub) use ($search) {
+                $sub->where('nama_pemohon', 'like', "%{$search}%")
+                    ->orWhere('no_telepon', 'like', "%{$search}%")
+                    ->orWhere('namapaket', 'like', "%{$search}%")
+                    ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                    ->orWhere('kepemilikan', 'like', "%{$search}%")
+                    ->orWhere('pengelola', 'like', "%{$search}%")
+                    ->orWhere('alamatlokasi', 'like', "%{$search}%")
+                    ->orWhere('rt', 'like', "%{$search}%")
+                    ->orWhere('rw', 'like', "%{$search}%")
+                    ->orWhere('kabupaten', 'like', "%{$search}%")
+                    ->orWhere('nosurat', 'like', "%{$search}%")
+                    ->orWhereYear('tahunpembangunan', $search)
+                    ->orWhereYear('tahunrenovasi', $search);
+            });
+
+            $q->orWhereHas('bujkkonsultan', function ($sub) use ($search) {
+                $sub->where('namalengkap', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('dinas', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('jenispengajuanbantek', function ($sub) use ($search) {
+                $sub->where('jenispengajuan', 'like', "%{$search}%")
+                     ->where('id', 1); // Tetap pastikan ID = 1
+            });
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.04_perhitungankerusakan.01_berkaspermohonan', [
+        'title' => 'Permohonan Bantuan Teknis Perhitungan Kerusakan Bangunan Gedung',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+
+  public function valsurat4permohonan1(Request $request, $id)
+    {
+        $data = bantuanteknis::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas1' => 'required|in:lolos,dikembalikan',
+        ]);
+
+        $data->validasiberkas1 = $request->validasiberkas1;
+        $data->save();
+
+     if ($request->validasiberkas1 === 'lolos') {
+        session()->flash('create', '✅ Data Lolos Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Data Di Kembalikan Ke Pemohon !');
+    }
+           return redirect('/beperhitungankerusakan');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
+    public function valsurat4permohonan2(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas2' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas2 = $request->validasiberkas2;
+    $data->save();
+
+      if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Sudah Selesai Verifikasi Lapangan !');
+    } else {
+        session()->flash('gagal', '❌ Belum Selesai Verifikasi Lapangan !');
+    }
+    return redirect('/beperhitungankerusakan');
+}
+
+
+public function valsurat4permohonan3(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas3' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas3 = $request->validasiberkas3;
+    $data->save();
+
+      if ($request->validasiberkas3 === 'sudah') {
+        session()->flash('create', '✅ Pengolahan Data Sudah Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Pengolahan Data Belum di lakukan !');
+    }
+    return redirect('/beperhitungankerusakan');
+}
+
+public function valsurat4permohonan4(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas4' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas4 = $request->validasiberkas4;
+    $data->save();
+
+    // Logika untuk pesan berdasarkan input
+    if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Berkas Bantek Sudah Di Terbitkan !');
+    } else {
+        session()->flash('gagal', '❌ Berkas Bantek Tidak Di Terbitkan !');
+    }
+
+    return redirect('/beperhitungankerusakan');
+}
+
+
+// ---------------------------------------------------------------
+
+
+public function beperhitunganbgn(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
+    $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 5);
+    });
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where(function ($sub) use ($search) {
+                $sub->where('nama_pemohon', 'like', "%{$search}%")
+                    ->orWhere('no_telepon', 'like', "%{$search}%")
+                    ->orWhere('namapaket', 'like', "%{$search}%")
+                    ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                    ->orWhere('kepemilikan', 'like', "%{$search}%")
+                    ->orWhere('pengelola', 'like', "%{$search}%")
+                    ->orWhere('alamatlokasi', 'like', "%{$search}%")
+                    ->orWhere('rt', 'like', "%{$search}%")
+                    ->orWhere('rw', 'like', "%{$search}%")
+                    ->orWhere('kabupaten', 'like', "%{$search}%")
+                    ->orWhere('nosurat', 'like', "%{$search}%")
+                    ->orWhereYear('tahunpembangunan', $search)
+                    ->orWhereYear('tahunrenovasi', $search);
+            });
+
+            $q->orWhereHas('bujkkonsultan', function ($sub) use ($search) {
+                $sub->where('namalengkap', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('dinas', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('jenispengajuanbantek', function ($sub) use ($search) {
+                $sub->where('jenispengajuan', 'like', "%{$search}%")
+                     ->where('id', 1); // Tetap pastikan ID = 1
+            });
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.05_perhitunganbgn.01_berkaspermohonan', [
+        'title' => 'Permohonan Bantuan Teknis Perhitungan Pemeliharaan Bangunan Gedung Negara',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+
+
+  public function valsurat5permohonan1(Request $request, $id)
+    {
+        $data = bantuanteknis::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas1' => 'required|in:lolos,dikembalikan',
+        ]);
+
+        $data->validasiberkas1 = $request->validasiberkas1;
+        $data->save();
+
+     if ($request->validasiberkas1 === 'lolos') {
+        session()->flash('create', '✅ Data Lolos Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Data Di Kembalikan Ke Pemohon !');
+    }
+           return redirect('/beperhitunganbgn');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
+    public function valsurat5permohonan2(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas2' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas2 = $request->validasiberkas2;
+    $data->save();
+
+      if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Sudah Selesai Verifikasi Lapangan !');
+    } else {
+        session()->flash('gagal', '❌ Belum Selesai Verifikasi Lapangan !');
+    }
+    return redirect('/beperhitunganbgn');
+}
+
+
+public function valsurat5permohonan3(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas3' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas3 = $request->validasiberkas3;
+    $data->save();
+
+      if ($request->validasiberkas3 === 'sudah') {
+        session()->flash('create', '✅ Pengolahan Data Sudah Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Pengolahan Data Belum di lakukan !');
+    }
+    return redirect('/beperhitunganbgn');
+}
+
+public function valsurat5permohonan4(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas4' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas4 = $request->validasiberkas4;
+    $data->save();
+
+    // Logika untuk pesan berdasarkan input
+    if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Berkas Bantek Sudah Di Terbitkan !');
+    } else {
+        session()->flash('gagal', '❌ Berkas Bantek Tidak Di Terbitkan !');
+    }
+
+    return redirect('/beperhitunganbgn');
+}
+
+
+// ---------------------------------------------------------------
+
+
+public function bekonstruksiperhitunganbgn(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
+    $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 6);
+    });
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where(function ($sub) use ($search) {
+                $sub->where('nama_pemohon', 'like', "%{$search}%")
+                    ->orWhere('no_telepon', 'like', "%{$search}%")
+                    ->orWhere('namapaket', 'like', "%{$search}%")
+                    ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                    ->orWhere('kepemilikan', 'like', "%{$search}%")
+                    ->orWhere('pengelola', 'like', "%{$search}%")
+                    ->orWhere('alamatlokasi', 'like', "%{$search}%")
+                    ->orWhere('rt', 'like', "%{$search}%")
+                    ->orWhere('rw', 'like', "%{$search}%")
+                    ->orWhere('kabupaten', 'like', "%{$search}%")
+                    ->orWhere('nosurat', 'like', "%{$search}%")
+                    ->orWhereYear('tahunpembangunan', $search)
+                    ->orWhereYear('tahunrenovasi', $search);
+            });
+
+            $q->orWhereHas('bujkkonsultan', function ($sub) use ($search) {
+                $sub->where('namalengkap', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('dinas', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('jenispengajuanbantek', function ($sub) use ($search) {
+                $sub->where('jenispengajuan', 'like', "%{$search}%")
+                     ->where('id', 1); // Tetap pastikan ID = 1
+            });
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.06_konstruksibgn.01_berkaspermohonan', [
+        'title' => 'Permohonan Bantuan Teknis Perhitungan Konstruksi Bangunan Gedung Negara',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+
+
+  public function valsurat6permohonan1(Request $request, $id)
+    {
+        $data = bantuanteknis::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas1' => 'required|in:lolos,dikembalikan',
+        ]);
+
+        $data->validasiberkas1 = $request->validasiberkas1;
+        $data->save();
+
+     if ($request->validasiberkas1 === 'lolos') {
+        session()->flash('create', '✅ Data Lolos Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Data Di Kembalikan Ke Pemohon !');
+    }
+           return redirect('/bekonstruksiperhitunganbgn');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
+        public function valsurat6permohonan2(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas2' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas2 = $request->validasiberkas2;
+    $data->save();
+
+      if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Sudah Selesai Verifikasi Lapangan !');
+    } else {
+        session()->flash('gagal', '❌ Belum Selesai Verifikasi Lapangan !');
+    }
+    return redirect('/bekonstruksiperhitunganbgn');
+}
+
+
+public function valsurat6permohonan3(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas3' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas3 = $request->validasiberkas3;
+    $data->save();
+
+      if ($request->validasiberkas3 === 'sudah') {
+        session()->flash('create', '✅ Pengolahan Data Sudah Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Pengolahan Data Belum di lakukan !');
+    }
+    return redirect('/bekonstruksiperhitunganbgn');
+}
+
+
+public function valsurat6permohonan4(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas4' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas4 = $request->validasiberkas4;
+    $data->save();
+
+    // Logika untuk pesan berdasarkan input
+    if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Berkas Bantek Sudah Di Terbitkan !');
+    } else {
+        session()->flash('gagal', '❌ Berkas Bantek Tidak Di Terbitkan !');
+    }
+
+    return redirect('/bekonstruksiperhitunganbgn');
+}
+
+
+// ---------------------------------------------------------------
+
+
+public function beserahterima(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
+    $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 8);
+    });
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where(function ($sub) use ($search) {
+                $sub->where('nama_pemohon', 'like', "%{$search}%")
+                    ->orWhere('no_telepon', 'like', "%{$search}%")
+                    ->orWhere('namapaket', 'like', "%{$search}%")
+                    ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                    ->orWhere('kepemilikan', 'like', "%{$search}%")
+                    ->orWhere('pengelola', 'like', "%{$search}%")
+                    ->orWhere('alamatlokasi', 'like', "%{$search}%")
+                    ->orWhere('rt', 'like', "%{$search}%")
+                    ->orWhere('rw', 'like', "%{$search}%")
+                    ->orWhere('kabupaten', 'like', "%{$search}%")
+                    ->orWhere('nosurat', 'like', "%{$search}%")
+                    ->orWhereYear('tahunpembangunan', $search)
+                    ->orWhereYear('tahunrenovasi', $search);
+            });
+
+            $q->orWhereHas('bujkkonsultan', function ($sub) use ($search) {
+                $sub->where('namalengkap', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('dinas', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('jenispengajuanbantek', function ($sub) use ($search) {
+                $sub->where('jenispengajuan', 'like', "%{$search}%")
+                     ->where('id', 1); // Tetap pastikan ID = 1
+            });
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.07_pendampinganserahterima.01_berkaspermohonan', [
+        'title' => 'Permohonan Bantuan Teknis Pendampingan Serah Terima Pekerjaan ',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+
+
+  public function valsurat7permohonan1(Request $request, $id)
+    {
+        $data = bantuanteknis::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas1' => 'required|in:lolos,dikembalikan',
+        ]);
+
+        $data->validasiberkas1 = $request->validasiberkas1;
+        $data->save();
+
+     if ($request->validasiberkas1 === 'lolos') {
+        session()->flash('create', '✅ Data Lolos Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Data Di Kembalikan Ke Pemohon !');
+    }
+           return redirect('/beserahterima');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
+     public function valsurat7permohonan2(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas2' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas2 = $request->validasiberkas2;
+    $data->save();
+
+      if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Sudah Selesai Verifikasi Lapangan !');
+    } else {
+        session()->flash('gagal', '❌ Belum Selesai Verifikasi Lapangan !');
+    }
+    return redirect('/beserahterima');
+}
+
+
+public function valsurat7permohonan3(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas3' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas3 = $request->validasiberkas3;
+    $data->save();
+
+      if ($request->validasiberkas3 === 'sudah') {
+        session()->flash('create', '✅ Pengolahan Data Sudah Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Pengolahan Data Belum di lakukan !');
+    }
+    return redirect('/beserahterima');
+}
+
+
+
+public function valsurat7permohonan4(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas4' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas4 = $request->validasiberkas4;
+    $data->save();
+
+    // Logika untuk pesan berdasarkan input
+    if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Berkas Bantek Sudah Di Terbitkan !');
+    } else {
+        session()->flash('gagal', '❌ Berkas Bantek Tidak Di Terbitkan !');
+    }
+
+    return redirect('/beserahterima');
+}
+
+// ---------------------------------------------------------------
+public function bepersontimteknis(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
+    $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 9);
+    });
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where(function ($sub) use ($search) {
+                $sub->where('nama_pemohon', 'like', "%{$search}%")
+                    ->orWhere('no_telepon', 'like', "%{$search}%")
+                    ->orWhere('namapaket', 'like', "%{$search}%")
+                    ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                    ->orWhere('kepemilikan', 'like', "%{$search}%")
+                    ->orWhere('pengelola', 'like', "%{$search}%")
+                    ->orWhere('alamatlokasi', 'like', "%{$search}%")
+                    ->orWhere('rt', 'like', "%{$search}%")
+                    ->orWhere('rw', 'like', "%{$search}%")
+                    ->orWhere('kabupaten', 'like', "%{$search}%")
+                    ->orWhere('nosurat', 'like', "%{$search}%")
+                    ->orWhereYear('tahunpembangunan', $search)
+                    ->orWhereYear('tahunrenovasi', $search);
+            });
+
+            $q->orWhereHas('bujkkonsultan', function ($sub) use ($search) {
+                $sub->where('namalengkap', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('dinas', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('jenispengajuanbantek', function ($sub) use ($search) {
+                $sub->where('jenispengajuan', 'like', "%{$search}%")
+                     ->where('id', 1); // Tetap pastikan ID = 1
+            });
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.08_permintaantimteknis.01_berkaspermohonan', [
+        'title' => 'Permohonan Bantuan Teknis Permintaan Personil ',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+
+
+  public function valsurat8permohonan1(Request $request, $id)
+    {
+        $data = bantuanteknis::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas1' => 'required|in:lolos,dikembalikan',
+        ]);
+
+        $data->validasiberkas1 = $request->validasiberkas1;
+        $data->save();
+
+     if ($request->validasiberkas1 === 'lolos') {
+        session()->flash('create', '✅ Data Lolos Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Data Di Kembalikan Ke Pemohon !');
+    }
+           return redirect('/bepersontimteknis');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
+    public function valsurat8permohonan2(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas2' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas2 = $request->validasiberkas2;
+    $data->save();
+
+      if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Sudah Selesai Verifikasi Lapangan !');
+    } else {
+        session()->flash('gagal', '❌ Belum Selesai Verifikasi Lapangan !');
+    }
+    return redirect('/bepersontimteknis');
+}
+
+
+public function valsurat8permohonan3(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas3' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas3 = $request->validasiberkas3;
+    $data->save();
+
+      if ($request->validasiberkas3 === 'sudah') {
+        session()->flash('create', '✅ Pengolahan Data Sudah Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Pengolahan Data Belum di lakukan !');
+    }
+    return redirect('/bepersontimteknis');
+}
+
+
+
+public function valsurat8permohonan4(Request $request, $id)
+{
+    $data = bantuanteknis::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas4' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas4 = $request->validasiberkas4;
+    $data->save();
+
+    // Logika untuk pesan berdasarkan input
+    if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Berkas Bantek Sudah Di Terbitkan !');
+    } else {
+        session()->flash('gagal', '❌ Berkas Bantek Tidak Di Terbitkan !');
+    }
+
+    return redirect('/bepersontimteknis');
 }
 
 

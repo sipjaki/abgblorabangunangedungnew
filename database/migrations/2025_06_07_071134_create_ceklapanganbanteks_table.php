@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('bantuanteknis_id')->nullable()->index();
             $table->string('kegiatan')->nullable();
+            $table->date('tanggalkegiatan')->nullable();
             $table->string('foto1')->nullable();
             $table->string('foto2')->nullable();
             $table->string('foto3')->nullable();

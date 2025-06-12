@@ -11,3 +11,17 @@
 
                                                                                                                 @endif
                                                                                                         </div>
+
+
+
+#
+
+   style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+  "
+
+       style="background: linear-gradient(to bottom, #7de3f1, #ffffff); width: 100vw; margin: 0; padding: 0; position: relative; left: 0; margin-top: -50px; margin-bottom: -45px;"
