@@ -62,6 +62,11 @@ class User extends Authenticatable
         return $this->hasMany(asistensibantek::class);
     }
 
+    public function bujkkonsultan()
+    {
+        return $this->hasMany(bujkkonsultan::class);
+    }
+
 
 
 }

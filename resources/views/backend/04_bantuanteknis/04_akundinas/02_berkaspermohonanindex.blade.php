@@ -372,7 +372,7 @@ th {
       <div class="modal-header">
      <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
 <img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
-        <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5>
+        <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->dinas->name }}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
       </div>
       <div class="modal-body">

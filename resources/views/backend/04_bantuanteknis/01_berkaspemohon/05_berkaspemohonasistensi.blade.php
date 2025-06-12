@@ -262,6 +262,7 @@ th {
         <th style="background-color: #ADD8E6;">No</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Jenis Pengajuan</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Pemohon</th>
+        <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Konsultan </th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Dinas</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat</th>
@@ -303,9 +304,10 @@ th {
                                  <td>{{ $loop->iteration }}</td>
             <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td>
             <td>{{ $item->nama_pemohon ?? '-' }}</td>
+            <td>{{ $item->bujkkonsultan->user->name ?? '-' }}</td>
             <td>{{ $item->no_telepon ?? '-' }}</td>
             <td>{{ $item->dinas->name ?? '-' }}</td>
-            <td>{{ $item->nosurat ?? '-' }}</td>
+            <td>{{ $item->nosuratdinas ?? '-' }}</td>
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
             <td>{{ $item->namapaket ?? '-' }}</td>
             <td>{{ $item->kategoribangunan ?? '-' }}</td>

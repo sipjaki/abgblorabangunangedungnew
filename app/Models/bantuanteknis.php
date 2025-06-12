@@ -23,6 +23,11 @@ class bantuanteknis extends Model
         return $this->belongsTo(User::class, 'pemohon_id');
     }
 
+    //    public function bujkkonsultan()
+    // {
+    //     return $this->belongsTo(User::class, 'bujkkonsultan_id');
+    // }
+
        public function dinas()
     {
         return $this->belongsTo(User::class, 'dinas_id');
@@ -46,6 +51,11 @@ class bantuanteknis extends Model
     public function ceklapanganbantek()
     {
         return $this->belongsTo(ceklapanganbantek::class, 'ceklapanganbantek_id');
+    }
+
+    public function bujkkonsultan()
+    {
+        return $this->belongsTo(bujkkonsultan::class, 'bujkkonsultan_id');
     }
 
 }

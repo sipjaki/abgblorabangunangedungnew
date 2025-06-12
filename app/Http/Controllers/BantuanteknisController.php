@@ -79,7 +79,7 @@ $validated = $request->validate([
     'nama_pemohon' => 'required|string|max:255',
     'no_telepon' => 'required|string|max:20',
 
-    'nomorsuratdinas' => 'required|string|max:255',
+    'nosuratdinas' => 'required|string|max:255',
     'namapaket' => 'required|string|max:255',
     'kategoribangunan' => 'required|string|max:255',
     'luasbangunan' => 'required|numeric',
@@ -102,8 +102,8 @@ $validated = $request->validate([
     'suratpermohonan' => 'required|file|mimes:pdf|max:10120',
     'kic' => 'required|file|mimes:pdf|max:10120',
     'fotokondisi' => 'required|file|mimes:pdf|max:10120',
-    'rab' => 'required|file|mimes:pdf|max:10120',
-    'asbuilt' => 'required|file|mimes:pdf|max:10120',
+    'rab' => 'nullable|file|mimes:pdf|max:10120',
+    'asbuilt' => 'nullable|file|mimes:pdf|max:10120',
 
 ], [
     'bujkkonsultan_id.required' => 'Pemohon Wajib Di Isi !.',
@@ -222,11 +222,11 @@ $validated = $request->validate([
 
     // Simpan data
     $bantek = new bantuanteknis();
-    $bantek->pemohon_id = $validated['bujkkonsultan_id'] ?? Auth::id();
+    $bantek->bujkkonsultan_id = $validated['bujkkonsultan_id'];
     $bantek->dinas_id = $validated['dinas_id'] ?? null;
     $bantek->jenispengajuanbantek_id = $validated['jenispengajuanbantek_id'];
 
-    $bantek->nosurat = $validated['nosurat'] ?? null;
+    $bantek->nosurat = $validated['nosuratdinas'] ?? null;
     $bantek->tanggalsurat = $validated['tanggalsurat'] ?? null;
     $bantek->nama_pemohon = $validated['nama_pemohon'];
     $bantek->no_telepon = $validated['no_telepon'];
@@ -253,7 +253,7 @@ $validated = $request->validate([
     $bantek->suratpermohonan = $suratpermohonanPath;
     $bantek->kic = $kicPath;
     $bantek->fotokondisi = $fotokondisiPath;
-    $bantek->fotokondisi = $$rabPath;
+    $bantek->fotokondisi = $rabPath;
     $bantek->fotokondisi = $asbuiltPath;
 
     $bantek->save();
@@ -333,6 +333,30 @@ public function bebantuanteknisindex(Request $request)
         $q->where('id', 1);
     })->count();
 
+    $jumlahDataIdDua = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 2);
+    })->count();
+
+    $jumlahDataIdTiga = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 3);
+    })->count();
+
+    $jumlahDataIdEmpat = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 4);
+    })->count();
+
+    $jumlahDataIdLima = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 5);
+    })->count();
+
+    $jumlahDataIdEnam = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 6);
+    })->count();
+
+    $jumlahDataIdDelapan = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 8);
+    })->count();
+
     // Ambil semua data KECUALI yang punya relasi id = 1
     $dataTanpaIdSatu = bantuanteknis::whereDoesntHave('jenispengajuanbantek', function ($q) {
         $q->where('id', 1);
@@ -343,6 +367,12 @@ public function bebantuanteknisindex(Request $request)
         // 'data' => $dataTanpaIdSatu,
         'user' => $user,
         'jumlahDataIdSatu' => $jumlahDataIdSatu,
+        'jumlahDataIdDua' => $jumlahDataIdDua,
+        'jumlahDataIdTiga' => $jumlahDataIdTiga,
+        'jumlahDataIdEmpat' => $jumlahDataIdEmpat,
+        'jumlahDataIdLima' => $jumlahDataIdLima,
+        'jumlahDataIdEnam' => $jumlahDataIdEnam,
+        'jumlahDataIdDelapan' => $jumlahDataIdDelapan,
         'datasemua' => $dataTanpaIdSatu,
     ]);
 }
@@ -681,46 +711,49 @@ public function bebantuanteknisassistensi(Request $request)
     $search = $request->input('search');
     $perPage = $request->input('perPage', 20);
 
-    // Filter hanya yang id = 1
+    // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
     $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
         $q->where('id', 1);
     });
 
     if ($search) {
         $query->where(function ($q) use ($search) {
-            $q->where('nama_pemohon', 'like', "%{$search}%")
-              ->orWhere('no_telepon', 'like', "%{$search}%")
-              ->orWhere('namapaket', 'like', "%{$search}%")
-              ->orWhere('kategoribangunan', 'like', "%{$search}%")
-              ->orWhere('kepemilikan', 'like', "%{$search}%")
-              ->orWhere('pengelola', 'like', "%{$search}%")
-              ->orWhere('alamatlokasi', 'like', "%{$search}%")
-              ->orWhere('rt', 'like', "%{$search}%")
-              ->orWhere('rw', 'like', "%{$search}%")
-              ->orWhere('kabupaten', 'like', "%{$search}%")
-              ->orWhere('nosurat', 'like', "%{$search}%")
-              ->orWhereYear('tahunpembangunan', $search)
-              ->orWhereYear('tahunrenovasi', $search);
-        });
+            $q->where(function ($sub) use ($search) {
+                $sub->where('nama_pemohon', 'like', "%{$search}%")
+                    ->orWhere('no_telepon', 'like', "%{$search}%")
+                    ->orWhere('namapaket', 'like', "%{$search}%")
+                    ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                    ->orWhere('kepemilikan', 'like', "%{$search}%")
+                    ->orWhere('pengelola', 'like', "%{$search}%")
+                    ->orWhere('alamatlokasi', 'like', "%{$search}%")
+                    ->orWhere('rt', 'like', "%{$search}%")
+                    ->orWhere('rw', 'like', "%{$search}%")
+                    ->orWhere('kabupaten', 'like', "%{$search}%")
+                    ->orWhere('nosurat', 'like', "%{$search}%")
+                    ->orWhereYear('tahunpembangunan', $search)
+                    ->orWhereYear('tahunrenovasi', $search);
+            });
 
-        $query->orWhereHas('pemohon', function ($q) use ($search) {
-            $q->where('name', 'like', "%{$search}%");
-        });
+            $q->orWhereHas('bujkkonsultan', function ($sub) use ($search) {
+                $sub->where('namalengkap', 'like', "%{$search}%");
+            });
 
-        $query->orWhereHas('dinas', function ($q) use ($search) {
-            $q->where('name', 'like', "%{$search}%");
-        });
+            $q->orWhereHas('dinas', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%");
+            });
 
-        $query->orWhereHas('jenispengajuanbantek', function ($q) use ($search) {
-            $q->where('jenispengajuan', 'like', "%{$search}%");
-        });
+            $q->orWhereHas('jenispengajuanbantek', function ($sub) use ($search) {
+                $sub->where('jenispengajuan', 'like', "%{$search}%")
+                     ->where('id', 1); // Tetap pastikan ID = 1
+            });
 
-        $query->orWhereHas('kecamatanblora', function ($q) use ($search) {
-            $q->where('kecamatanblora', 'like', "%{$search}%");
-        });
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
 
-        $query->orWhereHas('kelurahandesa', function ($q) use ($search) {
-            $q->where('desa', 'like', "%{$search}%");
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
         });
     }
 
@@ -732,8 +765,6 @@ public function bebantuanteknisassistensi(Request $request)
         'user'  => $user,
     ]);
 }
-
-
 
 public function bebantuanteknislapanganuploadnew($id)
 {

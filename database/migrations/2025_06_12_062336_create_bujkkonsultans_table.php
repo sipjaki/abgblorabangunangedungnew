@@ -15,6 +15,7 @@ return new class extends Migration
     $table->id();
     $table->foreignId('bujkkonsultansub_id')->default(1); // relasi ke sub, default 1
     $table->foreignId('asosiasimasjaki_id')->nullable(); // bisa null
+    $table->foreignId('user_id')->nullable(); // bisa null
     $table->string('namalengkap')->nullable();
     $table->text('alamat')->nullable();
     $table->string('no_telepon')->nullable();

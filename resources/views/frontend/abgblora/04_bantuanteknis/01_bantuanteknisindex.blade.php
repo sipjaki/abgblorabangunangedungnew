@@ -297,13 +297,13 @@
 <div class="row mt-3" style="margin-top: 0px;">
     <div class="col-md-6" style="margin-top: 0px;">
     <div>
-        <label class="form-label d-flex align-items-center" for="nomorsuratdinas">
+        <label class="form-label d-flex align-items-center" for="nosuratdinas">
             <i class="fas fa-file-alt" style="margin-right: 8px; color: navy;"></i> Nomor Surat Dinas
         </label>
-        <input type="text" name="nomorsuratdinas" id="nomorsuratdinas"
-            class="form-control @error('nomorsuratdinas') is-invalid @enderror"
-            value="{{ old('nomorsuratdinas') }}">
-        @error('nomorsuratdinas')
+        <input type="text" name="nosuratdinas" id="nosuratdinas"
+            class="form-control @error('nosuratdinas') is-invalid @enderror"
+            value="{{ old('nosuratdinas') }}">
+        @error('nosuratdinas')
             <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
         @enderror
     </div>

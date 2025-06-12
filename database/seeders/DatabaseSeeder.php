@@ -11018,7 +11018,7 @@ kelurahandesa::create([
             bantuanteknis::create([
                 'dinas_id' => rand(1, 15),
                 'jenispengajuanbantek_id' => rand(1, 9),
-                'pemohon_id' => 21,
+                'bujkkonsultan_id' => rand(1, 17),
                 'nosurat' => '0' . rand(100, 999) . '/DPUPR/VI/2025',
                 'tanggalsurat' => now()->subDays(rand(0, 30)),
                 'nama_pemohon' => 'Pemohon ' . $i,
@@ -11074,6 +11074,7 @@ bujkkonsultan::create([
     'id' => 1, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 1, // Ganti dengan ID yang sesuai
     'asosiasimasjaki_id' => null,
+    'user_id' => 26,
     'namalengkap' => 'TIARA ENERGI',
     'alamat' => 'Desa Gersi, Desa/Kelurahan Gersi, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081325657254',
@@ -11093,6 +11094,7 @@ bujkkonsultan::create([
     'id' => 2, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 2, // Ganti dengan ID yang sesuai
     'asosiasimasjaki_id' => null,
+    'user_id' => 27,
     'namalengkap' => 'KARYA INTI KONSULTAN',
     'alamat' => 'DUKUH SENDANG KLAMPOK, Desa/Kelurahan Tempurejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '082133220199',
@@ -11112,6 +11114,7 @@ bujkkonsultan::create([
     'id' => 3, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 3, // Ganti dengan ID yang sesuai
     'asosiasimasjaki_id' => null,
+    'user_id' => 28,
     'namalengkap' => 'BEGAWAN ABIYOSO',
     'alamat' => ' DUKUH WUNI, Desa/Kelurahan Balong, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '085292559491',
@@ -11132,6 +11135,7 @@ bujkkonsultan::create([
     'id' => 4, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 4, // Ganti dengan ID yang sesuai
     'asosiasimasjaki_id' => null,
+    'user_id' => 29,
     'namalengkap' => 'GRAHACIPTA PERKASA',
     'alamat' => ' Ds. Tambahrejo, Desa/Kelurahan Tambahrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081327421757',
@@ -11151,6 +11155,7 @@ bujkkonsultan::create([
     'id' => 5, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 5, // Ganti dengan ID yang sesuai
     'asosiasimasjaki_id' => null,
+    'user_id' => 30,
     'namalengkap' => 'BEKONS',
     'alamat' => 'Dukuh Bengir, Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '085326420963',
@@ -11167,6 +11172,7 @@ bujkkonsultan::create([
     'id' => 6,
     'bujkkonsultansub_id' => 6,
     'asosiasimasjaki_id' => null,
+    'user_id' => 31,
     'namalengkap' => 'WIRAYA CIPTA',
     'alamat' => 'Dukuh Dukoh , Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085329008618',
@@ -11183,6 +11189,7 @@ bujkkonsultan::create([
     'id' => 7,
     'bujkkonsultansub_id' => 7,
     'asosiasimasjaki_id' => null,
+    'user_id' => 32,
     'namalengkap' => 'CAHAYA KEJORA KREASINDO',
     'alamat' => 'DUKUH KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082135143883',
@@ -11199,6 +11206,7 @@ bujkkonsultan::create([
     'id' => 8,
     'bujkkonsultansub_id' => 8,
     'asosiasimasjaki_id' => null,
+    'user_id' => 33,
     'namalengkap' => 'WISMA REKA DESAIN',
     'alamat' => 'Dukuh Kalisangku, Kab. Blora Jawa Tengah',
     'no_telepon' => '085878718827',
@@ -11215,6 +11223,7 @@ bujkkonsultan::create([
     'id' => 9,
     'bujkkonsultansub_id' => 9,
     'asosiasimasjaki_id' => null,
+    'user_id' => 34,
     'namalengkap' => 'CRYSTAL DESIGN',
     'alamat' => 'JALAN A. YANI Gg. 5 nO. 19, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -11231,6 +11240,7 @@ bujkkonsultan::create([
     'id' => 10,
     'bujkkonsultansub_id' => 10,
     'asosiasimasjaki_id' => null,
+    'user_id' => 35,
     'namalengkap' => 'BARRAMUNDI RATU SAMUDERA',
     'alamat' => 'JALAN H.A SUMIJAN NOMOR 14, Desa/Kelurahan Kedungjenar, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082328706846',
@@ -11247,6 +11257,7 @@ bujkkonsultan::create([
     'id' => 11,
     'bujkkonsultansub_id' => 11,
     'asosiasimasjaki_id' => null,
+    'user_id' => 36,
     'namalengkap' => 'KARTIKA JAYA CONSULTANT',
     'alamat' => 'JL. PUNTODEWO I NO. 14 A, Desa/Kelurahan Bangkle, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082243313999',
@@ -11263,6 +11274,7 @@ bujkkonsultan::create([
     'id' => 12,
     'bujkkonsultansub_id' => 12,
     'asosiasimasjaki_id' => null,
+    'user_id' => 37,
     'namalengkap' => 'STATIKA TEKNIK',
     'alamat' => 'Jalan Bhayangkara Utara I/ID, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082225633211',
@@ -11279,6 +11291,7 @@ bujkkonsultan::create([
     'id' => 13,
     'bujkkonsultansub_id' => 13,
     'asosiasimasjaki_id' => null,
+    'user_id' => 38,
     'namalengkap' => 'ARCHIDAS DESIGN',
     'alamat' => 'Jalan Halmahera Lorong II Nomor 71 B, Desa/Kelurahan Tambahrejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081215938652',
@@ -11295,6 +11308,7 @@ bujkkonsultan::create([
     'id' => 14,
     'bujkkonsultansub_id' => 14,
     'asosiasimasjaki_id' => null,
+    'user_id' => 39,
     'namalengkap' => 'STATIKAGISTA',
     'alamat' => 'Jalan Raya Blora Cepu KM 13 , Desa/Kelurahan Jiken, Kec. Jiken, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -11311,6 +11325,7 @@ bujkkonsultan::create([
     'id' => 15,
     'bujkkonsultansub_id' => 15,
     'asosiasimasjaki_id' => null,
+    'user_id' => 40,
     'namalengkap' => 'DUTA CAHAYA DESIGN',
     'alamat' => 'Jl. Flamboyan NO. 188 , Desa/Kelurahan Karangboyo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081316597482',
@@ -11327,6 +11342,7 @@ bujkkonsultan::create([
     'id' => 16,
     'bujkkonsultansub_id' => 16,
     'asosiasimasjaki_id' => null,
+    'user_id' => 41,
     'namalengkap' => 'GALANG PRATAMA DESIGN',
     'alamat' => 'Jl.Gunung Selamet No.II/21, Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -11344,6 +11360,7 @@ bujkkonsultan::create([
     'bujkkonsultansub_id' => 17,
     'asosiasimasjaki_id' => null,
     'namalengkap' => 'MUSTIKA JAYA ABADI KONSULTAN',
+    'user_id' => 42,
     'alamat' => 'TAMBAKROMO, Desa/Kelurahan Tambakromo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082134711118',
     'email' => 'mustikaj64@gmail.com',

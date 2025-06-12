@@ -83,11 +83,158 @@
                 </span>
                 <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
                     <span class="info-box-text" style="color:white;">Berkas Permohonan Bantek</span>
-                    <span class="info-box-number fw-bold" style="font-size: 16px;"> {{$datasemua->total()}}  Permohonan</span>
+                    <span class="info-box-number fw-bold" style="font-size: 16px;"> {{$datasemua->total()}}Permohonan</span>
                 </div>
             </div>
         </a>
     </div>
+
+       <div class="col-12 col-sm-6 col-md-3">
+    <a href="/404">
+
+        <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
+            <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                <!-- Icon: Clipboard Check -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="green" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.293 6.354 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                    <path d="M4 1.5A1.5 1.5 0 0 0 2.5 3v10A1.5 1.5 0 0 0 4 14.5h8a1.5 1.5 0 0 0 1.5-1.5V3A1.5 1.5 0 0 0 12 1.5H4zm1 1a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V3H5v-.5z"/>
+                </svg>
+            </span>
+            <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                <span class="info-box-text" style="color: white;">Peneliti Kontrak </span>
+                <span class="info-box-number fw-bold" style="font-size: 16px;">
+                    {{ $jumlahDataIdDua }} Permohonan
+                </span>
+            </div>
+        </div>
+    </a>
+</div>
+
+       <div class="col-12 col-sm-6 col-md-3">
+    <a href="/404">
+
+        <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
+            <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                <!-- Icon: Clipboard Check -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="green" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.293 6.354 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                    <path d="M4 1.5A1.5 1.5 0 0 0 2.5 3v10A1.5 1.5 0 0 0 4 14.5h8a1.5 1.5 0 0 0 1.5-1.5V3A1.5 1.5 0 0 0 12 1.5H4zm1 1a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V3H5v-.5z"/>
+                </svg>
+            </span>
+            <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                <span class="info-box-text" style="color: white;">Perhitungan Penyusutan </span>
+                <span class="info-box-number fw-bold" style="font-size: 16px;">
+                    {{ $jumlahDataIdTiga }} Permohonan
+                </span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="col-12 col-sm-6 col-md-3">
+    <a href="/404">
+
+        <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
+            <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                <!-- Icon: Clipboard Check -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="green" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.293 6.354 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                    <path d="M4 1.5A1.5 1.5 0 0 0 2.5 3v10A1.5 1.5 0 0 0 4 14.5h8a1.5 1.5 0 0 0 1.5-1.5V3A1.5 1.5 0 0 0 12 1.5H4zm1 1a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V3H5v-.5z"/>
+                </svg>
+            </span>
+            <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                <span class="info-box-text" style="color: white;">Perhitungan Tingkat Kerusakan </span>
+                <span class="info-box-number fw-bold" style="font-size: 16px;">
+                    {{ $jumlahDataIdEmpat }} Permohonan
+                </span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="col-12 col-sm-6 col-md-3">
+    <a href="/404">
+
+        <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
+            <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                <!-- Icon: Clipboard Check -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="green" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.293 6.354 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                    <path d="M4 1.5A1.5 1.5 0 0 0 2.5 3v10A1.5 1.5 0 0 0 4 14.5h8a1.5 1.5 0 0 0 1.5-1.5V3A1.5 1.5 0 0 0 12 1.5H4zm1 1a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V3H5v-.5z"/>
+                </svg>
+            </span>
+            <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                <span class="info-box-text" style="color: white;">Perhitungan Pemeliharaan BGN </span>
+                <span class="info-box-number fw-bold" style="font-size: 16px;">
+                    {{ $jumlahDataIdLima }} Permohonan
+                </span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="col-12 col-sm-6 col-md-3">
+    <a href="/404">
+
+        <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
+            <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                <!-- Icon: Clipboard Check -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="green" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.293 6.354 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                    <path d="M4 1.5A1.5 1.5 0 0 0 2.5 3v10A1.5 1.5 0 0 0 4 14.5h8a1.5 1.5 0 0 0 1.5-1.5V3A1.5 1.5 0 0 0 12 1.5H4zm1 1a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V3H5v-.5z"/>
+                </svg>
+            </span>
+            <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                <span class="info-box-text" style="color: white;">Konstruksi Perhitungan BGN </span>
+                <span class="info-box-number fw-bold" style="font-size: 16px;">
+                    {{ $jumlahDataIdEnam }} Permohonan
+                </span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="col-12 col-sm-6 col-md-3">
+    <a href="/404">
+
+        <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
+            <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                <!-- Icon: Clipboard Check -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="green" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.293 6.354 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                    <path d="M4 1.5A1.5 1.5 0 0 0 2.5 3v10A1.5 1.5 0 0 0 4 14.5h8a1.5 1.5 0 0 0 1.5-1.5V3A1.5 1.5 0 0 0 12 1.5H4zm1 1a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V3H5v-.5z"/>
+                </svg>
+            </span>
+            <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                <span class="info-box-text" style="color: white;">Pendampingan Serah Terima </span>
+                <span class="info-box-number fw-bold" style="font-size: 16px;">
+                    {{ $jumlahDataIdDelapan }} Permohonan
+                </span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="col-12 col-sm-6 col-md-3">
+    <a href="/404">
+
+        <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
+            <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                <!-- Icon: Clipboard Check -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="green" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 6.354a.5.5 0 0 0-.708-.708L7.5 8.293 6.354 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                    <path d="M4 1.5A1.5 1.5 0 0 0 2.5 3v10A1.5 1.5 0 0 0 4 14.5h8a1.5 1.5 0 0 0 1.5-1.5V3A1.5 1.5 0 0 0 12 1.5H4zm1 1a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V3H5v-.5z"/>
+                </svg>
+            </span>
+            <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                <span class="info-box-text" style="color: white;">Permintaan Personil Tim Teknis </span>
+                <span class="info-box-number fw-bold" style="font-size: 16px;">
+                    {{ $jumlahDataIdSatu }} Permohonan
+                </span>
+            </div>
+        </div>
+    </a>
+</div>
 
 
   </div>
@@ -112,6 +259,7 @@
   </style>
 
               {{-- -------------------------------------------------------- --}}
+
 
 
               {{-- -------------------------------------------------------- --}}
