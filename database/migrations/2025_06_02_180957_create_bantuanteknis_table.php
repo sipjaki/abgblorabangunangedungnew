@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('asistensibantek_id')->nullable()->index(); // user
             $table->foreignId('ceklapanganbantek_id')->nullable()->index(); // user
 
+            $table->foreignId('bujkkonsultan_id')->nullable()->index(); // user
             // PENGAMBILAN DATA UNTUK KONSULTAN YANG AKAN MENGISI ASISTENSI
             $table->foreignId('pemohon_id')->nullable()->index(); // user
             $table->foreignId('dinas_id')->nullable()->index(); // user
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->foreignId('jenispengajuanbantek_id')->nullable()->index(); // sudah
 
             $table->string('nosurat')->nullable(); // sudah
+            $table->string('nosuratdinas')->nullable(); // sudah
             $table->date('tanggalsurat')->nullable(); // sudah
             $table->string('nama_pemohon')->nullable(); // sudah
             $table->string('no_telepon')->nullable(); // sudah
@@ -52,12 +54,16 @@ return new class extends Migration
             $table->string('suratpermohonan')->nullable();
             $table->string('kic')->nullable();
             $table->string('fotokondisi')->nullable();
+            $table->string('rab')->nullable();
+            $table->string('asbuilt')->nullable();
 
             $table->string('uploadsuratbantek')->nullable();
 
             $table->string('validasisuratpermohonan')->nullable(); // VALIDASI UNTUK BERKAS SURAT PERMOHONAN
             $table->string('validasikic')->nullable(); // VALIDASI UNTUK BERKAS KARTU IDENTITAS BANGUNAN
             $table->string('validasifotokondisi')->nullable(); // VALIDASI UNTUK BERKAS FOTO KONDISI
+            $table->string('validasirab')->nullable(); // VALIDASI UNTUK BERKAS FOTO KONDISI
+            $table->string('validasiasbuilt')->nullable(); // VALIDASI UNTUK BERKAS FOTO KONDISI
 
             $table->string('validasiberkas1')->nullable(); // verifikasi pu
             $table->string('validasiberkas2')->nullable(); // cek lapangan

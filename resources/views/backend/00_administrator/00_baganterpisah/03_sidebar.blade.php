@@ -802,6 +802,12 @@
             <p style="color: white; margin-left: 8px;">Permohonan</p>
         </a>
     </li>
+    <li class="nav-item">
+        <a href="/bebantekkonsultan" class="nav-link">
+            <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px;"></i>
+            <p style="color: white; margin-left: 8px;">Konsultan</p>
+        </a>
+    </li>
 </ul>
             </li>
 

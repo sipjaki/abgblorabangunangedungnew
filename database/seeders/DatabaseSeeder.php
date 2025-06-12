@@ -18,6 +18,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\bgkartuinventarisbangunan;
+use App\Models\bujkkonsultan;
 use App\Models\statushaktanahbangunangedung;
 use App\Models\kecamatanblora;
 use App\Models\datastrukturbangunangedung;
@@ -292,6 +293,195 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        // -------------------
+
+        User::create([
+    'id' => 26,
+    'name' => 'TIARA ENERGI',
+    'username' => 'admintiaraenergi',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'tiarasinergi@gmail.com',
+    'phone_number' => '081325657254',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 27,
+    'name' => 'KARYA INTI KONSULTAN',
+    'username' => 'adminkaryaintikonsultan',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'karyaintikonsultan@gmail.com',
+    'phone_number' => '082133220199',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 28,
+    'name' => 'BEGAWAN ABIYOSO',
+    'username' => 'adminbegawabiyoso',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'begawanabiyoso2023@gmail.com',
+    'phone_number' => '085292559491',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 29,
+    'name' => 'GRAHACIPTA PERKASA',
+    'username' => 'admingrahaperkasa',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'grahaciptaperkasa@yahoo.co.id',
+    'phone_number' => '081327421757',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 30,
+    'name' => 'BEKONS',
+    'username' => 'adminbekons',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'gapuro_ireng@yahoo.com',
+    'phone_number' => '085326420963',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 31,
+    'name' => 'WIRAYA CIPTA',
+    'username' => 'adminwiraycipta',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'wirayacipta@gmail.com',
+    'phone_number' => '085329008618',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 32,
+    'name' => 'CAHAYA KEJORA KREASINDO',
+    'username' => 'admincahyakejorakreasindo',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'cahyakejorakreasindo@gmail.com',
+    'phone_number' => '082135143883',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 33,
+    'name' => 'WISMA REKA DESAIN',
+    'username' => 'adminwismareka',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'wismareka@gmail.com',
+    'phone_number' => '085878718827',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 34,
+    'name' => 'CRYSTAL DESIGN',
+    'username' => 'admincrystal',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'crystaldesign719@gmail.com',
+    'phone_number' => null, // karena "Data Belum Di Update"
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 35,
+    'name' => 'BARRAMUNDI RATU SAMUDERA',
+    'username' => 'adminratubarramundi',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'ratubarramundi06@gmail.com',
+    'phone_number' => '082328706846',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 36,
+    'name' => 'KARTIKA JAYA CONSULTANT',
+    'username' => 'adminkartikajayacvblora',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'kartikajayacvblora@gmail.com',
+    'phone_number' => '082243313999',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 37,
+    'name' => 'STATIKA TEKNIK',
+    'username' => 'adminstatiteknik',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'statika.cv@gmail.com',
+    'phone_number' => '082225633211',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 38,
+    'name' => 'ARCHIDAS DESIGN',
+    'username' => 'admindesigdesign',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'designarchidas@gmail.com',
+    'phone_number' => '081215938652',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 39,
+    'name' => 'STATIKAGISTA',
+    'username' => 'adminstatikagista',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'b.sutejo980@gmail.com',
+    'phone_number' => null, // Data Belum Di Update
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 40,
+    'name' => 'DUTA CAHAYA DESIGN',
+    'username' => 'admindutacahayadesign',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'dutacahayadesign117@gmail.com',
+    'phone_number' => '081316597482',
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 41,
+    'name' => 'GALANG PRATAMA DESIGN',
+    'username' => 'admingalangpratamacv',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'galangpratamacv@gmail.com',
+    'phone_number' => null, // Data Belum Di Update
+    'password' => bcrypt('adminadmin123$$')
+]);
+
+User::create([
+    'id' => 42,
+    'name' => 'MUSTIKA JAYA ABADI KONSULTAN',
+    'username' => 'adminmustika',
+    'statusadmin_id' => 4,
+    'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+    'email' => 'mustikaj64@gmail.com',
+    'phone_number' => null, // Data Belum Di Update
+    'password' => bcrypt('adminadmin123$$')
+]);
+
         jenispengajuanbantek::create([
             'id'  => 1,
             'jenispengajuan'  => 'BANTUAN ASISTENSI PERENCANAAN',
@@ -322,10 +512,10 @@ class DatabaseSeeder extends Seeder
             'jenispengajuan'  => 'PERHITUNGAN BIAYA KONSTRUKSI PEMBANGUNAN BGN',
         ]);
 
-        jenispengajuanbantek::create([
-            'id'  => 7,
-            'jenispengajuan'  => 'PENGELOLA TEKNIS',
-        ]);
+        // jenispengajuanbantek::create([
+        //     'id'  => 7,
+        //     'jenispengajuan'  => 'PENGELOLA TEKNIS',
+        // ]);
 
         jenispengajuanbantek::create([
             'id'  => 8,
@@ -360,10 +550,10 @@ class DatabaseSeeder extends Seeder
             'status' => 'konsultanbantek',
         ]);
 
-        statusadmin::create([
-            'id'  => 5,
-            'status' => 'konsultanbangunan',
-        ]);
+        // statusadmin::create([
+        //     'id'  => 5,
+        //     'status' => 'konsultanbangunan',
+        // ]);
 
         statusadmin::create([
             'id'  => 6,
@@ -10874,6 +11064,297 @@ kelurahandesa::create([
         'lokasibangunan' => 'Jl. Pembangunan No. ' . rand(1, 100),
     ]);
 }
+
+
+// JASA KONSULTAN BANTEK
+
+// DATA BUJK KONSULTAN MAS JAKI APLIKASI
+//======================== ===================================================================================
+bujkkonsultan::create([
+    'id' => 1, // Ganti dengan ID yang sesuai
+    'bujkkonsultansub_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'TIARA ENERGI',
+    'alamat' => 'Desa Gersi, Desa/Kelurahan Gersi, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081325657254',
+    'email' => 'tiarasinergi@gmail.com ',
+    'nomorindukberusaha' => '9120312062216',
+    'pju' => 'MOCHAMAD ARIANTO',
+    'no_akte' => '03',
+    'tanggal' => '2024-06-10',
+    'nama_notaris' => 'Selamet Mulyono M.Kn.',
+    'no_pengesahan' => 'AHU-0030674-AH.01.16 Tahun 2022'
+]);
+//
+
+//======================== ===================================================================================
+// DATA 2 BUJK KONSULTAN
+bujkkonsultan::create([
+    'id' => 2, // Ganti dengan ID yang sesuai
+    'bujkkonsultansub_id' => 2, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'KARYA INTI KONSULTAN',
+    'alamat' => 'DUKUH SENDANG KLAMPOK, Desa/Kelurahan Tempurejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah ',
+    'no_telepon' => '082133220199',
+    'email' => 'karyaintikonsultan@gmail.com',
+    'nomorindukberusaha' => '2101230013886',
+    'pju' => 'AHMAD FAHRUDIN',
+    'no_akte' => '55',
+    'tanggal' => '2021-01-11',
+    'nama_notaris' => 'YANI DWI RAHAYU S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0004201-AH.01.14'
+]);
+
+
+//======================== ===================================================================================
+// DATA 3 BUJK KONSULTAN
+bujkkonsultan::create([
+    'id' => 3, // Ganti dengan ID yang sesuai
+    'bujkkonsultansub_id' => 3, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'BEGAWAN ABIYOSO',
+    'alamat' => ' DUKUH WUNI, Desa/Kelurahan Balong, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah ',
+    'no_telepon' => '085292559491',
+    'email' => 'begawanabiyoso2023@gmail.com ',
+    'nomorindukberusaha' => '220001632033',
+    'pju' => 'TEJO',
+    'no_akte' => '72',
+    'tanggal' => '2020-06-15',
+    'nama_notaris' => 'YANI DWI RAHAYU S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0019129-AH.01.16'
+]);
+
+
+
+//======================== ===================================================================================
+// DATA 4 BUJK KONSULTAN
+bujkkonsultan::create([
+    'id' => 4, // Ganti dengan ID yang sesuai
+    'bujkkonsultansub_id' => 4, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'GRAHACIPTA PERKASA',
+    'alamat' => ' Ds. Tambahrejo, Desa/Kelurahan Tambahrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081327421757',
+    'email' => 'grahaciptaperkasa@yahoo.co.id',
+    'nomorindukberusaha' => '9120404852668',
+    'pju' => 'TEGUH PRIYANTO',
+    'no_akte' => '152',
+    'tanggal' => '2010-10-23',
+    'nama_notaris' => 'ELIZABETH ESTININGSIH, S.H.',
+    'no_pengesahan' => '14 / CV / 2011 / PN.Bla'
+]);
+
+
+//======================== ===================================================================================
+// DATA 5 BUJK KONSULTAN
+bujkkonsultan::create([
+    'id' => 5, // Ganti dengan ID yang sesuai
+    'bujkkonsultansub_id' => 5, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'BEKONS',
+    'alamat' => 'Dukuh Bengir, Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah ',
+    'no_telepon' => '085326420963',
+    'email' => 'gapuro_ireng@yahoo.com ',
+    'nomorindukberusaha' => '220004621089',
+    'pju' => 'UTOMO, SARJANA',
+    'no_akte' => '34',
+    'tanggal' => '2016-03-16',
+    'nama_notaris' => 'BAMBANG HARIJANTO, SH., M.KN',
+    'no_pengesahan' => 'AHU-0028069-AH.01.15 Tahun 2020'
+]);
+
+bujkkonsultan::create([
+    'id' => 6,
+    'bujkkonsultansub_id' => 6,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'WIRAYA CIPTA',
+    'alamat' => 'Dukuh Dukoh , Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '085329008618',
+    'email' => 'wirayacipta@gmail.com',
+    'nomorindukberusaha' => '1201220016383',
+    'pju' => 'KHOIRUL NIAM',
+    'no_akte' => '15',
+    'tanggal' => '2021-11-09',
+    'nama_notaris' => 'BAMBANG HARIJANTO S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0076448-AH.01.14 Tahun 2021',
+]);
+
+bujkkonsultan::create([
+    'id' => 7,
+    'bujkkonsultansub_id' => 7,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'CAHAYA KEJORA KREASINDO',
+    'alamat' => 'DUKUH KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082135143883',
+    'email' => 'cahyakejorakreasindo@gmail.com',
+    'nomorindukberusaha' => '220302282762',
+    'pju' => 'RANGGA TEGAR',
+    'no_akte' => '22',
+    'tanggal' => '2024-02-05',
+    'nama_notaris' => 'YANI DWI RAHAYU S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0006573-AH.01.16 Tahun 2024',
+]);
+
+bujkkonsultan::create([
+    'id' => 8,
+    'bujkkonsultansub_id' => 8,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'WISMA REKA DESAIN',
+    'alamat' => 'Dukuh Kalisangku, Kab. Blora Jawa Tengah',
+    'no_telepon' => '085878718827',
+    'email' => 'wismareka@gmail.com',
+    'nomorindukberusaha' => '8120017290955',
+    'pju' => 'AHMAD RISBIYANTO',
+    'no_akte' => '351',
+    'tanggal' => '2022-01-20',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0004494-AH.01.16 Tahun 2022',
+]);
+
+bujkkonsultan::create([
+    'id' => 9,
+    'bujkkonsultansub_id' => 9,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'CRYSTAL DESIGN',
+    'alamat' => 'JALAN A. YANI Gg. 5 nO. 19, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => null,
+    'email' => 'crystaldesign719@gmail.com',
+    'nomorindukberusaha' => '9120106231158',
+    'pju' => null,
+    'no_akte' => null,
+    'tanggal' => null,
+    'nama_notaris' => null,
+    'no_pengesahan' => null,
+]);
+
+bujkkonsultan::create([
+    'id' => 10,
+    'bujkkonsultansub_id' => 10,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'BARRAMUNDI RATU SAMUDERA',
+    'alamat' => 'JALAN H.A SUMIJAN NOMOR 14, Desa/Kelurahan Kedungjenar, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082328706846',
+    'email' => 'ratubarramundi06@gmail.com',
+    'nomorindukberusaha' => '2103220030568',
+    'pju' => 'ARIS MUNANTO',
+    'no_akte' => '433',
+    'tanggal' => '2022-02-18',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0020056-AH.01.14 Tahun 2022',
+]);
+
+bujkkonsultan::create([
+    'id' => 11,
+    'bujkkonsultansub_id' => 11,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'KARTIKA JAYA CONSULTANT',
+    'alamat' => 'JL. PUNTODEWO I NO. 14 A, Desa/Kelurahan Bangkle, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082243313999',
+    'email' => 'kartikajayacvblora@gmail.com',
+    'nomorindukberusaha' => '220102660297',
+    'pju' => 'OKTORINA DYAN',
+    'no_akte' => '10',
+    'tanggal' => '2022-03-04',
+    'nama_notaris' => 'DIAH TRIMURTI SALEH S.E., S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0012081-AH.01.16 Tahun 2022',
+]);
+
+bujkkonsultan::create([
+    'id' => 12,
+    'bujkkonsultansub_id' => 12,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'STATIKA TEKNIK',
+    'alamat' => 'Jalan Bhayangkara Utara I/ID, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082225633211',
+    'email' => 'statika.cv@gmail.com',
+    'nomorindukberusaha' => '220004312446',
+    'pju' => 'ARIEF BUDI',
+    'no_akte' => '344',
+    'tanggal' => '2020-01-30',
+    'nama_notaris' => 'YANI DWI RAHAYU, SH., M.KN',
+    'no_pengesahan' => 'AHU-0003288-AH.01.16 Tahun 2020',
+]);
+
+bujkkonsultan::create([
+    'id' => 13,
+    'bujkkonsultansub_id' => 13,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'ARCHIDAS DESIGN',
+    'alamat' => 'Jalan Halmahera Lorong II Nomor 71 B, Desa/Kelurahan Tambahrejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081215938652',
+    'email' => 'designarchidas@gmail.com',
+    'nomorindukberusaha' => '9120306821957',
+    'pju' => 'HERU DIDIK',
+    'no_akte' => '2',
+    'tanggal' => '2004-05-05',
+    'nama_notaris' => 'ELIZABETH ESTININGSIH, SH',
+    'no_pengesahan' => 'AHU-0054142-AH.01.15 TAHUN 2019',
+]);
+
+bujkkonsultan::create([
+    'id' => 14,
+    'bujkkonsultansub_id' => 14,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'STATIKAGISTA',
+    'alamat' => 'Jalan Raya Blora Cepu KM 13 , Desa/Kelurahan Jiken, Kec. Jiken, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => null,
+    'email' => 'b.sutejo980@gmail.com',
+    'nomorindukberusaha' => '220200102272',
+    'pju' => null,
+    'no_akte' => null,
+    'tanggal' => null,
+    'nama_notaris' => null,
+    'no_pengesahan' => null,
+]);
+
+bujkkonsultan::create([
+    'id' => 15,
+    'bujkkonsultansub_id' => 15,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'DUTA CAHAYA DESIGN',
+    'alamat' => 'Jl. Flamboyan NO. 188 , Desa/Kelurahan Karangboyo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081316597482',
+    'email' => 'dutacahayadesign117@gmail.com',
+    'nomorindukberusaha' => '220005632037',
+    'pju' => 'MITA ARIS',
+    'no_akte' => '117',
+    'tanggal' => '2020-03-30',
+    'nama_notaris' => 'TUNJUNG WIDHI WASESA SUWADJI S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0021500-AH.01.14 Tahun 2020',
+]);
+
+bujkkonsultan::create([
+    'id' => 16,
+    'bujkkonsultansub_id' => 16,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'GALANG PRATAMA DESIGN',
+    'alamat' => 'Jl.Gunung Selamet No.II/21, Kab. Blora Jawa Tengah',
+    'no_telepon' => null,
+    'email' => 'galangpratamacv@gmail.com',
+    'nomorindukberusaha' => '9120216000626',
+    'pju' => 'SUPARMAN',
+    'no_akte' => '18',
+    'tanggal' => '2017-10-12',
+    'nama_notaris' => 'BAMBANG HARIJANTO, S.H., M.Kn',
+    'no_pengesahan' => '65/Cv 2017',
+]);
+
+bujkkonsultan::create([
+    'id' => 17,
+    'bujkkonsultansub_id' => 17,
+    'asosiasimasjaki_id' => null,
+    'namalengkap' => 'MUSTIKA JAYA ABADI KONSULTAN',
+    'alamat' => 'TAMBAKROMO, Desa/Kelurahan Tambakromo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082134711118',
+    'email' => 'mustikaj64@gmail.com',
+    'nomorindukberusaha' => '2409210011096',
+    'pju' => 'ENDAH TRI',
+    'no_akte' => '126',
+    'tanggal' => '2021-06-17',
+    'nama_notaris' => 'YANI DWI RAHAYU S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0045595-AH.01.14 Tahun 2021',
+]);
+
 
 
 // LAPAR

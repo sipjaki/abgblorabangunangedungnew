@@ -88,7 +88,7 @@ Route::post('/berkashunian/{id}/validate', [KrkController::class, 'validateBerka
 // MENU BACKEND ABG BLORA BANGUNAN GEDUNG KABUPATEN BLORA
 // MENU 06 KRK BANGUNAN GEDUNG
 Route::get('/bekrkindex', [KrkController::class, 'bekrkindex']);
-Route::get('/bekrkusaha', [KrkController::class, 'bekrkusaha']);
+Route::get('/bekrkusaha', [KrkController::class, 'bekrkusaha'])->name('krkusaha.index');
 Route::get('/bekrkhunian', [KrkController::class, 'bekrkhunian']);
 
 
@@ -147,6 +147,11 @@ Route::get('/bebantekdaftarkonsultapilih/{id}', [BantuanteknisController::class,
 Route::post('/bebantekdaftarkonsultapilihnew/{id}', [BantuanteknisController::class, 'bebantekdaftarkonsultapilihnew'])->middleware('auth')->name('update.bebantekdaftarkonsultapilihnew');
 Route::get('/bebantekdaftarkonsultanproses', [BantuanteknisController::class, 'bebantekdaftarkonsultanproses'])->middleware('auth')->name('bebantekdaftarkonsultanproses');
 
+Route::get('/bebantekkonsultan', [BantuanteknisController::class, 'bebantekkonsultandata'])->middleware('auth')->name('bebantekkonsultanindex');
+
+
+// MENU 06 KRK BACKEND
+Route::get('/bekrkshowpermohonan/{id}', [KrkController::class, 'bekrkshowpermohonan'])->middleware('auth')->name('bekrkshowpermohonan.show');
 
 // saat ini
 // Route::get('/portalberita', function ()

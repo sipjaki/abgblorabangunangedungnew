@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\bantuanteknis;
+use App\Models\bujkkonsultan;
 use App\Models\ceklapanganbantek;
 use App\Models\jenispengajuanbantek;
 use App\Models\kecamatanblora;
@@ -17,15 +18,16 @@ use Illuminate\Support\Facades\Auth;
 class BantuanteknisController extends Controller
 {
     //
-    public function index()
+public function index()
 {
     $datakecamatan = kecamatanblora::all();
-    $datakelurahan = kelurahandesa::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
-    $datapilihanpengajuan = jenispengajuanbantek::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
 
     $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
 
-    // Ambil data user yang statusadmin_id = 3 beserta relasi statusadmin
     $statusadimindinas = User::with('statusadmin')
         ->where('statusadmin_id', 6)
         ->get();
@@ -35,8 +37,10 @@ class BantuanteknisController extends Controller
         'datakecamatan' => $datakecamatan,
         'datakelurahan' => $datakelurahan,
         'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
         'user' => $user,
-        'statusadimindinas' => $statusadimindinas, // kirim ke view juga
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
     ]);
 }
 
@@ -66,15 +70,16 @@ public function febantuantekniscreatepermohonan(Request $request)
     $request->merge(['nosurat' => $nomorSurat]);
 
 $validated = $request->validate([
-    'pemohon_id' => 'nullable|string',
+    'bujkkonsultan_id' => 'nullable|string',
     'dinas_id' => 'nullable|string',
     'jenispengajuanbantek_id' => 'required|string',
 
-    'nosurat' => 'nullable|string|max:255',
+    // 'nosurat' => 'nullable|string|max:255',
     'tanggalsurat' => 'nullable|date',
     'nama_pemohon' => 'required|string|max:255',
     'no_telepon' => 'required|string|max:20',
 
+    'nomorsuratdinas' => 'required|string|max:255',
     'namapaket' => 'required|string|max:255',
     'kategoribangunan' => 'required|string|max:255',
     'luasbangunan' => 'required|numeric',
@@ -94,17 +99,20 @@ $validated = $request->validate([
     'kecamatanblora_id' => 'required|string',
     'kelurahandesa_id' => 'required|string',
 
-    'suratpermohonan' => 'required|file|mimes:pdf|max:5120',
-    'kic' => 'required|file|mimes:pdf|max:5120',
-    'fotokondisi' => 'required|file|mimes:pdf|max:5120',
+    'suratpermohonan' => 'required|file|mimes:pdf|max:10120',
+    'kic' => 'required|file|mimes:pdf|max:10120',
+    'fotokondisi' => 'required|file|mimes:pdf|max:10120',
+    'rab' => 'required|file|mimes:pdf|max:10120',
+    'asbuilt' => 'required|file|mimes:pdf|max:10120',
 
 ], [
-    'pemohon_id.required' => 'Pemohon Wajib Di Isi !.',
+    'bujkkonsultan_id.required' => 'Pemohon Wajib Di Isi !.',
     'dinas_id.required' => 'Pilihan Dinas Wajib Di Isi !.',
     'jenispengajuanbantek_id.required' => 'Jenis pengajuan wajib dipilih.',
     'jenispengajuanbantek_id.exists' => 'Jenis pengajuan tidak valid.',
 
-    'nosurat.required' => 'Nomor surat maksimal 255 karakter.',
+    'nosuratdinas.required' => 'Nomor surat maksimal 255 karakter.',
+    // 'nosurat.required' => 'Nomor surat maksimal 255 karakter.',
     'tanggalsurat.required' => 'Tanggal surat harus berupa tanggal yang valid.',
     'nama_pemohon.required' => 'Nama pemohon wajib diisi.',
     'nama_pemohon.max' => 'Nama pemohon maksimal 255 karakter.',
@@ -133,17 +141,25 @@ $validated = $request->validate([
     'suratpermohonan.required' => 'File surat permohonan wajib di Upload !',
     'suratpermohonan.file' => 'File surat permohonan tidak valid.',
     'suratpermohonan.mimes' => 'Surat permohonan harus berupa PDF',
-    'suratpermohonan.max' => 'Ukuran file surat permohonan maksimal 5MB.',
+    'suratpermohonan.max' => 'Ukuran file surat permohonan maksimal 10 MB.',
 
     'kic.required' => 'File KIC Wajib di Upload !',
     'kic.file' => 'File KIC tidak valid.',
     'kic.mimes' => 'KIC harus berupa PDF.',
-    'kic.max' => 'Ukuran file KIC maksimal 5MB.',
+    'kic.max' => 'Ukuran file KIC maksimal 10 MB.',
 
     'fotokondisi.required' => 'File foto kondisi Wajib di Upload !',
     'fotokondisi.file' => 'File foto kondisi tidak valid.',
     'fotokondisi.mimes' => 'Foto kondisi harus berupa PDF',
-    'fotokondisi.max' => 'Ukuran file foto kondisi maksimal 5MB.',
+    'fotokondisi.max' => 'Ukuran file KIC maksimal 10 MB.',
+
+    'rab.file' => 'File foto kondisi tidak valid.',
+    'rab.mimes' => 'Foto kondisi harus berupa PDF',
+    'rab.max' => 'Ukuran file foto kondisi maksimal 10 MB.',
+
+    'asbuilt.file' => 'File foto kondisi tidak valid.',
+    'asbuilt.mimes' => 'Foto kondisi harus berupa PDF',
+    'asbuilt.max' => 'Ukuran file foto kondisi maksimal 10 MB.',
 ]);
 
     // Buat direktori manual jika belum ada
@@ -151,6 +167,8 @@ $validated = $request->validate([
         'suratpermohonan' => '06_bantuanteknis/01_suratpermohonan',
         'kic' => '06_bantuanteknis/02_kartuinventaris',
         'fotokondisi' => '06_bantuanteknis/03_fotokondisi',
+        'rab' => '06_bantuanteknis/04_rab',
+        'asbuilt' => '06_bantuanteknis/05_asbuilt',
     ];
 
     foreach ($paths as $path) {
@@ -184,9 +202,27 @@ $validated = $request->validate([
         $fotokondisiPath = $paths['fotokondisi'] . '/' . $filename;
     }
 
+    $rabPath = null;
+    if ($request->hasFile('rab')) {
+        $file = $request->file('rab');
+        $filename = 'rab_' . time() . '_' . Str::random(5) . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path($paths['rab']), $filename);
+        $rabPath = $paths['rab'] . '/' . $filename;
+    }
+
+    $asbuiltPath = null;
+        if ($request->hasFile('asbuilt')) {
+            $file = $request->file('asbuilt');
+            $filename = 'asbuilt_' . time() . '_' . Str::random(5) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path($paths['asbuilt']), $filename);
+            $asbuiltPath = $paths['asbuilt'] . '/' . $filename;
+        }
+
+
+
     // Simpan data
     $bantek = new bantuanteknis();
-    $bantek->pemohon_id = $validated['pemohon_id'] ?? Auth::id();
+    $bantek->pemohon_id = $validated['bujkkonsultan_id'] ?? Auth::id();
     $bantek->dinas_id = $validated['dinas_id'] ?? null;
     $bantek->jenispengajuanbantek_id = $validated['jenispengajuanbantek_id'];
 
@@ -217,6 +253,8 @@ $validated = $request->validate([
     $bantek->suratpermohonan = $suratpermohonanPath;
     $bantek->kic = $kicPath;
     $bantek->fotokondisi = $fotokondisiPath;
+    $bantek->fotokondisi = $$rabPath;
+    $bantek->fotokondisi = $asbuiltPath;
 
     $bantek->save();
 
@@ -1387,6 +1425,46 @@ public function bebantekakundinasberkas(Request $request)
     return view('backend.04_bantuanteknis.04_akundinas.02_berkaspermohonanindex', [
         'title' => 'Permohonan Bantuan Teknis Penyelenggaraan Bangunan Gedung',
         'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+public function bebantekkonsultandata(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    $query = bujkkonsultan::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namalengkap', 'like', "%{$search}%")
+              ->orWhere('alamat', 'like', "%{$search}%")
+              ->orWhere('no_telepon', 'like', "%{$search}%")
+              ->orWhere('email', 'like', "%{$search}%")
+              ->orWhere('nomorindukberusaha', 'like', "%{$search}%")
+              ->orWhere('pju', 'like', "%{$search}%")
+              ->orWhere('no_akte', 'like', "%{$search}%")
+              ->orWhereDate('tanggal', $search)
+              ->orWhere('nama_notaris', 'like', "%{$search}%")
+              ->orWhere('no_pengesahan', 'like', "%{$search}%");
+        });
+
+        $query->orWhereHas('bujkkonsultansub', function ($q) use ($search) {
+            $q->where('nama', 'like', "%{$search}%");
+        });
+
+        $query->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+            $q->where('nama', 'like', "%{$search}%");
+        });
+    }
+
+    $bujk = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.04_bantuanteknis.05_datakonsultan.01_datakonsultanbantek', [
+        'title' => 'Daftar Konsultan Bantuan Teknis Asistensi',
+        'data'  => $bujk,
         'user'  => $user,
     ]);
 }

@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('rw', 10)->nullable();
             $table->string('kabupaten', 255)->nullable();
             $table->text('lokasibangunan')->nullable();
+            // berkas yang di upload
             $table->string('ktp')->nullable();
             $table->string('npwp')->nullable();
             $table->string('sertifikattanah')->nullable();
@@ -37,6 +38,19 @@ return new class extends Migration
             $table->string('dokvalidasi')->nullable();
             $table->string('siteplan')->nullable();
             $table->string('tandatangan')->nullable();
+
+            $table->string('verifikasiktp')->nullable();
+            $table->string('verifikasinpwp')->nullable();
+            $table->string('verifikasisert')->nullable();
+            $table->string('verifikasioss')->nullable();
+            $table->string('verifikasipbb')->nullable();
+            $table->string('verifikasidokval')->nullable();
+            $table->string('verifikasisiteplan')->nullable();
+            $table->string('verifikasittd')->nullable();
+
+            $table->text('catatanvalidasi')->nullable();
+
+
             $table->boolean('is_validated')->default(false);
 
             // untuk verivikasi berkas

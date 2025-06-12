@@ -275,7 +275,7 @@
                 </div>
 
 
-<div class="input-group">
+{{-- <div class="input-group">
     <select name="statusadmin_id"
         style="width: 100%; background-color: #e0edff; color: black; border: none; border-radius: 8px; padding: 12px; margin-bottom: 10px; font-family: 'Poppins', sans-serif;">
         <option value="">-- Pilih Akun --</option>
@@ -288,7 +288,7 @@
     @error('statusadmin_id')
         <div style="color: red;">{{ $message }}</div>
     @enderror
-</div>
+</div> --}}
 
 
                 <div class="input-group">

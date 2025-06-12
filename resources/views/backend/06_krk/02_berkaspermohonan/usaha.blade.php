@@ -204,6 +204,8 @@ th {
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-map-pin"></i> Kelurahan/Desa</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lokasi Bangunan</th>
 
+                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lihat Permohonan</th>
+
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> KTP</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-address-card"></i> NPWP</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-file-alt"></i> Sertifikat Tanah</th>
@@ -244,6 +246,15 @@ th {
                                     </td>
                                     <td style="text-align: left;">{{$item->lokasibangunan}}</td>
 
+                                       <td style="text-align: center;">
+                <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
+                    class="button-kembali"
+                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
+                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                </a>
+            </td>
                                     <style>
                                         .btn-secondary {
                                             background-color: #6c757d;

@@ -105,7 +105,7 @@ public function authenticate(Request $request)
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'username' => 'required|string|unique:users,username|max:255',
-            'statusadmin_id' => 'required|string',
+            // 'statusadmin_id' => 'required|string',
             'phone_number' => 'required|numeric|unique:users,phone_number',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string',
@@ -136,8 +136,8 @@ public function authenticate(Request $request)
         $user->phone_number = $request->phone_number;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->statusadmin_id = $request->statusadmin_id;
-        // $user->statusadmin_id = 3; // Menetapkan statusadmin_id
+        // $user->statusadmin_id = $request->statusadmin_id;
+        $user->statusadmin_id = 3; // Menetapkan statusadmin_id / ini untuk pemohon saja
         $user->avatar = 'assets/abgblora/logo/iconabgblora.png'; // Menetapkan avatar default
         $user->save();
 

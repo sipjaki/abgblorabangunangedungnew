@@ -534,5 +534,23 @@ public function permohonanpengesahanusahacreate(Request $request, $id)
             ]);
         }
 
+// show permohonan
+
+        public function bekrkshowpermohonan($id)
+{
+    // Cari data berdasarkan ID
+    $data = krkusaha::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.06_krk.01_pengesahanusaha.01_berkaspermohonankrkusaha', [
+        'title' => 'Berkas Permohonan KRK Fungsi Usaha',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
 }
 
