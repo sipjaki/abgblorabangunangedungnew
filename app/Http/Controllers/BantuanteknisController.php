@@ -780,7 +780,7 @@ public function bebantuanteknislapanganuploadnew($id)
     }
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
-    return view('backend.04_bantuanteknis.02_createdata.uploadberkas', [
+    return view('backend.04_bantuanteknis.02_createdata.01_uploadberkasasistensi', [
         'title' => 'Upload Surat Terbit Bantuan Teknis Penyelenggaraan Bangunan Negara',
         'data' => $databantuanteknis,
         'user' => Auth::user()
@@ -2714,6 +2714,133 @@ public function bebanteklapcekdokcreatenew(Request $request)
     $id = $validated['bantuanteknis_id']; // <--- *** ID INI BERWARNA MERAH ***
 
     return redirect()->route('bebantuanteknislapa.show', ['id' => $id]);
+}
+
+
+
+public function bebantekupload2berkas($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.02_uploadberkas', [
+        'title' => 'Upload Surat Terbit Bantuan Teknis Peniti Kontrak',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+
+public function bebantekupload2new(Request $request, $id)
+{
+    $bantek = bantuanteknis::findOrFail($id); // Ini sudah benar
+
+    // Validasi
+    $request->validate([
+        'uploadsuratbantek' => 'required|mimes:pdf|max:7048',
+    ], [
+        'uploadsuratbantek.required' => 'File Surat Bantek wajib diunggah.',
+        'uploadsuratbantek.mimes' => 'File harus berupa format PDF.',
+        'uploadsuratbantek.max' => 'Ukuran file maksimal 7MB.',
+    ]);
+
+    if ($request->hasFile('uploadsuratbantek')) {
+        $file = $request->file('uploadsuratbantek');
+
+        $filename = 'surat-bantek-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('04_bantuanteknis/07_berkassurat');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $file->move($destinationPath, $filename);
+        $filePath = '04_bantuanteknis/07_berkassurat/' . $filename;
+
+        // ❗ Update ke record lama, bukan bikin baru
+        $bantek->uploadsuratbantek = $filePath;
+        $bantek->save();
+    }
+
+    session()->flash('create', 'Berkas Bantek Peneliti Kontrak Berhasil di Terbitkan !');
+    return redirect("/bebantekupload2/{$bantek->id}");
+}
+
+
+public function bebantekupload3berkas($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.03_uploadberkas', [
+        'title' => 'Upload Surat Terbit Bantuan Teknis Perhitungan Penyusutan Bangunan Gedung',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+public function bebantekupload4berkas($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.04_uploadberkas', [
+        'title' => 'Upload Surat Terbit Bantuan Teknis Perhitungan Tingkat Kerusakan Bangunan Gedung',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebantekupload2new(Request $request, $id)
+{
+    $bantek = bantuanteknis::findOrFail($id); // Ini sudah benar
+
+    // Validasi
+    $request->validate([
+        'uploadsuratbantek' => 'required|mimes:pdf|max:7048',
+    ], [
+        'uploadsuratbantek.required' => 'File Surat Bantek wajib diunggah.',
+        'uploadsuratbantek.mimes' => 'File harus berupa format PDF.',
+        'uploadsuratbantek.max' => 'Ukuran file maksimal 7MB.',
+    ]);
+
+    if ($request->hasFile('uploadsuratbantek')) {
+        $file = $request->file('uploadsuratbantek');
+
+        $filename = 'surat-bantek-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('04_bantuanteknis/07_berkassurat');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $file->move($destinationPath, $filename);
+        $filePath = '04_bantuanteknis/07_berkassurat/' . $filename;
+
+        // ❗ Update ke record lama, bukan bikin baru
+        $bantek->uploadsuratbantek = $filePath;
+        $bantek->save();
+    }
+
+    session()->flash('create', 'Berkas Bantek Peneliti Kontrak Berhasil di Terbitkan !');
+    return redirect("/bebantekupload4/{$bantek->id}");
 }
 
 

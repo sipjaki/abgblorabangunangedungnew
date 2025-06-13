@@ -185,6 +185,21 @@ Route::get('/bebantuanasistensilap/{id}', [BantuanteknisController::class, 'beba
 
 Route::get('/bebantuanteknislapanganupload/{id}', [BantuanteknisController::class, 'bebantuanteknislapanganuploadnew'])->middleware('auth')->name('bebantuanteknislapangan.uploadberkas');
 Route::get('/bebantuanteknislapanganuploads/{id}', [BantuanteknisController::class, 'bebantuanteknislapanganuploadnews'])->middleware('auth')->name('bebantuanteknislapangan.uploadberkasnew');
+
+
+// UPLOAD SURAT BANTEK 2
+Route::get('/bebantekupload2/{id}', [BantuanteknisController::class, 'bebantekupload2berkas'])->middleware('auth')->name('bebantuanteknislapangan.uploadberkasnew2');
+Route::post('/bebantekupload2new/{id}', [BantuanteknisController::class, 'bebantekupload2new'])->middleware('auth')->name('upload.bebantekupload2new');
+
+// UPLOAD SURAT BANTEK 3
+Route::get('/bebantekupload3/{id}', [BantuanteknisController::class, 'bebantekupload3berkas'])->middleware('auth')->name('bebantek3.uploadberkasnew3');
+Route::post('/bebantekupload2new/{id}', [BantuanteknisController::class, 'bebantekupload3new'])->middleware('auth')->name('upload.bebantekupload3new');
+
+// UPLOAD SURAT BANTEK 4
+Route::get('/bebantekupload4/{id}', [BantuanteknisController::class, 'bebantekupload4berkas'])->middleware('auth')->name('bebantek4.uploadberkasnew4');
+Route::post('/bebantekupload4new/{id}', [BantuanteknisController::class, 'bebantekupload4new'])->middleware('auth')->name('upload.bebantekupload4new');
+
+
 // BANTUAN TEKNIS TERBITKAN SERTIFIKAT
 // Route::get('/bebantuanteknissertifikat/{id}', [BantuanteknisController::class, 'bebantuanteknislapangancreate'])->middleware('auth')->name('bebantuanteknissertifikat.upload');
 Route::post('/bebantuanteknislapanganuploadnew/{id}', [BantuanteknisController::class, 'bebantuanteknislapanganberkas'])->middleware('auth')->name('upload.bebantuanteknislapanganuploadnew');

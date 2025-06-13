@@ -10,6 +10,158 @@
                 <i class="bi bi-list"></i>
               </a>
             </li>
+
+            <!-- Pastikan Bootstrap Icons & CSS untuk posisi badge -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<style>
+  .nav-icon-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+  }
+  .nav-icon-wrapper .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+  }
+    .nav-icon-wrapper i {
+    color: #000 !important;
+  }
+</style>
+
+<!-- 1. PBG.SLF -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-building-check"></i>
+      <span class="badge bg-danger">3</span>
+    </span>
+  </a>
+</li>
+
+<!-- 2. Tracking -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-geo-alt"></i>
+      <span class="badge bg-danger">2</span>
+    </span>
+  </a>
+</li>
+
+<!-- 3. Pendataan -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-card-list"></i>
+      <span class="badge bg-danger">6</span>
+    </span>
+  </a>
+</li>
+
+<!-- 4. Bantek -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-tools"></i>
+      <span class="badge bg-danger">1</span>
+    </span>
+  </a>
+</li>
+
+<!-- 5. Sosialisasi -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-megaphone"></i>
+      <span class="badge bg-danger">4</span>
+    </span>
+  </a>
+</li>
+
+<!-- 6. KRK -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-map"></i>
+      <span class="badge bg-danger">5</span>
+    </span>
+  </a>
+</li>
+
+<!-- 7. Penilik -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-person-check"></i>
+      <span class="badge bg-danger">24</span>
+    </span>
+  </a>
+</li>
+
+<!-- 8. MBR Gambar -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-house-heart"></i>
+      <span class="badge bg-danger">23</span>
+    </span>
+  </a>
+</li>
+
+<!-- 9. Bantuan Gambar -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-file-earmark-image"></i>
+      <span class="badge bg-danger">65</span>
+    </span>
+  </a>
+</li>
+
+<!-- 10. Hibah Bangunan -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-bank"></i>
+      <span class="badge bg-danger">23</span>
+    </span>
+  </a>
+</li>
+
+<!-- 11. Akun -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-person-circle"></i>
+      <span class="badge bg-danger">35</span>
+    </span>
+  </a>
+</li>
+
+<!-- 12. Database -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-hdd-stack"></i>
+      <span class="badge bg-danger">56</span>
+    </span>
+  </a>
+</li>
+
+<!-- 13. Statistik -->
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <span class="nav-icon-wrapper">
+      <i class="bi bi-bar-chart-line"></i>
+      <span class="badge bg-danger">34</span>
+    </span>
+  </a>
+</li>
+
             {{-- <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Home</a></li>
             <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Contact</a></li> --}}
           </ul>

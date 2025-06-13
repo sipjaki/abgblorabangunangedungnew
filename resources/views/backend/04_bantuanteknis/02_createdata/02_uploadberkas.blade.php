@@ -61,7 +61,15 @@ th {
 
 
    <!--begin::App Main-->
-   <main class="app-main">
+   <main class="app-main"
+      style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+  "
+>
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -147,7 +155,7 @@ th {
 
 
 <button class="button-kembali" type="button"
-    onclick="window.location.href='{{ url('bebantuanteknis') }}';"
+    onclick="window.location.href='{{ url('bepenelitikontrak') }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </button>
@@ -186,7 +194,7 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                 <form action="{{ route('upload.bebantuanteknislapanganuploadnew', $data->id) }}" method="POST" enctype="multipart/form-data">
+                 <form action="{{ route('upload.bebantekupload2new', $data->id) }}" method="POST" enctype="multipart/form-data">
                        @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
