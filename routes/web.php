@@ -193,7 +193,7 @@ Route::post('/bebantekupload2new/{id}', [BantuanteknisController::class, 'bebant
 
 // UPLOAD SURAT BANTEK 3
 Route::get('/bebantekupload3/{id}', [BantuanteknisController::class, 'bebantekupload3berkas'])->middleware('auth')->name('bebantek3.uploadberkasnew3');
-Route::post('/bebantekupload2new/{id}', [BantuanteknisController::class, 'bebantekupload3new'])->middleware('auth')->name('upload.bebantekupload3new');
+Route::post('/bebantekupload3new/{id}', [BantuanteknisController::class, 'bebantekupload3new'])->middleware('auth')->name('upload.bebantekupload3new');
 
 // UPLOAD SURAT BANTEK 4
 Route::get('/bebantekupload4/{id}', [BantuanteknisController::class, 'bebantekupload4berkas'])->middleware('auth')->name('bebantek4.uploadberkasnew4');

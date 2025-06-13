@@ -2808,7 +2808,7 @@ public function bebantekupload4berkas($id)
 }
 
 
-public function bebantekupload2new(Request $request, $id)
+public function bebantekupload4new(Request $request, $id)
 {
     $bantek = bantuanteknis::findOrFail($id); // Ini sudah benar
 
