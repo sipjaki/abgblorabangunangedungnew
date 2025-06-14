@@ -2591,7 +2591,7 @@ public function bebanteklap($id)
         $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
 
     return view('backend.04_bantuanteknis.01_berkaspemohon.09_berkasceklap', [
-        'title' => 'Dokumentasi Cek Lapangan Permohonan Bantuan Teknis Penyelenggaraan Bangunan Geudng ',
+        'title' => 'Dokumentasi Cek Lapangan Permohonan Bantuan Teknis Penyelenggaraan Bangunan Gedung ',
         'subdata' => $dataceklapangan,
         'data' => $databantuanteknis,
         'user' => Auth::user()
@@ -2842,6 +2842,1226 @@ public function bebantekupload4new(Request $request, $id)
     session()->flash('create', 'Berkas Bantek Peneliti Kontrak Berhasil di Terbitkan !');
     return redirect("/bebantekupload4/{$bantek->id}");
 }
+
+
+public function bebantekupload3new(Request $request, $id)
+{
+    $bantek = bantuanteknis::findOrFail($id); // Ini sudah benar
+
+    // Validasi
+    $request->validate([
+        'uploadsuratbantek' => 'required|mimes:pdf|max:7048',
+    ], [
+        'uploadsuratbantek.required' => 'File Surat Bantek wajib diunggah.',
+        'uploadsuratbantek.mimes' => 'File harus berupa format PDF.',
+        'uploadsuratbantek.max' => 'Ukuran file maksimal 7MB.',
+    ]);
+
+    if ($request->hasFile('uploadsuratbantek')) {
+        $file = $request->file('uploadsuratbantek');
+
+        $filename = 'surat-bantek-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('04_bantuanteknis/07_berkassurat');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $file->move($destinationPath, $filename);
+        $filePath = '04_bantuanteknis/07_berkassurat/' . $filename;
+
+        // ❗ Update ke record lama, bukan bikin baru
+        $bantek->uploadsuratbantek = $filePath;
+        $bantek->save();
+    }
+
+    session()->flash('create', 'Berkas Bantek Perhitungan Penyusutan Berhasil di Terbitkan !');
+    return redirect("/bebantekupload3/{$bantek->id}");
+}
+
+
+public function bebantekupload5berkas($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.05_uploadberkas', [
+        'title' => 'Upload Surat Terbit Bantuan Teknis Perhitungan Biaya Pemeliharaan Bangunan Gedung Negara',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+
+public function bebantekupload5new(Request $request, $id)
+{
+    $bantek = bantuanteknis::findOrFail($id); // Ini sudah benar
+
+    // Validasi
+    $request->validate([
+        'uploadsuratbantek' => 'required|mimes:pdf|max:7048',
+    ], [
+        'uploadsuratbantek.required' => 'File Surat Bantek wajib diunggah.',
+        'uploadsuratbantek.mimes' => 'File harus berupa format PDF.',
+        'uploadsuratbantek.max' => 'Ukuran file maksimal 7MB.',
+    ]);
+
+    if ($request->hasFile('uploadsuratbantek')) {
+        $file = $request->file('uploadsuratbantek');
+
+        $filename = 'surat-bantek-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('04_bantuanteknis/07_berkassurat');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $file->move($destinationPath, $filename);
+        $filePath = '04_bantuanteknis/07_berkassurat/' . $filename;
+
+        // ❗ Update ke record lama, bukan bikin baru
+        $bantek->uploadsuratbantek = $filePath;
+        $bantek->save();
+    }
+
+    session()->flash('create', 'Berkas Bantek Perhitungan Biaya Pemeliharaan BGN Berhasil di Terbitkan !');
+    return redirect("/bebantekupload5/{$bantek->id}");
+}
+
+
+
+public function bebantekupload6berkas($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.06_uploadberkas', [
+        'title' => 'Upload Surat Terbit Bantuan Teknis Perhitungan Biaya Konstruksi Pembangunan Bangunan Gedung Negara',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+
+public function bebantekupload6new(Request $request, $id)
+{
+    $bantek = bantuanteknis::findOrFail($id); // Ini sudah benar
+
+    // Validasi
+    $request->validate([
+        'uploadsuratbantek' => 'required|mimes:pdf|max:7048',
+    ], [
+        'uploadsuratbantek.required' => 'File Surat Bantek wajib diunggah.',
+        'uploadsuratbantek.mimes' => 'File harus berupa format PDF.',
+        'uploadsuratbantek.max' => 'Ukuran file maksimal 7MB.',
+    ]);
+
+    if ($request->hasFile('uploadsuratbantek')) {
+        $file = $request->file('uploadsuratbantek');
+
+        $filename = 'surat-bantek-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('04_bantuanteknis/07_berkassurat');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $file->move($destinationPath, $filename);
+        $filePath = '04_bantuanteknis/07_berkassurat/' . $filename;
+
+        // ❗ Update ke record lama, bukan bikin baru
+        $bantek->uploadsuratbantek = $filePath;
+        $bantek->save();
+    }
+
+    session()->flash('create', 'Berkas Bantek Perhitungan Biaya Konstruksi Pembangunan BGN Berhasil di Terbitkan !');
+    return redirect("/bebantekupload6/{$bantek->id}");
+}
+
+
+public function bebantekupload7berkas($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.07_uploadberkas', [
+        'title' => 'Upload Surat Terbit Bantuan Teknis Pendampingan Serah Terima Pekerjaan',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebantekupload7new(Request $request, $id)
+{
+    $bantek = bantuanteknis::findOrFail($id); // Ini sudah benar
+
+    // Validasi
+    $request->validate([
+        'uploadsuratbantek' => 'required|mimes:pdf|max:7048',
+    ], [
+        'uploadsuratbantek.required' => 'File Surat Bantek wajib diunggah.',
+        'uploadsuratbantek.mimes' => 'File harus berupa format PDF.',
+        'uploadsuratbantek.max' => 'Ukuran file maksimal 7MB.',
+    ]);
+
+    if ($request->hasFile('uploadsuratbantek')) {
+        $file = $request->file('uploadsuratbantek');
+
+        $filename = 'surat-bantek-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('04_bantuanteknis/07_berkassurat');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $file->move($destinationPath, $filename);
+        $filePath = '04_bantuanteknis/07_berkassurat/' . $filename;
+
+        // ❗ Update ke record lama, bukan bikin baru
+        $bantek->uploadsuratbantek = $filePath;
+        $bantek->save();
+    }
+
+    session()->flash('create', 'Berkas Bantek Pendampingan Serah Terima Pekerjaan Berhasil di Terbitkan !');
+    return redirect("/bebantekupload7/{$bantek->id}");
+}
+
+
+public function bebantekupload8berkas($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.08_uploadberkas', [
+        'title' => 'Upload Surat Terbit Bantuan Teknis Permintaan Tim Personil',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebanteklapper3($id)
+{
+    $databantuanteknis = bantuanteknis::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.10_berkasceklap', [
+        'title' => 'Dokumentasi Cek Lapangan Permohonan Bantuan Teknis Perhitungan Penyusutan Bangunan Gedung ',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebanteklapper3create($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.00_createdok.03_ceklapangan', [
+        'title' => 'Form Dokumentasi Cek Lapangan Bantuan Teknis Perhitungan Penyusutan Bangunan Gedung',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+
+public function bebanteklapper3createnew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'bantuanteknis_id' => 'required|string',
+        'kegiatan' => 'required|string',
+        'tanggalkegiatan' => 'required|date',
+        'foto1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+    ], [
+        'bantuanteknis_id.required' => 'bantuanteknis_id wajib diisi.',
+        'kegiatan.required' => 'Nama Kegiatan wajib diisi.',
+        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
+        'foto1.required' => 'Foto Dokumentasi 1 wajib diunggah.',
+        'foto1.image' => 'Foto Dokumentasi 1 harus berupa file gambar.',
+        'foto1.mimes' => 'Foto Dokumentasi 1 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto1.max' => 'Ukuran foto Dokumentasi 1 maksimal 7MB.',
+        'foto2.image' => 'Foto Dokumentasi 2 harus berupa file gambar.',
+        'foto2.mimes' => 'Foto Dokumentasi 2 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto2.max' => 'Ukuran foto Dokumentasi 2 maksimal 7MB.',
+        'foto3.image' => 'Foto Dokumentasi 3 harus berupa file gambar.',
+        'foto3.mimes' => 'Foto Dokumentasi 3 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto3.max' => 'Ukuran foto Dokumentasi 3 maksimal 7MB.',
+        'foto4.image' => 'Foto Dokumentasi 4 harus berupa file gambar.',
+        'foto4.mimes' => 'Foto Dokumentasi 4 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto4.max' => 'Ukuran foto Dokumentasi 4 maksimal 7MB.',
+        'foto5.image' => 'Foto Dokumentasi 5 harus berupa file gambar.',
+        'foto5.mimes' => 'Foto Dokumentasi 5 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto5.max' => 'Ukuran foto Dokumentasi 5 maksimal 7MB.',
+        'foto6.image' => 'Foto Dokumentasi 6 harus berupa file gambar.',
+        'foto6.mimes' => 'Foto Dokumentasi 6 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto6.max' => 'Ukuran foto Dokumentasi 6 maksimal 7MB.',
+    ]);
+
+    $data = new ceklapanganbantek();
+
+    $data->bantuanteknis_id = $validated['bantuanteknis_id'] ?? null;
+    $data->kegiatan = $validated['kegiatan'] ?? null;
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'] ?? null;
+
+    // Upload foto1 sampai foto6 jika ada
+    if ($request->hasFile('foto1')) {
+        $file = $request->file('foto1');
+        $filename = time() . '_foto1.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/01_ceklapangan'), $filename);
+        $data->foto1 = '04_bantuanteknis/01_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto2')) {
+        $file = $request->file('foto2');
+        $filename = time() . '_foto2.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/02_ceklapangan'), $filename);
+        $data->foto2 = '04_bantuanteknis/02_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto3')) {
+        $file = $request->file('foto3');
+        $filename = time() . '_foto3.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/03_ceklapangan'), $filename);
+        $data->foto3 = '04_bantuanteknis/03_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto4')) {
+        $file = $request->file('foto4');
+        $filename = time() . '_foto4.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/04_ceklapangan'), $filename);
+        $data->foto4 = '04_bantuanteknis/04_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto5')) {
+        $file = $request->file('foto5');
+        $filename = time() . '_foto5.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/05_ceklapangan'), $filename);
+        $data->foto5 = '04_bantuanteknis/05_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto6')) {
+        $file = $request->file('foto6');
+        $filename = time() . '_foto6.' . $file->getClientOriginalExtension();
+        $file->move(public_path('06_bantuanteknis/06_ceklapangan'), $filename);
+        $data->foto6 = '06_bantuanteknis/06_ceklapangan/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('create', 'Dokumentasi Berhasil Di Buat !');
+
+    // *** PENTING ***
+    // Variabel $id harus kamu ambil dari request atau dari $validated['bantuanteknis_id']
+    // supaya redirect ke route berikut ini bisa benar
+    $id = $validated['bantuanteknis_id']; // <--- *** ID INI BERWARNA MERAH ***
+
+    return redirect()->route('bebanteklapper3.show', ['id' => $id]);
+}
+
+
+public function bebanteklapper3delete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = ceklapanganbantek::where('id', $id)->first();
+
+    if ($entry) {
+        // Simpan dulu lapangan_id sebelum entri dihapus
+        $lapanganId = $entry->bantuanteknis_id;
+
+        // Hapus file jika ada (aktifkan jika memang simpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect ke halaman detail lapangan terkait
+        return redirect()->route('bebanteklapper3.show', ['id' => $lapanganId])
+                         ->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
+
+// BERKAS CEK LAPANGAN PERMOHONAN KE 4 FULL PAKET
+
+public function bebanteklapper4($id)
+{
+    $databantuanteknis = bantuanteknis::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.11_berkasceklap', [
+        'title' => 'Dokumentasi Cek Lapangan Permohonan Bantuan Teknis Perhitungan Tingkat Kerusakan Bangunan Gedung ',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebanteklapper4create($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.00_createdok.04_ceklapangan', [
+        'title' => 'Form Dokumentasi Cek Lapangan Bantuan Teknis Perhitungan Tingkat Kerusakan Bangunan Gedung',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+
+public function bebanteklapper4createnew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'bantuanteknis_id' => 'required|string',
+        'kegiatan' => 'required|string',
+        'tanggalkegiatan' => 'required|date',
+        'foto1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+    ], [
+        'bantuanteknis_id.required' => 'bantuanteknis_id wajib diisi.',
+        'kegiatan.required' => 'Nama Kegiatan wajib diisi.',
+        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
+        'foto1.required' => 'Foto Dokumentasi 1 wajib diunggah.',
+        'foto1.image' => 'Foto Dokumentasi 1 harus berupa file gambar.',
+        'foto1.mimes' => 'Foto Dokumentasi 1 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto1.max' => 'Ukuran foto Dokumentasi 1 maksimal 7MB.',
+        'foto2.image' => 'Foto Dokumentasi 2 harus berupa file gambar.',
+        'foto2.mimes' => 'Foto Dokumentasi 2 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto2.max' => 'Ukuran foto Dokumentasi 2 maksimal 7MB.',
+        'foto3.image' => 'Foto Dokumentasi 3 harus berupa file gambar.',
+        'foto3.mimes' => 'Foto Dokumentasi 3 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto3.max' => 'Ukuran foto Dokumentasi 3 maksimal 7MB.',
+        'foto4.image' => 'Foto Dokumentasi 4 harus berupa file gambar.',
+        'foto4.mimes' => 'Foto Dokumentasi 4 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto4.max' => 'Ukuran foto Dokumentasi 4 maksimal 7MB.',
+        'foto5.image' => 'Foto Dokumentasi 5 harus berupa file gambar.',
+        'foto5.mimes' => 'Foto Dokumentasi 5 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto5.max' => 'Ukuran foto Dokumentasi 5 maksimal 7MB.',
+        'foto6.image' => 'Foto Dokumentasi 6 harus berupa file gambar.',
+        'foto6.mimes' => 'Foto Dokumentasi 6 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto6.max' => 'Ukuran foto Dokumentasi 6 maksimal 7MB.',
+    ]);
+
+    $data = new ceklapanganbantek();
+
+    $data->bantuanteknis_id = $validated['bantuanteknis_id'] ?? null;
+    $data->kegiatan = $validated['kegiatan'] ?? null;
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'] ?? null;
+
+    // Upload foto1 sampai foto6 jika ada
+    if ($request->hasFile('foto1')) {
+        $file = $request->file('foto1');
+        $filename = time() . '_foto1.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/01_ceklapangan'), $filename);
+        $data->foto1 = '04_bantuanteknis/01_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto2')) {
+        $file = $request->file('foto2');
+        $filename = time() . '_foto2.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/02_ceklapangan'), $filename);
+        $data->foto2 = '04_bantuanteknis/02_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto3')) {
+        $file = $request->file('foto3');
+        $filename = time() . '_foto3.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/03_ceklapangan'), $filename);
+        $data->foto3 = '04_bantuanteknis/03_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto4')) {
+        $file = $request->file('foto4');
+        $filename = time() . '_foto4.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/04_ceklapangan'), $filename);
+        $data->foto4 = '04_bantuanteknis/04_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto5')) {
+        $file = $request->file('foto5');
+        $filename = time() . '_foto5.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/05_ceklapangan'), $filename);
+        $data->foto5 = '04_bantuanteknis/05_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto6')) {
+        $file = $request->file('foto6');
+        $filename = time() . '_foto6.' . $file->getClientOriginalExtension();
+        $file->move(public_path('06_bantuanteknis/06_ceklapangan'), $filename);
+        $data->foto6 = '06_bantuanteknis/06_ceklapangan/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('create', 'Dokumentasi Berhasil Di Buat !');
+
+    // *** PENTING ***
+    // Variabel $id harus kamu ambil dari request atau dari $validated['bantuanteknis_id']
+    // supaya redirect ke route berikut ini bisa benar
+    $id = $validated['bantuanteknis_id']; // <--- *** ID INI BERWARNA MERAH ***
+
+    return redirect()->route('bebanteklapper4.show', ['id' => $id]);
+}
+
+
+
+public function bebanteklapper4delete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = ceklapanganbantek::where('id', $id)->first();
+
+    if ($entry) {
+        // Simpan dulu lapangan_id sebelum entri dihapus
+        $lapanganId = $entry->bantuanteknis_id;
+
+        // Hapus file jika ada (aktifkan jika memang simpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect ke halaman detail lapangan terkait
+        return redirect()->route('bebanteklapper4.show', ['id' => $lapanganId])
+                         ->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
+// BERKAS CEK LAPANGAN PERMOHONAN KE 5 FULL PAKET
+
+public function bebanteklapper5($id)
+{
+    $databantuanteknis = bantuanteknis::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.12_berkasceklap', [
+        'title' => 'Dokumentasi Cek Lapangan Permohonan Bantuan Teknis Perhitungan Pemeliharaan Bangunan Gedung Negara ',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebanteklapper5create($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.00_createdok.05_ceklapangan', [
+        'title' => 'Form Dokumentasi Cek Lapangan Bantuan Teknis Perhitungan Pemeliharaan Bangunan Gedung Negara',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+public function bebanteklapper5createnew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'bantuanteknis_id' => 'required|string',
+        'kegiatan' => 'required|string',
+        'tanggalkegiatan' => 'required|date',
+        'foto1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+    ], [
+        'bantuanteknis_id.required' => 'bantuanteknis_id wajib diisi.',
+        'kegiatan.required' => 'Nama Kegiatan wajib diisi.',
+        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
+        'foto1.required' => 'Foto Dokumentasi 1 wajib diunggah.',
+        'foto1.image' => 'Foto Dokumentasi 1 harus berupa file gambar.',
+        'foto1.mimes' => 'Foto Dokumentasi 1 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto1.max' => 'Ukuran foto Dokumentasi 1 maksimal 7MB.',
+        'foto2.image' => 'Foto Dokumentasi 2 harus berupa file gambar.',
+        'foto2.mimes' => 'Foto Dokumentasi 2 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto2.max' => 'Ukuran foto Dokumentasi 2 maksimal 7MB.',
+        'foto3.image' => 'Foto Dokumentasi 3 harus berupa file gambar.',
+        'foto3.mimes' => 'Foto Dokumentasi 3 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto3.max' => 'Ukuran foto Dokumentasi 3 maksimal 7MB.',
+        'foto4.image' => 'Foto Dokumentasi 4 harus berupa file gambar.',
+        'foto4.mimes' => 'Foto Dokumentasi 4 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto4.max' => 'Ukuran foto Dokumentasi 4 maksimal 7MB.',
+        'foto5.image' => 'Foto Dokumentasi 5 harus berupa file gambar.',
+        'foto5.mimes' => 'Foto Dokumentasi 5 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto5.max' => 'Ukuran foto Dokumentasi 5 maksimal 7MB.',
+        'foto6.image' => 'Foto Dokumentasi 6 harus berupa file gambar.',
+        'foto6.mimes' => 'Foto Dokumentasi 6 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto6.max' => 'Ukuran foto Dokumentasi 6 maksimal 7MB.',
+    ]);
+
+    $data = new ceklapanganbantek();
+
+    $data->bantuanteknis_id = $validated['bantuanteknis_id'] ?? null;
+    $data->kegiatan = $validated['kegiatan'] ?? null;
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'] ?? null;
+
+    // Upload foto1 sampai foto6 jika ada
+    if ($request->hasFile('foto1')) {
+        $file = $request->file('foto1');
+        $filename = time() . '_foto1.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/01_ceklapangan'), $filename);
+        $data->foto1 = '04_bantuanteknis/01_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto2')) {
+        $file = $request->file('foto2');
+        $filename = time() . '_foto2.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/02_ceklapangan'), $filename);
+        $data->foto2 = '04_bantuanteknis/02_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto3')) {
+        $file = $request->file('foto3');
+        $filename = time() . '_foto3.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/03_ceklapangan'), $filename);
+        $data->foto3 = '04_bantuanteknis/03_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto4')) {
+        $file = $request->file('foto4');
+        $filename = time() . '_foto4.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/04_ceklapangan'), $filename);
+        $data->foto4 = '04_bantuanteknis/04_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto5')) {
+        $file = $request->file('foto5');
+        $filename = time() . '_foto5.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/05_ceklapangan'), $filename);
+        $data->foto5 = '04_bantuanteknis/05_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto6')) {
+        $file = $request->file('foto6');
+        $filename = time() . '_foto6.' . $file->getClientOriginalExtension();
+        $file->move(public_path('06_bantuanteknis/06_ceklapangan'), $filename);
+        $data->foto6 = '06_bantuanteknis/06_ceklapangan/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('create', 'Dokumentasi Berhasil Di Buat !');
+
+    // *** PENTING ***
+    // Variabel $id harus kamu ambil dari request atau dari $validated['bantuanteknis_id']
+    // supaya redirect ke route berikut ini bisa benar
+    $id = $validated['bantuanteknis_id']; // <--- *** ID INI BERWARNA MERAH ***
+
+    return redirect()->route('bebanteklapper5.show', ['id' => $id]);
+}
+
+
+
+public function bebanteklapper5delete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = ceklapanganbantek::where('id', $id)->first();
+
+    if ($entry) {
+        // Simpan dulu lapangan_id sebelum entri dihapus
+        $lapanganId = $entry->bantuanteknis_id;
+
+        // Hapus file jika ada (aktifkan jika memang simpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect ke halaman detail lapangan terkait
+        return redirect()->route('bebanteklapper5.show', ['id' => $lapanganId])
+                         ->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
+// BERKAS CEK LAPANGAN PERMOHONAN KE 6 FULL PAKET
+
+public function bebanteklapper6($id)
+{
+    $databantuanteknis = bantuanteknis::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.13_berkasceklap', [
+        'title' => 'Dokumentasi Cek Lapangan Permohonan Bantuan Teknis Perhitungan Konstruksi Pembangunan Bangunan Gedung Negara ',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebanteklapper6create($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.00_createdok.06_ceklapangan', [
+        'title' => 'Form Dokumentasi Cek Lapangan Bantuan Teknis Perhitungan Konstruksi Bangunan Gedung Negara',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+public function bebanteklapper6createnew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'bantuanteknis_id' => 'required|string',
+        'kegiatan' => 'required|string',
+        'tanggalkegiatan' => 'required|date',
+        'foto1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+    ], [
+        'bantuanteknis_id.required' => 'bantuanteknis_id wajib diisi.',
+        'kegiatan.required' => 'Nama Kegiatan wajib diisi.',
+        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
+        'foto1.required' => 'Foto Dokumentasi 1 wajib diunggah.',
+        'foto1.image' => 'Foto Dokumentasi 1 harus berupa file gambar.',
+        'foto1.mimes' => 'Foto Dokumentasi 1 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto1.max' => 'Ukuran foto Dokumentasi 1 maksimal 7MB.',
+        'foto2.image' => 'Foto Dokumentasi 2 harus berupa file gambar.',
+        'foto2.mimes' => 'Foto Dokumentasi 2 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto2.max' => 'Ukuran foto Dokumentasi 2 maksimal 7MB.',
+        'foto3.image' => 'Foto Dokumentasi 3 harus berupa file gambar.',
+        'foto3.mimes' => 'Foto Dokumentasi 3 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto3.max' => 'Ukuran foto Dokumentasi 3 maksimal 7MB.',
+        'foto4.image' => 'Foto Dokumentasi 4 harus berupa file gambar.',
+        'foto4.mimes' => 'Foto Dokumentasi 4 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto4.max' => 'Ukuran foto Dokumentasi 4 maksimal 7MB.',
+        'foto5.image' => 'Foto Dokumentasi 5 harus berupa file gambar.',
+        'foto5.mimes' => 'Foto Dokumentasi 5 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto5.max' => 'Ukuran foto Dokumentasi 5 maksimal 7MB.',
+        'foto6.image' => 'Foto Dokumentasi 6 harus berupa file gambar.',
+        'foto6.mimes' => 'Foto Dokumentasi 6 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto6.max' => 'Ukuran foto Dokumentasi 6 maksimal 7MB.',
+    ]);
+
+    $data = new ceklapanganbantek();
+
+    $data->bantuanteknis_id = $validated['bantuanteknis_id'] ?? null;
+    $data->kegiatan = $validated['kegiatan'] ?? null;
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'] ?? null;
+
+    // Upload foto1 sampai foto6 jika ada
+    if ($request->hasFile('foto1')) {
+        $file = $request->file('foto1');
+        $filename = time() . '_foto1.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/01_ceklapangan'), $filename);
+        $data->foto1 = '04_bantuanteknis/01_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto2')) {
+        $file = $request->file('foto2');
+        $filename = time() . '_foto2.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/02_ceklapangan'), $filename);
+        $data->foto2 = '04_bantuanteknis/02_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto3')) {
+        $file = $request->file('foto3');
+        $filename = time() . '_foto3.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/03_ceklapangan'), $filename);
+        $data->foto3 = '04_bantuanteknis/03_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto4')) {
+        $file = $request->file('foto4');
+        $filename = time() . '_foto4.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/04_ceklapangan'), $filename);
+        $data->foto4 = '04_bantuanteknis/04_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto5')) {
+        $file = $request->file('foto5');
+        $filename = time() . '_foto5.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/05_ceklapangan'), $filename);
+        $data->foto5 = '04_bantuanteknis/05_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto6')) {
+        $file = $request->file('foto6');
+        $filename = time() . '_foto6.' . $file->getClientOriginalExtension();
+        $file->move(public_path('06_bantuanteknis/06_ceklapangan'), $filename);
+        $data->foto6 = '06_bantuanteknis/06_ceklapangan/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('create', 'Dokumentasi Berhasil Di Buat !');
+
+    // *** PENTING ***
+    // Variabel $id harus kamu ambil dari request atau dari $validated['bantuanteknis_id']
+    // supaya redirect ke route berikut ini bisa benar
+    $id = $validated['bantuanteknis_id']; // <--- *** ID INI BERWARNA MERAH ***
+
+    return redirect()->route('bebanteklapper6.show', ['id' => $id]);
+}
+
+
+
+public function bebanteklapper6delete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = ceklapanganbantek::where('id', $id)->first();
+
+    if ($entry) {
+        // Simpan dulu lapangan_id sebelum entri dihapus
+        $lapanganId = $entry->bantuanteknis_id;
+
+        // Hapus file jika ada (aktifkan jika memang simpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect ke halaman detail lapangan terkait
+        return redirect()->route('bebanteklapper6.show', ['id' => $lapanganId])
+                         ->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
+
+// BERKAS CEK LAPANGAN PERMOHONAN KE 7 FULL PAKET
+
+public function bebanteklapper7($id)
+{
+    $databantuanteknis = bantuanteknis::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.14_berkasceklap', [
+        'title' => 'Dokumentasi Cek Lapangan Permohonan Bantuan Teknis Pendampingan Serah Terima Bangunan Gedung Negara ',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebanteklapper7create($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.00_createdok.07_ceklapangan', [
+        'title' => 'Form Dokumentasi Cek Lapangan Bantuan Teknis Pendampingan Serah Terima Bangunan Gedung Negara',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+public function bebanteklapper7createnew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'bantuanteknis_id' => 'required|string',
+        'kegiatan' => 'required|string',
+        'tanggalkegiatan' => 'required|date',
+        'foto1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+    ], [
+        'bantuanteknis_id.required' => 'bantuanteknis_id wajib diisi.',
+        'kegiatan.required' => 'Nama Kegiatan wajib diisi.',
+        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
+        'foto1.required' => 'Foto Dokumentasi 1 wajib diunggah.',
+        'foto1.image' => 'Foto Dokumentasi 1 harus berupa file gambar.',
+        'foto1.mimes' => 'Foto Dokumentasi 1 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto1.max' => 'Ukuran foto Dokumentasi 1 maksimal 7MB.',
+        'foto2.image' => 'Foto Dokumentasi 2 harus berupa file gambar.',
+        'foto2.mimes' => 'Foto Dokumentasi 2 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto2.max' => 'Ukuran foto Dokumentasi 2 maksimal 7MB.',
+        'foto3.image' => 'Foto Dokumentasi 3 harus berupa file gambar.',
+        'foto3.mimes' => 'Foto Dokumentasi 3 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto3.max' => 'Ukuran foto Dokumentasi 3 maksimal 7MB.',
+        'foto4.image' => 'Foto Dokumentasi 4 harus berupa file gambar.',
+        'foto4.mimes' => 'Foto Dokumentasi 4 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto4.max' => 'Ukuran foto Dokumentasi 4 maksimal 7MB.',
+        'foto5.image' => 'Foto Dokumentasi 5 harus berupa file gambar.',
+        'foto5.mimes' => 'Foto Dokumentasi 5 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto5.max' => 'Ukuran foto Dokumentasi 5 maksimal 7MB.',
+        'foto6.image' => 'Foto Dokumentasi 6 harus berupa file gambar.',
+        'foto6.mimes' => 'Foto Dokumentasi 6 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto6.max' => 'Ukuran foto Dokumentasi 6 maksimal 7MB.',
+    ]);
+
+    $data = new ceklapanganbantek();
+
+    $data->bantuanteknis_id = $validated['bantuanteknis_id'] ?? null;
+    $data->kegiatan = $validated['kegiatan'] ?? null;
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'] ?? null;
+
+    // Upload foto1 sampai foto6 jika ada
+    if ($request->hasFile('foto1')) {
+        $file = $request->file('foto1');
+        $filename = time() . '_foto1.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/01_ceklapangan'), $filename);
+        $data->foto1 = '04_bantuanteknis/01_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto2')) {
+        $file = $request->file('foto2');
+        $filename = time() . '_foto2.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/02_ceklapangan'), $filename);
+        $data->foto2 = '04_bantuanteknis/02_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto3')) {
+        $file = $request->file('foto3');
+        $filename = time() . '_foto3.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/03_ceklapangan'), $filename);
+        $data->foto3 = '04_bantuanteknis/03_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto4')) {
+        $file = $request->file('foto4');
+        $filename = time() . '_foto4.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/04_ceklapangan'), $filename);
+        $data->foto4 = '04_bantuanteknis/04_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto5')) {
+        $file = $request->file('foto5');
+        $filename = time() . '_foto5.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/05_ceklapangan'), $filename);
+        $data->foto5 = '04_bantuanteknis/05_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto6')) {
+        $file = $request->file('foto6');
+        $filename = time() . '_foto6.' . $file->getClientOriginalExtension();
+        $file->move(public_path('06_bantuanteknis/06_ceklapangan'), $filename);
+        $data->foto6 = '06_bantuanteknis/06_ceklapangan/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('create', 'Dokumentasi Berhasil Di Buat !');
+
+    // *** PENTING ***
+    // Variabel $id harus kamu ambil dari request atau dari $validated['bantuanteknis_id']
+    // supaya redirect ke route berikut ini bisa benar
+    $id = $validated['bantuanteknis_id']; // <--- *** ID INI BERWARNA MERAH ***
+
+    return redirect()->route('bebanteklapper7.show', ['id' => $id]);
+}
+
+
+
+public function bebanteklapper7delete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = ceklapanganbantek::where('id', $id)->first();
+
+    if ($entry) {
+        // Simpan dulu lapangan_id sebelum entri dihapus
+        $lapanganId = $entry->bantuanteknis_id;
+
+        // Hapus file jika ada (aktifkan jika memang simpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect ke halaman detail lapangan terkait
+        return redirect()->route('bebanteklapper7.show', ['id' => $lapanganId])
+                         ->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+// BERKAS CEK LAPANGAN PERMOHONAN KE 8 FULL PAKET
+
+public function bebanteklapper8($id)
+{
+    $databantuanteknis = bantuanteknis::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = ceklapanganbantek::where('bantuanteknis_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.04_bantuanteknis.01_berkaspemohon.15_berkasceklap', [
+        'title' => 'Dokumentasi Cek Lapangan Permohonan Bantuan Teknis Permintaan Personil Tim Teknis ',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebanteklapper8create($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.02_createdata.00_createdok.08_ceklapangan', [
+        'title' => 'Form Dokumentasi Cek Lapangan Bantuan Teknis Permintaan Personil Tim Teknis',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+public function bebanteklapper8createnew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'bantuanteknis_id' => 'required|string',
+        'kegiatan' => 'required|string',
+        'tanggalkegiatan' => 'required|date',
+        'foto1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+        'foto6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+    ], [
+        'bantuanteknis_id.required' => 'bantuanteknis_id wajib diisi.',
+        'kegiatan.required' => 'Nama Kegiatan wajib diisi.',
+        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
+        'foto1.required' => 'Foto Dokumentasi 1 wajib diunggah.',
+        'foto1.image' => 'Foto Dokumentasi 1 harus berupa file gambar.',
+        'foto1.mimes' => 'Foto Dokumentasi 1 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto1.max' => 'Ukuran foto Dokumentasi 1 maksimal 7MB.',
+        'foto2.image' => 'Foto Dokumentasi 2 harus berupa file gambar.',
+        'foto2.mimes' => 'Foto Dokumentasi 2 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto2.max' => 'Ukuran foto Dokumentasi 2 maksimal 7MB.',
+        'foto3.image' => 'Foto Dokumentasi 3 harus berupa file gambar.',
+        'foto3.mimes' => 'Foto Dokumentasi 3 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto3.max' => 'Ukuran foto Dokumentasi 3 maksimal 7MB.',
+        'foto4.image' => 'Foto Dokumentasi 4 harus berupa file gambar.',
+        'foto4.mimes' => 'Foto Dokumentasi 4 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto4.max' => 'Ukuran foto Dokumentasi 4 maksimal 7MB.',
+        'foto5.image' => 'Foto Dokumentasi 5 harus berupa file gambar.',
+        'foto5.mimes' => 'Foto Dokumentasi 5 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto5.max' => 'Ukuran foto Dokumentasi 5 maksimal 7MB.',
+        'foto6.image' => 'Foto Dokumentasi 6 harus berupa file gambar.',
+        'foto6.mimes' => 'Foto Dokumentasi 6 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto6.max' => 'Ukuran foto Dokumentasi 6 maksimal 7MB.',
+    ]);
+
+    $data = new ceklapanganbantek();
+
+    $data->bantuanteknis_id = $validated['bantuanteknis_id'] ?? null;
+    $data->kegiatan = $validated['kegiatan'] ?? null;
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'] ?? null;
+
+    // Upload foto1 sampai foto6 jika ada
+    if ($request->hasFile('foto1')) {
+        $file = $request->file('foto1');
+        $filename = time() . '_foto1.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/01_ceklapangan'), $filename);
+        $data->foto1 = '04_bantuanteknis/01_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto2')) {
+        $file = $request->file('foto2');
+        $filename = time() . '_foto2.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/02_ceklapangan'), $filename);
+        $data->foto2 = '04_bantuanteknis/02_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto3')) {
+        $file = $request->file('foto3');
+        $filename = time() . '_foto3.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/03_ceklapangan'), $filename);
+        $data->foto3 = '04_bantuanteknis/03_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto4')) {
+        $file = $request->file('foto4');
+        $filename = time() . '_foto4.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/04_ceklapangan'), $filename);
+        $data->foto4 = '04_bantuanteknis/04_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto5')) {
+        $file = $request->file('foto5');
+        $filename = time() . '_foto5.' . $file->getClientOriginalExtension();
+        $file->move(public_path('04_bantuanteknis/05_ceklapangan'), $filename);
+        $data->foto5 = '04_bantuanteknis/05_ceklapangan/' . $filename;
+    }
+
+    if ($request->hasFile('foto6')) {
+        $file = $request->file('foto6');
+        $filename = time() . '_foto6.' . $file->getClientOriginalExtension();
+        $file->move(public_path('06_bantuanteknis/06_ceklapangan'), $filename);
+        $data->foto6 = '06_bantuanteknis/06_ceklapangan/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('create', 'Dokumentasi Berhasil Di Buat !');
+
+    // *** PENTING ***
+    // Variabel $id harus kamu ambil dari request atau dari $validated['bantuanteknis_id']
+    // supaya redirect ke route berikut ini bisa benar
+    $id = $validated['bantuanteknis_id']; // <--- *** ID INI BERWARNA MERAH ***
+
+    return redirect()->route('bebanteklapper8.show', ['id' => $id]);
+}
+
+
+
+public function bebanteklapper8delete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = ceklapanganbantek::where('id', $id)->first();
+
+    if ($entry) {
+        // Simpan dulu lapangan_id sebelum entri dihapus
+        $lapanganId = $entry->bantuanteknis_id;
+
+        // Hapus file jika ada (aktifkan jika memang simpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect ke halaman detail lapangan terkait
+        return redirect()->route('bebanteklapper8.show', ['id' => $lapanganId])
+                         ->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
+
 
 
 }

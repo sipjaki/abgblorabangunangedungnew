@@ -432,7 +432,7 @@ th {
 
 
   <td style="text-align: center;">
-                <a href="{{ route('bebantuanteknislapa.show', $item->id) }}"
+                <a href="{{ route('bebanteklapper8.show', $item->id) }}"
                     class="button-kembali"
                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -705,7 +705,7 @@ th {
 
 
   <td style="text-align: center;">
-                <a href="{{ route('bebantuanteknislapangan.uploadberkasnew', $item->id) }}"
+                <a href="{{ route('bebantek8.uploadberkasnew8', $item->id) }}"
                     class="button-kembali"
                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"

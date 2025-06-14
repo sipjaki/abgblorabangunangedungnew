@@ -154,11 +154,9 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-kembali" type="button"
-    onclick="location.href='{{ url()->previous() }}';"
-    style="cursor: pointer; margin-left:10px; color:black;">
+<a href="{{ url()->previous() }}" class="button-kembali" style="cursor: pointer; margin-left:10px; color:black; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-</button>
+</a>
 
 
                                 <!-- Tombol Create -->
