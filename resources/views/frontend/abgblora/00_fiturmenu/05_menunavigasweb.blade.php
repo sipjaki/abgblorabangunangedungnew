@@ -174,8 +174,9 @@
 
         @auth
         <div class="profile">
-          <p>Hi, {{ Auth::user()->name }}</p>
-          <div class="profile-pic">
+  <p>Hi, {{ substr(Auth::user()->name, 0, 10) }}..</p>
+
+        <div class="profile-pic">
             {{-- <img src="{{assets item->avatar}}" alt="Profile Photo" /> --}}
             <img src="{{ asset($item->avatar ?? 'assets/abgblora/logo/iconabgblora.png') }}" alt="Profile Photo" />
         </div>
@@ -184,7 +185,8 @@
 
         <!-- Kanan: Tombol Login & Daftar -->
         <div class="auth-buttons" style="display: flex; gap: 20px; margin-right: 50px;">
-          <a href="/register">
+
+            <a href="/register">
             <img src="/assets/abgblora/logo/register.png" alt="Register Icon" width="16" height="16" />
             Daftar
           </a>
@@ -199,11 +201,11 @@
 @auth
     <form action="{{ url('/logout') }}" method="POST" style="display: inline;">
         @csrf
-        <button type="submit"  style="display: flex; align-items: center; gap: 6px; font-size: 16px;">
-            {{-- <img src="/assets/abgblora/logo/login.png" alt="Logout Icon" width="16" height="16"
-                style="filter: brightness(0) saturate(100%) invert(24%) sepia(87%) saturate(7465%) hue-rotate(357deg) brightness(89%) contrast(119%);" /> --}}
-            <span style="color: red:">Logout</span>
-        </button>
+    <button type="submit" style="display: flex; align-items: center; gap: 6px; font-size: 16px; background: none; border: none; cursor: pointer;">
+    <img src="/assets/abgblora/logo/login.png" alt="Logout Icon" width="16" height="16" />
+    <span style="color: red;">Logout</span>
+</button>
+
     </form>
 @endauth
 
@@ -319,7 +321,7 @@
     <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Bantek</a>
     <ul class="dropdown-menu" style="width: 300px;">
       <li style="font-size: 14px;">
-        <a href="#" style="display: flex; align-items: center;">
+        <a href="/infobantek" style="display: flex; align-items: center;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">
             <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5.414a2 2 0 0 0-.586-1.414L10.414.586A2 2 0 0 0 9 0H4zm5 1.5V5a1 1 0 0 0 1 1h3.5L9 1.5z"/>
           </svg>

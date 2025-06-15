@@ -5685,5 +5685,243 @@ public function bebantekkonsultandataakun(Request $request)
     ]);
 }
 
+// informasi bantuan teknis
+
+public function infobantek()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.04_bantuanteknis.02_informasibantek', [
+        'title' => 'Informasi Bantuan Teknis Penyelenggaran Bangunan Gedung Negara',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
+}
+
+public function infobanteklampiran()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.04_bantuanteknis.03_informasibantek', [
+        'title' => 'Informasi Bantuan Teknis Penyelenggaran Bangunan Gedung Negara',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
+}
+
+public function infobantekpetunjuk()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.04_bantuanteknis.04_informasibantek', [
+        'title' => 'Informasi Bantuan Teknis Penyelenggaran Bangunan Gedung Negara',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
+}
+
+public function infobantekasistensi()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.04_bantuanteknis.05_informasibantek', [
+        'title' => 'Informasi Bantuan Teknis Penyelenggaran Bangunan Gedung Negara',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
+}
+
+public function infobantekpeneliti()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.04_bantuanteknis.06_informasibantek', [
+        'title' => 'Informasi Bantuan Teknis Penyelenggaran Bangunan Gedung Negara',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
+}
+
+public function infobantekperhitungan()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.04_bantuanteknis.07_informasibantek', [
+        'title' => 'Informasi Bantuan Teknis Penyelenggaran Bangunan Gedung Negara',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
+}
+
+
+public function infobantekpemeliharaan()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.04_bantuanteknis.08_informasibantek', [
+        'title' => 'Informasi Bantuan Teknis Penyelenggaran Bangunan Gedung Negara',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
+}
+
+
+public function infobantekpendampingan()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.04_bantuanteknis.09_informasibantek', [
+        'title' => 'Informasi Bantuan Teknis Penyelenggaran Bangunan Gedung Negara',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
+}
+
+public function infobantektimteknis()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.04_bantuanteknis.10_informasibantek', [
+        'title' => 'Informasi Bantuan Teknis Penyelenggaran Bangunan Gedung Negara',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
+}
+
 
 }
