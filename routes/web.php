@@ -388,15 +388,15 @@ Route::get('/bahan2', function () {
 Route::get('/febantuanteknis', [BantuanteknisController::class, 'index'])->middleware('auth');
 Route::post('/febantuanteknis/create', [BantuanteknisController::class, 'febantuantekniscreatepermohonan'])->name('permohonan.bantekcreate');
 
-Route::get('/infobantek', [BantuanteknisController::class, 'infobantek'])->middleware('auth');
-Route::get('/infobanteklampiran', [BantuanteknisController::class, 'infobanteklampiran'])->middleware('auth');
-Route::get('/infobantekpetunjuk', [BantuanteknisController::class, 'infobantekpetunjuk'])->middleware('auth');
-Route::get('/infobantekasistensi', [BantuanteknisController::class, 'infobantekasistensi'])->middleware('auth');
-Route::get('/infobantekpeneliti', [BantuanteknisController::class, 'infobantekpeneliti'])->middleware('auth');
-Route::get('/infobantekperhitungan', [BantuanteknisController::class, 'infobantekperhitungan'])->middleware('auth');
-Route::get('/infobantekpemeliharaan', [BantuanteknisController::class, 'infobantekpemeliharaan'])->middleware('auth');
-Route::get('/infobantekpendampingan', [BantuanteknisController::class, 'infobantekpendampingan'])->middleware('auth');
-Route::get('/infobantektimteknis', [BantuanteknisController::class, 'infobantektimteknis'])->middleware('auth');
+Route::get('/infobantek', [BantuanteknisController::class, 'infobantek']);
+Route::get('/infobanteklampiran', [BantuanteknisController::class, 'infobanteklampiran']);
+Route::get('/infobantekpetunjuk', [BantuanteknisController::class, 'infobantekpetunjuk']);
+Route::get('/infobantekasistensi', [BantuanteknisController::class, 'infobantekasistensi']);
+Route::get('/infobantekpeneliti', [BantuanteknisController::class, 'infobantekpeneliti']);
+Route::get('/infobantekperhitungan', [BantuanteknisController::class, 'infobantekperhitungan']);
+Route::get('/infobantekpemeliharaan', [BantuanteknisController::class, 'infobantekpemeliharaan']);
+Route::get('/infobantekpendampingan', [BantuanteknisController::class, 'infobantekpendampingan']);
+Route::get('/infobantektimteknis', [BantuanteknisController::class, 'infobantektimteknis']);
 
 
 
