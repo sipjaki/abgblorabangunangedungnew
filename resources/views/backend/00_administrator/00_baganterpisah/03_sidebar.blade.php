@@ -434,7 +434,7 @@
             <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zM13 5h-3a1 1 0 0 1-1-1V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5z"/>
         </svg>
         <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
-            Data Permohonan
+            Jumlah Berkas
             <i class="bi bi-chevron-right nav-arrow"></i>
         </p>
     </a>
@@ -455,7 +455,7 @@
     <ul class="nav nav-treeview" style="margin-left: 15px;">
         <!-- Submenu: Asistensi -->
         <li class="nav-item">
-            <a href="/bebantekakundinas" class="nav-link">
+            <a href="/bebantekdinasasistensi" class="nav-link">
                 <!-- Icon Clipboard (Asistensi) -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
                     <path d="M10 1.5v1h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1h3v-1A1.5 1.5 0 0 1 7.5 0h1A1.5 1.5 0 0 1 10 1.5zM6 1.5V3h4V1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5z"/>
@@ -471,7 +471,67 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
                     <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zM9.5 0v4a1 1 0 0 0 1 1h4l-5-5z"/>
                 </svg>
-                <p style="color: white; margin-left: 8px;">Permohonan</p>
+                <p style="color: white; margin-left: 8px;">Peneliti Kontrak</p>
+            </a>
+        </li>
+        <!-- Submenu: Permohonan -->
+        <li class="nav-item">
+            <a href="/bebantekdinaspenyusutan" class="nav-link">
+                <!-- Icon File EarMark (Permohonan) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zM9.5 0v4a1 1 0 0 0 1 1h4l-5-5z"/>
+                </svg>
+                <p style="color: white; margin-left: 8px;">Penyusutan</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/bebantekdinaskerusakan" class="nav-link">
+                <!-- Icon File EarMark (Permohonan) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zM9.5 0v4a1 1 0 0 0 1 1h4l-5-5z"/>
+                </svg>
+                <p style="color: white; margin-left: 8px;">Kerusakan</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/bebantekdinaspemeliharaan" class="nav-link">
+                <!-- Icon File EarMark (Permohonan) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zM9.5 0v4a1 1 0 0 0 1 1h4l-5-5z"/>
+                </svg>
+                <p style="color: white; margin-left: 8px;">Pemeliharaan</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/bebantekdinasperhibgn" class="nav-link">
+                <!-- Icon File EarMark (Permohonan) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zM9.5 0v4a1 1 0 0 0 1 1h4l-5-5z"/>
+                </svg>
+                <p style="color: white; margin-left: 8px;">Konstruksi BGN</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/bebantekdinasserahterima" class="nav-link">
+                <!-- Icon File EarMark (Permohonan) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zM9.5 0v4a1 1 0 0 0 1 1h4l-5-5z"/>
+                </svg>
+                <p style="color: white; margin-left: 8px;">Serah Terima </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/bebantekdinaspersonil" class="nav-link">
+                <!-- Icon File EarMark (Permohonan) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zM9.5 0v4a1 1 0 0 0 1 1h4l-5-5z"/>
+                </svg>
+                <p style="color: white; margin-left: 8px;">Personil Teknis </p>
             </a>
         </li>
     </ul>

@@ -200,7 +200,7 @@ th {
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/bebantekpemohondinas?search=${input}`)
+                            fetch(`/bebantekakundinasberkas?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -308,7 +308,8 @@ th {
     </tr>
                             </thead>
                               <tbody id="tableBody">
-                                @foreach ($data as $item )
+
+                                @forelse ($data as $item)
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
@@ -349,19 +350,23 @@ th {
 
 
   <td style="text-align: center;">
-                <a href="{{ route('bebantuanteknislapangan.show', $item->id) }}"
+    <div style="display: flex; justify-content: center;">
+
+                <a href="{{ route('bebantuanteknislapa.show', $item->id) }}"
                     class="button-kembali"
                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
                 </a>
+                </div>
             </td>
 
 
 
 
 <td style="text-align: center;">
+    <div style="display: flex; justify-content: center;">
     <button type="button"
         class="button-kembali"
         data-bs-toggle="modal"
@@ -371,6 +376,7 @@ th {
         onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
         <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Berkas
     </button>
+    </div>
 </td>
 
 <!-- Modal -->
@@ -438,7 +444,44 @@ th {
                                     @endcan
 
                                 </tr>
-                                @endforeach
+
+
+                                @empty
+  <tr>
+    <td colspan="100" class="text-center p-0" style="border: none;">
+        <div style="
+            background: linear-gradient(-45deg, #ff4d4d, #ffffff, #ff4d4d);
+            background-size: 400% 400%;
+            animation: gradientMove 5s ease infinite;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            color: #a80000;
+            font-weight: bold;
+        ">
+            <div style="font-size: 1.2rem; margin-bottom: 10px;">
+                Data Tidak Di Temukan!
+            </div>
+
+        </div>
+    </td>
+</tr>
+
+<style>
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+</style>
+                                @endforelse
+
                             </tbody>
                         </table>
 

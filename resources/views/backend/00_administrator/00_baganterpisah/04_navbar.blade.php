@@ -31,9 +31,20 @@
     color: #000 !important;
   }
 </style>
+<style>
+@media (max-width: 767.98px) {
+  .bungkushilang {
+    display: none !important;
+  }
+}
+</style>
 
+{{-- <div class="bungkushilang"> --}}
 <!-- 1. PBG.SLF -->
-<li class="nav-item">
+
+@can('superadmin')
+
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-building-check"></i>
@@ -43,7 +54,7 @@
 </li>
 
 <!-- 2. Tracking -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-geo-alt"></i>
@@ -53,7 +64,7 @@
 </li>
 
 <!-- 3. Pendataan -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-card-list"></i>
@@ -63,7 +74,7 @@
 </li>
 
 <!-- 4. Bantek -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-tools"></i>
@@ -73,7 +84,7 @@
 </li>
 
 <!-- 5. Sosialisasi -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-megaphone"></i>
@@ -83,7 +94,7 @@
 </li>
 
 <!-- 6. KRK -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-map"></i>
@@ -93,7 +104,7 @@
 </li>
 
 <!-- 7. Penilik -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-person-check"></i>
@@ -103,7 +114,7 @@
 </li>
 
 <!-- 8. MBR Gambar -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-house-heart"></i>
@@ -113,7 +124,7 @@
 </li>
 
 <!-- 9. Bantuan Gambar -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-file-earmark-image"></i>
@@ -123,7 +134,7 @@
 </li>
 
 <!-- 10. Hibah Bangunan -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-bank"></i>
@@ -133,7 +144,7 @@
 </li>
 
 <!-- 11. Akun -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-person-circle"></i>
@@ -143,7 +154,7 @@
 </li>
 
 <!-- 12. Database -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-hdd-stack"></i>
@@ -153,7 +164,7 @@
 </li>
 
 <!-- 13. Statistik -->
-<li class="nav-item">
+<li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
     <span class="nav-icon-wrapper">
       <i class="bi bi-bar-chart-line"></i>
@@ -162,6 +173,9 @@
   </a>
 </li>
 
+@endcan
+
+{{-- </div> --}}
             {{-- <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Home</a></li>
             <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Contact</a></li> --}}
           </ul>

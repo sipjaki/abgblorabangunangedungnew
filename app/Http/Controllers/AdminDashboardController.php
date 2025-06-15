@@ -43,6 +43,48 @@ class AdminDashboardController extends Controller
         })->count();
     }
 
+    $datajumlahdinas_dikembalikan = [];
+
+for ($i = 1; $i <= 9; $i++) {
+    $datajumlahdinas_dikembalikan['jumlahdatadinas_dikembalikan' . $i] = bantuanteknis::where('validasiberkas1', 'dikembalikan')
+        ->whereHas('dinas.statusadmin', function ($query) {
+            $query->where('id', 6);
+        })->whereHas('jenispengajuanbantek', function ($query) use ($i) {
+            $query->where('id', $i);
+        })->whereHas('dinas', function ($query) use ($user) {
+            $query->where('id', $user->id);
+        })->count();
+}
+
+    $datajumlahdinas_selesai = [];
+
+for ($i = 1; $i <= 9; $i++) {
+    $datajumlahdinas_selesai['jumlahdatadinas_selesai' . $i] = bantuanteknis::where('validasiberkas3', 'sudah')
+        ->whereHas('dinas.statusadmin', function ($query) {
+            $query->where('id', 6);
+        })->whereHas('jenispengajuanbantek', function ($query) use ($i) {
+            $query->where('id', $i);
+        })->whereHas('dinas', function ($query) use ($user) {
+            $query->where('id', $user->id);
+        })->count();
+}
+
+$datajumlahdinas_terbit = [];
+
+for ($i = 1; $i <= 9; $i++) {
+    $datajumlahdinas_terbit['jumlahdatadinas_terbit' . $i] = bantuanteknis::where('validasiberkas4', 'sudah')
+        ->whereHas('dinas.statusadmin', function ($query) {
+            $query->where('id', 6);
+        })->whereHas('jenispengajuanbantek', function ($query) use ($i) {
+            $query->where('id', $i);
+        })->whereHas('dinas', function ($query) use ($user) {
+            $query->where('id', $user->id);
+        })->count();
+}
+
+
+
+
     $jumlahdataasistensi = [];
 
     for ($i = 1; $i <= 9; $i++) {
@@ -61,7 +103,12 @@ class AdminDashboardController extends Controller
     ],
     $jumlahdatadinas,
     $jumlahdataasistensi,
-    $jumlahdata,));
+    $jumlahdata,
+    $datajumlahdinas_dikembalikan,
+    $datajumlahdinas_selesai,
+    $datajumlahdinas_terbit,
+    // $datajumlahdinasdikembalikan,
+));
 }
 
 public function dashboarddinas()

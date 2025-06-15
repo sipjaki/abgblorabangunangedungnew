@@ -153,6 +153,7 @@ Route::put('/validasidokumenbantek7/{id}', [BantuanteknisController::class, 'val
 Route::get('/beserahterimaper/{id}', [BantuanteknisController::class, 'beserahterimaper'])->middleware('auth')->name('beserahterimaper.perbaikan');
 Route::post('/beserahterimapernew/{id}', [BantuanteknisController::class, 'beserahterimapernew'])->middleware('auth')->name('beserahterimapernew');
 
+// SIGIT SURAT
 
 // DAFTAR SURAT PERMOHONAN BERKAS 8
 Route::get('/bepersontimteknis', [BantuanteknisController::class, 'bepersontimteknis'])->middleware('auth')->name('bepersontimteknisindex');
@@ -224,7 +225,6 @@ Route::put('/validasiberkas8permohonan4/{id}', [BantuanteknisController::class, 
 
 
 Route::get('/bebanteklap/{id}', [BantuanteknisController::class, 'bebanteklap'])->middleware('auth')->name('bebantuanteknislapa.show');
-// SAAT INI
 
 // UPLOAD CEK LAPANGAN KE SURAT KE 3
 Route::get('/bebanteklapper3/{id}', [BantuanteknisController::class, 'bebanteklapper3'])->middleware('auth')->name('bebanteklapper3.show');
@@ -255,6 +255,7 @@ Route::get('/bebanteklapper7/{id}', [BantuanteknisController::class, 'bebantekla
 Route::get('/bebanteklapper7create/{id}', [BantuanteknisController::class, 'bebanteklapper7create'])->middleware('auth')->name('bebanteklapper7create.create');
 Route::post('/bebanteklapper7createnew', [BantuanteknisController::class, 'bebanteklapper7createnew'])->middleware('auth')->name('create.bebanteklapper7create');
 Route::delete('/bebanteklapper7delete/{id}', [BantuanteknisController::class, 'bebanteklapper7delete'])->middleware('auth')->name('delete.bebanteklapper7delete');
+// SIGIT LAPANGAN
 
 // UPLOAD CEK LAPANGAN KE SURAT KE 8
 Route::get('/bebanteklapper8/{id}', [BantuanteknisController::class, 'bebanteklapper8'])->middleware('auth')->name('bebanteklapper8.show');
@@ -321,7 +322,17 @@ Route::get('/bebantekceklapangan/{id}', [BantuanteknisController::class, 'bebant
 // AKUN DINAS BANTUAN TEKNIS
 Route::get('/bebantekakundinas', [BantuanteknisController::class, 'bebantekakundinasistensi'])->middleware('auth')->name('bebantekakundinasindex');
 Route::get('/bebantekakunkonsultan', [BantuanteknisController::class, 'bebantekakunkonsultan'])->middleware('auth')->name('bebantekakunkonsultanindex');
+
+
+// SIGIT DINAS
+Route::get('/bebantekdinasasistensi', [BantuanteknisController::class, 'bebantekdinasasistensi'])->middleware('auth')->name('bebantekdinasasistensiindex');
 Route::get('/bebantekakundinasberkas', [BantuanteknisController::class, 'bebantekakundinasberkas'])->middleware('auth')->name('bebantekakundinasberkasindex');
+Route::get('/bebantekdinaspenyusutan', [BantuanteknisController::class, 'bebantekdinaspenyusutan'])->middleware('auth')->name('bebantekdinaspenyusutanindex');
+Route::get('/bebantekdinaskerusakan', [BantuanteknisController::class, 'bebantekdinaskerusakan'])->middleware('auth')->name('bebantekdinaskerusakanindex');
+Route::get('/bebantekdinaspemeliharaan', [BantuanteknisController::class, 'bebantekdinaspemeliharaan'])->middleware('auth')->name('bebantekdinaspemeliharaanindex');
+Route::get('/bebantekdinasperhibgn', [BantuanteknisController::class, 'bebantekdinasperhibgn'])->middleware('auth')->name('bebantekdinasperhibgnindex');
+Route::get('/bebantekdinasserahterima', [BantuanteknisController::class, 'bebantekdinasserahterima'])->middleware('auth')->name('bebantekdinasserahterimaindex');
+Route::get('/bebantekdinaspersonil', [BantuanteknisController::class, 'bebantekdinaspersonil'])->middleware('auth')->name('bebantekdinaspersonilindex');
 
 Route::get('/datapermohonandinas', [AdminDashboardController::class, 'dashboarddinas']);
 

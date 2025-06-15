@@ -77,6 +77,83 @@
 @endcan
 
 @can('dinas')
+
+<div class="container">
+
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number"> {{
+        ($jumlahdatadinas1 ?? 0) +
+        ($jumlahdatadinas2 ?? 0) +
+        ($jumlahdatadinas3 ?? 0) +
+        ($jumlahdatadinas4 ?? 0) +
+        ($jumlahdatadinas5 ?? 0) +
+        ($jumlahdatadinas6 ?? 0) +
+        ($jumlahdatadinas7 ?? 0) +
+        ($jumlahdatadinas8 ?? 0)
+    }}</div>
+            <div class="stat-label">Total Permohonan</div>
+            <div class="stat-change positive">Permohonan</div>
+        </div>
+        <div class="stat-card">
+            {{-- <div class="stat-number">{{ $datajumlahdinas_dikembalikan['jumlahdatadinas_dikembalikan1'] }}</div> --}}
+           {{-- <div class="stat-number">{{ $jumlahdatadinas_dikembalikan1 ?? 0 }}</div> --}}
+         <div class="stat-number">
+    {{
+        ($jumlahdatadinas_dikembalikan1 ?? 0) +
+        ($jumlahdatadinas_dikembalikan2 ?? 0) +
+        ($jumlahdatadinas_dikembalikan3 ?? 0) +
+        ($jumlahdatadinas_dikembalikan4 ?? 0) +
+        ($jumlahdatadinas_dikembalikan5 ?? 0) +
+        ($jumlahdatadinas_dikembalikan6 ?? 0) +
+        ($jumlahdatadinas_dikembalikan7 ?? 0) +
+        ($jumlahdatadinas_dikembalikan8 ?? 0)
+    }}
+</div>
+
+
+            <div class="stat-label">Dikembalikan</div>
+            <div class="stat-change positive">Permohonan</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">
+    {{
+        ($jumlahdatadinas_selesai1 ?? 0) +
+        ($jumlahdatadinas_selesai2 ?? 0) +
+        ($jumlahdatadinas_selesai3 ?? 0) +
+        ($jumlahdatadinas_selesai4 ?? 0) +
+        ($jumlahdatadinas_selesai5 ?? 0) +
+        ($jumlahdatadinas_selesai6 ?? 0) +
+        ($jumlahdatadinas_selesai7 ?? 0) +
+        ($jumlahdatadinas_selesai8 ?? 0)
+    }}
+</div>
+            {{-- <div class="stat-number">17</div> --}}
+            <div class="stat-label">Pengolahan Data</div>
+                <div class="stat-change positive">Permohonan Sedang Di Kaji</div>
+            </div>
+            <div class="stat-card">
+            <div class="stat-number">
+    {{
+        ($jumlahdatadinas_terbit1 ?? 0) +
+        ($jumlahdatadinas_terbit2 ?? 0) +
+        ($jumlahdatadinas_terbit3 ?? 0) +
+        ($jumlahdatadinas_terbit4 ?? 0) +
+        ($jumlahdatadinas_terbit5 ?? 0) +
+        ($jumlahdatadinas_terbit6 ?? 0) +
+        ($jumlahdatadinas_terbit7 ?? 0) +
+        ($jumlahdatadinas_terbit8 ?? 0)
+    }}
+</div>
+                {{-- <div class="stat-number">1.345</div> --}}
+                <div class="stat-label">Berkas Bantek Terbit</div>
+                <div class="stat-change positive">Surat Terbit</div>
+            </div>
+        </div>
+
+    </div>
+
 <div class="row">
     @php
         $boxes = [

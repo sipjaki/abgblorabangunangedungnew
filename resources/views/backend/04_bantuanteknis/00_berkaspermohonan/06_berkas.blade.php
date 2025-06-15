@@ -112,7 +112,7 @@ th {
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
         <button class="button-kembali"
                 type="button"
-                onclick="location.href='{{ route('bebantekakundinasberkasindex') }}';"
+                onclick="location.href='{{ route('bebantekdinasperhibgnindex') }}';"
                 style="cursor: pointer; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
