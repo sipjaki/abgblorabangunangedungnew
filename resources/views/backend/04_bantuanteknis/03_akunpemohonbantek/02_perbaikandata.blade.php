@@ -61,13 +61,21 @@ th {
 
 
    <!--begin::App Main-->
-   <main class="app-main">
+   <main class="app-main"
+   style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+  ">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
        <div class="container-fluid">
          <!--begin::Row-->
          <div class="row">
+
 @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
 
            {{-- <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div> --}}
@@ -145,12 +153,12 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-
 <button class="button-kembali" type="button"
-    onclick="window.location.href='{{ url('bebantuanteknisassistensi') }}';"
+    onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </button>
+
 
 
                                 <!-- Tombol Create -->
@@ -194,6 +202,82 @@ th {
                                     <!-- Left Column (6/12) -->
 <div class="col-md-6">
     <div class="mb-3">
+        <label class="form-label" for="luasbangunan">
+            <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Luas Bangunan (m²)
+        </label>
+        <input
+            type="number"
+            id="luasbangunan"
+            name="luasbangunan"
+            value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}"
+            class="form-control @error('luasbangunan') is-invalid @enderror"
+            placeholder="Masukkan luas bangunan dalam meter persegi"
+        />
+        @error('luasbangunan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+    <div class="mb-3">
+    <label class="form-label" for="luastanahtotal">
+        <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Luas Tanah Total (m²)
+    </label>
+    <input
+        type="number"
+        id="luastanahtotal"
+        name="luastanahtotal"
+        value="{{ old('luastanahtotal', $data->luastanahtotal ?? '') }}"
+        class="form-control @error('luastanahtotal') is-invalid @enderror"
+        placeholder="Masukkan total luas tanah dalam meter persegi"
+    />
+    @error('luastanahtotal')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+<div class="mb-3">
+    <label class="form-label" for="jumlahlantai">
+        <i class="bi bi-layers" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
+    </label>
+    <select
+        id="jumlahlantai"
+        name="jumlahlantai"
+        class="form-control @error('jumlahlantai') is-invalid @enderror"
+    >
+        <option value="">-- Pilih Jumlah Lantai --</option>
+        @for ($i = 1; $i <= 10; $i++)
+            <option value="{{ $i }}" {{ old('jumlahlantai', $data->jumlahlantai ?? '') == $i ? 'selected' : '' }}>
+                {{ $i }} Lantai
+            </option>
+        @endfor
+    </select>
+    @error('jumlahlantai')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+<div class="mb-3">
+    <label class="form-label" for="tinggibangunan">
+        <i class="bi bi-arrow-up-short" style="margin-right: 8px; color: navy;"></i> Tinggi Bangunan (meter)
+    </label>
+    <input
+        type="number"
+        id="tinggibangunan"
+        name="tinggibangunan"
+        value="{{ old('tinggibangunan', $data->tinggibangunan ?? '') }}"
+        class="form-control @error('tinggibangunan') is-invalid @enderror"
+        placeholder="Masukkan tinggi bangunan dalam meter"
+        min="1"
+        step="0.1"
+    />
+    @error('tinggibangunan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+
+</div>
+
+<div class="col-md-6">
+    <div class="mb-3">
         <label class="form-label" for="suratpermohonan">
             <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Surat Permohonan (PDF)
         </label>
@@ -226,9 +310,7 @@ th {
             Silahkan Upload Berkas Surat Permohonan
         </div>
     </div>
-</div>
 
-<div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="kic">
             <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Kartu Identitas Bangunan (PDF)
@@ -262,6 +344,11 @@ th {
             Silahkan Upload Berkas Kartu Identitas Bangunan
         </div>
     </div>
+</div>
+
+
+<div class="col-md-6">
+
 </div>
 
 <div class="col-md-6">
@@ -341,8 +428,8 @@ function previewPDF(event, previewContainerId, iframeId, messageId) {
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
                                <button class="button-create" type="button" onclick="openModal()">
-                                    <i class="bi bi-plus" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Create</span>
+                                    <i class="bi bi-save" style="margin-right: 5px;"></i>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
 
                                 </div>

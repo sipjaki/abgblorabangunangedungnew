@@ -76,6 +76,8 @@ th {
          <!--begin::Row-->
          <div class="row">
 
+@include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
+
            {{-- <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div> --}}
 
          </div>
@@ -98,7 +100,7 @@ th {
          <div class="row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
-  @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
+  {{-- @include('backend.00_administrator.00_baganterpisah.10_selamatdatang') --}}
 
 </div>
 <!-- /.card-header -->
@@ -118,6 +120,7 @@ th {
 </div>
 
 @endcanany
+
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
         <button class="button-kembali"
@@ -129,6 +132,7 @@ th {
     </div>
 
 @endcanany
+
          @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
         <button class="button-kembali"
@@ -140,11 +144,12 @@ th {
     </div>
 
 @endcanany
+
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
         <button class="button-kembali"
                 type="button"
-                onclick="location.href='{{ route('bebantuanteknisassistensi') }}';"
+                onclick="location.href='{{ route('bebantuanteknisassistensiindex') }}';"
                 style="cursor: pointer; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
@@ -904,28 +909,30 @@ th {
 
 </div>
 
-@can('pemohonbantek')
-    <hr>
 
-    @if ($data->validasiberkas1 === 'dikembalikan')
-        <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <p style="margin: 0;">
-                    Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
-                </p>
-
-                <a href="/bebantekpemohondinasperbaikan/{{$data->id}}" style="text-decoration: none;">
-                    <button class="button-abgblora">
-                        <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
-                    </button>
-                </a>
-            </div>
-        </div>
-    @endif
-
-@endcan
+@canany(['superadmin', 'dinas'])
 
 <hr>
+
+@if ($data->validasiberkas1 === 'dikembalikan')
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <p style="margin: 0;">
+            Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
+        </p>
+
+        <a href="/bebantekpemohondinasperbaikan/{{$data->id}}" style="text-decoration: none;">
+            <button class="button-abgblora">
+                <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
+            </button>
+        </a>
+    </div>
+</div>
+@endif
+
+@endcanany
+
+    <hr>
 
 <form action="{{ route('validasidokumenbantek', $data->id) }}" method="POST">
     @csrf

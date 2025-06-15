@@ -76,6 +76,8 @@ th {
          <!--begin::Row-->
          <div class="row">
 
+            @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
+
            {{-- <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div> --}}
 
          </div>
@@ -98,7 +100,6 @@ th {
          <div class="row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
-  @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
 
 </div>
 <!-- /.card-header -->
@@ -111,7 +112,7 @@ th {
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
         <button class="button-kembali"
                 type="button"
-                onclick="location.href='{{ route('bebantekpemohondinasindex') }}';"
+                onclick="location.href='{{ route('bebantekakundinasberkasindex') }}';"
                 style="cursor: pointer; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
@@ -119,23 +120,12 @@ th {
 
 @endcanany
 
-         @canany(['pemohonbantek'])
-    <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
-                type="button"
-                onclick="location.href='{{ route('bebantekpemohondinasindex') }}';"
-                style="cursor: pointer; color:black;">
-            <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-        </button>
-    </div>
-
-@endcanany
 
 @canany(['superadmin', 'admin'])
-    <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
+ <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
         <button class="button-kembali"
                 type="button"
-                onclick="location.href='{{ url()->previous() }}';"
+                onclick="location.href='{{ route('bepenelitikontrakindex') }}';"
                 style="cursor: pointer; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
@@ -630,7 +620,7 @@ th {
 <hr>
     <br>
 
-    <h5 style="color: navy; font-weight:800; font-size:16px;">I. INFORMASI PERMOHONAN BERKAS</h4>
+    <h5 style="color: navy; font-weight:800; font-size:16px;">I. INFORMASI PERMOHONAN BERKAS BANTUAN TEKNIS {{$data->jenispengajuanbantek->jenispengajuan}}</h4>
 
 
 <div class="table-responsive">
@@ -779,20 +769,21 @@ th {
 
 <br>
 
-    <h5 style="color: navy; font-weight:800; font-size:16px;">II. KELENGKAPAN BERKAS PERSYARATAN PESERTA</h4>
+    <h5 style="color: navy; font-weight:800; font-size:16px;">II. KELENGKAPAN BERKAS PERSYARATAN BANTUAN TEKNIS {{$data->jenispengajuanbantek->jenispengajuan}} </h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
     <div class="table-responsive">
     <table class="zebra-table table-striped">
         <tr>
-    <td style="text-align: center; font-size:16px;">
-        <i class="bi bi-envelope-paper" style="margin-right:6px;"></i> Surat Permohonan
-    </td>
-    <td style="text-align: center; font-size:16px;">
-        <i class="bi bi-card-heading" style="margin-right:6px;"></i> Kartu Identitas Bangunan
-    </td>
-    <td style="text-align: center; font-size:16px;">
-        <i class="bi bi-image" style="margin-right:6px;"></i> Foto Kondisi Bangunan/(Berkas)
-    </td>
+<td style="text-align: center; font-size:16px;">
+    <i class="bi bi-envelope" style="margin-right:6px; color: navy;"></i> Surat Permohonan
+</td>
+<td style="text-align: center; font-size:16px;">
+    <i class="bi bi-card-list" style="margin-right:6px; color: navy;"></i> Kartu Identitas Bangunan
+</td>
+<td style="text-align: center; font-size:16px;">
+    <i class="bi bi-image" style="margin-right:6px; color: navy;"></i> Foto Kondisi Bangunan / (Berkas)
+</td>
+
 </tr>
 
         <tr>
@@ -852,35 +843,38 @@ th {
             </td>
 
             <td style="text-align: center;">
-                        <div style="margin-top: 10px;">
-    @if($data->fotokondisi && file_exists(public_path('storage/' . $data->fotokondisi)))
-        <!-- Display the default iframe when the file exists in the storage -->
-        <iframe
-            src="{{ asset('storage/' . $data->fotokondisi) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @elseif($data->fotokondisi)
-        <!-- Display the iframe with the updated file -->
-        <iframe
-            src="{{ asset($data->fotokondisi) }}"
-            frameborder="0"
-            width="100%"
-            height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
-        </iframe>
-    @else
-        <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
-    @endif
-</div>
-            </td>
+    <div style="margin-top: 10px;">
+        @php
+            $filePath = public_path('storage/' . $data->fotokondisi);
+        @endphp
+
+        @if($data->fotokondisi && file_exists($filePath))
+            <!-- Jika file ada di direktori storage -->
+            <iframe
+                src="{{ asset('storage/' . $data->fotokondisi) }}"
+                frameborder="0"
+                style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
+            </iframe>
+        @elseif($data->fotokondisi)
+            <!-- Jika file tidak di storage, tapi tetap ada path -->
+            <iframe
+                src="{{ asset($data->fotokondisi) }}"
+                frameborder="0"
+                style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
+            </iframe>
+        @else
+            <!-- Tidak ada file -->
+            <p>Data belum diupdate</p>
+        @endif
+    </div>
+</td>
+
 
         </tr>
 
 
+
+        </div>
 
     </table>
     <br>
@@ -888,30 +882,30 @@ th {
 
 </div>
 
-@can('pemohonbantek')
-    <hr>
+@canany(['superadmin', 'admin', 'dinas'])
 
-    @if ($data->validasiberkas1 === 'dikembalikan')
-        <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <p style="margin: 0;">
-                    Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
-                </p>
 
-                <a href="/bebantekpemohondinasperbaikan/{{$data->id}}" style="text-decoration: none;">
+@if ($data->validasiberkas1 === 'dikembalikan')
+<hr>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <p style="margin: 0;">
+            Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
+        </p>
+
+                <a href="/bebantekperpeneliti/{{$data->id}}" style="text-decoration: none;">
                     <button class="button-abgblora">
                         <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
                     </button>
                 </a>
             </div>
         </div>
-    @endif
+        <hr>
+        @endif
+        @endcanany
 
-@endcan
 
-<hr>
-
-<form action="{{ route('validasidokumenbantek', $data->id) }}" method="POST">
+<form action="{{ route('validasidokumenbantek2', $data->id) }}" method="POST">
     @csrf
     @method('PUT')
                     <!-- /.card-header -->
@@ -1550,17 +1544,17 @@ th {
                         </div>
                     </div>
 
-                    @can('pemohonbantek')
-
+                    @can('dinas')
 
                     <div class="mb-3" style="margin-top: -50px;">
-                    <label for="catatanvalidasi" class="form-label" style="color: navy">
-                                    <i class="bi bi-card-text me-1" style="color: navy;"></i> <span style="color: navy;">Catatan Keterangan Berkas</span>
-                                </label>
-                                <div class="form-control" style="min-height: 120px; white-space: pre-wrap; background-color: #f8f9fa;">
-                            {{ $data->catatanvalidasi ?? '-' }}
-                        </div>
-                    </div>
+                   <label for="catatanvalidasi" class="form-label" style="color: navy">
+    <i class="bi bi-card-text me-1" style="color: navy;"></i>
+    <span style="color: navy;">Catatan Keterangan Berkas</span>
+</label>
+<div class="form-control" style="min-height: 120px; white-space: pre-wrap; background-color: #f8f9fa; color: red;">
+    {{ $data->catatanvalidasi ?? '-' }}
+</div>
+
 
                     @endcan
 

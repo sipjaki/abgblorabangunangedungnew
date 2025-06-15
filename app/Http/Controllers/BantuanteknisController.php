@@ -253,8 +253,8 @@ $validated = $request->validate([
     $bantek->suratpermohonan = $suratpermohonanPath;
     $bantek->kic = $kicPath;
     $bantek->fotokondisi = $fotokondisiPath;
-    $bantek->fotokondisi = $rabPath;
-    $bantek->fotokondisi = $asbuiltPath;
+    $bantek->rab = $rabPath;
+    $bantek->asbuilt = $asbuiltPath;
 
     $bantek->save();
 
@@ -479,10 +479,10 @@ public function beasistensishow($id)
     ]);
 
     // Flash message
-    session()->flash('update', 'Validasi Berkas Berhasil !');
+    session()->flash('update', 'Asistensi Bantuan Teknis Berhasil Di Validasi !');
 
     // Redirect ke route bernama bebantuanteknis.show
-    return redirect()->route('bebantuanteknis.show', ['id' => $id]);
+    return redirect()->route('beasistensishowberkas1.show', ['id' => $id]);
 }
 
 
@@ -924,27 +924,46 @@ public function bebantekpemohondinasperbaikan($id)
 
 public function bebantuanteknislapanganberkasbaru(Request $request, $id)
 {
+    // Ambil data bantuan teknis berdasarkan ID
     $bantuan = bantuanteknis::findOrFail($id);
 
-    // Validasi file upload (nullable karena gak wajib)
+    // Validasi input
     $request->validate([
+        'tinggibangunan' => 'required|string',
+        'jumlahlantai' => 'required|string',
+        'luastanahtotal' => 'required|string',
+        'luasbangunan' => 'required|string',
+
         'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:7048',
         'kic' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:7048',
         'fotokondisi' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:7048',
     ], [
-        'suratpermohonan.mimes' => 'Surat Permohonan harus berupa file: pdf, jpg, jpeg, png.',
-        'suratpermohonan.max' => 'Ukuran Surat Permohonan maksimal 7MB.',
+        'tinggibangunan.required' => 'Tinggi Bangunan wajib diisi!',
+        'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
+        'luastanahtotal.required' => 'Luas Tanah Total wajib diisi!',
+        'luasbangunan.required' => 'Luas Bangunan wajib diisi!',
 
-        'kic.mimes' => 'File Kartu Identitas Bangunan harus berupa file: pdf, jpg, jpeg, png.',
-        'kic.max' => 'Ukuran file Kartu Identitas Bangunan maksimal 7MB.',
+        'suratpermohonan.required' => 'Surat Permohonan wajib diunggah!',
+        'suratpermohonan.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'suratpermohonan.max' => 'Ukuran maksimal 7MB.',
 
-        'fotokondisi.mimes' => 'File Foto Kondisi harus berupa file: pdf, jpg, jpeg, png.',
-        'fotokondisi.max' => 'Ukuran file Foto Kondisi maksimal 7MB.',
+        'kic.required' => 'Kartu Identitas Bangunan wajib diunggah!',
+        'kic.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'kic.max' => 'Ukuran maksimal 7MB.',
+
+        'fotokondisi.required' => 'Foto Kondisi wajib diunggah!',
+        'fotokondisi.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'fotokondisi.max' => 'Ukuran maksimal 7MB.',
     ]);
 
-    // Surat Permohonan
+    // Update data input umum
+    $bantuan->tinggibangunan = $request->tinggibangunan;
+    $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->luastanahtotal = $request->luastanahtotal;
+    $bantuan->luasbangunan = $request->luasbangunan;
+
+    // Handle upload Surat Permohonan
     if ($request->hasFile('suratpermohonan')) {
-        // Hapus file lama kalau ada
         if ($bantuan->suratpermohonan && file_exists(public_path($bantuan->suratpermohonan))) {
             unlink(public_path($bantuan->suratpermohonan));
         }
@@ -953,11 +972,10 @@ public function bebantuanteknislapanganberkasbaru(Request $request, $id)
         $filename = time() . '_suratpermohonan.' . $file->getClientOriginalExtension();
         $destinationPath = public_path('06_bantuanteknis/01_suratpermohonan');
         $file->move($destinationPath, $filename);
-
         $bantuan->suratpermohonan = '06_bantuanteknis/01_suratpermohonan/' . $filename;
     }
 
-    // KIC
+    // Handle upload KIC
     if ($request->hasFile('kic')) {
         if ($bantuan->kic && file_exists(public_path($bantuan->kic))) {
             unlink(public_path($bantuan->kic));
@@ -967,11 +985,10 @@ public function bebantuanteknislapanganberkasbaru(Request $request, $id)
         $filename = time() . '_kic.' . $file->getClientOriginalExtension();
         $destinationPath = public_path('06_bantuanteknis/02_kartuinventaris');
         $file->move($destinationPath, $filename);
-
         $bantuan->kic = '06_bantuanteknis/02_kartuinventaris/' . $filename;
     }
 
-    // Foto Kondisi
+    // Handle upload Foto Kondisi
     if ($request->hasFile('fotokondisi')) {
         if ($bantuan->fotokondisi && file_exists(public_path($bantuan->fotokondisi))) {
             unlink(public_path($bantuan->fotokondisi));
@@ -981,11 +998,10 @@ public function bebantuanteknislapanganberkasbaru(Request $request, $id)
         $filename = time() . '_fotokondisi.' . $file->getClientOriginalExtension();
         $destinationPath = public_path('06_bantuanteknis/03_fotokondisi');
         $file->move($destinationPath, $filename);
-
         $bantuan->fotokondisi = '06_bantuanteknis/03_fotokondisi/' . $filename;
     }
 
-    // Set validasi jadi null otomatis
+    // Reset status validasi agar diverifikasi ulang
     $bantuan->validasisuratpermohonan = null;
     $bantuan->validasikic = null;
     $bantuan->validasifotokondisi = null;
@@ -993,8 +1009,9 @@ public function bebantuanteknislapanganberkasbaru(Request $request, $id)
 
     $bantuan->save();
 
-    session()->flash('create', 'Perbaikan Berkas Anda Berhasil !');
-    return redirect('/bebantekpemohondinas');
+    // Flash pesan sukses & redirect ke halaman detail
+    session()->flash('update', 'Perbaikan Berkas Anda Berhasil!');
+    return redirect()->route('beasistensishowberkas1.show', ['id' => $bantuan->id]);
 }
 
 // DELETE CEK LAPANGAN
@@ -4062,6 +4079,1129 @@ public function bebanteklapper8delete($id)
 }
 
 
+
+    public function validasidokumenberkasbantek2(Request $request, $id)
+{
+    // Validasi input wajib & opsional
+    $request->validate([
+        'validasisuratpermohonan' => 'required|in:sesuai,tidak_sesuai',
+        'validasikic' => 'required|in:sesuai,tidak_sesuai',
+        'validasifotokondisi' => 'required|in:sesuai,tidak_sesuai',
+        'catatanvalidasi' => 'nullable|string',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = bantuanteknis::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'validasisuratpermohonan' => $request->validasisuratpermohonan,
+        'validasikic' => $request->validasikic,
+        'validasifotokondisi' => $request->validasifotokondisi,
+        'catatanvalidasi' => $request->catatanvalidasi,
+    ]);
+
+    // Flash message
+    session()->flash('update', 'Bantek Peneliti Kontrak Berhasil Di Validasi !');
+
+    // Redirect ke route bernama bebantuanteknis.show
+    return redirect()->route('bebantuanteknis.show', ['id' => $id]);
+}
+
+
+
+public function bebantekperpeneliti($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.03_akunpemohonbantek.00_perbaikan.02_perbaikandata', [
+        'title' => 'Perbaikan Data Bantuan Teknis Peneliti Kontrak !',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function bebantekperpenelitiperbaikan(Request $request, $id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $bantuan = bantuanteknis::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'tinggibangunan' => 'required|string',
+        'jumlahlantai' => 'required|string',
+        'luastanahtotal' => 'required|string',
+        'luasbangunan' => 'required|string',
+
+        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'kic' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'fotokondisi' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+    ], [
+        'tinggibangunan.required' => 'Tinggi Bangunan wajib diisi!',
+        'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
+        'luastanahtotal.required' => 'Luas Tanah Total wajib diisi!',
+        'luasbangunan.required' => 'Luas Bangunan wajib diisi!',
+
+        'suratpermohonan.required' => 'Surat Permohonan wajib diunggah!',
+        'suratpermohonan.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'suratpermohonan.max' => 'Ukuran maksimal 10MB.',
+
+        'kic.required' => 'Kartu Identitas Bangunan wajib diunggah!',
+        'kic.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'kic.max' => 'Ukuran maksimal 10MB.',
+
+        'fotokondisi.required' => 'Foto Kondisi wajib diunggah!',
+        'fotokondisi.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'fotokondisi.max' => 'Ukuran maksimal 10MB.',
+    ]);
+
+    // Update data input umum
+    $bantuan->tinggibangunan = $request->tinggibangunan;
+    $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->luastanahtotal = $request->luastanahtotal;
+    $bantuan->luasbangunan = $request->luasbangunan;
+
+    // Handle upload Surat Permohonan
+    if ($request->hasFile('suratpermohonan')) {
+        if ($bantuan->suratpermohonan && file_exists(public_path($bantuan->suratpermohonan))) {
+            unlink(public_path($bantuan->suratpermohonan));
+        }
+
+        $file = $request->file('suratpermohonan');
+        $filename = time() . '_suratpermohonan.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/01_suratpermohonan');
+        $file->move($destinationPath, $filename);
+        $bantuan->suratpermohonan = '06_bantuanteknis/01_suratpermohonan/' . $filename;
+    }
+
+    // Handle upload KIC
+    if ($request->hasFile('kic')) {
+        if ($bantuan->kic && file_exists(public_path($bantuan->kic))) {
+            unlink(public_path($bantuan->kic));
+        }
+
+        $file = $request->file('kic');
+        $filename = time() . '_kic.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/02_kartuinventaris');
+        $file->move($destinationPath, $filename);
+        $bantuan->kic = '06_bantuanteknis/02_kartuinventaris/' . $filename;
+    }
+
+    // Handle upload Foto Kondisi
+    if ($request->hasFile('fotokondisi')) {
+        if ($bantuan->fotokondisi && file_exists(public_path($bantuan->fotokondisi))) {
+            unlink(public_path($bantuan->fotokondisi));
+        }
+
+        $file = $request->file('fotokondisi');
+        $filename = time() . '_fotokondisi.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/03_fotokondisi');
+        $file->move($destinationPath, $filename);
+        $bantuan->fotokondisi = '06_bantuanteknis/03_fotokondisi/' . $filename;
+    }
+
+    // Reset status validasi agar diverifikasi ulang
+    $bantuan->validasisuratpermohonan = null;
+    $bantuan->validasikic = null;
+    $bantuan->validasifotokondisi = null;
+    $bantuan->validasiberkas1 = null;
+
+    $bantuan->save();
+
+    // Flash pesan sukses & redirect ke halaman detail
+    session()->flash('update', 'Perbaikan Berkas Anda Berhasil!');
+    return redirect()->route('bebantuanteknis.show', ['id' => $bantuan->id]);
+}
+
+// ------------------------- BERKAS PERMOHONAN PERHITUNGAN BANGUNAN GEDUNG ----------------------
+public function beperhitunganpenyusutanshow($id)
+{
+    // Cari data berdasarkan ID
+    $data = bantuanteknis::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.04_bantuanteknis.00_berkaspermohonan.03_berkas', [
+        'title' => 'Berkas Permohonan Bantuan Teknis Perhitungan Penyusutan Bangunan Gedung Negara',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
+
+public function validasidokumenberkasbantek3(Request $request, $id)
+{
+    // Validasi input wajib & opsional
+    $request->validate([
+        'validasisuratpermohonan' => 'required|in:sesuai,tidak_sesuai',
+        'validasikic' => 'required|in:sesuai,tidak_sesuai',
+        'validasifotokondisi' => 'required|in:sesuai,tidak_sesuai',
+        'catatanvalidasi' => 'nullable|string',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = bantuanteknis::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'validasisuratpermohonan' => $request->validasisuratpermohonan,
+        'validasikic' => $request->validasikic,
+        'validasifotokondisi' => $request->validasifotokondisi,
+        'catatanvalidasi' => $request->catatanvalidasi,
+    ]);
+
+    // Flash message
+    session()->flash('update', 'Bantek Perhitungan Penyusutan Berhasil Di Validasi !');
+
+    // Redirect ke route bernama bebantuanteknis.show
+    return redirect()->route('beperhitunganpenyusutan.show', ['id' => $id]);
+}
+
+public function beperhitunganpenyusutanper($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.03_akunpemohonbantek.00_perbaikan.03_perbaikandata', [
+        'title' => 'Perbaikan Data Bantuan Teknis Perhitungan Penyusutan Bangunan Gedung Negara !',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+public function beperhitunganpenyusutanpernew(Request $request, $id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $bantuan = bantuanteknis::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'tinggibangunan' => 'required|string',
+        'jumlahlantai' => 'required|string',
+        'luastanahtotal' => 'required|string',
+        'luasbangunan' => 'required|string',
+
+        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'kic' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'fotokondisi' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+    ], [
+        'tinggibangunan.required' => 'Tinggi Bangunan wajib diisi!',
+        'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
+        'luastanahtotal.required' => 'Luas Tanah Total wajib diisi!',
+        'luasbangunan.required' => 'Luas Bangunan wajib diisi!',
+
+        'suratpermohonan.required' => 'Surat Permohonan wajib diunggah!',
+        'suratpermohonan.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'suratpermohonan.max' => 'Ukuran maksimal 10MB.',
+
+        'kic.required' => 'Kartu Identitas Bangunan wajib diunggah!',
+        'kic.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'kic.max' => 'Ukuran maksimal 10MB.',
+
+        'fotokondisi.required' => 'Foto Kondisi wajib diunggah!',
+        'fotokondisi.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'fotokondisi.max' => 'Ukuran maksimal 10MB.',
+    ]);
+
+    // Update data input umum
+    $bantuan->tinggibangunan = $request->tinggibangunan;
+    $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->luastanahtotal = $request->luastanahtotal;
+    $bantuan->luasbangunan = $request->luasbangunan;
+
+    // Handle upload Surat Permohonan
+    if ($request->hasFile('suratpermohonan')) {
+        if ($bantuan->suratpermohonan && file_exists(public_path($bantuan->suratpermohonan))) {
+            unlink(public_path($bantuan->suratpermohonan));
+        }
+
+        $file = $request->file('suratpermohonan');
+        $filename = time() . '_suratpermohonan.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/01_suratpermohonan');
+        $file->move($destinationPath, $filename);
+        $bantuan->suratpermohonan = '06_bantuanteknis/01_suratpermohonan/' . $filename;
+    }
+
+    // Handle upload KIC
+    if ($request->hasFile('kic')) {
+        if ($bantuan->kic && file_exists(public_path($bantuan->kic))) {
+            unlink(public_path($bantuan->kic));
+        }
+
+        $file = $request->file('kic');
+        $filename = time() . '_kic.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/02_kartuinventaris');
+        $file->move($destinationPath, $filename);
+        $bantuan->kic = '06_bantuanteknis/02_kartuinventaris/' . $filename;
+    }
+
+    // Handle upload Foto Kondisi
+    if ($request->hasFile('fotokondisi')) {
+        if ($bantuan->fotokondisi && file_exists(public_path($bantuan->fotokondisi))) {
+            unlink(public_path($bantuan->fotokondisi));
+        }
+
+        $file = $request->file('fotokondisi');
+        $filename = time() . '_fotokondisi.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/03_fotokondisi');
+        $file->move($destinationPath, $filename);
+        $bantuan->fotokondisi = '06_bantuanteknis/03_fotokondisi/' . $filename;
+    }
+
+    // Reset status validasi agar diverifikasi ulang
+    $bantuan->validasisuratpermohonan = null;
+    $bantuan->validasikic = null;
+    $bantuan->validasifotokondisi = null;
+    $bantuan->validasiberkas1 = null;
+
+    $bantuan->save();
+
+    // Flash pesan sukses & redirect ke halaman detail
+    session()->flash('update', 'Perbaikan Berkas Anda Berhasil!');
+    return redirect()->route('beperhitunganpenyusutan.show', ['id' => $bantuan->id]);
+}
+
+
+// ------------------------- BERKAS PERMOHONAN PERHITUNGAN TINGKAT KERUSAKAN BANGUNAN GEDUNG NEGARA ----------------------
+public function beperhitungankerusakanshow($id)
+{
+    // Cari data berdasarkan ID
+    $data = bantuanteknis::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.04_bantuanteknis.00_berkaspermohonan.04_berkas', [
+        'title' => 'Berkas Permohonan Bantuan Teknis Perhitungan Tingkat Kerusakan Bangunan Gedung Negara',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
+public function validasidokumenberkasbantek4(Request $request, $id)
+{
+    // Validasi input wajib & opsional
+    $request->validate([
+        'validasisuratpermohonan' => 'required|in:sesuai,tidak_sesuai',
+        'validasikic' => 'required|in:sesuai,tidak_sesuai',
+        'validasifotokondisi' => 'required|in:sesuai,tidak_sesuai',
+        'validasirab' => 'required|in:sesuai,tidak_sesuai',
+        'validasiasbuilt' => 'required|in:sesuai,tidak_sesuai',
+        'catatanvalidasi' => 'nullable|string',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = bantuanteknis::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'validasisuratpermohonan' => $request->validasisuratpermohonan,
+        'validasikic' => $request->validasikic,
+        'validasifotokondisi' => $request->validasifotokondisi,
+        'validasirab' => $request->validasirab,
+        'validasiasbuilt' => $request->validasiasbuilt,
+        'catatanvalidasi' => $request->catatanvalidasi,
+    ]);
+
+    // Flash message
+    session()->flash('update', 'Perhitungan Tingkat Kerusakan Di Validasi !');
+
+    // Redirect ke route bernama bebantuanteknis.show
+    return redirect()->route('beperhitungankerusakan.show', ['id' => $id]);
+}
+
+
+public function beperhitungankerusakanper($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.03_akunpemohonbantek.00_perbaikan.04_perbaikandata', [
+        'title' => 'Perbaikan Data Bantuan Teknis Perhitungan Tingkat Kerusakan Bangunan Gedung Negara !',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function beperhitungankerusakanpernew(Request $request, $id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $bantuan = bantuanteknis::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'tinggibangunan' => 'required|string',
+        'jumlahlantai' => 'required|string',
+        'luastanahtotal' => 'required|string',
+        'luasbangunan' => 'required|string',
+
+        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'kic' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'fotokondisi' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'rab' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'asbuilt' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+    ], [
+        'tinggibangunan.required' => 'Tinggi Bangunan wajib diisi!',
+        'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
+        'luastanahtotal.required' => 'Luas Tanah Total wajib diisi!',
+        'luasbangunan.required' => 'Luas Bangunan wajib diisi!',
+
+        'suratpermohonan.required' => 'Surat Permohonan wajib diunggah!',
+        'suratpermohonan.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'suratpermohonan.max' => 'Ukuran maksimal 10MB.',
+
+        'kic.required' => 'Kartu Identitas Bangunan wajib diunggah!',
+        'kic.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'kic.max' => 'Ukuran maksimal 10MB.',
+
+        'fotokondisi.required' => 'Foto Kondisi wajib diunggah!',
+        'fotokondisi.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'fotokondisi.max' => 'Ukuran maksimal 10MB.',
+
+        'rab.required' => 'Foto Kondisi wajib diunggah!',
+        'rab.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'rab.max' => 'Ukuran maksimal 10MB.',
+
+        'asbuilt.required' => 'Foto Kondisi wajib diunggah!',
+        'asbuilt.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'asbuilt.max' => 'Ukuran maksimal 10MB.',
+
+    ]);
+
+    // Update data input umum
+    $bantuan->tinggibangunan = $request->tinggibangunan;
+    $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->luastanahtotal = $request->luastanahtotal;
+    $bantuan->luasbangunan = $request->luasbangunan;
+
+    // Handle upload Surat Permohonan
+    if ($request->hasFile('suratpermohonan')) {
+        if ($bantuan->suratpermohonan && file_exists(public_path($bantuan->suratpermohonan))) {
+            unlink(public_path($bantuan->suratpermohonan));
+        }
+
+        $file = $request->file('suratpermohonan');
+        $filename = time() . '_suratpermohonan.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/01_suratpermohonan');
+        $file->move($destinationPath, $filename);
+        $bantuan->suratpermohonan = '06_bantuanteknis/01_suratpermohonan/' . $filename;
+    }
+
+    // Handle upload KIC
+    if ($request->hasFile('kic')) {
+        if ($bantuan->kic && file_exists(public_path($bantuan->kic))) {
+            unlink(public_path($bantuan->kic));
+        }
+
+        $file = $request->file('kic');
+        $filename = time() . '_kic.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/02_kartuinventaris');
+        $file->move($destinationPath, $filename);
+        $bantuan->kic = '06_bantuanteknis/02_kartuinventaris/' . $filename;
+    }
+
+    // Handle upload Foto Kondisi
+    if ($request->hasFile('fotokondisi')) {
+        if ($bantuan->fotokondisi && file_exists(public_path($bantuan->fotokondisi))) {
+            unlink(public_path($bantuan->fotokondisi));
+        }
+
+        $file = $request->file('fotokondisi');
+        $filename = time() . '_fotokondisi.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/03_fotokondisi');
+        $file->move($destinationPath, $filename);
+        $bantuan->fotokondisi = '06_bantuanteknis/03_fotokondisi/' . $filename;
+    }
+
+    // Handle upload RAB
+if ($request->hasFile('rab')) {
+    if ($bantuan->rab && file_exists(public_path($bantuan->rab))) {
+        unlink(public_path($bantuan->rab));
+    }
+
+    $file = $request->file('rab');
+    $filename = time() . '_rab.' . $file->getClientOriginalExtension();
+    $destinationPath = public_path('06_bantuanteknis/04_rab');
+    $file->move($destinationPath, $filename);
+    $bantuan->rab = '06_bantuanteknis/04_rab/' . $filename;
+}
+
+// Handle upload Asbuilt
+if ($request->hasFile('asbuilt')) {
+    if ($bantuan->asbuilt && file_exists(public_path($bantuan->asbuilt))) {
+        unlink(public_path($bantuan->asbuilt));
+    }
+
+    $file = $request->file('asbuilt');
+    $filename = time() . '_asbuilt.' . $file->getClientOriginalExtension();
+    $destinationPath = public_path('06_bantuanteknis/05_asbuilt');
+    $file->move($destinationPath, $filename);
+    $bantuan->asbuilt = '06_bantuanteknis/05_asbuilt/' . $filename;
+}
+
+
+    // Reset status validasi agar diverifikasi ulang
+    $bantuan->validasisuratpermohonan = null;
+    $bantuan->validasikic = null;
+    $bantuan->validasifotokondisi = null;
+
+    $bantuan->validasirab = null;
+    $bantuan->validasiasbuilt = null;
+
+    $bantuan->validasiberkas1 = null;
+
+    $bantuan->save();
+
+    // Flash pesan sukses & redirect ke halaman detail
+    session()->flash('update', 'Perbaikan Berkas Anda Berhasil!');
+    return redirect()->route('beperhitungankerusakan.show', ['id' => $bantuan->id]);
+}
+
+
+// ------------------------- BERKAS PERMOHONAN PERHITUNGAN PEMELIHARAAN BANGUNAN GEDUNG ----------------------
+public function beperhitunganbgnshow($id)
+{
+    // Cari data berdasarkan ID
+    $data = bantuanteknis::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.04_bantuanteknis.00_berkaspermohonan.05_berkas', [
+        'title' => 'Berkas Permohonan Bantuan Teknis Perhitungan Pemeliharaan Bangunan Gedung Negara',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
+public function validasidokumenberkasbantek5(Request $request, $id)
+{
+    // Validasi input wajib & opsional
+    $request->validate([
+        'validasisuratpermohonan' => 'required|in:sesuai,tidak_sesuai',
+        'validasikic' => 'required|in:sesuai,tidak_sesuai',
+        'validasifotokondisi' => 'required|in:sesuai,tidak_sesuai',
+        'catatanvalidasi' => 'nullable|string',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = bantuanteknis::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'validasisuratpermohonan' => $request->validasisuratpermohonan,
+        'validasikic' => $request->validasikic,
+        'validasifotokondisi' => $request->validasifotokondisi,
+        'catatanvalidasi' => $request->catatanvalidasi,
+    ]);
+
+    // Flash message
+    session()->flash('update', 'Bantek Perhitungan Pemeliharaan BGN Berhasil Di Validasi !');
+
+    // Redirect ke route bernama bebantuanteknis.show
+    return redirect()->route('beperhitunganbgnshow.show', ['id' => $id]);
+}
+
+
+public function beperhitunganbgnper($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.03_akunpemohonbantek.00_perbaikan.05_perbaikandata', [
+        'title' => 'Perbaikan Data Bantuan Teknis Perhitungan Pemeliharaan Bangunan Gedung Negara !',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function beperhitunganbgnpernew(Request $request, $id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $bantuan = bantuanteknis::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'tinggibangunan' => 'required|string',
+        'jumlahlantai' => 'required|string',
+        'luastanahtotal' => 'required|string',
+        'luasbangunan' => 'required|string',
+
+        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'kic' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'fotokondisi' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+    ], [
+        'tinggibangunan.required' => 'Tinggi Bangunan wajib diisi!',
+        'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
+        'luastanahtotal.required' => 'Luas Tanah Total wajib diisi!',
+        'luasbangunan.required' => 'Luas Bangunan wajib diisi!',
+
+        'suratpermohonan.required' => 'Surat Permohonan wajib diunggah!',
+        'suratpermohonan.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'suratpermohonan.max' => 'Ukuran maksimal 10MB.',
+
+        'kic.required' => 'Kartu Identitas Bangunan wajib diunggah!',
+        'kic.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'kic.max' => 'Ukuran maksimal 10MB.',
+
+        'fotokondisi.required' => 'Foto Kondisi wajib diunggah!',
+        'fotokondisi.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'fotokondisi.max' => 'Ukuran maksimal 10MB.',
+    ]);
+
+    // Update data input umum
+    $bantuan->tinggibangunan = $request->tinggibangunan;
+    $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->luastanahtotal = $request->luastanahtotal;
+    $bantuan->luasbangunan = $request->luasbangunan;
+
+    // Handle upload Surat Permohonan
+    if ($request->hasFile('suratpermohonan')) {
+        if ($bantuan->suratpermohonan && file_exists(public_path($bantuan->suratpermohonan))) {
+            unlink(public_path($bantuan->suratpermohonan));
+        }
+
+        $file = $request->file('suratpermohonan');
+        $filename = time() . '_suratpermohonan.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/01_suratpermohonan');
+        $file->move($destinationPath, $filename);
+        $bantuan->suratpermohonan = '06_bantuanteknis/01_suratpermohonan/' . $filename;
+    }
+
+    // Handle upload KIC
+    if ($request->hasFile('kic')) {
+        if ($bantuan->kic && file_exists(public_path($bantuan->kic))) {
+            unlink(public_path($bantuan->kic));
+        }
+
+        $file = $request->file('kic');
+        $filename = time() . '_kic.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/02_kartuinventaris');
+        $file->move($destinationPath, $filename);
+        $bantuan->kic = '06_bantuanteknis/02_kartuinventaris/' . $filename;
+    }
+
+    // Handle upload Foto Kondisi
+    if ($request->hasFile('fotokondisi')) {
+        if ($bantuan->fotokondisi && file_exists(public_path($bantuan->fotokondisi))) {
+            unlink(public_path($bantuan->fotokondisi));
+        }
+
+        $file = $request->file('fotokondisi');
+        $filename = time() . '_fotokondisi.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/03_fotokondisi');
+        $file->move($destinationPath, $filename);
+        $bantuan->fotokondisi = '06_bantuanteknis/03_fotokondisi/' . $filename;
+    }
+
+    // Reset status validasi agar diverifikasi ulang
+    $bantuan->validasisuratpermohonan = null;
+    $bantuan->validasikic = null;
+    $bantuan->validasifotokondisi = null;
+    $bantuan->validasiberkas1 = null;
+
+    $bantuan->save();
+
+    // Flash pesan sukses & redirect ke halaman detail
+    session()->flash('update', 'Perbaikan Berkas Anda Berhasil!');
+    return redirect()->route('beperhitunganbgnshow.show', ['id' => $bantuan->id]);
+}
+
+
+
+// ------------------------- BERKAS PERMOHONAN PERHITUNGAN PEMELIHARAAN BANGUNAN GEDUNG ----------------------
+public function bekonstruksiperhitunganbgnshow($id)
+{
+    // Cari data berdasarkan ID
+    $data = bantuanteknis::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.04_bantuanteknis.00_berkaspermohonan.06_berkas', [
+        'title' => 'Berkas Permohonan Bantuan Teknis Perhitungan Konstruksi Bangunan Gedung Negara',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
+public function validasidokumenberkasbantek6(Request $request, $id)
+{
+    // Validasi input wajib & opsional
+    $request->validate([
+        'validasisuratpermohonan' => 'required|in:sesuai,tidak_sesuai',
+        'validasikic' => 'required|in:sesuai,tidak_sesuai',
+        'validasifotokondisi' => 'required|in:sesuai,tidak_sesuai',
+        'catatanvalidasi' => 'nullable|string',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = bantuanteknis::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'validasisuratpermohonan' => $request->validasisuratpermohonan,
+        'validasikic' => $request->validasikic,
+        'validasifotokondisi' => $request->validasifotokondisi,
+        'catatanvalidasi' => $request->catatanvalidasi,
+    ]);
+
+    // Flash message
+    session()->flash('update', 'Bantek Perhitungan Konstruksi BGN Berhasil Di Validasi !');
+
+    // Redirect ke route bernama bebantuanteknis.show
+    return redirect()->route('bekonstruksiperhitunganbgn.show', ['id' => $id]);
+}
+
+public function bekonstruksiperhitunganbgnper($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.03_akunpemohonbantek.00_perbaikan.06_perbaikandata', [
+        'title' => 'Perbaikan Data Bantuan Teknis Perhitungan Konstruksi Bangunan Gedung Negara !',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+public function bekonstruksiperhitunganbgnnew(Request $request, $id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $bantuan = bantuanteknis::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'tinggibangunan' => 'required|string',
+        'jumlahlantai' => 'required|string',
+        'luastanahtotal' => 'required|string',
+        'luasbangunan' => 'required|string',
+
+        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'kic' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'fotokondisi' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+    ], [
+        'tinggibangunan.required' => 'Tinggi Bangunan wajib diisi!',
+        'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
+        'luastanahtotal.required' => 'Luas Tanah Total wajib diisi!',
+        'luasbangunan.required' => 'Luas Bangunan wajib diisi!',
+
+        'suratpermohonan.required' => 'Surat Permohonan wajib diunggah!',
+        'suratpermohonan.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'suratpermohonan.max' => 'Ukuran maksimal 10MB.',
+
+        'kic.required' => 'Kartu Identitas Bangunan wajib diunggah!',
+        'kic.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'kic.max' => 'Ukuran maksimal 10MB.',
+
+        'fotokondisi.required' => 'Foto Kondisi wajib diunggah!',
+        'fotokondisi.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'fotokondisi.max' => 'Ukuran maksimal 10MB.',
+    ]);
+
+    // Update data input umum
+    $bantuan->tinggibangunan = $request->tinggibangunan;
+    $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->luastanahtotal = $request->luastanahtotal;
+    $bantuan->luasbangunan = $request->luasbangunan;
+
+    // Handle upload Surat Permohonan
+    if ($request->hasFile('suratpermohonan')) {
+        if ($bantuan->suratpermohonan && file_exists(public_path($bantuan->suratpermohonan))) {
+            unlink(public_path($bantuan->suratpermohonan));
+        }
+
+        $file = $request->file('suratpermohonan');
+        $filename = time() . '_suratpermohonan.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/01_suratpermohonan');
+        $file->move($destinationPath, $filename);
+        $bantuan->suratpermohonan = '06_bantuanteknis/01_suratpermohonan/' . $filename;
+    }
+
+    // Handle upload KIC
+    if ($request->hasFile('kic')) {
+        if ($bantuan->kic && file_exists(public_path($bantuan->kic))) {
+            unlink(public_path($bantuan->kic));
+        }
+
+        $file = $request->file('kic');
+        $filename = time() . '_kic.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/02_kartuinventaris');
+        $file->move($destinationPath, $filename);
+        $bantuan->kic = '06_bantuanteknis/02_kartuinventaris/' . $filename;
+    }
+
+    // Handle upload Foto Kondisi
+    if ($request->hasFile('fotokondisi')) {
+        if ($bantuan->fotokondisi && file_exists(public_path($bantuan->fotokondisi))) {
+            unlink(public_path($bantuan->fotokondisi));
+        }
+
+        $file = $request->file('fotokondisi');
+        $filename = time() . '_fotokondisi.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/03_fotokondisi');
+        $file->move($destinationPath, $filename);
+        $bantuan->fotokondisi = '06_bantuanteknis/03_fotokondisi/' . $filename;
+    }
+
+    // Reset status validasi agar diverifikasi ulang
+    $bantuan->validasisuratpermohonan = null;
+    $bantuan->validasikic = null;
+    $bantuan->validasifotokondisi = null;
+    $bantuan->validasiberkas1 = null;
+
+    $bantuan->save();
+
+    // Flash pesan sukses & redirect ke halaman detail
+    session()->flash('update', 'Perbaikan Berkas Anda Berhasil!');
+    return redirect()->route('bekonstruksiperhitunganbgn.show', ['id' => $bantuan->id]);
+}
+
+// ------------------------- BERKAS PERMOHONAN PERHITUNGAN PEMELIHARAAN BANGUNAN GEDUNG ----------------------
+public function beserahterimashow($id)
+{
+    // Cari data berdasarkan ID
+    $data = bantuanteknis::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.04_bantuanteknis.00_berkaspermohonan.07_berkas', [
+        'title' => 'Berkas Permohonan Bantuan Teknis Serah Terima',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
+
+public function validasidokumenberkasbantek7(Request $request, $id)
+{
+    // Validasi input wajib & opsional
+    $request->validate([
+        'validasisuratpermohonan' => 'required|in:sesuai,tidak_sesuai',
+        'validasikic' => 'required|in:sesuai,tidak_sesuai',
+        'validasifotokondisi' => 'required|in:sesuai,tidak_sesuai',
+        'catatanvalidasi' => 'nullable|string',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = bantuanteknis::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'validasisuratpermohonan' => $request->validasisuratpermohonan,
+        'validasikic' => $request->validasikic,
+        'validasifotokondisi' => $request->validasifotokondisi,
+        'catatanvalidasi' => $request->catatanvalidasi,
+    ]);
+
+    // Flash message
+    session()->flash('update', 'Bantek Serah Terima Berhasil Di Validasi !');
+
+    // Redirect ke route bernama bebantuanteknis.show
+    return redirect()->route('beserahterima.show', ['id' => $id]);
+}
+
+public function beserahterimaper($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.03_akunpemohonbantek.00_perbaikan.07_perbaikandata', [
+        'title' => 'Perbaikan Data Bantuan Teknis Serah Terima !',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function beserahterimapernew(Request $request, $id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $bantuan = bantuanteknis::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'tinggibangunan' => 'required|string',
+        'jumlahlantai' => 'required|string',
+        'luastanahtotal' => 'required|string',
+        'luasbangunan' => 'required|string',
+
+        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'kic' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'fotokondisi' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+    ], [
+        'tinggibangunan.required' => 'Tinggi Bangunan wajib diisi!',
+        'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
+        'luastanahtotal.required' => 'Luas Tanah Total wajib diisi!',
+        'luasbangunan.required' => 'Luas Bangunan wajib diisi!',
+
+        'suratpermohonan.required' => 'Surat Permohonan wajib diunggah!',
+        'suratpermohonan.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'suratpermohonan.max' => 'Ukuran maksimal 10MB.',
+
+        'kic.required' => 'Kartu Identitas Bangunan wajib diunggah!',
+        'kic.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'kic.max' => 'Ukuran maksimal 10MB.',
+
+        'fotokondisi.required' => 'Foto Kondisi wajib diunggah!',
+        'fotokondisi.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'fotokondisi.max' => 'Ukuran maksimal 10MB.',
+    ]);
+
+    // Update data input umum
+    $bantuan->tinggibangunan = $request->tinggibangunan;
+    $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->luastanahtotal = $request->luastanahtotal;
+    $bantuan->luasbangunan = $request->luasbangunan;
+
+    // Handle upload Surat Permohonan
+    if ($request->hasFile('suratpermohonan')) {
+        if ($bantuan->suratpermohonan && file_exists(public_path($bantuan->suratpermohonan))) {
+            unlink(public_path($bantuan->suratpermohonan));
+        }
+
+        $file = $request->file('suratpermohonan');
+        $filename = time() . '_suratpermohonan.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/01_suratpermohonan');
+        $file->move($destinationPath, $filename);
+        $bantuan->suratpermohonan = '06_bantuanteknis/01_suratpermohonan/' . $filename;
+    }
+
+    // Handle upload KIC
+    if ($request->hasFile('kic')) {
+        if ($bantuan->kic && file_exists(public_path($bantuan->kic))) {
+            unlink(public_path($bantuan->kic));
+        }
+
+        $file = $request->file('kic');
+        $filename = time() . '_kic.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/02_kartuinventaris');
+        $file->move($destinationPath, $filename);
+        $bantuan->kic = '06_bantuanteknis/02_kartuinventaris/' . $filename;
+    }
+
+    // Handle upload Foto Kondisi
+    if ($request->hasFile('fotokondisi')) {
+        if ($bantuan->fotokondisi && file_exists(public_path($bantuan->fotokondisi))) {
+            unlink(public_path($bantuan->fotokondisi));
+        }
+
+        $file = $request->file('fotokondisi');
+        $filename = time() . '_fotokondisi.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/03_fotokondisi');
+        $file->move($destinationPath, $filename);
+        $bantuan->fotokondisi = '06_bantuanteknis/03_fotokondisi/' . $filename;
+    }
+
+    // Reset status validasi agar diverifikasi ulang
+    $bantuan->validasisuratpermohonan = null;
+    $bantuan->validasikic = null;
+    $bantuan->validasifotokondisi = null;
+    $bantuan->validasiberkas1 = null;
+
+    $bantuan->save();
+
+    // Flash pesan sukses & redirect ke halaman detail
+    session()->flash('update', 'Perbaikan Berkas Anda Berhasil!');
+    return redirect()->route('beserahterima.show', ['id' => $bantuan->id]);
+}
+
+
+// ------------------------- BERKAS PERMOHONAN PERHITUNGAN PEMELIHARAAN BANGUNAN GEDUNG ----------------------
+public function bepersontimteknisshow($id)
+{
+    // Cari data berdasarkan ID
+    $data = bantuanteknis::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.04_bantuanteknis.00_berkaspermohonan.08_berkas', [
+        'title' => 'Berkas Permohonan Bantuan Teknis Personil Tim Teknis',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
+
+public function validasidokumenberkasbantek8(Request $request, $id)
+{
+    // Validasi input wajib & opsional
+    $request->validate([
+        'validasisuratpermohonan' => 'required|in:sesuai,tidak_sesuai',
+        'validasikic' => 'required|in:sesuai,tidak_sesuai',
+        'validasifotokondisi' => 'required|in:sesuai,tidak_sesuai',
+        'catatanvalidasi' => 'nullable|string',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = bantuanteknis::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'validasisuratpermohonan' => $request->validasisuratpermohonan,
+        'validasikic' => $request->validasikic,
+        'validasifotokondisi' => $request->validasifotokondisi,
+        'catatanvalidasi' => $request->catatanvalidasi,
+    ]);
+
+    // Flash message
+    session()->flash('update', 'Bantek Personil Tim Teknis Berhasil Di Validasi !');
+
+    // Redirect ke route bernama bebantuanteknis.show
+    return redirect()->route('bepersontimteknis.show', ['id' => $id]);
+}
+
+public function bepersontimteknisper($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = bantuanteknis::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.04_bantuanteknis.03_akunpemohonbantek.00_perbaikan.08_perbaikandata', [
+        'title' => 'Perbaikan Data Bantuan Teknis Personil Tim Teknis !',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+public function bepersontimteknispernew(Request $request, $id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $bantuan = bantuanteknis::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'tinggibangunan' => 'required|string',
+        'jumlahlantai' => 'required|string',
+        'luastanahtotal' => 'required|string',
+        'luasbangunan' => 'required|string',
+
+        'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'kic' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'fotokondisi' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+    ], [
+        'tinggibangunan.required' => 'Tinggi Bangunan wajib diisi!',
+        'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
+        'luastanahtotal.required' => 'Luas Tanah Total wajib diisi!',
+        'luasbangunan.required' => 'Luas Bangunan wajib diisi!',
+
+        'suratpermohonan.required' => 'Surat Permohonan wajib diunggah!',
+        'suratpermohonan.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'suratpermohonan.max' => 'Ukuran maksimal 10MB.',
+
+        'kic.required' => 'Kartu Identitas Bangunan wajib diunggah!',
+        'kic.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'kic.max' => 'Ukuran maksimal 10MB.',
+
+        'fotokondisi.required' => 'Foto Kondisi wajib diunggah!',
+        'fotokondisi.mimes' => 'Format harus pdf/jpg/jpeg/png.',
+        'fotokondisi.max' => 'Ukuran maksimal 10MB.',
+    ]);
+
+    // Update data input umum
+    $bantuan->tinggibangunan = $request->tinggibangunan;
+    $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->luastanahtotal = $request->luastanahtotal;
+    $bantuan->luasbangunan = $request->luasbangunan;
+
+    // Handle upload Surat Permohonan
+    if ($request->hasFile('suratpermohonan')) {
+        if ($bantuan->suratpermohonan && file_exists(public_path($bantuan->suratpermohonan))) {
+            unlink(public_path($bantuan->suratpermohonan));
+        }
+
+        $file = $request->file('suratpermohonan');
+        $filename = time() . '_suratpermohonan.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/01_suratpermohonan');
+        $file->move($destinationPath, $filename);
+        $bantuan->suratpermohonan = '06_bantuanteknis/01_suratpermohonan/' . $filename;
+    }
+
+    // Handle upload KIC
+    if ($request->hasFile('kic')) {
+        if ($bantuan->kic && file_exists(public_path($bantuan->kic))) {
+            unlink(public_path($bantuan->kic));
+        }
+
+        $file = $request->file('kic');
+        $filename = time() . '_kic.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/02_kartuinventaris');
+        $file->move($destinationPath, $filename);
+        $bantuan->kic = '06_bantuanteknis/02_kartuinventaris/' . $filename;
+    }
+
+    // Handle upload Foto Kondisi
+    if ($request->hasFile('fotokondisi')) {
+        if ($bantuan->fotokondisi && file_exists(public_path($bantuan->fotokondisi))) {
+            unlink(public_path($bantuan->fotokondisi));
+        }
+
+        $file = $request->file('fotokondisi');
+        $filename = time() . '_fotokondisi.' . $file->getClientOriginalExtension();
+        $destinationPath = public_path('06_bantuanteknis/03_fotokondisi');
+        $file->move($destinationPath, $filename);
+        $bantuan->fotokondisi = '06_bantuanteknis/03_fotokondisi/' . $filename;
+    }
+
+    // Reset status validasi agar diverifikasi ulang
+    $bantuan->validasisuratpermohonan = null;
+    $bantuan->validasikic = null;
+    $bantuan->validasifotokondisi = null;
+    $bantuan->validasiberkas1 = null;
+
+    $bantuan->save();
+
+    // Flash pesan sukses & redirect ke halaman detail
+    session()->flash('update', 'Perbaikan Berkas Anda Berhasil!');
+    return redirect()->route('bepersontimteknis.show', ['id' => $bantuan->id]);
+}
 
 
 }
