@@ -5623,4 +5623,67 @@ public function bebantekdinaspersonil(Request $request)
 }
 
 
+public function bebantekkonsultandataakun(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    // Query utama: statusadmin.id = 4 dan milik user login
+    $query = bantuanteknis::whereHas('bujkkonsultan.user', function ($q) use ($user) {
+        $q->where('id', $user->id) // hanya milik user yang login
+          ->whereHas('statusadmin', function ($q2) {
+              $q2->where('id', 4); // statusadmin_id = 4
+          });
+    })
+    ->whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', '=', 1); // jenis pengajuan = 1
+    });
+
+    // Jika ada pencarian
+    if ($search) {
+        $query->where(function ($mainQuery) use ($search) {
+            $mainQuery->where(function ($q) use ($search) {
+                $q->where('nama_pemohon', 'like', "%{$search}%")
+                  ->orWhere('no_telepon', 'like', "%{$search}%")
+                  ->orWhere('namapaket', 'like', "%{$search}%")
+                  ->orWhere('kategoribangunan', 'like', "%{$search}%")
+                  ->orWhere('kepemilikan', 'like', "%{$search}%")
+                  ->orWhere('pengelola', 'like', "%{$search}%")
+                  ->orWhere('alamatlokasi', 'like', "%{$search}%")
+                  ->orWhere('rt', 'like', "%{$search}%")
+                  ->orWhere('rw', 'like', "%{$search}%")
+                  ->orWhere('kabupaten', 'like', "%{$search}%")
+                  ->orWhere('nosurat', 'like', "%{$search}%")
+                  ->orWhereYear('tahunpembangunan', $search)
+                  ->orWhereYear('tahunrenovasi', $search);
+            })
+            ->orWhereHas('pemohon', function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%");
+            })
+            ->orWhereHas('dinas', function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%");
+            })
+            ->orWhereHas('jenispengajuanbantek', function ($q) use ($search) {
+                $q->where('jenispengajuan', 'like', "%{$search}%");
+            })
+            ->orWhereHas('kecamatanblora', function ($q) use ($search) {
+                $q->where('kecamatanblora', 'like', "%{$search}%");
+            })
+            ->orWhereHas('kelurahandesa', function ($q) use ($search) {
+                $q->where('desa', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->query());
+
+    return view('backend.04_bantuanteknis.04_akundinas.01_berkasasistensi', [
+        'title' => 'Permohonan Bantuan Teknis Asistensi Bangunan Gedung Negara',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+
 }

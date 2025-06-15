@@ -31,6 +31,7 @@ class AdminDashboardController extends Controller
         })->count();
     }
 
+    // ---------------------------------------------------
     $jumlahdatadinas = [];
 
     for ($i = 1; $i <= 9; $i++) {
@@ -84,18 +85,17 @@ for ($i = 1; $i <= 9; $i++) {
 
 
 
-
     $jumlahdataasistensi = [];
 
-    for ($i = 1; $i <= 9; $i++) {
-        $jumlahdata['jumlahdataasistensi' . $i] = bantuanteknis::whereHas('asistensibantek.statusadmin', function ($query) {
-            $query->where('id', 4);
-        })->whereHas('jenispengajuanbantek', function ($query) use ($i) {
-            $query->where('id', $i);
-        })->whereHas('asistensibantek', function ($query) use ($user) {
-            $query->where('id', $user->id); // langsung cek pemohon.id user login
-        })->count();
-    }
+for ($i = 1; $i <= 9; $i++) {
+    $jumlahdataasistensi['jumlahdataasistensi' . $i] = bantuanteknis::whereHas('bujkkonsultan.user.statusadmin', function ($query) {
+        $query->where('id', 4); // hanya statusadmin id 4
+    })->whereHas('jenispengajuanbantek', function ($query) use ($i) {
+        $query->where('id', $i); // jenis pengajuan sesuai index
+    })->whereHas('bujkkonsultan.user', function ($query) use ($user) {
+        $query->where('id', $user->id); // hanya data milik user yang login
+    })->count();
+}
 
     return view('backend.00_administrator.01_halamanutama.dashboard', array_merge([
         'title' => 'Admin Dashboard ABG Blora Bangunan Gedung',

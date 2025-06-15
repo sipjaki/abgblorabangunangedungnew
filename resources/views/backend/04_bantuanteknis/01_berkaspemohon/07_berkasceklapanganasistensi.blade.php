@@ -171,14 +171,15 @@ th {
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
 </button>
 
-      <button class="button-kembali"
-        type="button"
-        onclick="location.href='{{ url()->previous() }}';"
-        style="cursor: pointer; color:black; margin-left:5px;">
+   <a href="{{ url('/beakunkonsultanasistensi') }}"
+   class="button-kembali"
+   style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-</button>
+</a>
+
 
         @endcanany
+
                         @canany(['superadmin', 'admin'])
 <button class="button-create" type="button"
     onclick="location.href='/bebantuanteknislapangancreate/{{ $data->id }}';"

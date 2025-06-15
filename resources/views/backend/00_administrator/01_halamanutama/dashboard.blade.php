@@ -43,6 +43,7 @@
 
 
 @can('konsultanbantek')
+
 <div class="row">
     @php
         $boxes = [

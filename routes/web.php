@@ -335,6 +335,7 @@ Route::get('/bebantekdinasserahterima', [BantuanteknisController::class, 'bebant
 Route::get('/bebantekdinaspersonil', [BantuanteknisController::class, 'bebantekdinaspersonil'])->middleware('auth')->name('bebantekdinaspersonilindex');
 
 Route::get('/datapermohonandinas', [AdminDashboardController::class, 'dashboarddinas']);
+Route::get('/beakunkonsultanasistensi', [BantuanteknisController::class, 'bebantekkonsultandataakun'])->middleware('auth')->name('bebantekkonsultanindex');
 
 // AKUN JASA KONSULTAN ASISTENSI
 
