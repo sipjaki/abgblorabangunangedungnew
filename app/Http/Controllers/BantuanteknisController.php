@@ -5923,5 +5923,96 @@ public function infobantektimteknis()
     ]);
 }
 
+public function bebantekkonsultannew()
+{
+    $user = Auth::user();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.04_bantuanteknis.05_datakonsultan.02_createkonsultanasistensi', [
+        'title' => 'Create Data Konsultan Asistensi',
+        'user'  => $user
+    ]);
+}
+
+public function bebantekkonsultannewjasa(Request $request)
+{
+    $user = Auth::user();
+
+    $validated = $request->validate([
+        // 'bujkkonsultansub_id' => 'required|string',
+        // 'asosiasimasjaki_id' => 'nullable|string',
+        'namalengkap' => 'required|string|max:255',
+        'alamat' => 'required|string',
+        'no_telepon' => 'required|string|max:20',
+        'email' => 'required|email|max:255',
+        'nomorindukberusaha' => 'required|string|max:255',
+        'pju' => 'required|string|max:255',
+        'no_akte' => 'required|string|max:255',
+        'tanggal' => 'required|date',
+        'nama_notaris' => 'required|string|max:255',
+        'no_pengesahan' => 'required|string|max:255',
+    ], [
+        // 'bujkkonsultansub_id.required' => 'Sub Konsultan wajib diisi.',
+        // 'namalengkap.required' => 'Nama Lengkap wajib diisi.',
+        'alamat.required' => 'Alamat wajib diisi.',
+        'no_telepon.required' => 'Nomor telepon wajib diisi.',
+        'email.required' => 'Email wajib diisi.',
+        'nomorindukberusaha.required' => 'NIB wajib diisi.',
+        'pju.required' => 'PJBU wajib diisi.',
+        'no_akte.required' => 'No Akte wajib diisi.',
+        'tanggal.required' => 'Tanggal wajib diisi.',
+        'nama_notaris.required' => 'Nama Notaris wajib diisi.',
+        'no_pengesahan.required' => 'No Pengesahan wajib diisi.',
+        'email.email' => 'Format email tidak valid.',
+    ]);
+
+    $data = new bujkkonsultan(); // Ganti dengan model sesuai, misalnya: DataPerusahaan
+
+    // $data->bujkkonsultansub_id = $validated['bujkkonsultansub_id'];
+    // $data->asosiasimasjaki_id = $validated['asosiasimasjaki_id'] ?? null;
+    // $data->user_id = $user->id ?? null;
+    $data->namalengkap = $validated['namalengkap'];
+    $data->alamat = $validated['alamat'];
+    $data->no_telepon = $validated['no_telepon'];
+    $data->email = $validated['email'];
+    $data->nomorindukberusaha = $validated['nomorindukberusaha'] ?? null;
+    $data->pju = $validated['pju'] ?? null;
+    $data->no_akte = $validated['no_akte'] ?? null;
+    $data->tanggal = $validated['tanggal'] ?? null;
+    $data->nama_notaris = $validated['nama_notaris'] ?? null;
+    $data->no_pengesahan = $validated['no_pengesahan'] ?? null;
+
+    $data->save();
+
+    session()->flash('create', 'Data berhasil disimpan.');
+
+    return redirect()->route('bebantekkonsultanindex'); // Ganti dengan nama route yang sesuai
+}
+
+public function bebanteklapcekdokcredelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = bujkkonsultan::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/bebantekkonsultan')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
 
 }

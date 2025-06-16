@@ -13,6 +13,7 @@ use App\Http\Controllers\UijkController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\BantuanteknisController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DatabaseAbgController;
 use App\Http\Controllers\KrkController;
 use App\Http\Controllers\PendataanBangunanGedungController;
 use App\Http\Controllers\SettingmenuController;
@@ -348,10 +349,14 @@ Route::get('/bebantekdaftarkonsultanproses', [BantuanteknisController::class, 'b
 Route::get('/bebantekdaftarkonsultanproses', [BantuanteknisController::class, 'bebantekdaftarkonsultanproses'])->middleware('auth')->name('bebantekdaftarceklapangan');
 
 Route::get('/bebantekkonsultan', [BantuanteknisController::class, 'bebantekkonsultandata'])->middleware('auth')->name('bebantekkonsultanindex');
+Route::get('/bebantekkonsultannew', [BantuanteknisController::class, 'bebantekkonsultannew'])->middleware('auth')->name('bebantekkonsultannew.create');
+Route::post('/bebantekkonsultannewjasa', [BantuanteknisController::class, 'bebantekkonsultannewjasa'])->middleware('auth')->name('create.bebantekkonsultannewjasa');
 
+// ini bro
 
 Route::get('/bebanteklapcekdokcreate/{id}', [BantuanteknisController::class, 'bebanteklapcekdokcreate'])->middleware('auth')->name('bebanteklapcekdokcreate.create');
 Route::post('/bebanteklapcekdokcreatenew', [BantuanteknisController::class, 'bebanteklapcekdokcreatenew'])->middleware('auth')->name('create.bebanteklapcekdokcreate');
+Route::delete('/bebanteklapcekdokcredelete/{id}', [BantuanteknisController::class, 'bebanteklapcekdokcredelete'])->middleware('auth')->name('delete.bebanteklapcekdokcredelete');
 
 
 // MENU 06 KRK BACKEND
@@ -398,6 +403,19 @@ Route::get('/infobantekpemeliharaan', [BantuanteknisController::class, 'infobant
 Route::get('/infobantekpendampingan', [BantuanteknisController::class, 'infobantekpendampingan']);
 Route::get('/infobantektimteknis', [BantuanteknisController::class, 'infobantektimteknis']);
 
+// DATABASE ABG BLORA ---------------------------------------------
+Route::get('/datagsbblora', [DatabaseAbgController::class, 'datagsbblora'])->middleware('auth')->name('datagsbbloraindex');
+Route::delete('/bedatagsbbloradelete/{id}', [DatabaseAbgController::class, 'bedatagsbbloradelete'])->middleware('auth')->name('delete.bedatagsbbloradelete');
+
+Route::get('/datagsbbloraupdate/{id}', [DatabaseAbgController::class, 'datagsbbloraupdate'])->middleware('auth')->name('datagsbbloraupdate.perbaikan');
+Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
+
+// DATA KECAMATAN DAN DESA
+Route::get('/datakecblora', [DatabaseAbgController::class, 'datakecblora'])->middleware('auth')->name('datakecbloraindex');
+Route::delete('/datakecbloradelete/{id}', [DatabaseAbgController::class, 'datakecbloradelete'])->middleware('auth')->name('delete.datakecbloradelete');
+
+// Route::get('/datagsbbloraupdate/{id}', [DatabaseAbgController::class, 'datagsbbloraupdate'])->middleware('auth')->name('datagsbbloraupdate.perbaikan');
+// Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
 
 
 // ================================================================================================================================================

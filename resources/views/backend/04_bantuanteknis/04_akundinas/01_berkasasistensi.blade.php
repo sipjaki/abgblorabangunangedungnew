@@ -218,6 +218,7 @@ th {
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
 
+
              {{-- @canany(['superadmin', 'admin']) --}}
     @canany(['superadmin', 'admin'])
     <a href="{{ route('bebantuanteknisindexmenu') }}">

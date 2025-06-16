@@ -568,62 +568,73 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="flex gap-4 w-full mt-4">
     <!-- KTP -->
     <div class="flex flex-col w-1/3" style="margin-top:-60px;">
-        <label for="ktp" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-            <!-- Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
-            </svg>
-            <span class="text-sm">KTP | File jpg/jpeg</span>
-        </label>
-        <input id="ktp" name="ktp" type="file" accept="image/*,application/pdf"
-            value="{{ old('ktp') }}"
-            class="border border-[#ccc] rounded-md p-2 mb-2 @error('ktp') border-red-500 @enderror"
-            onchange="previewFile(this, 'ktpPreview')" />
-        <div id="ktpPreview" class="mt-1">
-            @if(session('ktp_temp'))
-                <div class="mt-1 text-sm text-gray-700">
-                    {{-- File sudah diunggah: --}}
-                    <a href="{{ Storage::url(session('ktp_temp')) }}" target="_blank" class="text-blue-500 underline"></a>
-                </div>
-            @elseif(old('ktp'))
-                <div class="mt-1 text-sm text-gray-700">
-                    File sudah dipilih: {{ old('ktp') }}
-                </div>
-            @endif
-        </div>
-        @error('ktp')
-            <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-        @enderror
+    <label for="ktp" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+        <!-- Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+        </svg>
+        <span class="text-sm">KTP | File jpg, jpeg, png, atau pdf</span>
+    </label>
+
+    <input id="ktp" name="ktp" type="file"
+        accept=".jpg,.jpeg,.png,.pdf"
+        class="border border-[#ccc] rounded-md p-2 mb-2 @error('ktp') border-red-500 @enderror"
+        onchange="previewFile(this, 'ktpPreview')" />
+
+    <div id="ktpPreview" class="mt-1">
+        @if(session('ktp_temp'))
+            <div class="mt-1 text-sm text-gray-700">
+                <a href="{{ Storage::url(session('ktp_temp')) }}" target="_blank" class="text-blue-500 underline">
+                    Lihat File Terunggah
+                </a>
+            </div>
+        @elseif(old('ktp'))
+            <div class="mt-1 text-sm text-gray-700">
+                File sudah dipilih: {{ old('ktp') }}
+            </div>
+        @endif
     </div>
 
+    @error('ktp')
+        <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+    @enderror
+</div>
+
     <!-- NPWP -->
-    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
-        <label for="npwp" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 2v20h12V2H6zm4 12H8v-2h2v2zm4-2h-2v2h2v-2zm2-6H8V4h8v4z" />
-            </svg>
-            <span class="text-sm">NPWP | File jpg/jpeg</span>
-        </label>
-        <input id="npwp" name="npwp" type="file" accept="image/*,application/pdf"
-            value="{{ old('npwp') }}"
-            class="border border-[#ccc] rounded-md p-2 mb-2 @error('npwp') border-red-500 @enderror"
-            onchange="previewFile(this, 'npwpPreview')" />
-        <div id="npwpPreview" class="mt-1">
-            @if(session('npwp_temp'))
-                <div class="mt-1 text-sm text-gray-700">
-                    {{-- File sudah diunggah: --}}
-                    <a href="{{ Storage::url(session('npwp_temp')) }}" target="_blank" class="text-blue-500 underline"></a>
-                </div>
-            @elseif(old('npwp'))
-                <div class="mt-1 text-sm text-gray-700">
-                    File sudah dipilih: {{ old('npwp') }}
-                </div>
-            @endif
-        </div>
-        @error('npwp')
-            <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-        @enderror
+<div class="flex flex-col w-1/3" style="margin-top:-60px;">
+    <label for="npwp" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+        <!-- Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 2v20h12V2H6zm4 12H8v-2h2v2zm4-2h-2v2h2v-2zm2-6H8V4h8v4z" />
+        </svg>
+        <span class="text-sm">NPWP | File jpg, jpeg, png, atau pdf</span>
+    </label>
+
+    <input id="npwp" name="npwp" type="file"
+        accept=".jpg,.jpeg,.png,.pdf"
+        class="border border-[#ccc] rounded-md p-2 mb-2 @error('npwp') border-red-500 @enderror"
+        onchange="previewFile(this, 'npwpPreview')" />
+
+    <div id="npwpPreview" class="mt-1">
+        @if(session('npwp_temp'))
+            <div class="text-sm text-gray-700">
+                <a href="{{ Storage::url(session('npwp_temp')) }}" target="_blank" class="text-blue-500 underline">
+                    Lihat File Terunggah
+                </a>
+            </div>
+        @elseif(old('npwp'))
+            <div class="text-sm text-gray-700">
+                File sudah dipilih: {{ old('npwp') }}
+            </div>
+        @endif
     </div>
+
+    @error('npwp')
+        <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+    @enderror
+</div>
 
     <!-- Sertifikat Tanah -->
     <div class="flex flex-col w-1/3" style="margin-top:-60px;">
@@ -631,7 +642,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">Sertifikat Tanah | File .pdf </span>
+            <span class="text-sm">Sertifikat Tanah | File .pdf | Max 10 MB</span>
         </label>
         <input id="sertifikattanah" name="sertifikattanah" type="file" accept="application/pdf,image/*"
             value="{{ old('sertifikattanah') }}"
@@ -663,7 +674,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
             </svg>
-            <span class="text-sm">Lampiran OSS | File .pdf </span>
+            <span class="text-sm">Lampiran OSS | File .pdf | Max 10 MB</span>
         </label>
         <input id="lampiranoss" name="lampiranoss" type="file" accept="image/*,application/pdf"
             value="{{ old('lampiranoss') }}"
@@ -693,7 +704,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 2v20h12V2H6zm4 12H8v-2h2v2zm4-2h-2v2h2v-2zm2-6H8V4h8v4z" />
             </svg>
-            <span class="text-sm">Bukti PBB | File .pdf </span>
+            <span class="text-sm">Bukti PBB | File .pdf | Max 10 MB </span>
         </label>
         <input id="buktipbb" name="buktipbb" type="file" accept="image/*,application/pdf"
             value="{{ old('buktipbb') }}"
@@ -722,7 +733,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">Dok Validasi DPUPR | File .pdf </span>
+            <span class="text-sm">Dok Validasi DPUPR | File .pdf | Max 10 MB </span>
         </label>
         <input id="dokvalidasi" name="dokvalidasi" type="file" accept="application/pdf,image/*"
             value="{{ old('dokvalidasi') }}"
@@ -756,7 +767,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">Site Plan | File .pdf </span>
+            <span class="text-sm">Site Plan | File .pdf | Max 10 MB </span>
         </label>
         <input id="siteplan" name="siteplan" type="file" accept="application/pdf,image/*" style="margin-right:25px;"
             value="{{ old('siteplan') }}"
@@ -786,7 +797,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">Upload Tanda Tangan | File jpg/jpeg/pdf </span>
+            <span class="text-sm">Upload Tanda Tangan | File jpg/jpeg/pdf <br>  Max 5 MB </span>
         </label>
         <input id="tandatangan" name="tandatangan" type="file" accept="application/pdf,image/*" style="margin-right:25px;"
             value="{{ old('tandatangan') }}"

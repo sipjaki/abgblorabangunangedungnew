@@ -663,13 +663,13 @@
                 </a>
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
     <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-geo-alt nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">PBG/SLF</p>
         </a>
     </li>
     <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-journal-text nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Bantuan Teknis</p>
         </a>
@@ -681,13 +681,13 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-house nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">MBR</p>
         </a>
     </li>
     <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-image nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Bantuan Gambar</p>
         </a>
@@ -738,7 +738,7 @@
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
 
     <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Informasi SLF</p>
         </a>
@@ -752,7 +752,7 @@
     </li>
 
     <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-building nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Permohonan SLF</p>
         </a>
@@ -774,13 +774,13 @@
 
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
                      <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-geo-alt nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">PBG/SLF</p>
         </a>
     </li>
     <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-journal-text nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Bantuan Teknis</p>
         </a>
@@ -792,13 +792,13 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-house nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">MBR</p>
         </a>
     </li>
     <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-image nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Bantuan Gambar</p>
         </a>
@@ -1037,7 +1037,7 @@
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
 
     <li class="nav-item">
-        <a href="/bestrukturdinas" class="nav-link">
+        <a href="/404" class="nav-link">
             <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Berita</p>
         </a>
@@ -1053,6 +1053,68 @@
 </ul>
 
             </li>
+
+            <li class="nav-item">
+
+              <a href="#" class="nav-link">
+    <!-- Ganti SVG dengan Bootstrap Icon -->
+    <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+
+<p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between;">
+    Daftar Akun
+    <i class="bi bi-chevron-right" style="margin-left: auto;"></i>
+</p>
+</a>
+
+                <ul class="nav nav-treeview" style="margin-left: 15px;">
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-person-badge-fill nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Super Admin</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-person-check-fill nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Admin</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-person-lines-fill nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Pemohon</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-building nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Dinas</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-gear-fill nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Konsultan Bantek</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-person-workspace nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Konsultan Abg</p>
+    </a>
+</li>
+
+
+</ul>
+
+            </li>
+
             <li class="nav-item">
 
               <a href="#" class="nav-link">
@@ -1067,14 +1129,28 @@
 
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
 <li class="nav-item">
-    <a href="/bestrukturdinas" class="nav-link">
+    <a href="/datagsbblora" class="nav-link">
+        <i class="bi bi-bounding-box nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">GSB Jalan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/datakecblora" class="nav-link">
+        <i class="bi bi-geo-alt nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Kecamatan Blora</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
         <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
         <p style="color: white; margin-left: 8px;">PBG/SLF</p>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="/bekrkindex" class="nav-link">
+    <a href="/404" class="nav-link">
         <i class="bi bi-clipboard-data nav-icon" style="color: white;"></i>
         <p style="color: white; margin-left: 8px;">Pendataan</p>
     </a>

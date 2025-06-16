@@ -212,7 +212,7 @@ th {
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/bebantekpemohondinas?search=${input}`)
+                            fetch(`/bebantekkonsultan?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -234,15 +234,21 @@ th {
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
 
+                                  <a href="/bebantekkonsultannew">
+                                    <button class="button-create" style="color: black; margin-left:5px;">
+                                        <i class="bi bi-plus-circle" style="margin-right: 5px;"></i> Create
+                                    </button>
+                                </a>
+
              {{-- @canany(['superadmin', 'admin']) --}}
-    @canany(['superadmin', 'admin'])
+    {{-- @canany(['superadmin', 'admin'])
     <a href="{{ route('bebantuanteknisindexmenu') }}">
         <button class="button-kembali button-abgblora" type="button"
             style="cursor: pointer; margin-left:5px; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
     </a>
-@endcanany
+@endcanany --}}
 
 {{-- @endcanany --}}
 
@@ -319,12 +325,12 @@ th {
             @can('superadmin')
 
             <td style="text-align: center; vertical-align: middle;">
-                <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
+                {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                     <i class="bi bi-eye"></i>
-                </a>
-                                        <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+                </a> --}}
+                                        {{-- <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
-                                        </a>
+                                        </a> --}}
                                         <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
@@ -376,7 +382,7 @@ th {
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bebantuanteknisdelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/bebanteklapcekdokcredelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
