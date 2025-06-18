@@ -13,10 +13,23 @@ class krkusahasurat extends Model
 
     protected $guarded = ['id'];
 
-    public function krkusaha()
-    {
-        return $this->hasOne(krkusaha::class);
-    }
+//     public function krkusaha()
+// {
+//     return $this->hasOne(krkusaha::class, 'krkusaha_id', 'id')->latest('id');
+// }
+
+
+// Dalam model krkusaha.php
+public function krkusaha()
+{
+    return $this->hasOne(krkusaha::class, 'krkusaha_id', 'id')->latest('id');
+}
+
+public function krkhunian()
+{
+    return $this->hasOne(krkhunian::class, 'krkhunian_id', 'id')->latest('id');
+}
+
 
     public function rencanagsbblora()
     {

@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\krk;
 use App\Models\krkhunian;
 use App\Models\krkusaha;
+use App\Models\krkusahacek;
 use App\Models\krkusahasurat;
 use App\Models\rencanagsbblora;
 use Illuminate\Support\Facades\Auth;
@@ -82,6 +83,7 @@ class KrkController extends Controller
             'kecamatanblora_id' => 'required|string|max:255',
             'kelurahandesa_id' => 'required|string|max:255',
             'lokasibangunan' => 'required|string',
+            'alamatpemohon' => 'required|string',
 
             // File validation
             'ktp' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
@@ -406,41 +408,92 @@ public function bekrkindex()
     $user = Auth::user();
     $data = krkusaha::paginate(15); // Data paginasi
     $datajumlahkrkusaha = krkusaha::count(); // Hitung total semua data
+    $datajumlahkrkhunian = krkhunian::count(); // Hitung total semua data
 
     return view('backend.06_krk.02_berkaspermohonan.index', [
         'title' => 'Permohonan KRK Bangunan Gedung',
         'data' => $data,
         'user' => $user,
         'datajumlahkrkusaha' => $datajumlahkrkusaha,
+        'datajumlahkrkhunian' => $datajumlahkrkhunian,
     ]);
 }
 
-        public function bekrkusaha()
-        {
-            $user = Auth::user();
-            $berkasusaha = krkusaha::latest()->paginate(15); // ambil data terbaru dan paginate
+      public function bekrkusaha(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 15);
 
-            return view('backend.06_krk.02_berkaspermohonan.usaha', [
-                'title' => 'Permohonan KRK Usaha Bangunan Gedung',
-                'data' => $berkasusaha, // data untuk looping
-                'user' => $user,
-            ]);
-        }
+    // Query dasar
+    $query = krkusaha::query();
+
+    // Filter pencarian jika ada input 'search'
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('perorangan', 'like', "%{$search}%")
+              ->orWhere('perusahaan', 'like', "%{$search}%")
+              ->orWhere('nik', 'like', "%{$search}%")
+              ->orWhere('koordinatlokasi', 'like', "%{$search}%")
+              ->orWhere('notelepon', 'like', "%{$search}%")
+              ->orWhere('luastanah', 'like', "%{$search}%")
+              ->orWhere('jumlahlantai', 'like', "%{$search}%")
+              ->orWhere('rt', 'like', "%{$search}%")
+              ->orWhere('rw', 'like', "%{$search}%")
+              ->orWhere('kabupaten', 'like', "%{$search}%")
+              ->orWhere('lokasibangunan', 'like', "%{$search}%")
+              ->orWhereDate('tanggalpermohonan', $search);
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('user', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    // Ambil data utama paginasi
+    $berkasusaha = $query->latest()->paginate($perPage)->appends($request->all());
+
+    // Ambil semua ID krkusaha yang muncul di hasil paginasi
+    $krkusahaIds = $berkasusaha->pluck('id');
+
+    // Ambil data sub dari relasi krkusahasurat
+    $subdata = krkusahasurat::whereIn('krkusaha_id', $krkusahaIds)->get();
+
+    return view('backend.06_krk.02_berkaspermohonan.usaha', [
+        'title' => 'Permohonan KRK Fungsi Usaha Bangunan Gedung',
+        'data' => $berkasusaha,
+        'subdata' => $subdata,
+        'user' => $user,
+    ]);
+}
+
 
 // BERKAS PENGESAHAN FUNGSI USAHA BANGUNAN GEDUNG
 public function permohonanpengesahanusaha($id)
 {
-    // Ambil data usaha berdasarkan ID atau return 404 jika tidak ditemukan
-    $datakrkusaha = krkusaha::findOrFail($id); // findOrFail secara otomatis akan melempar error 404 jika data tidak ditemukan
+    // Ambil data KRK Usaha berdasarkan ID atau gagal 404
+    $datakrkusaha = krkusaha::findOrFail($id);
 
-    // Ambil semua ruas jalan dari rencanagsbblora
-    $datagsbkabblora = rencanagsbblora::orderBy('ruasjalan', 'asc')->get();
+    // Ambil semua data GSB kabupaten dari rencanagsbblora tanpa scope/filter
+$datagsbkabblora = rencanagsbblora::withoutGlobalScopes()
+    ->orderByRaw("COALESCE(ruasjalan, '') ASC")
+    ->get();
+
 
     // Ambil data user yang sedang login
     $user = Auth::user();
 
-    // Mengirimkan data ke view
-    return view('backend.06_krk.02_berkaspermohonan.01_pengesahanusaha.index', [
+    // Kirimkan data ke view
+    return view('backend.06_krk.01_pengesahanusaha.index', [
         'title' => 'Lembar Pengesahan Permohonan KRK Fungsi Usaha',
         'data' => $datakrkusaha,
         'datagsb' => $datagsbkabblora,
@@ -455,7 +508,7 @@ public function permohonanpengesahanusahacreate(Request $request, $id)
         'nomorregistrasi' => 'required|string|max:50',
         'tanggalpermohonan' => 'required|date',
         'kepadatan' => 'required|in:RENDAH,SEDANG,TINGGI',
-        'jumlahlantai' => 'required|string|max:20',
+        'luaslantaimaksimal' => 'required|string',
         'luasbangunan' => 'required|numeric|min:0',
         'fungsibangunan' => 'required|string|max:255',
         'lokasibangunan' => 'required|string|max:255',
@@ -490,19 +543,62 @@ public function permohonanpengesahanusahacreate(Request $request, $id)
 
 // ========================================================
 
+public function bekrkhunian(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 15);
 
-        public function bekrkhunian()
-        {
+    // Query dasar
+    $query = krkhunian::query();
 
-            $user = Auth::user();
-            $data = krkhunian::latest()->paginate(15); // ambil data terbaru dan paginate
+    // Filter pencarian jika ada input 'search'
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('perorangan', 'like', "%{$search}%")
+              ->orWhere('perusahaan', 'like', "%{$search}%")
+              ->orWhere('nik', 'like', "%{$search}%")
+              ->orWhere('koordinatlokasi', 'like', "%{$search}%")
+              ->orWhere('notelepon', 'like', "%{$search}%")
+              ->orWhere('luastanah', 'like', "%{$search}%")
+              ->orWhere('jumlahlantai', 'like', "%{$search}%")
+              ->orWhere('rt', 'like', "%{$search}%")
+              ->orWhere('rw', 'like', "%{$search}%")
+              ->orWhere('kabupaten', 'like', "%{$search}%")
+              ->orWhere('lokasibangunan', 'like', "%{$search}%")
+              ->orWhereDate('tanggalpermohonan', $search);
 
-            return view('backend.06_krk.02_berkaspermohonan.hunian', [
-                'title' => 'Permohonan KRK Hunian Bangunan Gedung',
-                'data' => $data, // Mengirimkan data paginasi ke view
-                'user' => $user, // Mengirimkan data paginasi ke view
-            ]);
-        }
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('user', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    // Ambil data utama paginasi
+    $berkasusaha = $query->latest()->paginate($perPage)->appends($request->all());
+
+    // Ambil semua ID krkusaha yang muncul di hasil paginasi
+    $krkusahaIds = $berkasusaha->pluck('id');
+
+    // Ambil data sub dari relasi krkusahasurat
+    $subdata = krkusahasurat::whereIn('krkhunian_id', $krkusahaIds)->get();
+
+    return view('backend.06_krk.02_berkaspermohonan.hunian', [
+        'title' => 'Permohonan KRK Fungsi Hunian Bangunan Gedung',
+        'data' => $berkasusaha,
+        'subdata' => $subdata,
+        'user' => $user,
+    ]);
+}
 
 
 
@@ -551,6 +647,458 @@ public function permohonanpengesahanusahacreate(Request $request, $id)
         'user' => $user
     ]);
 }
+
+public function validasikrkusaha(Request $request, $id)
+{
+    // Validasi input wajib & opsional
+    $request->validate([
+        'verifikasiktp' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasinpwp' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasisert' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasioss' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasipbb' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasidokval' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasisiteplan' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasittd' => 'required|in:sesuai,tidak_sesuai',
+        'catatanvalidasi' => 'nullable|string',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = krkusaha::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'verifikasiktp' => $request->verifikasiktp,
+        'verifikasinpwp' => $request->verifikasinpwp,
+        'verifikasisert' => $request->verifikasisert,
+        'verifikasioss' => $request->verifikasioss,
+        'verifikasipbb' => $request->verifikasipbb,
+        'verifikasidokval' => $request->verifikasidokval,
+        'verifikasisiteplan' => $request->verifikasisiteplan,
+        'verifikasittd' => $request->verifikasittd,
+        'catatanvalidasi' => $request->catatanvalidasi,
+    ]);
+
+    // Flash message
+    session()->flash('update', 'Data Verifikasi KRK Usaha Berhasil !');
+
+    // Redirect ke route bernama bebantuanteknis.show
+    return redirect()->route('bekrkshowpermohonan.show', ['id' => $id]);
+}
+
+
+
+  public function valberkasusaha1(Request $request, $id)
+    {
+        $data = krkusaha::findOrFail($id);
+
+        $request->validate([
+            'verifikasi1' => 'required|in:lolos,dikembalikan',
+        ]);
+
+        $data->verifikasi1 = $request->verifikasi1;
+        $data->save();
+
+     if ($request->verifikasi1 === 'lolos') {
+        session()->flash('create', '✅ Berkas Lolos Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Berkas Di Kembalikan Ke Pemohon !');
+    }
+           return redirect('/bekrkusaha');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+public function doklapkrkusaha($id)
+{
+    $databantuanteknis = krkusaha::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = krkusahacek::where('krkusaha_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.06_krk.01_pengesahanusaha.02_ceklapkrkusaha', [
+        'title' => 'Dokumentasi Cek Lapangan KRK Fungsi Usaha',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+
+public function doklapkrkusahacreate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = krkusaha::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.06_krk.01_pengesahanusaha.03_createkrkusaha', [
+        'title' => 'Form Dokumentasi Cek Lapangan KRK Fungsi Usaha ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+public function doklapkrkusahacreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'krkusaha_id' => 'required|string',
+        'kegiatan' => 'required|string',
+        'tanggalkegiatan' => 'required|date',
+        'foto1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10048',
+        'foto2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10048',
+        'foto3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10048',
+        'foto4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10048',
+        'foto5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10048',
+        'foto6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10048',
+        'berkas1' => 'nullable|file|mimes:pdf|max:10048',
+        'berkas2' => 'nullable|file|mimes:pdf|max:10048',
+    ], [
+        'krkusaha_id.required' => 'krkusaha_id wajib diisi.',
+        'kegiatan.required' => 'Nama Kegiatan wajib diisi.',
+        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
+        'foto1.required' => 'Foto Dokumentasi 1 wajib diunggah.',
+        'foto1.image' => 'Foto Dokumentasi 1 harus berupa file gambar.',
+        'foto1.mimes' => 'Foto Dokumentasi 1 harus berformat jpeg, png, jpg, gif, atau svg.',
+        'foto1.max' => 'Ukuran foto Dokumentasi 1 maksimal 7MB.',
+        'foto2.image' => 'Foto Dokumentasi 2 harus berupa file gambar.',
+        'foto2.mimes' => 'Format gambar tidak sesuai.',
+        'foto3.image' => 'Foto Dokumentasi 3 harus berupa file gambar.',
+        'foto4.image' => 'Foto Dokumentasi 4 harus berupa file gambar.',
+        'foto5.image' => 'Foto Dokumentasi 5 harus berupa file gambar.',
+        'foto6.image' => 'Foto Dokumentasi 6 harus berupa file gambar.',
+        'berkas1.mimes' => 'Berkas 1 harus berupa file PDF.',
+        'berkas2.mimes' => 'Berkas 2 harus berupa file PDF.',
+    ]);
+
+    // Simpan ke model krkusahacek
+    $data = new krkusahacek();
+    $data->krkusaha_id = $validated['krkusaha_id'];
+    $data->kegiatan = $validated['kegiatan'];
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'];
+
+    // Helper untuk upload file
+    function simpanFile($request, $field, $folder)
+    {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
+            $filename = time() . "_{$field}." . $file->getClientOriginalExtension();
+            $file->move(public_path($folder), $filename);
+            return $folder . '/' . $filename;
+        }
+        return null;
+    }
+
+    // Upload berkas1 & berkas2
+    $data->berkas1 = simpanFile($request, 'berkas1', '06_krkusaha/00_berkas1');
+    $data->berkas2 = simpanFile($request, 'berkas2', '06_krkusaha/00_berkas2');
+
+    // Upload foto1 - foto6
+    $data->foto1 = simpanFile($request, 'foto1', '06_krkusaha/01_ceklapangan');
+    $data->foto2 = simpanFile($request, 'foto2', '06_krkusaha/02_ceklapangan');
+    $data->foto3 = simpanFile($request, 'foto3', '06_krkusaha/03_ceklapangan');
+    $data->foto4 = simpanFile($request, 'foto4', '06_krkusaha/04_ceklapangan');
+    $data->foto5 = simpanFile($request, 'foto5', '06_krkusaha/05_ceklapangan');
+    $data->foto6 = simpanFile($request, 'foto6', '06_krkusaha/06_ceklapangan');
+
+    $data->save();
+
+    session()->flash('create', 'Dok Cek Lapangan KRK Usaha berhasil dibuat!');
+
+    $id = $validated['krkusaha_id'];
+
+    return redirect()->route('doklapkrkusaha.show', ['id' => $id]);
+}
+
+public function doklapkrkusahacreatedelete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = krkusahacek::where('id', $id)->first();
+
+    if ($entry) {
+        // Simpan dulu lapangan_id sebelum entri dihapus
+        $lapanganId = $entry->krkusaha_id;
+
+        // Hapus file jika ada (aktifkan jika memang simpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect ke halaman detail lapangan terkait
+        return redirect()->route('doklapkrkusaha.show', ['id' => $lapanganId])
+                         ->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
+
+  public function valberkasusaha2(Request $request, $id)
+    {
+        $data = krkusaha::findOrFail($id);
+
+        $request->validate([
+            'verifikasi2' => 'required|in:sudah,belum',
+        ]);
+
+        $data->verifikasi2 = $request->verifikasi2;
+        $data->save();
+
+     if ($request->verifikasi2 === 'sudah') {
+        session()->flash('create', '✅ Cek Lapangan Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Cek Lapangan Di Hentikan !');
+    }
+           return redirect('/bekrkusaha');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
+public function permohonanpengesahanusahaber($id)
+{
+    // Ambil data utama krkusaha berdasarkan ID
+    $datausaha = krkusaha::where('id', $id)->first();
+
+    // Kalau data usaha tidak ditemukan, tampilkan 404
+    if (!$datausaha) {
+        return abort(404, 'Data usaha tidak ditemukan');
+    }
+
+    // Ambil data sub: krkusahasurat (relasi dari krkusaha)
+    $datasurat = krkusahasurat::where('krkusaha_id', $datausaha->id)->paginate(50);
+
+    // Ambil data GSB Kabupaten Blora
+    $datagsb = rencanagsbblora::orderBy('ruasjalan', 'asc')->get();
+
+    // Return ke view
+    return view('backend.06_krk.01_pengesahanusaha.04_berkaskrk', [
+        'title' => 'Lembar Pengesahan Permohonan KRK Fungsi Usaha',
+        'data' => $datausaha,       // Data utama krkusaha
+        'subdata' => $datasurat,    // Data sub krkusahasurat
+        'datagsb' => $datagsb,      // Data dropdown/GSB
+        'user' => Auth::user()
+    ]);
+}
+
+public function destroykrkusahasurat($id)
+{
+    // Cari data berdasarkan ID
+    $data = krkusahasurat::find($id);
+
+    if ($data) {
+        $data->delete();
+        // Redirect dengan flash message sukses
+        return redirect()->route('krkusaha.index')->with('delete', 'Data berhasil dihapus.');
+    } else {
+        // Redirect dengan flash message error
+        return redirect()->route('krkusaha.index')->with('error', 'Data tidak ditemukan.');
+    }
+}
+
+public function valberkasusaha3(Request $request, $id)
+    {
+        $data = krkusaha::findOrFail($id);
+
+        $request->validate([
+            'verifikasi3' => 'required|in:sudah,belum',
+        ]);
+
+        $data->verifikasi3 = $request->verifikasi3;
+        $data->save();
+
+     if ($request->verifikasi3 === 'sudah') {
+        session()->flash('create', '✅ Olah Data Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Olah data dihentikan !');
+    }
+           return redirect('/bekrkusaha');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
+    public function valberkasusaha4(Request $request, $id)
+    {
+        $data = krkusaha::findOrFail($id);
+
+        $request->validate([
+            'verifikasi4' => 'required|in:sudah,belum',
+        ]);
+
+        $data->verifikasi4 = $request->verifikasi4;
+        $data->save();
+
+     if ($request->verifikasi4 === 'sudah') {
+        session()->flash('create', '✅ Proses Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Dihentikan !');
+    }
+           return redirect('/bekrkusaha');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
+
+    public function permohonankrkusahafinal($id)
+{
+    // Ambil data utama krkusaha berdasarkan ID
+    $datausaha = krkusaha::where('id', $id)->first();
+
+    // Kalau data usaha tidak ditemukan, tampilkan 404
+    if (!$datausaha) {
+        return abort(404, 'Data usaha tidak ditemukan');
+    }
+
+    // Ambil data sub: krkusahasurat (relasi dari krkusaha)
+    $datasurat = krkusahasurat::where('krkusaha_id', $datausaha->id)->paginate(50);
+
+    // Ambil data GSB Kabupaten Blora
+    $datagsb = rencanagsbblora::orderBy('ruasjalan', 'asc')->get();
+
+    // Return ke view
+    return view('backend.06_krk.01_pengesahanusaha.05_berkaskrkfinal', [
+        'title' => 'Berkas Final Permohonan KRK Fungsi Usaha',
+        'data' => $datausaha,       // Data utama krkusaha
+        'subdata' => $datasurat,    // Data sub krkusahasurat
+        'datagsb' => $datagsb,      // Data dropdown/GSB
+        'user' => Auth::user()
+    ]);
+}
+
+public function krkusahanoterbit($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = krkusaha::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.06_krk.01_pengesahanusaha.06_createnosurat', [
+        'title' => 'Terbitkan Nomor Dinas KRK Fungsi Usaha ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+public function krkusahanoterbitnew(Request $request, $id)
+{
+    // Validasi input
+    $request->validate([
+    'nomordinasasal' => 'required|string|max:255',
+], [
+    'nomordinasasal.required' => 'Nomor Dinas Asal wajib diisi.',
+    'nomordinasasal.string'   => 'Nomor Dinas Asal harus berupa teks.',
+    'nomordinasasal.max'      => 'Nomor Dinas Asal tidak boleh lebih dari 255 karakter.',
+]);
+
+    // Ambil data krkusaha berdasarkan ID
+    $krkUsaha = krkusaha::findOrFail($id);
+
+    // Update data
+    $krkUsaha->nomordinasasal = $request->nomordinasasal;
+    $krkUsaha->save();
+
+    // Redirect ke halaman final dengan membawa ID krkusaha
+    session()->flash('create', 'Permohonan Anda Berhasil Dibuat!');
+    return redirect()->route('permohonan.permohonankrkusahafinal', ['id' => $krkUsaha->id]);
+}
+
+// -=---------------------------------------------------------
+
+        public function bekrkhunianpermohonan($id)
+{
+    // Cari data berdasarkan ID
+    $data = krkhunian::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.06_krk.02_berkasfungsihunian.01_berkaspermohonanhunian', [
+        'title' => 'Berkas Permohonan KRK Fungsi Hunian Bangunan Gedung',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
+
+public function validasikrkhunian(Request $request, $id)
+{
+    // Validasi input wajib & opsional
+    $request->validate([
+        'verifikasiktp' => 'required|in:sesuai,tidak_sesuai',
+        // 'verifikasinpwp' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasisert' => 'required|in:sesuai,tidak_sesuai',
+        // 'verifikasioss' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasipbb' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasidokval' => 'required|in:sesuai,tidak_sesuai',
+        // 'verifikasisiteplan' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasittd' => 'required|in:sesuai,tidak_sesuai',
+        'catatanvalidasi' => 'nullable|string',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = krkhunian::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'verifikasiktp' => $request->verifikasiktp,
+        // 'verifikasinpwp' => $request->verifikasinpwp,
+        'verifikasisert' => $request->verifikasisert,
+        // 'verifikasioss' => $request->verifikasioss,
+        'verifikasipbb' => $request->verifikasipbb,
+        'verifikasidokval' => $request->verifikasidokval,
+        // 'verifikasisiteplan' => $request->verifikasisiteplan,
+        'verifikasittd' => $request->verifikasittd,
+        'catatanvalidasi' => $request->catatanvalidasi,
+    ]);
+
+    // Flash message
+    session()->flash('update', 'Data Verifikasi KRK Hunian Berhasil !');
+
+    // Redirect ke route bernama bebantuanteknis.show
+    return redirect()->route('bekrkhunianpermohonan.show', ['id' => $id]);
+}
+
+
+public function valberkashunian1(Request $request, $id)
+    {
+        $data = krkhunian::findOrFail($id);
+
+        $request->validate([
+            'verifikasi1' => 'required|in:lolos,dikembalikan',
+        ]);
+
+        $data->verifikasi1 = $request->verifikasi1;
+        $data->save();
+
+     if ($request->verifikasi1 === 'lolos') {
+        session()->flash('create', '✅ Berkas Lolos Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Berkas Di Kembalikan Ke Pemohon !');
+    }
+           return redirect('/bekrkhunian');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
 
 }
 

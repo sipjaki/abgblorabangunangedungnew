@@ -52,6 +52,11 @@ class User extends Authenticatable
         return $this->hasMany(krkusaha::class);
     }
 
+    public function krkhunian()
+    {
+        return $this->hasMany(krkhunian::class);
+    }
+
     public function bantuanteknis()
     {
         return $this->hasMany(bantuanteknis::class);

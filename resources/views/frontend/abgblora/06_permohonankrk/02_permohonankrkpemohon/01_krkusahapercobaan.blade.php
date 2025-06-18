@@ -543,6 +543,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 </script>
+
 <div style="margin-top: -25px;">
     <label class="form-label d-flex align-items-center" for="lokasibangunan">
         <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
@@ -552,6 +553,19 @@ document.addEventListener('DOMContentLoaded', function () {
         value="{{ old('lokasibangunan') }}"
         style="margin-bottom: -25px;"/>
     @error('lokasibangunan')
+        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
+<div style="margin-top: -15px;">
+    <label class="form-label d-flex align-items-center" for="alamatpemohon">
+        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Alamat Lengkap Pemohon
+    </label>
+    <input type="text" id="alamatpemohon" name="alamatpemohon" placeholder="Alamat Lengkap Pemohon"
+        class="form-control @error('alamatpemohon') is-invalid @enderror"
+        value="{{ old('alamatpemohon') }}"
+        style="margin-bottom: -25px;"/>
+    @error('alamatpemohon')
         <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
     @enderror
 </div>

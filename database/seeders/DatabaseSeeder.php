@@ -32,6 +32,7 @@ use App\Models\kodelokasibangunangedung;
 use App\Models\databangunangedung;
 use App\Models\jenispengajuanbantek;
 use App\Models\kepemilikanbangunangedung;
+use App\Models\krkhunian;
 use App\Models\krkusaha;
 // use App\Models\paketpekerjaan;
 use Database\Factories\SkktenagakerjaFactory;
@@ -11062,6 +11063,27 @@ kelurahandesa::create([
         'rw' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
         'kabupaten' => 'Blora',
         'lokasibangunan' => 'Jl. Pembangunan No. ' . rand(1, 100),
+        'alamatpemohon' => 'Jl. Alamat Pemohon No. ' . rand(1, 100),
+    ]);
+}
+        for ($i = 1; $i <= 100; $i++) {
+    krkhunian::create([
+        'user_id' => 18,
+        'kecamatanblora_id' => rand(1, 10),
+        'kelurahandesa_id' => rand(1, 10),
+        'perorangan' => 'Pemohon ' . $i,
+        'perusahaan' => 'CV Proyek Mandiri ' . rand(1, 100),
+        'nik' => (string)rand(3200000000000000, 3299999999999999),
+        'koordinatlokasi' => '-7.' . rand(100000, 999999) . ',111.' . rand(100000, 999999),
+        'tanggalpermohonan' => now()->subDays(rand(1, 60)),
+        'notelepon' => '08123' . rand(100000, 999999),
+        'luastanah' => rand(100, 1000),
+        'jumlahlantai' => (string)rand(1, 4),
+        'rt' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
+        'rw' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
+        'kabupaten' => 'Blora',
+        'lokasibangunan' => 'Jl. Pembangunan No. ' . rand(1, 100),
+        'alamatpemohon' => 'Jl. Alamat Pemohon No. ' . rand(1, 100),
     ]);
 }
 

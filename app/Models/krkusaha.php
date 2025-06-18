@@ -38,6 +38,11 @@ class krkusaha extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function krkusahacek()
+    {
+        return $this->belongsTo(krkusahacek::class);
+    }
+
     protected $casts = [
         'is_validated' => 'boolean',
     ];

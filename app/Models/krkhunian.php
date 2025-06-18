@@ -37,5 +37,20 @@ class krkhunian extends Model
         return $this->belongsTo(kelurahandesa::class);
     }
 
+        public function krkusahasurat()
+    {
+        return $this->belongsTo(krkusahasurat::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
+    public function krkhuniancek()
+    {
+        return $this->belongsTo(krkhuniancek::class);
+    }
 
 }

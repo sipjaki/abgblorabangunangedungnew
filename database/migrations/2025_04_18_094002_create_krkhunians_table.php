@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('krkhunians', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('krkusahaadmin_id')->nullable()->index(); // BELUM DI BUATKAN
-            $table->foreignId('krkusahasurat_id')->nullable()->index(); // BELUM DI BUATKAN
-            $table->foreignId('kecamatanblora_id', 255)->nullable();
-            $table->foreignId('kelurahandesa_id', 255)->nullable();
+            $table->foreignId('krkusahasurat_id')->nullable()->index(); // PEMOHON
+            $table->foreignId('krkhuniancek_id')->nullable()->index(); // PEMOHON
+            $table->foreignId('user_id')->nullable()->index(); // PEMOHON
+            $table->foreignId('kecamatanblora_id', 255)->nullable()->index();
+            $table->foreignId('kelurahandesa_id', 255)->nullable()->index();
+            $table->string('nomordinasasal', 255)->nullable(); // nomor dinas asal
             $table->string('perorangan', 255)->nullable();
             $table->string('perusahaan', 255)->nullable();
             $table->string('nik', 16)->nullable();
@@ -29,6 +31,9 @@ return new class extends Migration
             $table->string('rw', 10)->nullable();
             $table->string('kabupaten', 255)->nullable();
             $table->text('lokasibangunan')->nullable();
+            $table->text('alamatpemohon')->nullable();
+            $table->string('suratupload')->nullable();
+            // berkas yang di upload
             $table->string('ktp')->nullable();
             // $table->string('npwp')->nullable();
             $table->string('sertifikattanah')->nullable();
@@ -37,7 +42,31 @@ return new class extends Migration
             $table->string('dokvalidasi')->nullable();
             // $table->string('siteplan')->nullable();
             $table->string('tandatangan')->nullable();
+
+            $table->string('verifikasiktp')->nullable();
+            // $table->string('verifikasinpwp')->nullable();
+            $table->string('verifikasisert')->nullable();
+            // $table->string('verifikasioss')->nullable();
+            $table->string('verifikasipbb')->nullable();
+            $table->string('verifikasidokval')->nullable();
+            // $table->string('verifikasisiteplan')->nullable();
+            $table->string('verifikasittd')->nullable();
+
+            $table->text('catatanvalidasi')->nullable();
+
+
             $table->boolean('is_validated')->default(false);
+
+            // untuk verivikasi berkas
+            $table->string('verifikasi1')->nullable();
+            $table->string('verifikasi2')->nullable();
+            $table->string('verifikasi3')->nullable();
+            $table->string('verifikasi4')->nullable();
+            // untuk cadangan data
+            $table->string('cadangankrkhunian1')->nullable();
+            $table->string('cadangankrkhunian2')->nullable();
+            $table->string('cadangankrkhunian3')->nullable();
+            $table->string('cadangankrkhunian4')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

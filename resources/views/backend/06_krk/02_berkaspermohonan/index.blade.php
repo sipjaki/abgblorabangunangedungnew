@@ -52,6 +52,338 @@
   <!-- =========================================================== -->
   {{-- <h5 class="mt-4 mb-2">Info Box With <code>bg-*</code></h5> --}}
   <!--begin::Row-->
+<div class="container" style="margin-top: -80px;">
+
+        <div class="stats-grid">
+    <div class="stat-card">
+     <div class="stat-number">
+    {{ ($datajumlahkrkusaha ?? 0) + ($datajumlahkrkhunian ?? 0) }}
+</div>
+        <div class="stat-label" style="color: navy;">
+            <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Permohonan
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">23</div>
+        <div class="stat-label" style="color: navy;">
+            <i class="bi bi-arrow-repeat" style="margin-right: 6px;"></i> Dikembalikan
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">17</div>
+        <div class="stat-label" style="color: navy;">
+            <i class="bi bi-calendar-check" style="margin-right: 6px;"></i> Penjadwalan Cek Lapangan
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">1.345</div>
+        <div class="stat-label" style="color: navy;">
+            <i class="bi bi-file-earmark-check" style="margin-right: 6px;"></i> Surat Terbit
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            min-height: 100vh;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #020075;
+    display: inline-block;
+    animation: zoomInOut 3s ease-in-out infinite;
+}
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .stat-change {
+            font-size: 0.9rem;
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .positive {
+            background: rgba(34, 197, 94, 0.2);
+            color: #86efac;
+        }
+
+        .negative {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+        }
+
+        .charts-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .chart-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .chart-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: end;
+            height: 200px;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(to top, #1e40af, #60a5fa);
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .bar:hover {
+            transform: scaleY(1.1);
+            background: linear-gradient(to top, #3b82f6, #93c5fd);
+        }
+
+        .bar::after {
+            content: attr(data-value);
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pie-chart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #60a5fa 0deg 120deg,
+                #a78bfa 120deg 200deg,
+                #34d399 200deg 280deg,
+                #fbbf24 280deg 360deg
+            );
+            margin: 20px auto;
+            position: relative;
+            animation: rotate 2s ease-in-out;
+        }
+
+        .pie-chart::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: #1e40af;
+            border-radius: 50%;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .legend {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .metric-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .metric-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #60a5fa;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            border-radius: 4px;
+            transition: width 2s ease;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+
 
   <div class="row">
     <div class="col-md-3 col-sm-6 col-12">
@@ -86,7 +418,7 @@
                 </span>
                 <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
                     <span class="info-box-text" style="color: white;">Fungsi Hunian</span>
-                    <span class="info-box-number fw-bold" style="font-size: 16px;">70% Tercapai</span>
+                    <span class="info-box-number fw-bold" style="font-size: 16px;">{{$datajumlahkrkhunian}} Permohonan</span>
                 </div>
             </div>
         </a>
