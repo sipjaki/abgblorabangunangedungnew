@@ -18,9 +18,19 @@ class kecamatanblora extends Model
         return $this->hasMany(krk::class);
     }
 
+    public function krkusaha()
+    {
+        return $this->hasMany(krkusaha::class);
+    }
+
     public function krkhunian()
     {
         return $this->hasMany(krkhunian::class);
+    }
+
+    public function krkkeagamaan()
+    {
+        return $this->hasMany(krkkeagamaan::class);
     }
 
     public function kelurahandesa()

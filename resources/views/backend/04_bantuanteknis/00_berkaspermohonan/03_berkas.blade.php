@@ -639,126 +639,132 @@ th {
     </tr>
     <tr>
         <td style="text-align: center;">2</td>
-        <td style="text-align: left;"><i class="bi bi-file-text" style="margin-right:6px;"></i> No. Surat</td>
+        <td style="text-align: left;"><i class="bi bi-file-text" style="margin-right:6px;"></i> No. Surat DPUPR</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->nosurat ?? '-' }}</td>
     </tr>
     <tr>
         <td style="text-align: center;">3</td>
+        <td style="text-align: left;"><i class="bi bi-file-text" style="margin-right:6px;"></i> No. Surat Dinas</td>
+        <td style="text-align: center;">:</td>
+        <td style="text-align: left;">{{ $data->nosuratdinas ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">4</td>
         <td style="text-align: left;"><i class="bi bi-calendar-event" style="margin-right:6px;"></i> Tanggal Surat</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->tanggalsurat ? \Carbon\Carbon::parse($data->tanggalsurat)->format('d-m-Y') : '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">4</td>
+        <td style="text-align: center;">5</td>
         <td style="text-align: left;"><i class="bi bi-person" style="margin-right:6px;"></i> Nama Pemohon</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->nama_pemohon ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">5</td>
+        <td style="text-align: center;">6</td>
         <td style="text-align: left;"><i class="bi bi-telephone" style="margin-right:6px;"></i> No. Telepon</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->no_telepon ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">6</td>
+        <td style="text-align: center;">7</td>
         <td style="text-align: left;"><i class="bi bi-clipboard-data" style="margin-right:6px;"></i> Nama Paket Pekerjaan</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->namapaket ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">7</td>
+        <td style="text-align: center;">8</td>
         <td style="text-align: left;"><i class="bi bi-building" style="margin-right:6px;"></i> Kategori Bangunan</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->kategoribangunan ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">8</td>
+        <td style="text-align: center;">9</td>
         <td style="text-align: left;"><i class="bi bi-aspect-ratio" style="margin-right:6px;"></i> Luas Bangunan (m²)</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->luasbangunan ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">9</td>
+        <td style="text-align: center;">10</td>
         <td style="text-align: left;"><i class="bi bi-grid" style="margin-right:6px;"></i> Luas Tanah Total (m²)</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->luastanahtotal ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">10</td>
+        <td style="text-align: center;">11</td>
         <td style="text-align: left;"><i class="bi bi-layout-text-sidebar" style="margin-right:6px;"></i> Jumlah Lantai</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->jumlahlantai ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">11</td>
+        <td style="text-align: center;">12</td>
         <td style="text-align: left;"><i class="bi bi-arrow-up" style="margin-right:6px;"></i> Tinggi Bangunan (m)</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->tinggibangunan ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">12</td>
+        <td style="text-align: center;">13</td>
         <td style="text-align: left;"><i class="bi bi-box" style="margin-right:6px;"></i> Bassement</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->bassement ? 'Ya' : 'Tidak' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">13</td>
+        <td style="text-align: center;">14</td>
         <td style="text-align: left;"><i class="bi bi-person-badge" style="margin-right:6px;"></i> Kepemilikan</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->kepemilikan ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">14</td>
+        <td style="text-align: center;">15</td>
         <td style="text-align: left;"><i class="bi bi-building-add" style="margin-right:6px;"></i> Tahun Pembangunan</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->tahunpembangunan ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">15</td>
+        <td style="text-align: center;">16</td>
         <td style="text-align: left;"><i class="bi bi-arrow-repeat" style="margin-right:6px;"></i> Tahun Renovasi</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->tahunrenovasi ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">16</td>
+        <td style="text-align: center;">17</td>
         <td style="text-align: left;"><i class="bi bi-people" style="margin-right:6px;"></i> Pengelola</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->pengelola ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">17</td>
+        <td style="text-align: center;">18</td>
         <td style="text-align: left;"><i class="bi bi-geo-alt" style="margin-right:6px;"></i> Alamat Lokasi</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->alamatlokasi ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">18</td>
+        <td style="text-align: center;">19</td>
         <td style="text-align: left;"><i class="bi bi-door-closed" style="margin-right:6px;"></i> RT</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->rt ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">19</td>
+        <td style="text-align: center;">20</td>
         <td style="text-align: left;"><i class="bi bi-door-open" style="margin-right:6px;"></i> RW</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->rw ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">20</td>
+        <td style="text-align: center;">21</td>
         <td style="text-align: left;"><i class="bi bi-map" style="margin-right:6px;"></i> Kabupaten</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->kabupaten ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">21</td>
+        <td style="text-align: center;">22</td>
         <td style="text-align: left;"><i class="bi bi-map-fill" style="margin-right:6px;"></i> Kecamatan</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->kecamatanblora->kecamatanblora ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="text-align: center;">22</td>
+        <td style="text-align: center;">23</td>
         <td style="text-align: left;"><i class="bi bi-map-pin" style="margin-right:6px;"></i> Kelurahan/Desa</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->kelurahandesa->desa ?? '-' }}</td>

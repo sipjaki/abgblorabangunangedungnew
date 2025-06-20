@@ -52,31 +52,160 @@
   <!-- =========================================================== -->
   {{-- <h5 class="mt-4 mb-2">Info Box With <code>bg-*</code></h5> --}}
   <!--begin::Row-->
-<div class="container" style="margin-top: -80px;">
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", { packages: ["corechart"] });
+  google.charts.setOnLoadCallback(drawCharts);
+
+  function drawCharts() {
+    // Data untuk kedua chart
+    var data = google.visualization.arrayToDataTable([
+      ['Fungsi', 'Jumlah Permohonan'],
+      ['Fungsi Usaha',     {{ $datajumlahkrkusaha ?? 0 }}],
+      ['Fungsi Hunian',    {{ $datajumlahkrkhunian ?? 0 }}],
+      ['Fungsi Keagamaan', {{ $datajumlahkrkkeagamaan ?? 0 }}],
+      ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}]
+    ]);
+
+    var dataBar = google.visualization.arrayToDataTable([
+      ['Fungsi', 'Jumlah Permohonan', { role: 'style' }],
+      ['Fungsi Usaha',     {{ $datajumlahkrkusaha ?? 0 }}, '#006400'],
+      ['Fungsi Hunian',    {{ $datajumlahkrkhunian ?? 0 }}, '#FFD700'],
+      ['Fungsi Keagamaan', {{ $datajumlahkrkkeagamaan ?? 0 }}, '#001f3f'],
+      ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}, '#FFA500']
+    ]);
+
+    // Opsi PieChart
+    var pieOptions = {
+      title: 'Persentase Permohonan',
+      is3D: true,
+      backgroundColor: 'transparent',
+      colors: ['#006400', '#FFD700', '#001f3f', '#FFA500'],
+      titleTextStyle: {
+        color: '#001f3f',
+        fontSize: 16,
+        bold: true
+      },
+      legend: {
+        textStyle: {
+          color: '#001f3f',
+          fontSize: 12
+        }
+      },
+      chartArea: {
+        width: '90%',
+        height: '75%'
+      }
+    };
+
+    // Opsi Bar Chart
+    var barOptions = {
+      title: 'Jumlah Permohonan',
+      backgroundColor: 'transparent',
+      titleTextStyle: {
+        color: '#001f3f',
+        fontSize: 16,
+        bold: true
+      },
+      legend: { position: 'none' },
+      chartArea: {
+        width: '65%',
+        height: '70%'
+      },
+      hAxis: {
+        title: 'Jumlah Permohonan',
+        titleTextStyle: { color: '#001f3f' },
+        textStyle: { color: '#001f3f' }
+      },
+      vAxis: {
+        textStyle: { color: '#001f3f' }
+      }
+    };
+
+    var pieChart = new google.visualization.PieChart(document.getElementById('piechart'));
+    var barChart = new google.visualization.ColumnChart(document.getElementById('barchart'));
+
+    pieChart.draw(data, pieOptions);
+    barChart.draw(dataBar, barOptions);
+  }
+</script>
+
+<style>
+  .chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: -80px;
+  }
+
+  .chart-box {
+    flex: 1;
+    min-width: 450px;
+    max-width: 50%;
+    height: 400px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  svg {
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
+  }
+</style>
+
+<div class="chart-container">
+  <div id="piechart" class="chart-box"></div>
+  <div id="barchart" class="chart-box"></div>
+</div>
+
+<div class="container" style="margin-top: -50px;">
 
         <div class="stats-grid">
     <div class="stat-card">
      <div class="stat-number">
-    {{ ($datajumlahkrkusaha ?? 0) + ($datajumlahkrkhunian ?? 0) }}
+    {{ ($datajumlahkrkusaha ?? 0) + ($datajumlahkrkhunian ?? 0) + ($datajumlahkrkkeagamaan ?? 0) }}
 </div>
         <div class="stat-label" style="color: navy;">
             <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Permohonan
         </div>
     </div>
+  <div class="stat-card">
+    <div class="stat-number">
+        {{
+            $datajumlahkrkusaha_dikembalikan +
+            $datajumlahkrkhunian_dikembalikan +
+            $datajumlahkrkagama_dikembalikan +
+            $datajumlahkrksosbud_dikembalikan
+        }}
+    </div>
+    <div class="stat-label" style="color: navy;">
+        <i class="bi bi-arrow-repeat" style="margin-right: 6px;"></i> Dikembalikan
+    </div>
+</div>
+
     <div class="stat-card">
-        <div class="stat-number">23</div>
+         <div class="stat-number">
+        {{
+            $datajumlahkrkusaha_lapangan +
+            $datajumlahkrkhunian_lapangan +
+            $datajumlahkrkagama_lapangan +
+            $datajumlahkrksosbud_lapangan
+        }}
+    </div>
         <div class="stat-label" style="color: navy;">
-            <i class="bi bi-arrow-repeat" style="margin-right: 6px;"></i> Dikembalikan
+            <i class="bi bi-calendar-check" style="margin-right: 6px;"></i> Cek Lapangan
         </div>
     </div>
     <div class="stat-card">
-        <div class="stat-number">17</div>
-        <div class="stat-label" style="color: navy;">
-            <i class="bi bi-calendar-check" style="margin-right: 6px;"></i> Penjadwalan Cek Lapangan
-        </div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-number">1.345</div>
+       <div class="stat-number">
+        {{
+            $datajumlahkrkusaha_terbit +
+            $datajumlahkrkhunian_terbit +
+            $datajumlahkrkagama_terbit +
+            $datajumlahkrksosbud_terbit
+        }}
         <div class="stat-label" style="color: navy;">
             <i class="bi bi-file-earmark-check" style="margin-right: 6px;"></i> Surat Terbit
         </div>
@@ -426,7 +555,7 @@
 
     <!-- Fungsi Keagamaan -->
     <div class="col-md-3 col-sm-6 col-12">
-        <a href="/404">
+        <a href="/bekrkkeagamaan">
             <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;"
                  onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.info-box-number').style.color='black';"
                  onmouseout="this.style.backgroundColor='#000080'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.info-box-number').style.color='white';">
@@ -438,7 +567,7 @@
                 </span>
                 <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
                     <span class="info-box-text" style="color: white;">Fungsi Keagamaan</span>
-                    <span class="info-box-number fw-bold" style="font-size: 16px;">70% Tercapai</span>
+                    <span class="info-box-number fw-bold" style="font-size: 16px;">{{$datajumlahkrkkeagamaan}} Permohonan</span>
                 </div>
             </div>
         </a>
@@ -446,7 +575,7 @@
 
     <!-- Fungsi Sosial Budaya -->
     <div class="col-md-3 col-sm-6 col-12">
-        <a href="/404">
+        <a href="/bekrksosbud">
             <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;"
                  onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.info-box-number').style.color='black';"
                  onmouseout="this.style.backgroundColor='#000080'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.info-box-number').style.color='white';">
@@ -459,7 +588,7 @@
                 </span>
                 <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
                     <span class="info-box-text" style="color: white;">Fungsi Sosial Budaya</span>
-                    <span class="info-box-number fw-bold" style="font-size: 16px;">70% Tercapai</span>
+                    <span class="info-box-number fw-bold" style="font-size: 16px;">{{$datajumlahkrksosbud}} Permohonan</span>
                 </div>
             </div>
         </a>

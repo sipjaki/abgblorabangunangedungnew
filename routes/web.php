@@ -92,9 +92,14 @@ Route::post('/berkashunian/{id}/validate', [KrkController::class, 'validateBerka
 // MENU BACKEND ABG BLORA BANGUNAN GEDUNG KABUPATEN BLORA
 // MENU 06 KRK BANGUNAN GEDUNG
 
+// AKUN PEMOHON KRK KETERANGAN RENCANA KOTA
+Route::get('/bekrkusahapemohon', [KrkController::class, 'bekrkusahapemohon'])->name('bekrkusahapemohon.indexpemohon');
+Route::get('/bekrkhunianpemohon', [KrkController::class, 'bekrkhunianpemohon'])->name('bekrkhunianpemohon.indexpemohon');
+Route::get('/bekrkkeagamaanpemohon', [KrkController::class, 'bekrkkeagamaanpemohon'])->name('bekrkkeagamaanpemohon.indexpemohon');
+Route::get('/bekrksosbudpemohon', [KrkController::class, 'bekrksosbudpemohon'])->name('bekrksosbud.indexpemohon');
 
-// sigit baru
-// MENU KRK USAHA
+
+// MENU KRK
 Route::get('/bekrkusaha', [KrkController::class, 'bekrkusaha'])->name('krkusaha.index');
 Route::get('/bekrkshowpermohonan/{id}', [KrkController::class, 'bekrkshowpermohonan'])->middleware('auth')->name('bekrkshowpermohonan.show');
 Route::put('/validasikrkusaha/{id}', [KrkController::class, 'validasikrkusaha'])->middleware('auth')->name('validasikrkusaha');
@@ -116,29 +121,110 @@ Route::get('/krkusahanoterbit/{id}', [KrkController::class, 'krkusahanoterbit'])
 Route::post('/krkusahanoterbitnew/{id}', [KrkController::class, 'krkusahanoterbitnew'])->middleware('auth')->name('create.krkusahanoterbitnew');
 
 
+Route::get('/bekrkusahaperbaikan/{id}', [KrkController::class, 'bekrkusahaperbaikan'])->middleware('auth')->name('bekrkusahaperbaikan.perbaikan');
+Route::post('/bekrkusahaperbaikannew/{id}', [KrkController::class, 'bekrkusahaperbaikannewupdate'])->middleware('auth')->name('bekrkusahaperbaikannewupdate');
+
+
+
 // MENU KRK HUNIAN
 Route::get('/bekrkindex', [KrkController::class, 'bekrkindex']);
+// -------
 Route::get('/bekrkhunian', [KrkController::class, 'bekrkhunian'])->name('bekrkhunianindex');
 
 Route::get('/bekrkhunianpermohonan/{id}', [KrkController::class, 'bekrkhunianpermohonan'])->middleware('auth')->name('bekrkhunianpermohonan.show');
 Route::put('/validasikrkhunian/{id}', [KrkController::class, 'validasikrkhunian'])->middleware('auth')->name('validasikrkhunian');
 Route::put('/valberkashunian1/{id}', [KrkController::class, 'valberkashunian1'])->name('valberkashunian1.update');
-// Route::get('/doklapkrkusaha/{id}', [KrkController::class, 'doklapkrkusaha'])->middleware('auth')->name('doklapkrkusaha.show');
+Route::get('/doklapkrkhunian/{id}', [KrkController::class, 'doklapkrkhunian'])->middleware('auth')->name('doklapkrkhunian.show');
 
-// Route::get('/doklapkrkusahacreate/{id}', [KrkController::class, 'doklapkrkusahacreate'])->middleware('auth')->name('doklapkrkusahacreate.create');
-// Route::post('/doklapkrkusahacreatenew', [KrkController::class, 'doklapkrkusahacreatenew'])->middleware('auth')->name('create.doklapkrkusahacreatenew');
+Route::get('/doklapkrkhuniancreate/{id}', [KrkController::class, 'doklapkrkhuniancreate'])->middleware('auth')->name('doklapkrkhuniancreate.create');
+Route::post('/doklapkrkhuniancreatenew', [KrkController::class, 'doklapkrkhuniancreatenew'])->middleware('auth')->name('create.doklapkrkhuniancreatenew');
 
-// Route::delete('/doklapkrkusahacreatedelete/{id}', [KrkController::class, 'doklapkrkusahacreatedelete'])->middleware('auth')->name('delete.doklapkrkusahacreatedelete');
+Route::delete('/doklapkrkhuniancreatedelete/{id}', [KrkController::class, 'doklapkrkhuniancreatedelete'])->middleware('auth')->name('delete.doklapkrkhuniancreatedelete');
 
-// Route::put('/valberkasusaha2/{id}', [KrkController::class, 'valberkasusaha2'])->name('valberkasusaha2.update');
-// Route::put('/valberkasusaha3/{id}', [KrkController::class, 'valberkasusaha3'])->name('valberkasusaha3.update');
-// Route::put('/valberkasusaha4/{id}', [KrkController::class, 'valberkasusaha4'])->name('valberkasusaha4.update');
+Route::put('/valberkashunian2/{id}', [KrkController::class, 'valberkashunian2'])->name('valberkashunian2.update');
+Route::post('/berkashunianval/{id}/validate', [KrkController::class, 'berkashunianval'])->name('berkashunianval.validate');
 
-// Route::get('/permohonankrkusahafinal/{id}', [KrkController::class, 'permohonankrkusahafinal'])->name('permohonan.permohonankrkusahafinal');
+Route::get('/perpengesahanhunian/{id}', [KrkController::class, 'perpengesahanhunian'])->name('permohonan.perpengesahanhunian');
+Route::post('/perpengesahanhuniancreate/{id}', [KrkController::class, 'perpengesahanhuniancreate'])->name('permohonan.pengesahanhuniancreate');
 
-// Route::get('/krkusahanoterbit/{id}', [KrkController::class, 'krkusahanoterbit'])->middleware('auth')->name('krkusahanoterbit.create');
-// Route::post('/krkusahanoterbitnew/{id}', [KrkController::class, 'krkusahanoterbitnew'])->middleware('auth')->name('create.krkusahanoterbitnew');
+Route::get('/perpengesahanhunianber/{id}', [KrkController::class, 'perpengesahanhunianber'])->name('berkas.perpengesahanhunianber');
+Route::delete('/krkhuniansuratdelete/{id}', [KrkController::class, 'krkhuniansuratdelete'])->name('krkusahasuratsurat.destroy');
 
+
+Route::put('/valberkashunian3/{id}', [KrkController::class, 'valberkashunian3'])->name('valberkashunian3.update');
+
+Route::get('/permohonankrkhunianfinal/{id}', [KrkController::class, 'permohonankrkhunianfinal'])->name('permohonan.permohonankrkhunianfinal');
+
+Route::get('/krkhuniannoterbit/{id}', [KrkController::class, 'krkhuniannoterbit'])->middleware('auth')->name('krkhuniannoterbit.create');
+Route::post('/krkhuniannoterbitnew/{id}', [KrkController::class, 'krkhuniannoterbitnew'])->middleware('auth')->name('create.krkhuniannoterbitnew');
+
+Route::put('/valberkashunian4/{id}', [KrkController::class, 'valberkashunian4'])->name('valberkashunian4.update');
+
+// -------
+// MENU KRK KEAGAMAAN
+Route::get('/bekrkkeagamaan', [KrkController::class, 'bekrkkeagamaan'])->name('bekrkkeagamaanindex');
+
+Route::get('/bekrkkeagamaanpermohonan/{id}', [KrkController::class, 'bekrkkeagamaanpermohonan'])->middleware('auth')->name('bekrkkeagamaanpermohonan.show');
+Route::put('/validasikrkkeagamaan/{id}', [KrkController::class, 'validasikrkkeagamaan'])->middleware('auth')->name('validasikrkkeagamaan');
+Route::put('/valberkasagama1/{id}', [KrkController::class, 'valberkasagama1'])->name('valberkasagama1.update');
+Route::get('/doklapkrkkeagamaan/{id}', [KrkController::class, 'doklapkrkkeagamaan'])->middleware('auth')->name('doklapkrkkeagamaan.show');
+
+Route::get('/doklapkrkkeagamaancreate/{id}', [KrkController::class, 'doklapkrkkeagamaancreate'])->middleware('auth')->name('doklapkrkkeagamaancreate.create');
+Route::post('/doklapkrkkeagamaancreatenew', [KrkController::class, 'doklapkrkkeagamaancreatenew'])->middleware('auth')->name('create.doklapkrkkeagamaancreatenew');
+
+Route::delete('/doklapkrkkeagamaancreatedelete/{id}', [KrkController::class, 'doklapkrkkeagamaandelete'])->middleware('auth')->name('delete.doklapkrkkeagamaancreatedelete');
+
+Route::put('/valberkasagama2/{id}', [KrkController::class, 'valberkasagama2'])->name('valberkasagama2.update');
+Route::post('/berkaskeagamaanval/{id}/validate', [KrkController::class, 'berkaskeagamaanval'])->name('berkaskeagamaanval.validate');
+
+Route::get('/perpengesahanagama/{id}', [KrkController::class, 'perpengesahanagama'])->name('permohonan.perpengesahanagama');
+Route::post('/perpengesahanagamacreate/{id}', [KrkController::class, 'perpengesahanagamacreate'])->name('permohonan.perpengesahanagamacreate');
+
+Route::get('/perpengesahanagamaber/{id}', [KrkController::class, 'perpengesahanagamaber'])->name('berkas.perpengesahanagamaber');
+Route::delete('/krkagamasuratdelete/{id}', [KrkController::class, 'krkagamasuratdelete'])->name('krkagamasuratdelete.destroy');
+
+
+Route::put('/valberkasagama3/{id}', [KrkController::class, 'valberkasagama3'])->name('valberkasagama3.update');
+
+Route::get('/permohonankrkkeagamaanfinal/{id}', [KrkController::class, 'permohonankrkkeagamaanfinal'])->name('permohonan.permohonankrkkeagamaanfinal');
+
+Route::get('/krkagamanoterbit/{id}', [KrkController::class, 'krkagamanoterbit'])->middleware('auth')->name('krkagamanoterbit.create');
+Route::post('/krkagamanoterbitnew/{id}', [KrkController::class, 'krkagamanoterbitnew'])->middleware('auth')->name('create.krkagamanoterbitnew');
+
+Route::put('/valberkasagama4/{id}', [KrkController::class, 'valberkasagama4'])->name('valberkasagama4.update');
+
+// -------
+// MENU KRK SOSIAL BUDAYA
+Route::get('/bekrksosbud', [KrkController::class, 'bekrksosbud'])->name('bekrksosbudindex');
+
+Route::get('/bekrksosbudpermohonan/{id}', [KrkController::class, 'bekrksosbudpermohonan'])->middleware('auth')->name('bekrksosbudpermohonan.show');
+Route::put('/validasikrksosbud/{id}', [KrkController::class, 'validasikrksosbud'])->middleware('auth')->name('validasikrksosbud');
+Route::put('/valberkassosbud1/{id}', [KrkController::class, 'valberkassosbud1'])->name('valberkassosbud1.update');
+Route::get('/doklapkrksosbud/{id}', [KrkController::class, 'doklapkrksosbud'])->middleware('auth')->name('doklapkrksosbud.show');
+
+Route::get('/doklapkrksosbudcreate/{id}', [KrkController::class, 'doklapkrksosbudcreate'])->middleware('auth')->name('ddoklapkrksosbudcreate.create');
+Route::post('/doklapkrksosbudcreatenew', [KrkController::class, 'doklapkrksosbudcreatenew'])->middleware('auth')->name('create.doklapkrksosbudcreatenew');
+
+Route::delete('/doklapkrksosbudcreatedelete/{id}', [KrkController::class, 'doklapkrksosbudcreatedelete'])->middleware('auth')->name('delete.doklapkrksosbudcreatedelete');
+
+Route::put('/valberkassosbud2/{id}', [KrkController::class, 'valberkassosbud2'])->name('valberkassosbud2.update');
+Route::post('/berkassosbudval/{id}/validate', [KrkController::class, 'berkassosbudval'])->name('berkassosbudval.validate');
+
+Route::get('/perpengesahansosbud/{id}', [KrkController::class, 'perpengesahansosbud'])->name('permohonan.perpengesahansosbud');
+Route::post('/perpengesahansosbudcreate/{id}', [KrkController::class, 'perpengesahansosbudcreate'])->name('permohonan.perpengesahansosbudcreate');
+
+Route::get('/perpengesahansosbudber/{id}', [KrkController::class, 'perpengesahansosbudber'])->name('berkas.perpengesahansosbudber');
+Route::delete('/krksosbudsuratdelete/{id}', [KrkController::class, 'krksosbudsuratdelete'])->name('krksosbudsuratdelete.destroy');
+
+
+Route::put('/valberkassosbud3/{id}', [KrkController::class, 'valberkassosbud3'])->name('valberkassosbud3.update');
+
+Route::get('/permohonankrksosbudfinal/{id}', [KrkController::class, 'permohonankrksosbudfinal'])->name('permohonan.permohonankrksosbudfinal');
+
+Route::get('/krksosbufnoterbit/{id}', [KrkController::class, 'krksosbufnoterbit'])->middleware('auth')->name('krksosbufnoterbit.create');
+Route::post('/krksosbufnoterbitnew/{id}', [KrkController::class, 'krksosbufnoterbitnew'])->middleware('auth')->name('create.krksosbufnoterbitnew');
+
+Route::put('/valberkassosbud4/{id}', [KrkController::class, 'valberkassosbud4'])->name('valberkassosbud3.update');
 
 
 // MENU 04 BANTUAN TEKNIS

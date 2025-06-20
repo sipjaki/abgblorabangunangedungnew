@@ -273,7 +273,8 @@ th {
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Konsultan </th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Dinas</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat</th>
+        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat DPUPR </th>
+        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat Dinas </th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-calendar"></i> Tanggal Surat</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-toolbox"></i> Nama Paket</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Kategori Bangunan</th>
@@ -315,14 +316,15 @@ th {
             <td>{{ $item->bujkkonsultan->user->name ?? '-' }}</td>
             <td>{{ $item->no_telepon ?? '-' }}</td>
             <td>{{ $item->dinas->name ?? '-' }}</td>
+            <td>{{ $item->nosurat ?? '-' }}</td>
             <td>{{ $item->nosuratdinas ?? '-' }}</td>
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
             <td>{{ $item->namapaket ?? '-' }}</td>
             <td>{{ $item->kategoribangunan ?? '-' }}</td>
-            <td>{{ $item->luasbangunan ?? '-' }} m²</td>
-            <td>{{ $item->luastanahtotal ?? '-' }} m²</td>
-            <td>{{ $item->jumlahlantai ?? '-' }}</td>
-            <td>{{ $item->tinggibangunan ?? '-' }} m</td>
+            <td>{{ $item->luasbangunan ?? '-' }} M²</td>
+            <td>{{ $item->luastanahtotal ?? '-' }} M²</td>
+            <td>{{ $item->jumlahlantai ?? '-' }} Lantai </td>
+            <td>{{ $item->tinggibangunan ?? '-' }} Meter</td>
             <td>{{ $item->bassement ? 'Ya' : 'Tidak' }}</td>
             <td>{{ $item->kepemilikan ?? '-' }}</td>
             <td>{{ $item->tahunpembangunan ?? '-' }}</td>

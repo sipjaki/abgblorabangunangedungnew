@@ -211,7 +211,7 @@ th {
 
 @can('pemohon')
 
-           <a href="/hakaksespekerjaberkas">
+           <a href="/bekrkusahapemohon">
     <button
   style="
     background: linear-gradient(45deg, #6c757d, #adb5bd);

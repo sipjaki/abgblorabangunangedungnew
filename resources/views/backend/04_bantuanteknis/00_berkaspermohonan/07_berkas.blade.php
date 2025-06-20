@@ -639,9 +639,15 @@ th {
     </tr>
     <tr>
         <td style="text-align: center;">2</td>
-        <td style="text-align: left;"><i class="bi bi-file-text" style="margin-right:6px;"></i> No. Surat</td>
+        <td style="text-align: left;"><i class="bi bi-file-text" style="margin-right:6px;"></i> No. Surat DPUPR</td>
         <td style="text-align: center;">:</td>
         <td style="text-align: left;">{{ $data->nosurat ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td style="text-align: center;">2</td>
+        <td style="text-align: left;"><i class="bi bi-file-text" style="margin-right:6px;"></i> No. Surat Dinas</td>
+        <td style="text-align: center;">:</td>
+        <td style="text-align: left;">{{ $data->nosuratdinas ?? '-' }}</td>
     </tr>
     <tr>
         <td style="text-align: center;">3</td>

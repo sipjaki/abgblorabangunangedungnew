@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('krkusaha_id')->nullable()->index();    // Ruas Jalan (relasi ke tabel lain)
             $table->foreignId('krkhunian_id')->nullable()->index();    // Ruas Jalan (relasi ke tabel lain)
+            $table->foreignId('krkkeagamaan_id')->nullable()->index();    // Ruas Jalan (relasi ke tabel lain)
+            $table->foreignId('krksosbud_id')->nullable()->index();    // Ruas Jalan (relasi ke tabel lain)
             $table->foreignId('rencanagsbblora_id')->nullable()->index();    // Ruas Jalan (relasi ke tabel lain)
             $table->string('nomorregistrasi')->nullable();          // Nomor Registrasi KRK
             $table->date('tanggalpermohonan')->nullable();          // Tanggal Dibuat KRK

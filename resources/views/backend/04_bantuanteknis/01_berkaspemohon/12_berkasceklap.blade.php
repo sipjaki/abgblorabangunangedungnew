@@ -229,6 +229,7 @@ th {
                                   <tr>
    <th style="background-color: #ADD8E6;">No</th>
 <th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Kegiatan</th>
+<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Tanggal Kegiatan</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 1</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 2</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 3</th>

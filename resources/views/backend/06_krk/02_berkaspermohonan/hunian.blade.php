@@ -164,7 +164,7 @@ th {
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/bekrkusaha?search=${input}`)
+                            fetch(`/bekrkhunian?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -230,6 +230,9 @@ th {
 </th>
                              <th style="background-color: #ADD8E6;">
     <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK
+</th>
+                             <th style="background-color: #ADD8E6;">
+    <i class="fas fa-database" style="margin-right: 6px;"></i> Selesai
 </th>
        <th style="background-color: #ADD8E6;">Aksi</th>
                                 </tr>
@@ -381,7 +384,7 @@ th {
 </script>
 
   <td style="text-align: center;">
-                <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
+                <a href="{{ route('doklapkrkhunian.show', $item->id) }}"
                     class="button-validasinew"
                     style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -464,7 +467,7 @@ th {
 <script>
   function openModalVerifikasi2(itemId) {
     const form = document.getElementById("verifikasi2Form");
-    form.action = `/valberkasusaha2/${itemId}`;
+    form.action = `/valberkashunian2/${itemId}`;
     document.getElementById("confirmModalVerifikasi2").style.display = "flex";
   }
 
@@ -543,7 +546,7 @@ th {
 <script>
     function openValidationModal(id) {
         const form = document.getElementById('validationForm');
-        form.action = `/berkasusaha/${id}/validate`; // atau route laravel
+        form.action = `/berkashunianval/${id}/validate`; // atau route laravel
         document.getElementById('validationModal').style.display = 'flex';
         resetValidationButton(); // reset ke posisi awal
     }
@@ -602,7 +605,7 @@ th {
         <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Pengesahan
     </button>
 @else
-    @if($subdata->where('krkhunian', $item->id)->count() > 0)
+    @if($subdata->where('krkhunian_id', $item->id)->count() > 0)
         <!-- SUDAH DIVALIDASI tapi data pengesahan sudah ada, tombol hijau tapi nonaktif -->
         <button class="button-download"
             disabled
@@ -616,7 +619,7 @@ th {
         </button>
     @else
         <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
-        <a href="{{ route('permohonan.pengesahanusaha', $item->id) }}" style="text-decoration: none;">
+        <a href="{{ route('permohonan.perpengesahanhunian', $item->id) }}" style="text-decoration: none;">
             <button class="button-lolos"
                 onmouseover="this.style.backgroundColor='#D1FAE5'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
@@ -632,7 +635,7 @@ th {
 
 
 @if($subdata->where('krkhunian_id', $item->id)->count() > 0)
-    <a href="{{ route('permohonan.permohonanpengesahanusahaber', $item->id) }}"
+    <a href="{{ route('berkas.perpengesahanhunianber', $item->id) }}"
         class="button-lolos"
         style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #10B981; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#10B981'; this.style.border='1px solid #10B981';"
@@ -725,7 +728,7 @@ th {
 <script>
     function openModal3(itemId) {
         const form = document.getElementById("validasiForm3");
-        form.action = `/valberkasusaha3/${itemId}`;
+        form.action = `/valberkashunian3/${itemId}`;
         document.getElementById("confirmModal3").style.display = "flex";
     }
 
@@ -739,8 +742,8 @@ th {
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
 
-@if($subdata->where('krkusaha_id', $item->id)->count() > 0)
-    <a href="{{ route('permohonan.permohonankrkusahafinal', $item->id) }}"
+@if($subdata->where('krkhunian_id', $item->id)->count() > 0)
+    <a href="{{ route('permohonan.permohonankrkhunianfinal', $item->id) }}"
         class="button-lolos"
         style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #10B981; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#10B981'; this.style.border='1px solid #10B981';"
@@ -835,7 +838,7 @@ th {
 <script>
     function openModal4(itemId) {
         const form = document.getElementById("validasiForm4");
-        form.action = `/valberkasusaha4/${itemId}`;
+        form.action = `/valberkashunian4/${itemId}`;
         document.getElementById("confirmModal4").style.display = "flex";
     }
 

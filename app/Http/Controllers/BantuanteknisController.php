@@ -353,6 +353,10 @@ public function bebantuanteknisindex(Request $request)
         $q->where('id', 6);
     })->count();
 
+    $jumlahDataIdTujuh = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+        $q->where('id', 7);
+    })->count();
+
     $jumlahDataIdDelapan = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
         $q->where('id', 8);
     })->count();
@@ -362,17 +366,189 @@ public function bebantuanteknisindex(Request $request)
         $q->where('id', 1);
     })->latest()->paginate($perPage);
 
+    $jumlahDataIdSatu_dikembalikan    = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 1);
+})->where('validasiberkas1', 'dikembalikan')->count();
+
+
+$jumlahDataIdDua_dikembalikan     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 2);
+})->where('validasiberkas1', 'dikembalikan')->count();
+
+$jumlahDataIdTiga_dikembalikan    = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 3);
+})->where('validasiberkas1', 'dikembalikan')->count();
+
+$jumlahDataIdEmpat_dikembalikan   = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 4);
+})->where('validasiberkas1', 'dikembalikan')->count();
+
+$jumlahDataIdLima_dikembalikan    = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 5);
+})->where('validasiberkas1', 'dikembalikan')->count();
+
+$jumlahDataIdEnam_dikembalikan    = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 6);
+})->where('validasiberkas1', 'dikembalikan')->count();
+
+$jumlahDataIdTujuh_dikembalikan   = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 7);
+})->where('validasiberkas1', 'dikembalikan')->count();
+
+$jumlahDataIdDelapan_dikembalikan = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 8);
+})->where('validasiberkas1', 'dikembalikan')->count();
+// --------------------------------
+
+$jumlahDataIdSatu_doklapangan     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 1);
+})->where('validasiberkas2', 'sudah')->count();
+
+$jumlahDataIdDua_doklapangan      = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 2);
+})->where('validasiberkas2', 'sudah')->count();
+
+$jumlahDataIdTiga_doklapangan     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 3);
+})->where('validasiberkas2', 'sudah')->count();
+
+$jumlahDataIdEmpat_doklapangan    = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 4);
+})->where('validasiberkas2', 'sudah')->count();
+
+$jumlahDataIdLima_doklapangan     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 5);
+})->where('validasiberkas2', 'sudah')->count();
+
+$jumlahDataIdEnam_doklapangan     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 6);
+})->where('validasiberkas2', 'sudah')->count();
+
+$jumlahDataIdTujuh_doklapangan    = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 7);
+})->where('validasiberkas2', 'sudah')->count();
+
+$jumlahDataIdDelapan_doklapangan  = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 8);
+})->where('validasiberkas2', 'sudah')->count();
+// ---------------------------------------------------------------------
+
+$jumlahDataIdSatu_olahdata     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 1);
+})->where('validasiberkas3', 'sudah')->count();
+
+$jumlahDataIdDua_olahdata      = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 2);
+})->where('validasiberkas3', 'sudah')->count();
+
+$jumlahDataIdTiga_olahdata     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 3);
+})->where('validasiberkas3', 'sudah')->count();
+
+$jumlahDataIdEmpat_olahdata    = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 4);
+})->where('validasiberkas3', 'sudah')->count();
+
+$jumlahDataIdLima_olahdata     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 5);
+})->where('validasiberkas3', 'sudah')->count();
+
+$jumlahDataIdEnam_olahdata     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 6);
+})->where('validasiberkas3', 'sudah')->count();
+
+$jumlahDataIdTujuh_olahdata    = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 7);
+})->where('validasiberkas3', 'sudah')->count();
+
+$jumlahDataIdDelapan_olahdata  = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 8);
+})->where('validasiberkas3', 'sudah')->count();
+// -----------------------------------------
+
+$jumlahDataIdSatu_terbit     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 1);
+})->where('validasiberkas4', 'sudah')->count();
+
+$jumlahDataIdDua_terbit      = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 2);
+})->where('validasiberkas4', 'sudah')->count();
+
+$jumlahDataIdTiga_terbit     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 3);
+})->where('validasiberkas4', 'sudah')->count();
+
+$jumlahDataIdEmpat_terbit    = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 4);
+})->where('validasiberkas4', 'sudah')->count();
+
+$jumlahDataIdLima_terbit     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 5);
+})->where('validasiberkas4', 'sudah')->count();
+
+$jumlahDataIdEnam_terbit     = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 6);
+})->where('validasiberkas4', 'sudah')->count();
+
+$jumlahDataIdTujuh_terbit    = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 7);
+})->where('validasiberkas4', 'sudah')->count();
+
+$jumlahDataIdDelapan_terbit  = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
+    $q->where('id', 8);
+})->where('validasiberkas4', 'sudah')->count();
+// -----------------------------------------
+
     return view('backend.04_bantuanteknis.00_halamanutama', [
         'title' => 'Permohonan Bantuan Teknis Penyelenggaraan Bangunan Gedung',
         // 'data' => $dataTanpaIdSatu,
         'user' => $user,
+
+        'jumlahDataIdSatu_terbit' => $jumlahDataIdSatu_terbit,
+        'jumlahDataIdDua_terbit' => $jumlahDataIdDua_terbit,
+        'jumlahDataIdTiga_terbit' => $jumlahDataIdTiga_terbit,
+        'jumlahDataIdEmpat_terbit' => $jumlahDataIdEmpat_terbit,
+        'jumlahDataIdLima_terbit' => $jumlahDataIdLima_terbit,
+        'jumlahDataIdEnam_terbit' => $jumlahDataIdEnam_terbit,
+        'jumlahDataIdTujuh_terbit' => $jumlahDataIdTujuh_terbit,
+        'jumlahDataIdDelapan_terbit' => $jumlahDataIdDelapan_terbit,
+
+        'jumlahDataIdSatu_doklapangan' => $jumlahDataIdSatu_doklapangan,
+        'jumlahDataIdDua_doklapangan' => $jumlahDataIdDua_doklapangan,
+        'jumlahDataIdTiga_doklapangan' => $jumlahDataIdTiga_doklapangan,
+        'jumlahDataIdEmpat_doklapangan' => $jumlahDataIdEmpat_doklapangan,
+        'jumlahDataIdLima_doklapangan' => $jumlahDataIdLima_doklapangan,
+        'jumlahDataIdEnam_doklapangan' => $jumlahDataIdEnam_doklapangan,
+        'jumlahDataIdTujuh_doklapangan' => $jumlahDataIdTujuh_doklapangan,
+        'jumlahDataIdDelapan_doklapangan' => $jumlahDataIdDelapan_doklapangan,
+
+        'jumlahDataIdSatu_dikembalikan' => $jumlahDataIdSatu_dikembalikan,
+        'jumlahDataIdDua_dikembalikan' => $jumlahDataIdDua_dikembalikan,
+        'jumlahDataIdTiga_dikembalikan' => $jumlahDataIdTiga_dikembalikan,
+        'jumlahDataIdEmpat_dikembalikan' => $jumlahDataIdEmpat_dikembalikan,
+        'jumlahDataIdLima_dikembalikan' => $jumlahDataIdLima_dikembalikan,
+        'jumlahDataIdEnam_dikembalikan' => $jumlahDataIdEnam_dikembalikan,
+        'jumlahDataIdTujuh_dikembalikan' => $jumlahDataIdTujuh_dikembalikan,
+        'jumlahDataIdDelapan_dikembalikan' => $jumlahDataIdDelapan_dikembalikan,
+
+        'jumlahDataIdSatu_olahdata' => $jumlahDataIdSatu_olahdata,
+        'jumlahDataIdDua_olahdata' => $jumlahDataIdDua_olahdata,
+        'jumlahDataIdTiga_olahdata' => $jumlahDataIdTiga_olahdata,
+        'jumlahDataIdEmpat_olahdata' => $jumlahDataIdEmpat_olahdata,
+        'jumlahDataIdLima_olahdata' => $jumlahDataIdLima_olahdata,
+        'jumlahDataIdEnam_olahdata' => $jumlahDataIdEnam_olahdata,
+        'jumlahDataIdTujuh_olahdata' => $jumlahDataIdTujuh_olahdata,
+        'jumlahDataIdDelapan_olahdata' => $jumlahDataIdDelapan_olahdata,
+
         'jumlahDataIdSatu' => $jumlahDataIdSatu,
         'jumlahDataIdDua' => $jumlahDataIdDua,
         'jumlahDataIdTiga' => $jumlahDataIdTiga,
         'jumlahDataIdEmpat' => $jumlahDataIdEmpat,
         'jumlahDataIdLima' => $jumlahDataIdLima,
         'jumlahDataIdEnam' => $jumlahDataIdEnam,
+        'jumlahDataIdTujuh' => $jumlahDataIdTujuh,
         'jumlahDataIdDelapan' => $jumlahDataIdDelapan,
+
         'datasemua' => $dataTanpaIdSatu,
     ]);
 }
@@ -2285,7 +2461,7 @@ public function beserahterima(Request $request)
 
     // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
     $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
-        $q->where('id', 8);
+        $q->where('id', 7);
     });
 
     if ($search) {
@@ -2433,7 +2609,7 @@ public function bepersontimteknis(Request $request)
 
     // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
     $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
-        $q->where('id', 9);
+        $q->where('id', 8);
     });
 
     if ($search) {

@@ -175,7 +175,7 @@ th {
 
 @can('pemohon')
 
-           <a href="/hakaksespekerjaberkas">
+           <a href="/bekrkhunianpemohon">
     <button
   style="
     background: linear-gradient(45deg, #6c757d, #adb5bd);
@@ -1013,26 +1013,27 @@ th {
 
 </div>
 
-@can('pemohon')
     <hr>
 
-    @if ($data->validasiberkas1 === 'dikembalikan')
-        <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <p style="margin: 0;">
-                    Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
-                </p>
+    @canany(['superadmin', 'admin', 'pemohon'])
 
-                <a href="/bebantekpemohondinasperbaikan/{{$data->id}}" style="text-decoration: none;">
+    @if ($data->verifikasi1 === 'dikembalikan')
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <p style="margin: 0;">
+                Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
+            </p>
+
+            <a href="/bebantekpemohondinasperbaikan/{{$data->id}}" style="text-decoration: none;">
                     <button class="button-abgblora">
                         <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
                     </button>
                 </a>
             </div>
         </div>
-    @endif
+        @endif
 
-@endcan
+        @endcanany
 
 <hr>
 

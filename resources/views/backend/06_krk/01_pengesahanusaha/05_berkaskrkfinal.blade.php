@@ -211,7 +211,7 @@ th {
 
 @can('pemohon')
 
-           <a href="/hakaksespekerjaberkas">
+           <a href="/bekrkusahapemohon">
     <button
   style="
     background: linear-gradient(45deg, #6c757d, #adb5bd);
@@ -493,21 +493,24 @@ th {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 
+{{-- @canany(['superadmin', 'admin', 'pemohon']) --}}
 
 <div style="display: flex; justify-content: flex-end; gap: 10px;">
-  <a href="/krkusahanoterbit/{{ $data->id }}" class="button-lolos"
-     style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; font-size:16px; font-weight:600; text-align:center; border:none; cursor:pointer;"
-     onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.textDecoration='none';"
-     onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.textDecoration='none';">
-    Terbitkan Nomor Dinas
-  </a>
+    @canany(['superadmin', 'admin'])
+    <a href="/krkusahanoterbit/{{ $data->id }}" class="button-lolos"
+        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; font-size:16px; font-weight:600; text-align:center; border:none; cursor:pointer;"
+        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.textDecoration='none';"
+        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.textDecoration='none';">
+        Terbitkan Nomor Dinas
+    </a>
 
-  <button class="button-lolos" onclick="downloadPDF()"
-     style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 4px; border:none; cursor:pointer; font-size:16px; font-weight:600; transition: all 0.3s ease;"
-     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-     onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
+    @endcanany
+    <button class="button-lolos" onclick="downloadPDF()"
+    style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 4px; border:none; cursor:pointer; font-size:16px; font-weight:600; transition: all 0.3s ease;"
+    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
     Download PDF
-  </button>
+</button>
 </div>
 
     <div id="contentToPrint">
@@ -710,8 +713,10 @@ th {
                                     <td style="text-align: center;">3</td>
                                     <td style="text-align: left;">Luas Bangunan Maksimal</td>
                                     <td>:</td>
-                                    <td style="text-align: left;">{{ $item->luasbangunan ?? '-' }}</td>
-                                </tr>
+                    <td style="text-align: left;">
+                {{ $item->luasbangunan ? $item->luasbangunan . ' M²' : '-' }}
+                    </td>
+            </tr>
                                 <tr>
                                     <td style="text-align: center;">4</td>
                                     <td style="text-align: left;">Luas Lantai Maksimal</td>
@@ -752,7 +757,7 @@ th {
                                     <td style="text-align: center;">10</td>
                                     <td style="text-align: left;">(KDH) Koefisien Dasar Hijau</td>
                                     <td>:</td>
-                                    <td style="text-align: left;">{{ $item->kdh ?? 'Belum di buatkan' }}</td>
+                                    <td style="text-align: left;">{{ $item->kdh ?? 'Belum di buatkan' }}%</td>
                                 </tr>
 
                                 <tr>

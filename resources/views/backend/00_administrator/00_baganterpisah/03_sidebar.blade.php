@@ -645,35 +645,35 @@
             <li class="nav-item">
 
                 <a href="#" class="nav-link">
-                    <!-- Main Building Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                        <defs>
-                            <linearGradient id="deepseek-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#0066FF;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#00BFFF;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
-                        <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
-                    </svg>
-                    <p style="color: white; margin-left: 8px;">
-                        Berkas Pemohon
-                        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-                    </p>
-                </a>
+    <!-- Ganti icon dengan Bootstrap Icons dan beri warna putih -->
+    <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+
+    <p style="color: white; margin-left: 8px; display: flex; align-items: center;">
+        Berkas Pemohon
+        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
+    </p>
+</a>
+
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
+
+    <li class="nav-item">
+        <a href="/404" class="nav-link">
+            <i class="bi bi-image nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Bantuan Gambar</p>
+        </a>
+    </li>
     <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-geo-alt nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">PBG/SLF</p>
         </a>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-journal-text nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Bantuan Teknis</p>
         </a>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a href="/pemohonkrk" class="nav-link">
             <i class="bi bi-card-list nav-icon" style="color: white;"></i>
@@ -686,36 +686,23 @@
             <p style="color: white; margin-left: 8px;">MBR</p>
         </a>
     </li>
-    <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-image nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Bantuan Gambar</p>
-        </a>
-    </li>
+
 </ul>
 
             </li>
 
 
               <li class="nav-item">
+<a href="/404" class="nav-link" style="display: flex; align-items: center;">
+    <!-- Ganti icon SVG dengan Bootstrap Icon -->
+    <i class="bi bi-person-circle nav-icon" style="color: white; font-size: 16px;"></i>
 
-                <a href="/404" class="nav-link">
-                    <!-- Main Building Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="url(#deepseek-gradient)" class="nav-icon" viewBox="0 0 16 16">
-                        <defs>
-                            <linearGradient id="deepseek-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#0066FF;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#00BFFF;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
-                        <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
-                    </svg>
-                    <p style="color: white; margin-left: 8px;">
-                        Profil Anda
-                        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
-                    </p>
-                </a>
+    <p style="color: white; margin-left: 8px; display: flex; align-items: center; width: 100%;">
+        Profil Anda
+        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
+    </p>
+</a>
+
 </li>
 
             @endcan

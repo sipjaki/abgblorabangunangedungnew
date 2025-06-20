@@ -230,6 +230,7 @@ th {
                                   <tr>
    <th style="background-color: #ADD8E6;">No</th>
 <th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Kegiatan</th>
+<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Tanggal Kegiatan</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 1</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 2</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 3</th>
@@ -279,6 +280,7 @@ th {
     <tr>
         <td>{{ $loop->iteration }}</td>
         <td>{{ $item->kegiatan }}</td>
+<td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
         <td>
     <div style="margin-top: 10px;">
         @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))

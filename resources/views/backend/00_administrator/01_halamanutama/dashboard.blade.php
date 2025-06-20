@@ -40,41 +40,152 @@
             <!--begin::Container-->
             <div class="container-fluid">
 
+                @can('konsultanbantek')
 
+{{-- atas  --}}
+<!-- Load Google Charts -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", { packages: ["corechart"] });
+  google.charts.setOnLoadCallback(drawCharts);
 
-@can('konsultanbantek')
+  function drawCharts() {
+    // Data Pie Chart
+    var dataPie = google.visualization.arrayToDataTable([
+      ['Dinas', 'Jumlah Permohonan'],
+      @foreach($dataChart as $row)
+        ['{{ $row["nama"] }}', {{ $row["jumlah"] }}],
+      @endforeach
+    ]);
+
+    // Data Bar Chart
+    var dataBar = google.visualization.arrayToDataTable([
+      ['Dinas', 'Jumlah Permohonan', { role: 'style' }],
+      @foreach($dataChart as $index => $row)
+        ['{{ $row["nama"] }}', {{ $row["jumlah"] }}, '{{ ['#006400','#FFD700','#001f3f','#FFA500','#8A2BE2','#00BFFF','#DC143C','#20B2AA'][$index % 8] }}'],
+      @endforeach
+    ]);
+
+    // Pie Chart Options
+    var pieOptions = {
+      title: 'Persentase Permohonan Berdasarkan Dinas',
+      is3D: true,
+      backgroundColor: 'transparent',
+      titleTextStyle: {
+        color: 'white',
+        fontSize: 16,
+        bold: true
+      },
+      legend: {
+        textStyle: {
+          color: 'white',
+          fontSize: 12
+        }
+      },
+      chartArea: {
+        width: '90%',
+        height: '75%'
+      }
+    };
+
+    // Bar Chart Options
+    var barOptions = {
+      title: 'Jumlah Permohonan Per Dinas',
+      backgroundColor: 'transparent',
+      titleTextStyle: {
+        color: 'white',
+        fontSize: 16,
+        bold: true
+      },
+      legend: { position: 'none' },
+      chartArea: {
+        width: '70%',
+        height: '70%'
+      },
+      hAxis: {
+        title: 'Jumlah Permohonan',
+        titleTextStyle: { color: 'white' },
+        textStyle: { color: 'white' }
+      },
+      vAxis: {
+        textStyle: { color: 'white' }
+      }
+    };
+
+    // Draw the charts
+    var pieChart = new google.visualization.PieChart(document.getElementById('piechart'));
+    var barChart = new google.visualization.ColumnChart(document.getElementById('barchart'));
+
+    pieChart.draw(dataPie, pieOptions);
+    barChart.draw(dataBar, barOptions);
+  }
+</script>
+
+<!-- Chart Layout -->
+<style>
+  .chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: -20px;
+  }
+
+  .chart-box {
+    flex: 1;
+    min-width: 400px;
+    max-width: 48%;
+    height: 500px;
+    background-color: transparent;
+  }
+
+  svg {
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
+  }
+
+  @media (max-width: 768px) {
+    .chart-box {
+      max-width: 100%;
+      height: 400px;
+    }
+  }
+</style>
+
+<!-- HTML Chart Container -->
+<div class="chart-container" style="margin-top:5px; margin-bottom:20px;">
+  <div class="chart-box" id="piechart"></div>
+  <div class="chart-box" id="barchart"></div>
+</div>
+
 
 <div class="row">
     @php
         $boxes = [
             ['title' => 'BANTUAN ASISTENSI PERENCANAAN', 'jumlah' => $jumlahdataasistensi1],
-            // ['title' => 'PENELITI KONTRAK', 'jumlah' => $jumlahdatadinas2],
-            // ['title' => 'PERHITUNGAN PENYUSUTAN', 'jumlah' => $jumlahdatadinas3],
-            // ['title' => 'PERHITUNGAN TINGKAT KERUSAKAN', 'jumlah' => $jumlahdatadinas4],
-            // ['title' => 'PERHITUNGAN BIAYA PEMELIHARAAN BGN', 'jumlah' => $jumlahdatadinas5],
-            // ['title' => 'BIAYA KONSTRUKSI PEMBANGUNAN BGN', 'jumlah' => $jumlahdatadinas6],
-            // ['title' => 'PENGELOLA TEKNIS', 'jumlah' => $jumlahdatadinas7],
-            // ['title' => 'PENDAMPINGAN SERAH TERIMA PEKERJAAN', 'jumlah' => $jumlahdatadinas8],
-            // ['title' => 'PERMINTAAN PERSONIL TIM TEKNIS', 'jumlah' => $jumlahdatadinas9],
+            // Tambahan lainnya jika diperlukan
         ];
     @endphp
 
     @foreach ($boxes as $index => $box)
         <div class="col-12 col-sm-6 col-md-3 mb-4" data-aos="zoom-out" data-aos-delay="{{ $index * 100 }}">
-            <div class="info-box shadow-lg rounded-3 p-4 transition-custom" style="background: #000080; color: white;">
-                <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
-                        <path fill="green" d="M14 4V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h-2V2H4v12h8V6h2z"/>
-                    </svg>
-                </span>
-                <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
-                    <span class="info-box-text" style="color: white; font-size: 14px;">{{ $box['title'] }}</span>
-                    <span class="info-box-number fw-bold" style="font-size: 16px;">{{ $box['jumlah'] }} Permohonan</span>
+            <a href="/beakunkonsultanasistensi" class="text-decoration-none">
+                <div class="info-box shadow-lg rounded-3 p-4 transition-custom" style="background: #000080; color: white;">
+                    <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                            <path fill="green" d="M14 4V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h-2V2H4v12h8V6h2z"/>
+                        </svg>
+                    </span>
+                    <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                        <span class="info-box-text" style="color: white; font-size: 14px;">{{ $box['title'] }}</span>
+                        <span class="info-box-number fw-bold" style="font-size: 16px;">{{ $box['jumlah'] }} Permohonan</span>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     @endforeach
 </div>
+
 @endcan
 
 @can('dinas')

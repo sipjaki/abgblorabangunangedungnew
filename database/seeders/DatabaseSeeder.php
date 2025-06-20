@@ -33,6 +33,8 @@ use App\Models\databangunangedung;
 use App\Models\jenispengajuanbantek;
 use App\Models\kepemilikanbangunangedung;
 use App\Models\krkhunian;
+use App\Models\krkkeagamaan;
+use App\Models\krksosbud;
 use App\Models\krkusaha;
 // use App\Models\paketpekerjaan;
 use Database\Factories\SkktenagakerjaFactory;
@@ -293,6 +295,26 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('adminadmin123$$')
         ]);
 
+         User::create([
+            'id'  => 25,
+            'name'  => 'Pemohon 22 Sigit Septiadi',
+            'username' => 'sigit',
+            'statusadmin_id' => '3',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sigitseptiadi100@gmail.com',
+            'password' => bcrypt('adminadmin')
+        ]);
+
+         User::create([
+            'id'  => 44,
+            'name'  => 'Pemohon 33 Sigit Septiadi',
+            'username' => 'sigit',
+            'statusadmin_id' => '3',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sigitseptiadi101@gmail.com',
+            'password' => bcrypt('adminadmin')
+        ]);
+
 
         // -------------------
 
@@ -513,20 +535,21 @@ User::create([
             'jenispengajuan'  => 'PERHITUNGAN BIAYA KONSTRUKSI PEMBANGUNAN BGN',
         ]);
 
-        // jenispengajuanbantek::create([
-        //     'id'  => 7,
-        //     'jenispengajuan'  => 'PENGELOLA TEKNIS',
-        // ]);
-
         jenispengajuanbantek::create([
-            'id'  => 8,
+            'id'  => 7,
             'jenispengajuan'  => 'PENDAMPINGAN SERAH TERIMA PEKERJAAN',
         ]);
 
         jenispengajuanbantek::create([
-            'id'  => 9,
+            'id'  => 8,
             'jenispengajuan'  => 'PERMINTAAN PERSONIL TIM TEKNIS',
         ]);
+
+                // jenispengajuanbantek::create([
+        //     'id'  => 7,
+        //     'jenispengajuan'  => 'PENGELOLA TEKNIS',
+        // ]);
+
 
 
         // MENU KEDINASAN
@@ -11018,7 +11041,7 @@ kelurahandesa::create([
  for ($i = 1; $i <= 100; $i++) {
             bantuanteknis::create([
                 'dinas_id' => rand(1, 15),
-                'jenispengajuanbantek_id' => rand(1, 9),
+                'jenispengajuanbantek_id' => rand(1, 8),
                 'bujkkonsultan_id' => rand(1, 17),
                 'nosurat' => '0' . rand(100, 999) . '/DPUPR/VI/2025',
                 'tanggalsurat' => now()->subDays(rand(0, 30)),
@@ -11046,9 +11069,11 @@ kelurahandesa::create([
             ]);
         }
 
-        for ($i = 1; $i <= 100; $i++) {
+        for ($i = 1; $i <= 101; $i++) {
     krkusaha::create([
-        'user_id' => 18,
+        // 'user_id' => 18,
+        // 'user_id' => rand(18, 25, 44),
+        'user_id' => [18, 25, 44][array_rand([18, 25, 44])],
         'kecamatanblora_id' => rand(1, 10),
         'kelurahandesa_id' => rand(1, 10),
         'perorangan' => 'Pemohon ' . $i,
@@ -11066,9 +11091,60 @@ kelurahandesa::create([
         'alamatpemohon' => 'Jl. Alamat Pemohon No. ' . rand(1, 100),
     ]);
 }
-        for ($i = 1; $i <= 100; $i++) {
+        for ($i = 1; $i <= 102; $i++) {
     krkhunian::create([
-        'user_id' => 18,
+        // 'user_id' => 18,
+        //   'user_id' => rand(18, 25, 44),
+          'user_id' => [18, 25, 44][array_rand([18, 25, 44])],
+
+              'kecamatanblora_id' => rand(1, 10),
+        'kelurahandesa_id' => rand(1, 10),
+        'perorangan' => 'Pemohon ' . $i,
+        'perusahaan' => 'CV Proyek Mandiri ' . rand(1, 100),
+        'nik' => (string)rand(3200000000000000, 3299999999999999),
+        'koordinatlokasi' => '-7.' . rand(100000, 999999) . ',111.' . rand(100000, 999999),
+        'tanggalpermohonan' => now()->subDays(rand(1, 60)),
+        'notelepon' => '08123' . rand(100000, 999999),
+        'luastanah' => rand(100, 1000),
+        'jumlahlantai' => (string)rand(1, 4),
+        'rt' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
+        'rw' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
+        'kabupaten' => 'Blora',
+        'lokasibangunan' => 'Jl. Pembangunan No. ' . rand(1, 100),
+        'alamatpemohon' => 'Jl. Alamat Pemohon No. ' . rand(1, 100),
+    ]);
+}
+
+for ($i = 1; $i <= 103; $i++) {
+    krkkeagamaan::create([
+        // 'user_id' => 18,
+        //   'user_id' => rand(18, 25, 44),
+          'user_id' => [18, 25, 44][array_rand([18, 25, 44])],
+
+              'kecamatanblora_id' => rand(1, 10),
+        'kelurahandesa_id' => rand(1, 10),
+        'perorangan' => 'Pemohon ' . $i,
+        'perusahaan' => 'CV Proyek Mandiri ' . rand(1, 100),
+        'nik' => (string)rand(3200000000000000, 3299999999999999),
+        'koordinatlokasi' => '-7.' . rand(100000, 999999) . ',111.' . rand(100000, 999999),
+        'tanggalpermohonan' => now()->subDays(rand(1, 60)),
+        'notelepon' => '08123' . rand(100000, 999999),
+        'luastanah' => rand(100, 1000),
+        'jumlahlantai' => (string)rand(1, 4),
+        'rt' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
+        'rw' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
+        'kabupaten' => 'Blora',
+        'lokasibangunan' => 'Jl. Pembangunan No. ' . rand(1, 100),
+        'alamatpemohon' => 'Jl. Alamat Pemohon No. ' . rand(1, 100),
+    ]);
+}
+
+for ($i = 1; $i <= 104; $i++) {
+    krksosbud::create([
+        // 'user_id' => 18,
+        'user_id' => [18, 25, 44][array_rand([18, 25, 44])],
+
+        //   'user_id' => rand(18, 25, 44),
         'kecamatanblora_id' => rand(1, 10),
         'kelurahandesa_id' => rand(1, 10),
         'perorangan' => 'Pemohon ' . $i,

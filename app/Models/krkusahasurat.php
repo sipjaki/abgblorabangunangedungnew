@@ -30,6 +30,16 @@ public function krkhunian()
     return $this->hasOne(krkhunian::class, 'krkhunian_id', 'id')->latest('id');
 }
 
+public function krkkeagamaan()
+{
+    return $this->hasOne(krkkeagamaan::class, 'krkkeagamaan_id', 'id')->latest('id');
+}
+
+public function krksosbud()
+{
+    return $this->hasOne(krksosbud::class, 'krksosbud_id', 'id')->latest('id');
+}
+
 
     public function rencanagsbblora()
     {

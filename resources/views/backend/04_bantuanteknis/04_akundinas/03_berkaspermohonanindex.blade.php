@@ -217,6 +217,10 @@ th {
 
 <div style="display: flex; justify-content: flex-end;">
 
+    <a href="/datapermohonandinas" class="button-statistika" style="color: black; margin-right:5px; text-decoration: none; display: inline-flex; align-items: center;">
+    <i class="bi bi-bar-chart-line" style="margin-right: 5px;"></i> Statistika
+</a>
+
                               <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanbantuanteknis')"
                                     class="button-abgblora" style="color: black;">
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel

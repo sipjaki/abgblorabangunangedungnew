@@ -1,19 +1,21 @@
 <style>
-    .button-abgblora {
-        border: none;
-        padding: 10px 20px;
-        border-radius: 15px;
-        font-size: 16px;
-        color: white;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        transition: color 0.3s;
-        background: linear-gradient(120deg, navy, white, navy);
-        background-size: 200% auto;
-        animation: gradientMove 7s linear infinite;
-    }
+.button-abgblora {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif; /* Tambah font Poppins */
+    font-weight: 600; /* Tebal, bisa diganti 700 jika lebih tebal lagi */
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s;
+    background: linear-gradient(120deg, navy, white, navy);
+    background-size: 200% auto;
+    animation: gradientMove 7s linear infinite;
+}
 
     .button-abgblora:hover {
         color: black;
@@ -295,6 +297,28 @@
 }
 
 .button-download:hover {
+    color: black;          /* tulisan jadi hitam */
+    background: white;     /* background jadi putih */
+}
+
+.button-statistika {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-weight:bold;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s, background 0.3s;
+    background: linear-gradient(120deg, #dbba00, #ffffff, #dbba00); /* navy modern */
+    background-size: 200% auto;
+    animation: gradientMove 7s linear infinite;
+}
+
+.button-statistika:hover {
     color: black;          /* tulisan jadi hitam */
     background: white;     /* background jadi putih */
 }

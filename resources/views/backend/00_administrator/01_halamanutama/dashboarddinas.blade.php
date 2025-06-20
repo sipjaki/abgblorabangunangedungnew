@@ -50,37 +50,150 @@
 
 
 
+{{-- atas  --}}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", { packages: ["corechart"] });
+  google.charts.setOnLoadCallback(drawCharts);
+
+  function drawCharts() {
+    var data = google.visualization.arrayToDataTable([
+      ['Kategori', 'Jumlah Permohonan'],
+      ['Berkas Asistensi', {{ $jumlahdata1 ?? 0 }}],
+      ['Peneliti Kontrak', {{ $jumlahdata2 ?? 0 }}],
+      ['Perhitungan Penyusutan', {{ $jumlahdata3 ?? 0 }}],
+      ['Tingkat Kerusakan', {{ $jumlahdata4 ?? 0 }}],
+      ['Pemeliharaan BGN', {{ $jumlahdata5 ?? 0 }}],
+      ['Perhitungan BGN', {{ $jumlahdata6 ?? 0 }}],
+      ['Pendampingan Serah Terima', {{ $jumlahdata7 ?? 0 }}],
+      ['Personil Tim Teknis', {{ $jumlahdata8 ?? 0 }}]
+    ]);
+
+    var dataBar = google.visualization.arrayToDataTable([
+      ['Kategori', 'Jumlah Permohonan', { role: 'style' }],
+      ['Berkas Asistensi', {{ $jumlahdata1 ?? 0 }}, '#001f3f'],    // Navy
+      ['Peneliti Kontrak', {{ $jumlahdata2 ?? 0 }}, '#006400'],     // Dark Green
+      ['Perhitungan Penyusutan', {{ $jumlahdata3 ?? 0 }}, '#FFD700'], // Gold
+      ['Tingkat Kerusakan', {{ $jumlahdata4 ?? 0 }}, '#00BFFF'],  // DeepSkyBlue
+      ['Pemeliharaan BGN', {{ $jumlahdata5 ?? 0 }}, '#FF69B4'],    // Hot Pink
+      ['Perhitungan BGN', {{ $jumlahdata6 ?? 0 }}, '#FF8C00'],     // Dark Orange
+      ['Pendampingan Serah Terima', {{ $jumlahdata7 ?? 0 }}, '#8A2BE2'], // Blue Violet
+      ['Personil Tim Teknis', {{ $jumlahdata8 ?? 0 }}, '#20B2AA'] // Light Sea Green
+    ]);
+
+    var pieOptions = {
+      title: 'Persentase Permohonan Per Kategori',
+      is3D: true,
+      backgroundColor: 'transparent',
+      colors: ['#001f3f', '#006400', '#FFD700', '#00BFFF', '#FF69B4', '#FF8C00', '#8A2BE2', '#20B2AA'],
+      titleTextStyle: {
+        color: '#001f3f',
+        fontSize: 16,
+        bold: true
+      },
+      legend: {
+        textStyle: {
+          color: '#001f3f',
+          fontSize: 12
+        }
+      },
+      chartArea: {
+        width: '90%',
+        height: '75%'
+      }
+    };
+
+    var barOptions = {
+      title: 'Jumlah Permohonan Per Kategori',
+      backgroundColor: 'transparent',
+      titleTextStyle: {
+        color: '#001f3f',
+        fontSize: 16,
+        bold: true
+      },
+      legend: { position: 'none' },
+      chartArea: {
+        width: '70%',
+        height: '70%'
+       },
+      hAxis: {
+        title: 'Jumlah Permohonan',
+        titleTextStyle: { color: '#001f3f' },
+        textStyle: { color: '#001f3f' }
+      },
+      vAxis: {
+        textStyle: { color: '#001f3f' }
+      }
+    };
+
+    var pieChart = new google.visualization.PieChart(document.getElementById('piechart'));
+    var barChart = new google.visualization.ColumnChart(document.getElementById('barchart'));
+
+    pieChart.draw(data, pieOptions);
+    barChart.draw(dataBar, barOptions);
+  }
+</script>
+
+<style>
+  .chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: -20px;
+  }
+
+  .chart-box {
+    flex: 1;
+    min-width: 450px;
+    max-width: 50%;
+    height: 450px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  svg {
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
+  }
+</style>
+
+<div class="chart-container">
+  <div id="piechart" class="chart-box"></div>
+  <div id="barchart" class="chart-box"></div>
+</div>
 
 
 @can('dinas')
 <div class="row">
     @php
         $boxes = [
-            ['title' => 'BANTUAN ASISTENSI PERENCANAAN', 'jumlah' => $jumlahdata1],
-            ['title' => 'PENELITI KONTRAK', 'jumlah' => $jumlahdata2],
-            ['title' => 'PERHITUNGAN PENYUSUTAN', 'jumlah' => $jumlahdata3],
-            ['title' => 'PERHITUNGAN TINGKAT KERUSAKAN', 'jumlah' => $jumlahdata4],
-            ['title' => 'PERHITUNGAN BIAYA PEMELIHARAAN BGN', 'jumlah' => $jumlahdata5],
-            ['title' => 'BIAYA KONSTRUKSI PEMBANGUNAN BGN', 'jumlah' => $jumlahdata6],
+            ['title' => 'BANTUAN ASISTENSI PERENCANAAN', 'jumlah' => $jumlahdata1, 'href' => '/bebantekdinasasistensi'],
+            ['title' => 'PENELITI KONTRAK', 'jumlah' => $jumlahdata2, 'href' => '/bebantekakundinasberkas'],
+            ['title' => 'PERHITUNGAN PENYUSUTAN', 'jumlah' => $jumlahdata3, 'href' => '/bebantekdinaspenyusutan'],
+            ['title' => 'PERHITUNGAN TINGKAT KERUSAKAN', 'jumlah' => $jumlahdata4, 'href' => '/bebantekdinaskerusakan'],
+            ['title' => 'PERHITUNGAN BIAYA PEMELIHARAAN BGN', 'jumlah' => $jumlahdata5, 'href' => '/bebantekdinaspemeliharaan'],
+            ['title' => 'BIAYA KONSTRUKSI PEMBANGUNAN BGN', 'jumlah' => $jumlahdata6, 'href' => '/bebantekdinasperhibgn'],
+            ['title' => 'PENDAMPINGAN SERAH TERIMA PEKERJAAN', 'jumlah' => $jumlahdata7, 'href' => '/bebantekdinasserahterima'],
+            ['title' => 'PERMINTAAN PERSONIL TIM TEKNIS', 'jumlah' => $jumlahdata8, 'href' => '/bebantekdinaspersonil'],
             // ['title' => 'PENGELOLA TEKNIS', 'jumlah' => $jumlahdata7],
-            ['title' => 'PENDAMPINGAN SERAH TERIMA PEKERJAAN', 'jumlah' => $jumlahdata8],
-            ['title' => 'PERMINTAAN PERSONIL TIM TEKNIS', 'jumlah' => $jumlahdata9],
         ];
     @endphp
 
     @foreach ($boxes as $index => $box)
         <div class="col-12 col-sm-6 col-md-3 mb-4" data-aos="zoom-out" data-aos-delay="{{ $index * 100 }}">
-            <div class="info-box shadow-lg rounded-3 p-4 transition-custom" style="background: #000080; color: white;">
-                <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
-                        <path fill="green" d="M14 4V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h-2V2H4v12h8V6h2z"/>
-                    </svg>
-                </span>
-                <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
-                    <span class="info-box-text" style="color: white; font-size: 14px;">{{ $box['title'] }}</span>
-                    <span class="info-box-number fw-bold" style="font-size: 16px;">{{ $box['jumlah'] }} Permohonan</span>
+            <a href="{{ $box['href'] }}" style="text-decoration: none;">
+                <div class="info-box shadow-lg rounded-3 p-4 transition-custom" style="background: #000080; color: white;">
+                    <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                            <path fill="green" d="M14 4V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h-2V2H4v12h8V6h2z"/>
+                        </svg>
+                    </span>
+                    <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                        <span class="info-box-text" style="color: white; font-size: 14px;">{{ $box['title'] }}</span>
+                        <span class="info-box-number fw-bold" style="font-size: 16px;">{{ $box['jumlah'] }} Permohonan</span>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     @endforeach
 </div>
