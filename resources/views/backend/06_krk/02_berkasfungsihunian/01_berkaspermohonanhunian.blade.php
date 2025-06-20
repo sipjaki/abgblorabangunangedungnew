@@ -1024,7 +1024,7 @@ th {
                 Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
             </p>
 
-            <a href="/bebantekpemohondinasperbaikan/{{$data->id}}" style="text-decoration: none;">
+            <a href="/bekrkhunianperbaikan/{{$data->id}}" style="text-decoration: none;">
                     <button class="button-abgblora">
                         <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
                     </button>

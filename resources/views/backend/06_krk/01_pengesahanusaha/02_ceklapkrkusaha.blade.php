@@ -238,6 +238,8 @@ th {
    <th style="background-color: #ADD8E6;">No</th>
 <th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Kegiatan</th>
 <th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Tanggal Kegiatan</th>
+<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Berkas Dukung 1</th>
+<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Berkas Dukung 2</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 1</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 2</th>
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 3</th>
@@ -290,7 +292,73 @@ th {
         <td>{{ $loop->iteration }}</td>
         <td>{{ $item->kegiatan }}</td>
 <td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
-        <td>
+
+<td style="vertical-align: top; padding: 10px;">
+    @if ($item->berkas1 && file_exists(public_path('storage/' . $item->berkas1)))
+        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
+            <iframe
+                src="{{ asset('storage/' . $item->berkas1) }}"
+                style="width: 100%; height: 250px; border: none;"
+                loading="lazy">
+            </iframe>
+        </div>
+        <div class="text-center mt-2">
+            <a href="{{ asset('storage/' . $item->berkas1) }}" download class="btn btn-sm btn-primary">
+                <i class="bi bi-download"></i> Download Berkas 1
+            </a>
+        </div>
+    @elseif ($item->berkas1)
+        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
+            <iframe
+                src="{{ asset($item->berkas1) }}"
+                style="width: 100%; height: 250px; border: none;"
+                loading="lazy">
+            </iframe>
+        </div>
+        <div class="text-center mt-2">
+            <a href="{{ asset($item->berkas1) }}" download class="btn btn-sm btn-primary">
+                <i class="bi bi-download"></i> Download Berkas 1
+            </a>
+        </div>
+    @else
+        <p class="text-muted text-center" style="font-size: 12px;">Tidak Ada Berkas Dukung 1</p>
+    @endif
+</td>
+
+<td style="vertical-align: top; padding: 10px;">
+    @if ($item->berkas2 && file_exists(public_path('storage/' . $item->berkas2)))
+        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
+            <iframe
+                src="{{ asset('storage/' . $item->berkas2) }}"
+                style="width: 100%; height: 250px; border: none;"
+                loading="lazy">
+            </iframe>
+        </div>
+        <div class="text-center mt-2">
+            <a href="{{ asset('storage/' . $item->berkas2) }}" download class="btn btn-sm btn-primary">
+                <i class="bi bi-download"></i> Download Berkas 2
+            </a>
+        </div>
+    @elseif ($item->berkas2)
+        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
+            <iframe
+                src="{{ asset($item->berkas2) }}"
+                style="width: 100%; height: 250px; border: none;"
+                loading="lazy">
+            </iframe>
+        </div>
+        <div class="text-center mt-2">
+            <a href="{{ asset($item->berkas2) }}" download class="btn btn-sm btn-primary">
+                <i class="bi bi-download"></i> Download Berkas 2
+            </a>
+        </div>
+    @else
+        <p class="text-muted text-center" style="font-size: 12px;">Tidak Ada Berkas Dukung 2</p>
+    @endif
+</td>
+
+
+<td>
     <div style="margin-top: 10px;">
         @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
             <img src="{{ asset('storage/' . $item->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">

@@ -788,7 +788,7 @@ th {
 <!-- Modal Konfirmasi untuk verifikasi4 -->
 <div id="confirmModal4" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah olah data sudah dilakukan?</p>
+        <p style="font-size: 16px; font-weight: 600;">Apakah permohonan ini sudah selesai?</p>
 
         <form id="validasiForm4" method="POST">
             @csrf
@@ -858,7 +858,7 @@ th {
                                         </a> --}}
                                         <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                           data-judul="{{ $item->namalengkap }}"
+                                           data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
                                             <i class="bi bi-trash"></i>
                                         </a>
@@ -903,9 +903,9 @@ th {
 
                  <script>
                  function setDeleteUrl(button) {
-                     var namalengkap = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = namalengkap;
-                     var deleteUrl = "/bebujkkonstruksi/delete/" + encodeURIComponent(namalengkap);
+                     var id = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = id;
+                     var deleteUrl = "/dokbekrkkeagamaandelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

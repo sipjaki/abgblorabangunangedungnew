@@ -38,7 +38,7 @@ return new class extends Migration
             $table->string('ktp')->nullable();
             $table->string('npwp')->nullable();
             $table->string('sertifikattanah')->nullable();
-            $table->string('lampiranoss')->nullable(); // diganti jadi FKUB
+            $table->string('lampiranoss')->nullable(); // DIGANTI JADI FKUB
             $table->string('buktipbb')->nullable();
             $table->string('dokvalidasi')->nullable();
             $table->string('siteplan')->nullable();
@@ -47,7 +47,7 @@ return new class extends Migration
             $table->string('verifikasiktp')->nullable();
             $table->string('verifikasinpwp')->nullable();
             $table->string('verifikasisert')->nullable();
-            $table->string('verifikasioss')->nullable();
+            $table->string('verifikasioss')->nullable(); // DIGANTI JADI FKUB
             $table->string('verifikasipbb')->nullable();
             $table->string('verifikasidokval')->nullable();
             $table->string('verifikasisiteplan')->nullable();
@@ -64,10 +64,10 @@ return new class extends Migration
             $table->string('verifikasi3')->nullable();
             $table->string('verifikasi4')->nullable();
             // untuk cadangan data
-            $table->string('cadangankrkusaha1')->nullable();
-            $table->string('cadangankrkusaha2')->nullable();
-            $table->string('cadangankrkusaha3')->nullable();
-            $table->string('cadangankrkusaha4')->nullable();
+            $table->string('cadangankrkagama1')->nullable();
+            $table->string('cadangankrkagama2')->nullable();
+            $table->string('cadangankrkagama3')->nullable();
+            $table->string('cadangankrkagama4')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -62,10 +62,10 @@ return new class extends Migration
             $table->string('verifikasi3')->nullable();
             $table->string('verifikasi4')->nullable();
             // untuk cadangan data
-            $table->string('cadangankrkusaha1')->nullable();
-            $table->string('cadangankrkusaha2')->nullable();
-            $table->string('cadangankrkusaha3')->nullable();
-            $table->string('cadangankrkusaha4')->nullable();
+            $table->string('cadangankrksosbud1')->nullable();
+            $table->string('cadangankrksosbud2')->nullable();
+            $table->string('cadangankrksosbud3')->nullable();
+            $table->string('cadangankrksosbud4')->nullable();
             $table->softDeletes();
             $table->timestamps();
 

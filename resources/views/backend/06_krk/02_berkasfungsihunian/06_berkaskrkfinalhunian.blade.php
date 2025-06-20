@@ -856,7 +856,7 @@ th {
 
         const opt = {
             margin: [1, 1, 1, 1], // Top, Left, Bottom, Right in cm
-            filename: 'KRK_Fungsi_Usaha.pdf',
+            filename: 'KRK_Fungsi_Hunian.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2, useCORS: true },
             jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
