@@ -315,6 +315,16 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('adminadmin')
         ]);
 
+        User::create([
+            'id'  => 45,
+            'name'  => 'Pemohon Contoh Sigit Septiadi',
+            'username' => 'sigit',
+            'statusadmin_id' => '3',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sigitseptiadicontoh@gmail.com',
+            'password' => bcrypt('adminadmin')
+        ]);
+
 
         // -------------------
 

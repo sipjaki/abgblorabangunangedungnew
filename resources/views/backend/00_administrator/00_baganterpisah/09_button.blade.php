@@ -22,18 +22,71 @@
         background: white;
     }
 
-    @keyframes gradientMove {
-        0% {
-            background-position: 200% center;
-        }
-        100% {
-            background-position: -200% center;
-        }
+   .button-fungsi {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    background: linear-gradient(120deg, #0606e7, #c5b1b1, #0606e7);
+    background-size: 200% auto;
+    animation: gradientMove 6s linear infinite;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-fungsi:hover {
+    color: black;
+    background: white;
+    background-size: initial;
+    animation: none;
+    border: 1px solid #0606e7;
+    transform: translateY(-2px);
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% center;
     }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+
 </style>
 
 
 <style>
+    .button-belakang {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        font-weight:bold;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: color 0.3s;
+        background: linear-gradient(120deg, #86bae7, white, #86bae7);
+        background-size: 200% auto;
+        animation: gradientMove 7s linear infinite;
+    }
+
+    .button-belakang:hover {
+        color: black;
+        background: white;
+    }
+
     .button-kembali {
         border: none;
         padding: 10px 20px;

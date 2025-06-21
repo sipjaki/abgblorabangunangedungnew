@@ -88,6 +88,11 @@ Route::post('/berkashunian/{id}/validate', [KrkController::class, 'validateBerka
 // Route::get('/permohonankrk', [KrkController::class, 'permohonankrk'])->middleware('auth');
 
 
+// MENU 03 PERMOHONAN KRK KEGAAMAAN
+Route::get('/permohonankrkagama', [KrkController::class, 'permohonankrkagama'])->name('permohonan.krkagama');
+Route::post('/permohonankrkagama/create', [KrkController::class, 'permohonankrkhuniancreate'])->name('permohonan.krkhuniancreate');
+
+
 // =================================================================================================================================
 // MENU BACKEND ABG BLORA BANGUNAN GEDUNG KABUPATEN BLORA
 // MENU 06 KRK BANGUNAN GEDUNG

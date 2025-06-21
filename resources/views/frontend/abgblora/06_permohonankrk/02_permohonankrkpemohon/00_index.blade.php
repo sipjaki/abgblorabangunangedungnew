@@ -86,29 +86,23 @@
 
     @include('frontend.abgblora.00_fiturmenu.02_header')
     @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
+    @include('backend.00_administrator.00_baganterpisah.09_button')
 
     <section
         id="breadcrumb"
-        style="
-            background-image: url('/assets/abgblora/logo/gambarabgblora.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 100vw;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            left: 0;
-            margin-top:-30px;
-            margin-bottom:-45px;
-        "
-    >
+         style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+  ">
 
-    <section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 185px;">
+    <section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 150px;">
+        <br><br>
         <div class="flex items-center gap-[20px]">
           <!-- Gambar di kiri -->
           <img src="/assets/abgblora/logo/iconabgblora.png" alt="" class="w-[60px] -my-[15px]" width="10%" style="margin-right: 20px;">
-
           <!-- Breadcrumb di kanan -->
           <div class="flex gap-[30px] items-center flex-wrap">
             <span>/</span>
