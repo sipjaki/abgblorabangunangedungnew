@@ -222,19 +222,19 @@ th {
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-pen-fancy"></i> Tanda Tangan</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th> --}}
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th>
-                             <th style="background-color: #ADD8E6;">
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
+                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Informasi KRK</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th> --}}
+                             {{-- <th style="background-color: #ADD8E6;">
     <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
-</th>
+</th> --}}
                              <th style="background-color: #ADD8E6;">
     <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK
 </th>
-                             <th style="background-color: #ADD8E6;">
+                             {{-- <th style="background-color: #ADD8E6;">
     <i class="fas fa-database" style="margin-right: 6px;"></i> Selesai
-</th>
-       <th style="background-color: #ADD8E6;">Aksi</th>
+</th> --}}
+       {{-- <th style="background-color: #ADD8E6;">Aksi</th> --}}
                                 </tr>
                             </thead>
                               <tbody id="tableBody">
@@ -391,7 +391,7 @@ th {
                 </a>
             </td>
 
-            <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+            {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
     <button
         class="button-lolos"
@@ -410,7 +410,7 @@ th {
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
-</td>
+</td> --}}
 
 <!-- Modal Verifikasi2 -->
 <div id="confirmModalVerifikasi2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1001; justify-content: center; align-items: center;">
@@ -479,7 +479,7 @@ th {
             <!-- Tombol Validasi -->
 
 
-
+{{--
                             <td>
                                   <div style="display: flex; flex-direction: column; align-items: center;">
                                 @if (!$item->is_validated)
@@ -502,7 +502,7 @@ th {
                                 </button>
                                 @endif
                                 </div>
-                            </td>
+                            </td> --}}
 
                             <!-- Modal Validasi -->
 <!-- Modal Validasi -->
@@ -589,7 +589,7 @@ th {
 </script>
 <td style="text-align: center; vertical-align: middle; width: 100%;">
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
-        @if (!$item->is_validated)
+        {{-- @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
     <button class="button-dikembalikan"
         disabled
@@ -628,7 +628,7 @@ th {
             </button>
         </a>
     @endif
-@endif
+@endif --}}
 
 
 @if($subdata->where('krksosbud_id', $item->id)->count() > 0)
@@ -652,7 +652,7 @@ th {
 </td>
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+{{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi3 == 'sudah')
     <button
         class="button-lolos"
@@ -670,7 +670,7 @@ th {
     <button class="button-validasinew" type="button" onclick="openModal3({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
-  @endif
+  @endif --}}
 </td>
 
 <!-- Modal Konfirmasi untuk verifikasi3 -->
@@ -761,7 +761,7 @@ th {
 
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+{{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi4 == 'sudah')
     <button
         class="button-lolos"
@@ -780,7 +780,7 @@ th {
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
-</td>
+</td> --}}
 
 <!-- Modal Konfirmasi untuk verifikasi4 -->
 <div id="confirmModal4" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
@@ -846,20 +846,20 @@ th {
 
 
 
-                                    <td style="text-align: center; vertical-align: middle;">
-                                        {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
+                                    {{-- <td style="text-align: center; vertical-align: middle;">
+                                        <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
                                             <i class="bi bi-eye"></i>
-                                        </a> --}}
-                                        {{-- <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
+                                        </a>
+                                        <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
-                                        </a> --}}
+                                        </a>
                                         <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
                                            data-judul="{{ $item->namalengkap }}"
                                            onclick="setDeleteUrl(this)">
                                             <i class="bi bi-trash"></i>
                                         </a>
-                                    </td>
+                                    </td> --}}
 
                                 </tr>
 

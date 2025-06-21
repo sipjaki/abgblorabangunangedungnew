@@ -211,7 +211,7 @@ th {
 
 @can('pemohon')
 
-           <a href="/hakaksespekerjaberkas">
+           <a href="/bekrksosbudpemohon">
     <button
   style="
     background: linear-gradient(45deg, #6c757d, #adb5bd);
@@ -495,12 +495,15 @@ th {
 
 
 <div style="display: flex; justify-content: flex-end; gap: 10px;">
-  <a href="/krksosbufnoterbit/{{ $data->id }}" class="button-lolos"
-     style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; font-size:16px; font-weight:600; text-align:center; border:none; cursor:pointer;"
-     onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.textDecoration='none';"
-     onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.textDecoration='none';">
+@canany(['superadmin', 'admin'])
+
+<a href="/krksosbufnoterbit/{{ $data->id }}" class="button-lolos"
+    style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; font-size:16px; font-weight:600; text-align:center; border:none; cursor:pointer;"
+    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.textDecoration='none';"
+    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.textDecoration='none';">
     Terbitkan Nomor Dinas
-  </a>
+</a>
+@endcanany
 
   <button class="button-lolos" onclick="downloadPDF()"
      style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 4px; border:none; cursor:pointer; font-size:16px; font-weight:600; transition: all 0.3s ease;"

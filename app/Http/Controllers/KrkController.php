@@ -3336,13 +3336,319 @@ public function permohonankrkhuniancreate(Request $request)
         $datakecamatan = kecamatanblora::all();
         $datakelurahan = kelurahandesa::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
 
-        return view('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.02_krkkeagamaan', [
+        return view('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.03_krkkeagamaan', [
             'user' => $user,
             'data' => $datakrk,
             'datakecamatan' => $datakecamatan,
             'datakelurahan' => $datakelurahan,
             'title' => 'Permohonan KRK Bangunan Gedung'
         ]);
+    }
+
+
+
+
+    public function permohonankrkagamacreate(Request $request)
+    {
+        // Validasi input
+        $validatedData = $request->validate([
+            'user_id' => 'required|string',
+            'perorangan' => 'required|string|max:255',
+            'perusahaan' => 'nullable|string|max:255',
+            'nik' => 'required|digits:16|numeric',
+            'koordinatlokasi' => 'required|string',
+            'tanggalpermohonan' => 'required|date',
+            'notelepon' => 'required|string|max:255',
+            'luastanah' => 'required|numeric|max:1000000',
+            'jumlahlantai' => 'required|string|max:10',
+            'rt' => 'required|string|max:10',
+            'rw' => 'required|string|max:10',
+            'kabupaten' => 'required|string|max:255',
+            'kecamatanblora_id' => 'required|string|max:255',
+            'kelurahandesa_id' => 'required|string|max:255',
+            'lokasibangunan' => 'required|string',
+            'alamatpemohon' => 'required|string',
+
+            // File validation
+            'ktp' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
+            'npwp' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
+            'sertifikattanah' => 'nullable|file|mimes:pdf|max:10048',
+            'lampiranoss' => 'nullable|file|mimes:pdf|max:10048',
+            'buktipbb' => 'nullable|file|mimes:pdf|max:10048',
+            'dokvalidasi' => 'nullable|file|mimes:pdf|max:10048',
+            'siteplan' => 'nullable|file|mimes:pdf|max:10048',
+            'tandatangan' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
+            // 'tandatangan' => 'required|string',
+        ], [
+            // Custom error messages
+            'user_id.required' => 'Wajib diisi!',
+            'perorangan.required' => 'Wajib diisi!',
+            'perusahaan.required' => 'Wajib diisi!',
+            'nik.required' => 'NIK 16 Digit Number!',
+            'nik.digits' => 'NIK harus terdiri dari 16 digit!',
+            'nik.numeric' => 'NIK hanya boleh angka!',
+            'koordinatlokasi.required' => 'Koordinat lokasi wajib diisi!',
+            'tanggalpermohonan.required' => 'Tanggal permohonan wajib diisi!',
+            'luastanah.required' => 'Luas Tanah wajib diisi!',
+            'notelepon.required' => 'Nomor telepon wajib diisi!',
+            'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
+            'rt.required' => 'RT wajib diisi!',
+            'rw.required' => 'RW wajib diisi!',
+            'kabupaten.required' => 'Kabupaten wajib diisi!',
+            'kecamatanblora_id.required' => 'Kecamatan wajib diisi!',
+            'kelurahandesa_id.required' => 'Kelurahan/Desa wajib diisi!',
+            'lokasibangunan.required' => 'Lokasi bangunan wajib diisi!',
+            'ktp.required' => 'KTP Wajib di Upload!',
+            'ktp.max' => 'Ukuran file Maksimal 10MB!',
+            'ktp.mimes' => 'File Harus JPG/JPEG!',
+            'npwp.required' => 'NPWP Wajib di Upload!',
+            'npwp.max' => 'Ukuran file Maksimal 10MB!',
+            'npwp.mimes' => 'File Harus JPG/JPEG!',
+            'sertifikattanah.required' => 'Sertifikat Tanah Wajib di Upload!',
+            'sertifikattanah.max' => 'Ukuran File Maksimal 10MB!',
+            'sertifikattanah.mimes' => 'File Harus pdf!',
+            'lampiranoss.required' => 'Lampiran OSS Wajib di Upload!',
+            'lampiranoss.max' => 'Ukuran file Maksimal 10MB!',
+            'lampiranoss.mimes' => 'File Harus pdf!',
+            'buktipbb.required' => 'Bukti PBB Wajib di Upload!',
+            'buktipbb.max' => 'Ukuran file Maksimal 10MB!',
+            'buktipbb.mimes' => 'File Harus pdf!',
+            'dokvalidasi.required' => 'Dokumen Wajib di Upload!',
+            'dokvalidasi.max' => 'Ukuran file Maksimal 10MB!',
+            'dokvalidasi.mimes' => 'File Harus pdf!',
+            'siteplan.required' => 'Siteplan Wajib di Upload!',
+            'siteplan.max' => 'Ukuran file Maksimal 10MB!',
+            'siteplan.mimes' => 'File Harus pdf!',
+            'tandatangan.required' => 'Tanda Tangan Belum di Upload!',
+        ]);
+
+        // Setup for file upload
+        $filePaths = [];
+
+        // Define the folder paths for each file field
+        $fileFields = [
+            'ktp' => '06_krk/03_krkkeagamaan/01_ktp',
+            'npwp' => '06_krk/03_krkkeagamaan/02_npwp',
+            'sertifikattanah' => '06_krk/03_krkkeagamaan/03_sertifikattanah',
+            'lampiranoss' => '06_krk/03_krkkeagamaan/04_lampiranoss',
+            'buktipbb' => '06_krk/03_krkkeagamaan/05_buktipbb',
+            'dokvalidasi' => '06_krk/03_krkkeagamaan/06_dokvalidasi',
+            'siteplan' => '06_krk/03_krkkeagamaan/06_siteplan',
+            'tandatangan' => '06_krk/03_krkkeagamaan/07_tandatangan',
+        ];
+
+        // Loop through each file field and handle the upload
+        foreach ($fileFields as $field => $folder) {
+            if ($request->hasFile($field)) {
+                $file = $request->file($field);
+                $filename = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
+                $path = public_path($folder);
+                // Create directory if it does not exist
+                if (!File::exists($path)) {
+                    File::makeDirectory($path, 0775, true);
+                }
+
+                // Move the file to the correct folder
+                $file->move($path, $filename);
+                $filePaths[$field] = $folder . '/' . $filename;
+            }
+        }
+
+        // Save all data to the database
+        krkkeagamaan::create([
+            'user_id' => $validatedData['user_id'],
+            'perorangan' => $validatedData['perorangan'],
+            'perusahaan' => $validatedData['perusahaan'],
+            'nik' => $validatedData['nik'],
+            'koordinatlokasi' => $validatedData['koordinatlokasi'],
+            'tanggalpermohonan' => $validatedData['tanggalpermohonan'],
+            'notelepon' => $validatedData['notelepon'],
+            'luastanah' => $validatedData['luastanah'],
+            'jumlahlantai' => $validatedData['jumlahlantai'],
+            'rt' => $validatedData['rt'],
+            'rw' => $validatedData['rw'],
+            'kabupaten' => $validatedData['kabupaten'],
+            'kecamatanblora_id' => $validatedData['kecamatanblora_id'],
+            'kelurahandesa_id' => $validatedData['kelurahandesa_id'],
+            'lokasibangunan' => $validatedData['lokasibangunan'],
+            'ktp' => $filePaths['ktp'],
+            'npwp' => $filePaths['npwp'],
+            'sertifikattanah' => $filePaths['sertifikattanah'],
+            'lampiranoss' => $filePaths['lampiranoss'],
+            'buktipbb' => $filePaths['buktipbb'],
+            'dokvalidasi' => $filePaths['dokvalidasi'],
+            'siteplan' => $filePaths['siteplan'],
+            'tandatangan' => $filePaths['tandatangan'],
+        ]);
+
+        session()->flash('create', 'Permohonan Anda Berhasil Dibuat!');
+        return redirect('/dashboard');
+
+    }
+
+
+       // PERMOHONAN KRK SOSIAL BUDAYA BANGUNAN GEDUNG
+    public function permohonankrksosbud(Request $request)
+    {
+        // Kalau request-nya AJAX (dari dropdown Kecamatan)
+        if ($request->ajax() && $request->has('kecamatan_id')) {
+            $desa = kelurahandesa::where('kecamatanblora_id', $request->kecamatan_id)->get();
+            return response()->json($desa);
+        }
+
+        // Kalau request biasa (GET halaman utama)
+        $user = Auth::user();
+        $datakrk = krksosbud::all();
+        $datakecamatan = kecamatanblora::all();
+        $datakelurahan = kelurahandesa::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
+
+        return view('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.04_krksosbud', [
+            'user' => $user,
+            'data' => $datakrk,
+            'datakecamatan' => $datakecamatan,
+            'datakelurahan' => $datakelurahan,
+            'title' => 'Permohonan KRK Sosial Budaya Bangunan Gedung'
+        ]);
+    }
+
+
+
+    public function permohonankrksosbudcreate(Request $request)
+    {
+        // Validasi input
+        $validatedData = $request->validate([
+            'user_id' => 'required|string',
+            'perorangan' => 'required|string|max:255',
+            'perusahaan' => 'nullable|string|max:255',
+            'nik' => 'required|digits:16|numeric',
+            'koordinatlokasi' => 'required|string',
+            'tanggalpermohonan' => 'required|date',
+            'notelepon' => 'required|string|max:255',
+            'luastanah' => 'required|numeric|max:1000000',
+            'jumlahlantai' => 'required|string|max:10',
+            'rt' => 'required|string|max:10',
+            'rw' => 'required|string|max:10',
+            'kabupaten' => 'required|string|max:255',
+            'kecamatanblora_id' => 'required|string|max:255',
+            'kelurahandesa_id' => 'required|string|max:255',
+            'lokasibangunan' => 'required|string',
+            'alamatpemohon' => 'required|string',
+
+            // File validation
+            'ktp' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
+            'npwp' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
+            'sertifikattanah' => 'nullable|file|mimes:pdf|max:10048',
+            // 'lampiranoss' => 'nullable|file|mimes:pdf|max:10048',
+            'buktipbb' => 'nullable|file|mimes:pdf|max:10048',
+            'dokvalidasi' => 'nullable|file|mimes:pdf|max:10048',
+            'siteplan' => 'nullable|file|mimes:pdf|max:10048',
+            'tandatangan' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
+            // 'tandatangan' => 'required|string',
+        ], [
+            // Custom error messages
+            'user_id.required' => 'Wajib diisi!',
+            'perorangan.required' => 'Wajib diisi!',
+            'perusahaan.required' => 'Wajib diisi!',
+            'nik.required' => 'NIK 16 Digit Number!',
+            'nik.digits' => 'NIK harus terdiri dari 16 digit!',
+            'nik.numeric' => 'NIK hanya boleh angka!',
+            'koordinatlokasi.required' => 'Koordinat lokasi wajib diisi!',
+            'tanggalpermohonan.required' => 'Tanggal permohonan wajib diisi!',
+            'luastanah.required' => 'Luas Tanah wajib diisi!',
+            'notelepon.required' => 'Nomor telepon wajib diisi!',
+            'jumlahlantai.required' => 'Jumlah Lantai wajib diisi!',
+            'rt.required' => 'RT wajib diisi!',
+            'rw.required' => 'RW wajib diisi!',
+            'kabupaten.required' => 'Kabupaten wajib diisi!',
+            'kecamatanblora_id.required' => 'Kecamatan wajib diisi!',
+            'kelurahandesa_id.required' => 'Kelurahan/Desa wajib diisi!',
+            'lokasibangunan.required' => 'Lokasi bangunan wajib diisi!',
+            'ktp.required' => 'KTP Wajib di Upload!',
+            'ktp.max' => 'Ukuran file Maksimal 10MB!',
+            'ktp.mimes' => 'File Harus JPG/JPEG!',
+            'npwp.required' => 'NPWP Wajib di Upload!',
+            'npwp.max' => 'Ukuran file Maksimal 10MB!',
+            'npwp.mimes' => 'File Harus JPG/JPEG!',
+            'sertifikattanah.required' => 'Sertifikat Tanah Wajib di Upload!',
+            'sertifikattanah.max' => 'Ukuran File Maksimal 10MB!',
+            'sertifikattanah.mimes' => 'File Harus pdf!',
+            // 'lampiranoss.required' => 'Lampiran OSS Wajib di Upload!',
+            // 'lampiranoss.max' => 'Ukuran file Maksimal 10MB!',
+            // 'lampiranoss.mimes' => 'File Harus pdf!',
+            'buktipbb.required' => 'Bukti PBB Wajib di Upload!',
+            'buktipbb.max' => 'Ukuran file Maksimal 10MB!',
+            'buktipbb.mimes' => 'File Harus pdf!',
+            'dokvalidasi.required' => 'Dokumen Wajib di Upload!',
+            'dokvalidasi.max' => 'Ukuran file Maksimal 10MB!',
+            'dokvalidasi.mimes' => 'File Harus pdf!',
+            'siteplan.required' => 'Siteplan Wajib di Upload!',
+            'siteplan.max' => 'Ukuran file Maksimal 10MB!',
+            'siteplan.mimes' => 'File Harus pdf!',
+            'tandatangan.required' => 'Tanda Tangan Belum di Upload!',
+        ]);
+
+        // Setup for file upload
+        $filePaths = [];
+
+        // Define the folder paths for each file field
+        $fileFields = [
+            'ktp' => '06_krk/04_krksosbud/01_ktp',
+            'npwp' => '06_krk/04_krksosbud/02_npwp',
+            'sertifikattanah' => '06_krk/04_krksosbud/03_sertifikattanah',
+            // 'lampiranoss' => '06_krk/03_krkkeagamaan/04_lampiranoss',
+            'buktipbb' => '06_krk/04_krksosbud/05_buktipbb',
+            'dokvalidasi' => '06_krk/04_krksosbud/06_dokvalidasi',
+            'siteplan' => '06_krk/04_krksosbud/06_siteplan',
+            'tandatangan' => '06_krk/04_krksosbud/07_tandatangan',
+        ];
+
+        // Loop through each file field and handle the upload
+        foreach ($fileFields as $field => $folder) {
+            if ($request->hasFile($field)) {
+                $file = $request->file($field);
+                $filename = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
+                $path = public_path($folder);
+                // Create directory if it does not exist
+                if (!File::exists($path)) {
+                    File::makeDirectory($path, 0775, true);
+                }
+
+                // Move the file to the correct folder
+                $file->move($path, $filename);
+                $filePaths[$field] = $folder . '/' . $filename;
+            }
+        }
+
+        // Save all data to the database
+        krksosbud::create([
+            'user_id' => $validatedData['user_id'],
+            'perorangan' => $validatedData['perorangan'],
+            'perusahaan' => $validatedData['perusahaan'],
+            'nik' => $validatedData['nik'],
+            'koordinatlokasi' => $validatedData['koordinatlokasi'],
+            'tanggalpermohonan' => $validatedData['tanggalpermohonan'],
+            'notelepon' => $validatedData['notelepon'],
+            'luastanah' => $validatedData['luastanah'],
+            'jumlahlantai' => $validatedData['jumlahlantai'],
+            'rt' => $validatedData['rt'],
+            'rw' => $validatedData['rw'],
+            'kabupaten' => $validatedData['kabupaten'],
+            'kecamatanblora_id' => $validatedData['kecamatanblora_id'],
+            'kelurahandesa_id' => $validatedData['kelurahandesa_id'],
+            'lokasibangunan' => $validatedData['lokasibangunan'],
+            'ktp' => $filePaths['ktp'],
+            'npwp' => $filePaths['npwp'],
+            'sertifikattanah' => $filePaths['sertifikattanah'],
+            // 'lampiranoss' => $filePaths['lampiranoss'],
+            'buktipbb' => $filePaths['buktipbb'],
+            'dokvalidasi' => $filePaths['dokvalidasi'],
+            'siteplan' => $filePaths['siteplan'],
+            'tandatangan' => $filePaths['tandatangan'],
+        ]);
+
+        session()->flash('create', 'Permohonan Anda Berhasil Dibuat!');
+        return redirect('/dashboard');
+
     }
 
 

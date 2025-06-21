@@ -988,23 +988,37 @@
 <!-- Hibah Bangunan -->
 <li class="nav-item">
   <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
-    <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
     <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Hibah Bangunan</p>
     <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
+
   <ul class="nav nav-treeview" style="margin-left: 15px;">
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">Informasi </p>
         </a>
-    </li>
+    </li> --}}
     <li class="nav-item">
-        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
-            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
-        </a>
-    </li>
+    <a href="/statistik" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-bar-chart-line nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Statistik Pemohon</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="/datanewhibah" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-plus-square nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Buat Pengajuan</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="/data-pengajuan" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Data Pengajuan</p>
+    </a>
+</li>
+
 </ul>
 </li>
 

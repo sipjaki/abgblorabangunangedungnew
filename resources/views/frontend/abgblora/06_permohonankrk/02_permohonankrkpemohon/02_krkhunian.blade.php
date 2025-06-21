@@ -183,7 +183,7 @@
                     <img src="/assets/new/icons/story.svg" alt="icon">
                 </div>
                 <p class="text-white font-normal text-sm">
-                    <span class="font-bold">Form KRK Fungsi Hunian Bangunan Gedung </span>
+                    <span class="font-bold">Form KRK <span style="color: #0fb825;"> Fungsi Hunian</span> Bangunan Gedung </span>
                 </p>
             </div>
             <form id="signatureForm" action="{{ route('permohonan.krkhuniancreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">

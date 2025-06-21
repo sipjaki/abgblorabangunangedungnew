@@ -33,7 +33,7 @@
             </button>
         </a>
 
-        <a href="/404">
+        <a href="/permohonankrksosbud">
             <button type="button" class="button-fungsi">
                 <i class="fas fa-theater-masks" style="margin-right:10px;"></i> <!-- Ikon diganti -->
                 Fungsi Sosial Budaya

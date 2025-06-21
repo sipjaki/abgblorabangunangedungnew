@@ -77,6 +77,11 @@ class User extends Authenticatable
         return $this->hasMany(bujkkonsultan::class);
     }
 
+    public function bantuanhibah()
+    {
+        return $this->hasMany(bantuanhibah::class);
+    }
+
 
 
 }

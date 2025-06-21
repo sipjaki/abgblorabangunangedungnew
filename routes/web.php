@@ -1,22 +1,15 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\DatajakonController;
 use App\Http\Controllers\FedashboardController;
-use App\Http\Controllers\GiskbbController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PelatihanController;
-use App\Http\Controllers\PeraturanController;
-use App\Http\Controllers\SkktenagakerjaController;
-use App\Http\Controllers\StrukturController;
-use App\Http\Controllers\UijkController;
 use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\BantuanhibahbgController;
+use App\Http\Controllers\BantuanhibahController;
 use App\Http\Controllers\BantuanteknisController;
-use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DatabaseAbgController;
 use App\Http\Controllers\KrkController;
 use App\Http\Controllers\PendataanBangunanGedungController;
-use App\Http\Controllers\SettingmenuController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -90,7 +83,11 @@ Route::post('/berkashunian/{id}/validate', [KrkController::class, 'validateBerka
 
 // MENU 03 PERMOHONAN KRK KEGAAMAAN
 Route::get('/permohonankrkagama', [KrkController::class, 'permohonankrkagama'])->name('permohonan.krkagama');
-Route::post('/permohonankrkagama/create', [KrkController::class, 'permohonankrkhuniancreate'])->name('permohonan.krkhuniancreate');
+Route::post('/permohonankrkagama/create', [KrkController::class, 'permohonankrkagamacreate'])->name('permohonan.krkagamacreate');
+
+// MENU 03 PERMOHONAN KRK KEGAAMAAN
+Route::get('/permohonankrksosbud', [KrkController::class, 'permohonankrksosbud'])->name('permohonan.krksosbud');
+Route::post('/permohonankrksosbud/create', [KrkController::class, 'permohonankrksosbudcreate'])->name('permohonan.krksosbudcreate');
 
 
 // =================================================================================================================================
@@ -575,6 +572,12 @@ Route::delete('/datakecbloradelete/{id}', [DatabaseAbgController::class, 'datake
 // Route::get('/datagsbbloraupdate/{id}', [DatabaseAbgController::class, 'datagsbbloraupdate'])->middleware('auth')->name('datagsbbloraupdate.perbaikan');
 // Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
 
+// MENU 10 BACKEND DANA BANTUAN HIBAH
+
+Route::get('/datanewhibah', [BantuanhibahbgController::class, 'hibahdokcreate'])->middleware('auth')->name('hibahdok.create');
+Route::post('/datanewhibahnew', [BantuanhibahbgController::class, 'datanewhibahnew'])->middleware('auth')->name('dokhibahnew.create');
+
+// Route::get('/bekrkusahaperbaikan/{id}', [KrkController::class, 'bekrkusahaperbaikan'])->middleware('auth')->name('bekrkusahaperbaikan.perbaikan');
 
 // ================================================================================================================================================
 // ================================================================================================================================================

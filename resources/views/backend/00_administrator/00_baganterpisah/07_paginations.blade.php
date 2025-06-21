@@ -1,5 +1,5 @@
 <div class="custom-pagination-container"
-    style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; text-align: center; font-family: 'Poppins', sans-serif; font-size: 14px;">
+    style="margin-top: 50px; margin-bottom: 100px; display: flex; flex-direction: column; align-items: center; text-align: center; font-family: 'Poppins', sans-serif; font-size: 14px;">
 
     <!-- Box Informasi Pagination -->
     <div class="custom-pagination-info-box"
