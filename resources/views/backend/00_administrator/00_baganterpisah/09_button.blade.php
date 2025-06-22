@@ -152,27 +152,29 @@
     color: black;
 }
 
-    .button-lolos {
-        border: none;
-        padding: 8px 20px;
-        border-radius: 15px;
-        font-size: 14px;
-        color: white;
-        cursor: pointer;
-        display: flex;
-        font-weight:bold;
-        align-items: center;
-        text-decoration: none;
-        transition: color 0.3s;
-        background: linear-gradient(120deg, #28a745, #d4edda, #28a745); /* hijau modern */
-        background-size: 200% auto;
-        animation: gradientMove 7s linear infinite;
-    }
+   .button-lolos {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s, background 0.3s;
+    background: linear-gradient(120deg, #28a745, #d4edda, #28a745); /* hijau modern */
+    background-size: 200% auto;
+    animation: gradientMove 7s linear infinite;
+}
 
-    .button-create:hover {
-        color: black;
-        background: white;
-    }
+.button-lolos:hover {
+    color: black;
+    background: white;
+    animation: none; /* supaya animasi background berhenti saat hover */
+}
+
     .button-create {
         border: none;
         padding: 10px 20px;

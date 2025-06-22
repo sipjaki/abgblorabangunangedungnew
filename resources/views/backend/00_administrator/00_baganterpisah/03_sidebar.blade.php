@@ -1013,7 +1013,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="/data-pengajuan" class="nav-link" style="display: flex; align-items: center;">
+    <a href="/dataallhibahbangunan" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">Data Pengajuan</p>
     </a>

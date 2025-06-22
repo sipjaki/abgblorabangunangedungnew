@@ -368,21 +368,21 @@ th {
 
 <div class="col-md-6">
 <div class="mb-3">
-    <label class="form-label" for="ktp">
+    <label class="form-label" for="dokumenproposal">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Proposal Hibah Bangunan
     </label>
-    <input type="file" id="ktp" name="ktp" accept="application/pdf"
-        class="form-control @error('ktp') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerKTP', 'iframeKTP', 'msgKTP')" />
-    @error('ktp')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <input type="file" id="dokumenproposal" name="dokumenproposal" accept="application/pdf"
+        class="form-control @error('dokumenproposal') is-invalid @enderror"
+        onchange="previewPDF(event, 'previewContainerProposal', 'iframeProposal', 'msgProposal')" />
+    @error('dokumenproposal')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-    <div class="mt-3" id="previewContainerKTP" style="{{ isset($data->ktp) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        <iframe id="iframeKTP" src="{{ isset($data->ktp) ? asset($data->ktp) : '' }}"
+    <div class="mt-3" id="previewContainerProposal" style="{{ isset($data->dokumenproposal) ? '' : 'display: none;' }}">
+        <label class="fw-bold">Berkas Proposal Hibah Bangunan Gedung </label>
+        <iframe id="iframeProposal" src="{{ isset($data->dokumenproposal) ? asset($data->dokumenproposal) : '' }}"
             style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
     </div>
-    <div id="msgKTP" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->ktp) ? 'display:none;' : '' }}">
+    <div id="msgProposal" class="mt-3"
+        style="color: grey; font-style: italic; {{ isset($data->dokumenproposal) ? 'display:none;' : '' }}">
         Belum Upload Berkas. Silahkan upload berkas Proposal Pengajuan Hibah Bangunan.
     </div>
 </div>

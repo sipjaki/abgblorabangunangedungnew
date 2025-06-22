@@ -576,6 +576,37 @@ Route::delete('/datakecbloradelete/{id}', [DatabaseAbgController::class, 'datake
 
 Route::get('/datanewhibah', [BantuanhibahbgController::class, 'hibahdokcreate'])->middleware('auth')->name('hibahdok.create');
 Route::post('/datanewhibahnew', [BantuanhibahbgController::class, 'datanewhibahnew'])->middleware('auth')->name('dokhibahnew.create');
+Route::get('/dataallhibahbangunan', [BantuanhibahbgController::class, 'dataallhibahbangunan'])->name('dataallhibahbangunan.index');
+Route::get('/banhibahpermohonan/{id}', [BantuanhibahbgController::class, 'banhibahpermohonan'])->middleware('auth')->name('banhibahpermohonan.show');
+
+Route::put('/valhibahbantuan1/{id}', [BantuanhibahbgController::class, 'valhibahbantuan1'])->name('valhibahbantuan1.update');
+Route::get('/dokhibahbantuanberkas/{id}', [BantuanhibahbgController::class, 'dokhibahbantuanberkas'])->middleware('auth')->name('dokhibahbantuanberkas.show');
+
+Route::get('/dokberkashibah/{id}', [BantuanhibahbgController::class, 'dokberkashibah'])->middleware('auth')->name('dokberkashibah.create');
+Route::post('/dokberkashibahcreatenew', [BantuanhibahbgController::class, 'dokberkashibahcreatenew'])->middleware('auth')->name('create.dokberkashibahcreatenew');
+
+Route::delete('/dokberkashibahcreatedelete/{id}', [BantuanhibahbgController::class, 'dokberkashibahcreatedelete'])->middleware('auth')->name('delete.dokberkashibahcreatedelete');
+
+Route::get('/doklapbanhibah/{id}', [BantuanhibahbgController::class, 'doklapbanhibah'])->middleware('auth')->name('doklapbanhibah.show');
+
+Route::get('/doklapbanhibahcreate/{id}', [BantuanhibahbgController::class, 'doklapbanhibahcreate'])->middleware('auth')->name('doklapbanhibahcreate.create');
+Route::post('/doklapbanhibahcreatenew', [BantuanhibahbgController::class, 'doklapbanhibahcreatenew'])->middleware('auth')->name('create.doklapbanhibahcreatenew');
+
+Route::delete('/doklapbanhibahcreatenewdelete/{id}', [BantuanhibahbgController::class, 'doklapbanhibahcreatenewdelete'])->middleware('auth')->name('delete.doklapbanhibahcreatenewdelete');
+Route::put('/valberkashibah2/{id}', [BantuanhibahbgController::class, 'valberkashibah2'])->name('valberkashibah2.update');
+
+Route::get('/dokuploadskhibah/{id}', [BantuanhibahbgController::class, 'dokuploadskhibah'])->middleware('auth')->name('dokuploadskhibah.show');
+
+Route::get('/dokuploadhibahskcreate/{id}', [BantuanhibahbgController::class, 'dokuploadhibahskcreate'])->middleware('auth')->name('dokuploadhibahskcreate.create');
+Route::post('/dokuploadhibahskcreatenew', [BantuanhibahbgController::class, 'dokuploadhibahskcreatenew'])->middleware('auth')->name('create.dokuploadhibahskcreatenew');
+
+Route::delete('/dokuploadhibahskcrdelete/{id}', [BantuanhibahbgController::class, 'dokuploadhibahskcrdelete'])->middleware('auth')->name('delete.dokuploadhibahskcrdelete');
+
+Route::put('/valberkashibah3/{id}', [BantuanhibahbgController::class, 'valberkashibah3'])->name('valberkashibah3.update');
+Route::put('/valberkashibah4/{id}', [BantuanhibahbgController::class, 'valberkashibah4'])->name('valberkashibah4.update');
+// saat ini
+
+Route::delete('/dokbebanhibahdelete/{id}', [BantuanhibahbgController::class, 'dokbebanhibahdelete'])->middleware('auth')->name('delete.dokbebanhibahdelete');
 
 // Route::get('/bekrkusahaperbaikan/{id}', [KrkController::class, 'bekrkusahaperbaikan'])->middleware('auth')->name('bekrkusahaperbaikan.perbaikan');
 

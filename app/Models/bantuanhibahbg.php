@@ -18,4 +18,19 @@ class bantuanhibahbg extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function banhibahberkas()
+    {
+        return $this->belongsTo(banhibahberkas::class, 'banhibahberkas_id');
+    }
+
+    public function banhibahlapangan()
+    {
+        return $this->belongsTo(banhibahlapangan::class, 'banhibahlapangan_id');
+    }
+
+    public function banhibahskbupati()
+    {
+        return $this->belongsTo(banhibahskbupati::class, 'banhibahskbupati_id');
+    }
+
 }
