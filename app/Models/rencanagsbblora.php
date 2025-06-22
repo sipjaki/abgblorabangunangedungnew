@@ -24,7 +24,9 @@ class rencanagsbblora extends Model
         return $this->hasMany(krkusahasurat::class);
     }
 
-
-
+    public function penilikbangunan()
+    {
+        return $this->hasMany(penilikbangunan::class);
+    }
 
 }

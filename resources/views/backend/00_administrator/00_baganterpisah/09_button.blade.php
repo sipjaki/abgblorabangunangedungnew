@@ -121,19 +121,19 @@
 
 
 <style>
-    .button-validasinew {
+ .button-validasinew {
     border: none;
     padding: 8px 20px;
     border-radius: 15px;
     font-size: 14px;
     color: white;
     cursor: pointer;
-    font-weight:bold;
+    font-weight: bold;
     display: flex;
     align-items: center;
     text-decoration: none;
     transition: color 0.3s, background 0.3s;
-    background: linear-gradient(120deg, #4b5563, #9ca3af, #4b5563); /* abu-abu modern */
+    background: linear-gradient(120deg, #4b5563, #9ca3af, #4b5563);
     background-size: 200% auto;
     animation: gradientMove 7s linear infinite;
 }
@@ -148,8 +148,9 @@
 }
 
 .button-validasinew:hover {
-    background: white;
-    color: black;
+    background-color: white !important;
+    color: #00ccff !important;
+    background-image: none !important;
 }
 
    .button-lolos {

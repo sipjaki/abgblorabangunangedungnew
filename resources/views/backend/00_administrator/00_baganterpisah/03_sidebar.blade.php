@@ -920,16 +920,30 @@
 </a>
 
     <ul class="nav nav-treeview" style="margin-left: 15px;">
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Informasi Penilik</p>
+            <p style="color: white; margin: 0 0 0 8px;">Informasi Umum</p>
         </a>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Berkas Penilik</p>
+            <p style="color: white; margin: 0 0 0 8px;">Jumlah Inspeksi</p>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="/datanewpenilik" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Buat Inspeksi</p>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="/dataallpenilikbg" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Data Inspeksi</p>
         </a>
     </li>
 </ul>

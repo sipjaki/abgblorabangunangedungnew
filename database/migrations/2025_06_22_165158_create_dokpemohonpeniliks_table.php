@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('dokpemohonpeniliks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('penilikbangunan_id')->nullable()->index();
+            $table->string('berkas1')->nullable();
+            $table->string('berkas2')->nullable();
+            $table->string('berkas3')->nullable();
+            $table->string('berkas4')->nullable();
+            $table->string('berkas5')->nullable();
+            $table->string('berkas6')->nullable();
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

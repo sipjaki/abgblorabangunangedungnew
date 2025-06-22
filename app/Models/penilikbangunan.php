@@ -48,4 +48,9 @@ class penilikbangunan extends Model
         return $this->belongsTo(kelurahandesa::class, 'kelurahandesa_id');
     }
 
+    public function rencanagsbblora()
+    {
+        return $this->belongsTo(rencanagsbblora::class, 'rencanagsbblora_id');
+    }
+
 }

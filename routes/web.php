@@ -10,6 +10,7 @@ use App\Http\Controllers\BantuanteknisController;
 use App\Http\Controllers\DatabaseAbgController;
 use App\Http\Controllers\KrkController;
 use App\Http\Controllers\PendataanBangunanGedungController;
+use App\Http\Controllers\PenilikbangunanController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -571,6 +572,17 @@ Route::delete('/datakecbloradelete/{id}', [DatabaseAbgController::class, 'datake
 
 // Route::get('/datagsbbloraupdate/{id}', [DatabaseAbgController::class, 'datagsbbloraupdate'])->middleware('auth')->name('datagsbbloraupdate.perbaikan');
 // Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
+
+// MENU 07 PENILIK BANGUNAN
+Route::get('/datanewpenilik', [PenilikbangunanController::class, 'datanewpenilik'])->middleware('auth')->name('datanewpenilik.create');
+Route::post('/datanewpeniliknew', [PenilikbangunanController::class, 'datanewpeniliknew'])->middleware('auth')->name('datanewpeniliknew.create');
+
+Route::get('/dataallpenilikbg', [PenilikbangunanController::class, 'dataallpenilikbg'])->name('dataallpenilikbg.index');
+
+Route::get('/bedatadasarpenilik/{id}', [PenilikbangunanController::class, 'bedatadasarpenilik'])->middleware('auth')->name('bedatadasarpenilik.show');
+// Route::get('/bedatadasarpenilikberkas/{id}', [PenilikbangunanController::class, 'bedatadasarpenilikberkas'])->middleware('auth')->name('bedatadasarpenilikberkas.show');
+
+Route::get('/bedatapeniliksurvey/{id}', [PenilikbangunanController::class, 'bedatapeniliksurvey'])->middleware('auth')->name('bedatapeniliksurvey.show');
 
 // MENU 10 BACKEND DANA BANTUAN HIBAH
 

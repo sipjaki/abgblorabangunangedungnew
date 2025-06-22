@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('penilikdasilitator_id')->nullable()->index(); // YANG MEMBUAT DOKUMEN
             $table->foreignId('lapanganpenilik_id')->nullable()->index(); // YANG MEMBUAT DOKUMEN
             $table->foreignId('uploadberpenilik_id')->nullable()->index(); // YANG MEMBUAT DOKUMEN
+            $table->foreignId('rencanagsbblora_id')->nullable()->index(); // YANG MEMBUAT DOKUMEN
 
     // DATA UMUM BANGUNAN
     $table->string('fungsibangunan')->nullable();
@@ -42,14 +43,23 @@ return new class extends Migration
     // INTERNSITAS BANGUNAN GEDUNG
     $table->string('provinsi')->nullable();
     $table->string('kabupaten')->nullable();
-    // $table->string('kecamatan')->nullable();
-    // $table->string('desakelurahan')->nullable();
+    $table->foreignId('user_id')->nullable()->index(); // YANG MEMBUAT DOKUMEN
+    $table->foreignId('kecamatanblora_id', 255)->nullable()->index();
+    $table->foreignId('kelurahandesa_id', 255)->nullable()->index();
     $table->text('alamatlengkap')->nullable();
     $table->string('koordinat')->nullable();
 
-            $table->foreignId('user_id')->nullable()->index(); // YANG MEMBUAT DOKUMEN
-            $table->foreignId('kecamatanblora_id', 255)->nullable()->index();
-            $table->foreignId('kelurahandesa_id', 255)->nullable()->index();
+    $table->string('verifikasi1')->nullable();
+    $table->string('verifikasi2')->nullable();
+    $table->string('verifikasi3')->nullable();
+    $table->string('verifikasi4')->nullable();
+
+    $table->string('cadpenilikbangunan1')->nullable();
+    $table->string('cadpenilikbangunan2')->nullable();
+    $table->string('cadpenilikbangunan3')->nullable();
+    $table->string('cadpenilikbangunan4')->nullable();
+    $table->string('cadpenilikbangunan5')->nullable();
+
 
     $table->softDeletes();
     $table->timestamps();
