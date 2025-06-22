@@ -616,7 +616,7 @@ th {
     <table class="zebra-table table-striped" style="font-size:16px; width: 100%">
 <tr>
     <td style="text-align: center;">1</td>
-    <td style="text-align: left;"><i class="bi bi-person" style="margin-right:6px;"></i> Pemohon</td>
+    <td style="text-align: left;"><i class="bi bi-person" style="margin-right:6px;"></i> Admin DPUPR</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->user->name ?? '-' }}</td>
 </tr>
@@ -656,8 +656,6 @@ th {
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ !empty($data->kontakperson) ? $data->kontakperson : '-' }}</td>
 </tr>
-
-
 
 </table>
 

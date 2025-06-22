@@ -1001,7 +1001,7 @@
         </a>
     </li> --}}
     <li class="nav-item">
-    <a href="/statistik" class="nav-link" style="display: flex; align-items: center;">
+    <a href="/bestatistikhibah" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-bar-chart-line nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">Statistik Pemohon</p>
     </a>

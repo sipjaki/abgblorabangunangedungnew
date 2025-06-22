@@ -605,6 +605,7 @@ Route::delete('/dokuploadhibahskcrdelete/{id}', [BantuanhibahbgController::class
 Route::put('/valberkashibah3/{id}', [BantuanhibahbgController::class, 'valberkashibah3'])->name('valberkashibah3.update');
 Route::put('/valberkashibah4/{id}', [BantuanhibahbgController::class, 'valberkashibah4'])->name('valberkashibah4.update');
 // saat ini
+Route::get('/bestatistikhibah', [BantuanhibahbgController::class, 'bestatistikhibah']);
 
 Route::delete('/dokbebanhibahdelete/{id}', [BantuanhibahbgController::class, 'dokbebanhibahdelete'])->middleware('auth')->name('delete.dokbebanhibahdelete');
 

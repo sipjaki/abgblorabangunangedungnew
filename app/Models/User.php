@@ -77,11 +77,14 @@ class User extends Authenticatable
         return $this->hasMany(bujkkonsultan::class);
     }
 
-    public function bantuanhibah()
+    public function bantuanhibahbg()
     {
-        return $this->hasMany(bantuanhibah::class);
+        return $this->hasMany(bantuanhibahbg::class);
     }
 
-
+    public function penilikbangunan()
+    {
+        return $this->hasMany(penilikbangunan::class);
+    }
 
 }

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('krkusahas', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('krkusahasurat_id')->nullable()->index(); // PEMOHON
             $table->foreignId('krkusahacek_id')->nullable()->index(); // PEMOHON
             $table->foreignId('user_id')->nullable()->index(); // PEMOHON

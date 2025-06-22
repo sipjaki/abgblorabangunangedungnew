@@ -625,5 +625,48 @@ public function dokbebanhibahdelete($id)
 }
 
 
+public function bestatistikhibah()
+{
+    $user = Auth::user();
+    $data = bantuanhibahbg::paginate(15); // Data paginasi
+
+      $jumlahPerInstansi = bantuanhibahbg::select('instansi')
+            ->selectRaw('COUNT(*) as total')
+            ->groupBy('instansi')
+            ->get();
+
+    $datajumlahbantuanhibahdinas = bantuanhibahbg::where('instansi')->count();
+
+    $datajumlahbantuanhibah = bantuanhibahbg::count(); // Hitung total semua data
+
+      $datajumlahbantuanhibah_dikembalikan = bantuanhibahbg::where('verifikasi1', 'belum')->count();
+
+        $datajumlahdok_lapangan = bantuanhibahbg::where('verifikasi2', 'sudah')->count();
+
+            $datajumlahsk_terbit = bantuanhibahbg::where('verifikasi3', 'sudah')->count();
+
+                $datajumlahsk_selesai = bantuanhibahbg::where('verifikasi4', 'sudah')->count();
+
+    return view('backend.10_bantuanhibah.10_datastatistik', [
+        'title' => 'Data Statistika Permohonan Bantuan Hibah Bangunan Gedung',
+        'data' => $data,
+        'user' => $user,
+
+        'datajumlahbantuanhibah' => $datajumlahbantuanhibah,
+
+        'datajumlahbantuanhibah_dikembalikan' => $datajumlahbantuanhibah_dikembalikan,
+
+        'datajumlahdok_lapangan' => $datajumlahdok_lapangan,
+
+        'datajumlahsk_terbit' => $datajumlahsk_terbit,
+
+        'datajumlahsk_selesai' => $datajumlahsk_selesai,
+        'datajumlahbantuanhibahdinas' => $datajumlahbantuanhibahdinas,
+        'jumlahPerInstansi' => $jumlahPerInstansi,
+
+    ]);
+}
+
+
 
 }

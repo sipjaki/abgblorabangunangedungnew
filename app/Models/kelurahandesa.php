@@ -38,4 +38,9 @@ class kelurahandesa extends Model
         return $this->hasMany(bantuanteknis::class);
     }
 
+    public function penilikbangunan()
+    {
+        return $this->hasMany(penilikbangunan::class);
+    }
+
 }

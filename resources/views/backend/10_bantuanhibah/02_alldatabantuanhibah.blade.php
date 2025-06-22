@@ -195,7 +195,7 @@ th {
                             <thead>
                                 <tr>
                                     <th style="background-color: #ADD8E6;">No</th>
-                                 <th style="background-color: #ADD8E6;"><i class="bi bi-person"></i> User ID</th>
+                                 <th style="background-color: #ADD8E6;"><i class="bi bi-person"></i> Admin DPUPR</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-file-text"></i> Nomor Proposal</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-calendar"></i> Tanggal Proposal</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Instansi</th>
