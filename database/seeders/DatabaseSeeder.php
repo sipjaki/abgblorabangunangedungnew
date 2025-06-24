@@ -325,6 +325,36 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('adminadmin')
         ]);
 
+        User::create([
+            'id'  => 46,
+            'name'  => 'Muhammad Yusuf Zaqi Efendi, SE',
+            'username' => 'Muhammad Yusuf Zaqi Efendi, SE',
+            'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'abgblorabangunangedung@gmail.com',
+            'password' => bcrypt('adminmaszaki123$$')
+        ]);
+
+        User::create([
+            'id'  => 47,
+            'name'  => 'Miftahunnuril Anam, S.E',
+            'username' => 'Miftahunnuril Anam, S.E',
+            'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'abgblorabangunangedung1@gmail.com',
+            'password' => bcrypt('adminmasanam123$$')
+        ]);
+
+        User::create([
+            'id'  => 48,
+            'name'  => 'Anex Fachrian, ST. MT',
+            'username' => 'Anex Fachrian, ST. MT',
+            'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'abgblorabgadmin@gmail.com',
+            'password' => bcrypt('adminpaanex123$$')
+        ]);
+
 
         // -------------------
 
