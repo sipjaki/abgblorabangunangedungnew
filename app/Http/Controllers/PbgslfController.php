@@ -430,4 +430,35 @@ public function bepbgdatapemilikcreate($id)
     return redirect()->back()->with('error', 'Item not found');
 }
 
+
+public function bepbgdatabangunan($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Cari data pbg berdasarkan ID
+    $data = pbgslfbangunan::findOrFail($id);
+
+    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
+    $subdatapemilik = datapemilik::where('pbgslfbangunan_id', $data->id)->paginate(15);
+
+    // Hitung nomor urut mulai untuk paginasi
+    $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+
+    // Ambil data jenis pengajuan
+    $datapbgslf = jenispengajuanpbgslfper::all();
+
+    // Kirim data ke view
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.02_datatanahpemohon', [
+        'title' => 'Informasi Data Tanah',
+        'title_halaman' => 'Data Tanah Pemohon',
+        'user' => $user,
+        'data' => $data,
+        'datapbgslf' => $datapbgslf,
+        'subdatapemilik' => $subdatapemilik,
+        'start' => $start,
+    ]);
+}
+
+
 }

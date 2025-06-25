@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pbgslfbangunans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('datapemilik_id')->nullable()->index();
-            $table->foreignId('databangunan_id')->nullable()->index();
+            $table->foreignId('databangunanpbg_id')->nullable()->index();
             $table->foreignId('datatanah_id')->nullable()->index();
             $table->foreignId('dataumum_id')->nullable()->index();
             $table->foreignId('dokumenteknis_id')->nullable()->index();

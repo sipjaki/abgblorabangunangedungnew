@@ -31,9 +31,11 @@ use App\Models\kedinasan;
 use App\Models\kodelokasibangunangedung;
 use App\Models\databangunangedung;
 use App\Models\datapemilik;
+use App\Models\fungsibangunanpbg;
 use App\Models\jenispengajuanbantek;
 use App\Models\jenispengajuanpbgslf;
 use App\Models\jenispengajuanpbgslfper;
+use App\Models\jenisperkonsultasi;
 use App\Models\kepemilikanbangunangedung;
 use App\Models\krkhunian;
 use App\Models\krkkeagamaan;
@@ -579,6 +581,79 @@ for ($i = 1; $i <= 132; $i++) {
 //     ]);
 // }
 
+        jenisperkonsultasi::create([
+            'id'  => 1,
+            'jenis'  => 'Bangunan Gedung Baru',
+        ]);
+
+        jenisperkonsultasi::create([
+            'id'  => 2,
+            'jenis'  => 'Bangunan Gedung Existing',
+        ]);
+
+        jenisperkonsultasi::create([
+            'id'  => 3,
+            'jenis'  => 'Bangunan Gedung Perubahan',
+        ]);
+
+        jenisperkonsultasi::create([
+            'id'  => 4,
+            'jenis'  => 'Bangunan Gedung Kolektif',
+        ]);
+
+        jenisperkonsultasi::create([
+            'id'  => 5,
+            'jenis'  => 'Bangunan Gedung Prasarana',
+        ]);
+
+        jenisperkonsultasi::create([
+            'id'  => 6,
+            'jenis'  => 'Bangunan Gedung Cagar Budaya',
+        ]);
+
+        jenisperkonsultasi::create([
+            'id'  => 7,
+            'jenis'  => 'SPBU Mikro 3 Kilo Liter',
+        ]);
+
+        // ====================================
+        fungsibangunanpbg::create([
+            'id'  => 1,
+            'fungsi'  => 'Fungsi Hunian',
+        ]);
+
+        fungsibangunanpbg::create([
+            'id'  => 2,
+            'fungsi'  => 'Fungsi Hunian MBR',
+        ]);
+
+        fungsibangunanpbg::create([
+            'id'  => 3,
+            'fungsi'  => 'Fungsi Kegamaan',
+        ]);
+
+        fungsibangunanpbg::create([
+            'id'  => 4,
+            'fungsi'  => 'Fungsi Usaha',
+        ]);
+
+        fungsibangunanpbg::create([
+            'id'  => 5,
+            'fungsi'  => 'Fungsi Usaha UMKM',
+        ]);
+
+        fungsibangunanpbg::create([
+            'id'  => 6,
+            'fungsi'  => 'Fungsi Sosial Budaya',
+        ]);
+
+        fungsibangunanpbg::create([
+            'id'  => 7,
+            'fungsi'  => 'Fungsi Campuran',
+        ]);
+
+
+        // =========================================
         jenispengajuanpbgslfper::create([
             'id'  => 1,
             'jenispengajuan'  => 'PBG (Persetujuan Bangunan Gedung)',

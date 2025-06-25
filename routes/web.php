@@ -644,6 +644,8 @@ Route::post('/bepbgdatapemilikcreatenew', [PbgslfController::class, 'bepbgdatape
 
 Route::delete('/bepbgdatapemilikdelete/{id}', [PbgslfController::class, 'bepbgdatapemilikdelete'])->middleware('auth')->name('bepbgdatapemilikdelete');
 
+// DATA BANGUNAN
+Route::get('/bepbgdatabangunan/{id}', [PbgslfController::class, 'bepbgdatabangunan'])->middleware('auth')->name('bepbgdatabangunan');
 // bepbgdatapemilik
 
 // TAHAP 1---------------

@@ -33,4 +33,9 @@ class pbgslfbangunan extends Model
         return $this->belongsTo(datapemilik::class, 'datapemilik_id');
     }
 
+    public function databangunanpbg()
+    {
+        return $this->belongsTo(databangunanpbg::class, 'databangunanpbg_id');
+    }
+
 }

@@ -194,7 +194,7 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12" style="margin-top: -20px;">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data">
+                  {{-- <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data"> --}}
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
