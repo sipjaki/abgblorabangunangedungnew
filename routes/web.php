@@ -9,8 +9,10 @@ use App\Http\Controllers\BantuanhibahController;
 use App\Http\Controllers\BantuanteknisController;
 use App\Http\Controllers\DatabaseAbgController;
 use App\Http\Controllers\KrkController;
+use App\Http\Controllers\PbgslfController;
 use App\Http\Controllers\PendataanBangunanGedungController;
 use App\Http\Controllers\PenilikbangunanController;
+use App\Models\pbgslfbangunan;
 use Illuminate\Support\Facades\Route;
 
 
@@ -621,6 +623,28 @@ Route::get('/bestatistikhibah', [BantuanhibahbgController::class, 'bestatistikhi
 
 Route::delete('/dokbebanhibahdelete/{id}', [BantuanhibahbgController::class, 'dokbebanhibahdelete'])->middleware('auth')->name('delete.dokbebanhibahdelete');
 
+// -----------------------------------------------------------------
+// MENU 01 PBG SLF
+Route::get('/bepbgslfindex', [PbgslfController::class, 'bepbgslfindexmenu'])->middleware('auth')->name('bepbgslfindexindexmenu');
+Route::get('/bepbgslfindexslf', [PbgslfController::class, 'bepbgslfindexslf'])->middleware('auth')->name('bepbgslfindexslfindex');
+
+Route::delete('/bepbgslfindexslfdelete/{id}', [PbgslfController::class, 'bepbgslfindexslfdelete'])->middleware('auth')->name('delete.bepbgslfindexslfdelete');
+
+Route::get('/bepbgslflihatper/{id}', [PbgslfController::class, 'bepbgslflihatper'])->middleware('auth')->name('bepbgslflihatper.show');
+
+// TAHAP INDUK ----------------
+Route::get('/createdatapbgslf', [PbgslfController::class, 'createdatapbgslf'])->middleware('auth')->name('createdatapbgslf.create');
+Route::post('/createdatapbgslfnew', [PbgslfController::class, 'createdatapbgslfnew'])->middleware('auth')->name('createdatapbgslf.create');
+
+// DATA PEMILIK
+Route::get('/bepbgdatapemilik/{id}', [PbgslfController::class, 'bepbgdatapemilik'])->middleware('auth')->name('bepbgdatapemilik');
+
+Route::get('/bepbgdatapemilikcreate/{id}', [PbgslfController::class, 'bepbgdatapemilikcreate'])->middleware('auth')->name('datapemilik.create');
+Route::post('/bepbgdatapemilikcreatenew', [PbgslfController::class, 'bepbgdatapemilikcreatenew'])->middleware('auth')->name('bepbgdatapemilikcreatenew');
+
+// bepbgdatapemilik
+
+// TAHAP 1---------------
 // Route::get('/bekrkusahaperbaikan/{id}', [KrkController::class, 'bekrkusahaperbaikan'])->middleware('auth')->name('bekrkusahaperbaikan.perbaikan');
 
 // ================================================================================================================================================

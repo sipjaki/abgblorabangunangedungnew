@@ -22,6 +22,29 @@
         background: white;
     }
 
+    .button-permohonan {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif; /* Tambah font Poppins */
+    font-weight: 600; /* Tebal, bisa diganti 700 jika lebih tebal lagi */
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s;
+    background: linear-gradient(120deg, skyblue, white, skyblue);
+    background-size: 200% auto;
+    animation: gradientMove 7s linear infinite;
+}
+
+    .button-permohonan:hover {
+        color: black;
+        background: white;
+    }
+
    .button-fungsi {
     border: none;
     padding: 10px 20px;
@@ -175,6 +198,77 @@
     background: white;
     animation: none; /* supaya animasi background berhenti saat hover */
 }
+
+.button-baru {
+    border: 1px solid #c8dfff;
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #003366;
+    background: linear-gradient(145deg, #e1f0ff, #d6e9ff);
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    min-width: max-content;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-baru:hover {
+    background: white;
+    color: black;
+}
+
+.button-simpan {
+    border: 1px solid #c8dfff;
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #003366;
+    background: linear-gradient(145deg, skyblue);
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    min-width: max-content;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-simpan:hover {
+    background: white;
+    color: black;
+}
+
+.button-hitam {
+    border: 1px solid #cacaca;
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #003366;
+    margin-right: 10px;
+    background: linear-gradient(145deg, #889baf, #889baf);
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    min-width: max-content;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-hitam:hover {
+    background: white;
+    color: black;
+}
+
 
     .button-create {
         border: none;
@@ -379,6 +473,28 @@
     background: white;     /* background jadi putih */
 }
 
+button-delete {
+    border: 1px solid #c8dfff;
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #003366;
+    background: linear-gradient(145deg, #d85757, #d85757);
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    min-width: max-content;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-delete:hover {
+    background: white;
+    color: black;
+}
 
 /* Jika animasi gradientMove belum ada, tambahkan contoh animasinya: */
 @keyframes gradientMove {
@@ -390,4 +506,9 @@
     }
 }
 
+
+
+
 </style>
+
+

@@ -732,16 +732,23 @@
     </li>
 
     <li class="nav-item">
-        <a href="/bekrkindex" class="nav-link">
+        <a href="/bepbgslfindex" class="nav-link">
             <i class="bi bi-card-list nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Permohonan PBG</p>
+            <p style="color: white; margin-left: 8px;">Permohonan</p>
         </a>
     </li>
 
     <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-building nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Permohonan SLF</p>
+            <p style="color: white; margin-left: 8px;">Retribusi</p>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="/404" class="nav-link">
+            <i class="bi bi-building nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">SKRD</p>
         </a>
     </li>
 

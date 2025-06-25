@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('pbgslfbangunans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->index();
             $table->foreignId('datapemilik_id')->nullable()->index();
             $table->foreignId('databangunan_id')->nullable()->index();
             $table->foreignId('datatanah_id')->nullable()->index();
@@ -24,10 +23,22 @@ return new class extends Migration
             $table->foreignId('suratundangan_id')->nullable()->index();
             $table->foreignId('beritaacaraslf_id')->nullable()->index();
             // JENIS PENGAJUAN PBG SLF
-            $table->foreignId('jenispengajuanpbgslf_id')->nullable()->index();
+            $table->foreignId('jenispengajuanpbgslf_id')->nullable()->index(); // tidad digunakan
 
+            $table->foreignId('user_id')->nullable()->index();
+            $table->foreignId('jenispengajuanpbgslfper_id')->nullable()->index();
             // NOMOR REGISTRASI SIM BG
             $table->string('noregissimbg')->nullable();
+            $table->string('tanggalpermohonan')->nullable();
+
+            $table->string('validasiberkas1')->nullable();
+            $table->string('validasiberkas2')->nullable();
+            $table->string('validasiberkas3')->nullable();
+            $table->string('validasiberkas4')->nullable();
+            $table->string('validasiberkas5')->nullable();
+            $table->string('validasiberkas6')->nullable();
+            $table->string('validasiberkas7')->nullable();
+            // $table->string('validasiberkas1')->nullable();
 
             // CADANGAN DATABASE YANG AKAN DI LAKUKAN PENGEMBANGAN
             $table->string('cadangan1')->nullable();

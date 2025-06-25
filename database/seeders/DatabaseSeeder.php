@@ -30,12 +30,16 @@ use App\Models\profiltanahbangunangedung;
 use App\Models\kedinasan;
 use App\Models\kodelokasibangunangedung;
 use App\Models\databangunangedung;
+use App\Models\datapemilik;
 use App\Models\jenispengajuanbantek;
+use App\Models\jenispengajuanpbgslf;
+use App\Models\jenispengajuanpbgslfper;
 use App\Models\kepemilikanbangunangedung;
 use App\Models\krkhunian;
 use App\Models\krkkeagamaan;
 use App\Models\krksosbud;
 use App\Models\krkusaha;
+use App\Models\pbgslfbangunan;
 // use App\Models\paketpekerjaan;
 use Database\Factories\SkktenagakerjaFactory;
 // use Carbon\Carbon;
@@ -544,6 +548,62 @@ User::create([
     'phone_number' => null, // Data Belum Di Update
     'password' => bcrypt('adminadmin123$$')
 ]);
+
+// =============================================
+for ($i = 1; $i <= 132; $i++) {
+    // Generate tanggal acak antara 1 Jan 2025 dan 1 Agt 2025
+    $startDate = Carbon::create(2025, 1, 1)->timestamp;
+    $endDate = Carbon::create(2025, 8, 1)->timestamp;
+    $randomTimestamp = rand($startDate, $endDate);
+    $randomDate = Carbon::createFromTimestamp($randomTimestamp)->format('Y-m-d');
+
+    pbgslfbangunan::create([
+        'id' => $i,
+        'user_id' => rand(46, 48),
+        'jenispengajuanpbgslfper_id' => rand(1, 5),
+        'tanggalpermohonan' => $randomDate,
+        'noregissimbg' => 'PBG-321702-24102022-' . str_pad($i, 2, '0', STR_PAD_LEFT),
+    ]);
+}
+
+// for ($i = 1; $i <= 10; $i++) {
+//     datapemilik::create([
+//         'pbgslfbangunan_id' => $i,
+//         'namapemilik' => 'Pemilik ' . $i,
+//         'alamatpemilik' => 'Jl. Contoh No. ' . $i . ', Bandung',
+//         'nomortelepon' => '0812345678' . $i,
+//         'email' => 'pemilik' . $i . '@mail.com',
+//         'noidentitas' => '3204' . str_pad($i, 5, '0', STR_PAD_LEFT),
+//         'pilihancatatan' => rand(0, 1) ? 'lengkap' : 'tidak lengkap',
+//         'catatan' => 'Catatan tambahan ke-' . $i,
+//     ]);
+// }
+
+        jenispengajuanpbgslfper::create([
+            'id'  => 1,
+            'jenispengajuan'  => 'PBG (Persetujuan Bangunan Gedung)',
+        ]);
+
+        jenispengajuanpbgslfper::create([
+            'id'  => 2,
+            'jenispengajuan'  => 'SLF (Sertifikat Laik Fungsi)',
+        ]);
+
+        jenispengajuanpbgslfper::create([
+            'id'  => 3,
+            'jenispengajuan'  => 'SBKBG (Surat Bukti Kepemilikan Bangunan Gedung)',
+        ]);
+
+        jenispengajuanpbgslfper::create([
+            'id'  => 4,
+            'jenispengajuan'  => 'RTB (Rencana Teknis Pembongkaran)',
+        ]);
+
+        jenispengajuanpbgslfper::create([
+            'id'  => 5,
+            'jenispengajuan'  => 'Pendataan Bangunan Gedung',
+        ]);
+
 
         jenispengajuanbantek::create([
             'id'  => 1,

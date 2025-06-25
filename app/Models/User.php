@@ -87,4 +87,9 @@ class User extends Authenticatable
         return $this->hasMany(penilikbangunan::class);
     }
 
+    public function pbgslfbangunan()
+    {
+        return $this->hasMany(pbgslfbangunan::class);
+    }
+
 }
