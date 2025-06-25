@@ -642,6 +642,8 @@ Route::get('/bepbgdatapemilik/{id}', [PbgslfController::class, 'bepbgdatapemilik
 Route::get('/bepbgdatapemilikcreate/{id}', [PbgslfController::class, 'bepbgdatapemilikcreate'])->middleware('auth')->name('datapemilik.create');
 Route::post('/bepbgdatapemilikcreatenew', [PbgslfController::class, 'bepbgdatapemilikcreatenew'])->middleware('auth')->name('bepbgdatapemilikcreatenew');
 
+Route::delete('/bepbgdatapemilikdelete/{id}', [PbgslfController::class, 'bepbgdatapemilikdelete'])->middleware('auth')->name('bepbgdatapemilikdelete');
+
 // bepbgdatapemilik
 
 // TAHAP 1---------------

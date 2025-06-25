@@ -378,7 +378,7 @@ public function bepbgdatapemilikcreate($id)
             'email' => 'required|email|max:100',
             'noidentitas' => 'required|string|max:100',
             'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
-            'catatan' => 'nullable|string|max:1000',
+            'catatan' => 'nullable|string',
         ], [
             'pbgslfbangunan_id.required' => 'ID bangunan wajib diisi.',
             'pbgslfbangunan_id.exists' => 'Data bangunan tidak ditemukan.',
@@ -409,4 +409,25 @@ public function bepbgdatapemilikcreate($id)
         // return redirect()->route('bepbgdatapemilik', ['id' => $validated['pbgslfbangunan_id']]);
 
     }
+
+ public function bepbgdatapemilikdelete($id)
+{
+    // Cari entri datapemilik berdasarkan id
+    $entry = datapemilik::find($id);
+
+    if ($entry) {
+        // Simpan dulu id bangunan sebelum hapus
+        $pbgslfbangunan_id = $entry->pbgslfbangunan_id;
+
+        // Hapus entri
+        $entry->delete();
+
+        // Redirect ke route 'bepbgdatapemilik' dengan parameter id bangunan
+        return redirect()->route('bepbgdatapemilik', ['id' => $pbgslfbangunan_id])
+                         ->with('delete', 'Data Berhasil Di Hapus !');
+    }
+
+    return redirect()->back()->with('error', 'Item not found');
+}
+
 }

@@ -353,19 +353,22 @@ th {
 
                         @endforeach
                         {{-- Khusus tampilkan Catatan jika Pilihan Catatan = tidak lengkap --}}
-                        @if (strtolower($pemilik->pilihancatatan) === 'tidak lengkap')
-                            <div class="col-12 mt-3">
-                                <div class="p-3 border-start border-4 border-danger bg-light">
-                                    <div class="d-flex align-items-start">
-                                        <i class="bi bi-journal-text text-danger fs-4 me-3"></i>
-                                        <div>
-                                            <h6 class="fw-bold text-dark mb-1">Catatan</h6>
-                                            <p class="mb-0 text-muted">{{ $pemilik->catatan ?? '-' }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
+                     @if (strtolower($pemilik->pilihancatatan) === 'tidak lengkap')
+    <div class="col-12 mt-3">
+        <div class="p-3 border-start border-4 border-danger bg-light rounded shadow-sm">
+            <div class="d-flex align-items-start">
+                <i class="bi bi-journal-text text-danger fs-4 me-3"></i>
+                <div>
+                    <h6 class="fw-bold text-dark mb-1">Catatan</h6>
+                    <p class="mb-0 text-muted" style="white-space: pre-wrap; word-wrap: break-word; text-align:justify;">
+                        {{ $pemilik->catatan ?? '-' }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
+
 
                      <a href="javascript:void(0)" title="Delete"
    data-bs-toggle="modal" data-bs-target="#deleteModal"
@@ -497,7 +500,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bebantuanteknisdelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/bepbgdatapemilikdelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
