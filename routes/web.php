@@ -646,7 +646,58 @@ Route::delete('/bepbgdatapemilikdelete/{id}', [PbgslfController::class, 'bepbgda
 
 // DATA BANGUNAN
 Route::get('/bepbgdatabangunan/{id}', [PbgslfController::class, 'bepbgdatabangunan'])->middleware('auth')->name('bepbgdatabangunan');
-// bepbgdatapemilik
+
+Route::get('/bepbgdatabangunancreate/{id}', [PbgslfController::class, 'bepbgdatabangunancreate'])->middleware('auth')->name('bepbgdatabangunancreate');
+Route::post('/bepbgdatabangunancreatenew', [PbgslfController::class, 'bepbgdatabangunancreatenew'])->middleware('auth')->name('bepbgdatabangunancreatenew');
+Route::delete('/bepbgdatabangunandelete/{id}', [PbgslfController::class, 'bepbgdatabangunandelete'])->middleware('auth')->name('bepbgdatabangunandelete');
+
+// DATA TANAH
+Route::get('/bepbgdatatanah/{id}', [PbgslfController::class, 'bepbgdatatanah'])->middleware('auth')->name('bepbgdatatanah');
+Route::get('/bepbgdatatanahcreate/{id}', [PbgslfController::class, 'bepbgdatatanahcreate'])->middleware('auth')->name('bepbgdatatanahcreate');
+Route::post('/bepbgdatatanahcreatenew', [PbgslfController::class, 'bepbgdatatanahcreatenew'])->middleware('auth')->name('bepbgdatatanahnew');
+Route::delete('/bepbgdatatanahdelete/{id}', [PbgslfController::class, 'bepbgdatatanahdelete'])->middleware('auth')->name('bepbgdatatanahdelete');
+
+// DATA UMUM
+Route::get('/bepbgdataumum/{id}', [PbgslfController::class, 'bepbgdataumum'])->middleware('auth')->name('bepbgdataumum');
+Route::get('/bepbgdataumumcreate/{id}', [PbgslfController::class, 'bepbgdataumumcreate'])->middleware('auth')->name('bepbgdataumumcreate');
+Route::post('/bepbgdataumumcreatenew', [PbgslfController::class, 'bepbgdataumumcreatenew'])->middleware('auth')->name('bepbgdataumumcreatenew');
+Route::delete('/bepbgdataumumdelete/{id}', [PbgslfController::class, 'bepbgdataumumdelete'])->middleware('auth')->name('bepbgdataumumdelete');
+
+// DATA TEKNIS ARSITEKTUR
+Route::get('/bepbgdokumeteknisars/{id}', [PbgslfController::class, 'bepbgdokumeteknisars'])->middleware('auth')->name('bepbgdokumeteknisars');
+Route::get('/bepbgdokumeteknisarscreate/{id}', [PbgslfController::class, 'bepbgdokumeteknisarscreate'])->middleware('auth')->name('bepbgdokumeteknisarscreate');
+Route::post('/bepbgdokumeteknisarscreatenew', [PbgslfController::class, 'bepbgdokumeteknisarscreatenew'])->middleware('auth')->name('bepbgdokumeteknisarscreatenew');
+
+// Route::delete('/bepbgdokumearsidelete/{id}', [PbgslfController::class, 'bepbgdokumearsidelete'])->middleware('auth')->name('bepbgdokumearsidelete');
+Route::delete('/bepbgdokumearsidelete/{id}', [PbgslfController::class, 'bepbgdokumearsidelete'])->middleware('auth')->name('bepbgdokumearsidelete');
+
+// DATA TEKNIS ARSITEKTUR
+Route::get('/bepbgdokumeteknisstrk/{id}', [PbgslfController::class, 'bepbgdokumeteknisstrk'])->middleware('auth')->name('bepbgdokumeteknisstrk');
+Route::get('/bepbgdokumeteknisstrkcreate/{id}', [PbgslfController::class, 'bepbgdokumeteknisstrkcreate'])->middleware('auth')->name('bepbgdokumeteknisstrkcreate');
+Route::post('/bepbgdokumeteknisstrkcreatenew', [PbgslfController::class, 'bepbgdokumeteknisstrkcreatenew'])->middleware('auth')->name('bepbgdokumeteknisstrkcreatenew');
+Route::delete('/bepbgdokumeteknisstrkdelete/{id}', [PbgslfController::class, 'bepbgdokumeteknisstrkdelete'])->middleware('auth')->name('bepbgdokumeteknisstrkdelete');
+
+// DATA TEKNIS MEKANIKAL DAN ELEKTRIKAL
+Route::get('/bepbgdokumeteknismep/{id}', [PbgslfController::class, 'bepbgdokumeteknismep'])->middleware('auth')->name('bepbgdokumeteknismep');
+Route::get('/bepbgdokumeteknismepcreate/{id}', [PbgslfController::class, 'bepbgdokumeteknismepcreate'])->middleware('auth')->name('bepbgdokumeteknismepcreate');
+Route::post('/bepbgdokumeteknismepcreatenew', [PbgslfController::class, 'bepbgdokumeteknismepcreatenew'])->middleware('auth')->name('bepbgdokumeteknismepcreatenew');
+Route::delete('/bepbgdokumeteknismepdelete/{id}', [PbgslfController::class, 'bepbgdokumeteknismepdelete'])->middleware('auth')->name('bepbgdokumeteknismepdelete');
+
+// DATA DOKUMEN TEKNIS JIKA DATA BANGUNAN SKL
+Route::get('/dokumenteknisslf/{id}', [PbgslfController::class, 'dokumenteknisslf'])->middleware('auth')->name('dokumenteknisslf');
+Route::get('/dokumenteknisslfcreate/{id}', [PbgslfController::class, 'dokumenteknisslfcreate'])->middleware('auth')->name('dokumenteknisslfcreate');
+Route::post('/dokumenteknisslfcreatenew', [PbgslfController::class, 'dokumenteknisslfcreatenew'])->middleware('auth')->name('dokumenteknisslfcreatenew');
+Route::delete('/dokumenteknisslfdelete/{id}', [PbgslfController::class, 'dokumenteknisslfdelete'])->middleware('auth')->name('dokumenteknisslfdelete');
+
+// DATA DOKUMEN TEKNIS JIKA DATA BANGUNAN SKL
+Route::get('/bepbgsuratpemberitahuan/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuan'])->middleware('auth')->name('bepbgsuratpemberitahuan');
+Route::delete('/bepbgsuratpemberitahuandel/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuandel'])->middleware('auth')->name('bepbgsuratpemberitahuandel');
+Route::get('/bepbgsuratpemberitahuancreate/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuancreate'])->middleware('auth')->name('bepbgsuratpemberitahuancreate');
+
+
+Route::get('/bepbgsuratpemberitahuanshow/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuanshow'])->middleware('auth')->name('suratpemberitahuan.detail');
+Route::post('/bepbgsuratnew', [PbgslfController::class, 'bepbgsuratnew'])->middleware('auth')->name('bepbgsuratnew');
+
 
 // TAHAP 1---------------
 // Route::get('/bekrkusahaperbaikan/{id}', [KrkController::class, 'bekrkusahaperbaikan'])->middleware('auth')->name('bekrkusahaperbaikan.perbaikan');

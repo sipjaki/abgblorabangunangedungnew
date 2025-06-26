@@ -392,35 +392,35 @@ th {
     <div class="row g-3 mt-2">
         {{-- Nama Pemilik --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-person-fill text-navy me-1"></i> Nama Pemilik</label>
+            <label class="form-label"><i class="bi bi-person-fill text-navy me-1" style="color: blue"></i> Nama Pemilik</label>
             <input type="text" name="namapemilik" class="form-control @error('namapemilik') is-invalid @enderror" value="{{ old('namapemilik') }}">
             @error('namapemilik')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         {{-- Alamat Pemilik --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-geo-alt-fill text-navy me-1"></i> Alamat Pemilik</label>
+            <label class="form-label"><i class="bi bi-geo-alt-fill text-navy me-1" style="color: blue"></i> Alamat Pemilik</label>
             <input type="text" name="alamatpemilik" class="form-control @error('alamatpemilik') is-invalid @enderror" value="{{ old('alamatpemilik') }}">
             @error('alamatpemilik')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         {{-- Nomor Telepon --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-telephone-fill text-navy me-1"></i> Nomor Telepon</label>
+            <label class="form-label"><i class="bi bi-telephone-fill text-navy me-1" style="color: blue"></i> Nomor Telepon</label>
             <input type="text" name="nomortelepon" class="form-control @error('nomortelepon') is-invalid @enderror" value="{{ old('nomortelepon') }}">
             @error('nomortelepon')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         {{-- Email --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-envelope-fill text-navy me-1"></i> Email</label>
+            <label class="form-label"><i class="bi bi-envelope-fill text-navy me-1" style="color: blue"></i> Email</label>
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
             @error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         {{-- No Identitas --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-credit-card-fill text-navy me-1"></i> No Identitas</label>
+            <label class="form-label"><i class="bi bi-credit-card-fill text-navy me-1" style="color: blue"></i> No Identitas</label>
             <input type="text" name="noidentitas" class="form-control @error('noidentitas') is-invalid @enderror" value="{{ old('noidentitas') }}">
             @error('noidentitas')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
@@ -428,7 +428,7 @@ th {
         {{-- Pilihan Catatan --}}
         <div class="col-md-6">
             <label class="form-label d-block" style="color: navy; font-weight: 600;">
-                <i class="bi bi-check-circle-fill me-1"></i> Pilihan Catatan
+                <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
             </label>
 
             <label class="custom-radio">
@@ -446,7 +446,7 @@ th {
 
         {{-- Catatan --}}
         <div class="col-12" id="catatan-field" style="display: none;">
-            <label class="form-label"><i class="bi bi-journal-text text-navy me-1"></i> Catatan</label>
+            <label class="form-label"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
             <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror" rows="3" placeholder="Tuliskan catatan tambahan...">{{ old('catatan') }}</textarea>
             @error('catatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>

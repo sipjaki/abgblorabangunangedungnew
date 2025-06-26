@@ -15,10 +15,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('datapemilik_id')->nullable()->index();
             $table->foreignId('databangunanpbg_id')->nullable()->index();
-            $table->foreignId('datatanah_id')->nullable()->index();
-            $table->foreignId('dataumum_id')->nullable()->index();
-            $table->foreignId('dokumenteknis_id')->nullable()->index();
-            $table->foreignId('suratpemberitahuan_id')->nullable()->index();
+            $table->foreignId('datatanahpbg_id')->nullable()->index();
+            $table->foreignId('dataumumpbg_id')->nullable()->index();
+            $table->foreignId('dokumenteknisarsi_id')->nullable()->index();
+            $table->foreignId('dokumenteknisstruk_id')->nullable()->index();
+            $table->foreignId('dokumenteknismep_id')->nullable()->index();
+            $table->foreignId('suratpemberitahuanpbg_id')->nullable()->index();
+            // $table->foreignId('suratpemberitahuanpbg_id')->nullable()->index();
             $table->foreignId('tpatpt_id')->nullable()->index();
             $table->foreignId('suratundangan_id')->nullable()->index();
             $table->foreignId('beritaacaraslf_id')->nullable()->index();

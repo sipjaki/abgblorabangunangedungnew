@@ -14,21 +14,38 @@ return new class extends Migration
         Schema::create('databangunanpbgs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('pbgslfbangunan_id')->nullable()->index();
-            $table->foreignId('jenisperkonsultasi_id')->nullable()->index();
-            $table->string('namabangunan')->nullable();
-            $table->string('lokasibangunan')->nullable();
-            $table->string('klasifikasibangunan')->nullable();
-            $table->foreignId('fungsibangunanpbg_id')->nullable();
-            $table->string('luasbangunan')->nullable();
-            // DATA BANGUNAN
-            $table->string('jenispermohonan')->nullable();
-            $table->string('fungsibangunan')->nullable();
-            $table->string('tinggibangunan')->nullable();
-            $table->string('jumlahlantai')->nullable();
-            $table->string('internsitasbangunan')->nullable();
+                $table->foreignId('jenisperkonsultasi_id')->nullable()->index();
+                $table->string('namabangunan')->nullable();
+                $table->string('lokasibangunan')->nullable();
+                $table->string('klasifikasibangunan')->nullable();
+                $table->foreignId('fungsibangunanpbg_id')->nullable();
+                $table->string('luasbangunan')->nullable();
 
-            $table->string('pilihancatatan')->nullable();
-            $table->text('catatan')->nullable();
+                // DATA BANGUNAN
+                $table->string('jenispermohonan')->nullable();
+                $table->string('fungsibangunan')->nullable();
+                $table->string('tinggibangunan')->nullable();
+                $table->string('jumlahlantai')->nullable();
+                $table->string('internsitasbangunan')->nullable();
+
+                // DATA INTERNSITAS BANGUNAN
+                $table->string('nomorpkkpr')->nullable();
+                $table->string('gsb')->nullable();
+                $table->string('kdb')->nullable();
+                $table->string('klb')->nullable();
+                $table->string('kdh')->nullable();
+
+                // DATA BANGUNAN
+                $table->string('provinsi')->nullable();
+                $table->string('kabupaten')->nullable();
+                $table->string('kecamatanblora_id')->nullable();
+                $table->string('kelurahandesa_id')->nullable();
+                $table->string('alamatlengkap')->nullable();
+                $table->string('koordinat')->nullable();
+
+                // DATA
+                $table->string('pilihancatatan')->nullable();
+                $table->text('catatan')->nullable();
 
             $table->string('cadangan1')->nullable();
             $table->string('cadangan2')->nullable();

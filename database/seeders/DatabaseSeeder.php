@@ -42,6 +42,7 @@ use App\Models\krkkeagamaan;
 use App\Models\krksosbud;
 use App\Models\krkusaha;
 use App\Models\pbgslfbangunan;
+use App\Models\suratpemberitahuanpbg;
 // use App\Models\paketpekerjaan;
 use Database\Factories\SkktenagakerjaFactory;
 // use Carbon\Carbon;
@@ -552,7 +553,7 @@ User::create([
 ]);
 
 // =============================================
-for ($i = 1; $i <= 132; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     // Generate tanggal acak antara 1 Jan 2025 dan 1 Agt 2025
     $startDate = Carbon::create(2025, 1, 1)->timestamp;
     $endDate = Carbon::create(2025, 8, 1)->timestamp;
@@ -580,6 +581,53 @@ for ($i = 1; $i <= 132; $i++) {
 //         'catatan' => 'Catatan tambahan ke-' . $i,
 //     ]);
 // }
+suratpemberitahuanpbg::create([
+    'id' => 1,
+    'pbgslfbangunan_id' => 1,
+    'tanggalpemberitahuan' => '2025-06-01',
+    'pemberitahuanke' => '1',
+    'pilihancatatan' => 'Lengkap',
+    'catatan' => 'Semua dokumen telah lengkap dan sesuai.',
+]);
+
+suratpemberitahuanpbg::create([
+    'id' => 2,
+    'pbgslfbangunan_id' => 1,
+    'tanggalpemberitahuan' => '2025-06-10',
+    'pemberitahuanke' => '2',
+    'pilihancatatan' => 'Tidak Lengkap',
+    'catatan' => 'Dokumen perhitungan teknis belum tersedia.',
+]);
+
+suratpemberitahuanpbg::create([
+    'id' => 3,
+    'pbgslfbangunan_id' => 1,
+    'tanggalpemberitahuan' => '2025-06-15',
+    'pemberitahuanke' => '3',
+    'pilihancatatan' => 'Lengkap',
+    'catatan' => 'Sudah diperbaiki berdasarkan catatan sebelumnya.',
+]);
+
+suratpemberitahuanpbg::create([
+    'id' => 4,
+    'pbgslfbangunan_id' => 1,
+    'tanggalpemberitahuan' => '2025-06-20',
+    'pemberitahuanke' => '4',
+    'pilihancatatan' => 'Tidak Lengkap',
+    'catatan' => 'Masih terdapat kekurangan pada gambar struktur.',
+]);
+
+suratpemberitahuanpbg::create([
+    'id' => 5,
+    'pbgslfbangunan_id' => 1,
+    'tanggalpemberitahuan' => '2025-06-25',
+    'pemberitahuanke' => '5',
+    'pilihancatatan' => 'Lengkap',
+    'catatan' => 'Sudah diverifikasi oleh tim teknis.',
+]);
+
+
+        // --------------------------
 
         jenisperkonsultasi::create([
             'id'  => 1,
@@ -11213,7 +11261,7 @@ kelurahandesa::create([
 
 
 // DATABASE BANTUAN TEKNIS
- for ($i = 1; $i <= 100; $i++) {
+ for ($i = 1; $i <= 10; $i++) {
             bantuanteknis::create([
                 'dinas_id' => rand(1, 15),
                 'jenispengajuanbantek_id' => rand(1, 8),
@@ -11244,7 +11292,7 @@ kelurahandesa::create([
             ]);
         }
 
-        for ($i = 1; $i <= 101; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
     krkusaha::create([
         // 'user_id' => 18,
         // 'user_id' => rand(18, 25, 44),
@@ -11266,7 +11314,7 @@ kelurahandesa::create([
         'alamatpemohon' => 'Jl. Alamat Pemohon No. ' . rand(1, 100),
     ]);
 }
-        for ($i = 1; $i <= 102; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
     krkhunian::create([
         // 'user_id' => 18,
         //   'user_id' => rand(18, 25, 44),
@@ -11290,7 +11338,7 @@ kelurahandesa::create([
     ]);
 }
 
-for ($i = 1; $i <= 103; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     krkkeagamaan::create([
         // 'user_id' => 18,
         //   'user_id' => rand(18, 25, 44),
@@ -11314,7 +11362,7 @@ for ($i = 1; $i <= 103; $i++) {
     ]);
 }
 
-for ($i = 1; $i <= 104; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     krksosbud::create([
         // 'user_id' => 18,
         'user_id' => [18, 25, 44][array_rand([18, 25, 44])],

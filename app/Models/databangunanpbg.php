@@ -28,4 +28,14 @@ public function fungsibangunanpbg()
     return $this->belongsTo(fungsibangunanpbg::class, 'fungsibangunanpbg_id');
 }
 
+public function kecamatanblora()
+{
+    return $this->belongsTo(kecamatanblora::class, 'kecamatanblora_id');
+}
+
+public function kelurahandesa()
+{
+    return $this->belongsTo(kelurahandesa::class, 'kelurahandesa_id');
+}
+
 }

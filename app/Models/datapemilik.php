@@ -13,9 +13,14 @@ class datapemilik extends Model
 
     protected $guarded = ['id'];
 
-  public function pbgslfbangunan()
+//   public function pbgslfbangunan()
+// {
+//     return $this->hasOne(pbgslfbangunan::class, 'pbgslfbangunan_id')->latest('created_at');
+// }
+
+public function pbgslfbangunan()
 {
-    return $this->hasOne(pbgslfbangunan::class, 'pbgslfbangunan_id')->latest('created_at');
+    return $this->hasOne(pbgslfbangunan::class, 'pbgslfbangunan_id', 'id')->latest('id');
 }
 
 }
