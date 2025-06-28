@@ -28,7 +28,7 @@
         },
         {
             id: 3,
-            name: 'Surat Undangan',
+            name: 'Surat Pemberitahuan',
             status: 'pending',
             time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
             message: 'Belum Terbit'
