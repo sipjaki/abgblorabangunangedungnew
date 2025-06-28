@@ -626,6 +626,15 @@ suratpemberitahuanpbg::create([
     'catatan' => 'Sudah diverifikasi oleh tim teknis.',
 ]);
 
+suratpemberitahuanpbg::create([
+    'id' => 6,
+    'pbgslfbangunan_id' => 2,
+    'tanggalpemberitahuan' => '2025-12-12',
+    'pemberitahuanke' => '1',
+    'pilihancatatan' => 'Lengkap',
+    'catatan' => 'Sudah diverifikasi oleh tim teknis.',
+]);
+
 
         // --------------------------
 

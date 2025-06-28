@@ -1438,13 +1438,24 @@ public function bepbgsuratpemberitahuancreate($id)
 
 public function bepbgsuratnew(Request $request)
 {
+
     $validated = $request->validate([
-        'pbgslfbangunan_id' => 'required|string',
-        'tanggalpemberitahuan' => 'required|date',
-        'pemberitahuanke' => 'required|string|max:255',
-        'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
-        'catatan' => 'nullable|string',
-    ], [
+    'pbgslfbangunan_id' => 'required|string',
+    'tanggalpemberitahuan' => 'required|date',
+    'pemberitahuanke' => 'required|string|max:255',
+    'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
+    'catatan' => 'nullable|string',
+
+    // Foreign key tambahan
+    'datapemilik_id' => 'nullable|string',
+    'databangunanpbg_id' => 'nullable|string',
+    'datatanahpbg_id' => 'nullable|string',
+    'dataumumpbg_id' => 'nullable|string',
+    'dokumenteknisarsi_id' => 'nullable|string',
+    'dokumenteknisstruk_id' => 'nullable|string',
+    'dokumenteknismep_id' => 'nullable|string',
+    'dokumenteknisslfpbg_id' => 'nullable|string',
+    ],[
         'pbgslfbangunan_id.required' => 'ID Bangunan wajib diisi.',
         'pbgslfbangunan_id.exists' => 'ID Bangunan tidak ditemukan.',
 
@@ -1461,17 +1472,67 @@ public function bepbgsuratnew(Request $request)
         'catatan.string' => 'Catatan harus berupa teks.',
     ]);
 
-    suratpemberitahuanpbg::create([
-        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
-        'tanggalpemberitahuan' => $validated['tanggalpemberitahuan'],
-        'pemberitahuanke' => $validated['pemberitahuanke'],
-        'pilihancatatan' => $validated['pilihancatatan'],
-        'catatan' => $validated['catatan'] ?? null,
-    ]);
+suratpemberitahuanpbg::create([
+    'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
+    'tanggalpemberitahuan' => $validated['tanggalpemberitahuan'],
+    'pemberitahuanke' => $validated['pemberitahuanke'],
+    'pilihancatatan' => $validated['pilihancatatan'],
+    'catatan' => $validated['catatan'] ?? null,
+
+    // Foreign key tambahan
+    'datapemilik_id' => $validated['datapemilik_id'] ?? null,
+    'databangunanpbg_id' => $validated['databangunanpbg_id'] ?? null,
+    'datatanahpbg_id' => $validated['datatanahpbg_id'] ?? null,
+    'dataumumpbg_id' => $validated['dataumumpbg_id'] ?? null,
+    'dokumenteknisarsi_id' => $validated['dokumenteknisarsi_id'] ?? null,
+    'dokumenteknisstruk_id' => $validated['dokumenteknisstruk_id'] ?? null,
+    'dokumenteknismep_id' => $validated['dokumenteknismep_id'] ?? null,
+    'dokumenteknisslfpbg_id' => $validated['dokumenteknisslfpbg_id'] ?? null,
+]);
 
     session()->flash('create', 'Data Surat Pemberitahuan berhasil disimpan.');
     return redirect()->route('bepbgsuratpemberitahuan', ['id' => $validated['pbgslfbangunan_id']]);
 }
 
+public function bepbgsuratpemberitahuanshow(Request $request, $id)
+{
+    // Ambil user login
+    $user = Auth::user();
+    // Cari data pbg berdasarkan ID
+    $data = pbgslfbangunan::findOrFail($id);
+    $surat = suratpemberitahuanpbg::findOrFail($id);
+    // $surat = suratpemberitahuanpbg::findOrFail($id);
+    // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->first();
+
+    // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->get();
+
+    // Ambil data relasi lain (sama seperti sebelumnya)
+    // $subdatapemilik = datapemilik::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatabangunan = databangunanpbg::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatatanah = datatanahpbg::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdataumum = dataumumpbg::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknisars = dokumenteknisarsi::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknisstruk = dokumenteknisstruk::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknismep = dokumenteknismep::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknisslfpbg = dokumenteknisslfpbg::where('pbgslfbangunan_id', $data->id)->get();
+
+    // Kirim data ke view
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.09_suratpemberitahuan.02_showsurat', [
+        'title' => 'Surat Pemberitahuan',
+        'title_halaman' => 'Surat Pemberitahuan',
+        'user' => $user,
+        'data' => $data,
+        'subdatasuratpemberitahuan' => $surat,
+        'surat' => $surat, // Kirim surat yang dipilih
+        // 'subdatapemilik' => $subdatapemilik,
+        // 'subdatabangunan' => $subdatabangunan,
+        // 'subdatatanah' => $subdatatanah,
+        // 'subdataumum' => $subdataumum,
+        // 'subdatadokumenteknisars' => $subdatadokumenteknisars,
+        // 'subdatadokumenteknisstruk' => $subdatadokumenteknisstruk,
+        // 'subdatadokumenteknismep' => $subdatadokumenteknismep,
+        // 'subdatadokumenteknisslfpbg' => $subdatadokumenteknisslfpbg,
+    ]);
+}
 
 }

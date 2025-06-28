@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('pbgslfbangunan_id')->nullable()->index();
                 $table->foreignId('jenisperkonsultasi_id')->nullable()->index();
+                $table->foreignId('suratpemberitahuanpbg_id')->nullable()->index();
                 $table->string('namabangunan')->nullable();
                 $table->string('lokasibangunan')->nullable();
                 $table->string('klasifikasibangunan')->nullable();

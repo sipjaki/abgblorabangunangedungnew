@@ -18,4 +18,44 @@ class suratpemberitahuanpbg extends Model
     return $this->hasMany(pbgslfbangunan::class, 'pbgslfbangunan_id');
 }
 
+ public function datapemilik()
+{
+    return $this->belongsTo(datapemilik::class, 'datapemilik_id');
+}
+
+ public function databangunanpbg()
+{
+    return $this->belongsTo(databangunanpbg::class, 'databangunanpbg_id');
+}
+
+ public function datatanahpbg()
+{
+    return $this->belongsTo(datatanahpbg::class, 'datatanahpbg_id');
+}
+
+ public function dataumumpbg()
+{
+    return $this->belongsTo(dataumumpbg::class, 'dataumumpbg_id');
+}
+
+ public function dokumenteknisarsi()
+{
+    return $this->belongsTo(dokumenteknisarsi::class, 'dokumenteknisarsi_id');
+}
+
+ public function dokumenteknisstruk()
+{
+    return $this->belongsTo(dokumenteknisstruk::class, 'dokumenteknisstruk_id');
+}
+
+ public function dokumenteknismep()
+{
+    return $this->belongsTo(dokumenteknismep::class, 'dokumenteknismep_id');
+}
+
+public function dokumenteknisslfpbg()
+{
+    return $this->belongsTo(dokumenteknisslfpbg::class, 'dokumenteknisslfpbg_id');
+}
+
 }

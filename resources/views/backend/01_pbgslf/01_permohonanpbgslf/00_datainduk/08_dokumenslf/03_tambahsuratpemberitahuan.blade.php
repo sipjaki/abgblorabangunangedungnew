@@ -385,9 +385,17 @@ th {
 </div>
 <form id="formPemilik" action="{{ route('bepbgsuratnew') }}" method="POST">
     @csrf
-    <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
+<input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
+<input type="hidden" name="datapemilik_id" value="{{ $data->id ?? '' }}">
+<input type="hidden" name="databangunanpbg_id" value="{{ $data->id ?? '' }}">
+<input type="hidden" name="datatanahpbg_id" value="{{ $data->id ?? '' }}">
+<input type="hidden" name="dataumumpbg_id" value="{{ $data->id ?? '' }}">
+<input type="hidden" name="dokumenteknisarsi_id" value="{{ $data->id ?? '' }}">
+<input type="hidden" name="dokumenteknisstruk_id" value="{{ $data->id ?? '' }}">
+<input type="hidden" name="dokumenteknismep_id" value="{{ $data->id ?? '' }}">
+<input type="hidden" name="dokumenteknisslfpbg_id" value="{{ $data->id ?? '' }}">
 
-    <div class="row g-4 mt-2 align-items-end">
+<div class="row g-4 mt-2 align-items-end">
         {{-- Tanggal Pemberitahuan --}}
         <div class="col-md-4">
             <label class="form-label fw-semibold text-dark">
@@ -457,12 +465,12 @@ th {
         </div>
     </div>
 
-    {{-- Tombol Simpan --}}
-    <div class="text-end mt-4">
-        <button type="submit" class="button-baru">
-            <i class="bi bi-save me-1"></i> Simpan Surat Pemberitahuan
-        </button>
-    </div>
+<div class="text-end mt-4">
+    <button type="button" class="button-baru" onclick="openModal()">
+        <i class="bi bi-save me-1"></i> Simpan Surat Pemberitahuan
+    </button>
+</div>
+
 </form>
 
 {{-- Modal Konfirmasi --}}
@@ -479,6 +487,25 @@ th {
         </div>
     </div>
 </div>
+
+<script>
+    function openModal() {
+        document.getElementById('confirmModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('confirmModal').style.display = 'none';
+    }
+
+    function submitForm() {
+        // Ganti dengan ID form kamu
+        const form = document.getElementById('formPemilik');
+        if (form) {
+            form.submit();
+        }
+    }
+</script>
+
 
 <script>
     function toggleCatatan(radio) {

@@ -38,4 +38,9 @@ public function kelurahandesa()
     return $this->belongsTo(kelurahandesa::class, 'kelurahandesa_id');
 }
 
+public function suratpemberitahuanpbg()
+{
+    return $this->hasOne(suratpemberitahuanpbg::class, 'suratpemberitahuanpbg_id', 'id')->latest('id');
+}
+
 }

@@ -19,4 +19,11 @@ class dokumenteknisarsi extends Model
 }
 
 
+public function suratpemberitahuanpbg()
+{
+    return $this->hasOne(suratpemberitahuanpbg::class, 'suratpemberitahuanpbg_id', 'id')->latest('id');
+}
+
+
+
 }

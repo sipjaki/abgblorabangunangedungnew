@@ -13,11 +13,16 @@ class dokumenteknisslfpbg extends Model
 
     protected $guarded = ['id'];
 
-
  public function pbgslfbangunan()
 {
     return $this->hasOne(pbgslfbangunan::class, 'pbgslfbangunan_id', 'id')->latest('id');
 }
+
+public function suratpemberitahuanpbg()
+{
+    return $this->hasOne(suratpemberitahuanpbg::class, 'suratpemberitahuanpbg_id', 'id')->latest('id');
+}
+
 
 
 }

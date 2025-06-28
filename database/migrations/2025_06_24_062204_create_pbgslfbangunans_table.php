@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('dokumenteknisarsi_id')->nullable()->index();
             $table->foreignId('dokumenteknisstruk_id')->nullable()->index();
             $table->foreignId('dokumenteknismep_id')->nullable()->index();
+            $table->foreignId('dokumenteknisslfpbg_id')->nullable()->index();
             $table->foreignId('suratpemberitahuanpbg_id')->nullable()->index();
             // $table->foreignId('suratpemberitahuanpbg_id')->nullable()->index();
             $table->foreignId('tpatpt_id')->nullable()->index();
