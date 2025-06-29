@@ -501,43 +501,43 @@ th {
             <td style="border: 1px solid #000; padding: 3px;" rowspan="7"></td>
             <td style="border: 1px solid #000; padding: 3px;">1. M. ARIF HIDAYAT, ST</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">1. {{$surat->tpatpt->pengawas1->namalengkap}}</td>
+            <td style="border: 1px solid #000; padding: 3px;">1. {{$surat->tpatpt->pengawas1->namalengkap ?? '-'}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;">2. ANEX FACHRIAN ST. MT.</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">2. {{$surat->tpatpt->pengawas2->namalengkap}}</td>
+            <td style="border: 1px solid #000; padding: 3px;">2. {{$surat->tpatpt->pengawas2->namalengkap ?? '-'}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">3. {{$surat->tpatpt->pengawas3->namalengkap}}</td>
+            <td style="border: 1px solid #000; padding: 3px;">3. {{$surat->tpatpt->pengawas3->namalengkap ?? '-'}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">4. {{$surat->tpatpt->pengawas4->namalengkap}}</td>
+            <td style="border: 1px solid #000; padding: 3px;">4. {{$surat->tpatpt->pengawas4->namalengkap ?? '-'}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">5. {{$surat->tpatpt->pengawas5->namalengkap}}</td>
+            <td style="border: 1px solid #000; padding: 3px;">5. {{$surat->tpatpt->pengawas5->namalengkap ?? '-'}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">6. {{$surat->tpatpt->pengawas6->namalengkap}}</td>
+            <td style="border: 1px solid #000; padding: 3px;">6. {{$surat->tpatpt->pengawas6->namalengkap ?? '-'}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">7. {{$surat->tpatpt->pengawas7->namalengkap}}</td>
+            <td style="border: 1px solid #000; padding: 3px;">7. {{$surat->tpatpt->pengawas7->namalengkap ?? '-'}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
     </tbody>

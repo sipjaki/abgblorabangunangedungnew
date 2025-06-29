@@ -4,7 +4,8 @@
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
     <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px]">
-      <img src="/assets/android/iconmenu/dashboard999.jpg" class="absolute object-cover w-full h-full" alt="backgrounds">
+      {{-- <img src="/assets/android/iconmenu/dashboard999.jpg" class="absolute object-cover w-full h-full" alt="backgrounds"> --}}
+      <img src="/assets/android/iconmenu/bgblora.jpg" class="absolute object-cover w-full h-full" alt="backgrounds">
 
       <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
 <nav class="bg-white p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">

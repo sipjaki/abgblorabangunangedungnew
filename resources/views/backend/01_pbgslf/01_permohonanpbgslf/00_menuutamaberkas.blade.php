@@ -255,9 +255,11 @@ th {
                 </div>
             </div>
         </div>
-    @endforeach
+        {{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturvalidasi') --}}
+        @endforeach
 
-</div>
+    </div>
+
 
 <div class="col-12">
     {{-- <div class="mb-3">
