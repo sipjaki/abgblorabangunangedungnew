@@ -31,6 +31,7 @@ use App\Models\kedinasan;
 use App\Models\kodelokasibangunangedung;
 use App\Models\databangunangedung;
 use App\Models\datapemilik;
+use App\Models\fasilitatorpbg;
 use App\Models\fungsibangunanpbg;
 use App\Models\jenispengajuanbantek;
 use App\Models\jenispengajuanpbgslf;
@@ -42,7 +43,10 @@ use App\Models\krkkeagamaan;
 use App\Models\krksosbud;
 use App\Models\krkusaha;
 use App\Models\pbgslfbangunan;
+use App\Models\pengawasatpt;
 use App\Models\suratpemberitahuanpbg;
+use App\Models\surattugaspbg;
+use App\Models\tempatkonsultasi;
 // use App\Models\paketpekerjaan;
 use Database\Factories\SkktenagakerjaFactory;
 // use Carbon\Carbon;
@@ -581,63 +585,199 @@ for ($i = 1; $i <= 10; $i++) {
 //         'catatan' => 'Catatan tambahan ke-' . $i,
 //     ]);
 // }
-suratpemberitahuanpbg::create([
-    'id' => 1,
-    'pbgslfbangunan_id' => 1,
-    'tanggalpemberitahuan' => '2025-06-01',
-    'pemberitahuanke' => '1',
-    'pilihancatatan' => 'Lengkap',
-    'catatan' => 'Semua dokumen telah lengkap dan sesuai.',
-]);
+// suratpemberitahuanpbg::create([
+//     'id' => 1,
+//     'pbgslfbangunan_id' => 1,
+//     'tanggalpemberitahuan' => '2025-06-01',
+//     'pemberitahuanke' => '1',
+//     'pilihancatatan' => 'Lengkap',
+//     'catatan' => 'Semua dokumen telah lengkap dan sesuai.',
+// ]);
 
-suratpemberitahuanpbg::create([
-    'id' => 2,
-    'pbgslfbangunan_id' => 1,
-    'tanggalpemberitahuan' => '2025-06-10',
-    'pemberitahuanke' => '2',
-    'pilihancatatan' => 'Tidak Lengkap',
-    'catatan' => 'Dokumen perhitungan teknis belum tersedia.',
-]);
+// suratpemberitahuanpbg::create([
+//     'id' => 2,
+//     'pbgslfbangunan_id' => 1,
+//     'tanggalpemberitahuan' => '2025-06-10',
+//     'pemberitahuanke' => '2',
+//     'pilihancatatan' => 'Tidak Lengkap',
+//     'catatan' => 'Dokumen perhitungan teknis belum tersedia.',
+// ]);
 
-suratpemberitahuanpbg::create([
-    'id' => 3,
-    'pbgslfbangunan_id' => 1,
-    'tanggalpemberitahuan' => '2025-06-15',
-    'pemberitahuanke' => '3',
-    'pilihancatatan' => 'Lengkap',
-    'catatan' => 'Sudah diperbaiki berdasarkan catatan sebelumnya.',
-]);
+// suratpemberitahuanpbg::create([
+//     'id' => 3,
+//     'pbgslfbangunan_id' => 1,
+//     'tanggalpemberitahuan' => '2025-06-15',
+//     'pemberitahuanke' => '3',
+//     'pilihancatatan' => 'Lengkap',
+//     'catatan' => 'Sudah diperbaiki berdasarkan catatan sebelumnya.',
+// ]);
 
-suratpemberitahuanpbg::create([
-    'id' => 4,
-    'pbgslfbangunan_id' => 1,
-    'tanggalpemberitahuan' => '2025-06-20',
-    'pemberitahuanke' => '4',
-    'pilihancatatan' => 'Tidak Lengkap',
-    'catatan' => 'Masih terdapat kekurangan pada gambar struktur.',
-]);
+// suratpemberitahuanpbg::create([
+//     'id' => 4,
+//     'pbgslfbangunan_id' => 1,
+//     'tanggalpemberitahuan' => '2025-06-20',
+//     'pemberitahuanke' => '4',
+//     'pilihancatatan' => 'Tidak Lengkap',
+//     'catatan' => 'Masih terdapat kekurangan pada gambar struktur.',
+// ]);
 
-suratpemberitahuanpbg::create([
-    'id' => 5,
-    'pbgslfbangunan_id' => 1,
-    'tanggalpemberitahuan' => '2025-06-25',
-    'pemberitahuanke' => '5',
-    'pilihancatatan' => 'Lengkap',
-    'catatan' => 'Sudah diverifikasi oleh tim teknis.',
-]);
+// suratpemberitahuanpbg::create([
+//     'id' => 5,
+//     'pbgslfbangunan_id' => 1,
+//     'tanggalpemberitahuan' => '2025-06-25',
+//     'pemberitahuanke' => '5',
+//     'pilihancatatan' => 'Lengkap',
+//     'catatan' => 'Sudah diverifikasi oleh tim teknis.',
+// ]);
 
-suratpemberitahuanpbg::create([
-    'id' => 6,
-    'pbgslfbangunan_id' => 2,
-    'tanggalpemberitahuan' => '2025-12-12',
-    'pemberitahuanke' => '1',
-    'pilihancatatan' => 'Lengkap',
-    'catatan' => 'Sudah diverifikasi oleh tim teknis.',
-]);
+// suratpemberitahuanpbg::create([
+//     'id' => 6,
+//     'pbgslfbangunan_id' => 2,
+//     'tanggalpemberitahuan' => '2025-12-12',
+//     'pemberitahuanke' => '1',
+//     'pilihancatatan' => 'Lengkap',
+//     'catatan' => 'Sudah diverifikasi oleh tim teknis.',
+// ]);
 
+
+        fasilitatorpbg::create([
+            'id'  => 1,
+            'namalengkap'  => 'ZAENUR ROZIKIN, S.T',
+            'alamat'  => 'Jln. AGIL KUSUMODYO NO 75 B RT/RW 03/02 KUNDEN BLORA',
+            'nik'  => '3514130608980001',
+            'jabatan'  => 'FASILITATOR PERSETUJUAN BANGUNAN GEDUNG',
+        ]);
+
+        fasilitatorpbg::create([
+            'id'  => 2,
+            'namalengkap'  => 'AYUDIA FEBERTA, S.T',
+            'alamat'  => 'NGADIPURWO RT 02/01 KEC BLORA KAB BLORA JAWA TENGAH',
+            'nik'  => '3316090902000005',
+            'jabatan'  => 'FASILITATOR PERSETUJUAN BANGUNAN GEDUNG',
+        ]);
 
         // --------------------------
 
+        tempatkonsultasi::create([
+            'id'  => 1,
+            'tempat'  => 'Dinas PUPR Jalan Nusantara No. 62 Blora',
+        ]);
+
+        tempatkonsultasi::create([
+            'id'  => 2,
+            'tempat'  => 'Ruang rapat Lt II Dinas PTSP Kab. Blora',
+        ]);
+        // --------------------------
+
+        pengawasatpt::create([
+            'id'  => 1,
+            'tpatpt_id'  => '1',
+            'nosk'  => '600.1.1/477/2024 tanggal 30 Desember 2024',
+            'status'  => 'TPT',
+            'namalengkap'  => 'HARTONO GUNTUR R, S.T., M.T.',
+        ]);
+
+        pengawasatpt::create([
+    'id'  => 2,
+    'tpatpt_id'  => '2',
+    'nosk'  => '600.1.1/477/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPT',
+    'namalengkap'  => 'DENNY ADHIHARTA S.ST, MT.',
+]);
+
+pengawasatpt::create([
+    'id'  => 3,
+    'tpatpt_id'  => '3',
+    'nosk'  => '600.1.1/477/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPT',
+    'namalengkap'  => 'TEGUH PRIYANTO, ST, MT',
+]);
+
+pengawasatpt::create([
+    'id'  => 4,
+    'tpatpt_id'  => '4',
+    'nosk'  => '600.1.1/477/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPT',
+    'namalengkap'  => 'YOKANAN, A.Md',
+]);
+
+pengawasatpt::create([
+    'id'  => 5,
+    'tpatpt_id'  => '5',
+    'nosk'  => '600.1.1/478/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPA',
+    'namalengkap'  => 'M. ARIF HIDAYAT, ST',
+]);
+
+pengawasatpt::create([
+    'id'  => 6,
+    'tpatpt_id'  => '6',
+    'nosk'  => '600.1.1/478/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPA',
+    'namalengkap'  => 'ANEX FACHRIAN, ST, MT',
+]);
+
+pengawasatpt::create([
+    'id'  => 7,
+    'tpatpt_id'  => '7',
+    'nosk'  => '600.1.1/478/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPA',
+    'namalengkap'  => 'SYLVIA RAHMAWATI, ST, MM.',
+]);
+
+pengawasatpt::create([
+    'id'  => 8,
+    'tpatpt_id'  => '8',
+    'nosk'  => '600.1.1/478/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPA',
+    'namalengkap'  => 'HIDAYAT JATI SUGANDHA, A.Md',
+]);
+
+pengawasatpt::create([
+    'id'  => 9,
+    'tpatpt_id'  => '9',
+    'nosk'  => '600.1.1/478/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPA',
+    'namalengkap'  => 'MULADI, S.Kep, Ns',
+]);
+
+pengawasatpt::create([
+    'id'  => 10,
+    'tpatpt_id'  => '10',
+    'nosk'  => '600.1.1/478/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPA',
+    'namalengkap'  => 'LAXMONO SASONGKO KUSUMO, ST',
+]);
+
+pengawasatpt::create([
+    'id'  => 11,
+    'tpatpt_id'  => '11',
+    'nosk'  => '600.1.1/478/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPA',
+    'namalengkap'  => 'HARIYANTO PURNOMO, S.Sos, MM.',
+]);
+
+pengawasatpt::create([
+    'id'  => 12,
+    'tpatpt_id'  => '12',
+    'nosk'  => '600.1.1/478/2024 tanggal 30 Desember 2024',
+    'status'  => 'TPA',
+    'namalengkap'  => 'NIDZAMUDIN AL HUDDA, ST',
+]);
+
+        // --------------------------
+
+        surattugaspbg::create([
+            'id'  => 1,
+            'pbgslfbangunan_id'  => '1',
+            'datapemilik_id'  => '1',
+            'fasilitatorpbg_id'  => '1',
+            'nomorsurat'  => '23425252',
+            'nomorkontrak'  => '900/476.A/2025',
+            'tanggaltugas'  => '2025-10-10',
+        ]);
+
+        // --------------------------
         jenisperkonsultasi::create([
             'id'  => 1,
             'jenis'  => 'Bangunan Gedung Baru',

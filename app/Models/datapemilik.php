@@ -28,4 +28,14 @@ public function suratpemberitahuanpbg()
     return $this->hasOne(suratpemberitahuanpbg::class, 'suratpemberitahuanpbg_id', 'id')->latest('id');
 }
 
+public function surattugaspbg()
+{
+    return $this->hasOne(surattugaspbg::class, 'surattugaspbg_id', 'id')->latest('id');
+}
+
+public function suratudanganpbg()
+{
+    return $this->hasMany(suratudanganpbg::class, 'suratudanganpbg_id', 'id');
+}
+
 }

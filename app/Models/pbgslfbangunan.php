@@ -73,4 +73,14 @@ class pbgslfbangunan extends Model
         return $this->belongsTo(suratpemberitahuanpbg::class, 'suratpemberitahuanpbg_id');
     }
 
+    public function surattugaspbg()
+    {
+        return $this->belongsTo(surattugaspbg::class, 'surattugaspbg_id');
+    }
+
+    public function suratudanganpbg()
+    {
+        return $this->belongsTo(suratudanganpbg::class, 'suratudanganpbg_id');
+    }
+
 }
