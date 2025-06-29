@@ -80,7 +80,7 @@ class pbgslfbangunan extends Model
 
     public function suratudanganpbg()
     {
-        return $this->belongsTo(suratudanganpbg::class, 'suratudanganpbg_id');
+        return $this->hasMany(suratudanganpbg::class, 'suratudanganpbg_id');
     }
 
 }

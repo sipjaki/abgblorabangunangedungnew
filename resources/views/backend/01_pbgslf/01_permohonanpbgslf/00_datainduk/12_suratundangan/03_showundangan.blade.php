@@ -358,7 +358,7 @@ th {
     </p> --}}
 
     <p style="font-size: 12px;">
-        <strong>Nomor</strong> : 050 / UND-{{ $data->first()->noregissimbg ?? '-' }}/{{ $surat->first()->konsultasike ?? '-' }}/2025<br>
+        <strong>Nomor</strong> : 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025<br>
         <strong>Lampiran</strong> : -<br>
         <strong>Perihal</strong> : <u style="text-decoration: none;">Undangan Konsultasi</u>
     </p>
@@ -376,31 +376,31 @@ th {
 <table style="font-size: 12px; width: 100%; border-collapse: collapse; border: 1px solid #000;">
     <tr>
         <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">No. Registrasi</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $data->first()->noregissimbg ?? '-' }}</td>
+        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td>
     </tr>
     <tr>
         <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Nama Lengkap Pemilik</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ optional($surat->datapemilik->first())->namapemilik ?? '-' }}</td>
+        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
     </tr>
     <tr>
         <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Jenis Konsultasi</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ optional($surat->databangunanpbg->first())->jeniskonsultasi ?? 'Bangunan Gedung Baru' }}</td>
+        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->databangunanpbg->jeniskonsultasi ?? 'Bangunan Gedung Baru' }}</td>
     </tr>
     <tr>
         <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Lokasi Bangunan</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ optional($surat->databangunanpbg->first())->lokasibangunan ?? '-' }}</td>
+        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
     </tr>
     <tr>
         <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Fungsi Bangunan</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ optional($surat->databangunanpbg->first())->fungsibangunanpbg->fungsi ?? '-' }}</td>
+        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
     </tr>
     <tr>
         <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">No. Telepon</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ optional($surat->datapemilik->first())->nomortelepon ?? '-' }}</td>
+        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->datapemilik->nomortelepon ?? '-' }}</td>
     </tr>
     <tr>
         <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Email</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ optional($surat->datapemilik->first())->email ?? '-' }}</td>
+        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->datapemilik->email ?? '-' }}</td>
     </tr>
 </table>
 
@@ -413,22 +413,22 @@ th {
         <tr>
             <td style="padding: 4px 8px; vertical-align: top;">Hari / Tanggal</td>
         <td style="padding: 4px 8px;">
-  : {{ optional($surat->first())->tanggalkehadiran ? \Carbon\Carbon::parse($surat->first()->tanggalkehadiran)->translatedFormat('F d Y') : '-' }}
+  : {{ $surat->tanggalkehadiran ? \Carbon\Carbon::parse($surat->tanggalkehadiran)->translatedFormat('F d Y') : '-' }}
 </td>
 
         </tr>
         <tr>
             <td style="padding: 4px 8px; vertical-align: top;">Waktu</td>
-            <td style="padding: 4px 8px;">: {{ optional($surat->first())->jamundangan ?? '-' }}</td>
+            <td style="padding: 4px 8px;">: {{ $surat->jamundangan ?? '-' }}</td>
         </tr>
         <tr>
             <td style="padding: 4px 8px; vertical-align: top;">Tempat</td>
-     <td style="padding: 4px 8px;">: {{ optional($surat->tempatkonsultasi)->tempat ?? '-' }}</td>
+     <td style="padding: 4px 8px;">: {{ $surat->tempatkonsultasi->tempat ?? '-' }}</td>
 
      </tr>
         <tr>
             <td style="padding: 4px 8px; vertical-align: top;">Acara</td>
-            <td style="padding: 4px 8px;">: Konsultasi ke {{ optional($surat->first())->konsultasike ?? '-' }}</td>
+            <td style="padding: 4px 8px;">: Konsultasi ke {{ $surat->konsultasike ?? '-' }}</td>
         </tr>
     </table>
 

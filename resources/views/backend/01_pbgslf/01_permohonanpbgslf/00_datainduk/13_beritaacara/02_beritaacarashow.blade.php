@@ -354,7 +354,7 @@ th {
     {{-- 1. Judul --}}
     <div style="text-align: center; font-weight: bold; font-size: 12px; margin-top:-15px;">
         BERITA ACARA HASIL KONSULTASI ke-{{ $surat->konsultasike ?? '-' }}<br>
-        Nomor: 050/TPA-{{ $data->first()->noregissimbg ?? 'Data Kosong' }}/{{ $surat->konsultasike ?? '1' }}/2025
+        Nomor: 050/TPA-{{ $surat->pbgslfbangunan->noregissimbg ?? 'Data Kosong' }}/{{ $surat->konsultasike ?? '1' }}/2025
     </div>
 
     {{-- 2. Paragraf Pembuka --}}
@@ -370,15 +370,15 @@ th {
 <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
     <tr>
         <td style="width: 35%; border: 1px solid #000; padding: 2px;">No. Registrasi</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $data->first()->noregissimbg ?? '-' }}</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td>
     </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Jenis Permohonan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->first()->jenisperkonsultasi->jenis ?? '-' }}</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}</td>
     </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Nama Bangunan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->first()->namabangunan ?? '-' }}</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->namabangunan ?? '-' }}</td>
     </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Hari, tanggal sidang</td>
@@ -388,23 +388,23 @@ th {
     </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Luas Bangunan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->first()->luasbangunan ?? '-' }}</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->luasbangunan ?? '-' }}</td>
     </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Nama Pemohon</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->datapemilik->first()->namapemilik ?? '-' }}</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
     </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Fungsi Bangunan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->first()->fungsibangunanpbg->fungsi ?? '-' }}</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
     </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Alamat Pemohon</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->datapemilik->first()->alamatpemilik ?? '-' }}</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
     </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Lokasi Bangunan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->first()->lokasibangunan ?? '-' }}</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
     </tr>
 </table>
 
@@ -501,43 +501,43 @@ th {
             <td style="border: 1px solid #000; padding: 3px;" rowspan="7"></td>
             <td style="border: 1px solid #000; padding: 3px;">1. M. ARIF HIDAYAT, ST</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">1. H. HARTONO GUNTUR R, ST., M.T.</td>
+            <td style="border: 1px solid #000; padding: 3px;">1. {{$surat->tpatpt->pengawas1->namalengkap}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;">2. ANEX FACHRIAN ST. MT.</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">2. DENNY ADHIHARSA S.ST, MT.</td>
+            <td style="border: 1px solid #000; padding: 3px;">2. {{$surat->tpatpt->pengawas2->namalengkap}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">3. TEGUH PRIYANTO, ST, MT</td>
+            <td style="border: 1px solid #000; padding: 3px;">3. {{$surat->tpatpt->pengawas3->namalengkap}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">4. YOKANAN, A.Md</td>
+            <td style="border: 1px solid #000; padding: 3px;">4. {{$surat->tpatpt->pengawas4->namalengkap}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">5.</td>
+            <td style="border: 1px solid #000; padding: 3px;">5. {{$surat->tpatpt->pengawas5->namalengkap}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">6.</td>
+            <td style="border: 1px solid #000; padding: 3px;">6. {{$surat->tpatpt->pengawas6->namalengkap}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
         <tr>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">7.</td>
+            <td style="border: 1px solid #000; padding: 3px;">7. {{$surat->tpatpt->pengawas7->namalengkap}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
     </tbody>

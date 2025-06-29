@@ -1754,6 +1754,7 @@ public function bepbgtpatptcreate($id)
 public function bepbgtpatptcreatenew(Request $request)
 {
     $validated = $request->validate([
+        'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
         'timpenilai' => 'required|string',
         'nosk' => 'required|string',
@@ -1790,6 +1791,7 @@ public function bepbgtpatptcreatenew(Request $request)
     ]);
 
     tpatpt::create([
+        'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
         'timpenilai' => $validated['timpenilai'],
         'nosk' => $validated['nosk'],
