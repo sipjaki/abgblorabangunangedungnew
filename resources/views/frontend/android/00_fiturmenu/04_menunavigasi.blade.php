@@ -93,14 +93,14 @@
         </div>
       </a>
 
-      <a href="#">
+      {{-- <a href="#">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
             <img src="/assets/android/menunavigasi/012.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">SPPD</p>
         </div>
-      </a>
+      </a> --}}
 
       <a href="/web">
         <div class="flex flex-col items-center gap-2">
