@@ -15,7 +15,7 @@ class suratpemberitahuanpbg extends Model
 
  public function pbgslfbangunan()
 {
-    return $this->hasMany(pbgslfbangunan::class, 'pbgslfbangunan_id');
+    return $this->belongsTo(pbgslfbangunan::class, 'pbgslfbangunan_id');
 }
 
  public function datapemilik()

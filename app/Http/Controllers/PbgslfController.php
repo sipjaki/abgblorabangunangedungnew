@@ -357,8 +357,8 @@ public function bepbgdatapemilik($id)
 
     // Kirim data ke view
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.02_datatanahpemohon', [
-        'title' => 'Informasi Data Tanah',
-        'title_halaman' => 'Data Tanah Pemohon',
+        'title' => 'Informasi Data Pemilik',
+        'title_halaman' => 'Data Pemilik',
         'user' => $user,
         'data' => $data,
         'datapbgslf' => $datapbgslf,
@@ -389,6 +389,7 @@ public function bepbgdatapemilikcreate($id)
  public function bepbgdatapemilikcreatenew(Request $request)
     {
         $validated = $request->validate([
+            'id' => 'required|string',
             'pbgslfbangunan_id' => 'required|string',
             'namapemilik' => 'required|string|max:255',
             'alamatpemilik' => 'required|string|max:255',
@@ -411,6 +412,7 @@ public function bepbgdatapemilikcreate($id)
         ]);
 
         datapemilik::create([
+              'id' => $request->input('id'),
             'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
             'namapemilik' => $validated['namapemilik'],
             'alamatpemilik' => $validated['alamatpemilik'],
@@ -516,6 +518,7 @@ public function bepbgdatabangunancreate($id)
 public function bepbgdatabangunancreatenew(Request $request)
 {
     $validated = $request->validate([
+        'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
         'jenisperkonsultasi_id' => 'required|string',
         'namabangunan' => 'required|string|max:255',
@@ -564,6 +567,8 @@ public function bepbgdatabangunancreatenew(Request $request)
     ]);
 
     databangunanpbg::create([
+        // 'id' => $validated['pbgslfbangunan_id'],
+        'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
         'jenisperkonsultasi_id' => $validated['jenisperkonsultasi_id'],
         'namabangunan' => $validated['namabangunan'],
@@ -670,6 +675,7 @@ public function bepbgdatatanahcreate($id)
 public function bepbgdatatanahcreatenew(Request $request)
 {
     $validated = $request->validate([
+        'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
         'isiandatatanah' => 'required|in:Lengkap,Tidak Lengkap',
         'layout' => 'required|in:Lengkap,Tidak Lengkap',
@@ -690,6 +696,7 @@ public function bepbgdatatanahcreatenew(Request $request)
     ]);
 
     datatanahpbg::create([
+        'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
         'isiandatatanah' => $validated['isiandatatanah'],
         'layout' => $validated['layout'],
@@ -771,6 +778,7 @@ public function bepbgdataumumcreate($id)
 public function bepbgdataumumcreatenew(Request $request)
 {
     $validated = $request->validate([
+        'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
         'berkas1' => 'required|in:Lengkap,Tidak Lengkap',
         'berkas2' => 'required|in:Lengkap,Tidak Lengkap',
@@ -800,6 +808,7 @@ public function bepbgdataumumcreatenew(Request $request)
     ]);
 
     dataumumpbg::create([
+        'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
         'berkas1' => $validated['berkas1'],
         'berkas2' => $validated['berkas2'],
@@ -811,7 +820,7 @@ public function bepbgdataumumcreatenew(Request $request)
         'catatan' => $validated['catatan'] ?? null,
     ]);
 
-    session()->flash('create', 'Data Bangunan berhasil ditambahkan!');
+    session()->flash('create', 'Informasi Data Umum berhasil ditambahkan!');
     return redirect()->route('bepbgdataumum', ['id' => $validated['pbgslfbangunan_id']]);
 }
 
@@ -885,6 +894,7 @@ public function bepbgdokumeteknisarscreate($id)
 public function bepbgdokumeteknisarscreatenew(Request $request)
 {
     $validated = $request->validate([
+        'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
 
         'berkas1' => 'required|in:Lengkap,Tidak Lengkap',
@@ -929,6 +939,7 @@ public function bepbgdokumeteknisarscreatenew(Request $request)
     ]);
 
     dokumenteknisarsi::create([
+        'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
         'berkas1' => $validated['berkas1'],
         'berkas2' => $validated['berkas2'],
@@ -944,7 +955,7 @@ public function bepbgdokumeteknisarscreatenew(Request $request)
         'catatan' => $validated['catatan'] ?? null,
     ]);
 
-    session()->flash('create', 'Data Bangunan berhasil ditambahkan!');
+    session()->flash('create', 'Dokumen Teknis Arsitektur berhasil ditambahkan!');
     return redirect()->route('bepbgdokumeteknisars', ['id' => $validated['pbgslfbangunan_id']]);
 }
 
@@ -1052,6 +1063,7 @@ public function bepbgdokumeteknisstrkcreate($id)
 public function bepbgdokumeteknisstrkcreatenew(Request $request)
 {
     $validated = $request->validate([
+        'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
 
         'berkas1' => 'required|in:Lengkap,Tidak Lengkap',
@@ -1101,6 +1113,7 @@ public function bepbgdokumeteknisstrkcreatenew(Request $request)
     ]);
 
     dokumenteknisstruk::create([
+        'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
         'berkas1' => $validated['berkas1'],
         'berkas2' => $validated['berkas2'],
@@ -1183,6 +1196,7 @@ public function bepbgdokumeteknismepcreate($id)
 public function bepbgdokumeteknismepcreatenew(Request $request)
 {
     $validated = $request->validate([
+        'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
 
         'berkas1' => 'required|in:Lengkap,Tidak Lengkap',
@@ -1236,6 +1250,7 @@ public function bepbgdokumeteknismepcreatenew(Request $request)
     ]);
 
     dokumenteknismep::create([
+        'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
         'berkas1' => $validated['berkas1'],
         'berkas2' => $validated['berkas2'],
@@ -1319,6 +1334,7 @@ public function dokumenteknisslfcreate($id)
 public function dokumenteknisslfcreatenew(Request $request)
 {
     $validated = $request->validate([
+        'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
 
         'berkas1' => 'required|in:Lengkap,Tidak Lengkap',
@@ -1356,6 +1372,7 @@ public function dokumenteknisslfcreatenew(Request $request)
     ]);
 
     dokumenteknisslfpbg::create([
+        'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
         'berkas1' => $validated['berkas1'],
         'berkas2' => $validated['berkas2'],
@@ -1507,6 +1524,13 @@ public function bepbgsuratpemberitahuanshow(Request $request, $id)
     // Cari data pbg berdasarkan ID
     $data = pbgslfbangunan::findOrFail($id);
     $surat = suratpemberitahuanpbg::findOrFail($id);
+    // $datapemilik = datapemilik::findOrFail($id);
+    // $datapemilik = datapemilik::where('pbgslfbangunan_id', $id)->firstOrFail();
+    // $datapemilik = datapemilik::where('pbgslfbangunan_id', $id)->first(); // tanpa fail
+    $datapemilik = datapemilik::firstOrNew(['pbgslfbangunan_id' => $id]);
+// Kalau belum ada, ini akan buat instance baru tapi belum disimpan ke DB
+
+
     // $surat = suratpemberitahuanpbg::findOrFail($id);
     // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->first();
 
@@ -1528,6 +1552,7 @@ public function bepbgsuratpemberitahuanshow(Request $request, $id)
         'title_halaman' => 'Surat Pemberitahuan',
         'user' => $user,
         'data' => $data,
+        'datapemilik' => $datapemilik,
         'subdatasuratpemberitahuan' => $surat,
         'surat' => $surat, // Kirim surat yang dipilih
         // 'subdatapemilik' => $subdatapemilik,
@@ -1982,7 +2007,7 @@ public function bepbgberitaacaraslfshow(Request $request, $id)
     // Ambil user login
     $user = Auth::user();
     // Cari data pbg berdasarkan ID
-    $data = pbgslfbangunan::findOrFail($id);
+    // $data = pbgslfbangunan::findOrFail($id);
     $surat = suratudanganpbg::findOrFail($id);
     // $surat = suratpemberitahuanpbg::findOrFail($id);
     // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->first();
@@ -2004,7 +2029,7 @@ public function bepbgberitaacaraslfshow(Request $request, $id)
         'title' => 'Berita Acara',
         'title_halaman' => 'Berita Acara',
         'user' => $user,
-        'data' => $data,
+        // 'data' => $data,
         'subdatasuratpemberitahuan' => $surat,
         'surat' => $surat, // Kirim surat yang dipilih
         // 'subdatapemilik' => $subdatapemilik,

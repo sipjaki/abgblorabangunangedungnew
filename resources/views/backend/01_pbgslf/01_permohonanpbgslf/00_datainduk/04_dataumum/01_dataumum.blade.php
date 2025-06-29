@@ -361,14 +361,14 @@ th {
                             </div>
                         @endif
 
-                        <a href="javascript:void(0)" title="Delete"
+                        {{-- <a href="javascript:void(0)" title="Delete"
                            data-bs-toggle="modal" data-bs-target="#deleteModal"
                            data-judul="{{ $pemilik->id }}"
                            onclick="setDeleteUrl(this)"
                            style="text-decoration: none;">
                             <i class="bi bi-trash" style="color: red; margin-right:4px;"></i>
                             <span style="color: red;">Hapus</span>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>

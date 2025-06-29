@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('datatanahpbgs', function (Blueprint $table) {
-            $table->id();
-                   $table->foreignId('pbgslfbangunan_id')->nullable()->index();
+            // $table->id();
+            $table->unsignedBigInteger('id')->primary();
+
+            $table->foreignId('pbgslfbangunan_id')->nullable()->index();
                      $table->foreignId('suratpemberitahuanpbg_id')->nullable()->index();
                    $table->string('isiandatatanah')->nullable();
                    $table->string('layout')->nullable();

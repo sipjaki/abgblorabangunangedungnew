@@ -344,6 +344,7 @@ th {
             <td>{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
             <td>{{ $item->noregissimbg ?? '-' }}</td>
             <td>{{ $item->datapemilik->namapemilik ?? '-' }}</td>
+            {{-- <td>{{ $item->datapemilik->namapemilik ?? '-' }}</td> --}}
    <td>
   {{ $item->tanggalpermohonan ? \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') : '-' }}
 </td>

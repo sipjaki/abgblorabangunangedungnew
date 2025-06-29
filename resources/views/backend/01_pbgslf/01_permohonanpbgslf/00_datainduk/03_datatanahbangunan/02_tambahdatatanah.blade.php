@@ -387,6 +387,7 @@ th {
 <form id="formPemilik" action="{{ route('bepbgdatatanahnew') }}" method="POST">
     @csrf
     <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
+    <input type="hidden" name="id" value="{{ $data->id }}">
 
 
 <div class="row g-3 mt-2">

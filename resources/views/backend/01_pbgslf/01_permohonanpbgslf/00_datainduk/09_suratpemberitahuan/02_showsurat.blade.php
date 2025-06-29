@@ -366,27 +366,27 @@ th {
   <p style="text-align: right; margin-top: 20px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('l, d F Y') : '-' }}</p>
 
   <p>
-    <strong>Nomor</strong> : 640/OPRT-{{ $data->first()->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2024<br />
+    <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2024<br />
     <strong>Lampiran</strong> : 1 Bandel<br />
-    <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $data->first()->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
+    <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
   </p>
 
   <p>Kepada Yth:<br />Pemohon<br />Di Tempat</p>
   <p>Dengan ini kami sampaikan hasil verifikasi Pemohon sebagai berikut :</p>
 
   <table class="isian">
-    <tr><td>No. Registrasi</td><td>{{ $data->first()->noregissimbg ?? '-' }}</td></tr>
-    <tr><td>Nama Lengkap Pemilik</td><td>{{ optional($surat->datapemilik->first())->namapemilik ?? '-' }}</td></tr>
-    <tr><td>Jenis Konsultasi</td><td>{{ optional($surat->databangunanpbg->first())->jenisperkonsultasi->jenis ?? '-' }}</td></tr>
-    <tr><td>Lokasi Bangunan</td><td>{{ optional($surat->databangunanpbg->first())->lokasibangunan ?? '-' }}</td></tr>
-    <tr><td>Fungsi Bangunan</td><td>{{ optional($surat->databangunanpbg->first())->fungsibangunanpbg->fungsi ?? '-' }}</td></tr>
-    <tr><td>No. Telepon</td><td>{{ optional($surat->datapemilik->first())->nomortelepon ?? '-' }}</td></tr>
-    <tr><td>Email</td><td>{{ optional($surat->datapemilik->first())->email ?? '-' }}</td></tr>
+    <tr><td>No. Registrasi</td><td>{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td></tr>
+<tr><td>Nama Lengkap Pemilik</td><td>{{ $surat->datapemilik->namapemilik ?? '-' }}</td></tr>
+    <tr><td>Jenis Konsultasi</td><td>{{ $databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}</td></tr>
+    <tr><td>Lokasi Bangunan</td><td>{{ optional($surat->databangunanpbg)->lokasibangunan ?? '-' }}</td></tr>
+    <tr><td>Fungsi Bangunan</td><td>{{ optional($surat->databangunanpbg)->fungsibangunanpbg->fungsi ?? '-' }}</td></tr>
+    <tr><td>No. Telepon</td><td>{{ optional($surat->datapemilik)->nomortelepon ?? '-' }}</td></tr>
+    <tr><td>Email</td><td>{{ optional($surat->datapemilik)->email ?? '-' }}</td></tr>
   </table>
 
   <p style="margin-top: 10px;">Setelah dilakukan Verifikasi terhadap Data Bangunan, Data Tanah, Data Umum dan Ketentuan Teknis, maka data disimpulkan:</p>
   <p><strong>{{ $surat->pilihancatatan ?? '-' }}</strong></p>
-  <p>Adapun cek list Verifikasi Permohonan {{ $data->first()->noregissimbg ?? '-' }} terlampir.</p>
+  <p>Adapun cek list Verifikasi Permohonan {{ $data->noregissimbg ?? '-' }} terlampir.</p>
   <p>Bagi Pemohon yang <strong>tidak lengkap</strong> segera melengkapi data. Kesekretariatan SIMBG menyediakan <strong>KLINIK PENDAMPINGAN OFFLINE</strong> guna memberikan informasi yang jelas kepada pemohon.</p>
   <p>Demikian pemberitahuan ini kami sampaikan dan kami ucapkan terima kasih.</p>
 
@@ -400,9 +400,9 @@ th {
 <!-- HALAMAN KEDUA -->
 <div class="halaman-pertama">
     <p>
-    <strong>Nomor</strong> : 640/OPRT-{{ $data->first()->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2024<br />
+    <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2024<br />
     <strong>Lampiran</strong> : 1 Bandel<br />
-    <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $data->first()->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
+    <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
   </p>
 
   <h5 style="text-align: center; font-weight: bold; text-decoration: underline; margin-bottom: 10px; font-size: 12px; font-family: 'Poppins', sans-serif;">
@@ -425,22 +425,22 @@ th {
       </tr>
       <tr>
         <td>Nama Pemilik</td>
-        <td>{{ optional($surat->datapemilik->first())->namapemilik ?? '-' }}</td>
+            <td>{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td>
       </tr>
       <tr>
         <td>Alamat Pemilik Bangunan</td>
-        <td>{{ optional($surat->datapemilik->first())->alamatpemilik ?? '-' }}</td>
+        <td>{{ optional($surat->datapemilik)->alamatpemilik ?? '-' }}</td>
       </tr>
       <tr>
         <td>No. Telepon</td>
-        <td>{{ optional($surat->datapemilik->first())->nomortelepon ?? '-' }}</td>
+        <td>{{ optional($surat->datapemilik)->nomortelepon ?? '-' }}</td>
       </tr>
       <tr>
         <td>Email</td>
-        <td>{{ optional($surat->datapemilik->first())->email ?? '-' }}</td>
+        <td>{{ optional($surat->datapemilik)->email ?? '-' }}</td>
       </tr>
       <tr>
-        <td colspan="3"><em>Catatan data pemilik :</em> {{ optional($surat->datapemilik->first())->catatan ?? '-' }}</td>
+        <td colspan="3"><em>Catatan data pemilik :</em> {{ optional($surat->datapemilik)->catatan ?? '-' }}</td>
       </tr>
 
       <tr>
@@ -449,38 +449,38 @@ th {
       </tr>
       <tr>
         <td>Jenis Permohonan Konsultasi</td>
-        <td>{{ optional($surat->databangunanpbg->first())->jenisperkonsultasi->jenis ?? '-' }}</td>
+        <td>{{ $surat->pbgslfbangunan->databangunanpbg->jenisperkonsultasi->jenispengajuan ?? '-' }}</td>
       </tr>
       <tr>
         <td>Fungsi Bangunan</td>
-        <td>{{ optional($surat->databangunanpbg->first())->fungsibangunanpbg->fungsi ?? '-' }}</td>
+        <td>{{ optional($surat->databangunanpbg)->fungsibangunanpbg->fungsi ?? '-' }}</td>
       </tr>
       <tr>
         <td>Lokasi Bangunan</td>
-        <td>{{ optional($surat->databangunanpbg->first())->lokasibangunan ?? '-' }}</td>
+        <td>{{ optional($surat->databangunanpbg)->lokasibangunan ?? '-' }}</td>
       </tr>
       <tr>
         <td>Nama Bangunan</td>
-        <td>{{ optional($surat->databangunanpbg->first())->namabangunan ?? '-' }}</td>
+        <td>{{ optional($surat->databangunanpbg)->namabangunan ?? '-' }}</td>
       </tr>
       <tr>
         <td>Luas Lantai</td>
-        <td>{{ optional($surat->databangunanpbg->first())->luasbangunan ?? '-' }} Meter<sup>2</sup></td>
+        <td>{{ optional($surat->databangunanpbg)->luasbangunan ?? '-' }} Meter<sup>2</sup></td>
       </tr>
       <tr>
         <td>Tinggi Bangunan</td>
-        <td>{{ optional($surat->databangunanpbg->first())->tinggibangunan ?? '-' }} Meter</td>
+        <td>{{ optional($surat->databangunanpbg)->tinggibangunan ?? '-' }} Meter</td>
       </tr>
       <tr>
         <td>Jumlah Lantai</td>
-        <td>{{ optional($surat->databangunanpbg->first())->jumlahlantai ?? '-' }} Lantai </td>
+        <td>{{ optional($surat->databangunanpbg)->jumlahlantai ?? '-' }} Lantai </td>
       </tr>
       <tr>
         <td>Perancang Dokumen Teknis</td>
-        <td>{{ optional($surat->databangunanpbg->first())->perancangdokumen ?? '-' }}</td>
+        <td>{{ optional($surat->databangunanpbg)->perancangdokumen ?? '-' }}</td>
       </tr>
       <tr>
-        <td colspan="3"><em>Catatan Data Bangunan :</em> {{ optional($surat->databangunanpbg->first())->catatan ?? '-' }}</td>
+        <td colspan="3"><em>Catatan Data Bangunan :</em> {{ optional($surat->databangunanpbg)->catatan ?? '-' }}</td>
       </tr>
     </tbody>
   </table>
@@ -499,7 +499,7 @@ th {
         <td>1.</td>
         <td>ISIAN DATA TANAH</td>
         <td style="text-align: center; text-transform:uppercase;">
-        {{ optional($surat->datatanahpbg->first())->isiandatatanah ?? '-' }}
+        {{ optional($surat->datatanahpbg)->isiandatatanah ?? '-' }}
     </td>
 </tr>
       <tr>
@@ -512,7 +512,7 @@ th {
             Gambar Batas tanah yang dikuasai termasuk gambar bangunan gedung yang sudah ada (eksisting) pada area/persil yang akan dibangun
         </td>
         <td style="text-align: center; text-transform:uppercase;">
-            {{ optional($surat->datatanahpbg->first())->penyelidikan ?? '-' }}
+            {{ optional($surat->datatanahpbg)->penyelidikan ?? '-' }}
         </td>
     </tr>
     <tr>
@@ -520,13 +520,13 @@ th {
             <td rowspan="2"></td>
             <td>Gambar dan informasi tentang hasil penyelidikan tanah untuk bangunan tidak sederhana</td>
             <td style="text-align: center; text-transform:uppercase;">
-                {{ optional($surat->datatanahpbg->first())->layout ?? '-' }}
+                {{ optional($surat->datatanahpbg)->layout ?? '-' }}
             </td>
         </tr>
         </tr>
       <tr>
         <tr>
-        <td colspan="3"><em>Catatan Data Tanah:</em> {{ optional($surat->datatanahpbg->first())->catatan ?? '-' }}</td>
+        <td colspan="3"><em>Catatan Data Tanah:</em> {{ optional($surat->datatanahpbg)->catatan ?? '-' }}</td>
       </tr>
     </tbody>
   </table>
@@ -549,25 +549,25 @@ th {
       <tr>
         <td>1.</td>
         <td>Informasi KTP/KITAS*</td>
-        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dataumumpbg->first())->berkas1 ?? '-' }}</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dataumumpbg)->berkas1 ?? '-' }}</td>
       </tr>
       <tr>
           <td>2.</td>
           <td>Informasi KRK/KRPR*</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dataumumpbg->first())->berkas2 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dataumumpbg)->berkas2 ?? '-' }}</td>
       </tr>
       <tr>
           <td>3.</td>
           <td>Surat Perjanjian pemanfaatan tanah antara pemilik tanah dan Pemilik Bangunan Gedung (Dalam hal pemilik tanah bukan pemilik bangunan gedung)</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dataumumpbg->first())->berkas3 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dataumumpbg)->berkas3 ?? '-' }}</td>
       </tr>
       <tr>
           <td>4.</td>
           <td>Dokumen lingkungan sesuai peraturan perundangan (AMDAL/AMDAL Lalin, UKL/UPL, SPPL)/Izin Lokasi*</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dataumumpbg->first())->berkas4 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dataumumpbg)->berkas4 ?? '-' }}</td>
       </tr>
       <tr>
-          <td colspan="3"><em>Catatan Data Umum :</em> {{ optional($surat->dataumumpbg->first())->catatan ?? '-' }}</td>
+          <td colspan="3"><em>Catatan Data Umum :</em> {{ optional($surat->dataumumpbg)->catatan ?? '-' }}</td>
       </tr>
   </tbody>
   </table>
@@ -587,55 +587,55 @@ th {
       <tr>
           <td>1.</td>
           <td>Rekomendasi Peil Banjir</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi->first())->berkas1 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi)->berkas1 ?? '-' }}</td>
       </tr>
       <tr>
           <td>2.</td>
           <td>Sfesifikasi Teknis Arsitektur Bangunan </td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi->first())->berkas2 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi)->berkas2 ?? '-' }}</td>
       </tr>
       <tr>
           <td>3.</td>
           <td>Gambar Rencana Detail Bangunan </td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi->first())->berkas3 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi)->berkas3 ?? '-' }}</td>
       </tr>
       <tr>
           <td>4.</td>
           <td>Gambar Rencana Tata Ruang Luar</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi->first())->berkas4 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi)->berkas4 ?? '-' }}</td>
       </tr>
       <tr>
           <td>5.</td>
           <td>Gambar Rencana Tata Ruang Dalam</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi->first())->berkas5 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi)->berkas5 ?? '-' }}</td>
       </tr>
       <tr>
           <td>6.</td>
           <td>Gambar Rencana Tampak Bangunan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi->first())->berkas6 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi)->berkas6 ?? '-' }}</td>
       </tr>
       <tr>
           <td>7.</td>
           <td>Gambar Rencana Potongan Bangunan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi->first())->berkas7 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi)->berkas7 ?? '-' }}</td>
       </tr>
       <tr>
           <td>8.</td>
           <td>Gambar Rencana Denah Bangunan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi->first())->berkas8 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi)->berkas8 ?? '-' }}</td>
       </tr>
       <tr>
           <td>9.</td>
           <td>Gambar Rencana Tapak Bangunan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi->first())->berkas9 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi)->berkas9 ?? '-' }}</td>
       </tr>
       <tr>
           <td>10.</td>
           <td>Gambar Situasi</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi->first())->berkas10 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisarsi)->berkas10 ?? '-' }}</td>
       </tr>
       <tr>
-        <td colspan="3"><em>Catatan Dok. Arsitektur :</em>{{ optional($surat->dokumenteknisarsi->first())->catatan ?? '-' }}</td>
+        <td colspan="3"><em>Catatan Dok. Arsitektur :</em>{{ optional($surat->dokumenteknisarsi)->catatan ?? '-' }}</td>
       </tr>
     </tbody>
   </table>
@@ -655,51 +655,51 @@ th {
       <tr>
         <td>1.</td>
         <td>Spesifikasi Teknis Struktur Bangunan*</td>
-        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk->first())->berkas1 ?? '-' }}</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk)->berkas1 ?? '-' }}</td>
       </tr>
       <tr>
           <td>2.</td>
           <td>Perhitungan Teknis Struktur</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk->first())->berkas2 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk)->berkas2 ?? '-' }}</td>
       </tr>
       <tr>
           <td>3.</td>
           <td>Gambar Rencana Dan Details Teknis Tangga</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk->first())->berkas3 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk)->berkas3 ?? '-' }}</td>
       </tr>
       <tr>
           <td>4.</td>
           <td>Gambar Rencana dan Detail Teknis Plat Lantai</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk->first())->berkas4 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk)->berkas4 ?? '-' }}</td>
       </tr>
       <tr>
           <td>5.</td>
           <td>Gambar Rencana dan Detail Teknis Penutup</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk->first())->berkas5 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk)->berkas5 ?? '-' }}</td>
       </tr>
       <tr>
           <td>6.</td>
           <td>Gambar Rencana dan Detail Teknis Rangka Atap</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk->first())->berkas6 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk)->berkas6 ?? '-' }}</td>
       </tr>
       <tr>
           <td>7.</td>
           <td>Gambar Rencana dan Detail Teknis Balok</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk->first())->berkas7 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk)->berkas7 ?? '-' }}</td>
       </tr>
       <tr>
           <td>8.</td>
           <td>Gambar Rencana dan Detail Teknis Kolom</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk->first())->berkas8 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk)->berkas8 ?? '-' }}</td>
       </tr>
       <tr>
           <td>9.</td>
           <td>Gambar Rencana dan Detail Teknis Fondasi dan Sloof</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk->first())->berkas9 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisstruk)->berkas9 ?? '-' }}</td>
       </tr>
       </tr>
       <tr>
-          <td colspan="3"><em>Catatan Data Umum :</em> {{ optional($surat->dokumenteknisstruk->first())->catatan ?? '-' }}</td>
+          <td colspan="3"><em>Catatan Data Umum :</em> {{ optional($surat->dokumenteknisstruk)->catatan ?? '-' }}</td>
       </tr>
   </tbody>
   </table>
@@ -716,56 +716,56 @@ th {
       <tr>
           <td>1.</td>
           <td>Spesifikasi Teknis Mekanikal, Elektrikal dan Plumbing</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep->first())->berkas1 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep)->berkas1 ?? '-' }}</td>
       </tr>
       <tr>
           <td>2.</td>
           <td>Perhitungan Teknis Mekanikal, Elektrikal dan Plumbing</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep->first())->berkas2 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep)->berkas2 ?? '-' }}</td>
       </tr>
       <tr>
           <td>3.</td>
           <td>Gambar Rencana Dan Detail Sistem Proteksi Kebakaran</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep->first())->berkas3 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep)->berkas3 ?? '-' }}</td>
       </tr>
       <tr>
           <td>4.</td>
           <td>Gambar Rencana Dan Detail Pengelolaan Sampah</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep->first())->berkas4 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep)->berkas4 ?? '-' }}</td>
       </tr>
       <tr>
           <td>5.</td>
           <td>Gambar Rencana Dan Detail Pengelolaan Drainase</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep->first())->berkas5 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep)->berkas5 ?? '-' }}</td>
       </tr>
       <tr>
           <td>6.</td>
           <td>Gambar Rencana Dan Detail Pengelolaan Air Limbah</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep->first())->berkas6 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep)->berkas6 ?? '-' }}</td>
       </tr>
       <tr>
           <td>7.</td>
           <td>Gambar Rencana Dan Detail Pengelolaan Air Hujan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep->first())->berkas7 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep)->berkas7 ?? '-' }}</td>
       </tr>
       <tr>
           <td>8.</td>
           <td>Gambar Rencana Dan Detail Pengelolaan Air Bersih</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep->first())->berkas8 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep)->berkas8 ?? '-' }}</td>
       </tr>
       <tr>
           <td>9.</td>
           <td>Gambar Rencana Dan Detail Pecahayaan Umum, dan Pencahayaan Khusus</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep->first())->berkas9 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep)->berkas9 ?? '-' }}</td>
       </tr>
       <tr>
           <td>10.</td>
           <td>Gambar Rencana Dan Detail Sumber Listrik dan Jaringan Listrik</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep->first())->berkas10 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknismep)->berkas10 ?? '-' }}</td>
       </tr>
 
       <tr>
-        <td colspan="3"><em>Catatan Dok. Mekanikal Elektrikal Plumbing :</em>{{ optional($surat->dokumenteknismep->first())->catatan ?? '-' }}</td>
+        <td colspan="3"><em>Catatan Dok. Mekanikal Elektrikal Plumbing :</em>{{ optional($surat->dokumenteknismep)->catatan ?? '-' }}</td>
       </tr>
     </tbody>
   </table>
@@ -785,36 +785,36 @@ th {
       <tr>
         <td>1.</td>
         <td>Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung</td>
-        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg->first())->berkas1 ?? '-' }}</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas1 ?? '-' }}</td>
       </tr>
       <tr>
           <td>2.</td>
           <td>Laporan Pemeriksaan Berkala Bangunan Gedung</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg->first())->berkas2 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas2 ?? '-' }}</td>
       </tr>
       <tr>
           <td>3.</td>
           <td>Gambar Bangunan Gedung Terbangun </td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg->first())->berkas3 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas3 ?? '-' }}</td>
       </tr>
       <tr>
           <td>4.</td>
           <td>Perhitungan Teknis dan Dokumen Rencana Saat Pembangunan Gedung</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg->first())->berkas4 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas4 ?? '-' }}</td>
       </tr>
       <tr>
           <td>5.</td>
           <td>Gambar Detail Struktur Bangunan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg->first())->berkas5 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas5 ?? '-' }}</td>
       </tr>
       <tr>
           <td>6.</td>
           <td>Data Tenaga Ahli Pengkaji Teknis Bersertifikat</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg->first())->berkas6 ?? '-' }}</td>
+          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas6 ?? '-' }}</td>
       </tr>
 
           <tr>
-          <td colspan="3"><em>Catatan Kajian Teknis SLF :</em> {{ optional($surat->dokumenteknisslfpbg->first())->catatan ?? '-' }}</td>
+          <td colspan="3"><em>Catatan Kajian Teknis SLF :</em> {{ optional($surat->dokumenteknisslfpbg)->catatan ?? '-' }}</td>
       </tr>
   </tbody>
   </table>

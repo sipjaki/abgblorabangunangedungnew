@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('dokumenteknisarsis', function (Blueprint $table) {
-                 $table->id();
+                //  $table->id();
+                 $table->unsignedBigInteger('id')->primary();
+
           $table->foreignId('pbgslfbangunan_id')->nullable()->index();
                 $table->string('berkas1')->nullable();
                 $table->string('berkas2')->nullable();

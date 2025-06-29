@@ -11,7 +11,12 @@ class dokumenteknisstruk extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
+
+   public $incrementing = false;  // penting supaya Laravel gak anggap auto-increment
+    protected $keyType = 'int';    // atau 'string' kalau id string
+    protected $guarded = [];
+
 
  public function pbgslfbangunan()
 {

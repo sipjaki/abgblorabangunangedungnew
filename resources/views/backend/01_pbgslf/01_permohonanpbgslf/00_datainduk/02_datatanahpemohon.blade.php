@@ -370,7 +370,7 @@ th {
 @endif
 
 
-                     <a href="javascript:void(0)" title="Delete"
+                     {{-- <a href="javascript:void(0)" title="Delete"
    data-bs-toggle="modal" data-bs-target="#deleteModal"
    data-judul="{{ $pemilik->id }}"
    onclick="setDeleteUrl(this)"
@@ -378,7 +378,7 @@ th {
 >
    <i class="bi bi-trash" style="color: red; margin-right:4px;"></i>
    <span style="color: red;">Hapus</span>
-</a>
+</a> --}}
 
                     </div>
                 </div>
@@ -402,7 +402,7 @@ th {
                 animation: fadeIn 0.5s ease-in-out;
             ">
                 <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-                Data Tanah Tidak Ditemukan !!
+                Data Pemilik Tidak Ditemukan !!
             </div>
 
             {{-- Tombol Tambah Data --}}

@@ -70,7 +70,7 @@ class pbgslfbangunan extends Model
 
     public function suratpemberitahuanpbg()
     {
-        return $this->belongsTo(suratpemberitahuanpbg::class, 'suratpemberitahuanpbg_id');
+        return $this->hasMany(suratpemberitahuanpbg::class, 'suratpemberitahuanpbg_id');
     }
 
     public function surattugaspbg()

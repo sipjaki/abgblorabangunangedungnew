@@ -327,13 +327,13 @@ th {
                         @endforeach
 
                         {{-- Tombol Hapus --}}
-                        <div class="col-12 mt-3 text-end">
+                        {{-- <div class="col-12 mt-3 text-end">
                             <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                data-id="{{ $pemilik->id }}" onclick="setDeleteUrl(this)"
                                class="text-danger text-decoration-none">
                                <i class="bi bi-trash me-1"></i> Hapus Data Ini
                             </a>
-                        </div>
+                        </div> --}}
 
                         {{-- Catatan --}}
                         @if (strtolower($pemilik->pilihancatatan) === 'tidak lengkap')

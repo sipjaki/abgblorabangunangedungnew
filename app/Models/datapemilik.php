@@ -9,10 +9,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class datapemilik extends Model
 {
-    use HasFactory, SoftDeletes, HasApiTokens;
+  use HasFactory, SoftDeletes, HasApiTokens;
 
-    protected $guarded = ['id'];
+   public $incrementing = false;  // penting supaya Laravel gak anggap auto-increment
+    protected $keyType = 'int';    // atau 'string' kalau id string
+    protected $guarded = [];
 
+    // protected $guarded = ['id'];
+
+    // public $incrementing = false; // kasih tahu id tidak auto increment
+    // protected $keyType = 'int';
 //   public function pbgslfbangunan()
 // {
 //     return $this->hasOne(pbgslfbangunan::class, 'pbgslfbangunan_id')->latest('created_at');
@@ -20,13 +26,15 @@ class datapemilik extends Model
 
 public function pbgslfbangunan()
 {
-    return $this->hasOne(pbgslfbangunan::class, 'pbgslfbangunan_id', 'id')->latest('id');
+    return $this->hasMany(pbgslfbangunan::class, 'pbgslfbangunan_id');
 }
 
+
 public function suratpemberitahuanpbg()
-{
-    return $this->hasOne(suratpemberitahuanpbg::class, 'suratpemberitahuanpbg_id', 'id')->latest('id');
-}
+    {
+        return $this->hasMany(suratpemberitahuanpbg::class, 'suratpemberitahuanpbg_id');
+    }
+
 
 public function surattugaspbg()
 {
@@ -35,7 +43,7 @@ public function surattugaspbg()
 
 public function suratudanganpbg()
 {
-    return $this->hasMany(suratudanganpbg::class, 'suratudanganpbg_id', 'id');
+    return $this->hasMany(suratudanganpbg::class);
 }
 
 }

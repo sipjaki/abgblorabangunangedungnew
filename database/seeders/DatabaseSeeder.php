@@ -557,21 +557,99 @@ User::create([
 ]);
 
 // =============================================
-for ($i = 1; $i <= 10; $i++) {
-    // Generate tanggal acak antara 1 Jan 2025 dan 1 Agt 2025
-    $startDate = Carbon::create(2025, 1, 1)->timestamp;
-    $endDate = Carbon::create(2025, 8, 1)->timestamp;
-    $randomTimestamp = rand($startDate, $endDate);
-    $randomDate = Carbon::createFromTimestamp($randomTimestamp)->format('Y-m-d');
 
-    pbgslfbangunan::create([
-        'id' => $i,
-        'user_id' => rand(46, 48),
-        'jenispengajuanpbgslfper_id' => rand(1, 5),
-        'tanggalpermohonan' => $randomDate,
-        'noregissimbg' => 'PBG-321702-24102022-' . str_pad($i, 2, '0', STR_PAD_LEFT),
-    ]);
-}
+
+$randomDate = now(); // atau bisa pakai Carbon::parse('2025-01-01') jika perlu tanggal tetap
+
+pbgslfbangunan::create([
+    'id' => 1,
+    'user_id' => 46,
+    'jenispengajuanpbgslfper_id' => 1,
+    'tanggalpermohonan' => $randomDate,
+    'noregissimbg' => 'PBG-321702-24102022-01',
+    'datapemilik_id' => 1,
+    'databangunanpbg_id' => 1,
+    'datatanahpbg_id' => 1,
+    'dataumumpbg_id' => 1,
+    'dokumenteknisarsi_id' => 1,
+    'dokumenteknisstruk_id' => 1,
+    'dokumenteknismep_id' => 1,
+    'dokumenteknisslfpbg_id' => 1,
+    'surattugaspbg_id' => 1,
+    'suratudanganpbg_id' => 1,
+]);
+
+pbgslfbangunan::create([
+    'id' => 2,
+    'user_id' => 47,
+    'jenispengajuanpbgslfper_id' => 1,
+    'tanggalpermohonan' => $randomDate,
+    'noregissimbg' => 'PBG-321702-24102022-02',
+    'datapemilik_id' => 2,
+    'databangunanpbg_id' => 2,
+    'datatanahpbg_id' => 2,
+    'dataumumpbg_id' => 2,
+    'dokumenteknisarsi_id' => 2,
+    'dokumenteknisstruk_id' => 2,
+    'dokumenteknismep_id' => 2,
+    'dokumenteknisslfpbg_id' => 2,
+    'surattugaspbg_id' => 2,
+    'suratudanganpbg_id' => 2,
+]);
+
+pbgslfbangunan::create([
+    'id' => 3,
+    'user_id' => 48,
+    'jenispengajuanpbgslfper_id' => 1,
+    'tanggalpermohonan' => $randomDate,
+    'noregissimbg' => 'PBG-321702-24102022-03',
+    'datapemilik_id' => 3,
+    'databangunanpbg_id' => 3,
+    'datatanahpbg_id' => 3,
+    'dataumumpbg_id' => 3,
+    'dokumenteknisarsi_id' => 3,
+    'dokumenteknisstruk_id' => 3,
+    'dokumenteknismep_id' => 3,
+    'dokumenteknisslfpbg_id' => 3,
+    'surattugaspbg_id' => 3,
+    'suratudanganpbg_id' => 3,
+]);
+
+pbgslfbangunan::create([
+    'id' => 4,
+    'user_id' => 46,
+    'jenispengajuanpbgslfper_id' => 1,
+    'tanggalpermohonan' => $randomDate,
+    'noregissimbg' => 'PBG-321702-24102022-04',
+    'datapemilik_id' => 4,
+    'databangunanpbg_id' => 4,
+    'datatanahpbg_id' => 4,
+    'dataumumpbg_id' => 4,
+    'dokumenteknisarsi_id' => 4,
+    'dokumenteknisstruk_id' => 4,
+    'dokumenteknismep_id' => 4,
+    'dokumenteknisslfpbg_id' => 4,
+    'surattugaspbg_id' => 4,
+    'suratudanganpbg_id' => 4,
+]);
+
+pbgslfbangunan::create([
+    'id' => 5,
+    'user_id' => 47,
+    'jenispengajuanpbgslfper_id' => 1,
+    'tanggalpermohonan' => $randomDate,
+    'noregissimbg' => 'PBG-321702-24102022-05',
+    'datapemilik_id' => 5,
+    'databangunanpbg_id' => 5,
+    'datatanahpbg_id' => 5,
+    'dataumumpbg_id' => 5,
+    'dokumenteknisarsi_id' => 5,
+    'dokumenteknisstruk_id' => 5,
+    'dokumenteknismep_id' => 5,
+    'dokumenteknisslfpbg_id' => 5,
+    'surattugaspbg_id' => 5,
+    'suratudanganpbg_id' => 5,
+]);
 
 // for ($i = 1; $i <= 10; $i++) {
 //     datapemilik::create([
