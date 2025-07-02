@@ -310,16 +310,24 @@ public function createdatapbgslfnew(Request $request)
         'jenispengajuanpbgslfper_id' => 'required|string',
         'noregissimbg' => 'required|string|max:255',
         'tanggalpermohonan' => 'required|date',
+
+        // validasi tambahan untuk foreign keys
+        'datapemilik_id' => 'nullable|string',
+        'databangunanpbg_id' => 'nullable|string',
+        'datatanahpbg_id' => 'nullable|string',
+        'dataumumpbg_id' => 'nullable|string',
+        'dokumenteknisarsi_id' => 'nullable|string',
+        'dokumenteknisstruk_id' => 'nullable|string',
+        'dokumenteknismep_id' => 'nullable|string',
+        'dokumenteknisslfpbg_id' => 'nullable|string',
+        'surattugaspbg_id' => 'nullable|string',
+        'tpatpt_id' => 'nullable|string',
+
     ], [
         'user_id.required' => 'User ID wajib diisi.',
-        'user_id.exists' => 'User tidak ditemukan.',
-
         'jenispengajuanpbgslfper_id.required' => 'Jenis pengajuan wajib dipilih.',
-        'jenispengajuanpbgslfper_id.exists' => 'Jenis pengajuan tidak valid.',
-
         'noregissimbg.required' => 'Nomor registrasi SIMBG wajib diisi.',
         'noregissimbg.max' => 'Nomor registrasi terlalu panjang.',
-
         'tanggalpermohonan.required' => 'Tanggal permohonan wajib diisi.',
         'tanggalpermohonan.date' => 'Format tanggal permohonan tidak valid.',
     ]);
@@ -330,12 +338,22 @@ public function createdatapbgslfnew(Request $request)
         'jenispengajuanpbgslfper_id' => $validated['jenispengajuanpbgslfper_id'],
         'noregissimbg' => $validated['noregissimbg'],
         'tanggalpermohonan' => $validated['tanggalpermohonan'],
+
+        'datapemilik_id' => $request->input('datapemilik_id'),
+        'databangunanpbg_id' => $request->input('databangunanpbg_id'),
+        'datatanahpbg_id' => $request->input('datatanahpbg_id'),
+        'dataumumpbg_id' => $request->input('dataumumpbg_id'),
+        'dokumenteknisarsi_id' => $request->input('dokumenteknisarsi_id'),
+        'dokumenteknisstruk_id' => $request->input('dokumenteknisstruk_id'),
+        'dokumenteknismep_id' => $request->input('dokumenteknismep_id'),
+        'dokumenteknisslfpbg_id' => $request->input('dokumenteknisslfpbg_id'),
+        'surattugaspbg_id' => $request->input('surattugaspbg_id'),
+        'tpatpt_id' => $request->input('tpatpt_id'),
     ]);
 
     session()->flash('create', 'Data Pengajuan PBG/SLF berhasil disimpan!');
     return redirect()->route('bepbgslfindexslfindex');
 }
-
 
 
 public function bepbgdatapemilik($id)
@@ -678,9 +696,10 @@ public function bepbgdatatanahcreatenew(Request $request)
         'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
         'isiandatatanah' => 'required|in:Lengkap,Tidak Lengkap',
-        'layout' => 'required|in:Lengkap,Tidak Lengkap',
-        'penyelidikan' => 'required|in:Lengkap,Tidak Lengkap',
-        'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
+        'layout' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'penyelidikan' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'pilihancatatan' => 'nullable|in:lengkap,tidak lengkap',
+        'berkas4' => 'nullable|string',
         'catatan' => 'nullable|string',
     ], [
         'pbgslfbangunan_id.required' => 'ID Bangunan harus dipilih.',
@@ -701,11 +720,12 @@ public function bepbgdatatanahcreatenew(Request $request)
         'isiandatatanah' => $validated['isiandatatanah'],
         'layout' => $validated['layout'],
         'penyelidikan' => $validated['penyelidikan'],
+        'berkas4' => $validated['berkas4'],
         'pilihancatatan' => $validated['pilihancatatan'],
         'catatan' => $validated['catatan'] ?? null,
     ]);
 
-    session()->flash('create', 'Data Bangunan berhasil ditambahkan!');
+    session()->flash('create', 'Data Tanah berhasil ditambahkan!');
     return redirect()->route('bepbgdatatanah', ['id' => $validated['pbgslfbangunan_id']]);
 }
 
@@ -780,11 +800,11 @@ public function bepbgdataumumcreatenew(Request $request)
     $validated = $request->validate([
         'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
-        'berkas1' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas2' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas3' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas4' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas5' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas1' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas2' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas3' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas4' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas5' => 'nullable|string',
         'berkas6' => 'nullable|in:Lengkap,Tidak Lengkap',
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
@@ -800,7 +820,7 @@ public function bepbgdataumumcreatenew(Request $request)
         'berkas4.required' => 'Informasi 4 wajib dipilih.',
         'berkas4.in' => 'Berkas 4 harus Lengkap atau Tidak Lengkap.',
         'berkas5.required' => 'Informasi 5 wajib dipilih.',
-        'berkas5.in' => 'Berkas 5 harus Lengkap atau Tidak Lengkap.',
+        'berkas5.in' => 'Berkas 5 harus Diisi.',
         'berkas6.required' => 'Informasi 6 wajib dipilih.',
         'berkas6.in' => 'Berkas 6 harus Lengkap atau Tidak Lengkap.',
         'pilihancatatan.required' => 'Pilihan Catatan wajib dipilih.',
@@ -814,7 +834,7 @@ public function bepbgdataumumcreatenew(Request $request)
         'berkas2' => $validated['berkas2'],
         'berkas3' => $validated['berkas3'],
         'berkas4' => $validated['berkas4'],
-        // 'berkas5' => $validated['berkas5'],
+        'berkas5' => $validated['berkas5'],
         // 'berkas6' => $validated['berkas6'],
         'pilihancatatan' => $validated['pilihancatatan'],
         'catatan' => $validated['catatan'] ?? null,
@@ -897,15 +917,15 @@ public function bepbgdokumeteknisarscreatenew(Request $request)
         'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
 
-        'berkas1' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas2' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas3' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas4' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas5' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas6' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas7' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas8' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas9' => 'required|in:Lengkap,Tidak Lengkap',
+        'berkas1' => 'nullable|string',
+        'berkas2' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas3' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas4' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas5' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas6' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas7' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas8' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas9' => 'nullable|in:Lengkap,Tidak Lengkap',
         'berkas10' => 'required|in:Lengkap,Tidak Lengkap',
 
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
@@ -1075,6 +1095,7 @@ public function bepbgdokumeteknisstrkcreatenew(Request $request)
         'berkas7' => 'required|in:Lengkap,Tidak Lengkap',
         'berkas8' => 'required|in:Lengkap,Tidak Lengkap',
         'berkas9' => 'required|in:Lengkap,Tidak Lengkap',
+        // 'berkas10' => 'nullable|string',
 
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
@@ -1124,6 +1145,7 @@ public function bepbgdokumeteknisstrkcreatenew(Request $request)
         'berkas7' => $validated['berkas7'],
         'berkas8' => $validated['berkas8'],
         'berkas9' => $validated['berkas9'],
+        // 'berkas10' => $validated['berkas10'],
         'pilihancatatan' => $validated['pilihancatatan'],
         'catatan' => $validated['catatan'] ?? null,
     ]);
@@ -2044,6 +2066,192 @@ public function bepbgberitaacaraslfshow(Request $request, $id)
         // 'subdatadokumenteknisslfpbg' => $subdatadokumenteknisslfpbg,
     ]);
 }
+
+// public function validasipbgslf1(Request $request, $id)
+//     {
+//         $data = pbgslfbangunan::findOrFail($id);
+
+//         $request->validate([
+//             'validasiberkas1' => 'required|in:sudah,belum',
+//         ]);
+
+//         $data->validasiberkas1 = $request->validasiberkas1;
+//         // $data->validasiberkas1 = $request->validasiberkas1;
+//         $data->save();
+
+//      if ($request->validasiberkas1 === 'sudah') {
+//         session()->flash('create', '✅ Sudah Di Verifikasi !');
+//     } else {
+//         session()->flash('gagal', '❌ Belum Lengkap !');
+//     }
+//         //    return redirect('/beserahterima');
+
+//            return redirect()->back();
+
+//         // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+//     }
+
+
+public function validasipbgslf1(Request $request, $id)
+{
+    $data = pbgslfbangunan::findOrFail($id);
+
+    $request->validate([
+        'validasiberkas1' => 'required|in:sudah,belum',
+    ]);
+
+    $data->validasiberkas1 = $request->validasiberkas1;
+    $data->save();
+
+    if ($request->validasiberkas1 === 'sudah') {
+        session()->flash('create', '✅ Sudah Di Verifikasi!');
+    } else {
+        session()->flash('gagal', '❌ Belum Lengkap!');
+    }
+
+    return redirect()->back(); // kembali ke halaman semula
+}
+
+
+public function validasipbgslf2(Request $request, $id)
+    {
+        $data = pbgslfbangunan::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas2' => 'required|in:sudah,belum',
+        ]);
+
+        $data->validasiberkas2 = $request->validasiberkas2;
+        $data->save();
+
+     if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Sudah Di Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Belum Lengkap !');
+    }
+        //    return redirect('/beserahterima');
+
+           return redirect()->back();
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+public function validasipbgslf3(Request $request, $id)
+    {
+        $data = pbgslfbangunan::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas3' => 'required|in:sudah,belum',
+        ]);
+
+        $data->validasiberkas3 = $request->validasiberkas3;
+        $data->save();
+
+     if ($request->validasiberkas3 === 'sudah') {
+        session()->flash('create', '✅ Sudah Di Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Belum Lengkap !');
+    }
+        //    return redirect('/beserahterima');
+
+           return redirect()->back();
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+public function validasipbgslf4(Request $request, $id)
+    {
+        $data = pbgslfbangunan::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas4' => 'required|in:sudah,belum',
+        ]);
+
+        $data->validasiberkas4 = $request->validasiberkas4;
+        $data->save();
+
+     if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Sudah Di Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Belum Lengkap !');
+    }
+        //    return redirect('/beserahterima');
+
+           return redirect()->back();
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+public function validasipbgslf5(Request $request, $id)
+    {
+        $data = pbgslfbangunan::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas5' => 'required|in:sudah,belum',
+        ]);
+
+        $data->validasiberkas5 = $request->validasiberkas5;
+        $data->save();
+
+     if ($request->validasiberkas5 === 'sudah') {
+        session()->flash('create', '✅ Sudah Di Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Belum Lengkap !');
+    }
+        //    return redirect('/beserahterima');
+
+           return redirect()->back();
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
+public function validasipbgslf6(Request $request, $id)
+    {
+        $data = pbgslfbangunan::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas6' => 'required|in:sudah,belum',
+        ]);
+
+        $data->validasiberkas6 = $request->validasiberkas6;
+        $data->save();
+
+     if ($request->validasiberkas6 === 'sudah') {
+        session()->flash('create', '✅ Sudah Di Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Belum Lengkap !');
+    }
+        //    return redirect('/beserahterima');
+
+           return redirect()->back();
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+public function validasipbgslf7(Request $request, $id)
+    {
+        $data = pbgslfbangunan::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas7' => 'required|in:sudah,belum',
+        ]);
+
+        $data->validasiberkas7 = $request->validasiberkas7;
+        $data->save();
+
+     if ($request->validasiberkas7 === 'sudah') {
+        session()->flash('create', '✅ Sudah Di Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Belum Lengkap !');
+    }
+        //    return redirect('/beserahterima');
+
+           return redirect()->back();
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
 
 
 }

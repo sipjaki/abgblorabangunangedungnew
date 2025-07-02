@@ -205,7 +205,7 @@ th {
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIM-BG</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
     </div>
 </div>
 
@@ -296,8 +296,9 @@ th {
             $infoItems = [
                 ['icon' => 'bi-file-earmark-text', 'title' => '1. Spesifikasi Teknis Struktur Bangunan', 'value' => $pemilik->berkas1 ?? '-'],
                 ['icon' => 'bi-calculator', 'title' => '2. Perhitungan Teknis Struktur', 'value' => $pemilik->berkas2 ?? '-'],
-                ['icon' => 'bi-stairs', 'title' => '3. Gambar Rencana Dan Detail Teknis Tangga', 'value' => $pemilik->berkas3 ?? '-'],
-                ['icon' => 'bi-border-all', 'title' => '4. Gambar Rencana Dan Detail Teknis Pelat Lantai', 'value' => $pemilik->berkas4 ?? '-'],
+                // ['icon' => 'bi-stairs', 'title' => '3. Gambar Rencana Dan Detail Teknis Tangga', 'value' => $pemilik->berkas3 ?? '-'],
+       ['icon' => 'bi-diagram-3', 'title' => '3. Gambar Rencana Dan Detail Teknis Tangga', 'value' => $pemilik->berkas3 ?? '-'],
+         ['icon' => 'bi-border-all', 'title' => '4. Gambar Rencana Dan Detail Teknis Pelat Lantai', 'value' => $pemilik->berkas4 ?? '-'],
                 ['icon' => 'bi-window', 'title' => '5. Gambar Rencana Dan Detail Teknis Penutup', 'value' => $pemilik->berkas5 ?? '-'],
                 ['icon' => 'bi-house', 'title' => '6. Gambar Rencana Dan Detail Teknis Rangka Atap', 'value' => $pemilik->berkas6 ?? '-'],
                 ['icon' => 'bi-diagram-3', 'title' => '7. Gambar Rencana Dan Detail Teknis Balok', 'value' => $pemilik->berkas7 ?? '-'],

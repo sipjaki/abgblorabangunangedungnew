@@ -90,7 +90,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="button-belakang row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -232,7 +232,7 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-    <table id="tabelSuratbantuanteknis" class="table zebra-table" style="min-width: 900px;">
+    <table id="tabelSuratbantuanteknis" class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                 <thead>
                                   <tr>
    <th style="background-color: #ADD8E6;">No</th>

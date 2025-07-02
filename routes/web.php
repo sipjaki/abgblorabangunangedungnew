@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\FedashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\akuncontroller;
 use App\Http\Controllers\BantuanhibahbgController;
 use App\Http\Controllers\BantuanhibahController;
 use App\Http\Controllers\BantuanteknisController;
@@ -518,6 +519,13 @@ Route::post('/bebanteklapcekdokcreatenew', [BantuanteknisController::class, 'beb
 Route::delete('/bebanteklapcekdokcredelete/{id}', [BantuanteknisController::class, 'bebanteklapcekdokcredelete'])->middleware('auth')->name('delete.bebanteklapcekdokcredelete');
 
 
+Route::get('/allakun', [akuncontroller::class, 'allakun'])->middleware('auth')->name('allakun.showdata');
+Route::delete('/allakundelete/{id}', [akuncontroller::class, 'allakundelete'])->middleware('auth')->name('delete.allakundelete');
+
+Route::get('/allakuncreate', [akuncontroller::class, 'allakuncreate'])->middleware('auth')->name('allakuncreate.create');
+Route::post('/allakuncreatenew', [akuncontroller::class, 'allakuncreatenew'])->middleware('auth')->name('create.allakuncreatenew');
+// MENU AKUN SEMUA
+
 // MENU 06 KRK BACKEND
 
 // saat ini
@@ -688,6 +696,23 @@ Route::get('/dokumenteknisslf/{id}', [PbgslfController::class, 'dokumenteknisslf
 Route::get('/dokumenteknisslfcreate/{id}', [PbgslfController::class, 'dokumenteknisslfcreate'])->middleware('auth')->name('dokumenteknisslfcreate');
 Route::post('/dokumenteknisslfcreatenew', [PbgslfController::class, 'dokumenteknisslfcreatenew'])->middleware('auth')->name('dokumenteknisslfcreatenew');
 Route::delete('/dokumenteknisslfdelete/{id}', [PbgslfController::class, 'dokumenteknisslfdelete'])->middleware('auth')->name('dokumenteknisslfdelete');
+
+// DATA VALIDASI
+// Route::put('/datanewhibahnew/validasipbgslf1/{id}', [PbgslfController::class, 'validasipbgslf1'])
+//     ->name('validasipbgslf1.update');
+
+Route::put('/validasipbgslf1/{id}', [PbgslfController::class, 'validasipbgslf1'])->name('validasipbgslf1.update');
+Route::put('/validasipbgslf2/{id}', [PbgslfController::class, 'validasipbgslf2'])->name('validasipbgslf2.update');
+Route::put('/validasipbgslf3/{id}', [PbgslfController::class, 'validasipbgslf3'])->name('validasipbgslf3.update');
+Route::put('/validasipbgslf4/{id}', [PbgslfController::class, 'validasipbgslf4'])->name('validasipbgslf4.update');
+Route::put('/validasipbgslf5/{id}', [PbgslfController::class, 'validasipbgslf5'])->name('validasipbgslf5.update');
+Route::put('/validasipbgslf6/{id}', [PbgslfController::class, 'validasipbgslf6'])->name('validasipbgslf6.update');
+Route::put('/validasipbgslf7/{id}', [PbgslfController::class, 'validasipbgslf7'])->name('validasipbgslf7.update');
+
+
+
+
+
 
 // DATA DOKUMEN SURAT PEMBERITAHUAN
 Route::get('/bepbgsuratpemberitahuan/{id}', [PbgslfController::class, 'bepbgsuratpemberitahuan'])->middleware('auth')->name('bepbgsuratpemberitahuan');

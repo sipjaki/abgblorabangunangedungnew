@@ -340,17 +340,17 @@ th {
   <div class="halaman">
     <div class="kop">
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
-      <img src="/assets/icon/pupr.png" class="logo" style="float: right;">
+      {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
       <div style="display: inline-block;">
         <h3>PEMERINTAH KABUPATEN BLORA</h3>
         <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
         <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-        <h3>KABUPATEN BLORA 58214 PROVINSI JAWA TENGAH</h3>
+        <h3>BLORA 58214</h3>
       </div>
       <div style="clear: both;"></div>
     </div>
 
-  <p style="text-align: right; margin-top: 20px; font-size:12px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('l, d F Y') : '-' }}</p>
+  <p style="text-align: right; margin-top: 20px; font-size:12px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}</p>
 
   <div style="font-size: 12px;">
     {{-- <p style="text-align: right; font-size: 12px;">
@@ -418,9 +418,16 @@ th {
 
         </tr>
         <tr>
-            <td style="padding: 4px 8px; vertical-align: top;">Waktu</td>
-            <td style="padding: 4px 8px;">: {{ $surat->jamundangan ?? '-' }}</td>
-        </tr>
+    <td style="padding: 4px 8px; vertical-align: top;">Waktu</td>
+    <td style="padding: 4px 8px;">
+        @if($surat->jamundangan == 'lainnya')
+            : {{ $surat->catatan ?? '-' }}
+        @else
+            : {{ $surat->jamundangan ?? '-' }}
+        @endif
+    </td>
+</tr>
+
         <tr>
             <td style="padding: 4px 8px; vertical-align: top;">Tempat</td>
      <td style="padding: 4px 8px;">: {{ $surat->tempatkonsultasi->tempat ?? '-' }}</td>
@@ -437,11 +444,17 @@ th {
     </p>
 </div>
 
-  <div style="text-align: right; margin-top: 20px; font-size:12px;">
-    <p>KESEKRETARIATAN SIMBG KAB. BLORA<br />DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />KABUPATEN BLORA</p>
+<div style="display: flex; justify-content: flex-end; margin-top: 40px; font-size:12px; margin-top:-10px;">
+  <div style="text-align: left;">
+    <p>
+      KESEKRETARIATAN SIMBG KAB. BLORA<br />
+      DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
+      KABUPATEN BLORA
+    </p>
     <img src="/assets/abgblora/logo/barcodesimbg.png" alt="QR Code" style="height: 100px" />
     <p>OPERATOR SIMBG</p>
   </div>
+</div>
 </div>
 
 </div>

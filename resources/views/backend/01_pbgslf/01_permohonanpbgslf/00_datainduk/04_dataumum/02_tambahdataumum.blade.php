@@ -205,7 +205,7 @@ th {
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIM-BG</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
     </div>
 </div>
 
@@ -463,6 +463,15 @@ th {
     </div>
     @error('berkas4')<div class="text-danger mt-2">{{ $message }}</div>@enderror
 </div>
+
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 5. Berkas Dukung Lainnya
+    </label>
+    <input type="text" name="berkas5" value="{{ old('berkas5') }}" class="form-control" placeholder="Masukkan status dokumen (misalnya: Lengkap / Tidak Lengkap)">
+    @error('berkas5')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+</div>
+
 {{--
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">

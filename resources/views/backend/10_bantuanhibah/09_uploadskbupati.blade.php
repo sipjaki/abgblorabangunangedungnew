@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="button-belakang row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -383,6 +383,46 @@ th {
     </div>
   </div>
 
+  <div class="col-md-6">
+    <div class="mb-3">
+      <label class="form-label" for="berkas3">
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> BAST (Berita Acara Serat Terima)
+      </label>
+      <input type="file" id="berkas3" name="berkas3" accept="application/pdf"
+        class="form-control @error('berkas3') is-invalid @enderror"
+        onchange="previewPDF(event, 'previewContainerBerkas3', 'iframeBerkas3', 'msgBerkas3')" />
+      @error('berkas3')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+      <div class="mt-3" id="previewContainerBerkas3" style="display: none;">
+        <label class="fw-bold">BAST (Berita Acara Serah Terima)</label>
+        <iframe id="iframeBerkas3" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+      </div>
+      <div id="msgBerkas3" class="mt-3" style="color: grey; font-style: italic;">
+        Belum Upload Berkas, Silahkan Upload BAST (Berita Acara Serah Terima).
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="mb-3">
+      <label class="form-label" for="berkas4">
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> NHPD (Naskah Perjanjian Hibah Daerah)
+      </label>
+      <input type="file" id="berkas4" name="berkas4" accept="application/pdf"
+        class="form-control @error('berkas4') is-invalid @enderror"
+        onchange="previewPDF(event, 'previewContainerBerkas4', 'iframeBerkas4', 'msgBerkas4')" />
+      @error('berkas4')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+      <div class="mt-3" id="previewContainerBerkas4" style="display: none;">
+        <label class="fw-bold">NHPD (Naskah Perjanjian Hibah Daerah)</label>
+        <iframe id="iframeBerkas4" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+      </div>
+      <div id="msgBerkas4" class="mt-3" style="color: grey; font-style: italic;">
+        Belum Upload Berkas, Silahkan Upload NHPD (Naskah Perjanjian Hibah Daerah).
+      </div>
+    </div>
+  </div>
+
   {{-- <div class="col-md-6">
     <div class="mb-3">
       <label class="form-label" for="berkas3">
@@ -496,7 +536,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-create" type="button" onclick="openModal()">
+                               <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>

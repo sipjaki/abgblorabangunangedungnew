@@ -90,7 +90,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -190,13 +190,13 @@ th {
         @endcanany --}}
 
                         @canany(['superadmin', 'admin'])
-<button class="button-create" type="button"
+<button class="button-lolos" type="button"
     onclick="location.href='/doklapkrkusahacreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
 </button>
 
-<a href="{{ url('/bekrkusaha') }}" class="button-kembali" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url('/bekrkusaha') }}" class="button-validasinew" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
         @endcanany
@@ -226,13 +226,13 @@ th {
                          </a> --}}
 
                      </div>
-                 </div>
+                 {{-- </div> --}}
 
                  <hr>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-    <table id="tabelSuratbantuanteknis" class="table zebra-table" style="min-width: 900px;">
+    <table id="tabelSuratbantuanteknis" class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                 <thead>
                                   <tr>
    <th style="background-color: #ADD8E6;">No</th>
@@ -254,40 +254,7 @@ th {
                             </thead>
                               <tbody id="tableBody">
 
-                                @if($subdata->isEmpty())
-<p style="
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  background-color: #f9fafb;
-  color: #dc2626;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: relative;
-">
-  <span style="
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 10s linear infinite;
-  ">
-    Cek Lapangan Belum di Laksanakan !!
-  </span>
-
-  <style>
-    @keyframes marquee {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-  </style>
-</p>
-
-@else
-      @foreach($subdata as $item)
+@forelse ($subdata as $data)
     <tr>
         <td>{{ $loop->iteration }}</td>
         <td>{{ $item->kegiatan }}</td>
@@ -455,8 +422,32 @@ th {
 </td>
 @endcanany
 </tr>
-@endforeach
-@endif
+
+    @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Belum Cek Lapangan !
+            </div>
+        </td>
+    </tr>
+@endforelse
+
 
 </tbody>
                         </table>

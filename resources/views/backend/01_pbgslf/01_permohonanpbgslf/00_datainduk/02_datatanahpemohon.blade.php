@@ -205,7 +205,7 @@ th {
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIM-BG</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
     </div>
 </div>
 
@@ -234,7 +234,7 @@ th {
             [
                 'icon' => 'bi-person-fill-check',
                 'title' => 'Pengisi Form',
-                'value' => $user->name ?? '-',
+                'value' => $data->user->name ?? '-',
             ],
         ];
     @endphp

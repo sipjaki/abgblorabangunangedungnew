@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
   {{-- @include('backend.00_administrator.00_baganterpisah.10_selamatdatang') --}}
@@ -391,485 +391,400 @@ th {
 <!-- Container for the content you want to download -->
     <div style="width: 100%; padding: 20px;">
     <!-- Container for the content you want to download -->
-
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <style>
-        @page {
-            size: A4;
-            margin: 1cm;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            line-height: 1.4;
-            margin: 0;
-            padding: 0;
-        }
-        .download-btn-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .download-btn {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .halaman-pertama {
-            width: 100%;
-            page-break-after: always;
-        }
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-        .header-text {
-            text-align: center;
-        }
-        .header-text h3 {
-            margin: 0;
-            font-size: 14px;
-        }
-        .header-text p {
-            margin: 0;
-            font-size: 14px;
-        }
-        .divider-line {
-            border: 3px solid black;
-            width: 100%;
-            margin: 10px 0;
-        }
-        .document-title {
-            margin: 0;
-            font-size: 14px;
-            text-align: center;
-        }
-        .section-title {
-            color: navy;
-            font-weight: 800;
-            font-size: 14px;
-            margin: 10px 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-            table-layout: fixed;
-        }
-        table td {
-            padding: 4px;
-            vertical-align: top;
-            word-wrap: break-word;
-        }
-        table thead td {
-            text-align: center;
-            font-weight: bold;
-        }
-        .logo {
-            width: 80px;
-            height: auto;
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        .break-before {
-            page-break-before: always;
-        }
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f2f2f2;
+      font-size: 12px;
+    }
+    .halaman {
+      width: 21cm;
+      height: 29.7cm;
+      margin: auto;
+      background: white;
+      padding: 2cm;
+      box-sizing: border-box;
+      border: 1px solid black;
+    }
+    .kop {
+      text-align: center;
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .kop h3 {
+      margin: 2px 0;
+      font-size: 16px;
+    }
+    .kop p {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+    .logo {
+      height: 80px;
+    }
+    .judul-surat {
+      text-align: center;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .isi-surat p {
+      text-align: justify;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .tabel-info {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .tabel-info td {
+      padding: 4px;
+    }
+    .ttd {
+      text-align: right;
+      margin-top: 40px;
+    }
+    @media print {
+      body {
+        background: white;
+      }
+    }
 
+  </style>
+</head>
 
-
-    </style>
-    <!-- Include html2pdf library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-
-{{-- @canany(['superadmin', 'admin', 'pemohon']) --}}
-
-<div style="display: flex; justify-content: flex-end; gap: 10px;">
-    @canany(['superadmin', 'admin'])
-    <a href="/krkusahanoterbit/{{ $data->id }}" class="button-lolos"
-        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; font-size:16px; font-weight:600; text-align:center; border:none; cursor:pointer;"
-        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.textDecoration='none';"
-        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.textDecoration='none';">
-        Terbitkan Nomor Dinas
-    </a>
-
-    @endcanany
-    <button class="button-lolos" onclick="downloadPDF()"
-    style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 4px; border:none; cursor:pointer; font-size:16px; font-weight:600; transition: all 0.3s ease;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
-    Download PDF
-</button>
+<div style="text-align: center; margin: 20px;">
+  <button class="button-baru" onclick="downloadPDF()" style="background-color: #e3342f; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
+    📄 Download Berkas Final KRK (PDF)
+  </button>
 </div>
 
-    <div id="contentToPrint">
-        <div class="halaman-pertama">
-            <div class="halaman-pertamaku">
-                <div class="header-container">
-                    <!-- Logo -->
-                    <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" width="80px;" style="margin-right:10px;" class="logo">
-                    <img src="/assets/icon/pupr.png" alt="Logo Kabupaten Blora" width="80px;" style="margin-right:50px;" class="logo">
+<body>
+  <div class="halaman">
+    <div class="kop">
+      <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
+      {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
+      <div style="display: inline-block;">
+        <h3>PEMERINTAH KABUPATEN BLORA</h3>
+        <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+        <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+        <h3>BLORA 58214</h3>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
 
-                    <!-- Teks Kop -->
-                    <div class="header-text">
-                        <h3>PEMERINTAH KABUPATEN BLORA</h3>
-                        <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-                        <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-                        <h3>KABUPATEN BLORA 58214 PROVINSI JAWA TENGAH</h3>
+    <div style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.5;">
 
-                    </div>
-                </div>
-                <style>
-    br {
-        line-height: 1 !important;
-        margin: 0 !important;
-        padding: 0 !important;
+    {{-- 1. Judul --}}
+    <div style="text-align: center; font-weight: bold; font-size: 12px; margin-top:-15px;">
+        KETERANGAN RENCANA KOTA <br>
+Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
+    </div>
+
+    {{-- 2. Paragraf Pembuka --}}
+<style>
+    .zebra-table td, .zebra-table th {
+        font-size: 12px;
+        padding: 4px;
     }
 </style>
+<br>
+<h5 class="section-title" style="font-size:12px;">I. INFORMASI ADMINISTRASI</h5>
 
-                <br>
+<div class="table-responsive">
+    <table class="zebra-table table-striped" style="width: 100%;">
+        <thead>
+            <tr>
+                <td style="width: 5%;">No</td>
+                <td style="width: 35%;">Item</td>
+                <td style="width: 5%;">:</td>
+                <td style="width: 55%;">Keterangan</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{-- <tr>
+                <td style="text-align: center;">1</td>
+                <td>Nomor Dinas</td>
+                <td>:</td>
+                <td>
+                    {{ $data->nomordinasasal ?? 'Belum Dibuatkan' }}
+                </td>
+            </tr> --}}
 
-                <!-- Garis dan Judul -->
-                <div>
-                    <div class="divider-line"></div>
-                    <h5 class="document-title">PERMOHONAN KETERANGAN RENCANA KOTA (KRK) FUNGSI USAHA</h5>
-                </div>
-                <br>
-            </div>
+            @if($subdata->count())
+                @foreach($subdata as $i => $item)
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: left;">Nomor Registrasi KRK</td>
+                        <td>:</td>
+                        <td style="text-align: left;">{{ $item->nomorregistrasi ?? '-' }}</td>
+                    </tr>
+                @endforeach
+            @endif
 
-            <h5 class="section-title">I. INFORMASI ADMINISTRASI</h5>
+            <tr>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: left;">Tanggal KRK Di Buat</td>
+                <td>:</td>
+                <td style="text-align: left;">
+                    {{ $data->tanggalpermohonan ? \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') : 'Belum Dibuatkan' }}
+                </td>
+            </tr>
 
-            <div class="table-responsive">
-                <table class="zebra-table table-striped">
-                    <thead>
-                        <tr>
-                            <td style="width: 5%;">No</td>
-                            <td style="width: 35%;">Item</td>
-                            <td style="width: 5%;">:</td>
-                            <td style="width: 55%;">Keterangan</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="text-align: center;">1</td>
-                            <td style="text-align: left;">Nomor Dinas</td>
-                            <td>:</td>
-                            <td style="text-align: left;">
-                                @if($data->nomordinasasal)
-                                    {{ $data->nomordinasasal }}
-                                @else
-                                    <span style="color: red;">Belum Dibuatkan</span>
-                                @endif
-                            </td>
-                        </tr>
+            <tr>
+                <td style="text-align: center;">4</td>
+                <td style="text-align: left;">Nomor Induk Kependudukan (NIK)</td>
+                <td>:</td>
+                <td style="text-align: left;">{{ $data->nik ?? 'Belum Dibuatkan' }}</td>
+            </tr>
 
-                        @if($subdata->count())
-                        @foreach($subdata as $i => $item)
-                        <tr>
-                        <td style="text-align: center;">2</td>
-                                    <td style="text-align: left;">Nomor Registrasi KRK</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->nomorregistrasi ?? '-' }}</td>
-                                </tr>
+            <tr>
+                <td style="text-align: center;">5</td>
+                <td style="text-align: left;">Nama Pemohon</td>
+                <td>:</td>
+                <td style="text-align: left;">{{ $data->perorangan ?? 'Belum Dibuatkan' }}</td>
+            </tr>
 
-                        @endforeach
-                        @endif
+            <tr>
+                <td style="text-align: center;">6</td>
+                <td>Nama Pemohon a/n Perusahaan</td>
+                <td>:</td>
+                <td>{{ $data->perusahaan ?? 'Belum Dibuatkan' }}</td>
+            </tr>
 
-                        <tr>
-                            <td style="text-align: center;">3</td>
-                            <td style="text-align: left;">Tanggal KRK Di Buat</td>
-                            <td>:</td>
-                        <td style="text-align: left;">
-                            @if($data->tanggalpermohonan)
-                                {{ \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') }}
-                            @else
-                                <span style="color: red;">Belum Dibuatkan</span>
-                            @endif
-                        </td>
-                        </tr>
-
-                        <tr>
-                            <td style="text-align: center;">4</td>
-                            <td style="text-align: left;">Nomor Induk Kependudukan (NIK)</td>
-                            <td>:</td>
-                            <td style="text-align: left;">
-                                @if($data->nik)
-                                    {{ $data->nik }}
-                                @else
-                                    <span style="color: red;">Belum Dibuatkan</span>
-                                @endif
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td style="text-align: center;">5</td>
-                            <td style="text-align: left;">Nama Pemohon a/n Perorangan</td>
-                            <td>:</td>
-                            <td style="text-align: left;">
-                                @if($data->perorangan)
-                                    {{ $data->perorangan }}
-                                @else
-                                    <span style="color: red;">Belum Dibuatkan</span>
-                                @endif
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td style="text-align: center;">6</td>
-                            <td style="text-align: left;">Nama Pemohon a/n Perusahaan</td>
-                            <td>:</td>
-                            <td style="text-align: left;">
-                                @if($data->perusahaan)
-                                    {{ $data->perusahaan }}
-                                @else
-                                    <span style="color: red;">Belum Dibuatkan</span>
-                                @endif
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td style="text-align: center;">7</td>
-                            <td style="text-align: left;">No Telepon</td>
-                            <td>:</td>
-                            <td style="text-align: left;">
-                                @if($data->notelepon)
-                                    {{ $data->notelepon }}
-                                @else
-                                    <span style="color: red;">Belum Dibuatkan</span>
-                                @endif
-                            </td>
-                        </tr>
-      <tr>
+            <tr>
+                <td style="text-align: center;">7</td>
+                <td>No Telepon</td>
+                <td>:</td>
+                <td>{{ $data->notelepon ?? 'Belum Dibuatkan' }}</td>
+            </tr>
+<tr>
     <td style="text-align: center;">8</td>
-    <td style="text-align: left;">Alamat Pemohon</td>
+    <td>Alamat Pemohon</td>
     <td>:</td>
-    <td style="text-align: left; padding-left: 0; margin-left: 0;
-               white-space: normal; word-wrap: break-word; overflow-wrap: break-word; overflow-x: hidden;">
-        @if($data->alamatpemohon)
-{{ $data->alamatpemohon }} <br> Kabupaten Blora, Provinsi Jawa Tengah
-        @else
-<span style="color: red;">Belum Dibuatkan</span>
-        @endif
+    <td style="white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+        {{ $data->alamatpemohon ? $data->alamatpemohon . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
     </td>
 </tr>
 
 <tr>
     <td style="text-align: center;">9</td>
-    <td style="text-align: left;">Lokasi Bangunan</td>
+    <td>Lokasi Bangunan</td>
     <td>:</td>
-    <td style="text-align: left; padding-left: 0; margin-left: 0;
-               white-space: normal; word-wrap: break-word; overflow-wrap: break-word; overflow-x: hidden;">
-        @if($data->lokasibangunan)
-{{ $data->lokasibangunan }} <br> Kabupaten Blora, Provinsi Jawa Tengah
-        @else
-<span style="color: red;">Belum Dibuatkan</span>
-        @endif
+    <td style="white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+        {{ $data->lokasibangunan ? $data->lokasibangunan . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
     </td>
 </tr>
 
-                </tbody>
-                </table>
-            </div>
-<br>
-            <h5 class="section-title">II. INFORMASI INTERNSITAS BANGUNAN GEDUNG</h5>
-            <div class="table-responsive">
-                <table id="dataTable" class="zebra-table table-striped">
-                    <thead>
-                        <tr>
-                            <td style="width: 5%;">No</td>
-                            <td style="width: 35%;">Item</td>
-                            <td style="width: 5%;">:</td>
-                            <td style="width: 55%;">Keterangan</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if($subdata->count())
-                            @foreach($subdata as $i => $item)
-                                <tr>
-                                    <td style="text-align: center;">1</td>
-                                    <td style="text-align: left;">Kepadatan</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->kepadatan ?? '-' }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td style="text-align: center;">2</td>
-                                    <td style="text-align: left;">Jumlah Lantai</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->luaslantaimaksimal ?? '-' }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: center;">3</td>
-                                    <td style="text-align: left;">Luas Bangunan Maksimal</td>
-                                    <td>:</td>
-                    <td style="text-align: left;">
-                {{ $item->luasbangunan ? $item->luasbangunan . ' M²' : '-' }}
-                    </td>
-            </tr>
-                                <tr>
-                                    <td style="text-align: center;">4</td>
-                                    <td style="text-align: left;">Luas Lantai Maksimal</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->luaslantaimaksimal ?? 'Belum di buatkan' }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: center;">5</td>
-                                    <td style="text-align: left;">Fungsi Utama Bangunan</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->fungsibangunan ?? 'Belum di buatkan' }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: center;">6</td>
-                                    <td style="text-align: left;">(GSB) Garis Sempadan Bangunan</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->gsb ?? 'Belum di buatkan' }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: center;">7</td>
-                                    <td style="text-align: left;">(KDB) Koefisien Dasar Bangunan</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->kdb ?? 'Belum di buatkan' }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: center;">8</td>
-                                    <td style="text-align: left;">(KLB) Koefisien Lantai Bangunan</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->klb ?? 'Belum di buatkan' }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: center;">9</td>
-                                    <td style="text-align: left;">(KLH) Koefisien Lahan Hijau</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->klh ?? 'Belum di buatkan' }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: center;">10</td>
-                                    <td style="text-align: left;">(KDH) Koefisien Dasar Hijau</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->kdh ?? 'Belum di buatkan' }}%</td>
-                                </tr>
-
-                                <tr>
-                                    <td style="text-align: center;">11</td>
-                                    <td style="text-align: left;">Jaringan Utilitas Kota</td>
-                                    <td>:</td>
-                                    <td style="text-align: left;">{{ $item->jaringanutilitas ?? 'Belum di buatkan' }}</td>
-                                </tr>
-                            @endforeach
-                        @endif
-                    </tbody>
-                </table>
-
-                <br>
-
-<style>
-  .content {
-    font-size: 12px;
-    font-family: Arial, sans-serif;
-    line-height: 1.4;
-    max-width: 800px;
-    margin: 20px auto;
-  }
-  .section-title {
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-  ol {
-    padding-left: 20px;
-    margin: 0 0 20px 0;
-  }
-  ol li {
-    margin-bottom: 6px;
-    text-align: justify;
-  }
-</style>
-
-<div class="content">
-  <div class="section-title">Dasar Pertimbangan</div>
-  <ol>
-    <p>1. KEPUTUSAN MENTERI PEKERJAAN UMUM DAN PERUMAHAN RAKYAT NOMOR 1688/KPTS/M/2022 TENTANG PENETAPAN <br> RUAS JALAN MENURUT STATUSNYA SEBAGAI JALAN NASIONAL</p>
-    <p>2. KEPUTUSAN GUBERNUR JAWA TENGAH NOMOR 622 / 12 TAHUN 2023 TENTANG PENETAPAN RUAS JALAN DALAM <br> JARINGAN JALAN <br> KOLEKTOR PRIMER -4, JALAN LOKAL PRIMER, JALAN LINGKUNGAN PRIMER, JALAN ARTERI SEKUNDER, JALAN KOLEKTOR SEKUNDER, JALAN LOKAL SEKUNDER DAN JALAN LINGKUNGAN SEKUNDER DI PROVINSI JAWA TENGAH</p>
-    <p>3 PERATURAN DAERAH KABUPATEN BLORA NOMOR 1 TAHUN 2016 TENTANG BANGUNAN GEDUNG</p>
-    <p>4. PERATURAN DAERAH KABUPATEN BLORA NOMOR 11 TAHUN 2018 TENTANG PERUBAHAN ATAS PERATURAN DAERAH <br> KABUPATEN BLORA NOMOR 1 TAHUN 2016 TENTANG BANGUNAN GEDUNG</p>
-    <p>5. PERATURAN DAERAH KABUPATEN BLORA NOMOR 5 TAHUN 2021 TENTANG RENCANA TATA RUANG <br>WILAYAH KABUPATEN BLORA</p>
-    <p>6. SK BUPATI NO. 620/175/2023 TENTANG PENETAPAN STATUS RUAS JALAN SEBAGAI JALAN KABUPATEN DI WILAYAH <br> KABUPATEN BLORA</p>
-  </ol>
-<br><br><br><br><br><br><br><br><br><br>
-  <div class="section-title">Ketentuan lain-lain:</div>
-  <ol>
-    <p>1. Harus menyediakan Ruang Terbuka Hijau (RTH) privat minimal seluas 10% dari luas persil.</p>
-<p>2. Dilarang memperkecil atau memperbesar volume debit kapasitas saluran umum (drainase kota) dan atau menutup saluran umum.</p>
-<p>3. Rencana bangunan menyesuaikan dengan ketentuan teknik yang tercantum dalam lembar ini.</p>
-<p>4. Rencana bangunan mempertimbangkan faktor keselamatan, kenyamanan, kesehatan dan kemudahan bagi pengguna bangunan.</p>
-<p>5. Keharusan membuat lubang resapan biopori.</p>
-<p>6. Keharusan menanam pohon pelindung dan pembuatan sumur resapan air hujan.</p>
-<p>7. Perkerasan halaman harus dengan struktur yang kuat.</p>
-<p>8. Wajib menyediakan tempat/area parkir.</p>
-<p>9. Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</p>
-<p>10. Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</p>
-  </ol>
+        </tbody>
+    </table>
 </div>
+
+<br>
+
+<h5 class="section-title" style="font-size: 12px;">II. INFORMASI INTENSITAS BANGUNAN GEDUNG</h5>
+<div class="table-responsive">
+    <table class="zebra-table table-striped" style="width: 100%;">
+        <thead>
+            <tr>
+                <td style="width: 5%;">No</td>
+                <td style="width: 35%;">Item</td>
+                <td style="width: 5%;">:</td>
+                <td style="width: 55%;">Keterangan</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if($subdata->count())
+                @foreach($subdata as $item)
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td>Kepadatan</td>
+                        <td>:</td>
+                        <td>{{ $item->kepadatan ?? '-' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td>Jumlah Lantai</td>
+                        <td>:</td>
+                        <td>{{ $item->luaslantaimaksimal ?? '-' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">3</td>
+                        <td>Luas Bangunan Maksimal</td>
+                        <td>:</td>
+                        <td>{{ $item->luasbangunan ? $item->luasbangunan . ' M²' : '-' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">4</td>
+                        <td>Luas Lantai Maksimal</td>
+                        <td>:</td>
+                        <td>{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">5</td>
+                        <td>Fungsi Utama Bangunan</td>
+                        <td>:</td>
+                        <td>{{ $item->fungsibangunan ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">6</td>
+                        <td>(GSB) Garis Sempadan Bangunan</td>
+                        <td>:</td>
+                        <td>{{ $item->gsb ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">7</td>
+                        <td>(KDB) Koefisien Dasar Bangunan</td>
+                        <td>:</td>
+                        <td>{{ $item->kdb ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">8</td>
+                        <td>(KLB) Koefisien Lantai Bangunan</td>
+                        <td>:</td>
+                        <td>{{ $item->klb ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">9</td>
+                        <td>(KLH) Koefisien Lahan Hijau</td>
+                        <td>:</td>
+                        <td>{{ $item->klh ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">10</td>
+                        <td>(KDH) Koefisien Dasar Hijau</td>
+                        <td>:</td>
+                        <td>{{ $item->kdh ? $item->kdh . '%' : 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">11</td>
+                        <td>Jaringan Utilitas Kota</td>
+                        <td>:</td>
+                        <td>{{ $item->jaringanutilitas ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                @endforeach
+            @endif
+        </tbody>
+    </table>
+</div>
+
+
+    {{-- <p>
+        Konsultasi TPA Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
+        {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }}
+        tanggal {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->format('d') }}
+        bulan {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('F') }}
+        tahun Dua Ribu Dua Puluh Lima untuk :
+    </p> --}}
+
+</div>
+
+</div>
+
+
+<div class="halaman">
+  <div class="content">
+
+    <div class="section-title" style="font-size:12px;">Dasar Pertimbangan</div>
+    <ol style="font-size:12px;">
+      <li>Keputusan Menteri Pekerjaan Umum dan Perumahan Rakyat Nomor 1688/KPTS/M/2022 tentang Penetapan Ruas Jalan Menurut Statusnya sebagai Jalan Nasional.</li>
+      <li>Keputusan Gubernur Jawa Tengah Nomor 622 / 12 Tahun 2023 tentang Penetapan Ruas Jalan dalam Jaringan Jalan Kolektor Primer - 4, Jalan Lokal Primer, Jalan Lingkungan Primer, Jalan Arteri Sekunder, Jalan Kolektor Sekunder, Jalan Lokal Sekunder dan Jalan Lingkungan Sekunder di Provinsi Jawa Tengah.</li>
+      <li>Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
+      <li>Peraturan Daerah Kabupaten Blora Nomor 11 Tahun 2018 tentang Perubahan atas Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
+      <li>Peraturan Daerah Kabupaten Blora Nomor 5 Tahun 2021 tentang Rencana Tata Ruang Wilayah Kabupaten Blora.</li>
+      <li>SK Bupati No. 620/175/2023 tentang Penetapan Status Ruas Jalan sebagai Jalan Kabupaten di Wilayah Kabupaten Blora.</li>
+    </ol>
+
+    <hr>
+
+    <div class="section-title" style="font-size:12px;">Ketentuan Lain-Lain</div>
+    <ol style="font-size:12px;">
+      <li>Harus menyediakan Ruang Terbuka Hijau (RTH) privat minimal seluas 10% dari luas persil.</li>
+      <li>Dilarang memperkecil atau memperbesar volume debit kapasitas saluran umum (drainase kota) dan/atau menutup saluran umum.</li>
+      <li>Rencana bangunan menyesuaikan dengan ketentuan teknik yang tercantum dalam lembar ini.</li>
+      <li>Rencana bangunan mempertimbangkan faktor keselamatan, kenyamanan, kesehatan dan kemudahan bagi pengguna bangunan.</li>
+      <li>Keharusan membuat lubang resapan biopori.</li>
+      <li>Keharusan menanam pohon pelindung dan pembuatan sumur resapan air hujan.</li>
+      <li>Perkerasan halaman harus dengan struktur yang kuat.</li>
+      <li>Wajib menyediakan tempat/area parkir.</li>
+      <li>Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
+      <li>Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
+    </ol>
+
+  </div>
+</div>
+
+</body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  const { jsPDF } = window.jspdf;
+
+  async function downloadPDF() {
+    const element = document.querySelector('.halaman, .halaman'); // ✅ UBAH DARI .halaman-pertama KE .halaman
+    if (!element) return alert('Halaman tidak ditemukan.');
+
+    const canvas = await html2canvas(element, {
+      scale: 2,
+      logging: false,
+      useCORS: true,
+      allowTaint: true,
+      scrollX: 0,
+      scrollY: 0,
+      windowWidth: element.scrollWidth,
+      windowHeight: element.scrollHeight
+    });
+
+    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+    const imgWidthPx = canvas.width;
+    const imgHeightPx = canvas.height;
+
+    const pdf = new jsPDF({
+      orientation: imgWidthPx > imgHeightPx ? 'landscape' : 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    });
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+
+    const ratio = Math.min(
+      pageWidth / (imgWidthPx / 2.8346),
+      pageHeight / (imgHeightPx / 2.8346)
+    );
+
+    const imgWidth = (imgWidthPx / 2.8346) * ratio;
+    const imgHeight = (imgHeightPx / 2.8346) * ratio;
+
+    const x = (pageWidth - imgWidth) / 2;
+    const y = (pageHeight - imgHeight) / 2;
+
+    pdf.addImage(imgData, 'JPEG', x, y, imgWidth, imgHeight);
+    pdf.save("berkas-final_krk_usaha.pdf");
+  }
+</script>
+
+
 
 </div>
         </div>
     </div>
 
-<style>
-    /* Styling PDF khusus saat download */
-    .pdf-export table,
-    .pdf-export td,
-    .pdf-export th {
-        font-size: 14px !important;
-    }
 
-    /* Reset margin dan padding atas agar PDF rapi */
-    .pdf-export,
-    .pdf-export * {
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box;
-    }
-    .pdf-export img {
-    margin-right: 10px !important;
-}
-
-</style>
-
-<script>
-    function downloadPDF() {
-        const element = document.getElementById('contentToPrint');
-
-        // Tambahkan class untuk styling PDF
-        element.classList.add('pdf-export');
-
-        const opt = {
-            margin: [1, 1, 1, 1], // Top, Left, Bottom, Right in cm
-            filename: 'KRK_Fungsi_Usaha.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true },
-            jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
-        };
-
-        html2pdf().set(opt).from(element).save().then(() => {
-            // Hapus class styling setelah selesai
-            element.classList.remove('pdf-export');
-        });
-    }
-</script>
-</body>
-</html>
         </div>
     </div>
 

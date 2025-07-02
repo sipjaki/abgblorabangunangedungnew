@@ -6102,6 +6102,7 @@ public function infobantektimteknis()
 public function bebantekkonsultannew()
 {
     $user = Auth::user();
+    $dataakun = User::where('statusadmin_id', 4)->get();
 
     if (!$user) {
         return redirect()->route('login');
@@ -6109,7 +6110,8 @@ public function bebantekkonsultannew()
 
     return view('backend.04_bantuanteknis.05_datakonsultan.02_createkonsultanasistensi', [
         'title' => 'Create Data Konsultan Asistensi',
-        'user'  => $user
+        'user'  => $user,
+        'dataakun'  => $dataakun
     ]);
 }
 
@@ -6120,6 +6122,7 @@ public function bebantekkonsultannewjasa(Request $request)
     $validated = $request->validate([
         // 'bujkkonsultansub_id' => 'required|string',
         // 'asosiasimasjaki_id' => 'nullable|string',
+        'user_id' => 'required|string',
         'namalengkap' => 'required|string|max:255',
         'alamat' => 'required|string',
         'no_telepon' => 'required|string|max:20',
@@ -6133,6 +6136,8 @@ public function bebantekkonsultannewjasa(Request $request)
     ], [
         // 'bujkkonsultansub_id.required' => 'Sub Konsultan wajib diisi.',
         // 'namalengkap.required' => 'Nama Lengkap wajib diisi.',
+        'user_id.required' => 'Akun Wajib di Pilih.',
+        'namalengkap.required' => 'Nama Lengkap wajib diisi.',
         'alamat.required' => 'Alamat wajib diisi.',
         'no_telepon.required' => 'Nomor telepon wajib diisi.',
         'email.required' => 'Email wajib diisi.',
@@ -6149,7 +6154,7 @@ public function bebantekkonsultannewjasa(Request $request)
 
     // $data->bujkkonsultansub_id = $validated['bujkkonsultansub_id'];
     // $data->asosiasimasjaki_id = $validated['asosiasimasjaki_id'] ?? null;
-    // $data->user_id = $user->id ?? null;
+    $data->user_id = $user->id ?? null;
     $data->namalengkap = $validated['namalengkap'];
     $data->alamat = $validated['alamat'];
     $data->no_telepon = $validated['no_telepon'];

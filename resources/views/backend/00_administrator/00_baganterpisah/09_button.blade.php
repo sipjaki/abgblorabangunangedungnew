@@ -495,6 +495,25 @@ button-delete {
     background: white;
     color: black;
 }
+.putih {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: white;
+    transition: background-color 0.3s;
+}
+
+.putih:hover {
+    background-color: #f1f1f1; /* opsional: efek hover ringan */
+}
+
 
 /* Jika animasi gradientMove belum ada, tambahkan contoh animasinya: */
 @keyframes gradientMove {

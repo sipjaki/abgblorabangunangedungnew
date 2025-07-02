@@ -339,12 +339,12 @@ th {
   <div class="halaman">
     <div class="kop">
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
-      <img src="/assets/icon/pupr.png" class="logo" style="float: right;">
+      {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
       <div style="display: inline-block;">
         <h3>PEMERINTAH KABUPATEN BLORA</h3>
         <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
         <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-        <h3>KABUPATEN BLORA 58214 PROVINSI JAWA TENGAH</h3>
+        <h3>BLORA 58214</h3>
       </div>
       <div style="clear: both;"></div>
     </div>

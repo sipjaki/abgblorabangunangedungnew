@@ -222,7 +222,7 @@ class DatabaseSeeder extends Seeder
             'statusadmin_id' => '6',
             'avatar' => 'user/avatar/foto4.png',
             'email' => 'dinaspemudakabblora@gmail.com',
-            'password' => bcrypt('adminsekdewan')
+            'password' => bcrypt('admindinaspemuda')
         ]);
 
         User::create([
@@ -745,6 +745,11 @@ pbgslfbangunan::create([
             'id'  => 2,
             'tempat'  => 'Ruang rapat Lt II Dinas PTSP Kab. Blora',
         ]);
+
+        tempatkonsultasi::create([
+            'id'  => 3,
+            'tempat'  => 'Zoom Meeting',
+        ]);
         // --------------------------
 
         pengawasatpt::create([
@@ -1024,20 +1029,20 @@ pengawasatpt::create([
             'status' => 'konsultanbantek',
         ]);
 
-        // statusadmin::create([
-        //     'id'  => 5,
-        //     'status' => 'konsultanbangunan',
-        // ]);
+        statusadmin::create([
+            'id'  => 5,
+            'status' => 'konsultanbangunan',
+        ]);
 
         statusadmin::create([
             'id'  => 6,
             'status' => 'dinas',
         ]);
 
-        statusadmin::create([
-            'id'  => 7,
-            'status' => 'pemohonbantek',
-        ]);
+        // statusadmin::create([
+        //     'id'  => 7,
+        //     'status' => 'pemohonbantek',
+        // ]);
 
 
         // AKUN USERS ---------

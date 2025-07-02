@@ -723,34 +723,43 @@
 </a>
 
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
-
+{{--
     <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Informasi SLF</p>
         </a>
-    </li>
+    </li> --}}
+<li class="nav-item">
+    <a href="/bepbgslfindex" class="nav-link">
+        <i class="bi bi-card-list nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Permohonan</p>
+    </a>
+</li>
 
-    <li class="nav-item">
-        <a href="/bepbgslfindex" class="nav-link">
-            <i class="bi bi-card-list nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Permohonan</p>
-        </a>
-    </li>
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-chat-dots nav-icon" style="color: white;"></i> <!-- cocok untuk Konsultasi Teknis -->
+        <p style="color: white; margin-left: 8px;">Konsultasi Teknis</p>
+    </a>
+</li>
 
-    <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-building nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Retribusi</p>
-        </a>
-    </li>
 
-    <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-building nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">SKRD</p>
-        </a>
-    </li>
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-receipt nav-icon" style="color: white;"></i> <!-- cocok untuk SKRD -->
+        <p style="color: white; margin-left: 8px;">SKRD</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-cash-coin nav-icon" style="color: white;"></i> <!-- cocok untuk retribusi -->
+        <p style="color: white; margin-left: 8px;">Retribusi</p>
+    </a>
+</li>
+
+
 
 </ul>
 
@@ -844,12 +853,12 @@
 </a>
 
 <ul class="nav nav-treeview" style="margin-left: 15px;">
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px;"></i>
             <p style="color: white; margin-left: 8px;">Informasi</p>
         </a>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a href="/bebantuanteknisindex" class="nav-link">
             <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px;"></i>
@@ -902,12 +911,12 @@
 </a>
 
 <ul class="nav nav-treeview" style="margin-left: 15px;">
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">Informasi KRK</p>
         </a>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
@@ -1041,6 +1050,41 @@
 </li>
 
 </ul>
+<li class="nav-item">
+  <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
+    <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">SPPD</p>
+    <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
+</a>
+
+  <ul class="nav nav-treeview" style="margin-left: 15px;">
+    {{-- <li class="nav-item">
+        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Informasi </p>
+        </a>
+    </li> --}}
+    <li class="nav-item">
+    <a href="/bestatistikhibah" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-bar-chart-line nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Menu 1</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="/datanewhibah" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-plus-square nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Menu 2</p>
+    </a>
+</li>
+{{--
+<li class="nav-item">
+    <a href="/dataallhibahbangunan" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Data Pengajuan</p>
+    </a>
+</li> --}}
+
+</ul>
 </li>
 
     <li class="nav-header" style="color: white;">Pengaturan Data </li>
@@ -1089,6 +1133,13 @@
 </a>
 
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
+
+<li class="nav-item">
+    <a href="/allakun" class="nav-link">
+        <i class="bi bi-person-badge-fill nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">All Akun</p>
+    </a>
+</li>
 
 <li class="nav-item">
     <a href="/404" class="nav-link">

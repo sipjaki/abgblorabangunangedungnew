@@ -26,6 +26,7 @@ return new class extends Migration
                 $table->string('berkas7')->nullable();
                 $table->string('berkas8')->nullable();
                 $table->string('berkas9')->nullable();
+                $table->string('berkas10')->nullable();
 
                 $table->string('pilihancatatan')->nullable();
                 $table->text('catatan')->nullable();

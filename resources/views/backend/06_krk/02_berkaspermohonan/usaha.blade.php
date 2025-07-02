@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="button-belakang row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -179,7 +179,7 @@ th {
 
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-kembali" style="color: black;">
+    <button class="button-validasinew" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
@@ -651,7 +651,15 @@ th {
     </button>
 @endif
 
+   <a href="/path/to/surat-pemohon.pdf"
+   title="Surat Pemohon"
+   class="button-baru"
+   style="border-radius: 15px; padding: 8px 16px; background-color: white; color: black; border: none; text-decoration: none; display: inline-flex; align-items: center;">
+    <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Surat Pemohon
+</a>
+
     </div>
+
 </td>
 
 <!-- Tombol Validasi -->

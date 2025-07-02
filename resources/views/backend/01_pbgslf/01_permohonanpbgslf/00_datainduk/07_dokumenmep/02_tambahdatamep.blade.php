@@ -205,7 +205,7 @@ th {
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIM-BG</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
     </div>
 </div>
 
@@ -378,7 +378,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Data Umum Bangunan Gedung
+    Data Dokumen Teknis Mekanikal Elektrikal Plumbing Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">

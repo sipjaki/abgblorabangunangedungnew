@@ -20,6 +20,7 @@ return new class extends Migration
                    $table->string('isiandatatanah')->nullable();
                    $table->string('layout')->nullable();
                    $table->string('penyelidikan')->nullable();
+                   $table->string('berkas4')->nullable();
 
                    $table->string('pilihancatatan')->nullable();
 

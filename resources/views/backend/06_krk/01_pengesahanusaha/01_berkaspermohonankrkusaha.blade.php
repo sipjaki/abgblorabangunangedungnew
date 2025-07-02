@@ -98,7 +98,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
   {{-- @include('backend.00_administrator.00_baganterpisah.10_selamatdatang') --}}
@@ -112,7 +112,7 @@ th {
 
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-kembali"
+        <button class="button-validasinew"
                 type="button"
                 onclick="location.href='{{ route('krkusaha.index') }}';"
                 style="cursor: pointer; color:black;">
@@ -623,19 +623,19 @@ th {
 
 <tr>
     <td style="text-align: center;">1</td>
-    <td style="text-align: left;"><i class="bi bi-person" style="margin-right:6px;"></i> Pemohon</td>
+    <td style="text-align: left;"><i class="bi bi-person" style="margin-right:6px;"></i> Nama Akun Pemohon</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->user->name ?? '-' }}</td>
 </tr>
 <tr>
     <td style="text-align: center;">2</td>
-    <td style="text-align: left;"><i class="bi bi-person-badge" style="margin-right:6px;"></i> Perorangan</td>
+    <td style="text-align: left;"><i class="bi bi-person-badge" style="margin-right:6px;"></i> Nama Pemohon</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->perorangan ?? '-' }}</td>
 </tr>
 <tr>
     <td style="text-align: center;">3</td>
-    <td style="text-align: left;"><i class="bi bi-building" style="margin-right:6px;"></i> Perusahaan</td>
+    <td style="text-align: left;"><i class="bi bi-building" style="margin-right:6px;"></i> Nama Badan Usaha</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->perusahaan ?? '-' }}</td>
 </tr>
@@ -685,7 +685,7 @@ th {
     <td style="text-align: center;">11</td>
     <td style="text-align: left;"><i class="bi bi-layers" style="margin-right:6px;"></i> Jumlah Lantai</td>
     <td style="text-align: center;">:</td>
-    <td style="text-align: left;">{{ $data->jumlahlantai ?? '-' }}</td>
+    <td style="text-align: left;">{{ $data->jumlahlantai ?? '-' }} Lantai </td>
 </tr>
 <tr>
     <td style="text-align: center;">12</td>
@@ -834,7 +834,7 @@ th {
 </td>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi DPUPR
+    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang atau PKKPR
 </td>
 
 </tr>
@@ -2619,7 +2619,7 @@ th {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                      <button class="button-create" type="button" onclick="openModal()">
+                                      <button class="button-baru" type="button" onclick="openModal()">
                                             <i class="bi bi-save2" style="margin-right: 8px;"></i> Simpan Validasi
                                         </button>
 

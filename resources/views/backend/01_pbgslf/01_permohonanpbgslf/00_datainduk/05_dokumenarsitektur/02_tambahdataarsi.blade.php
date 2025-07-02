@@ -205,7 +205,7 @@ th {
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIM-BG</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
     </div>
 </div>
 
@@ -378,7 +378,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Data Umum Bangunan Gedung
+    Data Dokumen Teknis Arsitektur Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
@@ -389,11 +389,10 @@ th {
     <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
     <input type="hidden" name="id" value="{{ $data->id }}">
 
-
 <div class="row g-3 mt-2">
     @php
         $berkasList = [
-            '1. Rekomendasi Peil Banjir',
+            '1. Berkas Dukung Lainnya',
             '2. Spesifikasi Teknis Arsitektur Bangunan',
             '3. Gambar Rencana Detail Bangunan',
             '4. Gambar Rencana Tata Ruang Luar',
@@ -410,20 +409,29 @@ th {
         @php
             $berkasKey = 'berkas' . ($index + 1);
         @endphp
+
         <div class="col-md-4 mb-3">
             <label class="form-label d-block" style="color: black; font-weight: 600;">
                 <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> {{ $judul }}
             </label>
-            <div class="d-flex flex-column gap-2">
-                <label class="custom-radio">
-                    <input type="radio" name="{{ $berkasKey }}" value="Lengkap" {{ old($berkasKey) == 'Lengkap' ? 'checked' : '' }}>
-                    <span class="custom-box"></span> Lengkap
-                </label>
-                <label class="custom-radio">
-                    <input type="radio" name="{{ $berkasKey }}" value="Tidak Lengkap" {{ old($berkasKey) == 'Tidak Lengkap' ? 'checked' : '' }}>
-                    <span class="custom-box"></span> Tidak Lengkap
-                </label>
-            </div>
+
+            @if ($index == 0)
+                {{-- Input manual hanya untuk nomor 1 --}}
+                <input type="text" name="{{ $berkasKey }}" value="{{ old($berkasKey) }}" class="form-control" placeholder="Masukkan keterangan berkas">
+            @else
+                {{-- Radio button untuk nomor 2 sampai 10 --}}
+                <div class="d-flex flex-column gap-2">
+                    <label class="custom-radio">
+                        <input type="radio" name="{{ $berkasKey }}" value="Lengkap" {{ old($berkasKey) == 'Lengkap' ? 'checked' : '' }}>
+                        <span class="custom-box"></span> Lengkap
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="{{ $berkasKey }}" value="Tidak Lengkap" {{ old($berkasKey) == 'Tidak Lengkap' ? 'checked' : '' }}>
+                        <span class="custom-box"></span> Tidak Lengkap
+                    </label>
+                </div>
+            @endif
+
             @error($berkasKey)<div class="text-danger mt-2">{{ $message }}</div>@enderror
         </div>
     @endforeach

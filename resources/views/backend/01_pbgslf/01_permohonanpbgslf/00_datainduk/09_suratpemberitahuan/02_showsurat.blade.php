@@ -344,9 +344,31 @@ th {
 </head>
 <body>
 
-<div class="download-container">
-  <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+    <div class="download-container">
+  <style>
+    .download-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid red;
+    }
+  </style>
+  <button class="download-btn" onclick="downloadPDF()"><i class="bi bi-download"></i> Download PDF</button>
 </div>
+
+{{-- <div class="download-container">
+  <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+</div> --}}
 
 <!-- HALAMAN PERTAMA -->
 <div class="halaman-pertama">
@@ -357,13 +379,13 @@ th {
         <h3>PEMERINTAH KABUPATEN BLORA</h3>
         <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
         <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-        <h3>KABUPATEN BLORA 58214 PROVINSI JAWA TENGAH</h3>
+        <h3>BLORA 58214 </h3>
       </td>
-      <td style="width: 80px; text-align: right;"><img src="/assets/icon/pupr.png" alt="Logo PUPR" class="logo" /></td>
+      {{-- <td style="width: 80px; text-align: right;"><img src="/assets/icon/pupr.png" alt="Logo PUPR" class="logo" /></td> --}}
     </tr>
   </table>
 
-  <p style="text-align: right; margin-top: 20px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('l, d F Y') : '-' }}</p>
+  <p style="text-align: right; margin-top: 20px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('d F Y') : '-' }}</p>
 
   <p>
     <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2024<br />
@@ -387,30 +409,39 @@ th {
   <p style="margin-top: 10px;">Setelah dilakukan Verifikasi terhadap Data Bangunan, Data Tanah, Data Umum dan Ketentuan Teknis, maka data disimpulkan:</p>
   <p><strong>{{ $surat->pilihancatatan ?? '-' }}</strong></p>
   <p>Adapun cek list Verifikasi Permohonan {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }} terlampir.</p>
-  <p>Bagi Pemohon yang <strong>tidak lengkap</strong> segera melengkapi data. Kesekretariatan SIMBG menyediakan <strong>KLINIK PENDAMPINGAN OFFLINE</strong> guna memberikan informasi yang jelas kepada pemohon.</p>
-  <p>Demikian pemberitahuan ini kami sampaikan dan kami ucapkan terima kasih.</p>
-
-  <div style="text-align: right; margin-top: 40px;">
-    <p>KESEKRETARIATAN SIMBG KAB. BLORA<br />DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />KABUPATEN BLORA</p>
+  <p style="text-align: justify;">
+  Bagi Pemohon yang tidak lengkap segera melengkapi data. Kesekretariatan SIMBG menyediakan berbagai kanal informasi baik secara offline di Loket 9 Mall Pelayanan Publik (MPP) Kab. Blora dan secara online di platform media sosial Instagram <strong>@dpuprblora</strong> dan TikTok <strong>@bangunan.gedung.dpupr</strong> guna memberikan informasi yang jelas kepada pemohon.
+</p>
+<p>
+  Demikian pemberitahuan ini kami sampaikan dan kami ucapkan terima kasih.
+</p>
+<div style="display: flex; justify-content: flex-end; margin-top: 40px;">
+  <div style="text-align: left;">
+    <p>
+      KESEKRETARIATAN SIMBG KAB. BLORA<br />
+      DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
+      KABUPATEN BLORA
+    </p>
     <img src="/assets/abgblora/logo/barcodesimbg.png" alt="QR Code" style="height: 100px" />
     <p>OPERATOR SIMBG</p>
   </div>
 </div>
+</div>
 
 <!-- HALAMAN KEDUA -->
 <div class="halaman-pertama">
-    <p>
+    <p style="margin-left:300px;">
     <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2024<br />
     <strong>Lampiran</strong> : 1 Bandel<br />
     <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
   </p>
 
-  <h5 style="text-align: center; font-weight: bold; text-decoration: underline; margin-bottom: 10px; font-size: 12px; font-family: 'Poppins', sans-serif;">
+  <h5 style="margin-top : -10px; text-align: center; font-weight: bold; text-decoration: underline; margin-bottom: 10px; font-size: 12px; font-family: 'Poppins', sans-serif;">
     CEK LIST VERIFIKASI DOKUMEN
   </h5>
 
-  <h6><strong style="font-size: 12px; font-family: 'Poppins', sans-serif;">A. DATA BANGUNAN</strong></h6>
-  <table class="isian">
+  <h6><strong style="font-size: 12px; font-family: 'Poppins', sans-serif; margin-top: -20px;">A. DATA BANGUNAN</strong></h6>
+  <table class="isian" style="margin-top: -5px;">
     <thead style="font-size: 12px; font-family: 'Poppins', sans-serif;">
       <tr>
         <th style="width: 40px;">NO</th>
@@ -484,8 +515,8 @@ th {
     </tbody>
   </table>
 
-  <h6 style="margin-top: 25px; font-size: 12px; font-family: 'Poppins', sans-serif;" ><strong>B. DATA TANAH</strong></h6>
-  <table class="isian">
+  <h6 style="margin-top: 10px; font-size: 12px; font-family: 'Poppins', sans-serif;" ><strong>B. DATA TANAH</strong></h6>
+  <table class="isian" style="margin-top: -5px;">
     <thead style="font-size: 12px; font-family: 'Poppins', sans-serif;">
       <tr>
         <th style="width: 40px;">NO</th>
@@ -524,6 +555,17 @@ th {
         </tr>
         </tr>
       <tr>
+
+    <tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td>Berkas Dukung lainnya</td>
+            <td style="text-align: center; text-transform:uppercase;">
+                {{ $surat->datatanahpbg->berkas4 ?? '-' }}
+            </td>
+        </tr>
+        </tr>
+      <tr>
         <tr>
         <td colspan="3"><em>Catatan Data Tanah:</em> {{ $surat->datatanahpbg->catatan ?? '-' }}</td>
       </tr>
@@ -536,7 +578,7 @@ th {
   <h6 style="margin-top: 25px; font-size: 12px; font-family: 'Poppins', sans-serif;">
     <strong>C. DATA UMUM</strong>
   </h6>
-  <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif;">
+  <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif; margin-top: -5px;">
     <thead>
       <tr>
         <th style="width: 40px;">NO</th>
@@ -566,6 +608,11 @@ th {
           <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas4 ?? '-' }}</td>
       </tr>
       <tr>
+          <td>5.</td>
+          <td>Berkas Dukung Lainnya </td>
+          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas5 ?? '-' }}</td>
+      </tr>
+      <tr>
           <td colspan="3"><em>Catatan Data Umum :</em> {{ $surat->dataumumpbg->catatan ?? '-' }}</td>
       </tr>
   </tbody>
@@ -574,7 +621,7 @@ th {
   <h6 style="margin-top: 25px; font-size: 12px; font-family: 'Poppins', sans-serif;">
       <strong>D. DOKUMEN TEKNIS </strong>
   </h6>
-  <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif;">
+  <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif; margin-top:-5px;">
     <thead>
         <tr>
             <th style="width: 40px;">NO</th>
@@ -818,11 +865,18 @@ th {
   </tbody>
   </table>
 
-  <div style="text-align: right; margin-top: 40px;">
-    <p>KESEKRETARIATAN SIMBG KAB. BLORA<br />DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />KABUPATEN BLORA</p>
+<div style="display: flex; justify-content: flex-end; margin-top: 40px;">
+  <div style="text-align: left;">
+    <p>
+      KESEKRETARIATAN SIMBG KAB. BLORA<br />
+      DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
+      KABUPATEN BLORA
+    </p>
     <img src="/assets/abgblora/logo/barcodesimbg.png" alt="QR Code" style="height: 100px" />
     <p>OPERATOR SIMBG</p>
   </div>
+</div>
+
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>

@@ -205,7 +205,7 @@ th {
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIM-BG</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
     </div>
 </div>
 
@@ -310,7 +310,7 @@ th {
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-header bg-primary text-white d-flex align-items-center">
                     <i class="bi bi-folder-check me-2 fs-5"></i>
-                    <h5 class="mb-0" style="font-size: 16px;">Surat Tugas Fasilitator</h5>
+                    <h5 class="mb-0" style="font-size: 16px;">Penugasan TPA/TPT</h5>
                 </div>
 
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">

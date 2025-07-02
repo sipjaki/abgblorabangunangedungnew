@@ -22,10 +22,10 @@ return new class extends Migration
             $table->foreignId('dokumenteknismep_id')->nullable()->index();
             $table->foreignId('dokumenteknisslfpbg_id')->nullable()->index();
             $table->foreignId('surattugaspbg_id')->nullable()->index();
+            $table->foreignId('tpatpt_id')->nullable()->index();
             $table->foreignId('suratudanganpbg_id')->nullable()->index();
             $table->foreignId('suratpemberitahuanpbg_id')->nullable()->index();
             // $table->foreignId('suratpemberitahuanpbg_id')->nullable()->index();
-            $table->foreignId('tpatpt_id')->nullable()->index();
             $table->foreignId('suratundangan_id')->nullable()->index();
             $table->foreignId('beritaacaraslf_id')->nullable()->index();
             // JENIS PENGAJUAN PBG SLF
@@ -44,6 +44,11 @@ return new class extends Migration
             $table->string('validasiberkas5')->nullable();
             $table->string('validasiberkas6')->nullable();
             $table->string('validasiberkas7')->nullable();
+
+            $table->string('validasiberkas8')->nullable();
+            $table->string('validasiberkas9')->nullable();
+
+
             // $table->string('validasiberkas1')->nullable();
 
             // CADANGAN DATABASE YANG AKAN DI LAKUKAN PENGEMBANGAN

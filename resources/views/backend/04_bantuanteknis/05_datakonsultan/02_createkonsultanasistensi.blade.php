@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="button-belakang row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -153,7 +153,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-kembali" type="button"
+<button class="button-validasinew" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -199,7 +199,29 @@ th {
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
+
+
+
       <div class="col-md-6">
+
+        <div class="mb-3">
+    <label class="form-label" for="user_id">
+        <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Pilih User (Status Admin 4)
+    </label>
+    <select id="user_id" name="user_id" class="form-select @error('user_id') is-invalid @enderror">
+        <option value="">-- Pilih User --</option>
+        @foreach ($dataakun as $user)
+            <option value="{{ $user->id }}"
+                {{ old('user_id', $data->user_id ?? '') == $user->id ? 'selected' : '' }}>
+                {{ $user->name }}
+            </option>
+        @endforeach
+    </select>
+    @error('user_id')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
           <div class="mb-3">
               <label class="form-label" for="namalengkap">
                   <i class="bi bi-person-vcard" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
@@ -376,7 +398,7 @@ th {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-create" type="button" onclick="openModal()">
+                               <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
@@ -386,7 +408,7 @@ th {
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                                       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin menambahkan konsultan asistensi ?
+                                        Apakah Anda ingin menambahkan konsultan bantek ?
                                     </p>
 
                                       <!-- Tombol -->
