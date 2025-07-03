@@ -86,9 +86,18 @@
           <i class="bi bi-file-earmark-text-fill"></i> Berkas SKRD
         </th>
 
+                    <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+            <i class="bi bi-person-fill"></i> Nama Pemilik
+            </th>
+
+            <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+            <i class="bi bi-geo-alt-fill"></i> Lokasi Bangunan
+            </th>
+
         <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
           <i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan
         </th>
+
         <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
           <i class="bi bi-hash"></i> No Registrasi SIM BG
         </th>
@@ -175,6 +184,8 @@
 </td>
 
 
+     <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->datapemilik->namapemilik ?? '-' }}</td>
+     <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->databangunanpbg->lokasibangunan ?? '-' }}</td>
      <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
           <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->noregissimbg ?? '-' }}</td>
           <td style="white-space: nowrap; padding: 6px; text-align: center;">

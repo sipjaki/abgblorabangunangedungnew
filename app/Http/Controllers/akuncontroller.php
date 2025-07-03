@@ -121,7 +121,7 @@ public function allakundelete($id)
     public function allakuncreate()
 {
     $user = Auth::user();
-$statusadmins = statusadmin::whereIn('id', [2, 3, 4, 5, 6])->get();
+$statusadmins = statusadmin::whereIn('id', [2, 3, 4, 5, 6, 7, 8, 9, 10])->get();
 
     if (!$user) {
         return redirect()->route('login');
@@ -180,7 +180,173 @@ public function allakuncreatenew(Request $request)
     $user->save();
 
     session()->flash('create', 'Akun berhasil dibuat.');
-    return redirect()->route('allakun.showdata');
+return redirect()->back();
+
+}
+
+
+    public function allakundinas(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    $query = User::whereHas('statusadmin', function ($q) {
+    $q->where('id', 6);
+        });
+
+    if ($search) {
+        $query->where(function($q) use ($search) {
+            $q->where('name', 'LIKE', "%{$search}%")
+              ->orWhere('username', 'LIKE', "%{$search}%")
+              ->orWhere('phone_number', 'LIKE', "%{$search}%")
+              ->orWhere('email', 'LIKE', "%{$search}%")
+              ->orWhere('avatar', 'LIKE', "%{$search}%");
+        });
+    }
+
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    // Hitung jumlah user per statusadmin (berdasarkan id statusadmin dari 1 sampai 9)
+    $jumlahStatus1 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 1);
+    })->count();
+
+    $jumlahStatus2 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 2);
+    })->count();
+
+    $jumlahStatus3 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 3);
+    })->count();
+
+    $jumlahStatus4 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 4);
+    })->count();
+
+    $jumlahStatus5 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 5);
+    })->count();
+
+    $jumlahStatus6 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 6);
+    })->count();
+
+    $jumlahStatus7 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 7);
+    })->count();
+
+    $jumlahStatus8 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 8);
+    })->count();
+
+    $jumlahStatus9 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 9);
+    })->count();
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.13_daftarakun.01_semuaakun.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.99_databaseabg.03_akun.01_semuaakun.allakunindex', [
+        'title' => 'Daftar Semua Akun Dinas',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'jumlahStatus1' => $jumlahStatus1, // Super Admin
+        'jumlahStatus2' => $jumlahStatus2, // Admin
+        'jumlahStatus3' => $jumlahStatus3, // Pekerja
+        'jumlahStatus4' => $jumlahStatus4, // Supp Pabrik
+        'jumlahStatus5' => $jumlahStatus5, // Sup Peralatan
+        'jumlahStatus6' => $jumlahStatus6, // Sup Toko Bangunan
+        'jumlahStatus7' => $jumlahStatus7, // LSP Penerbit
+        'jumlahStatus8' => $jumlahStatus8, // Operator
+        'jumlahStatus9' => $jumlahStatus9, // Dinas
+    ]);
+}
+
+
+
+    public function allakunkonsultan(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    $query = User::whereHas('statusadmin', function ($q) {
+    $q->where('id', 4);
+        });
+
+    if ($search) {
+        $query->where(function($q) use ($search) {
+            $q->where('name', 'LIKE', "%{$search}%")
+              ->orWhere('username', 'LIKE', "%{$search}%")
+              ->orWhere('phone_number', 'LIKE', "%{$search}%")
+              ->orWhere('email', 'LIKE', "%{$search}%")
+              ->orWhere('avatar', 'LIKE', "%{$search}%");
+        });
+    }
+
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    // Hitung jumlah user per statusadmin (berdasarkan id statusadmin dari 1 sampai 9)
+    $jumlahStatus1 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 1);
+    })->count();
+
+    $jumlahStatus2 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 2);
+    })->count();
+
+    $jumlahStatus3 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 3);
+    })->count();
+
+    $jumlahStatus4 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 4);
+    })->count();
+
+    $jumlahStatus5 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 5);
+    })->count();
+
+    $jumlahStatus6 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 6);
+    })->count();
+
+    $jumlahStatus7 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 7);
+    })->count();
+
+    $jumlahStatus8 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 8);
+    })->count();
+
+    $jumlahStatus9 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 9);
+    })->count();
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.13_daftarakun.01_semuaakun.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.99_databaseabg.03_akun.01_semuaakun.allakunindex', [
+        'title' => 'Daftar Semua Akun Dinas',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'jumlahStatus1' => $jumlahStatus1, // Super Admin
+        'jumlahStatus2' => $jumlahStatus2, // Admin
+        'jumlahStatus3' => $jumlahStatus3, // Pekerja
+        'jumlahStatus4' => $jumlahStatus4, // Supp Pabrik
+        'jumlahStatus5' => $jumlahStatus5, // Sup Peralatan
+        'jumlahStatus6' => $jumlahStatus6, // Sup Toko Bangunan
+        'jumlahStatus7' => $jumlahStatus7, // LSP Penerbit
+        'jumlahStatus8' => $jumlahStatus8, // Operator
+        'jumlahStatus9' => $jumlahStatus9, // Dinas
+    ]);
 }
 
 

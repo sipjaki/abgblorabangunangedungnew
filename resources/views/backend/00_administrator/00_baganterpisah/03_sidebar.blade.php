@@ -985,24 +985,25 @@
     </p>
 </div>
 
-    <li class="nav-item">
-        <a href="/bebantuanteknisindex" class="nav-link">
-            <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px;"></i>
-            <p style="color: white; margin-left: 8px;">Permohonan</p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="/bebantekkonsultan" class="nav-link">
-            <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px;"></i>
-            <p style="color: white; margin-left: 8px;">Konsultan</p>
-        </a>
-    </li>
+<li class="nav-item">
+    <a href="/bebantuanteknisindex" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Permohonan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bebantekkonsultan" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-person-workspace nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konsultan</p>
+    </a>
+</li>
 
     <div style="margin-bottom: 10px; margin-top: 10px;">
     <p style="
         font-size: 13px;
         margin-left: 12px;
-        margin-bottom: -5px;
+        margin-bottom: 5px;
         font-weight: bold;
         color: #ffffff;
         background-color: #0d6efd;
@@ -1013,6 +1014,21 @@
     ">
         <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan Data
     </p>
+
+<li class="nav-item">
+    <a href="/allakundinas" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-building-gear nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Akun Dinas</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/allakunkonsultan" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Akun Konsultan</p>
+    </a>
+</li>
+
 </div>
 </ul>
 
@@ -1056,6 +1072,23 @@
 </a>
 
 <ul class="nav nav-treeview" style="margin-left: 15px;">
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
     {{-- <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
@@ -1068,6 +1101,46 @@
             <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
         </a>
     </li>
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
+    </p>
+
+    <li class="nav-item">
+        <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Kecamatan</p>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Kelurahan Desa</p>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">GSB Kab Blora</p>
+        </a>
+    </li>
+
+</div>
+
 </ul>
 
 </li>
@@ -1143,18 +1216,83 @@
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
-    <li class="nav-item">
+
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">Informasi </p>
         </a>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
         </a>
     </li>
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan Data
+    </p>
+</div>
+
+
+    <li class="nav-item">
+    <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-geo-fill nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Kecamatan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-house-door-fill nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Kelurahan Desa</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-ui-checks-grid nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Jenis Permohonan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Fungsi Bangunan</p>
+    </a>
+</li>
+
 </ul>
 
 
