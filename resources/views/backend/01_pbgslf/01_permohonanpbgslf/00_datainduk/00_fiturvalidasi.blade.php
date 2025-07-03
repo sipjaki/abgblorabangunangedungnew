@@ -108,7 +108,7 @@
                                 <i class="bi bi-x-circle me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @else
-                            <button class="button-validasinew" type="button" onclick="openModal{{ $i }}({{ $data->id }})" style="color: black;">
+                            <button class="button-baru" type="button" onclick="openModal{{ $i }}({{ $data->id }})" style="color: black;">
                                 <i class="bi bi-patch-check me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @endif
@@ -221,7 +221,7 @@
                                 <i class="bi bi-x-circle me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @else
-                            <button class="button-validasinew" type="button" onclick="openModal({{ $i }}, {{ $data->id }})" style="color: black;">
+                            <button class="button-baru" type="button" onclick="openModal({{ $i }}, {{ $data->id }})" style="color: black;">
                                 <i class="bi bi-patch-check me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @endif
@@ -304,7 +304,7 @@
 
 <style>
     /* Add some basic styling for buttons */
-    .button-lolos, .button-dikembalikan, .button-validasinew {
+    .button-lolos, .button-dikembalikan, .button-baru {
         padding: 8px 12px;
         border-radius: 6px;
         border: 1px solid #ddd;
@@ -313,11 +313,11 @@
         font-weight: 500;
     }
 
-    .button-validasinew {
+    .button-baru {
         background-color: #f3f4f6;
     }
 
-    .button-validasinew:hover {
+    .button-baru:hover {
         background-color: #e5e7eb;
     }
 
@@ -361,7 +361,7 @@
                             <i class="bi bi-x-circle me-1"></i> Dokumen Tidak Lengkap
                         </button>
                     @else
-                        <button class="button-validasinew" type="button" onclick="openModal7({{ $data->id }})" style="color: black;">
+                        <button class="button-baru" type="button" onclick="openModal7({{ $data->id }})" style="color: black;">
                             <i class="bi bi-patch-check me-1"></i> Validasi Berkas
                         </button>
                     @endif
@@ -375,7 +375,7 @@
                             <i class="bi bi-x-circle me-1"></i> Dokumen Lengkap
                         </button>
                     @else
-                        <button class="button-validasinew" type="button" onclick="openModal1({{ $data->id }})" style="color: black;">
+                        <button class="button-baru" type="button" onclick="openModal1({{ $data->id }})" style="color: black;">
                             <i class="bi bi-patch-check me-1"></i> Dokumen Lengkap
                         </button>
                     @endif --}}
@@ -390,7 +390,7 @@
                             <i class="bi bi-x-circle me-1"></i> Surat Pemberitahuan Batal
                         </button>
                     @else
-                        <button class="button-validasinew" type="button" onclick="openModal2({{ $data->id }})" style="color: black;">
+                        <button class="button-baru" type="button" onclick="openModal2({{ $data->id }})" style="color: black;">
                             <i class="bi bi-patch-check me-1"></i> Status Surat Pemberitahuan
                         </button>
                     @endif
@@ -405,7 +405,7 @@
                             <i class="bi bi-x-circle me-1"></i> TPA/TPT Batal
                         </button>
                     @else
-                        <button class="button-validasinew" type="button" onclick="openModal3({{ $data->id }})" style="color: black;">
+                        <button class="button-baru" type="button" onclick="openModal3({{ $data->id }})" style="color: black;">
                             <i class="bi bi-patch-check me-1"></i> Pemilihan TPA/TPT
                         </button>
                     @endif
@@ -420,7 +420,7 @@
                             <i class="bi bi-x-circle me-1"></i> Surat Undangan Batal
                         </button>
                     @else
-                        <button class="button-validasinew" type="button" onclick="openModal4({{ $data->id }})" style="color: black;">
+                        <button class="button-baru" type="button" onclick="openModal4({{ $data->id }})" style="color: black;">
                             <i class="bi bi-patch-check me-1"></i> Status Surat Undangan
                         </button>
                     @endif
@@ -435,7 +435,7 @@
                             <i class="bi bi-x-circle me-1"></i> Berita Acara Batal
                         </button>
                     @else
-                        <button class="button-validasinew" type="button" onclick="openModal5({{ $data->id }})" style="color: black;">
+                        <button class="button-baru" type="button" onclick="openModal5({{ $data->id }})" style="color: black;">
                             <i class="bi bi-patch-check me-1"></i> Status Berita Acara
                         </button>
                     @endif
@@ -450,7 +450,7 @@
                             <i class="bi bi-x-circle me-1"></i> SKRD Tidak Terbit
                         </button>
                     @else
-                        <button class="button-validasinew" type="button" onclick="openModal6({{ $data->id }})" style="color: black;">
+                        <button class="button-baru" type="button" onclick="openModal6({{ $data->id }})" style="color: black;">
                             <i class="bi bi-patch-check me-1"></i> Status SKRD
                         </button>
                     @endif
@@ -791,7 +791,7 @@
 
 <style>
     /* Button styles */
-    .button-lolos, .button-dikembalikan, .button-validasinew {
+    .button-lolos, .button-dikembalikan, .button-baru {
         padding: 8px 12px;
         border-radius: 6px;
         border: 1px solid #ddd;
@@ -800,11 +800,11 @@
         font-weight: 500;
     }
 
-    .button-validasinew {
+    .button-baru {
         background-color: #f3f4f6;
     }
 
-    .button-validasinew:hover {
+    .button-baru:hover {
         background-color: #e5e7eb;
     }
 

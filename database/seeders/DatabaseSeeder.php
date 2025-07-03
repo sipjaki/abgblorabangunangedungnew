@@ -366,6 +366,26 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('adminpaanex123$$')
         ]);
 
+        // AKUN SKRD
+        User::create([
+            'id'  => 49,
+            'name'  => 'Akun SKRD 1',
+            'username' => 'Akun SKRD 1',
+            'statusadmin_id' => '7',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'akunskrd1@gmail.com',
+            'password' => bcrypt('adminskrd1$$')
+        ]);
+        User::create([
+            'id'  => 50,
+            'name'  => 'Akun SKRD 2',
+            'username' => 'Akun SKRD 2',
+            'statusadmin_id' => '7',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'akunskrd2@gmail.com',
+            'password' => bcrypt('adminskrd12$$')
+        ]);
+
 
         // -------------------
 
@@ -559,97 +579,125 @@ User::create([
 // =============================================
 
 
-$randomDate = now(); // atau bisa pakai Carbon::parse('2025-01-01') jika perlu tanggal tetap
+for ($i = 1; $i <= 548; $i++) {
+    $randomDate = now()->subDays(rand(0, 365));
+    $userId = [46, 47][array_rand([46, 47])];
+    $jenisPengajuan = rand(1, 6); // Acak dari 1 sampai 6
 
-pbgslfbangunan::create([
-    'id' => 1,
-    'user_id' => 46,
-    'jenispengajuanpbgslfper_id' => 1,
-    'tanggalpermohonan' => $randomDate,
-    'noregissimbg' => 'PBG-321702-24102022-01',
-    'datapemilik_id' => 1,
-    'databangunanpbg_id' => 1,
-    'datatanahpbg_id' => 1,
-    'dataumumpbg_id' => 1,
-    'dokumenteknisarsi_id' => 1,
-    'dokumenteknisstruk_id' => 1,
-    'dokumenteknismep_id' => 1,
-    'dokumenteknisslfpbg_id' => 1,
-    'surattugaspbg_id' => 1,
-    'suratudanganpbg_id' => 1,
-]);
+    pbgslfbangunan::create([
+        'id' => $i,
+        'user_id' => $userId,
+        'jenispengajuanpbgslfper_id' => $jenisPengajuan,
+        'tanggalpermohonan' => $randomDate,
+        'noregissimbg' => 'PBG-321702-' . $randomDate->format('dmY') . '-' . str_pad($i, 3, '0', STR_PAD_LEFT),
 
-pbgslfbangunan::create([
-    'id' => 2,
-    'user_id' => 47,
-    'jenispengajuanpbgslfper_id' => 1,
-    'tanggalpermohonan' => $randomDate,
-    'noregissimbg' => 'PBG-321702-24102022-02',
-    'datapemilik_id' => 2,
-    'databangunanpbg_id' => 2,
-    'datatanahpbg_id' => 2,
-    'dataumumpbg_id' => 2,
-    'dokumenteknisarsi_id' => 2,
-    'dokumenteknisstruk_id' => 2,
-    'dokumenteknismep_id' => 2,
-    'dokumenteknisslfpbg_id' => 2,
-    'surattugaspbg_id' => 2,
-    'suratudanganpbg_id' => 2,
-]);
+        'datapemilik_id' => $i,
+        'databangunanpbg_id' => $i,
+        'datatanahpbg_id' => $i,
+        'dataumumpbg_id' => $i,
+        'dokumenteknisarsi_id' => $i,
+        'dokumenteknisstruk_id' => $i,
+        'dokumenteknismep_id' => $i,
+        'dokumenteknisslfpbg_id' => $i,
+        'surattugaspbg_id' => $i,
+        'suratudanganpbg_id' => $i,
+    ]);
+}
 
-pbgslfbangunan::create([
-    'id' => 3,
-    'user_id' => 48,
-    'jenispengajuanpbgslfper_id' => 1,
-    'tanggalpermohonan' => $randomDate,
-    'noregissimbg' => 'PBG-321702-24102022-03',
-    'datapemilik_id' => 3,
-    'databangunanpbg_id' => 3,
-    'datatanahpbg_id' => 3,
-    'dataumumpbg_id' => 3,
-    'dokumenteknisarsi_id' => 3,
-    'dokumenteknisstruk_id' => 3,
-    'dokumenteknismep_id' => 3,
-    'dokumenteknisslfpbg_id' => 3,
-    'surattugaspbg_id' => 3,
-    'suratudanganpbg_id' => 3,
-]);
+// =============================================
 
-pbgslfbangunan::create([
-    'id' => 4,
-    'user_id' => 46,
-    'jenispengajuanpbgslfper_id' => 1,
-    'tanggalpermohonan' => $randomDate,
-    'noregissimbg' => 'PBG-321702-24102022-04',
-    'datapemilik_id' => 4,
-    'databangunanpbg_id' => 4,
-    'datatanahpbg_id' => 4,
-    'dataumumpbg_id' => 4,
-    'dokumenteknisarsi_id' => 4,
-    'dokumenteknisstruk_id' => 4,
-    'dokumenteknismep_id' => 4,
-    'dokumenteknisslfpbg_id' => 4,
-    'surattugaspbg_id' => 4,
-    'suratudanganpbg_id' => 4,
-]);
 
-pbgslfbangunan::create([
-    'id' => 5,
-    'user_id' => 47,
-    'jenispengajuanpbgslfper_id' => 1,
-    'tanggalpermohonan' => $randomDate,
-    'noregissimbg' => 'PBG-321702-24102022-05',
-    'datapemilik_id' => 5,
-    'databangunanpbg_id' => 5,
-    'datatanahpbg_id' => 5,
-    'dataumumpbg_id' => 5,
-    'dokumenteknisarsi_id' => 5,
-    'dokumenteknisstruk_id' => 5,
-    'dokumenteknismep_id' => 5,
-    'dokumenteknisslfpbg_id' => 5,
-    'surattugaspbg_id' => 5,
-    'suratudanganpbg_id' => 5,
-]);
+// $randomDate = now(); // atau bisa pakai Carbon::parse('2025-01-01') jika perlu tanggal tetap
+
+// pbgslfbangunan::create([
+//     'id' => 1,
+//     'user_id' => 46,
+//     'jenispengajuanpbgslfper_id' => 1,
+//     'tanggalpermohonan' => $randomDate,
+//     'noregissimbg' => 'PBG-321702-24102022-01',
+//     'datapemilik_id' => 1,
+//     'databangunanpbg_id' => 1,
+//     'datatanahpbg_id' => 1,
+//     'dataumumpbg_id' => 1,
+//     'dokumenteknisarsi_id' => 1,
+//     'dokumenteknisstruk_id' => 1,
+//     'dokumenteknismep_id' => 1,
+//     'dokumenteknisslfpbg_id' => 1,
+//     'surattugaspbg_id' => 1,
+//     'suratudanganpbg_id' => 1,
+// ]);
+
+// pbgslfbangunan::create([
+//     'id' => 2,
+//     'user_id' => 47,
+//     'jenispengajuanpbgslfper_id' => 1,
+//     'tanggalpermohonan' => $randomDate,
+//     'noregissimbg' => 'PBG-321702-24102022-02',
+//     'datapemilik_id' => 2,
+//     'databangunanpbg_id' => 2,
+//     'datatanahpbg_id' => 2,
+//     'dataumumpbg_id' => 2,
+//     'dokumenteknisarsi_id' => 2,
+//     'dokumenteknisstruk_id' => 2,
+//     'dokumenteknismep_id' => 2,
+//     'dokumenteknisslfpbg_id' => 2,
+//     'surattugaspbg_id' => 2,
+//     'suratudanganpbg_id' => 2,
+// ]);
+
+// pbgslfbangunan::create([
+//     'id' => 3,
+//     'user_id' => 48,
+//     'jenispengajuanpbgslfper_id' => 1,
+//     'tanggalpermohonan' => $randomDate,
+//     'noregissimbg' => 'PBG-321702-24102022-03',
+//     'datapemilik_id' => 3,
+//     'databangunanpbg_id' => 3,
+//     'datatanahpbg_id' => 3,
+//     'dataumumpbg_id' => 3,
+//     'dokumenteknisarsi_id' => 3,
+//     'dokumenteknisstruk_id' => 3,
+//     'dokumenteknismep_id' => 3,
+//     'dokumenteknisslfpbg_id' => 3,
+//     'surattugaspbg_id' => 3,
+//     'suratudanganpbg_id' => 3,
+// ]);
+
+// pbgslfbangunan::create([
+//     'id' => 4,
+//     'user_id' => 46,
+//     'jenispengajuanpbgslfper_id' => 1,
+//     'tanggalpermohonan' => $randomDate,
+//     'noregissimbg' => 'PBG-321702-24102022-04',
+//     'datapemilik_id' => 4,
+//     'databangunanpbg_id' => 4,
+//     'datatanahpbg_id' => 4,
+//     'dataumumpbg_id' => 4,
+//     'dokumenteknisarsi_id' => 4,
+//     'dokumenteknisstruk_id' => 4,
+//     'dokumenteknismep_id' => 4,
+//     'dokumenteknisslfpbg_id' => 4,
+//     'surattugaspbg_id' => 4,
+//     'suratudanganpbg_id' => 4,
+// ]);
+
+// pbgslfbangunan::create([
+//     'id' => 5,
+//     'user_id' => 47,
+//     'jenispengajuanpbgslfper_id' => 1,
+//     'tanggalpermohonan' => $randomDate,
+//     'noregissimbg' => 'PBG-321702-24102022-05',
+//     'datapemilik_id' => 5,
+//     'databangunanpbg_id' => 5,
+//     'datatanahpbg_id' => 5,
+//     'dataumumpbg_id' => 5,
+//     'dokumenteknisarsi_id' => 5,
+//     'dokumenteknisstruk_id' => 5,
+//     'dokumenteknismep_id' => 5,
+//     'dokumenteknisslfpbg_id' => 5,
+//     'surattugaspbg_id' => 5,
+//     'suratudanganpbg_id' => 5,
+// ]);
 
 // for ($i = 1; $i <= 10; $i++) {
 //     datapemilik::create([
@@ -1037,6 +1085,11 @@ pengawasatpt::create([
         statusadmin::create([
             'id'  => 6,
             'status' => 'dinas',
+        ]);
+
+        statusadmin::create([
+            'id'  => 7,
+            'status' => 'akunskrd',
         ]);
 
         // statusadmin::create([

@@ -48,6 +48,10 @@ class AuthServiceProvider extends ServiceProvider
             return $user->statusadmin->status === 'pemohonbantek';
         });
 
+        Gate::define('akunskrd', function (User $user) {
+            return $user->statusadmin->status === 'akunskrd';
+        });
+
 
 
     }

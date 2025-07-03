@@ -705,12 +705,81 @@
 
 </li>
 
-            @endcan
+@endcan
 
 
-            @can('superadmin')
-            <li class="nav-header" style="color: white;">MAIN MENU</li>
-            <li class="nav-item">
+{{-- ============================================================================= --}}
+
+@can('akunskrd')
+
+<li class="nav-header" style="color: white;">MAIN MENU</li>
+<li class="nav-item">
+    <a href="#" class="nav-link">
+        <!-- Ganti SVG dengan Bootstrap Icon -->
+        <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+
+        <p style="color: white; margin-left: 8px;">
+            PBG/SLF
+            <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview" style="margin-left: 15px;">
+        <div style="margin-bottom: 10px; margin-top: 10px;">
+            <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+{{--
+<li class="nav-item">
+    <a href="/bepbgslfindex" class="nav-link">
+        <i class="bi bi-card-list nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Permohonan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bepbgslfkonsultasi" class="nav-link">
+        <i class="bi bi-chat-dots nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Konsultasi Teknis</p>
+    </a>
+</li> --}}
+
+<li class="nav-item">
+    <a href="/bepbgslfskrd" class="nav-link">
+        <i class="bi bi-receipt nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">SKRD</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/bepbgslfretribusi" class="nav-link">
+        <i class="bi bi-cash-coin nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">Retribusi</p>
+    </a>
+</li>
+
+</ul>
+
+
+</li>
+@endcan
+
+{{-- ============================================================================= --}}
+
+@can('superadmin')
+<li class="nav-header" style="color: white;">MAIN MENU</li>
+<li class="nav-item">
 
               <a href="#" class="nav-link">
     <!-- Ganti SVG dengan Bootstrap Icon -->
@@ -721,47 +790,85 @@
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
 </a>
+<ul class="nav nav-treeview" style="margin-left: 15px;">
+<div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
 
-                <ul class="nav nav-treeview" style="margin-left: 15px;">
-{{--
     <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Informasi SLF</p>
+        <a href="/bepbgslfindex" class="nav-link">
+            <i class="bi bi-card-list nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Permohonan</p>
         </a>
-    </li> --}}
+    </li>
+
+    <li class="nav-item">
+        <a href="/bepbgslfkonsultasi" class="nav-link">
+            <i class="bi bi-chat-dots nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Konsultasi Teknis</p>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="/bepbgslfskrd" class="nav-link">
+            <i class="bi bi-receipt nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">SKRD</p>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="/bepbgslfretribusi" class="nav-link">
+            <i class="bi bi-cash-coin nav-icon" style="color: white;"></i>
+            <p style="color: white; margin-left: 8px;">Retribusi</p>
+        </a>
+    </li>
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan Data
+    </p>
+</div>
 <li class="nav-item">
-    <a href="/bepbgslfindex" class="nav-link">
-        <i class="bi bi-card-list nav-icon" style="color: white;"></i>
-        <p style="color: white; margin-left: 8px;">Permohonan</p>
+    <a href="/betpatpt" class="nav-link">
+        <i class="bi bi-diagram-3 nav-icon" style="color: white;"></i> <!-- cocok untuk TPA/TPT -->
+        <p style="color: white; margin-left: 8px;">TPA/TPT</p>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="/404" class="nav-link">
-        <i class="bi bi-chat-dots nav-icon" style="color: white;"></i> <!-- cocok untuk Konsultasi Teknis -->
-        <p style="color: white; margin-left: 8px;">Konsultasi Teknis</p>
+    <a href="/betempatkonsultasi" class="nav-link">
+        <i class="bi bi-person-lines-fill nav-icon" style="color: white;"></i> <!-- cocok untuk Tempat Konsultasi -->
+        <p style="color: white; margin-left: 8px;">Tempat Konsultasi</p>
     </a>
 </li>
-
-
-<li class="nav-item">
-    <a href="/404" class="nav-link">
-        <i class="bi bi-receipt nav-icon" style="color: white;"></i> <!-- cocok untuk SKRD -->
-        <p style="color: white; margin-left: 8px;">SKRD</p>
-    </a>
-</li>
-
-<li class="nav-item">
-    <a href="/404" class="nav-link">
-        <i class="bi bi-cash-coin nav-icon" style="color: white;"></i> <!-- cocok untuk retribusi -->
-        <p style="color: white; margin-left: 8px;">Retribusi</p>
-    </a>
-</li>
-
 
 
 </ul>
+
 
             </li>
 
@@ -852,6 +959,7 @@
     </p>
 </a>
 
+
 <ul class="nav nav-treeview" style="margin-left: 15px;">
     {{-- <li class="nav-item">
         <a href="/404" class="nav-link">
@@ -859,6 +967,24 @@
             <p style="color: white; margin-left: 8px;">Informasi</p>
         </a>
     </li> --}}
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
     <li class="nav-item">
         <a href="/bebantuanteknisindex" class="nav-link">
             <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px;"></i>
@@ -871,7 +997,26 @@
             <p style="color: white; margin-left: 8px;">Konsultan</p>
         </a>
     </li>
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan Data
+    </p>
+</div>
 </ul>
+
+
             </li>
 
             {{-- =====================================  --}}

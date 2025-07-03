@@ -512,8 +512,6 @@ Route::get('/bebantekkonsultan', [BantuanteknisController::class, 'bebantekkonsu
 Route::get('/bebantekkonsultannew', [BantuanteknisController::class, 'bebantekkonsultannew'])->middleware('auth')->name('bebantekkonsultannew.create');
 Route::post('/bebantekkonsultannewjasa', [BantuanteknisController::class, 'bebantekkonsultannewjasa'])->middleware('auth')->name('create.bebantekkonsultannewjasa');
 
-// ini bro
-
 Route::get('/bebanteklapcekdokcreate/{id}', [BantuanteknisController::class, 'bebanteklapcekdokcreate'])->middleware('auth')->name('bebanteklapcekdokcreate.create');
 Route::post('/bebanteklapcekdokcreatenew', [BantuanteknisController::class, 'bebanteklapcekdokcreatenew'])->middleware('auth')->name('create.bebanteklapcekdokcreate');
 Route::delete('/bebanteklapcekdokcredelete/{id}', [BantuanteknisController::class, 'bebanteklapcekdokcredelete'])->middleware('auth')->name('delete.bebanteklapcekdokcredelete');
@@ -528,7 +526,6 @@ Route::post('/allakuncreatenew', [akuncontroller::class, 'allakuncreatenew'])->m
 
 // MENU 06 KRK BACKEND
 
-// saat ini
 // Route::get('/portalberita', function ()
 //     // return view('welcome');
 //     return view('portalberita', [
@@ -626,7 +623,7 @@ Route::delete('/dokuploadhibahskcrdelete/{id}', [BantuanhibahbgController::class
 
 Route::put('/valberkashibah3/{id}', [BantuanhibahbgController::class, 'valberkashibah3'])->name('valberkashibah3.update');
 Route::put('/valberkashibah4/{id}', [BantuanhibahbgController::class, 'valberkashibah4'])->name('valberkashibah4.update');
-// saat ini
+
 Route::get('/bestatistikhibah', [BantuanhibahbgController::class, 'bestatistikhibah']);
 
 Route::delete('/dokbebanhibahdelete/{id}', [BantuanhibahbgController::class, 'dokbebanhibahdelete'])->middleware('auth')->name('delete.dokbebanhibahdelete');
@@ -709,8 +706,32 @@ Route::put('/validasipbgslf5/{id}', [PbgslfController::class, 'validasipbgslf5']
 Route::put('/validasipbgslf6/{id}', [PbgslfController::class, 'validasipbgslf6'])->name('validasipbgslf6.update');
 Route::put('/validasipbgslf7/{id}', [PbgslfController::class, 'validasipbgslf7'])->name('validasipbgslf7.update');
 
+// PENGATURAN MENU TPA TPT
+Route::get('/betpatpt', [PbgslfController::class, 'betpatpt'])->middleware('auth')->name('betpatpt');
+Route::delete('/betpatptdelete/{id}', [PbgslfController::class, 'betpatptdelete'])->middleware('auth')->name('betpatptdelete');
+Route::get('/betpatptcreate', [PbgslfController::class, 'betpatptcreate'])->middleware('auth')->name('betpatptcreate');
+Route::post('/betpatptcreatenew', [PbgslfController::class, 'betpatptcreatenew'])->middleware('auth')->name('create.betpatptcreatenew');
+
+// PENGATURAN MENU TEMPAT KONSULTASI
+Route::get('/betempatkonsultasi', [PbgslfController::class, 'betempatkonsultasi'])->middleware('auth')->name('betempatkonsultasi');
+Route::delete('/betempatkonsultasidelete/{id}', [PbgslfController::class, 'betempatkonsultasidelete'])->middleware('auth')->name('betempatkonsultasidelete');
+Route::get('/betempatcreate', [PbgslfController::class, 'betempatcreate'])->middleware('auth')->name('betempatcreate');
+Route::post('/betempatcreatenew', [PbgslfController::class, 'betempatcreatenew'])->middleware('auth')->name('create.betempatcreatenew');
+
+// KONSULTASI TEKNIS
+Route::get('/bepbgslfkonsultasi', [PbgslfController::class, 'bepbgslfkonsultasi'])->middleware('auth')->name('bepbgslfkonsultasi');
+Route::put('/validasipbgslfbukti/{id}', [PbgslfController::class, 'validasipbgslfbukti'])->name('validasipbgslfbukti.update');
 
 
+// SKRD
+Route::get('/bepbgslfskrd', [PbgslfController::class, 'bepbgslfskrd'])->middleware('auth')->name('bepbgslfskrd');
+
+Route::get('/bepbgslfskrdcreate/{id}', [PbgslfController::class, 'bepbgslfskrdcreate'])->middleware('auth')->name('bepbgslfskrdcreate');
+Route::post('/bepbgslfskrdcreatenew/{id}', [PbgslfController::class, 'bepbgslfskrdcreatenew'])->middleware('auth')->name('create.bepbgslfskrdcreatenew');
+
+// RETRIBUSI
+Route::get('/bepbgslfretribusi', [PbgslfController::class, 'bepbgslfretribusi'])->middleware('auth')->name('bepbgslfretribusi');
+// saat ini git
 
 
 
@@ -755,7 +776,6 @@ Route::get('/bepbgberitaacaraslfshow/{id}', [PbgslfController::class, 'bepbgberi
 
 // Route::delete('/bepbgsuratundangandelete/{id}', [PbgslfController::class, 'bepbgsuratundangandelete'])->middleware('auth')->name('bepbgsuratundangandelete');
 
-// SAAT INI BRO
 // TAHAP 1---------------
 // Route::get('/bekrkusahaperbaikan/{id}', [KrkController::class, 'bekrkusahaperbaikan'])->middleware('auth')->name('bekrkusahaperbaikan.perbaikan');
 

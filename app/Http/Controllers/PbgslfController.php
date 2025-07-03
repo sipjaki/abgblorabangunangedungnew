@@ -2252,6 +2252,509 @@ public function validasipbgslf7(Request $request, $id)
         // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
     }
 
+public function betpatpt(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
 
+    $query = pengawasatpt::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namalengkap', 'like', "%{$search}%")
+              ->orWhere('nosk', 'like', "%{$search}%")
+              ->orWhere('status', 'like', "%{$search}%");
+        });
+    }
+
+    $bujk = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.01_pbgslf.04_tpatpt.01_datatpatpt', [
+        'title' => 'Daftar Pengawas TPA/TPT',
+        'data'  => $bujk,
+        'user'  => $user,
+    ]);
+}
+
+
+public function betpatptdelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = pengawasatpt::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/betpatpt')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
+public function betpatptcreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 4)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.01_pbgslf.04_tpatpt.02_tambahdatatpatpt', [
+        'title' => 'Tambahkan Petugas TPA/TPT',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
+
+public function betpatptcreatenew(Request $request)
+{
+    $user = Auth::user();
+
+    $validated = $request->validate([
+        // 'user_id' => 'required|string',
+        'namalengkap' => 'required|string|max:255',
+        'nosk' => 'required|string|max:255',
+        'status' => 'required|string|max:255',
+    ], [
+        // 'user_id.required' => 'Akun wajib dipilih.',
+        'namalengkap.required' => 'Nama Lengkap wajib diisi.',
+        'nosk.required' => 'No SK wajib diisi.',
+        'status.required' => 'Status Petugas wajib diisi.',
+        // kamu bisa tambahkan pesan validasi lain jika perlu
+    ]);
+
+    $data = new pengawasatpt();
+
+    // $data->user_id = $user->id ?? null;
+    $data->namalengkap = $validated['namalengkap'];
+    $data->nosk = $validated['nosk'] ?? null;
+    $data->status = $validated['status'] ?? null;
+
+    $data->save();
+
+    session()->flash('create', 'Data berhasil disimpan.');
+
+    return redirect()->route('betpatpt'); // Pastikan route ini benar
+}
+
+public function betempatkonsultasi(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    $query = tempatkonsultasi::query();
+
+    if ($search) {
+        $query->where('tempat', 'like', "%{$search}%");
+    }
+
+    $bujk = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.01_pbgslf.05_tempat.01_datatempatkonsultasi', [
+        'title' => 'Daftar Tempat Konsultasi',
+        'data'  => $bujk,
+        'user'  => $user,
+    ]);
+}
+
+public function betempatkonsultasidelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = tempatkonsultasi::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/betempatkonsultasi')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
+    public function betempatcreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 4)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.01_pbgslf.05_tempat.02_tambahtempat', [
+        'title' => 'Tambahkan Tempat Konsultasi',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
+
+
+public function betempatcreatenew(Request $request)
+{
+    $user = Auth::user();
+
+    $validated = $request->validate([
+        // 'user_id' => 'required|string',
+        'tempat' => 'required|string',
+        // 'nosk' => 'required|string|max:255',
+        // 'status' => 'required|string|max:255',
+    ], [
+        // 'user_id.required' => 'Akun wajib dipilih.',
+        'tempat.required' => 'Tempat wajib diisi.',
+        // 'nosk.required' => 'No SK wajib diisi.',
+        // 'status.required' => 'Status Petugas wajib diisi.',
+        // kamu bisa tambahkan pesan validasi lain jika perlu
+    ]);
+
+    $data = new tempatkonsultasi();
+
+    // $data->user_id = $user->id ?? null;
+    $data->tempat = $validated['tempat'];
+    // $data->nosk = $validated['nosk'] ?? null;
+    // $data->status = $validated['status'] ?? null;
+
+    $data->save();
+
+    session()->flash('create', 'Data berhasil disimpan.');
+
+    return redirect()->route('betempatkonsultasi'); // Pastikan route ini benar
+}
+
+
+
+    public function bepbgslfkonsultasi(Request $request)
+{
+    $user = Auth::user();
+    $perPage = $request->input('perPage', 20);
+
+    // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
+    $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 1);
+    })->count();
+
+    $jumlahDataIdDua = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 2);
+    })->count();
+
+    $jumlahDataIdTiga = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 3);
+    })->count();
+
+    $jumlahDataIdEmpat = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 4);
+    })->count();
+
+    $jumlahDataIdLima = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 5);
+    })->count();
+
+    // -------------------------------------------------------------------------------
+//     $jumlahsidangbulanan = pbgslfbangunan::selectRaw('MONTH(tanggalpermohonan) as bulan, COUNT(*) as jumlah')
+//     ->groupBy('bulan')
+//     ->orderBy('bulan')
+//     ->pluck('jumlah', 'bulan')
+//     ->toArray();
+
+// // Konversi bulan angka ke nama bulan
+// $bulanNama = [
+//     1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April',
+//     5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Agustus',
+//     9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'Desember',
+// ];
+
+// $jumlahsidangbulanan = array_map(function ($bulan) use ($jumlahsidangbulanan) {
+//     return $jumlahsidangbulanan[$bulan] ?? 0;
+// }, range(1, 12));
+
+$tahunIni = Carbon::now()->year;
+
+
+$data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper']) // pastikan relasi dimuat
+    ->where('validasiberkas5', 'sudah')
+    ->whereYear('updated_at', $tahunIni)
+    ->get(); // ✅ AMBIL OBJEK
+
+$jumlahsidangbulananRaw = pbgslfbangunan::where('validasiberkas5', 'sudah')
+    ->whereYear('updated_at', $tahunIni)
+    ->selectRaw('MONTH(updated_at) as bulan, COUNT(*) as jumlah')
+    ->groupBy('bulan')
+    ->orderBy('bulan')
+    ->pluck('jumlah', 'bulan')
+    ->toArray();
+
+$jumlahsidangbulanan = [];
+for ($i = 1; $i <= 12; $i++) {
+    $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
+}
+// ----------------------------------------------------------------------------
+
+    return view('backend.01_pbgslf.06_konsultasi.01_konsultasi', [
+        'title' => 'Konsultasi Teknis Permohonan PBG/SLF Bangunan Gedung',
+        // 'data' => $dataTanpaIdSatu,
+        'user' => $user,
+
+        'jumlahDataIdSatu' => $jumlahDataIdSatu,
+        'jumlahDataIdDua' => $jumlahDataIdDua,
+        'jumlahDataIdTiga' => $jumlahDataIdTiga,
+        'jumlahDataIdEmpat' => $jumlahDataIdEmpat,
+        'jumlahDataIdLima' => $jumlahDataIdLima,
+
+        'jumlahsidangbulanan' => $jumlahsidangbulanan,
+        'data' => $data,
+
+        // 'datasemua' => $dataTanpaIdSatu,
+    ]);
+}
+
+    public function bepbgslfskrd(Request $request)
+{
+    $user = Auth::user();
+    $perPage = $request->input('perPage', 20);
+
+    // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
+    $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 1);
+    })->count();
+
+    $jumlahDataIdDua = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 2);
+    })->count();
+
+    $jumlahDataIdTiga = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 3);
+    })->count();
+
+    $jumlahDataIdEmpat = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 4);
+    })->count();
+
+    $jumlahDataIdLima = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 5);
+    })->count();
+
+$tahunIni = Carbon::now()->year;
+
+
+$data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper']) // pastikan relasi dimuat
+    ->where('validasiberkas5', 'sudah')
+    ->whereYear('updated_at', $tahunIni)
+  ->paginate($perPage);
+
+    // ->get(); // ✅ AMBIL OBJEK
+
+$jumlahsidangbulananRaw = pbgslfbangunan::where('validasiberkas5', 'sudah')
+    ->whereYear('updated_at', $tahunIni)
+    ->selectRaw('MONTH(updated_at) as bulan, COUNT(*) as jumlah')
+    ->groupBy('bulan')
+    ->orderBy('bulan')
+    ->pluck('jumlah', 'bulan')
+    ->toArray();
+
+$jumlahsidangbulanan = [];
+for ($i = 1; $i <= 12; $i++) {
+    $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
+}
+// ----------------------------------------------------------------------------
+
+    return view('backend.01_pbgslf.07_skrd.01_skrd', [
+        'title' => 'SKRD Permohonan PBG/SLF Bangunan Gedung',
+        // 'data' => $dataTanpaIdSatu,
+        'user' => $user,
+
+        'jumlahDataIdSatu' => $jumlahDataIdSatu,
+        'jumlahDataIdDua' => $jumlahDataIdDua,
+        'jumlahDataIdTiga' => $jumlahDataIdTiga,
+        'jumlahDataIdEmpat' => $jumlahDataIdEmpat,
+        'jumlahDataIdLima' => $jumlahDataIdLima,
+
+        'jumlahsidangbulanan' => $jumlahsidangbulanan,
+        'data' => $data,
+
+        // 'datasemua' => $dataTanpaIdSatu,
+    ]);
+}
+
+
+public function bepbgslfskrdcreate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = pbgslfbangunan::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.01_pbgslf.07_skrd.02_uploadskrd', [
+        'title' => 'Upload Berkas SKRD PBG/SLF ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+
+}
+public function bepbgslfskrdcreatenew(Request $request, $id)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'rupiah' => 'required|integer',
+        'buktipembayaran' => 'nullable|file|mimes:pdf|max:10048',
+        'berkasskrd' => 'nullable|file|mimes:pdf|max:10048',
+    ], [
+        'rupiah.required' => 'Masukan Nilai Rupiah Potensi Retribusi !',
+        'buktipembayaran.mimes' => 'Bukti Pembayaran harus berupa file PDF.',
+        'berkasskrd.mimes' => 'Berkas SKRD harus berupa file PDF.',
+    ]);
+
+    // Cari data lama berdasarkan $id
+    $data = pbgslfbangunan::findOrFail($id);
+
+    // Fungsi simpan file & hapus file lama jika ada file baru
+    $simpanBerkasUpdate = function ($fieldName, $folderPath, $oldFilePath) use ($request) {
+        if ($request->hasFile($fieldName)) {
+            // Hapus file lama jika ada
+            if ($oldFilePath && file_exists(public_path($oldFilePath))) {
+                unlink(public_path($oldFilePath));
+            }
+
+            $file = $request->file($fieldName);
+            $filename = time() . "_{$fieldName}." . $file->getClientOriginalExtension();
+
+            $path = public_path($folderPath);
+            if (!file_exists($path)) {
+                mkdir($path, 0755, true);
+            }
+
+            $file->move($path, $filename);
+            return $folderPath . '/' . $filename;
+        }
+        // Jika tidak upload baru, kembalikan path lama
+        return $oldFilePath;
+    };
+
+    // Update field rupiah
+    $data->rupiah = $validated['rupiah'];
+
+    // Update buktipembayaran & berkasskrd dengan fungsi upload & hapus file lama
+    $data->buktipembayaran = $simpanBerkasUpdate('buktipembayaran', '01_pbgslf/03_skrd/01_berkas', $data->buktipembayaran);
+    $data->berkasskrd = $simpanBerkasUpdate('berkasskrd', '01_pbgslf/03_skrd/02_berkas', $data->berkasskrd);
+
+    // Simpan perubahan ke database
+    $data->save();
+
+    session()->flash('update', 'Data SKRD dan Bukti Pembayaran berhasil diperbarui!');
+    return redirect()->route('bepbgslfskrd');
+}
+
+
+    public function bepbgslfretribusi(Request $request)
+{
+    $user = Auth::user();
+    $perPage = $request->input('perPage', 20);
+
+    // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
+    $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 1);
+    })->count();
+
+    $jumlahDataIdDua = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 2);
+    })->count();
+
+    $jumlahDataIdTiga = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 3);
+    })->count();
+
+    $jumlahDataIdEmpat = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 4);
+    })->count();
+
+    $jumlahDataIdLima = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 5);
+    })->count();
+
+$tahunIni = Carbon::now()->year;
+
+
+$data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper']) // pastikan relasi dimuat
+    ->where('validasiberkas5', 'sudah')
+    ->whereYear('updated_at', $tahunIni)
+      ->paginate($perPage);
+
+    // ->get(); // ✅ AMBIL OBJEK
+
+$jumlahsidangbulananRaw = pbgslfbangunan::where('validasiberkas5', 'sudah')
+    ->whereYear('updated_at', $tahunIni)
+    ->selectRaw('MONTH(updated_at) as bulan, COUNT(*) as jumlah')
+    ->groupBy('bulan')
+    ->orderBy('bulan')
+    ->pluck('jumlah', 'bulan')
+    ->toArray();
+
+$jumlahsidangbulanan = [];
+for ($i = 1; $i <= 12; $i++) {
+    $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
+}
+// ----------------------------------------------------------------------------
+
+    return view('backend.01_pbgslf.08_retribusi.01_retribusi', [
+        'title' => 'Potensi Retribusi PBG/SLF Bangunan Gedung',
+        // 'data' => $dataTanpaIdSatu,
+        'user' => $user,
+
+        'jumlahDataIdSatu' => $jumlahDataIdSatu,
+        'jumlahDataIdDua' => $jumlahDataIdDua,
+        'jumlahDataIdTiga' => $jumlahDataIdTiga,
+        'jumlahDataIdEmpat' => $jumlahDataIdEmpat,
+        'jumlahDataIdLima' => $jumlahDataIdLima,
+
+        'jumlahsidangbulanan' => $jumlahsidangbulanan,
+        'data' => $data,
+
+        // 'datasemua' => $dataTanpaIdSatu,
+    ]);
+}
+
+
+
+public function validasipbgslfbukti(Request $request, $id)
+    {
+        $data = pbgslfbangunan::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas8' => 'required|in:sudah,belum',
+        ]);
+
+        $data->validasiberkas8 = $request->validasiberkas8;
+        $data->save();
+
+     if ($request->validasiberkas8 === 'sudah') {
+        session()->flash('create', '✅ Sudah Bayar Retribusi !');
+    } else {
+        session()->flash('gagal', '❌ Belum Lengkap !');
+    }
+        //    return redirect('/beserahterima');
+
+           return redirect()->back();
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
 
 }
