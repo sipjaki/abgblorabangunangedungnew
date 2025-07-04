@@ -317,8 +317,8 @@ public function createdatapbgslf()
     $jenispengajuan = jenispengajuanpbgslfper::all();
 
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.01_createpbgslf', [
-        'title' => 'Buat Data Baru Permohonan SIM-BG',
-        'title_halaman' => 'Data Induk Permohonan SIM-BG',
+        'title' => 'Buat Data Baru Permohonan SIMBG',
+        'title_halaman' => 'Data Induk Permohonan SIMBG',
         'user' => $user,
         'data' => $bangunan,
         'datapbgslf' => $jenispengajuan

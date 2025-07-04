@@ -272,7 +272,7 @@ th {
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="tanggalpermohonan">
-            <i class="bi bi-calendar3" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan SIM-BG
+            <i class="bi bi-calendar3" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan SIMBG
         </label>
         <input
             type="date"

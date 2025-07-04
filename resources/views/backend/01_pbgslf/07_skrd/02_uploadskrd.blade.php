@@ -406,7 +406,7 @@ th {
 
 <div class="row">
   {{-- Upload Bukti Pembayaran --}}
-<div class="col-md-6">
+{{-- <div class="col-md-6">
   <div class="mb-3">
     <label class="form-label" for="buktipembayaran">
       <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Bukti Pembayaran
@@ -425,7 +425,7 @@ th {
       Belum Upload Berkas, Silahkan Upload Bukti Pembayaran.
     </div>
   </div>
-</div>
+</div> --}}
 
 {{-- Upload Berkas SKRD --}}
 <div class="col-md-6">

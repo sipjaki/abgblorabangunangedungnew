@@ -78,9 +78,9 @@
           <i class="bi bi-file-earmark-text-fill"></i> Potensi Retribusi
         </th>
 
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        {{-- <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
           <i class="bi bi-file-earmark-text-fill"></i> Bukti Pembayaran
-        </th>
+        </th> --}}
 
         <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
           <i class="bi bi-file-earmark-text-fill"></i> Berkas SKRD
@@ -143,7 +143,7 @@
     @endif
 </td>
 
-<td style="white-space: nowrap; padding: 6px; text-align: center; vertical-align: middle;">
+{{-- <td style="white-space: nowrap; padding: 6px; text-align: center; vertical-align: middle;">
     @if($item->buktipembayaran)
         <iframe
             src="{{ asset($item->buktipembayaran) }}"
@@ -161,7 +161,7 @@
         <span style="color: white" class="btn btn-danger">Berkas Belum di Upload</span>
 
         @endif
-</td>
+</td> --}}
 
 <td style="white-space: nowrap; padding: 6px; text-align: center; vertical-align: middle;">
     @if($item->berkasskrd)

@@ -324,8 +324,9 @@ th {
                                   <tr>
         <th style="background-color: #ADD8E6;">No</th>
         <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Admin DPUPR</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Nama Pemohon</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> No Registrasi SIM BG</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> No Registrasi SIMBG</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> Tanggal Permohonan</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> Status Permohonan</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-folder-fill"></i> Berkas</th>
@@ -341,6 +342,7 @@ th {
                                  <td>{{ $loop->iteration }}</td>
             {{-- <td>{{ optional($item->user)->name ?? '-' }}</td> --}}
             <td>{{ $item->user->name ?? '-' }}</td>
+            <td>{{ $item->datapemilik->namapemilik ?? '-' }}</td>
             <td>{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
             <td>{{ $item->noregissimbg ?? '-' }}</td>
             {{-- <td>{{ $item->datapemilik->namapemilik ?? '-' }}</td> --}}

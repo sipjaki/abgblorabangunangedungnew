@@ -222,7 +222,7 @@
 
 <td style="white-space: nowrap; padding: 6px; text-align: center; vertical-align: middle;">
     @if ($item->validasiberkas8 === 'sudah')
-    @if ($item->buktipembayaran)
+    {{-- @if ($item->buktipembayaran)
     <iframe
     src="{{ asset($item->buktipembayaran) }}"
     style="width: 150px; height: 200px; border: 1px solid #ccc; border-radius: 4px;"
@@ -237,7 +237,7 @@
             </a>
         @else
         <span class="btn btn-danger" style="color: white;">Berkas Belum di Upload</span>
-        @endif
+        @endif --}}
 
         @elseif ($item->validasiberkas8 === 'belum')
         <span class="btn btn-warning" style="color: black;">Berkas belum divalidasi</span>
