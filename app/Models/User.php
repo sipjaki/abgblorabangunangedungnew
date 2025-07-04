@@ -92,4 +92,9 @@ class User extends Authenticatable
         return $this->hasMany(pbgslfbangunan::class);
     }
 
+    public function gambarbantuan()
+    {
+        return $this->hasMany(gambarbantuan::class);
+    }
+
 }

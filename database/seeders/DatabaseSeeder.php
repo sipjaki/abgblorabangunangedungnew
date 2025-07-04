@@ -32,11 +32,14 @@ use App\Models\kodelokasibangunangedung;
 use App\Models\databangunangedung;
 use App\Models\datapemilik;
 use App\Models\fasilitatorpbg;
+use App\Models\fungsibangunangambar;
 use App\Models\fungsibangunanpbg;
+use App\Models\gambarbantuan;
 use App\Models\jenispengajuanbantek;
 use App\Models\jenispengajuanpbgslf;
 use App\Models\jenispengajuanpbgslfper;
 use App\Models\jenisperkonsultasi;
+use App\Models\jenispermohonangambar;
 use App\Models\kepemilikanbangunangedung;
 use App\Models\krkhunian;
 use App\Models\krkkeagamaan;
@@ -606,7 +609,29 @@ for ($i = 1; $i <= 548; $i++) {
 
 // =============================================
 
+for ($i = 1; $i <= 25; $i++) {
+    gambarbantuan::create([
+        'kecamatanblora_id' => rand(1, 10),
+        'kelurahandesa_id' => rand(1, 10),
+        'user_id' => 18,
+        'jenispermohonangambar_id' => 1,
+        'fungsibangunangambar_id' => 1,
 
+        'namapemohon' => 'Pemohonan Bantuan Gambar' .$i,
+        'email' => 'sigit.septiadi'.$i.'@example.com',
+        'alamatpemohon' => 'Jl. Contoh Alamat No. '.$i,
+        'nomortelepon' => '08123456789'.$i,
+        'ktp' => '320405123456789'.$i,
+        'lokasibangunan' => 'Jl. Bangunan Contoh No. '.$i,
+        'koordinat' => '-6.92123, 110.71234',
+        'klasifikasibangunan' => 'Sederhana',
+        'luasbangunan' => '100 m2',
+        'tinggibangunan' => '10 meter',
+        'jumlahlantai' => 2,
+        'peruntukanuntuk' => 'Perumahan',
+
+    ]);
+}
 // $randomDate = now(); // atau bisa pakai Carbon::parse('2025-01-01') jika perlu tanggal tetap
 
 // pbgslfbangunan::create([
@@ -784,6 +809,19 @@ for ($i = 1; $i <= 548; $i++) {
 
         // --------------------------
 
+        jenispermohonangambar::create([
+            'id'  => 1,
+            'jenis'  => 'Bangunan Rumah Tinggal Baru',
+                ]);
+
+        // --------------------------
+
+        fungsibangunangambar::create([
+            'id'  => 1,
+            'fungsibangunan'  => 'Fungsi Hunian/Rumah Tinggal',
+                ]);
+
+        // --------------------------
         tempatkonsultasi::create([
             'id'  => 1,
             'tempat'  => 'Dinas PUPR Jalan Nusantara No. 62 Blora',
@@ -900,7 +938,7 @@ pengawasatpt::create([
 
         surattugaspbg::create([
             'id'  => 1,
-            'pbgslfbangunan_id'  => '1',
+            'gambarbantuan_id'  => '1',
             'datapemilik_id'  => '1',
             'fasilitatorpbg_id'  => '1',
             'nomorsurat'  => '23425252',

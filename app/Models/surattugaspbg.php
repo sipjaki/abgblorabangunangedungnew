@@ -28,4 +28,9 @@ class surattugaspbg extends Model
         return $this->belongsTo(fasilitatorpbg::class, 'fasilitatorpbg_id');
     }
 
+    public function gambarbantuan()
+    {
+        return $this->belongsTo(gambarbantuan::class, 'gambarbantuan_id');
+    }
+
 }

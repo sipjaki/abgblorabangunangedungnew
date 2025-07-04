@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('surattugaspbgs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pbgslfbangunan_id');
+            // $table->foreignId('pbgslfbangunan_id');
+            $table->foreignId('gambarbantuan_id');
             $table->foreignId('datapemilik_id');
             $table->foreignId('fasilitatorpbg_id');
             $table->string('nomorsurat')->nullable();

@@ -9,10 +9,12 @@ use App\Http\Controllers\BantuanhibahbgController;
 use App\Http\Controllers\BantuanhibahController;
 use App\Http\Controllers\BantuanteknisController;
 use App\Http\Controllers\DatabaseAbgController;
+use App\Http\Controllers\GambarbantuanController;
 use App\Http\Controllers\KrkController;
 use App\Http\Controllers\PbgslfController;
 use App\Http\Controllers\PendataanBangunanGedungController;
 use App\Http\Controllers\PenilikbangunanController;
+use App\Models\gambarbantuan;
 use App\Models\pbgslfbangunan;
 use Illuminate\Support\Facades\Route;
 
@@ -734,6 +736,52 @@ Route::post('/bepbgslfskrdcreatenew/{id}', [PbgslfController::class, 'bepbgslfsk
 
 // RETRIBUSI
 Route::get('/bepbgslfretribusi', [PbgslfController::class, 'bepbgslfretribusi'])->middleware('auth')->name('bepbgslfretribusi');
+
+// ------------------------------------------------------
+// MENU BANTUAN GAMBAR
+Route::get('/bebantuangambar', [GambarbantuanController::class, 'bebantuangambar'])->name('bebantuangambar.index');
+Route::get('/bebantuangambarshow/{id}', [GambarbantuanController::class, 'bebantuangambarshow'])->middleware('auth')->name('bebantuangambar.show');
+Route::put('/bebantuangambarvalidasi/{id}', [GambarbantuanController::class, 'bebantuangambarvalidasi'])->middleware('auth')->name('bebantuangambarvalidasi');
+
+// SURAT TUGAS
+Route::get('/bepbgsurattugasgambar/{id}', [GambarbantuanController::class, 'bepbgsurattugasgambar'])->middleware('auth')->name('bepbgsurattugasgambar');
+
+
+
+
+// Route::put('/valberkasusaha/{id}', [KrkController::class, 'valberkasusaha1'])->name('valberkasusaha.update');
+// Route::get('/doklapkrkusaha/{id}', [KrkController::class, 'doklapkrkusaha'])->middleware('auth')->name('doklapkrkusaha.show');
+
+// Route::get('/doklapkrkusahacreate/{id}', [KrkController::class, 'doklapkrkusahacreate'])->middleware('auth')->name('doklapkrkusahacreate.create');
+// Route::post('/doklapkrkusahacreatenew', [KrkController::class, 'doklapkrkusahacreatenew'])->middleware('auth')->name('create.doklapkrkusahacreatenew');
+
+// Route::delete('/doklapkrkusahacreatedelete/{id}', [KrkController::class, 'doklapkrkusahacreatedelete'])->middleware('auth')->name('delete.doklapkrkusahacreatedelete');
+
+// VALIDASI PERMOHONAN PROSES
+
+Route::put('/verifikasi1permohonan/{id}', [GambarbantuanController::class, 'verifikasi1permohonan'])->name('verifikasi1permohonan.update');
+// Route::put('/validasiberkas1permohonan2/{id}', [BantuanteknisController::class, 'valsuratpermohonan2'])->name('validasiberkas2.update');
+// Route::put('/validasiberkas1permohonan3/{id}', [BantuanteknisController::class, 'valsuratpermohonan3'])->name('validasiberkas3.update');
+// Route::put('/validasiberkas1permohonan4/{id}', [BantuanteknisController::class, 'valsuratpermohonan4'])->name('validasiberkas4.update');
+
+
+// Route::put('/valberkasusaha2/{id}', [KrkController::class, 'valberkasusaha2'])->name('valberkasusaha2.update');
+// Route::put('/valberkasusaha3/{id}', [KrkController::class, 'valberkasusaha3'])->name('valberkasusaha3.update');
+// Route::put('/valberkasusaha4/{id}', [KrkController::class, 'valberkasusaha4'])->name('valberkasusaha4.update');
+
+// Route::get('/permohonankrkusahafinal/{id}', [KrkController::class, 'permohonankrkusahafinal'])->name('permohonan.permohonankrkusahafinal');
+
+// Route::get('/krkusahanoterbit/{id}', [KrkController::class, 'krkusahanoterbit'])->middleware('auth')->name('krkusahanoterbit.create');
+// Route::post('/krkusahanoterbitnew/{id}', [KrkController::class, 'krkusahanoterbitnew'])->middleware('auth')->name('create.krkusahanoterbitnew');
+
+
+Route::get('/bebantuangambarperbaikan/{id}', [GambarbantuanController::class, 'bebantuangambarperbaikan'])->middleware('auth')->name('bebantuangambarperbaikan.perbaikan');
+Route::post('/bebantuangambarperbaikannew/{id}', [GambarbantuanController::class, 'bebantuangambarperbaikannew'])->middleware('auth')->name('bebantuangambarperbaikannew');
+
+// Route::delete('/dokbekrkusahadelete/{id}', [KrkController::class, 'dokbekrkusahadelete'])->middleware('auth')->name('delete.dokbekrkusahadelete');
+
+
+
 // saat ini git
 
 
