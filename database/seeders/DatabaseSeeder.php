@@ -582,7 +582,7 @@ User::create([
 // =============================================
 
 
-for ($i = 1; $i <= 548; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     $randomDate = now()->subDays(rand(0, 365));
     $userId = [46, 47][array_rand([46, 47])];
     $jenisPengajuan = rand(1, 6); // Acak dari 1 sampai 6

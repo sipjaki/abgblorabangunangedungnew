@@ -196,6 +196,7 @@ th {
                         <!--begin::Quick Example-->
                   <form action="{{ route('createdatapbgslf.create') }}" method="POST" enctype="multipart/form-data">
           @csrf
+
 <input type="hidden" name="datapemilik_id" value="{{ $data->datapemilik_id }}">
 <input type="hidden" name="databangunanpbg_id" value="{{ $data->databangunanpbg_id }}">
 <input type="hidden" name="datatanahpbg_id" value="{{ $data->datatanahpbg_id }}">
@@ -205,7 +206,9 @@ th {
 <input type="hidden" name="dokumenteknismep_id" value="{{ $data->dokumenteknismep_id }}">
 <input type="hidden" name="dokumenteknisslfpbg_id" value="{{ $data->dokumenteknisslfpbg_id }}">
 <input type="hidden" name="surattugaspbg_id" value="{{ $data->surattugaspbg_id }}">
-<input type="hidden" name="tpatpt_id" value="{{ $data->tpatpt_id }}">
+{{-- <input type="hidden" name="tpatpt_id" value="{{ $data->tpatpt_id }}">
+<input type="hidden" name="suratudanganpbg_id" value="{{ $data->suratudanganpbg_id }}">
+<input type="hidden" name="suratpemberitahuanpbg_id" value="{{ $data->suratpemberitahuanpbg_id }}"> --}}
 
 
                             <!-- begin::Body -->

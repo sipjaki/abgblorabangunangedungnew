@@ -291,13 +291,37 @@ public function createdatapbgslf()
 {
     // Ambil user login
     $user = Auth::user();
-    $datapbgslf = jenispengajuanpbgslfper::all();
-    // Kirim data ke view tanpa ambil dari database bantuanhibahbg
+
+    // Step 1: Buat record baru untuk mendapatkan ID-nya
+    $bangunan = pbgslfbangunan::create([
+        'user_id' => $user->id, // kalau ada
+    ]);
+
+    // Step 2: Update semua foreign key dengan id itu sendiri
+    $bangunan->update([
+        'datapemilik_id' => $bangunan->id,
+        'databangunanpbg_id' => $bangunan->id,
+        'datatanahpbg_id' => $bangunan->id,
+        'dataumumpbg_id' => $bangunan->id,
+        'dokumenteknisarsi_id' => $bangunan->id,
+        'dokumenteknisstruk_id' => $bangunan->id,
+        'dokumenteknismep_id' => $bangunan->id,
+        'dokumenteknisslfpbg_id' => $bangunan->id,
+        'surattugaspbg_id' => $bangunan->id,
+        // 'tpatpt_id' => $bangunan->id,
+        // 'suratudanganpbg_id' => $bangunan->id,
+        // 'suratpemberitahuanpbg_id' => $bangunan->id,
+    ]);
+
+    // Ambil pilihan jenis pengajuan untuk dropdown
+    $jenispengajuan = jenispengajuanpbgslfper::all();
+
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.01_createpbgslf', [
         'title' => 'Buat Data Baru Permohonan SIM-BG',
         'title_halaman' => 'Data Induk Permohonan SIM-BG',
         'user' => $user,
-        'datapbgslf' => $datapbgslf
+        'data' => $bangunan,
+        'datapbgslf' => $jenispengajuan
     ]);
 }
 
