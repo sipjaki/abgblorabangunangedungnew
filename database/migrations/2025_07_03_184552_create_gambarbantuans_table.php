@@ -29,8 +29,11 @@ return new class extends Migration
             $table->string('klasifikasibangunan')->nullable();
             $table->string('luasbangunan')->nullable();
             $table->string('tinggibangunan')->nullable();
+            $table->string('tanggalpermohonan')->nullable();
             $table->string('jumlahlantai')->nullable();
             $table->string('peruntukanuntuk')->nullable();
+
+            $table->string('dokumengambar')->nullable();
 
             $table->string('ktp')->nullable(); // KTP
             $table->string('npwp')->nullable(); //SURAT PENGAJUAN

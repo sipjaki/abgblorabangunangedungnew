@@ -746,7 +746,14 @@ Route::put('/bebantuangambarvalidasi/{id}', [GambarbantuanController::class, 'be
 // SURAT TUGAS
 Route::get('/bepbgsurattugasgambar/{id}', [GambarbantuanController::class, 'bepbgsurattugasgambar'])->middleware('auth')->name('bepbgsurattugasgambar');
 
+Route::get('/bebantuangambarlap/{id}', [GambarbantuanController::class, 'bebantuangambarlap'])->middleware('auth')->name('bebantuangambarlap.show');
 
+Route::get('/bebantuangambarlapcreate/{id}', [GambarbantuanController::class, 'bebantuangambarlapcreate'])->middleware('auth')->name('bebantuangambarlapcreate');
+Route::post('/bebantuangambarlapcreatenew', [GambarbantuanController::class, 'bebantuangambarlapcreatenew'])->middleware('auth')->name('bebantuangambarlapcreatenew');
+
+
+Route::delete('/bebantuangambarlapdelete/{id}', [GambarbantuanController::class, 'bebantuangambarlapdelete'])->middleware('auth')->name('delete.bebantuangambarlapdelete');
+Route::delete('/bebantuangambardelete/{id}', [GambarbantuanController::class, 'bebantuangambardelete'])->middleware('auth')->name('bebantuangambardelete');
 
 
 // Route::put('/valberkasusaha/{id}', [KrkController::class, 'valberkasusaha1'])->name('valberkasusaha.update');
@@ -760,9 +767,15 @@ Route::get('/bepbgsurattugasgambar/{id}', [GambarbantuanController::class, 'bepb
 // VALIDASI PERMOHONAN PROSES
 
 Route::put('/verifikasi1permohonan/{id}', [GambarbantuanController::class, 'verifikasi1permohonan'])->name('verifikasi1permohonan.update');
-// Route::put('/validasiberkas1permohonan2/{id}', [BantuanteknisController::class, 'valsuratpermohonan2'])->name('validasiberkas2.update');
+Route::put('/verifikasi1permohonan2/{id}', [GambarbantuanController::class, 'verifikasi1permohonan2'])->name('verifikasi1permohonan2.update');
+Route::put('/verifikasi1permohonan3/{id}', [GambarbantuanController::class, 'verifikasi1permohonan3'])->name('verifikasi1permohonan3.update');
+Route::put('/verifikasi1permohonan4/{id}', [GambarbantuanController::class, 'verifikasi1permohonan4'])->name('verifikasi1permohonan4.update');
 // Route::put('/validasiberkas1permohonan3/{id}', [BantuanteknisController::class, 'valsuratpermohonan3'])->name('validasiberkas3.update');
 // Route::put('/validasiberkas1permohonan4/{id}', [BantuanteknisController::class, 'valsuratpermohonan4'])->name('validasiberkas4.update');
+
+
+Route::get('/bebantuangambarupload/{id}', [GambarbantuanController::class, 'bebantuangambarupload'])->middleware('auth')->name('bebantuangambarupload');
+Route::post('/bebantuangambaruploadnew/{id}', [GambarbantuanController::class, 'bebantuangambaruploadnew'])->middleware('auth')->name('upload.bebantuangambaruploadnew');
 
 
 // Route::put('/valberkasusaha2/{id}', [KrkController::class, 'valberkasusaha2'])->name('valberkasusaha2.update');

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\bantuanteknis;
+use App\Models\bglapangan;
 use App\Models\bujkkonsultan;
 use App\Models\ceklapanganbantek;
+use App\Models\gambarbantuan;
 use App\Models\jenispengajuanbantek;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
@@ -6194,6 +6196,9 @@ public function bebanteklapcekdokcredelete($id)
 
         return redirect()->back()->with('error', 'Item not found');
     }
+
+
+
 
 
 }

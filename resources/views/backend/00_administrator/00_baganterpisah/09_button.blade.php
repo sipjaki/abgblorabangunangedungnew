@@ -223,7 +223,7 @@
     background: white;
     animation: none; /* supaya animasi background berhenti saat hover */
 }
-
+/*
 .button-baru {
     border: 1px solid #c8dfff;
     padding: 8px 20px;
@@ -245,7 +245,8 @@
 .button-baru:hover {
     background: white;
     color: black;
-}
+} */
+
 
 .button-simpan {
     border: 1px solid #c8dfff;
@@ -269,6 +270,63 @@
     background: white;
     color: black;
 }
+
+.button-baru {
+    background: linear-gradient(145deg, #e6f1ff, #d4e6ff);
+    color: #003366;
+    border: 1px solid #bfdcff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: max-content;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-baru:hover {
+    background: #ffffff !important;     /* Latar belakang putih */
+    color: #000000 !important;          /* Teks jadi hitam */
+    border: 1px solid #0d6efd !important; /* Border biru tua */
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+    transform: translateY(-1px);
+}
+
+.button-newvalidasi {
+    background: linear-gradient(145deg, #dacccc); /* Abu-abu gradasi */
+    color: #333333;                                         /* Teks abu gelap */
+    border: 1px solid #cccccc;                              /* Border abu */
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: max-content;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-newvalidasi:hover {
+    background: #ffffff !important;     /* Hover: putih */
+    color: #000000 !important;          /* Hover: teks hitam */
+    border: 1px solid #999999 !important;/* Hover: border abu-abu */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+
+
 
 .button-hitam {
     border: 1px solid #cacaca;

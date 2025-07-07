@@ -380,22 +380,22 @@ th {
   <tr>
     <td style="padding: 2px 8px 2px 0;">Nama</td>
     <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0; text-transform:uppercase;" >{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
+    <td style="padding: 2px 0; text-transform:uppercase;" >{{ $surat->gambarbantuan->namapemohon ?? '-' }}</td>
   </tr>
   <tr>
     <td style="padding: 2px 8px 2px 0;">Alamat</td>
     <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0;">{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
+    <td style="padding: 2px 0;">{{ $surat->gambarbantuan->alamatpemohon ?? '-' }}</td>
   </tr>
   <tr>
     <td style="padding: 2px 8px 2px 0;">NIK</td>
     <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0;">{{ $surat->datapemilik->noidentitas ?? '-' }}</td>
+    <td style="padding: 2px 0;">{{ $surat->gambarbantuan->nikktp ?? '-' }}</td>
   </tr>
   <tr>
     <td style="padding: 2px 8px 2px 0;">Telp</td>
     <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0;">{{ $surat->datapemilik->nomortelepon ?? '-' }}</td>
+    <td style="padding: 2px 0;">{{ $surat->gambarbantuan->nomortelepon ?? '-' }}</td>
   </tr>
 </table>
 

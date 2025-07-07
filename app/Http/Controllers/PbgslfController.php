@@ -16,6 +16,7 @@ use App\Models\dokumenteknisslfpbg;
 use App\Models\dokumenteknisstruk;
 use App\Models\fasilitatorpbg;
 use App\Models\fungsibangunanpbg;
+use App\Models\gambarbantuan;
 use App\Models\jenispengajuanpbgslfper;
 use App\Models\jenisperkonsultasi;
 use App\Models\kecamatanblora;
@@ -1641,7 +1642,7 @@ public function bepbgsurattugasshow(Request $request, $id)
     // Ambil user login
     $user = Auth::user();
     // Cari data pbg berdasarkan ID
-    $data = pbgslfbangunan::findOrFail($id);
+    $data = gambarbantuan::findOrFail($id);
     $surat = surattugaspbg::findOrFail($id);
     // $surat = suratpemberitahuanpbg::findOrFail($id);
     // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->first();
@@ -1660,8 +1661,8 @@ public function bepbgsurattugasshow(Request $request, $id)
 
     // Kirim data ke view
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.10_surattugas.02_showsurattugas', [
-        'title' => 'Surat Tugas Fasilitator',
-        'title_halaman' => 'Surat Tugas Fasilitator',
+        'title' => 'Surat Tugas Fasilitator Bantuan Gambar',
+        'title_halaman' => 'Surat Tugas Fasilitator Bantuan Gambar',
         'user' => $user,
         'data' => $data,
         'subdatasuratpemberitahuan' => $surat,
@@ -1682,7 +1683,7 @@ public function bepbgsurattugasshow(Request $request, $id)
 public function bepbgsurattugascreate($id)
 {
     // Ambil data bantuan teknis berdasarkan ID
-    $databantuanteknis = pbgslfbangunan::find($id);
+    $databantuanteknis = gambarbantuan::find($id);
     $fasilitators = fasilitatorpbg::all();
 
     if (!$databantuanteknis) {
@@ -1691,7 +1692,7 @@ public function bepbgsurattugascreate($id)
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.10_surattugas.03_tambahsuratfasilitator', [
-        'title' => 'Buat Data Surat Tugas Fasilitator',
+        'title' => 'Buat Data Surat Tugas Fasilitator Bantuan Gambar',
         'data' => $databantuanteknis,
         'fasilitators' => $fasilitators,
         'user' => Auth::user()
@@ -1701,40 +1702,45 @@ public function bepbgsurattugascreate($id)
 public function bepbgsurattugasnew(Request $request)
 {
     $validated = $request->validate([
-        'pbgslfbangunan_id' => 'required|string',
-        'datapemilik_id' => 'required|string',
+        'gambarbantuan_id' => 'required|string',
+        // 'pbgslfbangunan_id' => 'required|string',
+        // 'datapemilik_id' => 'required|string',
         'fasilitatorpbg_id' => 'required|string',
         'nomorsurat' => 'required|string|max:255',
         'nomorkontrak' => 'required|string|max:255',
         'tanggaltugas' => 'required|date',
     ], [
+        'gambarbantuan_id.required' => 'ID Pemohon wajib diisi.',
         'pbgslfbangunan_id.required' => 'ID Bangunan wajib diisi.',
         'pbgslfbangunan_id.exists' => 'ID Bangunan tidak ditemukan.',
 
-        'datapemilik_id.required' => 'ID Pemilik wajib diisi.',
-        'datapemilik_id.exists' => 'ID Pemilik tidak ditemukan.',
+        'nomorkontrak.required' => 'Nomor Kontrak wajib diisi.',
+        'nomorkontrak.exists' => 'ID Pemilik tidak ditemukan.',
 
         'fasilitatorpbg_id.required' => 'Fasilitator wajib dipilih.',
         'fasilitatorpbg_id.exists' => 'Fasilitator tidak ditemukan.',
 
+        'nomorsurat.required' => 'Nomor Surat tidak boleh kosong.',
         'nomorsurat.max' => 'Nomor Surat tidak boleh lebih dari 255 karakter.',
         'nomorkontrak.max' => 'Nomor Kontrak tidak boleh lebih dari 255 karakter.',
 
+        // 'tanggaltugas.required' => 'Tanggal Tugas wajib diisi.',
         'tanggaltugas.required' => 'Tanggal Tugas wajib diisi.',
         'tanggaltugas.date' => 'Tanggal Tugas harus berupa format tanggal yang valid.',
     ]);
 
     surattugaspbg::create([
-        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
-        'datapemilik_id' => $validated['datapemilik_id'],
+        'gambarbantuan_id' => $validated['gambarbantuan_id'],
+        // 'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
+        // 'datapemilik_id' => $validated['datapemilik_id'],
         'fasilitatorpbg_id' => $validated['fasilitatorpbg_id'],
         'nomorsurat' => $validated['nomorsurat'] ?? null,
         'nomorkontrak' => $validated['nomorkontrak'] ?? null,
         'tanggaltugas' => $validated['tanggaltugas'],
     ]);
 
-    session()->flash('create', 'Surat Tugas Fasilitator berhasil disimpan.');
-    return redirect()->route('bepbgsurattugas', ['id' => $validated['pbgslfbangunan_id']]);
+    session()->flash('create', 'Surat Tugas Fasilitator bantuan gambar berhasil diterbitkan.');
+    return redirect()->route('bepbgsurattugasgambar', ['id' => $validated['gambarbantuan_id']]);
 }
 
 
@@ -1746,10 +1752,10 @@ public function bepbgsurattugasnewdelete($id)
         return redirect()->back()->with('error', 'Item not found');
     }
 
-    $pbgslfbangunan_id = $entry->pbgslfbangunan_id;
+    $gambarbantuan_id = $entry->gambarbantuan_id;
     $entry->delete();
 
-    return redirect()->route('bepbgsurattugas', ['id' => $pbgslfbangunan_id])
+    return redirect()->route('bepbgsurattugasgambar', ['id' => $gambarbantuan_id])
                      ->with('delete', 'Data Berhasil Di Hapus !');
 }
 

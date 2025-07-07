@@ -187,6 +187,17 @@ th {
                      </div>
                  </div>
 <br>
+
+<div class="container" style="margin-bottom: 20px;">
+
+    <a href="/bebantuangambar">
+        <button class="button-baru">
+            Berkas Permohonan
+        </button>
+    </a>
+
+</div>
+
                  <hr>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
@@ -199,45 +210,44 @@ th {
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
-           @include('backend.01_pbgslf.00_fiturtambahannav')
-
+           {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
 
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Surat Tugas Bantuan Gambar</h5>
     </div>
 </div>
 
-@include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
+{{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus') --}}
 
        <!-- Left Column (6/12) -->
 <div class="row g-4">
+@php
+    $infoItems = [
+        [
+            'icon' => 'bi-person-vcard-fill', // lebih cocok untuk NIK/KTP
+            'title' => 'Nomor Induk Kependudukan',
+            'value' => $data->nikktp ?? '-',
+        ],
+        [
+            'icon' => 'bi-calendar-event-fill', // ikon kalender yang lebih detail
+            'title' => 'Tanggal Permohonan',
+            'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
+        ],
+        [
+            'icon' => 'bi-telephone-fill', // ikon telepon langsung
+            'title' => 'Nomor Telepon',
+            'value' => $data->nomortelepon ?? '-',
+        ],
+        [
+            'icon' => 'bi-house-gear-fill', // ikon rumah dengan pengaturan (klasifikasi bangunan)
+            'title' => 'Klasifikasi Bangunan',
+            'value' => $user->klasifikasibangunan ?? '-',
+        ],
+    ];
+@endphp
 
-    @php
-        $infoItems = [
-            [
-                'icon' => 'bi-file-earmark-text-fill',
-                'title' => 'Nomor Registrasi SIM BG',
-                'value' => $data->noregissimbg ?? '-',
-            ],
-            [
-                'icon' => 'bi-calendar-date-fill',
-                'title' => 'Tanggal Permohonan',
-                'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
-            ],
-            [
-                'icon' => 'bi-ui-checks-grid',
-                'title' => 'Jenis Permohonan',
-                'value' => $data->jenispengajuanpbgslfper->jenispengajuan ?? '-',
-            ],
-            [
-                'icon' => 'bi-person-fill-check',
-                'title' => 'Pengisi Form',
-                'value' => $user->name ?? '-',
-            ],
-        ];
-    @endphp
 
     @foreach ($infoItems as $item)
         <div class="col-md-6">
@@ -286,7 +296,7 @@ th {
 </div>
 <br><hr>
 
-@include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas')
+{{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas') --}}
 
 </div>
 <div class="row g-4 mt-4">

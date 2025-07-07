@@ -78,6 +78,7 @@ th {
 
 @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
 
+
            {{-- <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div> --}}
 
          </div>
@@ -199,45 +200,46 @@ th {
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
-           @include('backend.01_pbgslf.00_fiturtambahannav')
+           {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
 
 
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan Bantuan Gambar Bangunan Gedung</h5>
     </div>
 </div>
 
-@include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
+{{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus') --}}
 
        <!-- Left Column (6/12) -->
 <div class="row g-4">
+@php
+    $infoItems = [
+        [
+            'icon' => 'bi-person-vcard-fill', // lebih cocok untuk NIK/KTP
+            'title' => 'Nomor Induk Kependudukan',
+            'value' => $data->nikktp ?? '-',
+        ],
+        [
+            'icon' => 'bi-calendar-event-fill', // ikon kalender yang lebih detail
+            'title' => 'Tanggal Permohonan',
+            'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
+        ],
+        [
+            'icon' => 'bi-telephone-fill', // ikon telepon langsung
+            'title' => 'Nomor Telepon',
+            'value' => $data->nomortelepon ?? '-',
+        ],
+        [
+            'icon' => 'bi-house-gear-fill', // ikon rumah dengan pengaturan (klasifikasi bangunan)
+            'title' => 'Klasifikasi Bangunan',
+            'value' => $user->klasifikasibangunan ?? '-',
+        ],
+    ];
+@endphp
 
-    @php
-        $infoItems = [
-            [
-                'icon' => 'bi-file-earmark-text-fill',
-                'title' => 'Nomor Registrasi SIM BG',
-                'value' => $data->noregissimbg ?? '-',
-            ],
-            [
-                'icon' => 'bi-calendar-date-fill',
-                'title' => 'Tanggal Permohonan',
-                'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
-            ],
-            [
-                'icon' => 'bi-ui-checks-grid',
-                'title' => 'Jenis Permohonan',
-                'value' => $data->jenispengajuanpbgslfper->jenispengajuan ?? '-',
-            ],
-            [
-                'icon' => 'bi-person-fill-check',
-                'title' => 'Pengisi Form',
-                'value' => $user->name ?? '-',
-            ],
-        ];
-    @endphp
+
 
     @foreach ($infoItems as $item)
         <div class="col-md-6">
@@ -286,7 +288,7 @@ th {
 </div>
 <br><hr>
 
-@include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas')
+{{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas') --}}
 
 </div>
 
@@ -383,10 +385,11 @@ th {
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
+
 <form id="formPemilik" action="{{ route('bepbgsurattugasnew') }}" method="POST">
     @csrf
-<input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
-<input type="hidden" name="datapemilik_id" value="{{ $data->id ?? '' }}">
+<input type="hidden" name="gambarbantuan_id" value="{{ $data->id }}">
+{{-- <input type="hidden" name="datapemilik_id" value="{{ $data->id ?? '' }}"> --}}
 
 <div class="row g-4 mt-2">
     {{-- Pilih Fasilitator --}}

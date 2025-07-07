@@ -44,4 +44,9 @@ class gambarbantuan extends Model
         return $this->hasMany(surattugaspbg::class);
     }
 
+    public function bglapangan()
+    {
+        return $this->hasMany(bglapangan::class);
+    }
+
 }

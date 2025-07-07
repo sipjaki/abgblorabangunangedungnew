@@ -621,7 +621,7 @@ for ($i = 1; $i <= 25; $i++) {
         'email' => 'sigit.septiadi'.$i.'@example.com',
         'alamatpemohon' => 'Jl. Contoh Alamat No. '.$i,
         'nomortelepon' => '08123456789'.$i,
-        'ktp' => '320405123456789'.$i,
+        'nikktp' => '320405123456789'.$i,
         'lokasibangunan' => 'Jl. Bangunan Contoh No. '.$i,
         'koordinat' => '-6.92123, 110.71234',
         'klasifikasibangunan' => 'Sederhana',
@@ -939,7 +939,7 @@ pengawasatpt::create([
         surattugaspbg::create([
             'id'  => 1,
             'gambarbantuan_id'  => '1',
-            'datapemilik_id'  => '1',
+            // 'datapemilik_id'  => '1',
             'fasilitatorpbg_id'  => '1',
             'nomorsurat'  => '23425252',
             'nomorkontrak'  => '900/476.A/2025',

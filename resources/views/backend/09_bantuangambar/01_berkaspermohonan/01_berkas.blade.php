@@ -272,20 +272,20 @@ th {
         <th style="background-color: #ADD8E6;">No</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Nama Pemohon</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Email</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Alamat </th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> No Telepon</th>
+        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Alamat </th> --}}
+        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> No Telepon</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Username Pemohon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Nama Akun Pemohon</th>
+        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Nama Akun Pemohon</th> --}}
         <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Kecamatan</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Kelurahan/Desa</th>
 
             <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Fasilitator </th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Asistensi</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Asistensi</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Upload Berkas Bantek</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-journal-check"></i> Terbitkan Surat</th>
+            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Lapangan</th>
+            {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Asistensi</th> --}}
+            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Upload Berkas Bantuan Gambar</th>
+            {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-journal-check"></i> Terbitkan Surat</th> --}}
             @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
             @endcan
@@ -299,20 +299,17 @@ th {
                                  <td>{{ $loop->iteration }}</td>
             <td>{{ $item->namapemohon ?? '-' }}</td>
             <td>{{ $item->user->name ?? '-' }}</td>
-            <td>{{ $item->email ?? '-' }}</td>
-            <td>{{ $item->alamatpemohon ?? '-' }}</td>
-            <td>{{ $item->nomortelepon ?? '-' }}</td>
-            <td>{{ $item->user->name ?? '-' }}</td>
-            <td>{{ optional($item->kecamatanblora)->kecamatanblora ?? '-' }}</td>
-            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td>
+            {{-- <td>{{ $item->alamatpemohon ?? '-' }}</td> --}}
+            {{-- <td>{{ $item->alamatpemohon ?? '-' }}</td> --}}
+            {{-- <td>{{ $item->nomortelepon ?? '-' }}</td>
+            <td>{{ $item->user->name ?? '-' }}</td> --}}
+            <td style="text-align: left;">{{ optional($item->kecamatanblora)->kecamatanblora ?? '-' }}</td>
+            <td style="text-align: left; text-transform:uppercase; ">{{ optional($item->kelurahandesa)->desa ?? '-' }}</td>
 
 
             <td style="text-align: center;">
                 <a href="{{ route('bebantuangambar.show', $item->id) }}"
-                    class="button-kembali"
-                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+                    class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Permohonan
                 </a>
             </td>
@@ -334,7 +331,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-kembali" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary" style="color: black">
+        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary" style="color: black">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -410,7 +407,7 @@ th {
 <a href="/bepbgsurattugasgambar/{{ $item->id }}" class="button-baru">
     <i class="bi bi-file-earmark-text"></i> Surat Tugas
 </a>
->
+
         @if($item->verifikasi2 == 'sudah')
             <button
                 class="button-create"
@@ -425,8 +422,8 @@ th {
                 <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
             </button>
         @else
-            <button class="button-kembali" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
-                <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Cek Perencanaan
+            <button class="button-newvalidasi" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+                <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Status Penugasan
             </button>
         @endif
     </div>
@@ -435,7 +432,7 @@ th {
 <!-- Modal Konfirmasi verifikasi2 -->
 <div id="confirmModal2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah sudah cek berkas perencanaan ?</p>
+        <p style="font-size: 16px; font-weight: 600;">Apakah Surat Tugas Sudah Selesai ?</p>
 
         <form id="validasiForm2" method="POST">
             @csrf
@@ -497,17 +494,14 @@ th {
 
 
   <td style="text-align: center;">
-                <a href="{{ route('bebantuanasistensilap.show', $item->id) }}"
-                    class="button-kembali"
-                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+    <div style="display: flex; justify-content: center;">
+
+    <a href="{{ route('bebantuangambarlap.show', $item->id) }}"
+                    class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
                 </a>
-            </td>
 
-<td style="text-align: center;">
-     <div style="display: flex; justify-content: center;">
+                     <div style="display: flex; justify-content: center;">
        @if($item->verifikasi3 == 'sudah')
     <button
         class="button-create"
@@ -522,12 +516,19 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
         </button>
         @else
-        <button class="button-kembali" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
-            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Status Asistensi
+        <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Status Lapangan
         </button>
         @endif
     </div>
-</td>
+    </div>
+            </td>
+
+
+{{--
+<td style="text-align: center;">
+
+</td> --}}
 <!-- Modal Konfirmasi verifikasi3 -->
 <div id="confirmModal3" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
@@ -597,7 +598,10 @@ th {
 
 <td style="text-align: center;">
       <div style="display: flex; justify-content: center;">
-
+     <a href="{{ route('bebantuangambarupload', $item->id) }}"
+                    class="button-baru">
+                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Upload Berkas
+                </a>
     @if($item->verifikasi4 == 'sudah')
         <button
             class="button-create"
@@ -613,7 +617,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
         </button>
     @else
-        <button class="button-kembali" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Terbitkan !
         </button>
     @endif
@@ -623,7 +627,7 @@ th {
 <!-- Modal Konfirmasi verifikasiberkas4 -->
 <div id="confirmModal4" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Terbitkan berita acara ?</p>
+        <p style="font-size: 16px; font-weight: 600;">Terbitkan Gambar ?</p>
 
         <form id="validasiForm4" method="POST">
             @csrf
@@ -683,15 +687,9 @@ th {
 
 
 
-  <td style="text-align: center;">
-                <a href="{{ route('bebantuanteknislapangan.uploadberkas', $item->id) }}"
-                    class="button-kembali"
-                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Upload Berkas
-                </a>
-            </td>
+  {{-- <td style="text-align: center;">
+
+            </td> --}}
 
 
 @can('superadmin')
@@ -753,7 +751,7 @@ th {
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bebantuanteknisdelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/bebantuangambardelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

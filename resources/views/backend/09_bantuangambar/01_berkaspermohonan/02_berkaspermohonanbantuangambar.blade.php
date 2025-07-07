@@ -260,21 +260,21 @@ th {
         },
         {
             id: 3,
-            name: 'Cek Lapangan',
+            name: 'Surat Tugas',
             status: 'pending',
             time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
             message: 'Menunggu Penjadwalan '
         },
         {
             id: 4,
-            name: 'Pengolahan Data',
+            name: 'Cek Lapangan',
             status: 'pending',
             time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
-            message: 'Verifikasi Data Lapangan'
+            message: 'Verifikasi Cek Lapangan'
         },
         {
             id: 5,
-            name: 'Surat Terbit',
+            name: 'Gambar Terbit',
             status: 'pending',
             time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
             message: 'Menunggu Terbit'
@@ -299,16 +299,16 @@ th {
         // Step 3: Cek Lapangan berdasarkan validasiberkas2
         if ('<?php echo isset($data->verifikasi2) ? $data->verifikasi2 : "" ?>' === 'sudah') {
             checkpointData[2].status = 'completed';
-            checkpointData[2].message = 'Sudah Cek Lapangan';
+            checkpointData[2].message = 'Surat Tugas Terbit';
         } else if ('<?php echo isset($data->verifikasi2) ? $data->verifikasi2 : "" ?>' === 'belum') {
             checkpointData[2].status = 'rejected';
-            checkpointData[2].message = 'Penjadwalan Cek Lapangan Di Batalkan!';
+            checkpointData[2].message = 'Penjadwalan Surat Tugas di batalkan !';
         }
 
         // Step 4: Verifikasi Data berdasarkan validasiberkas3
         if ('<?php echo isset($data->verifikasi3) ? $data->verifikasi3 : "" ?>' === 'sudah') {
             checkpointData[3].status = 'completed';
-            checkpointData[3].message = 'Olah Data Selesai';
+            checkpointData[3].message = 'Cek lapangan Selesai';
         } else if ('<?php echo isset($data->verifikasi3) ? $data->verifikasi3 : "" ?>' === 'belum') {
             checkpointData[3].status = 'rejected';
             checkpointData[3].message = 'Data Tidak Di Olah !';
@@ -317,10 +317,10 @@ th {
         // Step 5: Penerbitan Berkas berdasarkan validasiberkas4
         if ('<?php echo isset($data->verifikasi4) ? $data->verifikasi4 : "" ?>' === 'sudah') {
             checkpointData[4].status = 'completed';
-            checkpointData[4].message = 'Sudah Terbit';
+            checkpointData[4].message = 'Gambar Terbit';
         } else if ('<?php echo isset($data->verifikasi4) ? $data->verifikasi4 : "" ?>' === 'belum') {
             checkpointData[4].status = 'rejected';
-            checkpointData[4].message = 'Surat KRK Usaha Tidak di Terbitkan!';
+            checkpointData[4].message = 'Bantuan Gambar Terbitkan!';
         }
     }
 
