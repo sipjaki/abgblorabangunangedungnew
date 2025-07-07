@@ -112,7 +112,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -225,8 +225,6 @@ th {
 
                                 </script>
 
-
-
 <div style="display: flex; justify-content: flex-end;">
 
                               <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanbantuanteknis')"
@@ -279,7 +277,8 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table id="tabelSuratbantuanteknis" class="table zebra-table">
+                        <table id="tabelSuratbantuanteknis" class="table zebra-table"     class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+>
                             <thead>
                                   <tr>
      <th style="background-color: #ADD8E6;">No</th>

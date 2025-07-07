@@ -3035,4 +3035,25 @@ public function validasipbgslfbukti(Request $request, $id)
     ]);
 }
 
+public function bekecamatan(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    $query = kecamatanblora::query();
+
+    if ($search) {
+        $query->where('kecamatanblora', 'like', "%{$search}%");
+    }
+
+    $bujk = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.01_pbgslf.05_tempat.01_datatempatkonsultasi', [
+        'title' => 'Daftar Kecamatan Kabupatan Blora',
+        'data'  => $bujk,
+        'user'  => $user,
+    ]);
+}
+
 }

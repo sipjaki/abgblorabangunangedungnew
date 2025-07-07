@@ -338,10 +338,7 @@ th {
 
             <td style="text-align: center;">
                 <a href="{{ route('bebantuanteknis.show', $item->id) }}"
-                    class="button-kembali"
-                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+                    class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Permohonan
                 </a>
             </td>
@@ -363,7 +360,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-kembali" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary" style="color: black">
+        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary" style="color: black">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -435,10 +432,7 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('bebantuanteknislapa.show', $item->id) }}"
-                    class="button-kembali"
-                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+                    class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
                 </a>
             </td>
@@ -460,7 +454,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
         </button>
     @else
-        <button class="button-kembali" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-newvalidasi" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Cek Lapangan
         </button>
     @endif
@@ -547,7 +541,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
         </button>
         @else
-        <button class="button-kembali" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Pengolahan Data
         </button>
         @endif
@@ -636,7 +630,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
         </button>
     @else
-        <button class="button-kembali" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Terbitkan !
         </button>
     @endif
@@ -708,7 +702,7 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('bebantuanteknislapangan.uploadberkasnew2', $item->id) }}"
-                    class="button-kembali"
+                    class="button-baru"
                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">

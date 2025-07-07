@@ -785,7 +785,7 @@
     <!-- Ganti SVG dengan Bootstrap Icon -->
     <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
 
-    <p style="color: white; margin-left: 8px;">
+    <p style="color: red; margin-left: 8px;">
         PBG/SLF
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
@@ -953,7 +953,7 @@
             <li class="nav-item">
              <a href="#" class="nav-link">
     <i class="bi bi-tools nav-icon" style="color: white; font-size: 16px;"></i>
-    <p style="color: white; margin-left: 8px;">
+    <p style="color: red; margin-left: 8px;">
         Bantek
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
@@ -1067,7 +1067,7 @@
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center;">
     <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">KRK</p>
+    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">KRK</p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
 
@@ -1119,21 +1119,21 @@
     </p>
 
     <li class="nav-item">
-        <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+        <a href="/datakecblora" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">Kecamatan</p>
         </a>
     </li>
 
     <li class="nav-item">
-        <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+        <a href="/datadesablora" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">Kelurahan Desa</p>
         </a>
     </li>
 
     <li class="nav-item">
-        <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+        <a href="/datagsbblora" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">GSB Kab Blora</p>
         </a>
@@ -1187,24 +1187,42 @@
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-file-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">MBR Gambar</p>
+    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">MBR Gambar</p>
     <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
 
 
     <ul class="nav nav-treeview" style="margin-left: 15px;">
-    <li class="nav-item">
-        <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
+        <li class="nav-item">
+        <a href="/datambrblora" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">Informasi MBR</p>
         </a>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
         </a>
-    </li>
+    </li> --}}
 </ul>
 </li>
 
@@ -1212,7 +1230,7 @@
 <li class="nav-item">
   <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Bantuan Gambar</p>
+    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Bantuan Gambar</p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
@@ -1266,14 +1284,14 @@
 
 
     <li class="nav-item">
-    <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+    <a href="/datakecblora" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-geo-fill nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">Kecamatan</p>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+    <a href="/datadesablora" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-house-door-fill nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">Kelurahan Desa</p>
     </a>
@@ -1309,11 +1327,29 @@
 <li class="nav-item">
   <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Hibah Bangunan</p>
+    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Hibah Bangunan</p>
     <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
 
+
   <ul class="nav nav-treeview" style="margin-left: 15px;">
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
     {{-- <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
@@ -1482,7 +1518,7 @@
 
               <a href="#" class="nav-link">
     <!-- Ganti SVG dengan Bootstrap Icon -->
-    <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+    {{-- <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
 
     <p style="color: white; margin-left: 8px;">
         Data ABG Blora
@@ -1569,9 +1605,9 @@
 </li>
 
 
-</ul>
+</ul> --}}
 
-            </li>
+            {{-- </li> --}}
 
 
 @endcan

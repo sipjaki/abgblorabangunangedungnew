@@ -112,7 +112,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -292,7 +292,7 @@ th {
      <th style="background-color: #ADD8E6;">No</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-<th style="background-color: #ADD8E6;"><i class="bi bi-geo-fill"></i> Desa</th>
+{{-- <th style="background-color: #ADD8E6;"><i class="bi bi-geo-fill"></i> Desa</th> --}}
 <th style="background-color: #ADD8E6;"><i class="bi bi-map-fill"></i> Kecamatan</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-bounding-box"></i> Garis Sempadan Bangunan</th> --}}
 <th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
@@ -304,7 +304,7 @@ th {
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-<td style="text-align: center;">{{ $item->kelurahandesa->desa ?? '-' }}</td>
+{{-- <td style="text-align: center;">{{ $item->kelurahandesa->desa ?? '-' }}</td> --}}
 <td>{{ $item->kecamatanblora ?? '-' }}</td>
 {{-- <td>{{ $item->gsb ?? '-' }} Meter </td> --}}
             @can('superadmin')
@@ -313,9 +313,9 @@ th {
                 {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                     <i class="bi bi-eye"></i>
                 </a> --}}
-                                        <a href="/datagsbbloraupdate/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
+                                        {{-- <a href="/datagsbbloraupdate/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
-                                        </a>
+                                        </a> --}}
                                         <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"

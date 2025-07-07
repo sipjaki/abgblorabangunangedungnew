@@ -582,6 +582,11 @@ Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datag
 Route::get('/datakecblora', [DatabaseAbgController::class, 'datakecblora'])->middleware('auth')->name('datakecbloraindex');
 Route::delete('/datakecbloradelete/{id}', [DatabaseAbgController::class, 'datakecbloradelete'])->middleware('auth')->name('delete.datakecbloradelete');
 
+// DATA KECAMATAN DAN DESA
+Route::get('/datadesablora', [DatabaseAbgController::class, 'datadesablora'])->middleware('auth')->name('datadesabloraindex');
+Route::delete('/datakecbloradelete/{id}', [DatabaseAbgController::class, 'datakecbloradelete'])->middleware('auth')->name('delete.datakecbloradelete');
+
+Route::get('/datambrblora', [DatabaseAbgController::class, 'datambrblora'])->middleware('auth')->name('datambrblora');
 // Route::get('/datagsbbloraupdate/{id}', [DatabaseAbgController::class, 'datagsbbloraupdate'])->middleware('auth')->name('datagsbbloraupdate.perbaikan');
 // Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
 
@@ -801,6 +806,12 @@ Route::post('/bebantuangambarperbaikannew/{id}', [GambarbantuanController::class
 
 
 // saat ini git
+
+// PENGATURAN MENU TEMPAT KONSULTASI
+Route::get('/bekecamatan', [PbgslfController::class, 'bekecamatan'])->middleware('auth')->name('bekecamatan');
+// Route::delete('/betempatkonsultasidelete/{id}', [PbgslfController::class, 'betempatkonsultasidelete'])->middleware('auth')->name('betempatkonsultasidelete');
+// Route::get('/betempatcreate', [PbgslfController::class, 'betempatcreate'])->middleware('auth')->name('betempatcreate');
+// Route::post('/betempatcreatenew', [PbgslfController::class, 'betempatcreatenew'])->middleware('auth')->name('create.betempatcreatenew');
 
 
 

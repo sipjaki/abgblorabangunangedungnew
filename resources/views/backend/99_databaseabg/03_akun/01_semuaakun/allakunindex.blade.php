@@ -112,7 +112,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="button-belakang row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -315,12 +315,16 @@ th {
 {{-- <td>{{ $item->otp ?? '-' }}</td> --}}
 <td>{{ $item->email ?? '-' }}</td>
 <td>
-    @if ($item->avatar)
-    <img src="{{ asset($item->avatar) }}" alt="Avatar" style="height: 40px; border-radius: 50%;">
-    @else
-    <span>-</span>
-    @endif
-</td>            @can('superadmin')
+  @php
+    $avatarPath = $item->avatar
+        ? asset('storage/' . $item->avatar)
+        : asset('assets/abgblora/logo/iconabgblora.png');
+  @endphp
+
+  <img src="{{ $avatarPath }}" alt="Avatar" style="height: 40px; border-radius: 50%;">
+</td>
+
+@can('superadmin')
 
 <td>{{ $item->statusadmin->status ?? '-' }}</td>
             <td style="text-align: center; vertical-align: middle;">

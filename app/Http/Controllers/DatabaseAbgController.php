@@ -6,6 +6,8 @@ use App\Models\agendastatus;
 use App\Models\asosiasipengusaha;
 use App\Models\bantuanteknis;
 use App\Models\kecamatanblora;
+use App\Models\kelurahandesa;
+use App\Models\mbrgambar;
 use App\Models\rencanagsbblora;
 use App\Models\uijk;
 use App\Models\undangundang;
@@ -139,7 +141,7 @@ public function datakecblora(Request $request)
     $data = $query->latest()->paginate($perPage)->appends($request->all());
 
     return view('backend.99_databaseabg.02_kecamatanblora.01_kecamatanblora', [
-        'title' => 'Daftar Kecamatan dan Kelurahan/Desa di Kabupaten Blora',
+        'title' => 'Daftar Kecamatan di Kabupaten Blora',
         'data'  => $data,
         'user'  => $user,
     ]);
@@ -168,6 +170,61 @@ public function datakecbloradelete($id)
         return redirect()->back()->with('error', 'Item not found');
     }
 
+
+public function datadesablora(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    $query = kecamatanblora::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('kecamatanblora', 'like', "%{$search}%");
+        });
+
+        $query->orWhereHas('kelurahandesa', function ($q) use ($search) {
+            $q->where('desa', 'like', "%{$search}%");
+        });
+    }
+
+    $data = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.99_databaseabg.02_kecamatanblora.02_desa', [
+        'title' => 'Daftar Desa/Kelurahan di Kabupaten Blora',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
+
+public function datambrblora(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    $query = mbrgambar::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('judul1', 'like', "%{$search}%")
+              ->orWhere('judul2', 'like', "%{$search}%")
+              ->orWhere('berkas1', 'like', "%{$search}%")
+              ->orWhere('berkas2', 'like', "%{$search}%")
+              ->orWhere('berkas3', 'like', "%{$search}%")
+              ->orWhere('berkas4', 'like', "%{$search}%");
+        });
+    }
+
+    $data = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.08_mbr.01_halamanmbr', [
+        'title' => 'Informasi MBR Bangunan Gedung',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
 
 
 }

@@ -45,6 +45,7 @@ use App\Models\krkhunian;
 use App\Models\krkkeagamaan;
 use App\Models\krksosbud;
 use App\Models\krkusaha;
+use App\Models\mbrgambar;
 use App\Models\pbgslfbangunan;
 use App\Models\pengawasatpt;
 use App\Models\suratpemberitahuanpbg;
@@ -577,6 +578,16 @@ User::create([
     'email' => 'mustikaj64@gmail.com',
     'phone_number' => null, // Data Belum Di Update
     'password' => bcrypt('adminadmin123$$')
+]);
+
+// =============================================
+
+mbrgambar::create([
+    'judul1' => 'MBR Bantuan Gambar',
+    'berkas1' => 'assets/abgblora/logo/01mbr.jpg',
+    'berkas2' => 'assets/abgblora/logo/001.pdf',
+    'berkas3' => 'assets/abgblora/logo/002.pdf',
+
 ]);
 
 // =============================================
