@@ -53,6 +53,11 @@ Route::get('/resbgindex', [FedashboardController::class, 'menuresbangunangedungi
 Route::get('/resbantekindex', [FedashboardController::class, 'resbantekindex']);
 Route::get('/resbantekpermohonan', [FedashboardController::class, 'resbantekpermohonan'])->middleware('auth');
 
+// 08_ MENU MBR BANTUAN GAMBAR
+// ----------------------------------------------------------------------------------------
+Route::get('/resmbrgambarindex', [FedashboardController::class, 'resmbrgambarindex']);
+// Route::get('/resbantekpermohonan', [FedashboardController::class, 'resbantekpermohonan'])->middleware('auth');
+
 // WEB 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------
 Route::get('/pendataankicbangunangedung', [PendataanBangunanGedungController::class, 'datakicbangunan']);
@@ -864,8 +869,7 @@ Route::get('/bepbgberitaacaraslfshow/{id}', [PbgslfController::class, 'bepbgberi
 // ================================================================================================================================================
 
 // Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware('auth');
-Route::get('/dashboard', [AdminDashboardController::class, 'index']);
-
+Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware('auth');
 // ------------------- BACKEND QA PERTANYAAN ---------------------------
 
 // KATEGORI ADMIN

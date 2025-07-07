@@ -24,6 +24,7 @@ class FedashboardController extends Controller
         // return view('frontend.abgblora.00_beranda.01_beranda', [
         return view('frontend.android.01_halamanutama.index', [
             'title' => 'Abg Blora Bangunan Gedung',
+            'user' => $user,
         ]);
     }
 
@@ -136,6 +137,21 @@ class FedashboardController extends Controller
         'statusadimindinas' => $statusadimindinas, // kirim ke view juga
     ]);
 }
+
+
+        public function resmbrgambarindex()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.08_mbrgambar.01_resmbrgambar', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi MBR Bantuan Gambar ',
+            'user' => $user,
+        ]);
+    }
+
 
 }
 

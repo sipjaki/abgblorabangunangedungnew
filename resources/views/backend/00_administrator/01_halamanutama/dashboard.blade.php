@@ -971,6 +971,8 @@
               <!--begin::Row-->
 
           </div>
+          </div>
+          </div>
           <!--end::Container-->
         </div>
         <!--end::App Content-->

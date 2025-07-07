@@ -58,7 +58,7 @@
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Penilik</p>
         </div>
       </a>
-      <a href="/404">
+      <a href="/resmbrgambarindex">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
             <img src="/assets/android/menunavigasi/08.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
@@ -75,14 +75,14 @@
         </div>
       </a>
 
-      <a href="/404">
+      {{-- <a href="/404">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
             <img src="/assets/android/menunavigasi/10.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Hibah</p>
         </div>
-      </a>
+      </a> --}}
 
       {{-- <a href="/404">
         <div class="flex flex-col items-center gap-2">

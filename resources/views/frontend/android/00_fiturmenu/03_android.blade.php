@@ -1,87 +1,85 @@
+<div id="Menu-bar" style="position: fixed; bottom: 24px; left: 0; right: 0; z-index: 30; margin-bottom: -25px; max-width: 640px; width: 100%; margin-left: auto; margin-right: auto; padding: 0 16px; background-color: white; display: flex; justify-content: space-between; align-items: center; border-radius: 24px; box-shadow: 0 -4px 12px rgba(0,0,0,0.1); font-family: 'Poppins', sans-serif; height: 72px;">
 
-{{-- <div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -23px;"> --}}
-    <div id="Menu-bar" style="position: fixed; bottom: 24px; left: 0; right: 0; z-index: 30; margin-bottom: -25px; max-width: 640px; width: 100%; margin-left: auto; margin-right: auto; padding: 0px 14px 0px 18px; background-color: white; display: flex; justify-content: space-between; align-items: center; border-radius: 0; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); font-family: sans-serif;">
-
-   <!-- Wrapper Navigasi Bawah -->
-<div class="relative w-full max-w-md mx-auto">
-  <div class="bg-white p-3 rounded-full flex items-center justify-between gap-4 shadow-[0_8px_30px_0_#0A093212]">
-
-    <!-- Item 1 -->
-    <a href="/dashboard">
-      <div class="flex flex-col items-center gap-1">
-        <div class="w-6 h-6">
-          <img src="/assets/android/icons/setting-linear-grey.svg" alt="Berkas">
-        </div>
-        <p class="text-xs font-small text-[#757C98]">Dashboard</p>
-      </div>
-    </a>
-
-    <!-- Item 2 -->
-    <a href="/404">
-      <div class="flex flex-col items-center gap-1">
-        <div class="w-6 h-6">
-          <img src="/assets/android/icons/home-nonactive.svg" alt="Menu">
-        </div>
-        <p class="text-xs font-small text-[#757C98]">Tracking</p>
-      </div>
-    </a>
-    <a href="/">
-        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-lg bg-[#E8EDF5] shadow-[0_4px_12px_rgba(27,51,88,0.2)]">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#1B3358" stroke-width="1.8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.75L12 3l9 6.75v10.5a.75.75 0 01-.75.75H3.75A.75.75 0 013 20.25V9.75z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 22.5V12h6v10.5" />
-            </svg>
-        </div>
-    </a>
-
-    <!-- Item 4 -->
-    <a href="/404">
-      <div class="flex flex-col items-center gap-1">
-        <div class="w-6 h-6">
-          <img src="/assets/android/icons/gallery-export.svg" alt="Informasi">
-        </div>
-        <p class="text-xs font-small text-[#757C98]">Informasi</p>
-      </div>
-    </a>
-
-    <!-- Item 5 - Login -->
-    <a href="/login" id="login-icon" style="display: none;">
-      <div class="flex flex-col items-center gap-1">
-        <div class="w-6 h-6">
-          <img src="/assets/android/icons/key-grey.svg" alt="Login">
-        </div>
-        <p class="text-xs font-small text-[#757C98]">Masuk</p>
-      </div>
-    </a>
-
-    <!-- Item 6 - Pengaturan -->
-    <a href="/404" id="settings-icon" style="display: none;">
-      <div class="flex flex-col items-center gap-1">
-        <div class="w-6 h-6">
-          <img src="/assets/android/icons/settings-nonactive.svg" alt="Pengaturan">
-        </div>
-        <p class="text-xs font-medium text-[#757C98]">Pengaturan</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- Ikon Tengah (MAP) - Floating -->
-  <a href="/" class="absolute left-1/2 -translate-x-1/2 -top-4">
-    <div class="w-[48px] h-[48px] rounded-full bg-white shadow-md flex items-center justify-center">
-      <img src="/assets/android/icons/Map.svg" alt="Map" class="w-6 h-6">
+  <!-- Dashboard -->
+  <a href="/dashboard" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+    <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
     </div>
+    <small style="font-size: 11px;">Dashboard</small>
   </a>
+
+  <!-- Tracking -->
+  <a href="/404" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+    <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+      </svg>
+    </div>
+    <small style="font-size: 11px;">Tracking</small>
+  </a>
+
+  <!-- Home (Center Button) -->
+  <a href="/" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; transform: translateY(-24px); text-decoration: none;">
+    <div style="width: 56px; height: 56px; display: flex; justify-content: center; align-items: center; background-color: #1B3358; border-radius: 50%; box-shadow: 0 4px 12px rgba(27,51,88,0.3); color: white;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    {{-- <small style="font-size: 11px; margin-top: 4px; color: #1B3358;">Beranda</small> --}}
+  </a>
+
+  <!-- Informasi -->
+  <a href="/404" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+    <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+    </div>
+    <small style="font-size: 11px;">Informasi</small>
+  </a>
+
+  <!-- Settings -->
+  <a href="/404" id="settings-icon" class="nav-icon" style="display: none; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+    <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+    </div>
+    <small style="font-size: 11px;">Pengaturan</small>
+  </a>
+
+  <!-- Login -->
+  <a href="/login" id="login-icon" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+    <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+        <polyline points="10 17 15 12 10 7"></polyline>
+        <line x1="15" y1="12" x2="3" y2="12"></line>
+      </svg>
+    </div>
+    <small style="font-size: 11px;">Login</small>
+  </a>
+
 </div>
 
-<!-- Script Login -->
 <script>
-  // Simulasi status login user (ubah sesuai dengan implementasi asli)
-  var isLoggedIn = false;
+  const poppinsFont = document.createElement('link');
+  poppinsFont.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap';
+  poppinsFont.rel = 'stylesheet';
+  document.head.appendChild(poppinsFont);
 
   window.onload = function () {
-    document.getElementById('login-icon').style.display = isLoggedIn ? 'none' : 'block';
-    document.getElementById('settings-icon').style.display = isLoggedIn ? 'block' : 'none';
+    const isLoggedIn = false; // ubah sesuai status login
+    document.getElementById('settings-icon').style.display = isLoggedIn ? 'flex' : 'none';
+    document.getElementById('login-icon').style.display = isLoggedIn ? 'none' : 'flex';
   };
 </script>
-
-  </div>

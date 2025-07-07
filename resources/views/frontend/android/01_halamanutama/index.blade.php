@@ -5,7 +5,7 @@
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
     <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px]">
       {{-- <img src="/assets/android/iconmenu/dashboard999.jpg" class="absolute object-cover w-full h-full" alt="backgrounds"> --}}
-      <img src="/assets/android/iconmenu/newblora2.jpeg" class="absolute object-cover w-full h-full" alt="backgrounds">
+      <img src="/assets/android/iconmenu/1111.jpg" class="absolute object-cover w-full h-full" alt="backgrounds">
 
       <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
 <nav class="bg-white p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
@@ -19,12 +19,13 @@
   <!-- Teks Tengah -->
  <div class="flex-1 mx-2 sm:mx-4 min-w-0">
   <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
-    <p class="font-semibold text-sm sm:text-base leading-tight text-[#4041DA] truncate w-full">
+    <p class="font-semibold text-sm sm:text-base leading-tight text-[#4041DA] truncate w-full" style="font-size:12px;">
       ABG Blora Bangunan Gedung
     </p>
     <div class="flex items-center justify-center sm:justify-start">
-      <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal">
-        Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Jawa Tengah
+      <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px;">
+        Dinas Pekerjaan Umum Dan
+        <br> Penataan Ruang <br> Kabupaten Blora Jawa Tengah
       </p>
     </div>
   </div>
