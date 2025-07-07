@@ -37,6 +37,8 @@ return new class extends Migration
             $table->string('noregissimbg')->nullable();
             $table->string('tanggalpermohonan')->nullable();
 
+            $table->string('namapemohon')->nullable();
+
             $table->string('validasiberkas1')->nullable();
             $table->string('validasiberkas2')->nullable();
             $table->string('validasiberkas3')->nullable();

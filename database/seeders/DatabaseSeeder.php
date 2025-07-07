@@ -594,6 +594,8 @@ for ($i = 1; $i <= 10; $i++) {
         'tanggalpermohonan' => $randomDate,
         'noregissimbg' => 'PBG-321702-' . $randomDate->format('dmY') . '-' . str_pad($i, 3, '0', STR_PAD_LEFT),
 
+        'namapemohon' => 'Bapak Pemohon' . $i,
+
         'datapemilik_id' => $i,
         'databangunanpbg_id' => $i,
         'datatanahpbg_id' => $i,
