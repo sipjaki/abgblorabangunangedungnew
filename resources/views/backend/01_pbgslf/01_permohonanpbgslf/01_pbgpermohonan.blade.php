@@ -319,7 +319,7 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table id="tabelSuratbantuanteknis" class="table zebra-table">
+                        <table id="tabelSuratbantuanteknis" class="table zebra-table"     class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                             <thead>
                                   <tr>
         <th style="background-color: #ADD8E6;">No</th>
@@ -342,7 +342,7 @@ th {
                                  <td>{{ $loop->iteration }}</td>
             {{-- <td>{{ optional($item->user)->name ?? '-' }}</td> --}}
             <td>{{ $item->user->name ?? '-' }}</td>
-            <td>{{ $item->datapemilik->namapemilik ?? '-' }}</td>
+            <td>{{ $item->namapemohon ?? '-' }}</td>
             <td>{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
             <td>{{ $item->noregissimbg ?? '-' }}</td>
             {{-- <td>{{ $item->datapemilik->namapemilik ?? '-' }}</td> --}}
@@ -353,19 +353,7 @@ th {
          <td>Belum dibuat databasenya</td>
 <td style="text-align: center;">
     <a href="{{ route('bepbgslflihatper.show', $item->id) }}"
-        class="button-permohonan"
-        style="
-            display: inline-block;
-            width: fit-content;
-            border-radius: 15px;
-            padding: 8px 16px;
-            background-color: #6c757d;
-            color: black;
-            border: none;
-            transition: background-color 0.3s, color 0.3s;
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='black'; this.style.border='none';">
+        class="button-baru">
         <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Permohonan
     </a>
 </td>

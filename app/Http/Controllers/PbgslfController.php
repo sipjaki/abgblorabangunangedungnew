@@ -293,12 +293,22 @@ public function createdatapbgslf()
     // Ambil user login
     $user = Auth::user();
 
-    // Step 1: Buat record baru untuk mendapatkan ID-nya
+    // Step 1: Buat record baru dengan ID sendiri sebagai default foreign key
     $bangunan = pbgslfbangunan::create([
-        'user_id' => $user->id, // kalau ada
+        'user_id' => $user->id,
+        'datapemilik_id' => null, // sementara null dulu
+        'databangunanpbg_id' => null,
+        'datatanahpbg_id' => null,
+        'dataumumpbg_id' => null,
+        'dokumenteknisarsi_id' => null,
+        'dokumenteknisstruk_id' => null,
+        'dokumenteknismep_id' => null,
+        'dokumenteknisslfpbg_id' => null,
+        'surattugaspbg_id' => null,
+        'tpatpt_id' => null,
     ]);
 
-    // Step 2: Update semua foreign key dengan id itu sendiri
+    // Step 2: Update foreign key dengan ID-nya sendiri
     $bangunan->update([
         'datapemilik_id' => $bangunan->id,
         'databangunanpbg_id' => $bangunan->id,
@@ -309,14 +319,13 @@ public function createdatapbgslf()
         'dokumenteknismep_id' => $bangunan->id,
         'dokumenteknisslfpbg_id' => $bangunan->id,
         'surattugaspbg_id' => $bangunan->id,
-        // 'tpatpt_id' => $bangunan->id,
-        // 'suratudanganpbg_id' => $bangunan->id,
-        // 'suratpemberitahuanpbg_id' => $bangunan->id,
+        'tpatpt_id' => $bangunan->id,
     ]);
 
-    // Ambil pilihan jenis pengajuan untuk dropdown
+    // Ambil data pilihan jenis pengajuan
     $jenispengajuan = jenispengajuanpbgslfper::all();
 
+    // Kirim ke view
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.01_createpbgslf', [
         'title' => 'Buat Data Baru Permohonan SIMBG',
         'title_halaman' => 'Data Induk Permohonan SIMBG',
@@ -326,17 +335,18 @@ public function createdatapbgslf()
     ]);
 }
 
-
 public function createdatapbgslfnew(Request $request)
 {
-    // Validasi input dengan custom messages
+    // Validasi input
     $validated = $request->validate([
+        'id' => 'required|string',
         'user_id' => 'required|string',
         'jenispengajuanpbgslfper_id' => 'required|string',
         'noregissimbg' => 'required|string|max:255',
         'tanggalpermohonan' => 'required|date',
+        'namapemohon' => 'required|string',
 
-        // validasi tambahan untuk foreign keys
+        // foreign key (boleh nullable)
         'datapemilik_id' => 'nullable|string',
         'databangunanpbg_id' => 'nullable|string',
         'datatanahpbg_id' => 'nullable|string',
@@ -347,35 +357,37 @@ public function createdatapbgslfnew(Request $request)
         'dokumenteknisslfpbg_id' => 'nullable|string',
         'surattugaspbg_id' => 'nullable|string',
         'tpatpt_id' => 'nullable|string',
-
     ], [
         'user_id.required' => 'User ID wajib diisi.',
         'jenispengajuanpbgslfper_id.required' => 'Jenis pengajuan wajib dipilih.',
         'noregissimbg.required' => 'Nomor registrasi SIMBG wajib diisi.',
+        'namapemohon.required' => 'Nomor Pemohon wajib diisi.',
         'noregissimbg.max' => 'Nomor registrasi terlalu panjang.',
         'tanggalpermohonan.required' => 'Tanggal permohonan wajib diisi.',
         'tanggalpermohonan.date' => 'Format tanggal permohonan tidak valid.',
     ]);
 
-    // Simpan ke database
-    pbgslfbangunan::create([
+    // Update data yang sudah dibuat sebelumnya
+    pbgslfbangunan::where('id', $validated['id'])->update([
         'user_id' => $validated['user_id'],
         'jenispengajuanpbgslfper_id' => $validated['jenispengajuanpbgslfper_id'],
         'noregissimbg' => $validated['noregissimbg'],
         'tanggalpermohonan' => $validated['tanggalpermohonan'],
+        'namapemohon' => $validated['namapemohon'],
 
-        'datapemilik_id' => $request->input('datapemilik_id'),
-        'databangunanpbg_id' => $request->input('databangunanpbg_id'),
-        'datatanahpbg_id' => $request->input('datatanahpbg_id'),
-        'dataumumpbg_id' => $request->input('dataumumpbg_id'),
-        'dokumenteknisarsi_id' => $request->input('dokumenteknisarsi_id'),
-        'dokumenteknisstruk_id' => $request->input('dokumenteknisstruk_id'),
-        'dokumenteknismep_id' => $request->input('dokumenteknismep_id'),
-        'dokumenteknisslfpbg_id' => $request->input('dokumenteknisslfpbg_id'),
-        'surattugaspbg_id' => $request->input('surattugaspbg_id'),
-        'tpatpt_id' => $request->input('tpatpt_id'),
+        'datapemilik_id' => $request->datapemilik_id,
+        'databangunanpbg_id' => $request->databangunanpbg_id,
+        'datatanahpbg_id' => $request->datatanahpbg_id,
+        'dataumumpbg_id' => $request->dataumumpbg_id,
+        'dokumenteknisarsi_id' => $request->dokumenteknisarsi_id,
+        'dokumenteknisstruk_id' => $request->dokumenteknisstruk_id,
+        'dokumenteknismep_id' => $request->dokumenteknismep_id,
+        'dokumenteknisslfpbg_id' => $request->dokumenteknisslfpbg_id,
+        'surattugaspbg_id' => $request->surattugaspbg_id,
+        'tpatpt_id' => $request->tpatpt_id,
     ]);
 
+    // Feedback ke user
     session()->flash('create', 'Data Pengajuan PBG/SLF berhasil disimpan!');
     return redirect()->route('bepbgslfindexslfindex');
 }
@@ -2534,6 +2546,15 @@ $jumlahsidangbulanan = [];
 for ($i = 1; $i <= 12; $i++) {
     $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
 }
+
+$bulanFilter = $request->input('bulan');
+
+if ($bulanFilter) {
+    $data = $data->filter(function ($item) use ($bulanFilter) {
+        return optional($item->updated_at)->month == $bulanFilter;
+    });
+}
+
 // ----------------------------------------------------------------------------
 
     return view('backend.01_pbgslf.06_konsultasi.01_konsultasi', [
@@ -2548,6 +2569,7 @@ for ($i = 1; $i <= 12; $i++) {
         'jumlahDataIdLima' => $jumlahDataIdLima,
 
         'jumlahsidangbulanan' => $jumlahsidangbulanan,
+        'bulanFilter' => $bulanFilter,
         'data' => $data,
 
         // 'datasemua' => $dataTanpaIdSatu,
@@ -2602,6 +2624,15 @@ $jumlahsidangbulanan = [];
 for ($i = 1; $i <= 12; $i++) {
     $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
 }
+
+$bulanFilter = $request->input('bulan');
+
+if ($bulanFilter) {
+    $data = $data->filter(function ($item) use ($bulanFilter) {
+        return optional($item->updated_at)->month == $bulanFilter;
+    });
+}
+
 // ----------------------------------------------------------------------------
 
     return view('backend.01_pbgslf.07_skrd.01_skrd', [
@@ -2616,6 +2647,7 @@ for ($i = 1; $i <= 12; $i++) {
         'jumlahDataIdLima' => $jumlahDataIdLima,
 
         'jumlahsidangbulanan' => $jumlahsidangbulanan,
+        'bulanFilter' => $bulanFilter,
         'data' => $data,
 
         // 'datasemua' => $dataTanpaIdSatu,
@@ -2742,6 +2774,27 @@ $jumlahsidangbulanan = [];
 for ($i = 1; $i <= 12; $i++) {
     $jumlahsidangbulanan[$i - 1] = $jumlahsidangbulananRaw[$i] ?? 0;
 }
+
+$bulanFilter = $request->input('bulan');
+
+if ($bulanFilter) {
+    $data = $data->filter(function ($item) use ($bulanFilter) {
+        return optional($item->updated_at)->month == $bulanFilter;
+    });
+}
+
+
+// Hitung semua nominal retribusi
+$nominalRetribusiTotal = pbgslfbangunan::whereNotNull('rupiah')->sum('rupiah');
+
+// Hitung nominal yang sudah terbayar (validasiberkas8 == 'sudah')
+$nominalSudahTerbayar = pbgslfbangunan::where('validasiberkas8', 'sudah')
+    ->whereNotNull('rupiah')
+    ->sum('rupiah');
+
+// Hitung penerimaan = total - yang sudah terbayar
+$nominalPenerimaan = $nominalSudahTerbayar;
+
 // ----------------------------------------------------------------------------
 
     return view('backend.01_pbgslf.08_retribusi.01_retribusi', [
@@ -2756,7 +2809,13 @@ for ($i = 1; $i <= 12; $i++) {
         'jumlahDataIdLima' => $jumlahDataIdLima,
 
         'jumlahsidangbulanan' => $jumlahsidangbulanan,
+        'bulanFilter' => $bulanFilter,
         'data' => $data,
+
+        'nominalRetribusiTotal' => $nominalRetribusiTotal,
+'nominalSudahTerbayar' => $nominalSudahTerbayar,
+'nominalPenerimaan' => $nominalPenerimaan,
+
 
         // 'datasemua' => $dataTanpaIdSatu,
     ]);
@@ -2786,5 +2845,194 @@ public function validasipbgslfbukti(Request $request, $id)
 
         // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
     }
+
+
+    public function bepbgslfindexslfper2(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 25);
+
+    // Query awal: filter berdasarkan jenispengajuanbantek_id = 1
+    $query = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 2);
+    });
+
+    // Jika ada pencarian
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian utama berdasarkan nomor registrasi
+            $q->where('noregissimbg', 'like', "%{$search}%")
+              ->orWhere('tanggalpermohonan', 'like', "%{$search}%") // Tambahkan pencarian tanggal biasa
+
+              // Pencarian ke relasi user
+              ->orWhereHas('user', function ($sub) use ($search) {
+                  $sub->where('name', 'like', "%{$search}%")
+                      ->orWhere('email', 'like', "%{$search}%");
+              })
+
+              // Pencarian ke relasi jenis pengajuan
+              ->orWhereHas('jenispengajuanpbgslfper', function ($sub) use ($search) {
+                  $sub->where('jenispengajuan', 'like', "%{$search}%");
+              });
+
+            // Tambahan: jika input search terlihat seperti format tanggal (YYYY-MM-DD), gunakan whereDate
+            if (preg_match('/\d{4}-\d{2}-\d{2}/', $search)) {
+                $q->orWhereDate('tanggalpermohonan', $search);
+            }
+        });
+    }
+
+    // Ambil hasil akhir
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    // Tampilkan ke view
+    return view('backend.01_pbgslf.01_permohonanpbgslf.01_pbgpermohonan', [
+        'title' => 'Permohonan (SLF) Sertifikat Laik Fungsi ',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+    public function bepbgslfindexslfper3(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 25);
+
+    // Query awal: filter berdasarkan jenispengajuanbantek_id = 1
+    $query = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 3);
+    });
+
+    // Jika ada pencarian
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian utama berdasarkan nomor registrasi
+            $q->where('noregissimbg', 'like', "%{$search}%")
+              ->orWhere('tanggalpermohonan', 'like', "%{$search}%") // Tambahkan pencarian tanggal biasa
+
+              // Pencarian ke relasi user
+              ->orWhereHas('user', function ($sub) use ($search) {
+                  $sub->where('name', 'like', "%{$search}%")
+                      ->orWhere('email', 'like', "%{$search}%");
+              })
+
+              // Pencarian ke relasi jenis pengajuan
+              ->orWhereHas('jenispengajuanpbgslfper', function ($sub) use ($search) {
+                  $sub->where('jenispengajuan', 'like', "%{$search}%");
+              });
+
+            // Tambahan: jika input search terlihat seperti format tanggal (YYYY-MM-DD), gunakan whereDate
+            if (preg_match('/\d{4}-\d{2}-\d{2}/', $search)) {
+                $q->orWhereDate('tanggalpermohonan', $search);
+            }
+        });
+    }
+
+    // Ambil hasil akhir
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    // Tampilkan ke view
+    return view('backend.01_pbgslf.01_permohonanpbgslf.01_pbgpermohonan', [
+        'title' => 'Permohonan (SBKBG) Surat Bukti Kepemilikan Bangunan Gedung ',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+    public function bepbgslfindexslfper4(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 25);
+
+    // Query awal: filter berdasarkan jenispengajuanbantek_id = 1
+    $query = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 4);
+    });
+
+    // Jika ada pencarian
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian utama berdasarkan nomor registrasi
+            $q->where('noregissimbg', 'like', "%{$search}%")
+              ->orWhere('tanggalpermohonan', 'like', "%{$search}%") // Tambahkan pencarian tanggal biasa
+
+              // Pencarian ke relasi user
+              ->orWhereHas('user', function ($sub) use ($search) {
+                  $sub->where('name', 'like', "%{$search}%")
+                      ->orWhere('email', 'like', "%{$search}%");
+              })
+
+              // Pencarian ke relasi jenis pengajuan
+              ->orWhereHas('jenispengajuanpbgslfper', function ($sub) use ($search) {
+                  $sub->where('jenispengajuan', 'like', "%{$search}%");
+              });
+
+            // Tambahan: jika input search terlihat seperti format tanggal (YYYY-MM-DD), gunakan whereDate
+            if (preg_match('/\d{4}-\d{2}-\d{2}/', $search)) {
+                $q->orWhereDate('tanggalpermohonan', $search);
+            }
+        });
+    }
+
+    // Ambil hasil akhir
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    // Tampilkan ke view
+    return view('backend.01_pbgslf.01_permohonanpbgslf.01_pbgpermohonan', [
+        'title' => 'Permohonan (RTB) Rencana Teknis Pembongkaran ',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
+
+    public function bepbgslfindexslfper5(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 25);
+
+    // Query awal: filter berdasarkan jenispengajuanbantek_id = 1
+    $query = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 5);
+    });
+
+    // Jika ada pencarian
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian utama berdasarkan nomor registrasi
+            $q->where('noregissimbg', 'like', "%{$search}%")
+              ->orWhere('tanggalpermohonan', 'like', "%{$search}%") // Tambahkan pencarian tanggal biasa
+
+              // Pencarian ke relasi user
+              ->orWhereHas('user', function ($sub) use ($search) {
+                  $sub->where('name', 'like', "%{$search}%")
+                      ->orWhere('email', 'like', "%{$search}%");
+              })
+
+              // Pencarian ke relasi jenis pengajuan
+              ->orWhereHas('jenispengajuanpbgslfper', function ($sub) use ($search) {
+                  $sub->where('jenispengajuan', 'like', "%{$search}%");
+              });
+
+            // Tambahan: jika input search terlihat seperti format tanggal (YYYY-MM-DD), gunakan whereDate
+            if (preg_match('/\d{4}-\d{2}-\d{2}/', $search)) {
+                $q->orWhereDate('tanggalpermohonan', $search);
+            }
+        });
+    }
+
+    // Ambil hasil akhir
+    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+
+    // Tampilkan ke view
+    return view('backend.01_pbgslf.01_permohonanpbgslf.01_pbgpermohonan', [
+        'title' => 'Permohonan Pendataan Bangunan Gedung ',
+        'data'  => $berkasbantek,
+        'user'  => $user,
+    ]);
+}
 
 }

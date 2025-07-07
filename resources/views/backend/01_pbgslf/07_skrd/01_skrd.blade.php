@@ -53,6 +53,30 @@
 {{--  --}}
 
 @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
+
+<form method="GET" action="{{ url()->current() }}" style="margin-bottom: 20px;">
+  <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+    <label for="filter_bulan" style="font-weight: 600;">Filter Bulan:</label>
+    <select name="bulan" id="filter_bulan" onchange="this.form.submit()" style="
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    ">
+      <option value="">-- Semua Bulan --</option>
+      @php
+        $namaBulan = [
+          1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April',
+          5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Agustus',
+          9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'Desember',
+        ];
+      @endphp
+      @foreach ($namaBulan as $num => $nama)
+        <option value="{{ $num }}" {{ request('bulan') == $num ? 'selected' : '' }}>{{ $nama }}</option>
+      @endforeach
+    </select>
+  </div>
+</form>
+
 <div class="putih" style="margin-bottom:100px;">
 
 
@@ -85,6 +109,10 @@
         <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
           <i class="bi bi-file-earmark-text-fill"></i> Berkas SKRD
         </th>
+
+                    <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+            <i class="bi bi-person-fill"></i> Bulan Sidang
+            </th>
 
                     <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
             <i class="bi bi-person-fill"></i> Nama Pemilik
@@ -182,6 +210,13 @@
 
         @endif
 </td>
+<td style="white-space: nowrap; padding: 6px; text-align: center;">
+    @if ($item->validasiberkas5 === 'sudah' && $item->updated_at)
+        {{ \Carbon\Carbon::parse($item->updated_at)->translatedFormat('F Y') }}
+    @else
+        -
+    @endif
+</td>
 
 
      <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->datapemilik->namapemilik ?? '-' }}</td>
@@ -240,7 +275,7 @@
 
 
 </div>
-@include('backend.00_administrator.00_baganterpisah.07_paginations')
+{{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
 </div>
           <!--end::Container-->
         </div>

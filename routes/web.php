@@ -637,6 +637,11 @@ Route::delete('/dokbebanhibahdelete/{id}', [BantuanhibahbgController::class, 'do
 // MENU 01 PBG SLF
 Route::get('/bepbgslfindex', [PbgslfController::class, 'bepbgslfindexmenu'])->middleware('auth')->name('bepbgslfindexindexmenu');
 Route::get('/bepbgslfindexslf', [PbgslfController::class, 'bepbgslfindexslf'])->middleware('auth')->name('bepbgslfindexslfindex');
+Route::get('/bepbgslfindexslfper2', [PbgslfController::class, 'bepbgslfindexslfper2'])->middleware('auth')->name('bepbgslfindexslfper2');
+Route::get('/bepbgslfindexslfper3', [PbgslfController::class, 'bepbgslfindexslfper3'])->middleware('auth')->name('bepbgslfindexslfper3');
+Route::get('/bepbgslfindexslfper4', [PbgslfController::class, 'bepbgslfindexslfper4'])->middleware('auth')->name('bepbgslfindexslfper4');
+Route::get('/bepbgslfindexslfper5', [PbgslfController::class, 'bepbgslfindexslfper5'])->middleware('auth')->name('bepbgslfindexslfper5');
+// Route::get('/bepbgslfindexslfper2', [PbgslfController::class, 'bepbgslfindexslfper2'])->middleware('auth')->name('bepbgslfindexslfper2');
 
 Route::delete('/bepbgslfindexslfdelete/{id}', [PbgslfController::class, 'bepbgslfindexslfdelete'])->middleware('auth')->name('delete.bepbgslfindexslfdelete');
 

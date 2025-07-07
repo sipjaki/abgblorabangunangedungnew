@@ -6,7 +6,7 @@
 
 <div class="card shadow-sm border-0">
     <div class="card-body" style="overflow-x: auto; white-space: nowrap; padding: 16px; background: #f0f8ff; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-        <a href="#" class="text-decoration-none">
+        {{-- <a href="#" class="text-decoration-none">
             <div
                 class="px-3 py-2 rounded shadow-sm d-flex align-items-center"
                 style="
@@ -22,9 +22,9 @@
             >
                 <i class="bi bi-collection me-2"></i> Semua Data
             </div>
-        </a>
+        </a> --}}
 
-        <a href="#" class="text-decoration-none">
+        <a href="/bepbgslfindexslf" class="text-decoration-none">
             <div
                 class="px-3 py-2 rounded shadow-sm d-flex align-items-center"
                 style="
@@ -42,7 +42,7 @@
             </div>
         </a>
 
-        <a href="#" class="text-decoration-none">
+        <a href="/bepbgslfindexslfper2" class="text-decoration-none">
             <div
                 class="px-3 py-2 rounded shadow-sm d-flex align-items-center"
                 style="
@@ -60,7 +60,7 @@
             </div>
         </a>
 
-        <a href="#" class="text-decoration-none">
+        <a href="/bepbgslfindexslfper3" class="text-decoration-none">
             <div
                 class="px-3 py-2 rounded shadow-sm d-flex align-items-center"
                 style="
@@ -78,7 +78,7 @@
             </div>
         </a>
 
-        <a href="#" class="text-decoration-none">
+        <a href="/bepbgslfindexslfper4" class="text-decoration-none">
             <div
                 class="px-3 py-2 rounded shadow-sm d-flex align-items-center"
                 style="
@@ -96,7 +96,7 @@
             </div>
         </a>
 
-        <a href="#" class="text-decoration-none">
+        <a href="/bepbgslfindexslfper5" class="text-decoration-none">
             <div
                 class="px-3 py-2 rounded shadow-sm d-flex align-items-center"
                 style="

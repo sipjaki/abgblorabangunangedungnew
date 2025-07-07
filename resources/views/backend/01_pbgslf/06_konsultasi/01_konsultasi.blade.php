@@ -232,13 +232,43 @@
   window.addEventListener('resize', drawMonthlyChart);
 </script>
 
+
+
 <div class="chart-container">
   <div id="chartbulan" class="chart-box" style="max-width: 100%; height: 460px;"></div>
 </div>
 
+<div class="putih">
+
+    <form method="GET" action="{{ url()->current() }}" style="margin-bottom: 20px;">
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <label for="filter_bulan" style="font-weight: 600;">Filter Bulan:</label>
+            <select name="bulan" id="filter_bulan" onchange="this.form.submit()" style="
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      ">
+      <option value="">-- Semua Bulan --</option>
+      @php
+        $namaBulan = [
+          1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April',
+          5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Agustus',
+          9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'Desember',
+        ];
+        @endphp
+      @foreach ($namaBulan as $num => $nama)
+        <option value="{{ $num }}" {{ request('bulan') == $num ? 'selected' : '' }}>{{ $nama }}</option>
+        @endforeach
+    </select>
+  </div>
+</form>
+<br>
+</div>
+
 <div class="putih" style="margin-bottom:100px;">
 
-<div style="width: 100%; overflow-x: auto; margin-bottom: 100px; margin-top:20px;">
+
+    <div style="width: 100%; overflow-x: auto; margin-bottom: 100px; margin-top:20px;">
   <table
     class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
 
@@ -313,6 +343,8 @@
     </tbody>
   </table>
 </div>
+
+
 
 
 </div></div>

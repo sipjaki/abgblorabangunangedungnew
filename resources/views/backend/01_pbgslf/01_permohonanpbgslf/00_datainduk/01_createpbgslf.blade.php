@@ -196,20 +196,18 @@ th {
                         <!--begin::Quick Example-->
                   <form action="{{ route('createdatapbgslf.create') }}" method="POST" enctype="multipart/form-data">
           @csrf
+          <input type="hidden" name="id" value="{{ $data->id }}">
 
-<input type="hidden" name="datapemilik_id" value="{{ $data->datapemilik_id }}">
-<input type="hidden" name="databangunanpbg_id" value="{{ $data->databangunanpbg_id }}">
-<input type="hidden" name="datatanahpbg_id" value="{{ $data->datatanahpbg_id }}">
-<input type="hidden" name="dataumumpbg_id" value="{{ $data->dataumumpbg_id }}">
-<input type="hidden" name="dokumenteknisarsi_id" value="{{ $data->dokumenteknisarsi_id }}">
-<input type="hidden" name="dokumenteknisstruk_id" value="{{ $data->dokumenteknisstruk_id }}">
-<input type="hidden" name="dokumenteknismep_id" value="{{ $data->dokumenteknismep_id }}">
-<input type="hidden" name="dokumenteknisslfpbg_id" value="{{ $data->dokumenteknisslfpbg_id }}">
-<input type="hidden" name="surattugaspbg_id" value="{{ $data->surattugaspbg_id }}">
-{{-- <input type="hidden" name="tpatpt_id" value="{{ $data->tpatpt_id }}">
-<input type="hidden" name="suratudanganpbg_id" value="{{ $data->suratudanganpbg_id }}">
-<input type="hidden" name="suratpemberitahuanpbg_id" value="{{ $data->suratpemberitahuanpbg_id }}"> --}}
-
+<input type="hidden" name="datapemilik_id" value="{{ $data->id }}">
+<input type="hidden" name="databangunanpbg_id" value="{{ $data->id }}">
+<input type="hidden" name="datatanahpbg_id" value="{{ $data->id }}">
+<input type="hidden" name="dataumumpbg_id" value="{{ $data->id }}">
+<input type="hidden" name="dokumenteknisarsi_id" value="{{ $data->id }}">
+<input type="hidden" name="dokumenteknisstruk_id" value="{{ $data->id }}">
+<input type="hidden" name="dokumenteknismep_id" value="{{ $data->id }}">
+<input type="hidden" name="dokumenteknisslfpbg_id" value="{{ $data->id }}">
+<input type="hidden" name="surattugaspbg_id" value="{{ $data->id }}">
+<input type="hidden" name="tpatpt_id" value="{{ $data->id }}">
 
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -249,6 +247,26 @@ th {
         @enderror
     </div>
 </div>
+
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="namapemohon">
+            <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i> Nama Pemohon
+        </label>
+        <input
+            type="text"
+            id="namapemohon"
+            name="namapemohon"
+            value="{{ old('namapemohon', $data->namapemohon ?? '') }}"
+            class="form-control @error('namapemohon') is-invalid @enderror"
+            placeholder="Masukkan nama pemohon"
+        />
+        @error('namapemohon')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
 
 <div class="col-md-6">
     <div class="mb-3">
@@ -387,12 +405,11 @@ function previewPDF(event, containerId, iframeId, messageId) {
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
 
-                              <a href="{{ route('bepbgslfindexslfindex') }}">
-        <button class="button-hitam" type="button"
-            style="cursor: pointer; margin-left:5px;">
-            <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-        </button>
-    </a>
+                         <a href="{{ url()->previous() }}">
+    <button class="button-hitam" type="button" style="cursor: pointer; margin-left:5px;">
+        <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
+    </button>
+</a>
 
                                <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>

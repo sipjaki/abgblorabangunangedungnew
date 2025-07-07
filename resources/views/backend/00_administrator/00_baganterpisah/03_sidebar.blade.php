@@ -901,12 +901,12 @@
             <p style="color: white; margin-left: 8px;">KRK</p>
         </a>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-house nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">MBR</p>
         </a>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-image nav-icon" style="color: white;"></i>

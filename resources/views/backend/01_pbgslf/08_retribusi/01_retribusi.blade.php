@@ -53,11 +53,89 @@
 {{--  --}}
 
 @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
-<div class="putih" style="margin-bottom:100px;">
+
+<div style="display: flex; justify-content: flex-start; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 10px;">
+
+  <!-- Form Filter Bulan -->
+  <form method="GET" action="{{ url()->current() }}" style="display: flex; align-items: center; gap: 12px;">
+    <label for="filter_bulan" style="font-weight: 600;">Filter Bulan:</label>
+    <select name="bulan" id="filter_bulan" onchange="this.form.submit()" style="
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    ">
+      <option value="">-- Semua Bulan --</option>
+      @php
+        $namaBulan = [
+          1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April',
+          5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Agustus',
+          9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'Desember',
+        ];
+      @endphp
+      @foreach ($namaBulan as $num => $nama)
+        <option value="{{ $num }}" {{ request('bulan') == $num ? 'selected' : '' }}>{{ $nama }}</option>
+      @endforeach
+    </select>
+  </form>
+
+  <!-- Tombol Download -->
+  <a href="javascript:void(0)" class="text-decoration-none" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_nominalretribusi')">
+    <div class="button-baru" style="color: black;">
+      <i class="bi bi-download me-2"></i> Download Excel
+    </div>
+  </a>
+
+</div>
+<br>
+
+@canany(['superadmin', 'admin'])
+
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+  <div style="flex: 1; background-color: #f8f9fa; border-left: 5px solid #0d6efd; border-radius: 8px; padding: 16px;">
+      <strong>💰 Nominal Retribusi:</strong><br>
+      <span style="font-size: 18px; font-weight: bold;">
+          Rp {{ number_format($nominalRetribusiTotal, 0, ',', '.') }}
+        </span>
+    </div>
+
+  <div style="flex: 1; background-color: #f8f9fa; border-left: 5px solid #198754; border-radius: 8px; padding: 16px;">
+      <strong>✅ Sudah Terbayar:</strong><br>
+      <span style="font-size: 18px; font-weight: bold; color: #198754;">
+          Rp {{ number_format($nominalSudahTerbayar, 0, ',', '.') }}
+        </span>
+    </div>
+
+    <div style="flex: 1; background-color: #f8f9fa; border-left: 5px solid #dc3545; border-radius: 8px; padding: 16px;">
+    <strong>📥 Nominal Penerimaan:</strong><br>
+    <span style="font-size: 18px; font-weight: bold; color: #dc3545;">
+        Rp {{ number_format($nominalPenerimaan, 0, ',', '.') }}
+    </span>
+</div>
+</div>
+<br>
+@endcanany
+<br>
+
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+   <script>
+    function exportTableToExcel(tableID, filename = '') {
+        var table = document.getElementById(tableID);
+        var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
+        return XLSX.writeFile(wb, filename + '.xlsx');
+    }
+    </script>
+
+
+<div class="putih" style="margin-bottom:100px; margin-top:-20px;">
 
 
 <div style="width: 100%; overflow-x: auto; margin-bottom: 100px; margin-top:20px;">
-  <table
+  <table id="tabelSuratbantuanteknis"
     class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
 
   >
@@ -99,7 +177,7 @@
                 @canany(['superadmin', 'admin'])
 
                 <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
-                    <i class="bi bi-file-earmark-text-fill"></i> Bukti Pembayaran
+                    <i class="bi bi-file-earmark-text-fill"></i> Status
                 </th>
 
                 @endcanany
@@ -222,14 +300,14 @@
 
 <td style="white-space: nowrap; padding: 6px; text-align: center; vertical-align: middle;">
     @if ($item->validasiberkas8 === 'sudah')
-    {{-- @if ($item->buktipembayaran)
+    @if ($item->berkasskrd)
     <iframe
-    src="{{ asset($item->buktipembayaran) }}"
+    src="{{ asset($item->berkasskrd) }}"
     style="width: 150px; height: 200px; border: 1px solid #ccc; border-radius: 4px;"
     frameborder="0"
     ></iframe>
     <br>
-    <a href="{{ asset($item->buktipembayaran) }}"
+    <a href="{{ asset($item->berkasskrd) }}"
         class="btn btn-sm btn-primary mt-1"
         target="_blank"
         download>
@@ -237,7 +315,7 @@
             </a>
         @else
         <span class="btn btn-danger" style="color: white;">Berkas Belum di Upload</span>
-        @endif --}}
+        @endif
 
         @elseif ($item->validasiberkas8 === 'belum')
         <span class="btn btn-warning" style="color: black;">Berkas belum divalidasi</span>
@@ -323,8 +401,11 @@
 
 
 
+
 </div>
-@include('backend.00_administrator.00_baganterpisah.07_paginations')
+
+
+{{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
 </div>
           <!--end::Container-->
         </div>

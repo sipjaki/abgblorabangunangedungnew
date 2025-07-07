@@ -471,7 +471,7 @@
                 <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Permohonan
             </div>
         </div>
-
+{{--
         <div class="stat-card">
             <div class="stat-number">
                 {{
@@ -489,8 +489,8 @@
                 <i class="bi bi-arrow-repeat" style="margin-right: 6px;"></i> Dikembalikan
             </div>
         </div>
-
-        <div class="stat-card">
+ --}}
+        {{-- <div class="stat-card">
             <div class="stat-number">
                 {{
                     ($jumlahDataIdSatu_doklapangan ?? 0) +
@@ -506,9 +506,9 @@
             <div class="stat-label" style="color: navy;">
                 <i class="bi bi-calendar-check" style="margin-right: 6px;"></i> Cek Lapangan
             </div>
-        </div>
+        </div> --}}
 
-        <div class="stat-card">
+        {{-- <div class="stat-card">
             <div class="stat-number">
                 {{
                     ($jumlahDataIdSatu_olahdata ?? 0) +
@@ -524,9 +524,9 @@
             <div class="stat-label" style="color: navy;">
                 <i class="bi bi-file-earmark-check" style="margin-right: 6px;"></i> Pengolahan Data
             </div>
-        </div>
+        </div> --}}
 
-        <div class="stat-card">
+        {{-- <div class="stat-card">
             <div class="stat-number">
                 {{
                     ($jumlahDataIdSatu_terbit ?? 0) +
@@ -542,7 +542,7 @@
             <div class="stat-label" style="color: navy;">
                 <i class="bi bi-file-earmark-check" style="margin-right: 6px;"></i> Surat Terbit
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 
@@ -571,7 +571,7 @@
 
   <!-- Card 2 -->
   <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bebantuanteknisassistensi" style="text-decoration: none;">
+    <a href="/bepbgslfindexslfper2" style="text-decoration: none;">
       <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
            style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
         <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
@@ -592,7 +592,7 @@
 
   <!-- Card 3 -->
   <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bebantuanteknisassistensi" style="text-decoration: none;">
+    <a href="/bepbgslfindexslfper3" style="text-decoration: none;">
       <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
            style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
         <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
@@ -613,7 +613,7 @@
 
   <!-- Card 4 -->
   <div class="col-12 col-sm-6 col-md-6">
-    <a href="/bebantuanteknisassistensi" style="text-decoration: none;">
+    <a href="/bepbgslfindexslfper4" style="text-decoration: none;">
       <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
            style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
         <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
@@ -634,7 +634,7 @@
 
   <!-- Card 5 -->
   <div class="col-12 col-sm-6 col-md-6">
-    <a href="/bebantuanteknisassistensi" style="text-decoration: none;">
+    <a href="/bepbgslfindexslfper5" style="text-decoration: none;">
       <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
            style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
         <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
