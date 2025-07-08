@@ -112,7 +112,7 @@ th {
 
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-validasinew"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('dataallhibahbangunan.index') }}';"
                 style="cursor: pointer; color:black;">
