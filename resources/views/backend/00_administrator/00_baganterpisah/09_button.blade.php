@@ -621,3 +621,50 @@ button-delete {
         transition: background-color 0.3s ease;
     }
 </style>
+
+<script>
+// Simpan posisi scroll terakhir
+let scrollPosition = {
+  top: window.scrollY,
+  left: window.scrollX
+};
+
+// Update saat user scroll manual
+window.addEventListener('scroll', () => {
+  scrollPosition.top = window.scrollY;
+  scrollPosition.left = window.scrollX;
+});
+
+// Fungsi untuk kunci scroll
+function lockScroll() {
+  window.scrollTo(scrollPosition.left, scrollPosition.top);
+}
+
+// Cegah <a href="#"> bikin naik ke atas
+document.querySelectorAll('a[href="#"]').forEach(link => {
+  link.addEventListener('click', e => e.preventDefault());
+});
+
+// Cegah form submit default (kalau gak sengaja ke-submit)
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', function(e) {
+    if (!form.hasAttribute('data-allow-submit')) {
+      e.preventDefault();
+    }
+  });
+});
+
+// Saat select berubah, jangan naik scroll
+document.querySelectorAll('select').forEach(select => {
+  select.addEventListener('change', () => {
+    setTimeout(lockScroll, 50); // kasih delay biar aman
+  });
+});
+
+// Tambahan: jika input/textarea berubah
+document.querySelectorAll('input, textarea').forEach(input => {
+  input.addEventListener('input', () => {
+    setTimeout(lockScroll, 50);
+  });
+});
+</script>

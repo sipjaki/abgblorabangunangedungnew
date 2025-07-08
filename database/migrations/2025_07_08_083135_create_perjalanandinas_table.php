@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('namapetugas_id')->nullable()->index();
             $table->string('dinasluasdalam')->nullable();
+            $table->date('tanggalsuratterbit')->nullable();
             $table->string('maksudperjalanan')->nullable();
             $table->string('angkutan')->nullable();
             $table->string('tempatberangkat')->nullable();
@@ -24,6 +25,8 @@ return new class extends Migration
             $table->date('selesaiperjalanan')->nullable();
             $table->foreignId('pendamping_id')->nullable();
             $table->string('ketkegiatan')->nullable();
+
+            $table->string('berkasberitaacara')->nullable();
 
             $table->string('cadangan1')->nullable();
             $table->string('cadangan2')->nullable();

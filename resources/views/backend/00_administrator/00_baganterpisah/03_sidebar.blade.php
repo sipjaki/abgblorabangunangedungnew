@@ -1410,9 +1410,15 @@
     </p>
 </div>
     <li class="nav-item">
-    <a href="/bestatistikhibah" class="nav-link" style="display: flex; align-items: center;">
+    <a href="/beperjalanandinas" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">Buat Surat</p>
+    </a>
+</li>
+    <li class="nav-item">
+    <a href="/dataalldinassurat" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Daftar Surat Dinas</p>
     </a>
 </li>
 
@@ -1432,8 +1438,16 @@
         <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan Data
     </p>
 </div>
+
 <li class="nav-item">
-  <a href="/bestatistikhibah" class="nav-link" style="display: flex; align-items: center;">
+  <a href="/allakuninternal" class="nav-link" style="display: flex; align-items: center;">
+    <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <p style="color: white; margin: 0 0 0 8px;">Akun Internal</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/bepetugasdinas" class="nav-link" style="display: flex; align-items: center;">
     <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
     <p style="color: white; margin: 0 0 0 8px;">Petugas Dinas</p>
   </a>

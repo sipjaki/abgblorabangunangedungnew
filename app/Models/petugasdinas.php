@@ -18,6 +18,11 @@ class petugasdinas extends Model
         return $this->hasMany(perjalanandinas::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     // public function pendampingdinas()
     // {
     //     return $this->belongsTo(petugasdinas::class, 'pendamping_id');

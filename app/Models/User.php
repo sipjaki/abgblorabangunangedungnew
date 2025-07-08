@@ -97,4 +97,9 @@ class User extends Authenticatable
         return $this->hasMany(gambarbantuan::class);
     }
 
+    public function petugasdinas()
+    {
+        return $this->hasMany(petugasdinas::class);
+    }
+
 }

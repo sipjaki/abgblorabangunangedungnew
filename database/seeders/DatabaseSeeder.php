@@ -48,6 +48,7 @@ use App\Models\krkusaha;
 use App\Models\mbrgambar;
 use App\Models\pbgslfbangunan;
 use App\Models\pengawasatpt;
+use App\Models\petugasdinas;
 use App\Models\suratpemberitahuanpbg;
 use App\Models\surattugaspbg;
 use App\Models\tempatkonsultasi;
@@ -380,6 +381,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'akunskrd1@gmail.com',
             'password' => bcrypt('adminskrd1$$')
         ]);
+
         User::create([
             'id'  => 50,
             'name'  => 'Akun SKRD 2',
@@ -390,6 +392,166 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('adminskrd12$$')
         ]);
 
+User::create([
+    'id'  => 51,
+    'name'  => 'MOHAMAD ARIF HIDAYAT, ST',
+    'username' => 'MOHAMAD ARIF HIDAYAT, ST',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'paarifadmin@gmail.com',
+    'password' => bcrypt('adminpaarif')
+]);
+
+User::create([
+    'id'  => 52,
+    'name'  => 'ANEX FACHRIAN, S.T., M.T.',
+    'username' => 'ANEX FACHRIAN, S.T., M.T.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'paanexadmin@gmail.com',
+    'password' => bcrypt('adminpaanex')
+]);
+
+User::create([
+    'id'  => 53,
+    'name'  => 'MUHAMMAD SHOLEH',
+    'username' => 'MUHAMMAD SHOLEH',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'muhammadsholehadmin@gmail.com',
+    'password' => bcrypt('adminmuhammadsholeh')
+]);
+
+User::create([
+    'id'  => 54,
+    'name'  => 'M. MIFTAHUN NURILANAM, S.E',
+    'username' => 'M. MIFTAHUN NURILANAM, S.E',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'madminanam@gmail.com',
+    'password' => bcrypt('adminmanam')
+]);
+
+User::create([
+    'id'  => 55,
+    'name'  => 'MUHAMMAD YUSUF ZAQI E., S.E',
+    'username' => 'MUHAMMAD YUSUF ZAQI E., S.E',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'muhammadzaqiadmin@gmail.com',
+    'password' => bcrypt('adminmuhammadzaqi')
+]);
+
+User::create([
+    'id'  => 56,
+    'name'  => 'MARETHA RIANTIARNI, S.E.',
+    'username' => 'MARETHA RIANTIARNI, S.E.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'marethaadmin@gmail.com',
+    'password' => bcrypt('adminmaretha')
+]);
+
+User::create([
+    'id'  => 57,
+    'name'  => 'YULFA INTAN YURAIDA, S.T.',
+    'username' => 'YULFA INTAN YURAIDA, S.T.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'yulfaadmin@gmail.com',
+    'password' => bcrypt('adminyulfa')
+]);
+
+User::create([
+    'id'  => 58,
+    'name'  => 'TRESILIA DIAH SILVIATI, ST.',
+    'username' => 'TRESILIA DIAH SILVIATI, ST.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'tresiliaadmin@gmail.com',
+    'password' => bcrypt('admintresilia')
+]);
+
+User::create([
+    'id'  => 59,
+    'name'  => 'NOVEMBRI PUTRILIANAWATI, A.Md',
+    'username' => 'NOVEMBRI PUTRILIANAWATI, A.Md',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'novembriadmin@gmail.com',
+    'password' => bcrypt('adminnovembri')
+]);
+
+User::create([
+    'id'  => 60,
+    'name'  => 'MUNTOLIP, A.Md',
+    'username' => 'MUNTOLIP, A.Md',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'muntolipadmin@gmail.com',
+    'password' => bcrypt('adminmuntolip')
+]);
+
+
+User::create([
+    'id'  => 61,
+    'name'  => 'ANGGA JAYA SAPUTRA, A.Md',
+    'username' => 'ANGGA JAYA SAPUTRA, A.Md',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'anggaadmin@gmail.com',
+    'password' => bcrypt('adminangga')
+]);
+
+User::create([
+    'id'  => 62,
+    'name'  => 'BUDI AJAR PAMUNGKAS',
+    'username' => 'BUDI AJAR PAMUNGKAS',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'budiadmin@gmail.com',
+    'password' => bcrypt('adminbudi')
+]);
+
+User::create([
+    'id'  => 63,
+    'name'  => 'BENNY HADI HERMAWAN',
+    'username' => 'BENNY HADI HERMAWAN',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'bennyadmin@gmail.com',
+    'password' => bcrypt('adminbenny')
+]);
+
+User::create([
+    'id'  => 64,
+    'name'  => 'FANINA RAHMA HAYATI, S.Ars.',
+    'username' => 'FANINA RAHMA HAYATI, S.Ars.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'faninaadmin@gmail.com',
+    'password' => bcrypt('adminfanina')
+]);
+
+User::create([
+    'id'  => 65,
+    'name'  => 'ZAENUR ROZIKIN, ST.',
+    'username' => 'ZAENUR ROZIKIN, ST.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'zaenuradmin@gmail.com',
+    'password' => bcrypt('adminzaenur')
+]);
+
+User::create([
+    'id'  => 66,
+    'name'  => 'YONIFAN AZIZUL HAKIM, S.Ak',
+    'username' => 'YONIFAN AZIZUL HAKIM, S.Ak',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'yonifanadmin@gmail.com',
+    'password' => bcrypt('adminyonifan')
+]);
 
         // -------------------
 
@@ -579,6 +741,169 @@ User::create([
     'phone_number' => null, // Data Belum Di Update
     'password' => bcrypt('adminadmin123$$')
 ]);
+
+// =============================================
+
+petugasdinas::create([
+    'id' => 1,
+    'user_id' => 51,
+    'namalengkap' => 'MOHAMAD ARIF HIDAYAT, ST',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 2,
+    'user_id' => 52,
+    'namalengkap' => 'ANEX FACHRIAN, S.T., M.T.',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 3,
+    'user_id' => 53,
+    'namalengkap' => 'MUHAMMAD SHOLEH',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 4,
+    'user_id' => 54,
+    'namalengkap' => 'M. MIFTAHUN NURILANAM, S.E',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 5,
+    'user_id' => 55,
+    'namalengkap' => 'MUHAMMAD YUSUF ZAQI E., S.E',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 6,
+    'user_id' => 56,
+    'namalengkap' => 'MARETHA RIANTIARNI, S.E.',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 7,
+    'user_id' => 57,
+    'namalengkap' => 'YULFA INTAN YURAIDA, S.T.',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 8,
+    'user_id' => 58,
+    'namalengkap' => 'TRESILIA DIAH SILVIATI, ST.',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 9,
+    'user_id' => 59,
+    'namalengkap' => 'NOVEMBRI PUTRILIANAWATI, A.Md',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 10,
+    'user_id' => 60,
+    'namalengkap' => 'MUNTOLIP, A.Md',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 11,
+    'user_id' => 61,
+    'namalengkap' => 'ANGGA JAYA SAPUTRA, A.Md',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 12,
+    'user_id' => 62,
+    'namalengkap' => 'BUDI AJAR PAMUNGKAS',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 13,
+    'user_id' => 63,
+    'namalengkap' => 'BENNY HADI HERMAWAN',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 14,
+    'user_id' => 64,
+    'namalengkap' => 'FANINA RAHMA HAYATI, S.Ars.',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 15,
+    'user_id' => 65,
+    'namalengkap' => 'ZAENUR ROZIKIN, ST.',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
+petugasdinas::create([
+    'id' => 16,
+    'user_id' => 66,
+    'namalengkap' => 'YONIFAN AZIZUL HAKIM, S.Ak',
+    'nip' => 'Data Masih Kosong',
+    'pangkat' => 'Data Masih Kosong',
+    'jabatan' => 'Data Masih Kosong',
+    'tingkatbiaya' => 'Data Masih Kosong',
+]);
+
 
 // =============================================
 
@@ -1141,10 +1466,10 @@ pengawasatpt::create([
             'status' => 'akunskrd',
         ]);
 
-        // statusadmin::create([
-        //     'id'  => 7,
-        //     'status' => 'pemohonbantek',
-        // ]);
+        statusadmin::create([
+            'id'  => 8,
+            'status' => 'internal',
+        ]);
 
 
         // AKUN USERS ---------

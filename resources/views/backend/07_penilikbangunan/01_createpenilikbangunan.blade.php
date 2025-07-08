@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="button-belakang row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -248,8 +248,8 @@ th {
   Detail Bangunan & Spesifikasi
 </h5>
 
-    @php
-// Mapping nama field ke ikon bi Bootstrap Icon yang pas
+@php
+// Mapping nama field ke ikon Bootstrap
 $icons = [
     'namabangunan' => 'bi-building',
     'luasbangunan' => 'bi-rulers',
@@ -272,43 +272,41 @@ $icons = [
     'jumlahunit' => 'Jumlah Unit',
     'estimasijumlahpenghuni' => 'Estimasi Jumlah Penghuni'
 ] as $name => $label)
-
     <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label d-flex align-items-center" for="{{ $name }}">
                 <i class="bi {{ $icons[$name] ?? 'bi-info-circle' }} me-2 text-danger"></i> {{ $label }}
             </label>
 
-            @if($name == 'jumlahlantai')
+            @if($name === 'jumlahlantai')
                 {{-- Select 1 sampai 10 --}}
                 <select class="form-select @error($name) is-invalid @enderror" id="{{ $name }}" name="{{ $name }}">
                     <option value="">-- Pilih Jumlah Lantai --</option>
-                    @for($i=1; $i<=10; $i++)
+                    @for($i = 1; $i <= 10; $i++)
                         <option value="{{ $i }}" {{ old($name, $data->$name ?? '') == $i ? 'selected' : '' }}>{{ $i }}</option>
                     @endfor
                 </select>
-            @elseif($name == 'luasbasemen')
-                {{-- Input number + pilihan "TIDAK ADA" --}}
+
+            @elseif($name === 'luasbasemen')
+                {{-- Input + select "TIDAK ADA" --}}
                 <div class="input-group">
-                    <input type="number" step="0.01" min="0" class="form-control @error($name) is-invalid @enderror" id="{{ $name }}" name="{{ $name }}" value="{{ is_numeric(old($name, $data->$name ?? '')) ? old($name, $data->$name ?? '') : '' }}" placeholder="Masukkan luas basemen">
-                    <select class="form-select @error($name) is-invalid @enderror" onchange="
-                        if(this.value === 'TIDAK ADA') {
-                            document.getElementById('{{ $name }}').value = '';
-                            document.getElementById('{{ $name }}').setAttribute('readonly', true);
-                        } else {
-                            document.getElementById('{{ $name }}').removeAttribute('readonly');
-                        }
-                    ">
+                    <input type="number" step="0.01" min="0" id="{{ $name }}" name="{{ $name }}"
+                        value="{{ is_numeric(old($name, $data->$name ?? '')) ? old($name, $data->$name ?? '') : '' }}"
+                        class="form-control @error($name) is-invalid @enderror" placeholder="Masukkan luas basemen">
+
+                    <select class="form-select" data-toggle-readonly data-target="{{ $name }}">
                         <option value="">-- Pilih --</option>
                         <option value="TIDAK ADA" {{ old($name, $data->$name ?? '') === 'TIDAK ADA' ? 'selected' : '' }}>TIDAK ADA</option>
                     </select>
                 </div>
-            @elseif($name == 'namabangunan')
-                {{-- Input text biasa --}}
-                <input type="text" class="form-control @error($name) is-invalid @enderror" id="{{ $name }}" name="{{ $name }}" value="{{ old($name, $data->$name ?? '') }}">
+
+            @elseif($name === 'namabangunan')
+                <input type="text" class="form-control @error($name) is-invalid @enderror" id="{{ $name }}" name="{{ $name }}"
+                    value="{{ old($name, $data->$name ?? '') }}" placeholder="Masukkan nama bangunan">
+
             @else
-                {{-- Input number untuk field lain --}}
-                <input type="number" step="any" class="form-control @error($name) is-invalid @enderror" id="{{ $name }}" name="{{ $name }}" value="{{ old($name, $data->$name ?? '') }}">
+                <input type="number" step="any" class="form-control @error($name) is-invalid @enderror" id="{{ $name }}" name="{{ $name }}"
+                    value="{{ old($name, $data->$name ?? '') }}">
             @endif
 
             @error($name)
@@ -317,7 +315,6 @@ $icons = [
         </div>
     </div>
 @endforeach
-
     <!-- =========================== -->
     <!-- SPESIFIKASI BANGUNAN -->
     <!-- =========================== -->
@@ -571,7 +568,7 @@ $icons = [
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-create" type="button" onclick="openModal()">
+                               <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>

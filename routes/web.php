@@ -14,8 +14,10 @@ use App\Http\Controllers\KrkController;
 use App\Http\Controllers\PbgslfController;
 use App\Http\Controllers\PendataanBangunanGedungController;
 use App\Http\Controllers\PenilikbangunanController;
+use App\Http\Controllers\PerjalanandinasController;
 use App\Models\gambarbantuan;
 use App\Models\pbgslfbangunan;
+use App\Models\perjalanandinas;
 use Illuminate\Support\Facades\Route;
 
 
@@ -534,10 +536,43 @@ Route::delete('/allakundelete/{id}', [akuncontroller::class, 'allakundelete'])->
 
 Route::get('/allakundinas', [akuncontroller::class, 'allakundinas'])->middleware('auth')->name('allakundinas.showdata');
 Route::get('/allakunkonsultan', [akuncontroller::class, 'allakunkonsultan'])->middleware('auth')->name('allakunkonsultan.showdata');
+Route::get('/allakuninternal', [akuncontroller::class, 'allakuninternal'])->middleware('auth')->name('allakuninternal.showdata');
+
 
 Route::get('/allakuncreate', [akuncontroller::class, 'allakuncreate'])->middleware('auth')->name('allakuncreate.create');
 Route::post('/allakuncreatenew', [akuncontroller::class, 'allakuncreatenew'])->middleware('auth')->name('create.allakuncreatenew');
 // MENU AKUN SEMUA
+
+
+// MENU BACKEND PERJALANAN DINAS
+Route::get('/bepetugasdinas', [PerjalanandinasController::class, 'bepetugasdinas'])->middleware('auth')->name('bepetugasdinasindex');
+Route::delete('/bepetugasdinasdelete/{id}', [PerjalanandinasController::class, 'bepetugasdinasdelete'])->middleware('auth')->name('delete.bepetugasdinasdelete');
+
+
+Route::get('/beperjalanandinas', [PerjalanandinasController::class, 'beperjalanandinas'])->middleware('auth')->name('beperjalanandinasindex');
+Route::post('/beperjalanandinasnew', [PerjalanandinasController::class, 'beperjalanandinasnew'])->middleware('auth')->name('beperjalanandinasnew');
+
+Route::get('/dataalldinassurat', [PerjalanandinasController::class, 'dataalldinassurat'])->name('dataalldinassurat.index');
+
+Route::get('/dataalldinassuratshow/{id}', [PerjalanandinasController::class, 'dataalldinassuratshow'])->middleware('auth')->name('dataalldinassuratshow.detail');
+Route::get('/dataalldinassuratlap/{id}', [PerjalanandinasController::class, 'dataalldinassuratlap'])->middleware('auth')->name('dataalldinassuratlap.show');
+
+
+Route::get('/dataalldinassuratdokcreate/{id}', [PerjalanandinasController::class, 'dataalldinassuratdokcreate'])->middleware('auth')->name('dataalldinassuratdokcreate');
+Route::post('/dataalldinassuratdokcreatenew', [PerjalanandinasController::class, 'dataalldinassuratdokcreatenew'])->middleware('auth')->name('dataalldinassuratdokcreatenew');
+
+
+Route::delete('/dataalldinasdelete/{id}', [PerjalanandinasController::class, 'dataalldinasdelete'])->middleware('auth')->name('dataalldinasdelete');
+
+Route::get('/beperjalanadinasba/{id}', [PerjalanandinasController::class, 'beperjalanadinasba'])->middleware('auth')->name('beperjalanadinasba');
+
+Route::post('/beperjalanadinasbaupload/{id}', [PerjalanandinasController::class, 'beperjalanadinasbaupload'])->middleware('auth')->name('beperjalanadinasbaupload');
+
+Route::get('/bedinaspetugasupdate/{id}', [PerjalanandinasController::class, 'bedinaspetugasupdate'])->middleware('auth')->name('bedinaspetugasupdate');
+Route::post('/bedinaspetugasnewupdate/{id}', [PerjalanandinasController::class, 'bedinaspetugasnewupdate'])->middleware('auth')->name('bedinaspetugasnewupdate');
+
+Route::get('/bedinaspetugas', [PerjalanandinasController::class, 'bedinaspetugas'])->middleware('auth')->name('bedinaspetugas');
+Route::post('/bedinaspetugasnew', [PerjalanandinasController::class, 'bedinaspetugasnew'])->middleware('auth')->name('bedinaspetugasnew');
 
 // MENU 06 KRK BACKEND
 

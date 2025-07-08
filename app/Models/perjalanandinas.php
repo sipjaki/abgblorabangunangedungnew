@@ -23,4 +23,9 @@ class perjalanandinas extends Model
         return $this->belongsTo(petugasdinas::class, 'pendamping_id');
     }
 
+    public function lapperjalanandinas()
+    {
+        return $this->hasMany(lapperjalanandinas::class);
+    }
+
 }
