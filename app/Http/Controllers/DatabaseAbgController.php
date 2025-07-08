@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\agendastatus;
 use App\Models\asosiasipengusaha;
 use App\Models\bantuanteknis;
+use App\Models\fasilitatorpbg;
+use App\Models\fungsibangunangambar;
+use App\Models\fungsibangunanpbg;
+use App\Models\jenispermohonangambar;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\mbrgambar;
@@ -175,17 +179,18 @@ public function datadesablora(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 20);
+    $perPage = $request->input('perPage', 50);
 
-    $query = kecamatanblora::query();
+    $query = kelurahandesa::query();
 
     if ($search) {
         $query->where(function ($q) use ($search) {
-            $q->where('kecamatanblora', 'like', "%{$search}%");
-        });
-
-        $query->orWhereHas('kelurahandesa', function ($q) use ($search) {
+            // Cari berdasarkan nama desa
             $q->where('desa', 'like', "%{$search}%");
+        })
+        ->orWhereHas('kecamatanblora', function ($q) use ($search) {
+            // Cari berdasarkan nama kecamatan yang relasinya di tabel kecamatanblora
+            $q->where('kecamatanblora', 'like', "%{$search}%");
         });
     }
 
@@ -197,6 +202,7 @@ public function datadesablora(Request $request)
         'user'  => $user,
     ]);
 }
+
 
 public function datambrblora(Request $request)
 {
@@ -224,6 +230,254 @@ public function datambrblora(Request $request)
         'data'  => $data,
         'user'  => $user,
     ]);
+}
+
+public function datajenispermohonan(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 50);
+
+    $query = jenispermohonangambar::query();
+
+    if ($search) {
+        $query->where('jenis', 'like', "%{$search}%");
+    }
+
+    $data = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.99_databaseabg.08_bantuangambar.01_datajenispermohonan', [
+        'title' => 'Jenis Permohonan Bantuan Gambar',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
+
+public function datajenispermohonandelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = jenispermohonangambar::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/datajenispermohonan')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
+    public function datajenispermohonancreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 8)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.99_databaseabg.08_bantuangambar.02_buatbaru', [
+        'title' => 'Buat Jenis Permohonan Baru Bantuan Gambar',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
+
+public function datajenispermohonancreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'jenis' => 'required|string|max:255',
+    ], [
+        'jenis.required' => 'Jenis permohonan wajib diisi.',
+    ]);
+
+    // Simpan ke database
+    $data = new jenispermohonangambar();
+    $data->jenis = $validated['jenis'];
+    $data->save();
+
+    session()->flash('create', 'Data jenis permohonan berhasil disimpan.');
+    return redirect()->route('datajenispermohonanindex'); // Ganti sesuai nama rute index kamu
+}
+
+
+public function datafungsibangunan(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 50);
+
+    $query = fungsibangunangambar::query();
+
+    if ($search) {
+        $query->where('fungsibangunan', 'like', "%{$search}%");
+    }
+
+    $data = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.99_databaseabg.08_bantuangambar.03_jenisfungsibangunan', [
+        'title' => 'Jenis Fungsi Bangunan Bantuan Gambar',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
+
+public function datafungsibangunandelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = fungsibangunangambar::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/datafungsibangunan')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
+
+       public function datafungsibangunancreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 8)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.99_databaseabg.08_bantuangambar.04_buatfungsibaru', [
+        'title' => 'Buat Jenis Fungsi Bangunan Baru',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
+
+public function datafungsibangunancreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'fungsibangunan' => 'required|string|max:255',
+    ], [
+        'fungsibangunan.required' => 'Fungsi bangunan wajib diisi.',
+    ]);
+
+    // Simpan ke database
+    $data = new fungsibangunangambar();
+    $data->fungsibangunan = $validated['fungsibangunan'];
+    $data->save();
+
+    session()->flash('create', 'Data fungsi bangunan berhasil disimpan.');
+    return redirect()->route('datafungsibangunanindex'); // Ganti sesuai route index fungsi bangunan
+}
+
+
+public function datafasilitator(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 50);
+
+    $query = fasilitatorpbg::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namalengkap', 'like', "%{$search}%")
+              ->orWhere('alamat', 'like', "%{$search}%")
+              ->orWhere('nik', 'like', "%{$search}%")
+              ->orWhere('jabatan', 'like', "%{$search}%");
+        });
+    }
+
+    $data = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.99_databaseabg.08_bantuangambar.05_daftarfasilitator', [
+        'title' => 'Daftar Fasilitator Bantuan Gambar',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
+
+public function datafasilitatordelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = fasilitatorpbg::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/datafasilitator')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
+
+       public function datafasilitatorcreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 8)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.99_databaseabg.08_bantuangambar.06_buatbarudasilitaror', [
+        'title' => 'Tambah Fasilitator Bantuan Gambar',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
+public function datafasilitatorcreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'namalengkap' => 'required|string|max:255',
+        'alamat'      => 'required|string|max:255',
+        'nik'         => 'required|string|max:50',
+        'jabatan'     => 'required|string|max:100',
+    ], [
+        'namalengkap.required' => 'Nama lengkap wajib diisi.',
+        'alamat.required'      => 'Alamat wajib diisi.',
+        'nik.required'         => 'NIK wajib diisi.',
+        'jabatan.required'     => 'Jabatan wajib diisi.',
+    ]);
+
+    // Simpan ke database
+    $data = new fasilitatorpbg();
+    $data->namalengkap = $validated['namalengkap'];
+    $data->alamat = $validated['alamat'];
+    $data->nik = $validated['nik'];
+    $data->jabatan = $validated['jabatan'];
+    $data->save();
+
+    session()->flash('create', 'Data fasilitator berhasil disimpan.');
+    return redirect()->route('datafasilitatorindex'); // Ganti sesuai route index fasilitator
 }
 
 

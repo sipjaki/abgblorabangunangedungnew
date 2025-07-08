@@ -154,7 +154,7 @@ th {
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
 
-  <a href="{{ url('/bebantuangambar') }}" class="button-kembali" style="color: black;">
+  <a href="{{ url('/bebantuangambar') }}" class="button-newvalidasi" style="color: black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
 

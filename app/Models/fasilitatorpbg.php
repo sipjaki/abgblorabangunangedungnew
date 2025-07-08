@@ -15,7 +15,7 @@ class fasilitatorpbg extends Model
 
   public function surattugaspbg()
 {
-    return $this->hasMany(surattugaspbg::class, 'surattugaspbg_id');
+    return $this->hasMany(surattugaspbg::class);
 }
 
 }

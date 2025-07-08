@@ -15,7 +15,7 @@ class kelurahandesa extends Model
 
     public function kecamatanblora()
     {
-        return $this->hasMany(kecamatanblora::class, 'kecamatanblora_id');
+        return $this->belongsTo(kecamatanblora::class, 'kecamatanblora_id');
     }
 
     public function krkusaha()

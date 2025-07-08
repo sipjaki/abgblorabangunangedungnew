@@ -225,6 +225,7 @@
 }
 /*
 .button-baru {
+
     border: 1px solid #c8dfff;
     padding: 8px 20px;
     border-radius: 12px;
@@ -295,6 +296,33 @@
     color: #000000 !important;          /* Teks jadi hitam */
     border: 1px solid #0d6efd !important; /* Border biru tua */
     box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+    transform: translateY(-1px);
+}
+
+.button-berkas {
+    background: linear-gradient(145deg, #ffe566, #ffd100);
+    color: #333333;
+    border: 1px solid #ffcc00;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: max-content;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-berkas:hover {
+    background: #fffacd !important;             /* Hover jadi lebih soft kuning muda */
+    color: #000000 !important;
+    border: 1px solid #e6b800 !important;
+    box-shadow: 0 4px 12px rgba(255, 209, 0, 0.25);
     transform: translateY(-1px);
 }
 

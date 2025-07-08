@@ -35,7 +35,7 @@ class kecamatanblora extends Model
 
     public function kelurahandesa()
     {
-        return $this->belongsTo(kelurahandesa::class);
+        return $this->hasMany(kelurahandesa::class);
     }
 
     public function bantuanteknis()
