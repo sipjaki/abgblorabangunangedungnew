@@ -56,6 +56,11 @@ Route::get('/resbantekpermohonan', [FedashboardController::class, 'resbantekperm
 // 08_ MENU MBR BANTUAN GAMBAR
 // ----------------------------------------------------------------------------------------
 Route::get('/resmbrgambarindex', [FedashboardController::class, 'resmbrgambarindex']);
+Route::get('/mbrgambarupdate/{id}', [FedashboardController::class, 'mbrgambarupdate'])->middleware('auth')->name('mbrgambarupdate');
+Route::post('/mbrgambarupdatenew/{id}', [PbgslfController::class, 'mbrgambarupdatenew'])->middleware('auth')->name('mbrgambarupdatenew');
+
+// Route::post('/mbrgambarupdatenew/{id}', [BantuanhibahbgController::class, 'datanewhibahnew'])->middleware('auth')->name('dokhibahnew.create');
+
 // Route::get('/resbantekpermohonan', [FedashboardController::class, 'resbantekpermohonan'])->middleware('auth');
 
 // WEB 03_ MENU BANGUNAN GEDUNG ANDROID
@@ -805,6 +810,7 @@ Route::post('/bebantuangambaruploadnew/{id}', [GambarbantuanController::class, '
 
 Route::get('/bebantuangambarperbaikan/{id}', [GambarbantuanController::class, 'bebantuangambarperbaikan'])->middleware('auth')->name('bebantuangambarperbaikan.perbaikan');
 Route::post('/bebantuangambarperbaikannew/{id}', [GambarbantuanController::class, 'bebantuangambarperbaikannew'])->middleware('auth')->name('bebantuangambarperbaikannew');
+// gitgit
 
 // Route::delete('/dokbekrkusahadelete/{id}', [KrkController::class, 'dokbekrkusahadelete'])->middleware('auth')->name('delete.dokbekrkusahadelete');
 

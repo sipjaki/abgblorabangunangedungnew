@@ -13,13 +13,7 @@
 
       <!--begin::App Main-->
       <main class="app-main"
-         style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-  ">
+         style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0;position: relative; left: 0;">
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -48,156 +42,149 @@
         {{-- ======================================================= --}}
 
         <div class="container-fluid">
-            <!--begin::Row-->
-  <!-- =========================================================== -->
-  {{-- <h5 class="mt-4 mb-2">Info Box With <code>bg-*</code></h5> --}}
-  <!--begin::Row-->
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                google.charts.load("current", { packages: ["corechart"] });
+                google.charts.setOnLoadCallback(drawCharts);
+
+                function drawCharts() {
+                    // Header data array: kolom nama instansi, jumlah, dan style (warna)
+                    var dataArray = [
+                    ['Instansi', 'Jumlah Permohonan', { role: 'style' }]
+                    ];
+
+                    // Loop PHP ke JS (inject data dari $jumlahPerInstansi)
+                    @foreach($jumlahPerInstansi as $item)
+                    var color = '#001f3f'; // default warna navy
+                    @if(strtolower($item->instansi) === 'dinas')
+                        color = '#006400'; // hijau
+                    @elseif(strtolower($item->instansi) === 'proposal')
+                        color = '#FFD700'; // emas
+                    @endif
+
+                    dataArray.push(['{{ $item->instansi }}', {{ $item->total }}, color]);
+                    @endforeach
+
+                    // Data untuk PieChart (tidak perlu style kolom)
+                    var dataPie = google.visualization.arrayToDataTable(
+                    dataArray.map(function(row, idx) {
+                        return (idx === 0) ? [row[0], row[1]] : [row[0], row[1]];
+                    })
+                    );
+
+                    // Data untuk BarChart (pakai style kolom)
+                    var dataBar = google.visualization.arrayToDataTable(dataArray);
+
+                    var pieOptions = {
+                    title: 'Persentase Permohonan',
+                    is3D: true,
+                    backgroundColor: 'transparent',
+                    colors: ['#006400', '#FFD700', '#001f3f', '#FFA500'],
+                    titleTextStyle: { color: '#001f3f', fontSize: 16, bold: true },
+                    legend: { textStyle: { color: '#001f3f', fontSize: 12 } },
+                    chartArea: { width: '90%', height: '75%' }
+                    };
+
+                    var barOptions = {
+                    title: 'Jumlah Permohonan',
+                    backgroundColor: 'transparent',
+                    titleTextStyle: { color: '#001f3f', fontSize: 16, bold: true },
+                    legend: { position: 'none' },
+                    chartArea: { width: '65%', height: '70%' },
+                    hAxis: { title: 'Jumlah Permohonan', titleTextStyle: { color: '#001f3f' }, textStyle: { color: '#001f3f' } },
+                    vAxis: { textStyle: { color: '#001f3f' } }
+                    };
+
+                    var pieChart = new google.visualization.PieChart(document.getElementById('piechart'));
+                    var barChart = new google.visualization.ColumnChart(document.getElementById('barchart'));
+
+                    pieChart.draw(dataPie, pieOptions);
+                    barChart.draw(dataBar, barOptions);
+                }
+                </script>
+
+                                <style>
+                                .chart-container {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: flex-start;
+                                    flex-wrap: wrap;
+                                    margin-top: -80px;
+                                }
+
+                                .chart-box {
+                                    flex: 1;
+                                    min-width: 450px;
+                                    max-width: 50%;
+                                    height: 400px;
+                                    padding: 10px;
+                                    box-sizing: border-box;
+                                }
+
+                                svg {
+                                    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
+                                }
+                                </style>
+
+                                <div class="chart-container">
+                                <div id="piechart" class="chart-box"></div>
+                                <div id="barchart" class="chart-box"></div>
+                                </div>
 
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-  google.charts.load("current", { packages: ["corechart"] });
-  google.charts.setOnLoadCallback(drawCharts);
+                    <div class="container" style="margin-top: -50px;">
+                        <div class="d-flex justify-content-between flex-wrap gap-3">
 
-  function drawCharts() {
-    // Header data array: kolom nama instansi, jumlah, dan style (warna)
-    var dataArray = [
-      ['Instansi', 'Jumlah Permohonan', { role: 'style' }]
-    ];
+                            <!-- Jumlah Permohonan -->
+                            <div class="stat-card text-center">
+                                <div class="stat-number">
+                                    {{ $datajumlahbantuanhibah ?? 0 }}
+                                </div>
+                                <div class="stat-label" style="color: navy;">
+                                    <i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Permohonan
+                                </div>
+                            </div>
 
-    // Loop PHP ke JS (inject data dari $jumlahPerInstansi)
-    @foreach($jumlahPerInstansi as $item)
-      var color = '#001f3f'; // default warna navy
-      @if(strtolower($item->instansi) === 'dinas')
-        color = '#006400'; // hijau
-      @elseif(strtolower($item->instansi) === 'proposal')
-        color = '#FFD700'; // emas
-      @endif
-
-      dataArray.push(['{{ $item->instansi }}', {{ $item->total }}, color]);
-    @endforeach
-
-    // Data untuk PieChart (tidak perlu style kolom)
-    var dataPie = google.visualization.arrayToDataTable(
-      dataArray.map(function(row, idx) {
-        return (idx === 0) ? [row[0], row[1]] : [row[0], row[1]];
-      })
-    );
-
-    // Data untuk BarChart (pakai style kolom)
-    var dataBar = google.visualization.arrayToDataTable(dataArray);
-
-    var pieOptions = {
-      title: 'Persentase Permohonan',
-      is3D: true,
-      backgroundColor: 'transparent',
-      colors: ['#006400', '#FFD700', '#001f3f', '#FFA500'],
-      titleTextStyle: { color: '#001f3f', fontSize: 16, bold: true },
-      legend: { textStyle: { color: '#001f3f', fontSize: 12 } },
-      chartArea: { width: '90%', height: '75%' }
-    };
-
-    var barOptions = {
-      title: 'Jumlah Permohonan',
-      backgroundColor: 'transparent',
-      titleTextStyle: { color: '#001f3f', fontSize: 16, bold: true },
-      legend: { position: 'none' },
-      chartArea: { width: '65%', height: '70%' },
-      hAxis: { title: 'Jumlah Permohonan', titleTextStyle: { color: '#001f3f' }, textStyle: { color: '#001f3f' } },
-      vAxis: { textStyle: { color: '#001f3f' } }
-    };
-
-    var pieChart = new google.visualization.PieChart(document.getElementById('piechart'));
-    var barChart = new google.visualization.ColumnChart(document.getElementById('barchart'));
-
-    pieChart.draw(dataPie, pieOptions);
-    barChart.draw(dataBar, barOptions);
-  }
-</script>
-
-<style>
-  .chart-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-top: -80px;
-  }
-
-  .chart-box {
-    flex: 1;
-    min-width: 450px;
-    max-width: 50%;
-    height: 400px;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  svg {
-    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
-  }
-</style>
-
-<div class="chart-container">
-  <div id="piechart" class="chart-box"></div>
-  <div id="barchart" class="chart-box"></div>
-</div>
+                            <!-- Permohonan Dikembalikan -->
+                        <div class="stat-card text-center">
+                        <div class="stat-number">
+                            {{ $datajumlahbantuanhibah_dikembalikan ?? 0 }}
+                        </div>
+                        <div class="stat-label" style="color: navy;">
+                            <i class="bi bi-clipboard-check" style="margin-right: 6px;"></i> Berkas Survey <br> Pengajuan Proposal
+                        </div>
+                    </div>
 
 
-<div class="container" style="margin-top: -50px;">
-    <div class="d-flex justify-content-between flex-wrap gap-3">
+                    <!-- Dokumentasi Lapangan -->
+                    <div class="stat-card text-center">
+                        <div class="stat-number">
+                            {{ $datajumlahdok_lapangan ?? 0 }}
+                        </div>
+                        <div class="stat-label" style="color: navy;">
+                            <i class="bi bi-camera" style="margin-right: 6px;"></i> Dokumentasi <br> Lapangan
+                        </div>
+                    </div>
 
-        <!-- Jumlah Permohonan -->
-        <div class="stat-card text-center">
-            <div class="stat-number">
-                {{ $datajumlahbantuanhibah ?? 0 }}
-            </div>
-            <div class="stat-label" style="color: navy;">
-                <i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Permohonan
-            </div>
-        </div>
+                    <!-- SK Terbit -->
+                    <div class="stat-card text-center">
+                        <div class="stat-number">
+                            {{ $datajumlahsk_terbit ?? 0 }}
+                        </div>
+                        <div class="stat-label" style="color: navy;">
+                            <i class="bi bi-file-earmark-medical" style="margin-right: 6px;"></i> SK Terbit <br> Hibah Bangunan
+                        </div>
+                    </div>
 
-        <!-- Permohonan Dikembalikan -->
-     <div class="stat-card text-center">
-    <div class="stat-number">
-        {{ $datajumlahbantuanhibah_dikembalikan ?? 0 }}
-    </div>
-    <div class="stat-label" style="color: navy;">
-        <i class="bi bi-clipboard-check" style="margin-right: 6px;"></i> Berkas Survey <br> Pengajuan Proposal
-    </div>
-</div>
-
-
-        <!-- Dokumentasi Lapangan -->
-        <div class="stat-card text-center">
-            <div class="stat-number">
-                {{ $datajumlahdok_lapangan ?? 0 }}
-            </div>
-            <div class="stat-label" style="color: navy;">
-                <i class="bi bi-camera" style="margin-right: 6px;"></i> Dokumentasi <br> Lapangan
-            </div>
-        </div>
-
-        <!-- SK Terbit -->
-        <div class="stat-card text-center">
-            <div class="stat-number">
-                {{ $datajumlahsk_terbit ?? 0 }}
-            </div>
-            <div class="stat-label" style="color: navy;">
-                <i class="bi bi-file-earmark-medical" style="margin-right: 6px;"></i> SK Terbit <br> Hibah Bangunan
-            </div>
-        </div>
-
-        <!-- Permohonan Selesai -->
-        <div class="stat-card text-center">
-            <div class="stat-number">
-                {{ $datajumlahsk_selesai ?? 0 }}
-            </div>
-            <div class="stat-label" style="color: navy;">
-                <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Selesai
-            </div>
-        </div>
-
+                    <!-- Permohonan Selesai -->
+                    <div class="stat-card text-center">
+                        <div class="stat-number">
+                            {{ $datajumlahsk_selesai ?? 0 }}
+                        </div>
+                        <div class="stat-label" style="color: navy;">
+                            <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Selesai
+                        </div>
+                    </div>
     </div>
 </div>
 
@@ -222,8 +209,6 @@
     margin-top: 8px;
 }
 
-</style>
-<style>
         * {
             margin: 0;
             padding: 0;

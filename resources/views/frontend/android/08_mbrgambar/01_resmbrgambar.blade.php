@@ -2,7 +2,7 @@
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
-    <div class="w-full h-[184px] absolute top-0 bg-cover bg-center" style="background-image: url('/assets/android/iconmenu/newblora1.jpg');">
+    <div class="w-full h-[184px] absolute top-0 bg-cover bg-center" style="background-image: url('/assets/android/iconmenu/newblora1.jpg');" loading="lazy">
     </div>
      <div class="relative z-10 flex flex-col gap-6 mt-[60px]">
       <div class="top-menu flex justify-between items-center px-[18px]">
@@ -20,7 +20,7 @@
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
               <div class="flex items-center">
                 <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/004.png" class="object-cover w-full h-full" alt="photo">
+                  <img src="/assets/android/menunavigasi/08.png" class="object-cover w-full h-full" alt="photo">
                 </div>
               </div>
               <div class="flex flex-col flex-1 gap-[2px] text-left">
@@ -32,34 +32,120 @@
 
         </div>
 
-        <div class="flex flex-col space-y-3 px-[18px]">
-            <!-- Card 1 -->
-            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
-                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/004.png" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Bantuan Tekni</p>
-                  <p class="font-semibold">Informasi Bantuan Teknis</p>
-                </div>
-              </div>
-            </a>
+<div class="flex flex-col space-y-3 px-[18px]">
 
-            <!-- Card 2 -->
-            <a href="/resbantekpermohonan" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
-                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/004.png" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Form Permohonan</p>
-                  <p class="font-semibold">Ajukan Permohonan</p>
-                </div>
-              </div>
-            </a>
+    @foreach ($data as $item)
 
-          </div>
+    {{-- Berkas 1 --}}
+    @php
+    $ext1 = strtolower(pathinfo($item->berkas1 ?? '', PATHINFO_EXTENSION));
+    $path1 = $item->berkas1 && file_exists(public_path('storage/' . $item->berkas1))
+    ? asset('storage/' . $item->berkas1)
+    : ($item->berkas1 ? asset($item->berkas1) : null);
+    @endphp
+  <a href="{{ $path1 ?? '#' }}" target="_blank" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+      <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
+              @if ($path1)
+              @if (in_array($ext1, ['jpg', 'jpeg', 'png', 'webp']))
+              <img src="{{ $path1 }}" class="object-cover w-full h-full" alt="Berkas 1">
+              @else
+              <i class="bi bi-file-earmark-pdf text-danger text-3xl m-auto"></i>
+              @endif
+              @else
+              <div class="bg-light text-center text-sm text-gray-500 w-full h-full flex items-center justify-center">Tidak Ada</div>
+              @endif
+            </div>
+            <div class="flex flex-col gap-[2px]">
+                <p  class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi MBR Bantuan Gambar</p>
+                <p class="font-semibold">File: Klik Untuk Melihat File Informasi</p>
+            </div>
+        </div>
+    </a>
+
+    {{-- Berkas 2 --}}
+    @php
+    $ext2 = strtolower(pathinfo($item->berkas2 ?? '', PATHINFO_EXTENSION));
+    $path2 = $item->berkas2 && file_exists(public_path('storage/' . $item->berkas2))
+    ? asset('storage/' . $item->berkas2)
+    : ($item->berkas2 ? asset($item->berkas2) : null);
+    @endphp
+  <a href="{{ $path2 ?? '#' }}" target="_blank" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+      <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
+              @if ($path2)
+              @if (in_array($ext2, ['jpg', 'jpeg', 'png', 'webp']))
+              <img src="{{ $path2 }}" class="object-cover w-full h-full" alt="Berkas 2">
+              @else
+              <i class="bi bi-file-earmark-pdf text-danger text-3xl m-auto"></i>
+              @endif
+              @else
+              <div class="bg-light text-center text-sm text-gray-500 w-full h-full flex items-center justify-center">Tidak Ada</div>
+              @endif
+            </div>
+            <div class="flex flex-col gap-[2px]">
+                <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi MBR Bantuan Gambar</p>
+                <p class="font-semibold">File: Klik Untuk Melihat File Informasi</p>
+            </div>
+        </div>
+    </a>
+
+    {{-- Berkas 3 --}}
+    @php
+    $ext3 = strtolower(pathinfo($item->berkas3 ?? '', PATHINFO_EXTENSION));
+    $path3 = $item->berkas3 && file_exists(public_path('storage/' . $item->berkas3))
+    ? asset('storage/' . $item->berkas3)
+    : ($item->berkas3 ? asset($item->berkas3) : null);
+    @endphp
+  <a href="{{ $path3 ?? '#' }}" target="_blank" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+    <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
+        <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
+            @if ($path3)
+            @if (in_array($ext3, ['jpg', 'jpeg', 'png', 'webp']))
+            <img src="{{ $path3 }}" class="object-cover w-full h-full" alt="Berkas 3">
+            @else
+            <i class="bi bi-file-earmark-pdf text-danger text-3xl m-auto"></i>
+            @endif
+            @else
+            <div class="bg-light text-center text-sm text-gray-500 w-full h-full flex items-center justify-center">Tidak Ada</div>
+            @endif
+        </div>
+      <div class="flex flex-col gap-[2px]">
+        <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi MBR Bantuan Gambar</p>
+        <p class="font-semibold">File: Klik Untuk Melihat File Informasi</p>
+    </div>
+</div>
+</a>
+
+  {{-- Berkas 4 --}}
+  @php
+    $ext4 = strtolower(pathinfo($item->berkas4 ?? '', PATHINFO_EXTENSION));
+    $path4 = $item->berkas4 && file_exists(public_path('storage/' . $item->berkas4))
+    ? asset('storage/' . $item->berkas4)
+    : ($item->berkas4 ? asset($item->berkas4) : null);
+    @endphp
+  <a href="{{ $path4 ?? '#' }}" target="_blank" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+      <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
+          <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
+              @if ($path4)
+          @if (in_array($ext4, ['jpg', 'jpeg', 'png', 'webp']))
+          <img src="{{ $path4 }}" class="object-cover w-full h-full" alt="Berkas 4">
+          @else
+          <i class="bi bi-file-earmark-pdf text-danger text-3xl m-auto"></i>
+          @endif
+          @else
+          <div class="bg-light text-center text-sm text-gray-500 w-full h-full flex items-center justify-center">Tidak Ada</div>
+          @endif
+        </div>
+        <div class="flex flex-col gap-[2px]">
+            <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi MBR Bantuan Gambar</p>
+        <p class="font-semibold">File: Klik Untuk Melihat File Informasi</p>
+      </div>
+    </div>
+  </a>
+
+  @endforeach
+</div>
 
 
       </form>

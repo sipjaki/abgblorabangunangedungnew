@@ -162,13 +162,15 @@ th {
                 <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
                 </div>
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-<button class="button-baru">
-    <i class="bi bi-arrow-repeat"></i> Update
-</button>
-
+                @foreach ($data as $item)
+<div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+    <a href="{{ route('mbrgambarupdate', ['id' => $item->id]) }}" class="button-baru" style="text-decoration: none;">
+        <i class="bi bi-arrow-repeat"></i> Update
+    </a>
+</div>
+@endforeach
                     </div>
-                 </div>
+
                  <hr>
                  <!-- /.card-header -->
         @foreach ($data as $item)

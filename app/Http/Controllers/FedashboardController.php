@@ -8,6 +8,7 @@ use App\Models\bgkartuinventarisbangunan;
 use App\Models\jenispengajuanbantek;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
+use App\Models\mbrgambar;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -143,15 +144,34 @@ class FedashboardController extends Controller
     {
 
         $user = Auth::user();
+        $data = mbrgambar::all();
+
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.08_mbrgambar.01_resmbrgambar', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi MBR Bantuan Gambar ',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 
+
+public function mbrgambarupdate($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Ambil data hibah berdasarkan ID
+    $data = mbrgambar::findOrFail($id);
+
+    // Kirim ke view
+    return view('backend.08_mbr.02_updatembrgambar', [
+        'title' => 'Form Update MBR Gambar',
+        'user' => $user,
+        'data' => $data
+    ]);
+}
 
 }
 

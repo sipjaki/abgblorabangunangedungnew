@@ -1160,12 +1160,12 @@
             <p style="color: white; margin: 0 0 0 8px;">Informasi Umum</p>
         </a>
     </li> --}}
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">Jumlah Inspeksi</p>
         </a>
-    </li>
+    </li> --}}
 
     <li class="nav-item">
         <a href="/datanewpenilik" class="nav-link" style="display: flex; align-items: center;">
@@ -1377,11 +1377,14 @@
 
 </ul>
 <li class="nav-item">
-  <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
-    <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">SPPD</p>
-    <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
+<a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24" style="flex-shrink: 0;">
+    <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9L2 14v2l8-2.5V19l-2 1.5v1L12 21l4-1.5v-1L14 19v-5.5l7 2.5z"/>
+  </svg>
+  <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Perjalanan Dinas</p>
+  <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
+
 
   <ul class="nav nav-treeview" style="margin-left: 15px;">
     {{-- <li class="nav-item">
@@ -1390,18 +1393,53 @@
             <p style="color: white; margin: 0 0 0 8px;">Informasi </p>
         </a>
     </li> --}}
+     <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
     <li class="nav-item">
     <a href="/bestatistikhibah" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-bar-chart-line nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Menu 1</p>
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Buat Surat</p>
     </a>
 </li>
+
+ <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan Data
+    </p>
+</div>
 <li class="nav-item">
-    <a href="/datanewhibah" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-plus-square nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Menu 2</p>
-    </a>
+  <a href="/bestatistikhibah" class="nav-link" style="display: flex; align-items: center;">
+    <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+    <p style="color: white; margin: 0 0 0 8px;">Petugas Dinas</p>
+  </a>
 </li>
+
+
 {{--
 <li class="nav-item">
     <a href="/dataallhibahbangunan" class="nav-link" style="display: flex; align-items: center;">

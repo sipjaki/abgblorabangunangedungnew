@@ -21,6 +21,7 @@ use App\Models\jenispengajuanpbgslfper;
 use App\Models\jenisperkonsultasi;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
+use App\Models\mbrgambar;
 use App\Models\pengawasatpt;
 use App\Models\suratpemberitahuanpbg;
 use App\Models\surattugaspbg;
@@ -3054,6 +3055,59 @@ public function bekecamatan(Request $request)
         'data'  => $bujk,
         'user'  => $user,
     ]);
+}
+
+
+public function mbrgambarupdatenew(Request $request, $id)
+{
+    $data = mbrgambar::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'judul1' => 'nullable|string|max:255',
+        'judul2' => 'nullable|string|max:255',
+        'berkas1' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'berkas2' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'berkas3' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'berkas4' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+    ]);
+
+    // Simpan judul
+    $data->judul1 = $request->judul1;
+    $data->judul2 = $request->judul2;
+
+    // Map berkas ke path tujuan
+    $fileMap = [
+        'berkas1' => '09_mbrgambar/01_file/01_berkas1',
+        'berkas2' => '09_mbrgambar/01_file/02_berkas2',
+        'berkas3' => '09_mbrgambar/01_file/03_berkas3',
+        'berkas4' => '09_mbrgambar/01_file/04_berkas4',
+    ];
+
+    foreach ($fileMap as $field => $dir) {
+        if ($request->hasFile($field)) {
+            // Hapus file lama kalau ada
+            if ($data->$field && file_exists(public_path($data->$field))) {
+                @unlink(public_path($data->$field));
+            }
+
+            $file = $request->file($field);
+            $filename = time() . '_' . $field . '.' . $file->getClientOriginalExtension();
+            $destination = public_path($dir);
+
+            if (!file_exists($destination)) {
+                mkdir($destination, 0777, true);
+            }
+
+            $file->move($destination, $filename);
+            $data->$field = $dir . '/' . $filename;
+        }
+    }
+
+    $data->save();
+
+    session()->flash('update', 'Informasi berhasil diperbarui!');
+    return redirect()->route('datambrblora');
 }
 
 }
