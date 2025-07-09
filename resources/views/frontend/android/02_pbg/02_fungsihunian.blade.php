@@ -81,19 +81,22 @@
     Tahapan Pengurusan:
   </p>
   <div class="text-[15px] text-neutral-700 text-justify">
-    <ol class="list-decimal pl-4 space-y-1">
-      <li>Menyiapkan dokumen tanah, KRK/KKPR (tata ruang).</li>
-      <li>Melakukan pendaftaran dan unggah dokumen di
-        <a href="https://simbg.pu.go.id" class="text-blue-600 underline" target="_blank">simbg.pu.go.id</a>.
-      </li>
-      <li>Verifikasi dokumen oleh operator Dinas Teknis.</li>
-      <li>Penjadwalan konsultasi permohonan.</li>
-      <li>Konsultasi bersama TPA/TPT.</li>
-      <li>Revisi dokumen sesuai masukan teknis TPA/TPT.</li>
-      <li>TPA/TPT menyetujui dokumen perencanaan.</li>
-      <li>Pengunggahan berkas final, validasi, dan perhitungan retribusi.</li>
-      <li>Pembayaran retribusi melalui bank persepsi/mobile banking.</li>
-    </ol>
+   <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
+  Tahapan Pengurusan:
+</p>
+<p class="text-[15px] text-neutral-700 text-justify leading-[22px]">
+  1. Menyiapkan dokumen tanah, KRK/KKPR (dokumen tata ruang).<br>
+  2. Melakukan pendaftaran dan unggah dokumen di
+  <a href="https://simbg.pu.go.id" class="text-blue-600 underline" target="_blank">simbg.pu.go.id</a>.<br>
+  3. Verifikasi dokumen oleh operator Dinas Teknis.<br>
+  4. Penjadwalan konsultasi permohonan.<br>
+  5. Konsultasi bersama TPA/TPT.<br>
+  6. Revisi dokumen sesuai masukan teknis TPA/TPT.<br>
+  7. TPA/TPT menyetujui dokumen perencanaan.<br>
+  8. Pengunggahan berkas final, validasi, dan perhitungan retribusi.<br>
+  9. Pembayaran retribusi melalui bank persepsi atau mobile banking.
+</p>
+
   </div>
 </div>
 
