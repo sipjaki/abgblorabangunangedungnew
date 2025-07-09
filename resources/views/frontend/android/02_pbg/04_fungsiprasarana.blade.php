@@ -46,7 +46,7 @@
 
 <div class="flex flex-col gap-3 mt-4">
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Persetujuan Bangunan Gedung (PBG)
+    Persetujuan Bangunan Gedung (PBG) - Fungsi Prasarana
   </p>
   <p class="text-[15px] text-neutral-700 text-justify">
     Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan untuk mendirikan bangunan prasarana seperti menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai ketentuan teknis, tata ruang, dan lingkungan yang berlaku.

@@ -45,7 +45,7 @@
   <!-- Info Teks -->
 <div class="flex flex-col gap-3 mt-4">
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Persetujuan Bangunan Gedung (PBG)
+    Persetujuan Bangunan Gedung (PBG) - Fungsi Keagamaan
   </p>
   <p class="text-[15px] text-neutral-700 text-justify">
     Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan sebelum mendirikan bangunan. Untuk bangunan fungsi keagamaan seperti masjid, gereja, vihara, pura, dan lainnya, PBG diperlukan agar pembangunan sesuai dengan ketentuan teknis, lingkungan, dan tata ruang yang berlaku.

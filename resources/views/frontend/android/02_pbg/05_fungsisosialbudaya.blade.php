@@ -45,7 +45,7 @@
   <!-- Info Teks -->
 <div class="flex flex-col gap-3 mt-4">
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Persetujuan Bangunan Gedung (PBG)
+    Persetujuan Bangunan Gedung (PBG) - Fungsi Sosial Budaya
   </p>
   <p class="text-[15px] text-neutral-700 text-justify">
     Persetujuan Bangunan Gedung (PBG) adalah dokumen legal yang wajib dimiliki sebelum pembangunan menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai dengan aspek teknis, ketentuan tata ruang, keselamatan lingkungan, serta mendapat persetujuan masyarakat sekitar.

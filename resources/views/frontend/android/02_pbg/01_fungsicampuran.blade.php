@@ -45,7 +45,7 @@
   <!-- Info Teks -->
 <div class="flex flex-col gap-2 mt-4">
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Persetujuan Bangunan Gedung (PBG)
+    Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
   </p>
   <p class="text-[16px] text-neutral-700" style="text-align: justify;">
     PBG adalah dokumen yang diperlukan untuk bangunan dengan fungsi campuran, seperti pelayanan pendidikan, kesehatan, kebudayaan, laboratorium, dan umum. Syarat pengajuan meliputi dokumen tanah, data umum (KTP, NIB, KRK), serta dokumen teknis arsitektur, struktur, dan MEP. Prosesnya dimulai dari pendaftaran via SIMBG.PU, konsultasi teknis, validasi, pembayaran retribusi, hingga penerbitan dokumen PBG.
