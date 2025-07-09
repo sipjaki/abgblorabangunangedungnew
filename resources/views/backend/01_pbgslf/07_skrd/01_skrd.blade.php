@@ -219,7 +219,7 @@
 </td>
 
 
-     <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->datapemilik->namapemilik ?? '-' }}</td>
+     <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->namapemohon ?? '-' }}</td>
      <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->databangunanpbg->lokasibangunan ?? '-' }}</td>
      <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
           <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->noregissimbg ?? '-' }}</td>

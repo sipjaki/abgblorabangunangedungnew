@@ -818,21 +818,21 @@
     <li class="nav-item">
         <a href="/bepbgslfkonsultasi" class="nav-link">
             <i class="bi bi-chat-dots nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Konsultasi Teknis</p>
+            <p style="color: yellow; margin-left: 8px;">Konsultasi Teknis</p>
         </a>
     </li>
 
     <li class="nav-item">
         <a href="/bepbgslfskrd" class="nav-link">
             <i class="bi bi-receipt nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">SKRD</p>
+            <p style="color: yellow; margin-left: 8px;">SKRD</p>
         </a>
     </li>
 
     <li class="nav-item">
         <a href="/bepbgslfretribusi" class="nav-link">
             <i class="bi bi-cash-coin nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Retribusi</p>
+            <p style="color: yellow; margin-left: 8px;">Retribusi</p>
         </a>
     </li>
 
@@ -995,7 +995,7 @@
 <li class="nav-item">
     <a href="/bebantekkonsultan" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-person-workspace nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konsultan</p>
+        <p style="color: yellow; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konsultan</p>
     </a>
 </li>
 
@@ -1018,14 +1018,14 @@
 <li class="nav-item">
     <a href="/allakundinas" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-building-gear nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Akun Dinas</p>
+        <p style="color: yellow; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Akun Dinas</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/allakunkonsultan" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-person-badge nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Akun Konsultan</p>
+        <p style="color: yellow; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Akun Konsultan</p>
     </a>
 </li>
 
