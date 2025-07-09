@@ -114,9 +114,9 @@ class FedashboardController extends Controller
         $user = Auth::user();
         // return view('/404', [
         // return view('frontend.00_full.index', [
-        return view('frontend.android.04_bantuanteknis.01_indexhalamanutama', [
+        return view('frontend.android.04_bantuanteknis.00_halamanbantek', [
         // return view('frontend.android.01_halamanutama.index', [
-            'title' => 'Permohonan Bantuan Teknis ',
+            'title' => 'Informasi Permohonan Bantuan Teknis ',
             'user' => $user,
         ]);
     }
