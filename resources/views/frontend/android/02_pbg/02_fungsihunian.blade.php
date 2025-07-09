@@ -76,19 +76,27 @@
     <li><span class="font-semibold">Data Teknis Struktur</span>: Gambar pondasi, rangka atap, struktur.</li>
     <li><span class="font-semibold">Data Teknis MEP</span>: Gambar jaringan listrik dan sanitasi.</li>
   </ol>
+<div class="flex flex-col gap-2 mt-4">
+  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
+    Tahapan Pengurusan:
+  </p>
+  <div class="text-[15px] text-neutral-700 text-justify">
+    <ol class="list-decimal pl-4 space-y-1">
+      <li>Menyiapkan dokumen tanah, KRK/KKPR (tata ruang).</li>
+      <li>Melakukan pendaftaran dan unggah dokumen di
+        <a href="https://simbg.pu.go.id" class="text-blue-600 underline" target="_blank">simbg.pu.go.id</a>.
+      </li>
+      <li>Verifikasi dokumen oleh operator Dinas Teknis.</li>
+      <li>Penjadwalan konsultasi permohonan.</li>
+      <li>Konsultasi bersama TPA/TPT.</li>
+      <li>Revisi dokumen sesuai masukan teknis TPA/TPT.</li>
+      <li>TPA/TPT menyetujui dokumen perencanaan.</li>
+      <li>Pengunggahan berkas final, validasi, dan perhitungan retribusi.</li>
+      <li>Pembayaran retribusi melalui bank persepsi/mobile banking.</li>
+    </ol>
+  </div>
+</div>
 
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">Tahapan Pengurusan:</p>
-  <ol class="list-decimal ml-5 text-[15px] text-neutral-700 text-justify space-y-1">
-    <li>Menyiapkan dokumen tanah, KRK/KKPR (tata ruang).</li>
-    <li>Melakukan pendaftaran dan unggah dokumen di <a href="https://simbg.pu.go.id" class="text-blue-600 underline" target="_blank">simbg.pu.go.id</a>.</li>
-    <li>Verifikasi dokumen oleh operator Dinas Teknis.</li>
-    <li>Penjadwalan konsultasi permohonan.</li>
-    <li>Konsultasi bersama TPA/TPT.</li>
-    <li>Revisi dokumen sesuai masukan teknis TPA/TPT.</li>
-    <li>TPA/TPT menyetujui dokumen perencanaan.</li>
-    <li>Pengunggahan berkas final, validasi, dan perhitungan retribusi.</li>
-    <li>Pembayaran retribusi melalui bank persepsi/mobile banking.</li>
-  </ol>
 {{--
   <p class="text-[15px] text-neutral-700 mt-2">
     Untuk informasi lebih lengkap, kunjungi:
