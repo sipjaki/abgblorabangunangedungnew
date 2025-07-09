@@ -32,7 +32,45 @@
 
         </div>
 
+
         <div class="flex flex-col space-y-3 px-[18px]">
+
+            <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+                <!-- Gambar Thumbnail Penuh -->
+                <div class="w-full h-auto rounded-lg overflow-hidden">
+                    <img src="/assets/android/bantek/1.jpg" class="object-cover w-full h-full" alt="thumbnail">
+                </div>
+            </a>
+
+            <br>
+
+            <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+                <!-- Gambar Thumbnail Penuh -->
+                <div class="w-full h-auto rounded-lg overflow-hidden">
+                    <img src="/assets/android/bantek/2.jpg" class="object-cover w-full h-full" alt="thumbnail">
+                </div>
+            </a>
+
+            <br>
+
+            <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+                <!-- Gambar Thumbnail Penuh -->
+                <div class="w-full h-auto rounded-lg overflow-hidden">
+                    <img src="/assets/android/bantek/3.jpg" class="object-cover w-full h-full" alt="thumbnail">
+                </div>
+            </a>
+
+            <br>
+
+            <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+                <!-- Gambar Thumbnail Penuh -->
+                <div class="w-full h-auto rounded-lg overflow-hidden">
+                    <img src="/assets/android/bantek/4.jpg" class="object-cover w-full h-full" alt="thumbnail">
+                </div>
+            </a>
+
+            <br>
+
             <!-- Card 1 -->
             <a href="/feinfocampuran" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
