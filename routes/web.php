@@ -45,6 +45,8 @@ Route::get('/web', [FedashboardController::class, 'web']);
 // 01_ MENU PBG SLF
 // ----------------------------------------------------------------------------------------
 Route::get('/respbgslfindex', [FedashboardController::class, 'menurespbgslfindex']);
+Route::get('/feinfocampuran', [FedashboardController::class, 'feinfocampuran']);
+
 
 // 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------
@@ -576,6 +578,15 @@ Route::post('/bedinaspetugasnew', [PerjalanandinasController::class, 'bedinaspet
 
 // MENU 06 KRK BACKEND
 
+// MENU BERITA ABG BLORA BANGUNAN GEDUNG
+
+Route::get('/beberita', [DatabaseAbgController::class, 'beberita'])->middleware('auth')->name('beberita');
+Route::delete('/beberitadelete/{id}', [DatabaseAbgController::class, 'beberitadelete'])->middleware('auth')->name('beberitadelete');
+
+Route::get('/beberitacreate', [DatabaseAbgController::class, 'beberitacreate'])->middleware('auth')->name('beberitacreate');
+Route::post('/beberitacreatenew', [DatabaseAbgController::class, 'beberitacreatenew'])->middleware('auth')->name('beberitacreatenew');
+
+// sigit bro
 // Route::get('/portalberita', function ()
 //     // return view('welcome');
 //     return view('portalberita', [
@@ -919,6 +930,8 @@ Route::delete('/bepbgsuratundangandelete/{id}', [PbgslfController::class, 'bepbg
 // DATA DOKUMEN SURAT PEMBERITAHUAN
 Route::get('/bepbgberitaacaraslf/{id}', [PbgslfController::class, 'bepbgberitaacaraslf'])->middleware('auth')->name('bepbgberitaacaraslf');
 Route::get('/bepbgberitaacaraslfshow/{id}', [PbgslfController::class, 'bepbgberitaacaraslfshow'])->middleware('auth')->name('bepbgberitaacaraslf.detail');
+
+
 // Route::get('/bepbgsuratundangancreate/{id}', [PbgslfController::class, 'bepbgsuratundangancreate'])->middleware('auth')->name('bepbgsuratundangancreate');
 // Route::post('/bepbgsuratundangannew', [PbgslfController::class, 'bepbgsuratundangannew'])->middleware('auth')->name('bepbgsuratundangannew');
 

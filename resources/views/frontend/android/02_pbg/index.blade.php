@@ -2,14 +2,14 @@
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
-    <div class="w-full h-[184px] absolute top-0 bg-cover bg-center" style="background-image: url('/assets/android/iconmenu/newheader.jpg');">
+    <div class="w-full h-[184px] absolute top-0 bg-cover bg-center" style="background-image: url('/assets/android/iconmenu/belakangnew.jpg');">
     </div>
      <div class="relative z-10 flex flex-col gap-6 mt-[60px]">
       <div class="top-menu flex justify-between items-center px-[18px]">
           <div class="w-[42px] h-[42px] flex shrink-0">
             <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon">
           </div>
-        <p class="font-semibold leading-[28px] text-white text-center" style="font-size: 18px;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora </span></p>
+        <p class="font-semibold leading-[28px] text-white text-center" style="font-size: 18px;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah </span></p>
         <div class="w-[42px] h-[42px] flex shrink-0">
             <img src="/assets/abgblora/logo/pupr.png" alt="icon">
           </div>
@@ -34,14 +34,14 @@
 
         <div class="flex flex-col space-y-3 px-[18px]">
             <!-- Card 1 -->
-            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+            <a href="/feinfocampuran" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/01.png" class="object-cover w-full h-full" alt="thumbnail">
+                  <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">PBG/SLF</p>
-                  <p class="font-semibold">Informasi Layanan PBG</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
+                  <p class="font-semibold">PBG Fungsi Campuran</p>
                 </div>
               </div>
             </a>
@@ -49,11 +49,11 @@
             <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/01.png" class="object-cover w-full h-full" alt="thumbnail">
+                  <img src="/assets/android/pbgslf/PBG_FUNGSI_HUNIAN.jpg" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">PBG/SLF</p>
-                  <p class="font-semibold">Informasi Layanan SLF</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
+                  <p class="font-semibold">PBG Fungsi Hunian</p>
                 </div>
               </div>
             </a>
@@ -61,11 +61,11 @@
             <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/01.png" class="object-cover w-full h-full" alt="thumbnail">
+                  <img src="/assets/android/pbgslf/PBG_FUNGSI_KEAGAMAAN.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">PBG/SLF</p>
-                  <p class="font-semibold">Permohonan PBG</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
+                  <p class="font-semibold">PBG Fungsi Keagamaan</p>
                 </div>
               </div>
             </a>
@@ -73,15 +73,62 @@
             <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/01.png" class="object-cover w-full h-full" alt="thumbnail">
+                  <img src="/assets/android/pbgslf/PBG_FUNGSI_PRASARANA.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">PBG/SLF</p>
-                  <p class="font-semibold">Pengajuan SLF</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
+                  <p class="font-semibold">PBG Fungsi Prasarana</p>
                 </div>
               </div>
             </a>
 
+            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
+                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
+                  <img src="/assets/android/pbgslf/PBG_FUNGSI_SOSIAL_BUDAYA.png" class="object-cover w-full h-full" alt="thumbnail">
+                </div>
+                <div class="flex flex-col gap-[2px]">
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
+                  <p class="font-semibold">PBG Fungsi Sosial Budaya</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
+                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
+                  <img src="/assets/android/pbgslf/PBG_FUNGSI_USAHA.jpg" class="object-cover w-full h-full" alt="thumbnail">
+                </div>
+                <div class="flex flex-col gap-[2px]">
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
+                  <p class="font-semibold">PBG Fungsi Usaha</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
+                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
+                  <img src="/assets/android/pbgslf/SLF_FUNGSI_USAHA.png" class="object-cover w-full h-full" alt="thumbnail">
+                </div>
+                <div class="flex flex-col gap-[2px]">
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (SLF) Sertifikat Laik Fungsi</p>
+                  <p class="font-semibold">SLF Fungsi Usaha</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
+                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
+                  <img src="/assets/android/pbgslf/SLF_MENARA_TELEKOMUNIKASI.png" class="object-cover w-full h-full" alt="thumbnail">
+                </div>
+                <div class="flex flex-col gap-[2px]">
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (SLF) Sertifikat Laik Fungsi</p>
+                  <p class="font-semibold">SLF Menara Telekomunikasi</p>
+                </div>
+              </div>
+            </a>
 
       </form>
 

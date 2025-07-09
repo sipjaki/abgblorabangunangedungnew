@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\agendastatus;
 use App\Models\asosiasipengusaha;
 use App\Models\bantuanteknis;
+use App\Models\beritaabg;
 use App\Models\fasilitatorpbg;
 use App\Models\fungsibangunangambar;
 use App\Models\fungsibangunanpbg;
@@ -478,6 +479,145 @@ public function datafasilitatorcreatenew(Request $request)
 
     session()->flash('create', 'Data fasilitator berhasil disimpan.');
     return redirect()->route('datafasilitatorindex'); // Ganti sesuai route index fasilitator
+}
+
+ public function beberita(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    $query = beritaabg::query();
+
+    if ($search) {
+        $query->where(function($q) use ($search) {
+            $q->where('judulberita', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%")
+              ->orWhereDate('tanggal', $search);
+        });
+    }
+
+    $data = $query->orderBy('tanggal', 'desc')->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.13_daftarakun.01_semuaakun.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.99_databaseabg.00_berita.01_databeritaabg', [
+        'title' => 'Daftar Semua Berita ABG Blora Bangunan Gedung',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+    ]);
+}
+
+public function beberitadelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = beritaabg::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/beberita')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
+
+
+    public function beberitacreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 8)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.99_databaseabg.00_berita.02_bautberita', [
+        'title' => 'Buat Berita ABG Blora',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
+
+public function beberitacreatenew(Request $request)
+{
+    // Validasi data input
+    $validated = $request->validate([
+        'user_id' => 'required|string',
+        'judulberita' => 'required|string|max:500',
+        'tanggal' => 'required|date',
+        'keterangan' => 'required|string',
+        'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10048',
+        'foto1' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10048',
+        'foto2' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10048',
+    ], [
+        'user_id.required' => 'User wajib diisi.',
+        'user_id.exists' => 'User tidak ditemukan.',
+        'judulberita.required' => 'Judul berita wajib diisi.',
+        'tanggal.required' => 'Tanggal wajib diisi.',
+        'tanggal.date' => 'Format tanggal tidak valid.',
+        'keterangan.required' => 'Keterangan wajib diisi.',
+        'foto.image' => 'Foto utama harus berupa gambar.',
+        'foto1.image' => 'Foto tambahan 1 harus berupa gambar.',
+        'foto2.image' => 'Foto tambahan 2 harus berupa gambar.',
+    ]);
+
+    $data = new beritaabg(); // Ganti dengan nama model kamu yang benar
+
+    $data->user_id = $validated['user_id'];
+    $data->judulberita = $validated['judulberita'];
+    $data->tanggal = $validated['tanggal'];
+    $data->keterangan = $validated['keterangan'];
+
+    // Folder target di public
+    $basePath = public_path('99_beritaabg');
+
+    // Pastikan folder target ada, kalau belum buat
+    if (!file_exists($basePath)) {
+        mkdir($basePath, 0755, true);
+    }
+
+    // Upload foto utama
+    if ($request->hasFile('foto')) {
+        $file = $request->file('foto');
+        $filename = 'foto_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($basePath, $filename);
+        $data->foto = '99_beritaabg/' . $filename;
+    }
+
+    // Upload foto1
+    if ($request->hasFile('foto1')) {
+        $file = $request->file('foto1');
+        $filename = 'foto1_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($basePath, $filename);
+        $data->foto1 = '99_beritaabg/' . $filename;
+    }
+
+    // Upload foto2
+    if ($request->hasFile('foto2')) {
+        $file = $request->file('foto2');
+        $filename = 'foto2_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($basePath, $filename);
+        $data->foto2 = '99_beritaabg/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('create', 'Data berhasil disimpan.');
+    return redirect()->route('beberita'); // Ganti dengan route index yang sesuai
 }
 
 

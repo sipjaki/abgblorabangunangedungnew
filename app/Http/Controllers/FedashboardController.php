@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\artikelabg;
 use App\Models\beritaabg;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,7 @@ class FedashboardController extends Controller
 
         $user = Auth::user();
         $databerita = beritaabg::all();
+        $dataartikel = artikelabg::all();
 
 
         // return view('/404', [
@@ -29,6 +31,7 @@ class FedashboardController extends Controller
             'title' => 'Abg Blora Bangunan Gedung',
             'user' => $user,
             'data' => $databerita,
+            'dataartikel' => $dataartikel,
         ]);
     }
 
@@ -54,7 +57,7 @@ class FedashboardController extends Controller
         // return view('frontend.00_full.index', [
         return view('frontend.android.02_pbg.index', [
         // return view('frontend.android.01_halamanutama.index', [
-            'title' => 'Menu PBG/SLF Bangunan Gedung ',
+            'title' => 'Informasi PBG/SLF Bangunan Gedung ',
             'user' => $user,
         ]);
     }
@@ -175,6 +178,20 @@ public function mbrgambarupdate($id)
         'data' => $data
     ]);
 }
+
+
+    public function feinfocampuran()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.02_pbg.01_fungsicampuran', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi PBG Fungsi Campuran ',
+            'user' => $user,
+        ]);
+    }
 
 }
 

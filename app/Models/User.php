@@ -107,4 +107,9 @@ class User extends Authenticatable
         return $this->hasMany(beritaabg::class);
     }
 
+    public function artikelabg()
+    {
+        return $this->hasMany(artikelabg::class);
+    }
+
 }

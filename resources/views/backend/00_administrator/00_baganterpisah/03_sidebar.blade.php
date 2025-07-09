@@ -1230,7 +1230,7 @@
 <li class="nav-item">
   <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">Bantuan Gambar</p>
+    <p style="color: yellow; margin: 0 0 0 8px; flex-grow: 1;">Bantuan Gambar</p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
@@ -1478,9 +1478,9 @@
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
 
     <li class="nav-item">
-        <a href="/404" class="nav-link">
+        <a href="/beberita" class="nav-link">
             <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Berita</p>
+            <p style="color: yellow; margin-left: 8px;">Berita</p>
         </a>
     </li>
 

@@ -2,14 +2,14 @@
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
-    <div class="w-full h-[184px] absolute top-0 bg-cover bg-center" style="background-image: url('/assets/android/iconmenu/newblora1.jpg');" loading="lazy">
+    <div class="w-full h-[184px] absolute top-0 bg-cover bg-center" style="background-image: url('/assets/android/iconmenu/belakangnew.jpg');" loading="lazy">
     </div>
      <div class="relative z-10 flex flex-col gap-6 mt-[60px]">
       <div class="top-menu flex justify-between items-center px-[18px]">
           <div class="w-[42px] h-[42px] flex shrink-0">
             <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon">
           </div>
-        <p class="font-semibold leading-[28px] text-white text-center" style="font-size: 18px;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora </span></p>
+        <p class="font-semibold leading-[28px] text-white text-center" style="font-size: 18px;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah </span></p>
         <div class="w-[42px] h-[42px] flex shrink-0">
             <img src="/assets/abgblora/logo/pupr.png" alt="icon">
           </div>
@@ -33,6 +33,19 @@
         </div>
 
 <div class="flex flex-col space-y-3 px-[18px]">
+<a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+  <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
+    <div class="flex flex-col gap-[2px]">
+      <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
+        Keterangan Informasi MBR Bantuan Gambar
+      </p>
+      <p class="text-[16px] text-gray-700" style="text-align: justify;">
+        Program MBR merupakan program bantuan dari Kementerian PUPR yang bertujuan untuk menyediakan perencanaan teknis berupa gambar bangunan kepada masyarakat berpenghasilan rendah, guna mendukung pembangunan rumah yang layak huni dan sesuai standar konstruksi.
+      </p>
+    </div>
+  </div>
+</a>
+
 
     @foreach ($data as $item)
 
@@ -43,6 +56,7 @@
     ? asset('storage/' . $item->berkas1)
     : ($item->berkas1 ? asset($item->berkas1) : null);
     @endphp
+
   <a href="{{ $path1 ?? '#' }}" target="_blank" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
       <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">

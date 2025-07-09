@@ -269,6 +269,40 @@
 </div>
 
 </div>
+<div id="NewsPromo" class="news-section">
+  <div class="news-header">
+    <h6 class="news-title" style="font-size: 16px;">Artikel ABG Blora</h6>
+    <a href="#" class="news-link">Lihat Semua</a>
+  </div>
+
+  <div class="news-carousel">
+    @foreach ($dataartikel as $item)
+      <div class="news-card">
+        <div class="news-pdf-container" style="width: 100%; height: 200px; margin-bottom: 12px;">
+          @if ($item->berkas1 && file_exists(public_path($item->berkas1)))
+            <iframe src="{{ asset($item->berkas1) }}"
+                    style="width: 100%; height: 100%; border: none;"
+                    loading="lazy"></iframe>
+          @elseif ($item->berkas1)
+            <iframe src="{{ asset($item->berkas1) }}"
+                    style="width: 100%; height: 100%; border: none;"
+                    loading="lazy"></iframe>
+          @else
+            <p>Tidak ada berkas PDF.</p>
+          @endif
+        </div>
+
+        <div class="news-content">
+          <div class="news-meta">
+            <span class="news-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d M Y') }}</span>
+          </div>
+          <h3 class="news-headline">{{ $item->judul }}</h3>
+        </div>
+      </div>
+    @endforeach
+  </div>
+</div>
+
 
 <style>
 .news-section {
