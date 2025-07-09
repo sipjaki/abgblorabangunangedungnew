@@ -108,12 +108,12 @@
     10. Penerbitan dokumen PBG di DPMPTSP & SLF di DPUPR
   </p>
 
-  <p class="text-[15px] text-neutral-700 mt-2">
+  {{-- <p class="text-[15px] text-neutral-700 mt-2">
     Untuk informasi mendetail, silakan kunjungi:<br>
     <a href="https://linktr.ee/bidangbangunangedung" class="text-blue-600 underline" target="_blank">
       https://linktr.ee/bidangbangunangedung
     </a>
-  </p>
+  </p> --}}
 </div>
 
 
