@@ -271,5 +271,18 @@ public function mbrgambarupdate($id)
         ]);
     }
 
+    public function slfmenara()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.02_pbg.08_slfmenaratelekomunikasi', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi SLF Menara Telekomunikasi',
+            'user' => $user,
+        ]);
+    }
+
 }
 

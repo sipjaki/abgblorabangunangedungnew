@@ -52,6 +52,7 @@ Route::get('/feinfoprasarana', [FedashboardController::class, 'feinfoprasarana']
 Route::get('/feinfososialbudaya', [FedashboardController::class, 'feinfososialbudaya']);
 Route::get('/feinfofungsiusaha', [FedashboardController::class, 'feinfofungsiusaha']);
 Route::get('/slffungsiusaha', [FedashboardController::class, 'slffungsiusaha']);
+Route::get('/slfmenara', [FedashboardController::class, 'slfmenara']);
 
 
 // 03_ MENU BANGUNAN GEDUNG ANDROID
