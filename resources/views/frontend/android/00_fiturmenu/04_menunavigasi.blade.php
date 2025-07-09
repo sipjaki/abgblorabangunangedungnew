@@ -6,7 +6,7 @@
   style="
     background:
       linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-      url('/assets/android/iconmenu/bangunangedungapp.jpg') no-repeat center/cover;
+      url('/assets/android/iconmenu/belakangnew.jpg') no-repeat center/cover;
   "
 >
         <a href="/respbgslfindex">
