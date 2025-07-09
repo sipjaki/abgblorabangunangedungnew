@@ -48,7 +48,7 @@
 
     <div id="Promo" class="promo-section">
   <div class="promo-header">
-    <h6 class="promo-title">Agenda Sosialisasi</h6>
+    <h6 class="promo-title" style="font-size: 16px;">Agenda Sosialisasi</h6>
     <a href="#" class="promo-link">Lihat Semua</a>
   </div>
 
@@ -232,7 +232,7 @@
 
 <div id="NewsPromo" class="news-section">
   <div class="news-header">
-    <h6 class="news-title">Berita Bangunan Gedung</h6>
+    <h6 class="news-title" style="font-size: 16px;">Berita Bangunan Gedung</h6>
     <a href="#" class="news-link">Lihat Semua</a>
   </div>
 
