@@ -43,55 +43,57 @@
 
   <br>
   <!-- Info Teks -->
-<div class="flex flex-col gap-2 mt-4">
+<div class="flex flex-col gap-3 mt-4">
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
     Persetujuan Bangunan Gedung (PBG)
   </p>
-  <p class="text-[16px] text-neutral-700" style="text-align: justify;">
-    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dikeluarkan oleh pemerintah untuk memberikan persetujuan terhadap rencana teknis bangunan gedung. PBG wajib dimiliki sebelum memulai pembangunan, termasuk untuk fungsi hunian baik sederhana maupun tidak sederhana.
+  <p class="text-[15px] text-neutral-700 text-justify">
+    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang diperlukan untuk setiap kegiatan pembangunan. Untuk bangunan dengan fungsi hunian, PBG memastikan rencana teknis telah sesuai ketentuan peraturan.
   </p>
 
-  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA] mt-2">Klasifikasi Bangunan Hunian:</p>
-  <ul class="list-disc list-inside text-[16px] text-neutral-700" style="text-align: justify;">
-    <li><strong>Sederhana</strong>:
-      <ul class="list-disc list-inside ml-4">
-        <li>1 Lantai: &lt; 72 m²</li>
-        <li>2 Lantai: &lt; 90 m²</li>
-      </ul>
-    </li>
-    <li><strong>Tidak Sederhana</strong>:
-      <ul class="list-disc list-inside ml-4">
-        <li>1 atau 2 lantai: ≥ 72 m² atau ≥ 90 m²</li>
-      </ul>
-    </li>
-  </ul>
+  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">Klasifikasi Bangunan Hunian:</p>
+  <div class="text-[15px] text-neutral-700 text-justify">
+    <ul class="list-disc ml-5">
+      <li><span class="font-semibold">Sederhana</span>:
+        <ul class="list-disc ml-5">
+          <li>1 lantai &lt; 72 m²</li>
+          <li>2 lantai &lt; 90 m²</li>
+        </ul>
+      </li>
+      <li><span class="font-semibold">Tidak Sederhana</span>:
+        <ul class="list-disc ml-5">
+          <li>1 atau 2 lantai ≥ 72 m² / ≥ 90 m²</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
-  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA] mt-2">Persyaratan:</p>
-  <ol class="list-decimal list-inside text-[16px] text-neutral-700" style="text-align: justify;">
-    <li><strong>Data Tanah</strong>: Sertifikat tanah dan Izin Pemanfaatan Tanah (jika nama pemohon berbeda).</li>
-    <li><strong>Data Umum</strong>: KTP/KITAS, dokumen perizinan tata ruang, KRK/KKPR, dan data penyedia jasa perencana konstruksi (SBU/arsitek bersertifikat).</li>
-    <li><strong>Data Teknis Arsitektur</strong>: Gambar situasi, denah, potongan, tampak.</li>
-    <li><strong>Data Teknis Struktur</strong>: Gambar pondasi, rangka atap, struktur.</li>
-    <li><strong>Data Teknis MEP</strong>: Gambar jaringan listrik dan sanitasi.</li>
+  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">Persyaratan Dokumen:</p>
+  <ol class="list-decimal ml-5 text-[15px] text-neutral-700 text-justify space-y-1">
+    <li><span class="font-semibold">Data Tanah</span>: Sertifikat tanah, izin pemanfaatan tanah (jika nama pemohon tidak sesuai dengan sertifikat).</li>
+    <li><span class="font-semibold">Data Umum</span>: KTP/KITAS, dokumen perizinan tata ruang, KRK/KKPR, data penyedia jasa konstruksi (SBU/arsitek berlisensi).</li>
+    <li><span class="font-semibold">Data Teknis Arsitektur</span>: Gambar situasi, denah, potongan, tampak.</li>
+    <li><span class="font-semibold">Data Teknis Struktur</span>: Gambar pondasi, rangka atap, struktur.</li>
+    <li><span class="font-semibold">Data Teknis MEP</span>: Gambar jaringan listrik dan sanitasi.</li>
   </ol>
 
-  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA] mt-2">Tahapan Pengurusan:</p>
-  <ol class="list-decimal list-inside text-[16px] text-neutral-700" style="text-align: justify;">
+  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">Tahapan Pengurusan:</p>
+  <ol class="list-decimal ml-5 text-[15px] text-neutral-700 text-justify space-y-1">
     <li>Menyiapkan dokumen tanah, KRK/KKPR (tata ruang).</li>
-    <li>Mendaftar, membuat permohonan, dan mengunggah dokumen di website <a href="https://simbg.pu.go.id" class="text-blue-600 underline" target="_blank">https://simbg.pu.go.id</a>.</li>
-    <li>Menindaklanjuti hasil verifikasi dari operator dinas teknis.</li>
+    <li>Melakukan pendaftaran dan unggah dokumen di <a href="https://simbg.pu.go.id" class="text-blue-600 underline" target="_blank">simbg.pu.go.id</a>.</li>
+    <li>Verifikasi dokumen oleh operator Dinas Teknis.</li>
     <li>Penjadwalan konsultasi permohonan.</li>
-    <li>Konsultasi teknis bersama TPA/TPT.</li>
+    <li>Konsultasi bersama TPA/TPT.</li>
     <li>Revisi dokumen sesuai masukan teknis TPA/TPT.</li>
-    <li>Revisi final dan persetujuan dokumen oleh TPA/TPT.</li>
-    <li>Pengunggahan berkas final, perhitungan retribusi, dan validasi teknis.</li>
-    <li>Pembayaran retribusi melalui bank persepsi atau mobile banking.</li>
+    <li>TPA/TPT menyetujui dokumen perencanaan.</li>
+    <li>Pengunggahan berkas final, validasi, dan perhitungan retribusi.</li>
+    <li>Pembayaran retribusi melalui bank persepsi/mobile banking.</li>
   </ol>
-
-  <p class="text-[16px] text-neutral-700 mt-4">
-    Untuk informasi lebih lanjut dan akses ke panduan lengkap, silakan kunjungi:
-    <a href="https://linktr.ee/bidangbangunangedung" class="text-blue-600 underline" target="_blank">https://linktr.ee/bidangbangunangedung</a>
-  </p>
+{{--
+  <p class="text-[15px] text-neutral-700 mt-2">
+    Untuk informasi lebih lengkap, kunjungi:
+    <a href="https://linktr.ee/bidangbangunangedung" target="_blank" class="text-blue-600 underline">https://linktr.ee/bidangbangunangedung</a>
+  </p> --}}
 </div>
 
 </a>
