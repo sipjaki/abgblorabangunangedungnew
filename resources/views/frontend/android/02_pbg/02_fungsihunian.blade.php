@@ -86,8 +86,7 @@
 </p>
 <p class="text-[15px] text-neutral-700 text-justify leading-[22px]">
   1. Menyiapkan dokumen tanah, KRK/KKPR (dokumen tata ruang).<br>
-  2. Melakukan pendaftaran dan unggah dokumen di
-  <a href="https://simbg.pu.go.id" class="text-blue-600 underline" target="_blank">simbg.pu.go.id</a>.<br>
+  2. Melakukan pendaftaran dan unggah dokumen di simbg.pu.go.id<br>
   3. Verifikasi dokumen oleh operator Dinas Teknis.<br>
   4. Penjadwalan konsultasi permohonan.<br>
   5. Konsultasi bersama TPA/TPT.<br>
