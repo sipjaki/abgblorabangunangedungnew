@@ -48,6 +48,7 @@ Route::get('/respbgslfindex', [FedashboardController::class, 'menurespbgslfindex
 Route::get('/feinfocampuran', [FedashboardController::class, 'feinfocampuran']);
 Route::get('/feinfohunian', [FedashboardController::class, 'feinfohunian']);
 Route::get('/feinfoagama', [FedashboardController::class, 'feinfoagama']);
+Route::get('/feinfoprasarana', [FedashboardController::class, 'feinfoprasarana']);
 
 
 // 03_ MENU BANGUNAN GEDUNG ANDROID
