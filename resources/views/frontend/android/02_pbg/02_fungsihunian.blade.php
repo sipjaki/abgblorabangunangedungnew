@@ -77,9 +77,9 @@
     <li><span class="font-semibold">Data Teknis MEP</span>: Gambar jaringan listrik dan sanitasi.</li>
   </ol>
 <div class="flex flex-col gap-2 mt-4">
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
+  {{-- <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
     Tahapan Pengurusan:
-  </p>
+  </p> --}}
   <div class="text-[15px] text-neutral-700 text-justify">
    <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
   Tahapan Pengurusan:
