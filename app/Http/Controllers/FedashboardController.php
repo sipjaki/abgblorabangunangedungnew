@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\beritaabg;
 use Illuminate\Http\Request;
 
 use App\Models\bgkartuinventarisbangunan;
@@ -18,6 +19,7 @@ class FedashboardController extends Controller
     {
 
         $user = Auth::user();
+        $databerita = beritaabg::all();
 
 
         // return view('/404', [
@@ -26,6 +28,7 @@ class FedashboardController extends Controller
         return view('frontend.android.01_halamanutama.index', [
             'title' => 'Abg Blora Bangunan Gedung',
             'user' => $user,
+            'data' => $databerita,
         ]);
     }
 

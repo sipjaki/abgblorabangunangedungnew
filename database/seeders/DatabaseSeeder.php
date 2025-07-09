@@ -12363,7 +12363,7 @@ beritaabg::create([
     'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora membangun gedung serbaguna baru di Kecamatan Cepu sebagai fasilitas pendukung kegiatan masyarakat dan pemerintahan desa. Gedung ini dirancang multifungsi dengan ruang pertemuan, aula, dan fasilitas umum lainnya. Proyek ini merupakan bagian dari upaya pemerintah dalam meningkatkan infrastruktur pelayanan publik. Kepala Dinas PUPR Blora menyatakan bahwa bangunan ini diharapkan mampu memperkuat peran masyarakat dalam pembangunan daerah.',
     'foto' => 'assets/abgblora/logo/berita/1berita.jpg',
     'foto1' => 'assets/abgblora/logo/berita/2berita.jpg',
-    'foto2' => 'assets/abgblora/logo/berita/3berita.jpg',
+    'foto2' => 'assets/abgblora/logo/berita/3berita.png',
 ]);
 
 beritaabg::create([
@@ -12372,7 +12372,7 @@ beritaabg::create([
     'tanggal' => '2025-06-10',
     'keterangan' => 'Blora, Pemerintah Kabupaten Blora melalui Dinas PUPR tengah melakukan revitalisasi terhadap beberapa gedung pemerintahan yang sudah berusia tua. Salah satunya adalah gedung kantor Kecamatan Tunjungan yang kini direnovasi agar lebih representatif dan ramah disabilitas. Proyek ini dilaksanakan sebagai komitmen Pemkab dalam mendukung pelayanan publik yang lebih modern dan aman. Revitalisasi juga memperhatikan unsur arsitektur lokal sebagai identitas daerah.',
     'foto' => 'assets/abgblora/logo/berita/2berita.jpg',
-    'foto1' => 'assets/abgblora/logo/berita/3berita.jpg',
+    'foto1' => 'assets/abgblora/logo/berita/3berita.png',
     'foto2' => 'assets/abgblora/logo/berita/1berita.jpg',
 ]);
 
@@ -12381,7 +12381,7 @@ beritaabg::create([
     'judulberita' => 'Pembangunan Gedung Pelayanan Terpadu Blora Tahap I Selesai',
     'tanggal' => '2025-06-28',
     'keterangan' => 'Blora, Tahap pertama pembangunan Gedung Pelayanan Terpadu satu atap (PTSA) di lingkungan Pemkab Blora telah rampung. Gedung ini akan menjadi pusat layanan perizinan dan administrasi terpadu bagi masyarakat Blora. Dengan desain modern dan fasilitas lengkap, diharapkan pelayanan publik menjadi lebih cepat, efisien, dan transparan. Proyek ini dibiayai dari APBD Kabupaten Blora tahun anggaran 2025 dan rencananya akan dilanjutkan ke tahap II pada akhir tahun.',
-    'foto' => 'assets/abgblora/logo/berita/3berita.jpg',
+    'foto' => 'assets/abgblora/logo/berita/3berita.png',
     'foto1' => 'assets/abgblora/logo/berita/1berita.jpg',
     'foto2' => 'assets/abgblora/logo/berita/2berita.jpg',
 ]);

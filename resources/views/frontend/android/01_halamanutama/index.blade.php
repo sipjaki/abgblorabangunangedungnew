@@ -3,10 +3,13 @@
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
-    <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px]">
-      {{-- <img src="/assets/android/iconmenu/dashboard999.jpg" class="absolute object-cover w-full h-full" alt="backgrounds"> --}}
-      <img src="/assets/android/iconmenu/bangunangedungapp.jpg" class="absolute object-cover w-full h-full" alt="backgrounds" loading="lazy">
-
+  <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
+  <img
+    src="/assets/android/iconmenu/bangunangedungapp.jpg"
+    class="absolute object-cover w-full h-full rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]"
+    alt="backgrounds"
+    loading="lazy"
+  >
       <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
 <nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
   <!-- Logo Kiri -->
@@ -43,8 +46,7 @@
 
     @include('frontend.android.00_fiturmenu.04_menunavigasi')
 
-    {{-- ================================================================== --}}
-<div id="Promo" class="promo-section">
+    <div id="Promo" class="promo-section">
   <div class="promo-header">
     <h2 class="promo-title">Agenda Sosialisasi</h2>
     <a href="#" class="promo-link">Lihat Semua</a>
@@ -96,24 +98,21 @@
 .promo-section {
   margin: 1.5rem 0;
   width: 100%;
-  background: linear-gradient(135deg, #182848 0%, #2a3a6a 100%);
   padding: 1.5rem 1rem;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(10, 25, 70, 0.2);
   color: white;
   font-family: 'Segoe UI', system-ui, sans-serif;
   position: relative;
   overflow: hidden;
+  background: url("/assets/android/iconmenu/belakangnew.jpg") no-repeat center center;
+  background-size: cover;
 }
 
 .promo-section::before {
   content: "";
   position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+  inset: 0;
+  background: linear-gradient(135deg, rgba(24,40,72,0.85) 0%, rgba(42,58,106,0.85) 100%);
   z-index: 0;
 }
 
@@ -230,88 +229,66 @@
   line-height: 1.4;
 }
 </style>
-    {{-- ================================================================== --}}
 
-    {{-- ================================================================== --}}
-  <div id="NewsPromo" class="news-section">
+<div id="NewsPromo" class="news-section">
   <div class="news-header">
     <h2 class="news-title">Berita Bangunan Gedung</h2>
     <a href="#" class="news-link">Lihat Semua</a>
   </div>
 
   <div class="news-carousel">
-    <!-- News 1 -->
+  @foreach ($data as $item)
     <div class="news-card">
       <div class="news-image-container">
-        <img src="/assets/android/thumbnails/gambar004.png" class="news-image" alt="Berita Bangunan">
-        <div class="news-overlay"></div>
-      </div>
-      <div class="news-content">
-        <div class="news-meta">
-          <span class="news-category">Pengumuman</span>
-          <span class="news-date">15 Mei 2023</span>
-        </div>
-        <h3 class="news-headline">Peningkatan Layanan Perizinan Bangunan di Blora</h3>
-        <p class="news-excerpt">Dinas PUPR Kabupaten Blora melakukan inovasi layanan perizinan bangunan untuk mempercepat proses pengajuan.</p>
-      </div>
-    </div>
+        {{-- <img src="{{ asset('storage/' . $item->foto) }}" class="news-image" alt="Berita Bangunan" /> --}}
+@if ($item->foto && file_exists(public_path('storage/' . $item->foto)))
+    <!-- Gambar dari storage -->
+    <img src="{{ asset('storage/' . $item->foto) }}" class="news-image" alt="Berita Bangunan" loading="lazy" />
+@elseif ($item->foto)
+    <!-- Gambar dari path luar storage -->
+    <img src="{{ asset($item->foto) }}" class="news-image" alt="Berita Bangunan" loading="lazy" />
+@else
+    <!-- Gambar default atau kosong -->
+    <img src="/assets/android/thumbnails/default.png" class="news-image" alt="Default Berita" loading="lazy" />
+@endif
 
-    <!-- News 2 -->
-    <div class="news-card">
-      <div class="news-image-container">
-        <img src="/assets/android/thumbnails/gambar005.png" class="news-image" alt="Berita Bangunan">
         <div class="news-overlay"></div>
-      </div>
-      <div class="news-content">
-        <div class="news-meta">
-          <span class="news-category">Prestasi</span>
-          <span class="news-date">2 Apr 2023</span>
-        </div>
-        <h3 class="news-headline">Penghargaan Bangunan Gedung Hijau</h3>
-        <p class="news-excerpt">Tiga bangunan di Blora mendapatkan penghargaan sebagai bangunan gedung hijau tingkat provinsi.</p>
-      </div>
-    </div>
 
-    <!-- News 3 -->
-    <div class="news-card">
-      <div class="news-image-container">
-        <img src="/assets/android/thumbnails/gambar006.png" class="news-image" alt="Berita Bangunan">
-        <div class="news-overlay"></div>
-      </div>
+    </div>
       <div class="news-content">
         <div class="news-meta">
-          <span class="news-category">Teknologi</span>
-          <span class="news-date">28 Mar 2023</span>
+          {{-- Jika ada kategori, bisa ditambahkan, kalau tidak hapus --}}
+          {{-- <span class="news-category">{{ $item->kategori ?? 'Berita' }}</span> --}}
+          <span class="news-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d M Y') }}</span>
         </div>
-        <h3 class="news-headline">Implementasi BIM di Proyek Pemerintah</h3>
-        <p class="news-excerpt">Kabupaten Blora mulai menerapkan Building Information Modeling untuk proyek-proyek strategis.</p>
+        <h3 class="news-headline">{{ $item->judulberita }}</h3>
+        <p class="news-excerpt">{{ Str::limit($item->keterangan, 100, '...') }}</p>
       </div>
     </div>
-  </div>
+  @endforeach
+</div>
+
 </div>
 
 <style>
 .news-section {
   margin: 1.5rem 0;
   width: 100%;
-  background: linear-gradient(135deg, #182848 0%, #2a3a6a 100%);
   padding: 1.5rem 1rem;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(10, 25, 70, 0.2);
   color: white;
   font-family: 'Segoe UI', system-ui, sans-serif;
   position: relative;
   overflow: hidden;
+  background: url("/assets/android/iconmenu/belakangnew.jpg") no-repeat center center;
+  background-size: cover;
 }
 
 .news-section::before {
   content: "";
   position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+  inset: 0;
+  background: linear-gradient(135deg, rgba(24,40,72,0.85) 0%, rgba(42,58,106,0.85) 100%);
   z-index: 0;
 }
 
@@ -443,6 +420,7 @@
   flex-grow: 1;
 }
 </style>
+
 
     <br><br>
 

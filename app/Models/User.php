@@ -102,4 +102,9 @@ class User extends Authenticatable
         return $this->hasMany(petugasdinas::class);
     }
 
+    public function beritaabg()
+    {
+        return $this->hasMany(beritaabg::class);
+    }
+
 }
