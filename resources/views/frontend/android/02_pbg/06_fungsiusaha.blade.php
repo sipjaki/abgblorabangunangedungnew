@@ -43,64 +43,60 @@
 
   <br>
 
-  <div class="flex flex-col gap-3 mt-4">
-  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Persetujuan Bangunan Gedung (PBG) – Fungsi Usaha
-  </p>
+  <div class="flex flex-col gap-4 mt-6">
+  <h2 class="font-semibold text-[18px] text-[#4041DA]">Persetujuan Bangunan Gedung (PBG) – Fungsi Usaha</h2>
   <p class="text-[15px] text-neutral-700 text-justify">
     Bangunan Gedung Fungsi Usaha meliputi: <br>
-    Perkantoran, perdagangan, perindustrian, wisata dan rekreasi, pertemuan, penginapan, penyimpanan, peternakan, dan bangunan tempat pelayanan peribadatan.
+    Perkantoran, perdagangan, perindustrian, wisata dan rekreasi, pertemuan, penginapan, penyimpanan, serta peternakan.
   </p>
 
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">Klasifikasi Bangunan Gedung</p>
-  <div class="text-[15px] text-neutral-700 leading-[22px]">
-    <ul class="list-disc pl-5">
-      <li><strong>Sederhana</strong>: 1 lantai, &lt; 72m²</li>
-      <li><strong>Tidak Sederhana</strong>:
-        <ul class="list-disc pl-5">
-          <li>1 lantai, &gt; 72m²</li>
-          <li>2 lantai, &lt; 90m²</li>
-          <li>&gt; 2 lantai, &gt; 90m²</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <h3 class="font-semibold text-[16px] text-[#4041DA]">1. Klasifikasi Bangunan Gedung</h3>
+  <ul class="text-[15px] text-neutral-700 list-disc pl-5">
+    <li><strong>Sederhana</strong>: 1 lantai, luas &lt; 72m²</li>
+    <li><strong>Tidak Sederhana</strong>:
+      <ul class="list-disc pl-5">
+        <li>1 lantai, luas &gt; 72m²</li>
+        <li>2 lantai, luas &lt; 90m²</li>
+        <li>&gt; 2 lantai, luas &gt; 90m²</li>
+      </ul>
+    </li>
+  </ul>
 
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">Persyaratan:</p>
-  <ol class="text-[15px] text-neutral-700 text-justify leading-[22px] space-y-2 list-decimal pl-5">
-    <li><strong>DATA TANAH</strong>
+  <h3 class="font-semibold text-[16px] text-[#4041DA]">2. Persyaratan Dokumen</h3>
+  <ol class="text-[15px] text-neutral-700 pl-5 space-y-3 list-decimal">
+    <li><strong>Data Tanah</strong>
       <ul class="list-disc pl-5">
-        <li>Dokumen tanah (Sertifikat Tanah)</li>
-        <li>Izin Pemanfaatan Tanah (Apabila nama pemohon dengan nama yang disertifikat tidak sama)</li>
-        <li>Gambar Kontur Tanah dan Sondir (Khusus Bangunan tidak sederhana)</li>
+        <li>Sertifikat Tanah</li>
+        <li>Izin Pemanfaatan Tanah (jika nama pemohon ≠ nama di sertifikat)</li>
+        <li>Gambar Kontur Tanah dan Sondir (untuk bangunan tidak sederhana)</li>
       </ul>
     </li>
-    <li><strong>DATA UMUM</strong>
+    <li><strong>Data Umum</strong>
       <ul class="list-disc pl-5">
-        <li>KTP / KITAS, NIB (OSS)</li>
+        <li>KTP / KITAS / NIB (OSS)</li>
         <li>Dokumen Perizinan Tata Ruang</li>
-        <li>Dokumen Lingkungan sesuai peraturan perundangan (SPPL, OSS, UKL/UPL, AMDAL)</li>
-        <li>KRK (Keterangan Rencana Kota/Kabupaten)</li>
-        <li>Data Penyedia Jasa Perencana Konstruksi: - Badan Usaha (SBU) / Arsitek Berlisesnsi</li>
+        <li>Dokumen Lingkungan (SPPL, OSS, UKL/UPL, AMDAL)</li>
+        <li>KRK (Keterangan Rencana Kabupaten/Kota)</li>
+        <li>Data Penyedia Jasa Perencana: SBU / Arsitek Berlisensi</li>
       </ul>
     </li>
-    <li><strong>DATA TEKNIS ARSITEKTUR</strong>
+    <li><strong>Data Teknis Arsitektur</strong>
       <ul class="list-disc pl-5">
-        <li>Konsep arsitektur</li>
-        <li>Gambar situasi, rencana tapak, potongan, tampak dan gambar detail</li>
-        <li>Gambar rencana tata ruang dalam dan luar</li>
+        <li>Konsep Arsitektur</li>
+        <li>Gambar situasi, tapak, potongan, tampak, dan gambar detail</li>
+        <li>Gambar rencana tata ruang (dalam & luar)</li>
         <li>Spesifikasi teknis arsitektur</li>
-        <li>Rekomendasi peil banjir (Bila diperlukan)</li>
+        <li>Rekomendasi peil banjir (jika diperlukan)</li>
       </ul>
     </li>
-    <li><strong>DATA TEKNIS STRUKTUR</strong>
+    <li><strong>Data Teknis Struktur</strong>
       <ul class="list-disc pl-5">
-        <li>Perhitungan struktur (Untuk Bangunan tidak sederhana)</li>
-        <li>Gambar detail struktur</li>
-        <li>Spesifikasi teknis struktur</li>
+        <li>Perhitungan Struktur (untuk bangunan tidak sederhana)</li>
+        <li>Gambar Detail Struktur</li>
+        <li>Spesifikasi Teknis Struktur</li>
       </ul>
     </li>
-    <li><strong>DATA TEKNIS MEP</strong>
+    <li><strong>Data Teknis MEP</strong>
       <ul class="list-disc pl-5">
         <li>Gambar sistem jaringan listrik</li>
         <li>Gambar sistem jaringan sanitasi</li>
@@ -108,28 +104,26 @@
     </li>
   </ol>
 
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
-    Tahapan Pengurusan:
-  </p>
-  <ol class="text-[15px] text-neutral-700 text-justify leading-[22px] space-y-1 list-decimal pl-5">
-    <li>Menyiapkan dokumen tanah, KRK/KKPR (dokumen tata ruang), dan dokumen lingkungan.</li>
-    <li>Mendaftar, membuat permohonan, dan mengunggah dokumen pada website SIMBG.PU.GO.ID</li>
-    <li>Menindaklanjuti hasil verifikasi operator dinas teknis</li>
-    <li>Penjadwalan konsultasi permohonan</li>
-    <li>Melakukan konsultasi bersama TPA/TPT</li>
-    <li>Merevisi dokumen sesuai masukan dan saran teknis TPA/TPT</li>
-    <li>Merevisi dokumen hingga TPA/TPT menyetujui dokumen perencanaan</li>
-    <li>Pengunggahan berkas final, perhitungan retribusi, dan validasi oleh dinas teknis</li>
-    <li>Pembayaran retribusi melalui bank persepsi / mobile banking</li>
-    <li>Penerbitan dokumen PBG di DPMPTSP</li>
+  <h3 class="font-semibold text-[16px] text-[#4041DA]">3. Tahapan Pengurusan</h3>
+  <ol class="text-[15px] text-neutral-700 pl-5 space-y-1 list-decimal">
+    <li>Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan.</li>
+    <li>Mendaftar, membuat permohonan, dan mengunggah dokumen di <a href="https://simbg.pu.go.id" class="text-blue-600 underline" target="_blank">https://simbg.pu.go.id</a></li>
+    <li>Menindaklanjuti hasil verifikasi oleh operator Dinas Teknis.</li>
+    <li>Penjadwalan konsultasi permohonan.</li>
+    <li>Konsultasi bersama TPA/TPT.</li>
+    <li>Revisi dokumen sesuai masukan teknis dari TPA/TPT.</li>
+    <li>TPA/TPT menyetujui dokumen perencanaan.</li>
+    <li>Upload berkas final, perhitungan retribusi, dan validasi oleh Dinas Teknis.</li>
+    <li>Pembayaran retribusi melalui bank persepsi / mobile banking.</li>
+    <li>Penerbitan dokumen PBG oleh DPMPTSP.</li>
   </ol>
 
-  {{-- <div class="mt-4 text-[15px] text-neutral-700">
-    Untuk informasi mendetail, silakan akses link berikut: <br>
+  <div class="text-[15px] text-neutral-700 mt-4">
+    Untuk informasi mendetail, silakan akses: <br>
     <a href="https://linktr.ee/bidangbangunangedung" class="text-blue-600 underline" target="_blank">
       https://linktr.ee/bidangbangunangedung
     </a>
-  </div> --}}
+  </div>
 </div>
 
   <!-- Info Teks -->
