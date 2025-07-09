@@ -35,7 +35,7 @@
 
         <div class="flex flex-col space-y-3 px-[18px]">
             <!-- Card 1 -->
-<a href="/feinfocampuran" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+<a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
   <!-- Gambar Thumbnail Penuh -->
   <div class="w-full h-auto rounded-lg overflow-hidden">
     <img src="/assets/android/pbgslf/PBG_FUNGSI_KEAGAMAAN.png" class="object-cover w-full h-full" alt="thumbnail">

@@ -258,5 +258,18 @@ public function mbrgambarupdate($id)
         ]);
     }
 
+    public function slffungsiusaha()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.02_pbg.07_slfmenara', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi SLF Fungsi Usaha',
+            'user' => $user,
+        ]);
+    }
+
 }
 
