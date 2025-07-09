@@ -46,7 +46,7 @@
               </div>
             </a>
 
-            <a href="/404" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+            <a href="/feinfohunian" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
                   <img src="/assets/android/pbgslf/PBG_FUNGSI_HUNIAN.jpg" class="object-cover w-full h-full" alt="thumbnail">

@@ -193,5 +193,18 @@ public function mbrgambarupdate($id)
         ]);
     }
 
+    public function feinfohunian()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.02_pbg.02_fungsihunian', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi PBG Fungsi Hunian ',
+            'user' => $user,
+        ]);
+    }
+
 }
 
