@@ -45,7 +45,7 @@
 
 <div class="flex flex-col gap-3 mt-4">
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Sertifikat Laik Fungsi (SLF) – Fungsi Prasarana Menara Telekomunikasi
+    Sertifikat Laik Fungsi (SLF) – Fungsi Menara Telekomunikasi
   </p>
 
   <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">1. Persyaratan</p>
@@ -82,7 +82,7 @@
   <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">2. Tahapan Pengurusan</p>
   <p class="text-[15px] text-neutral-700 text-justify leading-[22px]">
     1. Menyiapkan dokumen tanah, KRK/KKPR (dokumen tata ruang), dan dokumen lingkungan<br>
-    2. Mendaftar, membuat permohonan, dan mengunggah dokumen pada website <a href="https://simbg.pu.go.id" class="text-blue-600 underline" target="_blank">SIMBG.PU</a><br>
+    2. Mendaftar, membuat permohonan, dan mengunggah dokumen pada website SIMBG.PU<br>
     3. Menindaklanjuti hasil verifikasi operator dinas teknis<br>
     4. Penjadwalan konsultasi permohonan<br>
     5. Melakukan konsultasi bersama TPA/TPT<br>
