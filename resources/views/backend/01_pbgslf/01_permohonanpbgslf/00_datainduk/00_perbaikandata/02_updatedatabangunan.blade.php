@@ -383,14 +383,14 @@ th {
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
+
 <form id="formPemilik" action="{{ route('updatedatabangunannew', $data->id) }}" method="POST">
     @csrf
-    @method('PUT')
-    <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->pbgslfbangunan_id }}">
+    <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
     <input type="hidden" name="id" value="{{ $data->id }}">
 
     <div class="row g-3 mt-2">
-        {{-- Jenis Permohonan Konsultasi --}}
+        {{-- Nama Pemilik --}}
         <div class="col-md-6">
             <label class="form-label">
                 <i class="bi bi-diagram-3-fill me-1 text-primary"></i> Jenis Permohonan Konsultasi
@@ -398,7 +398,7 @@ th {
             <select name="jenisperkonsultasi_id" class="form-select @error('jenisperkonsultasi_id') is-invalid @enderror">
                 <option value="">-- Pilih Jenis --</option>
                 @foreach ($datajenisperkons as $item)
-                    <option value="{{ $item->id }}" {{ old('jenisperkonsultasi_id', $data->jenisperkonsultasi_id) == $item->id ? 'selected' : '' }}>
+                    <option value="{{ $item->id }}" {{ $data->jenisperkonsultasi_id == $item->id ? 'selected' : '' }}>
                         {{ $item->jenis }}
                     </option>
                 @endforeach
@@ -406,34 +406,30 @@ th {
             @error('jenisperkonsultasi_id')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
-        {{-- Nama Bangunan Gedung --}}
         <div class="col-md-6">
             <label class="form-label"><i class="bi bi-house-fill text-primary me-1"></i> Nama Bangunan Gedung</label>
-            <input type="text" name="namabangunan" class="form-control @error('namabangunan') is-invalid @enderror" value="{{ old('namabangunan', $data->namabangunan) }}">
+            <input type="text" name="namabangunan" class="form-control @error('namabangunan') is-invalid @enderror" value="{{ $data->namabangunan ?? old('namabangunan') }}">
             @error('namabangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
-        {{-- Lokasi Bangunan --}}
         <div class="col-md-6">
             <label class="form-label"><i class="bi bi-geo-alt-fill text-primary me-1"></i> Lokasi Bangunan</label>
-            <input type="text" name="lokasibangunan" class="form-control @error('lokasibangunan') is-invalid @enderror" value="{{ old('lokasibangunan', $data->lokasibangunan) }}">
+            <input type="text" name="lokasibangunan" class="form-control @error('lokasibangunan') is-invalid @enderror" value="{{ $data->lokasibangunan ?? old('lokasibangunan') }}">
             @error('lokasibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
-        {{-- Klasifikasi Bangunan --}}
         <div class="col-md-6">
             <label class="form-label">
                 <i class="bi bi-tags-fill text-primary me-1"></i> Klasifikasi Bangunan
             </label>
             <select name="klasifikasibangunan" class="form-select @error('klasifikasibangunan') is-invalid @enderror">
                 <option value="">-- Pilih Klasifikasi --</option>
-                <option value="Sederhana" {{ old('klasifikasibangunan', $data->klasifikasibangunan) == 'Sederhana' ? 'selected' : '' }}>Sederhana</option>
-                <option value="Tidak Sederhana" {{ old('klasifikasibangunan', $data->klasifikasibangunan) == 'Tidak Sederhana' ? 'selected' : '' }}>Tidak Sederhana</option>
+                <option value="Sederhana" {{ ($data->klasifikasibangunan ?? old('klasifikasibangunan')) == 'Sederhana' ? 'selected' : '' }}>Sederhana</option>
+                <option value="Tidak Sederhana" {{ ($data->klasifikasibangunan ?? old('klasifikasibangunan')) == 'Tidak Sederhana' ? 'selected' : '' }}>Tidak Sederhana</option>
             </select>
             @error('klasifikasibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
-        {{-- Fungsi Bangunan (PBG) --}}
         <div class="col-md-6">
             <label class="form-label">
                 <i class="bi bi-building text-primary me-1"></i> Fungsi Bangunan (PBG)
@@ -441,7 +437,7 @@ th {
             <select name="fungsibangunanpbg_id" class="form-select @error('fungsibangunanpbg_id') is-invalid @enderror">
                 <option value="">-- Pilih Fungsi --</option>
                 @foreach ($datafungsibgpbg as $item)
-                    <option value="{{ $item->id }}" {{ old('fungsibangunanpbg_id', $data->fungsibangunanpbg_id) == $item->id ? 'selected' : '' }}>
+                    <option value="{{ $item->id }}" {{ $data->fungsibangunanpbg_id == $item->id ? 'selected' : '' }}>
                         {{ $item->fungsi }}
                     </option>
                 @endforeach
@@ -449,87 +445,62 @@ th {
             @error('fungsibangunanpbg_id')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
-        {{-- Luas Bangunan (m²) --}}
         <div class="col-md-6">
             <label class="form-label"><i class="bi bi-aspect-ratio text-primary me-1"></i> Luas Bangunan (m²)</label>
-            <input type="text" name="luasbangunan" class="form-control @error('luasbangunan') is-invalid @enderror" value="{{ old('luasbangunan', $data->luasbangunan) }}">
+            <input type="text" name="luasbangunan" class="form-control @error('luasbangunan') is-invalid @enderror" value="{{ $data->luasbangunan ?? old('luasbangunan') }}">
             @error('luasbangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
-        {{-- Kecamatan (readonly) --}}
-        <div class="col-md-6">
-            <label class="form-label"><i class="fas fa-map-pin text-primary me-1"></i> Kecamatan</label>
-            <input type="text" class="form-control bg-light" value="{{ $data->kecamatanblora->kecamatanblora ?? '' }}" readonly>
-            <input type="hidden" name="kecamatanblora_id" value="{{ $data->kecamatanblora_id }}">
+        <h5 class="mb-3 mt-3" style="color: navy; font-weight: bold; font-size: 16px;">
+            <i class="bi bi-building-check me-2" style="color: navy;"></i> Kesesuaian Data Bangunan Gedung
+        </h5>
+
+        <div class="row">
+            {{-- Jenis Permohonan --}}
+            <div class="col-md-6 mb-3">
+                <label class="form-label d-block" style="color: black; font-weight: 600;">
+                    <i class="bi bi-pencil-square me-1" style="color: blue;"></i> Jenis Permohonan
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="jenispermohonan" value="Lengkap" {{ ($data->jenispermohonan ?? old('jenispermohonan')) == 'Lengkap' ? 'checked' : '' }}>
+                    <span class="custom-box"></span> Lengkap
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="jenispermohonan" value="Tidak Lengkap" {{ ($data->jenispermohonan ?? old('jenispermohonan')) == 'Tidak Lengkap' ? 'checked' : '' }}>
+                    <span class="custom-box"></span> Tidak Lengkap
+                </label>
+
+                @error('jenispermohonan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+            </div>
+
+            {{-- Fungsi Bangunan --}}
+            <div class="col-md-6 mb-3">
+                <label class="form-label d-block" style="color: navy; font-weight: 600;">
+                    <i class="bi bi-layers-fill me-1" style="color: blue;"></i> Fungsi Bangunan
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="fungsibangunan" value="Lengkap" {{ ($data->fungsibangunan ?? old('fungsibangunan')) == 'Lengkap' ? 'checked' : '' }}>
+                    <span class="custom-box"></span> Lengkap
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="fungsibangunan" value="Tidak Lengkap" {{ ($data->fungsibangunan ?? old('fungsibangunan')) == 'Tidak Lengkap' ? 'checked' : '' }}>
+                    <span class="custom-box"></span> Tidak Lengkap
+                </label>
+
+                @error('fungsibangunan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+            </div>
         </div>
 
-        {{-- Kelurahan/Desa (readonly) --}}
-        <div class="col-md-6">
-            <label class="form-label"><i class="fas fa-map-marker-alt text-primary me-1"></i> Kelurahan/Desa</label>
-            <input type="text" class="form-control bg-light" value="{{ $data->kelurahandesa->kelurahandesa ?? '' }}" readonly>
-            <input type="hidden" name="kelurahandesa_id" value="{{ $data->kelurahandesa_id }}">
-        </div>
-
-        {{-- Alamat Lengkap --}}
-        <div class="col-md-12">
-            <label class="form-label"><i class="bi bi-geo text-primary me-1"></i> Alamat Lengkap</label>
-            <input type="text" name="alamatlengkap" class="form-control @error('alamatlengkap') is-invalid @enderror" value="{{ old('alamatlengkap', $data->alamatlengkap) }}">
-            @error('alamatlengkap')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
-
-        {{-- Koordinat --}}
-        <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-crosshair text-success me-1"></i> Koordinat (Latitude, Longitude)</label>
-            <input type="text" name="koordinat" class="form-control @error('koordinat') is-invalid @enderror" placeholder="-6.969xxx, 111.403xxx" value="{{ old('koordinat', $data->koordinat) }}">
-            @error('koordinat')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
-
-        {{-- Jenis Permohonan --}}
-        <div class="col-md-6 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
-                <i class="bi bi-pencil-square me-1" style="color: blue;"></i> Jenis Permohonan
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="jenispermohonan" value="Lengkap" {{ old('jenispermohonan', $data->jenispermohonan) == 'Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Lengkap
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="jenispermohonan" value="Tidak Lengkap" {{ old('jenispermohonan', $data->jenispermohonan) == 'Tidak Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Tidak Lengkap
-            </label>
-
-            @error('jenispermohonan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-        </div>
-
-        {{-- Fungsi Bangunan --}}
-        <div class="col-md-6 mb-3">
-            <label class="form-label d-block" style="color: navy; font-weight: 600;">
-                <i class="bi bi-layers-fill me-1" style="color: blue;"></i> Fungsi Bangunan
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="fungsibangunan" value="Lengkap" {{ old('fungsibangunan', $data->fungsibangunan) == 'Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Lengkap
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="fungsibangunan" value="Tidak Lengkap" {{ old('fungsibangunan', $data->fungsibangunan) == 'Tidak Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Tidak Lengkap
-            </label>
-
-            @error('fungsibangunan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-        </div>
-
-        {{-- Tinggi Bangunan (meter) --}}
         <div class="col-md-6">
             <label class="form-label"><i class="bi bi-arrow-up-short text-primary me-1"></i> Tinggi Bangunan (meter)</label>
-            <input type="text" name="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror" value="{{ old('tinggibangunan', $data->tinggibangunan) }}">
+            <input type="text" name="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror" value="{{ $data->tinggibangunan ?? old('tinggibangunan') }}">
             @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
-        {{-- Jumlah Lantai --}}
         <div class="col-md-6">
             <label class="form-label">
                 <i class="bi bi-stack text-primary me-1"></i> Jumlah Lantai
@@ -537,27 +508,28 @@ th {
             <select name="jumlahlantai" class="form-select @error('jumlahlantai') is-invalid @enderror">
                 <option value="">-- Pilih Jumlah Lantai --</option>
                 @for ($i = 1; $i <= 10; $i++)
-                    <option value="{{ $i }}" {{ old('jumlahlantai', $data->jumlahlantai) == $i ? 'selected' : '' }}>
+                    <option value="{{ $i }}" {{ $data->jumlahlantai == $i ? 'selected' : '' }}>
                         {{ $i }} Lantai
                     </option>
                 @endfor
             </select>
-            @error('jumlahlantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            @error('jumlahlantai')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
 
-        {{-- Kelengkapan Data Intensitas Bangunan --}}
         <div class="col-md-6 mb-3">
             <label class="form-label d-block" style="color: black; font-weight: 600;">
                 <i class="bi bi-box-seam me-1" style="color: blue;"></i>Kelengkapan Data Intensitas Bangunan
             </label>
 
             <label class="custom-radio">
-                <input type="radio" name="internsitasbangunan" value="Ada" {{ old('internsitasbangunan', $data->internsitasbangunan) == 'Ada' ? 'checked' : '' }}>
+                <input type="radio" name="internsitasbangunan" value="Ada" {{ ($data->internsitasbangunan ?? old('internsitasbangunan')) == 'Ada' ? 'checked' : '' }}>
                 <span class="custom-box"></span> Ada
             </label>
 
             <label class="custom-radio">
-                <input type="radio" name="internsitasbangunan" value="Tidak Ada" {{ old('internsitasbangunan', $data->internsitasbangunan) == 'Tidak Ada' ? 'checked' : '' }}>
+                <input type="radio" name="internsitasbangunan" value="Tidak Ada" {{ ($data->internsitasbangunan ?? old('internsitasbangunan')) == 'Tidak Ada' ? 'checked' : '' }}>
                 <span class="custom-box"></span> Tidak Ada
             </label>
 
@@ -568,199 +540,143 @@ th {
             <i class="bi bi-building-up me-2" style="color: navy;"></i> Intensitas Bangunan Gedung
         </h5>
 
-        {{-- Nomor PKKPR --}}
-        <div class="col-md-6 mb-3">
-            <label class="form-label"><i class="bi bi-hash text-primary me-1"></i> Nomor PKKPR</label>
-            <input type="text" name="nomorpkkpr" class="form-control @error('nomorpkkpr') is-invalid @enderror" value="{{ old('nomorpkkpr', $data->nomorpkkpr) }}">
-            @error('nomorpkkpr')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
-
-        {{-- GSB (Garis Sempadan Bangunan) --}}
-        <div class="col-md-6 mb-3">
-            <label class="form-label">
-                <i class="bi bi-aspect-ratio text-primary me-1"></i> GSB (Garis Sempadan Bangunan)
-            </label>
-            <div class="input-group">
-                <input type="number" step="0.01" id="gsb_value" class="form-control" placeholder="Masukkan nilai" value="{{ old('gsb') ? explode(' ', old('gsb'))[0] : (explode(' ', $data->gsb)[0] ?? '') }}">
-                <select id="gsb_unit" class="form-select">
-                    <option value="%" {{ (old('gsb') ? explode(' ', old('gsb'))[1] : (explode(' ', $data->gsb)[1] ?? '')) == '%' ? 'selected' : '' }}>Persen (%)</option>
-                    <option value="Rasio" {{ (old('gsb') ? explode(' ', old('gsb'))[1] : (explode(' ', $data->gsb)[1] ?? '')) == 'Rasio' ? 'selected' : '' }}>Rasio</option>
-                    <option value="Lantai" {{ (old('gsb') ? explode(' ', old('gsb'))[1] : (explode(' ', $data->gsb)[1] ?? '')) == 'Lantai' ? 'selected' : '' }}>Lantai</option>
-                </select>
-                <input type="hidden" name="gsb" id="gsb" value="{{ old('gsb', $data->gsb) }}">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label"><i class="bi bi-hash text-primary me-1"></i> Nomor PKKPR</label>
+                <input type="text" name="nomorpkkpr" class="form-control @error('nomorpkkpr') is-invalid @enderror" value="{{ $data->nomorpkkpr ?? old('nomorpkkpr') }}">
+                @error('nomorpkkpr')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
-            @error('gsb')<div class="text-danger">{{ $message }}</div>@enderror
-        </div>
 
-        {{-- KDB (Koefisien Dasar Bangunan) --}}
-        <div class="col-md-6 mb-3">
-            <label class="form-label">
-                <i class="bi bi-box-fill text-primary me-1"></i> KDB (Koefisien Dasar Bangunan)
-            </label>
-            <div class="input-group">
-                <input type="number" step="0.01" id="kdb_value" class="form-control" placeholder="Masukkan nilai" value="{{ old('kdb') ? explode(' ', old('kdb'))[0] : (explode(' ', $data->kdb)[0] ?? '') }}">
-                <select id="kdb_unit" class="form-select">
-                    <option value="%" {{ (old('kdb') ? explode(' ', old('kdb'))[1] : (explode(' ', $data->kdb)[1] ?? '')) == '%' ? 'selected' : '' }}>Persen (%)</option>
-                    <option value="Rasio" {{ (old('kdb') ? explode(' ', old('kdb'))[1] : (explode(' ', $data->kdb)[1] ?? '')) == 'Rasio' ? 'selected' : '' }}>Rasio</option>
-                    <option value="Lantai" {{ (old('kdb') ? explode(' ', old('kdb'))[1] : (explode(' ', $data->kdb)[1] ?? '')) == 'Lantai' ? 'selected' : '' }}>Lantai</option>
-                </select>
-                <input type="hidden" name="kdb" id="kdb" value="{{ old('kdb', $data->kdb) }}">
+            {{-- GSB --}}
+            <div class="col-md-6 mb-3">
+                <label class="form-label">
+                    <i class="bi bi-aspect-ratio text-primary me-1"></i> GSB (Garis Sempadan Bangunan)
+                </label>
+                <input type="text" name="gsb" class="form-control bg-light" value="{{ $data->gsb }}" readonly>
             </div>
-            @error('kdb')<div class="text-danger">{{ $message }}</div>@enderror
-        </div>
 
-        {{-- KLB (Koefisien Lantai Bangunan) --}}
-        <div class="col-md-6 mb-3">
-            <label class="form-label">
-                <i class="bi bi-columns-gap text-primary me-1"></i> KLB (Koefisien Lantai Bangunan)
-            </label>
-            <div class="input-group">
-                <input type="number" step="0.01" id="klb_value" class="form-control" placeholder="Masukkan nilai" value="{{ old('klb') ? explode(' ', old('klb'))[0] : (explode(' ', $data->klb)[0] ?? '') }}">
-                <select id="klb_unit" class="form-select">
-                    <option value="%" {{ (old('klb') ? explode(' ', old('klb'))[1] : (explode(' ', $data->klb)[1] ?? '')) == '%' ? 'selected' : '' }}>Persen (%)</option>
-                    <option value="Rasio" {{ (old('klb') ? explode(' ', old('klb'))[1] : (explode(' ', $data->klb)[1] ?? '')) == 'Rasio' ? 'selected' : '' }}>Rasio</option>
-                    <option value="Lantai" {{ (old('klb') ? explode(' ', old('klb'))[1] : (explode(' ', $data->klb)[1] ?? '')) == 'Lantai' ? 'selected' : '' }}>Lantai</option>
-                </select>
-                <input type="hidden" name="klb" id="klb" value="{{ old('klb', $data->klb) }}">
+            {{-- KDB --}}
+            <div class="col-md-6 mb-3">
+                <label class="form-label">
+                    <i class="bi bi-box text-primary me-1"></i> KDB (Koefisien Dasar Bangunan)
+                </label>
+                <input type="text" name="kdb" class="form-control bg-light" value="{{ $data->kdb }}" readonly>
             </div>
-            @error('klb')<div class="text-danger">{{ $message }}</div>@enderror
+
+            {{-- KLB --}}
+            <div class="col-md-6 mb-3">
+                <label class="form-label">
+                    <i class="bi bi-bar-chart-steps text-primary me-1"></i> KLB (Koefisien Lantai Bangunan)
+                </label>
+                <input type="text" name="klb" class="form-control bg-light" value="{{ $data->klb }}" readonly>
+            </div>
+
+            {{-- KDH --}}
+            <div class="col-md-6 mb-3">
+                <label class="form-label">
+                    <i class="bi bi-graph-up text-primary me-1"></i> KDH (Koefisien Daerah Hijau)
+                </label>
+                <input type="text" name="kdh" class="form-control bg-light" value="{{ $data->kdh }}" readonly>
+            </div>
         </div>
 
-        {{-- IMB --}}
-        {{-- <div class="col-md-6 mb-3">
-            <label class="form-label"><i class="bi bi-file-earmark-text-fill text-primary me-1"></i> IMB</label>
-            <input type="text" name="imb" class="form-control @error('imb') is-invalid @enderror" value="{{ old('imb', $data->imb) }}">
-            @error('imb')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div> --}}
+        <div class="row g-3">
+            {{-- Provinsi --}}
+            <div class="col-md-4">
+                <label class="form-label">
+                    <i class="bi bi-geo-alt-fill text-danger me-1"></i> Provinsi
+                </label>
+                <input type="text" name="provinsi" readonly class="form-control bg-light" value="{{ $data->provinsi ?? 'Jawa Tengah' }}">
+            </div>
 
-        {{-- Keterangan Tambahan --}}
-        <div class="col-md-12 mb-3">
-            <label class="form-label"><i class="bi bi-card-text text-primary me-1"></i> Keterangan Tambahan</label>
-            <textarea name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" rows="3">{{ old('keterangan', $data->keterangan) }}</textarea>
-            @error('keterangan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            {{-- Kabupaten --}}
+            <div class="col-md-4">
+                <label class="form-label">
+                    <i class="bi bi-geo-alt text-danger me-1"></i> Kabupaten/Kota
+                </label>
+                <input type="text" name="kabupaten" readonly class="form-control bg-light" value="{{ $data->kabupaten ?? 'Kabupaten Blora' }}">
+            </div>
+
+            {{-- Kecamatan --}}
+            <div class="col-md-4">
+                <label class="form-label d-flex align-items-center" for="kecamatanblora_id">
+                    <i class="fas fa-map-pin me-1" style="color: navy;"></i> Kecamatan
+                </label>
+                <input type="text" class="form-control bg-light" value="{{ $data->kecamatan->kecamatanblora ?? '' }}" readonly>
+                <input type="hidden" name="kecamatanblora_id" value="{{ $data->kecamatanblora_id }}">
+            </div>
+
+            {{-- Kelurahan/Desa --}}
+            <div class="col-md-4">
+                <label for="kelurahandesa_id" class="form-label d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"/>
+                        <path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/>
+                    </svg>
+                    Kelurahan/Desa
+                </label>
+                <input type="text" class="form-control bg-light" value="{{ $data->kelurahan->desa ?? '' }}" readonly>
+                <input type="hidden" name="kelurahandesa_id" value="{{ $data->kelurahandesa_id }}">
+            </div>
+
+            {{-- Alamat Lengkap --}}
+            <div class="col-md-8">
+                <label class="form-label">
+                    <i class="bi bi-geo text-primary me-1"></i> Alamat Lengkap
+                </label>
+                <input type="text" name="alamatlengkap" class="form-control @error('alamatlengkap') is-invalid @enderror" value="{{ $data->alamatlengkap ?? old('alamatlengkap') }}">
+                @error('alamatlengkap')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
+
+            {{-- Koordinat --}}
+            <div class="col-md-6">
+                <label class="form-label">
+                    <i class="bi bi-crosshair text-success me-1"></i> Koordinat (Latitude, Longitude)
+                </label>
+                <input type="text" name="koordinat" class="form-control @error('koordinat') is-invalid @enderror" placeholder="-6.969xxx, 111.403xxx" value="{{ $data->koordinat ?? old('koordinat') }}">
+                @error('koordinat')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
         </div>
 
-    </div>
+        {{-- Pilihan Catatan --}}
+        <div class="col-md-6">
+            <label class="form-label d-block" style="color: navy; font-weight: 600;">
+                <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
+            </label>
 
-    <div class="mt-4 text-end">
-        <button type="submit" class="btn btn-primary">
-            <i class="bi bi-save me-1"></i> Simpan Perubahan
-        </button>
+            <label class="custom-radio">
+                <input type="radio" name="pilihancatatan" value="lengkap" onchange="toggleCatatan(this)" {{ ($data->pilihancatatan ?? old('pilihancatatan')) === 'lengkap' ? 'checked' : '' }}>
+                <span class="custom-box"></span> Sesuai
+            </label>
+
+            <label class="custom-radio">
+                <input type="radio" name="pilihancatatan" value="tidak lengkap" onchange="toggleCatatan(this)" {{ ($data->pilihancatatan ?? old('pilihancatatan')) === 'tidak lengkap' ? 'checked' : '' }}>
+                <span class="custom-box"></span> Tidak Sesuai
+            </label>
+
+            @error('pilihancatatan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+        </div>
+
+        {{-- Catatan --}}
+        <div class="col-12" id="catatan-field" style="display: {{ ($data->pilihancatatan === 'tidak lengkap' || old('pilihancatatan') === 'tidak lengkap') ? 'block' : 'none' }};">
+            <label class="form-label"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
+            <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror" rows="3" placeholder="Tuliskan catatan tambahan...">{{ $data->catatan ?? old('catatan') }}</textarea>
+            @error('catatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        </div>
+
+        {{-- Tombol Submit --}}
+        <div class="col-12 text-end mt-3">
+            <button type="button" class="button-baru" onclick="openModal()">
+                <i class="bi bi-save me-1"></i> Simpan Data Bangunan
+            </button>
+        </div>
     </div>
 </form>
-
-{{-- Script to combine value and unit for GSB, KDB, KLB --}}
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        function setupCombinedInput(valueId, unitId, hiddenInputId) {
-            const valueInput = document.getElementById(valueId);
-            const unitSelect = document.getElementById(unitId);
-            const hiddenInput = document.getElementById(hiddenInputId);
-
-            function updateHidden() {
-                hiddenInput.value = valueInput.value.trim() && unitSelect.value
-                    ? valueInput.value.trim() + ' ' + unitSelect.value
-                    : '';
-            }
-
-            valueInput.addEventListener('input', updateHidden);
-            unitSelect.addEventListener('change', updateHidden);
-
-            updateHidden(); // initial update
-        }
-
-        setupCombinedInput('gsb_value', 'gsb_unit', 'gsb');
-        setupCombinedInput('kdb_value', 'kdb_unit', 'kdb');
-        setupCombinedInput('klb_value', 'klb_unit', 'klb');
-    });
-</script>
-<style>
-            .custom-radio {
-                position: relative;
-                padding-left: 35px;
-                padding-right: 15px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                background-color: #fff; /* netral */
-                border: 2px solid #cbd5e0; /* netral */
-                border-radius: 12px;
-                font-weight: 600;
-                cursor: pointer;
-                user-select: none;
-                transition: border-color 0.3s, background-color 0.3s;
-                display: inline-block;
-                margin-right: 10px;
-            }
-
-            .custom-radio input[type="radio"] {
-                position: absolute;
-                opacity: 0;
-        cursor: pointer;
-    }
-
-    .custom-box {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        height: 18px;
-        width: 18px;
-        background-color: #fff; /* netral */
-        border: 2px solid #cbd5e0; /* netral */
-        border-radius: 4px;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-
-    /* efek checklist muncul saat ter-check */
-    .custom-radio input[type="radio"]:checked ~ .custom-box::after {
-        content: '';
-        position: absolute;
-        left: 5px;
-        top: 1px;
-        width: 5px;
-        height: 10px;
-        border: solid;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-        animation: checkmarkFade 0.3s ease forwards;
-    }
-
-    /* Warna khusus untuk value 'sesuai' */
-    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box {
-        border-color: #3b82f6;
-        background-color: #bfdbfe;
-    }
-
-    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box::after {
-        border-color: #1d4ed8;
-    }
-
-    /* Warna khusus untuk value 'tidak_sesuai' */
-    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box {
-        border-color: #ef4444;
-        background-color: #fecaca;
-    }
-
-    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box::after {
-        border-color: #b91c1c;
-    }
-
-    /* Animasi checklist */
-    @keyframes checkmarkFade {
-        0% {
-            opacity: 0;
-            transform: scale(0.5) rotate(45deg);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1) rotate(45deg);
-        }
-    }
-</style>
 
 {{-- Modal Konfirmasi --}}
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">Apakah Anda ingin melakukan perbaikan data ?</p>
+        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">Apakah Anda ingin menyimpan data ini?</p>
         <div style="display: flex; justify-content: center; gap: 12px;">
             <button onclick="submitForm()" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
                 <i class="bi bi-check-circle me-1"></i> Ya
@@ -790,12 +706,14 @@ th {
         document.getElementById('formPemilik').submit();
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
-        const selected = document.querySelector('input[name=\'pilihancatatan\']:checked');
-        if (selected) toggleCatatan(selected);
+    // Initialize catatan field visibility based on existing data
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectedRadio = document.querySelector('input[name="pilihancatatan"]:checked');
+        if (selectedRadio) {
+            toggleCatatan(selectedRadio);
+        }
     });
-</script>
-                    </div>
+</script>                    </div>
                  </div>
 
                  {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
