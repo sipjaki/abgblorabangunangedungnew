@@ -556,6 +556,9 @@ th {
         <select id="gsb_unit" class="form-select">
             <option value="%">Persen (%)</option>
             <option value="Rasio">Rasio</option>
+            <option value="Lantai">Lantai</option>
+            <option value="Meter">Meter</option>
+
         </select>
     </div>
     <input type="hidden" name="gsb" id="gsb" value="{{ old('gsb') }}">
@@ -572,7 +575,11 @@ th {
         <select id="kdb_unit" class="form-select">
             <option value="%">Persen (%)</option>
             <option value="Rasio">Rasio</option>
+            <option value="Lantai">Lantai</option>
+            <option value="Meter">Meter</option>
+
         </select>
+
     </div>
     <input type="hidden" name="kdb" id="kdb" value="{{ old('kdb') }}">
     @error('kdb')<div class="invalid-feedback">{{ $message }}</div>@enderror
@@ -588,6 +595,9 @@ th {
         <select id="klb_unit" class="form-select">
             <option value="%">Persen (%)</option>
             <option value="Rasio">Rasio</option>
+            <option value="Lantai">Lantai</option>
+            <option value="Meter">Meter</option>
+
         </select>
     </div>
     <input type="hidden" name="klb" id="klb" value="{{ old('klb') }}">
@@ -604,6 +614,9 @@ th {
         <select id="kdh_unit" class="form-select">
             <option value="%">Persen (%)</option>
             <option value="Rasio">Rasio</option>
+            <option value="Lantai">Lantai</option>
+            <option value="Meter">Meter</option>
+
         </select>
     </div>
     <input type="hidden" name="kdh" id="kdh" value="{{ old('kdh') }}">
