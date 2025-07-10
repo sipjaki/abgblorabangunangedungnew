@@ -389,85 +389,83 @@ th {
     <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
     <input type="hidden" name="id" value="{{ $data->id }}">
 
-
-<div class="row g-3 mt-2">
-    {{-- <h5 class="mb-3 mt-3" style="color: navy; font-weight: bold; font-size: 16px;">
-        <i class="bi bi-file-earmark-text me-2" style="color: navy;"></i> Data Tanah
-    </h5> --}}
-
-    {{-- Isi Data Tanah --}}
-    <div class="col-md-4 mb-3">
-        <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-file-text me-1" style="color: blue;"></i> Isian Data Tanah
-        </label>
-
-        <div class="d-flex flex-column gap-2">
-            <label class="custom-radio">
-                <input type="radio" name="isiandatatanah" value="Lengkap" {{ old('isiandatatanah') == 'Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Lengkap
+    <div class="row g-3 mt-2">
+        {{-- Isi Data Tanah --}}
+        <div class="col-md-4 mb-3">
+            <label class="form-label d-block" style="color: black; font-weight: 600;">
+                <i class="bi bi-file-text me-1" style="color: blue;"></i> Isian Data Tanah
             </label>
 
-            <label class="custom-radio">
-                <input type="radio" name="isiandatatanah" value="Tidak Lengkap" {{ old('isiandatatanah') == 'Tidak Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Tidak Lengkap
-            </label>
+            <div class="d-flex flex-column gap-2">
+                <label class="custom-radio">
+                    <input type="radio" name="isiandatatanah" value="Lengkap"
+                        {{ old('isiandatatanah', $data->isiandatatanah) == 'Lengkap' ? 'checked' : '' }}>
+                    <span class="custom-box"></span> Lengkap
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="isiandatatanah" value="Tidak Lengkap"
+                        {{ old('isiandatatanah', $data->isiandatatanah) == 'Tidak Lengkap' ? 'checked' : '' }}>
+                    <span class="custom-box"></span> Tidak Lengkap
+                </label>
+            </div>
+            @error('isiandatatanah')<div class="text-danger mt-2">{{ $message }}</div>@enderror
         </div>
 
-        @error('isiandatatanah')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-    </div>
-
-    {{-- Layout --}}
-    <div class="col-md-4 mb-3">
-        <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-layout-text-window me-1" style="color: blue;"></i> Layout Bangunan (Gambar Batas Tanah yang Dikuasai)
-        </label>
-
-        <div class="d-flex flex-column gap-2">
-            <label class="custom-radio">
-                <input type="radio" name="layout" value="Lengkap" {{ old('layout') == 'Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Lengkap
+        {{-- Layout --}}
+        <div class="col-md-4 mb-3">
+            <label class="form-label d-block" style="color: black; font-weight: 600;">
+                <i class="bi bi-layout-text-window me-1" style="color: blue;"></i> Layout Bangunan
             </label>
 
-            <label class="custom-radio">
-                <input type="radio" name="layout" value="Tidak Lengkap" {{ old('layout') == 'Tidak Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Tidak Lengkap
-            </label>
+            <div class="d-flex flex-column gap-2">
+                <label class="custom-radio">
+                    <input type="radio" name="layout" value="Lengkap"
+                        {{ old('layout', $data->layout) == 'Lengkap' ? 'checked' : '' }}>
+                    <span class="custom-box"></span> Lengkap
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="layout" value="Tidak Lengkap"
+                        {{ old('layout', $data->layout) == 'Tidak Lengkap' ? 'checked' : '' }}>
+                    <span class="custom-box"></span> Tidak Lengkap
+                </label>
+            </div>
+            @error('layout')<div class="text-danger mt-2">{{ $message }}</div>@enderror
         </div>
 
-        @error('layout')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-    </div>
-
-    {{-- Penyelidikan Tanah Khusus Bangunan Tidak Sederhana --}}
-    <div class="col-md-4 mb-3">
-        <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-search me-1" style="color: blue;"></i> Penyelidikan Tanah (Khusus Bangunan Tidak Sederhana0
-        </label>
-
-        <div class="d-flex flex-column gap-2">
-            <label class="custom-radio">
-                <input type="radio" name="penyelidikan" value="Lengkap" {{ old('penyelidikan') == 'Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Lengkap
+        {{-- Penyelidikan Tanah --}}
+        <div class="col-md-4 mb-3">
+            <label class="form-label d-block" style="color: black; font-weight: 600;">
+                <i class="bi bi-search me-1" style="color: blue;"></i> Penyelidikan Tanah
             </label>
 
-            <label class="custom-radio">
-                <input type="radio" name="penyelidikan" value="Tidak Lengkap" {{ old('penyelidikan') == 'Tidak Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Tidak Lengkap
-            </label>
+            <div class="d-flex flex-column gap-2">
+                <label class="custom-radio">
+                    <input type="radio" name="penyelidikan" value="Lengkap"
+                        {{ old('penyelidikan', $data->penyelidikan) == 'Lengkap' ? 'checked' : '' }}>
+                    <span class="custom-box"></span> Lengkap
+                </label>
+
+                <label class="custom-radio">
+                    <input type="radio" name="penyelidikan" value="Tidak Lengkap"
+                        {{ old('penyelidikan', $data->penyelidikan) == 'Tidak Lengkap' ? 'checked' : '' }}>
+                    <span class="custom-box"></span> Tidak Lengkap
+                </label>
+            </div>
+            @error('penyelidikan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
         </div>
 
-        @error('penyelidikan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-    </div>
-    <div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-search me-1" style="color: blue;"></i> Berkas Dukung Lainnya
-    </label>
-
-    <input type="text" name="berkas4" class="form-control" placeholder="Masukkan keterangan" value="{{ old('berkas4') }}">
-
-    @error('berkas4')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-</div>
-
-</div>
+        {{-- Berkas Dukung --}}
+        <div class="col-md-4 mb-3">
+            <label class="form-label d-block" style="color: black; font-weight: 600;">
+                <i class="bi bi-search me-1" style="color: blue;"></i> Berkas Dukung Lainnya
+            </label>
+            <input type="text" name="berkas4" class="form-control"
+                placeholder="Masukkan keterangan"
+                value="{{ old('berkas4', $data->berkas4) }}">
+            @error('berkas4')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+        </div>
 
         {{-- Pilihan Catatan --}}
         <div class="col-md-6">
@@ -476,22 +474,31 @@ th {
             </label>
 
             <label class="custom-radio">
-                <input type="radio" name="pilihancatatan" value="lengkap" onchange="toggleCatatan(this)" {{ old('pilihancatatan') === 'lengkap' ? 'checked' : '' }}>
+                <input type="radio" name="pilihancatatan" value="lengkap"
+                    onchange="toggleCatatan(this)"
+                    {{ old('pilihancatatan', $data->pilihancatatan) === 'lengkap' ? 'checked' : '' }}>
                 <span class="custom-box"></span> Sesuai
             </label>
 
             <label class="custom-radio">
-                <input type="radio" name="pilihancatatan" value="tidak lengkap" onchange="toggleCatatan(this)" {{ old('pilihancatatan') === 'tidak lengkap' ? 'checked' : '' }}>
+                <input type="radio" name="pilihancatatan" value="tidak lengkap"
+                    onchange="toggleCatatan(this)"
+                    {{ old('pilihancatatan', $data->pilihancatatan) === 'tidak lengkap' ? 'checked' : '' }}>
                 <span class="custom-box"></span> Tidak Sesuai
             </label>
-
             @error('pilihancatatan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
         </div>
-<br>
+
+        <br>
+
         {{-- Catatan --}}
-        <div class="col-12" id="catatan-field" style="display: none;">
+        <div class="col-12" id="catatan-field"
+            {{-- style="display: {{ (old('pilihancatatan', $data->pilihancatatan) === 'tidak lengkap' ? 'block' : 'none' }};"> --}}
+            style="display: {{ old('pilihancatatan', $data->pilihancatatan) === 'tidak lengkap' ? 'block' : 'none' }};"
+
             <label class="form-label"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
-            <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror" rows="3" placeholder="Tuliskan catatan tambahan...">{{ old('catatan') }}</textarea>
+            <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror"
+                rows="3" placeholder="Tuliskan catatan tambahan...">{{ old('catatan', $data->catatan) }}</textarea>
             @error('catatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
@@ -505,44 +512,46 @@ th {
 </form>
 
 {{-- Modal Konfirmasi --}}
-<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">Apakah Anda ingin menyimpan data ini?</p>
-        <div style="display: flex; justify-content: center; gap: 12px;">
-            <button onclick="submitForm()" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
-                <i class="bi bi-check-circle me-1"></i> Ya
-            </button>
-            <button onclick="closeModal()" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
-                <i class="bi bi-x-circle me-1"></i> Batal
-            </button>
-        </div>
+
+<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; display: flex; justify-content: center; align-items: center;">
+  <div style="background: #fff; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);">
+    <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">Apakah Anda ingin menyimpan data ini?</p>
+    <div style="display: flex; justify-content: center; gap: 12px;">
+      <button onclick="submitForm()" style="background-color: #10B981; color: #fff; padding: 8px 16px; border: none; border-radius: 8px;">
+        <i class="bi bi-check-circle me-1"></i> Ya
+      </button>
+      <button onclick="closeModal()" style="background-color: #EF4444; color: #fff; padding: 8px 16px; border: none; border-radius: 8px;">
+        <i class="bi bi-x-circle me-1"></i> Batal
+      </button>
     </div>
+  </div>
 </div>
 
 <script>
-    function toggleCatatan(radio) {
-        const catatanField = document.getElementById('catatan-field');
-        catatanField.style.display = (radio.value === 'tidak lengkap') ? 'block' : 'none';
-    }
+  function toggleCatatan(radio) {
+    const catatanField = document.getElementById('catatan-field');
+    catatanField.style.display = (radio.value === 'tidak lengkap') ? 'block' : 'none';
+  }
 
-    function openModal() {
-        document.getElementById("confirmModal").style.display = "flex";
-    }
+  function openModal() {
+    document.getElementById("confirmModal").style.display = "flex";
+  }
 
-    function closeModal() {
-        document.getElementById("confirmModal").style.display = "none";
-    }
+  function closeModal() {
+    document.getElementById("confirmModal").style.display = "none";
+  }
 
-    function submitForm() {
-        document.getElementById('formPemilik').submit();
-    }
+  function submitForm() {
+    document.getElementById('formPemilik').submit();
+  }
 
-    window.addEventListener('DOMContentLoaded', () => {
-        const selected = document.querySelector('input[name=\'pilihancatatan\']:checked');
-        if (selected) toggleCatatan(selected);
-    });
+  document.addEventListener('DOMContentLoaded', function () {
+    const selected = document.querySelector('input[name="pilihancatatan"]:checked');
+    if (selected) toggleCatatan(selected);
+  });
 </script>
-                    </div>
+
+</div>
                  </div>
 
                  {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
