@@ -3110,4 +3110,22 @@ public function mbrgambarupdatenew(Request $request, $id)
     return redirect()->route('datambrblora');
 }
 
+public function updatedatapemilik($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = datapemilik::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_perbaikandata.01_updatedatapemilik', [
+        'title' => 'Perbaikan Data Pemilik ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
 }
