@@ -674,39 +674,86 @@ th {
         setupCombinedInput('klb_value', 'klb_unit', 'klb');
     });
 </script>
-
 <style>
-    /* Custom radio styles */
-    .custom-radio {
-        position: relative;
-        display: inline-block;
-        margin-right: 20px;
-        cursor: pointer;
-        font-weight: 600;
-        user-select: none;
-    }
+            .custom-radio {
+                position: relative;
+                padding-left: 35px;
+                padding-right: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #fff; /* netral */
+                border: 2px solid #cbd5e0; /* netral */
+                border-radius: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                user-select: none;
+                transition: border-color 0.3s, background-color 0.3s;
+                display: inline-block;
+                margin-right: 10px;
+            }
 
-    .custom-radio input[type="radio"] {
-        position: absolute;
-        opacity: 0;
+            .custom-radio input[type="radio"] {
+                position: absolute;
+                opacity: 0;
         cursor: pointer;
     }
 
     .custom-box {
-        position: relative;
-        height: 20px;
-        width: 20px;
-        background-color: #eee;
-        border-radius: 50%;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 8px;
-        border: 2px solid navy;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 18px;
+        width: 18px;
+        background-color: #fff; /* netral */
+        border: 2px solid #cbd5e0; /* netral */
+        border-radius: 4px;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
-    .custom-radio input[type="radio"]:checked ~ .custom-box {
-        background-color: navy;
-        border-color: navy;
+    /* efek checklist muncul saat ter-check */
+    .custom-radio input[type="radio"]:checked ~ .custom-box::after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 1px;
+        width: 5px;
+        height: 10px;
+        border: solid;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        animation: checkmarkFade 0.3s ease forwards;
+    }
+
+    /* Warna khusus untuk value 'sesuai' */
+    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box {
+        border-color: #3b82f6;
+        background-color: #bfdbfe;
+    }
+
+    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box::after {
+        border-color: #1d4ed8;
+    }
+
+    /* Warna khusus untuk value 'tidak_sesuai' */
+    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box {
+        border-color: #ef4444;
+        background-color: #fecaca;
+    }
+
+    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box::after {
+        border-color: #b91c1c;
+    }
+
+    /* Animasi checklist */
+    @keyframes checkmarkFade {
+        0% {
+            opacity: 0;
+            transform: scale(0.5) rotate(45deg);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) rotate(45deg);
+        }
     }
 </style>
 
