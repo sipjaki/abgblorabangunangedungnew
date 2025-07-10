@@ -627,11 +627,11 @@ th {
         </div>
 
         {{-- IMB --}}
-        <div class="col-md-6 mb-3">
+        {{-- <div class="col-md-6 mb-3">
             <label class="form-label"><i class="bi bi-file-earmark-text-fill text-primary me-1"></i> IMB</label>
             <input type="text" name="imb" class="form-control @error('imb') is-invalid @enderror" value="{{ old('imb', $data->imb) }}">
             @error('imb')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
+        </div> --}}
 
         {{-- Keterangan Tambahan --}}
         <div class="col-md-12 mb-3">
