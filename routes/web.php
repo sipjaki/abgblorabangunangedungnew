@@ -755,7 +755,7 @@ Route::delete('/bepbgdatapemilikdelete/{id}', [PbgslfController::class, 'bepbgda
 // DATA BANGUNAN
 Route::get('/bepbgdatabangunan/{id}', [PbgslfController::class, 'bepbgdatabangunan'])->middleware('auth')->name('bepbgdatabangunan');
 Route::get('/updatedatabangunan/{id}', [PbgslfController::class, 'updatedatabangunan'])->middleware('auth')->name('updatedatabangunan');
-// Route::put('/updatedatapemiliknew/{id}', [PbgslfController::class, 'updatedatapemiliknew'])->middleware('auth')->name('updatedatapemiliknew');
+Route::put('/updatedatabangunannew/{id}', [PbgslfController::class, 'updatedatabangunannew'])->middleware('auth')->name('updatedatabangunannew');
 
 
 Route::get('/bepbgdatabangunancreate/{id}', [PbgslfController::class, 'bepbgdatabangunancreate'])->middleware('auth')->name('bepbgdatabangunancreate');

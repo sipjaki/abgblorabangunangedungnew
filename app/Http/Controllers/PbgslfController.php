@@ -3204,4 +3204,71 @@ public function updatedatabangunan($id)
     ]);
 }
 
+
+public function updatedatabangunannew(Request $request, $id)
+{
+    $validated = $request->validate([
+        // Validasi seperti biasa, tapi id ambil dari parameter $id
+        'pbgslfbangunan_id' => 'required|string',
+        'jenisperkonsultasi_id' => 'required|string',
+        'namabangunan' => 'required|string|max:255',
+        'lokasibangunan' => 'required|string|max:255',
+        'klasifikasibangunan' => 'required|string|max:255',
+        'fungsibangunanpbg_id' => 'required|string',
+        'luasbangunan' => 'required|string|max:100',
+        'jenispermohonan' => 'required|in:Lengkap,Tidak Lengkap',
+        'fungsibangunan' => 'required|in:Lengkap,Tidak Lengkap',
+        'tinggibangunan' => 'required|string|max:100',
+        'jumlahlantai' => 'required|string|max:50',
+        'internsitasbangunan' => 'required|string|max:100',
+        'nomorpkkpr' => 'required|string|max:255',
+        'gsb' => 'required|string|max:100',
+        'kdb' => 'required|string|max:100',
+        'klb' => 'required|string|max:100',
+        'kdh' => 'required|string|max:100',
+        'provinsi' => 'required|string|max:100',
+        'kabupaten' => 'required|string|max:100',
+        'kecamatanblora_id' => 'required|string',
+        'kelurahandesa_id' => 'required|string',
+        'alamatlengkap' => 'nullable|string|max:255',
+        'koordinat' => 'nullable|string|max:100',
+        'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
+        'catatan' => 'nullable|string',
+    ]);
+
+    // Cari data berdasarkan id parameter route
+    $data = databangunanpbg::findOrFail($id);
+
+    $data->update([
+        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
+        'jenisperkonsultasi_id' => $validated['jenisperkonsultasi_id'],
+        'namabangunan' => $validated['namabangunan'],
+        'lokasibangunan' => $validated['lokasibangunan'],
+        'klasifikasibangunan' => $validated['klasifikasibangunan'],
+        'fungsibangunanpbg_id' => $validated['fungsibangunanpbg_id'],
+        'luasbangunan' => $validated['luasbangunan'],
+        'jenispermohonan' => $validated['jenispermohonan'],
+        'fungsibangunan' => $validated['fungsibangunan'],
+        'tinggibangunan' => $validated['tinggibangunan'],
+        'jumlahlantai' => $validated['jumlahlantai'],
+        'internsitasbangunan' => $validated['internsitasbangunan'],
+        'nomorpkkpr' => $validated['nomorpkkpr'],
+        'gsb' => $validated['gsb'],
+        'kdb' => $validated['kdb'],
+        'klb' => $validated['klb'],
+        'kdh' => $validated['kdh'],
+        'provinsi' => $validated['provinsi'],
+        'kabupaten' => $validated['kabupaten'],
+        'kecamatanblora_id' => $validated['kecamatanblora_id'],
+        'kelurahandesa_id' => $validated['kelurahandesa_id'],
+        'alamatlengkap' => $validated['alamatlengkap'],
+        'koordinat' => $validated['koordinat'],
+        'pilihancatatan' => $validated['pilihancatatan'],
+        'catatan' => $validated['catatan'],
+    ]);
+
+    session()->flash('update', 'Data Bangunan berhasil diperbarui!');
+    return redirect()->back();
+}
+
 }
