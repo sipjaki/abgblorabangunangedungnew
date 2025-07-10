@@ -346,6 +346,14 @@ th {
                             </div>
                         @endforeach
 
+
+                      <a href="/updatedatabangunan/{{ $pemilik->id }}">
+                            <p class="button-berkas">
+                                <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
+                                Perbaikan Data
+                            </p>
+                        </a>
+
                         @if (strtolower($pemilik->pilihancatatan) === 'tidak lengkap')
                             <div class="col-12 mt-3">
                                 <div class="p-3 border-start border-4 border-danger bg-light rounded shadow-sm">
@@ -361,6 +369,7 @@ th {
                                 </div>
                             </div>
                         @endif
+
 
                         {{-- <a href="javascript:void(0)" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $pemilik->id }}" onclick="setDeleteUrl(this)" style="text-decoration: none;">
                             <i class="bi bi-trash" style="color: red; margin-right:4px;"></i>

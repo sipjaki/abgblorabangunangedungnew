@@ -3172,4 +3172,23 @@ return redirect()->back();
 
 }
 
+
+
+public function updatedatabangunan($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = databangunanpbg::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_perbaikandata.02_updatedatabangunan', [
+        'title' => 'Perbaikan Data Bangunan',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }
