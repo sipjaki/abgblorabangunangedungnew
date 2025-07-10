@@ -3246,4 +3246,23 @@ public function updatedatabangunannew(Request $request, $id)
 
     return redirect()->back()->with('update', 'Data Bangunan berhasil diperbarui!');
 }
+
+public function updatedatatanah($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = datatanahpbg::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_perbaikandata.03_updatedatatanah', [
+        'title' => 'Perbaikan Data Tanah ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
 }

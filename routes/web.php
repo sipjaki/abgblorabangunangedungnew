@@ -764,6 +764,10 @@ Route::delete('/bepbgdatabangunandelete/{id}', [PbgslfController::class, 'bepbgd
 
 // DATA TANAH
 Route::get('/bepbgdatatanah/{id}', [PbgslfController::class, 'bepbgdatatanah'])->middleware('auth')->name('bepbgdatatanah');
+
+Route::get('/updatedatatanah/{id}', [PbgslfController::class, 'updatedatatanah'])->middleware('auth')->name('updatedatatanah');
+// Route::post('/bepbgdatatanahcreatenew', [PbgslfController::class, 'bepbgdatatanahcreatenew'])->middleware('auth')->name('bepbgdatatanahnew');
+
 Route::get('/bepbgdatatanahcreate/{id}', [PbgslfController::class, 'bepbgdatatanahcreate'])->middleware('auth')->name('bepbgdatatanahcreate');
 Route::post('/bepbgdatatanahcreatenew', [PbgslfController::class, 'bepbgdatatanahcreatenew'])->middleware('auth')->name('bepbgdatatanahnew');
 Route::delete('/bepbgdatatanahdelete/{id}', [PbgslfController::class, 'bepbgdatatanahdelete'])->middleware('auth')->name('bepbgdatatanahdelete');
