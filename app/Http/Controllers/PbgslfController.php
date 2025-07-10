@@ -3120,7 +3120,7 @@ public function updatedatapemilik($id)
     }
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
-    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_perta.01_updatedatapemilik', [
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_perbaikandata.01_updatedatapemilik', [
         'title' => 'Perbaikan Data Pemilik ',
         'data' => $databantuanteknis,
         'user' => Auth::user()
