@@ -349,10 +349,17 @@ th {
                                 </div>
                             </div>
 
-
-
                         @endforeach
                         {{-- Khusus tampilkan Catatan jika Pilihan Catatan = tidak lengkap --}}
+
+
+                        <a href="">
+
+                            <p class="button-berkas">
+                                Perbaikan Data
+
+                            </p>
+                        </a>
                      @if (strtolower($pemilik->pilihancatatan) === 'tidak lengkap')
     <div class="col-12 mt-3">
         <div class="p-3 border-start border-4 border-danger bg-light rounded shadow-sm">

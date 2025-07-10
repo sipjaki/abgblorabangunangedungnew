@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('penilikbangunans', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('dokpemohonpenilik_id')->nullable()->index(); // YANG MEMBUAT DOKUMEN
             $table->foreignId('penilikdasilitator_id')->nullable()->index(); // YANG MEMBUAT DOKUMEN
             $table->foreignId('lapanganpenilik_id')->nullable()->index(); // YANG MEMBUAT DOKUMEN
