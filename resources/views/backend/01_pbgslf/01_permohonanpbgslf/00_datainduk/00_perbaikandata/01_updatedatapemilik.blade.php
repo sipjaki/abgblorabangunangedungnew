@@ -378,7 +378,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Informasi Data Pemilik
+    Perbaikan Informasi Data Pemilik
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
@@ -387,43 +387,56 @@ th {
 <form id="formPemilik" action="{{ route('bepbgdatapemilikcreatenew') }}" method="POST">
     @csrf
     <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
-    {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
     <input type="hidden" name="id" value="{{ $data->id }}">
-
 
     <div class="row g-3 mt-2">
         {{-- Nama Pemilik --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-person-fill text-navy me-1" style="color: blue"></i> Nama Pemilik</label>
-            <input type="text" name="namapemilik" class="form-control @error('namapemilik') is-invalid @enderror" value="{{ old('namapemilik') }}">
+            <label class="form-label">
+                <i class="bi bi-person-fill text-navy me-1" style="color: blue"></i> Nama Pemilik
+            </label>
+            <input type="text" name="namapemilik" class="form-control @error('namapemilik') is-invalid @enderror"
+                   value="{{ old('namapemilik', $data->namapemilik) }}">
             @error('namapemilik')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         {{-- Alamat Pemilik --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-geo-alt-fill text-navy me-1" style="color: blue"></i> Alamat Pemilik</label>
-            <input type="text" name="alamatpemilik" class="form-control @error('alamatpemilik') is-invalid @enderror" value="{{ old('alamatpemilik') }}">
+            <label class="form-label">
+                <i class="bi bi-geo-alt-fill text-navy me-1" style="color: blue"></i> Alamat Pemilik
+            </label>
+            <input type="text" name="alamatpemilik" class="form-control @error('alamatpemilik') is-invalid @enderror"
+                   value="{{ old('alamatpemilik', $data->alamatpemilik) }}">
             @error('alamatpemilik')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         {{-- Nomor Telepon --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-telephone-fill text-navy me-1" style="color: blue"></i> Nomor Telepon</label>
-            <input type="text" name="nomortelepon" class="form-control @error('nomortelepon') is-invalid @enderror" value="{{ old('nomortelepon') }}">
+            <label class="form-label">
+                <i class="bi bi-telephone-fill text-navy me-1" style="color: blue"></i> Nomor Telepon
+            </label>
+            <input type="text" name="nomortelepon" class="form-control @error('nomortelepon') is-invalid @enderror"
+                   value="{{ old('nomortelepon', $data->nomortelepon) }}">
             @error('nomortelepon')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         {{-- Email --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-envelope-fill text-navy me-1" style="color: blue"></i> Email</label>
-            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
+            <label class="form-label">
+                <i class="bi bi-envelope-fill text-navy me-1" style="color: blue"></i> Email
+            </label>
+            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                   value="{{ old('email', $data->email) }}">
             @error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         {{-- No Identitas --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-credit-card-fill text-navy me-1" style="color: blue"></i> No Identitas</label>
-            <input type="text" name="noidentitas" class="form-control @error('noidentitas') is-invalid @enderror" value="{{ old('noidentitas') }}">
+            <label class="form-label">
+                <i class="bi bi-credit-card-fill text-navy me-1" style="color: blue"></i> No Identitas
+            </label>
+            <input type="text" name="noidentitas" class="form-control @error('noidentitas') is-invalid @enderror"
+                   value="{{ old('noidentitas', $data->noidentitas) }}">
             @error('noidentitas')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
@@ -434,12 +447,16 @@ th {
             </label>
 
             <label class="custom-radio">
-                <input type="radio" name="pilihancatatan" value="lengkap" onchange="toggleCatatan(this)" {{ old('pilihancatatan') === 'lengkap' ? 'checked' : '' }}>
+                <input type="radio" name="pilihancatatan" value="lengkap"
+                       onchange="toggleCatatan(this)"
+                       {{ old('pilihancatatan', $data->pilihancatatan) === 'lengkap' ? 'checked' : '' }}>
                 <span class="custom-box"></span> Sesuai
             </label>
 
             <label class="custom-radio">
-                <input type="radio" name="pilihancatatan" value="tidak lengkap" onchange="toggleCatatan(this)" {{ old('pilihancatatan') === 'tidak lengkap' ? 'checked' : '' }}>
+                <input type="radio" name="pilihancatatan" value="tidak lengkap"
+                       onchange="toggleCatatan(this)"
+                       {{ old('pilihancatatan', $data->pilihancatatan) === 'tidak lengkap' ? 'checked' : '' }}>
                 <span class="custom-box"></span> Tidak Sesuai
             </label>
 
@@ -447,16 +464,20 @@ th {
         </div>
 
         {{-- Catatan --}}
-        <div class="col-12" id="catatan-field" style="display: none;">
-            <label class="form-label"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
-            <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror" rows="3" placeholder="Tuliskan catatan tambahan...">{{ old('catatan') }}</textarea>
+        <div class="col-12" id="catatan-field" style="{{ old('pilihancatatan', $data->pilihancatatan) === 'tidak lengkap' ? '' : 'display: none;' }}">
+            <label class="form-label">
+                <i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan
+            </label>
+            <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror"
+                      rows="3"
+                      placeholder="Tuliskan catatan tambahan...">{{ old('catatan', $data->catatan) }}</textarea>
             @error('catatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         {{-- Tombol Submit --}}
         <div class="col-12 text-end mt-3">
-            <button type="button" class="button-baru" onclick="openModal()">
-                <i class="bi bi-save me-1"></i> Simpan Data Pemilik
+            <button type="button" class="button-berkas" onclick="openModal()">
+                <i class="bi bi-save me-1"></i> Simpan Perbaikan Data ?
             </button>
         </div>
     </div>
