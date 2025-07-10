@@ -386,6 +386,7 @@ th {
 
 <form id="formPemilik" action="{{ route('updatedatabangunannew', $data->id) }}" method="POST">
     @csrf
+    @method('PUT')
     <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
     <input type="hidden" name="id" value="{{ $data->id }}">
 
