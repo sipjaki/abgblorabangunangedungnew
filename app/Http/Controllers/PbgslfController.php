@@ -3244,6 +3244,6 @@ public function updatedatabangunannew(Request $request, $id)
 
     $data->update($validated);
 
-    return redirect()->back()->with('success', 'Data Bangunan berhasil diperbarui!');
+    return redirect()->back()->with('update', 'Data Bangunan berhasil diperbarui!');
 }
 }
