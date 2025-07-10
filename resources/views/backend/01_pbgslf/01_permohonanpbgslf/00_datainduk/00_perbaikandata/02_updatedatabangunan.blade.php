@@ -376,7 +376,7 @@ th {
 
 <div class="text-center">
     <hr class="my-4" style="border-top: 2px dashed #fdd100; width: 60%; margin: auto;">
-   <h5 class="text-warning fw-bold mt-2" style="font-size: 16px;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
     Perbaikan Informasi Data Bangunan Gedung
 </h5>
