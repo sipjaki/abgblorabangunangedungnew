@@ -3264,7 +3264,7 @@ public function updatedatatanah($id)
     ]);
 }
 
-public function bepbgdatatanahupdate(Request $request, $id)
+public function updatedatatanahnew(Request $request, $id)
 {
     $validated = $request->validate([
         'pbgslfbangunan_id' => 'nullable|string',
