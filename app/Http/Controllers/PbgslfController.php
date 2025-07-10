@@ -3264,5 +3264,41 @@ public function updatedatatanah($id)
     ]);
 }
 
+public function bepbgdatatanahupdate(Request $request, $id)
+{
+    $validated = $request->validate([
+        'pbgslfbangunan_id' => 'nullable|string',
+        'isiandatatanah' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'layout' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'penyelidikan' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'pilihancatatan' => 'nullable|in:lengkap,tidak lengkap',
+        'berkas4' => 'nullable|string',
+        'catatan' => 'nullable|string',
+    ], [
+        // 'pbgslfbangunan_id.required' => 'ID Bangunan harus dipilih.',
+        // 'pbgslfbangunan_id.exists' => 'Data bangunan tidak ditemukan.',
+        // 'isiandatatanah.required' => 'Isi Data Tanah wajib dipilih.',
+        // 'isiandatatanah.in' => 'Isi Data Tanah harus Lengkap atau Tidak Lengkap.',
+        // 'layout.in' => 'Layout harus Lengkap atau Tidak Lengkap.',
+        // 'penyelidikan.in' => 'Penyelidikan harus Lengkap atau Tidak Lengkap.',
+        // 'pilihancatatan.in' => 'Pilihan Catatan harus lengkap atau tidak lengkap.',
+    ]);
+
+    $data = datatanahpbg::findOrFail($id);
+
+    $data->update([
+        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
+        'isiandatatanah' => $validated['isiandatatanah'],
+        'layout' => $validated['layout'],
+        'penyelidikan' => $validated['penyelidikan'],
+        'berkas4' => $validated['berkas4'],
+        'pilihancatatan' => $validated['pilihancatatan'],
+        'catatan' => $validated['catatan'] ?? null,
+    ]);
+session()->flash('update', 'Data Tanah berhasil diperbarui!');
+return redirect()->back();
+
+}
+
 
 }
