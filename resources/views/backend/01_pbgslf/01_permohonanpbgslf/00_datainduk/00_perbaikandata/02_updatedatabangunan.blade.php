@@ -667,8 +667,8 @@ th {
 
         {{-- Tombol Submit --}}
         <div class="col-12 text-end mt-3">
-            <button type="button" class="button-baru" onclick="openModal()">
-                <i class="bi bi-save me-1"></i> Simpan Data Bangunan
+            <button type="button" class="button-berkas" onclick="openModal()">
+                <i class="bi bi-save me-1"></i> Simpan Perbaikan Data ?
             </button>
         </div>
     </div>
