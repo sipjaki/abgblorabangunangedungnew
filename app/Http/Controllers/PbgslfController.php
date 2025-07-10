@@ -3179,6 +3179,13 @@ public function updatedatabangunan($id)
     // Ambil data bantuan teknis berdasarkan ID
     $databantuanteknis = databangunanpbg::find($id);
 
+     $datapbgslf = jenispengajuanpbgslfper::all();
+    $datajenisperkons = jenisperkonsultasi::all();
+    $datafungsibgpbg = fungsibangunanpbg::all();
+
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahandesa = kelurahandesa::all();
+
     if (!$databantuanteknis) {
         return abort(404, 'Data bantuan teknis tidak ditemukan');
     }
@@ -3187,6 +3194,12 @@ public function updatedatabangunan($id)
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_perbaikandata.02_updatedatabangunan', [
         'title' => 'Perbaikan Data Bangunan',
         'data' => $databantuanteknis,
+
+        'datapbgslf' => $datapbgslf,
+        'datajenisperkons' => $datajenisperkons,
+        'datafungsibgpbg' => $datafungsibgpbg,
+        'datakecamatan' => $datakecamatan,
+        'datakelurahandesa' => $datakelurahandesa,
         'user' => Auth::user()
     ]);
 }
