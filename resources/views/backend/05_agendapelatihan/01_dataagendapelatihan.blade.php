@@ -316,29 +316,6 @@ th {
 
 
 <td>
-    @if($item->suratundangan && file_exists(public_path('storage/' . $item->suratundangan)))
-        <!-- Preview file dari storage -->
-        <iframe src="{{ asset('storage/' . $item->suratundangan) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
-        <div class="mt-2">
-            <a href="{{ asset('storage/' . $item->suratundangan) }}" download class="btn btn-sm btn-primary">
-                <i class="fas fa-download"></i> Download Surat
-            </a>
-        </div>
-    @elseif($item->suratundangan)
-        <!-- Preview file dari path lain -->
-        <iframe src="{{ asset($item->suratundangan) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
-        <div class="mt-2">
-            <a href="{{ asset($item->suratundangan) }}" download class="btn btn-sm btn-primary">
-                <i class="fas fa-download"></i> Download Surat
-            </a>
-        </div>
-    @else
-        <!-- Placeholder jika tidak ada file -->
-        <p style="font-size: 12px; color: gray;">Surat belum diupload!</p>
-    @endif
-</td>
-
-<td>
 
 @if($item->foto && file_exists(storage_path('app/public/' . $item->foto)))
     <!-- Menampilkan gambar dari storage/app/public -->
