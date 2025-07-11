@@ -317,17 +317,16 @@ th {
 
 <td>
 
-        @if($item->foto && $item->foto && $item->foto && file_exists(public_path('storage/' . $item->foto)))
-                                                                                                                <!-- Menampilkan gambar dari storage -->
-                                                                                                                <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @elseif($item->foto && $item->foto && $item->foto)
-                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @else
-                                                                                                                <!-- Placeholder jika tidak ada data -->
-                                                                                                                <p style="font-size: 11px;">Poster Belum di Upload !</p>
-
-                                                                                                                @endif
+@if($item->foto && file_exists(storage_path('app/public/' . $item->foto)))
+    <!-- Menampilkan gambar dari storage/app/public -->
+    <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+@elseif($item->foto)
+    <!-- Menampilkan gambar dari path publik langsung -->
+    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+@else
+    <!-- Placeholder jika tidak ada data -->
+    <p style="font-size: 11px;">Poster Belum di Upload !</p>
+@endif
 </td>
 {{-- <td>{{ $item->barcodepelatihan ?? '-' }}</td> --}}
 <td>
