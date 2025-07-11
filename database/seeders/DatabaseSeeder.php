@@ -12449,7 +12449,7 @@ agendapelatihanabg::create([
     'lokasi'                => 'Gedung DPUPR Kabupaten Blora',
     'keterangan'            => 'Dihadiri oleh tokoh masyarakat, kontraktor, dan pemilik usaha.',
     'isiagenda'             => 'Penjelasan alur pengajuan PBG dan manfaatnya bagi pembangunan berkelanjutan.',
-    'foto'                  => 'assets/abgblora/pelatihan/pbg1.jpg',
+    'foto'                  => '/assets/android/iconmenu/bangunangedungapp.jpg',
     'barcodepelatihan'      => Str::uuid(),
     'suratundangan'         => 'assets/abgblora/surat/undangan-pbg1.pdf',
 ]);
@@ -12465,7 +12465,8 @@ agendapelatihanabg::create([
     'lokasi'                => 'Gedung DPUPR Kabupaten Blora',
     'keterangan'            => 'Peserta diharapkan membawa dokumen teknis bangunan.',
     'isiagenda'             => 'Membahas persyaratan SLF dan tata cara pemeriksaan teknis bangunan.',
-    'foto'                  => 'assets/abgblora/pelatihan/slf.jpg',
+    'foto'                  => '/assets/android/iconmenu/bangunangedungapp.jpg',
+    // 'foto'                  => 'assets/abgblora/pelatihan/slf.jpg',
     'barcodepelatihan'      => Str::uuid(),
     'suratundangan'         => 'assets/abgblora/surat/undangan-slf.pdf',
 ]);
@@ -12481,7 +12482,8 @@ agendapelatihanabg::create([
     'lokasi'                => 'Gedung DPUPR Kabupaten Blora',
     'keterangan'            => 'Khusus arsitek, konsultan, dan pelaku pembangunan.',
     'isiagenda'             => 'Memperkenalkan konsep bangunan hijau dan efisiensi energi.',
-    'foto'                  => 'assets/abgblora/pelatihan/ramahlingkungan.jpg',
+    'foto'                  => '/assets/android/iconmenu/bangunangedungapp.jpg',
+    // 'foto'                  => 'assets/abgblora/pelatihan/ramahlingkungan.jpg',
     'barcodepelatihan'      => Str::uuid(),
     'suratundangan'         => 'assets/abgblora/surat/undangan-ramahlingkungan.pdf',
 ]);
@@ -12497,7 +12499,8 @@ agendapelatihanabg::create([
     'lokasi'                => 'Gedung DPUPR Kabupaten Blora',
     'keterangan'            => 'Sosialisasi untuk memperkenalkan layanan perizinan online.',
     'isiagenda'             => 'Tutorial penggunaan SIMBG, input data teknis, dan tracking izin.',
-    'foto'                  => 'assets/abgblora/pelatihan/simbg.jpg',
+    'foto'                  => '/assets/android/iconmenu/bangunangedungapp.jpg',
+    // 'foto'                  => 'assets/abgblora/pelatihan/simbg.jpg',
     'barcodepelatihan'      => Str::uuid(),
     'suratundangan'         => 'assets/abgblora/surat/undangan-simbg.pdf',
 ]);
@@ -12513,7 +12516,8 @@ agendapelatihanabg::create([
     'lokasi'                => 'Gedung DPUPR Kabupaten Blora',
     'keterangan'            => 'Untuk pemilik ruko, rumah susun, dan fasilitas umum.',
     'isiagenda'             => 'Membahas struktur aman, proteksi kebakaran, dan evakuasi darurat.',
-    'foto'                  => 'assets/abgblora/pelatihan/keselamatan.jpg',
+    'foto'                  => '/assets/android/iconmenu/bangunangedungapp.jpg',
+    // 'foto'                  => 'assets/abgblora/pelatihan/keselamatan.jpg',
     'barcodepelatihan'      => Str::uuid(),
     'suratundangan'         => 'assets/abgblora/surat/undangan-keselamatan.pdf',
 ]);
