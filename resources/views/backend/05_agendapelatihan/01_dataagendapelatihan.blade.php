@@ -264,7 +264,7 @@ th {
 <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Lokasi</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-info-circle"></i> Keterangan</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-align-left"></i> Isi Agenda</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-image"></i> Foto</th>
+<th style="background-color: #ADD8E6; width:300px;"><i class="fas fa-image" ></i> Foto</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-barcode"></i> Barcode Pelatihan</th> --}}
 <th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th>
 
@@ -316,6 +316,29 @@ th {
 
 
 <td>
+    @if($item->suratundangan && file_exists(public_path('storage/' . $item->suratundangan)))
+        <!-- Preview file dari storage -->
+        <iframe src="{{ asset('storage/' . $item->suratundangan) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
+        <div class="mt-2">
+            <a href="{{ asset('storage/' . $item->suratundangan) }}" download class="btn btn-sm btn-primary">
+                <i class="fas fa-download"></i> Download Surat
+            </a>
+        </div>
+    @elseif($item->suratundangan)
+        <!-- Preview file dari path lain -->
+        <iframe src="{{ asset($item->suratundangan) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
+        <div class="mt-2">
+            <a href="{{ asset($item->suratundangan) }}" download class="btn btn-sm btn-primary">
+                <i class="fas fa-download"></i> Download Surat
+            </a>
+        </div>
+    @else
+        <!-- Placeholder jika tidak ada file -->
+        <p style="font-size: 12px; color: gray;">Surat belum diupload!</p>
+    @endif
+</td>
+
+{{-- <td>
 
 @if($item->foto && file_exists(storage_path('app/public/' . $item->foto)))
     <!-- Menampilkan gambar dari storage/app/public -->
@@ -327,15 +350,15 @@ th {
     <!-- Placeholder jika tidak ada data -->
     <p style="font-size: 11px;">Poster Belum di Upload !</p>
 @endif
-</td>
+</td> --}}
 {{-- <td>{{ $item->barcodepelatihan ?? '-' }}</td> --}}
 <td>
     @if($item->suratundangan && file_exists(public_path('storage/' . $item->suratundangan)))
     <!-- Menampilkan file dari folder storage -->
-    <iframe src="{{ asset('storage/' . $item->suratundangan) }}" style="width: 100%; height: 300px;" frameborder="0"></iframe>
+    <iframe src="{{ asset('storage/' . $item->suratundangan) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
 @elseif($item->suratundangan)
     <!-- Menampilkan file dari path luar storage -->
-    <iframe src="{{ asset($item->suratundangan) }}" style="width: 100%; height: 300px;" frameborder="0"></iframe>
+    <iframe src="{{ asset($item->suratundangan) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
 @else
     <!-- Placeholder jika tidak ada data -->
     <p style="font-size: 12px; color: gray;">Surat belum diupload!</p>
