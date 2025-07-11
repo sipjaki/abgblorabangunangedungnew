@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\FedashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\AgendapelatihanabgController;
 use App\Http\Controllers\akuncontroller;
 use App\Http\Controllers\BantuanhibahbgController;
 use App\Http\Controllers\BantuanhibahController;
@@ -595,6 +596,11 @@ Route::get('/beberitacreate', [DatabaseAbgController::class, 'beberitacreate'])-
 Route::post('/beberitacreatenew', [DatabaseAbgController::class, 'beberitacreatenew'])->middleware('auth')->name('beberitacreatenew');
 
 // sigit bro
+
+Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beagendapelatihanabg'])->middleware('auth')->name('beagendapelatihanabg');
+// Route::get('/bebantekkonsultannew', [BantuanteknisController::class, 'bebantekkonsultannew'])->middleware('auth')->name('bebantekkonsultannew.create');
+// Route::post('/bebantekkonsultannewjasa', [BantuanteknisController::class, 'bebantekkonsultannewjasa'])->middleware('auth')->name('create.bebantekkonsultannewjasa');
+
 // Route::get('/portalberita', function ()
 //     // return view('welcome');
 //     return view('portalberita', [

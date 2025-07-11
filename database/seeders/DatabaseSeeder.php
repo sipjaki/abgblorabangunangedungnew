@@ -1,6 +1,8 @@
 <?php
 
 namespace Database\Seeders;
+
+use App\Models\agendapelatihanabg;
 use Illuminate\Support\Str;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -42,6 +44,8 @@ use App\Models\jenispengajuanpbgslf;
 use App\Models\jenispengajuanpbgslfper;
 use App\Models\jenisperkonsultasi;
 use App\Models\jenispermohonangambar;
+use App\Models\jenjangpendidikan;
+use App\Models\kategoripelatihan;
 use App\Models\kepemilikanbangunangedung;
 use App\Models\krkhunian;
 use App\Models\krkkeagamaan;
@@ -12416,7 +12420,220 @@ beritaabg::create([
 ]);
 
 
-// makanyu
+// JAPAN
+
+
+kategoripelatihan::create([
+    'id' => 1,
+    'kategoripelatihan' => 'Workshop',
+]);
+
+kategoripelatihan::create([
+    'id' => 2,
+    'kategoripelatihan' => 'Pelatihan',
+]);
+
+kategoripelatihan::create([
+    'id' => 3,
+    'kategoripelatihan' => 'Sosialisasi',
+]);
+
+agendapelatihanabg::create([
+    'materipelatihan_id'    => 1,
+    'kategoripelatihan_id'  => 3,
+    'user_id'               => 1,
+    'namakegiatan'          => 'Sosialisasi Persetujuan Bangunan Gedung (PBG)',
+    'penutupan'             => Carbon::now()->addDays(3),
+    'waktupelaksanaan'      => Carbon::now(),
+    'jumlahpeserta'         => 50,
+    'lokasi'                => 'Gedung DPUPR Kabupaten Blora',
+    'keterangan'            => 'Dihadiri oleh tokoh masyarakat, kontraktor, dan pemilik usaha.',
+    'isiagenda'             => 'Penjelasan alur pengajuan PBG dan manfaatnya bagi pembangunan berkelanjutan.',
+    'foto'                  => 'assets/abgblora/pelatihan/pbg1.jpg',
+    'barcodepelatihan'      => Str::uuid(),
+    'suratundangan'         => 'assets/abgblora/surat/undangan-pbg1.pdf',
+]);
+
+agendapelatihanabg::create([
+    'materipelatihan_id'    => 1,
+    'kategoripelatihan_id'  => 3,
+    'user_id'               => 1,
+    'namakegiatan'          => 'Sosialisasi Sertifikat Laik Fungsi (SLF)',
+    'penutupan'             => Carbon::now()->addDays(5),
+    'waktupelaksanaan'      => Carbon::now()->addDay(),
+    'jumlahpeserta'         => 40,
+    'lokasi'                => 'Gedung DPUPR Kabupaten Blora',
+    'keterangan'            => 'Peserta diharapkan membawa dokumen teknis bangunan.',
+    'isiagenda'             => 'Membahas persyaratan SLF dan tata cara pemeriksaan teknis bangunan.',
+    'foto'                  => 'assets/abgblora/pelatihan/slf.jpg',
+    'barcodepelatihan'      => Str::uuid(),
+    'suratundangan'         => 'assets/abgblora/surat/undangan-slf.pdf',
+]);
+
+agendapelatihanabg::create([
+    'materipelatihan_id'    => 1,
+    'kategoripelatihan_id'  => 3,
+    'user_id'               => 1,
+    'namakegiatan'          => 'Sosialisasi Bangunan Gedung Ramah Lingkungan',
+    'penutupan'             => Carbon::now()->addDays(7),
+    'waktupelaksanaan'      => Carbon::now()->addDays(2),
+    'jumlahpeserta'         => 35,
+    'lokasi'                => 'Gedung DPUPR Kabupaten Blora',
+    'keterangan'            => 'Khusus arsitek, konsultan, dan pelaku pembangunan.',
+    'isiagenda'             => 'Memperkenalkan konsep bangunan hijau dan efisiensi energi.',
+    'foto'                  => 'assets/abgblora/pelatihan/ramahlingkungan.jpg',
+    'barcodepelatihan'      => Str::uuid(),
+    'suratundangan'         => 'assets/abgblora/surat/undangan-ramahlingkungan.pdf',
+]);
+
+agendapelatihanabg::create([
+    'materipelatihan_id'    => 1,
+    'kategoripelatihan_id'  => 3,
+    'user_id'               => 1,
+    'namakegiatan'          => 'Sosialisasi Sistem Informasi Bangunan Gedung (SIMBG)',
+    'penutupan'             => Carbon::now()->addDays(4),
+    'waktupelaksanaan'      => Carbon::now()->addDays(1),
+    'jumlahpeserta'         => 60,
+    'lokasi'                => 'Gedung DPUPR Kabupaten Blora',
+    'keterangan'            => 'Sosialisasi untuk memperkenalkan layanan perizinan online.',
+    'isiagenda'             => 'Tutorial penggunaan SIMBG, input data teknis, dan tracking izin.',
+    'foto'                  => 'assets/abgblora/pelatihan/simbg.jpg',
+    'barcodepelatihan'      => Str::uuid(),
+    'suratundangan'         => 'assets/abgblora/surat/undangan-simbg.pdf',
+]);
+
+agendapelatihanabg::create([
+    'materipelatihan_id'    => 1,
+    'kategoripelatihan_id'  => 3,
+    'user_id'               => 1,
+    'namakegiatan'          => 'Sosialisasi Keamanan dan Keselamatan Bangunan Gedung',
+    'penutupan'             => Carbon::now()->addDays(6),
+    'waktupelaksanaan'      => Carbon::now()->addDays(2),
+    'jumlahpeserta'         => 45,
+    'lokasi'                => 'Gedung DPUPR Kabupaten Blora',
+    'keterangan'            => 'Untuk pemilik ruko, rumah susun, dan fasilitas umum.',
+    'isiagenda'             => 'Membahas struktur aman, proteksi kebakaran, dan evakuasi darurat.',
+    'foto'                  => 'assets/abgblora/pelatihan/keselamatan.jpg',
+    'barcodepelatihan'      => Str::uuid(),
+    'suratundangan'         => 'assets/abgblora/surat/undangan-keselamatan.pdf',
+]);
+
+
+jenjangpendidikan::create([
+    'id' => '1',
+    'jenjangpendidikan' => 'Diploma 3',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '2',
+    'jenjangpendidikan' => 'Strata 1 (S1)',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '3',
+    'jenjangpendidikan' => 'SMA/MA',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '4',
+    'jenjangpendidikan' => 'SMK',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '5',
+    'jenjangpendidikan' => 'Diploma 1',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '6',
+    'jenjangpendidikan' => 'Diploma 2',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '7',
+    'jenjangpendidikan' => 'Diploma 4',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '8',
+    'jenjangpendidikan' => 'Profesi',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '9',
+    'jenjangpendidikan' => 'Strata 2 (S2)',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '10',
+    'jenjangpendidikan' => 'SD/MI/Sederajat',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '11',
+    'jenjangpendidikan' => 'STM',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '12',
+    'jenjangpendidikan' => 'Non Pendidikan',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '13',
+    'jenjangpendidikan' => 'SMP/Mts/Sederajat',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '14',
+    'jenjangpendidikan' => 'Strata 3 (S3)',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+
+
+
     }
  /**
      * Menghitung usia berdasarkan tanggal lahir.

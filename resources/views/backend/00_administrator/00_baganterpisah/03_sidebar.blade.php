@@ -1048,7 +1048,7 @@
 
 <ul class="nav nav-treeview" style="margin-left: 15px;">
    <li class="nav-item">
-      <a href="/404" class="nav-link" style="display: flex; align-items: center;">
+      <a href="/beagendapelatihanabg" class="nav-link" style="display: flex; align-items: center;">
           <i class="bi bi-calendar-event nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
           <p style="color: white; margin: 0 0 0 8px;">Agenda</p>
       </a>
