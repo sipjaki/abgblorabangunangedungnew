@@ -257,6 +257,7 @@ th {
 <th style="background-color: #ADD8E6;"><i class="fas fa-tags"></i> Kategori Pelatihan</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> User Input</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-chalkboard-teacher"></i> Nama Kegiatan</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-chalkboard-teacher"></i> Status</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-times"></i> Tanggal Penutupan</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-check"></i> Waktu Pelaksanaan</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Jumlah Peserta</th>
@@ -280,7 +281,16 @@ th {
 <td>{{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}</td>
 <td>{{ $item->user->name ?? '-' }}</td>
 <td>{{ $item->namakegiatan ?? '-' }}</td>
+<td>
+    @if(\Carbon\Carbon::parse($item->penutupan)->isPast())
+        <span class="badge bg-danger">Ditutup</span>
+    @else
+        <span class="badge bg-success">Dibuka</span>
+    @endif
+</td>
+
 <td>{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') ?? '-' }}</td>
+
 <td>{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') ?? '-' }}</td>
 <td>{{ $item->jumlahpeserta ?? '-' }}</td>
 <td style="text-align: left;">{{ $item->lokasi ?? '-' }}</td>
@@ -303,22 +313,34 @@ th {
         -
     @endif
 </td>
+
+
 <td>
-    @if($item->foto)
-        <img src="{{ asset($item->foto) }}" alt="Foto" width="80">
-    @else
-        -
-    @endif
+
+        @if($item->foto && $item->foto && $item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                                                                                                <!-- Menampilkan gambar dari storage -->
+                                                                                                                <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->foto && $item->foto && $item->foto)
+                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @else
+                                                                                                                <!-- Placeholder jika tidak ada data -->
+                                                                                                                <p style="font-size: 11px;">Poster Belum di Upload !</p>
+
+                                                                                                                @endif
 </td>
 {{-- <td>{{ $item->barcodepelatihan ?? '-' }}</td> --}}
 <td>
-    @if($item->suratundangan)
-        <a href="{{ asset($item->suratundangan) }}" target="_blank" class="btn btn-sm btn-primary">
-            <i class="fas fa-download"></i> Unduh
-        </a>
-    @else
-        -
-    @endif
+    @if($item->suratundangan && file_exists(public_path('storage/' . $item->suratundangan)))
+    <!-- Menampilkan file dari folder storage -->
+    <iframe src="{{ asset('storage/' . $item->suratundangan) }}" style="width: 100%; height: 300px;" frameborder="0"></iframe>
+@elseif($item->suratundangan)
+    <!-- Menampilkan file dari path luar storage -->
+    <iframe src="{{ asset($item->suratundangan) }}" style="width: 100%; height: 300px;" frameborder="0"></iframe>
+@else
+    <!-- Placeholder jika tidak ada data -->
+    <p style="font-size: 12px; color: gray;">Surat belum diupload!</p>
+@endif
 </td>
             @can('superadmin')
 
