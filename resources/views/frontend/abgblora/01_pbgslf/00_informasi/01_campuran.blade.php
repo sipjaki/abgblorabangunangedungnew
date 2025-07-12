@@ -933,107 +933,52 @@
 
         <!-- Lampiran -->
         <div class="attachments">
-            <h2 class="attachments-title" style="font-family: 'Poppins', sans-serif;"><i class="fas fa-paperclip"></i> Lampiran Dokumen</h2>
+            <h6 class="attachments-title" style="font-family: 'Poppins', sans-serif;"><i class="fas fa-paperclip"></i> Lampiran Informasi</h6>
             <div class="attachment-list">
-                <a href="https://docs.google.com/document/d/1wUqViBM2_8vdx67KgR7Z7iiS7z2uINjs/edit?tab=t.0" class="attachment-item" target="_blank">
-                    <div class="attachment-icon">
-                        <i class="fas fa-file-word"></i>
-                    </div>
-                    <div class="attachment-text">
-                        <div class="attachment-name">1. Format Surat Permohonan Asistensi</div>
-                        <span class="attachment-link">Buka Dokumen <i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
 
-                <a href="https://drive.google.com/file/d/1cRcDoWDk6W8Mmnbh9EWJOMnt8g_0E3Or/view" class="attachment-item" target="_blank">
-                    <div class="attachment-icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <div class="attachment-text">
-                        <div class="attachment-name">2. Permen PUPR 8 Tahun 2023</div>
-                        <span class="attachment-link">Buka Dokumen <i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
+<form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6">
+        <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
+          <div class="flex p-4 items-center gap-4">
+            <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
+              <div class="flex items-center">
+                <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
+                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="photo">
+                </div>
+              </div>
+              <div class="flex flex-col flex-1 gap-[2px] text-left">
+                <p class="font-semibold">{{$title}}</p>
+                {{-- <p class="font-medium text-xs leading-[18px] text-[#757C98]">Contact Details</p> --}}
+              </div>
+            </button>
+          </div>
 
-                <a href="https://drive.google.com/file/d/1-Wld0fWQQgQMNvW2J0feg7XCsbN8_ksz/view" class="attachment-item" target="_blank">
-                    <div class="attachment-icon">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
-                    <div class="attachment-text">
-                        <div class="attachment-name">3. Lampiran IV AHSP Bidang Cipta Karya</div>
-                        <span class="attachment-link">Buka Dokumen <i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
+        </div>
 
-                <a href="https://drive.google.com/file/d/1QzJO5Lxon75YiWjZ7pg8f6yObe3PYhhA/view" class="attachment-item" target="_blank">
-                    <div class="attachment-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="attachment-text">
-                        <div class="attachment-name">4. SE Dirjen Binkon No.73 Tahun 2023</div>
-                        <span class="attachment-link">Buka Dokumen <i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
 
-                <a href="https://drive.google.com/file/d/1xxh7PyOfSaBY5ptEevdzl0bzGJiIUoVS/view" class="attachment-item" target="_blank">
-                    <div class="attachment-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <div class="attachment-text">
-                        <div class="attachment-name">5. PP 16 Tahun 2021</div>
-                        <span class="attachment-link">Buka Dokumen <i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
+        <div class="flex flex-col space-y-3 px-[18px]">
+            <!-- Card 1 -->
+<a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+  <!-- Gambar Thumbnail Penuh -->
+  <div class="w-full h-auto rounded-lg overflow-hidden">
+    <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png" class="object-cover w-full h-full" alt="thumbnail">
+  </div>
 
-                <a href="https://drive.google.com/file/d/11kQapWaglN_4KyzjqfHUcOAep3vgMVpO/view" class="attachment-item" target="_blank">
-                    <div class="attachment-icon">
-                        <i class="fas fa-file-invoice"></i>
-                    </div>
-                    <div class="attachment-text">
-                        <div class="attachment-name">6. SMKK-2021 Permen PUPR 10</div>
-                        <span class="attachment-link">Buka Dokumen <i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
+  <br>
+  <!-- Info Teks -->
+<div class="flex flex-col gap-2 mt-4">
+  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
+    Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
+  </p>
+  <p class="text-[16px] text-neutral-700" style="text-align: justify;">
+    PBG adalah dokumen yang diperlukan untuk bangunan dengan fungsi campuran, seperti pelayanan pendidikan, kesehatan, kebudayaan, laboratorium, dan umum. Syarat pengajuan meliputi dokumen tanah, data umum (KTP, NIB, KRK), serta dokumen teknis arsitektur, struktur, dan MEP. Prosesnya dimulai dari pendaftaran via SIMBG.PU, konsultasi teknis, validasi, pembayaran retribusi, hingga penerbitan dokumen PBG.
+  </p>
+</div>
 
-                <a href="https://drive.google.com/file/d/1oGPU0hpKJZ2TTqeEO55qnlQnqZL7s-am/view" class="attachment-item" target="_blank">
-                    <div class="attachment-icon">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
-                    <div class="attachment-text">
-                        <div class="attachment-name">7. Spek dan Contoh Biaya SMKK</div>
-                        <span class="attachment-link">Buka Dokumen <i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
+</a>
 
-                <a href="https://drive.google.com/file/d/1Bvr95bgKTK_CmjrF7_R3jb6XEoAte8cM/view" class="attachment-item" target="_blank">
-                    <div class="attachment-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="attachment-text">
-                        <div class="attachment-name">8. Perda Bangunan Gedung</div>
-                        <span class="attachment-link">Buka Dokumen <i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
 
-                <a href="https://drive.google.com/file/d/1Bvr95bgKTK_CmjrF7_R3jb6XEoAte8cM/view" class="attachment-item" target="_blank">
-                    <div class="attachment-icon">
-                        <i class="fas fa-file-signature"></i>
-                    </div>
-                    <div class="attachment-text">
-                        <div class="attachment-name">9. Formulir Spesifikasi Teknis BG</div>
-                        <span class="attachment-link">Buka Dokumen <i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
+      </form>
 
-                <a href="https://drive.google.com/file/d/1UyGjzdzn59tDlKhPiaEUyvgncNPu733f/view" class="attachment-item" target="_blank">
-                    <div class="attachment-icon">
-                        <i class="fas fa-drafting-compass"></i>
-                    </div>
-                    <div class="attachment-text">
-                        <div class="attachment-name">10. Modul Standar Kelengkapan Gambar</div>
-                        <span class="attachment-link">Buka Dokumen <i class="fas fa-external-link-alt"></i></span>
-                    </div>
-                </a>
             </div>
         </div>
 

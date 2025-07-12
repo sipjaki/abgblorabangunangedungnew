@@ -4,6 +4,7 @@
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
     <div class="w-full h-[184px] absolute top-0 bg-cover bg-center" style="background-image: url('/assets/android/iconmenu/belakangnew.jpg');">
     </div>
+
      <div class="relative z-10 flex flex-col gap-6 mt-[60px]">
       <div class="top-menu flex justify-between items-center px-[18px]">
           <div class="w-[42px] h-[42px] flex shrink-0">
@@ -16,6 +17,7 @@
             <img src="/assets/abgblora/logo/pupr.png" alt="icon">
           </div>
       </div>
+
       <form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6">
         <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
           <div class="flex p-4 items-center gap-4">
