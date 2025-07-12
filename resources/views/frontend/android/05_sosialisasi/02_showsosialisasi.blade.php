@@ -219,7 +219,7 @@
                     @foreach ($datamateripelatihan as $item)
                     <tr>
                         <td style="text-align: center; border: 1px solid #ccc; padding: 8px;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td style="text-transform: capitalize; border: 1px solid #ccc; padding: 8px;">{{ ucwords(strtolower($item->judulmateripelatihan1)) }}</td>
+                        <td style="text-transform: capitalize; border: 1px solid #ccc; padding: 8px;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
                         <td style="border: 1px solid #ccc; padding: 8px;">
                             @if($item->materipelatihan1 && file_exists(public_path('storage/' . $item->materipelatihan1)))
                                 <iframe src="{{ asset('storage/' . $item->materipelatihan1) }}" frameborder="0" width="100%" height="200px"></iframe>
