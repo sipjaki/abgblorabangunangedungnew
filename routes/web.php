@@ -595,9 +595,9 @@ Route::delete('/beberitadelete/{id}', [DatabaseAbgController::class, 'beberitade
 Route::get('/beberitacreate', [DatabaseAbgController::class, 'beberitacreate'])->middleware('auth')->name('beberitacreate');
 Route::post('/beberitacreatenew', [DatabaseAbgController::class, 'beberitacreatenew'])->middleware('auth')->name('beberitacreatenew');
 
-// sigit bro
 
 Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beagendapelatihanabg'])->middleware('auth')->name('beagendapelatihanabg');
+
 Route::delete('/beagendapelatihanabgdelete/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgdelete'])->middleware('auth')->name('delete.beagendapelatihanabgdelete');
 
 Route::get('/beagendapelatihanabgcreate', [AgendapelatihanabgController::class, 'beagendapelatihanabgcreate'])->middleware('auth')->name('beagendapelatihanabgcreate');
@@ -607,6 +607,9 @@ Route::post('/beagendapelatihanabgcreatenew', [AgendapelatihanabgController::cla
 Route::get('/beagendapelatihanabgmateri/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgmateri'])->middleware('auth')->name('beagendapelatihanabgmateri.show');
 Route::get('/beagendapelatihanabgupload/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgupload'])->middleware('auth')->name('beagendapelatihanabgupload');
 Route::post('/beagendapelatihanabguploadnew', [AgendapelatihanabgController::class, 'beagendapelatihanabguploadnew'])->middleware('auth')->name('beagendapelatihanabguploadnew');
+
+// sigit bro
+Route::get('/beagendapeserta', [AgendapelatihanabgController::class, 'beagendapeserta'])->middleware('auth')->name('beagendapeserta');
 
 // Route::get('/portalberita', function ()
 //     // return view('welcome');
