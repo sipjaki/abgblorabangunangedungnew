@@ -12655,6 +12655,186 @@ pesertapelatihan::create([
     // 'deleted_at' => null // jika menggunakan soft deletes
 ]);
 
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 1, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
+
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 1, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
+
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 1, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
+
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 1, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
+
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 2, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
+
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 1, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
+
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 2, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
+
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 2, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
+
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 2, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
+
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 3, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
+
 
     }
  /**
