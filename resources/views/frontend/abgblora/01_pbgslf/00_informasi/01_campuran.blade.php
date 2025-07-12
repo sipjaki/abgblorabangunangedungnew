@@ -215,7 +215,7 @@
                             <div class="row g-4">
                                 <div class="col-md-12">
                                     <a href="#" class="text-decoration-none">
-                                        <div class="card shadow-sm border-0 h-100">
+                                        <div class="card shadow-sm border-0" style="height: 400px;">
                                             <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png" class="card-img-top" alt="thumbnail" style="object-fit: cover; height: 200px;">
                                             <div class="card-body">
                                                 <h5 class="card-title text-primary fw-semibold">
