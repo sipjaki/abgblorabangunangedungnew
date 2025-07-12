@@ -612,6 +612,8 @@ Route::post('/beagendapelatihanabguploadnew', [AgendapelatihanabgController::cla
 Route::get('/beagendapeserta', [AgendapelatihanabgController::class, 'beagendapeserta'])->middleware('auth')->name('beagendapeserta');
 Route::get('/beagendapesertalist/{id}', [AgendapelatihanabgController::class, 'beagendapesertalist'])->middleware('auth');
 
+Route::delete('/beagendapesertadelete/{id}', [AgendapelatihanabgController::class, 'beagendapesertadelete'])->middleware('auth')->name('beagendapesertadelete');
+
 // Route::get('/portalberita', function ()
 //     // return view('welcome');
 //     return view('portalberita', [

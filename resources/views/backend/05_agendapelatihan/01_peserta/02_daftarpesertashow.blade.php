@@ -211,8 +211,8 @@ th {
 <a href="/beagendapeserta" style="text-decoration: none;">
   <button class="button-newvalidasi"
     style="display: flex; align-items: center; gap: 8px; justify-content: center; padding: 10px 16px; border-radius: 10px; border: 1px solid #ddd; background-color: #f5f5f5; cursor: pointer; transition: 0.3s;">
-    <i class="bi bi-arrow-left-circle" style="font-size: 18px; color: #0d6efd;"></i>
-    <span style="color: #0d6efd; font-weight: 500;">Kembali</span>
+    <i class="bi bi-arrow-left-circle" style="font-size: 18px; color: black;"></i>
+    <span style="color: black; font-weight: 500;">Kembali</span>
   </button>
 </a>
 
@@ -447,7 +447,7 @@ th {
                                             document.getElementById('itemName').innerText = id;
 
                                             // Atur URL penghapusan
-                                            var deleteUrl = "/beagendapelatihanpeserta/delete/" + encodeURIComponent(id);
+                                            var deleteUrl = "/beagendapesertadelete/" + encodeURIComponent(id);
                                             document.getElementById('deleteForm').action = deleteUrl;
                                         }
 
