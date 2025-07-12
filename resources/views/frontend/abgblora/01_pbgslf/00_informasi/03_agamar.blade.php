@@ -179,64 +179,103 @@
         style="object-fit: cover; width: 100%; height: auto;">
                                                 <img src="/assets/android/pbgslf/PBG_FUNGSI_KEAGAMAAN.png" alt="PBG Fungsi Hunian">
                                             </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title text-primary fw-semibold">
-                                                    Persetujuan Bangunan Gedung (PBG) - Fungsi Hunian
-                                                </h5>
+<div class="flex flex-col gap-4 mt-4 text-[15px] text-neutral-800">
 
-                                                <div class="content-section">
-                                                    <p class="font-bold">
-                                                        Persetujuan Bangunan Gedung (PBG) - Fungsi Hunian
-                                                    </p>
+  <!-- Judul -->
+  <p class="font-bold text-[16px] leading-[24px]">
+    Persetujuan Bangunan Gedung (PBG) - Fungsi Keagamaan
+  </p>
 
-                                                    <p>
-                                                        Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang diperlukan untuk setiap kegiatan pembangunan. Untuk bangunan dengan fungsi hunian, PBG memastikan rencana teknis telah sesuai ketentuan peraturan.
-                                                    </p>
+  <!-- Deskripsi -->
+  <p class="text-justify">
+    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan sebelum mendirikan bangunan. Untuk bangunan fungsi keagamaan seperti masjid, gereja, vihara, pura, dan lainnya, PBG diperlukan agar pembangunan sesuai dengan ketentuan teknis, lingkungan, dan tata ruang yang berlaku.
+  </p>
 
-                                                    <p class="font-bold">
-                                                        Klasifikasi Bangunan Hunian:
-                                                    </p>
-                                                    <ul>
-                                                        <li><span class="font-bold">Sederhana</span>:
-                                                            <ul>
-                                                                <li>1 lantai &lt; 72 m²</li>
-                                                                <li>2 lantai &lt; 90 m²</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><span class="font-bold">Tidak Sederhana</span>:
-                                                            <ul>
-                                                                <li>1 atau 2 lantai ≥ 72 m² / ≥ 90 m²</li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
+  <!-- Klasifikasi -->
+  <p class="font-bold leading-[22px]">Klasifikasi Bangunan Keagamaan:</p>
+  <ul class="list-disc ml-5 text-justify space-y-1">
+    <li><span class="font-bold">Sederhana</span>:
+      <ul class="list-disc ml-5">
+        <li>1 lantai &lt; 72 m²</li>
+        <li>2 lantai &lt; 90 m²</li>
+      </ul>
+    </li>
+    <li><span class="font-bold">Tidak Sederhana</span>:
+      <ul class="list-disc ml-5">
+        <li>1 lantai ≥ 72 m²</li>
+        <li>2 lantai ≥ 90 m²</li>
+      </ul>
+    </li>
+  </ul>
 
-                                                    <p class="font-bold">
-                                                        Persyaratan Dokumen:
-                                                    </p>
-                                                    <ol>
-                                                        <li><span class="font-bold">Data Tanah</span>: Sertifikat tanah, izin pemanfaatan tanah (jika nama pemohon tidak sesuai dengan sertifikat).</li>
-                                                        <li><span class="font-bold">Data Umum</span>: KTP/KITAS, dokumen perizinan tata ruang, KRK/KKPR, data penyedia jasa konstruksi (SBU/arsitek berlisensi).</li>
-                                                        <li><span class="font-bold">Data Teknis Arsitektur</span>: Gambar situasi, denah, potongan, tampak.</li>
-                                                        <li><span class="font-bold">Data Teknis Struktur</span>: Gambar pondasi, rangka atap, struktur.</li>
-                                                        <li><span class="font-bold">Data Teknis MEP</span>: Gambar jaringan listrik dan sanitasi.</li>
-                                                    </ol>
+  <!-- Persyaratan Dokumen -->
+  <p class="font-bold leading-[22px]">Persyaratan Dokumen:</p>
+  <ol class="list-decimal ml-5 space-y-2 text-justify">
+    <li>
+      <span class="font-bold">Data Tanah:</span>
+      <ul class="list-disc ml-5">
+        <li>Sertifikat tanah</li>
+        <li>Izin Pemanfaatan Tanah (jika nama pemohon tidak sesuai dengan sertifikat)</li>
+        <li>Gambar kontur tanah dan sondir (untuk bangunan tidak sederhana)</li>
+      </ul>
+    </li>
+    <li>
+      <span class="font-bold">Data Umum:</span>
+      <ul class="list-disc ml-5">
+        <li>KTP/KITAS (Ketua Yayasan/Ormas/Lembaga)</li>
+        <li>KRK/KKPR</li>
+        <li>Dokumen lingkungan (SPPL atau dokumen dari DPMPTSP)</li>
+        <li>Data penyedia jasa konstruksi (SBU/Arsitek bersertifikat)</li>
+        <li>Surat Rekomendasi FKUB (Forum Kerukunan Umat Beragama)</li>
+      </ul>
+    </li>
+    <li>
+      <span class="font-bold">Data Teknis Arsitektur:</span>
+      <ul class="list-disc ml-5">
+        <li>Konsep arsitektur</li>
+        <li>Gambar situasi, rencana tapak, potongan, tampak, dan detail</li>
+        <li>Rencana tata ruang dalam & luar</li>
+        <li>Spesifikasi teknis arsitektur</li>
+        <li>Rekomendasi peta banjir (jika diperlukan)</li>
+      </ul>
+    </li>
+    <li>
+      <span class="font-bold">Data Teknis Struktur:</span>
+      <ul class="list-disc ml-5">
+        <li>Perhitungan struktur (untuk bangunan tidak sederhana)</li>
+        <li>Gambar detail struktur</li>
+        <li>Spesifikasi teknis struktur</li>
+      </ul>
+    </li>
+    <li>
+      <span class="font-bold">Data Teknis MEP:</span>
+      <ul class="list-disc ml-5">
+        <li>Gambar sistem jaringan listrik</li>
+        <li>Gambar sistem jaringan sanitasi</li>
+        <li>Gambar sistem proteksi kebakaran</li>
+        <li>Data teknis MEP lainnya</li>
+      </ul>
+    </li>
+  </ol>
 
-                                                    <p class="font-bold">
-                                                        Tahapan Pengurusan:
-                                                    </p>
-                                                    <ol>
-                                                        <li>Menyiapkan dokumen tanah, KRK/KKPR (dokumen tata ruang).</li>
-                                                        <li>Melakukan pendaftaran dan unggah dokumen di simbg.pu.go.id</li>
-                                                        <li>Verifikasi dokumen oleh operator Dinas Teknis.</li>
-                                                        <li>Penjadwalan konsultasi permohonan.</li>
-                                                        <li>Konsultasi bersama TPA/TPT.</li>
-                                                        <li>Revisi dokumen sesuai masukan teknis TPA/TPT.</li>
-                                                        <li>TPA/TPT menyetujui dokumen perencanaan.</li>
-                                                        <li>Pengunggahan berkas final, validasi, dan perhitungan retribusi.</li>
-                                                        <li>Pembayaran retribusi melalui bank persepsi atau mobile banking.</li>
-                                                    </ol>
-                                                </div>
-                                            </div>
+  <!-- Tahapan Pengurusan -->
+  <p class="font-bold leading-[22px] mt-3">Tahapan Pengurusan:</p>
+  <ol class="list-decimal ml-5 text-justify space-y-1">
+    <li>Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</li>
+    <li>Mendaftar, membuat permohonan, dan mengunggah dokumen ke <a href="https://simbg.pu.go.id" target="_blank" class="text-blue-600 underline">https://simbg.pu.go.id</a></li>
+    <li>Menindaklanjuti hasil verifikasi operator dinas teknis</li>
+    <li>Penjadwalan konsultasi permohonan</li>
+    <li>Melakukan konsultasi bersama TPA/TPT</li>
+    <li>Merevisi dokumen sesuai masukan dari TPA/TPT</li>
+    <li>Dokumen disetujui oleh TPA/TPT</li>
+    <li>Unggah dokumen final, perhitungan retribusi, dan validasi teknis</li>
+    <li>Pembayaran retribusi via bank persepsi atau mobile banking</li>
+    <li>Penerbitan dokumen PBG oleh DPMPTSP</li>
+  </ol>
+
+</div>
+
+
                                         </div>
                                     </a>
                                 </div>
