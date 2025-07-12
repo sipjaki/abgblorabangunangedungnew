@@ -228,7 +228,7 @@
                                    style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
                                    <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
                                 </a>
-                            @elseif($item->materipelatihan11)
+                            @elseif($item->materipelatihan1)
                                 <iframe src="{{ asset($item->materipelatihan1) }}" frameborder="0" width="100%" height="100px"></iframe>
                                 <a href="{{ asset($item->materipelatihan1) }}" download
                                    class="badge"
