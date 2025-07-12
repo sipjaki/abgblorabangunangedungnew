@@ -504,7 +504,7 @@ public function infopbgprasarana()
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi Agenda Sosialisasi ',
             'user' => $user,
-            'agendapelatihan' => $agendapelatihan,
+            'data' => $agendapelatihan,
         ]);
     }
 
