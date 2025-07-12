@@ -166,7 +166,7 @@
     " --}}
 >
 
-<section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 125px;">
+<section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 165px;">
     <br><br>
     <div class="flex items-center gap-[20px]">
       <!-- Gambar di kiri -->
