@@ -945,10 +945,10 @@
             <div class="col-md-12">
                 <a href="#" class="text-decoration-none">
                     <div class="card shadow-sm border-0 h-100">
-                        <img src="/assets/android/pbgslf/PBG_FUNGSI_HUNIAN.jpg" class="card-img-top" alt="thumbnail" style="object-fit: cover;">
+                        <img src="/assets/android/pbgslf/PBG_FUNGSI_KEAGAMAAN.png" class="card-img-top" alt="thumbnail" style="object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title text-primary fw-semibold">
-                                Persetujuan Bangunan Gedung (PBG) - Fungsi Hunian
+                                Persetujuan Bangunan Gedung (PBG) - Fungsi Keagamaan
                             </h5>
 
 <div class="flex flex-col gap-4 mt-4 text-[15px] text-neutral-800">
