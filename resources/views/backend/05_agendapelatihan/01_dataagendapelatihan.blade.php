@@ -280,7 +280,17 @@ th {
 {{-- <td>{{ $item->materipelatihan->nama ?? '-' }}</td> --}}
 <td>{{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}</td>
 <td>{{ $item->user->name ?? '-' }}</td>
-<td>{{ $item->namakegiatan ?? '-' }}</td>
+
+<td style="text-align: justify">
+    @if($item->namakegiatan)
+        @foreach(array_chunk(explode(' ', $item->namakegiatan), 5) as $chunk)
+            {{ implode(' ', $chunk) }}<br>
+        @endforeach
+    @else
+        -
+    @endif
+</td>
+
 <td>
     @if(\Carbon\Carbon::parse($item->penutupan)->isPast())
         <span class="btn btn-danger button-dikembalikan py-2 px-3 fs-6">

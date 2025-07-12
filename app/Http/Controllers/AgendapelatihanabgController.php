@@ -160,7 +160,7 @@ public function beagendapelatihanabgcreatenew(Request $request)
 
     $data->save();
 
-    return redirect()->route('agendapelatihan.index')->with('success', 'Data agenda berhasil disimpan.');
+    return redirect()->route('beagendapelatihanabg')->with('success', 'Data agenda berhasil disimpan.');
 }
 
 
