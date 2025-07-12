@@ -229,7 +229,8 @@ th {
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis"
                             class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
-                        >
+                  
+                            >
                             <thead>
                                   <tr>
         <th style="background-color: #ADD8E6;">No</th>
