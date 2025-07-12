@@ -686,7 +686,7 @@
                 </div>
             </div>
         </div>
-    {{-- </div> --}}
+    </div>
 
     <!-- Form buttons -->
     <div class="form-buttons">
