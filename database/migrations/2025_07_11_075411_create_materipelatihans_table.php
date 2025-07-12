@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
                $table->foreignId('agendapelatihan_id')->nullable()->index();
             $table->string('judulmateripelatihan')->nullable();
-            $table->string('materipelatihan')->nullable();
+            $table->string('materipelatihan1')->nullable();
+            $table->string('materipelatihan2')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

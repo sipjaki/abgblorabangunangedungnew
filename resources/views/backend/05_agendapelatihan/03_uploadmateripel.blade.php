@@ -236,16 +236,19 @@ th {
                 <thead>
                                   <tr>
    <th style="background-color: #ADD8E6;">No</th>
-<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Kegiatan</th>
-<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Tanggal Kegiatan</th>
-{{-- <th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Berkas Dukung 1</th> --}}
-{{-- <th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Berkas Dukung 2</th> --}}
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 1</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 2</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 3</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 4</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 5</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 6</th>
+<th style="background-color: #ADD8E6; width:75px;">
+    <i class="bi bi-book-half"></i> Judul Materi
+</th>
+
+<th style="background-color: #ADD8E6; width:75px;">
+    <i class="bi bi-file-earmark-text"></i> Berkas 1
+</th>
+
+<th style="background-color: #ADD8E6; width:400px;">
+    <i class="bi bi-file-image"></i> Berkas 2
+</th>
+
+
 @canany(['superadmin', 'admin'])
 <th style="background-color: #ADD8E6; width:150px;"><i class="bi bi-tools"></i> Aksi</th>
 @endcanany
@@ -257,8 +260,45 @@ th {
                                 @forelse ($subdata as $item)
     <tr>
         <td>{{ $loop->iteration }}</td>
-        <td>{{ $item->kegiatan }}</td>
-<td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
+     {{-- Judul Materi Pelatihan --}}
+<td style="text-align: justify">
+    @if($item->judulmateripelatihan)
+        @foreach(array_chunk(explode(' ', $item->judulmateripelatihan), 5) as $chunk)
+            {{ implode(' ', $chunk) }}<br>
+        @endforeach
+    @else
+        -
+    @endif
+</td>
+
+{{-- Materi Pelatihan 1 (PDF Preview + Download) --}}
+<td>
+    @if($item->materipelatihan1)
+        <iframe src="{{ asset($item->materipelatihan1) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
+        <div class="mt-2 text-center">
+            <a href="{{ asset($item->materipelatihan1) }}" class="btn btn-sm btn-primary" target="_blank" download>
+                <i class="bi bi-download"></i> Unduh Materi 1
+            </a>
+        </div>
+    @else
+        <span class="text-muted">Materi 1 belum diunggah.</span>
+    @endif
+</td>
+
+{{-- Materi Pelatihan 2 (PDF Preview + Download) --}}
+<td>
+    @if($item->materipelatihan2)
+        <iframe src="{{ asset($item->materipelatihan2) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
+        <div class="mt-2 text-center">
+            <a href="{{ asset($item->materipelatihan2) }}" class="btn btn-sm btn-success" target="_blank" download>
+                <i class="bi bi-download"></i> Unduh Materi 2
+            </a>
+        </div>
+    @else
+        <span class="text-muted">Materi 2 belum diunggah.</span>
+    @endif
+</td>
+
 
 {{-- <td style="vertical-align: top; padding: 10px;">
     @if ($item->berkas1 && file_exists(public_path('storage/' . $item->berkas1)))
@@ -324,7 +364,7 @@ th {
     @endif
 </td> --}}
 
-
+{{--
 @for ($i = 1; $i <= 6; $i++)
     <td>
         <div style="margin-top: 10px;">
@@ -348,7 +388,7 @@ th {
             @endif
         </div>
     </td>
-@endfor
+@endfor --}}
 
 @canany(['superadmin', 'admin'])
 
