@@ -121,12 +121,12 @@
 @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
 
 <!-- Main Content -->
-<div class="content-wrapper" style="margin-top: 65px;">
+<div class="content-wrapper">
     <section class="page-header">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-12">
-                    <h1 class="fw-bold text-primary">Informasi Permohonan PBG SLF Bangunan Gedung</h1>
+                    <h1 class="fw-bold text-primary">Informasi Bantuan Teknis Penyelenggaraan Bangunan Gedung Negara</h1>
                 </div>
             </div>
         </div>
@@ -200,14 +200,8 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card shadow-sm border-0 h-100"
-                        >
-                            <img src="/assets/android/pbgslf/PBG_FUNGSI_KEAGAMAAN.png"
-                              class="card-img-top img-fluid"
-        alt="thumbnail"
-        style="object-fit: cover; width: 100%; height: auto;"
-                            >
-
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="/assets/android/pbgslf/PBG_FUNGSI_KEAGAMAAN.png" class="card-img-top" alt="thumbnail" style="object-fit: cover; height: 200px;">
                             <div class="card-body">
                                 <h5 class="card-title text-primary fw-semibold">
                                     Persetujuan Bangunan Gedung (PBG) - Fungsi Keagamaan
