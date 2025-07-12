@@ -22,7 +22,7 @@
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
               <div class="flex items-center">
                 <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="photo">
+                  <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="photo">
                 </div>
               </div>
               <div class="flex flex-col flex-1 gap-[2px] text-left">
@@ -40,17 +40,26 @@
 <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
   <!-- Gambar Thumbnail Penuh -->
   <div class="w-full h-auto rounded-lg overflow-hidden">
-    <img src="/assets/android/bantek/1.jpg" class="object-cover w-full h-full" alt="thumbnail">
+    <img src="/assets/android/bantek/5.jpg" class="object-cover w-full h-full" alt="thumbnail">
   </div>
 
   <br>
-  <!-- Info Teks -->
+
+<!-- Info Teks -->
 <div class="flex flex-col gap-2 mt-4">
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
+    Jenis Bantuan Teknis - Bantuan Asistensi Perencanaan
   </p>
   <p class="text-[16px] text-neutral-700" style="text-align: justify;">
-    PBG adalah dokumen yang diperlukan untuk bangunan dengan fungsi campuran, seperti pelayanan pendidikan, kesehatan, kebudayaan, laboratorium, dan umum. Syarat pengajuan meliputi dokumen tanah, data umum (KTP, NIB, KRK), serta dokumen teknis arsitektur, struktur, dan MEP. Prosesnya dimulai dari pendaftaran via SIMBG.PU, konsultasi teknis, validasi, pembayaran retribusi, hingga penerbitan dokumen PBG.
+    Pemberian Bantuan Tenaga Teknis kepada K/L/OPD untuk membantu pengguna anggaran dalam
+    pendampingan perencanaan pekerjaan pembangunan bangunan gedung negara sampai memenuhi syarat administrasi.
+    <br><br>
+    1. Memasukkan Surat Permohonan beserta bahan ke Dinas PUPR Kab. Blora<br>
+    2. Registrasi Surat Permohonan beserta bahan di Sekretariat DPUPR Kab. Blora<br>
+    3. Registrasi Dokumen Perencanaan pada Bidang Bangunan<br>
+    4. Memeriksa HPP/RAB, Gambar, Spesifikasi Teknis dan Dokumen Pendukung lainnya oleh Bidang Bangunan Gedung<br>
+    5. Memeriksa dan Pemarafan Dokumen Perencanaan (Sub Koordinator dan Kepala Bidang) Bidang Bangunan Gedung DPUPR Kab. Blora<br>
+    6. Penandatanganan Dokumen Perencanaan oleh Bapak Kepala Dinas PUPR Kab. Blora
   </p>
 </div>
 
