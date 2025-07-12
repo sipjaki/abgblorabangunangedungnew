@@ -603,6 +603,9 @@ Route::delete('/beagendapelatihanabgdelete/{id}', [AgendapelatihanabgController:
 Route::get('/beagendapelatihanabgcreate', [AgendapelatihanabgController::class, 'beagendapelatihanabgcreate'])->middleware('auth')->name('beagendapelatihanabgcreate');
 Route::post('/beagendapelatihanabgcreatenew', [AgendapelatihanabgController::class, 'beagendapelatihanabgcreatenew'])->middleware('auth')->name('beagendapelatihanabgcreatenew');
 
+
+Route::get('/beagendapelatihanabgmateri/{id}', [BantuanhibahbgController::class, 'beagendapelatihanabgmateri'])->middleware('auth')->name('beagendapelatihanabgmateri.show');
+
 // Route::get('/portalberita', function ()
 //     // return view('welcome');
 //     return view('portalberita', [

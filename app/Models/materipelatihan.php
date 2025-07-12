@@ -13,9 +13,9 @@ class materipelatihan extends Model
 
     protected $guarded = ['id'];
 
-       public function agendapelatihanabg()
+       public function agendapelatihan()
     {
-        return $this->hasMany(agendapelatihanabg::class);
+        return $this->hasMany(agendapelatihanabg::class, 'agendapelatihan_id');
     }
 
 

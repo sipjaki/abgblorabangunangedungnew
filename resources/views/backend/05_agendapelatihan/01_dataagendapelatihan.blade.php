@@ -267,6 +267,7 @@ th {
 <th style="background-color: #ADD8E6; width:300px;"><i class="fas fa-image" ></i> Foto</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-barcode"></i> Barcode Pelatihan</th> --}}
 <th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Materi</th>
 
 <th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
 
@@ -362,6 +363,14 @@ th {
         <p style="font-size: 12px; color: gray;">Surat belum diupload!</p>
     @endif
 </td>
+
+
+                <td style="text-align: center;">
+                <a href="{{ route('beagendapelatihanabgmateri.show', $item->id) }}"
+                    class="button-baru">
+                <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Materi
+                </a>
+            </td>
 
             @can('superadmin')
 

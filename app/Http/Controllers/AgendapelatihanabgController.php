@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\agendapelatihanabg;
 use Illuminate\Support\Str;
 use App\Models\kategoripelatihan;
+use App\Models\materipelatihan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -163,6 +164,25 @@ public function beagendapelatihanabgcreatenew(Request $request)
     return redirect()->route('beagendapelatihanabg')->with('success', 'Data agenda berhasil disimpan.');
 }
 
+
+public function beagendapelatihanabgmateri($id)
+{
+    $databantuanteknis = agendapelatihanabg::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = materipelatihan::where('agendapelatihan_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.05_agendapelatihan.03_uploadmateripel', [
+        'title' => 'Upload Materi Pelatihan ABG Blora',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
 
 }
 
