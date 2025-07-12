@@ -212,7 +212,7 @@
 
                 <tbody id="tableBody">
                     @php
-                        $start = ($datamateripelatihan1->currentPage() - 1) * $datamateripelatihan1->perPage() + 1;
+                        $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
                         $dataAvailable = false;
                     @endphp
 
