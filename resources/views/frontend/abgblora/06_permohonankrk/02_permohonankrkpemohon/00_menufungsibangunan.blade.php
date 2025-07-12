@@ -1,7 +1,7 @@
 
 
 <div class="flex flex-col gap-5 w-full">
-    <div class="button-belakang flex flex-col gap-5 p-5 rounded-[20px] w-full">
+    <div class="putih flex flex-col gap-5 p-5 rounded-[20px] w-full">
             <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
         <div class="w-5 h-5 flex shrink-0">
             <img src="/assets/new/icons/story.svg" alt="icon">
@@ -13,28 +13,28 @@
     <div style="display: flex; justify-content: center; align-items: center; gap: 16px;">
 
         <a href="/permohonankrkusaha">
-            <button type="button" class="button-fungsi">
+            <button type="button" class="button-baru">
                 <i class="fas fa-briefcase" style="margin-right:10px;"></i> <!-- Ikon diganti -->
                 Fungsi Usaha
             </button>
         </a>
 
         <a href="/permohonankrkhunian">
-            <button type="button" class="button-fungsi">
+            <button type="button" class="button-baru">
                 <i class="fas fa-home" style="margin-right: 10px;"></i> <!-- Ikon diganti -->
                 Fungsi Hunian
             </button>
         </a>
 
         <a href="/permohonankrkagama">
-            <button type="button" class="button-fungsi">
+            <button type="button" class="button-baru">
                 <i class="fas fa-praying-hands" style="margin-right: 10px;"></i> <!-- Ikon diganti -->
                 Fungsi Keagamaan
             </button>
         </a>
 
         <a href="/permohonankrksosbud">
-            <button type="button" class="button-fungsi">
+            <button type="button" class="button-baru">
                 <i class="fas fa-theater-masks" style="margin-right:10px;"></i> <!-- Ikon diganti -->
                 Fungsi Sosial Budaya
             </button>
