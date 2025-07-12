@@ -166,10 +166,26 @@
     " --}}
 >
 
+<section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 200px;">
+    <br><br>
+    <div class="flex items-center gap-[20px]">
+      <!-- Gambar di kiri -->
+      {{-- <img src="/assets/abgblora/logo/iconabgblora.png" alt="" class="w-[60px] -my-[15px]" width="10%" style="margin-right: 20px;"> --}}
+
+      {{-- <!-- Breadcrumb di kanan -->
+      <div class="flex gap-[30px] items-center flex-wrap">
+        <span>/</span>
+        <a href="/permohonankrk" class="last-of-type:font-bold transition-all duration-300 text-blue-600" style="color: blue;">
+         {{$title}}
+        </a>
+      </div> --}}
+    </div>
+
+  </section>
 
 
 
- <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5" style="margin-top: 400px;">
+ <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
 
     {{-- @include('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.00_menufungsibangunan') --}}
 
