@@ -184,5 +184,23 @@ public function beagendapelatihanabgmateri($id)
     ]);
 }
 
+public function beagendapelatihanabgupload($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = agendapelatihanabg::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.05_agendapelatihan.04_uploadmatpelatihan', [
+        'title' => 'Silahkan Upload Materi Pelatihan  ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
 }
 

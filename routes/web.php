@@ -605,6 +605,8 @@ Route::post('/beagendapelatihanabgcreatenew', [AgendapelatihanabgController::cla
 
 
 Route::get('/beagendapelatihanabgmateri/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgmateri'])->middleware('auth')->name('beagendapelatihanabgmateri.show');
+Route::get('/beagendapelatihanabgupload/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgupload'])->middleware('auth')->name('beagendapelatihanabgupload');
+// Route::post('/doklapbanhibahcreatenew', [BantuanhibahbgController::class, 'doklapbanhibahcreatenew'])->middleware('auth')->name('create.doklapbanhibahcreatenew');
 
 // Route::get('/portalberita', function ()
 //     // return view('welcome');
