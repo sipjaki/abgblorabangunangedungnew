@@ -198,235 +198,93 @@ th {
                   <form action="{{ route('create.doklapbanhibahcreatenew') }}" method="POST" enctype="multipart/form-data">
           @csrf
 
-          <input type="hidden" name="bantuanhibahbg_id" value="{{ $data->id }}">
+          <input type="hidden" name="agendapelatihan_id" value="{{ $data->id }}">
 
-                            <!-- begin::Body -->
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Left Column (6/12) -->
-
-                                    <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="kegiatan">
-            <i class="bi bi-clipboard-check" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
+         <div class="row">
+    {{-- Judul Materi --}}
+    <div class="col-12 mb-3">
+        <label for="judulmateripelatihan" class="form-label">
+            <i class="bi bi-journal-text text-primary me-1"></i> Judul Materi Pelatihan
         </label>
-        <input
-            type="text"
-            id="kegiatan"
-            name="kegiatan"
-            value="{{ old('kegiatan') }}"
-            class="form-control @error('kegiatan') is-invalid @enderror"
-            placeholder="Masukkan nama kegiatan"
-        />
-        @error('kegiatan')
+        <input type="text" name="judulmateripelatihan" id="judulmateripelatihan"
+            class="form-control @error('judulmateripelatihan') is-invalid @enderror"
+            value="{{ old('judulmateripelatihan', $data->judulmateripelatihan ?? '') }}"
+            placeholder="Masukkan judul materi">
+        @error('judulmateripelatihan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
-</div>
 
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="tanggalkegiatan">
-            <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Kegiatan
+    {{-- Materi Pelatihan 1 --}}
+    <div class="col-md-6 mb-3">
+        <label for="materipelatihan1" class="form-label">
+            <i class="bi bi-file-earmark-pdf text-danger me-1"></i> Upload Materi Pelatihan 1 (PDF)
         </label>
-        <input
-            type="date"
-            id="tanggalkegiatan"
-            name="tanggalkegiatan"
-            value="{{ old('tanggalkegiatan') }}"
-            class="form-control @error('tanggalkegiatan') is-invalid @enderror"
-        />
-        @error('tanggalkegiatan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
+        <input type="file" name="materipelatihan1" id="materipelatihan1" accept=".pdf"
+            class="form-control @error('materipelatihan1') is-invalid @enderror"
+            onchange="previewPDF(event, 'previewMateri1', 'msgMateri1')">
+        @error('materipelatihan1')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
 
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
-</div>
-
-<div class="text-center">
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
-        <i class="bi bi-upload" style="margin-right: 6px;"></i>
-        Upload Foto Dokumentasi Lapangan Hibah Bangunan
-    </h5>
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-</div>
-
-<div class="row">
-    {{-- Foto 1 --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="foto1">
-                <i class="bi bi-image" style="color: darkgreen; margin-right: 8px;"></i> Upload Foto Dokumentasi 1
-            </label>
-            <input type="file" id="foto1" name="foto1" accept="image/*"
-                class="form-control @error('foto1') is-invalid @enderror"
-                onchange="previewImage(event, 'previewFoto1', 'msgFoto1')" />
-            @error('foto1')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-            <div class="mt-3" id="previewFoto1" style="{{ isset($data->foto1) ? '' : 'display: none;' }}">
-                <label class="fw-bold">Preview Foto 1</label><br>
-                <img src="{{ isset($data->foto1) ? asset($data->foto1) : '' }}" class="img-fluid rounded border" style="max-height: 300px;">
-            </div>
-            <div id="msgFoto1" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->foto1) ? 'display:none;' : '' }}">
-                Belum Upload Foto. Silakan upload file gambar dokumentasi.
-            </div>
+        <div class="mt-3" id="previewMateri1" style="{{ isset($data->materipelatihan1) ? '' : 'display: none;' }}">
+            <label class="fw-bold">Preview Materi 1</label><br>
+            <iframe src="{{ isset($data->materipelatihan1) ? asset($data->materipelatihan1) : '' }}"
+                class="border rounded" width="100%" height="250px"></iframe>
+        </div>
+        <div id="msgMateri1" class="mt-2 text-muted fst-italic"
+            style="{{ isset($data->materipelatihan1) ? 'display:none;' : '' }}">
+            Belum ada file PDF. Silakan upload materi pelatihan 1.
         </div>
     </div>
 
-    {{-- Foto 2 --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="foto2">
-                <i class="bi bi-image" style="color: darkgreen; margin-right: 8px;"></i> Upload Foto Dokumentasi 2
-            </label>
-            <input type="file" id="foto2" name="foto2" accept="image/*"
-                class="form-control @error('foto2') is-invalid @enderror"
-                onchange="previewImage(event, 'previewFoto2', 'msgFoto2')" />
-            @error('foto2')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    {{-- Materi Pelatihan 2 --}}
+    <div class="col-md-6 mb-3">
+        <label for="materipelatihan2" class="form-label">
+            <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Upload Materi Pelatihan 2 (PDF)
+        </label>
+        <input type="file" name="materipelatihan2" id="materipelatihan2" accept=".pdf"
+            class="form-control @error('materipelatihan2') is-invalid @enderror"
+            onchange="previewPDF(event, 'previewMateri2', 'msgMateri2')">
+        @error('materipelatihan2')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
 
-            <div class="mt-3" id="previewFoto2" style="{{ isset($data->foto2) ? '' : 'display: none;' }}">
-                <label class="fw-bold">Preview Foto 2</label><br>
-                <img src="{{ isset($data->foto2) ? asset($data->foto2) : '' }}" class="img-fluid rounded border" style="max-height: 300px;">
-            </div>
-            <div id="msgFoto2" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->foto2) ? 'display:none;' : '' }}">
-                Belum Upload Foto. Silakan upload file gambar dokumentasi.
-            </div>
+        <div class="mt-3" id="previewMateri2" style="{{ isset($data->materipelatihan2) ? '' : 'display: none;' }}">
+            <label class="fw-bold">Preview Materi 2</label><br>
+            <iframe src="{{ isset($data->materipelatihan2) ? asset($data->materipelatihan2) : '' }}"
+                class="border rounded" width="100%" height="250px"></iframe>
         </div>
-    </div>
-
-    {{-- Foto 3 --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="foto3">
-                <i class="bi bi-image" style="color: darkgreen; margin-right: 8px;"></i> Upload Foto Dokumentasi 3
-            </label>
-            <input type="file" id="foto3" name="foto3" accept="image/*"
-                class="form-control @error('foto3') is-invalid @enderror"
-                onchange="previewImage(event, 'previewFoto3', 'msgFoto3')" />
-            @error('foto3')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-            <div class="mt-3" id="previewFoto3" style="{{ isset($data->foto3) ? '' : 'display: none;' }}">
-                <label class="fw-bold">Preview Foto 3</label><br>
-                <img src="{{ isset($data->foto3) ? asset($data->foto3) : '' }}" class="img-fluid rounded border" style="max-height: 300px;">
-            </div>
-            <div id="msgFoto3" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->foto3) ? 'display:none;' : '' }}">
-                Belum Upload Foto. Silakan upload file gambar dokumentasi.
-            </div>
-        </div>
-    </div>
-
-    {{-- Foto 4 --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="foto4">
-                <i class="bi bi-image" style="color: darkgreen; margin-right: 8px;"></i> Upload Foto Dokumentasi 4
-            </label>
-            <input type="file" id="foto4" name="foto4" accept="image/*"
-                class="form-control @error('foto4') is-invalid @enderror"
-                onchange="previewImage(event, 'previewFoto4', 'msgFoto4')" />
-            @error('foto4')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-            <div class="mt-3" id="previewFoto4" style="{{ isset($data->foto4) ? '' : 'display: none;' }}">
-                <label class="fw-bold">Preview Foto 4</label><br>
-                <img src="{{ isset($data->foto4) ? asset($data->foto4) : '' }}" class="img-fluid rounded border" style="max-height: 300px;">
-            </div>
-            <div id="msgFoto4" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->foto4) ? 'display:none;' : '' }}">
-                Belum Upload Foto. Silakan upload file gambar dokumentasi.
-            </div>
-        </div>
-    </div>
-
-    {{-- Foto 5 --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="foto5">
-                <i class="bi bi-image" style="color: darkgreen; margin-right: 8px;"></i> Upload Foto Dokumentasi 5
-            </label>
-            <input type="file" id="foto5" name="foto5" accept="image/*"
-                class="form-control @error('foto5') is-invalid @enderror"
-                onchange="previewImage(event, 'previewFoto5', 'msgFoto5')" />
-            @error('foto5')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-            <div class="mt-3" id="previewFoto5" style="{{ isset($data->foto5) ? '' : 'display: none;' }}">
-                <label class="fw-bold">Preview Foto 5</label><br>
-                <img src="{{ isset($data->foto5) ? asset($data->foto5) : '' }}" class="img-fluid rounded border" style="max-height: 300px;">
-            </div>
-            <div id="msgFoto5" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->foto5) ? 'display:none;' : '' }}">
-                Belum Upload Foto. Silakan upload file gambar dokumentasi.
-            </div>
-        </div>
-    </div>
-
-    {{-- Foto 6 --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="foto6">
-                <i class="bi bi-image" style="color: darkgreen; margin-right: 8px;"></i> Upload Foto Dokumentasi 6
-            </label>
-            <input type="file" id="foto6" name="foto6" accept="image/*"
-                class="form-control @error('foto6') is-invalid @enderror"
-                onchange="previewImage(event, 'previewFoto6', 'msgFoto6')" />
-            @error('foto6')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-            <div class="mt-3" id="previewFoto6" style="{{ isset($data->foto6) ? '' : 'display: none;' }}">
-                <label class="fw-bold">Preview Foto 6</label><br>
-                <img src="{{ isset($data->foto6) ? asset($data->foto6) : '' }}" class="img-fluid rounded border" style="max-height: 300px;">
-            </div>
-            <div id="msgFoto6" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->foto6) ? 'display:none;' : '' }}">
-                Belum Upload Foto. Silakan upload file gambar dokumentasi.
-            </div>
+        <div id="msgMateri2" class="mt-2 text-muted fst-italic"
+            style="{{ isset($data->materipelatihan2) ? 'display:none;' : '' }}">
+            Belum ada file PDF. Silakan upload materi pelatihan 2.
         </div>
     </div>
 </div>
 
-
-</div>
 <script>
-    function previewImage(event, previewId, msgId) {
+    function previewPDF(event, previewId, msgId) {
         const input = event.target;
         const file = input.files[0];
         const previewContainer = document.getElementById(previewId);
         const message = document.getElementById(msgId);
 
-        if (file) {
+        if (file && file.type === 'application/pdf') {
             const reader = new FileReader();
             reader.onload = function (e) {
-                const imgTag = previewContainer.querySelector('img');
-                imgTag.src = e.target.result;
+                const iframe = previewContainer.querySelector('iframe');
+                iframe.src = e.target.result;
                 previewContainer.style.display = 'block';
                 message.style.display = 'none';
             };
             reader.readAsDataURL(file);
+        } else {
+            previewContainer.style.display = 'none';
+            message.style.display = 'block';
         }
     }
 </script>
+
 
 
                                     </div>
