@@ -203,7 +203,7 @@ th {
 
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarinternalbidangbangunan')"
+    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarpeserta')"
       class="button-baru"
       style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
       <i class="bi bi-download"></i> Download Excel
@@ -247,9 +247,10 @@ th {
                 <hr>
                  <!-- /.card-header -->
           <div class="card-body p-0">
-                        <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                            <table class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
-                                <thead>
+                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+                        <table id="tabelSuratbantuanteknis"
+                            class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+                           <thead>
                                     <tr>
                                         <th style="width: 10px; text-align:center;">
                                             <i class="bi bi-hash" style="margin-right: 5px;"></i>No
