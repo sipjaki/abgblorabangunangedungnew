@@ -182,118 +182,96 @@
 
 
 
-                                            <!-- Font & Icon -->
+                                            <!-- Tambahkan ini di bagian <head> -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-<div class="bg-white shadow-lg rounded-xl p-8 max-w-4xl mx-auto my-6 text-[15px] text-neutral-800" style="font-family: 'Poppins', sans-serif; line-height: 1.75;">
+<!-- Konten -->
+<div style="max-width: 900px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); font-family: 'Poppins', sans-serif; font-size: 15px; color: #333; line-height: 1.8;">
 
   <!-- Judul -->
-  <h2 class="text-[20px] font-bold mb-4 flex items-center gap-2 text-[#1e3a8a]">
-    <i class="bi bi-bank2 text-[22px]"></i>
+  <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #1a1a1a;">
     Persetujuan Bangunan Gedung (PBG) - Fungsi Keagamaan
   </h2>
 
   <!-- Deskripsi -->
-  <div class="mb-6">
-    <p class="text-justify">
-      Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan sebelum mendirikan bangunan. Untuk bangunan fungsi keagamaan seperti masjid, gereja, vihara, pura, dan lainnya, PBG diperlukan agar pembangunan sesuai dengan ketentuan teknis, lingkungan, dan tata ruang yang berlaku.
-    </p>
-  </div>
+  <p style="text-align: justify; margin-bottom: 30px;">
+    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan sebelum mendirikan bangunan. Untuk bangunan fungsi keagamaan seperti masjid, gereja, vihara, pura, dan lainnya, PBG diperlukan agar pembangunan sesuai dengan ketentuan teknis, lingkungan, dan tata ruang yang berlaku.
+  </p>
 
   <!-- Klasifikasi -->
-  <div class="mb-6">
-    <h3 class="font-semibold text-[16px] mb-2 text-[#1f2937]">Klasifikasi Bangunan Keagamaan:</h3>
-    <ul class="list-disc ml-6 space-y-2 text-justify">
-      <li><strong>Sederhana</strong>
-        <ul class="list-disc ml-6 mt-1 space-y-1">
-          <li>1 lantai &lt; 72 m²</li>
-          <li>2 lantai &lt; 90 m²</li>
-        </ul>
-      </li>
-      <li><strong>Tidak Sederhana</strong>
-        <ul class="list-disc ml-6 mt-1 space-y-1">
-          <li>1 lantai ≥ 72 m²</li>
-          <li>2 lantai ≥ 90 m²</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Klasifikasi Bangunan Keagamaan:</h3>
+  <ul style="margin-left: 20px; margin-bottom: 30px;">
+    <li><strong>Sederhana:</strong>
+      <ul style="margin-left: 20px;">
+        <li>1 lantai &lt; 72 m²</li>
+        <li>2 lantai &lt; 90 m²</li>
+      </ul>
+    </li>
+    <li><strong>Tidak Sederhana:</strong>
+      <ul style="margin-left: 20px;">
+        <li>1 lantai ≥ 72 m²</li>
+        <li>2 lantai ≥ 90 m²</li>
+      </ul>
+    </li>
+  </ul>
 
-  <!-- Persyaratan Dokumen -->
-  <div class="mb-6">
-    <h3 class="font-semibold text-[16px] mb-3 text-[#1f2937]">Persyaratan Dokumen:</h3>
-    <ol class="list-decimal ml-6 space-y-4 text-justify">
-      <li>
-        <strong>Data Tanah:</strong>
-        <ul class="list-disc ml-6 mt-1 space-y-1">
-          <li>Sertifikat tanah</li>
-          <li>Izin Pemanfaatan Tanah (jika nama pemohon tidak sesuai dengan sertifikat)</li>
-          <li>Gambar kontur tanah dan sondir (untuk bangunan tidak sederhana)</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Data Umum:</strong>
-        <ul class="list-disc ml-6 mt-1 space-y-1">
-          <li>KTP/KITAS (Ketua Yayasan/Ormas/Lembaga)</li>
-          <li>KRK/KKPR</li>
-          <li>Dokumen lingkungan (SPPL atau dokumen dari DPMPTSP)</li>
-          <li>Data penyedia jasa konstruksi (SBU/Arsitek bersertifikat)</li>
-          <li>Surat Rekomendasi FKUB (Forum Kerukunan Umat Beragama)</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Data Teknis Arsitektur:</strong>
-        <ul class="list-disc ml-6 mt-1 space-y-1">
-          <li>Konsep arsitektur</li>
-          <li>Gambar situasi, rencana tapak, potongan, tampak, dan detail</li>
-          <li>Rencana tata ruang dalam & luar</li>
-          <li>Spesifikasi teknis arsitektur</li>
-          <li>Rekomendasi peta banjir (jika diperlukan)</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Data Teknis Struktur:</strong>
-        <ul class="list-disc ml-6 mt-1 space-y-1">
-          <li>Perhitungan struktur (untuk bangunan tidak sederhana)</li>
-          <li>Gambar detail struktur</li>
-          <li>Spesifikasi teknis struktur</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Data Teknis MEP:</strong>
-        <ul class="list-disc ml-6 mt-1 space-y-1">
-          <li>Gambar sistem jaringan listrik</li>
-          <li>Gambar sistem jaringan sanitasi</li>
-          <li>Gambar sistem proteksi kebakaran</li>
-          <li>Data teknis MEP lainnya</li>
-        </ul>
-      </li>
-    </ol>
-  </div>
+  <!-- Persyaratan -->
+  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Persyaratan Dokumen:</h3>
+  <ol style="margin-left: 20px; margin-bottom: 30px;">
+    <li><strong>Data Tanah:</strong>
+      <ul style="margin-left: 20px;">
+        <li>Sertifikat tanah</li>
+        <li>Izin Pemanfaatan Tanah (jika nama pemohon tidak sesuai)</li>
+        <li>Gambar kontur tanah & sondir (bangunan tidak sederhana)</li>
+      </ul>
+    </li>
+    <li><strong>Data Umum:</strong>
+      <ul style="margin-left: 20px;">
+        <li>KTP/KITAS pemohon</li>
+        <li>KRK/KKPR</li>
+        <li>SPPL/dokumen lingkungan (DPMPTSP)</li>
+        <li>SBU/Arsitek bersertifikat</li>
+        <li>Surat Rekomendasi FKUB</li>
+      </ul>
+    </li>
+    <li><strong>Data Teknis Arsitektur:</strong>
+      <ul style="margin-left: 20px;">
+        <li>Konsep & gambar lengkap (situasi, potongan, tampak)</li>
+        <li>Detail tata ruang dalam & luar</li>
+        <li>Spesifikasi teknis & peta banjir (jika perlu)</li>
+      </ul>
+    </li>
+    <li><strong>Data Teknis Struktur:</strong>
+      <ul style="margin-left: 20px;">
+        <li>Perhitungan struktur</li>
+        <li>Gambar detail & spesifikasi teknis struktur</li>
+      </ul>
+    </li>
+    <li><strong>Data Teknis MEP:</strong>
+      <ul style="margin-left: 20px;">
+        <li>Jaringan listrik & sanitasi</li>
+        <li>Proteksi kebakaran & sistem MEP lainnya</li>
+      </ul>
+    </li>
+  </ol>
 
-  <!-- Tahapan Pengurusan -->
-  <div>
-    <h3 class="font-semibold text-[16px] mb-3 text-[#1f2937]">Tahapan Pengurusan:</h3>
-    <ol class="list-decimal ml-6 space-y-2 text-justify">
-      <li>Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</li>
-      <li>Mendaftar, membuat permohonan, dan mengunggah dokumen ke
-        <a href="https://simbg.pu.go.id" target="_blank" class="text-blue-600 underline">https://simbg.pu.go.id</a>
-      </li>
-      <li>Menindaklanjuti hasil verifikasi operator dinas teknis</li>
-      <li>Penjadwalan konsultasi permohonan</li>
-      <li>Melakukan konsultasi bersama TPA/TPT</li>
-      <li>Merevisi dokumen sesuai masukan dari TPA/TPT</li>
-      <li>Dokumen disetujui oleh TPA/TPT</li>
-      <li>Unggah dokumen final, perhitungan retribusi, dan validasi teknis</li>
-      <li>Pembayaran retribusi via bank persepsi atau mobile banking</li>
-      <li>Penerbitan dokumen PBG oleh DPMPTSP</li>
-    </ol>
-  </div>
+  <!-- Tahapan -->
+  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Tahapan Pengurusan:</h3>
+  <ol style="margin-left: 20px;">
+    <li>Menyiapkan dokumen tanah, KRK/KKPR, & dokumen lingkungan</li>
+    <li>Mendaftar & unggah dokumen ke <a href="https://simbg.pu.go.id" target="_blank" style="color: #007bff;">simbg.pu.go.id</a></li>
+    <li>Verifikasi oleh operator Dinas Teknis</li>
+    <li>Penjadwalan konsultasi</li>
+    <li>Konsultasi bersama TPA/TPT</li>
+    <li>Revisi dokumen sesuai arahan</li>
+    <li>Dokumen disetujui TPA/TPT</li>
+    <li>Unggah final, validasi & retribusi</li>
+    <li>Pembayaran retribusi</li>
+    <li>Penerbitan PBG oleh DPMPTSP</li>
+  </ol>
 
 </div>
 
-<br>
                                         </div>
                                     </a>
                                 </div>
