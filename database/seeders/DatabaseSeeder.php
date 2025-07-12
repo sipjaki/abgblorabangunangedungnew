@@ -54,6 +54,7 @@ use App\Models\krkusaha;
 use App\Models\mbrgambar;
 use App\Models\pbgslfbangunan;
 use App\Models\pengawasatpt;
+use App\Models\pesertapelatihan;
 use App\Models\petugasdinas;
 use App\Models\suratpemberitahuanpbg;
 use App\Models\surattugaspbg;
@@ -12636,6 +12637,23 @@ jenjangpendidikan::create([
 ]);
 
 
+pesertapelatihan::create([
+    'agendapelatihanabg_id' => 1, // Ganti sesuai agenda terkait
+    'namalengkap' => 'Dr. Siti Aminah, M.Si',
+    'jenjangpendidikan_id' => 14, // ID Strata 3 (S3)
+    'nik' => '3201234567890001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1980-07-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'Universitas Negeri Contoh',
+    'sertifikat' => '05_agendapelatihan/03_sertifikat/sertifikat_s3_sitiaminah.pdf', // jika sudah diupload
+    // 'verifikasi' => 'Lolos', // atau 'Tidak Lolos'
+    // 'verifikasikehadiran' => true,
+    // 'terbitkansertifikat' => true,
+    // 'created_at' => Carbon::now(),
+    // 'updated_at' => Carbon::now(),
+    // 'deleted_at' => null // jika menggunakan soft deletes
+]);
 
 
     }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pesertapelatihans', function (Blueprint $table) {
             $table->id();
-               $table->foreignId('agendapelatihanabg_id')->nullable();
+            $table->foreignId('agendapelatihanabg_id')->nullable();
             $table->string('namalengkap')->nullable();
             // nama lengkap
             $table->foreignId('jenjangpendidikan_id')->nullable();
