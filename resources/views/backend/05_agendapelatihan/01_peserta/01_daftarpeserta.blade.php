@@ -374,7 +374,7 @@ th {
             <a href="{{ url('/beagendapesertalist/' . $item->id) }}" style="text-decoration: none;">
                 <button class="button-baru">
                     <span style="display: inline-flex; align-items: center;">
-                        <i class="bi bi-people-fill" style="margin-right: 6px;">Lihat Peserta</i>
+                        <i class="bi bi-people-fill" style="margin-right: 6px;"></i>Lihat Peserta
                         {{-- {{ $item->pesertapelatihan_count }} Peserta Dari / {{$item->jumlahpeserta}} Kuota --}}
                     </span>
                 </button>
