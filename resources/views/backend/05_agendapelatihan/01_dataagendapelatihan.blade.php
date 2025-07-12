@@ -283,18 +283,23 @@ th {
 <td>{{ $item->namakegiatan ?? '-' }}</td>
 <td>
     @if(\Carbon\Carbon::parse($item->penutupan)->isPast())
-        <span class="btn btn-danger button-dikembalikan py-2 px-3 fs-6">Ditutup</span>
+        <span class="btn btn-danger button-dikembalikan py-2 px-3 fs-6">
+            <i class="bi bi-lock-fill me-1"></i> Ditutup
+        </span>
     @else
-        <span class="btn btn-success button-lolos py-2 px-3 fs-6">Dibuka</span>
+        <span class="btn btn-success button-lolos py-2 px-3 fs-6">
+            <i class="bi bi-unlock me-1"></i> Dibuka
+        </span>
     @endif
 </td>
+
 
 <td>{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') ?? '-' }}</td>
 
 <td>{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') ?? '-' }}</td>
 <td>{{ $item->jumlahpeserta ?? '-' }}</td>
 <td style="text-align: left;">{{ $item->lokasi ?? '-' }}</td>
-<td>
+<td style="text-align: justify">
     @if($item->keterangan)
         @foreach(array_chunk(explode(' ', $item->keterangan), 5) as $chunk)
             {{ implode(' ', $chunk) }}<br>
@@ -304,7 +309,7 @@ th {
     @endif
 </td>
 
-<td>
+<td style="text-align: justify;">
     @if($item->isiagenda)
         @foreach(array_chunk(explode(' ', $item->isiagenda), 5) as $chunk)
             {{ implode(' ', $chunk) }}<br>
