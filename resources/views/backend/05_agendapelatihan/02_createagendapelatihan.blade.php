@@ -289,7 +289,7 @@ th {
         </div>
 
         {{-- Barcode Pelatihan --}}
-        <div class="mb-3 col-md-6">
+        {{-- <div class="mb-3 col-md-6">
             <label class="form-label" for="barcodepelatihan">
                 <i class="bi bi-upc text-primary me-1"></i> Barcode Pelatihan
             </label>
@@ -297,7 +297,7 @@ th {
             @error('barcodepelatihan')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
-        </div>
+        </div> --}}
 
         {{-- Isi Agenda --}}
         <div class="mb-3 col-md-12">
