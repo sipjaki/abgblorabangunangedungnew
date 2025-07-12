@@ -17,7 +17,7 @@
             <img src="/assets/abgblora/logo/pupr.png" alt="icon">
           </div>
       </div>
-      <form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6">
+      <form  id="Details" class="group result-card-container flex flex-col gap-6">
         <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
           <div class="flex p-4 items-center gap-4">
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
