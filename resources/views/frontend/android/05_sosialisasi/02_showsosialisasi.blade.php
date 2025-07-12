@@ -29,10 +29,7 @@
   <!-- Tombol Daftar Pelatihan -->
   <div class="flex justify-center my-6">
     <a href="/resdaftarpelatihanpeserta/create/{{$data->id}}">
-      <button
-        class="bg-blue-600 text-black font-semibold px-6 py-2 rounded-md
-               transition-colors duration-300
-               hover:bg-white hover:text-black border border-blue-600"
+      <button class="button-baru"
         type="button"
       >
         <i class="bi bi-person-fill mr-2"></i>
