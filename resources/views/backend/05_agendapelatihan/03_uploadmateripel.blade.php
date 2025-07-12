@@ -196,7 +196,7 @@ th {
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Upload Materi
 </button>
 
-<a href="{{ url('/dataallhibahbangunan') }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url('/beagendapelatihanabg') }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
         @endcanany
