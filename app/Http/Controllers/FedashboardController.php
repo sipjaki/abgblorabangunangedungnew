@@ -308,5 +308,19 @@ public function mbrgambarupdate($id)
         ]);
     }
 
+
+    public function febantekpenelitikontrak()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.04_bantuanteknis.04_infopeneliti', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi Permohonan Bantuan Peneliti Kontrak Penyelenggaraan Gedung Negara ',
+            'user' => $user,
+        ]);
+    }
+
 }
 
