@@ -361,5 +361,18 @@ public function mbrgambarupdate($id)
         ]);
     }
 
+    public function febantektimteknis()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.04_bantuanteknis.07_infotimteknis', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi Permohonan Bantuan TIm Teknis Penyelenggaraan Gedung Negara ',
+            'user' => $user,
+        ]);
+    }
+
 }
 

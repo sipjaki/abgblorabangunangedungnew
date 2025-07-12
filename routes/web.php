@@ -71,6 +71,7 @@ Route::get('/febantekpenelitikontrak', [FedashboardController::class, 'febantekp
 Route::get('/febantekperasset', [FedashboardController::class, 'febantekperasset']);
 Route::get('/febantekpermeliha', [FedashboardController::class, 'febantekpermeliha']);
 Route::get('/febantekdamping', [FedashboardController::class, 'febantekdamping']);
+Route::get('/febantektimteknis', [FedashboardController::class, 'febantektimteknis']);
 
 // Route::get('/feinfocampuran', [FedashboardController::class, 'feinfocampuran']);
 
