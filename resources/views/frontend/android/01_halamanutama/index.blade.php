@@ -73,7 +73,7 @@
     <a href="/daftaragenda/{{ $item->id }}" style="text-decoration: none;">
         <button class="button-baru"
             style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
-                   background-color: navy; color: white; font-weight: bold; font-size: 14px; transition: 0.3s;">
+                   background-color: navy; color: black; font-weight: bold; font-size: 14px; transition: 0.3s;">
             <i class="bi bi-pencil-square" style="font-size: 16px;"></i> Daftar
         </button>
     </a>
