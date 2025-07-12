@@ -136,7 +136,7 @@
 
 @include('frontend.abgblora.00_fiturmenu.02_header')
 @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
-@include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
+{{-- @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb') --}}
 @include('backend.00_administrator.00_baganterpisah.09_button')
 
 <section
