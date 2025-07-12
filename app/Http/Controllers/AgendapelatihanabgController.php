@@ -201,6 +201,47 @@ public function beagendapelatihanabgupload($id)
     ]);
 }
 
+public function beagendapelatihanabguploadnew(Request $request)
+{
+    // Validasi
+    $validated = $request->validate([
+        'agendapelatihan_id' => 'required|string',
+        'judulmateripelatihan' => 'required|string|max:255',
+        'materipelatihan1' => 'required|file|mimes:pdf|max:10240',
+        'materipelatihan2' => 'nullable|file|mimes:pdf|max:10240',
+    ], [
+        'judulmateripelatihan.required' => 'Judul materi wajib diisi.',
+        'materipelatihan1.required' => 'Materi pelatihan 1 wajib diunggah.',
+        'materipelatihan1.mimes' => 'Materi 1 harus berupa file PDF.',
+        'materipelatihan2.mimes' => 'Materi 2 harus berupa file PDF.',
+    ]);
 
+    // Simpan file
+    $folder = '05_agendapelatihan/02_berkasmateri';
+
+    $file1 = $request->file('materipelatihan1');
+    $file1Name = time() . '_materi1.' . $file1->getClientOriginalExtension();
+    $file1->move(public_path($folder), $file1Name);
+
+    $file2Path = null;
+    if ($request->hasFile('materipelatihan2')) {
+        $file2 = $request->file('materipelatihan2');
+        $file2Name = time() . '_materi2.' . $file2->getClientOriginalExtension();
+        $file2->move(public_path($folder), $file2Name);
+        $file2Path = $folder . '/' . $file2Name;
+    }
+
+    // Simpan ke DB
+    $materi = new materipelatihan();
+    $materi->agendapelatihan_id = $validated['agendapelatihan_id'];
+    $materi->judulmateripelatihan = $validated['judulmateripelatihan'];
+    $materi->materipelatihan1 = $folder . '/' . $file1Name;
+    $materi->materipelatihan2 = $file2Path;
+    $materi->save();
+
+    session()->flash('create', 'Materi pelatihan berhasil diunggah.');
+
+    return redirect()->route('beagendapelatihanabgmateri.show', ['id' => $validated['agendapelatihan_id']]);
+}
 }
 

@@ -195,7 +195,7 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('create.doklapbanhibahcreatenew') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('beagendapelatihanabguploadnew') }}" method="POST" enctype="multipart/form-data">
           @csrf
 
           <input type="hidden" name="agendapelatihan_id" value="{{ $data->id }}">
