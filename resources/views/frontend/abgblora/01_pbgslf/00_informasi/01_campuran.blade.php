@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informasi Bantuan Teknis Bangunan Gedung Negara</title>
 
     <!-- CSS Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -159,7 +153,14 @@
     @include('backend.00_administrator.00_baganterpisah.09_button')
 
     <!-- Banner Section -->
-    <section class="header-banner">
+    <section    style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+  "
+    class="header-banner">
         <section class="container max-w-[1130px] mx-auto" style="margin-top: 165px;">
             <br><br>
             <div class="flex items-center gap-[20px]">
@@ -246,5 +247,3 @@
             // Initialize map or other scripts
         });
     </script>
-</body>
-</html>
