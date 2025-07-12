@@ -203,12 +203,13 @@
                     <span class="font-bold">Form Permohonan Bantuan Teknis | Bangunan Gedung </span>
                 </p>
             </div>
-
             <form id="signatureForm" action="{{ route('permohonan.bantekcreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
                 @csrf
 
 
-<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
+                <input type="hidden" name="dinas_id" value="{{ $dinas_id }}">
+
+<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
     <i class="fas fa-info-circle me-2"></i>
     <div>
         <strong>Jenis Permohonan Bantuan Teknis Saudara ! </strong>
@@ -218,39 +219,96 @@
 
 <div class="row mt-3" style="margin-top: -25px;">
 <div class="col-md-6" style="margin-top: -60px;">
-  <div>
-    <label class="form-label d-flex align-items-center" for="jenispengajuanbantek_id">
-        <i class="fas fa-envelope" style="margin-right: 8px; color: navy;"></i> Jenis Permohonan
-    </label>
-  <select name="jenispengajuanbantek_id" id="jenispengajuanbantek_id"
-        class="form-control @error('jenispengajuanbantek_id') is-invalid @enderror"
-        style="font-size: 15px;">
-        <option value="">-- Pilih Jenis Pengajuan --</option>
-        @foreach ($datapilihanpengajuan as $pengajuan)
-            <option value="{{ $pengajuan->id }}" {{ old('jenispengajuanbantek_id') == $pengajuan->id ? 'selected' : '' }}>
-                {{ $pengajuan->jenispengajuan }}
-            </option>
-        @endforeach
-    </select>
-    @error('jenispengajuanbantek_id')
+    <div>
+        <label class="form-label d-flex align-items-center" for="jenispengajuanbantek_id">
+            <i class="fas fa-envelope" style="margin-right: 8px; color: navy;"></i> Jenis Permohonan Bantuan Teknis
+        </label>
+        <select name="jenispengajuanbantek_id" id="jenispengajuanbantek_id"
+            class="form-control @error('jenispengajuanbantek_id') is-invalid @enderror"
+            style="font-size: 15px;">
+            <option value="">-- Pilih Jenis Pengajuan --</option>
+            @foreach ($datapilihanpengajuan as $pengajuan)
+                <option value="{{ $pengajuan->id }}" {{ old('jenispengajuanbantek_id') == $pengajuan->id ? 'selected' : '' }}>
+                    {{ $pengajuan->jenispengajuan }}
+                </option>
+            @endforeach
+        </select>
+        @error('jenispengajuanbantek_id')
         <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-    @enderror
+        @enderror
+    </div>
 </div>
+
+<div class="col-md-6" id="konsultanFormGroup" style="margin-top: -70px; display: none;">
+    <div style="margin-top: 10px;">
+        <label class="form-label d-flex align-items-center" for="bujkkonsultan_id">
+            <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Pilih Konsultan Asistensi
+        </label>
+        <select id="bujkkonsultan_id" name="bujkkonsultan_id"
+            class="form-control w-100 @error('bujkkonsultan_id') is-invalid @enderror"
+            style="font-size: 15px;">
+            <option value="">-- Pilih Konsultan Asistensi --</option>
+            @foreach ($datakonsultanbantek as $admin)
+                <option value="{{ $admin->id }}" {{ old('bujkkonsultan_id') == $admin->id ? 'selected' : '' }}>
+                    {{ $admin->namalengkap }}
+                </option>
+            @endforeach
+        </select>
+        @error('bujkkonsultan_id')
+        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const jenisSelect = document.getElementById('jenispengajuanbantek_id');
+        const konsultanForm = document.getElementById('konsultanFormGroup');
+
+        function toggleKonsultanForm() {
+            if (jenisSelect.value === '1') {
+                konsultanForm.style.display = 'block';
+            } else {
+                konsultanForm.style.display = 'none';
+            }
+        }
+
+        // Inisialisasi saat halaman dimuat
+        toggleKonsultanForm();
+
+        // Event ketika jenis pengajuan berubah
+        jenisSelect.addEventListener('change', toggleKonsultanForm);
+    });
+</script>
+
 
 </div>
 <div>
 
 
-<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
+<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: 20px; margin-bottom: -35px;">
     <i class="fas fa-info-circle me-2"></i>
     <div>
         <strong>Informasi Permohonan Bantuan Teknis </strong>
     </div>
 </div>
 
-
 <div class="row mt-3" style="margin-top: 0px;">
-<div class="col-md-6" style="margin-top: 0px;">
+    <div class="col-md-6" style="margin-top: 0px;">
+    <div>
+        <label class="form-label d-flex align-items-center" for="nosuratdinas">
+            <i class="fas fa-file-alt" style="margin-right: 8px; color: navy;"></i> Nomor Surat Dinas
+        </label>
+        <input type="text" name="nosuratdinas" id="nosuratdinas"
+            class="form-control @error('nosuratdinas') is-invalid @enderror"
+            value="{{ old('nosuratdinas') }}">
+        @error('nosuratdinas')
+            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+{{-- <div class="col-md-6" style="margin-top: 0px;">
     <div>
         <label class="form-label d-flex align-items-center" for="nosurat">
             <i class="fas fa-envelope" style="margin-right: 8px; color: navy;"></i> No Surat Permohonan</span>
@@ -262,7 +320,7 @@
             <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
         @enderror
     </div>
-</div>
+</div> --}}
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -621,23 +679,6 @@
 </div>
 
 
-<div style="margin-top: 10px; margin-bottom: 30px;">
-    <label class="form-label d-flex align-items-center" for="dinas_id">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Daftar Dinas Kabupaten Blora
-    </label>
-    <select id="dinas_id" name="dinas_id" class="form-control w-100 @error('dinas_id') is-invalid @enderror" style="font-size: 15px;">
-        <option value="">-- Pilih Dinas --</option>
-        @foreach ($statusadimindinas as $admin)
-            <option value="{{ $admin->id }}" {{ old('dinas_id') == $admin->id ? 'selected' : '' }}>
-                {{ $admin->name }}
-            </option>
-        @endforeach
-    </select>
-    @error('dinas_id')
-        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
-
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px;">
     <i class="fas fa-info-circle me-2"></i>
@@ -671,7 +712,7 @@
     </div>
 
     <!-- RW -->
-    <div class="col-md-4" style="margin-top: 12px;">
+    <div class="col-md-4" style="margin-top: -40px;">
         <label class="form-label d-flex align-items-center" for="rw">
             <i class="fas fa-hashtag" style="margin-right: 8px; color: navy;"></i> RW
         </label>
@@ -686,7 +727,7 @@
         @enderror
     </div>
 
-     <div class="col-md-4" style="margin-top: 12px; margin-bottom: 0px;">
+     <div class="col-md-4" style="margin-top: -40px; margin-bottom: 0px;">
         <label class="form-label d-flex align-items-center" for="kabupaten">
             <i class="fas fa-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
         </label>
@@ -797,88 +838,223 @@
 </div>
 
 
-<div class="flex flex-col gap-4 w-full mt-4 items-center">
-    <!-- Surat Permohonan -->
-    <div class="flex flex-col w-full sm:w-2/3" style="margin-top:15px;">
-        <label for="suratpermohonan" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
-            </svg>
-            <span class="text-sm">Surat Permohonan <br> File jpg/jpeg/pdf Max 5MB</span>
-        </label>
+<div class="flex gap-4 w-full mt-4">
+    <!-- KTP -->
+<!-- Surat Permohonan -->
+<div class="flex flex-col w-1/3" style="margin-top:15px;">
+    <label for="suratpermohonan" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+        </svg>
+        <span class="text-sm">Surat Permohonan <br> File .pdf Max 10Mb </span>
+    </label>
 
-        <input id="suratpermohonan" name="suratpermohonan" type="file" accept="image/*,application/pdf"
-            class="border border-[#ccc] rounded-md p-2 mb-2 @error('suratpermohonan') border-red-500 @enderror"
-            onchange="previewFile(this, 'suratpermohonanPreview')" />
+    <input id="suratpermohonan" name="suratpermohonan" type="file" accept="image/*,application/pdf"
+        class="border border-[#ccc] rounded-md p-2 mb-2 @error('suratpermohonan') border-red-500 @enderror"
+        onchange="previewFile(this, 'suratpermohonanPreview')" />
 
-        <div id="suratpermohonanPreview" class="mt-2"></div>
+    <div id="suratpermohonanPreview" class="mt-2"></div>
 
-        @error('suratpermohonan')
-            <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-        @enderror
+    @error('suratpermohonan')
+        <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function previewFile(input, previewId) {
+        const file = input.files[0];
+        const preview = document.getElementById(previewId);
+        preview.innerHTML = '';
+
+        if (file) {
+            const fileType = file.type;
+
+            if (fileType.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'mt-2 rounded-md';
+                    img.style.maxWidth = '100%';
+                    img.style.maxHeight = '250px';
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            } else if (fileType === 'application/pdf') {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = e.target.result;
+                    iframe.className = 'mt-2 rounded-md';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px';
+                    preview.appendChild(iframe);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.innerHTML = '<p class="text-red-500 text-sm">Format file tidak didukung untuk preview.</p>';
+            }
+        }
+    }
+</script>
+
+<!-- KIC -->
+<!-- KIC -->
+<div class="flex flex-col w-1/3" style="margin-top:15px;">
+    <label for="kic" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <span class="text-sm">Kartu Inventaris Barang <br> File .pdf Max 10Mb </span>
+    </label>
+
+    <input id="kic" name="kic" type="file" accept="application/pdf,image/*"
+        class="border border-[#ccc] rounded-md p-2 mb-2 @error('kic') border-red-500 @enderror"
+        onchange="previewFile(this, 'kicPreview')" />
+
+    <div id="kicPreview" class="mt-2">
+        @if(session('kic_temp'))
+            <div class="mt-1 text-sm text-gray-700">
+                <a href="{{ Storage::url(session('kic_temp')) }}" target="_blank" class="text-blue-500 underline">Lihat file sebelumnya</a>
+            </div>
+        @elseif(old('kic'))
+            <div class="mt-1 text-sm text-gray-700">
+                File sudah dipilih: {{ old('kic') }}
+            </div>
+        @endif
     </div>
 
-    <!-- KIC -->
-    <div class="flex flex-col w-full sm:w-2/3" style="margin-top:15px;">
-        <label for="kic" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span class="text-sm">Kartu Inventaris Barang <br> File .pdf / image Max 5Mb</span>
-        </label>
+    @error('kic')
+        <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
+    @enderror
+</div>
 
-        <input id="kic" name="kic" type="file" accept="application/pdf,image/*"
-            class="border border-[#ccc] rounded-md p-2 mb-2 @error('kic') border-red-500 @enderror"
-            onchange="previewFile(this, 'kicPreview')" />
+<script>
+    function previewFile(input, previewId) {
+        const file = input.files[0];
+        const preview = document.getElementById(previewId);
+        preview.innerHTML = '';
 
-        <div id="kicPreview" class="mt-2">
-            @if(session('kic_temp'))
-                <div class="mt-1 text-sm text-gray-700">
-                    <a href="{{ Storage::url(session('kic_temp')) }}" target="_blank" class="text-blue-500 underline">Lihat file sebelumnya</a>
-                </div>
-            @elseif(old('kic'))
-                <div class="mt-1 text-sm text-gray-700">
-                    File sudah dipilih: {{ old('kic') }}
-                </div>
-            @endif
+        if (file) {
+            const fileType = file.type;
+
+            // Jika gambar
+            if (fileType.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'mt-2 rounded-md';
+                    img.style.maxWidth = '100%';
+                    img.style.maxHeight = '250px';
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+
+            // Jika PDF
+            } else if (fileType === 'application/pdf') {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = e.target.result;
+                    iframe.className = 'mt-2 rounded-md';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px';
+                    preview.appendChild(iframe);
+                };
+                reader.readAsDataURL(file);
+
+            // Format tidak didukung
+            } else {
+                preview.innerHTML = '<p class="text-red-500 text-sm mt-2">Format file tidak didukung untuk preview. Harap unggah file PDF atau gambar.</p>';
+            }
+        }
+    }
+</script>
+
+<!-- Foto Kondisi -->
+<div class="flex flex-col w-1/3" style="margin-top:15px;">
+    <label for="fotokondisi" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 2v20h12V2H6zm4 12H8v-2h2v2zm4-2h-2v2h2v-2zm2-6H8V4h8v4z" />
+        </svg>
+        <span class="text-sm">Foto Kondisi <br>File .pdf Max 10Mb </span>
+    </label>
+    <input id="fotokondisi" name="fotokondisi" type="file" accept="application/pdf"
+    class="border border-[#ccc] rounded-md p-2 mb-2 @error('fotokondisi') border-red-500 @enderror"
+    onchange="previewFile(this, 'fotokondisiPreview')" />
+<div id="fotokondisiPreview" class="mt-1">
+    @if(session('fotokondisi_temp'))
+        <div class="mt-1 text-sm text-gray-700">
+            <a href="{{ Storage::url(session('fotokondisi_temp')) }}" target="_blank" class="text-blue-500 underline">
+                Lihat File PDF
+            </a>
+        </div>
+    @elseif(old('fotokondisi'))
+        <div class="mt-1 text-sm text-gray-700">
+            File sudah dipilih: {{ old('fotokondisi') }}
+        </div>
+    @endif
+</div>
+
+    @error('fotokondisi')
+        <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
+    @enderror
+</div>
+
+
+</div>
+<div id="uploadSection" style="display: none;">
+    <div class="flex gap-4 w-full mt-4">
+        <!-- RAB -->
+        <div class="flex flex-col w-1/3" style="margin-top:15px;">
+            <label for="rab" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+                </svg>
+                <span class="text-sm">Rencana Anggaran Biaya <br> File .pdf Max 10Mb </span>
+            </label>
+
+            <input id="rab" name="rab" type="file" accept="image/*,application/pdf"
+                class="border border-[#ccc] rounded-md p-2 mb-2 @error('rab') border-red-500 @enderror"
+                onchange="previewFile(this, 'rabPreview')" />
+
+            <div id="rabPreview" class="mt-2"></div>
+
+            @error('rab')
+                <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
+            @enderror
         </div>
 
-        @error('kic')
-            <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-        @enderror
-    </div>
+        <!-- As Built Drawing -->
+        <div class="flex flex-col w-1/3" style="margin-top:15px;">
+            <label for="asbuilt" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span class="text-sm">As Built Drawing <br> File .pdf Max 10Mb </span>
+            </label>
 
-    <!-- Foto Kondisi -->
-    <div class="flex flex-col w-full sm:w-2/3" style="margin-top:15px;">
-        <label for="fotokondisi" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 2v20h12V2H6zm4 12H8v-2h2v2zm4-2h-2v2h2v-2zm2-6H8V4h8v4z" />
-            </svg>
-            <span class="text-sm">Foto Kondisi <br> File Pdf Max 5Mb</span>
-        </label>
+            <input id="asbuilt" name="asbuilt" type="file" accept="application/pdf,image/*"
+                class="border border-[#ccc] rounded-md p-2 mb-2 @error('asbuilt') border-red-500 @enderror"
+                onchange="previewFile(this, 'asbuiltPreview')" />
 
-        <input id="fotokondisi" name="fotokondisi" type="file" accept="application/pdf"
-            class="border border-[#ccc] rounded-md p-2 mb-2 @error('fotokondisi') border-red-500 @enderror"
-            onchange="previewFile(this, 'fotokondisiPreview')" />
+            <div id="asbuiltPreview" class="mt-2">
+                @if(session('asbuilt_temp'))
+                    <div class="mt-1 text-sm text-gray-700">
+                        <a href="{{ Storage::url(session('asbuilt_temp')) }}" target="_blank" class="text-blue-500 underline">Lihat file sebelumnya</a>
+                    </div>
+                @elseif(old('asbuilt'))
+                    <div class="mt-1 text-sm text-gray-700">
+                        File sudah dipilih: {{ old('asbuilt') }}
+                    </div>
+                @endif
+            </div>
 
-        <div id="fotokondisiPreview" class="mt-1">
-            @if(session('fotokondisi_temp'))
-                <div class="mt-1 text-sm text-gray-700">
-                    <a href="{{ Storage::url(session('fotokondisi_temp')) }}" target="_blank" class="text-blue-500 underline">
-                        Lihat File PDF
-                    </a>
-                </div>
-            @elseif(old('fotokondisi'))
-                <div class="mt-1 text-sm text-gray-700">
-                    File sudah dipilih: {{ old('fotokondisi') }}
-                </div>
-            @endif
+            @error('asbuilt')
+                <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
+            @enderror
         </div>
-            <p style="font-size: 12px;">Keterangan : Gabungkan Semua Foto dan Merge menjadi .pdf</p>
-
-        @error('fotokondisi')
-            <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-        @enderror
     </div>
 </div>
 
@@ -886,46 +1062,53 @@
     function previewFile(input, previewId) {
         const file = input.files[0];
         const preview = document.getElementById(previewId);
-
-        if (!preview) {
-            console.error(`Elemen dengan ID '${previewId}' tidak ditemukan.`);
-            return;
-        }
-
         preview.innerHTML = '';
 
         if (file) {
             const fileType = file.type;
-            const reader = new FileReader();
 
-            reader.onload = function (e) {
-                if (fileType.startsWith('image/')) {
+            if (fileType.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
                     const img = document.createElement('img');
                     img.src = e.target.result;
                     img.className = 'mt-2 rounded-md';
                     img.style.maxWidth = '100%';
                     img.style.maxHeight = '250px';
                     preview.appendChild(img);
-                } else if (fileType === 'application/pdf') {
+                };
+                reader.readAsDataURL(file);
+            } else if (fileType === 'application/pdf') {
+                const reader = new FileReader();
+                reader.onload = function(e) {
                     const iframe = document.createElement('iframe');
                     iframe.src = e.target.result;
                     iframe.className = 'mt-2 rounded-md';
                     iframe.style.width = '100%';
                     iframe.style.height = '400px';
-                    iframe.allow = "autoplay";
                     preview.appendChild(iframe);
-                } else {
-                    preview.innerHTML = '<p class="text-red-500 text-sm">Format file tidak didukung untuk preview.</p>';
-                }
-            };
-
-            reader.onerror = function (e) {
-                preview.innerHTML = '<p class="text-red-500 text-sm">Gagal membaca file.</p>';
-            };
-
-            reader.readAsDataURL(file);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.innerHTML = '<p class="text-red-500 text-sm mt-2">Format file tidak didukung untuk preview. Harap unggah file PDF atau gambar.</p>';
+            }
         }
     }
+
+    // Fungsi cek pilihan dropdown
+    function cekPilihan() {
+        const select = document.getElementById('jenispengajuanbantek_id');
+        const uploadSection = document.getElementById('uploadSection');
+        if (select.value === '4') {
+            uploadSection.style.display = 'block';
+        } else {
+            uploadSection.style.display = 'none';
+        }
+    }
+
+    // Jalankan saat load halaman dan saat ada perubahan pilihan
+    window.addEventListener('load', cekPilihan);
+    document.getElementById('jenispengajuanbantek_id').addEventListener('change', cekPilihan);
 </script>
 
     <div class="flex justify-end" style="margin-top: 20px;">
@@ -1058,6 +1241,38 @@
 </div>
 </div>
 
+
+<script>
+function previewFile(input, previewId) {
+    const file = input.files[0];
+    const preview = document.getElementById(previewId);
+    preview.innerHTML = ""; // kosongkan preview sebelumnya
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            if (file.type.includes("image")) {
+                preview.innerHTML = `<img src="${e.target.result}" class="w-full max-h-[150px] object-contain border rounded" />`;
+            } else if (file.type === "application/pdf") {
+                // Menggunakan iframe dan mengatur zoom out lebih jauh
+                preview.innerHTML = `
+                    <iframe src="${e.target.result}#toolbar=0&zoom=35"
+                            class="w-full"
+                            style="height: 400px; border: 1px solid #ccc; border-radius: 8px;"
+                            frameborder="0">
+                    </iframe>
+                `;
+            } else {
+                preview.innerText = "File tidak bisa dipreview";
+            }
+        };
+
+        reader.readAsDataURL(file);
+    }
+}
+
+    </script>
 
 
                 {{-- <button type="submit" class="bg-blue-600 px-4 py-2 rounded" style="color: black;">Kirim Permohonan</button> --}}
