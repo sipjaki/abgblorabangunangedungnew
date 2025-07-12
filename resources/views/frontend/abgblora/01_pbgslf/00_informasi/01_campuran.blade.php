@@ -927,55 +927,48 @@
             }
         }
     </style>
+<!-- PASTIKAN LINK CSS BERIKUT INI ADA -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <div class="container" style="margin-top: -25px;">
-        <!-- Alur Proses -->
+<div class="container-fluid px-4" style="font-family: 'Poppins', sans-serif; margin-top: -25px;">
 
-        <!-- Lampiran -->
-        <div class="attachments">
-            <h6 class="attachments-title" style="font-family: 'Poppins', sans-serif;"><i class="fas fa-paperclip"></i> Lampiran Informasi</h6>
-            <div class="attachment-list">
+    <!-- Lampiran -->
+    <div class="mb-5">
+        <h6 class="fw-semibold mb-4" style="font-size: 18px;">
+            <i class="bi bi-paperclip text-primary"></i> Lampiran Informasi
+        </h6>
 
-<form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6">
-
-        <div class="flex flex-col space-y-3 px-[18px]">
+        <div class="row g-4">
             <!-- Card 1 -->
-<a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-  <!-- Gambar Thumbnail Penuh -->
-  <div class="w-full h-auto rounded-lg overflow-hidden">
-    <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png" class="object-cover w-full h-full" alt="thumbnail">
-  </div>
-
-  <br>
-  <!-- Info Teks -->
-<div class="flex flex-col gap-2 mt-4">
-  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
-  </p>
-  <p class="text-[16px] text-neutral-700" style="text-align: justify;">
-    PBG adalah dokumen yang diperlukan untuk bangunan dengan fungsi campuran, seperti pelayanan pendidikan, kesehatan, kebudayaan, laboratorium, dan umum. Syarat pengajuan meliputi dokumen tanah, data umum (KTP, NIB, KRK), serta dokumen teknis arsitektur, struktur, dan MEP. Prosesnya dimulai dari pendaftaran via SIMBG.PU, konsultasi teknis, validasi, pembayaran retribusi, hingga penerbitan dokumen PBG.
-  </p>
-</div>
-
-</a>
-
-
-      </form>
-
+            <div class="col-md-12">
+                <a href="#" class="text-decoration-none">
+                    <div class="card shadow-sm border-0 h-100">
+                        <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png" class="card-img-top" alt="thumbnail" style="object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-semibold">
+                                Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
+                            </h5>
+                            <p class="card-text text-secondary" style="text-align: justify;">
+                                PBG adalah dokumen yang diperlukan untuk bangunan dengan fungsi campuran, seperti pelayanan pendidikan, kesehatan, kebudayaan, laboratorium, dan umum. Syarat pengajuan meliputi dokumen tanah, data umum (KTP, NIB, KRK), serta dokumen teknis arsitektur, struktur, dan MEP. Prosesnya dimulai dari pendaftaran via SIMBG.PU, konsultasi teknis, validasi, pembayaran retribusi, hingga penerbitan dokumen PBG.
+                            </p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-
-        <!-- Kontak -->
-        <div class="contact-section">
-            <h3 class="contact-title" style="font-family: 'Poppins', sans-serif; color:white;"><i class="fas fa-headset"></i> Layanan dan Pengaduan</h3>
-            <p>Untuk permohonan bantuan, pengaduan, saran, atau masukan terkait pelayanan kami</p>
-            <a href="mailto:bid.bangunan.gedung.blora@gmail.com" class="contact-email">
-                <i class="fas fa-envelope"></i> bid.bangunan.gedung.blora@gmail.com
-            </a>
-        </div>
-
-
     </div>
+
+    <!-- Kontak -->
+    <div class="p-4 rounded" style="background-color: #4041DA; color: white;">
+        <h5 class="fw-semibold mb-2"><i class="bi bi-headset"></i> Layanan dan Pengaduan</h5>
+        <p class="mb-1">Untuk permohonan bantuan, pengaduan, saran, atau masukan terkait pelayanan kami:</p>
+        <a href="mailto:bid.bangunan.gedung.blora@gmail.com" class="text-white text-decoration-underline">
+            <i class="bi bi-envelope"></i> bid.bangunan.gedung.blora@gmail.com
+        </a>
+    </div>
+</div>
 
 
 
