@@ -11927,7 +11927,7 @@ kelurahandesa::create([
 
 
 // DATABASE BANTUAN TEKNIS
- for ($i = 1; $i <= 10; $i++) {
+ for ($i = 1; $i <= 199; $i++) {
             bantuanteknis::create([
                 'dinas_id' => rand(1, 15),
                 'jenispengajuanbantek_id' => rand(1, 8),
