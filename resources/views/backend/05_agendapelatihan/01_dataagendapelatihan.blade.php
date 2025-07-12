@@ -283,9 +283,9 @@ th {
 <td>{{ $item->namakegiatan ?? '-' }}</td>
 <td>
     @if(\Carbon\Carbon::parse($item->penutupan)->isPast())
-        <span class="badge bg-danger">Ditutup</span>
+        <span class="btn btn-danger button-dikembalikan py-2 px-3 fs-6">Ditutup</span>
     @else
-        <span class="badge bg-success">Dibuka</span>
+        <span class="btn btn-success button-lolos py-2 px-3 fs-6">Dibuka</span>
     @endif
 </td>
 
@@ -296,7 +296,7 @@ th {
 <td style="text-align: left;">{{ $item->lokasi ?? '-' }}</td>
 <td>
     @if($item->keterangan)
-        @foreach(array_chunk(explode(' ', $item->keterangan), 10) as $chunk)
+        @foreach(array_chunk(explode(' ', $item->keterangan), 5) as $chunk)
             {{ implode(' ', $chunk) }}<br>
         @endforeach
     @else
@@ -306,7 +306,7 @@ th {
 
 <td>
     @if($item->isiagenda)
-        @foreach(array_chunk(explode(' ', $item->isiagenda), 10) as $chunk)
+        @foreach(array_chunk(explode(' ', $item->isiagenda), 5) as $chunk)
             {{ implode(' ', $chunk) }}<br>
         @endforeach
     @else
