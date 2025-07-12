@@ -40,25 +40,35 @@
 <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
   <!-- Gambar Thumbnail Penuh -->
   <div class="w-full h-auto rounded-lg overflow-hidden">
-    <img src="/assets/android/bantek/8.jpg" class="object-cover w-full h-full" alt="thumbnail">
+    <img src="/assets/android/bantek/10.jpg" class="object-cover w-full h-full" alt="thumbnail">
   </div>
 <br>
   <div class="w-full h-auto rounded-lg overflow-hidden">
-    <img src="/assets/android/bantek/9.jpg" class="object-cover w-full h-full" alt="thumbnail">
+    <img src="/assets/android/bantek/11.jpg" class="object-cover w-full h-full" alt="thumbnail">
   </div>
 
   <br>
 <!-- Info Teks -->
+<!-- Info Teks -->
 <div class="flex flex-col gap-2 mt-4">
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Jenis Bantuan Teknis - Perhitungan Nilai Saat Ini (Present Value) BGN
+    4. Perhitungan Biaya Pemeliharaan BGN
   </p>
   <p class="text-[16px] text-neutral-700" style="text-align: justify;">
-    Perhitungan nilai saat ini (present value) BGN merupakan bagian dari unsur yang diperhitungkan dalam analisis penilaian aset saat ini yang digunakan antara lain untuk pembangunan dalam rangka perawatan atau pembongkaran BGN:
-    <br><br>
-    1. Penyusutan<br>
-    2. Tingkat Kerusakan<br><br>
-    Tenaga teknis yang diperbantukan bertugas melakukan kegiatan penilaian bongkaran bangunan / bangunan yang akan dibongkar untuk menentukan nilai wajar atas bongkaran bangunan yang masih mempunyai nilai ekonomis.
+    Pemeliharaan bangunan gedung adalah kegiatan menjaga keandalan bangunan gedung beserta prasarana dan sarananya agar selalu laik fungsi.
+    Biaya pemeliharaan BGN ditentukan paling banyak <strong>2% (dua persen)</strong> dari SHST sesuai klasifikasi kompleksitas BGN tahun berjalan.
+  </p>
+
+  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA] mt-4">
+    5. Perhitungan Biaya Pelaksanaan Konstruksi Fisik Pembangunan BGN (standar non standar) dan Usulan Pembiayaan
+  </p>
+  <p class="text-[16px] text-neutral-700" style="text-align: justify;">
+    Usulan/Rekomendasi Pembiayaan Pembangunan Bangunan Gedung Negara yang dibuat merupakan <strong>pagu maksimum</strong> yang menjadi acuan bagi pengguna anggaran dalam pembangunan Bangunan Gedung Negara.<br><br>
+    Komponen pembiayaan terdiri dari:<br>
+    1. Biaya pelaksanaan konstruksi<br>
+    2. Biaya untuk jasa penyedia perencana teknis<br>
+    3. Biaya manajemen konstruksi/pengawasan teknis<br>
+    4. Biaya pengelolaan kegiatan pembangunan Bangunan Gedung Negara.
   </p>
 </div>
 
