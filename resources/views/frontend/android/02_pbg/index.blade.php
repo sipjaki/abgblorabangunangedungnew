@@ -11,6 +11,7 @@
             <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon">
           </div>
         <p class="font-semibold leading-[28px] text-white text-center" style="font-size: 17px;">Dinas Pekerjaan Umum <br> Dan Penataan Ruang <br> Kabupaten Blora </span></p>
+        
         <div class="w-[42px] h-[42px] flex shrink-0">
             <img src="/assets/abgblora/logo/pupr.png" alt="icon">
           </div>
