@@ -197,7 +197,7 @@
                     <img src="/assets/new/icons/story.svg" alt="icon">
                 </div>
                 <p class="text-white font-normal text-sm">
-                    <span class="font-bold">Informasi Bantuan Teknis Penyelenggaraan Bangunan Gedung Negara</span>
+                    <span class="font-bold">Informasi Permohonan (PBG) Persetujuan Bangunan Gedung & (SLF) Sertifikat Laik Fungsi</span>
                 </p>
             </div>
 
