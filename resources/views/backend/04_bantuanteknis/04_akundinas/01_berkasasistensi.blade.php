@@ -230,7 +230,7 @@ th {
              {{-- @canany(['superadmin', 'admin']) --}}
     @canany(['superadmin', 'admin'])
     <a href="{{ route('bebantuanteknisindexmenu') }}">
-        <button class="button-kembali button-abgblora" type="button"
+        <button class="button-newvalidasi button-abgblora" type="button"
             style="cursor: pointer; margin-left:5px; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
@@ -342,7 +342,7 @@ th {
 
             <td style="text-align: center;">
                 <a href="{{ route('beasistensishowberkas1.show', $item->id) }}"
-                    class="button-kembali"
+                    class="button-newvalidasi"
                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
@@ -354,7 +354,7 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('bebantuanasistensilap.show', $item->id) }}"
-                    class="button-kembali"
+                    class="button-newvalidasi"
                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
@@ -367,7 +367,7 @@ th {
 
 <td style="text-align: center;">
     <button type="button"
-        class="button-kembali"
+        class="button-newvalidasi"
         data-bs-toggle="modal"
         data-bs-target="#modalLihatBerkas{{ $item->id }}"
         style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
