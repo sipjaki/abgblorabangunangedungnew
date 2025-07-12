@@ -491,22 +491,20 @@ public function infopbgprasarana()
 }
 
 
-    public function ressosialisasiindex()
-    {
+ public function ressosialisasiindex()
+{
+    $user = Auth::user();
 
-        $user = Auth::user();
-        // $agendapelatihan = agendapelatihanabg::all();
-        $agendapelatihan = agendapelatihanabg::orderBy('created_at', 'desc')->get();
+    // Ambil data agenda pelatihan terbaru dengan pagination 8 data per halaman
+    $agendapelatihan = agendapelatihanabg::orderBy('created_at', 'desc')->paginate(8);
 
-        // return view('/404', [
-        // return view('frontend.00_full.index', [
-        return view('frontend.android.05_sosialisasi.01_agendasosialisasi', [
-        // return view('frontend.android.01_halamanutama.index', [
-            'title' => 'Informasi Agenda Sosialisasi ',
-            'user' => $user,
-            'data' => $agendapelatihan,
-        ]);
-    }
+    // Tampilkan ke view dengan judul dan data
+    return view('frontend.android.05_sosialisasi.01_agendasosialisasi', [
+        'title' => 'Informasi Agenda Sosialisasi',
+        'user' => $user,
+        'data' => $agendapelatihan,
+    ]);
+}
 
 }
 
