@@ -208,7 +208,7 @@
     <input type="hidden" name="dinas_id" value="{{ $dinas_id }}">
 
     <!-- Section 1: Jenis Permohonan -->
-    {{-- <div class="form-section"> --}}
+    <div class="form-section">
         <div class="section-header">
             <i class="fas fa-info-circle"></i>
             <strong>Jenis Permohonan Bantuan Teknis Saudara!</strong>
