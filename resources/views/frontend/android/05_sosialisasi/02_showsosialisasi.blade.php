@@ -17,170 +17,233 @@
             <img src="/assets/abgblora/logo/pupr.png" alt="icon">
           </div>
       </div>
-      <form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6">
-        <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
-          <div class="flex p-4 items-center gap-4">
-            <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
-              <div class="flex items-center">
-                <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/05.png" class="object-cover w-full h-full" alt="photo">
-                </div>
-              </div>
-              <div class="flex flex-col flex-1 gap-[2px] text-left">
-                <p class="font-semibold">{{$title}}</p>
-                {{-- <p class="font-medium text-xs leading-[18px] text-[#757C98]">Contact Details</p> --}}
-              </div>
-            </button>
-          </div>
+<div class="flex flex-col z-30">
 
-                            <!-- Table Section -->
-                            <div class="flex flex-col gap-4 px-4" style="margin-top: -25px;">
-                                <br><br>
-<div class="flex flex-col gap-4 px-4 mt-4">
-    @foreach ($data as $item)
-    <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+            <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
-        <!-- Gambar -->
-        <div class="w-20 h-[90px] flex-shrink-0 rounded-2xl overflow-hidden" style="margin-right: 16px;">
-            <div style="margin-top: 10px;">
-                @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
-                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Sosialisasi" style="width: 100%; max-height: 75px; object-fit: contain;" loading="lazy">
-                @elseif($item->foto)
-                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 75px; object-fit: contain;" loading="lazy">
-                @else
-                    <p>Data belum diupdate</p>
-                @endif
-            </div>
-        </div>
-
-        <!-- Info -->
-        <div class="flex flex-col gap-1 w-full">
-            <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->namakegiatan}}</p>
-
-            @php
-                $text = $item->keterangan;
-                $limit = 100;
-                $truncatedText = strlen($text) > $limit ? substr($text, 0, $limit) . '...' : $text;
-            @endphp
-
-            <span class="text-[#000000] text-sm">{{ $truncatedText }}</span>
-
-            <p class="text-xs text-blue-500 cursor-pointer line-clamp-1 hover:line-clamp-none" id="moreText" style="display: none;">
-                <span class="text-[#000000]">{{ $item->keterangan }}</span>
-            </p>
-
-            <button class="text-xs mt-1" onclick="toggleText()" style="color: navy;">Selengkapnya</button>
-
-            <script>
-                function toggleText() {
-                    var moreText = document.getElementById("moreText");
-                    var button = document.querySelector("button");
-
-                    if (moreText.style.display === "none") {
-                        moreText.style.display = "inline";
-                        button.innerHTML = "Tutup";
-                    } else {
-                        moreText.style.display = "none";
-                        button.innerHTML = "Selengkapnya";
-                    }
-                }
-            </script>
-
-            @php
-                $eventDate = \Carbon\Carbon::parse($item->penutupan);
-                $today = \Carbon\Carbon::now();
-                $isClosed = $today->greaterThanOrEqualTo($eventDate);
-            @endphp
-
-            <div class="mt-2 w-full">
-                @if ($isClosed)
-                    <button style="
-                        background-color: #FF0000;
-                        color: white;
-                        border: 2px solid #FF0000;
-                        padding: 8px 12px;
-                        font-size: 14px;
-                        font-weight: bold;
-                        border-radius: 6px;
-                        cursor: not-allowed;
-                        opacity: 0.6;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 6px;
-                        width: 100%;
-                    " disabled>
-                        <i class="fas fa-times-circle"></i> Ditutup
-                    </button>
-                @else
-                    <a href="/ressosialisasishow/{{$item->id}}" style="text-decoration: none;">
-                        <button style="
-                            background-color: #006b1b;
-                            color: white;
-                            border: 2px solid #006b1b;
-                            padding: 8px 12px;
-                            font-size: 14px;
-                            font-weight: bold;
-                            border-radius: 6px;
-                            opacity: 0.9;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: 6px;
-                            width: 100%;
-                        " onmouseover="this.style.backgroundColor='white'; this.style.color='#006b1b';"
-                           onmouseout="this.style.backgroundColor='#006b1b'; this.style.color='white';">
-                           <i class="fas fa-user-check"></i> Daftar
+                <div class="container-surat">
+                    <div>
+                        <a href="/resdaftarpelatihanpeserta/create/{{$data->id}}">
+                            <button
+                            class="btn-navy"
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='1px solid navy';"
+                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.querySelector('i').style.color='white'; this.style.border='none';"
+                            onclick="window.location.href='your-link-here.html'"
+                            >
+                            <i class="bi bi-person-fill" style="color: white;"></i>
+                            Daftar Pelatihan
                         </button>
                     </a>
-                @endif
+                    </div>
+                    <div class="header-surat">
+                        <div class="header-text">
+                            <h3>AGENDA PEMBINAAN JASA KONSTRUKSI</h3>
+                            <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
+                            {{-- <p>----------------------------</p> --}}
+                        </div>
+                    </div>
+
+             <!-- Container agar elemen di tengah secara horizontal tanpa jarak atas-bawah -->
+             <div class="flex justify-center">
+                <div class="rounded-lg shadow-lg overflow-hidden w-fit">
+                    <div style="margin-top: 10px;">
+                        @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                            <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan"
+                                 style="width: 100%; max-height: 500px; object-fit: contain; border-radius: 20px;" loading="lazy">
+                        @elseif($data->foto)
+                            <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan"
+                                 style="width: 100%; max-height: 500px; object-fit: contain; border-radius: 20px;" loading="lazy">
+                        @else
+                            <p>Data belum diupdate</p>
+                        @endif
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    @endforeach
 
-    <!-- Pagination -->
-    {{-- <div class="mt-4">
-        {{ $data->links() }}
-    </div> --}}
-</div>
-                                </div>
-
-                                <br>
-
-                            <p style="color: black; font-weight:bold;">Keterangan : {{$title}} DPUPR Kab Blora Tahun 2025</p>
-                            <div class="pagination-info-box" style="margin: 20px 0; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px; width: 100%; text-align: center;">
-                                <div class="pagination-info" style="color: black; font-weight: 500; font-size: 14px; display: inline-block;">
-                                    Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
-                                </div>
-                            </div>
-                            <!-- Pagination Section -->
-                            <div class="pagination-container" style="display: flex; flex-direction: column; align-items: center;">
-                                <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top: 10px;">
-                                    <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
-                                        <a class="page-link" href="{{ $data->previousPageUrl() }}" style="padding: 10px 20px; border: 1px solid #ccc; border-radius: 5px; text-decoration: none; color: black; font-size: 14px;">
-                                            <i class="fas fa-arrow-left" style="margin-right: 10px;"></i>Previous
+                    <br>
+                    <h4 style="font-weight:bold;">I. INFORMASI AGENDA PELATIHAN </h4>
+                    <table class="table-identitas">
+                        {{-- @foreach ($data as $item) --}}
+                        <tr>
+                            <td class="label">1</td>
+                            <td class="label">Nama Kegiatan</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->namakegiatan}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label">2</td>
+                            <td class="label">Kategori</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->kategoripelatihan->kategoripelatihan}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label">3</td>
+                            <td class="label">Waktu Pelaksanaan</td>
+                            <td class="colon">:</td>
+                            <td>{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</td>
+                        </tr>
+                        <tr>
+                            <td class="label">4</td>
+                            <td class="label">Penyelenggara</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->asosiasimasjaki->namaasosiasi ?? '-'}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label">5</td>
+                            <td class="label">Lokasi</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->lokasi}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label">6</td>
+                            <td class="label">Jumlah Peserta</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->jumlahpeserta}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label">7</td>
+                            <td class="label">Undangan dan Daftar Peserta yg diundang </td>
+                            <td class="colon">:</td>
+                            <td>
+                                <div style="margin-top: 10px; text-align: center;">
+                                    @if($data->suratundangan && file_exists(public_path('storage/' . $data->suratundangan)))
+                                        <iframe src="{{ asset('storage/' . $data->suratundangan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                        <br>
+                                        <a href="{{ asset('storage/' . $data->suratundangan) }}" download
+                                           style="
+                                               display: inline-block;
+                                               margin-top: 10px;
+                                               padding: 10px 25px;
+                                               background: linear-gradient(45deg, #FFD700, #28a745); /* Emas ke hijau */
+                                               color: white;
+                                               text-decoration: none;
+                                               border-radius: 8px;
+                                               font-weight: bold;
+                                               transition: all 0.3s ease;
+                                           "
+                                           onmouseover="this.style.background='white'; this.style.color='black';"
+                                           onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #28a745)'; this.style.color='white';"
+                                        >
+                                           ⬇️ Download File
                                         </a>
-                                    </li>
-                                    <li class="page-item {{ $data->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
-                                        <a class="page-link" href="{{ $data->nextPageUrl() }}" style="padding: 10px 20px; border: 1px solid #ccc; border-radius: 5px; text-decoration: none; color: black; font-size: 14px;">
-                                            Next <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+
+                                    @elseif($data->suratundangan)
+                                        <iframe src="{{ asset($data->suratundangan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                        <br>
+                                        <a href="{{ asset($data->suratundangan) }}" download
+                                           style="
+                                               display: inline-block;
+                                               margin-top: 10px;
+                                               padding: 10px 25px;
+                                               background: linear-gradient(45deg, #FFD700, #28a745);
+                                               color: white;
+                                               text-decoration: none;
+                                               border-radius: 8px;
+                                               font-weight: bold;
+                                               transition: all 0.3s ease;
+                                           "
+                                           onmouseover="this.style.background='white'; this.style.color='black';"
+                                           onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #28a745)'; this.style.color='white';"
+                                        >
+                                           ⬇️ Download File
                                         </a>
-                                    </li>
-                                </ul>
-                            </div>
 
+                                    @else
+                                        <p>Data belum diupdate</p>
+                                    @endif
+                                </div>
+                            </td>
 
+                        </tr>
+                    </table>
+                            <br>
+                    <div class="portfolio-details-content">
+                        <div class="flex flex-col gap-[2px]">
+                            <h2 class="font-semibold" style="font-size: 16px; display: flex; align-items: center; gap: 6px;">
+                                <i class="bi bi-journal-text" style="font-size: 18px;"></i> Isi Agenda:
+                            </h2>
+                                         <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->isiagenda!!}</p>
+                        </div>
+                        <br>
+
+                        <div class="flex flex-col gap-[2px]">
+                            <h2 class="font-semibold text-sm" style="font-size: 16px; display: flex; align-items: center; gap: 6px;">
+                                <i class="bi bi-info-circle" style="font-size: 18px;"></i> Keterangan :
+                            </h2>
+                                                        <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->keterangan!!}</p>
                         </div>
 
+                    </div><!-- portfolio-details-content -->
+
+                    {{-- @endforeach --}}
+
+                    <br>
+
+                    <h4 style="font-weight:bold;">II. DOWNLOAD MATERI PELATIHAN</h4>
+                    <div style="margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+                        <table class="custom-fl-table" id="sortableTable">
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable(0)" style="cursor:pointer; width:100px;"> No </th>
+                                    <th onclick="sortTable(1)" style="cursor:pointer; width:500px;"> Judul </th>
+                                    <th onclick="sortTable(2)" style="cursor:pointer; width:800px;"> Materi </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                @php
+                                    $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
+                                    $materiFound = false; // Variabel untuk mengecek apakah ada materi
+                                    $dataAvailable = false; // Variabel untuk mengecek apakah ada data
+                                @endphp
+
+                                @foreach ($datamateripelatihan as $item)
+                                <tr>
+                                    <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                    <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
+                                    <td>
+                                        @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
+                                            <!-- File ditemukan di penyimpanan -->
+                                            <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="200px"></iframe>
+                                            <a href="{{ asset('storage/' . $item->materipelatihan) }}" download
+                                                class="badge"
+                                                style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
+                                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                            </a>
+                                        @elseif($item->materipelatihan)
+                                            <!-- File ada tapi bukan di storage, tampilkan dari URL langsung -->
+                                            <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                            <a href="{{ asset($item->materipelatihan) }}" download
+                                                class="badge"
+                                                style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
+                                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                            </a>
+                                        @else
+                                            <!-- Tidak ada file -->
+                                            <button class="badge"
+                                                style="background-color: red; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px;">
+                                                Materi Belum Di Upload
+                                            </button>
+                                        @endif
+                                    </td>
+                                </tr>
+                                @php $dataAvailable = true; @endphp <!-- Set variabel jadi true jika ada data -->
+                                @endforeach
+
+                            </tbody>
+                        </table>
+
+                        <!-- Jika tidak ada data sama sekali, tampilkan pesan di luar tabel -->
+                        @if(!$dataAvailable)
+                            <p class="no-data-message">MATERI BELUM DI UPLOAD</p>
+                        @endif
+                    </div>
+
+                    <br>
+                    </div>
+
+            </div>
         </div>
 
-
-
-            <!-- Card 1 -->
-
-
-      </form>
       <br><br>
 
       @include('frontend.android.00_fiturmenu.05_keterangan')
