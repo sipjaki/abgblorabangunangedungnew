@@ -179,35 +179,40 @@
         style="object-fit: cover; width: 100%; height: auto;">
                                                 <img src="/assets/android/pbgslf/PBG_FUNGSI_KEAGAMAAN.png" alt="PBG Fungsi Hunian">
                                             </div>
-<!-- Pastikan font Poppins dan Bootstrap Icons sudah ter-include -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-<div class="bg-white shadow-md rounded-xl p-6 mt-6 text-[15px] text-neutral-800 space-y-5" style="font-family: 'Poppins', sans-serif;">
+
+
+                                            <!-- Font & Icon -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<div class="bg-white shadow-lg rounded-xl p-8 max-w-4xl mx-auto my-6 text-[15px] text-neutral-800" style="font-family: 'Poppins', sans-serif; line-height: 1.75;">
 
   <!-- Judul -->
-  <h2 class="text-[18px] font-bold flex items-center gap-2">
-    <i class="bi bi-bank2 text-blue-700 text-[20px]"></i>
+  <h2 class="text-[20px] font-bold mb-4 flex items-center gap-2 text-[#1e3a8a]">
+    <i class="bi bi-bank2 text-[22px]"></i>
     Persetujuan Bangunan Gedung (PBG) - Fungsi Keagamaan
   </h2>
 
   <!-- Deskripsi -->
-  <p class="text-justify">
-    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan sebelum mendirikan bangunan. Untuk bangunan fungsi keagamaan seperti masjid, gereja, vihara, pura, dan lainnya, PBG diperlukan agar pembangunan sesuai dengan ketentuan teknis, lingkungan, dan tata ruang yang berlaku.
-  </p>
+  <div class="mb-6">
+    <p class="text-justify">
+      Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan sebelum mendirikan bangunan. Untuk bangunan fungsi keagamaan seperti masjid, gereja, vihara, pura, dan lainnya, PBG diperlukan agar pembangunan sesuai dengan ketentuan teknis, lingkungan, dan tata ruang yang berlaku.
+    </p>
+  </div>
 
   <!-- Klasifikasi -->
-  <div>
-    <h3 class="font-semibold mb-2"><i class="bi bi-diagram-3 text-blue-600 me-1"></i> Klasifikasi Bangunan Keagamaan:</h3>
-    <ul class="list-disc ml-6 space-y-1 text-justify">
+  <div class="mb-6">
+    <h3 class="font-semibold text-[16px] mb-2 text-[#1f2937]">Klasifikasi Bangunan Keagamaan:</h3>
+    <ul class="list-disc ml-6 space-y-2 text-justify">
       <li><strong>Sederhana</strong>
-        <ul class="list-disc ml-6">
+        <ul class="list-disc ml-6 mt-1 space-y-1">
           <li>1 lantai &lt; 72 m²</li>
           <li>2 lantai &lt; 90 m²</li>
         </ul>
       </li>
       <li><strong>Tidak Sederhana</strong>
-        <ul class="list-disc ml-6">
+        <ul class="list-disc ml-6 mt-1 space-y-1">
           <li>1 lantai ≥ 72 m²</li>
           <li>2 lantai ≥ 90 m²</li>
         </ul>
@@ -216,18 +221,20 @@
   </div>
 
   <!-- Persyaratan Dokumen -->
-  <div>
-    <h3 class="font-semibold mb-2"><i class="bi bi-file-earmark-text text-blue-600 me-1"></i> Persyaratan Dokumen:</h3>
-    <ol class="list-decimal ml-6 space-y-3 text-justify">
-      <li><strong>Data Tanah:</strong>
-        <ul class="list-disc ml-5">
+  <div class="mb-6">
+    <h3 class="font-semibold text-[16px] mb-3 text-[#1f2937]">Persyaratan Dokumen:</h3>
+    <ol class="list-decimal ml-6 space-y-4 text-justify">
+      <li>
+        <strong>Data Tanah:</strong>
+        <ul class="list-disc ml-6 mt-1 space-y-1">
           <li>Sertifikat tanah</li>
           <li>Izin Pemanfaatan Tanah (jika nama pemohon tidak sesuai dengan sertifikat)</li>
           <li>Gambar kontur tanah dan sondir (untuk bangunan tidak sederhana)</li>
         </ul>
       </li>
-      <li><strong>Data Umum:</strong>
-        <ul class="list-disc ml-5">
+      <li>
+        <strong>Data Umum:</strong>
+        <ul class="list-disc ml-6 mt-1 space-y-1">
           <li>KTP/KITAS (Ketua Yayasan/Ormas/Lembaga)</li>
           <li>KRK/KKPR</li>
           <li>Dokumen lingkungan (SPPL atau dokumen dari DPMPTSP)</li>
@@ -235,8 +242,9 @@
           <li>Surat Rekomendasi FKUB (Forum Kerukunan Umat Beragama)</li>
         </ul>
       </li>
-      <li><strong>Data Teknis Arsitektur:</strong>
-        <ul class="list-disc ml-5">
+      <li>
+        <strong>Data Teknis Arsitektur:</strong>
+        <ul class="list-disc ml-6 mt-1 space-y-1">
           <li>Konsep arsitektur</li>
           <li>Gambar situasi, rencana tapak, potongan, tampak, dan detail</li>
           <li>Rencana tata ruang dalam & luar</li>
@@ -244,15 +252,17 @@
           <li>Rekomendasi peta banjir (jika diperlukan)</li>
         </ul>
       </li>
-      <li><strong>Data Teknis Struktur:</strong>
-        <ul class="list-disc ml-5">
+      <li>
+        <strong>Data Teknis Struktur:</strong>
+        <ul class="list-disc ml-6 mt-1 space-y-1">
           <li>Perhitungan struktur (untuk bangunan tidak sederhana)</li>
           <li>Gambar detail struktur</li>
           <li>Spesifikasi teknis struktur</li>
         </ul>
       </li>
-      <li><strong>Data Teknis MEP:</strong>
-        <ul class="list-disc ml-5">
+      <li>
+        <strong>Data Teknis MEP:</strong>
+        <ul class="list-disc ml-6 mt-1 space-y-1">
           <li>Gambar sistem jaringan listrik</li>
           <li>Gambar sistem jaringan sanitasi</li>
           <li>Gambar sistem proteksi kebakaran</li>
@@ -264,8 +274,8 @@
 
   <!-- Tahapan Pengurusan -->
   <div>
-    <h3 class="font-semibold mb-2"><i class="bi bi-list-ol text-blue-600 me-1"></i> Tahapan Pengurusan:</h3>
-    <ol class="list-decimal ml-6 space-y-1 text-justify">
+    <h3 class="font-semibold text-[16px] mb-3 text-[#1f2937]">Tahapan Pengurusan:</h3>
+    <ol class="list-decimal ml-6 space-y-2 text-justify">
       <li>Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</li>
       <li>Mendaftar, membuat permohonan, dan mengunggah dokumen ke
         <a href="https://simbg.pu.go.id" target="_blank" class="text-blue-600 underline">https://simbg.pu.go.id</a>
@@ -283,6 +293,7 @@
 
 </div>
 
+<br>
                                         </div>
                                     </a>
                                 </div>
