@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\agendapelatihanabg;
-use App\Models\banhibahberkas;
-use App\Models\banhibahlapangan;
-use App\Models\banhibahskbupati;
-use App\Models\bantuanhibahbg;
+use Illuminate\Support\Str;
 use App\Models\kategoripelatihan;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -109,7 +105,7 @@ public function beagendapelatihanabgcreatenew(Request $request)
     $user = Auth::user();
 
     $validated = $request->validate([
-        'kategoripelatihan_id' => 'required|exists:kategoripelatihan,id',
+        'kategoripelatihan_id' => 'required|string',
         'namakegiatan' => 'required|string|max:255',
         'penutupan' => 'required|date',
         'waktupelaksanaan' => 'required|date',
