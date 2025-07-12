@@ -327,7 +327,7 @@ public function beagendapesertalist(Request $request, $id)
             ]);
         }
 
-        return view('backend.05_agendapelatihan.02_daftarpesertashow', [
+        return view('backend.05_agendapelatihan.01_peserta.02_daftarpesertashow', [
             'title' => 'Daftar Peserta Agenda Pelatihan',
             'data' => $agendapelatihan,
             'datapeserta' => $datapesertapelatihan,
