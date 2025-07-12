@@ -185,9 +185,11 @@
                                             <!-- Tambahkan ini di bagian <head> -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-<!-- Konten -->
 <!-- Tambahkan link Poppins jika belum -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Konten PBG Fungsi Prasarana -->
+<div style="max-width: 900px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); font-family: 'Poppins', sans-serif; font-size: 15px; color: #333; line-height: 1.8;">
 
   <!-- Judul -->
   <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #1a1a1a;">
@@ -245,7 +247,7 @@
     <li>Penerbitan dokumen PBG oleh DPMPTSP</li>
   </ol>
 
-
+</div>
 
                                         </div>
                                     </a>
