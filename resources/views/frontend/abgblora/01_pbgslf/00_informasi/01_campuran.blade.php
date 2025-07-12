@@ -179,7 +179,7 @@
     @include('backend.00_administrator.00_baganterpisah.09_button')
 
     <!-- Banner Section -->
-    <section class="header-banner">
+    <section class="header-banner" style="margin-top: 200px;">
         <div class="container max-w-[1130px] mx-auto" style="padding-top: 50px;">
             <div class="flex items-center gap-[20px]">
                 <!-- Content here -->
@@ -216,8 +216,11 @@
                                 <div class="col-md-12">
                                     <a href="#" class="text-decoration-none">
                                         <div class="card shadow-sm border-0 h-100">
-                                            <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png" class="card-img-top" alt="thumbnail" style="object-fit: cover; height: 800px;">
-                                            <div class="card-body">
+                                      <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png"
+        class="card-img-top img-fluid"
+        alt="thumbnail"
+        style="object-fit: cover; width: 100%; height: auto;">
+      <div class="card-body">
                                                 <h5 class="card-title text-primary fw-semibold">
                                                     Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
                                                 </h5>
