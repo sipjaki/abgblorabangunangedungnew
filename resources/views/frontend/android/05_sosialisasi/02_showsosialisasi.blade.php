@@ -23,33 +23,49 @@
       <div id="content" class="w-full max-w-7xl mx-auto bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
     <div class="container-surat px-6"> <!-- padding kiri kanan untuk jarak -->
+<div class="container mx-auto px-4 py-6">
 
-
-
-<div class="header-surat" style="text-align: center; margin-bottom: 20px;">
-     <div class="flex justify-center my-4">
-  <a href="/resdaftarpelatihanpeserta/create/{{$data->id}}">
-    <button
-      class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md
-             transition-colors duration-300
-             hover:bg-white hover:text-black border border-blue-600"
-      type="button"
-    >
-      <i class="bi bi-person-fill mr-2"></i>
-      Daftar Pelatihan
-    </button>
-  </a>
-</div>
-
-  <div class="header-text">
-    <h6 style="font-size: 1.8rem; font-weight: 700; color: #28A745; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 2px;">
-      AGENDA SOSIALISASI BANGUNAN GEDUNG
-    </h6>
-    <h4 style="font-size: 1.2rem; font-weight: 500; color: #444; line-height: 1.3;">
-      DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH
-    </h4>
+  <!-- Tombol Daftar Pelatihan -->
+  <div class="flex justify-center my-6">
+    <a href="/resdaftarpelatihanpeserta/create/{{$data->id}}">
+      <button
+        class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md
+               transition-colors duration-300
+               hover:bg-white hover:text-black border border-blue-600"
+        type="button"
+      >
+        <i class="bi bi-person-fill mr-2"></i>
+        Daftar Pelatihan
+      </button>
+    </a>
   </div>
+
+  <!-- Header Surat -->
+  <div class="header-surat text-center mb-8">
+    <div class="header-text">
+      <h6 style="
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #28A745;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      ">
+        AGENDA SOSIALISASI BANGUNAN GEDUNG
+      </h6>
+      <h4 style="
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #444;
+        line-height: 1.3;
+      ">
+        DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH
+      </h4>
+    </div>
+  </div>
+
 </div>
+
 
         <div class="flex justify-center">
             <div class="rounded-lg shadow-lg overflow-hidden w-fit">
