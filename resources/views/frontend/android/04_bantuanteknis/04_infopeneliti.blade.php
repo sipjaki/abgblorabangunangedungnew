@@ -43,6 +43,10 @@
     <img src="/assets/android/bantek/6.jpg" class="object-cover w-full h-full" alt="thumbnail">
   </div>
 
+  <div class="w-full h-auto rounded-lg overflow-hidden">
+    <img src="/assets/android/bantek/7.jpg" class="object-cover w-full h-full" alt="thumbnail">
+  </div>
+
   <br>
 <!-- Info Teks -->
 <div class="flex flex-col gap-2 mt-4">
