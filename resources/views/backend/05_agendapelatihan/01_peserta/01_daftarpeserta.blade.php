@@ -255,18 +255,18 @@ th {
 
      {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-book"></i> Materi Pelatihan</th> --}}
 <th style="background-color: #ADD8E6;"><i class="fas fa-tags"></i> Kategori Pelatihan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> User Input</th>
+{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> User Input</th> --}}
 <th style="background-color: #ADD8E6;"><i class="fas fa-chalkboard-teacher"></i> Nama Kegiatan</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-chalkboard-teacher"></i> Status</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-times"></i> Tanggal Penutupan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-calendar-check"></i> Waktu Pelaksanaan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Jumlah Peserta</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Lokasi</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-info-circle"></i> Keterangan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-align-left"></i> Isi Agenda</th>
+{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-check"></i> Waktu Pelaksanaan</th> --}}
+{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Jumlah Peserta</th> --}}
+{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Lokasi</th> --}}
+{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-info-circle"></i> Keterangan</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-align-left"></i> Isi Agenda</th> --}}
 <th style="background-color: #ADD8E6; width:300px;"><i class="fas fa-image" ></i> Foto</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-barcode"></i> Barcode Pelatihan</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th>
+{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th> --}}
 <th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Materi</th>
 
 <th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
@@ -280,7 +280,7 @@ th {
                                  <td>{{ $loop->iteration }}</td>
 {{-- <td>{{ $item->materipelatihan->nama ?? '-' }}</td> --}}
 <td>{{ $item->kategoripelatihan->kategoripelatihan ?? '-' }}</td>
-<td>{{ $item->user->name ?? '-' }}</td>
+{{-- <td>{{ $item->user->name ?? '-' }}</td> --}}
 
 <td style="text-align: justify">
     @if($item->namakegiatan)
@@ -307,7 +307,7 @@ th {
 
 <td>{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') ?? '-' }}</td>
 
-<td>{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') ?? '-' }}</td>
+{{-- <td>{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') ?? '-' }}</td>
 <td>{{ $item->jumlahpeserta ?? '-' }}</td>
 <td style="text-align: left;">{{ $item->lokasi ?? '-' }}</td>
 <td style="text-align: justify">
@@ -328,7 +328,7 @@ th {
     @else
         -
     @endif
-</td>
+</td> --}}
 
 <td>
     @if($item->foto && file_exists(storage_path('app/public/' . $item->foto)))
@@ -372,15 +372,9 @@ th {
                 </a>
             </td>
 
-            @can('superadmin')
+            {{-- @can('superadmin')
 
             <td style="text-align: center; vertical-align: middle;">
-                {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
-                    <i class="bi bi-eye"></i>
-                </a> --}}
-                                        {{-- <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
-                                            <i class="bi bi-pencil-square"></i>
-                                        </a> --}}
                                         <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
@@ -389,7 +383,7 @@ th {
                                     </a>
                                 </td>
 
-                                @endcan
+                                @endcan --}}
 
                                 </tr>
                                 @endforeach
