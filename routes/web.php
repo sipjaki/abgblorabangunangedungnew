@@ -68,6 +68,7 @@ Route::get('/resbantekpermohonan', [FedashboardController::class, 'resbantekperm
 
 Route::get('/febantekasistensi', [FedashboardController::class, 'febantekasistensi']);
 Route::get('/febantekpenelitikontrak', [FedashboardController::class, 'febantekpenelitikontrak']);
+Route::get('/febantekperasset', [FedashboardController::class, 'febantekperasset']);
 
 // Route::get('/feinfocampuran', [FedashboardController::class, 'feinfocampuran']);
 
