@@ -85,6 +85,7 @@ Route::get('/febantektimteknis', [FedashboardController::class, 'febantektimtekn
 
 // MENU SOSIALISASI
 Route::get('/ressosialisasiindex', [FedashboardController::class, 'ressosialisasiindex']);
+Route::get('/ressosialisasishow/{id}', [FedashboardController::class, 'ressosialisasishow']);
 
 // 08_ MENU MBR BANTUAN GAMBAR
 // ----------------------------------------------------------------------------------------

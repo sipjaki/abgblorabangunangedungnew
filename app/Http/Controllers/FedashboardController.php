@@ -505,6 +505,20 @@ public function infopbgprasarana()
         'data' => $agendapelatihan,
     ]);
 }
+public function ressosialisasishow($id)
+{
+    $user = Auth::user();
+
+    // Ambil data agenda pelatihan berdasarkan ID
+    $agendapelatihan = agendapelatihanabg::findOrFail($id);
+
+    return view('frontend.android.05_sosialisasi.02_showsosialisasi', [
+        'title' => 'Show Agenda Sosialisasi',
+        'user' => $user,
+        'data' => $agendapelatihan,
+    ]);
+}
+
 
 }
 
