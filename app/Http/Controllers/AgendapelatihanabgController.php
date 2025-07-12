@@ -114,8 +114,8 @@ public function beagendapelatihanabgcreatenew(Request $request)
         'keterangan' => 'nullable|string|max:255',
         'isiagenda' => 'nullable|string',
         'barcodepelatihan' => 'nullable|string|max:255',
-        'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-        'suratundangan' => 'nullable|mimes:pdf|max:4096',
+        'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:10048',
+        'suratundangan' => 'nullable|mimes:pdf|max:10096',
     ]);
 
     $data = new agendapelatihanabg();
