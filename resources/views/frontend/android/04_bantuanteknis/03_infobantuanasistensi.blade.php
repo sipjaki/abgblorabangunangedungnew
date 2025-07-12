@@ -40,7 +40,7 @@
 <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
   <!-- Gambar Thumbnail Penuh -->
   <div class="w-full h-auto rounded-lg overflow-hidden">
-    <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png" class="object-cover w-full h-full" alt="thumbnail">
+    <img src="/assets/android/bantek/1.jpg" class="object-cover w-full h-full" alt="thumbnail">
   </div>
 
   <br>
