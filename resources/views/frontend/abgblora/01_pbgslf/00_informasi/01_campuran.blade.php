@@ -153,14 +153,7 @@
     @include('backend.00_administrator.00_baganterpisah.09_button')
 
     <!-- Banner Section -->
-    <section    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-  "
-    class="header-banner">
+    <section class="header-banner">
         <section class="container max-w-[1130px] mx-auto" style="margin-top: 165px;">
             <br><br>
             <div class="flex items-center gap-[20px]">
@@ -170,7 +163,14 @@
     </section>
 
     <!-- Main Content Section -->
-    <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
+    <section    style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+  "
+    id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
         <div class="flex flex-col gap-5 w-full">
             <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
                 <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
