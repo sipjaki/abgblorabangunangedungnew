@@ -92,52 +92,52 @@
                 $today = \Carbon\Carbon::now();
                 $isClosed = $today->greaterThanOrEqualTo($eventDate);
             @endphp
-
-            <div class="mt-2 w-full">
-                @if ($isClosed)
-                    <button style="
-                        background-color: #FF0000;
-                        color: white;
-                        border: 2px solid #FF0000;
-                        padding: 8px 12px;
-                        font-size: 14px;
-                        font-weight: bold;
-                        border-radius: 6px;
-                        cursor: not-allowed;
-                        opacity: 0.6;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 6px;
-                        width: 100%;
-                    " disabled>
-                        <i class="fas fa-times-circle"></i> Ditutup
-                    </button>
-                @else
-                    {{-- <a href="/ressosialisasishow/{{$item->id}}" style="text-decoration: none;"> --}}
-                        <a href="{{ route('ressosialisasishow', $item->id) }}" style="text-decoration: none;">
-
-                        <button style="
-                            background-color: #006b1b;
-                            color: white;
-                            border: 2px solid #006b1b;
-                            padding: 8px 12px;
-                            font-size: 14px;
-                            font-weight: bold;
-                            border-radius: 6px;
-                            opacity: 0.9;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: 6px;
-                            width: 100%;
-                        " onmouseover="this.style.backgroundColor='white'; this.style.color='#006b1b';"
-                           onmouseout="this.style.backgroundColor='#006b1b'; this.style.color='white';">
-                           <i class="fas fa-user-check"></i> Daftar
-                        </button>
-                    </a>
-                @endif
+<div class="mt-2 w-full">
+    @if ($isClosed)
+        <button style="
+            background-color: #FF0000;
+            color: white;
+            border: 2px solid #FF0000;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: not-allowed;
+            opacity: 0.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+        " disabled>
+            <i class="fas fa-times-circle"></i> Ditutup
+        </button>
+    @else
+        <a href="{{ route('ressosialisasishow', $item->id) }}" style="text-decoration: none;">
+            <div style="
+                background-color: #006b1b;
+                color: white;
+                border: 2px solid #006b1b;
+                padding: 8px 12px;
+                font-size: 14px;
+                font-weight: bold;
+                border-radius: 6px;
+                opacity: 0.9;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                width: 100%;
+                transition: 0.2s;
+            "
+            onmouseover="this.style.backgroundColor='white'; this.style.color='#006b1b';"
+            onmouseout="this.style.backgroundColor='#006b1b'; this.style.color='white';">
+                <i class="fas fa-user-check"></i> Daftar
             </div>
+        </a>
+    @endif
+</div>
+
         </div>
     </div>
     @endforeach
