@@ -39,8 +39,8 @@
                   <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi Bantuan Teknis</p>
-                  <p class="font-semibold">Bantuan Asistensi Perencanaan</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Formulir Pengajuan Bantuan Teknis</p>
+                  <p class="font-semibold">Silahkan Ajukan Permohonan Anda !</p>
                 </div>
               </div>
             </a>
