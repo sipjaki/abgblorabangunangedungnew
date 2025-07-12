@@ -275,8 +275,8 @@ th {
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Konsultan </th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Dinas</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat DPUPR </th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat Dinas </th>
+        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat Registrasi DPUPR </th>
+        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat Dinas </th> --}}
         <th style="background-color: #ADD8E6;"><i class="fas fa-calendar"></i> Tanggal Surat</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-toolbox"></i> Nama Paket</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Kategori Bangunan</th>
@@ -319,7 +319,7 @@ th {
             <td>{{ $item->no_telepon ?? '-' }}</td>
             <td>{{ $item->dinas->name ?? '-' }}</td>
             <td>{{ $item->nosurat ?? '-' }}</td>
-            <td>{{ $item->nosuratdinas ?? '-' }}</td>
+            {{-- <td>{{ $item->nosuratdinas ?? '-' }}</td> --}}
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
             <td>{{ $item->namapaket ?? '-' }}</td>
             <td>{{ $item->kategoribangunan ?? '-' }}</td>
