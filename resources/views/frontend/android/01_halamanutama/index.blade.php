@@ -68,14 +68,21 @@
                     </p>
 
                     @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
-                        <a href="/daftaragenda/{{ $item->id }}" class="btn btn-sm" style="background-color: navy; color: white; margin-top: 8px;">
-                            Daftar
-                        </a>
-                    @else
-                        <button class="btn btn-sm" style="background-color: red; color: white; margin-top: 8px;" disabled>
-                            Ditutup
-                        </button>
-                    @endif
+    <a href="/daftaragenda/{{ $item->id }}" style="text-decoration: none;">
+        <button class="button-baru"
+            style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
+                   background-color: navy; color: white; font-weight: bold; font-size: 14px; transition: 0.3s;">
+            <i class="bi bi-pencil-square" style="font-size: 16px;"></i> Daftar
+        </button>
+    </a>
+@else
+    <button class="button-dikembalikan"
+        style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
+               background-color: #dc3545; color: white; font-weight: bold; font-size: 14px;" disabled>
+        <i class="bi bi-x-octagon" style="font-size: 16px;"></i> Ditutup
+    </button>
+@endif
+
                 </div>
             </div>
         @endforeach
