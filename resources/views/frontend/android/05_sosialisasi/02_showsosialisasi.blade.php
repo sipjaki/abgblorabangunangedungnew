@@ -29,7 +29,7 @@
   <div class="flex justify-center my-6">
     <a href="/resdaftarpelatihanpeserta/create/{{$data->id}}">
       <button
-        class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md
+        class="bg-blue-600 text-black font-semibold px-6 py-2 rounded-md
                transition-colors duration-300
                hover:bg-white hover:text-black border border-blue-600"
         type="button"
@@ -44,8 +44,8 @@
   <div class="header-surat text-center mb-8">
     <div class="header-text">
       <h6 style="
-        font-size: 1.8rem;
-        font-weight: 700;
+        font-size: 14px;
+        font-weight: 100;
         color: #28A745;
         margin-bottom: 8px;
         text-transform: uppercase;
