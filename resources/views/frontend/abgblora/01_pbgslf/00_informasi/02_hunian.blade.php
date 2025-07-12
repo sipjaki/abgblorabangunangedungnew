@@ -945,14 +945,67 @@
             <div class="col-md-12">
                 <a href="#" class="text-decoration-none">
                     <div class="card shadow-sm border-0 h-100">
-                        <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png" class="card-img-top" alt="thumbnail" style="object-fit: cover;">
+                        <img src="/assets/android/pbgslf/PBG_FUNGSI_HUNIAN.jpg" class="card-img-top" alt="thumbnail" style="object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title text-primary fw-semibold">
                                 Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
                             </h5>
-                            <p class="card-text text-secondary" style="text-align: justify;">
-                                PBG adalah dokumen yang diperlukan untuk bangunan dengan fungsi campuran, seperti pelayanan pendidikan, kesehatan, kebudayaan, laboratorium, dan umum. Syarat pengajuan meliputi dokumen tanah, data umum (KTP, NIB, KRK), serta dokumen teknis arsitektur, struktur, dan MEP. Prosesnya dimulai dari pendaftaran via SIMBG.PU, konsultasi teknis, validasi, pembayaran retribusi, hingga penerbitan dokumen PBG.
-                            </p>
+
+<div class="flex flex-col gap-3 mt-4">
+  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
+    Persetujuan Bangunan Gedung (PBG) - Fungsi Hunian
+  </p>
+
+  <p class="text-[15px] text-neutral-700 text-justify">
+    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang diperlukan untuk setiap kegiatan pembangunan. Untuk bangunan dengan fungsi hunian, PBG memastikan rencana teknis telah sesuai ketentuan peraturan.
+  </p>
+
+  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">Klasifikasi Bangunan Hunian:</p>
+  <div class="text-[15px] text-neutral-700 text-justify">
+    <ul class="list-disc ml-5">
+      <li><span class="font-semibold">Sederhana</span>:
+        <ul class="list-disc ml-5">
+          <li>1 lantai &lt; 72 m²</li>
+          <li>2 lantai &lt; 90 m²</li>
+        </ul>
+      </li>
+      <li><span class="font-semibold">Tidak Sederhana</span>:
+        <ul class="list-disc ml-5">
+          <li>1 atau 2 lantai ≥ 72 m² / ≥ 90 m²</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">Persyaratan Dokumen:</p>
+  <ol class="list-decimal ml-5 text-[15px] text-neutral-700 text-justify space-y-1">
+    <li><span class="font-semibold">Data Tanah</span>: Sertifikat tanah, izin pemanfaatan tanah (jika nama pemohon tidak sesuai dengan sertifikat).</li>
+    <li><span class="font-semibold">Data Umum</span>: KTP/KITAS, dokumen perizinan tata ruang, KRK/KKPR, data penyedia jasa konstruksi (SBU/arsitek berlisensi).</li>
+    <li><span class="font-semibold">Data Teknis Arsitektur</span>: Gambar situasi, denah, potongan, tampak.</li>
+    <li><span class="font-semibold">Data Teknis Struktur</span>: Gambar pondasi, rangka atap, struktur.</li>
+    <li><span class="font-semibold">Data Teknis MEP</span>: Gambar jaringan listrik dan sanitasi.</li>
+  </ol>
+<div class="flex flex-col gap-2 mt-4">
+  {{-- <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
+    Tahapan Pengurusan:
+  </p> --}}
+  <div class="text-[15px] text-neutral-700 text-justify">
+   <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
+  Tahapan Pengurusan:
+</p>
+<p class="text-[15px] text-neutral-700 text-justify leading-[22px]">
+  1. Menyiapkan dokumen tanah, KRK/KKPR (dokumen tata ruang).<br>
+  2. Melakukan pendaftaran dan unggah dokumen di simbg.pu.go.id<br>
+  3. Verifikasi dokumen oleh operator Dinas Teknis.<br>
+  4. Penjadwalan konsultasi permohonan.<br>
+  5. Konsultasi bersama TPA/TPT.<br>
+  6. Revisi dokumen sesuai masukan teknis TPA/TPT.<br>
+  7. TPA/TPT menyetujui dokumen perencanaan.<br>
+  8. Pengunggahan berkas final, validasi, dan perhitungan retribusi.<br>
+  9. Pembayaran retribusi melalui bank persepsi atau mobile banking.
+</p>
+
+  </div>
                         </div>
                     </div>
                 </a>

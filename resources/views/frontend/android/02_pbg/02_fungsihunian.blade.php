@@ -49,6 +49,7 @@
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
     Persetujuan Bangunan Gedung (PBG) - Fungsi Hunian
   </p>
+
   <p class="text-[15px] text-neutral-700 text-justify">
     Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang diperlukan untuk setiap kegiatan pembangunan. Untuk bangunan dengan fungsi hunian, PBG memastikan rencana teknis telah sesuai ketentuan peraturan.
   </p>
