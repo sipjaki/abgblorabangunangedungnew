@@ -461,7 +461,7 @@
         }
     </style>
 
-{{-- @include('frontend.abgblora.01_pbgslf.00_informasi.fiturmenu') --}}
+@include('frontend.abgblora.01_pbgslf.00_informasi.fiturmenu')
 
 <style>
         :root {
@@ -925,123 +925,6 @@
             }
         }
     </style>
-
-    <div class="container" style="margin-top: -25px;">
-        <!-- Alur Proses -->
-        <div class="card">
-     <h2 class="card-title" style="font-family: 'Poppins', sans-serif;">
-    <i class="fas fa-project-diagram" style="margin-right: 8px;"></i> Alur Proses Pelayanan
-</h2>
-       <ol class="process-steps">
-                <li class="step">
-                    <strong>Memasukkan Surat Permohonan</strong> beserta Bahan ke Dinas PUPR Kab. Blora
-                </li>
-                <li class="step">
-                    <strong>Registrasi Surat Permohonan</strong> beserta bahan di Sekretariat DPUPR Kab. Blora
-                </li>
-                <li class="step">
-                    <strong>Registrasi Dokumen Perencanaan</strong> pada Bidang Bangunan Gedung dengan mengisi google form
-                </li>
-                <li class="step">
-                    <strong>Bukti Pendaftaran Online dan Lembar Asistensi</strong> dapat diunduh melalui email Anda
-                </li>
-                <li class="step">
-                    <strong>Cetak Bukti Pendaftaran Online</strong> dan Lembar Asistensi
-                </li>
-                <li class="step">
-                    <strong>Pemeriksaan Dokumen</strong> (HPP/RAB, Gambar, Spesifikasi Teknis dan Dokumen Pendukung) oleh Bidang Bangunan Gedung
-                </li>
-                <li class="step">
-                    <strong>Pemeriksaan dan Pemarafan</strong> oleh Sub Koordinator dan Kepala Bidang Bangunan Gedung
-                </li>
-                <li class="step">
-                    <strong>Penandatanganan Dokumen</strong> oleh Kepala Dinas PUPR Kab. Blora
-                </li>
-            </ol>
-        </div>
-
-        <!-- SOP Asistensi -->
-        <div class="card">
-<h2 class="card-title" style="font-family: 'Poppins', sans-serif;">
-  <i class="fas fa-clipboard-list" style="margin-right: 8px;"></i> SOP Asistensi Perencanaan
-</h2>
-
-            <div class="info-box">
-                <h3 class="info-box-title" style="font-family: 'Poppins', sans-serif;"><i class="fas fa-check-circle"></i> Persyaratan</h3>
-                <div class="requirements">
-                    <ul>
-                        <li>Surat Pengantar dari OPD Terkait</li>
-                        <li>Dokumen Perencanaan yang lengkap meliputi:
-                            <ul>
-                                <li>Gambar Teknis</li>
-                                <li>HPP/RAB (Harga Perkiraan Sendiri/Rencana Anggaran Biaya)</li>
-                                <li>Spesifikasi Teknis</li>
-                                <li>Dokumen pendukung lainnya</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="info-box" style="background: rgba(90, 177, 240, 0.1);">
-                <h3 class="info-box-title" style="font-family: 'Poppins', sans-serif;"><i class="fas fa-clock"></i> Jangka Waktu Proses</h3>
-                <p>Pemeriksaan dokumen akan diselesaikan dalam waktu maksimal <strong>7 (tujuh) hari kerja</strong> sejak dokumen dinyatakan lengkap dan memenuhi persyaratan.</p>
-            </div>
-
-            <div class="info-box" style="background: rgba(90, 177, 240, 0.05);">
-                <h3 class="info-box-title" style="font-family: 'Poppins', sans-serif;"><i class="fas fa-thumbs-up"></i> Kemudahan Pengajuan</h3>
-                <p>Proses asistensi <strong>tidak dikenakan biaya</strong> mulai dari pengajuan hingga dokumen selesai diperiksa.</p>
-            </div>
-
-            <div class="info-box" style="background: rgba(90, 177, 240, 0.08);">
-                <h3 class="info-box-title" style="font-family: 'Poppins', sans-serif;"><i class="fas fa-file-signature"></i> Hasil Pelayanan</h3>
-                <p>Dokumen yang telah selesai diperiksa akan mendapatkan <strong>Legalisasi Teknis Dokumen Perencanaan</strong> yang menyatakan kelayakan dokumen untuk tahap pelaksanaan fisik.</p>
-            </div>
-        </div>
-
-
-        <!-- Kontak -->
-        <div class="contact-section">
-            <h3 class="contact-title" style="font-family: 'Poppins', sans-serif; color:white;"><i class="fas fa-headset"></i> Layanan dan Pengaduan</h3>
-            <p>Untuk permohonan bantuan, pengaduan, saran, atau masukan terkait pelayanan kami</p>
-            <a href="mailto:bid.bangunan.gedung.blora@gmail.com" class="contact-email">
-                <i class="fas fa-envelope"></i> bid.bangunan.gedung.blora@gmail.com
-            </a>
-        </div>
-
-        <!-- Catatan -->
-        <div class="notes">
-            <h3 class="notes-title" style="font-family: 'Poppins', sans-serif;"><i class="fas fa-info-circle"></i> Catatan Penting</h3>
-            <div class="note-item">
-                <strong>Maju Asistensi:</strong> Wajib mengisi formulir online sebagai buku kendali
-            </div>
-            <div class="note-item">
-                <strong>Pedoman Biaya:</strong> Menggunakan PERMEN PUPR Nomor 8 Tahun 2023 tentang Perkiraan Biaya Pekerjaan Konstruksi
-            </div>
-            <div class="note-item">
-                <strong>Komponen Biaya:</strong> PPN 11% + Overhead dan Keuntungan 10%
-            </div>
-            <div class="note-item">
-                <strong>Gedung Baru:</strong> Wajib konsultasi site plan dan tampak terlebih dahulu
-            </div>
-            <div class="note-item">
-                <strong>Analisa Tambahan:</strong> Untuk harga di luar ketentuan akan dilakukan survey harga
-            </div>
-        </div>
-    </div>
-
-
-
-            <style>
-                .error-message {
-        font-size: 0.875rem;
-        color: #e3342f; /* Atau kamu bisa sesuaikan dengan warna branding kamu */
-        margin-top: 4px;
-        display: block;
-    }
-
-            </style>
-
 
         </div>
     </div>
