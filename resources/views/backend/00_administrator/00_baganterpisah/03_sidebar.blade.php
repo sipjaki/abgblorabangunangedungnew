@@ -1041,7 +1041,7 @@
 <li class="nav-item">
    <a href="#" class="nav-link" style="display: flex; align-items: center;">
     <i class="bi bi-megaphone nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Sosialisasi</p>
+    <p style="color: yellow; margin: 0 0 0 8px; flex-grow: 1;">Sosialisasi</p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
 
@@ -1074,7 +1074,7 @@
    <li class="nav-item">
       <a href="/beagendapeserta" class="nav-link" style="display: flex; align-items: center;">
           <i class="bi bi-people nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-          <p style="color: white; margin: 0 0 0 8px;">Peserta</p>
+          <p style="color: yellow; margin: 0 0 0 8px;">Peserta</p>
       </a>
    </li>
 </ul>
