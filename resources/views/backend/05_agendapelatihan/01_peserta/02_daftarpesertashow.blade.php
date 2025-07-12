@@ -208,13 +208,12 @@ th {
       style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
       <i class="bi bi-download"></i> Download Excel
     </button>
-
-    <a href="#" style="text-decoration: none;">
-      <button class="button-baru"
-        style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
-        <i class="bi bi-home"></i>
-      </button>
-    </a>
+<a href="#" style="text-decoration: none;">
+  <button class="button-baru"
+    style="display: flex; align-items: center; justify-content: center; padding: 10px 14px; border-radius: 10px; border: 1px solid #ddd; background-color: #f5f5f5; cursor: pointer; transition: 0.3s;">
+    <i class="bi bi-house-door" style="font-size: 18px; color: #0d6efd;"></i>
+  </button>
+</a>
 
   </div>
 
