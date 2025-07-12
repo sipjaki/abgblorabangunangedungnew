@@ -314,43 +314,40 @@ th {
     @endif
 </td>
 
-
 <td>
-
-@if($item->foto && file_exists(storage_path('app/public/' . $item->foto)))
-    <!-- Menampilkan gambar dari storage/app/public -->
-    <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-@elseif($item->foto)
-    <!-- Menampilkan gambar dari path publik langsung -->
-    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-@else
-    <!-- Placeholder jika tidak ada data -->
-    <p style="font-size: 11px;">Poster Belum di Upload !</p>
-@endif
+    @if($item->foto && file_exists(storage_path('app/public/' . $item->foto)))
+        <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan"
+            style="width: 120px; height: 80px; object-fit: cover; border-radius: 4px;" loading="lazy">
+    @elseif($item->foto)
+        <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan"
+            style="width: 120px; height: 80px; object-fit: cover; border-radius: 4px;" loading="lazy">
+    @else
+        <p style="font-size: 11px;">Poster Belum di Upload !</p>
+    @endif
 </td>
-{{-- <td>{{ $item->barcodepelatihan ?? '-' }}</td> --}}
+
 <td>
     @if($item->suratundangan && file_exists(public_path('storage/' . $item->suratundangan)))
-        <!-- Preview file dari storage -->
-        <iframe src="{{ asset('storage/' . $item->suratundangan) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
+        <iframe src="{{ asset('storage/' . $item->suratundangan) }}"
+            style="width: 240px; height: 160px; border-radius: 6px;" frameborder="0"></iframe>
         <div class="mt-2">
             <a href="{{ asset('storage/' . $item->suratundangan) }}" download class="btn btn-sm btn-primary">
                 <i class="fas fa-download"></i> Download Surat
             </a>
         </div>
     @elseif($item->suratundangan)
-        <!-- Preview file dari path lain -->
-        <iframe src="{{ asset($item->suratundangan) }}" style="width: 100%; height: 200px;" frameborder="0"></iframe>
+        <iframe src="{{ asset($item->suratundangan) }}"
+            style="width: 240px; height: 160px; border-radius: 6px;" frameborder="0"></iframe>
         <div class="mt-2">
             <a href="{{ asset($item->suratundangan) }}" download class="btn btn-sm btn-primary">
                 <i class="fas fa-download"></i> Download Surat
             </a>
         </div>
     @else
-        <!-- Placeholder jika tidak ada file -->
         <p style="font-size: 12px; color: gray;">Surat belum diupload!</p>
     @endif
 </td>
+
             @can('superadmin')
 
             <td style="text-align: center; vertical-align: middle;">
