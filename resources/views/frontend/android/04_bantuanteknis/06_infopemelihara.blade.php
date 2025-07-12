@@ -40,11 +40,11 @@
 <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
   <!-- Gambar Thumbnail Penuh -->
   <div class="w-full h-auto rounded-lg overflow-hidden">
-    <img src="/assets/android/bantek/10.jpg" class="object-cover w-full h-full" alt="thumbnail">
+    <img src="/assets/android/bantek/12.jpg" class="object-cover w-full h-full" alt="thumbnail">
   </div>
 <br>
   <div class="w-full h-auto rounded-lg overflow-hidden">
-    <img src="/assets/android/bantek/11.jpg" class="object-cover w-full h-full" alt="thumbnail">
+    <img src="/assets/android/bantek/13.jpg" class="object-cover w-full h-full" alt="thumbnail">
   </div>
 
   <br>
@@ -52,24 +52,72 @@
 <!-- Info Teks -->
 <div class="flex flex-col gap-2 mt-4">
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    4. Perhitungan Biaya Pemeliharaan BGN
+    6. Pendampingan Serah Terima Pekerjaan
   </p>
   <p class="text-[16px] text-neutral-700" style="text-align: justify;">
-    Pemeliharaan bangunan gedung adalah kegiatan menjaga keandalan bangunan gedung beserta prasarana dan sarananya agar selalu laik fungsi.
-    Biaya pemeliharaan BGN ditentukan paling banyak <strong>2% (dua persen)</strong> dari SHST sesuai klasifikasi kompleksitas BGN tahun berjalan.
+    Pemberian bantuan tenaga teknis kepada K/L/OPD untuk membantu pengguna anggaran dalam pendampingan serah terima pekerjaan pembangunan bangunan gedung negara terhadap pekerjaan akhir berupa PHO dan FHO.
   </p>
 
   <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA] mt-4">
-    5. Perhitungan Biaya Pelaksanaan Konstruksi Fisik Pembangunan BGN (standar non standar) dan Usulan Pembiayaan
+    Serah Terima Sementara Pekerjaan (Provisional Hand Over - PHO)
   </p>
   <p class="text-[16px] text-neutral-700" style="text-align: justify;">
-    Usulan/Rekomendasi Pembiayaan Pembangunan Bangunan Gedung Negara yang dibuat merupakan <strong>pagu maksimum</strong> yang menjadi acuan bagi pengguna anggaran dalam pembangunan Bangunan Gedung Negara.<br><br>
-    Komponen pembiayaan terdiri dari:<br>
-    1. Biaya pelaksanaan konstruksi<br>
-    2. Biaya untuk jasa penyedia perencana teknis<br>
-    3. Biaya manajemen konstruksi/pengawasan teknis<br>
-    4. Biaya pengelolaan kegiatan pembangunan Bangunan Gedung Negara.
+    Adalah suatu kegiatan serah terima seluruh pekerjaan yang dilakukan secara resmi dari penyedia jasa kepada pengguna jasa setelah diteliti terlebih dahulu oleh Tim Teknis dan Konsultan Pengawas.
   </p>
+
+  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA] mt-4">
+    Serah Terima Akhir Pekerjaan (Final Hand Over - FHO)
+  </p>
+  <p class="text-[16px] text-neutral-700" style="text-align: justify;">
+    Adalah suatu kegiatan serah terima akhir pekerjaan yang dilakukan secara resmi dari penyedia jasa kepada pengguna jasa setelah penyedia jasa menyelesaikan semua kewajibannya selama masa pemeliharaan.
+  </p>
+
+  <p class="text-[16px] text-neutral-700 italic mt-2">
+    Keseluruhan proses di atas membutuhkan tenaga pendamping serah terima pekerjaan.
+  </p>
+
+  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA] mt-6">
+    Flow Proses Pendampingan Serah Terima Pekerjaan
+  </p>
+
+  <ul class="list-decimal text-[16px] text-neutral-700" style="padding-left: 1.25rem;">
+    <li>
+      <strong>Permohonan K/L/OPD</strong><br>
+      Perihal permintaan tenaga pendamping proses serah terima akhir pekerjaan.
+    </li>
+    <li>
+      <strong>Surat Tugas</strong><br>
+      Pemberian nama personil yang ditugaskan.
+    </li>
+    <li>
+      <strong>Pengumpulan Data dan Informasi</strong><br>
+      Berkas-berkas yang harus dikumpulkan meliputi:
+      <ul class="list-disc" style="padding-left: 1.25rem;">
+        <li>As Built Drawing</li>
+        <li>Laporan Mingguan/Laporan Bulanan</li>
+        <li>Backup Data</li>
+        <li>Dokumentasi</li>
+        <li>Laporan administrasi pelaksanaan pekerjaan lainnya (hasil uji lab dan lain-lain)</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Pemeriksaan Bangunan</strong><br>
+      Membantu melakukan pemeriksaan kelengkapan administrasi pekerjaan dan mutu/kualitas pekerjaan.
+    </li>
+    <li>
+      <strong>Kriteria Pekerjaan</strong><br>
+      Pekerjaan harus 100% selesai secara kualitas dan kuantitas.
+    </li>
+    <li>
+      <strong>Laporan/Rekomendasi Pendamping Pengawasan</strong><br>
+      Menentukan kondisi pekerjaan berdasarkan pemeriksaan:
+      <ul class="list-disc" style="padding-left: 1.25rem;">
+        <li>Pekerjaan 100% dibutuhkan RAST</li>
+        <li>Pekerjaan 100% namun perlu perbaikan</li>
+        <li>Pekerjaan belum 100%</li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
 </a>
