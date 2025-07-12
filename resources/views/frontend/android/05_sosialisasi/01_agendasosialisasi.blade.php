@@ -36,6 +36,7 @@
                             <!-- Table Section -->
                             <div class="flex flex-col gap-4 px-4" style="margin-top: -25px;">
                                 <br><br>
+
 <div class="flex flex-col gap-4 px-4 mt-4">
     @foreach ($data as $item)
     <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
@@ -113,7 +114,9 @@
                         <i class="fas fa-times-circle"></i> Ditutup
                     </button>
                 @else
-                    <a href="/ressosialisasishow/{{$item->id}}" style="text-decoration: none;">
+                    {{-- <a href="/ressosialisasishow/{{$item->id}}" style="text-decoration: none;"> --}}
+                        <a href="{{ route('ressosialisasishow', $item->id) }}" style="text-decoration: none;">
+
                         <button style="
                             background-color: #006b1b;
                             color: white;

@@ -505,6 +505,7 @@ public function infopbgprasarana()
         'data' => $agendapelatihan,
     ]);
 }
+
 public function ressosialisasishow($id)
 {
     $user = Auth::user();
