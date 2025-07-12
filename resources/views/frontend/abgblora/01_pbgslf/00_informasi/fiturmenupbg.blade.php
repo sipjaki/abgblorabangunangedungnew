@@ -6,7 +6,7 @@
   <a href="/infobantek" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-buildings" style="font-size: 14px;"></i> PBG Fungsi Campuran
   </a>
-  <a href="/infobanteklampiran" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/infopbgcampuran" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-house-door" style="font-size: 14px;"></i> PBG Fungsi Hunian
   </a>
   <a href="/infobantekpetunjuk" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
