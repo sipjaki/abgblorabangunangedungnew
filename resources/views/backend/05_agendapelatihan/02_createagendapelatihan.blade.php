@@ -213,7 +213,7 @@ th {
                 <option value="">-- Pilih Kategori --</option>
                 @foreach ($kategori as $item)
                     <option value="{{ $item->id }}" {{ old('kategoripelatihan_id') == $item->id ? 'selected' : '' }}>
-                        {{ $item->nama }}
+                        {{ $item->kategoripelatihan }}
                     </option>
                 @endforeach
             </select>
@@ -311,27 +311,72 @@ th {
         </div>
 
         {{-- Upload Foto --}}
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="foto">
-                <i class="bi bi-image text-primary me-1"></i> Upload Poster / Gambar
-            </label>
-            <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror" accept="image/*">
-            @error('foto')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+{{-- Upload Poster / Gambar --}}
+<div class="mb-3 col-md-6">
+    <label class="form-label" for="foto">
+        <i class="bi bi-image text-primary me-1"></i> Upload Poster / Gambar
+    </label>
+    <input type="file" name="foto" id="foto" class="form-control @error('foto') is-invalid @enderror" accept="image/*" onchange="previewFoto(event)">
+    @error('foto')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 
-        {{-- Upload Surat Undangan --}}
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="suratundangan">
-                <i class="bi bi-file-earmark-pdf text-primary me-1"></i> Upload Surat Undangan (PDF)
-            </label>
-            <input type="file" name="suratundangan" class="form-control @error('suratundangan') is-invalid @enderror" accept=".pdf">
-            @error('suratundangan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+    {{-- Preview Gambar --}}
+    <div class="mt-2">
+        @if (!empty($data->foto))
+            <img id="preview-foto" src="{{ asset('storage/' . $data->foto) }}" style="max-height: 200px;" class="img-fluid border rounded">
+        @else
+            <img id="preview-foto" style="display:none; max-height:200px;" class="img-fluid border rounded">
+        @endif
     </div>
+</div>
+
+{{-- Upload Surat Undangan (PDF) --}}
+<div class="mb-3 col-md-6">
+    <label class="form-label" for="suratundangan">
+        <i class="bi bi-file-earmark-pdf text-primary me-1"></i> Upload Surat Undangan (PDF)
+    </label>
+    <input type="file" name="suratundangan" id="suratundangan" class="form-control @error('suratundangan') is-invalid @enderror" accept=".pdf" onchange="previewPDF(event)">
+    @error('suratundangan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+    {{-- Preview PDF --}}
+    <div class="mt-2">
+        @if (!empty($data->suratundangan))
+            <iframe id="preview-pdf" src="{{ asset('storage/' . $data->suratundangan) }}" style="width:100%; height:200px;" frameborder="0"></iframe>
+        @else
+            <iframe id="preview-pdf" style="display:none; width:100%; height:200px;" frameborder="0"></iframe>
+        @endif
+    </div>
+</div>
+
+<script>
+    function previewFoto(event) {
+        const input = event.target;
+        const preview = document.getElementById('preview-foto');
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function previewPDF(event) {
+        const input = event.target;
+        const preview = document.getElementById('preview-pdf');
+        if (input.files && input.files[0]) {
+            const fileURL = URL.createObjectURL(input.files[0]);
+            preview.src = fileURL;
+            preview.style.display = 'block';
+        }
+    }
+</script>
+
+</div>
 
 
                   <!-- End row -->
