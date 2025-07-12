@@ -198,199 +198,141 @@ th {
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
-                                <div class="row">
 
 
+    {{-- <input type="hidden" name="user_id" value="{{ $user->id }}"> --}}
+<input type="hidden" name="user_id" value="{{ $user->id }}">
 
-      <div class="col-md-6">
-
-        <div class="mb-3">
-    <label class="form-label" for="user_id">
-        <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Pilih User (Status Admin 4)
-    </label>
-    <select id="user_id" name="user_id" class="form-select @error('user_id') is-invalid @enderror">
-        <option value="">-- Pilih User --</option>
-        @foreach ($dataakun as $user)
-            <option value="{{ $user->id }}"
-                {{ old('user_id', $data->user_id ?? '') == $user->id ? 'selected' : '' }}>
-                {{ $user->name }}
-            </option>
-        @endforeach
-    </select>
-    @error('user_id')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-          <div class="mb-3">
-              <label class="form-label" for="namalengkap">
-                  <i class="bi bi-person-vcard" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
-                </label>
-                <input
-                type="text"
-                id="namalengkap"
-                name="namalengkap"
-                value="{{ old('namalengkap', $data->namalengkap ?? '') }}"
-            class="form-control @error('namalengkap') is-invalid @enderror"
-            placeholder="Masukkan nama lengkap"
-        />
-        @error('namalengkap')
-        <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label" for="alamat">
-            <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Alamat
-        </label>
-        <textarea
-        id="alamat"
-        name="alamat"
-        class="form-control @error('alamat') is-invalid @enderror"
-        placeholder="Masukkan alamat lengkap"
-            rows="3">{{ old('alamat', $data->alamat ?? '') }}</textarea>
-        @error('alamat')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label" for="no_telepon">
-            <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> No. Telepon
-        </label>
-        <input
-        type="text"
-        id="no_telepon"
-        name="no_telepon"
-        value="{{ old('no_telepon', $data->no_telepon ?? '') }}"
-        class="form-control @error('no_telepon') is-invalid @enderror"
-        placeholder="Masukkan nomor telepon"
-        />
-        @error('no_telepon')
-        <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label" for="email">
-            <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
-        </label>
-        <input
-        type="email"
-        id="email"
-        name="email"
-        value="{{ old('email', $data->email ?? '') }}"
-        class="form-control @error('email') is-invalid @enderror"
-        placeholder="Masukkan email"
-        />
-        @error('email')
-        <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label" for="nomorindukberusaha">
-            <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Nomor Induk Berusaha (NIB)
-        </label>
-        <input
-        type="text"
-        id="nomorindukberusaha"
-        name="nomorindukberusaha"
-        value="{{ old('nomorindukberusaha', $data->nomorindukberusaha ?? '') }}"
-        class="form-control @error('nomorindukberusaha') is-invalid @enderror"
-        placeholder="Masukkan NIB"
-        />
-        @error('nomorindukberusaha')
-            <div class="invalid-feedback">{{ $message }}</div>
+    <div class="row">
+        {{-- Kategori --}}
+        <div class="mb-3 col-md-6">
+            <label class="form-label" for="kategoripelatihan_id">
+                <i class="bi bi-tags text-primary me-1"></i> Kategori Pelatihan
+            </label>
+            <select id="kategoripelatihan_id" name="kategoripelatihan_id" class="form-select @error('kategoripelatihan_id') is-invalid @enderror">
+                <option value="">-- Pilih Kategori --</option>
+                @foreach ($kategori as $item)
+                    <option value="{{ $item->id }}" {{ old('kategoripelatihan_id') == $item->id ? 'selected' : '' }}>
+                        {{ $item->nama }}
+                    </option>
+                @endforeach
+            </select>
+            @error('kategoripelatihan_id')
+                <div class="invalid-feedback">{{ $message }}</div>
             @enderror
-    </div>
-    </div>
-    <div class="col-md-6">
+        </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="pju">
-            <i class="bi bi-person-lines-fill" style="margin-right: 8px; color: navy;"></i> Penanggung Jawab Usaha (PJU)
-        </label>
-        <input
-            type="text"
-            id="pju"
-            name="pju"
-            value="{{ old('pju', $data->pju ?? '') }}"
-            class="form-control @error('pju') is-invalid @enderror"
-            placeholder="Masukkan nama PJU"
-        />
-        @error('pju')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+        {{-- Nama Kegiatan --}}
+        <div class="mb-3 col-md-6">
+            <label class="form-label" for="namakegiatan">
+                <i class="bi bi-pencil-square text-primary me-1"></i> Nama Kegiatan
+            </label>
+            <input type="text" name="namakegiatan" class="form-control @error('namakegiatan') is-invalid @enderror" placeholder="Masukkan nama kegiatan" value="{{ old('namakegiatan') }}">
+            @error('namakegiatan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Penutupan --}}
+        <div class="mb-3 col-md-6">
+            <label class="form-label" for="penutupan">
+                <i class="bi bi-calendar-x text-primary me-1"></i> Tanggal Penutupan
+            </label>
+            <input type="date" name="penutupan" class="form-control @error('penutupan') is-invalid @enderror" value="{{ old('penutupan') }}">
+            @error('penutupan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Waktu Pelaksanaan --}}
+        <div class="mb-3 col-md-6">
+            <label class="form-label" for="waktupelaksanaan">
+                <i class="bi bi-calendar-event text-primary me-1"></i> Waktu Pelaksanaan
+            </label>
+            <input type="date" name="waktupelaksanaan" class="form-control @error('waktupelaksanaan') is-invalid @enderror" value="{{ old('waktupelaksanaan') }}">
+            @error('waktupelaksanaan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Jumlah Peserta --}}
+        <div class="mb-3 col-md-6">
+            <label class="form-label" for="jumlahpeserta">
+                <i class="bi bi-people-fill text-primary me-1"></i> Jumlah Peserta
+            </label>
+            <input type="number" name="jumlahpeserta" class="form-control @error('jumlahpeserta') is-invalid @enderror" placeholder="Masukkan jumlah peserta" value="{{ old('jumlahpeserta') }}">
+            @error('jumlahpeserta')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Lokasi --}}
+        <div class="mb-3 col-md-6">
+            <label class="form-label" for="lokasi">
+                <i class="bi bi-geo-alt text-primary me-1"></i> Lokasi
+            </label>
+            <input type="text" name="lokasi" class="form-control @error('lokasi') is-invalid @enderror" placeholder="Masukkan lokasi kegiatan" value="{{ old('lokasi') }}">
+            @error('lokasi')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Keterangan --}}
+        <div class="mb-3 col-md-6">
+            <label class="form-label" for="keterangan">
+                <i class="bi bi-info-circle text-primary me-1"></i> Keterangan
+            </label>
+            <input type="text" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" placeholder="Tambahan keterangan" value="{{ old('keterangan') }}">
+            @error('keterangan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Barcode Pelatihan --}}
+        <div class="mb-3 col-md-6">
+            <label class="form-label" for="barcodepelatihan">
+                <i class="bi bi-upc text-primary me-1"></i> Barcode Pelatihan
+            </label>
+            <input type="text" name="barcodepelatihan" class="form-control @error('barcodepelatihan') is-invalid @enderror" value="{{ old('barcodepelatihan') }}">
+            @error('barcodepelatihan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Isi Agenda --}}
+        <div class="mb-3 col-md-12">
+            <label class="form-label" for="isiagenda">
+                <i class="bi bi-file-earmark-text text-primary me-1"></i> Isi Agenda
+            </label>
+            <textarea name="isiagenda" rows="4" class="form-control @error('isiagenda') is-invalid @enderror" placeholder="Tulis detail agenda">{{ old('isiagenda') }}</textarea>
+            @error('isiagenda')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Upload Foto --}}
+        <div class="mb-3 col-md-6">
+            <label class="form-label" for="foto">
+                <i class="bi bi-image text-primary me-1"></i> Upload Poster / Gambar
+            </label>
+            <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror" accept="image/*">
+            @error('foto')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Upload Surat Undangan --}}
+        <div class="mb-3 col-md-6">
+            <label class="form-label" for="suratundangan">
+                <i class="bi bi-file-earmark-pdf text-primary me-1"></i> Upload Surat Undangan (PDF)
+            </label>
+            <input type="file" name="suratundangan" class="form-control @error('suratundangan') is-invalid @enderror" accept=".pdf">
+            @error('suratundangan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="no_akte">
-            <i class="bi bi-journal-text" style="margin-right: 8px; color: navy;"></i> Nomor Akta
-        </label>
-        <input
-            type="text"
-            id="no_akte"
-            name="no_akte"
-            value="{{ old('no_akte', $data->no_akte ?? '') }}"
-            class="form-control @error('no_akte') is-invalid @enderror"
-            placeholder="Masukkan nomor akta"
-        />
-        @error('no_akte')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label" for="tanggal">
-            <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Akta
-        </label>
-        <input
-            type="date"
-            id="tanggal"
-            name="tanggal"
-            value="{{ old('tanggal', $data->tanggal ?? '') }}"
-            class="form-control @error('tanggal') is-invalid @enderror"
-        />
-        @error('tanggal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label" for="nama_notaris">
-            <i class="bi bi-person-video3" style="margin-right: 8px; color: navy;"></i> Nama Notaris
-        </label>
-        <input
-            type="text"
-            id="nama_notaris"
-            name="nama_notaris"
-            value="{{ old('nama_notaris', $data->nama_notaris ?? '') }}"
-            class="form-control @error('nama_notaris') is-invalid @enderror"
-            placeholder="Masukkan nama notaris"
-        />
-        @error('nama_notaris')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label" for="no_pengesahan">
-            <i class="bi bi-patch-check" style="margin-right: 8px; color: navy;"></i> No. Pengesahan
-        </label>
-        <input
-            type="text"
-            id="no_pengesahan"
-            name="no_pengesahan"
-            value="{{ old('no_pengesahan', $data->no_pengesahan ?? '') }}"
-            class="form-control @error('no_pengesahan') is-invalid @enderror"
-            placeholder="Masukkan nomor pengesahan"
-        />
-        @error('no_pengesahan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
 
                   <!-- End row -->
                             </div>
