@@ -3,7 +3,7 @@
 
 <div style="overflow-x: auto; black-space: nowrap; padding: 10px 0; font-size: 14px;">
 <div style="display: inline-flex; gap: 10px; font-family: 'Poppins', sans-serif;">
-  <a href="/infobantek" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/infopbgcampuran" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-buildings" style="font-size: 14px;"></i> PBG Fungsi Campuran
   </a>
   <a href="/infopbgcampuran" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
