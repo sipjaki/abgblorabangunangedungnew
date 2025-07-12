@@ -665,7 +665,7 @@
     <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-geo-alt nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">PBG/SLF</p>
+            <p style="color: yellow; margin-left: 8px;">PBG/SLF</p>
         </a>
     </li>
     {{-- <li class="nav-item">
@@ -718,7 +718,7 @@
         <!-- Ganti SVG dengan Bootstrap Icon -->
         <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
 
-        <p style="color: white; margin-left: 8px;">
+        <p style="color: yellow; margin-left: 8px;">
             PBG/SLF
             <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
         </p>
