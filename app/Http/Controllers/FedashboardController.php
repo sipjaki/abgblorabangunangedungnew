@@ -508,7 +508,7 @@ public function infopbgprasarana()
 }
 
 
-             public function menuresagendapelatihandetails($id)
+             public function ressosialisasishow($id)
              {
                  $dataagendapelatihan = agendapelatihanabg::where('id', $id)->first();
 
