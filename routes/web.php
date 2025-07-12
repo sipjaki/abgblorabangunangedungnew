@@ -598,6 +598,8 @@ Route::post('/beberitacreatenew', [DatabaseAbgController::class, 'beberitacreate
 // sigit bro
 
 Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beagendapelatihanabg'])->middleware('auth')->name('beagendapelatihanabg');
+Route::delete('/beagendapelatihanabgdelete/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgdelete'])->middleware('auth')->name('delete.beagendapelatihanabgdelete');
+
 // Route::get('/bebantekkonsultannew', [BantuanteknisController::class, 'bebantekkonsultannew'])->middleware('auth')->name('bebantekkonsultannew.create');
 // Route::post('/bebantekkonsultannewjasa', [BantuanteknisController::class, 'bebantekkonsultannewjasa'])->middleware('auth')->name('create.bebantekkonsultannewjasa');
 
@@ -911,6 +913,7 @@ Route::post('/bebantuangambarperbaikannew/{id}', [GambarbantuanController::class
 
 // PENGATURAN MENU TEMPAT KONSULTASI
 Route::get('/bekecamatan', [PbgslfController::class, 'bekecamatan'])->middleware('auth')->name('bekecamatan');
+
 // Route::delete('/betempatkonsultasidelete/{id}', [PbgslfController::class, 'betempatkonsultasidelete'])->middleware('auth')->name('betempatkonsultasidelete');
 // Route::get('/betempatcreate', [PbgslfController::class, 'betempatcreate'])->middleware('auth')->name('betempatcreate');
 // Route::post('/betempatcreatenew', [PbgslfController::class, 'betempatcreatenew'])->middleware('auth')->name('create.betempatcreatenew');
