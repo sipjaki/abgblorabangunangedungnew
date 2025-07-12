@@ -33,69 +33,115 @@
             </button>
           </div>
 
-<!-- Table Section -->
-<div class="flex flex-col gap-4 px-4 mt-4">
-    @foreach ($data as $item)
-    <div class="w-full flex border border-gray-200 rounded-2xl bg-white p-4 gap-4 shadow-sm">
+                            <!-- Table Section -->
+                            <div class="flex flex-col gap-4 px-4" style="margin-top: -25px;">
+                                <br><br>
 
-        <!-- Gambar Kegiatan -->
-        <div class="w-[80px] h-[80px] rounded-xl overflow-hidden flex-shrink-0 border">
-            @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
-                <img src="{{ asset('storage/' . $item->foto) }}" alt="Sosialisasi" class="object-cover w-full h-full">
-            @elseif($item->foto)
-                <img src="{{ asset($item->foto) }}" alt="Sosialisasi" class="object-cover w-full h-full">
-            @else
-                <div class="flex items-center justify-center w-full h-full bg-gray-100 text-gray-400 text-sm">No Image</div>
-            @endif
-        </div>
+                    @foreach ($data as $item)
+                    <class="card" id="tableBody">
+                        <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+                            <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
 
-        <!-- Informasi Kegiatan -->
-        <div class="flex flex-col justify-between flex-grow">
-            <div>
-                <p class="font-bold text-green-700 text-sm md:text-base mb-1">{{ $item->namakegiatan }}</p>
-
-                @php
-                    $text = $item->keterangan;
-                    $limit = 100;
-                    $truncatedText = strlen($text) > $limit ? substr($text, 0, $limit) . '...' : $text;
-                @endphp
-
-                <p class="text-sm text-gray-700 mb-2">{{ $truncatedText }}</p>
-
-                <details>
-                    <summary class="text-xs text-blue-600 cursor-pointer">Selengkapnya</summary>
-                    <p class="text-sm text-gray-600 mt-1">{{ $item->keterangan }}</p>
-                </details>
-            </div>
-
-            @php
-                $eventDate = \Carbon\Carbon::parse($item->penutupan);
-                $today = \Carbon\Carbon::now();
-                $isClosed = $today->greaterThanOrEqualTo($eventDate);
-            @endphp
-
-            <div class="mt-3">
-                @if ($isClosed)
-                    <button class="bg-red-500 text-white text-sm font-semibold px-4 py-2 rounded-md opacity-70 cursor-not-allowed w-full">
-                        <i class="fas fa-times-circle mr-1"></i> Ditutup
-                    </button>
+               <div style="margin-top: 10px;">
+                @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                    <!-- Menampilkan gambar dari storage -->
+                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Sosialisasi" style="width: 100%; max-height: 50px; object-fit: contain;" loading="lazy">
+                @elseif($item->foto)
+                    <!-- Menampilkan gambar dari path luar storage -->
+                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 50px; object-fit: contain;" loading="lazy">
                 @else
-                    <a href="/resagendapelatihan/{{ $item->namakegiatan }}" class="block w-full">
-                        <button class="bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-md w-full hover:bg-white hover:text-green-800 border border-green-700 transition-all duration-200">
-                            <i class="fas fa-user-check mr-1"></i> Daftar
-                        </button>
-                    </a>
+                    <!-- Placeholder jika tidak ada data -->
+                    <p>Data belum diupdate</p>
                 @endif
             </div>
-        </div>
-    </div>
-    @endforeach
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->namakegiatan}}</p>
+                                {{-- <p class="text-xs leading-[18px]">Target --}}
+                                    <span class="text-[#ffffff]">
+                                        @php
+                                            $text = $item->keterangan;
+                                            $limit = 100;
+                                            $truncatedText = strlen($text) > $limit ? substr($text, 0, $limit) . '...' : $text;
+                                            @endphp
+                                        {{ $truncatedText }}
+                                    </span>
+                                </p>
+                                <p class="text-xs text-blue-500 cursor-pointer line-clamp-1 hover:line-clamp-none" id="moreText" style="display: none;">
+                                    <span class="text-[#ffffff] line-clamp-1 hover:line-clamp-none">{{ $item->keterangan }}</span>
+                                </p>
+                                <button class="text-xs mt-2" onclick="toggleText()" style="color: navy;">Selengkapnya</button>
 
-    <!-- Pagination -->
-    {{-- <div class="mt-4">
-        {{ $data->links() }}
-    </div> --}}
-</div>
+                                <script>
+                                    function toggleText() {
+                                        var moreText = document.getElementById("moreText");
+                                        var button = document.querySelector("button");
+
+                                        if (moreText.style.display === "none") {
+                                            moreText.style.display = "inline";
+                                            button.innerHTML = "Tutup";
+                                        } else {
+                                            moreText.style.display = "none";
+                                            button.innerHTML = "Selengkapnya";
+                                        }
+                                    }
+                                    </script>
+
+
+
+                                    @php
+                                    $eventDate = \Carbon\Carbon::parse($item->penutupan)->subDays(0);
+                                    $today = \Carbon\Carbon::now();
+                                    $isClosed = $today->greaterThanOrEqualTo($eventDate);
+                                    @endphp
+                                    @if ($isClosed)
+                                    <button style="
+                                            background-color: #FF0000;
+                                            color: white;
+                                            border: 2px solid #FF0000;
+                                            padding: 8px 12px;
+                                            font-size: 14px;
+                                            font-weight: bold;
+                                            border-radius: 6px;
+                                            cursor: not-allowed;
+                                            opacity: 0.6;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            gap: 6px;
+                                            " disabled>
+                                            <i class="fas fa-times-circle"></i> Ditutup
+                                        </button>
+                                        @else
+                                        <a href="/resagendapelatihan/{{$item->namakegiatan}}" style="text-decoration: none;">
+                                            <button style="
+                                            background-color: #006b1b;
+                                            color: white;
+                                            border: 2px solid #006b1b;
+                                            padding: 8px 12px;
+                                            font-size: 14px;
+                                            font-weight: bold;
+                                            border-radius: 6px;
+                                            opacity: 0.6;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            gap: 6px;
+                                            width:100%;
+                                            " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
+                                               onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
+                                               <i class="fas fa-user-check"></i> Daftar
+                                            </button>
+                                        </a>
+                                        @endif
+
+                                    </div>
+
+                                </div>
+
+                                    @endforeach
+
+                                </div>
 
                                 <br>
 
