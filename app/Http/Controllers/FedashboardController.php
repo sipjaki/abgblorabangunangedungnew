@@ -518,7 +518,7 @@ public function infopbgprasarana()
                  }
 
                  // Menggunakan paginate() untuk pagination
-                 $subdata = materipelatihan::where('agendapelatihanabg_id', $dataagendapelatihan->id)->paginate(50);
+                 $subdata = materipelatihan::where('agendapelatihan_id', $dataagendapelatihan->id)->paginate(50);
 
                    // Menghitung nomor urut mulai
                      $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
