@@ -12,6 +12,7 @@ use App\Models\bujkkonsultan;
 use App\Models\jenispengajuanbantek;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
+use App\Models\materipelatihan;
 use App\Models\mbrgambar;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -506,19 +507,34 @@ public function infopbgprasarana()
     ]);
 }
 
-public function ressosialisasishow($id)
-{
-    $user = Auth::user();
 
-    // Ambil data agenda pelatihan berdasarkan ID
-    $agendapelatihan = agendapelatihanabg::findOrFail($id);
+             public function menuresagendapelatihandetails($id)
+             {
+                 $dataagendapelatihan = agendapelatihanabg::where('id', $id)->first();
 
-    return view('frontend.android.05_sosialisasi.02_showsosialisasi', [
-        'title' => 'Show Agenda Sosialisasi',
-        'user' => $user,
-        'data' => $agendapelatihan,
-    ]);
-}
+                 if (!$dataagendapelatihan) {
+                     // Tangani jika kegiatan tidak ditemukan
+                     return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
+                 }
+
+                 // Menggunakan paginate() untuk pagination
+                 $subdata = materipelatihan::where('agendapelatihanabg_id', $dataagendapelatihan->id)->paginate(50);
+
+                   // Menghitung nomor urut mulai
+                     $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
+
+             $user = Auth::user();
+
+
+             return view('frontend.android.05_sosialisasi.02_showsosialisasi', [
+                 'title' => 'Agenda Pelatihan ABG Blora Bangunan gedung ',
+                 'data' => $dataagendapelatihan,
+                 'datamateripelatihan' => $subdata,
+                 // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+                 'user' => $user,
+                 // 'start' => $start,
+             ]);
+             }
 
 
 }
