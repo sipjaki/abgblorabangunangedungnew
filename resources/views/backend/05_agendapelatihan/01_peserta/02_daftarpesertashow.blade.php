@@ -334,7 +334,7 @@ th {
 <td style="text-align: center;">
     @if($item->verifikasi == false)
         <!-- Tombol DI VERIFIKASI -->
-        <button type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button type="button" onclick="openModal({{ $item->id }})" class="button-newvalidasi">
             <i class="bi bi-patch-check-fill"></i> DI VERIFIKASI
         </button>
     @elseif($item->verifikasi == 'gugur')
