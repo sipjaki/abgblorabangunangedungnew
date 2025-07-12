@@ -188,11 +188,12 @@
   "
 >
 
- <section id="details" class="mx-auto flex flex-col sm:flex-row items-center justify-center text-center" style="margin-top:-10px;">
+ <section id="details" class="mx-auto flex flex-col sm:flex-row items-center justify-center text-center">
    {{-- @include('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.00_menufungsibangunan') --}}
 
 
             <div class="flex flex-col gap-5 w-full">
+
             <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
                     <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
                 <div class="w-5 h-5 flex shrink-0">
@@ -202,6 +203,7 @@
                     <span class="font-bold">Form Permohonan Bantuan Teknis | Bangunan Gedung </span>
                 </p>
             </div>
+
             <form id="signatureForm" action="{{ route('permohonan.bantekcreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
                 @csrf
 
