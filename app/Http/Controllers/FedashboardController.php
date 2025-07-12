@@ -335,5 +335,18 @@ public function mbrgambarupdate($id)
         ]);
     }
 
+    public function febantekpermeliha()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.04_bantuanteknis.06_infopemelihara', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi Permohonan Bantuan Pemeliharaan dan Pelaksanaan Konstruksi Penyelenggaraan Gedung Negara ',
+            'user' => $user,
+        ]);
+    }
+
 }
 
