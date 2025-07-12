@@ -374,5 +374,17 @@ public function mbrgambarupdate($id)
         ]);
     }
 
+
+    public function infopbgindex()
+{
+
+    $user = Auth::user();
+
+    return view('frontend.abgblora.01_pbgslf.00_informasi.01_infopbg', [
+        'title' => 'Informasi Permohonan PBG SLF Bangunan Gedung',
+        'user' => $user,
+    ]);
+}
+
 }
 

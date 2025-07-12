@@ -44,6 +44,18 @@ Route::get('/web', [FedashboardController::class, 'web']);
 // Route::post('/qapertanyaanstorebaru', [AdministratorController::class, 'createstorepertanyaanpublik'])->name('createpertanyaanstorebaru');
 
 // 01_ MENU PBG SLF
+
+
+Route::get('/infopbg', [FedashboardController::class, 'infopbgindex']);
+// Route::get('/infobanteklampiran', [BantuanteknisController::class, 'infobanteklampiran']);
+// Route::get('/infobantekpetunjuk', [BantuanteknisController::class, 'infobantekpetunjuk']);
+// Route::get('/infobantekasistensi', [BantuanteknisController::class, 'infobantekasistensi']);
+// Route::get('/infobantekpeneliti', [BantuanteknisController::class, 'infobantekpeneliti']);
+// Route::get('/infobantekperhitungan', [BantuanteknisController::class, 'infobantekperhitungan']);
+// Route::get('/infobantekpemeliharaan', [BantuanteknisController::class, 'infobantekpemeliharaan']);
+// Route::get('/infobantekpendampingan', [BantuanteknisController::class, 'infobantekpendampingan']);
+// Route::get('/infobantektimteknis', [BantuanteknisController::class, 'infobantektimteknis']);
+
 // ----------------------------------------------------------------------------------------
 Route::get('/respbgslfindex', [FedashboardController::class, 'menurespbgslfindex']);
 Route::get('/feinfocampuran', [FedashboardController::class, 'feinfocampuran']);
