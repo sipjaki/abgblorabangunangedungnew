@@ -48,13 +48,7 @@ Route::get('/web', [FedashboardController::class, 'web']);
 
 Route::get('/infopbg', [FedashboardController::class, 'infopbgindex']);
 Route::get('/infopbgcampuran', [FedashboardController::class, 'infopbgcampuran']);
-Route::get('/infopbgs2', [BantuanteknisController::class, 'infobantekpetunjuk']);
-Route::get('/infopbgs3', [BantuanteknisController::class, 'infobantekasistensi']);
-Route::get('/infopbgs4', [BantuanteknisController::class, 'infobantekpeneliti']);
-Route::get('/infopbgs5', [BantuanteknisController::class, 'infobantekperhitungan']);
-Route::get('/infopbgs6', [BantuanteknisController::class, 'infobantekpemeliharaan']);
-Route::get('/infopbgs7', [BantuanteknisController::class, 'infobantekpendampingan']);
-Route::get('/infopbgs8', [BantuanteknisController::class, 'infobantektimteknis']);
+Route::get('/infopbghunian', [FedashboardController::class, 'infopbghunian']);
 
 // ----------------------------------------------------------------------------------------
 Route::get('/respbgslfindex', [FedashboardController::class, 'menurespbgslfindex']);
