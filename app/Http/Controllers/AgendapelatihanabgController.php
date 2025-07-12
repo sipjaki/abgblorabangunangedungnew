@@ -7,6 +7,7 @@ use App\Models\banhibahberkas;
 use App\Models\banhibahlapangan;
 use App\Models\banhibahskbupati;
 use App\Models\bantuanhibahbg;
+use App\Models\kategoripelatihan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -88,6 +89,7 @@ public function beagendapelatihanabgcreate()
 {
     $user = Auth::user();
     // $dataakun = User::where('statusadmin_id', 4)->get();
+    $kategori = kategoripelatihan::all();
 
     if (!$user) {
         return redirect()->route('login');
@@ -96,6 +98,7 @@ public function beagendapelatihanabgcreate()
     return view('backend.05_agendapelatihan.02_createagendapelatihan', [
         'title' => 'Create Agenda Pelatihan ABG Blora Bangunan Gedung',
         'user'  => $user,
+        'kategori'  => $kategori,
         // 'dataakun'  => $dataakun
     ]);
 }
