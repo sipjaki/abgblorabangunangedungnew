@@ -33,7 +33,7 @@
             </button>
           </div>
 
-              <a href="/feinfocampuran" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+              <a href="/resbantekpermohonan" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
                   <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="thumbnail">
