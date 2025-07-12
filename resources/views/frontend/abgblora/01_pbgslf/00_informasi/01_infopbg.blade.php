@@ -461,7 +461,7 @@
         }
     </style>
 
-@include('frontend.abgblora.04_bantuanteknis.fiturmenu')
+{{-- @include('frontend.abgblora.01_pbgslf.00_informasi.fiturmenu') --}}
 
 <style>
         :root {
