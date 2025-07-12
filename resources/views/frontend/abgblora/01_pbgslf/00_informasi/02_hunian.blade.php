@@ -173,7 +173,8 @@
                                 <div class="col-md-12">
                                     <a href="#" class="text-decoration-none">
                                         <div class="card shadow-sm border-0 h-100">
-                                            <div class="card-img-container"         class="card-img-top img-fluid"
+                                            <div class="card-img-container"
+                                              class="card-img-top img-fluid"
         alt="thumbnail"
         style="object-fit: cover; width: 100%; height: auto;">
                                                 <img src="/assets/android/pbgslf/PBG_FUNGSI_HUNIAN.jpg" alt="PBG Fungsi Hunian">
