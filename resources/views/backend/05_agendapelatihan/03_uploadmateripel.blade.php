@@ -235,17 +235,20 @@ th {
     <table id="tabelSuratbantuanteknis" class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                 <thead>
                                   <tr>
-   <th style="background-color: #ADD8E6;">No</th>
-<th style="background-color: #ADD8E6; width:75px;">
+<th style="background-color: #ADD8E6; width: 40px; text-align: center;">
+    No
+</th>
+
+<th style="background-color: #ADD8E6; width: 250px;">
     <i class="bi bi-book-half"></i> Judul Materi
 </th>
 
-<th style="background-color: #ADD8E6; width:75px;">
-    <i class="bi bi-file-earmark-text"></i> Berkas 1
+<th style="background-color: #ADD8E6; width: 300px;">
+    <i class="bi bi-file-earmark-pdf"></i> Berkas 1
 </th>
 
-<th style="background-color: #ADD8E6; width:400px;">
-    <i class="bi bi-file-image"></i> Berkas 2
+<th style="background-color: #ADD8E6; width: 300px;">
+    <i class="bi bi-file-earmark-pdf-fill"></i> Berkas 2
 </th>
 
 
