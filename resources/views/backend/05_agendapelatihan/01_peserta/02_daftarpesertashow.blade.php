@@ -509,7 +509,7 @@ th {
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/beagendapelatihanabgdelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/beagendapesertadelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
