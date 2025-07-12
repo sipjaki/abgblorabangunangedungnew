@@ -359,5 +359,32 @@ public function beagendapesertadelete($id)
     return redirect()->back()->with('error', 'Data tidak ditemukan.');
 }
 
+public function verifikasipesertapelatihan(Request $request, $id)
+    {
+        // Validasi input verifikasi
+        $request->validate([
+            'verifikasi' => 'required|in:lolos,gugur',
+        ]);
+
+        // Temukan peserta berdasarkan ID
+        $item = pesertapelatihan::findOrFail($id);
+
+        // Simpan nilai verifikasi
+        $item->verifikasi = $request->input('verifikasi');
+        $item->save();
+
+        // Ambil ID agenda
+        $agendaId = $item->agendapelatihanabg_id;
+
+        // Flash message
+        $pesan = $item->verifikasi === 'lolos'
+            ? 'Selamat Peserta Lolos Seleksi!'
+            : 'Peserta dinyatakan Gugur.';
+        session()->flash('verifikasipesertapelatihan', $pesan);
+
+        // Redirect
+        return redirect("/beagendapesertalist/{$agendaId}");
+    }
+
 }
 

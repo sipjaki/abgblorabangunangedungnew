@@ -614,6 +614,8 @@ Route::get('/beagendapesertalist/{id}', [AgendapelatihanabgController::class, 'b
 
 Route::delete('/beagendapesertadelete/{id}', [AgendapelatihanabgController::class, 'beagendapesertadelete'])->middleware('auth')->name('beagendapesertadelete');
 
+Route::put('/verifikasipesertapelatihan/{id}', [AgendapelatihanabgController::class, 'verifikasipesertapelatihan'])->middleware('auth')->name('verifikasi.updatepesertapelatihan');
+
 // Route::get('/portalberita', function ()
 //     // return view('welcome');
 //     return view('portalberita', [
