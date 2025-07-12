@@ -5,15 +5,17 @@
     <div class="w-full h-[184px] absolute top-0 bg-cover bg-center" style="background-image: url('/assets/android/iconmenu/belakang.jpg');">
     </div>
      <div class="relative z-10 flex flex-col gap-6 mt-[60px]">
-      <div class="top-menu flex justify-between items-center px-[18px]">
+
+        <div class="top-menu flex justify-between items-center px-[18px]">
           <div class="w-[42px] h-[42px] flex shrink-0">
             <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon">
           </div>
-        <p class="font-semibold leading-[28px] text-white text-center" style="font-size: 18px;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah </span></p>
+        <p class="font-semibold leading-[28px] text-white text-center" style="font-size: 14px;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora </span></p>
         <div class="w-[42px] h-[42px] flex shrink-0">
             <img src="/assets/abgblora/logo/pupr.png" alt="icon">
           </div>
       </div>
+
       <form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6">
         <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
           <div class="flex p-4 items-center gap-4">
