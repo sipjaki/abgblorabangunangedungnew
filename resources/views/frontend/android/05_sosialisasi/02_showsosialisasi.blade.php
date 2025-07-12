@@ -212,25 +212,25 @@
 
                 <tbody id="tableBody">
                     @php
-                        $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
+                        $start = ($datamateripelatihan1->currentPage() - 1) * $datamateripelatihan1->perPage() + 1;
                         $dataAvailable = false;
                     @endphp
 
                     @foreach ($datamateripelatihan as $item)
                     <tr>
                         <td style="text-align: center; border: 1px solid #ccc; padding: 8px;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td style="text-transform: capitalize; border: 1px solid #ccc; padding: 8px;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
+                        <td style="text-transform: capitalize; border: 1px solid #ccc; padding: 8px;">{{ ucwords(strtolower($item->judulmateripelatihan1)) }}</td>
                         <td style="border: 1px solid #ccc; padding: 8px;">
-                            @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
-                                <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="200px"></iframe>
-                                <a href="{{ asset('storage/' . $item->materipelatihan) }}" download
+                            @if($item->materipelatihan1 && file_exists(public_path('storage/' . $item->materipelatihan1)))
+                                <iframe src="{{ asset('storage/' . $item->materipelatihan1) }}" frameborder="0" width="100%" height="200px"></iframe>
+                                <a href="{{ asset('storage/' . $item->materipelatihan1) }}" download
                                    class="badge"
                                    style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
                                    <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
                                 </a>
-                            @elseif($item->materipelatihan)
-                                <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                <a href="{{ asset($item->materipelatihan) }}" download
+                            @elseif($item->materipelatihan11)
+                                <iframe src="{{ asset($item->materipelatihan1) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                <a href="{{ asset($item->materipelatihan1) }}" download
                                    class="badge"
                                    style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
                                    <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
