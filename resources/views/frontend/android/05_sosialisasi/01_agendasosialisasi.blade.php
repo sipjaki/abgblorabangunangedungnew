@@ -181,6 +181,7 @@
 
 
       </form>
+      <br><br>
 
       @include('frontend.android.00_fiturmenu.05_keterangan')
 
