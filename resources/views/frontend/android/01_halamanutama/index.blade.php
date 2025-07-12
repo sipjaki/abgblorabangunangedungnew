@@ -45,53 +45,41 @@
     </header>
 
     @include('frontend.android.00_fiturmenu.04_menunavigasi')
-
-    <div id="Promo" class="promo-section">
-  <div class="promo-header">
-    <h6 class="promo-title" style="font-size: 16px;">Agenda Sosialisasi</h6>
-    <a href="#" class="promo-link">Lihat Semua</a>
-  </div>
-
-  <div class="promo-carousel">
-    <!-- Card 1 -->
-    <div class="promo-card">
-      <div class="card-image-container">
-        <img src="/assets/android/thumbnails/gambar001.png" class="card-image" alt="Agenda Sosialisasi">
-        <div class="card-overlay"></div>
-        <div class="card-badge">12 Jun 2023</div>
-      </div>
-      <div class="card-content">
-        <h3 class="card-title">Pelatihan IMB Digital</h3>
-        <p class="card-description">Sosialisasi pengajuan IMB secara digital untuk masyarakat</p>
-      </div>
+<div id="Promo" class="promo-section">
+    <div class="promo-header">
+        <h6 class="promo-title" style="font-size: 16px;">Agenda Sosialisasi</h6>
+        <a href="#" class="promo-link">Lihat Semua</a>
     </div>
 
-    <!-- Card 2 -->
-    <div class="promo-card">
-      <div class="card-image-container">
-        <img src="/assets/android/thumbnails/gambar002.png" class="card-image" alt="Agenda Sosialisasi">
-        <div class="card-overlay"></div>
-        <div class="card-badge">25 Jul 2023</div>
-      </div>
-      <div class="card-content">
-        <h3 class="card-title">Workshop KRK</h3>
-        <p class="card-description">Pemahaman tentang Ketentuan Rencana Kota</p>
-      </div>
-    </div>
+    <div class="promo-carousel">
+        @foreach ($agendapelatihan as $item)
+            <div class="promo-card">
+                <div class="card-image-container">
+                    <img src="{{ asset($item->foto) }}" class="card-image" alt="{{ $item->namakegiatan }}">
+                    <div class="card-overlay"></div>
+                    <div class="card-badge">
+                        {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d M Y') }}
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">{{ $item->namakegiatan }}</h3>
+                    <p class="card-description">
+                        {{ \Illuminate\Support\Str::limit($item->keterangan, 80) }}
+                    </p>
 
-    <!-- Card 3 -->
-    <div class="promo-card">
-      <div class="card-image-container">
-        <img src="/assets/android/thumbnails/gambar003.png" class="card-image" alt="Agenda Sosialisasi">
-        <div class="card-overlay"></div>
-        <div class="card-badge">15 Agu 2023</div>
-      </div>
-      <div class="card-content">
-        <h3 class="card-title">Seminar Bangunan Tahan Gempa</h3>
-        <p class="card-description">Teknik konstruksi untuk daerah rawan gempa</p>
-      </div>
+                    @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
+                        <a href="/daftaragenda/{{ $item->id }}" class="btn btn-sm" style="background-color: navy; color: white; margin-top: 8px;">
+                            Daftar
+                        </a>
+                    @else
+                        <button class="btn btn-sm" style="background-color: red; color: white; margin-top: 8px;" disabled>
+                            Ditutup
+                        </button>
+                    @endif
+                </div>
+            </div>
+        @endforeach
     </div>
-  </div>
 </div>
 
 <style>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\agendapelatihanabg;
 use App\Models\artikelabg;
 use App\Models\beritaabg;
 use Illuminate\Http\Request;
@@ -22,6 +23,7 @@ class FedashboardController extends Controller
         $user = Auth::user();
         $databerita = beritaabg::all();
         $dataartikel = artikelabg::all();
+        $agendapelatihan = agendapelatihanabg::all();
 
 
         // return view('/404', [
@@ -32,6 +34,7 @@ class FedashboardController extends Controller
             'user' => $user,
             'data' => $databerita,
             'dataartikel' => $dataartikel,
+            'agendapelatihan' => $agendapelatihan,
         ]);
     }
 
