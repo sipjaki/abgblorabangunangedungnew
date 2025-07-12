@@ -513,7 +513,7 @@ public function ressosialisasishow($id)
     // Ambil data agenda pelatihan berdasarkan ID
     $agendapelatihan = agendapelatihanabg::findOrFail($id);
 
-    return view('frontend.android.05_sosialisasi.02_showsosialisasi', [
+    return view('frontend.android.05_soialisasi.02_showsosialisasi', [
         'title' => 'Show Agenda Sosialisasi',
         'user' => $user,
         'data' => $agendapelatihan,
