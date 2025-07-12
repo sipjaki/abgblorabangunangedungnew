@@ -8,6 +8,7 @@ use App\Models\beritaabg;
 use Illuminate\Http\Request;
 
 use App\Models\bgkartuinventarisbangunan;
+use App\Models\bujkkonsultan;
 use App\Models\jenispengajuanbantek;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
@@ -130,8 +131,10 @@ class FedashboardController extends Controller
     $datakecamatan = kecamatanblora::all();
     $datakelurahan = kelurahandesa::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
     $datapilihanpengajuan = jenispengajuanbantek::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
+    $datakonsultan = bujkkonsultan::all();
 
     $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
 
     // Ambil data user yang statusadmin_id = 3 beserta relasi statusadmin
     $statusadimindinas = User::with('statusadmin')
@@ -143,7 +146,9 @@ class FedashboardController extends Controller
         'datakecamatan' => $datakecamatan,
         'datakelurahan' => $datakelurahan,
         'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
         'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
         'statusadimindinas' => $statusadimindinas, // kirim ke view juga
     ]);
 }
