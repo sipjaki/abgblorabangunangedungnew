@@ -343,7 +343,7 @@
   </li>
 
 
-  <li class="dropdown">
+  {{-- <li class="dropdown">
     <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Sosialisasi</a>
     <ul class="dropdown-menu" style="width: 300px;">
       <li style="font-size: 14px;">
@@ -363,7 +363,7 @@
         </a>
       </li>
     </ul>
-  </li>
+  </li> --}}
   <li class="dropdown">
     <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">KRK</a>
     <ul class="dropdown-menu" style="width: 300px;">
