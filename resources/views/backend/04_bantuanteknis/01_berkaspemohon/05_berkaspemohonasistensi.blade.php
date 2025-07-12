@@ -150,76 +150,47 @@ th {
 
 
 
+<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+  <!-- Bagian kiri: dropdown entries + search -->
+  <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
 
+    <!-- Dropdown Entries -->
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data :</label>
+      <select id="entries" onchange="updateEntries()"
+        style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="75">75</option>
+        <option value="100">100</option>
+        <option value="150">150</option>
+        <option value="200">200</option>
+        <option value="500">500</option>
+        <option value="1000">1000</option>
+        <option value="2000">2000</option>
+      </select>
+    </div>
 
+    <!-- Search Box -->
+    <div style="position: relative; display: inline-block;">
+      <input type="search" id="searchInput" placeholder="Cari Permohonan ...." onkeyup="searchTable()"
+        style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
+      <i class="fas fa-search"
+         style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
+      </i>
+    </div>
 
-                                                 <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
-            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
-            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
-                {{-- <option value="10">10</option> --}}
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="75">75</option>
-                <option value="100">100</option>
-                <option value="150">150</option>
-                <option value="200">200</option>
-                <option value="500">500</option>
-                <option value="1000">1000</option>
-                <option value="2000">2000</option>
-            </select>
-        </div>
+  </div>
 
+  <!-- Bagian kanan: tombol download dan create -->
+  <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarjenispermohonan')"
+      class="button-baru"
+      style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+      <i class="bi bi-download"></i> Download Excel
+    </button>
 
-        <script>
-                  function updateEntries() {
-                let selectedValue = document.getElementById("entries").value;
-                let url = new URL(window.location.href);
-                url.searchParams.set("perPage", selectedValue);
-                window.location.href = url.toString();
-            }
-        </script>
-
-
-                        <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                        </div>
-                        <script>
-                            function updateEntries() {
-                                let selectedValue = document.getElementById("entries").value;
-                                let url = new URL(window.location.href);
-                                url.searchParams.set("perPage", selectedValue);
-                                window.location.href = url.toString();
-                            }
-
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
-
-                            fetch(`/bebantuanteknisassistensi?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
-                        }
-
-                                </script>
-
-
-
-<div style="display: flex; justify-content: flex-end;">
-
-                              <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanbantuanteknis')"
-                                    class="button-lolos" style="color: black;">
-                                    <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
-                                </button>
-
-             {{-- @canany(['superadmin', 'admin']) --}}
     @canany(['superadmin', 'admin'])
     <a href="{{ route('bebantuanteknisindexmenu') }}">
         <button class="button-validasinew button-abgblora" type="button"
@@ -229,37 +200,37 @@ th {
     </a>
 @endcanany
 
-{{-- @endcanany --}}
+
+  </div>
+
+</div>
+
+<script>
+  function updateEntries() {
+    let selectedValue = document.getElementById("entries").value;
+    let url = new URL(window.location.href);
+    url.searchParams.set("perPage", selectedValue);
+    window.location.href = url.toString();
+  }
+
+  function searchTable() {
+    let input = document.getElementById("searchInput").value;
+
+    fetch(`/datadesablora?search=${input}`)
+      .then(response => response.text())
+      .then(html => {
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(html, "text/html");
+        let newTableBody = doc.querySelector("#tableBody").innerHTML;
+        document.querySelector("#tableBody").innerHTML = newTableBody;
+      })
+      .catch(error => console.error("Error fetching search results:", error));
+  }
+</script>
 
 
-                    </div>
 
 
-                                <!-- Tombol Create -->
-                                {{-- <a href="/settingssekolah/create">
-                                    <button
-                                        onmouseover="this.style.background='white'; this.style.color='black';"
-                                        onmouseout="this.style.background='linear-gradient(to right, #228B22, #d4af37)'; this.style.color='white';"
-                                        style="background: linear-gradient(to right, #228B22, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
-                                        <i class="fa fa-plus" style="margin-right: 8px;"></i> Create
-                                    </button>
-                                </a> --}}
-
-
-
-                        {{-- <a href="/bekrkindex">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                             style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
-
-                         </button>
-                         </a> --}}
-
-                     </div>
-                 </div>
                  <hr>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
@@ -815,3 +786,5 @@ th {
         return XLSX.writeFile(wb, filename + '.xlsx');
     }
     </script>
+
+
