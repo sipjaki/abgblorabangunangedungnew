@@ -212,7 +212,7 @@ th {
 <a href="#" style="text-decoration: none;">
   <button class="button-newvalidasi"
     style="display: flex; align-items: center; justify-content: center; padding: 10px 14px; border-radius: 10px; border: 1px solid #ddd; background-color: #f5f5f5; cursor: pointer; transition: 0.3s;">
-    <i class="bi bi-house-door" style="font-size: 18px; color: #0d6efd;">Kembali</i>
+    <i class="bi bi-house-door" style="font-size: 18px; color: #0d6efd;"></i> Kembali
   </button>
 </a>
 
