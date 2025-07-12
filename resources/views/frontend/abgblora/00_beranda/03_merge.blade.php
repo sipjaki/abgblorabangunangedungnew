@@ -297,7 +297,7 @@
               </div>
             </div>
           </a>
-
+{{--
           <a href="category-auth.html" class="card" style="text-decoration: none;">
             <div class="card-custom">
                          <div style="display: flex; justify-content: center; align-items: center;">
@@ -318,7 +318,7 @@
       style="width: 100%; border-radius: 15px;">
     </video>
   </div>
-</div>
+</div> --}}
 
               <div style="display: flex; flex-direction: column; gap: 4px;">
                 <p style="font-weight: 600; font-size: 14px; color: #000;">Bantuan Gambar</p>
