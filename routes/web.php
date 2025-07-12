@@ -601,7 +601,7 @@ Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beage
 Route::delete('/beagendapelatihanabgdelete/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgdelete'])->middleware('auth')->name('delete.beagendapelatihanabgdelete');
 
 Route::get('/beagendapelatihanabgcreate', [AgendapelatihanabgController::class, 'beagendapelatihanabgcreate'])->middleware('auth')->name('beagendapelatihanabgcreate');
-// Route::post('/bebantekkonsultannewjasa', [BantuanteknisController::class, 'bebantekkonsultannewjasa'])->middleware('auth')->name('create.bebantekkonsultannewjasa');
+Route::post('/beagendapelatihanabgcreatenew', [AgendapelatihanabgController::class, 'beagendapelatihanabgcreatenew'])->middleware('auth')->name('beagendapelatihanabgcreatenew');
 
 // Route::get('/portalberita', function ()
 //     // return view('welcome');

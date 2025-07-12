@@ -104,6 +104,68 @@ public function beagendapelatihanabgcreate()
 }
 
 
+public function beagendapelatihanabgcreatenew(Request $request)
+{
+    $user = Auth::user();
+
+    $validated = $request->validate([
+        'kategoripelatihan_id' => 'required|exists:kategoripelatihan,id',
+        'namakegiatan' => 'required|string|max:255',
+        'penutupan' => 'required|date',
+        'waktupelaksanaan' => 'required|date',
+        'jumlahpeserta' => 'required|integer|min:1',
+        'lokasi' => 'required|string|max:255',
+        'keterangan' => 'nullable|string|max:255',
+        'isiagenda' => 'nullable|string',
+        'barcodepelatihan' => 'nullable|string|max:255',
+        'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        'suratundangan' => 'nullable|mimes:pdf|max:4096',
+    ]);
+
+    $data = new agendapelatihanabg();
+    $data->kategoripelatihan_id = $validated['kategoripelatihan_id'];
+    $data->user_id = $user->id;
+    $data->namakegiatan = $validated['namakegiatan'];
+    $data->penutupan = $validated['penutupan'];
+    $data->waktupelaksanaan = $validated['waktupelaksanaan'];
+    $data->jumlahpeserta = $validated['jumlahpeserta'];
+    $data->lokasi = $validated['lokasi'];
+    $data->keterangan = $validated['keterangan'] ?? null;
+    $data->isiagenda = $validated['isiagenda'];
+    $data->barcodepelatihan = $validated['barcodepelatihan'] ?? null;
+
+    // ========== Simpan Gambar ke public/05_agendapelatihan/01_berkas
+    if ($request->hasFile('foto')) {
+        $file = $request->file('foto');
+        $filename = Str::uuid() . '.' . $file->getClientOriginalExtension();
+        $path = public_path('05_agendapelatihan/01_berkas');
+
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+
+        $file->move($path, $filename);
+        $data->foto = '05_agendapelatihan/01_berkas/' . $filename;
+    }
+
+    // ========== Simpan PDF ke public/05_agendapelatihan/02_berkas
+    if ($request->hasFile('suratundangan')) {
+        $file = $request->file('suratundangan');
+        $filename = Str::uuid() . '.' . $file->getClientOriginalExtension();
+        $path = public_path('05_agendapelatihan/02_berkas');
+
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+
+        $file->move($path, $filename);
+        $data->suratundangan = '05_agendapelatihan/02_berkas/' . $filename;
+    }
+
+    $data->save();
+
+    return redirect()->route('agendapelatihan.index')->with('success', 'Data agenda berhasil disimpan.');
+}
 
 
 }

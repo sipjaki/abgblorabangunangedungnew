@@ -194,7 +194,7 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('create.bebantekkonsultannewjasa') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('beagendapelatihanabgcreatenew') }}" method="POST" enctype="multipart/form-data">
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -334,7 +334,7 @@ th {
 {{-- Upload Surat Undangan (PDF) --}}
 <div class="mb-3 col-md-6">
     <label class="form-label" for="suratundangan">
-        <i class="bi bi-file-earmark-pdf text-primary me-1"></i> Upload Surat Undangan (PDF)
+        <i class="bi bi-file-earmark-pdf text-primary me-1"></i> Upload Surat Undangan (PDF)/ * Jika Ada
     </label>
     <input type="file" name="suratundangan" id="suratundangan" class="form-control @error('suratundangan') is-invalid @enderror" accept=".pdf" onchange="previewPDF(event)">
     @error('suratundangan')
