@@ -13,19 +13,29 @@
             font-size: 16px;
             line-height: 1.6;
             color: #333;
-            background-color: #f8fafc;
+            background: linear-gradient(to bottom, #7de3f1, #ffffff);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        /* Main Content Container */
+        .main-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 1200px;
         }
 
         /* Header Styles */
         .header-banner {
             background: linear-gradient(to bottom, #7de3f1, #ffffff);
-            width: 100vw;
+            width: 100%;
             margin: 0;
-            padding: 0;
+            padding: 20px 0;
             position: relative;
-            left: 0;
-            margin-top: -50px;
-            margin-bottom: -45px;
         }
 
         /* Card Styles */
@@ -35,6 +45,7 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             padding: 20px;
             margin-bottom: 20px;
+            border: none;
         }
 
         .card-title {
@@ -133,6 +144,16 @@
             margin: 20px 0;
         }
 
+        /* Navigation Menu */
+        .nav-menu {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .map-container {
@@ -140,6 +161,11 @@
             }
 
             .card {
+                padding: 15px;
+            }
+
+            .main-container {
+                margin: 10px;
                 padding: 15px;
             }
         }
@@ -154,76 +180,70 @@
 
     <!-- Banner Section -->
     <section class="header-banner">
-        <section class="container max-w-[1130px] mx-auto" style="margin-top: 165px;">
-            <br><br>
+        <div class="container max-w-[1130px] mx-auto" style="padding-top: 50px;">
             <div class="flex items-center gap-[20px]">
                 <!-- Content here -->
             </div>
-        </section>
+        </div>
     </section>
 
     <!-- Main Content Section -->
-    <section    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-  "
-    id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
-        <div class="flex flex-col gap-5 w-full">
-            <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
-                <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
-                    <div class="w-5 h-5 flex shrink-0">
-                        <img src="/assets/new/icons/story.svg" alt="icon">
+    <div class="main-container">
+        <section id="details" class="container-fluid flex flex-col sm:flex-row gap-5">
+            <div class="flex flex-col gap-5 w-full">
+                <div class="flex flex-col gap-5 p-5 rounded-[20px] w-full">
+                    <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
+                        <div class="w-5 h-5 flex shrink-0">
+                            <img src="/assets/new/icons/story.svg" alt="icon">
+                        </div>
+                        <p class="text-white font-normal text-sm">
+                            <span class="font-bold">Informasi Bantuan Teknis Penyelenggaraan Bangunan Gedung Negara</span>
+                        </p>
                     </div>
-                    <p class="text-white font-normal text-sm">
-                        <span class="font-bold">Informasi Bantuan Teknis Penyelenggaraan Bangunan Gedung Negara</span>
-                    </p>
-                </div>
 
-                <!-- Include Menu -->
-                @include('frontend.abgblora.01_pbgslf.00_informasi.fiturmenupbg')
+                    <!-- Include Menu -->
+                    @include('frontend.abgblora.01_pbgslf.00_informasi.fiturmenupbg')
 
-                <!-- Information Cards -->
-                <div class="container-fluid px-4" style="margin-top: -25px;">
-                    <!-- Lampiran Section -->
-                    <div class="mb-5">
-                        <h6 class="fw-semibold mb-4" style="font-size: 18px;">
-                            <i class="bi bi-paperclip text-primary"></i> Lampiran Informasi
-                        </h6>
+                    <!-- Information Cards -->
+                    <div class="container-fluid px-0">
+                        <!-- Lampiran Section -->
+                        <div class="mb-5">
+                            <h6 class="fw-semibold mb-4" style="font-size: 18px;">
+                                <i class="bi bi-paperclip text-primary"></i> Lampiran Informasi
+                            </h6>
 
-                        <div class="row g-4">
-                            <div class="col-md-12">
-                                <a href="#" class="text-decoration-none">
-                                    <div class="card shadow-sm border-0 h-100">
-                                        <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png" class="card-img-top" alt="thumbnail" style="object-fit: cover;">
-                                        <div class="card-body">
-                                            <h5 class="card-title text-primary fw-semibold">
-                                                Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
-                                            </h5>
-                                            <p class="card-text text-secondary" style="text-align: justify;">
-                                                PBG adalah dokumen yang diperlukan untuk bangunan dengan fungsi campuran, seperti pelayanan pendidikan, kesehatan, kebudayaan, laboratorium, dan umum. Syarat pengajuan meliputi dokumen tanah, data umum (KTP, NIB, KRK), serta dokumen teknis arsitektur, struktur, dan MEP. Prosesnya dimulai dari pendaftaran via SIMBG.PU, konsultasi teknis, validasi, pembayaran retribusi, hingga penerbitan dokumen PBG.
-                                            </p>
+                            <div class="row g-4">
+                                <div class="col-md-12">
+                                    <a href="#" class="text-decoration-none">
+                                        <div class="card shadow-sm border-0 h-100">
+                                            <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png" class="card-img-top" alt="thumbnail" style="object-fit: cover; height: 200px;">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-primary fw-semibold">
+                                                    Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
+                                                </h5>
+                                                <p class="card-text text-secondary" style="text-align: justify;">
+                                                    PBG adalah dokumen yang diperlukan untuk bangunan dengan fungsi campuran, seperti pelayanan pendidikan, kesehatan, kebudayaan, laboratorium, dan umum. Syarat pengajuan meliputi dokumen tanah, data umum (KTP, NIB, KRK), serta dokumen teknis arsitektur, struktur, dan MEP. Prosesnya dimulai dari pendaftaran via SIMBG.PU, konsultasi teknis, validasi, pembayaran retribusi, hingga penerbitan dokumen PBG.
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Contact Section -->
-                    <div class="p-4 rounded" style="background-color: #4041DA; color: white;">
-                        <h5 class="fw-semibold mb-2"><i class="bi bi-headset"></i> Layanan dan Pengaduan</h5>
-                        <p class="mb-1">Untuk permohonan bantuan, pengaduan, saran, atau masukan terkait pelayanan kami:</p>
-                        <a href="mailto:bid.bangunan.gedung.blora@gmail.com" class="text-white text-decoration-underline">
-                            <i class="bi bi-envelope"></i> bid.bangunan.gedung.blora@gmail.com
-                        </a>
+                        <!-- Contact Section -->
+                        <div class="contact-section">
+                            <h5 class="fw-semibold mb-2"><i class="bi bi-headset"></i> Layanan dan Pengaduan</h5>
+                            <p class="mb-1">Untuk permohonan bantuan, pengaduan, saran, atau masukan terkait pelayanan kami:</p>
+                            <a href="mailto:bid.bangunan.gedung.blora@gmail.com" class="text-white text-decoration-underline">
+                                <i class="bi bi-envelope"></i> bid.bangunan.gedung.blora@gmail.com
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Footer Includes -->
     @include('frontend.abgblora.00_fiturmenu.03_footer')
