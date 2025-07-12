@@ -24,25 +24,31 @@
 
     <div class="container-surat px-6"> <!-- padding kiri kanan untuk jarak -->
 
-        <div>
-            <a href="/resdaftarpelatihanpeserta/create/{{$data->id}}">
-                <button
-                    class="btn-navy"
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='1px solid navy';"
-                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.querySelector('i').style.color='white'; this.style.border='none';"
-                >
-                    <i class="bi bi-person-fill" style="color: white;"></i>
-                    Daftar Pelatihan
-                </button>
-            </a>
-        </div>
+       <div class="flex justify-center my-4">
+  <a href="/resdaftarpelatihanpeserta/create/{{$data->id}}">
+    <button
+      class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md
+             transition-colors duration-300
+             hover:bg-white hover:text-black border border-blue-600"
+      type="button"
+    >
+      <i class="bi bi-person-fill mr-2"></i>
+      Daftar Pelatihan
+    </button>
+  </a>
+</div>
 
-        <div class="header-surat">
-            <div class="header-text">
-                <h3>AGENDA SOSIALISASI BANGUNAN GEDUNG</h3>
-                <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
-            </div>
-        </div>
+
+<div class="header-surat" style="text-align: center; margin-bottom: 20px;">
+  <div class="header-text">
+    <h3 style="font-size: 1.8rem; font-weight: 700; color: #28A745; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 2px;">
+      AGENDA SOSIALISASI BANGUNAN GEDUNG
+    </h3>
+    <h4 style="font-size: 1.2rem; font-weight: 500; color: #444; line-height: 1.3;">
+      DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH
+    </h4>
+  </div>
+</div>
 
         <div class="flex justify-center">
             <div class="rounded-lg shadow-lg overflow-hidden w-fit">
