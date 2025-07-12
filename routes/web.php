@@ -610,6 +610,7 @@ Route::post('/beagendapelatihanabguploadnew', [AgendapelatihanabgController::cla
 
 // sigit bro
 Route::get('/beagendapeserta', [AgendapelatihanabgController::class, 'beagendapeserta'])->middleware('auth')->name('beagendapeserta');
+Route::get('/beagendapesertalist/{id}', [AgendapelatihanabgController::class, 'beagendapesertalist'])->middleware('auth');
 
 // Route::get('/portalberita', function ()
 //     // return view('welcome');

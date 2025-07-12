@@ -6,6 +6,7 @@ use App\Models\agendapelatihanabg;
 use Illuminate\Support\Str;
 use App\Models\kategoripelatihan;
 use App\Models\materipelatihan;
+use App\Models\pesertapelatihan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -287,6 +288,54 @@ public function beagendapeserta(Request $request)
         'user'  => $user,
     ]);
 }
+
+
+public function beagendapesertalist(Request $request, $id)
+    {
+        $perPage = $request->input('perPage', 200);
+        $search = $request->input('search');
+
+        // Pastikan agenda pelatihan dengan ID ini ada
+        $agendapelatihan = agendapelatihanabg::findOrFail($id);
+
+        // Ambil user login saat ini
+        $user = Auth::user();
+
+        // Ambil peserta yang hanya terkait dengan agenda pelatihan ini
+        $query = pesertapelatihan::where('agendapelatihanabg_id', $id)
+                    ->select(['id', 'namalengkap', 'jeniskelamin', 'instansi', 'jenjangpendidikan_id', 'nik', 'tanggallahir', 'notelepon', 'sertifikat', 'verifikasi']);
+
+        // Filter pencarian (jika ada)
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('jeniskelamin', 'LIKE', "%{$search}%")
+                  ->orWhere('instansi', 'LIKE', "%{$search}%")
+                  ->orWhere('namalengkap', 'LIKE', "%{$search}%")
+                //   ->orWhereHas('user', function ($sub) use ($search) {
+                //       $sub->where('name', 'LIKE', "%{$search}%");
+                //   })
+                  ;
+            });
+        }
+
+        $datapesertapelatihan = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+        // Untuk request Ajax (misal filter dinamis via JS)
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('backend.05_agendapelatihan.02_daftarpesertashow.partials.table', compact('datapesertapelatihan'))->render()
+            ]);
+        }
+
+        return view('backend.05_agendapelatihan.02_daftarpesertashow', [
+            'title' => 'Daftar Peserta Agenda Pelatihan',
+            'data' => $agendapelatihan,
+            'datapeserta' => $datapesertapelatihan,
+            'perPage' => $perPage,
+            'search' => $search,
+            'user' => $user
+        ]);
+    }
 
 }
 
