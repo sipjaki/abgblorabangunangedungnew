@@ -387,7 +387,7 @@
     </ul>
   </li>
 
-  <li class="dropdown">
+  {{-- <li class="dropdown">
     <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Penilik</a>
     <ul class="dropdown-menu" style="width: 300px;">
       <li style="font-size: 14px;">
@@ -408,7 +408,7 @@
         </a>
       </li>
     </ul>
-  </li>
+  </li> --}}
 
   <li class="dropdown">
     <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">MBR</a>
@@ -456,7 +456,7 @@
     </ul>
   </li>
 
-  <li class="dropdown">
+  {{-- <li class="dropdown">
     <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Hibah</a>
     <ul class="dropdown-menu" style="width: 300px;">
       <li style="font-size: 14px;">
@@ -476,7 +476,7 @@
         </a>
       </li>
     </ul>
-  </li>
+  </li> --}}
 
 </ul>
 
