@@ -292,5 +292,21 @@ public function mbrgambarupdate($id)
         ]);
     }
 
+
+
+
+    public function febantekasistensi()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.04_bantuanteknis.03_infobantuanasistensi', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi Permohonan Bantuan Asistensi Penyelenggaraan Gedung Negara ',
+            'user' => $user,
+        ]);
+    }
+
 }
 

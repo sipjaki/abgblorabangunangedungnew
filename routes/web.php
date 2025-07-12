@@ -66,6 +66,8 @@ Route::get('/resbgindex', [FedashboardController::class, 'menuresbangunangedungi
 Route::get('/resbantekindex', [FedashboardController::class, 'resbantekindex']);
 Route::get('/resbantekpermohonan', [FedashboardController::class, 'resbantekpermohonan'])->middleware('auth');
 
+Route::get('/febantekasistensi', [FedashboardController::class, 'febantekasistensi']);
+
 // Route::get('/feinfocampuran', [FedashboardController::class, 'feinfocampuran']);
 
 // 08_ MENU MBR BANTUAN GAMBAR
