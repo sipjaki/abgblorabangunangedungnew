@@ -495,12 +495,16 @@ public function infopbgprasarana()
     {
 
         $user = Auth::user();
+        // $agendapelatihan = agendapelatihanabg::all();
+        $agendapelatihan = agendapelatihanabg::orderBy('created_at', 'desc')->get();
+
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.05_agendasosialisasi.01_agendasosialisasi', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi Agenda Sosialisasi ',
             'user' => $user,
+            'agendapelatihan' => $agendapelatihan,
         ]);
     }
 
