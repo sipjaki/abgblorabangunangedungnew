@@ -334,14 +334,14 @@
 <div id="confirmModal" class="modal">
     <div class="modal-content">
         <p>
-            Apakah Anda yakin dengan permohonan Anda?
+            Apakah Data Anda Sudah Benar?
         </p>
 
         <!-- Checkbox -->
         <div class="confirm-checkbox">
             <input type="checkbox" id="dataConfirm" onchange="toggleSubmitButton()">
             <label for="dataConfirm">
-                Saya menyatakan bahwa data persyaratan yang saya kirim adalah sebenar-benarnya dan dapat dipertanggungjawabkan.
+                Saya menyatakan bahwa data yang saya kirim adalah yang sebenar benarnya.
             </label>
         </div>
 

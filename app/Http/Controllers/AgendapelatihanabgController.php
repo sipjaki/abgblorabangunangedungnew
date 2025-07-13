@@ -408,5 +408,26 @@ public function resagendapelatihan($id)
     ]);
 }
 
+
+public function pendaftaranpesertanew(Request $request)
+{
+    $validated = $request->validate([
+        'agendapelatihanabg_id' => 'required|string',
+        'namalengkap' => 'required|string|max:255',
+        'jenjangpendidikan_id' => 'nullable|string',
+        'nik' => 'required|string|max:20',
+        'jeniskelamin' => 'required|in:Laki-laki,Perempuan',
+        'tanggallahir' => 'required|date',
+        'notelepon' => 'required|string|max:20',
+        'instansi' => 'nullable|string|max:255',
+    ]);
+
+    // Simpan ke database
+    pesertapelatihan::create($validated);
+
+    // Redirect ke route beagendapelatihanabg
+    return redirect()->route('beagendapelatihanabg')->with('create', 'Pendaftaran Anda Berhasil !');
+}
+
 }
 

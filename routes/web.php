@@ -623,7 +623,7 @@ Route::post('/beberitacreatenew', [DatabaseAbgController::class, 'beberitacreate
 Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beagendapelatihanabg'])->middleware('auth')->name('beagendapelatihanabg');
 
 Route::get('/resagendapelatihan/{id}', [AgendapelatihanabgController::class, 'resagendapelatihan'])->middleware('auth');
-Route::post('/pendaftaranpesertanew', [AgendapelatihanabgController::class, 'resagendapelatihan'])->middleware('auth')->name('pendaftaranpesertanew');
+Route::post('/pendaftaranpesertanew', [AgendapelatihanabgController::class, 'pendaftaranpesertanew'])->middleware('auth')->name('pendaftaranpesertanew');
 
 Route::delete('/beagendapelatihanabgdelete/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgdelete'])->middleware('auth')->name('delete.beagendapelatihanabgdelete');
 
