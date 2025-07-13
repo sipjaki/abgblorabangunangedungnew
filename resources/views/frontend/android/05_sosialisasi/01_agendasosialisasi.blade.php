@@ -1,4 +1,5 @@
 @include('frontend.android.00_fiturmenu.01_header')
+
 @include('frontend.android.00_fiturmenu.06_alert')
 
 <body class="font-poppins text-[#070625]">
