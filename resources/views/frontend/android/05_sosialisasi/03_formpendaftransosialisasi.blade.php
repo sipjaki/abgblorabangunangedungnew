@@ -239,7 +239,7 @@
                     <option value="">-- Pilih Jenjang Pendidikan --</option>
                     @foreach ($jenjangpendidikan as $item)
                         <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
-                            {{ $item->nama_jenjang }}
+                            {{ $item->jenjangpendidikan }}
                         </option>
                     @endforeach
                 </select>
