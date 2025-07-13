@@ -36,31 +36,46 @@
           </div>
 
 <!-- View: resources/views/frontend/android/00_gsb/01_pencariangsb.blade.php -->
-
 <div class="p-4">
     <h1 class="text-xl font-bold text-blue-800 mb-6 text-center">🔍 Pencarian GSB Kabupaten Blora</h1>
 
     <!-- Form pencarian -->
-    <div class="mb-10">
-        <label for="searchInput" class="block mb-2 font-semibold text-sm text-gray-700">Ketik atau pilih ruas jalan / jenis jalan:</label>
+    <div class="mb-8">
+        <label for="searchInput" class="block mb-2 font-semibold text-sm text-gray-700">Ketik atau pilih ruas jalan:</label>
         <div class="relative">
-            <input list="jalanOptions" id="searchInput" class="w-full px-5 py-4 border border-blue-300 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base" placeholder="🛣️ Contoh: Jl. Pemuda atau Jalan Nasional..." oninput="filterGSB()">
+            <input list="jalanOptions" id="searchInput"
+                   class="w-full px-5 py-4 border border-blue-300 rounded-xl shadow-md
+                          focus:outline-none focus:ring-2 focus:ring-blue-500
+                          focus:border-transparent text-base"
+                   placeholder="🛣️ Contoh: Jl. Pemuda, Jl. Blora-Cepu, dll."
+                   oninput="filterGSB()">
             <datalist id="jalanOptions">
                 @foreach ($rencanagsb as $item)
                     <option value="{{ $item->ruasjalan }}">
-                    <option value="{{ $item->jenisjalan }}">
                 @endforeach
             </datalist>
         </div>
     </div>
 
-    <!-- Hasil pencarian ke bawah (disembunyikan saat awal) -->
+    <!-- Jarak batas hasil -->
+    <div class="mb-4 border-t border-gray-300"></div>
+
+    <!-- Hasil pencarian -->
     <div id="gsbResultList" class="flex flex-col gap-6 hidden">
         @foreach ($rencanagsb as $index => $item)
             <div class="bg-white p-5 rounded-xl shadow-md border border-gray-200 data-card transition-transform hover:scale-[1.01]">
-                <p class="text-sm text-gray-700 flex items-center gap-2"><i class="fas fa-road text-blue-600"></i> <strong class="text-blue-700">Ruas Jalan:</strong> {{ $item->ruasjalan }}</p>
-                <p class="text-sm text-gray-700 flex items-center gap-2"><i class="fas fa-route text-blue-600"></i> <strong class="text-blue-700">Jenis Jalan:</strong> {{ $item->jenisjalan }}</p>
-                <p class="text-sm text-gray-700 flex items-center gap-2"><i class="fas fa-ruler-combined text-blue-600"></i> <strong class="text-blue-700">GSB:</strong> {{ $item->gsb }} meter</p>
+                <p class="text-sm text-gray-700 flex items-center gap-2">
+                    <i class="fas fa-road text-blue-600"></i>
+                    <strong class="text-blue-700">Ruas Jalan:</strong> {{ $item->ruasjalan }}
+                </p>
+                <p class="text-sm text-gray-700 flex items-center gap-2">
+                    <i class="fas fa-route text-blue-600"></i>
+                    <strong class="text-blue-700">Jenis Jalan:</strong> {{ $item->jenisjalan }}
+                </p>
+                <p class="text-sm text-gray-700 flex items-center gap-2">
+                    <i class="fas fa-ruler-combined text-blue-600"></i>
+                    <strong class="text-blue-700">GSB:</strong> {{ $item->gsb }} meter
+                </p>
             </div>
         @endforeach
     </div>
@@ -74,9 +89,7 @@
 
         cards.forEach(card => {
             const ruas = card.querySelector("p:nth-child(1)").textContent.toLowerCase();
-            const jenis = card.querySelector("p:nth-child(2)").textContent.toLowerCase();
-
-            if (ruas.includes(searchValue) || jenis.includes(searchValue)) {
+            if (ruas.includes(searchValue)) {
                 card.style.display = 'block';
                 found = true;
             } else {
