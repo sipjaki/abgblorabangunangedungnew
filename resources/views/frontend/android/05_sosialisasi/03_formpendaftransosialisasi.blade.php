@@ -205,8 +205,6 @@
             </div>
 <form action="{{ route('pendaftaranpesertanew') }}" method="POST" class="mobile-form" id="pendaftaranForm">
     @csrf
-
-    <!-- Hidden ID Agenda Pelatihan -->
     <input type="hidden" name="agendapelatihanabg_id" value="{{ $agendapelatihan->id }}">
 
     <div class="form-section">
@@ -221,11 +219,9 @@
                 <label for="namalengkap" class="form-label">
                     <i class="fas fa-user"></i> Nama Lengkap <span class="required">*</span>
                 </label>
-                <input type="text" name="namalengkap" id="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror"
+                <input type="text" name="namalengkap" id="namalengkap" class="form-control"
                        value="{{ old('namalengkap') }}" required>
-                @error('namalengkap')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                <div class="error-message" id="namalengkap-error"></div>
             </div>
         </div>
 
@@ -235,8 +231,7 @@
                 <label for="jenjangpendidikan_id" class="form-label">
                     <i class="fas fa-graduation-cap"></i> Jenjang Pendidikan <span class="required">*</span>
                 </label>
-                <select name="jenjangpendidikan_id" id="jenjangpendidikan_id"
-                        class="form-control @error('jenjangpendidikan_id') is-invalid @enderror" required>
+                <select name="jenjangpendidikan_id" id="jenjangpendidikan_id" class="form-control" required>
                     <option value="">-- Pilih Jenjang Pendidikan --</option>
                     @foreach ($jenjangpendidikan as $item)
                         <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
@@ -244,9 +239,7 @@
                         </option>
                     @endforeach
                 </select>
-                @error('jenjangpendidikan_id')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                <div class="error-message" id="jenjangpendidikan_id-error"></div>
             </div>
         </div>
 
@@ -254,13 +247,11 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="nik" class="form-label">
-                    <i class="fas fa-id-card"></i> Nomor Induk Kependudukan (NIK) <span class="required">*</span>
+                    <i class="fas fa-id-card"></i> NIK <span class="required">*</span>
                 </label>
-                <input type="text" name="nik" id="nik" class="form-control @error('nik') is-invalid @enderror"
+                <input type="text" name="nik" id="nik" class="form-control"
                        value="{{ old('nik') }}" required minlength="16" maxlength="16">
-                @error('nik')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                <div class="error-message" id="nik-error"></div>
             </div>
         </div>
 
@@ -270,15 +261,12 @@
                 <label for="jeniskelamin" class="form-label">
                     <i class="fas fa-venus-mars"></i> Jenis Kelamin <span class="required">*</span>
                 </label>
-                <select name="jeniskelamin" id="jeniskelamin"
-                        class="form-control @error('jeniskelamin') is-invalid @enderror" required>
+                <select name="jeniskelamin" id="jeniskelamin" class="form-control" required>
                     <option value="">-- Pilih Jenis Kelamin --</option>
                     <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
                     <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                 </select>
-                @error('jeniskelamin')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                <div class="error-message" id="jeniskelamin-error"></div>
             </div>
         </div>
 
@@ -288,12 +276,9 @@
                 <label for="tanggallahir" class="form-label">
                     <i class="fas fa-calendar-alt"></i> Tanggal Lahir <span class="required">*</span>
                 </label>
-                <input type="date" name="tanggallahir" id="tanggallahir"
-                       class="form-control @error('tanggallahir') is-invalid @enderror"
+                <input type="date" name="tanggallahir" id="tanggallahir" class="form-control"
                        value="{{ old('tanggallahir') }}" required>
-                @error('tanggallahir')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                <div class="error-message" id="tanggallahir-error"></div>
             </div>
         </div>
 
@@ -301,14 +286,11 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="notelepon" class="form-label">
-                    <i class="fas fa-phone"></i> Nomor Telepon <span class="required">*</span>
+                    <i class="fas fa-phone"></i> No Telepon <span class="required">*</span>
                 </label>
-                <input type="tel" name="notelepon" id="notelepon"
-                       class="form-control @error('notelepon') is-invalid @enderror"
+                <input type="tel" name="notelepon" id="notelepon" class="form-control"
                        value="{{ old('notelepon') }}" required>
-                @error('notelepon')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                <div class="error-message" id="notelepon-error"></div>
             </div>
         </div>
 
@@ -316,62 +298,220 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="instansi" class="form-label">
-                    <i class="fas fa-building"></i> Instansi/Asal <span class="required">*</span>
+                    <i class="fas fa-building"></i> Instansi <span class="required">*</span>
                 </label>
-                <input type="text" name="instansi" id="instansi"
-                       class="form-control @error('instansi') is-invalid @enderror"
+                <input type="text" name="instansi" id="instansi" class="form-control"
                        value="{{ old('instansi') }}" required>
-                @error('instansi')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                <div class="error-message" id="instansi-error"></div>
             </div>
         </div>
     </div>
 
-    <!-- Tombol Submit -->
     <div class="form-buttons">
-        <button type="button" class="button-baru" onclick="validateAndSubmit()">
+        <button type="button" class="button-baru" id="submitButton">
             <i class="fab fa-telegram-plane"></i> Kirim Permohonan
         </button>
     </div>
 </form>
 
-<script>
-function validateAndSubmit() {
-    const form = document.getElementById('pendaftaranForm');
-    const requiredFields = form.querySelectorAll('[required]');
-    let isValid = true;
+<!-- Modal Konfirmasi -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <h3>Konfirmasi Data</h3>
+        <p>Apakah data yang Anda masukkan sudah benar?</p>
 
-    // Validasi client-side
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            field.classList.add('is-invalid');
-            isValid = false;
+        <div class="data-preview">
+            <div><strong>Nama:</strong> <span id="preview-nama"></span></div>
+            <div><strong>Jenjang Pendidikan:</strong> <span id="preview-pendidikan"></span></div>
+            <div><strong>NIK:</strong> <span id="preview-nik"></span></div>
+            <div><strong>Jenis Kelamin:</strong> <span id="preview-jk"></span></div>
+            <div><strong>Tanggal Lahir:</strong> <span id="preview-tgl"></span></div>
+            <div><strong>No Telepon:</strong> <span id="preview-telp"></span></div>
+            <div><strong>Instansi:</strong> <span id="preview-instansi"></span></div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn-cancel" id="cancelButton">Periksa Kembali</button>
+            <button type="button" class="btn-confirm" id="confirmButton">Ya, Kirim Data</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-message {
+    color: #e53e3e;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal h3 {
+    color: #3182ce;
+    margin-bottom: 15px;
+}
+
+.data-preview div {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.btn-cancel {
+    padding: 8px 16px;
+    background: #e53e3e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-confirm {
+    padding: 8px 16px;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Tambahkan style lainnya dari sebelumnya */
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('pendaftaranForm');
+    const submitButton = document.getElementById('submitButton');
+    const modal = document.getElementById('confirmationModal');
+    const cancelButton = document.getElementById('cancelButton');
+    const confirmButton = document.getElementById('confirmButton');
+
+    // Validasi sebelum menampilkan modal
+    submitButton.addEventListener('click', function() {
+        if (validateForm()) {
+            showDataPreview();
+            modal.style.display = 'flex';
         }
     });
 
-    // Validasi khusus NIK
-    const nikField = document.getElementById('nik');
-    if (nikField.value.length !== 16) {
-        nikField.classList.add('is-invalid');
-        isValid = false;
-    }
+    // Tutup modal
+    cancelButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
 
-    if (isValid) {
-        // Jika valid, tampilkan modal konfirmasi
-        openModal();
-    } else {
-        // Scroll ke field pertama yang error
-        const firstInvalid = form.querySelector('.is-invalid');
-        if (firstInvalid) {
-            firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Konfirmasi pengiriman
+    confirmButton.addEventListener('click', function() {
+        form.submit();
+    });
+
+    // Fungsi validasi
+    function validateForm() {
+        let isValid = true;
+        const fields = [
+            'namalengkap', 'jenjangpendidikan_id', 'nik',
+            'jeniskelamin', 'tanggallahir', 'notelepon', 'instansi'
+        ];
+
+        // Reset error messages
+        fields.forEach(field => {
+            document.getElementById(`${field}-error`).style.display = 'none';
+            document.getElementById(field).classList.remove('error-field');
+        });
+
+        // Validasi masing-masing field
+        fields.forEach(field => {
+            const element = document.getElementById(field);
+            const errorElement = document.getElementById(`${field}-error`);
+
+            if (!element.value.trim()) {
+                errorElement.textContent = 'Field ini wajib diisi';
+                errorElement.style.display = 'block';
+                element.classList.add('error-field');
+                isValid = false;
+            }
+        });
+
+        // Validasi khusus NIK
+        const nik = document.getElementById('nik').value;
+        if (nik.length !== 16 || !/^\d+$/.test(nik)) {
+            document.getElementById('nik-error').textContent = 'NIK harus 16 digit angka';
+            document.getElementById('nik-error').style.display = 'block';
+            document.getElementById('nik').classList.add('error-field');
+            isValid = false;
         }
-    }
-}
 
-function submitForm() {
-    document.getElementById('pendaftaranForm').submit();
-}
+        // Validasi nomor telepon
+        const telp = document.getElementById('notelepon').value;
+        if (!/^[0-9]+$/.test(telp)) {
+            document.getElementById('notelepon-error').textContent = 'Nomor telepon hanya boleh angka';
+            document.getElementById('notelepon-error').style.display = 'block';
+            document.getElementById('notelepon').classList.add('error-field');
+            isValid = false;
+        }
+
+        if (!isValid) {
+            const firstError = document.querySelector('.error-field');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        return isValid;
+    }
+
+    // Tampilkan preview data di modal
+    function showDataPreview() {
+        document.getElementById('preview-nama').textContent = document.getElementById('namalengkap').value;
+        document.getElementById('preview-pendidikan').textContent = document.getElementById('jenjangpendidikan_id').options[document.getElementById('jenjangpendidikan_id').selectedIndex].text;
+        document.getElementById('preview-nik').textContent = document.getElementById('nik').value;
+        document.getElementById('preview-jk').textContent = document.getElementById('jeniskelamin').value;
+        document.getElementById('preview-tgl').textContent = document.getElementById('tanggallahir').value;
+        document.getElementById('preview-telp').textContent = document.getElementById('notelepon').value;
+        document.getElementById('preview-instansi').textContent = document.getElementById('instansi').value;
+    }
+
+    // Validasi real-time
+    form.addEventListener('input', function(e) {
+        const field = e.target.id;
+        const errorElement = document.getElementById(`${field}-error`);
+
+        if (errorElement.style.display === 'block') {
+            if (e.target.value.trim()) {
+                errorElement.style.display = 'none';
+                e.target.classList.remove('error-field');
+            }
+        }
+    });
+});
 </script>
 
 <style>
