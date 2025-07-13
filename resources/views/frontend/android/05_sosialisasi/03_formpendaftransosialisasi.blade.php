@@ -203,8 +203,7 @@
                     <span class="font-bold">Form Permohonan Bantuan Teknis | Bangunan Gedung </span>
                 </p>
             </div>
-
-    <form action="{{ route('pendaftaranpesertanew') }}" method="POST" class="mobile-form">
+<form action="{{ route('pendaftaranpesertanew') }}" method="POST" class="mobile-form" id="pendaftaranForm">
     @csrf
 
     <!-- Hidden ID Agenda Pelatihan -->
@@ -220,9 +219,10 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="namalengkap" class="form-label">
-                    <i class="fas fa-user"></i> Nama Lengkap
+                    <i class="fas fa-user"></i> Nama Lengkap <span class="required">*</span>
                 </label>
-                <input type="text" name="namalengkap" id="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}">
+                <input type="text" name="namalengkap" id="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror"
+                       value="{{ old('namalengkap') }}" required>
                 @error('namalengkap')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -233,9 +233,10 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="jenjangpendidikan_id" class="form-label">
-                    <i class="fas fa-graduation-cap"></i> Jenjang Pendidikan
+                    <i class="fas fa-graduation-cap"></i> Jenjang Pendidikan <span class="required">*</span>
                 </label>
-                <select name="jenjangpendidikan_id" id="jenjangpendidikan_id" class="form-control @error('jenjangpendidikan_id') is-invalid @enderror">
+                <select name="jenjangpendidikan_id" id="jenjangpendidikan_id"
+                        class="form-control @error('jenjangpendidikan_id') is-invalid @enderror" required>
                     <option value="">-- Pilih Jenjang Pendidikan --</option>
                     @foreach ($jenjangpendidikan as $item)
                         <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
@@ -253,9 +254,10 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="nik" class="form-label">
-                    <i class="fas fa-id-card"></i> Nomor Induk Kependudukan (NIK)
+                    <i class="fas fa-id-card"></i> Nomor Induk Kependudukan (NIK) <span class="required">*</span>
                 </label>
-                <input type="text" name="nik" id="nik" class="form-control @error('nik') is-invalid @enderror" value="{{ old('nik') }}">
+                <input type="text" name="nik" id="nik" class="form-control @error('nik') is-invalid @enderror"
+                       value="{{ old('nik') }}" required minlength="16" maxlength="16">
                 @error('nik')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -266,9 +268,10 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="jeniskelamin" class="form-label">
-                    <i class="fas fa-venus-mars"></i> Jenis Kelamin
+                    <i class="fas fa-venus-mars"></i> Jenis Kelamin <span class="required">*</span>
                 </label>
-                <select name="jeniskelamin" id="jeniskelamin" class="form-control @error('jeniskelamin') is-invalid @enderror">
+                <select name="jeniskelamin" id="jeniskelamin"
+                        class="form-control @error('jeniskelamin') is-invalid @enderror" required>
                     <option value="">-- Pilih Jenis Kelamin --</option>
                     <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
                     <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
@@ -283,9 +286,11 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="tanggallahir" class="form-label">
-                    <i class="fas fa-calendar-alt"></i> Tanggal Lahir
+                    <i class="fas fa-calendar-alt"></i> Tanggal Lahir <span class="required">*</span>
                 </label>
-                <input type="date" name="tanggallahir" id="tanggallahir" class="form-control @error('tanggallahir') is-invalid @enderror" value="{{ old('tanggallahir') }}">
+                <input type="date" name="tanggallahir" id="tanggallahir"
+                       class="form-control @error('tanggallahir') is-invalid @enderror"
+                       value="{{ old('tanggallahir') }}" required>
                 @error('tanggallahir')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -296,9 +301,11 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="notelepon" class="form-label">
-                    <i class="fas fa-phone"></i> Nomor Telepon
+                    <i class="fas fa-phone"></i> Nomor Telepon <span class="required">*</span>
                 </label>
-                <input type="text" name="notelepon" id="notelepon" class="form-control @error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}">
+                <input type="tel" name="notelepon" id="notelepon"
+                       class="form-control @error('notelepon') is-invalid @enderror"
+                       value="{{ old('notelepon') }}" required>
                 @error('notelepon')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -309,9 +316,11 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="instansi" class="form-label">
-                    <i class="fas fa-building"></i> Instansi/Asal
+                    <i class="fas fa-building"></i> Instansi/Asal <span class="required">*</span>
                 </label>
-                <input type="text" name="instansi" id="instansi" class="form-control @error('instansi') is-invalid @enderror" value="{{ old('instansi') }}">
+                <input type="text" name="instansi" id="instansi"
+                       class="form-control @error('instansi') is-invalid @enderror"
+                       value="{{ old('instansi') }}" required>
                 @error('instansi')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -321,126 +330,49 @@
 
     <!-- Tombol Submit -->
     <div class="form-buttons">
-        {{-- <button type="reset" class="btn-reset">
-            <i class="fas fa-undo"></i> Reset
-        </button> --}}
-
-        <button type="button" class="button-baru" onclick="openModal()">
+        <button type="button" class="button-baru" onclick="validateAndSubmit()">
             <i class="fab fa-telegram-plane"></i> Kirim Permohonan
         </button>
     </div>
-
 </form>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    // Buka modal
-    window.openModal = function () {
-        const modal = document.getElementById("confirmModal");
-        if (modal) {
-            modal.style.display = "flex";
+function validateAndSubmit() {
+    const form = document.getElementById('pendaftaranForm');
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+
+    // Validasi client-side
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.classList.add('is-invalid');
+            isValid = false;
         }
-    };
+    });
 
-    // Tutup modal
-    window.closeModal = function () {
-        const modal = document.getElementById("confirmModal");
-        if (modal) {
-            modal.style.display = "none";
+    // Validasi khusus NIK
+    const nikField = document.getElementById('nik');
+    if (nikField.value.length !== 16) {
+        nikField.classList.add('is-invalid');
+        isValid = false;
+    }
+
+    if (isValid) {
+        // Jika valid, tampilkan modal konfirmasi
+        openModal();
+    } else {
+        // Scroll ke field pertama yang error
+        const firstInvalid = form.querySelector('.is-invalid');
+        if (firstInvalid) {
+            firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-    };
+    }
+}
 
-    // Aktifkan tombol submit jika checkbox dicentang
-    window.toggleSubmitButton = function () {
-        const checkbox = document.getElementById("dataConfirm");
-        const submitBtn = document.getElementById("confirmSubmitBtn");
-
-        if (checkbox.checked) {
-            submitBtn.disabled = false;
-            submitBtn.style.backgroundColor = "#3182ce";
-            submitBtn.style.cursor = "pointer";
-        } else {
-            submitBtn.disabled = true;
-            submitBtn.style.backgroundColor = "#a0aec0";
-            submitBtn.style.cursor = "not-allowed";
-        }
-    };
-
-    // Submit form jika disetujui
-    window.submitForm = function () {
-        const checkbox = document.getElementById("dataConfirm");
-        if (!checkbox.checked) {
-            alert("Anda harus menyatakan bahwa data yang Anda kirimkan adalah benar.");
-            return;
-        }
-
-        document.getElementById("pendaftaranForm").submit();
-    };
-});
+function submitForm() {
+    document.getElementById('pendaftaranForm').submit();
+}
 </script>
-
-<!-- Modal Konfirmasi -->
-<div id="confirmModal" class="modal" style="display: none;">
-    <div class="modal-content">
-        <p>Apakah data Anda sudah benar?</p>
-
-        <div class="confirm-checkbox">
-            <input type="checkbox" id="dataConfirm" onchange="toggleSubmitButton()">
-            <label for="dataConfirm">
-                Saya menyatakan bahwa data yang saya kirimkan adalah benar dan sesuai dengan kenyataan.
-            </label>
-        </div>
-
-        <div class="modal-buttons">
-            <button id="confirmSubmitBtn" onclick="submitForm()" disabled class="btn-kirim">
-                Ya, Kirim
-            </button>
-            <button type="button" onclick="closeModal()" class="btn-cancel">
-                Batal
-            </button>
-        </div>
-    </div>
-</div>
-
-<style>
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-.modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.modal-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-}
-.btn-kirim {
-    background-color: #3182ce;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
-}
-.btn-cancel {
-    background-color: #e53e3e;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
-}
-</style>
 
 <style>
 .mobile-form {
@@ -498,6 +430,11 @@ document.addEventListener('DOMContentLoaded', function () {
     text-align: center;
 }
 
+.form-label .required {
+    color: #e53e3e;
+    margin-left: 4px;
+}
+
 .form-control {
     width: 100%;
     padding: 10px 12px;
@@ -511,6 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
 .form-control:focus {
     border-color: #4299e1;
     outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
 }
 
 select.form-control {
@@ -531,163 +469,33 @@ select.form-control {
     border-color: #e53e3e;
 }
 
-.file-upload-group {
-    margin-bottom: 20px;
-}
-
-.file-upload-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #4a5568;
-    font-weight: 500;
-}
-
-.file-upload-group label i {
-    margin-right: 8px;
-    color: #2b6cb0;
-}
-
-.file-info {
-    font-size: 12px;
-    color: #718096;
-    display: block;
-    margin-top: 3px;
-}
-
-.file-preview {
-    margin-top: 10px;
-}
-
-.file-preview img {
-    max-width: 100%;
-    max-height: 200px;
-    border-radius: 5px;
-    border: 1px solid #e2e8f0;
-}
-
-.file-temp {
-    font-size: 12px;
-    color: #4a5568;
-    margin-top: 5px;
-}
-
 .form-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 20px;
-    gap: 15px;
 }
 
-.btn-reset, .btn-submit {
-    flex: 1;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 14px;
-    cursor: pointer;
+.button-baru {
+    background-color: #3182ce;
+    color: white;
+    padding: 12px 24px;
     border: none;
-    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.btn-reset {
-    background-color: #e53e3e;
-    color: white;
-}
-
-.btn-reset:hover {
-    background-color: #c53030;
-}
-
-.btn-submit {
-    background-color: #3182ce;
-    color: white;
-}
-
-.btn-submit:hover {
+.button-baru:hover {
     background-color: #2c5282;
 }
 
-.btn-reset i, .btn-submit i {
+.button-baru i {
     margin-right: 8px;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-}
-
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
-}
-
-.modal-content p {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.confirm-checkbox {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
-}
-
-.confirm-checkbox input {
-    margin-right: 10px;
-    margin-top: 3px;
-}
-
-.confirm-checkbox label {
-    font-size: 14px;
-    color: #4a5568;
-    text-align: left;
-}
-
-.modal-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.btn-kirim, .btn-cancel {
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-}
-
-.btn-kirim {
-    background-color: #3182ce;
-    color: white;
-}
-
-.btn-kirim:disabled {
-    background-color: #a0aec0;
-    cursor: not-allowed;
-}
-
-.btn-cancel {
-    background-color: #a0aec0;
-    color: white;
 }
 
 @media (min-width: 768px) {
@@ -701,17 +509,6 @@ select.form-control {
     }
 }
 </style>
-
-            <style>
-                .error-message {
-        font-size: 0.875rem;
-        color: #e3342f; /* Atau kamu bisa sesuaikan dengan warna branding kamu */
-        margin-top: 4px;
-        display: block;
-    }
-
-            </style>
-
 
         </div>
     </div>
