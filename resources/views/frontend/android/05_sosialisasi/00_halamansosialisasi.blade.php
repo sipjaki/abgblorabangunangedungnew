@@ -40,7 +40,7 @@
                 </div>
                 <div class="flex flex-col gap-[2px]">
                   <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Daftar Agenda Sosialisasi</p>
-                  <p class="font-semibold">Silahkan Klik untuk informasi pelatihan !</p>
+                  <p class="font-semibold">Silahkan Klik untuk informasi Sosialisasi !</p>
                 </div>
               </div>
             </a>
@@ -51,8 +51,8 @@
                   <img src="/assets/android/menunavigasi/05.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Daftar Peserta Pelatihan</p>
-                  <p class="font-semibold">Silahkan Klik untuk informasi peserta pelatihan !</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Daftar Peserta Sosialisasi</p>
+                  <p class="font-semibold">Silahkan Klik untuk informasi peserta Sosialisasi !</p>
                 </div>
               </div>
             </a>
