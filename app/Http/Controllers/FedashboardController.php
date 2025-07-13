@@ -549,6 +549,21 @@ public function infopbgprasarana()
         ]);
     }
 
+     public function respesertaabg()
+{
+    $user = Auth::user();
+
+    // Ambil data agenda pelatihan terbaru dengan pagination 8 data per halaman
+    $agendapelatihan = agendapelatihanabg::orderBy('created_at', 'desc')->paginate(8);
+
+    // Tampilkan ke view dengan judul dan data
+    return view('frontend.android.05_sosialisasi.04_listpesertasosialisasi', [
+        'title' => 'Informasi Peserta Sosialisasi',
+        'user' => $user,
+        'data' => $agendapelatihan,
+    ]);
+}
+
 
 }
 

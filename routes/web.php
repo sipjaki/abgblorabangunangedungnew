@@ -89,6 +89,7 @@ Route::get('/ressosialisasiabg', [FedashboardController::class, 'ressosialisasii
 // Route::get('/ressosialisasishow/{id}', [FedashboardController::class, 'ressosialisasishow'])->name('ressosialisasishow');
 Route::get('/ressosialisasishow/{id}', [FedashboardController::class, 'ressosialisasishow'])->name('ressosialisasishow');
 
+Route::get('/respesertaabg', [FedashboardController::class, 'respesertaabg']);
 
 // 08_ MENU MBR BANTUAN GAMBAR
 // ----------------------------------------------------------------------------------------
