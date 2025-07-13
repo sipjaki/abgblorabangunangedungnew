@@ -112,6 +112,8 @@ Route::get('/statistikbg', [PendataanBangunanGedungController::class, 'statistik
 
 
 // WEB 06_ MENU KRK BANGUNAN GEDUNG
+Route::get('/rescarigsb', [FedashboardController::class, 'rescarigsb'])->name('rescarigsb');
+
 // ----------------------------------------------------------------------------------------
 Route::get('/informasikrk', [KrkController::class, 'informasikrk']);
 Route::get('/permohonankrk', [KrkController::class, 'permohonankrk'])->middleware('auth');

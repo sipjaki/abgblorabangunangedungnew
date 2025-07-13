@@ -58,7 +58,7 @@
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">KRK</p>
         </div>
       </a>
-      <a href="/404">
+      <a href="/rescarigsb">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
             <img src="/assets/android/menunavigasi/07.png" class="w-full h-full object-cover" alt="icon" loading="lazy">

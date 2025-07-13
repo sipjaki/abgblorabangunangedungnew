@@ -593,6 +593,17 @@ public function infopbgprasarana()
              ]);
              }
 
+public function rescarigsb()
+    {
 
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.00_gsb.01_pencariangsb', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi Pencarian GSB Kabupaten Blora ',
+            'user' => $user,
+        ]);
+    }
 }
 
