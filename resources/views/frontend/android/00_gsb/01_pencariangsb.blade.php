@@ -35,11 +35,15 @@
             </button>
           </div>
 
+<!-- View: resources/views/frontend/android/00_gsb/01_pencariangsb.blade.php -->
+
+@extends('layouts.frontend')
+@section('content')
 <div class="p-4">
     <h1 class="text-xl font-bold text-blue-800 mb-6 text-center">🔍 Pencarian GSB Kabupaten Blora</h1>
 
     <!-- Form pencarian -->
-    <div class="mb-6">
+    <div class="mb-10">
         <label for="searchInput" class="block mb-2 font-semibold text-sm text-gray-700">Ketik atau pilih ruas jalan / jenis jalan:</label>
         <div class="relative">
             <input list="jalanOptions" id="searchInput" class="w-full px-5 py-4 border border-blue-300 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base" placeholder="🛣️ Contoh: Jl. Pemuda atau Jalan Nasional..." oninput="filterGSB()">
@@ -53,7 +57,7 @@
     </div>
 
     <!-- Hasil pencarian ke bawah (disembunyikan saat awal) -->
-    <div id="gsbResultList" class="flex flex-col gap-4 hidden">
+    <div id="gsbResultList" class="flex flex-col gap-6 hidden">
         @foreach ($rencanagsb as $index => $item)
             <div class="bg-white p-5 rounded-xl shadow-md border border-gray-200 data-card transition-transform hover:scale-[1.01]">
                 <p class="text-sm text-gray-700 flex items-center gap-2"><i class="fas fa-road text-blue-600"></i> <strong class="text-blue-700">Ruas Jalan:</strong> {{ $item->ruasjalan }}</p>
@@ -85,6 +89,8 @@
         document.getElementById("gsbResultList").classList.toggle("hidden", !found && searchValue === '');
     }
 </script>
+@endsection
+
         </div>
 
 
