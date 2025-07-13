@@ -36,27 +36,29 @@
           </div>
 
 <div class="p-4">
-    <h1 class="text-lg font-semibold text-blue-700 mb-4">Pencarian GSB Kabupaten Blora</h1>
+    <h1 class="text-xl font-bold text-blue-800 mb-6 text-center">🔍 Pencarian GSB Kabupaten Blora</h1>
 
     <!-- Form pencarian -->
-    <div class="mb-4">
-        <label for="searchInput" class="block mb-1 font-medium text-sm text-gray-700">Ketik atau pilih ruas jalan / jenis jalan:</label>
-        <input list="jalanOptions" id="searchInput" class="form-input w-full rounded-lg border border-gray-300" placeholder="Masukkan nama jalan..." oninput="filterGSB()">
-        <datalist id="jalanOptions">
-            @foreach ($rencanagsb as $item)
-                <option value="{{ $item->ruasjalan }}">
-                <option value="{{ $item->jenisjalan }}">
-            @endforeach
-        </datalist>
+    <div class="mb-6">
+        <label for="searchInput" class="block mb-2 font-semibold text-sm text-gray-700">Ketik atau pilih ruas jalan / jenis jalan:</label>
+        <div class="relative">
+            <input list="jalanOptions" id="searchInput" class="w-full px-4 py-3 border border-blue-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-sm" placeholder="Contoh: Jl. Pemuda atau Jalan Nasional..." oninput="filterGSB()">
+            <datalist id="jalanOptions">
+                @foreach ($rencanagsb as $item)
+                    <option value="{{ $item->ruasjalan }}">
+                    <option value="{{ $item->jenisjalan }}">
+                @endforeach
+            </datalist>
+        </div>
     </div>
 
     <!-- Hasil pencarian ke bawah (disembunyikan saat awal) -->
     <div id="gsbResultList" class="flex flex-col gap-4 hidden">
         @foreach ($rencanagsb as $index => $item)
-            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 data-card">
-                <p><strong>Ruas Jalan:</strong> {{ $item->ruasjalan }}</p>
-                <p><strong>Jenis Jalan:</strong> {{ $item->jenisjalan }}</p>
-                <p><strong>GSB:</strong> {{ $item->gsb }} meter</p>
+            <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 data-card transition-transform hover:scale-[1.01]">
+                <p class="text-sm text-gray-700"><strong class="text-blue-700">Ruas Jalan:</strong> {{ $item->ruasjalan }}</p>
+                <p class="text-sm text-gray-700"><strong class="text-blue-700">Jenis Jalan:</strong> {{ $item->jenisjalan }}</p>
+                <p class="text-sm text-gray-700"><strong class="text-blue-700">GSB:</strong> {{ $item->gsb }} meter</p>
             </div>
         @endforeach
     </div>
