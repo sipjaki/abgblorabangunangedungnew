@@ -84,7 +84,7 @@ Route::get('/febantektimteknis', [FedashboardController::class, 'febantektimtekn
 // Route::get('/feinfocampuran', [FedashboardController::class, 'feinfocampuran']);
 
 // MENU SOSIALISASI
-Route::get('/resagendaabg', [FedashboardController::class, 'resagendaabg']);
+Route::get('/resagendaabg', [FedashboardController::class, 'resagendaabg'])->name('resagendaabg');
 Route::get('/ressosialisasiabg', [FedashboardController::class, 'ressosialisasiindex']);
 // Route::get('/ressosialisasishow/{id}', [FedashboardController::class, 'ressosialisasishow'])->name('ressosialisasishow');
 Route::get('/ressosialisasishow/{id}', [FedashboardController::class, 'ressosialisasishow'])->name('ressosialisasishow');
