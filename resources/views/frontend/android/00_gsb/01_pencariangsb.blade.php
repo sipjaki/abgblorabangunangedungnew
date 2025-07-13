@@ -42,7 +42,7 @@
     <div class="mb-6">
         <label for="searchInput" class="block mb-2 font-semibold text-sm text-gray-700">Ketik atau pilih ruas jalan / jenis jalan:</label>
         <div class="relative">
-            <input list="jalanOptions" id="searchInput" class="w-full px-4 py-3 border border-blue-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-sm" placeholder="Contoh: Jl. Pemuda atau Jalan Nasional..." oninput="filterGSB()">
+            <input list="jalanOptions" id="searchInput" class="w-full px-5 py-4 border border-blue-300 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base" placeholder="🛣️ Contoh: Jl. Pemuda atau Jalan Nasional..." oninput="filterGSB()">
             <datalist id="jalanOptions">
                 @foreach ($rencanagsb as $item)
                     <option value="{{ $item->ruasjalan }}">
@@ -55,10 +55,10 @@
     <!-- Hasil pencarian ke bawah (disembunyikan saat awal) -->
     <div id="gsbResultList" class="flex flex-col gap-4 hidden">
         @foreach ($rencanagsb as $index => $item)
-            <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200 data-card transition-transform hover:scale-[1.01]">
-                <p class="text-sm text-gray-700"><strong class="text-blue-700">Ruas Jalan:</strong> {{ $item->ruasjalan }}</p>
-                <p class="text-sm text-gray-700"><strong class="text-blue-700">Jenis Jalan:</strong> {{ $item->jenisjalan }}</p>
-                <p class="text-sm text-gray-700"><strong class="text-blue-700">GSB:</strong> {{ $item->gsb }} meter</p>
+            <div class="bg-white p-5 rounded-xl shadow-md border border-gray-200 data-card transition-transform hover:scale-[1.01]">
+                <p class="text-sm text-gray-700 flex items-center gap-2"><i class="fas fa-road text-blue-600"></i> <strong class="text-blue-700">Ruas Jalan:</strong> {{ $item->ruasjalan }}</p>
+                <p class="text-sm text-gray-700 flex items-center gap-2"><i class="fas fa-route text-blue-600"></i> <strong class="text-blue-700">Jenis Jalan:</strong> {{ $item->jenisjalan }}</p>
+                <p class="text-sm text-gray-700 flex items-center gap-2"><i class="fas fa-ruler-combined text-blue-600"></i> <strong class="text-blue-700">GSB:</strong> {{ $item->gsb }} meter</p>
             </div>
         @endforeach
     </div>
