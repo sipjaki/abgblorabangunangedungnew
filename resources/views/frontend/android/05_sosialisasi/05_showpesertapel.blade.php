@@ -37,10 +37,10 @@
                 <th style="border: 1px solid #ccc; padding: 8px;">No</th>
                 <th style="border: 1px solid #ccc; padding: 8px;">Nama Lengkap</th>
                 <th style="border: 1px solid #ccc; padding: 8px;">Jenjang Pendidikan</th>
-                <th style="border: 1px solid #ccc; padding: 8px;">NIK</th>
+                {{-- <th style="border: 1px solid #ccc; padding: 8px;">NIK</th> --}}
                 <th style="border: 1px solid #ccc; padding: 8px;">Jenis Kelamin</th>
-                <th style="border: 1px solid #ccc; padding: 8px;">Tanggal Lahir</th>
-                <th style="border: 1px solid #ccc; padding: 8px;">No. Telepon</th>
+                {{-- <th style="border: 1px solid #ccc; padding: 8px;">Tanggal Lahir</th> --}}
+                {{-- <th style="border: 1px solid #ccc; padding: 8px;">No. Telepon</th> --}}
                 <th style="border: 1px solid #ccc; padding: 8px;">Instansi</th>
                 <th style="border: 1px solid #ccc; padding: 8px;">Verifikasi</th>
             </tr>
@@ -59,12 +59,12 @@
                     <td style="border: 1px solid #ccc; padding: 8px;">
                         {{ optional($item->jenjangpendidikan)->jenjangpendidikan ?? '-' }}
                     </td>
-                    <td style="border: 1px solid #ccc; padding: 8px;">{{ $item->nik }}</td>
+                    {{-- <td style="border: 1px solid #ccc; padding: 8px;">{{ $item->nik }}</td> --}}
                     <td style="border: 1px solid #ccc; padding: 8px;">{{ $item->jeniskelamin }}</td>
-                    <td style="border: 1px solid #ccc; padding: 8px;">
+                    {{-- <td style="border: 1px solid #ccc; padding: 8px;">
                         {{ \Carbon\Carbon::parse($item->tanggallahir)->translatedFormat('d F Y') }}
-                    </td>
-                    <td style="border: 1px solid #ccc; padding: 8px;">{{ $item->notelepon }}</td>
+                    </td> --}}
+                    {{-- <td style="border: 1px solid #ccc; padding: 8px;">{{ $item->notelepon }}</td> --}}
                     <td style="border: 1px solid #ccc; padding: 8px;">{{ $item->instansi }}</td>
                   <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">
     @if (is_null($item->verifikasi))
