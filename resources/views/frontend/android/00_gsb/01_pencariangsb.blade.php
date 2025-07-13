@@ -35,6 +35,8 @@
             </button>
           </div>
 
+        </div>
+
 <!-- View: resources/views/frontend/android/00_gsb/01_pencariangsb.blade.php -->
 <div class="p-4">
     <h1 class="text-xl font-bold text-blue-800 mb-6 text-center">🔍 Pencarian GSB Kabupaten Blora</h1>
@@ -100,8 +102,6 @@
         document.getElementById("gsbResultList").classList.toggle("hidden", !found && searchValue === '');
     }
 </script>
-
-        </div>
 
 
 
