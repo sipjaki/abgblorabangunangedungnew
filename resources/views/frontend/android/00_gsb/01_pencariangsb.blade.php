@@ -25,7 +25,7 @@
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
               <div class="flex items-center">
                 <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/05.png" class="object-cover w-full h-full" alt="photo">
+                  <img src="/assets/android/menunavigasi/07.png" class="object-cover w-full h-full" alt="photo">
                 </div>
               </div>
               <div class="flex flex-col flex-1 gap-[2px] text-left">
@@ -46,18 +46,51 @@
                 </div>
               </div>
             </a>
+<!-- View: resources/views/frontend/android/00_gsb/01_pencariangsb.blade.php -->
+<div class="p-4">
+    <h1 class="text-lg font-semibold text-blue-700 mb-4">Pencarian GSB Kabupaten Blora</h1>
 
-              <a href="/respesertaabg" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
-                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/05.png" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Daftar Peserta Sosialisasi</p>
-                  <p class="font-semibold">Silahkan Klik untuk informasi peserta Sosialisasi !</p>
-                </div>
-              </div>
-            </a>
+    <!-- Form pencarian -->
+    <div class="mb-4">
+        <label for="searchInput" class="block mb-1 font-medium text-sm text-gray-700">Cari berdasarkan ruas jalan atau jenis jalan:</label>
+        <select id="searchInput" class="form-select w-full rounded-lg border border-gray-300" onchange="filterGSB()">
+            <option value="">-- Pilih atau ketik nama jalan --</option>
+            @foreach ($rencanagsb as $item)
+                <option value="{{ $item->ruasjalan }}">{{ $item->ruasjalan }} - {{ $item->jenisjalan }}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <!-- Hasil pencarian ke bawah -->
+    <div id="gsbResultList" class="flex flex-col gap-4">
+        @foreach ($rencanagsb as $index => $item)
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 data-card">
+                <p><strong>Ruas Jalan:</strong> {{ $item->ruasjalan }}</p>
+                <p><strong>Jenis Jalan:</strong> {{ $item->jenisjalan }}</p>
+                <p><strong>GSB:</strong> {{ $item->gsb }} meter</p>
+            </div>
+        @endforeach
+    </div>
+</div>
+
+<script>
+    function filterGSB() {
+        const searchValue = document.getElementById("searchInput").value.toLowerCase();
+        const cards = document.querySelectorAll("#gsbResultList .data-card");
+
+        cards.forEach(card => {
+            const ruas = card.querySelector("p:nth-child(1)").textContent.toLowerCase();
+            const jenis = card.querySelector("p:nth-child(2)").textContent.toLowerCase();
+
+            if (ruas.includes(searchValue) || jenis.includes(searchValue) || searchValue === '') {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+
 
         </div>
 
