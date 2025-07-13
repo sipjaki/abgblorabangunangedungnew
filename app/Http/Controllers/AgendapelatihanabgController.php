@@ -386,5 +386,24 @@ public function verifikasipesertapelatihan(Request $request, $id)
         return redirect("/beagendapesertalist/{$agendaId}");
     }
 
+
+public function resagendapelatihan($id)
+{
+
+    $user = Auth::user();
+
+    // Ambil data user yang statusadmin_id = 6 beserta relasi statusadmin
+
+    // Ambil data agenda pelatihan berdasarkan ID
+    $agendapelatihan = agendapelatihanabg::findOrFail($id);
+
+    return view('frontend.android.05_sosialisasi.03_formpendaftransosialisasi', [
+        'title' => 'Formulir Pendaftaran Agenda Sosialisasi Bangunan Gedung',
+        'user' => $user,
+        'agendapelatihan' => $agendapelatihan, // dikirim ke view
+
+    ]);
+}
+
 }
 

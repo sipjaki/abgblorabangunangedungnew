@@ -28,7 +28,7 @@
 
   <!-- Tombol Daftar Pelatihan -->
   <div class="flex justify-center my-6">
-    <a href="/resdaftarpelatihanpeserta/create/{{$data->id}}">
+    <a href="/resbantekpermohonan/{{$data->id}}">
       <button class="button-baru"
         type="button"
       >
