@@ -204,7 +204,7 @@
                 </p>
             </div>
 
-    <form action="{{ route('pendaftaranpeserta.store') }}" method="POST" class="mobile-form">
+    <form action="{{ route('pendaftaranpesertanew') }}" method="POST" class="mobile-form">
     @csrf
 
     <!-- Hidden ID Agenda Pelatihan -->
