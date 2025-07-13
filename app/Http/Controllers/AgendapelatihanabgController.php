@@ -414,19 +414,34 @@ public function pendaftaranpesertanew(Request $request)
     $validated = $request->validate([
         'agendapelatihanabg_id' => 'required|string',
         'namalengkap' => 'required|string|max:255',
-        'jenjangpendidikan_id' => 'nullable|string',
-        'nik' => 'required|string|max:20',
+        'jenjangpendidikan_id' => 'required|string',
+        'nik' => 'required|string|size:16',
         'jeniskelamin' => 'required|in:Laki-laki,Perempuan',
         'tanggallahir' => 'required|date',
         'notelepon' => 'required|string|max:20',
-        'instansi' => 'nullable|string|max:255',
+        'instansi' => 'required|string',
+    ], [
+        'agendapelatihanabg_id.required' => 'Agenda pelatihan harus dipilih.',
+        'namalengkap.required' => 'Nama lengkap wajib diisi.',
+        'namalengkap.max' => 'Nama lengkap maksimal 255 karakter.',
+        'jenjangpendidikan_id.required' => 'Jenjang pendidikan harus dipilih.',
+        'nik.required' => 'NIK wajib diisi.',
+        'nik.size' => 'NIK harus terdiri dari 16 digit.',
+        'jeniskelamin.required' => 'Jenis kelamin wajib dipilih.',
+        'jeniskelamin.in' => 'Jenis kelamin harus Laki-laki atau Perempuan.',
+        'tanggallahir.required' => 'Tanggal lahir wajib diisi.',
+        'tanggallahir.date' => 'Format tanggal lahir tidak valid.',
+        'notelepon.required' => 'Nomor telepon wajib diisi.',
+        'notelepon.max' => 'Nomor telepon maksimal 20 karakter.',
+        'instansi.required' => 'Nama instansi asal wajib diisi.',
+        'instansi.max' => 'Nama instansi maksimal 255 karakter.',
     ]);
 
     // Simpan ke database
     pesertapelatihan::create($validated);
 
     // Redirect ke route beagendapelatihanabg
-    return redirect()->route('beagendapelatihanabg')->with('create', 'Pendaftaran Anda Berhasil !');
+    return redirect()->route('beagendapelatihanabg')->with('create', 'Pendaftaran Anda Berhasil!');
 }
 
 }
