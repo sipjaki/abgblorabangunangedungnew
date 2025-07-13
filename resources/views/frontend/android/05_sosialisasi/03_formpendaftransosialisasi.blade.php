@@ -203,8 +203,11 @@
                     <span class="font-bold">Form Permohonan Bantuan Teknis | Bangunan Gedung </span>
                 </p>
             </div>
-<form id="pendaftaranForm" action="{{ route('pendaftaranpesertanew') }}" method="POST" class="mobile-form">
+
+    <form action="{{ route('pendaftaranpesertanew') }}" method="POST" class="mobile-form">
     @csrf
+
+    <!-- Hidden ID Agenda Pelatihan -->
     <input type="hidden" name="agendapelatihanabg_id" value="{{ $agendapelatihan->id }}">
 
     <div class="form-section">
@@ -318,22 +321,76 @@
 
     <!-- Tombol Submit -->
     <div class="form-buttons">
+        {{-- <button type="reset" class="btn-reset">
+            <i class="fas fa-undo"></i> Reset
+        </button> --}}
+
         <button type="button" class="button-baru" onclick="openModal()">
             <i class="fab fa-telegram-plane"></i> Kirim Permohonan
         </button>
     </div>
+
 </form>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Buka modal
+    window.openModal = function () {
+        const modal = document.getElementById("confirmModal");
+        if (modal) {
+            modal.style.display = "flex";
+        }
+    };
+
+    // Tutup modal
+    window.closeModal = function () {
+        const modal = document.getElementById("confirmModal");
+        if (modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    // Aktifkan tombol submit jika checkbox dicentang
+    window.toggleSubmitButton = function () {
+        const checkbox = document.getElementById("dataConfirm");
+        const submitBtn = document.getElementById("confirmSubmitBtn");
+
+        if (checkbox.checked) {
+            submitBtn.disabled = false;
+            submitBtn.style.backgroundColor = "#3182ce";
+            submitBtn.style.cursor = "pointer";
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.style.backgroundColor = "#a0aec0";
+            submitBtn.style.cursor = "not-allowed";
+        }
+    };
+
+    // Submit form jika disetujui
+    window.submitForm = function () {
+        const checkbox = document.getElementById("dataConfirm");
+        if (!checkbox.checked) {
+            alert("Anda harus menyatakan bahwa data yang Anda kirimkan adalah benar.");
+            return;
+        }
+
+        document.getElementById("pendaftaranForm").submit();
+    };
+});
+</script>
+
 <!-- Modal Konfirmasi -->
-<div id="confirmModal" class="modal">
+<div id="confirmModal" class="modal" style="display: none;">
     <div class="modal-content">
         <p>Apakah data Anda sudah benar?</p>
+
         <div class="confirm-checkbox">
             <input type="checkbox" id="dataConfirm" onchange="toggleSubmitButton()">
             <label for="dataConfirm">
                 Saya menyatakan bahwa data yang saya kirimkan adalah benar dan sesuai dengan kenyataan.
             </label>
         </div>
+
         <div class="modal-buttons">
             <button id="confirmSubmitBtn" onclick="submitForm()" disabled class="btn-kirim">
                 Ya, Kirim
@@ -345,6 +402,305 @@
     </div>
 </div>
 
+<style>
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+.btn-kirim {
+    background-color: #3182ce;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+}
+.btn-cancel {
+    background-color: #e53e3e;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+}
+</style>
+
+<style>
+.mobile-form {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-section {
+    margin-bottom: 25px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #1a365d;
+    font-size: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.section-header i {
+    margin-right: 10px;
+    color: #4299e1;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.form-label i {
+    margin-right: 10px;
+    color: #2b6cb0;
+    width: 20px;
+    text-align: center;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: #4299e1;
+    outline: none;
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+.invalid-feedback {
+    color: #e53e3e;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.is-invalid {
+    border-color: #e53e3e;
+}
+
+.file-upload-group {
+    margin-bottom: 20px;
+}
+
+.file-upload-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.file-upload-group label i {
+    margin-right: 8px;
+    color: #2b6cb0;
+}
+
+.file-info {
+    font-size: 12px;
+    color: #718096;
+    display: block;
+    margin-top: 3px;
+}
+
+.file-preview {
+    margin-top: 10px;
+}
+
+.file-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 5px;
+    border: 1px solid #e2e8f0;
+}
+
+.file-temp {
+    font-size: 12px;
+    color: #4a5568;
+    margin-top: 5px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.btn-reset, .btn-submit {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-reset {
+    background-color: #e53e3e;
+    color: white;
+}
+
+.btn-reset:hover {
+    background-color: #c53030;
+}
+
+.btn-submit {
+    background-color: #3182ce;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #2c5282;
+}
+
+.btn-reset i, .btn-submit i {
+    margin-right: 8px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.confirm-checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.confirm-checkbox input {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.confirm-checkbox label {
+    font-size: 14px;
+    color: #4a5568;
+    text-align: left;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-kirim, .btn-cancel {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-kirim {
+    background-color: #3182ce;
+    color: white;
+}
+
+.btn-kirim:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+}
+
+.btn-cancel {
+    background-color: #a0aec0;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .form-row {
+        display: flex;
+        gap: 15px;
+    }
+
+    .form-group {
+        flex: 1;
+    }
+}
+</style>
 
             <style>
                 .error-message {
