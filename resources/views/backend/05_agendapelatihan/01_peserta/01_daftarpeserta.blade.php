@@ -269,7 +269,8 @@ th {
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th> --}}
 <th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th>
 
-<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Lihat Peserta</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Lihat {{ $item->pesertapelatihan_count }}
+ Peserta</th>
 
     </tr>
                             </thead>

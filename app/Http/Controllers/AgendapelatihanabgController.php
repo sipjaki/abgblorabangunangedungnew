@@ -252,7 +252,8 @@ public function beagendapeserta(Request $request)
     $search = $request->input('search');
     $perPage = $request->input('perPage', 15);
 
-    $query = agendapelatihanabg::query();
+    // $query = agendapelatihanabg::query();
+$query = agendapelatihanabg::withCount('pesertapelatihan');
 
     if ($search) {
         $query->where(function ($q) use ($search) {
@@ -280,6 +281,7 @@ public function beagendapeserta(Request $request)
               ->orWhere('email', 'like', "%{$search}%");
         });
     }
+
 
     $data = $query->latest()->paginate($perPage)->appends($request->all());
 
