@@ -269,8 +269,7 @@ th {
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th> --}}
 <th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th>
 
-<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Lihat {{ $item->pesertapelatihan_count }}
- Peserta</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Lihat Peserta</th>
 
     </tr>
                             </thead>
@@ -375,7 +374,8 @@ th {
             <a href="{{ url('/beagendapesertalist/' . $item->id) }}" style="text-decoration: none;">
                 <button class="button-baru">
                     <span style="display: inline-flex; align-items: center;">
-                        <i class="bi bi-people-fill" style="margin-right: 6px;"></i>Lihat Peserta
+                        <i class="bi bi-people-fill" style="margin-right: 6px;"></i>Lihat {{ $item->pesertapelatihan_count }}
+ Peserta
                         {{-- {{ $item->pesertapelatihan_count }} Peserta Dari / {{$item->jumlahpeserta}} Kuota --}}
                     </span>
                 </button>
