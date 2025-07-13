@@ -23,7 +23,7 @@
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
               <div class="flex items-center">
                 <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="photo">
+                  <img src="/assets/android/menunavigasi/05.png" class="object-cover w-full h-full" alt="photo">
                 </div>
               </div>
               <div class="flex flex-col flex-1 gap-[2px] text-left">
@@ -33,86 +33,26 @@
             </button>
           </div>
 
-              <a href="/resbantekpermohonan" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+              <a href="/ressosialisasiabg" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
                   <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Formulir Pengajuan Bantuan Teknis</p>
-                  <p class="font-semibold">Silahkan Ajukan Permohonan Anda !</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Daftar Agenda Pelatihan</p>
+                  <p class="font-semibold">Silahkan Klik untuk informasi pelatihan !</p>
                 </div>
               </div>
             </a>
 
-              <a href="/febantekasistensi" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+              <a href="/ressosialisasiabg" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
                   <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi Bantuan Teknis</p>
-                  <p class="font-semibold">Bantuan Asistensi Perencanaan</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="/febantekpenelitikontrak" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
-                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi Bantuan Teknis</p>
-                  <p class="font-semibold">Bantuan Peneliti Kontrak</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="/febantekperasset" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
-                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi Bantuan Teknis</p>
-                  <p class="font-semibold">Bantuan Perhitungan Nilai Aset</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="/febantekdamping" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
-                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi Bantuan Teknis</p>
-                  <p class="font-semibold">Bantuan Perhitungan Pemeliharaan dan Pelaksanaan Konstruksi</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="/febantekpermeliha" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
-                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi Bantuan Teknis</p>
-                  <p class="font-semibold">Bantuan Perhitungan Pemeliharaan dan Pelaksanaan Konstruksi</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="/febantektimteknis" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-              <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
-                <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi Bantuan Teknis</p>
-                  <p class="font-semibold">Bantuan Permohonan Tim Teknis</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Daftar Peserta Pelatihan</p>
+                  <p class="font-semibold">Silahkan Klik untuk informasi peserta pelatihan !</p>
                 </div>
               </div>
             </a>
