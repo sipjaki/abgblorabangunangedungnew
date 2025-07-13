@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\agendapelatihanabg;
+use App\Models\jenjangpendidikan;
 use Illuminate\Support\Str;
 use App\Models\kategoripelatihan;
 use App\Models\materipelatihan;
@@ -391,6 +392,7 @@ public function resagendapelatihan($id)
 {
 
     $user = Auth::user();
+    $jenjangpendidikan = jenjangpendidikan::all();
 
     // Ambil data user yang statusadmin_id = 6 beserta relasi statusadmin
 
@@ -401,6 +403,7 @@ public function resagendapelatihan($id)
         'title' => 'Formulir Pendaftaran Agenda Sosialisasi Bangunan Gedung',
         'user' => $user,
         'agendapelatihan' => $agendapelatihan, // dikirim ke view
+        'jenjangpendidikan' => $jenjangpendidikan, // dikirim ke view
 
     ]);
 }

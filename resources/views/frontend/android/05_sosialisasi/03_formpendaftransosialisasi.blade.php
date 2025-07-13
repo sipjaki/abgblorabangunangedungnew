@@ -203,497 +203,128 @@
                     <span class="font-bold">Form Permohonan Bantuan Teknis | Bangunan Gedung </span>
                 </p>
             </div>
-            <form id="signatureForm" action="{{ route('permohonan.bantekcreate') }}" method="POST" enctype="multipart/form-data" class="mobile-form">
+
+    <form action="{{ route('pendaftaranpeserta.store') }}" method="POST" class="mobile-form">
     @csrf
-    <input type="hidden" name="dinas_id" value="{{ $dinas_id }}">
 
-    <!-- Section 1: Jenis Permohonan -->
+    <!-- Hidden ID Agenda Pelatihan -->
+    <input type="hidden" name="agendapelatihanabg_id" value="{{ $agendapelatihan->id }}">
+
     <div class="form-section">
         <div class="section-header">
-            <i class="fas fa-info-circle"></i>
-            <strong>Jenis Permohonan Bantuan Teknis Saudara!</strong>
+            <i class="fas fa-user-plus"></i>
+            <strong>Formulir Pendaftaran Peserta</strong>
         </div>
 
+        <!-- Nama Lengkap -->
         <div class="form-row">
             <div class="form-group">
-                <label class="form-label" for="jenispengajuanbantek_id">
-                    <i class="fas fa-envelope"></i> Jenis Permohonan Bantuan Teknis
+                <label for="namalengkap" class="form-label">
+                    <i class="fas fa-user"></i> Nama Lengkap
                 </label>
-                <select name="jenispengajuanbantek_id" id="jenispengajuanbantek_id" class="form-control @error('jenispengajuanbantek_id') is-invalid @enderror">
-                    <option value="">-- Pilih Jenis Pengajuan --</option>
-                    @foreach ($datapilihanpengajuan as $pengajuan)
-                        <option value="{{ $pengajuan->id }}" {{ old('jenispengajuanbantek_id') == $pengajuan->id ? 'selected' : '' }}>
-                            {{ $pengajuan->jenispengajuan }}
+                <input type="text" name="namalengkap" id="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}">
+                @error('namalengkap')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Jenjang Pendidikan -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="jenjangpendidikan_id" class="form-label">
+                    <i class="fas fa-graduation-cap"></i> Jenjang Pendidikan
+                </label>
+                <select name="jenjangpendidikan_id" id="jenjangpendidikan_id" class="form-control @error('jenjangpendidikan_id') is-invalid @enderror">
+                    <option value="">-- Pilih Jenjang Pendidikan --</option>
+                    @foreach ($jenjangpendidikan as $item)
+                        <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
+                            {{ $item->nama_jenjang }}
                         </option>
                     @endforeach
                 </select>
-                @error('jenispengajuanbantek_id')
+                @error('jenjangpendidikan_id')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
         </div>
 
-        <div class="form-row" id="konsultanFormGroup" style="display: none;">
+        <!-- NIK -->
+        <div class="form-row">
             <div class="form-group">
-                <label class="form-label" for="bujkkonsultan_id">
-                    <i class="fas fa-map-pin"></i> Pilih Konsultan Asistensi
+                <label for="nik" class="form-label">
+                    <i class="fas fa-id-card"></i> Nomor Induk Kependudukan (NIK)
                 </label>
-                <select id="bujkkonsultan_id" name="bujkkonsultan_id" class="form-control @error('bujkkonsultan_id') is-invalid @enderror">
-                    <option value="">-- Pilih Konsultan Asistensi --</option>
-                    @foreach ($datakonsultanbantek as $admin)
-                        <option value="{{ $admin->id }}" {{ old('bujkkonsultan_id') == $admin->id ? 'selected' : '' }}>
-                            {{ $admin->namalengkap }}
-                        </option>
-                    @endforeach
+                <input type="text" name="nik" id="nik" class="form-control @error('nik') is-invalid @enderror" value="{{ old('nik') }}">
+                @error('nik')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Jenis Kelamin -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="jeniskelamin" class="form-label">
+                    <i class="fas fa-venus-mars"></i> Jenis Kelamin
+                </label>
+                <select name="jeniskelamin" id="jeniskelamin" class="form-control @error('jeniskelamin') is-invalid @enderror">
+                    <option value="">-- Pilih Jenis Kelamin --</option>
+                    <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                    <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                 </select>
-                @error('bujkkonsultan_id')
+                @error('jeniskelamin')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Tanggal Lahir -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="tanggallahir" class="form-label">
+                    <i class="fas fa-calendar-alt"></i> Tanggal Lahir
+                </label>
+                <input type="date" name="tanggallahir" id="tanggallahir" class="form-control @error('tanggallahir') is-invalid @enderror" value="{{ old('tanggallahir') }}">
+                @error('tanggallahir')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- No Telepon -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="notelepon" class="form-label">
+                    <i class="fas fa-phone"></i> Nomor Telepon
+                </label>
+                <input type="text" name="notelepon" id="notelepon" class="form-control @error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}">
+                @error('notelepon')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Instansi -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="instansi" class="form-label">
+                    <i class="fas fa-building"></i> Instansi/Asal
+                </label>
+                <input type="text" name="instansi" id="instansi" class="form-control @error('instansi') is-invalid @enderror" value="{{ old('instansi') }}">
+                @error('instansi')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
         </div>
     </div>
 
-    <!-- Section 2: Informasi Permohonan -->
-    <div class="form-section">
-        <div class="section-header">
-            <i class="fas fa-info-circle"></i>
-            <strong>Informasi Permohonan Bantuan Teknis</strong>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="nosuratdinas">
-                    <i class="fas fa-file-alt"></i> Nomor Surat Dinas
-                </label>
-                <input type="text" name="nosuratdinas" id="nosuratdinas" class="form-control @error('nosuratdinas') is-invalid @enderror" value="{{ old('nosuratdinas') }}">
-                @error('nosuratdinas')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="tanggalsurat">
-                    <i class="fas fa-calendar"></i> Tanggal Surat
-                </label>
-                <input type="date" name="tanggalsurat" id="tanggalsurat" class="form-control" value="{{ date('Y-m-d') }}" readonly>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="nama_pemohon">
-                    <i class="fas fa-user"></i> Nama Pemohon
-                </label>
-                <input type="text" name="nama_pemohon" id="nama_pemohon" class="form-control @error('nama_pemohon') is-invalid @enderror" value="{{ old('nama_pemohon') }}">
-                @error('nama_pemohon')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="no_telepon">
-                    <i class="fas fa-phone"></i> No Telepon
-                </label>
-                <input type="text" name="no_telepon" id="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" value="{{ old('no_telepon') }}">
-                @error('no_telepon')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-    </div>
-
-    <!-- Section 3: Informasi Paket Pekerjaan -->
-    <div class="form-section">
-        <div class="section-header">
-            <i class="fas fa-info-circle"></i>
-            <strong>Informasi Paket Pekerjaan Bangunan Gedung</strong>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="namapaket">
-                    <i class="fas fa-box"></i> Nama Paket
-                </label>
-                <input type="text" name="namapaket" id="namapaket" class="form-control @error('namapaket') is-invalid @enderror" value="{{ old('namapaket') }}">
-                @error('namapaket')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="kategoribangunan">
-                    <i class="fas fa-building"></i> Kategori Bangunan
-                </label>
-                <select name="kategoribangunan" id="kategoribangunan" class="form-control @error('kategoribangunan') is-invalid @enderror">
-                    <option value="" disabled {{ old('kategoribangunan') ? '' : 'selected' }}>-- Pilih Kategori --</option>
-                    <option value="GEDUNG KANTOR" {{ old('kategoribangunan') == 'GEDUNG KANTOR' ? 'selected' : '' }}>GEDUNG KANTOR</option>
-                    <option value="BANGUNAN NEGARA LAINNYA" {{ old('kategoribangunan') == 'BANGUNAN NEGARA LAINNYA' ? 'selected' : '' }}>BANGUNAN NEGARA LAINNYA</option>
-                    <option value="RUMAH NEGARA" {{ old('kategoribangunan') == 'RUMAH NEGARA' ? 'selected' : '' }}>RUMAH NEGARA</option>
-                    <option value="PAGAR BANGUNAN GEDUNG KANTOR" {{ old('kategoribangunan') == 'PAGAR BANGUNAN GEDUNG KANTOR' ? 'selected' : '' }}>PAGAR BANGUNAN GEDUNG KANTOR</option>
-                    <option value="PAGAR BANGUNAN GEDUNG LAINNYA" {{ old('kategoribangunan') == 'PAGAR BANGUNAN GEDUNG LAINNYA' ? 'selected' : '' }}>PAGAR BANGUNAN GEDUNG LAINNYA</option>
-                    <option value="PAGAR RUMAH NEGARA" {{ old('kategoribangunan') == 'PAGAR RUMAH NEGARA' ? 'selected' : '' }}>PAGAR RUMAH NEGARA</option>
-                </select>
-                @error('kategoribangunan')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="luasbangunan">
-                    <i class="fas fa-ruler-combined"></i> Luas Bangunan (m²)
-                </label>
-                <input type="text" name="luasbangunan" id="luasbangunan" class="form-control @error('luasbangunan') is-invalid @enderror" value="{{ old('luasbangunan') ? number_format(old('luasbangunan'), 0, ',', '.') : '' }}" autocomplete="off" inputmode="numeric">
-                @error('luasbangunan')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="luastanahtotal">
-                    <i class="fas fa-ruler"></i> Luas Tanah Total (m²)
-                </label>
-                <input type="text" name="luastanahtotal" id="luastanahtotal" class="form-control @error('luastanahtotal') is-invalid @enderror" value="{{ old('luastanahtotal') ? number_format(old('luastanahtotal'), 0, ',', '.') : '' }}" autocomplete="off" inputmode="numeric">
-                @error('luastanahtotal')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="jumlahlantai">
-                    <i class="fas fa-layer-group"></i> Jumlah Lantai
-                </label>
-                <select name="jumlahlantai" id="jumlahlantai" class="form-control @error('jumlahlantai') is-invalid @enderror">
-                    <option value="" disabled {{ old('jumlahlantai') ? '' : 'selected' }}>-- Pilih Jumlah Lantai --</option>
-                    @for ($i = 1; $i <= 10; $i++)
-                        <option value="{{ $i }}" {{ old('jumlahlantai') == (string)$i ? 'selected' : '' }}>
-                            {{ $i }} lantai
-                        </option>
-                    @endfor
-                    <option value="lebih dari 10" {{ old('jumlahlantai') == 'lebih dari 10' ? 'selected' : '' }}>
-                        Lebih dari 10 lantai
-                    </option>
-                </select>
-                @error('jumlahlantai')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="tinggibangunan">
-                    <i class="fas fa-arrows-alt-v"></i> Tinggi Bangunan (m)
-                </label>
-                <input type="text" name="tinggibangunan" id="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror" value="{{ old('tinggibangunan') ? number_format(old('tinggibangunan'), 0, ',', '.') : '' }}" autocomplete="off" inputmode="numeric" pattern="[0-9.]+">
-                @error('tinggibangunan')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="bassement">
-                    <i class="fas fa-warehouse"></i> Ada Bassement?
-                </label>
-                <select name="bassement" id="bassement" class="form-control @error('bassement') is-invalid @enderror">
-                    <option value="">-- Pilih --</option>
-                    <option value="1" {{ old('bassement') == 1 ? 'selected' : '' }}>Ya</option>
-                    <option value="0" {{ old('bassement') == 0 ? 'selected' : '' }}>Tidak</option>
-                </select>
-                @error('bassement')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="kepemilikan">
-                    <i class="fas fa-id-card"></i> Kepemilikan
-                </label>
-                <select name="kepemilikan" id="kepemilikan" class="form-control @error('kepemilikan') is-invalid @enderror">
-                    <option value="" disabled {{ old('kepemilikan') ? '' : 'selected' }}>-- Pilih Jenis Kepemilikan --</option>
-                    <option value="SERTIFIKAT HAK MILIK" {{ old('kepemilikan') == 'SERTIFIKAT HAK MILIK' ? 'selected' : '' }}>SERTIFIKAT HAK MILIK</option>
-                    <option value="SERTIFIKAT HAK GUNA BANGUNAN" {{ old('kepemilikan') == 'SERTIFIKAT HAK GUNA BANGUNAN' ? 'selected' : '' }}>SERTIFIKAT HAK GUNA BANGUNAN</option>
-                    <option value="SERTIFIKAT HAK PAKAI" {{ old('kepemilikan') == 'SERTIFIKAT HAK PAKAI' ? 'selected' : '' }}>SERTIFIKAT HAK PAKAI</option>
-                </select>
-                @error('kepemilikan')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="tahunpembangunan">
-                    <i class="fas fa-calendar-plus"></i> Tahun Pembangunan
-                </label>
-                <input type="number" name="tahunpembangunan" id="tahunpembangunan" class="form-control @error('tahunpembangunan') is-invalid @enderror" value="{{ old('tahunpembangunan') }}" autocomplete="off">
-                @error('tahunpembangunan')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="tahunrenovasi">
-                    <i class="fas fa-tools"></i> Tahun Renovasi (jika ada)
-                </label>
-                <input type="number" name="tahunrenovasi" id="tahunrenovasi" class="form-control @error('tahunrenovasi') is-invalid @enderror" value="{{ old('tahunrenovasi') }}" autocomplete="off">
-                @error('tahunrenovasi')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-    </div>
-
-    <!-- Section 4: Informasi Lokasi -->
-    <div class="form-section">
-        <div class="section-header">
-            <i class="fas fa-info-circle"></i>
-            <strong>Informasi Lokasi Bangunan Gedung Pemohon</strong>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="rt">
-                    <i class="fas fa-hashtag"></i> RT
-                </label>
-                <select name="rt" id="rt" class="form-control @error('rt') is-invalid @enderror">
-                    <option value="">-- Pilih RT --</option>
-                    @for ($i = 1; $i <= 25; $i++)
-                        <option value="{{ $i }}" {{ old('rt') == $i ? 'selected' : '' }}>{{ $i }}</option>
-                    @endfor
-                </select>
-                @error('rt')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="rw">
-                    <i class="fas fa-hashtag"></i> RW
-                </label>
-                <select name="rw" id="rw" class="form-control @error('rw') is-invalid @enderror">
-                    <option value="">-- Pilih RW --</option>
-                    @for ($i = 1; $i <= 25; $i++)
-                        <option value="{{ $i }}" {{ old('rw') == $i ? 'selected' : '' }}>{{ $i }}</option>
-                    @endfor
-                </select>
-                @error('rw')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="kabupaten">
-                    <i class="fas fa-map"></i> Kabupaten
-                </label>
-                <select name="kabupaten" id="kabupaten" class="form-control" readonly disabled>
-                    <option value="kabupaten blora" selected>Kabupaten Blora</option>
-                </select>
-                <input type="hidden" name="kabupaten" value="kabupaten blora">
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="kecamatanblora_id">
-                    <i class="fas fa-map-pin"></i> Kecamatan
-                </label>
-                <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror">
-                    <option value="">Pilih Kecamatan</option>
-                    @foreach($datakecamatan as $kecamatan)
-                        <option value="{{ $kecamatan->id }}" style="text-transform: capitalize;"
-                            {{ old('kecamatanblora_id') == $kecamatan->id ? 'selected' : '' }}>
-                            {{ $kecamatan->kecamatanblora }}
-                        </option>
-                    @endforeach
-                </select>
-                @error('kecamatanblora_id')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label for="kelurahandesa_id" class="form-label">
-                    <i class="fas fa-map-marker-alt"></i> Kelurahan/Desa
-                </label>
-                <select id="kelurahandesa_id" name="kelurahandesa_id" class="form-control @error('kelurahandesa_id') is-invalid @enderror">
-                    <option value="">Pilih Kelurahan/Desa</option>
-                </select>
-                @error('kelurahandesa_id')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="alamatlokasi">
-                    <i class="fas fa-map-pin"></i> Lokasi Bangunan Gedung
-                </label>
-                <input type="text" id="alamatlokasi" name="alamatlokasi" placeholder="Lokasi Bangunan Gedung" class="form-control @error('alamatlokasi') is-invalid @enderror" value="{{ old('alamatlokasi') }}">
-                @error('alamatlokasi')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label" for="pengelola">
-                    <i class="fas fa-user-tie"></i> Pengelola Bangunan Gedung
-                </label>
-                <input type="text" id="pengelola" name="pengelola" placeholder="Pengelola Bangunan Gedung" class="form-control @error('pengelola') is-invalid @enderror" value="{{ old('pengelola') }}">
-                @error('pengelola')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-    </div>
-
-    <!-- Section 5: Berkas Dokumen -->
-    <div class="form-section">
-        <div class="section-header">
-            <i class="fas fa-info-circle"></i>
-            <strong>Berkas Kelengkapan Dokumen Permohonan Bantuan Teknis</strong>
-        </div>
-
-        <div class="form-row">
-            <div class="file-upload-group">
-                <label for="suratpermohonan">
-                    <i class="fas fa-file-alt"></i> Surat Permohonan<br>
-                    <span class="file-info">File .pdf Max 10Mb</span>
-                </label>
-                <input id="suratpermohonan" name="suratpermohonan" type="file" accept="image/*,application/pdf" class="@error('suratpermohonan') is-invalid @enderror" onchange="previewFile(this, 'suratpermohonanPreview')">
-                <div id="suratpermohonanPreview" class="file-preview"></div>
-                @error('suratpermohonan')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="file-upload-group">
-                <label for="kic">
-                    <i class="fas fa-file-invoice"></i> Kartu Inventaris Barang<br>
-                    <span class="file-info">File .pdf Max 10Mb</span>
-                </label>
-                <input id="kic" name="kic" type="file" accept="application/pdf,image/*" class="@error('kic') is-invalid @enderror" onchange="previewFile(this, 'kicPreview')">
-                <div id="kicPreview" class="file-preview">
-                    @if(session('kic_temp'))
-                        <div class="file-temp">
-                            <a href="{{ Storage::url(session('kic_temp')) }}" target="_blank" class="text-blue-500 underline">Lihat file sebelumnya</a>
-                        </div>
-                    @elseif(old('kic'))
-                        <div class="file-temp">
-                            File sudah dipilih: {{ old('kic') }}
-                        </div>
-                    @endif
-                </div>
-                @error('kic')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="file-upload-group">
-                <label for="fotokondisi">
-                    <i class="fas fa-camera"></i> Foto Kondisi<br>
-                    <span class="file-info">File .pdf Max 10Mb</span>
-                </label>
-                <input id="fotokondisi" name="fotokondisi" type="file" accept="application/pdf" class="@error('fotokondisi') is-invalid @enderror" onchange="previewFile(this, 'fotokondisiPreview')">
-                <div id="fotokondisiPreview" class="file-preview">
-                    @if(session('fotokondisi_temp'))
-                        <div class="file-temp">
-                            <a href="{{ Storage::url(session('fotokondisi_temp')) }}" target="_blank" class="text-blue-500 underline">
-                                Lihat File PDF
-                            </a>
-                        </div>
-                    @elseif(old('fotokondisi'))
-                        <div class="file-temp">
-                            File sudah dipilih: {{ old('fotokondisi') }}
-                        </div>
-                    @endif
-                </div>
-                @error('fotokondisi')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-    </div>
-
-    <!-- Hidden upload section for specific options -->
-    <div id="uploadSection" style="display: none;">
-        <div class="form-section">
-            <div class="form-row">
-                <div class="file-upload-group">
-                    <label for="rab">
-                        <i class="fas fa-file-invoice-dollar"></i> Rencana Anggaran Biaya<br>
-                        <span class="file-info">File .pdf Max 10Mb</span>
-                    </label>
-                    <input id="rab" name="rab" type="file" accept="image/*,application/pdf" class="@error('rab') is-invalid @enderror" onchange="previewFile(this, 'rabPreview')">
-                    <div id="rabPreview" class="file-preview"></div>
-                    @error('rab')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="file-upload-group">
-                    <label for="asbuilt">
-                        <i class="fas fa-drafting-compass"></i> As Built Drawing<br>
-                        <span class="file-info">File .pdf Max 10Mb</span>
-                    </label>
-                    <input id="asbuilt" name="asbuilt" type="file" accept="application/pdf,image/*" class="@error('asbuilt') is-invalid @enderror" onchange="previewFile(this, 'asbuiltPreview')">
-                    <div id="asbuiltPreview" class="file-preview">
-                        @if(session('asbuilt_temp'))
-                            <div class="file-temp">
-                                <a href="{{ Storage::url(session('asbuilt_temp')) }}" target="_blank" class="text-blue-500 underline">Lihat file sebelumnya</a>
-                            </div>
-                        @elseif(old('asbuilt'))
-                            <div class="file-temp">
-                                File sudah dipilih: {{ old('asbuilt') }}
-                            </div>
-                        @endif
-                    </div>
-                    @error('asbuilt')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Form buttons -->
+    <!-- Tombol Submit -->
     <div class="form-buttons">
-        <button type="button" class="btn-reset">
-            <i class="fas fa-redo"></i> Reset
-        </button>
-        <button type="button" class="btn-submit" onclick="openModal()">
+        {{-- <button type="reset" class="btn-reset">
+            <i class="fas fa-undo"></i> Reset
+        </button> --}}
+        <button type="button" class="button-baru" onclick="openModal()">
             <i class="fab fa-telegram-plane"></i> Kirim Permohonan
         </button>
     </div>
