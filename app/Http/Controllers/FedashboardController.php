@@ -586,7 +586,7 @@ public function infopbgprasarana()
              return view('frontend.android.05_sosialisasi.05_showpesertapel', [
                  'title' => 'Daftar Peserta Pelatihan ABG Blora Bangunan gedung ',
                  'data' => $dataagendapelatihan,
-                 'datamateripelatihan' => $subdata,
+                 'subdata' => $subdata,
                  // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
                  'user' => $user,
                  // 'start' => $start,
