@@ -115,7 +115,7 @@
             <i class="fas fa-times-circle"></i> Ditutup
         </button>
     @else
-        <a href="{{ route('ressosialisasishow', $item->id) }}" style="text-decoration: none;">
+        <a href="{{ route('respesertashow', $item->id) }}" style="text-decoration: none;">
             <div style="
                 background-color: #006b1b;
                 color: white;

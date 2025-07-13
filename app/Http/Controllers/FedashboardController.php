@@ -14,6 +14,7 @@ use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\materipelatihan;
 use App\Models\mbrgambar;
+use App\Models\pesertapelatihan;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -563,6 +564,34 @@ public function infopbgprasarana()
         'data' => $agendapelatihan,
     ]);
 }
+
+            public function respesertashow($id)
+             {
+                 $dataagendapelatihan = agendapelatihanabg::where('id', $id)->first();
+
+                 if (!$dataagendapelatihan) {
+                     // Tangani jika kegiatan tidak ditemukan
+                     return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
+                 }
+
+                 // Menggunakan paginate() untuk pagination
+                 $subdata = pesertapelatihan::where('agendapelatihanabg_id', $dataagendapelatihan->id)->paginate(100);
+
+                   // Menghitung nomor urut mulai
+                     $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
+
+             $user = Auth::user();
+
+
+             return view('frontend.android.05_sosialisasi.05_showpesertapel', [
+                 'title' => 'Daftar Peserta Pelatihan ABG Blora Bangunan gedung ',
+                 'data' => $dataagendapelatihan,
+                 'datamateripelatihan' => $subdata,
+                 // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+                 'user' => $user,
+                 // 'start' => $start,
+             ]);
+             }
 
 
 }
