@@ -43,21 +43,23 @@
 
     <!-- Form pencarian -->
     <div class="mb-8">
-        <label for="searchInput" class="block mb-2 font-semibold text-sm text-gray-700">Ketik atau pilih ruas jalan:</label>
-        <div class="relative">
-            <input list="jalanOptions" id="searchInput" style="height: 25px;"
-                   class="w-full px-5 py-4 border border-blue-300 rounded-xl shadow-md
-                          focus:outline-none focus:ring-2 focus:ring-blue-500
-                          focus:border-transparent text-base"
-                   placeholder="🛣️ Contoh: Jl. Pemuda, Jl. Blora-Cepu, dll."
-                   oninput="filterGSB()">
-            <datalist id="jalanOptions">
-                @foreach ($rencanagsb as $item)
-                    <option value="{{ $item->ruasjalan }}">
-                @endforeach
-            </datalist>
-        </div>
+    <label for="searchInput" class="block mb-2 font-semibold text-sm text-gray-700">
+        Ketik atau pilih ruas jalan:
+    </label>
+    <div class="relative">
+        <input list="jalanOptions" id="searchInput"
+               class="w-full max-w-3xl px-6 py-5 border border-blue-300 rounded-xl shadow-md
+                      focus:outline-none focus:ring-2 focus:ring-blue-500
+                      focus:border-transparent text-base"
+               placeholder="🛣️ Contoh: Jl. Pemuda, Jl. Blora-Cepu, dll."
+               oninput="filterGSB()">
+        <datalist id="jalanOptions">
+            @foreach ($rencanagsb as $item)
+                <option value="{{ $item->ruasjalan }}">
+            @endforeach
+        </datalist>
     </div>
+</div>
 
     <!-- Jarak batas hasil -->
     <div class="mb-4 border-t border-gray-300"></div>
