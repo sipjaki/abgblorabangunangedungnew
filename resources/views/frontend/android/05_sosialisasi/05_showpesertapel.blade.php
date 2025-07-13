@@ -30,7 +30,7 @@
         <h4 style="font-weight:bold;">DAFTAR PESERTA PELATIHAN</h4>
         <div style="margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
 
-            <div style="overflow-x: auto; max-height: 500px; border: 1px solid #ccc; border-radius: 8px;">
+            <div style="overflow-x: auto; max-height: 1000px; border: 1px solid #ccc; border-radius: 8px;">
     <table style="width: 100%; border-collapse: collapse; min-width: 900px;">
         <thead>
             <tr style="background-color: #f0f0f0;">
@@ -66,17 +66,21 @@
                     </td>
                     <td style="border: 1px solid #ccc; padding: 8px;">{{ $item->notelepon }}</td>
                     <td style="border: 1px solid #ccc; padding: 8px;">{{ $item->instansi }}</td>
-                    <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">
-                        @if ($item->verifikasi === 'Sudah')
-                            <span style="background-color: green; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">
-                                Sudah
-                            </span>
-                        @else
-                            <span style="background-color: orange; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">
-                                Belum
-                            </span>
-                        @endif
-                    </td>
+                  <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">
+    @if (is_null($item->verifikasi))
+        <span style="background-color: #3498db; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">
+            Sedang Diverifikasi
+        </span>
+    @elseif ($item->verifikasi === 'lolos')
+        <span style="background-color: #2ecc71; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">
+            Lolos
+        </span>
+    @else
+        <span style="background-color: #e74c3c; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">
+            Gugur
+        </span>
+    @endif
+</td>
                 </tr>
             @empty
                 <tr>
