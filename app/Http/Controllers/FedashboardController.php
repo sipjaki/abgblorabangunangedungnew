@@ -536,6 +536,19 @@ public function infopbgprasarana()
              ]);
              }
 
+        public function resagendaabg()
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.05_sosialisasi.00_halamansosialisasi', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Informasi Agenda Pelatihan ABG Blora ',
+            'user' => $user,
+        ]);
+    }
+
 
 }
 
