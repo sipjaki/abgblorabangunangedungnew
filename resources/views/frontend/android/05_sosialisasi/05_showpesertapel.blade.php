@@ -68,15 +68,15 @@
                     <td style="border: 1px solid #ccc; padding: 8px;">{{ $item->instansi }}</td>
                   <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">
     @if (is_null($item->verifikasi))
-        <span style="background-color: #3498db; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">
+        <span style="display: inline-block; min-width: 120px; background-color: #3498db; color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">
             Sedang Diverifikasi
         </span>
     @elseif ($item->verifikasi === 'lolos')
-        <span style="background-color: #2ecc71; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">
+        <span style="display: inline-block; min-width: 120px; background-color: #2ecc71; color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">
             Lolos
         </span>
     @else
-        <span style="background-color: #e74c3c; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">
+        <span style="display: inline-block; min-width: 120px; background-color: #e74c3c; color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">
             Gugur
         </span>
     @endif
