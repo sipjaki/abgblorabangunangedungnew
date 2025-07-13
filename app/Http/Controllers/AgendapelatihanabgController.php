@@ -392,7 +392,7 @@ public function resagendapelatihan($id)
 {
 
     $user = Auth::user();
-    $jenjangpendidikan = jenjangpendidikan::all();
+$jenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get();
 
     // Ambil data user yang statusadmin_id = 6 beserta relasi statusadmin
 
