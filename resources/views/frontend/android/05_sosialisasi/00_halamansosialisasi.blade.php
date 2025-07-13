@@ -36,10 +36,10 @@
               <a href="/ressosialisasiabg" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="thumbnail">
+                  <img src="/assets/android/menunavigasi/05.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Daftar Agenda Pelatihan</p>
+                  <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Daftar Agenda Sosialisasi</p>
                   <p class="font-semibold">Silahkan Klik untuk informasi pelatihan !</p>
                 </div>
               </div>
@@ -48,7 +48,7 @@
               <a href="/ressosialisasiabg" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/menunavigasi/04.png" class="object-cover w-full h-full" alt="thumbnail">
+                  <img src="/assets/android/menunavigasi/05.png" class="object-cover w-full h-full" alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[2px]">
                   <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Daftar Peserta Pelatihan</p>
@@ -60,43 +60,6 @@
         </div>
 
 
-        <div class="flex flex-col space-y-3 px-[18px]">
-
-            <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-                <!-- Gambar Thumbnail Penuh -->
-                <div class="w-full h-auto rounded-lg overflow-hidden">
-                    <img src="/assets/android/bantek/1.jpg" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-            </a>
-
-            <br>
-
-            <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-                <!-- Gambar Thumbnail Penuh -->
-                <div class="w-full h-auto rounded-lg overflow-hidden">
-                    <img src="/assets/android/bantek/2.jpg" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-            </a>
-
-            <br>
-
-            <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-                <!-- Gambar Thumbnail Penuh -->
-                <div class="w-full h-auto rounded-lg overflow-hidden">
-                    <img src="/assets/android/bantek/3.jpg" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-            </a>
-
-            <br>
-
-            <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-                <!-- Gambar Thumbnail Penuh -->
-                <div class="w-full h-auto rounded-lg overflow-hidden">
-                    <img src="/assets/android/bantek/4.jpg" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
-            </a>
-
-            <br>
 
             <!-- Card 1 -->
 
