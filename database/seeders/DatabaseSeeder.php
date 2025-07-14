@@ -924,7 +924,7 @@ mbrgambar::create([
 
 // =============================================
 
-for ($i = 1; $i <= 10; $i++) {
+for ($i = 1; $i <= 45; $i++) {
     $randomDate = now()->subDays(rand(0, 365));
     $userId = [46, 47][array_rand([46, 47])];
     $jenisPengajuan = rand(1, 5); // Acak dari 1 sampai 6
