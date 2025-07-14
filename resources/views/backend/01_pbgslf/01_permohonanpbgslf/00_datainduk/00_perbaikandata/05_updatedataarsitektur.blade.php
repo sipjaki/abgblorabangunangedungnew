@@ -497,13 +497,13 @@ th {
     </label>
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas6" value="Lengkap"
+                {{ old('berkas5', $data->berkas6) == 'Lengkap' ? 'checked' : '' }}>
             <span class="custom-box"></span> Lengkap
         </label>
         <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Tidak Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Tidak Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas6" value="Tidak Lengkap"
+                {{ old('berkas5', $data->berkas6) == 'Tidak Lengkap' ? 'checked' : '' }}>
             <span class="custom-box"></span> Tidak Lengkap
         </label>
     </div>
@@ -517,13 +517,13 @@ th {
     </label>
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas7" value="Lengkap"
+                {{ old('berkas5', $data->berkas7) == 'Lengkap' ? 'checked' : '' }}>
             <span class="custom-box"></span> Lengkap
         </label>
         <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Tidak Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Tidak Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas7" value="Tidak Lengkap"
+                {{ old('berkas5', $data->berkas7) == 'Tidak Lengkap' ? 'checked' : '' }}>
             <span class="custom-box"></span> Tidak Lengkap
         </label>
     </div>
@@ -537,13 +537,13 @@ th {
     </label>
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas8" value="Lengkap"
+                {{ old('berkas5', $data->berkas8) == 'Lengkap' ? 'checked' : '' }}>
             <span class="custom-box"></span> Lengkap
         </label>
         <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Tidak Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Tidak Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas8" value="Tidak Lengkap"
+                {{ old('berkas5', $data->berkas8) == 'Tidak Lengkap' ? 'checked' : '' }}>
             <span class="custom-box"></span> Tidak Lengkap
         </label>
     </div>
@@ -557,13 +557,13 @@ th {
     </label>
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas9" value="Lengkap"
+                {{ old('berkas5', $data->berkas9) == 'Lengkap' ? 'checked' : '' }}>
             <span class="custom-box"></span> Lengkap
         </label>
         <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Tidak Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Tidak Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas9" value="Tidak Lengkap"
+                {{ old('berkas5', $data->berkas9) == 'Tidak Lengkap' ? 'checked' : '' }}>
             <span class="custom-box"></span> Tidak Lengkap
         </label>
     </div>
@@ -577,13 +577,13 @@ th {
     </label>
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas10" value="Lengkap"
+                {{ old('berkas5', $data->berkas10) == 'Lengkap' ? 'checked' : '' }}>
             <span class="custom-box"></span> Lengkap
         </label>
         <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Tidak Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Tidak Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas10" value="Tidak Lengkap"
+                {{ old('berkas5', $data->berkas10) == 'Tidak Lengkap' ? 'checked' : '' }}>
             <span class="custom-box"></span> Tidak Lengkap
         </label>
     </div>
