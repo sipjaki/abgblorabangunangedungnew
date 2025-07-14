@@ -161,6 +161,41 @@ public function dataalldinassurat(Request $request)
 }
 
 
+public function dataalldinassuratin(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 15);
+
+    $query = perjalanandinas::with(['namapetugas']) // hanya with namapetugas
+        ->whereHas('namapetugas', function ($q) use ($user) {
+            $q->where('user_id', $user->id); // filter berdasarkan user login
+        });
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('dinasluasdalam', 'like', "%{$search}%")
+              ->orWhere('maksudperjalanan', 'like', "%{$search}%")
+              ->orWhere('angkutan', 'like', "%{$search}%")
+              ->orWhere('tempatberangkat', 'like', "%{$search}%")
+              ->orWhere('tempattujuan', 'like', "%{$search}%")
+              ->orWhere('lamaperjalanan', 'like', "%{$search}%")
+              ->orWhereHas('namapetugas', function ($sub) use ($search) {
+                  $sub->where('name', 'like', "%{$search}%");
+              });
+        });
+    }
+
+    $datadinas = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.11_perjalanandinas.03_dataalldinas', [
+        'title' => 'Daftar Surat Perjalanan Dinas Saudara ',
+        'data' => $datadinas,
+        'user' => $user,
+    ]);
+}
+
+
 
 // ==================================================
 public function dataalldinassuratshow(Request $request, $id)
