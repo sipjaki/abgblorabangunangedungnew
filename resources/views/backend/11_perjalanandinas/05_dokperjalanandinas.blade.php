@@ -254,7 +254,7 @@ th {
 <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 5</th>
 {{-- <th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 6</th> --}}
 
-@canany(['superadmin', 'admin'])
+@canany(['superadmin', 'admin', 'internal'])
 <th style="background-color: #ADD8E6; width:150px;"><i class="bi bi-tools"></i> Aksi</th>
 @endcanany
 

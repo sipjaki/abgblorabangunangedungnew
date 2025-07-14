@@ -515,6 +515,25 @@ public function beperjalanandinasin()
     ]);
 }
 
+
+
+public function dataalldinassuratdelete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = perjalanandinas::find($id);
+
+    if ($entry) {
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect kembali ke halaman sebelumnya
+        return redirect()->back()->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
 }
 
 
