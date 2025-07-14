@@ -378,7 +378,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #fdd100; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Perbaikan Informasi Data Umum Bangunan Gedung
+    Perbaikan Informasi Data Tanah Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
@@ -489,6 +489,28 @@ th {
     </div>
     @error('berkas5')<div class="text-danger mt-2">{{ $message }}</div>@enderror
 </div>
+
+        {{-- Pilihan Catatan --}}
+        <div class="col-md-6">
+            <label class="form-label d-block" style="color: navy; font-weight: 600;">
+                <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
+            </label>
+
+            <label class="custom-radio">
+                <input type="radio" name="pilihancatatan" value="lengkap"
+                    onchange="toggleCatatan(this)"
+                    {{ old('pilihancatatan', $data->pilihancatatan) === 'lengkap' ? 'checked' : '' }}>
+                <span class="custom-box"></span> Sesuai
+            </label>
+
+            <label class="custom-radio">
+                <input type="radio" name="pilihancatatan" value="tidak lengkap"
+                    onchange="toggleCatatan(this)"
+                    {{ old('pilihancatatan', $data->pilihancatatan) === 'tidak lengkap' ? 'checked' : '' }}>
+                <span class="custom-box"></span> Tidak Sesuai
+            </label>
+            @error('pilihancatatan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+        </div>
 
         <br>
 
