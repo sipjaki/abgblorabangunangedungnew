@@ -392,21 +392,12 @@ th {
     <div class="row g-3 mt-2">
 {{-- Berkas Dukung 1 --}}
 <div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+    <label for="berkas1" class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 1. Berkas Dukung Lainnya
     </label>
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="berkas1" value="Lengkap"
-                {{ old('berkas1', $data->berkas1) == 'Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Lengkap
-        </label>
-        <label class="custom-radio">
-            <input type="radio" name="berkas1" value="Tidak Lengkap"
-                {{ old('berkas1', $data->berkas1) == 'Tidak Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-    </div>
+    <input type="text" name="berkas1" id="berkas1"
+        class="form-control @error('berkas1') is-invalid @enderror"
+        value="{{ old('berkas1', $data->berkas1) }}" placeholder="Masukkan keterangan berkas">
     @error('berkas1')<div class="text-danger mt-2">{{ $message }}</div>@enderror
 </div>
 
