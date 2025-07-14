@@ -258,12 +258,6 @@ th {
     @endforeach
 
 
-                          <a href="/updatedatatanah/{{ $pemilik->id }}">
-                            <p class="button-berkas">
-                                <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
-                                Perbaikan Data
-                            </p>
-                        </a>
 
 </div>
 
@@ -356,6 +350,14 @@ th {
                                 </div>
                             </div>
                         @endforeach
+
+                        <a href="/updatedatatanah/{{ $pemilik->id }}">
+                            <p class="button-berkas">
+                                <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
+                                Perbaikan Data
+                            </p>
+                        </a>
+
 
                         {{-- Tampilkan Catatan jika Pilihan Catatan = tidak lengkap --}}
                         @if (strtolower($pemilik->pilihancatatan) === 'tidak lengkap')
