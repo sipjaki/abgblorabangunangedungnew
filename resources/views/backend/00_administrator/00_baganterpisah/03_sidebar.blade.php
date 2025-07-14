@@ -1394,9 +1394,8 @@
 
 </ul>
 
-@can()
+@canany(['superadmin', 'admin', 'internal'])
 
-@endcan
 <li class="nav-item">
 <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24" style="flex-shrink: 0;">
@@ -1483,6 +1482,9 @@
 </li> --}}
 
 </ul>
+
+@endcanany
+
 </li>
 
     <li class="nav-header" style="color: white;">Pengaturan Data </li>
