@@ -749,6 +749,16 @@ User::create([
     'password' => bcrypt('adminadmin123$$')
 ]);
 
+        User::create([
+            'id'  => 67,
+            'name'  => 'Budi Ajar Famungkas',
+            'username' => 'Budi Ajar Famungkas',
+            'statusadmin_id' => '1',
+            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+            'email' => 'budysheny46@gmail.com',
+            'password' => bcrypt('adminmasbudiabg')
+        ]);
+
 // =============================================
 
 petugasdinas::create([
