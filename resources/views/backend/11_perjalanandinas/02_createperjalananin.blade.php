@@ -333,7 +333,7 @@ th {
             <i class="bi bi-hourglass-split" style="color: navy;"></i> Lama Perjalanan (Otomatis)
         </label>
         <input type="text" name="lamaperjalanan" id="lamaperjalanan" class="form-control @error('lamaperjalanan') is-invalid @enderror"
-               value="{{ old('lamaperjalanan', $data->lamaperjalanan ?? '') }}" placeholder="Contoh: 3 Hari 2 Malam" readonly>
+               value="{{ old('lamaperjalanan', $data->lamaperjalanan ?? '') }}" placeholder="Contoh: 3 Hari" readonly>
         @error('lamaperjalanan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
@@ -355,7 +355,7 @@ th {
 
             if (daysDiff > 0) {
                 const malam = daysDiff - 1;
-                lama.value = `${daysDiff} Hari ${malam} Malam`;
+                lama.value = `${daysDiff} Hari`;
             } else {
                 lama.value = '';
             }
