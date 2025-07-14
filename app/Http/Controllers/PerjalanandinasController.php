@@ -120,7 +120,7 @@ public function beperjalanandinasnew(Request $request)
     ]);
 
     session()->flash('create', 'Data Perjalanan Dinas berhasil disimpan!');
-    return redirect()->route('dataalldinassurat.index');
+    return redirect()->route('dataalldinassuratin.index');
 }
 
 public function dataalldinassurat(Request $request)
