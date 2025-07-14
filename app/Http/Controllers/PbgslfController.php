@@ -3353,7 +3353,7 @@ public function updatedataumumnew(Request $request, $id)
 public function updatedataarsitektur($id)
 {
     // Ambil data bantuan teknis berdasarkan ID
-    $databantuanteknis = dokumenteknisars::find($id);
+    $databantuanteknis = dokumenteknisarsi::find($id);
 
     if (!$databantuanteknis) {
         return abort(404, 'Data bantuan teknis tidak ditemukan');
