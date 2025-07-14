@@ -1434,9 +1434,17 @@
         <p style="color: yellow; margin: 0 0 0 8px;">Buat Surat</p>
     </a>
 </li> --}}
-    <li class="nav-item">
+
+<li class="nav-item">
     <a href="/dataalldinassurat" class="nav-link" style="display: flex; align-items: center;">
-        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <i class="bi bi-bar-chart-line nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: yellow; margin: 0 0 0 8px;">Statistik Perjalanan Dinas</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/dataalldinassurat" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: yellow; margin: 0 0 0 8px;">Daftar Surat Dinas</p>
     </a>
 </li>
