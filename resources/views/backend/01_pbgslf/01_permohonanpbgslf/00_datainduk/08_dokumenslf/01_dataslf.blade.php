@@ -308,7 +308,7 @@ th {
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-header bg-primary text-white d-flex align-items-center">
                     <i class="bi bi-folder-check me-2 fs-5"></i>
-                    <h5 class="mb-0" style="font-size: 16px;">Dokumen Pemeriksaan Kelaikan Fungsi</h5>
+                    <h5 class="mb-0" style="font-size: 16px;">Informasi Dokumen Teknis Permohonan SLF (Sertifikat Laik Fungsi)</h5>
                 </div>
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
                     <div class="row g-3">
@@ -367,7 +367,7 @@ th {
     @empty
         <div class="col-12 mt-5">
             <div style="display: flex; justify-content: center; align-items: center; padding: 30px; font-weight: 600; font-family: 'Poppins', sans-serif; color: #6c757d; background-color: #f8f9fa; border: 2px dashed #ced4da; border-radius: 12px; font-size: 16px;">
-                <i class="bi bi-folder-x me-2 text-danger fs-5"></i> Dokumen Teknis Tidak Ditemukan !!
+                <i class="bi bi-folder-x me-2 text-danger fs-5"></i> Dokumen Teknis SLF Tidak Ditemukan !!
             </div>
             <div class="text-center mt-4">
                 <a href="{{ route('dokumenteknisslfcreate', $data->id) }}" class="button-baru">

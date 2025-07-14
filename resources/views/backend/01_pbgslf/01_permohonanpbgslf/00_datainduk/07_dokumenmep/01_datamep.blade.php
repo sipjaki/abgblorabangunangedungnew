@@ -311,7 +311,7 @@ th {
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-header bg-primary text-white d-flex align-items-center">
                     <i class="bi bi-folder-check me-2 fs-5"></i>
-                    <h5 class="mb-0" style="font-size: 16px;">Dokumen Teknis MEP</h5>
+                    <h5 class="mb-0" style="font-size: 16px;">Informasi Data Dokumen Teknis MEP Bangunan Gedung</h5>
                 </div>
 
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">

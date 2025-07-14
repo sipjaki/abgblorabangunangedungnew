@@ -329,7 +329,7 @@ th {
                             </div>
                         @endforeach
 
-                        <div class="col-12 text-end mt-2">
+                        {{-- <div class="col-12 text-end mt-2">
                             <a href="javascript:void(0)" title="Delete"
                                data-bs-toggle="modal" data-bs-target="#deleteModal"
                                data-id="{{ $item->id }}"
@@ -337,7 +337,7 @@ th {
                                class="btn btn-outline-danger btn-sm">
                                <i class="bi bi-trash me-1"></i> Hapus Data
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
