@@ -189,7 +189,7 @@ th {
 
         @endcanany --}}
 
-                        @canany(['superadmin', 'admin'])
+                        @canany(['superadmin', 'admin', 'internal'])
 <button class="button-baru" type="button"
     onclick="location.href='/dataalldinassuratdokcreate/{{ $subdata->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
