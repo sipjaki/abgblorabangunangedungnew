@@ -235,7 +235,6 @@ th {
         text-align: left;
     }
 </style>
-
 <table class="custom-table">
     <thead>
         <tr>
@@ -249,16 +248,46 @@ th {
         </tr>
     </thead>
     <tbody>
-        @foreach ($statistik as $nama => $bulanData)
+        @forelse ($statistik as $nama => $bulanData)
             <tr>
                 <td>{{ $nama }}</td>
                 @for ($i = 1; $i <= 12; $i++)
-                    <td><span style="text-align: center">{{ $bulanData[$i] }}</span></td>
+                    <td>{{ $bulanData[$i] }}</td>
                 @endfor
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td colspan="13"> {{-- 12 bulan + 1 kolom nama --}}
+                    <div style="
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 30px;
+                        font-weight: 600;
+                        font-family: 'Poppins', sans-serif;
+                        color: #6c757d;
+                        background-color: #f8f9fa;
+                        border: 2px dashed #ced4da;
+                        border-radius: 12px;
+                        font-size: 16px;
+                        animation: fadeIn 0.5s ease-in-out;
+                    ">
+                        <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                        Belum ada perjalanan dinas
+                    </div>
+                </td>
+            </tr>
+        @endforelse
     </tbody>
 </table>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 
 
 <style>
