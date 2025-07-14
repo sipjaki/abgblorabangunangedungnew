@@ -3372,7 +3372,7 @@ public function updatedataarsitekturnew(Request $request, $id)
 {
     $validated = $request->validate([
         'pbgslfbangunan_id' => 'nullable|string',
-        'berkas1' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas1' => 'nullable|string',
         'berkas2' => 'nullable|in:Lengkap,Tidak Lengkap',
         'berkas3' => 'nullable|in:Lengkap,Tidak Lengkap',
         'berkas4' => 'nullable|in:Lengkap,Tidak Lengkap',
