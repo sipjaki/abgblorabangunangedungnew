@@ -3367,4 +3367,47 @@ public function updatedataarsitektur($id)
     ]);
 }
 
+
+public function updatedataarsitekturnew(Request $request, $id)
+{
+    $validated = $request->validate([
+        'pbgslfbangunan_id' => 'nullable|string',
+        'berkas1' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas2' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas3' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas4' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas5' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas6' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas7' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas8' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas9' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas10' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'pilihancatatan' => 'nullable|in:lengkap,tidak lengkap',
+        'catatan' => 'nullable|string',
+    ]);
+
+    $data = dokumenteknisarsi::findOrFail($id);
+
+    $data->update([
+        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'] ?? null,
+        'berkas1' => $validated['berkas1'] ?? null,
+        'berkas2' => $validated['berkas2'] ?? null,
+        'berkas3' => $validated['berkas3'] ?? null,
+        'berkas4' => $validated['berkas4'] ?? null,
+        'berkas5' => $validated['berkas5'] ?? null,
+        'berkas6' => $validated['berkas6'] ?? null,
+        'berkas7' => $validated['berkas7'] ?? null,
+        'berkas8' => $validated['berkas8'] ?? null,
+        'berkas9' => $validated['berkas9'] ?? null,
+        'berkas10' => $validated['berkas10'] ?? null,
+        // 'berkas5' => $validated['berkas5'] ?? null,
+        'pilihancatatan' => $validated['pilihancatatan'] ?? null,
+        'catatan' => $validated['catatan'] ?? null,
+    ]);
+
+    session()->flash('update', 'Data Umum berhasil diperbarui!');
+    return redirect()->back();
+}
+
+
 }

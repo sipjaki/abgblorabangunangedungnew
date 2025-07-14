@@ -841,7 +841,7 @@ Route::get('/bepbgdokumeteknisarscreate/{id}', [PbgslfController::class, 'bepbgd
 Route::post('/bepbgdokumeteknisarscreatenew', [PbgslfController::class, 'bepbgdokumeteknisarscreatenew'])->middleware('auth')->name('bepbgdokumeteknisarscreatenew');
 
 Route::get('/updatedataarsitektur/{id}', [PbgslfController::class, 'updatedataarsitektur'])->middleware('auth')->name('updatedataarsitektur');
-// Route::post('/updatedataumumnew/{id}', [PbgslfController::class, 'updatedataumumnew'])->middleware('auth')->name('updatedataumumnew');
+Route::post('/updatedataarsitekturnew/{id}', [PbgslfController::class, 'updatedataarsitekturnew'])->middleware('auth')->name('updatedataarsitekturnew');
 
 // Route::delete('/bepbgdokumearsidelete/{id}', [PbgslfController::class, 'bepbgdokumearsidelete'])->middleware('auth')->name('bepbgdokumearsidelete');
 Route::delete('/bepbgdokumearsidelete/{id}', [PbgslfController::class, 'bepbgdokumearsidelete'])->middleware('auth')->name('bepbgdokumearsidelete');
