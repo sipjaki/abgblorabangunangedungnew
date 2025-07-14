@@ -378,13 +378,13 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #fdd100; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Perbaikan Informasi Data Tanah Bangunan Gedung
+    Perbaikan Informasi Data Umum Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('updatedatatanahnew', $data->id) }}" method="POST">
+<form id="formPemilik" action="{{ route('updatedataumumnew', $data->id) }}" method="POST">
     @csrf
     <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
     <input type="hidden" name="id" value="{{ $data->id }}">

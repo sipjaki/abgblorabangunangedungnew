@@ -15,19 +15,20 @@ return new class extends Migration
             // $table->id();
             $table->unsignedBigInteger('id')->primary();
 
+            $table->foreignId('suratpemberitahuanpbg_id')->nullable()->index();
                 $table->foreignId('pbgslfbangunan_id')->nullable()->index();
-                  $table->foreignId('suratpemberitahuanpbg_id')->nullable()->index();
                 $table->string('berkas1')->nullable();
                 $table->string('berkas2')->nullable();
                 $table->string('berkas3')->nullable();
                 $table->string('berkas4')->nullable();
                 $table->string('berkas5')->nullable();
-                $table->string('berkas6')->nullable();
-                $table->string('berkas7')->nullable();
-                $table->string('berkas8')->nullable();
 
                 $table->string('pilihancatatan')->nullable();
                 $table->text('catatan')->nullable();
+
+                $table->string('berkas6')->nullable();
+                $table->string('berkas7')->nullable();
+                $table->string('berkas8')->nullable();
 
                 $table->string('cadangan1')->nullable();
                 $table->string('cadangan2')->nullable();

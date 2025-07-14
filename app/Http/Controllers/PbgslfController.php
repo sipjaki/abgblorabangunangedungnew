@@ -3319,4 +3319,35 @@ public function updatedataumum($id)
 }
 
 
+public function updatedataumumnew(Request $request, $id)
+{
+    $validated = $request->validate([
+        'pbgslfbangunan_id' => 'nullable|integer',
+        'berkas1' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas2' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas3' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas4' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'berkas5' => 'nullable|in:Lengkap,Tidak Lengkap',
+        'pilihancatatan' => 'nullable|in:lengkap,tidak lengkap',
+        'catatan' => 'nullable|string',
+    ]);
+
+    $data = datatanahpbg::findOrFail($id);
+
+    $data->update([
+        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'] ?? null,
+        'berkas1' => $validated['berkas1'] ?? null,
+        'berkas2' => $validated['berkas2'] ?? null,
+        'berkas3' => $validated['berkas3'] ?? null,
+        'berkas4' => $validated['berkas4'] ?? null,
+        'berkas5' => $validated['berkas5'] ?? null,
+        'pilihancatatan' => $validated['pilihancatatan'] ?? null,
+        'catatan' => $validated['catatan'] ?? null,
+    ]);
+
+    session()->flash('update', 'Data Umum berhasil diperbarui!');
+    return redirect()->back();
+}
+
+
 }

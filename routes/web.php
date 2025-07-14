@@ -833,7 +833,7 @@ Route::delete('/bepbgdataumumdelete/{id}', [PbgslfController::class, 'bepbgdatau
 
 
 Route::get('/updatedataumum/{id}', [PbgslfController::class, 'updatedataumum'])->middleware('auth')->name('updatedataumum');
-// Route::post('/updatedatatanahnew/{id}', [PbgslfController::class, 'updatedatatanahnew'])->middleware('auth')->name('updatedatatanahnew');
+Route::post('/updatedataumumnew/{id}', [PbgslfController::class, 'updatedataumumnew'])->middleware('auth')->name('updatedataumumnew');
 
 // DATA TEKNIS ARSITEKTUR
 Route::get('/bepbgdokumeteknisars/{id}', [PbgslfController::class, 'bepbgdokumeteknisars'])->middleware('auth')->name('bepbgdokumeteknisars');
