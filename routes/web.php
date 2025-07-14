@@ -590,6 +590,7 @@ Route::delete('/bepetugasdinasdelete/{id}', [PerjalanandinasController::class, '
 
 
 Route::get('/beperjalanandinas', [PerjalanandinasController::class, 'beperjalanandinas'])->middleware('auth')->name('beperjalanandinasindex');
+Route::get('/beperjalanandinasin', [PerjalanandinasController::class, 'beperjalanandinasin'])->middleware('auth')->name('beperjalanandinasinindex');
 Route::post('/beperjalanandinasnew', [PerjalanandinasController::class, 'beperjalanandinasnew'])->middleware('auth')->name('beperjalanandinasnew');
 
 Route::get('/dataalldinassurat', [PerjalanandinasController::class, 'dataalldinassurat'])->name('dataalldinassurat.index');
