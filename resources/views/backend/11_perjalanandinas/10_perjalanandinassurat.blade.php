@@ -192,73 +192,52 @@ th {
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
-                            <thead>
-                                <tr>
-<th style="background-color: #ADD8E6;">
-    <span class="text-danger"></span> No
-</th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-person text-danger"></i> Nama Petugas
-        </th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-signpost text-danger"></i> Dinas Luar / Dalam
-        </th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-calendar-week text-danger"></i> Tanggal Surat Terbit
-        </th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-journal-text text-danger"></i> Maksud Perjalanan
-        </th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-truck-front text-danger"></i> Angkutan
-        </th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-geo-alt text-danger"></i> Tempat Berangkat
-        </th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-geo-fill text-danger"></i> Tempat Tujuan
-        </th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-hourglass-split text-danger"></i> Lama Perjalanan
-        </th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-calendar2-week text-danger"></i> Mulai Perjalanan
-        </th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-calendar2-check text-danger"></i> Selesai Perjalanan
-        </th>
-        <th style="background-color: #ADD8E6;">
-            <i class="bi bi-person-lines-fill text-danger"></i> Pendamping
-        </th>
-        {{-- <th style="background-color: #ADD8E6;">
-            <i class="bi bi-file-earmark-text text-danger"></i> Keterangan Kegiatan
-        </th> --}}
-
-
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Surat Tugas </th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
-{{-- <th style="background-color: #ADD8E6;">
-    <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Status Lapangan
-</th> --}}
-
-                             {{-- <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
-</th> --}}
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Berita Acara Perjalanan
-</th>
-                             {{-- <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status
-</th>
-       <th style="background-color: #ADD8E6;">Status Akhir</th> --}}
-       <th style="background-color: #ADD8E6;">Aksi</th>
-                                </tr>
-                            </thead>
                               <tbody id="tableBody">
+<style>
+    .custom-table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        font-size: 14px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
 
-<table class="table table-bordered">
-    <thead class="table-dark">
+    .custom-table thead {
+        background-color: navy;
+        color: #fff;
+        text-align: center;
+    }
+
+    .custom-table th, .custom-table td {
+        padding: 10px 14px;
+        text-align: center;
+        border: 1px solid #e0e0e0;
+    }
+
+    .custom-table tbody tr:nth-child(even) {
+        background-color: #f5f9ff;
+    }
+
+    .custom-table tbody tr:hover {
+        background-color: #e2edff;
+    }
+
+    .custom-table td:first-child {
+        text-align: left;
+        font-weight: 600;
+        color: navy;
+    }
+
+    .custom-table th:first-child {
+        text-align: left;
+    }
+</style>
+
+<table class="custom-table">
+    <thead>
         <tr>
             <th>Nama Petugas</th>
             @foreach ([
@@ -274,7 +253,7 @@ th {
             <tr>
                 <td>{{ $nama }}</td>
                 @for ($i = 1; $i <= 12; $i++)
-                    <td>{{ $bulanData[$i] }}</td>
+                    <td><span style="text-align: center">{{ $bulanData[$i] }}</span></td>
                 @endfor
             </tr>
         @endforeach
