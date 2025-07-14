@@ -235,19 +235,50 @@ th {
         @enderror
     </div>
 </div>
-
 <div class="col-md-6">
     <div class="mb-3">
         <label for="tanggalsuratterbit" class="form-label">
             <i class="bi bi-calendar" style="color: navy;"></i> Tanggal Surat Terbit
         </label>
-        <input type="date" name="tanggalsuratterbit" id="tanggalsuratterbit" class="form-control @error('tanggalsuratterbit') is-invalid @enderror"
+        <input type="date" name="tanggalsuratterbit" id="tanggalsuratterbit"
+               class="form-control @error('tanggalsuratterbit') is-invalid @enderror"
                value="{{ old('tanggalsuratterbit', $data->tanggalsuratterbit ?? '') }}">
+        <div class="invalid-feedback" id="tanggal-warning" style="display: none;"></div>
         @error('tanggalsuratterbit')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tanggalInput = document.getElementById('tanggalsuratterbit');
+        const petugasSelect = document.getElementById('namapetugas_id');
+        const warningDiv = document.getElementById('tanggal-warning');
+
+        tanggalInput.addEventListener('change', function () {
+            const tanggal = tanggalInput.value;
+            const petugasId = petugasSelect.value;
+
+            if (!tanggal || !petugasId) return;
+
+            fetch(`/cek-jadwal-perjalanan?tanggalsuratterbit=${tanggal}&namapetugas_id=${petugasId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ada) {
+                        tanggalInput.classList.add('is-invalid');
+                        warningDiv.textContent = 'Anda tidak bisa melakukan perjalanan dinas 2 kali di tanggal yang sama.';
+                        warningDiv.style.display = 'block';
+                        tanggalInput.value = ''; // reset input
+                    } else {
+                        tanggalInput.classList.remove('is-invalid');
+                        warningDiv.textContent = '';
+                        warningDiv.style.display = 'none';
+                    }
+                });
+        });
+    });
+</script>
 
 <div class="col-md-6">
     <div class="mb-3">
@@ -326,6 +357,53 @@ th {
         @enderror
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const mulaiInput = document.getElementById('mulaiperjalanan');
+    const selesaiInput = document.getElementById('selesaiperjalanan');
+    const petugasSelect = document.getElementById('namapetugas_id');
+
+    const showWarning = (input, message) => {
+        input.classList.add('is-invalid');
+        const feedback = document.createElement('div');
+        feedback.className = 'invalid-feedback';
+        feedback.innerText = message;
+        input.parentNode.appendChild(feedback);
+    };
+
+    const removeWarnings = () => {
+        document.querySelectorAll('.invalid-feedback').forEach(e => e.remove());
+        mulaiInput.classList.remove('is-invalid');
+        selesaiInput.classList.remove('is-invalid');
+    };
+
+    const checkConflict = () => {
+        removeWarnings();
+
+        const mulai = mulaiInput.value;
+        const selesai = selesaiInput.value;
+        const petugasId = petugasSelect.value;
+
+        if (!mulai || !selesai || !petugasId) return;
+
+        fetch(`/cek-rentang-perjalanan?namapetugas_id=${petugasId}&mulaiperjalanan=${mulai}&selesaiperjalanan=${selesai}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.conflict) {
+                    showWarning(mulaiInput, 'Anda masih memiliki perjalanan dinas yang belum selesai pada rentang ini.');
+                    showWarning(selesaiInput, 'Anda masih memiliki perjalanan dinas yang belum selesai pada rentang ini.');
+                    mulaiInput.value = '';
+                    selesaiInput.value = '';
+                }
+            });
+    };
+
+    mulaiInput.addEventListener('change', checkConflict);
+    selesaiInput.addEventListener('change', checkConflict);
+});
+</script>
+
 
 <div class="col-md-6">
     <div class="mb-3">

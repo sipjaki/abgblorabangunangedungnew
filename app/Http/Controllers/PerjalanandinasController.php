@@ -574,6 +574,38 @@ public function datastatistiksuratdinas(Request $request)
     ]);
 }
 
+public function cekTanggal(Request $request)
+{
+    $tanggal = $request->tanggalsuratterbit;
+    $petugasId = $request->namapetugas_id;
+
+    $ada = perjalanandinas::where('namapetugas_id', $petugasId)
+            ->where('tanggalsuratterbit', $tanggal)
+            ->exists();
+
+    return response()->json(['ada' => $ada]);
+}
+
+
+public function cekRentang(Request $request)
+{
+    $petugasId = $request->namapetugas_id;
+    $mulai = $request->mulaiperjalanan;
+    $selesai = $request->selesaiperjalanan;
+
+    $query = perjalanandinas::where('namapetugas_id', $petugasId);
+
+    // Cek apakah rentang yang dipilih overlap dengan data di DB
+    $conflict = $query->where(function ($q) use ($mulai, $selesai) {
+        $q->where(function ($q2) use ($mulai, $selesai) {
+            $q2->where('mulaiperjalanan', '<=', $selesai)
+               ->where('selesaiperjalanan', '>=', $mulai);
+        });
+    })->exists();
+
+    return response()->json(['conflict' => $conflict]);
+}
+
 }
 
 
