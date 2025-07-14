@@ -3405,8 +3405,26 @@ public function updatedataarsitekturnew(Request $request, $id)
         'catatan' => $validated['catatan'] ?? null,
     ]);
 
-    session()->flash('update', 'Data Umum berhasil diperbarui!');
+    session()->flash('update', 'Data Dokumen Teknis Arsitektur berhasil diperbarui!');
     return redirect()->back();
+}
+
+
+public function updatedatastruktur($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = dokumenteknisstruk::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_perbaikandata.06_updatedatastruktur', [
+        'title' => 'Perbaikan Data Dokumen Teknis Struktur',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
 }
 
 
