@@ -384,7 +384,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('updatedataarsitekturnew', $data->id) }}" method="POST">
+<form id="formPemilik" action="{{ route('updatedatastrukturnew', $data->id) }}" method="POST">
     @csrf
     <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
     <input type="hidden" name="id" value="{{ $data->id }}">
