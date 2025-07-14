@@ -596,6 +596,8 @@ Route::post('/beperjalanandinasnew', [PerjalanandinasController::class, 'beperja
 Route::get('/dataalldinassurat', [PerjalanandinasController::class, 'dataalldinassurat'])->name('dataalldinassurat.index');
 Route::get('/dataalldinassuratin', [PerjalanandinasController::class, 'dataalldinassuratin'])->name('dataalldinassuratin.index');
 
+Route::get('/datastatistiksuratdinas', [PerjalanandinasController::class, 'datastatistiksuratdinas'])->name('datastatistiksuratdinas');
+
 Route::get('/dataalldinassuratshow/{id}', [PerjalanandinasController::class, 'dataalldinassuratshow'])->middleware('auth')->name('dataalldinassuratshow.detail');
 Route::get('/dataalldinassuratlap/{id}', [PerjalanandinasController::class, 'dataalldinassuratlap'])->middleware('auth')->name('dataalldinassuratlap.show');
 

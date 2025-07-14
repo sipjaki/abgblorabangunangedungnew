@@ -9,6 +9,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
 use Illuminate\Support\Facades\Auth;
 
 class PerjalanandinasController extends Controller
@@ -532,6 +535,40 @@ public function dataalldinassuratdelete($id)
 
     // Jika tidak ditemukan
     return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
+
+public function datastatistiksuratdinas(Request $request)
+{
+    $user = Auth::user();
+
+    // Ambil data perjalanan dinas dan hitung per bulan per petugas
+    $data = DB::table('perjalanandinas')
+        ->join('petugasdinas', 'perjalanandinas.namapetugas_id', '=', 'petugasdinas.id')
+        ->selectRaw('petugasdinas.namalengkap as nama_petugas, MONTH(tanggalsuratterbit) as bulan, COUNT(*) as total')
+        ->groupBy('petugasdinas.namalengkap', DB::raw('MONTH(tanggalsuratterbit)'))
+        ->get();
+
+    // Susun data ke format tabel: nama petugas → [januari s/d desember]
+    $statistik = [];
+
+    foreach ($data as $row) {
+        $nama = $row->nama_petugas;
+        $bulan = (int)$row->bulan;
+        $jumlah = (int)$row->total;
+
+        if (!isset($statistik[$nama])) {
+            $statistik[$nama] = array_fill(1, 12, 0);
+        }
+
+        $statistik[$nama][$bulan] = $jumlah;
+    }
+
+    return view('backend.11_perjalanandinas.10_perjalanandinassurat', [
+        'title' => 'Data Statistik Perjalanan Dinas',
+        'user' => $user,
+        'statistik' => $statistik,
+    ]);
 }
 
 }
