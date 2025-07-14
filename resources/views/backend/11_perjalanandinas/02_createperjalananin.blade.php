@@ -373,7 +373,7 @@ th {
         </label>
         <select name="pendamping_id" id="pendamping_id" class="form-select @error('pendamping_id') is-invalid @enderror">
             <option value="">-- Pilih Pendamping --</option>
-            @foreach($datapetugas as $petugas)
+            @foreach($datapendamping as $petugas)
                 <option value="{{ $petugas->id }}" {{ old('pendamping_id', $data->pendamping_id ?? '') == $petugas->id ? 'selected' : '' }}>
                     {{ $petugas->namalengkap }}
                 </option>

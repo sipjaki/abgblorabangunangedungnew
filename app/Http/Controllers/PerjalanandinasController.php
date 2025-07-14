@@ -507,6 +507,8 @@ public function bedinaspetugasnewupdate(Request $request, $id)
 public function beperjalanandinasin()
 {
     $user = Auth::user();
+    $datapendamping = petugasdinas::all();
+
 
     // Ambil hanya data petugas yang terkait dengan user login
     $datapetugas = petugasdinas::where('user_id', $user->id)->get();
@@ -514,7 +516,8 @@ public function beperjalanandinasin()
     return view('backend.11_perjalanandinas.02_createperjalananin', [
         'title' => 'Form Pembuatan Perjalanan Dinas',
         'user' => $user,
-        'datapetugas' => $datapetugas
+        'datapetugas' => $datapetugas,
+        'datapendamping' => $datapendamping
     ]);
 }
 
