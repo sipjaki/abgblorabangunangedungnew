@@ -853,7 +853,7 @@ Route::post('/bepbgdokumeteknisstrkcreatenew', [PbgslfController::class, 'bepbgd
 Route::delete('/bepbgdokumeteknisstrkdelete/{id}', [PbgslfController::class, 'bepbgdokumeteknisstrkdelete'])->middleware('auth')->name('bepbgdokumeteknisstrkdelete');
 
 Route::get('/updatedatastruktur/{id}', [PbgslfController::class, 'updatedatastruktur'])->middleware('auth')->name('updatedatastruktur');
-// Route::post('/updatedatastrukturnew/{id}', [PbgslfController::class, 'updatedataarsitekturnew'])->middleware('auth')->name('updatedataarsitekturnew');
+Route::post('/updatedatastrukturnew/{id}', [PbgslfController::class, 'updatedatastrukturnew'])->middleware('auth')->name('updatedatastrukturnew');
 
 // DATA TEKNIS MEKANIKAL DAN ELEKTRIKAL
 Route::get('/bepbgdokumeteknismep/{id}', [PbgslfController::class, 'bepbgdokumeteknismep'])->middleware('auth')->name('bepbgdokumeteknismep');
