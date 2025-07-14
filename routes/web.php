@@ -871,6 +871,11 @@ Route::get('/dokumenteknisslfcreate/{id}', [PbgslfController::class, 'dokumentek
 Route::post('/dokumenteknisslfcreatenew', [PbgslfController::class, 'dokumenteknisslfcreatenew'])->middleware('auth')->name('dokumenteknisslfcreatenew');
 Route::delete('/dokumenteknisslfdelete/{id}', [PbgslfController::class, 'dokumenteknisslfdelete'])->middleware('auth')->name('dokumenteknisslfdelete');
 
+
+Route::get('/updatedataslf/{id}', [PbgslfController::class, 'updatedataslf'])->middleware('auth')->name('updatedataslf');
+Route::post('/updatedataslfnew/{id}', [PbgslfController::class, 'updatedataslfnew'])->middleware('auth')->name('updatedataslfnew');
+
+
 // DATA VALIDASI
 // Route::put('/datanewhibahnew/validasipbgslf1/{id}', [PbgslfController::class, 'validasipbgslf1'])
 //     ->name('validasipbgslf1.update');
