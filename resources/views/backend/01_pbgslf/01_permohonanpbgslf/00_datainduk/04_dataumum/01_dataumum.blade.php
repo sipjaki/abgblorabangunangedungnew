@@ -351,7 +351,7 @@ th {
                             </div>
                         @endforeach
 
-                        <a href="/updatedatatanah/{{ $pemilik->id }}">
+                        <a href="/updatedataumum/{{ $pemilik->id }}">
                             <p class="button-berkas">
                                 <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
                                 Perbaikan Data
