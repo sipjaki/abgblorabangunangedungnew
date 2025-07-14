@@ -3350,4 +3350,21 @@ public function updatedataumumnew(Request $request, $id)
 }
 
 
+public function updatedataarsitektur($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = dokumenteknisars::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_perbaikandata.05_updatedataarsitektur', [
+        'title' => 'Perbaikan Data Dokumen Teknis Arsitektur',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }
