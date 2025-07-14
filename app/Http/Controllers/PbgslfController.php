@@ -3332,7 +3332,7 @@ public function updatedataumumnew(Request $request, $id)
         'catatan' => 'nullable|string',
     ]);
 
-    $data = datatanahpbg::findOrFail($id);
+    $data = dataumumpbg::findOrFail($id);
 
     $data->update([
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'] ?? null,
