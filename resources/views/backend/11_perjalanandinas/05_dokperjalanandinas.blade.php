@@ -347,7 +347,7 @@ th {
     @endif
 </td>
 
-@canany(['superadmin', 'admin'])
+@canany(['superadmin', 'admin', 'internal'])
 
 <td class="text-center align-middle">
     {{-- <a href="/bebujkkonstruksi/show/{{ $item->id }}" class="btn btn-sm btn-info me-2" title="Lihat Detail">
