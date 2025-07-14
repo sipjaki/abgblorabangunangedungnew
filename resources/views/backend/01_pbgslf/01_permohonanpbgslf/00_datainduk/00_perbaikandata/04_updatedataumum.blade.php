@@ -393,7 +393,7 @@ th {
 {{-- Berkas Dukung 1 --}}
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> Berkas 1
+        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 1. Data Penyedia Jasa Perencana
     </label>
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
@@ -413,7 +413,7 @@ th {
 {{-- Berkas Dukung 2 --}}
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> Berkas 2
+        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 2. Data Persetujuan Lingkungan
     </label>
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
@@ -433,7 +433,7 @@ th {
 {{-- Berkas Dukung 3 --}}
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> Berkas 3
+        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 3. Data Intensitas Bangunan (KKPR/KRK)
     </label>
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
@@ -453,7 +453,7 @@ th {
 {{-- Berkas Dukung 4 --}}
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> Berkas 4
+        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 4. Data Identitas Penilik Bangunan
     </label>
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
@@ -473,7 +473,7 @@ th {
 {{-- Berkas Dukung 5 --}}
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> Berkas 5
+        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 5. Berkas Dukung Lainnya
     </label>
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
