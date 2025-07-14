@@ -516,8 +516,8 @@ User::create([
     'username' => 'BUDI AJAR PAMUNGKAS',
     'statusadmin_id' => '8',
     'avatar' => 'user/avatar/foto4.png',
-    'email' => 'budiadmin@gmail.com',
-    'password' => bcrypt('adminbudi')
+    'email' => 'budysheny46@gmail.com',
+    'password' => bcrypt('adminbudiabg')
 ]);
 
 User::create([
