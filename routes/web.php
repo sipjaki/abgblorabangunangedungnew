@@ -831,6 +831,10 @@ Route::get('/bepbgdataumumcreate/{id}', [PbgslfController::class, 'bepbgdataumum
 Route::post('/bepbgdataumumcreatenew', [PbgslfController::class, 'bepbgdataumumcreatenew'])->middleware('auth')->name('bepbgdataumumcreatenew');
 Route::delete('/bepbgdataumumdelete/{id}', [PbgslfController::class, 'bepbgdataumumdelete'])->middleware('auth')->name('bepbgdataumumdelete');
 
+
+Route::get('/updatedataumum/{id}', [PbgslfController::class, 'updatedataumum'])->middleware('auth')->name('updatedataumum');
+// Route::post('/updatedatatanahnew/{id}', [PbgslfController::class, 'updatedatatanahnew'])->middleware('auth')->name('updatedatatanahnew');
+
 // DATA TEKNIS ARSITEKTUR
 Route::get('/bepbgdokumeteknisars/{id}', [PbgslfController::class, 'bepbgdokumeteknisars'])->middleware('auth')->name('bepbgdokumeteknisars');
 Route::get('/bepbgdokumeteknisarscreate/{id}', [PbgslfController::class, 'bepbgdokumeteknisarscreate'])->middleware('auth')->name('bepbgdokumeteknisarscreate');
