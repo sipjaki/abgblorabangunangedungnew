@@ -861,6 +861,10 @@ Route::get('/bepbgdokumeteknismepcreate/{id}', [PbgslfController::class, 'bepbgd
 Route::post('/bepbgdokumeteknismepcreatenew', [PbgslfController::class, 'bepbgdokumeteknismepcreatenew'])->middleware('auth')->name('bepbgdokumeteknismepcreatenew');
 Route::delete('/bepbgdokumeteknismepdelete/{id}', [PbgslfController::class, 'bepbgdokumeteknismepdelete'])->middleware('auth')->name('bepbgdokumeteknismepdelete');
 
+Route::get('/updatedatamep/{id}', [PbgslfController::class, 'updatedatamep'])->middleware('auth')->name('updatedatamep');
+Route::post('/updatedatamepnew/{id}', [PbgslfController::class, 'updatedatamepnew'])->middleware('auth')->name('updatedatamepnew');
+
+
 // DATA DOKUMEN TEKNIS JIKA DATA BANGUNAN SKL
 Route::get('/dokumenteknisslf/{id}', [PbgslfController::class, 'dokumenteknisslf'])->middleware('auth')->name('dokumenteknisslf');
 Route::get('/dokumenteknisslfcreate/{id}', [PbgslfController::class, 'dokumenteknisslfcreate'])->middleware('auth')->name('dokumenteknisslfcreate');

@@ -330,6 +330,14 @@ th {
                             </div>
                         @endforeach
 
+
+                          <a href="/updatedatamep/{{ $pemilik->id }}">
+                            <p class="button-berkas">
+                                <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
+                                Perbaikan Data
+                            </p>
+                        </a>
+
                         {{-- Tombol Hapus --}}
                         {{-- <div class="col-12 mt-3 text-end">
                             <a href="javascript:void(0)"
