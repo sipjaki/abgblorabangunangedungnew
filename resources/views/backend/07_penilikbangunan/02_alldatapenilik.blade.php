@@ -150,7 +150,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Pemohon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
@@ -164,7 +164,7 @@ th {
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/dataallhibahbangunan?search=${input}`)
+                            fetch(`/dataallpenilikbg?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -255,16 +255,28 @@ th {
     <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Dokumentasi Inspeksi
 </th>
 
-                             {{-- <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
-</th> --}}
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Olah Data
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-hash" style="margin-right: 6px;"></i> No Reg SIMBG
 </th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal SIMBG
 </th>
-       <th style="background-color: #ADD8E6;">Status Akhir</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-file-earmark-code" style="margin-right: 6px;"></i> No KRK
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-calendar-check" style="margin-right: 6px;"></i> Tanggal KRK
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> No PBG
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-calendar" style="margin-right: 6px;"></i> Tanggal PBG
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-folder2-open" style="margin-right: 6px;"></i> Berkas PBG
+</th>
+
        <th style="background-color: #ADD8E6;">Aksi</th>
                                 </tr>
                             </thead>
@@ -452,7 +464,72 @@ th {
                 </a>
             </td>
 
-            <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+{{-- No Reg SIMBG --}}
+<td style="text-align: left;">
+    @if(!empty($item->noregsimbg))
+        {{ $item->noregsimbg }}
+    @else
+        <span class="button-newvalidasi">On Progress</span>
+    @endif
+</td>
+
+{{-- Tanggal SIMBG --}}
+<td style="text-align: left;">
+    @if(!empty($item->tanggalsimbg))
+        {{ \Carbon\Carbon::parse($item->tanggalsimbg)->translatedFormat('d F Y') }}
+    @else
+        <span class="button-newvalidasi">On Progress</span>
+    @endif
+</td>
+
+{{-- No KRK --}}
+<td style="text-align: left;">
+    @if(!empty($item->nokrk))
+        {{ $item->nokrk }}
+    @else
+        <span class="button-newvalidasi">On Progress</span>
+    @endif
+</td>
+
+{{-- Tanggal KRK --}}
+<td style="text-align: left;">
+    @if(!empty($item->tanggalkrk))
+        {{ \Carbon\Carbon::parse($item->tanggalkrk)->translatedFormat('d F Y') }}
+    @else
+        <span class="button-newvalidasi">On Progress</span>
+    @endif
+</td>
+
+{{-- No PBG --}}
+<td style="text-align: left;">
+    @if(!empty($item->nopbg))
+        {{ $item->nopbg }}
+    @else
+        <span class="button-newvalidasi">On Progress</span>
+    @endif
+</td>
+
+{{-- Tanggal PBG --}}
+<td style="text-align: left;">
+    @if(!empty($item->tanggalpbg))
+        {{ \Carbon\Carbon::parse($item->tanggalpbg)->translatedFormat('d F Y') }}
+    @else
+        <span class="button-newvalidasi">On Progress</span>
+    @endif
+</td>
+
+{{-- Berkas PBG --}}
+<td style="text-align: left;">
+    @if(!empty($item->berkaspbg))
+        <a href="{{ asset('storage/' . $item->berkaspbg) }}" target="_blank" class="btn btn-sm btn-primary">
+            <i class="bi bi-download me-1"></i> Download
+        </a>
+    @else
+        <span class="button-newvalidasi">On Progress</span>
+    @endif
+</td>
+
+            {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
     <button
         class="button-lolos"
@@ -471,7 +548,7 @@ th {
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
-</td>
+</td> --}}
 
 <!-- Modal Verifikasi2 -->
 <div id="confirmModalVerifikasi2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1001; justify-content: center; align-items: center;">
@@ -626,7 +703,7 @@ th {
     });
 </script>
 
-<td style="text-align: center; vertical-align: middle; width: 100%;">
+{{-- <td style="text-align: center; vertical-align: middle; width: 100%;">
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
 
@@ -639,10 +716,10 @@ th {
     </a>
 
     </div>
-</td>
+</td> --}}
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+{{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi3 == 'sudah')
     <button
         class="button-lolos"
@@ -661,7 +738,7 @@ th {
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
-</td>
+</td> --}}
 
 <!-- Modal Konfirmasi untuk verifikasi3 -->
 <div id="confirmModal3" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
@@ -725,7 +802,7 @@ th {
 </script>
 
 
-<td style="text-align: center; vertical-align: middle; width: 100%;">
+{{-- <td style="text-align: center; vertical-align: middle; width: 100%;">
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
   @if($item->verifikasi4 == 'sudah')
     <button
@@ -748,7 +825,7 @@ th {
 
 
 </div>
-</td>
+</td> --}}
 
 
 

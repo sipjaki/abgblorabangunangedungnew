@@ -42,7 +42,6 @@ return new class extends Migration
     $table->decimal('gsb', 5, 2)->nullable();
 
     // Garis Sempadan Bangunan (misal dalam meter)
-    $table->string('noregistrasi')->nullable();
     // $table->string('ketinggianbangunan')->nullable();    // tinggi bangunan (meter)
     // $table->string('jumlahlapisbasemen')->nullable();
     // $table->string('luasbasemen')->nullable();
@@ -54,6 +53,17 @@ return new class extends Migration
     // $table->decimal('kdb', 5, 2)->nullable();    // Koefisien Dasar Bangunan (%)
     // $table->decimal('klb', 5, 2)->nullable();    // Koefisien Lantai Bangunan
     // $table->decimal('kdh', 5, 2)->nullable();    // Koefisien Dasar Hijau (%)
+
+    // UNTUK PERBAIKAN DATA BRO
+    $table->string('noregsimbg')->nullable();
+    $table->string('tanggalsimbg')->nullable();
+    $table->string('nokrk')->nullable();
+    $table->string('tanggalkrk')->nullable();
+    $table->string('nopbg')->nullable();
+    $table->string('tanggalpbg')->nullable();
+    $table->string('berkaspbg')->nullable();
+
+
 
     $table->string('verifikasi1')->nullable();
     $table->string('verifikasi2')->nullable();
