@@ -203,20 +203,39 @@ th {
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-<div class="row">
-    <!-- =========================== -->
-    <!-- DATA UMUM BANGUNAN -->
-    <!-- =========================== -->
-  <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
   <i class="bi bi-house-door-fill me-3" style="font-size: 18px;"></i>
-  Data Umum Bangunan
+  Data Informasi Pemohon
 </h5>
 
+{{-- Nama Pemohon --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="namapemohon">
+            <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Pemohon
+        </label>
+        <input type="text" class="form-control @error('namapemohon') is-invalid @enderror" id="namapemohon" name="namapemohon" value="{{ old('namapemohon', $data->namapemohon ?? '') }}">
+        @error('namapemohon') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    </div>
+</div>
+
+{{-- NIK --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="nik">
+            <i class="bi bi-card-list me-2 text-success"></i> NIK
+        </label>
+        <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik" value="{{ old('nik', $data->nik ?? '') }}">
+        @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    </div>
+</div>
+
+{{-- Fungsi Bangunan --}}
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="fungsibangunan">
-            <i class="bi bi-building me-2" style="color: #8B0000;" ></i> Fungsi Bangunan
+            <i class="bi bi-building me-2 text-danger"></i> Fungsi Bangunan
         </label>
         <select class="form-select @error('fungsibangunan') is-invalid @enderror" id="fungsibangunan" name="fungsibangunan">
             <option value="">-- Pilih Fungsi Bangunan --</option>
@@ -229,205 +248,25 @@ th {
     </div>
 </div>
 
-
+{{-- Subfungsi Bangunan --}}
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="subfungsibangunan">
-            <i class="bi bi-diagram-3 me-2 text-danger"></i> Subfungsi Bangunan
+            <i class="bi bi-diagram-3 me-2 text-warning"></i> Subfungsi Bangunan
         </label>
         <input type="text" class="form-control @error('subfungsibangunan') is-invalid @enderror" id="subfungsibangunan" name="subfungsibangunan" value="{{ old('subfungsibangunan', $data->subfungsibangunan ?? '') }}">
         @error('subfungsibangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
-    <!-- =========================== -->
-    <!-- DETAILS BANGUNAN DAN SPESIFIKASI -->
-    <!-- =========================== -->
-    <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
-    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
-  <i class="bi bi-building me-3" style="font-size: 18px;"></i>
-  Detail Bangunan & Spesifikasi
-</h5>
 
-@php
-// Mapping nama field ke ikon Bootstrap
-$icons = [
-    'namabangunan' => 'bi-building',
-    'luasbangunan' => 'bi-rulers',
-    'ketinggianbangunan' => 'bi-arrows-expand',
-    'jumlahlantai' => 'bi-list-ol',
-    'jumlahlapisbasemen' => 'bi-stack',
-    'luasbasemen' => 'bi-layout-sidebar',
-    'jumlahunit' => 'bi-house-door',
-    'estimasijumlahpenghuni' => 'bi-people',
-];
-@endphp
-
-@foreach([
-    'namabangunan' => 'Nama Bangunan',
-    'luasbangunan' => 'Luas Bangunan (m²)',
-    'ketinggianbangunan' => 'Ketinggian Bangunan (m)',
-    'jumlahlantai' => 'Jumlah Lantai',
-    'jumlahlapisbasemen' => 'Jumlah Lapis Basemen',
-    'luasbasemen' => 'Luas Basemen (m²)',
-    'jumlahunit' => 'Jumlah Unit',
-    'estimasijumlahpenghuni' => 'Estimasi Jumlah Penghuni'
-] as $name => $label)
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label d-flex align-items-center" for="{{ $name }}">
-                <i class="bi {{ $icons[$name] ?? 'bi-info-circle' }} me-2 text-danger"></i> {{ $label }}
-            </label>
-
-            @if($name === 'jumlahlantai')
-                {{-- Select 1 sampai 10 --}}
-                <select class="form-select @error($name) is-invalid @enderror" id="{{ $name }}" name="{{ $name }}">
-                    <option value="">-- Pilih Jumlah Lantai --</option>
-                    @for($i = 1; $i <= 10; $i++)
-                        <option value="{{ $i }}" {{ old($name, $data->$name ?? '') == $i ? 'selected' : '' }}>{{ $i }}</option>
-                    @endfor
-                </select>
-
-            @elseif($name === 'luasbasemen')
-                {{-- Input + select "TIDAK ADA" --}}
-                <div class="input-group">
-                    <input type="number" step="0.01" min="0" id="{{ $name }}" name="{{ $name }}"
-                        value="{{ is_numeric(old($name, $data->$name ?? '')) ? old($name, $data->$name ?? '') : '' }}"
-                        class="form-control @error($name) is-invalid @enderror" placeholder="Masukkan luas basemen">
-
-                    <select class="form-select" data-toggle-readonly data-target="{{ $name }}">
-                        <option value="">-- Pilih --</option>
-                        <option value="TIDAK ADA" {{ old($name, $data->$name ?? '') === 'TIDAK ADA' ? 'selected' : '' }}>TIDAK ADA</option>
-                    </select>
-                </div>
-
-            @elseif($name === 'namabangunan')
-                <input type="text" class="form-control @error($name) is-invalid @enderror" id="{{ $name }}" name="{{ $name }}"
-                    value="{{ old($name, $data->$name ?? '') }}" placeholder="Masukkan nama bangunan">
-
-            @else
-                <input type="number" step="any" class="form-control @error($name) is-invalid @enderror" id="{{ $name }}" name="{{ $name }}"
-                    value="{{ old($name, $data->$name ?? '') }}">
-            @endif
-
-            @error($name)
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-    </div>
-@endforeach
-    <!-- =========================== -->
-    <!-- SPESIFIKASI BANGUNAN -->
-    <!-- =========================== -->
-<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
-    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
-  <i class="bi bi-diagram-3 me-3" style="font-size: 18px;"></i>
-  Spesifikasi Bangunan
-</h5>
-<div class="row">
-  <!-- Nomor KKPR full width -->
-  <div class="col-12">
-    <div class="mb-3">
-      <label class="form-label" for="nomorkkpr">
-        <i class="bi bi-file-earmark-text me-2 text-danger"></i> Nomor KKPR/KRK
-      </label>
-      <input
-        type="text"
-        class="form-control @error('nomorkkpr') is-invalid @enderror"
-        id="nomorkkpr"
-        name="nomorkkpr"
-        value="{{ old('nomorkkpr', $data->nomorkkpr ?? '') }}"
-        placeholder="Masukkan Nomor KKPR"
-      >
-      @error('nomorkkpr') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <!-- GSB -->
-  <div class="col-md-3 col-6">
-    <div class="mb-3">
-      <label class="form-label" for="gsb">
-        <i class="bi bi-arrow-up-right-circle me-2 text-danger"></i> Garis Sempadan Bangunan (meter)
-      </label>
-      <input
-        type="number"
-        step="0.01"
-        class="form-control @error('gsb') is-invalid @enderror"
-        id="gsb"
-        name="gsb"
-        value="{{ old('gsb', $data->gsb ?? '') }}"
-        placeholder="0.00"
-      >
-      @error('gsb') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-  </div>
-
-  <!-- KDB -->
-  <div class="col-md-3 col-6">
-    <div class="mb-3">
-      <label class="form-label" for="kdb">
-        <i class="bi bi-percent me-2 text-danger"></i> Koefisien Dasar Bangunan (%)
-      </label>
-      <input
-        type="number"
-        step="0.01"
-        class="form-control @error('kdb') is-invalid @enderror"
-        id="kdb"
-        name="kdb"
-        value="{{ old('kdb', $data->kdb ?? '') }}"
-        placeholder="0.00"
-      >
-      @error('kdb') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-  </div>
-
-  <!-- KLB -->
-  <div class="col-md-3 col-6">
-    <div class="mb-3">
-      <label class="form-label" for="klb">
-        <i class="bi bi-diagram-3-fill me-2 text-danger"></i> Koefisien Lantai Bangunan
-      </label>
-      <input
-        type="number"
-        step="0.01"
-        class="form-control @error('klb') is-invalid @enderror"
-        id="klb"
-        name="klb"
-        value="{{ old('klb', $data->klb ?? '') }}"
-        placeholder="0.00"
-      >
-      @error('klb') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-  </div>
-
-  <!-- KDH -->
-  <div class="col-md-3 col-6">
-    <div class="mb-3">
-      <label class="form-label" for="kdh">
-        <i class="bi bi-tree-fill me-2 text-danger"></i> Koefisien Dasar Hijau (%)
-      </label>
-      <input
-        type="number"
-        step="0.01"
-        class="form-control @error('kdh') is-invalid @enderror"
-        id="kdh"
-        name="kdh"
-        value="{{ old('kdh', $data->kdh ?? '') }}"
-        placeholder="0.00"
-      >
-      @error('kdh') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-  </div>
-</div>
 
     <!-- =========================== -->
-    <!-- INTERNSITAS BANGUNAN GEDUNG -->
+    <!-- ALAMAT BANGUNAN GEDUNG -->
     <!-- =========================== -->
 <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
   <i class="bi bi-geo-alt me-3" style="font-size: 18px;"></i>
-  Internsitas Bangunan Gedung
+  Alamat Bangunan Gedung
 </h5>
 
 <div class="row g-3">
@@ -532,6 +371,62 @@ $icons = [
   });
 </script>
 
+{{-- ======================================================================================================================= --}}
+
+
+{{-- ======================================================================================================================= --}}
+<div class="row">
+<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
+  <i class="bi bi-house-gear-fill me-3" style="font-size: 18px;"></i>
+  Data Teknis Bangunan
+</h5>
+
+<div class="row">
+    {{-- Nama Bangunan --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="namabangunan">
+                <i class="bi bi-bank2 me-2 text-primary"></i> Nama Bangunan
+            </label>
+            <input type="text" class="form-control @error('namabangunan') is-invalid @enderror" id="namabangunan" name="namabangunan" value="{{ old('namabangunan', $data->namabangunan ?? '') }}">
+            @error('namabangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- Luas Bangunan (m2) --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="luasbangunan">
+                <i class="bi bi-fullscreen me-2 text-success"></i> Luas Bangunan (m<sup>2</sup>)
+            </label>
+            <input type="text" class="form-control @error('luasbangunan') is-invalid @enderror" id="luasbangunan" name="luasbangunan" value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}">
+            @error('luasbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- Jumlah Lantai --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="jumlahlantai">
+                <i class="bi bi-layers-fill me-2 text-warning"></i> Jumlah Lantai
+            </label>
+            <input type="text" class="form-control @error('jumlahlantai') is-invalid @enderror" id="jumlahlantai" name="jumlahlantai" value="{{ old('jumlahlantai', $data->jumlahlantai ?? '') }}">
+            @error('jumlahlantai') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- GSB (meter) --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="gsb">
+                <i class="bi bi-signpost-2-fill me-2 text-danger"></i> GSB (Garis Sempadan Bangunan) [m]
+            </label>
+            <input type="number" step="0.01" class="form-control @error('gsb') is-invalid @enderror" id="gsb" name="gsb" value="{{ old('gsb', $data->gsb ?? '') }}">
+            @error('gsb') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+</div>
 
 
 <div class="col-12">
