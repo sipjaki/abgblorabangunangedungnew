@@ -165,7 +165,7 @@ th {
 <!-- Modal Upload Foto -->
 <div id="uploadModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 20px 30px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-        <h3 style="font-family: 'Poppins', sans-serif; margin-bottom: 15px; color: navy;">Upload Foto Baru</h3>
+        <h6 style="font-family: 'Poppins', sans-serif; margin-bottom: 15px; color: navy;">Upload Foto Baru</h6>
 
         <form id="uploadForm" action="{{ route('dokpenilikprafotoupload') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -174,7 +174,7 @@ th {
             <input type="hidden" name="prapenilikdok_id" value="{{ $prapenilikdok->id }}">
 
             <div class="mb-3">
-                <label for="foto" style="font-weight: 600; color: navy;">Foto</label>
+                {{-- <label for="foto" style="font-weight: 600; color: navy;">Foto</label> --}}
                 <input
                     type="file"
                     name="foto"
@@ -192,7 +192,7 @@ th {
                 <button type="button" onclick="closeUploadModal()" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;">
                     Batal
                 </button>
-                <button type="submit" class="button-newvalidasi" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                <button type="submit" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
                     <i class="bi bi-upload" style="margin-right: 5px;"></i> Upload
                 </button>
             </div>
