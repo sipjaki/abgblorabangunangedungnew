@@ -409,7 +409,7 @@ public function dokpenilikpra($id)
     }
 
         // Menggunakan paginate() untuk pagination
-        $dataceklapangan = prapenilikdok::where('bantuanhibahbg_id', $databantuanteknis->id)->paginate(50);
+        $dataceklapangan = prapenilikdok::where('penilikbangunan_id', $databantuanteknis->id)->paginate(50);
 
     return view('backend.07_penilikbangunan.09_doklapprainspeksi', [
         'title' => 'Dokumentasi Cek Lapangan Pra Inspeksi Bangunan Gedung',
