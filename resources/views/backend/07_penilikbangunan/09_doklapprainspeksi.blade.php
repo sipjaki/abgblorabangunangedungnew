@@ -235,27 +235,33 @@ th {
     <table id="tabelSuratbantuanteknis" class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                 <thead>
                                   <tr>
-   <th style="background-color: #ADD8E6;">No</th>
-<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Kegiatan</th>
+    <th style="background-color: #ADD8E6; width:50px; text-align: center;">
+        <i class="bi bi-hash"></i> No
+    </th>
+    <th style="background-color: #ADD8E6; width:200px;">
+        <i class="bi bi-journal-text"></i> Kegiatan
+    </th>
+    <th style="background-color: #ADD8E6; width:150px;">
+        <i class="bi bi-calendar-event"></i> Tanggal Kegiatan
+    </th>
+    <th style="background-color: #ADD8E6; width:200px;">
+        <i class="bi bi-list-task"></i> Nama Kegiatan
+    </th>
+    <th style="background-color: #ADD8E6; width:120px;">
+        <i class="bi bi-123"></i> Kegiatan Ke-
+    </th>
+    <th style="background-color: #ADD8E6; width:300px;">
+        <i class="bi bi-card-text"></i> Uraian Kegiatan
+    </th>
+    <th style="background-color: #ADD8E6; width:300px;">
+        <i class="bi bi-journal-check"></i> Catatan Kegiatan
+    </th>
+    @canany(['superadmin', 'admin'])
+    <th style="background-color: #ADD8E6; width:120px;">
+        <i class="bi bi-tools"></i> Aksi
+    </th>
+    @endcanany
 
-<th style="background-color: #ADD8E6; width:150px;">
-    <i class="bi bi-calendar-event"></i> Tanggal Kegiatan
-</th>
-<th style="background-color: #ADD8E6; width:200px;">
-    <i class="bi bi-list-task"></i> Nama Kegiatan
-</th>
-<th style="background-color: #ADD8E6; width:100px;">
-    <i class="bi bi-123"></i> Kegiatan Ke-
-</th>
-<th style="background-color: #ADD8E6; width:300px;">
-    <i class="bi bi-card-text"></i> Uraian Kegiatan
-</th>
-<th style="background-color: #ADD8E6; width:300px;">
-    <i class="bi bi-journal-check"></i> Catatan Kegiatan
-</th>
-@canany(['superadmin', 'admin'])
-<th style="background-color: #ADD8E6; width:150px;"><i class="bi bi-tools"></i> Aksi</th>
-@endcanany
 
     </tr>
                             </thead>
