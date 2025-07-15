@@ -416,7 +416,7 @@ th {
   </p>
 </div>
 
-<div class="ttd" style="font-size: 12px; text-align: right; margin-top: 20px; line-height: 1.6;">
+<div class="ttd" style="font-size: 12px; text-align: center; margin-top: 30px; line-height: 1.6;">
   <p>
     Ditetapkan di : Blora<br>
     pada tanggal : {{ \Carbon\Carbon::parse($surat->tanggaltugas)->translatedFormat('d F Y') }}
@@ -429,10 +429,7 @@ th {
     Kepala Bidang Bangunan Gedung
   </p>
 
-  <div style="position: relative; display: inline-block; margin-top: 10px;">
-    <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel" style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.7; z-index: 2;">
-    <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan" style="position: relative; height: 100px; z-index: 1;">
-  </div>
+  <br><br><br><br> <!-- Spasi untuk tanda tangan manual -->
 
   <p style="margin-top: 10px;">
     <strong><u>MOHAMAD ARIF HIDAYAT, ST</u></strong><br>
