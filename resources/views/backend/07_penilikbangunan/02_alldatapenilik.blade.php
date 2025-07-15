@@ -303,11 +303,11 @@ th {
             <i class="fas fa-eye" style="margin-right: 5px;"></i> Surat Tugas Penilik
         </a>
 
-        <a href="{{ route('bedatapeniliksurvey.show', $item->id) }}"
+        {{-- <a href="{{ route('bedatapeniliksurvey.show', $item->id) }}"
             class="button-validasinew"
             style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: 0.3s;">
             <i class="fas fa-eye" style="margin-right: 5px;"></i> Berkas Pemohon
-        </a>
+        </a> --}}
     </div>
 </td>
 
