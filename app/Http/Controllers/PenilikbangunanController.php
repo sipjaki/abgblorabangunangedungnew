@@ -700,4 +700,26 @@ public function dokpenilikpascafotoupload(Request $request)
     return redirect()->back()->with('create', 'File berhasil diunggah!');
 }
 
+public function fotopascadelete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = fotopascapenilik::where('id', $id)->first();
+
+    if ($entry) {
+        // Hapus file jika ada (aktifkan jika memang simpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect kembali ke halaman sebelumnya
+        return redirect()->back()->with('delete', 'Foto berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
 }

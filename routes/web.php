@@ -771,10 +771,11 @@ Route::delete('/prakegiatanfotopradelete/{id}', [PenilikbangunanController::clas
 
 Route::get('/dokpenilikpasca/{id}', [PenilikbangunanController::class, 'dokpenilikpasca'])->middleware('auth')->name('dokpenilikpasca');
 
-// in brot ----------
 Route::get('/dokpenilikpascafoto/{id}', [PenilikbangunanController::class, 'dokpenilikpascafoto'])->middleware('auth')->name('dokpenilikpascafoto');
 Route::post('/dokpenilikpascafotoupload', [PenilikbangunanController::class, 'dokpenilikpascafotoupload'])->middleware('auth')->name('dokpenilikpascafotoupload');
 
+// in brot ----------
+Route::delete('/fotopascadelete/{id}', [PenilikbangunanController::class, 'fotopascadelete'])->middleware('auth')->name('fotopascadelete');
 
 Route::get('/dokpenilikpascacreate/{id}', [PenilikbangunanController::class, 'dokpenilikpascacreate'])->middleware('auth')->name('dokpenilikpascacreate');
 Route::post('/dokpenilikpascacreatenew', [PenilikbangunanController::class, 'dokpenilikpascacreatenew'])->middleware('auth')->name('dokpenilikpascacreatenew');

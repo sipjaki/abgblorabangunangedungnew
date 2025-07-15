@@ -301,7 +301,7 @@ function previewFile() {
                 @endif
             </div>
 
-            <form action="{{ url('/fotopradelete/' . $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus file ini?')">
+            <form action="{{ url('/fotopascadelete/' . $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus file ini?')">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm">
