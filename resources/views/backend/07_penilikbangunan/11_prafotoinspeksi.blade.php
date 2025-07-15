@@ -195,180 +195,139 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('dokpenilikpracreatenew') }}" method="POST" enctype="multipart/form-data">
-          @csrf
+               <form action="{{ route('dokpenilikpracreatenew') }}" method="POST" enctype="multipart/form-data">
+    @csrf
 
-          <input type="hidden" name="penilikbangunan_id" value="{{ $data->id }}">
+    <input type="hidden" name="prapenilikdok_id" value="{{ $data->id }}">
 
-                            <!-- begin::Body -->
-                            <div class="card-body">
-<div class="row">
-    <!-- Kolom Kiri -->
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="tanggalkegiatan">
-                <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Kegiatan
-            </label>
-            <input
-                type="date"
-                id="tanggalkegiatan"
-                name="tanggalkegiatan"
-                value="{{ old('tanggalkegiatan') }}"
-                class="form-control @error('tanggalkegiatan') is-invalid @enderror"
-            />
-            @error('tanggalkegiatan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+    <div class="row g-4">
+
+        {{-- Looping Etalase Foto --}}
+        @foreach($data->foto as $index => $foto)
+            <div class="col-6 col-md-3 text-center">
+                <div class="foto-box mb-3">
+                    <img src="{{ asset($foto) }}" alt="Foto {{ $index + 1 }}" class="foto-item" />
+                </div>
+                <label class="form-label" for="foto{{ $index + 1 }}">
+                    <strong>Ganti Foto {{ $index + 1 }}</strong>
+                </label>
+                <input
+                    type="file"
+                    id="foto{{ $index + 1 }}"
+                    name="foto{{ $index + 1 }}"
+                    class="form-control @error('foto' . ($index + 1)) is-invalid @enderror"
+                    accept="image/*"
+                />
+                @error('foto' . ($index + 1))
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        @endforeach
+
+        {{-- Kolom Isian Detail Kegiatan --}}
+        <div class="col-12 mt-4">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label" for="tanggalkegiatan">Tanggal Kegiatan</label>
+                    <input
+                        type="date"
+                        id="tanggalkegiatan"
+                        name="tanggalkegiatan"
+                        value="{{ old('tanggalkegiatan') }}"
+                        class="form-control @error('tanggalkegiatan') is-invalid @enderror"
+                    />
+                    @error('tanggalkegiatan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label" for="kegiatanke">Kegiatan Ke-</label>
+                    <select
+                        id="kegiatanke"
+                        name="kegiatanke"
+                        class="form-select @error('kegiatanke') is-invalid @enderror"
+                    >
+                        <option value="">-- Pilih urutan kegiatan --</option>
+                        @for ($i = 1; $i <= 20; $i++)
+                            <option value="{{ $i }}" {{ old('kegiatanke') == $i ? 'selected' : '' }}>{{ $i }}</option>
+                        @endfor
+                    </select>
+                    @error('kegiatanke')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label" for="kegiatan">Nama Kegiatan</label>
+                    <input
+                        type="text"
+                        id="kegiatan"
+                        name="kegiatan"
+                        value="{{ old('kegiatan') }}"
+                        class="form-control @error('kegiatan') is-invalid @enderror"
+                        placeholder="Masukkan nama kegiatan"
+                    />
+                    @error('kegiatan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label" for="uraiankegiatan">Uraian Kegiatan</label>
+                    <textarea
+                        id="uraiankegiatan"
+                        name="uraiankegiatan"
+                        class="form-control @error('uraiankegiatan') is-invalid @enderror"
+                        rows="3"
+                        placeholder="Tuliskan uraian kegiatan"
+                    >{{ old('uraiankegiatan') }}</textarea>
+                    @error('uraiankegiatan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label" for="catatankegiatan">Catatan Kegiatan</label>
+                    <textarea
+                        id="catatankegiatan"
+                        name="catatankegiatan"
+                        class="form-control @error('catatankegiatan') is-invalid @enderror"
+                        rows="3"
+                        placeholder="Tuliskan catatan tambahan jika ada"
+                    >{{ old('catatankegiatan') }}</textarea>
+                    @error('catatankegiatan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
         </div>
-<div class="mb-3">
-    <label class="form-label" for="kegiatanke">
-        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Kegiatan Ke-
-    </label>
-    <select
-        id="kegiatanke"
-        name="kegiatanke"
-        class="form-control @error('kegiatanke') is-invalid @enderror"
-    >
-        <option value="">-- Pilih urutan kegiatan --</option>
-        @for ($i = 1; $i <= 20; $i++)
-            <option value="{{ $i }}" {{ old('kegiatanke') == $i ? 'selected' : '' }}>{{ $i }}</option>
-        @endfor
-    </select>
-    @error('kegiatanke')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
     </div>
 
-    <!-- Kolom Kanan -->
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="kegiatan">
-                <i class="bi bi-clipboard-check" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
-            </label>
-            <input
-                type="text"
-                id="kegiatan"
-                name="kegiatan"
-                value="{{ old('kegiatan') }}"
-                class="form-control @error('kegiatan') is-invalid @enderror"
-                placeholder="Masukkan nama kegiatan"
-            />
-            @error('kegiatan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label" for="uraiankegiatan">
-                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Kegiatan
-            </label>
-            <textarea
-                id="uraiankegiatan"
-                name="uraiankegiatan"
-                class="form-control @error('uraiankegiatan') is-invalid @enderror"
-                placeholder="Tuliskan uraian kegiatan"
-                rows="3"
-            >{{ old('uraiankegiatan') }}</textarea>
-            @error('uraiankegiatan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+    {{-- Tombol Submit --}}
+    <div class="mt-4 d-flex justify-content-end">
+        <button type="submit" class="button-baru">
+            Simpan
+        </button>
     </div>
+</form>
 
-    <!-- Full Width -->
-    <div class="col-md-12">
-        <div class="mb-3">
-            <label class="form-label" for="catatankegiatan">
-                <i class="bi bi-journal-check" style="margin-right: 8px; color: navy;"></i> Catatan Kegiatan
-            </label>
-            <textarea
-                id="catatankegiatan"
-                name="catatankegiatan"
-                class="form-control @error('catatankegiatan') is-invalid @enderror"
-                placeholder="Tuliskan catatan tambahan jika ada"
-                rows="3"
-            >{{ old('catatankegiatan') }}</textarea>
-            @error('catatankegiatan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-    </div>
-</div>
+<style>
+.foto-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+}
 
-
-                            </div>
-
-
-                                </div>
-                                <!-- End row -->
-                            </div>
-                            <!-- end::Body -->
-
-                            <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                <div class="flex justify-end">
-                               <button class="button-baru" type="button" onclick="openModal()">
-                                    <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
-                                    </button>
-
-                                </div>
-                                <!-- Modal Konfirmasi -->
-                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin menambahkan kegiatan lapangan ?
-                                    </p>
-
-                                      <!-- Tombol -->
-                                      <div style="display: flex; justify-content: center; gap: 12px;">
-                                        <button id="confirmSubmitBtn"
-                                        onclick="submitForm()"
-                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                    <!-- Telegram SVG -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
-                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
-                                    </svg>
-                                    Ya
-                                </button>
-
-                                <!-- Tombol Batal dengan ikon X (SVG) -->
-                                <button type="button"
-                                        onclick="closeModal()"
-                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
-                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
-                                    </svg>
-                                    Batal
-                                </button>
-
-                                      </div>
-                                    </div>
-                                </div>
-
-                                <!-- Script -->
-                                <script>
-                                function openModal() {
-                                    const modal = document.getElementById("confirmModal");
-                                    if (modal) modal.style.display = "flex";
-                                }
-
-                                function closeModal() {
-                                    const modal = document.getElementById("confirmModal");
-                                    if (modal) modal.style.display = "none";
-                                }
-
-                                </script>
-
-                            </div>
-
-
-                        </form>
+.foto-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+</style>
 
                     </div>
                  </div>

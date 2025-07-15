@@ -9,6 +9,7 @@ use App\Models\banhibahlapangan;
 use App\Models\banhibahskbupati;
 use App\Models\bantuanhibahbg;
 use App\Models\dokpemohonpenilik;
+use App\Models\fotoprapenilik;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\penilikbangunan;
@@ -473,16 +474,19 @@ public function dokpenilikpracreatenew(Request $request)
 public function dokpenilikprafoto($id)
 {
     // Ambil data bantuan teknis berdasarkan ID
-    $databantuanteknis = prapenilikdok::find($id);
+   $databantuanteknis = prapenilikdok::where('id', $id)->first();
 
     if (!$databantuanteknis) {
-        return abort(404, 'Data bantuan teknis tidak ditemukan');
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
     }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = fotoprapenilik::where('prapenilikdok_id', $databantuanteknis->id)->paginate(50);
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
     return view('backend.07_penilikbangunan.11_prafotoinspeksi', [
-        'title' => 'Upload Foto Hasil Pra Inspeksi Bangunan Gedung',
-        'data' => $databantuanteknis,
+        'title' => 'Daftar Foto Hasil Dokumentasi Lapangan',
+        'data' => $dataceklapangan,
         'user' => Auth::user()
     ]);
 }
