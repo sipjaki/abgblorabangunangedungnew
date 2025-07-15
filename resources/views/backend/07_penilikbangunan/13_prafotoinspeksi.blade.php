@@ -169,7 +169,7 @@ th {
 
         <form id="uploadForm" action="{{ route('dokpenilikpascafotoupload') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" name="prapenilikdok_id" value="{{ $prapenilikdok->id }}">
+            <input type="hidden" name="pascapenilikdok_id" value="{{ $prapenilikdok->id }}">
 
             <div class="mb-3">
                 <input
