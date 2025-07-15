@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('prapenilikdoks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('penilikbangunan_id')->nullable()->index();
+            $table->string('tanggalkegiatan')->nullable();
             $table->string('kegiatan')->nullable();
             $table->string('kegiatanke')->nullable();
             $table->string('uraiankegiatan')->nullable();
