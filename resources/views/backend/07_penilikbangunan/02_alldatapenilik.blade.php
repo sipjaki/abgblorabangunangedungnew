@@ -248,7 +248,8 @@ th {
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Status Lapangan
+    <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Dokumentasi Inspeksi
+    <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Dokumentasi Inspeksi
 </th>
 
                              {{-- <th style="background-color: #ADD8E6;">
@@ -439,7 +440,19 @@ th {
                     style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
-                <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
+                <i class="bi bi-folder" style="margin-right: 5px;"></i> Pra
+
+                </a>
+            </td>
+
+  <td style="text-align: center;">
+
+                <a href="{{ route('doklapbanhibah.show', $item->id) }}"
+                    class="button-validasinew"
+                    style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+                <i class="bi bi-folder" style="margin-right: 5px;"></i> Pasca
 
                 </a>
             </td>
