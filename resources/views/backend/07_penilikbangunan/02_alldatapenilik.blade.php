@@ -432,7 +432,8 @@ th {
     }
 </script>
 
-  <td style="text-align: center;">
+<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+  {{-- <td style="text-align: center;"> --}}
 
                 <a href="{{ route('doklapbanhibah.show', $item->id) }}"
                     class="button-validasinew"
