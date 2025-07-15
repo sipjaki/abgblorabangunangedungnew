@@ -229,12 +229,14 @@ function closeUploadModal() {
 </style>
 
 
-                        <button class="button-newvalidasi" type="button"
-    onclick="window.location.href='{{ route('dokpenilikpra', ['id' => $id]) }}';"
-    style="cursor: pointer; margin-left:10px; color:black;">
+                       <button
+    class="button-newvalidasi"
+    type="button"
+    onclick="window.location.href='{{ route('dataallpenilikbg.index') }}';"
+    style="cursor: pointer; margin-left:10px; color:black; display: inline-flex; align-items: center;"
+>
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </button>
-
 
 
 
