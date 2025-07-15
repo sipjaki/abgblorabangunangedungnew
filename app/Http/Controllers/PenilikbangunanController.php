@@ -745,6 +745,65 @@ public function dataallpenilikbgupdate(Request $request, $id)
         'penilik' => $penilik
     ]);
 }
+public function dataallpenilikbgupdatenew(Request $request, $id)
+{
+    // Validasi input, semua nullable biar fleksibel
+    $validated = $request->validate([
+        'namapemohon' => 'nullable|string|max:255',
+        'nik' => 'nullable|string|max:255',
+        'fungsibangunan' => 'nullable|string|max:255',
+        'subfungsibangunan' => 'nullable|string|max:255',
+
+        'provinsi' => 'nullable|string|max:255',
+        'kabupaten' => 'nullable|string|max:255',
+        'kecamatanblora_id' => 'nullable|string',
+        'kelurahandesa_id' => 'nullable|string',
+        'alamatlengkap' => 'nullable|string',
+        'koordinat' => 'nullable|string|max:255',
+
+        'namabangunan' => 'nullable|string|max:255',
+        'luasbangunan' => 'nullable|string|max:255',
+        'jumlahlantai' => 'nullable|string|max:255',
+        'gsb' => 'nullable|numeric',
+
+        'noregsimbg' => 'nullable|string|max:255',
+        'tanggalsimbg' => 'nullable|date',
+        'nokrk' => 'nullable|string|max:255',
+        'tanggalkrk' => 'nullable|date',
+        'nopbg' => 'nullable|string|max:255',
+        'tanggalpbg' => 'nullable|date',
+
+        'berkaspbg' => 'nullable|file|mimes:pdf|max:10120', // max 5MB
+    ]);
+
+    $penilik = penilikbangunan::findOrFail($id);
+
+    // Upload file berkas pbg jika ada
+    if ($request->hasFile('berkaspbg')) {
+        $file = $request->file('berkaspbg');
+
+        $destinationPath = public_path('07_penilikbangunan/03_berkaspbg');
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $filename = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
+
+        $file->move($destinationPath, $filename);
+
+        // Hapus file lama jika ada
+        if ($penilik->berkaspbg && file_exists(public_path($penilik->berkaspbg))) {
+            unlink(public_path($penilik->berkaspbg));
+        }
+
+        $validated['berkaspbg'] = '07_penilikbangunan/03_berkaspbg/' . $filename;
+    }
+
+    $penilik->update($validated);
+
+    session()->flash('update', 'Perbaikan Data Penilik Bangunan berhasil diperbarui!');
+    return redirect()->route('dataallpenilikbg.index');
+}
 
 
 }

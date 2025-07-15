@@ -194,8 +194,10 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('datanewpeniliknew.create') }}" method="POST" enctype="multipart/form-data">
-          @csrf
+          <form action="{{ route('dataallpenilikbgupdatenew', $penilik->id) }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
+
                             <!-- begin::Body -->
 
                             <input type="hidden" name="user_id" value="{{ $user->id }}">
@@ -466,6 +468,88 @@ th {
         </div>
     </div>
 </div>
+
+<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
+  <i class="bi bi-file-earmark-text-fill me-3" style="font-size: 18px;"></i>
+  Dokumen SIMBG, KRK & PBG
+</h5>
+
+<div class="row">
+    {{-- No Reg SIMBG --}}
+    <div class="col-md-6 mb-3">
+        <label for="noregsimbg" class="form-label">
+            <i class="bi bi-file-earmark-text-fill text-primary me-2"></i> No Registrasi SIMBG
+        </label>
+        <input type="text" class="form-control" id="noregsimbg" name="noregsimbg" value="{{ old('noregsimbg', $penilik->noregsimbg ?? '') }}">
+    </div>
+
+    {{-- Tanggal SIMBG --}}
+    <div class="col-md-6 mb-3">
+        <label for="tanggalsimbg" class="form-label">
+            <i class="bi bi-calendar-date text-success me-2"></i> Tanggal SIMBG
+        </label>
+        <input type="date" class="form-control" id="tanggalsimbg" name="tanggalsimbg" value="{{ old('tanggalsimbg', $penilik->tanggalsimbg ?? '') }}">
+    </div>
+
+    {{-- No KRK --}}
+    <div class="col-md-6 mb-3">
+        <label for="nokrk" class="form-label">
+            <i class="bi bi-file-earmark-code-fill text-warning me-2"></i> No KRK
+        </label>
+        <input type="text" class="form-control" id="nokrk" name="nokrk" value="{{ old('nokrk', $penilik->nokrk ?? '') }}">
+    </div>
+
+    {{-- Tanggal KRK --}}
+    <div class="col-md-6 mb-3">
+        <label for="tanggalkrk" class="form-label">
+            <i class="bi bi-calendar-date text-warning me-2"></i> Tanggal KRK
+        </label>
+        <input type="date" class="form-control" id="tanggalkrk" name="tanggalkrk" value="{{ old('tanggalkrk', $penilik->tanggalkrk ?? '') }}">
+    </div>
+
+    {{-- No PBG --}}
+    <div class="col-md-6 mb-3">
+        <label for="nopbg" class="form-label">
+            <i class="bi bi-building-fill-gear text-danger me-2"></i> No PBG
+        </label>
+        <input type="text" class="form-control" id="nopbg" name="nopbg" value="{{ old('nopbg', $penilik->nopbg ?? '') }}">
+    </div>
+
+    {{-- Tanggal PBG --}}
+    <div class="col-md-6 mb-3">
+        <label for="tanggalpbg" class="form-label">
+            <i class="bi bi-calendar-event text-danger me-2"></i> Tanggal PBG
+        </label>
+        <input type="date" class="form-control" id="tanggalpbg" name="tanggalpbg" value="{{ old('tanggalpbg', $penilik->tanggalpbg ?? '') }}">
+    </div>
+
+    {{-- Berkas PBG --}}
+    <div class="col-md-12 mb-3">
+        <label for="berkaspbg" class="form-label">
+            <i class="bi bi-filetype-pdf text-danger me-2"></i> Berkas PBG (PDF)
+        </label>
+        <input class="form-control" type="file" name="berkaspbg" id="berkaspbg" accept="application/pdf" onchange="previewPDF(event)">
+
+        {{-- Preview PDF --}}
+        <div id="pdfPreview" class="mt-3" style="display: {{ isset($penilik->berkaspbg) ? 'block' : 'none' }};">
+            <iframe id="pdfFrame" src="{{ isset($penilik->berkaspbg) ? asset('storage/'.$penilik->berkaspbg) : '' }}" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewPDF(event) {
+        const file = event.target.files[0];
+        if (file && file.type === "application/pdf") {
+            const fileURL = URL.createObjectURL(file);
+            document.getElementById('pdfFrame').src = fileURL;
+            document.getElementById('pdfPreview').style.display = 'block';
+        }
+    }
+</script>
+
+{{-- ----------------------------------------------------------------------------------- --}}
 
 <div class="col-12">
     {{-- <div class="mb-3">
