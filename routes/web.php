@@ -773,7 +773,7 @@ Route::get('/dokpenilikpasca/{id}', [PenilikbangunanController::class, 'dokpenil
 
 // in brot ----------
 Route::get('/dokpenilikpascafoto/{id}', [PenilikbangunanController::class, 'dokpenilikpascafoto'])->middleware('auth')->name('dokpenilikpascafoto');
-// Route::post('/dokpenilikpascafotoupload', [PenilikbangunanController::class, 'dokpenilikprafotoupload'])->middleware('auth')->name('dokpenilikprafotoupload');
+Route::post('/dokpenilikpascafotoupload', [PenilikbangunanController::class, 'dokpenilikpascafotoupload'])->middleware('auth')->name('dokpenilikpascafotoupload');
 
 
 Route::get('/dokpenilikpascacreate/{id}', [PenilikbangunanController::class, 'dokpenilikpascacreate'])->middleware('auth')->name('dokpenilikpascacreate');

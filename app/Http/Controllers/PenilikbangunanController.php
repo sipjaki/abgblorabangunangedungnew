@@ -671,5 +671,33 @@ public function dokpenilikpascafoto($id)
     ]);
 }
 
+public function dokpenilikpascafotoupload(Request $request)
+{
+    $validated = $request->validate([
+        'pascapenilikdok_id' => 'required|string',
+        'foto' => 'required|mimes:jpeg,png,jpg,gif,svg,pdf|max:10240',
+    ], [
+        'pascapenilikdok_id.required' => 'ID pascapenilikdok wajib diisi.',
+        'foto.required' => 'File wajib diunggah.',
+        'foto.mimes' => 'File harus berupa gambar (jpeg, png, jpg, gif, svg) atau PDF.',
+        'foto.max' => 'Ukuran maksimal file adalah 10MB.',
+    ]);
+
+    if ($request->hasFile('foto')) {
+        $file = $request->file('foto');
+        $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('07_penilikbangunan/02_berkasfotopasca'), $filename);
+        $path = '07_penilikbangunan/02_berkasfotopasca/' . $filename;
+    } else {
+        $path = null;
+    }
+
+    $foto = new fotopascapenilik();
+    $foto->pascapenilikdok_id = $validated['pascapenilikdok_id'];
+    $foto->foto = $path;
+    $foto->save();
+
+    return redirect()->back()->with('create', 'File berhasil diunggah!');
+}
 
 }
