@@ -349,7 +349,7 @@ th {
                 </a>
 
 
-  @if($item->verifikasi1 == 'sudah')
+  {{-- @if($item->verifikasi1 == 'sudah')
     <button
         class="button-lolos"
         type="button"
@@ -366,7 +366,7 @@ th {
         <button class="button-validasinew" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Status
         </button>
-    @endif
+    @endif --}}
 </td>
 
 <!-- Modal Konfirmasi -->
