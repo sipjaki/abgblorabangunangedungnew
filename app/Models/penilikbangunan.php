@@ -55,7 +55,7 @@ class penilikbangunan extends Model
 
     public function surattugaspenilik()
     {
-        return $this->belongsTo(surattugaspenilik::class);
+        return $this->hasMany(surattugaspenilik::class);
     }
 
 }

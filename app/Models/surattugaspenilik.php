@@ -15,7 +15,7 @@ class surattugaspenilik extends Model
 
     public function penilikbangunan()
     {
-        return $this->hasMany(penilikbangunan::class, 'penilikbangunan_id');
+        return $this->belongsTo(penilikbangunan::class, 'penilikbangunan_id');
     }
 
     public function petugaspenilik()
