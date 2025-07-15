@@ -354,7 +354,7 @@ public function surattugaspenilikshownew(Request $request, $id)
     // Ambil user login
     $user = Auth::user();
     // Cari data pbg berdasarkan ID
-    $data = penilikbangunan::findOrFail($id);
+    // $data = penilikbangunan::findOrFail($id);
     $surat = surattugaspenilik::findOrFail($id);
     // $datapemilik = datapemilik::findOrFail($id);
     // $datapemilik = datapemilik::where('pbgslfbangunan_id', $id)->firstOrFail();
@@ -383,7 +383,7 @@ public function surattugaspenilikshownew(Request $request, $id)
         'title' => 'Surat Tugas Inspeksi Bangunan Gedung ',
         'title_halaman' => 'Surat Tugas Inspeksi Bangunan Gedung',
         'user' => $user,
-        'data' => $data,
+        // 'data' => $data,
         // 'datapemilik' => $datapemilik,
         'subdatasuratpemberitahuan' => $surat,
         'surat' => $surat, // Kirim surat yang dipilih
