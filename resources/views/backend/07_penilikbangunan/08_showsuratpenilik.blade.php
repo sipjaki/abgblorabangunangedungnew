@@ -416,26 +416,28 @@ th {
   </p>
 </div>
 
-<div class="ttd" style="font-size: 12px; margin-top: 30px; line-height: 1.6; margin-left: 120px; width: 60%; text-align: center;">
-  <p>
-    Ditetapkan di : Blora<br>
-    pada tanggal : {{ \Carbon\Carbon::parse($surat->tanggaltugas)->translatedFormat('d F Y') }}
-  </p>
+<div class="ttd" style="font-size: 12px; margin-top: 30px; line-height: 1.6;">
+  <div style="margin-left: 180px; width: 60%; text-align: center;">
+    <p>
+      Ditetapkan di : Blora<br>
+      pada tanggal : {{ \Carbon\Carbon::parse($surat->tanggaltugas)->translatedFormat('d F Y') }}
+    </p>
 
-  <p style="margin-top: 20px;">
-    A.n. KEPALA DINAS PEKERJAAN UMUM DAN<br>
-    PENATAAN RUANG<br>
-    KAB. BLORA<br>
-    Kepala Bidang Bangunan Gedung
-  </p>
+    <p style="margin-top: 20px;">
+      A.n. KEPALA DINAS PEKERJAAN UMUM DAN<br>
+      PENATAAN RUANG<br>
+      KAB. BLORA<br>
+      Kepala Bidang Bangunan Gedung
+    </p>
 
-  <br><br><br><br> <!-- Spasi untuk tanda tangan manual -->
+    <br><br><br><br> <!-- Ruang kosong untuk tanda tangan -->
 
-  <p style="margin-top: 10px;">
-    <strong><u>MOHAMAD ARIF HIDAYAT, ST</u></strong><br>
-    Pembina IV/a<br>
-    NIP. 19710506 199403 1 011
-  </p>
+    <p style="margin-top: 10px;">
+      <strong><u>MOHAMAD ARIF HIDAYAT, ST</u></strong><br>
+      Pembina IV/a<br>
+      NIP. 19710506 199403 1 011
+    </p>
+  </div>
 </div>
 
 
