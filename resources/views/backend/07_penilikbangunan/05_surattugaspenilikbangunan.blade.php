@@ -359,7 +359,7 @@ th {
         <div class="card shadow-sm border-0">
             <div class="card-header bg-primary text-white d-flex align-items-center">
                 <i class="bi bi-folder-check me-2 fs-5"></i>
-                <h5 class="mb-0" style="font-size: 16px;">Daftar Surat Tugas Fasilitator</h5>
+                <h5 class="mb-0" style="font-size: 16px;">Daftar Surat Tugas Inspeksi Bangunan Gedung</h5>
             </div>
             <div class="card-body">
                 @if ($subdatapemilik->count() > 0)
@@ -368,7 +368,7 @@ th {
                             <thead class="table-light text-center">
                                 <tr>
                                     <th>No</th>
-                                    <th>Fasilitator</th>
+                                    <th>Petugas Penilik</th>
                                     <th>Nomor Surat</th>
                                     <th>Nomor Kontrak</th>
                                     <th>Tanggal Tugas</th>
@@ -380,7 +380,7 @@ th {
                                 @foreach ($subdatapemilik as $index => $item)
                                     <tr>
                                         <td class="text-center">{{ $index + 1 }}</td>
-                                        <td class="text-center">{{ $item->fasilitatorpbg->namalengkap ?? '-' }}</td>
+                                        <td class="text-center">{{ $item->petugaspenilik->namalengkap ?? '-' }}</td>
                                         <td class="text-center">{{ $item->nomorsurat ?? '-' }}</td>
                                         <td class="text-center">{{ $item->nomorkontrak ?? '-' }}</td>
                                         <td class="text-center">
