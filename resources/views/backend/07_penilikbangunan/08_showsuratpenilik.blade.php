@@ -367,19 +367,37 @@ th {
     <tr><td>Jabatan</td><td>: {{ $surat->petugaspenilik->jabatan ?? '-' }}</td></tr>
   </table>
 
+<div style="font-size: 12px;">
+
   <p style="margin-top: 12px;"><strong>UNTUK</strong> :</p>
+
   <ol style="margin-left: 30px; padding-left: 10px;">
     <li>Melakukan pemeriksaan Bangunan Gedung secara Administratif agar penyelenggaraan Bangunan Gedung yang dilaksanakan oleh penyelenggara Bangunan Gedung sesuai dengan ketentuan peraturan perundang-undangan.</li>
     <li>Melaksanakan tugas pada masa konstruksi dan pemanfaatan serta pembongkaran Bangunan Gedung.</li>
-    <li>Melaksanakan Fungsi : Pemantauan, Pemeriksaan, dan Evaluasi.
+    <li>
+      Melaksanakan Fungsi : Pemantauan, Pemeriksaan, dan Evaluasi.
       <table style="margin-top: 10px; margin-left: 10px;">
-        <tr><td style="width: 130px;">Lokasi Bangunan</td><td>: {{ $surat->penilikbangunan->alamatlengkap ?? 'Otomatis' }}</td></tr>
-        <tr><td>Hari/Tanggal</td><td>: {{ $surat->tanggaltugas ?? 'Manual' }}</td></tr>
-        <tr><td>Nama Bangunan</td><td>: {{ $surat->penilikbangunan->namabangunan ?? 'Manual' }}</td></tr>
-        <tr><td>No Registrasi</td><td>: {{ $surat->penilikbangunan->noregistrasi ?? 'Belum Terbit' }}</td></tr>
+        <tr>
+          <td style="width: 130px;">Lokasi Bangunan</td>
+          <td>: {{ $surat->penilikbangunan->alamatlengkap ?? 'Otomatis' }}</td>
+        </tr>
+        <tr>
+          <td>Hari/Tanggal</td>
+          <td>: {{ $surat->tanggaltugas ?? 'Manual' }}</td>
+        </tr>
+        <tr>
+          <td>Nama Bangunan</td>
+          <td>: {{ $surat->penilikbangunan->namabangunan ?? 'Manual' }}</td>
+        </tr>
+        <tr>
+          <td>No Registrasi</td>
+          <td>: {{ $surat->penilikbangunan->noregistrasi ?? 'Belum Terbit' }}</td>
+        </tr>
       </table>
     </li>
   </ol>
+
+</div>
 
   <p><strong>DENGAN</strong> :</p>
   <p style="margin-left: 30px;">
