@@ -292,5 +292,20 @@ public function surattugaspeniliknew(Request $request)
     return redirect()->route('surattugaspenilik', ['id' => $validated['penilikbangunan_id']]);
 }
 
+public function bepbgsurattugasnewdelete($id)
+{
+    $entry = surattugaspenilik::find($id); // pakai find aja dulu
+
+    if (!$entry) {
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
+    $penilikbangunan_id = $entry->penilikbangunan_id;
+    $entry->delete();
+
+    return redirect()->route('surattugaspenilik', ['id' => $penilikbangunan_id])
+                     ->with('delete', 'Data Berhasil Di Hapus !');
+}
+
 
 }
