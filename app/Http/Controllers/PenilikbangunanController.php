@@ -496,17 +496,14 @@ public function dokpenilikprafotoupload(Request $request)
 {
     $validated = $request->validate([
         'prapenilikdok_id' => 'required|string',
-        'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
+        'foto' => 'required|mimes:jpeg,png,jpg,gif,svg,pdf|max:10240',
     ], [
         'prapenilikdok_id.required' => 'ID prapenilikdok wajib diisi.',
-        'prapenilikdok_id.exists' => 'ID prapenilikdok tidak valid.',
-        'foto.required' => 'Foto wajib diunggah.',
-        'foto.image' => 'File harus berupa gambar.',
-        'foto.mimes' => 'Format gambar harus jpeg, png, jpg, gif, atau svg.',
-        'foto.max' => 'Ukuran maksimal foto 10MB.',
+        'foto.required' => 'File wajib diunggah.',
+        'foto.mimes' => 'File harus berupa gambar (jpeg, png, jpg, gif, svg) atau PDF.',
+        'foto.max' => 'Ukuran maksimal file adalah 10MB.',
     ]);
 
-    // Upload file langsung ke public folder
     if ($request->hasFile('foto')) {
         $file = $request->file('foto');
         $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
@@ -516,15 +513,12 @@ public function dokpenilikprafotoupload(Request $request)
         $path = null;
     }
 
-    // Simpan data baru foto
     $foto = new fotoprapenilik();
     $foto->prapenilikdok_id = $validated['prapenilikdok_id'];
     $foto->foto = $path;
     $foto->save();
 
-        // session()->flash('create', 'Foto berhasil diunggah!');
-        return redirect()->back();
-
+    return redirect()->back()->with('create', 'File berhasil diunggah!');
 }
 
 public function fotopradelete($id)

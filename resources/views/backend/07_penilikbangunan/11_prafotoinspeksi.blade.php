@@ -165,22 +165,20 @@ th {
 <!-- Modal Upload Foto -->
 <div id="uploadModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 20px 30px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-        <h6 style="font-family: 'Poppins', sans-serif; margin-bottom: 15px; color: navy;">Upload Foto Baru</h6>
+        <h6 style="font-family: 'Poppins', sans-serif; margin-bottom: 15px; color: navy;">Upload Gambar atau PDF</h6>
 
         <form id="uploadForm" action="{{ route('dokpenilikprafotoupload') }}" method="POST" enctype="multipart/form-data">
             @csrf
-
-            <!-- Input Hidden prapenilikdok_id -->
             <input type="hidden" name="prapenilikdok_id" value="{{ $prapenilikdok->id }}">
 
             <div class="mb-3">
-                {{-- <label for="foto" style="font-weight: 600; color: navy;">Foto</label> --}}
                 <input
                     type="file"
                     name="foto"
                     id="foto"
-                    accept="image/*"
+                    accept="image/*,application/pdf"
                     required
+                    onchange="previewFile()"
                     class="form-control @error('foto') is-invalid @enderror"
                 />
                 @error('foto')
@@ -188,7 +186,13 @@ th {
                 @enderror
             </div>
 
-            <div style="display: flex; justify-content: flex-end; gap: 10px;">
+            <!-- Preview -->
+            <div id="previewContainer" style="margin-top: 10px; display: none;">
+                <img id="imagePreview" src="#" alt="Preview" style="max-width: 100%; height: auto; display: none; border: 1px solid #ccc; border-radius: 6px;" />
+                <p id="pdfInfo" style="font-size: 13px; color: #333;"></p>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px;">
                 <button type="button" onclick="closeUploadModal()" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;">
                     Batal
                 </button>
@@ -200,6 +204,7 @@ th {
     </div>
 </div>
 
+<!-- Script -->
 <script>
 function openUploadModal() {
     document.getElementById('uploadModal').style.display = 'flex';
@@ -207,27 +212,36 @@ function openUploadModal() {
 
 function closeUploadModal() {
     document.getElementById('uploadModal').style.display = 'none';
+    document.getElementById('previewContainer').style.display = 'none';
+    document.getElementById('imagePreview').src = '#';
+    document.getElementById('pdfInfo').innerText = '';
+}
+
+function previewFile() {
+    const file = document.getElementById('foto').files[0];
+    const previewContainer = document.getElementById('previewContainer');
+    const imagePreview = document.getElementById('imagePreview');
+    const pdfInfo = document.getElementById('pdfInfo');
+
+    previewContainer.style.display = 'block';
+
+    if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            imagePreview.src = e.target.result;
+            imagePreview.style.display = 'block';
+            pdfInfo.innerText = '';
+        };
+        reader.readAsDataURL(file);
+    } else if (file && file.type === 'application/pdf') {
+        imagePreview.style.display = 'none';
+        pdfInfo.innerText = 'File PDF terpilih: ' + file.name;
+    } else {
+        imagePreview.style.display = 'none';
+        pdfInfo.innerText = 'Format tidak dikenali';
+    }
 }
 </script>
-
-<style>
-.button-newvalidasi {
-    background-color: #10B981;
-    border: none;
-    padding: 8px 16px;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    transition: background-color 0.3s;
-}
-
-.button-newvalidasi:hover {
-    background-color: #0f9e6e;
-}
-</style>
-
 
                        <button
     class="button-newvalidasi"
@@ -274,13 +288,20 @@ function closeUploadModal() {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-               <div class="row">
+<div class="row">
     @forelse ($data as $item)
         <div class="col-6 col-md-3 text-center">
             <div class="foto-box mb-3">
-                <img src="{{ asset($item->foto) }}" alt="Foto Dokumentasi" class="foto-item" />
+                @if (Str::endsWith(strtolower($item->foto), ['.jpg', '.jpeg', '.png', '.gif', '.svg']))
+                    <img src="{{ asset($item->foto) }}" alt="Foto Dokumentasi" class="foto-item" style="max-width: 100%; border-radius: 6px;" />
+                @elseif (Str::endsWith(strtolower($item->foto), '.pdf'))
+                    <iframe src="{{ asset($item->foto) }}" width="100%" height="200px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
+                @else
+                    <div class="text-danger">Format tidak dikenali</div>
+                @endif
             </div>
-            <form action="{{ url('/fotopradelete/' . $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus foto ini?')">
+
+            <form action="{{ url('/fotopradelete/' . $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus file ini?')">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm">
@@ -289,22 +310,7 @@ function closeUploadModal() {
             </form>
         </div>
     @empty
-        <div style="
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            color: #6c757d;
-            background-color: #f8f9fa;
-            border: 2px dashed #ced4da;
-            border-radius: 12px;
-            font-size: 16px;
-            animation: fadeIn 0.5s ease-in-out;
-            margin-top: 1rem;
-        ">
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center; padding: 30px; font-weight: 600; font-family: 'Poppins', sans-serif; color: #6c757d; background-color: #f8f9fa; border: 2px dashed #ced4da; border-radius: 12px; font-size: 16px; animation: fadeIn 0.5s ease-in-out; margin-top: 1rem;">
             <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
             Data Tidak Ditemukan !!
         </div>
