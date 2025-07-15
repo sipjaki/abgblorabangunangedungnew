@@ -416,7 +416,7 @@ th {
   </p>
 </div>
 
-<div class="ttd" style="font-size: 12px; margin-top: 30px; line-height: 1.6;">
+<div class="ttd" style="font-size: 12px; margin-top: 30px; line-height: 1.6; margin-left:200px;">
   <div style="margin-left: 180px; width: 60%; text-align: center;">
     <p>
       Ditetapkan di : Blora<br>
