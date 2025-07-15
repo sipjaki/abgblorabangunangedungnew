@@ -249,6 +249,8 @@ th {
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Dokumentasi Inspeksi
+</th>
+<th style="background-color: #ADD8E6;">
     <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Dokumentasi Inspeksi
 </th>
 
@@ -433,8 +435,7 @@ th {
     }
 </script>
 
-  <td style="text-align: center;">
-
+            <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
                 <a href="{{ route('doklapbanhibah.show', $item->id) }}"
                     class="button-validasinew"
                     style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -445,8 +446,7 @@ th {
                 </a>
             </td>
 
-  <td style="text-align: center;">
-
+            <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
                 <a href="{{ route('doklapbanhibah.show', $item->id) }}"
                     class="button-validasinew"
                     style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
