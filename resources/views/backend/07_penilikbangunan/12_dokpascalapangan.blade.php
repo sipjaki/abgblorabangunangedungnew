@@ -303,12 +303,12 @@ th {
 <td>{{ \Carbon\Carbon::parse($item->tanggalselesai)->translatedFormat('d F Y') }}</td>
 <td>
     @if($item->hasilinspeksi === 'Lengkap')
-        <button class="button-lolos" disabled>
-            <i class="bi bi-check-circle me-1"></i> Berkas Lengkap
+        <button class="button-hijau" disabled>
+            <i class="bi bi-check-circle me-1"></i> Lengkap
         </button>
     @else
-        <button class="button-dikembalikan" disabled>
-            <i class="bi bi-x-circle me-1"></i> Dikembalikan
+        <button class="button-merah" disabled>
+            <i class="bi bi-x-circle me-1"></i> Tidak Lengkap
         </button>
     @endif
 </td>
