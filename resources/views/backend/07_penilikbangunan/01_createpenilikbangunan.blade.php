@@ -335,17 +335,60 @@ th {
           @error('alamatlengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
       </div>
   </div>
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-  {{-- Koordinat --}}
-  <div class="col-md-6">
-      <div class="mb-3">
-          <label class="form-label d-flex align-items-center" for="koordinat">
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
+{{-- Koordinat --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label d-flex align-items-center" for="koordinat">
             <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
-          </label>
-          <input type="text" class="form-control @error('koordinat') is-invalid @enderror" id="koordinat" name="koordinat" value="{{ old('koordinat', $data->koordinat ?? '') }}">
-          @error('koordinat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-      </div>
-  </div>
+        </label>
+        <input type="text" class="form-control @error('koordinat') is-invalid @enderror" id="koordinat" name="koordinat" value="{{ old('koordinat', $data->koordinat ?? '') }}">
+        @error('koordinat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    </div>
+
+    {{-- Peta --}}
+    <div id="map" style="height: 350px; border-radius: 10px; border: 2px solid #ccc;"></div>
+</div>
+
+<script>
+    // Inisialisasi map dengan fokus ke Kabupaten Blora
+    var map = L.map('map').setView([-7.0421, 111.4046], 11); // Koordinat Blora
+
+    // Tambahkan layer peta dari OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Marker (jika sudah ada nilai awal koordinat)
+    var marker;
+    var input = document.getElementById('koordinat');
+    if (input.value) {
+        var coords = input.value.split(',');
+        marker = L.marker([coords[0], coords[1]]).addTo(map);
+        map.setView([coords[0], coords[1]], 15);
+    }
+
+    // Event saat klik di peta
+    map.on('click', function(e) {
+        var latlng = e.latlng;
+        // Hapus marker sebelumnya
+        if (marker) {
+            map.removeLayer(marker);
+        }
+        // Tambahkan marker baru
+        marker = L.marker(latlng).addTo(map);
+
+        // Simpan koordinat ke input
+        document.getElementById('koordinat').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
+    });
+</script>
+
 </div>
 
 {{-- JQuery AJAX untuk load Kelurahan berdasarkan Kecamatan --}}
