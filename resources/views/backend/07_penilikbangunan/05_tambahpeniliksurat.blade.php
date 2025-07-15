@@ -78,6 +78,7 @@ th {
 
 @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
 
+
            {{-- <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div> --}}
 
          </div>
@@ -95,7 +96,7 @@ th {
 
      {{-- ======================================================= --}}
 
-     <div class="container-fluid" style="margin-bottom: 150px;">
+     <div class="container-fluid">
          <!--begin::Row-->
          <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
@@ -187,15 +188,6 @@ th {
                      </div>
                  </div>
 <br>
-
-<div class="container" style="margin-bottom: 20px;">
-<a href="/dataallpenilikbg">
-    <button class="button-baru">
-        <i class="bi bi-folder2-open me-2"></i> Berkas Inspeksi Bangunan Gedung
-    </button>
-</a>
-</div>
-
                  <hr>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
@@ -210,10 +202,11 @@ th {
                                 <div class="row">
            {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
 
+
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Surat Tugas Inspeksi Bangunan Gedung</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan Bantuan Gambar Bangunan Gedung</h5>
     </div>
 </div>
 
@@ -224,27 +217,28 @@ th {
 @php
     $infoItems = [
         [
-            'icon' => 'bi-person-vcard-fill', // ✅ cocok untuk NIK
+            'icon' => 'bi-person-vcard-fill', // lebih cocok untuk NIK/KTP
             'title' => 'Nomor Induk Kependudukan',
-            'value' => $data->nik ?? '-',
+            'value' => $data->nikktp ?? '-',
         ],
         [
-            'icon' => 'bi-person-fill', // ✅ lebih pas untuk nama lengkap
-            'title' => 'Nama Lengkap Pemohon',
-            'value' => $data->namapemohon ?? '-',
+            'icon' => 'bi-calendar-event-fill', // ikon kalender yang lebih detail
+            'title' => 'Tanggal Permohonan',
+            'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
         ],
         [
-            'icon' => 'bi-building', // ✅ cocok untuk Fungsi Bangunan
-            'title' => 'Fungsi Bangunan',
-            'value' => $data->fungsibangunan ?? '-',
+            'icon' => 'bi-telephone-fill', // ikon telepon langsung
+            'title' => 'Nomor Telepon',
+            'value' => $data->nomortelepon ?? '-',
         ],
         [
-            'icon' => 'bi-diagram-3-fill', // ✅ cocok untuk klasifikasi/subfungsi bangunan
+            'icon' => 'bi-house-gear-fill', // ikon rumah dengan pengaturan (klasifikasi bangunan)
             'title' => 'Klasifikasi Bangunan',
-            'value' => $data->subfungsibangunan ?? '-',
+            'value' => $user->klasifikasibangunan ?? '-',
         ],
     ];
 @endphp
+
 
 
     @foreach ($infoItems as $item)
@@ -264,63 +258,6 @@ th {
             </div>
         </div>
     @endforeach
-
-<div class="row g-3">
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-    {{-- Koordinat --}}
-    <div class="col-md-12">
-        <div class="mb-3">
-            <label class="form-label d-flex align-items-center" for="koordinat">
-                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
-            </label>
-            <input
-                type="text"
-                class="form-control"
-                id="koordinat"
-                name="koordinat"
-                value="{{ old('koordinat', $data->koordinat ?? '') }}"
-                readonly
-                style="background-color: #f5f5f5; cursor: not-allowed;"
-            >
-        </div>
-
-        {{-- Peta --}}
-        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
-    </div>
-
-</div>
-
-<script>
-    // Inisialisasi map dengan semua interaksi aktif (zoom, drag), kecuali klik
-    var map = L.map('map').setView([-7.0421, 111.4046], 11);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
-    }).addTo(map);
-
-    // Ambil dan tampilkan koordinat sebelumnya
-    var initialCoord = "{{ $data->koordinat ?? '' }}";
-    if (initialCoord) {
-        var coords = initialCoord.split(',');
-        if (coords.length === 2) {
-            var lat = parseFloat(coords[0]);
-            var lng = parseFloat(coords[1]);
-            L.marker([lat, lng]).addTo(map);
-            map.setView([lat, lng], 15);
-        }
-    }
-
-    // Jangan ubah koordinat saat klik peta (dikunci)
-    map.on('click', function(e) {
-        // Kosong: klik tidak melakukan apa-apa
-    });
-</script>
-
 
 </div>
 
@@ -354,140 +291,230 @@ th {
 {{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas') --}}
 
 </div>
-<div class="row g-4 mt-4">
-    <div class="col-12">
-        <div class="card shadow-sm border-0">
-            <div class="card-header bg-primary text-white d-flex align-items-center">
-                <i class="bi bi-folder-check me-2 fs-5"></i>
-                <h5 class="mb-0" style="font-size: 16px;">Daftar Surat Tugas Inspeksi Bangunan Gedung</h5>
-            </div>
-            <div class="card-body">
-                @if ($subdatapemilik->count() > 0)
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover align-middle">
-                            <thead class="table-light text-center">
-                                <tr>
-                                    <th>No</th>
-                                    <th>Petugas Penilik</th>
-                                    <th>Nomor Surat</th>
-                                    <th>Nomor Kontrak</th>
-                                    <th>Tanggal Tugas</th>
-                                    <th style="width: 200px;">Surat Tugas</th>
-                                    <th style="width: 100px;">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($subdatapemilik as $index => $item)
-                                    <tr>
-                                        <td class="text-center">{{ $index + 1 }}</td>
-                                        <td class="text-center">{{ $item->petugaspenilik->namalengkap ?? '-' }}</td>
-                                        <td class="text-center">{{ $item->nomorsurat ?? '-' }}</td>
-                                        <td class="text-center">{{ $item->nomorkontrak ?? '-' }}</td>
-                                        <td class="text-center">
-                                            {{ \Carbon\Carbon::parse($item->tanggaltugas)->translatedFormat('d F Y') ?? '-' }}
-                                        </td>
 
-                                        <td style="white-space: nowrap; text-align: center;">
-    <a href="{{ route('bepbgsurattugasshow.detail', ['id' => $item->id]) }}"
-       class="text-decoration-none"
-       onclick="saveScrollPosition()">
-        <div style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 14px;
-            background: linear-gradient(145deg, #e1f0ff, #d6e9ff);
-            color: #003366;
-            font-size: 13px;
-            font-weight: 500;
-            border: 1px solid #c8dfff;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        "
-        onmouseover="this.style.background='white'; this.style.color='black';"
-        onmouseout="this.style.background='linear-gradient(145deg, #e1f0ff, #d6e9ff)'; this.style.color='#003366';">
-            <i class="bi bi-eye me-1"></i> Lihat
-        </div>
-    </a>
-</td>
 
-                                        <td class="text-center">
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-outline-danger"
-                                               data-bs-toggle="modal"
-                                               data-bs-target="#deleteModal"
-                                               data-id="{{ $item->id }}"
-                                               onclick="setDeleteUrl(this)"
-                                               title="Hapus Data">
-                                                <i class="bi bi-trash"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                @else
-                    <div class="alert alert-warning text-center fw-semibold">
-                        <i class="bi bi-folder-x me-2 text-danger"></i>
-                        Belum Ada Surat Tugas yang Diterbitkan!
-                    </div>
-                @endif
+    <style>
+            .custom-radio {
+                position: relative;
+                padding-left: 35px;
+                padding-right: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #fff; /* netral */
+                border: 2px solid #cbd5e0; /* netral */
+                border-radius: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                user-select: none;
+                transition: border-color 0.3s, background-color 0.3s;
+                display: inline-block;
+                margin-right: 10px;
+            }
 
-                {{-- Tombol Tambah Data --}}
-                <div class="text-center mt-4">
-                    <a href="{{ route('surattugaspenilikcreate', $data->id) }}" class="button-baru">
-                        <i class="bi bi-plus-circle me-1"></i> Buat Surat Tugas
-                    </a>
-                </div>
-            </div>
+            .custom-radio input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+        cursor: pointer;
+    }
+
+    .custom-box {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 18px;
+        width: 18px;
+        background-color: #fff; /* netral */
+        border: 2px solid #cbd5e0; /* netral */
+        border-radius: 4px;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* efek checklist muncul saat ter-check */
+    .custom-radio input[type="radio"]:checked ~ .custom-box::after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 1px;
+        width: 5px;
+        height: 10px;
+        border: solid;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        animation: checkmarkFade 0.3s ease forwards;
+    }
+
+    /* Warna khusus untuk value 'sesuai' */
+    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box {
+        border-color: #3b82f6;
+        background-color: #bfdbfe;
+    }
+
+    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box::after {
+        border-color: #1d4ed8;
+    }
+
+    /* Warna khusus untuk value 'tidak_sesuai' */
+    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box {
+        border-color: #ef4444;
+        background-color: #fecaca;
+    }
+
+    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box::after {
+        border-color: #b91c1c;
+    }
+
+    /* Animasi checklist */
+    @keyframes checkmarkFade {
+        0% {
+            opacity: 0;
+            transform: scale(0.5) rotate(45deg);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) rotate(45deg);
+        }
+    }
+</style>
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Terbitkan Surat Tugas
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+</div>
+
+<form id="formPemilik" action="{{ route('bepbgsurattugasnew') }}" method="POST">
+    @csrf
+<input type="hidden" name="gambarbantuan_id" value="{{ $data->id }}">
+{{-- <input type="hidden" name="datapemilik_id" value="{{ $data->id ?? '' }}"> --}}
+
+<div class="row g-4 mt-2">
+    {{-- Pilih Fasilitator --}}
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-person-badge-fill text-primary me-1"></i> Nama Fasilitator
+        </label>
+        <select name="fasilitatorpbg_id" class="form-select @error('fasilitatorpbg_id') is-invalid @enderror">
+            <option value="" disabled selected>-- Pilih Fasilitator --</option>
+            @foreach($fasilitators as $fasilitator)
+                <option value="{{ $fasilitator->id }}" {{ old('fasilitatorpbg_id') == $fasilitator->id ? 'selected' : '' }}>
+                    {{ $fasilitator->namalengkap }}
+                </option>
+            @endforeach
+        </select>
+        @error('fasilitatorpbg_id')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    {{-- Nomor Surat --}}
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-file-earmark-text-fill text-primary me-1"></i> Nomor Surat Tugas
+        </label>
+        <input type="text" name="nomorsurat"
+            class="form-control @error('nomorsurat') is-invalid @enderror"
+            value="{{ old('nomorsurat') }}" placeholder="Contoh: 800/1234/DPU-TR/2025">
+        @error('nomorsurat')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    {{-- Nomor Kontrak --}}
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-file-earmark-ruled-fill text-primary me-1"></i> Nomor Kontrak
+        </label>
+        <input type="text" name="nomorkontrak"
+            class="form-control @error('nomorkontrak') is-invalid @enderror"
+            value="{{ old('nomorkontrak') }}" placeholder="Contoh: 027/PK-FAS/PBG/2025">
+        @error('nomorkontrak')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    {{-- Tanggal Tugas --}}
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-calendar-check-fill text-primary me-1"></i> Tanggal Tugas
+        </label>
+        <input type="date" name="tanggaltugas"
+            class="form-control @error('tanggaltugas') is-invalid @enderror"
+            value="{{ old('tanggaltugas') }}">
+        @error('tanggaltugas')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="text-end mt-4">
+    <button type="button" class="button-baru" onclick="openModal()">
+        <i class="bi bi-save me-1"></i> Simpan Surat Tugas
+    </button>
+</div>
+
+</form>
+
+{{-- Modal Konfirmasi --}}
+<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">Apakah Anda ingin menyimpan data ini?</p>
+        <div style="display: flex; justify-content: center; gap: 12px;">
+            <button onclick="submitForm()" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                <i class="bi bi-check-circle me-1"></i> Ya
+            </button>
+            <button onclick="closeModal()" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                <i class="bi bi-x-circle me-1"></i> Batal
+            </button>
         </div>
     </div>
 </div>
 
-
-<!-- Pagination links -->
-{{-- <div class="d-flex justify-content-center mt-4">
-    {{ $subdatapemilik->links() }}
-</div> --}}
-
-
-</div>
-    <script>
-function previewPDF(event, containerId, iframeId, messageId) {
-    const file = event.target.files[0];
-    const container = document.getElementById(containerId);
-    const iframe = document.getElementById(iframeId);
-    const message = document.getElementById(messageId);
-
-    if (file && file.type === "application/pdf") {
-        const fileURL = URL.createObjectURL(file);
-        iframe.src = fileURL;
-        container.style.display = 'block';
-        message.style.display = 'none';
-    } else {
-        iframe.src = '';
-        container.style.display = 'none';
-        message.style.display = 'block';
-        message.textContent = 'File harus berupa format PDF.';
+<script>
+    function openModal() {
+        document.getElementById('confirmModal').style.display = 'flex';
     }
-}
+
+    function closeModal() {
+        document.getElementById('confirmModal').style.display = 'none';
+    }
+
+    function submitForm() {
+        // Ganti dengan ID form kamu
+        const form = document.getElementById('formPemilik');
+        if (form) {
+            form.submit();
+        }
+    }
 </script>
 
-{{-- <div class="card shadow-sm border-0 mt-5">
-    <div class="card-header bg-primary text-white">
-        <h5 class="mb-0">Informasi Permohonan Pengajuan</h5>
-    </div>
-</div> --}}
 
-                                    </div>
-                                </div>
-                                <!-- End row -->
-                            </div>
-                            <!-- end::Body -->
+<script>
+    function toggleCatatan(radio) {
+        const catatanField = document.getElementById('catatan-field');
+        catatanField.style.display = (radio.value === 'tidak lengkap') ? 'block' : 'none';
+    }
 
+    function openModal() {
+        document.getElementById("confirmModal").style.display = "flex";
+    }
 
-                        </form>
+    function closeModal() {
+        document.getElementById("confirmModal").style.display = "none";
+    }
 
+    function submitForm() {
+        document.getElementById('formPemilik').submit();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name=\'pilihancatatan\']:checked');
+        if (selected) toggleCatatan(selected);
+    });
+</script>
                     </div>
                  </div>
 
@@ -496,44 +523,6 @@ function previewPDF(event, containerId, iframeId, messageId) {
                  <br><br>
 
                  <!-- Modal Konfirmasi Hapus -->
-                <!-- Modal Konfirmasi Hapus -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
-        <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Apakah Anda yakin ingin menghapus data dengan ID: <strong><span id="itemId"></span></strong>?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <form id="deleteForm" method="POST" action="">
-          @csrf
-          @method('DELETE')
-          <button type="submit" class="btn btn-danger">Hapus</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-function setDeleteUrl(button) {
-    const id = button.getAttribute('data-id');
-    document.getElementById('itemId').innerText = id;
-    // Ganti URL ini sesuai route delete kamu
-    document.getElementById('deleteForm').action = `/bepbgsurattugasnewdelete/${id}`;
-}
-</script>
-                 <style>
-                     .table-responsive {
-                         max-width: 100%;
-                         overflow-x: auto;
-                     }
-                 </style>
-
              </div>
              <!-- /.card -->
          </div>
@@ -564,3 +553,5 @@ function setDeleteUrl(button) {
         return XLSX.writeFile(wb, filename + '.xlsx');
     }
     </script>
+
+

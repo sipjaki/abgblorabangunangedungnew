@@ -12,6 +12,7 @@ use App\Models\dokpemohonpenilik;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\penilikbangunan;
+use App\Models\petugaspenilik;
 use App\Models\surattugaspenilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -228,6 +229,24 @@ $subdatapemilik = surattugaspenilik::where('penilikbangunan_id', $data->id)->get
     ]);
 }
 
+public function surattugaspenilikcreate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = penilikbangunan::find($id);
+    $fasilitators = petugaspenilik::all();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.07_penilikbangunan.05_tambahpeniliksurat', [
+        'title' => 'Buat Data Surat Tugas Penilik Inspeksi Bangunan Gedung',
+        'data' => $databantuanteknis,
+        'fasilitators' => $fasilitators,
+        'user' => Auth::user()
+    ]);
+}
 
 
 
