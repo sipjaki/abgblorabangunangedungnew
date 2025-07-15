@@ -215,12 +215,12 @@ public function surattugaspenilik($id)
     $data = penilikbangunan::findOrFail($id);
 
     // Ambil semua data surat pemberitahuan berdasarkan pbgslfbangunan_id tanpa pagination
-$subdatapemilik = surattugaspenilik::where('gambarbantuan_id', $data->id)->get();
+$subdatapemilik = surattugaspenilik::where('penilikbangunan_id', $data->id)->get();
 
     // Kirim data ke view
-    return view('backend.09_bantuangambar.01_berkaspermohonan.04_surattugas', [
-        'title' => 'Surat Tugas Permohonan Bantuan Gambar',
-        'title_halaman' => 'Surat Tugas Permohonan Bantuan Gambar' ,
+    return view('backend.09_bantuangambar.01_berkaspermohonan.05_surattugaspenilikbangunan', [
+        'title' => 'Surat Tugas Penilik Bangunan Gedung',
+        'title_halaman' => 'Surat Tugas Inspeksi (Penilik) Bangunan Gedung' ,
         'user' => $user,
         'data' => $data,
         // 'datafasi' => $data,
