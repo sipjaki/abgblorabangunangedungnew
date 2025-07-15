@@ -245,9 +245,9 @@ th {
     <th style="background-color: #ADD8E6; width:150px;">
         <i class="bi bi-calendar-event"></i> Tanggal Kegiatan
     </th>
-    <th style="background-color: #ADD8E6; width:200px;">
+    {{-- <th style="background-color: #ADD8E6; width:200px;">
         <i class="bi bi-list-task"></i> Nama Kegiatan
-    </th>
+    </th> --}}
     <th style="background-color: #ADD8E6; width:120px;">
         <i class="bi bi-123"></i> Kegiatan Ke-
     </th>
@@ -272,12 +272,12 @@ th {
     <tr>
         <td>{{ $loop->iteration }}</td>
 <td>{{ $item->kegiatan }}</td>
+<td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
 <td>
     <button class="button-berkas">
         {{ $item->kegiatanke }}
     </button>
 </td>
-<td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
 <td>{{ $item->uraiankegiatan }}</td>
 <td>{{ $item->catatankegiatan }}</td>
 
