@@ -444,7 +444,7 @@ th {
 
 <form id="formPemilik" action="{{ route('surattugaspeniliknew') }}" method="POST">
     @csrf
-<input type="hidden" name="gambarbantuan_id" value="{{ $data->id }}">
+<input type="hidden" name="penilikbangunan_id" value="{{ $data->id }}">
 {{-- <input type="hidden" name="datapemilik_id" value="{{ $data->id ?? '' }}"> --}}
 
 <div class="row g-4 mt-2">
@@ -453,15 +453,15 @@ th {
         <label class="form-label fw-semibold text-dark">
             <i class="bi bi-person-badge-fill text-primary me-1"></i> Nama Fasilitator
         </label>
-        <select name="fasilitatorpbg_id" class="form-select @error('fasilitatorpbg_id') is-invalid @enderror">
+        <select name="petugaspenilik_id" class="form-select @error('petugaspenilik_id') is-invalid @enderror">
             <option value="" disabled selected>-- Pilih Fasilitator --</option>
             @foreach($fasilitators as $fasilitator)
-                <option value="{{ $fasilitator->id }}" {{ old('fasilitatorpbg_id') == $fasilitator->id ? 'selected' : '' }}>
+                <option value="{{ $fasilitator->id }}" {{ old('petugaspenilik_id') == $fasilitator->id ? 'selected' : '' }}>
                     {{ $fasilitator->namalengkap }}
                 </option>
             @endforeach
         </select>
-        @error('fasilitatorpbg_id')
+        @error('petugaspenilik_id')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
