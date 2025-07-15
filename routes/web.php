@@ -758,8 +758,10 @@ Route::get('/bedatadasarpenilik/{id}', [PenilikbangunanController::class, 'bedat
 
 Route::get('/bedatapeniliksurvey/{id}', [PenilikbangunanController::class, 'bedatapeniliksurvey'])->middleware('auth')->name('bedatapeniliksurvey.show');
 
-// ----------
+// in brot ----------
 Route::get('/dokpenilikpra/{id}', [PenilikbangunanController::class, 'dokpenilikpra'])->middleware('auth')->name('dokpenilikpra');
+Route::get('/dokpenilikpracreate/{id}', [PenilikbangunanController::class, 'dokpenilikpracreate'])->middleware('auth')->name('dokpenilikpracreate');
+// Route::post('/doklapbanhibahcreatenew', [BantuanhibahbgController::class, 'doklapbanhibahcreatenew'])->middleware('auth')->name('create.doklapbanhibahcreatenew');
 
 
 // MENU 10 BACKEND DANA BANTUAN HIBAH

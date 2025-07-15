@@ -419,4 +419,22 @@ public function dokpenilikpra($id)
     ]);
 }
 
+
+public function dokpenilikpracreate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = penilikbangunan::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.07_penilikbangunan.10_uploadprakegiatan', [
+        'title' => 'Catatan Kegiatan Dokumentasi Pra Inspeksi Bangunan Gedung',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }

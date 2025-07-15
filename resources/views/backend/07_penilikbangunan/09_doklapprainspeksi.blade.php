@@ -190,13 +190,14 @@ th {
         @endcanany --}}
 
                         @canany(['superadmin', 'admin'])
-<button class="button-baru" type="button"
-    onclick="location.href='/doklapbanhibahcreate/{{ $data->id }}';"
+
+                        <button class="button-baru" type="button"
+    onclick="location.href='/dokpenilikpracreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Upload Dok Foto
 </button>
 
-<a href="{{ url('/dataallhibahbangunan') }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url()->previous() }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
         @endcanany
