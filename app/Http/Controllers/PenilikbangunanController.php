@@ -292,7 +292,7 @@ public function surattugaspeniliknew(Request $request)
     return redirect()->route('surattugaspenilik', ['id' => $validated['penilikbangunan_id']]);
 }
 
-public function bepbgsurattugasnewdelete($id)
+public function suratpenilikdelete($id)
 {
     $entry = surattugaspenilik::find($id); // pakai find aja dulu
 
