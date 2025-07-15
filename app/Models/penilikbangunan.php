@@ -53,4 +53,9 @@ class penilikbangunan extends Model
         return $this->belongsTo(rencanagsbblora::class, 'rencanagsbblora_id');
     }
 
+    public function surattugaspenilik()
+    {
+        return $this->belongsTo(surattugaspenilik::class);
+    }
+
 }

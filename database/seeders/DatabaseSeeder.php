@@ -56,6 +56,7 @@ use App\Models\pbgslfbangunan;
 use App\Models\pengawasatpt;
 use App\Models\pesertapelatihan;
 use App\Models\petugasdinas;
+use App\Models\petugaspenilik;
 use App\Models\suratpemberitahuanpbg;
 use App\Models\surattugaspbg;
 use App\Models\tempatkonsultasi;
@@ -12845,6 +12846,45 @@ pesertapelatihan::create([
     // 'deleted_at' => null // jika menggunakan soft deletes
 ]);
 
+
+petugaspenilik::create([
+    'id' => 1,
+    'namalengkap' => 'SUKARDI, S.T.',
+    'nip' => '197408192010011004',
+    'jabatan' => 'Kepala UPTD Pengelolaan Jalan, Jembatan dan Irigasi Wilayah I',
+    'golongan' => 'Penata Muda Tk I',
+    'skpenilik' => '900/3292-A/2024',
+]);
+
+petugaspenilik::create([
+    'id' => 2,
+    'namalengkap' => 'WIRASTOMO WISNU, ST',
+    'nip' => '197509042006041002',
+    'jabatan' => 'Kepala UPTD Pengelolaan Jalan, Jembatan dan Irigasi Wilayah II',
+    'golongan' => 'Penata Tk I',
+    'skpenilik' => '900/3292-A/2024',
+]);
+
+petugaspenilik::create([
+    'id' => 3,
+    'namalengkap' => 'SITI SUSNI, SE',
+    'nip' => '197507062006042024',
+    'jabatan' => 'Kepala UPTD Pengelolaan Jalan, Jembatan dan Irigasi Wilayah III',
+    'golongan' => 'Penata Tk I',
+    'skpenilik' => '900/3292-A/2024',
+]);
+
+petugaspenilik::create([
+    'id' => 4,
+    'namalengkap' => 'SUTRISNO, S.Sos',
+    'nip' => '197408111997031002',
+    'jabatan' => 'Kasubbag TU UPTD Pengelolaan Jalan, Jembatan dan Irigasi Wilayah IV',
+    'golongan' => 'Penata',
+    'skpenilik' => '900/3292-A/2024',
+]);
+
+
+// 'skpenilik' => '900/3292-A/2024',
 
     }
  /**

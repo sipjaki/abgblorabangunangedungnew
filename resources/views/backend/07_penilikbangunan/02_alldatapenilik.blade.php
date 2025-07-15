@@ -292,13 +292,13 @@ th {
 <td style="text-align: left;">{{ !empty($item->koordinat) ? $item->koordinat : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->namabangunan) ? $item->namabangunan : '-' }}</td>
 <td style="text-align: center;">{{ !empty($item->luasbangunan) ? $item->luasbangunan . ' M²' : '-' }}</td>
-<td style="text-align: center;">{{ !empty($item->jumlahlantai) ? $item->jumlahlantai . 'Lantai' : '-' }}</td>
+<td style="text-align: center;">{{ !empty($item->jumlahlantai) ? $item->jumlahlantai . ' Lantai' : '-' }}</td>
 <td style="text-align: center;">{{ !empty($item->gsb) ? $item->gsb . ' Meter' : '-' }}</td>
 
    <td style="text-align: center;">
     <div style="display: inline-flex; justify-content: center; align-items: center; gap: 10px;">
         <a href="{{ route('bedatadasarpenilik.show', $item->id) }}"
-            class="button-validasinew"
+            class="button-baru"
             style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: 0.3s;">
             <i class="fas fa-eye" style="margin-right: 5px;"></i> Data Dasar
         </a>

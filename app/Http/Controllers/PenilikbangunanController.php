@@ -12,6 +12,7 @@ use App\Models\dokpemohonpenilik;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\penilikbangunan;
+use App\Models\surattugaspenilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -204,6 +205,30 @@ public function bedatapeniliksurvey($id)
         'user' => Auth::user()
     ]);
 }
+
+public function surattugaspenilik($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Cari data pbg berdasarkan ID
+    $data = penilikbangunan::findOrFail($id);
+
+    // Ambil semua data surat pemberitahuan berdasarkan pbgslfbangunan_id tanpa pagination
+$subdatapemilik = surattugaspenilik::where('gambarbantuan_id', $data->id)->get();
+
+    // Kirim data ke view
+    return view('backend.09_bantuangambar.01_berkaspermohonan.04_surattugas', [
+        'title' => 'Surat Tugas Permohonan Bantuan Gambar',
+        'title_halaman' => 'Surat Tugas Permohonan Bantuan Gambar' ,
+        'user' => $user,
+        'data' => $data,
+        // 'datafasi' => $data,
+        'subdatapemilik' => $subdatapemilik,
+    ]);
+}
+
+
 
 
 }
