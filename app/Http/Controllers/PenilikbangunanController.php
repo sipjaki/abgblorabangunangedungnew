@@ -549,4 +549,32 @@ public function fotopradelete($id)
     return redirect()->back()->with('error', 'Data tidak ditemukan.');
 }
 
+
+public function prakegiatanfotopradelete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = prapenilikdok::where('id', $id)->first();
+
+    if ($entry) {
+        // Simpan dulu lapangan_id sebelum entri dihapus
+        $lapanganId = $entry->penilikbangunan_id;
+
+        // Hapus file jika ada (aktifkan jika memang simpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect ke halaman detail lapangan terkait
+        return redirect()->route('dokpenilikpra', ['id' => $lapanganId])
+                         ->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
+
 }

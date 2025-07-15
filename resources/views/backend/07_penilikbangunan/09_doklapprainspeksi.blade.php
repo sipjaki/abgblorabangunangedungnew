@@ -389,7 +389,7 @@ th {
 function setDeleteUrl(button) {
     var id = button.getAttribute('data-id'); // ✅ fix
     document.getElementById('itemName').innerText = id;
-    var deleteUrl = "/doklapbanhibahcreatenewdelete/" + encodeURIComponent(id);
+    var deleteUrl = "/prakegiatanfotopradelete/" + encodeURIComponent(id);
     document.getElementById('deleteForm').action = deleteUrl;
 }
 </script>
