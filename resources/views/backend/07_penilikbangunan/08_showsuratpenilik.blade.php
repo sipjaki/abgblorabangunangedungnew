@@ -353,9 +353,9 @@ th {
   <span style="text-decoration: none; font-weight: normal;">Nomor : {{ $surat->nomorsurat ?? '-' }}</span>
 </div>
 
-<p style="font-size: 12px; margin-top: 12px;"><strong>DASAR</strong> : PP 16 Tahun 2021 Tentang Peraturan Pelaksanaan undang-undang Tentang Bangunan Gedung Perda No 1 tahun 2016 Tentang Bangunan Gedung.</p>
+<p style="font-size: 12px; margin-top: 5px;"><strong>DASAR</strong> : PP 16 Tahun 2021 Tentang Peraturan Pelaksanaan undang-undang Tentang Bangunan Gedung Perda No 1 tahun 2016 Tentang Bangunan Gedung.</p>
 
-<div style="font-size: 12px; text-align: center; font-weight: bold; margin: 20px 0;">
+<div style="font-size: 12px; text-align: center; font-weight: bold; margin-top: 10px 0;">
   MENUGASKAN
 </div>
 
@@ -375,7 +375,7 @@ th {
 
 <p style="margin-top: 12px; font-size: 12px !important;"><strong>UNTUK</strong> :</p>
 
-<ol style="margin-left: 30px; padding-left: 10px; font-size: 12px !important;">
+<ol style="margin-left: 30px; padding-left: 10px; font-size: 12px !important; margin-top:-10px;">
   <li style="font-size: 12px !important;">
     Melakukan pemeriksaan Bangunan Gedung secara Administratif agar penyelenggaraan Bangunan Gedung yang dilaksanakan oleh penyelenggara Bangunan Gedung sesuai dengan ketentuan peraturan perundang-undangan.
   </li>
@@ -405,12 +405,12 @@ th {
   </li>
 </ol>
 
-  <p><strong>DENGAN</strong> :</p>
-  <p style="margin-left: 30px;">
+  <p style="margin-top: -10px;"><strong>DENGAN</strong> :</p>
+  <p style="margin-left: 30px; margin-top: -10px;">
     1. Melaporkan Hasilnya kepada Kepala Dinas Pekerjaan Umum dan Penataan Ruang melalui Kepala Bidang Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang.
   </p>
 
-  <p><strong>KETENTUAN</strong> :</p>
+  <p style="margin-top: -5px;"><strong>KETENTUAN</strong> :</p>
   <p style="margin-left: 30px;">
     1. Agar dilaksanakan dengan penuh tanggung jawab.
   </p>
