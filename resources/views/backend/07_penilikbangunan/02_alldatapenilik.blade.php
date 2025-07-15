@@ -438,10 +438,7 @@ th {
 
               <td style="text-align: center;">
                     <a href="{{ route('doklapbanhibah.show', $item->id) }}"
-                    class="button-validasinew"
-                    style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+                    class="button-baru">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Pra
 
                 </a>
@@ -449,11 +446,8 @@ th {
 
             <td style="text-align: center;">
                     <a href="{{ route('doklapbanhibah.show', $item->id) }}"
-                    class="button-validasinew"
-                    style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
-                <i class="bi bi-folder" style="margin-right: 5px;"></i> Pra
+                    class="button-validasinew">
+                <i class="bi bi-folder" style="margin-right: 5px;"></i> Pasca
 
                 </a>
             </td>
