@@ -12,6 +12,7 @@ use App\Models\dokpemohonpenilik;
 use App\Models\fotoprapenilik;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
+use App\Models\pascapenilikdok;
 use App\Models\penilikbangunan;
 use App\Models\petugaspenilik;
 use App\Models\prapenilikdok;
@@ -570,5 +571,24 @@ public function prakegiatanfotopradelete($id)
     return redirect()->back()->with('error', 'Data tidak ditemukan.');
 }
 
+
+public function dokpenilikpasca($id)
+{
+    $databantuanteknis = penilikbangunan::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = pascapenilikdok::where('penilikbangunan_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.07_penilikbangunan.12_dokpascalapangan', [
+        'title' => 'Dokumentasi Cek Lapangan Pasca Inspeksi Bangunan Gedung',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
 
 }

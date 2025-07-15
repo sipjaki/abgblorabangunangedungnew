@@ -445,7 +445,7 @@ th {
             </td>
 
             <td style="text-align: center;">
-                    <a href="{{ route('dokpenilikpra', $item->id) }}"
+                    <a href="{{ route('dokpenilikpasca', $item->id) }}"
                     class="button-baru">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Pasca
 
