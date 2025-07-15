@@ -220,23 +220,25 @@ th {
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
+<div class="mb-3">
+    <label class="form-label" for="kegiatanke">
+        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Kegiatan Ke-
+    </label>
+    <select
+        id="kegiatanke"
+        name="kegiatanke"
+        class="form-control @error('kegiatanke') is-invalid @enderror"
+    >
+        <option value="">-- Pilih urutan kegiatan --</option>
+        @for ($i = 1; $i <= 20; $i++)
+            <option value="{{ $i }}" {{ old('kegiatanke') == $i ? 'selected' : '' }}>{{ $i }}</option>
+        @endfor
+    </select>
+    @error('kegiatanke')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
-        <div class="mb-3">
-            <label class="form-label" for="kegiatanke">
-                <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Kegiatan Ke-
-            </label>
-            <input
-                type="text"
-                id="kegiatanke"
-                name="kegiatanke"
-                value="{{ old('kegiatanke') }}"
-                class="form-control @error('kegiatanke') is-invalid @enderror"
-                placeholder="Masukkan urutan kegiatan (contoh: 1, 2, 3...)"
-            />
-            @error('kegiatanke')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
     </div>
 
     <!-- Kolom Kanan -->
