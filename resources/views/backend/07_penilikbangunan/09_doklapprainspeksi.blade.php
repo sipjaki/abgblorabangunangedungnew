@@ -286,7 +286,7 @@ th {
 <td>{{ $item->catatankegiatan }}</td>
 
 <td>
-  <a href="{{ route('dokpenilikpra', $item->id) }}" class="button-baru" style="display: inline-flex; align-items: center; text-decoration: none;">
+  <a href="{{ route('dokpenilikprafoto', $item->id) }}" class="button-baru" style="display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-camera-fill" style="margin-right: 6px;"></i> Lihat Foto
   </a>
 </td>

@@ -470,6 +470,21 @@ public function dokpenilikpracreatenew(Request $request)
 
 }
 
+public function dokpenilikprafoto($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = prapenilikdok::find($id);
 
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.07_penilikbangunan.11_prafotoinspeksi', [
+        'title' => 'Upload Foto Hasil Pra Inspeksi Bangunan Gedung',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
 
 }
