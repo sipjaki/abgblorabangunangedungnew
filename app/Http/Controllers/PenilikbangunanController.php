@@ -473,21 +473,21 @@ public function dokpenilikpracreatenew(Request $request)
 
 public function dokpenilikprafoto($id)
 {
-    // Ambil data bantuan teknis berdasarkan ID
-   $databantuanteknis = prapenilikdok::where('id', $id)->first();
+    // Ambil data prapenilikdok berdasarkan ID
+    $databantuanteknis = prapenilikdok::find($id);
 
     if (!$databantuanteknis) {
-        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+        abort(404, 'Data prapenilikdok tidak ditemukan');
     }
 
-        // Menggunakan paginate() untuk pagination
-        $dataceklapangan = fotoprapenilik::where('prapenilikdok_id', $databantuanteknis->id)->paginate(50);
+    // Ambil data foto dokumentasi lapangan, paginate 50 per halaman
+    $dataceklapangan = fotoprapenilik::where('prapenilikdok_id', $id)->paginate(50);
 
-    // Kirim data ke view form pembuatan dokumentasi cek lapangan
     return view('backend.07_penilikbangunan.11_prafotoinspeksi', [
         'title' => 'Daftar Foto Hasil Dokumentasi Lapangan',
+        'prapenilikdok' => $databantuanteknis,
         'data' => $dataceklapangan,
-        'user' => Auth::user()
+        'user' => Auth::user(),
     ]);
 }
 

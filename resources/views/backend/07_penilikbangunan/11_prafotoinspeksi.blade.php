@@ -198,7 +198,7 @@ th {
                <form action="{{ route('dokpenilikpracreatenew') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
-    <input type="hidden" name="prapenilikdok_id" value="{{ $data->id }}">
+    {{-- <input type="hidden" name="prapenilikdok_id" value="{{ $data->id }}"> --}}
 
     <div class="row g-4">
 
