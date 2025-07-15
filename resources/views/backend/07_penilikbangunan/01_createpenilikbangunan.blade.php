@@ -219,14 +219,20 @@ th {
         @error('namapemohon') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
-
 {{-- NIK --}}
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="nik">
             <i class="bi bi-card-list me-2 text-success"></i> NIK
         </label>
-        <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik" value="{{ old('nik', $data->nik ?? '') }}">
+        <input type="number"
+               class="form-control @error('nik') is-invalid @enderror"
+               id="nik"
+               name="nik"
+               value="{{ old('nik', $data->nik ?? '') }}"
+               minlength="16" maxlength="16"
+               oninput="this.value = this.value.slice(0, 16)"
+               placeholder="Masukkan 16 digit NIK">
         @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
@@ -469,7 +475,7 @@ th {
     <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label" for="gsb">
-                <i class="bi bi-signpost-2-fill me-2 text-danger"></i> GSB (Garis Sempadan Bangunan) [m]
+                <i class="bi bi-signpost-2-fill me-2 text-danger"></i> GSB (Garis Sempadan Lapangan) [m]
             </label>
             <input type="number" step="0.01" class="form-control @error('gsb') is-invalid @enderror" id="gsb" name="gsb" value="{{ old('gsb', $data->gsb ?? '') }}">
             @error('gsb') <div class="invalid-feedback">{{ $message }}</div> @enderror

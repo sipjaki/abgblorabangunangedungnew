@@ -70,7 +70,10 @@ public function datanewpeniliknew(Request $request)
     ], [
         // Pesan error kustom
         'namapemohon.required' => 'Nama pemohon wajib diisi.',
+        // 'nik.required' => 'NIK wajib diisi.',
         'nik.required' => 'NIK wajib diisi.',
+        'nik.numeric' => 'NIK hanya boleh berisi angka.',
+        'nik.digits' => 'NIK harus terdiri dari 16 digit.',
         'fungsibangunan.required' => 'Fungsi bangunan wajib diisi.',
         'subfungsibangunan.required' => 'Subfungsi bangunan wajib diisi.',
         'namabangunan.required' => 'Nama bangunan wajib diisi.',
