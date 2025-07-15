@@ -258,6 +258,9 @@ th {
     <th style="background-color: #ADD8E6; width:300px;">
         <i class="bi bi-journal-check"></i> Catatan Kegiatan
     </th>
+    <th style="background-color: #ADD8E6; width:300px;">
+        <i class="bi bi-journal-check"></i> Lihat Foto
+    </th>
     @canany(['superadmin', 'admin'])
     <th style="background-color: #ADD8E6; width:120px;">
         <i class="bi bi-tools"></i> Aksi
@@ -281,6 +284,13 @@ th {
 </td>
 <td>{{ $item->uraiankegiatan }}</td>
 <td>{{ $item->catatankegiatan }}</td>
+
+<td>
+  <a href="{{ route('dokpenilikpra', $item->id) }}" class="button-baru" style="display: inline-flex; align-items: center; text-decoration: none;">
+    <i class="bi bi-camera-fill" style="margin-right: 6px;"></i> Lihat Foto
+  </a>
+</td>
+
 
 @canany(['superadmin', 'admin'])
 
