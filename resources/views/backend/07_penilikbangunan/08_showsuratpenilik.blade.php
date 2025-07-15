@@ -416,20 +416,20 @@ th {
   </p>
 </div>
 
-<div class="ttd" style="font-size: 12px; margin-top: 30px; line-height: 1.6; margin-left:200px;">
+<div class="ttd" style="font-size: 12px; margin-top: 2px; line-height: 1.6; margin-left:200px;">
   <div style="margin-left: 180px; width: 60%; text-align: center;">
     <p>
       Ditetapkan di : Blora<br>
       pada tanggal : {{ \Carbon\Carbon::parse($surat->tanggaltugas)->translatedFormat('d F Y') }}
     </p>
 
-    <p style="margin-top: 20px;">
+    <p style="margin-top: 5px;">
       A.n. KEPALA DINAS PEKERJAAN UMUM DAN<br>
       PENATAAN RUANG<br>
       KAB. BLORA<br>
       Kepala Bidang Bangunan Gedung
     </p>
-<div style="position: relative; display: inline-block; height: 100px; width: auto;">
+<div style="position: relative; display: inline-block; height: 100px; width: auto; margin-top:-20px;">
   <!-- Stempel di atas, digeser kiri sedikit, lebih dominan -->
   <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel"
        style="position: absolute; top: 0; left: -20px; height: 100px; opacity: 0.95; z-index: 2;">
