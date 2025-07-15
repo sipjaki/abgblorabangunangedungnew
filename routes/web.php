@@ -749,11 +749,13 @@ Route::get('/surattugaspenilikcreate/{id}', [PenilikbangunanController::class, '
 Route::post('/surattugaspeniliknew', [PenilikbangunanController::class, 'surattugaspeniliknew'])->middleware('auth')->name('surattugaspeniliknew');
 
 Route::delete('/suratpenilikdelete/{id}', [PenilikbangunanController::class, 'suratpenilikdelete'])->middleware('auth')->name('suratpenilikdelete');
+Route::get('/surattugaspenilikshow/{id}', [PenilikbangunanController::class, 'surattugaspenilikshow'])->middleware('auth')->name('surattugaspenilikshow');
 
 Route::get('/bedatadasarpenilik/{id}', [PenilikbangunanController::class, 'bedatadasarpenilik'])->middleware('auth')->name('bedatadasarpenilik.show');
 // Route::get('/bedatadasarpenilikberkas/{id}', [PenilikbangunanController::class, 'bedatadasarpenilikberkas'])->middleware('auth')->name('bedatadasarpenilikberkas.show');
 
 Route::get('/bedatapeniliksurvey/{id}', [PenilikbangunanController::class, 'bedatapeniliksurvey'])->middleware('auth')->name('bedatapeniliksurvey.show');
+
 
 // MENU 10 BACKEND DANA BANTUAN HIBAH
 

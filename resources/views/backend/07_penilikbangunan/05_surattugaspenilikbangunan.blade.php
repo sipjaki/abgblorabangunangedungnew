@@ -388,7 +388,7 @@ th {
                                         </td>
 
                                         <td style="white-space: nowrap; text-align: center;">
-    <a href="{{ route('bepbgsurattugasshow.detail', ['id' => $item->id]) }}"
+    <a href="{{ route('surattugaspenilikshow', ['id' => $item->id]) }}"
        class="text-decoration-none"
        onclick="saveScrollPosition()">
         <div class="button-baru">
