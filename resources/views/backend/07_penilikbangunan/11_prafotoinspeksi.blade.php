@@ -155,7 +155,7 @@ th {
 <!-- Tombol Tambah Foto -->
 <button
     type="button"
-    class="button-newvalidasi"
+    class="button-berkas"
     style="cursor: pointer; margin-left:10px; color:black; display: inline-flex; align-items: center;"
     onclick="openUploadModal()"
 >
@@ -295,7 +295,7 @@ function previewFile() {
                 @if (Str::endsWith(strtolower($item->foto), ['.jpg', '.jpeg', '.png', '.gif', '.svg']))
                     <img src="{{ asset($item->foto) }}" alt="Foto Dokumentasi" class="foto-item" style="max-width: 100%; border-radius: 6px;" />
                 @elseif (Str::endsWith(strtolower($item->foto), '.pdf'))
-                    <iframe src="{{ asset($item->foto) }}" width="100%" height="300px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
+                    <iframe src="{{ asset($item->foto) }}" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
                 @else
                     <div class="text-danger">Format tidak dikenali</div>
                 @endif
