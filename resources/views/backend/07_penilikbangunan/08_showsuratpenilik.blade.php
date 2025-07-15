@@ -416,7 +416,7 @@ th {
   </p>
 </div>
 
-<div class="ttd" style="font-size: 12px; margin-top: 30px; line-height: 1.6; margin-left: 200px; width: fit-content;">
+<div class="ttd" style="font-size: 12px; margin-top: 30px; line-height: 1.6; padding-left: 120px;">
   <p>
     Ditetapkan di : Blora<br>
     pada tanggal : {{ \Carbon\Carbon::parse($surat->tanggaltugas)->translatedFormat('d F Y') }}
