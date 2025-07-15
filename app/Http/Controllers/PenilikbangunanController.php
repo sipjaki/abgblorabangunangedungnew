@@ -9,6 +9,7 @@ use App\Models\banhibahlapangan;
 use App\Models\banhibahskbupati;
 use App\Models\bantuanhibahbg;
 use App\Models\dokpemohonpenilik;
+use App\Models\fotopascapenilik;
 use App\Models\fotoprapenilik;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
@@ -608,5 +609,66 @@ public function dokpenilikpascacreate($id)
         'user' => Auth::user()
     ]);
 }
+
+
+public function dokpenilikpascafoto($id)
+{
+    // Ambil data prapenilikdok berdasarkan ID
+    $databantuanteknis = pascapenilikdok::find($id);
+
+    if (!$databantuanteknis) {
+        abort(404, 'Data prapenilikdok tidak ditemukan');
+    }
+
+    // Ambil data foto dokumentasi lapangan, paginate 50 per halaman
+    $dataceklapangan = fotopascapenilik::where('pascapenilikdok_id', $id)->paginate(50);
+
+    return view('backend.07_penilikbangunan.13_prafotoinspeksi', [
+        'title' => 'Daftar Foto dan Berkas Hasil Pra inspeksi Dokumentasi Lapangan',
+        'prapenilikdok' => $databantuanteknis,
+        'data' => $dataceklapangan,
+        'user' => Auth::user(),
+    ]);
+}
+
+public function dokpenilikpascacreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'penilikbangunan_id' => 'required|integer',
+        'tanggalkegiatan' => 'required|date',
+        'kegiatan' => 'required|string',
+        'kegiatanke' => 'required|string',
+        'uraiankegiatan' => 'required|string',
+        'catatankegiatan' => 'nullable|string',
+        'tanggalmulai' => 'nullable|date',
+        'tanggalselesai' => 'nullable|date',
+        'hasilinspeksi' => 'nullable|string|in:Lengkap,Tidak Lengkap',
+    ], [
+        'penilikbangunan_id.required' => 'ID Penilik Bangunan wajib diisi.',
+        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
+        'kegiatan.required' => 'Nama kegiatan wajib diisi.',
+        'kegiatanke.required' => 'Kegiatan ke-berapa wajib diisi.',
+        'uraiankegiatan.required' => 'Uraian kegiatan wajib diisi.',
+    ]);
+
+    // Simpan ke database
+    $data = new pascapenilikdok(); // Ganti dengan model sesuai jika berbeda
+    $data->penilikbangunan_id = $validated['penilikbangunan_id'];
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'];
+    $data->kegiatan = $validated['kegiatan'];
+    $data->kegiatanke = $validated['kegiatanke'];
+    $data->uraiankegiatan = $validated['uraiankegiatan'];
+    $data->catatankegiatan = $validated['catatankegiatan'] ?? null;
+    $data->tanggalmulai = $validated['tanggalmulai'] ?? null;
+    $data->tanggalselesai = $validated['tanggalselesai'] ?? null;
+    $data->hasilinspeksi = $validated['hasilinspeksi'] ?? null;
+    $data->save();
+
+    // Flash dan redirect
+    session()->flash('create', 'Data kegiatan penilik bangunan berhasil disimpan!');
+    return redirect()->route('dokpenilikpasca', ['id' => $validated['penilikbangunan_id']]);
+}
+
 
 }

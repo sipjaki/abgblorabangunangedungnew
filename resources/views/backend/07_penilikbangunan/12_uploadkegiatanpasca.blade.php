@@ -194,7 +194,7 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('dokpenilikpracreatenew') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('dokpenilikpascacreatenew') }}" method="POST" enctype="multipart/form-data">
           @csrf
 
           <input type="hidden" name="penilikbangunan_id" value="{{ $data->id }}">

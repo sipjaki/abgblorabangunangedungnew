@@ -770,10 +770,14 @@ Route::delete('/fotopradelete/{id}', [PenilikbangunanController::class, 'fotopra
 Route::delete('/prakegiatanfotopradelete/{id}', [PenilikbangunanController::class, 'prakegiatanfotopradelete'])->middleware('auth')->name('prakegiatanfotopradelete');
 
 Route::get('/dokpenilikpasca/{id}', [PenilikbangunanController::class, 'dokpenilikpasca'])->middleware('auth')->name('dokpenilikpasca');
+
+Route::get('/dokpenilikpascafoto/{id}', [PenilikbangunanController::class, 'dokpenilikpascafoto'])->middleware('auth')->name('dokpenilikpascafoto');
+// Route::post('/dokpenilikpascafotoupload', [PenilikbangunanController::class, 'dokpenilikprafotoupload'])->middleware('auth')->name('dokpenilikprafotoupload');
+
 // in brot ----------
 
 Route::get('/dokpenilikpascacreate/{id}', [PenilikbangunanController::class, 'dokpenilikpascacreate'])->middleware('auth')->name('dokpenilikpascacreate');
-// Route::post('/dokpenilikpascacreatenew', [PenilikbangunanController::class, 'dokpenilikpracreatenew'])->middleware('auth')->name('dokpenilikpracreatenew');
+Route::post('/dokpenilikpascacreatenew', [PenilikbangunanController::class, 'dokpenilikpascacreatenew'])->middleware('auth')->name('dokpenilikpascacreatenew');
 
 // MENU 10 BACKEND DANA BANTUAN HIBAH
 
