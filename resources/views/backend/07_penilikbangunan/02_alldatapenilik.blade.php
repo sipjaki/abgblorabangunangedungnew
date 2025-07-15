@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="button-belakang row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -276,8 +276,8 @@ th {
 <td style="text-align: left;">{{ !empty($item->subfungsibangunan) ? $item->subfungsibangunan : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->provinsi) ? $item->provinsi : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->kabupaten) ? $item->kabupaten : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->kecamatanblora->nama) ? $item->kecamatanblora->kecamatanblora : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->kelurahandesa->nama) ? $item->kelurahandesa->desa : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->kecamatanblora->kecamatanblora) ? $item->kecamatanblora->kecamatanblora : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->kelurahandesa->desa) ? $item->kelurahandesa->desa : '-' }}</td>
 
 @php
     $words = explode(' ', $item->alamatlengkap ?? '');
