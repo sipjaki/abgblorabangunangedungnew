@@ -898,7 +898,7 @@ th {
                                             <i class="bi bi-eye"></i>
                                         </a> --}}
                                         <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
-                                            <i class="bi bi-pencil-square">Perbaikan Data</i>
+                                            <i class="bi bi-pencil-square"></i> Perbaikan Data
                                         </a>
                                         <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
