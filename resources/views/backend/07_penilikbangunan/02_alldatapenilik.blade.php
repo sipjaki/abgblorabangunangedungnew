@@ -269,7 +269,8 @@ th {
                                 @forelse ($data as $item)
                                 <tr class="align-middle">
                                     <td style="text-align: center;">{{ $loop->iteration }}</td>
-                       <td style="text-align: left;">{{ !empty($item->namapemohon) ? $item->namapemohon : '-' }}</td>
+                       <td style="text-align: left;">{{ !empty($item->user_id) ? $item->user->name : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->namapemohon) ? $item->namapemohon : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->nik) ? $item->nik : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->fungsibangunan) ? $item->fungsibangunan : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->subfungsibangunan) ? $item->subfungsibangunan : '-' }}</td>
@@ -283,6 +284,7 @@ th {
 <td style="text-align: left;">{{ !empty($item->luasbangunan) ? $item->luasbangunan . ' m²' : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->jumlahlantai) ? $item->jumlahlantai : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->gsb) ? $item->gsb . ' m' : '-' }}</td>
+
    <td style="text-align: center;">
     <div style="display: inline-flex; justify-content: center; align-items: center; gap: 10px;">
         <a href="{{ route('bedatadasarpenilik.show', $item->id) }}"
