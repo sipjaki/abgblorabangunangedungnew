@@ -354,6 +354,59 @@
 }
 
 
+.button-hijau {
+    background: linear-gradient(145deg, #6fdc8c, #43c768);
+    color: #ffffff;
+    border: 1px solid #3cbf5a;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: max-content;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-hijau:hover {
+    background: #d0f3dd !important; /* Hijau muda saat hover */
+    color: #14532d !important;
+    border: 1px solid #3cbf5a !important;
+    box-shadow: 0 4px 12px rgba(67, 199, 104, 0.25);
+    transform: translateY(-1px);
+}
+
+.button-merah {
+    background: linear-gradient(145deg, #b33c3c, #8b1c1c);
+    color: #ffffff;
+    border: 1px solid #7a1414;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: max-content;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-merah:hover {
+    background: #f5cccc !important; /* Merah muda saat hover */
+    color: #7a1414 !important;
+    border: 1px solid #7a1414 !important;
+    box-shadow: 0 4px 12px rgba(179, 60, 60, 0.25);
+    transform: translateY(-1px);
+}
 
 
 .button-hitam {
