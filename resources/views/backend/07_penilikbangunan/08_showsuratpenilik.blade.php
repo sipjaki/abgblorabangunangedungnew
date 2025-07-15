@@ -429,14 +429,15 @@ th {
       KAB. BLORA<br>
       Kepala Bidang Bangunan Gedung
     </p>
-<div style="position: relative; display: inline-block; height: 100px; width: auto;">
-  <!-- Stempel di atas -->
-  <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel"
-       style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.7; z-index: 2;">
 
-  <!-- Tanda tangan di bawah dengan opacity lebih rendah -->
+<div style="position: relative; display: inline-block; height: 100px; width: auto;">
+  <!-- Stempel di atas, lebih dominan -->
+  <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel"
+       style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.9; z-index: 2;">
+
+  <!-- Tanda tangan di bawah, agak transparan -->
   <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan"
-       style="position: relative; height: 100px; opacity: 0.4; z-index: 1;">
+       style="position: relative; height: 100px; opacity: 0.5; z-index: 1;">
 </div>
 
 
