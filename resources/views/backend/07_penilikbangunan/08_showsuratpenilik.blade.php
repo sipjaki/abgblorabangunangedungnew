@@ -362,9 +362,9 @@ th {
 <div style="font-size: 12px; margin-top: -20px;">
   <p><strong>KEPADA :</strong></p>
   <table class="tabel-info" style="margin-top: -20px;">
-    <tr><td style="width: 180px;">Nama</td><td>: {{ $surat->fasilitatorpbg->namalengkap ?? '-' }}</td></tr>
-    <tr><td>NIP</td><td>: {{ $surat->fasilitatorpbg->nip ?? '-' }}</td></tr>
-    <tr><td>Jabatan</td><td>: {{ $surat->fasilitatorpbg->jabatan ?? '-' }}</td></tr>
+    <tr><td style="width: 180px;">Nama</td><td>: {{ $surat->petugaspenilik->namalengkap ?? '-' }}</td></tr>
+    <tr><td>NIP</td><td>: {{ $surat->petugaspenilik->nip ?? '-' }}</td></tr>
+    <tr><td>Jabatan</td><td>: {{ $surat->petugaspenilik->jabatan ?? '-' }}</td></tr>
   </table>
 
   <p style="margin-top: 12px;"><strong>UNTUK</strong> :</p>
@@ -373,10 +373,10 @@ th {
     <li>Melaksanakan tugas pada masa konstruksi dan pemanfaatan serta pembongkaran Bangunan Gedung.</li>
     <li>Melaksanakan Fungsi : Pemantauan, Pemeriksaan, dan Evaluasi.
       <table style="margin-top: 10px; margin-left: 10px;">
-        <tr><td style="width: 130px;">Lokasi Bangunan</td><td>: {{ $surat->lokasi ?? 'Otomatis' }}</td></tr>
-        <tr><td>Hari/Tanggal</td><td>: {{ $surat->tanggal ?? 'Manual' }}</td></tr>
-        <tr><td>Nama Bangunan</td><td>: {{ $surat->namabangunan ?? 'Manual' }}</td></tr>
-        <tr><td>No Registrasi</td><td>: {{ $surat->noregistrasi ?? 'Manual' }}</td></tr>
+        <tr><td style="width: 130px;">Lokasi Bangunan</td><td>: {{ $surat->penilikbangunan->alamatlengkap ?? 'Otomatis' }}</td></tr>
+        <tr><td>Hari/Tanggal</td><td>: {{ $surat->tanggaltugas ?? 'Manual' }}</td></tr>
+        <tr><td>Nama Bangunan</td><td>: {{ $surat->penilikbangunan->namabangunan ?? 'Manual' }}</td></tr>
+        <tr><td>No Registrasi</td><td>: {{ $surat->penilikbangunan->noregistrasi ?? 'Belum Terbit' }}</td></tr>
       </table>
     </li>
   </ol>

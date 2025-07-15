@@ -39,7 +39,10 @@ return new class extends Migration
     $table->string('namabangunan')->nullable();
     $table->string('luasbangunan')->nullable();         // luas dalam satuan m2, misal
     $table->string('jumlahlantai')->nullable();
-    $table->decimal('gsb', 5, 2)->nullable();    // Garis Sempadan Bangunan (misal dalam meter)
+    $table->decimal('gsb', 5, 2)->nullable();
+
+    // Garis Sempadan Bangunan (misal dalam meter)
+    $table->string('noregistrasi')->nullable();
     // $table->string('ketinggianbangunan')->nullable();    // tinggi bangunan (meter)
     // $table->string('jumlahlapisbasemen')->nullable();
     // $table->string('luasbasemen')->nullable();
