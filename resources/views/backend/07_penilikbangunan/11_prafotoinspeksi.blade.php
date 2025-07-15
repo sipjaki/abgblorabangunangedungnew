@@ -195,122 +195,15 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-               <form action="{{ route('dokpenilikpracreatenew') }}" method="POST" enctype="multipart/form-data">
-    @csrf
-
-    {{-- <input type="hidden" name="prapenilikdok_id" value="{{ $data->id }}"> --}}
-
-    <div class="row g-4">
-
-        {{-- Looping Etalase Foto --}}
-        @foreach($data->foto as $index => $foto)
-            <div class="col-6 col-md-3 text-center">
-                <div class="foto-box mb-3">
-                    <img src="{{ asset($foto) }}" alt="Foto {{ $index + 1 }}" class="foto-item" />
-                </div>
-                <label class="form-label" for="foto{{ $index + 1 }}">
-                    <strong>Ganti Foto {{ $index + 1 }}</strong>
-                </label>
-                <input
-                    type="file"
-                    id="foto{{ $index + 1 }}"
-                    name="foto{{ $index + 1 }}"
-                    class="form-control @error('foto' . ($index + 1)) is-invalid @enderror"
-                    accept="image/*"
-                />
-                @error('foto' . ($index + 1))
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        @endforeach
-
-        {{-- Kolom Isian Detail Kegiatan --}}
-        <div class="col-12 mt-4">
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label" for="tanggalkegiatan">Tanggal Kegiatan</label>
-                    <input
-                        type="date"
-                        id="tanggalkegiatan"
-                        name="tanggalkegiatan"
-                        value="{{ old('tanggalkegiatan') }}"
-                        class="form-control @error('tanggalkegiatan') is-invalid @enderror"
-                    />
-                    @error('tanggalkegiatan')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label" for="kegiatanke">Kegiatan Ke-</label>
-                    <select
-                        id="kegiatanke"
-                        name="kegiatanke"
-                        class="form-select @error('kegiatanke') is-invalid @enderror"
-                    >
-                        <option value="">-- Pilih urutan kegiatan --</option>
-                        @for ($i = 1; $i <= 20; $i++)
-                            <option value="{{ $i }}" {{ old('kegiatanke') == $i ? 'selected' : '' }}>{{ $i }}</option>
-                        @endfor
-                    </select>
-                    @error('kegiatanke')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="col-md-12">
-                    <label class="form-label" for="kegiatan">Nama Kegiatan</label>
-                    <input
-                        type="text"
-                        id="kegiatan"
-                        name="kegiatan"
-                        value="{{ old('kegiatan') }}"
-                        class="form-control @error('kegiatan') is-invalid @enderror"
-                        placeholder="Masukkan nama kegiatan"
-                    />
-                    @error('kegiatan')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="col-md-12">
-                    <label class="form-label" for="uraiankegiatan">Uraian Kegiatan</label>
-                    <textarea
-                        id="uraiankegiatan"
-                        name="uraiankegiatan"
-                        class="form-control @error('uraiankegiatan') is-invalid @enderror"
-                        rows="3"
-                        placeholder="Tuliskan uraian kegiatan"
-                    >{{ old('uraiankegiatan') }}</textarea>
-                    @error('uraiankegiatan')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="col-md-12">
-                    <label class="form-label" for="catatankegiatan">Catatan Kegiatan</label>
-                    <textarea
-                        id="catatankegiatan"
-                        name="catatankegiatan"
-                        class="form-control @error('catatankegiatan') is-invalid @enderror"
-                        rows="3"
-                        placeholder="Tuliskan catatan tambahan jika ada"
-                    >{{ old('catatankegiatan') }}</textarea>
-                    @error('catatankegiatan')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
+               <div class="row">
+    @foreach ($data as $item)
+        <div class="col-6 col-md-3 text-center">
+            <div class="foto-box mb-3">
+                <img src="{{ asset($item->foto) }}" alt="Foto Dokumentasi" class="foto-item" />
             </div>
         </div>
-    </div>
-
-    {{-- Tombol Submit --}}
-    <div class="mt-4 d-flex justify-content-end">
-        <button type="submit" class="button-baru">
-            Simpan
-        </button>
-    </div>
-</form>
+    @endforeach
+</div>
 
 <style>
 .foto-box {
@@ -318,7 +211,8 @@ th {
     aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
 }
 
 .foto-item {
