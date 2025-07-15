@@ -429,13 +429,15 @@ th {
       KAB. BLORA<br>
       Kepala Bidang Bangunan Gedung
     </p>
+<div style="position: relative; display: inline-block; height: 100px; width: auto;">
+  <!-- Stempel di atas -->
+  <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel"
+       style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.7; z-index: 2;">
 
-    <div style="position: relative; display: inline-block;">
-    <!-- Stempel di atas -->
-    <!-- Tanda tangan di bawah -->
-    <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan" style="position: relative; height: 100px; z-index: 1;">
-    <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel" style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.7; z-index: 2;">
-  </div>
+  <!-- Tanda tangan di bawah dengan opacity lebih rendah -->
+  <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan"
+       style="position: relative; height: 100px; opacity: 0.4; z-index: 1;">
+</div>
 
     <p style="margin-top: 10px;">
       <strong><u>MOHAMAD ARIF HIDAYAT, ST</u></strong><br>
