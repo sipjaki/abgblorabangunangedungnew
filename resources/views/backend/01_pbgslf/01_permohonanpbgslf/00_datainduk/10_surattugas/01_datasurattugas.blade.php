@@ -234,7 +234,7 @@ th {
             [
                 'icon' => 'bi-person-fill-check',
                 'title' => 'Pengisi Form',
-                'value' => $data->user->name ?? '-',
+                'value' => $user->name ?? '-',
             ],
         ];
     @endphp
@@ -459,7 +459,7 @@ function setDeleteUrl(button) {
     const id = button.getAttribute('data-id');
     document.getElementById('itemId').innerText = id;
     // Ganti URL ini sesuai route delete kamu
-    document.getElementById('deleteForm').action = `/suratpenilikdelete/${id}`;
+    document.getElementById('deleteForm').action = `/bepbgsurattugasnewdelete/${id}`;
 }
 </script>
                  <style>
