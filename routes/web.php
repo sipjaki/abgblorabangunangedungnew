@@ -765,7 +765,7 @@ Route::post('/dokpenilikpracreatenew', [PenilikbangunanController::class, 'dokpe
 
 // in brot ----------
 Route::get('/dokpenilikprafoto/{id}', [PenilikbangunanController::class, 'dokpenilikprafoto'])->middleware('auth')->name('dokpenilikprafoto');
-Route::get('/dokpenilikprafotoupload', [PenilikbangunanController::class, 'dokpenilikprafotoupload'])->middleware('auth')->name('dokpenilikprafotoupload');
+Route::post('/dokpenilikprafotoupload', [PenilikbangunanController::class, 'dokpenilikprafotoupload'])->middleware('auth')->name('dokpenilikprafotoupload');
 
 // MENU 10 BACKEND DANA BANTUAN HIBAH
 

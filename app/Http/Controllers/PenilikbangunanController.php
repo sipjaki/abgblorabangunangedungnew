@@ -517,7 +517,7 @@ public function dokpenilikprafotoupload(Request $request)
     }
 
     // Simpan data baru foto
-    $foto = new Fotoprapenilik();
+    $foto = new fotoprapenilik();
     $foto->prapenilikdok_id = $validated['prapenilikdok_id'];
     $foto->foto = $path;
     $foto->save();
