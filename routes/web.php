@@ -767,6 +767,8 @@ Route::post('/dokpenilikpracreatenew', [PenilikbangunanController::class, 'dokpe
 Route::get('/dokpenilikprafoto/{id}', [PenilikbangunanController::class, 'dokpenilikprafoto'])->middleware('auth')->name('dokpenilikprafoto');
 Route::post('/dokpenilikprafotoupload', [PenilikbangunanController::class, 'dokpenilikprafotoupload'])->middleware('auth')->name('dokpenilikprafotoupload');
 
+Route::delete('/fotopradelete/{id}', [PenilikbangunanController::class, 'fotopradelete'])->middleware('auth')->name('fotopradelete');
+
 // MENU 10 BACKEND DANA BANTUAN HIBAH
 
 Route::get('/datanewhibah', [BantuanhibahbgController::class, 'hibahdokcreate'])->middleware('auth')->name('hibahdok.create');
