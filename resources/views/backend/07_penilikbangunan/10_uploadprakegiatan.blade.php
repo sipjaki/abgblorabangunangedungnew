@@ -195,10 +195,10 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('create.doklapbanhibahcreatenew') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('dokpenilikpracreatenew') }}" method="POST" enctype="multipart/form-data">
           @csrf
 
-          <input type="hidden" name="bantuanhibahbg_id" value="{{ $data->id }}">
+          <input type="hidden" name="penilikbangunan_id" value="{{ $data->id }}">
 
                             <!-- begin::Body -->
                             <div class="card-body">

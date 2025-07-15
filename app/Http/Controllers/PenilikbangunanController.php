@@ -436,5 +436,39 @@ public function dokpenilikpracreate($id)
         'user' => Auth::user()
     ]);
 }
+public function dokpenilikpracreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'penilikbangunan_id' => 'required|integer',
+        'tanggalkegiatan' => 'required|date',
+        'kegiatan' => 'required|string',
+        'kegiatanke' => 'required|string',
+        'uraiankegiatan' => 'required|string',
+        'catatankegiatan' => 'nullable|string',
+    ], [
+        'penilikbangunan_id.required' => 'ID Penilik Bangunan wajib diisi.',
+        'tanggalkegiatan.required' => 'Tanggal kegiatan wajib diisi.',
+        'kegiatan.required' => 'Nama kegiatan wajib diisi.',
+        'kegiatanke.required' => 'Kegiatan ke-berapa wajib diisi.',
+        'uraiankegiatan.required' => 'Uraian kegiatan wajib diisi.',
+    ]);
+
+    // Simpan ke database
+    $data = new Banhibahlapangan(); // Ganti dengan nama model kamu jika berbeda
+    $data->penilikbangunan_id = $validated['penilikbangunan_id'];
+    $data->tanggalkegiatan = $validated['tanggalkegiatan'];
+    $data->kegiatan = $validated['kegiatan'];
+    $data->kegiatanke = $validated['kegiatanke'];
+    $data->uraiankegiatan = $validated['uraiankegiatan'];
+    $data->catatankegiatan = $validated['catatankegiatan'] ?? null;
+    $data->save();
+
+    // Flash dan redirect
+    session()->flash('create', 'Data kegiatan penilik bangunan berhasil disimpan!');
+    return redirect()->back();
+}
+
+
 
 }
