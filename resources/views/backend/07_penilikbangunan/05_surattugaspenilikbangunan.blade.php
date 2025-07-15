@@ -296,23 +296,14 @@ th {
 </div>
 
 <script>
-    // Inisialisasi map ke Kabupaten Blora
-    var map = L.map('map', {
-        dragging: false,           // Nonaktifkan drag
-        scrollWheelZoom: false,   // Nonaktifkan zoom pakai scroll
-        doubleClickZoom: false,   // Nonaktifkan zoom dobel klik
-        boxZoom: false,           // Nonaktifkan zoom kotak
-        keyboard: false,          // Nonaktifkan kontrol keyboard
-        tap: false,               // Nonaktifkan tap di mobile
-        zoomControl: false        // Sembunyikan zoom control (+/-)
-    }).setView([-7.0421, 111.4046], 11);
+    // Inisialisasi map dengan semua interaksi aktif (zoom, drag), kecuali klik
+    var map = L.map('map').setView([-7.0421, 111.4046], 11);
 
-    // Tambahkan layer OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
     }).addTo(map);
 
-    // Ambil data koordinat dari input
+    // Ambil dan tampilkan koordinat sebelumnya
     var initialCoord = "{{ $data->koordinat ?? '' }}";
     if (initialCoord) {
         var coords = initialCoord.split(',');
@@ -323,6 +314,11 @@ th {
             map.setView([lat, lng], 15);
         }
     }
+
+    // Jangan ubah koordinat saat klik peta (dikunci)
+    map.on('click', function(e) {
+        // Kosong: klik tidak melakukan apa-apa
+    });
 </script>
 
 
