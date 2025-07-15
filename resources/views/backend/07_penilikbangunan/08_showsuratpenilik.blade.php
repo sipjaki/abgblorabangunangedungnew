@@ -415,9 +415,9 @@ th {
     1. Agar dilaksanakan dengan penuh tanggung jawab.
   </p>
 </div>
-
-<div class="ttd" style="font-size: 12px; margin-top: 2px; line-height: 1.6; margin-left:200px;">
+<div class="ttd" style="font-size: 12px; margin-top: 2px; line-height: 1.6; margin-left: 200px;">
   <div style="margin-left: 180px; width: 60%; text-align: center;">
+
     <p>
       Ditetapkan di : Blora<br>
       pada tanggal : {{ \Carbon\Carbon::parse($surat->tanggaltugas)->translatedFormat('d F Y') }}
@@ -429,23 +429,26 @@ th {
       KAB. BLORA<br>
       Kepala Bidang Bangunan Gedung
     </p>
-<div style="position: relative; display: inline-block; height: 100px; width: auto; margin-top:-20px;">
-  <!-- Stempel di atas, digeser kiri sedikit, lebih dominan -->
-  <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel"
-       style="position: absolute; top: 0; left: -20px; height: 100px; opacity: 0.95; z-index: 2;">
 
-  <!-- Tanda tangan di bawah, tetap utuh -->
-  <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan"
-       style="position: relative; height: 100px; opacity: 1; z-index: 1;">
-</div>
+    <div style="position: relative; display: inline-block; height: 100px; width: auto; margin-top: -20px;">
+      <!-- Stempel di atas, lebih dominan -->
+      <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel"
+           style="position: absolute; top: 0; left: -20px; height: 100px; opacity: 0.95; z-index: 2;">
+
+      <!-- Tanda tangan di bawah -->
+      <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan"
+           style="position: relative; height: 100px; opacity: 1; z-index: 1;">
+    </div>
 
     <p style="margin-top: 10px;">
       <strong><u>MOHAMAD ARIF HIDAYAT, ST</u></strong><br>
       Pembina IV/a<br>
       NIP. 19710506 199403 1 011
     </p>
+
+  </div>
 </div>
-</div>
+
 </body>
 </html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
