@@ -349,7 +349,7 @@ th {
                 </a>
 
 
-  {{-- @if($item->verifikasi1 == 'sudah')
+  @if($item->verifikasi1 == 'sudah')
     <button
         class="button-lolos"
         type="button"
@@ -366,7 +366,7 @@ th {
         <button class="button-validasinew" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Status
         </button>
-    @endif --}}
+    @endif
 </td>
 
 <!-- Modal Konfirmasi -->
@@ -432,8 +432,7 @@ th {
     }
 </script>
 
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-  {{-- <td style="text-align: center;"> --}}
+  <td style="text-align: center;">
 
                 <a href="{{ route('doklapbanhibah.show', $item->id) }}"
                     class="button-validasinew"
@@ -445,7 +444,7 @@ th {
                 </a>
             </td>
 
-            {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+            <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
     <button
         class="button-lolos"
@@ -464,7 +463,7 @@ th {
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
-</td> --}}
+</td>
 
 <!-- Modal Verifikasi2 -->
 <div id="confirmModalVerifikasi2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1001; justify-content: center; align-items: center;">
