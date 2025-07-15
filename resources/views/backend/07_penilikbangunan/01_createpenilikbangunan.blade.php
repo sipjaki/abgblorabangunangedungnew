@@ -329,18 +329,20 @@ th {
   <div class="col-12">
       <div class="mb-3">
           <label class="form-label d-flex align-items-center" for="alamatlengkap">
-              <i class="bi bi-house-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Alamat Lengkap
-            </label>
-            <textarea class="form-control @error('alamatlengkap') is-invalid @enderror" id="alamatlengkap" name="alamatlengkap" rows="3">{{ old('alamatlengkap', $data->alamatlengkap ?? '') }}</textarea>
-            @error('alamatlengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <i class="bi bi-house-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Alamat Lengkap
+          </label>
+          <textarea class="form-control @error('alamatlengkap') is-invalid @enderror" id="alamatlengkap" name="alamatlengkap" rows="3">{{ old('alamatlengkap', $data->alamatlengkap ?? '') }}</textarea>
+          @error('alamatlengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
       </div>
-    </div>
-<!-- Leaflet CSS -->
+  </div>
 
 </div>
-<div class="col-12">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<div class="row g-3">
+
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -392,8 +394,8 @@ th {
         document.getElementById('koordinat').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
     });
 </script>
-
 </div>
+
 
 {{-- JQuery AJAX untuk load Kelurahan berdasarkan Kecamatan --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
