@@ -746,6 +746,8 @@ Route::get('/dataallpenilikbg', [PenilikbangunanController::class, 'dataallpenil
 Route::get('/surattugaspenilik/{id}', [PenilikbangunanController::class, 'surattugaspenilik'])->middleware('auth')->name('surattugaspenilik');
 Route::get('/surattugaspenilikcreate/{id}', [PenilikbangunanController::class, 'surattugaspenilikcreate'])->middleware('auth')->name('surattugaspenilikcreate');
 
+Route::post('/surattugaspeniliknew', [PenilikbangunanController::class, 'surattugaspeniliknew'])->middleware('auth')->name('surattugaspeniliknew');
+
 
 Route::get('/bedatadasarpenilik/{id}', [PenilikbangunanController::class, 'bedatadasarpenilik'])->middleware('auth')->name('bedatadasarpenilik.show');
 // Route::get('/bedatadasarpenilikberkas/{id}', [PenilikbangunanController::class, 'bedatadasarpenilikberkas'])->middleware('auth')->name('bedatadasarpenilikberkas.show');

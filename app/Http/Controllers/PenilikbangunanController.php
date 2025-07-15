@@ -248,6 +248,49 @@ public function surattugaspenilikcreate($id)
     ]);
 }
 
+public function surattugaspeniliknew(Request $request)
+{
+    $validated = $request->validate([
+        'penilikbangunan_id' => 'required|string',
+        // 'pbgslfbangunan_id' => 'required|string',
+        // 'datapemilik_id' => 'required|string',
+        'petugaspenilik_id' => 'required|string',
+        'nomorsurat' => 'required|string|max:255',
+        'nomorkontrak' => 'required|string|max:255',
+        'tanggaltugas' => 'required|date',
+    ], [
+        'penilikbangunan_id.required' => 'ID Pemohon wajib diisi.',
+        'petugaspenilik_id.required' => 'ID Bangunan wajib diisi.',
+        // 'pbgslfbangunan_id.exists' => 'ID Bangunan tidak ditemukan.',
+
+        'nomorkontrak.required' => 'Nomor Kontrak wajib diisi.',
+        'nomorkontrak.exists' => 'ID Pemilik tidak ditemukan.',
+
+        'fasilitatorpbg_id.required' => 'Fasilitator wajib dipilih.',
+        'fasilitatorpbg_id.exists' => 'Fasilitator tidak ditemukan.',
+
+        'nomorsurat.required' => 'Nomor Surat tidak boleh kosong.',
+        'nomorsurat.max' => 'Nomor Surat tidak boleh lebih dari 255 karakter.',
+        'nomorkontrak.max' => 'Nomor Kontrak tidak boleh lebih dari 255 karakter.',
+
+        // 'tanggaltugas.required' => 'Tanggal Tugas wajib diisi.',
+        'tanggaltugas.required' => 'Tanggal Tugas wajib diisi.',
+        'tanggaltugas.date' => 'Tanggal Tugas harus berupa format tanggal yang valid.',
+    ]);
+
+    surattugaspenilik::create([
+        'penilikbangunan_id' => $validated['penilikbangunan_id'],
+        // 'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
+        // 'datapemilik_id' => $validated['datapemilik_id'],
+        'petugaspenilik_id' => $validated['petugaspenilik_id'],
+        'nomorsurat' => $validated['nomorsurat'] ?? null,
+        'nomorkontrak' => $validated['nomorkontrak'] ?? null,
+        'tanggaltugas' => $validated['tanggaltugas'],
+    ]);
+
+    session()->flash('create', 'Surat Tugas Inspeksi Bangunan Gedung berhasil diterbitkan.');
+    return redirect()->route('surattugaspenilik', ['id' => $validated['penilikbangunan_id']]);
+}
 
 
 }
