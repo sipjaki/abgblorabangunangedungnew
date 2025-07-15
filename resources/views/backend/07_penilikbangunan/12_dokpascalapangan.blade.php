@@ -192,7 +192,7 @@ th {
                         @canany(['superadmin', 'admin'])
 
                         <button class="button-baru" type="button"
-    onclick="location.href='/dokpenilikpracreate/{{ $data->id }}';"
+    onclick="location.href='/dokpenilikpascacreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Data Kegiatan Pasca Inspeksi
 </button>
