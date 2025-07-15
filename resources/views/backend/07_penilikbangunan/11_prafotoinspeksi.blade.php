@@ -280,6 +280,13 @@ function closeUploadModal() {
             <div class="foto-box mb-3">
                 <img src="{{ asset($item->foto) }}" alt="Foto Dokumentasi" class="foto-item" />
             </div>
+            <form action="{{ url('/fotopradelete/' . $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus foto ini?')">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm">
+                    <i class="bi bi-trash"></i> Hapus
+                </button>
+            </form>
         </div>
     @empty
         <div style="
@@ -326,6 +333,7 @@ function closeUploadModal() {
     to { opacity: 1; transform: translateY(0); }
 }
 </style>
+
 
                     </div>
                  </div>
