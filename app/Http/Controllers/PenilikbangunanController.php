@@ -13,6 +13,7 @@ use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\penilikbangunan;
 use App\Models\petugaspenilik;
+use App\Models\prapenilikdok;
 use App\Models\surattugaspenilik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -408,10 +409,10 @@ public function dokpenilikpra($id)
     }
 
         // Menggunakan paginate() untuk pagination
-        $dataceklapangan = banhibahlapangan::where('bantuanhibahbg_id', $databantuanteknis->id)->paginate(50);
+        $dataceklapangan = prapenilikdok::where('bantuanhibahbg_id', $databantuanteknis->id)->paginate(50);
 
-    return view('backend.10_bantuanhibah.06_doklapanganhibah', [
-        'title' => 'Dokumentasi Cek Lapangan Hibah Bangunan',
+    return view('backend.07_penilikbangunan.09_doklapprainspeksi', [
+        'title' => 'Dokumentasi Cek Lapangan Pra Inspeksi Bangunan Gedung',
         'subdata' => $dataceklapangan,
         'data' => $databantuanteknis,
         'user' => Auth::user()
