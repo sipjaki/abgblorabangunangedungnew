@@ -271,98 +271,15 @@ th {
                                 @forelse ($subdata as $item)
     <tr>
         <td>{{ $loop->iteration }}</td>
-        <td>{{ $item->kegiatan }}</td>
-<td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
-
-{{-- <td style="vertical-align: top; padding: 10px;">
-    @if ($item->berkas1 && file_exists(public_path('storage/' . $item->berkas1)))
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset('storage/' . $item->berkas1) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset('storage/' . $item->berkas1) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 1
-            </a>
-        </div>
-    @elseif ($item->berkas1)
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset($item->berkas1) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset($item->berkas1) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 1
-            </a>
-        </div>
-    @else
-        <p class="text-muted text-center" style="font-size: 12px;">Tidak Ada Berkas Dukung 1</p>
-    @endif
+<td>{{ $item->kegiatan }}</td>
+<td>
+    <button class="button-berkas">
+        {{ $item->kegiatanke }}
+    </button>
 </td>
-
-<td style="vertical-align: top; padding: 10px;">
-    @if ($item->berkas2 && file_exists(public_path('storage/' . $item->berkas2)))
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset('storage/' . $item->berkas2) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset('storage/' . $item->berkas2) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 2
-            </a>
-        </div>
-    @elseif ($item->berkas2)
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset($item->berkas2) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset($item->berkas2) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 2
-            </a>
-        </div>
-    @else
-        <p class="text-muted text-center" style="font-size: 12px;">Tidak Ada Berkas Dukung 2</p>
-    @endif
-</td> --}}
-
-
-@for ($i = 1; $i <= 6; $i++)
-    <td>
-        <div style="margin-top: 10px;">
-            @php
-                $foto = 'foto' . $i;
-                $path = $item->$foto ?? null;
-                $isStorage = $path && file_exists(public_path('storage/' . $path));
-                $url = $isStorage ? asset('storage/' . $path) : ($path ? asset($path) : null);
-            @endphp
-
-            @if($url)
-                <img src="{{ $url }}" alt="Foto Dokumentasi {{ $i }}" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-
-                <div class="text-center mt-2">
-                    <a href="{{ $url }}" class="btn btn-sm btn-outline-primary" download>
-                        <i class="bi bi-download" style="margin-right: 4px;"></i> Download Foto {{ $i }}
-                    </a>
-                </div>
-            @else
-                <p style="font-size: 11px; text-align: center;">Tidak Ada Foto {{ $i }}!</p>
-            @endif
-        </div>
-    </td>
-@endfor
+<td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
+<td>{{ $item->uraiankegiatan }}</td>
+<td>{{ $item->catatankegiatan }}</td>
 
 @canany(['superadmin', 'admin'])
 
