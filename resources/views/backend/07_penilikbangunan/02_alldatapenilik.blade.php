@@ -245,7 +245,7 @@ th {
 
 
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Surat Tugas </th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Status Lapangan
@@ -338,7 +338,7 @@ th {
 
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+{{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
 
         <a href="{{ route('dokhibahbantuanberkas.show', $item->id) }}"
                     class="button-validasinew"
@@ -367,7 +367,7 @@ th {
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Status
         </button>
     @endif
-</td>
+</td> --}}
 
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
