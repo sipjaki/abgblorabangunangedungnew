@@ -218,7 +218,7 @@ public function surattugaspenilik($id)
 $subdatapemilik = surattugaspenilik::where('penilikbangunan_id', $data->id)->get();
 
     // Kirim data ke view
-    return view('backend.09_bantuangambar.01_berkaspermohonan.05_surattugaspenilikbangunan', [
+    return view('backend.07_penilikbangunan.05_surattugaspenilikbangunan', [
         'title' => 'Surat Tugas Penilik Bangunan Gedung',
         'title_halaman' => 'Surat Tugas Inspeksi (Penilik) Bangunan Gedung' ,
         'user' => $user,
