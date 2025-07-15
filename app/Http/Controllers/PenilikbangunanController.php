@@ -611,25 +611,6 @@ public function dokpenilikpascacreate($id)
 }
 
 
-public function dokpenilikpascafoto($id)
-{
-    // Ambil data prapenilikdok berdasarkan ID
-    $databantuanteknis = pascapenilikdok::find($id);
-
-    if (!$databantuanteknis) {
-        abort(404, 'Data prapenilikdok tidak ditemukan');
-    }
-
-    // Ambil data foto dokumentasi lapangan, paginate 50 per halaman
-    $dataceklapangan = fotopascapenilik::where('pascapenilikdok_id', $id)->paginate(50);
-
-    return view('backend.07_penilikbangunan.13_prafotoinspeksi', [
-        'title' => 'Daftar Foto dan Berkas Hasil Pra inspeksi Dokumentasi Lapangan',
-        'prapenilikdok' => $databantuanteknis,
-        'data' => $dataceklapangan,
-        'user' => Auth::user(),
-    ]);
-}
 
 public function dokpenilikpascacreatenew(Request $request)
 {
@@ -668,6 +649,26 @@ public function dokpenilikpascacreatenew(Request $request)
     // Flash dan redirect
     session()->flash('create', 'Data kegiatan penilik bangunan berhasil disimpan!');
     return redirect()->route('dokpenilikpasca', ['id' => $validated['penilikbangunan_id']]);
+}
+
+public function dokpenilikpascafoto($id)
+{
+    // Ambil data prapenilikdok berdasarkan ID
+    $databantuanteknis = pascapenilikdok::find($id);
+
+    if (!$databantuanteknis) {
+        abort(404, 'Data prapenilikdok tidak ditemukan');
+    }
+
+    // Ambil data foto dokumentasi lapangan, paginate 50 per halaman
+    $dataceklapangan = fotopascapenilik::where('pascapenilikdok_id', $id)->paginate(50);
+
+    return view('backend.07_penilikbangunan.13_prafotoinspeksi', [
+        'title' => 'Daftar Foto dan Berkas Hasil Pra inspeksi Dokumentasi Lapangan',
+        'prapenilikdok' => $databantuanteknis,
+        'data' => $dataceklapangan,
+        'user' => Auth::user(),
+    ]);
 }
 
 

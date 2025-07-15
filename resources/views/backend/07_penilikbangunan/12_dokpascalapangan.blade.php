@@ -314,7 +314,7 @@ th {
 </td>
 
 <td>
-  <a href="{{ route('dokpenilikprafoto', $item->id) }}" class="button-baru" style="display: inline-flex; align-items: center; text-decoration: none;">
+  <a href="{{ route('dokpenilikpascafoto', $item->id) }}" class="button-baru" style="display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-camera-fill" style="margin-right: 6px;"></i> Lihat Foto & Berkas
   </a>
 </td>
