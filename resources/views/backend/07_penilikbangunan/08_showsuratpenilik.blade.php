@@ -439,6 +439,12 @@ th {
        style="position: relative; height: 100px; opacity: 1; z-index: 1;">
 </div>
 
+    <p style="margin-top: 10px;">
+      <strong><u>MOHAMAD ARIF HIDAYAT, ST</u></strong><br>
+      Pembina IV/a<br>
+      NIP. 19710506 199403 1 011
+    </p>
+</div>
 </div>
 </body>
 </html>
