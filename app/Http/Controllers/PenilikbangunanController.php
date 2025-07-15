@@ -591,4 +591,22 @@ public function dokpenilikpasca($id)
     ]);
 }
 
+
+public function dokpenilikpascacreate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = penilikbangunan::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.07_penilikbangunan.12_uploadkegiatanpasca', [
+        'title' => 'Catatan Kegiatan Dokumentasi Pasca Inspeksi Bangunan Gedung',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('uraiankegiatan')->nullable();
             $table->string('catatankegiatan')->nullable();
 
-            $table->string('tanggalmulai')->nullable();
-            $table->string('tanggalselesai')->nullable();
+            $table->date('tanggalmulai')->nullable();
+            $table->date('tanggalselesai')->nullable();
             $table->string('hasilinspeksi')->nullable();
 
             $table->string('cadangan1')->nullable();

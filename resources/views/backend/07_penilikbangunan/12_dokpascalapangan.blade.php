@@ -194,7 +194,7 @@ th {
                         <button class="button-baru" type="button"
     onclick="location.href='/dokpenilikpracreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
-    <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Data Kegiatan Pra Inspeksi
+    <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Data Kegiatan Pasca Inspeksi
 </button>
 
 <a href="{{ url('/dataallpenilikbg') }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
@@ -255,12 +255,27 @@ th {
     <th style="background-color: #ADD8E6; width:300px;">
         <i class="bi bi-card-text"></i> Uraian Kegiatan
     </th>
+
     <th style="background-color: #ADD8E6; width:300px;">
         <i class="bi bi-journal-check"></i> Catatan Kegiatan
     </th>
+
+    <th style="background-color: #ADD8E6; width:300px;">
+        <i class="bi bi-journal-check"></i> Tanggal Mulai
+    </th>
+
+    <th style="background-color: #ADD8E6; width:300px;">
+        <i class="bi bi-journal-check"></i> Tanggal Selesai
+    </th>
+
+    <th style="background-color: #ADD8E6; width:300px;">
+        <i class="bi bi-journal-check"></i> Hasil Inspeksi
+    </th>
+
     <th style="background-color: #ADD8E6; width:300px;">
         <i class="bi bi-journal-check"></i> Lihat Foto & Berkas
     </th>
+
     @canany(['superadmin', 'admin'])
     <th style="background-color: #ADD8E6; width:120px;">
         <i class="bi bi-tools"></i> Aksi
@@ -284,6 +299,19 @@ th {
 </td>
 <td>{{ $item->uraiankegiatan }}</td>
 <td>{{ $item->catatankegiatan }}</td>
+<td>{{ \Carbon\Carbon::parse($item->tanggalmulai)->translatedFormat('d F Y') }}</td>
+<td>{{ \Carbon\Carbon::parse($item->tanggalselesai)->translatedFormat('d F Y') }}</td>
+<td>
+    @if($item->hasilinspeksi === 'Lengkap')
+        <button class="btn btn-success btn-sm" disabled>
+            <i class="bi bi-check-circle me-1"></i> Berkas Lengkap
+        </button>
+    @else
+        <button class="btn btn-danger btn-sm" disabled>
+            <i class="bi bi-x-circle me-1"></i> Dikembalikan
+        </button>
+    @endif
+</td>
 
 <td>
   <a href="{{ route('dokpenilikprafoto', $item->id) }}" class="button-baru" style="display: inline-flex; align-items: center; text-decoration: none;">
