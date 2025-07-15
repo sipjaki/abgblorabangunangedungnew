@@ -153,11 +153,85 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
+<!-- Tombol Tambah Foto dengan icon bi-plus-circle -->
+<button
+    type="button"
+    class="button-newvalidasi"
+    style="cursor: pointer; margin-left:10px; color:black; display: inline-flex; align-items: center;"
+    onclick="openUploadModal()"
+>
+    <i class="bi bi-plus-circle" style="margin-right: 5px;"></i> Tambah Foto
+</button>
+
+<!-- Modal Upload Foto -->
+<div id="uploadModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 20px 30px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+        <h3 style="font-family: 'Poppins', sans-serif; margin-bottom: 15px; color: navy;">Upload Foto Baru</h3>
+
+        <form id="uploadForm" action="{{ route('dokpenilikprafotoupload') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            <div class="mb-3">
+                <label for="foto" style="font-weight: 600; color: navy;">Foto</label>
+                <input
+                    type="file"
+                    name="foto"
+                    id="foto"
+                    accept="image/*"
+                    required
+                    class="form-control @error('foto') is-invalid @enderror"
+                />
+                @error('foto')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                <button type="button" onclick="closeUploadModal()" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;">
+                    Batal
+                </button>
+                <button type="submit" class="button-newvalidasi" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                    <i class="bi bi-upload" style="margin-right: 5px;"></i> Upload
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function openUploadModal() {
+    document.getElementById('uploadModal').style.display = 'flex';
+}
+
+function closeUploadModal() {
+    document.getElementById('uploadModal').style.display = 'none';
+}
+</script>
+
+<style>
+.button-newvalidasi {
+    background-color: #10B981;
+    border: none;
+    padding: 8px 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.button-newvalidasi:hover {
+    background-color: #0f9e6e;
+}
+</style>
+
                         <button class="button-newvalidasi" type="button"
-    onclick="window.location.href='{{ url('dataallhibahbangunan') }}';"
+    onclick="window.location.href='{{ route('dokpenilikpra', ['id' => $id]) }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </button>
+
 
 
 
@@ -196,13 +270,33 @@ th {
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                <div class="row">
-    @foreach ($data as $item)
+    @forelse ($data as $item)
         <div class="col-6 col-md-3 text-center">
             <div class="foto-box mb-3">
                 <img src="{{ asset($item->foto) }}" alt="Foto Dokumentasi" class="foto-item" />
             </div>
         </div>
-    @endforeach
+    @empty
+        <div style="
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            color: #6c757d;
+            background-color: #f8f9fa;
+            border: 2px dashed #ced4da;
+            border-radius: 12px;
+            font-size: 16px;
+            animation: fadeIn 0.5s ease-in-out;
+            margin-top: 1rem;
+        ">
+            <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+            Data Tidak Ditemukan !!
+        </div>
+    @endforelse
 </div>
 
 <style>
@@ -220,6 +314,11 @@ th {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>
 

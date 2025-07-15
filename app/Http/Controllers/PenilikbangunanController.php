@@ -484,7 +484,7 @@ public function dokpenilikprafoto($id)
     $dataceklapangan = fotoprapenilik::where('prapenilikdok_id', $id)->paginate(50);
 
     return view('backend.07_penilikbangunan.11_prafotoinspeksi', [
-        'title' => 'Daftar Foto Hasil Dokumentasi Lapangan',
+        'title' => 'Daftar Foto Hasil Pra inspeksi Dokumentasi Lapangan',
         'prapenilikdok' => $databantuanteknis,
         'data' => $dataceklapangan,
         'user' => Auth::user(),
