@@ -356,7 +356,7 @@ th {
         </div>
 
         {{-- Peta --}}
-        <div id="map" style="height: 350px; border-radius: 10px; border: 2px solid #ccc;"></div>
+        <div id="map" style="height: 750px; border-radius: 10px; border: 2px solid #ccc;"></div>
     </div>
 
 </div>
@@ -368,7 +368,7 @@ th {
     var map = L.map('map').setView([-7.0421, 111.4046], 11); // Koordinat Blora
 
     // Tambahkan layer peta dari OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('Hak Cipta', {
         attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
     }).addTo(map);
 
