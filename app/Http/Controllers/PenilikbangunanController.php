@@ -455,7 +455,7 @@ public function dokpenilikpracreatenew(Request $request)
     ]);
 
     // Simpan ke database
-    $data = new Banhibahlapangan(); // Ganti dengan nama model kamu jika berbeda
+    $data = new prapenilikdok(); // Ganti dengan nama model kamu jika berbeda
     $data->penilikbangunan_id = $validated['penilikbangunan_id'];
     $data->tanggalkegiatan = $validated['tanggalkegiatan'];
     $data->kegiatan = $validated['kegiatan'];
@@ -464,9 +464,10 @@ public function dokpenilikpracreatenew(Request $request)
     $data->catatankegiatan = $validated['catatankegiatan'] ?? null;
     $data->save();
 
-    // Flash dan redirect
-    session()->flash('create', 'Data kegiatan penilik bangunan berhasil disimpan!');
-    return redirect()->back();
+        // Flash dan redirect
+        session()->flash('create', 'Data kegiatan penilik bangunan berhasil disimpan!');
+        return redirect()->route('dokpenilikpra', ['id' => $validated['penilikbangunan_id']]);
+
 }
 
 
