@@ -200,23 +200,49 @@ th {
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-person text-danger"></i> Pembuat Data
 </th>
-                                 {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-person"></i> Pembuat Data </th> --}}
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-building text-danger"></i> Fungsi Bangunan
+ <th style="background-color: #ADD8E6;">
+    <i class="bi bi-person-vcard text-primary"></i> Nama Pemohon
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-building-check text-danger"></i> Subfungsi Bangunan
+    <i class="bi bi-card-list text-primary"></i> NIK
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-house-door text-danger"></i> Nama Bangunan
+    <i class="bi bi-building text-primary"></i> Fungsi Bangunan
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-file-earmark-text text-danger"></i> Nomor KKPR
+    <i class="bi bi-building-check text-primary"></i> Subfungsi Bangunan
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-geo-alt-fill text-primary"></i> Provinsi
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-geo text-primary"></i> Kabupaten
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-geo-alt text-primary"></i> Kecamatan
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-geo-alt text-primary"></i> Kelurahan/Desa
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-signpost text-primary"></i> Alamat Lengkap
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-crosshair text-primary"></i> Koordinat
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-house-door text-primary"></i> Nama Bangunan
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-fullscreen text-primary"></i> Luas Bangunan (m²)
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-layers text-primary"></i> Jumlah Lantai
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-signpost-2 text-primary"></i> GSB (m)
 </th>
 
-<th style="background-color: #ADD8E6;">
-    <i class="fas fa-building text-danger"></i> Informasi Umum Bangunan
-</th>
 
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Surat Tugas </th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
@@ -243,12 +269,20 @@ th {
                                 @forelse ($data as $item)
                                 <tr class="align-middle">
                                     <td style="text-align: center;">{{ $loop->iteration }}</td>
-                       <td style="text-align: left;">{{ !empty($item->user_id) ? $item->user->name : '-' }}</td>
+                       <td style="text-align: left;">{{ !empty($item->namapemohon) ? $item->namapemohon : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->nik) ? $item->nik : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->fungsibangunan) ? $item->fungsibangunan : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->subfungsibangunan) ? $item->subfungsibangunan : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->provinsi) ? $item->provinsi : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->kabupaten) ? $item->kabupaten : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->kecamatanblora->nama) ? $item->kecamatanblora->nama : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->kelurahandesa->nama) ? $item->kelurahandesa->nama : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->alamatlengkap) ? $item->alamatlengkap : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->koordinat) ? $item->koordinat : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->namabangunan) ? $item->namabangunan : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->nomorkkpr) ? $item->nomorkkpr : '-' }}</td>
-
+<td style="text-align: left;">{{ !empty($item->luasbangunan) ? $item->luasbangunan . ' m²' : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->jumlahlantai) ? $item->jumlahlantai : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->gsb) ? $item->gsb . ' m' : '-' }}</td>
    <td style="text-align: center;">
     <div style="display: inline-flex; justify-content: center; align-items: center; gap: 10px;">
         <a href="{{ route('bedatadasarpenilik.show', $item->id) }}"
