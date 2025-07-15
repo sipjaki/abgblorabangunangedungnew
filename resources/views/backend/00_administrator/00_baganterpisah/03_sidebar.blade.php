@@ -1204,18 +1204,19 @@
     </li> --}}
 
     <li class="nav-item">
-        <a href="/datanewpenilik" class="nav-link" style="display: flex; align-items: center;">
-            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Buat Inspeksi</p>
-        </a>
-    </li>
+    <a href="/datanewpenilik" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-clipboard-plus nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Buat Inspeksi</p>
+    </a>
+</li>
 
-    <li class="nav-item">
-        <a href="/dataallpenilikbg" class="nav-link" style="display: flex; align-items: center;">
-            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Data Inspeksi</p>
-        </a>
-    </li>
+<li class="nav-item">
+    <a href="/dataallpenilikbg" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Data Inspeksi</p>
+    </a>
+</li>
+
 
 
 <div style="margin-bottom: 10px; margin-top: 10px;">
@@ -1235,12 +1236,13 @@
     </p>
 </div>
 
-    <li class="nav-item">
-        <a href="/dataallpenilikbg" class="nav-link" style="display: flex; align-items: center;">
-            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Data Petugas</p>
-        </a>
-    </li>
+<li class="nav-item">
+    <a href="/dataallpenilikbg" class="nav-link" style="display: flex; align-items: center;">
+        <i class="bi bi-people nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+        <p style="color: white; margin: 0 0 0 8px;">Data Petugas</p>
+    </a>
+</li>
+
 
 </ul>
 
