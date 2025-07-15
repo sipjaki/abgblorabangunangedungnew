@@ -58,4 +58,9 @@ class penilikbangunan extends Model
         return $this->hasMany(surattugaspenilik::class);
     }
 
+    public function prapenilikdok()
+    {
+        return $this->hasMany(prapenilikdok::class);
+    }
+
 }

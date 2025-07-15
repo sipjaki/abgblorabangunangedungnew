@@ -437,7 +437,7 @@ th {
 </script>
 
               <td style="text-align: center;">
-                    <a href="{{ route('doklapbanhibah.show', $item->id) }}"
+                    <a href="{{ route('dokpenilikpra/1', $item->id) }}"
                     class="button-baru">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Pra
 
@@ -446,7 +446,7 @@ th {
 
             <td style="text-align: center;">
                     <a href="{{ route('doklapbanhibah.show', $item->id) }}"
-                    class="button-validasinew">
+                    class="button-baru">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Pasca
 
                 </a>

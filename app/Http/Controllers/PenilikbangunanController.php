@@ -399,4 +399,23 @@ public function surattugaspenilikshownew(Request $request, $id)
 }
 
 
+public function dokpenilikpra($id)
+{
+    $databantuanteknis = penilikbangunan::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = banhibahlapangan::where('bantuanhibahbg_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.10_bantuanhibah.06_doklapanganhibah', [
+        'title' => 'Dokumentasi Cek Lapangan Hibah Bangunan',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }
