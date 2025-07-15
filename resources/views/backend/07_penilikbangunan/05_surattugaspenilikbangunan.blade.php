@@ -265,7 +265,7 @@ th {
         </div>
     @endforeach
 
-    <div class="row g-3">
+<div class="row g-3">
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -280,13 +280,13 @@ th {
             </label>
             <input
                 type="text"
-                class="form-control @error('koordinat') is-invalid @enderror"
+                class="form-control"
                 id="koordinat"
                 name="koordinat"
                 value="{{ old('koordinat', $data->koordinat ?? '') }}"
-                placeholder="Klik peta untuk mengisi koordinat"
+                readonly
+                style="background-color: #f5f5f5; cursor: not-allowed;"
             >
-            @error('koordinat') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
 
         {{-- Peta --}}
@@ -297,37 +297,32 @@ th {
 
 <script>
     // Inisialisasi map ke Kabupaten Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11);
+    var map = L.map('map', {
+        dragging: false,           // Nonaktifkan drag
+        scrollWheelZoom: false,   // Nonaktifkan zoom pakai scroll
+        doubleClickZoom: false,   // Nonaktifkan zoom dobel klik
+        boxZoom: false,           // Nonaktifkan zoom kotak
+        keyboard: false,          // Nonaktifkan kontrol keyboard
+        tap: false,               // Nonaktifkan tap di mobile
+        zoomControl: false        // Sembunyikan zoom control (+/-)
+    }).setView([-7.0421, 111.4046], 11);
 
     // Tambahkan layer OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
     }).addTo(map);
 
-    // Cek input dan tampilkan marker jika ada koordinat lama
-    var marker;
-    var input = document.getElementById('koordinat');
+    // Ambil data koordinat dari input
     var initialCoord = "{{ $data->koordinat ?? '' }}";
-
     if (initialCoord) {
         var coords = initialCoord.split(',');
         if (coords.length === 2) {
             var lat = parseFloat(coords[0]);
             var lng = parseFloat(coords[1]);
-            marker = L.marker([lat, lng]).addTo(map);
+            L.marker([lat, lng]).addTo(map);
             map.setView([lat, lng], 15);
         }
     }
-
-    // Ketika peta diklik, pindahkan marker dan isi input
-    map.on('click', function(e) {
-        var latlng = e.latlng;
-        if (marker) {
-            map.removeLayer(marker);
-        }
-        marker = L.marker(latlng).addTo(map);
-        input.value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
-    });
 </script>
 
 
