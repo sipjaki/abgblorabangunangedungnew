@@ -189,13 +189,11 @@ th {
 <br>
 
 <div class="container" style="margin-bottom: 20px;">
-
-    <a href="/bebantuangambar">
-        <button class="button-baru">
-            Berkas Permohonan
-        </button>
-    </a>
-
+<a href="/dataallpenilikbg">
+    <button class="button-baru">
+        <i class="bi bi-folder2-open me-2"></i> Berkas Permohonan
+    </button>
+</a>
 </div>
 
                  <hr>
@@ -215,7 +213,7 @@ th {
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Surat Tugas Bantuan Gambar</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Surat Tugas Inspeksi Bangunan Gedung</h5>
     </div>
 </div>
 
@@ -226,24 +224,24 @@ th {
 @php
     $infoItems = [
         [
-            'icon' => 'bi-person-vcard-fill', // lebih cocok untuk NIK/KTP
+            'icon' => 'bi-person-vcard-fill', // ✅ cocok untuk NIK
             'title' => 'Nomor Induk Kependudukan',
-            'value' => $data->nikktp ?? '-',
+            'value' => $data->nik ?? '-',
         ],
         [
-            'icon' => 'bi-calendar-event-fill', // ikon kalender yang lebih detail
-            'title' => 'Tanggal Permohonan',
-            'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
+            'icon' => 'bi-person-fill', // ✅ lebih pas untuk nama lengkap
+            'title' => 'Nama Lengkap Pemohon',
+            'value' => $data->namalengkap ?? '-',
         ],
         [
-            'icon' => 'bi-telephone-fill', // ikon telepon langsung
-            'title' => 'Nomor Telepon',
-            'value' => $data->nomortelepon ?? '-',
+            'icon' => 'bi-building', // ✅ cocok untuk Fungsi Bangunan
+            'title' => 'Fungsi Bangunan',
+            'value' => $data->fungsibangunan ?? '-',
         ],
         [
-            'icon' => 'bi-house-gear-fill', // ikon rumah dengan pengaturan (klasifikasi bangunan)
+            'icon' => 'bi-diagram-3-fill', // ✅ cocok untuk klasifikasi/subfungsi bangunan
             'title' => 'Klasifikasi Bangunan',
-            'value' => $user->klasifikasibangunan ?? '-',
+            'value' => $user->subfungsibangunan ?? '-',
         ],
     ];
 @endphp
