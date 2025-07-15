@@ -152,8 +152,7 @@ th {
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-
-<!-- Tombol Tambah Foto dengan icon bi-plus-circle -->
+<!-- Tombol Tambah Foto -->
 <button
     type="button"
     class="button-newvalidasi"
@@ -168,8 +167,11 @@ th {
     <div style="background: white; padding: 20px 30px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
         <h3 style="font-family: 'Poppins', sans-serif; margin-bottom: 15px; color: navy;">Upload Foto Baru</h3>
 
-        <form id="uploadForm" action="{{ route('dokpenilikprafotoupload') }}" method="POST" enctype="multipart/form-data">
+        <form id="uploadForm" action="{{ route('dokpenilikpra.uploadfoto') }}" method="POST" enctype="multipart/form-data">
             @csrf
+
+            <!-- Input Hidden prapenilikdok_id -->
+            <input type="hidden" name="prapenilikdok_id" value="{{ $prapenilikdok->id }}">
 
             <div class="mb-3">
                 <label for="foto" style="font-weight: 600; color: navy;">Foto</label>
@@ -225,6 +227,7 @@ function closeUploadModal() {
     background-color: #0f9e6e;
 }
 </style>
+
 
                         <button class="button-newvalidasi" type="button"
     onclick="window.location.href='{{ route('dokpenilikpra', ['id' => $id]) }}';"
