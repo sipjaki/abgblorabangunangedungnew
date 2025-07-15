@@ -167,7 +167,7 @@ th {
     <div style="background: white; padding: 20px 30px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
         <h3 style="font-family: 'Poppins', sans-serif; margin-bottom: 15px; color: navy;">Upload Foto Baru</h3>
 
-        <form id="uploadForm" action="{{ route('dokpenilikpra.uploadfoto') }}" method="POST" enctype="multipart/form-data">
+        <form id="uploadForm" action="{{ route('dokpenilikprafotoupload') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <!-- Input Hidden prapenilikdok_id -->

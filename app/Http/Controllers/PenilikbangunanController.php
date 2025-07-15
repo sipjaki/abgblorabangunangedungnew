@@ -437,6 +437,7 @@ public function dokpenilikpracreate($id)
         'user' => Auth::user()
     ]);
 }
+
 public function dokpenilikpracreatenew(Request $request)
 {
     // Validasi input
@@ -489,6 +490,41 @@ public function dokpenilikprafoto($id)
         'data' => $dataceklapangan,
         'user' => Auth::user(),
     ]);
+}
+
+public function dokpenilikprafotoupload(Request $request)
+{
+    $validated = $request->validate([
+        'prapenilikdok_id' => 'required|string',
+        'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
+    ], [
+        'prapenilikdok_id.required' => 'ID prapenilikdok wajib diisi.',
+        'prapenilikdok_id.exists' => 'ID prapenilikdok tidak valid.',
+        'foto.required' => 'Foto wajib diunggah.',
+        'foto.image' => 'File harus berupa gambar.',
+        'foto.mimes' => 'Format gambar harus jpeg, png, jpg, gif, atau svg.',
+        'foto.max' => 'Ukuran maksimal foto 10MB.',
+    ]);
+
+    // Upload file langsung ke public folder
+    if ($request->hasFile('foto')) {
+        $file = $request->file('foto');
+        $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('07_penilikbangunan/01_berkasfotopra'), $filename);
+        $path = '07_penilikbangunan/01_berkasfotopra/' . $filename;
+    } else {
+        $path = null;
+    }
+
+    // Simpan data baru foto
+    $foto = new Fotoprapenilik();
+    $foto->prapenilikdok_id = $validated['prapenilikdok_id'];
+    $foto->foto = $path;
+    $foto->save();
+
+        // session()->flash('create', 'Foto berhasil diunggah!');
+        return redirect()->back();
+
 }
 
 }
