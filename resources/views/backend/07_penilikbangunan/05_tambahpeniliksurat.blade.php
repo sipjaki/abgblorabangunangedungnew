@@ -202,11 +202,10 @@ th {
                                 <div class="row">
            {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
 
-
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan Bantuan Gambar Bangunan Gedung</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Surat Tugas Inspeksi Bangunan Gedung</h5>
     </div>
 </div>
 
@@ -217,28 +216,27 @@ th {
 @php
     $infoItems = [
         [
-            'icon' => 'bi-person-vcard-fill', // lebih cocok untuk NIK/KTP
+            'icon' => 'bi-person-vcard-fill', // ✅ cocok untuk NIK
             'title' => 'Nomor Induk Kependudukan',
-            'value' => $data->nikktp ?? '-',
+            'value' => $data->nik ?? '-',
         ],
         [
-            'icon' => 'bi-calendar-event-fill', // ikon kalender yang lebih detail
-            'title' => 'Tanggal Permohonan',
-            'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
+            'icon' => 'bi-person-fill', // ✅ lebih pas untuk nama lengkap
+            'title' => 'Nama Lengkap Pemohon',
+            'value' => $data->namapemohon ?? '-',
         ],
         [
-            'icon' => 'bi-telephone-fill', // ikon telepon langsung
-            'title' => 'Nomor Telepon',
-            'value' => $data->nomortelepon ?? '-',
+            'icon' => 'bi-building', // ✅ cocok untuk Fungsi Bangunan
+            'title' => 'Fungsi Bangunan',
+            'value' => $data->fungsibangunan ?? '-',
         ],
         [
-            'icon' => 'bi-house-gear-fill', // ikon rumah dengan pengaturan (klasifikasi bangunan)
+            'icon' => 'bi-diagram-3-fill', // ✅ cocok untuk klasifikasi/subfungsi bangunan
             'title' => 'Klasifikasi Bangunan',
-            'value' => $user->klasifikasibangunan ?? '-',
+            'value' => $data->subfungsibangunan ?? '-',
         ],
     ];
 @endphp
-
 
 
     @foreach ($infoItems as $item)
@@ -259,7 +257,65 @@ th {
         </div>
     @endforeach
 
+<div class="row g-3">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    {{-- Koordinat --}}
+    <div class="col-md-12">
+        <div class="mb-3">
+            <label class="form-label d-flex align-items-center" for="koordinat">
+                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
+            </label>
+            <input
+                type="text"
+                class="form-control"
+                id="koordinat"
+                name="koordinat"
+                value="{{ old('koordinat', $data->koordinat ?? '') }}"
+                readonly
+                style="background-color: #f5f5f5; cursor: not-allowed;"
+            >
+        </div>
+
+        {{-- Peta --}}
+        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
+    </div>
+
 </div>
+
+<script>
+    // Inisialisasi map dengan semua interaksi aktif (zoom, drag), kecuali klik
+    var map = L.map('map').setView([-7.0421, 111.4046], 11);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
+    }).addTo(map);
+
+    // Ambil dan tampilkan koordinat sebelumnya
+    var initialCoord = "{{ $data->koordinat ?? '' }}";
+    if (initialCoord) {
+        var coords = initialCoord.split(',');
+        if (coords.length === 2) {
+            var lat = parseFloat(coords[0]);
+            var lng = parseFloat(coords[1]);
+            L.marker([lat, lng]).addTo(map);
+            map.setView([lat, lng], 15);
+        }
+    }
+
+    // Jangan ubah koordinat saat klik peta (dikunci)
+    map.on('click', function(e) {
+        // Kosong: klik tidak melakukan apa-apa
+    });
+</script>
+
+
+</div>
+
 
 <div class="col-12">
     {{-- <div class="mb-3">
