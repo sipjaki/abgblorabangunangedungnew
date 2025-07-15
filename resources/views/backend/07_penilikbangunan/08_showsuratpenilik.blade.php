@@ -348,13 +348,12 @@ th {
       </div>
       <div style="clear: both;"></div>
     </div>
-
 <div class="judul-surat" style="font-size: 12px; text-align: center; font-weight: bold;">
   SURAT TUGAS<br>
   <span style="text-decoration: none; font-weight: normal;">Nomor : {{ $surat->nomorsurat ?? '-' }}</span>
 </div>
 
-<p style="font-size: 12px; margin-top: 12px;"><strong>DASAR</strong> : Surat Perjanjian Kontrak Pekerjaan Fasilitator Persetujuan Bangunan Gedung Tahun Anggaran 2025 Kabupaten Blora Nomor : {{ $surat->nomorkontrak ?? '-' }}</p>
+<p style="font-size: 12px; margin-top: 12px;"><strong>DASAR</strong> : PP 16 Tahun 2021 Tentang Peraturan Pelaksanaan undang-undang Tentang Bangunan Gedung Perda No 1 tahun 2016 Tentang Bangunan Gedung.</p>
 
 <div style="font-size: 12px; text-align: center; font-weight: bold; margin: 20px 0;">
   MENUGASKAN
@@ -363,51 +362,36 @@ th {
 <div style="font-size: 12px; margin-top: -20px;">
   <p><strong>KEPADA :</strong></p>
   <table class="tabel-info" style="margin-top: -20px;">
-    <tr><td style="width: 180px;">Nama</td><td>: {{ $surat->fasilitatorpbg->namalengkap ?? '' }}</td></tr>
-    <tr><td>NIK</td><td>: {{ $surat->fasilitatorpbg->nik ?? '-' }}</td></tr>
-    <tr><td>Alamat</td><td>: {{ $surat->fasilitatorpbg->alamat ?? '-' }}</td></tr>
+    <tr><td style="width: 180px;">Nama</td><td>: {{ $surat->fasilitatorpbg->namalengkap ?? '-' }}</td></tr>
+    <tr><td>NIP</td><td>: {{ $surat->fasilitatorpbg->nip ?? '-' }}</td></tr>
     <tr><td>Jabatan</td><td>: {{ $surat->fasilitatorpbg->jabatan ?? '-' }}</td></tr>
   </table>
-<br>
-  <p><strong>UNTUK</strong> :</p>
-<ol style="margin: 0 0 0 20px; padding-left: 10px; margin-top: -15px; margin-left: 50px;">
-  <li>Melaksanakan tugas survei lokasi pemohon PBG untuk pembuatan dokumen rencana teknis bangunan gedung.</li>
-  <li>Membantu pemohon PBG dalam mengurus izin PBG pada aplikasi SIMBG.</li>
-  <li>Mendampingi pemohon pada sidang konsultasi PBG.</li>
-  <li>
-    Pemohon yang didampingi:
-  <table style="border-collapse: collapse; margin-left: 20px; font-size: 12px; margin-top:20px;">
-  <tr>
-    <td style="padding: 2px 8px 2px 0;">Nama</td>
-    <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0; text-transform:uppercase;" >{{ $surat->gambarbantuan->namapemohon ?? '-' }}</td>
-  </tr>
-  <tr>
-    <td style="padding: 2px 8px 2px 0;">Alamat</td>
-    <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0;">{{ $surat->gambarbantuan->alamatpemohon ?? '-' }}</td>
-  </tr>
-  <tr>
-    <td style="padding: 2px 8px 2px 0;">NIK</td>
-    <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0;">{{ $surat->gambarbantuan->nikktp ?? '-' }}</td>
-  </tr>
-  <tr>
-    <td style="padding: 2px 8px 2px 0;">Telp</td>
-    <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0;">{{ $surat->gambarbantuan->nomortelepon ?? '-' }}</td>
-  </tr>
-</table>
 
-  </li>
-</ol>
-<br>
-  <p><strong>DENGAN KETENTUAN : </strong></p>
-  <ol style="margin-left: 20px; margin-top: -10px;">
-    <li>Melaporkan hasilnya kepada Kepala Bidang Bangunan Gedung DPUPR Kabupaten Blora.</li>
-    <li>Agar dilaksanakan dengan penuh tanggung jawab.</li>
+  <p style="margin-top: 12px;"><strong>UNTUK</strong> :</p>
+  <ol style="margin-left: 30px; padding-left: 10px;">
+    <li>Melakukan pemeriksaan Bangunan Gedung secara Administratif agar penyelenggaraan Bangunan Gedung yang dilaksanakan oleh penyelenggara Bangunan Gedung sesuai dengan ketentuan peraturan perundang-undangan.</li>
+    <li>Melaksanakan tugas pada masa konstruksi dan pemanfaatan serta pembongkaran Bangunan Gedung.</li>
+    <li>Melaksanakan Fungsi : Pemantauan, Pemeriksaan, dan Evaluasi.
+      <table style="margin-top: 10px; margin-left: 10px;">
+        <tr><td style="width: 130px;">Lokasi Bangunan</td><td>: {{ $surat->lokasi ?? 'Otomatis' }}</td></tr>
+        <tr><td>Hari/Tanggal</td><td>: {{ $surat->tanggal ?? 'Manual' }}</td></tr>
+        <tr><td>Nama Bangunan</td><td>: {{ $surat->namabangunan ?? 'Manual' }}</td></tr>
+        <tr><td>No Registrasi</td><td>: {{ $surat->noregistrasi ?? 'Manual' }}</td></tr>
+      </table>
+    </li>
   </ol>
+
+  <p><strong>DENGAN</strong> :</p>
+  <p style="margin-left: 30px;">
+    1. Melaporkan Hasilnya kepada Kepala Dinas Pekerjaan Umum dan Penataan Ruang melalui Kepala Bidang Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang.
+  </p>
+
+  <p><strong>KETENTUAN</strong> :</p>
+  <p style="margin-left: 30px;">
+    1. Agar dilaksanakan dengan penuh tanggung jawab.
+  </p>
 </div>
+
 <div class="ttd" style="font-size: 12px; text-align: right; margin-top: 20px; line-height: 1.6;">
   <p>
     Ditetapkan di : Blora<br>
@@ -415,25 +399,24 @@ th {
   </p>
 
   <p style="margin-top: 20px;">
-    KEPALA BIDANG BANGUNAN GEDUNG DINAS<br>
-    PEKERJAAN UMUM DAN PENATAAN RUANG<br>
-    KABUPATEN BLORA
+    A.n. KEPALA DINAS PEKERJAAN UMUM DAN<br>
+    PENATAAN RUANG<br>
+    KAB. BLORA<br>
+    Kepala Bidang Bangunan Gedung
   </p>
 
-  <!-- Stack stempel di atas tanda tangan -->
-  <div style="position: relative; display: inline-block;">
-    <!-- Stempel di atas -->
+  <div style="position: relative; display: inline-block; margin-top: 10px;">
     <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel" style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.7; z-index: 2;">
-    <!-- Tanda tangan di bawah -->
     <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan" style="position: relative; height: 100px; z-index: 1;">
   </div>
 
   <p style="margin-top: 10px;">
     <strong><u>MOHAMAD ARIF HIDAYAT, ST</u></strong><br>
-    Pembina IV/a <br>
+    Pembina IV/a<br>
     NIP. 19710506 199403 1 011
   </p>
 </div>
+
 
 </div>
 </body>
