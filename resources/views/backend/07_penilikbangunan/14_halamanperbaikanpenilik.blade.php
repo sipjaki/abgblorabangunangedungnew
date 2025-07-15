@@ -215,10 +215,11 @@ th {
         <label class="form-label" for="namapemohon">
             <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Pemohon
         </label>
-        <input type="text" class="form-control @error('namapemohon') is-invalid @enderror" id="namapemohon" name="namapemohon" value="{{ old('namapemohon', $data->namapemohon ?? '') }}">
+        <input type="text" class="form-control @error('namapemohon') is-invalid @enderror" id="namapemohon" name="namapemohon" value="{{ old('namapemohon', $penilik->namapemohon ?? '') }}">
         @error('namapemohon') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
+
 {{-- NIK --}}
 <div class="col-md-6">
     <div class="mb-3">
@@ -229,7 +230,7 @@ th {
                class="form-control @error('nik') is-invalid @enderror"
                id="nik"
                name="nik"
-               value="{{ old('nik', $data->nik ?? '') }}"
+               value="{{ old('nik', $penilik->nik ?? '') }}"
                minlength="16" maxlength="16"
                oninput="this.value = this.value.slice(0, 16)"
                placeholder="Masukkan 16 digit NIK">
@@ -245,10 +246,10 @@ th {
         </label>
         <select class="form-select @error('fungsibangunan') is-invalid @enderror" id="fungsibangunan" name="fungsibangunan">
             <option value="">-- Pilih Fungsi Bangunan --</option>
-            <option value="FUNGSI USAHA" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI USAHA' ? 'selected' : '' }}>FUNGSI USAHA</option>
-            <option value="FUNGSI HUNIAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI HUNIAN' ? 'selected' : '' }}>FUNGSI HUNIAN</option>
-            <option value="FUNGSI KEAGAMAAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI KEAGAMAAN' ? 'selected' : '' }}>FUNGSI KEAGAMAAN</option>
-            <option value="FUNGSI SOSIAL BUDAYA" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI SOSIAL BUDAYA' ? 'selected' : '' }}>FUNGSI SOSIAL BUDAYA</option>
+            <option value="FUNGSI USAHA" {{ old('fungsibangunan', $penilik->fungsibangunan ?? '') == 'FUNGSI USAHA' ? 'selected' : '' }}>FUNGSI USAHA</option>
+            <option value="FUNGSI HUNIAN" {{ old('fungsibangunan', $penilik->fungsibangunan ?? '') == 'FUNGSI HUNIAN' ? 'selected' : '' }}>FUNGSI HUNIAN</option>
+            <option value="FUNGSI KEAGAMAAN" {{ old('fungsibangunan', $penilik->fungsibangunan ?? '') == 'FUNGSI KEAGAMAAN' ? 'selected' : '' }}>FUNGSI KEAGAMAAN</option>
+            <option value="FUNGSI SOSIAL BUDAYA" {{ old('fungsibangunan', $penilik->fungsibangunan ?? '') == 'FUNGSI SOSIAL BUDAYA' ? 'selected' : '' }}>FUNGSI SOSIAL BUDAYA</option>
         </select>
         @error('fungsibangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
@@ -260,7 +261,7 @@ th {
         <label class="form-label" for="subfungsibangunan">
             <i class="bi bi-diagram-3 me-2 text-warning"></i> Subfungsi Bangunan
         </label>
-        <input type="text" class="form-control @error('subfungsibangunan') is-invalid @enderror" id="subfungsibangunan" name="subfungsibangunan" value="{{ old('subfungsibangunan', $data->subfungsibangunan ?? '') }}">
+        <input type="text" class="form-control @error('subfungsibangunan') is-invalid @enderror" id="subfungsibangunan" name="subfungsibangunan" value="{{ old('subfungsibangunan', $penilik->subfungsibangunan ?? '') }}">
         @error('subfungsibangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
@@ -308,7 +309,7 @@ th {
       <select class="form-select @error('kecamatanblora_id') is-invalid @enderror" name="kecamatanblora_id" id="kecamatanblora_id" style="min-height: 42px;">
         <option value="">-- Pilih Kecamatan --</option>
         @foreach($kecamatanList as $item)
-          <option value="{{ $item->id }}" {{ old('kecamatanblora_id', $data->kecamatanblora_id ?? '') == $item->id ? 'selected' : '' }}>
+          <option value="{{ $item->id }}" {{ old('kecamatanblora_id', $penilik->kecamatanblora_id ?? '') == $item->id ? 'selected' : '' }}>
             {{ $item->kecamatanblora }}
           </option>
         @endforeach
@@ -325,7 +326,11 @@ th {
       </label>
       <select class="form-select @error('kelurahandesa_id') is-invalid @enderror" name="kelurahandesa_id" id="kelurahandesa_id" style="min-height: 42px;">
         <option value="">-- Pilih Kelurahan/Desa --</option>
-        {{-- Pilihan kelurahan akan diisi lewat AJAX --}}
+        @if(old('kelurahandesa_id', $penilik->kelurahandesa_id ?? false))
+          <option value="{{ $penilik->kelurahandesa_id }}" selected>
+            {{ optional($penilik->kelurahandesa)->desa ?? 'Kelurahan/Desa Terpilih' }}
+          </option>
+        @endif
       </select>
       @error('kelurahandesa_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
@@ -337,80 +342,62 @@ th {
           <label class="form-label d-flex align-items-center" for="alamatlengkap">
             <i class="bi bi-house-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Alamat Lengkap
           </label>
-          <textarea class="form-control @error('alamatlengkap') is-invalid @enderror" id="alamatlengkap" name="alamatlengkap" rows="3">{{ old('alamatlengkap', $data->alamatlengkap ?? '') }}</textarea>
+          <textarea class="form-control @error('alamatlengkap') is-invalid @enderror" id="alamatlengkap" name="alamatlengkap" rows="3">{{ old('alamatlengkap', $penilik->alamatlengkap ?? '') }}</textarea>
           @error('alamatlengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
       </div>
   </div>
-
 </div>
 
 <div class="row g-3">
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
     {{-- Koordinat --}}
     <div class="col-md-12">
         <div class="mb-3">
             <label class="form-label d-flex align-items-center" for="koordinat">
                 <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
             </label>
-            <input type="text" class="form-control @error('koordinat') is-invalid @enderror" id="koordinat" name="koordinat" value="{{ old('koordinat', $data->koordinat ?? '') }}">
+            <input type="text" class="form-control @error('koordinat') is-invalid @enderror" id="koordinat" name="koordinat" value="{{ old('koordinat', $penilik->koordinat ?? '') }}">
             @error('koordinat') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
 
         {{-- Peta --}}
         <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
     </div>
-
 </div>
 
-
-
-<script>
-    // Inisialisasi map dengan fokus ke Kabupaten Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11); // Koordinat Blora
-
-    // Tambahkan layer peta dari OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
-    }).addTo(map);
-
-    // Marker (jika sudah ada nilai awal koordinat)
-    var marker;
-    var input = document.getElementById('koordinat');
-    if (input.value) {
-        var coords = input.value.split(',');
-        marker = L.marker([coords[0], coords[1]]).addTo(map);
-        map.setView([coords[0], coords[1]], 15);
-    }
-
-    // Event saat klik di peta
-    map.on('click', function(e) {
-        var latlng = e.latlng;
-        // Hapus marker sebelumnya
-        if (marker) {
-            map.removeLayer(marker);
-        }
-        // Tambahkan marker baru
-        marker = L.marker(latlng).addTo(map);
-
-        // Simpan koordinat ke input
-        document.getElementById('koordinat').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
-    });
-</script>
-
-
-{{-- JQuery AJAX untuk load Kelurahan berdasarkan Kecamatan --}}
+{{-- Leaflet JS + jQuery --}}
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
+  var map = L.map('map').setView([-7.0421, 111.4046], 11);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
+  }).addTo(map);
+
+  var marker;
+  var input = document.getElementById('koordinat');
+  if (input.value) {
+      var coords = input.value.split(',');
+      marker = L.marker([coords[0], coords[1]]).addTo(map);
+      map.setView([coords[0], coords[1]], 15);
+  }
+
+  map.on('click', function(e) {
+      var latlng = e.latlng;
+      if (marker) {
+          map.removeLayer(marker);
+      }
+      marker = L.marker(latlng).addTo(map);
+      document.getElementById('koordinat').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
+  });
+
   $('#kecamatanblora_id').on('change', function () {
     var kecamatanID = $(this).val();
     if (kecamatanID) {
       $.ajax({
-        url: '{{ route("datanewpenilik.create") }}', // Sesuaikan route ajax-nya
+        url: '{{ route("datanewpenilik.create") }}',
         type: 'GET',
         data: { kecamatan_id: kecamatanID },
         success: function (data) {
@@ -427,9 +414,6 @@ th {
 </script>
 
 {{-- ======================================================================================================================= --}}
-
-
-{{-- ======================================================================================================================= --}}
 <div class="row">
 <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
@@ -444,7 +428,7 @@ th {
             <label class="form-label" for="namabangunan">
                 <i class="bi bi-bank2 me-2 text-primary"></i> Nama Bangunan
             </label>
-            <input type="text" class="form-control @error('namabangunan') is-invalid @enderror" id="namabangunan" name="namabangunan" value="{{ old('namabangunan', $data->namabangunan ?? '') }}">
+            <input type="text" class="form-control @error('namabangunan') is-invalid @enderror" id="namabangunan" name="namabangunan" value="{{ old('namabangunan', $penilik->namabangunan ?? '') }}">
             @error('namabangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
     </div>
@@ -455,7 +439,7 @@ th {
             <label class="form-label" for="luasbangunan">
                 <i class="bi bi-fullscreen me-2 text-success"></i> Luas Bangunan (m<sup>2</sup>)
             </label>
-            <input type="text" class="form-control @error('luasbangunan') is-invalid @enderror" id="luasbangunan" name="luasbangunan" value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}">
+            <input type="text" class="form-control @error('luasbangunan') is-invalid @enderror" id="luasbangunan" name="luasbangunan" value="{{ old('luasbangunan', $penilik->luasbangunan ?? '') }}">
             @error('luasbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
     </div>
@@ -466,7 +450,7 @@ th {
             <label class="form-label" for="jumlahlantai">
                 <i class="bi bi-layers-fill me-2 text-warning"></i> Jumlah Lantai
             </label>
-            <input type="text" class="form-control @error('jumlahlantai') is-invalid @enderror" id="jumlahlantai" name="jumlahlantai" value="{{ old('jumlahlantai', $data->jumlahlantai ?? '') }}">
+            <input type="text" class="form-control @error('jumlahlantai') is-invalid @enderror" id="jumlahlantai" name="jumlahlantai" value="{{ old('jumlahlantai', $penilik->jumlahlantai ?? '') }}">
             @error('jumlahlantai') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
     </div>
@@ -477,12 +461,11 @@ th {
             <label class="form-label" for="gsb">
                 <i class="bi bi-signpost-2-fill me-2 text-danger"></i> GSB (Garis Sempadan Lapangan) [m]
             </label>
-            <input type="number" step="0.01" class="form-control @error('gsb') is-invalid @enderror" id="gsb" name="gsb" value="{{ old('gsb', $data->gsb ?? '') }}">
+            <input type="number" step="0.01" class="form-control @error('gsb') is-invalid @enderror" id="gsb" name="gsb" value="{{ old('gsb', $penilik->gsb ?? '') }}">
             @error('gsb') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
     </div>
 </div>
-
 
 <div class="col-12">
     {{-- <div class="mb-3">
