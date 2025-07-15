@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
   {{-- @include('backend.00_administrator.00_baganterpisah.10_selamatdatang') --}}
@@ -137,7 +137,7 @@ th {
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
        <a href="{{ url()->previous() }}">
-    <button class="button-validasinew" type="button" style="cursor: pointer; color:white;">
+    <button class="button-newvalidasi" type="button" style="cursor: pointer; color:white;">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </a>
@@ -330,8 +330,8 @@ th {
 </head>
 
 <div style="text-align: center; margin: 20px;">
-  <button onclick="downloadPDF()" style="background-color: #e3342f; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
-    📄 Download Surat Tugas (PDF)
+  <button onclick="downloadPDF()" class="button-baru">
+    📄 Download Surat Tugas Inspeksi Bangunan Gedung (PDF)
   </button>
 </div>
 
