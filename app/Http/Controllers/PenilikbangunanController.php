@@ -60,8 +60,8 @@ public function datanewpeniliknew(Request $request)
         // INTENSITAS & LOKASI
         'provinsi' => 'required|string|max:255',
         'kabupaten' => 'required|string|max:255',
-        'kecamatanblora_id' => 'required|exists:kecamatanblora,id',
-        'kelurahandesa_id' => 'required|exists:kelurahandesa,id',
+        'kecamatanblora_id' => 'required|string',
+        'kelurahandesa_id' => 'required|string',
         'alamatlengkap' => 'required|string',
         'koordinat' => 'nullable|string|max:255',
 
