@@ -45,51 +45,41 @@ class PenilikbangunanController extends Controller
 public function datanewpeniliknew(Request $request)
 {
     $validated = $request->validate([
-        // DATA UMUM BANGUNAN
+        // DATA PEMOHON & BANGUNAN
+        'namapemohon' => 'required|string|max:255',
+        'nik' => 'required|string|max:255',
         'fungsibangunan' => 'required|string|max:255',
         'subfungsibangunan' => 'required|string|max:255',
 
         // DETAIL BANGUNAN DAN SPESIFIKASI
         'namabangunan' => 'required|string|max:255',
         'luasbangunan' => 'required|string|max:255',
-        'ketinggianbangunan' => 'required|string|max:255',
         'jumlahlantai' => 'required|string|max:255',
-        'jumlahlapisbasemen' => 'required|string|max:255',
-        'luasbasemen' => 'required|string|max:255',
-        'jumlahunit' => 'required|string|max:255',
-        'estimasijumlahpenghuni' => 'required|string|max:255',
-
-        // SPESIFIKASI
-        'nomorkkpr' => 'required|string|max:255',
         'gsb' => 'required|numeric',
-        'kdb' => 'required|numeric',
-        'klb' => 'required|numeric',
-        'kdh' => 'required|numeric',
 
-        // LOKASI
+        // INTENSITAS & LOKASI
         'provinsi' => 'required|string|max:255',
         'kabupaten' => 'required|string|max:255',
-        'kecamatanblora_id' => 'required|string',
-        'kelurahandesa_id' => 'required|string',
+        'kecamatanblora_id' => 'required|exists:kecamatanblora,id',
+        'kelurahandesa_id' => 'required|exists:kelurahandesa,id',
         'alamatlengkap' => 'required|string',
         'koordinat' => 'nullable|string|max:255',
 
         // USER
-        'user_id' => 'required|string',
+        'user_id' => 'required|exists:users,id',
     ], [
-        // Custom messages
+        // Pesan error kustom
+        'namapemohon.required' => 'Nama pemohon wajib diisi.',
+        'nik.required' => 'NIK wajib diisi.',
         'fungsibangunan.required' => 'Fungsi bangunan wajib diisi.',
         'subfungsibangunan.required' => 'Subfungsi bangunan wajib diisi.',
         'namabangunan.required' => 'Nama bangunan wajib diisi.',
         'luasbangunan.required' => 'Luas bangunan wajib diisi.',
-        'ketinggianbangunan.required' => 'Ketinggian bangunan wajib diisi.',
         'jumlahlantai.required' => 'Jumlah lantai wajib diisi.',
-        'jumlahlapisbasemen.required' => 'Jumlah lapis basemen wajib diisi.',
-        'luasbasemen.required' => 'Luas basemen wajib diisi.',
-        'jumlahunit.required' => 'Jumlah unit wajib diisi.',
-        'estimasijumlahpenghuni.required' => 'Estimasi jumlah penghuni wajib diisi.',
+        'gsb.required' => 'GSB wajib diisi dan harus berupa angka.',
+        'gsb.numeric' => 'GSB harus berupa angka.',
         'provinsi.required' => 'Provinsi wajib diisi.',
-        'kabupaten.required' => 'Kabupaten/Kota wajib diisi.',
+        'kabupaten.required' => 'Kabupaten wajib diisi.',
         'alamatlengkap.required' => 'Alamat lengkap wajib diisi.',
         'kecamatanblora_id.required' => 'Kecamatan wajib dipilih.',
         'kecamatanblora_id.exists' => 'Kecamatan tidak ditemukan.',
@@ -97,42 +87,33 @@ public function datanewpeniliknew(Request $request)
         'kelurahandesa_id.exists' => 'Kelurahan/Desa tidak ditemukan.',
         'user_id.required' => 'User tidak boleh kosong.',
         'user_id.exists' => 'User tidak valid.',
-        'gsb.numeric' => 'GSB harus berupa angka.',
-        'kdb.numeric' => 'KDB harus berupa angka.',
-        'klb.numeric' => 'KLB harus berupa angka.',
-        'kdh.numeric' => 'KDH harus berupa angka.',
     ]);
 
     // Simpan ke database
     penilikbangunan::create([
+        'namapemohon' => $validated['namapemohon'],
+        'nik' => $validated['nik'],
         'fungsibangunan' => $validated['fungsibangunan'],
         'subfungsibangunan' => $validated['subfungsibangunan'],
+
         'namabangunan' => $validated['namabangunan'],
         'luasbangunan' => $validated['luasbangunan'],
-        'ketinggianbangunan' => $validated['ketinggianbangunan'],
         'jumlahlantai' => $validated['jumlahlantai'],
-        'jumlahlapisbasemen' => $validated['jumlahlapisbasemen'],
-        'luasbasemen' => $validated['luasbasemen'],
-        'jumlahunit' => $validated['jumlahunit'],
-        'estimasijumlahpenghuni' => $validated['estimasijumlahpenghuni'],
-        'nomorkkpr' => $validated['nomorkkpr'] ?? null,
-        'gsb' => $validated['gsb'] ?? null,
-        'kdb' => $validated['kdb'] ?? null,
-        'klb' => $validated['klb'] ?? null,
-        'kdh' => $validated['kdh'] ?? null,
+        'gsb' => $validated['gsb'],
+
         'provinsi' => $validated['provinsi'],
         'kabupaten' => $validated['kabupaten'],
         'kecamatanblora_id' => $validated['kecamatanblora_id'],
         'kelurahandesa_id' => $validated['kelurahandesa_id'],
         'alamatlengkap' => $validated['alamatlengkap'],
         'koordinat' => $validated['koordinat'] ?? null,
+
         'user_id' => $validated['user_id'],
     ]);
 
-    session()->flash('create', 'Data Penilik Bangunan Berhasil Di Buat !');
+    session()->flash('create', 'Data Penilik Bangunan berhasil disimpan!');
     return redirect()->route('dataallpenilikbg.index');
 }
-
 
 public function dataallpenilikbg(Request $request)
 {
