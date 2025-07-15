@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('kegiatanke')->nullable();
             $table->string('uraiankegiatan')->nullable();
             $table->string('catatankegiatan')->nullable();
+
+            $table->string('cadangan1')->nullable();
+            $table->string('cadangan2')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

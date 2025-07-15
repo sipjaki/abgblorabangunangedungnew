@@ -63,4 +63,9 @@ class penilikbangunan extends Model
         return $this->hasMany(prapenilikdok::class);
     }
 
+    public function pascapenilikdok()
+    {
+        return $this->hasMany(pascapenilikdok::class);
+    }
+
 }
