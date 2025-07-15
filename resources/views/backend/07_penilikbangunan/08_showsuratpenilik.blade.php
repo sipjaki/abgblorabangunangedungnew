@@ -433,7 +433,7 @@ th {
 <div style="position: relative; display: inline-block; height: 100px; width: auto;">
   <!-- Stempel di atas, lebih dominan -->
   <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel"
-       style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.9; z-index: 2;">
+       style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.2; z-index: 2;">
 
   <!-- Tanda tangan di bawah, agak transparan -->
   <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan"
