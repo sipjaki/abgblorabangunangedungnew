@@ -276,14 +276,24 @@ th {
 <td style="text-align: left;">{{ !empty($item->subfungsibangunan) ? $item->subfungsibangunan : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->provinsi) ? $item->provinsi : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->kabupaten) ? $item->kabupaten : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->kecamatanblora->nama) ? $item->kecamatanblora->nama : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->kelurahandesa->nama) ? $item->kelurahandesa->nama : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->alamatlengkap) ? $item->alamatlengkap : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->kecamatanblora->nama) ? $item->kecamatanblora->kecamatanblora : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->kelurahandesa->nama) ? $item->kelurahandesa->desa : '-' }}</td>
+
+@php
+    $words = explode(' ', $item->alamatlengkap ?? '');
+    $chunks = array_chunk($words, 6);
+    $newAlamat = implode('<br>', array_map(fn($chunk) => implode(' ', $chunk), $chunks));
+@endphp
+
+<td style="text-align: left; white-space: pre-line;">
+    {!! !empty($item->alamatlengkap) ? $newAlamat : '-' !!}
+</td>
+
 <td style="text-align: left;">{{ !empty($item->koordinat) ? $item->koordinat : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->namabangunan) ? $item->namabangunan : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->luasbangunan) ? $item->luasbangunan . ' m²' : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->jumlahlantai) ? $item->jumlahlantai : '-' }}</td>
-<td style="text-align: left;">{{ !empty($item->gsb) ? $item->gsb . ' m' : '-' }}</td>
+<td style="text-align: center;">{{ !empty($item->luasbangunan) ? $item->luasbangunan . ' M²' : '-' }}</td>
+<td style="text-align: center;">{{ !empty($item->jumlahlantai) ? $item->jumlahlantai . 'Lantai' : '-' }}</td>
+<td style="text-align: center;">{{ !empty($item->gsb) ? $item->gsb . ' Meter' : '-' }}</td>
 
    <td style="text-align: center;">
     <div style="display: inline-flex; justify-content: center; align-items: center; gap: 10px;">
