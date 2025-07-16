@@ -1025,7 +1025,7 @@ th {
         </p>
 
         <a href="/bekrkusahaperbaikan/{{$data->id}}" style="text-decoration: none;">
-            <button class="button-abgblora">
+            <button class="button-baru">
                 <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
             </button>
         </a>
@@ -1307,19 +1307,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                         <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalFoto{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -1496,19 +1484,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalsertifikattanah{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -1677,19 +1653,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalLampiranoss{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -1856,19 +1820,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalBuktipbb{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -2035,19 +1987,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalValdpupr{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -2214,19 +2154,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalSiteplan{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -2393,19 +2321,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalTandatangan{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
