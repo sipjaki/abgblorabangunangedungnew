@@ -946,12 +946,29 @@
 </a>
 
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px;"></i>
             <p style="color: white; margin-left: 8px;">Informasi</p>
         </a>
-    </li>
+    </li> --}}
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
     <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
@@ -964,6 +981,22 @@
             <p style="color: white; margin-left: 8px;">Kartu Identitas</p>
         </a>
     </li>
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
+    </p>
+</div>
 </ul>
 
             </li>
