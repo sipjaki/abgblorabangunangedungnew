@@ -150,8 +150,7 @@ th {
 
         <button class="button-newvalidasi"
                 type="button"
-                onclick="location.href='{{ route('krkusaha.index') }}';"
-                style="cursor: pointer; color:white;">
+                onclick="location.href='{{ route('krkusaha.index') }}';">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
     </div>
