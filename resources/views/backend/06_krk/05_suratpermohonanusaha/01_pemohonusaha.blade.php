@@ -336,6 +336,7 @@ th {
 </div>
 
 <body>
+    <div class="halaman">
 <div style="font-size: 12px; line-height: 1.6; text-align: justify;">
   <p style="text-align: center; font-weight: bold;">
     PERMOHONAN SURAT KETERANGAN RENCANA KABUPATEN (KRK)
@@ -406,6 +407,7 @@ th {
     <p>Pemohon</p><br><br>
     <p>( ................................................ )</p>
   </div>
+</div>
 </div>
 
 </body>
