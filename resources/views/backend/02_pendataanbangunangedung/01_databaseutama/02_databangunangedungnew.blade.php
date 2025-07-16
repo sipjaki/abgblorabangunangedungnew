@@ -349,24 +349,47 @@ th {
 <td>
   {{ $item->tanggalinput ? \Carbon\Carbon::parse($item->tanggalinput)->translatedFormat('d F Y') : '-' }}
 </td>
+{{-- Kecamatan Blora (relasi) --}}
+<td>
+    {!! $item->kecamatanblora && $item->kecamatanblora->kecamatanblora
+        ? e($item->kecamatanblora->kecamatanblora)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
 
-    {{-- Kecamatan Blora (relasi) --}}
-    <td>{{ optional($item->kecamatanblora)->kecamatanblora ?? '-' }}</td>
+{{-- Nama Institusi --}}
+<td>
+    {!! $item->namainstitusi
+        ? e($item->namainstitusi)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
 
-    {{-- Nama Institusi --}}
-    <td>{{ $item->namainstitusi ?? '-' }}</td>
+{{-- Alamat --}}
+<td>
+    {!! $item->alamat
+        ? e($item->alamat)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
 
-    {{-- Alamat --}}
-    <td>{{ $item->alamat ?? '-' }}</td>
+{{-- No Telepon --}}
+<td>
+    {!! $item->notelepon
+        ? e($item->notelepon)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
 
-    {{-- No Telepon --}}
-    <td>{{ $item->notelepon ?? '-' }}</td>
+{{-- Email --}}
+<td>
+    {!! $item->email
+        ? e($item->email)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
 
-    {{-- Email --}}
-    <td>{{ $item->email ?? '-' }}</td>
-
-    {{-- No Pengesahan Usaha --}}
-    <td>{{ $item->nopengesahanusaha ?? '-' }}</td>
+{{-- No Pengesahan Usaha --}}
+<td>
+    {!! $item->nopengesahanusaha
+        ? e($item->nopengesahanusaha)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
 
 <td style="text-align: center;">
     <a href="{{ route('bepbgslflihatper.show', $item->id) }}"
