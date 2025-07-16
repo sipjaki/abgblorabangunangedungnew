@@ -9,7 +9,7 @@
             [
                 'icon' => 'bi-geo-alt-fill',
                 'title' => 'Kecamatan Blora',
-                'value' => optional($data->kecamatanblora)->name ?? '-',
+                'value' => optional($data->kecamatanblora)->kecamatanblora ?? '-',
             ],
             [
                 'icon' => 'bi-building',
