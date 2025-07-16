@@ -360,7 +360,7 @@ th {
     {{-- 2. Paragraf Pembuka --}}
     <br>
     <p>
-        Konsultasi TPA Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
+        Konsultasi {{$surat->tpatpt->timpenilai ?? '-'}} Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
         {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }}
         tanggal {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->format('d') }}
         bulan {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('F') }}
