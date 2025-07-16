@@ -12889,6 +12889,7 @@ petugaspenilik::create([
 ]);
 
 // PENDATAAN BANGUNAN GEDUNG
+
 databgkepemilikan::create([
     'id' => 1,
     'user_id' => 46,
@@ -12898,6 +12899,7 @@ databgkepemilikan::create([
     'notelepon' => '(0296)571287',
     'email' => null,
     'nopengesahanusaha' => '33.16.09.0001',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 databgkepemilikan::create([
@@ -12909,6 +12911,7 @@ databgkepemilikan::create([
     'notelepon' => '(0296)581284',
     'email' => 'bkd.blora@gmail.com',
     'nopengesahanusaha' => '33.16.09.0002',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 databgkepemilikan::create([
@@ -12920,6 +12923,7 @@ databgkepemilikan::create([
     'notelepon' => '(0296)581284',
     'email' => 'bkd.blora@gmail.com',
     'nopengesahanusaha' => '33.16.09.0003',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 databgkepemilikan::create([
@@ -12931,6 +12935,7 @@ databgkepemilikan::create([
     'notelepon' => '(0296)581284',
     'email' => 'bkd.blora@gmail.com',
     'nopengesahanusaha' => '33.16.09.0004',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 databgkepemilikan::create([
@@ -12942,6 +12947,7 @@ databgkepemilikan::create([
     'notelepon' => '(0296)581284',
     'email' => 'bkd.blora@gmail.com',
     'nopengesahanusaha' => '33.16.09.0005',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 databgkepemilikan::create([
@@ -12953,6 +12959,7 @@ databgkepemilikan::create([
     'notelepon' => '(0296)531127',
     'email' => null,
     'nopengesahanusaha' => '33.16.09.0006',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 databgkepemilikan::create([
@@ -12964,6 +12971,7 @@ databgkepemilikan::create([
     'notelepon' => '(0296)531127',
     'email' => null,
     'nopengesahanusaha' => '33.16.09.0007',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 databgkepemilikan::create([
@@ -12975,6 +12983,7 @@ databgkepemilikan::create([
     'notelepon' => '(0296)531127',
     'email' => null,
     'nopengesahanusaha' => '33.16.09.0008',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 databgkepemilikan::create([
@@ -12986,6 +12995,7 @@ databgkepemilikan::create([
     'notelepon' => '(0296)531127',
     'email' => null,
     'nopengesahanusaha' => '33.16.09.0009',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 databgkepemilikan::create([
@@ -12997,6 +13007,7 @@ databgkepemilikan::create([
     'notelepon' => '(0296)531127',
     'email' => null,
     'nopengesahanusaha' => '33.16.09.0010',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 

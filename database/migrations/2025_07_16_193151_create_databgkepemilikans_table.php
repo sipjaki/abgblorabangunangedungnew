@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('notelepon')->nullable();
             $table->string('email')->nullable();
             $table->string('nopengesahanusaha')->nullable();
+            $table->string('tanggalinput')->nullable();
 
             $table->string('tampakdepan')->nullable();
             $table->string('tampakbelakang')->nullable();
