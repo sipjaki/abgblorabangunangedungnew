@@ -266,10 +266,7 @@ th {
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
-                    class="button-validasinew"
-                    style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+                    class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
@@ -310,7 +307,7 @@ th {
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
     </button>
     @elseif($item->verifikasi1 == 'dikembalikan')
-        <button class="button-dikembalikan" type="button" onclick="openModal({{ $item->id }})" style="background-color: #f8f8fa;">
+        <button class="button-merah" type="button" onclick="openModal({{ $item->id }})" style="background-color: #f8f8fa;">
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
@@ -405,7 +402,7 @@ th {
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
     </button>
   @elseif($item->verifikasi2 == 'belum')
-    <button class="button-dikembalikan" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+    <button class="button-merah" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
@@ -489,7 +486,7 @@ th {
                                 <!-- Tombol Triger Modal -->
                                 <button type="button"
                                     onclick="openValidationModal({{ $item->id }})"
-                                    class="button-dikembalikan"
+                                    class="button-merah"
                                     style="border-radius: 15px; padding: 8px 16px; background-color: #dc3545; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#dc3545'; this.style.border='1px solid #dc3545';"
                                     onmouseout="this.style.backgroundColor='#dc3545'; this.style.color='black'; this.style.border='none';">
@@ -594,7 +591,7 @@ th {
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
         @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
-    <button class="button-dikembalikan"
+    <button class="button-merah"
         disabled
         style="background-color: #dc3545; color: white; border: none; padding: 10px 25px;
                border-radius: 15px; font-size: 14px; cursor: not-allowed;
@@ -644,7 +641,7 @@ th {
     </a>
 @else
     <button
-        class="button-dikembalikan"
+        class="button-merah"
         style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Dokumen Belum Ada
@@ -674,7 +671,7 @@ th {
         <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Sudah
     </button>
   @elseif($item->verifikasi3 == 'belum')
-    <button class="button-dikembalikan" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #f8f8fa;">
+    <button class="button-merah" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #f8f8fa;">
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
@@ -760,7 +757,7 @@ th {
     </a>
 @else
     <button
-        class="button-dikembalikan"
+        class="button-merah"
         style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Berkas Final Belum Ada
@@ -783,7 +780,7 @@ th {
         <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Sudah
     </button>
   @elseif($item->verifikasi4 == 'belum')
-    <button class="button-dikembalikan" type="button" onclick="openModal4({{ $item->id }})" style="background-color: #f8f8fa;">
+    <button class="button-merah" type="button" onclick="openModal4({{ $item->id }})" style="background-color: #f8f8fa;">
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
