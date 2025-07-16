@@ -135,8 +135,7 @@
                 </div>
             </div>
             <!--end::App Content Header-->
-
-          <div class="container py-4">
+<div class="container py-4">
     <div class="text-center mb-4">
         <h3 class="fw-bold text-primary">Tracking Berkas Permohonan PBG / SLF</h3>
         <p class="text-muted">Masukkan Nomor Registrasi SIMBG untuk melacak status permohonan Anda</p>
@@ -176,12 +175,17 @@
                 </div>
             </div>
         </div>
+
+        {{-- Tampilkan fitur status hanya jika data ada --}}
+        @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
+
     @elseif(request('noregissimbg'))
         <div class="alert alert-danger text-center" role="alert">
             Data tidak ditemukan untuk nomor registrasi: <strong>{{ request('noregissimbg') }}</strong>
         </div>
     @endif
 </div>
+
         </main>
         <!--end::App Main-->
     </div>
