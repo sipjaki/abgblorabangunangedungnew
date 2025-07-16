@@ -368,7 +368,7 @@ public function bebangunangedung(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 25);
+    $perPage = $request->input('perPage', 15);
 
     $query = databgkepemilikan::with('kecamatanblora');
 
