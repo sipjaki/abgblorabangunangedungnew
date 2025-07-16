@@ -359,34 +359,73 @@ th {
   <p>
     Yang bertanda tangan di bawah ini, saya mengajukan permohonan Surat Keterangan Rencana Kabupaten (KRK), dengan keterangan sebagai berikut:
   </p>
+<table style="width: 100%; font-size: 12px; line-height: 1.8; border-collapse: collapse;">
+  <tr>
+    <td style="width: 30%;">Nama</td>
+    <td>: {{ $data->namapemohon ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>Alamat</td>
+    <td>: {{ $data->alamatpemohon ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>Pekerjaan</td>
+    <td>: {{ $data->pekerjaan ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>No. Telp/HP</td>
+    <td>: {{ $data->teleponpemohon ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>: {{ $data->emailpemohon ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>Jenis Pengajuan</td>
+    <td>: {{ $data->jenispengajuan ?? 'PBG (belum terbangun) / SLF (sudah terbangun)' }}</td>
+  </tr>
+  <tr>
+    <td>Fungsi Bangunan</td>
+    <td>: {{ $data->fungsibangunan ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>Lainnya</td>
+    <td>: {{ $data->subfungsibangunan ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>Luas Bangunan</td>
+    <td>: {{ $data->luasbangunan ?? '-' }} m²</td>
+  </tr>
+  <tr>
+    <td>Luas Lahan</td>
+    <td>: {{ $data->luastanah ?? '-' }} m²</td>
+  </tr>
+  <tr>
+    <td>Jumlah Lantai Bangunan</td>
+    <td>: {{ $data->jumlahlantai ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>Jalan</td>
+    <td>: {{ $data->jalan ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>RT/RW</td>
+    <td>: {{ $data->rt ?? '-' }}/{{ $data->rw ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>Kelurahan / Desa</td>
+    <td>: {{ $data->kelurahandesa->nama ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>Kecamatan</td>
+    <td>: {{ $data->kecamatanblora->nama ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td>Koordinat Geografis</td>
+    <td>: {{ $data->koordinat ?? '-' }}</td>
+  </tr>
+</table>
 
-  <ol style="padding-left: 15px;">
-    <li>Nama : {{ $data->namapemohon ?? '-' }}</li>
-    <li>Alamat : {{ $data->alamatpemohon ?? '-' }}</li>
-    <li>Pekerjaan : {{ $data->pekerjaan ?? '-' }}</li>
-    <li>No. Telp/HP : {{ $data->teleponpemohon ?? '-' }}</li>
-    <li>Email : {{ $data->emailpemohon ?? '-' }}</li>
-    <li>
-      Jenis Pengajuan : {{ $data->jenispengajuan ?? 'PBG (belum terbangun) / SLF (sudah terbangun)' }}
-    </li>
-    <li>
-      Fungsi Bangunan : {{ $data->fungsibangunan ?? '-' }}<br>
-      Lainnya : {{ $data->subfungsibangunan ?? '-' }}
-    </li>
-    <li>Luas Bangunan : {{ $data->luasbangunan ?? '-' }} m²</li>
-    <li>Luas Lahan : {{ $data->luastanah ?? '-' }} m²</li>
-    <li>Jumlah Lantai Bangunan : {{ $data->jumlahlantai ?? '-' }}</li>
-    <li>
-      Lokasi Bangunan :
-      <ul style="margin-left: 15px;">
-        <li>Jalan : {{ $data->jalan ?? '-' }}</li>
-        <li>RT/RW : {{ $data->rt ?? '-' }}/{{ $data->rw ?? '-' }}</li>
-        <li>Kelurahan : {{ $data->kelurahandesa->nama ?? '-' }}</li>
-        <li>Kecamatan : {{ $data->kecamatanblora->nama ?? '-' }}</li>
-        <li>Koordinat Geografis : {{ $data->koordinat ?? '-' }}</li>
-      </ul>
-    </li>
-  </ol>
 
   <p><strong>Sebagai bahan pertimbangan berikut kami lampirkan:</strong></p>
   <ol style="padding-left: 15px;">
