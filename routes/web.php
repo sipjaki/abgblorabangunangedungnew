@@ -137,6 +137,10 @@ Route::get('/permohonanpengesahanusahaber/{id}', [KrkController::class, 'permoho
 Route::delete('/krkusahasuratdelete/{id}', [KrkController::class, 'destroykrkusahasurat'])->name('krkusahasurat.destroy');
 
 // Route::get('/permohonankrk', [KrkController::class, 'permohonankrk'])->middleware('auth');
+// -----------------------------------
+Route::get('/bepbgsurattugasshow/{id}', [PbgslfController::class, 'bepbgsurattugasshow'])->middleware('auth')->name('bepbgsurattugasshow.detail');
+
+
 
 // MENU 02 PERMOHONAN KRK HUNIAN
 Route::get('/permohonankrkhunian', [KrkController::class, 'permohonankrkhunian'])->name('permohonan.krkhunian');

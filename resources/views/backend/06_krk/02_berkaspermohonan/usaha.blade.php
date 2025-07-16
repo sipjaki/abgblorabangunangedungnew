@@ -639,8 +639,8 @@ th {
     </button>
 @endif
 
-   <a href="/path/to/surat-pemohon.pdf"
-   title="Surat Pemohon"
+<a href="/besuratpemohonkrk/{{$item->id}}"
+   title="Surat Pemohon KRK"
    class="button-baru"
    style="border-radius: 15px; padding: 8px 16px; background-color: white; color: black; border: none; text-decoration: none; display: inline-flex; align-items: center;">
     <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Surat Pemohon
