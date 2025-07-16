@@ -336,106 +336,78 @@ th {
 </div>
 
 <body>
-  <div class="halaman">
-    <div class="kop">
-      <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
-      {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
-      <div style="display: inline-block;">
-        <h3>PEMERINTAH KABUPATEN BLORA</h3>
-        <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-        <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-        <h3>BLORA 58214</h3>
-      </div>
-      <div style="clear: both;"></div>
-    </div>
+<div style="font-size: 12px; line-height: 1.6; text-align: justify;">
+  <p style="text-align: center; font-weight: bold;">
+    PERMOHONAN SURAT KETERANGAN RENCANA KABUPATEN (KRK)
+  </p>
 
-<div class="judul-surat" style="font-size: 12px; text-align: center; font-weight: bold;">
-  SURAT TUGAS<br>
-  <span style="text-decoration: none; font-weight: normal;">Nomor : {{ $surat->nomorsurat ?? '-' }}</span>
-</div>
+  <p>Blora, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
 
-<p style="font-size: 12px; margin-top: 12px;"><strong>DASAR</strong> : Surat Perjanjian Kontrak Pekerjaan Fasilitator Persetujuan Bangunan Gedung Tahun Anggaran 2025 Kabupaten Blora Nomor : {{ $surat->nomorkontrak ?? '-' }}</p>
-
-<div style="font-size: 12px; text-align: center; font-weight: bold; margin: 20px 0;">
-  MENUGASKAN
-</div>
-
-<div style="font-size: 12px; margin-top: -20px;">
-  <p><strong>KEPADA :</strong></p>
-  <table class="tabel-info" style="margin-top: -20px;">
-    <tr><td style="width: 180px;">Nama</td><td>: {{ $surat->fasilitatorpbg->namalengkap ?? '' }}</td></tr>
-    <tr><td>NIK</td><td>: {{ $surat->fasilitatorpbg->nik ?? '-' }}</td></tr>
-    <tr><td>Alamat</td><td>: {{ $surat->fasilitatorpbg->alamat ?? '-' }}</td></tr>
-    <tr><td>Jabatan</td><td>: {{ $surat->fasilitatorpbg->jabatan ?? '-' }}</td></tr>
-  </table>
-<br>
-  <p><strong>UNTUK</strong> :</p>
-<ol style="margin: 0 0 0 20px; padding-left: 10px; margin-top: -15px; margin-left: 50px;">
-  <li>Melaksanakan tugas survei lokasi pemohon PBG untuk pembuatan dokumen rencana teknis bangunan gedung.</li>
-  <li>Membantu pemohon PBG dalam mengurus izin PBG pada aplikasi SIMBG.</li>
-  <li>Mendampingi pemohon pada sidang konsultasi PBG.</li>
-  <li>
-    Pemohon yang didampingi:
-  <table style="border-collapse: collapse; margin-left: 20px; font-size: 12px; margin-top:20px;">
-  <tr>
-    <td style="padding: 2px 8px 2px 0;">Nama</td>
-    <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0; text-transform:uppercase;" >{{ $surat->gambarbantuan->namapemohon ?? '-' }}</td>
-  </tr>
-  <tr>
-    <td style="padding: 2px 8px 2px 0;">Alamat</td>
-    <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0;">{{ $surat->gambarbantuan->alamatpemohon ?? '-' }}</td>
-  </tr>
-  <tr>
-    <td style="padding: 2px 8px 2px 0;">NIK</td>
-    <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0;">{{ $surat->gambarbantuan->nikktp ?? '-' }}</td>
-  </tr>
-  <tr>
-    <td style="padding: 2px 8px 2px 0;">Telp</td>
-    <td style="padding: 2px 8px 2px 0;">:</td>
-    <td style="padding: 2px 0;">{{ $surat->gambarbantuan->nomortelepon ?? '-' }}</td>
-  </tr>
-</table>
-
-  </li>
-</ol>
-<br>
-  <p><strong>DENGAN KETENTUAN : </strong></p>
-  <ol style="margin-left: 20px; margin-top: -10px;">
-    <li>Melaporkan hasilnya kepada Kepala Bidang Bangunan Gedung DPUPR Kabupaten Blora.</li>
-    <li>Agar dilaksanakan dengan penuh tanggung jawab.</li>
-  </ol>
-</div>
-<div class="ttd" style="font-size: 12px; text-align: right; margin-top: 20px; line-height: 1.6;">
   <p>
-    Ditetapkan di : Blora<br>
-    pada tanggal : {{ \Carbon\Carbon::parse($surat->tanggaltugas)->translatedFormat('d F Y') }}
+    Lampiran : 1 (satu) bendel <br>
+    Perihal : Permohonan Surat Keterangan Kabupaten (KRK)
   </p>
 
-  <p style="margin-top: 20px;">
-    KEPALA BIDANG BANGUNAN GEDUNG DINAS<br>
-    PEKERJAAN UMUM DAN PENATAAN RUANG<br>
-    KABUPATEN BLORA
+  <p>
+    Kepada Yth. <br>
+    Kepala Dinas Pekerjaan Umum dan Rencana Penataan Ruang Kabupaten Blora <br>
+    Di <br>
+    Blora
   </p>
 
-  <!-- Stack stempel di atas tanda tangan -->
-  <div style="position: relative; display: inline-block;">
-    <!-- Stempel di atas -->
-    <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel" style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.7; z-index: 2;">
-    <!-- Tanda tangan di bawah -->
-    <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan" style="position: relative; height: 100px; z-index: 1;">
+  <p>
+    Yang bertanda tangan di bawah ini, saya mengajukan permohonan Surat Keterangan Rencana Kabupaten (KRK), dengan keterangan sebagai berikut:
+  </p>
+
+  <ol style="padding-left: 15px;">
+    <li>Nama : {{ $data->namapemohon ?? '-' }}</li>
+    <li>Alamat : {{ $data->alamatpemohon ?? '-' }}</li>
+    <li>Pekerjaan : {{ $data->pekerjaan ?? '-' }}</li>
+    <li>No. Telp/HP : {{ $data->teleponpemohon ?? '-' }}</li>
+    <li>Email : {{ $data->emailpemohon ?? '-' }}</li>
+    <li>
+      Jenis Pengajuan : {{ $data->jenispengajuan ?? 'PBG (belum terbangun) / SLF (sudah terbangun)' }}
+    </li>
+    <li>
+      Fungsi Bangunan : {{ $data->fungsibangunan ?? '-' }}<br>
+      Lainnya : {{ $data->subfungsibangunan ?? '-' }}
+    </li>
+    <li>Luas Bangunan : {{ $data->luasbangunan ?? '-' }} m²</li>
+    <li>Luas Lahan : {{ $data->luastanah ?? '-' }} m²</li>
+    <li>Jumlah Lantai Bangunan : {{ $data->jumlahlantai ?? '-' }}</li>
+    <li>
+      Lokasi Bangunan :
+      <ul style="margin-left: 15px;">
+        <li>Jalan : {{ $data->jalan ?? '-' }}</li>
+        <li>RT/RW : {{ $data->rt ?? '-' }}/{{ $data->rw ?? '-' }}</li>
+        <li>Kelurahan : {{ $data->kelurahandesa->nama ?? '-' }}</li>
+        <li>Kecamatan : {{ $data->kecamatanblora->nama ?? '-' }}</li>
+        <li>Koordinat Geografis : {{ $data->koordinat ?? '-' }}</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p><strong>Sebagai bahan pertimbangan berikut kami lampirkan:</strong></p>
+  <ol style="padding-left: 15px;">
+    <li>Foto Copy KTP</li>
+    <li>Foto Copy NPWP</li>
+    <li>Foto Copy Sertifikat Tanah</li>
+    <li>Site Plan</li>
+    <li>Lampiran OSS untuk kegiatan berusaha</li>
+    <li>Bukti Lunas PBB</li>
+    <li>Dokumen Validasi Tata Ruang DPUPR Kabupaten Blora</li>
+  </ol>
+
+  <p>
+    Demikian permohonan ini kami sampaikan, atas perhatiannya kami ucapkan terima kasih.
+  </p>
+
+  <div style="text-align: right; margin-top: 30px;">
+    <p>Pemohon</p><br><br>
+    <p>( ................................................ )</p>
   </div>
-
-  <p style="margin-top: 10px;">
-    <strong><u>MOHAMAD ARIF HIDAYAT, ST</u></strong><br>
-    Pembina IV/a <br>
-    NIP. 19710506 199403 1 011
-  </p>
 </div>
 
-</div>
 </body>
 </html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
