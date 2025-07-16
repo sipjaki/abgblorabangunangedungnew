@@ -3,20 +3,11 @@
         @php
             $id = $data->id ?? 0;
             $buttons = [
-                ['label' => 'Data Pemilik', 'url' => '/bepbgdatapemilik/' . $id],
-                ['label' => 'Data Bangunan', 'url' => '/bepbgdatabangunan/' . $id],
-                ['label' => 'Data Tanah', 'url' => '/bepbgdatatanah/' . $id],
-                ['label' => 'Data Umum', 'url' => '/bepbgdataumum/' . $id],
-                ['label' => 'Dokumen Teknis Arsitektur', 'url' => '/bepbgdokumeteknisars/' . $id],
-                ['label' => 'Dokumen Teknis Struktur', 'url' => '/bepbgdokumeteknisstrk/' . $id],
-                ['label' => 'Dokumen Teknis MEP', 'url' => '/bepbgdokumeteknismep/' . $id],
-                ['label' => 'Dokumen Teknis (Jika) SLF', 'url' => '/dokumenteknisslf/' . $id],
-                ['label' => 'Surat Pemberitahuan', 'url' => '/bepbgsuratpemberitahuan/' . $id],
-                // ['label' => 'Surat Tugas', 'url' => '/bepbgsurattugas/' . $id],
-                ['label' => 'TPA / TPT', 'url' => '/bepbgtpatpt/' . $id],
-                ['label' => 'Surat Undangan', 'url' => '/bepbgsuratundangan/' . $id],
-                ['label' => 'Berita Acara SLF', 'url' => '/bepbgberitaacaraslf/' . $id],
-                // ['label' => 'Jenis Pengajuan PBG/SLF', 'url' => '/bepbgjenispengajuan/' . $id],
+                ['label' => 'Data Profil Tanah', 'url' => '/bepbgdatapemilik/' . $id, 'icon' => 'bi-geo-alt-fill'],
+                ['label' => 'Data Profil Bangunan Gedung', 'url' => '/bepbgdatabangunan/' . $id, 'icon' => 'bi-building-fill'],
+                ['label' => 'Klasifikasi Bangunan Gedung', 'url' => '/bepbgdatatanah/' . $id, 'icon' => 'bi-tags-fill'],
+                ['label' => 'Data Struktur Bangunan Gedung', 'url' => '/bepbgdataumum/' . $id, 'icon' => 'bi-diagram-3-fill'],
+                ['label' => 'Data Status Bangunan Gedung', 'url' => '/bepbgdokumeteknisars/' . $id, 'icon' => 'bi-file-earmark-check-fill'],
             ];
         @endphp
 
@@ -37,7 +28,7 @@
                         onmouseover="this.style.background='white'; this.style.color='black';"
                         onmouseout="this.style.background='linear-gradient(145deg, #e1f0ff, #d6e9ff)'; this.style.color='#003366';"
                     >
-                        <i class="bi bi-folder-plus me-2"></i> {{ $btn['label'] }}
+                        <i class="bi {{ $btn['icon'] }} me-2"></i> {{ $btn['label'] }}
                     </div>
                 </a>
             </div>
@@ -61,4 +52,3 @@ window.addEventListener('load', () => {
     }
 });
 </script>
-
