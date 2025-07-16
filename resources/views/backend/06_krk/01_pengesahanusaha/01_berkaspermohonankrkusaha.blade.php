@@ -2511,7 +2511,7 @@ th {
 
     <textarea name="catatanvalidasi" id="catatanvalidasi" class="form-control"
         rows="10"
-        style="resize: vertical; width: 100%; color: red;"
+        style="resize: vertical; width: 100%; color: black;"
         placeholder="Tulis catatan jika diperlukan...">{{ old('catatanvalidasi', $data->catatanvalidasi ?? '') }}</textarea>
 </div>
 
