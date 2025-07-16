@@ -3,122 +3,75 @@
       integrity="sha256-sA+zMJOxZ+2fRZ2E9n+6Rc96ZLoOUod9W/Gc1iR2XYk="
       crossorigin=""/>
 
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-oM1Q+Q4ZcZwwUtzfUavXbR/ExkZry3QQZQ1XCuVyc0I="
-        crossorigin=""></script>
-
-{{-- Koordinat dan Peta --}}
+<!-- Container Form & Peta -->
 <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label d-flex align-items-center" for="koordinat">
             <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
         </label>
         <input type="text"
-               class="form-control @error('koordinat') is-invalid @enderror"
+               class="form-control"
                id="koordinat"
                name="koordinat"
-               value="{{ old('koordinat', $data->koordinat ?? 'Segera Update Koordinat') }}"
-               placeholder="Klik peta untuk mendapatkan koordinat">
-        @error('koordinat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+               value="{{ old('koordinat', $data->koordinat ?? '') }}"
+               placeholder="Klik peta untuk mendapatkan koordinat" readonly>
     </div>
 
-    {{-- Peta --}}
     <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
 </div>
 
-{{-- Dokumentasi Tampak Bangunan --}}
-<div class="col-md-12 mt-4">
-    <div class="row text-center">
-        @php
-            $fotos = [
-                'Tampak Depan' => $data->tampakdepan ?? null,
-                'Tampak Belakang' => $data->tampakbelakang ?? null,
-                'Tampak Samping 1' => $data->tampaksamping1 ?? null,
-                'Tampak Samping 2' => $data->tampaksamping2 ?? null,
-            ];
-        @endphp
-
-        @foreach($fotos as $label => $foto)
-        <div class="col-md-3 mb-3">
-            <div class="card shadow-sm">
-                <div class="card-header bg-light fw-bold text-dark">{{ $label }}</div>
-                <div class="card-body p-2" style="min-height: 200px; display: flex; align-items: center; justify-content: center;">
-                    @if($foto)
-                        @php
-                            $pathStorage = public_path('storage/' . $foto);
-                            $pathPublic = public_path($foto);
-                        @endphp
-
-                        @if(file_exists($pathStorage))
-                            <img src="{{ asset('storage/' . $foto) }}" alt="{{ $label }}" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
-                        @elseif(file_exists($pathPublic))
-                            <img src="{{ asset($foto) }}" alt="{{ $label }}" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
-                        @else
-                            <div class="berkas-button text-muted" style="padding: 40px 10px;">
-                                Dokumentasi Belum Ada
-                            </div>
-                        @endif
-                    @else
-                        <div class="berkas-button text-muted" style="padding: 40px 10px;">
-                            Dokumentasi Belum Ada
-                        </div>
-                    @endif
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-</div>
-
-{{-- Tambahkan Leaflet CSS dan JS jika belum ada --}}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-sA+zMJOxZ+2fRZ2E9n+6Rc96ZLoOUod9W/Gc1iR2XYk="
-      crossorigin=""/>
+<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-oM1Q+Q4ZcZwwUtzfUavXbR/ExkZry3QQZQ1XCuVyc0I="
         crossorigin=""></script>
 
 <script>
-    // Inisialisasi peta dengan titik default di Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11);
+    document.addEventListener('DOMContentLoaded', function () {
+        // Default lokasi pusat peta (Blora)
+        var defaultLat = -7.0421;
+        var defaultLng = 111.4046;
+        var defaultZoom = 11;
 
-    // Tambahkan layer peta dari OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
-        maxZoom: 19,
-    }).addTo(map);
+        // Inisialisasi peta
+        var map = L.map('map').setView([defaultLat, defaultLng], defaultZoom);
 
-    // Marker (jika sudah ada koordinat tersimpan)
-    var marker;
-    var input = document.getElementById('koordinat');
+        // Tambahkan OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
 
-    if (input.value && input.value !== 'Segera Update Koordinat') {
-        var coords = input.value.split(',');
-        if(coords.length === 2) {
-            var lat = parseFloat(coords[0].trim());
-            var lng = parseFloat(coords[1].trim());
-            if(!isNaN(lat) && !isNaN(lng)) {
-                marker = L.marker([lat, lng]).addTo(map);
-                map.setView([lat, lng], 15);
+        var marker;
+        var input = document.getElementById('koordinat');
+
+        // Jika sudah ada koordinat dari data, tampilkan marker dan set peta
+        if (input.value) {
+            var coords = input.value.split(',');
+            if (coords.length === 2) {
+                var lat = parseFloat(coords[0].trim());
+                var lng = parseFloat(coords[1].trim());
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    marker = L.marker([lat, lng]).addTo(map);
+                    map.setView([lat, lng], 15);
+                }
             }
         }
-    }
 
-    // Event klik di peta untuk set koordinat
-    map.on('click', function(e) {
-        var latlng = e.latlng;
+        // Event klik peta untuk set koordinat dan marker baru
+        map.on('click', function (e) {
+            var latlng = e.latlng;
 
-        // Hapus marker lama jika ada
-        if (marker) {
-            map.removeLayer(marker);
-        }
+            // Hapus marker lama kalau ada
+            if (marker) {
+                map.removeLayer(marker);
+            }
 
-        // Tambahkan marker baru
-        marker = L.marker(latlng).addTo(map);
+            // Tambahkan marker baru
+            marker = L.marker(latlng).addTo(map);
 
-        // Update input koordinat dengan format 6 digit desimal
-        input.value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
+            // Update input koordinat dengan format 6 digit desimal
+            input.value = latlng.lat.toFixed(6) + ', ' + latlng.lng.toFixed(6);
+        });
     });
 </script>
 
