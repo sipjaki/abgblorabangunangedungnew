@@ -387,90 +387,20 @@
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
                     @enderror
                 </div>
-<div class="form-group row mb-4">
-    <label for="klb" class="col-md-4 col-form-label">
-        <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan)
-    </label>
-    <div class="col-md-8">
-        <input type="text" class="form-control kdb-input" id="klb" name="klb" readonly>
-    </div>
-    @error('klb')
-    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
 
-<div class="form-group row mb-4">
-    <label for="luasbangunan" class="col-md-4 col-form-label">
-        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
-    </label>
-    <div class="col-md-8">
-        <div class="input-group">
-            <input type="number" class="form-control luas-input" id="luasbangunan" name="luasbangunan" readonly>
-            <div class="input-group-append">
-                <span class="input-group-text bg-danger text-white">M²</span>
-            </div>
-        </div>
-        @error('luasbangunan')
-        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+                <div class="form-group row mb-4">
+                    <label for="kdb" class="col-md-4 col-form-label">
+                        <i class="fas fa-cogs"></i> KLB (Koefisien Lantai Bangunan)
+                    </label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="kdb" name="kdb" readonly> <!-- Hasil akhir -->
+                        {{-- <input type="text" class="form-control" id="kdb" name="kdb" readonly> --}}
+                    </div>
+                    @error('kdb')
+                    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+                    @enderror
+                </div>
 
-<div class="form-group row mb-4">
-    <label for="kdb" class="col-md-4 col-form-label">
-        <i class="fas fa-cogs"></i> KLB (Koefisien Lantai Bangunan)
-    </label>
-    <div class="col-md-8">
-        <input type="text" class="form-control" id="kdb" name="kdb" readonly>
-    </div>
-    @error('kdb')
-    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the input elements
-    const klbInput = document.getElementById('klb');
-    const luasBangunanInput = document.getElementById('luasbangunan');
-    const kdbOutput = document.getElementById('kdb');
-
-    // Function to calculate KLB
-    function calculateKLB() {
-        // Get values from inputs
-        const klbValue = parseFloat(klbInput.value) || 0;
-        const luasBangunanValue = parseFloat(luasBangunanInput.value) || 0;
-
-        // Calculate KLB (Koefisien Lantai Bangunan)
-        // Formula: KLB = KDB * Luas Bangunan Maksimal
-        const kdbValue = klbValue * luasBangunanValue;
-
-        // Update the KDB output field
-        kdbOutput.value = kdbValue.toFixed(2); // Display with 2 decimal places
-    }
-
-    // Create a MutationObserver to watch for changes in the inputs
-    const observer = new MutationObserver(function(mutations) {
-        calculateKLB();
-    });
-
-    // Configuration for the observer
-    const config = {
-        attributes: true,
-        attributeFilter: ['value'],
-        childList: false,
-        subtree: false
-    };
-
-    // Start observing both inputs
-    observer.observe(klbInput, config);
-    observer.observe(luasBangunanInput, config);
-
-    // Calculate initially when values are populated
-    // This will run after other scripts have set the initial values
-    setTimeout(calculateKLB, 100);
-});
-</script>
                 <!-- KDH -->
                 <div class="form-group row mb-4">
                     <label for="kdh" class="col-md-4 col-form-label">
