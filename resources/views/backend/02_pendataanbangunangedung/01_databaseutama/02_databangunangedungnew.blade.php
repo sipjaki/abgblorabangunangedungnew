@@ -365,25 +365,24 @@ th {
 </td>
 
 {{-- Alamat --}}
-@php
-function breakEvery6Words($text) {
-    $words = explode(' ', $text);
-    $result = '';
-    foreach ($words as $index => $word) {
-        $result .= e($word) . ' ';
-        if (($index + 1) % 6 == 0) {
-            $result .= '<br>';
-        }
-    }
-    return $result;
-}
-@endphp
-
-<td>
-    {!! $item->alamat
-        ? breakEvery6Words($item->alamat)
-        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+<td class="break-6-words">
+    {{ $item->alamat ?? 'Data Belum Di Update' }}
 </td>
+
+<script>
+document.querySelectorAll('.break-6-words').forEach(td => {
+    const text = td.textContent.trim();
+    if(text && text !== 'Data Belum Di Update') {
+        const words = text.split(/\s+/);
+        let newHtml = '';
+        for(let i = 0; i < words.length; i++) {
+            newHtml += words[i] + ' ';
+            if ((i + 1) % 6 === 0) newHtml += '<br>';
+        }
+        td.innerHTML = newHtml.trim();
+    }
+});
+</script>
 
 {{-- No Telepon --}}
 <td>
