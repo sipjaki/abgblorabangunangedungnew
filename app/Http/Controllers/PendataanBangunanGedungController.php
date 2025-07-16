@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\bgkartuinventarisbangunan;
 use App\Models\databangunangedung;
 use App\Models\databgkepemilikan;
+use App\Models\databgtanah;
 use App\Models\kepemilikanbangunangedung;
 use App\Models\pbgslfbangunan;
 use Illuminate\Support\Facades\Auth;
@@ -435,6 +436,36 @@ public function bebangunangedungdelete($id)
         'user' => $user
     ]);
 }
+
+public function bependataanbgtanah($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Cari data pbg berdasarkan ID
+    $data = databgkepemilikan::findOrFail($id);
+
+    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
+    $subdatapemilik = databgtanah::where('pbgslfbangunan_id', $data->id)->paginate(15);
+
+    // Hitung nomor urut mulai untuk paginasi
+    $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+
+    // Ambil data jenis pengajuan
+    // $datapbgslf = jenispengajuanpbgslfper::all();
+
+    // Kirim data ke view
+    return view('backend.02_pendataanbangunangedung.01_databaseutama.04_dataprofiltanah', [
+        'title' => 'Informasi Data Profil Tanah Bangunan Gedung',
+        'title_halaman' => 'Informasi Data Profil Tanah Bangunan Gedung',
+        'user' => $user,
+        'data' => $data,
+        // 'datapbgslf' => $datapbgslf,
+        'subdatapemilik' => $subdatapemilik,
+        'start' => $start,
+    ]);
+}
+
 
 
 }

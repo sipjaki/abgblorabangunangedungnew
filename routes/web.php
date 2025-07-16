@@ -77,6 +77,9 @@ Route::get('/bebangunangedunginformasi/{id}', [PendataanBangunanGedungController
 
 Route::delete('/bebangunangedungdelete/{id}', [PendataanBangunanGedungController::class, 'bebangunangedungdelete'])->middleware('auth')->name('bebangunangedungdelete');
 
+// DATA PROFIL TANAH
+Route::get('/bependataanbgtanah/{id}', [PendataanBangunanGedungController::class, 'bependataanbgtanah'])->middleware('auth')->name('bependataanbgtanah');
+
 // 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------
 Route::get('/resbgindex', [FedashboardController::class, 'menuresbangunangedungindex']);
