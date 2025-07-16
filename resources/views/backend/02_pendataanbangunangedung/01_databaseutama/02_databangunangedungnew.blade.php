@@ -461,7 +461,7 @@ th {
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bepbgslfindexslfdelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/bebangunangedungdelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
