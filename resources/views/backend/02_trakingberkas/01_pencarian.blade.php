@@ -186,12 +186,28 @@
                 @if(isset($data) && $data)
                     <div class="card shadow border-0 mb-4" style="color: black !important;">
                         <div class="card-body">
-                            <h5 class="card-title text-center mb-4 fw-bold" style="color: black !important;">Status PermohonanSIM BG</h5>
-                            <div class="text-center mb-4">
-                                <p><strong>Nomor Registrasi:</strong> {{ $data->noregissimbg }}</p>
-                                <p><strong>Nama Pemohon:</strong> {{ $data->namapemohon ?? 'Tidak Tersedia' }}</p>
-                                <p><strong>Status:</strong> {{ $data->status ?? 'Tidak tersedia' }}</p>
-                            </div>
+                      <h5 class="card-title text-center mb-4 fw-bold" style="color: black !important;">
+    Status Permohonan SIMBG
+</h5>
+
+<div class="d-flex justify-content-center mb-4">
+    <table class="table table-bordered w-auto" style="color: black !important;">
+        <tbody>
+            <tr>
+                <th class="text-end pe-3">Nomor Registrasi</th>
+                <td>{{ $data->noregissimbg }}</td>
+            </tr>
+            <tr>
+                <th class="text-end pe-3">Nama Pemohon</th>
+                <td>{{ $data->namapemohon ?? 'Tidak Tersedia' }}</td>
+            </tr>
+            <tr>
+                <th class="text-end pe-3">Status</th>
+                <td>{{ $data->status ?? 'Tidak tersedia' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
                             {{-- Tambahan fiturstatus --}}
                             <div style="color: black !important;">
