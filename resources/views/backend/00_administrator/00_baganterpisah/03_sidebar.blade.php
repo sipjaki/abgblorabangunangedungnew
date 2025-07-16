@@ -1167,7 +1167,7 @@
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center;">
     <i class="bi bi-person-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: white; margin: 0 0 0 8px; flex-grow: 1;">Penilik</p>
+    <p style="color: yellow; margin: 0 0 0 8px; flex-grow: 1;">Penilik</p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
 
@@ -1206,14 +1206,14 @@
     <li class="nav-item">
     <a href="/datanewpenilik" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-clipboard-plus nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Buat Inspeksi</p>
+        <p style="color: yellow; margin: 0 0 0 8px;">Buat Inspeksi</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="/dataallpenilikbg" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Data Inspeksi</p>
+        <p style="color: yellow; margin: 0 0 0 8px;">Data Inspeksi</p>
     </a>
 </li>
 
@@ -1239,7 +1239,7 @@
 <li class="nav-item">
     <a href="/bedatapetugaspenilik" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-people nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-        <p style="color: white; margin: 0 0 0 8px;">Data Petugas</p>
+        <p style="color: yellow; margin: 0 0 0 8px;">Data Petugas</p>
     </a>
 </li>
 
