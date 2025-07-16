@@ -148,7 +148,7 @@ th {
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
-        <button class="button-validasinew"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('krkusaha.index') }}';"
                 style="cursor: pointer; color:white;">
@@ -355,7 +355,8 @@ th {
                         <td style="text-align: center;">10</td>
                         <td>(KLB) Koefisien Lantai Bangunan </td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->kdb ?? '-' }} Meter</td>
+                         <td>{{ $item->kdb ?? '-' }} M²</td>
+
                     </tr>
                     {{-- hati hati terbalil kbd dan klb  --}}
                     <tr>
@@ -381,7 +382,7 @@ th {
     @csrf
     @method('DELETE')
     <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-        <button type="button" class="button-baru" style="cursor: pointer; color:red;"
+        <button type="button" class="button-merah"
             data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $item->id }}">
             <i class="bi bi-trash" style="margin-right: 5px;"></i> Hapus Permohonan
         </button>
@@ -417,8 +418,7 @@ th {
 
 {{-- Tombol download PDF di kanan atas bawah --}}
 <div style="display: flex; justify-content: flex-end; padding: 10px;">
-    <button id="downloadPdfBtn" class="button-baru"
-        style="padding: 8px 16px; border-radius: 15px; border: none; cursor: pointer; ">
+    <button id="downloadPdfBtn" class="button-baru">
         <i class="bi bi-download" style="margin-right:6px;"></i> Download PDF
     </button>
 </div>
