@@ -413,7 +413,7 @@ public function bebangunangedungdelete($id)
             $entry->delete();
 
             // Redirect atau memberi respons sesuai kebutuhan
-            return redirect('/bepbgslfindexslf')->with('delete', 'Data Berhasil Di Hapus !');
+            return redirect('/bebangunangedung')->with('delete', 'Data Berhasil Di Hapus !');
 
         }
 
