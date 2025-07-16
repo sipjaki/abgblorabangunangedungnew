@@ -872,7 +872,7 @@ th {
       DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
       KABUPATEN BLORA
     </p>
-    <img src="/assets/abgblora/logo/barcodesimbg.png" alt="QR Code" style="height: 100px" />
+    <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px" />
     <p>OPERATOR SIMBG</p>
   </div>
 </div>
