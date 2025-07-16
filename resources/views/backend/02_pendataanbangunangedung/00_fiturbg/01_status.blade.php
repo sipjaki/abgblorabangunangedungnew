@@ -16,7 +16,7 @@
                value="{{ old('koordinat', $data->koordinat ?? '') }}"
                placeholder="Klik peta untuk mendapatkan koordinat" readonly>
     </div>
-        <div id="map" style="height: 300px; border-radius: 10px; border: 2px solid #ccc;"></div>
+        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
 
     {{-- <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div> --}}
 </div>
