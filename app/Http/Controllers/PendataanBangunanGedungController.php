@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\bgkartuinventarisbangunan;
 use App\Models\databangunangedung;
+use App\Models\databgkepemilikan;
 use App\Models\kepemilikanbangunangedung;
 use App\Models\pbgslfbangunan;
 use Illuminate\Support\Facades\Auth;
@@ -369,7 +370,7 @@ public function bebangunangedung(Request $request)
     $search = $request->input('search');
     $perPage = $request->input('perPage', 25);
 
-    $query = pbgslfbangunan::with('kecamatanblora');
+    $query = databgkepemilikan::with('kecamatanblora');
 
     if ($search) {
         $query->where(function ($q) use ($search) {
@@ -379,7 +380,7 @@ public function bebangunangedung(Request $request)
               ->orWhere('email', 'like', "%{$search}%")
               ->orWhere('nopengesahanusaha', 'like', "%{$search}%")
               ->orWhereHas('kecamatanblora', function ($sub) use ($search) {
-                  $sub->where('nama_kecamatan', 'like', "%{$search}%");
+                  $sub->where('kecamatanblora', 'like', "%{$search}%");
               });
 
             if (preg_match('/\d{4}-\d{2}-\d{2}/', $search)) {
