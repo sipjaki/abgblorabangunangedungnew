@@ -582,7 +582,7 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
 <tr>
     <td style="text-align: center;">9</td>
     <td style="text-align: left;">Lokasi Bangunan</td>
-    <td>:</td>
+    <td style="text-align: center;">:</td>
     <td style="white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
         {{ $data->lokasibangunan ? $data->lokasibangunan . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
     </td>
@@ -610,69 +610,70 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
                 @foreach($subdata as $item)
                     <tr>
                         <td style="text-align: center;">1</td>
-                        <td>Kepadatan</td>
-                        <td>:</td>
+                        <td style="text-align: left">Kepadatan</td>
+                        <td style="text-align: center">:</td>
                         <td>{{ $item->kepadatan ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">2</td>
-                        <td>Jumlah Lantai</td>
-                        <td>:</td>
-                        <td>{{ $item->luaslantaimaksimal ?? '-' }}</td>
+                        <td style="text-align: left;">Jumlah Lantai</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left" >{{ $item->luaslantaimaksimal ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">3</td>
-                        <td>Luas Bangunan Maksimal</td>
-                        <td>:</td>
-                        <td>{{ $item->luasbangunan ? $item->luasbangunan . ' M²' : '-' }}</td>
+                        <td style="text-align: left;">Luas Bangunan Maksimal</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left;">{{ $item->luasbangunan ? $item->luasbangunan . ' M²' : '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">4</td>
-                        <td>Luas Lantai Maksimal</td>
-                        <td>:</td>
-                        <td>{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }}</td>
+                        <td style="text-align: left;">Luas Lantai Maksimal</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left;">{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">5</td>
-                        <td>Fungsi Utama Bangunan</td>
-                        <td>:</td>
-                        <td>{{ $item->fungsibangunan ?? 'Belum Dibuatkan' }}</td>
+                        <td style="text-align: left;">Fungsi Utama Bangunan</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left;">{{ $item->fungsibangunan ?? 'Belum Dibuatkan' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">6</td>
-                        <td>(GSB) Garis Sempadan Bangunan</td>
-                        <td>:</td>
-                        <td>{{ $item->gsb ?? 'Belum Dibuatkan' }}</td>
+                        <td style="text-align: left;">(GSB) Garis Sempadan Bangunan</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left;">{{ $item->gsb ?? 'Belum Dibuatkan' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">7</td>
-                        <td>(KDB) Koefisien Dasar Bangunan</td>
-                        <td>:</td>
-                        <td>{{ $item->kdb ?? 'Belum Dibuatkan' }}</td>
+                        {{-- <td>(KDB) Koefisien Dasar Bangunan</td> --}}
+                        <td style="text-align: left;" >(KLB) Koefisien Lantai Bangunan</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left;">{{ $item->kdb ?? 'Belum Dibuatkan' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">8</td>
-                        <td>(KLB) Koefisien Lantai Bangunan</td>
-                        <td>:</td>
-                        <td>{{ $item->klb ?? 'Belum Dibuatkan' }}</td>
+                        <td style="text-align: left;">(KDB) Koefisien Dasar Bangunan</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left;">{{ $item->klb ?? 'Belum Dibuatkan' }}</td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <td style="text-align: center;">9</td>
-                        <td>(KLH) Koefisien Lahan Hijau</td>
-                        <td>:</td>
-                        <td>{{ $item->klh ?? 'Belum Dibuatkan' }}</td>
-                    </tr>
+                        <td style="text-align: left;">(KLH) Koefisien Lahan Hijau</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left;">{{ $item->klh ?? 'Belum Dibuatkan' }}</td>
+                    </tr> --}}
                     <tr>
                         <td style="text-align: center;">10</td>
-                        <td>(KDH) Koefisien Dasar Hijau</td>
-                        <td>:</td>
-                        <td>{{ $item->kdh ? $item->kdh . '%' : 'Belum Dibuatkan' }}</td>
+                        <td style="text-align: left;">(KDH) Koefisien Dasar Hijau</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left;">{{ $item->kdh ? $item->kdh . '%' : 'Belum Dibuatkan' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">11</td>
-                        <td>Jaringan Utilitas Kota</td>
-                        <td>:</td>
-                        <td>{{ $item->jaringanutilitas ?? 'Belum Dibuatkan' }}</td>
+                        <td style="text-align: left;">Jaringan Utilitas Kota</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left;">{{ $item->jaringanutilitas ?? 'Belum Dibuatkan' }}</td>
                     </tr>
                 @endforeach
             @endif
