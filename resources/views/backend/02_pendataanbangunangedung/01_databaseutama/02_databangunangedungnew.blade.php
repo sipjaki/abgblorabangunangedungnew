@@ -203,7 +203,7 @@ th {
 <script>
     function searchTable() {
         const input = document.getElementById("searchInput").value;
-        const url = `/bepbgslfindexslf?search=${encodeURIComponent(input)}`;
+        const url = `/bebangunangedung?search=${encodeURIComponent(input)}`;
 
         fetch(url)
             .then(response => response.text())
@@ -365,7 +365,7 @@ th {
 </td>
 
 {{-- Alamat --}}
-<td>
+<td style="white-space: normal; word-wrap: break-word; word-break: break-word;">
     {!! $item->alamat
         ? e($item->alamat)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}

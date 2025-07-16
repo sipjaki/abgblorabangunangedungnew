@@ -16,8 +16,6 @@ password : SipjakiBlora$$123
 
                     <!--  DEFAUUTL -->
 
-
-
                 {{-- ===================== --}}
                 <div class="flex flex-col sm:flex-row gap-3 items-center w-full">
                     <button class="font-semibold bg-[#030303] p-[14px_20px] rounded-full text-center w-full sm:w-auto text-white">Save as a Draft</button>
