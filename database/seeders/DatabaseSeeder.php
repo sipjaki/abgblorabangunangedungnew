@@ -15294,6 +15294,8 @@ databgkepemilikan::create([
     'email' => 'tambaksari2blora@gmail.com',
     'nopengesahanusaha' => '33.16.09.0200',
     'tanggalinput' => Carbon::now(),
+    'koordinat' => '-6.914744, 107.609810',
+
 ]);
 
 
