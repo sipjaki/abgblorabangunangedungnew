@@ -159,7 +159,7 @@ th {
                     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
                     width: 100%;
                 ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman Berkas Data Permohonan SIMBG</span>
                 </div>
 
 <div class="container py-4">
