@@ -162,62 +162,75 @@ th {
                 <span style="font-family: 'Poppins', sans-serif;">📌 Halaman Berkas Data Permohonan SIMBG</span>
                 </div>
 
-<div class="putih py-4">
 
-    {{-- Title Halaman --}}
-    <div class="text-center mb-4">
-        <h3 class="fw-bold text-primary">Tracking Berkas Permohonan PBG / SLF</h3>
-        <p class="text-muted">Masukkan Nomor Registrasi SIMBG untuk melacak status permohonan Anda</p>
-    </div>
+<div class="container-fluid">
+    <div class="putih row" style="margin-right: 10px; margin-left:10px;">
+        <div class="card mb-4" style="width: 100%;">
+            <div class="card-header" style="
+                margin-bottom:10px;
+                font-weight: 900;
+                font-size: 16px;
+                text-align: center;
+                background: linear-gradient(135deg, #000080, #000080);
+                color: white;
+                padding: 10px 25px;
+                border-radius: 10px;
+                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                ">
+                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : Berkas Pencarian Permohonan PBG/SLF</span>
+            </div>
 
-    {{-- Form Pencarian --}}
-    <form method="GET" action="{{ route('betracking') }}" class="row g-3 justify-content-center mb-4">
-        <div class="col-md-6">
-            <input type="text" name="noregissimbg" id="noregissimbg"
-                   class="form-control @error('noregissimbg') is-invalid @enderror"
-                   placeholder="Contoh: PBG-2024-XYZ"
-                   value="{{ request('noregissimbg') }}" required>
-            @error('noregissimbg')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="button-baru">
-                <i class="bi bi-search"></i> Cari
-            </button>
-        </div>
-    </form>
-
-    {{-- Jika Data Ditemukan --}}
-    @if($data)
-        <div class="card shadow-lg border-0 mb-4">
-            <div class="card-body">
-                <h5 class="card-title text-center mb-4 text-success fw-bold">Status Permohonan</h5>
-
-                {{-- Info dasar --}}
+            <div class="container py-4 putih">
+                <!-- Title Halaman -->
                 <div class="text-center mb-4">
-                    <p><strong>Nomor Registrasi:</strong> {{ $data->noregissimbg }}</p>
-                    <p><strong>Nama Pemohon:</strong> {{ $data->namapemohon ?? 'Tidak Tersedia' }}</p>
+                    <h3 class="fw-bold text-primary" style="color: black;">Tracking Berkas Permohonan PBG / SLF</h3>
+                    <p class="text-muted" style="color: black;">Masukkan Nomor Registrasi SIMBG untuk melacak status permohonan Anda</p>
                 </div>
 
-                {{-- Timeline Status --}}
-                {!! view('backend.02_trakingberkas.01_pencarian', compact('data')) !!}
+                <!-- Form Pencarian -->
+                <form method="GET" action="{{ route('betrackingdatacari') }}" class="row g-3 justify-content-center mb-4">
+                    <div class="col-md-6">
+                        <input
+                            type="text"
+                            name="noregissimbg"
+                            class="form-control @error('noregissimbg') is-invalid @enderror"
+                            placeholder="Contoh: PBG-2024-XYZ"
+                            value="{{ request('noregissimbg') }}"
+                            required
+                            style="color: black;"
+                        >
+                        @error('noregissimbg')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-search"></i> Cari
+                        </button>
+                    </div>
+                </form>
+
+                @if(isset($data) && $data)
+                    <div class="card shadow-lg border-0 mb-4" style="color: black;">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4 text-success fw-bold" style="color: black;">Status Permohonan</h5>
+
+                            <div class="text-center mb-4" style="color: black;">
+                                <p><strong>Nomor Registrasi:</strong> {{ $data->noregissimbg }}</p>
+                                <p><strong>Nama Pemohon:</strong> {{ $data->namapemohon ?? 'Tidak Tersedia' }}</p>
+                                <p><strong>Status:</strong> {{ $data->status ?? 'Tidak tersedia' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @elseif(request('noregissimbg'))
+                    <div class="alert alert-danger text-center" role="alert" style="color: black;">
+                        Data tidak ditemukan untuk nomor registrasi: <strong>{{ request('noregissimbg') }}</strong>
+                    </div>
+                @endif
             </div>
         </div>
-
-        {{-- Include fitur tambahan jika data ditemukan --}}
-        @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
-
-    @elseif(request('noregissimbg'))
-        {{-- Jika data tidak ditemukan --}}
-        <div class="alert alert-danger text-center" role="alert">
-            Data tidak ditemukan untuk nomor registrasi: <strong>{{ request('noregissimbg') }}</strong>
-        </div>
-    @endif
-
+    </div>
 </div>
-
-
              <!-- /.card -->
          </div>
          <!-- /.col -->
