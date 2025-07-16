@@ -332,6 +332,7 @@ th {
 <th style="background-color: #ADD8E6;"><i class="bi bi-telephone-fill"></i> No. Telepon</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-fill"></i> Email</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-lock2-fill"></i> No. Pengesahan Usaha</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-lock2-fill"></i> Informasi Bangunan</th>
 
     @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
@@ -394,7 +395,7 @@ th {
 <td style="text-align: center;">
     <a href="{{ route('bepbgslflihatper.show', $item->id) }}"
         class="button-baru">
-        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Permohonan
+        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Informasi
     </a>
 </td>
 
