@@ -69,6 +69,9 @@ Route::get('/feinfofungsiusaha', [FedashboardController::class, 'feinfofungsiusa
 Route::get('/slffungsiusaha', [FedashboardController::class, 'slffungsiusaha']);
 Route::get('/slfmenara', [FedashboardController::class, 'slfmenara']);
 
+// 02_ MENU PENDATAAN BANGUNAN GEDUNG
+Route::get('/bependataanbangunangedung', [PendataanBangunanGedungController::class, 'bependataanbangunangedung'])->middleware('auth')->name('bependataanbangunangedung');
+
 
 // 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------
