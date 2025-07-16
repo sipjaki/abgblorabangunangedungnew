@@ -521,13 +521,14 @@ th {
 {{-- Berkas PBG --}}
 <td style="text-align: left;">
     @if(!empty($item->berkaspbg))
-        <a href="{{ asset('storage/' . $item->berkaspbg) }}" target="_blank" class="btn btn-sm btn-primary">
+        <a href="/{{ $item->berkaspbg }}" target="_blank" class="btn btn-sm btn-primary">
             <i class="bi bi-download me-1"></i> Download
         </a>
     @else
         <span class="button-newvalidasi">On Progress</span>
     @endif
 </td>
+
 
             {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
