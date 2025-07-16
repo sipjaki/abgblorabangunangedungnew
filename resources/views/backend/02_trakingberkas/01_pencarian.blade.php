@@ -185,31 +185,31 @@
                 <!-- Hasil -->
                 @if(isset($data) && $data)
                     <div class="card shadow border-0 mb-4" style="color: black !important;">
-                        <div class="card-body">
-                         <h5 class="card-title fw-bold text-center mb-4" style="color: black !important;">
-    Status Permohonan SIMBG
-</h5>
+            <div class="card-body bg-white text-black">
+    <h5 class="card-title fw-bold text-center mb-4">
+        Status Permohonan SIMBG
+    </h5>
 
-<div class="d-flex justify-content-center mb-4">
-    <div style="min-width: 350px;">
-        <table class="table table-bordered table-striped text-start" style="color: black !important;">
-            <tbody>
-                <tr>
-                    <th style="width: 180px;">Nomor Registrasi</th>
-                    <td>{{ $data->noregissimbg }}</td>
-                </tr>
-                <tr>
-                    <th>Nama Pemohon</th>
-                    <td>{{ $data->namapemohon ?? 'Tidak Tersedia' }}</td>
-                </tr>
-                <tr>
-                    <th>Status</th>
-                    <td>{{ $data->status ?? 'Tidak tersedia' }}</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="d-flex justify-content-center">
+        <div class="table-responsive" style="max-width: 600px;">
+            <table class="table table-bordered table-striped text-start mb-0">
+                <tbody>
+                    <tr>
+                        <th style="width: 200px;">Nomor Registrasi</th>
+                        <td>{{ $data->noregissimbg }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nama Pemohon</th>
+                        <td>{{ $data->namapemohon ?? 'Tidak Tersedia' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>{{ $data->status ?? 'Tidak tersedia' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
 
                             {{-- Tambahan fiturstatus --}}
