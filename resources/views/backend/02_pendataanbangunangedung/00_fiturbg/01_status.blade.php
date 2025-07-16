@@ -14,45 +14,51 @@
                id="koordinat"
                name="koordinat"
                value="{{ old('koordinat', $data->koordinat ?? '') }}"
-               placeholder="Klik peta untuk mendapatkan koordinat" readonly>
+               placeholder="Koordinat tidak dapat diubah"
+               readonly>
     </div>
-        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
-
-    {{-- <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div> --}}
+    <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
 </div>
 
 <!-- Leaflet JS -->
 <script>
     // Inisialisasi map dengan fokus ke Kabupaten Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11); // Koordinat Blora
+    var map = L.map('map').setView([-7.0421, 111.4046], 11); // Koordinat Blora default
 
     // Tambahkan layer peta dari OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
     }).addTo(map);
 
-    // Marker (jika sudah ada nilai awal koordinat)
     var marker;
     var input = document.getElementById('koordinat');
+
     if (input.value) {
         var coords = input.value.split(',');
-        marker = L.marker([coords[0], coords[1]]).addTo(map);
-        map.setView([coords[0], coords[1]], 15);
+        var lat = parseFloat(coords[0].trim());
+        var lng = parseFloat(coords[1].trim());
+        if (!isNaN(lat) && !isNaN(lng)) {
+            // Pasang marker di koordinat yang sudah ada
+            marker = L.marker([lat, lng]).addTo(map);
+            map.setView([lat, lng], 15);
+        }
     }
 
-    // Event saat klik di peta
-    map.on('click', function(e) {
-        var latlng = e.latlng;
-        // Hapus marker sebelumnya
-        if (marker) {
-            map.removeLayer(marker);
-        }
-        // Tambahkan marker baru
-        marker = L.marker(latlng).addTo(map);
+    // Nonaktifkan klik peta agar marker tidak bisa dipindah/diganti
+    // Jadi hapus atau jangan daftarkan event klik di map
 
-        // Simpan koordinat ke input
-        document.getElementById('koordinat').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
-    });
+    // Jika kamu ada event klik sebelumnya, pastikan dihapus atau tidak ada
+    // Contoh, jika mau benar-benar nonaktifkan klik peta:
+    map.off('click'); // memastikan tidak ada event click
+
+    // Jika kamu ingin disable zoom juga supaya peta benar-benar "pasif":
+    // map.dragging.disable();
+    // map.touchZoom.disable();
+    // map.doubleClickZoom.disable();
+    // map.scrollWheelZoom.disable();
+    // map.boxZoom.disable();
+    // map.keyboard.disable();
+
 </script>
 
 
