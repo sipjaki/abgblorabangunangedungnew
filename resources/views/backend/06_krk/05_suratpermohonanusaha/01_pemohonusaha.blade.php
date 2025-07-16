@@ -336,37 +336,39 @@ th {
 </div>
 
 <body>
-    <div class="halaman" style="font-size: 12px; line-height: 1.8; font-family: 'Times New Roman', Times, serif; padding: 20px;">
-  <div style="text-align: center; font-weight: bold; text-transform: uppercase; margin-bottom: 10px;">
-    Permohonan Surat Keterangan Rencana Kabupaten (KRK)
-  </div>
+    <div class="halaman">
+<div style="font-size: 12px; line-height: 1.6; text-align: justify;">
+  <p style="text-align: center; font-weight: bold;">
+    PERMOHONAN SURAT KETERANGAN RENCANA KABUPATEN (KRK)
+  </p>
 
-  <div style="margin-bottom: 10px;">
-    Blora, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}
-  </div>
+  <p>Blora, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
 
-  <div style="margin-bottom: 10px;">
-    Lampiran : 1 (satu) bendel<br>
+  <p>
+    Lampiran : 1 (satu) bendel <br>
     Perihal : Permohonan Surat Keterangan Kabupaten (KRK)
-  </div>
+  </p>
 
-  <div style="margin-bottom: 20px;">
-    Kepada Yth:<br>
-    Kepala Dinas Pekerjaan Umum dan Penataan Ruang<br>
-    Kabupaten Blora<br>
-    Di<br>
-    <strong>Blora</strong>
-  </div>
+  <p>
+    Kepada Yth. <br>
+    Kepala Dinas Pekerjaan Umum dan Rencana Penataan Ruang Kabupaten Blora <br>
+    Di <br>
+    Blora
+  </p>
 
-  <p>Yang bertanda tangan di bawah ini, saya mengajukan permohonan Surat Keterangan Rencana Kabupaten (KRK), dengan keterangan sebagai berikut:</p>
+  <p>
+    Yang bertanda tangan di bawah ini, saya mengajukan permohonan Surat Keterangan Rencana Kabupaten (KRK), dengan keterangan sebagai berikut:
+  </p>
 
-  <ol style="padding-left: 18px; margin-top: 15px;">
+  <ol style="padding-left: 15px;">
     <li>Nama : {{ $data->namapemohon ?? '-' }}</li>
     <li>Alamat : {{ $data->alamatpemohon ?? '-' }}</li>
     <li>Pekerjaan : {{ $data->pekerjaan ?? '-' }}</li>
     <li>No. Telp/HP : {{ $data->teleponpemohon ?? '-' }}</li>
     <li>Email : {{ $data->emailpemohon ?? '-' }}</li>
-    <li>Jenis Pengajuan : {{ $data->jenispengajuan ?? 'PBG (belum terbangun) / SLF (sudah terbangun)' }}</li>
+    <li>
+      Jenis Pengajuan : {{ $data->jenispengajuan ?? 'PBG (belum terbangun) / SLF (sudah terbangun)' }}
+    </li>
     <li>
       Fungsi Bangunan : {{ $data->fungsibangunan ?? '-' }}<br>
       Lainnya : {{ $data->subfungsibangunan ?? '-' }}
@@ -375,36 +377,20 @@ th {
     <li>Luas Lahan : {{ $data->luastanah ?? '-' }} m²</li>
     <li>Jumlah Lantai Bangunan : {{ $data->jumlahlantai ?? '-' }}</li>
     <li>
-      Lokasi Bangunan:
-      <table style="margin-top: 5px; margin-left: 15px;">
-        <tr>
-          <td style="width: 120px;">Jalan</td>
-          <td>: {{ $data->jalan ?? '-' }}</td>
-        </tr>
-        <tr>
-          <td>RT / RW</td>
-          <td>: {{ $data->rt ?? '-' }} / {{ $data->rw ?? '-' }}</td>
-        </tr>
-        <tr>
-          <td>Kelurahan / Desa</td>
-          <td>: {{ $data->kelurahandesa->nama ?? '-' }}</td>
-        </tr>
-        <tr>
-          <td>Kecamatan</td>
-          <td>: {{ $data->kecamatanblora->nama ?? '-' }}</td>
-        </tr>
-        <tr>
-          <td>Koordinat Geografis</td>
-          <td>: {{ $data->koordinat ?? '-' }}</td>
-        </tr>
-      </table>
+      Lokasi Bangunan :
+      <ul style="margin-left: 15px;">
+        <li>Jalan : {{ $data->jalan ?? '-' }}</li>
+        <li>RT/RW : {{ $data->rt ?? '-' }}/{{ $data->rw ?? '-' }}</li>
+        <li>Kelurahan : {{ $data->kelurahandesa->nama ?? '-' }}</li>
+        <li>Kecamatan : {{ $data->kecamatanblora->nama ?? '-' }}</li>
+        <li>Koordinat Geografis : {{ $data->koordinat ?? '-' }}</li>
+      </ul>
     </li>
   </ol>
 
-  <p style="margin-top: 20px;"><strong>Sebagai bahan pertimbangan berikut kami lampirkan:</strong></p>
-
-  <ol style="padding-left: 18px;">
-    <li>Foto Copy Kartu Tanda Penduduk</li>
+  <p><strong>Sebagai bahan pertimbangan berikut kami lampirkan:</strong></p>
+  <ol style="padding-left: 15px;">
+    <li>Foto Copy KTP</li>
     <li>Foto Copy NPWP</li>
     <li>Foto Copy Sertifikat Tanah</li>
     <li>Site Plan</li>
@@ -413,15 +399,15 @@ th {
     <li>Dokumen Validasi Tata Ruang DPUPR Kabupaten Blora</li>
   </ol>
 
-  <p style="margin-top: 20px;">
-    Demikian permohonan ini kami sampaikan. Atas perhatiannya kami ucapkan terima kasih.
+  <p>
+    Demikian permohonan ini kami sampaikan, atas perhatiannya kami ucapkan terima kasih.
   </p>
 
-  <div style="margin-top: 40px; text-align: right;">
-    <p>Pemohon</p>
-    <br><br><br>
-    <p style="margin-top: 40px;">( ................................................ )</p>
+  <div style="text-align: right; margin-top: 30px;">
+    <p>Pemohon</p><br><br>
+    <p>( ................................................ )</p>
   </div>
+</div>
 </div>
 
 </body>
