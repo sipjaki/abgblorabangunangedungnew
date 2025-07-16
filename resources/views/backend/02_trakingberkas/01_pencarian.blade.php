@@ -44,7 +44,7 @@ th {
 
 </style>
 
-{{-- @include('backend.00_administrator.00_baganterpisah.01_header') --}}
+@include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
