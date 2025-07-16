@@ -832,5 +832,21 @@ public function bedatapetugaspenilik(Request $request)
     ]);
 }
 
+public function bedatapetugaspenilikcreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 4)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.07_penilikbangunan.01_datapenilik.02_tambahdatapenilik', [
+        'title' => 'Form Tambah Data Petugas Inspeksi Bangunan Gedung',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
+
 
 }
