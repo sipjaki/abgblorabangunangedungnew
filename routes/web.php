@@ -46,6 +46,7 @@ Route::get('/web', [FedashboardController::class, 'web']);
 // 02_ MENU TRACKING BERKAS
 
 Route::get('/betracking', [PbgslfController::class, 'betracking'])->middleware('auth')->name('betracking');
+Route::get('/betrackingdata', [PbgslfController::class, 'betrackingdata'])->middleware('auth')->name('betrackingdata');
 
 // 01_ MENU PBG SLF
 
