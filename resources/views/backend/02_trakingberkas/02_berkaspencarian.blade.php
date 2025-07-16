@@ -236,6 +236,35 @@ th {
     </div>
 </div>
 
+<style>
+    /* Paksa semua teks dalam .putih jadi hitam */
+    .putih, .putih * {
+        color: black !important;
+    }
+
+    /* Paksa background jadi terang untuk keterbacaan */
+    .putih {
+        background-color: white !important;
+    }
+
+    /* Override input & button text color juga */
+    .putih input,
+    .putih button,
+    .putih .form-control,
+    .putih .card-title,
+    .putih .alert,
+    .putih p,
+    .putih h1, .putih h2, .putih h3, .putih h4, .putih h5, .putih h6 {
+        color: black !important;
+    }
+
+    .putih .btn {
+        color: black !important;
+        border-color: #999 !important;
+        background-color: #f8f9fa !important;
+    }
+</style>
+
              <!-- /.card -->
          </div>
          <!-- /.col -->
