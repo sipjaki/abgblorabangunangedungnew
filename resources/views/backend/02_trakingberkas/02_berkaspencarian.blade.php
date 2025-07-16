@@ -162,7 +162,7 @@ th {
                 <span style="font-family: 'Poppins', sans-serif;">📌 Halaman Berkas Data Permohonan SIMBG</span>
                 </div>
 
-<div class="container py-4">
+<div class="container py-4 putih">
 
     {{-- Title Halaman --}}
     <div class="text-center mb-4">
