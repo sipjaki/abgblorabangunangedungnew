@@ -171,7 +171,7 @@ th {
     </div>
 
     {{-- Form Pencarian --}}
-    <form method="GET" action="{{ route('betracking') }}" class="row g-3 justify-content-center mb-4">
+    <form method="GET" action="{{ route('betrackingdata') }}" class="row g-3 justify-content-center mb-4">
         <div class="col-md-6">
             <input type="text" name="noregissimbg" id="noregissimbg"
                    class="form-control @error('noregissimbg') is-invalid @enderror"
@@ -201,7 +201,7 @@ th {
                 </div>
 
                 {{-- Timeline Status --}}
-                {!! view('backend.02_trakingberkas.01_pencarian', compact('data')) !!}
+                {!! view('backend.02_trakingberkas.02_berkaspencarian', compact('data')) !!}
             </div>
         </div>
 
