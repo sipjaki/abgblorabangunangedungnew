@@ -8,7 +8,8 @@
                class="form-control @error('koordinat') is-invalid @enderror"
                id="koordinat"
                name="koordinat"
-               value="{{ old('koordinat', $data->koordinat ?? 'Segera Update Koordinat') }}">
+               value="{{ old('koordinat', $data->koordinat ?? 'Segera Update Koordinat') }}"
+               placeholder="Klik peta untuk mendapatkan koordinat">
         @error('koordinat') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 
@@ -60,7 +61,56 @@
     </div>
 </div>
 
+{{-- Tambahkan Leaflet CSS dan JS jika belum ada --}}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-sA+zMJOxZ+2fRZ2E9n+6Rc96ZLoOUod9W/Gc1iR2XYk="
+      crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-oM1Q+Q4ZcZwwUtzfUavXbR/ExkZry3QQZQ1XCuVyc0I="
+        crossorigin=""></script>
 
+<script>
+    // Inisialisasi peta dengan titik default di Blora
+    var map = L.map('map').setView([-7.0421, 111.4046], 11);
+
+    // Tambahkan layer peta dari OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
+        maxZoom: 19,
+    }).addTo(map);
+
+    // Marker (jika sudah ada koordinat tersimpan)
+    var marker;
+    var input = document.getElementById('koordinat');
+
+    if (input.value && input.value !== 'Segera Update Koordinat') {
+        var coords = input.value.split(',');
+        if(coords.length === 2) {
+            var lat = parseFloat(coords[0].trim());
+            var lng = parseFloat(coords[1].trim());
+            if(!isNaN(lat) && !isNaN(lng)) {
+                marker = L.marker([lat, lng]).addTo(map);
+                map.setView([lat, lng], 15);
+            }
+        }
+    }
+
+    // Event klik di peta untuk set koordinat
+    map.on('click', function(e) {
+        var latlng = e.latlng;
+
+        // Hapus marker lama jika ada
+        if (marker) {
+            map.removeLayer(marker);
+        }
+
+        // Tambahkan marker baru
+        marker = L.marker(latlng).addTo(map);
+
+        // Update input koordinat dengan format 6 digit desimal
+        input.value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
+    });
+</script>
 
 <div class="row g-4">
     @php
@@ -107,37 +157,3 @@
     @endforeach
 </div>
 
-
-
-<script>
-    // Inisialisasi map dengan fokus ke Kabupaten Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11); // Koordinat Blora
-
-    // Tambahkan layer peta dari OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
-    }).addTo(map);
-
-    // Marker (jika sudah ada nilai awal koordinat)
-    var marker;
-    var input = document.getElementById('koordinat');
-    if (input.value) {
-        var coords = input.value.split(',');
-        marker = L.marker([coords[0], coords[1]]).addTo(map);
-        map.setView([coords[0], coords[1]], 15);
-    }
-
-    // Event saat klik di peta
-    map.on('click', function(e) {
-        var latlng = e.latlng;
-        // Hapus marker sebelumnya
-        if (marker) {
-            map.removeLayer(marker);
-        }
-        // Tambahkan marker baru
-        marker = L.marker(latlng).addTo(map);
-
-        // Simpan koordinat ke input
-        document.getElementById('koordinat').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
-    });
-</script>
