@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('alamat')->nullable();
             $table->string('notelepon')->nullable();
             $table->string('email')->nullable();
+            $table->string('koordinat')->nullable();
 
             $table->string('tampakdepan')->nullable();
             $table->string('tampakbelakang')->nullable();

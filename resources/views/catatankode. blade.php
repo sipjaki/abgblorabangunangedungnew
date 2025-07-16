@@ -62,3 +62,21 @@ password : SipjakiBlora$$123
 
 
             style="font-family: 'Poppins', sans-serif;"
+
+
+
+
+            
+                                        <div style="margin-top: 10px;">
+                                                @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
+                                                <!-- Display the default iframe when the file exists in the storage -->
+                                                <iframe src="{{ asset('storage/' . $data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @elseif($data->peraturan)
+                                                <!-- Display the iframe with the updated file -->
+                                                <iframe src="{{ asset($data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @else
+                                                <!-- Optional: Show a placeholder if there's no file available -->
+                                                <p>Data belum diupdate</p>
+                                            @endif
+
+                                            </div>
