@@ -365,7 +365,7 @@ th {
 </td>
 
 {{-- Alamat --}}
-<td class="break-6-words">
+<td style="text-align: left;" class="break-6-words">
     {{ $item->alamat ?? 'Data Belum Di Update' }}
 </td>
 
