@@ -176,7 +176,7 @@
                         @enderror
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-primary" style="color: black !important;">
+                        <button type="submit" class="button-baru">
                             <i class="bi bi-search" style="color: black !important;"></i> Cari
                         </button>
                     </div>
