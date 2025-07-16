@@ -396,7 +396,7 @@
         <div class="input-group">
             <input type="text" class="form-control" id="kdb" name="kdb" readonly>
             <div class="input-group-append">
-                <span class="input-group-text">Meter persegi</span>
+                <span class="input-group-text">M²</span>
             </div>
         </div>
     </div>
