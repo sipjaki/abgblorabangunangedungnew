@@ -18,5 +18,10 @@ class krkusahacek extends Model
         return $this->hasMany(krkusaha::class);
     }
 
+    public function krkusahacekfoto()
+    {
+        return $this->hasMany(krkusahacekfoto::class);
+    }
+
 
 }

@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('foto5')->nullable();
             $table->string('foto6')->nullable();
 
+
+            // ini ada subnya bro untuk melakukan satu satu goto 
             $table->softDeletes();
             $table->timestamps();
         });
