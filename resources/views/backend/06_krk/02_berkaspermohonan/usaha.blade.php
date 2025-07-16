@@ -179,7 +179,7 @@ th {
 
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-validasinew" style="color: black;">
+    <button class="button-newvalidasi" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
@@ -311,7 +311,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-validasinew" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -382,7 +382,7 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
-                    class="button-validasinew"
+                    class="button-newvalidasi"
                     style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
@@ -406,7 +406,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-validasinew" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+    <button class="button-newvalidasi" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
@@ -675,7 +675,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-validasinew" type="button" onclick="openModal3({{ $item->id }})">
+    <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
@@ -784,7 +784,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-validasinew" type="button" onclick="openModal4({{ $item->id }})">
+    <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
