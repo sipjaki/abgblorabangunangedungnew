@@ -387,13 +387,12 @@
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
                     @enderror
                 </div>
-
-                <div class="form-group row mb-4">
+<div class="form-group row mb-4">
     <label for="klb" class="col-md-4 col-form-label">
         <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan)
     </label>
     <div class="col-md-8">
-        <input type="text" class="form-control" id="klb" name="klb" readonly value="0.6"> <!-- Example value 0.6 (60%) -->
+        <input type="text" class="form-control kdb-input" id="klb" name="klb" readonly>
     </div>
     @error('klb')
     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
@@ -406,7 +405,7 @@
     </label>
     <div class="col-md-8">
         <div class="input-group">
-            <input type="number" class="form-control" id="luasbangunan" name="luasbangunan" readonly value="1200"> <!-- Example value 1200 m² -->
+            <input type="number" class="form-control luas-input" id="luasbangunan" name="luasbangunan" readonly>
             <div class="input-group-append">
                 <span class="input-group-text bg-danger text-white">M²</span>
             </div>
@@ -450,21 +449,26 @@ document.addEventListener('DOMContentLoaded', function() {
         kdbOutput.value = kdbValue.toFixed(2); // Display with 2 decimal places
     }
 
-    // Calculate initially
-    calculateKLB();
-
-    // Recalculate if any input changes (though they're readonly in your case)
-    klbInput.addEventListener('change', calculateKLB);
-    luasBangunanInput.addEventListener('change', calculateKLB);
-
-    // If you want to make it reactive to any potential changes (even programmatic)
+    // Create a MutationObserver to watch for changes in the inputs
     const observer = new MutationObserver(function(mutations) {
         calculateKLB();
     });
 
-    // Observe value changes on both inputs
-    observer.observe(klbInput, { attributes: true, attributeFilter: ['value'] });
-    observer.observe(luasBangunanInput, { attributes: true, attributeFilter: ['value'] });
+    // Configuration for the observer
+    const config = {
+        attributes: true,
+        attributeFilter: ['value'],
+        childList: false,
+        subtree: false
+    };
+
+    // Start observing both inputs
+    observer.observe(klbInput, config);
+    observer.observe(luasBangunanInput, config);
+
+    // Calculate initially when values are populated
+    // This will run after other scripts have set the initial values
+    setTimeout(calculateKLB, 100);
 });
 </script>
                 <!-- KDH -->
