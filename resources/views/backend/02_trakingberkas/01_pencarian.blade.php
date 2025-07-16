@@ -163,21 +163,21 @@
     </form>
 
     @if(isset($data) && $data)
-        <div class="card shadow-lg border-0 mb-4">
-            <div class="card-body">
-                <h5 class="card-title text-center mb-4 text-success fw-bold">Status Permohonan</h5>
+        <div class="bg-white rounded shadow-sm p-4 mb-4">
+            <h5 class="text-center mb-4 text-success fw-bold">Status Permohonan</h5>
 
-                <div class="text-center mb-4">
-                    <p><strong>Nomor Registrasi:</strong> {{ $data->noregissimbg }}</p>
-                    <p><strong>Nama Pemohon:</strong> {{ $data->namapemohon ?? 'Tidak Tersedia' }}</p>
-                    <p><strong>Status:</strong> {{ $data->status ?? 'Tidak tersedia' }}</p>
-                    {{-- Tambahkan detail lain jika perlu --}}
-                </div>
+            <div class="text-center mb-4">
+                <p><strong>Nomor Registrasi:</strong> {{ $data->noregissimbg }}</p>
+                <p><strong>Nama Pemohon:</strong> {{ $data->namapemohon ?? 'Tidak Tersedia' }}</p>
+                <p><strong>Status:</strong> {{ $data->status ?? 'Tidak tersedia' }}</p>
+                {{-- Tambahkan detail lain jika perlu --}}
             </div>
         </div>
 
-        {{-- Tampilkan fitur status hanya jika data ada --}}
-        @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
+        <div class="bg-white rounded shadow-sm p-4">
+            {{-- Tampilkan fitur status --}}
+            @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
+        </div>
 
     @elseif(request('noregissimbg'))
         <div class="alert alert-danger text-center" role="alert">
