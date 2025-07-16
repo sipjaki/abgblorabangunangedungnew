@@ -163,10 +163,9 @@ th {
                 </div>
 
 <div class="container-fluid" style="color: black !important;">
-    <div class="putih row" style="margin-right: 10px; margin-left:10px; color: black !important;">
-        <div class="card mb-4" style="width: 100%; color: black !important;">
+    <div class="putih row" style="margin: 0 10px;">
+        <div class="card mb-4" style="color: black !important;">
             <div class="card-header" style="
-                margin-bottom:10px;
                 font-weight: 900;
                 font-size: 16px;
                 text-align: center;
@@ -175,19 +174,20 @@ th {
                 padding: 10px 25px;
                 border-radius: 10px;
                 box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                ">
-                <span style="font-family: 'Poppins', sans-serif; color: white !important;">📌 Halaman : Berkas Pencarian Permohonan PBG/SLF</span>
+                width: 100%;
+            ">
+                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : Berkas Pencarian Permohonan PBG/SLF</span>
             </div>
 
-            <div class="container py-4 putih" style="background-color: white; color: black !important;">
-                <!-- Title Halaman -->
-                <div class="text-center mb-4" style="color: black !important;">
+            <div class="card-body" style="background: white; color: black !important;">
+                <!-- Judul -->
+                <div class="text-center mb-4">
                     <h3 class="fw-bold text-primary" style="color: black !important;">Tracking Berkas Permohonan PBG / SLF</h3>
                     <p class="text-muted" style="color: black !important;">Masukkan Nomor Registrasi SIMBG untuk melacak status permohonan Anda</p>
                 </div>
 
-                <!-- Form Pencarian -->
-                <form method="GET" action="{{ route('betrackingdatacari') }}" class="row g-3 justify-content-center mb-4" style="color: black !important;">
+                <!-- Form -->
+                <form method="GET" action="{{ route('betrackingdatacari') }}" class="row g-3 justify-content-center mb-4">
                     <div class="col-md-6">
                         <input
                             type="text"
@@ -209,15 +209,20 @@ th {
                     </div>
                 </form>
 
+                <!-- Hasil -->
                 @if(isset($data) && $data)
-                    <div class="card shadow-lg border-0 mb-4" style="color: black !important;">
-                        <div class="card-body" style="color: black !important;">
-                            <h5 class="card-title text-center mb-4 text-success fw-bold" style="color: black !important;">Status Permohonan</h5>
-
-                            <div class="text-center mb-4" style="color: black !important;">
+                    <div class="card shadow border-0 mb-4" style="color: black !important;">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4 fw-bold" style="color: black !important;">Status Permohonan</h5>
+                            <div class="text-center mb-4">
                                 <p><strong>Nomor Registrasi:</strong> {{ $data->noregissimbg }}</p>
                                 <p><strong>Nama Pemohon:</strong> {{ $data->namapemohon ?? 'Tidak Tersedia' }}</p>
                                 <p><strong>Status:</strong> {{ $data->status ?? 'Tidak tersedia' }}</p>
+                            </div>
+
+                            {{-- Tambahan fiturstatus --}}
+                            <div style="color: black !important;">
+                                @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
                             </div>
                         </div>
                     </div>
