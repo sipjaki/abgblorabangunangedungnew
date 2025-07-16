@@ -201,7 +201,7 @@ th {
                 </div>
 
                 {{-- Timeline Status --}}
-                {!! view('backend.01_pbgslf.01_permohonanpbgslf.00_menuutamaberkas', compact('data')) !!}
+                {!! view('backend.02_trakingberkas.01_pencarian', compact('data')) !!}
             </div>
         </div>
 
