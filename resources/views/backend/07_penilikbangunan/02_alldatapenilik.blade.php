@@ -198,84 +198,60 @@ th {
     <span class="text-danger"></span> No
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-person text-danger"></i> Pembuat Data
-</th>
- <th style="background-color: #ADD8E6;">
-    <i class="bi bi-person-vcard text-primary"></i> Nama Pemohon
+    <i class="bi bi-person text-danger me-1"></i> Pembuat Data
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-card-list text-primary"></i> NIK
+    <i class="bi bi-person-vcard text-primary me-1"></i> Nama Pemohon
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-building text-primary"></i> Fungsi Bangunan
+    <i class="bi bi-card-list text-primary me-1"></i> NIK
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-building-check text-primary"></i> Subfungsi Bangunan
+    <i class="bi bi-building text-primary me-1"></i> Fungsi Bangunan
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-geo-alt-fill text-primary"></i> Provinsi
+    <i class="bi bi-building-check text-primary me-1"></i> Subfungsi Bangunan
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-geo text-primary"></i> Kabupaten
+    <i class="bi bi-geo-alt-fill text-primary me-1"></i> Provinsi
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-geo-alt text-primary"></i> Kecamatan
+    <i class="bi bi-geo text-primary me-1"></i> Kabupaten
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-geo-alt text-primary"></i> Kelurahan/Desa
+    <i class="bi bi-geo-alt text-primary me-1"></i> Kecamatan
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-signpost text-primary"></i> Alamat Lengkap
+    <i class="bi bi-geo-alt text-primary me-1"></i> Kelurahan/Desa
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-crosshair text-primary"></i> Koordinat
+    <i class="bi bi-signpost text-primary me-1"></i> Alamat Lengkap
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-house-door text-primary"></i> Nama Bangunan
+    <i class="bi bi-crosshair text-primary me-1"></i> Koordinat
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-fullscreen text-primary"></i> Luas Bangunan (m²)
+    <i class="bi bi-house-door text-primary me-1"></i> Nama Bangunan
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-layers text-primary"></i> Jumlah Lantai
+    <i class="bi bi-fullscreen text-primary me-1"></i> Luas Bangunan (m²)
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-signpost-2 text-primary"></i> GSB (m)
-</th>
-
-
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Surat Tugas </th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th> --}}
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
-
-                                    <th style="background-color: #ADD8E6;">
-    <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Dokumentasi Inspeksi
-</th>
-                                    <th style="background-color: #ADD8E6;">
-    <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Dokumentasi Inspeksi
-</th>
-
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-hash" style="margin-right: 6px;"></i> No Reg SIMBG
+    <i class="bi bi-layers text-primary me-1"></i> Jumlah Lantai
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal SIMBG
+    <i class="bi bi-signpost-2 text-primary me-1"></i> GSB (m)
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-file-earmark-code" style="margin-right: 6px;"></i> No KRK
+    <i class="bi bi-file-earmark-person text-primary me-1"></i> Surat Tugas
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-calendar-check" style="margin-right: 6px;"></i> Tanggal KRK
+    <i class="bi bi-camera text-primary me-1"></i> Dokumentasi Inspeksi
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> No PBG
+    <i class="bi bi-camera text-primary me-1"></i> Dokumentasi Inspeksi
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-calendar" style="margin-right: 6px;"></i> Tanggal PBG
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-folder2-open" style="margin-right: 6px;"></i> Berkas PBG
-</th>
 
        <th style="background-color: #ADD8E6;">Aksi</th>
                                 </tr>
@@ -521,7 +497,7 @@ th {
 {{-- Berkas PBG --}}
 <td style="text-align: left;">
     @if(!empty($item->berkaspbg))
-        <a href="/{{ $item->berkaspbg }}" target="_blank" class="btn btn-sm btn-primary">
+        <a href="/{{ $item->berkaspbg }}" target="_blank" class="button-baru">
             <i class="bi bi-download me-1"></i> Download
         </a>
     @else
@@ -905,7 +881,7 @@ th {
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
                                            data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
-                                            <i class="bi bi-trash">Hapus</i>
+                                            <i class="bi bi-trash"></i>Hapus
                                         </a>
                                     </td>
 
