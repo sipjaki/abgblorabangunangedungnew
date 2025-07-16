@@ -825,7 +825,7 @@ public function bedatapetugaspenilik(Request $request)
 
     $bujk = $query->latest()->paginate($perPage)->appends($request->all());
 
-    return view('backend.07_penilik.01_datapenilik.01_datapenilik', [
+    return view('backend.07_penilikbangunan.01_datapenilik.01_datapenilik', [
         'title' => 'Daftar Petugas Inspeksi Bangunan Gedung',
         'data'  => $bujk,
         'user'  => $user,
