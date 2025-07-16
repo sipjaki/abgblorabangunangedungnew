@@ -338,7 +338,7 @@ th {
 
 <body>
   <div class="halaman">
-    <div class="kop" style="margin-top: -30px;">
+    <div class="kop" style="margin-top: -45px;">
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
       {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
       <div style="display: inline-block;">
@@ -483,7 +483,7 @@ th {
 
     {{-- 6. Catatan --}}
     <p style="margin-top: 10px;"><strong>CATATAN:</strong></p>
-    <div style="border: 1px solid #000; min-height: 80px; padding: 8px; margin-top:-10px;"></div>
+    <div style="border: 1px solid #000; min-height: 125px; padding: 8px; margin-top:-10px;"></div>
 
     <br>
 <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-top: -10px;">
