@@ -429,7 +429,7 @@ public function bebangunangedungdelete($id)
     $user = Auth::user();
 
     // Tampilkan ke view dengan key-value
-    return view('backend.02_pendataanbangunagedung.01_databaseutama.03_informasidatabangunan', [
+    return view('backend.02_pendataanbangunangedung.01_databaseutama.03_informasidatabangunan', [
         'title' => 'Informasi Pendataan Bangunan Gedung Kabupaten Blora',
         'data' => $data,
         'user' => $user
