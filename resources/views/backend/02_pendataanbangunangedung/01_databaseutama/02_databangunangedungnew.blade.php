@@ -365,9 +365,23 @@ th {
 </td>
 
 {{-- Alamat --}}
-<td style="white-space: normal; word-wrap: break-word; word-break: break-word;">
+@php
+function breakEvery6Words($text) {
+    $words = explode(' ', $text);
+    $result = '';
+    foreach ($words as $index => $word) {
+        $result .= e($word) . ' ';
+        if (($index + 1) % 6 == 0) {
+            $result .= '<br>';
+        }
+    }
+    return $result;
+}
+@endphp
+
+<td>
     {!! $item->alamat
-        ? e($item->alamat)
+        ? breakEvery6Words($item->alamat)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
 
