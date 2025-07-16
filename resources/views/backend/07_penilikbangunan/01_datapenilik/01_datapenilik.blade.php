@@ -355,7 +355,7 @@ th {
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bebanteklapcekdokcredelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/bedatapetugaspenilikdelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

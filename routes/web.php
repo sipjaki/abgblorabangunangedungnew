@@ -743,6 +743,8 @@ Route::get('/bedatapetugaspenilikcreate', [PenilikbangunanController::class, 'be
 
 Route::post('/bedatapetugaspenilikcreatenew', [PenilikbangunanController::class, 'bedatapetugaspenilikcreatenew'])->middleware('auth')->name('bedatapetugaspenilikcreatenew');
 
+Route::delete('/bedatapetugaspenilikdelete/{id}', [PenilikbangunanController::class, 'bedatapetugaspenilikdelete'])->middleware('auth')->name('bedatapetugaspenilikdelete');
+
 Route::get('/datanewpenilik', [PenilikbangunanController::class, 'datanewpenilik'])->middleware('auth')->name('datanewpenilik.create');
 Route::post('/datanewpeniliknew', [PenilikbangunanController::class, 'datanewpeniliknew'])->middleware('auth')->name('datanewpeniliknew.create');
 

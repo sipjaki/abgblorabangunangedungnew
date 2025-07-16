@@ -883,4 +883,30 @@ public function bedatapetugaspenilikcreatenew(Request $request)
 }
 
 
+public function bedatapetugaspenilikdelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = petugaspenilik::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/bedatapetugaspenilik')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
+
+
+
+
 }
