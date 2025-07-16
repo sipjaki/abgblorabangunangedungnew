@@ -363,49 +363,35 @@ $jumlahDataIdLima_terbit     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper
     ]);
 }
 
-
 public function bebangunangedung(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
     $perPage = $request->input('perPage', 25);
 
-    // Query awal: filter berdasarkan jenispengajuanbantek_id = 1
-    $query = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 1);
-    });
+    $query = pbgslfbangunan::with('kecamatanblora');
 
-    // Jika ada pencarian
     if ($search) {
         $query->where(function ($q) use ($search) {
-            // Pencarian utama berdasarkan nomor registrasi
-            $q->where('noregissimbg', 'like', "%{$search}%")
-              ->orWhere('tanggalpermohonan', 'like', "%{$search}%") // Tambahkan pencarian tanggal biasa
-
-              // Pencarian ke relasi user
-              ->orWhereHas('user', function ($sub) use ($search) {
-                  $sub->where('name', 'like', "%{$search}%")
-                      ->orWhere('email', 'like', "%{$search}%");
-              })
-
-              // Pencarian ke relasi jenis pengajuan
-              ->orWhereHas('jenispengajuanpbgslfper', function ($sub) use ($search) {
-                  $sub->where('jenispengajuan', 'like', "%{$search}%");
+            $q->where('namainstitusi', 'like', "%{$search}%")
+              ->orWhere('alamat', 'like', "%{$search}%")
+              ->orWhere('notelepon', 'like', "%{$search}%")
+              ->orWhere('email', 'like', "%{$search}%")
+              ->orWhere('nopengesahanusaha', 'like', "%{$search}%")
+              ->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                  $sub->where('nama_kecamatan', 'like', "%{$search}%");
               });
 
-            // Tambahan: jika input search terlihat seperti format tanggal (YYYY-MM-DD), gunakan whereDate
             if (preg_match('/\d{4}-\d{2}-\d{2}/', $search)) {
-                $q->orWhereDate('tanggalpermohonan', $search);
+                $q->orWhereDate('created_at', $search);
             }
         });
     }
 
-    // Ambil hasil akhir
     $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
 
-    // Tampilkan ke view
-    return view('backend.01_pbgslf.01_permohonanpbgslf.01_pbgpermohonan', [
-        'title' => 'Permohonan (PBG) Persetujuan Bangunan Gedung ',
+    return view('backend.02_pendataanbangunangedung.01_databaseutama.02_databangunangedungnew', [
+        'title' => 'Permohonan Pengesahan Usaha Bangunan',
         'data'  => $berkasbantek,
         'user'  => $user,
     ]);
