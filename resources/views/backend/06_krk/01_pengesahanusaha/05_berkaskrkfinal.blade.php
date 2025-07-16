@@ -559,9 +559,9 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
 
             <tr>
                 <td style="text-align: center;">6</td>
-                <td>Nama Pemohon a/n Perusahaan</td>
-                <td>:</td>
-                <td>{{ $data->perusahaan ?? 'Belum Dibuatkan' }}</td>
+                <td style="text-align: left;">Nama Pemohon a/n Perusahaan</td>
+                <td style="text-align: center;">:</td>
+                <td style="text-align: left;">{{ $data->perusahaan ?? 'Belum Dibuatkan' }}</td>
             </tr>
 
             <tr>
@@ -612,7 +612,7 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
                         <td style="text-align: center;">1</td>
                         <td style="text-align: left">Kepadatan</td>
                         <td style="text-align: center">:</td>
-                        <td>{{ $item->kepadatan ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->kepadatan ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">2</td>
