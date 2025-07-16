@@ -1,3 +1,13 @@
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-sA+zMJOxZ+2fRZ2E9n+6Rc96ZLoOUod9W/Gc1iR2XYk="
+      crossorigin=""/>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-oM1Q+Q4ZcZwwUtzfUavXbR/ExkZry3QQZQ1XCuVyc0I="
+        crossorigin=""></script>
+
 {{-- Koordinat dan Peta --}}
 <div class="col-md-12">
     <div class="mb-3">
