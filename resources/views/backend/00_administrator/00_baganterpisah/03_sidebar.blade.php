@@ -904,7 +904,7 @@
                 <li class="nav-item">
     <a href="/betracking" class="nav-link">
         <i class="bi bi-file-earmark-text nav-icon" style="color: white;"></i>
-        {{-- <p style="color: white; margin-left: 8px;">PBG/SLF</p> --}}
+        <p style="color: white; margin-left: 8px;">PBG/SLF</p>
     </a>
 </li>
 
