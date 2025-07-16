@@ -136,116 +136,52 @@
             </div>
             <!--end::App Content Header-->
 
-          <div class="container-fluid">
-    <div class="putih row" style="margin-right: 10px; margin-left:10px;">
-        <div class="card mb-4">
-            <div class="card-header">
-                <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                    <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : Berkas Pencarian Permohonan PBG/SLF</span>
-                </div>
-            </div>
+          <div class="container py-4">
+    <div class="text-center mb-4">
+        <h3 class="fw-bold text-primary">Tracking Berkas Permohonan PBG / SLF</h3>
+        <p class="text-muted">Masukkan Nomor Registrasi SIMBG untuk melacak status permohonan Anda</p>
+    </div>
 
-            <div class="container py-4">
-                <!-- Title Halaman -->
+    <form method="GET" action="{{ route('betrackingdatacari') }}" class="row g-3 justify-content-center mb-4">
+        <div class="col-md-6">
+            <input
+                type="text"
+                name="noregissimbg"
+                class="form-control @error('noregissimbg') is-invalid @enderror"
+                placeholder="Contoh: PBG-2024-XYZ"
+                value="{{ request('noregissimbg') }}"
+                required
+            >
+            @error('noregissimbg')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-search"></i> Cari
+            </button>
+        </div>
+    </form>
+
+    @if(isset($data) && $data)
+        <div class="card shadow-lg border-0 mb-4">
+            <div class="card-body">
+                <h5 class="card-title text-center mb-4 text-success fw-bold">Status Permohonan</h5>
+
                 <div class="text-center mb-4">
-                    <h3 class="fw-bold text-primary">Tracking Berkas Permohonan PBG / SLF</h3>
-                    <p class="text-muted">Masukkan Nomor Registrasi SIMBG untuk melacak status permohonan Anda</p>
+                    <p><strong>Nomor Registrasi:</strong> {{ $data->noregissimbg }}</p>
+                    <p><strong>Nama Pemohon:</strong> {{ $data->namapemohon ?? 'Tidak Tersedia' }}</p>
+                    <p><strong>Status:</strong> {{ $data->status ?? 'Tidak tersedia' }}</p>
+                    {{-- Tambahkan detail lain jika perlu --}}
                 </div>
-
-                <!-- Form Pencarian -->
-                <form id="formPencarian" class="row g-3 justify-content-center mb-4">
-                    <div class="col-md-6">
-                        <input type="text" name="noregissimbg" id="noregissimbg"
-                               class="form-control"
-                               placeholder="Contoh: PBG-2024-XYZ"
-                               required>
-                        <div id="errorNoreg" class="invalid-feedback d-none"></div>
-                    </div>
-                    <div class="col-auto">
-                        <button type="submit" class="button-baru btn btn-primary">
-                            <i class="bi bi-search"></i> Cari
-                        </button>
-                    </div>
-                </form>
-
-                <!-- Tempat hasil pencarian akan tampil -->
-                <div id="hasilPencarian"></div>
             </div>
         </div>
-    </div>
+    @elseif(request('noregissimbg'))
+        <div class="alert alert-danger text-center" role="alert">
+            Data tidak ditemukan untuk nomor registrasi: <strong>{{ request('noregissimbg') }}</strong>
+        </div>
+    @endif
 </div>
-
-{{-- JavaScript --}}
-<script>
-document.getElementById('formPencarian').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const noregInput = document.getElementById('noregissimbg');
-    const noreg = noregInput.value.trim();
-    const hasilDiv = document.getElementById('hasilPencarian');
-    const errorDiv = document.getElementById('errorNoreg');
-
-    // Reset error message & styling
-    errorDiv.classList.add('d-none');
-    noregInput.classList.remove('is-invalid');
-    hasilDiv.innerHTML = '';
-
-    if (!noreg) {
-        errorDiv.textContent = 'Nomor registrasi wajib diisi!';
-        errorDiv.classList.remove('d-none');
-        noregInput.classList.add('is-invalid');
-        return;
-    }
-
-    hasilDiv.innerHTML = '<p class="text-center">Loading...</p>';
-
-    fetch(`/api/tracking-pbg?noregissimbg=${encodeURIComponent(noreg)}`, {
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
-            if(response.status === 404) throw new Error('Data tidak ditemukan untuk nomor registrasi: ' + noreg);
-            else throw new Error('Terjadi kesalahan saat mengambil data');
-        }
-        return response.json();
-    })
-    .then(data => {
-        let html = `
-            <div class="card shadow-lg border-0 mb-4">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-4 text-success fw-bold">Status Permohonan</h5>
-                    <div class="text-center mb-4">
-                        <p><strong>Nomor Registrasi:</strong> ${data.noregissimbg}</p>
-                        <p><strong>Nama Pemohon:</strong> ${data.namapemohon || 'Tidak Tersedia'}</p>
-                    </div>
-                    <div>
-                        <p><strong>Status:</strong> ${data.status || 'Tidak tersedia'}</p>
-                        <!-- Kalau ada detail lain bisa ditambah di sini -->
-                    </div>
-                </div>
-            </div>
-        `;
-        hasilDiv.innerHTML = html;
-    })
-    .catch(err => {
-        hasilDiv.innerHTML = `<div class="alert alert-danger text-center">${err.message}</div>`;
-    });
-});
-</script>
         </main>
         <!--end::App Main-->
     </div>

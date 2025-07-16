@@ -47,6 +47,7 @@ Route::get('/web', [FedashboardController::class, 'web']);
 
 Route::get('/betracking', [PbgslfController::class, 'betracking'])->middleware('auth')->name('betracking');
 Route::get('/betrackingdata', [PbgslfController::class, 'betrackingdata'])->middleware('auth')->name('betrackingdata');
+Route::get('/betrackingdatacari', [PbgslfController::class, 'betrackingdatacari'])->middleware('auth')->name('betrackingdatacari');
 
 // 01_ MENU PBG SLF
 

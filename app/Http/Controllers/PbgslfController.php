@@ -3609,24 +3609,18 @@ public function betracking(Request $request)
     ]);
 }
 
-public function betrackingdata(Request $request)
-{
-    $user = Auth::user();
-    $perPage = $request->input('perPage', 20);
-    $noreg = $request->input('noregissimbg');
 
-    $data = null;
+    public function betrackingdatacari(Request $request)
+    {
+        $noreg = $request->query('noregissimbg');
+        $data = null;
 
-    if ($noreg) {
-        $data = pbgslfbangunan::where('noregissimbg', $noreg)->first();
+        if ($noreg) {
+            // Cari data sesuai nomor registrasi SIMBG
+            $data = pbgslfbangunan::where('noregissimbg', $noreg)->first();
+        }
+
+        return view('backend.02_trakingberkas.01_pencarian', compact('data'));
     }
-
-    return view('backend.02_trakingberkas.02_berkaspencarian', [
-        'title' => 'Berkas Pencarian Permohonan PBG SLF',
-        'data'  => $data,
-        'user'  => $user,
-        'perpage'  => $perPage,
-    ]);
-}
 
 }
