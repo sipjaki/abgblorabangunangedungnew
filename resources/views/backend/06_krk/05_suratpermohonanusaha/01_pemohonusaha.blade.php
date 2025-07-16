@@ -362,7 +362,7 @@ th {
 <table style="width: 100%; font-size: 12px; line-height: 1.8; border-collapse: collapse;">
   <tr>
     <td style="width: 30%;">Nama</td>
-    <td>: {{ $data->namapemohon ?? '-' }}</td>
+    <td>: {{ $data->perorangan ?? '-' }}</td>
   </tr>
   <tr>
     <td>Alamat</td>
@@ -374,7 +374,7 @@ th {
   </tr>
   <tr>
     <td>No. Telp/HP</td>
-    <td>: {{ $data->teleponpemohon ?? '-' }}</td>
+    <td>: {{ $data->notelepon ?? '-' }}</td>
   </tr>
   <tr>
     <td>Email</td>
@@ -386,12 +386,14 @@ th {
   </tr>
   <tr>
     <td>Fungsi Bangunan</td>
-    <td>: {{ $data->fungsibangunan ?? '-' }}</td>
+    {{-- <td>: {{ $data->fungsibangunan ?? '-' }}</td> --}}
+    <td>Fungsi Usaha</td>
+
   </tr>
-  <tr>
+  {{-- <tr>
     <td>Lainnya</td>
     <td>: {{ $data->subfungsibangunan ?? '-' }}</td>
-  </tr>
+  </tr> --}}
   <tr>
     <td>Luas Bangunan</td>
     <td>: {{ $data->luasbangunan ?? '-' }} m²</td>
@@ -406,7 +408,7 @@ th {
   </tr>
   <tr>
     <td>Jalan</td>
-    <td>: {{ $data->jalan ?? '-' }}</td>
+    <td>: {{ $data->alamatpemohon ?? '-' }}</td>
   </tr>
   <tr>
     <td>RT/RW</td>
@@ -414,15 +416,15 @@ th {
   </tr>
   <tr>
     <td>Kelurahan / Desa</td>
-    <td>: {{ $data->kelurahandesa->nama ?? '-' }}</td>
+    <td>: {{ $data->kelurahandesa->desa ?? '-' }}</td>
   </tr>
   <tr>
     <td>Kecamatan</td>
-    <td>: {{ $data->kecamatanblora->nama ?? '-' }}</td>
+    <td>: {{ $data->kecamatanblora->kecamatanblora ?? '-' }}</td>
   </tr>
   <tr>
     <td>Koordinat Geografis</td>
-    <td>: {{ $data->koordinat ?? '-' }}</td>
+    <td>: {{ $data->koordinatlokasi ?? '-' }}</td>
   </tr>
 </table>
 
