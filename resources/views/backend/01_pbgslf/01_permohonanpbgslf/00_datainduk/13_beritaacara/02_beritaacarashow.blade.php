@@ -359,7 +359,7 @@ th {
 
     {{-- 2. Paragraf Pembuka --}}
     <br>
-    <p>
+    <p style="margin-top:-10px;">
         Konsultasi {{$surat->tpatpt->timpenilai ?? '-'}} Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
         {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }}
         tanggal {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->format('d') }}
@@ -367,7 +367,7 @@ th {
         tahun Dua Ribu Dua Puluh Lima untuk :
     </p>
 {{-- 3. Tabel Data Informasi Umum --}}
-<table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+<table style="width: 100%; border-collapse: collapse; font-size: 12px;" style="margin-top:-10px;">
     <tr>
         <td style="width: 35%; border: 1px solid #000; padding: 2px;">No. Registrasi</td>
         <td style="border: 1px solid #000; padding: 2px;">{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td>
@@ -411,7 +411,7 @@ th {
 
     <br>
 {{-- 4. Tabel Pemeriksaan Teknis --}}
-<table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 12px;">
+<table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 12px;" style="margin-top:-10px;">
     <thead>
         <tr>
             <th style="border: 1px solid #000; padding: 5px; text-align:center;">No</th>
