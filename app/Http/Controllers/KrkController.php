@@ -427,6 +427,7 @@ public function permohonanpengesahanusahacreate(Request $request, $id)
         'jenisjalan' => 'required|string|max:50',
         'gsb' => 'required|numeric|min:0',
         'klb' => 'required|string|max:20',
+        'kdb' => 'required|string|max:20',
         'kdh' => 'required|numeric|in:10,20,30,40,50,60,70',
         'jaringanutilitas' => 'required|string|max:255',
     ], [
