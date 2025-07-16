@@ -18,6 +18,7 @@ use App\Models\krksosbudcek;
 use App\Models\krkusaha;
 use App\Models\krkusahacek;
 use App\Models\krkusahasurat;
+use App\Models\krkusahasuratpemohon;
 use App\Models\rencanagsbblora;
 use Illuminate\Support\Facades\Auth;
 
@@ -3651,6 +3652,49 @@ public function permohonankrkhuniancreate(Request $request)
         return redirect('/dashboard');
 
     }
+
+    // surat pemohon krk usaha
+
+    public function besuratpemohonkrk(Request $request, $id)
+{
+    // Ambil user login
+    $user = Auth::user();
+    // Cari data pbg berdasarkan ID
+    $data = krkusaha::findOrFail($id);
+    $surat = krkusahasuratpemohon::findOrFail($id);
+    // $surat = suratpemberitahuanpbg::findOrFail($id);
+    // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->first();
+
+    // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->get();
+
+    // Ambil data relasi lain (sama seperti sebelumnya)
+    // $subdatapemilik = datapemilik::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatabangunan = databangunanpbg::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatatanah = datatanahpbg::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdataumum = dataumumpbg::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknisars = dokumenteknisarsi::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknisstruk = dokumenteknisstruk::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknismep = dokumenteknismep::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknisslfpbg = dokumenteknisslfpbg::where('pbgslfbangunan_id', $data->id)->get();
+
+    // Kirim data ke view
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.10_surattugas.02_showsurattugas', [
+        'title' => 'Surat Tugas Fasilitator Bantuan Gambar',
+        'title_halaman' => 'Surat Tugas Fasilitator Bantuan Gambar',
+        'user' => $user,
+        'data' => $data,
+        'subdatasuratpemberitahuan' => $surat,
+        'surat' => $surat, // Kirim surat yang dipilih
+        // 'subdatapemilik' => $subdatapemilik,
+        // 'subdatabangunan' => $subdatabangunan,
+        // 'subdatatanah' => $subdatatanah,
+        // 'subdataumum' => $subdataumum,
+        // 'subdatadokumenteknisars' => $subdatadokumenteknisars,
+        // 'subdatadokumenteknisstruk' => $subdatadokumenteknisstruk,
+        // 'subdatadokumenteknismep' => $subdatadokumenteknismep,
+        // 'subdatadokumenteknisslfpbg' => $subdatadokumenteknisslfpbg,
+    ]);
+}
 
 
 }

@@ -43,6 +43,11 @@ class krkusaha extends Model
         return $this->belongsTo(krkusahacek::class);
     }
 
+    public function krkusahasuratpemohon()
+    {
+        return $this->hasMany(krkusahasuratpemohon::class);
+    }
+
     protected $casts = [
         'is_validated' => 'boolean',
     ];

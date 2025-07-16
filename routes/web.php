@@ -138,7 +138,7 @@ Route::delete('/krkusahasuratdelete/{id}', [KrkController::class, 'destroykrkusa
 
 // Route::get('/permohonankrk', [KrkController::class, 'permohonankrk'])->middleware('auth');
 // -----------------------------------
-Route::get('/bepbgsurattugasshow/{id}', [PbgslfController::class, 'bepbgsurattugasshow'])->middleware('auth')->name('bepbgsurattugasshow.detail');
+Route::get('/besuratpemohonkrk/{id}', [KrkController::class, 'besuratpemohonkrk'])->middleware('auth')->name('besuratpemohonkrk');
 
 
 
