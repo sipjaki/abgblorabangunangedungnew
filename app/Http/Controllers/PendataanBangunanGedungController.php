@@ -401,7 +401,7 @@ public function bebangunangedung(Request $request)
 public function bebangunangedungdelete($id)
 {
     // Cari item berdasarkan judul
-    $entry = pbgslfbangunan::where('id', $id)->first();
+    $entry = databgkepemilikan::where('id', $id)->first();
 
     if ($entry) {
         // Jika ada file header yang terdaftar, hapus dari storage
