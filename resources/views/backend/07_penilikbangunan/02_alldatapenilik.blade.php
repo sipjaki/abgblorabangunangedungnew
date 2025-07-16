@@ -252,6 +252,27 @@ th {
     <i class="bi bi-camera text-primary me-1"></i> Dokumentasi Inspeksi
 </th>
 <th style="background-color: #ADD8E6;">
+    <i class="bi bi-hash text-primary me-1"></i> No Reg SIMBG
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-calendar-event text-primary me-1"></i> Tanggal SIMBG
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-file-earmark-code text-primary me-1"></i> No KRK
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-calendar-check text-primary me-1"></i> Tanggal KRK
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-file-earmark-text text-primary me-1"></i> No PBG
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-calendar text-primary me-1"></i> Tanggal PBG
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-folder2-open text-primary me-1"></i> Berkas PBG
+</th>
+
 
        <th style="background-color: #ADD8E6;">Aksi</th>
                                 </tr>
