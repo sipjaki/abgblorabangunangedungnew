@@ -15106,7 +15106,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 185,
     'user_id' => 46,
-    'kecamatanblora_id' => 3, // kemungkinan kecamatan Tempurejo, sesuaikan kalau perlu
+    'kecamatanblora_id' => 2, // kemungkinan kecamatan Tempurejo, sesuaikan kalau perlu
     'namainstitusi' => 'SDN 2 TEMPUREJO',
     'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
     'notelepon' => '(tidak ada)',
@@ -15118,7 +15118,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 186,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMPUREJO',
     'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
     'notelepon' => '(tidak ada)',
@@ -15130,7 +15130,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 187,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMPUREJO',
     'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
     'notelepon' => '(tidak ada)',
@@ -15142,7 +15142,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 188,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMPUREJO',
     'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
     'notelepon' => '(tidak ada)',
@@ -15154,7 +15154,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 189,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
     'notelepon' => '(tidak ada)',
@@ -15166,7 +15166,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 190,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
     'notelepon' => '(tidak ada)',
@@ -15179,7 +15179,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 191,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
     'notelepon' => '(tidak ada)',
@@ -15191,7 +15191,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 192,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
     'notelepon' => '(tidak ada)',
@@ -15203,7 +15203,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 193,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
     'notelepon' => '(tidak ada)',
@@ -15215,7 +15215,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 194,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
     'notelepon' => '(tidak ada)',
@@ -15227,7 +15227,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 195,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
     'notelepon' => '(tidak ada)',
@@ -15239,7 +15239,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 196,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
     'notelepon' => '(tidak ada)',
@@ -15251,7 +15251,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 197,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
     'notelepon' => '(tidak ada)',
@@ -15263,7 +15263,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 198,
     'user_id' => 46,
-    'kecamatanblora_id' => 3,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
     'notelepon' => '(tidak ada)',
@@ -15275,7 +15275,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 199,
     'user_id' => 46,
-    'kecamatanblora_id' => 4, // asumsi kecamatan Tambaksari, sesuaikan jika beda
+    'kecamatanblora_id' => 2, // asumsi kecamatan Tambaksari, sesuaikan jika beda
     'namainstitusi' => 'SDN 2 TAMBAKSARI',
     'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
     'notelepon' => '085741668144',
@@ -15287,7 +15287,7 @@ databgkepemilikan::create([
 databgkepemilikan::create([
     'id' => 200,
     'user_id' => 46,
-    'kecamatanblora_id' => 4,
+    'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TAMBAKSARI',
     'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
     'notelepon' => '085741668144',
