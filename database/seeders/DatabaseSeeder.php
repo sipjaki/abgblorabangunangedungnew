@@ -12852,8 +12852,9 @@ petugaspenilik::create([
     'namalengkap' => 'SUKARDI, S.T.',
     'nip' => '197408192010011004',
     'jabatan' => 'Kepala UPTD Pengelolaan Jalan, Jembatan dan Irigasi Wilayah I',
-    'golongan' => 'Penata Muda Tk I',
+    'golongan1' => 'Penata Muda Tk I',
     'skpenilik' => '900/3292-A/2024',
+    'golongan2' => 'III/d',
 ]);
 
 petugaspenilik::create([
@@ -12861,8 +12862,9 @@ petugaspenilik::create([
     'namalengkap' => 'WIRASTOMO WISNU, ST',
     'nip' => '197509042006041002',
     'jabatan' => 'Kepala UPTD Pengelolaan Jalan, Jembatan dan Irigasi Wilayah II',
-    'golongan' => 'Penata Tk I',
+    'golongan1' => 'Penata Tk I',
     'skpenilik' => '900/3292-A/2024',
+    'golongan2' => 'III/d',
 ]);
 
 petugaspenilik::create([
@@ -12870,8 +12872,9 @@ petugaspenilik::create([
     'namalengkap' => 'SITI SUSNI, SE',
     'nip' => '197507062006042024',
     'jabatan' => 'Kepala UPTD Pengelolaan Jalan, Jembatan dan Irigasi Wilayah III',
-    'golongan' => 'Penata Tk I',
+    'golongan1' => 'Penata Tk I',
     'skpenilik' => '900/3292-A/2024',
+    'golongan2' => 'III/d',
 ]);
 
 petugaspenilik::create([
@@ -12879,8 +12882,9 @@ petugaspenilik::create([
     'namalengkap' => 'SUTRISNO, S.Sos',
     'nip' => '197408111997031002',
     'jabatan' => 'Kasubbag TU UPTD Pengelolaan Jalan, Jembatan dan Irigasi Wilayah IV',
-    'golongan' => 'Penata',
+    'golongan1' => 'Penata',
     'skpenilik' => '900/3292-A/2024',
+    'golongan2' => 'III/c',
 ]);
 
 

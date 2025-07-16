@@ -263,11 +263,16 @@ th {
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-briefcase-fill text-primary me-1"></i> Jabatan
 </th>
+
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-diagram-3-fill text-primary me-1"></i> Golongan
+    <i class="bi bi-diagram-3-fill text-primary me-1"></i> Golongan I
 </th>
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-file-earmark-text-fill text-primary me-1"></i> SK Penilik
+</th>
+
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-diagram-3-fill text-primary me-1"></i> Golongan II
 </th>
 
 @canany(['superadmin'])
@@ -286,8 +291,9 @@ th {
 <td>{{ $item->namalengkap ?? '-' }}</td>
 <td>{{ $item->nip ?? '-' }}</td>
 <td>{{ $item->jabatan ?? '-' }}</td>
-<td>{{ $item->golongan ?? '-' }}</td>
+<td>{{ $item->golongan1 ?? '-' }}</td>
 <td>{{ $item->skpenilik ?? '-' }}</td>
+<td>{{ $item->golongan2 ?? '-' }}</td>
 
             @can('superadmin')
 

@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('namalengkap')->nullable()->index();
             $table->string('nip')->nullable();
             $table->string('jabatan')->nullable();
-            $table->string('golongan')->nullable();
+            $table->string('golongan1')->nullable();
             $table->string('skpenilik')->nullable();
+            $table->string('golongan2')->nullable();
 
             $table->string('cadangan1')->nullable();
             $table->string('cadangan2')->nullable();
