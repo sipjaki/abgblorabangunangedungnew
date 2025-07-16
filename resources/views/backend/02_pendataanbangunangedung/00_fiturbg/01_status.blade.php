@@ -67,7 +67,7 @@
         $infoItems = [
             [
                 'icon' => 'bi-person-fill',
-                'title' => 'Nama User',
+                'title' => 'Input Data',
                 'value' => optional($data->user)->name ?? '-',
             ],
             [
