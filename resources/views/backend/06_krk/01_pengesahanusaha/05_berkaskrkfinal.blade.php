@@ -574,7 +574,7 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
     <td style="text-align: center;">8</td>
     <td style="text-align: left">Alamat Pemohon</td>
     <td style="text-align: center;">:</td>
-    <td style="white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+    <td style="text-align:left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
         {{ $data->alamatpemohon ? $data->alamatpemohon . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
     </td>
 </tr>
@@ -583,7 +583,7 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
     <td style="text-align: center;">9</td>
     <td style="text-align: left;">Lokasi Bangunan</td>
     <td style="text-align: center;">:</td>
-    <td style="white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+    <td style="text-align:left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
         {{ $data->lokasibangunan ? $data->lokasibangunan . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
     </td>
 </tr>
