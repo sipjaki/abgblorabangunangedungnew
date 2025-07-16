@@ -13010,6 +13010,2292 @@ databgkepemilikan::create([
     'tanggalinput' => Carbon::now(),
 ]);
 
+databgkepemilikan::insert([
+    [
+        'id' => 11,
+        'user_id' => 46,
+        'kecamatanblora_id' => 2,
+        'namainstitusi' => 'DINAS KESEHATAN',
+        'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+        'notelepon' => '(0296)531127',
+        'email' => null,
+        'nopengesahanusaha' => '33.16.09.0011',
+        'tanggalinput' => Carbon::now(),
+    ],
+    [
+        'id' => 12,
+        'user_id' => 46,
+        'kecamatanblora_id' => 2,
+        'namainstitusi' => 'DINAS KESEHATAN',
+        'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+        'notelepon' => '(0296)531127',
+        'email' => null,
+        'nopengesahanusaha' => '33.16.09.0012',
+        'tanggalinput' => Carbon::now(),
+    ],
+]);
+
+databgkepemilikan::create([
+    'id' => 13,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS KESEHATAN',
+    'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531127',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0013',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 14,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS P4',
+    'alamat' => 'Ds. Sendengharto, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5312257',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0014',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 15,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS P4',
+    'alamat' => 'Ds. Sendengharto, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5312257',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0015',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 16,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS P4',
+    'alamat' => 'Ds. Sendengharto, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5312257',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0016',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 17,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS P4',
+    'alamat' => 'Ds. Sendengharto, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5312257',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0017',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 18,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS P4',
+    'alamat' => 'Ds. Sendengharto, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5312257',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0018',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 19,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PEMBERDAYAAN MASYARAKAT',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)533191',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0019',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 20,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PENDIDIKAN',
+    'alamat' => 'Ds. Karang Jati, RT: 8/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)532372',
+    'email' => 'DinasPendidikan@Blora.go.id',
+    'nopengesahanusaha' => '33.16.09.0020',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 21,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PENDIDIKAN',
+    'alamat' => 'Ds. Karang Jati, RT: 8/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)532372',
+    'email' => 'DinasPendidikan@Blora.go.id',
+    'nopengesahanusaha' => '33.16.09.0021',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 22,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PENDIDIKAN',
+    'alamat' => 'Ds. Karang Jati, RT: 8/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)532372',
+    'email' => 'DinasPendidikan@Blora.go.id',
+    'nopengesahanusaha' => '33.16.09.0022',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 23,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PENDIDIKAN',
+    'alamat' => 'Ds. Karang Jati, RT: 8/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)532372',
+    'email' => 'DinasPendidikan@Blora.go.id',
+    'nopengesahanusaha' => '33.16.09.0023',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 24,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PENDIDIKAN',
+    'alamat' => 'Ds. Karang Jati, RT: 8/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)532372',
+    'email' => 'DinasPendidikan@Blora.go.id',
+    'nopengesahanusaha' => '33.16.09.0024',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 25,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531984',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0025',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 26,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531984',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0026',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 27,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531984',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0027',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 28,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531984',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0028',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 29,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531984',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0029',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 30,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531984',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0030',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 31,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531984',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0031',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 32,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531984',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0032',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 33,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531984',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0033',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 34,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS KOMINFO',
+    'alamat' => 'Ds. Mlangsen, Kec.Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)532038',
+    'email' => 'dinkominfo@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0034',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 35,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN BERAN',
+    'alamat' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5301373',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0035',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 36,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN BERAN',
+    'alamat' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5301373',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0036',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 37,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN BERAN',
+    'alamat' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5301373',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0037',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 38,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN BERAN',
+    'alamat' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5301373',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0038',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 39,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN BERAN',
+    'alamat' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5301373',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0039',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 40,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN JETIS',
+    'alamat' => 'Ds. Jetis, RT: 04/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5326662',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0040',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 41,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN KARANGJATI',
+    'alamat' => 'Ds. Karangjati, RT: 04/RW: 04, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531834',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0041',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 42,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN KARANGJATI',
+    'alamat' => 'Ds. Karangjati, RT: 04/RW: 04, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531834',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0042',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 43,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN KARANGJATI',
+    'alamat' => 'Ds. Karangjati, RT: 04/RW: 04, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531834',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0043',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 44,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN KAUMAN',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298750',
+    'email' => 'kelurahankaumanblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0044',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 45,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN KAUMAN',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298750',
+    'email' => 'kelurahankaumanblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0045',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 46,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN KAUMAN',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298750',
+    'email' => 'kelurahankaumanblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0046',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 47,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN KAUMAN',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298750',
+    'email' => 'kelurahankaumanblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0047',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 48,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'KELURAHAN KAUMAN',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298750',
+    'email' => 'kelurahankaumanblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0048',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 49,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'UPTD LABORATORIUM',
+    'alamat' => 'Ds. Mlangsen, RT: 3/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531538',
+    'email' => 'uptdlabkeskabblora@yahoo.com',
+    'nopengesahanusaha' => '33.16.09.0049',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 50,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'PUSKESMAS BLORA',
+    'alamat' => 'Ds. Jetis, RT: 04/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531005',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0050',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 51,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SDN 1 KAMOLAN',
+    'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'sdnsatukamolan@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0051',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 52,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SDN 1 KAMOLAN',
+    'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'sdnsatukamolan@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0052',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 53,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SDN 1 KAMOLAN',
+    'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'sdnsatukamolan@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0053',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 54,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SDN 1 KAMOLAN',
+    'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'sdnsatukamolan@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0054',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 55,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SDN 1 KAMOLAN',
+    'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'sdnsatukamolan@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0055',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 56,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SDN 1 KAMOLAN',
+    'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'sdnsatukamolan@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0056',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 57,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0057',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 58,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0058',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 59,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0059',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 60,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0060',
+    'tanggalinput' => Carbon::now(),
+]);
+
+
+databgkepemilikan::create([
+    'id' => 61,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0061',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 62,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0062',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 63,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0063',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 64,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0064',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 65,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0065',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 66,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0066',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 67,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
+    'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5298583',
+    'email' => 'skbblora88@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0067',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 68,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 5 BLORA',
+    'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531073',
+    'email' => 'smpnegeri_5Blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0068',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 69,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 5 BLORA',
+    'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531073',
+    'email' => 'smpnegeri_5Blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0069',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 70,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 5 BLORA',
+    'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531073',
+    'email' => 'smpnegeri_5Blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0070',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 71,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 5 BLORA',
+    'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531073',
+    'email' => 'smpnegeri_5Blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0071',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 72,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 5 BLORA',
+    'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531073',
+    'email' => 'smpnegeri_5Blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0072',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 73,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 5 BLORA',
+    'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531073',
+    'email' => 'smpnegeri_5Blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0073',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 74,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 5 BLORA',
+    'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531073',
+    'email' => 'smpnegeri_5Blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0074',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 75,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 5 BLORA',
+    'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531073',
+    'email' => 'smpnegeri_5Blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0075',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 76,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 5 BLORA',
+    'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531073',
+    'email' => 'smpnegeri_5Blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0076',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 77,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 6 BLORA',
+    'alamat' => 'Ds. Karang Jati, RT: 9/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531288',
+    'email' => 'smpn6Blora@yahoo.com',
+    'nopengesahanusaha' => '33.16.09.0077',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 78,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 6 BLORA',
+    'alamat' => 'Ds. Karang Jati, RT: 9/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531288',
+    'email' => 'smpn6Blora@yahoo.com',
+    'nopengesahanusaha' => '33.16.09.0078',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 79,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 6 BLORA',
+    'alamat' => 'Ds. Karang Jati, RT: 9/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531288',
+    'email' => 'smpn6Blora@yahoo.com',
+    'nopengesahanusaha' => '33.16.09.0079',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 80,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 6 BLORA',
+    'alamat' => 'Ds. Karang Jati, RT: 9/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531288',
+    'email' => 'smpn6Blora@yahoo.com',
+    'nopengesahanusaha' => '33.16.09.0080',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 81,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 6 BLORA',
+    'alamat' => 'Ds. Karang Jati, RT: 9/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531288',
+    'email' => 'smpn6Blora@yahoo.com',
+    'nopengesahanusaha' => '33.16.09.0081',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 82,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 7 BLORA',
+    'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'smpn_7blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0082',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 83,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 7 BLORA',
+    'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'smpn_7blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0083',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 84,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 7 BLORA',
+    'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'smpn_7blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0084',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 85,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 7 BLORA',
+    'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'smpn_7blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0085',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 86,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 7 BLORA',
+    'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'smpn_7blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0086',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 87,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 7 BLORA',
+    'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'smpn_7blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0087',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 88,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 7 BLORA',
+    'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => null,
+    'email' => 'smpn_7blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0088',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 89,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0089',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 90,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0090',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 91,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0091',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 92,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0092',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 93,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0093',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 94,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0094',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 95,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0095',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 96,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0096',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 97,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0097',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 98,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0098',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 99,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0099',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 100,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0100',
+    'tanggalinput' => Carbon::now(),
+]);
+
+
+databgkepemilikan::create([
+    'id' => 101,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0101',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 102,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 2 BLORA',
+    'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531138',
+    'email' => 'smpn2blora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0102',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 103,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531562',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0103',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 104,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531563',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0104',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 105,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531564',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0105',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 106,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531565',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0106',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 107,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531566',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0107',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 108,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531567',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0108',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 109,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531568',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0109',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 110,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531569',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0110',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 111,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531570',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0111',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 112,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531571',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0112',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 113,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531572',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0113',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 114,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SMP N 3 BLORA',
+    'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531573',
+    'email' => 'smptigablora@yahoo.co.id',
+    'nopengesahanusaha' => '33.16.09.0114',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 115,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0115',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 116,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0116',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 117,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0117',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 118,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0118',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 119,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0119',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 120,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0120',
+    'tanggalinput' => Carbon::now(),
+]);
+
+
+databgkepemilikan::create([
+    'id' => 121,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0121',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 122,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0122',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 123,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0123',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 124,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0124',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 125,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0125',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 126,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0126',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 127,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0127',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 128,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0128',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 129,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0129',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 130,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0130',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 131,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0131',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 132,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0132',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 133,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'RSUD Dr. R SOETIJONO',
+    'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(tidak ada)',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0133',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 134,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPUPR KAB. BLORA',
+    'alamat' => 'Jl. Nusantara No. 62, Jetis, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531004',
+    'email' => 'dpukabblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0134',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 135,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPUPR KAB. BLORA',
+    'alamat' => 'Jl. Nusantara No. 62, Jetis, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531004',
+    'email' => 'dpukabblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0135',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 136,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPUPR KAB. BLORA',
+    'alamat' => 'Jl. Nusantara No. 62, Jetis, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531004',
+    'email' => 'dpukabblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0136',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 137,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0137',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 138,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0138',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 139,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0139',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 140,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0140',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 141,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0141',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 142,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0142',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 143,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0143',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 144,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0144',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 145,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0145',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 146,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0146',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 147,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0147',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 148,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0148',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 149,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0149',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 150,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0150',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 151,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0151',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 152,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0152',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 153,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0153',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 154,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0154',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 155,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0155',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 156,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0156',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 157,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0157',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 158,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'SEKDA BLORA',
+    'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531028',
+    'email' => '(tidak ada)',
+    'nopengesahanusaha' => '33.16.09.0158',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 159,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERUMAHAN, PERMUKIMAN, DAN PERHUBUNGAN',
+    'alamat' => 'Mlangsen, Kec. Blora, Kec. Blora',
+    'notelepon' => '(0296)531536',
+    'email' => 'dinrumkimhub@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0159',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 160,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERUMAHAN, PERMUKIMAN, DAN PERHUBUNGAN',
+    'alamat' => 'Mlangsen, Kec. Blora, Kec. Blora',
+    'notelepon' => '(0296)531536',
+    'email' => 'dinrumkimhub@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0160',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 161,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERUMAHAN, PERMUKIMAN, DAN PERHUBUNGAN',
+    'alamat' => 'Mlangsen, Kec. Blora, Kec. Blora',
+    'notelepon' => '(0296)531536',
+    'email' => 'dinrumkimhub@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0161',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 162,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERUMAHAN, PERMUKIMAN, DAN PERHUBUNGAN',
+    'alamat' => 'Mlangsen, Kec. Blora, Kec. Blora',
+    'notelepon' => '(0296)531536',
+    'email' => 'dinrumkimhub@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0162',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 163,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS LINGKUNGAN HIDUP',
+    'alamat' => 'Kunden, Kec. Blora, Kab. Blora',
+    'notelepon' => '(0296) 5298523',
+    'email' => 'dinasˍlh@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0163',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 164,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS LINGKUNGAN HIDUP',
+    'alamat' => 'Kunden, Kec. Blora, Kab. Blora',
+    'notelepon' => '(0296) 5298523',
+    'email' => 'dinasˍlh@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0164',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 165,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'BAPPEDA BLORA',
+    'alamat' => 'Jl. GOR No. 10 Blora, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 531827',
+    'email' => 'bappedablora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0165',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 166,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS SOSIAL',
+    'alamat' => 'Jl. Pemuda No. 16A, Mlangsen, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 5298541',
+    'email' => 'dinsos.p3a@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0166',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 167,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINPORABUDPAR',
+    'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5300536',
+    'email' => 'dinporabudpar@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0167',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 168,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINPORABUDPAR',
+    'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5300536',
+    'email' => 'dinporabudpar@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0168',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 169,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINPORABUDPAR',
+    'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5300536',
+    'email' => 'dinporabudpar@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0169',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 170,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINPORABUDPAR',
+    'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5300536',
+    'email' => 'dinporabudpar@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0170',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 171,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINPORABUDPAR',
+    'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5300536',
+    'email' => 'dinporabudpar@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0171',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 172,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINPORABUDPAR',
+    'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5300536',
+    'email' => 'dinporabudpar@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0172',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 173,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINPORABUDPAR',
+    'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)5300536',
+    'email' => 'dinporabudpar@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0173',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 174,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERDAGANGAN, KOPERASI, USAHA KECIL DAN MENENGAH',
+    'alamat' => 'Jl. Rembang-Blora KM. 4, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531112',
+    'email' => 'dindagkop.blora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0174',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 175,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS PERDAGANGAN, KOPERASI, USAHA KECIL DAN MENENGAH',
+    'alamat' => 'Jl. Rembang-Blora KM. 4, Kec. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531112',
+    'email' => 'dindagkop.blora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0175',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 176,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPRD BLORA',
+    'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 531043',
+    'email' => 'setwan@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0176',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 177,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPRD BLORA',
+    'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 531043',
+    'email' => 'setwan@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0177',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 178,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPRD BLORA',
+    'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 531043',
+    'email' => 'setwan@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0178',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 179,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPRD BLORA',
+    'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 531043',
+    'email' => 'setwan@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0179',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 180,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPRD BLORA',
+    'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 531043',
+    'email' => 'setwan@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0180',
+    'tanggalinput' => Carbon::now(),
+]);
+
+
+databgkepemilikan::create([
+    'id' => 181,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPRD BLORA',
+    'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 531043',
+    'email' => 'setwan@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0181',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 182,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPRD BLORA',
+    'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 531043',
+    'email' => 'setwan@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0182',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 183,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPRD BLORA',
+    'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 531043',
+    'email' => 'setwan@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0183',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 184,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DPRD BLORA',
+    'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296) 531043',
+    'email' => 'setwan@blorakab.go.id',
+    'nopengesahanusaha' => '33.16.09.0184',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 185,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3, // kemungkinan kecamatan Tempurejo, sesuaikan kalau perlu
+    'namainstitusi' => 'SDN 2 TEMPUREJO',
+    'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
+    'notelepon' => '(tidak ada)',
+    'email' => 'tempurejo2sdn@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0185',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 186,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 2 TEMPUREJO',
+    'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
+    'notelepon' => '(tidak ada)',
+    'email' => 'tempurejo2sdn@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0186',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 187,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 2 TEMPUREJO',
+    'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
+    'notelepon' => '(tidak ada)',
+    'email' => 'tempurejo2sdn@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0187',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 188,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 2 TEMPUREJO',
+    'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
+    'notelepon' => '(tidak ada)',
+    'email' => 'tempurejo2sdn@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0188',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 189,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 3 TEMPUREJO',
+    'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
+    'notelepon' => '(tidak ada)',
+    'email' => 'sdn_3_tempurejo@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0189',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 190,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 3 TEMPUREJO',
+    'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
+    'notelepon' => '(tidak ada)',
+    'email' => 'sdn_3_tempurejo@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0190',
+    'tanggalinput' => Carbon::now(),
+]);
+
+
+databgkepemilikan::create([
+    'id' => 191,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 3 TEMPUREJO',
+    'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
+    'notelepon' => '(tidak ada)',
+    'email' => 'sdn_3_tempurejo@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0191',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 192,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 3 TEMPUREJO',
+    'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
+    'notelepon' => '(tidak ada)',
+    'email' => 'sdn_3_tempurejo@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0192',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 193,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 3 TEMPUREJO',
+    'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
+    'notelepon' => '(tidak ada)',
+    'email' => 'sdn_3_tempurejo@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0193',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 194,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 1 TEMPUREJO',
+    'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'notelepon' => '(tidak ada)',
+    'email' => 'sdn1tempurejoblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0194',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 195,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 1 TEMPUREJO',
+    'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'notelepon' => '(tidak ada)',
+    'email' => 'sdn1tempurejoblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0195',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 196,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 1 TEMPUREJO',
+    'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'notelepon' => '(tidak ada)',
+    'email' => 'sdn1tempurejoblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0196',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 197,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 1 TEMPUREJO',
+    'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'notelepon' => '(tidak ada)',
+    'email' => 'sdn1tempurejoblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0197',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 198,
+    'user_id' => 46,
+    'kecamatanblora_id' => 3,
+    'namainstitusi' => 'SDN 1 TEMPUREJO',
+    'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'notelepon' => '(tidak ada)',
+    'email' => 'sdn1tempurejoblora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0198',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 199,
+    'user_id' => 46,
+    'kecamatanblora_id' => 4, // asumsi kecamatan Tambaksari, sesuaikan jika beda
+    'namainstitusi' => 'SDN 2 TAMBAKSARI',
+    'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'notelepon' => '085741668144',
+    'email' => 'tambaksari2blora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0199',
+    'tanggalinput' => Carbon::now(),
+]);
+
+databgkepemilikan::create([
+    'id' => 200,
+    'user_id' => 46,
+    'kecamatanblora_id' => 4,
+    'namainstitusi' => 'SDN 2 TAMBAKSARI',
+    'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'notelepon' => '085741668144',
+    'email' => 'tambaksari2blora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0200',
+    'tanggalinput' => Carbon::now(),
+]);
+
 
 
 
