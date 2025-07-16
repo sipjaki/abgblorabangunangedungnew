@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('datainstitusibangunangedung_id')->nullable();
             $table->foreignId('user_id')->nullable()->index();
+            $table->string('tanggalinput')->nullable();
             $table->foreignId('kecamatanblora_id')->nullable()->index();
             $table->string('namainstitusi')->nullable();
             $table->string('alamat')->nullable();
             $table->string('notelepon')->nullable();
             $table->string('email')->nullable();
             $table->string('nopengesahanusaha')->nullable();
-            $table->string('tanggalinput')->nullable();
 
             $table->string('tampakdepan')->nullable();
             $table->string('tampakbelakang')->nullable();

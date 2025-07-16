@@ -323,13 +323,16 @@ th {
                             <thead>
                                   <tr>
         <th style="background-color: #ADD8E6;">No</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Admin DPUPR</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Nama Pemohon</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> No Registrasi SIMBG</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> Tanggal Permohonan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> Status Permohonan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-folder-fill"></i> Berkas</th>
+        <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Input Data</th>
+        {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> User ID</th> --}}
+<th style="background-color: #ADD8E6;"><i class="bi bi-calendar-event-fill"></i> Tanggal Input</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Kecamatan</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Nama Institusi</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-geo-fill"></i> Alamat</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-telephone-fill"></i> No. Telepon</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-envelope-fill"></i> Email</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-lock2-fill"></i> No. Pengesahan Usaha</th>
+
     @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
             @endcan
@@ -340,17 +343,31 @@ th {
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-            {{-- <td>{{ optional($item->user)->name ?? '-' }}</td> --}}
-            <td>{{ $item->user->name ?? '-' }}</td>
-            <td>{{ $item->namapemohon ?? '-' }}</td>
-            <td>{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
-            <td>{{ $item->noregissimbg ?? '-' }}</td>
-            {{-- <td>{{ $item->datapemilik->namapemilik ?? '-' }}</td> --}}
-            {{-- <td>{{ $item->datapemilik->namapemilik ?? '-' }}</td> --}}
-   <td>
-  {{ $item->tanggalpermohonan ? \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') : '-' }}
+
+    {{-- User (relasi) --}}
+    <td>{{ optional($item->user)->name ?? '-' }}</td>
+<td>
+  {{ $item->tanggalinput ? \Carbon\Carbon::parse($item->tanggalinput)->translatedFormat('d F Y') : '-' }}
 </td>
-         <td>Belum dibuat databasenya</td>
+
+    {{-- Kecamatan Blora (relasi) --}}
+    <td>{{ optional($item->kecamatanblora)->kecamatanblora ?? '-' }}</td>
+
+    {{-- Nama Institusi --}}
+    <td>{{ $item->namainstitusi ?? '-' }}</td>
+
+    {{-- Alamat --}}
+    <td>{{ $item->alamat ?? '-' }}</td>
+
+    {{-- No Telepon --}}
+    <td>{{ $item->notelepon ?? '-' }}</td>
+
+    {{-- Email --}}
+    <td>{{ $item->email ?? '-' }}</td>
+
+    {{-- No Pengesahan Usaha --}}
+    <td>{{ $item->nopengesahanusaha ?? '-' }}</td>
+
 <td style="text-align: center;">
     <a href="{{ route('bepbgslflihatper.show', $item->id) }}"
         class="button-baru">
