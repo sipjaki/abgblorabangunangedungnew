@@ -3678,9 +3678,9 @@ public function permohonankrkhuniancreate(Request $request)
     // $subdatadokumenteknisslfpbg = dokumenteknisslfpbg::where('pbgslfbangunan_id', $data->id)->get();
 
     // Kirim data ke view
-    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.10_surattugas.02_showsurattugas', [
-        'title' => 'Surat Tugas Fasilitator Bantuan Gambar',
-        'title_halaman' => 'Surat Tugas Fasilitator Bantuan Gambar',
+    return view('backend.06_krk.05_suratpermohonanusaha.01_pemohonusaha', [
+        'title' => 'Surat Permohonan Saudara ',
+        'title_halaman' => 'Surat Permohonan Saudara ',
         'user' => $user,
         'data' => $data,
         'subdatasuratpemberitahuan' => $surat,
