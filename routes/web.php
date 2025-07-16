@@ -73,6 +73,7 @@ Route::get('/slfmenara', [FedashboardController::class, 'slfmenara']);
 Route::get('/bependataanbangunangedung', [PendataanBangunanGedungController::class, 'bependataanbangunangedung'])->middleware('auth')->name('bependataanbangunangedung');
 
 Route::get('/bebangunangedung', [PendataanBangunanGedungController::class, 'bebangunangedung'])->middleware('auth')->name('bebangunangedung');
+Route::get('/bebangunangedunginformasi/{id}', [PendataanBangunanGedungController::class, 'bebangunangedunginformasi'])->middleware('auth')->name('bebangunangedunginformasi');
 
 Route::delete('/bebangunangedungdelete/{id}', [PendataanBangunanGedungController::class, 'bebangunangedungdelete'])->middleware('auth')->name('bebangunangedungdelete');
 

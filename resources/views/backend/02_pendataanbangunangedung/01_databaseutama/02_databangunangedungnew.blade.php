@@ -406,7 +406,7 @@ document.querySelectorAll('.break-6-words').forEach(td => {
 </td>
 
 <td style="text-align: center;">
-    <a href="{{ route('bepbgslflihatper.show', $item->id) }}"
+    <a href="{{ route('bebangunangedunginformasi', $item->id) }}"
         class="button-baru">
         <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Informasi
     </a>

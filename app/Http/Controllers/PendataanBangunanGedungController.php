@@ -420,6 +420,22 @@ public function bebangunangedungdelete($id)
         return redirect()->back()->with('error', 'Item not found');
     }
 
+        public function bebangunangedunginformasi($id)
+{
+    // Cari data berdasarkan ID
+    $data = databgkepemilikan::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.02_pendataanbangunagedung.01_databaseutama.03_informasidatabangunan', [
+        'title' => 'Informasi Pendataan Bangunan Gedung Kabupaten Blora',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
 
 }
 
