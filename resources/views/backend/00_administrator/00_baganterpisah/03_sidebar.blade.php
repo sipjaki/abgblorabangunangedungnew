@@ -1104,7 +1104,7 @@
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center;">
     <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: red; margin: 0 0 0 8px; flex-grow: 1;">KRK</p>
+    <p style="color: yellow; margin: 0 0 0 8px; flex-grow: 1;">KRK</p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
 
@@ -1135,7 +1135,7 @@
     <li class="nav-item">
         <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-            <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
+            <p style="color: yellow; margin: 0 0 0 8px;">Berkas Pemohon</p>
         </a>
     </li>
 
