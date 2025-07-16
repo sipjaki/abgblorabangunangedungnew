@@ -741,6 +741,8 @@ Route::get('/datambrblora', [DatabaseAbgController::class, 'datambrblora'])->mid
 Route::get('/bedatapetugaspenilik', [PenilikbangunanController::class, 'bedatapetugaspenilik'])->middleware('auth')->name('bedatapetugaspenilik');
 Route::get('/bedatapetugaspenilikcreate', [PenilikbangunanController::class, 'bedatapetugaspenilikcreate'])->middleware('auth')->name('bedatapetugaspenilikcreate');
 
+Route::post('/bedatapetugaspenilikcreatenew', [PenilikbangunanController::class, 'bedatapetugaspenilikcreatenew'])->middleware('auth')->name('bedatapetugaspenilikcreatenew');
+
 Route::get('/datanewpenilik', [PenilikbangunanController::class, 'datanewpenilik'])->middleware('auth')->name('datanewpenilik.create');
 Route::post('/datanewpeniliknew', [PenilikbangunanController::class, 'datanewpeniliknew'])->middleware('auth')->name('datanewpeniliknew.create');
 

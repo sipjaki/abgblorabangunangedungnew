@@ -848,5 +848,39 @@ public function bedatapetugaspenilikcreate()
     ]);
 }
 
+public function bedatapetugaspenilikcreatenew(Request $request)
+{
+    $user = Auth::user();
+
+    $validated = $request->validate([
+        // 'user_id'    => 'required|integer',      // sesuaikan tipe data user_id biasanya integer
+        'namalengkap'=> 'required|string|max:255',
+        'nip'        => 'nullable|string|max:50',
+        'jabatan'    => 'nullable|string|max:255',
+        'golongan1'  => 'nullable|string|max:100',
+        'skpenilik'  => 'nullable|string|max:255',
+        'golongan2'  => 'nullable|string|max:100',
+    ], [
+        // 'user_id.required'     => 'Akun wajib dipilih.',
+        'namalengkap.required' => 'Nama Lengkap wajib diisi.',
+    ]);
+
+    $data = new petugaspenilik();
+
+    // $data->user_id     = $validated['user_id'];
+    $data->namalengkap = $validated['namalengkap'];
+    $data->nip         = $validated['nip'] ?? null;
+    $data->jabatan     = $validated['jabatan'] ?? null;
+    $data->golongan1   = $validated['golongan1'] ?? null;
+    $data->skpenilik   = $validated['skpenilik'] ?? null;
+    $data->golongan2   = $validated['golongan2'] ?? null;
+
+    $data->save();
+
+    session()->flash('create', 'Data petugas penilik berhasil ditambahkan.');
+
+    return redirect()->route('bedatapetugaspenilik'); // Ganti dengan route yang sesuai
+}
+
 
 }
