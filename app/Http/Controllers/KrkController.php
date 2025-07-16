@@ -3661,7 +3661,7 @@ public function permohonankrkhuniancreate(Request $request)
     $user = Auth::user();
     // Cari data pbg berdasarkan ID
     $data = krkusaha::findOrFail($id);
-    $surat = krkusahasuratpemohon::findOrFail($id);
+    // $surat = krkusahasuratpemohon::findOrFail($id);
     // $surat = suratpemberitahuanpbg::findOrFail($id);
     // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->first();
 
@@ -3683,8 +3683,8 @@ public function permohonankrkhuniancreate(Request $request)
         'title_halaman' => 'Surat Permohonan Saudara ',
         'user' => $user,
         'data' => $data,
-        'subdatasuratpemberitahuan' => $surat,
-        'surat' => $surat, // Kirim surat yang dipilih
+        // 'subdatasuratpemberitahuan' => $surat,
+        // 'surat' => $surat, // Kirim surat yang dipilih
         // 'subdatapemilik' => $subdatapemilik,
         // 'subdatabangunan' => $subdatabangunan,
         // 'subdatatanah' => $subdatatanah,
