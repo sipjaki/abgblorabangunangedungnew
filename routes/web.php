@@ -74,6 +74,8 @@ Route::get('/bependataanbangunangedung', [PendataanBangunanGedungController::cla
 
 Route::get('/bebangunangedung', [PendataanBangunanGedungController::class, 'bebangunangedung'])->middleware('auth')->name('bebangunangedung');
 
+Route::delete('/bebangunangedungdelete/{id}', [PendataanBangunanGedungController::class, 'bebangunangedungdelete'])->middleware('auth')->name('bebangunangedungdelete');
+
 // 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------
 Route::get('/resbgindex', [FedashboardController::class, 'menuresbangunangedungindex']);
