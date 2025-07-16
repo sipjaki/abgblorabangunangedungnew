@@ -391,7 +391,7 @@ public function bebangunangedung(Request $request)
     $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
 
     return view('backend.02_pendataanbangunangedung.01_databaseutama.02_databangunangedungnew', [
-        'title' => 'Permohonan Pengesahan Usaha Bangunan',
+        'title' => 'Pendataan Bangunan Gedung Kabupaten Blora',
         'data'  => $berkasbantek,
         'user'  => $user,
     ]);
