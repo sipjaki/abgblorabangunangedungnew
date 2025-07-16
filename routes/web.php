@@ -43,6 +43,10 @@ Route::get('/web', [FedashboardController::class, 'web']);
 // Route::post('/qapertanyaanstorebaru', [FedashboardController::class, 'createstorepertanyaanpublik'])->middleware('auth')->name('createpertanyaanstorebaru');
 // Route::post('/qapertanyaanstorebaru', [AdministratorController::class, 'createstorepertanyaanpublik'])->name('createpertanyaanstorebaru');
 
+// 02_ MENU TRACKING BERKAS
+
+Route::get('/betracking', [PbgslfController::class, 'betracking'])->middleware('auth')->name('betracking');
+
 // 01_ MENU PBG SLF
 
 

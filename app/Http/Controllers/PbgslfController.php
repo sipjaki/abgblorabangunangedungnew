@@ -3588,4 +3588,21 @@ public function updatedataslfnew(Request $request, $id)
     return redirect()->back();
 }
 
+
+
+public function betracking(Request $request)
+{
+    $user = Auth::user();
+    $perPage = $request->input('perPage', 20);
+
+    // Ambil data dari model pbgslfbangunan, tanpa filter search
+    $data = pbgslfbangunan::latest()->paginate($perPage);
+
+    return view('backend.04_bantuanteknis.05_datakonsultan.01_datakonsultanbantek', [
+        'title' => 'Tracking Berkas Permohonan PBG SLF',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
+
 }
