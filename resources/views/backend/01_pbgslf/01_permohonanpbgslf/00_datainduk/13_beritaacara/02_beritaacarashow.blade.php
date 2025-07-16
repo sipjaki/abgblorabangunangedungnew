@@ -359,7 +359,7 @@ th {
 
     {{-- 2. Paragraf Pembuka --}}
     <br>
-    <p style="margin-top:-10px;">
+    <p style="margin-top:-20px;">
         Konsultasi {{$surat->tpatpt->timpenilai ?? '-'}} Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
         {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }}
         tanggal {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->format('d') }}
@@ -367,7 +367,7 @@ th {
         tahun Dua Ribu Dua Puluh Lima untuk :
     </p>
 {{-- 3. Tabel Data Informasi Umum --}}
-<table style="width: 100%; border-collapse: collapse; font-size: 12px;" style="margin-top:-10px;">
+<table style="width: 100%; border-collapse: collapse; font-size: 12px;" style="margin-top:-20px;">
     <tr>
         <td style="width: 35%; border: 1px solid #000; padding: 2px;">No. Registrasi</td>
         <td style="border: 1px solid #000; padding: 2px;">{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td>
@@ -411,7 +411,7 @@ th {
 
     <br>
 {{-- 4. Tabel Pemeriksaan Teknis --}}
-<table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 12px;" style="margin-top:-10px;">
+<table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 12px;" style="margin-top:-20px;">
     <thead>
         <tr>
             <th style="border: 1px solid #000; padding: 5px; text-align:center;">No</th>
@@ -460,9 +460,9 @@ th {
 
 
     <br>
-<div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top:-10px;">
+<div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top:-20px;">
   <p><strong>Rekomendasi:</strong></p>
-  <table style="border-collapse: collapse; width: 100%; font-size: 12px; font-family: Arial, sans-serif; margin-top:-10px;">
+  <table style="border-collapse: collapse; width: 100%; font-size: 12px; font-family: Arial, sans-serif; margin-top:-20px;">
     <tbody>
       <tr style="border: 1px solid #444;">
         <td style="border: 1px solid #444; padding: 4px; width: 50px; text-align: center;">☐</td>
