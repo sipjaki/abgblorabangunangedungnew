@@ -389,18 +389,84 @@
                 </div>
 
                 <div class="form-group row mb-4">
-                    <label for="kdb" class="col-md-4 col-form-label">
-                        <i class="fas fa-cogs"></i> KLB (Koefisien Lantai Bangunan)
-                    </label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" id="kdb" name="kdb" readonly> <!-- Hasil akhir -->
-                        {{-- <input type="text" class="form-control" id="kdb" name="kdb" readonly> --}}
-                    </div>
-                    @error('kdb')
-                    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-                    @enderror
-                </div>
+    <label for="klb" class="col-md-4 col-form-label">
+        <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan)
+    </label>
+    <div class="col-md-8">
+        <input type="text" class="form-control" id="klb" name="klb" readonly value="0.6"> <!-- Example value 0.6 (60%) -->
+    </div>
+    @error('klb')
+    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
 
+<div class="form-group row mb-4">
+    <label for="luasbangunan" class="col-md-4 col-form-label">
+        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
+    </label>
+    <div class="col-md-8">
+        <div class="input-group">
+            <input type="number" class="form-control" id="luasbangunan" name="luasbangunan" readonly value="1200"> <!-- Example value 1200 m² -->
+            <div class="input-group-append">
+                <span class="input-group-text bg-danger text-white">M²</span>
+            </div>
+        </div>
+        @error('luasbangunan')
+        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="form-group row mb-4">
+    <label for="kdb" class="col-md-4 col-form-label">
+        <i class="fas fa-cogs"></i> KLB (Koefisien Lantai Bangunan)
+    </label>
+    <div class="col-md-8">
+        <input type="text" class="form-control" id="kdb" name="kdb" readonly>
+    </div>
+    @error('kdb')
+    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the input elements
+    const klbInput = document.getElementById('klb');
+    const luasBangunanInput = document.getElementById('luasbangunan');
+    const kdbOutput = document.getElementById('kdb');
+
+    // Function to calculate KLB
+    function calculateKLB() {
+        // Get values from inputs
+        const klbValue = parseFloat(klbInput.value) || 0;
+        const luasBangunanValue = parseFloat(luasBangunanInput.value) || 0;
+
+        // Calculate KLB (Koefisien Lantai Bangunan)
+        // Formula: KLB = KDB * Luas Bangunan Maksimal
+        const kdbValue = klbValue * luasBangunanValue;
+
+        // Update the KDB output field
+        kdbOutput.value = kdbValue.toFixed(2); // Display with 2 decimal places
+    }
+
+    // Calculate initially
+    calculateKLB();
+
+    // Recalculate if any input changes (though they're readonly in your case)
+    klbInput.addEventListener('change', calculateKLB);
+    luasBangunanInput.addEventListener('change', calculateKLB);
+
+    // If you want to make it reactive to any potential changes (even programmatic)
+    const observer = new MutationObserver(function(mutations) {
+        calculateKLB();
+    });
+
+    // Observe value changes on both inputs
+    observer.observe(klbInput, { attributes: true, attributeFilter: ['value'] });
+    observer.observe(luasBangunanInput, { attributes: true, attributeFilter: ['value'] });
+});
+</script>
                 <!-- KDH -->
                 <div class="form-group row mb-4">
                     <label for="kdh" class="col-md-4 col-form-label">
