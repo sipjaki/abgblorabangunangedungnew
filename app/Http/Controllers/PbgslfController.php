@@ -3594,11 +3594,15 @@ public function betracking(Request $request)
 {
     $user = Auth::user();
     $perPage = $request->input('perPage', 20);
+    $noreg = $request->input('noregissimbg');
 
-    // Ambil data dari model pbgslfbangunan, tanpa filter search
-    $data = pbgslfbangunan::latest()->paginate($perPage);
+    $data = null;
 
-    return view('backend.04_bantuanteknis.05_datakonsultan.01_datakonsultanbantek', [
+    if ($noreg) {
+        $data = pbgslfbangunan::where('noregissimbg', $noreg)->first();
+    }
+
+    return view('backend.02_trakingberkas.01_pencarian', [
         'title' => 'Tracking Berkas Permohonan PBG SLF',
         'data'  => $data,
         'user'  => $user,
