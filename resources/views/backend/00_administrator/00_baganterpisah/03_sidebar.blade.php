@@ -970,7 +970,7 @@
     </p>
 </div>
     <li class="nav-item">
-        <a href="/bepbgslfindex" class="nav-link">
+        <a href="/bependataanbangunangedung" class="nav-link">
             <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
             <p style="color: white; margin-left: 8px;">Bangunan Gedung</p>
         </a>
