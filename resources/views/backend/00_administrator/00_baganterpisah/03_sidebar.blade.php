@@ -883,13 +883,15 @@
 </a>
 
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
-                     <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-geo-alt nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">PBG/SLF</p>
-        </a>
-    </li>
-    <li class="nav-item">
+
+                <li class="nav-item">
+    <a href="/betracking" class="nav-link">
+        <i class="bi bi-file-earmark-text nav-icon" style="color: white;"></i>
+        <p style="color: white; margin-left: 8px;">PBG/SLF</p>
+    </a>
+</li>
+
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-journal-text nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Bantuan Teknis</p>
@@ -900,19 +902,19 @@
             <i class="bi bi-card-list nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">KRK</p>
         </a>
-    </li>
+    </li> --}}
     {{-- <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-house nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">MBR</p>
         </a>
     </li> --}}
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a href="/404" class="nav-link">
             <i class="bi bi-image nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Bantuan Gambar</p>
         </a>
-    </li>
+    </li> --}}
                 </ul>
             </li>
 
