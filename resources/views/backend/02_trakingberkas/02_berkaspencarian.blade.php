@@ -163,7 +163,7 @@ th {
                 </div>
 
 <div class="container-fluid" style="color: black !important;">
-    <div class="putih row" style="margin: 0 10px;">
+    <div class="row" style="margin: 0 10px;">
         <div class="card mb-4" style="color: black !important;">
             <div class="card-header" style="
                 font-weight: 900;
@@ -213,7 +213,7 @@ th {
                 @if(isset($data) && $data)
                     <div class="card shadow border-0 mb-4" style="color: black !important;">
                         <div class="card-body">
-                            <h5 class="card-title text-center mb-4 fw-bold" style="color: black !important;">Status Permohonan</h5>
+                            <h5 class="card-title text-center mb-4 fw-bold" style="color: black !important;">Status PermohonanSIM BG</h5>
                             <div class="text-center mb-4">
                                 <p><strong>Nomor Registrasi:</strong> {{ $data->noregissimbg }}</p>
                                 <p><strong>Nama Pemohon:</strong> {{ $data->namapemohon ?? 'Tidak Tersedia' }}</p>
