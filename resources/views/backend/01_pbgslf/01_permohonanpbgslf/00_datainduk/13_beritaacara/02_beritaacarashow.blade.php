@@ -483,7 +483,7 @@ th {
 
     {{-- 6. Catatan --}}
     <p style="margin-top: 10px;"><strong>CATATAN:</strong></p>
-    <div style="border: 1px solid #000; min-height: 125px; padding: 8px; margin-top:-10px;"></div>
+    <div style="border: 1px solid #000; min-height: 140px; padding: 8px; margin-top:-10px;"></div>
 
     <br>
 <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-top: -10px;">
