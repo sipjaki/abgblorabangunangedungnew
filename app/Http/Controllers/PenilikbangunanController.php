@@ -805,5 +805,32 @@ public function dataallpenilikbgupdatenew(Request $request, $id)
     return redirect()->route('dataallpenilikbg.index');
 }
 
+public function bedatapetugaspenilik(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    $query = petugaspenilik::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namalengkap', 'like', "%{$search}%")
+              ->orWhere('nip', 'like', "%{$search}%")
+              ->orWhere('jabatan', 'like', "%{$search}%")
+              ->orWhere('golongan', 'like', "%{$search}%")
+              ->orWhere('skpenilik', 'like', "%{$search}%");
+        });
+    }
+
+    $bujk = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.07_penilik.01_datapenilik.01_datapenilik', [
+        'title' => 'Daftar Petugas Inspeksi Bangunan Gedung',
+        'data'  => $bujk,
+        'user'  => $user,
+    ]);
+}
+
 
 }

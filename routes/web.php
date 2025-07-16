@@ -738,6 +738,8 @@ Route::get('/datambrblora', [DatabaseAbgController::class, 'datambrblora'])->mid
 // Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');
 
 // MENU 07 PENILIK BANGUNAN
+Route::get('/bedatapetugaspenilik', [PenilikbangunanController::class, 'bedatapetugaspenilik'])->middleware('auth')->name('bedatapetugaspenilik');
+
 Route::get('/datanewpenilik', [PenilikbangunanController::class, 'datanewpenilik'])->middleware('auth')->name('datanewpenilik.create');
 Route::post('/datanewpeniliknew', [PenilikbangunanController::class, 'datanewpeniliknew'])->middleware('auth')->name('datanewpeniliknew.create');
 
