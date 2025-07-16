@@ -117,5 +117,10 @@ class User extends Authenticatable
         return $this->hasMany(agendapelatihanabg::class);
     }
 
+    public function databgkepemilikan()
+    {
+        return $this->hasMany(databgkepemilikan::class);
+    }
+
 
 }

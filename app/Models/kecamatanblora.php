@@ -57,4 +57,9 @@ class kecamatanblora extends Model
     {
         return $this->hasMany(gambarbantuan::class);
     }
+
+    public function databgkepemilikan()
+    {
+        return $this->hasMany(databgkepemilikan::class);
+    }
 }

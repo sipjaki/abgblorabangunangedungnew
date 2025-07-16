@@ -72,6 +72,7 @@ Route::get('/slfmenara', [FedashboardController::class, 'slfmenara']);
 // 02_ MENU PENDATAAN BANGUNAN GEDUNG
 Route::get('/bependataanbangunangedung', [PendataanBangunanGedungController::class, 'bependataanbangunangedung'])->middleware('auth')->name('bependataanbangunangedung');
 
+Route::get('/bebangunangedung', [PendataanBangunanGedungController::class, 'bebangunangedung'])->middleware('auth')->name('bebangunangedung');
 
 // 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------

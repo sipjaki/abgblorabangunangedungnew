@@ -19,5 +19,10 @@ class datainstitusibangunangedung extends Model
         return $this->hasMany(kepemilikanbangunangedung::class);
     }
 
+    public function databgkepemilikan()
+    {
+        return $this->hasMany(databgkepemilikan::class);
+    }
+
 
 }

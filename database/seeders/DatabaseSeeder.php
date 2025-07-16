@@ -34,6 +34,7 @@ use App\Models\profiltanahbangunangedung;
 use App\Models\kedinasan;
 use App\Models\kodelokasibangunangedung;
 use App\Models\databangunangedung;
+use App\Models\databgkepemilikan;
 use App\Models\datapemilik;
 use App\Models\fasilitatorpbg;
 use App\Models\fungsibangunangambar;
@@ -12886,6 +12887,120 @@ petugaspenilik::create([
     'skpenilik' => '900/3292-A/2024',
     'golongan2' => 'III/c',
 ]);
+
+// PENDATAAN BANGUNAN GEDUNG
+databgkepemilikan::create([
+    'id' => 1,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'BALAI PENYULUHAN PERTANIAN',
+    'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)571287',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0001',
+]);
+
+databgkepemilikan::create([
+    'id' => 2,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'BADAN KEPEGAWAIAN DAERAH',
+    'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)581284',
+    'email' => 'bkd.blora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0002',
+]);
+
+databgkepemilikan::create([
+    'id' => 3,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'BADAN KEPEGAWAIAN DAERAH',
+    'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)581284',
+    'email' => 'bkd.blora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0003',
+]);
+
+databgkepemilikan::create([
+    'id' => 4,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'BADAN KEPEGAWAIAN DAERAH',
+    'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)581284',
+    'email' => 'bkd.blora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0004',
+]);
+
+databgkepemilikan::create([
+    'id' => 5,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'BADAN KEPEGAWAIAN DAERAH',
+    'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)581284',
+    'email' => 'bkd.blora@gmail.com',
+    'nopengesahanusaha' => '33.16.09.0005',
+]);
+
+databgkepemilikan::create([
+    'id' => 6,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS KESEHATAN',
+    'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531127',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0006',
+]);
+
+databgkepemilikan::create([
+    'id' => 7,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS KESEHATAN',
+    'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531127',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0007',
+]);
+
+databgkepemilikan::create([
+    'id' => 8,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS KESEHATAN',
+    'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531127',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0008',
+]);
+
+databgkepemilikan::create([
+    'id' => 9,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS KESEHATAN',
+    'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531127',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0009',
+]);
+
+databgkepemilikan::create([
+    'id' => 10,
+    'user_id' => 46,
+    'kecamatanblora_id' => 2,
+    'namainstitusi' => 'DINAS KESEHATAN',
+    'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'notelepon' => '(0296)531127',
+    'email' => null,
+    'nopengesahanusaha' => '33.16.09.0010',
+]);
+
+
+
 
 
 // 'skpenilik' => '900/3292-A/2024',

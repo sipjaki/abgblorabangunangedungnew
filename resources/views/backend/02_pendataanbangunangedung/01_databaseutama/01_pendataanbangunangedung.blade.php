@@ -550,7 +550,7 @@
 <div class="row g-4">
   <!-- Card 1 -->
   <div class="col-12 col-sm-6 col-md-6">
-    <a href="/bepbgslfindexslf" style="text-decoration: none;">
+    <a href="/bebangunangedung" style="text-decoration: none;">
       <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
            style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
         <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
