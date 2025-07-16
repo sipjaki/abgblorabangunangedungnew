@@ -182,7 +182,7 @@ th {
             @enderror
         </div>
         <div class="col-auto">
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="button-baru">
                 <i class="bi bi-search"></i> Cari
             </button>
         </div>
