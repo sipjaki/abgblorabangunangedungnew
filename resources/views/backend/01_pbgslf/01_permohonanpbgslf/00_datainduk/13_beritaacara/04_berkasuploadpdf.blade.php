@@ -385,124 +385,66 @@ th {
 </div>
 <form id="formPemilik" action="{{ route('bepbgsuratundangannew') }}" method="POST">
     @csrf
-<input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
+{{-- <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
 <input type="hidden" name="datapemilik_id" value="{{ $data->id }}">
 <input type="hidden" name="databangunanpbg_id" value="{{ $data->id }}">
-<input type="hidden" name="tpatpt_id" value="{{ $data->id }}">
+<input type="hidden" name="tpatpt_id" value="{{ $data->id }}"> --}}
 {{-- <input type="hidden" name="tempatkonsultasi_id" value="{{ $data->id }}"> --}}
 
 <div class="row g-4 mt-2">
-    {{-- Konsultasi Ke --}}
-    <div class="col-md-4">
-        <label class="form-label fw-semibold text-dark">
-            <i class="bi bi-123 text-primary me-1"></i> Konsultasi Ke
-        </label>
-        <select name="konsultasike" class="form-select @error('konsultasike') is-invalid @enderror">
-            <option value="" disabled {{ old('konsultasike') ? '' : 'selected' }}>-- Pilih Konsultasi Ke --</option>
-            @for ($i = 1; $i <= 10; $i++)
-                <option value="{{ $i }}" {{ old('konsultasike') == $i ? 'selected' : '' }}>{{ $i }}</option>
-            @endfor
-        </select>
-        @error('konsultasike')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    {{-- Tanggal Undangan --}}
-    <div class="col-md-4">
-        <label class="form-label fw-semibold text-dark">
-            <i class="bi bi-calendar text-primary me-1"></i> Tanggal Undangan
-        </label>
-        <input type="date" name="tanggalundangan"
-               class="form-control @error('tanggalundangan') is-invalid @enderror"
-               value="{{ old('tanggalundangan') }}">
-        @error('tanggalundangan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    {{-- Tanggal Kehadiran --}}
-    <div class="col-md-4">
-        <label class="form-label fw-semibold text-dark">
-            <i class="bi bi-calendar-check text-primary me-1"></i> Tanggal Kehadiran
-        </label>
-        <input type="date" name="tanggalkehadiran"
-               class="form-control @error('tanggalkehadiran') is-invalid @enderror"
-               value="{{ old('tanggalkehadiran') }}">
-        @error('tanggalkehadiran')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="row g-4 mt-2">
-    {{-- Tempat Konsultasi --}}
     <div class="col-md-6">
-        <label class="form-label fw-semibold text-dark">
-            <i class="bi bi-geo-alt-fill text-primary me-1"></i> Tempat Konsultasi
+        <label for="uploadberkaslainnya" class="form-label fw-semibold text-dark">
+            <i class="bi bi-cloud-arrow-up text-primary me-1"></i> Upload Berkas Lainnya
         </label>
-        <select name="tempatkonsultasi_id" class="form-select @error('tempatkonsultasi_id') is-invalid @enderror">
-            <option value="" disabled {{ old('tempatkonsultasi_id') ? '' : 'selected' }}>-- Pilih Tempat Konsultasi --</option>
-            @foreach($tempatkonsultasi as $item)
-                <option value="{{ $item->id }}" {{ old('tempatkonsultasi_id') == $item->id ? 'selected' : '' }}>
-                    {{ $item->tempat ?? 'Tempat Tidak Diketahui' }}
-                </option>
-            @endforeach
-        </select>
-        @error('tempatkonsultasi_id')
+
+        <input type="file" name="uploadberkaslainnya" id="uploadberkaslainnya"
+               class="form-control @error('uploadberkaslainnya') is-invalid @enderror"
+               accept=".pdf, image/*"
+               onchange="previewFile(event)">
+
+        @error('uploadberkaslainnya')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
-    </div>
-</div>
 
-{{-- Pilihan Jam Undangan --}}
-<div class="row g-4 mt-2">
-    <div class="col-md-6">
-        <label class="form-label fw-semibold text-dark d-block">
-            <i class="bi bi-clock text-primary me-1"></i> Jam Undangan
-        </label>
-        <div class="d-flex flex-column gap-2">
-            @php
-                $jamOptions = [
-                    'Pukul 09.00 WIB s/d Selesai',
-                    'Pukul 13.00 WIB s/d Selesai',
-                    'lainnya',
-                ];
-            @endphp
-            @foreach ($jamOptions as $jam)
-                <label class="custom-radio">
-                    <input
-                        type="radio"
-                        name="jamundangan"
-                        value="{{ $jam }}"
-                        onclick="document.getElementById('jam-lainnya-field').style.display = (this.value === 'lainnya') ? 'block' : 'none';"
-                        {{ old('jamundangan') === $jam ? 'checked' : '' }}
-                    >
-                    <span class="custom-box"></span>
-                    {{ $jam === 'lainnya' ? 'Jam Lainnya' : $jam }}
-                </label>
-            @endforeach
+        {{-- Preview --}}
+        <div id="preview-container" class="mt-3" style="display: none;">
+            <p class="fw-semibold mb-2">Preview:</p>
+            <iframe id="preview-frame" src="" width="100%" height="300px" frameborder="0" style="display: none;"></iframe>
+            <img id="preview-image" src="" alt="Preview Gambar" class="img-fluid" style="max-height: 300px; display: none;">
         </div>
-        @error('jamundangan')
-            <div class="text-danger mt-2">{{ $message }}</div>
-        @enderror
     </div>
 </div>
 
-{{-- Field Catatan (Jam Lainnya) --}}
-<div class="row g-4 mt-2" id="jam-lainnya-field" style="{{ old('jamundangan') === 'lainnya' ? 'display:block;' : 'display:none;' }}">
-    <div class="col-md-6">
-        <label class="form-label fw-semibold text-dark">
-            <i class="bi bi-pencil-square text-primary me-1"></i> Jam Undangan (Lainnya)
-        </label>
-        <textarea name="catatan" rows="2"
-                  class="form-control @error('catatan') is-invalid @enderror"
-                  placeholder="Tuliskan jam undangan lainnya...">{{ old('catatan') }}</textarea>
-        @error('catatan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+{{-- Script Preview --}}
+<script>
+    function previewFile(event) {
+        const file = event.target.files[0];
+        const previewContainer = document.getElementById('preview-container');
+        const previewFrame = document.getElementById('preview-frame');
+        const previewImage = document.getElementById('preview-image');
+
+        if (file) {
+            const fileURL = URL.createObjectURL(file);
+            previewContainer.style.display = 'block';
+
+            if (file.type === 'application/pdf') {
+                previewFrame.src = fileURL;
+                previewFrame.style.display = 'block';
+                previewImage.style.display = 'none';
+            } else if (file.type.startsWith('image/')) {
+                previewImage.src = fileURL;
+                previewImage.style.display = 'block';
+                previewFrame.style.display = 'none';
+            } else {
+                previewFrame.style.display = 'none';
+                previewImage.style.display = 'none';
+                previewContainer.style.display = 'none';
+            }
+        } else {
+            previewContainer.style.display = 'none';
+        }
+    }
+</script>
 
 <div class="text-end mt-4">
     <button type="button" class="button-baru" onclick="openModal()">
