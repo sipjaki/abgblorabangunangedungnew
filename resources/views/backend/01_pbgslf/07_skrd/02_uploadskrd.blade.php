@@ -384,6 +384,9 @@ th {
             autocomplete="off"
             value="{{ old('rupiah_formatted', $data->rupiah ? number_format($data->rupiah, 0, ',', '.') : '') }}"
             placeholder="Masukkan angka"
+            @can('akunskrd')
+                readonly
+            @endcan
         >
 
         {{-- Input hidden yang sebenarnya dikirim --}}
