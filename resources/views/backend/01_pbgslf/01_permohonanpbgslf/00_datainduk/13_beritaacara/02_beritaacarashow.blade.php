@@ -408,7 +408,7 @@ th {
 
     <br>
 {{-- 4. Tabel Pemeriksaan Teknis --}}
-<table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 12px;">
+<table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 12px; margin-top:-10px;" >
     <thead>
         <tr>
             <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">No</th>
