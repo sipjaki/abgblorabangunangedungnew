@@ -330,7 +330,7 @@ th {
 </head>
 
 <div style="text-align: center; margin: 20px;">
-  <button onclick="downloadPDF()" style="background-color: #e3342f; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
+  <button onclick="downloadPDF()" class="button-merah">
     📄 Download Surat Tugas (PDF)
   </button>
 </div>
@@ -419,14 +419,14 @@ th {
     PEKERJAAN UMUM DAN PENATAAN RUANG<br>
     KABUPATEN BLORA
   </p>
-
+<br><br><br><br>
   <!-- Stack stempel di atas tanda tangan -->
-  <div style="position: relative; display: inline-block;">
+  {{-- <div style="position: relative; display: inline-block;">
     <!-- Stempel di atas -->
     <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel" style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.7; z-index: 2;">
     <!-- Tanda tangan di bawah -->
     <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan" style="position: relative; height: 100px; z-index: 1;">
-  </div>
+  </div> --}}
 
   <p style="margin-top: 10px;">
     <strong><u>MOHAMAD ARIF HIDAYAT, ST</u></strong><br>
