@@ -125,20 +125,20 @@
 
 
         // Step 7: Selesai (selesai)
-        if ('<?php echo isset($data->validasiberkas8) ? $data->validasiberkas8 : "" ?>' === 'sudah') {
+        if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'sudah') {
             checkpointData[7].status = 'completed';
             checkpointData[7].message = 'Permohonan Selesai';
-        } else if ('<?php echo isset($data->validasiberkas8) ? $data->validasiberkas8 : "" ?>' === 'belum') {
+        } else if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'belum') {
             checkpointData[7].status = 'pending';
             checkpointData[7].message = 'Tidak Selesai';
         }
 
 
         // Step 7: Selesai (selesai)
-        if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'sudah') {
+        if ('<?php echo isset($data->validasiberkas8) ? $data->validasiberkas8 : "" ?>' === 'sudah') {
             checkpointData[6].status = 'completed';
             checkpointData[6].message = 'Finalisasi BA';
-        } else if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'belum') {
+        } else if ('<?php echo isset($data->validasiberkas8) ? $data->validasiberkas8 : "" ?>' === 'belum') {
             checkpointData[6].status = 'pending';
             checkpointData[6].message = 'Tidak Selesai';
         }
