@@ -273,7 +273,7 @@
     @php
         $status = $item->validasiberkas9;
     @endphp
-    <button class="btn
+    <button class="
         @if(is_null($status))
             button-baru
         @elseif($status === 'sudah')
