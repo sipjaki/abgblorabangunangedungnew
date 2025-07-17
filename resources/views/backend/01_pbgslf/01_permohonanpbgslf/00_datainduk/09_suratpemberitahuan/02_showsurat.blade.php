@@ -431,7 +431,7 @@ th {
 <!-- HALAMAN KEDUA -->
 <div class="halaman-pertama">
     <p style="margin-left:300px;">
-    <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2024<br />
+    <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2025<br />
     <strong>Lampiran</strong> : 1 Bandel<br />
     <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
   </p>
@@ -637,7 +637,7 @@ th {
       </tr>
       <tr>
           <td>2.</td>
-          <td>Sfesifikasi Teknis Arsitektur Bangunan </td>
+          <td>Spesifikasi Teknis Arsitektur Bangunan </td>
           <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas2 ?? '-' }}</td>
       </tr>
       <tr>
