@@ -470,9 +470,9 @@ th {
         Belum Upload Berkas, Silahkan Upload Bukti Pembayaran.
     </div>
 </div>
+@endcan
 </div>
 
-@endcan
 </div>
 
 
