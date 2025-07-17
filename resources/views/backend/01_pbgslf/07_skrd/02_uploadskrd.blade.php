@@ -431,6 +431,26 @@ th {
 
 <div class="col-md-6">
   <div class="mb-3">
+    {{-- Tampilkan file sebelumnya kalau ada --}}
+    @if(!empty($data->berkasskrd) && file_exists(public_path($data->berkasskrd)))
+      <div class="mb-3">
+        <label class="fw-bold">Berkas SKRD Sebelumnya:</label>
+        @php
+          $fileUrl = asset($data->berkasskrd);
+          $ext = strtolower(pathinfo($data->berkasskrd, PATHINFO_EXTENSION));
+        @endphp
+
+        @if($ext === 'pdf')
+          <iframe src="{{ $fileUrl }}"
+                  style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+        @else
+          <a href="{{ $fileUrl }}" target="_blank" class="btn btn-primary">
+            Download Berkas SKRD Sebelumnya
+          </a>
+        @endif
+      </div>
+    @endif
+
     <label class="form-label" for="berkasskrd">
       <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas SKRD
     </label>
