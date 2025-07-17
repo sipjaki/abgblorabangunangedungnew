@@ -292,19 +292,24 @@ th {
 
 <div class="row g-4 mt-4">
     @forelse ($subdatapemilik as $item)
-        @php
-            $pengawasItems = [
-                ['label' => 'Tim Penilai', 'value' => $item->timpenilai ?? '-', 'icon' => 'bi-people'],
-                ['label' => 'No SK', 'value' => $item->nosk ?? '-', 'icon' => 'bi-file-earmark-text'],
-                ['label' => 'Pengawas 1', 'value' => $item->pengawas1->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
-                ['label' => 'Pengawas 2', 'value' => $item->pengawas2->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
-                ['label' => 'Pengawas 3', 'value' => $item->pengawas3->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
-                ['label' => 'Pengawas 4', 'value' => $item->pengawas4->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
-                ['label' => 'Pengawas 5', 'value' => $item->pengawas5->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
-                ['label' => 'Pengawas 6', 'value' => $item->pengawas6->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
-                ['label' => 'Pengawas 7', 'value' => $item->pengawas7->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
-            ];
-        @endphp
+   @php
+    $pengawasItems = [
+        ['label' => 'Tim Penilai', 'value' => $item->timpenilai ?? '-', 'icon' => 'bi-people'],
+        ['label' => 'No SK', 'value' => $item->nosk ?? '-', 'icon' => 'bi-file-earmark-text'],
+        ['label' => 'Pengawas 1', 'value' => $item->pengawas1->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 2', 'value' => $item->pengawas2->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 3', 'value' => $item->pengawas3->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 4', 'value' => $item->pengawas4->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 5', 'value' => $item->pengawas5->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 6', 'value' => $item->pengawas6->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 7', 'value' => $item->pengawas7->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 8', 'value' => $item->pengawas8->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 9', 'value' => $item->pengawas9->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 10', 'value' => $item->pengawas10->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 11', 'value' => $item->pengawas11->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+        ['label' => 'Pengawas 12', 'value' => $item->pengawas12->namalengkap ?? '-', 'icon' => 'bi-person-badge'],
+    ];
+@endphp
 
         <div class="col-12">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
