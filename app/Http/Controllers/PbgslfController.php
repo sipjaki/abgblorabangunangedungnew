@@ -2691,11 +2691,12 @@ public function bepbgslfskrdcreate($id)
     ]);
 
 }
+
 public function bepbgslfskrdcreatenew(Request $request, $id)
 {
     // Validasi input
     $validated = $request->validate([
-        'rupiah' => 'required|integer',
+        'rupiah' => 'nullable|integer',
         'buktipembayaran' => 'nullable|file|mimes:pdf|max:10048',
         'berkasskrd' => 'nullable|file|mimes:pdf|max:10048',
     ], [
