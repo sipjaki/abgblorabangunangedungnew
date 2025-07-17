@@ -998,6 +998,7 @@ Route::get('/bebantuangambarshow/{id}', [GambarbantuanController::class, 'bebant
 Route::put('/bebantuangambarvalidasi/{id}', [GambarbantuanController::class, 'bebantuangambarvalidasi'])->middleware('auth')->name('bebantuangambarvalidasi');
 
 // SURAT TUGAS
+Route::put('/bepbgsurattugasuploadnbro/{id}', [GambarbantuanController::class, 'bepbgsurattugasuploadnbro'])->middleware('auth')->name('bepbgsurattugasuploadnbro');
 Route::get('/bepbgsurattugasgambar/{id}', [GambarbantuanController::class, 'bepbgsurattugasgambar'])->middleware('auth')->name('bepbgsurattugasgambar');
 
 Route::get('/bebantuangambarlap/{id}', [GambarbantuanController::class, 'bebantuangambarlap'])->middleware('auth')->name('bebantuangambarlap.show');

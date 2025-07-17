@@ -564,6 +564,26 @@ public function bebantuangambardelete($id)
         return redirect()->back()->with('error', 'Item not found');
     }
 
+    public function bepbgsurattugasuploadnbro(Request $request, $id)
+{
+    $request->validate([
+        'uploadsurattugas' => 'required|mimes:pdf|max:20480', // max 20MB
+    ]);
+
+    $data = surattugaspbg::findOrFail($id); // ganti YourModel sesuai model kamu
+
+    if ($request->hasFile('uploadsurattugas')) {
+        $file = $request->file('uploadsurattugas');
+        $filename = 'surat_tugas_' . time() . '.' . $file->getClientOriginalExtension();
+        $path = $file->move(public_path('uploads/surattugas'), $filename);
+
+        $data->uploadsurattugas = 'uploads/surattugas/' . $filename;
+        $data->save();
+    }
+
+    return back()->with('create', 'Surat tugas berhasil diupload.');
+}
+
 
 }
 

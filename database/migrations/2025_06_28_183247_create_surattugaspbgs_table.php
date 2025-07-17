@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nomorsurat')->nullable();
             $table->string('nomorkontrak')->nullable();
             $table->date('tanggaltugas')->nullable();
+            $table->string('uploadsurattugas')->nullable();
             $table->softDeletes();
             $table->timestamps();
 

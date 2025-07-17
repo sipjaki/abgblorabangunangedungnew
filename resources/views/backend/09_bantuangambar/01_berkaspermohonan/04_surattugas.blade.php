@@ -320,6 +320,7 @@ th {
                                     <th>Nomor Kontrak</th>
                                     <th>Tanggal Tugas</th>
                                     <th style="width: 200px;">Surat Tugas</th>
+                                    <th style="width: 200px;">Upload Surat</th>
                                     <th style="width: 100px;">Aksi</th>
                                 </tr>
                             </thead>
@@ -343,6 +344,43 @@ th {
         </div>
     </a>
 </td>
+                                       <td style="white-space: nowrap; text-align: center;">
+    <button class="button-baru" data-bs-toggle="modal" data-bs-target="#uploadSuratModal{{ $item->id }}">
+        <i class="bi bi-upload me-1"></i> Upload Surat
+    </button>
+</td>
+
+<!-- Modal Upload Surat Tugas -->
+<div class="modal fade" id="uploadSuratModal{{ $item->id }}" tabindex="-1" aria-labelledby="uploadSuratModalLabel{{ $item->id }}" aria-hidden="true">
+  <div class="modal-dialog">
+    <form action="{{ route('uploadsurattugas.store', ['id' => $item->id]) }}" method="POST" enctype="multipart/form-data">
+      @csrf
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="uploadSuratModalLabel{{ $item->id }}">
+            <i class="bi bi-file-earmark-arrow-up-fill me-2"></i> Upload Surat Tugas (PDF)
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="uploadsurattugas" class="form-label">
+              <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Pilih File PDF
+            </label>
+            <input type="file" name="uploadsurattugas" accept=".pdf" class="form-control" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">
+            <i class="bi bi-cloud-arrow-up-fill me-1"></i> Upload
+          </button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
 
                                         <td class="text-center">
                                             <a href="javascript:void(0)" class="button-merah"
