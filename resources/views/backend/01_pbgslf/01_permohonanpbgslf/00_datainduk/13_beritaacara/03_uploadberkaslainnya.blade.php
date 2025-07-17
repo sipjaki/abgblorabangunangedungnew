@@ -342,7 +342,7 @@ th {
         Data tidak ditemukan!
     </div>
     <div class="text-center mt-3">
-        <a href="{{ route('upload.route.name') }}" class="btn button-baru">
+        <a href="{{ route('bepbgbeuploadberkasnew', $data->id) }}" class="btn button-baru">
             Upload Berkas
         </a>
     </div>
