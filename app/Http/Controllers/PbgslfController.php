@@ -3697,7 +3697,7 @@ public function bepbgbeuploadberkasnew($id)
     }
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
-    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.12_beritaacara.04_berkasuploadpdf', [
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.13_beritaacara.04_berkasuploadpdf', [
         'title' => 'Upload Berkas Permohonan',
         'data' => $databantuanteknis,
         // 'tempatkonsultasi' => $tempatkonsultasi,
