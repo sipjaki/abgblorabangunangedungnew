@@ -13,7 +13,7 @@ class fotoprapenilik extends Model
 
     protected $guarded = ['id'];
 
-  public function surattugaspbg()
+  public function prapenilikdok()
 {
     return $this->belongsTo(prapenilikdok::class, 'prapenilikdok_id');
 }
