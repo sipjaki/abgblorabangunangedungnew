@@ -238,7 +238,7 @@ th {
                 [
             'icon' => 'bi-house-gear-fill', // ikon rumah dengan pengaturan (klasifikasi bangunan)
             'title' => 'Alamat Bangunan Gedung',
-            'value' => $user->alamatpemohon ?? '-',
+            'value' => $data->alamatpemohon ?? '-',
         ],
         [
             'icon' => 'bi-calendar-event-fill', // ikon kalender yang lebih detail
