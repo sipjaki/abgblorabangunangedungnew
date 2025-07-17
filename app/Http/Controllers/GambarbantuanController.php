@@ -504,42 +504,73 @@ public function bebantuangambarlapdelete($id)
         'user' => Auth::user()
     ]);
 }
+
 public function bebantuangambaruploadnew(Request $request, $id)
 {
-    $bantek = gambarbantuan::findOrFail($id); // Tetap digunakan
+    $bantek = gambarbantuan::findOrFail($id);
 
-    // Validasi
+    // Validasi semua berkas (boleh salah satu saja yang dikirim)
     $request->validate([
-        'dokumengambar' => 'required|mimes:pdf|max:7048',
+        'dokumengambar' => 'nullable|mimes:pdf|max:7048',
+        'beritaacarasidang' => 'nullable|mimes:pdf|max:7048',
+        'foto1' => 'nullable|image|mimes:jpg,jpeg,png|max:5048',
+        'foto2' => 'nullable|image|mimes:jpg,jpeg,png|max:5048',
     ], [
-        'dokumengambar.required' => 'File Dokumen Gambar wajib diunggah.',
-        'dokumengambar.mimes' => 'File harus berupa format PDF.',
-        'dokumengambar.max' => 'Ukuran file maksimal 7MB.',
+        'dokumengambar.mimes' => 'Dokumen Gambar harus berupa file PDF.',
+        'dokumengambar.max' => 'Ukuran maksimum untuk Dokumen Gambar adalah 7MB.',
+
+        'beritaacarasidang.mimes' => 'Berita Acara Sidang harus berupa file PDF.',
+        'beritaacarasidang.max' => 'Ukuran maksimum untuk Berita Acara Sidang adalah 7MB.',
+
+        'foto1.mimes' => 'Foto 1 harus berupa file JPG, JPEG, atau PNG.',
+        'foto1.max' => 'Ukuran maksimum untuk Foto 1 adalah 5MB.',
+
+        'foto2.mimes' => 'Foto 2 harus berupa file JPG, JPEG, atau PNG.',
+        'foto2.max' => 'Ukuran maksimum untuk Foto 2 adalah 5MB.',
     ]);
 
+    // Upload dokumengambar
     if ($request->hasFile('dokumengambar')) {
         $file = $request->file('dokumengambar');
-
         $filename = 'dokumen-gambar-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
-        $destinationPath = public_path('09_bantuangambar/02_berkassurat');
-
-        // Buat folder jika belum ada
-        if (!file_exists($destinationPath)) {
-            mkdir($destinationPath, 0755, true);
-        }
-
-        $file->move($destinationPath, $filename);
-        $filePath = '09_bantuangambar/02_berkassurat/' . $filename;
-
-        // Update kolom di database
-        $bantek->dokumengambar = $filePath;
-        $bantek->save();
+        $path = '09_bantuangambar/02_berkassurat/';
+        $file->move(public_path($path), $filename);
+        $bantek->dokumengambar = $path . $filename;
     }
 
-    session()->flash('create', 'Dokumen Bantuan Gambar berhasil diunggah!');
+    // Upload beritaacarasidang
+    if ($request->hasFile('beritaacarasidang')) {
+        $file = $request->file('beritaacarasidang');
+        $filename = 'berita-acara-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $path = '09_bantuangambar/03_bertaacara_sidan/';
+        $file->move(public_path($path), $filename);
+        $bantek->beritaacarasidang = $path . $filename;
+    }
+
+    // Upload foto1
+    if ($request->hasFile('foto1')) {
+        $file = $request->file('foto1');
+        $filename = 'foto1-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $path = '09_bantuangambar/04_foto/';
+        $file->move(public_path($path), $filename);
+        $bantek->foto1 = $path . $filename;
+    }
+
+    // Upload foto2
+    if ($request->hasFile('foto2')) {
+        $file = $request->file('foto2');
+        $filename = 'foto2-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $path = '09_bantuangambar/04_foto/';
+        $file->move(public_path($path), $filename);
+        $bantek->foto2 = $path . $filename;
+    }
+
+    // Simpan semua perubahan
+    $bantek->save();
+
+    session()->flash('create', 'Dokumen berhasil diunggah!');
     return redirect("/bebantuangambarupload/{$bantek->id}");
 }
-
 
 
 public function bebantuangambardelete($id)
