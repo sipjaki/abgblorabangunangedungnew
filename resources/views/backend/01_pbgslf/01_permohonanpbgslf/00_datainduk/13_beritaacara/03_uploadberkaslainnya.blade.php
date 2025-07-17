@@ -316,12 +316,15 @@ th {
                                 @elseif($data->uploadberkaslainnya)
                                     <iframe src="{{ asset($data->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
                                 @else
-                                    <p>Data belum diupdate</p>
+                                    <p><button class="button-berkas">
+                                        Berkas Tidak Di Temukan !
+                                        </button>
+                                    </p>
                                 @endif
                             </div>
                         </td>
 
-                        <td style="white-space: nowrap; text-align: center;">
+                        {{-- <td style="white-space: nowrap; text-align: center;">
                             <a href="{{ route('bepbgberitaacaraslf.detail', ['id' => $data->id]) }}"
                                class="text-decoration-none"
                                onclick="saveScrollPosition()">
@@ -343,7 +346,7 @@ th {
                                     <i class="bi bi-eye me-1"></i> Lihat
                                 </div>
                             </a>
-                        </td>
+                        </td> --}}
 
                         <td class="text-center">
                             <a href="javascript:void(0)" class="btn btn-sm btn-outline-danger"
