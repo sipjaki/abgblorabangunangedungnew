@@ -234,7 +234,7 @@ th {
             [
                 'icon' => 'bi-person-fill-check',
                 'title' => 'Pengisi Form',
-                'value' => $data->user->name ?? '-',
+                'value' => $data->namapemohon ?? '-',
             ],
         ];
     @endphp
