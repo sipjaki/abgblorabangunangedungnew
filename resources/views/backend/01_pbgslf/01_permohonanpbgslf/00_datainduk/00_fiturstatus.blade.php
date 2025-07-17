@@ -54,11 +54,20 @@
             time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
             message: 'Menunggu Olah Data'
         },
+
         {
             id: 7,
-            name: 'SKRD',
+            name: 'Finalisasi BA',
             status: 'pending',
             time: '<?php echo isset($data->validasiberkas6_time) ? $data->validasiberkas6_time : "" ?>',
+            message: 'Menunggu Verifikasi'
+        },
+
+        {
+            id: 8,
+            name: 'SKRD',
+            status: 'pending',
+            time: '<?php echo isset($data->validasiberkas8_time) ? $data->validasiberkas8_time : "" ?>',
             message: 'Menunggu Retribusi'
         }
     ];
@@ -117,8 +126,17 @@
         // Step 7: Selesai (selesai)
         if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'sudah') {
             checkpointData[6].status = 'completed';
-            checkpointData[6].message = 'Selesai';
+            checkpointData[6].message = 'Finalisasi BA';
         } else if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'belum') {
+            checkpointData[6].status = 'pending';
+            checkpointData[6].message = 'Tidak Selesai';
+        }
+
+        // Step 7: Selesai (selesai)
+        if ('<?php echo isset($data->validasiberkas8) ? $data->validasiberkas8 : "" ?>' === 'sudah') {
+            checkpointData[6].status = 'completed';
+            checkpointData[6].message = 'Permohonan Selesai';
+        } else if ('<?php echo isset($data->validasiberkas8) ? $data->validasiberkas8 : "" ?>' === 'belum') {
             checkpointData[6].status = 'pending';
             checkpointData[6].message = 'Tidak Selesai';
         }

@@ -47,6 +47,9 @@ return new class extends Migration
             $table->string('validasiberkas6')->nullable();
             $table->string('validasiberkas7')->nullable();
 
+            $table->string('validasiberkas8')->nullable();
+            $table->string('validasiberkas9')->nullable();
+
             // PERHITUNGAN RETRIBUSI
             $table->integer('rupiah')->nullable();
             $table->string('buktipembayaran')->nullable();

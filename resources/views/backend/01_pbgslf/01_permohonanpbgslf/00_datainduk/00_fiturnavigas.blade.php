@@ -15,7 +15,7 @@
                 // ['label' => 'Surat Tugas', 'url' => '/bepbgsurattugas/' . $id],
                 ['label' => 'TPA / TPT', 'url' => '/bepbgtpatpt/' . $id],
                 ['label' => 'Surat Undangan', 'url' => '/bepbgsuratundangan/' . $id],
-                ['label' => 'Berita Acara SLF', 'url' => '/bepbgberitaacaraslf/' . $id],
+                ['label' => 'Berita Acara', 'url' => '/bepbgberitaacaraslf/' . $id],
                 // ['label' => 'Jenis Pengajuan PBG/SLF', 'url' => '/bepbgjenispengajuan/' . $id],
             ];
         @endphp
