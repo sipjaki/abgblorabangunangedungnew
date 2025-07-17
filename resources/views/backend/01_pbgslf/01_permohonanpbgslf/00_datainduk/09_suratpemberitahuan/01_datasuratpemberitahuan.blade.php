@@ -327,7 +327,7 @@ th {
                                             </span>
                                         </td>
                                         <td style="white-space: pre-wrap; text-align: justify;">{{ $item->catatan ?? '-' }}</td>
-                                        <td style="white-space: pre-wrap; text-align: justify;">
+                                        <td>
                                             <button class="button-newvalidasi">
                                                 Upload
                                             </button>
