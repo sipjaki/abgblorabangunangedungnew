@@ -6274,7 +6274,7 @@ public function bepengkajiteknisnewcreate(Request $request)
     $user = Auth::user();
 
     $validated = $request->validate([
-        'user_id' => 'required|string',
+        // 'user_id' => 'required|string',
         'namabadanusaha' => 'required|string|max:255',
         'alamat' => 'required|string',
         'telepon' => 'required|string|max:20',
@@ -6283,7 +6283,7 @@ public function bepengkajiteknisnewcreate(Request $request)
         'subklasifikasi' => 'nullable|string',
         'pengalaman' => 'nullable|string',
     ], [
-        'user_id.required' => 'Akun Wajib di Pilih.',
+        // 'user_id.required' => 'Akun Wajib di Pilih.',
         'namabadanusaha.required' => 'Nama Badan Usaha wajib diisi.',
         'alamat.required' => 'Alamat wajib diisi.',
         'telepon.required' => 'Telepon wajib diisi.',
