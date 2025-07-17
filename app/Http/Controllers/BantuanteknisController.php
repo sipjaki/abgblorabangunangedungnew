@@ -6269,5 +6269,44 @@ public function bepengkajiteknisdelete($id)
     ]);
 }
 
+public function bepengkajiteknisnewcreate(Request $request)
+{
+    $user = Auth::user();
+
+    $validated = $request->validate([
+        'user_id' => 'required|string',
+        'namabadanusaha' => 'required|string|max:255',
+        'alamat' => 'required|string',
+        'telepon' => 'required|string|max:20',
+        'email' => 'required|email|max:255',
+        'direktur' => 'nullable|string',
+        'subklasifikasi' => 'nullable|string',
+        'pengalaman' => 'nullable|string',
+    ], [
+        'user_id.required' => 'Akun Wajib di Pilih.',
+        'namabadanusaha.required' => 'Nama Badan Usaha wajib diisi.',
+        'alamat.required' => 'Alamat wajib diisi.',
+        'telepon.required' => 'Telepon wajib diisi.',
+        'email.required' => 'Email wajib diisi.',
+        'email.email' => 'Format email tidak valid.',
+    ]);
+
+    $data = new pengkajiteknis();
+
+    $data->user_id = $user->id ?? null;
+    $data->namabadanusaha = $validated['namabadanusaha'];
+    $data->alamat = $validated['alamat'];
+    $data->telepon = $validated['telepon'];
+    $data->email = $validated['email'];
+    $data->direktur = $validated['direktur'] ?? null;
+    $data->subklasifikasi = $validated['subklasifikasi'] ?? null;
+    $data->pengalaman = $validated['pengalaman'] ?? null;
+
+    $data->save();
+
+    session()->flash('create', 'Data berhasil disimpan.');
+
+    return redirect()->route('bepengkajiteknis'); // Pastikan route ini sesuai ya bro
+}
 
 }
