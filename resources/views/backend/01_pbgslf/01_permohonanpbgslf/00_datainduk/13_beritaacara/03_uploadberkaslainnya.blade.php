@@ -297,79 +297,76 @@ th {
                 <i class="bi bi-calendar-event me-2 fs-5"></i>
                 <h5 class="mb-0" style="font-size: 16px;">Daftar Berita Acara Konsultasi</h5>
             </div>
-            <div class="card-body">
-                @if ($data->count() > 0)
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover align-middle">
-                            <thead class="table-light text-center">
-                                <tr>
-                                    {{-- <th>No</th> --}}
-                                    <th>Berkas</th>
-                                    <th style="width: 100px;">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($data as $index => $item)
-                                    <tr>
-                                        <td class="text-center">{{ $index + 1 }}</td>
-                                        <td class="text-center">
-    <div style="margin-top: 10px;">
-        @if($item->uploadberkaslainnya && file_exists(public_path('storage/' . $item->uploadberkaslainnya)))
-            <iframe src="{{ asset('storage/' . $item->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
-        @elseif($item->uploadberkaslainnya)
-            <iframe src="{{ asset($item->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
-        @else
-            <p>Data belum diupdate</p>
-        @endif
-    </div>
-</td>
+        <div class="card-body">
+    @if ($data)
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-light text-center">
+                    <tr>
+                        <th>Berkas</th>
+                        <th style="width: 100px;">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <div style="margin-top: 10px;">
+                                @if($data->uploadberkaslainnya && file_exists(public_path('storage/' . $data->uploadberkaslainnya)))
+                                    <iframe src="{{ asset('storage/' . $data->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                @elseif($data->uploadberkaslainnya)
+                                    <iframe src="{{ asset($data->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                @else
+                                    <p>Data belum diupdate</p>
+                                @endif
+                            </div>
+                        </td>
 
-                                                                           <td style="white-space: nowrap; text-align: center;">
-    <a href="{{ route('bepbgberitaacaraslf.detail', ['id' => $item->id]) }}"
-       class="text-decoration-none"
-       onclick="saveScrollPosition()">
-        <div style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 14px;
-            background: linear-gradient(145deg, #e1f0ff, #d6e9ff);
-            color: #003366;
-            font-size: 13px;
-            font-weight: 500;
-            border: 1px solid #c8dfff;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        "
-        onmouseover="this.style.background='white'; this.style.color='black';"
-        onmouseout="this.style.background='linear-gradient(145deg, #e1f0ff, #d6e9ff)'; this.style.color='#003366';">
-            <i class="bi bi-eye me-1"></i> Lihat
+                        <td style="white-space: nowrap; text-align: center;">
+                            <a href="{{ route('bepbgberitaacaraslf.detail', ['id' => $data->id]) }}"
+                               class="text-decoration-none"
+                               onclick="saveScrollPosition()">
+                                <div style="
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 6px 14px;
+                                    background: linear-gradient(145deg, #e1f0ff, #d6e9ff);
+                                    color: #003366;
+                                    font-size: 13px;
+                                    font-weight: 500;
+                                    border: 1px solid #c8dfff;
+                                    border-radius: 12px;
+                                    transition: all 0.3s ease;
+                                "
+                                onmouseover="this.style.background='white'; this.style.color='black';"
+                                onmouseout="this.style.background='linear-gradient(145deg, #e1f0ff, #d6e9ff)'; this.style.color='#003366';">
+                                    <i class="bi bi-eye me-1"></i> Lihat
+                                </div>
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            <a href="javascript:void(0)" class="btn btn-sm btn-outline-danger"
+                               data-bs-toggle="modal"
+                               data-bs-target="#deleteModal"
+                               data-id="{{ $data->id }}"
+                               onclick="setDeleteUrl(this)"
+                               title="Hapus Data">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </a>
-</td>
-                                        <td class="text-center">
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-outline-danger"
-                                               data-bs-toggle="modal"
-                                               data-bs-target="#deleteModal"
-                                               data-id="{{ $item->id }}"
-                                               onclick="setDeleteUrl(this)"
-                                               title="Hapus Data">
-                                                <i class="bi bi-trash"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                @else
-                    <div class="alert alert-warning text-center fw-semibold">
-                        <i class="bi bi-folder-x me-2 text-danger"></i>
-                        Belum Ada Surat Undangan !
-                    </div>
-                @endif
-
-                {{-- Tombol Tambah Data --}}
+    @else
+        <div class="alert alert-warning text-center fw-semibold">
+            <i class="bi bi-folder-x me-2 text-danger"></i>
+            Data tidak ditemukan!
+        </div>
+    @endif
+</div>
+        {{-- Tombol Tambah Data --}}
                 {{-- <div class="text-center mt-4">
                     <a href="{{ route('bepbgsuratundangancreate', $data->id) }}" class="button-baru">
                         <i class="bi bi-plus-circle me-1"></i> Buat Undangan Konsultasi Baru!
