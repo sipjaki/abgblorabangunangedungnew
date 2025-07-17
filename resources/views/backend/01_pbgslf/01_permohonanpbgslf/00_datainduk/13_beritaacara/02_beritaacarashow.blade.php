@@ -411,46 +411,46 @@ th {
 <table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 12px;">
     <thead>
         <tr>
-            <th style="border: 1px solid #000; padding: 0.25rem; text-align:center;">No</th>
-            <th style="border: 1px solid #000; padding: 0.25rem; text-align:center;">URAIAN DOKUMEN TEKNIS</th>
-            <th style="border: 1px solid #000; padding: 0.25rem; text-align:center;">ADA</th>
-            <th style="border: 1px solid #000; padding: 0.25rem; text-align:center;">TIDAK ADA</th>
-            <th style="border: 1px solid #000; padding: 0.25rem; text-align:center;">SESUAI</th>
-            <th style="border: 1px solid #000; padding: 0.25rem; text-align:center;">TIDAK SESUAI</th>
+            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">No</th>
+            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">URAIAN DOKUMEN TEKNIS</th>
+            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">ADA</th>
+            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">TIDAK ADA</th>
+            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">SESUAI</th>
+            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">TIDAK SESUAI</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td style="border: 1px solid #000; text-align: center; padding: 0.25rem;">1</td>
-            <td style="border: 1px solid #000; padding: 0.25rem;">Pemeriksaan Arsitektur</td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
+            <td style="border: 1px solid #000; text-align: center; padding: 1.75px;">1</td>
+            <td style="border: 1px solid #000; padding: 1.75px;">Pemeriksaan Arsitektur</td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
         </tr>
         <tr>
-            <td style="border: 1px solid #000; text-align: center; padding: 0.25rem;">2</td>
-            <td style="border: 1px solid #000; padding: 0.25rem;">Pemeriksaan Struktur</td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
+            <td style="border: 1px solid #000; text-align: center; padding: 1.75px;">2</td>
+            <td style="border: 1px solid #000; padding: 1.75px;">Pemeriksaan Struktur</td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
         </tr>
         <tr>
-            <td style="border: 1px solid #000; text-align: center; padding: 0.25rem;">3</td>
-            <td style="border: 1px solid #000; padding: 0.25rem;">Pemeriksaan M E P</td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
+            <td style="border: 1px solid #000; text-align: center; padding: 1.75px;">3</td>
+            <td style="border: 1px solid #000; padding: 1.75px;">Pemeriksaan M E P</td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
         </tr>
         <tr>
-            <td style="border: 1px solid #000; text-align: center; padding: 0.25rem;">4</td>
-            <td style="border: 1px solid #000; padding: 0.25rem;">Data Teknis Gedung Eksisting</td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
-            <td style="border: 1px solid #000; padding: 0.25rem;"></td>
+            <td style="border: 1px solid #000; text-align: center; padding: 1.75px;">4</td>
+            <td style="border: 1px solid #000; padding: 1.75px;">Data Teknis Gedung Eksisting</td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
+            <td style="border: 1px solid #000; padding: 1.75px;"></td>
         </tr>
     </tbody>
 </table>
