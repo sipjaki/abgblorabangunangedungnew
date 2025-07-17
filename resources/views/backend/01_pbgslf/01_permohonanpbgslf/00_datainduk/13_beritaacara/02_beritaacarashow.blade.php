@@ -540,6 +540,38 @@ th {
             <td style="border: 1px solid #000; padding: 3px;">7. {{$surat->tpatpt->pengawas7->namalengkap ?? '-'}}</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
         </tr>
+
+        <tr>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+    <td style="border: 1px solid #000; padding: 3px;">8. {{ $surat->tpatpt->pengawas8->namalengkap ?? '-' }}</td>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+</tr>
+<tr>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+    <td style="border: 1px solid #000; padding: 3px;">9. {{ $surat->tpatpt->pengawas9->namalengkap ?? '-' }}</td>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+</tr>
+<tr>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+    <td style="border: 1px solid #000; padding: 3px;">10. {{ $surat->tpatpt->pengawas10->namalengkap ?? '-' }}</td>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+</tr>
+<tr>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+    <td style="border: 1px solid #000; padding: 3px;">11. {{ $surat->tpatpt->pengawas11->namalengkap ?? '-' }}</td>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+</tr>
+<tr>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+    <td style="border: 1px solid #000; padding: 3px;">12. {{ $surat->tpatpt->pengawas12->namalengkap ?? '-' }}</td>
+    <td style="border: 1px solid #000; padding: 3px;"></td>
+</tr>
+
     </tbody>
 </table>
 
