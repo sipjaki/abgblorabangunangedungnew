@@ -206,7 +206,7 @@ th {
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label">
-            <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i> Pemohon (User)
+            <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i> Nama Pemohon
         </label>
         <input
             type="text"
