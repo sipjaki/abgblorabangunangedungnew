@@ -813,7 +813,12 @@
         if (event.target === document.getElementById('confirmModal6')) {
             closeModal6();
         }
+
         if (event.target === document.getElementById('confirmModal7')) {
+            closeModal7();
+        }
+
+        if (event.target === document.getElementById('confirmModal8')) {
             closeModal7();
         }
     });
