@@ -983,6 +983,7 @@ Route::post('/bepbgslfskrdcreatenew/{id}', [PbgslfController::class, 'bepbgslfsk
 
 // RETRIBUSI
 Route::get('/bepbgslfretribusi', [PbgslfController::class, 'bepbgslfretribusi'])->middleware('auth')->name('bepbgslfretribusi');
+Route::post('/log-download', [PbgslfController::class, 'history'])->name('log.download');
 
 // ------------------------------------------------------
 // MENU BANTUAN GAMBAR

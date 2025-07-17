@@ -33,6 +33,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
@@ -3725,6 +3727,21 @@ public function bepbgbeuploadberkasnewberkas(Request $request, $id)
     }
 
     return redirect()->back()->with('create', 'Upload Berkas Lainnya berhasil diperbarui.');
+}
+
+// app/Http/Controllers/LogDownloadController.php
+public function history(Request $request)
+{
+ DB::table('download_logs')->insert([
+        'item_id' => $request->id,
+        'waktu_download' => now(),
+        'ip_address' => $request->ip(),
+        'user_id' => auth()->id(),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    return response()->json(['status' => 'ok']);
 }
 
 }

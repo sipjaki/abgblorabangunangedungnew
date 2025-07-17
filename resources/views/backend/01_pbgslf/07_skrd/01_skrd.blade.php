@@ -194,7 +194,6 @@
 
         @endif
 </td> --}}
-
 <td style="white-space: nowrap; padding: 6px; text-align: center; vertical-align: middle;">
     @if($item->berkasskrd)
         <iframe
@@ -204,16 +203,57 @@
         ></iframe>
         <br>
         <a href="{{ asset($item->berkasskrd) }}"
-           class="button-berkas mt-1"
+           class="button-berkas mt-1 log-download"
+           data-id="{{ $item->id }}"
            target="_blank"
            download>
            <i class="bi bi-download"></i> Download
         </a>
+
+        {{-- History Download --}}
+        @php
+            $logCount = \DB::table('download_logs')->where('item_id', $item->id)->count();
+            $lastLog = \DB::table('download_logs')->where('item_id', $item->id)->orderBy('waktu_download', 'desc')->first();
+        @endphp
+
+        <div class="mt-2 small text-muted">
+            <i class="bi bi-clock-history"></i> Diunduh {{ $logCount }}x <br>
+            @if($lastLog)
+                Terakhir: {{ \Carbon\Carbon::parse($lastLog->waktu_download)->translatedFormat('d M Y, H:i') }}
+            @else
+                Belum ada histori
+            @endif
+        </div>
     @else
         <span class="button-merah">Berkas Belum di Upload</span>
-
-        @endif
+    @endif
 </td>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.log-download').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const id = this.getAttribute('data-id');
+
+                fetch("{{ route('log.download') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({
+                        id: id,
+                        waktu: new Date().toISOString()
+                    })
+                }).then(response => {
+                    if (!response.ok) {
+                        console.error('Gagal mencatat log download');
+                    }
+                });
+            });
+        });
+    });
+</script>
 
 <td style="white-space: nowrap; padding: 6px; text-align: center; vertical-align: middle;">
     @if($item->buktipembayaran)
