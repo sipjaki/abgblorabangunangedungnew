@@ -328,7 +328,6 @@ th {
                                         <td style="white-space: pre-wrap; text-align: justify;">{{ $item->catatan ?? '-' }}</td>
 <td style="white-space: nowrap; text-align: center;">
     <a href="{{ route('suratpemberitahuan.detail', ['id' => $item->id]) }}"
-       class="text-decoration-none"
        onclick="saveScrollPosition()">
         <div class="button-baru">
             <i class="bi bi-eye me-1"></i> Lihat
