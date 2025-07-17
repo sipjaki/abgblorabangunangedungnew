@@ -59,7 +59,7 @@
             id: 7,
             name: 'Finalisasi BA',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas8_time) ? $data->validasiberkas8_time : "" ?>',
+            time: '<?php echo isset($data->validasiberkas6_time) ? $data->validasiberkas6_time : "" ?>',
             message: 'Menunggu Verifikasi'
         },
 
@@ -67,7 +67,7 @@
             id: 8,
             name: 'SKRD',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas6_time) ? $data->validasiberkas6_time : "" ?>',
+            time: '<?php echo isset($data->validasiberkas8_time) ? $data->validasiberkas8_time : "" ?>',
             message: 'Menunggu Retribusi'
         }
     ];
