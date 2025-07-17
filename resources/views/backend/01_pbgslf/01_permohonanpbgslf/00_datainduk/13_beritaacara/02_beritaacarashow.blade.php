@@ -362,7 +362,28 @@ th {
     <p style="margin-top:-15px;">
         Konsultasi {{$surat->tpatpt->timpenilai ?? '-'}} Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
         {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }}
-        tanggal {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->format('d') }}
+<span id="tanggal-terbilang"></span>
+
+<script>
+  function terbilang(angka) {
+    const huruf = ["", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"];
+    if (angka < 12) {
+      return huruf[angka];
+    } else if (angka < 20) {
+      return terbilang(angka - 10) + " belas";
+    } else if (angka < 100) {
+      let satuan = angka % 10;
+      let puluhan = Math.floor(angka / 10);
+      return terbilang(puluhan) + " puluh" + (satuan !== 0 ? " " + terbilang(satuan) : "");
+    } else {
+      return "";
+    }
+  }
+
+  const tanggalAngka = parseInt("{{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->format('d') }}");
+  document.getElementById('tanggal-terbilang').textContent = "tanggal " + terbilang(tanggalAngka);
+</script>
+
         bulan {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('F') }}
         tahun Dua Ribu Dua Puluh Lima untuk :
     </p>
