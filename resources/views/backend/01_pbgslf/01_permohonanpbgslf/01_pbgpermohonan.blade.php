@@ -328,7 +328,7 @@ th {
 <th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> No Registrasi SIMBG</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> Tanggal Permohonan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> Status Permohonan</th>
+{{-- <th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> Status Permohonan</th> --}}
 <th style="background-color: #ADD8E6;"><i class="bi bi-folder-fill"></i> Berkas</th>
     @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
@@ -350,7 +350,7 @@ th {
    <td>
   {{ $item->tanggalpermohonan ? \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') : '-' }}
 </td>
-         <td>Belum dibuat databasenya</td>
+         {{-- <td>Belum dibuat databasenya</td> --}}
 <td style="text-align: center;">
     <a href="{{ route('bepbgslflihatper.show', $item->id) }}"
         class="button-baru">
