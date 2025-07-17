@@ -344,11 +344,67 @@ th {
         </div>
     </a>
 </td>
-                                       <td style="white-space: nowrap; text-align: center;">
+
+<td style="white-space: nowrap; text-align: center;">
+    @if (!$item->uploadsurattugas)
+        <!-- Tombol Upload -->
+        <button class="button-baru" data-bs-toggle="modal" data-bs-target="#uploadSuratModal{{ $item->id }}">
+            <i class="bi bi-upload me-1"></i> Upload Surat
+        </button>
+    @else
+        <!-- Tombol Lihat Berkas -->
+        <button class="button-baru" data-bs-toggle="modal" data-bs-target="#lihatSuratModal{{ $item->id }}">
+            <i class="bi bi-eye me-1"></i> Lihat Berkas
+        </button>
+    @endif
+</td>
+
+<!-- Modal Upload -->
+<div class="modal fade" id="uploadSuratModal{{ $item->id }}" tabindex="-1" aria-labelledby="uploadSuratModalLabel{{ $item->id }}" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <form action="{{ route('bepbgsurattugasuploadnbro', $item->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="modal-header">
+          <h5 class="modal-title" id="uploadSuratModalLabel{{ $item->id }}">Upload Surat Tugas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="uploadsurattugas" class="form-label">Pilih File PDF (max 20MB)</label>
+            <input type="file" name="uploadsurattugas" class="form-control" accept=".pdf" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Upload</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Lihat Berkas -->
+@if ($item->uploadsurattugas)
+<div class="modal fade" id="lihatSuratModal{{ $item->id }}" tabindex="-1" aria-labelledby="lihatSuratModalLabel{{ $item->id }}" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="lihatSuratModalLabel{{ $item->id }}">Preview Surat Tugas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <iframe src="{{ asset($item->uploadsurattugas) }}" width="100%" height="600px" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+@endif
+
+{{-- <td style="white-space: nowrap; text-align: center;">
     <button class="button-baru" data-bs-toggle="modal" data-bs-target="#uploadSuratModal{{ $item->id }}">
         <i class="bi bi-upload me-1"></i> Upload Surat
     </button>
-</td>
+</td> --}}
 
 <!-- Modal Upload Surat Tugas -->
 <div class="modal fade" id="uploadSuratModal{{ $item->id }}" tabindex="-1" aria-labelledby="uploadSuratModalLabel{{ $item->id }}" aria-hidden="true">
