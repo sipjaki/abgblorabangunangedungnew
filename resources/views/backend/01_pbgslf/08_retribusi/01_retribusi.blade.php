@@ -273,6 +273,7 @@
     @php
         $status = $item->validasiberkas9;
     @endphp
+
     <button class="
         @if(is_null($status))
             button-baru
@@ -284,16 +285,16 @@
             button-newvalidasi
         @endif
     ">
-        @if(is_null($status))
-            Belum di Verifikasi
-        @elseif($status === 'sudah')
-            Sudah Bayar
-        @elseif($status === 'belum')
-            Belum Bayar
-        @else
-            Status Tidak Diketahui
-        @endif
-    </button>
+    @if(is_null($status))
+        <i class="bi bi-clock-history me-1"></i> Belum di Verifikasi
+    @elseif($status === 'sudah')
+        <i class="bi bi-check-circle-fill me-1"></i> Sudah Bayar
+    @elseif($status === 'belum')
+        <i class="bi bi-x-circle-fill me-1"></i> Belum Bayar
+    @else
+        <i class="bi bi-question-circle-fill me-1"></i> Status Tidak Diketahui
+    @endif
+</button>
 </td>
 
 @canany(['superadmin', 'admin'])
@@ -308,23 +309,23 @@
     ></iframe>
     <br>
     <a href="{{ asset($item->berkasskrd) }}"
-        class="btn btn-sm btn-primary mt-1"
+        class="button-baru mt-1"
         target="_blank"
         download>
                <i class="bi bi-download"></i> Download
             </a>
         @else
-        <span class="btn btn-danger" style="color: white;">Berkas Belum di Upload</span>
+        <span class="button-merah" style="color: white;">Berkas Belum di Upload</span>
         @endif
 
         @elseif ($item->validasiberkas9 === 'belum')
-        <span class="btn btn-warning" style="color: black;">Berkas belum divalidasi</span>
+        <span class="berkas-newvalidasi" style="color: black;">Berkas belum divalidasi</span>
         <button type="button" class="btn btn-sm btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#validasiModal" data-id="{{ $item->id }}">
             <i class="bi bi-pencil-square"></i> Verifikasi Ulang
         </button>
 
         @else
-        <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#validasiModal" data-id="{{ $item->id }}">
+        <button type="button" class="button-berkas" data-bs-toggle="modal" data-bs-target="#validasiModal" data-id="{{ $item->id }}">
             <i class="bi bi-check-circle"></i> Validasi Pembayaran
         </button>
         @endif
