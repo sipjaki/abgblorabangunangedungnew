@@ -392,10 +392,13 @@ th {
         <td style="border: 1px solid #000; padding: 2px;">Fungsi Bangunan</td>
         <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
     </tr>
-    <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Luas Bangunan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->luasbangunan ?? '-' }}Meter</td>
-    </tr>
+ <tr>
+  <td style="border: 1px solid #000; padding: 2px;">Luas Bangunan</td>
+  <td style="border: 1px solid #000; padding: 2px;">
+    {{ $surat->databangunanpbg->luasbangunan ?? '-' }} m&sup2;
+  </td>
+</tr>
+
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Lokasi Bangunan</td>
         <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
