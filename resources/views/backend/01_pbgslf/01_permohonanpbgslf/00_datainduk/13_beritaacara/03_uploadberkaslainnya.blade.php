@@ -299,28 +299,21 @@ th {
             </div>
         <div class="card-body">
 
-@if ($data)
-    <div style="margin-top: 10px;">
-        @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
-            <iframe src="{{ asset('storage/' . $data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
-        @elseif($data->peraturan)
-            <iframe src="{{ asset($data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
-        @else
-            <p><button class="button-berkas">Data belum diupdate</button></p>
-        @endif
-    </div>
-@else
-    <div class="alert alert-warning text-center fw-semibold">
-        <i class="bi bi-folder-x me-2 text-danger"></i>
-        Data tidak ditemukan!
-    </div>
-    <div class="text-center mt-3">
-        <a href="{{ route('upload.route.name') }}" class="btn button-baru">
-            Upload Berkas
-        </a>
-    </div>
-@endif
 
+                                        <div style="margin-top: 10px;">
+                                                @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
+                                                <!-- Display the default iframe when the file exists in the storage -->
+                                                <iframe src="{{ asset('storage/' . $data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @elseif($data->peraturan)
+                                                <!-- Display the iframe with the updated file -->
+                                                <iframe src="{{ asset($data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @else
+                                                <!-- Optional: Show a placeholder if there's no file available -->
+                                                <p>Data belum diupdate</p>
+                                            @endif
+
+                                            </div>
+</div>
         {{-- Tombol Tambah Data --}}
                 {{-- <div class="text-center mt-4">
                     <a href="{{ route('bepbgsuratundangancreate', $data->id) }}" class="button-baru">
