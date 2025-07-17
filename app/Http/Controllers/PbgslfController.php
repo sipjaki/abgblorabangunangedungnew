@@ -3665,4 +3665,26 @@ public function betracking(Request $request)
     }
 
 
+    public function bepbgbeuploadberkas($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Cari data pbg berdasarkan ID
+    $data = pbgslfbangunan::findOrFail($id);
+
+    // Ambil semua data surat pemberitahuan berdasarkan pbgslfbangunan_id tanpa pagination
+    // $subdatapemilik = suratudanganpbg::where('pbgslfbangunan_id', $data->id)->get();
+
+    // Kirim data ke view
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.13_beritaacara.03_uploadberkaslainnya', [
+        'title' => 'Uploas Berkas',
+        'title_halaman' => 'Upload Berkas',
+        'user' => $user,
+        'data' => $data,
+        // 'subdatapemilik' => $subdatapemilik,
+    ]);
+}
+
+
 }

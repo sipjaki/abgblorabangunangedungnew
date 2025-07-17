@@ -1091,6 +1091,9 @@ Route::delete('/bepbgsuratundangandelete/{id}', [PbgslfController::class, 'bepbg
 Route::get('/bepbgberitaacaraslf/{id}', [PbgslfController::class, 'bepbgberitaacaraslf'])->middleware('auth')->name('bepbgberitaacaraslf');
 Route::get('/bepbgberitaacaraslfshow/{id}', [PbgslfController::class, 'bepbgberitaacaraslfshow'])->middleware('auth')->name('bepbgberitaacaraslf.detail');
 
+Route::get('/bepbgbeuploadberkas/{id}', [PbgslfController::class, 'bepbgbeuploadberkas'])->middleware('auth')->name('bepbgbeuploadberkas');
+// Route::get('/bepbgberitaacaraslfshow/{id}', [PbgslfController::class, 'bepbgberitaacaraslfshow'])->middleware('auth')->name('bepbgberitaacaraslf.detail');
+
 
 // Route::get('/bepbgsuratundangancreate/{id}', [PbgslfController::class, 'bepbgsuratundangancreate'])->middleware('auth')->name('bepbgsuratundangancreate');
 // Route::post('/bepbgsuratundangannew', [PbgslfController::class, 'bepbgsuratundangannew'])->middleware('auth')->name('bepbgsuratundangannew');

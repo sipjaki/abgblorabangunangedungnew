@@ -60,6 +60,7 @@ return new class extends Migration
             $table->string('validasiberkas9')->nullable();
 
 
+            $table->string('uploadberkaslainnya')->nullable();
             // $table->string('validasiberkas1')->nullable();
 
             // CADANGAN DATABASE YANG AKAN DI LAKUKAN PENGEMBANGAN
