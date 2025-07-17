@@ -233,7 +233,7 @@ th {
             ],
             [
                 'icon' => 'bi-person-fill-check',
-                'title' => 'Pengisi Form',
+                'title' => 'Nama Pemohon',
                 'value' => $data->namapemohon ?? '-',
             ],
         ];

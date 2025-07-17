@@ -227,14 +227,14 @@ th {
             'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
         ],
         [
+            'icon' => 'bi-house-gear-fill', // ikon rumah dengan pengaturan (klasifikasi bangunan)
+            'title' => 'Klasifikasi Bangunan',
+            'value' => $data->namapemohon ?? '-',
+        ],
+        [
             'icon' => 'bi-telephone-fill', // ikon telepon langsung
             'title' => 'Nomor Telepon',
             'value' => $data->nomortelepon ?? '-',
-        ],
-        [
-            'icon' => 'bi-house-gear-fill', // ikon rumah dengan pengaturan (klasifikasi bangunan)
-            'title' => 'Klasifikasi Bangunan',
-            'value' => $user->klasifikasibangunan ?? '-',
         ],
     ];
 @endphp
