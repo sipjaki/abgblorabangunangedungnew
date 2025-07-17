@@ -24,6 +24,12 @@ return new class extends Migration
             $table->foreignId('pengawas5_id')->nullable();
             $table->foreignId('pengawas6_id')->nullable();
             $table->foreignId('pengawas7_id')->nullable();
+            $table->foreignId('pengawas8_id')->nullable();
+            $table->foreignId('pengawas9_id')->nullable();
+            $table->foreignId('pengawas10_id')->nullable();
+            $table->foreignId('pengawas11_id')->nullable();
+            $table->foreignId('pengawas12_id')->nullable();
+            // $table->foreignId('pengawas7_id')->nullable();
 
             $table->string('cadangan1')->nullable();
             $table->string('cadangan2')->nullable();

@@ -67,6 +67,27 @@ class tpatpt extends Model
         return $this->belongsTo(pengawasatpt::class, 'pengawas7_id');
     }
 
+    public function pengawas8()
+    {
+        return $this->belongsTo(pengawasatpt::class, 'pengawas8_id');
+    }
+    public function pengawas9()
+    {
+        return $this->belongsTo(pengawasatpt::class, 'pengawas9_id');
+    }
+    public function pengawas10()
+    {
+        return $this->belongsTo(pengawasatpt::class, 'pengawas10_id');
+    }
+    public function pengawas11()
+    {
+        return $this->belongsTo(pengawasatpt::class, 'pengawas11_id');
+    }
+    public function pengawas12()
+    {
+        return $this->belongsTo(pengawasatpt::class, 'pengawas12_id');
+    }
+
     public function suratudanganpbg()
     {
         return $this->hasMany(suratudanganpbg::class);

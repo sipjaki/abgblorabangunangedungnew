@@ -421,42 +421,52 @@ th {
 
 
     {{-- Pengawas 1-7 dengan posisi kanan-kiri --}}
-    @php
-        $pengawasFields = [
-            1 => 'Pengawas 1',
-            2 => 'Pengawas 2',
-            3 => 'Pengawas 3',
-            4 => 'Pengawas 4',
-            5 => 'Pengawas 5',
-            6 => 'Pengawas 6',
-            7 => 'Pengawas 7',
-        ];
-    @endphp
+@php
+    $pengawasFields = [
+        1 => 'Pengawas 1',
+        2 => 'Pengawas 2',
+        3 => 'Pengawas 3',
+        4 => 'Pengawas 4',
+        5 => 'Pengawas 5',
+        6 => 'Pengawas 6',
+        7 => 'Pengawas 7',
+        8 => 'Pengawas 8',
+        9 => 'Pengawas 9',
+        10 => 'Pengawas 10',
+        11 => 'Pengawas 11',
+        12 => 'Pengawas 12',
+    ];
+@endphp
 
-    @foreach($pengawasFields as $i => $label)
-        @if($loop->odd)
-            <div class="row g-3">
-        @endif
+@foreach($pengawasFields as $i => $label)
+    @if($loop->odd)
+        <div class="row g-3">
+    @endif
 
-        <div class="col-md-6">
-            <label class="form-label fw-semibold text-dark">
-                <i class="bi bi-person-check-fill text-primary me-1"></i> {{ $label }}
-            </label>
-            <select name="pengawas{{ $i }}_id" class="form-select @error('pengawas' . $i . '_id') is-invalid @enderror">
-                <option value="" disabled selected>-- Pilih {{ $label }} --</option>
-                @foreach($pengawasList as $pengawas)
-                    <option value="{{ $pengawas->id }}" {{ old('pengawas' . $i . '_id') == $pengawas->id ? 'selected' : '' }}>
-                        {{ $pengawas->namalengkap }}
-                    </option>
-                @endforeach
-            </select>
-            @error('pengawas' . $i . '_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-person-check-fill text-primary me-1"></i> {{ $label }}
+        </label>
+        <select name="pengawas{{ $i }}_id"
+                class="form-select @error('pengawas' . $i . '_id') is-invalid @enderror">
+            <option value="" disabled selected>-- Pilih {{ $label }} --</option>
+            @foreach($pengawasList as $pengawas)
+                <option value="{{ $pengawas->id }}"
+                        {{ old('pengawas' . $i . '_id') == $pengawas->id ? 'selected' : '' }}>
+                    {{ $pengawas->namalengkap }}
+                </option>
+            @endforeach
+        </select>
+        @error('pengawas' . $i . '_id')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    @if($loop->even || $loop->last)
         </div>
+    @endif
+@endforeach
 
-        @if($loop->even || $loop->last)
-            </div>
-        @endif
-    @endforeach
 </div>
 
 <div class="text-end mt-4">

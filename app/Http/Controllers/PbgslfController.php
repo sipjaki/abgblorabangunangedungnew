@@ -1832,6 +1832,16 @@ public function bepbgtpatptcreatenew(Request $request)
         'pengawas5_id' => 'nullable|string',
         'pengawas6_id' => 'nullable|string',
         'pengawas7_id' => 'nullable|string',
+
+        'pengawas8_id' => 'nullable|string',
+        'pengawas9_id' => 'nullable|string',
+        'pengawas10_id' => 'nullable|string',
+        'pengawas11_id' => 'nullable|string',
+        'pengawas12_id' => 'nullable|string',
+        // 'pengawas7_id' => 'nullable|string',
+        // 'pengawas7_id' => 'nullable|string',
+
+
     ], [
         'pbgslfbangunan_id.required' => 'ID Bangunan wajib diisi.',
         'pbgslfbangunan_id.exists' => 'ID Bangunan tidak ditemukan.',
@@ -1841,20 +1851,20 @@ public function bepbgtpatptcreatenew(Request $request)
         'nosk.max' => 'Nomor SK maksimal 255 karakter.',
 
         'pengawas1_id.requires' => 'Wajib Di Pilih.',
-        'pengawas2_id.requires' => 'Wajib Di Pilih.',
-        'pengawas3_id.requires' => 'Wajib Di Pilih.',
-        'pengawas4_id.requires' => 'Wajib Di Pilih.',
-        'pengawas5_id.requires' => 'Wajib Di Pilih.',
-        'pengawas6_id.requires' => 'Wajib Di Pilih.',
-        'pengawas7_id.requires' => 'Wajib Di Pilih.',
-        // 'pengawas1_id.requires' => 'Wajib Di Pilih.',
-        'pengawas1_id.exists' => 'Pengawas 1 tidak valid.',
-        'pengawas2_id.exists' => 'Pengawas 2 tidak valid.',
-        'pengawas3_id.exists' => 'Pengawas 3 tidak valid.',
-        'pengawas4_id.exists' => 'Pengawas 4 tidak valid.',
-        'pengawas5_id.exists' => 'Pengawas 5 tidak valid.',
-        'pengawas6_id.exists' => 'Pengawas 6 tidak valid.',
-        'pengawas7_id.exists' => 'Pengawas 7 tidak valid.',
+        // 'pengawas2_id.requires' => 'Wajib Di Pilih.',
+        // 'pengawas3_id.requires' => 'Wajib Di Pilih.',
+        // 'pengawas4_id.requires' => 'Wajib Di Pilih.',
+        // 'pengawas5_id.requires' => 'Wajib Di Pilih.',
+        // 'pengawas6_id.requires' => 'Wajib Di Pilih.',
+        // 'pengawas7_id.requires' => 'Wajib Di Pilih.',
+        // // 'pengawas1_id.requires' => 'Wajib Di Pilih.',
+        // 'pengawas1_id.exists' => 'Pengawas 1 tidak valid.',
+        // 'pengawas2_id.exists' => 'Pengawas 2 tidak valid.',
+        // 'pengawas3_id.exists' => 'Pengawas 3 tidak valid.',
+        // 'pengawas4_id.exists' => 'Pengawas 4 tidak valid.',
+        // 'pengawas5_id.exists' => 'Pengawas 5 tidak valid.',
+        // 'pengawas6_id.exists' => 'Pengawas 6 tidak valid.',
+        // 'pengawas7_id.exists' => 'Pengawas 7 tidak valid.',
     ]);
 
     tpatpt::create([
@@ -1869,6 +1879,12 @@ public function bepbgtpatptcreatenew(Request $request)
         'pengawas5_id' => $validated['pengawas5_id'] ?? null,
         'pengawas6_id' => $validated['pengawas6_id'] ?? null,
         'pengawas7_id' => $validated['pengawas7_id'] ?? null,
+        'pengawas8_id' => $validated['pengawas8_id'] ?? null,
+        'pengawas9_id' => $validated['pengawas9_id'] ?? null,
+        'pengawas10_id' => $validated['pengawas10_id'] ?? null,
+        'pengawas11_id' => $validated['pengawas11_id'] ?? null,
+        'pengawas12_id' => $validated['pengawas12_id'] ?? null,
+        // 'pengawas7_id' => $validated['pengawas7_id'] ?? null,
     ]);
 
     session()->flash('create', 'Surat Tugas TPA/TPT berhasil disimpan.');
