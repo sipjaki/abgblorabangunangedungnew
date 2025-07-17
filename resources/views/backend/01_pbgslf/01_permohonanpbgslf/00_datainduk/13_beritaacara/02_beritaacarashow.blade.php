@@ -497,58 +497,33 @@ th {
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td style="border: 1px solid #000; padding: 3px;" rowspan="7"></td>
-            <td style="border: 1px solid #000; padding: 3px;">1. M. ARIF HIDAYAT, ST</td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">1. {{$surat->tpatpt->pengawas1->namalengkap ?? '-'}}</td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #000; padding: 3px;">2. ANEX FACHRIAN ST. MT.</td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">2. {{$surat->tpatpt->pengawas2->namalengkap ?? '-'}}</td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">3. {{$surat->tpatpt->pengawas3->namalengkap ?? '-'}}</td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">4. {{$surat->tpatpt->pengawas4->namalengkap ?? '-'}}</td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">5. {{$surat->tpatpt->pengawas5->namalengkap ?? '-'}}</td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">6. {{$surat->tpatpt->pengawas6->namalengkap ?? '-'}}</td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">7. {{$surat->tpatpt->pengawas7->namalengkap ?? '-'}}</td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-        </tr>
+        @php
+            $pengawasPemohon = [
+                '1. M. ARIF HIDAYAT, ST',
+                '2. ANEX FACHRIAN ST. MT.',
+            ];
+            $totalPengawas = 12;
+        @endphp
 
-        <tr>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-            <td style="border: 1px solid #000; padding: 3px;">7. {{$surat->tpatpt->pengawas8->namalengkap ?? '-'}}</td>
-            <td style="border: 1px solid #000; padding: 3px;"></td>
-        </tr>
+        @for ($i = 1; $i <= $totalPengawas; $i++)
+            <tr>
+                @if ($i <= 2)
+                    <td style="border: 1px solid #000; padding: 3px;" {{ $i == 1 ? 'rowspan=' . $totalPengawas : '' }}>
+                        {{-- Hanya isi di baris pertama, rowspan sebanyak total pengawas --}}
+                    </td>
+                    <td style="border: 1px solid #000; padding: 3px;">{{ $pengawasPemohon[$i - 1] }}</td>
+                @else
+                    <td style="border: 1px solid #000; padding: 3px;"></td>
+                    <td style="border: 1px solid #000; padding: 3px;"></td>
+                @endif
 
-
+                <td style="border: 1px solid #000; padding: 3px;"></td>
+                <td style="border: 1px solid #000; padding: 3px;">
+                    {{ $i }}. {{ $surat->tpatpt->{'pengawas' . $i}->namalengkap ?? '-' }}
+                </td>
+                <td style="border: 1px solid #000; padding: 3px;"></td>
+            </tr>
+        @endfor
     </tbody>
 </table>
 
