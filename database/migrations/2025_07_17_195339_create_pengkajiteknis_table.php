@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('namabadanusaha')->nullable();
             $table->string('alamat')->nullable();
             $table->string('telepon')->nullable();
-            $table->string('email')->nullable();
-            $table->string('direktur')->nullable();
-            $table->string('subklasifikasi')->nullable();
-            $table->string('pengalaman')->nullable();
+            $table->text('email')->nullable();
+            $table->text('direktur')->nullable();
+            $table->text('subklasifikasi')->nullable();
+            $table->text('pengalaman')->nullable();
 
             $table->string('cadangan1')->nullable();
             $table->string('cadangan2')->nullable();
