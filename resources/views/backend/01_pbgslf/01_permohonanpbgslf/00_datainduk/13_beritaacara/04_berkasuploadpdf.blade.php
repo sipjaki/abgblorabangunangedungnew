@@ -378,13 +378,14 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Terbitkan Surat Undangan
+    Silahkan Upload Berkas !
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
-<form id="formPemilik" action="{{ route('bepbgsuratundangannew') }}" method="POST">
+<form id="formPemilik" action="{{ route('bepbgbeuploadberkasnewberkas', $data->id) }}" method="POST">
     @csrf
+    @method('PUT')
 {{-- <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
 <input type="hidden" name="datapemilik_id" value="{{ $data->id }}">
 <input type="hidden" name="databangunanpbg_id" value="{{ $data->id }}">

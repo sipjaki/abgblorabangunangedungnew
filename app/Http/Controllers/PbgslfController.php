@@ -3705,5 +3705,25 @@ public function bepbgbeuploadberkasnew($id)
     ]);
 }
 
+public function bepbgbeuploadberkasnewberkas(Request $request, $id)
+{
+    $request->validate([
+        'uploadberkaslainnya' => 'required|file|mimes:pdf,jpg,jpeg,png,doc,docx|max:20480', // Maks 20MB
+    ]);
+
+    $data = suratudanganpbg::findOrFail($id);
+
+    if ($request->hasFile('uploadberkaslainnya')) {
+        $file = $request->file('uploadberkaslainnya');
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $path = '01_pbgsslg/01_berkasbaru';
+        $file->move(public_path($path), $filename);
+
+        $data->uploadberkaslainnya = $path . '/' . $filename;
+        $data->save();
+    }
+
+    return redirect()->back()->with('create', 'Upload Berkas Lainnya berhasil diperbarui.');
+}
 
 }

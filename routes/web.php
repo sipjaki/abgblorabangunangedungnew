@@ -1093,10 +1093,10 @@ Route::get('/bepbgberitaacaraslfshow/{id}', [PbgslfController::class, 'bepbgberi
 
 Route::get('/bepbgbeuploadberkas/{id}', [PbgslfController::class, 'bepbgbeuploadberkas'])->middleware('auth')->name('bepbgbeuploadberkas');
 Route::get('/bepbgbeuploadberkasnew/{id}', [PbgslfController::class, 'bepbgbeuploadberkasnew'])->middleware('auth')->name('bepbgbeuploadberkasnew');
+Route::put('/bepbgbeuploadberkasnewberkas/{id}', [PbgslfController::class, 'bepbgbeuploadberkasnewberkas'])->middleware('auth')->name('bepbgbeuploadberkasnewberkas');
 
 
 // Route::get('/bepbgsuratundangancreate/{id}', [PbgslfController::class, 'bepbgsuratundangancreate'])->middleware('auth')->name('bepbgsuratundangancreate');
-// Route::post('/bepbgsuratundangannew', [PbgslfController::class, 'bepbgsuratundangannew'])->middleware('auth')->name('bepbgsuratundangannew');
 
 // Route::delete('/bepbgsuratundangandelete/{id}', [PbgslfController::class, 'bepbgsuratundangandelete'])->middleware('auth')->name('bepbgsuratundangandelete');
 
