@@ -353,7 +353,7 @@ th {
         </button>
     @else
         <!-- Tombol Lihat Berkas -->
-        <button class="button-baru" data-bs-toggle="modal" data-bs-target="#lihatSuratModal{{ $item->id }}">
+        <button class="button-berkas" data-bs-toggle="modal" data-bs-target="#lihatSuratModal{{ $item->id }}">
             <i class="bi bi-eye me-1"></i> Lihat Berkas
         </button>
     @endif
