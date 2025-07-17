@@ -367,8 +367,8 @@ th {
 
 @endcanany
 
-@canany(['superadmin', 'admin'])
 
+@canany(['superadmin', 'admin'])
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="rupiahInput">
@@ -470,6 +470,7 @@ th {
         Belum Upload Berkas, Silahkan Upload Bukti Pembayaran.
     </div>
 </div>
+
 @endcan
 </div>
 
