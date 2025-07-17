@@ -332,7 +332,7 @@ th {
                                                 Upload
                                             </button>
                                         </td>
-<td style="white-space: nowrap; text-align: center;">
+<td>
     <a href="{{ route('suratpemberitahuan.detail', ['id' => $item->id]) }}"
        onclick="saveScrollPosition()">
         <div class="button-baru">
