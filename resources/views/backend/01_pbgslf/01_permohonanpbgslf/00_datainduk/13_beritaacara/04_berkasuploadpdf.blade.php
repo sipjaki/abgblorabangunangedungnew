@@ -383,40 +383,41 @@ th {
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
-<form id="formPemilik" action="{{ route('bepbgbeuploadberkasnewberkas', $data->id) }}" method="POST">
+
+<form id="formPemilik" action="{{ route('bepbgbeuploadberkasnewberkas', $data->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
-{{-- <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
-<input type="hidden" name="datapemilik_id" value="{{ $data->id }}">
-<input type="hidden" name="databangunanpbg_id" value="{{ $data->id }}">
-<input type="hidden" name="tpatpt_id" value="{{ $data->id }}"> --}}
-{{-- <input type="hidden" name="tempatkonsultasi_id" value="{{ $data->id }}"> --}}
 
-<div class="row g-4 mt-2">
-    <div class="col-md-6">
-        <label for="uploadberkaslainnya" class="form-label fw-semibold text-dark">
-            <i class="bi bi-cloud-arrow-up text-primary me-1"></i> Upload Berkas Lainnya
-        </label>
+    <div class="row g-4 mt-2">
+        <div class="col-md-6">
+            <label for="uploadberkaslainnya" class="form-label fw-semibold text-dark">
+                <i class="bi bi-cloud-arrow-up text-primary me-1"></i> Upload Berkas Lainnya
+            </label>
 
-        <input type="file" name="uploadberkaslainnya" id="uploadberkaslainnya"
-               class="form-control @error('uploadberkaslainnya') is-invalid @enderror"
-               accept=".pdf, image/*"
-               onchange="previewFile(event)">
+            <input type="file" name="uploadberkaslainnya" id="uploadberkaslainnya"
+                   class="form-control @error('uploadberkaslainnya') is-invalid @enderror"
+                   accept=".pdf, image/*"
+                   onchange="previewFile(event)">
 
-        @error('uploadberkaslainnya')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+            @error('uploadberkaslainnya')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
 
-        {{-- Preview --}}
-        <div id="preview-container" class="mt-3" style="display: none;">
-            <p class="fw-semibold mb-2">Preview:</p>
-            <iframe id="preview-frame" src="" width="100%" height="300px" frameborder="0" style="display: none;"></iframe>
-            <img id="preview-image" src="" alt="Preview Gambar" class="img-fluid" style="max-height: 300px; display: none;">
+            <div id="preview-container" class="mt-3" style="display: none;">
+                <p class="fw-semibold mb-2">Preview:</p>
+                <iframe id="preview-frame" src="" width="100%" height="300px" frameborder="0" style="display: none;"></iframe>
+                <img id="preview-image" src="" alt="Preview Gambar" class="img-fluid" style="max-height: 300px; display: none;">
+            </div>
         </div>
     </div>
-</div>
 
-{{-- Script Preview --}}
+    <div class="text-end mt-4">
+        <button type="submit" class="button-baru">
+            <i class="bi bi-save me-1"></i> Upload Berkas
+        </button>
+    </div>
+</form>
+
 <script>
     function previewFile(event) {
         const file = event.target.files[0];
@@ -446,14 +447,6 @@ th {
         }
     }
 </script>
-
-<div class="text-end mt-4">
-    <button type="button" class="button-baru" onclick="openModal()">
-        <i class="bi bi-save me-1"></i> Upload Berkas?
-    </button>
-</div>
-
-</form>
 
 {{-- Modal Konfirmasi --}}
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
