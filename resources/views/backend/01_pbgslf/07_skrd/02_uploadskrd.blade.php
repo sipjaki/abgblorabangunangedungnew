@@ -447,29 +447,32 @@ th {
 
 @endcanany
 
+@can('akunskrd')
+
 <div class="row">
     {{-- Upload Bukti Pembayaran --}}
     <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label" for="buktipembayaran">
                 <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Bukti Pembayaran
-    </label>
-    <input type="file" id="buktipembayaran" name="buktipembayaran" accept="application/pdf"
-      class="form-control @error('buktipembayaran') is-invalid @enderror"
-      onchange="previewPDF(event, 'previewContainerBuktiPembayaran', 'iframeBuktiPembayaran', 'msgBuktiPembayaran')" />
-    @error('buktipembayaran')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </label>
+            <input type="file" id="buktipembayaran" name="buktipembayaran" accept="application/pdf"
+            class="form-control @error('buktipembayaran') is-invalid @enderror"
+            onchange="previewPDF(event, 'previewContainerBuktiPembayaran', 'iframeBuktiPembayaran', 'msgBuktiPembayaran')" />
+            @error('buktipembayaran')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-    <div class="mt-3" id="previewContainerBuktiPembayaran" style="display: none;">
+            <div class="mt-3" id="previewContainerBuktiPembayaran" style="display: none;">
       <label class="fw-bold">Bukti Pembayaran</label>
       <iframe id="iframeBuktiPembayaran" src=""
-        style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+      style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
     </div>
     <div id="msgBuktiPembayaran" class="mt-3" style="color: grey; font-style: italic;">
-      Belum Upload Berkas, Silahkan Upload Bukti Pembayaran.
+        Belum Upload Berkas, Silahkan Upload Bukti Pembayaran.
     </div>
-  </div>
+</div>
 </div>
 
+@endcan
 </div>
 
 
