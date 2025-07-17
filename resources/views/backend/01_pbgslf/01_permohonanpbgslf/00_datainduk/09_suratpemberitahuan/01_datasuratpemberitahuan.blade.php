@@ -309,6 +309,7 @@ th {
                                     <th>Pilihan Catatan</th>
                                     <th>Catatan</th>
                                     <th>Surat Terbit</th>
+                                    <th>Upload Surat</th>
                                     <th style="width: 100px;">Aksi</th>
                                 </tr>
                             </thead>
@@ -326,6 +327,11 @@ th {
                                             </span>
                                         </td>
                                         <td style="white-space: pre-wrap; text-align: justify;">{{ $item->catatan ?? '-' }}</td>
+                                        <td style="white-space: pre-wrap; text-align: justify;">
+                                            <button class="button-newvalidasi">
+                                                Upload
+                                            </button>
+                                        </td>
 <td style="white-space: nowrap; text-align: center;">
     <a href="{{ route('suratpemberitahuan.detail', ['id' => $item->id]) }}"
        onclick="saveScrollPosition()">
