@@ -177,7 +177,7 @@
                 @canany(['superadmin', 'admin'])
 
                 <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
-                    <i class="bi bi-file-earmark-text-fill"></i> Status
+                    <i class="bi bi-file-earmark-text-fill"></i> Status/Berkas
                 </th>
 
                 @endcanany
