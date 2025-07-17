@@ -21,6 +21,7 @@ return new class extends Migration
 
             $table->string('namapemohon')->nullable();
             $table->string('email')->nullable();
+            // $table->string('tanggalpermohonan')->nullable();
             $table->string('alamatpemohon')->nullable();
             $table->string('nomortelepon')->nullable();
             $table->string('nikktp')->nullable();

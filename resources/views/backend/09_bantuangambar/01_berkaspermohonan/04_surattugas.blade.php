@@ -227,24 +227,26 @@ th {
     $infoItems = [
         [
             'icon' => 'bi-person-vcard-fill', // lebih cocok untuk NIK/KTP
-            'title' => 'Nomor Induk Kependudukan',
-            'value' => $data->nikktp ?? '-',
-        ],
-        [
-            'icon' => 'bi-calendar-event-fill', // ikon kalender yang lebih detail
-            'title' => 'Tanggal Permohonan',
-            'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
+            'title' => 'Nama Pemohon',
+            'value' => $data->namapemohon ?? '-',
         ],
         [
             'icon' => 'bi-telephone-fill', // ikon telepon langsung
             'title' => 'Nomor Telepon',
             'value' => $data->nomortelepon ?? '-',
         ],
-        [
+                [
             'icon' => 'bi-house-gear-fill', // ikon rumah dengan pengaturan (klasifikasi bangunan)
-            'title' => 'Klasifikasi Bangunan',
-            'value' => $user->klasifikasibangunan ?? '-',
+            'title' => 'Alamat Bangunan Gedung',
+            'value' => $user->alamatpemohon ?? '-',
         ],
+        [
+            'icon' => 'bi-calendar-event-fill', // ikon kalender yang lebih detail
+            'title' => 'Tanggal Permohonan',
+            'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
+        ],
+
+
     ];
 @endphp
 
