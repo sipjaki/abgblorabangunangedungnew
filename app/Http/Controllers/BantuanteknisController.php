@@ -9,6 +9,7 @@ use App\Models\gambarbantuan;
 use App\Models\jenispengajuanbantek;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
+use App\Models\pengkajiteknis;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -6199,6 +6200,34 @@ public function bebanteklapcekdokcredelete($id)
 
 
 
+public function bepengkajiteknis(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    $query = pengkajiteknis::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namabadanusaha', 'like', "%{$search}%")
+              ->orWhere('alamat', 'like', "%{$search}%")
+              ->orWhere('telepon', 'like', "%{$search}%")
+              ->orWhere('email', 'like', "%{$search}%")
+              ->orWhere('direktur', 'like', "%{$search}%")
+              ->orWhere('subklasifikasi', 'like', "%{$search}%")
+              ->orWhere('pengalaman', 'like', "%{$search}%");
+        });
+    }
+
+    $bujk = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.04_bantuanteknis.05_datakonsultan.03_datapengkajiteknis', [
+        'title' => 'Daftar Konsultan Pengkaji Teknis',
+        'data'  => $bujk,
+        'user'  => $user,
+    ]);
+}
 
 
 }

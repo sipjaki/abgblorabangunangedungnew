@@ -590,6 +590,8 @@ Route::get('/bebanteklapcekdokcreate/{id}', [BantuanteknisController::class, 'be
 Route::post('/bebanteklapcekdokcreatenew', [BantuanteknisController::class, 'bebanteklapcekdokcreatenew'])->middleware('auth')->name('create.bebanteklapcekdokcreate');
 Route::delete('/bebanteklapcekdokcredelete/{id}', [BantuanteknisController::class, 'bebanteklapcekdokcredelete'])->middleware('auth')->name('delete.bebanteklapcekdokcredelete');
 
+Route::get('/bepengkajiteknis', [BantuanteknisController::class, 'bepengkajiteknis'])->middleware('auth')->name('bepengkajiteknis');
+
 
 Route::get('/allakun', [akuncontroller::class, 'allakun'])->middleware('auth')->name('allakun.showdata');
 Route::delete('/allakundelete/{id}', [akuncontroller::class, 'allakundelete'])->middleware('auth')->name('delete.allakundelete');
