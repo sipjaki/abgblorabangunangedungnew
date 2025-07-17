@@ -53,7 +53,7 @@ return new class extends Migration
             // PERHITUNGAN RETRIBUSI
             $table->integer('rupiah')->nullable();
             $table->string('buktipembayaran')->nullable();
-            $table->string('validasiberkas8')->nullable();
+            // $table->string('validasiberkas8')->nullable();
 
             // UPLOAD BERKAS
             $table->string('berkasskrd')->nullable();
