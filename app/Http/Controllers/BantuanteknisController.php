@@ -6293,7 +6293,7 @@ public function bepengkajiteknisnewcreate(Request $request)
 
     $data = new pengkajiteknis();
 
-    $data->user_id = $user->id ?? null;
+    // $data->user_id = $user->id ?? null;
     $data->namabadanusaha = $validated['namabadanusaha'];
     $data->alamat = $validated['alamat'];
     $data->telepon = $validated['telepon'];
