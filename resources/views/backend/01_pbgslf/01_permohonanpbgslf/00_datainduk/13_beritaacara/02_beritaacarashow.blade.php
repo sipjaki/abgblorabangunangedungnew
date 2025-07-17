@@ -498,7 +498,7 @@ th {
     </thead>
     <tbody>
         <tr>
-            <td style="border: 1px solid #000; padding: 3px;" rowspan="7"></td>
+            <td style="border: 1px solid #000; padding: 3px;" rowspan="12"></td>
             <td style="border: 1px solid #000; padding: 3px;">1. M. ARIF HIDAYAT, ST</td>
             <td style="border: 1px solid #000; padding: 3px;"></td>
             <td style="border: 1px solid #000; padding: 3px;">1. {{$surat->tpatpt->pengawas1->namalengkap ?? '-'}}</td>
