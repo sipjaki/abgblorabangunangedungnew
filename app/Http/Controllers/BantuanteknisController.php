@@ -6253,5 +6253,21 @@ public function bepengkajiteknisdelete($id)
         return redirect()->back()->with('error', 'Item not found');
     }
 
+    public function bepengkajiteknisnew()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 4)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.04_bantuanteknis.05_datakonsultan.04_tambahdatapengkajiteknis', [
+        'title' => 'Tambah Konsultan Pengkaji Teknis',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
+
 
 }
