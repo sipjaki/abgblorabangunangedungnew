@@ -387,29 +387,50 @@ th {
 <form id="formPemilik" action="{{ route('bepbgbeuploadberkasnewberkas', $data->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
+<div class="row g-4 mt-2">
+    <div class="col-md-6">
+        <label for="uploadberkaslainnya" class="form-label fw-semibold text-dark">
+            <i class="bi bi-cloud-arrow-up text-primary me-1"></i> Upload Berkas Lainnya
+        </label>
 
-    <div class="row g-4 mt-2">
-        <div class="col-md-6">
-            <label for="uploadberkaslainnya" class="form-label fw-semibold text-dark">
-                <i class="bi bi-cloud-arrow-up text-primary me-1"></i> Upload Berkas Lainnya
-            </label>
+        {{-- Preview file sebelumnya --}}
+        @if(!empty($data->uploadberkaslainnya) && file_exists(public_path($data->uploadberkaslainnya)))
+            <div class="mb-3">
+                <p class="fw-semibold mb-2">File Sebelumnya:</p>
 
-            <input type="file" name="uploadberkaslainnya" id="uploadberkaslainnya"
-                   class="form-control @error('uploadberkaslainnya') is-invalid @enderror"
-                   accept=".pdf, image/*"
-                   onchange="previewFile(event)">
+                @php
+                    $fileUrl = asset($data->uploadberkaslainnya);
+                    $ext = strtolower(pathinfo($data->uploadberkaslainnya, PATHINFO_EXTENSION));
+                @endphp
 
-            @error('uploadberkaslainnya')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-
-            <div id="preview-container" class="mt-3" style="display: none;">
-                <p class="fw-semibold mb-2">Preview:</p>
-                <iframe id="preview-frame" src="" width="100%" height="300px" frameborder="0" style="display: none;"></iframe>
-                <img id="preview-image" src="" alt="Preview Gambar" class="img-fluid" style="max-height: 300px; display: none;">
+                @if($ext === 'pdf')
+                    <iframe src="{{ $fileUrl }}" width="100%" height="300px" frameborder="0"></iframe>
+                @elseif(in_array($ext, ['jpg','jpeg','png','gif','bmp','webp']))
+                    <img src="{{ $fileUrl }}" alt="Preview Gambar Sebelumnya" class="img-fluid" style="max-height: 300px;">
+                @else
+                    <a href="{{ $fileUrl }}" target="_blank" class="btn btn-primary">Download File Sebelumnya</a>
+                @endif
             </div>
+        @endif
+
+        {{-- Input file --}}
+        <input type="file" name="uploadberkaslainnya" id="uploadberkaslainnya"
+               class="form-control @error('uploadberkaslainnya') is-invalid @enderror"
+               accept=".pdf, image/*"
+               onchange="previewFile(event)">
+
+        @error('uploadberkaslainnya')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        {{-- Preview file baru yang dipilih --}}
+        <div id="preview-container" class="mt-3" style="display: none;">
+            <p class="fw-semibold mb-2">Preview:</p>
+            <iframe id="preview-frame" src="" width="100%" height="300px" frameborder="0" style="display: none;"></iframe>
+            <img id="preview-image" src="" alt="Preview Gambar" class="img-fluid" style="max-height: 300px; display: none;">
         </div>
     </div>
+</div>
 
     <div class="text-end mt-4">
         <button type="submit" class="button-baru">
