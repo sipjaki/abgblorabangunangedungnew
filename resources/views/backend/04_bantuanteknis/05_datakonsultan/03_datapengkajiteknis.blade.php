@@ -270,13 +270,41 @@ th {
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-<td>{{ $item->namabadanusaha ?? '-' }}</td>
-<td style="text-align: left;">{{ $item->alamat ?? '-' }}</td>
+<td style="text-align: left;">{{ $item->namabadanusaha ?? '-' }}</td>
+<td style="text-align: left;">
+    @if($item->alamat)
+        @foreach(collect(explode(' ', $item->alamat))->chunk(5) as $chunk)
+            {{ $chunk->implode(' ') }}<br>
+        @endforeach
+    @else
+        -
+    @endif
+</td>
+
 <td>{{ $item->telepon ?? '-' }}</td>
 <td>{{ $item->email ?? '-' }}</td>
 <td>{{ $item->direktur ?? '-' }}</td>
-<td>{{ $item->subklasifikasi ?? '-' }}</td>
-<td>{{ $item->pengalaman ?? '-' }}</td>
+{{-- Subklasifikasi --}}
+<td style="text-align: left;">
+    @if($item->subklasifikasi)
+        @foreach(collect(explode(' ', $item->subklasifikasi))->chunk(5) as $chunk)
+            {{ $chunk->implode(' ') }}<br>
+        @endforeach
+    @else
+        -
+    @endif
+</td>
+
+{{-- Pengalaman --}}
+<td style="text-align: left;">
+    @if($item->pengalaman)
+        @foreach(collect(explode(' ', $item->pengalaman))->chunk(5) as $chunk)
+            {{ $chunk->implode(' ') }}<br>
+        @endforeach
+    @else
+        -
+    @endif
+</td>
 
             @can('superadmin')
 
