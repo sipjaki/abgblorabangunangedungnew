@@ -367,8 +367,6 @@ th {
 
 @endcanany
 
-
-@canany(['superadmin', 'admin'])
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="rupiahInput">
@@ -377,32 +375,32 @@ th {
 
         {{-- Input tampilan dengan format ribuan --}}
         <input
-        type="text"
-        class="form-control @error('rupiah') is-invalid @enderror"
-        id="rupiahInput"
-        autocomplete="off"
-        value="{{ old('rupiah_formatted', $data->rupiah ? number_format($data->rupiah, 0, ',', '.') : '') }}"
-        placeholder="Masukkan angka"
+            type="text"
+            class="form-control @error('rupiah') is-invalid @enderror"
+            id="rupiahInput"
+            autocomplete="off"
+            value="{{ old('rupiah_formatted', $data->rupiah ? number_format($data->rupiah, 0, ',', '.') : '') }}"
+            placeholder="Masukkan angka"
         >
 
         {{-- Input hidden yang sebenarnya dikirim --}}
         <input type="hidden" name="rupiah" id="rupiahRaw" value="{{ old('rupiah', $data->rupiah ?? '') }}">
 
         @error('rupiah')
-        <div class="invalid-feedback" style="display: block;">
+            <div class="invalid-feedback" style="display: block;">
                 {{ $message }}
             </div>
-            @enderror
-        </div>
+        @enderror
     </div>
+</div>
 
-    <script>
-        // Fungsi format angka ribuan dengan titik
-        function formatRupiah(angka) {
-            if (!angka) return '';
-            return angka.toString().replace(/\D/g, '')
+<script>
+    // Fungsi format angka ribuan dengan titik
+    function formatRupiah(angka) {
+        if (!angka) return '';
+        return angka.toString().replace(/\D/g, '')
             .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        }
+    }
 
     // Fungsi hilangkan titik dari string agar jadi angka raw
     function getRawNumber(formatted) {
@@ -423,55 +421,49 @@ th {
     });
 </script>
 
+<div class="row">
+  {{-- Upload Bukti Pembayaran --}}
+<div class="col-md-6">
+  <div class="mb-3">
+    <label class="form-label" for="buktipembayaran">
+      <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Bukti Pembayaran
+    </label>
+    <input type="file" id="buktipembayaran" name="buktipembayaran" accept="application/pdf"
+      class="form-control @error('buktipembayaran') is-invalid @enderror"
+      onchange="previewPDF(event, 'previewContainerBuktiPembayaran', 'iframeBuktiPembayaran', 'msgBuktiPembayaran')" />
+    @error('buktipembayaran')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+    <div class="mt-3" id="previewContainerBuktiPembayaran" style="display: none;">
+      <label class="fw-bold">Bukti Pembayaran</label>
+      <iframe id="iframeBuktiPembayaran" src=""
+        style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+    </div>
+    <div id="msgBuktiPembayaran" class="mt-3" style="color: grey; font-style: italic;">
+      Belum Upload Berkas, Silahkan Upload Bukti Pembayaran.
+    </div>
+  </div>
+</div>
+
 {{-- Upload Berkas SKRD --}}
 <div class="col-md-6">
   <div class="mb-3">
-      <label class="form-label" for="berkasskrd">
-          <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas SKRD
-        </label>
-        <input type="file" id="berkasskrd" name="berkasskrd" accept="application/pdf"
-        class="form-control @error('berkasskrd') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerBerkasSKRD', 'iframeBerkasSKRD', 'msgBerkasSKRD')" />
-        @error('berkasskrd')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <label class="form-label" for="berkasskrd">
+      <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas SKRD
+    </label>
+    <input type="file" id="berkasskrd" name="berkasskrd" accept="application/pdf"
+      class="form-control @error('berkasskrd') is-invalid @enderror"
+      onchange="previewPDF(event, 'previewContainerBerkasSKRD', 'iframeBerkasSKRD', 'msgBerkasSKRD')" />
+    @error('berkasskrd')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-        <div class="mt-3" id="previewContainerBerkasSKRD" style="display: none;">
-            <label class="fw-bold">Berkas SKRD</label>
-            <iframe id="iframeBerkasSKRD" src=""
-            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-        </div>
-        <div id="msgBerkasSKRD" class="mt-3" style="color: grey; font-style: italic;">
-            Belum Upload Berkas, Silahkan Upload Berkas SKRD.
-        </div>
+    <div class="mt-3" id="previewContainerBerkasSKRD" style="display: none;">
+      <label class="fw-bold">Berkas SKRD</label>
+      <iframe id="iframeBerkasSKRD" src=""
+        style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
     </div>
-</div>
-
-@endcanany
-
-@can('akunskrd')
-
-<div class="row">
-    {{-- Upload Bukti Pembayaran --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="buktipembayaran">
-                <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Bukti Pembayaran
-            </label>
-            <input type="file" id="buktipembayaran" name="buktipembayaran" accept="application/pdf"
-            class="form-control @error('buktipembayaran') is-invalid @enderror"
-            onchange="previewPDF(event, 'previewContainerBuktiPembayaran', 'iframeBuktiPembayaran', 'msgBuktiPembayaran')" />
-            @error('buktipembayaran')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-            <div class="mt-3" id="previewContainerBuktiPembayaran" style="display: none;">
-      <label class="fw-bold">Bukti Pembayaran</label>
-      <iframe id="iframeBuktiPembayaran" src=""
-      style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+    <div id="msgBerkasSKRD" class="mt-3" style="color: grey; font-style: italic;">
+      Belum Upload Berkas, Silahkan Upload Berkas SKRD.
     </div>
-    <div id="msgBuktiPembayaran" class="mt-3" style="color: grey; font-style: italic;">
-        Belum Upload Berkas, Silahkan Upload Bukti Pembayaran.
-    </div>
-</div>
-
-@endcan
+  </div>
 </div>
 
 </div>
