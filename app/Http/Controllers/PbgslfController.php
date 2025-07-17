@@ -3686,5 +3686,24 @@ public function betracking(Request $request)
     ]);
 }
 
+public function bepbgbeuploadberkasnew($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = pbgslfbangunan::find($id);
+    // $tempatkonsultasi = tempatkonsultasi::all();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.12_beritaacara.04_berkasuploadpdf', [
+        'title' => 'Upload Berkas Permohonan',
+        'data' => $databantuanteknis,
+        // 'tempatkonsultasi' => $tempatkonsultasi,
+        'user' => Auth::user()
+    ]);
+}
+
 
 }

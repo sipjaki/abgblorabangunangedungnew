@@ -95,7 +95,7 @@ th {
 
      {{-- ======================================================= --}}
 
-     <div class="container-fluid" style="margin-bottom: 150px;">
+     <div class="container-fluid">
          <!--begin::Row-->
          <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
@@ -290,121 +290,285 @@ th {
 
 </div>
 
-<div class="row g-4 mt-4">
-    <div class="col-12">
-        <div class="card shadow-sm border-0">
-            <div class="card-header bg-primary text-white d-flex align-items-center">
-                <i class="bi bi-calendar-event me-2 fs-5"></i>
-                <h5 class="mb-0" style="font-size: 16px;">Daftar Berita Acara Konsultasi</h5>
-            </div>
-        <div class="card-body">
 
-    @if ($data && $data->uploadberkaslainnya)
-    <div class="table-responsive">
-        <table class="table table-striped table-hover align-middle">
-            <thead class="table-light text-center">
-                <tr>
-                    <th>Berkas</th>
-                    <th style="width: 100px;">Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="text-center">
-                        <div style="margin-top: 10px;">
-                            @if(file_exists(public_path('storage/' . $data->uploadberkaslainnya)))
-                                <!-- File ada di storage -->
-                                <iframe src="{{ asset('storage/' . $data->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
-                            @else
-                                <!-- File ada di path langsung -->
-                                <iframe src="{{ asset($data->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
-                            @endif
-                        </div>
-                    </td>
+    <style>
+            .custom-radio {
+                position: relative;
+                padding-left: 35px;
+                padding-right: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #fff; /* netral */
+                border: 2px solid #cbd5e0; /* netral */
+                border-radius: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                user-select: none;
+                transition: border-color 0.3s, background-color 0.3s;
+                display: inline-block;
+                margin-right: 10px;
+            }
 
-                    <td class="text-center">
-                        <a href="javascript:void(0)" class="btn btn-sm btn-outline-danger"
-                           data-bs-toggle="modal"
-                           data-bs-target="#deleteModal"
-                           data-id="{{ $data->id }}"
-                           onclick="setDeleteUrl(this)"
-                           title="Hapus Data">
-                            <i class="bi bi-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            .custom-radio input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+        cursor: pointer;
+    }
+
+    .custom-box {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 18px;
+        width: 18px;
+        background-color: #fff; /* netral */
+        border: 2px solid #cbd5e0; /* netral */
+        border-radius: 4px;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* efek checklist muncul saat ter-check */
+    .custom-radio input[type="radio"]:checked ~ .custom-box::after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 1px;
+        width: 5px;
+        height: 10px;
+        border: solid;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        animation: checkmarkFade 0.3s ease forwards;
+    }
+
+    /* Warna khusus untuk value 'sesuai' */
+    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box {
+        border-color: #3b82f6;
+        background-color: #bfdbfe;
+    }
+
+    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box::after {
+        border-color: #1d4ed8;
+    }
+
+    /* Warna khusus untuk value 'tidak_sesuai' */
+    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box {
+        border-color: #ef4444;
+        background-color: #fecaca;
+    }
+
+    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box::after {
+        border-color: #b91c1c;
+    }
+
+    /* Animasi checklist */
+    @keyframes checkmarkFade {
+        0% {
+            opacity: 0;
+            transform: scale(0.5) rotate(45deg);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) rotate(45deg);
+        }
+    }
+</style>
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Terbitkan Surat Undangan
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+</div>
+<form id="formPemilik" action="{{ route('bepbgsuratundangannew') }}" method="POST">
+    @csrf
+<input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
+<input type="hidden" name="datapemilik_id" value="{{ $data->id }}">
+<input type="hidden" name="databangunanpbg_id" value="{{ $data->id }}">
+<input type="hidden" name="tpatpt_id" value="{{ $data->id }}">
+{{-- <input type="hidden" name="tempatkonsultasi_id" value="{{ $data->id }}"> --}}
+
+<div class="row g-4 mt-2">
+    {{-- Konsultasi Ke --}}
+    <div class="col-md-4">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-123 text-primary me-1"></i> Konsultasi Ke
+        </label>
+        <select name="konsultasike" class="form-select @error('konsultasike') is-invalid @enderror">
+            <option value="" disabled {{ old('konsultasike') ? '' : 'selected' }}>-- Pilih Konsultasi Ke --</option>
+            @for ($i = 1; $i <= 10; $i++)
+                <option value="{{ $i }}" {{ old('konsultasike') == $i ? 'selected' : '' }}>{{ $i }}</option>
+            @endfor
+        </select>
+        @error('konsultasike')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
-@else
-    <div class="alert alert-warning text-center fw-semibold">
-        <i class="bi bi-folder-x me-2 text-danger"></i>
-        Data tidak ditemukan!
+
+    {{-- Tanggal Undangan --}}
+    <div class="col-md-4">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-calendar text-primary me-1"></i> Tanggal Undangan
+        </label>
+        <input type="date" name="tanggalundangan"
+               class="form-control @error('tanggalundangan') is-invalid @enderror"
+               value="{{ old('tanggalundangan') }}">
+        @error('tanggalundangan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
-  <div class="text-center mt-3">
-    <a href="{{ route('bepbgbeuploadberkasnew', $data->id) }}" class="button-baru">
-        <i class="bi bi-upload me-2"></i> Upload Berkas
-    </a>
+
+    {{-- Tanggal Kehadiran --}}
+    <div class="col-md-4">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-calendar-check text-primary me-1"></i> Tanggal Kehadiran
+        </label>
+        <input type="date" name="tanggalkehadiran"
+               class="form-control @error('tanggalkehadiran') is-invalid @enderror"
+               value="{{ old('tanggalkehadiran') }}">
+        @error('tanggalkehadiran')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 </div>
 
-@endif
-
+<div class="row g-4 mt-2">
+    {{-- Tempat Konsultasi --}}
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-geo-alt-fill text-primary me-1"></i> Tempat Konsultasi
+        </label>
+        <select name="tempatkonsultasi_id" class="form-select @error('tempatkonsultasi_id') is-invalid @enderror">
+            <option value="" disabled {{ old('tempatkonsultasi_id') ? '' : 'selected' }}>-- Pilih Tempat Konsultasi --</option>
+            @foreach($tempatkonsultasi as $item)
+                <option value="{{ $item->id }}" {{ old('tempatkonsultasi_id') == $item->id ? 'selected' : '' }}>
+                    {{ $item->tempat ?? 'Tempat Tidak Diketahui' }}
+                </option>
+            @endforeach
+        </select>
+        @error('tempatkonsultasi_id')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 </div>
-        {{-- Tombol Tambah Data --}}
-                {{-- <div class="text-center mt-4">
-                    <a href="{{ route('bepbgsuratundangancreate', $data->id) }}" class="button-baru">
-                        <i class="bi bi-plus-circle me-1"></i> Buat Undangan Konsultasi Baru!
-                    </a>
-                </div> --}}
-            </div>
+
+{{-- Pilihan Jam Undangan --}}
+<div class="row g-4 mt-2">
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-dark d-block">
+            <i class="bi bi-clock text-primary me-1"></i> Jam Undangan
+        </label>
+        <div class="d-flex flex-column gap-2">
+            @php
+                $jamOptions = [
+                    'Pukul 09.00 WIB s/d Selesai',
+                    'Pukul 13.00 WIB s/d Selesai',
+                    'lainnya',
+                ];
+            @endphp
+            @foreach ($jamOptions as $jam)
+                <label class="custom-radio">
+                    <input
+                        type="radio"
+                        name="jamundangan"
+                        value="{{ $jam }}"
+                        onclick="document.getElementById('jam-lainnya-field').style.display = (this.value === 'lainnya') ? 'block' : 'none';"
+                        {{ old('jamundangan') === $jam ? 'checked' : '' }}
+                    >
+                    <span class="custom-box"></span>
+                    {{ $jam === 'lainnya' ? 'Jam Lainnya' : $jam }}
+                </label>
+            @endforeach
+        </div>
+        @error('jamundangan')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+{{-- Field Catatan (Jam Lainnya) --}}
+<div class="row g-4 mt-2" id="jam-lainnya-field" style="{{ old('jamundangan') === 'lainnya' ? 'display:block;' : 'display:none;' }}">
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-pencil-square text-primary me-1"></i> Jam Undangan (Lainnya)
+        </label>
+        <textarea name="catatan" rows="2"
+                  class="form-control @error('catatan') is-invalid @enderror"
+                  placeholder="Tuliskan jam undangan lainnya...">{{ old('catatan') }}</textarea>
+        @error('catatan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="text-end mt-4">
+    <button type="button" class="button-baru" onclick="openModal()">
+        <i class="bi bi-save me-1"></i> Simpan Surat Undangan
+    </button>
+</div>
+
+</form>
+
+{{-- Modal Konfirmasi --}}
+<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">Apakah Anda ingin membuat surat undangan?</p>
+        <div style="display: flex; justify-content: center; gap: 12px;">
+            <button onclick="submitForm()" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                <i class="bi bi-check-circle me-1"></i> Ya
+            </button>
+            <button onclick="closeModal()" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                <i class="bi bi-x-circle me-1"></i> Batal
+            </button>
         </div>
     </div>
 </div>
 
-
-<!-- Pagination links -->
-{{-- <div class="d-flex justify-content-center mt-4">
-    {{ $subdatapemilik->links() }}
-</div> --}}
-
-
-</div>
-    <script>
-function previewPDF(event, containerId, iframeId, messageId) {
-    const file = event.target.files[0];
-    const container = document.getElementById(containerId);
-    const iframe = document.getElementById(iframeId);
-    const message = document.getElementById(messageId);
-
-    if (file && file.type === "application/pdf") {
-        const fileURL = URL.createObjectURL(file);
-        iframe.src = fileURL;
-        container.style.display = 'block';
-        message.style.display = 'none';
-    } else {
-        iframe.src = '';
-        container.style.display = 'none';
-        message.style.display = 'block';
-        message.textContent = 'File harus berupa format PDF.';
+<script>
+    function openModal() {
+        document.getElementById('confirmModal').style.display = 'flex';
     }
-}
+
+    function closeModal() {
+        document.getElementById('confirmModal').style.display = 'none';
+    }
+
+    function submitForm() {
+        // Ganti dengan ID form kamu
+        const form = document.getElementById('formPemilik');
+        if (form) {
+            form.submit();
+        }
+    }
 </script>
 
-{{-- <div class="card shadow-sm border-0 mt-5">
-    <div class="card-header bg-primary text-white">
-        <h5 class="mb-0">Informasi Permohonan Pengajuan</h5>
-    </div>
-</div> --}}
 
-                                    </div>
-                                </div>
-                                <!-- End row -->
-                            </div>
-                            <!-- end::Body -->
+<script>
+    function toggleCatatan(radio) {
+        const catatanField = document.getElementById('catatan-field');
+        catatanField.style.display = (radio.value === 'tidak lengkap') ? 'block' : 'none';
+    }
 
+    function openModal() {
+        document.getElementById("confirmModal").style.display = "flex";
+    }
 
-                        </form>
+    function closeModal() {
+        document.getElementById("confirmModal").style.display = "none";
+    }
 
+    function submitForm() {
+        document.getElementById('formPemilik').submit();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name=\'pilihancatatan\']:checked');
+        if (selected) toggleCatatan(selected);
+    });
+</script>
                     </div>
                  </div>
 
@@ -413,44 +577,6 @@ function previewPDF(event, containerId, iframeId, messageId) {
                  <br><br>
 
                  <!-- Modal Konfirmasi Hapus -->
-                <!-- Modal Konfirmasi Hapus -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
-        <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Apakah Anda yakin ingin menghapus data dengan ID: <strong><span id="itemId"></span></strong>?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <form id="deleteForm" method="POST" action="">
-          @csrf
-          @method('DELETE')
-          <button type="submit" class="btn btn-danger">Hapus</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-function setDeleteUrl(button) {
-    const id = button.getAttribute('data-id');
-    document.getElementById('itemId').innerText = id;
-    // Ganti URL ini sesuai route delete kamu
-    document.getElementById('deleteForm').action = `/bepbgsuratundangandelete/${id}`;
-}
-</script>
-                 <style>
-                     .table-responsive {
-                         max-width: 100%;
-                         overflow-x: auto;
-                     }
-                 </style>
-
              </div>
              <!-- /.card -->
          </div>
@@ -481,3 +607,5 @@ function setDeleteUrl(button) {
         return XLSX.writeFile(wb, filename + '.xlsx');
     }
     </script>
+
+
