@@ -1207,7 +1207,7 @@ public function bepbgdokumeteknisstrkdelete($id)
     $entry->delete();
 
     return redirect()->route('bepbgdokumeteknisstrk', ['id' => $pbgslfbangunan_id])
-                     ->with('delete', 'Data Berhasil Di Hapus !');
+    ->with('delete', 'Data Berhasil Di Hapus !');
 }
 
 
@@ -1260,51 +1260,51 @@ public function bepbgdokumeteknismepcreatenew(Request $request)
         'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
 
-        'berkas1' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas2' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas3' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas4' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas5' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas6' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas7' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas8' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas9' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas10' => 'required|in:Lengkap,Tidak Lengkap',
+        'berkas1' => 'nullable|string',
+        'berkas2' => 'nullable|string',
+        'berkas3' => 'nullable|string',
+        'berkas4' => 'nullable|string',
+        'berkas5' => 'nullable|string',
+        'berkas6' => 'nullable|string',
+        'berkas7' => 'nullable|string',
+        'berkas8' => 'nullable|string',
+        'berkas9' => 'nullable|string',
+        'berkas10' => 'nullable|string',
 
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
     ], [
         'pbgslfbangunan_id.required' => 'ID Bangunan harus dipilih.',
 
-        'berkas1.required' => 'Spesifikasi Teknis MEP wajib dipilih.',
-        'berkas1.in' => 'Spesifikasi Teknis MEP harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas1.required' => 'Spesifikasi Teknis MEP wajib dipilih.',
+        // 'berkas1.in' => 'Spesifikasi Teknis MEP harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas2.required' => 'Perhitungan Teknis MEP wajib dipilih.',
-        'berkas2.in' => 'Perhitungan Teknis MEP harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas2.required' => 'Perhitungan Teknis MEP wajib dipilih.',
+        // 'berkas2.in' => 'Perhitungan Teknis MEP harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas3.required' => 'Gambar Sistem Proteksi Kebakaran wajib dipilih.',
-        'berkas3.in' => 'Gambar Sistem Proteksi Kebakaran harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas3.required' => 'Gambar Sistem Proteksi Kebakaran wajib dipilih.',
+        // 'berkas3.in' => 'Gambar Sistem Proteksi Kebakaran harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas4.required' => 'Gambar Pengelolaan Persampahan wajib dipilih.',
-        'berkas4.in' => 'Gambar Pengelolaan Persampahan harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas4.required' => 'Gambar Pengelolaan Persampahan wajib dipilih.',
+        // 'berkas4.in' => 'Gambar Pengelolaan Persampahan harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas5.required' => 'Gambar Pengelolaan Drainase wajib dipilih.',
-        'berkas5.in' => 'Gambar Pengelolaan Drainase harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas5.required' => 'Gambar Pengelolaan Drainase wajib dipilih.',
+        // 'berkas5.in' => 'Gambar Pengelolaan Drainase harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas6.required' => 'Gambar Pengelolaan Air Limbah wajib dipilih.',
-        'berkas6.in' => 'Gambar Pengelolaan Air Limbah harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas6.required' => 'Gambar Pengelolaan Air Limbah wajib dipilih.',
+        // 'berkas6.in' => 'Gambar Pengelolaan Air Limbah harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas7.required' => 'Gambar Pengelolaan Air Hujan wajib dipilih.',
-        'berkas7.in' => 'Gambar Pengelolaan Air Hujan harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas7.required' => 'Gambar Pengelolaan Air Hujan wajib dipilih.',
+        // 'berkas7.in' => 'Gambar Pengelolaan Air Hujan harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas8.required' => 'Gambar Pengelolaan Air Bersih wajib dipilih.',
-        'berkas8.in' => 'Gambar Pengelolaan Air Bersih harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas8.required' => 'Gambar Pengelolaan Air Bersih wajib dipilih.',
+        // 'berkas8.in' => 'Gambar Pengelolaan Air Bersih harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas9.required' => 'Gambar Pencahayaan wajib dipilih.',
-        'berkas9.in' => 'Gambar Pencahayaan harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas9.required' => 'Gambar Pencahayaan wajib dipilih.',
+        // 'berkas9.in' => 'Gambar Pencahayaan harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas10.required' => 'Gambar Sumber & Jaringan Listrik wajib dipilih.',
-        'berkas10.in' => 'Gambar Sumber & Jaringan Listrik harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas10.required' => 'Gambar Sumber & Jaringan Listrik wajib dipilih.',
+        // 'berkas10.in' => 'Gambar Sumber & Jaringan Listrik harus diisi Lengkap atau Tidak Lengkap.',
 
         'pilihancatatan.required' => 'Pilihan Catatan harus dipilih.',
         'pilihancatatan.in' => 'Pilihan Catatan hanya boleh "lengkap" atau "tidak lengkap".',
@@ -1313,16 +1313,17 @@ public function bepbgdokumeteknismepcreatenew(Request $request)
     dokumenteknismep::create([
         'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
-        'berkas1' => $validated['berkas1'],
-        'berkas2' => $validated['berkas2'],
-        'berkas3' => $validated['berkas3'],
-        'berkas4' => $validated['berkas4'],
-        'berkas5' => $validated['berkas5'],
-        'berkas6' => $validated['berkas6'],
-        'berkas7' => $validated['berkas7'],
-        'berkas8' => $validated['berkas8'],
-        'berkas9' => $validated['berkas9'],
-        'berkas10' => $validated['berkas10'],
+        // 'berkas2' => $validated['berkas2'] ?? null,
+        'berkas1' => $validated['berkas1'] ?? null,
+        'berkas2' => $validated['berkas2'] ?? null,
+        'berkas3' => $validated['berkas3'] ?? null,
+        'berkas4' => $validated['berkas4'] ?? null,
+        'berkas5' => $validated['berkas5'] ?? null,
+        'berkas6' => $validated['berkas6'] ?? null,
+        'berkas7' => $validated['berkas7'] ?? null,
+        'berkas8' => $validated['berkas8'] ?? null,
+        'berkas9' => $validated['berkas9'] ?? null,
+        'berkas10' => $validated['berkas10'] ?? null,
         'pilihancatatan' => $validated['pilihancatatan'],
         'catatan' => $validated['catatan'] ?? null,
     ]);
