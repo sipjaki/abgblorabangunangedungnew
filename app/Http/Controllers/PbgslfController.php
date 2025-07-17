@@ -470,12 +470,12 @@ public function bepbgdatapemilikcreate($id)
         datapemilik::create([
               'id' => $request->input('id'),
             'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
-            'namapemilik' => $validated['namapemilik'],
-            'alamatpemilik' => $validated['alamatpemilik'],
-            'nomortelepon' => $validated['nomortelepon'],
-            'email' => $validated['email'],
-            'noidentitas' => $validated['noidentitas'],
-            'pilihancatatan' => $validated['pilihancatatan'],
+            'namapemilik' => $validated['namapemilik'] ?? null,
+            'alamatpemilik' => $validated['alamatpemilik'] ?? null,
+            'nomortelepon' => $validated['nomortelepon'] ?? null,
+            'email' => $validated['email'] ?? null,
+            'noidentitas' => $validated['noidentitas'] ?? null,
+            'pilihancatatan' => $validated['pilihancatatan'] ?? null,
             'catatan' => $validated['catatan'] ?? null,
         ]);
 
