@@ -210,7 +210,7 @@
            <i class="bi bi-download"></i> Download
         </a>
     @else
-        <span style="color: white" class="button-merah">Berkas Belum di Upload</span>
+        <span class="button-merah">Berkas Belum di Upload</span>
 
         @endif
 </td>
