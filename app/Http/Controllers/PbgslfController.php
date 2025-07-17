@@ -3711,7 +3711,7 @@ public function bepbgbeuploadberkasnewberkas(Request $request, $id)
         'uploadberkaslainnya' => 'required|file|mimes:pdf,jpg,jpeg,png,doc,docx|max:20480', // Maks 20MB
     ]);
 
-    $data = suratudanganpbg::findOrFail($id);
+    $data = pbgslfbangunan::findOrFail($id);
 
     if ($request->hasFile('uploadberkaslainnya')) {
         $file = $request->file('uploadberkaslainnya');
