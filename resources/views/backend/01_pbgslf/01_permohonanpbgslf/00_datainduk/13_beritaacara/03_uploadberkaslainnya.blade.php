@@ -298,34 +298,31 @@ th {
                 <h5 class="mb-0" style="font-size: 16px;">Daftar Berita Acara Konsultasi</h5>
             </div>
             <div class="card-body">
-                @if ($subdatapemilik->count() > 0)
+                @if ($data->count() > 0)
                     <div class="table-responsive">
                         <table class="table table-striped table-hover align-middle">
                             <thead class="table-light text-center">
                                 <tr>
-                                    <th>No</th>
-                                    <th>Konsultasi Ke</th>
-                                    <th>Tanggal Undangan</th>
-                                    <th>Tanggal Kehadiran</th>
-                                    <th>Jam Undangan</th>
-                                    <th>Catatan</th>
-                                    <th>Berita Acara</th>
+                                    {{-- <th>No</th> --}}
+                                    <th>Berkas</th>
                                     <th style="width: 100px;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($subdatapemilik as $index => $item)
+                                @foreach ($data as $index => $item)
                                     <tr>
                                         <td class="text-center">{{ $index + 1 }}</td>
-                                        <td class="text-center">{{ $item->konsultasike ?? '-' }}</td>
                                         <td class="text-center">
-                                            {{ \Carbon\Carbon::parse($item->tanggalundangan)->translatedFormat('d F Y') ?? '-' }}
-                                        </td>
-                                        <td class="text-center">
-                                            {{ \Carbon\Carbon::parse($item->tanggalkehadiran)->translatedFormat('d F Y') ?? '-' }}
-                                        </td>
-                                        <td class="text-center">{{ $item->jamundangan ?? '-' }}</td>
-                                        <td style="white-space: pre-wrap; text-align: justify;">{{ $item->catatan ?? '-' }}</td>
+    <div style="margin-top: 10px;">
+        @if($item->uploadberkaslainnya && file_exists(public_path('storage/' . $item->uploadberkaslainnya)))
+            <iframe src="{{ asset('storage/' . $item->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
+        @elseif($item->uploadberkaslainnya)
+            <iframe src="{{ asset($item->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
+        @else
+            <p>Data belum diupdate</p>
+        @endif
+    </div>
+</td>
 
                                                                            <td style="white-space: nowrap; text-align: center;">
     <a href="{{ route('bepbgberitaacaraslf.detail', ['id' => $item->id]) }}"
