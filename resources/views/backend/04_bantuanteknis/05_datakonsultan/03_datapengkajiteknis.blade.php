@@ -254,16 +254,13 @@ th {
      <th style="background-color: #ADD8E6;">No</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Nama Lengkap</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Nama Badan Usaha</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Alamat</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> No Telepon</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> Email</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> Nomor Induk Berusaha</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Penanggung Jawab Usaha (PJU)</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-file-signature"></i> No Akta</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Tanggal</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-user-edit"></i> Nama Notaris</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-check-circle"></i> No Pengesahan</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Direktur</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Subklasifikasi</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-briefcase"></i> Pengalaman</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
 
     </tr>
@@ -273,18 +270,14 @@ th {
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-{{-- <td>{{ $item->bujkkonsultansub->namasub ?? '-' }}</td> --}}
-{{-- <td>{{ $item->asosiasimasjaki->namaasosiasi ?? '-' }}</td> --}}
-<td>{{ $item->namalengkap ?? '-' }}</td>
+<td>{{ $item->namabadanusaha ?? '-' }}</td>
 <td style="text-align: left;">{{ $item->alamat ?? '-' }}</td>
-<td>{{ $item->no_telepon ?? '-' }}</td>
+<td>{{ $item->telepon ?? '-' }}</td>
 <td>{{ $item->email ?? '-' }}</td>
-<td>{{ $item->nomorindukberusaha ?? '-' }}</td>
-<td>{{ $item->pju ?? '-' }}</td>
-<td>{{ $item->no_akte ?? '-' }}</td>
-<td>{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y') ?? '-' }}</td>
-<td>{{ $item->nama_notaris ?? '-' }}</td>
-<td>{{ $item->no_pengesahan ?? '-' }}</td>
+<td>{{ $item->direktur ?? '-' }}</td>
+<td>{{ $item->subklasifikasi ?? '-' }}</td>
+<td>{{ $item->pengalaman ?? '-' }}</td>
+
             @can('superadmin')
 
             <td style="text-align: center; vertical-align: middle;">
