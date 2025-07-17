@@ -426,9 +426,9 @@ th {
 </script>
 
 <div class="row">
-  {{-- Upload Bukti Pembayaran --}}
 
-{{-- Upload Berkas SKRD --}}
+    @canany(['superadmin', 'admin'])
+
 <div class="col-md-6">
   <div class="mb-3">
     <label class="form-label" for="berkasskrd">
@@ -449,6 +449,10 @@ th {
     </div>
   </div>
 </div>
+
+  @endcanany
+
+  @canany(['akunskrd'])
 
 <div class="col-md-6">
   <div class="mb-3">
@@ -471,6 +475,7 @@ th {
   </div>
 </div>
 
+  @endcanany
 
 </div>
 
