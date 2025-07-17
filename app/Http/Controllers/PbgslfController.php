@@ -1124,15 +1124,15 @@ public function bepbgdokumeteknisstrkcreatenew(Request $request)
         'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
 
-        'berkas1' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas2' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas3' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas4' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas5' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas6' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas7' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas8' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas9' => 'required|in:Lengkap,Tidak Lengkap',
+        'berkas1' => 'nullable|string',
+        'berkas2' => 'nullable|string',
+        'berkas3' => 'nullable|string',
+        'berkas4' => 'nullable|string',
+        'berkas5' => 'nullable|string',
+        'berkas6' => 'nullable|string',
+        'berkas7' => 'nullable|string',
+        'berkas8' => 'nullable|string',
+        'berkas9' => 'nullable|string',
         // 'berkas10' => 'nullable|string',
 
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
@@ -1140,32 +1140,32 @@ public function bepbgdokumeteknisstrkcreatenew(Request $request)
     ], [
         'pbgslfbangunan_id.required' => 'ID Bangunan harus dipilih.',
 
-        'berkas1.required' => 'Spesifikasi Teknis Struktur Bangunan wajib dipilih.',
-        'berkas1.in' => 'Spesifikasi Teknis Struktur Bangunan harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas1.required' => 'Spesifikasi Teknis Struktur Bangunan wajib dipilih.',
+        // 'berkas1.in' => 'Spesifikasi Teknis Struktur Bangunan harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas2.required' => 'Perhitungan Teknis Struktur wajib dipilih.',
-        'berkas2.in' => 'Perhitungan Teknis Struktur harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas2.required' => 'Perhitungan Teknis Struktur wajib dipilih.',
+        // 'berkas2.in' => 'Perhitungan Teknis Struktur harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas3.required' => 'Gambar Tangga wajib dipilih.',
-        'berkas3.in' => 'Gambar Tangga harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas3.required' => 'Gambar Tangga wajib dipilih.',
+        // 'berkas3.in' => 'Gambar Tangga harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas4.required' => 'Gambar Pelat Lantai wajib dipilih.',
-        'berkas4.in' => 'Gambar Pelat Lantai harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas4.required' => 'Gambar Pelat Lantai wajib dipilih.',
+        // 'berkas4.in' => 'Gambar Pelat Lantai harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas5.required' => 'Gambar Penutup wajib dipilih.',
-        'berkas5.in' => 'Gambar Penutup harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas5.required' => 'Gambar Penutup wajib dipilih.',
+        // 'berkas5.in' => 'Gambar Penutup harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas6.required' => 'Gambar Rangka Atap wajib dipilih.',
-        'berkas6.in' => 'Gambar Rangka Atap harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas6.required' => 'Gambar Rangka Atap wajib dipilih.',
+        // 'berkas6.in' => 'Gambar Rangka Atap harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas7.required' => 'Gambar Balok wajib dipilih.',
-        'berkas7.in' => 'Gambar Balok harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas7.required' => 'Gambar Balok wajib dipilih.',
+        // 'berkas7.in' => 'Gambar Balok harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas8.required' => 'Gambar Kolom wajib dipilih.',
-        'berkas8.in' => 'Gambar Kolom harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas8.required' => 'Gambar Kolom wajib dipilih.',
+        // 'berkas8.in' => 'Gambar Kolom harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas9.required' => 'Gambar Fondasi dan Sloof wajib dipilih.',
-        'berkas9.in' => 'Gambar Fondasi dan Sloof harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas9.required' => 'Gambar Fondasi dan Sloof wajib dipilih.',
+        // 'berkas9.in' => 'Gambar Fondasi dan Sloof harus diisi Lengkap atau Tidak Lengkap.',
 
         'pilihancatatan.required' => 'Pilihan Catatan harus dipilih.',
         'pilihancatatan.in' => 'Pilihan Catatan hanya boleh "lengkap" atau "tidak lengkap".',
