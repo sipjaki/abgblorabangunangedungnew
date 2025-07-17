@@ -964,33 +964,33 @@ public function bepbgdokumeteknisarscreatenew(Request $request)
         'berkas7' => 'nullable|in:Lengkap,Tidak Lengkap',
         'berkas8' => 'nullable|in:Lengkap,Tidak Lengkap',
         'berkas9' => 'nullable|in:Lengkap,Tidak Lengkap',
-        'berkas10' => 'required|in:Lengkap,Tidak Lengkap',
+        'berkas10' => 'nullable|in:Lengkap,Tidak Lengkap',
 
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
     ], [
         'pbgslfbangunan_id.required' => 'ID Bangunan harus dipilih.',
 
-        'berkas1.required' => 'Rekomendasi Peil Banjir wajib dipilih.',
-        'berkas1.in' => 'Rekomendasi Peil Banjir harus Lengkap atau Tidak Lengkap.',
-        'berkas2.required' => 'Spesifikasi Teknis Arsitektur Bangunan wajib dipilih.',
-        'berkas2.in' => 'Spesifikasi Teknis Arsitektur Bangunan harus Lengkap atau Tidak Lengkap.',
-        'berkas3.required' => 'Gambar Rencana Detail Bangunan wajib dipilih.',
-        'berkas3.in' => 'Gambar Rencana Detail Bangunan harus Lengkap atau Tidak Lengkap.',
-        'berkas4.required' => 'Gambar Rencana Tata Ruang Luar wajib dipilih.',
-        'berkas4.in' => 'Gambar Rencana Tata Ruang Luar harus Lengkap atau Tidak Lengkap.',
-        'berkas5.required' => 'Gambar Rencana Tata Ruang Dalam wajib dipilih.',
-        'berkas5.in' => 'Gambar Rencana Tata Ruang Dalam harus Lengkap atau Tidak Lengkap.',
-        'berkas6.required' => 'Gambar Rencana Tampak Bangunan wajib dipilih.',
-        'berkas6.in' => 'Gambar Rencana Tampak Bangunan harus Lengkap atau Tidak Lengkap.',
-        'berkas7.required' => 'Gambar Rencana Potongan Bangunan wajib dipilih.',
-        'berkas7.in' => 'Gambar Rencana Potongan Bangunan harus Lengkap atau Tidak Lengkap.',
-        'berkas8.required' => 'Gambar Rencana Denah Bangunan wajib dipilih.',
-        'berkas8.in' => 'Gambar Rencana Denah Bangunan harus Lengkap atau Tidak Lengkap.',
-        'berkas9.required' => 'Gambar Rencana Tapak Bangunan wajib dipilih.',
-        'berkas9.in' => 'Gambar Rencana Tapak Bangunan harus Lengkap atau Tidak Lengkap.',
-        'berkas10.required' => 'Gambar Situasi wajib dipilih.',
-        'berkas10.in' => 'Gambar Situasi harus Lengkap atau Tidak Lengkap.',
+        // 'berkas1.required' => 'Rekomendasi Peil Banjir wajib dipilih.',
+        // 'berkas1.in' => 'Rekomendasi Peil Banjir harus Lengkap atau Tidak Lengkap.',
+        // 'berkas2.required' => 'Spesifikasi Teknis Arsitektur Bangunan wajib dipilih.',
+        // 'berkas2.in' => 'Spesifikasi Teknis Arsitektur Bangunan harus Lengkap atau Tidak Lengkap.',
+        // 'berkas3.required' => 'Gambar Rencana Detail Bangunan wajib dipilih.',
+        // 'berkas3.in' => 'Gambar Rencana Detail Bangunan harus Lengkap atau Tidak Lengkap.',
+        // 'berkas4.required' => 'Gambar Rencana Tata Ruang Luar wajib dipilih.',
+        // 'berkas4.in' => 'Gambar Rencana Tata Ruang Luar harus Lengkap atau Tidak Lengkap.',
+        // 'berkas5.required' => 'Gambar Rencana Tata Ruang Dalam wajib dipilih.',
+        // 'berkas5.in' => 'Gambar Rencana Tata Ruang Dalam harus Lengkap atau Tidak Lengkap.',
+        // 'berkas6.required' => 'Gambar Rencana Tampak Bangunan wajib dipilih.',
+        // 'berkas6.in' => 'Gambar Rencana Tampak Bangunan harus Lengkap atau Tidak Lengkap.',
+        // 'berkas7.required' => 'Gambar Rencana Potongan Bangunan wajib dipilih.',
+        // 'berkas7.in' => 'Gambar Rencana Potongan Bangunan harus Lengkap atau Tidak Lengkap.',
+        // 'berkas8.required' => 'Gambar Rencana Denah Bangunan wajib dipilih.',
+        // 'berkas8.in' => 'Gambar Rencana Denah Bangunan harus Lengkap atau Tidak Lengkap.',
+        // 'berkas9.required' => 'Gambar Rencana Tapak Bangunan wajib dipilih.',
+        // 'berkas9.in' => 'Gambar Rencana Tapak Bangunan harus Lengkap atau Tidak Lengkap.',
+        // 'berkas10.required' => 'Gambar Situasi wajib dipilih.',
+        // 'berkas10.in' => 'Gambar Situasi harus Lengkap atau Tidak Lengkap.',
 
         'pilihancatatan.required' => 'Pilihan Catatan wajib dipilih.',
         'pilihancatatan.in' => 'Pilihan Catatan harus lengkap atau tidak lengkap.',
@@ -3623,5 +3623,5 @@ public function betracking(Request $request)
         return view('backend.02_trakingberkas.01_pencarian', compact('data'));
     }
 
-    
+
 }
