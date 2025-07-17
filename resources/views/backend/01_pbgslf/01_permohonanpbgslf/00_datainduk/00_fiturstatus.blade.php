@@ -59,7 +59,7 @@
             id: 7,
             name: 'Finalisasi BA',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas6_time) ? $data->validasiberkas6_time : "" ?>',
+            time: '<?php echo isset($data->validasiberkas8_time) ? $data->validasiberkas8_time : "" ?>',
             message: 'Menunggu Verifikasi'
         },
 
@@ -67,7 +67,7 @@
             id: 8,
             name: 'SKRD',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas8_time) ? $data->validasiberkas8_time : "" ?>',
+            time: '<?php echo isset($data->validasiberkas6_time) ? $data->validasiberkas6_time : "" ?>',
             message: 'Menunggu Retribusi'
         }
     ];
@@ -123,20 +123,22 @@
             checkpointData[5].message = 'Tidak Terbit';
         }
 
+
+        // Step 7: Selesai (selesai)
+        if ('<?php echo isset($data->validasiberkas8) ? $data->validasiberkas8 : "" ?>' === 'sudah') {
+            checkpointData[7].status = 'completed';
+            checkpointData[7].message = 'Permohonan Selesai';
+        } else if ('<?php echo isset($data->validasiberkas8) ? $data->validasiberkas8 : "" ?>' === 'belum') {
+            checkpointData[7].status = 'pending';
+            checkpointData[7].message = 'Tidak Selesai';
+        }
+
+
         // Step 7: Selesai (selesai)
         if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'sudah') {
             checkpointData[6].status = 'completed';
             checkpointData[6].message = 'Finalisasi BA';
         } else if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'belum') {
-            checkpointData[6].status = 'pending';
-            checkpointData[6].message = 'Tidak Selesai';
-        }
-
-        // Step 7: Selesai (selesai)
-        if ('<?php echo isset($data->validasiberkas8) ? $data->validasiberkas8 : "" ?>' === 'sudah') {
-            checkpointData[6].status = 'completed';
-            checkpointData[6].message = 'Permohonan Selesai';
-        } else if ('<?php echo isset($data->validasiberkas8) ? $data->validasiberkas8 : "" ?>' === 'belum') {
             checkpointData[6].status = 'pending';
             checkpointData[6].message = 'Tidak Selesai';
         }
