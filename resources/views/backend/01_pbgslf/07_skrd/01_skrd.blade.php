@@ -204,13 +204,13 @@
         ></iframe>
         <br>
         <a href="{{ asset($item->berkasskrd) }}"
-           class="button-baru mt-1"
+           class="button-berkas mt-1"
            target="_blank"
            download>
            <i class="bi bi-download"></i> Download
         </a>
     @else
-        <span style="color: white" class="btn btn-danger">Berkas Belum di Upload</span>
+        <span style="color: white" class="button-merah">Berkas Belum di Upload</span>
 
         @endif
 </td>
