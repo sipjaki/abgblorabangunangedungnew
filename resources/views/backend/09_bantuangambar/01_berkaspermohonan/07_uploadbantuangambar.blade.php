@@ -206,76 +206,110 @@ th {
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
 
-          <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="dokumengambar">
-            <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Dokumen Gambar Permohonan Bantuan Teknis (PDF)
-        </label>
-        <input
-            type="file"
-            id="dokumengambar"
-            name="dokumengambar"
-            accept="application/pdf"
-            class="form-control @error('dokumengambar') is-invalid @enderror"
-            onchange="previewPDF(event, 'dokumengambarPreviewContainer', 'dokumengambarPreview', 'dokumengambarMessage')"
-        />
-        @error('dokumengambar')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+          {{-- DOKUMEN GAMBAR PERMOHONAN --}}
+<div class="col-md-6 mb-4">
+    <label class="form-label">
+        <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Dokumen Gambar Permohonan (PDF)
+    </label>
+    <input type="file" name="dokumengambar" accept="application/pdf"
+           class="form-control @error('dokumengambar') is-invalid @enderror"
+           onchange="previewPDF(event, 'dokumengambarPreviewContainer', 'dokumengambarPreview', 'dokumengambarMessage')">
+    @error('dokumengambar') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
-        {{-- Preview PDF jika sudah ada --}}
-        <div class="mt-3" id="dokumengambarPreviewContainer"
-             style="{{ isset($data->dokumengambar) && $data->dokumengambar ? '' : 'display: none;' }}">
-            <iframe
-                id="dokumengambarPreview"
-                src="{{ isset($data->dokumengambar) ? asset($data->dokumengambar) : '' }}"
-                style="width: 100%; height: 400px; border: 1px solid #ddd; border-radius: 4px;"
-            ></iframe>
-        </div>
-
-        {{-- Pesan jika belum upload --}}
-        <div
-            id="dokumengambarMessage"
-            class="mt-3"
-            style="color: #666; font-style: italic; border: 1px solid #ddd; border-radius: 4px; padding: 20px; {{ isset($data->dokumengambar) && $data->dokumengambar ? 'display: none;' : 'display: block;' }}"
-        >
-            Silahkan upload dokumen gambar permohonan bantuan teknis.
-        </div>
+    <div id="dokumengambarPreviewContainer" class="mt-2" style="{{ isset($data->dokumengambar) ? '' : 'display: none;' }}">
+        <iframe id="dokumengambarPreview" src="{{ asset($data->dokumengambar ?? '') }}" width="100%" height="400px"></iframe>
+    </div>
+    <div id="dokumengambarMessage" class="mt-2 text-muted" style="{{ isset($data->dokumengambar) ? 'display: none;' : '' }}">
+        Belum ada dokumen diunggah.
     </div>
 </div>
 
+{{-- BERITA ACARA SIDANG --}}
+<div class="col-md-6 mb-4">
+    <label class="form-label">
+        <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Berita Acara Sidang (PDF)
+    </label>
+    <input type="file" name="beritaacarasidang" accept="application/pdf"
+           class="form-control @error('beritaacarasidang') is-invalid @enderror"
+           onchange="previewPDF(event, 'beritaacarasidangPreviewContainer', 'beritaacarasidangPreview', 'beritaacarasidangMessage')">
+    @error('beritaacarasidang') <div class="invalid-feedback">{{ $message }}</div> @enderror
+
+    <div id="beritaacarasidangPreviewContainer" class="mt-2" style="{{ isset($data->beritaacarasidang) ? '' : 'display: none;' }}">
+        <iframe id="beritaacarasidangPreview" src="{{ asset($data->beritaacarasidang ?? '') }}" width="100%" height="400px"></iframe>
+    </div>
+    <div id="beritaacarasidangMessage" class="mt-2 text-muted" style="{{ isset($data->beritaacarasidang) ? 'display: none;' : '' }}">
+        Belum ada dokumen diunggah.
+    </div>
+</div>
+
+{{-- FOTO 1 --}}
+<div class="col-md-6 mb-4">
+    <label class="form-label">
+        <i class="bi bi-card-image me-1 text-primary"></i> Foto Dokumentasi 1
+    </label>
+    <input type="file" name="foto1" accept="image/*"
+           class="form-control @error('foto1') is-invalid @enderror"
+           onchange="previewImage(event, 'foto1Preview', 'foto1Message')">
+    @error('foto1') <div class="invalid-feedback">{{ $message }}</div> @enderror
+
+    <div class="mt-2" id="foto1Preview">
+        @if(isset($data->foto1))
+            <img src="{{ asset($data->foto1) }}" alt="Foto 1" class="img-fluid rounded" style="max-height: 300px;">
+        @endif
+    </div>
+    <div id="foto1Message" class="text-muted" style="{{ isset($data->foto1) ? 'display: none;' : '' }}">
+        Belum ada foto diunggah.
+    </div>
+</div>
+
+{{-- FOTO 2 --}}
+<div class="col-md-6 mb-4">
+    <label class="form-label">
+        <i class="bi bi-card-image me-1 text-primary"></i> Foto Dokumentasi 2
+    </label>
+    <input type="file" name="foto2" accept="image/*"
+           class="form-control @error('foto2') is-invalid @enderror"
+           onchange="previewImage(event, 'foto2Preview', 'foto2Message')">
+    @error('foto2') <div class="invalid-feedback">{{ $message }}</div> @enderror
+
+    <div class="mt-2" id="foto2Preview">
+        @if(isset($data->foto2))
+            <img src="{{ asset($data->foto2) }}" alt="Foto 2" class="img-fluid rounded" style="max-height: 300px;">
+        @endif
+    </div>
+    <div id="foto2Message" class="text-muted" style="{{ isset($data->foto2) ? 'display: none;' : '' }}">
+        Belum ada foto diunggah.
+    </div>
+</div>
 
 <script>
-function previewPDF(event, previewContainerId, iframeId, messageId) {
-    const input = event.target;
-    const previewContainer = document.getElementById(previewContainerId);
-    const iframe = document.getElementById(iframeId);
-    const message = document.getElementById(messageId);
-
-    if (input.files && input.files[0]) {
-        const file = input.files[0];
-
-        if (file.type !== "application/pdf") {
-            // Jika bukan PDF
-            previewContainer.style.display = 'none';
-            message.style.display = 'block';
-            message.textContent = 'File harus berupa format PDF.';
-            return;
+    function previewPDF(event, containerId, frameId, messageId) {
+        const file = event.target.files[0];
+        if (file) {
+            document.getElementById(messageId).style.display = 'none';
+            const iframe = document.getElementById(frameId);
+            const url = URL.createObjectURL(file);
+            iframe.src = url;
+            document.getElementById(containerId).style.display = 'block';
         }
-
-        const fileURL = URL.createObjectURL(file);
-        iframe.src = fileURL;
-        previewContainer.style.display = 'block';
-        message.style.display = 'none';
-    } else {
-        // Tidak ada file
-        iframe.src = '';
-        previewContainer.style.display = 'none';
-        message.style.display = 'block';
-        message.textContent = 'Silahkan Upload Berkas Bantuan Teknis';
     }
-}
+
+    function previewImage(event, imgId, messageId) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                let preview = document.getElementById(imgId);
+                preview.innerHTML = '<img src="' + e.target.result + '" class="img-fluid rounded" style="max-height: 300px;">';
+                document.getElementById(messageId).style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+    }
 </script>
+
+</div>
+
 
 
 

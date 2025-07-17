@@ -35,6 +35,10 @@ return new class extends Migration
             $table->string('peruntukanuntuk')->nullable();
 
             $table->string('dokumengambar')->nullable();
+            $table->string('beritaacarasidang')->nullable(); // uplodan baru
+            $table->string('foto1')->nullable(); // uplodan baru
+            $table->string('foto2')->nullable(); // uplodan baru
+            // $table->string('dokumengambar')->nullable();
 
             $table->string('ktp')->nullable(); // KTP
             $table->string('npwp')->nullable(); //SURAT PENGAJUAN
