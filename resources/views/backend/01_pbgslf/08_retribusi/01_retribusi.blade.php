@@ -275,13 +275,13 @@
     @endphp
     <button class="btn
         @if(is_null($status))
-            btn-warning
+            button-baru
         @elseif($status === 'sudah')
-            btn-success
+            button-hijau
         @elseif($status === 'belum')
-            btn-danger
+            button-merah
         @else
-            btn-secondary
+            button-newvalidasi
         @endif
     ">
         @if(is_null($status))
