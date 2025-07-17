@@ -271,7 +271,7 @@
 
 <td style="text-align: center;">
     @php
-        $status = $item->validasiberkas8;
+        $status = $item->validasiberkas9;
     @endphp
     <button class="btn
         @if(is_null($status))
@@ -299,7 +299,7 @@
 @canany(['superadmin', 'admin'])
 
 <td style="white-space: nowrap; padding: 6px; text-align: center; vertical-align: middle;">
-    @if ($item->validasiberkas8 === 'sudah')
+    @if ($item->validasiberkas9 === 'sudah')
     @if ($item->berkasskrd)
     <iframe
     src="{{ asset($item->berkasskrd) }}"
@@ -317,7 +317,7 @@
         <span class="btn btn-danger" style="color: white;">Berkas Belum di Upload</span>
         @endif
 
-        @elseif ($item->validasiberkas8 === 'belum')
+        @elseif ($item->validasiberkas9 === 'belum')
         <span class="btn btn-warning" style="color: black;">Berkas belum divalidasi</span>
         <button type="button" class="btn btn-sm btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#validasiModal" data-id="{{ $item->id }}">
             <i class="bi bi-pencil-square"></i> Verifikasi Ulang
@@ -345,10 +345,10 @@
           <div class="modal-body">
             <p>Pilih status validasi berkas SKRD untuk data ini:</p>
             <div class="d-flex gap-3">
-                <button type="submit" name="validasiberkas8" value="sudah" class="btn btn-success w-50">
+                <button type="submit" name="validasiberkas9" value="sudah" class="btn btn-success w-50">
                     <i class="bi bi-check-circle"></i> Sudah
                 </button>
-                <button type="submit" name="validasiberkas8" value="belum" class="btn btn-danger w-50">
+                <button type="submit" name="validasiberkas9" value="belum" class="btn btn-danger w-50">
                     <i class="bi bi-x-circle"></i> Belum
                 </button>
             </div>

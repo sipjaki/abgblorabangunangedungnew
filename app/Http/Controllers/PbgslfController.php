@@ -2847,13 +2847,13 @@ public function validasipbgslfbukti(Request $request, $id)
         $data = pbgslfbangunan::findOrFail($id);
 
         $request->validate([
-            'validasiberkas8' => 'required|in:sudah,belum',
+            'validasiberkas9' => 'required|in:sudah,belum',
         ]);
 
-        $data->validasiberkas8 = $request->validasiberkas8;
+        $data->validasiberkas9 = $request->validasiberkas9;
         $data->save();
 
-     if ($request->validasiberkas8 === 'sudah') {
+     if ($request->validasiberkas9 === 'sudah') {
         session()->flash('create', '✅ Sudah Bayar Retribusi !');
     } else {
         session()->flash('gagal', '❌ Belum Lengkap !');

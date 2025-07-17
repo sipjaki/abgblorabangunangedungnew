@@ -58,6 +58,7 @@ return new class extends Migration
             // UPLOAD BERKAS
             $table->string('berkasskrd')->nullable();
             $table->string('validasiberkas9')->nullable();
+            $table->string('validasiberkas10')->nullable();
 
 
             $table->string('uploadberkaslainnya')->nullable();
