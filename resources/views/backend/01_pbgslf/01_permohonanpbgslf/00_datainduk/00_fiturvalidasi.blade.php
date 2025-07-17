@@ -441,6 +441,21 @@
                     @endif
 
                     <!-- SKRD (6) -->
+                    @if($data->validasiberkas8 == 'sudah')
+                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
+                            <i class="bi bi-patch-check-fill me-1"></i> Finalisasi Selesai
+                        </button>
+                    @elseif($data->validasiberkas8 == 'belum')
+                        <button class="button-dikembalikan" type="button" onclick="openModal8({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                            <i class="bi bi-x-circle me-1"></i> Belum Selesai
+                        </button>
+                    @else
+                        <button class="button-baru" type="button" onclick="openModal8({{ $data->id }})" style="color: black;">
+                            <i class="bi bi-patch-check me-1"></i> Finalisasi
+                        </button>
+                    @endif
+
+                    <!-- SKRD (6) -->
                     @if($data->validasiberkas6 == 'sudah')
                         <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
                             <i class="bi bi-patch-check-fill me-1"></i> SKRD Selesai
@@ -759,6 +774,21 @@
 
     function closeModal7() {
         const modal = document.getElementById('confirmModal7');
+        modal.style.display = "none";
+        document.body.style.overflow = 'auto';
+    }
+
+    // Berkas Selesai (7)
+    function openModal8(itemId) {
+        const modal = document.getElementById('confirmModal8');
+        const form = document.getElementById('validasiForm8');
+        form.action = `/validasipbgslf8/${itemId}`;
+        modal.style.display = "flex";
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal8() {
+        const modal = document.getElementById('confirmModal8');
         modal.style.display = "none";
         document.body.style.overflow = 'auto';
     }

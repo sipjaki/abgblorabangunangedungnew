@@ -956,6 +956,7 @@ Route::put('/validasipbgslf4/{id}', [PbgslfController::class, 'validasipbgslf4']
 Route::put('/validasipbgslf5/{id}', [PbgslfController::class, 'validasipbgslf5'])->name('validasipbgslf5.update');
 Route::put('/validasipbgslf6/{id}', [PbgslfController::class, 'validasipbgslf6'])->name('validasipbgslf6.update');
 Route::put('/validasipbgslf7/{id}', [PbgslfController::class, 'validasipbgslf7'])->name('validasipbgslf7.update');
+Route::put('/validasipbgslf8/{id}', [PbgslfController::class, 'validasipbgslf8'])->name('validasipbgslf8.update');
 
 // PENGATURAN MENU TPA TPT
 Route::get('/betpatpt', [PbgslfController::class, 'betpatpt'])->middleware('auth')->name('betpatpt');

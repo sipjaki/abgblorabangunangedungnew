@@ -3625,5 +3625,28 @@ public function betracking(Request $request)
         return view('backend.02_trakingberkas.01_pencarian', compact('data'));
     }
 
+    public function validasipbgslf8(Request $request, $id)
+    {
+        $data = pbgslfbangunan::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas8' => 'required|in:sudah,belum',
+        ]);
+
+        $data->validasiberkas8 = $request->validasiberkas8;
+        $data->save();
+
+     if ($request->validasiberkas8 === 'sudah') {
+        session()->flash('create', '✅ Sudah Di Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Belum Lengkap !');
+    }
+        //    return redirect('/beserahterima');
+
+           return redirect()->back();
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
 
 }
