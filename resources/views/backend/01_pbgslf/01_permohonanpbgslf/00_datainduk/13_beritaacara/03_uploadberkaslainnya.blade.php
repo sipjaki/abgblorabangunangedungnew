@@ -341,11 +341,12 @@ th {
         <i class="bi bi-folder-x me-2 text-danger"></i>
         Data tidak ditemukan!
     </div>
-    <div class="text-center mt-3">
-        <a href="{{ route('bepbgbeuploadberkasnew', $data->id) }}" class="btn button-baru">
-            Upload Berkas
-        </a>
-    </div>
+  <div class="text-center mt-3">
+    <a href="{{ route('bepbgbeuploadberkasnew', $data->id) }}" class="btn button-baru">
+        <i class="bi bi-upload me-2"></i> Upload Berkas
+    </a>
+</div>
+
 @endif
 
 </div>
