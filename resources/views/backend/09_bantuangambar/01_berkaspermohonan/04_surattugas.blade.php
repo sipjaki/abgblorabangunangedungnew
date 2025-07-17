@@ -353,7 +353,7 @@ th {
 <!-- Modal Upload Surat Tugas -->
 <div class="modal fade" id="uploadSuratModal{{ $item->id }}" tabindex="-1" aria-labelledby="uploadSuratModalLabel{{ $item->id }}" aria-hidden="true">
   <div class="modal-dialog">
-    <form action="{{ route('uploadsurattugas.store', ['id' => $item->id]) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('bepbgsurattugasuploadnbro', ['id' => $item->id]) }}" method="POST" enctype="multipart/form-data">
       @csrf
       <div class="modal-content">
         <div class="modal-header bg-primary text-white">
