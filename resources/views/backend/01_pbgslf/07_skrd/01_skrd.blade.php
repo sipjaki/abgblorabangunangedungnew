@@ -150,7 +150,7 @@
         <tr>
           <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $loop->iteration }}</td>
 
-          @canany(['superadmin', 'admin'])
+          @canany(['superadmin', 'admin', 'akunskrd'])
 
           <td style="white-space: nowrap; padding: 6px; text-align: center;">
               <a href="{{ route('bepbgslfskrdcreate', $item->id) }}"
