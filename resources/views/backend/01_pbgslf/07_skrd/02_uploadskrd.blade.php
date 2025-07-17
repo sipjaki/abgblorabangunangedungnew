@@ -368,7 +368,7 @@ th {
 @endcanany
 
 
-@canany(['superadmin', 'admin'])
+@canany(['superadmin', 'admin', 'akunskrd'])
 
 <div class="col-md-6">
     <div class="mb-3">
