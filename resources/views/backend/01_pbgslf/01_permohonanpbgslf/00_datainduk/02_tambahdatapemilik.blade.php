@@ -393,11 +393,11 @@ th {
 
     <div class="row g-3 mt-2">
         {{-- Nama Pemilik --}}
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <label class="form-label"><i class="bi bi-person-fill text-navy me-1" style="color: blue"></i> Nama Pemilik</label>
             <input type="text" name="namapemilik" class="form-control @error('namapemilik') is-invalid @enderror" value="{{ old('namapemilik') }}">
             @error('namapemilik')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
+        </div> --}}
 
         {{-- Alamat Pemilik --}}
         <div class="col-md-6">

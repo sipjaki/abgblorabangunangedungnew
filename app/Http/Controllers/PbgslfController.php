@@ -447,7 +447,7 @@ public function bepbgdatapemilikcreate($id)
         $validated = $request->validate([
             'id' => 'required|string',
             'pbgslfbangunan_id' => 'required|string',
-            'namapemilik' => 'required|string|max:255',
+            'namapemilik' => 'nullable|string|max:255',
             'alamatpemilik' => 'required|string|max:255',
             'nomortelepon' => 'required|string|max:50',
             'email' => 'required|email|max:100',
@@ -457,7 +457,7 @@ public function bepbgdatapemilikcreate($id)
         ], [
             'pbgslfbangunan_id.required' => 'ID bangunan wajib diisi.',
             'pbgslfbangunan_id.exists' => 'Data bangunan tidak ditemukan.',
-            'namapemilik.required' => 'Nama pemilik wajib diisi.',
+            // 'namapemilik.required' => 'Nama pemilik wajib diisi.',
             'alamatpemilik.required' => 'Alamat pemilik wajib diisi.',
             'nomortelepon.required' => 'Nomor telepon wajib diisi.',
             'email.required' => 'Email wajib diisi.',
