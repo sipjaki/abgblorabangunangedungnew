@@ -449,7 +449,7 @@ th {
 
 <div class="text-end mt-4">
     <button type="button" class="button-baru" onclick="openModal()">
-        <i class="bi bi-save me-1"></i> Simpan Surat Undangan
+        <i class="bi bi-save me-1"></i> Upload Berkas?
     </button>
 </div>
 
