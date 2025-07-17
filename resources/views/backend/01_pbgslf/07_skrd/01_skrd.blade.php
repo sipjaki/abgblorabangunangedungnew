@@ -110,6 +110,10 @@
           <i class="bi bi-file-earmark-text-fill"></i> Berkas SKRD
         </th>
 
+        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+          <i class="bi bi-file-earmark-text-fill"></i> Bukti Pembayaran
+        </th>
+
                     <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
             <i class="bi bi-person-fill"></i> Bulan Sidang
             </th>
@@ -167,7 +171,7 @@
     @if ($item->rupiah !== null)
         Rp {{ number_format($item->rupiah, 0, ',', '.') }},00
     @else
-        <span style="color: red; font-weight: bold;">Data Belum Di Masukan</span>
+        <span class="button-merah">Data Belum Di Masukan</span>
     @endif
 </td>
 
@@ -200,7 +204,27 @@
         ></iframe>
         <br>
         <a href="{{ asset($item->berkasskrd) }}"
-           class="btn btn-sm btn-primary mt-1"
+           class="button-baru mt-1"
+           target="_blank"
+           download>
+           <i class="bi bi-download"></i> Download
+        </a>
+    @else
+        <span style="color: white" class="btn btn-danger">Berkas Belum di Upload</span>
+
+        @endif
+</td>
+
+<td style="white-space: nowrap; padding: 6px; text-align: center; vertical-align: middle;">
+    @if($item->buktipembayaran)
+        <iframe
+            src="{{ asset($item->buktipembayaran) }}"
+            style="width: 150px; height: 200px; border: 1px solid #ccc; border-radius: 4px;"
+            frameborder="0"
+        ></iframe>
+        <br>
+        <a href="{{ asset($item->buktipembayaran) }}"
+           class="button-baru mt-1"
            target="_blank"
            download>
            <i class="bi bi-download"></i> Download
