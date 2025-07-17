@@ -299,20 +299,55 @@ th {
             </div>
         <div class="card-body">
 
+    @if ($data && $data->uploadberkaslainnya)
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="table-light text-center">
+                <tr>
+                    <th>Berkas</th>
+                    <th style="width: 100px;">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">
+                        <div style="margin-top: 10px;">
+                            @if(file_exists(public_path('storage/' . $data->uploadberkaslainnya)))
+                                <!-- File ada di storage -->
+                                <iframe src="{{ asset('storage/' . $data->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @else
+                                <!-- File ada di path langsung -->
+                                <iframe src="{{ asset($data->uploadberkaslainnya) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @endif
+                        </div>
+                    </td>
 
-                                        <div style="margin-top: 10px;">
-                                                @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
-                                                <!-- Display the default iframe when the file exists in the storage -->
-                                                <iframe src="{{ asset('storage/' . $data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                            @elseif($data->peraturan)
-                                                <!-- Display the iframe with the updated file -->
-                                                <iframe src="{{ asset($data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                            @else
-                                                <!-- Optional: Show a placeholder if there's no file available -->
-                                                <p>Data belum diupdate</p>
-                                            @endif
+                    <td class="text-center">
+                        <a href="javascript:void(0)" class="btn btn-sm btn-outline-danger"
+                           data-bs-toggle="modal"
+                           data-bs-target="#deleteModal"
+                           data-id="{{ $data->id }}"
+                           onclick="setDeleteUrl(this)"
+                           title="Hapus Data">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+@else
+    <div class="alert alert-warning text-center fw-semibold">
+        <i class="bi bi-folder-x me-2 text-danger"></i>
+        Data tidak ditemukan!
+    </div>
+    <div class="text-center mt-3">
+        <a href="{{ route('upload.route.name') }}" class="btn button-baru">
+            Upload Berkas
+        </a>
+    </div>
+@endif
 
-                                            </div>
 </div>
         {{-- Tombol Tambah Data --}}
                 {{-- <div class="text-center mt-4">
