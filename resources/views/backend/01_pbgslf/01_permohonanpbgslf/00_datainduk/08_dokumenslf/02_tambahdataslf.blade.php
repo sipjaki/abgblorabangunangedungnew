@@ -388,6 +388,7 @@ th {
     @csrf
     <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
     <input type="hidden" name="id" value="{{ $data->id }}">
+
 <div class="row g-3 mt-2">
     @php
         $berkasList = [
@@ -405,20 +406,32 @@ th {
             $berkasKey = 'berkas' . ($index + 1);
         @endphp
         <div class="col-md-4 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
-                <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> {{ $judul }}
+            <label for="{{ $berkasKey }}" class="form-label d-block fw-semibold text-dark">
+                <i class="bi bi-file-earmark-text me-1 text-primary"></i> {{ $judul }}
             </label>
-            <div class="d-flex flex-column gap-2">
+            <div class="d-flex flex-column gap-2" id="{{ $berkasKey }}">
                 <label class="custom-radio">
-                    <input type="radio" name="{{ $berkasKey }}" value="Lengkap" {{ old($berkasKey) == 'Lengkap' ? 'checked' : '' }}>
+                    <input
+                        type="radio"
+                        name="{{ $berkasKey }}"
+                        value="Lengkap"
+                        {{ old($berkasKey) == 'Lengkap' ? 'checked' : '' }}
+                    >
                     <span class="custom-box"></span> Lengkap
                 </label>
                 <label class="custom-radio">
-                    <input type="radio" name="{{ $berkasKey }}" value="Tidak Lengkap" {{ old($berkasKey) == 'Tidak Lengkap' ? 'checked' : '' }}>
+                    <input
+                        type="radio"
+                        name="{{ $berkasKey }}"
+                        value="Tidak Lengkap"
+                        {{ old($berkasKey) == 'Tidak Lengkap' ? 'checked' : '' }}
+                    >
                     <span class="custom-box"></span> Tidak Lengkap
                 </label>
             </div>
-            @error($berkasKey)<div class="text-danger mt-2">{{ $message }}</div>@enderror
+            @error($berkasKey)
+                <div class="text-danger mt-2">{{ $message }}</div>
+            @enderror
         </div>
     @endforeach
 </div>

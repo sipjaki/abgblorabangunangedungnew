@@ -1399,35 +1399,35 @@ public function dokumenteknisslfcreatenew(Request $request)
         'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
 
-        'berkas1' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas2' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas3' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas4' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas5' => 'required|in:Lengkap,Tidak Lengkap',
-        'berkas6' => 'required|in:Lengkap,Tidak Lengkap',
+        'berkas1' => 'nullable|string',
+        'berkas2' => 'nullable|string',
+        'berkas3' => 'nullable|string',
+        'berkas4' => 'nullable|string',
+        'berkas5' => 'nullable|string',
+        'berkas6' => 'nullable|string',
 
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
     ], [
         'pbgslfbangunan_id.required' => 'ID Bangunan harus dipilih.',
 
-        'berkas1.required' => 'Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung wajib dipilih.',
-        'berkas1.in' => 'Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas1.required' => 'Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung wajib dipilih.',
+        // 'berkas1.in' => 'Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas2.required' => 'Laporan Pemeriksaan Berkala Bangunan Gedung wajib dipilih.',
-        'berkas2.in' => 'Laporan Pemeriksaan Berkala Bangunan Gedung harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas2.required' => 'Laporan Pemeriksaan Berkala Bangunan Gedung wajib dipilih.',
+        // 'berkas2.in' => 'Laporan Pemeriksaan Berkala Bangunan Gedung harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas3.required' => 'Gambar Bangunan Gedung Terbangun (As Built Drawing) wajib dipilih.',
-        'berkas3.in' => 'Gambar Bangunan Gedung Terbangun (As Built Drawing) harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas3.required' => 'Gambar Bangunan Gedung Terbangun (As Built Drawing) wajib dipilih.',
+        // 'berkas3.in' => 'Gambar Bangunan Gedung Terbangun (As Built Drawing) harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas4.required' => 'Perhitungan Teknis dan Dokumen Rencana Teknis saat Pembangunan Gedung wajib dipilih.',
-        'berkas4.in' => 'Perhitungan Teknis dan Dokumen Rencana Teknis saat Pembangunan Gedung harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas4.required' => 'Perhitungan Teknis dan Dokumen Rencana Teknis saat Pembangunan Gedung wajib dipilih.',
+        // 'berkas4.in' => 'Perhitungan Teknis dan Dokumen Rencana Teknis saat Pembangunan Gedung harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas5.required' => 'Gambar Detail Struktur Terbangun wajib dipilih.',
-        'berkas5.in' => 'Gambar Detail Struktur Terbangun harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas5.required' => 'Gambar Detail Struktur Terbangun wajib dipilih.',
+        // 'berkas5.in' => 'Gambar Detail Struktur Terbangun harus diisi Lengkap atau Tidak Lengkap.',
 
-        'berkas6.required' => 'Data Tenaga Ahli Pengkaji Teknis Bersertifikat wajib dipilih.',
-        'berkas6.in' => 'Data Tenaga Ahli Pengkaji Teknis Bersertifikat harus diisi Lengkap atau Tidak Lengkap.',
+        // 'berkas6.required' => 'Data Tenaga Ahli Pengkaji Teknis Bersertifikat wajib dipilih.',
+        // 'berkas6.in' => 'Data Tenaga Ahli Pengkaji Teknis Bersertifikat harus diisi Lengkap atau Tidak Lengkap.',
 
         'pilihancatatan.required' => 'Pilihan Catatan harus dipilih.',
         'pilihancatatan.in' => 'Pilihan Catatan hanya boleh "lengkap" atau "tidak lengkap".',
@@ -1436,12 +1436,12 @@ public function dokumenteknisslfcreatenew(Request $request)
     dokumenteknisslfpbg::create([
         'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
-        'berkas1' => $validated['berkas1'],
-        'berkas2' => $validated['berkas2'],
-        'berkas3' => $validated['berkas3'],
-        'berkas4' => $validated['berkas4'],
-        'berkas5' => $validated['berkas5'],
-        'berkas6' => $validated['berkas6'],
+        'berkas1' => $validated['berkas1'] ?? null,
+        'berkas2' => $validated['berkas2'] ?? null,
+        'berkas3' => $validated['berkas3'] ?? null,
+        'berkas4' => $validated['berkas4'] ?? null,
+        'berkas5' => $validated['berkas5'] ?? null,
+        'berkas6' => $validated['berkas6'] ?? null,
         'pilihancatatan' => $validated['pilihancatatan'],
         'catatan' => $validated['catatan'] ?? null,
     ]);
