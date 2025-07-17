@@ -354,7 +354,7 @@ th {
   <span style="text-decoration: none; font-weight: normal;">Nomor : {{ $surat->nomorsurat ?? '-' }}</span>
 </div>
 
-<p style="font-size: 12px; margin-top: 12px;"><strong>DASAR</strong> : Surat Perjanjian Kontrak Pekerjaan Fasilitator Persetujuan Bangunan Gedung Tahun Anggaran 2025 Kabupaten Blora Nomor : {{ $surat->nomorkontrak ?? '-' }}</p>
+<p style="font-size: 12px; margin-top: 12px;"><strong>DASAR</strong> : Surat Perjanjian Kontrak Pekerjaan Fasilitator Persetujuan Bangunan Gedung Tahun Anggaran 2025 Kabupaten Blora Nomor : {{ $surat->nomorkontrak ?? '-' }} 15 April 2025</p>
 
 <div style="font-size: 12px; text-align: center; font-weight: bold; margin: 20px 0;">
   MENUGASKAN
