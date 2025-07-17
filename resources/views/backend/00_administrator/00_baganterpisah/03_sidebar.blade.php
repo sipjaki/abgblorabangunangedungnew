@@ -1377,7 +1377,7 @@
 <li class="nav-item">
   <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: yellow; margin: 0 0 0 8px; flex-grow: 1;">Bantuan Gambar</p>
+    <p style="color: orange; margin: 0 0 0 8px; flex-grow: 1;">Bantuan Gambar</p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
