@@ -423,18 +423,18 @@ th {
     {{-- Pengawas 1-7 dengan posisi kanan-kiri --}}
 @php
     $pengawasFields = [
-        1 => 'Pengawas 1',
-        2 => 'Pengawas 2',
-        3 => 'Pengawas 3',
-        4 => 'Pengawas 4',
-        5 => 'Pengawas 5',
-        6 => 'Pengawas 6',
-        7 => 'Pengawas 7',
-        8 => 'Pengawas 8',
-        9 => 'Pengawas 9',
-        10 => 'Pengawas 10',
-        11 => 'Pengawas 11',
-        12 => 'Pengawas 12',
+        1 => 'TPA/TPT 1',
+        2 => 'TPA/TPT 2',
+        3 => 'TPA/TPT 3',
+        4 => 'TPA/TPT 4',
+        5 => 'TPA/TPT 5',
+        6 => 'TPA/TPT 6',
+        7 => 'TPA/TPT 7',
+        8 => 'TPA/TPT 8',
+        9 => 'TPA/TPT 9',
+        10 => 'TPA/TPT 10',
+        11 => 'TPA/TPT 11',
+        12 => 'TPA/TPT 12',
     ];
 @endphp
 
