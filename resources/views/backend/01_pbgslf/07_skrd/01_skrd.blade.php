@@ -89,7 +89,7 @@
     <thead>
       <tr>
         <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">No</th>
-        @canany(['superadmin', 'admin'])
+        @canany(['superadmin', 'admin', 'akunskrd'])
         <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
             <i class="bi bi-person-fill"></i> Upload Berkas
         </th>

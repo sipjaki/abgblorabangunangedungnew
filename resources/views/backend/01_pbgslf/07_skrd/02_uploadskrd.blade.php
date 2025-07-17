@@ -316,7 +316,7 @@ th {
 </div> --}}
 
 <div class="col-12">
-    {{-- <div class="mb-3">
+    <div class="mb-3">
         <label class="form-label" for="dokumenproposal">
             <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
         </label>
@@ -338,7 +338,7 @@ th {
                 </a>
             </small>
         @endif
-    </div> --}}
+    </div>
 </div>
 
 <div class="text-center">
