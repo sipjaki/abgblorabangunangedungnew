@@ -1357,6 +1357,12 @@
                 <p style="color: yellow; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Konsultan</p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/bebantekkonsultan" class="nav-link" style="display: flex; align-items: center;">
+                <i class="bi bi-person-workspace nav-icon" style="color: white; font-size: 16px;"></i>
+                <p style="color: yellow; margin-left: 8px; font-size: 16px; margin-bottom: 0;">Pengkaki Teknis</p>
+            </a>
+        </li>
 
     {{-- <li class="nav-item">
         <a href="/404" class="nav-link" style="display: flex; align-items: center;">

@@ -57,6 +57,7 @@ use App\Models\krkusaha;
 use App\Models\mbrgambar;
 use App\Models\pbgslfbangunan;
 use App\Models\pengawasatpt;
+use App\Models\pengkajiteknis;
 use App\Models\pesertapelatihan;
 use App\Models\petugasdinas;
 use App\Models\petugaspenilik;
@@ -16214,6 +16215,62 @@ databgtanah::create([
     'alamattanah' => 'Jl. Gunandar No. 72, Ds. Jenar, RT: 3/RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
+
+// ==========================================
+pengkajiteknis::create([
+    'id' => 1,
+    'namabadanusaha' => 'POLA PRISMA',
+    'alamat' => 'Jl. Mintojiwo Dalam III No. 32, Gisikdrono, Kec. Semarang Barat, Kota Semarang, Jawa Tengah',
+    'telepon' => '08122918447',
+    'email' => 'pola.prisma@gmail.com',
+    'direktur' => 'Ir. ASUNG PRAKOSO',
+    'subklasifikasi' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi (RK003), Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air (RK002), Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian (RK001)',
+    'pengalaman' => 'Konsultan Pengkaji Teknis di Bangunan Gedung Rumah Sakit PKU Muhammadiyah Blora, Jl. Blora Cepu KM 03',
+]);
+
+pengkajiteknis::create([
+    'id' => 2,
+    'namabadanusaha' => 'CRYSTAL DESIGN',
+    'alamat' => 'Jalan A. Yani Gg. 5 No. 19 Kel. Karangjati, Kec. Blora, Kab. Blora',
+    'telepon' => '085641576743',
+    'email' => 'crystaldesign719@gmail.com',
+    'direktur' => 'NUNUNG AGUS WINARTO, S.T.',
+    'subklasifikasi' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi (RK003), Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air (RK002), Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian (RK001)',
+    'pengalaman' => 'Konsultan Pengkaji Teknis di Bangunan Gudang produksi CV TOYA MUSTIKA beralamat di Jl. A. Yani Lorong 11 RT 02 RW 02 Karangjati Blora',
+]);
+
+pengkajiteknis::create([
+    'id' => 3,
+    'namabadanusaha' => 'DUTA CAHAYA DESIGN',
+    'alamat' => 'Jl. Flamboyan NO. 188 Kel. Karangboyo, Kec. Cepu, Kab. Blora',
+    'telepon' => '085145718253',
+    'email' => 'dutacahayadesign117@gmail.com',
+    'direktur' => 'MITA ARIS ARGARINI, SE',
+    'subklasifikasi' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi (RK003), Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air (RK002), Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian (RK001), Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian (AR001), Jasa Arsitektural Lainnya (AR002), Jasa Desain Interior pada Bangunan Gedung dan Bangunan Sipil (AR003) ',
+    'pengalaman' => 'Konsultan Pengkaji Teknis di Bangunan Gedung Bhina Migas Medical Center, Pusat Pengembangan Sumber Daya Manusia Minyak dan Gas Bumi',
+]);
+
+pengkajiteknis::create([
+    'id' => 4,
+    'namabadanusaha' => 'CARAKA GRHA TEKNITAMA',
+    'alamat' => 'Jl. Gombel Permai VI No.174, Kel. Ngesrep, Kec. Banyumanik, Kota Semarang, Jawa Tengah.',
+    'telepon' => '082299770028',
+    'email' => 'carakakonsultan@gmail.com',
+    'direktur' => 'SULISTYO INDRIYANTO, S.T.',
+    'subklasifikasi' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian (RK001), Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian (AR001), Jasa Arsitektural Lainnya (AR002), Jasa Rekayasa Pekerjaan Mekanikal Dalam Bangunan (RK004)',
+    'pengalaman' => 'Konsultan Pengkaji Teknis di Bangunan Gedung RUMAH POTONG HEWAN RUMINANSIA BLORA, Dinas Pangan Pertanian Peternakan Dan Perikanan Kabupaten Blora',
+]);
+
+pengkajiteknis::create([
+    'id' => 5,
+    'namabadanusaha' => 'PT GAMA INDO MAHARDIKA',
+    'alamat' => 'Jl. Jeruk Jl Supriyadi, Plangitan-Pati (depan puskesmas plangitan 1 Pati)',
+    'telepon' => '0811911161',
+    'email' => 'gamaindomahardika@gmail.com',
+    'direktur' => 'DANNIAR KARTIKA DEWI, SP.d',
+    'subklasifikasi' => 'Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian (AR001), Jasa Desain Interior pada Bangunan Gedung dan Bangunan Sipil (AR003)',
+    'pengalaman' => 'Konsultan Persetujuan Bangunan Gedung (PBG) Bangunan Batching Plan PT MITRA GARUDA NUSANTARA Jl. Blora-Cepu Km 28 Sambong Blora',
+]);
 
 
 
