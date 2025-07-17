@@ -408,7 +408,7 @@ th {
     <li>Agar dilaksanakan dengan penuh tanggung jawab.</li>
   </ol>
 </div>
-<div class="ttd" style="font-size: 12px; text-align: right; margin-top: 20px; line-height: 1.6;">
+<div class="ttd" style="font-size: 12px; line-height: 1.6; width: 60%; margin-left: auto; text-align: center; margin-top: 20px;">
   <p>
     Ditetapkan di : Blora<br>
     pada tanggal : {{ \Carbon\Carbon::parse($surat->tanggaltugas)->translatedFormat('d F Y') }}
@@ -419,14 +419,8 @@ th {
     PEKERJAAN UMUM DAN PENATAAN RUANG<br>
     KABUPATEN BLORA
   </p>
-<br><br><br><br>
-  <!-- Stack stempel di atas tanda tangan -->
-  {{-- <div style="position: relative; display: inline-block;">
-    <!-- Stempel di atas -->
-    <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel" style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.7; z-index: 2;">
-    <!-- Tanda tangan di bawah -->
-    <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan" style="position: relative; height: 100px; z-index: 1;">
-  </div> --}}
+
+  <br><br><br><br>
 
   <p style="margin-top: 10px;">
     <strong><u>MOHAMAD ARIF HIDAYAT, ST</u></strong><br>
@@ -434,6 +428,14 @@ th {
     NIP. 19710506 199403 1 011
   </p>
 </div>
+
+  <!-- Stack stempel di atas tanda tangan -->
+  {{-- <div style="position: relative; display: inline-block;">
+    <!-- Stempel di atas -->
+    <img src="/assets/abgblora/logo/ttdkabblora.png" alt="Stempel" style="position: absolute; top: 0; left: 0; height: 100px; opacity: 0.7; z-index: 2;">
+    <!-- Tanda tangan di bawah -->
+    <img src="/assets/abgblora/logo/tandatanganpaarif.png" alt="Tanda Tangan" style="position: relative; height: 100px; z-index: 1;">
+  </div> --}}
 
 </div>
 </body>
