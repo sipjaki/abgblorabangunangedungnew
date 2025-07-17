@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('fotoprapeniliks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('fotopascapenilik_id')->nullable()->index();
+            $table->foreignId('prapenilikdok_id')->nullable()->index();
             $table->string('foto')->nullable();
             $table->softDeletes();
             $table->timestamps();
