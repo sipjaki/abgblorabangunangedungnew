@@ -425,16 +425,16 @@ th {
 
     {{-- Nomor Kontrak --}}
     <div class="col-md-6">
-        <label class="form-label fw-semibold text-dark">
-            <i class="bi bi-file-earmark-ruled-fill text-primary me-1"></i> Nomor Kontrak
-        </label>
-        <input type="text" name="nomorkontrak"
-            class="form-control @error('nomorkontrak') is-invalid @enderror"
-            value="{{ old('nomorkontrak') }}" placeholder="Contoh: 027/PK-FAS/PBG/2025">
-        @error('nomorkontrak')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+    <label class="form-label fw-semibold text-dark">
+        <i class="bi bi-file-earmark-ruled-fill text-primary me-1"></i> Nomor Kontrak
+    </label>
+    <input type="text" name="nomorkontrak"
+        class="form-control @error('nomorkontrak') is-invalid @enderror"
+        value="{{ old('nomorkontrak', '900/407.A/2025') }}" placeholder="Contoh: 900/407.A/2025">
+    @error('nomorkontrak')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
     {{-- Tanggal Tugas --}}
     <div class="col-md-6">
