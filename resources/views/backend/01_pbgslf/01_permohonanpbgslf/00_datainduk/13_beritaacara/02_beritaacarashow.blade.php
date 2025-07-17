@@ -372,6 +372,14 @@ th {
         <td style="width: 35%; border: 1px solid #000; padding: 2px;">No. Registrasi</td>
         <td style="border: 1px solid #000; padding: 2px;">{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td>
     </tr>
+        <tr>
+        <td style="border: 1px solid #000; padding: 2px;">Nama Pemohon</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000; padding: 2px;">Alamat Pemohon</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
+    </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Jenis Permohonan</td>
         <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}</td>
@@ -381,26 +389,12 @@ th {
         <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->namabangunan ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Hari, tanggal sidang</td>
-        <td style="border: 1px solid #000; padding: 2px;">
-            {{ \Carbon\Carbon::parse($surat->tanggalkehadiran)->translatedFormat('d F Y') }}
-        </td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Luas Bangunan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->luasbangunan ?? '-' }}</td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Nama Pemohon</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
-    </tr>
-    <tr>
         <td style="border: 1px solid #000; padding: 2px;">Fungsi Bangunan</td>
         <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
     </tr>
     <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Alamat Pemohon</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
+        <td style="border: 1px solid #000; padding: 2px;">Luas Bangunan</td>
+        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->luasbangunan ?? '-' }}Meter</td>
     </tr>
     <tr>
         <td style="border: 1px solid #000; padding: 2px;">Lokasi Bangunan</td>
