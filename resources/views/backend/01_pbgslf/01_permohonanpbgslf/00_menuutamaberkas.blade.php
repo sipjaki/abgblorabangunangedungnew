@@ -216,8 +216,19 @@ th {
 
     @php
         $infoItems = [
-            [
-                'icon' => 'bi-file-earmark-text-fill',
+         [
+                'icon' => 'bi-person-fill-check',
+                'title' => 'Nama Pemohon',
+                'value' => $data->namapemohon ?? '-',
+            ],
+               [
+                'icon' => 'bi-ui-checks-grid',
+                'title' => 'Jenis Permohonan',
+                'value' => $data->jenispengajuanpbgslfper->jenispengajuan ?? '-',
+            ],
+
+        [
+                    'icon' => 'bi-file-earmark-text-fill',
                 'title' => 'Nomor Registrasi SIM BG',
                 'value' => $data->noregissimbg ?? '-',
             ],
@@ -226,16 +237,7 @@ th {
                 'title' => 'Tanggal Permohonan',
                 'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
             ],
-            [
-                'icon' => 'bi-ui-checks-grid',
-                'title' => 'Jenis Permohonan',
-                'value' => $data->jenispengajuanpbgslfper->jenispengajuan ?? '-',
-            ],
-            [
-                'icon' => 'bi-person-fill-check',
-                'title' => 'Nama Pemohon',
-                'value' => $data->namapemohon ?? '-',
-            ],
+
         ];
     @endphp
 
