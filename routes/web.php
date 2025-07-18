@@ -779,7 +779,7 @@ Route::get('/dataallpenilikbgupdate/{id}', [PenilikbangunanController::class, 'd
 Route::put('/dataallpenilikbgupdatenew/{id}', [PenilikbangunanController::class, 'dataallpenilikbgupdatenew'])->middleware('auth')->name('dataallpenilikbgupdatenew');
 
 Route::get('/dataallpenilikbgregsimbg/{id}', [PenilikbangunanController::class, 'dataallpenilikbgregsimbg'])->name('dataallpenilikbgregsimbg');
-// Route::put('/dataallpenilikbgupdatenew/{id}', [PenilikbangunanController::class, 'dataallpenilikbgupdatenew'])->middleware('auth')->name('dataallpenilikbgupdatenew');
+Route::put('/dataallpenilikbgregsimbgnew/{id}', [PenilikbangunanController::class, 'dataallpenilikbgregsimbgnew'])->middleware('auth')->name('dataallpenilikbgregsimbgnew');
 
 Route::get('/surattugaspenilik/{id}', [PenilikbangunanController::class, 'surattugaspenilik'])->middleware('auth')->name('surattugaspenilik');
 Route::get('/surattugaspenilikcreate/{id}', [PenilikbangunanController::class, 'surattugaspenilikcreate'])->middleware('auth')->name('surattugaspenilikcreate');

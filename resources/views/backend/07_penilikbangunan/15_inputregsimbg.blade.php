@@ -194,13 +194,13 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-          <form action="{{ route('dataallpenilikbgupdatenew', $penilik->id) }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ route('dataallpenilikbgregsimbgnew', $penilik->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
                             <!-- begin::Body -->
 
-                            <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            {{-- <input type="hidden" name="user_id" value="{{ $user->id }}"> --}}
 
                             <div class="card-body">
                                 <div class="row">
@@ -241,7 +241,7 @@ th {
         <input type="date" class="form-control" id="tanggalkrk" name="tanggalkrk" value="{{ old('tanggalkrk', $penilik->tanggalkrk ?? '') }}">
     </div>
 
-    <div class="col-md-6 mb-3">
+    {{-- <div class="col-md-6 mb-3">
         <label for="nopbg" class="form-label">
             <i class="bi bi-building-fill-gear text-danger me-2"></i> No PBG
         </label>
@@ -253,9 +253,9 @@ th {
             <i class="bi bi-calendar-event text-danger me-2"></i> Tanggal PBG
         </label>
         <input type="date" class="form-control" id="tanggalpbg" name="tanggalpbg" value="{{ old('tanggalpbg', $penilik->tanggalpbg ?? '') }}">
-    </div>
+    </div> --}}
 
-    <div class="col-md-12 mb-3">
+    {{-- <div class="col-md-12 mb-3">
         <label for="berkaspbg" class="form-label">
             <i class="bi bi-filetype-pdf text-danger me-2"></i> Berkas PBG (PDF)
         </label>
@@ -264,7 +264,7 @@ th {
         <div id="pdfPreview" class="mt-3" style="display: {{ isset($penilik->berkaspbg) ? 'block' : 'none' }};">
             <iframe id="pdfFrame" src="{{ isset($penilik->berkaspbg) ? asset('storage/'.$penilik->berkaspbg) : '' }}" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
         </div>
-    </div>
+    </div> --}}
 </div>
 
 <script>
