@@ -251,7 +251,9 @@ th {
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-camera text-primary me-1"></i> Inspeksi Pra
 </th>
-
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-file-earmark-person text-primary me-1"></i> Input Reg SIMBG
+</th>
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-hash text-primary me-1"></i> No Reg SIMBG
 </th>
@@ -463,6 +465,13 @@ th {
 
                 </a>
             </td>
+
+            <td style="text-align: center;">
+        <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
+                                            <i class="bi bi-pencil-square"></i> Input Reg SIMBG
+                                        </a>
+
+</td>
 
 {{-- No Reg SIMBG --}}
 <td style="text-align: left;">
