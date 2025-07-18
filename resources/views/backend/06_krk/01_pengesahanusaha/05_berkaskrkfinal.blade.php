@@ -630,7 +630,7 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
                         <td style="text-align: center;">4</td>
                         <td style="text-align: left;">Luas Lantai Maksimal</td>
                         <td style="text-align: center;">:</td>
-                        <td style="text-align: left;">{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }}Lantai</td>
+                        <td style="text-align: left;">{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }} Lantai</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">5</td>
@@ -642,7 +642,7 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
                         <td style="text-align: center;">6</td>
                         <td style="text-align: left;">(GSB) Garis Sempadan Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td style="text-align: left;">{{ $item->gsb ?? 'Belum Dibuatkan' }}Meter</td>
+                        <td style="text-align: left;">{{ $item->gsb ?? 'Belum Dibuatkan' }} Meter</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">7</td>
@@ -655,7 +655,7 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
                         <td style="text-align: center;">8</td>
                         <td style="text-align: left;">(KDB) Koefisien Dasar Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td style="text-align: left;">{{ $item->klb ?? 'Belum Dibuatkan' }}M²</td>
+                        <td style="text-align: left;">{{ $item->klb ?? 'Belum Dibuatkan' }} M²</td>
                     </tr>
                     {{-- <tr>
                         <td style="text-align: center;">9</td>
