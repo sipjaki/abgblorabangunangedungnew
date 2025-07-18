@@ -405,7 +405,7 @@
     @enderror
 </div>
 
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const luastanah = {{ $data->luastanah ?? 0 }};
         const kepadatanSelect = document.getElementById('kepadatan');
@@ -445,7 +445,7 @@
         kepadatanSelect.addEventListener('change', hitungLuasDanKDB);
         hitungLuasDanKDB();
     });
-</script>
+</script> --}}
 
 
                 <!-- KDH -->
@@ -484,7 +484,7 @@
                 </div>
 
                 <!-- Script Dynamic Fields -->
-                <script>
+                {{-- <script>
                     // Kepadatan Change Handler
                     document.getElementById('kepadatan').addEventListener('change', function() {
                         const kepadatan = this.value;
@@ -520,8 +520,8 @@
                             document.getElementById('luasbangunan').value = Math.round(luastanah * persen);
                         });
                     });
-                </script>
-<script>
+                </script> --}}
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const klb = document.getElementById('klb'); // input persen, misal "45%"
         const luasbangunan = document.getElementById('luasbangunan'); // input angka
@@ -546,7 +546,7 @@
         klb.addEventListener('input', hitungKDB);
         luasbangunan.addEventListener('input', hitungKDB);
     });
-</script>
+</script> --}}
 
 
 
