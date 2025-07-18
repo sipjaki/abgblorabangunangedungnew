@@ -906,7 +906,29 @@ public function bedatapetugaspenilikdelete($id)
     }
 
 
+public function dataallpenilikbgregsimbg(Request $request, $id)
+{
+    $user = Auth::user();
+    $kecamatanList = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
 
+    // Handle AJAX permintaan data kelurahan
+    if ($request->ajax() && $request->has('kecamatan_id')) {
+        $desa = kelurahandesa::where('kecamatanblora_id', $request->kecamatan_id)->get();
+        return response()->json($desa);
+    }
+
+    // Ambil data penilikbangunan berdasarkan ID
+    $penilik = penilikbangunan::findOrFail($id);
+
+    return view('backend.07_penilikbangunan.15_inputregsimbg', [
+        'title' => 'Input Data Reg SIMBG Inspeksi Bangunan Gedung',
+        'user' => $user,
+        'datakelurahan' => $datakelurahan,
+        'kecamatanList' => $kecamatanList,
+        'penilik' => $penilik
+    ]);
+}
 
 
 }
