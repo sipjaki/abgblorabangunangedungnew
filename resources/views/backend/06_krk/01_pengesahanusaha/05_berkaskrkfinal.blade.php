@@ -732,17 +732,17 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
         DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
 
-        <div style="position: relative; width: 220px; height: 100px;">
+        <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
             <!-- TTD Kabupaten Blora agak ke kanan -->
             <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
                  style="position: absolute; left: 30px; top: 0; height: 100px; z-index: 1;">
 
             <!-- TTD PA Huda di kanan -->
-            <img src="/assets/abgblora/logo/tddpahuda.png" alt=""
+            <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
                  style="position: absolute; right: 0; top: 0; height: 100px; z-index: 2;">
         </div><br><br>
 
-        <strong>NIDZAMUDIN AL HUDA, ST</strong><br>
+        <strong style="margin-top: -20px;">NIDZAMUDIN AL HUDA, ST</strong><br>
         NIP. 19720326 200604 1 005
     </div>
 </div>
