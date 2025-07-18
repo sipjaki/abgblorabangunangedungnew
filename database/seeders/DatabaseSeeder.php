@@ -21141,8 +21141,6 @@ databgkepemilikan::create(['id' => 899, 'user_id' => 46, 'kecamatanblora_id' => 
 databgkepemilikan::create(['id' => 900, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0302', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 
-<?php
-
 // SDN 1 TAMBAKROMO (901-905)
 databgkepemilikan::create(['id' => 901, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0303', 'tanggalinput' => now(), 'koordinat' => '-']);
 databgkepemilikan::create(['id' => 902, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0304', 'tanggalinput' => now(), 'koordinat' => '-']);
