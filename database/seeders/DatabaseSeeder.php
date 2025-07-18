@@ -565,6 +565,69 @@ User::create([
     'password' => bcrypt('adminyonifan')
 ]);
 
+// AKUN KONSULTAN BANGUNAN GEDUNG
+
+User::create([
+    'id'  => 67,
+    'name'  => 'Konsultan Pendataan Bangunan Gedung',
+    'username' => 'Konsultan Pendataan Bangunan Gedung',
+    'statusadmin_id' => '5',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'bangunandpuprkabblora11@gmail.com',
+    'password' => bcrypt('adminkabblorabangunan')
+]);
+
+User::create([
+    'id'  => 68,
+    'name'  => 'Konsultan Pendataan Bangunan Gedung',
+    'username' => 'Konsultan Pendataan Bangunan Gedung',
+    'statusadmin_id' => '5',
+    'avatar' => 'user/avatar/foto1.png',
+    'email' => 'bangunandpuprkabblora12@gmail.com',
+    'password' => bcrypt('kabblora2025a') // password: kabblora2025a
+]);
+
+User::create([
+    'id'  => 69,
+    'name'  => 'Konsultan Pendataan Bangunan Gedung',
+    'username' => 'Konsultan Pendataan Bangunan Gedung',
+    'statusadmin_id' => '5',
+    'avatar' => 'user/avatar/foto2.png',
+    'email' => 'bangunandpuprkabblora13@gmail.com',
+    'password' => bcrypt('kabblora2025b') // password: kabblora2025b
+]);
+
+User::create([
+    'id'  => 70,
+    'name'  => 'Konsultan Pendataan Bangunan Gedung',
+    'username' => 'Konsultan Pendataan Bangunan Gedung',
+    'statusadmin_id' => '5',
+    'avatar' => 'user/avatar/foto3.png',
+    'email' => 'bangunandpuprkabblora14@gmail.com',
+    'password' => bcrypt('kabblora2025c') // password: kabblora2025c
+]);
+
+User::create([
+    'id'  => 71,
+    'name'  => 'Konsultan Pendataan Bangunan Gedung',
+    'username' => 'Konsultan Pendataan Bangunan Gedung',
+    'statusadmin_id' => '5',
+    'avatar' => 'user/avatar/foto5.png',
+    'email' => 'bangunandpuprkabblora15@gmail.com',
+    'password' => bcrypt('kabblora2025d') // password: kabblora2025d
+]);
+
+User::create([
+    'id'  => 72,
+    'name'  => 'Konsultan Pendataan Bangunan Gedung',
+    'username' => 'Konsultan Pendataan Bangunan Gedung',
+    'statusadmin_id' => '5',
+    'avatar' => 'user/avatar/foto6.png',
+    'email' => 'bangunandpuprkabblora16@gmail.com',
+    'password' => bcrypt('kabblora2025e') // password: kabblora2025e
+]);
+
+
         // -------------------
 
         User::create([
