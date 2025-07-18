@@ -735,11 +735,11 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
         <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
             <!-- TTD Kabupaten Blora agak ke kanan -->
             <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
-                 style="position: absolute; left: 30px; top: 0; height: 100px; z-index: 1;">
+                 style="position: absolute; left: 10px; top: 0; height: 80px; z-index: 1;">
 
             <!-- TTD PA Huda di kanan -->
             <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
-                 style="position: absolute; right: 0; top: 0; height: 100px; z-index: 2;">
+                 style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
         </div><br><br>
 <div style="display: inline-flex; flex-direction: column; gap: 0;">
   <strong style="margin-top: -25px; text-decoration: underline; line-height: 1;">
