@@ -948,85 +948,77 @@ petugasdinas::create([
     'rupiah' => '310000',
     'golongan' => 'VII',
 ]);
-
 petugasdinas::create([
     'id' => 11,
     'user_id' => 61,
     'namalengkap' => 'ANGGA JAYA SAPUTRA, A.Md',
-    'nip' => 'Data Masih Kosong',
-    'pangkat' => 'Data Masih Kosong',
-    'jabatan' => 'Data Masih Kosong',
-    'tingkatbiaya' => 'Data Masih Kosong',
-        'rupiah' => '310000 ',
-    'golongan' => 'II/b',
-
+    'nip' => '19930827 202421 1 012',
+    'pangkat' => 'VII',
+    'jabatan' => 'Penata Laksana Bangunan Gedung dan Kawasan Permukiman - Terampil',
+    'tingkatbiaya' => 'G',
+    'rupiah' => '310000',
+    'golongan' => 'VII',
 ]);
 
 petugasdinas::create([
     'id' => 12,
     'user_id' => 62,
     'namalengkap' => 'BUDI AJAR PAMUNGKAS',
-    'nip' => 'Data Masih Kosong',
-    'pangkat' => 'Data Masih Kosong',
-    'jabatan' => 'Data Masih Kosong',
-    'tingkatbiaya' => 'Data Masih Kosong',
-        'rupiah' => '310000 ',
-    'golongan' => 'II/b',
-
+    'nip' => '19890816 202421 1 005',
+    'pangkat' => 'V',
+    'jabatan' => 'Penata Laksana Bangunan Gedung dan Kawasan Permukiman - Pemula',
+    'tingkatbiaya' => 'G',
+    'rupiah' => '310000',
+    'golongan' => 'V',
 ]);
 
 petugasdinas::create([
     'id' => 13,
     'user_id' => 63,
     'namalengkap' => 'BENNY HADI HERMAWAN',
-    'nip' => 'Data Masih Kosong',
-    'pangkat' => 'Data Masih Kosong',
-    'jabatan' => 'Data Masih Kosong',
-    'tingkatbiaya' => 'Data Masih Kosong',
-        'rupiah' => '310000 ',
-    'golongan' => 'II/b',
-
+    'nip' => '19930522 202421 1 006',
+    'pangkat' => 'V',
+    'jabatan' => 'Penata Laksana Bangunan Gedung dan Kawasan Permukiman - Pemula',
+    'tingkatbiaya' => 'G',
+    'rupiah' => '310000',
+    'golongan' => 'V',
 ]);
 
 petugasdinas::create([
     'id' => 14,
     'user_id' => 64,
     'namalengkap' => 'FANINA RAHMA HAYATI, S.Ars.',
-    'nip' => 'Data Masih Kosong',
-    'pangkat' => 'Data Masih Kosong',
-    'jabatan' => 'Data Masih Kosong',
-    'tingkatbiaya' => 'Data Masih Kosong',
-        'rupiah' => '310000 ',
-    'golongan' => 'II/b',
-
+    'nip' => '-',
+    'pangkat' => '-',
+    'jabatan' => 'Staf Bangunan Gedung DPUPR Kab. Blora',
+    'tingkatbiaya' => 'G',
+    'rupiah' => '310000',
+    'golongan' => '-',
 ]);
 
 petugasdinas::create([
     'id' => 15,
     'user_id' => 65,
     'namalengkap' => 'ZAENUR ROZIKIN, ST.',
-    'nip' => 'Data Masih Kosong',
-    'pangkat' => 'Data Masih Kosong',
-    'jabatan' => 'Data Masih Kosong',
-    'tingkatbiaya' => 'Data Masih Kosong',
-        'rupiah' => '310000 ',
-    'golongan' => 'II/b',
-
+    'nip' => '-',
+    'pangkat' => '-',
+    'jabatan' => 'Staf Bangunan Gedung DPUPR Kab. Blora',
+    'tingkatbiaya' => 'G',
+    'rupiah' => '310000',
+    'golongan' => '-',
 ]);
 
 petugasdinas::create([
     'id' => 16,
     'user_id' => 66,
     'namalengkap' => 'YONIFAN AZIZUL HAKIM, S.Ak',
-    'nip' => 'Data Masih Kosong',
-    'pangkat' => 'Data Masih Kosong',
-    'jabatan' => 'Data Masih Kosong',
-    'tingkatbiaya' => 'Data Masih Kosong',
-        'rupiah' => '310000 ',
-    'golongan' => 'II/b',
-
+    'nip' => '-',
+    'pangkat' => '-',
+    'jabatan' => 'Staf Bangunan Gedung DPUPR Kab. Blora',
+    'tingkatbiaya' => 'G',
+    'rupiah' => '310000',
+    'golongan' => '-',
 ]);
-
 
 // =============================================
 
