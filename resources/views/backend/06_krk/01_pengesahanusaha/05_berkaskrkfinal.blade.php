@@ -726,20 +726,20 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
 
   </div>
 <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
-    <div style="text-align: left;">
+    <div style="text-align: left; font-size: 12px;">
         Kabupaten Blora<br>
         Plt. KEPALA DINAS<br>
         DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
 
-        <div style="position: relative; width: 220px; height: 20px;">
+        <div style="position: relative; width: 220px; height: 100px;">
             <!-- TTD Kabupaten Blora agak ke kanan -->
             <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
-                 style="position: absolute; left: 30px; top: 0; height: 12px; z-index: 1;">
+                 style="position: absolute; left: 30px; top: 0; height: 100px; z-index: 1;">
 
             <!-- TTD PA Huda di kanan -->
             <img src="/assets/abgblora/logo/tddpahuda.png" alt=""
-                 style="position: absolute; right: 0; top: 0; height: 12px; z-index: 2;">
+                 style="position: absolute; right: 0; top: 0; height: 100px; z-index: 2;">
         </div><br><br>
 
         <strong>NIDZAMUDIN AL HUDA, ST</strong><br>
