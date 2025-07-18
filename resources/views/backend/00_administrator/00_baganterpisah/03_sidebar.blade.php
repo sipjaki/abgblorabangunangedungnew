@@ -876,7 +876,7 @@
             <li class="nav-item">
              <a href="#" class="nav-link">
     <i class="bi bi-search nav-icon" style="color: white;"></i>
-    <p style="color: yellow; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+    <p style="color: orange; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
         Tracking Berkas
         <i class="nav-arrow bi bi-chevron-right" style="color: yellow;"></i>
     </p>
