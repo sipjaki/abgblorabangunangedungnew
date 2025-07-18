@@ -269,12 +269,9 @@ th {
 </th>
 
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-calendar-check text-primary me-1"></i> Input No PBG
+    <i class="bi bi-calendar-check text-primary me-1"></i> Upload Berkas PBG
 </th>
 
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-camera text-primary me-1"></i> Inspeksi Pasca
-</th>
 
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-file-earmark-text text-primary me-1"></i> No PBG
@@ -284,6 +281,10 @@ th {
 </th>
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-folder2-open text-primary me-1"></i> Berkas PBG
+</th>
+
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-camera text-primary me-1"></i> Inspeksi Pasca
 </th>
 
 
@@ -524,14 +525,6 @@ th {
 
 
 
-            <td style="text-align: center;">
-                    <a href="{{ route('dokpenilikpasca', $item->id) }}"
-                    class="button-baru">
-                <i class="bi bi-folder" style="margin-right: 5px;"></i> Pasca
-
-                </a>
-            </td>
-
 {{-- No PBG --}}
 <td style="text-align: left;">
     @if(!empty($item->nopbg))
@@ -562,6 +555,14 @@ th {
 </td>
 
 
+
+            <td style="text-align: center;">
+                    <a href="{{ route('dokpenilikpasca', $item->id) }}"
+                    class="button-baru">
+                <i class="bi bi-folder" style="margin-right: 5px;"></i> Pasca
+
+                </a>
+            </td>
             {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
     <button
