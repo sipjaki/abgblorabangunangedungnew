@@ -521,7 +521,7 @@ User::create([
     'username' => 'BUDI AJAR PAMUNGKAS',
     'statusadmin_id' => '8',
     'avatar' => 'user/avatar/foto4.png',
-    'email' => 'budyshenybaru@gmail.com',
+    'email' => 'budysheny461@gmail.com',
     'password' => bcrypt('adminmasbudiabg')
 ]);
 
@@ -817,15 +817,15 @@ User::create([
     'password' => bcrypt('adminadmin123$$')
 ]);
 
-        User::create([
-            'id'  => 70,
-            'name'  => 'Budi Ajar Famungkas',
-            'username' => 'Budi Ajar Famungkas',
-            'statusadmin_id' => '1',
-            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
-            'email' => 'budysheny46@gmail.com',
-            'password' => bcrypt('adminmasbudiabg')
-        ]);
+        // User::create([
+        //     'id'  => 70,
+        //     'name'  => 'Budi Ajar Famungkas',
+        //     'username' => 'Budi Ajar Famungkas',
+        //     'statusadmin_id' => '1',
+        //     'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+        //     'email' => 'budysheny46@gmail.com',
+        //     'password' => bcrypt('adminmasbudiabg')
+        // ]);
 
 // =============================================
 
