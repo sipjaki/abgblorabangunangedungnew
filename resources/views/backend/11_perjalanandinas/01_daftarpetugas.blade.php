@@ -255,6 +255,8 @@ th {
 <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Pangkat</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-briefcase"></i> Jabatan</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-money-bill-wave"></i> Tingkat Biaya</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-money-bill-wave"></i> Rupiah</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-money-bill-wave"></i> Golongan</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
 
     </tr>
@@ -272,6 +274,8 @@ th {
     <td>{{ $item->pangkat ?? 'Data Masih Kosong' }}</td>
     <td>{{ $item->jabatan ?? 'Data Masih Kosong' }}</td>
     <td>{{ $item->tingkatbiaya ?? 'Data Masih Kosong' }}</td>
+    <td>{{ $item->rupiah ?? 'Data Masih Kosong' }}</td>
+    <td>{{ $item->golongan ?? 'Data Masih Kosong' }}</td>
     @can('superadmin')
 
             <td style="text-align: center; vertical-align: middle;">
