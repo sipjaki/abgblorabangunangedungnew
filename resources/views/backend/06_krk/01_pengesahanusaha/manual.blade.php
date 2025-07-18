@@ -292,21 +292,27 @@
 
                 <!-- Luas Bangunan Maksimal -->
                 <div class="form-group row mb-4">
-                    <label for="luasbangunan" class="col-md-4 col-form-label">
-                        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
-                    </label>
-                    <div class="col-md-8">
-                        <div class="input-group">
-                            <input type="number" class="form-control" id="luasbangunan" name="luasbangunan" readonly>
-                            <div class="input-group-append">
-                                <span class="input-group-text bg-danger text-white">M²</span>
-                            </div>
-                        </div>
-                        @error('luasbangunan')
-                        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
+    <label for="luasbangunan" class="col-md-4 col-form-label">
+        <i class="fas fa-ruler-combined"></i> Luas Bangunan Maksimal
+    </label>
+    <div class="col-md-8">
+        <div class="input-group">
+            <input type="number"
+                   class="form-control @error('luasbangunan') is-invalid @enderror"
+                   id="luasbangunan"
+                   name="luasbangunan"
+                   value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}"
+                   step="0.01"
+                   min="0">
+            <div class="input-group-append">
+                <span class="input-group-text bg-danger text-white">M²</span>
+            </div>
+        </div>
+        @error('luasbangunan')
+        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
 
                 <!-- Fungsi Utama Bangunan -->
                 <div class="form-group row mb-4">
@@ -380,17 +386,29 @@
                 </div>
 
                 <!-- KLB -->
-                <div class="form-group row mb-4">
-                    <label for="klb" class="col-md-4 col-form-label">
-                        <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan)
-                    </label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" id="klb" name="klb" readonly>
-                    </div>
-                    @error('klb')
-                    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-                    @enderror
-                </div>
+             <div class="form-group row mb-4">
+    <label for="klb" class="col-md-4 col-form-label">
+        <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan)
+    </label>
+    <div class="col-md-8">
+        <div class="input-group">
+            <input type="number"
+                   class="form-control @error('klb') is-invalid @enderror"
+                   id="klb"
+                   name="klb"
+                   value="{{ old('klb', $data->klb ?? '') }}"
+                   step="0.01"
+                   min="0">
+            <div class="input-group-append">
+                <span class="input-group-text bg-primary text-white">%</span>
+            </div>
+        </div>
+        @error('klb')
+        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
 
 <div class="form-group row mb-4">
     <label for="kdb" class="col-md-4 col-form-label">
@@ -398,15 +416,21 @@
     </label>
     <div class="col-md-8">
         <div class="input-group">
-            <input type="text" class="form-control" id="kdb" name="kdb" readonly>
+            <input type="number"
+                   class="form-control @error('kdb') is-invalid @enderror"
+                   id="kdb"
+                   name="kdb"
+                   value="{{ old('kdb', $data->kdb ?? '') }}"
+                   step="0.01"
+                   min="0">
             <div class="input-group-append">
-                <span class="input-group-text">M²</span>
+                <span class="input-group-text bg-success text-white">M²</span>
             </div>
         </div>
+        @error('kdb')
+        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+        @enderror
     </div>
-    @error('kdb')
-    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-    @enderror
 </div>
 
 {{-- <script>
