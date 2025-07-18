@@ -390,7 +390,8 @@ public function bebangunangedung(Request $request)
         });
     }
 
-    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
+    // Urutkan berdasarkan kecamatanblora_id ascending
+    $berkasbantek = $query->orderBy('kecamatanblora_id', 'asc')->paginate($perPage)->appends($request->all());
 
     return view('backend.02_pendataanbangunangedung.01_databaseutama.02_databangunangedungnew', [
         'title' => 'Pendataan Bangunan Gedung Kabupaten Blora',
