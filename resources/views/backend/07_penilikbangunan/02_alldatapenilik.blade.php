@@ -243,6 +243,9 @@ th {
     <i class="bi bi-signpost-2 text-primary me-1"></i> GSB (m)
 </th>
 <th style="background-color: #ADD8E6;">
+    <i class="bi bi-file-earmark-person text-primary me-1"></i> Perbaikan
+</th>
+<th style="background-color: #ADD8E6;">
     <i class="bi bi-file-earmark-person text-primary me-1"></i> Surat Tugas
 </th>
 <th style="background-color: #ADD8E6;">
@@ -307,7 +310,12 @@ th {
 <td style="text-align: center;">{{ !empty($item->luasbangunan) ? $item->luasbangunan . ' M²' : '-' }}</td>
 <td style="text-align: center;">{{ !empty($item->jumlahlantai) ? $item->jumlahlantai . ' Lantai' : '-' }}</td>
 <td style="text-align: center;">{{ !empty($item->gsb) ? $item->gsb . ' Meter' : '-' }}</td>
+<td style="text-align: center;">
+        <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
+                                            <i class="bi bi-pencil-square"></i> Perbaikan Data
+                                        </a>
 
+</td>
    <td style="text-align: center;">
     <div style="display: inline-flex; justify-content: center; align-items: center; gap: 10px;">
         {{-- <a href="{{ route('bedatadasarpenilik.show', $item->id) }}" --}}
@@ -895,9 +903,6 @@ th {
                                         {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
                                             <i class="bi bi-eye"></i>
                                         </a> --}}
-                                        <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
-                                            <i class="bi bi-pencil-square"></i> Perbaikan Data
-                                        </a>
                                         <a href="javascript:void(0)" class="button-merah" title="Delete"
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
                                            data-judul="{{ $item->id }}"
