@@ -512,24 +512,24 @@
                 </div>
 
                 <!-- Script Dynamic Fields -->
-                {{-- <script>
+                <script>
                     // Kepadatan Change Handler
-                    document.getElementById('kepadatan').addEventListener('change', function() {
-                        const kepadatan = this.value;
-                        const jmlLantai = document.getElementById('luaslantaimaksimal');
-                        const klb = document.getElementById('klb');
+                    // document.getElementById('kepadatan').addEventListener('change', function() {
+                    //     const kepadatan = this.value;
+                    //     const jmlLantai = document.getElementById('luaslantaimaksimal');
+                    //     const klb = document.getElementById('klb');
 
-                        if (kepadatan === 'RENDAH') {
-                            jmlLantai.value = '2 Lantai';
-                            klb.value = '45%';
-                        } else if (kepadatan === 'SEDANG') {
-                            jmlLantai.value = '4 Lantai';
-                            klb.value = '60%';
-                        } else if (kepadatan === 'TINGGI') {
-                            jmlLantai.value = '2 - 8 Lantai';
-                            klb.value = '75%';
-                        }
-                    });
+                    //     if (kepadatan === 'RENDAH') {
+                    //         jmlLantai.value = '2 Lantai';
+                    //         klb.value = '45%';
+                    //     } else if (kepadatan === 'SEDANG') {
+                    //         jmlLantai.value = '4 Lantai';
+                    //         klb.value = '60%';
+                    //     } else if (kepadatan === 'TINGGI') {
+                    //         jmlLantai.value = '2 - 8 Lantai';
+                    //         klb.value = '75%';
+                    //     }
+                    // });
 
                     // Ruas Jalan Change Handler
                     document.getElementById('rencanagsbblora_id').addEventListener('change', function() {
@@ -548,7 +548,7 @@
                             document.getElementById('luasbangunan').value = Math.round(luastanah * persen);
                         });
                     });
-                </script> --}}
+                </script>
 {{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const klb = document.getElementById('klb'); // input persen, misal "45%"
