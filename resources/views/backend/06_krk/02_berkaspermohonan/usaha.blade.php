@@ -648,7 +648,7 @@ th {
         </button>
     @else
         <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
-        <a href="{{ route('permohonan.pengesahanusaha', $item->id) }}" style="text-decoration: none;">
+        <a href="{{ route('perusahamanual', $item->id) }}" style="text-decoration: none;">
             <button class="button-hijau"
                 onmouseover="this.style.backgroundColor='#D1FAE5'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"

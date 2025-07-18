@@ -3697,5 +3697,31 @@ public function permohonankrkhuniancreate(Request $request)
 }
 
 
+// BERKAS PENGESAHAN FUNGSI USAHA BANGUNAN GEDUNG
+public function perusahamanual($id)
+{
+    // Ambil data KRK Usaha berdasarkan ID atau gagal 404
+    $datakrkusaha = krkusaha::findOrFail($id);
+
+    // Ambil semua data GSB kabupaten dari rencanagsbblora tanpa scope/filter
+$datagsbkabblora = rencanagsbblora::withoutGlobalScopes()
+    ->orderByRaw("COALESCE(ruasjalan, '') ASC")
+    ->get();
+
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Kirimkan data ke view
+    return view('backend.06_krk.01_pengesahanusaha.manual', [
+        'title' => 'Lembar Pengesahan Permohonan KRK Fungsi Usaha (Manual)',
+        'data' => $datakrkusaha,
+        'datagsb' => $datagsbkabblora,
+        'user' => $user,
+    ]);
+}
+
+
+
 }
 

@@ -146,6 +146,8 @@ Route::post('/permohonanpengesahanusahacreate/{id}', [KrkController::class, 'per
 Route::get('/permohonanpengesahanusahaber/{id}', [KrkController::class, 'permohonanpengesahanusahaber'])->name('permohonan.permohonanpengesahanusahaber');
 Route::delete('/krkusahasuratdelete/{id}', [KrkController::class, 'destroykrkusahasurat'])->name('krkusahasurat.destroy');
 
+Route::get('/perusahamanual/{id}', [KrkController::class, 'perusahamanuala'])->name('perusahamanual');
+
 // Route::get('/permohonankrk', [KrkController::class, 'permohonankrk'])->middleware('auth');
 // -----------------------------------
 Route::get('/besuratpemohonkrk/{id}', [KrkController::class, 'besuratpemohonkrk'])->middleware('auth')->name('besuratpemohonkrk');
