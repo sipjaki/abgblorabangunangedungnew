@@ -546,7 +546,7 @@ th {
 {{-- Berkas PBG --}}
 <td style="text-align: left;">
     @if(!empty($item->berkaspbg))
-        <a href="/{{ $item->berkaspbg }}" target="_blank" class="button-baru">
+        <a href="/{{ $item->berkaspbg }}" target="_blank" class="button-hijau">
             <i class="bi bi-download me-1"></i> Download
         </a>
     @else
