@@ -992,4 +992,89 @@ public function dataallpenilikbgregsimbgnew(Request $request, $id)
     return redirect()->route('dataallpenilikbg.index');
 }
 
+
+public function dataallpenilikuploadpbg(Request $request, $id)
+{
+    $user = Auth::user();
+    $kecamatanList = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+
+    // Handle AJAX permintaan data kelurahan
+    if ($request->ajax() && $request->has('kecamatan_id')) {
+        $desa = kelurahandesa::where('kecamatanblora_id', $request->kecamatan_id)->get();
+        return response()->json($desa);
+    }
+
+    // Ambil data penilikbangunan berdasarkan ID
+    $penilik = penilikbangunan::findOrFail($id);
+
+    return view('backend.07_penilikbangunan.16_inputberkaspbg', [
+        'title' => 'Input Berkas Dokumen PBG Hasil Inspeksi Bangunan Gedung',
+        'user' => $user,
+        'datakelurahan' => $datakelurahan,
+        'kecamatanList' => $kecamatanList,
+        'penilik' => $penilik
+    ]);
+}
+
+public function dataallpenilikuploadpbgnew(Request $request, $id)
+{
+    // Validasi input, semua nullable biar fleksibel
+    $validated = $request->validate([
+        // 'namapemohon' => 'nullable|string|max:255',
+        // 'nik' => 'nullable|string|max:255',
+        // 'fungsibangunan' => 'nullable|string|max:255',
+        // 'subfungsibangunan' => 'nullable|string|max:255',
+
+        // 'provinsi' => 'nullable|string|max:255',
+        // 'kabupaten' => 'nullable|string|max:255',
+        // 'kecamatanblora_id' => 'nullable|string',
+        // 'kelurahandesa_id' => 'nullable|string',
+        // 'alamatlengkap' => 'nullable|string',
+        // 'koordinat' => 'nullable|string|max:255',
+
+        // 'namabangunan' => 'nullable|string|max:255',
+        // 'luasbangunan' => 'nullable|string|max:255',
+        // 'jumlahlantai' => 'nullable|string|max:255',
+        // 'gsb' => 'nullable|numeric',
+
+        // 'noregsimbg' => 'nullable|string|max:255',
+        // 'tanggalsimbg' => 'nullable|date',
+        // 'nokrk' => 'nullable|string|max:255',
+        // 'tanggalkrk' => 'nullable|date',
+        'nopbg' => 'nullable|string|max:255',
+        'tanggalpbg' => 'nullable|date',
+
+        'berkaspbg' => 'nullable|file|mimes:pdf|max:10120', // max 5MB
+    ]);
+
+    $penilik = penilikbangunan::findOrFail($id);
+
+    if ($request->hasFile('berkaspbg')) {
+        $file = $request->file('berkaspbg');
+
+        $destinationPath = public_path('07_penilikbangunan/03_berkaspbg');
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $filename = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
+
+        $file->move($destinationPath, $filename);
+
+        // Hapus file lama jika ada
+        if ($penilik->berkaspbg && file_exists(public_path($penilik->berkaspbg))) {
+            unlink(public_path($penilik->berkaspbg));
+        }
+
+        $validated['berkaspbg'] = '07_penilikbangunan/03_berkaspbg/' . $filename;
+    }
+
+    $penilik->update($validated);
+
+    session()->flash('update', 'Upload Berkas PBG Berhasil !');
+    return redirect()->route('dataallpenilikbg.index');
+}
+
+
 }

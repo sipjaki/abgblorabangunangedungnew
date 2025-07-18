@@ -516,8 +516,8 @@ th {
 
 
             <td style="text-align: center;">
-        <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
-                                            <i class="bi bi-pencil-square"></i> Input No PBG
+        <a href="/dataallpenilikuploadpbg/{{$item->id}}" class="button-berkas" title="Update">
+                                            <i class="bi bi-pencil-square"></i> Upload Berkas PBG
                                         </a>
 
 </td>
