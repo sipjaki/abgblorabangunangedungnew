@@ -618,7 +618,7 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
                         <td style="text-align: center;">2</td>
                         <td style="text-align: left;">Jumlah Lantai</td>
                         <td style="text-align: center;">:</td>
-                        <td style="text-align: left" >{{ $item->luaslantaimaksimal ?? '-' }}Lantai</td>
+                        <td style="text-align: left" >{{ $item->luaslantaimaksimal ?? '-' }} Lantai</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">3</td>
