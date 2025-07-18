@@ -541,13 +541,13 @@
                     });
 
                     // Luas Bangunan Calculator
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const luastanah = {{ $data->luastanah }};
-                        document.getElementById('kepadatan').addEventListener('change', function() {
-                            const persen = {RENDAH:0.45, SEDANG:0.6, TINGGI:0.75}[this.value] || 0;
-                            document.getElementById('luasbangunan').value = Math.round(luastanah * persen);
-                        });
-                    });
+                    // document.addEventListener('DOMContentLoaded', function() {
+                    //     const luastanah = {{ $data->luastanah }};
+                    //     document.getElementById('kepadatan').addEventListener('change', function() {
+                    //         const persen = {RENDAH:0.45, SEDANG:0.6, TINGGI:0.75}[this.value] || 0;
+                    //         document.getElementById('luasbangunan').value = Math.round(luastanah * persen);
+                    //     });
+                    // });
                 </script>
 {{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
