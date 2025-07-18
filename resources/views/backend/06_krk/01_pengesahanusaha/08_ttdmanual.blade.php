@@ -732,7 +732,7 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
         DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
 
-        <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
+        {{-- <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
             <!-- TTD Kabupaten Blora agak ke kanan -->
             <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
                  style="position: absolute; left: 10px; top: 0; height: 80px; z-index: 1;">
@@ -750,7 +750,7 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
   </span>
 </div>
 
-</div>
+</div> --}}
 </div>
 
 </div>
