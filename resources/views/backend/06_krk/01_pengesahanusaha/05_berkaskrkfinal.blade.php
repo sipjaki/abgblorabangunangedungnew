@@ -741,13 +741,15 @@ Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
             <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
                  style="position: absolute; right: 0; top: 0; height: 100px; z-index: 2;">
         </div><br><br>
-
-<strong style="margin-top: -25px; display: inline-block; text-decoration: underline;">
+<div style="display: inline-flex; flex-direction: column; gap: 0;">
+  <strong style="margin-top: -25px; text-decoration: underline; line-height: 1;">
     NIDZAMUDIN AL HUDA, ST
-</strong><br>
-<span style="margin-top: 0; line-height: 1; display: block;">
+  </strong>
+  <span style="line-height: 1; margin-top: 0;">
     NIP. 19720326 200604 1 005
-</span>
+  </span>
+</div>
+
 </div>
 </div>
 
