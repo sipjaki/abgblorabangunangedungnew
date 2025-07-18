@@ -249,11 +249,9 @@ th {
     <i class="bi bi-file-earmark-person text-primary me-1"></i> Surat Tugas
 </th>
 <th style="background-color: #ADD8E6;">
-    <i class="bi bi-camera text-primary me-1"></i> Dokumentasi Inspeksi
+    <i class="bi bi-camera text-primary me-1"></i> Inspeksi Pra
 </th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-camera text-primary me-1"></i> Dokumentasi Inspeksi
-</th>
+
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-hash text-primary me-1"></i> No Reg SIMBG
 </th>
@@ -266,6 +264,11 @@ th {
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-calendar-check text-primary me-1"></i> Tanggal KRK
 </th>
+
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-camera text-primary me-1"></i> Inspeksi Pasca
+</th>
+
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-file-earmark-text text-primary me-1"></i> No PBG
 </th>
@@ -461,14 +464,6 @@ th {
                 </a>
             </td>
 
-            <td style="text-align: center;">
-                    <a href="{{ route('dokpenilikpasca', $item->id) }}"
-                    class="button-baru">
-                <i class="bi bi-folder" style="margin-right: 5px;"></i> Pasca
-
-                </a>
-            </td>
-
 {{-- No Reg SIMBG --}}
 <td style="text-align: left;">
     @if(!empty($item->noregsimbg))
@@ -504,6 +499,15 @@ th {
         <span class="button-newvalidasi">On Progress</span>
     @endif
 </td>
+
+
+            <td style="text-align: center;">
+                    <a href="{{ route('dokpenilikpasca', $item->id) }}"
+                    class="button-baru">
+                <i class="bi bi-folder" style="margin-right: 5px;"></i> Pasca
+
+                </a>
+            </td>
 
 {{-- No PBG --}}
 <td style="text-align: left;">
