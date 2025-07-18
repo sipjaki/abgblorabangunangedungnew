@@ -221,11 +221,14 @@ th {
                 'title' => 'Nama Pemilik',
                 'value' => $data->namapemohon ?? '-',
             ],
-               [
-                'icon' => 'bi-ui-checks-grid',
-                'title' => 'Jenis Permohonan',
-                'value' => $data->jenispengajuanpbgslfper->jenispengajuan ?? '-' . $data->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' ,
-            ],
+[
+    'icon' => 'bi-ui-checks-grid',
+    'title' => 'Jenis Permohonan',
+    'value' =>
+        ($data->jenispengajuanpbgslfper->jenispengajuan ?? '-') .
+        ' - ' .
+        ($data->databangunanpbg->fungsibangunanpbg->fungsi ?? '-'),
+],
 
         [
                     'icon' => 'bi-file-earmark-text-fill',
