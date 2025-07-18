@@ -215,29 +215,35 @@ th {
        <!-- Left Column (6/12) -->
 <div class="row g-4">
 @php
-    $infoItems = [
+        $infoItems = [
+         [
+                'icon' => 'bi-person-fill-check',
+                'title' => 'Nama Pemilik',
+                'value' => $data->namapemohon ?? '-',
+            ],
+[
+    'icon' => 'bi-ui-checks-grid',
+    'title' => 'Jenis Permohonan',
+    'value' =>
+        ($data->jenispengajuanpbgslfper->jenispengajuan ?? '-') .
+        ' - ' .
+        ($data->databangunanpbg->fungsibangunanpbg->fungsi ?? '-'),
+],
+
         [
-            'icon' => 'bi-person-vcard-fill', // lebih cocok untuk NIK/KTP
-            'title' => 'Nomor Induk Kependudukan',
-            'value' => $data->nikktp ?? '-',
-        ],
-        [
-            'icon' => 'bi-calendar-event-fill', // ikon kalender yang lebih detail
-            'title' => 'Tanggal Permohonan',
-            'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
-        ],
-        [
-            'icon' => 'bi-house-gear-fill', // ikon rumah dengan pengaturan (klasifikasi bangunan)
-            'title' => 'Klasifikasi Bangunan',
-            'value' => $data->namapemohon ?? '-',
-        ],
-        [
-            'icon' => 'bi-telephone-fill', // ikon telepon langsung
-            'title' => 'Nomor Telepon',
-            'value' => $data->nomortelepon ?? '-',
-        ],
-    ];
-@endphp
+                    'icon' => 'bi-file-earmark-text-fill',
+                'title' => 'Nomor Registrasi SIM BG',
+                'value' => $data->noregissimbg ?? '-',
+            ],
+            [
+                'icon' => 'bi-calendar-date-fill',
+                'title' => 'Tanggal Permohonan',
+                'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
+            ],
+
+        ];
+    @endphp
+
 
 
 

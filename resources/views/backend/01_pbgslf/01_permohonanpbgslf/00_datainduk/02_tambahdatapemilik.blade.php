@@ -214,19 +214,21 @@ th {
        <!-- Left Column (6/12) -->
 <div class="row g-4">
 
-
-    @php
+@php
         $infoItems = [
          [
                 'icon' => 'bi-person-fill-check',
                 'title' => 'Nama Pemilik',
                 'value' => $data->namapemohon ?? '-',
             ],
-               [
-                'icon' => 'bi-ui-checks-grid',
-                'title' => 'Jenis Permohonan',
-                'value' => $data->jenispengajuanpbgslfper->jenispengajuan ?? '-',
-            ],
+[
+    'icon' => 'bi-ui-checks-grid',
+    'title' => 'Jenis Permohonan',
+    'value' =>
+        ($data->jenispengajuanpbgslfper->jenispengajuan ?? '-') .
+        ' - ' .
+        ($data->databangunanpbg->fungsibangunanpbg->fungsi ?? '-'),
+],
 
         [
                     'icon' => 'bi-file-earmark-text-fill',

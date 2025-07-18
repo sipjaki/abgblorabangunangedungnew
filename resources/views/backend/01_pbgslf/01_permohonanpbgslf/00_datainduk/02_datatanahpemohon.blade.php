@@ -213,19 +213,21 @@ th {
 
        <!-- Left Column (6/12) -->
 <div class="row g-4">
-
-    @php
+@php
         $infoItems = [
          [
                 'icon' => 'bi-person-fill-check',
-                'title' => 'Nama Pemohon',
+                'title' => 'Nama Pemilik',
                 'value' => $data->namapemohon ?? '-',
             ],
-               [
-                'icon' => 'bi-ui-checks-grid',
-                'title' => 'Jenis Permohonan',
-                'value' => $data->jenispengajuanpbgslfper->jenispengajuan ?? '-',
-            ],
+[
+    'icon' => 'bi-ui-checks-grid',
+    'title' => 'Jenis Permohonan',
+    'value' =>
+        ($data->jenispengajuanpbgslfper->jenispengajuan ?? '-') .
+        ' - ' .
+        ($data->databangunanpbg->fungsibangunanpbg->fungsi ?? '-'),
+],
 
         [
                     'icon' => 'bi-file-earmark-text-fill',
@@ -240,7 +242,8 @@ th {
 
         ];
     @endphp
-    @foreach ($infoItems as $item)
+
+@foreach ($infoItems as $item)
         <div class="col-md-6">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
