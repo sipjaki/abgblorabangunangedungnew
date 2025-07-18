@@ -766,38 +766,38 @@ public function dataallpenilikbgupdatenew(Request $request, $id)
         'jumlahlantai' => 'nullable|string|max:255',
         'gsb' => 'nullable|numeric',
 
-        'noregsimbg' => 'nullable|string|max:255',
-        'tanggalsimbg' => 'nullable|date',
-        'nokrk' => 'nullable|string|max:255',
-        'tanggalkrk' => 'nullable|date',
-        'nopbg' => 'nullable|string|max:255',
-        'tanggalpbg' => 'nullable|date',
+        // 'noregsimbg' => 'nullable|string|max:255',
+        // 'tanggalsimbg' => 'nullable|date',
+        // 'nokrk' => 'nullable|string|max:255',
+        // 'tanggalkrk' => 'nullable|date',
+        // 'nopbg' => 'nullable|string|max:255',
+        // 'tanggalpbg' => 'nullable|date',
 
-        'berkaspbg' => 'nullable|file|mimes:pdf|max:10120', // max 5MB
+        // 'berkaspbg' => 'nullable|file|mimes:pdf|max:10120', // max 5MB
     ]);
 
     $penilik = penilikbangunan::findOrFail($id);
 
     // Upload file berkas pbg jika ada
-    if ($request->hasFile('berkaspbg')) {
-        $file = $request->file('berkaspbg');
+    // if ($request->hasFile('berkaspbg')) {
+    //     $file = $request->file('berkaspbg');
 
-        $destinationPath = public_path('07_penilikbangunan/03_berkaspbg');
-        if (!file_exists($destinationPath)) {
-            mkdir($destinationPath, 0755, true);
-        }
+    //     $destinationPath = public_path('07_penilikbangunan/03_berkaspbg');
+    //     if (!file_exists($destinationPath)) {
+    //         mkdir($destinationPath, 0755, true);
+    //     }
 
-        $filename = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
+    //     $filename = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
 
-        $file->move($destinationPath, $filename);
+    //     $file->move($destinationPath, $filename);
 
-        // Hapus file lama jika ada
-        if ($penilik->berkaspbg && file_exists(public_path($penilik->berkaspbg))) {
-            unlink(public_path($penilik->berkaspbg));
-        }
+    //     // Hapus file lama jika ada
+    //     if ($penilik->berkaspbg && file_exists(public_path($penilik->berkaspbg))) {
+    //         unlink(public_path($penilik->berkaspbg));
+    //     }
 
-        $validated['berkaspbg'] = '07_penilikbangunan/03_berkaspbg/' . $filename;
-    }
+    //     $validated['berkaspbg'] = '07_penilikbangunan/03_berkaspbg/' . $filename;
+    // }
 
     $penilik->update($validated);
 
