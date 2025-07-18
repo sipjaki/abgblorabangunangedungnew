@@ -218,13 +218,13 @@ th {
         $infoItems = [
          [
                 'icon' => 'bi-person-fill-check',
-                'title' => 'Nama Pemohon',
+                'title' => 'Nama Pemilik',
                 'value' => $data->namapemohon ?? '-',
             ],
                [
                 'icon' => 'bi-ui-checks-grid',
                 'title' => 'Jenis Permohonan',
-                'value' => $data->jenispengajuanpbgslfper->jenispengajuan ?? '-',
+                'value' => $data->jenispengajuanpbgslfper->jenispengajuan ?? '-' . $data->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' ,
             ],
 
         [
