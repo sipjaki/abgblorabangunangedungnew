@@ -263,8 +263,13 @@ th {
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-file-earmark-code text-primary me-1"></i> No KRK
 </th>
+
 <th style="background-color: #ADD8E6;">
     <i class="bi bi-calendar-check text-primary me-1"></i> Tanggal KRK
+</th>
+
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-calendar-check text-primary me-1"></i> Input No PBG
 </th>
 
 <th style="background-color: #ADD8E6;">
@@ -508,6 +513,15 @@ th {
         <span class="button-newvalidasi">On Progress</span>
     @endif
 </td>
+
+
+            <td style="text-align: center;">
+        <a href="/dataallpenilikbgupdate/{{$item->id}}" class="button-berkas" title="Update">
+                                            <i class="bi bi-pencil-square"></i> Input Reg SIMBG
+                                        </a>
+
+</td>
+
 
 
             <td style="text-align: center;">
