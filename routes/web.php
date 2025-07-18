@@ -198,6 +198,7 @@ Route::put('/valberkasusaha3/{id}', [KrkController::class, 'valberkasusaha3'])->
 Route::put('/valberkasusaha4/{id}', [KrkController::class, 'valberkasusaha4'])->name('valberkasusaha4.update');
 
 Route::get('/permohonankrkusahafinal/{id}', [KrkController::class, 'permohonankrkusahafinal'])->name('permohonan.permohonankrkusahafinal');
+Route::get('/permohonankrkusahafinalmanual/{id}', [KrkController::class, 'permohonankrkusahafinalmanual'])->name('permohonankrkusahafinalmanual');
 
 Route::get('/krkusahanoterbit/{id}', [KrkController::class, 'krkusahanoterbit'])->middleware('auth')->name('krkusahanoterbit.create');
 Route::post('/krkusahanoterbitnew/{id}', [KrkController::class, 'krkusahanoterbitnew'])->middleware('auth')->name('create.krkusahanoterbitnew');
