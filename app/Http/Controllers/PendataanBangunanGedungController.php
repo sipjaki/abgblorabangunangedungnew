@@ -945,6 +945,51 @@ public function bedatabgstrukturupdate($id)
     ]);
 }
 
+public function bedatabgstrukturupdatenew(Request $request, $id)
+{
+    $validated = $request->validate([
+        'databgkepemilikan_id' => 'nullable|integer',
+        'struktur_bawah' => 'nullable|string|max:255',
+        'struktur_atas' => 'nullable|string|max:255',
+        'struktur_atap' => 'nullable|string|max:255',
+        'rangka_atap' => 'nullable|string|max:255',
+        'balok' => 'nullable|string|max:255',
+        'kolom' => 'nullable|string|max:255',
+        'pondasi' => 'nullable|string|max:255',
+        'dinding' => 'nullable|string|max:255',
+        'genteng' => 'nullable|string|max:255',
+        'plafon' => 'nullable|string|max:255',
+        'lantai' => 'nullable|string|max:255',
+        'pintu' => 'nullable|string|max:255',
+        'jendela' => 'nullable|string|max:255',
+    ], [
+        '*.max' => 'Maksimal 255 karakter.',
+        'databgkepemilikan_id.integer' => 'ID Kepemilikan harus berupa angka.',
+    ]);
+
+    $klasifikasi = databgklasifikasi::findOrFail($id);
+
+    $klasifikasi->update([
+        'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? null,
+        'struktur_bawah' => $validated['struktur_bawah'] ?? null,
+        'struktur_atas' => $validated['struktur_atas'] ?? null,
+        'struktur_atap' => $validated['struktur_atap'] ?? null,
+        'rangka_atap' => $validated['rangka_atap'] ?? null,
+        'balok' => $validated['balok'] ?? null,
+        'kolom' => $validated['kolom'] ?? null,
+        'pondasi' => $validated['pondasi'] ?? null,
+        'dinding' => $validated['dinding'] ?? null,
+        'genteng' => $validated['genteng'] ?? null,
+        'plafon' => $validated['plafon'] ?? null,
+        'lantai' => $validated['lantai'] ?? null,
+        'pintu' => $validated['pintu'] ?? null,
+        'jendela' => $validated['jendela'] ?? null,
+    ]);
+
+    session()->flash('update', 'Data struktur bangunan berhasil diperbarui!');
+    return redirect()->back();
+}
+
 
 }
 
