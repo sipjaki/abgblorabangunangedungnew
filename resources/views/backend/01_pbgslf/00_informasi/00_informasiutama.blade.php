@@ -345,7 +345,7 @@
 <div class="row g-4">
 
   <div class="col-6 col-md-3">
-    <a href="/pbg-fungsi-campuran" style="text-decoration: none;">
+    <a href="/fungsicampuran" style="text-decoration: none;">
       <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
            style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
         <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"

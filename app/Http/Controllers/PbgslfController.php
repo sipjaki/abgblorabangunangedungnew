@@ -17,6 +17,7 @@ use App\Models\dokumenteknisstruk;
 use App\Models\fasilitatorpbg;
 use App\Models\fungsibangunanpbg;
 use App\Models\gambarbantuan;
+use App\Models\infopbg1;
 use App\Models\jenispengajuanpbgslfper;
 use App\Models\jenisperkonsultasi;
 use App\Models\kecamatanblora;
@@ -3748,15 +3749,17 @@ public function history(Request $request)
     public function bepbgslfinformasi(Request $request)
 {
     $user = Auth::user();
+    $data = infopbg1::all();
     // $perPage = $request->input('perPage', 20);
 
 
 // -----------------------------------------
 
-    return view('backend.01_pbgslf.00_informasi.00_informasiutama', [
-        'title' => 'Informasi Permohonan PBG/SLF Bangunan Gedung',
+    return view('backend.01_pbgslf.00_informasi.01_fungsicampuran', [
+        'title' => 'Informasi Permohonan PBG Fungsi Campuran',
         // 'data' => $dataTanpaIdSatu,
         'user' => $user,
+        'data' => $data,
 
         // 'datasemua' => $dataTanpaIdSatu,
     ]);
