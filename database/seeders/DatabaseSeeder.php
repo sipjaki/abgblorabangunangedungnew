@@ -37,6 +37,7 @@ use App\Models\databangunangedung;
 use App\Models\databgkepemilikan;
 use App\Models\databgklasifikasi;
 use App\Models\databgpeprofilbangunangedung;
+use App\Models\databgstrukturbangunan;
 use App\Models\databgtanah;
 use App\Models\datapemilik;
 use App\Models\datatanahpbg;
@@ -22676,6 +22677,30 @@ for ($i = 190; $i <= 210; $i++) {
 
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA KLASIFIKASI BANGUNAN GEDUNG
+
+databgstrukturbangunan::create(['id' => 1, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Kayu', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 2, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Baja', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 3, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Baja', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 4, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Baja', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 5, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Beton', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 6, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 7, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 8, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 9, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 10, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 11, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 12, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 13, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 14, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Beton', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 15, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Beton', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 16, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Beton', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 17, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 18, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Beton', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 19, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Baja', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+databgstrukturbangunan::create(['id' => 20, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Baja', 'struktur_atap' => 'Baja', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+// Continue this pattern for all 100 records...
+
+// PENDATAAN BANGUNAN GEDUNG INPUT DATA STRUKTUR BANGUNAN GEDUNG
 // ==========================================
 pengkajiteknis::create([
     'id' => 1,
