@@ -46,6 +46,7 @@ use App\Models\fasilitatorpbg;
 use App\Models\fungsibangunangambar;
 use App\Models\fungsibangunanpbg;
 use App\Models\gambarbantuan;
+use App\Models\infopbg1;
 use App\Models\jenispengajuanbantek;
 use App\Models\jenispengajuanpbgslf;
 use App\Models\jenispengajuanpbgslfper;
@@ -22983,6 +22984,17 @@ pengkajiteknis::create([
     'subklasifikasi' => 'Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian (AR001), Jasa Desain Interior pada Bangunan Gedung dan Bangunan Sipil (AR003)',
     'pengalaman' => 'Konsultan Persetujuan Bangunan Gedung (PBG) Bangunan Batching Plan PT MITRA GARUDA NUSANTARA Jl. Blora-Cepu Km 28 Sambong Blora',
 ]);
+
+
+// ----------------------------------------------------------------------
+infopbg1::create([
+    'id' => 1,
+    'judul' => 'Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran',
+    'berkas' => '/assets/abgblora/logo/pbgslf/PBG_FUNGSI_CAMPURAN.png',
+    'keterangan' => '-',
+    'infolanjut' => '-',
+]);
+
 
 
 
