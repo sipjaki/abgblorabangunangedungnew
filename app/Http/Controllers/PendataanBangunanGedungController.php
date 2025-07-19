@@ -967,7 +967,7 @@ public function bedatabgstrukturupdatenew(Request $request, $id)
         'databgkepemilikan_id.integer' => 'ID Kepemilikan harus berupa angka.',
     ]);
 
-    $klasifikasi = databgklasifikasi::findOrFail($id);
+    $klasifikasi = databgstrukturbangunan::findOrFail($id);
 
     $klasifikasi->update([
         'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? null,
