@@ -81,12 +81,22 @@ Route::delete('/bebangunangedungdelete/{id}', [PendataanBangunanGedungController
 Route::get('/bependataanbgtanah/{id}', [PendataanBangunanGedungController::class, 'bependataanbgtanah'])->middleware('auth')->name('bependataanbgtanah');
 
 // 01 PENDATAAN BANGUNAN GEDUNG PROFIL STATUS TANAH
+
 Route::get('/bedatabgprofiltanah/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanah'])->middleware('auth')->name('bedatabgprofiltanah');
 Route::get('/bedatabgprofiltanahupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahupdate'])->middleware('auth')->name('bedatabgprofiltanahupdate');
 Route::put('/bedatabgprofiltanahupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahupdatenew'])->middleware('auth')->name('bedatabgprofiltanahupdatenew');
 
 Route::get('/bedatabgprofiltanahcreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahcreate'])->middleware('auth')->name('bedatabgprofiltanahcreate');
 Route::post('/bedatabgprofiltanahcreatenew', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahcreatenew'])->middleware('auth')->name('bedatabgprofiltanahcreatenew');
+
+// 02 PENDATAAN BANGUNAN GEDUNG PROFIL DATA BANGUNAN GEDUNG
+
+Route::get('/bedatabgprofilbangunan/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofilbangunan'])->middleware('auth')->name('bedatabgprofilbangunan');
+// Route::get('/bedatabgprofiltanahupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahupdate'])->middleware('auth')->name('bedatabgprofiltanahupdate');
+// Route::put('/bedatabgprofiltanahupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahupdatenew'])->middleware('auth')->name('bedatabgprofiltanahupdatenew');
+
+// Route::get('/bedatabgprofiltanahcreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahcreate'])->middleware('auth')->name('bedatabgprofiltanahcreate');
+// Route::post('/bedatabgprofiltanahcreatenew', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahcreatenew'])->middleware('auth')->name('bedatabgprofiltanahcreatenew');
 
 // Route::delete('/bepbgdatapemilikdelete/{id}', [PbgslfController::class, 'bepbgdatapemilikdelete'])->middleware('auth')->name('bepbgdatapemilikdelete');
 

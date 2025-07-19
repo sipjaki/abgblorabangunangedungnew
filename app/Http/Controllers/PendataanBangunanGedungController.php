@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\bgkartuinventarisbangunan;
 use App\Models\databangunangedung;
 use App\Models\databgkepemilikan;
+use App\Models\databgpeprofilbangunangedung;
 use App\Models\databgtanah;
 use App\Models\kepemilikanbangunangedung;
 use App\Models\pbgslfbangunan;
@@ -590,6 +591,35 @@ public function bedatabgprofiltanahcreatenew(Request $request)
 
     session()->flash('create', 'Data tanah berhasil ditambahkan!');
     return redirect()->route('bedatabgprofiltanah', ['id' => $validated['databgkepemilikan_id']]);
+}
+
+public function bedatabgprofilbangunan($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Cari data pbg berdasarkan ID
+    $data = databgkepemilikan::findOrFail($id);
+
+    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
+    $subdatapemilik = databgpeprofilbangunangedung::where('databgkepemilikan_id', $data->id)->paginate(15);
+
+    // Hitung nomor urut mulai untuk paginasi
+    $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+
+    // Ambil data jenis pengajuan
+    // $datapbgslf = jenispengajuanpbgslfper::all();
+
+    // Kirim data ke view
+    return view('backend.02_pendataanbangunangedung.03_profilbangunangedung.01_dataprofilbangunan', [
+        'title' => 'Informasi Data Profil Bangunan Gedung',
+        'title_halaman' => 'Informasi Data Profil Bangunan Gedung',
+        'user' => $user,
+        'data' => $data,
+        // 'datapbgslf' => $datapbgslf,
+        'subdatapemilik' => $subdatapemilik,
+        'start' => $start,
+    ]);
 }
 
 
