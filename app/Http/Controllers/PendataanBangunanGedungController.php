@@ -1008,5 +1008,48 @@ public function bedatabgstrukturcreate($id)
     ]);
 }
 
+public function bedatabgstrukturcreatenew(Request $request)
+{
+    $validated = $request->validate([
+        'databgkepemilikan_id' => 'required|string',
+        'struktur_bawah' => 'nullable|string|max:100',
+        'struktur_atas' => 'nullable|string|max:100',
+        'struktur_atap' => 'nullable|string|max:100',
+        'rangka_atap' => 'nullable|string|max:100',
+        'balok' => 'nullable|string|max:100',
+        'kolom' => 'nullable|string|max:100',
+        'pondasi' => 'nullable|string|max:100',
+        'dinding' => 'nullable|string|max:100',
+        'genteng' => 'nullable|string|max:100',
+        'plafon' => 'nullable|string|max:100',
+        'lantai' => 'nullable|string|max:100',
+        'pintu' => 'nullable|string|max:100',
+        'jendela' => 'nullable|string|max:100',
+    ], [
+        'databgkepemilikan_id.required' => 'ID Kepemilikan wajib diisi.',
+        'databgkepemilikan_id.exists' => 'Data kepemilikan tidak ditemukan.',
+    ]);
+
+    databgstrukturbangunan::create([
+        'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
+        'struktur_bawah' => $validated['struktur_bawah'] ?? null,
+        'struktur_atas' => $validated['struktur_atas'] ?? null,
+        'struktur_atap' => $validated['struktur_atap'] ?? null,
+        'rangka_atap' => $validated['rangka_atap'] ?? null,
+        'balok' => $validated['balok'] ?? null,
+        'kolom' => $validated['kolom'] ?? null,
+        'pondasi' => $validated['pondasi'] ?? null,
+        'dinding' => $validated['dinding'] ?? null,
+        'genteng' => $validated['genteng'] ?? null,
+        'plafon' => $validated['plafon'] ?? null,
+        'lantai' => $validated['lantai'] ?? null,
+        'pintu' => $validated['pintu'] ?? null,
+        'jendela' => $validated['jendela'] ?? null,
+    ]);
+
+    session()->flash('create', 'Data struktur bangunan berhasil ditambahkan!');
+    return redirect()->route('bedatabgstruktur', ['id' => $validated['databgkepemilikan_id']]);
+}
+
 }
 

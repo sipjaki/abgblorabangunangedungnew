@@ -332,13 +332,13 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Informasi Data Profil Bangunan Gedung
+    Informasi Data Struktur Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('bedatabgklasifikasicreatenew') }}" method="POST">
+<form id="formPemilik" action="{{ route('bedatabgstrukturcreatenew') }}" method="POST">
     @csrf
     <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
