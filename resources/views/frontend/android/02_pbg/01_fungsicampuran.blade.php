@@ -43,14 +43,14 @@
   <!-- Gambar Thumbnail Penuh -->
   <div class="w-full h-auto rounded-lg overflow-hidden">
 <div style="margin-top: 10px;">
-    @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
-        <a href="{{ asset('storage/' . $data->berkas) }}" target="_blank" style="text-decoration: none; color: inherit;">
+    @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+        <a href="{{ asset('storage/' . $item->berkas) }}" target="_blank" style="text-decoration: none; color: inherit;">
             <i class="bi bi-file-earmark-pdf-fill" style="font-size: 48px; color: #dc3545;"></i>
             <br>
             <span style="font-weight: 600; font-family: 'Poppins', sans-serif;">Berkas</span>
         </a>
-    @elseif($data->berkas)
-        <a href="{{ asset($data->berkas) }}" target="_blank" style="text-decoration: none; color: inherit;">
+    @elseif($item->berkas)
+        <a href="{{ asset($item->berkas) }}" target="_blank" style="text-decoration: none; color: inherit;">
             <i class="bi bi-file-earmark-pdf-fill" style="font-size: 48px; color: #dc3545;"></i>
             <br>
             <span style="font-weight: 600; font-family: 'Poppins', sans-serif;">Berkas</span>
