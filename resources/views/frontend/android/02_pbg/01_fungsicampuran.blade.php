@@ -44,18 +44,12 @@
         <!-- Gambar Thumbnail Penuh -->
         <div class="w-full h-auto rounded-lg overflow-hidden">
     <div style="margin-top: 10px;">
-    @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
-        <a href="{{ asset('storage/' . $item->berkas) }}" target="_blank" style="text-decoration: none; color: inherit;">
-            <img src="{{ asset('images/pdf-icon.png') }}" alt="Berkas PDF" style="width: 48px; height: 48px;">
-            <br>
-            <span style="font-weight: 600; font-family: 'Poppins', sans-serif;">Berkas</span>
-        </a>
-    @elseif($item->berkas)
-        <a href="{{ asset($item->berkas) }}" target="_blank" style="text-decoration: none; color: inherit;">
-            <img src="{{ asset('images/pdf-icon.png') }}" alt="Berkas PDF" style="width: 48px; height: 48px;">
-            <br>
-            <span style="font-weight: 600; font-family: 'Poppins', sans-serif;">Berkas</span>
-        </a>
+
+       <div style="margin-top: 10px;">
+    @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
+        <img src="{{ asset('storage/' . $data->berkas) }}" alt="Berkas" style="width: 100%; height: 300px; object-fit: contain;" />
+    @elseif($data->berkas)
+        <img src="{{ asset($data->berkas) }}" alt="Berkas" style="width: 100%; height: 300px; object-fit: contain;" />
     @else
         <p style="font-family: 'Poppins', sans-serif; font-weight: 600;">Data belum diupdate</p>
     @endif
