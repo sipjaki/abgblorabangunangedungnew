@@ -21290,6 +21290,7 @@ $datakoordinat = [
     ['id' => 50, 'lat' => -6.973387,  'lng' => 111.410898],
 ];
 
+
 foreach ($datakoordinat as $item) {
     databgkepemilikan::updateOrCreate(
         ['id' => $item['id']],
