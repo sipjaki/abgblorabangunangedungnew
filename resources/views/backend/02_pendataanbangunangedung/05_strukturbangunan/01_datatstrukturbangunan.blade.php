@@ -252,32 +252,73 @@ th {
 @php
     $infoItems = [
         [
+            'icon' => 'bi-house-door',
+            'title' => 'Struktur Bawah',
+            'value' => $pemilik->struktur_bawah ?? '-',
+        ],
+        [
+            'icon' => 'bi-house',
+            'title' => 'Struktur Atas',
+            'value' => $pemilik->struktur_atas ?? '-',
+        ],
+        [
+            'icon' => 'bi-house-add',
+            'title' => 'Struktur Atap',
+            'value' => $pemilik->struktur_atap ?? '-',
+        ],
+        [
             'icon' => 'bi-diagram-3',
-            'title' => 'Tingkat Kompleksitas',
-            'value' => $pemilik->tingkat_kompleksitas ?? '-',
+            'title' => 'Rangka Atap',
+            'value' => $pemilik->rangka_atap ?? '-',
         ],
         [
-            'icon' => 'bi-building-lock',
-            'title' => 'Tingkat Permanensi',
-            'value' => $pemilik->tingkat_permanensi ?? '-',
+            'icon' => 'bi-border-width',
+            'title' => 'Balok',
+            'value' => $pemilik->balok ?? '-',
         ],
         [
-            'icon' => 'bi-fire',
-            'title' => 'Resiko Kebakaran',
-            'value' => $pemilik->resiko_kebakaran ?? '-',
+            'icon' => 'bi-columns-gap',
+            'title' => 'Kolom',
+            'value' => $pemilik->kolom ?? '-',
         ],
         [
-            'icon' => 'bi-activity',
-            'title' => 'Resiko Gempa',
-            'value' => $pemilik->resiko_gempa ?? '-',
+            'icon' => 'bi-box',
+            'title' => 'Pondasi',
+            'value' => $pemilik->pondasi ?? '-',
         ],
         [
-            'icon' => 'bi-people-fill',
-            'title' => 'Kepadatan Lokasi',
-            'value' => $pemilik->kepadatan_lokasi ?? '-',
+            'icon' => 'bi-bricks',
+            'title' => 'Dinding',
+            'value' => $pemilik->dinding ?? '-',
+        ],
+        [
+            'icon' => 'bi-cloud',
+            'title' => 'Genteng',
+            'value' => $pemilik->genteng ?? '-',
+        ],
+        [
+            'icon' => 'bi-menu-button-wide',
+            'title' => 'Plafon',
+            'value' => $pemilik->plafon ?? '-',
+        ],
+        [
+            'icon' => 'bi-grid-1x2',
+            'title' => 'Lantai',
+            'value' => $pemilik->lantai ?? '-',
+        ],
+        [
+            'icon' => 'bi-door-open',
+            'title' => 'Pintu',
+            'value' => $pemilik->pintu ?? '-',
+        ],
+        [
+            'icon' => 'bi-windows',
+            'title' => 'Jendela',
+            'value' => $pemilik->jendela ?? '-',
         ],
     ];
 @endphp
+
 
         <div class="col-12 mb-4 mt-5">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
