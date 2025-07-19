@@ -247,40 +247,30 @@ th {
 
 <div class="row g-4">
     @forelse ($subdatapemilik as $pemilik)
-        @php
-            $infoItems = [
-                [
-                    'icon' => 'bi-person-badge-fill',
-                    'title' => 'Nama Pemilik',
-                    'value' => $pemilik->namapemilik ?? '-',
-                ],
-                [
-                    'icon' => 'bi-geo-alt-fill',
-                    'title' => 'Alamat Pemilik',
-                    'value' => $pemilik->alamatpemilik ?? '-',
-                ],
-                [
-                    'icon' => 'bi-telephone-fill',
-                    'title' => 'Nomor Telepon',
-                    'value' => $pemilik->nomortelepon ?? '-',
-                ],
-                [
-                    'icon' => 'bi-envelope-fill',
-                    'title' => 'Email',
-                    'value' => $pemilik->email ?? '-',
-                ],
-                [
-                    'icon' => 'bi-credit-card-2-front-fill',
-                    'title' => 'No Identitas',
-                    'value' => $pemilik->noidentitas ?? '-',
-                ],
-                [
-                    'icon' => 'bi-check2-circle',
-                    'title' => 'Pilihan Catatan',
-                    'value' => $pemilik->pilihancatatan ?? '-',
-                ],
-            ];
-        @endphp
+@php
+    $infoItems = [
+        [
+            'icon' => 'bi-geo-fill',
+            'title' => 'Status Hak Tanah',
+            'value' => $pemilik->statushaktanah ?? '-',
+        ],
+        [
+            'icon' => 'bi-person-badge',
+            'title' => 'Status Kepemilikan',
+            'value' => $pemilik->statuskepemilikan ?? '-',
+        ],
+        [
+            'icon' => 'bi-card-text',
+            'title' => 'No Bukti Kepemilikan',
+            'value' => $pemilik->nobuktikepemilikan ?? '-',
+        ],
+        [
+            'icon' => 'bi-house-door-fill',
+            'title' => 'Alamat Tanah',
+            'value' => $pemilik->alamattanah ?? '-',
+        ],
+    ];
+@endphp
 
         <div class="col-12 mb-4 mt-5">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
