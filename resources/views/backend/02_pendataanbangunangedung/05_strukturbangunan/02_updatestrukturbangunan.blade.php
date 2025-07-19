@@ -354,12 +354,8 @@ th {
     <label class="form-label">
         <i class="bi bi-house-door-fill me-1" style="color: blue;"></i> Struktur Bawah
     </label>
-    <select name="struktur_bawah" class="form-select @error('struktur_bawah') is-invalid @enderror">
-        <option value="">-- Pilih --</option>
-        @foreach(['Kayu', 'Beton', 'Baja', 'Lainnya'] as $val)
-            <option value="{{ $val }}" {{ old('struktur_bawah', $data->struktur_bawah) == $val ? 'selected' : '' }}>{{ $val }}</option>
-        @endforeach
-    </select>
+    <input type="text" name="struktur_bawah" class="form-control @error('struktur_bawah') is-invalid @enderror"
+           value="{{ old('struktur_bawah', $data->struktur_bawah) }}">
     @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -376,12 +372,30 @@ th {
     </select>
     @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+{{-- Struktur Atap --}}
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-building me-1" style="color: blue;"></i> Struktur Atap
+    </label>
+    <select name="struktur_atap" class="form-select @error('struktur_atap') is-invalid @enderror">
+        <option value="">-- Pilih --</option>
+        @foreach(['Kayu', 'Beton', 'Baja', 'Lainnya'] as $val)
+            <option value="{{ $val }}" {{ old('struktur_atap', $data->struktur_atap) == $val ? 'selected' : '' }}>
+                {{ $val }}
+            </option>
+        @endforeach
+    </select>
+    @error('struktur_atap')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
 
 {{-- Komponen Bangunan Lainnya --}}
 @php
     $opsiKondisi = ['Baik', 'T1', 'T2', 'T3', 'T4'];
     $atributKomponen = [
-        'struktur_atap' => 'Struktur Atap',
+        // 'struktur_atap' => 'Struktur Atap',
         'rangka_atap'   => 'Rangka Atap',
         'balok'         => 'Balok',
         'kolom'         => 'Kolom',
