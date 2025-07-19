@@ -20,12 +20,28 @@
         <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
           <div class="flex p-4 items-center gap-4">
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
-              <div class="flex items-center">
-                <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="photo">
-                </div>
-              </div>
-              <div class="flex flex-col flex-1 gap-[2px] text-left">
+
+       @foreach ($data as $item)
+
+<div class="flex flex-col space-y-3 px-[18px]">
+    <!-- Card 1 -->
+    <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+        <!-- Gambar Thumbnail Penuh -->
+        <div class="w-full h-auto rounded-lg overflow-hidden">
+
+       <div >
+    @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+        <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain;" />
+    @elseif($item->berkas)
+        <img src="{{ asset($item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain;" />
+    @else
+        <p style="font-family: 'Poppins', sans-serif; font-weight: 600;">Data belum diupdate</p>
+    @endif
+</div>
+
+@endforeach
+
+<div class="flex flex-col flex-1 gap-[2px] text-left">
                 <p class="font-semibold">{{$title}}</p>
                 {{-- <p class="font-medium text-xs leading-[18px] text-[#757C98]">Contact Details</p> --}}
               </div>
