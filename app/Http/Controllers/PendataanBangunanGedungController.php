@@ -570,10 +570,10 @@ public function bedatabgprofiltanahcreatenew(Request $request)
     $validated = $request->validate([
         // 'id' => 'required|string',
         'databgkepemilikan_id' => 'required|string',
-        'statushaktanah' => 'nullable|string|max:100',
-        'statuskepemilikan' => 'nullable|string|max:100',
-        'nobuktikepemilikan' => 'nullable|string|max:100',
-        'alamattanah' => 'nullable|string|max:255',
+        'statushaktanah' => 'required|string|max:100',
+        'statuskepemilikan' => 'required|string|max:100',
+        'nobuktikepemilikan' => 'required|string|max:100',
+        'alamattanah' => 'required|string|max:255',
     ], [
         'databgkepemilikan_id.required' => 'ID Kepemilikan wajib diisi.',
         'databgkepemilikan_id.exists' => 'Data kepemilikan tidak ditemukan.',
