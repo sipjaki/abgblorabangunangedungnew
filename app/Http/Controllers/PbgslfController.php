@@ -3744,4 +3744,22 @@ public function history(Request $request)
     return response()->json(['status' => 'ok']);
 }
 
+
+    public function bepbgslfinformasi(Request $request)
+{
+    $user = Auth::user();
+    // $perPage = $request->input('perPage', 20);
+
+
+// -----------------------------------------
+
+    return view('backend.01_pbgslf.00_informasi.00_informasiutama', [
+        'title' => 'Informasi Permohonan PBG/SLF Bangunan Gedung',
+        // 'data' => $dataTanpaIdSatu,
+        'user' => $user,
+
+        // 'datasemua' => $dataTanpaIdSatu,
+    ]);
+}
+
 }

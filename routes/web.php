@@ -909,6 +909,8 @@ Route::delete('/dokbebanhibahdelete/{id}', [BantuanhibahbgController::class, 'do
 
 // -----------------------------------------------------------------
 // MENU 01 PBG SLF
+Route::get('/bepbgslfinformasi', [PbgslfController::class, 'bepbgslfinformasi'])->middleware('auth')->name('bepbgslfinformasi');
+
 Route::get('/bepbgslfindex', [PbgslfController::class, 'bepbgslfindexmenu'])->middleware('auth')->name('bepbgslfindexindexmenu');
 Route::get('/bepbgslfindexslf', [PbgslfController::class, 'bepbgslfindexslf'])->middleware('auth')->name('bepbgslfindexslfindex');
 Route::get('/bepbgslfindexslfper2', [PbgslfController::class, 'bepbgslfindexslfper2'])->middleware('auth')->name('bepbgslfindexslfper2');
