@@ -35,6 +35,7 @@ use App\Models\kedinasan;
 use App\Models\kodelokasibangunangedung;
 use App\Models\databangunangedung;
 use App\Models\databgkepemilikan;
+use App\Models\databgklasifikasi;
 use App\Models\databgpeprofilbangunangedung;
 use App\Models\databgtanah;
 use App\Models\datapemilik;
@@ -22578,6 +22579,40 @@ databgpeprofilbangunangedung::create(['id'=>95,'databgkepemilikan_id'=>95,'luast
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL BANGUNAN GEDUNG
 
+// databgklasifikasi::create([
+//     'id'=>1,
+//     'databgkepemilikan_id'=>1,
+//     'tingkat_kompleksitas'=>'',
+//     'tingkat_permanensi'=>'',
+//     'resiko_kebakaran'=>'',
+//     'resiko_gempa'=>'',
+//     'kepadatan_lokasi'=>'',
+// ]);
+
+// Record 1 (Special case)
+databgklasifikasi::create([
+    'id' => 1,
+    'databgkepemilikan_id' => 1,
+    'tingkat_kompleksitas' => 'Sederhana',
+    'tingkat_permanensi' => 'Permanen',
+    'resiko_kebakaran' => 'Sedang',
+    'resiko_gempa' => 'Zona 3',
+    'kepadatan_lokasi' => 'Sedang'
+]);
+
+// Records 2-114 (Loop with same values except IDs)
+for ($i = 2; $i <= 114; $i++) {
+    databgklasifikasi::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Sedang'
+    ]);
+}
+// PENDATAAN BANGUNAN GEDUNG INPUT DATA KLASIFIKASI BANGUNAN GEDUNG
 // ==========================================
 pengkajiteknis::create([
     'id' => 1,
