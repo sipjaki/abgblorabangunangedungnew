@@ -237,7 +237,7 @@ th {
         @endif
     </div> --}}
 </div>
-<br><hr>
+<br><hr><br>
 
 {{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas') --}}
 @include('backend.02_pendataanbangunangedung.00_fiturbg.02_datasemuabangunan')
