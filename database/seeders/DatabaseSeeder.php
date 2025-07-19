@@ -21237,7 +21237,7 @@ databgkepemilikan::create(['id' => 973, 'user_id' => 46, 'kecamatanblora_id' => 
 
 // koordinat baru
 
-$data = [
+$datakoordinat = [
     ['id' => 1,  'lat' => -6.93392,   'lng' => 111.375718],
     ['id' => 2,  'lat' => -6.974108,  'lng' => 111.415106],
     ['id' => 3,  'lat' => -6.974108,  'lng' => 111.415106],
@@ -21290,7 +21290,7 @@ $data = [
     ['id' => 50, 'lat' => -6.973387,  'lng' => 111.410898],
 ];
 
-foreach ($data as $item) {
+foreach ($datakoordinat as $item) {
     databgkepemilikan::updateOrCreate(
         ['id' => $item['id']],
         ['koordinat' => $item['lat'] . ', ' . $item['lng']]
