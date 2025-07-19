@@ -22614,18 +22614,18 @@ for ($i = 2; $i <= 114; $i++) {
 }
 
 
-// Records 115-132 (Khusus pattern)
-for ($i = 115; $i <= 132; $i++) {
-    databgklasifikasi::create([
-        'id' => $i,
-        'databgkepemilikan_id' => $i,
-        'tingkat_kompleksitas' => 'Khusus',
-        'tingkat_permanensi' => 'Permanen',
-        'resiko_kebakaran' => 'Rendah',
-        'resiko_gempa' => 'Zona 3',
-        'kepadatan_lokasi' => 'Sedang'
-    ]);
-}
+// // Records 115-132 (Khusus pattern)
+// for ($i = 115; $i <= 132; $i++) {
+//     databgklasifikasi::create([
+//         'id' => $i,
+//         'databgkepemilikan_id' => $i,
+//         'tingkat_kompleksitas' => 'Khusus',
+//         'tingkat_permanensi' => 'Permanen',
+//         'resiko_kebakaran' => 'Rendah',
+//         'resiko_gempa' => 'Zona 3',
+//         'kepadatan_lokasi' => 'Sedang'
+//     ]);
+// }
 
 // Records 115-132 (Khusus pattern)
 for ($i = 115; $i <= 132; $i++) {
