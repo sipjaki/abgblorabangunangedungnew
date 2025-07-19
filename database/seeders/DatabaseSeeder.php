@@ -37,6 +37,7 @@ use App\Models\databangunangedung;
 use App\Models\databgkepemilikan;
 use App\Models\databgklasifikasi;
 use App\Models\databgpeprofilbangunangedung;
+use App\Models\databgstatus;
 use App\Models\databgstrukturbangunan;
 use App\Models\databgtanah;
 use App\Models\datapemilik;
@@ -22700,6 +22701,18 @@ databgstrukturbangunan::create(['id' => 20, 'databgkepemilikan_id' => 20, 'struk
 // Continue this pattern for all 100 records...
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA STRUKTUR BANGUNAN GEDUNG
+for ($i = 1; $i <= 598; $i++) {
+    \App\Models\databgstatus::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'dokumen_teknis_tanah' => 'Tidak Mengetahui',
+        'no_hdno' => '33.16.09.' . str_pad($i, 4, '0', STR_PAD_LEFT),
+        'no_imbpbg' => 'Tidak Mengetahui',
+        'no_slf' => 'Tidak Mengetahui',
+    ]);
+}
+
+// PENDATAAN BANGUNAN GEDUNG INPUT DATA STATUS  BANGUNAN GEDUNG
 // ==========================================
 pengkajiteknis::create([
     'id' => 1,
