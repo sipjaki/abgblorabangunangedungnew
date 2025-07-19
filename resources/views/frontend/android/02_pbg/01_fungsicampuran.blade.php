@@ -43,23 +43,23 @@
     <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
         <!-- Gambar Thumbnail Penuh -->
         <div class="w-full h-auto rounded-lg overflow-hidden">
-            <div style="margin-top: 10px;">
-                @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
-                <a href="{{ asset('storage/' . $item->berkas) }}" target="_blank" style="text-decoration: none; color: inherit;">
-                    <i class="bi bi-file-earmark-pdf-fill" style="font-size: 48px; color: #dc3545;"></i>
-                    <br>
-                    <span style="font-weight: 600; font-family: 'Poppins', sans-serif;">Berkas</span>
-        </a>
-        @elseif($item->berkas)
-        <a href="{{ asset($item->berkas) }}" target="_blank" style="text-decoration: none; color: inherit;">
-            <i class="bi bi-file-earmark-pdf-fill" style="font-size: 48px; color: #dc3545;"></i>
+    <div style="margin-top: 10px;">
+    @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+        <a href="{{ asset('storage/' . $item->berkas) }}" target="_blank" style="text-decoration: none; color: inherit;">
+            <img src="{{ asset('images/pdf-icon.png') }}" alt="Berkas PDF" style="width: 48px; height: 48px;">
             <br>
             <span style="font-weight: 600; font-family: 'Poppins', sans-serif;">Berkas</span>
         </a>
-        @else
+    @elseif($item->berkas)
+        <a href="{{ asset($item->berkas) }}" target="_blank" style="text-decoration: none; color: inherit;">
+            <img src="{{ asset('images/pdf-icon.png') }}" alt="Berkas PDF" style="width: 48px; height: 48px;">
+            <br>
+            <span style="font-weight: 600; font-family: 'Poppins', sans-serif;">Berkas</span>
+        </a>
+    @else
         <p style="font-family: 'Poppins', sans-serif; font-weight: 600;">Data belum diupdate</p>
-        @endif
-    </div>
+    @endif
+</div>
 
 </div>
 @endforeach
