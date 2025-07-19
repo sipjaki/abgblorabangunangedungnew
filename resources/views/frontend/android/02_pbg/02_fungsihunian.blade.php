@@ -20,8 +20,26 @@
         <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
           <div class="flex p-4 items-center gap-4">
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
+              <div class="flex items-center">
+                <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
+                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="photo">
+                </div>
+              </div>
+              <div class="flex flex-col flex-1 gap-[2px] text-left">
+                <p class="font-semibold">{{$title}}</p>
+                {{-- <p class="font-medium text-xs leading-[18px] text-[#757C98]">Contact Details</p> --}}
+              </div>
+            </button>
+          </div>
 
-       @foreach ($data as $item)
+        </div>
+
+
+        <div class="flex flex-col space-y-3 px-[18px]">
+            <!-- Card 1 -->
+<a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+  <!-- Gambar Thumbnail Penuh -->
+   @foreach ($data as $item)
 
 <div class="flex flex-col space-y-3 px-[18px]">
     <!-- Card 1 -->
@@ -40,24 +58,6 @@
 </div>
 
 @endforeach
-
-<div class="flex flex-col flex-1 gap-[2px] text-left">
-                <p class="font-semibold">{{$title}}</p>
-                {{-- <p class="font-medium text-xs leading-[18px] text-[#757C98]">Contact Details</p> --}}
-              </div>
-            </button>
-          </div>
-
-        </div>
-
-
-        <div class="flex flex-col space-y-3 px-[18px]">
-            <!-- Card 1 -->
-<a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
-  <!-- Gambar Thumbnail Penuh -->
-  <div class="w-full h-auto rounded-lg overflow-hidden">
-    <img src="/assets/android/pbgslf/PBG_FUNGSI_HUNIAN.jpg" class="object-cover w-full h-full" alt="thumbnail">
-  </div>
 
   <br>
   <!-- Info Teks -->
