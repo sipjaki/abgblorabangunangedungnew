@@ -47,6 +47,13 @@ use App\Models\fungsibangunangambar;
 use App\Models\fungsibangunanpbg;
 use App\Models\gambarbantuan;
 use App\Models\infopbg1;
+use App\Models\infopbg2;
+use App\Models\infopbg3;
+use App\Models\infopbg4;
+use App\Models\infopbg5;
+use App\Models\infopbg6;
+use App\Models\infopbg7;
+use App\Models\infopbg8;
 use App\Models\jenispengajuanbantek;
 use App\Models\jenispengajuanpbgslf;
 use App\Models\jenispengajuanpbgslfper;
@@ -22991,6 +22998,62 @@ infopbg1::create([
     'id' => 1,
     'judul' => 'Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran',
     'berkas' => '/assets/abgblora/logo/pbgslf/PBG_FUNGSI_CAMPURAN.png',
+    'keterangan' => '-',
+    'infolanjut' => '-',
+]);
+
+infopbg2::create([
+    'id' => 1,
+    'judul' => 'Persetujuan Bangunan Gedung (PBG) - Fungsi Hunian',
+    'berkas' => '/assets/abgblora/logo/pbgslf/PBG_FUNGSI_HUNIAN.jpg',
+    'keterangan' => '-',
+    'infolanjut' => '-',
+]);
+
+infopbg3::create([
+    'id' => 1,
+    'judul' => 'Persetujuan Bangunan Gedung (PBG) - Fungsi Keagamaaan',
+    'berkas' => '/assets/abgblora/logo/pbgslf/PBG_FUNGSI_KEAGAMAAN.png',
+    'keterangan' => '-',
+    'infolanjut' => '-',
+]);
+
+infopbg4::create([
+    'id' => 1,
+    'judul' => 'Persetujuan Bangunan Gedung (PBG) - Fungsi Prasarana',
+    'berkas' => '/assets/abgblora/logo/pbgslf/PBG_FUNGSI_PRASARANA.png',
+    'keterangan' => '-',
+    'infolanjut' => '-',
+]);
+
+infopbg5::create([
+    'id' => 1,
+    'judul' => 'Persetujuan Bangunan Gedung (PBG) - Fungsi Sosial Budaya',
+    'berkas' => '/assets/abgblora/logo/pbgslf/PBG_FUNGSI_SOSIAL_BUDAYA.png',
+    'keterangan' => '-',
+    'infolanjut' => '-',
+]);
+
+infopbg6::create([
+    'id' => 1,
+    'judul' => 'Persetujuan Bangunan Gedung (PBG) - Fungsi Sosial Budaya',
+    'berkas' => '/assets/abgblora/logo/pbgslf/PBG_FUNGSI_USAHA.jpg',
+    'keterangan' => '-',
+    'infolanjut' => '-',
+]);
+
+infopbg7::create([
+    'id' => 1,
+    'judul' => 'Sertifikat Laik Fungsi (SLF) - Fungsi Usaha',
+    'berkas' => '/assets/abgblora/logo/pbgslf/SLF_FUNGSI_USAHA.png',
+    'keterangan' => '-',
+    'infolanjut' => '-',
+]);
+
+infopbg8::create([
+    'id' => 1,
+    'judul' => 'Sertifikat Laik Fungsi (SLF) - Menara Telekomunikasi',
+    'berkas' => '/assets/abgblora/logo/pbgslf/SLF_MENARA_TELEKOMUNIKASI.png',
     'keterangan' => '-',
     'infolanjut' => '-',
 ]);
