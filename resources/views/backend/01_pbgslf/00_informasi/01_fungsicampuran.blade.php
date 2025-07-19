@@ -180,25 +180,23 @@ th {
     </div>
 
     <div class="card-body">
+      {{-- Row 1: Judul, Keterangan, Info Lanjut --}}
       <div class="row">
-        {{-- Judul --}}
-        <div class="col-md-6 mb-3">
+        <div class="col-md-4 mb-3">
           <label class="form-label fw-bold">
             <i class="bi bi-card-heading text-primary me-1"></i> Judul
           </label>
           <div class="form-control bg-light">{{ $item->judul ?? '-' }}</div>
         </div>
 
-        {{-- Keterangan --}}
-        <div class="col-md-6 mb-3">
+        <div class="col-md-4 mb-3">
           <label class="form-label fw-bold">
             <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
           </label>
           <div class="form-control bg-light">{{ $item->keterangan ?? '-' }}</div>
         </div>
 
-        {{-- Info Lanjut --}}
-        <div class="col-md-6 mb-3">
+        <div class="col-md-4 mb-3">
           <label class="form-label fw-bold">
             <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
           </label>
@@ -206,28 +204,27 @@ th {
         </div>
       </div>
 
-      <div class="row">
-        {{-- Berkas --}}
-        <div class="col-md-6 mb-4">
-          <label class="form-label fw-bold">
-            <i class="bi bi-file-earmark-image text-success me-1"></i> Berkas / Poster Gambar
-          </label>
-          @php
-            $ext = strtolower(pathinfo($item->berkas ?? '', PATHINFO_EXTENSION));
-            $path = $item->berkas && file_exists(public_path('storage/' . $item->berkas))
+      {{-- Row 2: Berkas (Poster Gambar / File) --}}
+      <div class="mb-3">
+        <label class="form-label fw-bold d-block mb-2">
+          <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
+        </label>
+        @php
+          $ext = strtolower(pathinfo($item->berkas ?? '', PATHINFO_EXTENSION));
+          $filePath = $item->berkas && file_exists(public_path('storage/' . $item->berkas))
                       ? asset('storage/' . $item->berkas)
                       : ($item->berkas ? asset($item->berkas) : null);
-          @endphp
-          @if ($path)
-            @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
-              <img src="{{ $path }}" alt="Preview Berkas" class="img-fluid rounded border" style="max-height: 250px; object-fit: contain;">
-            @else
-              <iframe src="{{ $path }}" width="100%" height="300px" class="border rounded"></iframe>
-            @endif
+        @endphp
+
+        @if ($filePath)
+          @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
+            <img src="{{ $filePath }}" alt="Poster Gambar" class="img-fluid rounded border" style="max-height: 300px; object-fit: contain;">
           @else
-            <div class="form-control bg-light">Berkas belum diunggah</div>
+            <iframe src="{{ $filePath }}" width="100%" height="300px" class="border rounded"></iframe>
           @endif
-        </div>
+        @else
+          <div class="form-control bg-light">Belum diunggah</div>
+        @endif
       </div>
     </div>
   </div>
