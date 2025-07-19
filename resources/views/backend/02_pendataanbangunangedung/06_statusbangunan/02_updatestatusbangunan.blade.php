@@ -95,7 +95,7 @@ th {
 
      {{-- ======================================================= --}}
 
-     <div class="container-fluid" style="margin-bottom: 150px;">
+     <div class="container-fluid">
          <!--begin::Row-->
          <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
@@ -199,7 +199,6 @@ th {
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="card shadow-sm border-0">
 
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
@@ -246,180 +245,233 @@ th {
 
 </div>
 
-<div class="row g-4">
-    @forelse ($subdatapemilik as $pemilik)
 
+    <style>
+            .custom-radio {
+                position: relative;
+                padding-left: 35px;
+                padding-right: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #fff; /* netral */
+                border: 2px solid #cbd5e0; /* netral */
+                border-radius: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                user-select: none;
+                transition: border-color 0.3s, background-color 0.3s;
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            .custom-radio input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+        cursor: pointer;
+    }
+
+    .custom-box {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 18px;
+        width: 18px;
+        background-color: #fff; /* netral */
+        border: 2px solid #cbd5e0; /* netral */
+        border-radius: 4px;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* efek checklist muncul saat ter-check */
+    .custom-radio input[type="radio"]:checked ~ .custom-box::after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 1px;
+        width: 5px;
+        height: 10px;
+        border: solid;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        animation: checkmarkFade 0.3s ease forwards;
+    }
+
+    /* Warna khusus untuk value 'sesuai' */
+    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box {
+        border-color: #3b82f6;
+        background-color: #bfdbfe;
+    }
+
+    .custom-radio input[type="radio"]:checked[value="sesuai"] ~ .custom-box::after {
+        border-color: #1d4ed8;
+    }
+
+    /* Warna khusus untuk value 'tidak_sesuai' */
+    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box {
+        border-color: #ef4444;
+        background-color: #fecaca;
+    }
+
+    .custom-radio input[type="radio"]:checked[value="tidak_sesuai"] ~ .custom-box::after {
+        border-color: #b91c1c;
+    }
+
+    /* Animasi checklist */
+    @keyframes checkmarkFade {
+        0% {
+            opacity: 0;
+            transform: scale(0.5) rotate(45deg);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) rotate(45deg);
+        }
+    }
+</style>
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #fdd100; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Perbaikan Informasi Data Struktur Bangunan Gedung
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+</div>
+
+<form id="formPemilik" action="{{ route('bedatabgstrukturupdatenew', $data->id) }}" method="POST">
+    @csrf
+    @method('PUT')
+
+    <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
+    {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
+<div class="row g-3 mt-2">
+    {{-- Status Hak Tanah --}}
+{{-- Luas Tanah --}}
+{{-- Tingkat Kompleksitas --}}
+{{-- Struktur Bawah --}}
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-house-door-fill me-1" style="color: blue;"></i> Struktur Bawah
+    </label>
+    <input type="text" name="struktur_bawah" class="form-control @error('struktur_bawah') is-invalid @enderror"
+           value="{{ old('struktur_bawah', $data->struktur_bawah) }}">
+    @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+{{-- Struktur Atas --}}
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-building me-1" style="color: blue;"></i> Struktur Atas
+    </label>
+    <select name="struktur_atas" class="form-select @error('struktur_atas') is-invalid @enderror">
+        <option value="">-- Pilih --</option>
+        @foreach(['Kayu', 'Beton', 'Baja', 'Lainnya'] as $val)
+            <option value="{{ $val }}" {{ old('struktur_atas', $data->struktur_atas) == $val ? 'selected' : '' }}>{{ $val }}</option>
+        @endforeach
+    </select>
+    @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+{{-- Struktur Atap --}}
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-building me-1" style="color: blue;"></i> Struktur Atap
+    </label>
+    <select name="struktur_atap" class="form-select @error('struktur_atap') is-invalid @enderror">
+        <option value="">-- Pilih --</option>
+        @foreach(['Kayu', 'Beton', 'Baja', 'Lainnya'] as $val)
+            <option value="{{ $val }}" {{ old('struktur_atap', $data->struktur_atap) == $val ? 'selected' : '' }}>
+                {{ $val }}
+            </option>
+        @endforeach
+    </select>
+    @error('struktur_atap')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+
+{{-- Komponen Bangunan Lainnya --}}
 @php
-    $infoItems = [
-        [
-            'icon' => 'bi-map',
-            'title' => 'Dokumen Teknis Tanah',
-            'value' => $pemilik->dokumen_teknis_tanah ?? '-',
-        ],
-        [
-            'icon' => 'bi-hash',
-            'title' => 'No. HDNO',
-            'value' => $pemilik->no_hdno ?? '-',
-        ],
-        [
-            'icon' => 'bi-file-earmark-text',
-            'title' => 'No. IMB/PBG',
-            'value' => $pemilik->no_imbpbg ?? '-',
-        ],
-        [
-            'icon' => 'bi-patch-check',
-            'title' => 'No. SLF',
-            'value' => $pemilik->no_slf ?? '-',
-        ],
+    $opsiKondisi = ['Baik', 'T1', 'T2', 'T3', 'T4'];
+    $atributKomponen = [
+        // 'struktur_atap' => 'Struktur Atap',
+        'rangka_atap'   => 'Rangka Atap',
+        'balok'         => 'Balok',
+        'kolom'         => 'Kolom',
+        'pondasi'       => 'Pondasi',
+        'dinding'       => 'Dinding',
+        'genteng'       => 'Genteng',
+        'plafon'        => 'Plafon',
+        'lantai'        => 'Lantai',
+        'pintu'         => 'Pintu',
+        'jendela'       => 'Jendela',
     ];
 @endphp
 
-        <div class="col-12 mb-4 mt-5">
-            <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
-                <div class="card-header bg-primary text-white d-flex align-items-center">
-                    <i class="bi bi-person-fill me-2 fs-5"></i>
-                    <h5 style="font-size: 16px;" class="mb-0">Informasi Data Status Bangunan Gedung </h5>
-                </div>
+@foreach($atributKomponen as $field => $label)
+    <div class="col-md-6">
+        <label class="form-label">
+            <i class="bi bi-check-circle me-1" style="color: blue;"></i> {{ $label }}
+        </label>
+        <select name="{{ $field }}" class="form-select @error($field) is-invalid @enderror">
+            <option value="">-- Pilih --</option>
+            @foreach($opsiKondisi as $val)
+                <option value="{{ $val }}" {{ old($field, $data->$field) == $val ? 'selected' : '' }}>{{ $val }}</option>
+            @endforeach
+        </select>
+        @error($field)<div class="invalid-feedback">{{ $message }}</div>@enderror
+    </div>
+@endforeach
 
-                <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
-                    <div class="row g-3">
-                        @foreach ($infoItems as $item)
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-start">
-                                    <div class="me-3">
-                                        <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="fw-bold text-dark mb-1">{{ $item['title'] }}</h6>
-                                        <p class="mb-0 text-muted">{{ $item['value'] }}</p>
-                                    </div>
-                                </div>
-                            </div>
+    {{-- Tombol Submit --}}
+    <div class="col-12 text-end mt-3">
+        <button type="button" class="button-berkas" onclick="openModal()">
+            <i class="bi bi-save me-1"></i> Simpan Perbaikan Data ?
+        </button>
+    </div>
+</div>
 
-                        @endforeach
-                        {{-- Khusus tampilkan Catatan jika Pilihan Catatan = tidak lengkap --}}
+</form>
 
-
-                      <a href="/bedatabgstatusbangunanupdate/{{ $pemilik->id }}">
-                            <p class="button-berkas">
-                                <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
-                                Perbaikan Data
-                            </p>
-                        </a>
-
-
-                     @if (strtolower($pemilik->pilihancatatan) === 'tidak lengkap')
-    <div class="col-12 mt-3">
-        <div class="p-3 border-start border-4 border-danger bg-light rounded shadow-sm">
-            <div class="d-flex align-items-start">
-                <i class="bi bi-journal-text text-danger fs-4 me-3"></i>
-                <div>
-                    <h6 class="fw-bold text-dark mb-1">Catatan</h6>
-                    <p class="mb-0 text-muted" style="white-space: pre-wrap; word-wrap: break-word; text-align:justify;">
-                        {{ $pemilik->catatan ?? '-' }}
-                    </p>
-                </div>
-            </div>
+{{-- Modal Konfirmasi --}}
+<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">Apakah Anda ingin melakukan perbaikan data ?</p>
+        <div style="display: flex; justify-content: center; gap: 12px;">
+            <button onclick="submitForm()" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                <i class="bi bi-check-circle me-1"></i> Ya
+            </button>
+            <button onclick="closeModal()" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                <i class="bi bi-x-circle me-1"></i> Batal
+            </button>
         </div>
     </div>
-@endif
-
-
-                     {{-- <a href="javascript:void(0)" title="Delete"
-   data-bs-toggle="modal" data-bs-target="#deleteModal"
-   data-judul="{{ $pemilik->id }}"
-   onclick="setDeleteUrl(this)"
-   style="text-decoration: none;"
->
-   <i class="bi bi-trash" style="color: red; margin-right:4px;"></i>
-   <span style="color: red;">Hapus</span>
-</a> --}}
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    @empty
-        <div class="col-12" style="margin-top: 50px;">
-            <div style="
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 30px;
-                font-weight: 600;
-                font-family: 'Poppins', sans-serif;
-                color: #6c757d;
-                background-color: #f8f9fa;
-                border: 2px dashed #ced4da;
-                border-radius: 12px;
-                font-size: 16px;
-                animation: fadeIn 0.5s ease-in-out;
-            ">
-                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-                Data Informasi Struktur Bangunan Gedung Tidak Ditemukan !!
-            </div>
-
-            {{-- Tombol Tambah Data --}}
-            <div class="text-center mt-4">
-           <a href="{{ route('bedatabgstrukturcreate', $data->id) }}" class="button-baru">
-    <i class="bi bi-plus-circle me-1"></i> Tambahkan Data
-</a>
- </div>
-        </div>
-    @endforelse
 </div>
 
-<style>
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-<!-- Pagination links -->
-{{-- <div class="d-flex justify-content-center mt-4">
-    {{ $subdatapemilik->links() }}
-</div> --}}
-
-
-</div>
-    <script>
-function previewPDF(event, containerId, iframeId, messageId) {
-    const file = event.target.files[0];
-    const container = document.getElementById(containerId);
-    const iframe = document.getElementById(iframeId);
-    const message = document.getElementById(messageId);
-
-    if (file && file.type === "application/pdf") {
-        const fileURL = URL.createObjectURL(file);
-        iframe.src = fileURL;
-        container.style.display = 'block';
-        message.style.display = 'none';
-    } else {
-        iframe.src = '';
-        container.style.display = 'none';
-        message.style.display = 'block';
-        message.textContent = 'File harus berupa format PDF.';
+<script>
+    function toggleCatatan(radio) {
+        const catatanField = document.getElementById('catatan-field');
+        catatanField.style.display = (radio.value === 'tidak lengkap') ? 'block' : 'none';
     }
-}
+
+    function openModal() {
+        document.getElementById("confirmModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("confirmModal").style.display = "none";
+    }
+
+    function submitForm() {
+        document.getElementById('formPemilik').submit();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name=\'pilihancatatan\']:checked');
+        if (selected) toggleCatatan(selected);
+    });
 </script>
-
-{{-- <div class="card shadow-sm border-0 mt-5">
-    <div class="card-header bg-primary text-white">
-        <h5 class="mb-0">Informasi Permohonan Pengajuan</h5>
-    </div>
-</div> --}}
-
-                                    </div>
-                                </div>
-                                <!-- End row -->
-                            </div>
-                            <!-- end::Body -->
-
-
-                        </form>
-
                     </div>
                  </div>
 
@@ -428,45 +480,6 @@ function previewPDF(event, containerId, iframeId, messageId) {
                  <br><br>
 
                  <!-- Modal Konfirmasi Hapus -->
-                 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                     <div class="modal-dialog">
-                         <div class="modal-content">
-                             <div class="modal-header">
-                                 <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
-                                 <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
-                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                             </div>
-                             <div class="modal-body">
-                                 <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
-                             </div>
-                             <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                 <form id="deleteForm" method="POST" action="">
-                                     @csrf
-                                     @method('DELETE')
-                                     <button type="submit" class="btn btn-danger">Hapus</button>
-                                 </form>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-
-                 <script>
-                 function setDeleteUrl(button) {
-                     var id = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bepbgdatapemilikdelete/" + encodeURIComponent(id);
-                     document.getElementById('deleteForm').action = deleteUrl;
-                 }
-                 </script>
-
-                 <style>
-                     .table-responsive {
-                         max-width: 100%;
-                         overflow-x: auto;
-                     }
-                 </style>
-
              </div>
              <!-- /.card -->
          </div>

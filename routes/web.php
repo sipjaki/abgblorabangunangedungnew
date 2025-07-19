@@ -116,7 +116,7 @@ Route::post('/bedatabgstrukturcreatenew', [PendataanBangunanGedungController::cl
 
 // 05 PENDATAAN BANGUNAN GEDUNG STATUS BANGUNAN GEDUNG
 Route::get('/bedatabgstatusbangunan/{id}', [PendataanBangunanGedungController::class, 'bedatabgstatusbangunan'])->middleware('auth')->name('bedatabgstatusbangunan');
-// Route::get('/bedatabgstrukturupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturupdate'])->middleware('auth')->name('bedatabgstrukturupdate');
+Route::get('/bedatabgstatusbangunanupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstatusbangunanupdate'])->middleware('auth')->name('bedatabgstatusbangunanupdate');
 // Route::put('/bedatabgstrukturupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturupdatenew'])->middleware('auth')->name('bedatabgstrukturupdatenew');
 
 // Route::get('/bedatabgstrukturcreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturcreate'])->middleware('auth')->name('bedatabgstrukturcreate');
