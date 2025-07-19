@@ -46,8 +46,7 @@
     <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
         <!-- Gambar Thumbnail Penuh -->
         <div class="w-full h-auto rounded-lg overflow-hidden">
-
-       <div >
+       <div>
     @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
         <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain;" />
     @elseif($item->berkas)
@@ -55,7 +54,7 @@
     @else
         <p style="font-family: 'Poppins', sans-serif; font-weight: 600;">Data belum diupdate</p>
     @endif
-</div>
+    </div>
 
 @endforeach
 
