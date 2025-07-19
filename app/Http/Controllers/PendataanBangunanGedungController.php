@@ -719,5 +719,50 @@ public function bedatabgprofilbangunancreate($id)
     ]);
 }
 
+
+public function bedatabgprofilbangunancreatenew(Request $request)
+{
+    $validated = $request->validate([
+        'databgkepemilikan_id' => 'required|string|exists:databgkepemilikans,id',
+
+        'luastanah' => 'nullable|string|max:100',
+        'namabangunan' => 'nullable|string|max:255',
+        'alamatbangunan' => 'nullable|string|max:255',
+        'fungsibangunan' => 'nullable|string|max:100',
+        'jumlahlantai' => 'nullable|string|max:10',
+        'luaslantaildasar' => 'nullable|string|max:100',
+        'totalluaslantai' => 'nullable|string|max:100',
+        'tinggibangunan' => 'nullable|string|max:100',
+        'luasbasement' => 'nullable|string|max:100',
+        'koordinatbangunan' => 'nullable|string|max:255',
+        'tanggalmulaikonstruksi' => 'nullable|date',
+        'tanggalselesaikonstruksi' => 'nullable|date',
+        'tanggalrehabilitasi' => 'nullable|date',
+    ], [
+        'databgkepemilikan_id.required' => 'ID Kepemilikan wajib diisi.',
+        'databgkepemilikan_id.exists' => 'Data kepemilikan tidak ditemukan.',
+    ]);
+
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
+        'luastanah' => $validated['luastanah'] ?? null,
+        'namabangunan' => $validated['namabangunan'] ?? null,
+        'alamatbangunan' => $validated['alamatbangunan'] ?? null,
+        'fungsibangunan' => $validated['fungsibangunan'] ?? null,
+        'jumlahlantai' => $validated['jumlahlantai'] ?? null,
+        'luaslantaildasar' => $validated['luaslantaildasar'] ?? null,
+        'totalluaslantai' => $validated['totalluaslantai'] ?? null,
+        'tinggibangunan' => $validated['tinggibangunan'] ?? null,
+        'luasbasement' => $validated['luasbasement'] ?? null,
+        'koordinatbangunan' => $validated['koordinatbangunan'] ?? null,
+        'tanggalmulaikonstruksi' => $validated['tanggalmulaikonstruksi'] ?? null,
+        'tanggalselesaikonstruksi' => $validated['tanggalselesaikonstruksi'] ?? null,
+        'tanggalrehabilitasi' => $validated['tanggalrehabilitasi'] ?? null,
+    ]);
+
+    session()->flash('create', 'Data profil bangunan berhasil ditambahkan!');
+    return redirect()->route('bedatabgprofilbangunan', ['id' => $validated['databgkepemilikan_id']]);
+}
+
 }
 
