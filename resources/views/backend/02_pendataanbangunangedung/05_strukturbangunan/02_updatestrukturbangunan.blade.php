@@ -377,9 +377,10 @@ th {
     @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
+{{-- Komponen Bangunan Lainnya --}}
 @php
-    $opsi = ['Baik', 'T1', 'T2', 'T3', 'T4'];
-    $atributLain = [
+    $opsiKondisi = ['Baik', 'T1', 'T2', 'T3', 'T4'];
+    $atributKomponen = [
         'struktur_atap' => 'Struktur Atap',
         'rangka_atap'   => 'Rangka Atap',
         'balok'         => 'Balok',
@@ -394,14 +395,14 @@ th {
     ];
 @endphp
 
-@foreach($atributLain as $field => $label)
+@foreach($atributKomponen as $field => $label)
     <div class="col-md-6">
         <label class="form-label">
             <i class="bi bi-check-circle me-1" style="color: blue;"></i> {{ $label }}
         </label>
         <select name="{{ $field }}" class="form-select @error($field) is-invalid @enderror">
             <option value="">-- Pilih --</option>
-            @foreach($opsi as $val)
+            @foreach($opsiKondisi as $val)
                 <option value="{{ $val }}" {{ old($field, $data->$field) == $val ? 'selected' : '' }}>{{ $val }}</option>
             @endforeach
         </select>
