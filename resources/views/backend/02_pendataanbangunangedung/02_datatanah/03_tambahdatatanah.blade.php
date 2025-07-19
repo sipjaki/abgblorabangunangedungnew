@@ -332,7 +332,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Informasi Data Pemilik Bangunan Gedung
+    Informasi Data Profil Tanah Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
@@ -340,77 +340,44 @@ th {
 
 <form id="formPemilik" action="{{ route('bepbgdatapemilikcreatenew') }}" method="POST">
     @csrf
-    <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
+    <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
-    <input type="hidden" name="id" value="{{ $data->id }}">
+    {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
 
 
     <div class="row g-3 mt-2">
-        {{-- Nama Pemilik --}}
-        {{-- <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-person-fill text-navy me-1" style="color: blue"></i> Nama Pemilik</label>
-            <input type="text" name="namapemilik" class="form-control @error('namapemilik') is-invalid @enderror" value="{{ old('namapemilik') }}">
-            @error('namapemilik')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div> --}}
+{{-- Status Hak Tanah --}}
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-card-list text-navy me-1" style="color: blue"></i> Status Hak Tanah</label>
+    <input type="text" name="statushaktanah" class="form-control @error('statushaktanah') is-invalid @enderror" value="{{ old('statushaktanah') }}">
+    @error('statushaktanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
 
-        {{-- Alamat Pemilik --}}
-        <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-geo-alt-fill text-navy me-1" style="color: blue"></i> Alamat Pemilik</label>
-            <input type="text" name="alamatpemilik" class="form-control @error('alamatpemilik') is-invalid @enderror" value="{{ old('alamatpemilik') }}">
-            @error('alamatpemilik')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
+{{-- Status Kepemilikan --}}
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-person-badge-fill text-navy me-1" style="color: blue"></i> Status Kepemilikan</label>
+    <input type="text" name="statuskepemilikan" class="form-control @error('statuskepemilikan') is-invalid @enderror" value="{{ old('statuskepemilikan') }}">
+    @error('statuskepemilikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
 
-        {{-- Nomor Telepon --}}
-        <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-telephone-fill text-navy me-1" style="color: blue"></i> Nomor Telepon</label>
-            <input type="text" name="nomortelepon" class="form-control @error('nomortelepon') is-invalid @enderror" value="{{ old('nomortelepon') }}">
-            @error('nomortelepon')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
+{{-- No Bukti Kepemilikan --}}
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-file-earmark-text-fill text-navy me-1" style="color: blue"></i> No. Bukti Kepemilikan</label>
+    <input type="text" name="nobuktikepemilikan" class="form-control @error('nobuktikepemilikan') is-invalid @enderror" value="{{ old('nobuktikepemilikan') }}">
+    @error('nobuktikepemilikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
 
-        {{-- Email --}}
-        <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-envelope-fill text-navy me-1" style="color: blue"></i> Email</label>
-            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
-            @error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
-
-        {{-- No Identitas --}}
-        <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-credit-card-fill text-navy me-1" style="color: blue"></i> No Identitas</label>
-            <input type="text" name="noidentitas" class="form-control @error('noidentitas') is-invalid @enderror" value="{{ old('noidentitas') }}">
-            @error('noidentitas')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
-
-        {{-- Pilihan Catatan --}}
-        <div class="col-md-6">
-            <label class="form-label d-block" style="color: navy; font-weight: 600;">
-                <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="pilihancatatan" value="lengkap" onchange="toggleCatatan(this)" {{ old('pilihancatatan') === 'lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Sesuai
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="pilihancatatan" value="tidak lengkap" onchange="toggleCatatan(this)" {{ old('pilihancatatan') === 'tidak lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Tidak Sesuai
-            </label>
-
-            @error('pilihancatatan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-        </div>
-
-        {{-- Catatan --}}
-        <div class="col-12" id="catatan-field" style="display: none;">
-            <label class="form-label"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
-            <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror" rows="3" placeholder="Tuliskan catatan tambahan...">{{ old('catatan') }}</textarea>
-            @error('catatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
+{{-- Alamat Tanah --}}
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-geo-alt-fill text-navy me-1" style="color: blue"></i> Alamat Tanah</label>
+    <input type="text" name="alamattanah" class="form-control @error('alamattanah') is-invalid @enderror" value="{{ old('alamattanah') }}">
+    @error('alamattanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
 
         {{-- Tombol Submit --}}
         <div class="col-12 text-end mt-3">
             <button type="button" class="button-baru" onclick="openModal()">
-                <i class="bi bi-save me-1"></i> Simpan Data Pemilik
+                <i class="bi bi-save me-1"></i> Simpan Data Profil Tanah
             </button>
         </div>
     </div>
