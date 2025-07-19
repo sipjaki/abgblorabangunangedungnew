@@ -3,7 +3,7 @@
         @php
             $id = $data->id ?? 0;
             $buttons = [
-                ['label' => 'Data Profil Tanah', 'url' => '/bepbgdatapemilik/' . $id, 'icon' => 'bi-geo-alt-fill'],
+                ['label' => 'Data Profil Tanah', 'url' => '/bedatabgprofiltanah/' . $id, 'icon' => 'bi-geo-alt-fill'],
                 ['label' => 'Data Profil Bangunan Gedung', 'url' => '/bepbgdatabangunan/' . $id, 'icon' => 'bi-building-fill'],
                 ['label' => 'Klasifikasi Bangunan Gedung', 'url' => '/bepbgdatatanah/' . $id, 'icon' => 'bi-tags-fill'],
                 ['label' => 'Data Struktur Bangunan Gedung', 'url' => '/bepbgdataumum/' . $id, 'icon' => 'bi-diagram-3-fill'],

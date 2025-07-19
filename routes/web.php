@@ -80,6 +80,18 @@ Route::delete('/bebangunangedungdelete/{id}', [PendataanBangunanGedungController
 // DATA PROFIL TANAH
 Route::get('/bependataanbgtanah/{id}', [PendataanBangunanGedungController::class, 'bependataanbgtanah'])->middleware('auth')->name('bependataanbgtanah');
 
+// 01 PENDATAAN BANGUNAN GEDUNG PROFIL STATUS TANAH
+Route::get('/bedatabgprofiltanah/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanah'])->middleware('auth')->name('bedatabgprofiltanah');
+// Route::get('/updatedatapemilik/{id}', [PbgslfController::class, 'updatedatapemilik'])->middleware('auth')->name('updatedatapemilikupdate');
+// Route::put('/updatedatapemiliknew/{id}', [PbgslfController::class, 'updatedatapemiliknew'])->middleware('auth')->name('updatedatapemiliknew');
+
+// Route::get('/bepbgdatapemilikcreate/{id}', [PbgslfController::class, 'bepbgdatapemilikcreate'])->middleware('auth')->name('datapemilik.create');
+// Route::post('/bepbgdatapemilikcreatenew', [PbgslfController::class, 'bepbgdatapemilikcreatenew'])->middleware('auth')->name('bepbgdatapemilikcreatenew');
+
+// Route::delete('/bepbgdatapemilikdelete/{id}', [PbgslfController::class, 'bepbgdatapemilikdelete'])->middleware('auth')->name('bepbgdatapemilikdelete');
+
+
+
 // 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------
 Route::get('/resbgindex', [FedashboardController::class, 'menuresbangunangedungindex']);

@@ -22154,6 +22154,132 @@ databgtanah::create([
     'alamattanah' => 'Jl. Gunandar No. 72, Ds. Jenar, RT: 3/RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
 ]);
 
+// Records 101-102
+databgtanah::create(['id'=>101,'databgkepemilikan_id'=>101,'statushaktanah'=>'(Tidak Mengetahui)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Gunandar No. 72, Ds. Jenar, RT: 3/RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>102,'databgkepemilikan_id'=>102,'statushaktanah'=>'(Tidak Mengetahui)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Gunandar No. 72, Ds. Jenar, RT: 3/RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah']);
+
+// Records 103-114 (PEMDA)
+databgtanah::create(['id'=>103,'databgkepemilikan_id'=>103,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>104,'databgkepemilikan_id'=>104,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>105,'databgkepemilikan_id'=>105,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>106,'databgkepemilikan_id'=>106,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>107,'databgkepemilikan_id'=>107,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>108,'databgkepemilikan_id'=>108,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>109,'databgkepemilikan_id'=>109,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>110,'databgkepemilikan_id'=>110,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>111,'databgkepemilikan_id'=>111,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>112,'databgkepemilikan_id'=>112,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>113,'databgkepemilikan_id'=>113,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>114,'databgkepemilikan_id'=>114,'statushaktanah'=>'PEMDA','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'1532/1981','alamattanah'=>'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah']);
+
+// Records 115-133 (Hak Pakai)
+databgtanah::create(['id'=>115,'databgkepemilikan_id'=>115,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>116,'databgkepemilikan_id'=>116,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>117,'databgkepemilikan_id'=>117,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>118,'databgkepemilikan_id'=>118,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>119,'databgkepemilikan_id'=>119,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>120,'databgkepemilikan_id'=>120,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>121,'databgkepemilikan_id'=>121,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>122,'databgkepemilikan_id'=>122,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>123,'databgkepemilikan_id'=>123,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>124,'databgkepemilikan_id'=>124,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>125,'databgkepemilikan_id'=>125,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>126,'databgkepemilikan_id'=>126,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>127,'databgkepemilikan_id'=>127,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>128,'databgkepemilikan_id'=>128,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>129,'databgkepemilikan_id'=>129,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>130,'databgkepemilikan_id'=>130,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>131,'databgkepemilikan_id'=>131,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>132,'databgkepemilikan_id'=>132,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>133,'databgkepemilikan_id'=>133,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120912400036','alamattanah'=>'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah']);
+
+// Records 134-150 (HAK MILIK)
+databgtanah::create(['id'=>134,'databgkepemilikan_id'=>134,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Nusantara No. 62, Jetis, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>135,'databgkepemilikan_id'=>135,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Mlangsen, Kec. Blora, Kab. Blora, Jwa Tengah']);
+databgtanah::create(['id'=>136,'databgkepemilikan_id'=>136,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Ds. Jepangrejo, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>137,'databgkepemilikan_id'=>137,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah']);
+databgtanah::create(['id'=>138,'databgkepemilikan_id'=>138,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah']);
+databgtanah::create(['id'=>139,'databgkepemilikan_id'=>139,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah']);
+databgtanah::create(['id'=>140,'databgkepemilikan_id'=>140,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah']);
+databgtanah::create(['id'=>141,'databgkepemilikan_id'=>141,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah']);
+databgtanah::create(['id'=>142,'databgkepemilikan_id'=>142,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah']);
+databgtanah::create(['id'=>143,'databgkepemilikan_id'=>143,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. RA. Kartini No. 1A, Kunden, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>144,'databgkepemilikan_id'=>144,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Alun-Alun Utara Blora, Kec. Blora, Kab. Blora']);
+databgtanah::create(['id'=>145,'databgkepemilikan_id'=>145,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. RA. Kartini No. 1A, Kunden, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>146,'databgkepemilikan_id'=>146,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. RA. Kartini No. 1A, Kunden, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>147,'databgkepemilikan_id'=>147,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. RA. Kartini No. 1A, Kunden, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>148,'databgkepemilikan_id'=>148,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Pemuda No. 15A, Tempelan, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>149,'databgkepemilikan_id'=>149,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Kolonel Sunandar No.63, Mlangsen, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>150,'databgkepemilikan_id'=>150,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Kolonel Sunandar No.63B, Mlangsen, Kec. Blora, Jawa Tengah']);
+
+
+// Records 151-160
+databgtanah::create(['id'=>151,'databgkepemilikan_id'=>151,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Agil Kusumadya No. 23, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>152,'databgkepemilikan_id'=>152,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. RA. Kartini No. 12, Kunden, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>153,'databgkepemilikan_id'=>153,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Halmahera No. 11, Jetis, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>154,'databgkepemilikan_id'=>154,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. GOR I No. 58217, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>155,'databgkepemilikan_id'=>155,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. GOR Mustika No. 5, Karangjati, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>156,'databgkepemilikan_id'=>156,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. GOR Mustika No. 5, Karangjati, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>157,'databgkepemilikan_id'=>157,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Blora-Rembang KM.03, Karangjati, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>158,'databgkepemilikan_id'=>158,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Blora-Rembang KM.03, Karangjati, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>159,'databgkepemilikan_id'=>159,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Reksodiputro No. 6, Mlangsen, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>160,'databgkepemilikan_id'=>160,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Kel. Kedungjenar, Kec. Blora, Kab. Blora']);
+
+// Records 161-170
+databgtanah::create(['id'=>161,'databgkepemilikan_id'=>161,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Kel. Kedungjenar, Kec. Blora, Kab. Blora']);
+databgtanah::create(['id'=>162,'databgkepemilikan_id'=>162,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Kel. Kedungjenar, Kec. Blora, Kab. Blora']);
+databgtanah::create(['id'=>163,'databgkepemilikan_id'=>163,'statushaktanah'=>'Milik Pemkab/Pemda/Negara','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Gunung Wilis No. 24, Kunden, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>164,'databgkepemilikan_id'=>164,'statushaktanah'=>'Milik Pemkab/Pemda/Negara','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Gunung Wilis No. 24, Kunden, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>165,'databgkepemilikan_id'=>165,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. GOR No. 10 Blora, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>166,'databgkepemilikan_id'=>166,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Pemuda No. 16A, Mlangsen, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>167,'databgkepemilikan_id'=>167,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>168,'databgkepemilikan_id'=>168,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>169,'databgkepemilikan_id'=>169,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>170,'databgkepemilikan_id'=>170,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120918400018','alamattanah'=>'Jl. Gor No. 3, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah']);
+
+// Records 171-180
+databgtanah::create(['id'=>171,'databgkepemilikan_id'=>171,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'11120918400018','alamattanah'=>'Jl. Gor No. 3, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>172,'databgkepemilikan_id'=>172,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Ahmad Yani, Kec. Blora, Kab. Blora']);
+databgtanah::create(['id'=>173,'databgkepemilikan_id'=>173,'statushaktanah'=>'Hak Pakai','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Kol. Sunandar No. 61, Mlangsen, Blora']);
+databgtanah::create(['id'=>174,'databgkepemilikan_id'=>174,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Rembang-Blora KM. 4, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>175,'databgkepemilikan_id'=>175,'statushaktanah'=>'HAK MILIK (PEMKAB/PEMDA/NEGARA)','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Rembang-Blora KM. 4, Kec. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>176,'databgkepemilikan_id'=>176,'statushaktanah'=>'Hak Milik','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>177,'databgkepemilikan_id'=>177,'statushaktanah'=>'Hak Milik','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>178,'databgkepemilikan_id'=>178,'statushaktanah'=>'Hak Milik','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>179,'databgkepemilikan_id'=>179,'statushaktanah'=>'Hak Milik','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>180,'databgkepemilikan_id'=>180,'statushaktanah'=>'Hak Milik','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah']);
+
+// Records 181-190
+databgtanah::create(['id'=>181,'databgkepemilikan_id'=>181,'statushaktanah'=>'Hak Milik','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>182,'databgkepemilikan_id'=>182,'statushaktanah'=>'Hak Milik','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>183,'databgkepemilikan_id'=>183,'statushaktanah'=>'Hak Milik','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>184,'databgkepemilikan_id'=>184,'statushaktanah'=>'Hak Milik','statuskepemilikan'=>'(Tidak Mengetahui)','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah']);
+databgtanah::create(['id'=>185,'databgkepemilikan_id'=>185,'statushaktanah'=>'Milik Desa','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Proses Pengajuan)','alamattanah'=>'Dk, Gulingan, RT: 01/RW: 04, Tempurejo']);
+databgtanah::create(['id'=>186,'databgkepemilikan_id'=>186,'statushaktanah'=>'Milik Desa','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Proses Pengajuan)','alamattanah'=>'Dk, Gulingan, RT: 01/RW: 04, Tempurejo']);
+databgtanah::create(['id'=>187,'databgkepemilikan_id'=>187,'statushaktanah'=>'Milik Desa','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Proses Pengajuan)','alamattanah'=>'Dk, Gulingan, RT: 01/RW: 04, Tempurejo']);
+databgtanah::create(['id'=>188,'databgkepemilikan_id'=>188,'statushaktanah'=>'Milik Desa','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Proses Pengajuan)','alamattanah'=>'Dk, Gulingan, RT: 01/RW: 04, Tempurejo']);
+databgtanah::create(['id'=>189,'databgkepemilikan_id'=>189,'statushaktanah'=>'Milik Desa','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Raya Blora-Rembang, KM. 4, Blora']);
+databgtanah::create(['id'=>190,'databgkepemilikan_id'=>190,'statushaktanah'=>'Milik Desa','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Raya Blora-Rembang, KM. 4, Blora']);
+
+// Records 191-200
+databgtanah::create(['id'=>191,'databgkepemilikan_id'=>191,'statushaktanah'=>'Milik Desa','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Raya Blora-Rembang, KM. 4, Blora']);
+databgtanah::create(['id'=>192,'databgkepemilikan_id'=>192,'statushaktanah'=>'Milik Desa','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Raya Blora-Rembang, KM. 4, Blora']);
+databgtanah::create(['id'=>193,'databgkepemilikan_id'=>193,'statushaktanah'=>'Milik Desa','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Raya Blora-Rembang, KM. 4, Blora']);
+databgtanah::create(['id'=>194,'databgkepemilikan_id'=>194,'statushaktanah'=>'(Tidak Mengetahui)','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Raya Blora-Rembang, KM. 3, Blora']);
+databgtanah::create(['id'=>195,'databgkepemilikan_id'=>195,'statushaktanah'=>'(Tidak Mengetahui)','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Raya Blora-Rembang, KM. 3, Blora']);
+databgtanah::create(['id'=>196,'databgkepemilikan_id'=>196,'statushaktanah'=>'(Tidak Mengetahui)','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Raya Blora-Rembang, KM. 3, Blora']);
+databgtanah::create(['id'=>197,'databgkepemilikan_id'=>197,'statushaktanah'=>'(Tidak Mengetahui)','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Raya Blora-Rembang, KM. 3, Blora']);
+databgtanah::create(['id'=>198,'databgkepemilikan_id'=>198,'statushaktanah'=>'(Tidak Mengetahui)','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Raya Blora-Rembang, KM. 3, Blora']);
+databgtanah::create(['id'=>199,'databgkepemilikan_id'=>199,'statushaktanah'=>'Milik Pemkab','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Patalan, Ds. Tambaksari, Blora']);
+databgtanah::create(['id'=>200,'databgkepemilikan_id'=>200,'statushaktanah'=>'Milik Pemkab','statuskepemilikan'=>'Dinas Pendidikan','nobuktikepemilikan'=>'(Tidak Mengetahui)','alamattanah'=>'Jl. Patalan, Ds. Tambaksari, Blora']);
+
+
+
+
+// PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL TANAH
+
+
+
 
 // ==========================================
 pengkajiteknis::create([
