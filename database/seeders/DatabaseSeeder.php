@@ -22677,7 +22677,6 @@ for ($i = 190; $i <= 210; $i++) {
 
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA KLASIFIKASI BANGUNAN GEDUNG
-
 databgstrukturbangunan::create(['id' => 1, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Kayu', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
 databgstrukturbangunan::create(['id' => 2, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Baja', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
 databgstrukturbangunan::create(['id' => 3, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Baja', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
