@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Models\bgkartuinventarisbangunan;
 use App\Models\bujkkonsultan;
+use App\Models\infopbg1;
 use App\Models\jenispengajuanbantek;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
@@ -195,12 +196,14 @@ public function mbrgambarupdate($id)
     {
 
         $user = Auth::user();
+        $data = infopbg1::all();
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.02_pbg.01_fungsicampuran', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi PBG Fungsi Campuran ',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 
