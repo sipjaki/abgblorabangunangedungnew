@@ -496,6 +496,22 @@ public function bedatabgprofiltanah($id)
     ]);
 }
 
+public function bedatabgprofiltanahupdate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = databgtanah::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.02_pendataanbangunangedung.02_datatanah.02_updatedatatanahbg', [
+        'title' => 'Perbaikan Status Data Tanah ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
 
 
 }

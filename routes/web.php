@@ -82,7 +82,7 @@ Route::get('/bependataanbgtanah/{id}', [PendataanBangunanGedungController::class
 
 // 01 PENDATAAN BANGUNAN GEDUNG PROFIL STATUS TANAH
 Route::get('/bedatabgprofiltanah/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanah'])->middleware('auth')->name('bedatabgprofiltanah');
-// Route::get('/updatedatapemilik/{id}', [PbgslfController::class, 'updatedatapemilik'])->middleware('auth')->name('updatedatapemilikupdate');
+Route::get('/bedatabgprofiltanahupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahupdate'])->middleware('auth')->name('bedatabgprofiltanahupdate');
 // Route::put('/updatedatapemiliknew/{id}', [PbgslfController::class, 'updatedatapemiliknew'])->middleware('auth')->name('updatedatapemiliknew');
 
 // Route::get('/bepbgdatapemilikcreate/{id}', [PbgslfController::class, 'bepbgdatapemilikcreate'])->middleware('auth')->name('datapemilik.create');
