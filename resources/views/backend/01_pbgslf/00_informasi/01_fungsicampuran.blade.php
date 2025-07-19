@@ -176,66 +176,61 @@ th {
         @foreach ($data as $item)
   <div class="card mb-4 shadow-sm">
     <div class="card-header bg-primary text-white">
-      <i class="bi bi-info-circle me-2"></i> {{$title}}
+      <i class="bi bi-info-circle me-2"></i> {{ $title }}
     </div>
 
     <div class="card-body">
-
-      {{-- Row Judul --}}
       <div class="row">
-      <div class="col-md-6 mb-3">
-  <label class="form-label fw-bold">
-    <i class="bi bi-card-heading text-primary me-1"></i> Judul
-  </label>
-  <div class="form-control bg-light">{{ $item->judul ?? '-' }}</div>
-</div>
+        {{-- Judul --}}
+        <div class="col-md-6 mb-3">
+          <label class="form-label fw-bold">
+            <i class="bi bi-card-heading text-primary me-1"></i> Judul
+          </label>
+          <div class="form-control bg-light">{{ $item->judul ?? '-' }}</div>
+        </div>
 
-<div class="col-md-6 mb-3">
-  <label class="form-label fw-bold">
-    <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
-  </label>
-  <div class="form-control bg-light">{{ $item->keterangan ?? '-' }}</div>
-</div>
+        {{-- Keterangan --}}
+        <div class="col-md-6 mb-3">
+          <label class="form-label fw-bold">
+            <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
+          </label>
+          <div class="form-control bg-light">{{ $item->keterangan ?? '-' }}</div>
+        </div>
 
-<div class="col-md-6 mb-3">
-  <label class="form-label fw-bold">
-    <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
-  </label>
-  <div class="form-control bg-light">{{ $item->infolanjut ?? '-' }}</div>
-</div>
+        {{-- Info Lanjut --}}
+        <div class="col-md-6 mb-3">
+          <label class="form-label fw-bold">
+            <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
+          </label>
+          <div class="form-control bg-light">{{ $item->infolanjut ?? '-' }}</div>
+        </div>
+      </div>
 
-
-      {{-- Row Berkas 1 & 2 --}}
       <div class="row">
-        {{-- Berkas 1 --}}
+        {{-- Berkas --}}
         <div class="col-md-6 mb-4">
           <label class="form-label fw-bold">
-            <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
+            <i class="bi bi-file-earmark-image text-success me-1"></i> Berkas / Poster Gambar
           </label>
           @php
-            $ext1 = strtolower(pathinfo($item->berkas ?? '', PATHINFO_EXTENSION));
-            $path1 = $item->berkas && file_exists(public_path('storage/' . $item->berkas))
+            $ext = strtolower(pathinfo($item->berkas ?? '', PATHINFO_EXTENSION));
+            $path = $item->berkas && file_exists(public_path('storage/' . $item->berkas))
                       ? asset('storage/' . $item->berkas)
                       : ($item->berkas ? asset($item->berkas) : null);
           @endphp
-          @if ($path1)
-            @if (in_array($ext1, ['jpg', 'jpeg', 'png', 'webp']))
-              <img src="{{ $path1 }}" alt="Preview Berkas 1" class="img-fluid rounded border" style="max-height: 250px; object-fit: contain;">
+          @if ($path)
+            @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
+              <img src="{{ $path }}" alt="Preview Berkas" class="img-fluid rounded border" style="max-height: 250px; object-fit: contain;">
             @else
-              <iframe src="{{ $path1 }}" width="100%" height="300px" class="border rounded"></iframe>
+              <iframe src="{{ $path }}" width="100%" height="300px" class="border rounded"></iframe>
             @endif
           @else
-            <div class="form-control bg-light">Belum diunggah</div>
+            <div class="form-control bg-light">Berkas belum diunggah</div>
           @endif
         </div>
-
-
       </div>
-
-
     </div>
   </div>
-  @break
 @endforeach
 
                  <br><br>
