@@ -46,10 +46,10 @@
     <div style="margin-top: 10px;">
 
        <div style="margin-top: 10px;">
-    @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
-        <img src="{{ asset('storage/' . $data->berkas) }}" alt="Berkas" style="width: 100%; height: 300px; object-fit: contain;" />
-    @elseif($data->berkas)
-        <img src="{{ asset($data->berkas) }}" alt="Berkas" style="width: 100%; height: 300px; object-fit: contain;" />
+    @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+        <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 300px; object-fit: contain;" />
+    @elseif($item->berkas)
+        <img src="{{ asset($item->berkas) }}" alt="Berkas" style="width: 100%; height: 300px; object-fit: contain;" />
     @else
         <p style="font-family: 'Poppins', sans-serif; font-weight: 600;">Data belum diupdate</p>
     @endif
