@@ -22,7 +22,11 @@ return new class extends Migration
     $table->string('tingkat_permanensi')->nullable();       // Tingkat Permanensi
     $table->string('resiko_kebakaran')->nullable();         // Resiko Kebakaran
     $table->string('resiko_gempa')->nullable();             // Resiko Gempa
-    $table->string('kepadatan_lokasi')->nullable();         // Kepadatan Lokasi
+    $table->string('kepadatan_lokasi')->nullable();
+      // Kepadatan Lokasi
+    $table->string('cadangan1')->nullable();         // Kepadatan Lokasi
+    $table->string('cadangan2')->nullable();         // Kepadatan Lokasi
+    $table->string('cadangan3')->nullable();         // Kepadatan Lokasi
 
     // Tambahan standar Laravel
     $table->softDeletes();
