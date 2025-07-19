@@ -251,24 +251,69 @@ th {
 @php
     $infoItems = [
         [
-            'icon' => 'bi-geo-fill',
-            'title' => 'Status Hak Tanah',
-            'value' => $pemilik->statushaktanah ?? '-',
+            'icon' => 'bi-rulers',
+            'title' => 'Luas Tanah',
+            'value' => $pemilik->luastanah ?? '-',
         ],
         [
-            'icon' => 'bi-person-badge',
-            'title' => 'Status Kepemilikan',
-            'value' => $pemilik->statuskepemilikan ?? '-',
+            'icon' => 'bi-building',
+            'title' => 'Nama Bangunan Gedung',
+            'value' => $pemilik->namabangunan ?? '-',
         ],
         [
-            'icon' => 'bi-card-text',
-            'title' => 'No Bukti Kepemilikan',
-            'value' => $pemilik->nobuktikepemilikan ?? '-',
+            'icon' => 'bi-geo-alt',
+            'title' => 'Alamat Bangunan',
+            'value' => $pemilik->alamatbangunan ?? '-',
         ],
         [
-            'icon' => 'bi-house-door-fill',
-            'title' => 'Alamat Tanah',
-            'value' => $pemilik->alamattanah ?? '-',
+            'icon' => 'bi-house',
+            'title' => 'Fungsi Bangunan',
+            'value' => $pemilik->fungsibangunan ?? '-',
+        ],
+        [
+            'icon' => 'bi-layers',
+            'title' => 'Jumlah Lantai',
+            'value' => $pemilik->jumlahlantai ?? '-',
+        ],
+        [
+            'icon' => 'bi-bounding-box-circles',
+            'title' => 'Luas Lantai Dasar',
+            'value' => $pemilik->luaslantaildasar ?? '-',
+        ],
+        [
+            'icon' => 'bi-bounding-box',
+            'title' => 'Total Luas Lantai Gedung',
+            'value' => $pemilik->totalluaslantai ?? '-',
+        ],
+        [
+            'icon' => 'bi-arrow-up-square',
+            'title' => 'Tinggi Bangunan',
+            'value' => $pemilik->tinggibangunan ?? '-',
+        ],
+        [
+            'icon' => 'bi-box',
+            'title' => 'Luas Basement',
+            'value' => $pemilik->luasbasement ?? '-',
+        ],
+        [
+            'icon' => 'bi-geo-alt-fill',
+            'title' => 'Koordinat Bangunan',
+            'value' => $pemilik->koordinatbangunan ?? '-',
+        ],
+        [
+            'icon' => 'bi-calendar-plus',
+            'title' => 'Tanggal Mulai Konstruksi',
+            'value' => $pemilik->tanggalmulaikonstruksi ?? '-',
+        ],
+        [
+            'icon' => 'bi-calendar-check',
+            'title' => 'Tanggal Selesai Konstruksi',
+            'value' => $pemilik->tanggalselesaikonstruksi ?? '-',
+        ],
+        [
+            'icon' => 'bi-arrow-repeat',
+            'title' => 'Tanggal Rehabilitasi',
+            'value' => $pemilik->tanggalrehabilitasi ?? '-',
         ],
     ];
 @endphp
@@ -277,7 +322,7 @@ th {
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-header bg-primary text-white d-flex align-items-center">
                     <i class="bi bi-person-fill me-2 fs-5"></i>
-                    <h5 style="font-size: 16px;" class="mb-0">Informasi Data Profil Tanah : {{ $pemilik->namapemilik ?? 'Tidak Diketahui' }}</h5>
+                    <h5 style="font-size: 16px;" class="mb-0">Informasi Data Profil Bangunan Gedung </h5>
                 </div>
 
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
