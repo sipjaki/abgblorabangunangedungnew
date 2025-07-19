@@ -183,32 +183,40 @@ th {
 
       {{-- Row Judul --}}
       <div class="row">
-        <div class="col-md-6 mb-3">
-          <label class="form-label fw-bold">
-            <i class="bi bi-card-heading text-primary me-1"></i> Judul 1
-          </label>
-          <div class="form-control bg-light">{{ $item->judul1 ?? '-' }}</div>
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label fw-bold">
-            <i class="bi bi-card-text text-primary me-1"></i> Judul 2
-          </label>
-          <div class="form-control bg-light">{{ $item->judul2 ?? '-' }}</div>
-        </div>
-      </div>
+      <div class="col-md-6 mb-3">
+  <label class="form-label fw-bold">
+    <i class="bi bi-card-heading text-primary me-1"></i> Judul
+  </label>
+  <div class="form-control bg-light">{{ $item->judul ?? '-' }}</div>
+</div>
+
+<div class="col-md-6 mb-3">
+  <label class="form-label fw-bold">
+    <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
+  </label>
+  <div class="form-control bg-light">{{ $item->keterangan ?? '-' }}</div>
+</div>
+
+<div class="col-md-6 mb-3">
+  <label class="form-label fw-bold">
+    <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
+  </label>
+  <div class="form-control bg-light">{{ $item->infolanjut ?? '-' }}</div>
+</div>
+
 
       {{-- Row Berkas 1 & 2 --}}
       <div class="row">
         {{-- Berkas 1 --}}
         <div class="col-md-6 mb-4">
           <label class="form-label fw-bold">
-            <i class="bi bi-file-earmark-image text-success me-1"></i> Berkas 1
+            <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
           </label>
           @php
-            $ext1 = strtolower(pathinfo($item->berkas1 ?? '', PATHINFO_EXTENSION));
-            $path1 = $item->berkas1 && file_exists(public_path('storage/' . $item->berkas1))
-                      ? asset('storage/' . $item->berkas1)
-                      : ($item->berkas1 ? asset($item->berkas1) : null);
+            $ext1 = strtolower(pathinfo($item->berkas ?? '', PATHINFO_EXTENSION));
+            $path1 = $item->berkas && file_exists(public_path('storage/' . $item->berkas))
+                      ? asset('storage/' . $item->berkas)
+                      : ($item->berkas ? asset($item->berkas) : null);
           @endphp
           @if ($path1)
             @if (in_array($ext1, ['jpg', 'jpeg', 'png', 'webp']))
@@ -221,75 +229,9 @@ th {
           @endif
         </div>
 
-        {{-- Berkas 2 --}}
-        <div class="col-md-6 mb-4">
-          <label class="form-label fw-bold">
-            <i class="bi bi-file-earmark-image text-success me-1"></i> Berkas 2
-          </label>
-          @php
-            $ext2 = strtolower(pathinfo($item->berkas2 ?? '', PATHINFO_EXTENSION));
-            $path2 = $item->berkas2 && file_exists(public_path('storage/' . $item->berkas2))
-                      ? asset('storage/' . $item->berkas2)
-                      : ($item->berkas2 ? asset($item->berkas2) : null);
-          @endphp
-          @if ($path2)
-            @if (in_array($ext2, ['jpg', 'jpeg', 'png', 'webp']))
-              <img src="{{ $path2 }}" alt="Preview Berkas 2" class="img-fluid rounded border" style="max-height: 250px; object-fit: contain;">
-            @else
-              <iframe src="{{ $path2 }}" width="100%" height="300px" class="border rounded"></iframe>
-            @endif
-          @else
-            <div class="form-control bg-light">Belum diunggah</div>
-          @endif
-        </div>
+
       </div>
 
-      {{-- Row Berkas 3 & 4 --}}
-      <div class="row">
-        {{-- Berkas 3 --}}
-        <div class="col-md-6 mb-4">
-          <label class="form-label fw-bold">
-            <i class="bi bi-file-earmark-image text-success me-1"></i> Berkas 3
-          </label>
-          @php
-            $ext3 = strtolower(pathinfo($item->berkas3 ?? '', PATHINFO_EXTENSION));
-            $path3 = $item->berkas3 && file_exists(public_path('storage/' . $item->berkas3))
-                      ? asset('storage/' . $item->berkas3)
-                      : ($item->berkas3 ? asset($item->berkas3) : null);
-          @endphp
-          @if ($path3)
-            @if (in_array($ext3, ['jpg', 'jpeg', 'png', 'webp']))
-              <img src="{{ $path3 }}" alt="Preview Berkas 3" class="img-fluid rounded border" style="max-height: 250px; object-fit: contain;">
-            @else
-              <iframe src="{{ $path3 }}" width="100%" height="300px" class="border rounded"></iframe>
-            @endif
-          @else
-            <div class="form-control bg-light">Belum diunggah</div>
-          @endif
-        </div>
-
-        {{-- Berkas 4 --}}
-        <div class="col-md-6 mb-4">
-          <label class="form-label fw-bold">
-            <i class="bi bi-file-earmark-image text-success me-1"></i> Berkas 4
-          </label>
-          @php
-            $ext4 = strtolower(pathinfo($item->berkas4 ?? '', PATHINFO_EXTENSION));
-            $path4 = $item->berkas4 && file_exists(public_path('storage/' . $item->berkas4))
-                      ? asset('storage/' . $item->berkas4)
-                      : ($item->berkas4 ? asset($item->berkas4) : null);
-          @endphp
-          @if ($path4)
-            @if (in_array($ext4, ['jpg', 'jpeg', 'png', 'webp']))
-              <img src="{{ $path4 }}" alt="Preview Berkas 4" class="img-fluid rounded border" style="max-height: 250px; object-fit: contain;">
-            @else
-              <iframe src="{{ $path4 }}" width="100%" height="300px" class="border rounded"></iframe>
-            @endif
-          @else
-            <div class="form-control bg-light">Belum diunggah</div>
-          @endif
-        </div>
-      </div>
 
     </div>
   </div>
