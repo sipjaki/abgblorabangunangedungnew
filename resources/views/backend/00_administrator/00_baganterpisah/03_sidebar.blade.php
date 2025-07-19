@@ -808,12 +808,12 @@
     </p>
 </div>
 
-    <li class="nav-item">
-        <a href="/bepbgslfinformasi" class="nav-link">
-            <i class="bi bi-card-list nav-icon" style="color: white;"></i>
-            <p style="color: yellow; margin-left: 8px;">Informasi</p>
-        </a>
-    </li>
+  <li class="nav-item">
+    <a href="/bepbgslfinformasi" class="nav-link">
+        <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
+        <p style="color: yellow; margin-left: 8px;">Informasi</p>
+    </a>
+</li>
 
     <li class="nav-item">
         <a href="/bepbgslfindex" class="nav-link">
