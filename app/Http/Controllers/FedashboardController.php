@@ -10,6 +10,13 @@ use Illuminate\Http\Request;
 use App\Models\bgkartuinventarisbangunan;
 use App\Models\bujkkonsultan;
 use App\Models\infopbg1;
+use App\Models\infopbg2;
+use App\Models\infopbg3;
+use App\Models\infopbg4;
+use App\Models\infopbg5;
+use App\Models\infopbg6;
+use App\Models\infopbg7;
+use App\Models\infopbg8;
 use App\Models\jenispengajuanbantek;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
@@ -211,12 +218,14 @@ public function mbrgambarupdate($id)
     {
 
         $user = Auth::user();
+        $data = infopbg2::all();
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.02_pbg.02_fungsihunian', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi PBG Fungsi Hunian ',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 
@@ -224,12 +233,15 @@ public function mbrgambarupdate($id)
     {
 
         $user = Auth::user();
+        $data = infopbg3::all();
+
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.02_pbg.03_fungsiagama', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi PBG Fungsi Keagamaan ',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 
@@ -237,12 +249,15 @@ public function mbrgambarupdate($id)
     {
 
         $user = Auth::user();
+        $data = infopbg4::all();
+
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.02_pbg.04_fungsiprasarana', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi PBG Fungsi Pra Sarana ',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 
@@ -250,12 +265,15 @@ public function mbrgambarupdate($id)
     {
 
         $user = Auth::user();
+        $data = infopbg5::all();
+
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.02_pbg.05_fungsisosialbudaya', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi PBG Fungsi Sosial Budaya ',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 
@@ -263,12 +281,15 @@ public function mbrgambarupdate($id)
     {
 
         $user = Auth::user();
+        $data = infopbg6::all();
+
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.02_pbg.06_fungsiusaha', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi PBG Fungsi Usaha',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 
@@ -276,12 +297,15 @@ public function mbrgambarupdate($id)
     {
 
         $user = Auth::user();
+        $data = infopbg7::all();
+
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.02_pbg.07_slfmenara', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi SLF Fungsi Usaha',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 
@@ -289,12 +313,15 @@ public function mbrgambarupdate($id)
     {
 
         $user = Auth::user();
+        $data = infopbg8::all();
+
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.02_pbg.08_slfmenaratelekomunikasi', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi SLF Menara Telekomunikasi',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 
