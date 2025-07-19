@@ -1005,7 +1005,7 @@
             <li class="nav-item">
              <a href="#" class="nav-link">
     <i class="bi bi-tools nav-icon" style="color: white; font-size: 16px;"></i>
-    <p style="color: yellow; margin-left: 8px;">
+    <p style="color: orange; margin-left: 8px;">
         Bantek
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
