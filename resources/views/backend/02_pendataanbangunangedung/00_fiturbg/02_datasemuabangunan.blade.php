@@ -7,7 +7,7 @@
                 ['label' => 'Data Profil Bangunan Gedung', 'url' => '/bedatabgprofilbangunan/' . $id, 'icon' => 'bi-building-fill'],
                 ['label' => 'Klasifikasi Bangunan Gedung', 'url' => '/bedatabgklasifikasi/' . $id, 'icon' => 'bi-tags-fill'],
                 ['label' => 'Data Struktur Bangunan Gedung', 'url' => '/bedatabgstruktur/' . $id, 'icon' => 'bi-diagram-3-fill'],
-                ['label' => 'Data Status Bangunan Gedung', 'url' => '/bepbgdokumeteknisars/' . $id, 'icon' => 'bi-file-earmark-check-fill'],
+                ['label' => 'Data Status Bangunan Gedung', 'url' => '/bedatabgstatusbangunan/' . $id, 'icon' => 'bi-file-earmark-check-fill'],
             ];
         @endphp
 

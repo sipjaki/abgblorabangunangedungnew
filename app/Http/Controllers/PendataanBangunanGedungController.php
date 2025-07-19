@@ -991,5 +991,22 @@ public function bedatabgstrukturupdatenew(Request $request, $id)
 }
 
 
+public function bedatabgstrukturcreate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = databgkepemilikan::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.02_pendataanbangunangedung.05_strukturbangunan.03_tambahstrukturbangunan', [
+        'title' => 'Tambah Data Informasi Status Bangunan Gedung ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }
 
