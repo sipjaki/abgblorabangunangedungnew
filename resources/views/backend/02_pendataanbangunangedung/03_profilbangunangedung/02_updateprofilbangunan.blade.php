@@ -348,43 +348,70 @@ th {
 <div class="row g-3 mt-2">
     {{-- Status Hak Tanah --}}
     <div class="col-md-6">
-        <label class="form-label">
-            <i class="bi bi-geo-fill text-navy me-1" style="color: blue"></i> Status Hak Tanah
-        </label>
-        <input type="text" name="statushaktanah" class="form-control @error('statushaktanah') is-invalid @enderror"
-               value="{{ old('statushaktanah', $data->statushaktanah) }}">
-        @error('statushaktanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        <label class="form-label"><i class="bi bi-bounding-box text-navy me-1"></i> Luas Tanah (m²)</label>
+        <input type="text" name="luastanah" class="form-control" value="{{ old('luastanah', $data->luastanah) }}">
     </div>
 
-    {{-- Status Kepemilikan --}}
     <div class="col-md-6">
-        <label class="form-label">
-            <i class="bi bi-person-badge-fill text-navy me-1" style="color: blue"></i> Status Kepemilikan
-        </label>
-        <input type="text" name="statuskepemilikan" class="form-control @error('statuskepemilikan') is-invalid @enderror"
-               value="{{ old('statuskepemilikan', $data->statuskepemilikan) }}">
-        @error('statuskepemilikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        <label class="form-label"><i class="bi bi-building text-navy me-1"></i> Nama Bangunan Gedung</label>
+        <input type="text" name="namabangunan" class="form-control" value="{{ old('namabangunan', $data->namabangunan) }}">
     </div>
 
-    {{-- No Bukti Kepemilikan --}}
     <div class="col-md-6">
-        <label class="form-label">
-            <i class="bi bi-card-text text-navy me-1" style="color: blue"></i> No Bukti Kepemilikan
-        </label>
-        <input type="text" name="nobuktikepemilikan" class="form-control @error('nobuktikepemilikan') is-invalid @enderror"
-               value="{{ old('nobuktikepemilikan', $data->nobuktikepemilikan) }}">
-        @error('nobuktikepemilikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        <label class="form-label"><i class="bi bi-geo-alt text-navy me-1"></i> Alamat Bangunan</label>
+        <input type="text" name="alamatbangunan" class="form-control" value="{{ old('alamatbangunan', $data->alamatbangunan) }}">
     </div>
 
-    {{-- Alamat Tanah --}}
     <div class="col-md-6">
-        <label class="form-label">
-            <i class="bi bi-house-door-fill text-navy me-1" style="color: blue"></i> Alamat Tanah
-        </label>
-        <input type="text" name="alamattanah" class="form-control @error('alamattanah') is-invalid @enderror"
-               value="{{ old('alamattanah', $data->alamattanah) }}">
-        @error('alamattanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        <label class="form-label"><i class="bi bi-house-gear-fill text-navy me-1"></i> Fungsi Bangunan</label>
+        <input type="text" name="fungsibangunan" class="form-control" value="{{ old('fungsibangunan', $data->fungsibangunan) }}">
     </div>
+
+    <div class="col-md-6">
+        <label class="form-label"><i class="bi bi-list-ol text-navy me-1"></i> Jumlah Lantai</label>
+        <input type="text" name="jumlahlantai" class="form-control" value="{{ old('jumlahlantai', $data->jumlahlantai) }}">
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label"><i class="bi bi-box text-navy me-1"></i> Luas Lantai Dasar (m²)</label>
+        <input type="text" name="luaslantaildasar" class="form-control" value="{{ old('luaslantaildasar', $data->luaslantaildasar) }}">
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label"><i class="bi bi-bounding-box-circles text-navy me-1"></i> Total Luas Lantai Gedung (m²)</label>
+        <input type="text" name="totalluaslantai" class="form-control" value="{{ old('totalluaslantai', $data->totalluaslantai) }}">
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label"><i class="bi bi-arrow-up text-navy me-1"></i> Ketinggian Bangunan (m)</label>
+        <input type="text" name="tinggibangunan" class="form-control" value="{{ old('tinggibangunan', $data->tinggibangunan) }}">
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label"><i class="bi bi-box-fill text-navy me-1"></i> Luas Basement (m²)</label>
+        <input type="text" name="luasbasement" class="form-control" value="{{ old('luasbasement', $data->luasbasement) }}">
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label"><i class="bi bi-geo text-navy me-1"></i> Koordinat Bangunan</label>
+        <input type="text" name="koordinatbangunan" class="form-control" value="{{ old('koordinatbangunan', $data->koordinatbangunan) }}">
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label"><i class="bi bi-calendar2-week text-navy me-1"></i> Tanggal Mulai Konstruksi</label>
+        <input type="date" name="tanggalmulaikonstruksi" class="form-control" value="{{ old('tanggalmulaikonstruksi', $data->tanggalmulaikonstruksi) }}">
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label"><i class="bi bi-calendar-check text-navy me-1"></i> Tanggal Selesai Konstruksi</label>
+        <input type="date" name="tanggalselesaikonstruksi" class="form-control" value="{{ old('tanggalselesaikonstruksi', $data->tanggalselesaikonstruksi) }}">
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label"><i class="bi bi-tools text-navy me-1"></i> Tanggal Rehabilitasi</label>
+        <input type="date" name="tanggalrehabilitasi" class="form-control" value="{{ old('tanggalrehabilitasi', $data->tanggalrehabilitasi) }}">
+    </div>
+
 
     {{-- Tombol Submit --}}
     <div class="col-12 text-end mt-3">
