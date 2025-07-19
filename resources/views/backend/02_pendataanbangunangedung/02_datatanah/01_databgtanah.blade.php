@@ -276,7 +276,7 @@ th {
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-header bg-primary text-white d-flex align-items-center">
                     <i class="bi bi-person-fill me-2 fs-5"></i>
-                    <h5 style="font-size: 16px;" class="mb-0">Informasi Data Pemilik Bangunan Gedung : {{ $pemilik->namapemilik ?? 'Tidak Diketahui' }}</h5>
+                    <h5 style="font-size: 16px;" class="mb-0">Informasi Data Profil Tanah : {{ $pemilik->namapemilik ?? 'Tidak Diketahui' }}</h5>
                 </div>
 
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
