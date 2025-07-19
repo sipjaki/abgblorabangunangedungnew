@@ -342,19 +342,6 @@
 <div class="container" style="margin-top: -50px;">
     <div class="stats-grid" style="display: flex; flex-wrap: wrap; gap: 16px;">
         <div class="stat-card">
-            <div class="stat-number">
-               {{
-    ($jumlahDataIdSatu ?? 0) +
-    ($jumlahDataIdDua ?? 0) +
-    ($jumlahDataIdTiga ?? 0) +
-    ($jumlahDataIdEmpat ?? 0) +
-    ($jumlahDataIdLima ?? 0) +
-    ($jumlahDataIdEnam ?? 0) +
-    ($jumlahDataIdTujuh ?? 0) +
-    ($jumlahDataIdDelapan ?? 0)
-}}
-
-            </div>
             <div class="stat-label" style="color: navy;">
                 <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Permohonan
             </div>
@@ -436,70 +423,7 @@
 
 {{-- -------------------------------------------------------- --}}
 <div class="row g-4">
-  <!-- Card 1 -->
-  <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bepbgslfindexslf" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-             style="background-color: #ffd100; width: 60px; height: 60px;">
-          <i class="bi bi-file-earmark-check" style="font-size: 26px; color: green;"></i>
-        </div>
-        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            (PBG) Persetujuan Bangunan Gedung
-          </span>
-          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdSatu }} Permohonan
-          </span>
-        </div>
-      </div>
-    </a>
-  </div>
 
-  <!-- Card 2 -->
-  <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bepbgslfindexslfper2" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-             style="background-color: #ffd100; width: 60px; height: 60px;">
-          <i class="bi bi-building" style="font-size: 26px; color: green;"></i>
-        </div>
-        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            (SLF) Sertifikat Laik Fungsi
-          </span>
-          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdDua }} Permohonan
-          </span>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bepbgslfindexslfper3" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-             style="background-color: #ffd100; width: 60px; height: 60px;">
-          <i class="bi bi-award" style="font-size: 26px; color: green;"></i>
-        </div>
-        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            (SBKBG) Surat Bukti Kepemilikan Bangunan Gedung
-          </span>
-          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdTiga }} Permohonan
-          </span>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <!-- Card 4 -->
   <div class="col-12 col-sm-6 col-md-6">
     <a href="/bepbgslfindexslfper4" style="text-decoration: none;">
       <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
@@ -513,7 +437,7 @@
             (RTB) Rencana Teknis Pembongkaran
           </span>
           <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdEmpat }} Permohonan
+            {{-- {{ $jumlahDataIdEmpat }} Permohonan --}}
           </span>
         </div>
       </div>
@@ -521,25 +445,7 @@
   </div>
 
   <!-- Card 5 -->
-  <div class="col-12 col-sm-6 col-md-6">
-    <a href="/bepbgslfindexslfper5" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-             style="background-color: #ffd100; width: 60px; height: 60px;">
-          <i class="bi bi-house-door" style="font-size: 26px; color: green;"></i>
-        </div>
-        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            Pendataan Bangunan Gedung
-          </span>
-          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdLima }} Permohonan
-          </span>
-        </div>
-      </div>
-    </a>
-  </div>
+
 </div>
   </div>
 <br><br><br><br>
