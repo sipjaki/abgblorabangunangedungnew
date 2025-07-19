@@ -176,7 +176,7 @@ th {
         @foreach ($data as $item)
   <div class="card mb-4 shadow-sm">
     <div class="card-header bg-primary text-white">
-      <i class="bi bi-info-circle me-2"></i> Detail Data Berkas (ID: {{ $item->id }})
+      <i class="bi bi-info-circle me-2"></i> {{$title}}
     </div>
 
     <div class="card-body">
