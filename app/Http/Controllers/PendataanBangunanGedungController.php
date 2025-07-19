@@ -925,5 +925,26 @@ public function bedatabgstruktur($id)
     ]);
 }
 
+
+
+public function bedatabgstrukturupdate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = databgkepemilikan::find($id);
+    $databantuanteknis = databgstrukturbangunan::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.02_pendataanbangunangedung.05_strukturbangunan.02_updatestrukturbangunan', [
+        'title' => 'Perbaikan Data Struktur Bangunan Gedung ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
 }
 

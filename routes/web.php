@@ -108,7 +108,7 @@ Route::post('/bedatabgklasifikasicreatenew', [PendataanBangunanGedungController:
 
 // 04 PENDATAAN BANGUNAN GEDUNG STRUKTUR BANGUNAN GEDUNG
 Route::get('/bedatabgstruktur/{id}', [PendataanBangunanGedungController::class, 'bedatabgstruktur'])->middleware('auth')->name('bedatabgstruktur');
-// Route::get('/bedatabgklasifikasiupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasiupdate'])->middleware('auth')->name('bedatabgklasifikasiupdate');
+Route::get('/bedatabgstrukturupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturupdate'])->middleware('auth')->name('bedatabgstrukturupdate');
 // Route::put('/bedatabgklasifikasiupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasiupdatenew'])->middleware('auth')->name('bedatabgklasifikasiupdatenew');
 
 // Route::get('/bedatabgklasifikasicreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasicreate'])->middleware('auth')->name('bedatabgklasifikasicreate');
