@@ -339,12 +339,12 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('updatedatapemiliknew', $data->id) }}" method="POST">
+<form id="formPemilik" action="{{ route('bedatabgprofiltanahupdatenew', $data->id) }}" method="POST">
     @csrf
     @method('PUT')
 
-    <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
-    <input type="hidden" name="id" value="{{ $data->id }}">
+    <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
+    {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
 <div class="row g-3 mt-2">
     {{-- Status Hak Tanah --}}
     <div class="col-md-6">

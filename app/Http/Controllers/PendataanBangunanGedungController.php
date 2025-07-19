@@ -515,5 +515,51 @@ public function bedatabgprofiltanahupdate($id)
 }
 
 
+public function updatedatapemiliknew(Request $request, $id)
+{
+    $validated = $request->validate([
+        'pbgslfbangunan_id' => 'required|string',
+        'namapemilik' => 'required|string|max:255',
+        'alamatpemilik' => 'required|string|max:255',
+        'nomortelepon' => 'required|string|max:50',
+        'email' => 'required|email|max:100',
+        'noidentitas' => 'required|string|max:100',
+        'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
+        'catatan' => 'nullable|string',
+    ], [
+        'pbgslfbangunan_id.required' => 'ID bangunan wajib diisi.',
+        'namapemilik.required' => 'Nama pemilik wajib diisi.',
+        'alamatpemilik.required' => 'Alamat pemilik wajib diisi.',
+        'nomortelepon.required' => 'Nomor telepon wajib diisi.',
+        'email.required' => 'Email wajib diisi.',
+        'email.email' => 'Format email tidak valid.',
+        'noidentitas.required' => 'No identitas wajib diisi.',
+        'pilihancatatan.required' => 'Pilihan catatan wajib dipilih.',
+        'pilihancatatan.in' => 'Pilihan catatan harus antara "lengkap" atau "tidak lengkap".',
+    ]);
+
+    // Cari data berdasarkan ID
+    $pemilik = datapemilik::findOrFail($id);
+
+    // Lakukan update
+    $pemilik->update([
+        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
+        'namapemilik' => $validated['namapemilik'],
+        'alamatpemilik' => $validated['alamatpemilik'],
+        'nomortelepon' => $validated['nomortelepon'],
+        'email' => $validated['email'],
+        'noidentitas' => $validated['noidentitas'],
+        'pilihancatatan' => $validated['pilihancatatan'],
+        'catatan' => $validated['catatan'] ?? null,
+    ]);
+
+// Kirim pesan sukses
+session()->flash('update', 'Data pemilik berhasil diperbarui!');
+return redirect()->back();
+
+}
+
+
+
 }
 
