@@ -795,5 +795,23 @@ public function bedatabgklasifikasi($id)
     ]);
 }
 
+public function bedatabgklasifikasiupdate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = databgkepemilikan::find($id);
+    $databantuanteknis = databgklasifikasi::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.02_pendataanbangunangedung.04_klasfikasi.02_updateklasifikasi', [
+        'title' => 'Perbaikan Data Klasifikasi Bangunan Gedung ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }
 
