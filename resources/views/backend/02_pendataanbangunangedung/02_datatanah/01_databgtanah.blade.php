@@ -356,12 +356,12 @@ th {
                 animation: fadeIn 0.5s ease-in-out;
             ">
                 <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-                Data Pemilik Tidak Ditemukan !!
+                Data Informasi Profil Tanah Tidak Ditemukan !!
             </div>
 
             {{-- Tombol Tambah Data --}}
             <div class="text-center mt-4">
-           <a href="{{ route('datapemilik.create', $data->id) }}" class="button-baru">
+           <a href="{{ route('bedatabgprofiltanahcreate', $data->id) }}" class="button-baru">
     <i class="bi bi-plus-circle me-1"></i> Tambahkan Data
 </a>
  </div>

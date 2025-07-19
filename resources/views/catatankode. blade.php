@@ -31,11 +31,6 @@ password : SipjakiBlora$$123
                 </p>
             </div>
 
-
-
-
-
-
 <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl" style="margin-top: -25px;">
     <div class="w-5 h-5 flex shrink-0">
         <img src="/assets/new/icons/story.svg" alt="icon">
@@ -66,7 +61,7 @@ password : SipjakiBlora$$123
 
 
 
-            
+
                                         <div style="margin-top: 10px;">
                                                 @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
                                                 <!-- Display the default iframe when the file exists in the storage -->

@@ -25,10 +25,10 @@ return new class extends Migration
     $table->string('tinggibangunan')->nullable(); // Ketinggian Bangunan
     $table->string('luasbasement')->nullable(); // Luas Basement
     $table->string('koordinatbangunan')->nullable(); // Koordinat Bangunan
-    // $table->string('column12')->nullable(); // Column12 (tidak jelas, bisa diubah nama jika diketahui)
     $table->date('tanggalmulaikonstruksi')->nullable(); // Tanggal Mulai Konstruksi
     $table->date('tanggalselesaikonstruksi')->nullable(); // Tanggal Selesai Konstruksi
     $table->date('tanggalrehabilitasi')->nullable(); // Tanggal Rehabilitasi
+    // $table->string('column12')->nullable(); // Column12 (tidak jelas, bisa diubah nama jika diketahui)
 
     $table->softDeletes();
     $table->timestamps();

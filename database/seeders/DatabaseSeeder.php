@@ -35,6 +35,7 @@ use App\Models\kedinasan;
 use App\Models\kodelokasibangunangedung;
 use App\Models\databangunangedung;
 use App\Models\databgkepemilikan;
+use App\Models\databgpeprofilbangunangedung;
 use App\Models\databgtanah;
 use App\Models\datapemilik;
 use App\Models\datatanahpbg;
@@ -22458,7 +22459,24 @@ databgtanah::create(['id'=>350,'databgkepemilikan_id'=>350,'statushaktanah'=>'Ha
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL TANAH
 
-
+// PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL BANGUNAN GEDUNG
+databgpeprofilbangunangedung::create([
+    'id' => 1,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '',
+    'namabangunan' => '',
+    'alamatbangunan' => '',
+    'fungsibangunan' => '',
+    'jumlahlantai' => '',
+    'luaslantaildasar' => '',
+    'totalluaslantai' => '',
+    'tinggibangunan' => '',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => null,
+    'tanggalselesaikonstruksi' => null,
+    'tanggalrehabilitasi' => null,
+]);
 
 
 // ==========================================
