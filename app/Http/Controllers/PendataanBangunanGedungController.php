@@ -515,48 +515,36 @@ public function bedatabgprofiltanahupdate($id)
 }
 
 
-public function updatedatapemiliknew(Request $request, $id)
+public function bedatabgprofiltanahupdatenew(Request $request, $id)
 {
     $validated = $request->validate([
-        'pbgslfbangunan_id' => 'required|string',
-        'namapemilik' => 'required|string|max:255',
-        'alamatpemilik' => 'required|string|max:255',
-        'nomortelepon' => 'required|string|max:50',
-        'email' => 'required|email|max:100',
-        'noidentitas' => 'required|string|max:100',
-        'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
-        'catatan' => 'nullable|string',
+        'databgkepemilikan_id' => 'nullable|integer',
+        'statushaktanah' => 'nullable|string|max:100',
+        'statuskepemilikan' => 'nullable|string|max:100',
+        'nobuktikepemilikan' => 'nullable|string|max:100',
+        'alamattanah' => 'nullable|string|max:255',
     ], [
-        'pbgslfbangunan_id.required' => 'ID bangunan wajib diisi.',
-        'namapemilik.required' => 'Nama pemilik wajib diisi.',
-        'alamatpemilik.required' => 'Alamat pemilik wajib diisi.',
-        'nomortelepon.required' => 'Nomor telepon wajib diisi.',
-        'email.required' => 'Email wajib diisi.',
-        'email.email' => 'Format email tidak valid.',
-        'noidentitas.required' => 'No identitas wajib diisi.',
-        'pilihancatatan.required' => 'Pilihan catatan wajib dipilih.',
-        'pilihancatatan.in' => 'Pilihan catatan harus antara "lengkap" atau "tidak lengkap".',
+        'statushaktanah.max' => 'Maksimal 100 karakter.',
+        'statuskepemilikan.max' => 'Maksimal 100 karakter.',
+        'nobuktikepemilikan.max' => 'Maksimal 100 karakter.',
+        'alamattanah.max' => 'Maksimal 255 karakter.',
     ]);
 
-    // Cari data berdasarkan ID
-    $pemilik = datapemilik::findOrFail($id);
+    // Ambil data berdasarkan ID
+    $pemilik = databgtanah::findOrFail($id);
 
-    // Lakukan update
+    // Update data
     $pemilik->update([
-        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
-        'namapemilik' => $validated['namapemilik'],
-        'alamatpemilik' => $validated['alamatpemilik'],
-        'nomortelepon' => $validated['nomortelepon'],
-        'email' => $validated['email'],
-        'noidentitas' => $validated['noidentitas'],
-        'pilihancatatan' => $validated['pilihancatatan'],
-        'catatan' => $validated['catatan'] ?? null,
+        'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
+        'statushaktanah' => $validated['statushaktanah'],
+        'statuskepemilikan' => $validated['statuskepemilikan'],
+        'nobuktikepemilikan' => $validated['nobuktikepemilikan'],
+        'alamattanah' => $validated['alamattanah'],
     ]);
 
-// Kirim pesan sukses
-session()->flash('update', 'Data pemilik berhasil diperbarui!');
-return redirect()->back();
-
+    // Feedback
+    session()->flash('update', 'Data kepemilikan tanah berhasil diperbarui!');
+    return redirect()->back();
 }
 
 
