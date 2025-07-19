@@ -784,7 +784,7 @@ public function bedatabgklasifikasi($id)
     // $datapbgslf = jenispengajuanpbgslfper::all();
 
     // Kirim data ke view
-    return view('backend.02_pendataanbangunangedung.04_klasifikasi.01_dataklasifikasi', [
+    return view('backend.02_pendataanbangunangedung.04_klasfikasi.01_dataklasifikasi', [
         'title' => 'Informasi Data Klasifikasi Bangunan Gedung',
         'title_halaman' => 'Informasi Data Klasifikasi Bangunan Gedung',
         'user' => $user,
