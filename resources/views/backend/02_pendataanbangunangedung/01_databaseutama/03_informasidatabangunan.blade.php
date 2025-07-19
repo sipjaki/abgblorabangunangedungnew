@@ -208,6 +208,7 @@ th {
         <h5 class="mb-0" style="font-size: 16px;">Informasi Data Bangunan Gedung Kabupaten </h5>
     </div>
 </div>
+<br>
 
 {{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus') --}}
 
