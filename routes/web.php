@@ -92,7 +92,7 @@ Route::post('/bedatabgprofiltanahcreatenew', [PendataanBangunanGedungController:
 // 02 PENDATAAN BANGUNAN GEDUNG PROFIL DATA BANGUNAN GEDUNG
 
 Route::get('/bedatabgprofilbangunan/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofilbangunan'])->middleware('auth')->name('bedatabgprofilbangunan');
-// Route::get('/bedatabgprofiltanahupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahupdate'])->middleware('auth')->name('bedatabgprofiltanahupdate');
+Route::get('/bedatabgprofilbangunanupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofilbangunanupdate'])->middleware('auth')->name('bedatabgprofilbangunanupdate');
 // Route::put('/bedatabgprofiltanahupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahupdatenew'])->middleware('auth')->name('bedatabgprofiltanahupdatenew');
 
 // Route::get('/bedatabgprofiltanahcreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahcreate'])->middleware('auth')->name('bedatabgprofiltanahcreate');
