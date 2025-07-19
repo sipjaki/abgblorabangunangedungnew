@@ -486,25 +486,29 @@
     </a>
   </div>
 
-  <div class="col-6 col-md-3">
-    <a href="/slf-menara-telekomunikasi" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-             style="background-color: #ffd100; width: 60px; height: 60px;">
-          <i class="bi bi-antenna" style="font-size: 26px; color: green;"></i>
-        </div>
-        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            SLF Menara Telekomunikasi
-          </span>
-          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{-- Jumlah data --}}
-          </span>
-        </div>
+  <!-- Pastikan ini ada di <head> halamanmu -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+<!-- Card SLF Menara Telekomunikasi -->
+<div class="col-6 col-md-3">
+  <a href="/slf-menara-telekomunikasi" style="text-decoration: none;">
+    <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
+         style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
+      <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
+           style="background-color: #ffd100; width: 60px; height: 60px;">
+        <i class="bi bi-antenna-radiowaves" style="font-size: 26px; color: green;"></i>
       </div>
-    </a>
-  </div>
+      <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
+        <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
+          SLF Menara Telekomunikasi
+        </span>
+        <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
+          {{-- Jumlah data --}}
+        </span>
+      </div>
+    </div>
+  </a>
+</div>
 
 </div>
 
