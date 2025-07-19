@@ -346,34 +346,64 @@ th {
     <div class="row g-3 mt-2">
 {{-- Luas Tanah --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-diagram-3 text-primary me-1"></i> Tingkat Kompleksitas</label>
-    <input type="text" name="tingkat_kompleksitas" class="form-control @error('tingkat_kompleksitas') is-invalid @enderror" value="{{ old('tingkat_kompleksitas') }}">
-    @error('tingkat_kompleksitas')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <label class="form-label"><i class="bi bi-box text-primary me-1"></i> Struktur Bawah</label>
+    <input type="text" name="struktur_bawah" class="form-control @error('struktur_bawah') is-invalid @enderror" value="{{ old('struktur_bawah') }}">
+    @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-box-seam text-primary me-1"></i> Struktur Atas</label>
+    <select name="struktur_atas" class="form-select @error('struktur_atas') is-invalid @enderror">
+        <option value="">-- Pilih Struktur Atas --</option>
+        <option value="Kayu">Kayu</option>
+        <option value="Baja">Baja</option>
+        <option value="Beton">Beton</option>
+        <option value="Campuran">Campuran</option>
+    </select>
+    @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-houses text-primary me-1"></i> Tingkat Permanensi</label>
-    <input type="text" name="tingkat_permanensi" class="form-control @error('tingkat_permanensi') is-invalid @enderror" value="{{ old('tingkat_permanensi') }}">
-    @error('tingkat_permanensi')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <label class="form-label"><i class="bi bi-house-gear text-primary me-1"></i> Struktur Atap</label>
+    <select name="struktur_atap" class="form-select @error('struktur_atap') is-invalid @enderror">
+        <option value="">-- Pilih Struktur Atap --</option>
+        <option value="Kayu">Kayu</option>
+        <option value="Baja">Baja</option>
+        <option value="Beton">Beton</option>
+        <option value="Campuran">Campuran</option>
+    </select>
+    @error('struktur_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-fire text-primary me-1"></i> Resiko Kebakaran</label>
-    <input type="text" name="resiko_kebakaran" class="form-control @error('resiko_kebakaran') is-invalid @enderror" value="{{ old('resiko_kebakaran') }}">
-    @error('resiko_kebakaran')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
+@php
+    $opsi = ['Baik', 'T1', 'T2', 'T3', 'T4'];
+@endphp
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-activity text-primary me-1"></i> Resiko Gempa</label>
-    <input type="text" name="resiko_gempa" class="form-control @error('resiko_gempa') is-invalid @enderror" value="{{ old('resiko_gempa') }}">
-    @error('resiko_gempa')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
+@foreach ([
+    'rangka_atap' => 'Rangka Atap',
+    'balok' => 'Balok',
+    'kolom' => 'Kolom',
+    'pondasi' => 'Pondasi',
+    'dinding' => 'Dinding',
+    'genteng' => 'Genteng',
+    'plafon' => 'Plafon',
+    'lantai' => 'Lantai',
+    'pintu' => 'Pintu',
+    'jendela' => 'Jendela'
+] as $name => $label)
+    <div class="col-md-6">
+        <label class="form-label"><i class="bi bi-buildings text-primary me-1"></i> {{ $label }}</label>
+        <select name="{{ $name }}" class="form-select @error($name) is-invalid @enderror">
+            <option value="">-- Pilih {{ $label }} --</option>
+            @foreach ($opsi as $val)
+                <option value="{{ $val }}">{{ $val }}</option>
+            @endforeach
+        </select>
+        @error($name)<div class="invalid-feedback">{{ $message }}</div>@enderror
+    </div>
+@endforeach
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-geo text-primary me-1"></i> Kepadatan Lokasi</label>
-    <input type="text" name="kepadatan_lokasi" class="form-control @error('kepadatan_lokasi') is-invalid @enderror" value="{{ old('kepadatan_lokasi') }}">
-    @error('kepadatan_lokasi')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
 
         {{-- Tombol Submit --}}
         <div class="col-12 text-end mt-3">
