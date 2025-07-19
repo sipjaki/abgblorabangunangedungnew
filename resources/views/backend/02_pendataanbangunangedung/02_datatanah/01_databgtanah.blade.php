@@ -200,6 +200,7 @@ th {
                             <div class="card-body">
                                 <div class="row">
                                     <div class="card shadow-sm border-0">
+
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
         <h5 class="mb-0" style="font-size: 16px;">Informasi Data Bangunan Gedung Kabupaten </h5>
