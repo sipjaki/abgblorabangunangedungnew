@@ -343,8 +343,6 @@ th {
     <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
-
-
     <div class="row g-3 mt-2">
 {{-- Status Hak Tanah --}}
 <div class="col-md-6">
