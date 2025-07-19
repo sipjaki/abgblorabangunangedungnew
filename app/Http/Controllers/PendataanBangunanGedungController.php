@@ -9,6 +9,7 @@ use App\Models\databangunangedung;
 use App\Models\databgkepemilikan;
 use App\Models\databgklasifikasi;
 use App\Models\databgpeprofilbangunangedung;
+use App\Models\databgstatus;
 use App\Models\databgstrukturbangunan;
 use App\Models\databgtanah;
 use App\Models\kepemilikanbangunangedung;
@@ -1050,6 +1051,37 @@ public function bedatabgstrukturcreatenew(Request $request)
     session()->flash('create', 'Data struktur bangunan berhasil ditambahkan!');
     return redirect()->route('bedatabgstruktur', ['id' => $validated['databgkepemilikan_id']]);
 }
+
+public function bedatabgstatusbangunan($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Cari data pbg berdasarkan ID
+    $data = databgkepemilikan::findOrFail($id);
+
+    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
+    $subdatapemilik = databgstatus::where('databgkepemilikan_id', $data->id)->paginate(15);
+
+    // Hitung nomor urut mulai untuk paginasi
+    $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+
+    // Ambil data jenis pengajuan
+    // $datapbgslf = jenispengajuanpbgslfper::all();
+
+    // Kirim data ke view
+    return view('backend.02_pendataanbangunangedung.06_statusbangunan.01_datastatusbangunan', [
+        'title' => 'Informasi Data Status Bangunan Gedung',
+        'title_halaman' => 'Informasi Data Status Bangunan Gedung',
+        'user' => $user,
+        'data' => $data,
+        // 'datapbgslf' => $datapbgslf,
+        'subdatapemilik' => $subdatapemilik,
+        'start' => $start,
+    ]);
+}
+
+
 
 }
 
