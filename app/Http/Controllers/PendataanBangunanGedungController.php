@@ -1099,6 +1099,33 @@ public function bedatabgstatusbangunanupdate($id)
     ]);
 }
 
+public function bedatabgstatusbangunanupdatenew(Request $request, $id)
+{
+    $validated = $request->validate([
+        'databgkepemilikan_id' => 'nullable|string',
+        'dokumen_teknis_tanah' => 'nullable|string|max:255',
+        'no_hdno' => 'nullable|string|max:255',
+        'no_imbpbg' => 'nullable|string|max:255',
+        'no_slf' => 'nullable|string|max:255',
+    ], [
+        '*.max' => 'Maksimal 255 karakter.',
+        'databgkepemilikan_id.integer' => 'ID Kepemilikan harus berupa angka.',
+    ]);
+
+    $klasifikasi = databgstatus::findOrFail($id);
+
+    $klasifikasi->update([
+        'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? null,
+        'dokumen_teknis_tanah' => $validated['dokumen_teknis_tanah'] ?? null,
+        'no_hdno' => $validated['no_hdno'] ?? null,
+        'no_imbpbg' => $validated['no_imbpbg'] ?? null,
+        'no_slf' => $validated['no_slf'] ?? null,
+    ]);
+
+    session()->flash('update', 'Data berhasil diperbarui!');
+    return redirect()->back();
+}
+
 
 }
 
