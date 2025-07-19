@@ -22612,6 +22612,69 @@ for ($i = 2; $i <= 114; $i++) {
         'kepadatan_lokasi' => 'Sedang'
     ]);
 }
+
+
+// Records 115-132 (Khusus pattern)
+for ($i = 115; $i <= 132; $i++) {
+    databgklasifikasi::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'tingkat_kompleksitas' => 'Khusus',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Sedang'
+    ]);
+}
+
+// Records 115-132 (Khusus pattern)
+for ($i = 115; $i <= 132; $i++) {
+    databgklasifikasi::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'tingkat_kompleksitas' => 'Khusus',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Sedang'
+    ]);
+}
+
+// Records 133-189 (Mixed Sederhana/sederhana pattern)
+for ($i = 133; $i <= 189; $i++) {
+    // Determine case for tingkat_kompleksitas
+    $kompleksitas = 'Sederhana'; // default
+    if (in_array($i, [163,164,165,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184])) {
+        $kompleksitas = 'sederhana';
+    }
+
+    databgklasifikasi::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'tingkat_kompleksitas' => $kompleksitas,
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Sedang'
+    ]);
+}
+
+// Records 190-210 with alternating Permanen/Semi Permanen
+for ($i = 190; $i <= 210; $i++) {
+    $permanensi = ($i % 2 === 0 || $i >= 207) ? 'Semi Permanen' : 'Permanen';
+
+    databgklasifikasi::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => $permanensi,
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Sedang'
+    ]);
+}
+
+
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA KLASIFIKASI BANGUNAN GEDUNG
 // ==========================================
 pengkajiteknis::create([
