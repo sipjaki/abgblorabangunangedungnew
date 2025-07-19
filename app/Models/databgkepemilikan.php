@@ -29,5 +29,11 @@ class databgkepemilikan extends Model
         return $this->belongsTo(datainstitusibangunangedung::class, 'datainstitusibangunangedung_id');
     }
 
+    public function databgtanah()
+    {
+        return $this->hasMany(databgtanah::class);
+    }
+
+
 
 }
