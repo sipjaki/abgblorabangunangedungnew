@@ -341,172 +341,173 @@
 
 
 {{-- -------------------------------------------------------- --}}
+
 <div class="row g-4">
-<div class="col-12 col-sm-6 col-md-6">
-  <a href="/pbg-fungsi-campuran" style="text-decoration: none;">
-    <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-         style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-      <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-           style="background-color: #ffd100; width: 60px; height: 60px;">
-        <i class="bi bi-building" style="font-size: 26px; color: green;"></i>
+
+  <div class="col-6 col-md-3">
+    <a href="/pbg-fungsi-campuran" style="text-decoration: none;">
+      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
+           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
+        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
+             style="background-color: #ffd100; width: 60px; height: 60px;">
+          <i class="bi bi-building" style="font-size: 26px; color: green;"></i>
+        </div>
+        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
+          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
+            PBG Fungsi Campuran
+          </span>
+          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
+            {{-- Jumlah data --}}
+          </span>
+        </div>
       </div>
-      <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-        <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-          PBG Fungsi Campuran
-        </span>
-        <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-          {{-- Jumlah data --}}
-        </span>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="/pbg-fungsi-hunian" style="text-decoration: none;">
+      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
+           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
+        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
+             style="background-color: #ffd100; width: 60px; height: 60px;">
+          <i class="bi bi-house-door" style="font-size: 26px; color: green;"></i>
+        </div>
+        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
+          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
+            Fungsi Hunian
+          </span>
+          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
+            {{-- Jumlah data --}}
+          </span>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="/pbg-fungsi-keagamaan" style="text-decoration: none;">
+      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
+           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
+        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
+             style="background-color: #ffd100; width: 60px; height: 60px;">
+          <i class="bi bi-bank" style="font-size: 26px; color: green;"></i>
+        </div>
+        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
+          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
+            Fungsi Keagamaan
+          </span>
+          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
+            {{-- Jumlah data --}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="/pbg-fungsi-prasarana" style="text-decoration: none;">
+      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
+           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
+        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
+             style="background-color: #ffd100; width: 60px; height: 60px;">
+          <i class="bi bi-wrench" style="font-size: 26px; color: green;"></i>
+        </div>
+        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
+          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
+            Fungsi Prasarana
+          </span>
+          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
+            {{-- Jumlah data --}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Baris kedua -->
+
+  <div class="col-6 col-md-3">
+    <a href="/pbg-fungsi-sosial-budaya" style="text-decoration: none;">
+      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
+           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
+        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
+             style="background-color: #ffd100; width: 60px; height: 60px;">
+          <i class="bi bi-people" style="font-size: 26px; color: green;"></i>
+        </div>
+        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
+          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
+            Fungsi Sosial Budaya
+          </span>
+          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
+            {{-- Jumlah data --}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="/pbg-fungsi-usaha" style="text-decoration: none;">
+      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
+           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
+        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
+             style="background-color: #ffd100; width: 60px; height: 60px;">
+          <i class="bi bi-shop" style="font-size: 26px; color: green;"></i>
+        </div>
+        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
+          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
+            Fungsi Usaha
+          </span>
+          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
+            {{-- Jumlah data --}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="/slf-fungsi-usaha" style="text-decoration: none;">
+      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
+           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
+        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
+             style="background-color: #ffd100; width: 60px; height: 60px;">
+          <i class="bi bi-building-check" style="font-size: 26px; color: green;"></i>
+        </div>
+        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
+          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
+            SLF Fungsi Usaha
+          </span>
+          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
+            {{-- Jumlah data --}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="/slf-menara-telekomunikasi" style="text-decoration: none;">
+      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
+           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
+        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
+             style="background-color: #ffd100; width: 60px; height: 60px;">
+          <i class="bi bi-antenna" style="font-size: 26px; color: green;"></i>
+        </div>
+        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
+          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
+            SLF Menara Telekomunikasi
+          </span>
+          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
+            {{-- Jumlah data --}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+
 </div>
 
-<div class="col-12 col-sm-6 col-md-6">
-  <a href="/pbg-fungsi-hunian" style="text-decoration: none;">
-    <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-         style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-      <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-           style="background-color: #ffd100; width: 60px; height: 60px;">
-        <i class="bi bi-house-door" style="font-size: 26px; color: green;"></i>
-      </div>
-      <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-        <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-          Fungsi Hunian
-        </span>
-        <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-          {{-- Jumlah data --}}
-        </span>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="col-12 col-sm-6 col-md-6">
-  <a href="/pbg-fungsi-keagamaan" style="text-decoration: none;">
-    <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-         style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-      <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-           style="background-color: #ffd100; width: 60px; height: 60px;">
-        <i class="bi bi-bank" style="font-size: 26px; color: green;"></i>
-      </div>
-      <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-        <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-          Fungsi Keagamaan
-        </span>
-        <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-          {{-- Jumlah data --}}
-        </span>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="col-12 col-sm-6 col-md-6">
-  <a href="/pbg-fungsi-prasarana" style="text-decoration: none;">
-    <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-         style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-      <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-           style="background-color: #ffd100; width: 60px; height: 60px;">
-        <i class="bi bi-wrench" style="font-size: 26px; color: green;"></i>
-      </div>
-      <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-        <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-          Fungsi Prasarana
-        </span>
-        <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-          {{-- Jumlah data --}}
-        </span>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="col-12 col-sm-6 col-md-6">
-  <a href="/pbg-fungsi-sosial-budaya" style="text-decoration: none;">
-    <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-         style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-      <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-           style="background-color: #ffd100; width: 60px; height: 60px;">
-        <i class="bi bi-people" style="font-size: 26px; color: green;"></i>
-      </div>
-      <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-        <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-          Fungsi Sosial Budaya
-        </span>
-        <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-          {{-- Jumlah data --}}
-        </span>
-      </div>
-    </div>
-  </a>
-</div>
-
-<!-- Tambahan 2 card lagi -->
-
-<div class="col-12 col-sm-6 col-md-6">
-  <a href="/pbg-fungsi-usaha" style="text-decoration: none;">
-    <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-         style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-      <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-           style="background-color: #ffd100; width: 60px; height: 60px;">
-        <i class="bi bi-shop" style="font-size: 26px; color: green;"></i>
-      </div>
-      <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-        <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-          Fungsi Usaha
-        </span>
-        <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-          {{-- Jumlah data --}}
-        </span>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="col-12 col-sm-6 col-md-6">
-  <a href="/slf-fungsi-usaha" style="text-decoration: none;">
-    <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-         style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-      <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-           style="background-color: #ffd100; width: 60px; height: 60px;">
-        <i class="bi bi-building-check" style="font-size: 26px; color: green;"></i>
-      </div>
-      <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-        <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-          SLF Fungsi Usaha
-        </span>
-        <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-          {{-- Jumlah data --}}
-        </span>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="col-12 col-sm-6 col-md-6">
-  <a href="/slf-menara-telekomunikasi" style="text-decoration: none;">
-    <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-         style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-      <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-           style="background-color: #ffd100; width: 60px; height: 60px;">
-        <i class="bi bi-antenna" style="font-size: 26px; color: green;"></i>
-      </div>
-      <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-        <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-          SLF Menara Telekomunikasi
-        </span>
-        <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-          {{-- Jumlah data --}}
-        </span>
-      </div>
-    </div>
-  </a>
-</div>
-
-  <!-- Card 5 -->
-
-</div>
   </div>
 <br><br><br><br>
   <style>
