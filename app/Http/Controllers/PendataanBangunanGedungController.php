@@ -701,5 +701,23 @@ public function bedatabgprofilbangunanupdatenew(Request $request, $id)
     return redirect()->back();
 }
 
+
+public function bedatabgprofilbangunancreate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = databgkepemilikan::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.02_pendataanbangunangedung.03_profilbangunangedung.03_tambahdataprofil', [
+        'title' => 'Tambah Data Informasi Profil Bangunan Gedung ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }
 
