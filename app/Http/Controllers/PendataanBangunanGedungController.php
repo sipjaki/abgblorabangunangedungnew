@@ -642,5 +642,64 @@ public function bedatabgprofilbangunanupdate($id)
     ]);
 }
 
+public function bedatabgprofilbangunanupdatenew(Request $request, $id)
+{
+    $validated = $request->validate([
+        'databgkepemilikan_id' => 'nullable|integer',
+        'luastanah' => 'nullable|string|max:255',
+        'namabangunan' => 'nullable|string|max:255',
+        'alamatbangunan' => 'nullable|string|max:255',
+        'fungsibangunan' => 'nullable|string|max:255',
+        'jumlahlantai' => 'nullable|string|max:100',
+        'luaslantaildasar' => 'nullable|string|max:255',
+        'totalluaslantai' => 'nullable|string|max:255',
+        'tinggibangunan' => 'nullable|string|max:255',
+        'luasbasement' => 'nullable|string|max:255',
+        'koordinatbangunan' => 'nullable|string|max:255',
+        'tanggalmulaikonstruksi' => 'nullable|date',
+        'tanggalselesaikonstruksi' => 'nullable|date',
+        'tanggalrehabilitasi' => 'nullable|date',
+    ], [
+        'luastanah.max' => 'Maksimal 255 karakter.',
+        'namabangunan.max' => 'Maksimal 255 karakter.',
+        'alamatbangunan.max' => 'Maksimal 255 karakter.',
+        'fungsibangunan.max' => 'Maksimal 255 karakter.',
+        'jumlahlantai.max' => 'Maksimal 100 karakter.',
+        'luaslantaildasar.max' => 'Maksimal 255 karakter.',
+        'totalluaslantai.max' => 'Maksimal 255 karakter.',
+        'tinggibangunan.max' => 'Maksimal 255 karakter.',
+        'luasbasement.max' => 'Maksimal 255 karakter.',
+        'koordinatbangunan.max' => 'Maksimal 255 karakter.',
+        'tanggalmulaikonstruksi.date' => 'Format tanggal tidak valid.',
+        'tanggalselesaikonstruksi.date' => 'Format tanggal tidak valid.',
+        'tanggalrehabilitasi.date' => 'Format tanggal tidak valid.',
+    ]);
+
+    // Ambil data berdasarkan ID
+    $bangunan = databgpeprofilbangunangedung::findOrFail($id);
+
+    // Update data
+    $bangunan->update([
+        'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? null,
+        'luastanah' => $validated['luastanah'] ?? null,
+        'namabangunan' => $validated['namabangunan'] ?? null,
+        'alamatbangunan' => $validated['alamatbangunan'] ?? null,
+        'fungsibangunan' => $validated['fungsibangunan'] ?? null,
+        'jumlahlantai' => $validated['jumlahlantai'] ?? null,
+        'luaslantaildasar' => $validated['luaslantaildasar'] ?? null,
+        'totalluaslantai' => $validated['totalluaslantai'] ?? null,
+        'tinggibangunan' => $validated['tinggibangunan'] ?? null,
+        'luasbasement' => $validated['luasbasement'] ?? null,
+        'koordinatbangunan' => $validated['koordinatbangunan'] ?? null,
+        'tanggalmulaikonstruksi' => $validated['tanggalmulaikonstruksi'] ?? null,
+        'tanggalselesaikonstruksi' => $validated['tanggalselesaikonstruksi'] ?? null,
+        'tanggalrehabilitasi' => $validated['tanggalrehabilitasi'] ?? null,
+    ]);
+
+    // Feedback
+    session()->flash('update', 'Data profil bangunan berhasil diperbarui!');
+    return redirect()->back();
+}
+
 }
 
