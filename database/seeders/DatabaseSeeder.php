@@ -22522,24 +22522,6 @@ databgpeprofilbangunangedung::create(['id'=>50,'databgkepemilikan_id'=>50,'luast
 
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL BANGUNAN GEDUNG
-databgpeprofilbangunangedung::create([
-    'id' => 1,
-    'databgkepemilikan_id' => 1,
-    'luastanah' => '',
-    'namabangunan' => '',
-    'alamatbangunan' => '',
-    'fungsibangunan' => '',
-    'jumlahlantai' => '',
-    'luaslantaildasar' => '',
-    'totalluaslantai' => '',
-    'tinggibangunan' => '',
-    'luasbasement' => '',
-    'koordinatbangunan' => '',
-    'tanggalmulaikonstruksi' => null,
-    'tanggalselesaikonstruksi' => null,
-    'tanggalrehabilitasi' => null,
-]);
-
 
 // ==========================================
 pengkajiteknis::create([
