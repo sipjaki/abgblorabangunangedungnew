@@ -852,6 +852,7 @@
         <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
     </p>
 </div> --}}
+</ul>
 <li class="nav-item">
     <a href="/404" class="nav-link">
         <!-- Icon User -->
@@ -865,7 +866,6 @@
         </p>
     </a>
 </li>
-</ul>
 
 
 @endcan
