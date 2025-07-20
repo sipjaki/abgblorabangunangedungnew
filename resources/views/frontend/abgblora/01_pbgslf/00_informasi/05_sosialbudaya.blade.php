@@ -196,12 +196,6 @@
     Persetujuan Bangunan Gedung (PBG) - Fungsi Sosial Budaya
   </h2>
 
-  <!-- Poster Gambar -->
-  <div style="text-align: center; margin-bottom: 30px;">
-    <label style="display: block; font-weight: 600; margin-bottom: 10px;">Poster Gambar:</label>
-    <img src="poster.jpg" alt="Poster Gambar" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-  </div>
-
   <!-- Deskripsi -->
   <p style="text-align: justify; margin-bottom: 30px;">
     Persetujuan Bangunan Gedung (PBG) adalah dokumen legal yang wajib dimiliki sebelum pembangunan menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai dengan aspek teknis, ketentuan tata ruang, keselamatan lingkungan, serta mendapat persetujuan masyarakat sekitar.
@@ -209,34 +203,39 @@
 
   <!-- Persyaratan -->
   <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Persyaratan Dokumen:</h3>
-  <p style="margin-bottom: 10px;"><strong>1. Data Tanah:</strong></p>
-  <ul style="margin-left: 25px; margin-bottom: 15px;">
-    <li>Sertifikat tanah</li>
-    <li>Izin Pemanfaatan Tanah (apabila nama pemohon berbeda dengan sertifikat)</li>
-    <li>Gambar kontur tanah dan sondir (khusus bangunan tidak sederhana)</li>
-  </ul>
-
-  <p style="margin-bottom: 10px;"><strong>2. Data Umum:</strong></p>
-  <ul style="margin-left: 25px; margin-bottom: 15px;">
-    <li>KTP / Profil Perusahaan, NIB (OSS)</li>
-    <li>KRK / KKPR</li>
-    <li>Dokumen lingkungan sesuai peraturan (SPPL, OSS, UKL/UPL, AMDAL)</li>
-    <li>Data penyedia jasa konstruksi: Badan Usaha (SBU) / Arsitek berlisensi</li>
-    <li>Verifikasi pernyataan mandiri atau PKKPR otomatis yang diterbitkan FPR Kab. Blora</li>
-    <li>KKOP (Ketentuan Keselamatan Operasi Penerbangan)</li>
-    <li>Persetujuan warga sekitar menara yang diketahui lurah/kepala desa, disertai dokumentasi & berita acara sosialisasi</li>
-  </ul>
-
-  <p style="margin-bottom: 10px;"><strong>3. Data Teknis Arsitektur:</strong></p>
-  <ul style="margin-left: 25px; margin-bottom: 30px;">
-    <li>Gambar dan perhitungan teknis bangunan prasarana</li>
-  </ul>
+  <ol style="margin-left: 20px; margin-bottom: 30px;">
+    <li><strong>Data Tanah:</strong>
+      <ul style="margin-left: 20px;">
+        <li>Sertifikat tanah</li>
+        <li>Izin Pemanfaatan Tanah (apabila nama pemohon berbeda dengan sertifikat)</li>
+        <li>Gambar kontur tanah dan sondir (khusus bangunan tidak sederhana)</li>
+      </ul>
+    </li>
+    <li><strong>Data Umum:</strong>
+      <ul style="margin-left: 20px;">
+        <li>KTP / Profil Perusahaan, NIB (OSS)</li>
+        <li>KRK / KKPR</li>
+        <li>Dokumen lingkungan sesuai peraturan (SPPL, OSS, UKL/UPL, AMDAL)</li>
+        <li>Data penyedia jasa konstruksi: Badan Usaha (SBU) / Arsitek berlisensi</li>
+        <li>Verifikasi pernyataan mandiri atau PKKPR otomatis yang diterbitkan FPR Kab. Blora</li>
+        <li>KKOP (Ketentuan Keselamatan Operasi Penerbangan)</li>
+        <li>Persetujuan warga sekitar menara yang diketahui lurah/kepala desa, disertai dokumentasi & berita acara sosialisasi</li>
+      </ul>
+    </li>
+    <li><strong>Data Teknis Arsitektur:</strong>
+      <ul style="margin-left: 20px;">
+        <li>Gambar dan perhitungan teknis bangunan prasarana</li>
+      </ul>
+    </li>
+  </ol>
 
   <!-- Tahapan -->
   <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Tahapan Pengurusan:</h3>
   <ol style="margin-left: 20px;">
     <li>Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</li>
-    <li>Mendaftar, membuat permohonan, dan mengunggah dokumen ke https://simbg.pu.go.id</li>
+    <li>Mendaftar, membuat permohonan, dan mengunggah dokumen ke
+       https://simbg.pu.go.id
+    </li>
     <li>Menindaklanjuti hasil verifikasi operator Dinas Teknis</li>
     <li>Penjadwalan konsultasi permohonan</li>
     <li>Melakukan konsultasi bersama TPA/TPT</li>
@@ -246,6 +245,7 @@
     <li>Pembayaran retribusi melalui bank persepsi atau mobile banking</li>
     <li>Penerbitan dokumen PBG oleh DPMPTSP</li>
   </ol>
+
 </div>
 
                                         </div>
