@@ -123,6 +123,34 @@
   <div id="piechart" class="chart-box"></div>
   <div id="barchart" class="chart-box"></div>
 </div>
+<div style="margin-top: 30px;">
+  <h3 style="color: #001f3f; font-weight: bold; margin-bottom: 10px;">Tabel Jumlah Data per Nama Institusi</h3>
+  <div style="overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; font-family: 'Poppins', sans-serif; font-size: 14px;">
+      <thead style="background-color: #001f3f; color: white;">
+        <tr>
+          <th style="padding: 10px; text-align: center;">No</th>
+          <th style="padding: 10px; text-align: left;">Nama Institusi</th>
+          <th style="padding: 10px; text-align: center;">Jumlah Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        @forelse ($jumlahPerInstitusi as $index => $item)
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 10px; text-align: center;">{{ $index + 1 }}</td>
+            <td style="padding: 10px;">{{ $item->namainstitusi ?? 'Tidak Diketahui' }}</td>
+            <td style="padding: 10px; text-align: center;">{{ $item->total }}</td>
+          </tr>
+        @empty
+          <tr>
+            <td colspan="3" style="padding: 10px; text-align: center; color: #888;">Data tidak ditemukan.</td>
+          </tr>
+        @endforelse
+      </tbody>
+    </table>
+  </div>
+</div>
+
 
 <style>
         * {
