@@ -14,14 +14,15 @@ return new class extends Migration
         Schema::create('databgkepemilikans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('datainstitusibangunangedung_id')->nullable();
-            $table->string('tanggalinput')->nullable();
             $table->foreignId('user_id')->nullable()->index();
+            $table->string('tanggalinput')->nullable();
             $table->string('namainstitusi')->nullable();
-            $table->foreignId('kecamatanblora_id')->nullable()->index();
             $table->string('nopengesahanusaha')->nullable();
-            $table->string('alamat')->nullable();
             $table->string('notelepon')->nullable();
             $table->string('email')->nullable();
+
+            $table->foreignId('kecamatanblora_id')->nullable()->index();
+            $table->string('alamat')->nullable();
             $table->string('koordinat')->nullable();
 
             $table->string('tampakdepan')->nullable();
