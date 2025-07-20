@@ -468,7 +468,7 @@
         <div class="card mb-4" style="color: black !important;">
             <div class="card-header" style="
                 font-weight: 600;
-                font-size: 12px;
+                font-size: 14px;
                 text-align: center;
                 background: linear-gradient(135deg, #000080, #000080);
                 color: white;
@@ -477,7 +477,7 @@
                 box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
                 width: 100%;
             ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : Berkas Pencarian Permohonan PBG/SLF</span>
+                <span style="font-family: 'Poppins', sans-serif;">Halaman : Berkas Pencarian Permohonan PBG/SLF</span>
             </div>
 
             <div class="card-body" style="background: white; color: black !important;">
