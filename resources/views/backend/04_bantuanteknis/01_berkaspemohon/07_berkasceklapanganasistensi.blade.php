@@ -138,7 +138,7 @@ th {
                     width: 100%;
                 ">
                 <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
-                </div>
+
 
 
 
