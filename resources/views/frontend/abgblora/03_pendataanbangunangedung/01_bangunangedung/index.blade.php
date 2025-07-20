@@ -113,85 +113,79 @@
               📦 {{$title}}
             </button>
           </div>
+<div class="w-full overflow-x-auto rounded-[15px] mt-4">
+    <table class="min-w-max w-full border border-gray-200 text-sm text-left text-gray-700">
+        <thead class="bg-gray-100 text-gray-700 uppercase text-xs">
+            <tr>
+                <th class="px-4 py-2 text-center">No</th>
+                <th class="px-4 py-2">Tanggal Input</th>
+                <th class="px-4 py-2">Nama User</th>
+                <th class="px-4 py-2">Kecamatan</th>
+                <th class="px-4 py-2">Institusi Kepemilikan</th>
+                <th class="px-4 py-2">No Pengesahan Usaha</th>
+                <th class="px-4 py-2">Alamat</th>
+                <th class="px-4 py-2">No Telepon</th>
+                <th class="px-4 py-2">Email</th>
+                <th class="px-4 py-2">Koordinat</th>
+                <th class="px-4 py-2 text-center">View</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($data as $item)
+                <tr class="border-b hover:bg-gray-100">
+                    {{-- No Urut --}}
+                    <td class="px-4 py-2 text-center">
+                        {{ $data->firstItem() + $loop->iteration - 1 }}
+                    </td>
 
-        <div class="w-full overflow-x-auto rounded-[15px]" style="margin-top: -25px;">
-            <table class="zebra-table min-w-max border border-gray-200" style="border-radius: 15px;">
-                <thead>
-              <tr>
-    <th>No</th>
-    <th>Tanggal Input</th>
-    <th>Nama User</th>
-    <th>Kecamatan</th>
-    <th>Institusi Kepemilikan</th>
-    <th>No Pengesahan Usaha</th>
-    <th>Alamat</th>
-    <th>No Telepon</th>
-    <th>Email</th>
-    <th>Koordinat</th>
-    <th>View</th>
-</tr>
+                    {{-- Tanggal Input --}}
+                    <td class="px-4 py-2">{{ $item->tanggalinput ?? '-' }}</td>
 
+                    {{-- Nama User --}}
+                    <td class="px-4 py-2">{{ $item->user->name ?? '-' }}</td>
 
-                </thead>
-                <tbody id="tableBody">
-@foreach ($data as $item)
-<tr>
-    {{-- No Urut --}}
-    <td style="text-align: center;">
-        {{ $data->firstItem() + $loop->iteration - 1 }}
-    </td>
+                    {{-- Kecamatan --}}
+                    <td class="px-4 py-2">{{ $item->kecamatanblora->nama_kecamatan ?? '-' }}</td>
 
-    {{-- Tanggal Input --}}
-    <td>{{ $item->tanggalinput ?? '-' }}</td>
+                    {{-- Institusi Kepemilikan --}}
+                    <td class="px-4 py-2 uppercase">
+                        {{ $item->namainstitusi ?? 'Data Tidak Ditemukan' }}
+                    </td>
 
-    {{-- Nama User --}}
-    <td>{{ $item->user->name ?? '-' }}</td>
+                    {{-- Nomor Pengesahan Usaha --}}
+                    <td class="px-4 py-2">{{ $item->nopengesahanusaha ?? '-' }}</td>
 
-    {{-- Kecamatan --}}
-    <td>{{ $item->kecamatanblora->nama_kecamatan ?? '-' }}</td>
+                    {{-- Alamat --}}
+                    <td class="px-4 py-2">{{ $item->alamat ?? '-' }}</td>
 
-    {{-- Institusi Kepemilikan --}}
-    <td class="uppercase" style="text-transform: uppercase;">
-        {{ $item->namainstitusi ?? 'Data Tidak Ditemukan' }}
-    </td>
+                    {{-- No Telepon --}}
+                    <td class="px-4 py-2">{{ $item->notelepon ?? '-' }}</td>
 
-    {{-- Nomor Pengesahan Usaha --}}
-    <td>{{ $item->nopengesahanusaha ?? '-' }}</td>
+                    {{-- Email --}}
+                    <td class="px-4 py-2">{{ $item->email ?? '-' }}</td>
 
-    {{-- Alamat --}}
-    <td>{{ $item->alamat ?? '-' }}</td>
+                    {{-- Koordinat --}}
+                    <td class="px-4 py-2 text-center">
+                        @if(!empty($item->koordinat))
+                            {{ $item->koordinat }}
+                        @else
+                            <button class="px-3 py-1 rounded-md font-semibold bg-[navy] text-white hover:bg-white hover:text-[navy] border border-[navy] transition-all duration-150">
+                                Data Belum Diupdate
+                            </button>
+                        @endif
+                    </td>
 
-    {{-- No Telepon --}}
-    <td>{{ $item->notelepon ?? '-' }}</td>
-
-    {{-- Email --}}
-    <td>{{ $item->email ?? '-' }}</td>
-
-    {{-- Koordinat --}}
-    <td>
-        @if(!empty($item->koordinat))
-            {{ $item->koordinat }}
-        @else
-            <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
-                onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                Data Belum Diupdate
-            </button>
-        @endif
-    </td>
-
-    {{-- Aksi (View) --}}
-    <td style="text-align: center;">
-        <a href="/databangunangedung/{{ $item->id }}" class="button-baru">
-            <i class="bi bi-eye"></i> View
-        </a>
-    </td>
-</tr>
-@endforeach
-
-                </tbody>
-            </table>
-        </div>
+                    {{-- Aksi (View) --}}
+                    <td class="px-4 py-2 text-center">
+                        <a href="/databangunangedung/{{ $item->id }}" class="text-blue-600 hover:text-blue-900">
+                            <i class="bi bi-eye"></i> View
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
         @include('frontend.abgblora.00_fiturmenu.06_paginations')
 
