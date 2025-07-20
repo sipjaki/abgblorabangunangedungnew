@@ -4398,7 +4398,11 @@ return back();
             $data = pbgslfbangunan::where('noregissimbg', $noreg)->first();
         }
 
-        return view('frontend.android.02_traking.01_halamantracking', compact('data'));
+return view('frontend.android.02_traking.01_halamantracking', [
+    'data' => $data,
+    'title' => 'Form Tracking Pencarian PBG/SLF'
+]);
+
     }
 
 }
