@@ -89,27 +89,12 @@
             <div class="invalid-feedback" style="color: black !important; font-size: 0.9rem;">{{ $message }}</div>
         @enderror
     </div>
-    <div class="col-auto" style="text-align: center;">
-        <button type="submit" class="button-baru" style="
-            background: linear-gradient(to right, #4a90e2, #2a6496);
-            color: white !important;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1.1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        "
-        onmouseover="this.style.opacity='0.9'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.3)';"
-        onmouseout="this.style.opacity='1'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.2)';"
-        >
-            <i class="bi bi-search" style="color: white !important;"></i> Cari Data
-        </button>
-    </div>
+<div class="col-12 d-flex justify-content-center">
+    <button type="submit" class="button-baru">
+        <i class="bi bi-search" style="color: white !important;"></i> Cari Data
+    </button>
+</div>
+
 </form>
 
 <style>
