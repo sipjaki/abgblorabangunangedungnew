@@ -60,54 +60,47 @@ class PendataanBangunanGedungController extends Controller
             'search' => $search
         ]);
     }
+public function databangunangedung(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
 
-    public function databangunangedung(Request $request)
-    {
-        $perPage = $request->input('perPage', 15);
-        $search = $request->input('search');
+    $query = databgkepemilikan::query()->orderBy('created_at', 'desc');
 
-        $query = databangunangedung::query()->orderBy('created_at', 'desc');
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('tanggalinput', 'LIKE', "%{$search}%")
+              ->orWhere('namainstitusi', 'LIKE', "%{$search}%")
+              ->orWhere('nopengesahanusaha', 'LIKE', "%{$search}%")
+              ->orWhere('alamat', 'LIKE', "%{$search}%")
+              ->orWhere('notelepon', 'LIKE', "%{$search}%")
+              ->orWhere('email', 'LIKE', "%{$search}%")
+              ->orWhere('koordinat', 'LIKE', "%{$search}%")
+              ->orWhereHas('user', function ($k) use ($search) {
+                  $k->where('name', 'LIKE', "%{$search}%");
+              })
+              ->orWhereHas('kecamatanblora', function ($k) use ($search) {
+                  $k->where('nama', 'LIKE', "%{$search}%");
+              });
+        });
+    }
 
-        if ($search) {
-            $query->where(function($q) use ($search) {
-                $q->where('namabangunan', 'LIKE', "%{$search}%")
-                  ->orWhere('luastanah', 'LIKE', "%{$search}%")
-                  ->orWhere('alamatbangunan', 'LIKE', "%{$search}%")
+    $data = $query->paginate($perPage);
 
-                  ->orWhereHas('fungsibangunan', function($k) use ($search) {
-                      $k->where('fungsibangunan', 'LIKE', "%{$search}%");
-                    })
-
-                    ->orWhereHas('kepemilikanbangunangedung', function($k) use ($search) {
-                        $k->where('datainstitusibangunangedung->institusi', 'LIKE', "%{$search}%");
-                    })
-
-                    ->orWhereHas('profiltanahbangunangedung', function($k) use ($search) {
-                        $k->where('statushaktanahbangunangedung->status', 'LIKE', "%{$search}%");
-                    })
-
-                  ->orWhereHas('klasifikasibangunangedung', function($k) use ($search) {
-                    $k->where('tingkatpermanen', 'LIKE', "%{$search}%");
-                  });
-            });
-        }
-
-
-        $data = $query->paginate($perPage);
-
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('frontend.abgblora.03_pendataanbangunangedung.01_bangunangedung.partials.table', compact('data'))->render()
-            ]);
-        }
-
-        return view('frontend.abgblora.03_pendataanbangunangedung.01_bangunangedung.index', [
-            'title' => 'Data Bangunan Gedung Kabupaten Blora',
-            'data' => $data,
-            'perPage' => $perPage,
-            'search' => $search
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.abgblora.03_pendataanbangunangedung.01_bangunangedung.partials.table', compact('data'))->render()
         ]);
     }
+
+    return view('frontend.abgblora.03_pendataanbangunangedung.01_bangunangedung.index', [
+        'title' => 'Data Bangunan Gedung Kabupaten Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
 
     public function databangunangedungshow($namabangunan)
     {
