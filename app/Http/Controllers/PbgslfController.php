@@ -4388,4 +4388,17 @@ return back();
 
 }
 
+    public function betrackingdatacarife(Request $request)
+    {
+        $noreg = $request->query('noregissimbg');
+        $data = null;
+
+        if ($noreg) {
+            // Cari data sesuai nomor registrasi SIMBG
+            $data = pbgslfbangunan::where('noregissimbg', $noreg)->first();
+        }
+
+        return view('frontend.android.02_traking.01_halamantracking', compact('data'));
+    }
+
 }

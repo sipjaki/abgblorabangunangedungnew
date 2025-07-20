@@ -71,7 +71,7 @@
                 </div>
 
                 <!-- Form -->
-                <form method="GET" action="{{ route('betrackingdatacari') }}" class="row g-3 justify-content-center mb-4">
+                <form method="GET" action="{{ route('betrackingdatacarife') }}" class="row g-3 justify-content-center mb-4">
                     <div class="col-md-6">
                         <input
                             type="text"
