@@ -3763,6 +3763,26 @@ public function history(Request $request)
 
         // 'datasemua' => $dataTanpaIdSatu,
     ]);
+
 }
+
+
+
+public function updatefungsicampuran($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Ambil data hibah berdasarkan ID
+    $data = infopbg1::findOrFail($id);
+
+    // Kirim ke view
+    return view('backend.01_pbgslf.00_informasi.02_updatecampuran', [
+        'title' => 'Perubahan Informasi PBG Fungsi Campuran',
+        'user' => $user,
+        'data' => $data
+    ]);
+}
+
 
 }

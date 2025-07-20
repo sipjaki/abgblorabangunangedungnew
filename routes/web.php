@@ -928,6 +928,10 @@ Route::delete('/bepbgslfindexslfdelete/{id}', [PbgslfController::class, 'bepbgsl
 
 Route::get('/bepbgslflihatper/{id}', [PbgslfController::class, 'bepbgslflihatper'])->middleware('auth')->name('bepbgslflihatper.show');
 
+// MENU UNTUK UPDATE BRO
+Route::get('/updatefungsicampuran/{id}', [PbgslfController::class, 'updatefungsicampuran'])->middleware('auth')->name('updatefungsicampuran');
+// Route::post('/mbrgambarupdatenew/{id}', [PbgslfController::class, 'mbrgambarupdatenew'])->middleware('auth')->name('mbrgambarupdatenew');
+
 // TAHAP INDUK ----------------
 Route::get('/createdatapbgslf', [PbgslfController::class, 'createdatapbgslf'])->middleware('auth')->name('createdatapbgslf.create');
 Route::post('/createdatapbgslfnew', [PbgslfController::class, 'createdatapbgslfnew'])->middleware('auth')->name('createdatapbgslf.create');
