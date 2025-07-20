@@ -133,6 +133,9 @@ Route::put('/bedatabgstatusbangunanupdatenew/{id}', [PendataanBangunanGedungCont
 // ----------------------------------------------------------------------------------------
 Route::get('/resbgindex', [FedashboardController::class, 'menuresbangunangedungindex']);
 
+// 02 MENU TRACKING BANGUNAN GEDUNG
+Route::get('/resbgtracking', [FedashboardController::class, 'resbgtracking']);
+
 // 04_ MENU BANTUAN TEKNIS
 // ----------------------------------------------------------------------------------------
 // Route::get('/respbgslfindex', [FedashboardController::class, 'menurespbgslfindex']);
