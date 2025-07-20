@@ -49,6 +49,7 @@ Route::get('/betracking', [PbgslfController::class, 'betracking'])->middleware('
 Route::get('/betrackingdata', [PbgslfController::class, 'betrackingdata'])->middleware('auth')->name('betrackingdata');
 Route::get('/betrackingdatacari', [PbgslfController::class, 'betrackingdatacari'])->middleware('auth')->name('betrackingdatacari');
 Route::get('/betrackingdatacarife', [PbgslfController::class, 'betrackingdatacarife'])->name('betrackingdatacarife');
+Route::get('/betrackingdatacariweb', [PbgslfController::class, 'betrackingdatacariweb'])->name('betrackingdatacariweb');
 
 // VERSI WEB
 Route::get('/infotrakingweb', [FedashboardController::class, 'infotrakingweb']);

@@ -4405,4 +4405,21 @@ return view('frontend.android.02_traking.01_halamantracking', [
 
     }
 
+       public function betrackingdatacariweb(Request $request)
+    {
+        $noreg = $request->query('noregissimbg');
+        $data = null;
+
+        if ($noreg) {
+            // Cari data sesuai nomor registrasi SIMBG
+            $data = pbgslfbangunan::where('noregissimbg', $noreg)->first();
+        }
+
+return view('frontend.abgblora.02_trakingweb.01_infotraking', [
+    'data' => $data,
+    'title' => 'Form Tracking Pencarian PBG/SLF'
+]);
+
+    }
+
 }
