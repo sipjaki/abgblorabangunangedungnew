@@ -116,17 +116,24 @@
         <div class="w-full overflow-x-auto rounded-[15px]" style="margin-top: -25px;">
             <table class="zebra-table min-w-max border border-gray-200" style="border-radius: 15px;">
                 <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Institusi Kepemilikan</th>
-                        <th>Nama Bangunan</th>
-                        <th>Luas Tanah</th>
-                        {{-- baru sampia siiini  --}}
-                        <th>Fungsi Bangunan</th>
-                        <th>Status Tanah</th>
-                        {{-- <th>Klasifikasi Bangunan </th> --}}
-                        <th>View</th>
-                    </tr>
+               <tr>
+    <th>No</th>
+    <th>Tanggal Input</th>
+    <th>Nama User</th>
+    <th>Kecamatan</th>
+    <th>Institusi Kepemilikan</th>
+    <th>No Pengesahan Usaha</th>
+    <th>Alamat</th>
+    <th>No Telepon</th>
+    <th>Email</th>
+    <th>Koordinat</th>
+    <th>Nama Bangunan</th>
+    <th>Luas Tanah</th>
+    <th>Fungsi Bangunan</th>
+    <th>Status Tanah</th>
+    <th>View</th>
+</tr>
+
                 </thead>
                 <tbody id="tableBody">
                  @foreach ($data as $item)
