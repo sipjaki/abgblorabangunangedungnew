@@ -194,8 +194,9 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('create.dokuploadhibahskcreatenew', $data->id) }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('dokuploadkrkusahanew', $data->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
+          @method('PUT')
 {{-- <input type="hidden" name="bantuanhibahbg_id" value="{{ $data->id }}"> --}}
 
                             <!-- begin::Body -->

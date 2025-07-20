@@ -3770,5 +3770,36 @@ public function dokuploadkrkusaha($id)
     ]);
 }
 
+public function dokuploadkrkusahanew(Request $request, $id)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'suratuploadmanual' => 'nullable|file|mimes:pdf|max:10048',
+    ], [
+        'suratuploadmanual.mimes' => 'File harus berupa PDF.',
+    ]);
+
+    // Cari data berdasarkan ID
+    $data = krkusaha::find($id);
+    if (!$data) {
+        return back()->with('error', 'Data tidak ditemukan.');
+    }
+
+    // Simpan file jika diupload
+    if ($request->hasFile('suratuploadmanual')) {
+        $file = $request->file('suratuploadmanual');
+        $filename = time() . "_suratuploadmanual." . $file->getClientOriginalExtension();
+        $path = '00_suratuploadkrk/';
+        $file->move(public_path($path), $filename);
+        $data->suratuploadmanual = $path . $filename;
+    }
+
+    // Simpan update
+    $data->save();
+
+    session()->flash('update', 'Surat berhasil diupload!');
+    return redirect()->back();
+}
+
 }
 
