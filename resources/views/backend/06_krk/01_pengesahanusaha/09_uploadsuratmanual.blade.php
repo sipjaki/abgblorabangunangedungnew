@@ -229,22 +229,37 @@ onchange="previewPDF(event)" />
 
 @endcanany
       @error('suratuploadmanual')<div class="invalid-feedback">{{ $message }}</div>@enderror
+<div class="mt-3" id="previewContainer" style="display: none;">
+  <label class="fw-bold">Preview Dokumen Final KRK</label>
+  <iframe
+    id="previewIframe"
+    src=""
+    style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"
+  ></iframe>
+</div>
 
-      <div class="mt-3" id="previewContainer" style="display: none;">
-        <label class="fw-bold">Preview Dokumen Final KRK</label>
-        <iframe id="previewIframe" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      </div>
+<div id="previewMessage" class="mt-3" style="color: grey; font-style: italic;">
+  @if (!empty($data->suratuploadmanual))
+    <div class="space-y-2">
+      <label class="fw-bold">Dokumen Final KRK (Tersimpan)</label>
+      <iframe
+        src="{{ asset($data->suratuploadmanual) }}"
+        style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"
+      ></iframe>
 
-      <div id="previewMessage" class="mt-3" style="color: grey; font-style: italic;">
-        @if (!empty($data->suratuploadmanual))
-          <div>
-            <label class="fw-bold">Dokumen Final KRK (Tersimpan)</label>
-            <iframe src="{{ asset($data->suratuploadmanual) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-          </div>
-        @else
-          Belum Upload Berkas, Silahkan Upload Dokumen Final KRK.
-        @endif
-      </div>
+      <!-- Tombol Download -->
+      <a
+        href="{{ asset($data->suratuploadmanual) }}"
+        download
+        class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-150"
+      >
+        <i class="bi bi-download mr-2"></i> Download Berkas KRK
+      </a>
+    </div>
+  @else
+    Belum Upload Berkas, Silahkan Upload Dokumen Final KRK.
+  @endif
+</div>
     </div>
   </div>
 </div>
