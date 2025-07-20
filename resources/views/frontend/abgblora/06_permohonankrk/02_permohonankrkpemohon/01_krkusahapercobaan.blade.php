@@ -812,15 +812,15 @@ document.addEventListener('DOMContentLoaded', function () {
         </svg>
 
         <!-- Text Label dan Link Download -->
-        <div class="flex flex-col text-sm">
-            <span>Upload Surat Permohonan KRK | 10 MB </span>
-          <a href="/asset/abgblora/logo/Surat_Permohonan_KRK.docx" download
-   class="mt-1 underline hover:text-black"
-   style="color: red;">
-   Download Contoh Surat Permohonan (.docx)
-</a>
+      <div class="flex flex-col text-sm font-poppins">
+  <span>Upload Surat Permohonan KRK | Max 10 MB</span>
+  <a href="/asset/abgblora/logo/Surat_Permohonan_KRK.docx"
+     download
+     class="mt-1 underline hover:text-black text-red-600 transition-colors duration-150 ease-in-out">
+     Download Contoh Surat Permohonan (.docx)
+  </a>
+</div>
 
-        </div>
     </label>
 
     <!-- Input File -->
