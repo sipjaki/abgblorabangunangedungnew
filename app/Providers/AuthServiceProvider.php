@@ -56,6 +56,10 @@ class AuthServiceProvider extends ServiceProvider
             return $user->statusadmin->status === 'internal';
         });
 
+        Gate::define('konsultanbangunan', function (User $user) {
+            return $user->statusadmin->status === 'konsultanbangunan';
+        });
+
 
 
     }

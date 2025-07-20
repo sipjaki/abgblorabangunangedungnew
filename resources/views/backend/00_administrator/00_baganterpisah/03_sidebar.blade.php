@@ -776,6 +776,85 @@
 @endcan
 
 {{-- ============================================================================= --}}
+@can('konsultanbangunan')
+
+<li class="nav-item">
+                <a href="#" class="nav-link">
+    <i class="bi bi-folder nav-icon" style="color: white; font-size: 16px;"></i>
+    <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        Pendataan BG
+        <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
+    </p>
+</a>
+
+                <ul class="nav nav-treeview" style="margin-left: 15px;">
+    {{-- <li class="nav-item">
+        <a href="/404" class="nav-link">
+            <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px;"></i>
+            <p style="color: white; margin-left: 8px;">Informasi</p>
+        </a>
+    </li> --}}
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+    {{-- <li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-bar-chart-line nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px;">Statistik Bangunan</p>
+    </a>
+</li> --}}
+<li class="nav-item">
+    <a href="/bependataanbangunangedung" class="nav-link">
+        <i class="bi bi-house-door nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px;">Bangunan Gedung</p>
+    </a>
+</li>
+{{-- <li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-graph-up nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px;">Statistik KIC</p>
+    </a>
+</li> --}}
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-person-vcard nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px;">Kartu Identitas</p>
+    </a>
+</li>
+
+    {{-- <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #0d6efd;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
+    </p>
+</div> --}}
+</ul>
+
+@endcan
 
 @canany('superadmin')
 <li class="nav-header" style="color: white;">MAIN MENU</li>
@@ -947,7 +1026,7 @@
                 <a href="#" class="nav-link">
     <i class="bi bi-folder nav-icon" style="color: white; font-size: 16px;"></i>
     <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
-        Pendataan
+        Pendataan BG
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
 </a>
