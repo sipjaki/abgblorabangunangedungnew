@@ -194,7 +194,7 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('bepbgprasaranaupdatenew', $data->id) }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('bepbgsosialbudayaupdatenew', $data->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
