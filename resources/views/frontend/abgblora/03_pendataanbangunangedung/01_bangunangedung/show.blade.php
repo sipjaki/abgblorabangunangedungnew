@@ -35,30 +35,19 @@
 @include('frontend.abgblora.00_fiturmenu.02_header')
 @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
 
-<section id="breadcrumb" class="container max-w-[1130px] mx-auto mt-[30px]" style="margin-top: 185px;">
-    <div class="flex gap-[30px] items-center">
-      <a href="/databangunangedung" class="last-of-type:font-bold transition-all duration-300 text-blue-600" style="color: black;">
-        Data Bangunan Gedung
-      </a>
-      <span>/</span>
-      <a href="" class="last-of-type:font-bold transition-all duration-300 text-blue-600" style="color: blue;">
-        Data {{$title}}
-      </a>
-      {{-- <span>/</span> --}}
-      {{-- <a href="" class="last-of-type:font-semibold transition-all duration-300">
-        Data Statistik
-      </a> --}}
-    </div>
-  </section>
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
-
-
-<section id="header" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2" style="margin-top:10px;">
+<section
+  style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+    margin-top: -50px;
+    margin-bottom: -45px;
+  "
+ id="header" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2" style="margin-top:10px;">
     <div class="flex items-center gap-3">
       <button class="p-[14px_20px] bg-white rounded-full font-semibold">
         📦 {{$title}}
