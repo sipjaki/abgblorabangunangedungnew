@@ -153,8 +153,8 @@
   </div>
 
   <div style="margin-top: 20px; text-align: center;">
-    <button onclick="prevPage()" id="prevBtn" disabled style="padding: 8px 20px; border: none; background-color: #444; color: white; border-radius: 5px; margin-right: 10px; cursor: pointer;">Sebelumnya</button>
-    <button onclick="nextPage()" id="nextBtn" style="padding: 8px 20px; border: none; background-color: #444; color: white; border-radius: 5px; cursor: pointer;">Berikutnya</button>
+    <button class="button-baru" onclick="prevPage()" id="prevBtn" disabled >Sebelumnya</button>
+    <button class="button-baru" onclick="nextPage()" id="nextBtn" >Berikutnya</button>
   </div>
 </div>
 
