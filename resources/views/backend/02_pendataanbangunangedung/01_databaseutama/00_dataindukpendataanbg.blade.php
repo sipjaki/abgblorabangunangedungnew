@@ -289,29 +289,6 @@ th {
 </h5>
 
 <div class="row g-3">
-  {{-- Provinsi dan Kabupaten --}}
-  @foreach([
-      'provinsi' => 'Provinsi',
-      'kabupaten' => 'Kabupaten/Kota'
-  ] as $name => $label)
-      <div class="col-md-6">
-          <div class="mb-3">
-              <label class="form-label d-flex align-items-center" for="{{ $name }}">
-                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> {{ $label }}
-              </label>
-              <input
-                type="text"
-                class="form-control @error($name) is-invalid @enderror"
-                id="{{ $name }}"
-                name="{{ $name }}"
-                value="{{ $name === 'provinsi' ? 'Jawa Tengah' : 'Kabupaten Blora' }}"
-                readonly
-              >
-              @error($name) <div class="invalid-feedback">{{ $message }}</div> @enderror
-          </div>
-      </div>
-  @endforeach
-
   {{-- Kecamatan --}}
   <div class="col-md-6">
     <div class="mb-3">
@@ -330,33 +307,17 @@ th {
     </div>
   </div>
 
-  {{-- Kelurahan/Desa --}}
-  <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label d-flex align-items-center" for="kelurahandesa_id">
-        <i class="bi bi-geo-alt me-2 text-danger" style="font-size: 1.2rem;"></i> Kelurahan/Desa
-      </label>
-      <select class="form-select @error('kelurahandesa_id') is-invalid @enderror" name="kelurahandesa_id" id="kelurahandesa_id" style="min-height: 42px;">
-        <option value="">-- Pilih Kelurahan/Desa --</option>
-        {{-- Pilihan kelurahan akan diisi lewat AJAX --}}
-      </select>
-      @error('kelurahandesa_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-  </div>
-
-  {{-- Alamat Lengkap --}}
+  {{-- Alamat Lengkap (diganti menjadi alamat) --}}
   <div class="col-12">
       <div class="mb-3">
-          <label class="form-label d-flex align-items-center" for="alamatlengkap">
+          <label class="form-label d-flex align-items-center" for="alamat">
             <i class="bi bi-house-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Alamat Lengkap
           </label>
-          <textarea class="form-control @error('alamatlengkap') is-invalid @enderror" id="alamatlengkap" name="alamatlengkap" rows="3">{{ old('alamatlengkap', $data->alamatlengkap ?? '') }}</textarea>
-          @error('alamatlengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
+          <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3">{{ old('alamat', $data->alamat ?? '') }}</textarea>
+          @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
       </div>
   </div>
-
 </div>
-
 <div class="row g-3">
 
     <!-- Leaflet CSS -->
