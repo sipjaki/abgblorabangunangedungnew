@@ -152,12 +152,12 @@ th {
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-
-<button class="button-kembali" type="button"
-    onclick="window.location.href='{{ url()->previous() }}';"
+<button class="button-newvalidasi" type="button"
+    onclick="window.location.href='{{ url('/bepbgslfinformasi') }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </button>
+
 
 
 
