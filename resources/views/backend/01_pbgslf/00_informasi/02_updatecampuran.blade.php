@@ -219,7 +219,7 @@ th {
     </div>
 </div>
 
-<div class="col-md-6">
+{{-- <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="berkas">
             <i class="bi bi-paperclip" style="margin-right: 8px; color: navy;"></i> Berkas
@@ -236,7 +236,7 @@ th {
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
-</div>
+</div> --}}
 
 <div class="col-md-6">
     <div class="mb-3">
