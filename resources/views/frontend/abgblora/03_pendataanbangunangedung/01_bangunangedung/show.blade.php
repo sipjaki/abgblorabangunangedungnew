@@ -65,6 +65,7 @@
       </button>
     </div>
 
+
   </section>
 
 
@@ -175,6 +176,8 @@
 
 
 
+
+@include('backend.02_pendataanbangunangedung.00_fiturbg.01_status')
 
 
 
