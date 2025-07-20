@@ -218,31 +218,38 @@ th {
       <label class="form-label" for="suratuploadmanual">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Dokumen Final KRK
       </label>
+
       <input type="file" id="suratuploadmanual" name="suratuploadmanual" accept="application/pdf"
-        class="form-control @error('suratuploadmanual') is-invalid @enderror" />
+        class="form-control @error('suratuploadmanual') is-invalid @enderror"
+        onchange="previewPDF(event)" />
+
       @error('suratuploadmanual')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-      @if (!empty($item->suratuploadmanual))
-        <div class="mt-3">
-          <label class="fw-bold">Dokumen Final KRK (Tersimpan)</label>
-          <iframe src="{{ asset($item->suratuploadmanual) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-        </div>
-      @else
-        <div class="mt-3" style="color: grey; font-style: italic;">
+      <div class="mt-3" id="previewContainer" style="display: none;">
+        <label class="fw-bold">Preview Dokumen Final KRK</label>
+        <iframe id="previewIframe" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+      </div>
+
+      <div id="previewMessage" class="mt-3" style="color: grey; font-style: italic;">
+        @if (!empty($item->suratuploadmanual))
+          <div>
+            <label class="fw-bold">Dokumen Final KRK (Tersimpan)</label>
+            <iframe src="{{ asset($item->suratuploadmanual) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+          </div>
+        @else
           Belum Upload Berkas, Silahkan Upload Dokumen Final KRK.
-        </div>
-      @endif
+        @endif
+      </div>
     </div>
   </div>
 </div>
 
-</div>
-    <script>
-function previewPDF(event, containerId, iframeId, messageId) {
+<script>
+function previewPDF(event) {
     const file = event.target.files[0];
-    const container = document.getElementById(containerId);
-    const iframe = document.getElementById(iframeId);
-    const message = document.getElementById(messageId);
+    const container = document.getElementById('previewContainer');
+    const iframe = document.getElementById('previewIframe');
+    const message = document.getElementById('previewMessage');
 
     if (file && file.type === "application/pdf") {
         const fileURL = URL.createObjectURL(file);
@@ -257,7 +264,6 @@ function previewPDF(event, containerId, iframeId, messageId) {
     }
 }
 </script>
-
 
                                     </div>
                                 </div>

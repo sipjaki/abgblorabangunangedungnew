@@ -3779,22 +3779,29 @@ public function dokuploadkrkusahanew(Request $request, $id)
         'suratuploadmanual.mimes' => 'File harus berupa PDF.',
     ]);
 
-    // Cari data berdasarkan ID
+    // Ambil data berdasarkan ID
     $data = krkusaha::find($id);
     if (!$data) {
         return back()->with('error', 'Data tidak ditemukan.');
     }
 
-    // Simpan file jika diupload
+    // Proses upload file baru
     if ($request->hasFile('suratuploadmanual')) {
+        // Hapus file lama kalau ada
+        if ($data->suratuploadmanual && file_exists(public_path($data->suratuploadmanual))) {
+            unlink(public_path($data->suratuploadmanual));
+        }
+
+        // Simpan file baru
         $file = $request->file('suratuploadmanual');
-        $filename = time() . "_suratuploadmanual." . $file->getClientOriginalExtension();
-        $path = '00_suratuploadkrk/';
-        $file->move(public_path($path), $filename);
-        $data->suratuploadmanual = $path . $filename;
+        $filename = time() . '_suratuploadmanual.' . $file->getClientOriginalExtension();
+        $folder = '00_suratuploadkrk';
+        $file->move(public_path($folder), $filename);
+
+        // Simpan path relatif ke database
+        $data->suratuploadmanual = $folder . '/' . $filename;
     }
 
-    // Simpan update
     $data->save();
 
     session()->flash('update', 'Surat berhasil diupload!');
