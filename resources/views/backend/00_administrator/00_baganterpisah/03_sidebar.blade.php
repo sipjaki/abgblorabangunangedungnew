@@ -977,9 +977,21 @@
     </p>
 </div>
     <li class="nav-item">
+        <a href="/404" class="nav-link">
+            <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+            <p style="color: white; margin-left: 8px;">Statistik Bangunan</p>
+        </a>
+    </li>
+    <li class="nav-item">
         <a href="/bependataanbangunangedung" class="nav-link">
             <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
             <p style="color: white; margin-left: 8px;">Bangunan Gedung</p>
+        </a>
+    </li>
+     <li class="nav-item">
+        <a href="/404" class="nav-link">
+            <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
+            <p style="color: white; margin-left: 8px;">Statistik KIC</p>
         </a>
     </li>
     <li class="nav-item">

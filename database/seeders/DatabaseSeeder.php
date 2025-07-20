@@ -639,8 +639,20 @@ User::create([
     'password' => bcrypt('kabblora2025e') // password: kabblora2025e
 ]);
 
+User::create([
+    'id'  => 77,
+    'name'  => 'Admin DPUPR Kab Blora',
+    'username' => 'Admin DPUPR Kab Blora',
+    'statusadmin_id' => '1',
+    'avatar' => 'user/avatar/foto6.png',
+    'email' => 'adminabgblora@gmail.com',
+    'password' => bcrypt('admindpuprkanblora') // password: kabblora2025e
+]);
+
 
         // -------------------
+        // BATAS AKUN SUPER ADMIN
+        //
 
         User::create([
     'id' => 26,
