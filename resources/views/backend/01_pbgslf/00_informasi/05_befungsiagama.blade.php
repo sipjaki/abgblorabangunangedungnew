@@ -167,7 +167,7 @@ th {
 <br>
                 @foreach ($data as $item)
 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-    <a href="{{ route('bepbghunianupdate', ['id' => $item->id]) }}" class="button-baru" style="text-decoration: none;">
+    <a href="{{ route('bepbgkeagamaanupdate', ['id' => $item->id]) }}" class="button-baru" style="text-decoration: none;">
         <i class="bi bi-arrow-repeat"></i> Update
     </a>
 </div>

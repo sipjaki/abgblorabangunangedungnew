@@ -921,7 +921,7 @@ Route::post('/bepbghunianupdatenew/{id}', [PbgslfController::class, 'bepbghunian
 
 // -----------------------------------
 Route::get('/bepbgkeagamaan', [PbgslfController::class, 'bepbgkeagamaan'])->middleware('auth')->name('bepbgkeagamaan');
-// Route::get('/bepbghunianupdate/{id}', [PbgslfController::class, 'bepbghunianupdate'])->middleware('auth')->name('bepbghunianupdate');
+Route::get('/bepbgkeagamaanupdate/{id}', [PbgslfController::class, 'bepbgkeagamaanupdate'])->middleware('auth')->name('bepbgkeagamaanupdate');
 // Route::post('/bepbghunianupdatenew/{id}', [PbgslfController::class, 'bepbghunianupdatenew'])->middleware('auth')->name('bepbghunianupdatenew');
 
 

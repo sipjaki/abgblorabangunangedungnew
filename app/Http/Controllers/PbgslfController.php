@@ -3928,4 +3928,22 @@ return back();
     ]);
 
 }
+
+public function bepbgkeagamaanupdate($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Ambil data hibah berdasarkan ID
+    $data = infopbg3::findOrFail($id);
+
+    // Kirim ke view
+    return view('backend.01_pbgslf.00_informasi.06_updateagama', [
+        'title' => 'Perubahan Informasi PBG Fungsi Kegaamaan',
+        'user' => $user,
+        'data' => $data
+    ]);
+}
+
+
 }
