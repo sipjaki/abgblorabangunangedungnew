@@ -20,6 +20,7 @@ use App\Models\gambarbantuan;
 use App\Models\infopbg1;
 use App\Models\infopbg2;
 use App\Models\infopbg3;
+use App\Models\infopbg4;
 use App\Models\jenispengajuanpbgslfper;
 use App\Models\jenisperkonsultasi;
 use App\Models\kecamatanblora;
@@ -3949,6 +3950,84 @@ public function bepbgkeagamaanupdate($id)
 public function bepbgkeagamaanupdatenew(Request $request, $id)
 {
     $data = infopbg3::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'judul' => 'nullable|string|max:255',
+        'berkas' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'keterangan' => 'nullable|string',
+        'infolanjut' => 'nullable|string',
+    ]);
+
+    // Simpan data teks
+    $data->judul = $request->judul;
+    $data->keterangan = $request->keterangan;
+    $data->infolanjut = $request->infolanjut;
+
+    // Handle file upload
+    if ($request->hasFile('berkas')) {
+        // Hapus file lama jika ada
+        if ($data->berkas && file_exists(public_path($data->berkas))) {
+            @unlink(public_path($data->berkas));
+        }
+
+        $file = $request->file('berkas');
+        $filename = time() . '_berkas.' . $file->getClientOriginalExtension();
+        $destination = public_path('00_berkasinformasi/01_brosur');
+
+        if (!file_exists($destination)) {
+            mkdir($destination, 0777, true);
+        }
+
+        $file->move($destination, $filename);
+        $data->berkas = '00_berkasinformasi/01_brosur/' . $filename;
+    }
+
+    $data->save();
+session()->flash('update', 'Informasi berhasil diperbarui!');
+return back();
+
+}
+
+   public function bepbgprasarana(Request $request)
+{
+    $user = Auth::user();
+    $data = infopbg3::all();
+    // $perPage = $request->input('perPage', 20);
+
+
+// -----------------------------------------
+
+    return view('backend.01_pbgslf.00_informasi.07_befungsiprasarana', [
+        'title' => 'Informasi Permohonan PBG Fungsi Prasarana',
+        // 'data' => $dataTanpaIdSatu,
+        'user' => $user,
+        'data' => $data,
+
+        // 'datasemua' => $dataTanpaIdSatu,
+    ]);
+
+}
+
+public function bepbgprasaranaupdate($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Ambil data hibah berdasarkan ID
+    $data = infopbg4::findOrFail($id);
+
+    // Kirim ke view
+    return view('backend.01_pbgslf.00_informasi.08_updateprasarana', [
+        'title' => 'Perubahan Informasi PBG Fungsi Prasarana',
+        'user' => $user,
+        'data' => $data
+    ]);
+}
+
+public function bepbgprasaranaupdatenew(Request $request, $id)
+{
+    $data = infopbg4::findOrFail($id);
 
     // Validasi input
     $request->validate([

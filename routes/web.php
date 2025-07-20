@@ -924,6 +924,11 @@ Route::get('/bepbgkeagamaan', [PbgslfController::class, 'bepbgkeagamaan'])->midd
 Route::get('/bepbgkeagamaanupdate/{id}', [PbgslfController::class, 'bepbgkeagamaanupdate'])->middleware('auth')->name('bepbgkeagamaanupdate');
 Route::post('/bepbgkeagamaanupdatenew/{id}', [PbgslfController::class, 'bepbgkeagamaanupdatenew'])->middleware('auth')->name('bepbgkeagamaanupdatenew');
 
+// -----------------------------------
+Route::get('/bepbgprasarana', [PbgslfController::class, 'bepbgprasarana'])->middleware('auth')->name('bepbgprasarana');
+Route::get('/bepbgprasaranaupdate/{id}', [PbgslfController::class, 'bepbgprasaranaupdate'])->middleware('auth')->name('bepbgprasaranaupdate');
+Route::post('/bepbgprasaranaupdatenew/{id}', [PbgslfController::class, 'bepbgprasaranaupdatenew'])->middleware('auth')->name('bepbgprasaranaupdatenew');
+
 
 Route::get('/fungsicampuran', [PbgslfController::class, 'fungsicampuran'])->middleware('auth')->name('fungsicampuran');
 
