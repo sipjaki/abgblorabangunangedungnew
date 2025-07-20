@@ -251,8 +251,8 @@ onchange="previewPDF(event)" />
       <a
         href="{{ asset($data->suratuploadmanual) }}"
         download
-        class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-150"
-      >
+        class="button-berkas"
+        >
         <i class="bi bi-download mr-2"></i> Download Berkas KRK
       </a>
     </div>
