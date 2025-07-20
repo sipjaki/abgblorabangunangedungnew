@@ -156,7 +156,7 @@
                 <!-- Judul -->
                 <div class="text-center mb-4">
                     <h3 class="fw-bold text-primary" style="color: black !important;">Tracking Berkas Permohonan PBG / SLF</h3>
-                    <p class="text-muted" style="color: black !important;">Masukkan Nomor Registrasi SIMBG untuk melacak status permohonan Anda</p>
+                    <p class="text-muted" style="color: black !important;">Masukkan Nomor Registrasi SIMBG Saudara</p>
                 </div>
 
                 <!-- Form -->
