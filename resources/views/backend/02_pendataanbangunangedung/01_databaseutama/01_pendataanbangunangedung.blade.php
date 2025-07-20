@@ -123,33 +123,71 @@
   <div id="piechart" class="chart-box"></div>
   <div id="barchart" class="chart-box"></div>
 </div>
-<div style="margin-top: 30px;">
-  <h3 style="color: #001f3f; font-weight: bold; margin-bottom: 10px;">Tabel Jumlah Data per Nama Institusi</h3>
-  <div style="overflow-x: auto;">
-    <table style="width: 100%; border-collapse: collapse; font-family: 'Poppins', sans-serif; font-size: 14px;">
-      <thead style="background-color: #001f3f; color: white;">
-        <tr>
-          <th style="padding: 10px; text-align: center;">No</th>
-          <th style="padding: 10px; text-align: left;">Nama Institusi</th>
-          <th style="padding: 10px; text-align: center;">Jumlah Data</th>
+<div id="institusiTableContainer" style="margin-top: 30px;">
+  <h3 style="color: black; font-weight: bold;">Tabel Jumlah Data per Nama Institusi</h3>
+
+  <table id="institusiTable" style="width: 100%; border-collapse: collapse; color: black; font-family: 'Poppins', sans-serif;">
+    <thead>
+      <tr style="background-color: #f0f0f0; color: black;">
+        <th style="padding: 10px; border: 1px solid #ccc;">No</th>
+        <th style="padding: 10px; border: 1px solid #ccc;">Nama Institusi</th>
+        <th style="padding: 10px; border: 1px solid #ccc;">Jumlah Data</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      @php
+          $sortedData = $jumlahPerInstitusi->sortByDesc('total')->values();
+      @endphp
+
+      @foreach ($sortedData as $index => $item)
+        <tr class="table-row" style="display: {{ $index < 10 ? 'table-row' : 'none' }};">
+          <td style="padding: 10px; border: 1px solid #ccc;">{{ $index + 1 }}</td>
+          <td style="padding: 10px; border: 1px solid #ccc;">{{ $item->namainstitusi ?? 'Tidak Diketahui' }}</td>
+          <td style="padding: 10px; border: 1px solid #ccc;">{{ $item->total }}</td>
         </tr>
-      </thead>
-      <tbody>
-        @forelse ($jumlahPerInstitusi as $index => $item)
-          <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 10px; text-align: center;">{{ $index + 1 }}</td>
-            <td style="padding: 10px;">{{ $item->namainstitusi ?? 'Tidak Diketahui' }}</td>
-            <td style="padding: 10px; text-align: center;">{{ $item->total }}</td>
-          </tr>
-        @empty
-          <tr>
-            <td colspan="3" style="padding: 10px; text-align: center; color: #888;">Data tidak ditemukan.</td>
-          </tr>
-        @endforelse
-      </tbody>
-    </table>
+      @endforeach
+    </tbody>
+  </table>
+
+  <div style="margin-top: 15px;">
+    <button onclick="prevPage()" id="prevBtn" style="margin-right: 10px;">Sebelumnya</button>
+    <button onclick="nextPage()" id="nextBtn">Berikutnya</button>
   </div>
 </div>
+
+<script>
+  let currentPage = 1;
+  const rowsPerPage = 10;
+  const rows = document.querySelectorAll('.table-row');
+  const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+  function showPage(page) {
+    rows.forEach((row, index) => {
+      row.style.display = (index >= (page - 1) * rowsPerPage && index < page * rowsPerPage) ? 'table-row' : 'none';
+    });
+
+    document.getElementById('prevBtn').disabled = page === 1;
+    document.getElementById('nextBtn').disabled = page === totalPages;
+  }
+
+  function nextPage() {
+    if (currentPage < totalPages) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    showPage(currentPage);
+  });
+</script>
 
 
 <style>
