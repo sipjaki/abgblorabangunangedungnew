@@ -233,99 +233,6 @@ public function bependataanbangunangedung(Request $request)
         $q->where('id', 5);
     })->count();
 
-
-    // Ambil semua data KECUALI yang punya relasi id = 1
-    $dataTanpaIdSatu = pbgslfbangunan::whereDoesntHave('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 1);
-    })->latest()->paginate($perPage);
-
-    $jumlahDataIdSatu_dikembalikan    = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 1);
-})->where('validasiberkas1', 'dikembalikan')->count();
-
-
-$jumlahDataIdDua_dikembalikan     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 2);
-})->where('validasiberkas1', 'dikembalikan')->count();
-
-$jumlahDataIdTiga_dikembalikan    = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 3);
-})->where('validasiberkas1', 'dikembalikan')->count();
-
-$jumlahDataIdEmpat_dikembalikan   = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 4);
-})->where('validasiberkas1', 'dikembalikan')->count();
-
-$jumlahDataIdLima_dikembalikan    = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 5);
-})->where('validasiberkas1', 'dikembalikan')->count();
-
-// --------------------------------
-
-$jumlahDataIdSatu_doklapangan     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 1);
-})->where('validasiberkas2', 'sudah')->count();
-
-$jumlahDataIdDua_doklapangan      = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 2);
-})->where('validasiberkas2', 'sudah')->count();
-
-$jumlahDataIdTiga_doklapangan     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 3);
-})->where('validasiberkas2', 'sudah')->count();
-
-$jumlahDataIdEmpat_doklapangan    = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 4);
-})->where('validasiberkas2', 'sudah')->count();
-
-$jumlahDataIdLima_doklapangan     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 5);
-})->where('validasiberkas2', 'sudah')->count();
-
-// ---------------------------------------------------------------------
-
-$jumlahDataIdSatu_olahdata     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 1);
-})->where('validasiberkas3', 'sudah')->count();
-
-$jumlahDataIdDua_olahdata      = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 2);
-})->where('validasiberkas3', 'sudah')->count();
-
-$jumlahDataIdTiga_olahdata     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 3);
-})->where('validasiberkas3', 'sudah')->count();
-
-$jumlahDataIdEmpat_olahdata    = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 4);
-})->where('validasiberkas3', 'sudah')->count();
-
-$jumlahDataIdLima_olahdata     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 5);
-})->where('validasiberkas3', 'sudah')->count();
-
-// -----------------------------------------
-
-$jumlahDataIdSatu_terbit     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 1);
-})->where('validasiberkas4', 'sudah')->count();
-
-$jumlahDataIdDua_terbit      = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 2);
-})->where('validasiberkas4', 'sudah')->count();
-
-$jumlahDataIdTiga_terbit     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 3);
-})->where('validasiberkas4', 'sudah')->count();
-
-$jumlahDataIdEmpat_terbit    = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 4);
-})->where('validasiberkas4', 'sudah')->count();
-
-$jumlahDataIdLima_terbit     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-    $q->where('id', 5);
-})->where('validasiberkas4', 'sudah')->count();
-
 // -----------------------------------------
 
     return view('backend.02_pendataanbangunangedung.01_databaseutama.01_pendataanbangunangedung', [
@@ -334,29 +241,6 @@ $jumlahDataIdLima_terbit     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper
         'user' => $user,
 
         'jumlahDataTotal' => $jumlahDataTotal,
-        'jumlahDataIdSatu_terbit' => $jumlahDataIdSatu_terbit,
-        'jumlahDataIdDua_terbit' => $jumlahDataIdDua_terbit,
-        'jumlahDataIdTiga_terbit' => $jumlahDataIdTiga_terbit,
-        'jumlahDataIdEmpat_terbit' => $jumlahDataIdEmpat_terbit,
-        'jumlahDataIdLima_terbit' => $jumlahDataIdLima_terbit,
-
-        'jumlahDataIdSatu_doklapangan' => $jumlahDataIdSatu_doklapangan,
-        'jumlahDataIdDua_doklapangan' => $jumlahDataIdDua_doklapangan,
-        'jumlahDataIdTiga_doklapangan' => $jumlahDataIdTiga_doklapangan,
-        'jumlahDataIdEmpat_doklapangan' => $jumlahDataIdEmpat_doklapangan,
-        'jumlahDataIdLima_doklapangan' => $jumlahDataIdLima_doklapangan,
-
-        'jumlahDataIdSatu_dikembalikan' => $jumlahDataIdSatu_dikembalikan,
-        'jumlahDataIdDua_dikembalikan' => $jumlahDataIdDua_dikembalikan,
-        'jumlahDataIdTiga_dikembalikan' => $jumlahDataIdTiga_dikembalikan,
-        'jumlahDataIdEmpat_dikembalikan' => $jumlahDataIdEmpat_dikembalikan,
-        'jumlahDataIdLima_dikembalikan' => $jumlahDataIdLima_dikembalikan,
-
-        'jumlahDataIdSatu_olahdata' => $jumlahDataIdSatu_olahdata,
-        'jumlahDataIdDua_olahdata' => $jumlahDataIdDua_olahdata,
-        'jumlahDataIdTiga_olahdata' => $jumlahDataIdTiga_olahdata,
-        'jumlahDataIdEmpat_olahdata' => $jumlahDataIdEmpat_olahdata,
-        'jumlahDataIdLima_olahdata' => $jumlahDataIdLima_olahdata,
 
         'jumlahDataIdSatu' => $jumlahDataIdSatu,
         'jumlahDataIdDua' => $jumlahDataIdDua,
@@ -364,7 +248,6 @@ $jumlahDataIdLima_terbit     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper
         'jumlahDataIdEmpat' => $jumlahDataIdEmpat,
         'jumlahDataIdLima' => $jumlahDataIdLima,
 
-        'datasemua' => $dataTanpaIdSatu,
     ]);
 }
 
