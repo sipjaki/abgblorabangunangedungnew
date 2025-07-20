@@ -467,8 +467,8 @@
     <div class="row" style="margin: 0 10px;">
         <div class="card mb-4" style="color: black !important;">
             <div class="card-header" style="
-                font-weight: 900;
-                font-size: 16px;
+                font-weight: 600;
+                font-size: 12px;
                 text-align: center;
                 background: linear-gradient(135deg, #000080, #000080);
                 color: white;
