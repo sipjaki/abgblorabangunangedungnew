@@ -748,11 +748,22 @@ public function infomenaratelkomunikasi()
 
 
 // --------------------------------
-public function resbgtracking()
+public function resbgtracking(Request $request)
     {
 
-        $user = Auth::user();
-        $data = pbgslfbangunan::all();
+        // $user = Auth::user();
+        // $data = pbgslfbangunan::all();
+            $user = Auth::user();
+    // $perPage = $request->input('perPage', 20);
+    $noreg = $request->input('noregissimbg');
+
+    $data = null;
+
+    if ($noreg) {
+        $data = pbgslfbangunan::where('noregissimbg', $noreg)->first();
+    }
+
+
 
         // return view('/404', [
         // return view('frontend.00_full.index', [
