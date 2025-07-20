@@ -36,7 +36,18 @@
 @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
 @include('backend.00_administrator.00_baganterpisah.09_button')
 
-<section id="breadcrumb" class="container max-w-[1130px] mx-auto mt-[30px]" style="margin-top: 185px;">
+<section
+id="breadcrumb"
+  style="
+    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+    margin-top: -50px;
+    margin-bottom: -45px;
+  " class="container max-w-[1130px] mx-auto mt-[30px]" style="margin-top: 185px;">
     <div class="flex gap-[30px] items-center">
       <a href="/databangunangedung" class="last-of-type:font-bold transition-all duration-300 text-blue-600" style="color: black;">
         Data Bangunan Gedung
