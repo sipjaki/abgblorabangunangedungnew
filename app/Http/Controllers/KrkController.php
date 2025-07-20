@@ -3750,5 +3750,25 @@ $datagsbkabblora = rencanagsbblora::withoutGlobalScopes()
 }
 
 
+
+public function dokuploadkrkusaha($id)
+{
+    $databantuanteknis = krkusaha::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = krkusahacek::where('krkusaha_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.06_krk.01_pengesahanusaha.09_uploadsuratmanual', [
+        'title' => 'Upload Dokumen Final KRK',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }
 

@@ -249,6 +249,7 @@ Route::get('/bekrkshowpermohonan/{id}', [KrkController::class, 'bekrkshowpermoho
 Route::put('/validasikrkusaha/{id}', [KrkController::class, 'validasikrkusaha'])->middleware('auth')->name('validasikrkusaha');
 Route::put('/valberkasusaha/{id}', [KrkController::class, 'valberkasusaha1'])->name('valberkasusaha.update');
 Route::get('/doklapkrkusaha/{id}', [KrkController::class, 'doklapkrkusaha'])->middleware('auth')->name('doklapkrkusaha.show');
+Route::get('/dokuploadkrkusaha/{id}', [KrkController::class, 'dokuploadkrkusaha'])->middleware('auth')->name('dokuploadkrkusaha');
 
 Route::get('/doklapkrkusahacreate/{id}', [KrkController::class, 'doklapkrkusahacreate'])->middleware('auth')->name('doklapkrkusahacreate.create');
 Route::post('/doklapkrkusahacreatenew', [KrkController::class, 'doklapkrkusahacreatenew'])->middleware('auth')->name('create.doklapkrkusahacreatenew');

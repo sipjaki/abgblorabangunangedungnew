@@ -808,7 +808,7 @@ th {
 
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
                     class="button-baru">
-                <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
+                <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
 
                 </a>
 
