@@ -116,7 +116,7 @@
         <div class="w-full overflow-x-auto rounded-[15px]" style="margin-top: -25px;">
             <table class="zebra-table min-w-max border border-gray-200" style="border-radius: 15px;">
                 <thead>
-               <tr>
+              <tr>
     <th>No</th>
     <th>Tanggal Input</th>
     <th>Nama User</th>
@@ -127,20 +127,29 @@
     <th>No Telepon</th>
     <th>Email</th>
     <th>Koordinat</th>
-    <th>Nama Bangunan</th>
-    <th>Luas Tanah</th>
-    <th>Fungsi Bangunan</th>
-    <th>Status Tanah</th>
     <th>View</th>
 </tr>
 
+
                 </thead>
                 <tbody id="tableBody">
-                 @foreach ($data as $item)
+@foreach ($data as $item)
 <tr>
-    <td style="text-align: center;">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
+    {{-- No Urut --}}
+    <td style="text-align: center;">
+        {{ $data->firstItem() + $loop->iteration - 1 }}
+    </td>
 
-    {{-- Nama Institusi --}}
+    {{-- Tanggal Input --}}
+    <td>{{ $item->tanggalinput ?? '-' }}</td>
+
+    {{-- Nama User --}}
+    <td>{{ $item->user->name ?? '-' }}</td>
+
+    {{-- Kecamatan --}}
+    <td>{{ $item->kecamatanblora->nama_kecamatan ?? '-' }}</td>
+
+    {{-- Institusi Kepemilikan --}}
     <td class="uppercase" style="text-transform: uppercase;">
         {{ $item->namainstitusi ?? 'Data Tidak Ditemukan' }}
     </td>
@@ -170,13 +179,10 @@
         @endif
     </td>
 
-    {{-- Tanggal Input --}}
-    <td>{{ $item->tanggalinput ?? '-' }}</td>
-
-    {{-- Aksi --}}
-    <td style="text-align: center">
-        <a href="/databangunangedung/{{ $item->id }}">
-            <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
+    {{-- Aksi (View) --}}
+    <td style="text-align: center;">
+        <a href="/databangunangedung/{{ $item->id }}" class="btn btn-sm btn-primary">
+            <i class="bi bi-eye"></i> View
         </a>
     </td>
 </tr>
