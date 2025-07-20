@@ -129,72 +129,51 @@
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-                    @foreach ($data as $item)
-                    <tr>
-                        <td style="text-align: center;">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
-                        <td class="uppercase" style="text-transform: uppercase;">
-                            {{ optional($item->kepemilikanbangunangedung)->datainstitusibangunangedung->institusi?? 'Data Tidak Di Temukan' }}
-                        </td>
-                        <td>{{ $item->namabangunan }}</td>
+                 @foreach ($data as $item)
+<tr>
+    <td style="text-align: center;">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
 
-                        <td style="text-align: right">
-                            @php
-                                $luas = (float) preg_replace('/[^0-9.]/', '', $item->luastanah); // hilangkan karakter non-numeric
-                            @endphp
+    {{-- Nama Institusi --}}
+    <td class="uppercase" style="text-transform: uppercase;">
+        {{ $item->namainstitusi ?? 'Data Tidak Ditemukan' }}
+    </td>
 
-                            @if($luas > 0)
-                                {{ number_format($luas, 0, ',', '.') }} m&sup2;
-                            @else
-                                <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
-                                        onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                    Data Belum Di Update
-                                </button>
-                            @endif
-                        </td>
+    {{-- Nomor Pengesahan Usaha --}}
+    <td>{{ $item->nopengesahanusaha ?? '-' }}</td>
 
-                        <td>
-                            @if($item->fungsibangunan && $item->fungsibangunan->fungsibangunan)
-                                {{ $item->fungsibangunan->fungsibangunan }}
-                            @else
-                                <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
-                                        onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                    Data Belum Di Update
-                                </button>
-                            @endif
-                        </td>
-                        <td>
-                            @if(isset($item->profiltanahbangunangedung->statushaktanahbangunangedung->status))
-                                {{ $item->profiltanahbangunangedung->statushaktanahbangunangedung->status }}
-                            @else
-                                <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
-                                        onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                    Data Belum Di Update
-                                </button>
-                            @endif
-                        </td>
+    {{-- Alamat --}}
+    <td>{{ $item->alamat ?? '-' }}</td>
 
-                        <td>
-                            @if(isset($item->klasifikasibangunangedung->tingkatpermanen))
-                                {{ $item->klasifikasibangunangedung->tingkatpermanen }}
-                            @else
-                                <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
-                                        onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                    Data Belum Di Update
-                                </button>
-                            @endif
-                        </td>
+    {{-- No Telepon --}}
+    <td>{{ $item->notelepon ?? '-' }}</td>
 
-                        <td style="text-align: center">
-                            <a href="/databangunangedung/{{$item->namabangunan}}">
-                                <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
-                            </a>
-                        </td>
-                    </tr>
-                @endforeach
+    {{-- Email --}}
+    <td>{{ $item->email ?? '-' }}</td>
+
+    {{-- Koordinat --}}
+    <td>
+        @if(!empty($item->koordinat))
+            {{ $item->koordinat }}
+        @else
+            <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
+                onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                Data Belum Diupdate
+            </button>
+        @endif
+    </td>
+
+    {{-- Tanggal Input --}}
+    <td>{{ $item->tanggalinput ?? '-' }}</td>
+
+    {{-- Aksi --}}
+    <td style="text-align: center">
+        <a href="/databangunangedung/{{ $item->id }}">
+            <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
+        </a>
+    </td>
+</tr>
+@endforeach
 
                 </tbody>
             </table>
