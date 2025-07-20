@@ -44,7 +44,7 @@
     padding: 0;
     position: relative;
     left: 0;
-    margin-top: -50px;
+    margin-top: 450px;
     margin-bottom: -45px;
   "
  id="header" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2" style="margin-top:10px;">
