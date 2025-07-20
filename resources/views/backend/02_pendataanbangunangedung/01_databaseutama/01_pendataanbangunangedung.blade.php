@@ -150,8 +150,8 @@
   </table>
 
   <div style="margin-top: 15px;">
-    <button onclick="prevPage()" id="prevBtn" style="margin-right: 10px;">Sebelumnya</button>
-    <button onclick="nextPage()" id="nextBtn">Berikutnya</button>
+    <button class="button-hijau" onclick="prevPage()" id="prevBtn" style="margin-right: 10px;">Sebelumnya</button>
+    <button class="button-hijau" onclick="nextPage()" id="nextBtn">Berikutnya</button>
   </div>
 </div>
 
@@ -481,7 +481,7 @@
     </style>
 
 
-<div class="container" style="margin-top: -50px;">
+<div class="container" style="margin-top: 10px;">
     <div class="stats-grid" style="display: flex; flex-wrap: wrap; gap: 16px;">
 <div class="stat-card">
     <div class="stat-number">
