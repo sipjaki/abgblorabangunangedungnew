@@ -190,7 +190,7 @@ Route::get('/statistikbg', [PendataanBangunanGedungController::class, 'statistik
 
 
 // WEB 06_ MENU KRK BANGUNAN GEDUNG
-Route::get('/rescarigsb', [FedashboardController::class, 'rescarigsb'])->name('rescarigsb');
+Route::get('/rescarigsb', [FedashboardController::class, 'rescarigsb'])->middleware('auth')->name('rescarigsb');
 
 // ----------------------------------------------------------------------------------------
 Route::get('/informasikrk', [KrkController::class, 'informasikrk']);
