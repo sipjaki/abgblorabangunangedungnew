@@ -935,10 +935,16 @@ Route::get('/bepbgsosialbudayaupdate/{id}', [PbgslfController::class, 'bepbgsosi
 Route::post('/bepbgsosialbudayaupdatenew/{id}', [PbgslfController::class, 'bepbgsosialbudayaupdatenew'])->middleware('auth')->name('bepbgsosialbudayaupdatenew');
 
 // -----------------------------------
-Route::get('/beslffungsiusaha', [PbgslfController::class, 'beslffungsiusaha'])->middleware('auth')->name('beslffungsiusaha');
+Route::get('/bepbgfungsiusaha', [PbgslfController::class, 'beslffungsiusaha'])->middleware('auth')->name('beslffungsiusaha');
 Route::get('/beslffungsiusahaupdate/{id}', [PbgslfController::class, 'beslffungsiusahaupdate'])->middleware('auth')->name('beslffungsiusahaupdate');
 Route::post('/beslffungsiusahaupdatenew/{id}', [PbgslfController::class, 'beslffungsiusahaupdatenew'])->middleware('auth')->name('beslffungsiusahaupdatenew');
-//
+
+// -----------------------------------
+Route::get('/bgslffungsiusaha', [PbgslfController::class, 'bgslffungsiusahanew'])->middleware('auth')->name('bgslffungsiusahanew');
+Route::get('/bgslffungsiusahanewupdate/{id}', [PbgslfController::class, 'bgslffungsiusahanewupdate'])->middleware('auth')->name('bgslffungsiusahanewupdate');
+Route::post('/bgslffungsiusahanewupdatenew/{id}', [PbgslfController::class, 'bgslffungsiusahanewupdatenew'])->middleware('auth')->name('bgslffungsiusahanewupdatenew');
+
+
 
 Route::get('/fungsicampuran', [PbgslfController::class, 'fungsicampuran'])->middleware('auth')->name('fungsicampuran');
 

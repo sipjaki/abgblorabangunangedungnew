@@ -23,6 +23,7 @@ use App\Models\infopbg3;
 use App\Models\infopbg4;
 use App\Models\infopbg5;
 use App\Models\infopbg6;
+use App\Models\infopbg7;
 use App\Models\jenispengajuanpbgslfper;
 use App\Models\jenisperkonsultasi;
 use App\Models\kecamatanblora;
@@ -4190,6 +4191,85 @@ public function beslffungsiusahaupdate($id)
 public function beslffungsiusahaupdatenew(Request $request, $id)
 {
     $data = infopbg6::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'judul' => 'nullable|string|max:255',
+        'berkas' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'keterangan' => 'nullable|string',
+        'infolanjut' => 'nullable|string',
+    ]);
+
+    // Simpan data teks
+    $data->judul = $request->judul;
+    $data->keterangan = $request->keterangan;
+    $data->infolanjut = $request->infolanjut;
+
+    // Handle file upload
+    if ($request->hasFile('berkas')) {
+        // Hapus file lama jika ada
+        if ($data->berkas && file_exists(public_path($data->berkas))) {
+            @unlink(public_path($data->berkas));
+        }
+
+        $file = $request->file('berkas');
+        $filename = time() . '_berkas.' . $file->getClientOriginalExtension();
+        $destination = public_path('00_berkasinformasi/01_brosur');
+
+        if (!file_exists($destination)) {
+            mkdir($destination, 0777, true);
+        }
+
+        $file->move($destination, $filename);
+        $data->berkas = '00_berkasinformasi/01_brosur/' . $filename;
+    }
+
+    $data->save();
+session()->flash('update', 'Informasi berhasil diperbarui!');
+return back();
+
+}
+
+   public function bgslffungsiusahanew(Request $request)
+{
+    $user = Auth::user();
+    $data = infopbg7::all();
+    // $perPage = $request->input('perPage', 20);
+
+
+// -----------------------------------------
+
+    return view('backend.01_pbgslf.00_informasi.13_beslffungsiusaha', [
+        'title' => 'Informasi Permohonan SLF Fungsi Usaha',
+        // 'data' => $dataTanpaIdSatu,
+        'user' => $user,
+        'data' => $data,
+
+        // 'datasemua' => $dataTanpaIdSatu,
+    ]);
+
+}
+
+
+public function bgslffungsiusahanewupdate($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Ambil data hibah berdasarkan ID
+    $data = infopbg7::findOrFail($id);
+
+    // Kirim ke view
+    return view('backend.01_pbgslf.00_informasi.14_updateslfusaha', [
+        'title' => 'Perubahan Informasi SLF Fungsi Usaha',
+        'user' => $user,
+        'data' => $data
+    ]);
+}
+
+public function bgslffungsiusahanewupdatenew(Request $request, $id)
+{
+    $data = infopbg7::findOrFail($id);
 
     // Validasi input
     $request->validate([
