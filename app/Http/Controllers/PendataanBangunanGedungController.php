@@ -998,7 +998,7 @@ public function datanewpendataanbg(Request $request)
 
 
         // Kirim data ke view tanpa ambil dari database bantuanhibahbg
-        return view('backend.02_pendataanbangunangedung.00_dataindukpendataanbg', [
+        return view('backend.02_pendataanbangunangedung.01_databaseutama.00_dataindukpendataanbg', [
             'title' => 'Buat Data Baru Pendataan Bangunan Gedung',
             'user' => $user,
             'datakelurahan' => $datakelurahan,
