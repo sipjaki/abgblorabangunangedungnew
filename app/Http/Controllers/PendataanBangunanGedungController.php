@@ -75,15 +75,15 @@ public function databangunangedung(Request $request)
             $q->where('tanggalinput', 'LIKE', "%{$search}%")
               ->orWhere('namainstitusi', 'LIKE', "%{$search}%")
               ->orWhere('nopengesahanusaha', 'LIKE', "%{$search}%")
-              ->orWhere('alamat', 'LIKE', "%{$search}%")
-              ->orWhere('notelepon', 'LIKE', "%{$search}%")
+            //   ->orWhere('alamat', 'LIKE', "%{$search}%")
+            //   ->orWhere('notelepon', 'LIKE', "%{$search}%")
               ->orWhere('email', 'LIKE', "%{$search}%")
               ->orWhere('koordinat', 'LIKE', "%{$search}%")
-              ->orWhereHas('user', function ($k) use ($search) {
-                  $k->where('name', 'LIKE', "%{$search}%");
-              })
+            //   ->orWhereHas('user', function ($k) use ($search) {
+            //       $k->where('name', 'LIKE', "%{$search}%");
+            //   })
               ->orWhereHas('kecamatanblora', function ($k) use ($search) {
-                  $k->where('nama', 'LIKE', "%{$search}%");
+                  $k->where('kecamatanblora', 'LIKE', "%{$search}%");
               });
         });
     }
