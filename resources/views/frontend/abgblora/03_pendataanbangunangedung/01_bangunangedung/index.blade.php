@@ -118,15 +118,15 @@
                 <thead>
               <tr>
     <th>No</th>
-    <th>Tanggal Input</th>
-    <th>Nama User</th>
+    <th>Nama Institusi</th>
     <th>Kecamatan</th>
-    <th>Institusi Kepemilikan</th>
+    <th>Kecamatan</th>
     <th>No Pengesahan Usaha</th>
-    <th>Alamat</th>
+    <th>Koordinat</th>
+    {{-- <th>Alamat</th>
     <th>No Telepon</th>
     <th>Email</th>
-    <th>Koordinat</th>
+    <th>Koordinat</th> --}}
     <th>View</th>
 </tr>
 
@@ -146,38 +146,13 @@
     </td>
 
     {{-- Nomor Pengesahan Usaha --}}
-    <td>{{ $item->nopengesahanusaha ?? '-' }}</td>
+    <td>{{ $item->kecamatanblora->kecamatanblora ?? '-' }}</td>
 
     {{-- Alamat --}}
-    <td>{{ $item->alamat ?? '-' }}</td>
+    <td>{{ $item->nopengesahanusaha ?? '-' }}</td>
 
     {{-- No Telepon --}}
-    <td>{{ $item->notelepon ?? '-' }}</td>
-
-    {{-- Email --}}
-    <td>{{ $item->email ?? '-' }}</td>
-
-    {{-- Koordinat --}}
-    <td>
-        @if(!empty($item->koordinat))
-            {{ $item->koordinat }}
-        @else
-            <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
-                onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                Data Belum Diupdate
-            </button>
-        @endif
-    </td>
-
-    {{-- Kecamatan --}}
-    <td>{{ $item->kecamatanblora_id ?? '-' }}</td>
-
-    {{-- User ID --}}
-    <td>{{ $item->user_id ?? '-' }}</td>
-
-    {{-- Tanggal Input --}}
-    <td>{{ $item->tanggalinput ?? '-' }}</td>
+    <td>{{ $item->koordinat ?? '-' }}</td>
 
     {{-- Aksi --}}
     <td style="text-align: center">

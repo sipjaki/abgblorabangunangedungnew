@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('datainstitusibangunangedung_id')->nullable();
             $table->string('tanggalinput')->nullable();
             $table->foreignId('user_id')->nullable()->index();
-            $table->foreignId('kecamatanblora_id')->nullable()->index();
             $table->string('namainstitusi')->nullable();
+            $table->foreignId('kecamatanblora_id')->nullable()->index();
             $table->string('nopengesahanusaha')->nullable();
             $table->string('alamat')->nullable();
             $table->string('notelepon')->nullable();
