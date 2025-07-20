@@ -930,7 +930,7 @@ Route::get('/bepbgslflihatper/{id}', [PbgslfController::class, 'bepbgslflihatper
 
 // MENU UNTUK UPDATE BRO
 Route::get('/updatefungsicampuran/{id}', [PbgslfController::class, 'updatefungsicampuran'])->middleware('auth')->name('updatefungsicampuran');
-// Route::post('/mbrgambarupdatenew/{id}', [PbgslfController::class, 'mbrgambarupdatenew'])->middleware('auth')->name('mbrgambarupdatenew');
+Route::post('/updatefungsicampurannew/{id}', [PbgslfController::class, 'updatefungsicampurannew'])->middleware('auth')->name('updatefungsicampurannew');
 
 // TAHAP INDUK ----------------
 Route::get('/createdatapbgslf', [PbgslfController::class, 'createdatapbgslf'])->middleware('auth')->name('createdatapbgslf.create');
