@@ -813,10 +813,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <!-- Text Label dan Link Download -->
         <div class="flex flex-col text-sm">
-            <span>Upload Surat Permohonan KRK</span>
-            <span class="text-gray-600">File <code>.pdf</code> maks. 10 MB</span>
+            <span>Upload Surat Permohonan KRK | 10 MB </span>
             <a href="/asset/abgblora/logo/Surat_Permohonan_KRK.docx" download
-                class="text-blue-600 underline hover:text-blue-800 mt-1">
+                class="text-blue-600 underline hover:text-blue-800 mt-1" style="color: red">
                 Download Contoh Surat Permohonan (.docx)
             </a>
         </div>
