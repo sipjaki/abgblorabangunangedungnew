@@ -34,6 +34,7 @@
 
 @include('frontend.abgblora.00_fiturmenu.02_header')
 @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 
 
   <style>
@@ -119,7 +120,7 @@
               <tr>
     <th>No</th>
     <th>Nama Institusi</th>
-    <th>Kecamatan</th>
+    {{-- <th>Kecamatan</th> --}}
     <th>Kecamatan</th>
     <th>No Pengesahan Usaha</th>
     <th>Koordinat</th>
@@ -152,7 +153,15 @@
     <td>{{ $item->nopengesahanusaha ?? '-' }}</td>
 
     {{-- No Telepon --}}
-    <td>{{ $item->koordinat ?? '-' }}</td>
+<td>
+    @if (!empty($item->koordinat))
+        {{ $item->koordinat }}
+    @else
+        <button class="button-berkas">
+            Data Belum Diupdate
+        </button>
+    @endif
+</td>
 
     {{-- Aksi --}}
     <td style="text-align: center">
