@@ -34,6 +34,7 @@
 
 @include('frontend.abgblora.00_fiturmenu.02_header')
 @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 
 <section id="breadcrumb" class="container max-w-[1130px] mx-auto mt-[30px]" style="margin-top: 185px;">
     <div class="flex gap-[30px] items-center">
@@ -108,62 +109,62 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
-                <!-- CARD 1 -->
-                <a href="#" class="card" style="border-radius: 20px;">
-                  <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
-                    <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
-                      <img onclick="openModal(this.src)" src="/assets/android/iconmenu/bangunan1.jpg" class="w-full h-full object-cover cursor-pointer" alt="thumbnail">
-                    </div>
-                    <div class="flex flex-col">
-                      <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">
-                        Tampak Depan
-                      </p>
-                    </div>
-                  </div>
-                </a>
-
-                <!-- CARD 2 -->
-                <a href="#" class="card" style="border-radius: 20px;">
-                  <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
-                    <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
-                      <img onclick="openModal(this.src)" src="/assets/android/iconmenu/bangunan1.jpg" class="w-full h-full object-cover cursor-pointer" alt="thumbnail">
-                    </div>
-                    <div class="flex flex-col">
-                      <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">
-                        Tampak Samping 1
-                      </p>
-                    </div>
-                  </div>
-                </a>
-
-                <!-- CARD 3 -->
-                <a href="#" class="card" style="border-radius: 20px;">
-                  <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
-                    <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
-                      <img onclick="openModal(this.src)" src="/assets/android/iconmenu/bangunan1.jpg" class="w-full h-full object-cover cursor-pointer" alt="thumbnail">
-                    </div>
-                    <div class="flex flex-col">
-                      <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">
-                        Tampak Samping 2
-                      </p>
-                    </div>
-                  </div>
-                </a>
-
-                <!-- CARD 4 -->
-                <a href="#" class="card" style="border-radius: 20px;">
-                  <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
-                      <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
-                          <img onclick="openModal(this.src)" src="/assets/android/iconmenu/bangunan1.jpg" class="w-full h-full object-cover cursor-pointer" alt="thumbnail">
-                        </div>
-                        <div class="flex flex-col">
-                            <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">
-                                Tampak Belakang
-                            </p>
-                        </div>
-                    </div>
-                </a>
+    {{-- CARD: Tampak Depan --}}
+    @if (!empty($item->tampakdepan))
+    <a href="#" class="card" style="border-radius: 20px;">
+        <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
+            <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
+                <img onclick="openModal(this.src)" src="{{ asset($item->tampakdepan) }}" class="w-full h-full object-cover cursor-pointer" alt="Tampak Depan">
             </div>
+            <div class="flex flex-col">
+                <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Depan</p>
+            </div>
+        </div>
+    </a>
+    @endif
+
+    {{-- CARD: Tampak Samping 1 --}}
+    @if (!empty($item->tampaksamping1))
+    <a href="#" class="card" style="border-radius: 20px;">
+        <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
+            <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
+                <img onclick="openModal(this.src)" src="{{ asset($item->tampaksamping1) }}" class="w-full h-full object-cover cursor-pointer" alt="Tampak Samping 1">
+            </div>
+            <div class="flex flex-col">
+                <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Samping 1</p>
+            </div>
+        </div>
+    </a>
+    @endif
+
+    {{-- CARD: Tampak Samping 2 --}}
+    @if (!empty($item->tampaksamping2))
+    <a href="#" class="card" style="border-radius: 20px;">
+        <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
+            <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
+                <img onclick="openModal(this.src)" src="{{ asset($item->tampaksamping2) }}" class="w-full h-full object-cover cursor-pointer" alt="Tampak Samping 2">
+            </div>
+            <div class="flex flex-col">
+                <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Samping 2</p>
+            </div>
+        </div>
+    </a>
+    @endif
+
+    {{-- CARD: Tampak Belakang --}}
+    @if (!empty($item->tampakbelakang))
+    <a href="#" class="card" style="border-radius: 20px;">
+        <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
+            <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
+                <img onclick="openModal(this.src)" src="{{ asset($item->tampakbelakang) }}" class="w-full h-full object-cover cursor-pointer" alt="Tampak Belakang">
+            </div>
+            <div class="flex flex-col">
+                <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Belakang</p>
+            </div>
+        </div>
+    </a>
+    @endif
+</div>
 
             <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
                 <div class="w-5 h-5 flex shrink-0">
