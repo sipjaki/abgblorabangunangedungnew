@@ -116,7 +116,7 @@
             }
         </style>
 
-        <button type="submit" class="button-baru" style="text-align: center;">
+        <button type="submit" class="button-baru" style="text-align: center; margin-left:200px;">
             <i class="bi bi-search"></i> Cari Data
         </button>
     </div>
