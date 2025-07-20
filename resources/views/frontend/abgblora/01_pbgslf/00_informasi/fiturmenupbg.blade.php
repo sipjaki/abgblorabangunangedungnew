@@ -21,7 +21,7 @@
   <a href="/infopbgusaha" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-briefcase" style="font-size: 14px;"></i> PBG Fungsi Usaha
   </a>
-  <a href="/404" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/infoslfusaha" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-tools" style="font-size: 14px;"></i> SLF Fungsi Usaha
   </a>
   <a href="/404" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
