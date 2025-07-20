@@ -179,7 +179,7 @@ Route::post('/mbrgambarupdatenew/{id}', [PbgslfController::class, 'mbrgambarupda
 // ----------------------------------------------------------------------------------------
 Route::get('/pendataankicbangunangedung', [PendataanBangunanGedungController::class, 'datakicbangunan']);
 Route::get('/databangunangedung', [PendataanBangunanGedungController::class, 'databangunangedung']);
-Route::get('/databangunangedung/{id}', [PendataanBangunanGedungController::class, 'databangunangedungshow']);
+Route::get('/databangunangedungshow/{id}', [PendataanBangunanGedungController::class, 'databangunangedungshow']);
 Route::get('/statistikbg', [PendataanBangunanGedungController::class, 'statistikbg']);
 
 

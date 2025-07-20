@@ -60,6 +60,7 @@ class PendataanBangunanGedungController extends Controller
             'search' => $search
         ]);
     }
+
 public function databangunangedung(Request $request)
 {
     $perPage = $request->input('perPage', 15);
@@ -106,7 +107,7 @@ public function databangunangedung(Request $request)
 
     public function databangunangedungshow($id)
     {
-        $databangunangedung = databangunangedung::where('id', $id)->first();
+        $databangunangedung = databgkepemilikan::where('id', $id)->first();
 
         if (!$databangunangedung) {
             // Tangani jika kegiatan tidak ditemukan
