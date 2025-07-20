@@ -133,9 +133,12 @@
 
                 </thead>
                 <tbody id="tableBody">
-                 @foreach ($data as $item)
+             @foreach ($data as $item)
 <tr>
-    <td style="text-align: center;">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
+    {{-- No --}}
+    <td style="text-align: center;">
+        {{ $data->firstItem() + $loop->iteration - 1 }}
+    </td>
 
     {{-- Nama Institusi --}}
     <td class="uppercase" style="text-transform: uppercase;">
@@ -166,6 +169,12 @@
             </button>
         @endif
     </td>
+
+    {{-- Kecamatan --}}
+    <td>{{ $item->kecamatanblora_id ?? '-' }}</td>
+
+    {{-- User ID --}}
+    <td>{{ $item->user_id ?? '-' }}</td>
 
     {{-- Tanggal Input --}}
     <td>{{ $item->tanggalinput ?? '-' }}</td>
