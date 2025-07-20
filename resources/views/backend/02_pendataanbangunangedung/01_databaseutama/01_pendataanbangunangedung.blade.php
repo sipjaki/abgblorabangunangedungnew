@@ -517,7 +517,7 @@
             Data Kepemilikan Bangunan Gedung
           </span>
           <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdSatu }} Bangunan Gedung
+Berkas
           </span>
         </div>
       </div>
@@ -538,7 +538,7 @@
             Data Profil Tanah Bangunan Gedung
           </span>
           <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdDua }} Permohonan
+           Berkas
           </span>
         </div>
       </div>
@@ -559,7 +559,7 @@
           Data Profil Bangunan Gedung
           </span>
           <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdTiga }} Permohonan
+          Berkas
           </span>
         </div>
       </div>
@@ -580,8 +580,8 @@
             Klasifikasi Bangunan Gedung
           </span>
           <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdEmpat }} Bangunan Gedung
-          </span>
+      Berkas
+        </span>
         </div>
       </div>
     </a>
@@ -601,8 +601,8 @@
             Data Struktur Bangunan Gedung
           </span>
           <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdLima }} Bangunan Gedung
-          </span>
+        Berkas
+        </span>
         </div>
       </div>
     </a>
@@ -621,8 +621,8 @@
             Data Status Bangunan Gedung
           </span>
           <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdLima }} Bangunan Gedung
-          </span>
+        Berkas
+        </span>
         </div>
       </div>
     </a>
