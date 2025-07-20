@@ -679,40 +679,6 @@ th {
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Dokumen Belum Ada
     </button>
 @endif
-<button type="button"
-   onclick="openModal({{ $item->id }})"
-   class="button-baru"
-   style="border-radius: 15px; padding: 8px 16px; background-color: white; color: black; border: none; text-decoration: none; display: inline-flex; align-items: center;">
-   <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Surat Pemohon
-</button>
-
-<div id="modal-{{ $item->id }}" class="modal" style="display: none;">
-    <div class="modal-content">
-        <span onclick="closeModal({{ $item->id }})" class="close">&times;</span>
-        <iframe src="{{ asset($item->tandatangan) }}" width="100%" height="500px"></iframe>
-    </div>
-</div>
-
-<script>
-    function openModal(id) {
-        document.getElementById('modal-' + id).style.display = 'block';
-    }
-
-    function closeModal(id) {
-        document.getElementById('modal-' + id).style.display = 'none';
-    }
-
-    // Optional: Tutup modal jika klik di luar area modal
-    window.onclick = function(event) {
-        const modals = document.querySelectorAll('.modal');
-        modals.forEach(function(modal) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    };
-</script>
-
 
     </div>
 
