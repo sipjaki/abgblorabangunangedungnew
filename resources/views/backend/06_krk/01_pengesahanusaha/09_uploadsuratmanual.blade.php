@@ -194,314 +194,44 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('create.dokuploadhibahskcreatenew') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('create.dokuploadhibahskcreatenew', $data->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
-<input type="hidden" name="bantuanhibahbg_id" value="{{ $data->id }}">
+{{-- <input type="hidden" name="bantuanhibahbg_id" value="{{ $data->id }}"> --}}
 
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="nomorproposal">
-            <i class="bi bi-file-text" style="margin-right: 8px; color: navy;"></i> Nomor Proposal
-        </label>
-        <input
-            type="text"
-            id="nomorproposal"
-            name="nomorproposal"
-            value="{{ old('nomorproposal', $data->nomorproposal ?? '') }}"
-            class="form-control @error('nomorproposal') is-invalid @enderror"
-            placeholder="Masukkan nomor proposal"
-            readonly
-            style="background-color: #e9ecef; cursor: not-allowed;"
-        />
-        @error('nomorproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="tanggalproposal">
-            <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Proposal
-        </label>
-        <input
-            type="date"
-            id="tanggalproposal"
-            name="tanggalproposal"
-            value="{{ old('tanggalproposal', $data->tanggalproposal ?? '') }}"
-            class="form-control @error('tanggalproposal') is-invalid @enderror"
-            readonly
-            style="background-color: #e9ecef; cursor: not-allowed;"
-        />
-        @error('tanggalproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="col-12">
-    <div class="mb-3">
-        <label class="form-label" for="intiproposal">
-            <i class="bi bi-journal-text" style="margin-right: 8px; color: navy;"></i> Perihal/ Isi Proposal Hibah
-        </label>
-        <textarea
-            id="intiproposal"
-            name="intiproposal"
-            rows="4"
-            class="form-control @error('intiproposal') is-invalid @enderror"
-            placeholder="Jelaskan inti proposal"
-            readonly
-            style="background-color: #e9ecef; cursor: not-allowed;"
-        >{{ old('intiproposal', $data->intiproposal ?? '') }}</textarea>
-        @error('intiproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-{{-- <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="narahubung">
-            <i class="bi bi-person-lines-fill" style="margin-right: 8px; color: navy;"></i> Narahubung
-        </label>
-        <input
-            type="text"
-            id="narahubung"
-            name="narahubung"
-            value="{{ old('narahubung', $data->narahubung ?? '') }}"
-            class="form-control @error('narahubung') is-invalid @enderror"
-            placeholder="Nama narahubung"
-            readonly
-            style="background-color: #e9ecef; cursor: not-allowed;"
-        />
-        @error('narahubung')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="kontakperson">
-            <i class="bi bi-telephone-fill" style="margin-right: 8px; color: navy;"></i> Kontak Person
-        </label>
-        <input
-            type="text"
-            id="kontakperson"
-            name="kontakperson"
-            value="{{ old('kontakperson', $data->kontakperson ?? '') }}"
-            class="form-control @error('kontakperson') is-invalid @enderror"
-            placeholder="Nomor kontak person"
-            inputmode="numeric"
-            pattern="[0-9]*"
-            oninput="this.value = this.value.replace(/\D/g, '')"
-            readonly
-            style="background-color: #e9ecef; cursor: not-allowed;"
-        />
-        @error('kontakperson')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div> --}}
-
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
-</div>
-
 <div class="text-center">
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
     <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
         <i class="bi bi-upload" style="margin-right: 6px;"></i>
-        Upload SK Bupati Hibah Bangunan Gedung Kabupaten Blora
+        Upload Surat
     </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
+
 <div class="row">
   <div class="col-md-6">
     <div class="mb-3">
-      <label class="form-label" for="berkas1">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Nota Dinas Pengajuan Hibah
+      <label class="form-label" for="suratuploadmanual">
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Dokumen Final KRK
       </label>
-      <input type="file" id="berkas1" name="berkas1" accept="application/pdf"
-        class="form-control @error('berkas1') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerBerkas1', 'iframeBerkas1', 'msgBerkas1')" />
-      @error('berkas1')<div class="invalid-feedback">{{ $message }}</div>@enderror
+      <input type="file" id="suratuploadmanual" name="suratuploadmanual" accept="application/pdf"
+        class="form-control @error('suratuploadmanual') is-invalid @enderror"
+        onchange="previewPDF(event, 'previewContainersuratuploadmanual', 'iframesuratuploadmanual', 'msgsuratuploadmanual')" />
+      @error('suratuploadmanual')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-      <div class="mt-3" id="previewContainerBerkas1" style="display: none;">
+      <div class="mt-3" id="previewContainersuratuploadmanual" style="display: none;">
         <label class="fw-bold">Surat Nota Dinas Pengajuan Hibah</label>
-        <iframe id="iframeBerkas1" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+        <iframe id="iframesuratuploadmanual" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
       </div>
-      <div id="msgBerkas1" class="mt-3" style="color: grey; font-style: italic;">
+      <div id="msgsuratuploadmanual" class="mt-3" style="color: grey; font-style: italic;">
         Belum Upload Berkas, Silahkan Upload Nota Dinas Pengajuan Hibah.
       </div>
     </div>
   </div>
 
-  <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas2">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload SK Bupati Penetapan Penerima Hibah
-      </label>
-      <input type="file" id="berkas2" name="berkas2" accept="application/pdf"
-        class="form-control @error('berkas2') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerBerkas2', 'iframeBerkas2', 'msgBerkas2')" />
-      @error('berkas2')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-      <div class="mt-3" id="previewContainerBerkas2" style="display: none;">
-        <label class="fw-bold">SK SK Bupati Penetapan Penerima Hibah</label>
-        <iframe id="iframeBerkas2" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      </div>
-      <div id="msgBerkas2" class="mt-3" style="color: grey; font-style: italic;">
-        Belum Upload Berkas, Silahkan Upload SK Bupati Penetapan Penerima Hibah.
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas3">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> BAST (Berita Acara Serat Terima)
-      </label>
-      <input type="file" id="berkas3" name="berkas3" accept="application/pdf"
-        class="form-control @error('berkas3') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerBerkas3', 'iframeBerkas3', 'msgBerkas3')" />
-      @error('berkas3')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-      <div class="mt-3" id="previewContainerBerkas3" style="display: none;">
-        <label class="fw-bold">BAST (Berita Acara Serah Terima)</label>
-        <iframe id="iframeBerkas3" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      </div>
-      <div id="msgBerkas3" class="mt-3" style="color: grey; font-style: italic;">
-        Belum Upload Berkas, Silahkan Upload BAST (Berita Acara Serah Terima).
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas4">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> NHPD (Naskah Perjanjian Hibah Daerah)
-      </label>
-      <input type="file" id="berkas4" name="berkas4" accept="application/pdf"
-        class="form-control @error('berkas4') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerBerkas4', 'iframeBerkas4', 'msgBerkas4')" />
-      @error('berkas4')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-      <div class="mt-3" id="previewContainerBerkas4" style="display: none;">
-        <label class="fw-bold">NHPD (Naskah Perjanjian Hibah Daerah)</label>
-        <iframe id="iframeBerkas4" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      </div>
-      <div id="msgBerkas4" class="mt-3" style="color: grey; font-style: italic;">
-        Belum Upload Berkas, Silahkan Upload NHPD (Naskah Perjanjian Hibah Daerah).
-      </div>
-    </div>
-  </div>
-
-  {{-- <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas3">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berita Acara Hasil Evaluasi & Pengkajian
-      </label>
-      <input type="file" id="berkas3" name="berkas3" accept="application/pdf"
-        class="form-control @error('berkas3') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerBerkas3', 'iframeBerkas3', 'msgBerkas3')" />
-      @error('berkas3')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-      <div class="mt-3" id="previewContainerBerkas3" style="display: none;">
-        <label class="fw-bold">Berita Acara Hasil Evaluasi & Pengkajian</label>
-        <iframe id="iframeBerkas3" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      </div>
-      <div id="msgBerkas3" class="mt-3" style="color: grey; font-style: italic;">
-        Belum Upload Berkas, Silahkan Upload Berita Acara Hasil Evaluasi & Pengkajian.
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas4">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Rekomendasi Penetapan Penerima Hibah
-      </label>
-      <input type="file" id="berkas4" name="berkas4" accept="application/pdf"
-        class="form-control @error('berkas4') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerBerkas4', 'iframeBerkas4', 'msgBerkas4')" />
-      @error('berkas4')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-      <div class="mt-3" id="previewContainerBerkas4" style="display: none;">
-        <label class="fw-bold">Rekomendasi Penetapan Penerima Hibah</label>
-        <iframe id="iframeBerkas4" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      </div>
-      <div id="msgBerkas4" class="mt-3" style="color: grey; font-style: italic;">
-        Belum Upload Berkas, Silahkan upload Berkas Rekomendasi Penetapan Penerima Hibah.
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas5">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Kepada TAPD
-      </label>
-      <input type="file" id="berkas5" name="berkas5" accept="application/pdf"
-        class="form-control @error('berkas5') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerBerkas5', 'iframeBerkas5', 'msgBerkas5')" />
-      @error('berkas5')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-      <div class="mt-3" id="previewContainerBerkas5" style="display: none;">
-        <label class="fw-bold">Surat Kepada TAPD</label>
-        <iframe id="iframeBerkas5" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      </div>
-      <div id="msgBerkas5" class="mt-3" style="color: grey; font-style: italic;">
-        Belum Upload Berkas, Silahkan Upload Surat Kepada TAPD.
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="berkas6">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung Lainnya
-      </label>
-      <input type="file" id="berkas6" name="berkas6" accept="application/pdf"
-        class="form-control @error('berkas6') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerBerkas6', 'iframeBerkas6', 'msgBerkas6')" />
-      @error('berkas6')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-      <div class="mt-3" id="previewContainerBerkas6" style="display: none;">
-        <label class="fw-bold">Berkas Pendukung Lainnya</label>
-        <iframe id="iframeBerkas6" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      </div>
-      <div id="msgBerkas6" class="mt-3" style="color: grey; font-style: italic;">
-        Silahkan Upload Berkas Pendukung lainnya
-      </div>
-    </div>
-  </div> --}}
 </div>
 
 
