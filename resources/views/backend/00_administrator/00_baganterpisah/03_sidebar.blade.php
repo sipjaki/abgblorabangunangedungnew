@@ -977,30 +977,31 @@
     </p>
 </div>
     <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
-            <p style="color: white; margin-left: 8px;">Statistik Bangunan</p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="/bependataanbangunangedung" class="nav-link">
-            <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
-            <p style="color: white; margin-left: 8px;">Bangunan Gedung</p>
-        </a>
-    </li>
-     <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
-            <p style="color: white; margin-left: 8px;">Statistik KIC</p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-columns-gap nav-icon" style="color: white; font-size: 16px;"></i>
-            <p style="color: white; margin-left: 8px;">Kartu Identitas</p>
-        </a>
-    </li>
-    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-bar-chart-line nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px;">Statistik Bangunan</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="/bependataanbangunangedung" class="nav-link">
+        <i class="bi bi-house-door nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px;">Bangunan Gedung</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-graph-up nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px;">Statistik KIC</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-person-vcard nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px;">Kartu Identitas</p>
+    </a>
+</li>
+
+    {{-- <div style="margin-bottom: 10px; margin-top: 10px;">
     <p style="
         font-size: 13px;
         margin-left: 12px;
@@ -1015,7 +1016,7 @@
     ">
         <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
     </p>
-</div>
+</div> --}}
 </ul>
 
             </li>
