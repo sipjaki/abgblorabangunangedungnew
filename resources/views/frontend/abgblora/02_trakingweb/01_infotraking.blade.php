@@ -514,7 +514,7 @@
                 @if(isset($data) && $data)
                     <div class="card shadow border-0 mb-4" style="color: black !important;">
             <div class="card-body bg-white text-black">
-    <h5 class="card-title fw-bold text-center mb-4">
+    <h5 class="card-title fw-bold text-center mb-4" style="font-size: 16px;">
         Status Permohonan SIMBG
     </h5>
 
