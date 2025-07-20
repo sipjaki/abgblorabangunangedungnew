@@ -679,17 +679,60 @@ th {
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Dokumen Belum Ada
     </button>
 @endif
-
-<a href="/besuratpemohonkrk/{{$item->id}}"
-   title="Surat Pemohon KRK"
+<button type="button"
+   onclick="openModal('{{ asset($item->tandatangan) }}')"
    class="button-baru"
    style="border-radius: 15px; padding: 8px 16px; background-color: white; color: black; border: none; text-decoration: none; display: inline-flex; align-items: center;">
-    <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Surat Pemohon
-</a>
+   <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Surat Pemohon
+</button>
+
 
     </div>
 
 </td>
+
+<div id="fileModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-xl p-4 w-[90%] max-w-3xl shadow-lg relative">
+    <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-xl font-bold">&times;</button>
+    <h3 class="text-lg font-semibold mb-4">Preview Surat Pemohon</h3>
+
+    <div id="fileContent" class="h-[70vh] overflow-auto border border-gray-300 p-2 rounded-md">
+      <!-- Isi file ditampilkan di sini -->
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal(fileUrl) {
+    const modal = document.getElementById('fileModal');
+    const content = document.getElementById('fileContent');
+    const ext = fileUrl.split('.').pop().toLowerCase();
+
+    let previewHTML = '';
+
+    if (ext === 'pdf') {
+      previewHTML = `<iframe src="${fileUrl}" class="w-full h-full" frameborder="0"></iframe>`;
+    } else if (ext === 'docx' || ext === 'doc') {
+      previewHTML = `
+        <p>File Word tidak bisa ditampilkan langsung di browser.</p>
+        <a href="${fileUrl}" target="_blank" download class="text-blue-600 underline hover:text-blue-800">
+          Download File Word
+        </a>`;
+    } else {
+      previewHTML = `<p>Format file tidak didukung untuk ditampilkan.</p>`;
+    }
+
+    content.innerHTML = previewHTML;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeModal() {
+    document.getElementById('fileModal').classList.add('hidden');
+    document.getElementById('fileModal').classList.remove('flex');
+    document.getElementById('fileContent').innerHTML = '';
+  }
+</script>
 
 <!-- Tombol Validasi -->
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
