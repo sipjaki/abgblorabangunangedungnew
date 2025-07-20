@@ -177,7 +177,7 @@
                                               class="card-img-top img-fluid"
         alt="thumbnail"
         style="object-fit: cover; width: 100%; height: auto;">
-                                                <img src="/assets/android/pbgslf/PBG_FUNGSI_PRASARANA.png" alt="PBG Fungsi Prasarana">
+                                                <img src="/assets/android/pbgslf/PBG_FUNGSI_USAHA.jpg" alt="PBG Fungsi Usaha">
                                             </div>
 
 
@@ -193,57 +193,82 @@
 
   <!-- Judul -->
   <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #1a1a1a;">
-    Persetujuan Bangunan Gedung (PBG) - Fungsi Prasarana
+    Persetujuan Bangunan Gedung (PBG) – Fungsi Usaha
   </h2>
 
   <!-- Deskripsi -->
-  <p style="text-align: justify; margin-bottom: 30px;">
-    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan untuk mendirikan bangunan prasarana seperti menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai ketentuan teknis, tata ruang, dan lingkungan yang berlaku.
+  <p style="text-align: justify; margin-bottom: 20px;">
+    Bangunan Gedung Fungsi Usaha meliputi: Perkantoran, perdagangan, perindustrian, wisata dan rekreasi, pertemuan, penginapan, penyimpanan, dan peternakan.
   </p>
 
+  <!-- Klasifikasi -->
+  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">1. Klasifikasi Bangunan Gedung</h3>
+  <ul style="margin-left: 20px; margin-bottom: 30px;">
+    <li><strong>Sederhana:</strong> 1 lantai &lt; 72m²</li>
+    <li><strong>Tidak Sederhana:</strong>
+      <ul style="margin-left: 20px;">
+        <li>1 lantai &gt; 72m²</li>
+        <li>2 lantai &lt; 90m²</li>
+        <li>&gt; 2 lantai &gt; 90m²</li>
+      </ul>
+    </li>
+  </ul>
+
   <!-- Persyaratan -->
-  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Persyaratan Dokumen:</h3>
-  <ol style="margin-left: 20px; margin-bottom: 30px;">
-    <li><strong>Data Tanah:</strong>
-      <ul style="margin-left: 20px;">
-        <li>Sertifikat tanah</li>
-        <li>Izin Pemanfaatan Tanah (jika nama pemohon berbeda dengan sertifikat)</li>
-        <li>Gambar kontur tanah dan sondir (khusus bangunan tidak sederhana)</li>
-      </ul>
-    </li>
-    <li><strong>Data Umum:</strong>
-      <ul style="margin-left: 20px;">
-        <li>KTP / Profil Perusahaan</li>
-        <li>NIB (OSS)</li>
-        <li>KRK / KKPR</li>
-        <li>Dokumen lingkungan (SPPL / OSS / UKL/UPL / AMDAL)</li>
-        <li>Data penyedia jasa konstruksi (SBU / Arsitek berlisensi)</li>
-        <li>Verifikasi mandiri / PKKPR otomatis (untuk kegiatan usaha dari FPR Kabupaten Blora)</li>
-        <li>KKOP (Ketentuan Keselamatan Operasi Penerbangan)</li>
-        <li>Persetujuan warga sekitar menara (diketahui lurah/kades) beserta dokumentasi & berita acara sosialisasi</li>
-      </ul>
-    </li>
-    <li><strong>Data Teknis Arsitektur:</strong>
-      <ul style="margin-left: 20px;">
-        <li>Gambar dan perhitungan teknis untuk prasarana</li>
-      </ul>
-    </li>
-  </ol>
+  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">2. Persyaratan Dokumen</h3>
+
+  <p style="margin-bottom: 5px;"><strong>1. Data Tanah:</strong></p>
+  <ul style="margin-left: 25px; margin-bottom: 15px;">
+    <li>Sertifikat Tanah</li>
+    <li>Izin Pemanfaatan Tanah (apabila nama pemohon berbeda dengan di sertifikat)</li>
+    <li>Gambar Kontur Tanah dan Sondir (khusus bangunan tidak sederhana)</li>
+  </ul>
+
+  <p style="margin-bottom: 5px;"><strong>2. Data Umum:</strong></p>
+  <ul style="margin-left: 25px; margin-bottom: 15px;">
+    <li>KTP / KITAS / NIB (OSS)</li>
+    <li>Dokumen Perizinan Tata Ruang</li>
+    <li>Dokumen Lingkungan sesuai peraturan (SPPL, UKL/UPL, AMDAL)</li>
+    <li>KRK (Keterangan Rencana Kota/Kabupaten)</li>
+    <li>Data Penyedia Jasa Perencana Konstruksi: SBU / Arsitek Berlisensi</li>
+  </ul>
+
+  <p style="margin-bottom: 5px;"><strong>3. Data Teknis Arsitektur:</strong></p>
+  <ul style="margin-left: 25px; margin-bottom: 15px;">
+    <li>Konsep arsitektur</li>
+    <li>Gambar situasi, rencana tapak, potongan, tampak, dan gambar detail</li>
+    <li>Gambar rencana tata ruang dalam dan luar</li>
+    <li>Spesifikasi teknis arsitektur</li>
+    <li>Rekomendasi peil banjir (jika diperlukan)</li>
+  </ul>
+
+  <p style="margin-bottom: 5px;"><strong>4. Data Teknis Struktur:</strong></p>
+  <ul style="margin-left: 25px; margin-bottom: 15px;">
+    <li>Perhitungan struktur (untuk bangunan tidak sederhana)</li>
+    <li>Gambar detail struktur</li>
+    <li>Spesifikasi teknis struktur</li>
+  </ul>
+
+  <p style="margin-bottom: 5px;"><strong>5. Data Teknis MEP:</strong></p>
+  <ul style="margin-left: 25px; margin-bottom: 30px;">
+    <li>Gambar sistem jaringan listrik</li>
+    <li>Gambar sistem jaringan sanitasi</li>
+  </ul>
 
   <!-- Tahapan -->
-  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Tahapan Pengurusan:</h3>
+  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">3. Tahapan Pengurusan</h3>
   <ol style="margin-left: 20px;">
     <li>Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</li>
-    <li>Mendaftar dan mengunggah dokumen ke
+    <li>Mendaftar, membuat permohonan, dan mengunggah dokumen di
       <a href="https://simbg.pu.go.id" target="_blank" style="color: #007bff;">https://simbg.pu.go.id</a>
     </li>
-    <li>Verifikasi oleh operator dinas teknis</li>
+    <li>Menindaklanjuti hasil verifikasi oleh operator Dinas Teknis</li>
     <li>Penjadwalan konsultasi permohonan</li>
     <li>Konsultasi bersama TPA/TPT</li>
-    <li>Revisi dokumen sesuai masukan TPA/TPT</li>
+    <li>Revisi dokumen sesuai masukan teknis dari TPA/TPT</li>
     <li>TPA/TPT menyetujui dokumen perencanaan</li>
-    <li>Unggah dokumen final, validasi, dan perhitungan retribusi</li>
-    <li>Pembayaran retribusi melalui bank persepsi atau mobile banking</li>
+    <li>Pengunggahan berkas final, perhitungan retribusi, dan validasi oleh Dinas Teknis</li>
+    <li>Pembayaran retribusi melalui bank persepsi / mobile banking</li>
     <li>Penerbitan dokumen PBG oleh DPMPTSP</li>
   </ol>
 
