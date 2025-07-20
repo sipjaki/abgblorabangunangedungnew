@@ -1005,6 +1005,7 @@ public function datanewpendataanbg(Request $request)
         'kecamatanList' => $kecamatanList
     ]);
 }
+
 public function datanewpendataanbgnew(Request $request)
 {
     // Validasi input, sesuaikan sesuai kebutuhan
@@ -1021,10 +1022,10 @@ public function datanewpendataanbgnew(Request $request)
         'koordinat' => 'required|string|max:255',
 
         // file gambar opsional, tapi jika ada wajib berupa gambar dan max 5MB
-        'tampakdepan' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:5120',
-        'tampakbelakang' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:5120',
-        'tampaksamping1' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:5120',
-        'tampaksamping2' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:5120',
+        'tampakdepan' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:15120',
+        'tampakbelakang' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:15120',
+        'tampaksamping1' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:15120',
+        'tampaksamping2' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:15120',
     ], [
         // Pesan error kustom
         'user_id.exists' => 'User tidak valid.',
