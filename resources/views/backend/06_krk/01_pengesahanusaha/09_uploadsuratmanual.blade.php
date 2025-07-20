@@ -211,6 +211,7 @@ th {
     </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
+
 <div class="row">
   <div class="col-md-6">
     <div class="mb-3">
@@ -218,24 +219,22 @@ th {
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Dokumen Final KRK
       </label>
       <input type="file" id="suratuploadmanual" name="suratuploadmanual" accept="application/pdf"
-        class="form-control @error('suratuploadmanual') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainersuratuploadmanual', 'iframesuratuploadmanual', 'msgsuratuploadmanual')" />
+        class="form-control @error('suratuploadmanual') is-invalid @enderror" />
       @error('suratuploadmanual')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-      <div class="mt-3" id="previewContainersuratuploadmanual" style="display: none;">
-        <label class="fw-bold">Dokumen Final KRK</label>
-        <iframe id="iframesuratuploadmanual" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      </div>
-
-      <div id="msgsuratuploadmanual" class="mt-3" style="color: grey; font-style: italic;">
-        Belum Upload Berkas, Silahkan Dokumen Final KRK.
-      </div>
+      @if (!empty($item->suratuploadmanual))
+        <div class="mt-3">
+          <label class="fw-bold">Dokumen Final KRK (Tersimpan)</label>
+          <iframe src="{{ asset($item->suratuploadmanual) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+        </div>
+      @else
+        <div class="mt-3" style="color: grey; font-style: italic;">
+          Belum Upload Berkas, Silahkan Upload Dokumen Final KRK.
+        </div>
+      @endif
     </div>
   </div>
 </div>
-
-</div>
-
 
 </div>
     <script>
