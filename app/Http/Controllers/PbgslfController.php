@@ -3992,7 +3992,7 @@ return back();
    public function bepbgprasarana(Request $request)
 {
     $user = Auth::user();
-    $data = infopbg3::all();
+    $data = infopbg4::all();
     // $perPage = $request->input('perPage', 20);
 
 
