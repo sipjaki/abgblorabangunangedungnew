@@ -138,7 +138,7 @@ th {
                     width: 100%;
                 ">
                 <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
-
+                </div>
 
 
 
@@ -192,7 +192,6 @@ th {
 </a>
         @endcanany
 
-    </div>
                                                                 <!-- Tombol Create -->
                                 {{-- <a href="/settingssekolah/create">
                                     <button
