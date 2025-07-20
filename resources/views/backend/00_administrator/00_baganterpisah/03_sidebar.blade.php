@@ -852,7 +852,21 @@
         <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
     </p>
 </div> --}}
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <!-- Icon User -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3z"/>
+            <path fill-rule="evenodd" d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        </svg>
+        <p style="color: white; margin-left: 8px;">
+            Profil Anda
+            <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
+        </p>
+    </a>
+</li>
 </ul>
+
 
 @endcan
 
