@@ -638,5 +638,34 @@ public function rescarigsb()
             'rencanagsb' => $rencanagsb,
         ]);
     }
+
+
+    public function infopbgsosialbudaya()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.01_pbgslf.00_informasi.05_sosialbudaya', [
+        'title' => 'Informasi PBG Fungsi Sosial Budaya',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
+}
+
+
 }
 

@@ -57,6 +57,7 @@ Route::get('/infopbgcampuran', [FedashboardController::class, 'infopbgcampuran']
 Route::get('/infopbghunian', [FedashboardController::class, 'infopbghunian']);
 Route::get('/infopbgagama', [FedashboardController::class, 'infopbgagama']);
 Route::get('/infopbgprasarana', [FedashboardController::class, 'infopbgprasarana']);
+Route::get('/infopbgsosialbudaya', [FedashboardController::class, 'infopbgsosialbudaya']);
 
 // ----------------------------------------------------------------------------------------
 Route::get('/respbgslfindex', [FedashboardController::class, 'menurespbgslfindex']);
