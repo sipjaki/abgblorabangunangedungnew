@@ -223,11 +223,11 @@ th {
       @error('suratuploadmanual')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
       <div class="mt-3" id="previewContainersuratuploadmanual" style="display: none;">
-        <label class="fw-bold">Surat Nota Dinas Pengajuan Hibah</label>
+        <label class="fw-bold">Dokumen Final KRK </label>
         <iframe id="iframesuratuploadmanual" src="" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
       </div>
       <div id="msgsuratuploadmanual" class="mt-3" style="color: grey; font-style: italic;">
-        Belum Upload Berkas, Silahkan Upload Nota Dinas Pengajuan Hibah.
+        Belum Upload Berkas, Silahkan Dokumen Final KRK.
       </div>
     </div>
   </div>
