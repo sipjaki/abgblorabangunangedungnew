@@ -221,10 +221,13 @@ th {
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Dokumen Final KRK
       </label>
 
-      <input type="file" id="suratuploadmanual" name="suratuploadmanual" accept="application/pdf"
-        class="form-control @error('suratuploadmanual') is-invalid @enderror"
-        onchange="previewPDF(event)" />
+@canany(['superadmin', 'admin'])
 
+<input type="file" id="suratuploadmanual" name="suratuploadmanual" accept="application/pdf"
+class="form-control @error('suratuploadmanual') is-invalid @enderror"
+onchange="previewPDF(event)" />
+
+@endcanany
       @error('suratuploadmanual')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
       <div class="mt-3" id="previewContainer" style="display: none;">
