@@ -50,6 +50,8 @@ Route::get('/betrackingdata', [PbgslfController::class, 'betrackingdata'])->midd
 Route::get('/betrackingdatacari', [PbgslfController::class, 'betrackingdatacari'])->middleware('auth')->name('betrackingdatacari');
 Route::get('/betrackingdatacarife', [PbgslfController::class, 'betrackingdatacarife'])->name('betrackingdatacarife');
 
+// VERSI WEB
+Route::get('/infotrakingweb', [FedashboardController::class, 'infotrakingweb']);
 // 01_ MENU PBG SLF
 
 Route::get('/infopbg', [FedashboardController::class, 'infopbgindex']);

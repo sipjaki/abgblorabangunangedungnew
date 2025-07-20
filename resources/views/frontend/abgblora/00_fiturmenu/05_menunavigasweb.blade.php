@@ -279,7 +279,7 @@
                     </a>
                   </li> --}}
                   <li style="font-size: 14px;">
-                    <a href="#" style="display: flex; align-items: center;">
+                    <a href="/infotrakingweb" style="display: flex; align-items: center;">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">
                         <path d="M12.5 1a1 1 0 0 1 1 1v2.293a1 1 0 0 1-.293.707l-1.707 1.707a1 1 0 0 0-.293.707V9a1 1 0 0 1-1 1H9v1.5a1.5 1.5 0 0 1-3 0V10H5a1 1 0 0 1-1-1V7.707a1 1 0 0 0-.293-.707L2 5.293A1 1 0 0 1 1.707 4H4V2a1 1 0 0 1 1-1h7.5z"/>
                       </svg>

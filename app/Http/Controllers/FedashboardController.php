@@ -774,5 +774,16 @@ public function resbgtracking(Request $request)
             'data' => $data,
         ]);
     }
+
+      public function infotrakingweb()
+{
+
+    $user = Auth::user();
+
+    return view('frontend.abgblora.01_pbgslf.02_trakingweb.01_infotraking', [
+        'title' => 'Informasi Tracking Permohonan PBG SLF Bangunan Gedung',
+        'user' => $user,
+    ]);
+}
 }
 
