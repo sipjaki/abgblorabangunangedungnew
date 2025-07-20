@@ -780,7 +780,7 @@ public function resbgtracking(Request $request)
 
     $user = Auth::user();
 
-    return view('frontend.abgblora.01_pbgslf.02_trakingweb.01_infotraking', [
+    return view('frontend.abgblora.02_trakingweb.01_infotraking', [
         'title' => 'Informasi Tracking Permohonan PBG SLF Bangunan Gedung',
         'user' => $user,
     ]);
