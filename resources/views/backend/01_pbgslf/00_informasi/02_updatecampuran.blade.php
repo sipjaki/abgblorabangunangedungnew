@@ -323,6 +323,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
 
                                     </div>
+                                    </div>
                                 </div>
                                 <!-- End row -->
                             </div>
