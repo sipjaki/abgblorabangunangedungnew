@@ -217,11 +217,11 @@ th {
 <div class="row">
   <div class="col-md-6">
     <div class="mb-3">
+        @canany(['superadmin', 'admin'])
       <label class="form-label" for="suratuploadmanual">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Dokumen Final KRK
       </label>
 
-@canany(['superadmin', 'admin'])
 
 <input type="file" id="suratuploadmanual" name="suratuploadmanual" accept="application/pdf"
 class="form-control @error('suratuploadmanual') is-invalid @enderror"
