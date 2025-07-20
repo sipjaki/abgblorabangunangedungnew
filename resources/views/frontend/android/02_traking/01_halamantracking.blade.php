@@ -89,35 +89,37 @@
             <div class="invalid-feedback" style="color: black !important; font-size: 0.9rem;">{{ $message }}</div>
         @enderror
     </div>
+<div class="row">
     <div class="col-12 d-flex justify-content-center">
-    <style>
-        .button-baru {
-            background-color: #63c7ff; /* biru langit */
-            border: none;
-            color: white !important;
-            padding: 10px 25px;
-            font-weight: 600;
-            font-size: 16px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(30, 144, 255, 0.3);
-        }
+        <style>
+            .button-baru {
+                background-color: #63c7ff; /* biru langit */
+                border: none;
+                color: white !important;
+                padding: 10px 25px;
+                font-weight: 600;
+                font-size: 16px;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 10px rgba(30, 144, 255, 0.3);
+            }
 
-        .button-baru:hover {
-            background-color: white;
-            color: black !important;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-        }
+            .button-baru:hover {
+                background-color: white;
+                color: black !important;
+                box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+                transform: translateY(-2px);
+            }
 
-        .button-baru i {
-            margin-right: 6px;
-        }
-    </style>
+            .button-baru i {
+                margin-right: 6px;
+            }
+        </style>
 
-    <button type="submit" class="button-baru">
-        <i class="bi bi-search"></i> Cari Data
-    </button>
+        <button type="submit" class="button-baru">
+            <i class="bi bi-search"></i> Cari Data
+        </button>
+    </div>
 </div>
 
 
