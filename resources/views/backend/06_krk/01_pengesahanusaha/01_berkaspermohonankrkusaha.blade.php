@@ -941,7 +941,7 @@ th {
 </td>
 
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Tanda Tangan
+    <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Surat Permohonan KRK
 </td>
 
 </tr>
@@ -2316,7 +2316,7 @@ th {
                                     {{-- DOKUMEN TANDA TANGAN --}}
                                     <tr>
                                       <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-pencil-fill"></i> Tanda Tangan
+    <i class="bi bi-pencil-fill"></i> Surat Permohonan KRK
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -2335,7 +2335,7 @@ th {
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalTandatanganLbl{{ $data->id }}">Tanda Tangan</h5>
+                                                                <h5 class="modal-title" id="modalTandatanganLbl{{ $data->id }}">Surat Permohonan KRK</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
