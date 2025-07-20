@@ -24,6 +24,7 @@ use App\Models\infopbg4;
 use App\Models\infopbg5;
 use App\Models\infopbg6;
 use App\Models\infopbg7;
+use App\Models\infopbg8;
 use App\Models\jenispengajuanpbgslfper;
 use App\Models\jenisperkonsultasi;
 use App\Models\kecamatanblora;
@@ -4270,6 +4271,84 @@ public function bgslffungsiusahanewupdate($id)
 public function bgslffungsiusahanewupdatenew(Request $request, $id)
 {
     $data = infopbg7::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'judul' => 'nullable|string|max:255',
+        'berkas' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'keterangan' => 'nullable|string',
+        'infolanjut' => 'nullable|string',
+    ]);
+
+    // Simpan data teks
+    $data->judul = $request->judul;
+    $data->keterangan = $request->keterangan;
+    $data->infolanjut = $request->infolanjut;
+
+    // Handle file upload
+    if ($request->hasFile('berkas')) {
+        // Hapus file lama jika ada
+        if ($data->berkas && file_exists(public_path($data->berkas))) {
+            @unlink(public_path($data->berkas));
+        }
+
+        $file = $request->file('berkas');
+        $filename = time() . '_berkas.' . $file->getClientOriginalExtension();
+        $destination = public_path('00_berkasinformasi/01_brosur');
+
+        if (!file_exists($destination)) {
+            mkdir($destination, 0777, true);
+        }
+
+        $file->move($destination, $filename);
+        $data->berkas = '00_berkasinformasi/01_brosur/' . $filename;
+    }
+
+    $data->save();
+session()->flash('update', 'Informasi berhasil diperbarui!');
+return back();
+
+}
+
+   public function bgslfmenaratelkom(Request $request)
+{
+    $user = Auth::user();
+    $data = infopbg8::all();
+    // $perPage = $request->input('perPage', 20);
+
+
+// -----------------------------------------
+
+    return view('backend.01_pbgslf.00_informasi.15_beslfmenaratelkom', [
+        'title' => 'Informasi Permohonan SLF Menara Telekomunikasi',
+        // 'data' => $dataTanpaIdSatu,
+        'user' => $user,
+        'data' => $data,
+
+        // 'datasemua' => $dataTanpaIdSatu,
+    ]);
+
+}
+
+public function bgslfmenaratelkomupdate($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Ambil data hibah berdasarkan ID
+    $data = infopbg8::findOrFail($id);
+
+    // Kirim ke view
+    return view('backend.01_pbgslf.00_informasi.16_updatemenara', [
+        'title' => 'Perubahan Informasi SLF Menara Telekomunikasi',
+        'user' => $user,
+        'data' => $data
+    ]);
+}
+
+public function bgslfmenaratelkomupdatenew(Request $request, $id)
+{
+    $data = infopbg8::findOrFail($id);
 
     // Validasi input
     $request->validate([
