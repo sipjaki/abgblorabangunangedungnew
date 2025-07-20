@@ -23053,7 +23053,7 @@ infopbg7::create([
 infopbg8::create([
     'id' => 1,
     'judul' => 'Sertifikat Laik Fungsi (SLF) - Menara Telekomunikasi',
-    'berkas' => '/assets/abgblora/logo/pbgslf/SLF_MENARA_TELEKOMUNIKASI.png',
+    'berkas' => '/assets/android/pbgslf/SLF_MENARA_TELEKOMUNIKASI.png',
     'keterangan' => '-',
     'infolanjut' => '-',
 ]);
