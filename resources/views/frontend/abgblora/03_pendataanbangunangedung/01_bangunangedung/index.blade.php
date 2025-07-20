@@ -34,7 +34,7 @@
 
 @include('frontend.abgblora.00_fiturmenu.02_header')
 @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
-@include('backend.00_administrator.00_baganterpisah.09_butto')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 
 
   <style>
@@ -154,12 +154,10 @@
 
     {{-- No Telepon --}}
 <td>
-    @if (!empty($item->koordinat))
+    @if ($item->koordinat)
         {{ $item->koordinat }}
     @else
-        <button class="button-berkas">
-            Data Belum Diupdate
-        </button>
+        <button class="button-berkas">Data Belum Diupdate</button>
     @endif
 </td>
 
