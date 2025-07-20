@@ -102,93 +102,91 @@
 
   </section>
  --}}
-
-<section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5" style="margin-top: 10px;">
+<section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5 mt-2.5">
     <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
-
-        <!-- Tabel dimulai -->
-
-        <div class="flex items-center gap-3" style="margin-top: -30px;">
-            <button class="p-[14px_20px] bg-white rounded-full font-semibold">
-              📦 {{$title}}
+        <!-- Table Header -->
+        <div class="flex items-center gap-3 -mt-2">
+            <button class="p-3.5 bg-white rounded-full font-semibold text-sm">
+                📦 {{$title}}
             </button>
-          </div>
-<div class="w-full overflow-x-auto rounded-[15px] mt-4">
-    <table class="min-w-max w-full border border-gray-200 text-sm text-left text-gray-700">
-        <thead class="bg-gray-100 text-gray-700 uppercase text-xs">
-            <tr>
-                <th class="px-4 py-2 text-center">No</th>
-                <th class="px-4 py-2">Tanggal Input</th>
-                <th class="px-4 py-2">Nama User</th>
-                <th class="px-4 py-2">Kecamatan</th>
-                <th class="px-4 py-2">Institusi Kepemilikan</th>
-                <th class="px-4 py-2">No Pengesahan Usaha</th>
-                <th class="px-4 py-2">Alamat</th>
-                <th class="px-4 py-2">No Telepon</th>
-                <th class="px-4 py-2">Email</th>
-                <th class="px-4 py-2">Koordinat</th>
-                <th class="px-4 py-2 text-center">View</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($data as $item)
-                <tr class="border-b hover:bg-gray-100">
-                    {{-- No Urut --}}
-                    <td class="px-4 py-2 text-center">
-                        {{ $data->firstItem() + $loop->iteration - 1 }}
-                    </td>
+        </div>
 
-                    {{-- Tanggal Input --}}
-                    <td class="px-4 py-2">{{ $item->tanggalinput ?? '-' }}</td>
+        <!-- Table Container -->
+        <div class="w-full overflow-auto rounded-[15px] mt-4 border border-gray-200">
+            <table class="min-w-[1000px] w-full text-sm text-left text-gray-700">
+                <thead class="bg-gray-100 text-gray-700 uppercase text-xs sticky top-0">
+                    <tr>
+                        <th class="px-4 py-3 text-center w-12">No</th>
+                        <th class="px-4 py-3 min-w-[120px]">Tanggal Input</th>
+                        <th class="px-4 py-3 min-w-[120px]">Nama User</th>
+                        <th class="px-4 py-3 min-w-[100px]">Kecamatan</th>
+                        <th class="px-4 py-3 min-w-[150px]">Institusi Kepemilikan</th>
+                        <th class="px-4 py-3 min-w-[150px]">No Pengesahan Usaha</th>
+                        <th class="px-4 py-3 min-w-[180px]">Alamat</th>
+                        <th class="px-4 py-3 min-w-[120px]">No Telepon</th>
+                        <th class="px-4 py-3 min-w-[150px]">Email</th>
+                        <th class="px-4 py-3 min-w-[150px]">Koordinat</th>
+                        <th class="px-4 py-3 text-center w-20">View</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    @foreach ($data as $item)
+                    <tr class="hover:bg-gray-50">
+                        <!-- No Urut -->
+                        <td class="px-4 py-3 text-center">
+                            {{ $data->firstItem() + $loop->iteration - 1 }}
+                        </td>
 
-                    {{-- Nama User --}}
-                    <td class="px-4 py-2">{{ $item->user->name ?? '-' }}</td>
+                        <!-- Tanggal Input -->
+                        <td class="px-4 py-3 whitespace-nowrap">{{ $item->tanggalinput ?? '-' }}</td>
 
-                    {{-- Kecamatan --}}
-                    <td class="px-4 py-2">{{ $item->kecamatanblora->nama_kecamatan ?? '-' }}</td>
+                        <!-- Nama User -->
+                        <td class="px-4 py-3 whitespace-nowrap">{{ $item->user->name ?? '-' }}</td>
 
-                    {{-- Institusi Kepemilikan --}}
-                    <td class="px-4 py-2 uppercase">
-                        {{ $item->namainstitusi ?? 'Data Tidak Ditemukan' }}
-                    </td>
+                        <!-- Kecamatan -->
+                        <td class="px-4 py-3 whitespace-nowrap">{{ $item->kecamatanblora->nama_kecamatan ?? '-' }}</td>
 
-                    {{-- Nomor Pengesahan Usaha --}}
-                    <td class="px-4 py-2">{{ $item->nopengesahanusaha ?? '-' }}</td>
+                        <!-- Institusi Kepemilikan -->
+                        <td class="px-4 py-3 uppercase whitespace-nowrap">
+                            {{ $item->namainstitusi ?? 'Data Tidak Ditemukan' }}
+                        </td>
 
-                    {{-- Alamat --}}
-                    <td class="px-4 py-2">{{ $item->alamat ?? '-' }}</td>
+                        <!-- Nomor Pengesahan Usaha -->
+                        <td class="px-4 py-3 whitespace-nowrap">{{ $item->nopengesahanusaha ?? '-' }}</td>
 
-                    {{-- No Telepon --}}
-                    <td class="px-4 py-2">{{ $item->notelepon ?? '-' }}</td>
+                        <!-- Alamat -->
+                        <td class="px-4 py-3">{{ $item->alamat ?? '-' }}</td>
 
-                    {{-- Email --}}
-                    <td class="px-4 py-2">{{ $item->email ?? '-' }}</td>
+                        <!-- No Telepon -->
+                        <td class="px-4 py-3 whitespace-nowrap">{{ $item->notelepon ?? '-' }}</td>
 
-                    {{-- Koordinat --}}
-                    <td class="px-4 py-2 text-center">
-                        @if(!empty($item->koordinat))
-                            {{ $item->koordinat }}
-                        @else
-                            <button class="px-3 py-1 rounded-md font-semibold bg-[navy] text-white hover:bg-white hover:text-[navy] border border-[navy] transition-all duration-150">
-                                Data Belum Diupdate
-                            </button>
-                        @endif
-                    </td>
+                        <!-- Email -->
+                        <td class="px-4 py-3 whitespace-nowrap">{{ $item->email ?? '-' }}</td>
 
-                    {{-- Aksi (View) --}}
-                    <td class="px-4 py-2 text-center">
-                        <a href="/databangunangedung/{{ $item->id }}" class="text-blue-600 hover:text-blue-900">
-                            <i class="bi bi-eye"></i> View
-                        </a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
+                        <!-- Koordinat -->
+                        <td class="px-4 py-3 text-center whitespace-nowrap">
+                            @if(!empty($item->koordinat))
+                                {{ $item->koordinat }}
+                            @else
+                                <span class="inline-block px-2 py-1 rounded-md font-semibold bg-navy text-white hover:bg-white hover:text-navy border border-navy transition-all duration-150 text-xs">
+                                    Data Belum Diupdate
+                                </span>
+                            @endif
+                        </td>
+
+                        <!-- Aksi (View) -->
+                        <td class="px-4 py-3 text-center whitespace-nowrap">
+                            <a href="/databangunangedung/{{ $item->id }}" class="text-blue-600 hover:text-blue-900" title="View Details">
+                                <i class="bi bi-eye"></i> View
+                            </a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
 
         @include('frontend.abgblora.00_fiturmenu.06_paginations')
-
     </div>
 </section>
 
