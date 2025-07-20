@@ -19,6 +19,7 @@ use App\Models\fungsibangunanpbg;
 use App\Models\gambarbantuan;
 use App\Models\infopbg1;
 use App\Models\infopbg2;
+use App\Models\infopbg3;
 use App\Models\jenispengajuanpbgslfper;
 use App\Models\jenisperkonsultasi;
 use App\Models\kecamatanblora;
@@ -3907,4 +3908,24 @@ return back();
 
 }
 
+
+   public function bepbgkeagamaan(Request $request)
+{
+    $user = Auth::user();
+    $data = infopbg3::all();
+    // $perPage = $request->input('perPage', 20);
+
+
+// -----------------------------------------
+
+    return view('backend.01_pbgslf.00_informasi.05_befungsiagama', [
+        'title' => 'Informasi Permohonan PBG Fungsi Keagamaan',
+        // 'data' => $dataTanpaIdSatu,
+        'user' => $user,
+        'data' => $data,
+
+        // 'datasemua' => $dataTanpaIdSatu,
+    ]);
+
+}
 }
