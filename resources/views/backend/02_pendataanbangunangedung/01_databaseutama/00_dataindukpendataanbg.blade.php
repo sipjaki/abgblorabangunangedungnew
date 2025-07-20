@@ -203,68 +203,82 @@ th {
                             <div class="card-body">
                                 <div class="row">
 
-    <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
-        style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
-        <i class="bi bi-building-fill-check me-3" style="font-size: 18px;"></i>
-        Data Institusi Usaha
-    </h5>
+  @php
+    use Illuminate\Support\Carbon;
+@endphp
 
-    {{-- Nama Institusi --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="namainstitusi">
-                <i class="bi bi-bank2 me-2 text-primary"></i> Nama Institusi
-            </label>
-            <input type="text" class="form-control @error('namainstitusi') is-invalid @enderror" id="namainstitusi" name="namainstitusi" value="{{ old('namainstitusi', $data->namainstitusi ?? '') }}">
-            @error('namainstitusi') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
+    <i class="bi bi-building-fill-check me-3" style="font-size: 18px;"></i>
+    Data Institusi
+</h5>
+
+{{-- Nama Penginput / User --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="user_id">
+            <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Penginput
+        </label>
+        <input type="text" class="form-control" id="user_id_display" value="{{ Auth::user()->name }}" readonly>
+        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
     </div>
+</div>
 
-    {{-- No Pengesahan Usaha --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="nopengesahanusaha">
-                <i class="bi bi-file-earmark-check-fill me-2 text-success"></i> No Pengesahan Usaha
-            </label>
-            <input type="text" class="form-control @error('nopengesahanusaha') is-invalid @enderror" id="nopengesahanusaha" name="nopengesahanusaha" value="{{ old('nopengesahanusaha', $data->nopengesahanusaha ?? '') }}">
-            @error('nopengesahanusaha') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+{{-- Tanggal Input Otomatis --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="tanggalinput">
+            <i class="bi bi-calendar-check-fill me-2 text-info"></i> Tanggal Input
+        </label>
+        <input type="text" class="form-control" id="tanggalinput" name="tanggalinput"
+               value="{{ old('tanggalinput', \Carbon\Carbon::now()->format('Y-m-d')) }}" readonly>
     </div>
+</div>
 
-    {{-- Nomor Telepon --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="notelepon">
-                <i class="bi bi-telephone-fill me-2 text-warning"></i> Nomor Telepon
-            </label>
-            <input type="text" class="form-control @error('notelepon') is-invalid @enderror" id="notelepon" name="notelepon" value="{{ old('notelepon', $data->notelepon ?? '') }}">
-            @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+{{-- Nama Institusi --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="namainstitusi">
+            <i class="bi bi-bank2 me-2 text-primary"></i> Nama Institusi
+        </label>
+        <input type="text" class="form-control @error('namainstitusi') is-invalid @enderror" id="namainstitusi" name="namainstitusi" value="{{ old('namainstitusi', $data->namainstitusi ?? '') }}">
+        @error('namainstitusi') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
+</div>
 
-    {{-- Email --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="email">
-                <i class="bi bi-envelope-fill me-2 text-danger"></i> Email
-            </label>
-            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $data->email ?? '') }}">
-            @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+{{-- No Pengesahan Usaha --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="nopengesahanusaha">
+            <i class="bi bi-file-earmark-check-fill me-2 text-success"></i> No Pengesahan Usaha
+        </label>
+        <input type="text" class="form-control @error('nopengesahanusaha') is-invalid @enderror" id="nopengesahanusaha" name="nopengesahanusaha" value="{{ old('nopengesahanusaha', $data->nopengesahanusaha ?? '') }}">
+        @error('nopengesahanusaha') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
+</div>
 
-    {{-- Tanggal Input --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="tanggalinput">
-                <i class="bi bi-calendar-check-fill me-2 text-info"></i> Tanggal Input
-            </label>
-            <input type="date" class="form-control @error('tanggalinput') is-invalid @enderror" id="tanggalinput" name="tanggalinput" value="{{ old('tanggalinput', $data->tanggalinput ?? '') }}">
-            @error('tanggalinput') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+{{-- Nomor Telepon --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="notelepon">
+            <i class="bi bi-telephone-fill me-2 text-warning"></i> Nomor Telepon
+        </label>
+        <input type="text" class="form-control @error('notelepon') is-invalid @enderror" id="notelepon" name="notelepon" value="{{ old('notelepon', $data->notelepon ?? '') }}">
+        @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
+</div>
 
-                                    <!-- Left Column (6/12) -->
+{{-- Email --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="email">
+            <i class="bi bi-envelope-fill me-2 text-danger"></i> Email
+        </label>
+        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $data->email ?? '') }}">
+        @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    </div>
+</div>
+                                  <!-- Left Column (6/12) -->
     <!-- =========================== -->
     <!-- ALAMAT BANGUNAN GEDUNG -->
     <!-- =========================== -->
