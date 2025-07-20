@@ -270,14 +270,14 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Tracking</a>
                 <ul class="dropdown-menu" style="width: 300px;">
-                  <li style="font-size: 14px;">
+                  {{-- <li style="font-size: 14px;">
                     <a href="#" style="display: flex; align-items: center;">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">
                         <path d="M8 0a8 8 0 1 0 4.906 14.32l2.387 1.378a.5.5 0 0 0 .746-.437V1.739a.5.5 0 0 0-.746-.437L12.906 2.68A7.978 7.978 0 0 0 8 0zM1 8a7 7 0 1 1 12.906 4.32l-2.262-1.306a.5.5 0 0 0-.644.059l-.71.71A6.986 6.986 0 0 1 1 8z"/>
                       </svg>
                       Informasi Tracking
                     </a>
-                  </li>
+                  </li> --}}
                   <li style="font-size: 14px;">
                     <a href="#" style="display: flex; align-items: center;">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">
