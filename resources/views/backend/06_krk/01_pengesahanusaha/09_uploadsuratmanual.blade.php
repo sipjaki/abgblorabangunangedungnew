@@ -231,10 +231,10 @@ th {
       </div>
 
       <div id="previewMessage" class="mt-3" style="color: grey; font-style: italic;">
-        @if (!empty($item->suratuploadmanual))
+        @if (!empty($data->suratuploadmanual))
           <div>
             <label class="fw-bold">Dokumen Final KRK (Tersimpan)</label>
-            <iframe src="{{ asset($item->suratuploadmanual) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+            <iframe src="{{ asset($data->suratuploadmanual) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
           </div>
         @else
           Belum Upload Berkas, Silahkan Upload Dokumen Final KRK.
