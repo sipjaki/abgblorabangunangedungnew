@@ -38,11 +38,11 @@
             <!-- Card 1 -->
 
 <div class="app-content-header">
-                <div class="container-fluid">
+                {{-- <div class="container-fluid">
                     <div class="row">
                         @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
                     </div>
-                </div>
+                </div> --}}
             </div>
             <!--end::App Content Header-->
 
