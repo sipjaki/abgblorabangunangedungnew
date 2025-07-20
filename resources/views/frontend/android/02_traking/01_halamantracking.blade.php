@@ -60,12 +60,12 @@
             <!-- Title Section -->
             <div class="text-center mb-4">
               <h3 class="fw-bold text-primary" style="color: black !important;">Tracking Berkas Permohonan PBG / SLF</h3>
-              <p class="text-muted" style="color: black !important;">Masukkan Nomor Registrasi SIMBG untuk melacak status permohonan Anda</p>
+              <p class="text-muted" style="color: black !important;">Masukkan Nomor Registrasi SIMBG Saudara</p>
             </div>
 
             <!-- Search Form -->
           <form method="GET" action="{{ route('betrackingdatacarife') }}" class="row g-3 justify-content-center mb-4">
-    <div class="col-md-8">  <!-- Changed from col-md-6 to col-md-8 for wider input -->
+    <div class="col-md-8" style="text-align: center;">  <!-- Changed from col-md-6 to col-md-8 for wider input -->
         <input
             type="text"
             name="noregissimbg"
@@ -89,7 +89,7 @@
             <div class="invalid-feedback" style="color: black !important; font-size: 0.9rem;">{{ $message }}</div>
         @enderror
     </div>
-    <div class="col-auto">
+    <div class="col-auto" style="text-align: center;">
         <button type="submit" class="button-baru" style="
             background: linear-gradient(to right, #4a90e2, #2a6496);
             color: white !important;
