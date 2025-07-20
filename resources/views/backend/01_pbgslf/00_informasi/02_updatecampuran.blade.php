@@ -202,18 +202,18 @@ th {
                                     <!-- Left Column (6/12) -->
 <div class="col-md-6">
     <div class="mb-3">
-        <label class="form-label" for="judul1">
-            <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul 1
+        <label class="form-label" for="judul">
+            <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul
         </label>
         <input
             type="text"
-            id="judul1"
-            name="judul1"
-            value="{{ old('judul1', $data->judul1 ?? '') }}"
-            class="form-control @error('judul1') is-invalid @enderror"
-            placeholder="Masukkan Judul 1"
+            id="judul"
+            name="judul"
+            value="{{ old('judul', $data->judul ?? '') }}"
+            class="form-control @error('judul') is-invalid @enderror"
+            placeholder="Masukkan Judul"
         />
-        @error('judul1')
+        @error('judul')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
@@ -221,18 +221,56 @@ th {
 
 <div class="col-md-6">
     <div class="mb-3">
-        <label class="form-label" for="judul2">
-            <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul 2
+        <label class="form-label" for="berkas">
+            <i class="bi bi-paperclip" style="margin-right: 8px; color: navy;"></i> Berkas
         </label>
         <input
             type="text"
-            id="judul2"
-            name="judul2"
-            value="{{ old('judul2', $data->judul2 ?? '') }}"
-            class="form-control @error('judul2') is-invalid @enderror"
-            placeholder="Masukkan Judul 2"
+            id="berkas"
+            name="berkas"
+            value="{{ old('berkas', $data->berkas ?? '') }}"
+            class="form-control @error('berkas') is-invalid @enderror"
+            placeholder="Masukkan nama file atau link berkas"
         />
-        @error('judul2')
+        @error('berkas')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="keterangan">
+            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Keterangan
+        </label>
+        <input
+            type="text"
+            id="keterangan"
+            name="keterangan"
+            value="{{ old('keterangan', $data->keterangan ?? '') }}"
+            class="form-control @error('keterangan') is-invalid @enderror"
+            placeholder="Masukkan Keterangan"
+        />
+        @error('keterangan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="infolanjut">
+            <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Info Lanjut
+        </label>
+        <input
+            type="text"
+            id="infolanjut"
+            name="infolanjut"
+            value="{{ old('infolanjut', $data->infolanjut ?? '') }}"
+            class="form-control @error('infolanjut') is-invalid @enderror"
+            placeholder="Masukkan Info Tambahan"
+        />
+        @error('infolanjut')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
@@ -242,128 +280,39 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
     <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
         <i class="bi bi-upload" style="margin-right: 6px;"></i>
-        Upload Informasi MBR Bangunan Gedung
+        Upload Informasi PBG Fungsi Campuran
     </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-
-
-
 </div>
+
 <div class="row">
   {{-- Berkas 1 --}}
-  <div class="col-md-6 mb-3">
-    <label class="form-label" for="berkas1">
-      <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas 1 (PDF/Gambar)
-    </label>
-    <input type="file" id="berkas1" name="berkas1" accept="application/pdf,image/*"
-      class="form-control @error('berkas1') is-invalid @enderror"
-      onchange="previewMixedFile(event, 'previewContainerB1', 'previewB1', 'msgB1')" />
-    @error('berkas1')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerB1" style="{{ isset($data->berkas1) ? '' : 'display: none;' }}">
-      <label class="fw-bold">Data Sebelumnya:</label>
-      @php
-        $ext1 = pathinfo($data->berkas1 ?? '', PATHINFO_EXTENSION);
-      @endphp
-      @if (in_array(strtolower($ext1), ['jpg','jpeg','png','webp']))
-        <img src="{{ asset($data->berkas1) }}" alt="Berkas 1 Lama" style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
-      @elseif (strtolower($ext1) === 'pdf')
-        <iframe src="{{ asset($data->berkas1) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      @endif
-    </div>
-
-    <div id="msgB1" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->berkas1) ? 'display:none;' : '' }}">
-      Data belum di update. Silahkan upload berkas 1.
-    </div>
-
-    <div class="mt-3" id="previewB1" style="display: none;"></div>
-  </div>
-
-  {{-- Berkas 2 --}}
-  <div class="col-md-6 mb-3">
-    <label class="form-label" for="berkas2">
-      <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas 2 (PDF/Gambar)
-    </label>
-    <input type="file" id="berkas2" name="berkas2" accept="application/pdf,image/*"
-      class="form-control @error('berkas2') is-invalid @enderror"
-      onchange="previewMixedFile(event, 'previewContainerB2', 'previewB2', 'msgB2')" />
-    @error('berkas2')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerB2" style="{{ isset($data->berkas2) ? '' : 'display: none;' }}">
-      <label class="fw-bold">Data Sebelumnya:</label>
-      @php
-        $ext2 = pathinfo($data->berkas2 ?? '', PATHINFO_EXTENSION);
-      @endphp
-      @if (in_array(strtolower($ext2), ['jpg','jpeg','png','webp']))
-        <img src="{{ asset($data->berkas2) }}" alt="Berkas 2 Lama" style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
-      @elseif (strtolower($ext2) === 'pdf')
-        <iframe src="{{ asset($data->berkas2) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      @endif
-    </div>
-
-    <div id="msgB2" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->berkas2) ? 'display:none;' : '' }}">
-      Data belum di update. Silahkan upload berkas 2.
-    </div>
-
-    <div class="mt-3" id="previewB2" style="display: none;"></div>
-  </div>
-</div>
-
-<div class="row">
-  {{-- Berkas 3 --}}
-  <div class="col-md-6 mb-3">
-    <label class="form-label" for="berkas3">
-      <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas 3 (PDF/Gambar)
-    </label>
-    <input type="file" id="berkas3" name="berkas3" accept="application/pdf,image/*"
-      class="form-control @error('berkas3') is-invalid @enderror"
-      onchange="previewMixedFile(event, 'previewContainerB3', 'previewB3', 'msgB3')" />
-    @error('berkas3')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerB3" style="{{ isset($data->berkas3) ? '' : 'display: none;' }}">
-      <label class="fw-bold">Data Sebelumnya:</label>
-      @php
-        $ext3 = pathinfo($data->berkas3 ?? '', PATHINFO_EXTENSION);
-      @endphp
-      @if (in_array(strtolower($ext3), ['jpg','jpeg','png','webp']))
-        <img src="{{ asset($data->berkas3) }}" alt="Berkas 3 Lama" style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
-      @elseif (strtolower($ext3) === 'pdf')
-        <iframe src="{{ asset($data->berkas3) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      @endif
-    </div>
-
-    <div id="msgB3" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->berkas3) ? 'display:none;' : '' }}">
-      Data belum di update. Silahkan upload berkas 3.
-    </div>
-
-    <div class="mt-3" id="previewB3" style="display: none;"></div>
-  </div>
 
   {{-- Berkas 4 --}}
   <div class="col-md-6 mb-3">
-    <label class="form-label" for="berkas4">
+    <label class="form-label" for="berkas">
       <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas 4 (PDF/Gambar)
     </label>
-    <input type="file" id="berkas4" name="berkas4" accept="application/pdf,image/*"
-      class="form-control @error('berkas4') is-invalid @enderror"
+    <input type="file" id="berkas" name="berkas" accept="application/pdf,image/*"
+      class="form-control @error('berkas') is-invalid @enderror"
       onchange="previewMixedFile(event, 'previewContainerB4', 'previewB4', 'msgB4')" />
-    @error('berkas4')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    @error('berkas')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-    <div class="mt-3" id="previewContainerB4" style="{{ isset($data->berkas4) ? '' : 'display: none;' }}">
+    <div class="mt-3" id="previewContainerB4" style="{{ isset($data->berkas) ? '' : 'display: none;' }}">
       <label class="fw-bold">Data Sebelumnya:</label>
       @php
-        $ext4 = pathinfo($data->berkas4 ?? '', PATHINFO_EXTENSION);
+        $ext4 = pathinfo($data->berkas ?? '', PATHINFO_EXTENSION);
       @endphp
       @if (in_array(strtolower($ext4), ['jpg','jpeg','png','webp']))
-        <img src="{{ asset($data->berkas4) }}" alt="Berkas 4 Lama" style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
+        <img src="{{ asset($data->berkas) }}" alt="Berkas 4 Lama" style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
       @elseif (strtolower($ext4) === 'pdf')
-        <iframe src="{{ asset($data->berkas4) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+        <iframe src="{{ asset($data->berkas) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
       @endif
     </div>
 
-    <div id="msgB4" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->berkas4) ? 'display:none;' : '' }}">
+    <div id="msgB4" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->berkas) ? 'display:none;' : '' }}">
       Data belum di update. Silahkan upload berkas 4.
     </div>
 
