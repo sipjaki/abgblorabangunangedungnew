@@ -65,7 +65,9 @@ public function databangunangedung(Request $request)
     $perPage = $request->input('perPage', 15);
     $search = $request->input('search');
 
-    $query = databgkepemilikan::query()->orderBy('created_at', 'desc');
+    $query = databgkepemilikan::query()
+        ->orderBy('kecamatanblora_id', 'asc')
+        ->orderBy('created_at', 'desc');
 
     if ($search) {
         $query->where(function ($q) use ($search) {
