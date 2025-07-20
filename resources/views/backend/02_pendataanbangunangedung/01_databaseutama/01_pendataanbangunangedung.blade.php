@@ -123,35 +123,38 @@
   <div id="piechart" class="chart-box"></div>
   <div id="barchart" class="chart-box"></div>
 </div>
-<div id="institusiTableContainer" style="margin-top: 30px;">
-  <h3 style="color: black; font-weight: bold;">Tabel Jumlah Data per Nama Institusi</h3>
 
-  <table id="institusiTable" style="width: 100%; border-collapse: collapse; color: black; font-family: 'Poppins', sans-serif;">
-    <thead>
-      <tr style="background-color: #f0f0f0; color: black;">
-        <th style="padding: 10px; border: 1px solid #ccc;">No</th>
-        <th style="padding: 10px; border: 1px solid #ccc;">Nama Institusi</th>
-        <th style="padding: 10px; border: 1px solid #ccc;">Jumlah Data</th>
-      </tr>
-    </thead>
-    <tbody id="tableBody">
-      @php
-          $sortedData = $jumlahPerInstitusi->sortByDesc('total')->values();
-      @endphp
+<div id="institusiTableContainer" style="margin-top: 30px; font-family: 'Poppins', sans-serif; color: black;">
+  <h3 style="font-weight: bold; margin-bottom: 15px;">Tabel Jumlah Data per Nama Institusi</h3>
 
-      @foreach ($sortedData as $index => $item)
-        <tr class="table-row" style="display: {{ $index < 10 ? 'table-row' : 'none' }};">
-          <td style="padding: 10px; border: 1px solid #ccc;">{{ $index + 1 }}</td>
-          <td style="padding: 10px; border: 1px solid #ccc;">{{ $item->namainstitusi ?? 'Tidak Diketahui' }}</td>
-          <td style="padding: 10px; border: 1px solid #ccc;">{{ $item->total }}</td>
+  <div style="overflow-x: auto;">
+    <table id="institusiTable" style="width: 100%; border-collapse: collapse; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+      <thead>
+        <tr style="background-color: #eaeaea;">
+          <th style="padding: 12px; border: 1px solid #ccc; text-align: center;">No</th>
+          <th style="padding: 12px; border: 1px solid #ccc; text-align: left;">Nama Institusi</th>
+          <th style="padding: 12px; border: 1px solid #ccc; text-align: center;">Jumlah Data</th>
         </tr>
-      @endforeach
-    </tbody>
-  </table>
+      </thead>
+      <tbody id="tableBody">
+        @php
+          $sortedData = $jumlahPerInstitusi->sortByDesc('total')->values();
+        @endphp
 
-  <div style="margin-top: 15px;">
-    <button class="button-hijau" onclick="prevPage()" id="prevBtn" style="margin-right: 10px;">Sebelumnya</button>
-    <button class="button-hijau" onclick="nextPage()" id="nextBtn">Berikutnya</button>
+        @foreach ($sortedData as $index => $item)
+          <tr class="table-row" style="display: {{ $index < 10 ? 'table-row' : 'none' }};">
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">{{ $index + 1 }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">{{ $item->namainstitusi ?? 'Tidak Diketahui' }}</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">{{ $item->total }}</td>
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top: 20px; text-align: center;">
+    <button onclick="prevPage()" id="prevBtn" disabled style="padding: 8px 20px; border: none; background-color: #444; color: white; border-radius: 5px; margin-right: 10px; cursor: pointer;">Sebelumnya</button>
+    <button onclick="nextPage()" id="nextBtn" style="padding: 8px 20px; border: none; background-color: #444; color: white; border-radius: 5px; cursor: pointer;">Berikutnya</button>
   </div>
 </div>
 
@@ -184,10 +187,10 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
-    showPage(currentPage);
-  });
+  // Inisialisasi
+  showPage(currentPage);
 </script>
+
 
 
 <style>
