@@ -124,9 +124,21 @@
 
 
                             {{-- Tambahan fiturstatus --}}
-                            <div style="color: black !important;">
-                                @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
-                            </div>
+                           <div class="container mt-4 px-3">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-md-11 col-sm-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white fw-bold text-center">
+                    Status Detail Permohonan
+                </div>
+                <div class="card-body bg-light" style="color: black !important;">
+                    @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
                         </div>
                     </div>
                 @elseif(request('noregissimbg'))
