@@ -778,6 +778,7 @@
 {{-- ============================================================================= --}}
 @can('konsultanbangunan')
 
+<li class="nav-header" style="color: white;">MAIN MENU</li>
 <li class="nav-item">
                 <a href="#" class="nav-link">
     <i class="bi bi-folder nav-icon" style="color: white; font-size: 16px;"></i>
