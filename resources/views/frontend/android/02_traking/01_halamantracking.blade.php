@@ -64,27 +64,66 @@
             </div>
 
             <!-- Search Form -->
-            <form method="GET" action="{{ route('betrackingdatacarife') }}" class="row g-3 justify-content-center mb-4">
-              <div class="col-md-6">
-                <input
-                  type="text"
-                  name="noregissimbg"
-                  class="form-control @error('noregissimbg') is-invalid @enderror"
-                  placeholder="Contoh: PBG-2024-XYZ"
-                  value="{{ request('noregissimbg') }}"
-                  required
-                  style="color: black !important;"
-                >
-                @error('noregissimbg')
-                  <div class="invalid-feedback" style="color: black !important;">{{ $message }}</div>
-                @enderror
-              </div>
-              <div class="col-auto">
-                <button type="submit" class="button-baru">
-                  <i class="bi bi-search" style="color: black !important;"></i> Cari
-                </button>
-              </div>
-            </form>
+          <form method="GET" action="{{ route('betrackingdatacarife') }}" class="row g-3 justify-content-center mb-4">
+    <div class="col-md-8">  <!-- Changed from col-md-6 to col-md-8 for wider input -->
+        <input
+            type="text"
+            name="noregissimbg"
+            class="form-control form-control-lg @error('noregissimbg') is-invalid @enderror"
+            placeholder="Contoh: PBG-2024-XYZ"
+            value="{{ request('noregissimbg') }}"
+            required
+            style="
+                color: black !important;
+                border-radius: 8px;
+                border: 2px solid #4a90e2;
+                padding: 12px 20px;
+                font-size: 1.1rem;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+            "
+            onfocus="this.style.borderColor='#2a6496'; this.style.boxShadow='0 0 8px rgba(74,144,226,0.5)';"
+            onblur="this.style.borderColor='#4a90e2'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.1)';"
+        >
+        @error('noregissimbg')
+            <div class="invalid-feedback" style="color: black !important; font-size: 0.9rem;">{{ $message }}</div>
+        @enderror
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="button-baru" style="
+            background: linear-gradient(to right, #4a90e2, #2a6496);
+            color: white !important;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        "
+        onmouseover="this.style.opacity='0.9'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.3)';"
+        onmouseout="this.style.opacity='1'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.2)';"
+        >
+            <i class="bi bi-search" style="color: white !important;"></i> Cari Data
+        </button>
+    </div>
+</form>
+
+<style>
+    /* Optional: Add this to your CSS file for better consistency */
+    .button-baru:active {
+        transform: translateY(1px);
+    }
+
+    /* For the input focus effect */
+    .form-control-lg:focus {
+        border-color: #2a6496 !important;
+        box-shadow: 0 0 8px rgba(74,144,226,0.5) !important;
+    }
+</style>
 
             <!-- Results Section -->
             @if(isset($data) && $data)
