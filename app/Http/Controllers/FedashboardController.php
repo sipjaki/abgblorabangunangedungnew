@@ -22,6 +22,7 @@ use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\materipelatihan;
 use App\Models\mbrgambar;
+use App\Models\pbgslfbangunan;
 use App\Models\pesertapelatihan;
 use App\Models\rencanagsbblora;
 use App\Models\User;
@@ -751,12 +752,15 @@ public function resbgtracking()
     {
 
         $user = Auth::user();
+        $data = pbgslfbangunan::all();
+
         // return view('/404', [
         // return view('frontend.00_full.index', [
     return view('frontend.android.02_traking.01_halamantracking', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Menu Tracking Permohonan PBG/SLF ',
             'user' => $user,
+            'data' => $data,
         ]);
     }
 }
