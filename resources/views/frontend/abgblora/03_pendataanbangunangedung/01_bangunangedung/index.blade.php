@@ -93,28 +93,31 @@
 
 <section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 160px;">
     <div class="filter-section">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Cari data..." oninput="searchTable()">
-            <button onclick="searchTable()">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
+        <form id="searchForm" method="GET" action="{{ route('databangunangedung') }}">
+            <div class="search-box">
+                <input type="text" name="search" id="searchInput" placeholder="Cari data..."
+                       value="{{ request('search') }}" oninput="debounceSearch()">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
 
-        <div class="entries-selector">
-            <span>Show:</span>
-            <select id="entries" onchange="updateEntries()">
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="75">75</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="250">250</option>
-                <option value="500">500</option>
-                <option value="1000">1000</option>
-                <option value="2000">2000</option>
-            </select>
-            <span>entries</span>
-        </div>
+            <div class="entries-selector">
+                <span>Show:</span>
+                <select name="perPage" id="entries" onchange="this.form.submit()">
+                    <option value="25" {{ request('perPage') == 25 ? 'selected' : '' }}>25</option>
+                    <option value="50" {{ request('perPage') == 50 ? 'selected' : '' }}>50</option>
+                    <option value="75" {{ request('perPage') == 75 ? 'selected' : '' }}>75</option>
+                    <option value="100" {{ request('perPage') == 100 ? 'selected' : '' }}>100</option>
+                    <option value="200" {{ request('perPage') == 200 ? 'selected' : '' }}>200</option>
+                    <option value="250" {{ request('perPage') == 250 ? 'selected' : '' }}>250</option>
+                    <option value="500" {{ request('perPage') == 500 ? 'selected' : '' }}>500</option>
+                    <option value="1000" {{ request('perPage') == 1000 ? 'selected' : '' }}>1000</option>
+                    <option value="2000" {{ request('perPage') == 2000 ? 'selected' : '' }}>2000</option>
+                </select>
+                <span>entries</span>
+            </div>
+        </form>
     </div>
 </section>
 
@@ -122,7 +125,7 @@
     <div class="bg-white p-5 rounded-[20px] shadow-md">
         <div class="flex items-center gap-3 mb-4">
             <button class="p-[14px_20px] bg-white rounded-full font-semibold">
-                📦 {{$title}}
+                📦 {{ $title }}
             </button>
         </div>
 
@@ -153,7 +156,7 @@
                             @endif
                         </td>
                         <td class="text-center">
-                            <a href="/databangunangedungshow/{{ $item->id }}">
+                            <a href="/databangunangedung/{{ $item->id }}">
                                 <i class="fas fa-eye view-icon"></i>
                             </a>
                         </td>
@@ -163,7 +166,7 @@
             </table>
         </div>
 
-        @include('frontend.abgblora.00_fiturmenu.06_paginations')
+        {{ $data->appends(['search' => request('search'), 'perPage' => request('perPage')])->links() }}
     </div>
 </section>
 
@@ -171,29 +174,23 @@
 @include('frontend.abgblora.00_fiturmenu.04_footer')
 
 <script>
+    // Debounce function to prevent too many requests
+    let debounceTimer;
+    function debounceSearch() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            document.getElementById('searchForm').submit();
+        }, 500);
+    }
+
     // Set current entries value from URL
     document.addEventListener('DOMContentLoaded', function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const perPage = urlParams.get('perPage');
-        if (perPage) {
-            document.getElementById('entries').value = perPage;
-        }
-    });
-
-    function updateEntries() {
-        const selectedValue = document.getElementById("entries").value;
-        const url = new URL(window.location.href);
-        url.searchParams.set("perPage", selectedValue);
-        window.location.href = url.toString();
-    }
-
-    function searchTable() {
-        const input = document.getElementById("searchInput").value.toLowerCase();
-        const rows = document.querySelectorAll("#tableBody tr");
-
-        rows.forEach(row => {
-            const text = row.textContent.toLowerCase();
-            row.style.display = text.includes(input) ? "" : "none";
+        // Keep the search and perPage parameters in pagination links
+        document.querySelectorAll('.pagination a').forEach(link => {
+            const url = new URL(link.href);
+            url.searchParams.set('search', '{{ request('search') }}');
+            url.searchParams.set('perPage', '{{ request('perPage', 15) }}');
+            link.href = url.toString();
         });
-    }
+    });
 </script>
