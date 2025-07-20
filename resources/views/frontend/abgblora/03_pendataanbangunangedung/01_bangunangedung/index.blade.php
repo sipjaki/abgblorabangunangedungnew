@@ -163,7 +163,7 @@
 
     {{-- Aksi --}}
     <td style="text-align: center">
-        <a href="/databangunangedung/{{ $item->id }}">
+        <a href="/databangunangedungshow/{{ $item->id }}">
             <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
         </a>
     </td>
