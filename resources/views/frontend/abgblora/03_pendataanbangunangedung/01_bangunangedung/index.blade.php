@@ -34,6 +34,7 @@
 
 @include('frontend.abgblora.00_fiturmenu.02_header')
 @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 
 
   <style>
@@ -181,7 +182,7 @@
 
     {{-- Aksi (View) --}}
     <td style="text-align: center;">
-        <a href="/databangunangedung/{{ $item->id }}" class="btn btn-sm btn-primary">
+        <a href="/databangunangedung/{{ $item->id }}" class="button-baru">
             <i class="bi bi-eye"></i> View
         </a>
     </td>
