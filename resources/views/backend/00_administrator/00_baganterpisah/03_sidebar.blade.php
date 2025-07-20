@@ -663,30 +663,11 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-geo-alt nav-icon" style="color: white;"></i>
-            <p style="color: yellow; margin-left: 8px;">PBG/SLF</p>
-        </a>
-    </li>
-    {{-- <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-journal-text nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">Bantuan Teknis</p>
-        </a>
-    </li> --}}
-    <li class="nav-item">
         <a href="/pemohonkrk" class="nav-link">
             <i class="bi bi-card-list nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">KRK</p>
         </a>
     </li>
-    <li class="nav-item">
-        <a href="/404" class="nav-link">
-            <i class="bi bi-house nav-icon" style="color: white;"></i>
-            <p style="color: white; margin-left: 8px;">MBR</p>
-        </a>
-    </li>
-
 </ul>
 
             </li>
