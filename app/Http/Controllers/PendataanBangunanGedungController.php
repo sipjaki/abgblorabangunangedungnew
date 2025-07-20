@@ -1081,7 +1081,7 @@ public function datanewpendataanbgnew(Request $request)
         'tampaksamping2' => $tampaksamping2,
     ]);
 
-    session()->flash('create', 'Data Penilik Bangunan berhasil disimpan!');
+    session()->flash('create', 'Data Bangunan Baru disimpan!');
     return redirect()->route('bependataanbangunangedung');
 }
 
