@@ -292,14 +292,14 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Pendataan</a>
   <ul class="dropdown-menu" style="width: 300px;">
-    <li style="font-size: 14px;">
+    {{-- <li style="font-size: 14px;">
       <a href="/404" style="display: flex; align-items: center;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
           <path d="M8 0a8 8 0 1 0 8 8A8.01 8.01 0 0 0 8 0zM4.5 7.5v1h7v-1h-7zm0 3v1h7v-1h-7z"/>
         </svg>
         Informasi Bangunan Gedung
       </a>
-    </li>
+    </li> --}}
     <li style="font-size: 14px;">
       <a href="/databangunangedung" style="display: flex; align-items: center;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
