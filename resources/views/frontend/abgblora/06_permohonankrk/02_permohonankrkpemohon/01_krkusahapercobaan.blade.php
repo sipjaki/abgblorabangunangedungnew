@@ -814,7 +814,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <!-- Text Label dan Link Download -->
       <div class="flex flex-col text-sm font-poppins">
   <span>Upload Surat Permohonan KRK | Max 10 MB</span>
-  <a href="/asset/abgblora/logo/Surat_Permohonan_KRK.docx"
+  <a href="/assets/abgblora/logo/surat_permohonan_krk.docx"
      download
      class="mt-1 underline hover:text-black text-red-600 transition-colors duration-150 ease-in-out">
      Download Contoh Surat Permohonan (.docx)
