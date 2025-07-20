@@ -186,7 +186,7 @@
                     <span class="font-bold">Form KRK <span style="color: #0fb825;"> Fungsi Usaha</span> Bangunan Gedung </span>
                 </p>
             </div>
-            <form id="signatureForm" action="{{ route('permohonan.krkusaha') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
+            <form id="signatureForm" action="{{ route('permohonan.krkusahacreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
                 @csrf
 
 
