@@ -1005,6 +1005,84 @@ public function datanewpendataanbg(Request $request)
         'kecamatanList' => $kecamatanList
     ]);
 }
+public function datanewpendataanbgnew(Request $request)
+{
+    // Validasi input, sesuaikan sesuai kebutuhan
+    $validated = $request->validate([
+        'user_id' => 'nullable|string',
+        'tanggalinput' => 'nullable|string|max:255',
+        'namainstitusi' => 'nullable|string|max:255',
+        'nopengesahanusaha' => 'nullable|string|max:255',
+        'notelepon' => 'nullable|string|max:255',
+        'email' => 'nullable|email|max:255',
+
+        'kecamatanblora_id' => 'required|string',
+        'alamat' => 'nullable|string',
+        'koordinat' => 'required|string|max:255',
+
+        // file gambar opsional, tapi jika ada wajib berupa gambar dan max 5MB
+        'tampakdepan' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:5120',
+        'tampakbelakang' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:5120',
+        'tampaksamping1' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:5120',
+        'tampaksamping2' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:5120',
+    ], [
+        // Pesan error kustom
+        'user_id.exists' => 'User tidak valid.',
+        'email.email' => 'Format email tidak valid.',
+        'kecamatanblora_id.exists' => 'Kecamatan tidak ditemukan.',
+        'tampakdepan.image' => 'File tampak depan harus berupa gambar.',
+        'tampakbelakang.image' => 'File tampak belakang harus berupa gambar.',
+        'tampaksamping1.image' => 'File tampak samping 1 harus berupa gambar.',
+        'tampaksamping2.image' => 'File tampak samping 2 harus berupa gambar.',
+        'tampakdepan.max' => 'File tampak depan maksimal 5MB.',
+        'tampakbelakang.max' => 'File tampak belakang maksimal 5MB.',
+        'tampaksamping1.max' => 'File tampak samping 1 maksimal 5MB.',
+        'tampaksamping2.max' => 'File tampak samping 2 maksimal 5MB.',
+    ]);
+
+    // Folder penyimpanan file
+    $uploadPath = public_path('02_pendataan');
+
+    // Buat folder jika belum ada
+    if (!file_exists($uploadPath)) {
+        mkdir($uploadPath, 0755, true);
+    }
+
+    // Fungsi helper simpan file jika ada
+    $saveFile = function($file, $prefix) use ($uploadPath) {
+        $filename = $prefix . '_' . time() . '.' . $file->getClientOriginalExtension();
+        $file->move($uploadPath, $filename);
+        return '02_pendataan/' . $filename;
+    };
+
+    // Simpan file jika ada
+    $tampakdepan = $request->hasFile('tampakdepan') ? $saveFile($request->file('tampakdepan'), 'tampakdepan') : null;
+    $tampakbelakang = $request->hasFile('tampakbelakang') ? $saveFile($request->file('tampakbelakang'), 'tampakbelakang') : null;
+    $tampaksamping1 = $request->hasFile('tampaksamping1') ? $saveFile($request->file('tampaksamping1'), 'tampaksamping1') : null;
+    $tampaksamping2 = $request->hasFile('tampaksamping2') ? $saveFile($request->file('tampaksamping2'), 'tampaksamping2') : null;
+
+    // Simpan data ke database
+    databgkepemilikan::create([
+        'user_id' => $validated['user_id'] ?? null,
+        'tanggalinput' => $validated['tanggalinput'] ?? null,
+        'namainstitusi' => $validated['namainstitusi'] ?? null,
+        'nopengesahanusaha' => $validated['nopengesahanusaha'] ?? null,
+        'notelepon' => $validated['notelepon'] ?? null,
+        'email' => $validated['email'] ?? null,
+
+        'kecamatanblora_id' => $validated['kecamatanblora_id'] ?? null,
+        'alamat' => $validated['alamat'] ?? null,
+        'koordinat' => $validated['koordinat'] ?? null,
+
+        'tampakdepan' => $tampakdepan,
+        'tampakbelakang' => $tampakbelakang,
+        'tampaksamping1' => $tampaksamping1,
+        'tampaksamping2' => $tampaksamping2,
+    ]);
+
+    session()->flash('create', 'Data Penilik Bangunan berhasil disimpan!');
+    return redirect()->route('bependataanbangunangedung');
+}
 
 
 }
