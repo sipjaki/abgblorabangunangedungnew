@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\bgkartuinventarisbangunan;
 use App\Models\databangunangedung;
@@ -208,46 +209,19 @@ public function bependataanbangunangedung(Request $request)
 {
     $user = Auth::user();
     $perPage = $request->input('perPage', 20);
-
     $jumlahDataTotal = databgkepemilikan::count();
 
-
-    // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
-    $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 1);
-    })->count();
-
-    $jumlahDataIdDua = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 2);
-    })->count();
-
-    $jumlahDataIdTiga = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 3);
-    })->count();
-
-    $jumlahDataIdEmpat = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 4);
-    })->count();
-
-    $jumlahDataIdLima = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 5);
-    })->count();
-
-// -----------------------------------------
+    // Ambil jumlah data unik berdasarkan namainstitusi dan hitung jumlahnya
+    $jumlahPerInstitusi = databgkepemilikan::select('namainstitusi', DB::raw('count(*) as total'))
+    ->groupBy('namainstitusi')
+    ->orderByDesc('total')
+    ->get();
 
     return view('backend.02_pendataanbangunangedung.01_databaseutama.01_pendataanbangunangedung', [
         'title' => 'Pendataan Bangunan Gedung',
-        // 'data' => $dataTanpaIdSatu,
         'user' => $user,
-
         'jumlahDataTotal' => $jumlahDataTotal,
-
-        'jumlahDataIdSatu' => $jumlahDataIdSatu,
-        'jumlahDataIdDua' => $jumlahDataIdDua,
-        'jumlahDataIdTiga' => $jumlahDataIdTiga,
-        'jumlahDataIdEmpat' => $jumlahDataIdEmpat,
-        'jumlahDataIdLima' => $jumlahDataIdLima,
-
+        'jumlahPerInstitusi' => $jumlahPerInstitusi
     ]);
 }
 

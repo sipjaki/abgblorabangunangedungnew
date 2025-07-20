@@ -56,79 +56,43 @@
 
   function drawCharts() {
     var data = google.visualization.arrayToDataTable([
-      ['Jenis Permohonan', 'Jumlah Permohonan'],
-      ['PBG', {{ $jumlahDataIdSatu ?? 0 }}],
-      ['SLF', {{ $jumlahDataIdDua ?? 0 }}],
-      ['SBKBG', {{ $jumlahDataIdTiga ?? 0 }}],
-      ['RTB', {{ $jumlahDataIdEmpat ?? 0 }}],
-      ['Pendataan', {{ $jumlahDataIdLima ?? 0 }}],
-    //   ['Perhitungan BGN', {{ $jumlahDataIdEnam ?? 0 }}],
-    //   ['Pendampingan Serah Terima', {{ $jumlahDataIdTujuh ?? 0 }}],
-    //   ['Personil Tim Teknis', {{ $jumlahDataIdDelapan ?? 0 }}]
+      ['Nama Institusi', 'Jumlah Data'],
+      @foreach ($jumlahPerInstitusi as $item)
+        ['{{ $item->namainstitusi ?? 'Tidak Diketahui' }}', {{ $item->total }}],
+      @endforeach
     ]);
 
-    var dataBar = google.visualization.arrayToDataTable([
-      ['Jenis Permohonan', 'Jumlah Permohonan', { role: 'style' }],
-      ['PBG', {{ $jumlahDataIdSatu ?? 0 }}, '#001f3f'],    // Navy
-      ['SLF', {{ $jumlahDataIdDua ?? 0 }}, '#006400'],     // Dark Green
-      ['SBKBG', {{ $jumlahDataIdTiga ?? 0 }}, '#FFD700'], // Gold
-      ['RTB', {{ $jumlahDataIdEmpat ?? 0 }}, '#00BFFF'],  // DeepSkyBlue
-      ['Pendataan', {{ $jumlahDataIdLima ?? 0 }}, '#FF69B4'],    // Hot Pink
-    //   ['Perhitungan BGN', {{ $jumlahDataIdEnam ?? 0 }}, '#FF8C00'],     // Dark Orange
-    //   ['Pendampingan Serah Terima', {{ $jumlahDataIdTujuh ?? 0 }}, '#8A2BE2'], // Blue Violet
-    //   ['Personil Tim Teknis', {{ $jumlahDataIdDelapan ?? 0 }}, '#20B2AA'] // Light Sea Green
+    var barData = google.visualization.arrayToDataTable([
+      ['Nama Institusi', 'Jumlah Data', { role: 'style' }],
+      @foreach ($jumlahPerInstitusi as $item)
+        ['{{ $item->namainstitusi ?? 'Tidak Diketahui' }}', {{ $item->total }}, '#001f3f'],
+      @endforeach
     ]);
 
-    var pieOptions = {
-      title: 'Persentase Permohonan Per Kategori',
-      is3D: true,
+    var options = {
+      title: 'Jumlah Data Berdasarkan Nama Institusi',
       backgroundColor: 'transparent',
-      colors: ['#001f3f', '#006400', '#FFD700', '#00BFFF', '#FF69B4', '#FF8C00', '#8A2BE2', '#20B2AA'],
-      titleTextStyle: {
-        color: '#001f3f',
-        fontSize: 16,
-        bold: true
-      },
-      legend: {
-        textStyle: {
-          color: '#001f3f',
-          fontSize: 12
-        }
-      },
-      chartArea: {
-        width: '90%',
-        height: '75%'
-      }
+      is3D: true,
+      legend: { position: 'right', textStyle: { color: '#001f3f' } },
+      titleTextStyle: { color: '#001f3f', fontSize: 16, bold: true },
+      chartArea: { width: '80%', height: '70%' }
     };
 
     var barOptions = {
-      title: 'Jumlah Permohonan Per Kategori',
+      title: 'Data Institusi',
       backgroundColor: 'transparent',
-      titleTextStyle: {
-        color: '#001f3f',
-        fontSize: 16,
-        bold: true
-      },
-      legend: { position: 'none' },
-      chartArea: {
-        width: '70%',
-        height: '70%'
-       },
-      hAxis: {
-        title: 'Jumlah Permohonan',
-        titleTextStyle: { color: '#001f3f' },
-        textStyle: { color: '#001f3f' }
-      },
-      vAxis: {
-        textStyle: { color: '#001f3f' }
-      }
+      legend: 'none',
+      chartArea: { width: '80%', height: '70%' },
+      hAxis: { textStyle: { color: '#001f3f' } },
+      vAxis: { textStyle: { color: '#001f3f' } },
+      titleTextStyle: { color: '#001f3f', fontSize: 16, bold: true },
     };
 
     var pieChart = new google.visualization.PieChart(document.getElementById('piechart'));
     var barChart = new google.visualization.ColumnChart(document.getElementById('barchart'));
 
-    pieChart.draw(data, pieOptions);
-    barChart.draw(dataBar, barOptions);
+    pieChart.draw(data, options);
+    barChart.draw(barData, barOptions);
   }
 </script>
 
