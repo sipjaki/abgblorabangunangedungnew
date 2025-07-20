@@ -102,9 +102,9 @@ public function databangunangedung(Request $request)
 }
 
 
-    public function databangunangedungshow($namabangunan)
+    public function databangunangedungshow($id)
     {
-        $databangunangedung = databangunangedung::where('namabangunan', $namabangunan)->first();
+        $databangunangedung = databangunangedung::where('id', $id)->first();
 
         if (!$databangunangedung) {
             // Tangani jika kegiatan tidak ditemukan

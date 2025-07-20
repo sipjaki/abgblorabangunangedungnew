@@ -124,7 +124,7 @@
                         {{-- baru sampia siiini  --}}
                         <th>Fungsi Bangunan</th>
                         <th>Status Tanah</th>
-                        <th>Klasifikasi Bangunan </th>
+                        {{-- <th>Klasifikasi Bangunan </th> --}}
                         <th>View</th>
                     </tr>
                 </thead>
