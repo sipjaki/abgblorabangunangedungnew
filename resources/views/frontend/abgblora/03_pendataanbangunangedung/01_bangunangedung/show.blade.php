@@ -37,6 +37,7 @@
 
 
 <section
+style="margin-top:250px;"
  id="header" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2" style="margin-top:10px;">
     <div class="flex items-center gap-3">
       <button class="p-[14px_20px] bg-white rounded-full font-semibold">
