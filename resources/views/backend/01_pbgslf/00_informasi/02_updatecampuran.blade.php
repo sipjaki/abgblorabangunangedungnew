@@ -219,38 +219,18 @@ th {
     </div>
 </div>
 
-{{-- <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="berkas">
-            <i class="bi bi-paperclip" style="margin-right: 8px; color: navy;"></i> Berkas
-        </label>
-        <input
-            type="text"
-            id="berkas"
-            name="berkas"
-            value="{{ old('berkas', $data->berkas ?? '') }}"
-            class="form-control @error('berkas') is-invalid @enderror"
-            placeholder="Masukkan nama file atau link berkas"
-        />
-        @error('berkas')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div> --}}
-
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="keterangan">
             <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Keterangan
         </label>
-        <input
-            type="text"
+        <textarea
             id="keterangan"
             name="keterangan"
-            value="{{ old('keterangan', $data->keterangan ?? '') }}"
             class="form-control @error('keterangan') is-invalid @enderror"
+            rows="5"
             placeholder="Masukkan Keterangan"
-        />
+        >{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
         @error('keterangan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
@@ -262,14 +242,13 @@ th {
         <label class="form-label" for="infolanjut">
             <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Info Lanjut
         </label>
-        <input
-            type="text"
+        <textarea
             id="infolanjut"
             name="infolanjut"
-            value="{{ old('infolanjut', $data->infolanjut ?? '') }}"
             class="form-control @error('infolanjut') is-invalid @enderror"
+            rows="5"
             placeholder="Masukkan Info Tambahan"
-        />
+        >{{ old('infolanjut', $data->infolanjut ?? '') }}</textarea>
         @error('infolanjut')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror

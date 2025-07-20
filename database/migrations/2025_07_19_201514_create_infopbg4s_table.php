@@ -16,21 +16,21 @@ return new class extends Migration
 
             $table->string('judul')->nullable();
             $table->string('berkas')->nullable();
-            $table->string('keterangan')->nullable();
-            $table->string('infolanjut')->nullable();
+             $table->text('keterangan')->nullable();
+            $table->text('infolanjut')->nullable();
 
-             $table->string('cadangan1')->nullable();
-            $table->string('cadangan2')->nullable();
-            $table->string('cadangan3')->nullable();
-            $table->string('cadangan4')->nullable();
-            $table->string('cadangan5')->nullable();
-            $table->string('cadangan6')->nullable();
-            $table->string('cadangan7')->nullable();
-            $table->string('cadangan8')->nullable();
-            $table->string('cadangan9')->nullable();
-            $table->string('cadangan10')->nullable();
-            $table->string('cadangan11')->nullable();
-            $table->string('cadangan12')->nullable();
+            $table->text('cadangan1')->nullable();
+            $table->text('cadangan2')->nullable();
+            $table->text('cadangan3')->nullable();
+            $table->text('cadangan4')->nullable();
+            $table->text('cadangan5')->nullable();
+            $table->text('cadangan6')->nullable();
+            $table->text('cadangan7')->nullable();
+            $table->text('cadangan8')->nullable();
+            $table->text('cadangan9')->nullable();
+            $table->text('cadangan10')->nullable();
+            $table->text('cadangan11')->nullable();
+            $table->text('cadangan12')->nullable();
 
             $table->softDeletes();
 
