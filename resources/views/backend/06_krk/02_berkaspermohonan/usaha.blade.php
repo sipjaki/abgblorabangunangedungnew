@@ -806,7 +806,7 @@ th {
     </button>
 @endif
 
-                <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
+                <a href="{{ route('dokuploadkrkusaha', $item->id) }}"
                     class="button-baru">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
 
