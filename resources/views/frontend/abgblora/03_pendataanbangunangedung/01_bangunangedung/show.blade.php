@@ -104,9 +104,9 @@
   <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
     <div class="flex flex-col gap-5 w-full">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
-            <div class="flex justify-center">
+            {{-- <div class="flex justify-center">
                 <img src="/assets/abgblora/logo/iconabgblora.png" alt="" width="15%" style="margin-top: -25px; margin-bottom:-25px;">
-            </div>
+            </div> --}}
 
             <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
     {{-- CARD: Tampak Depan --}}
