@@ -282,6 +282,7 @@ th {
     <!-- =========================== -->
     <!-- ALAMAT BANGUNAN GEDUNG -->
     <!-- =========================== -->
+
 <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
   <i class="bi bi-geo-alt me-3" style="font-size: 18px;"></i>
@@ -318,6 +319,42 @@ th {
       </div>
   </div>
 </div>
+<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
+  <i class="bi bi-images me-3" style="font-size: 18px;"></i>
+  Foto Dokumentasi Bangunan Gedung
+</h5>
+
+<div class="row g-3" style="margin-top:-20px;">
+  @php
+      $fotoFields = [
+          'tampakdepan' => 'Tampak Depan',
+          'tampakbelakang' => 'Tampak Belakang',
+          'tampaksamping1' => 'Tampak Samping 1',
+          'tampaksamping2' => 'Tampak Samping 2',
+      ];
+  @endphp
+
+  @foreach($fotoFields as $field => $label)
+  <div class="col-md-6">
+    <div class="mb-3">
+      <label class="form-label d-flex align-items-center" for="{{ $field }}">
+        <i class="bi bi-camera-fill me-2 text-danger" style="font-size: 1.2rem;"></i> {{ $label }}
+      </label>
+      <input type="file" class="form-control @error($field) is-invalid @enderror" name="{{ $field }}" id="{{ $field }}">
+      @error($field) <div class="invalid-feedback">{{ $message }}</div> @enderror
+
+      {{-- Preview Gambar --}}
+      @if (!empty($data->$field))
+        <div class="mt-2">
+          <img src="{{ asset('storage/' . $data->$field) }}" alt="{{ $label }}" class="img-thumbnail" style="max-height: 200px;">
+        </div>
+      @endif
+    </div>
+  </div>
+  @endforeach
+</div>
+
 <div class="row g-3">
 
     <!-- Leaflet CSS -->
