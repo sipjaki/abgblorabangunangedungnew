@@ -743,6 +743,12 @@ th {
     </button>
 @endif
 
+          <a href="{{ route('dokuploadkrkusaha', $item->id) }}"
+                    class="button-baru">
+                <i class="bi bi-folder" style="margin-right: 5px;"></i> Dokumen KRK
+
+                </a>
+
 </div>
 </td>
 
