@@ -51,7 +51,6 @@ Route::get('/betrackingdatacari', [PbgslfController::class, 'betrackingdatacari'
 
 // 01_ MENU PBG SLF
 
-
 Route::get('/infopbg', [FedashboardController::class, 'infopbgindex']);
 Route::get('/infopbgcampuran', [FedashboardController::class, 'infopbgcampuran']);
 Route::get('/infopbghunian', [FedashboardController::class, 'infopbghunian']);
@@ -914,6 +913,9 @@ Route::delete('/dokbebanhibahdelete/{id}', [BantuanhibahbgController::class, 'do
 // -----------------------------------------------------------------
 // MENU 01 PBG SLF
 Route::get('/bepbgslfinformasi', [PbgslfController::class, 'bepbgslfinformasi'])->middleware('auth')->name('bepbgslfinformasi');
+Route::get('/bepbghunian', [PbgslfController::class, 'bepbghunian'])->middleware('auth')->name('bepbghunian');
+
+
 Route::get('/fungsicampuran', [PbgslfController::class, 'fungsicampuran'])->middleware('auth')->name('fungsicampuran');
 
 Route::get('/bepbgslfindex', [PbgslfController::class, 'bepbgslfindexmenu'])->middleware('auth')->name('bepbgslfindexindexmenu');

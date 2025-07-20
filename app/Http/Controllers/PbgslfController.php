@@ -18,6 +18,7 @@ use App\Models\fasilitatorpbg;
 use App\Models\fungsibangunanpbg;
 use App\Models\gambarbantuan;
 use App\Models\infopbg1;
+use App\Models\infopbg2;
 use App\Models\jenispengajuanpbgslfper;
 use App\Models\jenisperkonsultasi;
 use App\Models\kecamatanblora;
@@ -3822,6 +3823,26 @@ public function updatefungsicampurannew(Request $request, $id)
     $data->save();
 session()->flash('update', 'Informasi berhasil diperbarui!');
 return back();
+
+}
+
+    public function bepbghunian(Request $request)
+{
+    $user = Auth::user();
+    $data = infopbg2::all();
+    // $perPage = $request->input('perPage', 20);
+
+
+// -----------------------------------------
+
+    return view('backend.01_pbgslf.00_informasi.03_befungsihunian', [
+        'title' => 'Informasi Permohonan PBG Fungsi Hunian',
+        // 'data' => $dataTanpaIdSatu,
+        'user' => $user,
+        'data' => $data,
+
+        // 'datasemua' => $dataTanpaIdSatu,
+    ]);
 
 }
 
