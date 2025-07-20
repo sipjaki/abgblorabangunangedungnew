@@ -193,12 +193,12 @@
 
   <!-- Judul -->
   <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #1a1a1a;">
-    Persetujuan Bangunan Gedung (PBG) - Fungsi Prasarana
+    Persetujuan Bangunan Gedung (PBG) - Fungsi Sosial Budaya
   </h2>
 
   <!-- Deskripsi -->
   <p style="text-align: justify; margin-bottom: 30px;">
-    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan untuk mendirikan bangunan prasarana seperti menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai ketentuan teknis, tata ruang, dan lingkungan yang berlaku.
+    Persetujuan Bangunan Gedung (PBG) adalah dokumen legal yang wajib dimiliki sebelum pembangunan menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai dengan aspek teknis, ketentuan tata ruang, keselamatan lingkungan, serta mendapat persetujuan masyarakat sekitar.
   </p>
 
   <!-- Persyaratan -->
@@ -207,25 +207,24 @@
     <li><strong>Data Tanah:</strong>
       <ul style="margin-left: 20px;">
         <li>Sertifikat tanah</li>
-        <li>Izin Pemanfaatan Tanah (jika nama pemohon berbeda dengan sertifikat)</li>
+        <li>Izin Pemanfaatan Tanah (apabila nama pemohon berbeda dengan sertifikat)</li>
         <li>Gambar kontur tanah dan sondir (khusus bangunan tidak sederhana)</li>
       </ul>
     </li>
     <li><strong>Data Umum:</strong>
       <ul style="margin-left: 20px;">
-        <li>KTP / Profil Perusahaan</li>
-        <li>NIB (OSS)</li>
+        <li>KTP / Profil Perusahaan, NIB (OSS)</li>
         <li>KRK / KKPR</li>
-        <li>Dokumen lingkungan (SPPL / OSS / UKL/UPL / AMDAL)</li>
-        <li>Data penyedia jasa konstruksi (SBU / Arsitek berlisensi)</li>
-        <li>Verifikasi mandiri / PKKPR otomatis (untuk kegiatan usaha dari FPR Kabupaten Blora)</li>
+        <li>Dokumen lingkungan sesuai peraturan (SPPL, OSS, UKL/UPL, AMDAL)</li>
+        <li>Data penyedia jasa konstruksi: Badan Usaha (SBU) / Arsitek berlisensi</li>
+        <li>Verifikasi pernyataan mandiri atau PKKPR otomatis yang diterbitkan FPR Kab. Blora</li>
         <li>KKOP (Ketentuan Keselamatan Operasi Penerbangan)</li>
-        <li>Persetujuan warga sekitar menara (diketahui lurah/kades) beserta dokumentasi & berita acara sosialisasi</li>
+        <li>Persetujuan warga sekitar menara yang diketahui lurah/kepala desa, disertai dokumentasi & berita acara sosialisasi</li>
       </ul>
     </li>
     <li><strong>Data Teknis Arsitektur:</strong>
       <ul style="margin-left: 20px;">
-        <li>Gambar dan perhitungan teknis untuk prasarana</li>
+        <li>Gambar dan perhitungan teknis bangunan prasarana</li>
       </ul>
     </li>
   </ol>
@@ -234,15 +233,15 @@
   <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Tahapan Pengurusan:</h3>
   <ol style="margin-left: 20px;">
     <li>Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</li>
-    <li>Mendaftar dan mengunggah dokumen ke
-      <a href="https://simbg.pu.go.id" target="_blank" style="color: #007bff;">https://simbg.pu.go.id</a>
+    <li>Mendaftar, membuat permohonan, dan mengunggah dokumen ke
+       https://simbg.pu.go.id
     </li>
-    <li>Verifikasi oleh operator dinas teknis</li>
+    <li>Menindaklanjuti hasil verifikasi operator Dinas Teknis</li>
     <li>Penjadwalan konsultasi permohonan</li>
-    <li>Konsultasi bersama TPA/TPT</li>
-    <li>Revisi dokumen sesuai masukan TPA/TPT</li>
+    <li>Melakukan konsultasi bersama TPA/TPT</li>
+    <li>Merevisi dokumen sesuai masukan dan saran teknis TPA/TPT</li>
     <li>TPA/TPT menyetujui dokumen perencanaan</li>
-    <li>Unggah dokumen final, validasi, dan perhitungan retribusi</li>
+    <li>Pengunggahan dokumen final, validasi teknis, dan perhitungan retribusi</li>
     <li>Pembayaran retribusi melalui bank persepsi atau mobile banking</li>
     <li>Penerbitan dokumen PBG oleh DPMPTSP</li>
   </ol>
