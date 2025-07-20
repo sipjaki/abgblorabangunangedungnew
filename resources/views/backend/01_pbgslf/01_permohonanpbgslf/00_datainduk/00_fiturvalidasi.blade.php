@@ -1,3 +1,6 @@
+@canany(['superadmin', 'admin'])
+
+
 {{-- <table class="table table-bordered" style="font-size: 13px; text-align: center;">
     <thead>
         <tr>
@@ -877,3 +880,6 @@
         cursor: not-allowed;
     }
 </style>
+
+
+@endcanany
