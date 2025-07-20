@@ -285,10 +285,10 @@ th {
 <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
   <i class="bi bi-geo-alt me-3" style="font-size: 18px;"></i>
-  Alamat Bangunan Gedung Pemohon
+  Alamat Bangunan Gedung
 </h5>
 
-<div class="row g-3">
+<div class="row g-3" style="margin-top:-20px;">
   {{-- Kecamatan --}}
   <div class="col-md-6">
     <div class="mb-3">
