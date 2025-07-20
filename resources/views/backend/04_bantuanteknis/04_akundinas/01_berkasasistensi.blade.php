@@ -317,7 +317,7 @@ th {
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
             <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td>
-            <td>{{ $item->dinas->user->name ?? '-' }}</td>
+            <td>{{ $item->dinas->name ?? '-' }}</td>
             <td>{{ $item->no_telepon ?? '-' }}</td>
             <td>{{ $item->nosurat ?? '-' }}</td>
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
