@@ -77,6 +77,12 @@ Route::get('/slffungsiusaha', [FedashboardController::class, 'slffungsiusaha']);
 Route::get('/slfmenara', [FedashboardController::class, 'slfmenara']);
 
 // 02_ MENU PENDATAAN BANGUNAN GEDUNG
+
+Route::get('/datanewpendataanbg', [PendataanBangunanGedungController::class, 'datanewpendataanbg'])->middleware('auth')->name('datanewpendataanbg');
+// Route::post('/datanewpeniliknew', [PenilikbangunanController::class, 'datanewpeniliknew'])->middleware('auth')->name('datanewpeniliknew.create');
+
+
+
 Route::get('/bependataanbangunangedung', [PendataanBangunanGedungController::class, 'bependataanbangunangedung'])->middleware('auth')->name('bependataanbangunangedung');
 
 Route::get('/bebangunangedung', [PendataanBangunanGedungController::class, 'bebangunangedung'])->middleware('auth')->name('bebangunangedung');

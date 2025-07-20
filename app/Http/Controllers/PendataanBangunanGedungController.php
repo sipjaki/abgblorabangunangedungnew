@@ -13,6 +13,8 @@ use App\Models\databgpeprofilbangunangedung;
 use App\Models\databgstatus;
 use App\Models\databgstrukturbangunan;
 use App\Models\databgtanah;
+use App\Models\kecamatanblora;
+use App\Models\kelurahandesa;
 use App\Models\kepemilikanbangunangedung;
 use App\Models\pbgslfbangunan;
 use Illuminate\Support\Facades\Auth;
@@ -980,6 +982,28 @@ public function bedatabgstatusbangunanupdatenew(Request $request, $id)
 
     session()->flash('update', 'Data berhasil diperbarui!');
     return redirect()->back();
+}
+
+public function datanewpendataanbg(Request $request)
+{
+    // Ambil user login
+    $user = Auth::user();
+    $kecamatanList = kecamatanblora::all();
+        $datakelurahan = kelurahandesa::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
+
+        if ($request->ajax() && $request->has('kecamatan_id')) {
+            $desa = kelurahandesa::where('kecamatanblora_id', $request->kecamatan_id)->get();
+            return response()->json($desa);
+        }
+
+
+        // Kirim data ke view tanpa ambil dari database bantuanhibahbg
+        return view('backend.02_pendataanbangunangedung.00_dataindukpendataanbg', [
+            'title' => 'Buat Data Baru Pendataan Bangunan Gedung',
+            'user' => $user,
+            'datakelurahan' => $datakelurahan,
+        'kecamatanList' => $kecamatanList
+    ]);
 }
 
 
