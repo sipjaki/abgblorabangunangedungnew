@@ -500,28 +500,31 @@ th {
 
 
     {{-- 6. Catatan --}}
-    {{-- CATATAN --}}
+    {{-- CATATAN & TABEL PENGAWAS --}}
 @php
-    // Hitung jumlah pengawas yang tidak kosong
-    $jumlahPengawas = 0;
+    // Kumpulkan data pengawas yang ada
+    $listPengawas = [];
     for ($i = 1; $i <= 12; $i++) {
-        if (!empty($surat->tpatpt->{'pengawas'.$i}->namalengkap ?? null)) {
-            $jumlahPengawas++;
+        $nama = $surat->tpatpt->{'pengawas'.$i}->namalengkap ?? null;
+        if (!empty($nama)) {
+            $listPengawas[] = [
+                'no' => $i,
+                'pengawas' => [
+                    1 => 'M. ARIF HIDAYAT, ST',
+                    2 => 'ANEX FACHRIAN ST. MT.'
+                ][$i] ?? '',
+                'tpa' => $nama
+            ];
         }
     }
-
-    // Jika tidak ada, set minimal 1 agar tidak error
-    $jumlahPengawas = max($jumlahPengawas, 1);
-
-    // Hitung lebar kolom catatan
-    $lebarCatatan = 100 - ($jumlahPengawas * 8); // 8% per kolom pengawas
+    $jumlahBaris = count($listPengawas);
 @endphp
 
 <p style="margin-top: 5px;"><strong>CATATAN:</strong></p>
-<div style="border: 1px solid #000; min-height: 140px; padding: 8px; margin-top:-15px; width: {{ $lebarCatatan }}%; display: inline-block; vertical-align: top;"></div>
+<div style="border: 1px solid #000; min-height: {{ 140 + (12 - $jumlahBaris) * 24 }}px; padding: 8px; margin-top:-15px;"></div>
+<br>
 
-{{-- TABEL PENGAWAS --}}
-<table style="width: {{ 100 - $lebarCatatan }}%; border-collapse: collapse; font-size: 12px; display: inline-block; vertical-align: top;">
+<table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-top: -15px;">
     <thead>
         <tr>
             <th style="border: 1px solid #000; text-align: center; padding: 3px; width:200px;">Pemohon</th>
@@ -532,23 +535,17 @@ th {
         </tr>
     </thead>
     <tbody>
-        @for ($i = 1; $i <= 12; $i++)
-            @php
-                $pengawas = $surat->tpatpt->{'pengawas'.$i}->namalengkap ?? null;
-            @endphp
-            @if (!empty($pengawas))
-                <tr>
-                    {{-- Pemohon hanya ditampilkan pada baris pertama --}}
-                    @if ($i == 1)
-                        <td style="border: 1px solid #000; padding: 3px;" rowspan="{{ $jumlahPengawas }}"></td>
-                    @endif
-                    <td style="border: 1px solid #000; padding: 3px;">{{ $i }}. {{ ['M. ARIF HIDAYAT, ST', 'ANEX FACHRIAN ST. MT.'][$i - 1] ?? '' }}</td>
-                    <td style="border: 1px solid #000; padding: 3px;"></td>
-                    <td style="border: 1px solid #000; padding: 3px;">{{ $i }}. {{ $pengawas }}</td>
-                    <td style="border: 1px solid #000; padding: 3px;"></td>
-                </tr>
-            @endif
-        @endfor
+        @foreach ($listPengawas as $index => $row)
+            <tr>
+                @if ($index === 0)
+                    <td style="border: 1px solid #000; padding: 3px;" rowspan="{{ $jumlahBaris }}"></td>
+                @endif
+                <td style="border: 1px solid #000; padding: 3px;">{{ $row['no'] }}. {{ $row['pengawas'] }}</td>
+                <td style="border: 1px solid #000; padding: 3px;"></td>
+                <td style="border: 1px solid #000; padding: 3px;">{{ $row['no'] }}. {{ $row['tpa'] }}</td>
+                <td style="border: 1px solid #000; padding: 3px;"></td>
+            </tr>
+        @endforeach
     </tbody>
 </table>
 
