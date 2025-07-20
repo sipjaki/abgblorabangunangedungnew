@@ -453,24 +453,15 @@
 
 <div class="container" style="margin-top: -50px;">
     <div class="stats-grid" style="display: flex; flex-wrap: wrap; gap: 16px;">
-        <div class="stat-card">
-            <div class="stat-number">
-               {{
-    ($jumlahDataIdSatu ?? 0) +
-    ($jumlahDataIdDua ?? 0) +
-    ($jumlahDataIdTiga ?? 0) +
-    ($jumlahDataIdEmpat ?? 0) +
-    ($jumlahDataIdLima ?? 0) +
-    ($jumlahDataIdEnam ?? 0) +
-    ($jumlahDataIdTujuh ?? 0) +
-    ($jumlahDataIdDelapan ?? 0)
-}}
+<div class="stat-card">
+    <div class="stat-number">
+        {{ $jumlahDataTotal ?? 0 }}
+    </div>
+    <div class="stat-label" style="color: navy;">
+        <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Bangunan Gedung
+    </div>
+</div>
 
-            </div>
-            <div class="stat-label" style="color: navy;">
-                <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Permohonan
-            </div>
-        </div>
 {{--
         <div class="stat-card">
             <div class="stat-number">

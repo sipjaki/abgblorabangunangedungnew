@@ -117,7 +117,6 @@ public function databangunangedung(Request $request)
           // Menghitung nomor urut mulai
             // $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
 
-
     // Ambil data user saat ini
     $user = Auth::user();
 
@@ -209,6 +208,9 @@ public function bependataanbangunangedung(Request $request)
 {
     $user = Auth::user();
     $perPage = $request->input('perPage', 20);
+
+    $jumlahDataTotal = databgkepemilikan::count();
+
 
     // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
     $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
@@ -331,6 +333,7 @@ $jumlahDataIdLima_terbit     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper
         // 'data' => $dataTanpaIdSatu,
         'user' => $user,
 
+        'jumlahDataTotal' => $jumlahDataTotal,
         'jumlahDataIdSatu_terbit' => $jumlahDataIdSatu_terbit,
         'jumlahDataIdDua_terbit' => $jumlahDataIdDua_terbit,
         'jumlahDataIdTiga_terbit' => $jumlahDataIdTiga_terbit,
