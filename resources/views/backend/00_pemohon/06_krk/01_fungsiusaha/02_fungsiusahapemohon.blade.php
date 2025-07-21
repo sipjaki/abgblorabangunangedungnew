@@ -217,6 +217,7 @@ th {
         <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK
     </th>
 </tr>
+
                             </thead>
                               <tbody id="tableBody">
                                 @forelse ($data as $item)
