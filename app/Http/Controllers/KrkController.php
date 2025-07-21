@@ -1311,6 +1311,29 @@ $datagsbkabblora = rencanagsbblora::withoutGlobalScopes()
     ]);
 }
 
+public function perpengesahanhuniannew($id)
+{
+    // Ambil data KRK Usaha berdasarkan ID atau gagal 404
+    $datakrkusaha = krkhunian::findOrFail($id);
+
+    // Ambil semua data GSB kabupaten dari rencanagsbblora tanpa scope/filter
+$datagsbkabblora = rencanagsbblora::withoutGlobalScopes()
+    ->orderByRaw("COALESCE(ruasjalan, '') ASC")
+    ->get();
+
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Kirimkan data ke view
+    return view('backend.06_krk.02_berkasfungsihunian.04_berkaskrkhuniansuratnew', [
+        'title' => 'Lembar Pengesahan Permohonan KRK Fungsi Hunian',
+        'data' => $datakrkusaha,
+        'datagsb' => $datagsbkabblora,
+        'user' => $user,
+    ]);
+}
+
 
 public function perpengesahanhuniancreate(Request $request, $id)
 {

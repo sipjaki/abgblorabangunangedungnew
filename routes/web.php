@@ -298,6 +298,7 @@ Route::put('/valberkashunian2/{id}', [KrkController::class, 'valberkashunian2'])
 Route::post('/berkashunianval/{id}/validate', [KrkController::class, 'berkashunianval'])->name('berkashunianval.validate');
 
 Route::get('/perpengesahanhunian/{id}', [KrkController::class, 'perpengesahanhunian'])->name('permohonan.perpengesahanhunian');
+Route::get('/perpengesahanhuniannew/{id}', [KrkController::class, 'perpengesahanhuniannew'])->name('perpengesahanhuniannew');
 Route::post('/perpengesahanhuniancreate/{id}', [KrkController::class, 'perpengesahanhuniancreate'])->name('permohonan.pengesahanhuniancreate');
 
 Route::get('/perpengesahanhunianber/{id}', [KrkController::class, 'perpengesahanhunianber'])->name('berkas.perpengesahanhunianber');
