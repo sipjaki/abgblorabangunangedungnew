@@ -152,14 +152,28 @@ th {
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+
+@canany(['pemohon'])
 <button
-    type="button"
-    onclick="window.location.href='{{ url('/bekrkusaha') }}';"
-    class="button-newvalidasi ml-2 text-black cursor-pointer"
-    style="border-radius: 15px; padding: 8px 16px; background-color: white; border: none; display: inline-flex; align-items: center;"
+type="button"
+onclick="window.location.href='{{ url('/bekrkusahapemohon') }}';"
+class="button-newvalidasi ml-2 text-black cursor-pointer"
+style="border-radius: 15px; padding: 8px 16px; background-color: white; border: none; display: inline-flex; align-items: center;"
 >
-    <i class="bi bi-arrow-left mr-2"></i> Kembali
+<i class="bi bi-arrow-left mr-2"></i> Kembali
 </button>
+@endcanany
+
+@canany(['superadmin', 'admin'])
+<button
+type="button"
+onclick="window.location.href='{{ url('/bekrkusaha') }}';"
+class="button-newvalidasi ml-2 text-black cursor-pointer"
+style="border-radius: 15px; padding: 8px 16px; background-color: white; border: none; display: inline-flex; align-items: center;"
+>
+<i class="bi bi-arrow-left mr-2"></i> Kembali
+</button>
+@endcanany
 
 
 
