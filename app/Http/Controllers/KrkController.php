@@ -2793,16 +2793,28 @@ public function bekrkusahaperbaikan($id)
     ]);
 }
 
-
 public function bekrkusahaperbaikannewupdate(Request $request, $id)
 {
     $bantuan = krkusaha::findOrFail($id);
 
-    // Validasi input
+    // Validasi input, tambahkan atribut baru sesuai kebutuhan validasi
     $request->validate([
+        'nomordinasasal' => 'nullable|string|max:255',
+        'perorangan' => 'nullable|string|max:255',
+        'perusahaan' => 'nullable|string|max:255',
+        'nik' => 'nullable|string|max:16',
+        'koordinatlokasi' => 'nullable|string',
+        'tanggalpermohonan' => 'nullable|date',
+        'notelepon' => 'nullable|string',
         'luastanah' => 'required|numeric',
-        'jumlahlantai' => 'required|string',
+        'jumlahlantai' => 'required|string|max:10',
+        'rt' => 'nullable|string|max:10',
+        'rw' => 'nullable|string|max:10',
+        'kabupaten' => 'nullable|string|max:255',
+        'lokasibangunan' => 'nullable|string',
+        'alamatpemohon' => 'nullable|string',
 
+        // Validasi file yang sudah ada
         'ktp' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
         'npwp' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
         'sertifikattanah' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
@@ -2813,11 +2825,23 @@ public function bekrkusahaperbaikannewupdate(Request $request, $id)
         'tandatangan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
     ]);
 
-    // Update input utama
+    // Update data utama, semua atribut baru kamu masukkan di sini
+    $bantuan->nomordinasasal = $request->nomordinasasal;
+    $bantuan->perorangan = $request->perorangan;
+    $bantuan->perusahaan = $request->perusahaan;
+    $bantuan->nik = $request->nik;
+    $bantuan->koordinatlokasi = $request->koordinatlokasi;
+    $bantuan->tanggalpermohonan = $request->tanggalpermohonan;
+    $bantuan->notelepon = $request->notelepon;
     $bantuan->luastanah = $request->luastanah;
     $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->rt = $request->rt;
+    $bantuan->rw = $request->rw;
+    $bantuan->kabupaten = $request->kabupaten;
+    $bantuan->lokasibangunan = $request->lokasibangunan;
+    $bantuan->alamatpemohon = $request->alamatpemohon;
 
-    // Mapping dokumen ke path
+    // Mapping dokumen ke path (sudah kamu punya, saya biarkan)
     $dokumenMap = [
         'ktp' => '06_krk/01_krkusaha/01_ktp',
         'npwp' => '06_krk/01_krkusaha/02_npwp',
@@ -2843,7 +2867,7 @@ public function bekrkusahaperbaikannewupdate(Request $request, $id)
         }
     }
 
-    // Reset status verifikasi agar diverifikasi ulang
+    // Reset status verifikasi agar diverifikasi ulang (sudah lengkap)
     $bantuan->verifikasiktp = null;
     $bantuan->verifikasinpwp = null;
     $bantuan->verifikasisert = null;
