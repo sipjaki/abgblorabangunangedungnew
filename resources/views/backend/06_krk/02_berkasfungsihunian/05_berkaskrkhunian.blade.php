@@ -346,7 +346,7 @@ th {
                     </tr>
                     <tr>
                         <td style="text-align: center;">10</td>
-                        <td>(KLB) Koefisien Luas Bangunan </td>
+                        <td>(KDB) Koefisien Dasar Bangunan </td>
                         <td style="text-align: center;">:</td>
                         <td>{{ $item->klb ?? '-' }}</td>
                     </tr>
