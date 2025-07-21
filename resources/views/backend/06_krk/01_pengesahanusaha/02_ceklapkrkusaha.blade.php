@@ -190,7 +190,7 @@ th {
         @endcanany --}}
 
                         @canany(['superadmin', 'admin'])
-<button class="button-hijau" type="button"
+<button class="button-baru" type="button"
     onclick="location.href='/doklapkrkusahacreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi

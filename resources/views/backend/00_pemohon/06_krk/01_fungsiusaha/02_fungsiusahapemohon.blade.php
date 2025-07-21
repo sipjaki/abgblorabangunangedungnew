@@ -221,10 +221,10 @@ th {
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-drafting-compass"></i> Site Plan</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-pen-fancy"></i> Tanda Tangan</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Informasi KRK</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Informasi KRK</th> --}}
                              {{-- <th style="background-color: #ADD8E6;">
     <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
 </th> --}}
@@ -377,13 +377,13 @@ th {
     }
 </script>
 
-  <td style="text-align: center;">
+  {{-- <td style="text-align: center;">
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
                     class="button-baru">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
-            </td>
+            </td> --}}
 
             {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
@@ -581,7 +581,7 @@ th {
         }
     });
 </script>
-<td style="text-align: center; vertical-align: middle; width: 100%;">
+{{-- <td style="text-align: center; vertical-align: middle; width: 100%;"> --}}
     {{-- <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
         @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
@@ -625,7 +625,7 @@ th {
 @endif --}}
 
 
-@if($subdata->where('krkusaha_id', $item->id)->count() > 0)
+{{-- @if($subdata->where('krkusaha_id', $item->id)->count() > 0)
     <a href="{{ route('permohonan.permohonanpengesahanusahaber', $item->id) }}"
         class="button-hijau">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Pengesahan
@@ -639,7 +639,7 @@ th {
 @endif
 
     </div>
-</td>
+</td> --}}
 
 <!-- Tombol Validasi -->
 {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
@@ -728,7 +728,7 @@ th {
 <td style="text-align: center; vertical-align: middle; width: 100%;">
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
-
+{{--
 @if($subdata->where('krkusaha_id', $item->id)->count() > 0)
     <a href="{{ route('permohonan.permohonankrkusahafinal', $item->id) }}"
         class="button-hijau">
@@ -741,7 +741,7 @@ th {
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Berkas Final Belum Ada
     </button>
-@endif
+@endif --}}
 
           <a href="{{ route('dokuploadkrkusaha', $item->id) }}"
                     class="button-baru">
