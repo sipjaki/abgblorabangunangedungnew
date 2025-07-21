@@ -489,7 +489,7 @@ public function perpengesahankrkhunian(Request $request, $id)
     $pengesahan->save();
 
     return redirect('/bekrkhunian')->with('pengesahankrk',
-        'Surat Permohonan KRK berhasil disetujui!');
+        'Surat KRK Hunian berhasil disetujui!');
 }
 
 
