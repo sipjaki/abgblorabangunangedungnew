@@ -374,7 +374,7 @@ th {
     @csrf
     @method('DELETE')
     <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-        <button type="button" class="button-merah" style="cursor: pointer; color:black;"
+        <button type="button" class="button-merah" style="cursor: pointer; color:white;"
             data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $item->id }}">
             <i class="bi bi-trash" style="margin-right: 5px;"></i> Hapus Permohonan
         </button>
