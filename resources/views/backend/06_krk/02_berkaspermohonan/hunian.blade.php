@@ -179,7 +179,7 @@ th {
 
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-kembali" style="color: black;">
+    <button class="button-newvalidasi" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
@@ -266,10 +266,7 @@ th {
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkhunianpermohonan.show', $item->id) }}"
-                    class="button-validasinew"
-                    style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+                    class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
@@ -302,7 +299,7 @@ th {
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi1 == 'lolos')
     <button
-        class="button-lolos"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; cursor: not-allowed;"
         disabled
@@ -310,11 +307,11 @@ th {
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
     </button>
     @elseif($item->verifikasi1 == 'dikembalikan')
-        <button class="button-dikembalikan" type="button" onclick="openModal({{ $item->id }})" style="background-color: #f8f8fa;">
+        <button class="button-merah" type="button" onclick="openModal({{ $item->id }})" style="background-color: #f8f8fa;">
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-validasinew" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -385,7 +382,7 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkhunian.show', $item->id) }}"
-                    class="button-validasinew"
+                    class="button-baru"
                     style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
@@ -397,7 +394,7 @@ th {
             <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
     <button
-        class="button-lolos"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; color: white; cursor: not-allowed;"
         disabled
@@ -405,11 +402,11 @@ th {
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
     </button>
   @elseif($item->verifikasi2 == 'belum')
-    <button class="button-dikembalikan" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+    <button class="button-merah" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-validasinew" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+    <button class="button-newvalidasi" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
@@ -489,7 +486,7 @@ th {
                                 <!-- Tombol Triger Modal -->
                                 <button type="button"
                                     onclick="openValidationModal({{ $item->id }})"
-                                    class="button-dikembalikan"
+                                    class="button-merah"
                                     style="border-radius: 15px; padding: 8px 16px; background-color: #dc3545; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#dc3545'; this.style.border='1px solid #dc3545';"
                                     onmouseout="this.style.backgroundColor='#dc3545'; this.style.color='black'; this.style.border='none';">
@@ -497,7 +494,7 @@ th {
                                 </button>
                                 @else
                                 <!-- Tombol SUDAH Validasi -->
-                                <button class="button-lolos"
+                                <button class="button-hijau"
                                     style="border-radius: 15px; padding: 8px 16px; background-color: #28a745; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#28a745'; this.style.border='1px solid #28a745';"
                                     onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white'; this.style.border='none';">
