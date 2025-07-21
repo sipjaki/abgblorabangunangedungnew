@@ -98,7 +98,7 @@
 
         <div class="container-fluid">
             <!--begin::Row-->
-            <div class="putih row" style="margin-right: 10px; margin-left:10px;">
+            <div class="row" style="margin-right: 10px; margin-left:10px;">
                 <!-- /.card -->
                 <div class="card mb-4">
                     {{-- <div class="card-header">
@@ -150,7 +150,7 @@
 
 
                         <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                           {{-- <div style="position: relative; display: inline-block; margin-right:10px;">
+                           <div style="position: relative; display: inline-block; margin-right:10px;">
                                <input type="search" id="searchInput" placeholder="Cari Pemohon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                                <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                            </div>
@@ -176,9 +176,9 @@
                                    .catch(error => console.error("Error fetching search results:", error));
                            }
 
-                                   </script> --}}
+                                   </script>
 <a href="javascript:history.back();" style="text-decoration: none;">
-    <button class="button-validasinew">
+    <button class="button-kembali">
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
 </a>
@@ -194,7 +194,7 @@
 <div class="container">
     <div class="card">
         <div class="card-body p-4">
-            <form action="{{ route('perpengesahankrkhunian', ['id' => $data->id]) }}" method="POST">
+            <form action="{{ route('permohonan.pengesahanhuniancreate', ['id' => $data->id]) }}" method="POST">
                 @csrf
 
                 @if($errors->any())
@@ -207,8 +207,10 @@
                 </div>
                 @endif
 
+                <input type="hidden" name="krkhunian_id" value="{{ $krkhunian_id ?? '' }}">
+
                 <!-- Nomor Registrasi KRK -->
-                    <div class="form-group row mb-4">
+                <div class="form-group row mb-4">
                     <label for="nomor_registrasi" class="col-md-4 col-form-label">
                         <i class="fas fa-id-card-alt"></i> Nomor Registrasi KRK
                     </label>
@@ -363,7 +365,7 @@
                 <!-- GSB -->
                 <div class="form-group row mb-4" id="gsb-wrapper" style="display: none;">
                     <label class="col-md-4 col-form-label">
-                        <i class="fas fa-cogs"></i> GSB (Garis Sempadan Bangunan)
+                        <i class="fas fa-cogs"></i> GSB
                     </label>
                     <div class="col-md-8">
                         <div class="input-group">
@@ -388,70 +390,10 @@
                     @enderror
                 </div>
 
-<div class="form-group row mb-4">
-    <label for="kdb" class="col-md-4 col-form-label">
-        <i class="fas fa-cogs"></i> KLB (Koefisien Lantai Bangunan)
-    </label>
-    <div class="col-md-8">
-        <div class="input-group">
-            <input type="text" class="form-control" id="kdb" name="kdb" readonly>
-            <div class="input-group-append">
-                <span class="input-group-text">M²</span>
-            </div>
-        </div>
-    </div>
-    @error('kdb')
-    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const luastanah = {{ $data->luastanah ?? 0 }};
-        const kepadatanSelect = document.getElementById('kepadatan');
-        const luasbangunanInput = document.getElementById('luasbangunan');
-        const klbInput = document.getElementById('klb');
-        const kdbInput = document.getElementById('kdb'); // hasil akhir
-
-        function hitungLuasDanKDB() {
-            const kepadatan = kepadatanSelect.value;
-            let persen = 0;
-            let labelPersen = '';
-
-            if (kepadatan === 'RENDAH') {
-                persen = 0.45;
-                labelPersen = '45%';
-            } else if (kepadatan === 'SEDANG') {
-                persen = 0.60;
-                labelPersen = '60%';
-            } else if (kepadatan === 'TINGGI') {
-                persen = 0.75;
-                labelPersen = '75%';
-            }
-
-            const luasbangunan = Math.round(luastanah * persen);
-            const kdb = persen;
-
-            // Set nilai Luas & KLB
-            luasbangunanInput.value = luasbangunan;
-            klbInput.value = labelPersen;
-
-            // Hitung KLB (hasil dari luas bangunan * KDB numerik)
-            const hasilKLB = Math.round(luasbangunan * kdb);
-            kdbInput.value = hasilKLB;
-        }
-
-        // Trigger on load dan saat kepadatan berubah
-        kepadatanSelect.addEventListener('change', hitungLuasDanKDB);
-        hitungLuasDanKDB();
-    });
-</script>
-
-
                 <!-- KDH -->
                 <div class="form-group row mb-4">
                     <label for="kdh" class="col-md-4 col-form-label">
-                        <i class="fas fa-cogs"></i> KDH (Koefisien Dasar Hijau)
+                        <i class="fas fa-cogs"></i> KDH
                     </label>
                     <div class="col-md-8">
                         <select class="form-control" id="kdh" name="kdh" required>
@@ -459,10 +401,10 @@
                             <option value="10">10%</option>
                             <option value="20">20%</option>
                             <option value="30">30%</option>
-                            <option value="40">40%</option>
+                            {{-- <option value="40">40%</option>
                             <option value="50">50%</option>
                             <option value="60">60%</option>
-                            <option value="70">70%</option>
+                            <option value="70">70%</option> --}}
                         </select>
                     </div>
                     @error('kdh')
@@ -496,10 +438,10 @@
                             klb.value = '45%';
                         } else if (kepadatan === 'SEDANG') {
                             jmlLantai.value = '4 Lantai';
-                            klb.value = '60%';
+                            klb.value = '55%';
                         } else if (kepadatan === 'TINGGI') {
                             jmlLantai.value = '2 - 8 Lantai';
-                            klb.value = '75%';
+                            klb.value = '70%';
                         }
                     });
 
@@ -521,39 +463,11 @@
                         });
                     });
                 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const klb = document.getElementById('klb'); // input persen, misal "45%"
-        const luasbangunan = document.getElementById('luasbangunan'); // input angka
-        const kdb = document.getElementById('kdb'); // hasil akhir
-
-        function hitungKDB() {
-            let persen = klb.value.replace('%', '').trim(); // buang %
-            let luas = parseFloat(luasbangunan.value);
-
-            if (!isNaN(persen) && !isNaN(luas)) {
-                let hasil = (parseFloat(persen) / 100) * luas;
-                kdb.value = Math.round(hasil); // bisa pakai toFixed(2) kalau mau pakai desimal
-            } else {
-                kdb.value = '';
-            }
-        }
-
-        // Jalankan awal saat halaman selesai dimuat
-        hitungKDB();
-
-        // Jalankan ulang kalau salah satu berubah
-        klb.addEventListener('input', hitungKDB);
-        luasbangunan.addEventListener('input', hitungKDB);
-    });
-</script>
-
-
 
       <!-- Tombol Submit -->
 <!-- Tombol trigger modal -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-    <button class="button-baru" type="button" onclick="openPengesahanModal()">
+    <button class="button-create" type="button" onclick="openPengesahanModal()">
         <i class="fa fa-check-circle" style="margin-right: 5px;"></i>
         <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
     </button>
