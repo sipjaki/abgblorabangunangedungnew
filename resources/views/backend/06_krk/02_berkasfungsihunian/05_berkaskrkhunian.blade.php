@@ -410,8 +410,7 @@ th {
 
 {{-- Tombol download PDF di kanan atas bawah --}}
 <div style="display: flex; justify-content: flex-end; padding: 10px;">
-    <button id="downloadPdfBtn" class="button-baru"
-        style="padding: 8px 16px; border-radius: 15px; border: none; cursor: pointer; ">
+    <button id="downloadPdfBtn" class="button-baru">
         <i class="bi bi-download" style="margin-right:6px;"></i> Download PDF
     </button>
 </div>
