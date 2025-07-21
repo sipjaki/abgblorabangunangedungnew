@@ -382,11 +382,8 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkhunian.show', $item->id) }}"
-                    class="button-baru"
-                    style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
-                <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
+                    class="button-baru">
+                    <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
             </td>
@@ -591,12 +588,8 @@ th {
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
         @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
-    <button class="button-dikembalikan"
+    <button class="button-merah"
         disabled
-        style="background-color: #dc3545; color: white; border: none; padding: 10px 25px;
-               border-radius: 15px; font-size: 14px; cursor: not-allowed;
-               display: flex; align-items: center; justify-content: center;
-               opacity: 0.6;"
         title="Silakan validasi terlebih dahulu"
     >
         <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Pengesahan
