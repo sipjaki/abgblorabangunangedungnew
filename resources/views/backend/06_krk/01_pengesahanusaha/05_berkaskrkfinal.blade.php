@@ -310,7 +310,7 @@
                                         <!-- Second Page -->
                                         <div class="halaman" style="width: 21cm; height: 29.7cm; margin: auto; background: white; padding: 2cm; box-sizing: border-box; border: 1px solid black;">
                                             <!-- Letterhead (same as first page) -->
-                                            <div class="kop" style="text-align: center; border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 20px;">
+                                            {{-- <div class="kop" style="text-align: center; border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 20px;">
                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" style="float: left; height: 80px;">
                                                 <div style="display: inline-block;">
                                                     <h3 style="margin: 2px 0; font-size: 16px;">PEMERINTAH KABUPATEN BLORA</h3>
@@ -319,7 +319,7 @@
                                                     <h3 style="margin: 2px 0; font-size: 16px;">BLORA 58214</h3>
                                                 </div>
                                                 <div style="clear: both;"></div>
-                                            </div>
+                                            </div> --}}
 
                                             <!-- Content for second page -->
                                             <div class="content" style="font-size: 12px;">
