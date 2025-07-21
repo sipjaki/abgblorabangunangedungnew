@@ -463,7 +463,7 @@ th {
 
     <div class="mb-3">
     <label class="form-label" for="tandatangan">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Tanda Tangan (PDF/Jpeg)
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Permohonan KRK (PDF)
     </label>
     <input type="file" id="tandatangan" name="tandatangan" accept="application/pdf,image/jpeg,image/png,image/jpg"
         class="form-control @error('tandatangan') is-invalid @enderror"
