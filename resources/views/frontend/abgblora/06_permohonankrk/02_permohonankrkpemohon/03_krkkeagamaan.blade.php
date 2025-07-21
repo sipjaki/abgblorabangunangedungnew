@@ -845,7 +845,6 @@ document.addEventListener('DOMContentLoaded', function () {
     @enderror
 </div>
 </div>
-
     </div>
 
 
