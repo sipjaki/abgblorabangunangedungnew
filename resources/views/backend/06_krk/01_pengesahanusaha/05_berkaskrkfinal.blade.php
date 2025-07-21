@@ -278,7 +278,7 @@
                                                                     <td style="text-align: center;">7</td>
                                                                     <td style="text-align: left;" >(KLB) Koefisien Lantai Bangunan</td>
                                                                     <td style="text-align: center;">:</td>
-                                                                    <td style="text-align: left;">{{ $item->kdb ?? 'Belum Dibuatkan' }}%</td>
+                                                                    <td style="text-align: left;">{{ $item->kdb ?? 'Belum Dibuatkan' }}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="text-align: center;">8</td>
