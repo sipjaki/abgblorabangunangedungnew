@@ -254,6 +254,10 @@ Route::get('/dokuploadkrkusaha/{id}', [KrkController::class, 'dokuploadkrkusaha'
 
 Route::put('/dokuploadkrkusahanew/{id}', [KrkController::class, 'dokuploadkrkusahanew'])->middleware('auth')->name('dokuploadkrkusahanew');
 
+Route::get('/dokuploadkrkhunian/{id}', [KrkController::class, 'dokuploadkrkhunian'])->middleware('auth')->name('dokuploadkrkhunian');
+
+// Route::put('/dokuploadkrkhuniannew/{id}', [KrkController::class, 'dokuploadkrkusahanew'])->middleware('auth')->name('dokuploadkrkusahanew');
+
 
 
 Route::get('/doklapkrkusahacreate/{id}', [KrkController::class, 'doklapkrkusahacreate'])->middleware('auth')->name('doklapkrkusahacreate.create');

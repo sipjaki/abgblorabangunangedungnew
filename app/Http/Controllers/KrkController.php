@@ -3865,7 +3865,7 @@ public function dokuploadkrkusaha($id)
         $dataceklapangan = krkusahacek::where('krkusaha_id', $databantuanteknis->id)->paginate(50);
 
     return view('backend.06_krk.01_pengesahanusaha.09_uploadsuratmanual', [
-        'title' => 'Upload Dokumen Final KRK',
+        'title' => 'Upload Dokumen Final KRK Fungsi Usaha',
         'subdata' => $dataceklapangan,
         'data' => $databantuanteknis,
         'user' => Auth::user()
@@ -3908,6 +3908,26 @@ public function dokuploadkrkusahanew(Request $request, $id)
 
     session()->flash('update', 'Surat berhasil diupload!');
     return redirect()->back();
+}
+
+
+public function dokuploadkrkhunian($id)
+{
+    $databantuanteknis = krkhunian::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = krkhuniancek::where('krkusaha_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.06_krk.01_pengesahanusaha.10_uploadhunian', [
+        'title' => 'Upload Dokumen Final KRK Fungsi Hunian',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
 }
 
 }
