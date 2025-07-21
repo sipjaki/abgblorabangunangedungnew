@@ -112,7 +112,7 @@ th {
 
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-kembali"
+        <button class="button-newkembali"
                 type="button"
                 onclick="location.href='{{ route('bekrkhunianindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -176,25 +176,7 @@ th {
 @can('pemohon')
 
            <a href="/bekrkhunianpemohon">
-    <button
-  style="
-    background: linear-gradient(45deg, #6c757d, #adb5bd);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-right:10px;
-  "
-  onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-  onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
->
+    <button class="button-newvalidasi">
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
     viewBox="0 0 16 16">
     <path fill-rule="evenodd"
@@ -204,8 +186,6 @@ th {
 </button>
 
 </a>
-
-
 @endcan
 
 @can('lsppenerbit')
@@ -623,19 +603,19 @@ th {
 
 <tr>
     <td style="text-align: center;">1</td>
-    <td style="text-align: left;"><i class="bi bi-person" style="margin-right:6px;"></i> Pemohon</td>
+    <td style="text-align: left;"><i class="bi bi-person" style="margin-right:6px;"></i> Nama Akun Pemohon</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->user->name ?? '-' }}</td>
 </tr>
 <tr>
     <td style="text-align: center;">2</td>
-    <td style="text-align: left;"><i class="bi bi-person-badge" style="margin-right:6px;"></i> Perorangan</td>
+    <td style="text-align: left;"><i class="bi bi-person-badge" style="margin-right:6px;"></i> Nama Pemohon</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->perorangan ?? '-' }}</td>
 </tr>
 <tr>
     <td style="text-align: center;">3</td>
-    <td style="text-align: left;"><i class="bi bi-building" style="margin-right:6px;"></i> Perusahaan</td>
+    <td style="text-align: left;"><i class="bi bi-building" style="margin-right:6px;"></i> Nama Badan Usaha</td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->perusahaan ?? '-' }}</td>
 </tr>
@@ -1054,19 +1034,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalktp{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -1508,19 +1476,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalsertifikattanah{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -1868,19 +1824,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalBuktipbb{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -2047,19 +1991,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalValdpupr{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -2400,24 +2332,12 @@ th {
                                     {{-- DOKUMEN TANDA TANGAN --}}
                                     <tr>
                                       <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-pencil-fill"></i> Tanda Tangan
+    <i class="bi bi-pencil-fill"></i> Surat Permohonan KRK
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalTandatangan{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -2431,7 +2351,7 @@ th {
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalTandatanganLbl{{ $data->id }}">Tanda Tangan</h5>
+                                                                <h5 class="modal-title" id="modalTandatanganLbl{{ $data->id }}">Surat Permohonan KRK</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
