@@ -785,13 +785,13 @@ th {
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Berkas Final Belum Ada
     </button>
 @endif
+
+<a href="{{ route('dokuploadkrkusaha', $item->id) }}"
+    class="button-baru">
+    <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
+
+</a>
 </div>
-
-  <a href="{{ route('dokuploadkrkusaha', $item->id) }}"
-                    class="button-baru">
-                <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
-
-                </a>
 </td>
 
 
