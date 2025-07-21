@@ -284,7 +284,7 @@
                                                                     <td style="text-align: center;">8</td>
                                                                     <td style="text-align: left;">(KDB) Koefisien Dasar Bangunan</td>
                                                                     <td style="text-align: center;">:</td>
-                                                                    <td style="text-align: left;">{{ $item->klb ?? 'Belum Dibuatkan' }}%</td>
+                                                                    <td style="text-align: left;">{{ $item->klb ?? 'Belum Dibuatkan' }}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="text-align: center;">10</td>
