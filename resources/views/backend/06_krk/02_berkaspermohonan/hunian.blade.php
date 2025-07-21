@@ -655,10 +655,7 @@ th {
 
 @if($subdata->where('krkhunian_id', $item->id)->count() > 0)
     <a href="{{ route('berkas.perpengesahanhunianber', $item->id) }}"
-        class="button-lolos"
-        style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #10B981; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#10B981'; this.style.border='1px solid #10B981';"
-        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.border='none';">
+        class="button-hijau">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Pengesahan
     </a>
 @else
