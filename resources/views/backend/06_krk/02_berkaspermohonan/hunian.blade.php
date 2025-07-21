@@ -586,13 +586,14 @@ th {
 </script>
 <td style="text-align: center; vertical-align: middle; width: 100%;">
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
+
         @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
     <button class="button-merah"
         disabled
         title="Silakan validasi terlebih dahulu"
     >
-        <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Pengesahan
+        <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Otomatis
     </button>
 @else
     @if($subdata->where('krkhunian_id', $item->id)->count() > 0)
@@ -605,17 +606,51 @@ th {
                    opacity: 0.7;"
             title="Dokumen pengesahan sudah ada"
         >
-            <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Pengesahan
+            <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Otomatis
         </button>
     @else
         <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
         <a href="{{ route('permohonan.perpengesahanhunian', $item->id) }}" style="text-decoration: none;">
             <button class="button-hijau">
-                <i class="bi bi-pencil-fill" style="margin-right: 8px;"></i> Pengesahan
+                <i class="bi bi-pencil-fill" style="margin-right: 8px;"></i> Otomatis
             </button>
         </a>
     @endif
-@endif
+
+    @endif
+
+
+    @if (!$item->is_validated)
+    <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
+    <button class="button-merah"
+        disabled
+        title="Silakan validasi terlebih dahulu"
+    >
+        <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
+    </button>
+@else
+    @if($subdata->where('krkhunian_id', $item->id)->count() > 0)
+        <!-- SUDAH DIVALIDASI tapi data pengesahan sudah ada, tombol hijau tapi nonaktif -->
+        <button class="button-download"
+            disabled
+            style="border: none; padding: 10px 25px;
+                   border-radius: 15px; font-size: 14px; cursor: not-allowed;
+                   display: flex; align-items: center; justify-content: center;
+                   opacity: 0.7;"
+            title="Dokumen pengesahan sudah ada"
+        >
+            <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
+        </button>
+    @else
+        <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
+        <a href="{{ route('permohonan.perpengesahanhunian', $item->id) }}" style="text-decoration: none;">
+            <button class="button-hijau">
+                <i class="bi bi-pencil-fill" style="margin-right: 8px;"></i> Manual
+            </button>
+        </a>
+    @endif
+
+    @endif
 
 
 @if($subdata->where('krkhunian_id', $item->id)->count() > 0)
