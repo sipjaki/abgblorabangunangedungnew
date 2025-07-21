@@ -33,6 +33,7 @@ return new class extends Migration
             $table->text('lokasibangunan')->nullable();
             $table->text('alamatpemohon')->nullable();
             $table->string('suratupload')->nullable(); // UPLOAD BARU BERKAS
+            $table->string('suratuploadmanual')->nullable(); // UPLOAD BARU BERKAS
 
             // berkas yang di upload
             $table->string('ktp')->nullable();

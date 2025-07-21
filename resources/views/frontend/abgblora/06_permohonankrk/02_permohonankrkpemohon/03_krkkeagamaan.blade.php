@@ -800,35 +800,25 @@ document.addEventListener('DOMContentLoaded', function () {
         @enderror
     </div>
 
-    <div class="flex flex-col w-1/3" style="margin-top:-40px;">
-        <label for="siteplan" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-            <!-- Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span class="text-sm">Upload Tanda Tangan | File <br> jpg, jpeg, .pdf Max 10 MB </span>
-        </label>
-        <input id="tandatangan" name="tandatangan" type="file" accept="application/pdf,image/*" style="margin-right:25px;"
-            value="{{ old('tandatangan') }}"
-            class="border border-[#ccc] rounded-md p-2 mb-2 @error('tandatangan') border-red-500 @enderror"
-            onchange="previewFile(this, 'tandatanganPreview')" />
-        <div id="tandatanganPreview" class="mt-1">
-            @if(session('tandatangan_temp'))
-                <div class="mt-1 text-sm text-gray-700">
-                    {{-- File sudah diunggah: --}}
-                    <a href="{{ Storage::url(session('tandatangan_temp')) }}" target="_blank" class="text-blue-500 underline"></a>
-                </div>
-            @elseif(old('tandatangan'))
-                <div class="mt-1 text-sm text-gray-700">
-                    File sudah dipilih: {{ old('tandatangan') }}
-                </div>
-            @endif
-        </div>
-        @error('tandatangan')
-            <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-        @enderror
-    </div>
+    <div class="flex flex-col w-1/3" style="margin-top: -40px;">
+    <!-- Label Upload -->
+    <label for="tandatangan" class="font-semibold text-[#030303] flex items-start gap-2 mb-2">
+        <!-- Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600 mt-1" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+
+        <!-- Text Label dan Link Download -->
+      <div class="flex flex-col text-sm font-poppins">
+  <span>Upload Surat Permohonan KRK | Max 10 MB</span>
+  <a href="/assets/abgblora/logo/suratkrk.docx"
+     download
+     class="mt-1 underline hover:text-black text-red-600 transition-colors duration-150 ease-in-out" style="color: red;">
+     Download Contoh Surat Permohonan
+  </a>
+</div>
 
     </div>
 
