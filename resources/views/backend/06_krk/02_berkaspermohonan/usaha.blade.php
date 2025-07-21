@@ -230,24 +230,14 @@ th {
                                     <td style="text-align: center;">
                                         {{ number_format($item->luastanah, 0, ',', '.') }} M²
                                     </td>
-                                    {{-- <td style="text-align: center;">{{$item->jumlahlantai}} Lantai</td>
-                                    <td style="text-align: center;">{{$item->rt}}</td>
-                                    <td style="text-align: center;">{{$item->rw}}</td>
-                                    <td style="text-align: left;">
-                                        {{ strtoupper($item->kabupaten) }}
-                                    </td>
-                                    <td style="text-align: left;">{{$item->kecamatanblora->kecamatanblora}}</td>
-                                    <td style="text-align: left;">
-                                        {{ strtoupper($item->kelurahandesa->desa) }}
-                                    </td> --}}
                                     <td style="text-align: left;">{{$item->lokasibangunan}}</td>
 
                                        <td style="text-align: center;">
-                <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
-                </a>
-            </td>
+                                            <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
+                                                class="button-baru">
+                                                <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                                            </a>
+                                        </td>
                                     <style>
                                         .btn-secondary {
                                             background-color: #6c757d;
@@ -267,11 +257,6 @@ th {
                                             margin-right: 5px; /* Adjust the spacing between the icon and text */
                                         }
                                     </style>
-
-<!-- Tombol KTP -->
-
-
-
 
 <!-- Tombol Validasi -->
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
@@ -475,90 +460,6 @@ th {
                                 @endif
                                 </div>
                             </td>
-
-                            <!-- Modal Validasi -->
-<!-- Modal Validasi -->
-<div id="validationModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-            Apakah Anda yakin <br> ingin menyetujui berkas ini?
-        </p>
-
-        <!-- Checkbox -->
-        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 16px; text-align: left;">
-            <input type="checkbox" id="confirmValidationCheckbox" style="margin-top: 3px;" onchange="toggleValidationButton()">
-            <label for="confirmValidationCheckbox" style="font-size: 14px; color: #6b7280;">
-                Saya menyatakan bahwa saya telah <br> memeriksa seluruh data berkas dan <br> menyetujuinya.
-            </label>
-        </div>
-
-        <!-- Form Submit -->
-        <form id="validationForm" method="POST">
-            @csrf
-            <button id="confirmValidationBtn"
-                    type="submit"
-                    disabled
-                    class="btn-kirim"
-                    style="background-color: #dc3545; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: not-allowed; transition: all 0.3s ease;">
-                <i class="bi bi-x-circle-fill" style="margin-right: 5px;"></i> Tidak Bisa Dikirim
-            </button>
-            <button type="button"
-                    onclick="closeValidationModal()"
-                    class="btn-cancel-hover"
-                    style="background-color: #9CA3AF; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; margin-left: 10px;">
-                Batal
-            </button>
-        </form>
-    </div>
-</div>
-
-<script>
-    function openValidationModal(id) {
-        const form = document.getElementById('validationForm');
-        form.action = `/berkasusaha/${id}/validate`; // atau route laravel
-        document.getElementById('validationModal').style.display = 'flex';
-        resetValidationButton(); // reset ke posisi awal
-    }
-
-    function closeValidationModal() {
-        document.getElementById('validationModal').style.display = 'none';
-    }
-
-    function toggleValidationButton() {
-        const checkbox = document.getElementById('confirmValidationCheckbox');
-        const button = document.getElementById('confirmValidationBtn');
-
-        if (checkbox.checked) {
-            button.disabled = false;
-            button.style.cursor = 'pointer';
-            button.style.backgroundColor = '#1e3a8a'; // navy
-            button.innerHTML = '<i class="bi bi-send-fill" style="margin-right: 5px;"></i> Ya, Setujui';
-        } else {
-            button.disabled = true;
-            button.style.cursor = 'not-allowed';
-            button.style.backgroundColor = '#dc3545'; // merah
-            button.innerHTML = '<i class="bi bi-x-circle-fill" style="margin-right: 5px;"></i> Tidak Bisa Dikirim';
-        }
-    }
-
-    function resetValidationButton() {
-        const checkbox = document.getElementById('confirmValidationCheckbox');
-        const button = document.getElementById('confirmValidationBtn');
-        checkbox.checked = false;
-        button.disabled = true;
-        button.style.cursor = 'not-allowed';
-        button.style.backgroundColor = '#dc3545';
-        button.innerHTML = '<i class="bi bi-x-circle-fill" style="margin-right: 5px;"></i> Tidak Bisa Dikirim';
-    }
-
-    // Tutup modal jika klik luar area
-    window.addEventListener('click', function(e) {
-        const modal = document.getElementById('validationModal');
-        if (e.target === modal) {
-            closeValidationModal();
-        }
-    });
-</script>
 
 <td style="text-align: center; vertical-align: middle; width: 100%;">
 
@@ -963,6 +864,92 @@ th {
    <!--end::App Main-->
  </div>
  </div>
+
+ {{-- -------------------- --}}
+
+                            <!-- Modal Validasi -->
+<!-- Modal Validasi -->
+<div id="validationModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+            Apakah Anda yakin <br> ingin menyetujui berkas ini?
+        </p>
+
+        <!-- Checkbox -->
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 16px; text-align: left;">
+            <input type="checkbox" id="confirmValidationCheckbox" style="margin-top: 3px;" onchange="toggleValidationButton()">
+            <label for="confirmValidationCheckbox" style="font-size: 14px; color: #6b7280;">
+                Saya menyatakan bahwa saya telah <br> memeriksa seluruh data berkas dan <br> menyetujuinya.
+            </label>
+        </div>
+
+        <!-- Form Submit -->
+        <form id="validationForm" method="POST">
+            @csrf
+            <button id="confirmValidationBtn"
+                    type="submit"
+                    disabled
+                    class="btn-kirim"
+                    style="background-color: #dc3545; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: not-allowed; transition: all 0.3s ease;">
+                <i class="bi bi-x-circle-fill" style="margin-right: 5px;"></i> Tidak Bisa Dikirim
+            </button>
+            <button type="button"
+                    onclick="closeValidationModal()"
+                    class="btn-cancel-hover"
+                    style="background-color: #9CA3AF; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; margin-left: 10px;">
+                Batal
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openValidationModal(id) {
+        const form = document.getElementById('validationForm');
+        form.action = `/berkasusaha/${id}/validate`; // atau route laravel
+        document.getElementById('validationModal').style.display = 'flex';
+        resetValidationButton(); // reset ke posisi awal
+    }
+
+    function closeValidationModal() {
+        document.getElementById('validationModal').style.display = 'none';
+    }
+
+    function toggleValidationButton() {
+        const checkbox = document.getElementById('confirmValidationCheckbox');
+        const button = document.getElementById('confirmValidationBtn');
+
+        if (checkbox.checked) {
+            button.disabled = false;
+            button.style.cursor = 'pointer';
+            button.style.backgroundColor = '#1e3a8a'; // navy
+            button.innerHTML = '<i class="bi bi-send-fill" style="margin-right: 5px;"></i> Ya, Setujui';
+        } else {
+            button.disabled = true;
+            button.style.cursor = 'not-allowed';
+            button.style.backgroundColor = '#dc3545'; // merah
+            button.innerHTML = '<i class="bi bi-x-circle-fill" style="margin-right: 5px;"></i> Tidak Bisa Dikirim';
+        }
+    }
+
+    function resetValidationButton() {
+        const checkbox = document.getElementById('confirmValidationCheckbox');
+        const button = document.getElementById('confirmValidationBtn');
+        checkbox.checked = false;
+        button.disabled = true;
+        button.style.cursor = 'not-allowed';
+        button.style.backgroundColor = '#dc3545';
+        button.innerHTML = '<i class="bi bi-x-circle-fill" style="margin-right: 5px;"></i> Tidak Bisa Dikirim';
+    }
+
+    // Tutup modal jika klik luar area
+    window.addEventListener('click', function(e) {
+        const modal = document.getElementById('validationModal');
+        if (e.target === modal) {
+            closeValidationModal();
+        }
+    });
+</script>
 
 
    @include('backend.00_administrator.00_baganterpisah.02_footer')
