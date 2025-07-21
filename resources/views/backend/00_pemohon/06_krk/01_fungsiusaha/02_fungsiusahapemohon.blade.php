@@ -729,7 +729,7 @@ th {
 @endif --}}
 
           <a href="{{ route('dokuploadkrkusaha', $item->id) }}"
-                    class="button-baru">
+                    class="button-berkas">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Dokumen KRK
 
                 </a>
