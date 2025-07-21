@@ -3920,7 +3920,7 @@ public function dokuploadkrkhunian($id)
     }
 
         // Menggunakan paginate() untuk pagination
-        $dataceklapangan = krkhuniancek::where('krkusaha_id', $databantuanteknis->id)->paginate(50);
+        $dataceklapangan = krkhuniancek::where('krkhunian_id', $databantuanteknis->id)->paginate(50);
 
     return view('backend.06_krk.01_pengesahanusaha.10_uploadhunian', [
         'title' => 'Upload Dokumen Final KRK Fungsi Hunian',
