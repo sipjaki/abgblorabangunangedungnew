@@ -221,6 +221,7 @@ Route::get('/permohonankrkhunian', [KrkController::class, 'permohonankrkhunian']
 Route::post('/permohonankrkhunian/create', [KrkController::class, 'permohonankrkhuniancreate'])->name('permohonan.krkhuniancreate');
 Route::post('/berkashunian/{id}/validate', [KrkController::class, 'validateBerkashunian'])->name('berkashunian.validate');
 // Route::get('/permohonankrk', [KrkController::class, 'permohonankrk'])->middleware('auth');
+Route::post('/perpengesahankrkhunian/{id}', [KrkController::class, 'perpengesahankrkhunian'])->name('perpengesahankrkhunian');
 
 
 // MENU 03 PERMOHONAN KRK KEGAAMAAN

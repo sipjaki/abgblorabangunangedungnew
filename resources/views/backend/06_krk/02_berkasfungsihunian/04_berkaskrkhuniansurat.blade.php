@@ -194,7 +194,7 @@
 <div class="container">
     <div class="card">
         <div class="card-body p-4">
-            <form action="{{ route('permohonan.pengesahanusahacreate', ['id' => $data->id]) }}" method="POST">
+            <form action="{{ route('perpengesahankrkhunian', ['id' => $data->id]) }}" method="POST">
                 @csrf
 
                 @if($errors->any())
@@ -310,7 +310,7 @@
                         <i class="fas fa-cogs"></i> Fungsi Utama Bangunan
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Usaha" readonly>
+                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Hunian" readonly>
                     </div>
                     @error('fungsibangunan')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
