@@ -90,7 +90,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -156,7 +156,7 @@ th {
                     @endcan
 
                             @can('pemohon')
-                        <button class="button-kembali"
+                        <button class="button-newvalidasi"
                         type="button"
 
                         onclick="location.href='{{ url('/bekrkhunianpemohon') }}';"
@@ -191,13 +191,13 @@ th {
         @endcanany --}}
 
                         @canany(['superadmin', 'admin'])
-<button class="button-create" type="button"
+<button class="button-baru" type="button"
     onclick="location.href='/doklapkrkhuniancreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
 </button>
 
-<a href="{{ url('/bekrkhunian') }}" class="button-kembali" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url('/bekrkhunian') }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
         @endcanany
