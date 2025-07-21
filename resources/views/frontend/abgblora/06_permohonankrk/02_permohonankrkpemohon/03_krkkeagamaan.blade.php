@@ -204,7 +204,7 @@
 <!-- Perorangan -->
 <div style="margin-top:-25px;">
     <label class="form-label d-flex align-items-center" for="perorangan">
-        <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> Perorangan
+        <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> Perorangan (Nama Lengkap Sesuai KTP)
     </label>
     <input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemilik/Pemohon"
         class="form-control @error('perorangan') is-invalid @enderror"
