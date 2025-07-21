@@ -1011,7 +1011,7 @@ th {
             </p>
 
             <a href="/bekrkhunianperbaikan/{{$data->id}}" style="text-decoration: none;">
-                    <button class="button-abgblora">
+                    <button class="button-baru">
                         <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
                     </button>
                 </a>
