@@ -190,10 +190,10 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
-                    <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table class="table zebra-table">
-                            <thead>
-                                <tr>
+                   <div style="overflow-x: auto; width: 100%;">
+                            <table class="table table-bordered" style="min-width: 1300px;">
+                                <thead>
+                                    <tr>
                                     <th style="background-color: #ADD8E6;">No</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Pemohon</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Perusahaan</th>
@@ -237,6 +237,7 @@ th {
        <th style="background-color: #ADD8E6;">Aksi</th>
                                 </tr>
                             </thead>
+
                               <tbody id="tableBody">
                                 @foreach ($data as $item )
                                 <tr class="align-middle">
