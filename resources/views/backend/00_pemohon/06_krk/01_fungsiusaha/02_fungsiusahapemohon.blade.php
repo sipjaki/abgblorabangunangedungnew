@@ -194,26 +194,26 @@ th {
                         <table class="table zebra-table">
                             <thead>
 <tr>
-    <th style="background-color: #ADD8E6;">No</th>
-    <th style="background-color: #ADD8E6;">
+    <th style="background-color: #ADD8E6; width: 50px; text-align: center;">No</th>
+    <th style="background-color: #ADD8E6; width: 180px;">
         <i class="fas fa-user"></i> Pemohon
     </th>
-    <th style="background-color: #ADD8E6;">
+    <th style="background-color: #ADD8E6; width: 180px;">
         <i class="fas fa-building"></i> Perusahaan
     </th>
-    <th style="background-color: #ADD8E6;">
+    <th style="background-color: #ADD8E6; width: 160px;">
         <i class="fas fa-map-marker-alt"></i> Koordinat
     </th>
-    <th style="background-color: #ADD8E6;">
+    <th style="background-color: #ADD8E6; width: 140px;">
         <i class="fas fa-id-card"></i> NIK
     </th>
-    <th style="background-color: #ADD8E6;">
+    <th style="background-color: #ADD8E6; width: 160px;">
         <i class="fas fa-calendar-alt"></i> Tanggal Permohonan
     </th>
-    <th style="background-color: #ADD8E6;">
+    <th style="background-color: #ADD8E6; width: 140px;">
         <i class="fas fa-building"></i> Lihat Permohonan
     </th>
-    <th style="background-color: #ADD8E6;">
+    <th style="background-color: #ADD8E6; width: 160px;">
         <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK
     </th>
 </tr>
