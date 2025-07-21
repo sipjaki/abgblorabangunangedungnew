@@ -3930,5 +3930,43 @@ public function dokuploadkrkhunian($id)
     ]);
 }
 
+public function dokuploadkrkhuniannew(Request $request, $id)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'suratuploadmanual' => 'nullable|file|mimes:pdf|max:10048',
+    ], [
+        'suratuploadmanual.mimes' => 'File harus berupa PDF.',
+    ]);
+
+    // Ambil data berdasarkan ID
+    $data = krkhunian::find($id);
+    if (!$data) {
+        return back()->with('error', 'Data tidak ditemukan.');
+    }
+
+    // Proses upload file baru
+    if ($request->hasFile('suratuploadmanual')) {
+        // Hapus file lama kalau ada
+        if ($data->suratuploadmanual && file_exists(public_path($data->suratuploadmanual))) {
+            unlink(public_path($data->suratuploadmanual));
+        }
+
+        // Simpan file baru
+        $file = $request->file('suratuploadmanual');
+        $filename = time() . '_suratuploadmanual.' . $file->getClientOriginalExtension();
+        $folder = '00_suratuploadkrk';
+        $file->move(public_path($folder), $filename);
+
+        // Simpan path relatif ke database
+        $data->suratuploadmanual = $folder . '/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('update', 'Surat berhasil diupload!');
+    return redirect()->back();
+}
+
 }
 
