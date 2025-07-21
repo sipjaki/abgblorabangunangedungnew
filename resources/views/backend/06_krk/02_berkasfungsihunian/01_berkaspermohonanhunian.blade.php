@@ -112,7 +112,7 @@ th {
 
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-newkembali"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('bekrkhunianindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -174,7 +174,7 @@ th {
 
  @canany(['pemohon'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-newkembali"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('bekrkhunianpemohon.indexpemohon') }}';"
                 style="cursor: pointer; color:black;">
