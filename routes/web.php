@@ -256,7 +256,7 @@ Route::put('/dokuploadkrkusahanew/{id}', [KrkController::class, 'dokuploadkrkusa
 
 Route::get('/dokuploadkrkhunian/{id}', [KrkController::class, 'dokuploadkrkhunian'])->middleware('auth')->name('dokuploadkrkhunian');
 
-// Route::put('/dokuploadkrkhuniannew/{id}', [KrkController::class, 'dokuploadkrkusahanew'])->middleware('auth')->name('dokuploadkrkusahanew');
+Route::put('/dokuploadkrkhuniannew/{id}', [KrkController::class, 'dokuploadkrkhuniannew'])->middleware('auth')->name('dokuploadkrkhuniannew');
 
 
 
