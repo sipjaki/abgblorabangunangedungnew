@@ -194,60 +194,38 @@ th {
     <table class="table zebra-table" style="min-width: max-content;">
         <thead>
             <tr>
-                <th style="background-color: #ADD8E6; position: sticky; left: 0; z-index: 2;">No</th>
-                <th style="background-color: #ADD8E6; position: sticky; left: 50px; z-index: 2;"><i class="fas fa-user"></i> Pemohon</th>
-                <th style="background-color: #ADD8E6; position: sticky; left: 200px; z-index: 2;"><i class="fas fa-building"></i> Perusahaan</th>
-                      {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Koordinat</th> --}}
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> NIK</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Tanggal Permohonan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-phone-alt"></i> Whatsapp</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Jumlah Lantai</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RT</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RW</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-city"></i> Kabupaten</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Kecamatan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-pin"></i> Kelurahan/Desa</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lokasi Bangunan</th>
+                <th style="background-color: #ADD8E6; position: sticky; left: 0; z-index: 3; min-width: 100px;">No</th>
+                <th style="background-color: #ADD8E6; position: sticky; left: 100px; z-index: 3; min-width: 150px;"><i class="fas fa-user"></i> Pemohon</th>
+                <th style="background-color: #ADD8E6; position: sticky; left: 250px; z-index: 3; min-width: 200px;"><i class="fas fa-building"></i> Perusahaan</th>
 
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lihat Permohonan</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Tanggal Permohonan</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-phone-alt"></i> Whatsapp</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lokasi Bangunan</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lihat Permohonan</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK</th>
+                <th style="background-color: #ADD8E6;"><i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Selesai</th>
+                <th style="background-color: #ADD8E6;">Aksi</th>
+            </tr>
+        </thead>
 
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> KTP</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-address-card"></i> NPWP</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-file-alt"></i> Sertifikat Tanah</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-paperclip"></i> Lampiran OSS</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-file-invoice-dollar"></i> Bukti PBB</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-check-circle"></i> Dok Validasi DPUPR</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-drafting-compass"></i> Site Plan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-pen-fancy"></i> Tanda Tangan</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
-</th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK
-</th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Selesai
-</th>
-       <th style="background-color: #ADD8E6;">Aksi</th>
-                                </tr>
-                            </thead>
-                              <tbody id="tableBody">
-                                @foreach ($data as $item )
-                                <tr class="align-middle">
-                <td style="text-align: center; position: sticky; left: 0; background-color: white;">{{ $loop->iteration }}</td>
-                <td style="text-align: left; position: sticky; left: 50px; background-color: white;">{{$item->perorangan}}</td>
-                <td style="text-align: left; position: sticky; left: 200px; background-color: white;">{{$item->perusahaan}}</td>
-                {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
-                                    <td style="text-align: center;">{{$item->nik}}</td> --}}
-                                    <td style="text-align: center;">
-                                        {{ \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') }}
-                                    </td>
+        <tbody id="tableBody">
+            @foreach ($data as $item )
+            <tr class="align-middle">
+                <td style="text-align: center; position: sticky; left: 0; background-color: white; min-width: 100px;">{{ $loop->iteration }}</td>
+                <td style="text-align: left; position: sticky; left: 100px; background-color: white; min-width: 150px;">{{ $item->perorangan }}</td>
+                <td style="text-align: left; position: sticky; left: 250px; background-color: white; min-width: 200px;">{{ $item->perusahaan }}</td>
+
+                <td style="text-align: center;">
+                    {{ \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') }}
+                </td>
+
                                     <td style="text-align: left;">{{$item->notelepon}}</td>
                                     <td style="text-align: center;">
                                         {{ number_format($item->luastanah, 0, ',', '.') }} M²
