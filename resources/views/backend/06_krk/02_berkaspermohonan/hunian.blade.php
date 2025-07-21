@@ -780,7 +780,7 @@ th {
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi4 == 'sudah')
     <button
-        class="button-lolos"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; cursor: not-allowed;"
         disabled
@@ -788,11 +788,11 @@ th {
         <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Sudah
     </button>
   @elseif($item->verifikasi4 == 'belum')
-    <button class="button-dikembalikan" type="button" onclick="openModal4({{ $item->id }})" style="background-color: #f8f8fa;">
+    <button class="button-merah" type="button" onclick="openModal4({{ $item->id }})" style="background-color: #f8f8fa;">
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-validasinew" type="button" onclick="openModal4({{ $item->id }})">
+    <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
