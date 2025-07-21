@@ -277,7 +277,7 @@
                         <i class="fas fa-building"></i> Jumlah Lantai Maksimal
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="luaslantaimaksimal" name="luaslantaimaksimal" readonly>
+                        <input type="text" class="form-control" id="luaslantaimaksimal" name="luaslantaimaksimal">
                     </div>
                     @error('luaslantaimaksimal')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
@@ -291,7 +291,7 @@
                     </label>
                     <div class="col-md-8">
                         <div class="input-group">
-                            <input type="number" class="form-control" id="luasbangunan" name="luasbangunan" readonly>
+                            <input type="number" class="form-control" id="luasbangunan" name="luasbangunan">
                             <div class="input-group-append">
                                 <span class="input-group-text bg-danger text-white">M²</span>
                             </div>
@@ -379,7 +379,7 @@
                         <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan)
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="klb" name="klb" readonly>
+                        <input type="text" class="form-control" id="klb" name="klb">
                     </div>
                     @error('klb')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
@@ -392,7 +392,7 @@
     </label>
     <div class="col-md-8">
         <div class="input-group">
-            <input type="text" class="form-control" id="kdb" name="kdb" readonly>
+            <input type="text" class="form-control" id="kdb" name="kdb">
             <div class="input-group-append">
                 <span class="input-group-text">M²</span>
             </div>
