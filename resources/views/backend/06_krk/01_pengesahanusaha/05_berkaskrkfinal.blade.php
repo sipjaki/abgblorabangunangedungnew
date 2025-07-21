@@ -99,9 +99,7 @@
                                 </button>
                             </div>
                         @endcanany
-
-                        <br><br>
-                        <hr>
+                        {{-- <hr> --}}
 
                         <!-- Main content container -->
                         <div class="container-fluid">
