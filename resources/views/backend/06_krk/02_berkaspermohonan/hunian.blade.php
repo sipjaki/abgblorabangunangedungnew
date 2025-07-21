@@ -761,7 +761,21 @@ th {
 @if($subdata->where('krkhunian_id', $item->id)->count() > 0)
     <a href="{{ route('permohonan.permohonankrkhunianfinal', $item->id) }}"
         class="button-hijau">
-        <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Final
+        <i class="bi bi-folder" style="margin-right: 5px;"></i> Dok TTD Otomatis
+    </a>
+@else
+    <button
+        class="button-merah"
+        style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
+        disabled>
+        <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Berkas Final Belum Ada
+    </button>
+@endif
+
+@if($subdata->where('krkhunian_id', $item->id)->count() > 0)
+    <a href="{{ route('permohonan.permohonankrkhunianfinal', $item->id) }}"
+        class="button-hijau">
+        <i class="bi bi-folder" style="margin-right: 5px;"></i> Dok TTD Manual
     </a>
 @else
     <button
