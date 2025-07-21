@@ -2515,7 +2515,7 @@ th {
         <i class="bi bi-card-text me-1" style="color: navy;"></i>
         <span style="color: navy;">Catatan Keterangan Berkas</span>
     </label>
-    <div class="form-control" style="min-height: 400px; white-space: pre-wrap; background-color: #f8f9fa; color: red;">
+    <div class="form-control" style="min-height: 400px; white-space: pre-wrap; background-color: #f8f9fa; color: black;">
         {{ $data->catatanvalidasi ?? '-' }}
     </div>
 </div>
@@ -2533,7 +2533,7 @@ th {
 
     <textarea name="catatanvalidasi" id="catatanvalidasi" class="form-control"
         rows="10"
-        style="resize: vertical; width: 100%; color: red;"
+        style="resize: vertical; width: 100%; color: black;"
         placeholder="Tulis catatan jika diperlukan...">{{ old('catatanvalidasi', $data->catatanvalidasi ?? '') }}</textarea>
 </div>
 
