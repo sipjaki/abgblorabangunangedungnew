@@ -484,7 +484,7 @@ public function perpengesahankrkhunian(Request $request, $id)
 
     // Simpan data pengesahan
     $pengesahan = new krkusahasurat();
-    $pengesahan->krkusaha_id = $mainData->id;
+    $pengesahan->krkhunian_id = $mainData->id;
     $pengesahan->fill($validated);
     $pengesahan->save();
 
