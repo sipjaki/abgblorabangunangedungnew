@@ -217,6 +217,19 @@ class="button-newvalidasi"
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
+
+@canany(['pemohon'])
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
+        <i class="bi bi-upload" style="margin-right: 6px;"></i>
+        Dokumen KRK Saudara
+    </h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+</div>
+@endcanany
+
+@canany(['superadmin', 'admin'])
 <div class="text-center">
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
     <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
@@ -225,6 +238,7 @@ class="button-newvalidasi"
     </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
+@endcanany
 
 <div class="row">
   <div class="col-md-6">
