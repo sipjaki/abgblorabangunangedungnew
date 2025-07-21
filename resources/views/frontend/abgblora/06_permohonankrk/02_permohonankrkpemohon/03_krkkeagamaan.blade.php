@@ -204,7 +204,7 @@
 <!-- Perorangan -->
 <div style="margin-top:-25px;">
     <label class="form-label d-flex align-items-center" for="perorangan">
-        <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> Perorangan (Nama Lengkap Sesuai KTP)
+        <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> Perorangan
     </label>
     <input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemilik/Pemohon"
         class="form-control @error('perorangan') is-invalid @enderror"
@@ -818,6 +818,32 @@ document.addEventListener('DOMContentLoaded', function () {
      class="mt-1 underline hover:text-black text-red-600 transition-colors duration-150 ease-in-out" style="color: red;">
      Download Contoh Surat Permohonan
   </a>
+</div>
+
+    </label>
+
+    <!-- Input File -->
+    <input id="tandatangan" name="tandatangan" type="file" accept="application/pdf,image/*"
+        value="{{ old('tandatangan') }}"
+        class="border border-[#ccc] rounded-md p-2 mb-2 @error('tandatangan') border-red-500 @enderror"
+        onchange="previewFile(this, 'tandatanganPreview')" style="margin-right: 25px;" />
+
+    <!-- Preview File -->
+    <div id="tandatanganPreview" class="mt-1 text-sm text-gray-700">
+        @if(session('tandatangan_temp'))
+            <a href="{{ Storage::url(session('tandatangan_temp')) }}" target="_blank" class="text-blue-500 underline">
+                Lihat file yang sudah diunggah
+            </a>
+        @elseif(old('tandatangan'))
+            File sudah dipilih: {{ old('tandatangan') }}
+        @endif
+    </div>
+
+    <!-- Error Message -->
+    @error('tandatangan')
+        <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+    @enderror
+</div>
 </div>
 
     </div>
