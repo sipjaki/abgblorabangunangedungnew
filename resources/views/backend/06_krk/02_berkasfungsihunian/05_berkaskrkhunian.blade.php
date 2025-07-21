@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
   {{-- @include('backend.00_administrator.00_baganterpisah.10_selamatdatang') --}}
@@ -111,7 +111,7 @@ th {
 
          @canany(['konsultanbantek'])
    <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-    <button class="button-kembali"
+    <button class="button-newvalidasi"
             type="button"
             onclick="location.href='{{ url()->previous() }}';"
             style="cursor: pointer; color:black;">
@@ -123,7 +123,7 @@ th {
 
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -135,7 +135,7 @@ th {
 
          @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -148,7 +148,7 @@ th {
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
-        <button class="button-validasinew"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('bekrkhunianindex') }}';"
                 style="cursor: pointer; color:white;">
@@ -374,7 +374,7 @@ th {
     @csrf
     @method('DELETE')
     <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-        <button type="button" class="button-dikembalikan" style="cursor: pointer; color:black;"
+        <button type="button" class="button-merah" style="cursor: pointer; color:black;"
             data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $item->id }}">
             <i class="bi bi-trash" style="margin-right: 5px;"></i> Hapus Permohonan
         </button>
@@ -410,7 +410,7 @@ th {
 
 {{-- Tombol download PDF di kanan atas bawah --}}
 <div style="display: flex; justify-content: flex-end; padding: 10px;">
-    <button id="downloadPdfBtn" class="button-download"
+    <button id="downloadPdfBtn" class="button-baru"
         style="padding: 8px 16px; border-radius: 15px; border: none; cursor: pointer; ">
         <i class="bi bi-download" style="margin-right:6px;"></i> Download PDF
     </button>
