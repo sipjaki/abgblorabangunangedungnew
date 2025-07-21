@@ -352,7 +352,7 @@ th {
                     </tr>
 
                     <tr>
-                        <td style="text-align: center;">10</td>
+                        <td style="text-align: center;">11</td>
                         <td>(KLB) Koefisien Lantai Bangunan </td>
                         <td style="text-align: center;">:</td>
                          <td>{{ $item->kdb ?? '-' }} M²</td>
@@ -360,13 +360,13 @@ th {
                     </tr>
                     {{-- hati hati terbalil kbd dan klb  --}}
                     <tr>
-                        <td style="text-align: center;">11</td>
+                        <td style="text-align: center;">12</td>
                         <td>(KDH) Koefisien Dasar Hijau (%)</td>
                         <td style="text-align: center;">:</td>
                         <td>{{ $item->kdh ?? '-' }} %</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">12</td>
+                        <td style="text-align: center;">13</td>
                         <td>Jaringan Utilitas Kota</td>
                         <td style="text-align: center;">:</td>
                         <td>{{ $item->jaringanutilitas ?? '-' }}</td>
