@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->index(); // PEMOHON
             $table->foreignId('kecamatanblora_id', 255)->nullable()->index();
             $table->foreignId('kelurahandesa_id', 255)->nullable()->index();
+            
             $table->string('nomordinasasal', 255)->nullable(); // nomor dinas asal
             $table->string('perorangan', 255)->nullable();
             $table->string('perusahaan', 255)->nullable();
@@ -33,6 +34,7 @@ return new class extends Migration
             $table->string('kabupaten', 255)->nullable();
             $table->text('lokasibangunan')->nullable();
             $table->text('alamatpemohon')->nullable();
+
             $table->string('suratupload')->nullable();
             $table->string('suratuploadmanual')->nullable();
 
