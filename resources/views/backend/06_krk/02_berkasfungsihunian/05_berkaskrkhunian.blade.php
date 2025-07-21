@@ -113,8 +113,7 @@ th {
    <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
     <button class="button-newvalidasi"
             type="button"
-            onclick="location.href='{{ url()->previous() }}';"
-            style="cursor: pointer; color:black;">
+            onclick="location.href='{{ url()->previous() }}';">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </div>
@@ -343,7 +342,7 @@ th {
                         <td style="text-align: center;">9</td>
                         <td>(GSB) Garis Sempadan Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->gsb ?? '-' }}</td>
+                        <td>{{ $item->gsb ?? '-' }} Meter</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">10</td>
@@ -351,14 +350,22 @@ th {
                         <td style="text-align: center;">:</td>
                         <td>{{ $item->klb ?? '-' }}</td>
                     </tr>
-                    <tr>
-                        <td style="text-align: center;">11</td>
-                        <td>(KDH) Koefisien Dasar Hijau (%)</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->kdh ?? '-' }}</td>
-                    </tr>
+
                     <tr>
                         <td style="text-align: center;">12</td>
+                        <td>(KLB) Koefisien Lantai Bangunan </td>
+                        <td style="text-align: center;">:</td>
+                         <td>{{ $item->kdb ?? '-' }} M²</td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align: center;">12</td>
+                        <td>(KDH) Koefisien Dasar Hijau (%)</td>
+                        <td style="text-align: center;">:</td>
+                        <td>{{ $item->kdh ?? '-' }}%</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">13</td>
                         <td>Jaringan Utilitas Kota</td>
                         <td style="text-align: center;">:</td>
                         <td>{{ $item->jaringanutilitas ?? '-' }}</td>

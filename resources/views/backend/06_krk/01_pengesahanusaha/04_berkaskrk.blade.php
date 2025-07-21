@@ -350,6 +350,7 @@ th {
                         <td style="text-align: center;">:</td>
                         <td>{{ $item->klb ?? '-' }}</td>
                     </tr>
+
                     <tr>
                         <td style="text-align: center;">10</td>
                         <td>(KLB) Koefisien Lantai Bangunan </td>
