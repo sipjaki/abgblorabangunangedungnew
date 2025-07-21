@@ -255,69 +255,37 @@ th {
                             </thead>
                               <tbody id="tableBody">
 
-                                @if($subdata->isEmpty())
-<p style="
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  background-color: #f9fafb;
-  color: #dc2626;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: relative;
-">
-  <span style="
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 10s linear infinite;
-  ">
-    Cek Lapangan Belum di Laksanakan !!
-  </span>
 
-  <style>
-    @keyframes marquee {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-  </style>
-</p>
-
-@else
-      @foreach($subdata as $item)
+@forelse ($subdata as $data)
     <tr>
         <td>{{ $loop->iteration }}</td>
-        <td>{{ $item->kegiatan }}</td>
-<td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
+        <td>{{ $data->kegiatan }}</td>
+<td>{{ \Carbon\Carbon::parse($data->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
 
 <td style="vertical-align: top; padding: 10px;">
-    @if ($item->berkas1 && file_exists(public_path('storage/' . $item->berkas1)))
+    @if ($data->berkas1 && file_exists(public_path('storage/' . $data->berkas1)))
         <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
             <iframe
-                src="{{ asset('storage/' . $item->berkas1) }}"
+                src="{{ asset('storage/' . $data->berkas1) }}"
                 style="width: 100%; height: 250px; border: none;"
                 loading="lazy">
             </iframe>
         </div>
         <div class="text-center mt-2">
-            <a href="{{ asset('storage/' . $item->berkas1) }}" download class="btn btn-sm btn-primary">
+            <a href="{{ asset('storage/' . $data->berkas1) }}" download class="btn btn-sm btn-primary">
                 <i class="bi bi-download"></i> Download Berkas 1
             </a>
         </div>
-    @elseif ($item->berkas1)
+    @elseif ($data->berkas1)
         <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
             <iframe
-                src="{{ asset($item->berkas1) }}"
+                src="{{ asset($data->berkas1) }}"
                 style="width: 100%; height: 250px; border: none;"
                 loading="lazy">
             </iframe>
         </div>
         <div class="text-center mt-2">
-            <a href="{{ asset($item->berkas1) }}" download class="btn btn-sm btn-primary">
+            <a href="{{ asset($data->berkas1) }}" download class="btn btn-sm btn-primary">
                 <i class="bi bi-download"></i> Download Berkas 1
             </a>
         </div>
@@ -327,29 +295,29 @@ th {
 </td>
 
 <td style="vertical-align: top; padding: 10px;">
-    @if ($item->berkas2 && file_exists(public_path('storage/' . $item->berkas2)))
+    @if ($data->berkas2 && file_exists(public_path('storage/' . $data->berkas2)))
         <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
             <iframe
-                src="{{ asset('storage/' . $item->berkas2) }}"
+                src="{{ asset('storage/' . $data->berkas2) }}"
                 style="width: 100%; height: 250px; border: none;"
                 loading="lazy">
             </iframe>
         </div>
         <div class="text-center mt-2">
-            <a href="{{ asset('storage/' . $item->berkas2) }}" download class="btn btn-sm btn-primary">
+            <a href="{{ asset('storage/' . $data->berkas2) }}" download class="btn btn-sm btn-primary">
                 <i class="bi bi-download"></i> Download Berkas 2
             </a>
         </div>
-    @elseif ($item->berkas2)
+    @elseif ($data->berkas2)
         <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
             <iframe
-                src="{{ asset($item->berkas2) }}"
+                src="{{ asset($data->berkas2) }}"
                 style="width: 100%; height: 250px; border: none;"
                 loading="lazy">
             </iframe>
         </div>
         <div class="text-center mt-2">
-            <a href="{{ asset($item->berkas2) }}" download class="btn btn-sm btn-primary">
+            <a href="{{ asset($data->berkas2) }}" download class="btn btn-sm btn-primary">
                 <i class="bi bi-download"></i> Download Berkas 2
             </a>
         </div>
@@ -358,12 +326,13 @@ th {
     @endif
 </td>
 
+
 <td>
     <div style="margin-top: 10px;">
-        @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
-            <img src="{{ asset('storage/' . $item->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto1)
-            <img src="{{ asset($item->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
+            <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @elseif($data->foto1)
+            <img src="{{ asset($data->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @else
             <p style="font-size: 11px;">Tidak Ada Foto 1!</p>
         @endif
@@ -372,10 +341,10 @@ th {
 
 <td>
     <div style="margin-top: 10px;">
-        @if($item->foto2 && file_exists(public_path('storage/' . $item->foto2)))
-            <img src="{{ asset('storage/' . $item->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto2)
-            <img src="{{ asset($item->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @if($data->foto2 && file_exists(public_path('storage/' . $data->foto2)))
+            <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @elseif($data->foto2)
+            <img src="{{ asset($data->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @else
             <p style="font-size: 11px;">Tidak Ada Foto 2!</p>
         @endif
@@ -384,10 +353,10 @@ th {
 
 <td>
     <div style="margin-top: 10px;">
-        @if($item->foto3 && file_exists(public_path('storage/' . $item->foto3)))
-            <img src="{{ asset('storage/' . $item->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto3)
-            <img src="{{ asset($item->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @if($data->foto3 && file_exists(public_path('storage/' . $data->foto3)))
+            <img src="{{ asset('storage/' . $data->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @elseif($data->foto3)
+            <img src="{{ asset($data->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @else
             <p style="font-size: 11px;">Tidak Ada Foto 3!</p>
         @endif
@@ -396,10 +365,10 @@ th {
 
 <td>
     <div style="margin-top: 10px;">
-        @if($item->foto4 && file_exists(public_path('storage/' . $item->foto4)))
-            <img src="{{ asset('storage/' . $item->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto4)
-            <img src="{{ asset($item->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @if($data->foto4 && file_exists(public_path('storage/' . $data->foto4)))
+            <img src="{{ asset('storage/' . $data->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @elseif($data->foto4)
+            <img src="{{ asset($data->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @else
             <p style="font-size: 11px;">Tidak Ada Foto 4!</p>
         @endif
@@ -408,10 +377,10 @@ th {
 
 <td>
     <div style="margin-top: 10px;">
-        @if($item->foto5 && file_exists(public_path('storage/' . $item->foto5)))
-            <img src="{{ asset('storage/' . $item->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto5)
-            <img src="{{ asset($item->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @if($data->foto5 && file_exists(public_path('storage/' . $data->foto5)))
+            <img src="{{ asset('storage/' . $data->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @elseif($data->foto5)
+            <img src="{{ asset($data->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @else
             <p style="font-size: 11px;">Tidak Ada Foto 5!</p>
         @endif
@@ -420,10 +389,10 @@ th {
 
 <td>
     <div style="margin-top: 10px;">
-        @if($item->foto6 && file_exists(public_path('storage/' . $item->foto6)))
-            <img src="{{ asset('storage/' . $item->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto6)
-            <img src="{{ asset($item->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @if($data->foto6 && file_exists(public_path('storage/' . $data->foto6)))
+            <img src="{{ asset('storage/' . $data->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+        @elseif($data->foto6)
+            <img src="{{ asset($data->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @else
             <p style="font-size: 11px;">Tidak Ada Foto 6!</p>
         @endif
@@ -433,30 +402,53 @@ th {
 @canany(['superadmin', 'admin'])
 
 <td class="text-center align-middle">
-    {{-- <a href="/bebujkkonstruksi/show/{{ $item->id }}" class="btn btn-sm btn-info me-2" title="Lihat Detail">
+    {{-- <a href="/bebujkkonstruksi/show/{{ $data->id }}" class="btn btn-sm btn-info me-2" title="Lihat Detail">
         <i class="bi bi-eye"></i>
     </a>
-            <a href="/bebujkkonstruksi/update/{{ $item->id }}" class="btn btn-sm btn-warning me-2" title="Ubah Data">
+            <a href="/bebujkkonstruksi/update/{{ $data->id }}" class="btn btn-sm btn-warning me-2" title="Ubah Data">
                 <i class="bi bi-pencil-square"></i>
             </a> --}}
             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
             data-bs-toggle="modal" data-bs-target="#deleteModal"
-            data-id="{{ $item->id }}"
+            data-id="{{ $data->id }}"
             onclick="setDeleteUrl(this)">
             <i class="bi bi-trash"></i>
         </a>
 
         {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
         data-bs-toggle="modal" data-bs-target="#deleteModal"
-        data-id="{{ $item->id }}"
+        data-id="{{ $data->id }}"
         onclick="setDeleteUrl(this)">
         <i class="bi bi-trash"></i>
     </a> --}}
 </td>
 @endcanany
 </tr>
-@endforeach
-@endif
+
+    @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Belum Cek Lapangan !
+            </div>
+        </td>
+    </tr>
+@endforelse
 
 </tbody>
                         </table>
