@@ -114,7 +114,7 @@ th {
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
         <button class="button-newvalidasi"
                 type="button"
-                onclick="location.href='{{ route('krkusaha.index') }}';"
+                onclick="location.href='{{ route('bekrkmenaratelkom') }}';"
                 style="cursor: pointer; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
@@ -972,6 +972,85 @@ th {
         <!-- Display the iframe with the updated file -->
         <iframe
             src="{{ asset($data->tandatangan) }}"
+            frameborder="0"
+            width="100%"
+            height="600px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
+        </iframe>
+    @else
+        <!-- Optional: Show a placeholder if there's no file available -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
+            </td>
+
+        </tr>
+
+
+
+    </table>
+    <br>
+
+
+    {{-- --------------------------------- --}}
+    <div class="table-responsive">
+    <table class="zebra-table table-striped">
+        <tr>
+
+<td style="text-align: center; font-size:16px;">
+    <i class="bi bi-map" style="margin-right:6px;"></i> Surat KKOP
+</td>
+
+<td style="text-align: center; font-size:16px;">
+    <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Berkas Dukung Lainnya
+</td>
+
+</tr>
+
+        <tr>
+            <td style="text-align: center;">
+                 <div style="margin-top: 10px;">
+    @if($data->berkasdukung1 && file_exists(public_path('storage/' . $data->berkasdukung1)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe
+            src="{{ asset('storage/' . $data->berkasdukung1) }}"
+            frameborder="0"
+            width="100%"
+            height="600px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
+        </iframe>
+    @elseif($data->berkasdukung1)
+        <!-- Display the iframe with the updated file -->
+        <iframe
+            src="{{ asset($data->berkasdukung1) }}"
+            frameborder="0"
+            width="100%"
+            height="600px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
+        </iframe>
+    @else
+        <!-- Optional: Show a placeholder if there's no file available -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
+
+            </td>
+
+            <td style="text-align: center;">
+                    <div style="margin-top: 10px;">
+    @if($data->berkasdukung2 && file_exists(public_path('storage/' . $data->berkasdukung2)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe
+            src="{{ asset('storage/' . $data->berkasdukung2) }}"
+            frameborder="0"
+            width="100%"
+            height="600px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
+        </iframe>
+    @elseif($data->berkasdukung2)
+        <!-- Display the iframe with the updated file -->
+        <iframe
+            src="{{ asset($data->berkasdukung2) }}"
             frameborder="0"
             width="100%"
             height="600px"
