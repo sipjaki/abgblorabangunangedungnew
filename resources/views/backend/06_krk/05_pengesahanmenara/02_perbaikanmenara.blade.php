@@ -484,6 +484,7 @@ th {
 </div>
 
 </div>
+
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="buktipbb">
@@ -525,6 +526,7 @@ th {
     </div>
 
 </div>
+
 <div class="col-md-6">
 
     <div class="mb-3">
@@ -539,16 +541,16 @@ th {
         <div class="mt-3" id="previewContainerSITE" style="{{ isset($data->siteplan) ? '' : 'display: none;' }}">
             <label class="fw-bold">Data Sebelumnya:</label>
             <iframe id="iframeSITE" src="{{ isset($data->siteplan) ? asset($data->siteplan) : '' }}"
-            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+            </div>
+            <div id="msgSITE" class="mt-3"
+            style="color: grey; font-style: italic; {{ isset($data->siteplan) ? 'display:none;' : '' }}">
+            Data belum di update. Silahkan upload berkas Siteplan.
         </div>
-        <div id="msgSITE" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->siteplan) ? 'display:none;' : '' }}">
-        Data belum di update. Silahkan upload berkas Siteplan.
     </div>
-</div>
 
-<div class="mb-3">
-    <label class="form-label" for="tandatangan">
+    <div class="mb-3">
+        <label class="form-label" for="tandatangan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Permohonan KRK (PDF)
     </label>
     <input type="file" id="tandatangan" name="tandatangan" accept="application/pdf,image/jpeg,image/png,image/jpg"
@@ -561,30 +563,29 @@ th {
             <label class="fw-bold">Data Sebelumnya:</label>
             @php
             $ext = pathinfo($data->tandatangan ?? '', PATHINFO_EXTENSION);
-        @endphp
+            @endphp
         @if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png']))
             <img src="{{ asset($data->tandatangan) }}" alt="Tanda Tangan Lama"
-                style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
-        @elseif ($ext === 'pdf')
+            style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
+            @elseif ($ext === 'pdf')
             <iframe src="{{ asset($data->tandatangan) }}"
                 style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-        @else
-        <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
-        @endif
+                @else
+                <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
+                @endif
+            </div>
+
+            <div id="msgTTD" class="mt-3"
+            style="color: grey; font-style: italic; {{ isset($data->tandatangan) ? 'display:none;' : '' }}">
+            Data belum di update. Silahkan upload berkas Tanda Tangan.
+        </div>
+
+        {{-- Preview Upload Baru --}}
+        <div class="mt-3" id="previewTTD" style="display: none;"></div>
     </div>
-
-    <div id="msgTTD" class="mt-3"
-    style="color: grey; font-style: italic; {{ isset($data->tandatangan) ? 'display:none;' : '' }}">
-    Data belum di update. Silahkan upload berkas Tanda Tangan.
 </div>
-
-    {{-- Preview Upload Baru --}}
-    <div class="mt-3" id="previewTTD" style="display: none;"></div>
-</div>
-
 <div class="col-md-6">
-
-    <div class="mb-3">
+<div class="mb-3">
     <label class="form-label" for="berkasdukung1">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 1 (PDF/Gambar)
     </label>
@@ -655,8 +656,7 @@ th {
 </div>
 
 </div>
-</div>
-    <script>
+<script>
 function previewPDF(event, containerId, iframeId, messageId) {
     const file = event.target.files[0];
     const container = document.getElementById(containerId);
