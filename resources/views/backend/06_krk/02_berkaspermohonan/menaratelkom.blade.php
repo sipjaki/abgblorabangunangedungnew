@@ -386,7 +386,7 @@ th {
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
-            </td>
+            </td> --}}
 
             <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
@@ -407,7 +407,7 @@ th {
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
-</td> --}}
+</td>
 
 <!-- Modal Verifikasi2 -->
 <div id="confirmModalVerifikasi2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1001; justify-content: center; align-items: center;">
@@ -582,7 +582,7 @@ th {
     });
 </script>
 
-<td style="text-align: center; vertical-align: middle; width: 100%;">
+{{-- <td style="text-align: center; vertical-align: middle; width: 100%;"> --}}
 {{--
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
@@ -682,7 +682,7 @@ th {
 
     </div> --}}
 
-</td>
+{{-- </td> --}}
 
 <!-- Tombol Validasi -->
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
