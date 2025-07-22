@@ -2588,6 +2588,32 @@ public function valberkassosbud3(Request $request, $id)
     ]);
 }
 
+public function permohonankrksosbudfinal($id)
+{
+    // Ambil data utama krkusaha berdasarkan ID
+    $datausaha = krksosbud::where('id', $id)->first();
+
+    // Kalau data usaha tidak ditemukan, tampilkan 404
+    if (!$datausaha) {
+        return abort(404, 'Data usaha tidak ditemukan');
+    }
+
+    // Ambil data sub: krkusahasurat (relasi dari krkusaha)
+    $datasurat = krkusahasurat::where('krksosbud_id', $datausaha->id)->paginate(50);
+
+    // Ambil data GSB Kabupaten Blora
+    $datagsb = rencanagsbblora::orderBy('ruasjalan', 'asc')->get();
+
+    // Return ke view
+    return view('backend.06_krk.04_berkassosbud.06_berkaskrkfinalsosbudman', [
+        'title' => 'Berkas Final Permohonan KRK Fungsi Sosial Budaya Keagamaan',
+        'data' => $datausaha,       // Data utama krkusaha
+        'subdata' => $datasurat,    // Data sub krkusahasurat
+        'datagsb' => $datagsb,      // Data dropdown/GSB
+        'user' => Auth::user()
+    ]);
+}
+
 public function krksosbufnoterbit($id)
 {
     // Ambil data bantuan teknis berdasarkan ID

@@ -793,7 +793,7 @@ th {
 @endif
 
 @if($subdata->where('krksosbud_id', $item->id)->count() > 0)
-    <a href="{{ route('permohonan.permohonankrksosbudfinal', $item->id) }}"
+    <a href="{{ route('permohonankrksosbudfinalman', $item->id) }}"
         class="button-hijau"
         style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #10B981; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#10B981'; this.style.border='1px solid #10B981';"
