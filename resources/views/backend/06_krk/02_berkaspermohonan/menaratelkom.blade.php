@@ -583,7 +583,7 @@ th {
 </script>
 
 <td style="text-align: center; vertical-align: middle; width: 100%;">
-
+{{--
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
         @if (!$item->is_validated)
@@ -680,7 +680,7 @@ th {
     </button>
 @endif
 
-    </div>
+    </div> --}}
 
 </td>
 
