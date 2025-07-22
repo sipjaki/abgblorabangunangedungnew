@@ -269,6 +269,7 @@ Route::put('/dokuploadkrkmenaranew/{id}', [KrkController::class, 'dokuploadkrkme
 
 Route::delete('/bekrkmenaratelkomdelete/{id}', [KrkController::class, 'bekrkmenaratelkomdelete'])->middleware('auth')->name('bekrkmenaratelkomdelete');
 
+Route::get('/bekrkmenarapemohon', [KrkController::class, 'bekrkmenarapemohon'])->name('bekrkmenarapemohon');
 
 
 

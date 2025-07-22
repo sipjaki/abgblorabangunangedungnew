@@ -4686,5 +4686,63 @@ public function dokuploadkrkmenaranew(Request $request, $id)
 }
 
 
+public function bekrkmenarapemohon(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 15);
+
+    // Query dasar: hanya data milik user yang login
+    $query = krkmenara::where('user_id', $user->id);
+
+    // Filter pencarian jika ada input 'search'
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('perorangan', 'like', "%{$search}%")
+              ->orWhere('perusahaan', 'like', "%{$search}%")
+              ->orWhere('nik', 'like', "%{$search}%")
+              ->orWhere('koordinatlokasi', 'like', "%{$search}%")
+              ->orWhere('notelepon', 'like', "%{$search}%")
+              ->orWhere('luastanah', 'like', "%{$search}%")
+              ->orWhere('jumlahlantai', 'like', "%{$search}%")
+              ->orWhere('rt', 'like', "%{$search}%")
+              ->orWhere('rw', 'like', "%{$search}%")
+              ->orWhere('kabupaten', 'like', "%{$search}%")
+              ->orWhere('lokasibangunan', 'like', "%{$search}%")
+              ->orWhereDate('tanggalpermohonan', $search);
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('user', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    // Ambil data utama paginasi (hanya milik user)
+    $berkasusaha = $query->latest()->paginate($perPage)->appends($request->all());
+
+    // Ambil semua ID krksosbud yang muncul di hasil paginasi
+    $krksosbudIds = $berkasusaha->pluck('id');
+
+    // Ambil data sub dari relasi krkusahasurat berdasarkan krksosbud_id
+    $subdata = krkusahasurat::whereIn('krkmenara_id', $krksosbudIds)->get();
+
+    return view('backend.00_pemohon.06_krk.05_menara.01_berkasmenara', [
+        'title' => 'Permohonan KRK Menara Telekomunikasi',
+        'data' => $berkasusaha,
+        'subdata' => $subdata,
+        'user' => $user,
+    ]);
+}
+
+
 }
 
