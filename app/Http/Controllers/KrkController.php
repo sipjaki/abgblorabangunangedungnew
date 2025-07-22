@@ -2432,6 +2432,29 @@ $datagsbkabblora = rencanagsbblora::withoutGlobalScopes()
     ]);
 }
 
+public function perpengesahansosbudman($id)
+{
+    // Ambil data KRK Usaha berdasarkan ID atau gagal 404
+    $datakrkusaha = krksosbud::findOrFail($id);
+
+    // Ambil semua data GSB kabupaten dari rencanagsbblora tanpa scope/filter
+$datagsbkabblora = rencanagsbblora::withoutGlobalScopes()
+    ->orderByRaw("COALESCE(ruasjalan, '') ASC")
+    ->get();
+
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Kirimkan data ke view
+    return view('backend.06_krk.04_berkassosbud.04_berkaskrksosbudsuratman', [
+        'title' => 'Lembar Pengesahan Permohonan KRK Fungsi Sosial Budaya Bangunan Gedung',
+        'data' => $datakrkusaha,
+        'datagsb' => $datagsbkabblora,
+        'user' => $user,
+    ]);
+}
+
 
 public function perpengesahansosbudcreate(Request $request, $id)
 {

@@ -393,6 +393,7 @@ Route::post('/berkassosbudval/{id}/validate', [KrkController::class, 'berkassosb
 
 Route::get('/perpengesahansosbud/{id}', [KrkController::class, 'perpengesahansosbud'])->name('permohonan.perpengesahansosbud');
 Route::post('/perpengesahansosbudcreate/{id}', [KrkController::class, 'perpengesahansosbudcreate'])->name('permohonan.perpengesahansosbudcreate');
+Route::get('/perpengesahansosbudman/{id}', [KrkController::class, 'perpengesahansosbudman'])->name('perpengesahansosbudman');
 
 Route::get('/perpengesahansosbudber/{id}', [KrkController::class, 'perpengesahansosbudber'])->name('berkas.perpengesahansosbudber');
 Route::delete('/krksosbudsuratdelete/{id}', [KrkController::class, 'krksosbudsuratdelete'])->name('krksosbudsuratdelete.destroy');
