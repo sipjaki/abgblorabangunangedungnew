@@ -4415,6 +4415,22 @@ public function validasikrkmenara(Request $request, $id)
 
         // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
     }
+public function bekrkmenaraperbaikan($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = krkmenara::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.06_krk.05_pengesahanmenara.02_perbaikanmenara', [
+        'title' => 'Perbaikan Data KRK Menara Telekomunikasi !',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
 
 
 }
