@@ -996,13 +996,14 @@ th {
     <div class="table-responsive">
     <table class="zebra-table table-striped">
         <tr>
-
+<!-- Untuk "Surat KKOP" -->
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-map" style="margin-right:6px;"></i> Surat KKOP
+    <i class="bi bi-geo-alt-fill" style="margin-right:6px;"></i> Surat KKOP
 </td>
 
+<!-- Untuk "Berkas Dukung Lainnya" -->
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Berkas Dukung Lainnya
+    <i class="bi bi-folder-symlink" style="margin-right:6px;"></i> Berkas Dukung Lainnya
 </td>
 
 </tr>
