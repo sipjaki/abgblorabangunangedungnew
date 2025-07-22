@@ -378,11 +378,11 @@ th {
                 @endif
 
                 {{-- Tombol Tambah Data --}}
-                <div class="text-center mt-4">
+                {{-- <div class="text-center mt-4">
                     <a href="{{ route('bepbgsuratundangancreate', $data->id) }}" class="button-baru">
                         <i class="bi bi-plus-circle me-1"></i> Buat Undangan Konsultasi Baru!
                     </a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
