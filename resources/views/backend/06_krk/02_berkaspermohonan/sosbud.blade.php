@@ -680,7 +680,7 @@ th {
     </a>
 @else
     <button
-        class="button-dikembalikan"
+        class="button-merah"
         style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Dokumen Belum Ada
