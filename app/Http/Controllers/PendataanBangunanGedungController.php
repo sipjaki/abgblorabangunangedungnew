@@ -1106,7 +1106,7 @@ public function bedatabgstatuscreate($id)
 public function bedatabgstatuscreatenew(Request $request)
 {
     $validated = $request->validate([
-        'databgkepemilikan_id' => 'required|exists:databgkepemilikan,id',
+        'databgkepemilikan_id' => 'required|string',
         'dokumen_teknis_tanah' => 'nullable|string|max:255',
         'no_hdno' => 'nullable|string|max:255',
         'no_imbpbg' => 'nullable|string|max:255',
@@ -1116,7 +1116,7 @@ public function bedatabgstatuscreatenew(Request $request)
         'databgkepemilikan_id.exists' => 'Data kepemilikan tidak ditemukan.',
     ]);
 
-    databgstrukturbangunan::create([
+    databgstatus::create([
         'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
         'dokumen_teknis_tanah' => $validated['dokumen_teknis_tanah'] ?? null,
         'no_hdno' => $validated['no_hdno'] ?? null,
@@ -1124,7 +1124,7 @@ public function bedatabgstatuscreatenew(Request $request)
         'no_slf' => $validated['no_slf'] ?? null,
     ]);
 
-    session()->flash('create', 'Data struktur bangunan berhasil ditambahkan!');
+    session()->flash('create', 'Data Status Bangunan Gedung berhasil ditambahkan!');
     return redirect()->route('bedatabgstatusbangunan', ['id' => $validated['databgkepemilikan_id']]);
 }
 
