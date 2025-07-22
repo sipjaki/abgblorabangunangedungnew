@@ -4218,7 +4218,7 @@ public function dokuploadkrksosbud($id)
         // Menggunakan paginate() untuk pagination
         $dataceklapangan = krksosbudcek::where('krksosbud_id', $databantuanteknis->id)->paginate(50);
 
-    return view('backend.06_krk.01_pengesahanusaha.10_uploadsosbud', [
+    return view('backend.06_krk.04_berkassosbud.10_uploadsosbud', [
         'title' => 'Upload Dokumen Final KRK Fungsi Sosial Budaya',
         'subdata' => $dataceklapangan,
         'data' => $databantuanteknis,
