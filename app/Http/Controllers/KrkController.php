@@ -4388,7 +4388,7 @@ public function validasikrkmenara(Request $request, $id)
     ]);
 
     // Flash message
-    session()->flash('update', 'Data Verifikasi KRK Usaha Berhasil !');
+    session()->flash('update', 'Data Verifikasi KRK Menara Telekomunikasi Berhasil !');
 
     // Redirect ke route bernama bebantuanteknis.show
     return redirect()->route('bekrkmenaratelkomshow', ['id' => $id]);
