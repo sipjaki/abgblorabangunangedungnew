@@ -265,7 +265,7 @@ th {
                                     <td style="text-align: left;">{{$item->lokasibangunan}}</td> --}}
 
                                        <td style="text-align: center;">
-                <a href="{{ route('bekrksosbudpermohonan.show', $item->id) }}"
+                <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
                     class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
@@ -645,7 +645,7 @@ th {
     </button>
 @endif --}}
 
-<a href="{{ route('dokuploadkrksosbud', $item->id) }}"
+<a href="{{ route('dokuploadkrkmenara', $item->id) }}"
     class="button-berkas">
     <i class="bi bi-folder" style="margin-right: 5px;"></i> Dokumen KRK
 
