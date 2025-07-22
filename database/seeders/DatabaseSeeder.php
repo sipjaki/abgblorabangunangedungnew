@@ -649,6 +649,16 @@ User::create([
     'password' => bcrypt('admindpuprkanblora') // password: kabblora2025e
 ]);
 
+User::create([
+    'id'  => 78,
+    'name'  => 'Benny Hermawan',
+    'username' => 'Benny Hermawan',
+    'statusadmin_id' => '1',
+    'avatar' => 'user/avatar/foto6.png',
+    'email' => 'bennyhermawan1990@gmail.com ',
+    'password' => bcrypt('bennY@1993') // password: kabblora2025e
+]);
+
 
         // -------------------
         // BATAS AKUN SUPER ADMIN
