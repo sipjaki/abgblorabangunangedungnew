@@ -549,111 +549,251 @@ th {
         </div>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="tandatangan">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Permohonan KRK (PDF)
+<div class="mb-3">
+    <label class="form-label" for="tandatangan">
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Permohonan KRK (PDF/Gambar)
     </label>
-    <input type="file" id="tandatangan" name="tandatangan" accept="application/pdf,image/jpeg,image/png,image/jpg"
-    class="form-control @error('tandatangan') is-invalid @enderror"
-        onchange="previewMixedFile(event, 'previewContainerTTD', 'previewTTD', 'msgTTD')" />
-        @error('tandatangan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <input
+        type="file"
+        id="tandatangan"
+        name="tandatangan"
+        accept="application/pdf,image/jpeg,image/png,image/jpg"
+        class="form-control @error('tandatangan') is-invalid @enderror"
+        onchange="previewMixedFile(event, 'previewContainerTTD', 'previewTTD', 'msgTTD')"
+    />
+    @error('tandatangan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 
-        {{-- Data Sebelumnya --}}
-        <div class="mt-3" id="previewContainerTTD" style="{{ isset($data->tandatangan) ? '' : 'display: none;' }}">
-            <label class="fw-bold">Data Sebelumnya:</label>
-            @php
+    {{-- Data Sebelumnya --}}
+    <div class="mt-3" id="previewContainerTTD" style="{{ isset($data->tandatangan) ? '' : 'display: none;' }}">
+        <label class="fw-bold">Data Sebelumnya:</label>
+        @php
             $ext = pathinfo($data->tandatangan ?? '', PATHINFO_EXTENSION);
-            @endphp
+        @endphp
         @if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png']))
-            <img src="{{ asset($data->tandatangan) }}" alt="Tanda Tangan Lama"
-            style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
-            @elseif ($ext === 'pdf')
-            <iframe src="{{ asset($data->tandatangan) }}"
-                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-                @else
-                <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
-                @endif
-            </div>
-
-            <div id="msgTTD" class="mt-3"
-            style="color: grey; font-style: italic; {{ isset($data->tandatangan) ? 'display:none;' : '' }}">
-            Data belum di update. Silahkan upload berkas Tanda Tangan.
-        </div>
-
-        {{-- Preview Upload Baru --}}
-        <div class="mt-3" id="previewTTD" style="display: none;"></div>
+            <img
+                src="{{ asset($data->tandatangan) }}"
+                alt="Tanda Tangan Lama"
+                style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;"
+            />
+        @elseif ($ext === 'pdf')
+            <iframe
+                src="{{ asset($data->tandatangan) }}"
+                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"
+            ></iframe>
+        @else
+            <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
+        @endif
     </div>
+
+    <div
+        id="msgTTD"
+        class="mt-3"
+        style="color: grey; font-style: italic; {{ isset($data->tandatangan) ? 'display:none;' : '' }}"
+    >
+        Data belum di update. Silahkan upload berkas Tanda Tangan.
+    </div>
+
+    {{-- Preview Upload Baru --}}
+    <div class="mt-3" id="previewTTD" style="display: none;"></div>
+</div>
+
+<script>
+    function previewMixedFile(event, containerId, previewId, msgId) {
+        const fileInput = event.target;
+        const container = document.getElementById(containerId);
+        const preview = document.getElementById(previewId);
+        const msg = document.getElementById(msgId);
+
+        preview.innerHTML = ''; // Clear preview first
+
+        if (fileInput.files && fileInput.files[0]) {
+            const file = fileInput.files[0];
+            const fileType = file.type;
+
+            // Hide previous data container and message
+            if (container) container.style.display = 'none';
+            if (msg) msg.style.display = 'none';
+            if (preview) preview.style.display = 'block';
+
+            if (fileType.startsWith('image/')) {
+                const img = document.createElement('img');
+                img.style.maxWidth = '100%';
+                img.style.border = '1px solid #ccc';
+                img.style.borderRadius = '6px';
+                img.src = URL.createObjectURL(file);
+                preview.appendChild(img);
+            } else if (fileType === 'application/pdf') {
+                const iframe = document.createElement('iframe');
+                iframe.style.width = '100%';
+                iframe.style.height = '400px';
+                iframe.style.border = '1px solid #ccc';
+                iframe.style.borderRadius = '6px';
+                iframe.src = URL.createObjectURL(file);
+                preview.appendChild(iframe);
+            } else {
+                preview.textContent = 'Preview tidak tersedia untuk jenis file ini.';
+            }
+        } else {
+            // Kalau batal upload atau kosong, kembalikan tampilan ke semula
+            if (container) container.style.display = '';
+            if (msg) msg.style.display = '';
+            if (preview) preview.style.display = 'none';
+        }
+    }
+</script>
+
 </div>
 <div class="col-md-6">
-<div class="mb-3">
-    <label class="form-label" for="berkasdukung1">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 1 (PDF/Gambar)
-    </label>
-    <input type="file" id="berkasdukung1" name="berkasdukung1" accept="application/pdf,image/jpeg,image/png,image/jpg"
-        class="form-control @error('berkasdukung1') is-invalid @enderror"
-        onchange="previewMixedFile(event, 'previewContainerBD1', 'previewBD1', 'msgBD1')" />
-    @error('berkasdukung1')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-    {{-- Data Sebelumnya --}}
-    <div class="mt-3" id="previewContainerBD1" style="{{ isset($data->berkasdukung1) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        @php
-            $ext = pathinfo($data->berkasdukung1 ?? '', PATHINFO_EXTENSION);
-        @endphp
-        @if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png']))
-            <img src="{{ asset($data->berkasdukung1) }}" alt="Berkas Pendukung 1 Lama"
-                style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
-        @elseif ($ext === 'pdf')
-            <iframe src="{{ asset($data->berkasdukung1) }}"
-                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-        @else
-            <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
-        @endif
-    </div>
+  {{-- Berkas Dukung 1 --}}
+  <div class="mb-3">
+      <label class="form-label" for="berkasdukung1">
+          <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 1 (PDF/Gambar)
+      </label>
+      <input
+          type="file"
+          id="berkasdukung1"
+          name="berkasdukung1"
+          accept="application/pdf,image/jpeg,image/png,image/jpg"
+          class="form-control @error('berkasdukung1') is-invalid @enderror"
+          onchange="previewMixedFile(event, 'previewContainerBD1', 'previewBD1', 'msgBD1')"
+      />
+      @error('berkasdukung1')
+          <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
 
-    <div id="msgBD1" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->berkasdukung1) ? 'display:none;' : '' }}">
-        Data belum di update. Silahkan upload Berkas Pendukung 1.
-    </div>
+      {{-- Data Sebelumnya --}}
+      <div class="mt-3" id="previewContainerBD1" style="{{ isset($data->berkasdukung1) ? '' : 'display: none;' }}">
+          <label class="fw-bold">Data Sebelumnya:</label>
+          @php
+              $ext = pathinfo($data->berkasdukung1 ?? '', PATHINFO_EXTENSION);
+          @endphp
+          @if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png']))
+              <img
+                  src="{{ asset($data->berkasdukung1) }}"
+                  alt="Berkas Pendukung 1 Lama"
+                  style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;"
+              />
+          @elseif ($ext === 'pdf')
+              <iframe
+                  src="{{ asset($data->berkasdukung1) }}"
+                  style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"
+              ></iframe>
+          @else
+              <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
+          @endif
+      </div>
 
-    {{-- Preview Upload Baru --}}
-    <div class="mt-3" id="previewBD1" style="display: none;"></div>
+      <div
+          id="msgBD1"
+          class="mt-3"
+          style="color: grey; font-style: italic; {{ isset($data->berkasdukung1) ? 'display:none;' : '' }}"
+      >
+          Data belum di update. Silahkan upload Berkas Pendukung 1.
+      </div>
+
+      {{-- Preview Upload Baru --}}
+      <div class="mt-3" id="previewBD1" style="display: none;"></div>
+  </div>
+
+  {{-- Berkas Dukung 2 --}}
+  <div class="mb-3">
+      <label class="form-label" for="berkasdukung2">
+          <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 2 (PDF/Gambar)
+      </label>
+      <input
+          type="file"
+          id="berkasdukung2"
+          name="berkasdukung2"
+          accept="application/pdf,image/jpeg,image/png,image/jpg"
+          class="form-control @error('berkasdukung2') is-invalid @enderror"
+          onchange="previewMixedFile(event, 'previewContainerBD2', 'previewBD2', 'msgBD2')"
+      />
+      @error('berkasdukung2')
+          <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
+
+      {{-- Data Sebelumnya --}}
+      <div class="mt-3" id="previewContainerBD2" style="{{ isset($data->berkasdukung2) ? '' : 'display: none;' }}">
+          <label class="fw-bold">Data Sebelumnya:</label>
+          @php
+              $ext = pathinfo($data->berkasdukung2 ?? '', PATHINFO_EXTENSION);
+          @endphp
+          @if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png']))
+              <img
+                  src="{{ asset($data->berkasdukung2) }}"
+                  alt="Berkas Pendukung 2 Lama"
+                  style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;"
+              />
+          @elseif ($ext === 'pdf')
+              <iframe
+                  src="{{ asset($data->berkasdukung2) }}"
+                  style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"
+              ></iframe>
+          @else
+              <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
+          @endif
+      </div>
+
+      <div
+          id="msgBD2"
+          class="mt-3"
+          style="color: grey; font-style: italic; {{ isset($data->berkasdukung2) ? 'display:none;' : '' }}"
+      >
+          Data belum di update. Silahkan upload Berkas Pendukung 2.
+      </div>
+
+      {{-- Preview Upload Baru --}}
+      <div class="mt-3" id="previewBD2" style="display: none;"></div>
+  </div>
+
 </div>
 
-<div class="mb-3">
-    <label class="form-label" for="berkasdukung2">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 2 (PDF/Gambar)
-    </label>
-    <input type="file" id="berkasdukung2" name="berkasdukung2" accept="application/pdf,image/jpeg,image/png,image/jpg"
-        class="form-control @error('berkasdukung2') is-invalid @enderror"
-        onchange="previewMixedFile(event, 'previewContainerBD2', 'previewBD2', 'msgBD2')" />
-    @error('berkasdukung2')<div class="invalid-feedback">{{ $message }}</div>@enderror
+<script>
+function previewMixedFile(event, containerId, previewId, msgId) {
+    const fileInput = event.target;
+    const container = document.getElementById(containerId);
+    const preview = document.getElementById(previewId);
+    const msg = document.getElementById(msgId);
 
-    {{-- Data Sebelumnya --}}
-    <div class="mt-3" id="previewContainerBD2" style="{{ isset($data->berkasdukung2) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        @php
-            $ext = pathinfo($data->berkasdukung2 ?? '', PATHINFO_EXTENSION);
-        @endphp
-        @if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png']))
-            <img src="{{ asset($data->berkasdukung2) }}" alt="Berkas Pendukung 2 Lama"
-                style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
-        @elseif ($ext === 'pdf')
-            <iframe src="{{ asset($data->berkasdukung2) }}"
-                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-        @else
-            <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
-        @endif
-    </div>
+    preview.innerHTML = ''; // Clear previous preview
 
-    <div id="msgBD2" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->berkasdukung2) ? 'display:none;' : '' }}">
-        Data belum di update. Silahkan upload Berkas Pendukung 2.
-    </div>
+    if (fileInput.files && fileInput.files[0]) {
+        const file = fileInput.files[0];
+        const fileType = file.type;
 
-    {{-- Preview Upload Baru --}}
-    <div class="mt-3" id="previewBD2" style="display: none;"></div>
-</div>
+        if (container) container.style.display = 'none'; // hide previous file display
+        if (msg) msg.style.display = 'none'; // hide message
+        if (preview) preview.style.display = 'block'; // show preview container
+
+        if (fileType.startsWith('image/')) {
+            const img = document.createElement('img');
+            img.style.maxWidth = '100%';
+            img.style.border = '1px solid #ccc';
+            img.style.borderRadius = '6px';
+            img.src = URL.createObjectURL(file);
+            preview.appendChild(img);
+        } else if (fileType === 'application/pdf') {
+            const iframe = document.createElement('iframe');
+            iframe.style.width = '100%';
+            iframe.style.height = '400px';
+            iframe.style.border = '1px solid #ccc';
+            iframe.style.borderRadius = '6px';
+            iframe.src = URL.createObjectURL(file);
+            preview.appendChild(iframe);
+        } else {
+            preview.textContent = 'Preview tidak tersedia untuk jenis file ini.';
+        }
+    } else {
+        // Reset tampilan jika tidak ada file
+        if (container) container.style.display = '';
+        if (msg) msg.style.display = '';
+        if (preview) preview.style.display = 'none';
+    }
+}
+</script>
 
 </div>
 <script>
