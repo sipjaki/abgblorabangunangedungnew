@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="button-belakang row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -221,7 +221,7 @@ th {
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-drafting-compass"></i> Site Plan</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-pen-fancy"></i> Tanda Tangan</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th> --}}
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Informasi KRK</th>
@@ -267,10 +267,7 @@ th {
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkkeagamaanpermohonan.show', $item->id) }}"
-                    class="button-validasinew"
-                    style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+                    class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
@@ -384,7 +381,7 @@ th {
     }
 </script>
 
-  <td style="text-align: center;">
+  {{-- <td style="text-align: center;">
                 <a href="{{ route('doklapkrkkeagamaan.show', $item->id) }}"
                     class="button-validasinew"
                     style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -393,7 +390,7 @@ th {
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
-            </td>
+            </td> --}}
 
             {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
@@ -634,7 +631,7 @@ th {
     @endif
 @endif --}}
 
-
+{{--
 @if($subdata->where('krkkeagamaan_id', $item->id)->count() > 0)
     <a href="{{ route('berkas.perpengesahanagamaber', $item->id) }}"
         class="button-lolos"
@@ -650,8 +647,14 @@ th {
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Dokumen Belum Ada
     </button>
-@endif
+@endif --}}
 
+
+<a href="{{ route('dokuploadkrkagama', $item->id) }}"
+    class="button-berkas">
+    <i class="bi bi-folder" style="margin-right: 5px;"></i> Dokumen KRK
+
+</a>
     </div>
 </td>
 
@@ -739,7 +742,7 @@ th {
 </script>
 
 
-<td style="text-align: center; vertical-align: middle; width: 100%;">
+{{-- <td style="text-align: center; vertical-align: middle; width: 100%;">
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
 
@@ -761,7 +764,7 @@ th {
 @endif
 
 </div>
-</td>
+</td> --}}
 
 
 <!-- Tombol Validasi -->
