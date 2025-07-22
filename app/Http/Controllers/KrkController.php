@@ -4349,5 +4349,52 @@ public function bekrkmenaratelkom(Request $request)
     ]);
 }
 
+
+public function validasikrkmenara(Request $request, $id)
+{
+    // Validasi input wajib & opsional
+    $request->validate([
+        'verifikasiktp' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasinpwp' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasisert' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasioss' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasipbb' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasidokval' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasisiteplan' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasittd' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasiberkas1' => 'required|in:sesuai,tidak_sesuai',
+        'verifikasiberkas2' => 'required|in:sesuai,tidak_sesuai',
+
+        'catatanvalidasi' => 'nullable|string',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = krkmenara::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'verifikasiktp' => $request->verifikasiktp,
+        'verifikasinpwp' => $request->verifikasinpwp,
+        'verifikasisert' => $request->verifikasisert,
+        'verifikasioss' => $request->verifikasioss,
+        'verifikasipbb' => $request->verifikasipbb,
+        'verifikasidokval' => $request->verifikasidokval,
+        'verifikasisiteplan' => $request->verifikasisiteplan,
+        'verifikasittd' => $request->verifikasittd,
+        'verifikasiberkas1' => $request->verifikasiberkas1,
+        'verifikasiberkas2' => $request->verifikasiberkas2,
+
+        'catatanvalidasi' => $request->catatanvalidasi,
+    ]);
+
+    // Flash message
+    session()->flash('update', 'Data Verifikasi KRK Usaha Berhasil !');
+
+    // Redirect ke route bernama bebantuanteknis.show
+    return redirect()->route('bekrkmenaratelkomshow', ['id' => $id]);
+}
+
+
+
 }
 

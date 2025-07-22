@@ -1099,7 +1099,7 @@ th {
 
 <hr>
 
-<form action="{{ route('validasikrkusaha', $data->id) }}" method="POST">
+<form action="{{ route('validasikrkmenara', $data->id) }}" method="POST">
     @csrf
     @method('PUT')
                     <!-- /.card-header -->
@@ -2543,10 +2543,10 @@ th {
 
 
                                     {{-- -------------------------------- --}}
-{{-- DOKUMEN BERKAS DUKUNG 1 --}}
+{{-- DOKUMEN Surat KKOP --}}
 <tr>
   <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-paperclip"></i> Berkas Dukung 1
+    <i class="bi bi-paperclip"></i> Surat KKOP
   </th>
 
   <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -2557,12 +2557,12 @@ th {
       </button>
     </div>
 
-    <!-- Modal Berkas Dukung 1 -->
+    <!-- Modal Surat KKOP -->
     <div class="modal fade" id="modalBerkas1{{ $data->id }}" tabindex="-1" aria-labelledby="modalBerkas1Lbl{{ $data->id }}" aria-hidden="true">
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modalBerkas1Lbl{{ $data->id }}">Berkas Dukung 1</h5>
+            <h5 class="modal-title" id="modalBerkas1Lbl{{ $data->id }}">Surat KKOP</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body text-center">
@@ -2621,7 +2621,7 @@ th {
 {{-- DOKUMEN BERKAS DUKUNG 2 --}}
 <tr>
   <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-paperclip"></i> Berkas Dukung 2
+    <i class="bi bi-paperclip"></i> Berkas Dukung Lainnya
   </th>
 
   <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -2637,7 +2637,7 @@ th {
       <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modalBerkas2Lbl{{ $data->id }}">Berkas Dukung 2</h5>
+            <h5 class="modal-title" id="modalBerkas2Lbl{{ $data->id }}">Berkas Dukung Lainnya</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body text-center">
