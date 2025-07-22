@@ -137,7 +137,7 @@
                                             <!-- Title -->
                                             <div style="text-align: center; font-weight: bold; text-decoration: underline; margin-bottom: 20px; font-size: 14px;">
                                                 KETERANGAN RENCANA KABUPATEN <br>
-                                                Nomor: 640/{{ $data->id }}.FH/{{ date('Y') }}
+                                                Nomor: 640/{{ $data->id }}.FK/{{ date('Y') }}
                                             </div>
 
                                             <!-- Section I: Administrative Information -->
