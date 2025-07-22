@@ -3976,7 +3976,7 @@ public function perpengesahankrkagama(Request $request, $id)
         'tanggalpermohonan' => 'required|date',
         'kepadatan' => 'required|in:RENDAH,SEDANG,TINGGI',
         'luaslantaimaksimal' => 'required|string',
-        'luasbangunan' => 'required|numeric|min:0',
+        'luasbangunan' => 'required|string',
         'fungsibangunan' => 'required|string|max:255',
         'lokasibangunan' => 'required|string|max:255',
         'rencanagsbblora_id' => 'required|integer',
