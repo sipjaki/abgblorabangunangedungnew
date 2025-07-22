@@ -265,7 +265,7 @@ th {
                                     <td style="text-align: left;">{{$item->lokasibangunan}}</td> --}}
 
                                        <td style="text-align: center;">
-                <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
+                <a href="{{ route('bekrkmenaratelkomshow', $item->id) }}"
                     class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
