@@ -214,7 +214,7 @@ th {
         <i class="fas fa-building"></i> Lihat Permohonan
     </th>
     <th style="background-color: #ADD8E6; width: 160px;">
-        <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK
+        <i class="fas fa-database" style="margin-right: 6px;"></i> Dokumen KRK
     </th>
 </tr>
 
