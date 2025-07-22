@@ -24308,19 +24308,6 @@ databgtanah::create(['id'=>972,'databgkepemilikan_id'=>972,'statushaktanah'=>'Mi
 databgtanah::create(['id'=>973,'databgkepemilikan_id'=>973,'statushaktanah'=>'Milik Pemda','statuskepemilikan'=>'Milik Dinas Pendidikan','nobuktikepemilikan'=>'11120511400008','alamattanah'=>'#VALUE!']);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL TANAH
 
 // Records 1-10
