@@ -331,7 +331,7 @@ th {
 <th style="background-color: #ADD8E6;"><i class="bi bi-geo-fill"></i> Alamat</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-telephone-fill"></i> No. Telepon</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-fill"></i> Email</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-lock2-fill"></i> No. Pengesahan Usaha</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-lock2-fill"></i> No. HDNO</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-lock2-fill"></i> Informasi Bangunan</th>
 
     @can('superadmin')

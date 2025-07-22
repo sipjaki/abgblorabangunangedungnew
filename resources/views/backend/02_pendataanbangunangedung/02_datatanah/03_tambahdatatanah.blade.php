@@ -346,9 +346,32 @@ th {
     <div class="row g-3 mt-2">
 {{-- Status Hak Tanah --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-card-list text-navy me-1" style="color: blue"></i> Status Hak Tanah</label>
-    <input type="text" name="statushaktanah" class="form-control @error('statushaktanah') is-invalid @enderror" value="{{ old('statushaktanah') }}">
-    @error('statushaktanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <label class="form-label">
+        <i class="bi bi-card-list text-navy me-1" style="color: blue"></i> Status Hak Tanah
+    </label>
+    <select name="statushaktanah" class="form-control @error('statushaktanah') is-invalid @enderror">
+        <option value="">-- Pilih Status Hak Tanah --</option>
+        <option value="Dalam Proses">Dalam Proses</option>
+        <option value="Hak Milik">Hak Milik</option>
+        <option value="Hak Milik (Pemkab/Pemda/Negara)">Hak Milik (Pemkab/Pemda/Negara)</option>
+        <option value="Hak Pakai">Hak Pakai</option>
+        <option value="Hak Pakai (Milik Desa)">Hak Pakai (Milik Desa)</option>
+        <option value="Hak Pakai (Milik Pemkab)">Hak Pakai (Milik Pemkab)</option>
+        <option value="Milik Desa">Milik Desa</option>
+        <option value="Milik Kelurahan">Milik Kelurahan</option>
+        <option value="Milik Negara">Milik Negara</option>
+        <option value="Milik Pemkab">Milik Pemkab</option>
+        <option value="Milik Pemkab/Pemda/Negara">Milik Pemkab/Pemda/Negara</option>
+        <option value="Pemda">Pemda</option>
+        <option value="Pemdes">Pemdes</option>
+        <option value="Pemkab Blora">Pemkab Blora</option>
+        <option value="Tanah Gg">Tanah GG</option>
+        <option value="Tidak Mengetahui">(Tidak Mengetahui)</option>
+        <option value="Wakaf">Wakaf</option>
+    </select>
+    @error('statushaktanah')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 </div>
 
 {{-- Status Kepemilikan --}}
@@ -356,7 +379,9 @@ th {
     <label class="form-label"><i class="bi bi-person-badge-fill text-navy me-1" style="color: blue"></i> Status Kepemilikan</label>
     <input type="text" name="statuskepemilikan" class="form-control @error('statuskepemilikan') is-invalid @enderror" value="{{ old('statuskepemilikan') }}">
     @error('statuskepemilikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+<p>Jika Milik Dinas Masukan Contoh : Dinas Pendidikan, Jika Bukan isi Hak Pakai</p>
 </div>
+
 
 {{-- No Bukti Kepemilikan --}}
 <div class="col-md-6">
