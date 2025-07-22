@@ -60,22 +60,23 @@
   google.charts.setOnLoadCallback(drawCharts);
 
   function drawCharts() {
-    // Data untuk kedua chart
+    // Data PieChart
     var data = google.visualization.arrayToDataTable([
       ['Fungsi', 'Jumlah Permohonan'],
-      ['Fungsi Usaha',     {{ $datajumlahkrkusaha ?? 0 }}],
-      ['Fungsi Hunian',    {{ $datajumlahkrkhunian ?? 0 }}],
+      ['Fungsi Usaha', {{ $datajumlahkrkusaha ?? 0 }}],
+      ['Fungsi Hunian', {{ $datajumlahkrkhunian ?? 0 }}],
       ['Fungsi Keagamaan', {{ $datajumlahkrkkeagamaan ?? 0 }}],
-      ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}]
+      ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}],
       ['Menara Telekomunikasi', {{ $datajumlahkrkmenara ?? 0 }}]
     ]);
 
+    // Data Bar Chart
     var dataBar = google.visualization.arrayToDataTable([
       ['Fungsi', 'Jumlah Permohonan', { role: 'style' }],
-      ['Fungsi Usaha',     {{ $datajumlahkrkusaha ?? 0 }}, '#006400'],
-      ['Fungsi Hunian',    {{ $datajumlahkrkhunian ?? 0 }}, '#FFD700'],
+      ['Fungsi Usaha', {{ $datajumlahkrkusaha ?? 0 }}, '#006400'],
+      ['Fungsi Hunian', {{ $datajumlahkrkhunian ?? 0 }}, '#FFD700'],
       ['Fungsi Keagamaan', {{ $datajumlahkrkkeagamaan ?? 0 }}, '#001f3f'],
-      ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}, '#FFA500']
+      ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}, '#FFA500'],
       ['Menara Telekomunikasi', {{ $datajumlahkrkmenara ?? 0 }}, '#ffd100']
     ]);
 
@@ -84,7 +85,7 @@
       title: 'Persentase Permohonan',
       is3D: true,
       backgroundColor: 'transparent',
-      colors: ['#006400', '#FFD700', '#001f3f', '#FFA500'],
+      colors: ['#006400', '#FFD700', '#001f3f', '#FFA500', '#ffd100'],
       titleTextStyle: {
         color: '#001f3f',
         fontSize: 16,
@@ -126,6 +127,7 @@
       }
     };
 
+    // Gambar chart
     var pieChart = new google.visualization.PieChart(document.getElementById('piechart'));
     var barChart = new google.visualization.ColumnChart(document.getElementById('barchart'));
 
