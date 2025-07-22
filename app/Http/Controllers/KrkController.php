@@ -2588,7 +2588,7 @@ public function valberkassosbud3(Request $request, $id)
     ]);
 }
 
-public function permohonankrksosbudfinal($id)
+public function permohonankrksosbudfinalman($id)
 {
     // Ambil data utama krkusaha berdasarkan ID
     $datausaha = krksosbud::where('id', $id)->first();
