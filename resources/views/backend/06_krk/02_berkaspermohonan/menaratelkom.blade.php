@@ -223,7 +223,7 @@ th {
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th> --}}
                              <th style="background-color: #ADD8E6;">
     <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
@@ -476,7 +476,7 @@ th {
             <!-- Tombol Validasi -->
 
 
-
+{{--
                             <td>
                                   <div style="display: flex; flex-direction: column; align-items: center;">
                                 @if (!$item->is_validated)
@@ -496,7 +496,7 @@ th {
                                 </button>
                                 @endif
                                 </div>
-                            </td>
+                            </td> --}}
 
                             <!-- Modal Validasi -->
 <!-- Modal Validasi -->
