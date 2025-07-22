@@ -365,7 +365,7 @@ th {
 
     <p style="font-size: 12px;">
         Kepada Yth:<br>
-        Tim Profesi Ahli {{$surat->tpatpt->timpenilai}} <br>
+        Tim Profesi Ahli {{$surat->tpatpt->timpenilai ?? '-'}} <br>
         Di<br>
         Tempat
     </p>
