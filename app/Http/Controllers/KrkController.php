@@ -4059,5 +4059,24 @@ $datagsbkabblora = rencanagsbblora::withoutGlobalScopes()
 }
 
 
+public function dokuploadkrkagama($id)
+{
+    $databantuanteknis = krkkeagamaan::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = krkkeagamaancek::where('krkkeagamaan_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.06_krk.03_berkasfungsikeagamaan.10_uploadagama', [
+        'title' => 'Upload Dokumen Final KRK Fungsi Keagamaan',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }
 
