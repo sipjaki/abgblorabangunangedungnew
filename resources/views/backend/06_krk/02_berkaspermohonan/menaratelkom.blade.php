@@ -582,7 +582,7 @@ th {
     });
 </script>
 
-<td style="text-align: center; vertical-align: middle; width: 100%;">
+{{-- <td style="text-align: center; vertical-align: middle; width: 100%;">
 
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
@@ -682,7 +682,7 @@ th {
 
     </div>
 
-</td>
+</td> --}}
 
 <!-- Tombol Validasi -->
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
