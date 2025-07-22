@@ -223,8 +223,8 @@ th {
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th>
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th> --}}
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th> --}}
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th> --}}
+                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th>
+                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th>
                              <th style="background-color: #ADD8E6;">
     <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
 </th>
@@ -476,7 +476,7 @@ th {
             <!-- Tombol Validasi -->
 
 
-{{--
+
                             <td>
                                   <div style="display: flex; flex-direction: column; align-items: center;">
                                 @if (!$item->is_validated)
@@ -496,7 +496,7 @@ th {
                                 </button>
                                 @endif
                                 </div>
-                            </td> --}}
+                            </td>
 
                             <!-- Modal Validasi -->
 <!-- Modal Validasi -->
@@ -582,8 +582,8 @@ th {
     });
 </script>
 
-{{-- <td style="text-align: center; vertical-align: middle; width: 100%;"> --}}
-{{--
+<td style="text-align: center; vertical-align: middle; width: 100%;">
+
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
         @if (!$item->is_validated)
@@ -680,9 +680,9 @@ th {
     </button>
 @endif
 
-    </div> --}}
+    </div>
 
-{{-- </td> --}}
+</td>
 
 <!-- Tombol Validasi -->
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
