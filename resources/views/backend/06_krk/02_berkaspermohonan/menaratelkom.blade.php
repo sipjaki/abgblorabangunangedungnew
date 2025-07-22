@@ -477,27 +477,6 @@ th {
 
 
 
-                            <td>
-                                  <div style="display: flex; flex-direction: column; align-items: center;">
-                                @if (!$item->is_validated)
-                                <!-- Tombol Triger Modal -->
-                                <button type="button"
-                                    onclick="openValidationModal({{ $item->id }})"
-                                    class="button-merah"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #dc3545; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#dc3545'; this.style.border='1px solid #dc3545';"
-                                    onmouseout="this.style.backgroundColor='#dc3545'; this.style.color='black'; this.style.border='none';">
-                                    <i class="bi bi-file-earmark-check" style="margin-right: 5px;"></i> Belum di Setujui !
-                                </button>
-                                @else
-                                <!-- Tombol SUDAH Validasi -->
-                                <button class="button-hijau">
-                                    <i class="bi bi-check-circle-fill" style="margin-right: 5px;"></i> Silahkan Buat Dok KRK
-                                </button>
-                                @endif
-                                </div>
-                            </td>
-
                             <!-- Modal Validasi -->
 <!-- Modal Validasi -->
 <div id="validationModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
