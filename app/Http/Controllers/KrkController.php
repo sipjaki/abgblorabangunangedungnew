@@ -4433,5 +4433,105 @@ public function bekrkmenaraperbaikan($id)
 }
 
 
+public function bekrkmenaraperbaikannew(Request $request, $id)
+{
+    $bantuan = krkmenara::findOrFail($id);
+
+    // Validasi input, tambahkan atribut baru sesuai kebutuhan validasi
+    $request->validate([
+        'nomordinasasal' => 'nullable|string|max:255',
+        'perorangan' => 'nullable|string|max:255',
+        'perusahaan' => 'nullable|string|max:255',
+        'nik' => 'nullable|string|max:16',
+        'koordinatlokasi' => 'nullable|string',
+        'tanggalpermohonan' => 'nullable|date',
+        'notelepon' => 'nullable|string',
+        'luastanah' => 'required|numeric',
+        'jumlahlantai' => 'required|string|max:10',
+        'rt' => 'nullable|string|max:10',
+        'rw' => 'nullable|string|max:10',
+        'kabupaten' => 'nullable|string|max:255',
+        'lokasibangunan' => 'nullable|string',
+        'alamatpemohon' => 'nullable|string',
+
+        // Validasi file yang sudah ada
+        'ktp' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'npwp' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'sertifikattanah' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'lampiranoss' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'buktipbb' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'dokvalidasi' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'siteplan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'tandatangan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'berkasdukung1' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'berkasdukung2' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+    ]);
+
+    // Update data utama, semua atribut baru kamu masukkan di sini
+    $bantuan->nomordinasasal = $request->nomordinasasal;
+    $bantuan->perorangan = $request->perorangan;
+    $bantuan->perusahaan = $request->perusahaan;
+    $bantuan->nik = $request->nik;
+    $bantuan->koordinatlokasi = $request->koordinatlokasi;
+    $bantuan->tanggalpermohonan = $request->tanggalpermohonan;
+    $bantuan->notelepon = $request->notelepon;
+    $bantuan->luastanah = $request->luastanah;
+    $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->rt = $request->rt;
+    $bantuan->rw = $request->rw;
+    $bantuan->kabupaten = $request->kabupaten;
+    $bantuan->lokasibangunan = $request->lokasibangunan;
+    $bantuan->alamatpemohon = $request->alamatpemohon;
+
+    // Mapping dokumen ke path (sudah kamu punya, saya biarkan)
+    $dokumenMap = [
+        'ktp' => '06_krk/01_krkusaha/01_ktp',
+        'npwp' => '06_krk/01_krkusaha/02_npwp',
+        'sertifikattanah' => '06_krk/01_krkusaha/03_sertifikattanah',
+        'lampiranoss' => '06_krk/01_krkusaha/04_lampiranoss',
+        'buktipbb' => '06_krk/01_krkusaha/05_buktipbb',
+        'dokvalidasi' => '06_krk/01_krkusaha/06_dokvalidasi',
+        'siteplan' => '06_krk/01_krkusaha/06_siteplan',
+        'tandatangan' => '06_krk/01_krkusaha/07_tandatangan',
+        'berkasdukung1' => '06_krk/01_krkusaha/08_berkas1',
+        'berkasdukung2' => '06_krk/01_krkusaha/09_berkas2',
+    ];
+
+    foreach ($dokumenMap as $field => $path) {
+        if ($request->hasFile($field)) {
+            if ($bantuan->$field && file_exists(public_path($bantuan->$field))) {
+                unlink(public_path($bantuan->$field));
+            }
+
+            $file = $request->file($field);
+            $filename = time() . '_' . $field . '.' . $file->getClientOriginalExtension();
+            $destinationPath = public_path($path);
+            $file->move($destinationPath, $filename);
+            $bantuan->$field = $path . '/' . $filename;
+        }
+    }
+
+    // Reset status verifikasi agar diverifikasi ulang (sudah lengkap)
+    $bantuan->verifikasiktp = null;
+    $bantuan->verifikasinpwp = null;
+    $bantuan->verifikasisert = null;
+    $bantuan->verifikasioss = null;
+    $bantuan->verifikasipbb = null;
+    $bantuan->verifikasidokval = null;
+    $bantuan->verifikasisiteplan = null;
+    $bantuan->verifikasittd = null;
+    $bantuan->verifikasiberkas1 = null;
+    $bantuan->verifikasiberkas2 = null;
+
+    $bantuan->verifikasi1 = null;
+
+    $bantuan->save();
+
+    session()->flash('update', 'Perbaikan Berkas Anda Berhasil!');
+    return redirect()->route('bekrkmenaratelkomshow', ['id' => $bantuan->id]);
+}
+
+
+
 }
 

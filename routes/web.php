@@ -254,7 +254,7 @@ Route::put('/validasikrkmenara/{id}', [KrkController::class, 'validasikrkmenara'
 Route::put('/validasikrkmenara1/{id}', [KrkController::class, 'validasikrkmenara1'])->name('validasikrkmenara1');
 
 Route::get('/bekrkmenaraperbaikan/{id}', [KrkController::class, 'bekrkmenaraperbaikan'])->middleware('auth')->name('bekrkmenaraperbaikan');
-// Route::post('/bekrkusahaperbaikannew/{id}', [KrkController::class, 'bekrkusahaperbaikannewupdate'])->middleware('auth')->name('bekrkusahaperbaikannewupdate');
+Route::post('/bekrkmenaraperbaikannew/{id}', [KrkController::class, 'bekrkmenaraperbaikannew'])->middleware('auth')->name('bekrkmenaraperbaikannew');
 
 
 
