@@ -344,36 +344,51 @@ th {
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
     <div class="row g-3 mt-2">
-{{-- Luas Tanah --}}
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-box text-primary me-1"></i> Struktur Bawah</label>
-    <input type="text" name="struktur_bawah" class="form-control @error('struktur_bawah') is-invalid @enderror" value="{{ old('struktur_bawah') }}">
-    @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
+        {{-- Luas Tanah --}}
+        <div class="col-md-6">
+            <label class="form-label"><i class="bi bi-box text-primary me-1"></i> Struktur Bawah</label>
+            <input type="text" name="struktur_bawah" class="form-control @error('struktur_bawah') is-invalid @enderror" value="{{ old('struktur_bawah') }}">
+            @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        </div>
 
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-box-seam text-primary me-1"></i> Struktur Atas</label>
-    <select name="struktur_atas" class="form-select @error('struktur_atas') is-invalid @enderror">
-        <option value="">-- Pilih Struktur Atas --</option>
-        <option value="Kayu">Kayu</option>
-        <option value="Baja">Baja</option>
-        <option value="Beton">Beton</option>
-        <option value="Campuran">Campuran</option>
-    </select>
-    @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
+        <div class="col-md-6">
+            <label class="form-label"><i class="bi bi-box-seam text-primary me-1"></i> Struktur Atas</label>
+            <select name="struktur_atas" class="form-select @error('struktur_atas') is-invalid @enderror">
+                <option value="">-- Pilih Struktur Atas --</option>
+                <option value="Kayu">Kayu</option>
+                <option value="Baja">Baja</option>
+                <option value="Beton">Beton</option>
+                <option value="Campuran">Campuran</option>
+            </select>
+            @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        </div>
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-house-gear text-primary me-1"></i> Struktur Atap</label>
-    <select name="struktur_atap" class="form-select @error('struktur_atap') is-invalid @enderror">
-        <option value="">-- Pilih Struktur Atap --</option>
+        <div class="col-md-6">
+            <label class="form-label"><i class="bi bi-house-gear text-primary me-1"></i> Struktur Atap</label>
+            <select name="struktur_atap" class="form-select @error('struktur_atap') is-invalid @enderror">
+                <option value="">-- Pilih Struktur Atap --</option>
         <option value="Kayu">Kayu</option>
         <option value="Baja">Baja</option>
         <option value="Beton">Beton</option>
         <option value="Campuran">Campuran</option>
     </select>
     @error('struktur_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+</div>
+
+<div class="row g-3 mt-2">
+
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+        <i class="bi bi-file-earmark-text-fill me-2"></i>
+        Informasi Tingkat Kerusakan Bangunan Gedung
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
 @php
