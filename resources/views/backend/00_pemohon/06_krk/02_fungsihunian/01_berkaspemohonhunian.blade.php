@@ -590,8 +590,8 @@ th {
         }
     });
 </script>
-<td style="text-align: center; vertical-align: middle; width: 100%;">
-    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
+{{-- <td style="text-align: center; vertical-align: middle; width: 100%;">
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;"> --}}
         {{-- @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
     <button class="button-dikembalikan"
@@ -651,8 +651,8 @@ th {
     </button>
 @endif --}}
 
-    </div>
-</td>
+    {{-- </div>
+</td> --}}
 
 <!-- Tombol Validasi -->
 {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
