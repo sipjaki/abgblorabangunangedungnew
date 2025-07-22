@@ -589,7 +589,7 @@ th {
 
         @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
-    <button class="button-dikembalikan"
+    <button class="button-merah"
         disabled
         style="background-color: #dc3545; color: white; border: none; padding: 10px 25px;
                border-radius: 15px; font-size: 14px; cursor: not-allowed;
@@ -615,7 +615,7 @@ th {
     @else
         <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
         <a href="{{ route('permohonan.perpengesahansosbud', $item->id) }}" style="text-decoration: none;">
-            <button class="button-lolos"
+            <button class="button-hijau"
                 onmouseover="this.style.backgroundColor='#D1FAE5'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
                 style="background-color:#28a745; color: white; border: none; padding: 10px 25px;
@@ -630,7 +630,7 @@ th {
 
 @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
-    <button class="button-dikembalikan"
+    <button class="button-merah"
         disabled
         style="background-color: #dc3545; color: white; border: none; padding: 10px 25px;
                border-radius: 15px; font-size: 14px; cursor: not-allowed;
@@ -656,7 +656,7 @@ th {
     @else
         <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
         <a href="{{ route('permohonan.perpengesahansosbud', $item->id) }}" style="text-decoration: none;">
-            <button class="button-lolos"
+            <button class="button-hijau"
                 onmouseover="this.style.backgroundColor='#D1FAE5'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
                 style="background-color:#28a745; color: white; border: none; padding: 10px 25px;
