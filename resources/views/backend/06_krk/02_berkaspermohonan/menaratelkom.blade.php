@@ -464,7 +464,7 @@ th {
 <script>
   function openModalVerifikasi2(itemId) {
     const form = document.getElementById("verifikasi2Form");
-    form.action = `/valberkasusaha2/${itemId}`;
+    form.action = `/validasikrkmenara2/${itemId}`;
     document.getElementById("confirmModalVerifikasi2").style.display = "flex";
   }
 

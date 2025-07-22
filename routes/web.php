@@ -252,6 +252,8 @@ Route::get('/bekrkmenaratelkom', [KrkController::class, 'bekrkmenaratelkom'])->n
 Route::get('/bekrkmenaratelkomshow/{id}', [KrkController::class, 'bekrkmenaratelkomshow'])->middleware('auth')->name('bekrkmenaratelkomshow');
 Route::put('/validasikrkmenara/{id}', [KrkController::class, 'validasikrkmenara'])->middleware('auth')->name('validasikrkmenara');
 Route::put('/validasikrkmenara1/{id}', [KrkController::class, 'validasikrkmenara1'])->name('validasikrkmenara1');
+Route::put('/validasikrkmenara2/{id}', [KrkController::class, 'valberkasusaha2'])->name('validasikrkmenara2');
+
 
 Route::get('/bekrkmenaraperbaikan/{id}', [KrkController::class, 'bekrkmenaraperbaikan'])->middleware('auth')->name('bekrkmenaraperbaikan');
 Route::post('/bekrkmenaraperbaikannew/{id}', [KrkController::class, 'bekrkmenaraperbaikannew'])->middleware('auth')->name('bekrkmenaraperbaikannew');
@@ -293,6 +295,7 @@ Route::post('/doklapkrkusahacreatenew', [KrkController::class, 'doklapkrkusahacr
 Route::delete('/doklapkrkusahacreatedelete/{id}', [KrkController::class, 'doklapkrkusahacreatedelete'])->middleware('auth')->name('delete.doklapkrkusahacreatedelete');
 
 Route::put('/valberkasusaha2/{id}', [KrkController::class, 'valberkasusaha2'])->name('valberkasusaha2.update');
+
 Route::put('/valberkasusaha3/{id}', [KrkController::class, 'valberkasusaha3'])->name('valberkasusaha3.update');
 Route::put('/valberkasusaha4/{id}', [KrkController::class, 'valberkasusaha4'])->name('valberkasusaha4.update');
 

@@ -4554,6 +4554,28 @@ public function bekrkmenaratelkomdelete($id)
 }
 
 
+  public function validasikrkmenara2(Request $request, $id)
+    {
+        $data = krkmenara::findOrFail($id);
+
+        $request->validate([
+            'verifikasi2' => 'required|in:sudah,belum',
+        ]);
+
+        $data->verifikasi2 = $request->verifikasi2;
+        $data->save();
+
+     if ($request->verifikasi2 === 'sudah') {
+        session()->flash('create', '✅ Cek Lapangan Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Cek Lapangan Di Hentikan !');
+    }
+           return redirect('/bekrkmenaratelkom');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
+
 
 }
 
