@@ -4332,5 +4332,22 @@ public function bekrkmenaratelkom(Request $request)
         'user' => $user,
     ]);
 }
+
+        public function bekrkmenaratelkomshow($id)
+{
+    // Cari data berdasarkan ID
+    $data = krkmenara::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.06_krk.05_pengesahanmenara.01_berkasmenara', [
+        'title' => 'Berkas Permohonan KRK Menara Telekomunikasi',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
 }
 
