@@ -277,7 +277,7 @@
                         <i class="fas fa-building"></i> Jumlah Lantai Maksimal
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="luaslantaimaksimal" name="luaslantaimaksimal" readonly>
+                        <input type="text" class="form-control" id="luaslantaimaksimal" name="luaslantaimaksimal">
                     </div>
                     @error('luaslantaimaksimal')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
@@ -403,7 +403,7 @@
     @enderror
 </div>
 
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const luastanah = {{ $data->luastanah ?? 0 }};
         const kepadatanSelect = document.getElementById('kepadatan');
@@ -444,7 +444,7 @@
         hitungLuasDanKDB();
     });
 </script>
-
+ --}}
 
                 <!-- KDH -->
                 <div class="form-group row mb-4">
@@ -484,22 +484,22 @@
                 <!-- Script Dynamic Fields -->
                 <script>
                     // Kepadatan Change Handler
-                    document.getElementById('kepadatan').addEventListener('change', function() {
-                        const kepadatan = this.value;
-                        const jmlLantai = document.getElementById('luaslantaimaksimal');
-                        const klb = document.getElementById('klb');
+                    // document.getElementById('kepadatan').addEventListener('change', function() {
+                    //     const kepadatan = this.value;
+                    //     const jmlLantai = document.getElementById('luaslantaimaksimal');
+                    //     const klb = document.getElementById('klb');
 
-                        if (kepadatan === 'RENDAH') {
-                            jmlLantai.value = '2 Lantai';
-                            klb.value = '45%';
-                        } else if (kepadatan === 'SEDANG') {
-                            jmlLantai.value = '4 Lantai';
-                            klb.value = '60%';
-                        } else if (kepadatan === 'TINGGI') {
-                            jmlLantai.value = '2 - 8 Lantai';
-                            klb.value = '75%';
-                        }
-                    });
+                    //     if (kepadatan === 'RENDAH') {
+                    //         jmlLantai.value = '2 Lantai';
+                    //         klb.value = '45%';
+                    //     } else if (kepadatan === 'SEDANG') {
+                    //         jmlLantai.value = '4 Lantai';
+                    //         klb.value = '60%';
+                    //     } else if (kepadatan === 'TINGGI') {
+                    //         jmlLantai.value = '2 - 8 Lantai';
+                    //         klb.value = '75%';
+                    //     }
+                    // });
 
                     // Ruas Jalan Change Handler
                     document.getElementById('rencanagsbblora_id').addEventListener('change', function() {
@@ -511,15 +511,15 @@
                     });
 
                     // Luas Bangunan Calculator
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const luastanah = {{ $data->luastanah }};
-                        document.getElementById('kepadatan').addEventListener('change', function() {
-                            const persen = {RENDAH:0.45, SEDANG:0.6, TINGGI:0.75}[this.value] || 0;
-                            document.getElementById('luasbangunan').value = Math.round(luastanah * persen);
-                        });
-                    });
+                    // document.addEventListener('DOMContentLoaded', function() {
+                    //     const luastanah = {{ $data->luastanah }};
+                    //     document.getElementById('kepadatan').addEventListener('change', function() {
+                    //         const persen = {RENDAH:0.45, SEDANG:0.6, TINGGI:0.75}[this.value] || 0;
+                    //         document.getElementById('luasbangunan').value = Math.round(luastanah * persen);
+                    //     });
+                    // });
                 </script>
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const klb = document.getElementById('klb'); // input persen, misal "45%"
         const luasbangunan = document.getElementById('luasbangunan'); // input angka
@@ -544,7 +544,7 @@
         klb.addEventListener('input', hitungKDB);
         luasbangunan.addEventListener('input', hitungKDB);
     });
-</script>
+</script> --}}
 
 
 
