@@ -374,7 +374,7 @@ th {
 <script>
     function openModal(itemId) {
         const form = document.getElementById("validasiForm");
-        form.action = `/valberkasusaha/${itemId}`;
+        form.action = `/validasikrkmenara1/${itemId}`;
         document.getElementById("confirmModal").style.display = "flex";
     }
 
