@@ -4206,5 +4206,64 @@ public function perpengesahankrksosbud(Request $request, $id)
         'Surat KRK Sosial Budaya berhasil disetujui!');
 }
 
+
+public function dokuploadkrksosbud($id)
+{
+    $databantuanteknis = krksosbud::where('id', $id)->first();
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+    }
+
+        // Menggunakan paginate() untuk pagination
+        $dataceklapangan = krksosbudcek::where('krksosbud_id', $databantuanteknis->id)->paginate(50);
+
+    return view('backend.06_krk.01_pengesahanusaha.10_uploadsosbud', [
+        'title' => 'Upload Dokumen Final KRK Fungsi Sosial Budaya',
+        'subdata' => $dataceklapangan,
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
+
+public function dokuploadkrksosbudnew(Request $request, $id)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'suratuploadmanual' => 'nullable|file|mimes:pdf|max:10048',
+    ], [
+        'suratuploadmanual.mimes' => 'File harus berupa PDF.',
+    ]);
+
+    // Ambil data berdasarkan ID
+    $data = krksosbud::find($id);
+    if (!$data) {
+        return back()->with('error', 'Data tidak ditemukan.');
+    }
+
+    // Proses upload file baru
+    if ($request->hasFile('suratuploadmanual')) {
+        // Hapus file lama kalau ada
+        if ($data->suratuploadmanual && file_exists(public_path($data->suratuploadmanual))) {
+            unlink(public_path($data->suratuploadmanual));
+        }
+
+        // Simpan file baru
+        $file = $request->file('suratuploadmanual');
+        $filename = time() . '_suratuploadmanual.' . $file->getClientOriginalExtension();
+        $folder = '00_suratuploadkrk';
+        $file->move(public_path($folder), $filename);
+
+        // Simpan path relatif ke database
+        $data->suratuploadmanual = $folder . '/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('update', 'Surat berhasil diupload!');
+    return redirect()->back();
+}
+
 }
 
