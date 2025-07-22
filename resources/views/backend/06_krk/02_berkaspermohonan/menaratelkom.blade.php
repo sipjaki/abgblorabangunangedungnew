@@ -762,7 +762,7 @@ th {
 <script>
     function openModal3(itemId) {
         const form = document.getElementById("validasiForm3");
-        form.action = `/valberkasusaha3/${itemId}`;
+        form.action = `/validasikrkmenara3/${itemId}`;
         document.getElementById("confirmModal3").style.display = "flex";
     }
 
