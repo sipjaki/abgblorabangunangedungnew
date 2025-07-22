@@ -390,9 +390,8 @@ th {
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
-
 @php
-    $opsi = ['Baik', 'T1', 'T2', 'T3', 'T4'];
+    $opsi = ['Tinggi', 'Sedang', 'Rendah'];
 @endphp
 
 @foreach ([
