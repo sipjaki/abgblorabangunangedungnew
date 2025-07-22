@@ -379,7 +379,7 @@
                         <i class="fas fa-cogs"></i> KDB (Koefisien Dasar Bangunan)
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="klb" name="klb" readonly>
+                        <input type="text" class="form-control" id="klb" name="klb">
                     </div>
                     @error('klb')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
@@ -392,7 +392,7 @@
     </label>
     <div class="col-md-8">
         <div class="input-group">
-            <input type="text" class="form-control" id="kdb" name="kdb" readonly>
+            <input type="text" class="form-control" id="kdb" name="kdb">
             <div class="input-group-append">
                 <span class="input-group-text">M²</span>
             </div>
