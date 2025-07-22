@@ -1259,6 +1259,7 @@ Route::post('/bepbgtpatptcreatenew', [PbgslfController::class, 'bepbgtpatptcreat
 Route::delete('/bepbgtpatptdelete/{id}', [PbgslfController::class, 'bepbgtpatptdelete'])->middleware('auth')->name('bepbgtpatptdelete');
 
 Route::get('/bepbgsuratundangantpatpt/{id}', [PbgslfController::class, 'bepbgsuratundangantpatpt'])->middleware('auth')->name('bepbgsuratundangantpatpt');
+Route::get('/bepbgsuratundangantpatptshow/{id}', [PbgslfController::class, 'bepbgsuratundangantpatptshow'])->middleware('auth')->name('bepbgsuratundangantpatptshow');
 
 // DATA DOKUMEN SURAT PEMBERITAHUAN
 Route::get('/bepbgsuratundangan/{id}', [PbgslfController::class, 'bepbgsuratundangan'])->middleware('auth')->name('bepbgsuratundangan');

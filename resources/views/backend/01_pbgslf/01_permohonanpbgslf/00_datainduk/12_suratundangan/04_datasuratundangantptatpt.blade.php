@@ -300,7 +300,7 @@ th {
         <div class="card shadow-sm border-0">
             <div class="card-header bg-primary text-white d-flex align-items-center">
                 <i class="bi bi-calendar-event me-2 fs-5"></i>
-                <h5 class="mb-0" style="font-size: 16px;">Daftar Undangan Konsultasi</h5>
+                <h5 class="mb-0" style="font-size: 16px;">Daftar Undangan TPA/TPT</h5>
             </div>
             <div class="card-body">
                 @if ($subdatapemilik->count() > 0)
@@ -333,7 +333,7 @@ th {
                                         <td style="white-space: pre-wrap; text-align: justify;">{{ $item->catatan ?? '-' }}</td>
 
                                                                            <td style="white-space: nowrap; text-align: center;">
-    <a href="{{ route('bepbgsuratundanganshow.detail', ['id' => $item->id]) }}"
+    <a href="{{ route('bepbgsuratundangantpatptshow', ['id' => $item->id]) }}"
        class="text-decoration-none"
        onclick="saveScrollPosition()">
         <div style="
