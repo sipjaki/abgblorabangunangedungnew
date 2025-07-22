@@ -603,24 +603,28 @@ public function bekrkhunian(Request $request)
     $datajumlahkrkhunian = krkhunian::where('user_id', $userId)->count();
     $datajumlahkrkkeagamaan = krkkeagamaan::where('user_id', $userId)->count();
     $datajumlahkrksosbud = krksosbud::where('user_id', $userId)->count();
+    $datajumlahkrkmenara = krkmenara::where('user_id', $userId)->count();
 
     // Data 'dikembalikan' berdasarkan user login
     $datajumlahkrkusaha_dikembalikan = krkusaha::where('user_id', $userId)->where('verifikasi1', 'dikembalikan')->count();
     $datajumlahkrkhunian_dikembalikan = krkhunian::where('user_id', $userId)->where('verifikasi1', 'dikembalikan')->count();
     $datajumlahkrkagama_dikembalikan = krkkeagamaan::where('user_id', $userId)->where('verifikasi1', 'dikembalikan')->count();
     $datajumlahkrksosbud_dikembalikan = krksosbud::where('user_id', $userId)->where('verifikasi1', 'dikembalikan')->count();
+    $datajumlahkrkmenara_dikembalikan = krkmenara::where('user_id', $userId)->where('verifikasi1', 'dikembalikan')->count();
 
     // Data 'verifikasi lapangan' berdasarkan user login
     $datajumlahkrkusaha_lapangan = krkusaha::where('user_id', $userId)->where('verifikasi2', 'sudah')->count();
     $datajumlahkrkhunian_lapangan = krkhunian::where('user_id', $userId)->where('verifikasi2', 'sudah')->count();
     $datajumlahkrkagama_lapangan = krkkeagamaan::where('user_id', $userId)->where('verifikasi2', 'sudah')->count();
     $datajumlahkrksosbud_lapangan = krksosbud::where('user_id', $userId)->where('verifikasi2', 'sudah')->count();
+    $datajumlahkrkmenara_lapangan = krkmenara::where('user_id', $userId)->where('verifikasi2', 'sudah')->count();
 
     // Data 'terbit' berdasarkan user login
     $datajumlahkrkusaha_terbit = krkusaha::where('user_id', $userId)->where('verifikasi4', 'sudah')->count();
     $datajumlahkrkhunian_terbit = krkhunian::where('user_id', $userId)->where('verifikasi4', 'sudah')->count();
     $datajumlahkrkagama_terbit = krkkeagamaan::where('user_id', $userId)->where('verifikasi4', 'sudah')->count();
     $datajumlahkrksosbud_terbit = krksosbud::where('user_id', $userId)->where('verifikasi4', 'sudah')->count();
+    $datajumlahkrkmenara_terbit = krkmenara::where('user_id', $userId)->where('verifikasi4', 'sudah')->count();
 
     return view('backend.00_pemohon.06_krk.01_fungsiusaha.01_fungsiusahapemohon', [
         'title' => 'Permohonan Keterangan Rencana Kota (KRK) Bangunan Gedung',
@@ -631,21 +635,25 @@ public function bekrkhunian(Request $request)
         'datajumlahkrkhunian' => $datajumlahkrkhunian,
         'datajumlahkrkkeagamaan' => $datajumlahkrkkeagamaan,
         'datajumlahkrksosbud' => $datajumlahkrksosbud,
+        'datajumlahkrkmenara' => $datajumlahkrkmenara,
 
         'datajumlahkrkusaha_dikembalikan' => $datajumlahkrkusaha_dikembalikan,
         'datajumlahkrkhunian_dikembalikan' => $datajumlahkrkhunian_dikembalikan,
         'datajumlahkrkagama_dikembalikan' => $datajumlahkrkagama_dikembalikan,
         'datajumlahkrksosbud_dikembalikan' => $datajumlahkrksosbud_dikembalikan,
+        'datajumlahkrkmenara_dikembalikan' => $datajumlahkrkmenara_dikembalikan,
 
         'datajumlahkrkusaha_lapangan' => $datajumlahkrkusaha_lapangan,
         'datajumlahkrkhunian_lapangan' => $datajumlahkrkhunian_lapangan,
         'datajumlahkrkagama_lapangan' => $datajumlahkrkagama_lapangan,
         'datajumlahkrksosbud_lapangan' => $datajumlahkrksosbud_lapangan,
+        'datajumlahkrkmenara_lapangan' => $datajumlahkrkmenara_lapangan,
 
         'datajumlahkrkusaha_terbit' => $datajumlahkrkusaha_terbit,
         'datajumlahkrkhunian_terbit' => $datajumlahkrkhunian_terbit,
         'datajumlahkrkagama_terbit' => $datajumlahkrkagama_terbit,
         'datajumlahkrksosbud_terbit' => $datajumlahkrksosbud_terbit,
+        'datajumlahkrkmenara_terbit' => $datajumlahkrkmenara_terbit,
     ]);
 }
 

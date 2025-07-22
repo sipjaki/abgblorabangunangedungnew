@@ -65,7 +65,8 @@
       ['Fungsi Usaha',     {{ $datajumlahkrkusaha ?? 0 }}],
       ['Fungsi Hunian',    {{ $datajumlahkrkhunian ?? 0 }}],
       ['Fungsi Keagamaan', {{ $datajumlahkrkkeagamaan ?? 0 }}],
-      ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}]
+      ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}],
+      ['Menara Telekomunikasi', {{ $datajumlahkrkmenara ?? 0 }}]
     ]);
 
     var dataBar = google.visualization.arrayToDataTable([
@@ -73,7 +74,8 @@
       ['Fungsi Usaha',     {{ $datajumlahkrkusaha ?? 0 }}, '#006400'],
       ['Fungsi Hunian',    {{ $datajumlahkrkhunian ?? 0 }}, '#FFD700'],
       ['Fungsi Keagamaan', {{ $datajumlahkrkkeagamaan ?? 0 }}, '#001f3f'],
-      ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}, '#FFA500']
+      ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}, '#FFA500'],
+      ['Menara Telekomunikasi', {{ $datajumlahkrkmenara ?? 0 }}, '#FFA500']
     ]);
 
     // Opsi PieChart
