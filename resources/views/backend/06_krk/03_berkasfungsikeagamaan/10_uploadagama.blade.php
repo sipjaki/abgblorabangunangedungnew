@@ -208,7 +208,7 @@ class="button-newvalidasi"
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('dokuploadkrkhuniannew', $data->id) }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('dokuploadkrkagamanew', $data->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
           @method('PUT')
 {{-- <input type="hidden" name="bantuanhibahbg_id" value="{{ $data->id }}"> --}}
