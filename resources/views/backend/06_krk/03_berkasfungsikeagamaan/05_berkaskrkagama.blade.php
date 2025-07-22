@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
   {{-- @include('backend.00_administrator.00_baganterpisah.10_selamatdatang') --}}
@@ -343,7 +343,7 @@ th {
                         <td style="text-align: center;">9</td>
                         <td>(GSB) Garis Sempadan Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->gsb ?? '-' }}Meter</td>
+                        <td>{{ $item->gsb ?? '-' }} Meter</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">10</td>
@@ -374,7 +374,7 @@ th {
     @csrf
     @method('DELETE')
     <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-        <button type="button" class="button-dikembalikan" style="cursor: pointer; color:black;"
+        <button type="button" class="button-merah"
             data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $item->id }}">
             <i class="bi bi-trash" style="margin-right: 5px;"></i> Hapus Permohonan
         </button>
@@ -410,7 +410,7 @@ th {
 
 {{-- Tombol download PDF di kanan atas bawah --}}
 <div style="display: flex; justify-content: flex-end; padding: 10px;">
-    <button id="downloadPdfBtn" class="button-download"
+    <button id="downloadPdfBtn" class="button-bary"
         style="padding: 8px 16px; border-radius: 15px; border: none; cursor: pointer; ">
         <i class="bi bi-download" style="margin-right:6px;"></i> Download PDF
     </button>
