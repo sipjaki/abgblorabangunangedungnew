@@ -255,7 +255,7 @@ Route::put('/validasikrkmenara1/{id}', [KrkController::class, 'validasikrkmenara
 Route::put('/validasikrkmenara2/{id}', [KrkController::class, 'validasikrkmenara2'])->name('validasikrkmenara2');
 
 Route::put('/validasikrkmenara3/{id}', [KrkController::class, 'validasikrkmenara3'])->name('validasikrkmenara3');
-// Route::put('/valberkasusaha4/{id}', [KrkController::class, 'valberkasusaha4'])->name('valberkasusaha4.update');
+Route::put('/validasikrkmenara4/{id}', [KrkController::class, 'validasikrkmenara4'])->name('validasikrkmenara4');
 
 
 

@@ -860,7 +860,7 @@ th {
 <script>
     function openModal4(itemId) {
         const form = document.getElementById("validasiForm4");
-        form.action = `/valberkasusaha4/${itemId}`;
+        form.action = `/validasikrkmenara4/${itemId}`;
         document.getElementById("confirmModal4").style.display = "flex";
     }
 

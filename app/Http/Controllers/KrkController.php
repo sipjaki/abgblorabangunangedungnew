@@ -4596,6 +4596,26 @@ public function validasikrkmenara3(Request $request, $id)
         // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
     }
 
+    public function validasikrkmenara4(Request $request, $id)
+    {
+        $data = krkmenara::findOrFail($id);
+
+        $request->validate([
+            'verifikasi4' => 'required|in:sudah,belum',
+        ]);
+
+        $data->verifikasi4 = $request->verifikasi4;
+        $data->save();
+
+     if ($request->verifikasi4 === 'sudah') {
+        session()->flash('create', '✅ Proses Selesai !');
+    } else {
+        session()->flash('gagal', '❌ Dihentikan !');
+    }
+           return redirect('/bekrkmenaratelkom');
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
 
 
 }
