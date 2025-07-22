@@ -283,7 +283,15 @@ onchange="previewPDF(event)" />
       </a>
     </div>
   @else
-    Belum Upload Berkas, Silahkan Upload Dokumen Final KRK.
+
+  @canany(['superadmin', 'admin'])
+  Belum Upload Berkas, Silahkan Upload Dokumen Final KRK.
+  @endcanany
+
+  @canany(['pemohon'])
+  Belum Ada Dokumen KRK Saudara, Silahkan Menunggu DPUPR Kabupaten Blora.
+  @endcanany
+
   @endif
 </div>
     </div>

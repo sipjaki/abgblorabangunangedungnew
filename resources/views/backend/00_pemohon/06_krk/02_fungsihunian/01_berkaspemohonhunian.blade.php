@@ -178,7 +178,7 @@ th {
                                 </script>
 
 
-                     <a href="/pemohonkrk" style="text-decoration: none;">
+                     <a href="/bekrkhunianpemohon" style="text-decoration: none;">
     <button class="button-kembali" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali

@@ -282,9 +282,14 @@ onchange="previewPDF(event)" />
         <i class="bi bi-download mr-2"></i> Download Berkas KRK
       </a>
     </div>
-  @else
-    Belum Upload Berkas, Silahkan Upload Dokumen Final KRK.
-  @endif
+      @canany(['superadmin', 'admin'])
+  Belum Upload Berkas, Silahkan Upload Dokumen Final KRK.
+  @endcanany
+
+  @canany(['pemohon'])
+  Belum Ada Dokumen KRK Saudara, Silahkan Menunggu DPUPR Kabupaten Blora.
+  @endcanany
+
 </div>
     </div>
   </div>
