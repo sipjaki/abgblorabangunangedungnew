@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -197,17 +197,17 @@ th {
                                     <th style="background-color: #ADD8E6;">No</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Pemohon</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Perusahaan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Koordinat</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> NIK</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Koordinat</th>
+                                    <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> NIK</th> --}}
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Tanggal Permohonan</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-phone-alt"></i> Whatsapp</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Jumlah Lantai</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Jumlah Lantai</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RT</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RW</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-city"></i> Kabupaten</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Kecamatan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-pin"></i> Kelurahan/Desa</th>
+                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-pin"></i> Kelurahan/Desa</th> --}}
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lokasi Bangunan</th>
 
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lihat Permohonan</th>
@@ -243,8 +243,8 @@ th {
                                     <td style="text-align: center;">{{ $loop->iteration }}</td>
                                     <td style="text-align: left;">{{$item->perorangan}}</td>
                                     <td style="text-align: left;">{{$item->perusahaan}}</td>
-                                    <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
-                                    <td style="text-align: center;">{{$item->nik}}</td>
+                                    {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
+                                    <td style="text-align: center;">{{$item->nik}}</td> --}}
                                     <td style="text-align: center;">
                                         {{ \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') }}
                                     </td>
@@ -252,7 +252,7 @@ th {
                                     <td style="text-align: center;">
                                         {{ number_format($item->luastanah, 0, ',', '.') }} M²
                                     </td>
-                                    <td style="text-align: center;">{{$item->jumlahlantai}} Lantai</td>
+                                    {{-- <td style="text-align: center;">{{$item->jumlahlantai}} Lantai</td>
                                     <td style="text-align: center;">{{$item->rt}}</td>
                                     <td style="text-align: center;">{{$item->rw}}</td>
                                     <td style="text-align: left;">
@@ -261,7 +261,7 @@ th {
                                     <td style="text-align: left;">{{$item->kecamatanblora->kecamatanblora}}</td>
                                     <td style="text-align: left;">
                                         {{ strtoupper($item->kelurahandesa->desa) }}
-                                    </td>
+                                    </td> --}}
                                     <td style="text-align: left;">{{$item->lokasibangunan}}</td>
 
                                        <td style="text-align: center;">
