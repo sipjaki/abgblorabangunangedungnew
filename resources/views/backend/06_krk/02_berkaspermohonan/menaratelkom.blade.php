@@ -923,7 +923,7 @@ th {
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/dokbekrkusahadelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/bekrkmenaratelkomdelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

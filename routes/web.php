@@ -257,6 +257,8 @@ Route::get('/bekrkmenaraperbaikan/{id}', [KrkController::class, 'bekrkmenaraperb
 Route::post('/bekrkmenaraperbaikannew/{id}', [KrkController::class, 'bekrkmenaraperbaikannew'])->middleware('auth')->name('bekrkmenaraperbaikannew');
 
 
+Route::delete('/bekrkmenaratelkomdelete/{id}', [KrkController::class, 'bekrkmenaratelkomdelete'])->middleware('auth')->name('bekrkmenaratelkomdelete');
+
 
 
 
