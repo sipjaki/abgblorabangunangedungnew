@@ -156,7 +156,7 @@ th {
 @canany(['pemohon'])
 <button
 type="button"
-onclick="window.location.href='{{ url('/bekrkhunianpemohon') }}';"
+onclick="window.location.href='{{ url('/bekrkkeagamaanpemohon') }}';"
 class="button-newvalidasi"
 >
 <i class="bi bi-arrow-left mr-2"></i> Kembali
