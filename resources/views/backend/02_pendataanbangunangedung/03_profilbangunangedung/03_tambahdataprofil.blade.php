@@ -367,9 +367,21 @@ th {
 
 {{-- Fungsi Bangunan --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-diagram-3-fill text-primary me-1"></i> Fungsi Bangunan</label>
-    <input type="text" name="fungsibangunan" class="form-control @error('fungsibangunan') is-invalid @enderror" value="{{ old('fungsibangunan') }}">
-    @error('fungsibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <label class="form-label">
+        <i class="bi bi-diagram-3-fill text-primary me-1"></i> Fungsi Bangunan
+    </label>
+    <select name="fungsibangunan" class="form-control @error('fungsibangunan') is-invalid @enderror">
+        <option value="">-- Pilih Fungsi Bangunan --</option>
+        <option value="Fungsi Campuran" {{ old('fungsibangunan') == 'Fungsi Campuran' ? 'selected' : '' }}>Fungsi Campuran</option>
+        <option value="Fungsi Hunian" {{ old('fungsibangunan') == 'Fungsi Hunian' ? 'selected' : '' }}>Fungsi Hunian</option>
+        <option value="Fungsi Keagamaan" {{ old('fungsibangunan') == 'Fungsi Keagamaan' ? 'selected' : '' }}>Fungsi Keagamaan</option>
+        <option value="Fungsi Khusus" {{ old('fungsibangunan') == 'Fungsi Khusus' ? 'selected' : '' }}>Fungsi Khusus</option>
+        <option value="Fungsi Sosial Budaya" {{ old('fungsibangunan') == 'Fungsi Sosial Budaya' ? 'selected' : '' }}>Fungsi Sosial Budaya</option>
+        <option value="Fungsi Usaha" {{ old('fungsibangunan') == 'Fungsi Usaha' ? 'selected' : '' }}>Fungsi Usaha</option>
+    </select>
+    @error('fungsibangunan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 </div>
 
 {{-- Jumlah Lantai --}}

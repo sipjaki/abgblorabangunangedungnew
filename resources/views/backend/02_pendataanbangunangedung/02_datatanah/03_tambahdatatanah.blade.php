@@ -379,7 +379,7 @@ th {
     <label class="form-label"><i class="bi bi-person-badge-fill text-navy me-1" style="color: blue"></i> Status Kepemilikan</label>
     <input type="text" name="statuskepemilikan" class="form-control @error('statuskepemilikan') is-invalid @enderror" value="{{ old('statuskepemilikan') }}">
     @error('statuskepemilikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-<p>Jika Milik Dinas Masukan Contoh : Dinas Pendidikan, Jika Bukan isi Hak Pakai</p>
+<p style="color: red;">Jika Milik Dinas Masukan Contoh : Dinas Pendidikan, Jika Bukan Hak Pakai</p>
 </div>
 
 
