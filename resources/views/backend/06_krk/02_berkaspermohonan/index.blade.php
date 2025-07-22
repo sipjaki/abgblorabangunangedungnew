@@ -85,7 +85,7 @@
       title: 'Persentase Permohonan',
       is3D: true,
       backgroundColor: 'transparent',
-      colors: ['#006400', '#FFD700', '#001f3f', '#FFA500', '#ffd100'],
+      colors: ['#006400', '#FFD700', '#001f3f', '#FFA500', '#0000FF'],
       titleTextStyle: {
         color: '#001f3f',
         fontSize: 16,
