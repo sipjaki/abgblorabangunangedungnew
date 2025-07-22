@@ -254,6 +254,10 @@ Route::put('/validasikrkmenara/{id}', [KrkController::class, 'validasikrkmenara'
 Route::put('/validasikrkmenara1/{id}', [KrkController::class, 'validasikrkmenara1'])->name('validasikrkmenara1');
 Route::put('/validasikrkmenara2/{id}', [KrkController::class, 'validasikrkmenara2'])->name('validasikrkmenara2');
 
+Route::put('/validasikrkmenara3/{id}', [KrkController::class, 'validasikrkmenara3'])->name('validasikrkmenara3');
+// Route::put('/valberkasusaha4/{id}', [KrkController::class, 'valberkasusaha4'])->name('valberkasusaha4.update');
+
+
 
 Route::get('/bekrkmenaraperbaikan/{id}', [KrkController::class, 'bekrkmenaraperbaikan'])->middleware('auth')->name('bekrkmenaraperbaikan');
 Route::post('/bekrkmenaraperbaikannew/{id}', [KrkController::class, 'bekrkmenaraperbaikannew'])->middleware('auth')->name('bekrkmenaraperbaikannew');
