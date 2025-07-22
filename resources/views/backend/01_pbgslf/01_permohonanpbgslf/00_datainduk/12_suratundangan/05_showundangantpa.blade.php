@@ -435,7 +435,7 @@ th {
      </tr>
         <tr>
             <td style="padding: 4px 8px; vertical-align: top;">Acara</td>
-            <td style="padding: 4px 8px;">: Konsultasi ke {{ $surat->konsultasike ?? '-' }}</td>
+            <td style="padding: 4px 8px;">: Konsultasi Teknis PBG/SLF</td>
         </tr>
     </table>
 
