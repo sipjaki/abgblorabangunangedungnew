@@ -207,7 +207,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
     <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
         <i class="bi bi-upload" style="margin-right: 6px;"></i>
-        Informasi Berkas Permohonan Saudara (KRK) Fungsi Usaha
+        Informasi Berkas Permohonan Saudara (KRK) Menara Telekomunikasi
     </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
@@ -391,7 +391,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
     <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
         <i class="bi bi-upload" style="margin-right: 6px;"></i>
-        Upload Perbaikan Berkas Keterangan Rencana Kota (KRK) Fungsi Usaha
+        Upload Perbaikan Berkas Keterangan Rencana Kabupaten(KRK) Menara Telekomunikasi
     </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
@@ -546,6 +546,7 @@ th {
         Data belum di update. Silahkan upload berkas Siteplan.
     </div>
 </div>
+
 <div class="mb-3">
     <label class="form-label" for="tandatangan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Permohonan KRK (PDF)
@@ -580,6 +581,79 @@ th {
     {{-- Preview Upload Baru --}}
     <div class="mt-3" id="previewTTD" style="display: none;"></div>
 </div>
+
+<div class="mb-3">
+    <label class="form-label" for="berkasdukung1">
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 1 (PDF/Gambar)
+    </label>
+    <input type="file" id="berkasdukung1" name="berkasdukung1" accept="application/pdf,image/jpeg,image/png,image/jpg"
+        class="form-control @error('berkasdukung1') is-invalid @enderror"
+        onchange="previewMixedFile(event, 'previewContainerBD1', 'previewBD1', 'msgBD1')" />
+    @error('berkasdukung1')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+    {{-- Data Sebelumnya --}}
+    <div class="mt-3" id="previewContainerBD1" style="{{ isset($data->berkasdukung1) ? '' : 'display: none;' }}">
+        <label class="fw-bold">Data Sebelumnya:</label>
+        @php
+            $ext = pathinfo($data->berkasdukung1 ?? '', PATHINFO_EXTENSION);
+        @endphp
+        @if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png']))
+            <img src="{{ asset($data->berkasdukung1) }}" alt="Berkas Pendukung 1 Lama"
+                style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
+        @elseif ($ext === 'pdf')
+            <iframe src="{{ asset($data->berkasdukung1) }}"
+                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+        @else
+            <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
+        @endif
+    </div>
+
+    <div id="msgBD1" class="mt-3"
+        style="color: grey; font-style: italic; {{ isset($data->berkasdukung1) ? 'display:none;' : '' }}">
+        Data belum di update. Silahkan upload Berkas Pendukung 1.
+    </div>
+
+    {{-- Preview Upload Baru --}}
+    <div class="mt-3" id="previewBD1" style="display: none;"></div>
+</div>
+
+<div class="mb-3">
+    <label class="form-label" for="berkasdukung2">
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 2 (PDF/Gambar)
+    </label>
+    <input type="file" id="berkasdukung2" name="berkasdukung2" accept="application/pdf,image/jpeg,image/png,image/jpg"
+        class="form-control @error('berkasdukung2') is-invalid @enderror"
+        onchange="previewMixedFile(event, 'previewContainerBD2', 'previewBD2', 'msgBD2')" />
+    @error('berkasdukung2')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+    {{-- Data Sebelumnya --}}
+    <div class="mt-3" id="previewContainerBD2" style="{{ isset($data->berkasdukung2) ? '' : 'display: none;' }}">
+        <label class="fw-bold">Data Sebelumnya:</label>
+        @php
+            $ext = pathinfo($data->berkasdukung2 ?? '', PATHINFO_EXTENSION);
+        @endphp
+        @if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png']))
+            <img src="{{ asset($data->berkasdukung2) }}" alt="Berkas Pendukung 2 Lama"
+                style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
+        @elseif ($ext === 'pdf')
+            <iframe src="{{ asset($data->berkasdukung2) }}"
+                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+        @else
+            <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
+        @endif
+    </div>
+
+    <div id="msgBD2" class="mt-3"
+        style="color: grey; font-style: italic; {{ isset($data->berkasdukung2) ? 'display:none;' : '' }}">
+        Data belum di update. Silahkan upload Berkas Pendukung 2.
+    </div>
+
+    {{-- Preview Upload Baru --}}
+    <div class="mt-3" id="previewBD2" style="display: none;"></div>
+</div>
+
+
+
 </div>
     <script>
 function previewPDF(event, containerId, iframeId, messageId) {
