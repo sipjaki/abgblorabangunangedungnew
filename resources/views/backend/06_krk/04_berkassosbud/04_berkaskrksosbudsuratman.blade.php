@@ -291,7 +291,7 @@
                     </label>
                     <div class="col-md-8">
                         <div class="input-group">
-                            <input type="number" class="form-control" id="luasbangunan" name="luasbangunan" readonly>
+                            <input type="number" class="form-control" id="luasbangunan" name="luasbangunan">
                             <div class="input-group-append">
                                 <span class="input-group-text bg-danger text-white">M²</span>
                             </div>
