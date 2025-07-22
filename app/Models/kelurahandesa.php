@@ -23,6 +23,11 @@ class kelurahandesa extends Model
         return $this->hasMany(krkusaha::class);
     }
 
+    public function krkmenara()
+    {
+        return $this->hasMany(krkmenara::class);
+    }
+
     public function krkhunian()
     {
         return $this->hasMany(krkhunian::class);
