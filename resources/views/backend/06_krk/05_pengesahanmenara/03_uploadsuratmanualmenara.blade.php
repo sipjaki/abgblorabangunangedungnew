@@ -206,7 +206,7 @@
                         <div class="card-body p-0">
                             <div class="col-md-12">
                                 <!-- Form -->
-                                <form action="{{ route('dokuploadkrkusahanew', $data->id) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('dokuploadkrkmenaranew', $data->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
 
