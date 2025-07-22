@@ -483,7 +483,7 @@ th {
                                 <!-- Tombol Triger Modal -->
                                 <button type="button"
                                     onclick="openValidationModal({{ $item->id }})"
-                                    class="button-dikembalikan"
+                                    class="button-merah"
                                     style="border-radius: 15px; padding: 8px 16px; background-color: #dc3545; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#dc3545'; this.style.border='1px solid #dc3545';"
                                     onmouseout="this.style.backgroundColor='#dc3545'; this.style.color='black'; this.style.border='none';">
@@ -491,7 +491,7 @@ th {
                                 </button>
                                 @else
                                 <!-- Tombol SUDAH Validasi -->
-                                <button class="button-lolos"
+                                <button class="button-hijau"
                                     style="border-radius: 15px; padding: 8px 16px; background-color: #28a745; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#28a745'; this.style.border='1px solid #28a745';"
                                     onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white'; this.style.border='none';">
@@ -596,7 +596,7 @@ th {
                opacity: 0.6;"
         title="Silakan validasi terlebih dahulu"
     >
-        <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Pengesahan
+        <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Otomatis
     </button>
 @else
     @if($subdata->where('krkkeagamaan_id', $item->id)->count() > 0)
@@ -609,7 +609,7 @@ th {
                    opacity: 0.7;"
             title="Dokumen pengesahan sudah ada"
         >
-            <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Pengesahan
+            <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Otomatis
         </button>
     @else
         <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
@@ -621,7 +621,47 @@ th {
                        border-radius: 15px; font-size: 14px; cursor: pointer;
                        display: flex; align-items: center; justify-content: center;
                        transition: background-color 0.3s, color 0.3s;">
-                <i class="bi bi-pencil-fill" style="margin-right: 8px;"></i> Pengesahan
+                <i class="bi bi-pencil-fill" style="margin-right: 8px;"></i> Otomatis
+            </button>
+        </a>
+    @endif
+@endif
+        @if (!$item->is_validated)
+    <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
+    <button class="button-dikembalikan"
+        disabled
+        style="background-color: #dc3545; color: white; border: none; padding: 10px 25px;
+               border-radius: 15px; font-size: 14px; cursor: not-allowed;
+               display: flex; align-items: center; justify-content: center;
+               opacity: 0.6;"
+        title="Silakan validasi terlebih dahulu"
+    >
+        <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
+    </button>
+@else
+    @if($subdata->where('krkkeagamaan_id', $item->id)->count() > 0)
+        <!-- SUDAH DIVALIDASI tapi data pengesahan sudah ada, tombol hijau tapi nonaktif -->
+        <button class="button-download"
+            disabled
+            style="border: none; padding: 10px 25px;
+                   border-radius: 15px; font-size: 14px; cursor: not-allowed;
+                   display: flex; align-items: center; justify-content: center;
+                   opacity: 0.7;"
+            title="Dokumen pengesahan sudah ada"
+        >
+            <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
+        </button>
+    @else
+        <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
+        <a href="{{ route('permohonan.perpengesahanagama', $item->id) }}" style="text-decoration: none;">
+            <button class="button-lolos"
+                onmouseover="this.style.backgroundColor='#D1FAE5'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+                style="background-color:#28a745; color: white; border: none; padding: 10px 25px;
+                       border-radius: 15px; font-size: 14px; cursor: pointer;
+                       display: flex; align-items: center; justify-content: center;
+                       transition: background-color 0.3s, color 0.3s;">
+                <i class="bi bi-pencil-fill" style="margin-right: 8px;"></i> Manual
             </button>
         </a>
     @endif
