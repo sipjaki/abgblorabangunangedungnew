@@ -355,6 +355,7 @@ Route::delete('/krkagamasuratdelete/{id}', [KrkController::class, 'krkagamasurat
 Route::put('/valberkasagama3/{id}', [KrkController::class, 'valberkasagama3'])->name('valberkasagama3.update');
 
 Route::get('/permohonankrkkeagamaanfinal/{id}', [KrkController::class, 'permohonankrkkeagamaanfinal'])->name('permohonan.permohonankrkkeagamaanfinal');
+Route::get('/permohonankrkkeagamaanfinalman/{id}', [KrkController::class, 'permohonankrkkeagamaanfinalman'])->name('permohonankrkkeagamaanfinalman');
 
 Route::get('/krkagamanoterbit/{id}', [KrkController::class, 'krkagamanoterbit'])->middleware('auth')->name('krkagamanoterbit.create');
 Route::post('/krkagamanoterbitnew/{id}', [KrkController::class, 'krkagamanoterbitnew'])->middleware('auth')->name('create.krkagamanoterbitnew');
