@@ -365,13 +365,13 @@ th {
 
     <p style="font-size: 12px;">
         Kepada Yth:<br>
-        Pemohon PBG<br>
+        Tim Profesi Ahli {{$surat->tpatpt->timpenilai}} <br>
         Di<br>
         Tempat
     </p>
 
-    <p style="font-size: 12px;">Dengan Hormat,</p>
-
+    <p style="font-size: 12px;">Mengharap dengan hormat atas kehadiran Bapak/Ibu Saudara Pada : </p>
+{{--
     <p style="font-size: 12px;">Dalam rangka permohonan PBG saudara :</p>
 <table style="font-size: 12px; width: 100%; border-collapse: collapse; border: 1px solid #000;">
     <tr>
@@ -402,12 +402,12 @@ th {
         <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Email</td>
         <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->datapemilik->email ?? '-' }}</td>
     </tr>
-</table>
+</table> --}}
 
 
-    <p style="margin-top: 10px; font-size: 12px;">
+    {{-- <p style="margin-top: 10px; font-size: 12px;">
         Dinyatakan Lengkap oleh operator SIMBG maka sebagai tindak lanjut perizinan PBG dimohon mengikuti konsultasi teknis pada:
-    </p>
+    </p> --}}
 
     <table style="font-size: 12px; width: 100%;">
         <tr>
@@ -440,7 +440,8 @@ th {
     </table>
 
     <p style="margin-top: 10px; font-size: 12px;">
-        Demikian undangan ini kami sampaikan dan kami ucapkan terima kasih.
+        Mengingat pentingnya acara tersebut mohon Bapak/Ibu/Saudara hadir tepat waktu. Demikian atas perhatian dan kehadirannya disampaikan terima kasih.
+
     </p>
 </div>
 
