@@ -1100,7 +1100,7 @@
             <li class="nav-item">
              <a href="#" class="nav-link">
     <i class="bi bi-tools nav-icon" style="color: white; font-size: 16px;"></i>
-    <p style="color: orange; margin-left: 8px;">
+    <p style="color: green; margin-left: 8px;">
         Bantek
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
@@ -1398,7 +1398,7 @@
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-file-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: orange; margin: 0 0 0 8px; flex-grow: 1;">MBR Gambar</p>
+    <p style="color: green; margin: 0 0 0 8px; flex-grow: 1;">MBR Gambar</p>
     <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
 
