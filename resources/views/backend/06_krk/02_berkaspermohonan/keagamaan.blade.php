@@ -612,14 +612,14 @@ th {
 @endif
         @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
-    <button class="button-merah"
+    <button class="button-hitam"
         disabled>
         <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
     </button>
 @else
     @if($subdata->where('krkkeagamaan_id', $item->id)->count() > 0)
         <!-- SUDAH DIVALIDASI tapi data pengesahan sudah ada, tombol hijau tapi nonaktif -->
-        <button class="button-hitam"
+        <button class="button-merah"
             disabled
                         title="Dokumen pengesahan sudah ada">
             <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
