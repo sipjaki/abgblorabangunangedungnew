@@ -262,6 +262,10 @@ Route::put('/validasikrkmenara4/{id}', [KrkController::class, 'validasikrkmenara
 Route::get('/bekrkmenaraperbaikan/{id}', [KrkController::class, 'bekrkmenaraperbaikan'])->middleware('auth')->name('bekrkmenaraperbaikan');
 Route::post('/bekrkmenaraperbaikannew/{id}', [KrkController::class, 'bekrkmenaraperbaikannew'])->middleware('auth')->name('bekrkmenaraperbaikannew');
 
+Route::get('/dokuploadkrkmenara/{id}', [KrkController::class, 'dokuploadkrkmenara'])->middleware('auth')->name('dokuploadkrkmenara');
+
+// Route::put('/dokuploadkrkmenaranew/{id}', [KrkController::class, 'dokuploadkrkusahanew'])->middleware('auth')->name('dokuploadkrkusahanew');
+
 
 Route::delete('/bekrkmenaratelkomdelete/{id}', [KrkController::class, 'bekrkmenaratelkomdelete'])->middleware('auth')->name('bekrkmenaratelkomdelete');
 
