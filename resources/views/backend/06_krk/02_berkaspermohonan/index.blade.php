@@ -601,7 +601,7 @@
 
     <!-- Fungsi Sosial Budaya -->
     <div class="col-md-3 col-sm-6 col-12">
-        <a href="/bekrksosbud">
+        <a href="/bekrkmenaratelkom">
             <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;"
                  onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.info-box-number').style.color='black';"
                  onmouseout="this.style.backgroundColor='#000080'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.info-box-number').style.color='white';">

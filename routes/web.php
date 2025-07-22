@@ -247,6 +247,8 @@ Route::get('/bekrkhunianpemohon', [KrkController::class, 'bekrkhunianpemohon'])-
 Route::get('/bekrkkeagamaanpemohon', [KrkController::class, 'bekrkkeagamaanpemohon'])->name('bekrkkeagamaanpemohon.indexpemohon');
 Route::get('/bekrksosbudpemohon', [KrkController::class, 'bekrksosbudpemohon'])->name('bekrksosbud.indexpemohon');
 
+// SARIGIT
+Route::get('/bekrkmenaratelkom', [KrkController::class, 'bekrkmenaratelkom'])->name('bekrkmenaratelkom');
 
 // MENU KRK USAHA
 Route::get('/bekrkusaha', [KrkController::class, 'bekrkusaha'])->name('krkusaha.index');
