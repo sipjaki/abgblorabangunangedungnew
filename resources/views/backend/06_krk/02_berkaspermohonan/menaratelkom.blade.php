@@ -476,7 +476,7 @@ th {
             <!-- Tombol Validasi -->
 
 
-{{--
+
                             <td>
                                   <div style="display: flex; flex-direction: column; align-items: center;">
                                 @if (!$item->is_validated)
@@ -496,7 +496,7 @@ th {
                                 </button>
                                 @endif
                                 </div>
-                            </td> --}}
+                            </td>
 
                             <!-- Modal Validasi -->
 <!-- Modal Validasi -->
