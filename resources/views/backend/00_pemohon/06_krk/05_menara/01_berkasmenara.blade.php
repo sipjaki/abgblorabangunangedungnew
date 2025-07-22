@@ -648,7 +648,6 @@ th {
 <a href="{{ route('dokuploadkrkmenara', $item->id) }}"
     class="button-berkas">
     <i class="bi bi-folder" style="margin-right: 5px;"></i> Dokumen KRK
-
 </a>
 
 
