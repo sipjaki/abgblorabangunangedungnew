@@ -156,7 +156,7 @@ th {
 @canany(['pemohon'])
 <button
 type="button"
-onclick="window.location.href='{{ url('/bekrkusahapemohon') }}';"
+onclick="window.location.href='{{ url('/bekrkhunianpemohon') }}';"
 class="button-newvalidasi"
 >
 <i class="bi bi-arrow-left mr-2"></i> Kembali
@@ -166,7 +166,7 @@ class="button-newvalidasi"
 @canany(['superadmin', 'admin'])
 <button
 type="button"
-onclick="window.location.href='{{ url('/bekrkusaha') }}';"
+onclick="window.location.href='{{ url('/bekrkhunian') }}';"
 class="button-newvalidasi"
 >
 <i class="bi bi-arrow-left mr-2"></i> Kembali

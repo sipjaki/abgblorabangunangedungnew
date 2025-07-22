@@ -760,7 +760,7 @@ th {
 @endif --}}
 <a href="{{ route('dokuploadkrkhunian', $item->id) }}"
     class="button-baru">
-    <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
+    <i class="bi bi-folder" style="margin-right: 5px;"></i> Dokumen KRK
 
 </a>
 </div>
