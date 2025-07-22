@@ -551,7 +551,7 @@ th {
 
 <div class="mb-3">
     <label class="form-label" for="tandatangan">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Permohonan KRK (PDF/Gambar)
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Permohonan KRK (PDF)
     </label>
     <input
         type="file"
@@ -650,7 +650,7 @@ th {
   {{-- Berkas Dukung 1 --}}
   <div class="mb-3">
       <label class="form-label" for="berkasdukung1">
-          <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 1 (PDF/Gambar)
+          <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 1 (PDF)
       </label>
       <input
           type="file"
@@ -701,7 +701,7 @@ th {
   {{-- Berkas Dukung 2 --}}
   <div class="mb-3">
       <label class="form-label" for="berkasdukung2">
-          <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 2 (PDF/Gambar)
+          <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 2 (PDF)
       </label>
       <input
           type="file"
