@@ -758,12 +758,6 @@ th {
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Berkas Final Belum Ada
     </button>
 @endif --}}
-
-</div>
-</td>
-<td style="text-align: center; vertical-align: middle; width: 100%;">
-    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
-
 <a href="{{ route('dokuploadkrkhunian', $item->id) }}"
     class="button-baru">
     <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
@@ -771,6 +765,12 @@ th {
 </a>
 </div>
 </td>
+{{-- <td style="text-align: center; vertical-align: middle; width: 100%;">
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
+
+
+</div>
+</td> --}}
 
 
 <!-- Tombol Validasi -->
