@@ -4153,8 +4153,8 @@ public function perpengesahankrksosbud(Request $request, $id)
     $pengesahan->fill($validated);
     $pengesahan->save();
 
-    return redirect('/bekrkkeagamaan')->with('pengesahankrk',
-        'Surat KRK Kegamaan berhasil disetujui!');
+    return redirect('/bekrksosbud')->with('pengesahankrk',
+        'Surat KRK Sosial Budaya berhasil disetujui!');
 }
 
 }
