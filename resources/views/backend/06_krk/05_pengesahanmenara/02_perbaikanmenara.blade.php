@@ -528,20 +528,20 @@ th {
 <div class="col-md-6">
 
     <div class="mb-3">
-    <label class="form-label" for="siteplan">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Siteplan (PDF)
-    </label>
-    <input type="file" id="siteplan" name="siteplan" accept="application/pdf"
+        <label class="form-label" for="siteplan">
+            <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Siteplan (PDF)
+        </label>
+        <input type="file" id="siteplan" name="siteplan" accept="application/pdf"
         class="form-control @error('siteplan') is-invalid @enderror"
         onchange="previewPDF(event, 'previewContainerSITE', 'iframeSITE', 'msgSITE')" />
-    @error('siteplan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        @error('siteplan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-    <div class="mt-3" id="previewContainerSITE" style="{{ isset($data->siteplan) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        <iframe id="iframeSITE" src="{{ isset($data->siteplan) ? asset($data->siteplan) : '' }}"
+        <div class="mt-3" id="previewContainerSITE" style="{{ isset($data->siteplan) ? '' : 'display: none;' }}">
+            <label class="fw-bold">Data Sebelumnya:</label>
+            <iframe id="iframeSITE" src="{{ isset($data->siteplan) ? asset($data->siteplan) : '' }}"
             style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-    </div>
-    <div id="msgSITE" class="mt-3"
+        </div>
+        <div id="msgSITE" class="mt-3"
         style="color: grey; font-style: italic; {{ isset($data->siteplan) ? 'display:none;' : '' }}">
         Data belum di update. Silahkan upload berkas Siteplan.
     </div>
@@ -552,14 +552,14 @@ th {
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Permohonan KRK (PDF)
     </label>
     <input type="file" id="tandatangan" name="tandatangan" accept="application/pdf,image/jpeg,image/png,image/jpg"
-        class="form-control @error('tandatangan') is-invalid @enderror"
+    class="form-control @error('tandatangan') is-invalid @enderror"
         onchange="previewMixedFile(event, 'previewContainerTTD', 'previewTTD', 'msgTTD')" />
-    @error('tandatangan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        @error('tandatangan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-    {{-- Data Sebelumnya --}}
-    <div class="mt-3" id="previewContainerTTD" style="{{ isset($data->tandatangan) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        @php
+        {{-- Data Sebelumnya --}}
+        <div class="mt-3" id="previewContainerTTD" style="{{ isset($data->tandatangan) ? '' : 'display: none;' }}">
+            <label class="fw-bold">Data Sebelumnya:</label>
+            @php
             $ext = pathinfo($data->tandatangan ?? '', PATHINFO_EXTENSION);
         @endphp
         @if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png']))
@@ -569,20 +569,22 @@ th {
             <iframe src="{{ asset($data->tandatangan) }}"
                 style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
         @else
-            <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
+        <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
         @endif
     </div>
 
     <div id="msgTTD" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->tandatangan) ? 'display:none;' : '' }}">
-        Data belum di update. Silahkan upload berkas Tanda Tangan.
-    </div>
+    style="color: grey; font-style: italic; {{ isset($data->tandatangan) ? 'display:none;' : '' }}">
+    Data belum di update. Silahkan upload berkas Tanda Tangan.
+</div>
 
     {{-- Preview Upload Baru --}}
     <div class="mt-3" id="previewTTD" style="display: none;"></div>
 </div>
 
-<div class="mb-3">
+<div class="col-md-6">
+
+    <div class="mb-3">
     <label class="form-label" for="berkasdukung1">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 1 (PDF/Gambar)
     </label>
@@ -615,7 +617,9 @@ th {
 
     {{-- Preview Upload Baru --}}
     <div class="mt-3" id="previewBD1" style="display: none;"></div>
+</div>
 
+<div class="mb-3">
     <label class="form-label" for="berkasdukung2">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 2 (PDF/Gambar)
     </label>
@@ -650,8 +654,7 @@ th {
     <div class="mt-3" id="previewBD2" style="display: none;"></div>
 </div>
 
-
-
+</div>
 </div>
     <script>
 function previewPDF(event, containerId, iframeId, messageId) {
