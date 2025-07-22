@@ -168,7 +168,7 @@
         <div class="stats-grid">
     <div class="stat-card">
      <div class="stat-number">
-    {{ ($datajumlahkrkusaha ?? 0) + ($datajumlahkrkhunian ?? 0) + ($datajumlahkrkkeagamaan ?? 0) + ($datajumlahkrksosbud ?? 0) }}
+    {{ ($datajumlahkrkusaha ?? 0) + ($datajumlahkrkhunian ?? 0) + ($datajumlahkrkkeagamaan ?? 0) + ($datajumlahkrksosbud ?? 0) + ($datajumlahkrkmenara ?? 0) }}
 </div>
         <div class="stat-label" style="color: navy;">
             <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Permohonan
@@ -180,7 +180,8 @@
             $datajumlahkrkusaha_dikembalikan +
             $datajumlahkrkhunian_dikembalikan +
             $datajumlahkrkagama_dikembalikan +
-            $datajumlahkrksosbud_dikembalikan
+            $datajumlahkrksosbud_dikembalikan +
+            $datajumlahkrkmenara_dikembalikan
         }}
     </div>
     <div class="stat-label" style="color: navy;">
@@ -194,7 +195,8 @@
             $datajumlahkrkusaha_lapangan +
             $datajumlahkrkhunian_lapangan +
             $datajumlahkrkagama_lapangan +
-            $datajumlahkrksosbud_lapangan
+            $datajumlahkrksosbud_lapangan +
+            $datajumlahkrkmenara_lapangan
         }}
     </div>
         <div class="stat-label" style="color: navy;">
@@ -207,7 +209,8 @@
             $datajumlahkrkusaha_terbit +
             $datajumlahkrkhunian_terbit +
             $datajumlahkrkagama_terbit +
-            $datajumlahkrksosbud_terbit
+            $datajumlahkrksosbud_terbit +
+            $datajumlahkrkmenara_terbit
         }}
         <div class="stat-label" style="color: navy;">
             <i class="bi bi-file-earmark-check" style="margin-right: 6px;"></i> Surat Terbit
