@@ -60,6 +60,9 @@ $table->id();
             $table->string('verifikasisiteplan')->nullable();
             $table->string('verifikasittd')->nullable();
 
+            $table->string('verifikasiberkas1')->nullable();
+            $table->string('verifikasiberkas2')->nullable();
+
             $table->text('catatanvalidasi')->nullable();
 
 

@@ -2542,6 +2542,156 @@ th {
                                     </tr>
 
 
+                                    {{-- -------------------------------- --}}
+{{-- DOKUMEN BERKAS DUKUNG 1 --}}
+<tr>
+  <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
+    <i class="bi bi-paperclip"></i> Berkas Dukung 1
+  </th>
+
+  <th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center;">
+      <button type="button" class="button-berkas"
+          data-bs-toggle="modal" data-bs-target="#modalBerkas1{{ $data->id }}">
+          <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
+      </button>
+    </div>
+
+    <!-- Modal Berkas Dukung 1 -->
+    <div class="modal fade" id="modalBerkas1{{ $data->id }}" tabindex="-1" aria-labelledby="modalBerkas1Lbl{{ $data->id }}" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBerkas1Lbl{{ $data->id }}">Berkas Dukung 1</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            @if($data->berkasdukung1 && file_exists(public_path('storage/' . $data->berkasdukung1)))
+              <iframe src="{{ asset('storage/' . $data->berkasdukung1) }}" frameborder="0" width="100%" height="750px"></iframe>
+            @elseif($data->berkasdukung1)
+              <iframe src="{{ asset($data->berkasdukung1) }}" frameborder="0" width="100%" height="750px"></iframe>
+            @else
+              <p>Data belum diupdate</p>
+            @endif
+          </div>
+        </div>
+      </div>
+    </div>
+  </th>
+
+  {{-- Status Pemohon --}}
+  @canany(['pemohon'])
+  <th class="text-center" style="background-color: #e2e8f0; color: rgb(100, 45, 45);">
+    <div style="display: flex; justify-content: center; padding: 10px 0;">
+      @php $status = $data->verifikasiberkas1; @endphp
+      <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
+          <span class="custom-box"></span>
+          @if ($status === 'tidak_sesuai')
+              Silahkan Lakukan Perbaikan
+          @elseif ($status === 'sesuai')
+              Berkas Anda Sudah Sesuai
+          @else
+              Sedang Di Verifikasi DPUPR
+          @endif
+      </div>
+    </div>
+  </th>
+  @endcanany
+
+  {{-- Verifikasi Admin --}}
+  @canany(['superadmin', 'admin'])
+  <th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center; gap: 20px;">
+      <label class="custom-radio">
+        <input type="radio" name="verifikasiberkas1" value="sesuai" {{ $data->verifikasiberkas1 == 'sesuai' ? 'checked' : '' }}>
+        <span class="custom-box"></span> Sesuai
+      </label>
+
+      <label class="custom-radio">
+        <input type="radio" name="verifikasiberkas1" value="tidak_sesuai" {{ $data->verifikasiberkas1 == 'tidak_sesuai' ? 'checked' : '' }}>
+        <span class="custom-box"></span> Tidak Sesuai
+      </label>
+    </div>
+  </th>
+  @endcanany
+</tr>
+
+
+{{-- -------------------------------- --}}
+{{-- DOKUMEN BERKAS DUKUNG 2 --}}
+<tr>
+  <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
+    <i class="bi bi-paperclip"></i> Berkas Dukung 2
+  </th>
+
+  <th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center;">
+      <button type="button" class="button-berkas"
+          data-bs-toggle="modal" data-bs-target="#modalBerkas2{{ $data->id }}">
+          <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
+      </button>
+    </div>
+
+    <!-- Modal Berkas Dukung 2 -->
+    <div class="modal fade" id="modalBerkas2{{ $data->id }}" tabindex="-1" aria-labelledby="modalBerkas2Lbl{{ $data->id }}" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalBerkas2Lbl{{ $data->id }}">Berkas Dukung 2</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            @if($data->berkasdukung2 && file_exists(public_path('storage/' . $data->berkasdukung2)))
+              <iframe src="{{ asset('storage/' . $data->berkasdukung2) }}" frameborder="0" width="100%" height="750px"></iframe>
+            @elseif($data->berkasdukung2)
+              <iframe src="{{ asset($data->berkasdukung2) }}" frameborder="0" width="100%" height="750px"></iframe>
+            @else
+              <p>Data belum diupdate</p>
+            @endif
+          </div>
+        </div>
+      </div>
+    </div>
+  </th>
+
+  {{-- Status Pemohon --}}
+  @canany(['pemohon'])
+  <th class="text-center" style="background-color: #e2e8f0; color: rgb(100, 45, 45);">
+    <div style="display: flex; justify-content: center; padding: 10px 0;">
+      @php $status = $data->verifikasiberkas2; @endphp
+      <div class="custom-status {{ $status == 'sesuai' ? 'sesuai' : ($status == 'tidak_sesuai' ? 'tidak_sesuai' : 'pending') }}">
+          <span class="custom-box"></span>
+          @if ($status === 'tidak_sesuai')
+              Silahkan Lakukan Perbaikan
+          @elseif ($status === 'sesuai')
+              Berkas Anda Sudah Sesuai
+          @else
+              Sedang Di Verifikasi DPUPR
+          @endif
+      </div>
+    </div>
+  </th>
+  @endcanany
+
+  {{-- Verifikasi Admin --}}
+  @canany(['superadmin', 'admin'])
+  <th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center; gap: 20px;">
+      <label class="custom-radio">
+        <input type="radio" name="verifikasiberkas2" value="sesuai" {{ $data->verifikasiberkas2 == 'sesuai' ? 'checked' : '' }}>
+        <span class="custom-box"></span> Sesuai
+      </label>
+
+      <label class="custom-radio">
+        <input type="radio" name="verifikasiberkas2" value="tidak_sesuai" {{ $data->verifikasiberkas2 == 'tidak_sesuai' ? 'checked' : '' }}>
+        <span class="custom-box"></span> Tidak Sesuai
+      </label>
+    </div>
+  </th>
+  @endcanany
+</tr>
+
+
                                 </thead>
                             </table>
                             <br><br><br>
