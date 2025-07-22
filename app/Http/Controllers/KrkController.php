@@ -13,6 +13,7 @@ use App\Models\krkhunian;
 use App\Models\krkhuniancek;
 use App\Models\krkkeagamaan;
 use App\Models\krkkeagamaancek;
+use App\Models\krkmenara;
 use App\Models\krksosbud;
 use App\Models\krksosbudcek;
 use App\Models\krkusaha;
@@ -288,21 +289,25 @@ public function bekrkindex()
     $datajumlahkrkhunian = krkhunian::count(); // Hitung total semua data
     $datajumlahkrkkeagamaan = krkkeagamaan::count(); // Hitung total semua data
     $datajumlahkrksosbud = krksosbud::count(); // Hitung total semua data
+    $datajumlahkrkmenara = krkmenara::count(); // Hitung total semua data
 
       $datajumlahkrkusaha_dikembalikan = krkusaha::where('verifikasi1', 'dikembalikan')->count();
       $datajumlahkrkhunian_dikembalikan = krkhunian::where('verifikasi1', 'dikembalikan')->count();
       $datajumlahkrkagama_dikembalikan = krkkeagamaan::where('verifikasi1', 'dikembalikan')->count();
       $datajumlahkrksosbud_dikembalikan = krksosbud::where('verifikasi1', 'dikembalikan')->count();
+      $datajumlahkrkmenara_dikembalikan = krkmenara::where('verifikasi1', 'dikembalikan')->count();
 
 $datajumlahkrkusaha_lapangan = krkusaha::where('verifikasi2', 'sudah')->count();
 $datajumlahkrkhunian_lapangan = krkhunian::where('verifikasi2', 'sudah')->count();
 $datajumlahkrkagama_lapangan = krkkeagamaan::where('verifikasi2', 'sudah')->count();
 $datajumlahkrksosbud_lapangan = krksosbud::where('verifikasi2', 'sudah')->count();
+$datajumlahkrkmenara_lapangan = krkmenara::where('verifikasi2', 'sudah')->count();
 
 $datajumlahkrkusaha_terbit = krkusaha::where('verifikasi4', 'sudah')->count();
 $datajumlahkrkhunian_terbit = krkhunian::where('verifikasi4', 'sudah')->count();
 $datajumlahkrkagama_terbit = krkkeagamaan::where('verifikasi4', 'sudah')->count();
 $datajumlahkrksosbud_terbit = krksosbud::where('verifikasi4', 'sudah')->count();
+$datajumlahkrkmenara_terbit = krkmenara::where('verifikasi4', 'sudah')->count();
 
     return view('backend.06_krk.02_berkaspermohonan.index', [
         'title' => 'Permohonan KRK Bangunan Gedung',
@@ -312,21 +317,25 @@ $datajumlahkrksosbud_terbit = krksosbud::where('verifikasi4', 'sudah')->count();
         'datajumlahkrkhunian' => $datajumlahkrkhunian,
         'datajumlahkrkkeagamaan' => $datajumlahkrkkeagamaan,
         'datajumlahkrksosbud' => $datajumlahkrksosbud,
+        'datajumlahkrkmenara' => $datajumlahkrkmenara,
 
         'datajumlahkrkusaha_dikembalikan' => $datajumlahkrkusaha_dikembalikan,
         'datajumlahkrkhunian_dikembalikan' => $datajumlahkrkhunian_dikembalikan,
         'datajumlahkrkagama_dikembalikan' => $datajumlahkrkagama_dikembalikan,
         'datajumlahkrksosbud_dikembalikan' => $datajumlahkrksosbud_dikembalikan,
+        'datajumlahkrkmenara_dikembalikan' => $datajumlahkrkmenara_dikembalikan,
 
         'datajumlahkrkusaha_lapangan' => $datajumlahkrkusaha_lapangan,
         'datajumlahkrkhunian_lapangan' => $datajumlahkrkhunian_lapangan,
         'datajumlahkrkagama_lapangan' => $datajumlahkrkagama_lapangan,
         'datajumlahkrksosbud_lapangan' => $datajumlahkrksosbud_lapangan,
+        'datajumlahkrkmenara_lapangan' => $datajumlahkrkmenara_lapangan,
 
         'datajumlahkrkusaha_terbit' => $datajumlahkrkusaha_terbit,
         'datajumlahkrkhunian_terbit' => $datajumlahkrkhunian_terbit,
         'datajumlahkrkagama_terbit' => $datajumlahkrkagama_terbit,
         'datajumlahkrksosbud_terbit' => $datajumlahkrksosbud_terbit,
+        'datajumlahkrkmenara_terbit' => $datajumlahkrkmenara_terbit,
 
     ]);
 }

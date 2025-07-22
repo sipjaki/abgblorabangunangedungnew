@@ -67,6 +67,7 @@
       ['Fungsi Hunian',    {{ $datajumlahkrkhunian ?? 0 }}],
       ['Fungsi Keagamaan', {{ $datajumlahkrkkeagamaan ?? 0 }}],
       ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}]
+      ['Menara Telekomunikasi', {{ $datajumlahkrkmenara ?? 0 }}]
     ]);
 
     var dataBar = google.visualization.arrayToDataTable([
@@ -75,6 +76,7 @@
       ['Fungsi Hunian',    {{ $datajumlahkrkhunian ?? 0 }}, '#FFD700'],
       ['Fungsi Keagamaan', {{ $datajumlahkrkkeagamaan ?? 0 }}, '#001f3f'],
       ['Fungsi Sosial Budaya', {{ $datajumlahkrksosbud ?? 0 }}, '#FFA500']
+      ['Menara Telekomunikasi', {{ $datajumlahkrkmenara ?? 0 }}, '#ffd100']
     ]);
 
     // Opsi PieChart
@@ -165,7 +167,7 @@
         <div class="stats-grid">
     <div class="stat-card">
      <div class="stat-number">
-    {{ ($datajumlahkrkusaha ?? 0) + ($datajumlahkrkhunian ?? 0) + ($datajumlahkrkkeagamaan ?? 0) + ($datajumlahkrksosbud ?? 0) }}
+    {{ ($datajumlahkrkusaha ?? 0) + ($datajumlahkrkhunian ?? 0) + ($datajumlahkrkkeagamaan ?? 0) + ($datajumlahkrksosbud ?? 0) + ($datajumlahkrkmenara ?? 0) }}
 </div>
         <div class="stat-label" style="color: navy;">
             <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Permohonan
@@ -177,7 +179,8 @@
             $datajumlahkrkusaha_dikembalikan +
             $datajumlahkrkhunian_dikembalikan +
             $datajumlahkrkagama_dikembalikan +
-            $datajumlahkrksosbud_dikembalikan
+            $datajumlahkrksosbud_dikembalikan +
+            $datajumlahkrkmenara_dikembalikan
         }}
     </div>
     <div class="stat-label" style="color: navy;">
@@ -191,7 +194,8 @@
             $datajumlahkrkusaha_lapangan +
             $datajumlahkrkhunian_lapangan +
             $datajumlahkrkagama_lapangan +
-            $datajumlahkrksosbud_lapangan
+            $datajumlahkrksosbud_lapangan +
+            $datajumlahkrkmenara_lapangan
         }}
     </div>
         <div class="stat-label" style="color: navy;">
@@ -204,7 +208,8 @@
             $datajumlahkrkusaha_terbit +
             $datajumlahkrkhunian_terbit +
             $datajumlahkrkagama_terbit +
-            $datajumlahkrksosbud_terbit
+            $datajumlahkrksosbud_terbit +
+            $datajumlahkrkmenara_terbit
         }}
         <div class="stat-label" style="color: navy;">
             <i class="bi bi-file-earmark-check" style="margin-right: 6px;"></i> Surat Terbit
@@ -589,6 +594,27 @@
                 <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
                     <span class="info-box-text" style="color: white;">Fungsi Sosial Budaya</span>
                     <span class="info-box-number fw-bold" style="font-size: 16px;">{{$datajumlahkrksosbud}} Permohonan</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Fungsi Sosial Budaya -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="/bekrksosbud">
+            <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;"
+                 onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.info-box-number').style.color='black';"
+                 onmouseout="this.style.backgroundColor='#000080'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.info-box-number').style.color='white';">
+                <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
+                    <!-- SVG icon for Fungsi Sosial Budaya -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="green" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-3 4-3 4 3 4 3-1 1-1 1H3z"/>
+                        <path d="M8 0a7 7 0 1 1 0 14A7 7 0 0 1 8 0zM8 1a6 6 0 1 0 0 12A6 6 0 0 0 8 1z"/>
+                    </svg>
+                </span>
+                <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
+                    <span class="info-box-text" style="color: white;">Menara Telekomunikasi</span>
+                    <span class="info-box-number fw-bold" style="font-size: 16px;">{{$datajumlahkrkmenara}} Permohonan</span>
                 </div>
             </div>
         </a>
