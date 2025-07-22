@@ -763,7 +763,7 @@
 <li class="nav-item">
                 <a href="#" class="nav-link">
     <i class="bi bi-folder nav-icon" style="color: white; font-size: 16px;"></i>
-    <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+    <p style="color: green; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
         Pendataan BG
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
@@ -860,7 +860,7 @@
     <!-- Ganti SVG dengan Bootstrap Icon -->
     <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
 
-    <p style="color: orange; margin-left: 8px;">
+    <p style="color: green; margin-left: 8px;">
         PBG/SLF
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
@@ -958,7 +958,7 @@
             <li class="nav-item">
              <a href="#" class="nav-link">
     <i class="bi bi-search nav-icon" style="color: white;"></i>
-    <p style="color: orange; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+    <p style="color: green; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
         Tracking Berkas
         <i class="nav-arrow bi bi-chevron-right" style="color: yellow;"></i>
     </p>
@@ -1232,7 +1232,7 @@
 <li class="nav-item">
     <a href="#" class="nav-link" style="display: flex; align-items: center;">
     <i class="bi bi-journal-text nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: yellow; margin: 0 0 0 8px; flex-grow: 1;">KRK</p>
+    <p style="color: green; margin: 0 0 0 8px; flex-grow: 1;">KRK</p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
 
