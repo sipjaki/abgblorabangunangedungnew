@@ -186,13 +186,13 @@
                             <!-- Back Button -->
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                                 @canany(['pemohon'])
-                                    <button type="button" onclick="window.location.href='{{ url('/bekrkusahapemohon') }}';" class="button-newvalidasi">
+                                    <button type="button" onclick="window.location.href='{{ url('/bekrkmenarapemohon') }}';" class="button-newvalidasi">
                                         <i class="bi bi-arrow-left mr-2"></i> Kembali
                                     </button>
                                 @endcanany
 
                                 @canany(['superadmin', 'admin'])
-                                    <button type="button" onclick="window.location.href='{{ url('/bekrkusaha') }}';" class="button-newvalidasi">
+                                    <button type="button" onclick="window.location.href='{{ url('/bekrkmenaratelkom') }}';" class="button-newvalidasi">
                                         <i class="bi bi-arrow-left mr-2"></i> Kembali
                                     </button>
                                 @endcanany
