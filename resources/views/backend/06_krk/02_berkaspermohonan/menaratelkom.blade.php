@@ -221,7 +221,7 @@ th {
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-drafting-compass"></i> Site Plan</th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-pen-fancy"></i> Tanda Tangan</th> --}}
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th> --}}
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th>
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th> --}}
@@ -379,7 +379,7 @@ th {
         document.getElementById("confirmModal").style.display = "none";
     }
 </script>
-
+{{--
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
                     class="button-baru">
@@ -407,7 +407,7 @@ th {
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
-</td>
+</td> --}}
 
 <!-- Modal Verifikasi2 -->
 <div id="confirmModalVerifikasi2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1001; justify-content: center; align-items: center;">
