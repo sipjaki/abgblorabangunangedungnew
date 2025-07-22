@@ -4283,7 +4283,7 @@ public function bekrkmenaratelkom(Request $request)
     $perPage = $request->input('perPage', 15);
 
     // Query dasar
-    $query = krkusaha::query();
+    $query = krkmenara::query();
 
     // Filter pencarian jika ada input 'search'
     if ($search) {
