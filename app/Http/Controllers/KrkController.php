@@ -3968,5 +3968,46 @@ public function dokuploadkrkhuniannew(Request $request, $id)
     return redirect()->back();
 }
 
+
+public function perpengesahankrkagama(Request $request, $id)
+{
+    $validated = $request->validate([
+        'nomorregistrasi' => 'required|string|max:50',
+        'tanggalpermohonan' => 'required|date',
+        'kepadatan' => 'required|in:RENDAH,SEDANG,TINGGI',
+        'luaslantaimaksimal' => 'required|string',
+        'luasbangunan' => 'required|numeric|min:0',
+        'fungsibangunan' => 'required|string|max:255',
+        'lokasibangunan' => 'required|string|max:255',
+        'rencanagsbblora_id' => 'required|integer',
+        'jenisjalan' => 'required|string|max:50',
+        'gsb' => 'required|numeric|min:0',
+        'klb' => 'required|string|max:20',
+        'kdb' => 'required|string|max:20',
+        'kdh' => 'required|numeric|in:10,20,30,40,50,60,70',
+        'jaringanutilitas' => 'required|string|max:255',
+    ], [
+        // Custom error messages
+        'required' => 'Kolom :attribute wajib diisi.',
+        'in' => 'Nilai :attribute tidak valid.',
+        'numeric' => 'Kolom :attribute harus berupa angka.',
+        'exists' => 'Ruas jalan tidak valid.',
+        'max' => 'Kolom :attribute maksimal :max karakter.',
+    ]);
+
+    // Dapatkan data utama
+    $mainData = krkkeagamaan::findOrFail($id);
+
+    // Simpan data pengesahan
+    $pengesahan = new krkusahasurat();
+    $pengesahan->krkkeagamaan_id = $mainData->id;
+    $pengesahan->fill($validated);
+    $pengesahan->save();
+
+    return redirect('/bekrkkeagamaan')->with('pengesahankrk',
+        'Surat KRK Kegamaan berhasil disetujui!');
+}
+
+
 }
 

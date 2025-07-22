@@ -223,6 +223,8 @@ Route::post('/berkashunian/{id}/validate', [KrkController::class, 'validateBerka
 // Route::get('/permohonankrk', [KrkController::class, 'permohonankrk'])->middleware('auth');
 Route::post('/perpengesahankrkhunian/{id}', [KrkController::class, 'perpengesahankrkhunian'])->name('perpengesahankrkhunian');
 
+Route::post('/perpengesahankrkagama/{id}', [KrkController::class, 'perpengesahankrkagama'])->name('perpengesahankrkagama');
+
 
 // MENU 03 PERMOHONAN KRK KEGAAMAAN
 Route::get('/permohonankrkagama', [KrkController::class, 'permohonankrkagama'])->name('permohonan.krkagama');
