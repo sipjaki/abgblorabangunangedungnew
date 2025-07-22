@@ -626,7 +626,7 @@ th {
         </button>
     @else
         <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
-        <a href="{{ route('permohonan.perpengesahanagama', $item->id) }}" style="text-decoration: none;">
+        <a href="{{ route('perpengesahanagamaman', $item->id) }}" style="text-decoration: none;">
             <button class="button-hijau">
                 <i class="bi bi-pencil-fill" style="margin-right: 8px;"></i> Manual
             </button>

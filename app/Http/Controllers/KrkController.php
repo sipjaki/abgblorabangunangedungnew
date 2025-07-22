@@ -4009,5 +4009,29 @@ public function perpengesahankrkagama(Request $request, $id)
 }
 
 
+public function perpengesahanagamaman($id)
+{
+    // Ambil data KRK Usaha berdasarkan ID atau gagal 404
+    $datakrkusaha = krkkeagamaan::findOrFail($id);
+
+    // Ambil semua data GSB kabupaten dari rencanagsbblora tanpa scope/filter
+$datagsbkabblora = rencanagsbblora::withoutGlobalScopes()
+    ->orderByRaw("COALESCE(ruasjalan, '') ASC")
+    ->get();
+
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Kirimkan data ke view
+    return view('backend.06_krk.03_berkasfungsikeagamaan.04_berkaskrkagamasuratman', [
+        'title' => 'Lembar Pengesahan Permohonan KRK Fungsi Keagamaan Bangunan Gedung',
+        'data' => $datakrkusaha,
+        'datagsb' => $datagsbkabblora,
+        'user' => $user,
+    ]);
+}
+
+
 }
 

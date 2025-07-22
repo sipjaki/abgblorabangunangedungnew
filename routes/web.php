@@ -344,6 +344,8 @@ Route::put('/valberkasagama2/{id}', [KrkController::class, 'valberkasagama2'])->
 Route::post('/berkaskeagamaanval/{id}/validate', [KrkController::class, 'berkaskeagamaanval'])->name('berkaskeagamaanval.validate');
 
 Route::get('/perpengesahanagama/{id}', [KrkController::class, 'perpengesahanagama'])->name('permohonan.perpengesahanagama');
+Route::get('/perpengesahanagamaman/{id}', [KrkController::class, 'perpengesahanagamaman'])->name('perpengesahanagamaman');
+
 Route::post('/perpengesahanagamacreate/{id}', [KrkController::class, 'perpengesahanagamacreate'])->name('permohonan.perpengesahanagamacreate');
 
 Route::get('/perpengesahanagamaber/{id}', [KrkController::class, 'perpengesahanagamaber'])->name('berkas.perpengesahanagamaber');
