@@ -225,6 +225,8 @@ Route::post('/perpengesahankrkhunian/{id}', [KrkController::class, 'perpengesaha
 
 Route::post('/perpengesahankrkagama/{id}', [KrkController::class, 'perpengesahankrkagama'])->name('perpengesahankrkagama');
 
+Route::post('/perpengesahankrksosbud/{id}', [KrkController::class, 'perpengesahankrksosbud'])->name('perpengesahankrksosbud');
+
 
 // MENU 03 PERMOHONAN KRK KEGAAMAAN
 Route::get('/permohonankrkagama', [KrkController::class, 'permohonankrkagama'])->name('permohonan.krkagama');

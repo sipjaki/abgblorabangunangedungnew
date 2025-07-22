@@ -194,7 +194,7 @@
 <div class="container">
     <div class="card">
         <div class="card-body p-4">
-            <form action="{{ route('perpengesahankrkagama', ['id' => $data->id]) }}" method="POST">
+            <form action="{{ route('perpengesahankrksosbud', ['id' => $data->id]) }}" method="POST">
                 @csrf
 
                 @if($errors->any())
@@ -226,7 +226,7 @@
                         const today = new Date();
                         const month = String(today.getMonth() + 1).padStart(2, '0');
                         const year = today.getFullYear();
-                        const nomorRegistrasi = `${idData}/FK/BG/KRK/${month}/${year}`;
+                        const nomorRegistrasi = `${idData}/FSB/BG/KRK/${month}/${year}`;
                         nomorRegistrasiInput.value = nomorRegistrasi;
                     });
                 </script>
