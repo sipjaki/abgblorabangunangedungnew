@@ -226,6 +226,9 @@ th {
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th> --}}
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th> --}}
                              <th style="background-color: #ADD8E6;">
+    <i class="fas fa-database" style="margin-right: 6px;"></i> Data
+</th>
+                             <th style="background-color: #ADD8E6;">
     <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
 </th>
                              <th style="background-color: #ADD8E6;">
