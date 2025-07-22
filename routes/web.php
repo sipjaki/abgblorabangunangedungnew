@@ -252,7 +252,7 @@ Route::get('/bekrkmenaratelkom', [KrkController::class, 'bekrkmenaratelkom'])->n
 Route::get('/bekrkmenaratelkomshow/{id}', [KrkController::class, 'bekrkmenaratelkomshow'])->middleware('auth')->name('bekrkmenaratelkomshow');
 Route::put('/validasikrkmenara/{id}', [KrkController::class, 'validasikrkmenara'])->middleware('auth')->name('validasikrkmenara');
 Route::put('/validasikrkmenara1/{id}', [KrkController::class, 'validasikrkmenara1'])->name('validasikrkmenara1');
-Route::put('/validasikrkmenara2/{id}', [KrkController::class, 'valberkasusaha2'])->name('validasikrkmenara2');
+Route::put('/validasikrkmenara2/{id}', [KrkController::class, 'validasikrkmenara2'])->name('validasikrkmenara2');
 
 
 Route::get('/bekrkmenaraperbaikan/{id}', [KrkController::class, 'bekrkmenaraperbaikan'])->middleware('auth')->name('bekrkmenaraperbaikan');
