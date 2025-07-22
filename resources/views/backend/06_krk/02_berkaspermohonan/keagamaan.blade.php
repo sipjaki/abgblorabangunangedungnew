@@ -637,7 +637,7 @@ th {
 
 @if($subdata->where('krkkeagamaan_id', $item->id)->count() > 0)
     <a href="{{ route('berkas.perpengesahanagamaber', $item->id) }}"
-        class="button-lolos"
+        class="button-hijau"
         style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #10B981; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#10B981'; this.style.border='1px solid #10B981';"
         onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.border='none';">
@@ -645,7 +645,7 @@ th {
     </a>
 @else
     <button
-        class="button-dikembalikan"
+        class="button-merah"
         style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Dokumen Belum Ada
@@ -659,7 +659,7 @@ th {
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi3 == 'sudah')
     <button
-        class="button-lolos"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; cursor: not-allowed;"
         disabled
@@ -667,11 +667,11 @@ th {
         <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Sudah
     </button>
   @elseif($item->verifikasi3 == 'belum')
-    <button class="button-dikembalikan" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #f8f8fa;">
+    <button class="button-merah" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #f8f8fa;">
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-validasinew" type="button" onclick="openModal3({{ $item->id }})">
+    <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
