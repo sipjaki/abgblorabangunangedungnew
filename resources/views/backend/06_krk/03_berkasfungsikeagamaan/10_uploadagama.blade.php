@@ -166,7 +166,7 @@ class="button-newvalidasi"
 @canany(['superadmin', 'admin'])
 <button
 type="button"
-onclick="window.location.href='{{ url('/bekrkhunian') }}';"
+onclick="window.location.href='{{ url('/bekrkkeagamaan') }}';"
 class="button-newvalidasi"
 >
 <i class="bi bi-arrow-left mr-2"></i> Kembali
