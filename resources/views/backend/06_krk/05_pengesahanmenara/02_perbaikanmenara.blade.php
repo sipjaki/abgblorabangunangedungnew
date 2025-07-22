@@ -615,9 +615,7 @@ th {
 
     {{-- Preview Upload Baru --}}
     <div class="mt-3" id="previewBD1" style="display: none;"></div>
-</div>
 
-<div class="mb-3">
     <label class="form-label" for="berkasdukung2">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Pendukung 2 (PDF/Gambar)
     </label>
