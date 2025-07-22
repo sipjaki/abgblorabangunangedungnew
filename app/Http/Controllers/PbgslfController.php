@@ -4422,4 +4422,26 @@ return view('frontend.abgblora.02_trakingweb.01_infotraking', [
 
     }
 
+
+
+public function bepbgsuratundangantpatpt($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Cari data pbg berdasarkan ID
+    $data = pbgslfbangunan::findOrFail($id);
+
+    // Ambil semua data surat pemberitahuan berdasarkan pbgslfbangunan_id tanpa pagination
+    $subdatapemilik = suratudanganpbg::where('pbgslfbangunan_id', $data->id)->get();
+
+    // Kirim data ke view
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.12_suratundangan.04_datasuratundangantptatpt', [
+        'title' => 'Surat Undangan TPA/TPT',
+        'title_halaman' => 'Surat Undangan TPA/TPT',
+        'user' => $user,
+        'data' => $data,
+        'subdatapemilik' => $subdatapemilik,
+    ]);
+}
 }
