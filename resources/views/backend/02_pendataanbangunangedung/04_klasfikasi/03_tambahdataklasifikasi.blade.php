@@ -346,33 +346,79 @@ th {
     <div class="row g-3 mt-2">
 {{-- Luas Tanah --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-diagram-3 text-primary me-1"></i> Tingkat Kompleksitas</label>
-    <input type="text" name="tingkat_kompleksitas" class="form-control @error('tingkat_kompleksitas') is-invalid @enderror" value="{{ old('tingkat_kompleksitas') }}">
-    @error('tingkat_kompleksitas')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <label class="form-label">
+        <i class="bi bi-diagram-3 text-primary me-1"></i> Tingkat Kompleksitas
+    </label>
+    <select name="tingkat_kompleksitas" class="form-control @error('tingkat_kompleksitas') is-invalid @enderror">
+        <option value="">-- Pilih Tingkat Kompleksitas --</option>
+        <option value="Sederhana" {{ old('tingkat_kompleksitas') == 'Sederhana' ? 'selected' : '' }}>Sederhana</option>
+        <option value="Tidak Sederhana" {{ old('tingkat_kompleksitas') == 'Tidak Sederhana' ? 'selected' : '' }}>Tidak Sederhana</option>
+    </select>
+    @error('tingkat_kompleksitas')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 </div>
 
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-houses text-primary me-1"></i> Tingkat Permanensi</label>
-    <input type="text" name="tingkat_permanensi" class="form-control @error('tingkat_permanensi') is-invalid @enderror" value="{{ old('tingkat_permanensi') }}">
-    @error('tingkat_permanensi')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <label class="form-label">
+        <i class="bi bi-houses text-primary me-1"></i> Tingkat Permanensi
+    </label>
+    <select name="tingkat_permanensi" class="form-control @error('tingkat_permanensi') is-invalid @enderror">
+        <option value="">-- Pilih Tingkat Permanensi --</option>
+        <option value="Permanen" {{ old('tingkat_permanensi') == 'Permanen' ? 'selected' : '' }}>Permanen</option>
+        <option value="Semi Permanen" {{ old('tingkat_permanensi') == 'Semi Permanen' ? 'selected' : '' }}>Semi Permanen</option>
+    </select>
+    @error('tingkat_permanensi')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-fire text-primary me-1"></i> Resiko Kebakaran
+    </label>
+    <select name="resiko_kebakaran" class="form-control @error('resiko_kebakaran') is-invalid @enderror">
+        <option value="">-- Pilih Resiko Kebakaran --</option>
+        <option value="Tinggi" {{ old('resiko_kebakaran') == 'Tinggi' ? 'selected' : '' }}>Tinggi</option>
+        <option value="Sedang" {{ old('resiko_kebakaran') == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+        <option value="Rendah" {{ old('resiko_kebakaran') == 'Rendah' ? 'selected' : '' }}>Rendah</option>
+    </select>
+    @error('resiko_kebakaran')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-activity text-primary me-1"></i> Resiko Gempa
+    </label>
+    <select name="resiko_gempa" class="form-control @error('resiko_gempa') is-invalid @enderror">
+        <option value="">-- Pilih Zona Resiko Gempa --</option>
+        <option value="Zona 1" {{ old('resiko_gempa') == 'Zona 1' ? 'selected' : '' }}>Zona 1</option>
+        <option value="Zona 2" {{ old('resiko_gempa') == 'Zona 2' ? 'selected' : '' }}>Zona 2</option>
+        <option value="Zona 3" {{ old('resiko_gempa') == 'Zona 3' ? 'selected' : '' }}>Zona 3</option>
+        <option value="Zona 4" {{ old('resiko_gempa') == 'Zona 4' ? 'selected' : '' }}>Zona 4</option>
+        <option value="Zona 5" {{ old('resiko_gempa') == 'Zona 5' ? 'selected' : '' }}>Zona 5</option>
+        <option value="Zona 6" {{ old('resiko_gempa') == 'Zona 6' ? 'selected' : '' }}>Zona 6</option>
+    </select>
+    @error('resiko_gempa')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 </div>
 
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-fire text-primary me-1"></i> Resiko Kebakaran</label>
-    <input type="text" name="resiko_kebakaran" class="form-control @error('resiko_kebakaran') is-invalid @enderror" value="{{ old('resiko_kebakaran') }}">
-    @error('resiko_kebakaran')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-activity text-primary me-1"></i> Resiko Gempa</label>
-    <input type="text" name="resiko_gempa" class="form-control @error('resiko_gempa') is-invalid @enderror" value="{{ old('resiko_gempa') }}">
-    @error('resiko_gempa')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-geo text-primary me-1"></i> Kepadatan Lokasi</label>
-    <input type="text" name="kepadatan_lokasi" class="form-control @error('kepadatan_lokasi') is-invalid @enderror" value="{{ old('kepadatan_lokasi') }}">
-    @error('kepadatan_lokasi')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <label class="form-label">
+        <i class="bi bi-geo text-primary me-1"></i> Kepadatan Lokasi
+    </label>
+    <select name="kepadatan_lokasi" class="form-control @error('kepadatan_lokasi') is-invalid @enderror">
+        <option value="">-- Pilih Kepadatan Lokasi --</option>
+        <option value="Tinggi" {{ old('kepadatan_lokasi') == 'Tinggi' ? 'selected' : '' }}>Tinggi</option>
+        <option value="Sedang" {{ old('kepadatan_lokasi') == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+        <option value="Rendah" {{ old('kepadatan_lokasi') == 'Rendah' ? 'selected' : '' }}>Rendah</option>
+    </select>
+    @error('kepadatan_lokasi')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 </div>
 
         {{-- Tombol Submit --}}
