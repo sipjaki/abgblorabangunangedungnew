@@ -210,10 +210,9 @@ th {
 <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
     <i class="bi bi-building-fill-check me-3" style="font-size: 18px;"></i>
-    Data Institusi
+    Data Baru KIC Pendataan Bangunan Gedung Kabupaten Blora
 </h5>
-
-{{-- Nama Penginput / User --}}
+{{-- Nama Penginput (User ID Otomatis) --}}
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="user_id">
@@ -224,7 +223,58 @@ th {
     </div>
 </div>
 
-{{-- Tanggal Input Otomatis --}}
+{{-- Satuan Kerja --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="satuankerja_id">
+            <i class="bi bi-diagram-3-fill me-2 text-success"></i> Satuan Kerja
+        </label>
+        <select class="form-select @error('satuankerja_id') is-invalid @enderror" name="satuankerja_id" id="satuankerja_id">
+            <option value="">-- Pilih Satuan Kerja --</option>
+            @foreach($satuankerjas as $sk)
+                <option value="{{ $sk->id }}" {{ old('satuankerja_id', $data->satuankerja_id ?? '') == $sk->id ? 'selected' : '' }}>
+                    {{ $sk->satuankerja }}
+                </option>
+            @endforeach
+        </select>
+        @error('satuankerja_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    </div>
+</div>
+
+{{-- Kode Lokasi --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="kodelokasi">
+            <i class="bi bi-geo-alt-fill me-2 text-info"></i> Kode Lokasi
+        </label>
+        <input type="text" class="form-control @error('kodelokasi') is-invalid @enderror" id="kodelokasi" name="kodelokasi" value="{{ old('kodelokasi', $data->kodelokasi ?? '') }}">
+        @error('kodelokasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    </div>
+</div>
+
+{{-- Bidang --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="bidang">
+            <i class="bi bi-diagram-2-fill me-2 text-primary"></i> Bidang
+        </label>
+        <input type="text" class="form-control @error('bidang') is-invalid @enderror" id="bidang" name="bidang" value="{{ old('bidang', $data->bidang ?? '') }}">
+        @error('bidang') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    </div>
+</div>
+
+{{-- Sub Bidang --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="subbidang">
+            <i class="bi bi-diagram-2-fill me-2 text-secondary"></i> Sub Bidang
+        </label>
+        <input type="text" class="form-control @error('subbidang') is-invalid @enderror" id="subbidang" name="subbidang" value="{{ old('subbidang', $data->subbidang ?? '') }}">
+        @error('subbidang') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    </div>
+</div>
+
+{{-- Tanggal Input (Otomatis) --}}
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="tanggalinput">
@@ -234,231 +284,6 @@ th {
                value="{{ old('tanggalinput', \Carbon\Carbon::now()->format('Y-m-d')) }}" readonly>
     </div>
 </div>
-
-{{-- Nama Institusi --}}
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="namainstitusi">
-            <i class="bi bi-bank2 me-2 text-primary"></i> Nama Institusi
-        </label>
-        <input type="text" class="form-control @error('namainstitusi') is-invalid @enderror" id="namainstitusi" name="namainstitusi" value="{{ old('namainstitusi', $data->namainstitusi ?? '') }}">
-        @error('namainstitusi') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
-
-{{-- No Pengesahan Usaha --}}
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="nopengesahanusaha">
-            <i class="bi bi-file-earmark-check-fill me-2 text-success"></i> No Pengesahan Usaha
-        </label>
-        <input type="text" class="form-control @error('nopengesahanusaha') is-invalid @enderror" id="nopengesahanusaha" name="nopengesahanusaha" value="{{ old('nopengesahanusaha', $data->nopengesahanusaha ?? '') }}">
-        @error('nopengesahanusaha') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
-
-{{-- Nomor Telepon --}}
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="notelepon">
-            <i class="bi bi-telephone-fill me-2 text-warning"></i> Nomor Telepon
-        </label>
-        <input type="text" class="form-control @error('notelepon') is-invalid @enderror" id="notelepon" name="notelepon" value="{{ old('notelepon', $data->notelepon ?? '') }}">
-        @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
-
-{{-- Email --}}
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="email">
-            <i class="bi bi-envelope-fill me-2 text-danger"></i> Email
-        </label>
-        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $data->email ?? '') }}">
-        @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
-                                  <!-- Left Column (6/12) -->
-    <!-- =========================== -->
-    <!-- ALAMAT BANGUNAN GEDUNG -->
-    <!-- =========================== -->
-
-<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
-    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
-  <i class="bi bi-geo-alt me-3" style="font-size: 18px;"></i>
-  Alamat Bangunan Gedung
-</h5>
-
-<div class="row g-3" style="margin-top:-20px;">
-  {{-- Kecamatan --}}
-  <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label d-flex align-items-center" for="kecamatanblora_id">
-        <i class="bi bi-geo-alt me-2 text-danger" style="font-size: 1.2rem;"></i> Kecamatan
-      </label>
-      <select class="form-select @error('kecamatanblora_id') is-invalid @enderror" name="kecamatanblora_id" id="kecamatanblora_id" style="min-height: 42px;">
-        <option value="">-- Pilih Kecamatan --</option>
-        @foreach($kecamatanList as $item)
-          <option value="{{ $item->id }}" {{ old('kecamatanblora_id', $data->kecamatanblora_id ?? '') == $item->id ? 'selected' : '' }}>
-            {{ $item->kecamatanblora }}
-          </option>
-        @endforeach
-      </select>
-      @error('kecamatanblora_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-  </div>
-
-  {{-- Alamat Lengkap (diganti menjadi alamat) --}}
-  <div class="col-12">
-      <div class="mb-3">
-          <label class="form-label d-flex align-items-center" for="alamat">
-            <i class="bi bi-house-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Alamat Lengkap
-          </label>
-          <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3">{{ old('alamat', $data->alamat ?? '') }}</textarea>
-          @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-      </div>
-  </div>
-</div>
-<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
-    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
-  <i class="bi bi-camera-fill me-3" style="font-size: 18px;"></i>
-  Foto Dokumentasi Bangunan Gedung
-</h5>
-
-<div class="row g-3" style="margin-top:-20px;">
-
-  {{-- Tampak Depan --}}
-  <div class="col-md-6">
-    <label class="form-label">Tampak Depan</label>
-    <input type="file" class="form-control" name="tampakdepan" id="tampakdepan" accept="image/*" onchange="previewImage(event, 'previewTampakDepan')">
-    <img id="previewTampakDepan" src="{{ !empty($data->tampakdepan) ? asset('storage/'.$data->tampakdepan) : '' }}" class="img-thumbnail mt-2" style="max-height: 200px; {{ empty($data->tampakdepan) ? 'display:none;' : '' }}">
-  </div>
-
-  {{-- Tampak Belakang --}}
-  <div class="col-md-6">
-    <label class="form-label">Tampak Belakang</label>
-    <input type="file" class="form-control" name="tampakbelakang" id="tampakbelakang" accept="image/*" onchange="previewImage(event, 'previewTampakBelakang')">
-    <img id="previewTampakBelakang" src="{{ !empty($data->tampakbelakang) ? asset('storage/'.$data->tampakbelakang) : '' }}" class="img-thumbnail mt-2" style="max-height: 200px; {{ empty($data->tampakbelakang) ? 'display:none;' : '' }}">
-  </div>
-
-  {{-- Tampak Samping 1 --}}
-  <div class="col-md-6">
-    <label class="form-label">Tampak Samping 1</label>
-    <input type="file" class="form-control" name="tampaksamping1" id="tampaksamping1" accept="image/*" onchange="previewImage(event, 'previewTampakSamping1')">
-    <img id="previewTampakSamping1" src="{{ !empty($data->tampaksamping1) ? asset('storage/'.$data->tampaksamping1) : '' }}" class="img-thumbnail mt-2" style="max-height: 200px; {{ empty($data->tampaksamping1) ? 'display:none;' : '' }}">
-  </div>
-
-  {{-- Tampak Samping 2 --}}
-  <div class="col-md-6">
-    <label class="form-label">Tampak Samping 2</label>
-    <input type="file" class="form-control" name="tampaksamping2" id="tampaksamping2" accept="image/*" onchange="previewImage(event, 'previewTampakSamping2')">
-    <img id="previewTampakSamping2" src="{{ !empty($data->tampaksamping2) ? asset('storage/'.$data->tampaksamping2) : '' }}" class="img-thumbnail mt-2" style="max-height: 200px; {{ empty($data->tampaksamping2) ? 'display:none;' : '' }}">
-  </div>
-
-</div>
-
-<script>
-  function previewImage(event, previewId) {
-    const input = event.target;
-    const preview = document.getElementById(previewId);
-
-    if (input.files && input.files[0]) {
-      const reader = new FileReader();
-
-      reader.onload = function(e) {
-        preview.src = e.target.result;
-        preview.style.display = 'block';
-      }
-
-      reader.readAsDataURL(input.files[0]);
-    } else {
-      preview.src = '';
-      preview.style.display = 'none';
-    }
-  }
-</script>
-
-<div class="row g-3">
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-    {{-- Koordinat --}}
-    <div class="col-md-12">
-        <div class="mb-3">
-            <label class="form-label d-flex align-items-center" for="koordinat">
-                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
-            </label>
-            <input type="text" class="form-control @error('koordinat') is-invalid @enderror" id="koordinat" name="koordinat" value="{{ old('koordinat', $data->koordinat ?? '') }}">
-            @error('koordinat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-
-        {{-- Peta --}}
-        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
-    </div>
-
-</div>
-
-
-
-<script>
-    // Inisialisasi map dengan fokus ke Kabupaten Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11); // Koordinat Blora
-
-    // Tambahkan layer peta dari OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
-    }).addTo(map);
-
-    // Marker (jika sudah ada nilai awal koordinat)
-    var marker;
-    var input = document.getElementById('koordinat');
-    if (input.value) {
-        var coords = input.value.split(',');
-        marker = L.marker([coords[0], coords[1]]).addTo(map);
-        map.setView([coords[0], coords[1]], 15);
-    }
-
-    // Event saat klik di peta
-    map.on('click', function(e) {
-        var latlng = e.latlng;
-        // Hapus marker sebelumnya
-        if (marker) {
-            map.removeLayer(marker);
-        }
-        // Tambahkan marker baru
-        marker = L.marker(latlng).addTo(map);
-
-        // Simpan koordinat ke input
-        document.getElementById('koordinat').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
-    });
-</script>
-
-
-{{-- JQuery AJAX untuk load Kelurahan berdasarkan Kecamatan --}}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $('#kecamatanblora_id').on('change', function () {
-    var kecamatanID = $(this).val();
-    if (kecamatanID) {
-      $.ajax({
-        url: '{{ route("datanewpenilik.create") }}', // Sesuaikan route ajax-nya
-        type: 'GET',
-        data: { kecamatan_id: kecamatanID },
-        success: function (data) {
-          $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
-          $.each(data, function (key, value) {
-            $('#kelurahandesa_id').append('<option value="' + value.id + '">' + value.desa + '</option>');
-          });
-        }
-      });
-    } else {
-      $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
-    }
-  });
-</script>
 
 {{-- ======================================================================================================================= --}}
 
