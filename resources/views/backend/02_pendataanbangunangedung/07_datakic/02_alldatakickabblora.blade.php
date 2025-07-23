@@ -338,7 +338,7 @@ th {
     </tr>
                             </thead>
                               <tbody id="tableBody">
-                                @foreach ($subdatapemilik as $item )
+                                @foreach ($data as $item )
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
