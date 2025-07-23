@@ -16,6 +16,7 @@ use App\Models\databgtanah;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\kepemilikanbangunangedung;
+use App\Models\kicinduk;
 use App\Models\pbgslfbangunan;
 use Illuminate\Support\Facades\Auth;
 
@@ -1126,6 +1127,28 @@ public function bedatabgstatuscreatenew(Request $request)
 
     session()->flash('create', 'Data Status Bangunan Gedung berhasil ditambahkan!');
     return redirect()->route('bedatabgstatusbangunan', ['id' => $validated['databgkepemilikan_id']]);
+}
+
+
+
+public function bedatakic(Request $request)
+{
+    $user = Auth::user();
+    $perPage = $request->input('perPage', 20);
+    $jumlahDataTotal = kicinduk::count();
+
+    // Ambil jumlah data unik berdasarkan namainstitusi dan hitung jumlahnya
+    // $jumlahPerInstitusi = kicinduk::select('namainstitusi', DB::raw('count(*) as total'))
+    // ->groupBy('namainstitusi')
+    // ->orderByDesc('total')
+    // ->get();
+
+    return view('backend.02_pendataanbangunangedung.07_datakic.01_datakic', [
+        'title' => 'Pendataan KIC Bangunan Gedung',
+        'user' => $user,
+        'jumlahDataTotal' => $jumlahDataTotal,
+        // 'jumlahPerInstitusi' => $jumlahPerInstitusi
+    ]);
 }
 
 }

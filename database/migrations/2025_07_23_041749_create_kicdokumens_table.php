@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('kicdokumens', function (Blueprint $table) {
             $table->id();
+            
             $table->foreignId('kicinduk_id')->nullable()->index();
-
             $table->string('jenisbarang')->nullable();
             $table->string('kodebarang')->nullable();
             $table->string('register')->nullable();

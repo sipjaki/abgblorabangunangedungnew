@@ -62,6 +62,7 @@ use App\Models\jenispermohonangambar;
 use App\Models\jenjangpendidikan;
 use App\Models\kategoripelatihan;
 use App\Models\kepemilikanbangunangedung;
+use App\Models\kicdokumen;
 use App\Models\kicinduk;
 use App\Models\krkhunian;
 use App\Models\krkkeagamaan;
@@ -24544,6 +24545,45 @@ kicinduk::create(['id' => 1,
 'subbidang' => '-',
 ]);
 
+kicdokumen::create([
+    'id' => 1,
+    'kicinduk_id' => 1,
+    'jenisbarang' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+    'kodebarang' => '12.01.33.16.010101.00000.00000.1969-1.3.3.01.01.10.001',
+    'register' => '000001',
+    'kondisibangunan' => 'BAIK',
+    'bertingkat' => 'TIDAK BERTINGKAT',
+    'beton' => 'TIDAK',
+    'luaslantai' => 49,
+    'alamat' => 'JL. LEDOK KM. 1,5 RT. 09 RW. 01 DS. SAMBONG',
+]);
+
+kicdokumen::create([
+    'id' => 2,
+    'kicinduk_id' => 1,
+    'jenisbarang' => 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN',
+    'kodebarang' => '12.01.33.16.010101.00000.00000.1969-1.3.3.01.01.10.001',
+    'register' => '000002',
+    'kondisibangunan' => 'BAIK',
+    'bertingkat' => 'TIDAK BERTINGKAT',
+    'beton' => 'TIDAK',
+    'luaslantai' => 49,
+    'alamat' => 'JL. LEDOK KM. 1,5 RT. 09 RW. 01 DS. SAMBONG',
+]);
+
+kicdokumen::create([
+    'id' => 3,
+    'kicinduk_id' => 1,
+    'jenisbarang' => 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN',
+    'kodebarang' => '12.01.33.16.010101.00000.00000.2005-1.3.3.01.01.08.001',
+    'register' => '000001',
+    'kondisibangunan' => 'BAIK',
+    'bertingkat' => 'TIDAK BERTINGKAT',
+    'beton' => 'TIDAK',
+    'luaslantai' => 60,
+    'alamat' => 'JL. LEDOK KM. 1,5 RT. 09 RW. 01 DS. SAMBONG',
+]);
+
 // databgklasifikasi::create([
 //     'id'=>1,
 //     'databgkepemilikan_id'=>1,
@@ -24553,6 +24593,7 @@ kicinduk::create(['id' => 1,
 //     'resiko_gempa'=>'',
 //     'kepadatan_lokasi'=>'',
 // ]);
+
 
 // Record 1 (Special case)
 databgklasifikasi::create([
