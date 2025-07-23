@@ -1129,25 +1129,25 @@ public function bedatabgstatuscreatenew(Request $request)
     return redirect()->route('bedatabgstatusbangunan', ['id' => $validated['databgkepemilikan_id']]);
 }
 
-
-
 public function bedatakic(Request $request)
 {
     $user = Auth::user();
     $perPage = $request->input('perPage', 20);
     $jumlahDataTotal = kicinduk::count();
 
-    // Ambil jumlah data unik berdasarkan namainstitusi dan hitung jumlahnya
-    // $jumlahPerInstitusi = kicinduk::select('namainstitusi', DB::raw('count(*) as total'))
-    // ->groupBy('namainstitusi')
-    // ->orderByDesc('total')
-    // ->get();
+    // Ambil jumlah data per satuan kerja (institusi)
+    $jumlahPerInstitusi = DB::table('kicinduks')
+        ->join('satuankerjas', 'kicinduks.satuankerja_id', '=', 'satuankerjas.id')
+        ->select('satuankerjas.nama as namainstitusi', DB::raw('count(*) as total'))
+        ->groupBy('satuankerjas.nama')
+        ->orderByDesc('total')
+        ->get();
 
     return view('backend.02_pendataanbangunangedung.07_datakic.01_datakic', [
         'title' => 'Pendataan KIC Bangunan Gedung',
         'user' => $user,
         'jumlahDataTotal' => $jumlahDataTotal,
-        // 'jumlahPerInstitusi' => $jumlahPerInstitusi
+        'jumlahPerInstitusi' => $jumlahPerInstitusi
     ]);
 }
 
