@@ -483,7 +483,7 @@ th {
           </td>
           <td style="width: 50%; text-align: center;">
             <div style="font-weight: bold; font-size:12px;">Pejabat Pembuat Komitmen</div>
-            <div style="height: 60px;"></div>
+            {{-- <div style="height: 60px;"></div> --}}
             <div style="margin-top: 70px; font-weight: bold; font-size:12px;">MOHAMAD ARIF HIDAYAT, ST</div>
             <div style="font-size:12px;">NIP 19710508 199803 1 011</div>
           </td>
