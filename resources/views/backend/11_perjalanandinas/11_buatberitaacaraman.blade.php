@@ -199,78 +199,42 @@ th {
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="berkasberitaacara">
-            <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Dokumen (Jika Diperlukan)
-        </label>
-        <input
-            type="file"
-            id="berkasberitaacara"
-            name="berkasberitaacara"
-            accept="application/pdf"
-            class="form-control @error('berkasberitaacara') is-invalid @enderror"
-            onchange="previewPDF(event, 'berkasberitaacaraPreviewContainer', 'berkasberitaacaraPreview', 'berkasberitaacaraMessage')"
-        />
-        @error('berkasberitaacara')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        {{-- Preview PDF jika sudah ada data --}}
-        <div class="mt-3" id="berkasberitaacaraPreviewContainer"
-             style="{{ isset($data->berkasberitaacara) && $data->berkasberitaacara ? '' : 'display: none;' }}">
-            <iframe
-                id="berkasberitaacaraPreview"
-                src="{{ isset($data->berkasberitaacara) ? asset($data->berkasberitaacara) : '' }}"
-                style="width: 100%; height: 400px; border: 1px solid #ddd; border-radius: 4px;"
-            ></iframe>
+<div class="col-md-12">
+    <div class="mb-4">
+        <div style="font-weight: bold; font-size: 14px; margin-bottom: 8px;">
+            <i class="bi bi-card-text" style="margin-right: 6px; color: navy;"></i>
+            Keterangan Berita Acara
         </div>
-
-        {{-- Pesan jika belum upload --}}
-        <div
-            id="berkasberitaacaraMessage"
-            class="mt-3"
-            style="color: #666; font-style: italic; border: 1px solid #ddd; border-radius: 4px; padding: 20px; {{ isset($data->berkasberitaacara) && $data->berkasberitaacara ? 'display: none;' : 'display: block;' }}"
-        >
-            Silakan Upload Berkas Berita Acara.
+        <div style="border: 1px solid #ccc; background-color: #f8f9fa; padding: 15px; border-radius: 5px; font-style: italic; font-size: 13px;">
+            Silahkan tulis isi Berita Acara Anda sesuai dengan kebutuhan Perjalanan Dinas dimaksud.
         </div>
     </div>
 </div>
 
-<script>
-function previewPDF(event, previewContainerId, iframeId, messageId) {
-    const input = event.target;
-    const previewContainer = document.getElementById(previewContainerId);
-    const iframe = document.getElementById(iframeId);
-    const message = document.getElementById(messageId);
-
-    if (input.files && input.files[0]) {
-        const file = input.files[0];
-
-        if (file.type !== "application/pdf") {
-            // Jika bukan PDF
-            previewContainer.style.display = 'none';
-            message.style.display = 'block';
-            message.textContent = 'File harus berupa format PDF.';
-            return;
-        }
-
-        const fileURL = URL.createObjectURL(file);
-        iframe.src = fileURL;
-        previewContainer.style.display = 'block';
-        message.style.display = 'none';
-    } else {
-        // Tidak ada file
-        iframe.src = '';
-        previewContainer.style.display = 'none';
-        message.style.display = 'block';
-        message.textContent = 'Silahkan Upload Berkas Bantuan Teknis';
-    }
-}
-</script>
-
-
-
+{{-- Input poin 1 - 7 --}}
+@for($i = 1; $i <= 7; $i++)
+    @php
+        $field = 'keteranganba' . $i;
+    @endphp
+    <div class="col-md-12">
+        <div class="mb-3">
+            <label for="{{ $field }}" class="form-label">
+                <i class="bi bi-list-check" style="color: navy;"></i> Keterangan Poin {{ $i }}
+            </label>
+            <input
+                type="text"
+                id="{{ $field }}"
+                name="{{ $field }}"
+                class="form-control @error($field) is-invalid @enderror"
+                value="{{ old($field, $data->$field ?? '') }}"
+                placeholder="Tulis keterangan poin {{ $i }}..."
+            >
+            @error($field)
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+@endfor
                                     </div>
                                 </div>
                                 <!-- End row -->
