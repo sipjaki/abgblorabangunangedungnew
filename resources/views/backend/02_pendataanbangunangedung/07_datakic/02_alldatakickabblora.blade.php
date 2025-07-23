@@ -343,7 +343,7 @@ th {
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 
-<td>{{ optional($item->user)->name ?? '-' }}</td>
+{{-- <td>{{ optional($item->user)->name ?? '-' }}</td> --}}
 
 {{-- Tanggal Input --}}
 <td>
