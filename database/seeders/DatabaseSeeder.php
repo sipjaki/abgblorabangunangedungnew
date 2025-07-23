@@ -74,6 +74,7 @@ use App\Models\pengkajiteknis;
 use App\Models\pesertapelatihan;
 use App\Models\petugasdinas;
 use App\Models\petugaspenilik;
+use App\Models\satuankerja;
 use App\Models\suratpemberitahuanpbg;
 use App\Models\surattugaspbg;
 use App\Models\tempatkonsultasi;
@@ -24490,6 +24491,49 @@ databgpeprofilbangunangedung::create(['id'=>149,'databgkepemilikan_id'=>149,'lua
 databgpeprofilbangunangedung::create(['id'=>150,'databgkepemilikan_id'=>150,'luastanah'=>'667','namabangunan'=>'Rumah Dinas Asisten','alamatbangunan'=>'Jl. Kolonel Sunandar No.63B, Mlangsen, Kec. Blora, Jawa Tengah','fungsibangunan'=>'Hunian','jumlahlantai'=>'1','luaslantaildasar'=>'72','totalluaslantai'=>'72','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL BANGUNAN GEDUNG
+
+// INPUT SATUAN KERJA
+satuankerja::create(['id' => 1, 'satuankerja' => 'Dinas Pendidikan']);
+satuankerja::create(['id' => 2, 'satuankerja' => 'Dinas Kesehatan']);
+satuankerja::create(['id' => 3, 'satuankerja' => 'Dinas Pekerjaan Umum dan Penataan Ruang']);
+satuankerja::create(['id' => 4, 'satuankerja' => 'Dinas Perumahan Pemukiman dan Perhubungan']);
+satuankerja::create(['id' => 5, 'satuankerja' => 'Satuan Polisi Pamong Praja']);
+satuankerja::create(['id' => 6, 'satuankerja' => 'Badan Penanggulangan Bencana Daerah']);
+satuankerja::create(['id' => 7, 'satuankerja' => 'Dinas Sosial Pemberdayaan Perempuan dan Perlindungan Anak']);
+satuankerja::create(['id' => 8, 'satuankerja' => 'Dinas Pangan, Pertanian, Peternakan, dan Perikanan']);
+satuankerja::create(['id' => 9, 'satuankerja' => 'Dinas Lingkungan Hidup']);
+satuankerja::create(['id' => 10, 'satuankerja' => 'Dinas Kependudukan dan Pencatatan Sipil']);
+satuankerja::create(['id' => 11, 'satuankerja' => 'Dinas Pemberdayaan Masyarakat dan Desa']);
+satuankerja::create(['id' => 12, 'satuankerja' => 'Dinas Pengendalian Penduduk dan Keluarga Berencana']);
+satuankerja::create(['id' => 13, 'satuankerja' => 'Dinas Komunikasi dan Informatika']);
+satuankerja::create(['id' => 14, 'satuankerja' => 'Dinas Perdagangan, Koperasi Usaha Kecil dan Menengah']);
+satuankerja::create(['id' => 15, 'satuankerja' => 'Dinas Penanaman Modal, Pelayanan Terpadu Satu Pintu']);
+satuankerja::create(['id' => 16, 'satuankerja' => 'Dinas Kepemudaan, Olah Raga, Kebudayaan dan Pariwisata']);
+satuankerja::create(['id' => 17, 'satuankerja' => 'Dinas Perpustakaan dan Kearsipan']);
+satuankerja::create(['id' => 18, 'satuankerja' => 'Dinas Perindustrian dan Tenaga Kerja']);
+satuankerja::create(['id' => 19, 'satuankerja' => 'Sekretariat Daerah']);
+satuankerja::create(['id' => 20, 'satuankerja' => 'Sekretariat Dewan']);
+satuankerja::create(['id' => 21, 'satuankerja' => 'Badan Perencanaan Pembangunan Daerah']);
+satuankerja::create(['id' => 22, 'satuankerja' => 'Badan Pendapatan Pengelolaan Keuangan dan Aset Daerah']);
+satuankerja::create(['id' => 23, 'satuankerja' => 'Badan Kepegawaian Daerah']);
+satuankerja::create(['id' => 24, 'satuankerja' => 'Inspektorat Daerah']);
+satuankerja::create(['id' => 25, 'satuankerja' => 'Kecamatan Blora']);
+satuankerja::create(['id' => 26, 'satuankerja' => 'Kecamatan Jepon']);
+satuankerja::create(['id' => 27, 'satuankerja' => 'Kecamatan Bogorejo']);
+satuankerja::create(['id' => 28, 'satuankerja' => 'Kecamatan Tunjungan']);
+satuankerja::create(['id' => 29, 'satuankerja' => 'Kecamatan Banjarejo']);
+satuankerja::create(['id' => 30, 'satuankerja' => 'Kecamatan Cepu']);
+satuankerja::create(['id' => 31, 'satuankerja' => 'Kecamatan Jiken']);
+satuankerja::create(['id' => 32, 'satuankerja' => 'Kecamatan Sambong']);
+satuankerja::create(['id' => 33, 'satuankerja' => 'Kecamatan Kedungtuban']);
+satuankerja::create(['id' => 34, 'satuankerja' => 'Kecamatan Ngawen']);
+satuankerja::create(['id' => 35, 'satuankerja' => 'Kecamatan Kunduran']);
+satuankerja::create(['id' => 36, 'satuankerja' => 'Kecamatan Todanan']);
+satuankerja::create(['id' => 37, 'satuankerja' => 'Kecamatan Japah']);
+satuankerja::create(['id' => 38, 'satuankerja' => 'Kecamatan Randublatung']);
+satuankerja::create(['id' => 39, 'satuankerja' => 'Kecamatan Jati']);
+satuankerja::create(['id' => 40, 'satuankerja' => 'Kecamatan Kradenan']);
+satuankerja::create(['id' => 41, 'satuankerja' => 'Badan Kesatuan Bangsa dan Politik']);
 
 // databgklasifikasi::create([
 //     'id'=>1,

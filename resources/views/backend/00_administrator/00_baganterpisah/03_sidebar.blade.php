@@ -1069,6 +1069,7 @@
         <p style="color: white; margin-left: 8px;">Statistik KIC</p>
     </a>
 </li>
+
 <li class="nav-item">
     <a href="/404" class="nav-link">
         <i class="bi bi-person-vcard nav-icon" style="color: white; font-size: 16px;"></i>
@@ -1076,7 +1077,7 @@
     </a>
 </li>
 
-    {{-- <div style="margin-bottom: 10px; margin-top: 10px;">
+    <div style="margin-bottom: 10px; margin-top: 10px;">
     <p style="
         font-size: 13px;
         margin-left: 12px;
@@ -1091,7 +1092,15 @@
     ">
         <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
     </p>
-</div> --}}
+</div>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="bi bi-person-vcard nav-icon" style="color: white; font-size: 16px;"></i>
+        <p style="color: white; margin-left: 8px;">Satuan Kerja</p>
+    </a>
+</li>
+
 </ul>
 
             </li>
