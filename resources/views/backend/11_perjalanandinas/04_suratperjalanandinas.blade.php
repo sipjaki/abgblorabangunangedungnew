@@ -337,8 +337,8 @@ th {
 </div>
 
 <body>
-  <div class="halaman" style="margin-top: -50px;">
-    <div class="kop">
+  <div class="halaman">
+    <div class="kop" style="margin-top:-100px;">
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
       {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
       <div style="display: inline-block;">
