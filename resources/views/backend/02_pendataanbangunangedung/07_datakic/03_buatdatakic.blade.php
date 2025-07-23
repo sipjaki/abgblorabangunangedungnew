@@ -194,7 +194,7 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('datanewpendataanbgnew') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('bedatabangunankic') }}" method="POST" enctype="multipart/form-data">
           @csrf
                             <!-- begin::Body -->
 
