@@ -26195,6 +26195,25 @@ databgpeprofilbangunangedung::create([
     'tanggalselesaikonstruksi' => '2011-01-01',
     'tanggalrehabilitasi' => null,
 ]);
+databgpeprofilbangunangedung::create(['id'=>251,'databgkepemilikan_id'=>251,'luastanah'=>'2038','namabangunan'=>'Gedung F1','alamatbangunan'=>'Jl. Jendral Sudirman no. 157, Blora','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'8','totalluaslantai'=>'8','tinggibangunan'=>'3','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'2023-01-01','tanggalselesaikonstruksi'=>'2023-01-01','tanggalrehabilitasi'=>null]);
+
+databgpeprofilbangunangedung::create(['id'=>252,'databgkepemilikan_id'=>252,'luastanah'=>'2038','namabangunan'=>'Gedung G','alamatbangunan'=>'Jl. Jendral Sudirman no. 157, Blora','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'69','totalluaslantai'=>'69','tinggibangunan'=>'5.5','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'2011-01-01','tanggalselesaikonstruksi'=>'2011-01-01','tanggalrehabilitasi'=>null]);
+
+databgpeprofilbangunangedung::create(['id'=>253,'databgkepemilikan_id'=>253,'luastanah'=>'4000','namabangunan'=>'Mushola','alamatbangunan'=>'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora','fungsibangunan'=>'Keagamaan','jumlahlantai'=>'1','luaslantaildasar'=>'30','totalluaslantai'=>'30','tinggibangunan'=>'8','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'2015-01-01','tanggalselesaikonstruksi'=>'2015-01-01','tanggalrehabilitasi'=>null]);
+
+databgpeprofilbangunangedung::create(['id'=>254,'databgkepemilikan_id'=>254,'luastanah'=>'4000','namabangunan'=>'Gedung B (Kamar Mandi)','alamatbangunan'=>'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'10','totalluaslantai'=>'10','tinggibangunan'=>'3','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'2006-01-01','tanggalselesaikonstruksi'=>'2006-01-01','tanggalrehabilitasi'=>null]);
+
+databgpeprofilbangunangedung::create(['id'=>255,'databgkepemilikan_id'=>255,'luastanah'=>'4000','namabangunan'=>'Gedung A','alamatbangunan'=>'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'212.5','totalluaslantai'=>'212.5','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'1927-01-01','tanggalselesaikonstruksi'=>'1927-01-01','tanggalrehabilitasi'=>'2006-01-01']);
+
+databgpeprofilbangunangedung::create(['id'=>256,'databgkepemilikan_id'=>256,'luastanah'=>'4000','namabangunan'=>'Gedung D','alamatbangunan'=>'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'127.5','totalluaslantai'=>'127.5','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'1927-01-01','tanggalselesaikonstruksi'=>'1927-01-01','tanggalrehabilitasi'=>'2006-01-01']);
+
+databgpeprofilbangunangedung::create(['id'=>257,'databgkepemilikan_id'=>257,'luastanah'=>'4000','namabangunan'=>'Gedung E','alamatbangunan'=>'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'127.5','totalluaslantai'=>'127.5','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'1927-01-01','tanggalselesaikonstruksi'=>'1927-01-01','tanggalrehabilitasi'=>'2006-01-01']);
+
+databgpeprofilbangunangedung::create(['id'=>258,'databgkepemilikan_id'=>258,'luastanah'=>'4000','namabangunan'=>'Gedung C (Kantor)','alamatbangunan'=>'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'68','totalluaslantai'=>'68','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'1927-01-01','tanggalselesaikonstruksi'=>'1927-01-01','tanggalrehabilitasi'=>'2006-01-01']);
+
+databgpeprofilbangunangedung::create(['id'=>259,'databgkepemilikan_id'=>259,'luastanah'=>'1443','namabangunan'=>'Perpustakaan','alamatbangunan'=>'Jl. Veteran Gg. Sentono, Bangkle, Blora','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'56','totalluaslantai'=>'56','tinggibangunan'=>'5.5','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'2016-01-01','tanggalselesaikonstruksi'=>'2016-01-01','tanggalrehabilitasi'=>null]);
+
+databgpeprofilbangunangedung::create(['id'=>260,'databgkepemilikan_id'=>260,'luastanah'=>'1443','namabangunan'=>'Toilet Guru & Dapur','alamatbangunan'=>'Jl. Veteran Gg. Sentono, Bangkle, Blora','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'24','totalluaslantai'=>'24','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'1984-01-01','tanggalselesaikonstruksi'=>'1984-01-01','tanggalrehabilitasi'=>null]);
 
 
 

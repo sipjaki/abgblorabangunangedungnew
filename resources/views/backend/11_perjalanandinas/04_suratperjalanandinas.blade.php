@@ -331,7 +331,7 @@ th {
 
 
 <div style="text-align: center; margin: 20px;">
-  <button onclick="downloadPDF()" style="background-color: #e3342f; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
+  <button class="button-berkas" onclick="downloadPDF()">
     📄 Download Surat Tugas (PDF)
   </button>
 </div>
