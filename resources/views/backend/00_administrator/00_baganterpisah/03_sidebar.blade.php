@@ -1481,7 +1481,7 @@
 <li class="nav-item">
   <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 0.5rem 1rem;">
     <i class="bi bi-info-circle nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
-    <p style="color: orange; margin: 0 0 0 8px; flex-grow: 1;">Bantuan Gambar</p>
+    <p style="color: green; margin: 0 0 0 8px; flex-grow: 1;">Bantuan Gambar</p>
     <i class="nav-arrow bi bi-chevron-right" style="color: white; margin-left: auto;"></i>
 </a>
     <ul class="nav nav-treeview" style="margin-left: 15px;">
@@ -1633,7 +1633,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24" style="flex-shrink: 0;">
     <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9L2 14v2l8-2.5V19l-2 1.5v1L12 21l4-1.5v-1L14 19v-5.5l7 2.5z"/>
   </svg>
-  <p style="color: yellow; margin: 0 0 0 8px; flex-grow: 1;">Perjalanan Dinas</p>
+  <p style="color: green; margin: 0 0 0 8px; flex-grow: 1;">Perjalanan Dinas</p>
   <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto; color: white;"></i>
 </a>
 
