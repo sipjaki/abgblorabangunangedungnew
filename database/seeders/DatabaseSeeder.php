@@ -62,6 +62,7 @@ use App\Models\jenispermohonangambar;
 use App\Models\jenjangpendidikan;
 use App\Models\kategoripelatihan;
 use App\Models\kepemilikanbangunangedung;
+use App\Models\kicinduk;
 use App\Models\krkhunian;
 use App\Models\krkkeagamaan;
 use App\Models\krkmenara;
@@ -24534,6 +24535,14 @@ satuankerja::create(['id' => 38, 'satuankerja' => 'Kecamatan Randublatung']);
 satuankerja::create(['id' => 39, 'satuankerja' => 'Kecamatan Jati']);
 satuankerja::create(['id' => 40, 'satuankerja' => 'Kecamatan Kradenan']);
 satuankerja::create(['id' => 41, 'satuankerja' => 'Badan Kesatuan Bangsa dan Politik']);
+
+
+kicinduk::create(['id' => 1,
+'satuankerja_id' => 1,
+'kodelokasi' => '010101',
+'bidang' => '-',
+'subbidang' => '-',
+]);
 
 // databgklasifikasi::create([
 //     'id'=>1,
