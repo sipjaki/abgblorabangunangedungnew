@@ -321,7 +321,7 @@ th {
     <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label" for="tanggal">
-                <i class="bi bi-calendar-event me-2 text-primary"></i> Tanggal
+                <i class="bi bi-calendar-event me-2 text-primary"></i> Tanggal Terbit
             </label>
             <input type="date" class="form-control @error('tanggal') is-invalid @enderror" id="tanggal" name="tanggal"
                 value="{{ old('tanggal', $data->tanggal ?? '') }}">
@@ -378,16 +378,21 @@ th {
     </div>
 
     {{-- Asal Usul --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="asal_usul">
-                <i class="bi bi-box-arrow-in-up-right me-2 text-secondary"></i> Asal Usul
-            </label>
-            <input type="text" class="form-control @error('asal_usul') is-invalid @enderror" id="asal_usul" name="asal_usul"
-                value="{{ old('asal_usul', $data->asal_usul ?? '') }}">
-            @error('asal_usul') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="asal_usul">
+            <i class="bi bi-box-arrow-in-up-right me-2 text-secondary"></i> Asal Usul
+        </label>
+        <select class="form-select @error('asal_usul') is-invalid @enderror" id="asal_usul" name="asal_usul">
+            <option value="">-- Pilih Asal Usul --</option>
+            <option value="Pembelian" {{ old('asal_usul', $data->asal_usul ?? '') == 'Pembelian' ? 'selected' : '' }}>Pembelian</option>
+            <option value="Inventaris" {{ old('asal_usul', $data->asal_usul ?? '') == 'Inventaris' ? 'selected' : '' }}>Inventaris</option>
+            <option value="Mutasi" {{ old('asal_usul', $data->asal_usul ?? '') == 'Mutasi' ? 'selected' : '' }}>Mutasi</option>
+            <option value="Hibah" {{ old('asal_usul', $data->asal_usul ?? '') == 'Hibah' ? 'selected' : '' }}>Hibah</option>
+        </select>
+        @error('asal_usul') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
+</div>
 
     {{-- Harga --}}
     <div class="col-md-6">
