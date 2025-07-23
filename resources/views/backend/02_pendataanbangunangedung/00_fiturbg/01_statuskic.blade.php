@@ -4,21 +4,21 @@
 
 
 <!-- Container Form & Peta -->
-<div class="col-md-12">
+{{-- <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label d-flex align-items-center" for="koordinat">
-            <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Status Struktur Bangunan Gedung
+            <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Informasi Bangunan Gedung
         </label>
-        {{-- <input type="text"
+        <input type="text"
                class="form-control"
                id="koordinat"
                name="koordinat"
                value="{{ old('koordinat', $data->koordinat ?? '') }}"
                placeholder="Koordinat tidak dapat diubah"
-               readonly> --}}
+               readonly>
     </div>
-    {{-- <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div> --}}
-</div>
+    <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
+</div> --}}
 
 <!-- Leaflet JS -->
 <script>
