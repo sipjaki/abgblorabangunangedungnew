@@ -446,6 +446,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="col-md-6">
     <div class="mb-3">
+        <label for="pendamping_id" class="form-label">
+            <i class="bi bi-person-plus" style="color: navy;"></i> Pendamping
+        </label>
+        <select name="pendamping_id" id="pendamping_id" class="form-select @error('pendamping_id') is-invalid @enderror">
+            <option value="">-- Pilih Pendamping --</option>
+            @foreach($datapendamping as $petugas)
+                <option value="{{ $petugas->id }}" {{ old('pendamping_id', $data->pendamping_id ?? '') == $petugas->id ? 'selected' : '' }}>
+                    {{ $petugas->namalengkap }}
+                </option>
+            @endforeach
+        </select>
+        @error('pendamping_id')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="mb-3">
         <label for="pendamping2_id" class="form-label">
             <i class="bi bi-person-plus" style="color: navy;"></i> Pendamping 2
         </label>
@@ -481,6 +500,7 @@ document.addEventListener('DOMContentLoaded', function () {
         @enderror
     </div>
 </div>
+
 
 <div class="col-12">
     <div class="mb-3">
