@@ -341,16 +341,6 @@ th {
     @endif --}}
 </td>
 
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-
-        <a href="{{ route('beperjalanadinasba', $item->id) }}"
-                    class="button-berkas">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Buat Berita Acara
-                </a>
-
-
-</td>
-
 
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
@@ -414,6 +404,17 @@ th {
         document.getElementById("confirmModal").style.display = "none";
     }
 </script>
+
+
+<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+
+        <a href="{{ route('beperjalanadinasba', $item->id) }}"
+                    class="button-berkas">
+                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Buat Berita Acara
+                </a>
+
+
+</td>
 
             {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi2 == 'sudah')
