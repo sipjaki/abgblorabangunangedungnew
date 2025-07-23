@@ -595,11 +595,17 @@ th {
 <td style="text-align: center; vertical-align: middle; width: 100%;">
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
-
+@if(empty($item->keteranganba1))
     <a href="{{ route('beperjalanadinasbainternal', $item->id) }}"
         class="button-berkas">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Buat Berita Acara
     </a>
+@else
+    <a href="{{ route('beperjalanadinasbainternal', $item->id) }}"
+        class="button-hijau">
+        <i class="bi bi-check-circle" style="margin-right: 5px;"></i> BA Terbit
+    </a>
+@endif
 
     </div>
 </td>
