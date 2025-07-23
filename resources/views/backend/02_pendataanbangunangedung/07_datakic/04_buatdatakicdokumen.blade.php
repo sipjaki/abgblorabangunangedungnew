@@ -405,7 +405,7 @@ th {
     <div class="col-md-12">
         <div class="mb-3">
             <label class="form-label" for="keterangan">
-                <i class="bi bi-chat-left-text me-2 text-primary"></i> Keterangan
+                <i class="bi bi-chat-left-text me-2 text-primary"></i> Keterangan Bangunan Contoh : 12436.1289.C / GEDUNG 1
             </label>
             <textarea class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" name="keterangan" rows="3">{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
             @error('keterangan') <div class="invalid-feedback">{{ $message }}</div> @enderror
