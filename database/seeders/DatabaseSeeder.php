@@ -28930,7 +28930,121 @@ for ($i = 747; $i <= 750; $i++) {
     ]);
 }
 
+// Standard Sederhana records (751-790, 793-800)
+for ($i = 751; $i <= 800; $i++) {
+    // Skip special cases
+    if ($i === 773 || $i === 791 || $i === 792) continue;
 
+    databgklasifikasi::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Padat'
+    ]);
+}
+
+// Special case records
+$specialRecords = [
+    773 => ['resiko_gempa' => 'zona 3'],  // Lowercase 'zona'
+    791 => ['tingkat_kompleksitas' => 'Khusus'],
+    792 => ['tingkat_permanensi' => 'Semi Permanen']
+];
+
+foreach ($specialRecords as $id => $overrides) {
+    databgklasifikasi::create(array_merge([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Padat'
+    ], $overrides));
+}
+
+// Insert standard Sederhana Permanen records (801-830, 832-850, 856, 859, 861-885, 887-891, 896-900)
+for ($i = 801; $i <= 900; $i++) {
+    // Skip semi-permanen, khusus, and special cases
+    if (in_array($i, [831, 852, 853, 854, 855, 857, 858, 860, 865, 892, 893, 894, 895, 886])) continue;
+
+    databgklasifikasi::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Padat'
+    ]);
+}
+
+// Handle special cases
+$specialRecords = [
+    // Record with lowercase permanensi
+    831 => ['tingkat_permanensi' => 'Permanen'], // Note: This appears to be same as standard, adjust if needed
+
+    // Semi Permanen records
+    852 => ['tingkat_permanensi' => 'Semi Permanen'],
+    853 => ['tingkat_permanensi' => 'Semi Permanen'],
+    854 => ['tingkat_permanensi' => 'Semi Permanen'],
+    855 => ['tingkat_permanensi' => 'Semi Permanen'],
+    857 => ['tingkat_permanensi' => 'Semi Permanen'],
+    858 => ['tingkat_permanensi' => 'Semi Permanen'],
+    860 => ['tingkat_permanensi' => 'Semi Permanen'],
+    865 => ['tingkat_permanensi' => 'Semi Permanen'],
+    892 => ['tingkat_permanensi' => 'Semi Permanen'],
+    893 => ['tingkat_permanensi' => 'Semi Permanen'],
+    894 => ['tingkat_permanensi' => 'Semi Permanen'],
+    895 => ['tingkat_permanensi' => 'Semi Permanen'],
+
+    // Khusus record
+    886 => ['tingkat_kompleksitas' => 'Khusus']
+];
+
+foreach ($specialRecords as $id => $overrides) {
+    databgklasifikasi::create(array_merge([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Padat'
+    ], $overrides));
+}
+
+// Insert standard Sederhana Permanen records (all except semi-permanen)
+for ($i = 901; $i <= 973; $i++) {
+    // Skip semi-permanen records
+    if (in_array($i, [908, 909, 952])) continue;
+
+    databgklasifikasi::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Padat'
+    ]);
+}
+
+// Handle semi-permanen records
+$semiPermanenRecords = [908, 909, 952];
+foreach ($semiPermanenRecords as $id) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Semi Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Padat'
+    ]);
+}
 
 // SAMPAI SINI BRO
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA KLASIFIKASI BANGUNAN GEDUNG
