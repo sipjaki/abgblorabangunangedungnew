@@ -25314,6 +25314,803 @@ databgpeprofilbangunangedung::create([
     'tanggalrehabilitasi' => '(Tidak Mengetahui)'
 ]);
 
+// Data 194
+databgpeprofilbangunangedung::create([
+    'id' => 194,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '',
+    'namabangunan' => 'Gedung D (Perpustakaan)',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '56',
+    'totalluaslantai' => '56',
+    'tinggibangunan' => '6.5',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2019-08-12',
+    'tanggalselesaikonstruksi' => '2019',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 195
+databgpeprofilbangunangedung::create([
+    'id' => 195,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '',
+    'namabangunan' => 'Gedung C',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '144',
+    'totalluaslantai' => '144',
+    'tinggibangunan' => '6.5',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2008-02-02',
+    'tanggalselesaikonstruksi' => '2008',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 196
+databgpeprofilbangunangedung::create([
+    'id' => 196,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '',
+    'namabangunan' => 'Gedung B (diusulkan penghapusan)',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '112',
+    'totalluaslantai' => '112',
+    'tinggibangunan' => '4',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2006-02-01',
+    'tanggalselesaikonstruksi' => '2006',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 197
+databgpeprofilbangunangedung::create([
+    'id' => 197,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '224',
+    'totalluaslantai' => '224',
+    'tinggibangunan' => '5',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '1970-07-15',
+    'tanggalselesaikonstruksi' => '1970',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 198
+databgpeprofilbangunangedung::create([
+    'id' => 198,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '',
+    'namabangunan' => 'Gedung E (WC/KM Siswa & Guru)',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '18',
+    'totalluaslantai' => '18',
+    'tinggibangunan' => '3.5',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2008-02-02',
+    'tanggalselesaikonstruksi' => '2008',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 199
+databgpeprofilbangunangedung::create([
+    'id' => 199,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3648',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '56',
+    'totalluaslantai' => '56',
+    'tinggibangunan' => '5.7',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '1977-03-31',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 200
+databgpeprofilbangunangedung::create([
+    'id' => 200,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3649',
+    'namabangunan' => 'Gedung E',
+    'alamatbangunan' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '13.5',
+    'totalluaslantai' => '13.5',
+    'tinggibangunan' => '3',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '1977-03-31',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 194 - Gedung D (Perpustakaan)
+databgpeprofilbangunangedung::create([
+    'id' => 194,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => null,
+    'namabangunan' => 'Gedung D (Perpustakaan)',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '56',
+    'totalluaslantai' => '56',
+    'tinggibangunan' => '6.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2019-08-12',
+    'tanggalselesaikonstruksi' => '2019',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 195 - Gedung C
+databgpeprofilbangunangedung::create([
+    'id' => 195,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => null,
+    'namabangunan' => 'Gedung C',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '144',
+    'totalluaslantai' => '144',
+    'tinggibangunan' => '6.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2008-02-02',
+    'tanggalselesaikonstruksi' => '2008',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 196 - Gedung B (diusulkan penghapusan)
+databgpeprofilbangunangedung::create([
+    'id' => 196,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => null,
+    'namabangunan' => 'Gedung B (diusulkan penghapusan)',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '112',
+    'totalluaslantai' => '112',
+    'tinggibangunan' => '4',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2006-02-01',
+    'tanggalselesaikonstruksi' => '2006',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 197 - Gedung A
+databgpeprofilbangunangedung::create([
+    'id' => 197,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => null,
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '224',
+    'totalluaslantai' => '224',
+    'tinggibangunan' => '5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1970-07-15',
+    'tanggalselesaikonstruksi' => '1970',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 198 - Gedung E (WC/KM Siswa & Guru)
+databgpeprofilbangunangedung::create([
+    'id' => 198,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => null,
+    'namabangunan' => 'Gedung E (WC/KM Siswa & Guru)',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '18',
+    'totalluaslantai' => '18',
+    'tinggibangunan' => '3.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2008-02-02',
+    'tanggalselesaikonstruksi' => '2008',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 199 - Gedung A
+databgpeprofilbangunangedung::create([
+    'id' => 199,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3648',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '56',
+    'totalluaslantai' => '56',
+    'tinggibangunan' => '5.7',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1977-03-31',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 200 - Gedung E
+databgpeprofilbangunangedung::create([
+    'id' => 200,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3649',
+    'namabangunan' => 'Gedung E',
+    'alamatbangunan' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '13.5',
+    'totalluaslantai' => '13.5',
+    'tinggibangunan' => '3',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1977-03-31',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 201 - Gedung B
+databgpeprofilbangunangedung::create([
+    'id' => 201,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3650',
+    'namabangunan' => 'Gedung B',
+    'alamatbangunan' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '247',
+    'totalluaslantai' => '247',
+    'tinggibangunan' => '5.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1977-03-31',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 202 - Gedung G
+databgpeprofilbangunangedung::create([
+    'id' => 202,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3651',
+    'namabangunan' => 'Gedung G',
+    'alamatbangunan' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '13.5',
+    'totalluaslantai' => '13.5',
+    'tinggibangunan' => '3.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1977-03-31',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 203 - Gedung F
+databgpeprofilbangunangedung::create([
+    'id' => 203,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3652',
+    'namabangunan' => 'Gedung F',
+    'alamatbangunan' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '16',
+    'totalluaslantai' => '16',
+    'tinggibangunan' => '3.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1977-03-31',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 204 - Gedung C
+databgpeprofilbangunangedung::create([
+    'id' => 204,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3653',
+    'namabangunan' => 'Gedung C',
+    'alamatbangunan' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '221',
+    'totalluaslantai' => '221',
+    'tinggibangunan' => '5.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1977-03-31',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 205 - Gedung D
+databgpeprofilbangunangedung::create([
+    'id' => 205,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3654',
+    'namabangunan' => 'Gedung D',
+    'alamatbangunan' => 'Jl. Patalan, Ds. Tambaksari, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '72',
+    'totalluaslantai' => '72',
+    'tinggibangunan' => '3.3',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1977-03-31',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 206 - Gedung C
+databgpeprofilbangunangedung::create([
+    'id' => 206,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '1750',
+    'namabangunan' => 'Gedung C',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '144',
+    'totalluaslantai' => '144',
+    'tinggibangunan' => '6',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2009',
+    'tanggalselesaikonstruksi' => '2009',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 207 - Gedung B
+databgpeprofilbangunangedung::create([
+    'id' => 207,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '1750',
+    'namabangunan' => 'Gedung B',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '99',
+    'totalluaslantai' => '99',
+    'tinggibangunan' => '6',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => null,
+    'tanggalselesaikonstruksi' => null,
+    'tanggalrehabilitasi' => '2021'
+]);
+
+// Data 208 - Gedung E
+databgpeprofilbangunangedung::create([
+    'id' => 208,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '1750',
+    'namabangunan' => 'Gedung E',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '13.5',
+    'totalluaslantai' => '13.5',
+    'tinggibangunan' => '3',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => null,
+    'tanggalselesaikonstruksi' => null,
+    'tanggalrehabilitasi' => '2022'
+]);
+
+// Data 209 - Gedung G
+databgpeprofilbangunangedung::create([
+    'id' => 209,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '1750',
+    'namabangunan' => 'Gedung G',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '9',
+    'totalluaslantai' => '9',
+    'tinggibangunan' => '3.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2022',
+    'tanggalselesaikonstruksi' => '2022',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 210 - Gedung F
+databgpeprofilbangunangedung::create([
+    'id' => 210,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '1750',
+    'namabangunan' => 'Gedung F',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '216',
+    'totalluaslantai' => '216',
+    'tinggibangunan' => '7',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2021',
+    'tanggalselesaikonstruksi' => '2021',
+    'tanggalrehabilitasi' => '2024'
+]);
+
+// Data 211 - Gedung A
+databgpeprofilbangunangedung::create([
+    'id' => 211,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '1750',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '216',
+    'totalluaslantai' => '216',
+    'tinggibangunan' => '7',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => null,
+    'tanggalselesaikonstruksi' => null,
+    'tanggalrehabilitasi' => '2012'
+]);
+
+// Data 212 - Gedung D
+databgpeprofilbangunangedung::create([
+    'id' => 212,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '1750',
+    'namabangunan' => 'Gedung D',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '56',
+    'totalluaslantai' => '56',
+    'tinggibangunan' => '6',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2012',
+    'tanggalselesaikonstruksi' => '2012',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 213 - Gedung A
+databgpeprofilbangunangedung::create([
+    'id' => 213,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '2270.3',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '204',
+    'totalluaslantai' => '204',
+    'tinggibangunan' => '6',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2007',
+    'tanggalselesaikonstruksi' => '2007',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 214 - Gedung B
+databgpeprofilbangunangedung::create([
+    'id' => 214,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '2270.3',
+    'namabangunan' => 'Gedung B',
+    'alamatbangunan' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '204',
+    'totalluaslantai' => '204',
+    'tinggibangunan' => '6',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2019',
+    'tanggalselesaikonstruksi' => '2019',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 215 - Gedung C
+databgpeprofilbangunangedung::create([
+    'id' => 215,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '2270.3',
+    'namabangunan' => 'Gedung C',
+    'alamatbangunan' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '68',
+    'totalluaslantai' => '68',
+    'tinggibangunan' => '6.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2013',
+    'tanggalselesaikonstruksi' => '2013',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 216 - Gedung D
+databgpeprofilbangunangedung::create([
+    'id' => 216,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '2270.3',
+    'namabangunan' => 'Gedung D',
+    'alamatbangunan' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '68',
+    'totalluaslantai' => '68',
+    'tinggibangunan' => '6.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2014',
+    'tanggalselesaikonstruksi' => '2014',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 217 - Gedung E
+databgpeprofilbangunangedung::create([
+    'id' => 217,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '2270.3',
+    'namabangunan' => 'Gedung E',
+    'alamatbangunan' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '11.25',
+    'totalluaslantai' => '11.25',
+    'tinggibangunan' => '3',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2006',
+    'tanggalselesaikonstruksi' => '2006',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 218 - Gedung F
+databgpeprofilbangunangedung::create([
+    'id' => 218,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '2270.3',
+    'namabangunan' => 'Gedung F',
+    'alamatbangunan' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '4.25',
+    'totalluaslantai' => '4.25',
+    'tinggibangunan' => '3.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2014',
+    'tanggalselesaikonstruksi' => '2014',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 219 - Gedung H (Mushola)
+databgpeprofilbangunangedung::create([
+    'id' => 219,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '2270.3',
+    'namabangunan' => 'Gedung H (Mushola)',
+    'alamatbangunan' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '40',
+    'totalluaslantai' => '40',
+    'tinggibangunan' => '6.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2022',
+    'tanggalselesaikonstruksi' => '2022',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 220 - Gedung A
+databgpeprofilbangunangedung::create([
+    'id' => 220,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3133',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Ds. Patalan, RT 02/RW 06, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '191.25',
+    'totalluaslantai' => '191.25',
+    'tinggibangunan' => '6',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2006',
+    'tanggalselesaikonstruksi' => '2006',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 221 - Gedung B
+databgpeprofilbangunangedung::create([
+    'id' => 221,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3133',
+    'namabangunan' => 'Gedung B',
+    'alamatbangunan' => 'Ds. Patalan, RT 02/RW 06, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '234',
+    'totalluaslantai' => '234',
+    'tinggibangunan' => '5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2006',
+    'tanggalselesaikonstruksi' => '2006',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 222 - Mushola
+databgpeprofilbangunangedung::create([
+    'id' => 222,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3133',
+    'namabangunan' => 'Mushola',
+    'alamatbangunan' => 'Ds. Patalan, RT 02/RW 06, Blora',
+    'fungsibangunan' => 'Keagamaan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '40',
+    'totalluaslantai' => '40',
+    'tinggibangunan' => '5.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2023',
+    'tanggalselesaikonstruksi' => '2023',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 223 - Perpustakaan
+databgpeprofilbangunangedung::create([
+    'id' => 223,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3133',
+    'namabangunan' => 'Perpustakaan',
+    'alamatbangunan' => 'Ds. Patalan, RT 02/RW 06, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '56',
+    'totalluaslantai' => '56',
+    'tinggibangunan' => '6',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2013',
+    'tanggalselesaikonstruksi' => '2013',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 224 - Gudang
+databgpeprofilbangunangedung::create([
+    'id' => 224,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3133',
+    'namabangunan' => 'Gudang',
+    'alamatbangunan' => 'Ds. Patalan, RT 02/RW 06, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '18',
+    'totalluaslantai' => '18',
+    'tinggibangunan' => null,
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2006',
+    'tanggalselesaikonstruksi' => '2006',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 225 - Kamar Mandi
+databgpeprofilbangunangedung::create([
+    'id' => 225,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '3133',
+    'namabangunan' => 'Kamar Mandi',
+    'alamatbangunan' => 'Ds. Patalan, RT 02/RW 06, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '16.5',
+    'totalluaslantai' => '16.5',
+    'tinggibangunan' => '3.5',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '2006',
+    'tanggalselesaikonstruksi' => '2006',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 226 - Gedung A
+databgpeprofilbangunangedung::create([
+    'id' => 226,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '2427',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '234',
+    'totalluaslantai' => '234',
+    'tinggibangunan' => '6',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1982-07-01',
+    'tanggalselesaikonstruksi' => '1982-09-01',
+    'tanggalrehabilitasi' => '2008-07-01'
+]);
+
+// Data 227 - Gedung G
+databgpeprofilbangunangedung::create([
+    'id' => 227,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '2427',
+    'namabangunan' => 'Gedung G',
+    'alamatbangunan' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '18',
+    'totalluaslantai' => '18',
+    'tinggibangunan' => '4',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1982-07-01',
+    'tanggalselesaikonstruksi' => '1982-09-01',
+    'tanggalrehabilitasi' => null
+]);
+
+// Data 228 - Gedung B
+databgpeprofilbangunangedung::create([
+    'id' => 228,
+    'databgkepemilikan_id' => 1,
+    'luastanah' => '2427',
+    'namabangunan' => 'Gedung B',
+    'alamatbangunan' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '216',
+    'totalluaslantai' => '216',
+    'tinggibangunan' => '6',
+    'luasbasement' => null,
+    'koordinatbangunan' => null,
+    'tanggalmulaikonstruksi' => '1982-07-01',
+    'tanggalselesaikonstruksi' => '1982-09-01',
+    'tanggalrehabilitasi' => '2008-07-01'
+]);
 
 // BARU SAMPAI SINI
 
