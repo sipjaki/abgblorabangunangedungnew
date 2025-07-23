@@ -98,6 +98,8 @@ public function beperjalanandinasnew(Request $request)
         'mulaiperjalanan' => 'required|date',
         'selesaiperjalanan' => 'required|date|after_or_equal:mulaiperjalanan',
         'pendamping_id' => 'nullable|string',
+        'pendamping2_id' => 'nullable|string',
+        'pendamping3_id' => 'nullable|string',
         'ketkegiatan' => 'nullable|string|max:255',
     ], [
         'dinasluasdalam.required' => 'Silakan pilih Dinas Dalam atau Luar.',
@@ -119,6 +121,8 @@ public function beperjalanandinasnew(Request $request)
         'mulaiperjalanan'   => $validated['mulaiperjalanan'],
         'selesaiperjalanan' => $validated['selesaiperjalanan'],
         'pendamping_id'     => $validated['pendamping_id'] ?? null,
+        'pendamping2_id'     => $validated['pendamping2_id'] ?? null,
+        'pendamping3_id'     => $validated['pendamping3_id'] ?? null,
         'ketkegiatan'       => $validated['ketkegiatan'] ?? null,
     ]);
 
