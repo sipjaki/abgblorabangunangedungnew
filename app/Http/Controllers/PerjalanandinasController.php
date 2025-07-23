@@ -610,6 +610,24 @@ public function cekRentang(Request $request)
     return response()->json(['conflict' => $conflict]);
 }
 
+
+public function beperjalanadinasbainternal($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = perjalanandinas::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.11_perjalanandinas.11_buatberitaacaraman', [
+        'title' => 'Buat Berita Acara Perjalanan Dinas',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }
 
 
