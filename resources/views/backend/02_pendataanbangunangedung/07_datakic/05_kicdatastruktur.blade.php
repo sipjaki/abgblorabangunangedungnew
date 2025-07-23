@@ -214,7 +214,7 @@ th {
 
        <!-- Left Column (6/12) -->
 
-@include('backend.02_pendataanbangunangedung.00_fiturbg.01_status')
+@include('backend.02_pendataanbangunangedung.00_fiturbg.01_statuskic')
 
 <div class="col-12">
     {{-- <div class="mb-3">
