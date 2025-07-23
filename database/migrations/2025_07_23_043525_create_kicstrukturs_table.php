@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('kicstrukturs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('kicinduk_id')->nullable()->index(); // relasi ke tabel induk
+            $table->foreignId('kicdokumen_id')->nullable()->index(); // relasi ke tabel induk
 
             $table->date('tanggal')->nullable();
             $table->string('nomor')->nullable();
