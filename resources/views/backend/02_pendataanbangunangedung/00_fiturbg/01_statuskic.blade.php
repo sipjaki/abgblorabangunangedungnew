@@ -7,17 +7,17 @@
 <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label d-flex align-items-center" for="koordinat">
-            <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
+            <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Status Struktur Bangunan Gedung
         </label>
-        <input type="text"
+        {{-- <input type="text"
                class="form-control"
                id="koordinat"
                name="koordinat"
                value="{{ old('koordinat', $data->koordinat ?? '') }}"
                placeholder="Koordinat tidak dapat diubah"
-               readonly>
+               readonly> --}}
     </div>
-    <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
+    {{-- <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div> --}}
 </div>
 
 <!-- Leaflet JS -->
@@ -63,30 +63,50 @@
 
 
 <div class="row g-4">
-    @php
-        $infoItems = [
-            [
-                'icon' => 'bi-person-fill',
-                'title' => 'Input Data',
-                'value' => optional($data->user)->name ?? '-',
-            ],
-            [
-                'icon' => 'bi-geo-alt-fill',
-                'title' => 'Kecamatan Blora',
-                'value' => optional($data->kecamatanblora)->kecamatanblora ?? '-',
-            ],
-            [
-                'icon' => 'bi-building',
-                'title' => 'Nama Institusi',
-                'value' => $data->namainstitusi ?? '-',
-            ],
-            [
-                'icon' => 'bi-card-checklist',
-                'title' => 'No. Pengesahan Usaha',
-                'value' => $data->nopengesahanusaha ?? '-',
-            ],
-        ];
-    @endphp
+@php
+    $infoItems = [
+        [
+            'icon' => 'bi-calendar-event',
+            'title' => 'Tanggal',
+            'value' => $data->tanggal ? \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') : '-',
+        ],
+        [
+            'icon' => 'bi-hash',
+            'title' => 'Nomor',
+            'value' => $data->nomor ?? '-',
+        ],
+        [
+            'icon' => 'bi-aspect-ratio',
+            'title' => 'Luas (m²)',
+            'value' => $data->luas ?? '-',
+        ],
+        [
+            'icon' => 'bi-tree',
+            'title' => 'Status Tanah',
+            'value' => $data->status_tanah ?? '-',
+        ],
+        [
+            'icon' => 'bi-file-earmark-bar-graph',
+            'title' => 'Nomor Kode Tanah',
+            'value' => $data->nomor_kode_tanah ?? '-',
+        ],
+        [
+            'icon' => 'bi-box-arrow-in-up-right',
+            'title' => 'Asal Usul',
+            'value' => $data->asal_usul ?? '-',
+        ],
+        [
+            'icon' => 'bi-cash-stack',
+            'title' => 'Harga',
+            'value' => $data->harga ?? '-',
+        ],
+        [
+            'icon' => 'bi-chat-left-text',
+            'title' => 'Keterangan',
+            'value' => $data->keterangan ?? '-',
+        ],
+    ];
+@endphp
 
     @foreach ($infoItems as $item)
         <div class="col-md-6 col-lg-3">
