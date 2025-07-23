@@ -1,3 +1,9 @@
+<!-- Tambahkan link Google Font Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<!-- Link Font Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
 <style>
  body {
         font-family: 'Poppins', sans-serif;
@@ -451,33 +457,36 @@ th {
   </tr> --}}
 </table>
 
-<!-- Tambahkan link Google Font Poppins -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-<!-- Link Font Poppins -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<!-- Global Style -->
+<style>
+  .poppins-12 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+  }
+</style>
 
-<!-- Kontainer Utama -->
-<div style="font-family: 'Poppins', sans-serif; font-size: 12px;">
+<!-- Konten -->
+<div class="poppins-12">
 
-  <!-- Tanggal dan Tempat Penetapan (kanan atas) -->
+  <!-- Tanggal dan Tempat Penetapan -->
   <div style="text-align: right; margin-bottom: 20px;">
     Ditetapkan di Blora, pada tanggal [Tanggal Lengkap] 2025
   </div>
 
-  <!-- Tabel tanpa garis untuk informasi -->
+  <!-- Tabel Data Pegawai dan Pejabat -->
   <table style="width: 100%; border-collapse: collapse;">
     <tr>
-      <!-- Kiri: Pegawai -->
+      <!-- Kolom Kiri -->
       <td style="width: 50%; vertical-align: top;">
         <div style="margin-bottom: 6px;">Pegawai / Pegawai yang diperintah:</div>
         <div style="margin-top: 40px; font-weight: bold;">MUHAMMAD YUSUF ZAQIE, SE</div>
         <div>NIP 19920611 202221 1 030</div>
       </td>
 
-      <!-- Kanan: Pejabat Pembuat Komitmen -->
+      <!-- Kolom Kanan -->
       <td style="width: 50%; text-align: center;">
         <div style="font-weight: bold;">PEJABAT PEMBUAT KOMITMEN</div>
-        <div style="height: 60px;"></div> <!-- Spasi untuk tanda tangan -->
+        <div style="height: 60px;"></div> <!-- Ruang tanda tangan -->
         <div style="font-weight: bold;">MOHAMAD ARIF HIDAYAT, ST</div>
         <div>NIP 19710508 199803 1 011</div>
       </td>
