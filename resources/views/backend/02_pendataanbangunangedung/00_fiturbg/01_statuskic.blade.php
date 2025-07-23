@@ -1,7 +1,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-@include('backend.00_administrator.00_baganterpisah.09_button')
+
 
 <!-- Container Form & Peta -->
 {{-- <div class="col-md-12">
@@ -63,70 +63,52 @@
 
 
 <div class="row g-4">
-    @php
+@php
     $infoItems = [
         [
             'icon' => 'bi-calendar-event',
             'title' => 'Tanggal',
-            'value' => $data->tanggal
-                ? \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y')
-                : '<button class="button-berkas">Data Belum Diupdate</button>',
+            'value' => $data->tanggal ? \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') : '-',
         ],
         [
             'icon' => 'bi-hash',
             'title' => 'Nomor',
-            'value' => $data->nomor
-                ? $data->nomor
-                : '<button class="button-berkas">Data Belum Diupdate</button>',
+            'value' => $data->nomor ?? '-',
         ],
         [
             'icon' => 'bi-aspect-ratio',
             'title' => 'Luas (m²)',
-            'value' => $data->luas
-                ? $data->luas
-                : '<button class="button-berkas">Data Belum Diupdate</button>',
+            'value' => $data->luas ?? '-',
         ],
         [
             'icon' => 'bi-tree',
             'title' => 'Status Tanah',
-            'value' => $data->status_tanah
-                ? $data->status_tanah
-                : '<button class="button-berkas">Data Belum Diupdate</button>',
+            'value' => $data->status_tanah ?? '-',
         ],
         [
             'icon' => 'bi-file-earmark-bar-graph',
             'title' => 'Nomor Kode Tanah',
-            'value' => $data->nomor_kode_tanah
-                ? $data->nomor_kode_tanah
-                : '<button class="button-berkas">Data Belum Diupdate</button>',
+            'value' => $data->nomor_kode_tanah ?? '-',
         ],
         [
             'icon' => 'bi-box-arrow-in-up-right',
             'title' => 'Asal Usul',
-            'value' => $data->asal_usul
-                ? $data->asal_usul
-                : '<button class="button-berkas">Data Belum Diupdate</button>',
+            'value' => $data->asal_usul ?? '-',
         ],
         [
             'icon' => 'bi-cash-stack',
             'title' => 'Harga',
-            'value' => $data->harga
-                ? $data->harga
-                : '<button class="button-berkas">Data Belum Diupdate</button>',
+            'value' => $data->harga ?? '-',
         ],
         [
             'icon' => 'bi-chat-left-text',
             'title' => 'Keterangan',
-            'value' => $data->keterangan
-                ? $data->keterangan
-                : '<button class="button-berkas">Data Belum Diupdate</button>',
+            'value' => $data->keterangan ?? '-',
         ],
         [
-            'icon' => 'bi-hash',
+            'icon' => 'bi-chat-left-text',
             'title' => 'No Sertifikat',
-            'value' => $data->nosertifikat
-                ? $data->nosertifikat
-                : '<button class="button-berkas">Data Belum Diupdate</button>',
+            'value' => $data->keterangan ?? '-',
         ],
     ];
 @endphp
