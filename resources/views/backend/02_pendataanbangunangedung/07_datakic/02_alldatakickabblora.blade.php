@@ -249,7 +249,9 @@ th {
                                 </script> --}}
 
 
-@php
+
+<div style="display: flex; justify-content: flex-end;">
+   @php
     $firstItem = $data->first(); // Ambil 1 data pertama dari koleksi
 @endphp
 
@@ -262,6 +264,7 @@ th {
         </a>
     {{-- </div> --}}
 @endif
+
 
 <div style="display: flex; justify-content: flex-end;">
     <a href="javascript:void(0)" class="text-decoration-none" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanpbgdpuprblora')">
@@ -315,7 +318,11 @@ th {
 
                      </div>
                  </div>
+                 <hr>
+
                {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
+
+<hr>
 
                  <!-- /.card-header -->
                  <div class="card-body p-0">
