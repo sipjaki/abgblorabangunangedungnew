@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('asal_usul')->nullable();
             $table->string('harga')->nullable();
             $table->text('keterangan')->nullable();
+            $table->text('nosertifikat')->nullable();
 
             $table->text('cadangan1')->nullable();
             $table->text('cadangan2')->nullable();

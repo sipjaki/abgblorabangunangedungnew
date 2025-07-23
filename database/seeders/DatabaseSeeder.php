@@ -25502,129 +25502,15 @@ kicstruktur::create([
     'tanggal' => null,
     'nomor' => null,
     'luas' => null,
-    'status_tanah' => 'INVENTARIS',
-    'nomor_kode_tanah' => '12450.1289.C / GEDUNG 2',
-    'asal_usul' => null,
+    'status_tanah' => null,
+    'nomor_kode_tanah' => null,
+    'asal_usul' => 'INVENTARIS',
     'harga' => '281320000',
-    'keterangan' => '010101.00000.00000',
+    'keterangan' => '12450.1289.C / GEDUNG 2',
+    'nosertifikat' => '010101.00000.00000',
 ]);
 
-kicstruktur::create([
-    'id' => 2,
-    'kicinduk_id' => 1,
-    'tanggal' => null,
-    'nomor' => null,
-    'luas' => null,
-    'status_tanah' => 'INVENTARIS',
-    'nomor_kode_tanah' => '12451.1289.C / GEDUNG 1',
-    'asal_usul' => null,
-    'harga' => '255210000',
-    'keterangan' => '010101.00000.00000',
-]);
 
-kicstruktur::create([
-    'id' => 3,
-    'kicinduk_id' => 1,
-    'tanggal' => '2005-01-01',
-    'nomor' => null,
-    'luas' => null,
-    'status_tanah' => 'INVENTARIS',
-    'nomor_kode_tanah' => '12449.1289.C / MUSOLLA',
-    'asal_usul' => null,
-    'harga' => '85000000',
-    'keterangan' => '010101.00000.00000',
-]);
-
-kicstruktur::create([
-    'id' => 4,
-    'kicinduk_id' => 1,
-    'tanggal' => null,
-    'nomor' => null,
-    'luas' => null,
-    'status_tanah' => 'INVENTARIS',
-    'nomor_kode_tanah' => '12436.1289.C / GEDUNG 1',
-    'asal_usul' => null,
-    'harga' => '87350000',
-    'keterangan' => '010101.00000.00000',
-]);
-
-kicstruktur::create([
-    'id' => 5,
-    'kicinduk_id' => 1,
-    'tanggal' => null,
-    'nomor' => null,
-    'luas' => null,
-    'status_tanah' => 'INVENTARIS',
-    'nomor_kode_tanah' => '12440.1289.C / Kamar Mandi/Toilet/WC',
-    'asal_usul' => null,
-    'harga' => '5000000',
-    'keterangan' => '010101.00000.00000',
-]);
-
-kicstruktur::create([
-    'id' => 6,
-    'kicinduk_id' => 1,
-    'tanggal' => null,
-    'nomor' => null,
-    'luas' => '6',
-    'status_tanah' => 'INVENTARIS',
-    'nomor_kode_tanah' => '5315259.477.C / Bangunan Pos Jaga selatan',
-    'asal_usul' => null,
-    'harga' => '45271300',
-    'keterangan' => '010101.00000.00000',
-]);
-
-kicstruktur::create([
-    'id' => 7,
-    'kicinduk_id' => 1,
-    'tanggal' => null,
-    'nomor' => null,
-    'luas' => '5',
-    'status_tanah' => 'INVENTARIS',
-    'nomor_kode_tanah' => '5315260.477.C / Bangunan Pos Jaga utara',
-    'asal_usul' => null,
-    'harga' => '38800000',
-    'keterangan' => '010101.00000.00000',
-]);
-
-kicstruktur::create([
-    'id' => 8,
-    'kicinduk_id' => 1,
-    'tanggal' => null,
-    'nomor' => null,
-    'luas' => '48',
-    'status_tanah' => 'INVENTARIS',
-    'nomor_kode_tanah' => '12454.1289.C / KAMAR MANDI DAN WC',
-    'asal_usul' => null,
-    'harga' => '5300000',
-    'keterangan' => '010101.00000.00000',
-]);
-
-kicstruktur::create([
-    'id' => 9,
-    'kicinduk_id' => 1,
-    'tanggal' => null,
-    'nomor' => null,
-    'luas' => '144',
-    'status_tanah' => 'INVENTARIS',
-    'nomor_kode_tanah' => '12437.1289.C / GEDUNG 2',
-    'asal_usul' => null,
-    'harga' => '77250000',
-    'keterangan' => '010101.00000.00000',
-]);
-
-kicstruktur::create([
-    'id' => 10,
-    'kicinduk_id' => 1,
-    'tanggal' => null,
-    'nomor' => null,
-    'luas' => '63',
-    'status_tanah' => 'INVENTARIS',
-    'nomor_kode_tanah' => '12441.1289.C / GEDUNG 3',
-    'asal_usul' => null,
-    'harga' => '107107000',
-    'keterangan' => '010101.00000.00000',
-]);
 
 
 // databgklasifikasi::create([
