@@ -386,6 +386,65 @@ th {
 <!-- Global Style -->
 
 
+<p style="font-size: 13px; text-align: justify; margin-top: 10px;">
+  Bersama ini kami laporkan perihal perjalanan dinas dalam kota kegiatan melakukan <strong>{{ $data->ketkegiatan }}</strong> pada tanggal <strong>{{ $data->mulaiperjalanan }}</strong> sampai <strong>{{ $data->selesaiperjalanan }}</strong> yang dilaksanakan oleh:
+</p>
+
+<ul style="font-size: 13px;">
+  @if (!empty($data->pendampingdinas->namalengkap))
+    <li>{{ $data->pendampingdinas->namalengkap }}</li>
+  @endif
+  @if (!empty($data->pendampingdinas2->namalengkap))
+    <li>{{ $data->pendampingdinas2->namalengkap }}</li>
+  @endif
+  @if (!empty($data->pendampingdinas3->namalengkap))
+    <li>{{ $data->pendampingdinas3->namalengkap }}</li>
+  @endif
+</ul>
+
+<p style="font-size: 13px; margin-bottom: 5px;">Dengan hasil sebagai berikut:</p>
+
+<ol style="font-size: 13px; padding-left: 18px;">
+  @if (!empty($data->keteranganba1))
+    <li>{{ $data->keteranganba1 }}</li>
+  @endif
+  @if (!empty($data->keteranganba2))
+    <li>{{ $data->keteranganba2 }}</li>
+  @endif
+  @if (!empty($data->keteranganba3))
+    <li>{{ $data->keteranganba3 }}</li>
+  @endif
+  @if (!empty($data->keteranganba4))
+    <li>{{ $data->keteranganba4 }}</li>
+  @endif
+  @if (!empty($data->keteranganba5))
+    <li>{{ $data->keteranganba5 }}</li>
+  @endif
+  @if (!empty($data->keteranganba6))
+    <li>{{ $data->keteranganba6 }}</li>
+  @endif
+  @if (!empty($data->keteranganba7))
+    <li>{{ $data->keteranganba7 }}</li>
+  @endif
+</ol>
+
+<p style="font-size: 13px; text-align: justify; margin-top: 15px;">
+  Demikian laporan kami untuk menjadikan perhatian dan mohon petunjuk.
+</p>
+
+<!-- Tanda Tangan -->
+<div style="width: 100%; margin-top: 40px;">
+  <div style="width: 50%; float: right; text-align: center;">
+    <p style="font-size: 13px;">Pelaksana SPD</p>
+    <br><br><br>
+    <p style="font-size: 13px; font-weight: bold; text-decoration: underline; margin-bottom: 0;">
+      {{ $data->namapetugas->namalengkap }}
+    </p>
+    <p style="font-size: 13px; margin-top: 0;">
+      NIP. {{ $data->namapetugas->nip }}
+    </p>
+  </div>
+</div>
 
     </div>
 
