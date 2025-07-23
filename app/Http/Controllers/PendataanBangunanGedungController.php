@@ -1129,27 +1129,58 @@ public function bedatabgstatuscreatenew(Request $request)
     return redirect()->route('bedatabgstatusbangunan', ['id' => $validated['databgkepemilikan_id']]);
 }
 
-public function bedatakic(Request $request)
+
+
+// public function bedatakic(Request $request)
+// {
+//     $user = Auth::user();
+//     $perPage = $request->input('perPage', 20);
+//     $jumlahDataTotal = kicinduk::count();
+
+
+//     // Ambil jumlah data unik berdasarkan namainstitusi dan hitung jumlahnya
+//     // $jumlahPerInstitusi = kicinduk::select('namainstitusi', DB::raw('count(*) as total'))
+//     // ->groupBy('namainstitusi')
+//     // ->orderByDesc('total')
+//     // ->get();
+
+//     return view('backend.02_pendataanbangunangedung.07_datakic.01_datakic', [
+//         'title' => 'Pendataan KIC Bangunan Gedung',
+//         'user' => $user,
+//         'jumlahDataTotal' => $jumlahDataTotal,
+//         // 'jumlahPerInstitusi' => $jumlahPerInstitusi
+//     ]);
+// }
+
+public function bedatabangunankic(Request $request)
 {
     $user = Auth::user();
-    $perPage = $request->input('perPage', 20);
-    $jumlahDataTotal = kicinduk::count();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 15);
 
-    // Ambil jumlah data per satuan kerja (institusi)
-    $jumlahPerInstitusi = DB::table('kicinduks')
-        ->join('satuankerjas', 'kicinduks.satuankerja_id', '=', 'satuankerjas.id')
-        ->select('satuankerjas.satuankerja as satuankerja', DB::raw('count(*) as total'))
-        ->groupBy('satuankerjas.satuankerja')
-        ->orderByDesc('total')
-        ->get();
+    $query = kicinduk::query();
 
-    return view('backend.02_pendataanbangunangedung.07_datakic.01_datakic', [
-        'title' => 'Pendataan KIC Bangunan Gedung',
-        'user' => $user,
-        'jumlahDataTotal' => $jumlahDataTotal,
-        'jumlahPerInstitusi' => $jumlahPerInstitusi
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->orWhere('kodelokasi', 'like', "%{$search}%")
+              ->orWhere('bidang', 'like', "%{$search}%")
+              ->orWhere('subbidang', 'like', "%{$search}%")
+              ->orWhereHas('satuankerja', function ($sub) use ($search) {
+                  $sub->where('satuankerja', 'like', "%{$search}%"); // sesuaikan nama field di tabel satuankerja
+              });
+        });
+    }
+
+    $berkasbantek = $query->paginate($perPage)->appends($request->all());
+
+    return view('backend.02_pendataanbangunangedung.07_datakic.01_datakickabblora', [
+        'title' => 'Pendataan KIC Bangunan Gedung Kabupaten Blora',
+        'data'  => $berkasbantek,
+        'user'  => $user,
     ]);
 }
+
+
 
 }
 
