@@ -25496,9 +25496,8 @@ kicdokumen::create(['id'=>450,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG K
 
 // INPUT KIC STRUKTUR
 
-kicstruktur::create([
+kicdokumen::updateOrCreate([
     'id' => 1,
-    'kicinduk_id' => 1,
     'tanggal' => null,
     'nomor' => null,
     'luas' => null,
