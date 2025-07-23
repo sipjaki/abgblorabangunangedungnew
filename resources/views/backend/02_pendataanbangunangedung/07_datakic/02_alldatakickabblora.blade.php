@@ -332,6 +332,7 @@ th {
 <th style="background-color: #ADD8E6;"><i class="bi bi-building-check"></i> Beton</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-aspect-ratio"></i> Luas Lantai (m²)</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Alamat</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Struktur Bangunan</th>
     @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
             @endcan
