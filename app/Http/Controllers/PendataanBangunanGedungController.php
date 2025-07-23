@@ -1383,7 +1383,7 @@ public function datanewkicdokumennew(Request $request)
    public function bedatakicstruktur($id)
 {
     // Cari data berdasarkan ID
-    $data = kicstruktur::findOrFail($id);
+    $data = kicdokumen::findOrFail($id);
 
     // Ambil data user yang sedang login
     $user = Auth::user();
