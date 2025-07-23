@@ -406,7 +406,7 @@ th {
 </script>
 
 
-             <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+             {{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
     <button
         class="button-lolos"
         type="button"
@@ -424,7 +424,7 @@ th {
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
-</td>
+</td> --}}
 
 <!-- Modal Verifikasi2 -->
 <div id="confirmModalVerifikasi2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1001; justify-content: center; align-items: center;">
