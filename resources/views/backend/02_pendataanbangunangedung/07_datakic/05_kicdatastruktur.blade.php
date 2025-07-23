@@ -202,13 +202,14 @@ th {
 
            {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
 
-<div class="mt-3">
+<div class="mt-3 d-flex justify-content-end">
     <a href="{{ url()->previous() }}" class="text-decoration-none">
         <button class="button-newvalidasi d-flex align-items-center gap-2">
             <i class="bi bi-arrow-left-circle"></i> Kembali
         </button>
     </a>
 </div>
+<br>
            <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
