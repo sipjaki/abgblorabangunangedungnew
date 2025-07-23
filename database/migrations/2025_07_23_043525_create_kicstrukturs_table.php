@@ -17,11 +17,11 @@ return new class extends Migration
 
             $table->date('tanggal')->nullable();
             $table->string('nomor')->nullable();
-            $table->decimal('luas', 10, 2)->nullable(); // dalam m²
+            $table->string('luas')->nullable(); // dalam m²
             $table->string('status_tanah')->nullable();
             $table->string('nomor_kode_tanah')->nullable();
             $table->string('asal_usul')->nullable();
-            $table->decimal('harga', 15, 2)->nullable();
+            $table->string('harga')->nullable();
             $table->text('keterangan')->nullable();
 
             $table->text('cadangan1')->nullable();
