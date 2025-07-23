@@ -107,6 +107,8 @@ Route::post('/datanewkicnew', [PendataanBangunanGedungController::class, 'datane
 Route::get('/datanewkicdokumen/{id}', [PendataanBangunanGedungController::class, 'datanewkicdokumen'])->middleware('auth')->name('datanewkicdokumen');
 Route::post('/datanewkicdokumennew', [PendataanBangunanGedungController::class, 'datanewkicdokumennew'])->middleware('auth')->name('datanewkicdokumennew');
 
+Route::get('/bedatakicstruktur/{id}', [PendataanBangunanGedungController::class, 'bedatakicstruktur'])->middleware('auth')->name('bedatakicstruktur');
+
 // 01 PENDATAAN BANGUNAN GEDUNG PROFIL STATUS TANAH
 
 Route::get('/bedatabgprofiltanah/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanah'])->middleware('auth')->name('bedatabgprofiltanah');

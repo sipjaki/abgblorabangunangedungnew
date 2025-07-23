@@ -1371,5 +1371,22 @@ public function datanewkicdokumennew(Request $request)
         ->with('create', 'Data dokumen KIC berhasil disimpan!');
 }
 
+
+   public function bedatakicstruktur($id)
+{
+    // Cari data berdasarkan ID
+    $data = kicstruktur::findOrFail($id);
+
+    // Ambil data user yang sedang login
+    $user = Auth::user();
+
+    // Tampilkan ke view dengan key-value
+    return view('backend.02_pendataanbangunangedung.07_datakic.05_kicdatastruktur', [
+        'title' => 'Informasi Struktur Bangunan Gedung Kabupaten Blora',
+        'data' => $data,
+        'user' => $user
+    ]);
+}
+
 }
 
