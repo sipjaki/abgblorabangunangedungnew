@@ -325,6 +325,7 @@ th {
         <th style="background-color: #ADD8E6;">No</th>
         <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Input Data</th>
         {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> User ID</th> --}}
+<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3-fill"></i> Tanggal Input</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3-fill"></i> Satuan Kerja</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Kode Lokasi</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Bidang</th>
@@ -341,13 +342,6 @@ th {
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 
-    {{-- User (relasi) --}}
-    <td>{{ optional($item->user)->name ?? '-' }}</td>
-<td>
-  {{ $item->tanggalinput ? \Carbon\Carbon::parse($item->tanggalinput)->translatedFormat('d F Y') : '-' }}
-</td>
-{{-- Kecamatan Blora (relasi) --}}
-{{-- User (relasi) --}}
 <td>{{ optional($item->user)->name ?? '-' }}</td>
 
 {{-- Tanggal Input --}}
