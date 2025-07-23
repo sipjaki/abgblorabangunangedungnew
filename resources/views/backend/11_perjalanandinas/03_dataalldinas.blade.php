@@ -237,6 +237,7 @@ th {
 
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Surat Tugas </th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Buat Berita Acara</th>
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
 {{-- <th style="background-color: #ADD8E6;">
     <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Status Lapangan
@@ -339,6 +340,17 @@ th {
         </button>
     @endif --}}
 </td>
+
+<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+
+        <a href="{{ route('beperjalanadinasba', $item->id) }}"
+                    class="button-berkas">
+                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Buat Berita Acara
+                </a>
+
+
+</td>
+
 
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
