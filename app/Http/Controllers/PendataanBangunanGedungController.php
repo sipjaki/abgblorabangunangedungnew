@@ -16,7 +16,9 @@ use App\Models\databgtanah;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\kepemilikanbangunangedung;
+use App\Models\kicdokumen;
 use App\Models\kicinduk;
+use App\Models\kicstruktur;
 use App\Models\pbgslfbangunan;
 use Illuminate\Support\Facades\Auth;
 
@@ -1202,6 +1204,37 @@ public function bedatabangunankicdelete($id)
 
         return redirect()->back()->with('error', 'Item not found');
     }
+
+
+    public function bedatabangunankicshow($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Cari data pbg berdasarkan ID
+    $data = kicinduk::findOrFail($id);
+
+    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
+    $subdatapemilik = kicdokumen::where('kicinduk_id', $data->id)->paginate(25);
+    // $subdatapemilik = kicstruktur::where('kicinduk_id', $data->id)->paginate(15);
+
+    // Hitung nomor urut mulai untuk paginasi
+    $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+
+    // Ambil data jenis pengajuan
+    // $datapbgslf = jenispengajuanpbgslfper::all();
+
+    // Kirim data ke view
+    return view('backend.02_pendataanbangunangedung.07_datakic.02_alldatakickabblora', [
+        'title' => 'Informasi Data KIC Bangunan Gedung Kabupaten Blora',
+        'title_halaman' => 'Informasi Data KIC Bangunan Gedung Kabupaten Blora',
+        'user' => $user,
+        'data' => $data,
+        // 'datapbgslf' => $datapbgslf,
+        'subdatapemilik' => $subdatapemilik,
+        'start' => $start,
+    ]);
+}
 
 
 }
