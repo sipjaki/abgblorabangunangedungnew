@@ -324,15 +324,14 @@ th {
                             <thead>
                                   <tr>
         <th style="background-color: #ADD8E6;">No</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Input Data</th>
-        {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> User ID</th> --}}
-<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3-fill"></i> Tanggal Input</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3-fill"></i> Satuan Kerja</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Kode Lokasi</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Bidang</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Sub Bidang</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Daftar KIC</th>
-
+<th style="background-color: #ADD8E6;"><i class="bi bi-box-seam"></i> Jenis Barang</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-upc-scan"></i> Kode Barang</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-card-list"></i> Register</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Kondisi Bangunan</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-arrow-up-square"></i> Bertingkat</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-building-check"></i> Beton</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-aspect-ratio"></i> Luas Lantai (m²)</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Alamat</th>
     @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
             @endcan
@@ -343,39 +342,59 @@ th {
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-
-<td>{{ optional($item->user)->name ?? '-' }}</td>
-
-{{-- Tanggal Input --}}
+{{-- Jenis Barang --}}
 <td>
-  {{ $item->tanggalinput ? \Carbon\Carbon::parse($item->tanggalinput)->translatedFormat('d F Y') : '-' }}
-</td>
-
-{{-- Satuan Kerja (relasi) --}}
-<td>
-    {!! $item->satuankerja && $item->satuankerja->satuankerja
-        ? e($item->satuankerja->satuankerja)
+    {!! $item->jenisbarang
+        ? e($item->jenisbarang)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
 
-{{-- Kode Lokasi --}}
+{{-- Kode Barang --}}
 <td>
-    {!! $item->kodelokasi
-        ? e($item->kodelokasi)
+    {!! $item->kodebarang
+        ? e($item->kodebarang)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
 
-{{-- Bidang --}}
+{{-- Register --}}
 <td>
-    {!! $item->bidang
-        ? e($item->bidang)
+    {!! $item->register
+        ? e($item->register)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
 
-{{-- Sub Bidang --}}
+{{-- Kondisi Bangunan --}}
 <td>
-    {!! $item->subbidang
-        ? e($item->subbidang)
+    {!! $item->kondisibangunan
+        ? e($item->kondisibangunan)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
+
+{{-- Bertingkat --}}
+<td>
+    {!! $item->bertingkat
+        ? e($item->bertingkat)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
+
+{{-- Beton --}}
+<td>
+    {!! $item->beton
+        ? e($item->beton)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
+
+{{-- Luas Lantai --}}
+<td>
+    {!! $item->luaslantai
+        ? e($item->luaslantai)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
+
+{{-- Alamat --}}
+<td>
+    {!! $item->alamat
+        ? e($item->alamat)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
 
