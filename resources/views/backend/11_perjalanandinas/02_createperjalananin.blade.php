@@ -446,18 +446,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="col-md-6">
     <div class="mb-3">
-        <label for="pendamping_id" class="form-label">
-            <i class="bi bi-person-plus" style="color: navy;"></i> Pendamping
+        <label for="pendamping2_id" class="form-label">
+            <i class="bi bi-person-plus" style="color: navy;"></i> Pendamping 2
         </label>
-        <select name="pendamping_id" id="pendamping_id" class="form-select @error('pendamping_id') is-invalid @enderror">
-            <option value="">-- Pilih Pendamping --</option>
+        <select name="pendamping2_id" id="pendamping2_id" class="form-select @error('pendamping2_id') is-invalid @enderror">
+            <option value="">-- Pilih Pendamping 2 --</option>
             @foreach($datapendamping as $petugas)
-                <option value="{{ $petugas->id }}" {{ old('pendamping_id', $data->pendamping_id ?? '') == $petugas->id ? 'selected' : '' }}>
+                <option value="{{ $petugas->id }}" {{ old('pendamping2_id', $data->pendamping2_id ?? '') == $petugas->id ? 'selected' : '' }}>
                     {{ $petugas->namalengkap }}
                 </option>
             @endforeach
         </select>
-        @error('pendamping_id')
+        @error('pendamping2_id')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="mb-3">
+        <label for="pendamping3_id" class="form-label">
+            <i class="bi bi-person-plus" style="color: navy;"></i> Pendamping 3
+        </label>
+        <select name="pendamping3_id" id="pendamping3_id" class="form-select @error('pendamping3_id') is-invalid @enderror">
+            <option value="">-- Pilih Pendamping 3 --</option>
+            @foreach($datapendamping as $petugas)
+                <option value="{{ $petugas->id }}" {{ old('pendamping3_id', $data->pendamping3_id ?? '') == $petugas->id ? 'selected' : '' }}>
+                    {{ $petugas->namalengkap }}
+                </option>
+            @endforeach
+        </select>
+        @error('pendamping3_id')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
