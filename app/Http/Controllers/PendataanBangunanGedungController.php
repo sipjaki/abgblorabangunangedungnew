@@ -1219,7 +1219,7 @@ public function bedatabangunankicdelete($id)
     // $subdatapemilik = kicstruktur::where('kicinduk_id', $data->id)->paginate(15);
 
     // Hitung nomor urut mulai untuk paginasi
-    $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+    $start = ($data->currentPage() - 1) * $data->perPage() + 1;
 
     // Ambil data jenis pengajuan
     // $datapbgslf = jenispengajuanpbgslfper::all();
