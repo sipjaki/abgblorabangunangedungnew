@@ -38,15 +38,13 @@ class databgkepemilikan extends Model
     {
         return $this->hasMany(databgpeprofilbangunangedung::class);
     }
-
-
-
-    
     public function databgklasifikasi()
     {
         return $this->hasMany(databgklasifikasi::class);
     }
 
+
+    
     public function databgstrukturbangunan()
     {
         return $this->hasMany(databgstrukturbangunan::class);

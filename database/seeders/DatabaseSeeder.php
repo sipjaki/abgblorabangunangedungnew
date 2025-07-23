@@ -29046,7 +29046,6 @@ foreach ($semiPermanenRecords as $id) {
     ]);
 }
 
-// SAMPAI SINI BRO
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA KLASIFIKASI BANGUNAN GEDUNG
 databgstrukturbangunan::create(['id' => 1, 'databgkepemilikan_id' => 1, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Kayu', 'struktur_atap' => 'Kayu', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
 databgstrukturbangunan::create(['id' => 2, 'databgkepemilikan_id' => 2, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Baja', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
@@ -29068,6 +29067,111 @@ databgstrukturbangunan::create(['id' => 17, 'databgkepemilikan_id' => 17, 'struk
 databgstrukturbangunan::create(['id' => 18, 'databgkepemilikan_id' => 18, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Beton', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
 databgstrukturbangunan::create(['id' => 19, 'databgkepemilikan_id' => 19, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Beton', 'struktur_atap' => 'Baja', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
 databgstrukturbangunan::create(['id' => 20, 'databgkepemilikan_id' => 20, 'struktur_bawah' => 'Fondasi Dangkal', 'struktur_atas' => 'Baja', 'struktur_atap' => 'Baja', 'rangka_atap' => '-', 'balok' => '-', 'kolom' => '-', 'pondasi' => '-', 'dinding' => '-', 'genteng' => '-', 'plafon' => '-', 'lantai' => '-', 'pintu' => '-', 'jendela' => '-']);
+
+// Group records by structure types to minimize duplicate code
+$structureTypes = [
+    'baja_baja' => [
+        'range' => [21, 49],
+        'struktur_atas' => 'Baja',
+        'struktur_atap' => 'Baja'
+    ],
+    'beton_beton' => [
+        'range' => [22, 25],
+        'struktur_atas' => 'Beton',
+        'struktur_atap' => 'Beton'
+    ],
+    'beton_kayu' => [
+        'range' => [26, 33],
+        'struktur_atas' => 'Beton',
+        'struktur_atap' => 'Kayu'
+    ],
+    'beton_baja' => [
+        'range' => [34],
+        'struktur_atas' => 'Beton',
+        'struktur_atap' => 'Baja'
+    ],
+    'kayu_kayu' => [
+        'range' => [35, 48, 50], // Note: 50 is added here
+        'struktur_atas' => 'Kayu',
+        'struktur_atap' => 'Kayu'
+    ]
+];
+
+foreach ($structureTypes as $type) {
+    $start = is_array($type['range']) ? min($type['range']) : $type['range'];
+    $end = is_array($type['range']) ? max($type['range']) : $type['range'];
+
+    for ($i = $start; $i <= $end; $i++) {
+        // Skip if this ID doesn't belong to this group (for non-sequential ranges)
+        if (is_array($type['range']) && !in_array($i, $type['range'])) {
+            continue;
+        }
+
+        databgstrukturbangunan::create([
+            'id' => $i,
+            'databgkepemilikan_id' => $i,
+            'struktur_bawah' => 'Fondasi Dangkal',
+            'struktur_atas' => $type['struktur_atas'],
+            'struktur_atap' => $type['struktur_atap'],
+            'rangka_atap' => '-',
+            'balok' => '-',
+            'kolom' => '-',
+            'pondasi' => '-',
+            'dinding' => '-',
+            'genteng' => '-',
+            'plafon' => '-',
+            'lantai' => '-',
+            'pintu' => '-',
+            'jendela' => '-'
+        ]);
+    }
+}
+
+// Define the structure patterns
+$structurePatterns = [
+    'beton_kayu' => [
+        'ids' => [51, 53, 54, 55, 57, 58, 59, 60, 61, 62, 64, 65, 66, 67, 68, 70, 77, 78, 79, 80, 81, 89, 90, 92, 93, 94, 95, 96, 97, 98, 99, 100],
+        'struktur_atas' => 'Beton',
+        'struktur_atap' => 'Kayu'
+    ],
+    'kayu_kayu' => [
+        'ids' => [52, 56, 69, 71, 72, 73, 74, 75, 76, 82, 83, 84, 85, 86, 87, 88],
+        'struktur_atas' => 'Kayu',
+        'struktur_atap' => 'Kayu'
+    ],
+    'beton_beton' => [
+        'ids' => [63, 91],
+        'struktur_atas' => 'Beton',
+        'struktur_atap' => 'Beton'
+    ]
+];
+
+// Create the records
+foreach ($structurePatterns as $pattern) {
+    foreach ($pattern['ids'] as $id) {
+        databgstrukturbangunan::create([
+            'id' => $id,
+            'databgkepemilikan_id' => $id,
+            'struktur_bawah' => 'Fondasi Dangkal',
+            'struktur_atas' => $pattern['struktur_atas'],
+            'struktur_atap' => $pattern['struktur_atap'],
+            'rangka_atap' => '-',
+            'balok' => '-',
+            'kolom' => '-',
+            'pondasi' => '-',
+            'dinding' => '-',
+            'genteng' => '-',
+            'plafon' => '-',
+            'lantai' => '-',
+            'pintu' => '-',
+            'jendela' => '-'
+        ]);
+    }
+}
+
+
+
+// SAMPAI SINI BRO
 // Continue this pattern for all 100 records...
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA STRUKTUR BANGUNAN GEDUNG
