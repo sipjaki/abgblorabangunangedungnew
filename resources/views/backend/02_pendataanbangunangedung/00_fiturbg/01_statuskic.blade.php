@@ -3,7 +3,7 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <!-- Container Form & Peta -->
-<div class="col-md-12">
+{{-- <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label d-flex align-items-center" for="koordinat">
             <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Informasi Bangunan Gedung
@@ -47,7 +47,7 @@
     map.boxZoom.disable();
     map.keyboard.disable();
     map.off('click');
-</script>
+</script> --}}
 
 <!-- Informasi Detail -->
 <div class="row g-4 mt-4">
