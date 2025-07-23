@@ -28627,6 +28627,309 @@ databgklasifikasi::create(['id'=>448,'databgkepemilikan_id'=>448,'tingkat_komple
 databgklasifikasi::create(['id'=>449,'databgkepemilikan_id'=>449,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
 databgklasifikasi::create(['id'=>450,'databgkepemilikan_id'=>450,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
 
+databgklasifikasi::create(['id'=>451,'databgkepemilikan_id'=>451,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>452,'databgkepemilikan_id'=>452,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>453,'databgkepemilikan_id'=>453,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>454,'databgkepemilikan_id'=>454,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>455,'databgkepemilikan_id'=>455,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>456,'databgkepemilikan_id'=>456,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>457,'databgkepemilikan_id'=>457,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>458,'databgkepemilikan_id'=>458,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>459,'databgkepemilikan_id'=>459,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>460,'databgkepemilikan_id'=>460,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>461,'databgkepemilikan_id'=>461,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>462,'databgkepemilikan_id'=>462,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>463,'databgkepemilikan_id'=>463,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>464,'databgkepemilikan_id'=>464,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>465,'databgkepemilikan_id'=>465,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>466,'databgkepemilikan_id'=>466,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>467,'databgkepemilikan_id'=>467,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>468,'databgkepemilikan_id'=>468,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>469,'databgkepemilikan_id'=>469,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>470,'databgkepemilikan_id'=>470,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>471,'databgkepemilikan_id'=>471,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>472,'databgkepemilikan_id'=>472,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>473,'databgkepemilikan_id'=>473,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>474,'databgkepemilikan_id'=>474,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>475,'databgkepemilikan_id'=>475,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>476,'databgkepemilikan_id'=>476,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>477,'databgkepemilikan_id'=>477,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>478,'databgkepemilikan_id'=>478,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>479,'databgkepemilikan_id'=>479,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>480,'databgkepemilikan_id'=>480,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>481,'databgkepemilikan_id'=>481,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>482,'databgkepemilikan_id'=>482,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>483,'databgkepemilikan_id'=>483,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>484,'databgkepemilikan_id'=>484,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>485,'databgkepemilikan_id'=>485,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>486,'databgkepemilikan_id'=>486,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>487,'databgkepemilikan_id'=>487,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>488,'databgkepemilikan_id'=>488,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>489,'databgkepemilikan_id'=>489,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>490,'databgkepemilikan_id'=>490,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>491,'databgkepemilikan_id'=>491,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>492,'databgkepemilikan_id'=>492,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>493,'databgkepemilikan_id'=>493,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>494,'databgkepemilikan_id'=>494,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>495,'databgkepemilikan_id'=>495,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>496,'databgkepemilikan_id'=>496,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>497,'databgkepemilikan_id'=>497,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>498,'databgkepemilikan_id'=>498,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>499,'databgkepemilikan_id'=>499,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>500,'databgkepemilikan_id'=>500,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+
+databgklasifikasi::create(['id'=>501,'databgkepemilikan_id'=>501,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>502,'databgkepemilikan_id'=>502,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>503,'databgkepemilikan_id'=>503,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>504,'databgkepemilikan_id'=>504,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>505,'databgkepemilikan_id'=>505,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>506,'databgkepemilikan_id'=>506,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>507,'databgkepemilikan_id'=>507,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>508,'databgkepemilikan_id'=>508,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>509,'databgkepemilikan_id'=>509,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>510,'databgkepemilikan_id'=>510,'resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>511,'databgkepemilikan_id'=>511,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>512,'databgkepemilikan_id'=>512,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>513,'databgkepemilikan_id'=>513,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>514,'databgkepemilikan_id'=>514,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>515,'databgkepemilikan_id'=>515,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>516,'databgkepemilikan_id'=>516,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>517,'databgkepemilikan_id'=>517,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>518,'databgkepemilikan_id'=>518,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>519,'databgkepemilikan_id'=>519,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>520,'databgkepemilikan_id'=>520,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>521,'databgkepemilikan_id'=>521,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>522,'databgkepemilikan_id'=>522,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>523,'databgkepemilikan_id'=>523,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>524,'databgkepemilikan_id'=>524,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>525,'databgkepemilikan_id'=>525,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>526,'databgkepemilikan_id'=>526,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>527,'databgkepemilikan_id'=>527,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>528,'databgkepemilikan_id'=>528,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>529,'databgkepemilikan_id'=>529,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>530,'databgkepemilikan_id'=>530,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>531,'databgkepemilikan_id'=>531,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>532,'databgkepemilikan_id'=>532,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>533,'databgkepemilikan_id'=>533,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>534,'databgkepemilikan_id'=>534,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>535,'databgkepemilikan_id'=>535,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>536,'databgkepemilikan_id'=>536,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>537,'databgkepemilikan_id'=>537,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>538,'databgkepemilikan_id'=>538,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>539,'databgkepemilikan_id'=>539,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>540,'databgkepemilikan_id'=>540,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>541,'databgkepemilikan_id'=>541,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>542,'databgkepemilikan_id'=>542,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>543,'databgkepemilikan_id'=>543,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>544,'databgkepemilikan_id'=>544,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>545,'databgkepemilikan_id'=>545,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>546,'databgkepemilikan_id'=>546,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>547,'databgkepemilikan_id'=>547,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>548,'databgkepemilikan_id'=>548,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>549,'databgkepemilikan_id'=>549,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>550,'databgkepemilikan_id'=>550,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+
+databgklasifikasi::create(['id'=>551,'databgkepemilikan_id'=>551,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>552,'databgkepemilikan_id'=>552,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>553,'databgkepemilikan_id'=>553,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>554,'databgkepemilikan_id'=>554,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>555,'databgkepemilikan_id'=>555,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>556,'databgkepemilikan_id'=>556,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>557,'databgkepemilikan_id'=>557,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>558,'databgkepemilikan_id'=>558,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>559,'databgkepemilikan_id'=>559,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>560,'databgkepemilikan_id'=>560,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>561,'databgkepemilikan_id'=>561,'tingkat_kompleksitas'=>'Khusus','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>562,'databgkepemilikan_id'=>562,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>563,'databgkepemilikan_id'=>563,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>564,'databgkepemilikan_id'=>564,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>565,'databgkepemilikan_id'=>565,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>566,'databgkepemilikan_id'=>566,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>567,'databgkepemilikan_id'=>567,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>568,'databgkepemilikan_id'=>568,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>569,'databgkepemilikan_id'=>569,'tingkat_kompleksitas'=>'Khusus','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>570,'databgkepemilikan_id'=>570,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>571,'databgkepemilikan_id'=>571,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>572,'databgkepemilikan_id'=>572,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>573,'databgkepemilikan_id'=>573,'tingkat_kompleksitas'=>'Khusus','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>574,'databgkepemilikan_id'=>574,'tingkat_kompleksitas'=>'Sederhana','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>575,'databgkepemilikan_id'=>575,'tingkat_kompleksitas'=>'Khusus','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>576,'databgkepemilikan_id'=>576,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>577,'databgkepemilikan_id'=>577,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>578,'databgkepemilikan_id'=>578,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>579,'databgkepemilikan_id'=>579,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>580,'databgkepemilikan_id'=>580,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>581,'databgkepemilikan_id'=>581,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>582,'databgkepemilikan_id'=>582,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>583,'databgkepemilikan_id'=>583,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>584,'databgkepemilikan_id'=>584,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Semi Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>585,'databgkepemilikan_id'=>585,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>586,'databgkepemilikan_id'=>586,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>587,'databgkepemilikan_id'=>587,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>588,'databgkepemilikan_id'=>588,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>589,'databgkepemilikan_id'=>589,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>590,'databgkepemilikan_id'=>590,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>591,'databgkepemilikan_id'=>591,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>592,'databgkepemilikan_id'=>592,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>593,'databgkepemilikan_id'=>593,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>594,'databgkepemilikan_id'=>594,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>595,'databgkepemilikan_id'=>595,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>596,'databgkepemilikan_id'=>596,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>597,'databgkepemilikan_id'=>597,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+databgklasifikasi::create(['id'=>598,'databgkepemilikan_id'=>598,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Sedang']);
+
+databgklasifikasi::create(['id'=>599,'databgkepemilikan_id'=>599,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>600,'databgkepemilikan_id'=>600,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>601,'databgkepemilikan_id'=>601,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>602,'databgkepemilikan_id'=>602,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>603,'databgkepemilikan_id'=>603,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>604,'databgkepemilikan_id'=>604,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>605,'databgkepemilikan_id'=>605,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>606,'databgkepemilikan_id'=>606,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>607,'databgkepemilikan_id'=>607,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>608,'databgkepemilikan_id'=>608,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>609,'databgkepemilikan_id'=>609,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>610,'databgkepemilikan_id'=>610,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>611,'databgkepemilikan_id'=>611,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>612,'databgkepemilikan_id'=>612,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>613,'databgkepemilikan_id'=>613,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>614,'databgkepemilikan_id'=>614,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>615,'databgkepemilikan_id'=>615,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>616,'databgkepemilikan_id'=>616,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>617,'databgkepemilikan_id'=>617,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>618,'databgkepemilikan_id'=>618,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>619,'databgkepemilikan_id'=>619,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>620,'databgkepemilikan_id'=>620,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>621,'databgkepemilikan_id'=>621,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>622,'databgkepemilikan_id'=>622,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>623,'databgkepemilikan_id'=>623,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>624,'databgkepemilikan_id'=>624,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>625,'databgkepemilikan_id'=>625,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>626,'databgkepemilikan_id'=>626,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>627,'databgkepemilikan_id'=>627,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>628,'databgkepemilikan_id'=>628,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>629,'databgkepemilikan_id'=>629,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>630,'databgkepemilikan_id'=>630,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>631,'databgkepemilikan_id'=>631,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>632,'databgkepemilikan_id'=>632,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>633,'databgkepemilikan_id'=>633,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>634,'databgkepemilikan_id'=>634,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>635,'databgkepemilikan_id'=>635,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>636,'databgkepemilikan_id'=>636,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 4','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>637,'databgkepemilikan_id'=>637,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>638,'databgkepemilikan_id'=>638,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>639,'databgkepemilikan_id'=>639,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>640,'databgkepemilikan_id'=>640,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>641,'databgkepemilikan_id'=>641,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>642,'databgkepemilikan_id'=>642,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>643,'databgkepemilikan_id'=>643,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>644,'databgkepemilikan_id'=>644,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>645,'databgkepemilikan_id'=>645,'tingkat_kompleksitas'=>'Khusus','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>646,'databgkepemilikan_id'=>646,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>647,'databgkepemilikan_id'=>647,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>648,'databgkepemilikan_id'=>648,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>649,'databgkepemilikan_id'=>649,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>650,'databgkepemilikan_id'=>650,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+
+databgklasifikasi::create(['id'=>651,'databgkepemilikan_id'=>651,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>652,'databgkepemilikan_id'=>652,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>653,'databgkepemilikan_id'=>653,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>654,'databgkepemilikan_id'=>654,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>655,'databgkepemilikan_id'=>655,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>656,'databgkepemilikan_id'=>656,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>657,'databgkepemilikan_id'=>657,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>658,'databgkepemilikan_id'=>658,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>659,'databgkepemilikan_id'=>659,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>660,'databgkepemilikan_id'=>660,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>661,'databgkepemilikan_id'=>661,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>662,'databgkepemilikan_id'=>662,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>663,'databgkepemilikan_id'=>663,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>664,'databgkepemilikan_id'=>664,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>665,'databgkepemilikan_id'=>665,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>666,'databgkepemilikan_id'=>666,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>667,'databgkepemilikan_id'=>667,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>668,'databgkepemilikan_id'=>668,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>669,'databgkepemilikan_id'=>669,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>670,'databgkepemilikan_id'=>670,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>671,'databgkepemilikan_id'=>671,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>672,'databgkepemilikan_id'=>672,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>673,'databgkepemilikan_id'=>673,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>674,'databgkepemilikan_id'=>674,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>675,'databgkepemilikan_id'=>675,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>676,'databgkepemilikan_id'=>676,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>677,'databgkepemilikan_id'=>677,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>678,'databgkepemilikan_id'=>678,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>679,'databgkepemilikan_id'=>679,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>680,'databgkepemilikan_id'=>680,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>681,'databgkepemilikan_id'=>681,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>682,'databgkepemilikan_id'=>682,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>683,'databgkepemilikan_id'=>683,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>684,'databgkepemilikan_id'=>684,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>685,'databgkepemilikan_id'=>685,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>686,'databgkepemilikan_id'=>686,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>687,'databgkepemilikan_id'=>687,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>688,'databgkepemilikan_id'=>688,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>689,'databgkepemilikan_id'=>689,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>690,'databgkepemilikan_id'=>690,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>691,'databgkepemilikan_id'=>691,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>692,'databgkepemilikan_id'=>692,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>693,'databgkepemilikan_id'=>693,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>694,'databgkepemilikan_id'=>694,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>695,'databgkepemilikan_id'=>695,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>696,'databgkepemilikan_id'=>696,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>697,'databgkepemilikan_id'=>697,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>698,'databgkepemilikan_id'=>698,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>699,'databgkepemilikan_id'=>699,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+databgklasifikasi::create(['id'=>700,'databgkepemilikan_id'=>700,'tingkat_kompleksitas'=>'Sederhana','tingkat_permanensi'=>'Permanen','resiko_kebakaran'=>'Rendah','resiko_gempa'=>'Zona 3','kepadatan_lokasi'=>'Padat']);
+
+// Records 701-744 (Sederhana)
+for ($i = 701; $i <= 744; $i++) {
+    databgklasifikasi::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Padat'
+    ]);
+}
+
+// Record 745 (Khusus)
+databgklasifikasi::create([
+    'id' => 745,
+    'databgkepemilikan_id' => 745,
+    'tingkat_kompleksitas' => 'Khusus',
+    'tingkat_permanensi' => 'Permanen',
+    'resiko_kebakaran' => 'Rendah',
+    'resiko_gempa' => 'Zona 3',
+    'kepadatan_lokasi' => 'Padat'
+]);
+
+// Record 746 (Sederhana)
+databgklasifikasi::create([
+    'id' => 746,
+    'databgkepemilikan_id' => 746,
+    'tingkat_kompleksitas' => 'Sederhana',
+    'tingkat_permanensi' => 'Permanen',
+    'resiko_kebakaran' => 'Rendah',
+    'resiko_gempa' => 'Zona 3',
+    'kepadatan_lokasi' => 'Padat'
+]);
+
+// Records 747-750 (Khusus)
+for ($i = 747; $i <= 750; $i++) {
+    databgklasifikasi::create([
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'tingkat_kompleksitas' => 'Khusus',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Rendah',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Padat'
+    ]);
+}
+
 
 
 // SAMPAI SINI BRO
