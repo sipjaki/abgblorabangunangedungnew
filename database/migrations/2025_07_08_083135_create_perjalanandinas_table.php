@@ -24,6 +24,8 @@ return new class extends Migration
             $table->date('mulaiperjalanan')->nullable();
             $table->date('selesaiperjalanan')->nullable();
             $table->foreignId('pendamping_id')->nullable();
+            $table->foreignId('pendamping2_id')->nullable();
+            $table->foreignId('pendamping3_id')->nullable();
             $table->string('ketkegiatan')->nullable();
 
             $table->string('berkasberitaacara')->nullable();

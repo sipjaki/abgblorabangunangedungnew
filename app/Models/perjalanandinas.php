@@ -22,6 +22,14 @@ class perjalanandinas extends Model
     {
         return $this->belongsTo(petugasdinas::class, 'pendamping_id');
     }
+    public function pendampingdinas2()
+    {
+        return $this->belongsTo(petugasdinas::class, 'pendamping2_id');
+    }
+    public function pendampingdinas3()
+    {
+        return $this->belongsTo(petugasdinas::class, 'pendamping2_id');
+    }
 
     public function lapperjalanandinas()
     {

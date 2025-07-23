@@ -337,7 +337,7 @@ th {
 </div>
 
 <body>
-  <div class="halaman">
+  <div class="halaman" style="margin-top: -50px;">
     <div class="kop">
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
       {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
