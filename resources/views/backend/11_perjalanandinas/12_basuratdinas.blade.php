@@ -349,167 +349,43 @@ th {
       </div>
       <div style="clear: both;"></div>
     </div>
-
 <p style="font-size: 14px; font-weight: bold; text-align: center; text-transform: uppercase; margin-bottom: 8px; margin-top:-15px;">
-  SURAT PERJALANAN DINAS
+  NOTA DINAS
 </p>
 
-<table style="width: 100%; border-collapse: collapse; font-size: 12px;">
-  @php
-    $cellStyle = 'border: 1px solid black; padding: 6px; vertical-align: top;';
-  @endphp
-
+<table style="font-size: 13px; width: 100%; line-height: 1.6;">
   <tr>
-    <td style="{{ $cellStyle }} width: 25px;">1.</td>
-    <td style="{{ $cellStyle }}">Pejabat Pembuat Komitmen</td>
-    <td style="{{ $cellStyle }}" colspan="3">MOHAMAD ARIF HIDAYAT, ST</td>
+    <td style="width: 100px;">Kepada Yth</td>
+    <td style="width: 10px;">:</td>
+    <td>Kepala DPUPR Kab Blora</td>
   </tr>
   <tr>
-    <td style="{{ $cellStyle }}">2.</td>
-    <td style="{{ $cellStyle }}">Nama Pegawai yang Melaksanakan Perjalanan Dinas</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{ $data->namapetugas->namalengkap ?? '-' }}</td>
+    <td>Lewat</td>
+    <td>:</td>
+    <td>Sekretaris DPUPR Kab Blora</td>
   </tr>
   <tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }}">a. NIP</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{ $data->namapetugas->nip ?? '-' }}</td>
+    <td>Dari</td>
+    <td>:</td>
+    <td>Bidang Bangunan Gedung DPUPR Kab Blora</td>
   </tr>
   <tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }}">b. Pangkat/Golongan</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{ $data->namapetugas->pangkat ?? '-' }}</td>
+    <td>Tanggal</td>
+    <td>:</td>
+    <td>10 Maret 2025</td>
   </tr>
   <tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }}">c. Jabatan</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{ $data->namapetugas->jabatan ?? '-' }}</td>
+    <td>Perihal</td>
+    <td>:</td>
+    <td><strong>Melakukan Perjalanan Dinas Dalam Kota</strong></td>
   </tr>
-  <tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }}">d. Tingkat Biaya Perjalanan </td>
-    <td style="{{ $cellStyle }}" colspan="3">{{ $data->namapetugas->tingkatbiaya ?? '-' }}</td>
-  </tr>
-  <tr>
-    <td style="{{ $cellStyle }}">3.</td>
-    <td style="{{ $cellStyle }}">Maksud Perjalanan Dinas</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{$data->maksudperjalanan ?? '-'}}</td>
-  </tr>
-  <tr>
-    <td style="{{ $cellStyle }}">4.</td>
-    <td style="{{ $cellStyle }}">Alat Angkutan yang Dipergunakan</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{$data->angkutan ?? '-'}}</td>
-  </tr>
-  <tr>
-    <td style="{{ $cellStyle }}">5.</td>
-    <td style="{{ $cellStyle }}">a. Tempat Berangkat</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{$data->tempatberangkat ?? '-'}}</td>
-  </tr>
-  <tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }}">b. Tempat Tujuan</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{$data->tempattujuan ?? '-'}}</td>
-  </tr>
-  <tr>
-    <td style="{{ $cellStyle }}">6.</td>
-    <td style="{{ $cellStyle }}">a. Lama Perjalanan Dinas</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{$data->lamaperjalanan ?? '-'}}</td>
-  </tr>
-  <tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }}">b. Tanggal Berangkat</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{ \Carbon\Carbon::parse($data->mulaiperjalanan)->translatedFormat('d F Y') ?? '-' }}</td>
-  </tr>
-  <tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }}">c. Tanggal Harus Kembali</td>
-    <td style="{{ $cellStyle }}" colspan="3">{{ \Carbon\Carbon::parse($data->selesaiperjalanan)->translatedFormat('d F Y') ?? '-' }}</td>
-  </tr>
-  <tr>
-    <td style="{{ $cellStyle }}">7.</td>
-    <td style="{{ $cellStyle }}" colspan="4" align="center"><strong>PENGIKUT</strong></td>
-  </tr>
-  <tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }} width:225px;" align="center"><strong>Nama Lengkap</strong></td>
-    <td style="{{ $cellStyle }}" align="center"><strong>NIP</strong></td>
-    <td style="{{ $cellStyle }}" align="center"><strong>PANGKAT</strong></td>
-    <td style="{{ $cellStyle }}" align="center"><strong>TANDA TANGAN</strong></td>
-  </tr>
-  <tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }} height: 40px;">{{$data->pendampingdinas->namalengkap}}</td>
-    <td style="{{ $cellStyle }}">{{$data->pendampingdinas->nip}}</td>
-    <td style="{{ $cellStyle }}">{{$data->pendampingdinas->pangkat}}</td>
-    <td style="{{ $cellStyle }}"></td>
-  </tr>
-  {{-- Baris untuk pendampingdinas2 --}}
-@if($data->pendampingdinas2)
-<tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }} height: 40px;">{{ $data->pendampingdinas2->namalengkap }}</td>
-    <td style="{{ $cellStyle }}">{{ $data->pendampingdinas2->nip }}</td>
-    <td style="{{ $cellStyle }}">{{ $data->pendampingdinas2->pangkat }}</td>
-    <td style="{{ $cellStyle }}"></td>
-</tr>
-@endif
-
-{{-- Baris untuk pendampingdinas3 --}}
-@if($data->pendampingdinas3)
-<tr>
-    <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }} height: 40px;">{{ $data->pendampingdinas3->namalengkap }}</td>
-    <td style="{{ $cellStyle }}">{{ $data->pendampingdinas3->nip }}</td>
-    <td style="{{ $cellStyle }}">{{ $data->pendampingdinas3->pangkat }}</td>
-    <td style="{{ $cellStyle }}"></td>
-</tr>
-@endif
-
-  <tr>
-    <td style="{{ $cellStyle }}">8.</td>
-    <td style="{{ $cellStyle }}">Pembebanan Anggaran <br> - Kegiatan </td>
-    <td style="{{ $cellStyle }}" colspan="3">
-      <strong>Kegiatan:</strong><br>
-      <p>{{$data->ketkegiatan ?? '-'}}</p>
-    </td>
-  </tr>
-  {{-- <tr>
-    <td style="{{ $cellStyle }}">9.</td>
-    <td style="{{ $cellStyle }}">Keterangan Lain-Lain</td>
-    <td style="{{ $cellStyle }}" colspan="3">-</td>
-  </tr> --}}
 </table>
 
+<hr style="margin-top: 10px; border: 1px solid black;">
+
 <!-- Global Style -->
-<style>
-  .poppins-12 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-  }
-</style>
-<!-- Konten -->
-    <!-- Tanda Tangan -->
-    <div class="poppins-12">
-      <div style="text-align: right; margin-bottom: 10px; margin-top: 10px;">
-    Ditetapkan di Blora, <br> pada tanggal {{ \Carbon\Carbon::parse($data->tanggalsuratterbit)->translatedFormat('d F Y') }}
 
-    </div>
 
-<div style="text-align: center;" style="margin-top:-10px;">
-  <table style="width: 80%; margin: 0 auto; border-collapse: collapse;">
-    <tr>
-      <td style="width: 50%; vertical-align: top; text-align: center;">
-        <div style="font-weight: bold; font-size:12px;">Pegawai yang diperintah</div>
-        <div style="margin-top: 70px; font-weight: bold; font-size:12px;">MUHAMMAD YUSUF ZAQIE, SE</div>
-        <div style="font-size:12px;">NIP 19920611 202221 1 030</div>
-      </td>
-      <td style="width: 50%; text-align: center;">
-        <div style="font-weight: bold; font-size:12px;">Pejabat Pembuat Komitmen</div>
-        <div style="margin-top: 70px; font-weight: bold; font-size:12px;">MOHAMAD ARIF HIDAYAT, ST</div>
-        <div style="font-size:12px;">NIP 19710508 199803 1 011</div>
-      </td>
-    </tr>
-  </table>
-</div>
 
     </div>
 
