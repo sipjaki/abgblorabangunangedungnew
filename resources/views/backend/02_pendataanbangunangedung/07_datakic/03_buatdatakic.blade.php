@@ -326,6 +326,11 @@ th {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
+                                    <a href="/bedatabangunankic">
+                                    <button type="button" class="button-newvalidasi">
+                                        Lihat Data Bangunan KIC
+                                    </button>
+                                    </a>
                                <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
