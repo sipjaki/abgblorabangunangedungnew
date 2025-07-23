@@ -315,11 +315,7 @@ th {
 
                      </div>
                  </div>
-                 <hr>
-
                {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
-
-<hr>
 
                  <!-- /.card-header -->
                  <div class="card-body p-0">
