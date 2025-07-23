@@ -20,7 +20,7 @@
         [
             'icon' => 'bi-calendar-date',
             'title' => 'Tanggal Input',
-            'value' => $subdatapemilik->tanggalinput ? $subdatapemilik->tanggalinput->format('d-m-Y') : '-',
+            'value' => $subdatapemilik->tanggalinput ? $subdatapemilik->tanggalinput : '-',
         ],
     ];
 @endphp
