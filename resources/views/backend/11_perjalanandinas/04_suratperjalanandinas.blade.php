@@ -430,7 +430,7 @@ th {
   </tr>
   <tr>
     <td style="{{ $cellStyle }}"></td>
-    <td style="{{ $cellStyle }} width:300px;" align="center"><strong>Nama Lengkap</strong></td>
+    <td style="{{ $cellStyle }} width:180px;" align="center"><strong>Nama Lengkap</strong></td>
     <td style="{{ $cellStyle }}" align="center"><strong>NIP</strong></td>
     <td style="{{ $cellStyle }}" align="center"><strong>PANGKAT</strong></td>
     <td style="{{ $cellStyle }}" align="center"><strong>TANDA TANGAN</strong></td>
