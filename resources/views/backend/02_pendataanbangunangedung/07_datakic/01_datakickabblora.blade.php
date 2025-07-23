@@ -330,6 +330,7 @@ th {
 <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Kode Lokasi</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Bidang</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Sub Bidang</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Daftar KIC</th>
 
     @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
