@@ -1215,7 +1215,7 @@ public function bedatabangunankicdelete($id)
     $subdatapemilik = kicinduk::findOrFail($id);
 
     // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
-    $data = kicdokumen::where('kicinduk_id', $subdatapemilik->id)->paginate(25);
+    $data = kicdokumen::where('kicinduk_id', $subdatapemilik->id)->paginate(100);
     // $subdatapemilik = kicstruktur::where('kicinduk_id', $data->id)->paginate(15);
 
     // Hitung nomor urut mulai untuk paginasi
