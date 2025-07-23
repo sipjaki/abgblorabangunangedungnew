@@ -249,17 +249,19 @@ th {
                                 </script> --}}
 
 
-@foreach ($data as $item)
-    @if ($item->kicinduk)
-        <div style="display: flex; justify-content: flex-end;" class="mb-2">
-            <a href="/datanewkicdokumen/{{ $item->kicinduk->id }}" class="text-decoration-none">
-                <div class="button-baru px-3 py-2 rounded shadow-sm d-flex align-items-center">
-                    <i class="bi bi-plus-square me-2"></i> Create
-                </div>
-            </a>
-        </div>
-    @endif
-@endforeach
+@php
+    $firstItem = $data->first(); // Ambil 1 data pertama dari koleksi
+@endphp
+
+@if ($firstItem && $firstItem->kicinduk)
+    <div style="display: flex; justify-content: flex-end;" class="mb-2">
+        <a href="/datanewkicdokumen/{{ $firstItem->kicinduk->id }}" class="text-decoration-none">
+            <div class="button-baru px-3 py-2 rounded shadow-sm d-flex align-items-center">
+                <i class="bi bi-plus-square me-2"></i> Create
+            </div>
+        </a>
+    </div>
+@endif
 
 <div style="display: flex; justify-content: flex-end;">
     <a href="javascript:void(0)" class="text-decoration-none" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanpbgdpuprblora')">
