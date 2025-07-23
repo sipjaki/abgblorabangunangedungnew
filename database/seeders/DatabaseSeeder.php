@@ -24537,13 +24537,14 @@ satuankerja::create(['id' => 39, 'satuankerja' => 'Kecamatan Jati']);
 satuankerja::create(['id' => 40, 'satuankerja' => 'Kecamatan Kradenan']);
 satuankerja::create(['id' => 41, 'satuankerja' => 'Badan Kesatuan Bangsa dan Politik']);
 
-
-kicinduk::create(['id' => 1,
-'user_id' => 47,
-'satuankerja_id' => 1,
-'kodelokasi' => '010101',
-'bidang' => '-',
-'subbidang' => '-',
+kicinduk::create([
+    'id' => 1,
+    'user_id' => 47,
+    'satuankerja_id' => 1,
+    'kodelokasi' => '010101',
+    'bidang' => '-',
+    'subbidang' => '-',
+    'tanggalinput' => Carbon::now(),
 ]);
 
 kicdokumen::create([

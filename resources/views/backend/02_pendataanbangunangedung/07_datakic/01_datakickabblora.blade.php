@@ -325,14 +325,10 @@ th {
         <th style="background-color: #ADD8E6;">No</th>
         <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Input Data</th>
         {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> User ID</th> --}}
-<th style="background-color: #ADD8E6;"><i class="bi bi-calendar-event-fill"></i> Tanggal Input</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Kecamatan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Nama Institusi</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-geo-fill"></i> Alamat</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-telephone-fill"></i> No. Telepon</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-envelope-fill"></i> Email</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-lock2-fill"></i> No. HDNO</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-lock2-fill"></i> Informasi Bangunan</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3-fill"></i> Satuan Kerja</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Kode Lokasi</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Bidang</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Sub Bidang</th>
 
     @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
@@ -351,57 +347,39 @@ th {
   {{ $item->tanggalinput ? \Carbon\Carbon::parse($item->tanggalinput)->translatedFormat('d F Y') : '-' }}
 </td>
 {{-- Kecamatan Blora (relasi) --}}
+{{-- User (relasi) --}}
+<td>{{ optional($item->user)->name ?? '-' }}</td>
+
+{{-- Tanggal Input --}}
 <td>
-    {!! $item->kecamatanblora && $item->kecamatanblora->kecamatanblora
-        ? e($item->kecamatanblora->kecamatanblora)
+  {{ $item->tanggalinput ? \Carbon\Carbon::parse($item->tanggalinput)->translatedFormat('d F Y') : '-' }}
+</td>
+
+{{-- Satuan Kerja (relasi) --}}
+<td>
+    {!! $item->satuankerja && $item->satuankerja->namasatuankerja
+        ? e($item->satuankerja->namasatuankerja)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
 
-{{-- Nama Institusi --}}
+{{-- Kode Lokasi --}}
 <td>
-    {!! $item->namainstitusi
-        ? e($item->namainstitusi)
+    {!! $item->kodelokasi
+        ? e($item->kodelokasi)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
 
-{{-- Alamat --}}
-<td style="text-align: left;" class="break-6-words">
-    {{ $item->alamat ?? 'Data Belum Di Update' }}
-</td>
-
-<script>
-document.querySelectorAll('.break-6-words').forEach(td => {
-    const text = td.textContent.trim();
-    if(text && text !== 'Data Belum Di Update') {
-        const words = text.split(/\s+/);
-        let newHtml = '';
-        for(let i = 0; i < words.length; i++) {
-            newHtml += words[i] + ' ';
-            if ((i + 1) % 6 === 0) newHtml += '<br>';
-        }
-        td.innerHTML = newHtml.trim();
-    }
-});
-</script>
-
-{{-- No Telepon --}}
+{{-- Bidang --}}
 <td>
-    {!! $item->notelepon
-        ? e($item->notelepon)
+    {!! $item->bidang
+        ? e($item->bidang)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
 
-{{-- Email --}}
+{{-- Sub Bidang --}}
 <td>
-    {!! $item->email
-        ? e($item->email)
-        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
-</td>
-
-{{-- No Pengesahan Usaha --}}
-<td>
-    {!! $item->nopengesahanusaha
-        ? e($item->nopengesahanusaha)
+    {!! $item->subbidang
+        ? e($item->subbidang)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
 
