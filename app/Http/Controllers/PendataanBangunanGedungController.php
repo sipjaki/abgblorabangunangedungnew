@@ -1138,8 +1138,8 @@ public function bedatakic(Request $request)
     // Ambil jumlah data per satuan kerja (institusi)
     $jumlahPerInstitusi = DB::table('kicinduks')
         ->join('satuankerjas', 'kicinduks.satuankerja_id', '=', 'satuankerjas.id')
-        ->select('satuankerjas.nama as namainstitusi', DB::raw('count(*) as total'))
-        ->groupBy('satuankerjas.nama')
+        ->select('satuankerjas.satuankerja as satuankerja', DB::raw('count(*) as total'))
+        ->groupBy('satuankerjas.satuankerja')
         ->orderByDesc('total')
         ->get();
 
