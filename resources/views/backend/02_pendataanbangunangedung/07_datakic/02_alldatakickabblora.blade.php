@@ -393,7 +393,7 @@ th {
 </td>
 
 {{-- Alamat --}}
-<td>
+<td style="text-align: left;">
     {!! $item->alamat
         ? e($item->alamat)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
