@@ -394,17 +394,61 @@ th {
     </div>
 </div>
 
-    {{-- Harga --}}
-    <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="harga">
-                <i class="bi bi-cash-stack me-2 text-danger"></i> Harga (Rp)
-            </label>
-            <input type="number" step="1000" class="form-control @error('harga') is-invalid @enderror" id="harga" name="harga"
-                value="{{ old('harga', $data->harga ?? '') }}">
-            @error('harga') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+    {{-- Harga --}}<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="harga">
+            <i class="bi bi-cash-stack me-2 text-danger"></i> Harga (Rp)
+        </label>
+        <input
+            type="text"
+            class="form-control @error('harga') is-invalid @enderror"
+            id="harga"
+            name="harga"
+            value="{{ old('harga', isset($data->harga) ? number_format($data->harga, 0, ',', '.') : '') }}"
+            oninput="formatRupiah(this)"
+            autocomplete="off"
+            inputmode="numeric"
+            >
+        @error('harga') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
+</div>
+
+<script>
+    function formatRupiah(input) {
+        // Dapatkan nilai asli tanpa titik/delimiter
+        let value = input.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+
+        if (value === '') {
+            input.value = '';
+            return;
+        }
+
+        // Format angka ribuan (misal: 10000 => 10.000)
+        let formatted = '';
+        let len = value.length;
+        let count = 0;
+
+        for (let i = len - 1; i >= 0; i--) {
+            formatted = value[i] + formatted;
+            count++;
+            if (count === 3 && i !== 0) {
+                formatted = '.' + formatted;
+                count = 0;
+            }
+        }
+
+        input.value = formatted;
+    }
+
+    // Saat form submit, hilangkan titik agar nilai bersih yang dikirim
+    document.querySelector('form').addEventListener('submit', function(e) {
+        const hargaInput = document.getElementById('harga');
+        if (hargaInput) {
+            hargaInput.value = hargaInput.value.replace(/\./g, '');
+        }
+    });
+</script>
+
 
     {{-- Keterangan --}}
     <div class="col-md-12">
