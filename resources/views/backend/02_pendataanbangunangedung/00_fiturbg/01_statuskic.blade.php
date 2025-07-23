@@ -105,11 +105,12 @@
             'title' => 'Keterangan',
             'value' => $data->keterangan ?? '-',
         ],
-        [
-            'icon' => 'bi-chat-left-text',
-            'title' => 'No',
-            'value' => $data->nosertifikat ?? '-',
-        ],
+     [
+    'icon' => 'bi-hash',
+    'title' => 'No Sertifikat',
+    'value' => $data->nosertifikat ?? '-',
+],
+
     ];
 @endphp
 
