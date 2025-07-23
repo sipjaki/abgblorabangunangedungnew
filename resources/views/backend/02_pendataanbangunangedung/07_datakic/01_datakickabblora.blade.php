@@ -388,7 +388,8 @@ th {
             <!-- Tombol KTP -->
 
 
-@can('superadmin')
+@canany(['superadmin', 'admin'])
+
 
 <td style="text-align: center; vertical-align: middle;">
     {{-- {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
@@ -404,7 +405,8 @@ th {
                                            <i class="bi bi-trash"></i>Hapus
                                         </a>
                                     </td>
-                                    @endcan
+
+                                    @endcanany
 
                                 </tr>
                                 @endforeach
