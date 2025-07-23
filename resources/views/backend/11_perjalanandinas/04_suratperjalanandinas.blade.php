@@ -489,7 +489,7 @@ th {
 <!-- Konten -->
     <!-- Tanda Tangan -->
     <div class="poppins-12">
-      <div style="text-align: right; margin-bottom: 20px;">
+      <div style="text-align: right; margin-bottom: 10px; margin-top: 10px;">
     Ditetapkan di Blora, <br> pada tanggal {{ \Carbon\Carbon::parse($data->tanggalsuratterbit)->translatedFormat('d F Y') }}
 
     </div>
