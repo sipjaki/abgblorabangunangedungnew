@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('kicdokumens', function (Blueprint $table) {
             $table->id();
-            
+
             $table->foreignId('kicinduk_id')->nullable()->index();
             $table->string('jenisbarang')->nullable();
             $table->string('kodebarang')->nullable();
             $table->string('register')->nullable();
             $table->string('kondisibangunan')->nullable();
-            $table->boolean('bertingkat')->nullable(); // true = ya, false = tidak
-            $table->boolean('beton')->nullable(); // true = ya, false = tidak
-            $table->decimal('luaslantai')->nullable(); // Luas lantai dalam m²
+            $table->string('bertingkat')->nullable(); // true = ya, false = tidak
+            $table->string('beton')->nullable(); // true = ya, false = tidak
+            $table->string('luaslantai')->nullable(); // Luas lantai dalam m²
             $table->text('alamat')->nullable();
 
             $table->text('cadangan1')->nullable();
