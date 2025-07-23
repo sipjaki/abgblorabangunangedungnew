@@ -253,6 +253,7 @@ th {
     <i class="fas fa-database" style="margin-right: 6px;"></i> Status
 </th>
        <th style="background-color: #ADD8E6;">Status Akhir</th> --}}
+       <th style="background-color: #ADD8E6;">Dok Berita Acara</th>
        <th style="background-color: #ADD8E6;">Aksi</th>
                                 </tr>
                             </thead>
@@ -598,6 +599,18 @@ th {
     <a href="{{ route('beperjalanadinasbainternal', $item->id) }}"
         class="button-berkas">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Buat Berita Acara
+    </a>
+
+    </div>
+</td>
+
+<td style="text-align: center; vertical-align: middle; width: 100%;">
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
+
+
+    <a href="{{ route('beperjalanadinasbainternal', $item->id) }}"
+        class="button-berkas">
+        <i class="bi bi-folder" style="margin-right: 5px;"></i> Dok Berita Acara
     </a>
 
     </div>
