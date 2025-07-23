@@ -203,7 +203,7 @@ th {
 <script>
     function searchTable() {
         const input = document.getElementById("searchInput").value;
-        const url = `/bebangunangedung?search=${encodeURIComponent(input)}`;
+        const url = `/bedatabangunankic?search=${encodeURIComponent(input)}`;
 
         fetch(url)
             .then(response => response.text())
