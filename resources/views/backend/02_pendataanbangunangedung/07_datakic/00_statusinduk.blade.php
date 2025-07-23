@@ -17,11 +17,12 @@
             'title' => 'Bidang',
             'value' => $subdatapemilik->bidang ?? '-',
         ],
-        [
-            'icon' => 'bi-calendar-date',
-            'title' => 'Tanggal Input',
-            'value' => $subdatapemilik->tanggalinput ? $subdatapemilik->tanggalinput : '-',
-        ],
+     [
+    'icon' => 'bi-calendar-date',
+    'title' => 'Tanggal Input',
+    'value' => $subdatapemilik->tanggalinput ?? '-',
+],
+
     ];
 @endphp
 
