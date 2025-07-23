@@ -64,6 +64,7 @@ use App\Models\kategoripelatihan;
 use App\Models\kepemilikanbangunangedung;
 use App\Models\kicdokumen;
 use App\Models\kicinduk;
+use App\Models\kicstruktur;
 use App\Models\krkhunian;
 use App\Models\krkkeagamaan;
 use App\Models\krkmenara;
@@ -25466,7 +25467,7 @@ kicdokumen::create(['id'=>420,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG T
 
 // INPUT KIC STRUKTUR
 
-kicdokumen::create([
+kicstruktur::create([
     'id' => 1,
     'kicinduk_id' => 1,
     'tanggal' => null,
@@ -25479,7 +25480,7 @@ kicdokumen::create([
     'keterangan' => '010101.00000.00000',
 ]);
 
-kicdokumen::create([
+kicstruktur::create([
     'id' => 2,
     'kicinduk_id' => 1,
     'tanggal' => null,
@@ -25492,7 +25493,7 @@ kicdokumen::create([
     'keterangan' => '010101.00000.00000',
 ]);
 
-kicdokumen::create([
+kicstruktur::create([
     'id' => 3,
     'kicinduk_id' => 1,
     'tanggal' => '2005-01-01',
@@ -25505,7 +25506,7 @@ kicdokumen::create([
     'keterangan' => '010101.00000.00000',
 ]);
 
-kicdokumen::create([
+kicstruktur::create([
     'id' => 4,
     'kicinduk_id' => 1,
     'tanggal' => null,
@@ -25518,7 +25519,7 @@ kicdokumen::create([
     'keterangan' => '010101.00000.00000',
 ]);
 
-kicdokumen::create([
+kicstruktur::create([
     'id' => 5,
     'kicinduk_id' => 1,
     'tanggal' => null,
@@ -25531,7 +25532,7 @@ kicdokumen::create([
     'keterangan' => '010101.00000.00000',
 ]);
 
-kicdokumen::create([
+kicstruktur::create([
     'id' => 6,
     'kicinduk_id' => 1,
     'tanggal' => null,
@@ -25544,7 +25545,7 @@ kicdokumen::create([
     'keterangan' => '010101.00000.00000',
 ]);
 
-kicdokumen::create([
+kicstruktur::create([
     'id' => 7,
     'kicinduk_id' => 1,
     'tanggal' => null,
@@ -25557,7 +25558,7 @@ kicdokumen::create([
     'keterangan' => '010101.00000.00000',
 ]);
 
-kicdokumen::create([
+kicstruktur::create([
     'id' => 8,
     'kicinduk_id' => 1,
     'tanggal' => null,
@@ -25570,7 +25571,7 @@ kicdokumen::create([
     'keterangan' => '010101.00000.00000',
 ]);
 
-kicdokumen::create([
+kicstruktur::create([
     'id' => 9,
     'kicinduk_id' => 1,
     'tanggal' => null,
@@ -25583,7 +25584,7 @@ kicdokumen::create([
     'keterangan' => '010101.00000.00000',
 ]);
 
-kicdokumen::create([
+kicstruktur::create([
     'id' => 10,
     'kicinduk_id' => 1,
     'tanggal' => null,
