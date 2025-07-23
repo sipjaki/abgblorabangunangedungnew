@@ -391,12 +391,12 @@ th {
 @can('superadmin')
 
 <td style="text-align: center; vertical-align: middle;">
-    {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
+    {{-- {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
         <i class="bi bi-eye"></i>
-    </a>
-                                        <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
-                                            <i class="bi bi-pencil-square"></i>
-                                        </a> --}}
+    </a> --}}
+                                        <a href="/bebujkkonstruksi/update/{{$item->id}}" class="button-berkas" title="Update">
+                                            <i class="bi bi-pencil-square"></i>Update
+                                        </a>
                                         <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
