@@ -231,7 +231,7 @@ th {
         </label>
         <select class="form-select @error('satuankerja_id') is-invalid @enderror" name="satuankerja_id" id="satuankerja_id">
             <option value="">-- Pilih Satuan Kerja --</option>
-            @foreach($satuankerjas as $sk)
+            @foreach($satuankerja as $sk)
                 <option value="{{ $sk->id }}" {{ old('satuankerja_id', $data->satuankerja_id ?? '') == $sk->id ? 'selected' : '' }}>
                     {{ $sk->satuankerja }}
                 </option>

@@ -20,6 +20,7 @@ use App\Models\kicdokumen;
 use App\Models\kicinduk;
 use App\Models\kicstruktur;
 use App\Models\pbgslfbangunan;
+use App\Models\satuankerja;
 use Illuminate\Support\Facades\Auth;
 
 class PendataanBangunanGedungController extends Controller
@@ -1264,6 +1265,7 @@ public function datanewkic(Request $request)
 {
     // Ambil user login
     $user = Auth::user();
+    $satuankerja = satuankerja::all();
     $kecamatanList = kecamatanblora::all();
         $datakelurahan = kelurahandesa::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
 
@@ -1277,6 +1279,7 @@ public function datanewkic(Request $request)
         return view('backend.02_pendataanbangunangedung.07_datakic.03_buatdatakic', [
             'title' => 'Buat Data KIC Pendataan Bangunan Gedung',
             'user' => $user,
+            'satuankerja' => $satuankerja,
             'datakelurahan' => $datakelurahan,
         'kecamatanList' => $kecamatanList
     ]);
