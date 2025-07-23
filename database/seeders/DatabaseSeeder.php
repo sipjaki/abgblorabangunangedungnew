@@ -24315,6 +24315,7 @@ databgtanah::create(['id'=>973,'databgkepemilikan_id'=>973,'statushaktanah'=>'Mi
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL TANAH
 
 // Records 1-10
+
 databgpeprofilbangunangedung::create(['id'=>1,'databgkepemilikan_id'=>1,'luastanah'=>'128','namabangunan'=>'Kantor Balai Penyuluhan Pertanian','alamatbangunan'=>'Jl. Sonorejo No. 17, Ds. Kunden, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'85','totalluaslantai'=>'85','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>'-6.93392,111.375718','tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>2,'databgkepemilikan_id'=>2,'luastanah'=>'2350','namabangunan'=>'Gedung Kantor','alamatbangunan'=>'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'456','totalluaslantai'=>'912','tinggibangunan'=>'9','luasbasement'=>'','koordinatbangunan'=>'-6.974108,111.415106','tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>3,'databgkepemilikan_id'=>3,'luastanah'=>'2350','namabangunan'=>'Gedung Arsip dan Mushola','alamatbangunan'=>'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'166.92','totalluaslantai'=>'333.84','tinggibangunan'=>'7','luasbasement'=>'','koordinatbangunan'=>'-6.974108,111.415106','tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
@@ -24682,6 +24683,637 @@ databgpeprofilbangunangedung::create([
     'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
     'tanggalrehabilitasi' => '(Tidak Mengetahui)'
 ]);
+
+
+databgpeprofilbangunangedung::create([
+    'id' => 161,
+    'databgkepemilikan_id' => 161,
+    'luastanah' => '925 m2',
+    'namabangunan' => 'Gedung Peternakan SDA Blora',
+    'alamatbangunan' => 'Kel. Kedungjenar, Kec. Blora, Kab. Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '257,08 m2',
+    'totalluaslantai' => '257,08 m2',
+    'tinggibangunan' => '4 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 162
+databgpeprofilbangunangedung::create([
+    'id' => 162,
+    'databgkepemilikan_id' => 162,
+    'luastanah' => '925 m2',
+    'namabangunan' => 'Mushola SDA Blora',
+    'alamatbangunan' => 'Kel. Kedungjenar, Kec. Blora, Kab. Blora',
+    'fungsibangunan' => 'Keagamaan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '124,27 m2',
+    'totalluaslantai' => '124,27 m2',
+    'tinggibangunan' => '4 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 163
+databgpeprofilbangunangedung::create([
+    'id' => 163,
+    'databgkepemilikan_id' => 163,
+    'luastanah' => '2747 m2',
+    'namabangunan' => 'Kantor',
+    'alamatbangunan' => 'Jl. Gunung Wilis No. 24, Kunden, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '2',
+    'luaslantaildasar' => '1100 m2',
+    'totalluaslantai' => '2200 m2',
+    'tinggibangunan' => '8 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Continue with entries 164-200 in the same format...
+// [Previous entries 161-163 shown as example]
+
+// Entry 164
+databgpeprofilbangunangedung::create([
+    'id' => 164,
+    'databgkepemilikan_id' => 164,
+    'luastanah' => '200 m2',
+    'namabangunan' => 'Laboratorium DLH',
+    'alamatbangunan' => 'Jl. Gunung Wilis No. 24, Kunden, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '192 m2',
+    'totalluaslantai' => '192 m2',
+    'tinggibangunan' => '',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 165
+databgpeprofilbangunangedung::create([
+    'id' => 165,
+    'databgkepemilikan_id' => 165,
+    'luastanah' => '3721 m2',
+    'namabangunan' => 'Gedung Bappeda',
+    'alamatbangunan' => 'Jl. GOR No. 10 Blora, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '2',
+    'luaslantaildasar' => '',
+    'totalluaslantai' => '1058 m2',
+    'tinggibangunan' => '7,15 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 166
+databgpeprofilbangunangedung::create([
+    'id' => 166,
+    'databgkepemilikan_id' => 166,
+    'luastanah' => '1175 m2',
+    'namabangunan' => 'Gedung Dinsos PPPA',
+    'alamatbangunan' => 'Jl. Pemuda No. 16A, Mlangsen, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '2',
+    'luaslantaildasar' => '950 m2',
+    'totalluaslantai' => '1175 m2',
+    'tinggibangunan' => '10 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 167
+databgpeprofilbangunangedung::create([
+    'id' => 167,
+    'databgkepemilikan_id' => 167,
+    'luastanah' => '496 m2',
+    'namabangunan' => 'Gedung Kantor',
+    'alamatbangunan' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '2',
+    'luaslantaildasar' => '372 m2',
+    'totalluaslantai' => '744 m2',
+    'tinggibangunan' => '10 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 168
+databgpeprofilbangunangedung::create([
+    'id' => 168,
+    'databgkepemilikan_id' => 168,
+    'luastanah' => '496 m2',
+    'namabangunan' => 'Pendopo Pagelaran',
+    'alamatbangunan' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '299,59 m2',
+    'totalluaslantai' => '299,59 m2',
+    'tinggibangunan' => '7 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 169
+databgpeprofilbangunangedung::create([
+    'id' => 169,
+    'databgkepemilikan_id' => 169,
+    'luastanah' => '496 m2',
+    'namabangunan' => 'Gudang',
+    'alamatbangunan' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '193,39 m2',
+    'totalluaslantai' => '193,59 m2',
+    'tinggibangunan' => '4 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 170
+databgpeprofilbangunangedung::create([
+    'id' => 170,
+    'databgkepemilikan_id' => 170,
+    'luastanah' => '12500 m2',
+    'namabangunan' => 'Gedung GOR Mustika',
+    'alamatbangunan' => 'Jl. Gor No. 3, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '2',
+    'luaslantaildasar' => '4187 m2',
+    'totalluaslantai' => '8374 m2',
+    'tinggibangunan' => '12 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 171
+databgpeprofilbangunangedung::create([
+    'id' => 171,
+    'databgkepemilikan_id' => 171,
+    'luastanah' => '12500 m2',
+    'namabangunan' => 'Mushola',
+    'alamatbangunan' => 'Jl. Gor No. 3, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Keagamaan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '36 m2',
+    'totalluaslantai' => '36 m2',
+    'tinggibangunan' => '3,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 172
+databgpeprofilbangunangedung::create([
+    'id' => 172,
+    'databgkepemilikan_id' => 172,
+    'luastanah' => '11466 m2',
+    'namabangunan' => 'GOR Kolonel Sunandar',
+    'alamatbangunan' => 'Jl. Ahmad Yani, Kec. Blora, Kab. Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '823 m2',
+    'totalluaslantai' => '823 m2',
+    'tinggibangunan' => '7 m2',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 173
+databgpeprofilbangunangedung::create([
+    'id' => 173,
+    'databgkepemilikan_id' => 173,
+    'luastanah' => '500 m2',
+    'namabangunan' => 'Gedung Kantor KONI',
+    'alamatbangunan' => 'Jl. Kol. Sunandar No. 61, Mlangsen, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '37 m2',
+    'totalluaslantai' => '37 m2',
+    'tinggibangunan' => '3,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 174
+databgpeprofilbangunangedung::create([
+    'id' => 174,
+    'databgkepemilikan_id' => 174,
+    'luastanah' => '1000 m2',
+    'namabangunan' => 'Kantor Dinas',
+    'alamatbangunan' => 'Jl. Rembang-Blora KM. 4, Kec. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '2',
+    'luaslantaildasar' => '486,5 m2',
+    'totalluaslantai' => '973 m2',
+    'tinggibangunan' => '7 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 175
+databgpeprofilbangunangedung::create([
+    'id' => 175,
+    'databgkepemilikan_id' => 175,
+    'luastanah' => '1000 m2',
+    'namabangunan' => 'UPTD Metrologi Legal',
+    'alamatbangunan' => 'Jl. Rembang-Blora KM. 4, Kec. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '2',
+    'luaslantaildasar' => '264 m2',
+    'totalluaslantai' => '528 m2',
+    'tinggibangunan' => '7 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 176
+databgpeprofilbangunangedung::create([
+    'id' => 176,
+    'databgkepemilikan_id' => 176,
+    'luastanah' => '10238 m2',
+    'namabangunan' => 'Pendopo DPRD',
+    'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '292,5 m2',
+    'totalluaslantai' => '292,5 m2',
+    'tinggibangunan' => '5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 177
+databgpeprofilbangunangedung::create([
+    'id' => 177,
+    'databgkepemilikan_id' => 177,
+    'luastanah' => '10238 m2',
+    'namabangunan' => 'Lobby (R. Ketua, Wakil Ketua, Sekretaris)',
+    'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '407,38 m2',
+    'totalluaslantai' => '407,38 m2',
+    'tinggibangunan' => '3,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 178
+databgpeprofilbangunangedung::create([
+    'id' => 178,
+    'databgkepemilikan_id' => 178,
+    'luastanah' => '10238 m2',
+    'namabangunan' => 'Kantor DPRD',
+    'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '2',
+    'luaslantaildasar' => '69,86 m2',
+    'totalluaslantai' => '139,7 m',
+    'tinggibangunan' => '8 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 179
+databgpeprofilbangunangedung::create([
+    'id' => 179,
+    'databgkepemilikan_id' => 179,
+    'luastanah' => '10238 m2',
+    'namabangunan' => 'Mushola',
+    'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Keagamaan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '109,2 m2',
+    'totalluaslantai' => '109,2 m2',
+    'tinggibangunan' => '3,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 180
+databgpeprofilbangunangedung::create([
+    'id' => 180,
+    'databgkepemilikan_id' => 180,
+    'luastanah' => '10238 m2',
+    'namabangunan' => 'Gedung Komisi I',
+    'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '326,25 m2',
+    'totalluaslantai' => '326,25 m2',
+    'tinggibangunan' => '3,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 181
+databgpeprofilbangunangedung::create([
+    'id' => 181,
+    'databgkepemilikan_id' => 181,
+    'luastanah' => '10238 m2',
+    'namabangunan' => 'Gedung Komisi II',
+    'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '326,25 m2',
+    'totalluaslantai' => '326,25 m2',
+    'tinggibangunan' => '3,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 182
+databgpeprofilbangunangedung::create([
+    'id' => 182,
+    'databgkepemilikan_id' => 182,
+    'luastanah' => '10238 m2',
+    'namabangunan' => 'Gedung Fraksi',
+    'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '2',
+    'luaslantaildasar' => '363 m2',
+    'totalluaslantai' => '726 m2',
+    'tinggibangunan' => '8 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 183
+databgpeprofilbangunangedung::create([
+    'id' => 183,
+    'databgkepemilikan_id' => 183,
+    'luastanah' => '10238 m2',
+    'namabangunan' => 'Pos Jaga/Reservasi',
+    'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '30,16 m2',
+    'totalluaslantai' => '30,16 m2',
+    'tinggibangunan' => '3 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 184
+databgpeprofilbangunangedung::create([
+    'id' => 184,
+    'databgkepemilikan_id' => 184,
+    'luastanah' => '10238 m2',
+    'namabangunan' => 'Pos Satpam',
+    'alamatbangunan' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '14 m2',
+    'totalluaslantai' => '14 m2',
+    'tinggibangunan' => '3 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalselesaikonstruksi' => '(Tidak Mengetahui)',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 185
+databgpeprofilbangunangedung::create([
+    'id' => 185,
+    'databgkepemilikan_id' => 185,
+    'luastanah' => '3422 m2',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '225 m2',
+    'totalluaslantai' => '225 m2',
+    'tinggibangunan' => '6,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '1977',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => '2009'
+]);
+
+// Entry 186
+databgpeprofilbangunangedung::create([
+    'id' => 186,
+    'databgkepemilikan_id' => 186,
+    'luastanah' => '3422 m2',
+    'namabangunan' => 'Gedung B',
+    'alamatbangunan' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '207 m2',
+    'totalluaslantai' => '207 m2',
+    'tinggibangunan' => '6,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '1977',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => '2009'
+]);
+
+// Entry 187
+databgpeprofilbangunangedung::create([
+    'id' => 187,
+    'databgkepemilikan_id' => 187,
+    'luastanah' => '3422 m2',
+    'namabangunan' => 'Kamar Mandi',
+    'alamatbangunan' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '18 m2',
+    'totalluaslantai' => '18 m2',
+    'tinggibangunan' => '6,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '1977',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => '2009'
+]);
+
+// Entry 188
+databgpeprofilbangunangedung::create([
+    'id' => 188,
+    'databgkepemilikan_id' => 188,
+    'luastanah' => '3422 m2',
+    'namabangunan' => 'Mushola',
+    'alamatbangunan' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
+    'fungsibangunan' => 'Keagamaan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '17,5 m2',
+    'totalluaslantai' => '17,5 m2',
+    'tinggibangunan' => '6,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '1977',
+    'tanggalselesaikonstruksi' => '1977',
+    'tanggalrehabilitasi' => '2012'
+]);
+
+// Entry 189
+databgpeprofilbangunangedung::create([
+    'id' => 189,
+    'databgkepemilikan_id' => 189,
+    'luastanah' => '',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '56 m2',
+    'totalluaslantai' => '56 m2',
+    'tinggibangunan' => '6 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '2010',
+    'tanggalselesaikonstruksi' => '2010',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 190
+databgpeprofilbangunangedung::create([
+    'id' => 190,
+    'databgkepemilikan_id' => 190,
+    'luastanah' => '',
+    'namabangunan' => 'Gedung B',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '36 m2',
+    'totalluaslantai' => '36 m2',
+    'tinggibangunan' => '6 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '2023',
+    'tanggalselesaikonstruksi' => '2023',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 191
+databgpeprofilbangunangedung::create([
+    'id' => 191,
+    'databgkepemilikan_id' => 191,
+    'luastanah' => '',
+    'namabangunan' => 'Toilet/WC',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '21 m2',
+    'totalluaslantai' => '21 m2',
+    'tinggibangunan' => '3 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '2006',
+    'tanggalselesaikonstruksi' => '2006',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 192
+databgpeprofilbangunangedung::create([
+    'id' => 192,
+    'databgkepemilikan_id' => 192,
+    'luastanah' => '',
+    'namabangunan' => 'Kantor dan Ruang Guru',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '53,5 m2',
+    'totalluaslantai' => '53,5 m2',
+    'tinggibangunan' => '6 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '2020',
+    'tanggalselesaikonstruksi' => '2020',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
+// Entry 193
+databgpeprofilbangunangedung::create([
+    'id' => 193,
+    'databgkepemilikan_id' => 193,
+    'luastanah' => '',
+    'namabangunan' => 'Gedung C',
+    'alamatbangunan' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
+    'fungsibangunan' => 'Keagamaan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '56 m2',
+    'totalluaslantai' => '56 m2',
+    'tinggibangunan' => '5,5 m',
+    'luasbasement' => '-',
+    'koordinatbangunan' => '-',
+    'tanggalmulaikonstruksi' => '2013',
+    'tanggalselesaikonstruksi' => '2013',
+    'tanggalrehabilitasi' => '(Tidak Mengetahui)'
+]);
+
 
 // BARU SAMPAI SINI
 
