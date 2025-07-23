@@ -338,12 +338,12 @@ th {
     </tr>
                             </thead>
                               <tbody id="tableBody">
-                                @foreach ($data as $item )
+                                @foreach ($subdatapemilik as $item )
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 
-{{-- <td>{{ optional($item->user)->name ?? '-' }}</td> --}}
+<td>{{ optional($item->user)->name ?? '-' }}</td>
 
 {{-- Tanggal Input --}}
 <td>
