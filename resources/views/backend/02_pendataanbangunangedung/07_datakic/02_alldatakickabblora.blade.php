@@ -344,7 +344,7 @@ th {
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 {{-- Jenis Barang --}}
-<td>
+<td style="text-align: left;">
     {!! $item->jenisbarang
         ? e($item->jenisbarang)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
