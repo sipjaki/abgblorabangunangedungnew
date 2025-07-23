@@ -1237,5 +1237,28 @@ public function bedatabangunankicdelete($id)
 }
 
 
+public function bedatabangudokkicdelete($id)
+{
+    // Cari item berdasarkan ID
+    $entry = kicdokumen::find($id);
+
+    if ($entry) {
+        // Jika ingin hapus file dari storage, aktifkan bagian ini:
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus entri dari database
+        $entry->delete();
+
+        // Redirect kembali dengan pesan sukses
+        return redirect()->back()->with('delete', 'Data Berhasil Di Hapus !');
+    }
+
+    // Jika data tidak ditemukan, kembali dengan pesan error
+    return redirect()->back()->with('error', 'Item tidak ditemukan.');
+}
+
+
 }
 

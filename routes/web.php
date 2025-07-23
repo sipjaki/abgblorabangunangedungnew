@@ -98,6 +98,7 @@ Route::get('/bependataanbgtanah/{id}', [PendataanBangunanGedungController::class
 Route::get('/bedatabangunankic', [PendataanBangunanGedungController::class, 'bedatabangunankic'])->middleware('auth')->name('bedatabangunankic');
 Route::delete('/bedatabangunankicdelete/{id}', [PendataanBangunanGedungController::class, 'bedatabangunankicdelete'])->middleware('auth')->name('bedatabangunankicdelete');
 Route::get('/bedatabangunankicshow/{id}', [PendataanBangunanGedungController::class, 'bedatabangunankicshow'])->middleware('auth')->name('bedatabangunankicshow');
+Route::delete('/bedatabangudokkicdelete/{id}', [PendataanBangunanGedungController::class, 'bedatabangudokkicdelete'])->middleware('auth')->name('bedatabangudokkicdelete');
 
 
 // 01 PENDATAAN BANGUNAN GEDUNG PROFIL STATUS TANAH
