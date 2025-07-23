@@ -456,25 +456,28 @@ th {
 <!-- Link Font Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-<!-- Container Utama -->
+<!-- Kontainer Utama -->
 <div style="font-family: 'Poppins', sans-serif; font-size: 12px;">
 
-  <!-- Penetapan Tanggal di Kanan -->
+  <!-- Tanggal dan Tempat Penetapan (kanan atas) -->
   <div style="text-align: right; margin-bottom: 20px;">
     Ditetapkan di Blora, pada tanggal [Tanggal Lengkap] 2025
   </div>
 
-  <!-- Tabel Data Pegawai dan Pejabat -->
+  <!-- Tabel tanpa garis untuk informasi -->
   <table style="width: 100%; border-collapse: collapse;">
     <tr>
+      <!-- Kiri: Pegawai -->
       <td style="width: 50%; vertical-align: top;">
         <div style="margin-bottom: 6px;">Pegawai / Pegawai yang diperintah:</div>
-        <div style="font-weight: bold;">MUHAMMAD YUSUF ZAQIE, SE</div>
+        <div style="margin-top: 40px; font-weight: bold;">MUHAMMAD YUSUF ZAQIE, SE</div>
         <div>NIP 19920611 202221 1 030</div>
       </td>
+
+      <!-- Kanan: Pejabat Pembuat Komitmen -->
       <td style="width: 50%; text-align: center;">
-        <div style="font-weight: bold; margin-bottom: 6px;">PEJABAT PEMBUAT KOMITMEN</div>
-        <br><br><br> <!-- Ruang untuk tanda tangan -->
+        <div style="font-weight: bold;">PEJABAT PEMBUAT KOMITMEN</div>
+        <div style="height: 60px;"></div> <!-- Spasi untuk tanda tangan -->
         <div style="font-weight: bold;">MOHAMAD ARIF HIDAYAT, ST</div>
         <div>NIP 19710508 199803 1 011</div>
       </td>
