@@ -202,19 +202,18 @@ th {
 
            {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
 
-<div class="card shadow-sm border-0">
-    <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
-        <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Data Bangunan Gedung Kabupaten</h5>
-    </div>
-</div>
-
 <div class="mt-3">
     <a href="{{ url()->previous() }}" class="text-decoration-none">
         <button class="button-newvalidasi d-flex align-items-center gap-2">
             <i class="bi bi-arrow-left-circle"></i> Kembali
         </button>
     </a>
+</div>
+           <div class="card shadow-sm border-0">
+    <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
+        <i class="bi bi-info-circle fs-5"></i>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Data Bangunan Gedung Kabupaten</h5>
+    </div>
 </div>
 
 
