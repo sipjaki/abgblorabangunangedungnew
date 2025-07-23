@@ -351,8 +351,8 @@ th {
 
 {{-- Satuan Kerja (relasi) --}}
 <td>
-    {!! $item->satuankerja && $item->satuankerja->namasatuankerja
-        ? e($item->satuankerja->namasatuankerja)
+    {!! $item->satuankerja && $item->satuankerja->satuankerja
+        ? e($item->satuankerja->satuankerja)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
 
