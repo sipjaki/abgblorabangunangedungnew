@@ -25140,6 +25140,106 @@ kicdokumen::create(['id'=>249,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG T
 
 kicdokumen::create(['id'=>250,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00003.00001.2010-1.3.3.01.01.16.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>80,'alamat'=>'Banjarejo, RT.9/RW.3, Dk.Banjarejo, Ds./Kel. Banjarejo']);
 
+kicdokumen::create(['id'=>251,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00003.00001.2013-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Banjarejo, RT.9/RW.3, Dk.Banjarejo, Ds./Kel. Banjarejo']);
+
+kicdokumen::create(['id'=>252,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00014.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>130,'alamat'=>'Desa Bedingin']);
+
+kicdokumen::create(['id'=>253,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00014.2006-1.3.3.01.01.01.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>12,'alamat'=>'Desa Bedingin']);
+
+kicdokumen::create(['id'=>254,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00014.2006-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Desa Bedingin']);
+
+kicdokumen::create(['id'=>255,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00014.2006-1.3.3.01.01.10.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>39,'alamat'=>'Desa Bedingin']);
+
+kicdokumen::create(['id'=>256,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00014.2006-1.3.3.01.01.10.001','register'=>'000003','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>39,'alamat'=>'Desa Bedingin']);
+
+kicdokumen::create(['id'=>257,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00008.00014.2006-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>330,'alamat'=>'Desa Bedingin']);
+
+kicdokumen::create(['id'=>258,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT KERJA LAINNYA.BANGUNAN GEDUNG TEMPAT KERJA LAINNYA','kodebarang'=>'12.01.33.16.010101.00008.00014.2020-1.3.3.01.01.30.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'SDN 1 BEDINGIN TODANAN']);
+
+kicdokumen::create(['id'=>259,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00014.00032.2007-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'JLN.WULUNG-DOPLANG KM.5, DESA BEKUTUK RT.03/01']);
+
+kicdokumen::create(['id'=>260,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00014.00032.2007-1.3.3.01.01.01.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>345,'alamat'=>'JLN.WULUNG-DOPLANG KM.5, DESA BEKUTUK RT.03/01']);
+
+kicdokumen::create(['id'=>261,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00014.00032.2009-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>187,'alamat'=>'JL.WULUNG-DOPLANG KM.5']);
+
+kicdokumen::create(['id'=>262,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00014.00032.2009-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Desa Bekutuk Rt.03 Rw.01, RT.3/RW.1, Dk.Bekutuk, Ds./Kel. Bekutuk']);
+
+kicdokumen::create(['id'=>263,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN','kodebarang'=>'12.01.33.16.010101.00014.00032.2010-1.3.3.01.01.08.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>672,'alamat'=>'JL.WULUNG-DOPLANG KM.5']);
+
+kicdokumen::create(['id'=>264,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00014.00032.2012-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>258,'alamat'=>'JLN.WULUNG-DOPLANG KM.5, DESA BEKUTUK RT.03/01']);
+
+kicdokumen::create(['id'=>265,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00014.00032.2012-1.3.3.01.01.01.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>540,'alamat'=>'JL.WULUNG-DOPLANG KM.5']);
+
+kicdokumen::create(['id'=>266,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR PERMANEN','kodebarang'=>'12.01.33.16.010101.00014.00032.2023-1.3.3.04.01.04.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'','beton'=>'BETON','luaslantai'=>0,'alamat'=>'--']);
+
+kicdokumen::create(['id'=>267,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00001.00011.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>408,'alamat'=>'kelurahan beran']);
+
+kicdokumen::create(['id'=>268,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00001.00011.2006-1.3.3.01.01.01.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>5,'alamat'=>'Jalan Cendana 3, RT.1/RW.1, Dk.Beran, Ds./Kel. BERAN']);
+
+kicdokumen::create(['id'=>269,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00001.00011.2006-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>56,'alamat'=>'kelurahan beran']);
+
+kicdokumen::create(['id'=>270,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00001.00011.2006-1.3.3.01.01.16.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>64,'alamat'=>'kelurahan beran']);
+
+kicdokumen::create(['id'=>271,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR','kodebarang'=>'12.01.33.16.010101.00001.00011.2006-1.3.3.01.01.32.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>16,'alamat'=>'kelurahan beran']);
+
+kicdokumen::create(['id'=>272,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR','kodebarang'=>'12.01.33.16.010101.00001.00011.2006-1.3.3.01.01.32.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>7,'alamat'=>'kelurahan beran']);
+
+kicdokumen::create(['id'=>273,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00001.00011.2006-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>45,'alamat'=>'Jalan Cendana 3, RT.1/RW.1, Dk.Beran, Ds./Kel. BERAN']);
+
+kicdokumen::create(['id'=>274,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00042.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'DS BICAK']);
+
+kicdokumen::create(['id'=>275,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00042.2006-1.3.3.01.01.01.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Ds.Bicak']);
+
+kicdokumen::create(['id'=>276,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN SEMI PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00042.2006-1.3.3.01.01.10.002','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Ds.Bicak']);
+
+kicdokumen::create(['id'=>277,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00042.2017-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'DS BICAK']);
+
+kicdokumen::create(['id'=>278,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00008.00042.2020-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'SDN 1 BICAK TODANAN']);
+
+kicdokumen::create(['id'=>279,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00012.00018.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Biting, RT.1/RW.1, Dk.Mlawu, Ds./Kel. Biting']);
+
+kicdokumen::create(['id'=>280,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00012.00018.2006-1.3.3.01.01.01.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>56,'alamat'=>'Biting, RT.1/RW.1, Dk.Mlawu, Ds./Kel. Biting']);
+
+kicdokumen::create(['id'=>281,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00012.00018.2006-1.3.3.01.01.01.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>8,'alamat'=>'Biting, RT.1/RW.1, Dk.Mlawu, Ds./Kel. Biting']);
+
+kicdokumen::create(['id'=>282,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00012.00018.2006-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>168,'alamat'=>'Biting, RT.1/RW.1, Dk.Mlawu, Ds./Kel. Biting']);
+
+kicdokumen::create(['id'=>283,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00012.00018.2006-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Biting, RT.1/RW.1, Dk.Mlawu, Ds./Kel. Biting']);
+
+kicdokumen::create(['id'=>284,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00012.00018.2012-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Biting, RT.1/RW.1, Dk.Mlawu, Ds./Kel. Biting']);
+
+kicdokumen::create(['id'=>285,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00012.00018.2013-1.3.3.01.01.16.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Desa Biting Kec. Sambong Kab. Blora']);
+
+kicdokumen::create(['id'=>286,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00012.00018.2015-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Biting, RT.1/RW.1, Dk.Mlawu, Ds./Kel. Biting']);
+
+kicdokumen::create(['id'=>287,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG TEMPAT PENDIDIKAN','kodebarang'=>'12.01.33.16.010101.00012.00018.2019-1.3.3.01.01.10.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'Biting, RT.1/RW.1, Dk.Mlawu, Ds./Kel. Biting']);
+
+kicdokumen::create(['id'=>288,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR PERMANEN','kodebarang'=>'12.01.33.16.010101.00012.00018.2023-1.3.3.04.01.04.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK','beton'=>'BETON','luaslantai'=>0,'alamat'=>'--']);
+
+kicdokumen::create(['id'=>289,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00006.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'JLN.RAYA DS.BLEBOH KEC.JIKEN']);
+
+kicdokumen::create(['id'=>290,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00006.2006-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'JLN.RAYA DS.BLEBOH KEC.JIKEN']);
+
+kicdokumen::create(['id'=>291,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00006.2006-1.3.3.01.01.10.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'JLN.RAYA DS.BLEBOH KEC.JIKEN']);
+
+kicdokumen::create(['id'=>292,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00006.2006-1.3.3.01.01.10.001','register'=>'000003','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'JLN RAYA DS.BLEBOH KEC.JIKEN']);
+
+kicdokumen::create(['id'=>293,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00006.2006-1.3.3.01.01.10.001','register'=>'000004','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'JLN RAYA DS.BLEBOH KEC.JIKEN']);
+
+kicdokumen::create(['id'=>294,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00006.2006-1.3.3.01.01.10.001','register'=>'000005','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'JLN.RAYA DS.BLEBOH KEC.JIKEN']);
+
+kicdokumen::create(['id'=>295,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00013.00006.2006-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>94,'alamat'=>'JLN.RAYA DS.BLEBOH KEC.JIKEN']);
+
+kicdokumen::create(['id'=>296,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT KERJA LAINNYA.BANGUNAN GEDUNG TEMPAT KERJA LAINNYA','kodebarang'=>'12.01.33.16.010101.00013.00006.2019-1.3.3.01.01.37.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'Bleboh, RT.8/RW.1, Dk.BENDO, Ds./Kel. BLEBOH']);
+
+kicdokumen::create(['id'=>297,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00004.00022.2003-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'DESA BLUNGUN RT 03 RW 01 KEC. JEPON KAB. BLORA']);
+
+kicdokumen::create(['id'=>298,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00004.00022.2003-1.3.3.01.01.01.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'DESA BLUNGUN RT03 RT01 KEC.JEPON KAB.BLORA']);
+
+kicdokumen::create(['id'=>299,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00004.00022.2003-1.3.3.01.01.01.005','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'DESA BLUNGUN TR 03 RW 01 KEC.JEPON KAB.BLORA']);
+
+kicdokumen::create(['id'=>300,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00004.00022.2003-1.3.3.01.01.16.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'DESA BLUNGUN RT 03 RW 01 KEC. JEPON KAB.BLORA']);
+
 
 // databgklasifikasi::create([
 //     'id'=>1,
