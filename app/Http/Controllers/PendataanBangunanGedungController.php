@@ -1340,42 +1340,35 @@ public function datanewkicdokumen(Request $request, $id)
         'kicinduk_id' => $id, // <== ini penting
     ]);
 }
-
 public function datanewkicdokumennew(Request $request)
 {
     // Validasi input
     $validated = $request->validate([
-        'kicinduk_id'     => 'nullable|exists:kicinduks,id',
+        'kicinduk_id'     => 'required|exists:kicinduks,id',
         'jenisbarang'     => 'nullable|string|max:255',
         'kodebarang'      => 'nullable|string|max:255',
         'register'        => 'nullable|string|max:255',
         'kondisibangunan' => 'nullable|in:Baik,Tidak Baik',
         'bertingkat'      => 'nullable|in:Ya,Tidak',
         'beton'           => 'nullable|in:Ya,Tidak',
-        'luaslantai'      => 'nullable|string|max:255',
+        'luaslantai'      => 'nullable|numeric',
         'alamat'          => 'nullable|string|max:500',
     ], [
-        'kicinduk_id.exists'      => 'KIC induk tidak valid.',
-        'kondisibangunan.in'      => 'Pilih antara Baik atau Tidak Baik.',
-        'bertingkat.in'           => 'Pilih antara Ya atau Tidak.',
-        'beton.in'                => 'Pilih antara Ya atau Tidak.',
+        'kicinduk_id.required'  => 'ID KIC induk wajib diisi.',
+        'kicinduk_id.exists'    => 'KIC induk tidak valid.',
+        'kondisibangunan.in'    => 'Pilih antara Baik atau Tidak Baik.',
+        'bertingkat.in'         => 'Pilih antara Ya atau Tidak.',
+        'beton.in'              => 'Pilih antara Ya atau Tidak.',
+        'luaslantai.numeric'    => 'Luas lantai harus berupa angka.',
     ]);
 
-    // Simpan ke database
-    kicdokumen::create([
-        'kicinduk_id'     => $validated['kicinduk_id'] ?? null,
-        'jenisbarang'     => $validated['jenisbarang'] ?? null,
-        'kodebarang'      => $validated['kodebarang'] ?? null,
-        'register'        => $validated['register'] ?? null,
-        'kondisibangunan' => $validated['kondisibangunan'] ?? null,
-        'bertingkat'      => $validated['bertingkat'] ?? null,
-        'beton'           => $validated['beton'] ?? null,
-        'luaslantai'      => $validated['luaslantai'] ?? null,
-        'alamat'          => $validated['alamat'] ?? null,
-    ]);
+    // Simpan ke database (pastikan di Model KicDokumen sudah ada $fillable untuk semua atribut ini)
+    $kicDokumen = KicDokumen::create($validated);
 
-    session()->flash('create', 'Data dokumen KIC berhasil disimpan!');
-    return redirect()->route('bedatabangunankicshow');
+    // Redirect ke halaman detail dengan {id} = kicinduk_id, sekaligus flash message
+    return redirect()
+        ->route('bedatabangunankicshow', ['id' => $kicDokumen->kicinduk_id])
+        ->with('create', 'Data dokumen KIC berhasil disimpan!');
 }
 
 }
