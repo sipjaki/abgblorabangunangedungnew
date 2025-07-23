@@ -402,7 +402,7 @@ th {
 <td style="text-align: center;">
     <a href="{{ route('bebangunangedunginformasi', $item->id) }}"
         class="button-baru">
-        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Informasi
+        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Struktur
     </a>
 </td>
 
