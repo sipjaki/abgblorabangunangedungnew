@@ -1344,28 +1344,40 @@ public function datanewkicdokumennew(Request $request)
 {
     // Validasi input
     $validated = $request->validate([
-        'kicinduk_id'     => 'required|exists:kicinduks,id',
-        'jenisbarang'     => 'nullable|string|max:255',
-        'kodebarang'      => 'nullable|string|max:255',
-        'register'        => 'nullable|string|max:255',
-        'kondisibangunan' => 'nullable|in:Baik,Tidak Baik',
-        'bertingkat'      => 'nullable|in:Ya,Tidak',
-        'beton'           => 'nullable|in:Ya,Tidak',
-        'luaslantai'      => 'nullable|numeric',
-        'alamat'          => 'nullable|string|max:500',
+        'kicinduk_id'       => 'required|string',
+        'jenisbarang'       => 'nullable|string|max:255',
+        'kodebarang'        => 'nullable|string|max:255',
+        'register'          => 'nullable|string|max:255',
+        'kondisibangunan'   => 'nullable|in:Baik,Tidak Baik',
+        'bertingkat'        => 'nullable|in:Ya,Tidak',
+        'beton'             => 'nullable|in:Ya,Tidak',
+        'luaslantai'        => 'nullable|numeric',
+        'alamat'            => 'nullable|string|max:500',
+
+        // Tambahan
+        'tanggal'           => 'nullable|date',
+        'nomor'             => 'nullable|string|max:255',
+        'luas'              => 'nullable|string|max:255',
+        'status_tanah'      => 'nullable|string|max:255',
+        'nomor_kode_tanah'  => 'nullable|string|max:255',
+        'asal_usul'         => 'nullable|string|string',
+        'harga'             => 'nullable|string|max:255',
+        'keterangan'        => 'nullable|string',
+        'nosertifikat'      => 'nullable|string|max:255',
     ], [
-        'kicinduk_id.required'  => 'ID KIC induk wajib diisi.',
-        'kicinduk_id.exists'    => 'KIC induk tidak valid.',
-        'kondisibangunan.in'    => 'Pilih antara Baik atau Tidak Baik.',
-        'bertingkat.in'         => 'Pilih antara Ya atau Tidak.',
-        'beton.in'              => 'Pilih antara Ya atau Tidak.',
-        'luaslantai.numeric'    => 'Luas lantai harus berupa angka.',
+        'kicinduk_id.required'    => 'ID KIC induk wajib diisi.',
+        'kicinduk_id.exists'      => 'KIC induk tidak valid.',
+        'kondisibangunan.in'      => 'Pilih antara Baik atau Tidak Baik.',
+        'bertingkat.in'           => 'Pilih antara Ya atau Tidak.',
+        'beton.in'                => 'Pilih antara Ya atau Tidak.',
+        'luaslantai.numeric'      => 'Luas lantai harus berupa angka.',
+        'asal_usul.in'            => 'Pilih antara Pembelian, Inventaris, Mutasi, atau Hibah.',
     ]);
 
-    // Simpan ke database (pastikan di Model KicDokumen sudah ada $fillable untuk semua atribut ini)
-    $kicDokumen = KicDokumen::create($validated);
+    // Simpan ke database
+    $kicDokumen = kicdokumen::create($validated);
 
-    // Redirect ke halaman detail dengan {id} = kicinduk_id, sekaligus flash message
+    // Redirect ke halaman detail
     return redirect()
         ->route('bedatabangunankicshow', ['id' => $kicDokumen->kicinduk_id])
         ->with('create', 'Data dokumen KIC berhasil disimpan!');
