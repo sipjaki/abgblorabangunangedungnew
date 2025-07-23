@@ -24542,8 +24542,8 @@ kicinduk::create([
     'user_id' => 47,
     'satuankerja_id' => 1,
     'kodelokasi' => '010101',
-    'bidang' => '-',
-    'subbidang' => '-',
+    'bidang' => null,
+    'subbidang' => null,
     'tanggalinput' => Carbon::now(),
 ]);
 
