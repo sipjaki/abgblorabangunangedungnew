@@ -313,7 +313,7 @@ th {
 <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
     <i class="bi bi-building-fill-check me-3" style="font-size: 18px;"></i>
-    Informasi Data Struktur Bangunan Gedung Kabupaten Blora
+    Informasi Data Status Bangunan Gedung Kabupaten Blora
 </h5>
 
 <div class="row">
