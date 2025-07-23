@@ -628,6 +628,35 @@ public function beperjalanadinasbainternal($id)
     ]);
 }
 
+public function beperjalanadinasbainternalnew(Request $request, $id)
+{
+    $bantek = perjalanandinas::findOrFail($id);
+
+    // Validasi input teks
+    $request->validate([
+        'keteranganba1' => 'required|string|max:5000',
+        'keteranganba2' => 'nullable|string|max:5000',
+        'keteranganba3' => 'nullable|string|max:5000',
+        'keteranganba4' => 'nullable|string|max:5000',
+        'keteranganba5' => 'nullable|string|max:5000',
+        'keteranganba6' => 'nullable|string|max:5000',
+        'keteranganba7' => 'nullable|string|max:5000',
+    ]);
+
+    // Update field keterangan poin 1 - 7
+    $bantek->keteranganba1 = $request->input('keteranganba1');
+    $bantek->keteranganba2 = $request->input('keteranganba2');
+    $bantek->keteranganba3 = $request->input('keteranganba3');
+    $bantek->keteranganba4 = $request->input('keteranganba4');
+    $bantek->keteranganba5 = $request->input('keteranganba5');
+    $bantek->keteranganba6 = $request->input('keteranganba6');
+    $bantek->keteranganba7 = $request->input('keteranganba7');
+    $bantek->save();
+
+    session()->flash('update', 'Keterangan Berita Acara berhasil disimpan!');
+    return redirect("/beperjalanadinasba/{$bantek->id}");
+}
+
 }
 
 

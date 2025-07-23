@@ -780,7 +780,7 @@ Route::post('/beperjalanadinasbaupload/{id}', [PerjalanandinasController::class,
 
 Route::get('/beperjalanadinasbainternal/{id}', [PerjalanandinasController::class, 'beperjalanadinasbainternal'])->middleware('auth')->name('beperjalanadinasbainternal');
 
-// Route::post('/beperjalanadinasbaupload/{id}', [PerjalanandinasController::class, 'beperjalanadinasbaupload'])->middleware('auth')->name('beperjalanadinasbaupload');
+Route::post('/beperjalanadinasbainternalnew/{id}', [PerjalanandinasController::class, 'beperjalanadinasbainternalnew'])->middleware('auth')->name('beperjalanadinasbainternalnew');
 
 Route::get('/bedinaspetugasupdate/{id}', [PerjalanandinasController::class, 'bedinaspetugasupdate'])->middleware('auth')->name('bedinaspetugasupdate');
 Route::post('/bedinaspetugasnewupdate/{id}', [PerjalanandinasController::class, 'bedinaspetugasnewupdate'])->middleware('auth')->name('bedinaspetugasnewupdate');
