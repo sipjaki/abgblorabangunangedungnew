@@ -1316,5 +1316,30 @@ public function datanewkicnew(Request $request)
     return redirect()->route('bedatabangunankic');
 }
 
+
+public function datanewkicdokumen(Request $request, $id)
+{
+    $user = Auth::user();
+    $satuankerja = satuankerja::all();
+    $kecamatanList = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+
+    // Jika request ajax (misalnya untuk dynamic dropdown kelurahan)
+    if ($request->ajax() && $request->has('kecamatan_id')) {
+        $desa = kelurahandesa::where('kecamatanblora_id', $request->kecamatan_id)->get();
+        return response()->json($desa);
+    }
+
+    // Kirim ID ke view agar bisa digunakan di form (misal hidden input)
+    return view('backend.02_pendataanbangunangedung.07_datakic.04_buatdatakicdokumen', [
+        'title' => 'Buat Data KIC Dokumen Pendataan Bangunan Gedung',
+        'user' => $user,
+        'satuankerja' => $satuankerja,
+        'datakelurahan' => $datakelurahan,
+        'kecamatanList' => $kecamatanList,
+        'kicinduk_id' => $id, // <== ini penting
+    ]);
+}
+
 }
 
