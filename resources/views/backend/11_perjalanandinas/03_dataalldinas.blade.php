@@ -237,18 +237,18 @@ th {
 
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Surat Tugas </th>
                                     <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Buat Berita Acara</th>
                                     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th> --}}
-{{-- <th style="background-color: #ADD8E6;">
-    <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Status Lapangan
-</th> --}}
+                                    {{-- <th style="background-color: #ADD8E6;">
+                                        <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i> Status Lapangan
+                                    </th> --}}
 
-                             {{-- <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
-</th> --}}
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Dukung
-</th>
+                                    {{-- <th style="background-color: #ADD8E6;">
+                                        <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
+                                    </th> --}}
+                                    <th style="background-color: #ADD8E6;">
+                                        <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Dukung
+                                    </th>
+                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Buat Berita Acara</th>
                              {{-- <th style="background-color: #ADD8E6;">
     <i class="fas fa-database" style="margin-right: 6px;"></i> Status
 </th>
@@ -586,6 +586,18 @@ th {
     <a href="{{ route('beperjalanadinasba', $item->id) }}"
         class="button-baru">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Dokumen
+    </a>
+
+    </div>
+</td>
+
+<td style="text-align: center; vertical-align: middle; width: 100%;">
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
+
+
+    <a href="{{ route('beperjalanadinasba', $item->id) }}"
+        class="button-berkas">
+        <i class="bi bi-folder" style="margin-right: 5px;"></i> Buat Berita Acara
     </a>
 
     </div>
