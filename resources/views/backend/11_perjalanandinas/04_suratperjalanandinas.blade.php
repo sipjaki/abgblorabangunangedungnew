@@ -442,6 +442,28 @@ th {
     <td style="{{ $cellStyle }}">{{$data->pendampingdinas->pangkat}}</td>
     <td style="{{ $cellStyle }}"></td>
   </tr>
+  {{-- Baris untuk pendampingdinas2 --}}
+@if($data->pendampingdinas2)
+<tr>
+    <td style="{{ $cellStyle }}"></td>
+    <td style="{{ $cellStyle }} height: 40px;">{{ $data->pendampingdinas2->namalengkap }}</td>
+    <td style="{{ $cellStyle }}">{{ $data->pendampingdinas2->nip }}</td>
+    <td style="{{ $cellStyle }}">{{ $data->pendampingdinas2->pangkat }}</td>
+    <td style="{{ $cellStyle }}"></td>
+</tr>
+@endif
+
+{{-- Baris untuk pendampingdinas3 --}}
+@if($data->pendampingdinas3)
+<tr>
+    <td style="{{ $cellStyle }}"></td>
+    <td style="{{ $cellStyle }} height: 40px;">{{ $data->pendampingdinas3->namalengkap }}</td>
+    <td style="{{ $cellStyle }}">{{ $data->pendampingdinas3->nip }}</td>
+    <td style="{{ $cellStyle }}">{{ $data->pendampingdinas3->pangkat }}</td>
+    <td style="{{ $cellStyle }}"></td>
+</tr>
+@endif
+
   <tr>
     <td style="{{ $cellStyle }}">8.</td>
     <td style="{{ $cellStyle }}">Pembebanan Anggaran <br> - Kegiatan </td>

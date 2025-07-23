@@ -25979,6 +25979,226 @@ databgpeprofilbangunangedung::create([
     'tanggalrehabilitasi' => '2008-07-01'
 ]);
 
+databgpeprofilbangunangedung::create([
+    'id' => 229,
+    'databgkepemilikan_id' => 229,
+    'luastanah' => '2427',
+    'namabangunan' => 'Gedung H',
+    'alamatbangunan' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '15',
+    'totalluaslantai' => '15',
+    'tinggibangunan' => '3.5',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '1982-07-01',
+    'tanggalselesaikonstruksi' => '1982-09-01',
+    'tanggalrehabilitasi' => null,
+]);
+
+databgpeprofilbangunangedung::create([
+    'id' => 230,
+    'databgkepemilikan_id' => 230,
+    'luastanah' => '2427',
+    'namabangunan' => 'Gedung C',
+    'alamatbangunan' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '9',
+    'totalluaslantai' => '9',
+    'tinggibangunan' => '3',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2013-09-05',
+    'tanggalselesaikonstruksi' => '2013-09-12',
+    'tanggalrehabilitasi' => null,
+]);
+
+databgpeprofilbangunangedung::create([
+    'id' => 231,
+    'databgkepemilikan_id' => 231,
+    'luastanah' => '2427',
+    'namabangunan' => 'Gedung D',
+    'alamatbangunan' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '64',
+    'totalluaslantai' => '64',
+    'tinggibangunan' => '5.5',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2014-07-01',
+    'tanggalselesaikonstruksi' => '2014-09-01',
+    'tanggalrehabilitasi' => null,
+]);
+
+databgpeprofilbangunangedung::create([
+    'id' => 232,
+    'databgkepemilikan_id' => 232,
+    'luastanah' => '2427',
+    'namabangunan' => 'Gedung E',
+    'alamatbangunan' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '126',
+    'totalluaslantai' => '126',
+    'tinggibangunan' => '6',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '1982-07-01',
+    'tanggalselesaikonstruksi' => '1982-09-01',
+    'tanggalrehabilitasi' => '2008-07-01',
+]);
+
+databgpeprofilbangunangedung::create([
+    'id' => 233,
+    'databgkepemilikan_id' => 233,
+    'luastanah' => '2427',
+    'namabangunan' => 'Gedung F',
+    'alamatbangunan' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '126',
+    'totalluaslantai' => '126',
+    'tinggibangunan' => '6',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => null,
+    'tanggalselesaikonstruksi' => null,
+    'tanggalrehabilitasi' => '2014-07-01',
+]);
+
+databgpeprofilbangunangedung::create([
+    'id' => 234,
+    'databgkepemilikan_id' => 234,
+    'luastanah' => '2427',
+    'namabangunan' => 'Gedung I',
+    'alamatbangunan' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
+    'fungsibangunan' => 'Keagamaan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '36',
+    'totalluaslantai' => '36',
+    'tinggibangunan' => '6',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2015-04-01',
+    'tanggalselesaikonstruksi' => '2015-01-01',
+    'tanggalrehabilitasi' => null,
+]);
+
+
+databgpeprofilbangunangedung::create([
+    'id' => 245,
+    'databgkepemilikan_id' => 245,
+    'luastanah' => '2730',
+    'namabangunan' => 'Gedung E',
+    'alamatbangunan' => 'Jl. GOR Mustika No. 1, Karangjati, Blora',
+    'fungsibangunan' => 'Hunian',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '64',
+    'totalluaslantai' => '64',
+    'tinggibangunan' => '4',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '1983-01-01',
+    'tanggalselesaikonstruksi' => '1983-01-01',
+    'tanggalrehabilitasi' => null,
+]);
+
+databgpeprofilbangunangedung::create([
+    'id' => 246,
+    'databgkepemilikan_id' => 246,
+    'luastanah' => '2038',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => 'Jl. Jendral Sudirman no. 157, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '297',
+    'totalluaslantai' => '297',
+    'tinggibangunan' => '5.5',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2012-01-01',
+    'tanggalselesaikonstruksi' => '2012-01-01',
+    'tanggalrehabilitasi' => null,
+]);
+
+databgpeprofilbangunangedung::create([
+    'id' => 247,
+    'databgkepemilikan_id' => 247,
+    'luastanah' => '2038',
+    'namabangunan' => 'Gedung B',
+    'alamatbangunan' => 'Jl. Jendral Sudirman no. 157, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '346.5',
+    'totalluaslantai' => '346.5',
+    'tinggibangunan' => '5.5',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2019-01-01',
+    'tanggalselesaikonstruksi' => '2019-01-01',
+    'tanggalrehabilitasi' => null,
+]);
+
+databgpeprofilbangunangedung::create([
+    'id' => 248,
+    'databgkepemilikan_id' => 248,
+    'luastanah' => '2038',
+    'namabangunan' => 'Gedung B1',
+    'alamatbangunan' => 'Jl. Jendral Sudirman no. 157, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '82',
+    'totalluaslantai' => '82',
+    'tinggibangunan' => '5.5',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2011-01-01',
+    'tanggalselesaikonstruksi' => '2011-01-01',
+    'tanggalrehabilitasi' => null,
+]);
+
+databgpeprofilbangunangedung::create([
+    'id' => 249,
+    'databgkepemilikan_id' => 249,
+    'luastanah' => '2038',
+    'namabangunan' => 'Gedung C',
+    'alamatbangunan' => 'Jl. Jendral Sudirman no. 157, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '72',
+    'totalluaslantai' => '72',
+    'tinggibangunan' => '5.5',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2011-01-01',
+    'tanggalselesaikonstruksi' => '2011-01-01',
+    'tanggalrehabilitasi' => null,
+]);
+
+databgpeprofilbangunangedung::create([
+    'id' => 250,
+    'databgkepemilikan_id' => 250,
+    'luastanah' => '2038',
+    'namabangunan' => 'Gedung F',
+    'alamatbangunan' => 'Jl. Jendral Sudirman no. 157, Blora',
+    'fungsibangunan' => 'Sosial Budaya',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '8',
+    'totalluaslantai' => '8',
+    'tinggibangunan' => '3',
+    'luasbasement' => '',
+    'koordinatbangunan' => '',
+    'tanggalmulaikonstruksi' => '2011-01-01',
+    'tanggalselesaikonstruksi' => '2011-01-01',
+    'tanggalrehabilitasi' => null,
+]);
+
+
+
+
 // BARU SAMPAI SINI
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL BANGUNAN GEDUNG
