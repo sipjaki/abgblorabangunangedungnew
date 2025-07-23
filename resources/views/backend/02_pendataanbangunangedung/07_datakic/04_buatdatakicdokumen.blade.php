@@ -250,32 +250,42 @@ th {
         <label class="form-label" for="kondisibangunan">
             <i class="bi bi-hospital-fill me-2 text-danger"></i> Kondisi Bangunan
         </label>
-        <input type="text" class="form-control @error('kondisibangunan') is-invalid @enderror" id="kondisibangunan" name="kondisibangunan" value="{{ old('kondisibangunan', $data->kondisibangunan ?? '') }}">
+        <select class="form-select @error('kondisibangunan') is-invalid @enderror" id="kondisibangunan" name="kondisibangunan">
+            <option value="">-- Pilih Kondisi --</option>
+            <option value="Baik" {{ old('kondisibangunan', $data->kondisibangunan ?? '') == 'Baik' ? 'selected' : '' }}>Baik</option>
+            <option value="Tidak Baik" {{ old('kondisibangunan', $data->kondisibangunan ?? '') == 'Tidak Baik' ? 'selected' : '' }}>Tidak Baik</option>
+        </select>
         @error('kondisibangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
-
-{{-- Bertingkat --}}
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="bertingkat">
             <i class="bi bi-building-up me-2 text-secondary"></i> Bertingkat (Ya/Tidak)
         </label>
-        <input type="text" class="form-control @error('bertingkat') is-invalid @enderror" id="bertingkat" name="bertingkat" value="{{ old('bertingkat', $data->bertingkat ?? '') }}">
+        <select class="form-select @error('bertingkat') is-invalid @enderror" id="bertingkat" name="bertingkat">
+            <option value="">-- Pilih --</option>
+            <option value="Ya" {{ old('bertingkat', $data->bertingkat ?? '') == 'Ya' ? 'selected' : '' }}>Ya</option>
+            <option value="Tidak" {{ old('bertingkat', $data->bertingkat ?? '') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+        </select>
         @error('bertingkat') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
 
-{{-- Beton --}}
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="beton">
             <i class="bi bi-bricks me-2 text-warning"></i> Beton (Ya/Tidak)
         </label>
-        <input type="text" class="form-control @error('beton') is-invalid @enderror" id="beton" name="beton" value="{{ old('beton', $data->beton ?? '') }}">
+        <select class="form-select @error('beton') is-invalid @enderror" id="beton" name="beton">
+            <option value="">-- Pilih --</option>
+            <option value="Ya" {{ old('beton', $data->beton ?? '') == 'Ya' ? 'selected' : '' }}>Ya</option>
+            <option value="Tidak" {{ old('beton', $data->beton ?? '') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+        </select>
         @error('beton') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
+
 
 {{-- Luas Lantai --}}
 <div class="col-md-6">
