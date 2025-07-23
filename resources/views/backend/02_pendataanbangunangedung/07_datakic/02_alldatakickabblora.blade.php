@@ -150,6 +150,7 @@ th {
 
 
 
+                @include('backend.02_pendataanbangunangedung.07_datakic.00_statusinduk')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
