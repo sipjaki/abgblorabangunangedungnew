@@ -464,23 +464,25 @@ th {
     font-size: 12px;
   }
 </style>
-
+<br><br>
 <!-- Konten -->
     <!-- Tanda Tangan -->
     <div class="poppins-12">
       <div style="text-align: right; margin-bottom: 20px;">
-        Ditetapkan di Blora, pada tanggal [Tanggal Lengkap] 2025
-      </div>
+    Ditetapkan di Blora, <br> pada tanggal {{ \Carbon\Carbon::parse($data->tanggalsuratterbit)->translatedFormat('d F Y') }}
+
+    </div>
 
       <table style="width: 100%; border-collapse: collapse;">
         <tr>
           <td style="width: 50%; vertical-align: top;">
-            <div style="margin-bottom: 6px;">Pegawai / Pegawai yang diperintah:</div>
+              <div style="font-weight: bold;">Pegawai yang di perintah</div>
+            {{-- <div style="margin-bottom: 6px;">Pegawai / Pegawai yang diperintah:</div> --}}
             <div style="margin-top: 40px; font-weight: bold;">MUHAMMAD YUSUF ZAQIE, SE</div>
             <div>NIP 19920611 202221 1 030</div>
           </td>
           <td style="width: 50%; text-align: center;">
-            <div style="font-weight: bold;">PEJABAT PEMBUAT KOMITMEN</div>
+            <div style="font-weight: bold;">Pejabat Pembuat Komitmen</div>
             <div style="height: 60px;"></div>
             <div style="font-weight: bold;">MOHAMAD ARIF HIDAYAT, ST</div>
             <div>NIP 19710508 199803 1 011</div>
