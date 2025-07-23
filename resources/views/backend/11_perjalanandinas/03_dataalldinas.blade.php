@@ -614,9 +614,9 @@ th {
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
 
-    <a href="{{ route('beperjalanadinasbainternal', $item->id) }}"
+    <a href="{{ route('dataalldinassuratshow', $item->id) }}"
         class="button-berkas">
-        <i class="bi bi-folder" style="margin-right: 5px;"></i> Dok Berita Acara
+        <i class="bi bi-folder" style="margin-right: 5px;"></i> Hasil Berita Acara
     </a>
 
     </div>

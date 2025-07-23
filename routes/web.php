@@ -764,7 +764,10 @@ Route::get('/dataalldinassuratin', [PerjalanandinasController::class, 'dataalldi
 Route::get('/datastatistiksuratdinas', [PerjalanandinasController::class, 'datastatistiksuratdinas'])->name('datastatistiksuratdinas');
 
 Route::get('/dataalldinassuratshow/{id}', [PerjalanandinasController::class, 'dataalldinassuratshow'])->middleware('auth')->name('dataalldinassuratshow.detail');
+
 Route::get('/dataalldinassuratlap/{id}', [PerjalanandinasController::class, 'dataalldinassuratlap'])->middleware('auth')->name('dataalldinassuratlap.show');
+
+Route::get('/databadokdinasint/{id}', [PerjalanandinasController::class, 'databadokdinasint'])->middleware('auth')->name('databadokdinasint');
 
 Route::delete('/dataalldinassuratdelete/{id}', [PerjalanandinasController::class, 'dataalldinassuratdelete'])->middleware('auth')->name('dataalldinassuratdelete');
 

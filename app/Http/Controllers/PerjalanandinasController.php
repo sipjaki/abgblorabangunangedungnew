@@ -657,6 +657,24 @@ public function beperjalanadinasbainternalnew(Request $request, $id)
     return redirect("/beperjalanadinasba/{$bantek->id}");
 }
 
+
+// ==================================================
+public function databadokdinasint(Request $request, $id)
+{
+    // Ambil user login
+    $user = Auth::user();
+    // Cari data pbg berdasarkan ID
+    $data = perjalanandinas::findOrFail($id);
+    // Kirim data ke view
+    return view('backend.11_perjalanandinas.12_basuratdinas', [
+        'title' => 'Berita Acara Perjalanan Dinas',
+        'title_halaman' => 'Berita Acara Perjalanan Dinas',
+        'user' => $user,
+        'data' => $data,
+
+    ]);
+}
+
 }
 
 
