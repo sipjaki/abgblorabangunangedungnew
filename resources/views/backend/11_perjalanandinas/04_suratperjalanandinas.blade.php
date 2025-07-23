@@ -451,31 +451,35 @@ th {
   </tr> --}}
 </table>
 
-  <div style="margin-bottom: 20px;">
-    <div style="margin-bottom: 6px;">Pegawai/Pegawai yang diperintah</div>
-    <div style="display: flex;">
-      <div style="width: 150px;">Ditetapkan di</div>
-      <div>: Biak</div>
-    </div>
-    <div style="display: flex;">
-      <div style="width: 150px;">Pada tanggal</div>
-      <div>: [Tanggal Lengkap] 2025</div>
-    </div>
-    <div style="margin-top: 10px; font-weight: bold;">PEJABAT PEMBUAT KOMITMEN</div>
-  </div>
+<!-- Tambahkan link Google Font Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-  <div style="display: flex; justify-content: space-between; margin-top: 60px;">
-    <div style="width: 45%; text-align: center;">
-      <div style="height: 60px; margin-bottom: 10px;">[Tanda Tangan]</div>
-      <div style="font-weight: bold;">MUHAMMAD YUSUF ZAQIE, SE</div>
-      <div>NIP 19920611 202221 1 030</div>
-    </div>
-    <div style="width: 45%; text-align: center;">
-      <div style="height: 60px; margin-bottom: 10px;">[Tanda Tangan]</div>
-      <div style="font-weight: bold;">MOHAMAD ARIF HIDAYAT, ST</div>
-      <div>NIP 19710508 199803 1 011</div>
-    </div>
+<div style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; font-size: 12px;">
+  <div style="margin-bottom: 6px;">Pegawai/Pegawai yang diperintah</div>
+  <div style="display: flex;">
+    <div style="width: 150px;">Ditetapkan di</div>
+    <div>: Biak</div>
   </div>
+  <div style="display: flex;">
+    <div style="width: 150px;">Pada tanggal</div>
+    <div>: [Tanggal Lengkap] 2025</div>
+  </div>
+  <div style="margin-top: 10px; font-weight: bold;">PEJABAT PEMBUAT KOMITMEN</div>
+</div>
+
+<div style="display: flex; justify-content: space-between; margin-top: 60px; font-family: 'Poppins', sans-serif; font-size: 12px;">
+  <div style="width: 45%; text-align: center;">
+    <div style="height: 60px; margin-bottom: 10px;">[Tanda Tangan]</div>
+    <div style="font-weight: bold;">MUHAMMAD YUSUF ZAQIE, SE</div>
+    <div>NIP 19920611 202221 1 030</div>
+  </div>
+  <div style="width: 45%; text-align: center;">
+    <div style="height: 60px; margin-bottom: 10px;">[Tanda Tangan]</div>
+    <div style="font-weight: bold;">MOHAMAD ARIF HIDAYAT, ST</div>
+    <div>NIP 19710508 199803 1 011</div>
+  </div>
+</div>
+
 
 </div>
 </body>
