@@ -25495,19 +25495,20 @@ kicdokumen::create(['id'=>449,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG K
 kicdokumen::create(['id'=>450,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00014.00008.2010-1.3.3.01.01.01.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>6,'alamat'=>'Gembyungan, RT.1/RW.1, Dk.Gembyungan, Ds./Kel. Gembyungan']);
 
 // INPUT KIC STRUKTUR
-
-kicdokumen::updateOrCreate([
-    'id' => 1,
-    'tanggal' => null,
-    'nomor' => null,
-    'luas' => null,
-    'status_tanah' => null,
-    'nomor_kode_tanah' => null,
-    'asal_usul' => 'INVENTARIS',
-    'harga' => '281320000',
-    'keterangan' => '12450.1289.C / GEDUNG 2',
-    'nosertifikat' => '010101.00000.00000',
-]);
+kicdokumen::updateOrCreate(
+    ['id' => 1], // kondisi pencarian (where)
+    [
+        'tanggal' => null,
+        'nomor' => null,
+        'luas' => null,
+        'status_tanah' => null,
+        'nomor_kode_tanah' => null,
+        'asal_usul' => 'INVENTARIS',
+        'harga' => '281320000',
+        'keterangan' => '12450.1289.C / GEDUNG 2',
+        'nosertifikat' => '010101.00000.00000',
+    ]
+);
 
 
 
