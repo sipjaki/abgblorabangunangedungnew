@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('kicinduks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('satuankerja_id')->nullable()->index();
+            $table->foreignId('user_id')->nullable()->index();
             $table->string('kodelokasi')->nullable();
             $table->string('bidang')->nullable();
             $table->string('subbidang')->nullable();

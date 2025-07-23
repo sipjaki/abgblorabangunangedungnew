@@ -24539,6 +24539,7 @@ satuankerja::create(['id' => 41, 'satuankerja' => 'Badan Kesatuan Bangsa dan Pol
 
 
 kicinduk::create(['id' => 1,
+'user_id' => 47,
 'satuankerja_id' => 1,
 'kodelokasi' => '010101',
 'bidang' => '-',

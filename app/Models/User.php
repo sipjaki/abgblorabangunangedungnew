@@ -127,5 +127,10 @@ class User extends Authenticatable
         return $this->hasMany(databgkepemilikan::class);
     }
 
+    public function kicinduk()
+    {
+        return $this->hasMany(kicinduk::class);
+    }
+
 
 }
