@@ -486,7 +486,6 @@ th {
     font-size: 12px;
   }
 </style>
-<br>
 <!-- Konten -->
     <!-- Tanda Tangan -->
     <div class="poppins-12">
@@ -495,7 +494,7 @@ th {
 
     </div>
 
-<div style="text-align: center;">
+<div style="text-align: center;" style="margin-top:-10px;">
   <table style="width: 80%; margin: 0 auto; border-collapse: collapse;">
     <tr>
       <td style="width: 50%; vertical-align: top; text-align: center;">
