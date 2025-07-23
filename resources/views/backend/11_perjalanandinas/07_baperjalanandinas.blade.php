@@ -202,7 +202,7 @@ th {
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="berkasberitaacara">
-            <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Berkas Berita Acara (PDF)
+            <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: darkred;"></i> Upload Dokumen (Jika Diperlukan)
         </label>
         <input
             type="file"

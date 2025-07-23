@@ -353,7 +353,7 @@ public function beperjalanadinasba($id)
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
     return view('backend.11_perjalanandinas.07_baperjalanandinas', [
-        'title' => 'Upload Berita Acara Perjalanan Dinas',
+        'title' => 'Upload Dokumen Pendukung',
         'data' => $databantuanteknis,
         'user' => Auth::user()
     ]);

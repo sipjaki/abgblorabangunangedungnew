@@ -246,7 +246,7 @@ th {
     <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
 </th> --}}
                              <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Berita Acara Perjalanan
+    <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Dukung
 </th>
                              {{-- <th style="background-color: #ADD8E6;">
     <i class="fas fa-database" style="margin-right: 6px;"></i> Status
@@ -583,7 +583,7 @@ th {
 
     <a href="{{ route('beperjalanadinasba', $item->id) }}"
         class="button-baru">
-        <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berita Acara
+        <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Dokumen
     </a>
 
     </div>
