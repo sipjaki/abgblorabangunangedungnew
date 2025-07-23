@@ -102,7 +102,7 @@ Route::get('/bedatabangunankicshow/{id}', [PendataanBangunanGedungController::cl
 Route::delete('/bedatabangudokkicdelete/{id}', [PendataanBangunanGedungController::class, 'bedatabangudokkicdelete'])->middleware('auth')->name('bedatabangudokkicdelete');
 
 Route::get('/datanewkic', [PendataanBangunanGedungController::class, 'datanewkic'])->middleware('auth')->name('datanewkic');
-// Route::post('/datanewpendataanbgnew', [PendataanBangunanGedungController::class, 'datanewpendataanbgnew'])->middleware('auth')->name('datanewpendataanbgnew');
+Route::post('/datanewkicnew', [PendataanBangunanGedungController::class, 'datanewkicnew'])->middleware('auth')->name('datanewkicnew');
 
 // 01 PENDATAAN BANGUNAN GEDUNG PROFIL STATUS TANAH
 

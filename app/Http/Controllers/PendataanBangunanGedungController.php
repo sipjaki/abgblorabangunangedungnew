@@ -1285,5 +1285,36 @@ public function datanewkic(Request $request)
     ]);
 }
 
+
+public function datanewkicnew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'user_id' => 'nullable|string',
+        'satuankerja_id' => 'nullable|string',
+        'kodelokasi' => 'nullable|string|max:255',
+        'bidang' => 'nullable|string|max:255',
+        'subbidang' => 'nullable|string|max:255',
+        'tanggalinput' => 'nullable|date',
+    ], [
+        'user_id.exists' => 'User tidak valid.',
+        'satuankerja_id.exists' => 'Satuan kerja tidak valid.',
+        'tanggalinput.date' => 'Format tanggal tidak valid.',
+    ]);
+
+    // Simpan data ke database
+    kicinduk::create([
+        'user_id' => $validated['user_id'] ?? null,
+        'satuankerja_id' => $validated['satuankerja_id'] ?? null,
+        'kodelokasi' => $validated['kodelokasi'] ?? null,
+        'bidang' => $validated['bidang'] ?? null,
+        'subbidang' => $validated['subbidang'] ?? null,
+        'tanggalinput' => $validated['tanggalinput'] ?? now(),
+    ]);
+
+    session()->flash('create', 'Data KIC baru berhasil disimpan!');
+    return redirect()->route('bedatabangunankic');
+}
+
 }
 
