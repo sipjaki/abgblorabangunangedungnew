@@ -407,11 +407,23 @@ th {
 
 
              <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-
-        <a href="{{ route('beperjalanadinasba', $item->id) }}"
-                    class="button-berkas">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Buat Berita Acara
-                </a>
+    <button
+        class="button-lolos"
+        type="button"
+        style="background-color: #10B981; color: white; cursor: not-allowed;"
+        disabled
+    >
+        <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
+    </button>
+  @elseif($item->verifikasi2 == 'belum')
+    <button class="button-dikembalikan" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+        <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
+    </button>
+  @else
+    <button class="button-validasinew" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+        <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
+    </button>
+  @endif
 </td>
 
 <!-- Modal Verifikasi2 -->
