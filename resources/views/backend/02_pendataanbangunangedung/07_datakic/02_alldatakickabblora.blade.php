@@ -254,13 +254,13 @@ th {
 @endphp
 
 @if ($firstItem && $firstItem->kicinduk)
-    <div style="display: flex; justify-content: flex-end;" class="mb-2">
+    {{-- <div style="display: flex; justify-content: flex-end;" class="mb-2"> --}}
         <a href="/datanewkicdokumen/{{ $firstItem->kicinduk->id }}" class="text-decoration-none">
             <div class="button-baru px-3 py-2 rounded shadow-sm d-flex align-items-center">
                 <i class="bi bi-plus-square me-2"></i> Create
             </div>
         </a>
-    </div>
+    {{-- </div> --}}
 @endif
 
 <div style="display: flex; justify-content: flex-end;">
