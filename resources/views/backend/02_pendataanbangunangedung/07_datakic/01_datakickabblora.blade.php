@@ -250,7 +250,7 @@ th {
 
 
 <div style="display: flex; justify-content: flex-end;">
-    <a href="/datanewpendataanbg" class="text-decoration-none">
+    <a href="/datanewkic" class="text-decoration-none">
     <div
         class="button-baru px-3 py-2 rounded shadow-sm d-flex align-items-center"
     >

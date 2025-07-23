@@ -93,6 +93,7 @@ Route::delete('/bebangunangedungdelete/{id}', [PendataanBangunanGedungController
 // DATA PROFIL TANAH
 Route::get('/bependataanbgtanah/{id}', [PendataanBangunanGedungController::class, 'bependataanbgtanah'])->middleware('auth')->name('bependataanbgtanah');
 
+// sarigit
 // KIC PENDATAAN BANGUNAN GEDUNG
 // Route::get('/bedatakic', [PendataanBangunanGedungController::class, 'bedatakic'])->middleware('auth')->name('bedatakic');
 Route::get('/bedatabangunankic', [PendataanBangunanGedungController::class, 'bedatabangunankic'])->middleware('auth')->name('bedatabangunankic');
@@ -100,6 +101,8 @@ Route::delete('/bedatabangunankicdelete/{id}', [PendataanBangunanGedungControlle
 Route::get('/bedatabangunankicshow/{id}', [PendataanBangunanGedungController::class, 'bedatabangunankicshow'])->middleware('auth')->name('bedatabangunankicshow');
 Route::delete('/bedatabangudokkicdelete/{id}', [PendataanBangunanGedungController::class, 'bedatabangudokkicdelete'])->middleware('auth')->name('bedatabangudokkicdelete');
 
+Route::get('/datanewkic', [PendataanBangunanGedungController::class, 'datanewkic'])->middleware('auth')->name('datanewkic');
+// Route::post('/datanewpendataanbgnew', [PendataanBangunanGedungController::class, 'datanewpendataanbgnew'])->middleware('auth')->name('datanewpendataanbgnew');
 
 // 01 PENDATAAN BANGUNAN GEDUNG PROFIL STATUS TANAH
 

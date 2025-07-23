@@ -1260,5 +1260,27 @@ public function bedatabangudokkicdelete($id)
 }
 
 
+public function datanewkic(Request $request)
+{
+    // Ambil user login
+    $user = Auth::user();
+    $kecamatanList = kecamatanblora::all();
+        $datakelurahan = kelurahandesa::all(); // Bisa kamu kosongkan kalau mau preload dinamis pakai JS
+
+        if ($request->ajax() && $request->has('kecamatan_id')) {
+            $desa = kelurahandesa::where('kecamatanblora_id', $request->kecamatan_id)->get();
+            return response()->json($desa);
+        }
+
+
+        // Kirim data ke view tanpa ambil dari database bantuanhibahbg
+        return view('backend.02_pendataanbangunangedung.07_datakic.03_buatdatakic', [
+            'title' => 'Buat Data KIC Pendataan Bangunan Gedung',
+            'user' => $user,
+            'datakelurahan' => $datakelurahan,
+        'kecamatanList' => $kecamatanList
+    ]);
+}
+
 }
 
