@@ -196,6 +196,7 @@ th {
                         <!--begin::Quick Example-->
                   <form action="{{ route('datanewkicnew') }}" method="POST" enctype="multipart/form-data">
           @csrf
+          @method('POST')
                             <!-- begin::Body -->
 
                             <input type="hidden" name="user_id" value="{{ $user->id }}">
