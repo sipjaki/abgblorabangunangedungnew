@@ -206,7 +206,7 @@ th {
         <th style="background-color: #ADD8E6;">
             <i class="bi bi-calendar-week text-danger"></i> Tanggal Surat Terbit
         </th>
-        <th style="background-color: #ADD8E6;">
+        {{-- <th style="background-color: #ADD8E6;">
             <i class="bi bi-journal-text text-danger"></i> Maksud Perjalanan
         </th>
         <th style="background-color: #ADD8E6;">
@@ -229,7 +229,7 @@ th {
         </th>
         <th style="background-color: #ADD8E6;">
             <i class="bi bi-person-lines-fill text-danger"></i> Pendamping
-        </th>
+        </th> --}}
         {{-- <th style="background-color: #ADD8E6;">
             <i class="bi bi-file-earmark-text text-danger"></i> Keterangan Kegiatan
         </th> --}}
@@ -266,14 +266,14 @@ th {
                                     <td>{{ $item->namapetugas->namalengkap ?? '-' }}</td>
 <td>{{ $item->dinasluasdalam }}</td>
 <td>{{ \Carbon\Carbon::parse($item->tanggalsuratterbit)->format('d/m/Y') }}</td>
-<td>{{ $item->maksudperjalanan }}</td>
+{{-- <td>{{ $item->maksudperjalanan }}</td>
 <td>{{ $item->angkutan }}</td>
 <td>{{ $item->tempatberangkat }}</td>
 <td>{{ $item->tempattujuan }}</td>
 <td>{{ $item->lamaperjalanan }}</td>
 <td>{{ \Carbon\Carbon::parse($item->mulaiperjalanan)->format('d/m/Y') }}</td>
 <td>{{ \Carbon\Carbon::parse($item->selesaiperjalanan)->format('d/m/Y') }}</td>
-<td>{{ $item->pendampingdinas->namalengkap ?? '-' }}</td>
+<td>{{ $item->pendampingdinas->namalengkap ?? '-' }}</td> --}}
 {{-- <td>{{ $item->ketkegiatan }}</td> --}}
 
 
