@@ -63,54 +63,61 @@
 
 
 <div class="row g-4">
-@php
+    @php
+    function berkasWrapper($value) {
+        return $value && trim($value) !== '-'
+            ? $value
+            : '<span class="button-berkas">Data Belum Diupdate</span>';
+    }
+
     $infoItems = [
         [
             'icon' => 'bi-calendar-event',
             'title' => 'Tanggal',
-            'value' => $data->tanggal ? \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') : '-',
+            'value' => $data->tanggal
+                ? \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y')
+                : '<span class="button-berkas">Data Belum Diupdate</span>',
         ],
         [
             'icon' => 'bi-hash',
             'title' => 'Nomor',
-            'value' => $data->nomor ?? '-',
+            'value' => berkasWrapper($data->nomor ?? null),
         ],
         [
             'icon' => 'bi-aspect-ratio',
             'title' => 'Luas (m²)',
-            'value' => $data->luas ?? '-',
+            'value' => berkasWrapper($data->luas ?? null),
         ],
         [
             'icon' => 'bi-tree',
             'title' => 'Status Tanah',
-            'value' => $data->status_tanah ?? '-',
+            'value' => berkasWrapper($data->status_tanah ?? null),
         ],
         [
             'icon' => 'bi-file-earmark-bar-graph',
             'title' => 'Nomor Kode Tanah',
-            'value' => $data->nomor_kode_tanah ?? '-',
+            'value' => berkasWrapper($data->nomor_kode_tanah ?? null),
         ],
         [
             'icon' => 'bi-box-arrow-in-up-right',
             'title' => 'Asal Usul',
-            'value' => $data->asal_usul ?? '-',
+            'value' => berkasWrapper($data->asal_usul ?? null),
         ],
         [
             'icon' => 'bi-cash-stack',
             'title' => 'Harga',
-            'value' => $data->harga ?? '-',
+            'value' => berkasWrapper($data->harga ?? null),
         ],
         [
             'icon' => 'bi-chat-left-text',
             'title' => 'Keterangan',
-            'value' => $data->keterangan ?? '-',
+            'value' => berkasWrapper($data->keterangan ?? null),
         ],
-     [
-    'icon' => 'bi-hash',
-    'title' => 'No Sertifikat',
-    'value' => $data->nosertifikat ?? '-',
-],
-
+        [
+            'icon' => 'bi-hash',
+            'title' => 'No Sertifikat',
+            'value' => berkasWrapper($data->nosertifikat ?? null),
+        ],
     ];
 @endphp
 
