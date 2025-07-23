@@ -495,22 +495,23 @@ th {
 
     </div>
 
-      <table style="width: 100%; border-collapse: collapse;">
-        <tr>
-          <td style="width: 50%; vertical-align: top;">
-              <div style="font-weight: bold; font-size:12px;">Pegawai yang di perintah</div>
-            {{-- <div style="margin-bottom: 6px;">Pegawai / Pegawai yang diperintah:</div> --}}
-            <div style="margin-top: 70px; font-weight: bold; font-size:12px;">MUHAMMAD YUSUF ZAQIE, SE</div>
-            <div style="font-size:12px;">NIP 19920611 202221 1 030</div>
-          </td>
-          <td style="width: 50%; text-align: center;">
-            <div style="font-weight: bold; font-size:12px;">Pejabat Pembuat Komitmen</div>
-            {{-- <div style="height: 60px;"></div> --}}
-            <div style="margin-top: 70px; font-weight: bold; font-size:12px;">MOHAMAD ARIF HIDAYAT, ST</div>
-            <div style="font-size:12px;">NIP 19710508 199803 1 011</div>
-          </td>
-        </tr>
-      </table>
+<div style="text-align: center;">
+  <table style="width: 80%; margin: 0 auto; border-collapse: collapse;">
+    <tr>
+      <td style="width: 50%; vertical-align: top; text-align: center;">
+        <div style="font-weight: bold; font-size:12px;">Pegawai yang diperintah</div>
+        <div style="margin-top: 70px; font-weight: bold; font-size:12px;">MUHAMMAD YUSUF ZAQIE, SE</div>
+        <div style="font-size:12px;">NIP 19920611 202221 1 030</div>
+      </td>
+      <td style="width: 50%; text-align: center;">
+        <div style="font-weight: bold; font-size:12px;">Pejabat Pembuat Komitmen</div>
+        <div style="margin-top: 70px; font-weight: bold; font-size:12px;">MOHAMAD ARIF HIDAYAT, ST</div>
+        <div style="font-size:12px;">NIP 19710508 199803 1 011</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
     </div>
 
 </div>
