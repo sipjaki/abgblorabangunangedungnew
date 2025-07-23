@@ -350,7 +350,7 @@ th {
       <div style="clear: both;"></div>
     </div>
 
-<p style="font-size: 14px; font-weight: bold; text-align: center; text-transform: uppercase; margin-bottom: 8px;">
+<p style="font-size: 14px; font-weight: bold; text-align: center; text-transform: uppercase; margin-bottom: 8px; margin-top:-15px;">
   SURAT PERJALANAN DINAS
 </p>
 
