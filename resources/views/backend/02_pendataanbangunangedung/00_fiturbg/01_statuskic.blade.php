@@ -1,7 +1,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
+@include('backend.00_administrator.00_baganterpisah.09_button')
 
 <!-- Container Form & Peta -->
 {{-- <div class="col-md-12">
