@@ -397,7 +397,7 @@ th {
                                         <a href="/bebujkkonstruksi/update/{{$item->id}}" class="button-berkas" title="Update">
                                             <i class="bi bi-pencil-square"></i>Update
                                         </a>
-                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
+                                        <a href="javascript:void(0)" class="button-hijau" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
