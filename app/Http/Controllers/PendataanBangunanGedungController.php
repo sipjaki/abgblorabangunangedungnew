@@ -1206,24 +1206,21 @@ public function bedatabangunankicdelete($id)
         return redirect()->back()->with('error', 'Item not found');
     }
 
-
-    public function bedatabangunankicshow($id)
+public function bedatabangunankicshow($id)
 {
     // Ambil user login
     $user = Auth::user();
 
-    // Cari data pbg berdasarkan ID
+    // Cari data induk berdasarkan ID
     $subdatapemilik = kicinduk::findOrFail($id);
 
-    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
-    $data = kicdokumen::where('kicinduk_id', $subdatapemilik->id)->paginate(25);
-    // $subdatapemilik = kicstruktur::where('kicinduk_id', $data->id)->paginate(15);
+    // Ambil data kicdokumen berdasarkan foreign key kicinduk_id, urut terbaru DESC
+    $data = kicdokumen::where('kicinduk_id', $subdatapemilik->id)
+        ->orderBy('created_at', 'desc') // atau ganti 'created_at' ke 'tanggal' jika ingin urut berdasarkan tanggal
+        ->paginate(25);
 
-    // Hitung nomor urut mulai untuk paginasi
+    // Hitung nomor urut mulai untuk pagination
     $start = ($data->currentPage() - 1) * $data->perPage() + 1;
-
-    // Ambil data jenis pengajuan
-    // $datapbgslf = jenispengajuanpbgslfper::all();
 
     // Kirim data ke view
     return view('backend.02_pendataanbangunangedung.07_datakic.02_alldatakickabblora', [
@@ -1231,7 +1228,6 @@ public function bedatabangunankicdelete($id)
         'title_halaman' => 'Informasi Data KIC Bangunan Gedung Kabupaten Blora',
         'user' => $user,
         'data' => $data,
-        // 'datapbgslf' => $datapbgslf,
         'subdatapemilik' => $subdatapemilik,
         'start' => $start,
     ]);
