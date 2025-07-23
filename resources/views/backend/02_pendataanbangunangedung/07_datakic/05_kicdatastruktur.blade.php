@@ -209,6 +209,12 @@ th {
     </div>
 </div>
 <br>
+<a href="{{ url()->previous() }}" class="text-decoration-none">
+    <button class="button-newvalidasi">
+        <i class="bi bi-arrow-left-circle me-2"></i> Kembali
+    </button>
+</a>
+
 
 {{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus') --}}
 
