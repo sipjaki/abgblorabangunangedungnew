@@ -310,6 +310,120 @@ th {
 </div>
 
 {{-- ======================================================================================================================= --}}
+<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
+    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
+    <i class="bi bi-building-fill-check me-3" style="font-size: 18px;"></i>
+    Informasi Data Struktur Bangunan Gedung Kabupaten Blora
+</h5>
+
+<div class="row">
+    {{-- Tanggal --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="tanggal">
+                <i class="bi bi-calendar-event me-2 text-primary"></i> Tanggal
+            </label>
+            <input type="date" class="form-control @error('tanggal') is-invalid @enderror" id="tanggal" name="tanggal"
+                value="{{ old('tanggal', $data->tanggal ?? '') }}">
+            @error('tanggal') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- Nomor --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="nomor">
+                <i class="bi bi-hash me-2 text-success"></i> Nomor
+            </label>
+            <input type="text" class="form-control @error('nomor') is-invalid @enderror" id="nomor" name="nomor"
+                value="{{ old('nomor', $data->nomor ?? '') }}">
+            @error('nomor') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- Luas --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="luas">
+                <i class="bi bi-aspect-ratio me-2 text-info"></i> Luas (m²)
+            </label>
+            <input type="number" step="0.01" class="form-control @error('luas') is-invalid @enderror" id="luas" name="luas"
+                value="{{ old('luas', $data->luas ?? '') }}">
+            @error('luas') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- Status Tanah --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="status_tanah">
+                <i class="bi bi-tree me-2 text-success"></i> Status Tanah
+            </label>
+            <input type="text" class="form-control @error('status_tanah') is-invalid @enderror" id="status_tanah" name="status_tanah"
+                value="{{ old('status_tanah', $data->status_tanah ?? '') }}">
+            @error('status_tanah') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- Nomor Kode Tanah --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="nomor_kode_tanah">
+                <i class="bi bi-file-earmark-bar-graph me-2 text-warning"></i> Nomor Kode Tanah
+            </label>
+            <input type="text" class="form-control @error('nomor_kode_tanah') is-invalid @enderror" id="nomor_kode_tanah" name="nomor_kode_tanah"
+                value="{{ old('nomor_kode_tanah', $data->nomor_kode_tanah ?? '') }}">
+            @error('nomor_kode_tanah') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- Asal Usul --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="asal_usul">
+                <i class="bi bi-box-arrow-in-up-right me-2 text-secondary"></i> Asal Usul
+            </label>
+            <input type="text" class="form-control @error('asal_usul') is-invalid @enderror" id="asal_usul" name="asal_usul"
+                value="{{ old('asal_usul', $data->asal_usul ?? '') }}">
+            @error('asal_usul') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- Harga --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="harga">
+                <i class="bi bi-cash-stack me-2 text-danger"></i> Harga (Rp)
+            </label>
+            <input type="number" step="1000" class="form-control @error('harga') is-invalid @enderror" id="harga" name="harga"
+                value="{{ old('harga', $data->harga ?? '') }}">
+            @error('harga') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- Keterangan --}}
+    <div class="col-md-12">
+        <div class="mb-3">
+            <label class="form-label" for="keterangan">
+                <i class="bi bi-chat-left-text me-2 text-primary"></i> Keterangan
+            </label>
+            <textarea class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" name="keterangan" rows="3">{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
+            @error('keterangan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    {{-- Nomor Sertifikat --}}
+    <div class="col-md-12">
+        <div class="mb-3">
+            <label class="form-label" for="nosertifikat">
+                <i class="bi bi-patch-check-fill me-2 text-success"></i> Nomor Sertifikat
+            </label>
+            <input type="text" class="form-control @error('nosertifikat') is-invalid @enderror" id="nosertifikat" name="nosertifikat"
+                value="{{ old('nosertifikat', $data->nosertifikat ?? '') }}">
+            @error('nosertifikat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+</div>
 
 
 {{-- ======================================================================================================================= --}}
