@@ -199,36 +199,32 @@ th {
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-<div class="col-md-12">
-    <div class="mb-4">
-        <div style="font-weight: bold; font-size: 14px; margin-bottom: 8px;">
-            <i class="bi bi-card-text" style="margin-right: 6px; color: navy;"></i>
+<div class="col-12">
+    <div class="p-3 mb-4 rounded shadow-sm" style="background-color: #f0f4f8; border-left: 5px solid navy;">
+        <h6 style="font-weight: bold; color: navy;">
+            <i class="bi bi-info-circle-fill me-2"></i>
             Keterangan Berita Acara
-        </div>
-        <div style="border: 1px solid #ccc; background-color: #f8f9fa; padding: 15px; border-radius: 5px; font-style: italic; font-size: 13px;">
+        </h6>
+        <p class="mt-2" style="font-size: 13px; font-style: italic; color: #333;">
             Silahkan tulis isi Berita Acara Anda sesuai dengan kebutuhan Perjalanan Dinas dimaksud.
-        </div>
+        </p>
     </div>
 </div>
 
-{{-- Input poin 1 - 7 --}}
 @for($i = 1; $i <= 7; $i++)
-    @php
-        $field = 'keteranganba' . $i;
-    @endphp
-    <div class="col-md-12">
-        <div class="mb-3">
-            <label for="{{ $field }}" class="form-label">
-                <i class="bi bi-list-check" style="color: navy;"></i> Keterangan Poin {{ $i }}
+    @php $field = 'keteranganba' . $i; @endphp
+    <div class="col-12">
+        <div class="mb-4">
+            <label for="{{ $field }}" class="form-label" style="font-weight: 600; color: #003366;">
+                <i class="bi bi-list-check me-1 text-primary"></i> Keterangan Poin {{ $i }}
             </label>
-            <input
-                type="text"
+            <textarea
                 id="{{ $field }}"
                 name="{{ $field }}"
-                class="form-control @error($field) is-invalid @enderror"
-                value="{{ old($field, $data->$field ?? '') }}"
-                placeholder="Tulis keterangan poin {{ $i }}..."
-            >
+                rows="4"
+                class="form-control rounded shadow-sm @error($field) is-invalid @enderror"
+                style="resize: vertical; font-size: 13px;"
+                placeholder="Tulis keterangan poin {{ $i }} di sini...">{{ old($field, $data->$field ?? '') }}</textarea>
             @error($field)
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror

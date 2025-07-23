@@ -28,13 +28,13 @@ return new class extends Migration
             $table->foreignId('pendamping3_id')->nullable();
             $table->string('ketkegiatan')->nullable();
 
-            $table->string('keteranganba1')->nullable();
-            $table->string('keteranganba2')->nullable();
-            $table->string('keteranganba3')->nullable();
-            $table->string('keteranganba4')->nullable();
-            $table->string('keteranganba5')->nullable();
-            $table->string('keteranganba6')->nullable();
-            $table->string('keteranganba7')->nullable();
+            $table->text('keteranganba1')->nullable();
+            $table->text('keteranganba2')->nullable();
+            $table->text('keteranganba3')->nullable();
+            $table->text('keteranganba4')->nullable();
+            $table->text('keteranganba5')->nullable();
+            $table->text('keteranganba6')->nullable();
+            $table->text('keteranganba7')->nullable();
 
             $table->string('berkasberitaacara')->nullable();
 
