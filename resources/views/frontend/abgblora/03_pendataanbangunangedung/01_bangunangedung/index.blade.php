@@ -164,16 +164,19 @@
         cursor: default;
     }
 
-    /* Icon Styles */
-    .view-icon {
-        color: #2E82FE;
-        font-size: 16px;
-        cursor: pointer;
-        transition: color 0.3s;
+    .button-baru {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #2E82FE;
+        color: white;
+        border-radius: 4px;
+        font-size: 12px;
+        text-decoration: none;
+        transition: background-color 0.3s;
     }
 
-    .view-icon:hover {
-        color: #1a5bbf;
+    .button-baru:hover {
+        background-color: #1a5bbf;
     }
 
     /* Responsive Adjustments */
@@ -231,17 +234,17 @@
                        id="generalSearch"
                        placeholder="Cari Berkas Permohonan..."
                        value="{{ request('search') }}"
-                       onkeyup="searchTable()">
+                       oninput="debouncedSearch()">
                 <i class="fas fa-search"></i>
             </div>
-
+{{--
             <div class="search-box">
                 <input type="date"
                        id="dateSearch"
                        placeholder="Cari berdasarkan tanggal..."
                        onchange="searchByDate()">
                 <i class="fas fa-calendar"></i>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
@@ -254,17 +257,17 @@
 
         <div class="table-responsive">
             <table class="zebra-table">
-            <thead style="font-size: 14px;">
-    <tr>
-        <th style="text-align: center;">No</th>
-        <th style="text-align: center;">Nama Institusi</th>
-        <th style="text-align: center;">Kecamatan</th>
-        <th style="text-align: center;">No HDNO</th>
-        <th style="text-align: center;">Koordinat</th>
-        <th style="text-align: center;">View</th>
-    </tr>
-</thead>
-    <tbody id="tableBody">
+                <thead style="font-size: 14px;">
+                    <tr>
+                        <th style="text-align: center;">No</th>
+                        <th style="text-align: center;">Nama Institusi</th>
+                        <th style="text-align: center;">Kecamatan</th>
+                        <th style="text-align: center;">No HDNO</th>
+                        <th style="text-align: center;">Koordinat</th>
+                        <th style="text-align: center;">View</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
                     @foreach ($data as $item)
                     <tr>
                         <td style="text-align: center;">
@@ -282,12 +285,11 @@
                                 <span class="button-berkas">Data Belum Diupdate</span>
                             @endif
                         </td>
-                       <td style="text-align: center;">
-    <a class="button-baru" href="/databangunangedungshow/{{ $item->id }}" style="font-size: 12px !important;">
-        Lihat
-    </a>
-</td>
-
+                        <td style="text-align: center;">
+                            <a class="button-baru" href="/databangunangedungshow/{{ $item->id }}" style="font-size: 12px !important;">
+                                Lihat
+                            </a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -311,6 +313,15 @@
 @include('frontend.abgblora.00_fiturmenu.04_footer')
 
 <script>
+    // Debounce function to limit how often search is executed
+    function debounce(func, timeout = 500) {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => { func.apply(this, args); }, timeout);
+        };
+    }
+
     function toggleDropdown(event) {
         event.preventDefault();
         const dropdown = event.target.closest('.dropdown');
@@ -333,7 +344,8 @@
         window.location.href = url.toString();
     }
 
-    function searchTable() {
+    // Instant search with debounce
+    const performSearch = debounce(function() {
         const input = document.getElementById("generalSearch").value;
         const url = new URL(window.location.href);
 
@@ -348,24 +360,28 @@
         url.searchParams.delete("date");
 
         window.location.href = url.toString();
+    });
+
+    function debouncedSearch() {
+        performSearch();
     }
 
-    function searchByDate() {
-        const dateInput = document.getElementById("dateSearch").value;
-        const url = new URL(window.location.href);
+    // function searchByDate() {
+    //     const dateInput = document.getElementById("dateSearch").value;
+    //     const url = new URL(window.location.href);
 
-        if (dateInput) {
-            url.searchParams.set("date", dateInput);
-        } else {
-            url.searchParams.delete("date");
-        }
+    //     if (dateInput) {
+    //         url.searchParams.set("date", dateInput);
+    //     } else {
+    //         url.searchParams.delete("date");
+    //     }
 
-        // Reset general search when using date search
-        document.getElementById("generalSearch").value = "";
-        url.searchParams.delete("search");
+    //     // Reset general search when using date search
+    //     document.getElementById("generalSearch").value = "";
+    //     url.searchParams.delete("search");
 
-        window.location.href = url.toString();
-    }
+    //     window.location.href = url.toString();
+    // }
 
     // Initialize search inputs from URL parameters
     document.addEventListener('DOMContentLoaded', function() {
@@ -378,5 +394,8 @@
         if (urlParams.has('date')) {
             document.getElementById("dateSearch").value = urlParams.get('date');
         }
+
+        // Focus on search input when page loads
+        document.getElementById("generalSearch").focus();
     });
 </script>
