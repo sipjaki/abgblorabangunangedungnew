@@ -323,8 +323,8 @@
     }
 </style>
 
-<section id="breadcrumb" class="container" style="margin-top: 100px;">
-    <div class="search-tools">
+<section id="breadcrumb" class="container" >
+    <div class="search-tools" style="margin-top: 200px;">
         <div class="entries-selector">
             <label for="entries">Tampilkan data:</label>
             <select id="entries" onchange="updateEntries()">
