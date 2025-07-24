@@ -75,36 +75,71 @@
         width: 100%;
     }
 
-    /* Search Bar Styles */
-    .search-container {
+    /* Search Container Styles */
+    .search-tools {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
         margin-bottom: 20px;
     }
 
-    .search-box {
+    .entries-selector {
         display: flex;
         align-items: center;
         gap: 8px;
+    }
+
+    .entries-selector label {
+        font-weight: 600;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .entries-selector select {
         padding: 8px 12px;
-        background-color: white;
-        border-radius: 12px;
-        border: 1px solid #ddd;
-        width: 100%;
-        max-width: 260px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .search-wrapper {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        position: relative;
+        display: inline-block;
+    }
+
+    .search-box input {
+        border: 1px solid #ccc;
+        padding: 10px 36px 10px 12px;
+        font-size: 14px;
+        border-radius: 10px;
+        width: 250px;
         transition: all 0.3s;
     }
 
-    .search-box:focus-within {
+    .search-box input:focus {
+        outline: none;
+        border-color: #2E82FE;
         box-shadow: 0 0 0 2px rgba(46, 130, 254, 0.2);
     }
 
-    .search-input {
-        width: 100%;
-        border: none;
-        outline: none;
-        font-size: 14px;
-        background: transparent;
+    .search-box i {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #888;
+        pointer-events: none;
     }
 
     /* Button Styles */
@@ -147,12 +182,22 @@
             margin-top: 100px;
         }
 
-        .search-container {
-            justify-content: center;
+        .search-tools {
+            flex-direction: column;
+            align-items: stretch;
         }
 
-        .search-box {
-            max-width: 100%;
+        .search-wrapper {
+            width: 100%;
+        }
+
+        .search-box input {
+            width: 100%;
+        }
+
+        .entries-selector {
+            width: 100%;
+            justify-content: space-between;
         }
     }
 </style>
@@ -164,18 +209,39 @@
 
 <!-- Main Content -->
 <section id="breadcrumb" class="container">
-    <div class="search-container">
-        <div class="search-box">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Cari data..."
-                oninput="searchTable()"
-                class="search-input"
-            />
-            <button onclick="searchTable()">
-                <img src="/assets/new/icons/search.svg" alt="Search icon" width="16" height="16" />
-            </button>
+    <div class="search-tools">
+        <div class="entries-selector">
+            <label for="entries">Tampilkan data:</label>
+            <select id="entries" onchange="updateEntries()">
+                <option value="25" {{ request('perPage') == 25 ? 'selected' : '' }}>25</option>
+                <option value="50" {{ request('perPage') == 50 ? 'selected' : '' }}>50</option>
+                <option value="75" {{ request('perPage') == 75 ? 'selected' : '' }}>75</option>
+                <option value="100" {{ request('perPage') == 100 ? 'selected' : '' }}>100</option>
+                <option value="150" {{ request('perPage') == 150 ? 'selected' : '' }}>150</option>
+                <option value="200" {{ request('perPage') == 200 ? 'selected' : '' }}>200</option>
+                <option value="500" {{ request('perPage') == 500 ? 'selected' : '' }}>500</option>
+                <option value="1000" {{ request('perPage') == 1000 ? 'selected' : '' }}>1000</option>
+                <option value="2000" {{ request('perPage') == 2000 ? 'selected' : '' }}>2000</option>
+            </select>
+        </div>
+
+        <div class="search-wrapper">
+            <div class="search-box">
+                <input type="search"
+                       id="generalSearch"
+                       placeholder="Cari Berkas Permohonan..."
+                       value="{{ request('search') }}"
+                       onkeyup="searchTable()">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <div class="search-box">
+                <input type="date"
+                       id="dateSearch"
+                       placeholder="Cari berdasarkan tanggal..."
+                       onchange="searchByDate()">
+                <i class="fas fa-calendar"></i>
+            </div>
         </div>
     </div>
 </section>
@@ -260,32 +326,56 @@
     });
 
     function updateEntries() {
-        let selectedValue = document.getElementById("entries").value;
-        let url = new URL(window.location.href);
+        const selectedValue = document.getElementById("entries").value;
+        const url = new URL(window.location.href);
         url.searchParams.set("perPage", selectedValue);
         window.location.href = url.toString();
     }
 
     function searchTable() {
-        let input = document.getElementById("searchInput").value.toLowerCase();
-        let table = document.getElementById("tableBody");
-        let rows = table.getElementsByTagName("tr");
+        const input = document.getElementById("generalSearch").value;
+        const url = new URL(window.location.href);
 
-        for (let i = 0; i < rows.length; i++) {
-            let cells = rows[i].getElementsByTagName("td");
-            let found = false;
-
-            for (let j = 0; j < cells.length; j++) {
-                if (cells[j]) {
-                    let text = cells[j].textContent || cells[j].innerText;
-                    if (text.toLowerCase().indexOf(input) > -1) {
-                        found = true;
-                        break;
-                    }
-                }
-            }
-
-            rows[i].style.display = found ? "" : "none";
+        if (input) {
+            url.searchParams.set("search", input);
+        } else {
+            url.searchParams.delete("search");
         }
+
+        // Reset date search when using general search
+        document.getElementById("dateSearch").value = "";
+        url.searchParams.delete("date");
+
+        window.location.href = url.toString();
     }
+
+    function searchByDate() {
+        const dateInput = document.getElementById("dateSearch").value;
+        const url = new URL(window.location.href);
+
+        if (dateInput) {
+            url.searchParams.set("date", dateInput);
+        } else {
+            url.searchParams.delete("date");
+        }
+
+        // Reset general search when using date search
+        document.getElementById("generalSearch").value = "";
+        url.searchParams.delete("search");
+
+        window.location.href = url.toString();
+    }
+
+    // Initialize search inputs from URL parameters
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (urlParams.has('search')) {
+            document.getElementById("generalSearch").value = urlParams.get('search');
+        }
+
+        if (urlParams.has('date')) {
+            document.getElementById("dateSearch").value = urlParams.get('date');
+        }
+    });
 </script>
