@@ -230,7 +230,7 @@
     @include('backend.00_administrator.00_baganterpisah.09_button')
 
     <!-- Banner Section -->
-    <section class="header-banner" style="margin-top: 65px;">
+    {{-- <section class="header-banner" style="margin-top: 65px;">
         <div class="container max-w-[1130px] mx-auto" style="padding-top: 50px;">
             <div class="flex items-center gap-[20px]">
                 <div class="flex-1">
@@ -242,7 +242,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Main Content Section -->
     <div class="main-container">
