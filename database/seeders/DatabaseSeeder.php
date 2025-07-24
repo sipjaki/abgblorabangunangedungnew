@@ -654,6 +654,8 @@ User::create([
     'password' => bcrypt('admindpuprkanblora') // password: kabblora2025e
 ]);
 
+
+// ----------------------------------------------------------------------------
 User::create([
     'id'  => 78,
     'name'  => 'Benny Hermawan',
@@ -662,6 +664,16 @@ User::create([
     'avatar' => 'user/avatar/foto6.png',
     'email' => 'bennyhermawan1990@gmail.com ',
     'password' => bcrypt('bennY@1993') // password: kabblora2025e
+]);
+
+User::create([
+    'id'  => 79,
+    'name'  => 'YULFA INTAN YURAIDA, S.T.',
+    'username' => 'YULFA INTAN YURAIDA, S.T.',
+    'statusadmin_id' => '1',
+    'avatar' => 'user/avatar/foto6.png',
+    'email' => 'intanyuraida@gmail.com ',
+    'password' => bcrypt('297893YuLfa') // password: kabblora2025e
 ]);
 
 
