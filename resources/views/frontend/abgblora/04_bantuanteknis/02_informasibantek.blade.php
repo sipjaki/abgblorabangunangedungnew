@@ -190,7 +190,7 @@
     {{-- @include('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.00_menufungsibangunan') --}}
 
 
-            <div class="flex flex-col gap-5 w-full" style="margin-top:100px;">
+            <div class="flex flex-col gap-5 w-full" style="margin-top:70px;">
             <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
                     <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
                 <div class="w-5 h-5 flex shrink-0">
