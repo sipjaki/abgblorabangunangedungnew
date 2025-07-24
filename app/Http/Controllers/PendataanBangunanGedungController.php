@@ -1161,7 +1161,7 @@ public function bedatabangunankic(Request $request)
     $search = $request->input('search');
     $perPage = $request->input('perPage', 15);
 
-    $query = kicinduk::query();
+    $query = kicinduk::query()->orderBy('created_at', 'desc'); // urutkan dari yang terbaru
 
     if ($search) {
         $query->where(function ($q) use ($search) {
@@ -1169,7 +1169,7 @@ public function bedatabangunankic(Request $request)
               ->orWhere('bidang', 'like', "%{$search}%")
               ->orWhere('subbidang', 'like', "%{$search}%")
               ->orWhereHas('satuankerja', function ($sub) use ($search) {
-                  $sub->where('satuankerja', 'like', "%{$search}%"); // sesuaikan nama field di tabel satuankerja
+                  $sub->where('satuankerja', 'like', "%{$search}%");
               });
         });
     }
