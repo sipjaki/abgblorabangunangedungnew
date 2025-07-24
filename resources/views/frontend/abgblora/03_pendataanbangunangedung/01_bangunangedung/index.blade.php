@@ -323,7 +323,7 @@
     }
 </style>
 
-<section id="breadcrumb" class="container">
+<section id="breadcrumb" class="container" style="margin-top: 100px;">
     <div class="search-tools">
         <div class="entries-selector">
             <label for="entries">Tampilkan data:</label>
@@ -407,7 +407,7 @@
 </script>
 
 
-<section id="details" class="container" style="margin-top: -50px;">
+<section id="details" class="container" style="margin-top: -25px;">
     <div class="content-card">
         <div class="section-title" style="font-size: 14px;">
             📦 {{$title}}
