@@ -38,7 +38,7 @@
     'title' => 'Harga',
     'value' => is_numeric($data->harga)
         ? 'Rp ' . number_format((float) $data->harga, 0, ',', '.')
-        : null,
+        : 'Data Tidak Valid',
 ],
 
             [
