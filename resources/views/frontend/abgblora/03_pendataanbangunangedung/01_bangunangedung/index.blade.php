@@ -324,10 +324,10 @@
 </style>
 
 <section id="breadcrumb" class="container" >
-    <div class="search-tools" style="margin-top: 200px;">
+    <div class="search-tools" style="margin-top: 75px;">
         <div class="entries-selector">
             <label for="entries">Tampilkan data:</label>
-            <select id="entries" onchange="updateEntries()">
+            <select id="entries" onchange="updateEntries()" class="button-berkas" style="border-radius: 20px;">
                 <option value="25" {{ request('perPage') == 25 ? 'selected' : '' }}>25</option>
                 <option value="50" {{ request('perPage') == 50 ? 'selected' : '' }}>50</option>
                 <option value="75" {{ request('perPage') == 75 ? 'selected' : '' }}>75</option>
