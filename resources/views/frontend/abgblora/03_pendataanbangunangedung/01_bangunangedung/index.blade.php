@@ -284,7 +284,8 @@
                         </td>
                         <td style="text-align: center">
                             <a class="button-baru" href="/databangunangedungshow/{{ $item->id }}">
-                                <i class="fas fa-eye view-icon"></i>
+                                {{-- <i class="fas fa-eye view-icon"></i> View --}}
+                                View
                             </a>
                         </td>
                     </tr>
