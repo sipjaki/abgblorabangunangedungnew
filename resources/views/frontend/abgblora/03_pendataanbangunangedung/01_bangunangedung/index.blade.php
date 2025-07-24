@@ -212,6 +212,117 @@
 
 <!-- Main Content -->
 <!-- Main Content -->
+<style>
+    /* Search Tools Container */
+    .search-tools {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 30px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Entries Selector */
+    .entries-selector {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .entries-selector label {
+        font-size: 14px;
+        color: #555;
+        font-weight: 500;
+    }
+
+    .entries-selector select {
+        padding: 8px 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background-color: #fff;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 16px;
+        padding-right: 35px;
+    }
+
+    .entries-selector select:hover {
+        border-color: #2E82FE;
+    }
+
+    .entries-selector select:focus {
+        outline: none;
+        border-color: #2E82FE;
+        box-shadow: 0 0 0 2px rgba(46, 130, 254, 0.2);
+    }
+
+    /* Search Box */
+    .search-wrapper {
+        flex-grow: 1;
+        max-width: 400px;
+    }
+
+    .search-box {
+        position: relative;
+        width: 100%;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 10px 40px 10px 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #333;
+        transition: all 0.3s ease;
+        background-color: #fff;
+    }
+
+    .search-box input:focus {
+        outline: none;
+        border-color: #2E82FE;
+        box-shadow: 0 0 0 2px rgba(46, 130, 254, 0.2);
+    }
+
+    .search-box i {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
+        font-size: 16px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .search-tools {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 15px;
+        }
+
+        .entries-selector {
+            width: 100%;
+        }
+
+        .search-wrapper {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+</style>
+
 <section id="breadcrumb" class="container">
     <div class="search-tools" style="margin-top: 200px;">
         <div class="entries-selector">
