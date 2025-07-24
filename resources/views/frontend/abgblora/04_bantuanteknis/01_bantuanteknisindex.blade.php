@@ -165,7 +165,7 @@
 >
 
 <section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 200px;">
-    <br><br>
+    {{-- <br><br>
     <div class="flex items-center gap-[20px]">
       <!-- Gambar di kiri -->
       <img src="/assets/abgblora/logo/iconabgblora.png" alt="" class="w-[60px] -my-[15px]" width="10%" style="margin-right: 20px;">
@@ -177,16 +177,11 @@
          {{$title}}
         </a>
       </div>
-    </div>
+    </div> --}}
 
   </section>
 
 
-
-<section id="header" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2" style="margin-top:10px;">
-
-
-  </section>
 
 
  <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
@@ -194,7 +189,7 @@
     {{-- @include('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.00_menufungsibangunan') --}}
 
 
-            <div class="flex flex-col gap-5 w-full">
+            <div class="flex flex-col gap-5 w-full" style="margin-top: 75px;">
             <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
                     <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
                 <div class="w-5 h-5 flex shrink-0">
