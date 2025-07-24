@@ -89,8 +89,8 @@ $validated = $request->validate([
     'luastanahtotal' => 'required|numeric',
     'jumlahlantai' => 'required|integer',
     'tinggibangunan' => 'required|numeric',
-    'bassement' => 'required|string',
-    'kepemilikan' => 'required|string|max:255',
+    'bassement' => 'nullable|string',
+    'kepemilikan' => 'nullable|string|max:255',
     'tahunpembangunan' => 'nullable|digits:4|integer',
     'tahunrenovasi' => 'nullable|digits:4|integer',
 
@@ -100,13 +100,13 @@ $validated = $request->validate([
     'rw' => 'nullable|string|max:10',
     'kabupaten' => 'required|string|max:255',
     'kecamatanblora_id' => 'required|string',
-    'kelurahandesa_id' => 'required|string',
+    'kelurahandesa_id' => 'nullable|string',
 
-    'suratpermohonan' => 'nullable|file|mimes:pdf|max:10120',
-    'kic' => 'nullable|file|mimes:pdf|max:10120',
-    'fotokondisi' => 'nullable|file|mimes:pdf|max:10120',
-    'rab' => 'nullable|file|mimes:pdf|max:10120',
-    'asbuilt' => 'nullable|file|mimes:pdf|max:10120',
+    'suratpermohonan' => 'nullable|file|mimes:pdf|max:15120',
+    'kic' => 'nullable|file|mimes:pdf|max:15120',
+    'fotokondisi' => 'nullable|file|mimes:pdf|max:15120',
+    'rab' => 'nullable|file|mimes:pdf|max:15120',
+    'asbuilt' => 'nullable|file|mimes:pdf|max:15120',
 
 ], [
     'bujkkonsultan_id.required' => 'Pemohon Wajib Di Isi !.',
