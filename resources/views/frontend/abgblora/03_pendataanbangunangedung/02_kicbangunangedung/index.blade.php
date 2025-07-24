@@ -267,7 +267,7 @@
                 <thead style="font-size: 14px;">
                     <tr>
                         <th style="text-align: center;">No</th>
-                        <th style="text-align: center;">Nama Institusi</th>
+                        {{-- <th style="text-align: center;">Nama Institusi</th> --}}
                         <th style="text-align: center;">Satuan Kerja</th>
                         <th style="text-align: center;">Kode Lokasi</th>
                         <th style="text-align: center;">Bidang</th>
@@ -281,9 +281,9 @@
                         <td style="text-align: center;">
                             {{ $data->firstItem() + $loop->iteration - 1 }}
                         </td>
-                        <td class="uppercase">
+                        {{-- <td class="uppercase">
                             {{ $item->namainstitusi ?? 'Data Tidak Ditemukan' }}
-                        </td>
+                        </td> --}}
                         <td>{{ $item->satuankerja->satuankerja ?? '-' }}</td>
                         <td>{{ $item->kodelokasi ?? '-' }}</td>
                         <td>{{ $item->bidang ?? '-' }}</td>
