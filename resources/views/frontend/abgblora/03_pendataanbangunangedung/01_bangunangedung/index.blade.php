@@ -208,7 +208,7 @@
 @include('backend.00_administrator.00_baganterpisah.09_button')
 
 <!-- Main Content -->
-<section id="breadcrumb" class="container">
+<section id="breadcrumb" class="container" style="margin-top: 100px;">
     <div class="search-tools">
         <div class="entries-selector">
             <label for="entries">Tampilkan data:</label>
@@ -248,18 +248,18 @@
 
 <section id="details" class="container">
     <div class="content-card">
-        <div class="section-title">
+        <div class="section-title" style="font-size: 14px;">
             📦 {{$title}}
         </div>
 
         <div class="table-responsive">
             <table class="zebra-table">
-            <thead style="font-size: 16px;">
+            <thead style="font-size: 14px;">
     <tr>
         <th style="text-align: center;">No</th>
         <th style="text-align: center;">Nama Institusi</th>
         <th style="text-align: center;">Kecamatan</th>
-        <th style="text-align: center;">No Pengesahan Usaha</th>
+        <th style="text-align: center;">No HDNO</th>
         <th style="text-align: center;">Koordinat</th>
         <th style="text-align: center;">View</th>
     </tr>
