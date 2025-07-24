@@ -159,7 +159,7 @@ th {
     style="cursor: pointer; margin-left:10px; color:black; display: inline-flex; align-items: center;"
     onclick="openUploadModal()"
 >
-    <i class="bi bi-plus-circle" style="margin-right: 5px;"></i> Tambah Foto
+    <i class="bi bi-plus-circle" style="margin-right: 5px;"></i> Tambah Foto & Berkas
 </button>
 
 <!-- Modal Upload Foto -->
