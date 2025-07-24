@@ -209,7 +209,7 @@
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
     <i class="fas fa-info-circle me-2"></i>
-    <div>
+    <div class="button-baru">
         <strong>Jenis Permohonan Bantuan Teknis Saudara ! </strong>
     </div>
 </div>
@@ -218,7 +218,7 @@
 <div class="row mt-3" style="margin-top: -25px;">
 <div class="col-md-6" style="margin-top: -60px;">
     <div>
-        <label class="form-label d-flex align-items-center" for="jenispengajuanbantek_id" class="button-baru">
+        <label class="form-label d-flex align-items-center" for="jenispengajuanbantek_id">
             <i class="fas fa-envelope" style="margin-right: 8px; color: navy;"></i> Jenis Permohonan Bantuan Teknis
         </label>
         <select name="jenispengajuanbantek_id" id="jenispengajuanbantek_id"
