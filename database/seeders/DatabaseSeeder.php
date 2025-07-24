@@ -27556,7 +27556,7 @@ kicdokumen::create([
 ]);
 
 // 4-7
-kicdokumen::create(['id'=>4,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANcreatTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'Dk. Dawe Rt. 02/Rw. 02 Ds. Sendang Todanan']);
+kicdokumen::create(['id'=>4,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'Dk. Dawe Rt. 02/Rw. 02 Ds. Sendang Todanan']);
 kicdokumen::create(['id'=>5,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.01.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>8,'alamat'=>'Dk. Dawe Rt. 02/Rw. 02 Ds. Sendang Todanan']);
 kicdokumen::create(['id'=>6,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.01.001','register'=>'000003','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>6,'alamat'=>'Jl. A.Yani No 42 Blora']);
 kicdokumen::create(['id'=>7,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00000.00000.2006-1.3.3.01.01.01.001','register'=>'000004','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>5,'alamat'=>'Jln.A.Yani No.42 Blora']);
@@ -28289,22 +28289,1451 @@ kicdokumen::create(['id'=>448,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG K
 kicdokumen::create(['id'=>449,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00014.00008.2009-1.3.3.01.01.01.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>380,'alamat'=>'Ds.Gembyungan']);
 kicdokumen::create(['id'=>450,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00014.00008.2010-1.3.3.01.01.01.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>6,'alamat'=>'Gembyungan, RT.1/RW.1, Dk.Gembyungan, Ds./Kel. Gembyungan']);
 
-// INPUT KIC STRUKTUR
-kicdokumen::updateOrCreate(
-    ['id' => 1], // kondisi pencarian (where)
-    [
-        'tanggal' => null,
-        'nomor' => null,
-        'luas' => null,
-        'status_tanah' => null,
-        'nomor_kode_tanah' => null,
-        'asal_usul' => 'INVENTARIS',
-        'harga' => '281320000',
-        'keterangan' => '12450.1289.C / GEDUNG 2',
-        'nosertifikat' => '010101.00000.00000',
-    ]
-);
 
+kicdokumen::create(['id'=>451,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00014.00008.2012-1.3.3.01.01.01.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>380,'alamat'=>'Gembyungan, RT.1/RW.1, Dk.Gembyungan, Ds./Kel. Gembyungan']);
+
+kicdokumen::create(['id'=>452,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG TEMPAT PENDIDIKAN','kodebarang'=>'12.01.33.16.010101.00014.00008.2019-1.3.3.01.01.10.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'Gembyungan, RT.1/RW.1, Dk.Gembyungan, Ds./Kel. Gembyungan']);
+
+kicdokumen::create(['id'=>453,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00002.00026.2006-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>175,'alamat'=>'desa gempolrejo']);
+
+kicdokumen::create(['id'=>454,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00002.00026.2006-1.3.3.01.01.10.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>33,'alamat'=>'desa gempolrejo']);
+
+kicdokumen::create(['id'=>455,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00002.00026.2006-1.3.3.01.01.10.001','register'=>'000003','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>234,'alamat'=>'desa gempolrejo']);
+
+kicdokumen::create(['id'=>456,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00002.00026.2006-1.3.3.01.01.10.001','register'=>'000004','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>8,'alamat'=>'desa gempolrejo']);
+
+kicdokumen::create(['id'=>457,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00002.00026.2006-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>45,'alamat'=>'desa gempolrejo']);
+
+kicdokumen::create(['id'=>458,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00002.00026.2012-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>160,'alamat'=>'desa gempolrejo']);
+
+kicdokumen::create(['id'=>459,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00002.00026.2013-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>8,'alamat'=>'desa gempolrejo']);
+
+kicdokumen::create(['id'=>460,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00002.00026.2013-1.3.3.01.01.01.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>10,'alamat'=>'desa gempolrejo']);
+
+kicdokumen::create(['id'=>461,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00002.00026.2014-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>56,'alamat'=>'desa gempolrejo']);
+
+kicdokumen::create(['id'=>462,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00002.00026.2019-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Dukuh Undaan, RT.1/RW.2, Dk.Undaan, Ds./Kel. Gempolrejo']);
+
+kicdokumen::create(['id'=>463,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM PERMANEN','kodebarang'=>'12.01.33.16.010101.00002.00026.2023-1.3.3.01.01.05.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK','beton'=>'TIDAK','luaslantai'=>0,'alamat'=>'GEMPOLREJO']);
+
+kicdokumen::create(['id'=>464,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00002.00026.2023-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK','beton'=>'TIDAK','luaslantai'=>0,'alamat'=>'GEMPOLREJO']);
+
+kicdokumen::create(['id'=>465,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00004.00031.1998-1.3.3.01.01.01.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>8,'alamat'=>'Desa Geneng Rt.02 Rw.02, RT.2/RW.2, Dk.Geneng, Ds./Kel. Geneng']);
+
+kicdokumen::create(['id'=>466,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00004.00031.2001-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>35,'alamat'=>'Desa Geneng Rt.02 Rw.02, RT.2/RW.2, Dk.Geneng, Ds./Kel. Geneng']);
+
+kicdokumen::create(['id'=>467,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00004.00031.2007-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'Desa Geneng Rt.02 Rw.02, RT.2/RW.2, Dk.Geneng, Ds./Kel. Geneng']);
+
+kicdokumen::create(['id'=>468,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00004.00031.2007-1.3.3.01.01.01.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>8,'alamat'=>'Desa Geneng Rt.02 Rw.02, RT.2/RW.2, Dk.Geneng, Ds./Kel. Geneng']);
+
+kicdokumen::create(['id'=>469,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00004.00031.2011-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Desa Geneng Rt.02 Rw.02, RT.2/RW.2, Dk.Geneng, Ds./Kel. Geneng']);
+
+kicdokumen::create(['id'=>470,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00004.00031.2012-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>12,'alamat'=>'Desa Geneng Rt.02 Rw.02, RT.2/RW.2, Dk.Geneng, Ds./Kel. Geneng']);
+
+kicdokumen::create(['id'=>471,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00004.00031.2012-1.3.3.01.01.01.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>12,'alamat'=>'Desa Geneng Rt.02 Rw.02, RT.2/RW.2, Dk.Geneng, Ds./Kel. Geneng']);
+
+kicdokumen::create(['id'=>472,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00020.1967-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'Desa Genjahan']);
+
+kicdokumen::create(['id'=>473,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00020.1980-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'Desa Genjahan']);
+
+kicdokumen::create(['id'=>474,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00020.1990-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'Desa Genjahan']);
+
+kicdokumen::create(['id'=>475,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00013.00020.1997-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>150,'alamat'=>'Desa Genjahan']);
+
+kicdokumen::create(['id'=>476,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00020.2000-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Desa Genjahan']);
+
+kicdokumen::create(['id'=>477,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00020.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>400,'alamat'=>'Genjahan, RT.4/RW.1, Dk.GENJAHAN, Ds./Kel. Genjahan']);
+
+kicdokumen::create(['id'=>478,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00020.2006-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'Desa Genjahan']);
+
+kicdokumen::create(['id'=>479,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00020.2009-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'Desa Genjahan']);
+
+kicdokumen::create(['id'=>480,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00013.00020.2012-1.3.3.01.01.16.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'DESA GENJAHAN']);
+
+kicdokumen::create(['id'=>481,'kicinduk_id'=>1,'jenisbarang'=>'TAMAN.TAMAN','kodebarang'=>'12.01.33.16.010101.00013.00020.2013-1.3.3.01.01.36.003','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>70,'alamat'=>'GENJAHAN']);
+
+kicdokumen::create(['id'=>482,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00015.00021.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>72,'alamat'=>'GETAS, RT.2/RW.2, Dk.GEBANG, Ds./Kel. GETAS']);
+
+kicdokumen::create(['id'=>483,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR','kodebarang'=>'12.01.33.16.010101.00015.00021.2006-1.3.3.01.01.01.005','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>8,'alamat'=>'GETAS, RT.2/RW.2, Dk.GEBANG, Ds./Kel. GETAS']);
+
+kicdokumen::create(['id'=>484,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00015.00021.2006-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'GETAS, RT.2/RW.2, Dk.GEBANG, Ds./Kel. GETAS']);
+
+kicdokumen::create(['id'=>485,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00015.00021.2006-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>10,'alamat'=>'GETAS, RT.2/RW.2, Dk.GEBANG, Ds./Kel. GETAS']);
+
+kicdokumen::create(['id'=>486,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00015.00021.2018-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>49,'alamat'=>'GETAS, RT.2/RW.2, Dk.GEBANG, Ds./Kel. GETAS']);
+
+kicdokumen::create(['id'=>487,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00006.00018.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>12,'alamat'=>'Jl. Raya Gondang, RT.1/RW.1, Dk.Gondang, Ds./Kel. Gondang']);
+
+kicdokumen::create(['id'=>488,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00006.00018.2006-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>40,'alamat'=>'Jl. Raya Gondang, RT.1/RW.1, Dk.Gondang, Ds./Kel. Gondang']);
+
+kicdokumen::create(['id'=>489,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00006.00018.2006-1.3.3.01.01.10.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>146,'alamat'=>'Jl. Raya Gondang, RT.1/RW.1, Dk.Gondang, Ds./Kel. Gondang']);
+
+kicdokumen::create(['id'=>490,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00006.00018.2006-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>64,'alamat'=>'Jl. Raya Gondang, RT.1/RW.1, Dk.Gondang, Ds./Kel. Gondang']);
+
+kicdokumen::create(['id'=>491,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00006.00018.2012-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>42,'alamat'=>'Jl. Raya Gondang, RT.1/RW.1, Dk.Gondang, Ds./Kel. Gondang']);
+
+kicdokumen::create(['id'=>492,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN','kodebarang'=>'12.01.33.16.010101.00011.00036.2006-1.3.3.01.01.01.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>86,'alamat'=>'gondel kedungtuban']);
+
+kicdokumen::create(['id'=>493,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN','kodebarang'=>'12.01.33.16.010101.00011.00036.2006-1.3.3.01.01.08.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>53,'alamat'=>'gondel kedungtuban']);
+
+kicdokumen::create(['id'=>494,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00011.00036.2006-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>4,'alamat'=>'gondel kedungtuban']);
+
+kicdokumen::create(['id'=>495,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00011.00036.2006-1.3.3.01.01.10.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'gondel kedungtuban']);
+
+kicdokumen::create(['id'=>496,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00011.00036.2006-1.3.3.01.01.10.001','register'=>'000003','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>253,'alamat'=>'gondel kedungtuban']);
+
+kicdokumen::create(['id'=>497,'kicinduk_id'=>1,'jenisbarang'=>'PAGAR.PAGAR','kodebarang'=>'12.01.33.16.010101.00011.00036.2006-1.3.3.04.01.04.004','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>49,'alamat'=>'gondel kedungtuban']);
+
+kicdokumen::create(['id'=>498,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00011.00036.2011-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'BETON','luaslantai'=>46,'alamat'=>'Gondel, RT.0/RW.0, Dk.DESA GONDEL, Ds./Kel. Gondel']);
+
+kicdokumen::create(['id'=>499,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00036.2006-1.3.3.01.01.10.001','register'=>'000001','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>256,'alamat'=>'Gondoriyo RT 01/ RW 01, RT.1/RW.1, Dk.GONDORIYO, Ds./Kel. Gondoriyo']);
+
+kicdokumen::create(['id'=>500,'kicinduk_id'=>1,'jenisbarang'=>'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN','kodebarang'=>'12.01.33.16.010101.00008.00036.2006-1.3.3.01.01.10.001','register'=>'000002','kondisibangunan'=>'BAIK','bertingkat'=>'TIDAK BERTINGKAT','beton'=>'TIDAK','luaslantai'=>72,'alamat'=>'SD N 1 GONDORIYO']);
+
+$buildingData = [
+    [501, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00036.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Gondoriyo RT 01/ RW 01, RT.1/RW.1, Dk.GONDORIYO, Ds./Kel. Gondoriyo'],
+    [502, 'PAGAR.PAGAR PERMANEN', '12.01.33.16.010101.00008.00036.2023-1.3.3.04.01.04.001', '000001', 'BAIK', '', 'BETON', 0, '--'],
+    [503, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00036.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 2, 'sd n 1 gondoriyo'],
+    [504, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00004.2009-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jagong, RT.2/RW.3, Dk.Gedangan, Ds./Kel. Jagong'],
+    [505, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00004.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Dk.GEDANGAN , Ds JAGONG'],
+    [506, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00004.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Dk. GEDANGAN, Ds JAGONG'],
+    [507, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00004.2012-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Dk.GEDANGAN, Ds JAGONG'],
+    [508, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00007.00004.2016-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jagong, RT.2/RW.3, Dk.Gedangan, Ds./Kel. Jagong'],
+    [509, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR SEMI PERMANEN', '12.01.33.16.010101.00016.00005.2008-1.3.3.01.01.01.002', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 49, 'Desa Jati RT 2 RW 3'],
+    [510, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR SEMI PERMANEN', '12.01.33.16.010101.00016.00005.2009-1.3.3.01.01.01.002', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 49, 'Desa Jati RT 2 RW &'],
+    [511, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00016.00005.2012-1.3.3.01.01.01.001', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 176, 'Desa Jati RT 2 RW 7'],
+    [512, 'PAGAR.PAGAR', '12.01.33.16.010101.00016.00005.2012-1.3.3.04.01.04.004', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 49, 'Desa Jati, RT.2/RW.7, Dk.Jati, Ds./Kel. Jati'],
+    [513, 'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM PERMANEN', '12.01.33.16.010101.00016.00005.2023-1.3.3.01.01.05.001', '000001', 'BAIK', 'TIDAK', 'BETON', 0, 'SDN Klagen Kec. Kedungtuban'],
+    [514, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00016.00005.2023-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK', 'BETON', 0, '--'],
+    [515, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00016.00008.2006-1.3.3.01.01.01.001', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 7, 'Jegong'],
+    [516, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00016.00008.2009-1.3.3.01.01.10.001', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 216, 'Jegong'],
+    [517, 'PAGAR.PAGAR', '12.01.33.16.010101.00016.00008.2010-1.3.3.04.01.04.004', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 40, 'Jegong'],
+    [518, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00016.00008.2012-1.3.3.01.01.01.001', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 72, 'Jegong'],
+    [519, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00016.00008.2012-1.3.3.01.01.10.001', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 71, 'Jegong'],
+    [520, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00016.00008.2012-1.3.3.01.01.10.001', '000002', 'Baik', 'Tidak Bertingkat', 'Beton', 72, 'Jegong'],
+    [521, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00016.00008.2012-1.3.3.01.01.32.001', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 18, 'Jegong'],
+    [522, 'BANGUNAN GUDANG.BANGUNAN GUDANG TERTUTUP PERMANEN', '12.01.33.16.010101.00001.00032.2006-1.3.3.01.01.02.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 8, 'Jepangrejo, RT.2/RW.3, Dk.NULL, Ds./Kel. Jepangrejo'],
+    [523, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00001.00032.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 126, 'Jepangrejo, RT.2/RW.3, Dk.NULL, Ds./Kel. Jepangrejo'],
+    [524, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00001.00032.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jepangrejo, RT.2/RW.3, Dk.NULL, Ds./Kel. Jepangrejo'],
+    [525, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00001.00032.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 52, 'Jepangrejo, RT.2/RW.3, Dk.NULL, Ds./Kel. Jepangrejo'],
+    [526, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00001.00032.2006-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 35, 'Jepangrejo, RT.2/RW.3, Dk.NULL, Ds./Kel. Jepangrejo'],
+    [527, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00032.2014-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'Jepangrejo, RT.2/RW.3, Dk.NULL, Ds./Kel. Jepangrejo'],
+    [528, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00037.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 105, 'Jeruk, RT.1/RW.3, Dk.Kaligawan, Ds./Kel. JERUK'],
+    [529, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR SEMI PERMANEN', '12.01.33.16.010101.00014.00037.2006-1.3.3.01.01.01.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'JALAN WULUNG-DOPLANG KM.7 RANDUBLATUNG'],
+    [530, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00037.2007-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 336, 'Jeruk, RT.1/RW.3, Dk.Kaligawan, Ds./Kel. JERUK'],
+    [531, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00037.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jeruk, RT.1/RW.3, Dk.Kaligawan, Ds./Kel. JERUK'],
+    [532, 'PAGAR.PAGAR', '12.01.33.16.010101.00014.00037.2012-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 62, 'Jeruk, RT.1/RW.3, Dk.Kaligawan, Ds./Kel. JERUK'],
+    [533, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00014.00037.2020-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 JERUK RANDUBLATUNG'],
+    [534, 'PAGAR.PAGAR', '12.01.33.16.010101.00014.00037.2020-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 JERUK RANDUBLATUNG'],
+    [535, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00006.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 90, 'Jl Maluku No 39, RT.3/RW.2, Dk.NULL, Ds./Kel. JETIS'],
+    [536, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00006.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 19, 'Jl Maluku No 39, RT.3/RW.2, Dk.NULL, Ds./Kel. JETIS'],
+    [537, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.010101.00001.00006.2006-1.3.3.01.01.08.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 138, 'Jl Maluku No 39, RT.3/RW.2, Dk.NULL, Ds./Kel. JETIS'],
+    [538, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00001.00006.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 200, 'Jl Maluku No 39, RT.3/RW.2, Dk.NULL, Ds./Kel. JETIS'],
+    [539, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00001.00006.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 300, 'Jl Maluku No 39, RT.3/RW.2, Dk.NULL, Ds./Kel. JETIS'],
+    [540, 'BANGUNAN GEDUNG PERTOKOAN/KOPERASI/PASAR.GEDUNG PERTOKOAN/KOPERASI/PASAR PERMANEN', '12.01.33.16.010101.00001.00006.2006-1.3.3.01.01.12.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 23, 'Jl Maluku No 39, RT.3/RW.2, Dk.NULL, Ds./Kel. JETIS'],
+    [541, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00001.00006.2006-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 47, 'Jl Maluku No 39, RT.3/RW.2, Dk.NULL, Ds./Kel. JETIS'],
+    [542, 'RUMAH NEGARA GOLONGAN I.RUMAH NEGARA GOLONGAN I TIPE D PERMANEN', '12.01.33.16.010101.00001.00006.2006-1.3.3.01.02.01.010', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 47, 'Jl Maluku No 39, RT.3/RW.2, Dk.NULL, Ds./Kel. JETIS'],
+    [543, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00013.00001.1980-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jiken, RT.2/RW.5, Dk.JIKEN, Ds./Kel. JIKEN'],
+    [544, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00001.1982-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jiken, RT.2/RW.5, Dk.JIKEN, Ds./Kel. JIKEN'],
+    [545, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00001.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jiken, RT.2/RW.5, Dk.JIKEN, Ds./Kel. JIKEN'],
+    [546, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00001.2010-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jiken, RT.2/RW.5, Dk.JIKEN, Ds./Kel. JIKEN'],
+    [547, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00033.2007-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 138, 'Jimbung Rt 03 Rw 01, RT.2/RW.1, Dk.Jimbung, Ds./Kel. JIMBUNG'],
+    [548, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00033.2008-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 349, 'Jimbung Rt 03 Rw 01, RT.2/RW.1, Dk.Jimbung, Ds./Kel. JIMBUNG'],
+    [549, 'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM PERMANEN', '12.01.33.16.010101.00011.00033.2023-1.3.3.01.01.05.001', '000001', 'BAIK', 'TIDAK', 'BETON', 0, 'SDN Plantungan Kec. Blora'],
+    [550, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00011.00033.2023-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK', 'BETON', 0, '--']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4],
+        'bertingkat' => $data[5] === '' ? null : $data[5], // Handle empty string for bertingkat
+        'beton' => $data[6],
+        'luaslantai' => $data[7] === 0 ? null : $data[7], // Handle 0 values for luaslantai
+        'alamat' => $data[8]
+    ]);
+}
+
+$buildingData = [
+    [551, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00004.00018.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 44, 'Ds. Jomblang RT 05 RW 01'],
+    [552, 'PAGAR.PAGAR', '12.01.33.16.010101.00004.00018.2008-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 24, 'Jomblang, RT.5/RW.1, Dk.Jomblang, Ds./Kel. JOMBLANG'],
+    [553, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00004.00018.2012-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 220, 'Jomblang, RT.5/RW.1, Dk.Jomblang, Ds./Kel. JOMBLANG'],
+    [554, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00004.00018.2012-1.3.3.01.01.01.005', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jomblang, RT.5/RW.1, Dk.Jomblang, Ds./Kel. JOMBLANG'],
+    [555, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00004.00018.2012-1.3.3.01.01.01.005', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 160, 'Jomblang, RT.5/RW.1, Dk.Jomblang, Ds./Kel. JOMBLANG'],
+    [556, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00004.00018.2016-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jomblang, RT.5/RW.1, Dk.Jomblang, Ds./Kel. JOMBLANG'],
+    [557, 'PAGAR.PAGAR PERMANEN', '12.01.33.16.010101.00004.00018.2023-1.3.3.04.01.04.001', '000001', 'BAIK', 'TIDAK', 'BETON', 0, '--'],
+    [558, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00005.00007.2011-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 168, 'Dk,GOLOYO Ds, Jurangjero'],
+    [559, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00005.00007.2011-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 150, 'Dk.Goloyo Ds,Jurangjero'],
+    [560, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00005.00007.2011-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 4, 'Goloyo RT. 02 / RW. 03, RT.2/RW.3, Dk.Goloyo, Ds./Kel. Jurangjero'],
+    [561, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00005.00007.2011-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 21, 'Goloyo RT. 02 / RW. 03, RT.2/RW.3, Dk.Goloyo, Ds./Kel. Jurangjero'],
+    [562, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00005.00007.2016-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Goloyo RT. 02 / RW. 03, RT.2/RW.3, Dk.Goloyo, Ds./Kel. Jurangjero'],
+    [563, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH', '12.01.33.16.010101.00005.00007.2021-1.3.3.01.01.08.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 Jurangjero'],
+    [564, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00010.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 234, 'Dk. Ngebring, RT.1/RW.2, Dk.Ngebring, Ds./Kel. Kacangan'],
+    [565, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00010.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 8, 'Dk. Ngebring, RT.1/RW.2, Dk.Ngebring, Ds./Kel. Kacangan'],
+    [566, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00010.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 210, 'Dk. Ngebring, RT.1/RW.2, Dk.Ngebring, Ds./Kel. Kacangan'],
+    [567, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00010.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 126, 'Dk. Ngebring, RT.1/RW.2, Dk.Ngebring, Ds./Kel. Kacangan'],
+    [568, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00010.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Dk. Ngebring, RT.1/RW.2, Dk.Ngebring, Ds./Kel. Kacangan'],
+    [569, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00008.00010.2006-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'sdn 1 kacangan'],
+    [570, 'PAGAR.PAGAR', '12.01.33.16.010101.00008.00010.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Dk. Ngebring, RT.1/RW.2, Dk.Ngebring, Ds./Kel. Kacangan'],
+    [571, 'BANGUNAN GEDUNG TEMPAT OLAH RAGA.BANGUNAN GEDUNG TEMPAT OLAH RAGA', '12.01.33.16.010101.00008.00010.2023-1.3.3.01.01.11.008', '000001', 'BAIK', 'TIDAK', 'BETON', 0, 'KACANGAN'],
+    [572, 'PAGAR.PAGAR', '12.01.33.16.010101.00014.00025.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 48, 'JL.Raya Tanggel Ds Kadengan'],
+    [573, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00025.2008-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl.Raya Tanggel, DS. Kadengan'],
+    [574, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00014.00025.2008-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl. Raya Tanggel, DS. Kadengan'],
+    [575, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00025.2011-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl. Raya Tanggel, DS. Kadengan'],
+    [576, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00025.2011-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl. Raya Tanggel DS. Kadengan'],
+    [577, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00025.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 160, 'JL. Raya Tanggel Ds Kadengan'],
+    [578, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00008.00022.2006-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'Ds. Kajengan, RT.1/RW.1, Dk.Kajengan, Ds./Kel. Kajengan'],
+    [579, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00022.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 248, 'Jl. Raya Todanan Japah Km 04. Ds. Kajengan'],
+    [580, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00022.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 189, 'Jl. Raya Todanan - Japah Km 04 Ds. Kajengan'],
+    [581, 'PAGAR.PAGAR', '12.01.33.16.010101.00008.00022.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jln Raya Todanan - Japah km 04'],
+    [582, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00008.00022.2014-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl Raya Todanan -Japah km 04'],
+    [583, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00002.00010.2006-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'Ds. Kalangan'],
+    [584, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00010.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Ds. Kalangan'],
+    [585, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00010.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Ds. Kalangan'],
+    [586, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00010.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Ds. Kalangan'],
+    [587, 'PAGAR.PAGAR', '12.01.33.16.010101.00002.00010.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 80, 'Ds. Kalangan'],
+    [588, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00002.00010.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 200, 'Ds. Kalangan'],
+    [589, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00002.00010.2020-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 KALANGAN'],
+    [590, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00013.1961-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 52, 'Kalen, Kedungtuban, Blora'],
+    [591, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00013.1961-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 73, 'Kalen, Kedungtuban, Blora'],
+    [592, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00013.1961-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 52, 'Kalen, Kedungtuban, Blora'],
+    [593, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00013.1961-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 51, 'Kalen, Kedungtuban, Blora'],
+    [594, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00013.1961-1.3.3.01.01.01.001', '000005', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 57, 'Kalen, Kedungtuban, Blora'],
+    [595, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00013.1961-1.3.3.01.01.01.001', '000006', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 65, 'Kalen, Kedungtuban, Blora'],
+    [596, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00013.1961-1.3.3.01.01.01.001', '000007', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 130, 'Kalen, Kedungtuban, Blora'],
+    [597, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00013.1961-1.3.3.01.01.01.001', '000008', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 37, 'Kalen, Kedungtuban, Blora'],
+    [598, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00013.2022-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 0, 'SDN 1 KALEN'],
+    [599, 'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM PERMANEN', '12.01.33.16.010101.00011.00013.2022-1.3.3.01.01.05.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 0, 'SDN 1 KALEN'],
+    [600, 'PAGAR.PAGAR PERMANEN', '12.01.33.16.010101.00011.00013.2023-1.3.3.04.01.04.001', '000001', 'BAIK', 'TIDAK', 'BETON', 0, '--']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4],
+        'bertingkat' => $data[5] === '' ? null : $data[5], // Handle empty string for bertingkat
+        'beton' => $data[6],
+        'luaslantai' => $data[7] === 0 ? null : $data[7], // Handle 0 values for luaslantai
+        'alamat' => $data[8]
+    ]);
+}
+
+$buildingData = [
+    [601, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00005.2008-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 293, 'Kalinanas, RT.5/RW.2, Dk.Kalinanas, Ds./Kel. KALINANAS'],
+    [602, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00005.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 75, 'Kalinanas, RT.5/RW.2, Dk.Kalinanas, Ds./Kel. KALINANAS'],
+    [603, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00005.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 120, 'Kalinanas, RT.5/RW.2, Dk.Kalinanas, Ds./Kel. KALINANAS'],
+    [604, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00009.00005.2013-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 66, 'Kalinanas, RT.5/RW.2, Dk.Kalinanas, Ds./Kel. KALINANAS'],
+    [605, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00049.2009-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl. Blora Km. 7 Dk. Soko - Ds. Kalisari Kec.Randublatung, RT.2/RW.2, Dk.SOKO, Ds./Kel. KALISARI'],
+    [606, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR SEMI PERMANEN', '12.01.33.16.010101.00014.00049.2009-1.3.3.01.01.01.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Blora km. 7 Dk. Soko Ds.Kalisari Kec. Randublatung'],
+    [607, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00049.2010-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 394, 'Jl. Blora Km. 7 Dk. Soko - Ds. Kalisari Kec.Randublatung, RT.2/RW.2, Dk.SOKO, Ds./Kel. KALISARI'],
+    [608, 'BANGUNAN GUDANG.BANGUNAN GUDANG TERTUTUP SEMI PERMANEN', '12.01.33.16.010101.00014.00049.2010-1.3.3.01.01.02.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Blora Km. 7 Dk. Soko - Ds. Kalisari Kec.Randublatung, RT.2/RW.2, Dk.SOKO, Ds./Kel. KALISARI'],
+    [609, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00049.2011-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 98, 'Jl. Blora Km. 7 Dk. Soko - Ds. Kalisari Kec.Randublatung, RT.2/RW.2, Dk.SOKO, Ds./Kel. KALISARI'],
+    [610, 'BANGUNAN GEDUNG TEMPAT OLAH RAGA.BANGUNAN OLAH RAGA TERBUKA DARURAT', '12.01.33.16.010101.00014.00049.2011-1.3.3.01.01.11.006', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Blora Km. 7 Dk. Soko - Ds. Kalisari Kec.Randublatung, RT.2/RW.2, Dk.SOKO, Ds./Kel. KALISARI'],
+    [611, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00014.00049.2012-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Blora Km. 7 Dk. Soko - Ds. Kalisari Kec.Randublatung, RT.2/RW.2, Dk.SOKO, Ds./Kel. KALISARI'],
+    [612, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00014.00049.2015-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'Jl. Blora Km. 7 Dk. Soko - Ds. Kalisari Kec.Randublatung, RT.2/RW.2, Dk.SOKO, Ds./Kel. KALISARI'],
+    [613, 'PAGAR.PAGAR', '12.01.33.16.010101.00014.00049.2018-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Blora Km. 7 Dk. Soko - Ds. Kalisari Kec.Randublatung, RT.2/RW.2, Dk.SOKO, Ds./Kel. KALISARI'],
+    [614, 'PAGAR.PAGAR', '12.01.33.16.010101.00014.00049.2019-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Blora Km. 7 Dk. Soko - Ds. Kalisari Kec.Randublatung, RT.2/RW.2, Dk.SOKO, Ds./Kel. KALISARI'],
+    [615, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00049.2020-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 KALISARI RANDUBLATUNG'],
+    [616, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00029.1978-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'DUKUH KADENGAN, DESA KAMOLAN, KEC. BLORA'],
+    [617, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00001.00029.1978-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Dukuh Kadengan, Desa Kamolan, Kec., Blora'],
+    [618, 'PAGAR.PAGAR', '12.01.33.16.010101.00001.00029.1978-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Dukuh Kadengan, Desa Kamolan, Kec. Blora'],
+    [619, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00001.00029.1979-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'DUKUH KADENGAN, DESA KAMOLAN, KEC. BLORA'],
+    [620, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00001.00029.2008-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'DUKUH KADENGAN, DESA KAMOLAN, KEC. BLORA'],
+    [621, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH', '12.01.33.16.010101.00001.00029.2019-1.3.3.01.01.08.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'JL.HASANUDIN G IV NO 8, RT.1/RW.10, Dk.GUSTENLOR, Ds./Kel. Kamolan'],
+    [622, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00020.2009-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'jalan lapangan terbang kapuan'],
+    [623, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00010.00020.2009-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 18, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [624, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH SEMI PERMANEN', '12.01.33.16.010101.00010.00020.2009-1.3.3.01.01.08.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 30, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [625, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00020.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 9, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [626, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00020.2009-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 9, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [627, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00020.2009-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 9, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [628, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00020.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 42, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [629, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00020.2012-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 42, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [630, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00020.2012-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 42, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [631, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00020.2012-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 42, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [632, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00020.2012-1.3.3.01.01.01.001', '000005', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 42, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [633, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00020.2012-1.3.3.01.01.01.001', '000006', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [634, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00020.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 31, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [635, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00020.2012-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 192, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [636, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00020.2012-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 15, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [637, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00020.2012-1.3.3.01.01.10.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 9, 'Jl Lapangan Terbang, RT.2/RW.1, Dk.KAPUAN, Ds./Kel. Kapuan'],
+    [638, 'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM PERMANEN', '12.01.33.16.010101.00010.00020.2023-1.3.3.01.01.05.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, 'SDN Semawur Kec. Ngawen'],
+    [639, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00020.2023-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, 'SUMBER'],
+    [640, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00010.00020.2023-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, '--'],
+    [641, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00031.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Dk. Karanganyar Ds. Karanganyar Kec. Todanan Kab. Lamongan'],
+    [642, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00031.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Dk. Karanganyar Ds. Karanganyar Kec. Todanan Kab. Blora'],
+    [643, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00031.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Dk. Karanganyar Ds. Karanganyar Kec. Todanan Kab. Blora'],
+    [644, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00008.00031.2006-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Dk. Karanganyar Ds. Karanganyar Kec. Todanan Kab. Blora'],
+    [645, 'PAGAR.PAGAR', '12.01.33.16.010101.00008.00031.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Dk. Karanganyar Ds. Karanganyar Kec. Todanan Kab. Blora'],
+    [646, 'PAGAR.PAGAR', '12.01.33.16.010101.00008.00031.2014-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'karanganyar'],
+    [647, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00007.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 157, 'Jl. Giyanti No.27 Karangboyo'],
+    [648, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00007.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 144, 'Jl. Giyanti No.27 Karangboyo'],
+    [649, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00007.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 18, 'Jl. Giyanti No.27 Karangboyo, cepu'],
+    [650, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00010.00007.2006-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 24, 'Jl. Giyanti No.27 Karangboyo, Cepu']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4],
+        'bertingkat' => $data[5] === '' ? null : $data[5], // Handle empty string for bertingkat
+        'beton' => $data[6],
+        'luaslantai' => $data[7] === 0 ? null : $data[7], // Handle 0 values for luaslantai
+        'alamat' => $data[8]
+    ]);
+}
+
+$buildingData = [
+    [651, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00007.2013-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 256, 'Jl Giyanti No 27, RT.5/RW.1, Dk.Karangboyo, Ds./Kel. Karangboyo'],
+    [652, 'BANGUNAN GEDUNG TEMPAT KERJA LAINNYA.BANGUNAN GEDUNG TEMPAT KERJA LAINNYA', '12.01.33.16.010101.00010.00007.2019-1.3.3.01.01.37.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl Giyanti No 27, RT.5/RW.1, Dk.Karangboyo, Ds./Kel. Karangboyo'],
+    [653, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00007.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 40, 'Karanggeneng, RT.1/RW.2, Dk.Karanggeneng, Ds./Kel. KARANGGENENG'],
+    [654, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00007.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 100, 'Karanggeneng, RT.1/RW.2, Dk.Karanggeneng, Ds./Kel. KARANGGENENG'],
+    [655, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00007.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 294, 'Karanggeneng, RT.1/RW.2, Dk.Karanggeneng, Ds./Kel. KARANGGENENG'],
+    [656, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00007.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 84, 'Karanggeneng, RT.1/RW.2, Dk.Karanggeneng, Ds./Kel. KARANGGENENG'],
+    [657, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00007.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Karanggeneng, RT.1/RW.2, Dk.Karanggeneng, Ds./Kel. KARANGGENENG'],
+    [658, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00007.2006-1.3.3.01.01.10.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 40, 'Karanggeneng, RT.1/RW.2, Dk.Karanggeneng, Ds./Kel. KARANGGENENG'],
+    [659, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00007.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 45, 'Karanggeneng, RT.1/RW.2, Dk.Karanggeneng, Ds./Kel. KARANGGENENG'],
+    [660, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00007.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 336, 'Karanggeneng, RT.1/RW.2, Dk.Karanggeneng, Ds./Kel. KARANGGENENG'],
+    [661, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00007.00007.2018-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 KARANGGENENG'],
+    [662, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00001.00013.1982-1.3.3.01.01.10.001', '000001', 'BAIK', 'BERTINGKAT', 'TIDAK', 49, 'Jl. Gor No 1'],
+    [663, 'PAGAR.PAGAR', '12.01.33.16.010101.00001.00013.1982-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 37, 'Jl. Gor No 1'],
+    [664, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00001.00013.2006-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 36, 'Jl Gor Mustika Blora, RT.7/RW.1, Dk.Ketangar, Ds./Kel. KARANGJATI'],
+    [665, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00013.2008-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 540, 'Jl. Gor No 1'],
+    [666, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00001.00013.2008-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 72, 'Jl Gor Mustika Blora, RT.7/RW.1, Dk.Ketangar, Ds./Kel. KARANGJATI'],
+    [667, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00013.2014-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 72, 'Jl Gor Mustika Blora, RT.7/RW.1, Dk.Ketangar, Ds./Kel. KARANGJATI'],
+    [668, 'PAGAR.PAGAR', '12.01.33.16.010101.00001.00013.2016-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl Gor Mustika Blora, RT.7/RW.1, Dk.Ketangar, Ds./Kel. KARANGJATI'],
+    [669, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00001.00013.2020-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDn 1 KARANGJATI BLORA'],
+    [670, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00034.1985-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Karangtalun, RT.1/RW.1, Dk.KARANGTALUN, Ds./Kel. Karangtalun'],
+    [671, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00034.2005-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Karangtalun, RT.1/RW.1, Dk.KARANGTALUN, Ds./Kel. Karangtalun'],
+    [672, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN SEMI PERMANEN', '12.01.33.16.010101.00003.00034.2006-1.3.3.01.01.10.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Karangtalun, RT.1/RW.1, Dk.KARANGTALUN, Ds./Kel. Karangtalun'],
+    [673, 'PAGAR.PAGAR', '12.01.33.16.010101.00003.00034.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Karangtalun, RT.1/RW.1, Dk.KARANGTALUN, Ds./Kel. Karangtalun'],
+    [674, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00003.00034.2012-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Karangtalun, RT.1/RW.1, Dk.KARANGTALUN, Ds./Kel. Karangtalun'],
+    [675, 'PAGAR.PAGAR PERMANEN', '12.01.33.16.010101.00003.00034.2023-1.3.3.04.01.04.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, '--'],
+    [676, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00004.00038.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'DS KAWENGAN, RT.1/RW.1, Dk.Kawengan, Ds./Kel. Kawengan'],
+    [677, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00004.00038.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 40, 'DS KAWENGAN, RT.1/RW.1, Dk.Kawengan, Ds./Kel. Kawengan'],
+    [678, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00004.00038.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Ds. Kawengan'],
+    [679, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00004.00038.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'DS KAWENGAN, RT.1/RW.1, Dk.Kawengan, Ds./Kel. Kawengan'],
+    [680, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00004.00038.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Desa Kawengan'],
+    [681, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00004.00038.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Desa Kawengan Kecamatan jepon Kab. Blora'],
+    [682, 'PAGAR.PAGAR', '12.01.33.16.010101.00004.00038.2014-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 64, 'DS KAWENGAN, RT.1/RW.1, Dk.Kawengan, Ds./Kel. Kawengan'],
+    [683, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00036.2000-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 189, 'KEBONREJO, RT.1/RW.2, Dk.NULL, Ds./Kel. KEBONREJO'],
+    [684, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00036.2008-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 Kebonrejo'],
+    [685, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00036.2010-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 Kebonrejo'],
+    [686, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00003.00036.2011-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 110, 'KEBONREJO, RT.1/RW.2, Dk.NULL, Ds./Kel. KEBONREJO'],
+    [687, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00036.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa kebonrejo Banjarejo Blora'],
+    [688, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00003.00036.2015-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 18, 'KEBONREJO, RT.1/RW.2, Dk.NULL, Ds./Kel. KEBONREJO'],
+    [689, 'PAGAR.PAGAR', '12.01.33.16.010101.00003.00036.2016-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'KEBONREJO, RT.1/RW.2, Dk.NULL, Ds./Kel. KEBONREJO'],
+    [690, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00038.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Kedungbacin'],
+    [691, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00038.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Ds. Kedungbacin, Kec. Todanan'],
+    [692, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00038.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Desa Kedungbacin'],
+    [693, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR SEMI PERMANEN', '12.01.33.16.010101.00008.00038.2006-1.3.3.01.01.01.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Ds.Kedungbacin,Kec.Todanan'],
+    [694, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR SEMI PERMANEN', '12.01.33.16.010101.00008.00038.2006-1.3.3.01.01.01.002', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Desa Kedungbacin'],
+    [695, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00008.00038.2006-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Kedungbacin'],
+    [696, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00008.00038.2015-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Kedungbacin'],
+    [697, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00002.00024.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 14, 'ds.kedungrejo'],
+    [698, 'BANGUNAN GUDANG.BANGUNAN GUDANG TERTUTUP PERMANEN', '12.01.33.16.010101.00002.00024.2006-1.3.3.01.01.02.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 14, 'desa kedungrejo'],
+    [699, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00024.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 35, 'ds.kedungrejo'],
+    [700, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00024.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'ds. kedungrejo']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4],
+        'bertingkat' => $data[5] === '' ? null : $data[5], // Handle empty string for bertingkat
+        'beton' => $data[6],
+        'luaslantai' => $data[7] === 0 ? null : $data[7], // Handle 0 values for luaslantai
+        'alamat' => $data[8]
+    ]);
+}
+
+
+$buildingData = [
+    [701, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00024.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'ds. kedungrejo'],
+    [702, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00024.2006-1.3.3.01.01.10.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'ds.kedungrejo'],
+    [703, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00024.2006-1.3.3.01.01.10.001', '000005', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 56, 'ds.kedungrejo'],
+    [704, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00024.2006-1.3.3.01.01.10.001', '000006', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 56, 'ds.kedungrejo'],
+    [705, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00024.2006-1.3.3.01.01.10.001', '000007', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 56, 'ds.kedungrejo'],
+    [706, 'PAGAR.PAGAR', '12.01.33.16.010101.00002.00024.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 70, 'ds. kedungrejo'],
+    [707, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00002.00024.2009-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 56, 'ds.kedungrejo'],
+    [708, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00003.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jln Bendungan Mursapa, RT.2/RW.1, Dk.Kedungtuban, Ds./Kel. Kedungtuban'],
+    [709, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00003.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jln Bendungan Mursapa, RT.2/RW.1, Dk.Kedungtuban, Ds./Kel. Kedungtuban'],
+    [710, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00003.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 6, 'Jln Bendungan Mursapa, RT.2/RW.1, Dk.Kedungtuban, Ds./Kel. Kedungtuban'],
+    [711, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00003.2006-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 335, 'Jln Bendungan Mursapa, RT.2/RW.1, Dk.Kedungtuban, Ds./Kel. Kedungtuban'],
+    [712, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00003.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 103, 'Jln Bendungan Mursapa, RT.2/RW.1, Dk.Kedungtuban, Ds./Kel. Kedungtuban'],
+    [713, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00003.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 47, 'Jln Bendungan Mursapa, RT.2/RW.1, Dk.Kedungtuban, Ds./Kel. Kedungtuban'],
+    [714, 'PAGAR.PAGAR', '12.01.33.16.010101.00011.00003.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jln Bendungan Mursapa, RT.2/RW.1, Dk.Kedungtuban, Ds./Kel. Kedungtuban'],
+    [715, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00003.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jln Bendungan Mursapa, RT.2/RW.1, Dk.Kedungtuban, Ds./Kel. Kedungtuban'],
+    [716, 'PAGAR.PAGAR PERMANEN', '12.01.33.16.010101.00011.00003.2023-1.3.3.04.01.04.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, '--'],
+    [717, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00040.2003-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 140, 'Jl. Kunduran - Todanan Km. 5, RT.1/RW.1, Dk.Kedungwaru, Ds./Kel. Kedungwaru'],
+    [718, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00040.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 232, 'Jl. Kunduran - Todanan Km. 5, RT.1/RW.1, Dk.Kedungwaru, Ds./Kel. Kedungwaru'],
+    [719, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00040.2007-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 64, 'Jl. Kunduran - Todanan Km. 5, RT.1/RW.1, Dk.Kedungwaru, Ds./Kel. Kedungwaru'],
+    [720, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00040.2007-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Kunduran - Todanan Km. 5, RT.1/RW.1, Dk.Kedungwaru, Ds./Kel. Kedungwaru'],
+    [721, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00007.00040.2013-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 126, 'Jl. Kunduran - Todanan Km. 5, RT.1/RW.1, Dk.Kedungwaru, Ds./Kel. Kedungwaru'],
+    [722, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00040.2019-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Kedungwaru'],
+    [723, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00012.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 384, 'JL. TODANAN - KUNDURAN KM. 05, RT.2/RW.2, Dk.NULL, Ds./Kel. Kedungwungu'],
+    [724, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00012.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'JL. TODANAN - KUNDURAN KM. 05, RT.2/RW.2, Dk.NULL, Ds./Kel. Kedungwungu'],
+    [725, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00012.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'JL. TODANAN - KUNDURAN KM. 05, RT.2/RW.2, Dk.NULL, Ds./Kel. Kedungwungu'],
+    [726, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00008.00012.2006-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 9, 'JL. TODANAN - KUNDURAN KM. 05, RT.2/RW.2, Dk.NULL, Ds./Kel. Kedungwungu'],
+    [727, 'PAGAR.PAGAR', '12.01.33.16.010101.00008.00012.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 54, 'JL. TODANAN - KUNDURAN KM. 05, RT.2/RW.2, Dk.NULL, Ds./Kel. Kedungwungu'],
+    [728, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.010101.00011.00029.1993-1.3.3.01.01.08.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 10, 'Jl. Sidorejo-Ngoram Km. 1'],
+    [729, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00029.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 859, 'Jl. Sidorejo Ngolram Km. 1'],
+    [730, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00029.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 859, 'Jl. Sidorejo Ngolram Km. 1'],
+    [731, 'PAGAR.PAGAR', '12.01.33.16.010101.00011.00029.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 40, 'Jl. Sidorejo Ngolram Km. 1'],
+    [732, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00029.2010-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 9, 'Jl. Sidorejo-Ngloram Km. 1'],
+    [733, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.010101.00011.00029.2023-1.3.3.01.01.08.001', '000001', '--', '--', '--', null, '--'],
+    [734, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00004.00011.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 54, 'Kemiri, RT.4/RW.4, Dk.Kemiri RT 04 RW 04, Ds./Kel. Kemiri'],
+    [735, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00004.00011.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'Kemiri, RT.4/RW.4, Dk.Kemiri RT 04 RW 04, Ds./Kel. Kemiri'],
+    [736, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00004.00011.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 160, 'Kemiri, RT.4/RW.4, Dk.Kemiri RT 04 RW 04, Ds./Kel. Kemiri'],
+    [737, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00004.00011.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 140, 'Kemiri, RT.4/RW.4, Dk.Kemiri RT 04 RW 04, Ds./Kel. Kemiri'],
+    [738, 'PAGAR.PAGAR', '12.01.33.16.010101.00004.00011.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 24, 'Kemiri, RT.4/RW.4, Dk.Kemiri RT 04 RW 04, Ds./Kel. Kemiri'],
+    [739, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00004.00011.2013-1.3.3.01.01.10.001', '000001', 'BAIK', 'BERTINGKAT', 'TIDAK', 49, 'Kemiri Rt 04 RW 04 Kec. Jepon BLORA Jawa Tengah'],
+    [740, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00020.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 33, 'JL. SONOKIDUL-ROWOBUNGKUL KM.03 DESA KEMIRI Kec KUNDURAN KABUPATEN BLORA, RT.1/RW.2, Dk.Kemiri, Ds./Kel. Kemiri'],
+    [741, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00020.2006-1.3.3.01.01.10.001', '000001', '', '', '', null, ''],
+    [742, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00020.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'desa kemiri RT 02/04'],
+    [743, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00020.2012-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 167, 'JL. SONOKIDUL-ROWOBUNGKUL KM.03 DESA KEMIRI Kec KUNDURAN KABUPATEN BLORA, RT.1/RW.2, Dk.Kemiri, Ds./Kel. Kemiri'],
+    [744, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00020.2016-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'JL. SONOKIDUL-ROWOBUNGKUL KM.03 DESA KEMIRI Kec KUNDURAN KABUPATEN BLORA, RT.1/RW.2, Dk.Kemiri, Ds./Kel. Kemiri'],
+    [745, 'PAGAR.PAGAR PERMANEN', '12.01.33.16.010101.00007.00020.2023-1.3.3.04.01.04.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, '--'],
+    [746, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00016.00024.2006-1.3.3.01.01.01.001', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 364, 'Desa Kepoh Kec Jati, RT.14/RW.9, Dk.Kepoh, Ds./Kel. Kepoh'],
+    [747, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00016.00024.2006-1.3.3.01.01.01.001', '000002', 'Baik', 'Tidak Bertingkat', 'Beton', 9, 'Desa Kepoh Kec Jati, RT.14/RW.9, Dk.Kepoh, Ds./Kel. Kepoh'],
+    [748, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00016.00024.2006-1.3.3.01.01.10.001', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 64, 'Desa Kepoh Kec Jati, RT.14/RW.9, Dk.Kepoh, Ds./Kel. Kepoh'],
+    [749, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00016.00024.2006-1.3.3.01.01.10.001', '000002', 'Baik', 'Tidak Bertingkat', 'Beton', 224, 'Ds.kepoh'],
+    [750, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00016.00024.2006-1.3.3.01.01.10.001', '000003', 'Baik', 'Tidak Bertingkat', 'Beton', 90, 'Ds.Kepoh']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '--' ? null : $data[4], // Handle '--' for kondisibangunan
+        'bertingkat' => $data[5] === '' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5], // Handle empty string, '--', and 'TIDAK' for bertingkat
+        'beton' => $data[6] === '--' ? null : $data[6], // Handle '--' for beton
+        'luaslantai' => $data[7] === 0 || $data[7] === null ? null : $data[7], // Handle 0 and null values for luaslantai
+        'alamat' => $data[8] === '--' ? null : $data[8] // Handle '--' for alamat
+    ]);
+}
+
+$buildingData = [
+    [751, 'PAGAR.PAGAR', '12.01.33.16.010101.00016.00024.2006-1.3.3.04.01.04.004', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 158, 'Desa Kepoh Kec Jati, RT.14/RW.9, Dk.Kepoh, Ds./Kel. Kepoh'],
+    [752, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00016.00024.2015-1.3.3.01.01.16.001', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 60, 'Desa Kepoh Kec Jati, RT.14/RW.9, Dk.Kepoh, Ds./Kel. Kepoh'],
+    [753, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00002.00030.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 255, 'desa keser'],
+    [754, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00002.00030.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 41, 'desa keser'],
+    [755, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00030.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 64, 'desa keser'],
+    [756, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00030.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 64, 'desa keser'],
+    [757, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00030.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 19, 'desa keser'],
+    [758, 'PAGAR.PAGAR', '12.01.33.16.010101.00002.00030.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 97, 'desa keser'],
+    [759, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00002.00030.2009-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 41, 'Ds. Keser'],
+    [760, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00002.00030.2013-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 111, 'Jl. BLORA - REMBANG KM.7, RT.0/RW.0, Dk.KESER, Ds./Kel. KESER'],
+    [761, 'PAGAR.PAGAR', '12.01.33.16.010101.00002.00030.2013-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 48, 'desa keser'],
+    [762, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00002.00030.2020-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 KESER TUNJUNGAN'],
+    [763, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00017.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 98, 'dukuh gendang desa ketileng'],
+    [764, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00017.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 53, 'dukuh gendang desa ketileng'],
+    [765, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00008.00017.2006-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 3, 'dukuh gendang desa ketileng'],
+    [766, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00017.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 186, 'duka ketilenguh gendang de'],
+    [767, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00017.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'DUKUH GEDANG DESA KETILENG'],
+    [768, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00008.00017.2006-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'dukuh gendang desa ketileng'],
+    [769, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00008.00017.2006-1.3.3.01.01.32.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'dukuh gendang desa ketileng'],
+    [770, 'PAGAR.PAGAR', '12.01.33.16.010101.00008.00017.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 48, 'dukuh gendang desa ketileng'],
+    [771, 'PAGAR.PAGAR', '12.01.33.16.010101.00008.00017.2006-1.3.3.04.01.04.004', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'dukuh gedang desa ketileng'],
+    [772, 'PAGAR.PAGAR', '12.01.33.16.010101.00008.00017.2021-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 Ketileng Todanan'],
+    [773, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00013.00016.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 64, 'desa ketringan'],
+    [774, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00013.00016.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 200, 'desa ketringan'],
+    [775, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00016.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'DESA KETRINGAN'],
+    [776, 'RUMAH NEGARA GOLONGAN I.RUMAH NEGARA GOLONGAN I TIPE D PERMANEN', '12.01.33.16.010101.00013.00016.2006-1.3.3.01.02.01.010', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 48, 'desa ketringan'],
+    [777, 'PAGAR.PAGAR', '12.01.33.16.010101.00013.00016.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 1255, 'desa ketringan'],
+    [778, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00016.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'DESA KETRINGAN'],
+    [779, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00013.00016.2012-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'desa ketringan'],
+    [780, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG TEMPAT PENDIDIKAN', '12.01.33.16.010101.00013.00016.2019-1.3.3.01.01.10.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Ketringan, RT.1/RW.1, Dk.Ketringan, Ds./Kel. KETRINGAN'],
+    [781, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00009.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 784, 'Jl Raya Kunduran Blora, RT.1/RW.1, Dk.klokah, Ds./Kel. KLOKAH'],
+    [782, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00009.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 11, 'Jl Raya Kunduran Blora, RT.1/RW.1, Dk.klokah, Ds./Kel. KLOKAH'],
+    [783, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00009.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 34, 'Jl Raya Kunduran Blora, RT.1/RW.1, Dk.klokah, Ds./Kel. KLOKAH'],
+    [784, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00009.2007-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 196, 'Jl Raya Kunduran Blora, RT.1/RW.1, Dk.klokah, Ds./Kel. KLOKAH'],
+    [785, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00009.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 147, 'Jl Raya Kunduran Blora, RT.1/RW.1, Dk.klokah, Ds./Kel. KLOKAH'],
+    [786, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00007.00009.2011-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 63, 'SDN 1 Klokah'],
+    [787, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00009.2016-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl Raya Kunduran Blora, RT.1/RW.1, Dk.klokah, Ds./Kel. KLOKAH'],
+    [788, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00009.2016-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl Raya Kunduran Blora, RT.1/RW.1, Dk.klokah, Ds./Kel. KLOKAH'],
+    [789, 'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM PERMANEN', '12.01.33.16.010101.00007.00009.2023-1.3.3.01.01.05.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, 'SDN 3 Pengkolrejo Kec. Japah'],
+    [790, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00009.2023-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, 'PLANTUNGAN'],
+    [791, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00025.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'Klopoduwur, RT.7/RW.2, Dk.KLOPODUWUR, Ds./Kel. Klopoduwur'],
+    [792, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00003.00025.2006-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 4, 'Klopoduwur, RT.7/RW.2, Dk.KLOPODUWUR, Ds./Kel. Klopoduwur'],
+    [793, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00025.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 645, 'Klopoduwur, RT.7/RW.2, Dk.KLOPODUWUR, Ds./Kel. Klopoduwur'],
+    [794, 'PAGAR.PAGAR', '12.01.33.16.010101.00003.00025.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 65, 'Klopoduwur, RT.7/RW.2, Dk.KLOPODUWUR, Ds./Kel. Klopoduwur'],
+    [795, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00025.2013-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'Klopoduwur, RT.7/RW.2, Dk.KLOPODUWUR, Ds./Kel. Klopoduwur'],
+    [796, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00025.2013-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 147, 'Klopoduwur, RT.7/RW.2, Dk.KLOPODUWUR, Ds./Kel. Klopoduwur'],
+    [797, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00025.2013-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 182, 'Klopoduwur, RT.7/RW.2, Dk.KLOPODUWUR, Ds./Kel. Klopoduwur'],
+    [798, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00003.00025.2013-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 63, 'Klopoduwur, RT.7/RW.2, Dk.KLOPODUWUR, Ds./Kel. Klopoduwur'],
+    [799, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00025.2015-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 1215, 'Klopoduwur, RT.7/RW.2, Dk.KLOPODUWUR, Ds./Kel. Klopoduwur'],
+    [800, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00002.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 250, 'Jl Dr Sutomo 4 , RT.0/RW.0, Dk.Kunden, Ds./Kel. Kunden']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '--' ? null : $data[6],
+        'luaslantai' => $data[7] === 0 || $data[7] === null ? null : $data[7],
+        'alamat' => $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+$buildingData = [
+    [801, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00002.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 135, 'Jl Dr Sutomo 4 , RT.0/RW.0, Dk.Kunden, Ds./Kel. Kunden'],
+    [802, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00002.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'Jl Dr Sutomo 4 , RT.0/RW.0, Dk.Kunden, Ds./Kel. Kunden'],
+    [803, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00002.2006-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 362, 'Jl Dr Sutomo 4 , RT.0/RW.0, Dk.Kunden, Ds./Kel. Kunden'],
+    [804, 'BANGUNAN GEDUNG UNTUK POS JAGA.GEDUNG POS JAGA PERMANEN', '12.01.33.16.010101.00001.00002.2006-1.3.3.01.01.13.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 41, 'Jl Dr Sutomo 4 , RT.0/RW.0, Dk.Kunden, Ds./Kel. Kunden'],
+    [805, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00002.2008-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 68, 'Jl Dr Sutomo 4 , RT.0/RW.0, Dk.Kunden, Ds./Kel. Kunden'],
+    [806, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00001.00002.2009-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 70, 'Jl Dr Sutomo 4 , RT.0/RW.0, Dk.Kunden, Ds./Kel. Kunden'],
+    [807, 'PAGAR.PAGAR', '12.01.33.16.010101.00001.00002.2012-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 160, 'Jl Dr Sutomo 4 , RT.0/RW.0, Dk.Kunden, Ds./Kel. Kunden'],
+    [808, 'PAGAR.PAGAR', '12.01.33.16.010101.00001.00002.2020-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 KUNDEN BLORA'],
+    [809, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00001.1983-1.3.3.01.01.01.001', '000001', 'BAIK', 'BERTINGKAT', 'TIDAK', 148, 'kunduran'],
+    [810, 'RUMAH NEGARA GOLONGAN I.RUMAH NEGARA GOLONGAN I TIPE D PERMANEN', '12.01.33.16.010101.00007.00001.1984-1.3.3.01.02.01.010', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'kunduran'],
+    [811, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00001.1997-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 280, 'kunduran'],
+    [812, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00001.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 360, 'kunduran'],
+    [813, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00001.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 90, 'kunduran'],
+    [814, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00001.2007-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'kunduran'],
+    [815, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00001.2008-1.3.3.01.01.01.001', '000001', 'BAIK', 'BERTINGKAT', 'TIDAK', 42, 'kunduran'],
+    [816, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00001.2008-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'kunduran'],
+    [817, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00001.2010-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'kunduran'],
+    [818, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00007.00001.2013-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'Kunduran'],
+    [819, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.010101.00007.00001.2023-1.3.3.01.01.08.001', '000001', null, null, null, null, null],
+    [820, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00043.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 330, 'Jl Randublatung-cepu Km 7, RT.3/RW.5, Dk.BLADEG, Ds./Kel. KUTUKAN'],
+    [821, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00043.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'jl. cepu-randublatung km.7'],
+    [822, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00043.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'jl. cepu-randublatung km.7'],
+    [823, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00043.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'jl. cepu-randublatung km.7'],
+    [824, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00012.00004.1966-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Rt.01/Rw.03 desa ledok,kec.Sambong,Kab.Blora'],
+    [825, 'BANGUNAN GUDANG.BANGUNAN GUDANG TERTUTUP PERMANEN', '12.01.33.16.010101.00012.00004.2007-1.3.3.01.01.02.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Rt.01/Rw.03 Desa ledok,Kec.Sambong,Kab.Blora'],
+    [826, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00012.00004.2008-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Rt.01/Rw.03,Desa Ledok,Sambongf,Blora'],
+    [827, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00012.00004.2008-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Rt.01/Rw.03 Ledok,Sambong,Blora'],
+    [828, 'PAGAR.PAGAR', '12.01.33.16.010101.00012.00004.2010-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Rt.01,Rw.03,Ledok,Sambong,Blora'],
+    [829, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00012.00004.2017-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Rt.01/Rw.03 Desa ledok,Kec.Sambong,Kab.Blora'],
+    [830, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00016.2003-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'MEDALEM, RT.2/RW.1, Dk.MEDALEM, Ds./Kel. MEDALEM'],
+    [831, 'PAGAR.PAGAR', '12.01.33.16.010101.00015.00016.2003-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'MEDALEM, RT.2/RW.1, Dk.MEDALEM, Ds./Kel. MEDALEM'],
+    [832, 'RUMAH NEGARA GOLONGAN I.RUMAH NEGARA GOLONGAN I TIPE D PERMANEN', '12.01.33.16.010101.00015.00016.2006-1.3.3.01.02.01.010', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'MEDALEM, RT.2/RW.1, Dk.MEDALEM, Ds./Kel. MEDALEM'],
+    [833, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00015.00016.2008-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'MEDALEM, RT.2/RW.1, Dk.MEDALEM, Ds./Kel. MEDALEM'],
+    [834, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00016.2008-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'MEDALEM, RT.2/RW.1, Dk.MEDALEM, Ds./Kel. MEDALEM'],
+    [835, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00015.00028.1995-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'Megeri'],
+    [836, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00028.2004-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Megeri'],
+    [837, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00028.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 112, 'Megeri'],
+    [838, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00015.00028.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'MEGERI, RT.2/RW.1, Dk.MEGERI, Ds./Kel. MEGERI'],
+    [839, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00015.00028.2016-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'MEGERI, RT.2/RW.1, Dk.MEGERI, Ds./Kel. MEGERI'],
+    [840, 'PAGAR.PAGAR', '12.01.33.16.010101.00015.00028.2021-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 Megeri Kradenan'],
+    [841, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00001.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 250, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [842, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00001.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 70, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [843, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00001.2006-1.3.3.01.01.10.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 90, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [844, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00001.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 287, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [845, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00001.2010-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 207, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [846, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00001.2010-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 8, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [847, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00001.2010-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [848, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00015.00001.2010-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 62, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [849, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00001.2013-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [850, 'PAGAR.PAGAR', '12.01.33.16.010101.00015.00001.2014-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 864, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '--' ? null : $data[6],
+        'luaslantai' => $data[7] === 0 || $data[7] === null ? null : $data[7],
+        'alamat' => $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+$buildingData = [
+    [851, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00001.2018-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [852, 'BANGUNAN GEDUNG TEMPAT KERJA LAINNYA.BANGUNAN GEDUNG TEMPAT KERJA LAINNYA', '12.01.33.16.010101.00015.00001.2019-1.3.3.01.01.37.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl. Menden-Peting , RT.7/RW.7, Dk.Menden, Ds./Kel. Mendenrejo'],
+    [853, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00015.00012.2006-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 32, 'RT 02/ RW 02 DESA MOJOREMBUN KEC. KRADENAN KAB. BLORA, RT.2/RW.2, Dk.MOJOREMBUN, Ds./Kel. MOJOREMBUN'],
+    [854, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00012.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 255, 'RT 02/ RW 02 DESA MOJOREMBUN KEC. KRADENAN KAB. BLORA, RT.2/RW.2, Dk.MOJOREMBUN, Ds./Kel. MOJOREMBUN'],
+    [855, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00012.2008-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 247, 'RT 02/ RW 02 DESA MOJOREMBUN KEC. KRADENAN KAB. BLORA, RT.2/RW.2, Dk.MOJOREMBUN, Ds./Kel. MOJOREMBUN'],
+    [856, 'PAGAR.PAGAR', '12.01.33.16.010101.00015.00012.2018-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 MOJOREMBUN'],
+    [857, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN SEMI PERMANEN', '12.01.33.16.010101.00003.00016.1990-1.3.3.01.01.16.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [858, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2001-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [859, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2001-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [860, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2001-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [861, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2001-1.3.3.01.01.10.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 36, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [862, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 58, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [863, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2009-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 58, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [864, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2009-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 51, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [865, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2009-1.3.3.01.01.10.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [866, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00016.2010-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 18, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [867, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00016.2011-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [868, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00016.2011-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [869, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00016.2011-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [870, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00016.2011-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [871, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2011-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 51, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [872, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2011-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 51, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [873, 'PAGAR.PAGAR', '12.01.33.16.010101.00003.00016.2011-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 130, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [874, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 51, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [875, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2012-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 51, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [876, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00003.00016.2012-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 58, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [877, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00003.00016.2014-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [878, 'PAGAR.PAGAR', '12.01.33.16.010101.00003.00016.2014-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 1200, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [879, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00003.00016.2016-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Mojowetan, RT.1/RW.9, Dk.Mojowetan, Ds./Kel. Mojowetan'],
+    [880, 'PAGAR.PAGAR', '12.01.33.16.010101.00003.00016.2021-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 Mojowetan Banjarejo'],
+    [881, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00026.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jalan Randublatung No. 16 Cepu'],
+    [882, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00026.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 600, 'Jalan Randublatung No. 16 Cepu'],
+    [883, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00026.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 15, 'Jalan Randublatung No. 16 Cepu'],
+    [884, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00026.2006-1.3.3.01.01.10.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 126, 'Jalan Randublatung No. 16 Cepu'],
+    [885, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00010.00026.2006-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 80, 'Jalan Randublatung No.16 Cepu'],
+    [886, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00026.2013-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 189, 'Jalan Randublatung No. 16 Cepu'],
+    [887, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00010.00026.2014-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'Mulyorejo, RT.2/RW.2, Dk.NULL, Ds./Kel. MULYOREJO'],
+    [888, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00044.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 122, 'Desa Ngampel'],
+    [889, 'PAGAR.PAGAR', '12.01.33.16.010101.00001.00044.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 186, 'Desa Ngampel'],
+    [890, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00044.2007-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 330, 'Desa Ngampel'],
+    [891, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00044.2010-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 16, 'Desa Ngampel'],
+    [892, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00009.00013.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 30, 'NGAPUS'],
+    [893, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00013.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'NGAPUS'],
+    [894, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00013.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 42, 'NGAPUS'],
+    [895, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00013.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 20, 'NGAPUS'],
+    [896, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00013.2007-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 84, 'DS NGAPUS'],
+    [897, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00009.00013.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'NGAPUS'],
+    [898, 'PAGAR.PAGAR', '12.01.33.16.010101.00009.00013.2012-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 600, 'NGAPUS'],
+    [899, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00006.00001.2007-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 1600, 'Jalan Raya Ngawen'],
+    [900, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.010101.00006.00001.2007-1.3.3.01.01.08.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'Jalan Raya Ngawen']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '--' ? null : $data[6],
+        'luaslantai' => $data[7] === 0 || $data[7] === null ? null : $data[7],
+        'alamat' => $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+$buildingData = [
+    [901, 'PAGAR.PAGAR', '12.01.33.16.010101.00006.00001.2007-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jalan Raya Ngawen'],
+    [902, 'RUMAH NEGARA GOLONGAN I.RUMAH NEGARA GOLONGAN I TIPE D PERMANEN', '12.01.33.16.010101.00006.00001.2008-1.3.3.01.02.01.010', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'Jalan Raya Ngawen'],
+    [903, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00006.00001.2009-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'Jalan Raya Ngawen-Blora'],
+    [904, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00006.00001.2010-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jalan Raya Ngawen'],
+    [905, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00006.00001.2010-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'Jalan Raya Ngawen'],
+    [906, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00006.00001.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 89, 'Jalan Raya Ngawen'],
+    [907, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00006.00001.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 244, 'Jalan raya Ngawen'],
+    [908, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG TEMPAT PENDIDIKAN', '12.01.33.16.010101.00006.00001.2019-1.3.3.01.01.10.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Ngawen, RT.3/RW.7, Dk.SUKOLILO, Ds./Kel. Ngawen'],
+    [909, 'PAGAR.PAGAR', '12.01.33.16.010101.00006.00001.2020-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Ngawen, RT.3/RW.7, Dk.SUKOLILO, Ds./Kel. Ngawen'],
+    [910, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00010.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 56, 'JL KESAMBI NO 7 NGELO'],
+    [911, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00010.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 14, 'JL KESAMBI NO 7 NGELO'],
+    [912, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00010.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 112, 'JL KESAMBI NO 7 NGELO'],
+    [913, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00010.2006-1.3.3.01.01.10.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 168, 'JL KESAMBI NO 7 NGELO'],
+    [914, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00010.2006-1.3.3.01.01.10.001', '000005', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 126, 'JL KESAMBI NO 7 NGELO'],
+    [915, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00010.2006-1.3.3.01.01.10.001', '000006', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 10, 'JL KESAMBI NO 7 NGELO'],
+    [916, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00010.2006-1.3.3.01.01.10.001', '000007', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 572, 'JL KESAMBI NO 7 NGELO'],
+    [917, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00010.2007-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 576, 'JL KESAMBI NO 7 NGELO'],
+    [918, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00010.2010-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 10, 'JL KESAMBI NO 7 NGELO'],
+    [919, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00036.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Ngilen'],
+    [920, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00036.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Ngilen, RT.8/RW.1, Dk.NULL, Ds./Kel. Ngilen'],
+    [921, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00036.2014-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 72, 'Ds Ngilen'],
+    [922, 'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM PERMANEN', '12.01.33.16.010101.00007.00036.2023-1.3.3.01.01.05.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, 'SDN 3 Tanjung Kec. Kedungtuban'],
+    [923, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00036.2023-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, 'SEMAWUR'],
+    [924, 'PAGAR.PAGAR', '12.01.33.16.010101.00011.00015.2007-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 69, 'Jl. Cepu-Randublatung Km.6 ,Kec. kedungtuban, RT.2/RW.2, Dk.Seren, Ds./Kel. Nglandeyan'],
+    [925, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00011.00015.2008-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 10, 'Jl. Cepu-Randublatung Km.6 ,Kec. kedungtuban, RT.2/RW.2, Dk.Seren, Ds./Kel. Nglandeyan'],
+    [926, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00015.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 4, 'Jl. Cepu-Randublatung Km.6 ,Kec. kedungtuban, RT.2/RW.2, Dk.Seren, Ds./Kel. Nglandeyan'],
+    [927, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00015.2009-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 4, 'Jl. Cepu-Randublatung Km.6 ,Kec. kedungtuban, RT.2/RW.2, Dk.Seren, Ds./Kel. Nglandeyan'],
+    [928, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00015.2010-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 128, 'NGLANDEYAN'],
+    [929, 'BANGUNAN GUDANG.BANGUNAN GUDANG', '12.01.33.16.010101.00011.00015.2011-1.3.3.01.01.02.014', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 30, 'desa nglandeyan'],
+    [930, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00015.2011-1.3.3.01.01.10.001', '000001', 'BAIK', 'BERTINGKAT', 'TIDAK', 24, 'Jl. Cepu-Randublatung Km.6 ,Kec. kedungtuban, RT.2/RW.2, Dk.Seren, Ds./Kel. Nglandeyan'],
+    [931, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00015.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'NGLANDEYAN'],
+    [932, 'PAGAR.PAGAR', '12.01.33.16.010101.00011.00015.2013-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 7, 'Jl. Cepu-Randublatung Km.6 ,Kec. kedungtuban, RT.2/RW.2, Dk.Seren, Ds./Kel. Nglandeyan'],
+    [933, 'PAGAR.PAGAR', '12.01.33.16.010101.00011.00015.2013-1.3.3.04.01.04.004', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 7, 'Jl. Cepu-Randublatung Km.6 ,Kec. kedungtuban, RT.2/RW.2, Dk.Seren, Ds./Kel. Nglandeyan'],
+    [934, 'PAGAR.PAGAR', '12.01.33.16.010101.00011.00015.2013-1.3.3.04.01.04.004', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 7, 'Jl. Cepu-Randublatung Km.6 ,Kec. kedungtuban, RT.2/RW.2, Dk.Seren, Ds./Kel. Nglandeyan'],
+    [935, 'PAGAR.PAGAR', '12.01.33.16.010101.00011.00015.2013-1.3.3.04.01.04.004', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 7, 'Jl. Cepu-Randublatung Km.6 ,Kec. kedungtuban, RT.2/RW.2, Dk.Seren, Ds./Kel. Nglandeyan'],
+    [936, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00015.2015-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 350, 'Jl. Cepu-Randublatung Km.6 ,Kec. kedungtuban, RT.2/RW.2, Dk.Seren, Ds./Kel. Nglandeyan'],
+    [937, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00002.00028.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 184, 'Jl. Cut Muerah Intan Km 5, RT.4/RW.3, Dk.NGLANGITAN, Ds./Kel. NGLANGITAN'],
+    [938, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00002.00028.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 60, 'Jl. Cut Muerah Intan Km 5, RT.4/RW.3, Dk.NGLANGITAN, Ds./Kel. NGLANGITAN'],
+    [939, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00002.00028.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 184, 'Jl. Cut Muerah Intan Km 5, RT.4/RW.3, Dk.NGLANGITAN, Ds./Kel. NGLANGITAN'],
+    [940, 'PAGAR.PAGAR', '12.01.33.16.010101.00002.00028.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 100, 'Jl. Cut Muerah Intan Km 5, RT.4/RW.3, Dk.NGLANGITAN, Ds./Kel. NGLANGITAN'],
+    [941, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00002.00028.2007-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 9, 'Jl. Cut Muerah Intan Km 5, RT.4/RW.3, Dk.NGLANGITAN, Ds./Kel. NGLANGITAN'],
+    [942, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00002.00028.2008-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 462, 'Jl. Cut Muerah Intan Km 5, RT.4/RW.3, Dk.NGLANGITAN, Ds./Kel. NGLANGITAN'],
+    [943, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.010101.00002.00028.2011-1.3.3.01.01.08.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 53, 'Jl. Cut Muerah Intan Km 5, RT.4/RW.3, Dk.NGLANGITAN, Ds./Kel. NGLANGITAN'],
+    [944, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00002.00028.2018-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 Nglangitan Tunjungan'],
+    [945, 'PAGAR.PAGAR', '12.01.33.16.010101.00002.00028.2020-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 NGLANGITAN TUNJUNGAN'],
+    [946, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00028.1985-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 18, 'NGLANJUK'],
+    [947, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00028.1986-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 126, 'NGLANJUK'],
+    [948, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00028.1986-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'NGLANJUK'],
+    [949, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00010.00028.2011-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 81, 'JL. ARYO JIPANG NO. 47, RT.0/RW.0, Dk.nglanjuk, Ds./Kel. Nglanjuk'],
+    [950, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00028.2023-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK', 'TIDAK', null, 'NGLANJUK CEPU']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '--' ? null : $data[6],
+        'luaslantai' => $data[7] === 0 || $data[7] === null || $data[7] === '-' ? null : $data[7],
+        'alamat' => $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+$buildingData = [
+    [951, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00015.00024.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'KALIKANGKUNG, RT.2/RW.1, Dk.KALIKANGKUNG, Ds./Kel. Nglebak'],
+    [952, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00024.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'KALIKANGKUNG, RT.2/RW.1, Dk.KALIKANGKUNG, Ds./Kel. Nglebak'],
+    [953, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00024.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'KALIKANGKUNG, RT.2/RW.1, Dk.KALIKANGKUNG, Ds./Kel. Nglebak'],
+    [954, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00024.2007-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'KALIKANGKUNG, RT.2/RW.1, Dk.KALIKANGKUNG, Ds./Kel. Nglebak'],
+    [955, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00024.2007-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'KALIKANGKUNG, RT.2/RW.1, Dk.KALIKANGKUNG, Ds./Kel. Nglebak'],
+    [956, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00024.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 147, 'KALIKANGKUNG, RT.2/RW.1, Dk.KALIKANGKUNG, Ds./Kel. Nglebak'],
+    [957, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00015.00024.2015-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 62, 'KALIKANGKUNG, RT.2/RW.1, Dk.KALIKANGKUNG, Ds./Kel. Nglebak'],
+    [958, 'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM PERMANEN', '12.01.33.16.010101.00015.00024.2023-1.3.3.01.01.05.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, 'SDN 4 Mendenrejo Kec. Kradenan'],
+    [959, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00024.2023-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK', 'TIDAK', null, 'KAPUAN'],
+    [960, 'PAGAR.PAGAR PERMANEN', '12.01.33.16.010101.00015.00024.2023-1.3.3.04.01.04.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, '--'],
+    [961, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00012.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 158, 'DESA NGLEBUR RT 03 RW 02'],
+    [962, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00012.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 96, 'DESA NGLEBUR RT 03 RW 02'],
+    [963, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00012.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 2, 'DESA NGLEBUR RT 03 RW 02'],
+    [964, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00012.2006-1.3.3.01.01.10.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 2, 'DESA NGLEBUR RT 03 RW 02'],
+    [965, 'RUMAH NEGARA GOLONGAN I.RUMAH NEGARA GOLONGAN I TIPE D PERMANEN', '12.01.33.16.010101.00013.00012.2006-1.3.3.01.02.01.010', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 56, 'DESA NGLEBUR'],
+    [966, 'PAGAR.PAGAR', '12.01.33.16.010101.00013.00012.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 89, 'DESA NGLEBUR RT 03 RW 02'],
+    [967, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00012.2013-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 158, 'DESA NGLEBUR RT 03 RW 02'],
+    [968, 'PAGAR.PAGAR', '12.01.33.16.010101.00013.00012.2013-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 11, 'DESA NGLEBUR'],
+    [969, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00005.00004.2004-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Nglengkir, RT.4/RW.1, Dk.Nglengkir, Ds./Kel. Nglengkir'],
+    [970, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00005.00004.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Nglengkir, RT.4/RW.1, Dk.Nglengkir, Ds./Kel. Nglengkir'],
+    [971, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00005.00004.2011-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 335, 'desa nglengkir'],
+    [972, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00005.00004.2011-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 14, 'Desa Nglengkir, RT.4/RW.1, Dk.Nglengkir, Ds./Kel. Nglengkir'],
+    [973, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00005.00004.2011-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 264, 'desa nglengkir'],
+    [974, 'PAGAR.PAGAR', '12.01.33.16.010101.00005.00004.2011-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 48, 'Desa Nglengkir, RT.4/RW.1, Dk.Nglengkir, Ds./Kel. Nglengkir'],
+    [975, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00005.00004.2013-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 120, 'Desa Nglengkir, RT.4/RW.1, Dk.Nglengkir, Ds./Kel. Nglengkir'],
+    [976, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00005.00004.2016-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Nglengkir, RT.4/RW.1, Dk.Nglengkir, Ds./Kel. Nglengkir'],
+    [977, 'PAGAR.PAGAR PERMANEN', '12.01.33.16.010101.00005.00004.2023-1.3.3.04.01.04.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, '--'],
+    [978, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00051.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 70, 'Jl. Blora km. 15 ds. Ngliron kec. Randublatung'],
+    [979, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00051.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'JL. Blora km. 15 , RT.3/RW.1, Dk.Ngliron, Ds./Kel. Ngliron'],
+    [980, 'BANGUNAN GUDANG.BANGUNAN GUDANG TERTUTUP SEMI PERMANEN', '12.01.33.16.010101.00014.00051.2006-1.3.3.01.01.02.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'Jl. Blora km. 15 ds. Ngliron kec. Randublatung'],
+    [981, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00051.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 70, 'JL. Blora km. 15 , RT.3/RW.1, Dk.Ngliron, Ds./Kel. Ngliron'],
+    [982, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN SEMI PERMANEN', '12.01.33.16.010101.00014.00051.2009-1.3.3.01.01.10.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 409, 'Jl. Blora km. 15 ds. Ngliron kec. Randublatung'],
+    [983, 'PAGAR.PAGAR', '12.01.33.16.010101.00014.00051.2011-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 30, 'Jl. Blora km. 15 ds. Ngliron kec. Randublatung'],
+    [984, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00051.2017-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Blora km. 15 ds. Ngliron kec. Randublatung'],
+    [985, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00028.1975-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Nglobo, RT.1/RW.4, Dk.PAYAMAN, Ds./Kel. NGLOBO'],
+    [986, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00028.1975-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Nglobo, RT.1/RW.4, Dk.PAYAMAN, Ds./Kel. NGLOBO'],
+    [987, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00028.1975-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Nglobo, RT.1/RW.4, Dk.PAYAMAN, Ds./Kel. NGLOBO'],
+    [988, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00013.00028.1975-1.3.3.01.01.10.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Nglobo, RT.1/RW.4, Dk.PAYAMAN, Ds./Kel. NGLOBO'],
+    [989, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00013.00028.2007-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 4, 'Desa Nglobo, RT.1/RW.4, Dk.PAYAMAN, Ds./Kel. NGLOBO'],
+    [990, 'PAGAR.PAGAR', '12.01.33.16.010101.00013.00028.2007-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 57, 'Desa Nglobo, RT.1/RW.4, Dk.PAYAMAN, Ds./Kel. NGLOBO'],
+    [991, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00030.2005-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 300, 'JL. ARYO PENANGSANG, RT.1/RW.1, Dk.NGLINGGO, Ds./Kel. NGLORAM'],
+    [992, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00030.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 30, 'JL. ARYO PENANGSANG, RT.1/RW.1, Dk.NGLINGGO, Ds./Kel. NGLORAM'],
+    [993, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00030.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'JL. ARYO PENANGSANG, RT.1/RW.1, Dk.NGLINGGO, Ds./Kel. NGLORAM'],
+    [994, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00030.2009-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 9, 'JL. ARYO PENANGSANG, RT.1/RW.1, Dk.NGLINGGO, Ds./Kel. NGLORAM'],
+    [995, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00030.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 169, 'JL. ARYO PENANGSANG, RT.1/RW.1, Dk.NGLINGGO, Ds./Kel. NGLORAM'],
+    [996, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00010.00030.2013-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 2, 'JL. ARYO PENANGSANG, RT.1/RW.1, Dk.NGLINGGO, Ds./Kel. NGLORAM'],
+    [997, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00010.00030.2015-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 53, 'JL. ARYO PENANGSANG, RT.1/RW.1, Dk.NGLINGGO, Ds./Kel. NGLORAM'],
+    [998, 'PAGAR.PAGAR', '12.01.33.16.010101.00010.00030.2020-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 NGLORAM CEPU'],
+    [999, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00015.00014.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl.Tambangan Patalan, RT.2/RW.2, Dk.Patalan, Ds./Kel. Nglungger'],
+    [1000, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00014.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl.Tambangan Patalan, RT.2/RW.2, Dk.Patalan, Ds./Kel. Nglungger']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '--' ? null : $data[6],
+        'luaslantai' => $data[7] === 0 || $data[7] === null || $data[7] === '-' ? null : $data[7],
+        'alamat' => $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+$buildingData = [
+    [1001, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00014.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl.Tambangan Patalan, RT.2/RW.2, Dk.Patalan, Ds./Kel. Nglungger'],
+    [1002, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00014.2006-1.3.3.01.01.10.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl.Tambangan Patalan, RT.2/RW.2, Dk.Patalan, Ds./Kel. Nglungger'],
+    [1003, 'PAGAR.PAGAR', '12.01.33.16.010101.00015.00014.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl.Tambangan Patalan, RT.2/RW.2, Dk.Patalan, Ds./Kel. Nglungger'],
+    [1004, 'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM PERMANEN', '12.01.33.16.010101.00015.00014.2023-1.3.3.01.01.05.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, 'SDN 4 Ngraho Kec. Kedungtuban'],
+    [1005, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00015.00014.2023-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, 'KLOKAH'],
+    [1006, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00015.00014.2023-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, '--'],
+    [1007, 'PAGAR.PAGAR PERMANEN', '12.01.33.16.010101.00015.00014.2023-1.3.3.04.01.04.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, '--'],
+    [1008, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00011.00009.2011-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 294, 'Jl. Raya Cepu-randublatung Km. 11, RT.3/RW.1, Dk.-, Ds./Kel. NGRAHO'],
+    [1009, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00011.00009.2011-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Raya Cepu-randublatung Km. 11, RT.3/RW.1, Dk.-, Ds./Kel. NGRAHO'],
+    [1010, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00009.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 14, 'Jl. Raya Cepu-randublatung Km. 11, RT.3/RW.1, Dk.-, Ds./Kel. NGRAHO'],
+    [1011, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00011.00009.2013-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 21, 'Jl. Raya Cepu-randublatung Km. 11, RT.3/RW.1, Dk.-, Ds./Kel. NGRAHO'],
+    [1012, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00022.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 63, 'Diponegoro No. 28 Sempu, RT.1/RW.1, Dk.Ngronggah, Ds./Kel. Sempu'],
+    [1013, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00022.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 65, 'Diponegoro No. 28 Sempu, RT.1/RW.1, Dk.Ngronggah, Ds./Kel. Sempu'],
+    [1014, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00022.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 298, 'Diponegoro No. 28 Sempu, RT.1/RW.1, Dk.Ngronggah, Ds./Kel. Sempu'],
+    [1015, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00022.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 15, 'Diponegoro No. 28 Sempu, RT.1/RW.1, Dk.Ngronggah, Ds./Kel. Sempu'],
+    [1016, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00007.00022.2006-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 63, 'Diponegoro No. 28 Sempu, RT.1/RW.1, Dk.Ngronggah, Ds./Kel. Sempu'],
+    [1017, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00022.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 78, 'Diponegoro No. 28 Sempu, RT.1/RW.1, Dk.Ngronggah, Ds./Kel. Sempu'],
+    [1018, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00012.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'JL.GIANTI NO.33'],
+    [1019, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00012.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 180, 'JL.GIANTI NO.33'],
+    [1020, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00012.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 44, 'JL.GIANTI NO 33'],
+    [1021, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00012.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 12, 'JL.GIANTI NO 33'],
+    [1022, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00010.00012.2009-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 164, 'JL.GIANTI NO. 33'],
+    [1023, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00010.00012.2012-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 10, 'JL.GIANTI NO 33'],
+    [1024, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00012.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 34, 'JL.GIANTI NO 33'],
+    [1025, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00010.00012.2013-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 5, 'Jl Giyanti No 33 Ngroto, RT.0/RW.0, Dk.NGROTO, Ds./Kel. NGROTO'],
+    [1026, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00010.00012.2014-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 89, 'Jl Giyanti No 33 Ngroto, RT.0/RW.0, Dk.NGROTO, Ds./Kel. NGROTO'],
+    [1027, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00006.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Dukuh Ngumbul Desa Ngumbul RT.07 RW .01'],
+    [1028, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00006.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Dk.Ngumbul Ds.Ngumbul RT.08 RW 01'],
+    [1029, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00006.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Dk.Ngumbul Ds.Ngumbul RT .07  RW.01'],
+    [1030, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00006.2006-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 17, 'Dk.Ngumbul Ds.Ngumbul RT.08 RW.01'],
+    [1031, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00006.2006-1.3.3.01.01.01.001', '000005', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 210, 'Dk.Ngumbul Ds.Ngumbul RT.08  RW .01'],
+    [1032, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00008.00006.2006-1.3.3.01.01.01.005', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 168, 'Dk.Ngumbul Ds.Ngumbul RT.08 RW.01'],
+    [1033, 'PAGAR.PAGAR', '12.01.33.16.010101.00008.00006.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Dk.Ngumbul Ds.Ngumbul RT.08 RW.01'],
+    [1034, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00001.2008-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 147, 'Jl. Japah - Ngawen, RT.4/RW.1, Dk.Padaan, Ds./Kel. Padaan'],
+    [1035, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00001.2008-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 30, 'Jl. Japah - Ngawen, RT.4/RW.1, Dk.Padaan, Ds./Kel. Padaan'],
+    [1036, 'PAGAR.PAGAR', '12.01.33.16.010101.00009.00001.2008-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 50, 'Jl. Japah - Ngawen, RT.4/RW.1, Dk.Padaan, Ds./Kel. Padaan'],
+    [1037, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00001.2011-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 196, 'Jl. Japah - Ngawen, RT.4/RW.1, Dk.Padaan, Ds./Kel. Padaan'],
+    [1038, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00001.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 30, 'Jl. Japah - Ngawen, RT.4/RW.1, Dk.Padaan, Ds./Kel. Padaan'],
+    [1039, 'PAGAR.PAGAR', '12.01.33.16.010101.00009.00001.2020-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 PADAAN JAPAH'],
+    [1040, 'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM', '12.01.33.16.010101.00009.00001.2021-1.3.3.01.01.05.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 Padaan Japah'],
+    [1041, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00050.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'patalan blora'],
+    [1042, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00050.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'patalan blora'],
+    [1043, 'BANGUNAN GUDANG.BANGUNAN GUDANG TERTUTUP PERMANEN', '12.01.33.16.010101.00001.00050.2006-1.3.3.01.01.02.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'patalan blora'],
+    [1044, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN SEMI PERMANEN', '12.01.33.16.010101.00001.00050.2006-1.3.3.01.01.10.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'patalan blora'],
+    [1045, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN SEMI PERMANEN', '12.01.33.16.010101.00001.00050.2006-1.3.3.01.01.10.002', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'patalan blora'],
+    [1046, 'PAGAR.PAGAR', '12.01.33.16.010101.00001.00050.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'patalan blora'],
+    [1047, 'BANGUNAN GEDUNG TEMPAT KERJA LAINNYA.BANGUNAN GEDUNG TEMPAT KERJA LAINNYA', '12.01.33.16.010101.00001.00050.2012-1.3.3.01.01.37.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'patalan blora'],
+    [1048, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00001.00050.2013-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Patalan'],
+    [1049, 'PAGAR.PAGAR', '12.01.33.16.010101.00001.00050.2020-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 PATALAN BLORA'],
+    [1050, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.010101.00001.00050.2023-1.3.3.01.01.08.001', '000001', '--', '--', '--', null, '--'],
+    [1051, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00035.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Pelem RT 01 RW 02 Kecamatan Blora'],
+    [1052, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00035.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Pelem RT 01 RW 02 Kecamatan Blora'],
+    [1053, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00035.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Pelem RT 01 RW 02 Kecamatan Blora'],
+    [1054, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00035.2006-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Pelem RT 01 RW 02'],
+    [1055, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00035.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Pelem RT 01 RW 02'],
+    [1056, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00035.2012-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Pelem RT 01 RW 02'],
+    [1057, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00035.2012-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Pelem RT 01 RW 02'],
+    [1058, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00001.00035.2014-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 24, 'PELEM, RT.1/RW.2, Dk.NULL, Ds./Kel. Pelem'],
+    [1059, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00001.00035.2018-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'PELEM, RT.1/RW.2, Dk.NULL, Ds./Kel. Pelem'],
+    [1060, 'PAGAR.PAGAR', '12.01.33.16.010101.00001.00035.2021-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'PELEM, RT.1/RW.2, Dk.NULL, Ds./Kel. Pelem']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '--' ? null : $data[6],
+        'luaslantai' => $data[7] === 0 || $data[7] === null || $data[7] === '-' ? null : $data[7],
+        'alamat' => $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+$buildingData = [
+    [1061, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00016.00022.2008-1.3.3.01.01.10.001', '000001', 'Baik', 'Tidak Bertingkat', 'Tidak Beton', 49, 'Dk. Serut, Ds.Pelem, Kec. Jati'],
+    [1062, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00016.00022.2009-1.3.3.01.01.10.001', '000001', 'Baik', 'Tidak Bertingkat', 'Tidak Beton', 49, 'Dk. Serut, Ds.Pelem, Kec. Jati'],
+    [1063, 'PAGAR.PAGAR', '12.01.33.16.010101.00016.00022.2009-1.3.3.04.01.04.004', '000001', 'Baik', 'Tidak Bertingkat', 'Tidak Beton', 5, 'Dk. Serut, Ds.Pelem, Kec. Jati'],
+    [1064, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00016.00022.2011-1.3.3.01.01.16.001', '000001', 'Baik', 'Tidak Bertingkat', 'Tidak Beton', 49, 'Dk. Serut, Ds. Pelem, Kec. Jati'],
+    [1065, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00016.00022.2012-1.3.3.01.01.01.001', '000001', 'Baik', 'Tidak Bertingkat', 'Beton', 399, 'Pelem'],
+    [1066, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00028.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 16, 'Dukuh Tapelan Ds Pelemsengir'],
+    [1067, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00028.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 210, 'Dukuh Tapelan Ds Pelemsengir'],
+    [1068, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00008.00028.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 42, 'DK. TAPELAN DS. PELEMSENGIR'],
+    [1069, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00008.00028.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 168, 'Dukuh Tapelan Ds Pelemsengir'],
+    [1070, 'PAGAR.PAGAR', '12.01.33.16.010101.00008.00028.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'DK. TAPELAN DS. PELEMSENGIR'],
+    [1071, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00008.00028.2015-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 56, 'Dukuh Tapelan Ds Pelemsengir'],
+    [1072, 'PAGAR.PAGAR PERMANEN', '12.01.33.16.010101.00008.00028.2023-1.3.3.04.01.04.001', '000001', 'BAIK', 'TIDAK', 'BETON', null, '--'],
+    [1073, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00009.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Pengkolrejo, RT.0/RW.0, Dk.pengkolrejo, Ds./Kel. PENGKOLREJO'],
+    [1074, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00009.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 35, 'Pengkolrejo, RT.0/RW.0, Dk.pengkolrejo, Ds./Kel. PENGKOLREJO'],
+    [1075, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00009.00009.2006-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 96, 'Pengkolrejo, RT.0/RW.0, Dk.pengkolrejo, Ds./Kel. PENGKOLREJO'],
+    [1076, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00009.00009.2007-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 8, 'Pengkolrejo, RT.0/RW.0, Dk.pengkolrejo, Ds./Kel. PENGKOLREJO'],
+    [1077, 'PAGAR.PAGAR', '12.01.33.16.010101.00009.00009.2008-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 50, 'Pengkolrejo, RT.0/RW.0, Dk.pengkolrejo, Ds./Kel. PENGKOLREJO'],
+    [1078, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00009.00009.2012-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 15, 'Pengkolrejo, RT.0/RW.0, Dk.pengkolrejo, Ds./Kel. PENGKOLREJO'],
+    [1079, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00009.00009.2018-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Pengkolrejo, RT.0/RW.0, Dk.pengkolrejo, Ds./Kel. PENGKOLREJO'],
+    [1080, 'BANGUNAN GEDUNG LABORATORIUM.BANGUNAN GEDUNG LABORATORIUM', '12.01.33.16.010101.00009.00009.2021-1.3.3.01.01.05.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 Pengkolrejo Japah'],
+    [1081, 'BANGUNAN KESEHATAN.BANGUNAN KESEHATAN', '12.01.33.16.010101.00009.00009.2021-1.3.3.01.01.06.019', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 Pengkolrejo Kec. Japah'],
+    [1082, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00016.2001-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 72, 'Jl Diponegoro No 90, RT.2/RW.1, Dk.Pilang, Ds./Kel. PILANG'],
+    [1083, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00016.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 638, 'Jl Diponegoro No 90, RT.2/RW.1, Dk.Pilang, Ds./Kel. PILANG'],
+    [1084, 'PAGAR.PAGAR', '12.01.33.16.010101.00014.00016.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 1600, 'Jl Diponegoro No 90, RT.2/RW.1, Dk.Pilang, Ds./Kel. PILANG'],
+    [1085, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00016.2008-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 175, 'Jl Diponegoro No 90, RT.2/RW.1, Dk.Pilang, Ds./Kel. PILANG'],
+    [1086, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00014.00016.2008-1.3.3.01.01.01.005', '000001', 'BAIK', 'BERTINGKAT', 'BETON', 56, 'JL.Diponegoro No.90 Pilang Kec.Randublatung'],
+    [1087, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00016.2009-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 25, 'JL.Diponegoro No.90 Pilang Kec.Randublatung'],
+    [1088, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00014.00016.2010-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 30, 'JL.Diponegoro No.90 Pilang, Kec.Randublatung'],
+    [1089, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00016.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 1276, 'Jl Diponegoro No 90, RT.2/RW.1, Dk.Pilang, Ds./Kel. PILANG'],
+    [1090, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG TEMPAT PENDIDIKAN', '12.01.33.16.010101.00014.00016.2019-1.3.3.01.01.10.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl Diponegoro No 90, RT.2/RW.1, Dk.Pilang, Ds./Kel. PILANG'],
+    [1091, 'BANGUNAN GEDUNG TEMPAT KERJA LAINNYA.BANGUNAN GEDUNG TEMPAT KERJA LAINNYA', '12.01.33.16.010101.00014.00016.2019-1.3.3.01.01.37.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'Jl Diponegoro No 90, RT.2/RW.1, Dk.Pilang, Ds./Kel. PILANG'],
+    [1092, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00034.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 PLOSOREJO KEC.RANDUBLATUNG'],
+    [1093, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00034.2006-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 PLOSOREJO KEC.RANDUBLATUNG'],
+    [1094, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00034.2009-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 PLOSOREJO'],
+    [1095, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00034.2010-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 PLOSOREJO'],
+    [1096, 'BANGUNAN GEDUNG PERPUSTAKAAN.BANGUNAN GEDUNG PERPUSTAKAAN PERMANEN', '12.01.33.16.010101.00014.00034.2010-1.3.3.01.01.16.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 PLOSOREJO KEC.RANDUBLATUNG'],
+    [1097, 'PAGAR.PAGAR', '12.01.33.16.010101.00014.00034.2010-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 PLOSOREJO KEC RANDUBLATUNG'],
+    [1098, 'PAGAR.PAGAR', '12.01.33.16.010101.00014.00034.2010-1.3.3.04.01.04.004', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 82, 'SDN 1 PLOSOREJO KEC RANDUBLATUNG'],
+    [1099, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00014.00034.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'SDN 1 PLOSOREJO KEC RANDUBLATUNG'],
+    [1100, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00014.00034.2020-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 49, 'SDN 1 PLOSOREJO RANDUBLATUNG'],
+    [1101, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00038.1997-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 183, 'Plosorejo, RT.1/RW.2, Dk.PLOSOREJO, Ds./Kel. Ploso Rejo'],
+    [1102, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00038.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 54, 'Desa Plosorejo'],
+    [1103, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00038.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 316, 'Plosorejo, RT.1/RW.2, Dk.PLOSOREJO, Ds./Kel. Ploso Rejo'],
+    [1104, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010101.00007.00038.2006-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 183, 'Plosorejo, RT.1/RW.2, Dk.PLOSOREJO, Ds./Kel. Ploso Rejo'],
+    [1105, 'PAGAR.PAGAR', '12.01.33.16.010101.00007.00038.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Desa Plosorejo'],
+    [1106, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010101.00007.00038.2010-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 4, 'Desa Plosorejo'],
+    [1107, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010101.00007.00038.2011-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 16, 'Plosorejo, RT.1/RW.2, Dk.PLOSOREJO, Ds./Kel. Ploso Rejo'],
+    [1108, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00012.00009.2004-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Jl. Cepu Blora Km.5, RT.2/RW.2, Dk.Watubrem, Ds./Kel. Pojokwatu'],
+    [1109, 'PAGAR.PAGAR', '12.01.33.16.010101.00012.00009.2004-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Ds.Pojokwatu'],
+    [1110, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010101.00012.00009.2008-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 49, 'Ds. Pojokwatu']
+];
+
+foreach ($buildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 1,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '--' ? null : $data[6],
+        'luaslantai' => $data[7] === 0 || $data[7] === null || $data[7] === '-' ? null : $data[7],
+        'alamat' => $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+// SAMPAI SINI BARU 1
+$data = [
+    [1, null, null, null, null, null, 'INVENTARIS', '281.320.000,00', '12450.1289.C / GEDUNG 2', '010101.00000.00000'],
+    [2, null, null, null, null, null, 'INVENTARIS', '255.210.000,00', '12451.1289.C / GEDUNG 1', '010101.00000.00000'],
+    [3, null, 2005, null, null, null, 'INVENTARIS', '85.000.000,00', '12449.1289.C / MUSOLLA', '010101.00000.00000'],
+    [4, null, null, null, null, null, 'INVENTARIS', '87.350.000,00', '12436.1289.C / GEDUNG 1', '010101.00000.00000'],
+    [5, null, null, null, null, null, 'INVENTARIS', '5.000.000,00', '12440.1289.C / Kamar Mandi/Toilet/WC', '010101.00000.00000'],
+    [6, null, null, 6, null, null, 'INVENTARIS', '45.271.300,00', '5315259.477.C / Bangunan Pos Jaga selatan', '010101.00000.00000'],
+    [7, null, null, 5, null, null, 'INVENTARIS', '38.800.000,00', '5315260.477.C / Bangunan Pos Jaga utara', '010101.00000.00000'],
+    [8, null, null, 48, null, null, 'INVENTARIS', '5.300.000,00', '12454.1289.C / KAMAR MANDI DAN WC', '010101.00000.00000'],
+    [9, null, null, 144, null, null, 'INVENTARIS', '77.250.000,00', '12437.1289.C / GEDUNG 2', '010101.00000.00000'],
+    [10, null, null, 63, null, null, 'INVENTARIS', '107.107.000,00', '12441.1289.C / GEDUNG 3', '010101.00000.00000'],
+    [11, null, null, 15, null, null, 'INVENTARIS', '3.400.000,00', '12438.1289.C / Parkir', '010101.00000.00000'],
+    [12, null, null, 50, null, null, 'INVENTARIS', '171.438.000,00', '12439.1289.C / Pagar', '010101.00000.00000'],
+    [13, null, null, 30, null, null, 'INVENTARIS', '6.400.000,00', '12453.1289.C / PAGAR HALAMAN & GAPURA', '010101.00000.00000'],
+    [14, null, null, 60, null, null, 'INVENTARIS', '10.000.000,00', '8973257.477.C / PAGAR', '010101.00000.00000'],
+    [15, null, null, 350, null, null, 'INVENTARIS', '14.200.000,00', '12452.1289.C / PERKERASAN', '010101.00000.00000'],
+    [16, null, null, 168, null, null, 'INVENTARIS', '150.000.000,00', '8973258.477.C / ruang kelas 3, Kantor dan Kelas 2', '010101.00000.00000'],
+    [17, null, null, 210, null, null, 'INVENTARIS', '200.000.000,00', '8973259.477.C / Ruang Kelas 1, kelas 4, kelas 6, kelas 5', '010101.00000.00000'],
+    [18, null, null, 8, null, null, 'INVENTARIS', '8.000.000,00', '8973256.477.C / WC', '010101.00000.00000'],
+    [19, null, null, 36, null, null, 'INVENTARIS', '69.144.700,00', '5315262.477.C / Bangunan Gedung Sekretariat Dikpora', '010101.00000.00000'],
+    [20, null, null, 25, null, null, 'INVENTARIS', '15.000.000,00', '8973255.477.C / PERKERASAN', '010101.00000.00000'],
+    [21, null, null, 63, null, null, 'INVENTARIS', '183.026.800,00', '12448.1289.C / GEDUNG PERPUSTAKAAN', '010101.00000.00000'],
+    [22, null, 'SPK No.007/SPK/02.42/APBD 2012/RG Kantor/2012', 450, null, null, 'INVENTARIS', '190.606.234,00', '5315263.477.C / Perkerasan', '010101.00000.00000'],
+    [23, null, null, 5, null, null, 'INVENTARIS', '1.147.500,00', '8973254.477.C / perkerasan', '010101.00000.00000'],
+    [24, null, null, 450, null, null, 'PEMBELIAN', '129.889.173,00', '5315235.477.C / Perkerasan Kantor Dindikpora', '010101.00000.00000'],
+    [25, null, null, 475, null, null, 'PEMBELIAN', '51.961.843,00', '12446.1289.C / Paving', '010101.00000.00000'],
+    [26, null, null, 27, null, null, 'PEMBELIAN', '43.026.338,00', '12447.1289.C / Pagar', '010101.00000.00000'],
+    [27, null, null, 60, null, null, 'PEMBELIAN', '96.293.826,00', '8973253.477.C / Pagar', '010101.00000.00000'],
+    [28, '12/12/2017', '-', '6.000', null, null, 'PEMBELIAN', '4.744.579.194,00', '8972037.477.C / GEDUNG A (Gedung Sekretariat+PTK)', '010101.00000.00000'],
+    [29, '12/12/2017', '-', '6.000', null, null, 'PEMBELIAN', '2.076.466.600,00', '8972038.477.C / GEDUNG C (Gedung Sarpras)', '010101.00000.00000'],
+    [30, '30/12/2018', null, '6.000', null, null, 'INVENTARIS', '4.327.422.498,00', '8972575.477.C / Gedung B (Gedung Dikdas+Paud/Dikmas)', '010101.00000.00000'],
+    [31, '30/12/2018', null, '6.000', null, null, 'INVENTARIS', '658.829.059,00', '8972574.477.C / Gedung E (Musholla Al Ustadz)', '010101.00000.00000'],
+    [32, '30/12/2018', null, '6.000', null, null, 'INVENTARIS', '1.606.025.766,00', '8972573.477.C / Gedung D (Gedung Parkir dan Ruang Penunjang)', '010101.00000.00000'],
+    [33, '30/12/2018', null, '6.000', null, null, 'PEMBELIAN', '411.868.500,00', '8972577.477.C / Pagar (2018)', '010101.00000.00000'],
+    [34, '31/12/2019', '-', '6.000', null, null, 'PEMBELIAN', '149.180.000,00', '1060.477.C / Kanopi parkir kantor Dinas Pendidikan', '010101.00000.00000'],
+    [35, '31/12/2019', '-', '6.000', null, null, 'PEMBELIAN', '101.122.880,00', '1053.477.C / Taman', '010101.00000.00000'],
+    [36, '16/12/2020', null, '6.000', null, null, 'PEMBELIAN', '42.130.000,00', '271.477.C / Tower Pembelajaran Jarak Jauh 2020', '010101.00000.00000'],
+    [37, '--', null, 71, null, null, 'INVENTARIS', '2.000.000,00', '3325943.577.C / Perkerasan', '010101.00003.00000'],
+    [38, '--', null, 35, null, null, 'INVENTARIS', '4.230.000,00', '8951105.577.C / Gedung Kantor', '010101.00003.00000'],
+    [39, '--', null, 214, null, null, 'INVENTARIS', '327.025.500,00', '3325941.577.C / Bangunan Gedung Kantor Semi Permanen', '010101.00003.00000'],
+    [40, '--', null, 24, null, null, 'INVENTARIS', '11.900.000,00', '8951101.577.C / Rumah Dinas', '010101.00003.00000'],
+    [41, '--', null, 28, null, null, 'INVENTARIS', '16.800.000,00', '8951103.577.C / Kamar Mandi/WC', '010101.00003.00000'],
+    [42, '--', null, 168, null, null, 'INVENTARIS', '12.520.000,00', '8951104.577.C / Ruang Kelas', '010101.00003.00000'],
+    [43, '--', null, 41, null, null, 'INVENTARIS', '1.000.000,00', '3325942.577.C / Pagar', '010101.00003.00000'],
+    [44, '--', null, 803, null, null, 'INVENTARIS', '7.400.000,00', '8951102.577.C / Pagar', '010101.00003.00000'],
+    [45, '--', null, 64, null, null, 'MUTASI', '262.933.000,00', '8951098.577.C / ruang kelas', '010101.00003.00000'],
+    [46, '--', null, 91, null, null, 'INVENTARIS', '2.800.000,00', '8951106.577.C / Paping', '010101.00003.00000'],
+    [47, '--', null, 56, null, null, 'MUTASI', '245.978.000,00', '8951100.577.C / gedung sekolah', '010101.00003.00000'],
+    [48, '--', null, 56, null, null, 'MUTASI', '219.851.000,00', '8951099.577.C / gedung perpus', '010101.00003.00000'],
+    [49, '--', null, 64, null, null, 'INVENTARIS', '937.500,00', '8951107.577.C / Gedung II', '010101.00003.00000'],
+    [50, '--', null, 56, null, null, 'INVENTARIS', '937.500,00', '8951109.577.C / GEDUNG I', '010101.00003.00000'],
+];
+
+foreach ($data as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' ? null : $item[1],
+            'nomor' => $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4],
+            'nomor_kode_tanah' => $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [51, '--', null, 803, null, null, 'INVENTARIS', '1.998.000,00', '8951108.577.C / Pagar', '010101.00003.00000'],
+    [52, '--', null, 1027, null, null, 'INVENTARIS', '73.800.000,00', '3934659.486.C / kantor UPTD TK/SD Kec.Blora', '010101.00001.00000'],
+    [53, '--', null, 1027, null, null, 'INVENTARIS', '53.900.000,00', '3934660.486.C / aula', '010101.00001.00000'],
+    [54, '--', null, 1027, null, null, 'INVENTARIS', '24.600.000,00', '3934661.486.C / tempat parkir', '010101.00001.00000'],
+    [55, '--', null, 1027, null, null, 'INVENTARIS', '80.000.000,00', '3934662.486.C / mushola', '010101.00001.00000'],
+    [56, '--', null, 79, null, null, 'INVENTARIS', '494.586.700,00', '3448774.664.C / BANGUNAN GEDUNG KANTOR', '010101.00005.00000'],
+    [57, '--', null, 175, null, null, 'INVENTARIS', '353.752.000,00', '3448775.664.C / BANGUNAN GEDUNG PERTEMUAN', '010101.00005.00000'],
+    [58, '30/12/2018', null, 60, null, null, 'INVENTARIS', '394.028.000,00', '8951074.664.C / Pagar (2018)', '010101.00005.00000'],
+    [59, '--', null, 120, null, null, 'INVENTARIS', '600.242.200,00', '4376326.816.C / Pembangunan Gedung Kantor', '010101.00009.00000'],
+    [60, '30/12/2006', '--', 390, 'Hak Pakai', '--', 'PEMBELIAN', '444.971.500,00', 'Gedung kantor UPTD TK/SD', '010101.00016.00000'],
+    [61, '31/12/2019', '--', 144, 'Hak Milik', '--', 'PEMBELIAN', '740.243.000,00', 'Gedung Kantor', '010101.00016.00000'],
+    [62, '30/12/2006', '--', 380, 'Hak Pakai', '--', 'PEMBELIAN', '15.000.000,00', 'Gudang', '010101.00016.00000'],
+    [63, '31/12/2019', '--', 24, 'Hak Milik', '--', 'PEMBELIAN', '3.610.000,00', 'Gudang', '010101.00016.00000'],
+    [64, '31/12/2019', '--', 100, 'Hak Milik', '--', 'PEMBELIAN', '389.015.800,00', 'Gedung Pertemuan', '010101.00016.00000'],
+    [65, '30/12/2006', '--', 380, 'Hak Pakai', '--', 'PEMBELIAN', '3.000.000,00', 'Gedung Koperasi PGRI', '010101.00016.00000'],
+    [66, '31/12/2019', '--', 54, 'Hak Milik', '--', 'PEMBELIAN', '175.810.000,00', 'Gedung Kantor /gedung    e  KTP', '010101.00016.00000'],
+    [67, '--', null, 49, '--', null, 'INVENTARIS', '7.500.000,00', '2886142.618.C / Kamar Mandi/Toilet/WC', '010101.00004.00000'],
+    [68, '--', null, 103, '--', null, 'HIBAH', '11.855.000,00', '2886143.618.C / pagar', '010101.00004.00000'],
+    [69, '--', null, 63, '--', null, 'INVENTARIS', '9.698.000,00', '2886144.618.C / perkerasan', '010101.00004.00000'],
+    [70, '--', null, 105, '--', null, 'HIBAH', '76.100.000,00', '2886140.618.C / Mushola', '010101.00004.00000'],
+    [71, '--', null, 203, '--', null, 'INVENTARIS', '117.860.600,00', '2886141.618.C / Bangunan Gedung Pertemuan Permanen', '010101.00004.00000'],
+    [72, '--', null, 45, '--', null, 'INVENTARIS', '2.200.000,00', '8951078.618.C / Km.WC', '010101.00004.00000'],
+    [73, '--', null, 49, '--', null, 'INVENTARIS', '37.900.000,00', '8951080.618.C / BANGUNAN 1', '010101.00004.00000'],
+    [74, '--', null, 36, '--', null, 'INVENTARIS', '6.400.000,00', '8951079.618.C / BANGUNAN 2', '010101.00004.00000'],
+    [75, '--', null, 234, '--', null, 'INVENTARIS', '44.500.000,00', '8951076.618.C / BANGUNAN 3', '010101.00004.00000'],
+    [76, '--', null, 22, '--', null, 'INVENTARIS', '143.024.000,00', '8951077.618.C / PAGAR', '010101.00004.00000'],
+    [77, '--', null, 70, '--', null, 'PEMBELIAN', '213.093.000,00', '2886139.618.C / Pembangunan Gedung Kantor', '010101.00004.00000'],
+    [78, '--', null, 15, '--', null, 'PEMBELIAN', '1.987.000,00', '3590245.942.C / Perkerasan', '010101.00013.00000'],
+    [79, '--', null, 251, '--', null, 'PEMBELIAN', '517.345.500,00', '3590246.942.C / Bangunan Gedung kantor permanen', '010101.00013.00000'],
+    [80, '--', null, 122, '--', null, 'PEMBELIAN', '198.790.000,00', '3590248.942.C / BANGUNAN AULA', '010101.00013.00000'],
+    [81, '--', null, 40, '--', null, 'PEMBELIAN', '77.700.000,00', '3590247.942.C / Mushola', '010101.00013.00000'],
+    [82, '--', null, 28, '--', null, 'PEMBELIAN', '21.340.000,00', '3590244.942.C / PAGAR', '010101.00013.00000'],
+    [83, '--', null, 32, '--', null, 'INVENTARIS', '19.500.000,00', '3590249.942.C / KANOPI', '010101.00013.00000'],
+    [84, '--', null, 88, '--', null, 'INVENTARIS', '47.300.000,00', '4299765.878.C / Gedung Kantor', '010101.00011.00000'],
+    [85, '--', null, 88, '--', null, 'INVENTARIS', '254.038.200,00', '4299767.878.C / Gedung Kantor', '010101.00011.00000'],
+    [86, '--', null, 2, '--', null, 'INVENTARIS', '2.964.000,00', '4299766.878.C / Pagar', '010101.00011.00000'],
+    [87, '--', null, 2, '--', null, 'INVENTARIS', '13.000.000,00', '4299768.878.C / Pagar', '010101.00011.00000'],
+    [88, '--', null, 60, '--', null, 'PEMBELIAN', '33.400.000,00', '3043996.987.C / Gedung Kantor', '010101.00015.00000'],
+    [89, '--', null, 72, '--', null, 'INVENTARIS', '283.957.650,00', '3043997.987.C / Gedung Kantor', '010101.00015.00000'],
+    [90, '--', null, 82, '--', null, 'HIBAH', '56.500.000,00', '3043998.987.C / GEDUNG KANTOR', '010101.00015.00000'],
+    [91, '--', null, 60, '--', null, 'PEMBELIAN', '89.497.000,00', '6059699.987.C / Pagar Gapura', '010101.00015.00000'],
+    [92, '31/12/2021', '-', 60, '--', null, 'PEMBELIAN', '9.294.330,00', '8951076.987.C / Pembangunan Tempat Parkir', '010101.00015.00000'],
+    [93, '--', null, 80, '--', null, 'INVENTARIS', '199.746.000,00', '3686934.726.C / Bangunan Gedung', '010101.00007.00000'],
+    [94, '--', null, 85, '--', null, 'INVENTARIS', '50.000.000,00', '3686935.726.C / Pagar', '010101.00007.00000'],
+    [95, '--', null, 120, '--', null, 'PEMBELIAN', '312.951.000,00', '3686932.726.C / Pembangunan Gedung Kantor', '010101.00007.00000'],
+    [96, '--', null, 16, '--', null, 'INVENTARIS', '12.000.000,00', '3686936.726.C / KM/WC Baru', '010101.00007.00000'],
+    [97, '--', null, 1361, '--', null, 'INVENTARIS', '37.600.000,00', '4562932.687.C / Bangunan Gedung Kantor', '010101.00006.00000'],
+    [98, '--', null, 8, '--', null, 'INVENTARIS', '3.500.000,00', '4562937.687.C / KAMAR MANDI/WC', '010101.00006.00000'],
+    [99, '--', null, 1245, '--', null, 'INVENTARIS', '7.188.000,00', '4562939.687.C / PAVING BLOCK', '010101.00006.00000'],
+    [100, '--', null, 38, '--', null, 'INVENTARIS', '20.000.000,00', '4562935.687.C / MUSHOLA', '010101.00006.00000'],
+    [101, '--', null, 30, '--', null, 'INVENTARIS', '1.408.000,00', '4562938.687.C / PAGAR', '010101.00006.00000'],
+    [102, '--', null, 61, '--', null, 'PEMBELIAN', '40.000.000,00', '4562934.687.C / AULA', '010101.00006.00000'],
+    [103, '--', null, 70, '--', null, 'INVENTARIS', '70.000.000,00', '4562933.687.C / BANGUNAN GEDUNG KANTOR', '010101.00006.00000'],
+    [104, '--', null, 15, '--', null, 'INVENTARIS', '500.000,00', '4562936.687.C / TEMPAT SEPEDA', '010101.00006.00000'],
+    [105, '--', null, 48, '--', null, 'HIBAH', '9.000.000,00', '4562940.687.C / KANOPI', '010101.00006.00000'],
+    [106, '--', null, 4, '--', null, 'HIBAH', '14.413.500,00', '4562941.687.C / Bangunan Papan Nama SKPD', '010101.00006.00000'],
+    [107, '--', null, 120, '--', null, 'INVENTARIS', '43.700.000,00', '3171828.972.C / Aula', '010101.00014.00000'],
+    [108, '--', null, 100, '--', null, 'INVENTARIS', '82.500.000,00', '3171829.972.C / Kantor Pengawas/Penilik', '010101.00014.00000'],
+    [109, '--', null, 84, '--', null, 'INVENTARIS', '498.335.600,00', '3171830.972.C / Kantor UPTD/TU', '010101.00014.00000'],
+    [110, '--', null, 144, '--', null, 'INVENTARIS', '5.200.000,00', '3171832.972.C / Perkerasan Halaman', '010101.00014.00000'],
+    [111, '--', null, 14, '--', null, 'INVENTARIS', '101.905.000,00', '3171831.972.C / Pagar Halaman', '010101.00014.00000'],
+    [112, '01/01/2019', null, 688, '--', null, 'INVENTARIS', '12.600.000,00', '8951834.916.C / perkerasan halaman', '010101.00012.00000'],
+    [113, '01/01/2019', null, 54, '--', null, 'INVENTARIS', '25.000.000,00', '8951836.916.C / Gedung Kantor', '010101.00012.00000'],
+    [114, '01/01/1974', null, 1546, '--', null, 'INVENTARIS', '150.000.000,00', '8951837.916.C / Bangunan Gedung', '010101.00012.00000'],
+    [115, '01/01/1974', null, 100, '--', null, 'INVENTARIS', '7.500.000,00', '8951835.916.C / Pagar', '010101.00012.00000'],
+    [116, '--', null, 30, '--', null, 'INVENTARIS', '286.300.000,00', '3516153.916.C / Gedung Kantor', '010101.00012.00000'],
+    [117, '--', null, 450, '--', null, 'INVENTARIS', '125.613.500,00', '3516154.916.C / Gedung Kantor', '010101.00012.00000'],
+    [118, '--', null, 32, '--', null, 'INVENTARIS', '10.600.000,00', '3516156.916.C / Perkerasan Halaman', '010101.00012.00000'],
+    [119, '--', null, 49, '--', null, 'INVENTARIS', '3.500.000,00', '3516155.916.C / Pagar Halaman', '010101.00012.00000'],
+    [120, '--', null, 72, '--', null, 'INVENTARIS', '102.812.800,00', '8951833.916.C / GEDUNG PERPUSTAKAAN', '010101.00012.00000'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' ? null : $item[1],
+            'nomor' => $item[2] === '--' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [121, '--', null, 505, null, null, 'INVENTARIS', '234.368.700,00', '3811677.769.C / Gedung Kantor', '010101.00008.00000'],
+    [122, '30/12/2018', null, 497, null, null, 'PEMBELIAN', '145.778.000,00', '8951892.769.C / Pagar (2018)', '010101.00008.00000'],
+    [123, '--', null, 67, null, null, 'INVENTARIS', '394.326.800,00', '4075701.543.C / KANTOR UPTD KEC.TUNJUNGAN', '010101.00002.00000'],
+    [124, '--', null, 11, null, null, 'INVENTARIS', '17.400.000,00', '4075702.543.C / MUSHOLA', '010101.00002.00000'],
+    [125, '--', null, 32, null, null, 'INVENTARIS', '4.279.000,00', '4075703.543.C / PAGAR HALAMAN', '010101.00002.00000'],
+    [126, '--', null, 63, null, null, 'INVENTARIS', '159.300.000,00', '8958116.842.C / KANTOR GURU', '010101.00010.00000'],
+    [127, '--', null, 61, null, null, 'INVENTARIS', '159.300.000,00', '8958098.842.C / RUANG TK', '010101.00010.00000'],
+    [128, '--', null, 31, null, null, 'INVENTARIS', '100.000.000,00', '8958099.842.C / KAMAR MANDI GURU', '010101.00010.00000'],
+    [129, '--', null, 31, null, null, 'INVENTARIS', '100.000.000,00', '8958100.842.C / KAMAR MANDI SISWA', '010101.00010.00000'],
+    [130, '--', null, 68, null, null, 'INVENTARIS', '159.300.000,00', '8958101.842.C / RUANG KELAS 4', '010101.00010.00000'],
+    [131, '--', null, 63, null, null, 'INVENTARIS', '159.300.000,00', '8958102.842.C / RUANG KELAS 3', '010101.00010.00000'],
+    [132, '--', null, 43, null, null, 'INVENTARIS', '159.300.000,00', '8958103.842.C / RUANG KELAS 2', '010101.00010.00000'],
+    [133, '--', '1982', 68, null, null, 'INVENTARIS', '159.300.000,00', '8958104.842.C / RUANG KELAS 1', '010101.00010.00000'],
+    [134, '--', null, 54, null, null, 'INVENTARIS', '25.100.000,00', '8958107.842.C / RUMAH DINAS KA. SEKOLAH', '010101.00010.00000'],
+    [135, '--', null, 54, null, null, 'INVENTARIS', '26.000.000,00', '8958108.842.C / RUMAH DINAS GURU', '010101.00010.00000'],
+    [136, '--', null, 63, null, null, 'INVENTARIS', '159.300.000,00', '8958114.842.C / RUANG KELAS 6', '010101.00010.00000'],
+    [137, '--', null, 68, null, null, 'INVENTARIS', '159.300.000,00', '8958115.842.C / RUANG KELAS 5', '010101.00010.00000'],
+    [138, '--', null, 203, null, null, 'PEMBELIAN', '105.000.000,00', '4441166.842.C / Aula, Ruang TU, & Gudang', '010101.00010.00000'],
+    [139, '--', null, 150, null, null, 'PEMBELIAN', '277.756.400,00', '4441167.842.C / Kantor', '010101.00010.00000'],
+    [140, '--', null, 5, null, null, 'PEMBELIAN', '1.900.000,00', '4441168.842.C / KM/ WC', '010101.00010.00000'],
+    [141, '--', null, 20, null, null, 'PEMBELIAN', '5.600.000,00', '4441169.842.C / Pagar Halaman', '010101.00010.00000'],
+    [142, '--', null, 80, null, null, 'PEMBELIAN', '3.300.000,00', '4441171.842.C / Perkerasan Halaman', '010101.00010.00000'],
+    [143, '--', null, 13, null, null, 'INVENTARIS', '1.900.000,00', '8958109.842.C / PINTU GERBANG', '010101.00010.00000'],
+    [144, '--', null, 30, null, null, 'INVENTARIS', '100.000.000,00', '8958110.842.C / UKS', '010101.00010.00000'],
+    [145, '--', null, 9, null, null, 'PEMBELIAN', '2.400.000,00', '4441170.842.C / Tempat Parkir Motor', '010101.00010.00000'],
+    [146, '--', null, 20, null, null, 'INVENTARIS', '3.700.000,00', '8958112.842.C / TEMPAT PARKIR', '010101.00010.00000'],
+    [147, '--', null, 50, null, null, 'INVENTARIS', '400.000,00', '8958111.842.C / PAGAR HALAMAN', '010101.00010.00000'],
+    [148, '--', null, 92, null, null, 'INVENTARIS', '203.825.000,00', '8958113.842.C / PERPUSTAKAAN', '010101.00010.00000'],
+    [149, '--', null, 36, null, null, 'HIBAH', '150.000.000,00', '4441172.842.C / MUSHOLA', '010101.00010.00000'],
+    [150, '--', null, 105, null, null, 'PEMBELIAN', '52.017.943,00', '8958105.842.C / Paving', '010101.00010.00000'],
+    [151, '--', null, 3.168, null, null, 'INVENTARIS', '6.000.000,00', '4075753.556.C / Kamar Mandi/WC', '010101.00002.00013'],
+    [152, '--', null, 3.168, null, null, 'INVENTARIS', '101.552.000,00', '4075749.556.C / Bangunan Gedung Sekolah Unit 1', '010101.00002.00013'],
+    [153, '--', null, 3.168, null, null, 'INVENTARIS', '101.552.000,00', '4075750.556.C / Bangunan Gedung Sekolah Unit 2', '010101.00002.00013'],
+    [154, '--', null, 3.168, null, null, 'INVENTARIS', '30.000.000,00', '4075754.556.C / Rumah Dinas Penjaga', '010101.00002.00013'],
+    [155, '--', null, 3.168, null, null, 'INVENTARIS', '108.081.000,00', '4075756.556.C / Pagar Sekolah', '010101.00002.00013'],
+    [156, '--', null, 3.168, null, null, 'INVENTARIS', '160.000.000,00', '4075751.556.C / Bangunan Gedung Sekolah Unit 3', '010101.00002.00013'],
+    [157, '--', null, 3.168, null, null, 'INVENTARIS', '102.022.400,00', '4075755.556.C / Gedung Perpustakaan', '010101.00002.00013'],
+    [158, '--', '28/06/1905', 12, null, null, 'INVENTARIS', '103.002.596,00', '4075857.561.C / WC, GUDANG D', '010101.00002.00018'],
+    [159, '--', '28/06/1905', 236, null, null, 'INVENTARIS', '240.000.000,00', '4075853.561.C / GEDUNG C', '010101.00002.00018'],
+    [160, '--', '28/06/1905', 118, null, null, 'INVENTARIS', '203.641.400,00', '4075854.561.C / GEDUNG A', '010101.00002.00018'],
+    [161, '--', '28/06/1905', 118, null, null, 'INVENTARIS', '203.641.400,00', '4075856.561.C / GEDUNG B', '010101.00002.00018'],
+    [162, '--', '28/06/1905', 6, null, null, 'INVENTARIS', '10.000.000,00', '4075851.561.C / Tempat Parkir', '010101.00002.00018'],
+    [163, '--', '28/06/1905', 88, null, null, 'INVENTARIS', '12.000.000,00', '4075852.561.C / pagar', '010101.00002.00018'],
+    [164, '--', '02/07/1905', 59, null, null, 'INVENTARIS', '72.000.000,00', '4075855.561.C / perpustakaan sekolah', '010101.00002.00018'],
+    [165, '--', '05/07/1905', 594, null, null, 'INVENTARIS', '4.835.000,00', '4075850.561.C / pafing halaman', '010101.00002.00018'],
+    [166, '--', null, 32, null, null, 'INVENTARIS', '21.200.000,00', '3934795.514.C / tempat ibadah', '010101.00001.00027'],
+    [167, '--', null, 210, null, null, 'INVENTARIS', '180.500.000,00', '3934794.514.C / Ruang kelas, gudang, perpustakaan', '010101.00001.00027'],
+    [168, '--', null, 6, null, null, 'INVENTARIS', '1.200.000,00', '3934796.514.C / tempat parkir murid', '010101.00001.00027'],
+    [169, '--', null, 9, null, null, 'INVENTARIS', '1.250.000,00', '3934797.514.C / tempat parkir guru', '010101.00001.00027'],
+    [170, '--', null, 12, null, null, 'INVENTARIS', '7.200.000,00', '3934791.514.C / kamar mandi dan toilet', '010101.00001.00027'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' ? null : $item[1],
+            'nomor' => $item[2] === '--' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [171, '--', null, 36, null, null, 'INVENTARIS', '268.395.240,00', '3934793.514.C / ruang kantor guru dan KS', '010101.00001.00027'],
+    [172, '--', null, 144, null, null, 'INVENTARIS', '115.000.000,00', '3934792.514.C / ruang kelas', '010101.00001.00027'],
+    [173, '--', null, 110, null, null, 'INVENTARIS', '269.722.852,26', '3934798.514.C / pagar', '010101.00001.00027'],
+    [174, '--', null, 100, null, null, 'INVENTARIS', '5.000.000,00', '3934789.514.C / paving', '010101.00001.00027'],
+    [175, '--', null, 24, null, null, 'INVENTARIS', '4.000.000,00', '3934790.514.C / rumah penjaga', '010101.00001.00027'],
+    [176, '--', null, 110, null, null, 'INVENTARIS', '12.000.000,00', '3934788.514.C / Pagar tembok', '010101.00001.00027'],
+    [177, '--', null, 147, null, null, 'INVENTARIS', '15.000.000,00', '3326215.586.C / Ruang Kelas', '010101.00003.00009'],
+    [178, '--', null, 14, null, null, 'INVENTARIS', '3.500.000,00', '3326220.586.C / Bangunan Pagar', '010101.00003.00009'],
+    [179, '--', null, 336, null, null, 'INVENTARIS', '360.000.000,00', '3326214.586.C / Ruang Kelas', '010101.00003.00009'],
+    [180, '--', null, 56, null, null, 'INVENTARIS', '40.000.000,00', '3326217.586.C / Ruang Kelas', '010101.00003.00009'],
+    [181, '--', null, 12, null, null, 'PEMBELIAN', '25.000.000,00', '3326219.586.C / Gudang', '010101.00003.00009'],
+    [182, '--', null, 112, null, null, 'INVENTARIS', '163.200.000,00', '3326216.586.C / Ruang KS dan R. Guru', '010101.00003.00009'],
+    [183, '--', null, 56, null, null, 'INVENTARIS', '56.000.000,00', '3326218.586.C / Ruang Kelas', '010101.00003.00009'],
+    [184, '--', null, 60, null, null, 'PEMBELIAN', '147.451.480,00', '6063925.586.C / Pagar', '010101.00003.00009'],
+    [185, '--', null, 219, null, null, 'INVENTARIS', '38.400.000,00', '4299894.895.C / Musholla', '010101.00011.00017'],
+    [186, '--', null, 980, null, null, 'PEMBELIAN', '255.035.444,00', '4299893.895.C / Gedung sekolah', '010101.00011.00017'],
+    [187, '--', null, 261, null, null, 'INVENTARIS', '17.200.000,00', '4299896.895.C / Gedung Perpustakaan', '010101.00011.00017'],
+    [188, '--', null, 40, null, null, 'INVENTARIS', '3.201.000,00', '4299895.895.C / Pagar Halaman', '010101.00011.00017'],
+    [189, '--', null, 490, null, null, 'INVENTARIS', '152.000.000,00', '4299897.895.C / Gedung Sekolah kelas 4-6', '010101.00011.00017'],
+    [190, '--', null, 324, null, null, 'INVENTARIS', '99.800.000,00', '4299898.895.C / Gedung Sekolah kelas 2-3', '010101.00011.00017'],
+    [191, '01/12/2023', null, null, 'NEGARA', null, 'PEMBELIAN', '149.284.000,00', 'Pembangunan Pagar SDN 1 Bajo Kec. Kedungtuban', '010101.00011.00017'],
+    [192, '--', null, 32, null, null, 'INVENTARIS', '634.142.000,00', '3687029.739.C / Kantor, Ruang Kelas', '010101.00007.00013'],
+    [193, '--', null, 12, null, null, 'INVENTARIS', '1.000.000,00', '3687026.739.C / Tempat Parkir', '010101.00007.00013'],
+    [194, '--', null, 16, null, null, 'INVENTARIS', '750.000,00', '3687027.739.C / Tempat Parkir', '010101.00007.00013'],
+    [195, '--', null, 16, null, null, 'INVENTARIS', '750.000,00', '3687028.739.C / Tempat Parkir', '010101.00007.00013'],
+    [196, '--', null, 245, null, null, 'INVENTARIS', '305.000.000,00', '3687025.739.C / Ruang kelas baru', '010101.00007.00013'],
+    [197, '--', null, 60, null, null, 'PEMBELIAN', '37.900.000,00', '6063873.739.C / Bangunan Sarana MCK', '010101.00007.00013'],
+    [198, '30/12/2018', null, 60, null, null, 'PEMBELIAN', '148.325.000,00', '8952577.739.C / RKB SDN 1 BAKAH', '010101.00007.00013'],
+    [199, '21/12/2020', null, 60, null, null, 'PEMBELIAN', '150.210.000,00', '8952633.739.C / Gedung Kelas Baru DAK 2020', '010101.00007.00013'],
+    [200, '29/12/2023', '01/01/1900', null, 'HAK', null, 'PEMBELIAN', '198.450.000,00', 'LABKOMP', '010101.00007.00013'],
+    [201, '12/12/2023', null, null, 'HAK', null, 'PEMBELIAN', '76.200.000,00', 'UKS', '010101.00007.00013'],
+    [202, '01/12/2023', null, null, 'NEGARA', null, 'PEMBELIAN', '186.875.000,00', 'BANGUNAN GEDUNG PERPUSTAKAAN APBD', '010101.00007.00013'],
+    [203, '01/12/2023', null, null, 'NEGARA', null, 'PEMBELIAN', '198.773.000,00', 'Pembangunan Pagar SDN 1 Bakah Kec. Kunduran', '010101.00007.00013'],
+    [204, '--', null, 81, null, null, 'MUTASI', '164.080.000,00', '3325947.589.C / Gedung C (kantor Guru)', '010101.00003.00012'],
+    [205, '--', null, 8, null, null, 'MUTASI', '34.456.000,00', '3325948.589.C / 1 Lokal Kamar mandi/ Toilet/ WC', '010101.00003.00012'],
+    [206, '--', null, 72, null, null, 'MUTASI', '371.075.000,00', '3325950.589.C / GEDUNG B (Kelas2)', '010101.00003.00012'],
+    [207, '--', null, 288, null, null, 'MUTASI', '465.072.700,00', '3325946.589.C / Gedung A( kelas 1,3,4,5 dan 6)', '010101.00003.00012'],
+    [208, '--', null, 24, null, null, 'MUTASI', '20.000.000,00', '3325945.589.C / Pagar Sekolah', '010101.00003.00012'],
+    [209, '--', null, 72, null, null, 'PEMBELIAN', '127.396.300,00', '5853143.589.C / Ruang Kelas Baru', '010101.00003.00012'],
+    [210, '--', null, 60, null, null, 'PEMBELIAN', '49.058.580,00', '6063926.589.C / Pagar', '010101.00003.00012'],
+    [211, '12/12/2022', null, null, null, null, 'PEMBELIAN', '199.068.800,00', '9006215.589.C / Bangunan Gedung Laboratorium ( DAU 2022 )', '010101.00003.00012'],
+    [212, '--', null, 4, null, null, 'INVENTARIS', '1.300.000,00', '4441193.856.C / PINTU GERBANG', '010101.00010.00014'],
+    [213, '--', null, 15, null, null, 'INVENTARIS', '3.300.000,00', '4441192.856.C / PAGAR', '010101.00010.00014'],
+    [214, '--', null, 142, null, null, 'INVENTARIS', '142.785.675,00', '4441195.856.C / GEDUNG 2', '010101.00010.00014'],
+    [215, '--', null, 280, null, null, 'INVENTARIS', '713.928.575,00', '4441196.856.C / GEDUNG 1', '010101.00010.00014'],
+    [216, '--', null, 22, null, null, 'INVENTARIS', '8.000.000,00', '4441194.856.C / KAMAR MANDI / TOILET/WC', '010101.00010.00014'],
+    [217, '--', null, 56, null, null, 'PEMBELIAN', '201.974.000,00', '4441190.856.C / GEDUNG 3', '010101.00010.00014'],
+    [218, '--', null, 196, null, null, 'INVENTARIS', '15.000.000,00', '4441191.856.C / PERKERASAN HALAMAN', '010101.00010.00014'],
+    [219, '--', null, 110, null, null, 'INVENTARIS', '114.612.857,00', '4441197.856.C / Mushola', '010101.00010.00014'],
+    [220, '--', null, 6, null, null, 'INVENTARIS', '2.090.000,00', '3934758.509.C / Kamar Kecil/WC Guru', '010101.00001.00023'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' ? null : $item[1],
+            'nomor' => $item[2] === '--' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [221, '--', null, 6, null, null, 'INVENTARIS', '1.600.000,00', '3934759.509.C / Kamar Kecil / WC Siswa', '010101.00001.00023'],
+    [222, '--', null, 14, null, null, 'INVENTARIS', '6.900.000,00', '3934757.509.C / Gudang', '010101.00001.00023'],
+    [223, '--', null, 210, null, null, 'INVENTARIS', '62.400.000,00', '3934751.509.C / Ruang Kelas 2,4 dan 5', '010101.00001.00023'],
+    [224, '--', null, 69, null, null, 'INVENTARIS', '24.800.000,00', '3934752.509.C / Ruang Kelas 1', '010101.00001.00023'],
+    [225, '--', null, 41, null, null, 'INVENTARIS', '115.200.000,00', '3934753.509.C / Ruang Kepala Sekolah dan Guru', '010101.00001.00023'],
+    [226, '--', null, 245, null, null, 'INVENTARIS', '245.139.800,00', '3934754.509.C / Ruang Kelas 6 dan 2', '010101.00001.00023'],
+    [227, '--', null, 182, null, null, 'INVENTARIS', '583.093.000,00', '3934755.509.C / Ruang Kelas Baru / kelas 3', '010101.00001.00023'],
+    [228, '--', null, 63, null, null, 'INVENTARIS', '183.565.800,00', '3934760.509.C / Perpustakaan', '010101.00001.00023'],
+    [229, '21/12/2020', null, 2038, null, null, 'PEMBELIAN', '198.670.000,00', '8971232.509.C / Pagar DAK 2020', '010101.00001.00023'],
+    [230, '01/12/2007', null, 27, null, null, 'PEMBELIAN', '44.175.000,00', 'WC', '010101.00016.00030'],
+    [231, '01/12/2007', null, 4, null, null, 'PEMBELIAN', '7.498.000,00', 'GAPURA', '010101.00016.00030'],
+    [232, '01/12/2007', null, 40, null, null, 'PEMBELIAN', '2.300.000,00', 'PAGAR', '010101.00016.00030'],
+    [233, '12/10/2010', null, 600, null, null, 'PEMBELIAN', '54.000.000,00', 'Paving', '010101.00016.00030'],
+    [234, '30/09/2017', null, 720, 'Yasan', null, 'PEMBELIAN', '615.564.000,00', 'gedung TK', '010101.00016.00030'],
+    [235, '10/12/2012', null, 83, null, null, 'PEMBELIAN', '80.000.000,00', 'PERPUSTAKAAN', '010101.00016.00030'],
+    [236, '--', null, 16, null, null, 'INVENTARIS', '2.400.000,00', '3590408.967.C / Kamar WC', '010101.00013.00025'],
+    [237, '--', null, 12, null, null, 'INVENTARIS', '3.890.000,00', '3590411.967.C / Peta Dinding', '010101.00013.00025'],
+    [238, '--', null, 92, null, null, 'INVENTARIS', '42.000.000,00', '2939738.632.C / Gedung 2', '010101.00004.00014'],
+    [239, '--', null, 137, null, null, 'INVENTARIS', '42.000.000,00', '2939740.632.C / Gedung 1', '010101.00004.00014'],
+    [240, '--', null, 92, null, null, 'PEMBELIAN', '6.000.000,00', '2939737.632.C / WC/KAMAR MANDI', '010101.00004.00014'],
+    [241, '--', null, 60, null, null, 'PEMBELIAN', '42.000.000,00', '3023371.632.C / Bangunan Kantor', '010101.00004.00014'],
+    [242, '--', null, 60, null, null, 'PEMBELIAN', '419.196.000,00', '3023372.632.C / Gedung Kelas 3', '010101.00004.00014'],
+    [243, '21/12/2020', null, 60, null, null, 'PEMBELIAN', '199.225.000,00', '8952189.632.C / Pagar DAK 2020', '010101.00004.00014'],
+    [244, '--', null, 40, null, null, 'INVENTARIS', '23.400.000,00', '3325955.578.C / GEDUNG 4', '010101.00003.00001'],
+    [245, '--', null, 80, null, null, 'INVENTARIS', '11.000.000,00', '3325956.578.C / GEDUNG 3', '010101.00003.00001'],
+    [246, '--', null, 40, null, null, 'INVENTARIS', '11.100.000,00', '3325958.578.C / Lain-lain ( WC )', '010101.00003.00001'],
+    [247, '--', null, 130, null, null, 'INVENTARIS', '274.564.500,00', '3325959.578.C / GEDUNG 2', '010101.00003.00001'],
+    [248, '--', null, 420, null, null, 'INVENTARIS', '349.402.595,00', '3325960.578.C / GEDUNG 1', '010101.00003.00001'],
+    [249, '--', null, 12, null, null, 'INVENTARIS', '183.854.000,00', '3325954.578.C / Kantin', '010101.00003.00001'],
+    [250, '--', null, 80, null, null, 'INVENTARIS', '190.434.000,00', '3325957.578.C / GEDUNG 5 (PERPUS)', '010101.00003.00001'],
+    [251, '--', null, 366, null, null, 'PEMBELIAN', '50.000.000,00', '3325953.578.C / Pagar', '010101.00003.00001'],
+    [252, '--', null, 130, null, null, 'INVENTARIS', '456.000,00', '3811704.783.C / Perkerasan / Paving', '010101.00008.00014'],
+    [253, '--', null, 12, null, null, 'INVENTARIS', '10.000.000,00', '3811708.783.C / Kamar Mandi/Toilet/WC', '010101.00008.00014'],
+    [254, '--', null, 42, null, null, 'INVENTARIS', '833.134.800,00', '3811705.783.C / Gedung 1 (Gedung Kelas + Kantor SD)', '010101.00008.00014'],
+    [255, '--', null, 39, null, null, 'INVENTARIS', '239.158.000,00', '3811706.783.C / Gedung Kelas', '010101.00008.00014'],
+    [256, '--', null, 39, null, null, 'INVENTARIS', '91.000.000,00', '3811707.783.C / Gedung Kelas', '010101.00008.00014'],
+    [257, '--', null, 330, null, null, 'INVENTARIS', '20.000.000,00', '3811709.783.C / Pagar, Gapura', '010101.00008.00014'],
+    [258, '21/12/2020', null, 60, null, null, 'PEMBELIAN', '84.875.000,00', '8954615.783.C / Bangunan MCK ( DAK 2020 )', '010101.00008.00014'],
+    [259, '--', null, 32, null, null, 'INVENTARIS', '299.521.676,00', '3172121.1039.C / GEDUNG KELAS 1,4,5,6', '010101.00014.00032'],
+    [260, '--', null, 345, null, null, 'INVENTARIS', '7.000.000,00', '3172122.1039.C / KAMAR MANDI GURU DAN SISWA', '010101.00014.00032'],
+    [261, '--', null, 187, null, null, 'INVENTARIS', '4.100.000,00', '3172127.1039.C / PAPING', '010101.00014.00032'],
+    [262, '--', null, 60, null, null, 'INVENTARIS', '25.300.000,00', '3172123.1039.C / PAGAR', '010101.00014.00032'],
+    [263, '--', null, 672, null, null, 'INVENTARIS', '11.000.000,00', '3172126.1039.C / MUSHOLA', '010101.00014.00032'],
+    [264, '--', null, 258, null, null, 'INVENTARIS', '180.000.000,00', '3172124.1039.C / GEDUNG KELAS 2 DAN 3', '010101.00014.00032'],
+    [265, '--', null, 540, null, null, 'INVENTARIS', '137.627.000,00', '3172125.1039.C / DAPUR, GEDUNG KANTOR, UKS', '010101.00014.00032'],
+    [266, '01/12/2023', null, null, 'NEGARA', null, 'PEMBELIAN', '97.150.000,00', 'Pembangunan Pagar SDN 1 Bekutuk Kec. Randublatung', '010101.00014.00032'],
+    [267, '--', null, 408, null, null, 'INVENTARIS', '815.754.000,00', '3935077.497.C / kelas lama', '010101.00001.00011'],
+    [268, '--', null, 5, null, null, 'INVENTARIS', '1.600.000,00', '3935080.497.C / wc/ lain - lain', '010101.00001.00011'],
+    [269, '--', null, 56, null, null, 'INVENTARIS', '437.089.500,00', '3935078.497.C / ruang Kepala Sekolah, Kantor/ Tempat pendidikan', '010101.00001.00011'],
+    [270, '--', null, 64, null, null, 'INVENTARIS', '15.600.000,00', '3935079.497.C / perpustakaan', '010101.00001.00011'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' ? null : $item[1],
+            'nomor' => $item[2] === '--' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [271, '--', null, 16, null, null, 'INVENTARIS', '3.500.000,00', '3935082.497.C / parkir sepeda', '010101.00001.00011'],
+    [272, '--', null, 7, null, null, 'INVENTARIS', '1.750.000,00', '3935083.497.C / parkir sepeda', '010101.00001.00011'],
+    [273, '--', null, 45, null, null, 'INVENTARIS', '25.449.000,00', '3935081.497.C / pagar', '010101.00001.00011'],
+    [274, '--', null, 272, null, null, 'INVENTARIS', '621.926.000,00', '3811611.811.C / GEDUNG 1', '010101.00008.00042'],
+    [275, '--', null, 6, null, null, 'INVENTARIS', '22.087.000,00', '3811613.811.C / MCK', '010101.00008.00042'],
+    [276, '--', null, 189, null, null, 'INVENTARIS', '205.416.000,00', '3811612.811.C / GEDUNG 2', '010101.00008.00042'],
+    [277, '12/12/2017', null, 56, null, null, 'INVENTARIS', '139.950.000,00', '8951208.811.C / RKB 2017', '010101.00008.00042'],
+    [278, '21/12/2020', null, 60, null, null, 'PEMBELIAN', '197.728.000,00', '8952677.811.C / Pagar DAK 2020', '010101.00008.00042'],
+    [279, '--', null, 225, null, null, 'INVENTARIS', '5.550.000,00', '3516277.934.C / Perkerasan halaman', '010101.00012.00018'],
+    [280, '--', null, 56, null, null, 'INVENTARIS', '120.050.668,00', '3516282.934.C / Gedung 2', '010101.00012.00018'],
+    [281, '--', null, 8, null, null, 'INVENTARIS', '2.000.000,00', '3516280.934.C / Bangunan KM/WC', '010101.00012.00018'],
+    [282, '--', null, 168, null, null, 'INVENTARIS', '173.685.929,00', '3516279.934.C / Gedung 1', '010101.00012.00018'],
+    [283, '--', null, 50, null, null, 'INVENTARIS', '4.600.000,00', '3516281.934.C / Pagar Halaman', '010101.00012.00018'],
+    [284, '--', null, 56, null, null, 'INVENTARIS', '107.425.000,00', '3516278.934.C / Gedung 3', '010101.00012.00018'],
+    [285, '--', null, 61, null, null, 'INVENTARIS', '106.812.810,00', '3516283.934.C / Gedung Perpustakaan', '010101.00012.00018'],
+    [286, '--', null, 100, null, null, 'PEMBELIAN', '76.565.326,00', '5853230.934.C / Pagar', '010101.00012.00018'],
+    [287, '12/12/2019', null, 60, null, null, 'PEMBELIAN', '242.253.285,00', '8965056.934.C / Ruang Kelas Baru', '010101.00012.00018'],
+    [288, '01/12/2023', null, null, 'NEGARA', null, 'PEMBELIAN', '100.577.000,00', 'Pembangunan Pagar SDN 1 Biting Kec. Sambong', '010101.00012.00018'],
+    [289, '--', null, 54, null, null, 'INVENTARIS', '64.900.000,00', '3590290.948.C / GEDUNG 1', '010101.00013.00006'],
+    [290, '--', null, 378, null, null, 'INVENTARIS', '62.450.000,00', '3590286.948.C / PERPUSTAKAAN', '010101.00013.00006'],
+    [291, '--', null, 378, null, null, 'INVENTARIS', '1.450.000,00', '3590287.948.C / PARKIRAN', '010101.00013.00006'],
+    [292, '--', null, 196, null, null, 'INVENTARIS', '458.364.000,00', '3590291.948.C / GEDUNG 2', '010101.00013.00006'],
+    [293, '--', null, 196, null, null, 'INVENTARIS', '129.800.000,00', '3590292.948.C / GEDUNG 3', '010101.00013.00006'],
+    [294, '--', null, 54, null, null, 'INVENTARIS', '4.700.000,00', '3590293.948.C / KAMAR MANDI DAN WC', '010101.00013.00006'],
+    [295, '--', null, 94, null, null, 'INVENTARIS', '8.178.000,00', '3590288.948.C / PAGAR DAN GERBANG', '010101.00013.00006'],
+    [296, '12/12/2019', null, 60, null, null, 'PEMBELIAN', '49.547.500,00', '9199967.948.C / Kamar Mandi / WC', '010101.00013.00006'],
+    [297, '--', null, 343, null, null, 'INVENTARIS', '250.000.000,00', '2959058.640.C / BANGUNAN GEDUNG KANTOR PERMANEN', '010101.00004.00022'],
+    [298, '--', null, 6, null, null, 'INVENTARIS', '4.300.000,00', '2959061.640.C / KAMAR WC', '010101.00004.00022'],
+    [299, '--', null, 38, null, null, 'INVENTARIS', '5.300.000,00', '2959062.640.C / RUMAH PENJAGA', '010101.00004.00022'],
+    [300, '--', null, 25, null, null, 'INVENTARIS', '18.100.000,00', '2959059.640.C / PERPUSTAKAAN SEKOLAH', '010101.00004.00022'],
+    [301, '--', null, 50, null, null, 'INVENTARIS', '7.244.000,00', '2959060.640.C / PAGAR SEKOLAH', '010101.00004.00022'],
+    [302, '--', null, 30, null, null, 'PEMBELIAN', '15.100.000,00', '4376331.836.C / Kamar Mandi / WC', '010101.00009.00020'],
+    [303, '--', null, 221, null, null, 'PEMBELIAN', '648.270.000,00', '4376328.836.C / GEDUNG', '010101.00009.00020'],
+    [304, '--', null, 247, null, null, 'PEMBELIAN', '668.829.000,00', '4376329.836.C / GEDUNG', '010101.00009.00020'],
+    [305, '--', null, 32, null, null, 'INVENTARIS', '110.741.000,00', '4376330.836.C / Pagar', '010101.00009.00020'],
+    [306, '--', null, 88, null, null, 'INVENTARIS', '90.000.000,00', '4376327.836.C / GEDUNG', '010101.00009.00020'],
+    [307, '--', null, 337, null, null, 'INVENTARIS', '16.000.000,00', '4376332.836.C / perkerasan', '010101.00009.00020'],
+    [308, '31/12/2021', null, 60, null, null, 'PEMBELIAN', '203.858.000,00', '8964092.836.C / Gedung Lab Komputer', '010101.00009.00020'],
+    [309, '31/12/2021', null, 60, null, null, 'PEMBELIAN', '72.829.800,00', '8964091.836.C / RUANG UKS', '010101.00009.00020'],
+    [310, '31/12/2021', null, 60, null, null, 'PEMBELIAN', '198.510.300,00', '8964090.836.C / Mushola', '010101.00009.00020'],
+    [311, '--', null, 36, null, null, 'INVENTARIS', '13.300.000,00', '3448850.673.C / Ruang guru,TU,KS', '010101.00005.00009'],
+    [312, '--', '01.01.11.10.01', 160, null, null, 'INVENTARIS', '20.900.000,00', '3448846.673.C / Bangunan 1', '010101.00005.00009'],
+    [313, '--', null, 120, null, null, 'INVENTARIS', '2.400.000,00', '3448847.673.C / Bangunan 2', '010101.00005.00009'],
+    [314, '--', null, 56, null, null, 'INVENTARIS', '22.200.000,00', '3448848.673.C / Bangunan 3', '010101.00005.00009'],
+    [315, '--', null, 20, null, null, 'INVENTARIS', '13.300.000,00', '3448849.673.C / Musholla', '010101.00005.00009'],
+    [316, '--', null, 18, null, null, 'INVENTARIS', '3.500.000,00', '3448852.673.C / Tempat Sepeda', '010101.00005.00009'],
+    [317, '--', null, 262, null, null, 'INVENTARIS', '4.500.000,00', '3448853.673.C / Kamar mandi/WC', '010101.00005.00009'],
+    [318, '--', null, 34, null, null, 'INVENTARIS', '12.000.000,00', '3448854.673.C / Rumah Dinas Penjaga', '010101.00005.00009'],
+    [319, '--', null, 56, null, null, 'INVENTARIS', '10.000.000,00', '3448855.673.C / Gedung serba guna', '010101.00005.00009'],
+    [320, '--', null, 56, null, null, 'INVENTARIS', '84.000.000,00', '3448856.673.C / Gedung Perpustakaan', '010101.00005.00009'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' ? null : $item[1],
+            'nomor' => $item[2] === '--' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [321, '30/12/2018', null, 60, null, null, 'PEMBELIAN', '148.325.000,00', '8956480.673.C / RKB SDN 1 BOGOREJO', '010101.00005.00009'],
+    [322, '01/12/2023', '--', null, 'NEGARA', null, 'PEMBELIAN', '107.407.000,00', 'Pembangunan Pagar SDN 1 Bogorejo Kec. Bogorejo', '010101.00005.00009'],
+    [323, '--', '28/06/1905', 189, null, null, 'INVENTARIS', '236.450.400,00', '3687098.752.C / Gedung 1', '010101.00007.00026'],
+    [324, '--', '30/06/1905', 3120, null, null, 'INVENTARIS', '200.473.000,00', '3687096.752.C / Pagar', '010101.00007.00026'],
+    [325, '--', '01/07/1905', 63, null, null, 'INVENTARIS', '82.767.800,00', '3687095.752.C / Gedung 3', '010101.00007.00026'],
+    [326, '--', '02/07/1905', 294, null, null, 'INVENTARIS', '3.500.000,00', '3687097.752.C / Perkerasan', '010101.00007.00026'],
+    [327, '--', '04/07/1905', 216, null, null, 'INVENTARIS', '221.166.000,00', '3687099.752.C / Gedung 2', '010101.00007.00026'],
+    [328, '--', '06/07/1905', 64, null, null, 'INVENTARIS', '114.724.326,00', '3687100.752.C / Pembangunan Perpustakaan', '010101.00007.00026'],
+    [329, '--', null, 147, null, null, 'INVENTARIS', '111.000.000,00', '3516298.936.C / Bangunan Gedung Tempat Pendidikan Permanen', '010101.00012.00020'],
+    [330, '--', null, 42, null, null, 'INVENTARIS', '29.600.000,00', '3516300.936.C / Rumah dinas', '010101.00012.00020'],
+    [331, '--', null, 1350, null, null, 'INVENTARIS', '4.300.000,00', '3516303.936.C / Pagar', '010101.00012.00020'],
+    [332, '--', null, 12, null, null, 'INVENTARIS', '2.800.000,00', '3516302.936.C / Tempat parkir', '010101.00012.00020'],
+    [333, '--', null, 98, null, null, 'INVENTARIS', '79.800.000,00', '3516297.936.C / Bangunan Gedung Tempat Pendidikan Permanen', '010101.00012.00020'],
+    [334, '--', null, 71, null, null, 'INVENTARIS', '70.195.000,00', '3516299.936.C / Gedung Kantor', '010101.00012.00020'],
+    [335, '--', null, 6, null, null, 'INVENTARIS', '4.200.000,00', '3516301.936.C / Kamar kecil', '010101.00012.00020'],
+    [336, '--', null, 316, null, null, 'INVENTARIS', '107.624.000,00', '3516296.936.C / GeDung SEKOLAH', '010101.00012.00020'],
+    [337, '--', null, 71, null, null, 'INVENTARIS', '251.032.399,00', '3516304.936.C / Gedung Kelas', '010101.00012.00020'],
+    [338, '--', null, 10, null, null, 'PEMBELIAN', '1.200.000,00', '2972045.645.C / KM 1', '010101.00004.00027'],
+    [339, '--', null, 10, null, null, 'PEMBELIAN', '1.200.000,00', '2972046.645.C / KM 2', '010101.00004.00027'],
+    [340, '--', null, 160, null, null, 'PEMBELIAN', '7.409.000,00', '2972050.645.C / gedung 3', '010101.00004.00027'],
+    [341, '--', null, 30, null, null, 'PEMBELIAN', '2.800.000,00', '2972051.645.C / Gedung 4', '010101.00004.00027'],
+    [342, '--', null, 30, null, null, 'PEMBELIAN', '160.995.000,00', '2972052.645.C / Gudang', '010101.00004.00027'],
+    [343, '--', null, 148, null, null, 'PEMBELIAN', '92.200.000,00', '2972047.645.C / gedung 2', '010101.00004.00027'],
+    [344, '--', null, 180, null, null, 'PEMBELIAN', '2.800.000,00', '2972049.645.C / Gedung 5', '010101.00004.00027'],
+    [345, '--', null, 34, null, null, 'PEMBELIAN', '7.409.000,00', '2972048.645.C / Gerbang dan pagar halaman', '010101.00004.00027'],
+    [346, '--', null, 120, null, null, 'PEMBELIAN', '127.276.821,00', '2972044.645.C / Bantuan Pembangunan Ruang Perpustakaan SD/SDLB', '010101.00004.00027'],
+    [347, '--', null, 128, null, null, 'INVENTARIS', '128.029.000,00', '3687124.755.C / GEDUNG 4', '010101.00007.00029'],
+    [348, '--', null, 56, null, null, 'PEMBELIAN', '392.423.500,00', '3687119.755.C / GEDUNG 3', '010101.00007.00029'],
+    [349, '--', null, 54, null, null, 'PEMBELIAN', '389.123.500,00', '3687122.755.C / GEDUNG 5', '010101.00007.00029'],
+    [350, '--', null, 15, null, null, 'INVENTARIS', '149.062.000,00', '3687121.755.C / GEDUNG 6', '010101.00007.00029'],
+    [351, '--', null, 32, null, null, 'PEMBELIAN', '6.144.200,00', '3687120.755.C / Perkerasan halaman', '010101.00007.00029'],
+    [352, '--', null, 68, null, null, 'PEMBELIAN', '122.641.000,00', '3687123.755.C / Pagar', '010101.00007.00029'],
+    [353, '--', null, 230, null, null, 'INVENTARIS', '80.775.000,00', '3326144.607.C / Gedung Kantor Dan Kelas', '010101.00003.00030'],
+    [354, '--', null, 246, null, null, 'INVENTARIS', '46.500.000,00', '3326149.607.C / Gudang Terbuka Permanen', '010101.00003.00030'],
+    [355, '--', null, 10, null, null, 'INVENTARIS', '1.600.000,00', '3326148.607.C / Kamar Mandi / WC', '010101.00003.00030'],
+    [356, '--', null, 18, null, null, 'INVENTARIS', '2.300.000,00', '3326142.607.C / Tempat Parkir Guru', '010101.00003.00030'],
+    [357, '--', null, 10, null, null, 'INVENTARIS', '1.700.000,00', '3326143.607.C / Tempat Parkir Siswa', '010101.00003.00030'],
+    [358, '--', null, 24, null, null, 'INVENTARIS', '2.200.000,00', '3326146.607.C / Pagar', '010101.00003.00030'],
+    [359, '--', null, 232, null, null, 'INVENTARIS', '150.687.595,00', '3326145.607.C / Gedung Kelas', '010101.00003.00030'],
+    [360, '--', null, 120, null, null, 'INVENTARIS', '184.321.500,00', '3326147.607.C / Bangunan Gedung Perpustakaan Permanen', '010101.00003.00030'],
+    [361, '21/12/2020', '-', 60, null, null, 'PEMBELIAN', '199.178.000,00', '9007744.607.C / Pagar DAK 2020', '010101.00003.00030'],
+    [362, '--', null, 8, null, null, 'INVENTARIS', '1.100.000,00', '4441238.874.C / KAMAR MANDI/WC', '010101.00010.00032'],
+    [363, '--', null, 20, null, null, 'INVENTARIS', '17.300.000,00', '4441232.874.C / MUSHOLA', '010101.00010.00032'],
+    [364, '--', null, 144, null, null, 'INVENTARIS', '2.149.999,00', '4441234.874.C / PAVING', '010101.00010.00032'],
+    [365, '--', null, 10, null, null, 'INVENTARIS', '800.000,00', '4441235.874.C / PAGAR HALAMAN', '010101.00010.00032'],
+    [366, '--', null, 2345, null, null, 'PEMBELIAN', '100.041.526,00', '5853227.874.C / Pagar', '010101.00010.00032'],
+    [367, '--', null, 70, null, null, 'PEMBELIAN', '1.880.000,00', '5857365.874.C / GAPURA BESI', '010101.00010.00032'],
+    [368, '12/12/2019', null, 60, null, null, 'PEMBELIAN', '99.925.000,00', '8960534.874.C / Kamar Mandi / WC', '010101.00010.00032'],
+    [369, '21/12/2020', '-', 60, null, null, 'PEMBELIAN', '157.325.000,00', '8960780.874.C / Perpustakaan DAK 2020', '010101.00010.00032'],
+    [370, '15/12/2021', '-', 60, null, null, 'HIBAH', '359.963.477,00', '8961010.874.C / GEDUNG B Ruang Serbaguna', '010101.00010.00032'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' ? null : $item[1],
+            'nomor' => $item[2] === '--' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
+
+
+
+
+// SAMPAI SINI BRO LAMA 2
 
 
 
@@ -30116,10 +31545,6 @@ foreach ($structureData as $id => $data) {
 }
 
 
-
-
-// SAMPAI SINI BRO
-// Continue this pattern for all 100 records...
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA STRUKTUR BANGUNAN GEDUNG
 for ($i = 1; $i <= 598; $i++) {
