@@ -254,17 +254,17 @@
 
         <div class="table-responsive">
             <table class="zebra-table">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Institusi</th>
-                        <th>Kecamatan</th>
-                        <th>No Pengesahan Usaha</th>
-                        <th>Koordinat</th>
-                        <th>View</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
+            <thead style="font-size: 16px;">
+    <tr>
+        <th style="text-align: center;">No</th>
+        <th style="text-align: center;">Nama Institusi</th>
+        <th style="text-align: center;">Kecamatan</th>
+        <th style="text-align: center;">No Pengesahan Usaha</th>
+        <th style="text-align: center;">Koordinat</th>
+        <th style="text-align: center;">View</th>
+    </tr>
+</thead>
+    <tbody id="tableBody">
                     @foreach ($data as $item)
                     <tr>
                         <td style="text-align: center;">
