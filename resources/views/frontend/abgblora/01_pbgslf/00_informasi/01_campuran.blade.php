@@ -246,7 +246,7 @@
 
     <!-- Main Content Section -->
     <div class="main-container">
-        <section id="details" class="container-fluid flex flex-col sm:flex-row gap-5">
+        <section id="details" class="container-fluid flex flex-col sm:flex-row gap-5" style="margin-top:-200px;">
             <div class="flex flex-col gap-5 w-full">
                 <div class="flex flex-col gap-5 p-5 rounded-[20px] w-full">
                     <!-- Info Banner -->
