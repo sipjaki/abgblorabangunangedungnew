@@ -305,7 +305,7 @@
 
                         <td style="text-align: center;">
                             <a class="button-baru" href="/databangunangedungshow/{{ $item->id }}" style="font-size: 12px !important;">
-                               {{$jumlahkic}} Lihat
+                                  {{ $item->kicdokumen->count() }} Lihat
                             </a>
                         </td>
                     </tr>

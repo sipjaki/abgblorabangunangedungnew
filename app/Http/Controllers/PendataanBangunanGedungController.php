@@ -25,13 +25,17 @@ use Illuminate\Support\Facades\Auth;
 
 class PendataanBangunanGedungController extends Controller
 {
+
+use App\Models\KicInduk;
+use App\Models\KicDokumen;
+
 public function datakicbangunan(Request $request)
 {
     $perPage = $request->input('perPage', 15);
     $search = $request->input('search');
 
-    $query = kicinduk::query()
-        ->with(['satuankerja']) // eager load relasi
+    $query = KicInduk::query()
+        ->with(['satuankerja', 'kicdokumen']) // eager load relasi
         ->orderBy('created_at', 'desc');
 
     if ($search) {
@@ -47,8 +51,8 @@ public function datakicbangunan(Request $request)
 
     $data = $query->paginate($perPage);
 
-    // Tambahkan: hitung total jumlah kicdokumen dari semua kicinduk
-    $jumlahkic = kicdokumen::count();
+    // Hitung total jumlah kicdokumen dari semua kicinduk
+    $jumlahkic = KicDokumen::count();
 
     if ($request->ajax()) {
         return response()->json([
@@ -65,7 +69,6 @@ public function datakicbangunan(Request $request)
         'jumlahkic' => $jumlahkic
     ]);
 }
-
 
 public function databangunangedung(Request $request)
 {
