@@ -43,8 +43,6 @@ class databgkepemilikan extends Model
         return $this->hasMany(databgklasifikasi::class);
     }
 
-
-    
     public function databgstrukturbangunan()
     {
         return $this->hasMany(databgstrukturbangunan::class);

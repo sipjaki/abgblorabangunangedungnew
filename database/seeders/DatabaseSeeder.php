@@ -1086,7 +1086,7 @@ mbrgambar::create([
 for ($i = 1; $i <= 45; $i++) {
     $randomDate = now()->subDays(rand(0, 365));
     $userId = [46, 47][array_rand([46, 47])];
-    $jenisPengajuan = rand(1, 5); // Acak dari 1 sampai 6
+    $jenisPengajuan = rand(1, 5); // Acak dari 1
 
     pbgslfbangunan::create([
         'user_id' => $userId,
@@ -29696,6 +29696,531 @@ foreach ($structureData as $id => $data) {
 }
 
 
+$structureData = [];
+
+// Group 1: IDs 599-613 (Beton, Kayu)
+for ($id = 599; $id <= 613; $id++) {
+    $structureData[$id] = ['Fondasi Dangkal', 'Beton', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'];
+}
+
+// Group 2: IDs 612-623 (Kayu, Kayu) - Note: 612-613 will be overwritten
+for ($id = 612; $id <= 623; $id++) {
+    $structureData[$id] = ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'];
+}
+
+// Group 3: IDs 624-698 (Mixed patterns)
+$patterns = [
+    // Format: [start_id, end_id, struktur_atas, struktur_atap]
+    [624, 624, 'Beton', 'Kayu'],
+    [625, 625, 'Beton', 'Baja'],
+    [626, 626, 'Kayu', 'Kayu'],
+    [627, 627, 'Beton', 'Baja'],
+    [628, 628, 'Beton', 'Kayu'],
+    [629, 629, 'Kayu', 'Kayu'],
+    [630, 630, 'Beton', 'Baja'],
+    [631, 634, 'Beton', 'Kayu'], // 631-634
+    [635, 635, 'Beton', 'Kayu'],
+    [636, 636, 'Kayu', 'Kayu'],
+    [637, 638, 'Beton', 'Baja'], // 637-638
+    [639, 642, 'Beton', 'Kayu'], // 639-642
+    [643, 644, 'Kayu', 'Kayu'], // 643-644
+    [645, 646, 'Beton', 'Baja'], // 645-646
+    [647, 647, 'Beton', 'Kayu'],
+    [648, 648, 'Beton', 'Baja'],
+    [649, 649, 'Kayu', 'Kayu'],
+    [650, 652, 'Beton', 'Kayu'], // 650-652
+    [653, 653, 'Baja', 'Baja'],
+    [654, 659, 'Beton', 'Kayu'], // 654-659
+    [660, 661, 'Beton', 'Baja'], // 660-661
+    [662, 669, 'Beton', 'Kayu'], // 662-669
+    [670, 671, 'Beton', 'Beton'], // 670-671
+    [672, 672, 'Kayu', 'Kayu'],
+    [673, 674, 'Beton', 'Beton'], // 673-674
+    [675, 676, 'Kayu', 'Kayu'], // 675-676
+    [677, 678, 'Beton', 'Beton'], // 677-678
+    [679, 682, 'Kayu', 'Kayu'], // 679-682
+    [683, 690, 'Beton', 'Kayu'], // 683-690 (note: some have extra space after 'Beton')
+    [691, 700, 'Kayu', 'Kayu']  // 691-700
+];
+
+foreach ($patterns as $pattern) {
+    for ($id = $pattern[0]; $id <= $pattern[1]; $id++) {
+        $structureData[$id] = ['Fondasi Dangkal', $pattern[2], $pattern[3], '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'];
+    }
+}
+
+// Create records
+foreach ($structureData as $id => $data) {
+    databgstrukturbangunan::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'struktur_bawah' => $data[0],
+        'struktur_atas' => $data[1],
+        'struktur_atap' => $data[2],
+        'rangka_atap' => $data[3],
+        'balok' => $data[4],
+        'kolom' => $data[5],
+        'pondasi' => $data[6],
+        'dinding' => $data[7],
+        'genteng' => $data[8],
+        'plafon' => $data[9],
+        'lantai' => $data[10],
+        'pintu' => $data[11],
+        'jendela' => $data[12]
+    ]);
+}
+
+$structureData = [];
+
+// Group for IDs 701-714 (Kayu, Kayu)
+for ($id = 701; $id <= 714; $id++) {
+    $structureData[$id] = ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'];
+}
+
+// Group for IDs 715-737 (Beton, Kayu)
+for ($id = 715; $id <= 737; $id++) {
+    $structureData[$id] = ['Fondasi Dangkal', 'Beton', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'];
+}
+
+// Group for IDs 738-745 (Beton, Baja)
+for ($id = 738; $id <= 745; $id++) {
+    $structureData[$id] = ['Fondasi Dangkal', 'Beton', 'Baja', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'];
+}
+
+// Individual entries for IDs 746-800
+$customEntries = [
+    746 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    747 => ['Fondasi Dangkal', 'Beton', 'Baja', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    748 => ['Fondasi Dangkal', 'Beton', 'Baja', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    749 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    750 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    751 => ['Fondasi Dangkal', 'Beton', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    752 => ['Fondasi Dangkal', 'Beton', 'Baja', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    753 => ['Fondasi Dangkal', 'Beton', 'Baja', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+
+    // Group for IDs 754-770 (Kayu, Kayu)
+    754 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    755 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    756 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    757 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    758 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    759 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    760 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    761 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    762 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    763 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    764 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    765 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    766 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    767 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    768 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    769 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    770 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+
+    771 => ['Fondasi Dangkal', 'Beton', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+
+    // Detailed entries for IDs 772-800
+    772 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T1', 'Baik', 'Baik', 'Baik'],
+    773 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik'],
+    774 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    775 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    776 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    777 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    778 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    779 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    780 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    781 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    782 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    783 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'Baik', 'Baik', 'Baik'],
+    784 => ['Fondasi Dangkal', 'Beton', 'Baja', 'Baik', 'T1', 'Baik', 'Baik', 'T1', 'T1', 'T1', 'Baik', 'Baik', 'Baik'],
+    785 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T3', 'Baik', 'Baik', 'Baik'],
+    786 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    787 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    788 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'T1', 'T1', 'Baik'],
+    789 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'T1'],
+    790 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    791 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    792 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik'],
+    793 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T3', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    794 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    795 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'T2', 'T1', 'T1', 'Baik'],
+    796 => ['Fondasi Dangkal', 'Beton', 'Baja', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    797 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T4', 'Baik', 'Baik', 'Baik', 'T2', 'T3', 'T3', 'T2', 'Baik', 'Baik'],
+    798 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    799 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    800 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T2', 'T1', 'T2', 'Baik', 'Baik'],
+];
+
+// Merge the custom entries
+foreach ($customEntries as $id => $data) {
+    $structureData[$id] = $data;
+}
+
+// Create records
+foreach ($structureData as $id => $data) {
+    databgstrukturbangunan::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'struktur_bawah' => $data[0],
+        'struktur_atas' => $data[1],
+        'struktur_atap' => $data[2],
+        'rangka_atap' => $data[3],
+        'balok' => $data[4],
+        'kolom' => $data[5],
+        'pondasi' => $data[6],
+        'dinding' => $data[7],
+        'genteng' => $data[8],
+        'plafon' => $data[9],
+        'lantai' => $data[10],
+        'pintu' => $data[11],
+        'jendela' => $data[12]
+    ]);
+}
+
+$structureData = [];
+
+// Group for IDs 701-714 (Kayu, Kayu)
+for ($id = 701; $id <= 714; $id++) {
+    $structureData[$id] = ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'];
+}
+
+// Group for IDs 715-737 (Beton, Kayu)
+for ($id = 715; $id <= 737; $id++) {
+    $structureData[$id] = ['Fondasi Dangkal', 'Beton', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'];
+}
+
+// Group for IDs 738-745 (Beton, Baja)
+for ($id = 738; $id <= 745; $id++) {
+    $structureData[$id] = ['Fondasi Dangkal', 'Beton', 'Baja', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'];
+}
+
+// Individual entries for IDs 746-800
+$customEntries = [
+    746 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    747 => ['Fondasi Dangkal', 'Beton', 'Baja', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    748 => ['Fondasi Dangkal', 'Beton', 'Baja', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    749 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    750 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    751 => ['Fondasi Dangkal', 'Beton', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    752 => ['Fondasi Dangkal', 'Beton', 'Baja', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    753 => ['Fondasi Dangkal', 'Beton', 'Baja', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+
+    // Group for IDs 754-770 (Kayu, Kayu)
+    754 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    755 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    756 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    757 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    758 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    759 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    760 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    761 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    762 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    763 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    764 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    765 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    766 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    767 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    768 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    769 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+    770 => ['Fondasi Dangkal', 'Kayu', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+
+    771 => ['Fondasi Dangkal', 'Beton', 'Kayu', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+
+    // Detailed entries for IDs 772-800
+    772 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T1', 'Baik', 'Baik', 'Baik'],
+    773 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik'],
+    774 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    775 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    776 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    777 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    778 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    779 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    780 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    781 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    782 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    783 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'Baik', 'Baik', 'Baik'],
+    784 => ['Fondasi Dangkal', 'Beton', 'Baja', 'Baik', 'T1', 'Baik', 'Baik', 'T1', 'T1', 'T1', 'Baik', 'Baik', 'Baik'],
+    785 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T3', 'Baik', 'Baik', 'Baik'],
+    786 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    787 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    788 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'T1', 'T1', 'Baik'],
+    789 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'T1'],
+    790 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    791 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    792 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik'],
+    793 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T3', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    794 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    795 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'T2', 'T1', 'T1', 'Baik'],
+    796 => ['Fondasi Dangkal', 'Beton', 'Baja', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    797 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T4', 'Baik', 'Baik', 'Baik', 'T2', 'T3', 'T3', 'T2', 'Baik', 'Baik'],
+    798 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    799 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    800 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T2', 'T1', 'T2', 'Baik', 'Baik'],
+];
+
+// Merge the custom entries
+foreach ($customEntries as $id => $data) {
+    $structureData[$id] = $data;
+}
+
+// Create records
+foreach ($structureData as $id => $data) {
+    databgstrukturbangunan::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'struktur_bawah' => $data[0],
+        'struktur_atas' => $data[1],
+        'struktur_atap' => $data[2],
+        'rangka_atap' => $data[3],
+        'balok' => $data[4],
+        'kolom' => $data[5],
+        'pondasi' => $data[6],
+        'dinding' => $data[7],
+        'genteng' => $data[8],
+        'plafon' => $data[9],
+        'lantai' => $data[10],
+        'pintu' => $data[11],
+        'jendela' => $data[12]
+    ]);
+}
+
+$structureData = [];
+
+// New data for IDs 801-900
+$customEntries = [
+    801 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'T2', 'T1', 'T2', 'T2', 'T3', 'Baik', 'Baik'],
+    802 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik'],
+    803 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T3', 'T2', 'T1', 'T1', 'Baik', 'Baik'],
+    804 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'T2', 'T1', 'Baik', 'Baik'],
+    805 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T1', 'T2', 'Baik', 'Baik'],
+    806 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    807 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    808 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    809 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    810 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    811 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    812 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    813 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T2', 'Baik', 'T1', 'Baik', 'Baik'],
+    814 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T3', 'Baik', 'Baik', 'Baik', 'T1', 'T2', 'Baik', 'Baik', 'Baik', 'Baik'],
+    815 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    816 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    817 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    818 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    819 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    820 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    821 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    822 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    823 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    824 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T4', 'T1', 'T4', 'Baik', 'T3', 'T1', 'Baik', 'T1', 'Baik', 'Baik'],
+    825 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T1', 'T1', 'Baik', 'Baik'],
+    826 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T1', 'Baik', 'Baik', 'Baik', 'T3', 'T3', '-', 'T2', 'Baik', 'Baik'],
+    827 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'T2', 'T2', 'Baik', 'T1', 'Baik', 'T3', 'T3', 'T1', 'Baik'],
+    828 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T4', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1'],
+    829 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    830 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'Baik', 'Baik', 'Baik', 'Baik'],
+    831 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'T1', 'Baik', 'Baik', 'Baik', 'Baik'],
+    832 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    833 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    834 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    835 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    836 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    837 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    838 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'T2', 'T1', 'Baik', 'Baik', 'Baik'],
+    839 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik'],
+    840 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    841 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'Baik', 'T1', 'Baik', 'Baik'],
+    842 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    843 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'Baik', 'T2', 'T2', 'Baik'],
+    844 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    845 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    846 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'Baik', 'Baik', 'T2', 'Baik'],
+    847 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    848 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T1', 'T2', 'Baik', 'Baik', 'Baik', 'Baik'],
+    849 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    850 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    851 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    852 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'T2', 'Baik', 'Baik', 'Baik'],
+    853 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    854 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    855 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    856 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    857 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    858 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'T1', 'Baik', 'Baik'],
+    859 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    860 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    861 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'T1', 'Baik', 'Baik'],
+    862 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'Baik', 'Baik'],
+    863 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'T2', 'Baik', 'T2', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    864 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'T1', 'Baik', 'Baik'],
+    865 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T1', 'Baik', 'Baik', 'Baik', 'T3', 'Baik', 'Baik', 'T1', 'T1', 'Baik'],
+    866 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    867 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T1', 'Baik', 'Baik', 'Baik', 'T1', 'T1', 'Baik', 'Baik', 'T1', 'Baik'],
+    868 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'T1', 'Baik'],
+    869 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'T2', 'T3', 'T2', 'Baik', 'Baik'],
+    870 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    871 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    872 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'T2', 'Baik', 'Baik'],
+    873 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T1', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'T1', 'Baik', 'Baik'],
+    874 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T3', 'Baik', 'Baik', 'Baik', 'T3', 'T3', 'T3', 'T1', 'Baik', 'Baik'],
+    875 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'T1', 'Baik', 'Baik', 'Baik'],
+    876 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T2', 'T1', 'Baik', 'T2', 'Baik', 'Baik'],
+    877 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    878 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    879 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    880 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    881 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T3', 'Baik', 'Baik', 'Baik', 'T3', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    882 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T3', 'Baik', 'Baik', 'Baik', 'T2', 'T1', 'Baik', 'Baik', 'Baik', 'Baik'],
+    883 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'Baik', 'T2', 'Baik', 'Baik'],
+    884 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T4', 'Baik', 'T4', 'T2', 'T1', 'Baik'],
+    885 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'T1', 'T1', 'Baik'],
+    886 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'T4', 'T1', 'Baik', 'Baik'],
+    887 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'T3', 'T3', 'Baik', 'Baik', 'T1', 'Baik', 'Baik'],
+    888 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik'],
+    889 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T3', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T3', 'Baik', 'T2', 'Baik'],
+    890 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    891 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    892 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'T2', 'T2', 'Baik', 'T2', 'T1', 'Baik', 'Baik'],
+    893 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'T1', 'Baik', 'T3', 'Baik', 'T4', 'Baik', 'Baik', 'Baik'],
+    894 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T3', 'T3', 'Baik', 'Baik'],
+    895 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'T1', 'Baik', 'Baik', 'Baik'],
+    896 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T3', 'T2', 'Baik', 'Baik'],
+    897 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    898 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T4', 'T2', 'T1', 'Baik'],
+    899 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T3', 'T1', 'Baik', 'Baik'],
+    900 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'T2', 'Baik', 'Baik'],
+];
+
+// Merge the custom entries
+foreach ($customEntries as $id => $data) {
+    $structureData[$id] = $data;
+}
+
+// Create records
+foreach ($structureData as $id => $data) {
+    databgstrukturbangunan::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'struktur_bawah' => $data[0],
+        'struktur_atas' => $data[1],
+        'struktur_atap' => $data[2],
+        'rangka_atap' => $data[3],
+        'balok' => $data[4],
+        'kolom' => $data[5],
+        'pondasi' => $data[6],
+        'dinding' => $data[7],
+        'genteng' => $data[8],
+        'plafon' => $data[9],
+        'lantai' => $data[10],
+        'pintu' => $data[11],
+        'jendela' => $data[12]
+    ]);
+}
+
+$structureData = [];
+
+// New data for IDs 901-973
+$customEntries = [
+    901 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'T3', 'Baik', 'Baik', 'T2', 'Baik', 'T2', 'T1', 'Baik', 'Baik'],
+    902 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'T2', 'Baik', 'T3', 'Baik', 'Baik', 'Baik', 'T4', 'Baik'],
+    903 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T3', 'Baik', 'T4', 'Baik', 'T3', 'Baik'],
+    904 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T5', 'Baik', 'Baik', 'Baik', 'T4', 'Baik', 'Baik', 'T3', 'Baik', 'Baik'],
+    905 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    906 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    907 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'T2', 'T2', 'Baik', 'T3', 'T2', 'Baik', 'Baik'],
+    908 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    909 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    910 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    911 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'T1', 'Baik', 'Baik'],
+    912 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'T3', 'Baik'],
+    913 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T1', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    914 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    915 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    916 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    917 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    918 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    919 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    920 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    921 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    922 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    923 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    924 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    925 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    926 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    927 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    928 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    929 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    930 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    931 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    932 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    933 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    934 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    935 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    936 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    937 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    938 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    939 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    940 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    941 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    942 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    943 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    944 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    945 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    946 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    947 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    948 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    949 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    950 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    951 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    952 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    953 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    954 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    955 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik'],
+    956 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T3', 'Baik', 'Baik', 'Baik', 'T3', 'Baik', 'T4', 'Baik', 'T2', 'T2'],
+    957 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    958 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    959 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'Baik', 'Baik'],
+    960 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    961 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    962 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    963 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'T2', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'T2', 'T1', 'Baik', 'T2'],
+    964 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    965 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T2', 'Baik', 'T2', 'T1', 'Baik', 'Baik'],
+    966 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    967 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    968 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    969 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    970 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    971 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+    972 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'T2', 'Baik', 'Baik', 'T1', 'T2', 'T1', 'Baik', 'Baik'],
+    973 => ['Fondasi Dangkal', 'Beton', 'Kayu', 'Baik', 'Baik', 'Baik', 'Baik', 'T1', 'Baik', 'Baik', 'Baik', 'Baik', 'Baik'],
+];
+
+// Merge the custom entries
+foreach ($customEntries as $id => $data) {
+    $structureData[$id] = $data;
+}
+
+// Create records
+foreach ($structureData as $id => $data) {
+    databgstrukturbangunan::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'struktur_bawah' => $data[0],
+        'struktur_atas' => $data[1],
+        'struktur_atap' => $data[2],
+        'rangka_atap' => $data[3],
+        'balok' => $data[4],
+        'kolom' => $data[5],
+        'pondasi' => $data[6],
+        'dinding' => $data[7],
+        'genteng' => $data[8],
+        'plafon' => $data[9],
+        'lantai' => $data[10],
+        'pintu' => $data[11],
+        'jendela' => $data[12]
+    ]);
+}
+
 
 
 
@@ -29712,6 +30237,45 @@ for ($i = 1; $i <= 598; $i++) {
         'no_imbpbg' => 'Tidak Mengetahui',
         'no_slf' => 'Tidak Mengetahui',
     ]);
+}
+
+for ($i = 599; $i <= 973; $i++) {
+    $data = [
+        'id' => $i,
+        'databgkepemilikan_id' => $i,
+        'dokumen_teknis_tanah' => '(Tidak Mengetahui)',
+        'no_imbpbg' => '(Tidak Mengetahui)',
+        'no_slf' => '(Tidak Mengetahui)',
+    ];
+
+    // Special cases
+    if ($i == 752) {
+        $data['no_imbpbg'] = 'SK-PBG-331605-26082022-001';
+        $data['no_slf'] = 'SK-SLF-331605-11082022-001';
+    } elseif ($i == 784 || $i == 796 || $i == 797) {
+        $data['no_imbpbg'] = '640/313/2019';
+    } elseif ($i == 844) {
+        $data['no_imbpbg'] = '800/3392/2015';
+    } elseif ($i == 845) {
+        $data['no_imbpbg'] = '800/3392/2016';
+    } elseif ($i == 846) {
+        $data['no_imbpbg'] = '800/3392/2017';
+    } elseif ($i == 847) {
+        $data['no_imbpbg'] = '800/3392/2018';
+    }
+
+    // Handle no_hdno
+    if ($i >= 599 && $i <= 737) {
+        $data['no_hdno'] = '33.16.05.' . str_pad($i - 598, 4, '0', STR_PAD_LEFT);
+    } elseif ($i >= 738 && $i <= 973) {
+        if (in_array($i, [772, 774, 776, 778, 780, 782, 784, 785, 786, 787, 789, 791, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973])) {
+            $data['no_hdno'] = '#VALUE!';
+        } else {
+            $data['no_hdno'] = '33.16.09.' . str_pad($i - 737 + 139, 4, '0', STR_PAD_LEFT);
+        }
+    }
+
+    \App\Models\databgstatus::create($data);
 }
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA STATUS  BANGUNAN GEDUNG
