@@ -4,6 +4,7 @@
         Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
     </div>
 </div>
+<br><br><br>
 
 <!-- Pagination Controls -->
 <div class="pagination-container" style="display: flex; flex-direction: column; align-items: center; margin-top: -20px;">

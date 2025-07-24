@@ -454,6 +454,8 @@
             </table>
         </div>
 
+        <br><br><br>
+
         @include('frontend.abgblora.00_fiturmenu.06_paginations')
     </div>
 </section>
