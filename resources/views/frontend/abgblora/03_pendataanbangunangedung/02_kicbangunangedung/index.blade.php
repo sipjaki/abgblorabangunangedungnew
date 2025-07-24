@@ -284,7 +284,7 @@
                         <td class="uppercase">
                             {{ $item->namainstitusi ?? 'Data Tidak Ditemukan' }}
                         </td>
-                        <td>{{ $item->satuankerja->nama_satuankerja ?? '-' }}</td>
+                        <td>{{ $item->satuankerja->satuankerja ?? '-' }}</td>
                         <td>{{ $item->kodelokasi ?? '-' }}</td>
                         <td>{{ $item->bidang ?? '-' }}</td>
                         <td>{{ $item->subbidang ?? '-' }}</td>

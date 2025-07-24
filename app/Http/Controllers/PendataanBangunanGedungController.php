@@ -31,7 +31,7 @@ class PendataanBangunanGedungController extends Controller
         $perPage = $request->input('perPage', 15);
         $search = $request->input('search');
 
-        $query = bgkartuinventarisbangunan::query()->orderBy('created_at', 'desc');
+        $query = databgkepemilikan::query()->orderBy('created_at', 'desc');
 
         if ($search) {
             $query->where(function($q) use ($search) {
