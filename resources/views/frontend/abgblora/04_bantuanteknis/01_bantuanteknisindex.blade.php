@@ -218,7 +218,7 @@
 <div class="row mt-3" style="margin-top: -25px;">
 <div class="col-md-6" style="margin-top: -60px;">
     <div>
-        <label class="form-label d-flex align-items-center" for="jenispengajuanbantek_id">
+        <label class="form-label d-flex align-items-center" for="jenispengajuanbantek_id" class="button-baru">
             <i class="fas fa-envelope" style="margin-right: 8px; color: navy;"></i> Jenis Permohonan Bantuan Teknis
         </label>
         <select name="jenispengajuanbantek_id" id="jenispengajuanbantek_id"
