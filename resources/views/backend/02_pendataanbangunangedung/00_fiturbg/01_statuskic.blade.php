@@ -36,10 +36,11 @@
           [
     'icon' => 'bi-cash-stack',
     'title' => 'Harga',
-    'value' => is_numeric($data->harga)
-        ? 'Rp ' . number_format((float) $data->harga, 0, ',', '.')
+    'value' => isset($data->harga) && is_numeric(preg_replace('/[^0-9]/', '', $data->harga))
+        ? 'Rp ' . number_format((float) preg_replace('/[^0-9]/', '', $data->harga), 0, ',', '.')
         : 'Data Tidak Valid',
 ],
+
 
             [
                 'icon' => 'bi-chat-left-text',
