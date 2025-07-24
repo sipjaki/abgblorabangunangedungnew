@@ -26,47 +26,42 @@ use Illuminate\Support\Facades\Auth;
 class PendataanBangunanGedungController extends Controller
 {
 
-    public function datakicbangunan(Request $request)
-    {
-        $perPage = $request->input('perPage', 15);
-        $search = $request->input('search');
+public function datakicbangunan(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
 
-        $query = kicinduk::query()->orderBy('created_at', 'desc');
+    $query = kicinduk::query()
+        ->with(['satuankerja']) // eager load relasi
+        ->orderBy('created_at', 'desc');
 
-        if ($search) {
-            $query->where(function($q) use ($search) {
-                $q->where('namabangunandinas', 'LIKE', "%{$search}%")
-                  ->orWhere('namabangunan', 'LIKE', "%{$search}%")
-                  ->orWhere('kodebarang', 'LIKE', "%{$search}%")
-                  ->orWhere('asalusul', 'LIKE', "%{$search}%")
+    if ($search) {
+        $query->where(function($q) use ($search) {
+            $q->where('kodelokasi', 'LIKE', "%{$search}%")
+              ->orWhere('bidang', 'LIKE', "%{$search}%")
+              ->orWhere('subbidang', 'LIKE', "%{$search}%")
 
-                  ->orWhereHas('kedinasan', function($k) use ($search) {
-                      $k->where('kedinasan', 'LIKE', "%{$search}%");
-                  })
+              ->orWhereHas('satuankerja', function($k) use ($search) {
+                  $k->where('satuankerja', 'LIKE', "%{$search}%");
+              });
+        });
+    }
 
-                  ->orWhereHas('kodelokasibangunangedung', function($k) use ($search) {
-                      $k->where('kodelokasi', 'LIKE', "%{$search}%");
-                  })
-                  ;
-            });
-        }
+    $data = $query->paginate($perPage);
 
-
-        $data = $query->paginate($perPage);
-
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('frontend.abgblora.03_pendataanbangunangedung.02_kicbangunangedung.partials.table', compact('data'))->render()
-            ]);
-        }
-
-        return view('frontend.abgblora.03_pendataanbangunangedung.02_kicbangunangedung.index', [
-            'title' => 'Kartu Inventaris Gedung & Bangunan Kabupaten Blora',
-            'data' => $data,
-            'perPage' => $perPage,
-            'search' => $search
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.abgblora.03_pendataanbangunangedung.02_kicbangunangedung.partials.table', compact('data'))->render()
         ]);
     }
+
+    return view('frontend.abgblora.03_pendataanbangunangedung.02_kicbangunangedung.index', [
+        'title' => 'Kartu Inventaris Gedung & Bangunan Kabupaten Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
 
 public function databangunangedung(Request $request)
 {
