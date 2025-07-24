@@ -530,10 +530,10 @@
                         <th>Nama Pemohon</th>
                         <td>{{ $data->namapemohon ?? 'Tidak Tersedia' }}</td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <th>Status</th>
                         <td>{{ $data->status ?? 'Tidak tersedia' }}</td>
-                    </tr>
+                    </tr> --}}
                 </tbody>
             </table>
         </div>
