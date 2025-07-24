@@ -286,8 +286,21 @@
                         </td> --}}
                         <td>{{ $item->satuankerja->satuankerja ?? '-' }}</td>
                         <td>{{ $item->kodelokasi ?? '-' }}</td>
-                        <td>{{ $item->bidang ?? '-' }}</td>
-                        <td>{{ $item->subbidang ?? '-' }}</td>
+             <td>
+    @if ($item->bidang)
+        {{ $item->bidang }}
+    @else
+        <span class="button-berkas">Data Belum Di Update</span>
+    @endif
+</td>
+<td>
+    @if ($item->subbidang)
+        {{ $item->subbidang }}
+    @else
+        <span class="button-berkas">Data Belum Di Update</span>
+    @endif
+</td>
+
                         <td style="text-align: center;">
                             <a class="button-baru" href="/databangunangedungshow/{{ $item->id }}" style="font-size: 12px !important;">
                                 Lihat
