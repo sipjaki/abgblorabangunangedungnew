@@ -448,9 +448,9 @@ th {
    <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
                                                 <div style="text-align: left; font-size: 12px;">
                                                     Kabupaten Blora<br>
-                                                    Plt. KEPALA DINAS<br>
-                                                    DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br>
-                                                    KABUPATEN BLORA<br><br>
+                                                    Plt. Kepala Dinas Pekerjaan Umum <br>
+                                                    Dan Penataan Ruang Kabupaten Blora<br>
+                                                    {{-- KABUPATEN BLORA<br><br> --}}
 
                                                     {{-- <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
                                                         <!-- TTD Kabupaten Blora agak ke kanan -->
