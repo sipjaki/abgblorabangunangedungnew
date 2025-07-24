@@ -185,7 +185,7 @@
 
 
 
- <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
+ <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5" style="margin-top: 200px;">
 
     {{-- @include('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.00_menufungsibangunan') --}}
 
