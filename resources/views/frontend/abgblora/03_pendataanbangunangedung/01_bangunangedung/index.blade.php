@@ -324,7 +324,7 @@
 </style>
 
 <section id="breadcrumb" class="container">
-    <div class="search-tools" style="margin-top: 200px;">
+    <div class="search-tools">
         <div class="entries-selector">
             <label for="entries">Tampilkan data:</label>
             <select id="entries" onchange="updateEntries()">
@@ -343,8 +343,9 @@
         <div class="search-wrapper">
             <div class="search-box">
                 <input type="search"
+                        class="button-baru"
                        id="generalSearch"
-                       placeholder="Cari Berkas Permohonan..."
+                       placeholder="Cari Bangunan Gedung ..."
                        value="{{ request('search') }}"
                        oninput="debouncedSearch()">
                 <i class="fas fa-search"></i>
