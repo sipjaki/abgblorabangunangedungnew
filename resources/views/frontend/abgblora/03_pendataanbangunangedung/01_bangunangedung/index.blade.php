@@ -208,8 +208,8 @@
 @include('backend.00_administrator.00_baganterpisah.09_button')
 
 <!-- Main Content -->
-<section id="breadcrumb" class="container" style="margin-top: -100px;">
-    <div class="search-tools">
+<section id="breadcrumb" class="container">
+    <div class="search-tools" style="margin-top: 200px;">
         <div class="entries-selector">
             <label for="entries">Tampilkan data:</label>
             <select id="entries" onchange="updateEntries()">
