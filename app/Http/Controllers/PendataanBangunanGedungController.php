@@ -25,7 +25,6 @@ use Illuminate\Support\Facades\Auth;
 
 class PendataanBangunanGedungController extends Controller
 {
-
 public function datakicbangunan(Request $request)
 {
     $perPage = $request->input('perPage', 15);
@@ -40,7 +39,6 @@ public function datakicbangunan(Request $request)
             $q->where('kodelokasi', 'LIKE', "%{$search}%")
               ->orWhere('bidang', 'LIKE', "%{$search}%")
               ->orWhere('subbidang', 'LIKE', "%{$search}%")
-
               ->orWhereHas('satuankerja', function($k) use ($search) {
                   $k->where('satuankerja', 'LIKE', "%{$search}%");
               });
@@ -49,9 +47,13 @@ public function datakicbangunan(Request $request)
 
     $data = $query->paginate($perPage);
 
+    // Tambahkan: hitung total jumlah kicdokumen dari semua kicinduk
+    $jumlahkic = kicdokumen::count();
+
     if ($request->ajax()) {
         return response()->json([
-            'html' => view('frontend.abgblora.03_pendataanbangunangedung.02_kicbangunangedung.partials.table', compact('data'))->render()
+            'html' => view('frontend.abgblora.03_pendataanbangunangedung.02_kicbangunangedung.partials.table', compact('data'))->render(),
+            'jumlahkic' => $jumlahkic
         ]);
     }
 
@@ -59,9 +61,11 @@ public function datakicbangunan(Request $request)
         'title' => 'Kartu Inventaris Gedung & Bangunan Kabupaten Blora',
         'data' => $data,
         'perPage' => $perPage,
-        'search' => $search
+        'search' => $search,
+        'jumlahkic' => $jumlahkic
     ]);
 }
+
 
 public function databangunangedung(Request $request)
 {
