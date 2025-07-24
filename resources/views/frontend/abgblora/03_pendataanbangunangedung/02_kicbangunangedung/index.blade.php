@@ -230,7 +230,7 @@
     <div class="search-tools" style="margin-top: 200px;">
         <div class="entries-selector">
             <label for="entries">Tampilkan data:</label>
-            <select id="entries" onchange="updateEntries()">
+            <select id="entries" onchange="updateEntries()" class="button-baru" style="border-radius: 20px;">
                 <option value="25" {{ request('perPage') == 25 ? 'selected' : '' }}>25</option>
                 <option value="50" {{ request('perPage') == 50 ? 'selected' : '' }}>50</option>
                 <option value="75" {{ request('perPage') == 75 ? 'selected' : '' }}>75</option>
@@ -246,6 +246,8 @@
         <div class="search-wrapper">
             <div class="search-box">
                 <input type="search"
+                        class="button-baru"
+                        style="border-radius: 20px;"
                        id="generalSearch"
                        placeholder="Cari KIC ..."
                        value="{{ request('search') }}"
