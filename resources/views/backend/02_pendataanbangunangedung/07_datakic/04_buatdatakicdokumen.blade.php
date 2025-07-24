@@ -393,8 +393,11 @@ th {
         @error('asal_usul') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
+@php
+    $hargaRaw = isset($data->harga) ? preg_replace('/[^0-9]/', '', $data->harga) : '';
+@endphp
 
-    {{-- Harga --}}<div class="col-md-6">
+<div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="harga">
             <i class="bi bi-cash-stack me-2 text-danger"></i> Harga (Rp)
@@ -404,18 +407,17 @@ th {
             class="form-control @error('harga') is-invalid @enderror"
             id="harga"
             name="harga"
-            value="{{ old('harga', isset($data->harga) ? number_format($data->harga, 0, ',', '.') : '') }}"
+            value="{{ old('harga', $hargaRaw ? number_format($hargaRaw, 0, ',', '.') : '') }}"
             oninput="formatRupiah(this)"
             autocomplete="off"
             inputmode="numeric"
-            >
+        >
         @error('harga') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
 
 <script>
     function formatRupiah(input) {
-        // Dapatkan nilai asli tanpa titik/delimiter
         let value = input.value.replace(/\./g, '').replace(/[^0-9]/g, '');
 
         if (value === '') {
@@ -423,7 +425,6 @@ th {
             return;
         }
 
-        // Format angka ribuan (misal: 10000 => 10.000)
         let formatted = '';
         let len = value.length;
         let count = 0;
@@ -440,7 +441,6 @@ th {
         input.value = formatted;
     }
 
-    // Saat form submit, hilangkan titik agar nilai bersih yang dikirim
     document.querySelector('form').addEventListener('submit', function(e) {
         const hargaInput = document.getElementById('harga');
         if (hargaInput) {
@@ -448,6 +448,7 @@ th {
         }
     });
 </script>
+
 
 
     {{-- Keterangan --}}
