@@ -1036,7 +1036,7 @@
         </div>
 
         <!-- Kontak -->
-        <div class="contact-section">
+        <div class="contact-section" class="button-baru">
             <h3 class="contact-title" style="font-family: 'Poppins', sans-serif; color:white;"><i class="fas fa-headset"></i> Layanan dan Pengaduan</h3>
             <p>Untuk permohonan bantuan, pengaduan, saran, atau masukan terkait pelayanan kami</p>
             <a href="mailto:bid.bangunan.gedung.blora@gmail.com" class="contact-email">
