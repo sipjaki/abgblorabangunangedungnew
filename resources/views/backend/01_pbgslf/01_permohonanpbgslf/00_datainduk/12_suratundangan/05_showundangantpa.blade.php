@@ -447,7 +447,7 @@ th {
 <br>
    <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
                                                 <div style="text-align: left; font-size: 12px;">
-                                                    Kabupaten Blora<br>
+                                                    {{-- Kabupaten Blora<br> --}}
                                                     Plt. Kepala Dinas Pekerjaan Umum <br>
                                                     Dan Penataan Ruang Kabupaten Blora<br>
                                                     {{-- KABUPATEN BLORA<br><br> --}}
