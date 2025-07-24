@@ -223,8 +223,6 @@
         }
     }
 </style>
-</head>
-<body>
 
     <!-- Header Includes -->
     @include('frontend.abgblora.00_fiturmenu.02_header')
@@ -391,5 +389,3 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
