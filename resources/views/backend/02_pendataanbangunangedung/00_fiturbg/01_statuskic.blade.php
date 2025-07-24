@@ -33,11 +33,14 @@
                 'title' => 'Asal Usul',
                 'value' => $data->asal_usul ?? null,
             ],
-            [
-                'icon' => 'bi-cash-stack',
-                'title' => 'Harga',
-                'value' => $data->harga ? 'Rp ' . number_format($data->harga, 0, ',', '.') : null,
-            ],
+          [
+    'icon' => 'bi-cash-stack',
+    'title' => 'Harga',
+    'value' => is_numeric($data->harga)
+        ? 'Rp ' . number_format((float) $data->harga, 0, ',', '.')
+        : null,
+],
+
             [
                 'icon' => 'bi-chat-left-text',
                 'title' => 'Keterangan',
