@@ -1,132 +1,228 @@
+<!-- CSS Libraries -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS Libraries -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+    /* Base Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(to bottom, #7de3f1, #ffffff);
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
 
-    <style>
-        /* Base Styles */
-        body {
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(to bottom, #7de3f1, #ffffff);
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-        }
+    /* Main Content Container */
+    .main-container {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 1200px;
+    }
 
-        /* Main Content Container */
-        .main-container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 1200px;
-        }
+    /* Header Styles */
+    .header-banner {
+        background: linear-gradient(to bottom, #7de3f1, #ffffff);
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+        position: relative;
+    }
 
-        /* Header Styles */
-        .header-banner {
-            background: linear-gradient(to bottom, #7de3f1, #ffffff);
-            width: 100%;
-            margin: 0;
-            padding: 20px 0;
-            position: relative;
-        }
+    /* Card Styles */
+    .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+        border: none;
+    }
 
-        /* Card Styles */
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-            border: none;
-        }
+    .card-title {
+        color: #002366;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
 
-        .card-title {
-            color: #002366;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
+    .card-img-container {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
 
+    .card-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .card-img-container img:hover {
+        transform: scale(1.03);
+    }
+
+    /* Content Styles */
+    .content-section {
+        font-size: 15px;
+        color: #333;
+    }
+
+    .content-section p {
+        margin-bottom: 12px;
+        text-align: justify;
+    }
+
+    .content-section ul,
+    .content-section ol {
+        margin-bottom: 12px;
+        padding-left: 20px;
+    }
+
+    .content-section li {
+        margin-bottom: 8px;
+    }
+
+    .content-section .font-bold {
+        font-weight: 600;
+        color: #002366;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        background-color: #4041DA;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+    }
+
+    /* Information Content Styles */
+    .info-container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 30px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        color: #333;
+        line-height: 1.8;
+    }
+
+    .info-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+    }
+
+    .info-subtitle {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 25px 0 10px;
+        color: #002366;
+        padding-left: 10px;
+        border-left: 4px solid #4041DA;
+    }
+
+    .info-list {
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+
+    .info-list li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .info-list li:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        background-color: #4041DA;
+        border-radius: 50%;
+    }
+
+    .info-list ol {
+        counter-reset: item;
+        padding-left: 25px;
+    }
+
+    .info-list ol li {
+        counter-increment: item;
+        margin-bottom: 10px;
+    }
+
+    .info-list ol li:before {
+        content: counter(item) ".";
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        color: #4041DA;
+        background: none;
+        width: auto;
+        height: auto;
+    }
+
+    .info-link {
+        color: #007bff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .info-link:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
         .card-img-container {
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 8px;
-            margin-bottom: 15px;
+            height: 200px;
         }
 
-        .card-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+        .main-container {
+            margin: 10px;
+            padding: 15px;
         }
 
-        .card-img-container img:hover {
-            transform: scale(1.03);
-        }
-
-        /* Content Styles */
         .content-section {
-            font-size: 15px;
-            color: #333;
+            font-size: 14px;
         }
 
-        .content-section p {
-            margin-bottom: 12px;
-            text-align: justify;
-        }
-
-        .content-section ul,
-        .content-section ol {
-            margin-bottom: 12px;
-            padding-left: 20px;
-        }
-
-        .content-section li {
-            margin-bottom: 8px;
-        }
-
-        .content-section .font-bold {
-            font-weight: 600;
-            color: #002366;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background-color: #4041DA;
-            color: white;
+        .info-container {
             padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
+            margin: 20px auto;
         }
 
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .card-img-container {
-                height: 200px;
-            }
-
-            .main-container {
-                margin: 10px;
-                padding: 15px;
-            }
-
-            .content-section {
-                font-size: 14px;
-            }
+        .info-title {
+            font-size: 18px;
         }
-    </style>
+
+        .info-subtitle {
+            font-size: 15px;
+        }
+    }
+</style>
 </head>
 <body>
 
@@ -173,105 +269,93 @@
                                 <div class="col-md-12">
                                     <a href="#" class="text-decoration-none">
                                         <div class="card shadow-sm border-0 h-100">
-                                            <div class="card-img-container"
-                                              class="card-img-top img-fluid"
-        alt="thumbnail"
-        style="object-fit: cover; width: 100%; height: auto;">
-                                                <img src="/assets/android/pbgslf/PBG_FUNGSI_KEAGAMAAN.png" alt="PBG Fungsi Hunian">
+                                            <div class="card-img-container">
+                                                <img src="/assets/android/pbgslf/PBG_FUNGSI_KEAGAMAAN.png" alt="PBG Fungsi Keagamaan" class="card-img-top img-fluid" style="object-fit: cover; width: 100%; height: auto;">
                                             </div>
 
+                                            <div class="info-container">
+                                                <!-- Judul -->
+                                                <h2 class="info-title">
+                                                    Persetujuan Bangunan Gedung (PBG) - Fungsi Keagamaan
+                                                </h2>
 
+                                                <!-- Deskripsi -->
+                                                <p style="text-align: justify; margin-bottom: 30px;">
+                                                    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan sebelum mendirikan bangunan. Untuk bangunan fungsi keagamaan seperti masjid, gereja, vihara, pura, dan lainnya, PBG diperlukan agar pembangunan sesuai dengan ketentuan teknis, lingkungan, dan tata ruang yang berlaku.
+                                                </p>
 
-                                            <!-- Tambahkan ini di bagian <head> -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+                                                <!-- Klasifikasi -->
+                                                <h3 class="info-subtitle">Klasifikasi Bangunan Keagamaan:</h3>
+                                                <ul class="info-list">
+                                                    <li><strong>Sederhana:</strong>
+                                                        <ol>
+                                                            <li>1 lantai &lt; 72 m²</li>
+                                                            <li>2 lantai &lt; 90 m²</li>
+                                                        </ol>
+                                                    </li>
+                                                    <li><strong>Tidak Sederhana:</strong>
+                                                        <ol>
+                                                            <li>1 lantai ≥ 72 m²</li>
+                                                            <li>2 lantai ≥ 90 m²</li>
+                                                        </ol>
+                                                    </li>
+                                                </ul>
 
-<!-- Konten -->
-<div style="max-width: 900px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); font-family: 'Poppins', sans-serif; font-size: 15px; color: #333; line-height: 1.8;">
+                                                <!-- Persyaratan -->
+                                                <h3 class="info-subtitle">Persyaratan Dokumen:</h3>
+                                                <ol class="info-list">
+                                                    <li><strong>Data Tanah:</strong>
+                                                        <ol>
+                                                            <li>Sertifikat tanah</li>
+                                                            <li>Izin Pemanfaatan Tanah (jika nama pemohon tidak sesuai)</li>
+                                                            <li>Gambar kontur tanah & sondir (bangunan tidak sederhana)</li>
+                                                        </ol>
+                                                    </li>
+                                                    <li><strong>Data Umum:</strong>
+                                                        <ol>
+                                                            <li>KTP/KITAS pemohon</li>
+                                                            <li>KRK/KKPR</li>
+                                                            <li>SPPL/dokumen lingkungan (DPMPTSP)</li>
+                                                            <li>SBU/Arsitek bersertifikat</li>
+                                                            <li>Surat Rekomendasi FKUB</li>
+                                                        </ol>
+                                                    </li>
+                                                    <li><strong>Data Teknis Arsitektur:</strong>
+                                                        <ol>
+                                                            <li>Konsep & gambar lengkap (situasi, potongan, tampak)</li>
+                                                            <li>Detail tata ruang dalam & luar</li>
+                                                            <li>Spesifikasi teknis & peta banjir (jika perlu)</li>
+                                                        </ol>
+                                                    </li>
+                                                    <li><strong>Data Teknis Struktur:</strong>
+                                                        <ol>
+                                                            <li>Perhitungan struktur</li>
+                                                            <li>Gambar detail & spesifikasi teknis struktur</li>
+                                                        </ol>
+                                                    </li>
+                                                    <li><strong>Data Teknis MEP:</strong>
+                                                        <ol>
+                                                            <li>Jaringan listrik & sanitasi</li>
+                                                            <li>Proteksi kebakaran & sistem MEP lainnya</li>
+                                                        </ol>
+                                                    </li>
+                                                </ol>
 
-  <!-- Judul -->
-  <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #1a1a1a;">
-    Persetujuan Bangunan Gedung (PBG) - Fungsi Keagamaan
-  </h2>
-
-  <!-- Deskripsi -->
-  <p style="text-align: justify; margin-bottom: 30px;">
-    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan sebelum mendirikan bangunan. Untuk bangunan fungsi keagamaan seperti masjid, gereja, vihara, pura, dan lainnya, PBG diperlukan agar pembangunan sesuai dengan ketentuan teknis, lingkungan, dan tata ruang yang berlaku.
-  </p>
-
-  <!-- Klasifikasi -->
-  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Klasifikasi Bangunan Keagamaan:</h3>
-  <ul style="margin-left: 20px; margin-bottom: 30px;">
-    <li><strong>Sederhana:</strong>
-      <ul style="margin-left: 20px;">
-        <li>1 lantai &lt; 72 m²</li>
-        <li>2 lantai &lt; 90 m²</li>
-      </ul>
-    </li>
-    <li><strong>Tidak Sederhana:</strong>
-      <ul style="margin-left: 20px;">
-        <li>1 lantai ≥ 72 m²</li>
-        <li>2 lantai ≥ 90 m²</li>
-      </ul>
-    </li>
-  </ul>
-
-  <!-- Persyaratan -->
-  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Persyaratan Dokumen:</h3>
-  <ol style="margin-left: 20px; margin-bottom: 30px;">
-    <li><strong>Data Tanah:</strong>
-      <ul style="margin-left: 20px;">
-        <li>Sertifikat tanah</li>
-        <li>Izin Pemanfaatan Tanah (jika nama pemohon tidak sesuai)</li>
-        <li>Gambar kontur tanah & sondir (bangunan tidak sederhana)</li>
-      </ul>
-    </li>
-    <li><strong>Data Umum:</strong>
-      <ul style="margin-left: 20px;">
-        <li>KTP/KITAS pemohon</li>
-        <li>KRK/KKPR</li>
-        <li>SPPL/dokumen lingkungan (DPMPTSP)</li>
-        <li>SBU/Arsitek bersertifikat</li>
-        <li>Surat Rekomendasi FKUB</li>
-      </ul>
-    </li>
-    <li><strong>Data Teknis Arsitektur:</strong>
-      <ul style="margin-left: 20px;">
-        <li>Konsep & gambar lengkap (situasi, potongan, tampak)</li>
-        <li>Detail tata ruang dalam & luar</li>
-        <li>Spesifikasi teknis & peta banjir (jika perlu)</li>
-      </ul>
-    </li>
-    <li><strong>Data Teknis Struktur:</strong>
-      <ul style="margin-left: 20px;">
-        <li>Perhitungan struktur</li>
-        <li>Gambar detail & spesifikasi teknis struktur</li>
-      </ul>
-    </li>
-    <li><strong>Data Teknis MEP:</strong>
-      <ul style="margin-left: 20px;">
-        <li>Jaringan listrik & sanitasi</li>
-        <li>Proteksi kebakaran & sistem MEP lainnya</li>
-      </ul>
-    </li>
-  </ol>
-
-  <!-- Tahapan -->
-  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 10px;">Tahapan Pengurusan:</h3>
-  <ol style="margin-left: 20px;">
-    <li>Menyiapkan dokumen tanah, KRK/KKPR, & dokumen lingkungan</li>
-    <li>Mendaftar & unggah dokumen ke <a href="https://simbg.pu.go.id" target="_blank" style="color: #007bff;">simbg.pu.go.id</a></li>
-    <li>Verifikasi oleh operator Dinas Teknis</li>
-    <li>Penjadwalan konsultasi</li>
-    <li>Konsultasi bersama TPA/TPT</li>
-    <li>Revisi dokumen sesuai arahan</li>
-    <li>Dokumen disetujui TPA/TPT</li>
-    <li>Unggah final, validasi & retribusi</li>
-    <li>Pembayaran retribusi</li>
-    <li>Penerbitan PBG oleh DPMPTSP</li>
-  </ol>
-
-</div>
-
+                                                <!-- Tahapan -->
+                                                <h3 class="info-subtitle">Tahapan Pengurusan:</h3>
+                                                <ol class="info-list">
+                                                    <li>Menyiapkan dokumen tanah, KRK/KKPR, & dokumen lingkungan</li>
+                                                    <li>Mendaftar & unggah dokumen ke <a href="https://simbg.pu.go.id" target="_blank" class="info-link">simbg.pu.go.id</a></li>
+                                                    <li>Verifikasi oleh operator Dinas Teknis</li>
+                                                    <li>Penjadwalan konsultasi</li>
+                                                    <li>Konsultasi bersama TPA/TPT</li>
+                                                    <li>Revisi dokumen sesuai arahan</li>
+                                                    <li>Dokumen disetujui TPA/TPT</li>
+                                                    <li>Unggah final, validasi & retribusi</li>
+                                                    <li>Pembayaran retribusi</li>
+                                                    <li>Penerbitan PBG oleh DPMPTSP</li>
+                                                </ol>
+                                            </div>
                                         </div>
                                     </a>
                                 </div>
@@ -307,3 +391,5 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
