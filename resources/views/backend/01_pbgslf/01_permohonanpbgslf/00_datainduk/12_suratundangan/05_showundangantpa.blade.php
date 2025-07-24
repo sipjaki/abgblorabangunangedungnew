@@ -445,19 +445,32 @@ th {
     </p>
 </div>
 <br>
-<div style="display: flex; justify-content: flex-end; margin-top: 40px; font-size:12px; margin-top:-10px;">
-  <div style="text-align: left;">
-    <p>
-      KESEKRETARIATAN SIMBG KAB. BLORA<br />
-      DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
-      KABUPATEN BLORA
-    </p>
-    <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px" />
-    <p>OPERATOR SIMBG</p>
-  </div>
-</div>
-</div>
+   <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
+                                                <div style="text-align: left; font-size: 12px;">
+                                                    Kabupaten Blora<br>
+                                                    Plt. KEPALA DINAS<br>
+                                                    DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br>
+                                                    KABUPATEN BLORA<br><br>
 
+                                                    <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
+                                                        <!-- TTD Kabupaten Blora agak ke kanan -->
+                                                        <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
+                                                             style="position: absolute; left: 10px; top: 0; height: 90px; z-index: 1;">
+
+                                                        <!-- TTD PA Huda di kanan -->
+                                                        <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
+                                                             style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
+                                                    </div><br><br>
+                                                    <div style="display: inline-flex; flex-direction: column; gap: 0;">
+                                                        <strong style="margin-top: -25px; text-decoration: underline; line-height: 1;">
+                                                            NIDZAMUDIN AL HUDA, ST
+                                                        </strong>
+                                                        <span style="line-height: 1; margin-top: 0;">
+                                                            NIP. 19720326 200604 1 005
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
 </div>
 </body>
 </html>

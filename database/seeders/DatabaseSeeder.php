@@ -29169,6 +29169,136 @@ foreach ($structurePatterns as $pattern) {
     }
 }
 
+// Define structure patterns with their corresponding IDs
+$structurePatterns = [
+    'kayu_kayu' => [
+        'ids' => [101, 102, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 143, 155, 156, 168],
+        'struktur_bawah' => 'Fondasi Dangkal',
+        'struktur_atas' => 'Kayu',
+        'struktur_atap' => 'Kayu'
+    ],
+    'beton_beton' => [
+        'ids' => [103, 116],
+        'struktur_bawah' => 'Fondasi Dangkal',
+        'struktur_atas' => 'Beton',
+        'struktur_atap' => 'Beton'
+    ],
+    'beton_kayu' => [
+        'ids' => [104, 115, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130,
+                  131, 132, 133, 135, 136, 137, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149,
+                  150, 151, 152, 153, 154, 157, 158, 165, 169, 171, 173, 176, 177, 179, 181, 183, 184],
+        'struktur_bawah' => 'Fondasi Dangkal',
+        'struktur_atas' => 'Beton',
+        'struktur_atap' => 'Kayu'
+    ],
+    'beton_baja' => [
+        'ids' => [134, 138, 160, 161, 162, 163, 164, 167, 170, 172, 174, 175, 178, 180, 182],
+        'struktur_bawah' => 'Fondasi Dangkal',
+        'struktur_atas' => 'Beton',
+        'struktur_atap' => 'Baja'
+    ],
+    'fondasi_dalam_beton_baja' => [
+        'ids' => [159],
+        'struktur_bawah' => 'Fondasi Dalam',
+        'struktur_atas' => 'Beton',
+        'struktur_atap' => 'Baja'
+    ],
+    'fondasi_dalam_beton_kayu' => [
+        'ids' => [166],
+        'struktur_bawah' => 'Fondasi Dalam',
+        'struktur_atas' => 'Beton',
+        'struktur_atap' => 'Kayu'
+    ]
+];
+
+// Create the records
+foreach ($structurePatterns as $pattern) {
+    foreach ($pattern['ids'] as $id) {
+        databgstrukturbangunan::create([
+            'id' => $id,
+            'databgkepemilikan_id' => $id,
+            'struktur_bawah' => $pattern['struktur_bawah'],
+            'struktur_atas' => $pattern['struktur_atas'],
+            'struktur_atap' => $pattern['struktur_atap'],
+            'rangka_atap' => '-',
+            'balok' => '-',
+            'kolom' => '-',
+            'pondasi' => '-',
+            'dinding' => '-',
+            'genteng' => '-',
+            'plafon' => '-',
+            'lantai' => '-',
+            'pintu' => '-',
+            'jendela' => '-'
+        ]);
+    }
+}
+
+// Define structure patterns for Beton/Kayu and Kayu/Kayu buildings
+$structurePatterns = [
+    'beton_kayu' => [
+        'ids' => range(185, 220), // IDs 185-220
+        'base' => [
+            'struktur_bawah' => 'Fondasi Dangkal',
+            'struktur_atas' => 'Beton',
+            'struktur_atap' => 'Kayu'
+        ],
+        // Special cases for Beton/Kayu with different values
+        'special' => [
+            185 => ['rangka_atap' => 'T2', 'balok' => 'Baik', 'kolom' => 'Baik', 'pondasi' => 'Baik', 'dinding' => 'T1', 'genteng' => 'Baik', 'plafon' => 'T2', 'lantai' => 'Baik', 'pintu' => 'Baik', 'jendela' => 'T2'],
+            // Add other special cases as needed
+            196 => ['rangka_atap' => 'T3', 'pondasi' => 'T4', 'genteng' => 'T3', 'plafon' => 'Baik', 'lantai' => 'T2', 'jendela' => 'T3'],
+            201 => ['rangka_atap' => 'T3', 'pondasi' => 'T2', 'genteng' => 'T4', 'plafon' => 'T3', 'lantai' => 'T4', 'jendela' => 'T2'],
+            // Continue adding special cases...
+        ]
+    ],
+    'kayu_kayu' => [
+        'ids' => range(221, 300), // IDs 221-300
+        'base' => [
+            'struktur_bawah' => 'Fondasi Dangkal',
+            'struktur_atas' => 'Kayu',
+            'struktur_atap' => 'Kayu'
+        ],
+        // Special cases for Kayu/Kayu with different values
+        'special' => [
+            221 => ['dinding' => 'T3', 'genteng' => 'T3', 'plafon' => 'T4'],
+            224 => ['dinding' => 'T4', 'plafon' => 'T4', 'lantai' => 'T3', 'jendela' => 'T3'],
+            232 => ['rangka_atap' => 'T4', 'kolom' => 'T2', 'dinding' => 'T2', 'lantai' => 'T2', 'jendela' => 'T2'],
+            // Continue adding special cases...
+            283 => ['rangka_atap' => 'T5', 'genteng' => 'T5', 'plafon' => 'T1', 'lantai' => 'T1', 'jendela' => 'T1'],
+            294 => ['rangka_atap' => 'T3', 'genteng' => 'T4', 'plafon' => 'T2', 'lantai' => 'T2'],
+            // Add all other special cases
+        ]
+    ]
+];
+
+// Create the records
+foreach ($structurePatterns as $type) {
+    foreach ($type['ids'] as $id) {
+        $data = array_merge([
+            'id' => $id,
+            'databgkepemilikan_id' => $id,
+            'rangka_atap' => 'Baik',
+            'balok' => 'Baik',
+            'kolom' => 'Baik',
+            'pondasi' => 'Baik',
+            'dinding' => 'Baik',
+            'genteng' => 'Baik',
+            'plafon' => 'Baik',
+            'lantai' => 'Baik',
+            'pintu' => 'Baik',
+            'jendela' => 'Baik'
+        ], $type['base']);
+
+        // Apply special cases if they exist
+        if (isset($type['special'][$id])) {
+            $data = array_merge($data, $type['special'][$id]);
+        }
+
+        databgstrukturbangunan::create($data);
+    }
+}
+
 
 
 // SAMPAI SINI BRO
