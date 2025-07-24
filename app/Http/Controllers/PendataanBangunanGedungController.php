@@ -26,9 +26,6 @@ use Illuminate\Support\Facades\Auth;
 class PendataanBangunanGedungController extends Controller
 {
 
-use App\Models\KicInduk;
-use App\Models\KicDokumen;
-
 public function datakicbangunan(Request $request)
 {
     $perPage = $request->input('perPage', 15);
