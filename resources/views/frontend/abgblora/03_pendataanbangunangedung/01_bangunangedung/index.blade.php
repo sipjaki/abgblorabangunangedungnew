@@ -211,6 +211,7 @@
 @include('backend.00_administrator.00_baganterpisah.09_button')
 
 <!-- Main Content -->
+<!-- Main Content -->
 <section id="breadcrumb" class="container">
     <div class="search-tools" style="margin-top: 200px;">
         <div class="entries-selector">
@@ -237,17 +238,61 @@
                        oninput="debouncedSearch()">
                 <i class="fas fa-search"></i>
             </div>
-{{--
-            <div class="search-box">
-                <input type="date"
-                       id="dateSearch"
-                       placeholder="Cari berdasarkan tanggal..."
-                       onchange="searchByDate()">
-                <i class="fas fa-calendar"></i>
-            </div> --}}
         </div>
     </div>
 </section>
+
+<script>
+    // Debounce function to limit how often search is executed
+    function debounce(func, timeout = 500) {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => { func.apply(this, args); }, timeout);
+        };
+    }
+
+    function updateEntries() {
+        const selectedValue = document.getElementById("entries").value;
+        const url = new URL(window.location.href);
+        url.searchParams.set("perPage", selectedValue);
+        window.location.href = url.toString();
+    }
+
+    // Instant search with debounce that points to /databangunangedung
+    const performSearch = debounce(function() {
+        const input = document.getElementById("generalSearch").value;
+        const url = new URL('/databangunangedung', window.location.origin);
+
+        // Preserve pagination if exists
+        if (document.getElementById("entries").value) {
+            url.searchParams.set("perPage", document.getElementById("entries").value);
+        }
+
+        if (input) {
+            url.searchParams.set("search", input);
+        }
+
+        window.location.href = url.toString();
+    });
+
+    function debouncedSearch() {
+        performSearch();
+    }
+
+    // Initialize search input from URL parameters
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (urlParams.has('search')) {
+            document.getElementById("generalSearch").value = urlParams.get('search');
+        }
+
+        // Focus on search input when page loads
+        document.getElementById("generalSearch").focus();
+    });
+</script>
+
 
 <section id="details" class="container">
     <div class="content-card">
@@ -312,90 +357,3 @@
 
 @include('frontend.abgblora.00_fiturmenu.04_footer')
 
-<script>
-    // Debounce function to limit how often search is executed
-    function debounce(func, timeout = 500) {
-        let timer;
-        return (...args) => {
-            clearTimeout(timer);
-            timer = setTimeout(() => { func.apply(this, args); }, timeout);
-        };
-    }
-
-    function toggleDropdown(event) {
-        event.preventDefault();
-        const dropdown = event.target.closest('.dropdown');
-        dropdown.classList.toggle('show');
-    }
-
-    // Close dropdown when clicking outside
-    window.addEventListener('click', function(e) {
-        document.querySelectorAll('.dropdown').forEach(drop => {
-            if (!drop.contains(e.target)) {
-                drop.classList.remove('show');
-            }
-        });
-    });
-
-    function updateEntries() {
-        const selectedValue = document.getElementById("entries").value;
-        const url = new URL(window.location.href);
-        url.searchParams.set("perPage", selectedValue);
-        window.location.href = url.toString();
-    }
-
-    // Instant search with debounce
-    const performSearch = debounce(function() {
-        const input = document.getElementById("generalSearch").value;
-        const url = new URL(window.location.href);
-
-        if (input) {
-            url.searchParams.set("search", input);
-        } else {
-            url.searchParams.delete("search");
-        }
-
-        // Reset date search when using general search
-        document.getElementById("dateSearch").value = "";
-        url.searchParams.delete("date");
-
-        window.location.href = url.toString();
-    });
-
-    function debouncedSearch() {
-        performSearch();
-    }
-
-    // function searchByDate() {
-    //     const dateInput = document.getElementById("dateSearch").value;
-    //     const url = new URL(window.location.href);
-
-    //     if (dateInput) {
-    //         url.searchParams.set("date", dateInput);
-    //     } else {
-    //         url.searchParams.delete("date");
-    //     }
-
-    //     // Reset general search when using date search
-    //     document.getElementById("generalSearch").value = "";
-    //     url.searchParams.delete("search");
-
-    //     window.location.href = url.toString();
-    // }
-
-    // Initialize search inputs from URL parameters
-    document.addEventListener('DOMContentLoaded', function() {
-        const urlParams = new URLSearchParams(window.location.search);
-
-        if (urlParams.has('search')) {
-            document.getElementById("generalSearch").value = urlParams.get('search');
-        }
-
-        if (urlParams.has('date')) {
-            document.getElementById("dateSearch").value = urlParams.get('date');
-        }
-
-        // Focus on search input when page loads
-        document.getElementById("generalSearch").focus();
-    });
-</script>
