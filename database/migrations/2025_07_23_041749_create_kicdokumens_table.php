@@ -25,7 +25,7 @@ return new class extends Migration
             $table->text('alamat')->nullable();
 
 
-            $table->date('tanggal')->nullable();
+            $table->string('tanggal')->nullable();
             $table->string('nomor')->nullable();
             $table->string('luas')->nullable(); // dalam m²
             $table->string('status_tanah')->nullable();
