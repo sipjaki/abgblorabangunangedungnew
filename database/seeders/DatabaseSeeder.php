@@ -27339,8 +27339,8 @@ kicinduk::create([
     'user_id' => 47,
     'satuankerja_id' => 1,
     'kodelokasi' => '010101',
-    'bidang' => null,
-    'subbidang' => null,
+    'bidang' => 'Dinas Pendidikan',
+    'subbidang' => 'Dinas Pendidikan',
     'tanggalinput' => Carbon::now(),
 ]);
 
@@ -27349,8 +27349,8 @@ kicinduk::create([
     'user_id' => 47,
     'satuankerja_id' => 2,
     'kodelokasi' => '010201',
-    'bidang' => null,
-    'subbidang' => null,
+    'bidang' => 'Dinas Kesehatan',
+    'subbidang' => 'Dinas Kesehatan',
     'tanggalinput' => Carbon::now(),
 ]);
 
@@ -27359,8 +27359,8 @@ kicinduk::create([
     'user_id' => 47,
     'satuankerja_id' => 3,
     'kodelokasi' => '010301',
-    'bidang' => null,
-    'subbidang' => null,
+    'bidang' => 'Bangunan Gedung',
+    'subbidang' => 'Bangunan Gedung',
     'tanggalinput' => Carbon::now(),
 ]);
 
@@ -27369,7 +27369,7 @@ kicinduk::create([
     'user_id' => 47,
     'satuankerja_id' => 4,
     'kodelokasi' => '010401',
-    'bidang' => null,
+    'bidang' => 'Dinas Perumahan Permukiman dan Perhubungan',
     'subbidang' => null,
     'tanggalinput' => Carbon::now(),
 ]);
