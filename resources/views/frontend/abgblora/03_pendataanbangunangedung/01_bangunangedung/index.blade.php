@@ -343,6 +343,7 @@
         <div class="search-wrapper">
             <div class="search-box">
                 <input type="search"
+                style="border-radius: 20px;"
                         class="button-baru"
                        id="generalSearch"
                        placeholder="Cari Bangunan Gedung ..."
@@ -406,7 +407,7 @@
 </script>
 
 
-<section id="details" class="container">
+<section id="details" class="container" style="margin-top: -50px;">
     <div class="content-card">
         <div class="section-title" style="font-size: 14px;">
             📦 {{$title}}
