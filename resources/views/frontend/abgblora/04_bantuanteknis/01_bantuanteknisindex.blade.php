@@ -136,6 +136,7 @@
 
 @include('frontend.abgblora.00_fiturmenu.02_header')
 @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 
 <section
     id="breadcrumb"
@@ -1109,7 +1110,7 @@
 </script>
 
     <div class="flex justify-end" style="margin-top: 20px;">
-        <button type="button" class="btn-submit" onclick="openModal()">
+        <button type="button" class="button-baru" onclick="openModal()">
             <i class="fab fa-telegram-plane w-5 h-5"></i>
             Kirim Permohonan
         </button>
