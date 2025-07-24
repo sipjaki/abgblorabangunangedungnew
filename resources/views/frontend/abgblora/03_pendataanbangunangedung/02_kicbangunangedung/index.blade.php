@@ -286,14 +286,14 @@
                         </td> --}}
                         <td>{{ $item->satuankerja->satuankerja ?? '-' }}</td>
                         <td>{{ $item->kodelokasi ?? '-' }}</td>
-             <td>
+             <td style="text-align: center;">
     @if ($item->bidang)
         {{ $item->bidang }}
     @else
         <span class="button-berkas">Data Belum Di Update</span>
     @endif
 </td>
-<td>
+<td style="text-align: center;">
     @if ($item->subbidang)
         {{ $item->subbidang }}
     @else
