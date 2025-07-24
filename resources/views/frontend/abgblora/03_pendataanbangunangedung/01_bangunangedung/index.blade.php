@@ -282,12 +282,12 @@
                                 <span class="button-berkas">Data Belum Diupdate</span>
                             @endif
                         </td>
-                        <td style="text-align: center; font-size:12px;">
-                            <a class="button-baru" href="/databangunangedungshow/{{ $item->id }}">
-                                {{-- <i class="fas fa-eye view-icon"></i> View --}}
-                                View
-                            </a>
-                        </td>
+                       <td style="text-align: center;">
+    <a class="button-baru" href="/databangunangedungshow/{{ $item->id }}" style="font-size: 12px !important;">
+        Lihat
+    </a>
+</td>
+
                     </tr>
                     @endforeach
                 </tbody>
