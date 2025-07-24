@@ -283,7 +283,7 @@
                             @endif
                         </td>
                         <td style="text-align: center">
-                            <a href="/databangunangedungshow/{{ $item->id }}">
+                            <a class="button-baru" href="/databangunangedungshow/{{ $item->id }}">
                                 <i class="fas fa-eye view-icon"></i>
                             </a>
                         </td>
