@@ -58,7 +58,7 @@
 
     .card-img-container {
         width: 100%;
-        height: 300px;
+        height: 700px;
         overflow: hidden;
         border-radius: 8px;
         margin-bottom: 15px;
