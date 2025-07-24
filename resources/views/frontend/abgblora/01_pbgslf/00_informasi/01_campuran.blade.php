@@ -167,8 +167,6 @@
         }
     }
 </style>
-
-<body>
     <!-- Header Includes -->
     @include('frontend.abgblora.00_fiturmenu.02_header')
     @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
@@ -266,4 +264,3 @@
             // Initialize map or other scripts
         });
     </script>
-</body>
