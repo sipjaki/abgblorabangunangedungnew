@@ -31,7 +31,7 @@ public function datakicbangunan(Request $request)
     $perPage = $request->input('perPage', 15);
     $search = $request->input('search');
 
-    $query = KicInduk::query()
+    $query = kicinduk::query()
         ->with(['satuankerja', 'kicdokumen']) // eager load relasi
         ->orderBy('created_at', 'desc');
 
