@@ -268,15 +268,28 @@
             <table class="zebra-table">
                 <thead style="font-size: 14px;">
                     <tr>
-                        <th style="text-align: center;">No</th>
-                        {{-- <th style="text-align: center;">Nama Institusi</th> --}}
-                        <th style="text-align: center;">Satuan Kerja</th>
-                        <th style="text-align: center;">Kode Lokasi</th>
-                        <th style="text-align: center;">Bidang</th>
-                        <th style="text-align: center;">Sub Bidang</th>
-                        <th style="text-align: center;">Jumlah Bangunan</th>
-                        <th style="text-align: center;">View</th>
-                    </tr>
+        <th style="text-align: center;">
+    <i class="bi bi-list-ol me-1"></i> No
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-building me-1"></i> Satuan Kerja
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-geo-alt me-1"></i> Kode Lokasi
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-diagram-3 me-1"></i> Bidang
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-diagram-3-fill me-1"></i> Sub Bidang
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-buildings me-1"></i> Jumlah Bangunan
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-eye me-1"></i> View
+</th>
+            </tr>
                 </thead>
                 <tbody id="tableBody">
                     @foreach ($data as $item)
