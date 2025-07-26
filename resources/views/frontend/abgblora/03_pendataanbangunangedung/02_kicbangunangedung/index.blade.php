@@ -308,6 +308,8 @@
                                   {{ $item->kicdokumen->count() }} Lihat
                             </a>
                         </td>
+
+
                     </tr>
                     @endforeach
                 </tbody>

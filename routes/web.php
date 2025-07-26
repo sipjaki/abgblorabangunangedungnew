@@ -204,7 +204,7 @@ Route::get('/databangunangedung', [PendataanBangunanGedungController::class, 'da
 Route::get('/databangunangedungshow/{id}', [PendataanBangunanGedungController::class, 'databangunangedungshow']);
 Route::get('/statistikbg', [PendataanBangunanGedungController::class, 'statistikbg']);
 
-Route::get('/pendataankicbangunangedungshow', [PendataanBangunanGedungController::class, 'pendataankicbangunangedungshow']);
+Route::get('/pendataankicbangunangedungshow/{id}', [PendataanBangunanGedungController::class, 'pendataankicbangunangedungshow']);
 
 // WEB 06_ MENU KRK BANGUNAN GEDUNG
 Route::get('/rescarigsb', [FedashboardController::class, 'rescarigsb'])->middleware('auth')->name('rescarigsb');
