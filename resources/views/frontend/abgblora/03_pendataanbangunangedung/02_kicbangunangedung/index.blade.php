@@ -257,11 +257,13 @@
             <i class="fas fa-search"></i>
         </div>
     </div>
-    <div class="search-wrapper">
-        <button class="button-baru">
-            {{$subdatapemilik->satuankerja->satuankerja}}
-        </button>
-    </div>
+<div class="search-wrapper">
+    <button class="button-baru d-flex align-items-center gap-2">
+        <i class="bi bi-building"></i>
+        {{$subdatapemilik->satuankerja->satuankerja}}
+    </button>
+</div>
+
 </div>
 
     </div>
