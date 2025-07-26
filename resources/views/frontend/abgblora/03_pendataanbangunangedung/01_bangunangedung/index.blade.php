@@ -417,12 +417,25 @@
             <table class="zebra-table">
                 <thead style="font-size: 14px;">
                     <tr>
-                        <th style="text-align: center;">No</th>
-                        <th style="text-align: center;">Nama Institusi</th>
-                        <th style="text-align: center;">Kecamatan</th>
-                        <th style="text-align: center;">No HDNO</th>
-                        <th style="text-align: center;">Koordinat</th>
-                        <th style="text-align: center;">View</th>
+                        <th style="text-align: center;">
+    <i class="bi bi-list-ol me-1"></i> No
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-building me-1"></i> Nama Institusi
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-geo-alt me-1"></i> Kecamatan
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-file-earmark-text me-1"></i> No HDNO
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-compass me-1"></i> Koordinat
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-eye me-1"></i> View
+</th>
+
                     </tr>
                 </thead>
                 <tbody id="tableBody">
