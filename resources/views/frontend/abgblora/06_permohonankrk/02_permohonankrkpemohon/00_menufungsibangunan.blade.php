@@ -40,6 +40,14 @@
             </button>
         </a>
 
+        <a href="/permohonanmenara">
+            <button type="button" class="button-baru">
+                <i class="fas fa-briefcase" style="margin-right:10px;"></i> <!-- Ikon diganti -->
+                Menara Telekomunikasi
+            </button>
+        </a>
+
+
     </div>
 
     <!-- CSS untuk Hover dan Style -->

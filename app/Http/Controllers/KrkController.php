@@ -4744,5 +4744,28 @@ public function bekrkmenarapemohon(Request $request)
 }
 
 
+public function permohonanmenara(Request $request)
+{
+    // Kalau request-nya AJAX (dropdown dinamis untuk kelurahan)
+    if ($request->ajax() && $request->has('kecamatan_id')) {
+        $desa = kelurahandesa::where('kecamatanblora_id', $request->kecamatan_id)->get();
+        return response()->json($desa);
+    }
+
+    // Kalau request biasa
+    $user = Auth::user();
+    $datakrk = krkusaha::where('user_id', $user->id)->get(); // Data milik user
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+
+    return view('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.05_menaratelekomunikasi', [
+        'user' => $user,
+        'data' => $datakrk,
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'title' => 'Permohonan KRK Menara Telekomunkasi'
+    ]);
+}
+
 }
 
