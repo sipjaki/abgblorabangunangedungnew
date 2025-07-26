@@ -257,6 +257,11 @@
                 <i class="fas fa-search"></i>
             </div>
         </div>
+        <div class="search-wrapper">
+            <button class="button-baru">
+                {{$subdatapemilik->satuankerja->satuankerja}}
+            </button>
+        </div>
     </div>
 </section>
 
