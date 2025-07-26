@@ -16,7 +16,7 @@ class kicdokumen extends Model
 
     public function kicinduk()
     {
-        return $this->belongsTo(kicinduk::class, 'kicinduk_id');
+        return $this->hasMany(kicinduk::class, 'kicinduk_id');
     }
 
     public function kicstruktur()
