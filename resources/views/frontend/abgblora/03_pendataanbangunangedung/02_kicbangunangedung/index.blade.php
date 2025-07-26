@@ -244,24 +244,26 @@
                 <option value="2000" {{ request('perPage') == 2000 ? 'selected' : '' }}>2000</option>
             </select>
         </div>
+<div style="display: flex; justify-content: flex-end; gap: 10px; align-items: center;">
+    <div class="search-wrapper">
+        <div class="search-box">
+            <input type="search"
+                   class="button-baru"
+                   style="border-radius: 20px;"
+                   id="generalSearch"
+                   placeholder="Cari KIC ..."
+                   value="{{ request('search') }}"
+                   oninput="debouncedSearch()">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+    <div class="search-wrapper">
+        <button class="button-baru">
+            {{$subdatapemilik->satuankerja->satuankerja}}
+        </button>
+    </div>
+</div>
 
-        <div class="search-wrapper">
-            <div class="search-box">
-                <input type="search"
-                        class="button-baru"
-                        style="border-radius: 20px;"
-                       id="generalSearch"
-                       placeholder="Cari KIC ..."
-                       value="{{ request('search') }}"
-                       oninput="debouncedSearch()">
-                <i class="fas fa-search"></i>
-            </div>
-        </div>
-        <div class="search-wrapper">
-            <button class="button-baru">
-                {{$subdatapemilik->satuankerja->satuankerja}}
-            </button>
-        </div>
     </div>
 </section>
 
