@@ -200,7 +200,7 @@
     </section>
 
     <!-- Header Section -->
-    <section class="section-header">
+    {{-- <section class="section-header">
         <div class="header-content" style="margin-top:75px;">
             <div class="flex items-center gap-3">
                 <button class="p-[14px_20px] bg-white rounded-full font-semibold">
@@ -208,7 +208,7 @@
                 </button>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Image Modal -->
     <div id="imageModal" class="hidden items-center justify-center">
