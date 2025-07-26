@@ -188,7 +188,7 @@
 
     <!-- Breadcrumb Section -->
     <section class="breadcrumb">
-        <div class="flex gap-[30px] items-center">
+        {{-- <div class="flex gap-[30px] items-center">
             <a href="/databangunangedung" class="last-of-type:font-bold transition-all duration-300" style="color: black;">
                 Data Bangunan Gedung
             </a>
@@ -196,12 +196,12 @@
             <a href="" class="last-of-type:font-bold transition-all duration-300" style="color: blue;">
                 Data {{$title}}
             </a>
-        </div>
+        </div> --}}
     </section>
 
     <!-- Header Section -->
     <section class="section-header">
-        <div class="header-content">
+        <div class="header-content" style="margin-top:75px;">
             <div class="flex items-center gap-3">
                 <button class="p-[14px_20px] bg-white rounded-full font-semibold">
                     📦 {{$title}}
