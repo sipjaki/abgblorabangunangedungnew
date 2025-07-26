@@ -1,4 +1,14 @@
 <style>
+    /* Global Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to bottom, #7de3f1, #ffffff);
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    /* Zebra Table Styles */
     table.zebra-table {
         border-collapse: collapse;
         width: 100%;
@@ -30,215 +40,318 @@
     .zebra-table tbody tr:hover {
         background-color: #0fb825;
     }
+
+    /* Main Content Container */
+    .main-container {
+        max-width: 1130px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Card Styles */
+    .card {
+        border-radius: 20px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .card-content {
+        padding: 16px;
+        border-radius: 20px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        transition: all 0.3s;
+    }
+
+    .card-content:hover {
+        box-shadow: 0 0 0 2px #6635F1;
+    }
+
+    .card-image {
+        width: 100%;
+        height: 140px;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    /* Modal Styles */
+    #imageModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .close-modal {
+        position: absolute;
+        top: -16px;
+        right: -16px;
+        background: white;
+        color: black;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    /* Header Styles */
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* Breadcrumb Styles */
+    .breadcrumb {
+        margin-top: 185px;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .breadcrumb a {
+        transition: all 0.3s;
+    }
+
+    /* Grid Layout */
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 12px;
+    }
+
+    /* Info Box */
+    .info-box {
+        width: 100%;
+        background: #030303;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+    }
+
+    .info-box p {
+        color: white;
+        font-size: 14px;
+    }
+
+    .info-box span {
+        font-weight: bold;
+    }
 </style>
 
-@include('frontend.abgblora.00_fiturmenu.02_header')
-@include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
-@include('backend.00_administrator.00_baganterpisah.09_button')
+<!-- HTML Structure -->
+<div class="main-container">
+    @include('frontend.abgblora.00_fiturmenu.02_header')
+    @include('frontend.abgblora.00_fiturmenu.05_menunavigasweb')
+    @include('backend.00_administrator.00_baganterpisah.09_button')
 
-<section id="breadcrumb"
- class="container max-w-[1130px] mx-auto mt-[30px]" style="margin-top: 185px;">
-    <div class="flex gap-[30px] items-center">
-      <a href="/databangunangedung" class="last-of-type:font-bold transition-all duration-300 text-blue-600" style="color: black;">
-        Data Bangunan Gedung
-      </a>
-      <span>/</span>
-      <a href="" class="last-of-type:font-bold transition-all duration-300 text-blue-600" style="color: blue;">
-        Data {{$title}}
-      </a>
-      {{-- <span>/</span> --}}
-      {{-- <a href="" class="last-of-type:font-semibold transition-all duration-300">
-        Data Statistik
-      </a> --}}
+    <!-- Breadcrumb Section -->
+    <section class="breadcrumb">
+        <div class="flex gap-[30px] items-center">
+            <a href="/databangunangedung" class="last-of-type:font-bold transition-all duration-300" style="color: black;">
+                Data Bangunan Gedung
+            </a>
+            <span>/</span>
+            <a href="" class="last-of-type:font-bold transition-all duration-300" style="color: blue;">
+                Data {{$title}}
+            </a>
+        </div>
+    </section>
+
+    <!-- Header Section -->
+    <section class="section-header">
+        <div class="header-content">
+            <div class="flex items-center gap-3">
+                <button class="p-[14px_20px] bg-white rounded-full font-semibold">
+                    📦 {{$title}}
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="hidden items-center justify-center">
+        <div class="modal-content">
+            <button onclick="closeModal()" class="close-modal">&times;</button>
+            <img id="modalImage" src="" class="w-full h-full object-contain" style="border-radius: 20px;">
+        </div>
     </div>
-  </section>
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
-
-
-<section id="header" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2" style="margin-top:10px;">
-    <div class="flex items-center gap-3">
-      <button class="p-[14px_20px] bg-white rounded-full font-semibold">
-        📦 {{$title}}
-      </button>
-    </div>
-
-
-  </section>
-
-
-  <section id="other" class="container max-w-[1130px] mx-auto flex flex-col gap-4" style="margin-top: 20px;">
-<!-- WRAPPER GRID -->
-
-<!-- MODAL -->
-<!-- MODAL -->
-
-<div id="imageModal" class="fixed inset-0 z-50 bg-black bg-opacity-80 hidden items-center justify-center">
-    <div class="relative max-w-[90%] max-h-[90%]" style="border-radius: 20px; overflow: hidden;">
-      <button onclick="closeModal()" class="absolute -top-4 -right-4 bg-white text-black rounded-full w-8 h-8 flex items-center justify-center text-xl font-bold shadow-lg">&times;</button>
-      <img id="modalImage" src="" class="w-full h-full object-contain" style="border-radius: 20px;">
-    </div>
-  </div>
-
-  <!-- SCRIPT -->
-  <script>
-    function openModal(src) {
-      document.getElementById('modalImage').src = src;
-      document.getElementById('imageModal').classList.remove('hidden');
-      document.getElementById('imageModal').classList.add('flex');
-    }
-
-    function closeModal() {
-      document.getElementById('imageModal').classList.remove('flex');
-      document.getElementById('imageModal').classList.add('hidden');
-    }
-  </script>
-
-  </section>
-
-
-
-  <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
-    <div class="flex flex-col gap-5 w-full">
+    <!-- Main Content Section -->
+    <section class="flex flex-col gap-5">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
-            {{-- <div class="flex justify-center">
-                <img src="/assets/abgblora/logo/iconabgblora.png" alt="" width="15%" style="margin-top: -25px; margin-bottom:-25px;">
-            </div> --}}
+            <div class="image-grid">
+                <!-- Tampak Depan Card -->
+                @if (!empty($item->tampakdepan))
+                <a href="#" class="card">
+                    <div class="card-content">
+                        <div class="card-image">
+                            <img onclick="openModal(this.src)" src="{{ asset($item->tampakdepan) }}" alt="Tampak Depan">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Depan</p>
+                        </div>
+                    </div>
+                </a>
+                @endif
 
-            <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
-    {{-- CARD: Tampak Depan --}}
-    @if (!empty($item->tampakdepan))
-    <a href="#" class="card" style="border-radius: 20px;">
-        <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
-            <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
-                <img onclick="openModal(this.src)" src="{{ asset($item->tampakdepan) }}" class="w-full h-full object-cover cursor-pointer" alt="Tampak Depan">
-            </div>
-            <div class="flex flex-col">
-                <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Depan</p>
-            </div>
-        </div>
-    </a>
-    @endif
+                <!-- Tampak Samping 1 Card -->
+                @if (!empty($item->tampaksamping1))
+                <a href="#" class="card">
+                    <div class="card-content">
+                        <div class="card-image">
+                            <img onclick="openModal(this.src)" src="{{ asset($item->tampaksamping1) }}" alt="Tampak Samping 1">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Samping 1</p>
+                        </div>
+                    </div>
+                </a>
+                @endif
 
-    {{-- CARD: Tampak Samping 1 --}}
-    @if (!empty($item->tampaksamping1))
-    <a href="#" class="card" style="border-radius: 20px;">
-        <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
-            <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
-                <img onclick="openModal(this.src)" src="{{ asset($item->tampaksamping1) }}" class="w-full h-full object-cover cursor-pointer" alt="Tampak Samping 1">
-            </div>
-            <div class="flex flex-col">
-                <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Samping 1</p>
-            </div>
-        </div>
-    </a>
-    @endif
+                <!-- Tampak Samping 2 Card -->
+                @if (!empty($item->tampaksamping2))
+                <a href="#" class="card">
+                    <div class="card-content">
+                        <div class="card-image">
+                            <img onclick="openModal(this.src)" src="{{ asset($item->tampaksamping2) }}" alt="Tampak Samping 2">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Samping 2</p>
+                        </div>
+                    </div>
+                </a>
+                @endif
 
-    {{-- CARD: Tampak Samping 2 --}}
-    @if (!empty($item->tampaksamping2))
-    <a href="#" class="card" style="border-radius: 20px;">
-        <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
-            <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
-                <img onclick="openModal(this.src)" src="{{ asset($item->tampaksamping2) }}" class="w-full h-full object-cover cursor-pointer" alt="Tampak Samping 2">
+                <!-- Tampak Belakang Card -->
+                @if (!empty($item->tampakbelakang))
+                <a href="#" class="card">
+                    <div class="card-content">
+                        <div class="card-image">
+                            <img onclick="openModal(this.src)" src="{{ asset($item->tampakbelakang) }}" alt="Tampak Belakang">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Belakang</p>
+                        </div>
+                    </div>
+                </a>
+                @endif
             </div>
-            <div class="flex flex-col">
-                <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Samping 2</p>
-            </div>
-        </div>
-    </a>
-    @endif
 
-    {{-- CARD: Tampak Belakang --}}
-    @if (!empty($item->tampakbelakang))
-    <a href="#" class="card" style="border-radius: 20px;">
-        <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
-            <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
-                <img onclick="openModal(this.src)" src="{{ asset($item->tampakbelakang) }}" class="w-full h-full object-cover cursor-pointer" alt="Tampak Belakang">
-            </div>
-            <div class="flex flex-col">
-                <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">Tampak Belakang</p>
-            </div>
-        </div>
-    </a>
-    @endif
-</div>
-
-            <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
+            <!-- Info Box -->
+            <div class="info-box">
                 <div class="w-5 h-5 flex shrink-0">
                     <img src="/assets/new/icons/story.svg" alt="icon">
                 </div>
-                <p class="text-white font-normal text-sm">
-                    <span class="font-bold">Informasi Bangunan Gedung </span>
+                <p>
+                    <span>Informasi Bangunan Gedung</span>
                 </p>
             </div>
 
-
-
-
-@include('backend.02_pendataanbangunangedung.00_fiturbg.01_status')
-
-
-
+            @include('backend.02_pendataanbangunangedung.00_fiturbg.01_status')
         </div>
-    </div>
-</section>
+    </section>
+</div>
 
+<!-- Footer and Scripts -->
+@include('frontend.abgblora.00_fiturmenu.03_footer')
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-  @include('frontend.abgblora.00_fiturmenu.03_footer')
-  <!-- back to top start -->
-  <div class="progress-wrap">
-      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-      </svg>
-  </div>
-  <!-- back to top end -->
-
+<!-- Back to Top Button -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
 </div>
 
 @include('frontend.abgblora.00_fiturmenu.04_footer')
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
-    function toggleDropdown(event) {
-      event.preventDefault();
-      const dropdown = event.target.closest('.dropdown');
-      dropdown.classList.toggle('show');
+    // Modal Functions
+    function openModal(src) {
+        document.getElementById('modalImage').src = src;
+        document.getElementById('imageModal').style.display = 'flex';
     }
 
-    // Optional: Tutup dropdown jika klik di luar
+    function closeModal() {
+        document.getElementById('imageModal').style.display = 'none';
+    }
+
+    // Dropdown Functions
+    function toggleDropdown(event) {
+        event.preventDefault();
+        const dropdown = event.target.closest('.dropdown');
+        dropdown.classList.toggle('show');
+    }
+
     window.addEventListener('click', function(e) {
-      document.querySelectorAll('.dropdown').forEach(drop => {
-        if (!drop.contains(e.target)) {
-          drop.classList.remove('show');
-        }
-      });
+        document.querySelectorAll('.dropdown').forEach(drop => {
+            if (!drop.contains(e.target)) {
+                drop.classList.remove('show');
+            }
+        });
     });
 
-
+    // Table Functions
     function updateEntries() {
-      let selectedValue = document.getElementById("entries").value;
-      let url = new URL(window.location.href);
-      url.searchParams.set("perPage", selectedValue);
-      window.location.href = url.toString();
+        let selectedValue = document.getElementById("entries").value;
+        let url = new URL(window.location.href);
+        url.searchParams.set("perPage", selectedValue);
+        window.location.href = url.toString();
     }
 
     function searchTable() {
-      let input = document.getElementById("searchInput").value;
-
-      fetch(`/databangunangedung?search=${input}`)
-        .then(response => response.text())
-        .then(html => {
-          let parser = new DOMParser();
-          let doc = parser.parseFromString(html, "text/html");
-          let newTableBody = doc.querySelector("#tableBody").innerHTML;
-          document.querySelector("#tableBody").innerHTML = newTableBody;
-        })
-        .catch(error => console.error("Error fetching search results:", error));
+        let input = document.getElementById("searchInput").value;
+        fetch(`/databangunangedung?search=${input}`)
+            .then(response => response.text())
+            .then(html => {
+                let parser = new DOMParser();
+                let doc = parser.parseFromString(html, "text/html");
+                let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                document.querySelector("#tableBody").innerHTML = newTableBody;
+            })
+            .catch(error => console.error("Error fetching search results:", error));
     }
-  </script>
+</script>
