@@ -304,7 +304,7 @@
 </td>
 
                         <td style="text-align: center;">
-                            <a class="button-baru" href="/databangunangedungshow/{{ $item->id }}" style="font-size: 12px !important;">
+                            <a class="button-baru" href="/pendataankicbangunangedungshow/{{ $item->id }}" style="font-size: 12px !important;">
                                   {{ $item->kicdokumen->count() }} Lihat
                             </a>
                         </td>

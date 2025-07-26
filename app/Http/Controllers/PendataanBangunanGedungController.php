@@ -1204,7 +1204,8 @@ public function bedatabangunankicdelete($id)
 
         return redirect()->back()->with('error', 'Item not found');
     }
-public function bedatabangunankicshow($id)
+
+    public function bedatabangunankicshow($id)
 {
     $user = Auth::user();
 
@@ -1390,6 +1391,67 @@ public function datanewkicdokumennew(Request $request)
         'user' => $user
     ]);
 }
+
+
+public function pendataankicbangunangedungshow(Request $request, $id)
+{
+    $user = Auth::user();
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    // Ambil data induk berdasarkan ID
+    $subdatapemilik = kicinduk::findOrFail($id);
+
+    // Query untuk ambil data kicdokumen berdasarkan induk
+    $query = kicdokumen::where('kicinduk_id', $subdatapemilik->id)
+        ->orderBy('created_at', 'desc');
+
+    // Pencarian berdasarkan field-field dari tabel kicdokumen
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('jenisbarang', 'LIKE', "%{$search}%")
+              ->orWhere('kodebarang', 'LIKE', "%{$search}%")
+              ->orWhere('register', 'LIKE', "%{$search}%")
+              ->orWhere('kondisibangunan', 'LIKE', "%{$search}%")
+              ->orWhere('bertingkat', 'LIKE', "%{$search}%")
+              ->orWhere('beton', 'LIKE', "%{$search}%")
+              ->orWhere('luaslantai', 'LIKE', "%{$search}%")
+              ->orWhere('alamat', 'LIKE', "%{$search}%")
+              ->orWhere('tanggal', 'LIKE', "%{$search}%")
+              ->orWhere('nomor', 'LIKE', "%{$search}%")
+              ->orWhere('luas', 'LIKE', "%{$search}%")
+              ->orWhere('status_tanah', 'LIKE', "%{$search}%")
+              ->orWhere('nomor_kode_tanah', 'LIKE', "%{$search}%")
+              ->orWhere('asal_usul', 'LIKE', "%{$search}%")
+              ->orWhere('harga', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%")
+              ->orWhere('nosertifikat', 'LIKE', "%{$search}%");
+        });
+    }
+
+    // Pagination hasil
+    $data = $query->paginate($perPage);
+    $start = ($data->currentPage() - 1) * $data->perPage() + 1;
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.02_pendataanbangunangedung.07_datakic.partials.table', compact('data'))->render(),
+            'start' => $start
+        ]);
+    }
+
+    return view('backend.02_pendataanbangunangedung.07_datakic.06_showdatakic', [
+        'title' => 'Informasi Data KIC Bangunan Gedung Kabupaten Blora',
+        'title_halaman' => 'Informasi Data KIC Bangunan Gedung Kabupaten Blora',
+        'user' => $user,
+        'data' => $data,
+        'subdatapemilik' => $subdatapemilik,
+        'start' => $start,
+        'search' => $search,
+        'perPage' => $perPage
+    ]);
+}
+
 
 }
 
