@@ -1440,7 +1440,7 @@ public function pendataankicbangunangedungshow(Request $request, $id)
         ]);
     }
 
-    return view('backend.02_pendataanbangunangedung.07_datakic.06_showdatakic', [
+    return view('frontend.abgblora.03_pendataanbangunangedung.02_kicbangunangedung.index', [
         'title' => 'Informasi Data KIC Bangunan Gedung Kabupaten Blora',
         'title_halaman' => 'Informasi Data KIC Bangunan Gedung Kabupaten Blora',
         'user' => $user,
