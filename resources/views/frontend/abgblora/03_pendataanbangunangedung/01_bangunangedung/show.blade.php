@@ -280,7 +280,7 @@
             </div>
 
             <!-- Info Box -->
-            <div class="info-box">
+            <div class="info-box" style="margin-top: -50px;">
                 <div class="w-5 h-5 flex shrink-0">
                     <img src="/assets/new/icons/story.svg" alt="icon">
                 </div>
