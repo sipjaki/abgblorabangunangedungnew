@@ -343,10 +343,10 @@
                             {{ $data->firstItem() + $loop->iteration - 1 }}
                         </td>
 
-    <td style="text-align: center;">
+    <td style="text-align: left;">
         {!! $item->jenisbarang ? e($item->jenisbarang) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
     </td>
-    <td style="text-align: center;">
+    <td style="text-align: left;">
         {!! $item->kodebarang ? e($item->kodebarang) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
     </td>
     <td style="text-align: center;">
@@ -364,7 +364,7 @@
     <td style="text-align: center;">
         {!! $item->luaslantai ? e($item->luaslantai) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
     </td>
-    <td style="text-align: center;">
+    <td style="text-align: left;">
         {!! $item->alamat ? e($item->alamat) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
     </td>
 
