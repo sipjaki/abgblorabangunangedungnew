@@ -274,6 +274,7 @@
                         <th style="text-align: center;">Kode Lokasi</th>
                         <th style="text-align: center;">Bidang</th>
                         <th style="text-align: center;">Sub Bidang</th>
+                        <th style="text-align: center;">Jumlah Bangunan</th>
                         <th style="text-align: center;">View</th>
                     </tr>
                 </thead>
@@ -303,9 +304,16 @@
     @endif
 </td>
 
+<td>
+        <button class="button-hijau">
+            {{ $item->kicdokumen->count() }}
+        </button>
+</td>
+
+
                         <td style="text-align: center;">
                             <a class="button-baru" href="/pendataankicbangunangedungshow/{{ $item->id }}" style="font-size: 12px !important;">
-                                  {{ $item->kicdokumen->count() }} Lihat
+                                 Lihat
                             </a>
                         </td>
 
