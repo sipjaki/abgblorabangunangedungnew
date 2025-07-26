@@ -271,6 +271,9 @@
                 <thead style="font-size: 14px;">
                     <tr>
         <th style="text-align: center;">
+    <i class="bi bi-box-seam me-1"></i> No
+</th>
+        <th style="text-align: center;">
     <i class="bi bi-box-seam me-1"></i> Jenis Barang
 </th>
 <th style="text-align: center;">
