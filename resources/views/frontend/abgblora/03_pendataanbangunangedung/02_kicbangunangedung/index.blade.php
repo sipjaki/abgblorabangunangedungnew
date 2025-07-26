@@ -271,26 +271,57 @@
                 <thead style="font-size: 14px;">
                     <tr>
         <th style="text-align: center;">
-    <i class="bi bi-list-ol me-1"></i> No
+    <i class="bi bi-box-seam me-1"></i> Jenis Barang
 </th>
 <th style="text-align: center;">
-    <i class="bi bi-building me-1"></i> Satuan Kerja
+    <i class="bi bi-upc-scan me-1"></i> Kode Barang
 </th>
 <th style="text-align: center;">
-    <i class="bi bi-geo-alt me-1"></i> Kode Lokasi
+    <i class="bi bi-card-list me-1"></i> Register
 </th>
 <th style="text-align: center;">
-    <i class="bi bi-diagram-3 me-1"></i> Bidang
+    <i class="bi bi-speedometer2 me-1"></i> Kondisi Bangunan
 </th>
 <th style="text-align: center;">
-    <i class="bi bi-diagram-3-fill me-1"></i> Sub Bidang
+    <i class="bi bi-building-check me-1"></i> Bertingkat
 </th>
 <th style="text-align: center;">
-    <i class="bi bi-buildings me-1"></i> Jumlah Bangunan
+    <i class="bi bi-columns-gap me-1"></i> Beton
 </th>
 <th style="text-align: center;">
-    <i class="bi bi-eye me-1"></i> View
+    <i class="bi bi-arrows-expand me-1"></i> Luas Lantai (m²)
 </th>
+<th style="text-align: center;">
+    <i class="bi bi-geo-alt me-1"></i> Alamat
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-calendar-event me-1"></i> Tanggal
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-file-earmark-text me-1"></i> Nomor
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-arrows-angle-expand me-1"></i> Luas (m²)
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-map me-1"></i> Status Tanah
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-hash me-1"></i> Nomor Kode Tanah
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-truck me-1"></i> Asal Usul
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-cash-stack me-1"></i> Harga
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-card-text me-1"></i> Keterangan
+</th>
+<th style="text-align: center;">
+    <i class="bi bi-file-earmark-medical me-1"></i> No Sertifikat
+</th>
+
             </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -299,40 +330,59 @@
                         <td style="text-align: center;">
                             {{ $data->firstItem() + $loop->iteration - 1 }}
                         </td>
-                        {{-- <td class="uppercase">
-                            {{ $item->namainstitusi ?? 'Data Tidak Ditemukan' }}
-                        </td> --}}
-                        <td>{{ $item->satuankerja->satuankerja ?? '-' }}</td>
-                        <td>{{ $item->kodelokasi ?? '-' }}</td>
-             <td style="text-align: center;">
-    @if ($item->bidang)
-        {{ $item->bidang }}
-    @else
-        <span class="button-berkas">Data Belum Di Update</span>
-    @endif
-</td>
-<td style="text-align: center;">
-    @if ($item->subbidang)
-        {{ $item->subbidang }}
-    @else
-        <span class="button-berkas">Data Belum Di Update</span>
-    @endif
-</td>
-<td style="text-align: center;">
-    <button class="button-hijau">
-        {{ is_iterable($item->kicdokumen) ? $item->kicdokumen->count() : 0 }}
-    </button>
-</td>
 
+    <td style="text-align: center;">
+        {!! $item->jenisbarang ? e($item->jenisbarang) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->kodebarang ? e($item->kodebarang) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->register ? e($item->register) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->kondisibangunan ? e($item->kondisibangunan) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->bertingkat ? e($item->bertingkat) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->beton ? e($item->beton) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->luaslantai ? e($item->luaslantai) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->alamat ? e($item->alamat) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
 
-
-                        <td style="text-align: center;">
-                            <a class="button-baru" href="/pendataankicbangunangedungshow/{{ $item->id }}" style="font-size: 12px !important;">
-                                 Lihat
-                            </a>
-                        </td>
-
-
+    <td style="text-align: center;">
+        {!! $item->tanggal ? e($item->tanggal) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->nomor ? e($item->nomor) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->luas ? e($item->luas) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->status_tanah ? e($item->status_tanah) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->nomor_kode_tanah ? e($item->nomor_kode_tanah) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->asal_usul ? e($item->asal_usul) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->harga ? e($item->harga) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->keterangan ? e($item->keterangan) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
+    <td style="text-align: center;">
+        {!! $item->nosertifikat ? e($item->nosertifikat) : '<span class="button-berkas">Data Belum Di Update</span>' !!}
+    </td>
                     </tr>
                     @endforeach
                 </tbody>
