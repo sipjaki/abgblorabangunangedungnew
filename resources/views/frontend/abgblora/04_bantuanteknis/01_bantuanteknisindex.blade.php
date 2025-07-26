@@ -286,7 +286,7 @@
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: 20px; margin-bottom: -35px;">
     <i class="fas fa-info-circle me-2"></i>
-    <div>
+    <div class="button-baru">
         <strong>Informasi Permohonan Bantuan Teknis </strong>
     </div>
 </div>
@@ -383,7 +383,7 @@
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
     <i class="fas fa-info-circle me-2"></i>
-    <div>
+    <div class="button-baru">
         <strong>Informasi Paket Pekerjaan Bangunan Gedung </strong>
     </div>
 </div>
@@ -680,7 +680,7 @@
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px;">
     <i class="fas fa-info-circle me-2"></i>
-    <div>
+    <div class="button-baru">
         <strong>Informasi Lokasi Bangunan Gedung Pemohon </strong>
     </div>
 </div>
@@ -830,7 +830,7 @@
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: 400px;">
     <i class="fas fa-info-circle me-2"></i>
-    <div>
+    <div class="button-baru">
         <strong>Berkas Kelengkapan Dokumen Permohonan Bantuan Teknis  </strong>
     </div>
 </div>
