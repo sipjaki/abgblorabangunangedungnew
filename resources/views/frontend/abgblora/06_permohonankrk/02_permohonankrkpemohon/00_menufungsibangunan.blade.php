@@ -1,4 +1,6 @@
 
+
+
 <div class="flex flex-col gap-5 w-full">
     <div class="putih flex flex-col gap-5 p-5 rounded-[20px] w-full">
         <!-- Header -->
@@ -118,8 +120,6 @@
             font-size: 18px; /* Ukuran ikon */
         }
     </style>
-
-</div>
 
 
 <script>
