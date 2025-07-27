@@ -365,16 +365,16 @@
     </ul>
   </li> --}}
   <li class="dropdown">
-    <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">KRK</a>
+    <a href="/infokrkpermohonan" class="dropdown-toggle" onclick="toggleDropdown(event)">KRK</a>
     <ul class="dropdown-menu" style="width: 300px;">
-      {{-- <li style="font-size: 14px;">
+      <li style="font-size: 14px;">
         <a href="#" style="display: flex; align-items: center;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">
             <path d="M8.5 1.5a.5.5 0 0 1 .5.5v.5H13a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h4V2a.5.5 0 0 1 .5-.5h1zM3 4v10h10V4H3zm3.5 2h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1z"/>
           </svg>
           Informasi Permohonan KRK
         </a>
-      </li> --}}
+      </li>
       <li style="font-size: 14px;">
         <a href="/permohonankrk" onclick="showLoginModal()" style="display: flex; align-items: center;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">

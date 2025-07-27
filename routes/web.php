@@ -65,6 +65,8 @@ Route::get('/infopbgusaha', [FedashboardController::class, 'infopbgusaha']);
 Route::get('/infoslfusaha', [FedashboardController::class, 'infoslfusaha']);
 Route::get('/infomenaratelkomunikasi', [FedashboardController::class, 'infomenaratelkomunikasi']);
 
+// INFORMASI KRK
+Route::get('/infokrkpermohonan', [FedashboardController::class, 'infokrkpermohonan']);
 // ----------------------------------------------------------------------------------------
 Route::get('/respbgslfindex', [FedashboardController::class, 'menurespbgslfindex']);
 Route::get('/feinfocampuran', [FedashboardController::class, 'feinfocampuran']);
