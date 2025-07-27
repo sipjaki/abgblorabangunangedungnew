@@ -222,7 +222,7 @@
                             <label class="form-label">
                                 <i class="fas fa-user me-2" style="color: navy;"></i> Nama Pemohon
                             </label>
-                            <input type="text" name="namapemohon" class="form-control" required>
+                            <input type="text" name="namapemohon" class="form-control" >
                         </div>
                     </div>
 
@@ -231,7 +231,7 @@
                             <label class="form-label">
                                 <i class="fas fa-envelope me-2" style="color: navy;"></i> Email
                             </label>
-                            <input type="email" name="email" class="form-control" required>
+                            <input type="email" name="email" class="form-control" >
                         </div>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                             <label class="form-label">
                                 <i class="fas fa-phone me-2" style="color: navy;"></i> Nomor Telepon
                             </label>
-                            <input type="text" name="nomortelepon" class="form-control" required>
+                            <input type="text" name="nomortelepon" class="form-control" >
                         </div>
                     </div>
 
@@ -251,7 +251,7 @@
                             <label class="form-label">
                                 <i class="fas fa-id-card me-2" style="color: navy;"></i> NIK KTP
                             </label>
-                            <input type="text" name="nikktp" class="form-control" required>
+                            <input type="text" name="nikktp" class="form-control" >
                         </div>
                     </div>
                 </div>
@@ -260,7 +260,7 @@
                     <label class="form-label">
                         <i class="fas fa-map-marker-alt me-2" style="color: navy;"></i> Alamat Pemohon
                     </label>
-                    <textarea name="alamatpemohon" class="form-control" rows="2" required></textarea>
+                    <textarea name="alamatpemohon" class="form-control" rows="2" ></textarea>
                 </div>
             </div>
 
@@ -279,7 +279,7 @@
                             <label class="form-label">
                                 <i class="fas fa-drafting-compass me-2" style="color: navy;"></i> Jenis Permohonan Gambar
                             </label>
-                            <select name="jenispermohonangambar_id" class="form-control" required>
+                            <select name="jenispermohonangambar_id" class="form-control" >
                                 <option value="">-- Pilih Jenis Permohonan --</option>
                                 @foreach($jenispermohonan as $jenis)
                                     <option value="{{ $jenis->id }}">{{ $jenis->jenis }}</option>
@@ -293,7 +293,7 @@
                             <label class="form-label">
                                 <i class="fas fa-warehouse me-2" style="color: navy;"></i> Fungsi Bangunan
                             </label>
-                            <select name="fungsibangunangambar_id" class="form-control" required>
+                            <select name="fungsibangunangambar_id" class="form-control" >
                                 <option value="">-- Pilih Fungsi Bangunan --</option>
                                 @foreach($fungsibangunan as $fungsi)
                                     <option value="{{ $fungsi->id }}">{{ $fungsi->fungsibangunan }}</option>
@@ -309,7 +309,7 @@
                             <label class="form-label">
                                 <i class="fas fa-ruler-combined me-2" style="color: navy;"></i> Luas Bangunan (m²)
                             </label>
-                            <input type="text" name="luasbangunan" class="form-control" required>
+                            <input type="text" name="luasbangunan" class="form-control" >
                         </div>
                     </div>
 
@@ -318,7 +318,7 @@
                             <label class="form-label">
                                 <i class="fas fa-arrows-alt-v me-2" style="color: navy;"></i> Tinggi Bangunan (m)
                             </label>
-                            <input type="text" name="tinggibangunan" class="form-control" required>
+                            <input type="text" name="tinggibangunan" class="form-control" >
                         </div>
                     </div>
                 </div>
@@ -329,7 +329,7 @@
                             <label class="form-label">
                                 <i class="fas fa-layer-group me-2" style="color: navy;"></i> Jumlah Lantai
                             </label>
-                            <input type="number" name="jumlahlantai" class="form-control" required>
+                            <input type="number" name="jumlahlantai" class="form-control" >
                         </div>
                     </div>
 
@@ -338,7 +338,7 @@
                             <label class="form-label">
                                 <i class="fas fa-tag me-2" style="color: navy;"></i> Klasifikasi Bangunan
                             </label>
-                            <select name="klasifikasibangunan" class="form-control" required>
+                            <select name="klasifikasibangunan" class="form-control" >
                                 <option value="">-- Pilih Klasifikasi --</option>
                                 <option value="Sederhana">Sederhana</option>
                                 <option value="Tidak Sederhana">Tidak Sederhana</option>
@@ -351,7 +351,7 @@
                     <label class="form-label">
                         <i class="fas fa-info-circle me-2" style="color: navy;"></i> Peruntukan Untuk
                     </label>
-                    <input type="text" name="peruntukanuntuk" class="form-control" required>
+                    <input type="text" name="peruntukanuntuk" class="form-control" >
                 </div>
             </div>
 
@@ -368,7 +368,7 @@
                     <label class="form-label">
                         <i class="fas fa-map-marked-alt me-2" style="color: navy;"></i> Alamat Lokasi Bangunan
                     </label>
-                    <textarea name="lokasibangunan" class="form-control" rows="2" required></textarea>
+                    <textarea name="lokasibangunan" class="form-control" rows="2" ></textarea>
                 </div>
 
                 <div class="row mt-3">
@@ -378,7 +378,7 @@
                             <label class="form-label d-flex align-items-center">
                                 <i class="fas fa-map-pin me-2" style="color: navy;"></i> Kecamatan
                             </label>
-                            <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror" required>
+                            <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror" >
                                 <option value="">-- Pilih Kecamatan --</option>
                                 @foreach($datakecamatan as $kec)
                                     <option value="{{ $kec->id }}" {{ old('kecamatanblora_id') == $kec->id ? 'selected' : '' }}>
@@ -398,7 +398,7 @@
                             <label class="form-label d-flex align-items-center">
                                 <i class="fas fa-map-marker-alt me-2" style="color: navy;"></i> Kelurahan/Desa
                             </label>
-                            <select name="kelurahandesa_id" id="kelurahandesa_id" class="form-control @error('kelurahandesa_id') is-invalid @enderror" required>
+                            <select name="kelurahandesa_id" id="kelurahandesa_id" class="form-control @error('kelurahandesa_id') is-invalid @enderror" >
                                 <option value="">-- Pilih Kelurahan/Desa --</option>
                             </select>
                             @error('kelurahandesa_id')
@@ -434,7 +434,7 @@
                             <label class="form-label">
                                 <i class="fas fa-id-card me-2" style="color: navy;"></i> KTP Pemohon
                             </label>
-                            <input type="file" name="ktp" class="form-control" accept="image/*,.pdf" required>
+                            <input type="file" name="ktp" class="form-control" accept="image/*,.pdf" >
                             <small class="text-muted">.Pdf | Max 15MB</small>
                         </div>
 
@@ -477,7 +477,7 @@
                             <label class="form-label">
                                 <i class="fas fa-file-certificate me-2" style="color: navy;"></i> Sertifikat Tanah
                             </label>
-                            <input type="file" name="sertifikattanah" class="form-control" accept="image/*,.pdf" required>
+                            <input type="file" name="sertifikattanah" class="form-control" accept="image/*,.pdf" >
                             <small class="text-muted">.pdf | Max 15MB</small>
                         </div>
 
@@ -485,7 +485,7 @@
                             <label class="form-label">
                                 <i class="fas fa-receipt me-2" style="color: navy;"></i> Bukti PBB
                             </label>
-                            <input type="file" name="buktipbb" class="form-control" accept="image/*,.pdf" required>
+                            <input type="file" name="buktipbb" class="form-control" accept="image/*,.pdf" >
                             <small class="text-muted">.pdf | Max 15MB</small>
                         </div>
 
