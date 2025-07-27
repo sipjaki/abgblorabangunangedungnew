@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\bglapangan;
+use App\Models\fungsibangunangambar;
 use App\Models\gambarbantuan;
+use App\Models\jenispermohonangambar;
 use Illuminate\Support\Str;  // Tambahkan ini untuk mengimpor kelas Str
 use Illuminate\Support\Facades\File;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\surattugaspbg;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -613,6 +616,32 @@ public function bebantuangambardelete($id)
     }
 
     return back()->with('create', 'Surat tugas berhasil diupload.');
+}
+
+public function feformbantuangambar()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispermohonangambar::all();
+    $datakonsultan = fungsibangunangambar::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 3)
+        ->get();
+
+    return view('frontend.abgblora.08_bantuangambar.02_formulir.02_pendaftaran', [
+        'title' => 'Form Pengajuan Bantuan Teknis Gambar',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+    ]);
 }
 
 

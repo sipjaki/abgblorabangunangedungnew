@@ -475,7 +475,7 @@
         <i class="bi bi-download"></i> Unduh Formulir
     </a>
 
-    <a href="#">
+    <a href="/feformbantuangambar">
         <button class="button-berkas">
             <i class="bi bi-pencil-square"></i> Ajukan Permohonan!
         </button>

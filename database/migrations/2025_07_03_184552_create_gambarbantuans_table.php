@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('gambarbantuans', function (Blueprint $table) {
             $table->id();
+            
             $table->foreignId('kecamatanblora_id', 255)->nullable()->index();
             $table->foreignId('kelurahandesa_id', 255)->nullable()->index();
             $table->foreignId('user_id')->nullable()->index(); // PEMOHON
