@@ -39,10 +39,25 @@
 }
 </style>
 
+
+<li class="nav-item bungkushilang">
+    <li class="nav-item">
+                        <form action="/logout" method="POST" style="display: inline;">
+                            @csrf  <!-- This is for CSRF protection -->
+                            <button type="submit" class="nav-link" style="background: none; border: none; color: red;">
+                                <!-- Ikon untuk Logout -->
+                                <i class="nav-icon bi bi-box-arrow-right text-danger"></i> <!-- Ikon untuk Logout -->
+                                <p style="color: red">Logout</p>
+                            </button>
+                        </form>
+                    </li>
+</li>
+
+
 {{-- <div class="bungkushilang"> --}}
 <!-- 1. PBG.SLF -->
 
-@can('superadmin')
+{{-- @can('superadmin')
 
 <li class="nav-item bungkushilang">
   <a class="nav-link" href="#">
@@ -173,7 +188,7 @@
   </a>
 </li>
 
-@endcan
+@endcan --}}
 
 {{-- </div> --}}
             {{-- <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Home</a></li>
