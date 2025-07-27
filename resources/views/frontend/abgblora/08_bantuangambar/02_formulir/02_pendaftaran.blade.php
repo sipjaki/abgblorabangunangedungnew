@@ -382,10 +382,10 @@
                 </label>
                 <textarea name="lokasibangunan" class="form-control" rows="2" required></textarea>
             </div>
+<div class="row mt-3">
 
-            <div class="row mt-3">
-                <div class="row">
     <!-- Kecamatan -->
+    <div class="col-md-6">
         <div class="form-group">
             <label class="form-label d-flex align-items-center">
                 <i class="fas fa-map-pin me-2" style="color: navy;"></i> Kecamatan
@@ -419,41 +419,17 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $('#kecamatanblora_id').on('change', function () {
-        var kecamatanID = $(this).val();
-
-        $('#kelurahandesa_id').empty().append('<option value="">Memuat data...</option>');
-
-        if (kecamatanID) {
-            $.ajax({
-                url: '{{ route("permohonan.krkhunian") }}', // Sesuaikan dengan route di web.php
-                type: 'GET',
-                data: { kecamatan_id: kecamatanID },
-                success: function (data) {
-                    $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
-                    $.each(data, function (key, value) {
-                        $('#kelurahandesa_id').append('<option value="' + value.id + '">' + value.desa + '</option>');
-                    });
-                },
-                error: function () {
-                    $('#kelurahandesa_id').empty().append('<option value="">Gagal memuat data</option>');
-                }
-            });
-        } else {
-            $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
-        }
-    });
-</script>
-
-            <div class="form-group mt-3">
-                <label class="form-label">
-                    <i class="fas fa-location-arrow" style="margin-right: 8px; color: navy;"></i> Koordinat (Latitude, Longitude)
-                </label>
-                <input type="text" name="koordinat" class="form-control" placeholder="Contoh: -6.969987, 110.606125">
-            </div>
+    <!-- Koordinat -->
+    <div class="col-md-12 mt-3">
+        <div class="form-group">
+            <label class="form-label d-flex align-items-center">
+                <i class="fas fa-location-arrow me-2" style="color: navy;"></i> Koordinat (Latitude, Longitude)
+            </label>
+            <input type="text" name="koordinat" class="form-control" placeholder="Contoh: -6.969987, 110.606125">
         </div>
+    </div>
+
+</div>
 
         <!-- Section 4: Upload Dokumen -->
         <div class="section-container">
@@ -977,3 +953,32 @@ function previewFile(input, previewId) {
 </div>
 
 @include('frontend.abgblora.00_fiturmenu.04_footer')
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('#kecamatanblora_id').on('change', function () {
+        var kecamatanID = $(this).val();
+
+        $('#kelurahandesa_id').empty().append('<option value="">Memuat data...</option>');
+
+        if (kecamatanID) {
+            $.ajax({
+                url: '{{ route("permohonan.krkhunian") }}', // Sesuaikan dengan route di web.php
+                type: 'GET',
+                data: { kecamatan_id: kecamatanID },
+                success: function (data) {
+                    $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
+                    $.each(data, function (key, value) {
+                        $('#kelurahandesa_id').append('<option value="' + value.id + '">' + value.desa + '</option>');
+                    });
+                },
+                error: function () {
+                    $('#kelurahandesa_id').empty().append('<option value="">Gagal memuat data</option>');
+                }
+            });
+        } else {
+            $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
+        }
+    });
+</script>
