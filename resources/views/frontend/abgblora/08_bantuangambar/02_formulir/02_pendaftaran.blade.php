@@ -207,14 +207,14 @@
 
                 <input type="hidden" name="user_id" value="{{ $dinas_id }}">
 <div class="container-fluid px-0 navy-theme">
-    <!-- Header Section -->
+    {{-- <!-- Header Section -->
     <div class="program-header mb-5">
         <div class="header-overlay">
             <h1 class="program-title">PENDAFTARAN PROGRAM PELAYANAN BANTUAN TEKNIS</h1>
             <h2 class="program-subtitle">Pembuatan Gambar untuk Pengajuan PBG</h2>
             <h3 class="program-year">Kabupaten Blora</h3>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Main Form -->
     <div class="modern-card">
