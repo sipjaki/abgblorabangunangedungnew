@@ -272,52 +272,62 @@
     </h2> --}}
 
     <!-- Gambar -->
-<div class="card-img-container">
-  <img id="slideImage" src="" alt="Perencanaan Tata Ruang" />
-</div>
-<div class="caption" id="captionText">Perencanaan Tata Ruang</div>
+<div style="max-width: 900px; margin: auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); overflow: hidden;">
 
-<script>
-  const images = [
-    {
-      url: "https://source.unsplash.com/900x700/?urban,planning",
-      caption: "Perencanaan Tata Ruang"
-    },
-    {
-      url: "https://source.unsplash.com/900x700/?city,architecture",
-      caption: "Arsitektur Kota"
-    },
-    {
-      url: "https://source.unsplash.com/900x700/?urban,design",
-      caption: "Desain Urban"
-    },
-    {
-      url: "https://source.unsplash.com/900x700/?cityscape,planning",
-      caption: "Rencana Kota Masa Depan"
+    <!-- Gambar -->
+    <div class="card-img-container" style="width: 100%; height: auto;">
+      <img id="slideImage" src="" alt="Perencanaan Tata Ruang" style="width: 100%; height: auto; display: block;" />
+    </div>
+
+    <!-- Caption -->
+    <div class="caption" id="captionText" style="padding: 20px; font-size: 18px; font-weight: 600; text-align: center; background-color: #f1f5f9; color: #1e293b;">
+      Perencanaan Tata Ruang
+    </div>
+  </div>
+
+  <!-- Script Ganti Gambar -->
+  <script>
+    const images = [
+      {
+        url: "https://source.unsplash.com/900x700/?urban,planning",
+        caption: "Perencanaan Tata Ruang"
+      },
+      {
+        url: "https://source.unsplash.com/900x700/?city,architecture",
+        caption: "Arsitektur Kota"
+      },
+      {
+        url: "https://source.unsplash.com/900x700/?urban,design",
+        caption: "Desain Urban"
+      },
+      {
+        url: "https://source.unsplash.com/900x700/?cityscape,planning",
+        caption: "Rencana Kota Masa Depan"
+      }
+    ];
+
+    let currentIndex = 0;
+    const imgElement = document.getElementById('slideImage');
+    const captionElement = document.getElementById('captionText');
+
+    function showSlide(index) {
+      imgElement.src = images[index].url + "&" + new Date().getTime(); // cache-busting supaya gambar fresh
+      imgElement.alt = images[index].caption;
+      captionElement.textContent = images[index].caption;
     }
-  ];
 
-  let currentIndex = 0;
-  const imgElement = document.getElementById('slideImage');
-  const captionElement = document.getElementById('captionText');
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showSlide(currentIndex);
+    }
 
-  function showSlide(index) {
-    imgElement.src = images[index].url + "&" + new Date().getTime(); // cache-busting supaya gambar fresh
-    imgElement.alt = images[index].caption;
-    captionElement.textContent = images[index].caption;
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % images.length;
+    // Tampilkan gambar pertama saat halaman load
     showSlide(currentIndex);
-  }
 
-  // Tampilkan gambar pertama saat halaman load
-  showSlide(currentIndex);
+    // Ganti gambar setiap 5 detik
+    setInterval(nextSlide, 5000);
+  </script>
 
-  // Ganti gambar setiap 5 detik
-  setInterval(nextSlide, 5000);
-</script>
 <!-- Container Utama -->
 <div style="font-family: 'Poppins', sans-serif; background-color: #f9fafb; color: #333; line-height: 1.65; padding: 30px 25px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); max-width: 900px; margin: auto;">
 
