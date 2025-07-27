@@ -163,16 +163,16 @@
 
 </div>
 <div class="w-full px-4 md:px-6 py-6">
-    <div class="max-w-full bg-white border border-gray-300 rounded-xl shadow-md overflow-hidden">
+    <div class="bg-white border border-gray-300 rounded-xl shadow-md">
         <!-- Header -->
-        <div class="bg-[#4041DA] text-white text-lg font-semibold px-6 py-4">
-            Data Pengkajian Teknis - MBR Bantuan Gambar
+        <div class="bg-[#4041DA] text-white text-lg font-semibold px-6 py-4 rounded-t-xl">
+            Tabel Data Pengkajian Teknis - MBR Bantuan Gambar
         </div>
 
         <!-- Scrollable Table -->
-        <div class="overflow-x-auto">
-            <table class="table-auto min-w-[1100px] w-full text-sm text-left text-gray-800">
-                <thead class="bg-gray-100 text-[14px]">
+        <div class="w-full overflow-x-auto">
+            <table class="table-auto min-w-[900px] w-full text-sm text-left text-gray-800">
+                <thead class="bg-[#F3F4F6] text-gray-700 text-[14px]">
                     <tr>
                         <th class="px-4 py-3 border-b font-semibold">No</th>
                         <th class="px-4 py-3 border-b font-semibold">Nama Badan Usaha</th>
@@ -180,8 +180,6 @@
                         <th class="px-4 py-3 border-b font-semibold">Telepon</th>
                         <th class="px-4 py-3 border-b font-semibold">Email</th>
                         <th class="px-4 py-3 border-b font-semibold">Direktur</th>
-                        <th class="px-4 py-3 border-b font-semibold">Subklasifikasi</th>
-                        <th class="px-4 py-3 border-b font-semibold">Pengalaman</th>
                     </tr>
                 </thead>
                 <tbody class="text-[13.5px]">
@@ -193,12 +191,10 @@
                             <td class="px-4 py-3">{{ $data->telepon ?? '-' }}</td>
                             <td class="px-4 py-3">{{ $data->email ?? '-' }}</td>
                             <td class="px-4 py-3">{{ $data->direktur ?? '-' }}</td>
-                            <td class="px-4 py-3">{{ $data->subklasifikasi ?? '-' }}</td>
-                            <td class="px-4 py-3">{{ $data->pengalaman ?? '-' }}</td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="px-4 py-4 text-center text-gray-500">Data tidak tersedia.</td>
+                            <td colspan="6" class="px-4 py-4 text-center text-gray-500">Data tidak tersedia.</td>
                         </tr>
                     @endforelse
                 </tbody>
