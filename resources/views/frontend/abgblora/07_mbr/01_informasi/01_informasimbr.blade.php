@@ -225,31 +225,47 @@
      style="object-fit: cover; width: 100%; height: auto;"> --}}
 
 <!-- Konten Informasi Poster -->
-<div class="card-body">
-    <h5 class="card-title text-primary fw-semibold">
-        Bantuan Teknis Gambar MBR - Rumah Sederhana Gratis
+<div class="card-body bg-light rounded-4 shadow-sm p-4">
+    <h5 class="card-title text-primary fw-bold mb-3 d-flex align-items-center gap-2">
+        <i class="bi bi-house-heart-fill text-danger"></i>
+        Bantuan Teknis Gambar MBR - Rumah Sederhana <span class="text-success">Gratis</span>
     </h5>
-    <p class="card-text text-secondary" style="text-align: justify;">
-        Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora memberikan bantuan teknis berupa pembuatan gambar secara <strong>GRATIS</strong> untuk pengajuan <strong>PBG (Persetujuan Bangunan Gedung)</strong> rumah sederhana.
-        <br><br>
-        <strong>Syarat Pengajuan:</strong>
-        <ol>
-            <li>Fotokopi Sertifikat Tanah</li>
-            <li>Fotokopi KTP</li>
-            <li>Fotokopi Dokumen Kajian Tata Ruang</li>
-            <li>Fotokopi Keterangan Rencana Kabupaten/Kota (KRK)</li>
-        </ol>
-        <small>Syarat dan ketentuan berlaku.</small>
-        <br><br>
-        Informasi lebih lanjut dapat diperoleh melalui tautan QR Code pada poster, atau akun resmi:
-        <ul>
-            <li>Instagram: @bangunan.gedung.dpupur</li>
-            <li>Facebook: @dpupurblora</li>
-        </ul>
-        <strong>Ayo segera daftar!</strong>
-    </p>
-</div>
 
+    <p class="card-text text-secondary" style="text-align: justify;">
+        Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora memberikan bantuan teknis berupa pembuatan gambar secara
+        <span class="fw-bold text-success">GRATIS</span> untuk pengajuan
+        <span class="fw-bold text-primary">PBG (Persetujuan Bangunan Gedung)</span> rumah sederhana.
+    </p>
+
+    <hr class="my-3">
+
+    <h6 class="text-dark fw-semibold mb-2">
+        <i class="bi bi-list-check text-primary me-1"></i> Syarat Pengajuan:
+    </h6>
+    <ol class="text-secondary mb-3">
+        <li>Fotokopi Sertifikat Tanah</li>
+        <li>Fotokopi KTP</li>
+        <li>Fotokopi Dokumen Kajian Tata Ruang</li>
+        <li>Fotokopi Keterangan Rencana Kabupaten/Kota (KRK)</li>
+    </ol>
+    <p class="small fst-italic text-muted">*Syarat dan ketentuan berlaku</p>
+
+    <hr class="my-3">
+
+    <h6 class="text-dark fw-semibold mb-2">
+        <i class="bi bi-info-circle-fill text-info me-1"></i> Informasi Lebih Lanjut:
+    </h6>
+    <ul class="list-unstyled text-secondary mb-4">
+        <li><i class="bi bi-instagram text-danger me-2"></i> @bangunan.gedung.dpupur</li>
+        <li><i class="bi bi-facebook text-primary me-2"></i> @dpupurblora</li>
+    </ul>
+
+    <div class="text-center">
+        <span class="badge bg-primary px-3 py-2 fs-6">
+            <i class="bi bi-send-fill me-1"></i> Ayo Segera Daftar!
+        </span>
+    </div>
+</div>
                                             </div>
                                     </a>
                                 </div>
