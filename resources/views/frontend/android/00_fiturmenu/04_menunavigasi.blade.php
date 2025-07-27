@@ -50,7 +50,7 @@
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Sosialisasi</p>
         </div>
       </a>
-      <a href="/404">
+      <a href="/permohonankrkusaha">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
             <img src="/assets/android/menunavigasi/06.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
@@ -79,7 +79,7 @@
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
             <img src="/assets/android/menunavigasi/09.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
-          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantuan</p>
+          <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantuan <br> Gambar </p>
         </div>
       </a>
 
