@@ -23,6 +23,7 @@ use App\Models\kelurahandesa;
 use App\Models\materipelatihan;
 use App\Models\mbrgambar;
 use App\Models\pbgslfbangunan;
+use App\Models\pengkajiteknis;
 use App\Models\pesertapelatihan;
 use App\Models\rencanagsbblora;
 use App\Models\User;
@@ -171,6 +172,8 @@ class FedashboardController extends Controller
 
         $user = Auth::user();
         $data = mbrgambar::all();
+        $datapengkajiteknis = pengkajiteknis::all();
+
 
         // return view('/404', [
         // return view('frontend.00_full.index', [
@@ -179,6 +182,7 @@ class FedashboardController extends Controller
             'title' => 'Informasi MBR Bantuan Gambar ',
             'user' => $user,
             'data' => $data,
+            'datapengkajiteknis' => $datapengkajiteknis,
         ]);
     }
 

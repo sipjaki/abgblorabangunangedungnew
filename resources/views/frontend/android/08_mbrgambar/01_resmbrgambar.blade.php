@@ -159,6 +159,44 @@
   </a>
 
   @endforeach
+
+  <div class="px-[18px] py-4">
+    <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-[#DCDFE6]">
+        <table class="min-w-full divide-y divide-gray-200 text-[14px] text-left">
+            <thead class="bg-[#4041DA] text-white">
+                <tr>
+                    <th class="px-4 py-2 font-semibold">No</th>
+                    <th class="px-4 py-2 font-semibold">Nama Badan Usaha</th>
+                    <th class="px-4 py-2 font-semibold">Alamat</th>
+                    <th class="px-4 py-2 font-semibold">Telepon</th>
+                    <th class="px-4 py-2 font-semibold">Email</th>
+                    <th class="px-4 py-2 font-semibold">Direktur</th>
+                    <th class="px-4 py-2 font-semibold">Subklasifikasi</th>
+                    <th class="px-4 py-2 font-semibold">Pengalaman</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                @forelse ($datapengkajiteknis as $index => $data)
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-2">{{ $index + 1 }}</td>
+                    <td class="px-4 py-2">{{ $data->namabadanusaha ?? '-' }}</td>
+                    <td class="px-4 py-2">{{ $data->alamat ?? '-' }}</td>
+                    <td class="px-4 py-2">{{ $data->telepon ?? '-' }}</td>
+                    <td class="px-4 py-2">{{ $data->email ?? '-' }}</td>
+                    <td class="px-4 py-2">{{ $data->direktur ?? '-' }}</td>
+                    <td class="px-4 py-2">{{ $data->subklasifikasi ?? '-' }}</td>
+                    <td class="px-4 py-2">{{ $data->pengalaman ?? '-' }}</td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="8" class="px-4 py-4 text-center text-gray-500">Data tidak tersedia.</td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
+</div>
+
 </div>
 
 
