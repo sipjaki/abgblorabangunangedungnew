@@ -225,48 +225,50 @@
      style="object-fit: cover; width: 100%; height: auto;"> --}}
 
 <!-- Konten Informasi Poster -->
-<div class="card-body bg-light rounded-4 shadow-sm p-4">
-    <h5 class="card-title text-primary fw-bold mb-3 d-flex align-items-center gap-2">
+<div class="card-body bg-light rounded-4 shadow-sm p-4" style="font-size: 14px;">
+    <h5 class="card-title text-primary fw-bold mb-3 d-flex align-items-center gap-2" style="font-size: 14px;">
         <i class="bi bi-house-heart-fill text-danger"></i>
         Bantuan Teknis Gambar MBR - Rumah Sederhana <span class="text-success">Gratis</span>
     </h5>
 
-    <p class="card-text text-secondary" style="text-align: justify;">
+    <p class="card-text text-secondary mb-3" style="text-align: justify; font-size: 14px;">
         Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora memberikan bantuan teknis berupa pembuatan gambar secara
-        <span class="fw-bold text-success">GRATIS</span> untuk pengajuan
-        <span class="fw-bold text-primary">PBG (Persetujuan Bangunan Gedung)</span> rumah sederhana.
+        <strong class="text-success">GRATIS</strong> untuk pengajuan
+        <strong class="text-primary">PBG (Persetujuan Bangunan Gedung)</strong> rumah sederhana.
     </p>
 
     <hr class="my-3">
 
-    <h6 class="text-dark fw-semibold mb-2">
+    <h6 class="text-dark fw-semibold mb-2" style="font-size: 14px;">
         <i class="bi bi-list-check text-primary me-1"></i> Syarat Pengajuan:
     </h6>
-    <ol class="text-secondary mb-3">
+    <ol class="text-secondary mb-3" style="padding-left: 1rem;">
         <li>Fotokopi Sertifikat Tanah</li>
         <li>Fotokopi KTP</li>
         <li>Fotokopi Dokumen Kajian Tata Ruang</li>
         <li>Fotokopi Keterangan Rencana Kabupaten/Kota (KRK)</li>
     </ol>
-    <p class="small fst-italic text-muted">*Syarat dan ketentuan berlaku</p>
+    <p class="text-muted fst-italic mb-3" style="font-size: 14px;">*Syarat dan ketentuan berlaku</p>
 
     <hr class="my-3">
 
-    <h6 class="text-dark fw-semibold mb-2">
+    <h6 class="text-dark fw-semibold mb-2" style="font-size: 14px;">
         <i class="bi bi-info-circle-fill text-info me-1"></i> Informasi Lebih Lanjut:
     </h6>
-    <ul class="list-unstyled text-secondary mb-4">
+    <ul class="list-unstyled text-secondary mb-4" style="font-size: 14px;">
         <li><i class="bi bi-instagram text-danger me-2"></i> @bangunan.gedung.dpupur</li>
         <li><i class="bi bi-facebook text-primary me-2"></i> @dpupurblora</li>
     </ul>
 
     <div class="text-center">
-        <span class="badge bg-primary px-3 py-2 fs-6">
+        <span class="badge bg-primary px-3 py-2" style="font-size: 14px;">
             <i class="bi bi-send-fill me-1"></i> Ayo Segera Daftar!
         </span>
     </div>
 </div>
-                                            </div>
+
+
+</div>
                                     </a>
                                 </div>
                             </div>
