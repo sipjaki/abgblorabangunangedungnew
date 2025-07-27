@@ -269,13 +269,15 @@
                 <thead style="font-size: 14px;">
                     <tr>
                         <th style="text-align: center;">No</th>
-                        {{-- <th style="text-align: center;">Nama Institusi</th> --}}
-                        <th style="text-align: center;">Satuan Kerja</th>
-                        <th style="text-align: center;">Kode Lokasi</th>
-                        <th style="text-align: center;">Bidang</th>
-                        <th style="text-align: center;">Sub Bidang</th>
-                        <th style="text-align: center;">Jumlah Bangunan</th>
-                        <th style="text-align: center;">View</th>
+                            <th style="text-align: center;">Nama Badan Usaha</th>
+                            <th style="text-align: center;">Alamat</th>
+                            <th style="text-align: center;">Telepon</th>
+                            <th style="text-align: center;">Email</th>
+                            <th style="text-align: center;">Direktur</th>
+                            <th style="text-align: center;">Subklasifikasi</th>
+                            <th style="text-align: center;">Pengalaman</th>
+                            <th style="text-align: center;">View</th>
+
                     </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -284,36 +286,13 @@
                         <td style="text-align: center;">
                             {{ $data->firstItem() + $loop->iteration - 1 }}
                         </td>
-                        {{-- <td class="uppercase">
-                            {{ $item->namainstitusi ?? 'Data Tidak Ditemukan' }}
-                        </td> --}}
-                        <td>{{ $item->satuankerja->satuankerja ?? '-' }}</td>
-                        <td>{{ $item->kodelokasi ?? '-' }}</td>
-             <td style="text-align: center;">
-    @if ($item->bidang)
-        {{ $item->bidang }}
-    @else
-        <span class="button-berkas">Data Belum Di Update</span>
-    @endif
-</td>
-<td style="text-align: center;">
-    @if ($item->subbidang)
-        {{ $item->subbidang }}
-    @else
-        <span class="button-berkas">Data Belum Di Update</span>
-    @endif
-</td>
-<td style="text-align: center;">
-    <button class="button-hijau">
-        {{ $item->kicdokumen->count() }}
-    </button>
-</td>
-
-                        <td style="text-align: center;">
-                            <a class="button-baru" href="/pendataankicbangunangedungshow/{{ $item->id }}" style="font-size: 12px !important;">
-                                 Lihat
-                            </a>
-                        </td>
+                      <td>{{ $item->namabadanusaha }}</td>
+            <td>{{ $item->alamat }}</td>
+            <td>{{ $item->telepon }}</td>
+            <td>{{ $item->email }}</td>
+            <td>{{ $item->direktur }}</td>
+            <td>{{ $item->subklasifikasi }}</td>
+            <td>{{ $item->pengalaman }}</td>
                     </tr>
                     @endforeach
                 </tbody>
