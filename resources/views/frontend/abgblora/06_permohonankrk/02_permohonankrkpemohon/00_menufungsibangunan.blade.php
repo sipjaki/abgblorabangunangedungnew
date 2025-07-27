@@ -9,8 +9,16 @@
         <p class="text-white font-normal text-sm">
             <span class="font-bold">Pilih Salah Satu Jenis Permohonan Anda ! </span>
         </p>
-    </div><div style="overflow-x: auto; padding-bottom: 8px;">
-    <div style="display: inline-flex; gap: 16px; white-space: nowrap; padding: 10px;">
+    </div>
+    <!-- Wrapper scroll horizontal -->
+<div style="overflow-x: auto; width: 100%;">
+    <div style="
+        display: flex;
+        gap: 16px;
+        padding: 10px;
+        width: max-content;
+        min-width: 100%;
+    ">
 
         <a href="/permohonankrkusaha">
             <button type="button" class="button-baru">
