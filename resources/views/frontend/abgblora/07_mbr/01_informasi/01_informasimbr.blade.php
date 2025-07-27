@@ -219,15 +219,15 @@
                                                     @endforeach
 
                                         <!-- Gambar dari Poster -->
-<img src="{{ asset('assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png') }}"
+{{-- <img src="{{ asset('assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png') }}"
      class="card-img-top img-fluid"
      alt="thumbnail"
-     style="object-fit: cover; width: 100%; height: auto;">
+     style="object-fit: cover; width: 100%; height: auto;"> --}}
 
 <!-- Konten Informasi Poster -->
 <div class="card-body">
     <h5 class="card-title text-primary fw-semibold">
-        Bantuan Teknis Gambar Pengajuan PBG - Rumah Sederhana Gratis
+        Bantuan Teknis Gambar MBR - Rumah Sederhana Gratis
     </h5>
     <p class="card-text text-secondary" style="text-align: justify;">
         Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora memberikan bantuan teknis berupa pembuatan gambar secara <strong>GRATIS</strong> untuk pengajuan <strong>PBG (Persetujuan Bangunan Gedung)</strong> rumah sederhana.
