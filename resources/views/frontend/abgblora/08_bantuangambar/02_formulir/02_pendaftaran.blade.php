@@ -220,8 +220,13 @@
     <div class="modern-card">
         <!-- Section 1: Informasi Pemohon -->
         <div class="section-container">
-            <h3 class="section-title"><i class="bi bi-person-circle"></i> Informasi Pemohon</h3>
 
+<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
+    <i class="fas fa-info-circle me-2"></i>
+    <div class="button-baru">
+        <strong>Informasi Pemohon </strong>
+    </div>
+</div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -272,8 +277,13 @@
 
         <!-- Section 2: Informasi Bangunan -->
         <div class="section-container">
-            <h3 class="section-title"><i class="bi bi-building"></i> Informasi Bangunan</h3>
 
+<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
+    <i class="fas fa-info-circle me-2"></i>
+    <div class="button-baru">
+        <strong>Informasi Bangunan Gedung </strong>
+    </div>
+</div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -359,8 +369,13 @@
 
         <!-- Section 3: Lokasi Bangunan -->
         <div class="section-container">
-            <h3 class="section-title"><i class="bi bi-geo-alt"></i> Lokasi Bangunan</h3>
 
+<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
+    <i class="fas fa-info-circle me-2"></i>
+    <div class="button-baru">
+        <strong>Lokasi Bangunan Gedung</strong>
+    </div>
+</div>
             <div class="form-group">
                 <label class="form-label">
                     <i class="fas fa-map-marked-alt" style="margin-right: 8px; color: navy;"></i> Alamat Lokasi Bangunan
@@ -442,8 +457,13 @@
 
         <!-- Section 4: Upload Dokumen -->
         <div class="section-container">
-            <h3 class="section-title"><i class="bi bi-file-earmark-arrow-up"></i> Upload Dokumen</h3>
 
+<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
+    <i class="fas fa-info-circle me-2"></i>
+    <div class="button-baru">
+        <strong>Upload Dokumen Persyaratan Bantuan Teknis Gambar </strong>
+    </div>
+</div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="document-upload">
