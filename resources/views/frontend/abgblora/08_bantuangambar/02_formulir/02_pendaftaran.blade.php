@@ -531,6 +531,14 @@
             </div> --}}
         </div>
 
+
+    <div class="flex justify-end" style="margin-top: 20px;">
+        <button type="button" class="button-baru" onclick="openModal()">
+            <i class="fab fa-telegram-plane w-5 h-5"></i>
+            Kirim Permohonan
+        </button>
+    </div>
+
         <!-- Submit Section -->
         {{-- <div class="section-container text-center">
             <button type="submit" class="btn-submit">
@@ -716,12 +724,6 @@ document.querySelectorAll('input[name="luasbangunan"], input[name="tinggibanguna
 });
 </script>
 
-    <div class="flex justify-end" style="margin-top: 20px;">
-        <button type="button" class="button-baru" onclick="openModal()">
-            <i class="fab fa-telegram-plane w-5 h-5"></i>
-            Kirim Permohonan
-        </button>
-    </div>
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
