@@ -212,7 +212,7 @@
                 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
                     <i class="fas fa-info-circle me-2"></i>
                     <div class="button-baru">
-                        <strong>Informasi Pemohon</strong>
+                        <strong style="color: black;">Informasi Pemohon</strong>
                     </div>
                 </div>
 
@@ -269,7 +269,7 @@
                 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
                     <i class="fas fa-info-circle me-2"></i>
                     <div class="button-baru">
-                        <strong>Informasi Bangunan Gedung</strong>
+                        <strong style="color: black;">Informasi Bangunan Gedung</strong>
                     </div>
                 </div>
 
@@ -360,7 +360,7 @@
                 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
                     <i class="fas fa-info-circle me-2"></i>
                     <div class="button-baru">
-                        <strong>Lokasi Bangunan Gedung</strong>
+                        <strong style="color: black;">Lokasi Bangunan Gedung</strong>
                     </div>
                 </div>
 
@@ -424,7 +424,7 @@
                 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
                     <i class="fas fa-info-circle me-2"></i>
                     <div class="button-baru">
-                        <strong>Upload Dokumen Persyaratan Bantuan Teknis Gambar</strong>
+                        <strong style="color: black;">Upload Dokumen Persyaratan Bantuan Teknis Gambar</strong>
                     </div>
                 </div>
 
