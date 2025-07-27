@@ -280,110 +280,460 @@
                         <img src="/assets/new/icons/story.svg" alt="icon">
                     </div>
                     <p class="text-white font-normal text-sm">
-                        <span class="font-bold">Informasi Permohonan (KRK) Keterangan Rencana Kota/Kabupaten</span>
+                        <span class="font-bold">Informasi Permohonan Bantuan Teknis Gambar</span>
                     </p>
                 </div>
 
-                <!-- Information Cards -->
-                <div class="container-fluid px-0">
-                    <!-- Lampiran Section -->
-                    <div class="mb-5">
-                        <div class="row g-4">
-                            <div class="col-md-12">
-                                <div class="info-container" style="margin-top: 10px; ">
-                                    {{-- <h2 class="info-title">
-                                        KRK (Keterangan Rencana Kabupaten) - Panduan Lengkap
-                                    </h2> --}}
 
-                                    <!-- Image Slideshow -->
-                                    <div class="card-img-container">
-                                        <img id="slideImage" src="https://source.unsplash.com/900x400/?urban,planning" alt="Perencanaan Tata Ruang">
-                                        <div class="img-caption" id="captionText">Perencanaan Tata Ruang</div>
-                                    </div>
+                {{-- ini informasi bantuan gambar --}}
+<div class="container-fluid px-0 navy-theme">
+    <!-- Header Section -->
+    <div class="program-header mb-5">
+        <div class="header-overlay">
+            <h1 class="program-title">PENDAFTARAN PROGRAM PELAYANAN BANTUAN TEKNIS</h1>
+            <h2 class="program-subtitle">Pembuatan Gambar untuk Pengajuan PBG Rumah Sederhana</h2>
+            <h3 class="program-year">Kabupaten Blora Tahun 2025</h3>
+        </div>
+    </div>
 
-                                    <!-- Main Content -->
-                                    <h3 class="info-subtitle">Apa Itu KRK?</h3>
-                                    <p>
-                                        KRK atau Keterangan Rencana Kabupaten merupakan dokumen resmi yang dikeluarkan oleh pemerintah daerah yang menjelaskan kesesuaian suatu rencana pembangunan dengan peraturan tata ruang yang berlaku di wilayah kabupaten/kota. Dokumen ini menjadi dasar penting dalam proses pengajuan izin mendirikan bangunan (IMB) atau Persetujuan Bangunan Gedung (PBG).
-                                    </p>
+    <!-- Main Content -->
+    <div class="row g-4">
+        <div class="col-md-12">
+            <div class="modern-card">
+                <!-- About PBG Section -->
+                <div class="section-container">
+                    <h3 class="section-title"><i class="bi bi-building"></i> Tentang Persetujuan Bangunan Gedung (PBG)</h3>
+                    <div class="section-content">
+                        <p>Persetujuan Bangunan Gedung (PBG) adalah perizinan yang dikeluarkan pemerintah kepada pemilik bangunan atau perwakilannya untuk:</p>
+                        <ul class="modern-list">
+                            <li>Memulai pembangunan baru</li>
+                            <li>Merrenovasi bangunan existing</li>
+                            <li>Melakukan perawatan bangunan</li>
+                            <li>Mengubah fungsi bangunan</li>
+                        </ul>
+                        <p>PBG diterbitkan setelah rencana teknis memenuhi standar peraturan melalui proses konsultasi dengan tenaga ahli terkait.</p>
+                    </div>
+                </div>
 
-                                    <div class="info-box">
-                                        <div class="info-box-title">Fungsi Utama KRK:</div>
-                                        <ul class="info-list">
-                                            <li>Menjelaskan status peruntukan lahan sesuai RTRW</li>
-                                            <li>Memastikan kesesuaian rencana bangunan dengan zonasi</li>
-                                            <li>Menjadi dasar penilaian teknis permohonan PBG</li>
-                                            <li>Mencegah pembangunan di kawasan lindung</li>
-                                        </ul>
-                                    </div>
-
-                                    <h3 class="info-subtitle">Mengapa KRK Penting?</h3>
-                                    <p>
-                                        KRK memiliki peran strategis dalam pembangunan berkelanjutan karena:
-                                    </p>
-                                    <ol class="info-list">
-                                        <li><strong>Kepastian Hukum:</strong> Memberikan legalitas bahwa lokasi pembangunan sesuai peruntukan</li>
-                                        <li><strong>Pencegahan Konflik:</strong> Menghindari sengketa penggunaan lahan di kemudian hari</li>
-                                        <li><strong>Perencanaan Terpadu:</strong> Memastikan pembangunan selaras dengan rencana tata ruang wilayah</li>
-                                        <li><strong>Perlindungan Lingkungan:</strong> Mencegah pembangunan di kawasan lindung atau rawan bencana</li>
-                                    </ol>
-
-                                    <h3 class="info-subtitle">Proses Pengajuan KRK</h3>
-                                    <p>
-                                        Berikut tahapan pengajuan KRK di Kabupaten Blora:
-                                    </p>
-                                    <ul class="info-list">
-                                        <li>Pemohon mengajukan permohonan melalui sistem online atau langsung ke Dinas PUPR</li>
-                                        <li>Melampirkan dokumen persyaratan (sertifikat tanah, KTP, surat kuasa jika dikuasakan)</li>
-                                        <li>Tim teknis melakukan verifikasi lapangan</li>
-                                        <li>Proses analisis kesesuaian dengan RTRW</li>
-                                        <li>Penerbitan KRK jika memenuhi syarat</li>
-                                    </ul>
-
-                                    <h3 class="info-subtitle">Persyaratan Dokumen</h3>
-                                    <p>
-                                        Untuk mengajukan KRK, pemohon perlu menyiapkan:
-                                    </p>
-                                    <ul class="info-list">
-                                        <li>Fotokopi sertifikat tanah atau bukti kepemilikan lahan</li>
-                                        <li>Fotokopi KTP pemohon</li>
-                                        <li>Surat kuasa bermaterai jika dikuasakan</li>
-                                        <li>Gambar situasi lokasi</li>
-                                        <li>Dokumen pendukung lain sesuai kebutuhan</li>
-                                    </ul>
-
-                                    {{-- <h3 class="info-subtitle">Layanan Online KRK</h3> --}}
-                                    {{-- <p>
-                                        Pemerintah Kabupaten Blora telah menyediakan layanan online untuk pengajuan KRK melalui:
-                                    </p>
-                                    <ul class="info-list">
-                                        <li>Sistem Informasi Manajemen Bangunan Gedung (<a href="https://simbg.pu.go.id" class="info-link" target="_blank">simbg.pu.go.id</a>)</li>
-                                        <li>Aplikasi Pelayanan Perizinan Online Kabupaten Blora</li>
-                                        <li>Layanan satu pintu di Kantor Dinas PUPR</li>
-                                    </ul> --}}
-
-                                    {{-- <div class="info-box">
-                                        <div class="info-box-title">Estimasi Waktu Proses:</div>
-                                        <p>
-                                            Proses penerbitan KRK biasanya memakan waktu 5-10 hari kerja setelah semua persyaratan lengkap dan verifikasi lapangan selesai dilakukan.
-                                        </p>
-                                    </div> --}}
-
-                                    {{-- <h3 class="info-subtitle">Biaya dan Retribusi</hb --}}
-
-                                    <!-- Contact Section -->
-                                    <div class="contact-section">
-                                        <h5 class="fw-semibold mb-3"><i class="bi bi-headset"></i> Layanan dan Pengaduan</h5>
-                                        <p class="mb-2">Untuk informasi lebih lanjut tentang KRK, silahkan hubungi:</p>
-                                        <p class="mb-1"><i class="bi bi-telephone"></i> (0296) 531001</p>
-                                        <p class="mb-1"><i class="bi bi-envelope"></i> dinas.pupr@blorakab.go.id</p>
-                                        <p class="mb-0"><i class="bi bi-geo-alt"></i> Dinas PUPR Kabupaten Blora, Jl. Pemuda No. 45, Blora</p>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- PBG Functions Section -->
+                <div class="section-container accent-box">
+                    <h3 class="section-title"><i class="bi bi-check-circle"></i> Fungsi PBG</h3>
+                    <div class="icon-grid">
+                        <div class="icon-item">
+                            <i class="bi bi-shield-check"></i>
+                            <p>Legalitas pembangunan</p>
+                        </div>
+                        <div class="icon-item">
+                            <i class="bi bi-people"></i>
+                            <p>Jaminan keselamatan pengguna</p>
+                        </div>
+                        <div class="icon-item">
+                            <i class="bi bi-clipboard-data"></i>
+                            <p>Pendataan bangunan gedung</p>
+                        </div>
+                        <div class="icon-item">
+                            <i class="bi bi-house-heart"></i>
+                            <p>Kenyamanan penghuni</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Program Description -->
+                <div class="section-container">
+                    <h3 class="section-title"><i class="bi bi-info-circle"></i> Deskripsi Program</h3>
+                    <div class="section-content">
+                        <p>Dinas PUPR Kabupaten Blora memberikan pelayanan gratis berupa:</p>
+                        <div class="benefits-box">
+                            <div class="benefit-item">
+                                <span class="benefit-icon">1</span>
+                                <p>Pendampingan pengisian data SIMBG</p>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">2</span>
+                                <p>Pembuatan gambar teknis</p>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">3</span>
+                                <p>Konsultasi teknis bangunan</p>
+                            </div>
+                        </div>
+                        <div class="note-box">
+                            <p><strong>Catatan:</strong> Pemohon tetap membayar retribusi PBG sesuai Perda Kabupaten Blora No. 6 Tahun 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Requirements Section -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="section-container">
+                            <h3 class="section-title"><i class="bi bi-file-earmark-check"></i> Persyaratan</h3>
+                            <ul class="modern-list">
+                                <li>Surat pengajuan bantuan gambar teknis</li>
+                                <li>Surat pengajuan KRK (dapat diunduh)</li>
+                                <li>Scan KTP pemohon</li>
+                                <li>Scan KRK (Keterangan Rencana Kabupaten)</li>
+                                <li>Scan sertifikat tanah</li>
+                                <li>Scan PBB terbaru (untuk pengajuan KRK)</li>
+                                <li>Surat sewa/ijin pemanfaatan tanah (jika nama berbeda)</li>
+                                <li>Dokumen kajian tata ruang</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="section-container">
+                            <h3 class="section-title"><i class="bi bi-clipboard2-pulse"></i> Ketentuan</h3>
+                            <ul class="modern-list">
+                                <li>Pendaftaran sampai 31 September 2025</li>
+                                <li>Lokasi tidak di kawasan lindung tanaman pangan</li>
+                                <li>Lokasi tidak di kawasan pertahanan keamanan</li>
+                                <li>Lokasi tidak di kawasan hutan produksi</li>
+                                <li>Proses hanya untuk pemohon yang memenuhi syarat</li>
+                                <li>Berdasarkan ketersediaan kuota</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="section-container timeline-container">
+                    <h3 class="section-title"><i class="bi bi-calendar-event"></i> Timeline Proses</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">1-3 Hari</div>
+                            <div class="timeline-content">Verifikasi dokumen</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">3-5 Hari</div>
+                            <div class="timeline-content">Pembuatan gambar teknis</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">5-7 Hari</div>
+                            <div class="timeline-content">Konsultasi dan revisi</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">7-10 Hari</div>
+                            <div class="timeline-content">Pengajuan PBG</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="section-container contact-box">
+                    <h3 class="section-title"><i class="bi bi-headset"></i> Layanan dan Pengaduan</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="bi bi-telephone"></i>
+                            <p>(0296) 531001</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope"></i>
+                            <p>dinas.pupr@blorakab.go.id</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-geo-alt"></i>
+                            <p>Dinas PUPR Kabupaten Blora, Jl. Pemuda No. 45, Blora</p>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-download"><i class="bi bi-download"></i> Unduh Formulir</button>
+                        <button class="btn-register"><i class="bi bi-pencil-square"></i> Daftar Sekarang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Navy Blue Theme */
+.navy-theme {
+    --primary-color: #001f3f;
+    --secondary-color: #003366;
+    --accent-color: #0056b3;
+    --light-accent: #e6f0ff;
+    --text-color: #333;
+    --light-text: #f8f9fa;
+}
+
+.program-header {
+    background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)),
+                url('https://source.unsplash.com/1200x600/?house,construction');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+}
+
+.program-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.program-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.program-year {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.modern-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-container {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.section-container:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    font-size: 1.3rem;
+}
+
+.accent-box {
+    background-color: var(--light-accent);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-color);
+}
+
+.modern-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.modern-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.8rem;
+    position: relative;
+}
+
+.modern-list li:before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.icon-item {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.icon-item i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.benefits-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.benefit-icon {
+    background: var(--accent-color);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.note-box {
+    background: #fff8e1;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+    margin-top: 1.5rem;
+}
+
+.timeline-container {
+    padding: 1.5rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 1.5rem;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--accent-color);
+    z-index: 1;
+}
+
+.timeline-date {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.contact-box {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.contact-box .section-title {
+    color: white;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-download, .btn-register {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-download {
+    background: white;
+    color: var(--primary-color);
+}
+
+.btn-register {
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-download:hover {
+    background: #f0f0f0;
+}
+
+.btn-register:hover {
+    background: #004494;
+}
+
+@media (max-width: 768px) {
+    .program-title {
+        font-size: 1.8rem;
+    }
+    .program-subtitle {
+        font-size: 1.2rem;
+    }
+    .modern-card {
+        padding: 1.5rem;
+        margin-top: -30px;
+    }
+    .icon-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+</style>
             </div>
         </div>
     </section>
