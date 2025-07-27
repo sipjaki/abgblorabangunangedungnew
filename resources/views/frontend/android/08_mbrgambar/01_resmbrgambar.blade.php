@@ -160,38 +160,41 @@
 
   @endforeach
 
-  <div class="px-4 md:px-6 py-5">
-    <div class="bg-white border border-gray-300 rounded-xl shadow-md">
-        <div class="bg-[#4041DA] text-white text-lg font-semibold px-6 py-3 rounded-t-xl">
+
+</div>
+<div class="w-full px-4 md:px-6 py-6">
+    <div class="max-w-full bg-white border border-gray-300 rounded-xl shadow-md overflow-hidden">
+        <!-- Header -->
+        <div class="bg-[#4041DA] text-white text-lg font-semibold px-6 py-4">
             Data Pengkajian Teknis - MBR Bantuan Gambar
         </div>
 
-        <!-- Scrollable table -->
+        <!-- Scrollable Table -->
         <div class="overflow-x-auto">
-            <table class="min-w-[1000px] w-full text-sm text-gray-800 whitespace-nowrap">
+            <table class="table-auto min-w-[1100px] w-full text-sm text-left text-gray-800">
                 <thead class="bg-gray-100 text-[14px]">
                     <tr>
-                        <th class="px-4 py-3 text-left font-semibold border-b">No</th>
-                        <th class="px-4 py-3 text-left font-semibold border-b">Nama Badan Usaha</th>
-                        <th class="px-4 py-3 text-left font-semibold border-b">Alamat</th>
-                        <th class="px-4 py-3 text-left font-semibold border-b">Telepon</th>
-                        <th class="px-4 py-3 text-left font-semibold border-b">Email</th>
-                        <th class="px-4 py-3 text-left font-semibold border-b">Direktur</th>
-                        <th class="px-4 py-3 text-left font-semibold border-b">Subklasifikasi</th>
-                        <th class="px-4 py-3 text-left font-semibold border-b">Pengalaman</th>
+                        <th class="px-4 py-3 border-b font-semibold">No</th>
+                        <th class="px-4 py-3 border-b font-semibold">Nama Badan Usaha</th>
+                        <th class="px-4 py-3 border-b font-semibold">Alamat</th>
+                        <th class="px-4 py-3 border-b font-semibold">Telepon</th>
+                        <th class="px-4 py-3 border-b font-semibold">Email</th>
+                        <th class="px-4 py-3 border-b font-semibold">Direktur</th>
+                        <th class="px-4 py-3 border-b font-semibold">Subklasifikasi</th>
+                        <th class="px-4 py-3 border-b font-semibold">Pengalaman</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-200 text-[13.5px]">
+                <tbody class="text-[13.5px]">
                     @forelse ($datapengkajiteknis as $index => $data)
-                        <tr class="hover:bg-gray-50 align-top">
-                            <td class="px-4 py-2">{{ $index + 1 }}</td>
-                            <td class="px-4 py-2">{{ $data->namabadanusaha ?? '-' }}</td>
-                            <td class="px-4 py-2">{{ $data->alamat ?? '-' }}</td>
-                            <td class="px-4 py-2">{{ $data->telepon ?? '-' }}</td>
-                            <td class="px-4 py-2">{{ $data->email ?? '-' }}</td>
-                            <td class="px-4 py-2">{{ $data->direktur ?? '-' }}</td>
-                            <td class="px-4 py-2">{{ $data->subklasifikasi ?? '-' }}</td>
-                            <td class="px-4 py-2">{{ $data->pengalaman ?? '-' }}</td>
+                        <tr class="border-t hover:bg-gray-50 align-top">
+                            <td class="px-4 py-3">{{ $index + 1 }}</td>
+                            <td class="px-4 py-3">{{ $data->namabadanusaha ?? '-' }}</td>
+                            <td class="px-4 py-3">{{ $data->alamat ?? '-' }}</td>
+                            <td class="px-4 py-3">{{ $data->telepon ?? '-' }}</td>
+                            <td class="px-4 py-3">{{ $data->email ?? '-' }}</td>
+                            <td class="px-4 py-3">{{ $data->direktur ?? '-' }}</td>
+                            <td class="px-4 py-3">{{ $data->subklasifikasi ?? '-' }}</td>
+                            <td class="px-4 py-3">{{ $data->pengalaman ?? '-' }}</td>
                         </tr>
                     @empty
                         <tr>
@@ -202,8 +205,6 @@
             </table>
         </div>
     </div>
-</div>
-
 </div>
 
 
