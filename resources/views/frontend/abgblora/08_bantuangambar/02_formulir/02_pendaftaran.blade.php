@@ -334,14 +334,19 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="form-label">
-                            <i class="fas fa-tag" style="margin-right: 8px; color: navy;"></i> Klasifikasi Bangunan
-                        </label>
-                        <input type="text" name="klasifikasibangunan" class="form-control" required>
-                    </div>
-                </div>
+               <div class="col-md-6">
+    <div class="form-group">
+        <label class="form-label">
+            <i class="fas fa-tag" style="margin-right: 8px; color: navy;"></i> Klasifikasi Bangunan
+        </label>
+        <select name="klasifikasibangunan" class="form-control" required>
+            <option value="">-- Pilih Klasifikasi --</option>
+            <option value="Sederhana">Sederhana</option>
+            <option value="Tidak Sederhana">Tidak Sederhana</option>
+        </select>
+    </div>
+</div>
+
             </div>
 
             <div class="form-group mt-3">
