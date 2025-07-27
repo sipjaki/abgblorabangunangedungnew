@@ -445,7 +445,7 @@
     <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Bantuan</a>
     <ul class="dropdown-menu" style="width: 300px;">
       <li style="font-size: 14px;">
-        <a href="#" style="display: flex; align-items: center;">
+        <a href="/infobantuangambar" style="display: flex; align-items: center;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">
             <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm0 12a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm1.002-4.248c-.245.36-.543.598-.733.758a1.993 1.993 0 0 0-.39.414.847.847 0 0 0-.14.465v.027a.5.5 0 0 1-1 0v-.027a1.853 1.853 0 0 1 .308-1.02c.21-.296.476-.51.694-.683.218-.173.456-.362.615-.596A1.13 1.13 0 0 0 9 6.5a1.5 1.5 0 1 0-2.788.72.5.5 0 0 1-.894.448A2.5 2.5 0 1 1 10 6.5a2.13 2.13 0 0 1-.998 1.252z"/>
           </svg>
