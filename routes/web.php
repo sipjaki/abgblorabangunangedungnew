@@ -1198,6 +1198,7 @@ Route::post('/log-download', [PbgslfController::class, 'history'])->name('log.do
 
 // ------------------------------------------------------
 // MENU BANTUAN GAMBAR
+Route::get('/bebantuangambarpemohon', [GambarbantuanController::class, 'bebantuangambarpemohon'])->name('bebantuangambarpemohon');
 Route::get('/bebantuangambar', [GambarbantuanController::class, 'bebantuangambar'])->name('bebantuangambar.index');
 Route::get('/bebantuangambarshow/{id}', [GambarbantuanController::class, 'bebantuangambarshow'])->middleware('auth')->name('bebantuangambar.show');
 Route::put('/bebantuangambarvalidasi/{id}', [GambarbantuanController::class, 'bebantuangambarvalidasi'])->middleware('auth')->name('bebantuangambarvalidasi');
@@ -1237,7 +1238,6 @@ Route::put('/verifikasi1permohonan3/{id}', [GambarbantuanController::class, 'ver
 Route::put('/verifikasi1permohonan4/{id}', [GambarbantuanController::class, 'verifikasi1permohonan4'])->name('verifikasi1permohonan4.update');
 // Route::put('/validasiberkas1permohonan3/{id}', [BantuanteknisController::class, 'valsuratpermohonan3'])->name('validasiberkas3.update');
 // Route::put('/validasiberkas1permohonan4/{id}', [BantuanteknisController::class, 'valsuratpermohonan4'])->name('validasiberkas4.update');
-
 
 Route::get('/bebantuangambarupload/{id}', [GambarbantuanController::class, 'bebantuangambarupload'])->middleware('auth')->name('bebantuangambarupload');
 Route::post('/bebantuangambaruploadnew/{id}', [GambarbantuanController::class, 'bebantuangambaruploadnew'])->middleware('auth')->name('upload.bebantuangambaruploadnew');

@@ -657,7 +657,7 @@
                 <ul class="nav nav-treeview" style="margin-left: 15px;">
 
     <li class="nav-item">
-        <a href="/404" class="nav-link">
+        <a href="/bebantuangambarpemohon" class="nav-link">
             <i class="bi bi-image nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Bantuan Gambar</p>
         </a>

@@ -746,6 +746,48 @@ public function feformbantuangambarcreate(Request $request)
     return redirect('/dashboard');
 }
 
+
+public function bebantuangambarpemohon(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 15);
+
+    $query = gambarbantuan::query();
+
+    // Filter pencarian berdasarkan kolom sesuai yang kamu berikan
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namapemohon', 'like', "%{$search}%")
+              ->orWhere('email', 'like', "%{$search}%")
+              ->orWhere('alamatpemohon', 'like', "%{$search}%")
+              ->orWhere('nomortelepon', 'like', "%{$search}%");
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('user', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    $data = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.09_bantuangambar.00_pemohon.01_berkaspemohon', [
+        'title' => 'Permohonan Bantuan Teknis Gambar Bangunan Gedung',
+        'data' => $data,
+        'user' => $user,
+    ]);
+}
+
+
 }
 
 
