@@ -210,11 +210,15 @@
                                 <div class="col-md-12">
                                     <a href="#" class="text-decoration-none">
                                         <div class="card shadow-sm border-0 h-100">
-                                            <img src="/assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png"
-                                                class="card-img-top img-fluid"
-                                                alt="thumbnail"
-                                                style="object-fit: cover; width: 100%; height: auto;">
-                                            <div class="card-body">
+
+                                            @foreach ($data as $item)
+                                                        <img src="{{ asset($item->berkas1) }}"
+                                                            class="card-img-top img-fluid"
+                                                            alt="thumbnail"
+                                                            style="object-fit: cover; width: 100%; height: auto;">
+                                                    @endforeach
+
+                                                <div class="card-body">
                                                 <h5 class="card-title text-primary fw-semibold">
                                                     Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
                                                 </h5>
