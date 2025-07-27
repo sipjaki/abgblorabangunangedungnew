@@ -421,6 +421,14 @@
           Informasi MBR
         </a>
       </li>
+      <li style="font-size: 14px;">
+        <a href="/bembrpengkajiteknis" style="display: flex; align-items: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">
+            <path d="M10 0H6a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v8h16V6a2 2 0 0 0-2-2h-2V2a2 2 0 0 0-2-2zM6 1h4a1 1 0 0 1 1 1v2H5V2a1 1 0 0 1 1-1zm9 5v7H1V6a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1z"/>
+          </svg>
+          Daftar Konsultan Pengkaji Teknis
+        </a>
+      </li>
       {{-- <li style="font-size: 14px;">
         <a href="#" onclick="showLoginModal()" style="display: flex; align-items: center;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">

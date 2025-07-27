@@ -20,6 +20,7 @@ use App\Models\kicdokumen;
 use App\Models\kicinduk;
 use App\Models\kicstruktur;
 use App\Models\pbgslfbangunan;
+use App\Models\pengkajiteknis;
 use App\Models\satuankerja;
 use Illuminate\Support\Facades\Auth;
 
@@ -1452,6 +1453,44 @@ public function pendataankicbangunangedungshow(Request $request, $id)
     ]);
 }
 
+public function bembrpengkajiteknis(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    $query = pengkajiteknis::query()
+        ->orderBy('created_at', 'desc');
+
+    if ($search) {
+        $query->where(function($q) use ($search) {
+            $q->where('namabadanusaha', 'LIKE', "%{$search}%")
+              ->orWhere('alamat', 'LIKE', "%{$search}%")
+              ->orWhere('telepon', 'LIKE', "%{$search}%")
+              ->orWhere('email', 'LIKE', "%{$search}%")
+              ->orWhere('direktur', 'LIKE', "%{$search}%")
+              ->orWhere('subklasifikasi', 'LIKE', "%{$search}%")
+              ->orWhere('pengalaman', 'LIKE', "%{$search}%");
+        });
+    }
+
+    $data = $query->paginate($perPage);
+    $jumlahkic = pengkajiteknis::count(); // jumlah total data
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.abgblora.07_mbr.02_pengkajiteknis.partials.table', compact('data'))->render(),
+            'jumlahkic' => $jumlahkic
+        ]);
+    }
+
+    return view('frontend.abgblora.07_mbr.02_pengkajiteknis.01_daftarpengkaji', [
+        'title' => 'Data Konsultan Pengkaji Teknis',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'jumlahkic' => $jumlahkic
+    ]);
+}
 
 }
 

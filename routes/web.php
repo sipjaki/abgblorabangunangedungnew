@@ -199,7 +199,8 @@ Route::post('/mbrgambarupdatenew/{id}', [PbgslfController::class, 'mbrgambarupda
 // Route::post('/mbrgambarupdatenew/{id}', [BantuanhibahbgController::class, 'datanewhibahnew'])->middleware('auth')->name('dokhibahnew.create');
 
 // Route::get('/resbantekpermohonan', [FedashboardController::class, 'resbantekpermohonan'])->middleware('auth');
-
+// MENU MBR BANTUAN GAMBAR DAFTAR PENGKAJI TEKNIS
+Route::get('/bembrpengkajiteknis', [PendataanBangunanGedungController::class, 'bembrpengkajiteknis']);
 // WEB 03_ MENU BANGUNAN GEDUNG ANDROID
 // ----------------------------------------------------------------------------------------
 Route::get('/pendataankicbangunangedung', [PendataanBangunanGedungController::class, 'datakicbangunan']);
