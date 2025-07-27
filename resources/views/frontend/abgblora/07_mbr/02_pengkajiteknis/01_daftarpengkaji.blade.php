@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 <style>
     /* Base Styles */
     body {
@@ -268,15 +270,30 @@
             <table class="zebra-table">
                 <thead style="font-size: 14px;">
                     <tr>
-                        <th style="text-align: center;">No</th>
-                            <th style="text-align: center;">Nama Badan Usaha</th>
-                            <th style="text-align: center;">Alamat</th>
-                            <th style="text-align: center;">Telepon</th>
-                            <th style="text-align: center;">Email</th>
-                            <th style="text-align: center;">Direktur</th>
-                            <th style="text-align: center;">Subklasifikasi</th>
-                            <th style="text-align: center;">Pengalaman</th>
-                            <th style="text-align: center;">View</th>
+             <th style="text-align: center;">
+            <i class="bi bi-hash"></i> No
+        </th>
+        <th style="text-align: center;">
+            <i class="bi bi-building"></i> Nama Badan Usaha
+        </th>
+        <th style="text-align: center;">
+            <i class="bi bi-geo-alt"></i> Alamat
+        </th>
+        <th style="text-align: center;">
+            <i class="bi bi-telephone"></i> Telepon
+        </th>
+        <th style="text-align: center;">
+            <i class="bi bi-envelope"></i> Email
+        </th>
+        <th style="text-align: center;">
+            <i class="bi bi-person-badge"></i> Direktur
+        </th>
+        <th style="text-align: center;">
+            <i class="bi bi-tags"></i> Subklasifikasi
+        </th>
+        <th style="text-align: center;">
+            <i class="bi bi-award"></i> Pengalaman
+        </th>                  {{-- <th style="text-align: center;">View</th> --}}
 
                     </tr>
                 </thead>
