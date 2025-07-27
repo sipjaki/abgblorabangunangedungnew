@@ -153,10 +153,21 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
+@canany(['superadmin', 'admin'])
 
-  <a href="{{ url('/bebantuangambar') }}" class="button-newvalidasi" style="color: black;">
+<a href="{{ url('/bebantuangambar') }}" class="button-newvalidasi" style="color: black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
+
+@endcanany
+
+@canany(['pemohon'])
+
+<a href="{{ url('/bebantuangambarpemohon') }}" class="button-newvalidasi" style="color: black;">
+    <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
+</a>
+
+@endcanany
 
 {{--
 <button class="button-kembali" type="button"
