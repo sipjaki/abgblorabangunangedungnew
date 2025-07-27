@@ -560,8 +560,8 @@ th {
 <td style="text-align: center;">
       <div style="display: flex; justify-content: center;">
      <a href="{{ route('bebantuangambarupload', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Upload Berkas
+                    class="button-berkas">
+                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Dokumen
                 </a>
     {{-- @if($item->verifikasi4 == 'sudah')
         <button
