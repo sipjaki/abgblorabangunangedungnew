@@ -532,11 +532,11 @@
         </div>
 
         <!-- Submit Section -->
-        <div class="section-container text-center">
+        {{-- <div class="section-container text-center">
             <button type="submit" class="btn-submit">
                 <i class="fas fa-paper-plane"></i> Kirim Permohonan
             </button>
-        </div>
+        </div> --}}
     </div>
 </div>
 
