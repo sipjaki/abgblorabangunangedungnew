@@ -781,7 +781,7 @@ public function bebantuangambarpemohon(Request $request)
     $data = $query->latest()->paginate($perPage)->appends($request->all());
 
     return view('backend.09_bantuangambar.00_pemohon.01_berkaspemohon', [
-        'title' => 'Permohonan Bantuan Teknis Gambar Bangunan Gedung',
+        'title' => 'Permohonan Bantuan Teknis Gambar Bangunan Gedung Saudara',
         'data' => $data,
         'user' => $user,
     ]);
