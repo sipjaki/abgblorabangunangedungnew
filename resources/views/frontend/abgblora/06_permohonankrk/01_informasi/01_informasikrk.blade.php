@@ -290,10 +290,10 @@
                     <div class="mb-5">
                         <div class="row g-4">
                             <div class="col-md-12">
-                                <div class="info-container">
-                                    <h2 class="info-title">
+                                <div class="info-container" style="margin-top: -200px; ">
+                                    {{-- <h2 class="info-title">
                                         KRK (Keterangan Rencana Kabupaten) - Panduan Lengkap
-                                    </h2>
+                                    </h2> --}}
 
                                     <!-- Image Slideshow -->
                                     <div class="card-img-container">
