@@ -447,7 +447,7 @@
                             <div class="mb-2">
                                 <span class="text-muted">Contoh Surat Permohonan:</span><br>
                                 <a href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download class="button-baru mt-1 d-inline-flex align-items-center">
-                                    <i class="bi bi-download me-2"></i> Unduh Formulir
+                                    <i class="bi bi-download me-2"></i><span style="color: black;">Unduh Formulir</span>
                                 </a>
                             </div>
 
@@ -512,7 +512,7 @@
             <div class="flex justify-end" style="margin-top: 20px;">
                 <button type="button" class="button-baru" onclick="openModal()">
                     <i class="fab fa-telegram-plane w-5 h-5"></i>
-                    Kirim Permohonan
+                    <span style="color: black;">Kirim Permohonan</span>
                 </button>
             </div>
         </div>
