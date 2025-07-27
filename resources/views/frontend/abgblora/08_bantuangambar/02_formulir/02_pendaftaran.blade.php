@@ -205,908 +205,501 @@
                 @csrf
 
 
-                <input type="hidden" name="dinas_id" value="{{ $dinas_id }}">
-
-<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
-    <i class="fas fa-info-circle me-2"></i>
-    <div class="button-baru">
-        <strong>Jenis Permohonan Bantuan Teknis Saudara ! </strong>
-    </div>
-</div>
-
-
-<div class="row mt-3" style="margin-top: -25px;">
-<div class="col-md-6" style="margin-top: -60px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="jenispengajuanbantek_id">
-            <i class="fas fa-envelope" style="margin-right: 8px; color: navy;"></i> Jenis Permohonan Bantuan Teknis
-        </label>
-        <select name="jenispengajuanbantek_id" id="jenispengajuanbantek_id"
-            class="form-control @error('jenispengajuanbantek_id') is-invalid @enderror"
-            style="font-size: 15px;">
-            <option value="">-- Pilih Jenis Pengajuan --</option>
-            @foreach ($datapilihanpengajuan as $pengajuan)
-                <option value="{{ $pengajuan->id }}" {{ old('jenispengajuanbantek_id') == $pengajuan->id ? 'selected' : '' }}>
-                    {{ $pengajuan->jenispengajuan }}
-                </option>
-            @endforeach
-        </select>
-        @error('jenispengajuanbantek_id')
-        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="col-md-6" id="konsultanFormGroup" style="margin-top: -70px; display: none;">
-    <div style="margin-top: 10px;">
-        <label class="form-label d-flex align-items-center" for="bujkkonsultan_id">
-            <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Pilih Konsultan Asistensi
-        </label>
-        <select id="bujkkonsultan_id" name="bujkkonsultan_id"
-            class="form-control w-100 @error('bujkkonsultan_id') is-invalid @enderror"
-            style="font-size: 15px;">
-            <option value="">-- Pilih Konsultan Asistensi --</option>
-            @foreach ($datakonsultanbantek as $admin)
-                <option value="{{ $admin->id }}" {{ old('bujkkonsultan_id') == $admin->id ? 'selected' : '' }}>
-                    {{ $admin->namalengkap }}
-                </option>
-            @endforeach
-        </select>
-        @error('bujkkonsultan_id')
-        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const jenisSelect = document.getElementById('jenispengajuanbantek_id');
-        const konsultanForm = document.getElementById('konsultanFormGroup');
-
-        function toggleKonsultanForm() {
-            if (jenisSelect.value === '1') {
-                konsultanForm.style.display = 'block';
-            } else {
-                konsultanForm.style.display = 'none';
-            }
-        }
-
-        // Inisialisasi saat halaman dimuat
-        toggleKonsultanForm();
-
-        // Event ketika jenis pengajuan berubah
-        jenisSelect.addEventListener('change', toggleKonsultanForm);
-    });
-</script>
-
-
-</div>
-<div>
-
-
-<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: 20px; margin-bottom: -35px;">
-    <i class="fas fa-info-circle me-2"></i>
-    <div class="button-baru">
-        <strong>Informasi Permohonan Bantuan Teknis </strong>
-    </div>
-</div>
-
-<div class="row mt-3" style="margin-top: 0px;">
-    <div class="col-md-6" style="margin-top: 0px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="nosuratdinas">
-            <i class="fas fa-file-alt" style="margin-right: 8px; color: navy;"></i> Nomor Surat Dinas
-        </label>
-        <input type="text" name="nosuratdinas" id="nosuratdinas"
-            class="form-control @error('nosuratdinas') is-invalid @enderror"
-            value="{{ old('nosuratdinas') }}">
-        @error('nosuratdinas')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-{{-- <div class="col-md-6" style="margin-top: 0px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="nosurat">
-            <i class="fas fa-envelope" style="margin-right: 8px; color: navy;"></i> No Surat Permohonan</span>
-        </label>
-        <input type="text" name="nosurat" id="nosurat"
-            class="form-control @error('nosurat') is-invalid @enderror"
-            readonly>
-        @error('nosurat')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div> --}}
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const bulanRomawi = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
-        const today = new Date();
-        const bulan = today.getMonth(); // index mulai dari 0
-        const tahun = today.getFullYear();
-
-        // Nomor urut simulasi
-        let nomorUrut = "001"; // Ganti dengan nilai dinamis kalau perlu
-
-        // Format surat
-        let nomorSurat = `DPUPRBLORA/BANTEK/BG/${bulanRomawi[bulan]}/${tahun}/${nomorUrut}`;
-
-        // Set ke input
-        document.getElementById('nosurat').value = nomorSurat;
-    });
-</script>
-
-<div class="col-md-6" style="margin-top: 0px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="tanggalsurat">
-            <i class="fas fa-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Surat
-        </label>
-        <input type="date" name="tanggalsurat" id="tanggalsurat"
-            class="form-control"
-            value="{{ date('Y-m-d') }}" readonly>
-    </div>
-</div>
-
-
-<div class="col-md-6" style="margin-top: 15px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="nama_pemohon">
-            <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> Nama Pemohon
-        </label>
-        <input type="text" name="nama_pemohon" id="nama_pemohon"
-            class="form-control @error('nama_pemohon') is-invalid @enderror"
-            value="{{ old('nama_pemohon') }}">
-        @error('nama_pemohon')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="col-md-6" style="margin-top: 15px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="no_telepon">
-            <i class="fas fa-phone" style="margin-right: 8px; color: navy;"></i> No Telepon
-        </label>
-        <input type="text" name="no_telepon" id="no_telepon"
-            class="form-control @error('no_telepon') is-invalid @enderror"
-            value="{{ old('no_telepon') }}">
-        @error('no_telepon')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-</div>
-
-
-<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
-    <i class="fas fa-info-circle me-2"></i>
-    <div class="button-baru">
-        <strong>Informasi Paket Pekerjaan Bangunan Gedung </strong>
-    </div>
-</div>
-
-
-<div class="row mt-3" style="margin-top: 0px;">
-
-    <div class="col-md-6" style="margin-top: 0px;">
-        <div>
-            <label class="form-label d-flex align-items-center" for="namapaket">
-                <i class="fas fa-box" style="margin-right: 8px; color: navy;"></i> Nama Paket
-            </label>
-            <input type="text" name="namapaket" id="namapaket"
-                class="form-control @error('namapaket') is-invalid @enderror"
-                value="{{ old('namapaket') }}">
-            @error('namapaket')
-                <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-            @enderror
+                <input type="hidden" name="user_id" value="{{ $dinas_id }}">
+<div class="container-fluid px-0 navy-theme">
+    <!-- Header Section -->
+    <div class="program-header mb-5">
+        <div class="header-overlay">
+            <h1 class="program-title">PENDAFTARAN PROGRAM PELAYANAN BANTUAN TEKNIS</h1>
+            <h2 class="program-subtitle">Pembuatan Gambar untuk Pengajuan PBG</h2>
+            <h3 class="program-year">Kabupaten Blora</h3>
         </div>
     </div>
 
-<div class="col-md-6" style="margin-top: 0px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="kategoribangunan">
-            <i class="fas fa-building" style="margin-right: 8px; color: navy;"></i> Kategori Bangunan
-        </label>
-        <select name="kategoribangunan" id="kategoribangunan"
-            class="form-control @error('kategoribangunan') is-invalid @enderror" style="font-size: 15px;">
-            <option value="" disabled {{ old('kategoribangunan') ? '' : 'selected' }}>-- Pilih Kategori --</option>
-            <option value="GEDUNG KANTOR" {{ old('kategoribangunan') == 'GEDUNG KANTOR' ? 'selected' : '' }}>GEDUNG KANTOR</option>
-            <option value="BANGUNAN NEGARA LAINNYA" {{ old('kategoribangunan') == 'BANGUNAN NEGARA LAINNYA' ? 'selected' : '' }}>BANGUNAN NEGARA LAINNYA</option>
-            <option value="RUMAH NEGARA" {{ old('kategoribangunan') == 'RUMAH NEGARA' ? 'selected' : '' }}>RUMAH NEGARA</option>
-            <option value="PAGAR BANGUNAN GEDUNG KANTOR" {{ old('kategoribangunan') == 'PAGAR BANGUNAN GEDUNG KANTOR' ? 'selected' : '' }}>PAGAR BANGUNAN GEDUNG KANTOR</option>
-            <option value="PAGAR BANGUNAN GEDUNG LAINNYA" {{ old('kategoribangunan') == 'PAGAR BANGUNAN GEDUNG LAINNYA' ? 'selected' : '' }}>PAGAR BANGUNAN GEDUNG LAINNYA</option>
-            <option value="PAGAR RUMAH NEGARA" {{ old('kategoribangunan') == 'PAGAR RUMAH NEGARA' ? 'selected' : '' }}>PAGAR RUMAH NEGARA</option>
-        </select>
-        @error('kategoribangunan')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="col-md-6" style="margin-top: 15px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="luasbangunan">
-            <i class="fas fa-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Bangunan (m²)
-        </label>
-        <input type="text" name="luasbangunan" id="luasbangunan"
-            class="form-control @error('luasbangunan') is-invalid @enderror"
-            value="{{ old('luasbangunan') ? number_format(old('luasbangunan'), 0, ',', '.') : '' }}"
-            autocomplete="off" inputmode="numeric">
-        @error('luasbangunan')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+    <!-- Main Form -->
+    <div class="modern-card">
+        <!-- Section 1: Informasi Pemohon -->
+        <div class="section-container">
+            <h3 class="section-title"><i class="bi bi-person-circle"></i> Informasi Pemohon</h3>
 
-<script>
-    const luasInput = document.getElementById('luasbangunan');
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> Nama Pemohon
+                        </label>
+                        <input type="text" name="namapemohon" class="form-control" required>
+                    </div>
+                </div>
 
-    function formatRibuan(value) {
-        let angka = value.replace(/\D/g, ''); // Hanya angka
-        return angka.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-envelope" style="margin-right: 8px; color: navy;"></i> Email
+                        </label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                </div>
+            </div>
 
-    luasInput.addEventListener('input', () => {
-        let cursorPos = luasInput.selectionStart;
-        let originalLength = luasInput.value.length;
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-phone" style="margin-right: 8px; color: navy;"></i> Nomor Telepon
+                        </label>
+                        <input type="text" name="nomortelepon" class="form-control" required>
+                    </div>
+                </div>
 
-        let formattedValue = formatRibuan(luasInput.value);
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-id-card" style="margin-right: 8px; color: navy;"></i> NIK KTP
+                        </label>
+                        <input type="text" name="nikktp" class="form-control" required>
+                    </div>
+                </div>
+            </div>
 
-        if (formattedValue !== luasInput.value) {
-            luasInput.value = formattedValue;
+            <div class="form-group mt-3">
+                <label class="form-label">
+                    <i class="fas fa-map-marker-alt" style="margin-right: 8px; color: navy;"></i> Alamat Pemohon
+                </label>
+                <textarea name="alamatpemohon" class="form-control" rows="2" required></textarea>
+            </div>
+        </div>
 
-            let newLength = formattedValue.length;
-            cursorPos = cursorPos + (newLength - originalLength);
+        <!-- Section 2: Informasi Bangunan -->
+        <div class="section-container">
+            <h3 class="section-title"><i class="bi bi-building"></i> Informasi Bangunan</h3>
 
-            // Pastikan posisi cursor tidak keluar dari batas input
-            if (cursorPos > newLength) cursorPos = newLength;
-            if (cursorPos < 0) cursorPos = 0;
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-drafting-compass" style="margin-right: 8px; color: navy;"></i> Jenis Permohonan Gambar
+                        </label>
+                        <select name="jenispermohonangambar_id" class="form-control" required>
+                            <option value="">-- Pilih Jenis Permohonan --</option>
+                            @foreach($jenisPermohonan as $jenis)
+                                <option value="{{ $jenis->id }}">{{ $jenis->nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
 
-            luasInput.setSelectionRange(cursorPos, cursorPos);
-        }
-    });
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-warehouse" style="margin-right: 8px; color: navy;"></i> Fungsi Bangunan
+                        </label>
+                        <select name="fungsibangunangambar_id" class="form-control" required>
+                            <option value="">-- Pilih Fungsi Bangunan --</option>
+                            @foreach($fungsiBangunan as $fungsi)
+                                <option value="{{ $fungsi->id }}">{{ $fungsi->nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-    if (luasInput.form) {
-        luasInput.form.addEventListener('submit', function () {
-            // Hilangkan titik ribuan saat submit supaya server dapat data bersih
-            luasInput.value = luasInput.value.replace(/\./g, '');
-        });
-    }
-</script>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Bangunan (m²)
+                        </label>
+                        <input type="text" name="luasbangunan" class="form-control" required>
+                    </div>
+                </div>
 
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-arrows-alt-v" style="margin-right: 8px; color: navy;"></i> Tinggi Bangunan (m)
+                        </label>
+                        <input type="text" name="tinggibangunan" class="form-control" required>
+                    </div>
+                </div>
+            </div>
 
-<div class="col-md-6" style="margin-top: 15px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="luastanahtotal">
-            <i class="fas fa-ruler" style="margin-right: 8px; color: navy;"></i> Luas Tanah Total (m²)
-        </label>
-        <input type="text" name="luastanahtotal" id="luastanahtotal"
-            class="form-control @error('luastanahtotal') is-invalid @enderror"
-            value="{{ old('luastanahtotal') ? number_format(old('luastanahtotal'), 0, ',', '.') : '' }}"
-            autocomplete="off" inputmode="numeric">
-        @error('luastanahtotal')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-layer-group" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
+                        </label>
+                        <input type="number" name="jumlahlantai" class="form-control" required>
+                    </div>
+                </div>
 
-<script>
-    const tanahInput = document.getElementById('luastanahtotal');
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-tag" style="margin-right: 8px; color: navy;"></i> Klasifikasi Bangunan
+                        </label>
+                        <input type="text" name="klasifikasibangunan" class="form-control" required>
+                    </div>
+                </div>
+            </div>
 
-    function formatRibuan(value) {
-        let angka = value.replace(/\D/g, ''); // hanya angka
-        return angka.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
+            <div class="form-group mt-3">
+                <label class="form-label">
+                    <i class="fas fa-info-circle" style="margin-right: 8px; color: navy;"></i> Peruntukan Untuk
+                </label>
+                <input type="text" name="peruntukanuntuk" class="form-control" required>
+            </div>
+        </div>
 
-    tanahInput.addEventListener('input', () => {
-        let cursorPos = tanahInput.selectionStart;
-        let originalLength = tanahInput.value.length;
+        <!-- Section 3: Lokasi Bangunan -->
+        <div class="section-container">
+            <h3 class="section-title"><i class="bi bi-geo-alt"></i> Lokasi Bangunan</h3>
 
-        let formattedValue = formatRibuan(tanahInput.value);
+            <div class="form-group">
+                <label class="form-label">
+                    <i class="fas fa-map-marked-alt" style="margin-right: 8px; color: navy;"></i> Alamat Lokasi Bangunan
+                </label>
+                <textarea name="lokasibangunan" class="form-control" rows="2" required></textarea>
+            </div>
 
-        if (formattedValue !== tanahInput.value) {
-            tanahInput.value = formattedValue;
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Kecamatan
+                        </label>
+                        <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control" required>
+                            <option value="">-- Pilih Kecamatan --</option>
+                            @foreach($kecamatan as $kec)
+                                <option value="{{ $kec->id }}">{{ $kec->nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
 
-            let newLength = formattedValue.length;
-            cursorPos = cursorPos + (newLength - originalLength);
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Kelurahan/Desa
+                        </label>
+                        <select name="kelurahandesa_id" id="kelurahandesa_id" class="form-control" required>
+                            <option value="">-- Pilih Kelurahan/Desa --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-            if(cursorPos > newLength) cursorPos = newLength;
-            if(cursorPos < 0) cursorPos = 0;
+            <div class="form-group mt-3">
+                <label class="form-label">
+                    <i class="fas fa-location-arrow" style="margin-right: 8px; color: navy;"></i> Koordinat (Latitude, Longitude)
+                </label>
+                <input type="text" name="koordinat" class="form-control" placeholder="Contoh: -6.969987, 110.606125">
+            </div>
+        </div>
 
-            tanahInput.setSelectionRange(cursorPos, cursorPos);
-        }
-    });
+        <!-- Section 4: Upload Dokumen -->
+        <div class="section-container">
+            <h3 class="section-title"><i class="bi bi-file-earmark-arrow-up"></i> Upload Dokumen</h3>
 
-    if(tanahInput.form) {
-        tanahInput.form.addEventListener('submit', function (e) {
-            // Hilangkan titik sebelum submit
-            tanahInput.value = tanahInput.value.replace(/\./g, '');
-        });
-    }
-</script>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="document-upload">
+                        <label class="form-label">
+                            <i class="fas fa-id-card" style="margin-right: 8px; color: navy;"></i> KTP Pemohon
+                        </label>
+                        <input type="file" name="ktp" class="form-control" accept="image/*,.pdf" required>
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                    </div>
 
-<div class="col-md-6" style="margin-top: 15px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="jumlahlantai">
-            <i class="fas fa-layer-group" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
-        </label>
-        <select name="jumlahlantai" id="jumlahlantai"
-            class="form-control @error('jumlahlantai') is-invalid @enderror"
-            style="font-size: 15px;">
-            <option value="" disabled {{ old('jumlahlantai') ? '' : 'selected' }}>-- Pilih Jumlah Lantai --</option>
-            @for ($i = 1; $i <= 10; $i++)
-                <option value="{{ $i }}" {{ old('jumlahlantai') == (string)$i ? 'selected' : '' }}>
-                    {{ $i }} lantai
-                </option>
-            @endfor
-            <option value="lebih dari 10" {{ old('jumlahlantai') == 'lebih dari 10' ? 'selected' : '' }}>
-                Lebih dari 10 lantai
-            </option>
-        </select>
-        @error('jumlahlantai')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="col-md-6" style="margin-top: 15px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="tinggibangunan">
-            <i class="fas fa-arrows-alt-v" style="margin-right: 8px; color: navy;"></i> Tinggi Bangunan (m)
-        </label>
-        <input type="text" name="tinggibangunan" id="tinggibangunan"
-            class="form-control @error('tinggibangunan') is-invalid @enderror"
-            value="{{ old('tinggibangunan') ? number_format(old('tinggibangunan'), 0, ',', '.') : '' }}"
-            autocomplete="off" inputmode="numeric" pattern="[0-9.]+">
-        @error('tinggibangunan')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+                    <div class="document-upload mt-3">
+                        <label class="form-label">
+                            <i class="fas fa-file-alt" style="margin-right: 8px; color: navy;"></i> NPWP
+                        </label>
+                        <input type="file" name="npwp" class="form-control" accept="image/*,.pdf">
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                    </div>
 
-<script>
-    const tinggiInput = document.getElementById('tinggibangunan');
+                    <div class="document-upload mt-3">
+                        <label class="form-label">
+                            <i class="fas fa-file-contract" style="margin-right: 8px; color: navy;"></i> Lampiran OSS
+                        </label>
+                        <input type="file" name="lampiranoss" class="form-control" accept="image/*,.pdf">
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                    </div>
 
-    function formatRibuan(value) {
-        let angka = value.replace(/\D/g, '');
-        return angka.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
+                    <div class="document-upload mt-3">
+                        <label class="form-label">
+                            <i class="fas fa-file-signature" style="margin-right: 8px; color: navy;"></i> Dokumen Validasi
+                        </label>
+                        <input type="file" name="dokvalidasi" class="form-control" accept="image/*,.pdf">
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                    </div>
+                </div>
 
-    tinggiInput.addEventListener('input', () => {
-        let cursorPos = tinggiInput.selectionStart;
-        let originalLength = tinggiInput.value.length;
+                <div class="col-md-6">
+                    <div class="document-upload">
+                        <label class="form-label">
+                            <i class="fas fa-file-certificate" style="margin-right: 8px; color: navy;"></i> Sertifikat Tanah
+                        </label>
+                        <input type="file" name="sertifikattanah" class="form-control" accept="image/*,.pdf" required>
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                    </div>
 
-        let formattedValue = formatRibuan(tinggiInput.value);
+                    <div class="document-upload mt-3">
+                        <label class="form-label">
+                            <i class="fas fa-receipt" style="margin-right: 8px; color: navy;"></i> Bukti PBB
+                        </label>
+                        <input type="file" name="buktipbb" class="form-control" accept="image/*,.pdf" required>
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                    </div>
 
-        if (formattedValue !== tinggiInput.value) {
-            tinggiInput.value = formattedValue;
+                    <div class="document-upload mt-3">
+                        <label class="form-label">
+                            <i class="fas fa-map" style="margin-right: 8px; color: navy;"></i> Site Plan
+                        </label>
+                        <input type="file" name="siteplan" class="form-control" accept="image/*,.pdf">
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 5MB</small>
+                    </div>
 
-            let newLength = formattedValue.length;
-            cursorPos = cursorPos + (newLength - originalLength);
+                    <div class="document-upload mt-3">
+                        <label class="form-label">
+                            <i class="fas fa-signature" style="margin-right: 8px; color: navy;"></i> Tanda Tangan
+                        </label>
+                        <input type="file" name="tandatangan" class="form-control" accept="image/*,.pdf">
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                    </div>
+                </div>
+            </div>
 
-            if(cursorPos > newLength) cursorPos = newLength;
-            if(cursorPos < 0) cursorPos = 0;
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="document-upload">
+                        <label class="form-label">
+                            <i class="fas fa-file-image" style="margin-right: 8px; color: navy;"></i> Foto Kondisi 1
+                        </label>
+                        <input type="file" name="foto1" class="form-control" accept="image/*,.pdf" required>
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                    </div>
+                </div>
 
-            tinggiInput.setSelectionRange(cursorPos, cursorPos);
-        }
-    });
+                <div class="col-md-6">
+                    <div class="document-upload">
+                        <label class="form-label">
+                            <i class="fas fa-file-image" style="margin-right: 8px; color: navy;"></i> Foto Kondisi 2
+                        </label>
+                        <input type="file" name="foto2" class="form-control" accept="image/*,.pdf">
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                    </div>
+                </div>
+            </div>
 
-    if (tinggiInput.form) {
-        tinggiInput.form.addEventListener('submit', function () {
-            tinggiInput.value = tinggiInput.value.replace(/\./g, '');
-        });
-    }
-</script>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="document-upload">
+                        <label class="form-label">
+                            <i class="fas fa-file-pdf" style="margin-right: 8px; color: navy;"></i> Dokumen Gambar
+                        </label>
+                        <input type="file" name="dokumengambar" class="form-control" accept=".pdf,.dwg">
+                        <small class="text-muted">Format: PDF/DWG, Max 5MB</small>
+                    </div>
+                </div>
 
+                <div class="col-md-6">
+                    <div class="document-upload">
+                        <label class="form-label">
+                            <i class="fas fa-file-alt" style="margin-right: 8px; color: navy;"></i> Berita Acara Sidang
+                        </label>
+                        <input type="file" name="beritaacarasidang" class="form-control" accept="image/*,.pdf">
+                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="col-md-6" style="margin-top: 15px;">
-        <div>
-            <label class="form-label d-flex align-items-center" for="bassement">
-                <i class="fas fa-warehouse" style="margin-right: 8px; color: navy;"></i> Ada Bassement?
-            </label>
-            <select name="bassement" id="bassement" class="form-control @error('bassement') is-invalid @enderror" style="font-size: 15px;>
-                <option value="">-- Pilih --</option>
-                <option value="1" {{ old('bassement') == 1 ? 'selected' : '' }}>Ya</option>
-                <option value="0" {{ old('bassement') == 0 ? 'selected' : '' }}>Tidak</option>
-            </select>
-            @error('bassement')
-                <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-            @enderror
+        <!-- Submit Section -->
+        <div class="section-container text-center">
+            <button type="submit" class="btn-submit">
+                <i class="fas fa-paper-plane"></i> Kirim Permohonan
+            </button>
         </div>
     </div>
-<div class="col-md-6" style="margin-top: 15px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="kepemilikan">
-            <i class="fas fa-id-card" style="margin-right: 8px; color: navy;"></i> Kepemilikan
-        </label>
-        <select name="kepemilikan" id="kepemilikan"
-            class="form-control @error('kepemilikan') is-invalid @enderror">
-            <option value="" disabled {{ old('kepemilikan') ? '' : 'selected' }}>-- Pilih Jenis Kepemilikan --</option>
-            <option value="SERTIFIKAT HAK MILIK" {{ old('kepemilikan') == 'SERTIFIKAT HAK MILIK' ? 'selected' : '' }}>SERTIFIKAT HAK MILIK</option>
-            <option value="SERTIFIKAT HAK GUNA BANGUNAN" {{ old('kepemilikan') == 'SERTIFIKAT HAK GUNA BANGUNAN' ? 'selected' : '' }}>SERTIFIKAT HAK GUNA BANGUNAN</option>
-            <option value="SERTIFIKAT HAK PAKAI" {{ old('kepemilikan') == 'SERTIFIKAT HAK PAKAI' ? 'selected' : '' }}>SERTIFIKAT HAK PAKAI</option>
-        </select>
-        @error('kepemilikan')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
 </div>
 
-<div class="col-md-6" style="margin-top: 15px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="tahunpembangunan">
-            <i class="fas fa-calendar-plus" style="margin-right: 8px; color: navy;"></i> Tahun Pembangunan
-        </label>
-        <input type="number" name="tahunpembangunan" id="tahunpembangunan"
-            class="form-control @error('tahunpembangunan') is-invalid @enderror"
-            value="{{ old('tahunpembangunan') }}" autocomplete="off" >
-        @error('tahunpembangunan')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+<style>
+/* Navy Blue Theme */
+.navy-theme {
+    --primary-color: #001f3f;
+    --secondary-color: #003366;
+    --accent-color: #0056b3;
+    --light-accent: #e6f0ff;
+    --text-color: #333;
+    --light-text: #f8f9fa;
+}
 
-<div class="col-md-6" style="margin-top: 15px;">
-    <div>
-        <label class="form-label d-flex align-items-center" for="tahunrenovasi">
-            <i class="fas fa-tools" style="margin-right: 8px; color: navy;"></i> Tahun Renovasi (jika ada)
-        </label>
-        <input type="number" name="tahunrenovasi" id="tahunrenovasi"
-            class="form-control @error('tahunrenovasi') is-invalid @enderror"
-            value="{{ old('tahunrenovasi') }}" autocomplete="off" >
-        @error('tahunrenovasi')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+.program-header {
+    background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)),
+                url('https://source.unsplash.com/1200x600/?construction,house');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 30px;
+}
 
+.program-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
 
-<script>
-    function limitLength(input, maxLength) {
-        input.addEventListener('input', () => {
-            if (input.value.length > maxLength) {
-                input.value = input.value.slice(0, maxLength);
-            }
-        });
+.program-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.program-year {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.modern-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    margin: -50px auto 50px;
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+}
+
+.section-container {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.section-container:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+}
+
+.section-title i {
+    font-size: 1.3rem;
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
+}
+
+.document-upload {
+    margin-bottom: 1rem;
+}
+
+.document-upload small {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.btn-submit {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #004494;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .program-title {
+        font-size: 1.8rem;
     }
+    .program-subtitle {
+        font-size: 1.2rem;
+    }
+    .modern-card {
+        padding: 1.5rem;
+        margin-top: -30px;
+    }
+    .section-title {
+        font-size: 1.1rem;
+    }
+}
+</style>
 
-    limitLength(document.getElementById('tahunpembangunan'), 4);
-    limitLength(document.getElementById('tahunrenovasi'), 4);
-</script>
-</div>
-
-
-
-<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px;">
-    <i class="fas fa-info-circle me-2"></i>
-    <div class="button-baru">
-        <strong>Informasi Lokasi Bangunan Gedung Pemohon </strong>
-    </div>
-</div>
-
-<div class="row mt-3" style="margin-top: -25px;">
-<!-- RT/RW -->
-<div class="row mt-3" style="margin-top: -40px;">
-
-
-
-<div class="row mt-3">
-    <!-- Jumlah Lantai -->
-       <!-- RT -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="rt">
-            <i class="fas fa-hashtag" style="margin-right: 8px; color: navy;"></i> RT
-        </label>
-        <select name="rt" id="rt" class="form-control @error('rt') is-invalid @enderror">
-            <option value="" style="font-size: 14px;">-- Pilih RT --</option>
-            @for ($i = 1; $i <= 25; $i++)
-                <option value="{{ $i }}" style="font-size:14px;" {{ old('rt') == $i ? 'selected' : '' }}>{{ $i }}</option>
-            @endfor
-        </select>
-        @error('rt')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <!-- RW -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="rw">
-            <i class="fas fa-hashtag" style="margin-right: 8px; color: navy;"></i> RW
-        </label>
-        <select name="rw" id="rw" class="form-control @error('rw') is-invalid @enderror">
-            <option value="" style="font-size: 16px;">-- Pilih RW --</option>
-            @for ($i = 1; $i <= 25; $i++)
-                <option value="{{ $i }}" {{ old('rw') == $i ? 'selected' : '' }}>{{ $i }}</option>
-            @endfor
-        </select>
-        @error('rw')
-            <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-
-     <div class="col-md-4" style="margin-top: -40px; margin-bottom: 0px;">
-        <label class="form-label d-flex align-items-center" for="kabupaten">
-            <i class="fas fa-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
-        </label>
-        <select name="kabupaten" id="kabupaten" class="form-control" readonly disabled>
-            <option value="kabupaten blora" selected style="font-size: 14px;">Kabupaten Blora</option>
-        </select>
-        <input type="hidden" name="kabupaten" value="kabupaten blora" style="font-size: 16px;">
-    </div>
-
-</div>
-
-
-<div class="row mt-3">
-    <!-- Kabupaten (dikunci) -->
-
-<!-- Kecamatan (dinamis dari controller) -->
-<div class="col-md-4" style="margin-top: 10px; margin-bottom: 0px;">
-    <label class="form-label d-flex align-items-center" for="kecamatanblora_id">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Kecamatan
-    </label>
-    <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror">
-        <option value="" style="font-size:14px;">Pilih Kecamatan</option>
-        @foreach($datakecamatan as $kecamatan)
-            <option value="{{ $kecamatan->id }}" style="text-transform: capitalize; font-size:14px;"
-                {{ old('kecamatanblora_id') == $kecamatan->id ? 'selected' : '' }}>
-                {{ $kecamatan->kecamatanblora }}
-            </option>
-        @endforeach
-    </select>
-    @error('kecamatanblora_id')
-        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
-
-<!-- Kelurahan/Desa -->
-<div class="col-md-4" style="margin-top: 10px;">
-    <label for="kelurahandesa_id" class="form-label d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"/>
-            <path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/>
-        </svg>
-        Kelurahan/Desa
-    </label>
-    <select id="kelurahandesa_id" name="kelurahandesa_id" class="form-control @error('kelurahandesa_id') is-invalid @enderror">
-        <option value="" style="font-size: 14px;">Pilih Kelurahan/Desa</option>
-    </select>
-    @error('kelurahandesa_id')
-        <div class="invalid-feedback" style="color: red; font-size:14px;">{{ $message }}</div>
-    @enderror
-</div>
-
-</div>
-
-<!-- Script untuk AJAX Kelurahan/Desa -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $('#kecamatanblora_id').on('change', function () {
-        var kecamatanID = $(this).val();
-        if (kecamatanID) {
-            $.ajax({
-                url: '{{ route("permohonan.krkhunian") }}', // Sesuaikan dengan route di controller
-                type: 'GET',
-                data: { kecamatan_id: kecamatanID },
-                success: function (data) {
-                    $('#kelurahandesa_id').empty().append('<option value="">Pilih Kelurahan/Desa</option>');
-                    $.each(data, function (key, value) {
-                        $('#kelurahandesa_id').append('<option value="' + value.id + '">' + value.desa + '</option>');
-                    });
-                }
+// AJAX untuk mendapatkan kelurahan/desa berdasarkan kecamatan
+document.getElementById('kecamatanblora_id').addEventListener('change', function() {
+    const kecamatanId = this.value;
+    const kelurahanSelect = document.getElementById('kelurahandesa_id');
+
+    if (kecamatanId) {
+        fetch(`/api/kelurahan?kecamatan_id=${kecamatanId}`)
+            .then(response => response.json())
+            .then(data => {
+                kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan/Desa --</option>';
+                data.forEach(kelurahan => {
+                    const option = document.createElement('option');
+                    option.value = kelurahan.id;
+                    option.textContent = kelurahan.nama;
+                    kelurahanSelect.appendChild(option);
+                });
             });
-        } else {
-            $('#kelurahandesa_id').empty().append('<option value="">Pilih Kelurahan/Desa</option>');
-        }
+    } else {
+        kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan/Desa --</option>';
+    }
+});
+
+// Format input angka untuk luas dan tinggi bangunan
+document.querySelectorAll('input[name="luasbangunan"], input[name="tinggibangunan"]').forEach(input => {
+    input.addEventListener('input', function(e) {
+        this.value = this.value.replace(/[^0-9.]/g, '');
     });
-</script>
-
-<div style="margin-top: 10px;">
-    <label class="form-label d-flex align-items-center" for="alamatlokasi">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
-    </label>
-    <input type="text" id="alamatlokasi" name="alamatlokasi" placeholder="Lokasi Bangunan Gedung"
-        class="form-control @error('alamatlokasi') is-invalid @enderror"
-        value="{{ old('alamatlokasi') }}"
-        style="margin-bottom: -25px;"/>
-    @error('alamatlokasi')
-        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
-
-<div style="margin-top: 40px; margin-bottom: 40px;" >
-    <label class="form-label d-flex align-items-center" for="pengelola">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Pengelola Bangunan Gedung
-    </label>
-    <input type="text" id="pengelola" name="pengelola" placeholder="Pengelola Bangunan Gedung"
-        class="form-control @error('pengelola') is-invalid @enderror"
-        value="{{ old('pengelola') }}"
-        style="margin-bottom: -25px;"/>
-    @error('pengelola')
-        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: 400px;">
-    <i class="fas fa-info-circle me-2"></i>
-    <div class="button-baru">
-        <strong>Berkas Kelengkapan Dokumen Permohonan Bantuan Teknis  </strong>
-    </div>
-</div>
-
-
-<div class="flex gap-4 w-full mt-4">
-    <!-- KTP -->
-<!-- Surat Permohonan -->
-<div class="flex flex-col w-1/3" style="margin-top:15px;">
-    <label for="suratpermohonan" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
-        </svg>
-        <span class="text-sm">Surat Permohonan <br> File .pdf Max 10Mb </span>
-    </label>
-
-    <input id="suratpermohonan" name="suratpermohonan" type="file" accept="image/*,application/pdf"
-        class="border border-[#ccc] rounded-md p-2 mb-2 @error('suratpermohonan') border-red-500 @enderror"
-        onchange="previewFile(this, 'suratpermohonanPreview')" />
-
-    <div id="suratpermohonanPreview" class="mt-2"></div>
-
-    @error('suratpermohonan')
-        <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-    @enderror
-</div>
-
-<script>
-    function previewFile(input, previewId) {
-        const file = input.files[0];
-        const preview = document.getElementById(previewId);
-        preview.innerHTML = '';
-
-        if (file) {
-            const fileType = file.type;
-
-            if (fileType.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.className = 'mt-2 rounded-md';
-                    img.style.maxWidth = '100%';
-                    img.style.maxHeight = '250px';
-                    preview.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            } else if (fileType === 'application/pdf') {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = e.target.result;
-                    iframe.className = 'mt-2 rounded-md';
-                    iframe.style.width = '100%';
-                    iframe.style.height = '400px';
-                    preview.appendChild(iframe);
-                };
-                reader.readAsDataURL(file);
-            } else {
-                preview.innerHTML = '<p class="text-red-500 text-sm">Format file tidak didukung untuk preview.</p>';
-            }
-        }
-    }
-</script>
-
-<!-- KIC -->
-<!-- KIC -->
-<div class="flex flex-col w-1/3" style="margin-top:15px;">
-    <label for="kic" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        <span class="text-sm">Kartu Inventaris Barang <br> File .pdf Max 10Mb </span>
-    </label>
-
-    <input id="kic" name="kic" type="file" accept="application/pdf,image/*"
-        class="border border-[#ccc] rounded-md p-2 mb-2 @error('kic') border-red-500 @enderror"
-        onchange="previewFile(this, 'kicPreview')" />
-
-    <div id="kicPreview" class="mt-2">
-        @if(session('kic_temp'))
-            <div class="mt-1 text-sm text-gray-700">
-                <a href="{{ Storage::url(session('kic_temp')) }}" target="_blank" class="text-blue-500 underline">Lihat file sebelumnya</a>
-            </div>
-        @elseif(old('kic'))
-            <div class="mt-1 text-sm text-gray-700">
-                File sudah dipilih: {{ old('kic') }}
-            </div>
-        @endif
-    </div>
-
-    @error('kic')
-        <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-    @enderror
-</div>
-
-<script>
-    function previewFile(input, previewId) {
-        const file = input.files[0];
-        const preview = document.getElementById(previewId);
-        preview.innerHTML = '';
-
-        if (file) {
-            const fileType = file.type;
-
-            // Jika gambar
-            if (fileType.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.className = 'mt-2 rounded-md';
-                    img.style.maxWidth = '100%';
-                    img.style.maxHeight = '250px';
-                    preview.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-
-            // Jika PDF
-            } else if (fileType === 'application/pdf') {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = e.target.result;
-                    iframe.className = 'mt-2 rounded-md';
-                    iframe.style.width = '100%';
-                    iframe.style.height = '400px';
-                    preview.appendChild(iframe);
-                };
-                reader.readAsDataURL(file);
-
-            // Format tidak didukung
-            } else {
-                preview.innerHTML = '<p class="text-red-500 text-sm mt-2">Format file tidak didukung untuk preview. Harap unggah file PDF atau gambar.</p>';
-            }
-        }
-    }
-</script>
-
-<!-- Foto Kondisi -->
-<div class="flex flex-col w-1/3" style="margin-top:15px;">
-    <label for="fotokondisi" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 2v20h12V2H6zm4 12H8v-2h2v2zm4-2h-2v2h2v-2zm2-6H8V4h8v4z" />
-        </svg>
-        <span class="text-sm">Foto Kondisi <br>File .pdf Max 10Mb </span>
-    </label>
-    <input id="fotokondisi" name="fotokondisi" type="file" accept="application/pdf"
-    class="border border-[#ccc] rounded-md p-2 mb-2 @error('fotokondisi') border-red-500 @enderror"
-    onchange="previewFile(this, 'fotokondisiPreview')" />
-<div id="fotokondisiPreview" class="mt-1">
-    @if(session('fotokondisi_temp'))
-        <div class="mt-1 text-sm text-gray-700">
-            <a href="{{ Storage::url(session('fotokondisi_temp')) }}" target="_blank" class="text-blue-500 underline">
-                Lihat File PDF
-            </a>
-        </div>
-    @elseif(old('fotokondisi'))
-        <div class="mt-1 text-sm text-gray-700">
-            File sudah dipilih: {{ old('fotokondisi') }}
-        </div>
-    @endif
-</div>
-
-    @error('fotokondisi')
-        <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-    @enderror
-</div>
-
-
-</div>
-<div id="uploadSection" style="display: none;">
-    <div class="flex gap-4 w-full mt-4">
-        <!-- RAB -->
-        <div class="flex flex-col w-1/3" style="margin-top:15px;">
-            <label for="rab" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
-                </svg>
-                <span class="text-sm">Rencana Anggaran Biaya <br> File .pdf Max 10Mb </span>
-            </label>
-
-            <input id="rab" name="rab" type="file" accept="image/*,application/pdf"
-                class="border border-[#ccc] rounded-md p-2 mb-2 @error('rab') border-red-500 @enderror"
-                onchange="previewFile(this, 'rabPreview')" />
-
-            <div id="rabPreview" class="mt-2"></div>
-
-            @error('rab')
-                <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <!-- As Built Drawing -->
-        <div class="flex flex-col w-1/3" style="margin-top:15px;">
-            <label for="asbuilt" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <span class="text-sm">As Built Drawing <br> File .pdf Max 10Mb </span>
-            </label>
-
-            <input id="asbuilt" name="asbuilt" type="file" accept="application/pdf,image/*"
-                class="border border-[#ccc] rounded-md p-2 mb-2 @error('asbuilt') border-red-500 @enderror"
-                onchange="previewFile(this, 'asbuiltPreview')" />
-
-            <div id="asbuiltPreview" class="mt-2">
-                @if(session('asbuilt_temp'))
-                    <div class="mt-1 text-sm text-gray-700">
-                        <a href="{{ Storage::url(session('asbuilt_temp')) }}" target="_blank" class="text-blue-500 underline">Lihat file sebelumnya</a>
-                    </div>
-                @elseif(old('asbuilt'))
-                    <div class="mt-1 text-sm text-gray-700">
-                        File sudah dipilih: {{ old('asbuilt') }}
-                    </div>
-                @endif
-            </div>
-
-            @error('asbuilt')
-                <div class="text-red-600 text-sm mt-1" style="color: red; font-size:14px;">{{ $message }}</div>
-            @enderror
-        </div>
-    </div>
-</div>
-
-<script>
-    function previewFile(input, previewId) {
-        const file = input.files[0];
-        const preview = document.getElementById(previewId);
-        preview.innerHTML = '';
-
-        if (file) {
-            const fileType = file.type;
-
-            if (fileType.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.className = 'mt-2 rounded-md';
-                    img.style.maxWidth = '100%';
-                    img.style.maxHeight = '250px';
-                    preview.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            } else if (fileType === 'application/pdf') {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = e.target.result;
-                    iframe.className = 'mt-2 rounded-md';
-                    iframe.style.width = '100%';
-                    iframe.style.height = '400px';
-                    preview.appendChild(iframe);
-                };
-                reader.readAsDataURL(file);
-            } else {
-                preview.innerHTML = '<p class="text-red-500 text-sm mt-2">Format file tidak didukung untuk preview. Harap unggah file PDF atau gambar.</p>';
-            }
-        }
-    }
-
-    // Fungsi cek pilihan dropdown
-    function cekPilihan() {
-        const select = document.getElementById('jenispengajuanbantek_id');
-        const uploadSection = document.getElementById('uploadSection');
-        if (select.value === '4') {
-            uploadSection.style.display = 'block';
-        } else {
-            uploadSection.style.display = 'none';
-        }
-    }
-
-    // Jalankan saat load halaman dan saat ada perubahan pilihan
-    window.addEventListener('load', cekPilihan);
-    document.getElementById('jenispengajuanbantek_id').addEventListener('change', cekPilihan);
+});
 </script>
 
     <div class="flex justify-end" style="margin-top: 20px;">
