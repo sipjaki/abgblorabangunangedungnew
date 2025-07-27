@@ -288,8 +288,8 @@
                 {{-- ini informasi bantuan gambar --}}
 <div class="container-fluid px-0 navy-theme">
     <!-- Header Section -->
-    <div class="program-header mb-5">
-        <div class="header-overlay" style="color: white;">
+    <div class="button-baru mb-5">
+        <div class="header-overlay">
             <h1 class="program-title">PENDAFTARAN PROGRAM PELAYANAN BANTUAN TEKNIS</h1>
             <h2 class="program-subtitle">Pembuatan Gambar untuk Pengajuan PBG Rumah Sederhana</h2>
             <h3 class="program-year">Kabupaten Blora Tahun 2025</h3>
