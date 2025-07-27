@@ -625,12 +625,12 @@ public function feformbantuangambar()
     $datapilihanpengajuan = jenispermohonangambar::all();
     $datakonsultan = fungsibangunangambar::all();
 
-    $user = Auth::user();
+    // $user = Auth::user();
     $dinas_id = Auth::id(); // ambil hanya ID akun yang login
 
-    $statusadimindinas = User::with('statusadmin')
-        ->where('statusadmin_id', 3)
-        ->get();
+    // $statusadimindinas = User::with('statusadmin')
+    //     ->where('statusadmin_id', 3)
+    //     ->get();
 
     return view('frontend.abgblora.08_bantuangambar.02_formulir.02_pendaftaran', [
         'title' => 'Form Pengajuan Bantuan Teknis Gambar',
@@ -638,9 +638,9 @@ public function feformbantuangambar()
         'datakelurahan' => $datakelurahan,
         'datapilihanpengajuan' => $datapilihanpengajuan,
         'datakonsultanbantek' => $datakonsultan,
-        'user' => $user,
+        // 'user' => $user,
         'dinas_id' => $dinas_id, // dikirim ke view
-        'statusadimindinas' => $statusadimindinas,
+        // 'statusadimindinas' => $statusadimindinas,
     ]);
 }
 
