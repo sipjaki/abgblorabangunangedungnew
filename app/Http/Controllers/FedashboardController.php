@@ -843,7 +843,7 @@ public function infombrgambar()
         ->where('statusadmin_id', 6)
         ->get();
 
-    return view('frontend.abgblora.07_mbr.00_informasi.01_informasimbr', [
+    return view('frontend.abgblora.07_mbr.01_informasi.01_informasimbr', [
         'title' => 'Informasi MBR Gambar Bangunan Gedung',
         'datakecamatan' => $datakecamatan,
         'datakelurahan' => $datakelurahan,
