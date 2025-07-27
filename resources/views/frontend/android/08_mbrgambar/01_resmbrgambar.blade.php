@@ -159,68 +159,47 @@
   </a>
 
   @endforeach
-<div class="w-full px-4 py-6">
-    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
-        <!-- Header -->
-        <div class="bg-[#4041DA] text-white text-lg font-semibold px-6 py-4 rounded-t-lg">
+<div class="w-full px-4 md:px-6 py-6">
+    <div class="bg-white border border-gray-300 rounded-xl shadow-md overflow-hidden text-[12px]">
+        <!-- Header Judul -->
+        <div class="bg-[#4041DA] text-white text-base font-semibold px-6 py-4 rounded-t-xl">
             Tabel Data Pengkajian Teknis - MBR Bantuan Gambar
         </div>
 
-        <!-- Table Container with Smooth Scrolling -->
-        <div class="overflow-x-auto custom-scrollbar">
-            <div class="min-w-[800px]"> <!-- Adjust min-width as needed -->
-                <table class="w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
+        <!-- Scrollable Table Wrapper -->
+        <div class="w-full overflow-x-auto">
+            <table class="min-w-[800px] w-full text-left text-gray-800">
+                <thead class="bg-gray-100 text-[#030303]">
+                    <tr>
+                        <th class="px-4 py-3 border-b font-semibold whitespace-nowrap">No</th>
+                        <th class="px-4 py-3 border-b font-semibold whitespace-nowrap">Nama Badan Usaha</th>
+                        <th class="px-4 py-3 border-b font-semibold whitespace-nowrap">Alamat</th>
+                        <th class="px-4 py-3 border-b font-semibold whitespace-nowrap">Telepon</th>
+                        <th class="px-4 py-3 border-b font-semibold whitespace-nowrap">Email</th>
+                        <th class="px-4 py-3 border-b font-semibold whitespace-nowrap">Direktur</th>
+                    </tr>
+                </thead>
+                <tbody class="text-[#333]">
+                    @forelse ($datapengkajiteknis as $index => $data)
+                        <tr class="border-t hover:bg-gray-50 align-top">
+                            <td class="px-4 py-3 whitespace-nowrap">{{ $index + 1 }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap">{{ $data->namabadanusaha ?? '-' }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap">{{ $data->alamat ?? '-' }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap">{{ $data->telepon ?? '-' }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap">{{ $data->email ?? '-' }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap">{{ $data->direktur ?? '-' }}</td>
+                        </tr>
+                    @empty
                         <tr>
-                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider w-12">No</th>
-                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[180px]">Nama Badan Usaha</th>
-                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[200px]">Alamat</th>
-                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider w-32">Telepon</th>
-                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider w-48">Email</th>
-                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[150px]">Direktur</th>
+                            <td colspan="6" class="px-4 py-4 text-center text-gray-500">Data tidak tersedia.</td>
                         </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                        @forelse ($datapengkajiteknis as $index => $data)
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $index + 1 }}</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">{{ $data->namabadanusaha ?? '-' }}</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">{{ $data->alamat ?? '-' }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $data->telepon ?? '-' }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $data->email ?? '-' }}</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">{{ $data->direktur ?? '-' }}</td>
-                        </tr>
-                        @empty
-                        <tr>
-                            <td colspan="6" class="px-6 py-4 text-center text-sm text-gray-500 italic">
-                                Tidak ada data yang tersedia
-                            </td>
-                        </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
-<style>
-    /* Custom scrollbar for better mobile experience */
-    .custom-scrollbar {
-        scrollbar-width: thin;
-        scrollbar-color: #cbd5e0 #f7fafc;
-    }
-    .custom-scrollbar::-webkit-scrollbar {
-        height: 8px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-        background: #f7fafc;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-        background-color: #cbd5e0;
-        border-radius: 20px;
-    }
-</style>
 </div>
 
 
