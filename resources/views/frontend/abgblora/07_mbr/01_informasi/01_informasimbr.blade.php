@@ -191,12 +191,12 @@
                             <img src="/assets/new/icons/story.svg" alt="icon">
                         </div>
                         <p class="text-white font-normal text-sm">
-                            <span class="font-bold">Informasi Permohonan PBG SLF Bangunan Gedung </span>
+                            <span class="font-bold">Informasi MBR Bantuan Gambar </span>
                         </p>
                     </div>
 
                     <!-- Include Menu -->
-                    @include('frontend.abgblora.01_pbgslf.00_informasi.fiturmenupbg')
+                    {{-- @include('frontend.abgblora.01_pbgslf.00_informasi.fiturmenupbg') --}}
 
                     <!-- Information Cards -->
                     <div class="container-fluid px-0">
