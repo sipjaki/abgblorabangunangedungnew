@@ -352,32 +352,24 @@
                                         <li>Dokumen pendukung lain sesuai kebutuhan</li>
                                     </ul>
 
-                                    <h3 class="info-subtitle">Layanan Online KRK</h3>
-                                    <p>
+                                    {{-- <h3 class="info-subtitle">Layanan Online KRK</h3> --}}
+                                    {{-- <p>
                                         Pemerintah Kabupaten Blora telah menyediakan layanan online untuk pengajuan KRK melalui:
                                     </p>
                                     <ul class="info-list">
                                         <li>Sistem Informasi Manajemen Bangunan Gedung (<a href="https://simbg.pu.go.id" class="info-link" target="_blank">simbg.pu.go.id</a>)</li>
                                         <li>Aplikasi Pelayanan Perizinan Online Kabupaten Blora</li>
                                         <li>Layanan satu pintu di Kantor Dinas PUPR</li>
-                                    </ul>
+                                    </ul> --}}
 
-                                    <div class="info-box">
+                                    {{-- <div class="info-box">
                                         <div class="info-box-title">Estimasi Waktu Proses:</div>
                                         <p>
                                             Proses penerbitan KRK biasanya memakan waktu 5-10 hari kerja setelah semua persyaratan lengkap dan verifikasi lapangan selesai dilakukan.
                                         </p>
-                                    </div>
+                                    </div> --}}
 
-                                    <h3 class="info-subtitle">Biaya dan Retribusi</h3>
-                                    <p>
-                                        Penerbitan KRK dikenakan biaya retribusi yang besarnya bervariasi tergantung pada:
-                                    </p>
-                                    <ul class="info-list">
-                                        <li>Jenis peruntukan lahan (pemukiman, komersial, industri)</li>
-                                        <li>Luas tanah yang dimohonkan</li>
-                                        <li>Lokasi tanah (pusat kota, pinggiran, pedesaan)</li>
-                                    </ul>
+                                    {{-- <h3 class="info-subtitle">Biaya dan Retribusi</hb --}}
 
                                     <!-- Contact Section -->
                                     <div class="contact-section">
