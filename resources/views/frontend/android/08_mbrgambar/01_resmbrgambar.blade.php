@@ -160,40 +160,60 @@
 
   @endforeach
 
-  <div class="px-[18px] py-4">
-    <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-[#DCDFE6]">
-        <table class="min-w-full divide-y divide-gray-200 text-[14px] text-left">
-            <thead class="bg-[#4041DA] text-white">
-                <tr>
-                    <th class="px-4 py-2 font-semibold">No</th>
-                    <th class="px-4 py-2 font-semibold">Nama Badan Usaha</th>
-                    <th class="px-4 py-2 font-semibold">Alamat</th>
-                    <th class="px-4 py-2 font-semibold">Telepon</th>
-                    <th class="px-4 py-2 font-semibold">Email</th>
-                    <th class="px-4 py-2 font-semibold">Direktur</th>
-                    <th class="px-4 py-2 font-semibold">Subklasifikasi</th>
-                    <th class="px-4 py-2 font-semibold">Pengalaman</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200">
-                @forelse ($datapengkajiteknis as $index => $data)
-                <tr class="hover:bg-gray-50">
-                    <td class="px-4 py-2">{{ $index + 1 }}</td>
-                    <td class="px-4 py-2">{{ $data->namabadanusaha ?? '-' }}</td>
-                    <td class="px-4 py-2">{{ $data->alamat ?? '-' }}</td>
-                    <td class="px-4 py-2">{{ $data->telepon ?? '-' }}</td>
-                    <td class="px-4 py-2">{{ $data->email ?? '-' }}</td>
-                    <td class="px-4 py-2">{{ $data->direktur ?? '-' }}</td>
-                    <td class="px-4 py-2">{{ $data->subklasifikasi ?? '-' }}</td>
-                    <td class="px-4 py-2">{{ $data->pengalaman ?? '-' }}</td>
-                </tr>
-                @empty
-                <tr>
-                    <td colspan="8" class="px-4 py-4 text-center text-gray-500">Data tidak tersedia.</td>
-                </tr>
-                @endforelse
-            </tbody>
-        </table>
+  @php
+    // Fungsi bantu untuk pecah teks setiap 6 kata dengan <br>
+    function pecahSetiapEnamKata($text) {
+        $words = explode(' ', $text);
+        return collect($words)->chunk(6)->map(function($chunk) {
+            return implode(' ', $chunk);
+        })->implode('<br>');
+    }
+@endphp
+
+<div class="px-4 md:px-6 py-5">
+    <div class="bg-white border border-gray-300 rounded-xl shadow-md">
+        <div class="bg-[#4041DA] text-white text-lg font-semibold px-6 py-3 rounded-t-xl">
+            Data Pengkajian Teknis - MBR Bantuan Gambar
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-[900px] w-full text-sm text-gray-800 whitespace-nowrap">
+                <thead class="bg-gray-100 text-[14px]">
+                    <tr>
+                        <th class="px-4 py-3 text-left font-semibold border-b">No</th>
+                        <th class="px-4 py-3 text-left font-semibold border-b">Nama Badan Usaha</th>
+                        <th class="px-4 py-3 text-left font-semibold border-b">Alamat</th>
+                        <th class="px-4 py-3 text-left font-semibold border-b">Telepon</th>
+                        <th class="px-4 py-3 text-left font-semibold border-b">Email</th>
+                        <th class="px-4 py-3 text-left font-semibold border-b">Direktur</th>
+                        <th class="px-4 py-3 text-left font-semibold border-b">Subklasifikasi</th>
+                        <th class="px-4 py-3 text-left font-semibold border-b">Pengalaman</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 text-[13.5px]">
+                    @forelse ($datapengkajiteknis as $index => $data)
+                        <tr class="hover:bg-gray-50 align-top">
+                            <td class="px-4 py-2">{{ $index + 1 }}</td>
+                            <td class="px-4 py-2">{{ $data->namabadanusaha ?? '-' }}</td>
+                            <td class="px-4 py-2">{{ $data->alamat ?? '-' }}</td>
+                            <td class="px-4 py-2">{{ $data->telepon ?? '-' }}</td>
+                            <td class="px-4 py-2">{{ $data->email ?? '-' }}</td>
+                            <td class="px-4 py-2">{{ $data->direktur ?? '-' }}</td>
+                            <td class="px-4 py-2">
+                                {!! pecahSetiapEnamKata($data->subklasifikasi ?? '-') !!}
+                            </td>
+                            <td class="px-4 py-2">
+                                {!! pecahSetiapEnamKata($data->pengalaman ?? '-') !!}
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="8" class="px-4 py-4 text-center text-gray-500">Data tidak tersedia.</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
