@@ -218,6 +218,9 @@ th {
                                     <!-- Left Column (6/12) -->
 
           {{-- DOKUMEN GAMBAR PERMOHONAN --}}
+
+          @canany(['superadmin', 'admin'])
+
 <div class="col-md-6 mb-4">
     <label class="form-label">
         <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Dokumen Gambar Permohonan (PDF)
@@ -318,6 +321,60 @@ th {
         }
     }
 </script>
+
+          @endcanany
+
+          @canany(['pemohon'])
+{{-- Dokumen Gambar Permohonan --}}
+<div class="col-md-6 mb-4">
+    <label class="form-label">
+        <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Dokumen Gambar Permohonan (PDF)
+    </label>
+    @if(!empty($data->dokumengambar))
+        <iframe src="{{ asset($data->dokumengambar) }}" width="100%" height="400px" class="mt-2"></iframe>
+    @else
+        <div class="text-muted mt-2">Data Masih di Proses DPUPR Kab Blora, Silahkan Menunggu!</div>
+    @endif
+</div>
+
+{{-- Berita Acara Sidang --}}
+<div class="col-md-6 mb-4">
+    <label class="form-label">
+        <i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i> Berita Acara Sidang (PDF)
+    </label>
+    @if(!empty($data->beritaacarasidang))
+        <iframe src="{{ asset($data->beritaacarasidang) }}" width="100%" height="400px" class="mt-2"></iframe>
+    @else
+        <div class="text-muted mt-2">Data Masih di Proses DPUPR Kab Blora, Silahkan Menunggu!</div>
+    @endif
+</div>
+
+{{-- Foto Dokumentasi 1 --}}
+<div class="col-md-6 mb-4">
+    <label class="form-label">
+        <i class="bi bi-card-image me-1 text-primary"></i> Foto Dokumentasi 1
+    </label>
+    @if(!empty($data->foto1))
+        <img src="{{ asset($data->foto1) }}" alt="Foto 1" class="img-fluid rounded mt-2" style="max-height: 300px;">
+    @else
+        <div class="text-muted mt-2">Data Masih di Proses DPUPR Kab Blora, Silahkan Menunggu!</div>
+    @endif
+</div>
+
+{{-- Foto Dokumentasi 2 --}}
+<div class="col-md-6 mb-4">
+    <label class="form-label">
+        <i class="bi bi-card-image me-1 text-primary"></i> Foto Dokumentasi 2
+    </label>
+    @if(!empty($data->foto2))
+        <img src="{{ asset($data->foto2) }}" alt="Foto 2" class="img-fluid rounded mt-2" style="max-height: 300px;">
+    @else
+        <div class="text-muted mt-2">Data Masih di Proses DPUPR Kab Blora, Silahkan Menunggu!</div>
+    @endif
+</div>
+
+          @endcanany
+
 
 </div>
 
