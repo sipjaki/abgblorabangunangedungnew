@@ -260,13 +260,12 @@
         <li><i class="bi bi-facebook text-primary me-2"></i> @dpupurblora</li>
     </ul>
 
-    <div class="text-center">
+    {{-- <div class="text-center">
         <span class="badge bg-primary px-3 py-2" style="font-size: 14px;">
             <i class="bi bi-send-fill me-1"></i> Ayo Segera Daftar!
         </span>
-    </div>
+    </div> --}}
 </div>
-
 
 </div>
                                     </a>
