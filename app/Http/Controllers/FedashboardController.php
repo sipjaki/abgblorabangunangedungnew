@@ -828,5 +828,33 @@ public function infokrkpermohonan()
     ]);
 }
 
+public function infombrgambar()
+{
+    $datakecamatan = kecamatanblora::all();
+    $datakelurahan = kelurahandesa::all();
+    $datapilihanpengajuan = jenispengajuanbantek::all();
+    $datakonsultan = bujkkonsultan::all();
+    $data = mbrgambar::all();
+
+    $user = Auth::user();
+    $dinas_id = Auth::id(); // ambil hanya ID akun yang login
+
+    $statusadimindinas = User::with('statusadmin')
+        ->where('statusadmin_id', 6)
+        ->get();
+
+    return view('frontend.abgblora.07_mbr.00_informasi.01_informasimbr', [
+        'title' => 'Informasi MBR Gambar Bangunan Gedung',
+        'datakecamatan' => $datakecamatan,
+        'datakelurahan' => $datakelurahan,
+        'datapilihanpengajuan' => $datapilihanpengajuan,
+        'datakonsultanbantek' => $datakonsultan,
+        'user' => $user,
+        'dinas_id' => $dinas_id, // dikirim ke view
+        'statusadimindinas' => $statusadimindinas,
+        'data' => $data,
+    ]);
+}
+
 }
 

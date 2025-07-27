@@ -414,14 +414,14 @@
     <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">MBR</a>
     <ul class="dropdown-menu" style="width: 300px;">
       <li style="font-size: 14px;">
-        <a href="#" style="display: flex; align-items: center;">
+        <a href="/infombrgambar" style="display: flex; align-items: center;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">
             <path d="M10 0H6a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v8h16V6a2 2 0 0 0-2-2h-2V2a2 2 0 0 0-2-2zM6 1h4a1 1 0 0 1 1 1v2H5V2a1 1 0 0 1 1-1zm9 5v7H1V6a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1z"/>
           </svg>
           Informasi MBR
         </a>
       </li>
-      <li style="font-size: 14px;">
+      {{-- <li style="font-size: 14px;">
         <a href="#" onclick="showLoginModal()" style="display: flex; align-items: center;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">
             <path d="M6 8a.5.5 0 0 0 0 1h2.793L7.146 10.646a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2a.5.5 0 1 0-.708.708L8.793 9H6z"/>
@@ -429,7 +429,7 @@
           </svg>
           Permohonan MBR
         </a>
-      </li>
+      </li> --}}
     </ul>
   </li>
 
