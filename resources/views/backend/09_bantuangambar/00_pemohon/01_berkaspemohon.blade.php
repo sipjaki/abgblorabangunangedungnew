@@ -229,7 +229,7 @@ th {
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis"
                             class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
-                  
+
                             >
                             <thead>
                                   <tr>
@@ -244,11 +244,11 @@ th {
         <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Kelurahan/Desa</th>
 
             <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
+            {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Fasilitator </th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Lapangan</th>
+            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Lapangan</th> --}}
             {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Asistensi</th> --}}
-            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Upload Berkas Bantuan Gambar</th>
+            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Dokumen Gambar Saudara </th>
             {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-journal-check"></i> Terbitkan Surat</th> --}}
             @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
@@ -280,7 +280,7 @@ th {
             <!-- Tombol KTP -->
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
+{{-- <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->verifikasi1 == 'lolos')
     <button
         class="button-create"
@@ -299,7 +299,7 @@ th {
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
-</td>
+</td> --}}
 
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
@@ -366,7 +366,7 @@ th {
 
 
 
-<td>
+{{-- <td>
     <div style="display: flex; justify-content: center;">
 <a href="/bepbgsurattugasgambar/{{ $item->id }}" class="button-baru">
     <i class="bi bi-file-earmark-text"></i> Surat Tugas
@@ -391,7 +391,7 @@ th {
             </button>
         @endif
     </div>
-</td>
+</td> --}}
 
 <!-- Modal Konfirmasi verifikasi2 -->
 <div id="confirmModal2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
@@ -457,7 +457,7 @@ th {
 
 
 
-  <td style="text-align: center;">
+  {{-- <td style="text-align: center;">
     <div style="display: flex; justify-content: center;">
 
     <a href="{{ route('bebantuangambarlap.show', $item->id) }}"
@@ -486,7 +486,7 @@ th {
         @endif
     </div>
     </div>
-            </td>
+            </td> --}}
 
 
 {{--
@@ -557,21 +557,17 @@ th {
 </script>
 
 
-
-
-
 <td style="text-align: center;">
       <div style="display: flex; justify-content: center;">
      <a href="{{ route('bebantuangambarupload', $item->id) }}"
                     class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> Upload Berkas
                 </a>
-    @if($item->verifikasi4 == 'sudah')
+    {{-- @if($item->verifikasi4 == 'sudah')
         <button
             class="button-create"
             type="button"
             style="background-color: #10B981; color: black;"
-            {{-- cursor: not-allowed; --}}
             disabled
         >
             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbit
@@ -584,7 +580,7 @@ th {
         <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Terbitkan !
         </button>
-    @endif
+    @endif --}}
     </div>
 </td>
 
