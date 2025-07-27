@@ -404,7 +404,7 @@
 </li>
 
 
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="/404" class="nav-link">
         <!-- Icon User -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
@@ -416,7 +416,7 @@
             <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
         </p>
     </a>
-</li>
+</li> --}}
 
 
             @endcan
@@ -621,7 +621,7 @@
 </li>
 
 
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="/404" class="nav-link">
         <!-- Icon User -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
@@ -633,7 +633,7 @@
             <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
         </p>
     </a>
-</li>
+</li> --}}
 
 
             @endcan
@@ -673,7 +673,7 @@
             </li>
 
 
-              <li class="nav-item">
+              {{-- <li class="nav-item">
 <a href="/404" class="nav-link" style="display: flex; align-items: center;">
     <!-- Ganti icon SVG dengan Bootstrap Icon -->
     <i class="bi bi-person-circle nav-icon" style="color: white; font-size: 16px;"></i>
@@ -684,7 +684,7 @@
     </p>
 </a>
 
-</li>
+</li> --}}
 
 @endcan
 
@@ -835,7 +835,7 @@
     </p>
 </div> --}}
 </ul>
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="/404" class="nav-link">
         <!-- Icon User -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
@@ -847,7 +847,7 @@
             <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
         </p>
     </a>
-</li>
+</li> --}}
 
 
 @endcan
