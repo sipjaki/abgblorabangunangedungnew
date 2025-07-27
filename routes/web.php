@@ -1217,6 +1217,8 @@ Route::delete('/bebantuangambardelete/{id}', [GambarbantuanController::class, 'b
 
 // PENDAFTARAN BANTUAN GAMBAR
 Route::get('/feformbantuangambar', [GambarbantuanController::class, 'feformbantuangambar'])->middleware('auth')->name('feformbantuangambar');
+Route::post('/feformbantuangambarcreate', [GambarbantuanController::class, 'feformbantuangambarcreate'])->name('feformbantuangambarcreate');
+
 // Route::post('/febantuanteknis/create', [BantuanteknisController::class, 'febantuantekniscreatepermohonan'])->name('permohonan.bantekcreate');
 
 // Route::put('/valberkasusaha/{id}', [KrkController::class, 'valberkasusaha1'])->name('valberkasusaha.update');

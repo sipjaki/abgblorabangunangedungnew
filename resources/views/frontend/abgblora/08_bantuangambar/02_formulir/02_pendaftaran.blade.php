@@ -201,7 +201,7 @@
                 </p>
             </div>
 
-            <form id="signatureForm" action="{{ route('permohonan.bantekcreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
+            <form id="signatureForm" action="{{ route('feformbantuangambarcreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
                 @csrf
 
 

@@ -645,6 +645,107 @@ public function feformbantuangambar()
 }
 
 
+public function feformbantuangambarcreate(Request $request)
+{
+    $validated = $request->validate([
+        'user_id' => 'nullable|string',
+        'kecamatanblora_id' => 'required|string',
+        'kelurahandesa_id' => 'required|string',
+        'jenispermohonangambar_id' => 'required|string',
+        'fungsibangunangambar_id' => 'required|string',
+
+        'namapemohon' => 'required|string|max:255',
+        'email' => 'nullable|email',
+        'alamatpemohon' => 'nullable|string',
+        'nomortelepon' => 'required|string|max:20',
+        'nikktp' => 'nullable|string|max:20',
+        'lokasibangunan' => 'nullable|string',
+        'koordinat' => 'nullable|string',
+        'klasifikasibangunan' => 'nullable|string|max:100',
+        'luasbangunan' => 'nullable|string',
+        'tinggibangunan' => 'nullable|string',
+        'tanggalpermohonan' => 'nullable|string',
+        'jumlahlantai' => 'nullable|string',
+        'peruntukanuntuk' => 'nullable|string',
+
+        'ktp' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:15120',
+        'npwp' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:15120',
+        'lampiranoss' => 'nullable|file|mimes:pdf|max:15120',
+        'dokvalidasi' => 'nullable|file|mimes:pdf|max:15120',
+        'sertifikattanah' => 'nullable|file|mimes:pdf|max:15120',
+        'buktipbb' => 'nullable|file|mimes:pdf|max:15120',
+        'siteplan' => 'nullable|file|mimes:pdf|max:15120',
+        'tandatangan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:15120',
+    ]);
+
+    // Folder penyimpanan
+    $folders = [
+        'ktp' => '09_bantuangambar/01_ktp',
+        'npwp' => '09_bantuangambar/02_npwp',
+        'lampiranoss' => '09_bantuangambar/03_lampiranoss',
+        'dokvalidasi' => '09_bantuangambar/04_dokvalidasi',
+        'sertifikattanah' => '09_bantuangambar/05_sertifikattanah',
+        'buktipbb' => '09_bantuangambar/06_buktipbb',
+        'siteplan' => '09_bantuangambar/07_siteplan',
+        'tandatangan' => '09_bantuangambar/08_tandatangan',
+    ];
+
+    // Buat folder jika belum ada
+    foreach ($folders as $folder) {
+        if (!file_exists(public_path($folder))) {
+            mkdir(public_path($folder), 0777, true);
+        }
+    }
+
+    // Upload berkas dan simpan path-nya
+    $uploadedFiles = [];
+    foreach ($folders as $field => $path) {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
+            $filename = $field . '_' . time() . '_' . Str::random(5) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path($path), $filename);
+            $uploadedFiles[$field] = $path . '/' . $filename;
+        } else {
+            $uploadedFiles[$field] = null;
+        }
+    }
+
+    // Simpan ke database
+    $data = new gambarbantuan(); // ganti dengan model sesuai
+    $data->user_id = $validated['user_id'] ?? null;
+    $data->kecamatanblora_id = $validated['kecamatanblora_id'] ?? null;
+    $data->kelurahandesa_id = $validated['kelurahandesa_id'] ?? null;
+    $data->jenispermohonangambar_id = $validated['jenispermohonangambar_id'] ?? null;
+    $data->fungsibangunangambar_id = $validated['fungsibangunangambar_id'] ?? null;
+    $data->namapemohon = $validated['namapemohon'] ?? null;
+    $data->email = $validated['email'] ?? null;
+    $data->alamatpemohon = $validated['alamatpemohon'] ?? null;
+    $data->nomortelepon = $validated['nomortelepon'] ?? null;
+    $data->nikktp = $validated['nikktp'] ?? null;
+    $data->lokasibangunan = $validated['lokasibangunan'] ?? null;
+    $data->koordinat = $validated['koordinat'] ?? null;
+    $data->klasifikasibangunan = $validated['klasifikasibangunan'] ?? null;
+    $data->luasbangunan = $validated['luasbangunan'] ?? null;
+    $data->tinggibangunan = $validated['tinggibangunan'] ?? null;
+    $data->tanggalpermohonan = $validated['tanggalpermohonan'] ?? null;
+    $data->jumlahlantai = $validated['jumlahlantai'] ?? null;
+    $data->peruntukanuntuk = $validated['peruntukanuntuk'] ?? null;
+
+    $data->ktp = $uploadedFiles['ktp'] ?? null;
+    $data->npwp = $uploadedFiles['npwp'] ?? null;
+    $data->lampiranoss = $uploadedFiles['lampiranoss'] ?? null;
+    $data->dokvalidasi = $uploadedFiles['dokvalidasi'] ?? null;
+    $data->sertifikattanah = $uploadedFiles['sertifikattanah'] ?? null;
+    $data->buktipbb = $uploadedFiles['buktipbb'] ?? null;
+    $data->siteplan = $uploadedFiles['siteplan'] ?? null;
+    $data->tandatangan = $uploadedFiles['tandatangan'] ?? null;
+
+    $data->save();
+
+    session()->flash('create', 'Permohonan bantuan teknis gambar berhasil diajukan!');
+    return redirect('/dashboard');
+}
+
 }
 
 

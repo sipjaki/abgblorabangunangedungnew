@@ -35,12 +35,6 @@ return new class extends Migration
             $table->string('jumlahlantai')->nullable();
             $table->string('peruntukanuntuk')->nullable();
 
-            $table->string('dokumengambar')->nullable();
-            $table->string('beritaacarasidang')->nullable(); // uplodan baru
-            $table->string('foto1')->nullable(); // uplodan baru
-            $table->string('foto2')->nullable(); // uplodan baru
-            // $table->string('dokumengambar')->nullable();
-
             $table->string('ktp')->nullable(); // KTP
             $table->string('npwp')->nullable(); //SURAT PENGAJUAN
             $table->string('lampiranoss')->nullable()   ; // KRK
@@ -58,6 +52,13 @@ return new class extends Migration
             $table->string('verifikasidokval')->nullable();
             $table->string('verifikasisiteplan')->nullable();
             $table->string('verifikasittd')->nullable();
+
+
+            $table->string('dokumengambar')->nullable();
+            $table->string('beritaacarasidang')->nullable(); // uplodan baru
+            $table->string('foto1')->nullable(); // uplodan baru
+            $table->string('foto2')->nullable(); // uplodan baru
+            // $table->string('dokumengambar')->nullable();
 
             $table->string('verifikasi1')->nullable();
             $table->string('verifikasi2')->nullable();
