@@ -200,185 +200,169 @@
                     <span class="font-bold">Form Permohonan Bantuan Teknis | Bangunan Gedung </span>
                 </p>
             </div>
-<form id="signatureForm" action="{{ route('feformbantuangambarcreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
+
+<form id="signatureForm" action="{{ route('feformbantuangambarcreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full">
     @csrf
     <input type="hidden" name="user_id" value="{{ $dinas_id }}">
 
-    <div class="container-fluid px-0 navy-theme">
-        <!-- Main Form -->
-        <div class="modern-card">
+    <div class="container-fluid px-0">
+        <!-- Main Form Card -->
+        <div class="bg-white rounded-lg shadow-lg p-6 max-w-6xl mx-auto relative" style="margin-top: -50px;">
+
             <!-- Section 1: Informasi Pemohon -->
-            <div class="section-container">
-                <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <div class="button-baru">
-                        <strong style="color: black;">Informasi Pemohon</strong>
-                    </div>
+            <div class="mb-8 pb-6 border-b border-gray-200">
+                <div class="bg-blue-50 text-blue-800 rounded-md p-3 mb-4 flex items-center">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    <span class="font-semibold">Informasi Pemohon</span>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-user me-2" style="color: navy;"></i> Nama Pemohon
-                            </label>
-                            <input type="text" name="namapemohon" class="form-control" >
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Nama Pemohon -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-user mr-2 text-blue-600"></i> Nama Pemohon
+                        </label>
+                        <input type="text" name="namapemohon" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-envelope me-2" style="color: navy;"></i> Email
-                            </label>
-                            <input type="email" name="email" class="form-control" >
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-phone me-2" style="color: navy;"></i> Nomor Telepon
-                            </label>
-                            <input type="text" name="nomortelepon" class="form-control" >
-                        </div>
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-envelope mr-2 text-blue-600"></i> Email
+                        </label>
+                        <input type="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-id-card me-2" style="color: navy;"></i> NIK KTP
-                            </label>
-                            <input type="text" name="nikktp" class="form-control" >
-                        </div>
+                    <!-- Nomor Telepon -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-phone mr-2 text-blue-600"></i> Nomor Telepon
+                        </label>
+                        <input type="text" name="nomortelepon" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     </div>
-                </div>
 
-                <div class="form-group mt-3">
-                    <label class="form-label">
-                        <i class="fas fa-map-marker-alt me-2" style="color: navy;"></i> Alamat Pemohon
-                    </label>
-                    <textarea name="alamatpemohon" class="form-control" rows="2" ></textarea>
+                    <!-- NIK KTP -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-id-card mr-2 text-blue-600"></i> NIK KTP
+                        </label>
+                        <input type="text" name="nikktp" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+
+                    <!-- Alamat Pemohon -->
+                    <div class="form-group col-span-full">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i> Alamat Pemohon
+                        </label>
+                        <textarea name="alamatpemohon" rows="2" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
                 </div>
             </div>
 
             <!-- Section 2: Informasi Bangunan -->
-            <div class="section-container">
-                <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <div class="button-baru">
-                        <strong style="color: black;">Informasi Bangunan Gedung</strong>
-                    </div>
+            <div class="mb-8 pb-6 border-b border-gray-200">
+                <div class="bg-blue-50 text-blue-800 rounded-md p-3 mb-4 flex items-center">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    <span class="font-semibold">Informasi Bangunan Gedung</span>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-drafting-compass me-2" style="color: navy;"></i> Jenis Permohonan Gambar
-                            </label>
-                            <select name="jenispermohonangambar_id" class="form-control" >
-                                <option value="">-- Pilih Jenis Permohonan --</option>
-                                @foreach($jenispermohonan as $jenis)
-                                    <option value="{{ $jenis->id }}">{{ $jenis->jenis }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Jenis Permohonan Gambar -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-drafting-compass mr-2 text-blue-600"></i> Jenis Permohonan Gambar
+                        </label>
+                        <select name="jenispermohonangambar_id" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <option value="">-- Pilih Jenis Permohonan --</option>
+                            @foreach($jenispermohonan as $jenis)
+                                <option value="{{ $jenis->id }}">{{ $jenis->jenis }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-warehouse me-2" style="color: navy;"></i> Fungsi Bangunan
-                            </label>
-                            <select name="fungsibangunangambar_id" class="form-control" >
-                                <option value="">-- Pilih Fungsi Bangunan --</option>
-                                @foreach($fungsibangunan as $fungsi)
-                                    <option value="{{ $fungsi->id }}">{{ $fungsi->fungsibangunan }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-ruler-combined me-2" style="color: navy;"></i> Luas Bangunan (m²)
-                            </label>
-                            <input type="text" name="luasbangunan" class="form-control" >
-                        </div>
+                    <!-- Fungsi Bangunan -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-warehouse mr-2 text-blue-600"></i> Fungsi Bangunan
+                        </label>
+                        <select name="fungsibangunangambar_id" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <option value="">-- Pilih Fungsi Bangunan --</option>
+                            @foreach($fungsibangunan as $fungsi)
+                                <option value="{{ $fungsi->id }}">{{ $fungsi->fungsibangunan }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-arrows-alt-v me-2" style="color: navy;"></i> Tinggi Bangunan (m)
-                            </label>
-                            <input type="text" name="tinggibangunan" class="form-control" >
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-layer-group me-2" style="color: navy;"></i> Jumlah Lantai
-                            </label>
-                            <input type="number" name="jumlahlantai" class="form-control" >
-                        </div>
+                    <!-- Luas Bangunan -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-ruler-combined mr-2 text-blue-600"></i> Luas Bangunan (m²)
+                        </label>
+                        <input type="text" name="luasbangunan" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-tag me-2" style="color: navy;"></i> Klasifikasi Bangunan
-                            </label>
-                            <select name="klasifikasibangunan" class="form-control" >
-                                <option value="">-- Pilih Klasifikasi --</option>
-                                <option value="Sederhana">Sederhana</option>
-                                <option value="Tidak Sederhana">Tidak Sederhana</option>
-                            </select>
-                        </div>
+                    <!-- Tinggi Bangunan -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-arrows-alt-v mr-2 text-blue-600"></i> Tinggi Bangunan (m)
+                        </label>
+                        <input type="text" name="tinggibangunan" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     </div>
-                </div>
 
-                <div class="form-group mt-3">
-                    <label class="form-label">
-                        <i class="fas fa-info-circle me-2" style="color: navy;"></i> Peruntukan Untuk
-                    </label>
-                    <input type="text" name="peruntukanuntuk" class="form-control" >
+                    <!-- Jumlah Lantai -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-layer-group mr-2 text-blue-600"></i> Jumlah Lantai
+                        </label>
+                        <input type="number" name="jumlahlantai" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+
+                    <!-- Klasifikasi Bangunan -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-tag mr-2 text-blue-600"></i> Klasifikasi Bangunan
+                        </label>
+                        <select name="klasifikasibangunan" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <option value="">-- Pilih Klasifikasi --</option>
+                            <option value="Sederhana">Sederhana</option>
+                            <option value="Tidak Sederhana">Tidak Sederhana</option>
+                        </select>
+                    </div>
+
+                    <!-- Peruntukan Untuk -->
+                    <div class="form-group col-span-full">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-info-circle mr-2 text-blue-600"></i> Peruntukan Untuk
+                        </label>
+                        <input type="text" name="peruntukanuntuk" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
                 </div>
             </div>
 
             <!-- Section 3: Lokasi Bangunan -->
-            <div class="section-container">
-                <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <div class="button-baru">
-                        <strong style="color: black;">Lokasi Bangunan Gedung</strong>
+            <div class="mb-8 pb-6 border-b border-gray-200">
+                <div class="bg-blue-50 text-blue-800 rounded-md p-3 mb-4 flex items-center">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    <span class="font-semibold">Lokasi Bangunan Gedung</span>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- Alamat Lokasi Bangunan -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-map-marked-alt mr-2 text-blue-600"></i> Alamat Lokasi Bangunan
+                        </label>
+                        <textarea name="lokasibangunan" rows="2" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label class="form-label">
-                        <i class="fas fa-map-marked-alt me-2" style="color: navy;"></i> Alamat Lokasi Bangunan
-                    </label>
-                    <textarea name="lokasibangunan" class="form-control" rows="2" ></textarea>
-                </div>
-
-                <div class="row mt-3">
-                    <!-- Kecamatan -->
-                    <div class="col-md-6">
+                    <!-- Kecamatan & Kelurahan -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Kecamatan -->
                         <div class="form-group">
-                            <label class="form-label d-flex align-items-center">
-                                <i class="fas fa-map-pin me-2" style="color: navy;"></i> Kecamatan
+                            <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                                <i class="fas fa-map-pin mr-2 text-blue-600"></i> Kecamatan
                             </label>
-                            <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror" >
+                            <select name="kecamatanblora_id" id="kecamatanblora_id" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                                 <option value="">-- Pilih Kecamatan --</option>
                                 @foreach($datakecamatan as $kec)
                                     <option value="{{ $kec->id }}" {{ old('kecamatanblora_id') == $kec->id ? 'selected' : '' }}>
@@ -387,171 +371,250 @@
                                 @endforeach
                             </select>
                             @error('kecamatanblora_id')
-                                <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
-                    </div>
 
-                    <!-- Kelurahan/Desa -->
-                    <div class="col-md-6">
+                        <!-- Kelurahan/Desa -->
                         <div class="form-group">
-                            <label class="form-label d-flex align-items-center">
-                                <i class="fas fa-map-marker-alt me-2" style="color: navy;"></i> Kelurahan/Desa
+                            <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i> Kelurahan/Desa
                             </label>
-                            <select name="kelurahandesa_id" id="kelurahandesa_id" class="form-control @error('kelurahandesa_id') is-invalid @enderror" >
+                            <select name="kelurahandesa_id" id="kelurahandesa_id" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                                 <option value="">-- Pilih Kelurahan/Desa --</option>
                             </select>
                             @error('kelurahandesa_id')
-                                <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
 
                     <!-- Koordinat -->
-                    <div class="col-md-12 mt-3">
-                        <div class="form-group">
-                            <label class="form-label d-flex align-items-center">
-                                <i class="fas fa-location-arrow me-2" style="color: navy;"></i> Koordinat (Latitude, Longitude)
-                            </label>
-                            <input type="text" name="koordinat" class="form-control" placeholder="Contoh: -6.969987, 110.606125">
-                        </div>
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                            <i class="fas fa-location-arrow mr-2 text-blue-600"></i> Koordinat (Latitude, Longitude)
+                        </label>
+                        <input type="text" name="koordinat" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contoh: -6.969987, 110.606125">
                     </div>
                 </div>
             </div>
 
             <!-- Section 4: Upload Dokumen -->
-            <div class="section-container">
-                <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <div class="button-baru">
-                        <strong style="color: black;">Upload Dokumen Persyaratan Bantuan Teknis Gambar</strong>
-                    </div>
+            <div class="mb-8">
+                <div class="bg-blue-50 text-blue-800 rounded-md p-3 mb-4 flex items-center">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    <span class="font-semibold">Upload Dokumen Persyaratan Bantuan Teknis Gambar</span>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="document-upload">
-                            <label class="form-label">
-                                <i class="fas fa-id-card me-2" style="color: navy;"></i> KTP Pemohon
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Column 1 -->
+                    <div class="space-y-4">
+                        <!-- KTP Pemohon -->
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                                <i class="fas fa-id-card mr-2 text-blue-600"></i> KTP Pemohon
                             </label>
-                            <input type="file" name="ktp" class="form-control" accept="image/*,.pdf" >
-                            <small class="text-muted">.Pdf | Max 15MB</small>
+                            <input type="file" name="ktp" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" accept="image/*,.pdf" required>
+                            <p class="mt-1 text-xs text-gray-500">Format: PDF/JPG/PNG | Maksimal 15MB</p>
                         </div>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label d-block mb-2">
-                                <i class="fas fa-file-alt me-2" style="color: navy;"></i>
-                                Surat Permohonan Bantuan Gambar
+                        <!-- Surat Permohonan -->
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                                <i class="fas fa-file-alt mr-2 text-blue-600"></i> Surat Permohonan Bantuan Gambar
                             </label>
-
                             <div class="mb-2">
-                                <span class="text-muted">Contoh Surat Permohonan:</span><br>
-                                <a href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download class="button-baru mt-1 d-inline-flex align-items-center">
-                                    <i class="bi bi-download me-2" style="color: black;"></i><span style="color: black;">Unduh Formulir</span>
+                                <span class="text-xs text-gray-500">Contoh Surat Permohonan:</span><br>
+                                <a href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-md text-sm mt-1 hover:bg-blue-200">
+                                    <i class="fas fa-download mr-2"></i> Unduh Formulir
                                 </a>
                             </div>
-
-                            <input type="file" name="npwp" class="form-control" accept="image/*,.pdf">
-                            <small class="text-muted">Format .pdf atau gambar | Maksimal 15MB</small>
+                            <input type="file" name="npwp" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" accept="image/*,.pdf">
+                            <p class="mt-1 text-xs text-gray-500">Format: PDF/JPG/PNG | Maksimal 15MB</p>
                         </div>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label">
-                                <i class="fas fa-file-contract me-2" style="color: navy;"></i> Berkas KRK
+                        <!-- Berkas KRK -->
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                                <i class="fas fa-file-contract mr-2 text-blue-600"></i> Berkas KRK
                             </label>
-                            <input type="file" name="lampiranoss" class="form-control" accept="image/*,.pdf">
-                            <small class="text-muted">.pdf | Max 15MB</small>
+                            <input type="file" name="lampiranoss" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" accept="image/*,.pdf">
+                            <p class="mt-1 text-xs text-gray-500">Format: PDF/JPG/PNG | Maksimal 15MB</p>
                         </div>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label">
-                                <i class="fas fa-file-signature me-2" style="color: navy;"></i> Surat Sewa Lahan
+                        <!-- Surat Sewa Lahan -->
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                                <i class="fas fa-file-signature mr-2 text-blue-600"></i> Surat Sewa Lahan
                             </label>
-                            <input type="file" name="dokvalidasi" class="form-control" accept="image/*,.pdf">
-                            <small class="text-muted">.pdf | Max 15MB</small>
+                            <input type="file" name="dokvalidasi" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" accept="image/*,.pdf">
+                            <p class="mt-1 text-xs text-gray-500">Format: PDF/JPG/PNG | Maksimal 15MB</p>
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="document-upload">
-                            <label class="form-label">
-                                <i class="fas fa-file-certificate me-2" style="color: navy;"></i> Sertifikat Tanah
+                    <!-- Column 2 -->
+                    <div class="space-y-4">
+                        <!-- Sertifikat Tanah -->
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                                <i class="fas fa-file-certificate mr-2 text-blue-600"></i> Sertifikat Tanah
                             </label>
-                            <input type="file" name="sertifikattanah" class="form-control" accept="image/*,.pdf" >
-                            <small class="text-muted">.pdf | Max 15MB</small>
+                            <input type="file" name="sertifikattanah" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" accept="image/*,.pdf" required>
+                            <p class="mt-1 text-xs text-gray-500">Format: PDF/JPG/PNG | Maksimal 15MB</p>
                         </div>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label">
-                                <i class="fas fa-receipt me-2" style="color: navy;"></i> Bukti PBB
+                        <!-- Bukti PBB -->
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                                <i class="fas fa-receipt mr-2 text-blue-600"></i> Bukti PBB
                             </label>
-                            <input type="file" name="buktipbb" class="form-control" accept="image/*,.pdf" >
-                            <small class="text-muted">.pdf | Max 15MB</small>
+                            <input type="file" name="buktipbb" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" accept="image/*,.pdf" required>
+                            <p class="mt-1 text-xs text-gray-500">Format: PDF/JPG/PNG | Maksimal 15MB</p>
                         </div>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label">
-                                <i class="fas fa-map me-2" style="color: navy;"></i> (NIB) Nomor Induk Berusaha
+                        <!-- NIB -->
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                                <i class="fas fa-map mr-2 text-blue-600"></i> (NIB) Nomor Induk Berusaha
                             </label>
-                            <input type="file" name="siteplan" class="form-control" accept="image/*,.pdf">
-                            <small class="text-muted">.pdf | Max 15MB</small>
+                            <input type="file" name="siteplan" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" accept="image/*,.pdf">
+                            <p class="mt-1 text-xs text-gray-500">Format: PDF/JPG/PNG | Maksimal 15MB</p>
                         </div>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label">
-                                <i class="fas fa-signature me-2" style="color: navy;"></i> Dokumen Kajian Tata Ruang
+                        <!-- Dokumen Kajian Tata Ruang -->
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                                <i class="fas fa-signature mr-2 text-blue-600"></i> Dokumen Kajian Tata Ruang
                             </label>
-                            <input type="file" name="tandatangan" class="form-control" accept="image/*,.pdf">
-                            <small class="text-muted">.pdf | Max 15MB</small>
+                            <input type="file" name="tandatangan" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" accept="image/*,.pdf">
+                            <p class="mt-1 text-xs text-gray-500">Format: PDF/JPG/PNG | Maksimal 15MB</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Submit Button -->
-            <div class="flex justify-end" style="margin-top: 20px;">
-                <button type="button" class="button-baru" onclick="openModal()">
-                    <i class="fab fa-telegram-plane w-5 h-5" style="color: black;"></i>
-                    <span style="color: black;">Kirim Permohonan</span>
+            <div class="flex justify-end mt-6">
+                <button type="button" onclick="openModal()" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <i class="fas fa-paper-plane mr-2"></i> Kirim Permohonan
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Modal Konfirmasi -->
-    <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-        <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-            <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                Apakah Anda yakin dengan permohonan Anda?
-            </p>
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <h3 class="text-lg font-medium text-gray-900 mb-4">Konfirmasi Pengajuan</h3>
 
-            <!-- Checkbox -->
-            <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                <input type="checkbox" id="dataConfirm" style="margin-right: 8px;" onchange="toggleSubmitButton()">
-                <label for="dataConfirm" style="font-size: 14px; color: #6b7280; flex-grow: 1; text-align: justify;">
-                    Saya menyatakan bahwa data persyaratan yang saya kirim adalah sebenar-benarnya dan dapat dipertanggungjawabkan.
-                </label>
+            <p class="text-sm text-gray-600 mb-4">Apakah Anda yakin dengan permohonan Anda?</p>
+
+            <div class="flex items-start mb-4">
+                <div class="flex items-center h-5">
+                    <input id="dataConfirm" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded" onchange="toggleSubmitButton()">
+                </div>
+                <div class="ml-3 text-sm">
+                    <label for="dataConfirm" class="font-medium text-gray-700">Saya menyatakan bahwa data persyaratan yang saya kirim adalah sebenar-benarnya dan dapat dipertanggungjawabkan.</label>
+                </div>
             </div>
 
-            <!-- Tombol -->
-            <div style="display: flex; justify-content: center; gap: 12px;">
-                <button id="confirmSubmitBtn"
-                        onclick="submitForm()"
-                        disabled
-                        class="btn-kirim"
-                        style="background-color: #f97316; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: not-allowed;">
-                    Ya, Kirim
-                </button>
-                <button type="button"
-                        onclick="closeModal()"
-                        class="btn-cancel-hover"
-                        style="background-color: #9CA3AF; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;">
+            <div class="flex justify-end space-x-3">
+                <button type="button" onclick="closeModal()" class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                     Batal
+                </button>
+                <button id="confirmSubmitBtn" type="button" onclick="submitForm()" disabled class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Ya, Kirim
                 </button>
             </div>
         </div>
     </div>
 </form>
+
+<script>
+// AJAX untuk mendapatkan kelurahan/desa berdasarkan kecamatan
+document.getElementById('kecamatanblora_id').addEventListener('change', function() {
+    const kecamatanId = this.value;
+    const kelurahanSelect = document.getElementById('kelurahandesa_id');
+
+    if (kecamatanId) {
+        fetch(`/api/kelurahan?kecamatan_id=${kecamatanId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan/Desa --</option>';
+                data.forEach(kelurahan => {
+                    const option = document.createElement('option');
+                    option.value = kelurahan.id;
+                    option.textContent = kelurahan.nama || kelurahan.kelurahandesa;
+                    kelurahanSelect.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching kelurahan data:', error);
+                kelurahanSelect.innerHTML = '<option value="">-- Gagal memuat data --</option>';
+            });
+    } else {
+        kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan/Desa --</option>';
+    }
+});
+
+// Format input angka untuk luas dan tinggi bangunan
+document.querySelectorAll('input[name="luasbangunan"], input[name="tinggibangunan"]').forEach(input => {
+    input.addEventListener('input', function(e) {
+        this.value = this.value.replace(/[^0-9.]/g, '');
+    });
+});
+
+// Modal functions
+function openModal() {
+    // Validasi form sebelum menampilkan modal
+    const form = document.getElementById('signatureForm');
+    let isValid = true;
+
+    // Cek semua field required
+    form.querySelectorAll('[required]').forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add('border-red-500');
+        } else {
+            field.classList.remove('border-red-500');
+        }
+    });
+
+    if (!isValid) {
+        alert('Harap lengkapi semua field yang wajib diisi!');
+        return;
+    }
+
+    document.getElementById('confirmModal').classList.remove('hidden');
+}
+
+function closeModal() {
+    document.getElementById('confirmModal').classList.add('hidden');
+}
+
+function toggleSubmitButton() {
+    const checkbox = document.getElementById('dataConfirm');
+    const btn = document.getElementById('confirmSubmitBtn');
+
+    btn.disabled = !checkbox.checked;
+}
+
+function submitForm() {
+    const checkbox = document.getElementById('dataConfirm');
+    if (!checkbox.checked) {
+        alert('Anda harus mencentang pernyataan terlebih dahulu');
+        return;
+    }
+
+    document.getElementById('signatureForm').submit();
+}
+</script>
+
 
 <style>
 /* Navy Blue Theme */
