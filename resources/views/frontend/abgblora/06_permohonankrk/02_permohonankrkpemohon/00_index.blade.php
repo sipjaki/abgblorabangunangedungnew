@@ -99,7 +99,7 @@
   ">
 
     <section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 150px;">
-        {{-- <br><br>
+        <br><br>
         <div class="flex items-center gap-[20px]">
           <!-- Gambar di kiri -->
           <img src="/assets/abgblora/logo/iconabgblora.png" alt="" class="w-[60px] -my-[15px]" width="10%" style="margin-right: 20px;">
@@ -110,17 +110,20 @@
              {{$title}}
             </a>
           </div>
-        </div> --}}
+        </div>
 
       </section>
 
 
 
+    <section id="header" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2" style="margin-top:10px;">
+
+
+      </section>
 
 
      <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
 
-        <br><br>
         @include('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.00_menufungsibangunan')
 
 
