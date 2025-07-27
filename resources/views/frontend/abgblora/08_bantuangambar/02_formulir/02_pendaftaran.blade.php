@@ -422,94 +422,58 @@
 
                 <!-- Section 4: Upload Dokumen -->
                 <div class="section-container">
-                    <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
-                        <i class="fas fa-info-circle me-2"></i>
-                        <div class="button-baru">
-                            <strong style="color: black;">Upload Dokumen Persyaratan Bantuan Teknis Gambar</strong>
+    <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
+        <i class="fas fa-info-circle me-2"></i>
+        <div class="button-baru">
+            <strong style="color: black;">Upload Dokumen Persyaratan Bantuan Teknis Gambar</strong>
+        </div>
+    </div>
+
+    <div class="row">
+        @php
+            $dokumenList = [
+                ['name' => 'ktp', 'label' => 'KTP Pemohon', 'icon' => 'fa-id-card'],
+                ['name' => 'npwp', 'label' => 'Surat Permohonan Bantuan Gambar', 'icon' => 'fa-file-alt'],
+                ['name' => 'lampiranoss', 'label' => 'Berkas KRK', 'icon' => 'fa-file-contract'],
+                ['name' => 'dokvalidasi', 'label' => 'Surat Sewa Lahan', 'icon' => 'fa-file-signature'],
+                ['name' => 'sertifikattanah', 'label' => 'Sertifikat Tanah', 'icon' => 'fa-file-certificate'],
+                ['name' => 'buktipbb', 'label' => 'Bukti PBB', 'icon' => 'fa-receipt'],
+                ['name' => 'siteplan', 'label' => '(NIB) Nomor Induk Berusaha', 'icon' => 'fa-map'],
+                ['name' => 'tandatangan', 'label' => 'Dokumen Kajian Tata Ruang', 'icon' => 'fa-signature'],
+            ];
+        @endphp
+
+        @foreach(array_chunk($dokumenList, ceil(count($dokumenList) / 2)) as $column)
+            <div class="col-md-6">
+                @foreach($column as $doc)
+                    <div class="document-upload mt-3">
+                        <label class="form-label">
+                            <i class="fas {{ $doc['icon'] }} me-2" style="color: navy;"></i> {{ $doc['label'] }}
+                        </label>
+                        <input type="file" name="{{ $doc['name'] }}" class="form-control" accept=".pdf" onchange="previewFileName(this)">
+                        <small class="text-muted">Format PDF saja | Maksimal 15MB</small>
+                        <div class="mt-1" style="font-size: 13px; color: #555;">
+                            <span class="filename-preview"></span>
                         </div>
                     </div>
+                @endforeach
+            </div>
+        @endforeach
+    </div>
+</div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="document-upload">
-                                <label class="form-label">
-                                    <i class="fas fa-id-card me-2" style="color: navy;"></i> KTP Pemohon
-                                </label>
-                                <input type="file" name="ktp" class="form-control" accept="image/*,.pdf" >
-                                <small class="text-muted">.Pdf | Max 15MB</small>
-                            </div>
-
-                            <div class="document-upload mt-3">
-                                <label class="form-label d-block mb-2">
-                                    <i class="fas fa-file-alt me-2" style="color: navy;"></i>
-                                    Surat Permohonan Bantuan Gambar
-                                </label>
-
-                                <div class="mb-2">
-                                    <span class="text-muted">Contoh Surat Permohonan:</span><br>
-                                    <a href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download class="button-baru mt-1 d-inline-flex align-items-center">
-                                        <i class="bi bi-download me-2" style="color: black;"></i><span style="color: black;">Unduh Formulir</span>
-                                    </a>
-                                </div>
-
-                                <input type="file" name="npwp" class="form-control" accept="image/*,.pdf">
-                                <small class="text-muted">Format .pdf atau gambar | Maksimal 15MB</small>
-                            </div>
-
-                            <div class="document-upload mt-3">
-                                <label class="form-label">
-                                    <i class="fas fa-file-contract me-2" style="color: navy;"></i> Berkas KRK
-                                </label>
-                                <input type="file" name="lampiranoss" class="form-control" accept="image/*,.pdf">
-                                <small class="text-muted">.pdf | Max 15MB</small>
-                            </div>
-
-                            <div class="document-upload mt-3">
-                                <label class="form-label">
-                                    <i class="fas fa-file-signature me-2" style="color: navy;"></i> Surat Sewa Lahan
-                                </label>
-                                <input type="file" name="dokvalidasi" class="form-control" accept="image/*,.pdf">
-                                <small class="text-muted">.pdf | Max 15MB</small>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="document-upload">
-                                <label class="form-label">
-                                    <i class="fas fa-file-certificate me-2" style="color: navy;"></i> Sertifikat Tanah
-                                </label>
-                                <input type="file" name="sertifikattanah" class="form-control" accept="image/*,.pdf" >
-                                    <small class="text-muted">.pdf | Max 15MB</small>
-                            </div>
-
-                            <div class="document-upload mt-3">
-                                <label class="form-label">
-                                    <i class="fas fa-receipt me-2" style="color: navy;"></i> Bukti PBB
-                                </label>
-                                <input type="file" name="buktipbb" class="form-control" accept="image/*,.pdf" >
-                                <small class="text-muted">.pdf | Max 15MB</small>
-                            </div>
-
-                            <div class="document-upload mt-3">
-                                <label class="form-label">
-                                    <i class="fas fa-map me-2" style="color: navy;"></i> (NIB) Nomor Induk Berusaha
-                                </label>
-                                <input type="file" name="siteplan" class="form-control" accept="image/*,.pdf">
-                                <small class="text-muted">.pdf | Max 15MB</small>
-                            </div>
-
-                            <div class="document-upload mt-3">
-                                <label class="form-label">
-                                    <i class="fas fa-signature me-2" style="color: navy;"></i> Dokumen Kajian Tata Ruang
-                                </label>
-                                <input type="file" name="tandatangan" class="form-control" accept="image/*,.pdf">
-                                <small class="text-muted">.pdf | Max 15MB</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
+<script>
+    function previewFileName(input) {
+        const previewContainer = input.closest('.document-upload').querySelector('.filename-preview');
+        if (input.files.length > 0) {
+            const fileName = input.files[0].name;
+            previewContainer.innerHTML = `<i class="bi bi-file-earmark-pdf-fill text-danger me-1"></i>${fileName}`;
+        } else {
+            previewContainer.innerHTML = '';
+        }
+    }
+</script>
+<!-- Submit Button -->
                 <div class="flex justify-end" style="margin-top: 20px;">
                     <button type="button" class="button-baru" onclick="openModal()">
                         <i class="fab fa-telegram-plane w-5 h-5" style="color: black;"></i>
