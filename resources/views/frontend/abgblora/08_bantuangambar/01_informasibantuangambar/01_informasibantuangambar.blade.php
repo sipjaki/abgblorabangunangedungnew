@@ -471,7 +471,7 @@
                         </div>
                     </div>
                     <div class="action-buttons">
-                        <a href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download class="btn-download inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700">
+                        <a href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download>
                             <i class="bi bi-download"></i> Unduh Formulir
                         </a>
                         <a href="">
