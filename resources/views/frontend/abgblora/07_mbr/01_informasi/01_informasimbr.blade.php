@@ -211,12 +211,14 @@
                                     <a href="#" class="text-decoration-none">
                                         <div class="card shadow-sm border-0 h-100">
 
-                                            @foreach ($data as $item)
-                                                        <img src="{{ asset($item->berkas1) }}"
-                                                            class="card-img-top img-fluid"
-                                                            alt="thumbnail"
-                                                            style="object-fit: cover; width: 75%; height: auto;">
-                                                    @endforeach
+                              @foreach ($data as $item)
+    <div class="text-center">
+        <img src="{{ asset($item->berkas1) }}"
+             class="card-img-top img-fluid"
+             alt="thumbnail"
+             style="object-fit: cover; width: 75%; height: auto;">
+    </div>
+@endforeach
 
                                         <!-- Gambar dari Poster -->
 {{-- <img src="{{ asset('assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png') }}"
