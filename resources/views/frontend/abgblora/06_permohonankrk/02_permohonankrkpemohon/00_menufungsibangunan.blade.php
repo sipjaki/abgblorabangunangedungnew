@@ -11,7 +11,7 @@
         </p>
     </div>
     <!-- Wrapper scroll horizontal -->
-<div style="overflow-x: auto; width: 100%;">
+<div style="overflow-x: auto; width: 100%; margin-top:-25px;">
     <div style="
         display: flex;
         gap: 16px;
