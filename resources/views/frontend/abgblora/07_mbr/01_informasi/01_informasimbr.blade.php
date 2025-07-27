@@ -202,9 +202,9 @@
                     <div class="container-fluid px-0">
                         <!-- Lampiran Section -->
                         <div class="mb-5">
-                            <h6 class="fw-semibold mb-4" style="font-size: 18px;">
+                            {{-- <h6 class="fw-semibold mb-4" style="font-size: 18px;">
                                 <i class="bi bi-paperclip text-primary"></i> Lampiran Informasi
-                            </h6>
+                            </h6> --}}
 
                             <div class="row g-4">
                                 <div class="col-md-12">
@@ -218,15 +218,39 @@
                                                             style="object-fit: cover; width: 100%; height: auto;">
                                                     @endforeach
 
-                                                <div class="card-body">
-                                                <h5 class="card-title text-primary fw-semibold">
-                                                    Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
-                                                </h5>
-                                                <p class="card-text text-secondary" style="text-align: justify;">
-                                                    PBG adalah dokumen yang diperlukan untuk bangunan dengan fungsi campuran, seperti pelayanan pendidikan, kesehatan, kebudayaan, laboratorium, dan umum. Syarat pengajuan meliputi dokumen tanah, data umum (KTP, NIB, KRK), serta dokumen teknis arsitektur, struktur, dan MEP. Prosesnya dimulai dari pendaftaran via SIMBG.PU, konsultasi teknis, validasi, pembayaran retribusi, hingga penerbitan dokumen PBG.
-                                                </p>
+                                        <!-- Gambar dari Poster -->
+<img src="{{ asset('assets/android/pbgslf/PBG_FUNGSI_CAMPURAN.png') }}"
+     class="card-img-top img-fluid"
+     alt="thumbnail"
+     style="object-fit: cover; width: 100%; height: auto;">
+
+<!-- Konten Informasi Poster -->
+<div class="card-body">
+    <h5 class="card-title text-primary fw-semibold">
+        Bantuan Teknis Gambar Pengajuan PBG - Rumah Sederhana Gratis
+    </h5>
+    <p class="card-text text-secondary" style="text-align: justify;">
+        Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora memberikan bantuan teknis berupa pembuatan gambar secara <strong>GRATIS</strong> untuk pengajuan <strong>PBG (Persetujuan Bangunan Gedung)</strong> rumah sederhana.
+        <br><br>
+        <strong>Syarat Pengajuan:</strong>
+        <ol>
+            <li>Fotokopi Sertifikat Tanah</li>
+            <li>Fotokopi KTP</li>
+            <li>Fotokopi Dokumen Kajian Tata Ruang</li>
+            <li>Fotokopi Keterangan Rencana Kabupaten/Kota (KRK)</li>
+        </ol>
+        <small>Syarat dan ketentuan berlaku.</small>
+        <br><br>
+        Informasi lebih lanjut dapat diperoleh melalui tautan QR Code pada poster, atau akun resmi:
+        <ul>
+            <li>Instagram: @bangunan.gedung.dpupur</li>
+            <li>Facebook: @dpupurblora</li>
+        </ul>
+        <strong>Ayo segera daftar!</strong>
+    </p>
+</div>
+
                                             </div>
-                                        </div>
                                     </a>
                                 </div>
                             </div>
