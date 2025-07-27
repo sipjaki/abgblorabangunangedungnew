@@ -259,21 +259,23 @@
                     <div class="container-fluid px-0">
                         <!-- Lampiran Section -->
                         <div class="mb-5">
-                            <h6 class="fw-semibold mb-4" style="font-size: 18px;">
+                            {{-- <h6 class="fw-semibold mb-4" style="font-size: 18px;">
                                 <i class="bi bi-paperclip text-primary"></i> Lampiran Informasi
-                            </h6>
+                            </h6> --}}
 
                             <div class="row g-4">
                                 <div class="col-md-12">
                                <div class="info-container">
-    <!-- Judul -->
+    {{-- <!-- Judul -->
     <h2 class="info-title">
         Pentingnya KRK (Keterangan Rencana Kabupaten) dalam Pengurusan PBG
-    </h2>
+    </h2> --}}
 
     <!-- Gambar -->
     <div class="card-img-container">
-        <img src="https://source.unsplash.com/900x700/?urban,planning,architecture" alt="Perencanaan Tata Ruang">
+        {{-- <img src="https://source.unsplash.com/900x700/?urban,planning,architecture" alt="Perencanaan Tata Ruang"> --}}
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Perencanaan Tata Ruang">
+
     </div>
 
     <!-- Paragraf 1 -->
