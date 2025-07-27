@@ -479,7 +479,7 @@
                                 <i class="fas fa-file-certificate me-2" style="color: navy;"></i> Sertifikat Tanah
                             </label>
                             <input type="file" name="sertifikattanah" class="form-control" accept="image/*,.pdf" >
-                            <small class="text-muted">.pdf | Max 15MB</small>
+                                <small class="text-muted">.pdf | Max 15MB</small>
                         </div>
 
                         <div class="document-upload mt-3">

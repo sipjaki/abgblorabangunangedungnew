@@ -13,30 +13,30 @@ return new class extends Migration
     {
         Schema::create('gambarbantuans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->index(); // PEMOHON
+            $table->foreignId('user_id')->nullable()->index(); // SUDAH
 
-            $table->foreignId('kecamatanblora_id', 255)->nullable()->index();
-            $table->foreignId('kelurahandesa_id', 255)->nullable()->index();
-            $table->foreignId('jenispermohonangambar_id', 255)->nullable()->index();
-            $table->foreignId('fungsibangunangambar_id', 255)->nullable()->index();
+            $table->foreignId('kecamatanblora_id', 255)->nullable()->index(); // SUDAH
+            $table->foreignId('kelurahandesa_id', 255)->nullable()->index(); // SUDAH
+            $table->foreignId('jenispermohonangambar_id', 255)->nullable()->index(); // SUDAH
+            $table->foreignId('fungsibangunangambar_id', 255)->nullable()->index(); // SUDAH
 
-            $table->string('namapemohon')->nullable();
-            $table->string('email')->nullable();
+            $table->string('namapemohon')->nullable(); // SUDAH
+            $table->string('email')->nullable(); // SUDAH
             // $table->string('tanggalpermohonan')->nullable();
-            $table->string('alamatpemohon')->nullable();
-            $table->string('nomortelepon')->nullable();
-            $table->string('nikktp')->nullable();
-            $table->string('lokasibangunan')->nullable();
-            $table->string('koordinat')->nullable();
-            $table->string('klasifikasibangunan')->nullable();
-            $table->string('luasbangunan')->nullable();
-            $table->string('tinggibangunan')->nullable();
+            $table->string('alamatpemohon')->nullable(); // SUDAH
+            $table->string('nomortelepon')->nullable(); // SUDAH
+            $table->string('nikktp')->nullable(); // SUDAH
+            $table->string('lokasibangunan')->nullable(); // SUDAH
+            $table->string('koordinat')->nullable(); // SUDAH
+            $table->string('klasifikasibangunan')->nullable(); // SUDAH
+            $table->string('luasbangunan')->nullable(); // SUDAH
+            $table->string('tinggibangunan')->nullable(); // SUDAH
             $table->string('tanggalpermohonan')->nullable();
-            $table->string('jumlahlantai')->nullable();
-            $table->string('peruntukanuntuk')->nullable();
+            $table->string('jumlahlantai')->nullable(); // SUDAH
+            $table->string('peruntukanuntuk')->nullable(); // SUDAH
 
-            $table->string('ktp')->nullable(); // KTP
-            $table->string('npwp')->nullable(); //SURAT PENGAJUAN
+            $table->string('ktp')->nullable(); // KTP /// SUDAH
+            $table->string('npwp')->nullable(); //SURAT PENGAJUAN // SUDAH
             $table->string('lampiranoss')->nullable()   ; // KRK
             $table->string('dokvalidasi')->nullable();  // SURAT SEWA LAHAN
             $table->string('sertifikattanah')->nullable(); //SERTIFIKAT TANAH
