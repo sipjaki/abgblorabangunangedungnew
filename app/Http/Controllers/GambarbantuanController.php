@@ -622,8 +622,8 @@ public function feformbantuangambar()
 {
     $datakecamatan = kecamatanblora::all();
     $datakelurahan = kelurahandesa::all();
-    $datapilihanpengajuan = jenispermohonangambar::all();
-    $fungsiBangunan = fungsibangunangambar::all();
+    $jenispermohonan = jenispermohonangambar::all();
+    $fungsibangunan = fungsibangunangambar::all();
 
     // $user = Auth::user();
     $dinas_id = Auth::id(); // ambil hanya ID akun yang login
@@ -636,8 +636,8 @@ public function feformbantuangambar()
         'title' => 'Form Pengajuan Bantuan Teknis Gambar',
         'datakecamatan' => $datakecamatan,
         'datakelurahan' => $datakelurahan,
-        'jenisPermohonan' => $datapilihanpengajuan,
-        'fungsiBangunan' => $fungsiBangunan,
+        'jenispermohonan' => $jenispermohonan,
+        'fungsibangunan' => $fungsibangunan,
         // 'user' => $user,
         'dinas_id' => $dinas_id, // dikirim ke view
         // 'statusadimindinas' => $statusadimindinas,

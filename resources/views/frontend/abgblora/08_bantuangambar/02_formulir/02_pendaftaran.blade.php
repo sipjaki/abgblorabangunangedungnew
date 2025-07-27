@@ -282,8 +282,8 @@
                         </label>
                         <select name="jenispermohonangambar_id" class="form-control" required>
                             <option value="">-- Pilih Jenis Permohonan --</option>
-                            @foreach($jenisPermohonan as $jenis)
-                                <option value="{{ $jenis->id }}">{{ $jenis->nama }}</option>
+                            @foreach($jenispermohonan as $jenis)
+                                <option value="{{ $jenis->id }}">{{ $jenis->jenis }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -296,8 +296,8 @@
                         </label>
                         <select name="fungsibangunangambar_id" class="form-control" required>
                             <option value="">-- Pilih Fungsi Bangunan --</option>
-                            @foreach($fungsiBangunan as $fungsi)
-                                <option value="{{ $fungsi->id }}">{{ $fungsi->nama }}</option>
+                            @foreach($fungsibangunan as $fungsi)
+                                <option value="{{ $fungsi->id }}">{{ $fungsi->fungsibangunan }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -409,31 +409,40 @@
                             <i class="fas fa-id-card" style="margin-right: 8px; color: navy;"></i> KTP Pemohon
                         </label>
                         <input type="file" name="ktp" class="form-control" accept="image/*,.pdf" required>
-                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                        <small class="text-muted">.Pdf | Max 15MB</small>
                     </div>
+
+<div class="document-upload mt-3">
+    <label class="form-label d-block mb-2">
+        <i class="fas fa-file-alt" style="margin-right: 8px; color: navy;"></i>
+        Surat Permohonan Bantuan Gambar
+    </label>
+
+    <div class="mb-2">
+        <span class="text-muted">Contoh Surat Permohonan:</span><br>
+        <a href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download class="button-baru mt-1 d-inline-flex align-items-center">
+            <i class="bi bi-download me-2"></i> Unduh Formulir
+        </a>
+    </div>
+
+    <input type="file" name="npwp" class="form-control" accept="image/*,.pdf">
+    <small class="text-muted">Format .pdf atau gambar | Maksimal 15MB</small>
+</div>
 
                     <div class="document-upload mt-3">
                         <label class="form-label">
-                            <i class="fas fa-file-alt" style="margin-right: 8px; color: navy;"></i> NPWP
-                        </label>
-                        <input type="file" name="npwp" class="form-control" accept="image/*,.pdf">
-                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
-                    </div>
-
-                    <div class="document-upload mt-3">
-                        <label class="form-label">
-                            <i class="fas fa-file-contract" style="margin-right: 8px; color: navy;"></i> Lampiran OSS
+                            <i class="fas fa-file-contract" style="margin-right: 8px; color: navy;"></i> Berkas KRK
                         </label>
                         <input type="file" name="lampiranoss" class="form-control" accept="image/*,.pdf">
-                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                        <small class="text-muted">.pdf | Max 15MB</small>
                     </div>
 
                     <div class="document-upload mt-3">
                         <label class="form-label">
-                            <i class="fas fa-file-signature" style="margin-right: 8px; color: navy;"></i> Dokumen Validasi
+                            <i class="fas fa-file-signature" style="margin-right: 8px; color: navy;"></i> Surat Sewa Lahan
                         </label>
                         <input type="file" name="dokvalidasi" class="form-control" accept="image/*,.pdf">
-                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                        <small class="text-muted">.pdf | Max 15MB</small>
                     </div>
                 </div>
 
@@ -443,7 +452,7 @@
                             <i class="fas fa-file-certificate" style="margin-right: 8px; color: navy;"></i> Sertifikat Tanah
                         </label>
                         <input type="file" name="sertifikattanah" class="form-control" accept="image/*,.pdf" required>
-                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                        <small class="text-muted">.pdf | Max 15MB</small>
                     </div>
 
                     <div class="document-upload mt-3">
@@ -451,27 +460,27 @@
                             <i class="fas fa-receipt" style="margin-right: 8px; color: navy;"></i> Bukti PBB
                         </label>
                         <input type="file" name="buktipbb" class="form-control" accept="image/*,.pdf" required>
-                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                        <small class="text-muted">.pdf | Max 15MB</small>
                     </div>
 
                     <div class="document-upload mt-3">
                         <label class="form-label">
-                            <i class="fas fa-map" style="margin-right: 8px; color: navy;"></i> Site Plan
+                            <i class="fas fa-map" style="margin-right: 8px; color: navy;"></i> (NIB) Nomor Induk Berusaha
                         </label>
                         <input type="file" name="siteplan" class="form-control" accept="image/*,.pdf">
-                        <small class="text-muted">Format: JPG/PNG/PDF, Max 5MB</small>
+                        <small class="text-muted">.pdf | Max 15MB</small>
                     </div>
 
                     <div class="document-upload mt-3">
                         <label class="form-label">
-                            <i class="fas fa-signature" style="margin-right: 8px; color: navy;"></i> Tanda Tangan
+                            <i class="fas fa-signature" style="margin-right: 8px; color: navy;"></i> Dokumen Kajian Tata Ruang
                         </label>
                         <input type="file" name="tandatangan" class="form-control" accept="image/*,.pdf">
-                        <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
+                        <small class="text-muted">.pdf | Max 15MB</small>
                     </div>
                 </div>
             </div>
-
+{{--
             <div class="row mt-3">
                 <div class="col-md-6">
                     <div class="document-upload">
@@ -492,9 +501,9 @@
                         <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="row mt-3">
+            {{-- <div class="row mt-3">
                 <div class="col-md-6">
                     <div class="document-upload">
                         <label class="form-label">
@@ -514,7 +523,7 @@
                         <small class="text-muted">Format: JPG/PNG/PDF, Max 2MB</small>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Submit Section -->

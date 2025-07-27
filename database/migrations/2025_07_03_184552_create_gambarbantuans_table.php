@@ -44,9 +44,9 @@ return new class extends Migration
             $table->string('ktp')->nullable(); // KTP
             $table->string('npwp')->nullable(); //SURAT PENGAJUAN
             $table->string('lampiranoss')->nullable()   ; // KRK
+            $table->string('dokvalidasi')->nullable();  // SURAT SEWA LAHAN
             $table->string('sertifikattanah')->nullable(); //SERTIFIKAT TANAH
             $table->string('buktipbb')->nullable(); // PAJAK BUMI
-            $table->string('dokvalidasi')->nullable();  // SURAT SEWA LAHAN
             $table->string('siteplan')->nullable(); // NIB
             $table->string('tandatangan')->nullable(); // DOKUMEN KAJIAN TATA RUANG
 
