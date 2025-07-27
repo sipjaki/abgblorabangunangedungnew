@@ -201,358 +201,358 @@
                 </p>
             </div>
 
-<form id="signatureForm" action="{{ route('feformbantuangambarcreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
-    @csrf
-    <input type="hidden" name="user_id" value="{{ $dinas_id }}">
+    <form id="signatureForm" action="{{ route('feformbantuangambarcreate') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
+        @csrf
+        <input type="hidden" name="user_id" value="{{ $dinas_id }}">
 
-    <div class="container-fluid px-0 navy-theme">
-        <!-- Main Form -->
-        <div class="modern-card">
-            <!-- Section 1: Informasi Pemohon -->
-            <div class="section-container">
-                <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <div class="button-baru">
-                        <strong style="color: black;">Informasi Pemohon</strong>
+        <div class="container-fluid px-0 navy-theme">
+            <!-- Main Form -->
+            <div class="modern-card">
+                <!-- Section 1: Informasi Pemohon -->
+                <div class="section-container">
+                    <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <div class="button-baru">
+                            <strong style="color: black;">Informasi Pemohon</strong>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-user me-2" style="color: navy;"></i> Nama Pemohon
+                                </label>
+                                <input type="text" name="namapemohon" class="form-control" >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-envelope me-2" style="color: navy;"></i> Email
+                                </label>
+                                <input type="email" name="email" class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-phone me-2" style="color: navy;"></i> Nomor Telepon
+                                </label>
+                                <input type="text" name="nomortelepon" class="form-control" >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-id-card me-2" style="color: navy;"></i> NIK KTP
+                                </label>
+                                <input type="text" name="nikktp" class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label class="form-label">
+                            <i class="fas fa-map-marker-alt me-2" style="color: navy;"></i> Alamat Pemohon
+                        </label>
+                        <textarea name="alamatpemohon" class="form-control" rows="2" ></textarea>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-user me-2" style="color: navy;"></i> Nama Pemohon
-                            </label>
-                            <input type="text" name="namapemohon" class="form-control" >
+                <!-- Section 2: Informasi Bangunan -->
+                <div class="section-container">
+                    <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <div class="button-baru">
+                            <strong style="color: black;">Informasi Bangunan Gedung</strong>
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-envelope me-2" style="color: navy;"></i> Email
-                            </label>
-                            <input type="email" name="email" class="form-control" >
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-drafting-compass me-2" style="color: navy;"></i> Jenis Permohonan Gambar
+                                </label>
+                                <select name="jenispermohonangambar_id" class="form-control" >
+                                    <option value="">-- Pilih Jenis Permohonan --</option>
+                                    @foreach($jenispermohonan as $jenis)
+                                        <option value="{{ $jenis->id }}">{{ $jenis->jenis }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-warehouse me-2" style="color: navy;"></i> Fungsi Bangunan
+                                </label>
+                                <select name="fungsibangunangambar_id" class="form-control" >
+                                    <option value="">-- Pilih Fungsi Bangunan --</option>
+                                    @foreach($fungsibangunan as $fungsi)
+                                        <option value="{{ $fungsi->id }}">{{ $fungsi->fungsibangunan }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-ruler-combined me-2" style="color: navy;"></i> Luas Bangunan (m²)
+                                </label>
+                                <input type="text" name="luasbangunan" class="form-control" >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-arrows-alt-v me-2" style="color: navy;"></i> Tinggi Bangunan (m)
+                                </label>
+                                <input type="text" name="tinggibangunan" class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-layer-group me-2" style="color: navy;"></i> Jumlah Lantai
+                                </label>
+                                <input type="number" name="jumlahlantai" class="form-control" >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-tag me-2" style="color: navy;"></i> Klasifikasi Bangunan
+                                </label>
+                                <select name="klasifikasibangunan" class="form-control" >
+                                    <option value="">-- Pilih Klasifikasi --</option>
+                                    <option value="Sederhana">Sederhana</option>
+                                    <option value="Tidak Sederhana">Tidak Sederhana</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label class="form-label">
+                            <i class="fas fa-info-circle me-2" style="color: navy;"></i> Peruntukan Untuk
+                        </label>
+                        <input type="text" name="peruntukanuntuk" class="form-control" >
+                    </div>
+                </div>
+
+                <!-- Section 3: Lokasi Bangunan -->
+                <div class="section-container">
+                    <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <div class="button-baru">
+                            <strong style="color: black;">Lokasi Bangunan Gedung</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-map-marked-alt me-2" style="color: navy;"></i> Alamat Lokasi Bangunan
+                        </label>
+                        <textarea name="lokasibangunan" class="form-control" rows="2" ></textarea>
+                    </div>
+
+                    <div class="row mt-3">
+                        <!-- Kecamatan -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label d-flex align-items-center">
+                                    <i class="fas fa-map-pin me-2" style="color: navy;"></i> Kecamatan
+                                </label>
+                                <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror" >
+                                    <option value="">-- Pilih Kecamatan --</option>
+                                    @foreach($datakecamatan as $kec)
+                                        <option value="{{ $kec->id }}" {{ old('kecamatanblora_id') == $kec->id ? 'selected' : '' }}>
+                                            {{ $kec->kecamatanblora }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('kecamatanblora_id')
+                                    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <!-- Kelurahan/Desa -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label d-flex align-items-center">
+                                    <i class="fas fa-map-marker-alt me-2" style="color: navy;"></i> Kelurahan/Desa
+                                </label>
+                                <select name="kelurahandesa_id" id="kelurahandesa_id" class="form-control @error('kelurahandesa_id') is-invalid @enderror" >
+                                    <option value="">-- Pilih Kelurahan/Desa --</option>
+                                </select>
+                                @error('kelurahandesa_id')
+                                    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <!-- Koordinat -->
+                        <div class="col-md-12 mt-3">
+                            <div class="form-group">
+                                <label class="form-label d-flex align-items-center">
+                                    <i class="fas fa-location-arrow me-2" style="color: navy;"></i> Koordinat (Latitude, Longitude)
+                                </label>
+                                <input type="text" name="koordinat" class="form-control" placeholder="Contoh: -6.969987, 110.606125">
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-phone me-2" style="color: navy;"></i> Nomor Telepon
-                            </label>
-                            <input type="text" name="nomortelepon" class="form-control" >
+                <!-- Section 4: Upload Dokumen -->
+                <div class="section-container">
+                    <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <div class="button-baru">
+                            <strong style="color: black;">Upload Dokumen Persyaratan Bantuan Teknis Gambar</strong>
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-id-card me-2" style="color: navy;"></i> NIK KTP
-                            </label>
-                            <input type="text" name="nikktp" class="form-control" >
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group mt-3">
-                    <label class="form-label">
-                        <i class="fas fa-map-marker-alt me-2" style="color: navy;"></i> Alamat Pemohon
-                    </label>
-                    <textarea name="alamatpemohon" class="form-control" rows="2" ></textarea>
-                </div>
-            </div>
-
-            <!-- Section 2: Informasi Bangunan -->
-            <div class="section-container">
-                <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <div class="button-baru">
-                        <strong style="color: black;">Informasi Bangunan Gedung</strong>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-drafting-compass me-2" style="color: navy;"></i> Jenis Permohonan Gambar
-                            </label>
-                            <select name="jenispermohonangambar_id" class="form-control" >
-                                <option value="">-- Pilih Jenis Permohonan --</option>
-                                @foreach($jenispermohonan as $jenis)
-                                    <option value="{{ $jenis->id }}">{{ $jenis->jenis }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-warehouse me-2" style="color: navy;"></i> Fungsi Bangunan
-                            </label>
-                            <select name="fungsibangunangambar_id" class="form-control" >
-                                <option value="">-- Pilih Fungsi Bangunan --</option>
-                                @foreach($fungsibangunan as $fungsi)
-                                    <option value="{{ $fungsi->id }}">{{ $fungsi->fungsibangunan }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-ruler-combined me-2" style="color: navy;"></i> Luas Bangunan (m²)
-                            </label>
-                            <input type="text" name="luasbangunan" class="form-control" >
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-arrows-alt-v me-2" style="color: navy;"></i> Tinggi Bangunan (m)
-                            </label>
-                            <input type="text" name="tinggibangunan" class="form-control" >
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-layer-group me-2" style="color: navy;"></i> Jumlah Lantai
-                            </label>
-                            <input type="number" name="jumlahlantai" class="form-control" >
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-tag me-2" style="color: navy;"></i> Klasifikasi Bangunan
-                            </label>
-                            <select name="klasifikasibangunan" class="form-control" >
-                                <option value="">-- Pilih Klasifikasi --</option>
-                                <option value="Sederhana">Sederhana</option>
-                                <option value="Tidak Sederhana">Tidak Sederhana</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group mt-3">
-                    <label class="form-label">
-                        <i class="fas fa-info-circle me-2" style="color: navy;"></i> Peruntukan Untuk
-                    </label>
-                    <input type="text" name="peruntukanuntuk" class="form-control" >
-                </div>
-            </div>
-
-            <!-- Section 3: Lokasi Bangunan -->
-            <div class="section-container">
-                <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <div class="button-baru">
-                        <strong style="color: black;">Lokasi Bangunan Gedung</strong>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">
-                        <i class="fas fa-map-marked-alt me-2" style="color: navy;"></i> Alamat Lokasi Bangunan
-                    </label>
-                    <textarea name="lokasibangunan" class="form-control" rows="2" ></textarea>
-                </div>
-
-                <div class="row mt-3">
-                    <!-- Kecamatan -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label d-flex align-items-center">
-                                <i class="fas fa-map-pin me-2" style="color: navy;"></i> Kecamatan
-                            </label>
-                            <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror" >
-                                <option value="">-- Pilih Kecamatan --</option>
-                                @foreach($datakecamatan as $kec)
-                                    <option value="{{ $kec->id }}" {{ old('kecamatanblora_id') == $kec->id ? 'selected' : '' }}>
-                                        {{ $kec->kecamatanblora }}
-                                    </option>
-                                @endforeach
-                            </select>
-                            @error('kecamatanblora_id')
-                                <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <!-- Kelurahan/Desa -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-label d-flex align-items-center">
-                                <i class="fas fa-map-marker-alt me-2" style="color: navy;"></i> Kelurahan/Desa
-                            </label>
-                            <select name="kelurahandesa_id" id="kelurahandesa_id" class="form-control @error('kelurahandesa_id') is-invalid @enderror" >
-                                <option value="">-- Pilih Kelurahan/Desa --</option>
-                            </select>
-                            @error('kelurahandesa_id')
-                                <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <!-- Koordinat -->
-                    <div class="col-md-12 mt-3">
-                        <div class="form-group">
-                            <label class="form-label d-flex align-items-center">
-                                <i class="fas fa-location-arrow me-2" style="color: navy;"></i> Koordinat (Latitude, Longitude)
-                            </label>
-                            <input type="text" name="koordinat" class="form-control" placeholder="Contoh: -6.969987, 110.606125">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 4: Upload Dokumen -->
-            <div class="section-container">
-                <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <div class="button-baru">
-                        <strong style="color: black;">Upload Dokumen Persyaratan Bantuan Teknis Gambar</strong>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="document-upload">
-                            <label class="form-label">
-                                <i class="fas fa-id-card me-2" style="color: navy;"></i> KTP Pemohon
-                            </label>
-                            <input type="file" name="ktp" class="form-control" accept="image/*,.pdf" >
-                            <small class="text-muted">.Pdf | Max 15MB</small>
-                        </div>
-
-                        <div class="document-upload mt-3">
-                            <label class="form-label d-block mb-2">
-                                <i class="fas fa-file-alt me-2" style="color: navy;"></i>
-                                Surat Permohonan Bantuan Gambar
-                            </label>
-
-                            <div class="mb-2">
-                                <span class="text-muted">Contoh Surat Permohonan:</span><br>
-                                <a href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download class="button-baru mt-1 d-inline-flex align-items-center">
-                                    <i class="bi bi-download me-2" style="color: black;"></i><span style="color: black;">Unduh Formulir</span>
-                                </a>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="document-upload">
+                                <label class="form-label">
+                                    <i class="fas fa-id-card me-2" style="color: navy;"></i> KTP Pemohon
+                                </label>
+                                <input type="file" name="ktp" class="form-control" accept="image/*,.pdf" >
+                                <small class="text-muted">.Pdf | Max 15MB</small>
                             </div>
 
-                            <input type="file" name="npwp" class="form-control" accept="image/*,.pdf">
-                            <small class="text-muted">Format .pdf atau gambar | Maksimal 15MB</small>
-                        </div>
+                            <div class="document-upload mt-3">
+                                <label class="form-label d-block mb-2">
+                                    <i class="fas fa-file-alt me-2" style="color: navy;"></i>
+                                    Surat Permohonan Bantuan Gambar
+                                </label>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label">
-                                <i class="fas fa-file-contract me-2" style="color: navy;"></i> Berkas KRK
-                            </label>
-                            <input type="file" name="lampiranoss" class="form-control" accept="image/*,.pdf">
-                            <small class="text-muted">.pdf | Max 15MB</small>
-                        </div>
+                                <div class="mb-2">
+                                    <span class="text-muted">Contoh Surat Permohonan:</span><br>
+                                    <a href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download class="button-baru mt-1 d-inline-flex align-items-center">
+                                        <i class="bi bi-download me-2" style="color: black;"></i><span style="color: black;">Unduh Formulir</span>
+                                    </a>
+                                </div>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label">
-                                <i class="fas fa-file-signature me-2" style="color: navy;"></i> Surat Sewa Lahan
-                            </label>
-                            <input type="file" name="dokvalidasi" class="form-control" accept="image/*,.pdf">
-                            <small class="text-muted">.pdf | Max 15MB</small>
-                        </div>
-                    </div>
+                                <input type="file" name="npwp" class="form-control" accept="image/*,.pdf">
+                                <small class="text-muted">Format .pdf atau gambar | Maksimal 15MB</small>
+                            </div>
 
-                    <div class="col-md-6">
-                        <div class="document-upload">
-                            <label class="form-label">
-                                <i class="fas fa-file-certificate me-2" style="color: navy;"></i> Sertifikat Tanah
-                            </label>
-                            <input type="file" name="sertifikattanah" class="form-control" accept="image/*,.pdf" >
+                            <div class="document-upload mt-3">
+                                <label class="form-label">
+                                    <i class="fas fa-file-contract me-2" style="color: navy;"></i> Berkas KRK
+                                </label>
+                                <input type="file" name="lampiranoss" class="form-control" accept="image/*,.pdf">
                                 <small class="text-muted">.pdf | Max 15MB</small>
+                            </div>
+
+                            <div class="document-upload mt-3">
+                                <label class="form-label">
+                                    <i class="fas fa-file-signature me-2" style="color: navy;"></i> Surat Sewa Lahan
+                                </label>
+                                <input type="file" name="dokvalidasi" class="form-control" accept="image/*,.pdf">
+                                <small class="text-muted">.pdf | Max 15MB</small>
+                            </div>
                         </div>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label">
-                                <i class="fas fa-receipt me-2" style="color: navy;"></i> Bukti PBB
-                            </label>
-                            <input type="file" name="buktipbb" class="form-control" accept="image/*,.pdf" >
-                            <small class="text-muted">.pdf | Max 15MB</small>
-                        </div>
+                        <div class="col-md-6">
+                            <div class="document-upload">
+                                <label class="form-label">
+                                    <i class="fas fa-file-certificate me-2" style="color: navy;"></i> Sertifikat Tanah
+                                </label>
+                                <input type="file" name="sertifikattanah" class="form-control" accept="image/*,.pdf" >
+                                    <small class="text-muted">.pdf | Max 15MB</small>
+                            </div>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label">
-                                <i class="fas fa-map me-2" style="color: navy;"></i> (NIB) Nomor Induk Berusaha
-                            </label>
-                            <input type="file" name="siteplan" class="form-control" accept="image/*,.pdf">
-                            <small class="text-muted">.pdf | Max 15MB</small>
-                        </div>
+                            <div class="document-upload mt-3">
+                                <label class="form-label">
+                                    <i class="fas fa-receipt me-2" style="color: navy;"></i> Bukti PBB
+                                </label>
+                                <input type="file" name="buktipbb" class="form-control" accept="image/*,.pdf" >
+                                <small class="text-muted">.pdf | Max 15MB</small>
+                            </div>
 
-                        <div class="document-upload mt-3">
-                            <label class="form-label">
-                                <i class="fas fa-signature me-2" style="color: navy;"></i> Dokumen Kajian Tata Ruang
-                            </label>
-                            <input type="file" name="tandatangan" class="form-control" accept="image/*,.pdf">
-                            <small class="text-muted">.pdf | Max 15MB</small>
+                            <div class="document-upload mt-3">
+                                <label class="form-label">
+                                    <i class="fas fa-map me-2" style="color: navy;"></i> (NIB) Nomor Induk Berusaha
+                                </label>
+                                <input type="file" name="siteplan" class="form-control" accept="image/*,.pdf">
+                                <small class="text-muted">.pdf | Max 15MB</small>
+                            </div>
+
+                            <div class="document-upload mt-3">
+                                <label class="form-label">
+                                    <i class="fas fa-signature me-2" style="color: navy;"></i> Dokumen Kajian Tata Ruang
+                                </label>
+                                <input type="file" name="tandatangan" class="form-control" accept="image/*,.pdf">
+                                <small class="text-muted">.pdf | Max 15MB</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Submit Button -->
-            <div class="flex justify-end" style="margin-top: 20px;">
-                <button type="button" class="button-baru" onclick="openModal()">
-                    <i class="fab fa-telegram-plane w-5 h-5" style="color: black;"></i>
-                    <span style="color: black;">Kirim Permohonan</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Konfirmasi -->
-    <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-        <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-            <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                Apakah Anda yakin dengan permohonan Anda?
-            </p>
-
-            <!-- Checkbox -->
-            <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                <input type="checkbox" id="dataConfirm" style="margin-right: 8px;" onchange="toggleSubmitButton()">
-                <label for="dataConfirm" style="font-size: 14px; color: #6b7280; flex-grow: 1; text-align: justify;">
-                    Saya menyatakan bahwa data persyaratan yang saya kirim adalah sebenar-benarnya dan dapat dipertanggungjawabkan.
-                </label>
-            </div>
-
-            <!-- Tombol -->
-            <div style="display: flex; justify-content: center; gap: 12px;">
-                <button id="confirmSubmitBtn"
-                        onclick="submitForm()"
-                        disabled
-                        class="btn-kirim"
-                        style="background-color: #f97316; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: not-allowed;">
-                    Ya, Kirim
-                </button>
-                <button type="button"
-                        onclick="closeModal()"
-                        class="btn-cancel-hover"
-                        style="background-color: #9CA3AF; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;">
-                    Batal
-                </button>
+                <!-- Submit Button -->
+                <div class="flex justify-end" style="margin-top: 20px;">
+                    <button type="button" class="button-baru" onclick="openModal()">
+                        <i class="fab fa-telegram-plane w-5 h-5" style="color: black;"></i>
+                        <span style="color: black;">Kirim Permohonan</span>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</form>
+
+        <!-- Modal Konfirmasi -->
+        <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+            <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+                    Apakah Anda yakin dengan permohonan Anda?
+                </p>
+
+                <!-- Checkbox -->
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <input type="checkbox" id="dataConfirm" style="margin-right: 8px;" onchange="toggleSubmitButton()">
+                    <label for="dataConfirm" style="font-size: 14px; color: #6b7280; flex-grow: 1; text-align: justify;">
+                        Saya menyatakan bahwa data persyaratan yang saya kirim adalah sebenar-benarnya dan dapat dipertanggungjawabkan.
+                    </label>
+                </div>
+
+                <!-- Tombol -->
+                <div style="display: flex; justify-content: center; gap: 12px;">
+                    <button id="confirmSubmitBtn"
+                            onclick="submitForm()"
+                            disabled
+                            class="btn-kirim"
+                            style="background-color: #f97316; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: not-allowed;">
+                        Ya, Kirim
+                    </button>
+                    <button type="button"
+                            onclick="closeModal()"
+                            class="btn-cancel-hover"
+                            style="background-color: #9CA3AF; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;">
+                        Batal
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
 
 <style>
 /* Navy Blue Theme */
