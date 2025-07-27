@@ -218,6 +218,7 @@ Route::get('/pemohonkrk', [KrkController::class, 'pemohonkrk'])->middleware('aut
 
 // PERMOHONAN KRK MENARA TELEKOMUNIKASI
 Route::get('/permohonanmenara', [KrkController::class, 'permohonanmenara'])->name('permohonanmenara');
+Route::post('/permohonanmenara/create', [KrkController::class, 'permohonanmenaracreate'])->name('permohonan.permohonanmenara');
 
 // MENU 02 PERMOHONAN KRK USAHA
 Route::get('/permohonankrkusaha', [KrkController::class, 'permohonankrkusaha'])->name('permohonan.krkusaha');
