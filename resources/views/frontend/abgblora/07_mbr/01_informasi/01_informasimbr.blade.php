@@ -215,7 +215,7 @@
                                                         <img src="{{ asset($item->berkas1) }}"
                                                             class="card-img-top img-fluid"
                                                             alt="thumbnail"
-                                                            style="object-fit: cover; width: 100%; height: auto;">
+                                                            style="object-fit: cover; width: 75%; height: auto;">
                                                     @endforeach
 
                                         <!-- Gambar dari Poster -->
