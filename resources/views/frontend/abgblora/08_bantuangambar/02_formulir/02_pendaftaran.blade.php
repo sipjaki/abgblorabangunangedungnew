@@ -451,7 +451,7 @@
                             <i class="fas {{ $doc['icon'] }} me-2" style="color: navy;"></i> {{ $doc['label'] }}
                         </label>
                         <input type="file" name="{{ $doc['name'] }}" class="form-control" accept=".pdf" onchange="previewFileName(this)">
-                        <small class="text-muted">Format PDF saja | Maksimal 15MB</small>
+                        <small class="text-muted">Format PDF  | Maksimal 15MB</small>
                         <div class="mt-1" style="font-size: 13px; color: #555;">
                             <span class="filename-preview"></span>
                         </div>
