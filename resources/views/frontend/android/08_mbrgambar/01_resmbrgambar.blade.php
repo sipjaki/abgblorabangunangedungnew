@@ -159,46 +159,47 @@
   </a>
 
   @endforeach
-
-
 </div>
-<div class="w-full px-4 md:px-6 py-6">
-    <div class="bg-white border border-gray-300 rounded-xl shadow-md">
+
+<div class="w-full px-4 py-6">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
         <!-- Header -->
-        <div class="bg-[#4041DA] text-white text-lg font-semibold px-6 py-4 rounded-t-xl">
+        <div class="bg-[#4041DA] text-white text-lg font-semibold px-6 py-4">
             Tabel Data Pengkajian Teknis - MBR Bantuan Gambar
         </div>
 
-        <!-- Scrollable Table -->
-        <div class="w-full overflow-x-auto">
-            <table class="table-auto min-w-[900px] w-full text-sm text-left text-gray-800">
-                <thead class="bg-[#F3F4F6] text-gray-700 text-[14px]">
-                    <tr>
-                        <th class="px-4 py-3 border-b font-semibold">No</th>
-                        <th class="px-4 py-3 border-b font-semibold">Nama Badan Usaha</th>
-                        <th class="px-4 py-3 border-b font-semibold">Alamat</th>
-                        <th class="px-4 py-3 border-b font-semibold">Telepon</th>
-                        <th class="px-4 py-3 border-b font-semibold">Email</th>
-                        <th class="px-4 py-3 border-b font-semibold">Direktur</th>
-                    </tr>
-                </thead>
-                <tbody class="text-[13.5px]">
-                    @forelse ($datapengkajiteknis as $index => $data)
-                        <tr class="border-t hover:bg-gray-50 align-top">
-                            <td class="px-4 py-3">{{ $index + 1 }}</td>
-                            <td class="px-4 py-3">{{ $data->namabadanusaha ?? '-' }}</td>
-                            <td class="px-4 py-3">{{ $data->alamat ?? '-' }}</td>
-                            <td class="px-4 py-3">{{ $data->telepon ?? '-' }}</td>
-                            <td class="px-4 py-3">{{ $data->email ?? '-' }}</td>
-                            <td class="px-4 py-3">{{ $data->direktur ?? '-' }}</td>
-                        </tr>
-                    @empty
+        <!-- Scrollable Table Container -->
+        <div class="overflow-x-auto p-2">
+            <div class="min-w-full inline-block align-middle">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-[#F3F4F6]">
                         <tr>
-                            <td colspan="6" class="px-4 py-4 text-center text-gray-500">Data tidak tersedia.</td>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">No</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Nama Badan Usaha</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Alamat</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Telepon</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Email</th>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Direktur</th>
                         </tr>
-                    @endforelse
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        @forelse ($datapengkajiteknis as $index => $data)
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{{ $index + 1 }}</td>
+                            <td class="px-4 py-3 text-sm text-gray-900">{{ $data->namabadanusaha ?? '-' }}</td>
+                            <td class="px-4 py-3 text-sm text-gray-900">{{ $data->alamat ?? '-' }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{{ $data->telepon ?? '-' }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{{ $data->email ?? '-' }}</td>
+                            <td class="px-4 py-3 text-sm text-gray-900">{{ $data->direktur ?? '-' }}</td>
+                        </tr>
+                        @empty
+                        <tr>
+                            <td colspan="6" class="px-4 py-4 text-center text-sm text-gray-500">Data tidak tersedia.</td>
+                        </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
