@@ -1,15 +1,4 @@
 
-
-<div class="flex flex-col gap-5 w-full">
-    <div class="putih flex flex-col gap-5 p-5 rounded-[20px] w-full">
-            <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
-        <div class="w-5 h-5 flex shrink-0">
-            <img src="/assets/new/icons/story.svg" alt="icon">
-        </div>
-        <p class="text-white font-normal text-sm">
-            <span class="font-bold">Pilih Salah Satu Jenis Permohonan Anda ! </span>
-        </p>
-    </div>
 <div class="flex flex-col gap-5 w-full">
     <div class="putih flex flex-col gap-5 p-5 rounded-[20px] w-full">
         <!-- Header -->
