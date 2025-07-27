@@ -470,14 +470,18 @@
                             <p>Dinas PUPR Kabupaten Blora, Jl. Pemuda No. 45, Blora</p>
                         </div>
                     </div>
-                    <div class="action-buttons">
-                        <a class="button-baru" href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download class="btn-download inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-black font-semibold rounded hover:bg-blue-700">
-                            <i class="bi bi-download"></i> Unduh Formulir
-                        </a>
-                        <a class="button-berkas" href="">
-                            <button class="btn-register"><i class="bi bi-pencil-square"></i> Ajukan Permohonan !</button>
-                        </a>
-                    </div>
+<div class="action-buttons flex flex-col sm:flex-row gap-4">
+    <a href="/assets/abgblora/logo/Surat_Permohonan_Bantuan_Gambar.docx" download class="button-baru">
+        <i class="bi bi-download"></i> Unduh Formulir
+    </a>
+
+    <a href="#">
+        <button class="button-berkas">
+            <i class="bi bi-pencil-square"></i> Ajukan Permohonan!
+        </button>
+    </a>
+</div>
+
                 </div>
             </div>
         </div>
