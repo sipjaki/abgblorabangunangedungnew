@@ -453,7 +453,7 @@
         </a>
       </li>
       <li style="font-size: 14px;">
-        <a href="#" onclick="showLoginModal()" style="display: flex; align-items: center;">
+        <a href="/feformbantuangambar" onclick="showLoginModal()" style="display: flex; align-items: center;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px;" viewBox="0 0 16 16">
             <path d="M10.5 6.5a.5.5 0 0 0 0-1H6.707L8.354 3.854a.5.5 0 1 0-.708-.708l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L6.707 6.5H10.5z"/>
             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2z"/>
