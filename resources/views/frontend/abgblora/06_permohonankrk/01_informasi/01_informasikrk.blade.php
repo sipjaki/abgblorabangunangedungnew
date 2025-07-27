@@ -314,13 +314,13 @@
                         </div>
 
                         <!-- Contact Section -->
-                        <div class="contact-section">
+                        {{-- <div class="contact-section">
                             <h5 class="fw-semibold mb-2"><i class="bi bi-headset"></i> Layanan dan Pengaduan</h5>
                             <p class="mb-1">Untuk permohonan bantuan, pengaduan, saran, atau masukan terkait pelayanan kami:</p>
                             <a href="mailto:bid.bangunan.gedung.blora@gmail.com" class="text-white text-decoration-underline">
                                 <i class="bi bi-envelope"></i> bid.bangunan.gedung.blora@gmail.com
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
