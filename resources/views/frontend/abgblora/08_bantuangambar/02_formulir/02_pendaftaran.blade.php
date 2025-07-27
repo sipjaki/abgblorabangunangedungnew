@@ -369,31 +369,68 @@
             </div>
 
             <div class="row mt-3">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="form-label">
-                            <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Kecamatan
-                        </label>
-                        <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control" required>
-                            <option value="">-- Pilih Kecamatan --</option>
-                            @foreach($datakecamatan as $kec)
-                                <option value="{{ $kec->id }}">{{ $kec->kecamatanblora }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
+                <div class="row">
+    <!-- Kecamatan -->
+        <div class="form-group">
+            <label class="form-label d-flex align-items-center">
+                <i class="fas fa-map-pin me-2" style="color: navy;"></i> Kecamatan
+            </label>
+            <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror" required>
+                <option value="">-- Pilih Kecamatan --</option>
+                @foreach($datakecamatan as $kec)
+                    <option value="{{ $kec->id }}" {{ old('kecamatanblora_id') == $kec->id ? 'selected' : '' }}>
+                        {{ $kec->kecamatanblora }}
+                    </option>
+                @endforeach
+            </select>
+            @error('kecamatanblora_id')
+                <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="form-label">
-                            <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Kelurahan/Desa
-                        </label>
-                        <select name="kelurahandesa_id" id="kelurahandesa_id" class="form-control" required>
-                            <option value="">-- Pilih Kelurahan/Desa --</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+    <!-- Kelurahan/Desa -->
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="form-label d-flex align-items-center">
+                <i class="fas fa-map-marker-alt me-2" style="color: navy;"></i> Kelurahan/Desa
+            </label>
+            <select name="kelurahandesa_id" id="kelurahandesa_id" class="form-control @error('kelurahandesa_id') is-invalid @enderror" required>
+                <option value="">-- Pilih Kelurahan/Desa --</option>
+            </select>
+            @error('kelurahandesa_id')
+                <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('#kecamatanblora_id').on('change', function () {
+        var kecamatanID = $(this).val();
+
+        $('#kelurahandesa_id').empty().append('<option value="">Memuat data...</option>');
+
+        if (kecamatanID) {
+            $.ajax({
+                url: '{{ route("permohonan.krkhunian") }}', // Sesuaikan dengan route di web.php
+                type: 'GET',
+                data: { kecamatan_id: kecamatanID },
+                success: function (data) {
+                    $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
+                    $.each(data, function (key, value) {
+                        $('#kelurahandesa_id').append('<option value="' + value.id + '">' + value.desa + '</option>');
+                    });
+                },
+                error: function () {
+                    $('#kelurahandesa_id').empty().append('<option value="">Gagal memuat data</option>');
+                }
+            });
+        } else {
+            $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
+        }
+    });
+</script>
 
             <div class="form-group mt-3">
                 <label class="form-label">
@@ -695,26 +732,26 @@
 
 <script>
 // AJAX untuk mendapatkan kelurahan/desa berdasarkan kecamatan
-document.getElementById('kecamatanblora_id').addEventListener('change', function() {
-    const kecamatanId = this.value;
-    const kelurahanSelect = document.getElementById('kelurahandesa_id');
+// document.getElementById('kecamatanblora_id').addEventListener('change', function() {
+//     const kecamatanId = this.value;
+//     const kelurahanSelect = document.getElementById('kelurahandesa_id');
 
-    if (kecamatanId) {
-        fetch(`/api/kelurahan?kecamatan_id=${kecamatanId}`)
-            .then(response => response.json())
-            .then(data => {
-                kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan/Desa --</option>';
-                data.forEach(kelurahan => {
-                    const option = document.createElement('option');
-                    option.value = kelurahan.id;
-                    option.textContent = kelurahan.nama;
-                    kelurahanSelect.appendChild(option);
-                });
-            });
-    } else {
-        kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan/Desa --</option>';
-    }
-});
+//     if (kecamatanId) {
+//         fetch(`/api/kelurahan?kecamatan_id=${kecamatanId}`)
+//             .then(response => response.json())
+//             .then(data => {
+//                 kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan/Desa --</option>';
+//                 data.forEach(kelurahan => {
+//                     const option = document.createElement('option');
+//                     option.value = kelurahan.id;
+//                     option.textContent = kelurahan.nama;
+//                     kelurahanSelect.appendChild(option);
+//                 });
+//             });
+//     } else {
+//         kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan/Desa --</option>';
+//     }
+// });
 
 // Format input angka untuk luas dan tinggi bangunan
 document.querySelectorAll('input[name="luasbangunan"], input[name="tinggibangunan"]').forEach(input => {
