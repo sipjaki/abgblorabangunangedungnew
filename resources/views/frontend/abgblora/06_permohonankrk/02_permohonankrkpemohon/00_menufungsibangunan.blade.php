@@ -51,7 +51,7 @@
         <a href="/permohonanmenara">
             <button type="button" class="button-baru">
                 <i class="fas fa-broadcast-tower" style="margin-right:10px;"></i>
-                Fungsi Menara
+                Menara Telekomunikasi
             </button>
         </a>
 
