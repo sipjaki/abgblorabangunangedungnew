@@ -272,41 +272,93 @@
     </h2> --}}
 
     <!-- Gambar -->
-    <div class="card-img-container">
-        {{-- <img src="https://source.unsplash.com/900x700/?urban,planning,architecture" alt="Perencanaan Tata Ruang"> --}}
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Perencanaan Tata Ruang">
+<div class="card-img-container">
+  <img id="slideImage" src="" alt="Perencanaan Tata Ruang" />
+</div>
+<div class="caption" id="captionText">Perencanaan Tata Ruang</div>
 
-    </div>
+<script>
+  const images = [
+    {
+      url: "https://source.unsplash.com/900x700/?urban,planning",
+      caption: "Perencanaan Tata Ruang"
+    },
+    {
+      url: "https://source.unsplash.com/900x700/?city,architecture",
+      caption: "Arsitektur Kota"
+    },
+    {
+      url: "https://source.unsplash.com/900x700/?urban,design",
+      caption: "Desain Urban"
+    },
+    {
+      url: "https://source.unsplash.com/900x700/?cityscape,planning",
+      caption: "Rencana Kota Masa Depan"
+    }
+  ];
 
-    <!-- Paragraf 1 -->
-    <p style="text-align: justify;">
-        KRK atau Keterangan Rencana Kabupaten merupakan dokumen yang memberikan kejelasan dan kepastian mengenai rencana tata ruang suatu wilayah pada tingkat kabupaten. Dalam konteks pengurusan izin bangunan, seperti Persetujuan Bangunan Gedung (PBG), KRK memiliki peran yang sangat fundamental karena menjadi acuan utama dalam menentukan kesesuaian lokasi pembangunan dengan peraturan tata ruang yang berlaku.
-    </p>
+  let currentIndex = 0;
+  const imgElement = document.getElementById('slideImage');
+  const captionElement = document.getElementById('captionText');
 
-    <!-- Paragraf 2 -->
-    <p style="text-align: justify;">
-        Tanpa adanya KRK, proses perizinan bangunan akan terhambat karena tidak ada kejelasan apakah lokasi tersebut diperbolehkan untuk fungsi bangunan yang direncanakan. KRK membantu pemerintah daerah dalam memastikan bahwa pembangunan tidak melanggar zonasi, tidak berada di kawasan lindung, serta sesuai dengan RTRW (Rencana Tata Ruang Wilayah) yang telah disusun.
-    </p>
+  function showSlide(index) {
+    imgElement.src = images[index].url + "&" + new Date().getTime(); // cache-busting supaya gambar fresh
+    imgElement.alt = images[index].caption;
+    captionElement.textContent = images[index].caption;
+  }
 
-    <!-- Paragraf 3 -->
-    <p style="text-align: justify;">
-        Dalam proses pengajuan PBG, keberadaan KRK diperlukan sejak awal sebagai prasyarat administrasi. KRK menjadi dokumen dasar yang menentukan langkah selanjutnya, seperti perencanaan desain bangunan, penghitungan retribusi, hingga analisis dampak lingkungan. Oleh karena itu, pemohon wajib menyertakan KRK agar permohonan PBG dapat diproses secara teknis oleh dinas terkait.
-    </p>
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showSlide(currentIndex);
+  }
 
-    <!-- Paragraf 4 -->
-    <p style="text-align: justify;">
-        Selain sebagai persyaratan administratif, KRK juga berperan strategis dalam mewujudkan pembangunan yang berkelanjutan. Dokumen ini memastikan pembangunan tidak hanya legal, tapi juga berwawasan lingkungan dan terintegrasi dengan kebutuhan kawasan sekitarnya. KRK menjadi jembatan antara perencanaan pembangunan mikro (per individu) dan kebijakan pembangunan makro oleh pemerintah.
-    </p>
+  // Tampilkan gambar pertama saat halaman load
+  showSlide(currentIndex);
 
-    <!-- Paragraf 5 -->
-    <p style="text-align: justify;">
-        Pemerintah daerah berkewajiban menyediakan layanan penerbitan KRK melalui sistem digital seperti <a href="https://simbg.pu.go.id" target="_blank" class="info-link">simbg.pu.go.id</a>. Melalui sistem ini, masyarakat dapat mengakses informasi tata ruang secara transparan dan efisien. Digitalisasi KRK juga mendukung komitmen pemerintah dalam memberikan pelayanan publik yang cepat, tepat, dan akuntabel.
-    </p>
+  // Ganti gambar setiap 5 detik
+  setInterval(nextSlide, 5000);
+</script>
+<!-- Container Utama -->
+<div style="font-family: 'Poppins', sans-serif; background-color: #f9fafb; color: #333; line-height: 1.65; padding: 30px 25px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); max-width: 900px; margin: auto;">
 
-    <!-- Paragraf 6 -->
-    <p style="text-align: justify;">
-        Kesimpulannya, KRK bukan hanya sekadar dokumen pelengkap, melainkan fondasi utama dalam sistem perizinan bangunan modern. Keberadaannya memperkuat legalitas dan arah pembangunan sesuai dengan perencanaan wilayah. Setiap pemilik bangunan wajib memahami dan memenuhi persyaratan KRK untuk menjamin pembangunan yang tertib, aman, dan sesuai regulasi.
-    </p>
+  <!-- Judul -->
+  <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 25px; color: #0a2540; text-align: center;">
+    Penjelasan Tentang KRK (Keterangan Rencana Kabupaten)
+  </h2>
+
+  <!-- Paragraf 1 -->
+  <p style="text-align: justify; margin-bottom: 1.6rem; font-size: 16px;">
+    KRK atau Keterangan Rencana Kabupaten merupakan dokumen yang memberikan kejelasan dan kepastian mengenai rencana tata ruang suatu wilayah pada tingkat kabupaten. Dalam konteks pengurusan izin bangunan, seperti Persetujuan Bangunan Gedung (PBG), KRK memiliki peran yang sangat fundamental karena menjadi acuan utama dalam menentukan kesesuaian lokasi pembangunan dengan peraturan tata ruang yang berlaku.
+  </p>
+
+  <!-- Paragraf 2 -->
+  <p style="text-align: justify; margin-bottom: 1.6rem; font-size: 16px;">
+    Tanpa adanya KRK, proses perizinan bangunan akan terhambat karena tidak ada kejelasan apakah lokasi tersebut diperbolehkan untuk fungsi bangunan yang direncanakan. KRK membantu pemerintah daerah dalam memastikan bahwa pembangunan tidak melanggar zonasi, tidak berada di kawasan lindung, serta sesuai dengan RTRW (Rencana Tata Ruang Wilayah) yang telah disusun.
+  </p>
+
+  <!-- Paragraf 3 -->
+  <p style="text-align: justify; margin-bottom: 1.6rem; font-size: 16px;">
+    Dalam proses pengajuan PBG, keberadaan KRK diperlukan sejak awal sebagai prasyarat administrasi. KRK menjadi dokumen dasar yang menentukan langkah selanjutnya, seperti perencanaan desain bangunan, penghitungan retribusi, hingga analisis dampak lingkungan. Oleh karena itu, pemohon wajib menyertakan KRK agar permohonan PBG dapat diproses secara teknis oleh dinas terkait.
+  </p>
+
+  <!-- Paragraf 4 -->
+  <p style="text-align: justify; margin-bottom: 1.6rem; font-size: 16px;">
+    Selain sebagai persyaratan administratif, KRK juga berperan strategis dalam mewujudkan pembangunan yang berkelanjutan. Dokumen ini memastikan pembangunan tidak hanya legal, tapi juga berwawasan lingkungan dan terintegrasi dengan kebutuhan kawasan sekitarnya. KRK menjadi jembatan antara perencanaan pembangunan mikro (per individu) dan kebijakan pembangunan makro oleh pemerintah.
+  </p>
+
+  <!-- Paragraf 5 -->
+  <p style="text-align: justify; margin-bottom: 1.6rem; font-size: 16px;">
+    Pemerintah daerah berkewajiban menyediakan layanan penerbitan KRK melalui sistem digital seperti
+    <a href="https://simbg.pu.go.id" target="_blank" style="color: #0077cc; text-decoration: none; font-weight: 600; border-bottom: 2px solid transparent;" onmouseover="this.style.color='#004a80'; this.style.borderColor='#0077cc';" onmouseout="this.style.color='#0077cc'; this.style.borderColor='transparent';">simbg.pu.go.id</a>.
+    Melalui sistem ini, masyarakat dapat mengakses informasi tata ruang secara transparan dan efisien. Digitalisasi KRK juga mendukung komitmen pemerintah dalam memberikan pelayanan publik yang cepat, tepat, dan akuntabel.
+  </p>
+
+  <!-- Paragraf 6 -->
+  <p style="text-align: justify; margin-bottom: 1.6rem; font-size: 16px;">
+    Kesimpulannya, KRK bukan hanya sekadar dokumen pelengkap, melainkan fondasi utama dalam sistem perizinan bangunan modern. Keberadaannya memperkuat legalitas dan arah pembangunan sesuai dengan perencanaan wilayah. Setiap pemilik bangunan wajib memahami dan memenuhi persyaratan KRK untuk menjamin pembangunan yang tertib, aman, dan sesuai regulasi.
+  </p>
+</div>
+
 </div>
 
                                 </div>
