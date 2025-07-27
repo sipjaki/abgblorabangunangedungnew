@@ -649,10 +649,10 @@ public function feformbantuangambarcreate(Request $request)
 {
     $validated = $request->validate([
         'user_id' => 'nullable|string',
-        'kecamatanblora_id' => 'required|string',
-        'kelurahandesa_id' => 'required|string',
-        'jenispermohonangambar_id' => 'required|string',
-        'fungsibangunangambar_id' => 'required|string',
+        'kecamatanblora_id' => 'nullable|string',
+        'kelurahandesa_id' => 'nullable|string',
+        'jenispermohonangambar_id' => 'nullable|string',
+        'fungsibangunangambar_id' => 'nullable|string',
 
         'namapemohon' => 'required|string|max:255',
         'email' => 'nullable|email',
