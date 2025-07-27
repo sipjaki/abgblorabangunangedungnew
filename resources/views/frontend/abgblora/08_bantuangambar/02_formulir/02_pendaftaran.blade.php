@@ -371,8 +371,8 @@
                         </label>
                         <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control" required>
                             <option value="">-- Pilih Kecamatan --</option>
-                            @foreach($kecamatan as $kec)
-                                <option value="{{ $kec->id }}">{{ $kec->nama }}</option>
+                            @foreach($datakecamatan as $kec)
+                                <option value="{{ $kec->id }}">{{ $kec->kecamatanblora }}</option>
                             @endforeach
                         </select>
                     </div>
