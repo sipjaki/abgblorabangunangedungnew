@@ -212,7 +212,7 @@
                                         <div class="card shadow-sm border-0 h-100">
 
                               @foreach ($data as $item)
-    <div class="text-center">
+    <div class="text-center" style="text-align: center;">
         <img src="{{ asset($item->berkas1) }}"
              class="card-img-top img-fluid"
              alt="thumbnail"
