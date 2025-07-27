@@ -49,6 +49,41 @@
 
     </div>
 </div>
+
+<style>
+    .button-baru {
+        background-color: #000080;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .button-baru:hover {
+        background-color: white;
+        color: #000080;
+        border: 1px solid #000080;
+    }
+
+    .button-baru i {
+        font-size: 16px;
+    }
+
+    /* Scrollbar styling (opsional) */
+    div[style*="overflow-x: auto"]::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 4px;
+    }
+</style>
     <!-- CSS untuk Hover dan Style -->
     <style>
         .btn-submit {
