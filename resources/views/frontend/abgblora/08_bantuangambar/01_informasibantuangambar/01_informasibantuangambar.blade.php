@@ -288,13 +288,48 @@
                 {{-- ini informasi bantuan gambar --}}
 <div class="container-fluid px-0 navy-theme">
     <!-- Header Section -->
-    <div class="button-baru mb-5">
-        <div class="header-overlay">
-            <h1 class="program-title">PENDAFTARAN PROGRAM PELAYANAN BANTUAN TEKNIS</h1>
-            <h2 class="program-subtitle">Pembuatan Gambar untuk Pengajuan PBG Rumah Sederhana</h2>
-            <h3 class="program-year">Kabupaten Blora Tahun 2025</h3>
-        </div>
+  <!-- Tambahkan link font Poppins di dalam <head> jika belum -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+    .program-header {
+        position: relative;
+        text-align: center;
+        padding: 50px 20px;
+        background: #1a1a1a; /* contoh latar gelap agar teks putih terlihat jelas */
+    }
+
+    .header-overlay h1,
+    .header-overlay h2,
+    .header-overlay h3 {
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        margin: 10px 0;
+    }
+
+    .program-title {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .program-subtitle {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .program-year {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+</style>
+
+<div class="program-header mb-5">
+    <div class="header-overlay">
+        <h1 class="program-title">PENDAFTARAN PROGRAM PELAYANAN BANTUAN TEKNIS</h1>
+        <h2 class="program-subtitle">Pembuatan Gambar untuk Pengajuan PBG Rumah Sederhana</h2>
+        <h3 class="program-year">Kabupaten Blora Tahun 2025</h3>
     </div>
+</div>
 
     <!-- Main Content -->
     <div class="row g-4">
