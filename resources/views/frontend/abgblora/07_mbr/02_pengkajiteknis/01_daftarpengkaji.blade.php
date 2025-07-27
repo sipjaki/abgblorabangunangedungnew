@@ -251,7 +251,7 @@
                         class="button-baru"
                         style="border-radius: 20px;"
                        id="generalSearch"
-                       placeholder="Cari KIC ..."
+                       placeholder="Cari Konsultan..."
                        value="{{ request('search') }}"
                        oninput="debouncedSearch()">
                 <i class="fas fa-search"></i>
@@ -354,7 +354,7 @@
     // Instant search with debounce that points to /databangunangedung
     const performSearch = debounce(function() {
         const input = document.getElementById("generalSearch").value;
-        const url = new URL('/pendataankicbangunangedung', window.location.origin);
+        const url = new URL('/bembrpengkajiteknis', window.location.origin);
 
         // Preserve pagination if exists
         if (document.getElementById("entries").value) {
