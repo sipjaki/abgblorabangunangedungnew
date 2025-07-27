@@ -389,10 +389,13 @@ th {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-baru" type="button" onclick="openModal()">
-                                    <i class="bi bi-upload" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Upload</span>
+                                    @canany(['superadmin', 'admin'])
+
+                                    <button class="button-baru" type="button" onclick="openModal()">
+                                        <i class="bi bi-upload" style="margin-right: 5px;"></i>
+                                        <span style="font-family: 'Poppins', sans-serif;">Upload</span>
                                     </button>
+                                    @endcanany
 
                                 </div>
                                 <!-- Modal Konfirmasi -->
