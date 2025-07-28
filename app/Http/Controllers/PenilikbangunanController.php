@@ -77,7 +77,7 @@ public function datanewpeniliknew(Request $request)
         // Pesan error kustom
         'namapemohon.required' => 'Nama pemohon wajib diisi.',
         // 'nik.required' => 'NIK wajib diisi.',
-        'nik.required' => 'NIK wajib diisi.',
+        // 'nik.required' => 'NIK wajib diisi.',
         'nik.numeric' => 'NIK hanya boleh berisi angka.',
         'nik.digits' => 'NIK harus terdiri dari 16 digit.',
         'fungsibangunan.required' => 'Fungsi bangunan wajib diisi.',
@@ -100,25 +100,25 @@ public function datanewpeniliknew(Request $request)
 
     // Simpan ke database
     penilikbangunan::create([
-        'namapemohon' => $validated['namapemohon'],
-        'nik' => $validated['nik'],
-        'fungsibangunan' => $validated['fungsibangunan'],
-        'subfungsibangunan' => $validated['subfungsibangunan'],
-        'nomortelepon' => $validated['nomortelepon'],
+        'namapemohon' => $validated['namapemohon'] ?? null,
+        'nik' => $validated['nik'] ?? null,
+        'fungsibangunan' => $validated['fungsibangunan'] ?? null,
+        'subfungsibangunan' => $validated['subfungsibangunan'] ?? null,
+        'nomortelepon' => $validated['nomortelepon'] ?? null,
 
-        'namabangunan' => $validated['namabangunan'],
-        'luasbangunan' => $validated['luasbangunan'],
-        'jumlahlantai' => $validated['jumlahlantai'],
-        'gsb' => $validated['gsb'],
+        'namabangunan' => $validated['namabangunan'] ?? null,
+        'luasbangunan' => $validated['luasbangunan'] ?? null,
+        'jumlahlantai' => $validated['jumlahlantai'] ?? null,
+        'gsb' => $validated['gsb'] ?? null,
 
-        'provinsi' => $validated['provinsi'],
-        'kabupaten' => $validated['kabupaten'],
-        'kecamatanblora_id' => $validated['kecamatanblora_id'],
-        'kelurahandesa_id' => $validated['kelurahandesa_id'],
-        'alamatlengkap' => $validated['alamatlengkap'],
+        'provinsi' => $validated['provinsi'] ?? null,
+        'kabupaten' => $validated['kabupaten'] ?? null,
+        'kecamatanblora_id' => $validated['kecamatanblora_id'] ?? null,
+        'kelurahandesa_id' => $validated['kelurahandesa_id'] ?? null,
+        'alamatlengkap' => $validated['alamatlengkap'] ?? null,
         'koordinat' => $validated['koordinat'] ?? null,
 
-        'user_id' => $validated['user_id'],
+        'user_id' => $validated['user_id'] ?? null,
     ]);
 
     session()->flash('create', 'Data Penilik Bangunan berhasil disimpan!');
