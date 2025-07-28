@@ -218,7 +218,7 @@ th {
         $infoItems = [
             [
                 'icon' => 'bi-file-earmark-text-fill',
-                'title' => 'Nomor Registrasi SIM BG',
+                'title' => 'Nomor Registrasi SIMBG',
                 'value' => $data->noregissimbg ?? '-',
             ],
             [
