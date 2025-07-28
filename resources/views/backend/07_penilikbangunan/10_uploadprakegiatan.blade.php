@@ -287,7 +287,7 @@ th {
                 name="catatankegiatan"
                 class="form-control @error('catatankegiatan') is-invalid @enderror"
                 placeholder="Tuliskan catatan tambahan jika ada"
-                rows="3"
+                rows="8"
             >{{ old('catatankegiatan') }}</textarea>
             @error('catatankegiatan')
                 <div class="invalid-feedback">{{ $message }}</div>
