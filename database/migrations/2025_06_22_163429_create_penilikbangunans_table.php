@@ -25,6 +25,7 @@ return new class extends Migration
     $table->string('nik')->nullable();
     $table->string('fungsibangunan')->nullable();
     $table->string('subfungsibangunan')->nullable();
+    $table->string('nomortelepon')->nullable();
 
     // INTENSITAS BANGUNAN GEDUNG BLORA
     $table->string('provinsi')->nullable();

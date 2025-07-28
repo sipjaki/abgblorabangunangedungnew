@@ -265,6 +265,18 @@ th {
     </div>
 </div>
 
+{{-- Nomor Telepon --}}
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label" for="nomortelepon">
+            <i class="bi bi-telephone-fill me-2 text-warning"></i> Nomor Telepon
+        </label>
+        <input type="text" class="form-control @error('nomortelepon') is-invalid @enderror" id="nomortelepon" name="nomortelepon" value="{{ old('nomortelepon', $data->nomortelepon ?? '') }}">
+        @error('nomortelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    </div>
+</div>
+
+
 
     <!-- =========================== -->
     <!-- ALAMAT BANGUNAN GEDUNG -->

@@ -56,7 +56,7 @@ public function datanewpeniliknew(Request $request)
         'nik' => 'required|string|max:255',
         'fungsibangunan' => 'required|string|max:255',
         'subfungsibangunan' => 'required|string|max:255',
-
+        'nomortelepon' => 'required|string|max:255',
         // DETAIL BANGUNAN DAN SPESIFIKASI
         'namabangunan' => 'required|string|max:255',
         'luasbangunan' => 'required|string|max:255',
