@@ -53,7 +53,7 @@ public function datanewpeniliknew(Request $request)
     $validated = $request->validate([
         // DATA PEMOHON & BANGUNAN
         'namapemohon' => 'required|string|max:255',
-        'nik' => 'required|string|max:255',
+        'nik' => 'nullable|string|max:255',
         'fungsibangunan' => 'required|string|max:255',
         'subfungsibangunan' => 'required|string|max:255',
         'nomortelepon' => 'required|string|max:255',
