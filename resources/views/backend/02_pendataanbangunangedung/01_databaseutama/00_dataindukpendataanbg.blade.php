@@ -250,7 +250,7 @@ th {
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="nopengesahanusaha">
-            <i class="bi bi-file-earmark-check-fill me-2 text-success"></i> No Pengesahan Usaha
+            <i class="bi bi-file-earmark-check-fill me-2 text-success"></i> No HDNO
         </label>
         <input type="text" class="form-control @error('nopengesahanusaha') is-invalid @enderror" id="nopengesahanusaha" name="nopengesahanusaha" value="{{ old('nopengesahanusaha', $data->nopengesahanusaha ?? '') }}">
         @error('nopengesahanusaha') <div class="invalid-feedback">{{ $message }}</div> @enderror
