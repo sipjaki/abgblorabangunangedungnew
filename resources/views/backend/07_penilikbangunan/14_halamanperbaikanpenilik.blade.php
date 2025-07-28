@@ -223,7 +223,7 @@ th {
 </div>
 
 {{-- NIK --}}
-<div class="col-md-6">
+{{-- <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="nik">
             <i class="bi bi-card-list me-2 text-success"></i> NIK
@@ -238,7 +238,7 @@ th {
                placeholder="Masukkan 16 digit NIK">
         @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
-</div>
+</div> --}}
 
 {{-- Fungsi Bangunan --}}
 <div class="col-md-6">
