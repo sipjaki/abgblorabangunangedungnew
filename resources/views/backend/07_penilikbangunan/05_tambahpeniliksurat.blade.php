@@ -451,7 +451,7 @@ th {
     {{-- Pilih Fasilitator --}}
     <div class="col-md-6">
         <label class="form-label fw-semibold text-dark">
-            <i class="bi bi-person-badge-fill text-primary me-1"></i> Nama Fasilitator
+            <i class="bi bi-person-badge-fill text-primary me-1"></i> Nama Petugas TPA/TPT
         </label>
         <select name="petugaspenilik_id" class="form-select @error('petugaspenilik_id') is-invalid @enderror">
             <option value="" disabled selected>-- Pilih Fasilitator --</option>
