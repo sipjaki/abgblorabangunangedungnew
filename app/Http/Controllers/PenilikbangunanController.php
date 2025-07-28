@@ -104,6 +104,7 @@ public function datanewpeniliknew(Request $request)
         'nik' => $validated['nik'],
         'fungsibangunan' => $validated['fungsibangunan'],
         'subfungsibangunan' => $validated['subfungsibangunan'],
+        'nomortelepon' => $validated['nomortelepon'],
 
         'namabangunan' => $validated['namabangunan'],
         'luasbangunan' => $validated['luasbangunan'],

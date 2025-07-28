@@ -204,6 +204,9 @@ th {
     <i class="bi bi-person-vcard text-primary me-1"></i> Nama Pemohon
 </th>
 <th style="background-color: #ADD8E6;">
+    <i class="bi bi-person-vcard text-primary me-1"></i> Nomor Telepon
+</th>
+<th style="background-color: #ADD8E6;">
     <i class="bi bi-card-list text-primary me-1"></i> NIK
 </th>
 <th style="background-color: #ADD8E6;">
@@ -298,6 +301,7 @@ th {
                                     <td style="text-align: center;">{{ $loop->iteration }}</td>
                        <td style="text-align: left;">{{ !empty($item->user_id) ? $item->user->name : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->namapemohon) ? $item->namapemohon : '-' }}</td>
+<td style="text-align: left;">{{ !empty($item->nomortelepon) ? $item->nomortelepon : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->nik) ? $item->nik : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->fungsibangunan) ? $item->fungsibangunan : '-' }}</td>
 <td style="text-align: left;">{{ !empty($item->subfungsibangunan) ? $item->subfungsibangunan : '-' }}</td>
