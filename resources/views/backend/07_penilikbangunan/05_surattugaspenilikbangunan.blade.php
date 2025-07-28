@@ -225,8 +225,8 @@ th {
     $infoItems = [
         [
             'icon' => 'bi-person-vcard-fill', // ✅ cocok untuk NIK
-            'title' => 'Nomor Induk Kependudukan',
-            'value' => $data->nik ?? '-',
+            'title' => 'Nomor Telepon',
+            'value' => $data->nomortelepon ?? '-',
         ],
         [
             'icon' => 'bi-person-fill', // ✅ lebih pas untuk nama lengkap
