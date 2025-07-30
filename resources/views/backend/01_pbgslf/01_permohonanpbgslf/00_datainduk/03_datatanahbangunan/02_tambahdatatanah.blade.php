@@ -400,7 +400,7 @@ th {
         <i class="bi bi-file-earmark-text me-2" style="color: navy;"></i> Data Tanah
     </h5> --}}
 
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+    {{-- <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;"> --}}
     {{-- Isi Data Tanah --}}
     <div class="col-md-4 mb-3">
         <label class="form-label d-block" style="color: black; font-weight: 600;">
