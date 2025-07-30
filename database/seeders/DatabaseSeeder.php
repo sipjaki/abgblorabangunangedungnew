@@ -1083,31 +1083,31 @@ mbrgambar::create([
 
 // =============================================
 
-for ($i = 1; $i <= 45; $i++) {
-    $randomDate = now()->subDays(rand(0, 365));
-    $userId = [46, 47][array_rand([46, 47])];
-    $jenisPengajuan = rand(1, 5); // Acak dari 1
+// for ($i = 1; $i <= 45; $i++) {
+//     $randomDate = now()->subDays(rand(0, 365));
+//     $userId = [46, 47][array_rand([46, 47])];
+//     $jenisPengajuan = rand(1, 5); // Acak dari 1
 
-    pbgslfbangunan::create([
-        'user_id' => $userId,
-        'jenispengajuanpbgslfper_id' => $jenisPengajuan,
-        'tanggalpermohonan' => $randomDate,
-        'noregissimbg' => 'PBG-321702-' . $randomDate->format('dmY') . '-' . str_pad($i, 3, '0', STR_PAD_LEFT),
+//     pbgslfbangunan::create([
+//         'user_id' => $userId,
+//         'jenispengajuanpbgslfper_id' => $jenisPengajuan,
+//         'tanggalpermohonan' => $randomDate,
+//         'noregissimbg' => 'PBG-321702-' . $randomDate->format('dmY') . '-' . str_pad($i, 3, '0', STR_PAD_LEFT),
 
-        'namapemohon' => 'Bapak Pemohon' . $i,
+//         'namapemohon' => 'Bapak Pemohon' . $i,
 
-        'datapemilik_id' => $i,
-        'databangunanpbg_id' => $i,
-        'datatanahpbg_id' => $i,
-        'dataumumpbg_id' => $i,
-        'dokumenteknisarsi_id' => $i,
-        'dokumenteknisstruk_id' => $i,
-        'dokumenteknismep_id' => $i,
-        'dokumenteknisslfpbg_id' => $i,
-        'surattugaspbg_id' => $i,
-        'suratudanganpbg_id' => $i,
-    ]);
-}
+//         'datapemilik_id' => $i,
+//         'databangunanpbg_id' => $i,
+//         'datatanahpbg_id' => $i,
+//         'dataumumpbg_id' => $i,
+//         'dokumenteknisarsi_id' => $i,
+//         'dokumenteknisstruk_id' => $i,
+//         'dokumenteknismep_id' => $i,
+//         'dokumenteknisslfpbg_id' => $i,
+//         'surattugaspbg_id' => $i,
+//         'suratudanganpbg_id' => $i,
+//     ]);
+// }
 
 // =============================================
 
