@@ -460,7 +460,7 @@ th {
 
         {{-- Tombol Submit --}}
         <div class="col-12 text-end mt-3">
-            <button type="button" class="button-baru" onclick="openModal()">
+            <button type="button" class="button-hijau" onclick="openModal()">
                 <i class="bi bi-save me-1"></i> Simpan Data Pemilik
             </button>
         </div>
