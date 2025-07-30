@@ -252,7 +252,7 @@ th {
 <div style="display: flex; justify-content: flex-end;">
     <a href="/createdatapbgslf" class="text-decoration-none">
     <div
-        class="button-baru px-3 py-2 rounded shadow-sm d-flex align-items-center"
+        class="button-hijau px-3 py-2 rounded shadow-sm d-flex align-items-center"
     >
         <i class="bi bi-plus-square me-2"></i> Create
     </div>
