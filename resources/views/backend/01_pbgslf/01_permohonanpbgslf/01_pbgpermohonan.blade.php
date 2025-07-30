@@ -254,7 +254,7 @@ th {
     <div
         class="button-hijau px-3 py-2 rounded shadow-sm d-flex align-items-center"
     >
-        <i class="bi bi-plus-square me-2"></i> Create
+        <i class="bi bi-plus-square me-2"></i> Buat Baru
     </div>
 </a>
 
