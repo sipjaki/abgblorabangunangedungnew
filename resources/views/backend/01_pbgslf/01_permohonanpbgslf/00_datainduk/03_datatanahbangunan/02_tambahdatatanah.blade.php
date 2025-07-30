@@ -395,11 +395,12 @@ th {
     <input type="hidden" name="id" value="{{ $data->id }}">
 
 
-<div class="row g-3 mt-2">
-    {{-- <h5 class="mb-3 mt-3" style="color: navy; font-weight: bold; font-size: 16px;">
+    <div class="row g-3 mt-2">
+        {{-- <h5 class="mb-3 mt-3" style="color: navy; font-weight: bold; font-size: 16px;">
         <i class="bi bi-file-earmark-text me-2" style="color: navy;"></i> Data Tanah
     </h5> --}}
 
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
     {{-- Isi Data Tanah --}}
     <div class="col-md-4 mb-3">
         <label class="form-label d-block" style="color: black; font-weight: 600;">
@@ -420,6 +421,21 @@ th {
 
         @error('isiandatatanah')<div class="text-danger mt-2">{{ $message }}</div>@enderror
     </div>
+
+    <div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Berkas 1
+    </label>
+
+    <textarea name="catatanberkas1" rows="3" class="form-control @error('catatanberkas1') is-invalid @enderror" style="padding: 12px;">
+        {{ old('catatanberkas1') }}
+    </textarea>
+
+    @error('catatanberkas1')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
 
     {{-- Layout --}}
     <div class="col-md-4 mb-3">

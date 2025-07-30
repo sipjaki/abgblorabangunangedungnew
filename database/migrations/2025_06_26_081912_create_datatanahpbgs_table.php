@@ -22,6 +22,12 @@ return new class extends Migration
                    $table->string('penyelidikan')->nullable();
                    $table->string('berkas4')->nullable();
 
+                   $table->string('catatanberkas1')->nullable();
+                   $table->string('catatanberkas2')->nullable();
+                   $table->string('catatanberkas3')->nullable();
+                   $table->string('catatanberkas4')->nullable();
+
+
                    $table->string('pilihancatatan')->nullable();
 
                    $table->text('catatan')->nullable();
