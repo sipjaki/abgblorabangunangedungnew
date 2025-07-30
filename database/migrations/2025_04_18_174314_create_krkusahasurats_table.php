@@ -37,6 +37,12 @@ return new class extends Migration
             $table->integer('kdh')->nullable();                     // KDH (10, 20, 30 persen)
             $table->string('jaringanutilitas')->nullable();         // Jaringan Utilitas Kota
 
+            $table->string('cadangan1')->nullable();
+            $table->string('cadangan2')->nullable();
+            $table->string('cadangan3')->nullable();
+            $table->string('cadangan4')->nullable();
+            $table->string('cadangan5')->nullable();
+
             $table->softDeletes();
             $table->timestamps();
         });

@@ -67,6 +67,8 @@ return new class extends Migration
             $table->string('cadangankrksosbud2')->nullable();
             $table->string('cadangankrksosbud3')->nullable();
             $table->string('cadangankrksosbud4')->nullable();
+            $table->string('cadangankrksosbud5')->nullable();
+
             $table->softDeletes();
             $table->timestamps();
 

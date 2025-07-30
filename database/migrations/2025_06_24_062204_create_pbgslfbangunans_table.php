@@ -69,6 +69,7 @@ return new class extends Migration
             $table->string('cadangan2')->nullable();
             $table->string('cadangan3')->nullable();
             $table->string('cadangan4')->nullable();
+            $table->string('cadangan5')->nullable();
 
 
 

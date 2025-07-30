@@ -73,6 +73,7 @@ return new class extends Migration
             $table->string('cadangankrkusaha2')->nullable();
             $table->string('cadangankrkusaha3')->nullable();
             $table->string('cadangankrkusaha4')->nullable();
+            $table->string('cadangankrkusaha5')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

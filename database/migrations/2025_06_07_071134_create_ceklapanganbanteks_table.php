@@ -22,6 +22,11 @@ return new class extends Migration
             $table->string('foto4')->nullable();
             $table->string('foto5')->nullable();
             $table->string('foto6')->nullable();
+
+            $table->string('cadangan1')->nullable();
+            $table->string('cadangan2')->nullable();
+            $table->string('cadangan3')->nullable();
+
             $table->softDeletes();
             $table->timestamps();
         });

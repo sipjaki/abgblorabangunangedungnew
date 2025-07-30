@@ -215,7 +215,7 @@ public function bepbgslfindexslf(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 25);
+    $perPage = $request->input('perPage', 10);
 
     // Query awal: filter berdasarkan jenispengajuanbantek_id = 1
     $query = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
@@ -231,8 +231,8 @@ public function bepbgslfindexslf(Request $request)
 
               // Pencarian ke relasi user
               ->orWhereHas('user', function ($sub) use ($search) {
-                  $sub->where('name', 'like', "%{$search}%")
-                      ->orWhere('email', 'like', "%{$search}%");
+                  $sub->where('name', 'like', "%{$search}%");
+                    //   ->orWhere('email', 'like', "%{$search}%");
               })
 
               // Pencarian ke relasi jenis pengajuan

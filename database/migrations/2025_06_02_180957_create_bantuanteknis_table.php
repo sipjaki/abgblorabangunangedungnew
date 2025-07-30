@@ -80,6 +80,8 @@ return new class extends Migration
             $table->string('cadanganbantek1')->nullable();
             $table->string('cadanganbantek2')->nullable();
             $table->string('cadanganbantek3')->nullable();
+            $table->string('cadanganbantek4')->nullable();
+            $table->string('cadanganbantek5')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
