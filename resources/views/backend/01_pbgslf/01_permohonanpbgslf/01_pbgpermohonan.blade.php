@@ -218,7 +218,7 @@ th {
 </script>
 
 
-
+{{--
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
@@ -246,7 +246,7 @@ th {
                         }
 
                                 </script>
-
+ --}}
 
 
 <div style="display: flex; justify-content: flex-end;">
