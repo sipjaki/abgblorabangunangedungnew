@@ -406,14 +406,14 @@ function previewPDF(event, containerId, iframeId, messageId) {
                                 <div class="flex justify-end">
 
                          <a href="{{ url()->previous() }}">
-    <button class="button-hitam" type="button" style="cursor: pointer; margin-left:5px;">
+    <button class="button-newvalidasi" type="button" style="cursor: pointer; margin-left:5px;">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </a>
 
-                               <button class="button-baru" type="button" onclick="openModal()">
+                               <button class="button-hijau" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan Data</span>
                                     </button>
 
                                 </div>
