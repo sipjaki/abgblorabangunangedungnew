@@ -887,19 +887,19 @@ th {
         <td>1.</td>
         <td>Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung</td>
         <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas1 ?? '-' }}</td>
-        <td style="text-align: center;">{{ optional($surat->dokumenteknisslfpbg)->catatanberkas1 ?? '-' }}</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->catatanberkas1 ?? '-' }}</td>
     </tr>
     <tr>
         <td>2.</td>
         <td>Laporan Pemeriksaan Berkala Bangunan Gedung</td>
         <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas2 ?? '-' }}</td>
-        <td style="text-align: center;">{{ optional($surat->dokumenteknisslfpbg)->catatanberkas2 ?? '-' }}</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->catatanberkas2 ?? '-' }}</td>
     </tr>
     <tr>
         <td>3.</td>
         <td>Gambar Bangunan Gedung Terbangun </td>
         <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas3 ?? '-' }}</td>
-        <td style="text-align: center;>{{ optional($surat->dokumenteknisslfpbg)->catatanberkas3 ?? '-' }}</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->catatanberkas3 ?? '-' }}</td>
     </tr>
     <tr>
         <td>4.</td>
