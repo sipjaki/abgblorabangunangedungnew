@@ -430,27 +430,39 @@ th {
     <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">{{ $surat->datapemilik->email ?? '-' }}</td>
   </tr>
 </table>
-
-  <p style="margin-top: 10px;">Setelah dilakukan Verifikasi terhadap Data Bangunan, Data Tanah, Data Umum dan Ketentuan Teknis, maka data disimpulkan:</p>
-  <p><strong>{{ $surat->pilihancatatan ?? '-' }}</strong></p>
-  <p>Adapun cek list Verifikasi Permohonan {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }} terlampir.</p>
-  <p style="text-align: justify;">
-  Bagi Pemohon yang tidak lengkap segera melengkapi data. Kesekretariatan SIMBG menyediakan berbagai kanal informasi baik secara offline di Loket 9 Mall Pelayanan Publik (MPP) Kab. Blora dan secara online di platform media sosial Instagram <strong>@dpuprblora</strong> dan TikTok <strong>@bangunan.gedung.dpupr</strong> guna memberikan informasi yang jelas kepada pemohon.
+<p style="margin-top: 10px; font-family: 'Times New Roman', serif !important; font-size: 12px;">
+  Setelah dilakukan Verifikasi terhadap Data Bangunan, Data Tanah, Data Umum dan Ketentuan Teknis, maka data disimpulkan:
 </p>
-<p>
+
+<p style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
+  <strong>{{ $surat->pilihancatatan ?? '-' }}</strong>
+</p>
+
+<p style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
+  Adapun cek list Verifikasi Permohonan {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }} terlampir.
+</p>
+
+<p style="text-align: justify; font-family: 'Times New Roman', serif !important; font-size: 12px;">
+  Bagi Pemohon yang tidak lengkap segera melengkapi data. Kesekretariatan SIMBG menyediakan berbagai kanal informasi baik secara offline di Loket 9 Mall Pelayanan Publik (MPP) Kab. Blora dan secara online di platform media sosial Instagram
+  <strong>@dpuprblora</strong> dan TikTok <strong>@bangunan.gedung.dpupr</strong> guna memberikan informasi yang jelas kepada pemohon.
+</p>
+
+<p style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
   Demikian pemberitahuan ini kami sampaikan dan kami ucapkan terima kasih.
 </p>
+
 <div style="display: flex; justify-content: flex-end; margin-top: 40px;">
-  <div style="text-align: left;">
-    <p>
+  <div style="text-align: left; font-family: 'Times New Roman', serif !important; font-size: 12px;">
+    <p style="margin: 0;">
       KESEKRETARIATAN SIMBG KAB. BLORA<br />
       DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
       KABUPATEN BLORA
     </p>
-    <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px" />
-    <p>OPERATOR SIMBG</p>
+    <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px; margin-top: 10px;" />
+    <p style="margin-top: 5px;">OPERATOR SIMBG</p>
   </div>
 </div>
+
 </div>
 
 <!-- HALAMAN KEDUA -->
