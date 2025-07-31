@@ -451,7 +451,7 @@ th {
             catatanInput.value = ''; // kosongkan isi textarea
         } else {
             catatanInput.removeAttribute('readonly');
-            catatanInput.classList.remove('button-newvalidasi');
+            catatanInput.classList.remove('button-newhijau');
         }
     }
 
