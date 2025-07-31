@@ -410,7 +410,7 @@ th {
 @endphp
 
 @for ($i = 1; $i <= 9; $i++)
-    <div class="col-md-4 mb-3">
+    <div class="col-md-6 mb-3">
         <label class="form-label d-block" style="color: black; font-weight: 600;">
             <i class="bi bi-folder2-open me-1" style="color: blue;"></i> {{ $i }}. {{ $judulBerkas[$i] }}
         </label>
@@ -433,7 +433,7 @@ th {
         @enderror
     </div>
 
-    <div class="col-md-4 mb-3">
+    <div class="col-md-6 mb-3">
         <label class="form-label d-block" style="color: black; font-weight: 600;">
             <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan {{ $judulBerkas[$i] }}
         </label>
