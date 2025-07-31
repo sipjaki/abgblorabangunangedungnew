@@ -464,22 +464,70 @@ th {
     });
 </script>
 
+
+{{-- Berkas 2 --}}
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 2. Data Persetujuan Lingkungan
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 2. Data Persetujuan Lingkungan
     </label>
+
     <div class="d-flex flex-column gap-2">
         <label class="custom-radio">
-            <input type="radio" name="berkas2" value="Lengkap" {{ old('berkas2') == 'Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas2" value="Lengkap"
+                {{ old('berkas2') == 'Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas2(this.value)">
             <span class="custom-box"></span> Lengkap
         </label>
+
         <label class="custom-radio">
-            <input type="radio" name="berkas2" value="Tidak Lengkap" {{ old('berkas2') == 'Tidak Lengkap' ? 'checked' : '' }}>
+            <input type="radio" name="berkas2" value="Tidak Lengkap"
+                {{ old('berkas2') == 'Tidak Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas2(this.value)">
             <span class="custom-box"></span> Tidak Lengkap
         </label>
     </div>
-    @error('berkas2')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+
+    @error('berkas2')
+    <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
 </div>
+
+{{-- Catatan Berkas 2 --}}
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Persetujuan Lingkungan
+    </label>
+
+    <textarea name="catatanberkas2" id="catatanberkas2" rows="3"
+        class="form-control @error('catatanberkas2') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas2') }}</textarea>
+
+    @error('catatanberkas2')
+    <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handleBerkas2(value) {
+        const catatan = document.getElementById('catatanberkas2');
+        if (value === 'Lengkap') {
+            catatan.value = '';
+            catatan.setAttribute('readonly', true);
+            catatan.classList.add('button-hijau');
+        } else {
+            catatan.removeAttribute('readonly');
+            catatan.classList.remove('button-hijau');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name="berkas2"]:checked');
+        if (selected) {
+            handleBerkas2(selected.value);
+        }
+    });
+</script>
+
 
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
