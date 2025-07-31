@@ -439,7 +439,7 @@ th {
   </strong>
 </p>
 
-
+<br>
 <p style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
   Adapun cek list Verifikasi Permohonan {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }} terlampir.
 </p>
@@ -454,15 +454,15 @@ th {
 </p>
 
 <div style="display: flex; justify-content: flex-end; margin-top: 40px;">
-  <div style="text-align: left; font-family: 'Times New Roman', serif !important; font-size: 12px;">
-    <p style="margin: 0;">
-      KESEKRETARIATAN SIMBG KAB. BLORA<br />
-      DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
-      KABUPATEN BLORA
-    </p>
-    <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px; margin-top: 10px;" />
-    <p style="margin-top: 5px;">OPERATOR SIMBG</p>
-  </div>
+  <div style="text-align: left; font-family: 'Times New Roman', Times, serif !important; font-size: 12px;">
+  <p style="margin: 0;">
+    KESEKRETARIATAN SIMBG KAB. BLORA<br />
+    DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
+    KABUPATEN BLORA
+  </p>
+  <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px; margin-top: 10px;" />
+  <p style="margin-top: 5px;">OPERATOR SIMBG</p>
+</div>
 </div>
 
 </div>
