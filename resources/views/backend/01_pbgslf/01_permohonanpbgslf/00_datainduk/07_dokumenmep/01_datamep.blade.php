@@ -299,15 +299,68 @@ th {
         @php
             $infoItems = [
                 ['icon' => 'bi-file-earmark-text', 'title' => '1. Spesifikasi Teknis Mekanikal, Elektrikal, dan Plambing', 'value' => $pemilik->berkas1 ?? '-'],
+                   [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Spesifikasi Teknis Mekanikal, Elektrikal, dan Plambing',
+                    'value' => $pemilik->catatanberkas1 ?? '-',
+                ],
                 ['icon' => 'bi-calculator', 'title' => '2. Perhitungan Teknis Mekanikal, Elektrikal, dan Plambing', 'value' => $pemilik->berkas2 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Perhitungan Teknis Mekanikal, Elektrikal, dan Plambing',
+                    'value' => $pemilik->catatanberkas2 ?? '-',
+                ],
                 ['icon' => 'bi-fire', 'title' => '3. Gambar Rencana Dan Detail Sistem Proteksi Kebakaran', 'value' => $pemilik->berkas3 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Sistem Proteksi Kebakaran',
+                    'value' => $pemilik->catatanberkas3 ?? '-',
+                ],
                 ['icon' => 'bi-trash', 'title' => '4. Gambar Rencana Dan Detail Pengelolaan Persampahan', 'value' => $pemilik->berkas4 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Pengelolaan Persampahan',
+                    'value' => $pemilik->catatanberkas4 ?? '-',
+                ],
                 ['icon' => 'bi-water', 'title' => '5. Gambar Rencana Dan Detail Pengelolaan Drainase', 'value' => $pemilik->berkas5 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Pengelolaan Drainase',
+                    'value' => $pemilik->catatanberkas5 ?? '-',
+                ],
                 ['icon' => 'bi-droplet-half', 'title' => '6. Gambar Rencana Dan Detail Pengelolaan Air Limbah', 'value' => $pemilik->berkas6 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Pengelolaan Air Limbah',
+                    'value' => $pemilik->catatanberkas6 ?? '-',
+                ],
                 ['icon' => 'bi-cloud-drizzle', 'title' => '7. Gambar Rencana Dan Detail Pengelolaan Air Hujan', 'value' => $pemilik->berkas7 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Pengelolaan Air Hujan',
+                    'value' => $pemilik->catatanberkas7 ?? '-',
+                ],
                 ['icon' => 'bi-droplet', 'title' => '8. Gambar Rencana Dan Detail Pengelolaan Air Bersih', 'value' => $pemilik->berkas8 ?? '-'],
+                                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Pengelolaan Air Bersih',
+                    'value' => $pemilik->catatanberkas8 ?? '-',
+                ],
+
                 ['icon' => 'bi-lightbulb', 'title' => '9. Gambar Rencana Dan Detail Pencahayaan Umum, dan Pencahanyaan Khusus', 'value' => $pemilik->berkas9 ?? '-'],
+                                                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Pencahayaan Umum, dan Pencahanyaan Khusus',
+                    'value' => $pemilik->catatanberkas9 ?? '-',
+                ],
+
                 ['icon' => 'bi-plug', 'title' => '10. Gambar Rencana Dan Detail Sumber Listrik, dan Jaringan Listrik', 'value' => $pemilik->berkas10 ?? '-'],
+                                                                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Sumber Listrik, dan Jaringan Listrik',
+                    'value' => $pemilik->catatanberkas10 ?? '-',
+                ],
+
                 ['icon' => 'bi-check2-circle', 'title' => 'Pilihan Catatan', 'value' => $pemilik->pilihancatatan ?? '-'],
             ];
         @endphp
