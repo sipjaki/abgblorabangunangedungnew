@@ -377,26 +377,26 @@ th {
       <td style="width: 80px;"><img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" class="logo" /></td>
       <td class="header-text">
         <h3 style="font-family: 'Times New Roman', serif !important;">PEMERINTAH KABUPATEN BLORA</h3>
-        <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-        <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-        <h3>BLORA 58214 </h3>
+        <h3 style="font-family: 'Times New Roman', serif !important;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+        <p style="font-family: 'Times New Roman', serif !important;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+        <h3 style="font-family: 'Times New Roman', serif !important;">BLORA 58214 </h3>
       </td>
       {{-- <td style="width: 80px; text-align: right;"><img src="/assets/icon/pupr.png" alt="Logo PUPR" class="logo" /></td> --}}
     </tr>
   </table>
 
-  <p style="text-align: right; margin-top: 20px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('d F Y') : '-' }}</p>
+  <p style="text-align: right; margin-top: 20px;" style="font-family: 'Times New Roman', serif !important;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('d F Y') : '-' }}</p>
 
   <p>
-    <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/{{ date('Y') }}<br/>
-    <strong>Lampiran</strong> : 1 Bandel<br />
-    <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
+    <strong style="font-family: 'Times New Roman', serif !important;">Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/{{ date('Y') }}<br/>
+    <strong style="font-family: 'Times New Roman', serif !important;">Lampiran</strong> : 1 Bandel<br />
+    <strong style="font-family: 'Times New Roman', serif !important;">Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
   </p>
 
-  <p>Kepada Yth:<br />Pemohon<br />Di Tempat</p>
-  <p>Dengan ini kami sampaikan hasil verifikasi Pemohon sebagai berikut :</p>
+  <p style="font-family: 'Times New Roman', serif !important;">Kepada Yth:<br />Pemohon<br />Di Tempat</p>
+  <p style="font-family: 'Times New Roman', serif !important;">Dengan ini kami sampaikan hasil verifikasi Pemohon sebagai berikut :</p>
 
-  <table class="isian">
+  <table class="isian" style="font-family: 'Times New Roman', serif !important;">
     <tr><td>No. Registrasi</td><td>{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td></tr>
 <tr><td>Nama Lengkap Pemilik</td><td>{{ $surat->datapemilik->namapemilik ?? '-' }}</td></tr>
     <tr><td>Jenis Konsultasi</td><td>{{ $surat->databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}</td></tr>
