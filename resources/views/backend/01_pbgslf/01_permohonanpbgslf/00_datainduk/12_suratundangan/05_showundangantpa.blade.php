@@ -56,16 +56,24 @@
   }
 
   .halaman {
-    width: 21cm;
-    height: 29.7cm;
-    margin: auto;
-    background: white;
-    padding: 2cm;
-    box-sizing: border-box;
-    border: 1px solid black;
-    margin-bottom: 20px;
-    font-family: 'Times New Roman', serif !important;
+  width: 21cm;
+  height: 29.7cm;
+  margin: auto;
+  background: white;
+  padding: 2cm;
+  box-sizing: border-box;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', serif !important;
+}
+
+/* Hilangkan border saat print */
+@media print {
+  .halaman {
+    border: none !important;
+    box-shadow: none !important;
   }
+}
 
   .kop {
     text-align: center;
@@ -145,11 +153,7 @@
     background-color: #f2f2f2;
   }
 
-  @media print {
-  .halaman {
-    border: 1px solid white !important; /* atau bisa pakai border: none; */
-  }
-}
+
 
 </style>
 
