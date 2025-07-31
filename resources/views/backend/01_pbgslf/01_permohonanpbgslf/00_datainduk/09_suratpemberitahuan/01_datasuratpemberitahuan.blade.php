@@ -327,7 +327,7 @@ th {
 </td>
         <td style="text-align: center;">{{ $item->pemberitahuanke ?? '-' }}</td>
                                         <td class="text-center">
-                                            <span class="badge {{ strtolower($item->pilihancatatan) === 'lengkap' ? 'bg-success' : 'bg-danger' }}">
+                                            <span class="badge {{ strtolower($item->pilihancatatan) === 'lengkap' ? 'button-hijau' : 'button-merah' }}">
                                                 {{ ucfirst($item->pilihancatatan ?? '-') }}
                                             </span>
                                         </td>
