@@ -473,7 +473,7 @@ th {
     <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Perihal</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</span>
   </p>
 <h5 style="
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
   font-weight: bold;
   text-decoration: underline;
