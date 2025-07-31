@@ -331,7 +331,7 @@ th {
 </head>
 
 <div style="text-align: center; margin: 20px;">
-  <button class="button-baru" onclick="downloadPDF()" style="background-color: #e3342f; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
+  <button class="button-berkas" onclick="downloadPDF()">
     📄 Download Surat Undangan (PDF)
   </button>
 </div>
