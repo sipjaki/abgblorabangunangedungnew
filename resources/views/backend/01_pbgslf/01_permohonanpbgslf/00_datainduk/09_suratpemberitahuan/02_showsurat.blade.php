@@ -390,7 +390,7 @@ th {
 </p>
 <p style="font-size: 12px; margin: 0; padding: 0;">
   <strong style="font-family: 'Times New Roman', serif !important;">Nomor</strong> : <span style="font-family: 'Times New Roman', serif !important;"> 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/{{ date('Y') }}</span><br/>
-  <strong style="font-family: 'Times New Roman', serif !important;">Lampiran</strong> : 1 Bandel<br />
+  <strong style="font-family: 'Times New Roman', serif !important;">Lampiran</strong> : <span style="font-family: 'Times New Roman', serif !important;"> 1 Bandel</span><br />
   <strong style="font-family: 'Times New Roman', serif !important;">Perihal</strong> :
   <u style="font-family: 'Times New Roman', serif !important; text-decoration: none;">
     Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}
