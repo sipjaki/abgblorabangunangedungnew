@@ -454,30 +454,31 @@ th {
     });
 </script>
 
+{{-- Layout --}}
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-layout-text-window me-1" style="color: blue;"></i> Layout Bangunan
+    </label>
 
-        {{-- Layout --}}
-        <div class="col-md-4 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
-                <i class="bi bi-layout-text-window me-1" style="color: blue;"></i> Layout Bangunan
-            </label>
+    <div class="d-flex flex-column gap-2">
+        <label class="custom-radio">
+            <input type="radio" name="layout" value="Lengkap"
+                {{ old('layout', $data->layout) == 'Lengkap' ? 'checked' : '' }}
+                onclick="handleLayoutChange(this.value)">
+            <span class="custom-box"></span> Lengkap
+        </label>
 
-            <div class="d-flex flex-column gap-2">
-                <label class="custom-radio">
-                    <input type="radio" name="layout" value="Lengkap"
-                        {{ old('layout', $data->layout) == 'Lengkap' ? 'checked' : '' }}>
-                    <span class="custom-box"></span> Lengkap
-                </label>
+        <label class="custom-radio">
+            <input type="radio" name="layout" value="Tidak Lengkap"
+                {{ old('layout', $data->layout) == 'Tidak Lengkap' ? 'checked' : '' }}
+                onclick="handleLayoutChange(this.value)">
+            <span class="custom-box"></span> Tidak Lengkap
+        </label>
+    </div>
+    @error('layout')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+</div>
 
-                <label class="custom-radio">
-                    <input type="radio" name="layout" value="Tidak Lengkap"
-                        {{ old('layout', $data->layout) == 'Tidak Lengkap' ? 'checked' : '' }}>
-                    <span class="custom-box"></span> Tidak Lengkap
-                </label>
-            </div>
-            @error('layout')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-        </div>
-
-
+{{-- Catatan Layout --}}
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Layout
@@ -492,9 +493,8 @@ th {
     @enderror
 </div>
 
-
 <script>
-    function handleIsianTanah(value) {
+    function handleLayoutChange(value) {
         const catatan = document.getElementById('catatanberkas2');
 
         if (value === 'Lengkap') {
@@ -502,11 +502,11 @@ th {
         }
     }
 
-    // Trigger saat halaman dimuat (jika sudah memilih "Lengkap" sebelumnya)
+    // Trigger saat halaman dimuat
     document.addEventListener('DOMContentLoaded', () => {
         const selected = document.querySelector('input[name="layout"]:checked');
         if (selected && selected.value === 'Lengkap') {
-            handleIsianTanah('Lengkap');
+            handleLayoutChange('Lengkap');
         }
     });
 </script>
