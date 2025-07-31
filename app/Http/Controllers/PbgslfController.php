@@ -3776,6 +3776,14 @@ public function updatedataslfnew(Request $request, $id)
         'berkas4' => 'nullable|in:Lengkap,Tidak Lengkap',
         'berkas5' => 'nullable|in:Lengkap,Tidak Lengkap',
         'berkas6' => 'nullable|in:Lengkap,Tidak Lengkap',
+
+        'catatanberkas1' => 'nullable|string|max:255',
+        'catatanberkas2' => 'nullable|string|max:255',
+        'catatanberkas3' => 'nullable|string|max:255',
+        'catatanberkas4' => 'nullable|string|max:255',
+        'catatanberkas5' => 'nullable|string|max:255',
+        'catatanberkas6' => 'nullable|string|max:255',
+
         // 'berkas7' => 'nullable|in:Lengkap,Tidak Lengkap',
         // 'berkas8' => 'nullable|in:Lengkap,Tidak Lengkap',
         // 'berkas9' => 'nullable|in:Lengkap,Tidak Lengkap',
@@ -3794,6 +3802,14 @@ public function updatedataslfnew(Request $request, $id)
         'berkas4' => $validated['berkas4'] ?? null,
         'berkas5' => $validated['berkas5'] ?? null,
         'berkas6' => $validated['berkas6'] ?? null,
+
+        'catatanberkas1' => $validated['catatanberkas1'] ?? null,
+        'catatanberkas2' => $validated['catatanberkas2'] ?? null,
+        'catatanberkas3' => $validated['catatanberkas3'] ?? null,
+        'catatanberkas4' => $validated['catatanberkas4'] ?? null,
+        'catatanberkas5' => $validated['catatanberkas5'] ?? null,
+        'catatanberkas6' => $validated['catatanberkas6'] ?? null,
+
         // 'berkas7' => $validated['berkas7'] ?? null,
         // 'berkas8' => $validated['berkas8'] ?? null,
         // 'berkas9' => $validated['berkas9'] ?? null,
