@@ -531,6 +531,9 @@ th {
         <td style="text-align: center; text-transform:uppercase;">
         {{ $surat->datatanahpbg->isiandatatanah ?? '-' }}
     </td>
+        <td style="text-align: center; text-transform:uppercase;">
+        {{ $surat->datatanahpbg->catatanberkas1 ?? '-' }}
+    </td>
 </tr>
       <tr>
         <td rowspan="2">2.</td>
