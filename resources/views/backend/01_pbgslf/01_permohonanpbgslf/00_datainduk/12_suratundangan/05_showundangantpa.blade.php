@@ -401,14 +401,14 @@
     <table class="tabel-penerima" style="font-family: 'Times New Roman', serif !important; border-collapse: collapse; width: 100%; background-color: white;">
   <thead>
     <tr>
-      <td colspan="2" style="padding-bottom: 10px; font-family: 'Times New Roman', serif !important;">
+      {{-- <td colspan="2" style="padding-bottom: 10px; font-family: 'Times New Roman', serif !important;"> --}}
         Kepada Yth
-      </td>
+      {{-- </td> --}}
     </tr>
-    <tr>
+    {{-- <tr>
       <th style="width:50px; text-align: left; font-family: 'Times New Roman', serif !important; border: none;">No</th>
       <th style="text-align: left; font-family: 'Times New Roman', serif !important; border: none;">Nama</th>
-    </tr>
+    </tr> --}}
   </thead>
   <tbody>
     <tr><td style="border: none;">1</td><td style="border: none;">{{$surat->tpatpt->pengawas1->namalengkap}}</td></tr>
