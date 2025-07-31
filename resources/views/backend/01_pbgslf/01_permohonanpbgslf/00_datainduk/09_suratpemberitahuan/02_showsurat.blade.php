@@ -470,161 +470,166 @@ th {
 
 <!-- HALAMAN KEDUA -->
 <div class="halaman-pertama">
-    <p style="margin-left:300px;">
-    <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2025<br />
-    <strong>Lampiran</strong> : 1 Bandel<br />
-    <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
-  </p>
+<p style="margin-left: 300px; font-family: 'Times New Roman', serif !important; font-size: 12px;">
+  <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2025<br />
+  <strong>Lampiran</strong> : 1 Bandel<br />
+  <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
+</p>
 
-  <h5 style="margin-top : -10px; text-align: center; font-weight: bold; text-decoration: underline; margin-bottom: 10px; font-size: 12px; font-family: 'Poppins', sans-serif;">
-    CEK LIST VERIFIKASI DOKUMEN
-  </h5>
+<h5 style="margin-top: -10px; text-align: center; font-weight: bold; text-decoration: underline; margin-bottom: 10px; font-size: 12px; font-family: 'Times New Roman', serif !important;">
+  CEK LIST VERIFIKASI DOKUMEN
+</h5>
 
-  <h6><strong style="font-size: 12px; font-family: 'Poppins', sans-serif; margin-top: -20px;">A. DATA BANGUNAN</strong></h6>
-  <table class="isian" style="margin-top: -5px;">
-    <thead style="font-size: 12px; font-family: 'Poppins', sans-serif;">
-      <tr>
-        <th style="width: 40px;">NO</th>
-        <th>DATA BANGUNAN</th>
-        <th style="width: 200px; text-align:center;">VERIFIKASI</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td rowspan="5">1.</td>
-        <td colspan="2"><strong>DATA PEMILIK</strong></td>
-      </tr>
-      <tr>
-        <td>Nama Pemilik</td>
-            <td>{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td>Alamat Pemilik Bangunan</td>
-        <td>{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td>No. Telepon</td>
-        <td>{{ $surat->datapemilik->nomortelepon ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td>{{ $surat->datapemilik->email ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td colspan="3"><em>Catatan data pemilik :</em> {{ $surat->datapemilik->catatan ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td rowspan="9">2.</td>
-        <td colspan="2"><strong>DATA UMUM BANGUNAN GEDUNG</strong></td>
-      </tr>
-      <tr>
-        <td>Jenis Permohonan Konsultasi</td>
-        <td>{{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td>Fungsi Bangunan</td>
-        <td>{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td>Lokasi Bangunan</td>
-        <td>{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td>Nama Bangunan</td>
-        <td>{{ $surat->databangunanpbg->namabangunan ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td>Luas Lantai</td>
-        <td>{{ $surat->databangunanpbg->luasbangunan ?? '-' }} Meter<sup>2</sup></td>
-      </tr>
-      <tr>
-        <td>Tinggi Bangunan</td>
-        <td>{{ $surat->databangunanpbg->tinggibangunan ?? '-' }} Meter</td>
-      </tr>
-      <tr>
-        <td>Jumlah Lantai</td>
-        <td>{{ $surat->databangunanpbg->jumlahlantai ?? '-' }} Lantai </td>
-      </tr>
-      <tr>
-        <td>Perancang Dokumen Teknis</td>
-        <td style="text-align: left; text-transform:uppercase;">{{ $surat->databangunanpbg->pilihancatatan ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td colspan="3"><em>Catatan Data Bangunan :</em> {{ $surat->databangunanpbg->catatan ?? '-' }}</td>
-      </tr>
-    </tbody>
-  </table>
+<h6 style="font-family: 'Times New Roman', serif !important; font-size: 12px; margin-top: 0;">
+  <strong>A. DATA BANGUNAN</strong>
+</h6>
 
-  <h6 style="margin-top: 10px; font-size: 12px; font-family: 'Poppins', sans-serif;" ><strong>B. DATA TANAH</strong></h6>
-  <table class="isian" style="margin-top: -5px;">
-    <thead style="font-size: 12px; font-family: 'Poppins', sans-serif;">
-      <tr>
-        <th style="width: 40px;">NO</th>
-        <th style="width: 200px;">DATA TANAH</th>
-        <th style="width: 100px; text-align:center;">VERIFIKASI</th>
-        <th style="width: 200px; text-align:center;">CATATAN</th>
-      </tr>
-    </thead>
-    <tbody style="font-size: 12px; font-family: 'Poppins', sans-serif;">
-      <tr>
-        <td>1.</td>
-        <td>ISIAN DATA TANAH</td>
-        <td style="text-align: center; text-transform:uppercase;">
+<table class="isian" style="margin-top: -5px; width: 100%; border-collapse: collapse; font-family: 'Times New Roman', serif !important; font-size: 12px;">
+  <thead>
+    <tr>
+      <th style="width: 40px; border: 1px solid #000; padding: 4px;">NO</th>
+      <th style="border: 1px solid #000; padding: 4px;">DATA BANGUNAN</th>
+      <th style="width: 200px; text-align: center; border: 1px solid #000; padding: 4px;">VERIFIKASI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="5" style="border: 1px solid #000; padding: 4px; vertical-align: middle;">1.</td>
+      <td colspan="2" style="border: 1px solid #000; padding: 4px; font-weight: bold;">DATA PEMILIK</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">Nama Pemilik</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">Alamat Pemilik Bangunan</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">No. Telepon</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->datapemilik->nomortelepon ?? '-' }}</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">Email</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->datapemilik->email ?? '-' }}</td>
+    </tr>
+    <tr>
+      <td colspan="3" style="border: 1px solid #000; padding: 4px; font-style: italic;">Catatan data pemilik : {{ $surat->datapemilik->catatan ?? '-' }}</td>
+    </tr>
+
+    <tr>
+      <td rowspan="9" style="border: 1px solid #000; padding: 4px; vertical-align: middle;">2.</td>
+      <td colspan="2" style="border: 1px solid #000; padding: 4px; font-weight: bold;">DATA UMUM BANGUNAN GEDUNG</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">Jenis Permohonan Konsultasi</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">Fungsi Bangunan</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">Lokasi Bangunan</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">Nama Bangunan</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->databangunanpbg->namabangunan ?? '-' }}</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">Luas Lantai</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->databangunanpbg->luasbangunan ?? '-' }} Meter<sup>2</sup></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">Tinggi Bangunan</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->databangunanpbg->tinggibangunan ?? '-' }} Meter</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">Jumlah Lantai</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->databangunanpbg->jumlahlantai ?? '-' }} Lantai</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px; text-align: left; text-transform: uppercase;">Perancang Dokumen Teknis</td>
+      <td style="border: 1px solid #000; padding: 4px;">{{ $surat->databangunanpbg->pilihancatatan ?? '-' }}</td>
+    </tr>
+    <tr>
+      <td colspan="3" style="border: 1px solid #000; padding: 4px; font-style: italic;">Catatan Data Bangunan : {{ $surat->databangunanpbg->catatan ?? '-' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 style="margin-top: 10px; font-size: 12px; font-family: 'Times New Roman', serif !important;">
+  <strong>B. DATA TANAH</strong>
+</h6>
+
+<table class="isian" style="margin-top: -5px; width: 100%; border-collapse: collapse; font-family: 'Times New Roman', serif !important; font-size: 12px;">
+  <thead>
+    <tr>
+      <th style="width: 40px; border: 1px solid #000; padding: 4px;">NO</th>
+      <th style="width: 200px; border: 1px solid #000; padding: 4px;">DATA TANAH</th>
+      <th style="width: 100px; text-align: center; border: 1px solid #000; padding: 4px;">VERIFIKASI</th>
+      <th style="width: 200px; text-align: center; border: 1px solid #000; padding: 4px;">CATATAN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #000; padding: 4px;">1.</td>
+      <td style="border: 1px solid #000; padding: 4px;">ISIAN DATA TANAH</td>
+      <td style="border: 1px solid #000; padding: 4px; text-align: center; text-transform: uppercase;">
         {{ $surat->datatanahpbg->isiandatatanah ?? '-' }}
-    </td>
-        <td style="text-align: center;">
+      </td>
+      <td style="border: 1px solid #000; padding: 4px; text-align: center;">
         {{ $surat->datatanahpbg->catatanberkas1 ?? '-' }}
-    </td>
-</tr>
-      <tr>
-        <td rowspan="2">2.</td>
-        <td><strong>KETENTUAN TEKNIS TANAH</strong></td>
-        <td></td>
-        <td></td>
+      </td>
     </tr>
     <tr>
-        <td>
-            Gambar Batas tanah yang dikuasai termasuk gambar bangunan gedung yang sudah ada (eksisting) pada area/persil yang akan dibangun
-        </td>
-        <td style="text-align: center; text-transform:uppercase;">
-            {{ $surat->datatanahpbg->penyelidikan ?? '-' }}
-        </td>
-        <td style="text-align: center;">
-            {{ $surat->datatanahpbg->catatanberkas2 ?? '-' }}
-        </td>
+      <td rowspan="2" style="border: 1px solid #000; padding: 4px; vertical-align: middle;">2.</td>
+      <td colspan="2" style="border: 1px solid #000; padding: 4px; font-weight: bold;">KETENTUAN TEKNIS TANAH</td>
+      <td style="border: 1px solid #000; padding: 4px;"></td>
     </tr>
     <tr>
-        <tr>
-            <td rowspan="2"></td>
-            <td>Gambar dan informasi tentang hasil penyelidikan tanah untuk bangunan tidak sederhana</td>
-            <td style="text-align: center; text-transform:uppercase;">
-                {{ $surat->datatanahpbg->layout ?? '-' }}
-            </td>
-            <td style="text-align: center;">
-                {{ $surat->datatanahpbg->catatanberkas3 ?? '-' }}
-            </td>
-        </tr>
-        </tr>
-      <tr>
-
+      <td style="border: 1px solid #000; padding: 4px;">
+        Gambar Batas tanah yang dikuasai termasuk gambar bangunan gedung yang sudah ada (eksisting) pada area/persil yang akan dibangun
+      </td>
+      <td style="border: 1px solid #000; padding: 4px; text-align: center; text-transform: uppercase;">
+        {{ $surat->datatanahpbg->penyelidikan ?? '-' }}
+      </td>
+      <td style="border: 1px solid #000; padding: 4px; text-align: center;">
+        {{ $surat->datatanahpbg->catatanberkas2 ?? '-' }}
+      </td>
+    </tr>
     <tr>
-        <tr>
-            <td rowspan="2"></td>
-            <td>Berkas Dukung lainnya</td>
-            <td style="text-align: center; text-transform:uppercase;">
-                {{ $surat->datatanahpbg->berkas4 ?? '-' }}
-            </td>
-            <td style="text-align: center;">
-                {{ $surat->datatanahpbg->catatanberkas4 ?? '-' }}
-            </td>
-        </tr>
-        </tr>
-      <tr>
-        <tr>
-        <td colspan="4"><em>Catatan Data Tanah:</em> {{ $surat->datatanahpbg->catatan ?? '-' }}</td>
-      </tr>
-    </tbody>
-  </table>
+      <td rowspan="2" style="border: 1px solid #000; padding: 4px; vertical-align: middle;"></td>
+      <td style="border: 1px solid #000; padding: 4px;">
+        Gambar dan informasi tentang hasil penyelidikan tanah untuk bangunan tidak sederhana
+      </td>
+      <td style="border: 1px solid #000; padding: 4px; text-align: center; text-transform: uppercase;">
+        {{ $surat->datatanahpbg->layout ?? '-' }}
+      </td>
+      <td style="border: 1px solid #000; padding: 4px; text-align: center;">
+        {{ $surat->datatanahpbg->catatanberkas3 ?? '-' }}
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="border: 1px solid #000; padding: 4px; vertical-align: middle;"></td>
+      <td style="border: 1px solid #000; padding: 4px;">
+        Berkas Dukung lainnya
+      </td>
+      <td style="border: 1px solid #000; padding: 4px; text-align: center; text-transform: uppercase;">
+        {{ $surat->datatanahpbg->berkas4 ?? '-' }}
+      </td>
+      <td style="border: 1px solid #000; padding: 4px; text-align: center;">
+        {{ $surat->datatanahpbg->catatanberkas4 ?? '-' }}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4" style="border: 1px solid #000; padding: 4px; font-style: italic;">
+        Catatan Data Tanah: {{ $surat->datatanahpbg->catatan ?? '-' }}
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 <!-- HALAMAN KETIGA -->
