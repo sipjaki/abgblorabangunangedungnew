@@ -782,7 +782,7 @@ th {
   </tbody>
   </table>
 
-  <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif;">
+  <table class="isian" style="font-size: 12px; font-family: 'Times New Roman', serif;">
     <thead>
         <tr>
             <th style="width: 40px;">NO</th>
