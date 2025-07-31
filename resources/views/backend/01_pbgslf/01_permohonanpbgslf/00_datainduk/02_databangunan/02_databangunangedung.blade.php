@@ -303,12 +303,12 @@ th {
                 ['icon' => 'bi-geo-alt', 'title' => 'Lokasi Bangunan', 'value' => $pemilik->lokasibangunan ?? '-'],
                 ['icon' => 'bi-tags', 'title' => 'Klasifikasi Bangunan', 'value' => $pemilik->klasifikasibangunan ?? '-'],
                 ['icon' => 'bi-house-door', 'title' => 'Fungsi Bangunan PBG', 'value' => $pemilik->fungsibangunanpbg->fungsi ?? '-'],
-                ['icon' => 'bi-aspect-ratio', 'title' => 'Luas Bangunan', 'value' => $pemilik->luasbangunan ?? '-'],
+                ['icon' => 'bi-aspect-ratio', 'title' => 'Luas Bangunan', 'value' => $pemilik->luasbangunan . 'm2' ?? '-'],
 
                 ['icon' => 'bi-file-earmark-text', 'title' => 'Jenis Permohonan', 'value' => $pemilik->jenispermohonan ?? '-'],
                 ['icon' => 'bi-layers', 'title' => 'Fungsi Bangunan', 'value' => $pemilik->fungsibangunan ?? '-'],
-                ['icon' => 'bi-arrow-up-square', 'title' => 'Tinggi Bangunan', 'value' => $pemilik->tinggibangunan ?? '-'],
-                ['icon' => 'bi-building', 'title' => 'Jumlah Lantai', 'value' => $pemilik->jumlahlantai ?? '-'],
+                ['icon' => 'bi-arrow-up-square', 'title' => 'Tinggi Bangunan', 'value' => $pemilik->tinggibangunan . 'meter' ?? '-'],
+                ['icon' => 'bi-building', 'title' => 'Jumlah Lantai', 'value' => $pemilik->jumlahlantai . 'lantai' ?? '-'],
                 ['icon' => 'bi-lightning-charge', 'title' => 'Intensitas Bangunan', 'value' => $pemilik->internsitasbangunan ?? '-'],
 
                 ['icon' => 'bi-ui-checks', 'title' => 'Nomor PKKPR', 'value' => $pemilik->nomorpkkpr ?? '-'],
