@@ -397,45 +397,45 @@ th {
 
     <div class="row g-3 mt-2">
 
-<div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Isian Data Tanah
-    </label>
+        <div class="col-md-4 mb-3">
+            <label class="form-label d-block" style="color: black; font-weight: 600;">
+                <i class="bi bi-file-text me-1" style="color: blue;"></i> Isian Data Tanah
+            </label>
 
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="isiandatatanah" value="Lengkap"
-                {{ old('isiandatatanah') == 'Lengkap' ? 'checked' : '' }} onclick="handleIsianTanah(this.value)">
-            <span class="custom-box"></span> Lengkap
-        </label>
+            <div class="d-flex flex-column gap-2">
+                <label class="custom-radio">
+                    <input type="radio" name="isiandatatanah" value="Lengkap"
+                    {{ old('isiandatatanah') == 'Lengkap' ? 'checked' : '' }} onclick="handleIsianTanah(this.value)">
+                    <span class="custom-box"></span> Lengkap
+                </label>
 
-        <label class="custom-radio">
-            <input type="radio" name="isiandatatanah" value="Tidak Lengkap"
-                {{ old('isiandatatanah') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleIsianTanah(this.value)">
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-    </div>
+                <label class="custom-radio">
+                    <input type="radio" name="isiandatatanah" value="Tidak Lengkap"
+                    {{ old('isiandatatanah') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleIsianTanah(this.value)">
+                    <span class="custom-box"></span> Tidak Lengkap
+                </label>
+            </div>
 
-    @error('isiandatatanah')
-        <div class="text-danger mt-2">{{ $message }}</div>
-    @enderror
-</div>
+            @error('isiandatatanah')
+            <div class="text-danger mt-2">{{ $message }}</div>
+            @enderror
+        </div>
 
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Isian Data Tanah
-    </label>
+        <div class="col-md-6 mb-3">
+            <label class="form-label d-block" style="color: black; font-weight: 600;">
+                <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Isian Data Tanah
+            </label>
 
-    <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
-        class="form-control @error('catatanberkas1') is-invalid @enderror"
-        style="padding: 12px;">{{ old('catatanberkas1') }}</textarea>
+            <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
+            class="form-control @error('catatanberkas1') is-invalid @enderror"
+            style="padding: 12px;">{{ old('catatanberkas1') }}</textarea>
 
-    @error('catatanberkas1')
-        <div class="text-danger mt-2">{{ $message }}</div>
-    @enderror
-</div>
+            @error('catatanberkas1')
+            <div class="text-danger mt-2">{{ $message }}</div>
+            @enderror
+        </div>
 
-<script>
+        <script>
     function handleIsianTanah(value) {
         const catatanInput = document.getElementById('catatanberkas1');
 
@@ -456,11 +456,10 @@ th {
             handleIsianTanah(selectedValue);
         }
     });
-</script>
+    </script>
+</div>
 
-
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-
+<div class="row g-3 mt-2">
 
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
