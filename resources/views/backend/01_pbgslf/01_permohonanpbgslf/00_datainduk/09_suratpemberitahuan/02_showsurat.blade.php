@@ -472,6 +472,7 @@ th {
     <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Lampiran</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;">1 Bandel </span><br />
     <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Perihal</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</span>
   </p>
+
 <h5 style="
   margin-top: 10px;
   margin-bottom: 10px;
