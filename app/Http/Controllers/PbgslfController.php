@@ -3386,6 +3386,12 @@ public function updatedataumumnew(Request $request, $id)
         'berkas5' => 'nullable|in:Lengkap,Tidak Lengkap',
         'pilihancatatan' => 'nullable|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
+        'catatanberkas1' => 'nullable|string|max:255',
+        'catatanberkas2' => 'nullable|string|max:255',
+        'catatanberkas3' => 'nullable|string|max:255',
+        'catatanberkas4' => 'nullable|string|max:255',
+        'catatanberkas5' => 'nullable|string|max:255',
+
     ]);
 
     $data = dataumumpbg::findOrFail($id);
@@ -3399,6 +3405,11 @@ public function updatedataumumnew(Request $request, $id)
         'berkas5' => $validated['berkas5'] ?? null,
         'pilihancatatan' => $validated['pilihancatatan'] ?? null,
         'catatan' => $validated['catatan'] ?? null,
+        'catatanberkas1' => $validated['catatanberkas1'] ?? null,
+        'catatanberkas2' => $validated['catatanberkas2'] ?? null,
+        'catatanberkas3' => $validated['catatanberkas3'] ?? null,
+        'catatanberkas4' => $validated['catatanberkas4'] ?? null,
+        'catatanberkas5' => $validated['catatanberkas5'] ?? null,
     ]);
 
     session()->flash('update', 'Data Umum berhasil diperbarui!');
