@@ -397,7 +397,7 @@ th {
 
     <div class="row g-3 mt-2">
 
-        <div class="col-md-4 mb-3">
+        <div class="col-md-6 mb-3">
             <label class="form-label d-block" style="color: black; font-weight: 600;">
                 <i class="bi bi-file-text me-1" style="color: blue;"></i> Isian Data Tanah
             </label>
@@ -459,7 +459,7 @@ th {
     </script>
     {{-- <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;"> --}}
 
-<div class="col-md-4 mb-3">
+<div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> Layout
     </label>
@@ -520,7 +520,7 @@ th {
 </script>
 
 
-<div class="col-md-4 mb-3">
+<div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> Penyelidikan
     </label>
