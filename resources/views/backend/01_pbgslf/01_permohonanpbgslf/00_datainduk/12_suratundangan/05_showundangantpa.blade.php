@@ -323,7 +323,7 @@
       <p style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
           <strong style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Nomor</strong> : 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025<br>
           <strong style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Lampiran</strong> : -<br>
-          <strong style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Perihal</strong> : <u style="text-decoration: none;" style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Undangan Konsultasi</u>
+          <strong style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Perihal</strong> : Undangan Konsultasi
       </p>
 
       <p style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
