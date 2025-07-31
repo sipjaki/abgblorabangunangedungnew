@@ -522,6 +522,7 @@ th {
         <th style="width: 40px;">NO</th>
         <th>DATA TANAH</th>
         <th style="width: 200px; text-align:center;">VERIFIKASI</th>
+        <th style="width: 200px; text-align:center;">CATATAN</th>
       </tr>
     </thead>
     <tbody style="font-size: 12px; font-family: 'Poppins', sans-serif;">
