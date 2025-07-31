@@ -323,7 +323,7 @@
       <p style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
           <strong style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Nomor</strong> : 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025<br>
           <strong style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Lampiran</strong> : -<br>
-          <strong style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Perihal</strong> : <u style="text-decoration: none;">Undangan Konsultasi</u>
+          <strong style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Perihal</strong> : <u style="text-decoration: none;" style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Undangan Konsultasi</u>
       </p>
 
       <p style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
@@ -369,12 +369,12 @@
   <br>
      <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px; font-family: 'Times New Roman', serif !important;">
                                       <div style="text-align: left; font-size: 12px; font-family: 'Times New Roman', serif !important;">
-                                          Plt. Kepala Dinas Pekerjaan Umum <br>
-                                          Dan Penataan Ruang Kabupaten Blora<br>
+                                          Plt. KEPALA DINAS PEKERJAAN UMUM DAN  <br>
+                                          PENATAAN RUANG KABUPATEN BLORA<br>
                                           <br><br><br><br><br><br><br>
                                           <div style="display: inline-flex; flex-direction: column; gap: 0; font-family: 'Times New Roman', serif !important;">
                                               <strong style="margin-top: -25px; text-decoration: underline; line-height: 1; font-family: 'Times New Roman', serif !important;">
-                                                  NIDZAMUDIN AL HUDA, ST
+                                                  NIDZAMUDIN AL HUDDA, ST
                                               </strong>
                                               <span style="line-height: 1; margin-top: 0; font-family: 'Times New Roman', serif !important;">
                                                   NIP. 19720326 200604 1 005
