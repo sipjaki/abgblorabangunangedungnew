@@ -1,55 +1,164 @@
 <style>
- body {
+  body {
     font-family: 'Times New Roman', serif !important;
-}
-    .zebra-table {
+  }
+
+  .zebra-table {
     width: 100%;
     border-collapse: collapse;
     font-family: 'Times New Roman', serif !important;
     font-size: 14px;
     border: 1px solid #e5e7eb;
-}
+  }
 
-.zebra-table th {
+  .zebra-table th {
     background-color: #ADD8E6; /* biru muda */
     color: black;
     text-align: center;
     padding: 8px 12px;
     border: 1px solid #e5e7eb;
     white-space: nowrap;
-}
+  }
 
-.zebra-table td {
+  .zebra-table td {
     text-align: center;
     padding: 8px 12px;
     border: 1px solid #e5e7eb;
     white-space: nowrap;
-}
+  }
 
-.zebra-table tbody tr:nth-child(odd) {
+  .zebra-table tbody tr:nth-child(odd) {
     background-color: #ffffff;
-}
+  }
 
-.zebra-table tbody tr:nth-child(even) {
+  .zebra-table tbody tr:nth-child(even) {
     background-color: #f1f1f1;
-}
+  }
 
-.zebra-table tbody tr:hover {
+  .zebra-table tbody tr:hover {
     background-color: #ffd100 !important;
-}
+  }
 
-th {
+  th {
     background-color: #ADD8E6;
-}
+  }
 
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Times New Roman', serif !important;
+    margin: 0;
+    background: #f2f2f2;
+    font-size: 12px;
+  }
+
+  .halaman {
+    width: 21cm;
+    height: 29.7cm;
+    margin: auto;
+    background: white;
+    padding: 2cm;
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .kop {
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .kop h3 {
+    margin: 2px 0;
+    font-size: 16px;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .kop p {
+    margin: 4px 0;
+    font-size: 13px;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .logo {
+    height: 80px;
+  }
+
+  .judul-surat {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .isi-surat p {
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .tabel-info {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 12px;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .tabel-info td {
+    padding: 4px;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .ttd {
+    text-align: right;
+    margin-top: 40px;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .tabel-penerima {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 12px;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .tabel-penerima th, .tabel-penerima td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .tabel-penerima th {
+    background-color: #f2f2f2;
+  }
+
+  @media print {
+    body {
+      background: white;
+      font-family: 'Times New Roman', serif !important;
+    }
+  }
 </style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
-<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary" style="font-family: 'Times New Roman', serif !important;">
  <!--begin::App Wrapper-->
- <div class="app-wrapper">
+ <div class="app-wrapper" style="font-family: 'Times New Roman', serif !important;">
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
@@ -59,7 +168,6 @@ th {
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('frontend.android.00_fiturmenu.06_alert')
 
-
    <!--begin::App Main-->
    <main class="app-main"
       style="
@@ -68,17 +176,16 @@ th {
     padding: 0;
     position: relative;
     left: 0;
+    font-family: 'Times New Roman', serif !important;
   ">
      <!--begin::App Content Header-->
-     <div class="app-content-header">
+     <div class="app-content-header" style="font-family: 'Times New Roman', serif !important;">
        <!--begin::Container-->
-       <div class="container-fluid">
+       <div class="container-fluid" style="font-family: 'Times New Roman', serif !important;">
          <!--begin::Row-->
-         <div class="row">
+         <div class="row" style="font-family: 'Times New Roman', serif !important;">
 
 @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
-
-           {{-- <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div> --}}
 
          </div>
          <!--end::Row-->
@@ -86,305 +193,158 @@ th {
        <!--end::Container-->
      </div>
 
-     <!-- Menampilkan pesan sukses -->
-<br>
-     {{-- ======================================================= --}}
-     {{-- ALERT --}}
-
-     {{-- @include('backend.00_administrator.00_baganterpisah.06_alert') --}}
-
-     {{-- ======================================================= --}}
-
-     <div class="container-fluid">
+     <div class="container-fluid" style="font-family: 'Times New Roman', serif !important;">
          <!--begin::Row-->
-         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px; font-family: 'Times New Roman', serif !important;">
              <!-- /.card -->
-             <div class="card mb-4">
-  {{-- @include('backend.00_administrator.00_baganterpisah.10_selamatdatang') --}}
+             <div class="card mb-4" style="font-family: 'Times New Roman', serif !important;">
 
 </div>
 <!-- /.card-header -->
-<div class="card-header">
+<div class="card-header" style="font-family: 'Times New Roman', serif !important;">
 
     @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
-                     </div>
+</div>
 
-         @canany(['dinas'])
-    <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
+@canany(['dinas'])
+    <div style="display: flex; justify-content: flex-end; margin-bottom:10px; font-family: 'Times New Roman', serif !important;">
         <button class="button-kembali"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';"
-                style="cursor: pointer; color:black;">
+                style="cursor: pointer; color:black; font-family: 'Times New Roman', serif !important;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
     </div>
-
 @endcanany
 
-         @canany(['pemohonbantek'])
-    <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
+@canany(['pemohonbantek'])
+    <div style="display: flex; justify-content: flex-end; margin-bottom:10px; font-family: 'Times New Roman', serif !important;">
         <button class="button-kembali"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
-                style="cursor: pointer; color:black;">
+                style="cursor: pointer; color:black; font-family: 'Times New Roman', serif !important;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
     </div>
-
 @endcanany
 
-         @canany(['superadmin', 'admin'])
-    <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-
+@canany(['superadmin', 'admin'])
+    <div style="display: flex; justify-content: flex-end; margin-bottom:5px; font-family: 'Times New Roman', serif !important;">
        <a href="{{ url()->previous() }}">
-    <button class="button-newvalidasi" type="button" style="cursor: pointer; color:white;">
+    <button class="button-newvalidasi" type="button" style="cursor: pointer; color:white; font-family: 'Times New Roman', serif !important;">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </a>
-
     </div>
 @endcanany
 
 <br>
 <br>
-      <hr>
-                 <!-- /.card-header -->
+<hr>
 
-                         <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row" style="margin-right: 10px; margin-left:10px;">
-                <!-- /.card -->
-                <div class="card mb-4">
-                    <div class="card-header">
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+<div class="container-fluid" style="font-family: 'Times New Roman', serif !important;">
+    <!--begin::Row-->
+    <div class="row" style="margin-right: 10px; margin-left:10px; font-family: 'Times New Roman', serif !important;">
+        <!-- /.card -->
+        <div class="card mb-4" style="font-family: 'Times New Roman', serif !important;">
+            <div class="card-header" style="font-family: 'Times New Roman', serif !important;">
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px; font-family: 'Times New Roman', serif !important;">
+                    @can('pemohon')
+                    <a href="/bekrkusahapemohon">
+                        <button
+                        style="
+                            background: linear-gradient(45deg, #6c757d, #adb5bd);
+                            color: white;
+                            padding: 10px 20px;
+                            border: none;
+                            border-radius: 10px;
+                            font-size: 16px;
+                            font-weight: bold;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                            margin-right:10px;
+                            font-family: 'Times New Roman', serif !important;
+                        "
+                        onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
+                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                            d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
+                        </svg>
+                        Kembali
+                        </button>
+                    </a>
+                    @endcan
 
+                    @can('lsppenerbit')
+                    <button
+                        onclick="history.back();"
+                        onmouseover="this.style.background = 'white'; this.style.color = 'black';"
+                        onmouseout="this.style.background = 'linear-gradient(to right, black, white)'; this.style.color = 'white';"
+                        style="background: linear-gradient(to right, black, white); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; font-family: 'Times New Roman', serif !important;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path fill-rule="evenodd"
+                                d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+                        </svg>
+                        Kembali
+                    </button>
+                    @endcan
+                </div>
+            </div>
 
-{{-- @canany(['super_admin', 'admin', 'lsppenerbit'])
-
-<form action="{{ route('peserta.downloadSemua', $data->id) }}" method="POST">
-    @csrf
-<button type="submit"
-    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-    onmouseout="this.style.background='linear-gradient(135deg, #d4af37, #4CAF50)'; this.style.color='white'; this.style.transform='scale(1)'"
-    style="
-        background: linear-gradient(135deg, #d4af37, #4CAF50);
-        color: white;
-        border: none;
-        margin-right: 10px;
-        padding: 10px 20px;
-        border-radius: 15px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s ease;
-    "
->
-    <!-- Ikon Download -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-        viewBox="0 0 16 16">
-        <path d="M.5 9.9v2.6c0 .6.5 1 1 1h13c.6 0 1-.4 1-1V9.9c0-.5-.4-1-1-1s-1 .5-1 1v1.6H2.5V9.9c0-.5-.5-1-1-1s-1 .5-1 1z"/>
-        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3.182-3.182a.5.5 0 1 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.172 7.964a.5.5 0 1 0-.708.708l3.182 3.182z"/>
-    </svg>
-    Download Berkas .zip/.rar Peserta
-</button>
-
-
-</form>
-
-@endcanany --}}
-
-
-@can('pemohon')
-
-           <a href="/bekrkusahapemohon">
-    <button
-  style="
-    background: linear-gradient(45deg, #6c757d, #adb5bd);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-right:10px;
-  "
-  onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-  onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
->
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-    viewBox="0 0 16 16">
-    <path fill-rule="evenodd"
-      d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
-  </svg>
-  Kembali
-</button>
-
-</a>
-
-
-@endcan
-
-@can('lsppenerbit')
-   <button
-    onclick="history.back();"
-    onmouseover="this.style.background = 'white'; this.style.color = 'black';"
-    onmouseout="this.style.background = 'linear-gradient(to right, black, white)'; this.style.color = 'white';"
-    style="background: linear-gradient(to right, black, white); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-        viewBox="0 0 16 16" style="margin-right: 8px;">
-        <path fill-rule="evenodd"
-            d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-    </svg>
-    Kembali
-</button>
-
-@endcan
-
-
-
-                 </div>
-
-                    </div>
-
-<style>
-    @page {
-      size: A4;
-      margin: 0;
-    }
-body {
-  font-family: 'Times New Roman', serif !important;
-  margin: 0;
-  background: #f2f2f2;
-  font-size: 12px;
-}
-    .halaman {
-      width: 21cm;
-      height: 29.7cm;
-      margin: auto;
-      background: white;
-      padding: 2cm;
-      box-sizing: border-box;
-      border: 1px solid black;
-      margin-bottom: 20px;
-    }
-    .kop {
-      text-align: center;
-      border-bottom: 2px solid black;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-    .kop h3 {
-      margin: 2px 0;
-      font-size: 16px;
-    }
-    .kop p {
-      margin: 4px 0;
-      font-size: 13px;
-    }
-    .logo {
-      height: 80px;
-    }
-    .judul-surat {
-      text-align: center;
-      font-weight: bold;
-      text-decoration: underline;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-    .isi-surat p {
-      text-align: justify;
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
-    .tabel-info {
-      width: 100%;
-      margin-top: 20px;
-      border-collapse: collapse;
-      font-size: 12px;
-    }
-    .tabel-info td {
-      padding: 4px;
-    }
-    .ttd {
-      text-align: right;
-      margin-top: 40px;
-    }
-    .tabel-penerima {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      font-size: 12px;
-    }
-    .tabel-penerima th, .tabel-penerima td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: left;
-    }
-    .tabel-penerima th {
-      background-color: #f2f2f2;
-    }
-    @media print {
-      body {
-        background: white;
-      }
-    }
-  </style>
-</head>
-
-<div style="text-align: center; margin: 20px;">
-  <button class="button-baru" onclick="downloadPDF()" style="background-color: #e3342f; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
+<div style="text-align: center; margin: 20px; font-family: 'Times New Roman', serif !important;">
+  <button class="button-baru" onclick="downloadPDF()" style="background-color: #e3342f; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer; font-family: 'Times New Roman', serif !important;">
     📄 Download Surat Undangan (PDF)
   </button>
 </div>
-  <!-- HALAMAN PERTAMA -->
-  <div class="halaman" id="halaman-pertama">
-    <div class="kop">
+
+<!-- HALAMAN PERTAMA -->
+<div class="halaman" id="halaman-pertama" style="font-family: 'Times New Roman', serif !important;">
+    <div class="kop" style="font-family: 'Times New Roman', serif !important;">
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
-      <div style="display: inline-block;">
-        <h3>PEMERINTAH KABUPATEN BLORA</h3>
-        <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-        <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-        <h3>BLORA 58214</h3>
+      <div style="display: inline-block; font-family: 'Times New Roman', serif !important;">
+        <h3 style="font-family: 'Times New Roman', serif !important;">PEMERINTAH KABUPATEN BLORA</h3>
+        <h3 style="font-family: 'Times New Roman', serif !important;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+        <p style="font-family: 'Times New Roman', serif !important;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+        <h3 style="font-family: 'Times New Roman', serif !important;">BLORA 58214</h3>
       </div>
       <div style="clear: both;"></div>
     </div>
 
-    <p style="text-align: right; margin-top: 20px; font-size:12px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}</p>
+    <p style="text-align: right; margin-top: 20px; font-size:12px; font-family: 'Times New Roman', serif !important;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}</p>
 
-    <div style="font-size: 12px;">
-      <p style="font-size: 12px;">
+    <div style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
+      <p style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
           <strong>Nomor</strong> : 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025<br>
           <strong>Lampiran</strong> : -<br>
           <strong>Perihal</strong> : <u style="text-decoration: none;">Undangan Konsultasi</u>
       </p>
 
-      <p style="font-size: 12px;">
+      <p style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
           Kepada Yth:<br>
           Tim Profesi Ahli {{$surat->tpatpt->timpenilai ?? '-'}} <br>
           Di<br>
           Tempat
       </p>
 
-      <p style="font-size: 12px;">Mengharap dengan hormat atas kehadiran Bapak/Ibu Saudara Pada : </p>
+      <p style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Mengharap dengan hormat atas kehadiran Bapak/Ibu Saudara Pada : </p>
 
-      <table style="font-size: 12px; width: 100%;">
+      <table style="font-size: 12px; width: 100%; font-family: 'Times New Roman', serif !important;">
           <tr>
-              <td style="padding: 4px 8px; vertical-align: top;">Hari / Tanggal</td>
-          <td style="padding: 4px 8px;">
+              <td style="padding: 4px 8px; vertical-align: top; font-family: 'Times New Roman', serif !important;">Hari / Tanggal</td>
+          <td style="padding: 4px 8px; font-family: 'Times New Roman', serif !important;">
     : {{ $surat->tanggalkehadiran ? \Carbon\Carbon::parse($surat->tanggalkehadiran)->translatedFormat('F d Y') : '-' }}
   </td>
           </tr>
           <tr>
-      <td style="padding: 4px 8px; vertical-align: top;">Waktu</td>
-      <td style="padding: 4px 8px;">
+      <td style="padding: 4px 8px; vertical-align: top; font-family: 'Times New Roman', serif !important;">Waktu</td>
+      <td style="padding: 4px 8px; font-family: 'Times New Roman', serif !important;">
           @if($surat->jamundangan == 'lainnya')
               : {{ $surat->catatan ?? '-' }}
           @else
@@ -393,30 +353,30 @@ body {
       </td>
   </tr>
           <tr>
-              <td style="padding: 4px 8px; vertical-align: top;">Tempat</td>
-       <td style="padding: 4px 8px;">: {{ $surat->tempatkonsultasi->tempat ?? '-' }}</td>
+              <td style="padding: 4px 8px; vertical-align: top; font-family: 'Times New Roman', serif !important;">Tempat</td>
+       <td style="padding: 4px 8px; font-family: 'Times New Roman', serif !important;">: {{ $surat->tempatkonsultasi->tempat ?? '-' }}</td>
        </tr>
           <tr>
-              <td style="padding: 4px 8px; vertical-align: top;">Acara</td>
-              <td style="padding: 4px 8px;">: Konsultasi Teknis PBG/SLF</td>
+              <td style="padding: 4px 8px; vertical-align: top; font-family: 'Times New Roman', serif !important;">Acara</td>
+              <td style="padding: 4px 8px; font-family: 'Times New Roman', serif !important;">: Konsultasi Teknis PBG/SLF</td>
           </tr>
       </table>
 
-      <p style="margin-top: 10px; font-size: 12px;">
+      <p style="margin-top: 10px; font-size: 12px; font-family: 'Times New Roman', serif !important;">
           Mengingat pentingnya acara tersebut mohon Bapak/Ibu/Saudara hadir tepat waktu. Demikian atas perhatian dan kehadirannya disampaikan terima kasih.
       </p>
   </div>
   <br>
-     <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
-                                      <div style="text-align: left; font-size: 12px;">
+     <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px; font-family: 'Times New Roman', serif !important;">
+                                      <div style="text-align: left; font-size: 12px; font-family: 'Times New Roman', serif !important;">
                                           Plt. Kepala Dinas Pekerjaan Umum <br>
                                           Dan Penataan Ruang Kabupaten Blora<br>
                                           <br><br><br><br><br><br><br>
-                                          <div style="display: inline-flex; flex-direction: column; gap: 0;">
-                                              <strong style="margin-top: -25px; text-decoration: underline; line-height: 1;">
+                                          <div style="display: inline-flex; flex-direction: column; gap: 0; font-family: 'Times New Roman', serif !important;">
+                                              <strong style="margin-top: -25px; text-decoration: underline; line-height: 1; font-family: 'Times New Roman', serif !important;">
                                                   NIDZAMUDIN AL HUDA, ST
                                               </strong>
-                                              <span style="line-height: 1; margin-top: 0;">
+                                              <span style="line-height: 1; margin-top: 0; font-family: 'Times New Roman', serif !important;">
                                                   NIP. 19720326 200604 1 005
                                               </span>
                                           </div>
@@ -425,79 +385,55 @@ body {
   </div>
 
   <!-- HALAMAN KEDUA -->
-  <div class="halaman" id="halaman-kedua">
-    {{-- <div class="kop">
-      <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
-      <div style="display: inline-block;">
-        <h3>PEMERINTAH KABUPATEN BLORA</h3>
-        <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-        <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-        <h3>BLORA 58214</h3>
-      </div>
-      <div style="clear: both;"></div>
-    </div> --}}
+  <div class="halaman" id="halaman-kedua" style="font-family: 'Times New Roman', serif !important;">
 
-    <p style="text-align: center; font-weight: bold; margin-top: 20px; font-size: 14px;">
+    <p style="text-align: center; font-weight: bold; margin-top: 20px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
       LAMPIRAN SURAT UNDANGAN<br>
       Nomor: 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025<br>
       Tanggal: {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}
     </p>
-{{--
-    <p style="font-size: 12px; margin-top: 20px;">
-      <strong>Daftar Penerima Undangan:</strong>
-    </p> --}}
 
-    <table class="tabel-penerima">
+    <table class="tabel-penerima" style="font-family: 'Times New Roman', serif !important;">
       <thead>
         <tr>
-          <th>No</th>
-          <th>Nama</th>
-          {{-- <th>Jabatan</th> --}}
+          <th style="font-family: 'Times New Roman', serif !important;">No</th>
+          <th style="font-family: 'Times New Roman', serif !important;">Nama</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>Plt. Kepala DPUPR Kab. Blora</td>
-          {{-- <td>Penanggung Jawab</td> --}}
+          <td style="font-family: 'Times New Roman', serif !important;">1</td>
+          <td style="font-family: 'Times New Roman', serif !important;">Plt. Kepala DPUPR Kab. Blora</td>
         </tr>
         <tr>
-          <td>2</td>
-          <td>PPKom Bidang Bangunan Gedung</td>
-          {{-- <td>Penanggung Jawab Kompetensi</td> --}}
+          <td style="font-family: 'Times New Roman', serif !important;">2</td>
+          <td style="font-family: 'Times New Roman', serif !important;">PPKom Bidang Bangunan Gedung</td>
         </tr>
         <tr>
-          <td>3</td>
-          <td>PPTK Bidang Bangunan Gedung</td>
-          {{-- <td>Penanggung Jawab Teknis</td> --}}
+          <td style="font-family: 'Times New Roman', serif !important;">3</td>
+          <td style="font-family: 'Times New Roman', serif !important;">PPTK Bidang Bangunan Gedung</td>
         </tr>
         <tr>
-          <td>4</td>
-          <td>Muhammad Yusuf Zaqi E., S.E</td>
-          {{-- <td>Ketua Tim Teknis Kegiatan</td> --}}
+          <td style="font-family: 'Times New Roman', serif !important;">4</td>
+          <td style="font-family: 'Times New Roman', serif !important;">Muhammad Yusuf Zaqi E., S.E</td>
         </tr>
         <tr>
-          <td>5</td>
-          <td>Tresilia Diah Silviati, S.T</td>
-          {{-- <td>Sekretaris Tim Teknis Kegiatan</td> --}}
+          <td style="font-family: 'Times New Roman', serif !important;">5</td>
+          <td style="font-family: 'Times New Roman', serif !important;">Tresilia Diah Silviati, S.T</td>
         </tr>
         <tr>
-          <td>6</td>
-          <td>Novembri Putrilianawati, A.Md</td>
-          {{-- <td>Anggota Tim Teknis Kegiatan</td> --}}
+          <td style="font-family: 'Times New Roman', serif !important;">6</td>
+          <td style="font-family: 'Times New Roman', serif !important;">Novembri Putrilianawati, A.Md</td>
         </tr>
         <tr>
-          <td>7</td>
-          <td>Menda Finanto, S.Kom</td>
-          {{-- <td>Anggota Tim Teknis Kegiatan</td> --}}
+          <td style="font-family: 'Times New Roman', serif !important;">7</td>
+          <td style="font-family: 'Times New Roman', serif !important;">Menda Finanto, S.Kom</td>
         </tr>
       </tbody>
     </table>
 
-    <div style="margin-top: 30px; font-size: 12px;">
-      <p>Demikian lampiran ini dibuat untuk dapat dipergunakan sebagaimana mestinya.</p>
-    </div>
-
+    <div style="margin-top: 30px; font-size: 12px; font-family: 'Times New Roman', serif !important;">
+      <p style="font-family: 'Times New Roman', serif !important;">Demikian lampiran ini dibuat untuk dapat dipergunakan sebagaimana mestinya.</p>
     </div>
   </div>
 
@@ -564,50 +500,37 @@ body {
     pdf.save("surat-undangan-tpatpt.pdf");
   }
 </script>
-                      <br><br><br>
-                        </div>
-                    </div>
+
 <br><br><br>
-                </form>
+</div>
+</div>
+<br><br><br>
+</form>
 
 <br>
-<!-- Modal untuk preview dokumen -->
+</div>
+</div>
 
-                    <!-- /.card-body -->
-                </div>
+<br><br>
+</div>
+</div>
+</div>
+</div>
+</main>
 
+</div>
+</div>
 
-                 {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
+@include('backend.00_administrator.00_baganterpisah.02_footer')
 
-                 <br><br>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-             </div>
-             <!-- /.card -->
-         </div>
-         <!-- /.col -->
-     </div>
-     <!--end::Row-->
-     </div>
-               <!--end::Container-->
-     <!--end::App Content Header-->
-     <!--begin::App Content-->
-       <!--end::App Content-->
-   </main>
-   <!--end::App Main-->
- </div>
- </div>
-
-
-   @include('backend.00_administrator.00_baganterpisah.02_footer')
-
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-   <script>
-    function exportTableToExcel(tableID, filename = '') {
-        var table = document.getElementById(tableID);
-        var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
-        return XLSX.writeFile(wb, filename + '.xlsx');
-    }
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+<script>
+function exportTableToExcel(tableID, filename = '') {
+    var table = document.getElementById(tableID);
+    var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
+    return XLSX.writeFile(wb, filename + '.xlsx');
+}
+</script>
