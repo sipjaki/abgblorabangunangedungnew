@@ -5,7 +5,7 @@
     .zebra-table {
     width: 100%;
     border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Times New Roman', serif;
     font-size: 14px;
     border: 1px solid #e5e7eb;
 }
