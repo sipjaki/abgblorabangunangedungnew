@@ -306,25 +306,56 @@ th {
                     'title' => '1. Data Penyedia Jasa Perencana',
                     'value' => $pemilik->berkas1 ?? '-',
                 ],
+                                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Data Penyedia Jasa Perencana',
+                    'value' => $pemilik->catatanberkas1 ?? '-',
+                ],
+
                 [
                     'icon' => 'bi-tree',
                     'title' => '2. Data Persetujuan Lingkungan (mengikuti peraturan perundangan yang berlaku)',
                     'value' => $pemilik->berkas2 ?? '-',
                 ],
+
+                                                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Data Persetujuan Lingkungan (mengikuti peraturan perundangan yang berlaku)',
+                    'value' => $pemilik->catatanberkas2 ?? '-',
+                ],
+
                 [
                     'icon' => 'bi-diagram-3',
                     'title' => '3. Data Intensitas Bangunan (KKPR/KRK)',
                     'value' => $pemilik->berkas3 ?? '-',
+                ],
+
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Data Intensitas Bangunan (KKPR/KRK)',
+                    'value' => $pemilik->catatanberkas3 ?? '-',
                 ],
                 [
                     'icon' => 'bi-person-vcard',
                     'title' => '4. Data Identitas Pemilik Bangunan (KTP/KITAS)',
                     'value' => $pemilik->berkas4 ?? '-',
                 ],
+
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Data Identitas Pemilik Bangunan (KTP/KITAS)',
+                    'value' => $pemilik->catatanberkas4 ?? '-',
+                ],
                 [
                     'icon' => 'bi-person-vcard',
                     'title' => '5. Berkas Dukung Lainnya',
                     'value' => $pemilik->berkas5 ?? '-',
+                ],
+
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Berkas Dukung Lainnya',
+                    'value' => $pemilik->catatanberkas5 ?? '-',
                 ],
                 [
                     'icon' => 'bi-check2-circle',
