@@ -567,11 +567,11 @@ th {
 
         if (value === 'Lengkap') {
             catatanInput.setAttribute('readonly', true);
-            catatanInput.classList.add('button-newvalidasi');
+            catatanInput.classList.add('button-hijau');
             catatanInput.value = '';
         } else {
             catatanInput.removeAttribute('readonly');
-            catatanInput.classList.remove('button-newvalidasi');
+            catatanInput.classList.remove('button-hijau');
         }
     }
 
