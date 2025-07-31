@@ -433,10 +433,12 @@ th {
 <p style="margin-top: 10px; font-family: 'Times New Roman', serif !important; font-size: 12px;">
   Setelah dilakukan Verifikasi terhadap Data Bangunan, Data Tanah, Data Umum dan Ketentuan Teknis, maka data disimpulkan:
 </p>
-
-<p style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
-  <strong>{{ $surat->pilihancatatan ?? '-' }}</strong>
+<p style="margin: 0;">
+  <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
+    {{ $surat->pilihancatatan ?? '-' }}
+  </strong>
 </p>
+
 
 <p style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
   Adapun cek list Verifikasi Permohonan {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }} terlampir.
