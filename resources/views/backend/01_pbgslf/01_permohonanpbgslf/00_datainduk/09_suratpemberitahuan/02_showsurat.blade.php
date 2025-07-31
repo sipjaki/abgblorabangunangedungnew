@@ -782,12 +782,13 @@ th {
   </tbody>
   </table>
 
-  <table class="isian" style="font-size: 12px; font-family: 'Times New Roman', serif;">
+  <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif;">
     <thead>
         <tr>
             <th style="width: 40px;">NO</th>
-            <th>DOKUMEN MEKANIKAL DAN ELEKTRIKAL </th>
-        <th style="width: 200px; text-align:center;">VERIFIKASI</th>
+            <th style="width: 200px;">DOKUMEN MEKANIKAL DAN ELEKTRIKAL </th>
+        <th style="width: 100px; text-align:center;">VERIFIKASI</th>
+        <th style="width: 200px; text-align:center;">CATATAN</th>
       </tr>
   </thead>
   <tbody>
@@ -795,51 +796,61 @@ th {
           <td>1.</td>
           <td>Spesifikasi Teknis Mekanikal, Elektrikal dan Plumbing</td>
           <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas1 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>2.</td>
-          <td>Perhitungan Teknis Mekanikal, Elektrikal dan Plumbing</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas2 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>3.</td>
-          <td>Gambar Rencana Dan Detail Sistem Proteksi Kebakaran</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas3 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>4.</td>
-          <td>Gambar Rencana Dan Detail Pengelolaan Sampah</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas4 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>5.</td>
-          <td>Gambar Rencana Dan Detail Pengelolaan Drainase</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas5 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>6.</td>
-          <td>Gambar Rencana Dan Detail Pengelolaan Air Limbah</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas6 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>7.</td>
-          <td>Gambar Rencana Dan Detail Pengelolaan Air Hujan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas7 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>8.</td>
-          <td>Gambar Rencana Dan Detail Pengelolaan Air Bersih</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas8 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>9.</td>
-          <td>Gambar Rencana Dan Detail Pecahayaan Umum, dan Pencahayaan Khusus</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas9 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>10.</td>
-          <td>Gambar Rencana Dan Detail Sumber Listrik dan Jaringan Listrik</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas10 ?? '-' }}</td>
+          <td style="text-align: center;">{{ $surat->dokumenteknismep->catatanberkas1 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Perhitungan Teknis Mekanikal, Elektrikal dan Plumbing</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas2 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknismep->catatanberkas2 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Gambar Rencana Dan Detail Sistem Proteksi Kebakaran</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas3 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknismep->catatanberkas3 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Gambar Rencana Dan Detail Pengelolaan Sampah</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas4 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknismep->catatanberkas4 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>Gambar Rencana Dan Detail Pengelolaan Drainase</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas5 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknismep->catatanberkas5 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>6.</td>
+            <td>Gambar Rencana Dan Detail Pengelolaan Air Limbah</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas6 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknismep->catatanberkas6 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>7.</td>
+            <td>Gambar Rencana Dan Detail Pengelolaan Air Hujan</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas7 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknismep->catatanberkas7 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>8.</td>
+            <td>Gambar Rencana Dan Detail Pengelolaan Air Bersih</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas8 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknismep->catatanberkas8 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>9.</td>
+            <td>Gambar Rencana Dan Detail Pecahayaan Umum, dan Pencahayaan Khusus</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas9 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknismep->catatanberkas9 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>10.</td>
+            <td>Gambar Rencana Dan Detail Sumber Listrik dan Jaringan Listrik</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknismep->berkas10 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknismep->catatanberkas10 ?? '-' }}</td>
       </tr>
 
       <tr>
