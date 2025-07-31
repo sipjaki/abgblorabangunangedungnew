@@ -363,7 +363,7 @@ th {
       border: 1px solid red;
     }
   </style>
-  <button class="download-btn" onclick="downloadPDF()"><i class="bi bi-download"></i> Download PDF</button>
+  <button class="button-berkas" onclick="downloadPDF()"><i class="bi bi-download"></i> Download PDF</button>
 </div>
 
 {{-- <div class="download-container">
