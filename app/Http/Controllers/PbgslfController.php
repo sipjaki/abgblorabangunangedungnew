@@ -3472,6 +3472,18 @@ public function updatedataarsitekturnew(Request $request, $id)
         'berkas8' => 'nullable|in:Lengkap,Tidak Lengkap',
         'berkas9' => 'nullable|in:Lengkap,Tidak Lengkap',
         'berkas10' => 'nullable|in:Lengkap,Tidak Lengkap',
+
+        'catatanberkas1' => 'nullable|string|max:255',
+        'catatanberkas2' => 'nullable|string|max:255',
+        'catatanberkas3' => 'nullable|string|max:255',
+        'catatanberkas4' => 'nullable|string|max:255',
+        'catatanberkas5' => 'nullable|string|max:255',
+        'catatanberkas6' => 'nullable|string|max:255',
+        'catatanberkas7' => 'nullable|string|max:255',
+        'catatanberkas8' => 'nullable|string|max:255',
+        'catatanberkas9' => 'nullable|string|max:255',
+        'catatanberkas10' => 'nullable|string|max:255',
+
         'pilihancatatan' => 'nullable|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
     ]);
@@ -3490,6 +3502,18 @@ public function updatedataarsitekturnew(Request $request, $id)
         'berkas8' => $validated['berkas8'] ?? null,
         'berkas9' => $validated['berkas9'] ?? null,
         'berkas10' => $validated['berkas10'] ?? null,
+
+        'catatanberkas1' => $validated['catatanberkas1'] ?? null,
+        'catatanberkas2' => $validated['catatanberkas2'] ?? null,
+        'catatanberkas3' => $validated['catatanberkas3'] ?? null,
+        'catatanberkas4' => $validated['catatanberkas4'] ?? null,
+        'catatanberkas5' => $validated['catatanberkas5'] ?? null,
+        'catatanberkas6' => $validated['catatanberkas6'] ?? null,
+        'catatanberkas7' => $validated['catatanberkas7'] ?? null,
+        'catatanberkas8' => $validated['catatanberkas8'] ?? null,
+        'catatanberkas9' => $validated['catatanberkas9'] ?? null,
+        'catatanberkas10' => $validated['catatanberkas10'] ?? null,
+
         // 'berkas5' => $validated['berkas5'] ?? null,
         'pilihancatatan' => $validated['pilihancatatan'] ?? null,
         'catatan' => $validated['catatan'] ?? null,
