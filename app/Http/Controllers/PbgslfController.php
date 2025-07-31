@@ -864,6 +864,12 @@ public function bepbgdataumumcreatenew(Request $request)
         'berkas6' => 'nullable|in:Lengkap,Tidak Lengkap',
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
+          'catatanberkas1' => 'nullable|string|max:255',
+          'catatanberkas2' => 'nullable|string|max:255',
+          'catatanberkas3' => 'nullable|string|max:255',
+          'catatanberkas4' => 'nullable|string|max:255',
+          'catatanberkas5' => 'nullable|string|max:255',
+
     ], [
         'pbgslfbangunan_id.required' => 'ID Bangunan harus dipilih.',
         'pbgslfbangunan_id.exists' => 'Data bangunan tidak ditemukan.',
@@ -886,14 +892,19 @@ public function bepbgdataumumcreatenew(Request $request)
     dataumumpbg::create([
         'id' => $request->input('id'),
         'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
-        'berkas1' => $validated['berkas1'],
-        'berkas2' => $validated['berkas2'],
-        'berkas3' => $validated['berkas3'],
-        'berkas4' => $validated['berkas4'],
-        'berkas5' => $validated['berkas5'],
+        'berkas1' => $validated['berkas1'] ?? null,
+        'berkas2' => $validated['berkas2'] ?? null,
+        'berkas3' => $validated['berkas3'] ?? null,
+        'berkas4' => $validated['berkas4'] ?? null,
+        'berkas5' => $validated['berkas5'] ?? null,
         // 'berkas6' => $validated['berkas6'],
-        'pilihancatatan' => $validated['pilihancatatan'],
+        'pilihancatatan' => $validated['pilihancatatan'] ?? null,
         'catatan' => $validated['catatan'] ?? null,
+        'catatanberkas1' => $validated['catatanberkas1'] ?? null,
+        'catatanberkas2' => $validated['catatanberkas2'] ?? null,
+        'catatanberkas3' => $validated['catatanberkas3'] ?? null,
+        'catatanberkas4' => $validated['catatanberkas4'] ?? null,
+        'catatanberkas5' => $validated['catatanberkas5'] ?? null,
     ]);
 
     session()->flash('create', 'Informasi Data Umum berhasil ditambahkan!');
