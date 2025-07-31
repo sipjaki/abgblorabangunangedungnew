@@ -581,7 +581,7 @@ th {
 </script>
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Berkas 4
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> Berkas Dukung lainnya
     </label>
 
     <div class="d-flex flex-column gap-2">
@@ -605,7 +605,7 @@ th {
 
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Berkas 4
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Berkas Dukung lainnya
     </label>
 
     <textarea name="catatanberkas4" id="catatanberkas4" rows="3"
