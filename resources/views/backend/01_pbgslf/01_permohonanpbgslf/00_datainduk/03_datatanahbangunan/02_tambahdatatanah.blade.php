@@ -461,27 +461,67 @@ th {
 
 
 
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> Layout
+    </label>
 
-    {{-- Layout --}}
-    <div class="col-md-4 mb-3">
-        <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-layout-text-window me-1" style="color: blue;"></i> Layout Bangunan (Gambar Batas Tanah yang Dikuasai)
+    <div class="d-flex flex-column gap-2">
+        <label class="custom-radio">
+            <input type="radio" name="layout" value="Lengkap"
+                {{ old('layout') == 'Lengkap' ? 'checked' : '' }} onclick="handleLayoutChange(this.value)">
+            <span class="custom-box"></span> Lengkap
         </label>
 
-        <div class="d-flex flex-column gap-2">
-            <label class="custom-radio">
-                <input type="radio" name="layout" value="Lengkap" {{ old('layout') == 'Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Lengkap
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="layout" value="Tidak Lengkap" {{ old('layout') == 'Tidak Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Tidak Lengkap
-            </label>
-        </div>
-
-        @error('layout')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+        <label class="custom-radio">
+            <input type="radio" name="layout" value="Tidak Lengkap"
+                {{ old('layout') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleLayoutChange(this.value)">
+            <span class="custom-box"></span> Tidak Lengkap
+        </label>
     </div>
+
+    @error('layout')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Layout
+    </label>
+
+    <textarea name="catatanberkas2" id="catatanberkas2" rows="3"
+        class="form-control @error('catatanberkas2') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas2') }}</textarea>
+
+    @error('catatanberkas2')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handleLayoutChange(value) {
+        const catatanInput = document.getElementById('catatanberkas2');
+
+        if (value === 'Lengkap') {
+            catatanInput.setAttribute('readonly', true);
+            catatanInput.classList.add('button-newvalidasi');
+            catatanInput.value = '';
+        } else {
+            catatanInput.removeAttribute('readonly');
+            catatanInput.classList.remove('button-newvalidasi');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const selectedValue = document.querySelector('input[name="layout"]:checked')?.value;
+        if (selectedValue) {
+            handleLayoutChange(selectedValue);
+        }
+    });
+</script>
+
+
 
     {{-- Penyelidikan Tanah Khusus Bangunan Tidak Sederhana --}}
     <div class="col-md-4 mb-3">
