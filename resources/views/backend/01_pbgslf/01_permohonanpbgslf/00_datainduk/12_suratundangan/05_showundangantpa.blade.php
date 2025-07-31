@@ -259,12 +259,12 @@ th {
       size: A4;
       margin: 0;
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #f2f2f2;
-      font-size: 12px;
-    }
+body {
+  font-family: 'Times New Roman', serif;
+  margin: 0;
+  background: #f2f2f2;
+  font-size: 12px;
+}
     .halaman {
       width: 21cm;
       height: 29.7cm;
