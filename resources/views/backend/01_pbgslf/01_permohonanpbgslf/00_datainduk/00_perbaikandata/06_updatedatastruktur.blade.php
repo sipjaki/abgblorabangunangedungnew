@@ -409,28 +409,42 @@ th {
     ];
 @endphp
 
-@foreach ($judulBerkas as $i => $judul)
+@for ($i = 1; $i <= 9; $i++)
     <div class="col-md-4 mb-3">
         <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-folder2-open me-1" style="color: blue;"></i> {{ $i }}. {{ $judul }}
+            <i class="bi bi-folder2-open me-1" style="color: blue;"></i> {{ $i }}. {{ $judulBerkas[$i] }}
         </label>
         <div class="d-flex flex-column gap-2">
             <label class="custom-radio">
                 <input type="radio" name="berkas{{ $i }}" value="Lengkap"
-                    {{ old("berkas$i", $data->{'berkas' . $i}) == 'Lengkap' ? 'checked' : '' }}>
+                    {{ old("berkas$i", $data->{'berkas' . $i}) == 'Lengkap' ? 'checked' : '' }}
+                    onclick="handleBerkas({{ $i }}, this.value)">
                 <span class="custom-box"></span> Lengkap
             </label>
             <label class="custom-radio">
                 <input type="radio" name="berkas{{ $i }}" value="Tidak Lengkap"
-                    {{ old("berkas$i", $data->{'berkas' . $i}) == 'Tidak Lengkap' ? 'checked' : '' }}>
+                    {{ old("berkas$i", $data->{'berkas' . $i}) == 'Tidak Lengkap' ? 'checked' : '' }}
+                    onclick="handleBerkas({{ $i }}, this.value)">
                 <span class="custom-box"></span> Tidak Lengkap
             </label>
         </div>
-        @error("berkas$i")<div class="text-danger mt-2">{{ $message }}</div>@enderror
+        @error("berkas$i")
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
     </div>
-@endforeach
 
-
+    <div class="col-md-4 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan {{ $judulBerkas[$i] }}
+        </label>
+        <textarea name="catatanberkas{{ $i }}" id="catatanberkas{{ $i }}" rows="3"
+            class="form-control @error("catatanberkas$i") is-invalid @enderror"
+            style="padding: 12px;">{{ old("catatanberkas$i", $data->{'catatanberkas' . $i}) }}</textarea>
+        @error("catatanberkas$i")
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+@endfor
 
 <script>
     function handleBerkas(nomor, value) {
@@ -447,9 +461,8 @@ th {
         }
     }
 
-    // Otomatis saat halaman dimuat
     document.addEventListener('DOMContentLoaded', () => {
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= 9; i++) {
             const selected = document.querySelector(`input[name="berkas${i}"]:checked`);
             if (selected) {
                 handleBerkas(i, selected.value);
