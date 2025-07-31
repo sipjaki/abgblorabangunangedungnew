@@ -713,7 +713,7 @@ th {
             <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas10 ?? '-' }}</td>
       </tr>
       <tr>
-        <td colspan="3"><em>Catatan Dok. Arsitektur :</em>{{ $surat->dokumenteknisarsi->catatan ?? '-' }}</td>
+        <td colspan="4"><em>Catatan Dok. Arsitektur :</em>{{ $surat->dokumenteknisarsi->catatan ?? '-' }}</td>
       </tr>
     </tbody>
   </table>
