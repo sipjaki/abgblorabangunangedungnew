@@ -4678,7 +4678,7 @@ public function bepbgsuratundangantpatptshow(Request $request, $id)
 
     // Kirim data ke view
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.12_suratundangan.05_showundangantpa', [
-        'title' => 'Surat Undangan ',
+        'title' => 'Surat Undangan TPA/TPT',
         'title_halaman' => 'Surat Undangan',
         'user' => $user,
         'data' => $data,
