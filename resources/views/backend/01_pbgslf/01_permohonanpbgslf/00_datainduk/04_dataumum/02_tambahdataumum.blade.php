@@ -529,7 +529,7 @@ th {
 </script>
 
 
-<div class="col-md-4 mb-3">
+{{-- <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 3. Data Intensitas Bangunan (KKPR/KRK)
     </label>
@@ -544,9 +544,75 @@ th {
         </label>
     </div>
     @error('berkas3')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+</div> --}}
+
+{{-- Berkas 3 --}}
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 3. Data Intensitas Bangunan (KKPR/KRK)
+    </label>
+
+    <div class="d-flex flex-column gap-2">
+        <label class="custom-radio">
+            <input type="radio" name="berkas3" value="Lengkap"
+                {{ old('berkas3') == 'Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas3(this.value)">
+            <span class="custom-box"></span> Lengkap
+        </label>
+
+        <label class="custom-radio">
+            <input type="radio" name="berkas3" value="Tidak Lengkap"
+                {{ old('berkas3') == 'Tidak Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas3(this.value)">
+            <span class="custom-box"></span> Tidak Lengkap
+        </label>
+    </div>
+
+    @error('berkas3')
+    <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
 </div>
 
-<div class="col-md-4 mb-3">
+{{-- Catatan Berkas 3 --}}
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Intensitas Bangunan (KKPR/KRK)
+    </label>
+
+    <textarea name="catatanberkas3" id="catatanberkas3" rows="3"
+        class="form-control @error('catatanberkas3') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas3') }}</textarea>
+
+    @error('catatanberkas3')
+    <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handleBerkas3(value) {
+        const catatan = document.getElementById('catatanberkas3');
+        if (value === 'Lengkap') {
+            catatan.value = '';
+            catatan.setAttribute('readonly', true);
+            catatan.classList.add('button-hijau');
+        } else {
+            catatan.removeAttribute('readonly');
+            catatan.classList.remove('button-hijau');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name="berkas3"]:checked');
+        if (selected) {
+            handleBerkas3(selected.value);
+        }
+    });
+</script>
+
+
+
+
+{{-- <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 4. Data Identitas Pemilik Bangunan (KTP/KITAS)
     </label>
@@ -561,15 +627,144 @@ th {
         </label>
     </div>
     @error('berkas4')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+</div> --}}
+
+
+{{-- Berkas 4 --}}
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 4. Data Identitas Pemilik Bangunan (KTP/KITAS)
+    </label>
+
+    <div class="d-flex flex-column gap-2">
+        <label class="custom-radio">
+            <input type="radio" name="berkas4" value="Lengkap"
+                {{ old('berkas4') == 'Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas4(this.value)">
+            <span class="custom-box"></span> Lengkap
+        </label>
+
+        <label class="custom-radio">
+            <input type="radio" name="berkas4" value="Tidak Lengkap"
+                {{ old('berkas4') == 'Tidak Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas4(this.value)">
+            <span class="custom-box"></span> Tidak Lengkap
+        </label>
+    </div>
+
+    @error('berkas4')
+    <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
 </div>
 
-<div class="col-md-4 mb-3">
+{{-- Catatan Berkas 4 --}}
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Identitas Pemilik Bangunan (KTP/KITAS)
+    </label>
+
+    <textarea name="catatanberkas4" id="catatanberkas4" rows="3"
+        class="form-control @error('catatanberkas4') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas4') }}</textarea>
+
+    @error('catatanberkas4')
+    <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handleBerkas4(value) {
+        const catatan = document.getElementById('catatanberkas4');
+        if (value === 'Lengkap') {
+            catatan.value = '';
+            catatan.setAttribute('readonly', true);
+            catatan.classList.add('button-hijau');
+        } else {
+            catatan.removeAttribute('readonly');
+            catatan.classList.remove('button-hijau');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name="berkas4"]:checked');
+        if (selected) {
+            handleBerkas4(selected.value);
+        }
+    });
+</script>
+
+{{-- <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 5. Berkas Dukung Lainnya
     </label>
     <input type="text" name="berkas5" value="{{ old('berkas5') }}" class="form-control" placeholder="Masukkan status dokumen (misalnya: Lengkap / Tidak Lengkap)">
     @error('berkas5')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+</div> --}}
+
+{{-- Berkas 5 --}}
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 5. Berkas Dukung Lainnya
+    </label>
+
+    <div class="d-flex flex-column gap-2">
+        <label class="custom-radio">
+            <input type="radio" name="berkas5" value="Lengkap"
+                {{ old('berkas5') == 'Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas5(this.value)">
+            <span class="custom-box"></span> Lengkap
+        </label>
+
+        <label class="custom-radio">
+            <input type="radio" name="berkas5" value="Tidak Lengkap"
+                {{ old('berkas5') == 'Tidak Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas5(this.value)">
+            <span class="custom-box"></span> Tidak Lengkap
+        </label>
+    </div>
+
+    @error('berkas5')
+    <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
 </div>
+
+{{-- Catatan Berkas 5 --}}
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Berkas Dukung Lainnya
+    </label>
+
+    <textarea name="catatanberkas5" id="catatanberkas5" rows="3"
+        class="form-control @error('catatanberkas5') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas5') }}</textarea>
+
+    @error('catatanberkas5')
+    <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handleBerkas5(value) {
+        const catatan = document.getElementById('catatanberkas5');
+        if (value === 'Lengkap') {
+            catatan.value = '';
+            catatan.setAttribute('readonly', true);
+            catatan.classList.add('button-hijau');
+        } else {
+            catatan.removeAttribute('readonly');
+            catatan.classList.remove('button-hijau');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name="berkas5"]:checked');
+        if (selected) {
+            handleBerkas5(selected.value);
+        }
+    });
+</script>
+
+
 
 {{--
 <div class="col-md-4 mb-3">
