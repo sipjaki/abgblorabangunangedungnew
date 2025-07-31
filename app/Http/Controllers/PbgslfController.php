@@ -1501,6 +1501,14 @@ public function dokumenteknisslfcreatenew(Request $request)
         'berkas5' => 'nullable|string',
         'berkas6' => 'nullable|string',
 
+          'catatanberkas1' => 'nullable|string|max:255',
+          'catatanberkas2' => 'nullable|string|max:255',
+          'catatanberkas3' => 'nullable|string|max:255',
+          'catatanberkas4' => 'nullable|string|max:255',
+          'catatanberkas5' => 'nullable|string|max:255',
+          'catatanberkas6' => 'nullable|string|max:255',
+
+
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
     ], [
@@ -1537,6 +1545,14 @@ public function dokumenteknisslfcreatenew(Request $request)
         'berkas4' => $validated['berkas4'] ?? null,
         'berkas5' => $validated['berkas5'] ?? null,
         'berkas6' => $validated['berkas6'] ?? null,
+
+        'catatanberkas1' => $validated['catatanberkas1'] ?? null,
+        'catatanberkas2' => $validated['catatanberkas2'] ?? null,
+        'catatanberkas3' => $validated['catatanberkas3'] ?? null,
+        'catatanberkas4' => $validated['catatanberkas4'] ?? null,
+        'catatanberkas5' => $validated['catatanberkas5'] ?? null,
+        'catatanberkas6' => $validated['catatanberkas6'] ?? null,
+
         'pilihancatatan' => $validated['pilihancatatan'],
         'catatan' => $validated['catatan'] ?? null,
     ]);
