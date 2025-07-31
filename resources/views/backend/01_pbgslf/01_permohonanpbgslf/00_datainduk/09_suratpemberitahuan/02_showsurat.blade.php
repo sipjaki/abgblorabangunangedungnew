@@ -388,12 +388,11 @@ th {
 <p style="text-align: right; margin-top: 20px; font-family: 'Times New Roman', serif !important;">
   Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('d F Y') : '-' }}
 </p>
-
-  <p>
-    <strong style="font-family: 'Times New Roman', serif !important; font-size:12px;">Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/{{ date('Y') }}<br/>
-    <strong style="font-family: 'Times New Roman', serif !important; font-size:12px;">Lampiran</strong> : 1 Bandel<br />
-    <strong style="font-family: 'Times New Roman', serif !important; font-size:12px;">Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
-  </p>
+<p style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
+  <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/{{ date('Y') }}<br/>
+  <strong>Lampiran</strong> : 1 Bandel<br />
+  <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
+</p>
 
   <p style="font-family: 'Times New Roman', serif !important;">Kepada Yth:<br />Pemohon<br />Di Tempat</p>
   <p style="font-family: 'Times New Roman', serif !important;">Dengan ini kami sampaikan hasil verifikasi Pemohon sebagai berikut :</p>
