@@ -416,7 +416,7 @@ th {
 
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Penyedia Jasa Perencana
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Berkas Dukung lainnya
     </label>
 
     <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
@@ -445,11 +445,24 @@ th {
         }
     });
 </script>
+@php
+    $judulBerkas = [
+        2 => 'Spesifikasi Teknis Arsitektur Bangunan',
+        3 => 'Gambar Rencana Detail Bangunan',
+        4 => 'Gambar Rencana Tata Ruang Luar',
+        5 => 'Gambar Rencana Tata Ruang Dalam',
+        6 => 'Gambar Rencana Tampak Bangunan',
+        7 => 'Gambar Rencana Potongan Bangunan',
+        8 => 'Gambar Rencana Denah Bangunan',
+        9 => 'Gambar Rencana Tapak Bangunan',
+        10 => 'Gambar Situasi',
+    ];
+@endphp
 
 @for ($i = 2; $i <= 10; $i++)
     <div class="col-md-6 mb-3">
         <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-folder2-open me-1" style="color: blue;"></i> {{ $i }}. Berkas Dukung {{ $i }}
+            <i class="bi bi-folder2-open me-1" style="color: blue;"></i> {{ $i }}. {{ $judulBerkas[$i] }}
         </label>
         <div class="d-flex flex-column gap-2">
             <label class="custom-radio">
@@ -472,7 +485,7 @@ th {
 
     <div class="col-md-6 mb-3">
         <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Berkas {{ $i }}
+            <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan {{ $judulBerkas[$i] }}
         </label>
         <textarea name="catatanberkas{{ $i }}" id="catatanberkas{{ $i }}" rows="3"
             class="form-control @error("catatanberkas$i") is-invalid @enderror"
@@ -482,6 +495,7 @@ th {
         @enderror
     </div>
 @endfor
+
 
 <script>
     function handleBerkas(nomor, value) {
