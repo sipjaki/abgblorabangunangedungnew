@@ -503,7 +503,7 @@ th {
 
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-arrow-up-short text-primary me-1"></i> Tinggi Bangunan (meter)</label>
-    <input type="text" name="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror" value="{{ old('tinggibangunan') }}">
+    <input type="number" name="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror" value="{{ old('tinggibangunan') }}">
     @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 <div class="col-md-6">
