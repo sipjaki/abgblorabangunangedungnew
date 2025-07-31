@@ -460,7 +460,7 @@ th {
 </div>
 
 <div class="row g-3 mt-2">
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+    {{-- <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;"> --}}
 
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
