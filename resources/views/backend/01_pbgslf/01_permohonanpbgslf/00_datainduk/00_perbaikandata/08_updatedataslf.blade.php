@@ -396,125 +396,76 @@ th {
     <input type="hidden" name="id" value="{{ $data->id }}">
 
     <div class="row g-3 mt-2">
-{{-- Berkas Dukung 1 --}}
-<div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 1. Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung
-    </label>
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="berkas1" value="Lengkap"
-                {{ old('berkas1', $data->berkas1) == 'Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Lengkap
-        </label>
-        <label class="custom-radio">
-            <input type="radio" name="berkas1" value="Tidak Lengkap"
-                {{ old('berkas1', $data->berkas1) == 'Tidak Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-    </div>
-    @error('berkas1')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-</div>
+@php
+    $judulBerkas = [
+        1 => 'Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung',
+        2 => 'Laporan Pemeriksaan Berkala Bangunan Gedung (Hanya untuk gedung kepentingan umum)',
+        3 => 'Gambar Bangunan Gedung Terbangun (As Built Drawing)',
+        4 => 'Perhitungan Teknis dan Dokumen Rencana Teknis saat Pembangunan Gedung',
+        5 => 'Gambar Detail Struktur Terbangun',
+        6 => 'Data Tenaga Ahli Pengkaji Teknis Bersertifikat',
+    ];
+@endphp
 
-{{-- Berkas Dukung 2 --}}
-<div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 2. Laporan Pemeriksaan Berkala Bangunan Gedung (Hanya untuk gedung kepentingan umum)
-    </label>
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="berkas2" value="Lengkap"
-                {{ old('berkas2', $data->berkas2) == 'Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Lengkap
+@for ($i = 1; $i <= count($judulBerkas); $i++)
+    <div class="col-md-6 mb-3">
+        <label class="form-label d-block fw-semibold text-dark">
+            <i class="bi bi-folder2-open me-1 text-primary"></i> {{ $i }}. {{ $judulBerkas[$i] }}
         </label>
-        <label class="custom-radio">
-            <input type="radio" name="berkas2" value="Tidak Lengkap"
-                {{ old('berkas2', $data->berkas2) == 'Tidak Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
+        <div class="d-flex flex-column gap-2">
+            <label class="custom-radio">
+                <input type="radio" name="berkas{{ $i }}" value="Lengkap"
+                    {{ old("berkas$i", $data->{'berkas'.$i} ?? '') == 'Lengkap' ? 'checked' : '' }}
+                    onclick="handleBerkas({{ $i }}, 'Lengkap')">
+                <span class="custom-box"></span> Lengkap
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="berkas{{ $i }}" value="Tidak Lengkap"
+                    {{ old("berkas$i", $data->{'berkas'.$i} ?? '') == 'Tidak Lengkap' ? 'checked' : '' }}
+                    onclick="handleBerkas({{ $i }}, 'Tidak Lengkap')">
+                <span class="custom-box"></span> Tidak Lengkap
+            </label>
+        </div>
+        @error("berkas$i")<div class="text-danger mt-2">{{ $message }}</div>@enderror
     </div>
-    @error('berkas2')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-</div>
 
-{{-- Berkas Dukung 3 --}}
-<div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 3. Gambar Bangunan Gedung Terbangun (As Built Drawing)
-    </label>
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="berkas3" value="Lengkap"
-                {{ old('berkas3', $data->berkas3) == 'Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Lengkap
+    <div class="col-md-6 mb-3">
+        <label class="form-label d-block fw-semibold text-dark">
+            <i class="bi bi-journal-text me-1 text-primary"></i> Catatan {{ $judulBerkas[$i] }}
         </label>
-        <label class="custom-radio">
-            <input type="radio" name="berkas3" value="Tidak Lengkap"
-                {{ old('berkas3', $data->berkas3) == 'Tidak Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
+        <textarea name="catatanberkas{{ $i }}" id="catatanberkas{{ $i }}" rows="3"
+            class="form-control @error("catatanberkas$i") is-invalid @enderror"
+            style="padding: 12px;">{{ old("catatanberkas$i", $data->{'catatanberkas'.$i} ?? '') }}</textarea>
+        @error("catatanberkas$i")<div class="text-danger mt-2">{{ $message }}</div>@enderror
     </div>
-    @error('berkas3')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-</div>
+@endfor
 
-{{-- Berkas Dukung 4 --}}
-<div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 4. Perhitungan Teknis dan Dokumen Rencana Teknis saat Pembangunan Gedung
-    </label>
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="berkas4" value="Lengkap"
-                {{ old('berkas4', $data->berkas4) == 'Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Lengkap
-        </label>
-        <label class="custom-radio">
-            <input type="radio" name="berkas4" value="Tidak Lengkap"
-                {{ old('berkas4', $data->berkas4) == 'Tidak Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-    </div>
-    @error('berkas4')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-</div>
+<script>
+    function handleBerkas(nomor, value) {
+        const textarea = document.getElementById('catatanberkas' + nomor);
+        if (!textarea) return;
 
-{{-- Berkas Dukung 5 --}}
-<div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 5. Gambar Detail Struktur Terbangun
-    </label>
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Lengkap
-        </label>
-        <label class="custom-radio">
-            <input type="radio" name="berkas5" value="Tidak Lengkap"
-                {{ old('berkas5', $data->berkas5) == 'Tidak Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-    </div>
-    @error('berkas5')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-</div>
+        if (value === 'Lengkap') {
+            textarea.value = '';
+            textarea.readOnly = true;
+            textarea.classList.add('button-hijau');
+        } else {
+            textarea.readOnly = false;
+            textarea.classList.remove('button-hijau');
+        }
+    }
 
-{{-- Berkas Dukung 6 --}}
-<div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 6. Data Tenaga Ahli Pengkaji Teknis Bersertifikat
-    </label>
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="berkas6" value="Lengkap"
-                {{ old('berkas5', $data->berkas6) == 'Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Lengkap
-        </label>
-        <label class="custom-radio">
-            <input type="radio" name="berkas6" value="Tidak Lengkap"
-                {{ old('berkas5', $data->berkas6) == 'Tidak Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-    </div>
-    @error('berkas5')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-</div>
+    document.addEventListener('DOMContentLoaded', () => {
+        for (let i = 1; i <= 6; i++) {
+            const selected = document.querySelector(`input[name="berkas${i}"]:checked`);
+            if (selected) {
+                handleBerkas(i, selected.value);
+            }
+        }
+    });
+</script>
+
+
 
         {{-- Pilihan Catatan --}}
         <div class="col-md-6">
