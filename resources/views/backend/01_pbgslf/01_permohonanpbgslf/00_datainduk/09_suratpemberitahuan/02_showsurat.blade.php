@@ -472,10 +472,18 @@ th {
     <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Lampiran</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;">1 Bandel </span><br />
     <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Perihal</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</span>
   </p>
+<h5 style="
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-decoration: underline;
+  font-family: 'Times New Roman', serif !important;
+  font-size: 12px !important;
+  text-align: left; /* atau right */
+">
+  CEK LIST VERIFIKASI DOKUMEN
+</h5>
 
-  <h5 style="margin-top : -10px; text-align: center; font-weight: bold; text-decoration: underline; margin-bottom: 10px; font-family: 'Times New Roman', serif !important; font-size: 12px;">
-    CEK LIST VERIFIKASI DOKUMEN
-  </h5>
 
   <h6><strong style="font-size: 12px; font-family: 'Poppins', sans-serif; margin-top: -20px;">A. DATA BANGUNAN</strong></h6>
   <table class="isian" style="margin-top: -5px;">
