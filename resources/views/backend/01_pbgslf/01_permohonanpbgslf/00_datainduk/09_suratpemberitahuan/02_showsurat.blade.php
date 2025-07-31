@@ -532,13 +532,14 @@ th {
         <td style="text-align: center; text-transform:uppercase;">
         {{ $surat->datatanahpbg->isiandatatanah ?? '-' }}
     </td>
-        <td style="text-align: center; text-transform:uppercase;">
+        <td style="text-align: center;">
         {{ $surat->datatanahpbg->catatanberkas1 ?? '-' }}
     </td>
 </tr>
       <tr>
         <td rowspan="2">2.</td>
         <td><strong>KETENTUAN TEKNIS TANAH</strong></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
@@ -548,6 +549,9 @@ th {
         <td style="text-align: center; text-transform:uppercase;">
             {{ $surat->datatanahpbg->penyelidikan ?? '-' }}
         </td>
+        <td style="text-align: center;">
+            {{ $surat->datatanahpbg->catatanberkas2 ?? '-' }}
+        </td>
     </tr>
     <tr>
         <tr>
@@ -555,6 +559,9 @@ th {
             <td>Gambar dan informasi tentang hasil penyelidikan tanah untuk bangunan tidak sederhana</td>
             <td style="text-align: center; text-transform:uppercase;">
                 {{ $surat->datatanahpbg->layout ?? '-' }}
+            </td>
+            <td style="text-align: center;">
+                {{ $surat->datatanahpbg->catatanberkas3 ?? '-' }}
             </td>
         </tr>
         </tr>
@@ -566,6 +573,9 @@ th {
             <td>Berkas Dukung lainnya</td>
             <td style="text-align: center; text-transform:uppercase;">
                 {{ $surat->datatanahpbg->berkas4 ?? '-' }}
+            </td>
+            <td style="text-align: center;">
+                {{ $surat->datatanahpbg->catatanberkas4 ?? '-' }}
             </td>
         </tr>
         </tr>
