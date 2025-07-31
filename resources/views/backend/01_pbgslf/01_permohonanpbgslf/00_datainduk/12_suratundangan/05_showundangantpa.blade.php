@@ -1,7 +1,7 @@
 <style>
  body {
-        font-family: 'Poppins', sans-serif;
-    }
+    font-family: 'Times New Roman', serif;
+}
     .zebra-table {
     width: 100%;
     border-collapse: collapse;
@@ -459,37 +459,37 @@ th {
         <tr>
           <td>1</td>
           <td>Plt. Kepala DPUPR Kab. Blora</td>
-          <td>Penanggung Jawab</td>
+          {{-- <td>Penanggung Jawab</td> --}}
         </tr>
         <tr>
           <td>2</td>
           <td>PPKom Bidang Bangunan Gedung</td>
-          <td>Penanggung Jawab Kompetensi</td>
+          {{-- <td>Penanggung Jawab Kompetensi</td> --}}
         </tr>
         <tr>
           <td>3</td>
           <td>PPTK Bidang Bangunan Gedung</td>
-          <td>Penanggung Jawab Teknis</td>
+          {{-- <td>Penanggung Jawab Teknis</td> --}}
         </tr>
         <tr>
           <td>4</td>
           <td>Muhammad Yusuf Zaqi E., S.E</td>
-          <td>Ketua Tim Teknis Kegiatan</td>
+          {{-- <td>Ketua Tim Teknis Kegiatan</td> --}}
         </tr>
         <tr>
           <td>5</td>
           <td>Tresilia Diah Silviati, S.T</td>
-          <td>Sekretaris Tim Teknis Kegiatan</td>
+          {{-- <td>Sekretaris Tim Teknis Kegiatan</td> --}}
         </tr>
         <tr>
           <td>6</td>
           <td>Novembri Putrilianawati, A.Md</td>
-          <td>Anggota Tim Teknis Kegiatan</td>
+          {{-- <td>Anggota Tim Teknis Kegiatan</td> --}}
         </tr>
         <tr>
           <td>7</td>
           <td>Menda Finanto, S.Kom</td>
-          <td>Anggota Tim Teknis Kegiatan</td>
+          {{-- <td>Anggota Tim Teknis Kegiatan</td> --}}
         </tr>
       </tbody>
     </table>
