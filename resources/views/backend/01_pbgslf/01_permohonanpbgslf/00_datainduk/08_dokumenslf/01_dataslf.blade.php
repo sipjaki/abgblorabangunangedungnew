@@ -298,11 +298,43 @@ th {
         @php
             $infoItems = [
                 ['icon' => 'bi-clipboard-check', 'title' => '1. Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung', 'value' => $pemilik->berkas1 ?? '-'],
+                                                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung',
+                    'value' => $pemilik->catatanberkas1 ?? '-',
+                ],
+
                 ['icon' => 'bi-clipboard-pulse', 'title' => '2. Laporan Pemeriksaan Berkala Bangunan Gedung (Hanya untuk gedung kepentingan umum)', 'value' => $pemilik->berkas2 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Laporan Pemeriksaan Berkala Bangunan Gedung (Hanya untuk gedung kepentingan umum)',
+                    'value' => $pemilik->catatanberkas2 ?? '-',
+                ],
                 ['icon' => 'bi-building', 'title' => '3. Gambar Bangunan Gedung Terbangun (As Built Drawing)', 'value' => $pemilik->berkas3 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Bangunan Gedung Terbangun (As Built Drawing)',
+                    'value' => $pemilik->catatanberkas3 ?? '-',
+                ],
                 ['icon' => 'bi-journal-text', 'title' => '4. Perhitungan Teknis dan Dokumen Rencana Teknis saat Pembangunan Gedung', 'value' => $pemilik->berkas4 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Perhitungan Teknis dan Dokumen Rencana Teknis saat Pembangunan Gedung',
+                    'value' => $pemilik->catatanberkas4 ?? '-',
+                ],
                 ['icon' => 'bi-diagram-3', 'title' => '5. Gambar Detail Struktur Terbangun', 'value' => $pemilik->berkas5 ?? '-'],
+                  [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Detail Struktur Terbangun',
+                    'value' => $pemilik->catatanberkas5 ?? '-',
+                ],
+
                 ['icon' => 'bi-person-badge', 'title' => '6. Data Tenaga Ahli Pengkaji Teknis Bersertifikat', 'value' => $pemilik->berkas6 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Data Tenaga Ahli Pengkaji Teknis Bersertifikat',
+                    'value' => $pemilik->catatanberkas6 ?? '-',
+                ],
                 ['icon' => 'bi-check2-circle', 'title' => 'Pilihan Catatan', 'value' => $pemilik->pilihancatatan ?? '-'],
             ];
         @endphp
