@@ -475,7 +475,7 @@ th {
 </div>
 
 <div class="text-end mt-4">
-    <button type="button" class="button-baru" onclick="openModal()">
+    <button type="button" class="button-hijau" onclick="openModal()">
         <i class="bi bi-save me-1"></i> Simpan Surat Tugas
     </button>
 </div>
