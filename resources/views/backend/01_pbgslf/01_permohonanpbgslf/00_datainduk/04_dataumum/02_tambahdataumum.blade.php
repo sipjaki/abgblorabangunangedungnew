@@ -400,23 +400,58 @@ th {
         <i class="bi bi-file-earmark-text me-2" style="color: navy;"></i> Data Tanah
     </h5> --}}
 
-    {{-- Isi Data Tanah --}}
-    <div class="col-md-4 mb-3">
+{{-- Isian Berkas 1 --}}
+<div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 1. Data Penyedia Jasa Konstruksi
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 1. Data Penyedia Jasa Konstruksi
     </label>
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="berkas1" value="Lengkap" {{ old('berkas1') == 'Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Lengkap
-        </label>
-        <label class="custom-radio">
-            <input type="radio" name="berkas1" value="Tidak Lengkap" {{ old('berkas1') == 'Tidak Lengkap' ? 'checked' : '' }}>
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-    </div>
-    @error('berkas1')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+
+    <input type="text" name="berkas1" id="berkas1" class="form-control"
+        placeholder="Masukkan keterangan"
+        value="{{ old('berkas1') }}"
+        oninput="handleBerkas1Change(this.value)">
+
+    @error('berkas1')
+    <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
 </div>
+
+{{-- Catatan Berkas 1 --}}
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Data Penyedia Jasa Konstruksi
+    </label>
+
+    <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
+        class="form-control @error('catatanberkas1') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas1') }}</textarea>
+
+    @error('catatanberkas1')
+    <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handleBerkas1Change(value) {
+        const catatan = document.getElementById('catatanberkas1');
+
+        if (value.trim().toLowerCase() === 'lengkap') {
+            catatan.setAttribute('readonly', true);
+            catatan.classList.add('button-hijau');
+            catatan.value = '';
+        } else {
+            catatan.removeAttribute('readonly');
+            catatan.classList.remove('button-hijau');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const val = document.getElementById('berkas1')?.value;
+        if (val && val.trim().toLowerCase() === 'lengkap') {
+            handleBerkas1Change(val);
+        }
+    });
+</script>
 
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
@@ -543,7 +578,7 @@ th {
 
         {{-- Tombol Submit --}}
         <div class="col-12 text-end mt-3">
-            <button type="button" class="button-baru" onclick="openModal()">
+            <button type="button" class="button-hijau" onclick="openModal()">
                 <i class="bi bi-save me-1"></i> Simpan Data Umum
             </button>
         </div>

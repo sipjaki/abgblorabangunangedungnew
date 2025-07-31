@@ -457,9 +457,6 @@ th {
         }
     });
     </script>
-</div>
-
-<div class="row g-3 mt-2">
     {{-- <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;"> --}}
 
 <div class="col-md-4 mb-3">
