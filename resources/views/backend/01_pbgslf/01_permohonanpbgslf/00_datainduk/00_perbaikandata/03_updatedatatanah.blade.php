@@ -477,6 +477,42 @@ th {
             @error('layout')<div class="text-danger mt-2">{{ $message }}</div>@enderror
         </div>
 
+
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Layout
+    </label>
+
+    <textarea name="catatanberkas2" id="catatanberkas2" rows="3"
+        class="form-control @error('catatanberkas2') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas2', $data->catatanberkas2) }}</textarea>
+
+    @error('catatanberkas2')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+
+<script>
+    function handleIsianTanah(value) {
+        const catatan = document.getElementById('catatanberkas2');
+
+        if (value === 'Lengkap') {
+            catatan.value = '';
+        }
+    }
+
+    // Trigger saat halaman dimuat (jika sudah memilih "Lengkap" sebelumnya)
+    document.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name="layout"]:checked');
+        if (selected && selected.value === 'Lengkap') {
+            handleIsianTanah('Lengkap');
+        }
+    });
+</script>
+
+
+
         {{-- Penyelidikan Tanah --}}
         <div class="col-md-4 mb-3">
             <label class="form-label d-block" style="color: black; font-weight: 600;">
