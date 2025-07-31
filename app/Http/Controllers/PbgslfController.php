@@ -4659,7 +4659,7 @@ public function bepbgsuratundangantpatptshow(Request $request, $id)
     $data = pbgslfbangunan::findOrFail($id);
     $surat = suratudanganpbg::findOrFail($id);
 
-    $subdatapemilik = tpatpt::where('pbgslfbangunan_id', $data->id)->paginate(15);
+    // $subdatapemilik = tpatpt::where('pbgslfbangunan_id', $data->id)->paginate(15);
 
     // $surat = suratpemberitahuanpbg::findOrFail($id);
     // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->first();
@@ -4684,7 +4684,7 @@ public function bepbgsuratundangantpatptshow(Request $request, $id)
         'data' => $data,
         'subdatasuratpemberitahuan' => $surat,
         'surat' => $surat, // Kirim surat yang dipilih
-        'subdatapemilik' => $subdatapemilik,
+        // 'subdatapemilik' => $subdatapemilik,
         // 'subdatabangunan' => $subdatabangunan,
         // 'subdatatanah' => $subdatatanah,
         // 'subdataumum' => $subdataumum,
