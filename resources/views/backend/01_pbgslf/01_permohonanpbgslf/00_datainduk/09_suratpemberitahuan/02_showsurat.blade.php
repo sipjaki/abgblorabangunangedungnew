@@ -877,8 +877,9 @@ th {
     <thead>
       <tr>
         <th style="width: 40px;">NO</th>
-        <th>DOKUMEN TEKNIS GEDUNG EKSISTING DOKUMEN SLF  </th>
-        <th style="width: 200px; text-align:center;" >VERIFIKASI</th>
+        <th style="width: 250px;">DOKUMEN TEKNIS GEDUNG EKSISTING DOKUMEN SLF  </th>
+        <th style="width: 100px; text-align:center;" >VERIFIKASI</th>
+        <th style="width: 200px; text-align:center;" >CATATAN</th>
       </tr>
     </thead>
     <tbody>
@@ -886,31 +887,37 @@ th {
         <td>1.</td>
         <td>Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung</td>
         <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas1 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>2.</td>
-          <td>Laporan Pemeriksaan Berkala Bangunan Gedung</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas2 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>3.</td>
-          <td>Gambar Bangunan Gedung Terbangun </td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas3 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>4.</td>
-          <td>Perhitungan Teknis dan Dokumen Rencana Saat Pembangunan Gedung</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas4 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>5.</td>
-          <td>Gambar Detail Struktur Bangunan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas5 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>6.</td>
-          <td>Data Tenaga Ahli Pengkaji Teknis Bersertifikat</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas6 ?? '-' }}</td>
+        <td style="text-align: center;">{{ optional($surat->dokumenteknisslfpbg)->catatanberkas1 ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td>2.</td>
+        <td>Laporan Pemeriksaan Berkala Bangunan Gedung</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas2 ?? '-' }}</td>
+        <td style="text-align: center;">{{ optional($surat->dokumenteknisslfpbg)->catatanberkas2 ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td>3.</td>
+        <td>Gambar Bangunan Gedung Terbangun </td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas3 ?? '-' }}</td>
+        <td style="text-align: center;>{{ optional($surat->dokumenteknisslfpbg)->catatanberkas3 ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td>4.</td>
+        <td>Perhitungan Teknis dan Dokumen Rencana Saat Pembangunan Gedung</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas4 ?? '-' }}</td>
+        <td style="text-align: center;">{{ optional($surat->dokumenteknisslfpbg)->catatanberkas4 ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td>5.</td>
+        <td>Gambar Detail Struktur Bangunan</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas5 ?? '-' }}</td>
+        <td style="text-align: center;">{{ optional($surat->dokumenteknisslfpbg)->catatanberkas5 ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td>6.</td>
+        <td>Data Tenaga Ahli Pengkaji Teknis Bersertifikat</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ optional($surat->dokumenteknisslfpbg)->berkas6 ?? '-' }}</td>
+        <td style="text-align: center;">{{ optional($surat->dokumenteknisslfpbg)->catatanberkas6 ?? '-' }}</td>
       </tr>
 
           <tr>
