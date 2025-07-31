@@ -512,39 +512,106 @@ th {
 </script>
 
 
+{{-- Penyelidikan Tanah --}}
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-search me-1" style="color: blue;"></i> Penyelidikan Tanah
+    </label>
 
-        {{-- Penyelidikan Tanah --}}
-        <div class="col-md-4 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
-                <i class="bi bi-search me-1" style="color: blue;"></i> Penyelidikan Tanah
-            </label>
+    <div class="d-flex flex-column gap-2">
+        <label class="custom-radio">
+            <input type="radio" name="penyelidikan" value="Lengkap"
+                {{ old('penyelidikan', $data->penyelidikan) == 'Lengkap' ? 'checked' : '' }}
+                onclick="handlePenyelidikanChange(this.value)">
+            <span class="custom-box"></span> Lengkap
+        </label>
 
-            <div class="d-flex flex-column gap-2">
-                <label class="custom-radio">
-                    <input type="radio" name="penyelidikan" value="Lengkap"
-                        {{ old('penyelidikan', $data->penyelidikan) == 'Lengkap' ? 'checked' : '' }}>
-                    <span class="custom-box"></span> Lengkap
-                </label>
+        <label class="custom-radio">
+            <input type="radio" name="penyelidikan" value="Tidak Lengkap"
+                {{ old('penyelidikan', $data->penyelidikan) == 'Tidak Lengkap' ? 'checked' : '' }}
+                onclick="handlePenyelidikanChange(this.value)">
+            <span class="custom-box"></span> Tidak Lengkap
+        </label>
+    </div>
 
-                <label class="custom-radio">
-                    <input type="radio" name="penyelidikan" value="Tidak Lengkap"
-                        {{ old('penyelidikan', $data->penyelidikan) == 'Tidak Lengkap' ? 'checked' : '' }}>
-                    <span class="custom-box"></span> Tidak Lengkap
-                </label>
-            </div>
-            @error('penyelidikan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-        </div>
+    @error('penyelidikan')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
 
-        {{-- Berkas Dukung --}}
-        <div class="col-md-4 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
-                <i class="bi bi-search me-1" style="color: blue;"></i> Berkas Dukung Lainnya
-            </label>
-            <input type="text" name="berkas4" class="form-control"
-                placeholder="Masukkan keterangan"
-                value="{{ old('berkas4', $data->berkas4) }}">
-            @error('berkas4')<div class="text-danger mt-2">{{ $message }}</div>@enderror
-        </div>
+{{-- Catatan Penyelidikan --}}
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Penyelidikan
+    </label>
+
+    <textarea name="catatanberkas3" id="catatanberkas3" rows="3"
+        class="form-control @error('catatanberkas3') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas3', $data->catatanberkas3) }}</textarea>
+
+    @error('catatanberkas3')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handlePenyelidikanChange(value) {
+        const catatan = document.getElementById('catatanberkas3');
+
+        if (value === 'Lengkap') {
+            catatan.value = '';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name="penyelidikan"]:checked');
+        if (selected && selected.value === 'Lengkap') {
+            handlePenyelidikanChange('Lengkap');
+        }
+    });
+</script>
+{{-- Berkas Dukung --}}
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-search me-1" style="color: blue;"></i> Berkas Dukung Lainnya
+    </label>
+    <input type="text" name="berkas4" id="berkas4" class="form-control"
+        placeholder="Masukkan keterangan"
+        value="{{ old('berkas4', $data->berkas4) }}"
+        oninput="handleBerkas4Change(this.value)">
+    @error('berkas4')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+</div>
+
+{{-- Catatan Berkas 4 --}}
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Berkas 4
+    </label>
+    <textarea name="catatanberkas4" id="catatanberkas4" rows="3"
+        class="form-control @error('catatanberkas4') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas4', $data->catatanberkas4) }}</textarea>
+
+    @error('catatanberkas4')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handleBerkas4Change(value) {
+        const catatan = document.getElementById('catatanberkas4');
+        if (value.trim().toLowerCase() === 'lengkap') {
+            catatan.value = '';
+        }
+    }
+
+    // Trigger saat halaman dimuat jika isinya "Lengkap"
+    document.addEventListener('DOMContentLoaded', () => {
+        const input = document.getElementById('berkas4');
+        if (input && input.value.trim().toLowerCase() === 'lengkap') {
+            handleBerkas4Change('Lengkap');
+        }
+    });
+</script>
 
         {{-- Pilihan Catatan --}}
         <div class="col-md-6">
