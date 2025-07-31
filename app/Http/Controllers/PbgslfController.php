@@ -3311,6 +3311,10 @@ public function updatedatatanahnew(Request $request, $id)
         'pilihancatatan' => 'nullable|in:lengkap,tidak lengkap',
         'berkas4' => 'nullable|string',
         'catatan' => 'nullable|string',
+        'catatanberkas1' => 'nullable|string|max:255',
+        'catatanberkas2' => 'nullable|string|max:255',
+        'catatanberkas3' => 'nullable|string|max:255',
+        'catatanberkas4' => 'nullable|string|max:255',
     ], [
         // 'pbgslfbangunan_id.required' => 'ID Bangunan harus dipilih.',
         // 'pbgslfbangunan_id.exists' => 'Data bangunan tidak ditemukan.',
@@ -3324,13 +3328,17 @@ public function updatedatatanahnew(Request $request, $id)
     $data = datatanahpbg::findOrFail($id);
 
     $data->update([
-        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'],
-        'isiandatatanah' => $validated['isiandatatanah'],
-        'layout' => $validated['layout'],
-        'penyelidikan' => $validated['penyelidikan'],
-        'berkas4' => $validated['berkas4'],
-        'pilihancatatan' => $validated['pilihancatatan'],
+        'pbgslfbangunan_id' => $validated['pbgslfbangunan_id'] ?? null,
+        'isiandatatanah' => $validated['isiandatatanah'] ?? null,
+        'layout' => $validated['layout'] ?? null,
+        'penyelidikan' => $validated['penyelidikan'] ?? null,
+        'berkas4' => $validated['berkas4'] ?? null,
+        'pilihancatatan' => $validated['pilihancatatan'] ?? null,
         'catatan' => $validated['catatan'] ?? null,
+        'catatanberkas1' => $validated['catatanberkas1'] ?? null,
+        'catatanberkas2' => $validated['catatanberkas2'] ?? null,
+        'catatanberkas3' => $validated['catatanberkas3'] ?? null,
+        'catatanberkas4' => $validated['catatanberkas4'] ?? null,
     ]);
 session()->flash('update', 'Data Tanah berhasil diperbarui!');
 return redirect()->back();

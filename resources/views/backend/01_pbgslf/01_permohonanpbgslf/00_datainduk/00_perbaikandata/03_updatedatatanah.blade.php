@@ -585,7 +585,7 @@ th {
 {{-- Catatan Berkas 4 --}}
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Berkas 4
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Berkas Dukung Lainnya
     </label>
     <textarea name="catatanberkas4" id="catatanberkas4" rows="3"
         class="form-control @error('catatanberkas4') is-invalid @enderror"
