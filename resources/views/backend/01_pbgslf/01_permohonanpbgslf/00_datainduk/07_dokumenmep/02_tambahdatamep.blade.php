@@ -395,41 +395,90 @@ th {
     <input type="hidden" name="id" value="{{ $data->id }}">
 <div class="row g-3 mt-2">
     @php
-        $berkasList = [
-            '1. Spesifikasi Teknis Mekanikal, Elektrikal, dan Plambing',
-            '2. Perhitungan Teknis Mekanikal, Elektrikal, dan Plambing',
-            '3. Gambar Rencana Dan Detail Sistem Proteksi Kebakaran',
-            '4. Gambar Rencana Dan Detail Pengelolaan Persampahan',
-            '5. Gambar Rencana Dan Detail Pengelolaan Drainase',
-            '6. Gambar Rencana Dan Detail Pengelolaan Air Limbah',
-            '7. Gambar Rencana Dan Detail Pengelolaan Air Hujan',
-            '8. Gambar Rencana Dan Detail Pengelolaan Air Bersih',
-            '9. Gambar Rencana Dan Detail Pencahayaan Umum, dan Pencahayaan Khusus',
-            '10. Gambar Rencana Dan Detail Sumber Listrik, dan Jaringan Listrik',
-        ];
+    $berkasList = [
+        '1. Spesifikasi Teknis Mekanikal, Elektrikal, dan Plambing',
+        '2. Perhitungan Teknis Mekanikal, Elektrikal, dan Plambing',
+        '3. Gambar Rencana Dan Detail Sistem Proteksi Kebakaran',
+        '4. Gambar Rencana Dan Detail Pengelolaan Persampahan',
+        '5. Gambar Rencana Dan Detail Pengelolaan Drainase',
+        '6. Gambar Rencana Dan Detail Pengelolaan Air Limbah',
+        '7. Gambar Rencana Dan Detail Pengelolaan Air Hujan',
+        '8. Gambar Rencana Dan Detail Pengelolaan Air Bersih',
+        '9. Gambar Rencana Dan Detail Pencahayaan Umum, dan Pencahayaan Khusus',
+        '10. Gambar Rencana Dan Detail Sumber Listrik, dan Jaringan Listrik',
+    ];
+@endphp
+
+@foreach ($berkasList as $index => $judul)
+    @php
+        $i = $index + 1;
+        $berkasKey = 'berkas' . $i;
+        $catatanKey = 'catatanberkas' . $i;
     @endphp
 
-    @foreach ($berkasList as $index => $judul)
-        @php
-            $berkasKey = 'berkas' . ($index + 1);
-        @endphp
-        <div class="col-md-4 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
-                <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> {{ $judul }}
+    <div class="col-md-4 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> {{ $judul }}
+        </label>
+        <input type="hidden" name="{{ $berkasKey }}" value="-">
+        <div class="d-flex flex-column gap-2">
+            <label class="custom-radio">
+                <input type="radio" name="{{ $berkasKey }}" value="Lengkap"
+                    {{ old($berkasKey) == 'Lengkap' ? 'checked' : '' }}
+                    onclick="handleBerkas({{ $i }}, 'Lengkap')">
+                <span class="custom-box"></span> Lengkap
             </label>
-            <div class="d-flex flex-column gap-2">
-                <label class="custom-radio">
-                    <input type="radio" name="{{ $berkasKey }}" value="Lengkap" {{ old($berkasKey) == 'Lengkap' ? 'checked' : '' }}>
-                    <span class="custom-box"></span> Lengkap
-                </label>
-                <label class="custom-radio">
-                    <input type="radio" name="{{ $berkasKey }}" value="Tidak Lengkap" {{ old($berkasKey) == 'Tidak Lengkap' ? 'checked' : '' }}>
-                    <span class="custom-box"></span> Tidak Lengkap
-                </label>
-            </div>
-            @error($berkasKey)<div class="text-danger mt-2">{{ $message }}</div>@enderror
+            <label class="custom-radio">
+                <input type="radio" name="{{ $berkasKey }}" value="Tidak Lengkap"
+                    {{ old($berkasKey) == 'Tidak Lengkap' ? 'checked' : '' }}
+                    onclick="handleBerkas({{ $i }}, 'Tidak Lengkap')">
+                <span class="custom-box"></span> Tidak Lengkap
+            </label>
         </div>
-    @endforeach
+        @error($berkasKey)
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan {{ $judul }}
+        </label>
+        <textarea name="{{ $catatanKey }}" id="catatanberkas{{ $i }}" rows="3"
+            class="form-control @error($catatanKey) is-invalid @enderror"
+            style="padding: 12px;">{{ old($catatanKey) }}</textarea>
+        @error($catatanKey)
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+@endforeach
+
+{{-- Script Dinamis --}}
+<script>
+    function handleBerkas(index, value) {
+        const textarea = document.getElementById('catatanberkas' + index);
+        if (!textarea) return;
+
+        if (value === 'Lengkap') {
+            textarea.value = '';
+            textarea.readOnly = true;
+            textarea.classList.add('button-hijau');
+        } else {
+            textarea.readOnly = false;
+            textarea.classList.remove('button-hijau');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        for (let i = 1; i <= 10; i++) {
+            const selected = document.querySelector(`input[name="berkas${i}"]:checked`);
+            if (selected) {
+                handleBerkas(i, selected.value);
+            }
+        }
+    });
+</script>
+
 </div>
 
 </div>
