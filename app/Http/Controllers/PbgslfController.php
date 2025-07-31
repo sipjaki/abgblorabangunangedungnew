@@ -1343,6 +1343,17 @@ public function bepbgdokumeteknismepcreatenew(Request $request)
         'berkas9' => 'nullable|string',
         'berkas10' => 'nullable|string',
 
+          'catatanberkas1' => 'nullable|string|max:255',
+          'catatanberkas2' => 'nullable|string|max:255',
+          'catatanberkas3' => 'nullable|string|max:255',
+          'catatanberkas4' => 'nullable|string|max:255',
+          'catatanberkas5' => 'nullable|string|max:255',
+          'catatanberkas6' => 'nullable|string|max:255',
+          'catatanberkas7' => 'nullable|string|max:255',
+          'catatanberkas8' => 'nullable|string|max:255',
+          'catatanberkas9' => 'nullable|string|max:255',
+          'catatanberkas10' => 'nullable|string|max:255',
+
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
     ], [
@@ -1396,6 +1407,18 @@ public function bepbgdokumeteknismepcreatenew(Request $request)
         'berkas8' => $validated['berkas8'] ?? null,
         'berkas9' => $validated['berkas9'] ?? null,
         'berkas10' => $validated['berkas10'] ?? null,
+
+        'catatanberkas1' => $validated['catatanberkas1'] ?? null,
+        'catatanberkas2' => $validated['catatanberkas2'] ?? null,
+        'catatanberkas3' => $validated['catatanberkas3'] ?? null,
+        'catatanberkas4' => $validated['catatanberkas4'] ?? null,
+        'catatanberkas5' => $validated['catatanberkas5'] ?? null,
+        'catatanberkas6' => $validated['catatanberkas6'] ?? null,
+        'catatanberkas7' => $validated['catatanberkas7'] ?? null,
+        'catatanberkas8' => $validated['catatanberkas8'] ?? null,
+        'catatanberkas9' => $validated['catatanberkas9'] ?? null,
+        'catatanberkas10' => $validated['catatanberkas10'] ?? null,
+
         'pilihancatatan' => $validated['pilihancatatan'],
         'catatan' => $validated['catatan'] ?? null,
     ]);
