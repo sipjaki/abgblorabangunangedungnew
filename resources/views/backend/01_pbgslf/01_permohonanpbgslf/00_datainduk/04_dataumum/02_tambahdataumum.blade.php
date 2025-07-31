@@ -402,7 +402,7 @@ th {
 
 {{-- Berkas 1 --}}
 
-<div class="col-md-4 mb-3">
+<div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 1. Data Penyedia Jasa Konstruksi
     </label>
@@ -467,7 +467,7 @@ th {
 
 
 {{-- Berkas 2 --}}
-<div class="col-md-4 mb-3">
+<div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 2. Data Persetujuan Lingkungan
     </label>
@@ -548,7 +548,7 @@ th {
 </div> --}}
 
 {{-- Berkas 3 --}}
-<div class="col-md-4 mb-3">
+<div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 3. Data Intensitas Bangunan (KKPR/KRK)
     </label>
@@ -632,7 +632,7 @@ th {
 
 
 {{-- Berkas 4 --}}
-<div class="col-md-4 mb-3">
+<div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 4. Data Identitas Pemilik Bangunan (KTP/KITAS)
     </label>
@@ -703,7 +703,7 @@ th {
 </div> --}}
 
 {{-- Berkas 5 --}}
-<div class="col-md-4 mb-3">
+<div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 5. Berkas Dukung Lainnya
     </label>
