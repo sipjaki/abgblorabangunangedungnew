@@ -306,19 +306,43 @@ th {
                     'value' => $pemilik->isiandatatanah ?? '-',
                 ],
                 [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Isian Data Tanah',
+                    'value' => $pemilik->catatanberkas1 ?? '-',
+                ],
+
+                [
                     'icon' => 'bi-layout-text-window',
                     'title' => 'Layout',
                     'value' => $pemilik->layout ?? '-',
                 ],
                 [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Layout',
+                    'value' => $pemilik->catatanberkas2 ?? '-',
+                ],
+
+                [
                     'icon' => 'bi-search',
                     'title' => 'Penyelidikan',
                     'value' => $pemilik->penyelidikan ?? '-',
                 ],
+
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Penyelidikan',
+                    'value' => $pemilik->catatanberkas3 ?? '-',
+                ],
+
                 [
                     'icon' => 'bi-search',
                     'title' => 'Berkas Dukung Lainnya',
                     'value' => $pemilik->berkas4 ?? '-',
+                ],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Berkas Dukung Lainnya',
+                    'value' => $pemilik->catatanberkas4 ?? '-',
                 ],
                 [
                     'icon' => 'bi-check2-circle',
