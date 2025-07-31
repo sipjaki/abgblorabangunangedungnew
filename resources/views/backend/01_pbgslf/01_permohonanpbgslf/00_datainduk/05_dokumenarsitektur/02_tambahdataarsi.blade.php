@@ -395,54 +395,103 @@ th {
     <input type="hidden" name="id" value="{{ $data->id }}">
 
 <div class="row g-3 mt-2">
+{{-- 1. Berkas Dukung Lainnya (Input Teks) --}}
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 1. Berkas Dukung Lainnya
+    </label>
+    <input type="text" name="berkas1" value="{{ old('berkas1') }}" class="form-control" placeholder="Masukkan keterangan berkas">
+    @error('berkas1')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+</div>
 
-    {{-- 1. Berkas Dukung Lainnya (Input Teks) --}}
+{{-- Catatan untuk Berkas 1 --}}
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Berkas Dukung Lainnya
+    </label>
+    <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
+        class="form-control @error('catatanberkas1') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas1') }}</textarea>
+    @error('catatanberkas1')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+</div>
+
+{{-- 2 - 10. Radio Button + Catatan --}}
+@for ($i = 2; $i <= 10; $i++)
+    @php
+        $labels = [
+            2 => 'Spesifikasi Teknis Arsitektur Bangunan',
+            3 => 'Gambar Rencana Detail Bangunan',
+            4 => 'Gambar Rencana Tata Ruang Luar',
+            5 => 'Gambar Rencana Tata Ruang Dalam',
+            6 => 'Gambar Rencana Tampak Bangunan',
+            7 => 'Gambar Rencana Potongan Bangunan',
+            8 => 'Gambar Rencana Denah Bangunan',
+            9 => 'Gambar Rencana Tapak Bangunan',
+            10 => 'Gambar Situasi',
+        ];
+        $name = 'berkas' . $i;
+        $catatan = 'catatanberkas' . $i;
+    @endphp
+
     <div class="col-md-4 mb-3">
         <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> 1. Berkas Dukung Lainnya
+            <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> {{ $i }}. {{ $labels[$i] }}
         </label>
-        <input type="text" name="berkas1" value="{{ old('berkas1') }}" class="form-control" placeholder="Masukkan keterangan berkas">
-        @error('berkas1')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+
+        <input type="hidden" name="{{ $name }}" value="-">
+
+        <div class="d-flex flex-column gap-2">
+            <label class="custom-radio">
+                <input type="radio" name="{{ $name }}" value="Lengkap"
+                    {{ old($name) == 'Lengkap' ? 'checked' : '' }}
+                    onclick="handleBerkas('{{ $i }}', 'Lengkap')">
+                <span class="custom-box"></span> Lengkap
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="{{ $name }}" value="Tidak Lengkap"
+                    {{ old($name) == 'Tidak Lengkap' ? 'checked' : '' }}
+                    onclick="handleBerkas('{{ $i }}', 'Tidak Lengkap')">
+                <span class="custom-box"></span> Tidak Lengkap
+            </label>
+        </div>
+
+        @error($name)<div class="text-danger mt-2">{{ $message }}</div>@enderror
     </div>
 
-    {{-- 2 - 10. Radio Button + Hidden Default --}}
-    @for ($i = 2; $i <= 10; $i++)
-        @php
-            $labels = [
-                2 => 'Spesifikasi Teknis Arsitektur Bangunan',
-                3 => 'Gambar Rencana Detail Bangunan',
-                4 => 'Gambar Rencana Tata Ruang Luar',
-                5 => 'Gambar Rencana Tata Ruang Dalam',
-                6 => 'Gambar Rencana Tampak Bangunan',
-                7 => 'Gambar Rencana Potongan Bangunan',
-                8 => 'Gambar Rencana Denah Bangunan',
-                9 => 'Gambar Rencana Tapak Bangunan',
-                10 => 'Gambar Situasi',
-            ];
-            $name = 'berkas' . $i;
-        @endphp
+    <div class="col-md-6 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan {{ $labels[$i] }}
+        </label>
+        <textarea name="{{ $catatan }}" id="catatanberkas{{ $i }}" rows="3"
+            class="form-control @error($catatan) is-invalid @enderror"
+            style="padding: 12px;">{{ old($catatan) }}</textarea>
+        @error($catatan)<div class="text-danger mt-2">{{ $message }}</div>@enderror
+    </div>
+@endfor
 
-        <div class="col-md-4 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
-                <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> {{ $i }}. {{ $labels[$i] }}
-            </label>
+{{-- Script Dinamis --}}
+<script>
+    function handleBerkas(index, value) {
+        const textarea = document.getElementById('catatanberkas' + index);
+        if (value === 'Lengkap') {
+            textarea.value = '';
+            textarea.setAttribute('readonly', true);
+            textarea.classList.add('button-hijau');
+        } else {
+            textarea.removeAttribute('readonly');
+            textarea.classList.remove('button-hijau');
+        }
+    }
 
-            {{-- Hidden input default nilai "-" jika tidak dipilih --}}
-            <input type="hidden" name="{{ $name }}" value="-">
-
-            <div class="d-flex flex-column gap-2">
-                <label class="custom-radio">
-                    <input type="radio" name="{{ $name }}" value="Lengkap" {{ old($name) == 'Lengkap' ? 'checked' : '' }}>
-                    <span class="custom-box"></span> Lengkap
-                </label>
-                <label class="custom-radio">
-                    <input type="radio" name="{{ $name }}" value="Tidak Lengkap" {{ old($name) == 'Tidak Lengkap' ? 'checked' : '' }}>
-                    <span class="custom-box"></span> Tidak Lengkap
-                </label>
-            </div>
-            @error($name)<div class="text-danger mt-2">{{ $message }}</div>@enderror
-        </div>
-    @endfor
+    document.addEventListener('DOMContentLoaded', () => {
+        for (let i = 2; i <= 10; i++) {
+            const selected = document.querySelector('input[name="berkas' + i + '"]:checked');
+            if (selected) {
+                handleBerkas(i, selected.value);
+            }
+        }
+    });
+</script>
 
 </div>
 
@@ -475,7 +524,7 @@ th {
 
         {{-- Tombol Submit --}}
         <div class="col-12 text-end mt-3">
-            <button type="button" class="button-baru" onclick="openModal()">
+            <button type="button" class="button-hijau" onclick="openModal()">
                 <i class="bi bi-save me-1"></i> Simpan Data Arsitektur
             </button>
         </div>
