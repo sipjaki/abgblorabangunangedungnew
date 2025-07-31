@@ -646,8 +646,9 @@ th {
     <thead>
         <tr>
             <th style="width: 40px;">NO</th>
-            <th>DOKUMEN ARSITEKTUR</th>
-        <th style="width: 200px; text-align:center;">VERIFIKASI</th>
+            <th style="width: 200px;">DOKUMEN ARSITEKTUR</th>
+        <th style="width: 100px; text-align:center;">VERIFIKASI</th>
+        <th style="width: 200px; text-align:center;">CATATAN</th>
       </tr>
   </thead>
   <tbody>
@@ -655,51 +656,61 @@ th {
           <td>1.</td>
           <td>Rekomendasi Peil Banjir</td>
           <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas1 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>2.</td>
-          <td>Spesifikasi Teknis Arsitektur Bangunan </td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas2 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>3.</td>
-          <td>Gambar Rencana Detail Bangunan </td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas3 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>4.</td>
-          <td>Gambar Rencana Tata Ruang Luar</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas4 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>5.</td>
-          <td>Gambar Rencana Tata Ruang Dalam</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas5 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>6.</td>
-          <td>Gambar Rencana Tampak Bangunan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas6 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>7.</td>
-          <td>Gambar Rencana Potongan Bangunan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas7 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>8.</td>
-          <td>Gambar Rencana Denah Bangunan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas8 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>9.</td>
-          <td>Gambar Rencana Tapak Bangunan</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas9 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>10.</td>
-          <td>Gambar Situasi</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas10 ?? '-' }}</td>
+          <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas1 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Spesifikasi Teknis Arsitektur Bangunan </td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas2 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas2 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Gambar Rencana Detail Bangunan </td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas3 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas3 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Gambar Rencana Tata Ruang Luar</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas4 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas4 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>Gambar Rencana Tata Ruang Dalam</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas5 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas5 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>6.</td>
+            <td>Gambar Rencana Tampak Bangunan</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas6 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas6 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>7.</td>
+            <td>Gambar Rencana Potongan Bangunan</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas7 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas7 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>8.</td>
+            <td>Gambar Rencana Denah Bangunan</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas8 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas8 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>9.</td>
+            <td>Gambar Rencana Tapak Bangunan</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas9 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas9 ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td>10.</td>
+            <td>Gambar Situasi</td>
+            <td style="text-align: center; text-transform: uppercase;">{{ $surat->dokumenteknisarsi->berkas10 ?? '-' }}</td>
+            <td style="text-align: center;">{{ $surat->dokumenteknisarsi->catatanberkas10 ?? '-' }}</td>
       </tr>
       <tr>
         <td colspan="3"><em>Catatan Dok. Arsitektur :</em>{{ $surat->dokumenteknisarsi->catatan ?? '-' }}</td>
