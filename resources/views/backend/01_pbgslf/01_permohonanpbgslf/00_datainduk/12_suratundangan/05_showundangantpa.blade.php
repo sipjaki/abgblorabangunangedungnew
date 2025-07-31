@@ -411,25 +411,24 @@
     </tr> --}}
   </thead>
   <tbody>
-    <tr><td style="border: none; width:20px;">1</td><td style="border: none;">{{$surat->tpatpt->pengawas1->namalengkap}}</td></tr>
-    <tr><td style="border: none; width:20px;">2</td><td style="border: none;">PPKom Bidang Bangunan Gedung</td></tr>
-    <tr><td style="border: none; width:20px;">3</td><td style="border: none;">PPTK Bidang Bangunan Gedung</td></tr>
-    <tr><td style="border: none; width:20px;">4</td><td style="border: none;">Muhammad Yusuf Zaqi E., S.E</td></tr>
-    <tr><td style="border: none; width:20px;">5</td><td style="border: none;">Tresilia Diah Silviati, S.T</td></tr>
-    <tr><td style="border: none; width:20px;">6</td><td style="border: none;">Novembri Putrilianawati, A.Md</td></tr>
-    <tr><td style="border: none; width:20px;">7</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
-    <tr><td style="border: none; width:20px;">8</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
-    <tr><td style="border: none; width:20px;">9</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
-    <tr><td style="border: none; width:20px;">10</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
-    <tr><td style="border: none; width:20px;">11</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
-    <tr><td style="border: none; width:20px;">12</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
-    {{-- <tr><td style="border: none;">7</td><td style="border: none;">Menda Finanto, S.Kom</td></tr> --}}
-  </tbody>
+@for ($i = 1; $i <= 12; $i++)
+    @php
+        $pengawas = $surat->tpatpt->{'pengawas' . $i};
+    @endphp
+    @if ($pengawas && $pengawas->namalengkap)
+        <tr>
+            <td style="border: none; width:20px;">{{ $i }}.</td>
+            <td style="border: none;">{{ $pengawas->namalengkap }}</td>
+        </tr>
+    @endif
+@endfor
+
+</tbody>
 </table>
 
-    <div style="margin-top: 30px; font-size: 12px; font-family: 'Times New Roman', serif !important;">
+    {{-- <div style="margin-top: 30px; font-size: 12px; font-family: 'Times New Roman', serif !important;">
       <p style="font-family: 'Times New Roman', serif !important;">Demikian lampiran ini dibuat untuk dapat dipergunakan sebagaimana mestinya.</p>
-    </div>
+    </div> --}}
   </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
