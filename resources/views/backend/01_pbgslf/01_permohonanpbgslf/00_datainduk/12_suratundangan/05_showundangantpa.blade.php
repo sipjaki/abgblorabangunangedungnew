@@ -398,44 +398,34 @@
 
     </div>
     </div>
-    <table class="tabel-penerima" style="font-family: 'Times New Roman', serif !important;">
-      <thead>
-        <tr>
-          <th style="font-family: 'Times New Roman', serif !important;">No</th>
-          <th style="font-family: 'Times New Roman', serif !important;">Nama</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="font-family: 'Times New Roman', serif !important;">1</td>
-          <td style="font-family: 'Times New Roman', serif !important;">Plt. Kepala DPUPR Kab. Blora</td>
-        </tr>
-        <tr>
-          <td style="font-family: 'Times New Roman', serif !important;">2</td>
-          <td style="font-family: 'Times New Roman', serif !important;">PPKom Bidang Bangunan Gedung</td>
-        </tr>
-        <tr>
-          <td style="font-family: 'Times New Roman', serif !important;">3</td>
-          <td style="font-family: 'Times New Roman', serif !important;">PPTK Bidang Bangunan Gedung</td>
-        </tr>
-        <tr>
-          <td style="font-family: 'Times New Roman', serif !important;">4</td>
-          <td style="font-family: 'Times New Roman', serif !important;">Muhammad Yusuf Zaqi E., S.E</td>
-        </tr>
-        <tr>
-          <td style="font-family: 'Times New Roman', serif !important;">5</td>
-          <td style="font-family: 'Times New Roman', serif !important;">Tresilia Diah Silviati, S.T</td>
-        </tr>
-        <tr>
-          <td style="font-family: 'Times New Roman', serif !important;">6</td>
-          <td style="font-family: 'Times New Roman', serif !important;">Novembri Putrilianawati, A.Md</td>
-        </tr>
-        <tr>
-          <td style="font-family: 'Times New Roman', serif !important;">7</td>
-          <td style="font-family: 'Times New Roman', serif !important;">Menda Finanto, S.Kom</td>
-        </tr>
-      </tbody>
-    </table>
+    <table class="tabel-penerima" style="font-family: 'Times New Roman', serif !important; border-collapse: collapse; width: 100%; background-color: white;">
+  <thead>
+    <tr>
+      <td colspan="2" style="padding-bottom: 10px; font-family: 'Times New Roman', serif !important;">
+        Kepada Yth
+      </td>
+    </tr>
+    <tr>
+      <th style="width:50px; text-align: left; font-family: 'Times New Roman', serif !important; border: none;">No</th>
+      <th style="text-align: left; font-family: 'Times New Roman', serif !important; border: none;">Nama</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="border: none;">1</td><td style="border: none;">{{$subdatapemilik->pengawas1->namalengkap}}</td></tr>
+    <tr><td style="border: none;">2</td><td style="border: none;">PPKom Bidang Bangunan Gedung</td></tr>
+    <tr><td style="border: none;">3</td><td style="border: none;">PPTK Bidang Bangunan Gedung</td></tr>
+    <tr><td style="border: none;">4</td><td style="border: none;">Muhammad Yusuf Zaqi E., S.E</td></tr>
+    <tr><td style="border: none;">5</td><td style="border: none;">Tresilia Diah Silviati, S.T</td></tr>
+    <tr><td style="border: none;">6</td><td style="border: none;">Novembri Putrilianawati, A.Md</td></tr>
+    <tr><td style="border: none;">7</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
+    <tr><td style="border: none;">8</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
+    <tr><td style="border: none;">9</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
+    <tr><td style="border: none;">10</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
+    <tr><td style="border: none;">11</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
+    <tr><td style="border: none;">12</td><td style="border: none;">Menda Finanto, S.Kom</td></tr>
+    {{-- <tr><td style="border: none;">7</td><td style="border: none;">Menda Finanto, S.Kom</td></tr> --}}
+  </tbody>
+</table>
 
     <div style="margin-top: 30px; font-size: 12px; font-family: 'Times New Roman', serif !important;">
       <p style="font-family: 'Times New Roman', serif !important;">Demikian lampiran ini dibuat untuk dapat dipergunakan sebagaimana mestinya.</p>
