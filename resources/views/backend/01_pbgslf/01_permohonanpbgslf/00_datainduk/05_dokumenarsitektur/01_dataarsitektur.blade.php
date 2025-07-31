@@ -301,15 +301,69 @@ th {
         @php
             $infoItems = [
                 ['icon' => 'bi-geo-alt', 'title' => '1. Berkas Dukung Lainnya', 'value' => $pemilik->berkas1 ?? '-'],
+                                   [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Berkas Dukung Lainnya',
+                    'value' => $pemilik->catatanberkas1 ?? '-',
+                ],
+
                 ['icon' => 'bi-file-earmark-text', 'title' => '2. Spesifikasi Teknis Arsitektur Bangunan', 'value' => $pemilik->berkas2 ?? '-'],
+                                   [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Spesifikasi Teknis Arsitektur Bangunan',
+                    'value' => $pemilik->catatanberkas2 ?? '-',
+                ],
+
                 ['icon' => 'bi-easel', 'title' => '3. Gambar Rencana Detail Bangunan', 'value' => $pemilik->berkas3 ?? '-'],
+                        [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Detail Bangunan',
+                    'value' => $pemilik->catatanberkas3 ?? '-',
+                ],
+
                 ['icon' => 'bi-layout-text-window', 'title' => '4. Gambar Rencana Tata Ruang Luar', 'value' => $pemilik->berkas4 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Rencana Tata Ruang Luar',
+                    'value' => $pemilik->catatanberkas4 ?? '-',
+                ],
                 ['icon' => 'bi-layout-text-sidebar', 'title' => '5. Gambar Rencana Tata Ruang Dalam', 'value' => $pemilik->berkas5 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Rencana Tata Ruang Dalam',
+                    'value' => $pemilik->catatanberkas5 ?? '-',
+                ],
                 ['icon' => 'bi-building', 'title' => '6. Gambar Rencana Tampak Bangunan', 'value' => $pemilik->berkas6 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Tampak Bangunan',
+                    'value' => $pemilik->catatanberkas6 ?? '-',
+                ],
                 ['icon' => 'bi-align-center', 'title' => '7. Gambar Rencana Potongan Bangunan', 'value' => $pemilik->berkas7 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Potongan Bangunan',
+                    'value' => $pemilik->catatanberkas7 ?? '-',
+                ],
                 ['icon' => 'bi-layout-split', 'title' => '8. Gambar Rencana Denah Bangunan', 'value' => $pemilik->berkas8 ?? '-'],
+                                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Denah Bangunan',
+                    'value' => $pemilik->catatanberkas8 ?? '-',
+                ],
+
                 ['icon' => 'bi-map', 'title' => '9. Gambar Rencana Tapak Bangunan', 'value' => $pemilik->berkas9 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Tapak Bangunan',
+                    'value' => $pemilik->catatanberkas9 ?? '-',
+                ],
                 ['icon' => 'bi-map-fill', 'title' => '10. Gambar Situasi', 'value' => $pemilik->berkas10 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Situasi',
+                    'value' => $pemilik->catatanberkas10 ?? '-',
+                ],
                 ['icon' => 'bi-check2-circle', 'title' => 'Pilihan Catatan', 'value' => $pemilik->pilihancatatan ?? '-'],
             ];
         @endphp
