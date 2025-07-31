@@ -389,7 +389,7 @@ th {
   Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('d F Y') : '-' }}
 </p>
 <p style="font-size: 12px; margin: 0; padding: 0;">
-  <strong style="font-family: 'Times New Roman', serif !important;">Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/{{ date('Y') }}<br/>
+  <strong style="font-family: 'Times New Roman', serif !important;">Nomor</strong> : <span style="font-family: 'Times New Roman', serif !important;"> 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/{{ date('Y') }}</span><br/>
   <strong style="font-family: 'Times New Roman', serif !important;">Lampiran</strong> : 1 Bandel<br />
   <strong style="font-family: 'Times New Roman', serif !important;">Perihal</strong> :
   <u style="font-family: 'Times New Roman', serif !important; text-decoration: none;">
@@ -397,6 +397,7 @@ th {
   </u>
 </p>
 
+<br><br>
   <p style="font-family: 'Times New Roman', serif !important;">Kepada Yth:<br />Pemohon<br />Di Tempat</p>
   <p style="font-family: 'Times New Roman', serif !important;">Dengan ini kami sampaikan hasil verifikasi Pemohon sebagai berikut :</p>
 
