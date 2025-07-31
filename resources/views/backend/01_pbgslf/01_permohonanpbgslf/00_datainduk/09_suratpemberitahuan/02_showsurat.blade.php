@@ -634,7 +634,7 @@ th {
     </tr>
     {{-- <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas5 ?? '-' }}</td> --}}
     <tr>
-        <td colspan="3"><em>Catatan Data Umum :</em> {{ $surat->dataumumpbg->catatan ?? '-' }}</td>
+        <td colspan="4"><em>Catatan Data Umum :</em> {{ $surat->dataumumpbg->catatan ?? '-' }}</td>
       </tr>
   </tbody>
   </table>
