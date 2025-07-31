@@ -387,12 +387,17 @@
   <!-- HALAMAN KEDUA -->
   <div class="halaman" id="halaman-kedua" style="font-family: 'Times New Roman', serif !important;">
 
+      <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px; font-family: 'Times New Roman', serif !important;">
+                                      <div style="text-align: left; font-size: 12px; font-family: 'Times New Roman', serif !important;">
+
     <p style="text-align: center; font-weight: bold; margin-top: 20px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
       LAMPIRAN SURAT UNDANGAN<br>
       Nomor: 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025<br>
       Tanggal: {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}
     </p>
 
+    </div>
+    </div>
     <table class="tabel-penerima" style="font-family: 'Times New Roman', serif !important;">
       <thead>
         <tr>
