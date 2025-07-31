@@ -397,19 +397,39 @@ th {
   </u>
 </p>
 
-<br><br>
+<br>
   <p style="font-family: 'Times New Roman', serif !important;">Kepada Yth:<br />Pemohon<br />Di Tempat</p>
   <p style="font-family: 'Times New Roman', serif !important;">Dengan ini kami sampaikan hasil verifikasi Pemohon sebagai berikut :</p>
-
-  <table class="isian" style="font-family: 'Times New Roman', serif !important;">
-    <tr><td>No. Registrasi</td><td>{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td></tr>
-<tr><td>Nama Lengkap Pemilik</td><td>{{ $surat->datapemilik->namapemilik ?? '-' }}</td></tr>
-    <tr><td>Jenis Konsultasi</td><td>{{ $surat->databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}</td></tr>
-    <tr><td>Lokasi Bangunan</td><td>{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td></tr>
-    <tr><td>Fungsi Bangunan</td><td>{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td></tr>
-    <tr><td>No. Telepon</td><td>{{ $surat->datapemilik->nomortelepon ?? '-' }}</td></tr>
-    <tr><td>Email</td><td>{{ $surat->datapemilik->email ?? '-' }}</td></tr>
-  </table>
+<table class="isian" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">No. Registrasi</td>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">Nama Lengkap Pemilik</td>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">Jenis Konsultasi</td>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">{{ $surat->databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">Lokasi Bangunan</td>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">Fungsi Bangunan</td>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">No. Telepon</td>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">{{ $surat->datapemilik->nomortelepon ?? '-' }}</td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">Email</td>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 12px; padding: 4px;">{{ $surat->datapemilik->email ?? '-' }}</td>
+  </tr>
+</table>
 
   <p style="margin-top: 10px;">Setelah dilakukan Verifikasi terhadap Data Bangunan, Data Tanah, Data Umum dan Ketentuan Teknis, maka data disimpulkan:</p>
   <p><strong>{{ $surat->pilihancatatan ?? '-' }}</strong></p>
