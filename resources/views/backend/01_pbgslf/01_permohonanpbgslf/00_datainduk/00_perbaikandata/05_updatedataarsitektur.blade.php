@@ -395,7 +395,58 @@ th {
     <input type="hidden" name="id" value="{{ $data->id }}">
 
     <div class="row g-3 mt-2">
-@for ($i = 1; $i <= 10; $i++)
+
+
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 1. Data Berkas Dukung Lainnya
+    </label>
+
+<div class="mb-3">
+    <input type="text" name="berkas1" id="berkas1"
+        class="form-control @error('berkas1') is-invalid @enderror"
+        value="{{ old('berkas1', $data->berkas1) }}"
+        placeholder="Masukkan status berkas (contoh: Lengkap / Tidak Lengkap)">
+    @error('berkas1')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+</div>
+
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Penyedia Jasa Perencana
+    </label>
+
+    <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
+        class="form-control @error('catatanberkas1') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas1', $data->catatanberkas1) }}</textarea>
+
+    @error('catatanberkas1')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handleBerkas1(value) {
+        const catatan = document.getElementById('catatanberkas1');
+
+        if (value === 'Lengkap') {
+            catatan.value = '';
+        }
+    }
+
+    // Trigger saat halaman dimuat (jika sudah memilih "Lengkap" sebelumnya)
+    document.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name="berkas1"]:checked');
+        if (selected && selected.value === 'Lengkap') {
+            handleBerkas1('Lengkap');
+        }
+    });
+</script>
+
+@for ($i = 2; $i <= 10; $i++)
     <div class="col-md-6 mb-3">
         <label class="form-label d-block" style="color: black; font-weight: 600;">
             <i class="bi bi-folder2-open me-1" style="color: blue;"></i> {{ $i }}. Berkas Dukung {{ $i }}
