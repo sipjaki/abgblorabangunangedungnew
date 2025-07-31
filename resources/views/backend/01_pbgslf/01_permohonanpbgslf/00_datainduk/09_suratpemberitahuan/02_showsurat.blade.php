@@ -596,8 +596,9 @@ th {
     <thead>
       <tr>
         <th style="width: 40px;">NO</th>
-        <th>DOKUMEN UMUM</th>
-        <th style="width: 200px; text-align:center;">VERIFIKASI</th>
+        <th style="width: 200px;">DOKUMEN UMUM</th>
+        <th style="width: 100px; text-align:center;">VERIFIKASI</th>
+        <th style="width: 200px; text-align:center;">CATATAN</th>
       </tr>
     </thead>
     <tbody>
@@ -605,29 +606,35 @@ th {
         <td>1.</td>
         <td>Informasi KTP/KITAS*</td>
         <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas1 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>2.</td>
-          <td>Informasi KRK/KRPR*</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas2 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>3.</td>
-          <td>Surat Perjanjian pemanfaatan tanah antara pemilik tanah dan Pemilik Bangunan Gedung (Dalam hal pemilik tanah bukan pemilik bangunan gedung)</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas3 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>4.</td>
-          <td>Dokumen lingkungan sesuai peraturan perundangan (AMDAL/AMDAL Lalin, UKL/UPL, SPPL)/Izin Lokasi*</td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas4 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td>5.</td>
-          <td>Berkas Dukung Lainnya </td>
-          <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas5 ?? '-' }}</td>
-      </tr>
-      <tr>
-          <td colspan="3"><em>Catatan Data Umum :</em> {{ $surat->dataumumpbg->catatan ?? '-' }}</td>
+        <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas1 ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td>2.</td>
+        <td>Informasi KRK/KRPR*</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas2 ?? '-' }}</td>
+        <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas2 ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td>3.</td>
+        <td>Surat Perjanjian pemanfaatan tanah antara pemilik tanah dan Pemilik Bangunan Gedung (Dalam hal pemilik tanah bukan pemilik bangunan gedung)</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas3 ?? '-' }}</td>
+        <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas3 ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td>4.</td>
+        <td>Dokumen lingkungan sesuai peraturan perundangan (AMDAL/AMDAL Lalin, UKL/UPL, SPPL)/Izin Lokasi*</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas4 ?? '-' }}</td>
+        <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas4 ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td>5.</td>
+        <td>Berkas Dukung Lainnya </td>
+        <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas5 ?? '-' }}</td>
+        <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas5 ?? '-' }}</td>
+    </tr>
+    {{-- <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas5 ?? '-' }}</td> --}}
+    <tr>
+        <td colspan="3"><em>Catatan Data Umum :</em> {{ $surat->dataumumpbg->catatan ?? '-' }}</td>
       </tr>
   </tbody>
   </table>
