@@ -400,16 +400,27 @@ th {
         <i class="bi bi-file-earmark-text me-2" style="color: navy;"></i> Data Tanah
     </h5> --}}
 
-{{-- Isian Berkas 1 --}}
+{{-- Berkas 1 --}}
 <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-file-text me-1" style="color: blue;"></i> 1. Data Penyedia Jasa Konstruksi
     </label>
 
-    <input type="text" name="berkas1" id="berkas1" class="form-control"
-        placeholder="Masukkan keterangan"
-        value="{{ old('berkas1') }}"
-        oninput="handleBerkas1Change(this.value)">
+    <div class="d-flex flex-column gap-2">
+        <label class="custom-radio">
+            <input type="radio" name="berkas1" value="Lengkap"
+                {{ old('berkas1') == 'Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas1(this.value)">
+            <span class="custom-box"></span> Lengkap
+        </label>
+
+        <label class="custom-radio">
+            <input type="radio" name="berkas1" value="Tidak Lengkap"
+                {{ old('berkas1') == 'Tidak Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas1(this.value)">
+            <span class="custom-box"></span> Tidak Lengkap
+        </label>
+    </div>
 
     @error('berkas1')
     <div class="text-danger mt-2">{{ $message }}</div>
@@ -419,7 +430,7 @@ th {
 {{-- Catatan Berkas 1 --}}
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Data Penyedia Jasa Konstruksi
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Penyedia Jasa Konstruksi
     </label>
 
     <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
@@ -432,23 +443,23 @@ th {
 </div>
 
 <script>
-    function handleBerkas1Change(value) {
+    function handleBerkas1(value) {
         const catatan = document.getElementById('catatanberkas1');
-
-        if (value.trim().toLowerCase() === 'lengkap') {
+        if (value === 'Lengkap') {
+            catatan.value = '';
             catatan.setAttribute('readonly', true);
             catatan.classList.add('button-hijau');
-            catatan.value = '';
         } else {
             catatan.removeAttribute('readonly');
             catatan.classList.remove('button-hijau');
         }
     }
 
+    // Jalankan saat halaman pertama dimuat
     document.addEventListener('DOMContentLoaded', () => {
-        const val = document.getElementById('berkas1')?.value;
-        if (val && val.trim().toLowerCase() === 'lengkap') {
-            handleBerkas1Change(val);
+        const selected = document.querySelector('input[name="berkas1"]:checked');
+        if (selected) {
+            handleBerkas1(selected.value);
         }
     });
 </script>
