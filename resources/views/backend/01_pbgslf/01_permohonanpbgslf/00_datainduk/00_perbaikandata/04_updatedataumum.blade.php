@@ -397,7 +397,7 @@ th {
 
     <div class="row g-3 mt-2">
 {{-- Berkas Dukung 1 --}}
-<div class="col-md-4 mb-3">
+{{-- <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-folder2-open me-1" style="color: blue;"></i> 1. Data Penyedia Jasa Perencana
     </label>
@@ -414,7 +414,66 @@ th {
         </label>
     </div>
     @error('berkas1')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+</div> --}}
+
+
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 1. Data Penyedia Jasa Perencana
+    </label>
+
+    <div class="d-flex flex-column gap-2">
+        <label class="custom-radio">
+            <input type="radio" name="berkas1" value="Lengkap"
+                {{ old('berkas1', $data->berkas1) == 'Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas1(this.value)">
+            <span class="custom-box"></span> Lengkap
+        </label>
+
+        <label class="custom-radio">
+            <input type="radio" name="berkas1" value="Tidak Lengkap"
+                {{ old('berkas1', $data->berkas1) == 'Tidak Lengkap' ? 'checked' : '' }}
+                onclick="handleBerkas1(this.value)">
+            <span class="custom-box"></span> Tidak Lengkap
+        </label>
+    </div>
+
+    @error('berkas1')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
 </div>
+
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Penyedia Jasa Perencana
+    </label>
+
+    <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
+        class="form-control @error('catatanberkas1') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas1', $data->catatanberkas1) }}</textarea>
+
+    @error('catatanberkas1')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handleBerkas1(value) {
+        const catatan = document.getElementById('catatanberkas1');
+
+        if (value === 'Lengkap') {
+            catatan.value = '';
+        }
+    }
+
+    // Trigger saat halaman dimuat (jika sudah memilih "Lengkap" sebelumnya)
+    document.addEventListener('DOMContentLoaded', () => {
+        const selected = document.querySelector('input[name="berkas1"]:checked');
+        if (selected && selected.value === 'Lengkap') {
+            handleBerkas1('Lengkap');
+        }
+    });
+</script>
 
 {{-- Berkas Dukung 2 --}}
 <div class="col-md-4 mb-3">
