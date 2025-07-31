@@ -402,7 +402,7 @@
   <thead>
     <tr>
       {{-- <td colspan="2" style="padding-bottom: 10px; font-family: 'Times New Roman', serif !important;"> --}}
-        Kepada Yth
+       <p style="font-size: 12px;">Kepada Yth. </p>
       {{-- </td> --}}
     </tr>
     {{-- <tr>
