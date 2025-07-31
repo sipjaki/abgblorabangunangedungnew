@@ -581,7 +581,7 @@ th {
         </tr>
       <tr>
         <tr>
-        <td colspan="3"><em>Catatan Data Tanah:</em> {{ $surat->datatanahpbg->catatan ?? '-' }}</td>
+        <td colspan="4"><em>Catatan Data Tanah:</em> {{ $surat->datatanahpbg->catatan ?? '-' }}</td>
       </tr>
     </tbody>
   </table>
