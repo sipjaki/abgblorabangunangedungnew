@@ -18,7 +18,7 @@
     border: 1px solid #e5e7eb;
     white-space: nowrap;
 }
-
+  
 .zebra-table td {
     text-align: center;
     padding: 8px 12px;

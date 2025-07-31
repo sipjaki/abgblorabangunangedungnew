@@ -395,112 +395,258 @@ th {
     <input type="hidden" name="id" value="{{ $data->id }}">
 
 
-    <div class="row g-3 mt-2">
+<div class="row g-3 mt-2">
+    <!-- Isian Data Tanah Section -->
+    <div class="col-md-4 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Isian Data Tanah
+        </label>
 
-        <div class="col-md-4 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
-                <i class="bi bi-file-text me-1" style="color: blue;"></i> Isian Data Tanah
+        <div class="d-flex flex-column gap-2">
+            <label class="custom-radio">
+                <input type="radio" name="isiandatatanah" value="Lengkap"
+                {{ old('isiandatatanah') == 'Lengkap' ? 'checked' : '' }} onclick="handleIsianTanah(this.value)">
+                <span class="custom-box"></span> Lengkap
             </label>
 
-            <div class="d-flex flex-column gap-2">
-                <label class="custom-radio">
-                    <input type="radio" name="isiandatatanah" value="Lengkap"
-                    {{ old('isiandatatanah') == 'Lengkap' ? 'checked' : '' }} onclick="handleIsianTanah(this.value)">
-                    <span class="custom-box"></span> Lengkap
-                </label>
-
-                <label class="custom-radio">
-                    <input type="radio" name="isiandatatanah" value="Tidak Lengkap"
-                    {{ old('isiandatatanah') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleIsianTanah(this.value)">
-                    <span class="custom-box"></span> Tidak Lengkap
-                </label>
-            </div>
-
-            @error('isiandatatanah')
-            <div class="text-danger mt-2">{{ $message }}</div>
-            @enderror
+            <label class="custom-radio">
+                <input type="radio" name="isiandatatanah" value="Tidak Lengkap"
+                {{ old('isiandatatanah') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleIsianTanah(this.value)">
+                <span class="custom-box"></span> Tidak Lengkap
+            </label>
         </div>
 
-        <div class="col-md-6 mb-3">
-            <label class="form-label d-block" style="color: black; font-weight: 600;">
-                <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Isian Data Tanah
+        @error('isiandatatanah')
+        <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Isian Data Tanah
+        </label>
+
+        <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
+        class="form-control @error('catatanberkas1') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas1') }}</textarea>
+
+        @error('catatanberkas1')
+        <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <!-- Layout Section -->
+    <div class="col-md-4 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Layout
+        </label>
+
+        <div class="d-flex flex-column gap-2">
+            <label class="custom-radio">
+                <input type="radio" name="layout" value="Lengkap"
+                    {{ old('layout') == 'Lengkap' ? 'checked' : '' }} onclick="handleLayoutChange(this.value)">
+                <span class="custom-box"></span> Lengkap
             </label>
 
-            <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
-            class="form-control @error('catatanberkas1') is-invalid @enderror"
-            style="padding: 12px;">{{ old('catatanberkas1') }}</textarea>
-
-            @error('catatanberkas1')
-            <div class="text-danger mt-2">{{ $message }}</div>
-            @enderror
+            <label class="custom-radio">
+                <input type="radio" name="layout" value="Tidak Lengkap"
+                    {{ old('layout') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleLayoutChange(this.value)">
+                <span class="custom-box"></span> Tidak Lengkap
+            </label>
         </div>
 
-        <script>
+        @error('layout')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Layout
+        </label>
+
+        <textarea name="catatanberkas2" id="catatanberkas2" rows="3"
+            class="form-control @error('catatanberkas2') is-invalid @enderror"
+            style="padding: 12px;">{{ old('catatanberkas2') }}</textarea>
+
+        @error('catatanberkas2')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <!-- Penyelidikan Section -->
+    <div class="col-md-4 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Penyelidikan
+        </label>
+
+        <div class="d-flex flex-column gap-2">
+            <label class="custom-radio">
+                <input type="radio" name="penyelidikan" value="Lengkap"
+                    {{ old('penyelidikan') == 'Lengkap' ? 'checked' : '' }} onclick="handlePenyelidikanChange(this.value)">
+                <span class="custom-box"></span> Lengkap
+            </label>
+
+            <label class="custom-radio">
+                <input type="radio" name="penyelidikan" value="Tidak Lengkap"
+                    {{ old('penyelidikan') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handlePenyelidikanChange(this.value)">
+                <span class="custom-box"></span> Tidak Lengkap
+            </label>
+        </div>
+
+        @error('penyelidikan')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Penyelidikan
+        </label>
+
+        <textarea name="catatanberkas3" id="catatanberkas3" rows="3"
+            class="form-control @error('catatanberkas3') is-invalid @enderror"
+            style="padding: 12px;">{{ old('catatanberkas3') }}</textarea>
+
+        @error('catatanberkas3')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <!-- Berkas 4 Section -->
+    <div class="col-md-4 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Berkas 4
+        </label>
+
+        <div class="d-flex flex-column gap-2">
+            <label class="custom-radio">
+                <input type="radio" name="berkas4" value="Lengkap"
+                    {{ old('berkas4') == 'Lengkap' ? 'checked' : '' }} onclick="handleBerkas4Change(this.value)">
+                <span class="custom-box"></span> Lengkap
+            </label>
+
+            <label class="custom-radio">
+                <input type="radio" name="berkas4" value="Tidak Lengkap"
+                    {{ old('berkas4') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleBerkas4Change(this.value)">
+                <span class="custom-box"></span> Tidak Lengkap
+            </label>
+        </div>
+
+        @error('berkas4')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Berkas 4
+        </label>
+
+        <textarea name="catatanberkas4" id="catatanberkas4" rows="3"
+            class="form-control @error('catatanberkas4') is-invalid @enderror"
+            style="padding: 12px;">{{ old('catatanberkas4') }}</textarea>
+
+        @error('catatanberkas4')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <!-- Berkas 5 Section -->
+    {{-- <div class="col-md-4 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Berkas 5
+        </label>
+
+        <div class="d-flex flex-column gap-2">
+            <label class="custom-radio">
+                <input type="radio" name="berkas5" value="Lengkap"
+                    {{ old('berkas5') == 'Lengkap' ? 'checked' : '' }} onclick="handleBerkas5Change(this.value)">
+                <span class="custom-box"></span> Lengkap
+            </label>
+
+            <label class="custom-radio">
+                <input type="radio" name="berkas5" value="Tidak Lengkap"
+                    {{ old('berkas5') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleBerkas5Change(this.value)">
+                <span class="custom-box"></span> Tidak Lengkap
+            </label>
+        </div>
+
+        @error('berkas5')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Berkas 5
+        </label>
+
+        <textarea name="catatanberkas5" id="catatanberkas5" rows="3"
+            class="form-control @error('catatanberkas5') is-invalid @enderror"
+            style="padding: 12px;">{{ old('catatanberkas5') }}</textarea>
+
+        @error('catatanberkas5')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <!-- Berkas 6 Section -->
+    <div class="col-md-4 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Berkas 6
+        </label>
+
+        <div class="d-flex flex-column gap-2">
+            <label class="custom-radio">
+                <input type="radio" name="berkas6" value="Lengkap"
+                    {{ old('berkas6') == 'Lengkap' ? 'checked' : '' }} onclick="handleBerkas6Change(this.value)">
+                <span class="custom-box"></span> Lengkap
+            </label>
+
+            <label class="custom-radio">
+                <input type="radio" name="berkas6" value="Tidak Lengkap"
+                    {{ old('berkas6') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleBerkas6Change(this.value)">
+                <span class="custom-box"></span> Tidak Lengkap
+            </label>
+        </div>
+
+        @error('berkas6')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label class="form-label d-block" style="color: black; font-weight: 600;">
+            <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Berkas 6
+        </label>
+
+        <textarea name="catatanberkas6" id="catatanberkas6" rows="3"
+            class="form-control @error('catatanberkas6') is-invalid @enderror"
+            style="padding: 12px;">{{ old('catatanberkas6') }}</textarea>
+
+        @error('catatanberkas6')
+            <div class="text-danger mt-2">{{ $message }}</div>
+        @enderror
+    </div> --}}
+</div>
+
+<script>
+    // Function for Isian Data Tanah
     function handleIsianTanah(value) {
         const catatanInput = document.getElementById('catatanberkas1');
 
         if (value === 'Lengkap') {
             catatanInput.setAttribute('readonly', true);
             catatanInput.classList.add('button-hijau');
-            catatanInput.value = ''; // kosongkan isi textarea
+            catatanInput.value = '';
         } else {
             catatanInput.removeAttribute('readonly');
             catatanInput.classList.remove('button-hijau');
         }
     }
 
-    // Jalankan saat halaman dimuat untuk set kondisi awal
-    document.addEventListener('DOMContentLoaded', () => {
-        const selectedValue = document.querySelector('input[name="isiandatatanah"]:checked')?.value;
-        if (selectedValue) {
-            handleIsianTanah(selectedValue);
-        }
-    });
-    </script>
-</div>
-
-<div class="row g-3 mt-2">
-    {{-- <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;"> --}}
-
-<div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Layout
-    </label>
-
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="layout" value="Lengkap"
-                {{ old('layout') == 'Lengkap' ? 'checked' : '' }} onclick="handleLayoutChange(this.value)">
-            <span class="custom-box"></span> Lengkap
-        </label>
-
-        <label class="custom-radio">
-            <input type="radio" name="layout" value="Tidak Lengkap"
-                {{ old('layout') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleLayoutChange(this.value)">
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-    </div>
-
-    @error('layout')
-        <div class="text-danger mt-2">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Layout
-    </label>
-
-    <textarea name="catatanberkas2" id="catatanberkas2" rows="3"
-        class="form-control @error('catatanberkas2') is-invalid @enderror"
-        style="padding: 12px;">{{ old('catatanberkas2') }}</textarea>
-
-    @error('catatanberkas2')
-        <div class="text-danger mt-2">{{ $message }}</div>
-    @enderror
-</div>
-
-<script>
+    // Function for Layout
     function handleLayoutChange(value) {
         const catatanInput = document.getElementById('catatanberkas2');
 
@@ -514,54 +660,7 @@ th {
         }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const selectedValue = document.querySelector('input[name="layout"]:checked')?.value;
-        if (selectedValue) {
-            handleLayoutChange(selectedValue);
-        }
-    });
-</script>
-
-
-<div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Penyelidikan
-    </label>
-
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="penyelidikan" value="Lengkap"
-                {{ old('penyelidikan') == 'Lengkap' ? 'checked' : '' }} onclick="handlePenyelidikanChange(this.value)">
-            <span class="custom-box"></span> Lengkap
-        </label>
-
-        <label class="custom-radio">
-            <input type="radio" name="penyelidikan" value="Tidak Lengkap"
-                {{ old('penyelidikan') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handlePenyelidikanChange(this.value)">
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-    </div>
-
-    @error('penyelidikan')
-        <div class="text-danger mt-2">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Penyelidikan
-    </label>
-
-    <textarea name="catatanberkas3" id="catatanberkas3" rows="3"
-        class="form-control @error('catatanberkas3') is-invalid @enderror"
-        style="padding: 12px;">{{ old('catatanberkas3') }}</textarea>
-
-    @error('catatanberkas3')
-        <div class="text-danger mt-2">{{ $message }}</div>
-    @enderror
-</div>
-
-<script>
+    // Function for Penyelidikan
     function handlePenyelidikanChange(value) {
         const catatanInput = document.getElementById('catatanberkas3');
 
@@ -575,52 +674,7 @@ th {
         }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const selectedValue = document.querySelector('input[name="penyelidikan"]:checked')?.value;
-        if (selectedValue) {
-            handlePenyelidikanChange(selectedValue);
-        }
-    });
-</script>
-<div class="col-md-4 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Berkas 4
-    </label>
-
-    <div class="d-flex flex-column gap-2">
-        <label class="custom-radio">
-            <input type="radio" name="berkas4" value="Lengkap"
-                {{ old('berkas4') == 'Lengkap' ? 'checked' : '' }} onclick="handleBerkas4Change(this.value)">
-            <span class="custom-box"></span> Lengkap
-        </label>
-
-        <label class="custom-radio">
-            <input type="radio" name="berkas4" value="Tidak Lengkap"
-                {{ old('berkas4') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleBerkas4Change(this.value)">
-            <span class="custom-box"></span> Tidak Lengkap
-        </label>
-    </div>
-
-    @error('berkas4')
-        <div class="text-danger mt-2">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Berkas 4
-    </label>
-
-    <textarea name="catatanberkas4" id="catatanberkas4" rows="3"
-        class="form-control @error('catatanberkas4') is-invalid @enderror"
-        style="padding: 12px;">{{ old('catatanberkas4') }}</textarea>
-
-    @error('catatanberkas4')
-        <div class="text-danger mt-2">{{ $message }}</div>
-    @enderror
-</div>
-
-<script>
+    // Function for Berkas 4
     function handleBerkas4Change(value) {
         const catatanInput = document.getElementById('catatanberkas4');
 
@@ -634,15 +688,73 @@ th {
         }
     }
 
+    // Function for Berkas 5
+    function handleBerkas5Change(value) {
+        const catatanInput = document.getElementById('catatanberkas5');
+
+        if (value === 'Lengkap') {
+            catatanInput.setAttribute('readonly', true);
+            catatanInput.classList.add('button-hijau');
+            catatanInput.value = '';
+        } else {
+            catatanInput.removeAttribute('readonly');
+            catatanInput.classList.remove('button-hijau');
+        }
+    }
+
+    // Function for Berkas 6
+    function handleBerkas6Change(value) {
+        const catatanInput = document.getElementById('catatanberkas6');
+
+        if (value === 'Lengkap') {
+            catatanInput.setAttribute('readonly', true);
+            catatanInput.classList.add('button-hijau');
+            catatanInput.value = '';
+        } else {
+            catatanInput.removeAttribute('readonly');
+            catatanInput.classList.remove('button-hijau');
+        }
+    }
+
+    // Initialize all fields on page load
     document.addEventListener('DOMContentLoaded', () => {
-        const selectedValue = document.querySelector('input[name="berkas4"]:checked')?.value;
-        if (selectedValue) {
-            handleBerkas4Change(selectedValue);
+        // Isian Data Tanah
+        const isianTanahValue = document.querySelector('input[name="isiandatatanah"]:checked')?.value;
+        if (isianTanahValue) {
+            handleIsianTanah(isianTanahValue);
+        }
+
+        // Layout
+        const layoutValue = document.querySelector('input[name="layout"]:checked')?.value;
+        if (layoutValue) {
+            handleLayoutChange(layoutValue);
+        }
+
+        // Penyelidikan
+        const penyelidikanValue = document.querySelector('input[name="penyelidikan"]:checked')?.value;
+        if (penyelidikanValue) {
+            handlePenyelidikanChange(penyelidikanValue);
+        }
+
+        // Berkas 4
+        const berkas4Value = document.querySelector('input[name="berkas4"]:checked')?.value;
+        if (berkas4Value) {
+            handleBerkas4Change(berkas4Value);
+        }
+
+        // Berkas 5
+        const berkas5Value = document.querySelector('input[name="berkas5"]:checked')?.value;
+        if (berkas5Value) {
+            handleBerkas5Change(berkas5Value);
+        }
+
+        // Berkas 6
+        const berkas6Value = document.querySelector('input[name="berkas6"]:checked')?.value;
+        if (berkas6Value) {
+            handleBerkas6Change(berkas6Value);
         }
     });
 </script>
-
-</div>
 
         {{-- Pilihan Catatan --}}
         <div class="col-md-6">
