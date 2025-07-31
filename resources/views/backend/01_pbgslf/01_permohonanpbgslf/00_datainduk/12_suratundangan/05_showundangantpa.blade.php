@@ -146,11 +146,11 @@
   }
 
   @media print {
-    body {
-      background: white;
-      font-family: 'Times New Roman', serif !important;
-    }
+  .halaman {
+    border: 1px solid white !important; /* atau bisa pakai border: none; */
   }
+}
+
 </style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
