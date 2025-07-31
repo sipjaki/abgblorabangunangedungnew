@@ -300,15 +300,60 @@ th {
         @php
             $infoItems = [
                 ['icon' => 'bi-file-earmark-text', 'title' => '1. Spesifikasi Teknis Struktur Bangunan', 'value' => $pemilik->berkas1 ?? '-'],
+                  [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Spesifikasi Teknis Struktur Bangunan',
+                    'value' => $pemilik->catatanberkas1 ?? '-',
+                ],
                 ['icon' => 'bi-calculator', 'title' => '2. Perhitungan Teknis Struktur', 'value' => $pemilik->berkas2 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Perhitungan Teknis Struktur',
+                    'value' => $pemilik->catatanberkas2 ?? '-',
+                ],
                 // ['icon' => 'bi-stairs', 'title' => '3. Gambar Rencana Dan Detail Teknis Tangga', 'value' => $pemilik->berkas3 ?? '-'],
        ['icon' => 'bi-diagram-3', 'title' => '3. Gambar Rencana Dan Detail Teknis Tangga', 'value' => $pemilik->berkas3 ?? '-'],
+       [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Teknis Tangga',
+                    'value' => $pemilik->catatanberkas3 ?? '-',
+                ],
          ['icon' => 'bi-border-all', 'title' => '4. Gambar Rencana Dan Detail Teknis Pelat Lantai', 'value' => $pemilik->berkas4 ?? '-'],
+         [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Teknis Pelat Lantai',
+                    'value' => $pemilik->catatanberkas4 ?? '-',
+                ],
                 ['icon' => 'bi-window', 'title' => '5. Gambar Rencana Dan Detail Teknis Penutup', 'value' => $pemilik->berkas5 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Teknis Penutup',
+                    'value' => $pemilik->catatanberkas5 ?? '-',
+                ],
                 ['icon' => 'bi-house', 'title' => '6. Gambar Rencana Dan Detail Teknis Rangka Atap', 'value' => $pemilik->berkas6 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Teknis Rangka Atap',
+                    'value' => $pemilik->catatanberkas6 ?? '-',
+                ],
                 ['icon' => 'bi-diagram-3', 'title' => '7. Gambar Rencana Dan Detail Teknis Balok', 'value' => $pemilik->berkas7 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Teknis Balok',
+                    'value' => $pemilik->catatanberkas7 ?? '-',
+                ],
                 ['icon' => 'bi-bounding-box', 'title' => '8. Gambar Rencana Dan Detail Teknis Kolom', 'value' => $pemilik->berkas8 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Teknis Kolom',
+                    'value' => $pemilik->catatanberkas8 ?? '-',
+                ],
                 ['icon' => 'bi-box', 'title' => '9. Gambar Rencana Dan Detail Teknis Fondasi dan Sloof', 'value' => $pemilik->berkas9 ?? '-'],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Gambar Rencana Dan Detail Teknis Fondasi dan Sloof',
+                    'value' => $pemilik->catatanberkas9 ?? '-',
+                ],
                 ['icon' => 'bi-check2-circle', 'title' => 'Pilihan Catatan', 'value' => $pemilik->pilihancatatan ?? '-'],
             ];
         @endphp
