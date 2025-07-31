@@ -468,9 +468,9 @@ th {
 <!-- HALAMAN KEDUA -->
 <div class="halaman-pertama">
     <p style="margin-left:300px;">
-    <strong>Nomor</strong> : 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2025<br />
-    <strong>Lampiran</strong> : 1 Bandel<br />
-    <strong>Perihal</strong> : <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
+    <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Nomor</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;"> 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2025</span> <br />
+    <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Lampiran</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;">1 Bandel </span><br />
+    <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Perihal</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</span>
   </p>
 
   <h5 style="margin-top : -10px; text-align: center; font-weight: bold; text-decoration: underline; margin-bottom: 10px; font-size: 12px; font-family: 'Poppins', sans-serif;">
