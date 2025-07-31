@@ -582,17 +582,65 @@ th {
         }
     });
 </script>
-
-
-    <div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-search me-1" style="color: blue;"></i> Berkas Dukung Lainnya
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> Berkas 4
     </label>
 
-    <input type="text" name="berkas4" class="form-control" placeholder="Masukkan keterangan" value="{{ old('berkas4') }}">
+    <div class="d-flex flex-column gap-2">
+        <label class="custom-radio">
+            <input type="radio" name="berkas4" value="Lengkap"
+                {{ old('berkas4') == 'Lengkap' ? 'checked' : '' }} onclick="handleBerkas4Change(this.value)">
+            <span class="custom-box"></span> Lengkap
+        </label>
 
-    @error('berkas4')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+        <label class="custom-radio">
+            <input type="radio" name="berkas4" value="Tidak Lengkap"
+                {{ old('berkas4') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handleBerkas4Change(this.value)">
+            <span class="custom-box"></span> Tidak Lengkap
+        </label>
+    </div>
+
+    @error('berkas4')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
 </div>
+
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Berkas 4
+    </label>
+
+    <textarea name="catatanberkas4" id="catatanberkas4" rows="3"
+        class="form-control @error('catatanberkas4') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas4') }}</textarea>
+
+    @error('catatanberkas4')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handleBerkas4Change(value) {
+        const catatanInput = document.getElementById('catatanberkas4');
+
+        if (value === 'Lengkap') {
+            catatanInput.setAttribute('readonly', true);
+            catatanInput.classList.add('button-hijau');
+            catatanInput.value = '';
+        } else {
+            catatanInput.removeAttribute('readonly');
+            catatanInput.classList.remove('button-hijau');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const selectedValue = document.querySelector('input[name="berkas4"]:checked')?.value;
+        if (selectedValue) {
+            handleBerkas4Change(selectedValue);
+        }
+    });
+</script>
 
 </div>
 
