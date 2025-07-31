@@ -506,11 +506,11 @@ th {
 
         if (value === 'Lengkap') {
             catatanInput.setAttribute('readonly', true);
-            catatanInput.classList.add('button-newvalidasi');
+            catatanInput.classList.add('button-hijau');
             catatanInput.value = '';
         } else {
             catatanInput.removeAttribute('readonly');
-            catatanInput.classList.remove('button-newvalidasi');
+            catatanInput.classList.remove('button-hijau');
         }
     }
 
@@ -523,27 +523,67 @@ th {
 </script>
 
 
+<div class="col-md-4 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> Penyelidikan
+    </label>
 
-    {{-- Penyelidikan Tanah Khusus Bangunan Tidak Sederhana --}}
-    <div class="col-md-4 mb-3">
-        <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-search me-1" style="color: blue;"></i> Penyelidikan Tanah (Khusus Bangunan Tidak Sederhana0
+    <div class="d-flex flex-column gap-2">
+        <label class="custom-radio">
+            <input type="radio" name="penyelidikan" value="Lengkap"
+                {{ old('penyelidikan') == 'Lengkap' ? 'checked' : '' }} onclick="handlePenyelidikanChange(this.value)">
+            <span class="custom-box"></span> Lengkap
         </label>
 
-        <div class="d-flex flex-column gap-2">
-            <label class="custom-radio">
-                <input type="radio" name="penyelidikan" value="Lengkap" {{ old('penyelidikan') == 'Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Lengkap
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="penyelidikan" value="Tidak Lengkap" {{ old('penyelidikan') == 'Tidak Lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Tidak Lengkap
-            </label>
-        </div>
-
-        @error('penyelidikan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+        <label class="custom-radio">
+            <input type="radio" name="penyelidikan" value="Tidak Lengkap"
+                {{ old('penyelidikan') == 'Tidak Lengkap' ? 'checked' : '' }} onclick="handlePenyelidikanChange(this.value)">
+            <span class="custom-box"></span> Tidak Lengkap
+        </label>
     </div>
+
+    @error('penyelidikan')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<div class="col-md-6 mb-3">
+    <label class="form-label d-block" style="color: black; font-weight: 600;">
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> Catatan Penyelidikan
+    </label>
+
+    <textarea name="catatanberkas3" id="catatanberkas3" rows="3"
+        class="form-control @error('catatanberkas3') is-invalid @enderror"
+        style="padding: 12px;">{{ old('catatanberkas3') }}</textarea>
+
+    @error('catatanberkas3')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    function handlePenyelidikanChange(value) {
+        const catatanInput = document.getElementById('catatanberkas3');
+
+        if (value === 'Lengkap') {
+            catatanInput.setAttribute('readonly', true);
+            catatanInput.classList.add('button-newvalidasi');
+            catatanInput.value = '';
+        } else {
+            catatanInput.removeAttribute('readonly');
+            catatanInput.classList.remove('button-newvalidasi');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const selectedValue = document.querySelector('input[name="penyelidikan"]:checked')?.value;
+        if (selectedValue) {
+            handlePenyelidikanChange(selectedValue);
+        }
+    });
+</script>
+
+
     <div class="col-md-4 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-search me-1" style="color: blue;"></i> Berkas Dukung Lainnya
