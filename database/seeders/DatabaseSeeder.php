@@ -901,12 +901,12 @@ User::create([
 
         User::create([
             'id'  => 70,
-            'name'  => 'Budi Ajar Famungkas',
-            'username' => 'Budi Ajar Famungkas',
+            'name'  => 'Budi Ajar',
+            'username' => 'Budi Ajar',
             'statusadmin_id' => '1',
             'avatar' => 'assets/abgblora/logo/iconabgblora.png',
             'email' => 'budysheny4611@gmail.com',
-            'password' => bcrypt('adminmasbudiabg')
+            'password' => bcrypt('superadminmasbudiabg')
         ]);
 
 // =============================================
