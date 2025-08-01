@@ -309,15 +309,15 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('adminadmin123$$')
         ]);
 
-        User::create([
-            'id'  => 22, // pemohon
-            'name'  => 'Sigit Septiadi Konsultan Bantek',
-            'username' => 'Sigit',
-            'statusadmin_id' => '4',
-            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
-            'email' => 'sigitpemohonabgkonsultan@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
-        ]);
+        // User::create([
+        //     'id'  => 22, // pemohon
+        //     'name'  => 'Sigit Septiadi Konsultan Bantek',
+        //     'username' => 'Sigit',
+        //     'statusadmin_id' => '4',
+        //     'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+        //     'email' => 'sigitpemohonabgkonsultan@gmail.com',
+        //     'password' => bcrypt('adminadmin123$$')
+        // ]);
 
             User::create([
             'id'  => 23, // pemohon
@@ -330,15 +330,15 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        User::create([
-            'id'  => 24, // pemohon
-            'name'  => 'Sigit Septiadi Konsultan Bantek',
-            'username' => 'Sigit',
-            'statusadmin_id' => '4',
-            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
-            'email' => 'sigitpemohonabgkonsultan2@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
-        ]);
+        // User::create([
+        //     'id'  => 24, // pemohon
+        //     'name'  => 'Sigit Septiadi Konsultan Bantek',
+        //     'username' => 'Sigit',
+        //     'statusadmin_id' => '4',
+        //     'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+        //     'email' => 'sigitpemohonabgkonsultan2@gmail.com',
+        //     'password' => bcrypt('adminadmin123$$')
+        // ]);
 
          User::create([
             'id'  => 25,
