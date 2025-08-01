@@ -359,7 +359,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-kembali" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary" style="color: black">
+        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary" style="color: black">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -454,7 +454,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
         </button>
     @else
-        <button class="button-kembali" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-newvalidasi" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Cek Lapangan
         </button>
     @endif
@@ -541,7 +541,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
         </button>
         @else
-        <button class="button-kembali" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Pengolahan Data
         </button>
         @endif
@@ -630,7 +630,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
         </button>
     @else
-        <button class="button-kembali" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Terbitkan !
         </button>
     @endif
