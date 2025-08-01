@@ -154,7 +154,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<a href="{{ url('/beperhitunganpenyusutan') }}" class="button-kembali" style="cursor: pointer; margin-left:10px; color:black; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url('/beperhitunganpenyusutan') }}" class="button-newvalidasi" style="cursor: pointer; margin-left:10px; color:black; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
 
@@ -351,9 +351,9 @@ th {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-create" type="button" onclick="openModal()">
+                               <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-plus" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Create</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
 
                                 </div>
