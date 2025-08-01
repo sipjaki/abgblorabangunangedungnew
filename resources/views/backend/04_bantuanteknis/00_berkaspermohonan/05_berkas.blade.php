@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
 
@@ -110,7 +110,7 @@ th {
 
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinaspemeliharaanindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -123,7 +123,7 @@ th {
 
 @canany(['superadmin', 'admin'])
  <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-kembali"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('beperhitunganbgnindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -900,7 +900,7 @@ th {
         </p>
 
                 <a href="/beperhitunganbgnper/{{$data->id}}" style="text-decoration: none;">
-                    <button class="button-abgblora">
+                    <button class="button-baru">
                         <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
                     </button>
                 </a>
@@ -925,7 +925,7 @@ th {
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Surat Permohonan </th>
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
+    <button type="button" class="button-newvalidasi"
         style="
             border-radius: 15px;
             padding: 8px 20px;
@@ -1187,7 +1187,7 @@ th {
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Kartu Identitas Bangunan Gedung</th>
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                         <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
+    <button type="button" class="button-newvalidasi"
         style="
             border-radius: 15px;
             padding: 8px 20px;
@@ -1373,7 +1373,7 @@ th {
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Foto Kondisi Bangunan Gedung (Berkas.pdf)  </th>
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
+    <button type="button" class="button-newvalidasi"
         style="
             border-radius: 15px;
             padding: 8px 20px;
@@ -1585,7 +1585,7 @@ th {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                      <button class="button-create" type="button" onclick="openModal()">
+                                      <button class="button-hijau" type="button" onclick="openModal()">
                                             <i class="bi bi-save2" style="margin-right: 8px;"></i> Simpan Validasi
                                         </button>
 
