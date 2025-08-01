@@ -89,7 +89,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -146,7 +146,7 @@ th {
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
 
-<button class="button-kembali" type="button"
+<button class="button-newvalidasi" type="button"
     onclick="window.location.href='{{ url('bebantuanteknisassistensi') }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -272,7 +272,7 @@ function previewPDF(event, previewContainerId, iframeId, messageId) {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-create" type="button" onclick="openModal()">
+                               <button class="button-hijau type="button" onclick="openModal()">
                                     <i class="bi bi-plus" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Create</span>
                                     </button>
