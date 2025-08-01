@@ -7,7 +7,7 @@
 
 @extends('errors::minimal')
 
-@section('title', __('Akses Ditolak'))
+{{-- @section('title', __('Akses Ditolak')) --}}
 {{-- @section('code', '403') --}}
 @section('message')
     <div style="text-align: center; margin-top: 30px;">
@@ -15,7 +15,7 @@
             {{ $exception->getMessage() ?: 'Maaf, Anda tidak memiliki hak akses untuk halaman ini.' }}
         </p>
         <a href="{{ url('/') }}" style="margin-top: 20px; display: inline-block; padding: 10px 20px; background-color: navy; color: white; text-decoration: none; border-radius: 5px;">
-            Kembali ke Beranda
+            Silahkan Kembali !
         </a>
     </div>
 @endsection
