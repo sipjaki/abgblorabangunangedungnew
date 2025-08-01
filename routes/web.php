@@ -1013,7 +1013,7 @@ Route::delete('/dokbebanhibahdelete/{id}', [BantuanhibahbgController::class, 'do
 
 // -----------------------------------------------------------------
 // MENU 01 PBG SLF
-Route::get('/bepbgslfinformasi', [PbgslfController::class, 'bepbgslfinformasi'])->middleware('auth')->name('bepbgslfinformasi');
+Route::get('/bepbgslfinformasi', [PbgslfController::class, 'bepbgslfinformasi'])->middleware('auth', 'can:superadmin')->name('bepbgslfinformasi');
 
 // -----------------------------------
 Route::get('/bepbghunian', [PbgslfController::class, 'bepbghunian'])->middleware('auth')->name('bepbghunian');
