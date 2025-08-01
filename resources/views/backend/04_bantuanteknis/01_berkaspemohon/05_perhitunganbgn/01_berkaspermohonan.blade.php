@@ -701,10 +701,7 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('bebantek5.uploadberkasnew5', $item->id) }}"
-                    class="button-newvalidasi"
-                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: black; border: none; transition: background-color 0.3s, color 0.3s;"
-                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';">
+                    class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> Upload Berkas
                 </a>
             </td>
