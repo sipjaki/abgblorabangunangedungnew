@@ -1047,15 +1047,20 @@ th {
   </table>
 
 <div style="display: flex; justify-content: flex-end; margin-top: 40px;">
-  <div style="text-align: left;">
-    <p>
-      KESEKRETARIATAN SIMBG KAB. BLORA<br />
-      DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
-      KABUPATEN BLORA
-    </p>
-    <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px" />
-    <p>OPERATOR SIMBG</p>
-  </div>
+  <div style="text-align: left; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <p style="margin: 0; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    KESEKRETARIATAN SIMBG KAB. BLORA<br />
+    DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
+    KABUPATEN BLORA
+  </p>
+
+  <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px; margin-top: 10px;" />
+
+  <p style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    OPERATOR SIMBG
+  </p>
+</div>
+
 </div>
 
 </div>
