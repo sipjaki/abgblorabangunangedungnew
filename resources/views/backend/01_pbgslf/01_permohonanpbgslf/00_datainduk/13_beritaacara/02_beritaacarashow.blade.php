@@ -573,13 +573,13 @@ th {
             <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 175px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
               Pemohon
             </th>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 175px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
               Pengawas
             </th>
             <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
               TTD
             </th>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 200px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
               Nama TPA/TPT
             </th>
             <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
