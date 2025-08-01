@@ -373,7 +373,7 @@ th {
                                     <th>Nomor Kontrak</th>
                                     <th>Tanggal Tugas</th>
                                     <th style="width: 200px;">Surat Tugas</th>
-                                    <th style="width: 100px;">Aksi</th>
+                                    {{-- <th style="width: 100px;">Aksi</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -391,13 +391,13 @@ th {
     <a href="{{ route('surattugaspenilikshownew.detail', ['id' => $item->id]) }}"
        class="text-decoration-none"
        onclick="saveScrollPosition()">
-        <div class="button-baru">
+        <div class="button-berkas">
             <i class="bi bi-eye me-1"></i> Lihat
         </div>
     </a>
 </td>
 
-                                        <td class="text-center">
+                                        {{-- <td class="text-center">
                                             <a href="javascript:void(0)" class="btn btn-sm btn-outline-danger"
                                                data-bs-toggle="modal"
                                                data-bs-target="#deleteModal"
@@ -406,7 +406,7 @@ th {
                                                title="Hapus Data">
                                                 <i class="bi bi-trash"></i>
                                             </a>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>
