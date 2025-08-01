@@ -342,16 +342,17 @@ th {
       {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
     <div style="display: inline-block;">
   <h3 style="font-family: 'Times New Roman', serif !important; font-size: 18px; margin: 0;">
-    PEMERINTAH KABUPATEN BLORA
+    <strong> PEMERINTAH KABUPATEN BLORA</strong>
   </h3>
   <h3 style="font-family: 'Times New Roman', serif !important; font-size: 18px; margin: 0;">
-    DINAS PEKERJAAN UMUM DAN PENATAAN RUANG
+    <strong> DINAS PEKERJAAN UMUM DAN PENATAAN RUANG </strong>
   </h3>
   <p style="font-family: 'Times New Roman', serif !important; font-size: 18px; margin: 0;">
-    Jl. Nusantara No. 62 Telp. (0296) 531004
-  </p>
+<span style="color: black; font-weight: normal;">Jl. Nusantara No. 62 Telp. (0296) 531004</span>
+
+</p>
   <h3 style="font-family: 'Times New Roman', serif !important; font-size: 18px; margin: 0;">
-    BLORA 58214
+   <strong> BLORA 58214</strong>
   </h3>
 </div>
 
