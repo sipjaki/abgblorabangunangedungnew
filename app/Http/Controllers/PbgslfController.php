@@ -2919,7 +2919,7 @@ if ($bulanFilter) {
 $nominalRetribusiTotal = pbgslfbangunan::whereNotNull('rupiah')->sum('rupiah');
 
 // Hitung nominal yang sudah terbayar (validasiberkas8 == 'sudah')
-$nominalSudahTerbayar = pbgslfbangunan::where('validasiberkas10', 'sudah')
+$nominalSudahTerbayar = pbgslfbangunan::where('validasiberkas9', 'sudah')
     ->whereNotNull('rupiah')
     ->sum('rupiah');
 
