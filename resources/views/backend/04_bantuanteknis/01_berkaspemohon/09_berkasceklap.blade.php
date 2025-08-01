@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -182,7 +182,7 @@ th {
                     @endcan
 
                     @canany(['superadmin', 'admin'])
-<button class="button-create" type="button"
+<button class="button-hijau" type="button"
     onclick="location.href='/bebanteklapcekdokcreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
@@ -243,40 +243,7 @@ th {
                             </thead>
                               <tbody id="tableBody">
 
-                                @if($subdata->isEmpty())
-<p style="
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  background-color: #f9fafb;
-  color: #dc2626;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: relative;
-">
-  <span style="
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 10s linear infinite;
-  ">
-    Dokumentasi Cek Lapangan Belum di Agendakan !!
-  </span>
-
-  <style>
-    @keyframes marquee {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-  </style>
-</p>
-
-@else
-      @foreach($subdata as $item)
+@forelse($subdata as $item)
     <tr>
         <td>{{ $loop->iteration }}</td>
         <td>{{ $item->kegiatan }}</td>
@@ -377,7 +344,39 @@ th {
             </a> --}}
         </td>
     </tr>
-@endforeach
+
+        @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 @endif
 
 </tbody>
