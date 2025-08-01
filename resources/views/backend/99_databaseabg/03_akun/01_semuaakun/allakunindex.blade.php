@@ -272,11 +272,11 @@ th {
                                 <tr class="align-middle">
                                  {{-- <td>{{ $loop->iteration }}</td> --}}
 <td>{{ $loop->iteration }}</td>
-<td>{{ $item->name ?? '-' }}</td>
+<td style="text-align: left;">{{ $item->name ?? '-' }}</td>
 {{-- <td>{{ $item->username ?? '-' }}</td> --}}
 <td>{{ $item->phone_number ?? '-' }}</td>
 {{-- <td>{{ $item->otp ?? '-' }}</td> --}}
-<td>{{ $item->email ?? '-' }}</td>
+<td style="text-align: left;">{{ $item->email ?? '-' }}</td>
 <td>
 <div style="margin-top: 10px;">
   @if ($item->avatar && file_exists(public_path('storage/' . $item->avatar)))
