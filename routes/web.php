@@ -1016,60 +1016,60 @@ Route::delete('/dokbebanhibahdelete/{id}', [BantuanhibahbgController::class, 'do
 Route::get('/bepbgslfinformasi', [PbgslfController::class, 'bepbgslfinformasi'])->middleware('auth', 'can:superadmin')->name('bepbgslfinformasi');
 
 // -----------------------------------
-Route::get('/bepbghunian', [PbgslfController::class, 'bepbghunian'])->middleware('auth')->name('bepbghunian');
-Route::get('/bepbghunianupdate/{id}', [PbgslfController::class, 'bepbghunianupdate'])->middleware('auth')->name('bepbghunianupdate');
-Route::post('/bepbghunianupdatenew/{id}', [PbgslfController::class, 'bepbghunianupdatenew'])->middleware('auth')->name('bepbghunianupdatenew');
+Route::get('/bepbghunian', [PbgslfController::class, 'bepbghunian'])->middleware('auth', 'can:superadmin')->name('bepbghunian');
+Route::get('/bepbghunianupdate/{id}', [PbgslfController::class, 'bepbghunianupdate'])->middleware('auth', 'can:superadmin')->name('bepbghunianupdate');
+Route::post('/bepbghunianupdatenew/{id}', [PbgslfController::class, 'bepbghunianupdatenew'])->middleware('auth', 'can:superadmin')->name('bepbghunianupdatenew');
 
 // -----------------------------------
-Route::get('/bepbgkeagamaan', [PbgslfController::class, 'bepbgkeagamaan'])->middleware('auth')->name('bepbgkeagamaan');
-Route::get('/bepbgkeagamaanupdate/{id}', [PbgslfController::class, 'bepbgkeagamaanupdate'])->middleware('auth')->name('bepbgkeagamaanupdate');
-Route::post('/bepbgkeagamaanupdatenew/{id}', [PbgslfController::class, 'bepbgkeagamaanupdatenew'])->middleware('auth')->name('bepbgkeagamaanupdatenew');
+Route::get('/bepbgkeagamaan', [PbgslfController::class, 'bepbgkeagamaan'])->middleware('auth', 'can:superadmin')->name('bepbgkeagamaan');
+Route::get('/bepbgkeagamaanupdate/{id}', [PbgslfController::class, 'bepbgkeagamaanupdate'])->middleware('auth', 'can:superadmin')->name('bepbgkeagamaanupdate');
+Route::post('/bepbgkeagamaanupdatenew/{id}', [PbgslfController::class, 'bepbgkeagamaanupdatenew'])->middleware('auth', 'can:superadmin')->name('bepbgkeagamaanupdatenew');
 
 // -----------------------------------
-Route::get('/bepbgprasarana', [PbgslfController::class, 'bepbgprasarana'])->middleware('auth')->name('bepbgprasarana');
-Route::get('/bepbgprasaranaupdate/{id}', [PbgslfController::class, 'bepbgprasaranaupdate'])->middleware('auth')->name('bepbgprasaranaupdate');
-Route::post('/bepbgprasaranaupdatenew/{id}', [PbgslfController::class, 'bepbgprasaranaupdatenew'])->middleware('auth')->name('bepbgprasaranaupdatenew');
+Route::get('/bepbgprasarana', [PbgslfController::class, 'bepbgprasarana'])->middleware('auth', 'can:superadmin')->name('bepbgprasarana');
+Route::get('/bepbgprasaranaupdate/{id}', [PbgslfController::class, 'bepbgprasaranaupdate'])->middleware('auth', 'can:superadmin')->name('bepbgprasaranaupdate');
+Route::post('/bepbgprasaranaupdatenew/{id}', [PbgslfController::class, 'bepbgprasaranaupdatenew'])->middleware('auth', 'can:superadmin')->name('bepbgprasaranaupdatenew');
 
 // -----------------------------------
-Route::get('/bepbgsosialbudaya', [PbgslfController::class, 'bepbgsosialbudaya'])->middleware('auth')->name('bepbgsosialbudaya');
-Route::get('/bepbgsosialbudayaupdate/{id}', [PbgslfController::class, 'bepbgsosialbudayaupdate'])->middleware('auth')->name('bepbgsosialbudayaupdate');
-Route::post('/bepbgsosialbudayaupdatenew/{id}', [PbgslfController::class, 'bepbgsosialbudayaupdatenew'])->middleware('auth')->name('bepbgsosialbudayaupdatenew');
+Route::get('/bepbgsosialbudaya', [PbgslfController::class, 'bepbgsosialbudaya'])->middleware('auth', 'can:superadmin')->name('bepbgsosialbudaya');
+Route::get('/bepbgsosialbudayaupdate/{id}', [PbgslfController::class, 'bepbgsosialbudayaupdate'])->middleware('auth', 'can:superadmin')->name('bepbgsosialbudayaupdate');
+Route::post('/bepbgsosialbudayaupdatenew/{id}', [PbgslfController::class, 'bepbgsosialbudayaupdatenew'])->middleware('auth', 'can:superadmin')->name('bepbgsosialbudayaupdatenew');
 
 // -----------------------------------
-Route::get('/bepbgfungsiusaha', [PbgslfController::class, 'beslffungsiusaha'])->middleware('auth')->name('beslffungsiusaha');
-Route::get('/beslffungsiusahaupdate/{id}', [PbgslfController::class, 'beslffungsiusahaupdate'])->middleware('auth')->name('beslffungsiusahaupdate');
-Route::post('/beslffungsiusahaupdatenew/{id}', [PbgslfController::class, 'beslffungsiusahaupdatenew'])->middleware('auth')->name('beslffungsiusahaupdatenew');
+Route::get('/bepbgfungsiusaha', [PbgslfController::class, 'beslffungsiusaha'])->middleware('auth', 'can:superadmin')->name('beslffungsiusaha');
+Route::get('/beslffungsiusahaupdate/{id}', [PbgslfController::class, 'beslffungsiusahaupdate'])->middleware('auth', 'can:superadmin')->name('beslffungsiusahaupdate');
+Route::post('/beslffungsiusahaupdatenew/{id}', [PbgslfController::class, 'beslffungsiusahaupdatenew'])->middleware('auth', 'can:superadmin')->name('beslffungsiusahaupdatenew');
 
 // -----------------------------------
-Route::get('/bgslffungsiusaha', [PbgslfController::class, 'bgslffungsiusahanew'])->middleware('auth')->name('bgslffungsiusahanew');
-Route::get('/bgslffungsiusahanewupdate/{id}', [PbgslfController::class, 'bgslffungsiusahanewupdate'])->middleware('auth')->name('bgslffungsiusahanewupdate');
-Route::post('/bgslffungsiusahanewupdatenew/{id}', [PbgslfController::class, 'bgslffungsiusahanewupdatenew'])->middleware('auth')->name('bgslffungsiusahanewupdatenew');
+Route::get('/bgslffungsiusaha', [PbgslfController::class, 'bgslffungsiusahanew'])->middleware('auth', 'can:superadmin')->name('bgslffungsiusahanew');
+Route::get('/bgslffungsiusahanewupdate/{id}', [PbgslfController::class, 'bgslffungsiusahanewupdate'])->middleware('auth', 'can:superadmin')->name('bgslffungsiusahanewupdate');
+Route::post('/bgslffungsiusahanewupdatenew/{id}', [PbgslfController::class, 'bgslffungsiusahanewupdatenew'])->middleware('auth', 'can:superadmin')->name('bgslffungsiusahanewupdatenew');
 
 
 // -----------------------------------
-Route::get('/bgslfmenaratelkom', [PbgslfController::class, 'bgslfmenaratelkom'])->middleware('auth')->name('bgslfmenaratelkom');
-Route::get('/bgslfmenaratelkomupdate/{id}', [PbgslfController::class, 'bgslfmenaratelkomupdate'])->middleware('auth')->name('bgslfmenaratelkomupdate');
-Route::post('/bgslfmenaratelkomupdatenew/{id}', [PbgslfController::class, 'bgslfmenaratelkomupdatenew'])->middleware('auth')->name('bgslfmenaratelkomupdatenew');
+Route::get('/bgslfmenaratelkom', [PbgslfController::class, 'bgslfmenaratelkom'])->middleware('auth', 'can:superadmin')->name('bgslfmenaratelkom');
+Route::get('/bgslfmenaratelkomupdate/{id}', [PbgslfController::class, 'bgslfmenaratelkomupdate'])->middleware('auth', 'can:superadmin')->name('bgslfmenaratelkomupdate');
+Route::post('/bgslfmenaratelkomupdatenew/{id}', [PbgslfController::class, 'bgslfmenaratelkomupdatenew'])->middleware('auth', 'can:superadmin')->name('bgslfmenaratelkomupdatenew');
 
 
 
-Route::get('/fungsicampuran', [PbgslfController::class, 'fungsicampuran'])->middleware('auth')->name('fungsicampuran');
+Route::get('/fungsicampuran', [PbgslfController::class, 'fungsicampuran'])->middleware('auth', 'can:superadmin')->name('fungsicampuran');
 
-Route::get('/bepbgslfindex', [PbgslfController::class, 'bepbgslfindexmenu'])->middleware('auth')->name('bepbgslfindexindexmenu');
-Route::get('/bepbgslfindexslf', [PbgslfController::class, 'bepbgslfindexslf'])->middleware('auth')->name('bepbgslfindexslfindex');
-Route::get('/bepbgslfindexslfper2', [PbgslfController::class, 'bepbgslfindexslfper2'])->middleware('auth')->name('bepbgslfindexslfper2');
-Route::get('/bepbgslfindexslfper3', [PbgslfController::class, 'bepbgslfindexslfper3'])->middleware('auth')->name('bepbgslfindexslfper3');
-Route::get('/bepbgslfindexslfper4', [PbgslfController::class, 'bepbgslfindexslfper4'])->middleware('auth')->name('bepbgslfindexslfper4');
-Route::get('/bepbgslfindexslfper5', [PbgslfController::class, 'bepbgslfindexslfper5'])->middleware('auth')->name('bepbgslfindexslfper5');
+Route::get('/bepbgslfindex', [PbgslfController::class, 'bepbgslfindexmenu'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexindexmenu');
+Route::get('/bepbgslfindexslf', [PbgslfController::class, 'bepbgslfindexslf'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexslfindex');
+Route::get('/bepbgslfindexslfper2', [PbgslfController::class, 'bepbgslfindexslfper2'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexslfper2');
+Route::get('/bepbgslfindexslfper3', [PbgslfController::class, 'bepbgslfindexslfper3'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexslfper3');
+Route::get('/bepbgslfindexslfper4', [PbgslfController::class, 'bepbgslfindexslfper4'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexslfper4');
+Route::get('/bepbgslfindexslfper5', [PbgslfController::class, 'bepbgslfindexslfper5'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexslfper5');
 // Route::get('/bepbgslfindexslfper2', [PbgslfController::class, 'bepbgslfindexslfper2'])->middleware('auth')->name('bepbgslfindexslfper2');
 
-Route::delete('/bepbgslfindexslfdelete/{id}', [PbgslfController::class, 'bepbgslfindexslfdelete'])->middleware('auth')->name('delete.bepbgslfindexslfdelete');
+Route::delete('/bepbgslfindexslfdelete/{id}', [PbgslfController::class, 'bepbgslfindexslfdelete'])->middleware('auth', 'can:superadmin')->name('delete.bepbgslfindexslfdelete');
 
-Route::get('/bepbgslflihatper/{id}', [PbgslfController::class, 'bepbgslflihatper'])->middleware('auth')->name('bepbgslflihatper.show');
+Route::get('/bepbgslflihatper/{id}', [PbgslfController::class, 'bepbgslflihatper'])->middleware('auth', 'can:superadmin')->name('bepbgslflihatper.show');
 
 // MENU UNTUK UPDATE BRO
-Route::get('/updatefungsicampuran/{id}', [PbgslfController::class, 'updatefungsicampuran'])->middleware('auth')->name('updatefungsicampuran');
-Route::post('/updatefungsicampurannew/{id}', [PbgslfController::class, 'updatefungsicampurannew'])->middleware('auth')->name('updatefungsicampurannew');
+Route::get('/updatefungsicampuran/{id}', [PbgslfController::class, 'updatefungsicampuran'])->middleware('auth', 'can:superadmin')->name('updatefungsicampuran');
+Route::post('/updatefungsicampurannew/{id}', [PbgslfController::class, 'updatefungsicampurannew'])->middleware('auth', 'can:superadmin')->name('updatefungsicampurannew');
 
 // TAHAP INDUK ----------------
 Route::get('/createdatapbgslf', [PbgslfController::class, 'createdatapbgslf'])->middleware('auth')->name('createdatapbgslf.create');
