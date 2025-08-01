@@ -363,15 +363,29 @@ th {
 
   <div style="font-size: 12px;">
 
-  <p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
-  <strong>Nomor</strong> : 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025
-</p>
-<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
-  <strong>Lampiran</strong> : -
-</p>
-<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin-bottom: 10px;">
-  <strong>Perihal</strong> : <u style="text-decoration: none;">Undangan Konsultasi</u>
-</p>
+<table style="width: 100%; font-family: 'Times New Roman', serif !important; font-size: 14px; border-collapse: collapse; margin-bottom: 15px;">
+  <tbody>
+    <tr>
+      <td style="width: 120px; vertical-align: top; padding: 0;">Nomor</td>
+      <td style="width: 10px; vertical-align: top; padding: 0;">:</td>
+      <td style="border-bottom: 1px dotted #000; padding-left: 5px;">
+        050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 0;">Lampiran</td>
+      <td style="padding: 0;">:</td>
+      <td style="border-bottom: 1px dotted #000; padding-left: 5px;">-</td>
+    </tr>
+    <tr>
+      <td style="padding: 0;">Perihal</td>
+      <td style="padding: 0;">:</td>
+      <td style="padding-left: 5px;">
+        <u>Undangan Konsultasi</u>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
   Kepada Yth:
