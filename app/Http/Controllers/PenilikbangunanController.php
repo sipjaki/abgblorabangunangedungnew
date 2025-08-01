@@ -260,9 +260,9 @@ public function surattugaspeniliknew(Request $request)
         // 'pbgslfbangunan_id' => 'required|string',
         // 'datapemilik_id' => 'required|string',
         'petugaspenilik_id' => 'required|string',
-        'nomorsurat' => 'required|string|max:255',
-        'nomorkontrak' => 'required|string|max:255',
-        'tanggaltugas' => 'required|date',
+        'nomorsurat' => 'nullable|string|max:255',
+        'nomorkontrak' => 'nullable|string|max:255',
+        'tanggaltugas' => 'nullable|date',
     ], [
         'penilikbangunan_id.required' => 'ID Pemohon wajib diisi.',
         'petugaspenilik_id.required' => 'ID Bangunan wajib diisi.',
@@ -290,7 +290,7 @@ public function surattugaspeniliknew(Request $request)
         'petugaspenilik_id' => $validated['petugaspenilik_id'],
         'nomorsurat' => $validated['nomorsurat'] ?? null,
         'nomorkontrak' => $validated['nomorkontrak'] ?? null,
-        'tanggaltugas' => $validated['tanggaltugas'],
+        'tanggaltugas' => $validated['tanggaltugas'] ?? null,
     ]);
 
     session()->flash('create', 'Surat Tugas Inspeksi Bangunan Gedung berhasil diterbitkan.');

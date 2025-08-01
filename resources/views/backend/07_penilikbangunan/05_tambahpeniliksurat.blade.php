@@ -480,7 +480,7 @@ th {
     </div>
 
     {{-- Nomor Kontrak --}}
-    <div class="col-md-6">
+    {{-- <div class="col-md-6">
         <label class="form-label fw-semibold text-dark">
             <i class="bi bi-file-earmark-ruled-fill text-primary me-1"></i> Nomor Kontrak
         </label>
@@ -490,7 +490,7 @@ th {
         @error('nomorkontrak')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
-    </div>
+    </div> --}}
 
     {{-- Tanggal Tugas --}}
     <div class="col-md-6">
