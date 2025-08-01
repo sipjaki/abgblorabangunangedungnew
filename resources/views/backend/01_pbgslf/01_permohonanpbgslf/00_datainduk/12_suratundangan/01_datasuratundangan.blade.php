@@ -315,7 +315,7 @@ th {
                                     <th>Jam Undangan</th>
                                     <th>Catatan</th>
                                     <th>Surat</th>
-                                    <th style="width: 100px;">Aksi</th>
+                                    {{-- <th style="width: 100px;">Aksi</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -355,7 +355,7 @@ th {
         </div>
     </a>
 </td>
-                                        <td class="text-center">
+                                        {{-- <td class="text-center">
                                             <a href="javascript:void(0)" class="btn btn-sm btn-outline-danger"
                                                data-bs-toggle="modal"
                                                data-bs-target="#deleteModal"
@@ -364,7 +364,7 @@ th {
                                                title="Hapus Data">
                                                 <i class="bi bi-trash"></i>
                                             </a>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>
