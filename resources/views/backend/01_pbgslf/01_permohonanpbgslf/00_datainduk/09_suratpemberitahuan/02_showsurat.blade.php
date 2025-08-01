@@ -385,11 +385,11 @@ th {
     </tr>
   </table>
 
-<p style="text-align: right; margin-top: 20px; font-family: 'Times New Roman', serif !important; font-size:14px; margin-top:-5px;">
+<p style="text-align: right; margin-top: 20px; font-family: 'Times New Roman', serif !important; font-size:14px; margin-top:-2px;">
   Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('d F Y') : '-' }}
 </p>
 
-<div style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+<div style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top:-10px;" >
   <table style="line-height: 1.3; width: 100%;">
     <!-- Baris Nomor -->
     <tr>
