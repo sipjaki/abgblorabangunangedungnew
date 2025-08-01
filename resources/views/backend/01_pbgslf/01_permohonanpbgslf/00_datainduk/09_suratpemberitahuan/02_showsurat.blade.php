@@ -394,7 +394,7 @@ th {
     <!-- Baris Nomor -->
     <tr>
       <td style="width: 120px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
-        <strong>Nomor</strong>
+        <strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Nomor</strong>
       </td>
       <td style="width: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
       <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
@@ -405,7 +405,7 @@ th {
     <!-- Baris Lampiran -->
     <tr>
       <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
-        <strong>Lampiran</strong>
+        <strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Lampiran</strong>
       </td>
       <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
       <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
@@ -416,7 +416,7 @@ th {
     <!-- Baris Perihal -->
     <tr>
       <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
-        <strong>Perihal</strong>
+        <strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Perihal</strong>
       </td>
       <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
       <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
