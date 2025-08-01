@@ -324,9 +324,11 @@
     <p style="text-align: right; margin-top: 20px; font-size:12px; font-family: 'Times New Roman', serif !important; font-size:14px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}</p>
 
     <div style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
-    <table style="line-height: 1.8;">
+    <table style="line-height: 1;">
   <tr>
-    <td style="width: 100px; font-size: 14px; font-family: 'Times New Roman', serif !important;"><strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Nomor</strong></td>
+    <td style="width: 100px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      <strong style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Nomor</strong>
+    </td>
     <td style="width: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
     <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
       050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025
