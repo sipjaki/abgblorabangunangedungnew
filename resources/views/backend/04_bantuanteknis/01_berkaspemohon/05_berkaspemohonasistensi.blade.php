@@ -321,7 +321,7 @@ th {
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
   @if($item->validasiberkas1 == 'lolos')
     <button
-        class="button-create"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; color: black; cursor: not-allowed;"
         disabled
@@ -329,7 +329,7 @@ th {
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
     </button>
     @elseif($item->validasiberkas1 == 'dikembalikan')
-        <button class="button-dikembalikan" type="button" onclick="openModal({{ $item->id }})" style="background-color: #0400ff; color: black;">
+        <button class="button-merah" type="button" onclick="openModal({{ $item->id }})" style="background-color: #0400ff; color: black;">
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
@@ -408,7 +408,7 @@ th {
     <div style="display: flex; justify-content: center;">
         @if($item->validasiberkas2 == 'sudah')
             <button
-                class="button-create"
+                class="button-hijau"
                 type="button"
                 style="background-color: #10B981; color: black; cursor: not-allowed;"
                 disabled
@@ -416,7 +416,7 @@ th {
                 <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
             </button>
         @elseif($item->validasiberkas2 == 'belum')
-            <button class="button-dikembalikan" type="button" onclick="openModal2({{ $item->id }})" style="background-color: #ff0000; color: black;">
+            <button class="button-merah" type="button" onclick="openModal2({{ $item->id }})" style="background-color: #ff0000; color: black;">
                 <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
             </button>
         @else
