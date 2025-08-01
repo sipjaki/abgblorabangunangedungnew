@@ -147,7 +147,7 @@ th {
 
 
 <button class="button-newvalidasi" type="button"
-    onclick="window.location.href='{{ url('bebantuanteknisassistensi') }}';"
+    onclick="window.location.href='{{ url('bepersontimteknisindex') }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </button>
