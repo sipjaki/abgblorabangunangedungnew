@@ -255,8 +255,8 @@ public function datainformasibantuangmbr(Request $request)
 
     $data = $query->latest()->paginate($perPage)->appends($request->all());
 
-    return view('backend.08_mbr.01_halamanmbr', [
-        'title' => 'Informasi MBR Bangunan Gedung',
+    return view('backend.09_bantuangambar.00_pemohon.02_informasi', [
+        'title' => 'Informasi Bantuan Teknis Gambar',
         'data'  => $data,
         'user'  => $user,
     ]);
