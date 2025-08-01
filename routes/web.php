@@ -912,6 +912,7 @@ Route::get('/datafasilitatorcreate', [DatabaseAbgController::class, 'datafasilit
 Route::post('/datafasilitatorcreatenew', [DatabaseAbgController::class, 'datafasilitatorcreatenew'])->middleware('auth')->name('datafasilitatorcreatenew');
 
 
+Route::get('/datainformasibantuangmbr', [DatabaseAbgController::class, 'datainformasibantuangmbr'])->middleware('auth')->name('datainformasibantuangmbr');
 Route::get('/datambrblora', [DatabaseAbgController::class, 'datambrblora'])->middleware('auth')->name('datambrblora');
 // Route::get('/datagsbbloraupdate/{id}', [DatabaseAbgController::class, 'datagsbbloraupdate'])->middleware('auth')->name('datagsbbloraupdate.perbaikan');
 // Route::post('/datagsbbloraupdatenew/{id}', [DatabaseAbgController::class, 'datagsbbloraupdatenew'])->middleware('auth')->name('datagsbbloraupdatenew.update');

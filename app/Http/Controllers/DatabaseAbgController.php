@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\agendastatus;
 use App\Models\asosiasipengusaha;
+use App\Models\bantuangambarinfo;
 use App\Models\bantuanteknis;
 use App\Models\beritaabg;
 use App\Models\fasilitatorpbg;
@@ -212,6 +213,34 @@ public function datambrblora(Request $request)
     $perPage = $request->input('perPage', 20);
 
     $query = mbrgambar::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('judul1', 'like', "%{$search}%")
+              ->orWhere('judul2', 'like', "%{$search}%")
+              ->orWhere('berkas1', 'like', "%{$search}%")
+              ->orWhere('berkas2', 'like', "%{$search}%")
+              ->orWhere('berkas3', 'like', "%{$search}%")
+              ->orWhere('berkas4', 'like', "%{$search}%");
+        });
+    }
+
+    $data = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.08_mbr.01_halamanmbr', [
+        'title' => 'Informasi MBR Bangunan Gedung',
+        'data'  => $data,
+        'user'  => $user,
+    ]);
+}
+
+public function datainformasibantuangmbr(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    $query = bantuangambarinfo::query();
 
     if ($search) {
         $query->where(function ($q) use ($search) {

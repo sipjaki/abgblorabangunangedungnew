@@ -1511,6 +1511,12 @@
         </a>
     </li> --}}
     <li class="nav-item">
+        <a href="/datainformasibantuangmbr" class="nav-link" style="display: flex; align-items: center;">
+            <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
+            <p style="color: white; margin: 0 0 0 8px;">Informasi</p>
+        </a>
+    </li>
+    <li class="nav-item">
         <a href="/bebantuangambar" class="nav-link" style="display: flex; align-items: center;">
             <i class="bi bi-folder2-open nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
             <p style="color: white; margin: 0 0 0 8px;">Berkas Pemohon</p>
