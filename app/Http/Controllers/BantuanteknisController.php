@@ -1707,7 +1707,7 @@ public function bepenelitikontrak(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 20);
+    $perPage = $request->input('perPage', 10);
 
     // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
     $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
@@ -1859,7 +1859,7 @@ public function beperhitunganpenyusutan(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 20);
+    $perPage = $request->input('perPage', 10);
 
     // Query dasar: hanya data dengan jenispengajuanbantek_id = 1
     $query = bantuanteknis::whereHas('jenispengajuanbantek', function ($q) {
