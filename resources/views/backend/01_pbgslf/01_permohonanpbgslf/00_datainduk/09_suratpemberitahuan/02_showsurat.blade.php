@@ -522,11 +522,30 @@ th {
 
 <!-- HALAMAN KEDUA -->
 <div class="halaman-pertama">
-    <p style="margin-left:300px;">
-    <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Nomor</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;"> 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2025</span> <br />
-    <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Lampiran</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;">1 Bandel </span><br />
-    <strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Perihal</strong> : <span style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</span>
-  </p>
+ <p style="margin-left: 300px;">
+  <strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    Nomor
+  </strong> :
+  <span style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/2025
+  </span>
+  <br />
+
+  <strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    Lampiran
+  </strong> :
+  <span style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    1 Bandel
+  </span>
+  <br />
+
+  <strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    Perihal
+  </strong> :
+  <span style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}
+  </span>
+</p>
 
 <h5 style="
   margin-top: 10px;
