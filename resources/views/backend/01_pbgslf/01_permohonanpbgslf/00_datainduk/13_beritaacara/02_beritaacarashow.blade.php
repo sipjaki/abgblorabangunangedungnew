@@ -563,7 +563,7 @@ th {
 <p style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
   <strong>CATATAN:</strong>
 </p>
-<div style="border: 1px solid #000; min-height: {{ 140 + (12 - $jumlahBaris) * 24 }}px; padding: 8px; margin-top:-15px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+<div style="border: 1px solid #000; min-height: {{ 140 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
 </div>
 <br>
 
