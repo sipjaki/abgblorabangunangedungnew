@@ -13068,6 +13068,16 @@ petugaspenilik::create([
 //     'golongan2' => 'III/c',
 // ]);
 
+// petugaspenilik::create([
+//     'id' => 5,
+//     'namalengkap' => 'SUTRISNO, S.Sos',
+//     'nip' => '197408111997031002',
+//     'jabatan' => 'Kasubbag TU UPTD Pengelolaan Jalan, Jembatan dan Irigasi Wilayah IV',
+//     'golongan1' => 'Penata',
+//     'skpenilik' => '900/3292-A/2024',
+//     'golongan2' => 'III/c',
+// ]);
+
 // PENDATAAN BANGUNAN GEDUNG
 
 databgkepemilikan::create([
