@@ -447,7 +447,7 @@
   <thead>
     <tr>
       {{-- <td colspan="2" style="padding-bottom: 10px; font-family: 'Times New Roman', serif !important;"> --}}
-       <p style="font-size: 12px; font-family: 'Times New Roman', serif !important;">Kepada Yth. </p>
+       <p style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Kepada Yth. </p>
       {{-- </td> --}}
     </tr>
     {{-- <tr>
@@ -462,8 +462,12 @@
     @endphp
     @if ($pengawas && $pengawas->namalengkap)
         <tr>
-            <td style="border: none; width:20px;">{{ $i }}.</td>
-            <td style="border: none;">{{ $pengawas->namalengkap }}</td>
+            <td style="border: none; width: 20px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+                {{ $i }}.
+            </td>
+            <td style="border: none; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+                {{ $pengawas->namalengkap }}
+            </td>
         </tr>
     @endif
 @endfor
