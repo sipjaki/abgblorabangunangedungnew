@@ -436,9 +436,9 @@ function previewPDF(event, previewContainerId, iframeId, messageId) {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-hijau" type="button" onclick="openModal()">
+                               <button class="button-berkas" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan Perbaikan</span>
                                     </button>
 
                                 </div>
