@@ -192,8 +192,6 @@ th {
 </a>
 
     @endcanany
-
-    </div>
                                                                 <!-- Tombol Create -->
                                 {{-- <a href="/settingssekolah/create">
                                     <button
