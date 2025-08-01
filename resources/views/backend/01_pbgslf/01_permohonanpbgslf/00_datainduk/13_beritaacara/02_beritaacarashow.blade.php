@@ -519,7 +519,7 @@ th {
 
     <br>
 <div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top: -20px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-  <p><strong>Rekomendasi:</strong></p>
+  <p><strong style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">Rekomendasi:</strong></p>
   <table style="border-collapse: collapse; width: 100%; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -20px;">
     <tbody>
       <tr style="border: 1px solid #444;">
@@ -560,8 +560,8 @@ th {
     $jumlahBaris = count($listPengawas);
 @endphp
 
-<p style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-  <strong>CATATAN:</strong>
+<p >
+  <strong style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">CATATAN:</strong>
 </p>
 <div style="border: 1px solid #000; min-height: {{ 140 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
 </div>
