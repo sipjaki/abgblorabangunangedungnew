@@ -100,7 +100,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -218,12 +218,12 @@ th {
 <div style="display: flex; justify-content: flex-end;">
 
 
-    <a href="/datapermohonandinas" class="button-statistika" style="color: black; margin-right:5px; text-decoration: none; display: inline-flex; align-items: center;">
+    <a href="/datapermohonandinas" class="button-berkas" style="color: black; margin-right:5px; text-decoration: none; display: inline-flex; align-items: center;">
     <i class="bi bi-bar-chart-line" style="margin-right: 5px;"></i> Statistika
 </a>
 
                               <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanbantuanteknis')"
-                                    class="button-abgblora" style="color: black;">
+                                    class="button-baru" style="color: black;">
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
 
