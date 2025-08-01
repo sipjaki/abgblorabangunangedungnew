@@ -484,38 +484,39 @@ th {
     </td>
   </tr>
 </table>
-
 <!-- Paragraf Penutup -->
 <p style="margin-top: 10px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
   Setelah dilakukan Verifikasi terhadap Data Bangunan, Data Tanah, Data Umum dan Ketentuan Teknis, maka data disimpulkan:
 </p>
 
-<p style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
+<p style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
   <strong>{{ $surat->pilihancatatan ?? '-' }}</strong>
 </p>
 
-<p style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
+<p style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
   Adapun cek list Verifikasi Permohonan {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }} terlampir.
 </p>
 
-<p style="text-align: justify; font-family: 'Times New Roman', serif !important; font-size: 12px;">
+<p style="text-align: justify; font-family: 'Times New Roman', serif !important; font-size: 14px;">
   Bagi Pemohon yang tidak lengkap segera melengkapi data. Kesekretariatan SIMBG menyediakan berbagai kanal informasi baik secara offline di Loket 9 Mall Pelayanan Publik (MPP) Kab. Blora dan secara online di platform media sosial Instagram
   <strong>@dpuprblora</strong> dan TikTok <strong>@bangunan.gedung.dpupr</strong> guna memberikan informasi yang jelas kepada pemohon.
 </p>
 
-<p style="font-family: 'Times New Roman', serif !important; font-size: 12px;">
+<p style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
   Demikian pemberitahuan ini kami sampaikan dan kami ucapkan terima kasih.
 </p>
 
 <div style="display: flex; justify-content: flex-end; margin-top: 40px;">
-  <div style="text-align: left; font-family: 'Times New Roman', serif !important; font-size: 12px;">
-    <p style="margin: 0;">
+  <div style="text-align: left; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    <p style="margin: 0; font-family: 'Times New Roman', serif !important; font-size: 14px;">
       KESEKRETARIATAN SIMBG KAB. BLORA<br />
       DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br />
       KABUPATEN BLORA
     </p>
     <img src="/assets/abgblora/logo/barcodeoperator.png" alt="QR Code" style="height: 100px; margin-top: 10px;" />
-    <p style="margin-top: 5px;">OPERATOR SIMBG</p>
+    <p style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+      OPERATOR SIMBG
+    </p>
   </div>
 </div>
 
