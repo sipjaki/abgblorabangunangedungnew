@@ -329,7 +329,7 @@ th {
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
     </button>
     @elseif($item->validasiberkas1 == 'dikembalikan')
-        <button class="button-merah" type="button" onclick="openModal({{ $item->id }})" style="background-color: #0400ff; color: black;">
+        <button class="button-merah" type="button" onclick="openModal({{ $item->id }})">
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
