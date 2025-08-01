@@ -1081,6 +1081,14 @@ mbrgambar::create([
 
 ]);
 
+bantuangambarinfo::create([
+    'judul1' => 'MBR Bantuan Gambar',
+    'berkas1' => 'assets/abgblora/logo/01mbr.jpg',
+    'berkas2' => 'assets/abgblora/logo/001.pdf',
+    'berkas3' => 'assets/abgblora/logo/002.pdf',
+
+]);
+
 // =============================================
 
 // for ($i = 1; $i <= 2; $i++) {
