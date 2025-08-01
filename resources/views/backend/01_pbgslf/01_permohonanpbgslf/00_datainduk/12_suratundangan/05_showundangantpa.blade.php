@@ -350,27 +350,38 @@
   </tr>
 </table>
 <br>
-<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1; margin: 0;">
+
+<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5; margin: 0;">
   Kepada Yth:<br>
-  Tim Profesi Ahli {{ $surat->tpatpt->timpenilai ?? '-' }}<br>
-  Di<br>
-  Tempat
+  <span style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    Tim Profesi Ahli {{ $surat->tpatpt->timpenilai ?? '-' }}
+  </span><br>
+  <span style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    Di
+  </span><br>
+  <span style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+    Tempat
+  </span>
 </p>
 
-<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1; margin: 0;">
-  Mengharap dengan hormat atas kehadiran Bapak/Ibu Saudara Pada:
+<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5; margin: 0;">
+  Mengharap dengan hormat atas kehadiran Bapak/Ibu Saudara Pada :
 </p>
 
-<table style="font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1; width: 100%; margin-top: 6px;">
+<table style="font-size: 14px; width: 100%; font-family: 'Times New Roman', serif !important; line-height: 1.5; border-collapse: collapse; margin-top: 6px;">
   <tr>
-    <td style="padding: 4px 8px; vertical-align: top;">Hari / Tanggal</td>
-    <td style="padding: 4px 8px;">
+    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+      Hari / Tanggal
+    </td>
+    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
       : {{ $surat->tanggalkehadiran ? \Carbon\Carbon::parse($surat->tanggalkehadiran)->translatedFormat('F d Y') : '-' }}
     </td>
   </tr>
   <tr>
-    <td style="padding: 4px 8px; vertical-align: top;">Waktu</td>
-    <td style="padding: 4px 8px;">
+    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+      Waktu
+    </td>
+    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
       @if($surat->jamundangan == 'lainnya')
         : {{ $surat->catatan ?? '-' }}
       @else
@@ -379,33 +390,40 @@
     </td>
   </tr>
   <tr>
-    <td style="padding: 4px 8px; vertical-align: top;">Tempat</td>
-    <td style="padding: 4px 8px;">
+    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+      Tempat
+    </td>
+    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
       : {{ $surat->tempatkonsultasi->tempat ?? '-' }}
     </td>
   </tr>
   <tr>
-    <td style="padding: 4px 8px; vertical-align: top;">Acara</td>
-    <td style="padding: 4px 8px;">: Konsultasi Teknis PBG/SLF</td>
+    <td style="padding: 4px 8px; vertical-align: top; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+      Acara
+    </td>
+    <td style="padding: 4px 8px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+      : Konsultasi Teknis PBG/SLF
+    </td>
   </tr>
 </table>
 
-<p style="margin-top: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1; margin-bottom: 0;">
-  Mengingat pentingnya acara tersebut, mohon Bapak/Ibu/Saudara hadir tepat waktu. Demikian atas perhatian dan kehadirannya disampaikan terima kasih.
+<p style="margin-top: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5; margin-bottom: 0;">
+  Mengingat pentingnya acara tersebut mohon Bapak/Ibu/Saudara hadir tepat waktu. Demikian atas perhatian dan kehadirannya disampaikan terima kasih.
 </p>
-
-</div>
+  </div>
   <br>
      <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px; font-family: 'Times New Roman', serif !important;">
-<div style="text-align: left; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1;">
+<div style="text-align: left; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
   Plt. KEPALA DINAS PEKERJAAN UMUM DAN<br>
-  PENATAAN RUANG KABUPATEN BLORA<br><br><br><br><br>
+  PENATAAN RUANG KABUPATEN BLORA<br><br><br><br><br><br><br>
 
-  <div style="display: inline-block;">
-    <strong style="text-decoration: underline;">
+  <div style="display: inline-flex; flex-direction: column; gap: 0;">
+    <strong style="margin-top: 0; text-decoration: underline; line-height: 1.5; font-family: 'Times New Roman', serif !important; font-size: 14px;">
       NIDZAMUDIN AL HUDDA, ST
-    </strong><br>
-    NIP. 19720326 200604 1 005
+    </strong>
+    <span style="line-height: 1.5; margin-top: 0; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+      NIP. 19720326 200604 1 005
+    </span>
   </div>
 </div>
                                   </div>
