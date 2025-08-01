@@ -342,11 +342,12 @@ th {
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
       {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
       <div style="display: inline-block;">
-        <h3>PEMERINTAH KABUPATEN BLORA</h3>
-        <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-        <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-        <h3>BLORA 58214</h3>
-      </div>
+  <h3 style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">PEMERINTAH KABUPATEN BLORA</h3>
+  <h3 style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+  <p style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+  <h3 style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">BLORA 58214</h3>
+</div>
+
       <div style="clear: both;"></div>
     </div>
 <div style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.5;">
