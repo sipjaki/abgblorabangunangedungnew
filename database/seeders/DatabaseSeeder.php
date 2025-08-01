@@ -472,35 +472,35 @@ User::create([
     'password' => bcrypt('adminmuhammadzaqi')
 ]);
 
-// User::create([
-//     'id'  => 56,
-//     'name'  => 'MARETHA RIANTIARNI, S.E.',
-//     'username' => 'MARETHA RIANTIARNI, S.E.',
-//     'statusadmin_id' => '8',
-//     'avatar' => 'user/avatar/foto4.png',
-//     'email' => 'marethaadmin@gmail.com',
-//     'password' => bcrypt('adminmaretha')
-// ]);
+User::create([
+    'id'  => 56,
+    'name'  => 'MARETHA RIANTIARNI, S.E.',
+    'username' => 'MARETHA RIANTIARNI, S.E.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'marethaadmin@gmail.com',
+    'password' => bcrypt('adminmaretha')
+]);
 
-// User::create([
-//     'id'  => 57,
-//     'name'  => 'YULFA INTAN YURAIDA, S.T.',
-//     'username' => 'YULFA INTAN YURAIDA, S.T.',
-//     'statusadmin_id' => '8',
-//     'avatar' => 'user/avatar/foto4.png',
-//     'email' => 'yulfaadmin@gmail.com',
-//     'password' => bcrypt('adminyulfa')
-// ]);
+User::create([
+    'id'  => 57,
+    'name'  => 'YULFA INTAN YURAIDA, S.T.',
+    'username' => 'YULFA INTAN YURAIDA, S.T.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'yulfaadmin@gmail.com',
+    'password' => bcrypt('adminyulfa')
+]);
 
-// User::create([
-//     'id'  => 58,
-//     'name'  => 'TRESILIA DIAH SILVIATI, ST.',
-//     'username' => 'TRESILIA DIAH SILVIATI, ST.',
-//     'statusadmin_id' => '8',
-//     'avatar' => 'user/avatar/foto4.png',
-//     'email' => 'tresiliaadmin@gmail.com',
-//     'password' => bcrypt('admintresilia')
-// ]);
+User::create([
+    'id'  => 58,
+    'name'  => 'TRESILIA DIAH SILVIATI, ST.',
+    'username' => 'TRESILIA DIAH SILVIATI, ST.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'tresiliaadmin@gmail.com',
+    'password' => bcrypt('admintresilia')
+]);
 
 User::create([
     'id'  => 59,
@@ -677,35 +677,35 @@ User::create([
     'password' => bcrypt('297893YuLfa') // password: kabblora2025e
 ]);
 
-User::create([
-    'id'  => 90,
-    'name'  => 'MARETHA RIANTIARNI, S.E.',
-    'username' => 'MARETHA RIANTIARNI, S.E.',
-    'statusadmin_id' => '8',
-    'avatar' => 'user/avatar/foto4.png',
-    'email' => 'marethaadmin@gmail.com',
-    'password' => bcrypt('adminmaretha')
-]);
+// User::create([
+//     'id'  => 90,
+//     'name'  => 'MARETHA RIANTIARNI, S.E.',
+//     'username' => 'MARETHA RIANTIARNI, S.E.',
+//     'statusadmin_id' => '8',
+//     'avatar' => 'user/avatar/foto4.png',
+//     'email' => 'marethaadmin@gmail.com',
+//     'password' => bcrypt('adminmaretha')
+// ]);
 
-User::create([
-    'id'  => 91,
-    'name'  => 'YULFA INTAN YURAIDA, S.T.',
-    'username' => 'YULFA INTAN YURAIDA, S.T.',
-    'statusadmin_id' => '8',
-    'avatar' => 'user/avatar/foto4.png',
-    'email' => 'yulfaadmin@gmail.com',
-    'password' => bcrypt('adminyulfa')
-]);
+// User::create([
+//     'id'  => 91,
+//     'name'  => 'YULFA INTAN YURAIDA, S.T.',
+//     'username' => 'YULFA INTAN YURAIDA, S.T.',
+//     'statusadmin_id' => '8',
+//     'avatar' => 'user/avatar/foto4.png',
+//     'email' => 'yulfaadmin@gmail.com',
+//     'password' => bcrypt('adminyulfa')
+// ]);
 
-User::create([
-    'id'  => 92,
-    'name'  => 'TRESILIA DIAH SILVIATI, ST.',
-    'username' => 'TRESILIA DIAH SILVIATI, ST.',
-    'statusadmin_id' => '8',
-    'avatar' => 'user/avatar/foto4.png',
-    'email' => 'tresiliaadmin@gmail.com',
-    'password' => bcrypt('admintresilia')
-]);
+// User::create([
+//     'id'  => 92,
+//     'name'  => 'TRESILIA DIAH SILVIATI, ST.',
+//     'username' => 'TRESILIA DIAH SILVIATI, ST.',
+//     'statusadmin_id' => '8',
+//     'avatar' => 'user/avatar/foto4.png',
+//     'email' => 'tresiliaadmin@gmail.com',
+//     'password' => bcrypt('admintresilia')
+// ]);
 
 
         // -------------------
@@ -973,7 +973,7 @@ petugasdinas::create([
 
 petugasdinas::create([
     'id' => 6,
-    'user_id' => 56,
+    'user_id' => 57,
     'namalengkap' => 'YULFA INTAN YURAIDA, S.T.',
     'nip' => '19901031 202421 2 014',
     'pangkat' => 'IX',
@@ -985,7 +985,7 @@ petugasdinas::create([
 
 petugasdinas::create([
     'id' => 7,
-    'user_id' => 57,
+    'user_id' => 58,
     'namalengkap' => 'TRESILIA DIAH SILVIATI, S.T.',
     'nip' => '19990427 202421 2 009',
     'pangkat' => 'IX',
@@ -997,7 +997,7 @@ petugasdinas::create([
 
 petugasdinas::create([
     'id' => 8,
-    'user_id' => 58,
+    'user_id' => 56,
     'namalengkap' => 'MARETHA RIANTIARNI, S.E.',
     'nip' => '19950325 202421 2 017',
     'pangkat' => 'IX',
