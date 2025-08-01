@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
 
@@ -110,7 +110,7 @@ th {
 
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasperhibgnindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -123,7 +123,7 @@ th {
 
 @canany(['superadmin', 'admin'])
  <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-kembali"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('bekonstruksiperhitunganbgnindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -900,7 +900,7 @@ th {
         </p>
 
                 <a href="/bekonstruksiperhitunganbgnper/{{$data->id}}" style="text-decoration: none;">
-                    <button class="button-abgblora">
+                    <button class="button-baru">
                         <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
                     </button>
                 </a>
@@ -925,19 +925,7 @@ th {
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Surat Permohonan </th>
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalSuratpermohonan{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -1187,19 +1175,7 @@ th {
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Kartu Identitas Bangunan Gedung</th>
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                         <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalFoto{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -1373,20 +1349,9 @@ th {
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Foto Kondisi Bangunan Gedung (Berkas.pdf)  </th>
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-kembali"
-        style="
-            border-radius: 15px;
-            padding: 8px 20px;
-            background-color: #929ba3;
-            color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        "
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.25)'; this.style.transform='translateY(-2px)'"
-        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalFotokondisi{{ $data->id }}">
+
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
 </div>
@@ -1585,7 +1550,7 @@ th {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                      <button class="button-create" type="button" onclick="openModal()">
+                                      <button class="button-hijau" type="button" onclick="openModal()">
                                             <i class="bi bi-save2" style="margin-right: 8px;"></i> Simpan Validasi
                                         </button>
 
