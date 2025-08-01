@@ -98,7 +98,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -202,30 +202,31 @@ th {
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
 
-                                           {{-- Input Hidden bantuanteknis_id --}}
-                                            <input type="hidden" name="bantuanteknis_id" value="{{ $data->id }}">
+                                        {{-- Input Hidden bantuanteknis_id --}}
+                                        <input type="hidden" name="bantuanteknis_id" value="{{ $data->id }}">
 
 
-                                    <div class="mb-3">
-                                        <label class="form-label" for="kegiatan">
-                                            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
-                                        </label>
-                                        <input type="text" id="kegiatan" name="kegiatan" class="form-control @error('kegiatan') is-invalid @enderror" value="{{ old('kegiatan') }}" />
-                                        @error('kegiatan')
+                                        <div class="mb-3">
+                                            <label class="form-label" for="kegiatan">
+                                                <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
+                                            </label>
+                                            <input type="text" id="kegiatan" name="kegiatan" class="form-control @error('kegiatan') is-invalid @enderror" value="{{ old('kegiatan') }}" />
+                                            @error('kegiatan')
                                             <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-<div class="mb-3">
-    <label class="form-label" for="tanggalkegiatan">
-        <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Kegiatan
+                                            @enderror
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="tanggalkegiatan">
+                                                <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Kegiatan
     </label>
     <input type="date" id="tanggalkegiatan" name="tanggalkegiatan" class="form-control @error('tanggalkegiatan') is-invalid @enderror" value="{{ old('tanggalkegiatan') }}" />
     @error('tanggalkegiatan')
-        <div class="invalid-feedback">{{ $message }}</div>
+    <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
-
+</div>
+<div class="col-md-6">
 
                                 <div class="mb-3">
                                     <label class="form-label" for="foto1">
