@@ -706,14 +706,14 @@ Route::get('/bebantekakunkonsultan', [BantuanteknisController::class, 'bebanteka
 
 
 // SIGIT DINAS
-Route::get('/bebantekdinasasistensi', [BantuanteknisController::class, 'bebantekdinasasistensi'])->middleware('auth')->name('bebantekdinasasistensiindex');
-Route::get('/bebantekakundinasberkas', [BantuanteknisController::class, 'bebantekakundinasberkas'])->middleware('auth')->name('bebantekakundinasberkasindex');
-Route::get('/bebantekdinaspenyusutan', [BantuanteknisController::class, 'bebantekdinaspenyusutan'])->middleware('auth')->name('bebantekdinaspenyusutanindex');
-Route::get('/bebantekdinaskerusakan', [BantuanteknisController::class, 'bebantekdinaskerusakan'])->middleware('auth')->name('bebantekdinaskerusakanindex');
-Route::get('/bebantekdinaspemeliharaan', [BantuanteknisController::class, 'bebantekdinaspemeliharaan'])->middleware('auth')->name('bebantekdinaspemeliharaanindex');
-Route::get('/bebantekdinasperhibgn', [BantuanteknisController::class, 'bebantekdinasperhibgn'])->middleware('auth')->name('bebantekdinasperhibgnindex');
-Route::get('/bebantekdinasserahterima', [BantuanteknisController::class, 'bebantekdinasserahterima'])->middleware('auth')->name('bebantekdinasserahterimaindex');
-Route::get('/bebantekdinaspersonil', [BantuanteknisController::class, 'bebantekdinaspersonil'])->middleware('auth')->name('bebantekdinaspersonilindex');
+Route::get('/bebantekdinasasistensi', [BantuanteknisController::class, 'bebantekdinasasistensi'])->middleware('auth', 'can:dinas')->name('bebantekdinasasistensiindex');
+Route::get('/bebantekakundinasberkas', [BantuanteknisController::class, 'bebantekakundinasberkas'])->middleware('auth', 'can:dinas')->name('bebantekakundinasberkasindex');
+Route::get('/bebantekdinaspenyusutan', [BantuanteknisController::class, 'bebantekdinaspenyusutan'])->middleware('auth', 'can:dinas')->name('bebantekdinaspenyusutanindex');
+Route::get('/bebantekdinaskerusakan', [BantuanteknisController::class, 'bebantekdinaskerusakan'])->middleware('auth', 'can:dinas')->name('bebantekdinaskerusakanindex');
+Route::get('/bebantekdinaspemeliharaan', [BantuanteknisController::class, 'bebantekdinaspemeliharaan'])->middleware('auth', 'can:dinas')->name('bebantekdinaspemeliharaanindex');
+Route::get('/bebantekdinasperhibgn', [BantuanteknisController::class, 'bebantekdinasperhibgn'])->middleware('auth', 'can:dinas')->name('bebantekdinasperhibgnindex');
+Route::get('/bebantekdinasserahterima', [BantuanteknisController::class, 'bebantekdinasserahterima'])->middleware('auth', 'can:dinas')->name('bebantekdinasserahterimaindex');
+Route::get('/bebantekdinaspersonil', [BantuanteknisController::class, 'bebantekdinaspersonil'])->middleware('auth', 'can:dinas')->name('bebantekdinaspersonilindex');
 
 Route::get('/datapermohonandinas', [AdminDashboardController::class, 'dashboarddinas']);
 Route::get('/beakunkonsultanasistensi', [BantuanteknisController::class, 'bebantekkonsultandataakun'])->middleware('auth')->name('bebantekkonsultanindex');
