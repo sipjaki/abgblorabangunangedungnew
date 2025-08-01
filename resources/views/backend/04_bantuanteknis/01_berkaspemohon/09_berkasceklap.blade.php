@@ -153,7 +153,7 @@ th {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
                     @can('konsultanbantek')
-   <button class="button-kembali"
+   <button class="button-newvalidasi"
         type="button"
         onclick="location.href='{{ route('bebantekdaftarkonsultanproses') }}';"
         style="cursor: pointer; color:black; margin-left:5px;">
@@ -163,7 +163,7 @@ th {
 @endcan
 
                         @can('dinas')
-                        <button class="button-kembali"
+                        <button class="button-newvalidasi"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekakundinasberkas') }}';"
@@ -172,7 +172,7 @@ th {
                         </button>
                     @endcan
                         @can('pemohonbantek')
-                        <button class="button-kembali"
+                        <button class="button-newvalidasi"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekpemohondinas') }}';"
@@ -188,7 +188,7 @@ th {
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
 </button>
 
-  <a href="{{ url('/bepenelitikontrak') }}" class="button-kembali" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+  <a href="{{ url('/bepenelitikontrak') }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
 
