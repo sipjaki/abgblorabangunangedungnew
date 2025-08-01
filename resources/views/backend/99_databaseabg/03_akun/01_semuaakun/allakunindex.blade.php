@@ -278,13 +278,19 @@ th {
 {{-- <td>{{ $item->otp ?? '-' }}</td> --}}
 <td>{{ $item->email ?? '-' }}</td>
 <td>
-  @php
-    $avatarPath = $item->avatar
-        ? asset('storage/' . $item->avatar)
-        : asset('assets/abgblora/logo/iconabgblora.png');
-  @endphp
+<div style="margin-top: 10px;">
+  @if ($item->avatar && file_exists(public_path('storage/' . $item->avatar)))
+    {{-- Jika avatar ada di storage --}}
+    <img src="{{ asset('storage/' . $item->avatar) }}" alt="Avatar" style="height: 40px; border-radius: 50%;">
+  @elseif ($item->avatar)
+    {{-- Jika hanya ada path asset biasa --}}
+    <img src="{{ asset($item->avatar) }}" alt="Avatar" style="height: 40px; border-radius: 50%;">
+  @else
+    {{-- Placeholder jika tidak ada avatar --}}
+    <img src="{{ asset('assets/abgblora/logo/iconabgblora.png') }}" alt="Default Avatar" style="height: 40px; border-radius: 50%;">
+  @endif
+</div>
 
-  <img src="{{ $avatarPath }}" alt="Avatar" style="height: 40px; border-radius: 50%;">
 </td>
 
 @can('superadmin')
