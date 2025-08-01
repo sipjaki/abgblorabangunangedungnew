@@ -388,14 +388,43 @@ th {
 <p style="text-align: right; margin-top: 20px; font-family: 'Times New Roman', serif !important;">
   Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('d F Y') : '-' }}
 </p>
-<p style="font-size: 12px; margin: 0; padding: 0;">
-  <strong style="font-family: 'Times New Roman', serif !important;">Nomor</strong> : <span style="font-family: 'Times New Roman', serif !important;"> 640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/{{ date('Y') }}</span><br/>
-  <strong style="font-family: 'Times New Roman', serif !important;">Lampiran</strong> : <span style="font-family: 'Times New Roman', serif !important;"> 1 Bandel</span><br />
-  <strong style="font-family: 'Times New Roman', serif !important;">Perihal</strong> :
-  <u style="font-family: 'Times New Roman', serif !important; text-decoration: none;">
-    Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}
-  </u>
-</p>
+
+<div style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+  <table style="line-height: 1.3; width: 100%;">
+    <!-- Baris Nomor -->
+    <tr>
+      <td style="width: 120px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        <strong>Nomor</strong>
+      </td>
+      <td style="width: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        640/OPRT-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->pemberitahuanke ?? '-' }}/{{ date('Y') }}
+      </td>
+    </tr>
+
+    <!-- Baris Lampiran -->
+    <tr>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        <strong>Lampiran</strong>
+      </td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        1 Bandel
+      </td>
+    </tr>
+
+    <!-- Baris Perihal -->
+    <tr>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        <strong>Perihal</strong>
+      </td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
+      </td>
+    </tr>
+  </table>
+</div>
 
 <br>
   <p style="font-family: 'Times New Roman', serif !important;">Kepada Yth:<br />Pemohon<br />Di Tempat</p>
