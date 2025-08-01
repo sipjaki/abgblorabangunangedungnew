@@ -588,7 +588,7 @@ th {
 
     @if($item->validasiberkas4 == 'sudah')
         <button
-            class="button-create"
+            class="button-hijau"
             type="button"
             style="background-color: #10B981; color: black;"
             {{-- cursor: not-allowed; --}}
