@@ -196,7 +196,7 @@ th {
 
 @canany(['superadmin', 'admin'])
     <a href="{{ route('bebantuanteknisindexmenu') }}">
-        <button class="button-kembali button-abgblora" type="button"
+        <button class="button-newvalidasi" type="button"
             style="cursor: pointer; margin-left:5px; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
