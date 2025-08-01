@@ -9,7 +9,7 @@
 
 {{-- @section('title', __('Akses Ditolak')) --}}
 {{-- @section('code', '403') --}}
-@section('message')
+{{-- @section('message') --}}
     <div style="text-align: center; margin-top: 30px;">
         <p style="font-size: 18px; color: #555;">
             {{ $exception->getMessage() ?: 'Maaf, Anda tidak memiliki hak akses untuk halaman ini.' }}
