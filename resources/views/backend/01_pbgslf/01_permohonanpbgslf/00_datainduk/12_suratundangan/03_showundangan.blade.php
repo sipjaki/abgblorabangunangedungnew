@@ -471,44 +471,42 @@ th {
         </td>
     </tr>
 </table>
+<p style="margin-top: 10px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    Dinyatakan Lengkap oleh operator SIMBG maka sebagai tindak lanjut perizinan PBG dimohon mengikuti konsultasi teknis pada:
+</p>
 
-    <p style="margin-top: 10px; font-size: 12px;">
-        Dinyatakan Lengkap oleh operator SIMBG maka sebagai tindak lanjut perizinan PBG dimohon mengikuti konsultasi teknis pada:
-    </p>
-
-    <table style="font-size: 12px; width: 100%;">
-        <tr>
-            <td style="padding: 4px 8px; vertical-align: top;">Hari / Tanggal</td>
+<table style="font-family: 'Times New Roman', serif !important; font-size: 14px; width: 100%;">
+    <tr>
+        <td style="padding: 4px 8px; vertical-align: top;">Hari / Tanggal</td>
         <td style="padding: 4px 8px;">
-  : {{ $surat->tanggalkehadiran ? \Carbon\Carbon::parse($surat->tanggalkehadiran)->translatedFormat('F d Y') : '-' }}
-</td>
+            : {{ $surat->tanggalkehadiran ? \Carbon\Carbon::parse($surat->tanggalkehadiran)->translatedFormat('F d Y') : '-' }}
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 4px 8px; vertical-align: top;">Waktu</td>
+        <td style="padding: 4px 8px;">
+            @if($surat->jamundangan == 'lainnya')
+                : {{ $surat->catatan ?? '-' }}
+            @else
+                : {{ $surat->jamundangan ?? '-' }}
+            @endif
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 4px 8px; vertical-align: top;">Tempat</td>
+        <td style="padding: 4px 8px;">: {{ $surat->tempatkonsultasi->tempat ?? '-' }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 4px 8px; vertical-align: top;">Acara</td>
+        <td style="padding: 4px 8px;">: Konsultasi ke {{ $surat->konsultasike ?? '-' }}</td>
+    </tr>
+</table>
 
-        </tr>
-        <tr>
-    <td style="padding: 4px 8px; vertical-align: top;">Waktu</td>
-    <td style="padding: 4px 8px;">
-        @if($surat->jamundangan == 'lainnya')
-            : {{ $surat->catatan ?? '-' }}
-        @else
-            : {{ $surat->jamundangan ?? '-' }}
-        @endif
-    </td>
-</tr>
 
-        <tr>
-            <td style="padding: 4px 8px; vertical-align: top;">Tempat</td>
-     <td style="padding: 4px 8px;">: {{ $surat->tempatkonsultasi->tempat ?? '-' }}</td>
+<p style="margin-top: 10px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+    Demikian undangan ini kami sampaikan dan kami ucapkan terima kasih.
+</p>
 
-     </tr>
-        <tr>
-            <td style="padding: 4px 8px; vertical-align: top;">Acara</td>
-            <td style="padding: 4px 8px;">: Konsultasi ke {{ $surat->konsultasike ?? '-' }}</td>
-        </tr>
-    </table>
-
-    <p style="margin-top: 10px; font-size: 12px;">
-        Demikian undangan ini kami sampaikan dan kami ucapkan terima kasih.
-    </p>
 </div>
 
 <div style="display: flex; justify-content: flex-end; margin-top: 40px; font-size:12px; margin-top:-10px;">

@@ -340,7 +340,7 @@ th {
 <td style="text-align: center;">
     <a href="{{ route('suratpemberitahuan.detail', ['id' => $item->id]) }}"
        onclick="saveScrollPosition()">
-        <div class="button-baru">
+        <div class="button-berkas">
             <i class="bi bi-eye me-1"></i> Lihat
         </div>
     </a>

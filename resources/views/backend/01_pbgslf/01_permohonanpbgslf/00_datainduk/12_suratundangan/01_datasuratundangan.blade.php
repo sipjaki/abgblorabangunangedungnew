@@ -336,21 +336,7 @@ th {
     <a href="{{ route('bepbgsuratundanganshow.detail', ['id' => $item->id]) }}"
        class="text-decoration-none"
        onclick="saveScrollPosition()">
-        <div style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 14px;
-            background: linear-gradient(145deg, #e1f0ff, #d6e9ff);
-            color: #003366;
-            font-size: 13px;
-            font-weight: 500;
-            border: 1px solid #c8dfff;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        "
-        onmouseover="this.style.background='white'; this.style.color='black';"
-        onmouseout="this.style.background='linear-gradient(145deg, #e1f0ff, #d6e9ff)'; this.style.color='#003366';">
+        <div class="button-berkas">
             <i class="bi bi-eye me-1"></i> Lihat
         </div>
     </a>
