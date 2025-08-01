@@ -933,7 +933,7 @@ th {
 
         <a href="/bebantekpemohondinasperbaikan/{{$data->id}}" style="text-decoration: none;">
             <button class="button-baru">
-                <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan  baru bro
+                <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
             </button>
         </a>
     </div>
@@ -1581,7 +1581,7 @@ th {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                      <button class="button-baru" type="button" onclick="openModal()">
+                                      <button class="button-hijau" type="button" onclick="openModal()">
                                             <i class="bi bi-save2" style="margin-right: 8px;"></i> Simpan Validasi
                                         </button>
 
