@@ -763,7 +763,7 @@
 <li class="nav-item">
                 <a href="#" class="nav-link">
     <i class="bi bi-folder nav-icon" style="color: white; font-size: 16px;"></i>
-    <p style="color: white; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+    <p style="color: red; margin-left: 8px; display: flex; align-items: center; justify-content: space-between; width: 100%;">
         Pendataan BG
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
