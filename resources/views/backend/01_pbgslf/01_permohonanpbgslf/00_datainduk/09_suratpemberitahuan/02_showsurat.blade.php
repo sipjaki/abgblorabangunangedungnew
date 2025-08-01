@@ -426,7 +426,7 @@ th {
   </table>
 </div>
 <!-- Paragraf Tujuan -->
-<p style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
+<p style="font-family: 'Times New Roman', serif !important; font-size: 14px; margin-top:10px;">
   Kepada Yth:<br />
   Pemohon<br />
   Di Tempat
