@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 // namespace App\Models;
 
 use App\Models\agendasertifikasi;
+use App\Models\bantuangambarinfo;
 use App\Models\agendastatus;
 use App\Models\Agendastatus as ModelsAgendastatus;
 use App\Models\artikelabg;
