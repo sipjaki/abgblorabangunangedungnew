@@ -97,7 +97,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
 
@@ -123,7 +123,7 @@ th {
 
 @canany(['superadmin', 'admin'])
  <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-kembali"
+        <button class="button-newvalidasi"
                 type="button"
                 onclick="location.href='{{ route('bepenelitikontrakindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -900,7 +900,7 @@ th {
         </p>
 
                 <a href="/bebantekperpeneliti/{{$data->id}}" style="text-decoration: none;">
-                    <button class="button-abgblora">
+                    <button class="button-baru">
                         <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
                     </button>
                 </a>
@@ -1585,7 +1585,7 @@ th {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                      <button class="button-create" type="button" onclick="openModal()">
+                                      <button class="button-hijau" type="button" onclick="openModal()">
                                             <i class="bi bi-save2" style="margin-right: 8px;"></i> Simpan Validasi
                                         </button>
 
