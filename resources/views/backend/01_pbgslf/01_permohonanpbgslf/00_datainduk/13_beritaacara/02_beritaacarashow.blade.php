@@ -389,44 +389,72 @@ th {
 </script>
 
     {{-- 3. Tabel Data Informasi Umum --}}
-<table style="width: 100%; border-collapse: collapse; font-size: 12px;" style="margin-top:-40px;">
-    <tr>
-        <td style="width: 35%; border: 1px solid #000; padding: 2px;">No. Registrasi</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td>
-    </tr>
-        <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Nama Pemohon</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Alamat Pemohon</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Jenis Permohonan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}</td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Nama Bangunan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->namabangunan ?? '-' }}</td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Fungsi Bangunan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
-    </tr>
- <tr>
-  <td style="border: 1px solid #000; padding: 2px;">Luas Bangunan</td>
-  <td style="border: 1px solid #000; padding: 2px;">
-    {{ $surat->databangunanpbg->luasbangunan ?? '-' }} m&sup2;
-  </td>
-</tr>
-
-    <tr>
-        <td style="border: 1px solid #000; padding: 2px;">Lokasi Bangunan</td>
-        <td style="border: 1px solid #000; padding: 2px;">{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
-    </tr>
+<table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -40px;">
+  <tr>
+    <td style="width: 35%; border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      No. Registrasi
+    </td>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      Nama Pemohon
+    </td>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      {{ $surat->datapemilik->namapemilik ?? '-' }}
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      Alamat Pemohon
+    </td>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      {{ $surat->datapemilik->alamatpemilik ?? '-' }}
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      Jenis Permohonan
+    </td>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      {{ $surat->databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      Nama Bangunan
+    </td>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      {{ $surat->databangunanpbg->namabangunan ?? '-' }}
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      Fungsi Bangunan
+    </td>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      {{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      Luas Bangunan
+    </td>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      {{ $surat->databangunanpbg->luasbangunan ?? '-' }} m&sup2;
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      Lokasi Bangunan
+    </td>
+    <td style="border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+      {{ $surat->databangunanpbg->lokasibangunan ?? '-' }}
+    </td>
+  </tr>
 </table>
-
 
     <br>
 {{-- 4. Tabel Pemeriksaan Teknis --}}
