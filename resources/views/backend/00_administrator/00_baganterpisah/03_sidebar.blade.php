@@ -556,7 +556,7 @@
             @endcan
             @can('konsultanbantek')
 
-            <li class="nav-header" style="color: white;">Dashboard Konsultan Asistensi</li>
+            <li class="nav-header" style="color: white;">Dashboard Konsultan <br> Asistensi</li>
 
 
            <li class="nav-item has-treeview">
