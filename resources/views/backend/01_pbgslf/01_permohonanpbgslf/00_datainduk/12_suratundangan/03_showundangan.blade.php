@@ -362,57 +362,96 @@ th {
 </p>
 
   <div style="font-size: 12px;">
-    {{-- <p style="text-align: right; font-size: 12px;">
-        Blora, {{ \Carbon\Carbon::parse('2025-01-24')->translatedFormat('d F Y') }}
-    </p> --}}
 
-    <p style="font-size: 12px;">
-        <strong>Nomor</strong> : 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025<br>
-        <strong>Lampiran</strong> : -<br>
-        <strong>Perihal</strong> : <u style="text-decoration: none;">Undangan Konsultasi</u>
-    </p>
+  <p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
+  <strong>Nomor</strong> : 050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025
+</p>
+<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
+  <strong>Lampiran</strong> : -
+</p>
+<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin-bottom: 10px;">
+  <strong>Perihal</strong> : <u style="text-decoration: none;">Undangan Konsultasi</u>
+</p>
 
-    <p style="font-size: 12px;">
-        Kepada Yth:<br>
-        Pemohon PBG<br>
-        Di<br>
-        Tempat
-    </p>
+<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
+  Kepada Yth:
+</p>
+<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
+  Pemohon PBG
+</p>
+<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
+  Di
+</p>
+<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin-bottom: 10px;">
+  Tempat
+</p>
 
-    <p style="font-size: 12px;">Dengan Hormat,</p>
+<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
+  Dengan Hormat,
+</p>
 
-    <p style="font-size: 12px;">Dalam rangka permohonan PBG saudara :</p>
-<table style="font-size: 12px; width: 100%; border-collapse: collapse; border: 1px solid #000;">
+<p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: 0;">
+  Dalam rangka permohonan PBG saudara :
+</p>
+
+<table style="font-size: 14px; width: 100%; border-collapse: collapse; border: 1px solid #000; font-family: 'Times New Roman', serif !important;">
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">No. Registrasi</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}</td>
+        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          No. Registrasi
+        </td>
+        <td style="padding: 4px 8px; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          {{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}
+        </td>
     </tr>
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Nama Lengkap Pemilik</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
+        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          Nama Lengkap Pemilik
+        </td>
+        <td style="padding: 4px 8px; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          {{ $surat->datapemilik->namapemilik ?? '-' }}
+        </td>
     </tr>
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Jenis Konsultasi</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->databangunanpbg->jeniskonsultasi ?? 'Bangunan Gedung Baru' }}</td>
+        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          Jenis Konsultasi
+        </td>
+        <td style="padding: 4px 8px; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          {{ $surat->databangunanpbg->jeniskonsultasi ?? 'Bangunan Gedung Baru' }}
+        </td>
     </tr>
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Lokasi Bangunan</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
+        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          Lokasi Bangunan
+        </td>
+        <td style="padding: 4px 8px; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          {{ $surat->databangunanpbg->lokasibangunan ?? '-' }}
+        </td>
     </tr>
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Fungsi Bangunan</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
+        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          Fungsi Bangunan
+        </td>
+        <td style="padding: 4px 8px; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          {{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}
+        </td>
     </tr>
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">No. Telepon</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->datapemilik->nomortelepon ?? '-' }}</td>
+        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          No. Telepon
+        </td>
+        <td style="padding: 4px 8px; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          {{ $surat->datapemilik->nomortelepon ?? '-' }}
+        </td>
     </tr>
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000;">Email</td>
-        <td style="padding: 4px 8px; border: 1px solid #000;">{{ $surat->datapemilik->email ?? '-' }}</td>
+        <td style="padding: 4px 8px; vertical-align: top; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          Email
+        </td>
+        <td style="padding: 4px 8px; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+          {{ $surat->datapemilik->email ?? '-' }}
+        </td>
     </tr>
 </table>
-
 
     <p style="margin-top: 10px; font-size: 12px;">
         Dinyatakan Lengkap oleh operator SIMBG maka sebagai tindak lanjut perizinan PBG dimohon mengikuti konsultasi teknis pada:
