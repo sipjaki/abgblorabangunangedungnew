@@ -310,7 +310,7 @@
 
 <!-- HALAMAN PERTAMA -->
 <div class="halaman" id="halaman-pertama" style="font-family: 'Times New Roman', serif !important;">
-    <div class="kop" style="font-family: 'Times New Roman', serif !important;" style="margin-top:-25px;">
+    <div class="kop" style="font-family: 'Times New Roman', serif !important;">
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
       <div style="display: inline-block; font-family: 'Times New Roman', serif !important;">
         <h3 style="font-family: 'Times New Roman', serif !important; font-size:18px;">PEMERINTAH KABUPATEN BLORA</h3>
@@ -321,7 +321,7 @@
       <div style="clear: both;"></div>
     </div>
 
-    <p style="text-align: right; margin-top: 20px; font-size:12px; font-family: 'Times New Roman', serif !important;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}</p>
+    <p style="text-align: right; margin-top: 20px; font-size:12px; font-family: 'Times New Roman', serif !important; font-size:14px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}</p>
 
     <div style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
       <p style="font-size: 12px; font-family: 'Times New Roman', serif !important;">
