@@ -245,9 +245,8 @@ th {
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Pemohon</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Konsultan </th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Dinas</th>
+        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Dinas</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat Registrasi DPUPR </th>
-        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat Dinas </th> --}}
         <th style="background-color: #ADD8E6;"><i class="fas fa-calendar"></i> Tanggal Surat</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-toolbox"></i> Nama Paket</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Kategori Bangunan</th>
@@ -265,8 +264,8 @@ th {
             <th style="background-color: #ADD8E6;"><i class="bi bi-house"></i> RW</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt"></i> Kabupaten</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-geo"></i> Kecamatan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th>
+            <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th> --}}
+            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i>Permohonan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Cek Berkas Perencanaan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Asistensi</th>
@@ -288,9 +287,8 @@ th {
             <td>{{ $item->nama_pemohon ?? '-' }}</td>
             <td>{{ $item->bujkkonsultan->user->name ?? '-' }}</td>
             <td>{{ $item->no_telepon ?? '-' }}</td>
-            <td>{{ $item->dinas->name ?? '-' }}</td>
+            {{-- <td>{{ $item->dinas->name ?? '-' }}</td>
             <td>{{ $item->nosurat ?? '-' }}</td>
-            {{-- <td>{{ $item->nosuratdinas ?? '-' }}</td> --}}
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
             <td>{{ $item->namapaket ?? '-' }}</td>
             <td>{{ $item->kategoribangunan ?? '-' }}</td>
@@ -308,7 +306,7 @@ th {
             <td>{{ $item->rw ?? '-' }}</td>
             <td>{{ $item->kabupaten ?? '-' }}</td>
             <td>{{ optional($item->kecamatanblora)->kecamatanblora ?? '-' }}</td>
-            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td>
+            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td> --}}
 
 
             <td style="text-align: center;">
