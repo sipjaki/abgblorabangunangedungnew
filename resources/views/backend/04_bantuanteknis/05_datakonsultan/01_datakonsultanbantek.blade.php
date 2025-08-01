@@ -210,9 +210,9 @@ th {
     </button>
 
     <a href="/bebantekkonsultannew" style="text-decoration: none;">
-      <button class="button-baru"
+      <button class="button-hijau"
         style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
-        <i class="bi bi-plus-circle"></i> Create
+        <i class="bi bi-plus-circle"></i> Buat Baru
       </button>
     </a>
   </div>
@@ -298,7 +298,7 @@ th {
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                         onclick="setDeleteUrl(this)">
-                                        <i class="bi bi-trash"></i>
+                                        <i class="bi bi-trash"></i> Hapus
                                     </a>
                                 </td>
 
