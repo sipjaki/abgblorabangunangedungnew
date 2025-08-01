@@ -472,35 +472,35 @@ User::create([
     'password' => bcrypt('adminmuhammadzaqi')
 ]);
 
-User::create([
-    'id'  => 56,
-    'name'  => 'MARETHA RIANTIARNI, S.E.',
-    'username' => 'MARETHA RIANTIARNI, S.E.',
-    'statusadmin_id' => '8',
-    'avatar' => 'user/avatar/foto4.png',
-    'email' => 'marethaadmin@gmail.com',
-    'password' => bcrypt('adminmaretha')
-]);
+// User::create([
+//     'id'  => 56,
+//     'name'  => 'MARETHA RIANTIARNI, S.E.',
+//     'username' => 'MARETHA RIANTIARNI, S.E.',
+//     'statusadmin_id' => '8',
+//     'avatar' => 'user/avatar/foto4.png',
+//     'email' => 'marethaadmin@gmail.com',
+//     'password' => bcrypt('adminmaretha')
+// ]);
 
-User::create([
-    'id'  => 57,
-    'name'  => 'YULFA INTAN YURAIDA, S.T.',
-    'username' => 'YULFA INTAN YURAIDA, S.T.',
-    'statusadmin_id' => '8',
-    'avatar' => 'user/avatar/foto4.png',
-    'email' => 'yulfaadmin@gmail.com',
-    'password' => bcrypt('adminyulfa')
-]);
+// User::create([
+//     'id'  => 57,
+//     'name'  => 'YULFA INTAN YURAIDA, S.T.',
+//     'username' => 'YULFA INTAN YURAIDA, S.T.',
+//     'statusadmin_id' => '8',
+//     'avatar' => 'user/avatar/foto4.png',
+//     'email' => 'yulfaadmin@gmail.com',
+//     'password' => bcrypt('adminyulfa')
+// ]);
 
-User::create([
-    'id'  => 58,
-    'name'  => 'TRESILIA DIAH SILVIATI, ST.',
-    'username' => 'TRESILIA DIAH SILVIATI, ST.',
-    'statusadmin_id' => '8',
-    'avatar' => 'user/avatar/foto4.png',
-    'email' => 'tresiliaadmin@gmail.com',
-    'password' => bcrypt('admintresilia')
-]);
+// User::create([
+//     'id'  => 58,
+//     'name'  => 'TRESILIA DIAH SILVIATI, ST.',
+//     'username' => 'TRESILIA DIAH SILVIATI, ST.',
+//     'statusadmin_id' => '8',
+//     'avatar' => 'user/avatar/foto4.png',
+//     'email' => 'tresiliaadmin@gmail.com',
+//     'password' => bcrypt('admintresilia')
+// ]);
 
 User::create([
     'id'  => 59,
@@ -675,6 +675,36 @@ User::create([
     'avatar' => 'user/avatar/foto6.png',
     'email' => 'intanyuraida@gmail.com ',
     'password' => bcrypt('297893YuLfa') // password: kabblora2025e
+]);
+
+User::create([
+    'id'  => 90,
+    'name'  => 'MARETHA RIANTIARNI, S.E.',
+    'username' => 'MARETHA RIANTIARNI, S.E.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'marethaadmin@gmail.com',
+    'password' => bcrypt('adminmaretha')
+]);
+
+User::create([
+    'id'  => 91,
+    'name'  => 'YULFA INTAN YURAIDA, S.T.',
+    'username' => 'YULFA INTAN YURAIDA, S.T.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'yulfaadmin@gmail.com',
+    'password' => bcrypt('adminyulfa')
+]);
+
+User::create([
+    'id'  => 92,
+    'name'  => 'TRESILIA DIAH SILVIATI, ST.',
+    'username' => 'TRESILIA DIAH SILVIATI, ST.',
+    'statusadmin_id' => '8',
+    'avatar' => 'user/avatar/foto4.png',
+    'email' => 'tresiliaadmin@gmail.com',
+    'password' => bcrypt('admintresilia')
 ]);
 
 
@@ -869,15 +899,15 @@ User::create([
     'password' => bcrypt('adminadmin123$$')
 ]);
 
-        // User::create([
-        //     'id'  => 70,
-        //     'name'  => 'Budi Ajar Famungkas',
-        //     'username' => 'Budi Ajar Famungkas',
-        //     'statusadmin_id' => '1',
-        //     'avatar' => 'assets/abgblora/logo/iconabgblora.png',
-        //     'email' => 'budysheny46@gmail.com',
-        //     'password' => bcrypt('adminmasbudiabg')
-        // ]);
+        User::create([
+            'id'  => 70,
+            'name'  => 'Budi Ajar Famungkas',
+            'username' => 'Budi Ajar Famungkas',
+            'statusadmin_id' => '1',
+            'avatar' => 'assets/abgblora/logo/iconabgblora.png',
+            'email' => 'budysheny4611@gmail.com',
+            'password' => bcrypt('adminmasbudiabg')
+        ]);
 
 // =============================================
 
