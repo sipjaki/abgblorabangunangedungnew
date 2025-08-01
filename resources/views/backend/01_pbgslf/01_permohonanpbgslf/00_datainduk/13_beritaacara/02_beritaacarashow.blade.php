@@ -389,7 +389,7 @@ th {
 </script>
 
     {{-- 3. Tabel Data Informasi Umum --}}
-<table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top:20px;">
+<table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top:5px;">
   <tr>
     <td style="width: 35%; border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
       No. Registrasi
@@ -458,73 +458,84 @@ th {
 
     <br>
 {{-- 4. Tabel Pemeriksaan Teknis --}}
-<table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 12px; margin-top:-10px;" >
-    <thead>
-        <tr>
-            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">No</th>
-            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">URAIAN DOKUMEN TEKNIS</th>
-            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">ADA</th>
-            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">TIDAK ADA</th>
-            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">SESUAI</th>
-            <th style="border: 1px solid #000; padding: 1.75px; text-align:center;">TIDAK SESUAI</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="border: 1px solid #000; text-align: center; padding: 1.75px;">1</td>
-            <td style="border: 1px solid #000; padding: 1.75px;">Pemeriksaan Arsitektur</td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #000; text-align: center; padding: 1.75px;">2</td>
-            <td style="border: 1px solid #000; padding: 1.75px;">Pemeriksaan Struktur</td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #000; text-align: center; padding: 1.75px;">3</td>
-            <td style="border: 1px solid #000; padding: 1.75px;">Pemeriksaan M E P</td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid #000; text-align: center; padding: 1.75px;">4</td>
-            <td style="border: 1px solid #000; padding: 1.75px;">Data Teknis Gedung Eksisting</td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-            <td style="border: 1px solid #000; padding: 1.75px;"></td>
-        </tr>
-    </tbody>
-</table>
-
-    <br>
-<div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top:-20px;">
-  <p><strong>Rekomendasi:</strong></p>
-<table style="border-collapse: collapse; width: 100%; font-size: 12px; font-family: Arial, sans-serif; margin-top:-20px;">
+<table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -10px;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        No
+      </th>
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        URAIAN DOKUMEN TEKNIS
+      </th>
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        ADA
+      </th>
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        TIDAK ADA
+      </th>
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        SESUAI
+      </th>
+      <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        TIDAK SESUAI
+      </th>
+    </tr>
+  </thead>
   <tbody>
-    <tr style="border: 1px solid #444;">
-      <td style="border: 1px solid #444; padding: 2px; width: 50px; text-align: center;">☐</td>
-      <td style="border: 1px solid #444; padding: 2px;">Tanpa Perbaikan</td>
+    <tr>
+      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">1</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Pemeriksaan Arsitektur</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
     </tr>
-    <tr style="border: 1px solid #444; background-color: #f9f9f9;">
-      <td style="border: 1px solid #444; padding: 2px; text-align: center;">☐</td>
-      <td style="border: 1px solid #444; padding: 2px;">Dengan Perbaikan</td>
+    <tr>
+      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">2</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Pemeriksaan Struktur</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
     </tr>
-    <tr style="border: 1px solid #444;">
-      <td style="border: 1px solid #444; padding: 2px; text-align: center;">☐</td>
-      <td style="border: 1px solid #444; padding: 2px;">Permohonan Ditolak/Dikembalikan</td>
+    <tr>
+      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">3</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Pemeriksaan M E P</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #000; text-align: center; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">4</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Data Teknis Gedung Eksisting</td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
+      <td style="border: 1px solid #000; padding: 1.75px; font-size: 14px; font-family: 'Times New Roman', serif !important;"></td>
     </tr>
   </tbody>
 </table>
 
+    <br>
+<div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top: -20px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+  <p><strong>Rekomendasi:</strong></p>
+  <table style="border-collapse: collapse; width: 100%; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -20px;">
+    <tbody>
+      <tr style="border: 1px solid #444;">
+        <td style="border: 1px solid #444; padding: 2px; width: 50px; text-align: center; font-size: 14px; font-family: 'Times New Roman', serif !important;">☐</td>
+        <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Tanpa Perbaikan</td>
+      </tr>
+      <tr style="border: 1px solid #444; background-color: #f9f9f9;">
+        <td style="border: 1px solid #444; padding: 2px; text-align: center; font-size: 14px; font-family: 'Times New Roman', serif !important;">☐</td>
+        <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Dengan Perbaikan</td>
+      </tr>
+      <tr style="border: 1px solid #444;">
+        <td style="border: 1px solid #444; padding: 2px; text-align: center; font-size: 14px; font-family: 'Times New Roman', serif !important;">☐</td>
+        <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Times New Roman', serif !important;">Permohonan Ditolak/Dikembalikan</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 
