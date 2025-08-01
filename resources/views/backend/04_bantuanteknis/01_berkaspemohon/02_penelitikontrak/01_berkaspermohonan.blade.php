@@ -219,7 +219,7 @@ th {
   function searchTable() {
     let input = document.getElementById("searchInput").value;
 
-    fetch(`/datadesablora?search=${input}`)
+    fetch(`/bepenelitikontrak?search=${input}`)
       .then(response => response.text())
       .then(html => {
         let parser = new DOMParser();
@@ -243,7 +243,7 @@ th {
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Pemohon</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Dinas</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat DPUPR</th>
+        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat DPUPR</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat Dinas</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-calendar"></i> Tanggal Surat</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-toolbox"></i> Nama Paket</th>
@@ -262,8 +262,8 @@ th {
             <th style="background-color: #ADD8E6;"><i class="bi bi-house"></i> RW</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt"></i> Kabupaten</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-geo"></i> Kecamatan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th>
+            <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th> --}}
+            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Permohonan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Lapangan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Lapangan</th>
@@ -277,7 +277,7 @@ th {
     </tr>
                             </thead>
                               <tbody id="tableBody">
-                                @foreach ($data as $item )
+                                @forelse ($data as $item )
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
@@ -285,7 +285,7 @@ th {
             <td>{{ $item->nama_pemohon ?? '-' }}</td>
             <td style="text-align: left;">{{ $item->dinas->name ?? '-' }}</td>
             <td>{{ $item->no_telepon ?? '-' }}</td>
-            <td>{{ $item->nosurat ?? '-' }}</td>
+            {{-- <td>{{ $item->nosurat ?? '-' }}</td>
             <td>{{ $item->nosuratdinas ?? '-' }}</td>
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
             <td>{{ $item->namapaket ?? '-' }}</td>
@@ -304,7 +304,7 @@ th {
             <td>{{ $item->rw ?? '-' }}</td>
             <td>{{ $item->kabupaten ?? '-' }}</td>
             <td>{{ optional($item->kecamatanblora)->kecamatanblora ?? '-' }}</td>
-            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td>
+            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td> --}}
 
 
             <td style="text-align: center;">
@@ -701,7 +701,40 @@ th {
                                     @endcan
 
                                 </tr>
-                                @endforeach
+
+        @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+
                             </tbody>
                         </table>
 
