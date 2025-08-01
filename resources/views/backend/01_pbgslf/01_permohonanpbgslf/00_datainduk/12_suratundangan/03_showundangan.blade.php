@@ -478,14 +478,18 @@ th {
 
 <table style="font-family: 'Times New Roman', serif !important; font-size: 14px; width: 100%;">
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top;">Hari / Tanggal</td>
-        <td style="padding: 4px 8px;">
+        <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px 8px; vertical-align: top;">
+            Hari / Tanggal
+        </td>
+        <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px 8px;">
             : {{ $surat->tanggalkehadiran ? \Carbon\Carbon::parse($surat->tanggalkehadiran)->translatedFormat('F d Y') : '-' }}
         </td>
     </tr>
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top;">Waktu</td>
-        <td style="padding: 4px 8px;">
+        <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px 8px; vertical-align: top;">
+            Waktu
+        </td>
+        <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px 8px;">
             @if($surat->jamundangan == 'lainnya')
                 : {{ $surat->catatan ?? '-' }}
             @else
@@ -494,15 +498,22 @@ th {
         </td>
     </tr>
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top;">Tempat</td>
-        <td style="padding: 4px 8px;">: {{ $surat->tempatkonsultasi->tempat ?? '-' }}</td>
+        <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px 8px; vertical-align: top;">
+            Tempat
+        </td>
+        <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px 8px;">
+            : {{ $surat->tempatkonsultasi->tempat ?? '-' }}
+        </td>
     </tr>
     <tr>
-        <td style="padding: 4px 8px; vertical-align: top;">Acara</td>
-        <td style="padding: 4px 8px;">: Konsultasi ke {{ $surat->konsultasike ?? '-' }}</td>
+        <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px 8px; vertical-align: top;">
+            Acara
+        </td>
+        <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px 8px;">
+            : Konsultasi ke {{ $surat->konsultasike ?? '-' }}
+        </td>
     </tr>
 </table>
-
 
 <p style="margin-top: 10px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
     Demikian undangan ini kami sampaikan dan kami ucapkan terima kasih.
