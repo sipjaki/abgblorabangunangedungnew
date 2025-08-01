@@ -315,7 +315,7 @@ th {
                                     <th>Catatan</th>
                                     <th>Surat Terbit</th>
                                     {{-- <th>Upload Surat</th> --}}
-                                    <th style="width: 100px;">Aksi</th>
+                                    {{-- <th style="width: 100px;">Aksi</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -346,7 +346,7 @@ th {
     </a>
 </td>
 
-                                        <td class="text-center">
+                                        {{-- <td class="text-center">
                                             <a href="javascript:void(0)" class="button-merah"
                                                data-bs-toggle="modal"
                                                data-bs-target="#deleteModal"
@@ -355,7 +355,7 @@ th {
                                                title="Hapus Data">
                                                 <i class="bi bi-trash"></i> Hapus
                                             </a>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>
