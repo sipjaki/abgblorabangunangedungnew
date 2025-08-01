@@ -2803,7 +2803,7 @@ public function bebanteklapcekdokcreate($id)
     }
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
-    return view('backend.04_bantuanteknis.02_createdata.createceklapangan', [
+return view('backend.04_bantuanteknis.02_createdata.createceklapangan', [
         'title' => 'Form Dokumentasi Cek Lapangan Bantuan Teknis Penyelenggaran Bangunan Gedung',
         'data' => $databantuanteknis,
         'user' => Auth::user()

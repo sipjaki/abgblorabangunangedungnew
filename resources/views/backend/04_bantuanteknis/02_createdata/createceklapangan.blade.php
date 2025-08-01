@@ -98,7 +98,7 @@ th {
 
      <div class="container-fluid">
          <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
                  {{-- <div class="card-header">
@@ -154,7 +154,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<a href="{{ url()->previous() }}" class="button-kembali" style="cursor: pointer; margin-left:10px; color:black; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url()->previous() }}" class="button-newvalidasi" style="cursor: pointer; margin-left:10px; color:black; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
 
@@ -351,9 +351,9 @@ th {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-create" type="button" onclick="openModal()">
+                               <button class="button-hijau" type="button" onclick="openModal()">
                                     <i class="bi bi-plus" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Create</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
 
                                 </div>
