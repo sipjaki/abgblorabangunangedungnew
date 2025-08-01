@@ -385,7 +385,7 @@ th {
     </tr>
   </table>
 
-<p style="text-align: right; margin-top: 20px; font-family: 'Times New Roman', serif !important;">
+<p style="text-align: right; margin-top: 20px; font-family: 'Times New Roman', serif !important; font-size:14px;">
   Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalpemberitahuan)->translatedFormat('d F Y') : '-' }}
 </p>
 
