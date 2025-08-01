@@ -905,7 +905,7 @@ User::create([
             'username' => 'Budi Ajar',
             'statusadmin_id' => '1',
             'avatar' => 'assets/abgblora/logo/iconabgblora.png',
-            'email' => 'budysheny4611@gmail.com',
+            'email' => 'budysheny@gmail.com',
             'password' => bcrypt('superadminmasbudiabg')
         ]);
 
