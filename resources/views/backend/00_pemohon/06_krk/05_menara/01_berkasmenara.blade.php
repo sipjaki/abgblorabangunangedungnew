@@ -179,7 +179,7 @@ th {
 
 
                      <a href="/pemohonkrk" style="text-decoration: none;">
-    <button class="button-kembali" style="color: black;">
+    <button class="button-newvalidasi" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
