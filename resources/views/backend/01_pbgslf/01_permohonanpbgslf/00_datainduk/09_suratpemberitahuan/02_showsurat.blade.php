@@ -425,8 +425,6 @@ th {
     </tr>
   </table>
 </div>
-
-<br>
 <!-- Paragraf Tujuan -->
 <p style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
   Kepada Yth:<br />
