@@ -62,7 +62,7 @@ th {
 
    <!--begin::App Main-->
    <main class="app-main"
-               style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0; margin-top: 0px; margin-bottom: 0px;">
+               style="background: linear-gradient(to bottom, #0b0d0e, #ffffff); margin: 0; padding: 0; position: relative; left: 0; margin-top: 0px; margin-bottom: 0px;">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
