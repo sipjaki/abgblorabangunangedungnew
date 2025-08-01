@@ -249,6 +249,7 @@ th {
             <option value="FUNGSI HUNIAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI HUNIAN' ? 'selected' : '' }}>FUNGSI HUNIAN</option>
             <option value="FUNGSI KEAGAMAAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI KEAGAMAAN' ? 'selected' : '' }}>FUNGSI KEAGAMAAN</option>
             <option value="FUNGSI SOSIAL BUDAYA" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI SOSIAL BUDAYA' ? 'selected' : '' }}>FUNGSI SOSIAL BUDAYA</option>
+            <option value="FUNGSI CAMPURAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI CAMPURAN' ? 'selected' : '' }}>FUNGSI CAMPURAN</option>
         </select>
         @error('fungsibangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
