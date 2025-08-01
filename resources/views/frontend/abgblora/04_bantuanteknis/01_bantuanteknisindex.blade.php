@@ -248,7 +248,7 @@
             <option value="">-- Pilih Konsultan Asistensi --</option>
             @foreach ($datakonsultanbantek as $admin)
                 <option value="{{ $admin->id }}" {{ old('bujkkonsultan_id') == $admin->id ? 'selected' : '' }}>
-                    {{ $admin->user->name }}
+                    {{ $admin->namalengkap }}
                 </option>
             @endforeach
         </select>
