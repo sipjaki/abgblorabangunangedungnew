@@ -406,7 +406,7 @@ th {
   <div class="col-md-6">
     <div class="mb-3">
       <label class="form-label" for="berkas4">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> NHPD (Naskah Perjanjian Hibah Daerah)
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> NPHD (Naskah Perjanjian Hibah Daerah)
       </label>
       <input type="file" id="berkas4" name="berkas4" accept="application/pdf"
         class="form-control @error('berkas4') is-invalid @enderror"
