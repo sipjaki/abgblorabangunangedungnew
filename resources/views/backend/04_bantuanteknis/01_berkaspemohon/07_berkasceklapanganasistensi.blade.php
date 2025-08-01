@@ -62,7 +62,7 @@ th {
 
    <!--begin::App Main-->
    <main class="app-main"
-               style="background: linear-gradient(to bottom, #0b0d0e, #ffffff); margin: 0; padding: 0; position: relative; left: 0; margin-top: 0px; margin-bottom: 0px;">
+               style="background: linear-gradient(to bottom, #7de3f1, #ffffff); margin: 0; padding: 0; position: relative; left: 0; margin-top: 0px; margin-bottom: 0px;">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -165,14 +165,14 @@ th {
                     @endcan
 
                         @canany(['konsultanbantek'])
-<button class="button-hijau" type="button"
+<button class="button-baru" type="button"
     onclick="location.href='/bebantuanteknislapangancreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
 </button>
 
    <a href="{{ url('/beakunkonsultanasistensi') }}"
-   class="button-newvalidasi"
+   class="button-validasinew"
    style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
