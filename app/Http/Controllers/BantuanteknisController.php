@@ -225,28 +225,28 @@ $validated = $request->validate([
 
     // Simpan data
     $bantek = new bantuanteknis();
-    $bantek->bujkkonsultan_id = $validated['bujkkonsultan_id'];
-    $bantek->dinas_id = $validated['dinas_id'] ?? null;
-    $bantek->jenispengajuanbantek_id = $validated['jenispengajuanbantek_id'];
+    $bantek->bujkkonsultan_id = $validated['bujkkonsultan_id'] ?? null ;
+    $bantek->dinas_id = $validated['dinas_id'] ?? null ;
+    $bantek->jenispengajuanbantek_id = $validated['jenispengajuanbantek_id'] ?? null ;
 
     $bantek->nosurat = $validated['nosuratdinas'] ?? null;
     $bantek->tanggalsurat = $validated['tanggalsurat'] ?? null;
-    $bantek->nama_pemohon = $validated['nama_pemohon'];
-    $bantek->no_telepon = $validated['no_telepon'];
+    $bantek->nama_pemohon = $validated['nama_pemohon'] ?? null ;
+    $bantek->no_telepon = $validated['no_telepon'] ?? null ;
 
-    $bantek->namapaket = $validated['namapaket'];
-    $bantek->kategoribangunan = $validated['kategoribangunan'];
+    $bantek->namapaket = $validated['namapaket'] ?? null ;
+    $bantek->kategoribangunan = $validated['kategoribangunan'] ?? null ;
     $bantek->luasbangunan = $validated['luasbangunan'] ?? null;
     $bantek->luastanahtotal = $validated['luastanahtotal'] ?? null;
     $bantek->jumlahlantai = $validated['jumlahlantai'] ?? null;
     $bantek->tinggibangunan = $validated['tinggibangunan'] ?? null;
-    $bantek->bassement = $validated['bassement'] ?? false;
-    $bantek->kepemilikan = $validated['kepemilikan'];
+    $bantek->bassement = $validated['bassement'] ?? null ;
+    $bantek->kepemilikan = $validated['kepemilikan'] ?? null ;
     $bantek->tahunpembangunan = $validated['tahunpembangunan'] ?? null;
     $bantek->tahunrenovasi = $validated['tahunrenovasi'] ?? null;
 
-    $bantek->pengelola = $validated['pengelola'];
-    $bantek->alamatlokasi = $validated['alamatlokasi'];
+    $bantek->pengelola = $validated['pengelola'] ?? null ;
+    $bantek->alamatlokasi = $validated['alamatlokasi'] ?? null ;
     $bantek->rt = $validated['rt'] ?? null;
     $bantek->rw = $validated['rw'] ?? null;
     $bantek->kabupaten = $validated['kabupaten'] ?? null;
