@@ -272,7 +272,7 @@ th {
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Pemohon</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Dinas</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat DPUPR</th>
+        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat DPUPR</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat Dinas</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-calendar"></i> Tanggal Surat</th>
         <th style="background-color: #ADD8E6;"><i class="fas fa-toolbox"></i> Nama Paket</th>
@@ -291,8 +291,8 @@ th {
             <th style="background-color: #ADD8E6;"><i class="bi bi-house"></i> RW</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt"></i> Kabupaten</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-geo"></i> Kecamatan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th>
+            <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th> --}}
+            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i>Permohonan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Lapangan</th>
             <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Lapangan</th>
@@ -314,7 +314,7 @@ th {
             <td>{{ $item->nama_pemohon ?? '-' }}</td>
             <td style="text-align: left;">{{ $item->dinas->name ?? '-' }}</td>
             <td>{{ $item->no_telepon ?? '-' }}</td>
-            <td>{{ $item->nosurat ?? '-' }}</td>
+            {{-- <td>{{ $item->nosurat ?? '-' }}</td>
             <td>{{ $item->nosuratdinas ?? '-' }}</td>
             <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
             <td>{{ $item->namapaket ?? '-' }}</td>
@@ -333,7 +333,7 @@ th {
             <td>{{ $item->rw ?? '-' }}</td>
             <td>{{ $item->kabupaten ?? '-' }}</td>
             <td>{{ optional($item->kecamatanblora)->kecamatanblora ?? '-' }}</td>
-            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td>
+            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td> --}}
 
 
             <td style="text-align: center;">
@@ -718,11 +718,11 @@ th {
                                         <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a> --}}
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
-                                           <i class="bi bi-trash"></i>
+                                           <i class="bi bi-trash"></i>Hapus
                                         </a>
                                     </td>
                                     @endcan
