@@ -363,29 +363,34 @@ th {
 
   <div style="font-size: 12px;">
 
-<table style="width: 100%; font-family: 'Times New Roman', serif !important; font-size: 14px; border-collapse: collapse; margin-bottom: 15px;">
-  <tbody>
+<div style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+  <table style="line-height: 1.3; width: 100%;">
     <tr>
-      <td style="width: 120px; vertical-align: top; padding: 0;">Nomor</td>
-      <td style="width: 10px; vertical-align: top; padding: 0;">:</td>
-      <td style="border-bottom: 1px dotted #000; padding-left: 5px;">
+      <td style="width: 120px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        <strong>Nomor</strong>
+      </td>
+      <td style="width: 10px; font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
         050 / UND-{{ $surat->pbgslfbangunan->noregissimbg ?? '-' }}/{{ $surat->konsultasike ?? '-' }}/2025
       </td>
     </tr>
     <tr>
-      <td style="padding: 0;">Lampiran</td>
-      <td style="padding: 0;">:</td>
-      <td style="border-bottom: 1px dotted #000; padding-left: 5px;">-</td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        <strong>Lampiran</strong>
+      </td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">-</td>
     </tr>
     <tr>
-      <td style="padding: 0;">Perihal</td>
-      <td style="padding: 0;">:</td>
-      <td style="padding-left: 5px;">
-        <u>Undangan Konsultasi</u>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
+        <strong>Perihal</strong>
       </td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
+      <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Undangan Konsultasi</td>
     </tr>
-  </tbody>
-</table>
+  </table>
+  <br>
+</div>
 
 <p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
   Kepada Yth:
