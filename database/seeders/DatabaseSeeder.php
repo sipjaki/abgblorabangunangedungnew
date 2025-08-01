@@ -1083,31 +1083,31 @@ mbrgambar::create([
 
 // =============================================
 
-for ($i = 1; $i <= 2; $i++) {
-    $randomDate = now()->subDays(rand(0, 365));
-    $userId = [46, 47][array_rand([46, 47])];
-    $jenisPengajuan = rand(1, 5); // Acak dari 1
+// for ($i = 1; $i <= 2; $i++) {
+//     $randomDate = now()->subDays(rand(0, 365));
+//     $userId = [46, 47][array_rand([46, 47])];
+//     $jenisPengajuan = rand(1, 5); // Acak dari 1
 
-    pbgslfbangunan::create([
-        'user_id' => $userId,
-        'jenispengajuanpbgslfper_id' => $jenisPengajuan,
-        'tanggalpermohonan' => $randomDate,
-        'noregissimbg' => 'PBG-321702-' . $randomDate->format('dmY') . '-' . str_pad($i, 3, '0', STR_PAD_LEFT),
+//     pbgslfbangunan::create([
+//         'user_id' => $userId,
+//         'jenispengajuanpbgslfper_id' => $jenisPengajuan,
+//         'tanggalpermohonan' => $randomDate,
+//         'noregissimbg' => 'PBG-321702-' . $randomDate->format('dmY') . '-' . str_pad($i, 3, '0', STR_PAD_LEFT),
 
-        'namapemohon' => 'Bapak Pemohon' . $i,
+//         'namapemohon' => 'Bapak Pemohon' . $i,
 
-        'datapemilik_id' => $i,
-        'databangunanpbg_id' => $i,
-        'datatanahpbg_id' => $i,
-        'dataumumpbg_id' => $i,
-        'dokumenteknisarsi_id' => $i,
-        'dokumenteknisstruk_id' => $i,
-        'dokumenteknismep_id' => $i,
-        'dokumenteknisslfpbg_id' => $i,
-        'surattugaspbg_id' => $i,
-        'suratudanganpbg_id' => $i,
-    ]);
-}
+//         'datapemilik_id' => $i,
+//         'databangunanpbg_id' => $i,
+//         'datatanahpbg_id' => $i,
+//         'dataumumpbg_id' => $i,
+//         'dokumenteknisarsi_id' => $i,
+//         'dokumenteknisstruk_id' => $i,
+//         'dokumenteknismep_id' => $i,
+//         'dokumenteknisslfpbg_id' => $i,
+//         'surattugaspbg_id' => $i,
+//         'suratudanganpbg_id' => $i,
+//     ]);
+// }
 
 // =============================================
 
@@ -12086,36 +12086,36 @@ kelurahandesa::create([
 
 
 // DATABASE BANTUAN TEKNIS
- for ($i = 1; $i <= 199; $i++) {
-            bantuanteknis::create([
-                'dinas_id' => rand(1, 15),
-                'jenispengajuanbantek_id' => rand(1, 8),
-                'bujkkonsultan_id' => rand(1, 17),
-                'nosurat' => '0' . rand(100, 999) . '/DPUPR/VI/2025',
-                'tanggalsurat' => now()->subDays(rand(0, 30)),
-                'nama_pemohon' => 'Pemohon ' . $i,
-                'no_telepon' => '08123' . rand(100000, 999999),
+//  for ($i = 1; $i <= 199; $i++) {
+//             bantuanteknis::create([
+//                 'dinas_id' => rand(1, 15),
+//                 'jenispengajuanbantek_id' => rand(1, 8),
+//                 'bujkkonsultan_id' => rand(1, 17),
+//                 'nosurat' => '0' . rand(100, 999) . '/DPUPR/VI/2025',
+//                 'tanggalsurat' => now()->subDays(rand(0, 30)),
+//                 'nama_pemohon' => 'Pemohon ' . $i,
+//                 'no_telepon' => '08123' . rand(100000, 999999),
 
-                'namapaket' => 'Paket Proyek ' . Str::random(5),
-                'kategoribangunan' => 'Bangunan Umum',
-                'luasbangunan' => rand(50, 300),
-                'luastanahtotal' => rand(100, 1000),
-                'jumlahlantai' => rand(1, 5),
-                'tinggibangunan' => rand(3, 15),
-                'bassement' => rand(0, 1),
-                'kepemilikan' => 'Pemerintah Daerah',
-                'tahunpembangunan' => rand(2000, 2022),
-                'tahunrenovasi' => rand(2010, 2025),
+//                 'namapaket' => 'Paket Proyek ' . Str::random(5),
+//                 'kategoribangunan' => 'Bangunan Umum',
+//                 'luasbangunan' => rand(50, 300),
+//                 'luastanahtotal' => rand(100, 1000),
+//                 'jumlahlantai' => rand(1, 5),
+//                 'tinggibangunan' => rand(3, 15),
+//                 'bassement' => rand(0, 1),
+//                 'kepemilikan' => 'Pemerintah Daerah',
+//                 'tahunpembangunan' => rand(2000, 2022),
+//                 'tahunrenovasi' => rand(2010, 2025),
 
-                'pengelola' => 'DPUPR Unit ' . rand(1, 5),
-                'alamatlokasi' => 'Jl. Proyek No. ' . rand(1, 100),
-                'rt' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
-                'rw' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
-                'kabupaten' => 'Blora',
-                'kecamatanblora_id' => rand(1, 10),
-                'kelurahandesa_id' => rand(1, 10),
-            ]);
-        }
+//                 'pengelola' => 'DPUPR Unit ' . rand(1, 5),
+//                 'alamatlokasi' => 'Jl. Proyek No. ' . rand(1, 100),
+//                 'rt' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
+//                 'rw' => str_pad(rand(1, 10), 2, '0', STR_PAD_LEFT),
+//                 'kabupaten' => 'Blora',
+//                 'kecamatanblora_id' => rand(1, 10),
+//                 'kelurahandesa_id' => rand(1, 10),
+//             ]);
+//         }
 
         for ($i = 1; $i <= 10; $i++) {
     krkusaha::create([
