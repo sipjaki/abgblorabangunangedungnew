@@ -561,7 +561,7 @@ th {
 @endphp
 
 <p >
-  <strong style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">CATATAN:</strong>
+  <strong style="margin-top: 5px; font-family: 'Times New Roman', serif !important; font-size: 14px;">Catatan:</strong>
 </p>
 <div style="border: 1px solid #000; min-height: {{ 140 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
 </div>
