@@ -502,7 +502,7 @@ th {
      <div style="display: flex; justify-content: center;">
        @if($item->validasiberkas3 == 'sudah')
     <button
-        class="button-create"
+        class="button-hijau"
         type="button"
         style="background-color: #10B981; color: black; cursor: not-allowed;"
         disabled
@@ -510,7 +510,7 @@ th {
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
     </button>
      @elseif($item->validasiberkas3 == 'belum')
-        <button class="button-dikembalikan" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #ff0000; color: black;">
+        <button class="button-merah" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #ff0000; color: black;">
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
         </button>
         @else
@@ -592,7 +592,7 @@ th {
 
     @if($item->validasiberkas4 == 'sudah')
         <button
-            class="button-create"
+            class="button-hijau"
             type="button"
             style="background-color: #10B981; color: black;"
             {{-- cursor: not-allowed; --}}
@@ -601,7 +601,7 @@ th {
             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbit
         </button>
     @elseif($item->validasiberkas4 == 'belum')
-        <button class="button-dikembalikan" type="button" onclick="openModal4({{ $item->id }})" style="background-color: #ff0000; color: black;">
+        <button class="button-merah" type="button" onclick="openModal4({{ $item->id }})" style="background-color: #ff0000; color: black;">
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
         </button>
     @else
@@ -692,11 +692,11 @@ th {
                                         <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a> --}}
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
-                                           <i class="bi bi-trash"></i>
+                                           <i class="bi bi-trash"></i>Hapus
                                         </a>
                                     </td>
                                     @endcan
