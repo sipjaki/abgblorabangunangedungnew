@@ -275,16 +275,16 @@ th {
                                  <td>{{ $loop->iteration }}</td>
 {{-- <td>{{ $item->bujkkonsultansub->namasub ?? '-' }}</td> --}}
 {{-- <td>{{ $item->asosiasimasjaki->namaasosiasi ?? '-' }}</td> --}}
-<td>{{ $item->namalengkap ?? '-' }}</td>
+<td style="text-align: left;">{{ $item->namalengkap ?? '-' }}</td>
 <td style="text-align: left;">{{ $item->alamat ?? '-' }}</td>
 <td>{{ $item->no_telepon ?? '-' }}</td>
-<td>{{ $item->email ?? '-' }}</td>
+<td style="text-align: left;">{{ $item->email ?? '-' }}</td>
 <td>{{ $item->nomorindukberusaha ?? '-' }}</td>
 <td>{{ $item->pju ?? '-' }}</td>
 <td>{{ $item->no_akte ?? '-' }}</td>
 <td>{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y') ?? '-' }}</td>
-<td>{{ $item->nama_notaris ?? '-' }}</td>
-<td>{{ $item->no_pengesahan ?? '-' }}</td>
+<td style="text-align: left;">{{ $item->nama_notaris ?? '-' }}</td>
+<td style="text-align: left;">{{ $item->no_pengesahan ?? '-' }}</td>
             @can('superadmin')
 
             <td style="text-align: center; vertical-align: middle;">
