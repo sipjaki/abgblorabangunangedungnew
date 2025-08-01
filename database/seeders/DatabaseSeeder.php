@@ -201,11 +201,11 @@ class DatabaseSeeder extends Seeder
         User::create([
             'id'  => 10,
             'name'  => 'SEKRETARIAT DAERAH',
-            'username' => 'sekdablora',
+            'username' => 'SETDAblora',
             'statusadmin_id' => '6',
             'avatar' => 'user/avatar/foto4.png',
-            'email' => 'sekdakabblora@gmail.com',
-            'password' => bcrypt('adminsekdakabblora')
+            'email' => 'SETDAkabblora@gmail.com',
+            'password' => bcrypt('adminSETDAkabblora')
         ]);
 
         User::create([
@@ -14710,7 +14710,7 @@ databgkepemilikan::create([
     'id' => 137,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14722,7 +14722,7 @@ databgkepemilikan::create([
     'id' => 138,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14734,7 +14734,7 @@ databgkepemilikan::create([
     'id' => 139,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14746,7 +14746,7 @@ databgkepemilikan::create([
     'id' => 140,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14758,7 +14758,7 @@ databgkepemilikan::create([
     'id' => 141,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14770,7 +14770,7 @@ databgkepemilikan::create([
     'id' => 142,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14782,7 +14782,7 @@ databgkepemilikan::create([
     'id' => 143,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14794,7 +14794,7 @@ databgkepemilikan::create([
     'id' => 144,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14806,7 +14806,7 @@ databgkepemilikan::create([
     'id' => 145,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14818,7 +14818,7 @@ databgkepemilikan::create([
     'id' => 146,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14830,7 +14830,7 @@ databgkepemilikan::create([
     'id' => 147,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14842,7 +14842,7 @@ databgkepemilikan::create([
     'id' => 148,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14854,7 +14854,7 @@ databgkepemilikan::create([
     'id' => 149,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14866,7 +14866,7 @@ databgkepemilikan::create([
     'id' => 150,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14878,7 +14878,7 @@ databgkepemilikan::create([
     'id' => 151,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14890,7 +14890,7 @@ databgkepemilikan::create([
     'id' => 152,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14902,7 +14902,7 @@ databgkepemilikan::create([
     'id' => 153,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14914,7 +14914,7 @@ databgkepemilikan::create([
     'id' => 154,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14926,7 +14926,7 @@ databgkepemilikan::create([
     'id' => 155,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14938,7 +14938,7 @@ databgkepemilikan::create([
     'id' => 156,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14950,7 +14950,7 @@ databgkepemilikan::create([
     'id' => 157,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -14962,7 +14962,7 @@ databgkepemilikan::create([
     'id' => 158,
     'user_id' => 46,
     'kecamatanblora_id' => 2,
-    'namainstitusi' => 'SEKDA BLORA',
+    'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
     'notelepon' => '(0296)531028',
     'email' => '(tidak ada)',
@@ -24501,19 +24501,19 @@ databgpeprofilbangunangedung::create(['id'=>133,'databgkepemilikan_id'=>133,'lua
 databgpeprofilbangunangedung::create(['id'=>134,'databgkepemilikan_id'=>134,'luastanah'=>'120','namabangunan'=>'Kantor DPU Kab. Blora','alamatbangunan'=>'Jl. Nusantara No. 62, Jetis, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'120','totalluaslantai'=>'240','tinggibangunan'=>'10','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>135,'databgkepemilikan_id'=>135,'luastanah'=>'186','namabangunan'=>'R. Jaga Pintu, Bd. Gabus','alamatbangunan'=>'Mlangsen, Kec. Blora, Kab. Blora, Jwa Tengah','fungsibangunan'=>'Hunian','jumlahlantai'=>'1','luaslantaildasar'=>'30','totalluaslantai'=>'30','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>136,'databgkepemilikan_id'=>136,'luastanah'=>'197','namabangunan'=>'R. Jaga Bd. Glagahan','alamatbangunan'=>'Ds. Jepangrejo, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Hunian','jumlahlantai'=>'1','luaslantaildasar'=>'21','totalluaslantai'=>'21','tinggibangunan'=>'3.5','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
-databgpeprofilbangunangedung::create(['id'=>137,'databgkepemilikan_id'=>137,'luastanah'=>'12408','namabangunan'=>'Gedung Utama Sekda','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'1324','totalluaslantai'=>'2648','tinggibangunan'=>'10','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
+databgpeprofilbangunangedung::create(['id'=>137,'databgkepemilikan_id'=>137,'luastanah'=>'12408','namabangunan'=>'Gedung Utama SETDA','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'1324','totalluaslantai'=>'2648','tinggibangunan'=>'10','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>138,'databgkepemilikan_id'=>138,'luastanah'=>'12408','namabangunan'=>'Gedung Samin Surosentiko','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'264','totalluaslantai'=>'528','tinggibangunan'=>'8','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
-databgpeprofilbangunangedung::create(['id'=>139,'databgkepemilikan_id'=>139,'luastanah'=>'12408','namabangunan'=>'Mushola Sekda','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'146.5','totalluaslantai'=>'146.5','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
-databgpeprofilbangunangedung::create(['id'=>140,'databgkepemilikan_id'=>140,'luastanah'=>'12408','namabangunan'=>'Gedung Perpustakaan Sekda','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Keagamaan','jumlahlantai'=>'1','luaslantaildasar'=>'67.5','totalluaslantai'=>'67.5','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
-databgpeprofilbangunangedung::create(['id'=>141,'databgkepemilikan_id'=>141,'luastanah'=>'12408','namabangunan'=>'Gedung Timur Sekda','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'2072','totalluaslantai'=>'4144','tinggibangunan'=>'10','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
-databgpeprofilbangunangedung::create(['id'=>142,'databgkepemilikan_id'=>142,'luastanah'=>'12408','namabangunan'=>'Gedung Induk Sekda','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'141.3','totalluaslantai'=>'141.3','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
+databgpeprofilbangunangedung::create(['id'=>139,'databgkepemilikan_id'=>139,'luastanah'=>'12408','namabangunan'=>'Mushola SETDA','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'146.5','totalluaslantai'=>'146.5','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
+databgpeprofilbangunangedung::create(['id'=>140,'databgkepemilikan_id'=>140,'luastanah'=>'12408','namabangunan'=>'Gedung Perpustakaan SETDA','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Keagamaan','jumlahlantai'=>'1','luaslantaildasar'=>'67.5','totalluaslantai'=>'67.5','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
+databgpeprofilbangunangedung::create(['id'=>141,'databgkepemilikan_id'=>141,'luastanah'=>'12408','namabangunan'=>'Gedung Timur SETDA','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'2072','totalluaslantai'=>'4144','tinggibangunan'=>'10','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
+databgpeprofilbangunangedung::create(['id'=>142,'databgkepemilikan_id'=>142,'luastanah'=>'12408','namabangunan'=>'Gedung Induk SETDA','alamatbangunan'=>'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jwa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'141.3','totalluaslantai'=>'141.3','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>'2006','tanggalselesaikonstruksi'=>'2006','tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>143,'databgkepemilikan_id'=>143,'luastanah'=>'18900','namabangunan'=>'Pendopo Bupati','alamatbangunan'=>'Jl. RA. Kartini No. 1A, Kunden, Kec. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'324','totalluaslantai'=>'324','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>144,'databgkepemilikan_id'=>144,'luastanah'=>'18900','namabangunan'=>'Rumah Dinas Bupati','alamatbangunan'=>'Jl. Alun-Alun Utara Blora, Kec. Blora, Kab. Blora','fungsibangunan'=>'Hunian','jumlahlantai'=>'1','luaslantaildasar'=>'1350','totalluaslantai'=>'1350','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>145,'databgkepemilikan_id'=>145,'luastanah'=>'18900','namabangunan'=>'Mushola','alamatbangunan'=>'Jl. RA. Kartini No. 1A, Kunden, Kec. Blora, Jawa Tengah','fungsibangunan'=>'Keagamaan','jumlahlantai'=>'1','luaslantaildasar'=>'210','totalluaslantai'=>'210','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>146,'databgkepemilikan_id'=>146,'luastanah'=>'18900','namabangunan'=>'Kantor PKK','alamatbangunan'=>'Jl. RA. Kartini No. 1A, Kunden, Kec. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'363','totalluaslantai'=>'363','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>147,'databgkepemilikan_id'=>147,'luastanah'=>'18900','namabangunan'=>'Kantor Staf RT dan Gudang','alamatbangunan'=>'Jl. RA. Kartini No. 1A, Kunden, Kec. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'368','totalluaslantai'=>'368','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>148,'databgkepemilikan_id'=>148,'luastanah'=>'1851','namabangunan'=>'Rumah Dinas Wakil Bupati','alamatbangunan'=>'Jl. Pemuda No. 15A, Tempelan, Kec. Blora, Jawa Tengah','fungsibangunan'=>'Hunian','jumlahlantai'=>'1','luaslantaildasar'=>'700','totalluaslantai'=>'700','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
-databgpeprofilbangunangedung::create(['id'=>149,'databgkepemilikan_id'=>149,'luastanah'=>'794','namabangunan'=>'Rumah Dinas Sekda','alamatbangunan'=>'Jl. Kolonel Sunandar No.63, Mlangsen, Kec. Blora, Jawa Tengah','fungsibangunan'=>'Hunian','jumlahlantai'=>'1','luaslantaildasar'=>'328','totalluaslantai'=>'328','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
+databgpeprofilbangunangedung::create(['id'=>149,'databgkepemilikan_id'=>149,'luastanah'=>'794','namabangunan'=>'Rumah Dinas SETDA','alamatbangunan'=>'Jl. Kolonel Sunandar No.63, Mlangsen, Kec. Blora, Jawa Tengah','fungsibangunan'=>'Hunian','jumlahlantai'=>'1','luaslantaildasar'=>'328','totalluaslantai'=>'328','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>150,'databgkepemilikan_id'=>150,'luastanah'=>'667','namabangunan'=>'Rumah Dinas Asisten','alamatbangunan'=>'Jl. Kolonel Sunandar No.63B, Mlangsen, Kec. Blora, Jawa Tengah','fungsibangunan'=>'Hunian','jumlahlantai'=>'1','luaslantaildasar'=>'72','totalluaslantai'=>'72','tinggibangunan'=>'6','luasbasement'=>'','koordinatbangunan'=>null,'tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 
 // Entry 151
