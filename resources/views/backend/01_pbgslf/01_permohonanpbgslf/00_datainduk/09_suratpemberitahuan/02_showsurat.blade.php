@@ -420,7 +420,7 @@ th {
       </td>
       <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">:</td>
       <td style="font-size: 14px; font-family: 'Times New Roman', serif !important;">
-        <u style="text-decoration: none;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</u>
+        <u style="text-decoration: none;"><span style="font-size: 14px; font-family: 'Times New Roman', serif !important;">Pemberitahuan Verifikasi {{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</span></u>
       </td>
     </tr>
   </table>
