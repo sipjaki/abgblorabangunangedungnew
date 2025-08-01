@@ -353,17 +353,20 @@ th {
 <div style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.5;">
 
     {{-- 1. Judul --}}
-    <div style="text-align: center; font-weight: bold; font-size: 12px; margin-top:-15px;">
-        BERITA ACARA HASIL KONSULTASI ke-{{ $surat->konsultasike ?? '-' }}<br>
-        Nomor: 050/TPA-{{ $surat->pbgslfbangunan->noregissimbg ?? 'Data Kosong' }}/{{ $surat->konsultasike ?? '1' }}/2025
-    </div>
+    <div style="text-align: center; font-weight: bold; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -15px;">
+  BERITA ACARA HASIL KONSULTASI ke-{{ $surat->konsultasike ?? '-' }}<br>
+  Nomor: 050/TPA-{{ $surat->pbgslfbangunan->noregissimbg ?? 'Data Kosong' }}/{{ $surat->konsultasike ?? '1' }}/2025
+</div>
 
     {{-- 2. Paragraf Pembuka --}}
     <br>
-    <p style="margin-top:-15px;">
-        Konsultasi {{$surat->tpatpt->timpenilai ?? '-'}} Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
-        {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }}
-<span id="tanggal-terbilang"></span>
+<p style="margin-top: -15px; font-size: 14px; font-family: 'Times New Roman', serif !important; line-height: 1.5;">
+  Konsultasi {{ $surat->tpatpt->timpenilai ?? '-' }} Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
+  {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }}
+  <span id="tanggal-terbilang" style="font-size: 14px; font-family: 'Times New Roman', serif !important;"></span>
+  bulan {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('F') }}
+  tahun Dua Ribu Dua Puluh Lima untuk :
+</p>
 
 <script>
   function terbilang(angka) {
@@ -385,10 +388,7 @@ th {
   document.getElementById('tanggal-terbilang').textContent = "tanggal " + terbilang(tanggalAngka);
 </script>
 
-        bulan {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('F') }}
-        tahun Dua Ribu Dua Puluh Lima untuk :
-    </p>
-{{-- 3. Tabel Data Informasi Umum --}}
+    {{-- 3. Tabel Data Informasi Umum --}}
 <table style="width: 100%; border-collapse: collapse; font-size: 12px;" style="margin-top:-40px;">
     <tr>
         <td style="width: 35%; border: 1px solid #000; padding: 2px;">No. Registrasi</td>
