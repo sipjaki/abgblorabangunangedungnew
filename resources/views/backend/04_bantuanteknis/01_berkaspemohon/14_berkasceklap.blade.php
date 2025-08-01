@@ -242,7 +242,7 @@ th {
                               <tbody id="tableBody">
 
 
-      @foreach($subdata as $item)
+                                @forelse($subdata as $item)
     <tr>
         <td>{{ $loop->iteration }}</td>
         <td>{{ $item->kegiatan }}</td>
