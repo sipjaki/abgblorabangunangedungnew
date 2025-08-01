@@ -340,16 +340,26 @@ th {
     <div class="kop" style="margin-top:-35px;">
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
       {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
-      <div style="display: inline-block;">
-        <h3>PEMERINTAH KABUPATEN BLORA</h3>
-        <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-        <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-        <h3>BLORA 58214</h3>
-      </div>
+    <div style="display: inline-block;">
+  <h3 style="font-family: 'Times New Roman', serif !important; font-size: 18px; margin: 0;">
+    PEMERINTAH KABUPATEN BLORA
+  </h3>
+  <h3 style="font-family: 'Times New Roman', serif !important; font-size: 18px; margin: 0;">
+    DINAS PEKERJAAN UMUM DAN PENATAAN RUANG
+  </h3>
+  <p style="font-family: 'Times New Roman', serif !important; font-size: 18px; margin: 0;">
+    Jl. Nusantara No. 62 Telp. (0296) 531004
+  </p>
+  <h3 style="font-family: 'Times New Roman', serif !important; font-size: 18px; margin: 0;">
+    BLORA 58214
+  </h3>
+</div>
+
       <div style="clear: both;"></div>
     </div>
-
-  <p style="text-align: right; margin-top: 20px; font-size:12px;">Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}</p>
+<p style="text-align: right; margin-top: 20px; font-size: 14px; font-family: 'Times New Roman', serif !important;">
+  Blora, {{ $surat ? \Carbon\Carbon::parse($surat->tanggalundangan)->translatedFormat('d F Y') : '-' }}
+</p>
 
   <div style="font-size: 12px;">
     {{-- <p style="text-align: right; font-size: 12px;">
