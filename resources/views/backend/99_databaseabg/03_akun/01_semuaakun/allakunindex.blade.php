@@ -211,10 +211,10 @@ th {
 
     <a href="/allakuncreate" style="text-decoration: none;">
       <button
-        class="button-baru"
+        class="button-hijau"
         style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;"
       >
-        <i class="bi bi-plus-circle"></i> Create
+        <i class="bi bi-plus-circle"></i> Buat Baru
       </button>
     </a>
   </div>
