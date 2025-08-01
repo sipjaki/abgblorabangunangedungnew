@@ -17,7 +17,8 @@
                 ['label' => 'Surat Undangan', 'url' => '/bepbgsuratundangan/' . $id],
                 ['label' => 'Surat Undangan TPA/TPT', 'url' => '/bepbgsuratundangantpatpt/' . $id],
                 // ['label' => 'Surat Undangan TPA/TPT (Online)', 'url' => '/bepbgsuratundtpatptonline/' . $id],
-                ['label' => 'Berita Acara', 'url' => '/bepbgberitaacaraslf/' . $id],
+                ['label' => 'Berita Acara (Offline)', 'url' => '/bepbgberitaacaraslf/' . $id],
+                ['label' => 'Berita Acara (Online)', 'url' => '/bepbgberitaacaraonline/' . $id],
                 ['label' => 'Upload Berkas', 'url' => '/bepbgbeuploadberkas/' . $id],
                 // ['label' => 'Jenis Pengajuan PBG/SLF', 'url' => '/bepbgjenispengajuan/' . $id],
             ];
