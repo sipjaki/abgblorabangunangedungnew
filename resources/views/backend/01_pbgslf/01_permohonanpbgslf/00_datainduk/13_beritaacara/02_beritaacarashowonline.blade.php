@@ -592,7 +592,7 @@ th {
         @foreach ($listPengawas as $index => $row)
             <tr>
 
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px; width:120px;">
+                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px; width:150px;">
                   {{ $row['no'] }}. {{ $row['pengawas'] }}
                 </td>
                 <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px;"></td>
