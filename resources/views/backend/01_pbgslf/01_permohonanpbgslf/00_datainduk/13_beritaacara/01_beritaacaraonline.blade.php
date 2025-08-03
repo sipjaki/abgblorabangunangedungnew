@@ -333,7 +333,7 @@ th {
                                         <td style="white-space: pre-wrap; text-align: justify;">{{ $item->catatan ?? '-' }}</td>
 
                                                                            <td style="white-space: nowrap; text-align: center;">
-    <a href="{{ route('bepbgberitaacaraslf.detail', ['id' => $item->id]) }}"
+    <a href="{{ route('bepbgberitaacaraonlineshow.detials', ['id' => $item->id]) }}"
        class="text-decoration-none"
        onclick="saveScrollPosition()">
         <div class="button-berkas" >

@@ -4717,4 +4717,47 @@ public function bepbgberitaacaraonline($id)
     ]);
 }
 
+
+
+public function bepbgberitaacaraonlineshow(Request $request, $id)
+{
+    // Ambil user login
+    $user = Auth::user();
+    // Cari data pbg berdasarkan ID
+    // $data = pbgslfbangunan::findOrFail($id);
+    $surat = suratudanganpbg::findOrFail($id);
+    // $surat = suratpemberitahuanpbg::findOrFail($id);
+    // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->first();
+
+    // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->get();
+
+    // Ambil data relasi lain (sama seperti sebelumnya)
+    // $subdatapemilik = datapemilik::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatabangunan = databangunanpbg::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatatanah = datatanahpbg::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdataumum = dataumumpbg::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknisars = dokumenteknisarsi::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknisstruk = dokumenteknisstruk::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknismep = dokumenteknismep::where('pbgslfbangunan_id', $data->id)->get();
+    // $subdatadokumenteknisslfpbg = dokumenteknisslfpbg::where('pbgslfbangunan_id', $data->id)->get();
+
+    // Kirim data ke view
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.13_beritaacara.02_beritaacarashow', [
+        'title' => 'Berita Acara',
+        'title_halaman' => 'Berita Acara',
+        'user' => $user,
+        // 'data' => $data,
+        'subdatasuratpemberitahuan' => $surat,
+        'surat' => $surat, // Kirim surat yang dipilih
+        // 'subdatapemilik' => $subdatapemilik,
+        // 'subdatabangunan' => $subdatabangunan,
+        // 'subdatatanah' => $subdatatanah,
+        // 'subdataumum' => $subdataumum,
+        // 'subdatadokumenteknisars' => $subdatadokumenteknisars,
+        // 'subdatadokumenteknisstruk' => $subdatadokumenteknisstruk,
+        // 'subdatadokumenteknismep' => $subdatadokumenteknismep,
+        // 'subdatadokumenteknisslfpbg' => $subdatadokumenteknisslfpbg,
+    ]);
+}
+
 }
