@@ -596,7 +596,7 @@ th {
                   {{ $row['no'] }}. {{ $row['pengawas'] }}
                 </td>
                 <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px;"></td>
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px; width:180px;">
+                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px; width:240px;">
                   {{ $row['no'] }}. {{ $row['tpa'] }}
                 </td>
                 {{-- <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td> --}}
