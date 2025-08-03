@@ -659,6 +659,7 @@ button-delete {
     background: white;
     color: black;
 }
+
 .putih {
     border: none;
     padding: 10px 20px;
@@ -688,8 +689,6 @@ button-delete {
         background-position: 200% 50%;
     }
 }
-
-
 
 
 </style>

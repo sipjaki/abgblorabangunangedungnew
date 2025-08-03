@@ -570,7 +570,7 @@ th {
 <table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -15px;">
     <thead>
         <tr>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 175px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+            <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
               Pemohon
             </th>
             <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
