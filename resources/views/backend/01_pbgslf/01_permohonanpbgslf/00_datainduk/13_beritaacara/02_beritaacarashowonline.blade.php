@@ -606,8 +606,8 @@ th {
             <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Koordinator TPA</div>
             <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Kabupaten Blora</div>
             <br>
-            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;"><strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">HARTONO GUNTUR R, ST, MT</strong></div>
-            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;"><strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">Ketua</strong></div>
+            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;"><strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">HARTONO GUNTUR R, ST, MT</strong></div>
+            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;"><strong style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Ketua</strong></div>
         </div>
     </td>
 @endif
