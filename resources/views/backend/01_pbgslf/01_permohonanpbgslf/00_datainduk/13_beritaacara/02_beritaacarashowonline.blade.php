@@ -592,22 +592,22 @@ th {
         @foreach ($listPengawas as $index => $row)
             <tr>
 
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px;">
                   {{ $row['no'] }}. {{ $row['pengawas'] }}
                 </td>
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td>
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px;"></td>
+                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 12px;">
                   {{ $row['no'] }}. {{ $row['tpa'] }}
                 </td>
                 {{-- <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td> --}}
             @if ($index === 0)
     <td rowspan="{{ $jumlahBaris }}" style="border: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">
-        <div style="font-family: 'Times New Roman', serif !important; font-size: 14px; line-height: 1.5;">
-            <div>Koordinator TPA</div>
-            <div>Kabupaten Blora</div>
+        <div style="font-family: 'Times New Roman', serif !important; font-size: 12px; line-height: 1.5;">
+            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Koordinator TPA</div>
+            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Kabupaten Blora</div>
             <br>
-            <div style="font-family: 'Times New Roman', serif !important; font-size: 14px;"><strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">HARTONO GUNTUR R, ST, MT</strong></div>
-            <div style="font-family: 'Times New Roman', serif !important; font-size: 14px;"><strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">Ketua</strong></div>
+            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;"><strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">HARTONO GUNTUR R, ST, MT</strong></div>
+            <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;"><strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">Ketua</strong></div>
         </div>
     </td>
 @endif
