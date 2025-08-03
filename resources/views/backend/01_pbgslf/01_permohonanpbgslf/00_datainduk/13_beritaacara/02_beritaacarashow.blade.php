@@ -552,7 +552,9 @@ th {
                 'pengawas' => [
                     1 => 'M. ARIF HIDAYAT, ST',
                     2 => 'ANEX FACHRIAN ST. MT.'
-                ][$i] ?? '',
+                ]
+                // [$i]
+                 ?? '',
                 'tpa' => $nama
             ];
         }
