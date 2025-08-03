@@ -580,11 +580,11 @@ th {
             <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
               Nama TPA/TPT
             </th>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+            {{-- <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
               TTD
-            </th>
+            </th> --}}
             <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-              Pemohon
+              TTD
             </th>
         </tr>
     </thead>
@@ -599,10 +599,17 @@ th {
                 <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
                   {{ $row['no'] }}. {{ $row['tpa'] }}
                 </td>
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td>
+                {{-- <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td> --}}
             @if ($index === 0)
-                    <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;" rowspan="{{ $jumlahBaris }}"></td>
-                @endif
+    <td style="border: 1px solid #000; padding: 3px; text-align: center; vertical-align: middle; font-family: 'Times New Roman', serif !important; font-size: 14px;" rowspan="{{ $jumlahBaris }}">
+        Koordinator TPA<br>
+        Kabupaten Blora
+        <br><br>
+        <strong><u>HARTONO GUNTUR R, ST, MT</u></strong><br>
+        <strong>Ketua</strong>
+    </td>
+@endif
+
             </tr>
         @endforeach
     </tbody>
