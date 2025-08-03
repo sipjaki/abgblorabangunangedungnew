@@ -4742,8 +4742,8 @@ public function bepbgberitaacaraonlineshow(Request $request, $id)
     // $subdatadokumenteknisslfpbg = dokumenteknisslfpbg::where('pbgslfbangunan_id', $data->id)->get();
 
     // Kirim data ke view
-    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.13_beritaacara.02_beritaacarashow', [
-        'title' => 'Berita Acara',
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.13_beritaacara.02_beritaacarashowonline', [
+        'title' => 'Berita Acara Online',
         'title_halaman' => 'Berita Acara',
         'user' => $user,
         // 'data' => $data,
