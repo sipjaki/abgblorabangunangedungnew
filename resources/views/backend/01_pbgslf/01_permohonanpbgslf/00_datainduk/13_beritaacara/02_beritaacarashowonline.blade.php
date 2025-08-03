@@ -606,8 +606,8 @@ th {
             <div>Koordinator TPA</div>
             <div>Kabupaten Blora</div>
             <br>
-            <div><strong><u>HARTONO GUNTUR R, ST, MT</u></strong></div>
-            <div><strong>Ketua</strong></div>
+            <div style="font-family: 'Times New Roman', serif !important; font-size: 14px;"><strong><u>HARTONO GUNTUR R, ST, MT</u></strong></div>
+            <div style="font-family: 'Times New Roman', serif !important; font-size: 14px;"><strong>Ketua</strong></div>
         </div>
     </td>
 @endif
