@@ -587,9 +587,9 @@ th {
     <tbody>
         @foreach ($listPengawas as $index => $row)
             <tr>
-                @if ($index === 0)
+                {{-- @if ($index === 0)
                     <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;" rowspan="{{ $jumlahBaris }}"></td>
-                @endif
+                @endif --}}
                 <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
                   {{ $row['no'] }}. {{ $row['pengawas'] }}
                 </td>
@@ -597,6 +597,7 @@ th {
                 <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
                   {{ $row['no'] }}. {{ $row['tpa'] }}
                 </td>
+                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td>
                 <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td>
             </tr>
         @endforeach
