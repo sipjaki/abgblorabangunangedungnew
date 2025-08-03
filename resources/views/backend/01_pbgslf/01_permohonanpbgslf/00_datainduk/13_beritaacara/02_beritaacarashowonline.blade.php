@@ -601,7 +601,7 @@ th {
                 </td>
                 {{-- <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td> --}}
             @if ($index === 0)
-    <td rowspan="{{ $jumlahBaris }}" style="border: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">
+    <td rowspan="{{ $jumlahBaris }}" style="border: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle; width:200px;">
         <div style="font-family: 'Times New Roman', serif !important; font-size: 12px; line-height: 1.5;">
             <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Koordinator TPA</div>
             <div style="font-family: 'Times New Roman', serif !important; font-size: 12px;">Kabupaten Blora</div>
