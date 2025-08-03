@@ -1313,6 +1313,8 @@ Route::delete('/bepbgsuratundangandelete/{id}', [PbgslfController::class, 'bepbg
 Route::get('/bepbgberitaacaraslf/{id}', [PbgslfController::class, 'bepbgberitaacaraslf'])->middleware('auth')->name('bepbgberitaacaraslf');
 Route::get('/bepbgberitaacaraslfshow/{id}', [PbgslfController::class, 'bepbgberitaacaraslfshow'])->middleware('auth')->name('bepbgberitaacaraslf.detail');
 
+Route::get('/bepbgberitaacaraonline/{id}', [PbgslfController::class, 'bepbgberitaacaraonline'])->middleware('auth')->name('bepbgberitaacaraonline');
+
 Route::get('/bepbgbeuploadberkas/{id}', [PbgslfController::class, 'bepbgbeuploadberkas'])->middleware('auth')->name('bepbgbeuploadberkas');
 Route::get('/bepbgbeuploadberkasnew/{id}', [PbgslfController::class, 'bepbgbeuploadberkasnew'])->middleware('auth')->name('bepbgbeuploadberkasnew');
 Route::put('/bepbgbeuploadberkasnewberkas/{id}', [PbgslfController::class, 'bepbgbeuploadberkasnewberkas'])->middleware('auth')->name('bepbgbeuploadberkasnewberkas');
