@@ -567,40 +567,62 @@ th {
 </div>
 <br>
 
-<table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -15px;">
+<table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif;">
     <thead>
         <tr>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-              Pengawas
-            </th>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-              TTD
-            </th>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-              Nama TPA/TPT
-            </th>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-              TTD
-            </th>
+            <th style="border: 1px solid #000; text-align: center;">PENGAWAS SIMBG</th>
+            <th style="border: 1px solid #000; text-align: center;">TTD</th>
+            <th style="border: 1px solid #000; text-align: center;">Tim TPA</th>
+            <th style="border: 1px solid #000; text-align: center;">TTD</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($listPengawas as $index => $row)
             <tr>
-                {{-- @if ($index === 0)
-                    <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;" rowspan="{{ $jumlahBaris }}"></td>
-                @endif --}}
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-                  {{ $row['no'] }}. {{ $row['pengawas'] }}
+                {{-- Kolom PENGAWAS SIMBG dan TTD hanya muncul di 2 baris pertama --}}
+                <td style="border: 1px solid #000; padding: 5px;">
+                    {{ $row['no'] }}. {{ $row['pengawas'] }}
                 </td>
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td>
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-                  {{ $row['no'] }}. {{ $row['tpa'] }}
+                <td style="border: 1px solid #000; padding: 5px;">................</td>
+
+                {{-- Kolom TPA --}}
+                <td style="border: 1px solid #000; padding: 5px;">
+                    {{ $row['no'] }}. {{ $row['tpa'] }}
+                    @if ($row['no'] == 1)
+                        (Koordinator)
+                    @else
+                        (Anggota)
+                    @endif
                 </td>
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td>
-                <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td>
+
+                {{-- Kolom TTD TPA --}}
+                <td style="border: 1px solid #000; padding: 5px;">
+                    @if ($row['no'] == 1)
+                        Koordinator TPA <br>Kabupaten Blora
+                    @elseif ($row['no'] == 4)
+                        <strong><u>{{ $row['tpa'] }}</u></strong><br>
+                        <strong>Ketua</strong>
+                    @endif
+                </td>
             </tr>
         @endforeach
+
+        {{-- Jika jumlah pengawas kurang dari 4, tambahkan baris kosong untuk TPA --}}
+        @for ($i = count($listPengawas) + 1; $i <= 4; $i++)
+            <tr>
+                <td style="border: 1px solid #000;"></td>
+                <td style="border: 1px solid #000;"></td>
+                <td style="border: 1px solid #000; padding: 5px;">
+                    {{ $i }}. {{-- Kosong, bisa diisi jika mau --}}
+                </td>
+                <td style="border: 1px solid #000; padding: 5px;">
+                    @if ($i == 4)
+                        <strong><u>HARTONO GUNTUR R, ST, MT</u></strong><br>
+                        <strong>Ketua</strong>
+                    @endif
+                </td>
+            </tr>
+        @endfor
     </tbody>
 </table>
 
