@@ -332,7 +332,7 @@ th {
 
 <div style="text-align: center; margin: 20px;">
   <button class="button-baru" onclick="downloadPDF()" style="background-color: #e3342f; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
-    📄 Download Berita Acara (PDF)
+    📄 Download Berita Acara Online (PDF)
   </button>
 </div>
 
@@ -570,9 +570,6 @@ th {
 <table style="width: 100%; border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -15px;">
     <thead>
         <tr>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-              Pemohon
-            </th>
             <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
               Pengawas
             </th>
@@ -582,7 +579,7 @@ th {
             <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
               Nama TPA/TPT
             </th>
-            <th style="border: 1px solid #000; text-align: center; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
+            <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-family: 'Times New Roman', serif !important; font-size: 14px;">
               TTD
             </th>
         </tr>
