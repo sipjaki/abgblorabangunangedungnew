@@ -601,12 +601,14 @@ th {
                 </td>
                 {{-- <td style="border: 1px solid #000; padding: 3px; font-family: 'Times New Roman', serif !important; font-size: 14px;"></td> --}}
             @if ($index === 0)
-    <td style="border: 1px solid #000; padding: 3px; text-align: center; vertical-align: middle; font-family: 'Times New Roman', serif !important; font-size: 14px;" rowspan="{{ $jumlahBaris }}">
-        Koordinator TPA<br>
-        Kabupaten Blora
-        <br><br>
-        <strong style="border: 1px solid #000; padding: 3px; text-align: center; vertical-align: middle; font-family: 'Times New Roman', serif !important; font-size: 14px;" ><u>HARTONO GUNTUR R, ST, MT</u></strong><br>
-        <strong style="border: 1px solid #000; padding: 3px; text-align: center; vertical-align: middle; font-family: 'Times New Roman', serif !important; font-size: 14px;" >Ketua</strong>
+    <td rowspan="{{ $jumlahBaris }}" style="border: 1px solid #000; padding: 5px; text-align: center; vertical-align: middle;">
+        <div style="font-family: 'Times New Roman', serif !important; font-size: 14px; line-height: 1.5;">
+            <div>Koordinator TPA</div>
+            <div>Kabupaten Blora</div>
+            <br>
+            <div><strong><u>HARTONO GUNTUR R, ST, MT</u></strong></div>
+            <div><strong>Ketua</strong></div>
+        </div>
     </td>
 @endif
 
