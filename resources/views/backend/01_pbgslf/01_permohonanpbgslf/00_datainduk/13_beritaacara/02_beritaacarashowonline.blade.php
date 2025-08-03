@@ -605,8 +605,8 @@ th {
         Koordinator TPA<br>
         Kabupaten Blora
         <br><br>
-        <strong><u>HARTONO GUNTUR R, ST, MT</u></strong><br>
-        <strong>Ketua</strong>
+        <strong style="border: 1px solid #000; padding: 3px; text-align: center; vertical-align: middle; font-family: 'Times New Roman', serif !important; font-size: 14px;" ><u>HARTONO GUNTUR R, ST, MT</u></strong><br>
+        <strong style="border: 1px solid #000; padding: 3px; text-align: center; vertical-align: middle; font-family: 'Times New Roman', serif !important; font-size: 14px;" >Ketua</strong>
     </td>
 @endif
 
