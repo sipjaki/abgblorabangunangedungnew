@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('kicinduk_id')->nullable()->index();
+            $table->string('kepemilikanbangunan')->nullable(); // SATUAN PEMILIK baru
             $table->string('jenisbarang')->nullable();
             $table->string('kodebarang')->nullable();
             $table->string('register')->nullable();
