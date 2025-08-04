@@ -6,6 +6,7 @@ use App\Models\banhibahberkas;
 use App\Models\banhibahlapangan;
 use App\Models\banhibahskbupati;
 use App\Models\bantuanhibahbg;
+use App\Models\penilikbangunan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -618,6 +619,28 @@ public function dokbebanhibahdelete($id)
 
         // Redirect ke halaman index krkusaha
         return redirect()->route('dataallhibahbangunan.index')->with('delete', 'Data berhasil dihapus!');
+    }
+
+    // Jika tidak ditemukan
+    return redirect()->back()->with('error', 'Data tidak ditemukan.');
+}
+
+public function dokinspeksibangunandelete($id)
+{
+    // Cari entri berdasarkan ID
+    $entry = penilikbangunan::find($id);
+
+    if ($entry) {
+        // Hapus file jika ada (jika menyimpan file)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus data dari database
+        $entry->delete();
+
+        // Redirect ke halaman index krkusaha
+        return redirect()->route('dataallpenilikbg.index')->with('delete', 'Data berhasil dihapus!');
     }
 
     // Jika tidak ditemukan

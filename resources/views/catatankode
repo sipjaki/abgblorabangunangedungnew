@@ -495,7 +495,7 @@ div
 
         @empty
     <tr>
-        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+    <td colspan="100%"> {{-- Memenuhi semua kolom --}}
             <div style="
                 width: 100%;
                 display: flex;

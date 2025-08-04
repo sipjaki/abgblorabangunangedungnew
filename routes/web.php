@@ -1011,6 +1011,7 @@ Route::put('/valberkashibah4/{id}', [BantuanhibahbgController::class, 'valberkas
 Route::get('/bestatistikhibah', [BantuanhibahbgController::class, 'bestatistikhibah']);
 
 Route::delete('/dokbebanhibahdelete/{id}', [BantuanhibahbgController::class, 'dokbebanhibahdelete'])->middleware('auth')->name('delete.dokbebanhibahdelete');
+Route::delete('/dokinspeksibangunandelete/{id}', [BantuanhibahbgController::class, 'dokinspeksibangunandelete'])->middleware('auth')->name('dokinspeksibangunandelete');
 
 // -----------------------------------------------------------------
 // MENU 01 PBG SLF
