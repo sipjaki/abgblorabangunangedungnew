@@ -1,6 +1,8 @@
 ssh -p 65002 u744637779@46.202.138.120
+ssh abg blora bangunan gedung 
 
-password : SipjakiBlora$$123
+
+<!-- password : SipjakiBlora$$123 -->
 
 
 {{-- <div class="col-lg-4 col-md-4">
