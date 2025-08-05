@@ -12,13 +12,15 @@
           <div class="w-[42px] h-[42px] flex shrink-0">
             <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon">
           </div>
-<div class="w-full px-4">
-  <div class="bg-white/60 backdrop-blur-sm rounded-lg p-4">
-    <p class="font-semibold leading-[28px] text-black text-center text-[17px]">
-      Dinas Pekerjaan Umum <br>
-      Dan Penataan Ruang <br>
-      Kabupaten Blora
-    </p>
+<div style="background-image: url('/assets/android/iconmenu/bangunanblora.jpg'); background-size: cover; background-position: center; height: 300px; position: relative;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div class="card-transparan">
+      <p>
+        Dinas Pekerjaan Umum <br>
+        Dan Penataan Ruang <br>
+        Kabupaten Blora
+      </p>
+    </div>
   </div>
 </div>
 
