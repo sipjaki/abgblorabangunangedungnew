@@ -70,13 +70,13 @@
         <div class="bg-white rounded-xl p-[8px] shadow-sm">
             @if ($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
                 <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain; border-radius: 8px;" />
-                <div style="text-align: center; margin-top: 2px;">
-                    <a href="{{ asset('storage/' . $item->berkas) }}" download class="button-baru">Download Berkas</a>
+                <div style="text-align: center; margin-top: 2px; margin-bottom: 3px;">
+                    <a href="{{ asset('storage/' . $item->berkas) }}" download class="button-baru">Download Informasi</a>
                 </div>
             @elseif ($item->berkas)
                 <img src="{{ asset($item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain; border-radius: 8px;" />
-                <div style="text-align: center; margin-top: 2px;">
-                    <a href="{{ asset($item->berkas) }}" download class="button-baru">Download Berkas</a>
+                <div style="text-align: center; margin-top: 2px; margin-bottom: 3px;">
+                    <a href="{{ asset($item->berkas) }}" download class="button-baru">Download Informasi</a>
                 </div>
             @else
                 <p style="font-family: 'Poppins', sans-serif; font-weight: 600; margin: 0;">Data belum diupdate</p>
