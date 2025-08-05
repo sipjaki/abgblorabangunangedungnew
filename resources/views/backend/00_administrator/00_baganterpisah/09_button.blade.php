@@ -748,3 +748,72 @@ document.querySelectorAll('input, textarea').forEach(input => {
   });
 });
 </script>
+
+
+<style>
+  .card-pbg {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .card-pbg h2 {
+    font-size: 18px;
+    color: #4041DA;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .card-pbg p {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 12px;
+  }
+
+  .card-pbg ul {
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+
+  .card-pbg li {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  .card-pbg li span {
+    font-weight: 600;
+  }
+
+  .card-pbg .sub-list {
+    padding-left: 20px;
+    list-style-type: disc;
+  }
+
+  .card-pbg .section-title {
+    font-size: 15px;
+    color: #4041DA;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+
+  .card-pbg .manual-number {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 8px;
+    text-align: justify;
+  }
+
+  .card-pbg .manual-number span {
+    font-weight: 600;
+  }
+</style>
+
