@@ -65,10 +65,10 @@
 
         <div class="flex flex-col space-y-3 px-[18px]">
             <!-- Card 1 -->
-<div class="flex flex-col space-y-3 px-[10px] py-[10px]">
+<div class="flex flex-col space-y-3 px-[2px] py-[2px]">
     <!-- Loop item -->
     @foreach ($data as $item)
-        <div class="bg-white rounded-xl p-[10px] shadow-sm" style="margin-top: -20px; margin-bottom:-20px;">
+        <div class="bg-white rounded-xl p-[10px] shadow-sm">
             @if ($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
                 <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain; border-radius: 8px;" />
                 <a href="{{ asset('storage/' . $item->berkas) }}" download class="button-baru" style="margin-top: 10px; display: inline-block;">Download Berkas</a>
