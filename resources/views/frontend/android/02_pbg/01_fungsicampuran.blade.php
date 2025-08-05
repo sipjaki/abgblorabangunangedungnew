@@ -67,14 +67,12 @@
 <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
   <!-- Gambar Thumbnail Penuh -->
   <div class="w-full h-auto rounded-lg overflow-hidden">
-{{-- @foreach ($data as $item)
+@foreach ($data as $item)
 
 <div class="flex flex-col space-y-3 px-[18px]">
     <!-- Card 1 -->
-    <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
+    {{-- <a href="#" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition"> --}}
         <!-- Gambar Thumbnail Penuh -->
-        <div class="w-full h-auto rounded-lg overflow-hidden">
-       <div>
     @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
         <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain;" />
     @elseif($item->berkas)
@@ -84,7 +82,7 @@
     @endif
     </div>
 
-@endforeach --}}
+@endforeach
 
 </div>
 
