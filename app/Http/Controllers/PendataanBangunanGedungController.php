@@ -1161,8 +1161,12 @@ public function bedatabangunankic(Request $request)
     $search = $request->input('search');
     $perPage = $request->input('perPage', 15);
 
-    $query = kicinduk::query()->orderBy('created_at', 'desc'); // urutkan dari yang terbaru
+    // Tambahkan eager loading untuk relasi
+    $query = kicinduk::query()
+        ->with(['satuankerja', 'kicdokumen'])
+        ->orderBy('created_at', 'desc');
 
+    // Filter pencarian
     if ($search) {
         $query->where(function ($q) use ($search) {
             $q->orWhere('kodelokasi', 'like', "%{$search}%")
@@ -1174,12 +1178,18 @@ public function bedatabangunankic(Request $request)
         });
     }
 
+    // Paginate hasil query
     $berkasbantek = $query->paginate($perPage)->appends($request->all());
 
+    // Hitung total jumlah KicDokumen
+    $jumlahkic = kicdokumen::count();
+
+    // Kirim data ke view
     return view('backend.02_pendataanbangunangedung.07_datakic.01_datakickabblora', [
-        'title' => 'Pendataan KIC Bangunan Gedung Kabupaten Blora',
-        'data'  => $berkasbantek,
-        'user'  => $user,
+        'title'      => 'Pendataan KIC Bangunan Gedung Kabupaten Blora',
+        'data'       => $berkasbantek,
+        'user'       => $user,
+        'jumlahkic'  => $jumlahkic, // kirim jumlah dokumen
     ]);
 }
 

@@ -330,6 +330,7 @@ th {
 <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Kode Lokasi</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Bidang</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Sub Bidang</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Jumlah Bangunan</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Daftar KIC</th>
 
     @can('superadmin')
@@ -377,7 +378,11 @@ th {
         ? e($item->subbidang)
         : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
 </td>
-
+<td style="text-align: center;">
+    <button class="button-hijau">
+        {{ $item->kicdokumen->count() }}
+    </button>
+</td>
 <td style="text-align: center;">
     <a href="{{ route('bedatabangunankicshow', $item->id) }}"
         class="button-baru">

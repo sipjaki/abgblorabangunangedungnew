@@ -303,6 +303,7 @@
         <span class="button-berkas">Data Belum Di Update</span>
     @endif
 </td>
+
 <td style="text-align: center;">
     <button class="button-hijau">
         {{ $item->kicdokumen->count() }}
