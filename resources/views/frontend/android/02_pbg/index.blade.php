@@ -12,12 +12,14 @@
           <div class="w-[42px] h-[42px] flex shrink-0">
             <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon">
           </div>
-<div class="bg-white/70 rounded-md px-4 py-2 inline-block">
-  <p class="font-semibold leading-[28px] text-black text-center text-[17px]">
-    Dinas Pekerjaan Umum <br>
-    Dan Penataan Ruang <br>
-    Kabupaten Blora
-  </p>
+<div class="w-full px-4">
+  <div class="bg-white/60 backdrop-blur-sm rounded-lg p-4">
+    <p class="font-semibold leading-[28px] text-black text-center text-[17px]">
+      Dinas Pekerjaan Umum <br>
+      Dan Penataan Ruang <br>
+      Kabupaten Blora
+    </p>
+  </div>
 </div>
 
         <div class="w-[42px] h-[42px] flex shrink-0">
