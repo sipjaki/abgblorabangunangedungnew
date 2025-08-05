@@ -65,17 +65,17 @@
 
         <div class="flex flex-col space-y-3 px-[18px]">
             <!-- Card 1 -->
-<div class="flex flex-col space-y-[4px] px-[2px] py-[2px]">
+<div class="flex flex-col space-y-[0px] px-[0px] py-[0px]">
     @foreach ($data as $item)
         <div class="bg-white rounded-xl p-[8px] shadow-sm">
             @if ($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
                 <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain; border-radius: 8px;" />
-                <div style="text-align: center; margin-top: 6px;">
+                <div style="text-align: center; margin-top: 2px;">
                     <a href="{{ asset('storage/' . $item->berkas) }}" download class="button-baru">Download Berkas</a>
                 </div>
             @elseif ($item->berkas)
                 <img src="{{ asset($item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain; border-radius: 8px;" />
-                <div style="text-align: center; margin-top: 6px;">
+                <div style="text-align: center; margin-top: 2px;">
                     <a href="{{ asset($item->berkas) }}" download class="button-baru">Download Berkas</a>
                 </div>
             @else
