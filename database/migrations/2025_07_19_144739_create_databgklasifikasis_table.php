@@ -23,6 +23,7 @@ return new class extends Migration
     $table->string('resiko_kebakaran')->nullable();         // Resiko Kebakaran
     $table->string('resiko_gempa')->nullable();             // Resiko Gempa
     $table->string('kepadatan_lokasi')->nullable();
+    $table->string('ketinggian_bangunan')->nullable();
       // Kepadatan Lokasi
     $table->string('cadangan1')->nullable();         // Kepadatan Lokasi
     $table->string('cadangan2')->nullable();         // Kepadatan Lokasi
