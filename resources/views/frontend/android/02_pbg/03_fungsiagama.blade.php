@@ -94,7 +94,8 @@
     max-width: 850px;
     margin: 0 auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    font-family: 'Segoe UI', sans-serif;
+    /* font-family: 'Segoe UI', sans-serif; */
+      font-family: 'Poppins', sans-serif;
     font-size: 15px;
     color: #333;
   }

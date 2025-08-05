@@ -93,7 +93,8 @@
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    font-family: 'Segoe UI', sans-serif;
+    /* font-family: 'Segoe UI', sans-serif; */
+      font-family: 'Poppins', sans-serif;
     font-size: 15px;
     color: #333;
     line-height: 1.6;
