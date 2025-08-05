@@ -2,7 +2,7 @@
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
-<div class="w-full h-[184px] absolute top-0 overflow-hidden">
+<div class="w-full h-[200px] absolute top-0 overflow-hidden">
   <img src="/assets/android/iconmenu/bangunanblora.jpg" alt="Bangunan Blora" class="w-full h-full object-cover" />
 </div>
 
@@ -14,12 +14,12 @@
           </div>
 <div style="
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 20px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(4px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 ">
