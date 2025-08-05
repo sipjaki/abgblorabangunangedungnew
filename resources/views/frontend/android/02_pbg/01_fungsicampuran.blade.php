@@ -65,18 +65,21 @@
 
         <div class="flex flex-col space-y-3 px-[18px]">
             <!-- Card 1 -->
-<div class="flex flex-col space-y-3 px-[2px] py-[2px]">
-    <!-- Loop item -->
+<div class="flex flex-col space-y-[4px] px-[2px] py-[2px]">
     @foreach ($data as $item)
-        <div class="bg-white rounded-xl p-[10px] shadow-sm">
+        <div class="bg-white rounded-xl p-[8px] shadow-sm">
             @if ($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
                 <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain; border-radius: 8px;" />
-                <a href="{{ asset('storage/' . $item->berkas) }}" download class="button-baru" style="margin-top: 10px; display: inline-block;">Download Berkas</a>
+                <div style="text-align: center; margin-top: 6px;">
+                    <a href="{{ asset('storage/' . $item->berkas) }}" download class="button-baru">Download Berkas</a>
+                </div>
             @elseif ($item->berkas)
                 <img src="{{ asset($item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain; border-radius: 8px;" />
-                <a href="{{ asset($item->berkas) }}" download class="button-baru" style="margin-top: 10px; display: inline-block;">Download Berkas</a>
+                <div style="text-align: center; margin-top: 6px;">
+                    <a href="{{ asset($item->berkas) }}" download class="button-baru">Download Berkas</a>
+                </div>
             @else
-                <p style="font-family: 'Poppins', sans-serif; font-weight: 600;">Data belum diupdate</p>
+                <p style="font-family: 'Poppins', sans-serif; font-weight: 600; margin: 0;">Data belum diupdate</p>
             @endif
         </div>
     @endforeach
