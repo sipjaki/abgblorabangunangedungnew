@@ -1,4 +1,5 @@
 @include('frontend.android.00_fiturmenu.01_header')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
@@ -67,7 +68,7 @@
 <div class="flex flex-col space-y-3 px-[10px] py-[10px]">
     <!-- Loop item -->
     @foreach ($data as $item)
-        <div class="bg-white rounded-xl p-[10px] shadow-sm">
+        <div class="bg-white rounded-xl p-[10px] shadow-sm" style="margin-top: -20px; margin-bottom:-20px;">
             @if ($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
                 <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain; border-radius: 8px;" />
                 <a href="{{ asset('storage/' . $item->berkas) }}" download class="button-baru" style="margin-top: 10px; display: inline-block;">Download Berkas</a>
