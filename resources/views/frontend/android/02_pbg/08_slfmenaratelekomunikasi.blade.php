@@ -84,69 +84,105 @@
 </div>
 
   <br>
+<style>
+  .card-slf {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+    max-width: 850px;
+    margin: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
 
-<div class="flex flex-col gap-3 mt-4">
-  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Sertifikat Laik Fungsi (SLF) – Fungsi Menara Telekomunikasi
-  </p>
+  .card-slf .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4041DA;
+    margin-bottom: 10px;
+  }
 
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">1. Persyaratan</p>
-  <p class="text-[15px] text-neutral-700 text-justify leading-[22px]">
-    1. DATA TANAH:<br>
-    - Dokumen tanah (Sertifikat Tanah)<br>
-    - Izin Pemanfaatan tanah (Apabila nama pemohon dengan nama yang disertifikat tidak sama)<br>
-    - Gambar Kontur Tanah dan Sondir (Khusus Bangunan tidak sederhana)<br><br>
+  .card-slf .section {
+    margin-bottom: 20px;
+  }
 
-    2. DATA UMUM:<br>
-    - KTP / Profil Perusahaan, NIB (OSS)<br>
-    - KRK / KKPR<br>
-    - Dokumen Lingkungan sesuai peraturan perundangan (SPPL (OSS), UKL/UPL, AMDAL)<br>
-    - Data Penyedia Jasa Perencana Konstruksi: Badan Usaha (SBU) / Arsitek Berlisensi<br>
-    - Verifikasi pernyataan mandiri / PKKPR otomatis untuk kegiatan berusaha yang dikeluarkan FPR (Forum Penataan Ruang) Kab. Blora<br>
-    - KKOP (Ketentuan Keselamatan Operasi Penerbangan)<br>
-    - Persetujuan dari warga sekitar menara diketahui Lurah/Kepala Desa, disertai dokumentasi dan Berita Acara Sosialisasi<br><br>
+  .card-slf .manual-number {
+    margin-bottom: 10px;
+    text-align: justify;
+  }
 
-    3. DATA TEKNIS ARSITEKTUR:<br>
-    - Gambar dan Perhitungan teknis untuk prasarana<br><br>
+  .card-slf .manual-number span {
+    font-weight: 600;
+  }
 
-    4. KETENTUAN TEKNIS STRUKTUR:<br>
-    - Perhitungan Teknis sederhana dan Gambar Rencana Fondasi, Basemen Kolom, Balok, pelat lantai dan Rangka Atap, Penutup dan komponen gedung lainnya<br>
-    - Gambar Detail Struktur<br>
-    - Spesifikasi Teknis meliputi spesifikasi umum dan spesifikasi khusus (Jenis, tipe, dan karakteristik material/bahan yang digunakan secara lebih detail dan menyeluruh untuk komponen struktural)<br><br>
+  .card-slf a {
+    color: #1D4ED8;
+    text-decoration: underline;
+  }
+</style>
 
-    5. DATA TEKNIS MEP:<br>
-    - Laporan Pemeriksaan Kelaikan Fungsi Bangunan Gedung<br>
-    - Laporan Pemeriksaan Berkala Bangunan Gedung (Hanya untuk bangunan gedung kepentingan umum)<br>
-    - Gambar bangunan gedung terbangan (as built drawing)<br>
-    - Data Tenaga Ahli Pengkaji Teknis bersertifikat
-  </p>
+<div class="card-slf">
 
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">2. Tahapan Pengurusan</p>
-  <p class="text-[15px] text-neutral-700 text-justify leading-[22px]">
-    1. Menyiapkan dokumen tanah, KRK/KKPR (dokumen tata ruang), dan dokumen lingkungan<br>
-    2. Mendaftar, membuat permohonan, dan mengunggah dokumen pada website SIMBG.PU<br>
-    3. Menindaklanjuti hasil verifikasi operator dinas teknis<br>
-    4. Penjadwalan konsultasi permohonan<br>
-    5. Melakukan konsultasi bersama TPA/TPT<br>
-    6. Merevisi dokumen sesuai masukan dan saran teknis TPA/TPT<br>
-    7. Merevisi dokumen hingga TPA/TPT menyetujui dokumen perencanaan<br>
-    8. Pengunggahan berkas final, perhitungan retribusi, dan validasi oleh dinas teknis<br>
-    9. Pembayaran retribusi melalui bank persepsi / mobile banking<br>
-    10. Penerbitan dokumen PBG di DPMPTSP & SLF di DPMPTSP
-  </p>
+  <div class="section">
+    <p class="title">Sertifikat Laik Fungsi (SLF) – Fungsi Menara Telekomunikasi</p>
+  </div>
 
-  {{-- <p class="text-[15px] text-neutral-700 mt-2">
-    Untuk informasi mendetail, silakan kunjungi:<br>
-    <a href="https://linktr.ee/bidangbangunangedung" class="text-blue-600 underline" target="_blank">
-      https://linktr.ee/bidangbangunangedung
-    </a>
-  </p> --}}
+  <div class="section">
+    <p class="title">1. Persyaratan</p>
+
+    <p class="manual-number">1. <span>Data Tanah:</span><br>
+      - Dokumen Sertifikat Tanah<br>
+      - Izin Pemanfaatan Tanah (jika nama pemohon berbeda dengan sertifikat)<br>
+      - Gambar Kontur Tanah dan Sondir (untuk bangunan tidak sederhana)
+    </p>
+
+    <p class="manual-number">2. <span>Data Umum:</span><br>
+      - KTP / Profil Perusahaan, NIB (OSS)<br>
+      - KRK / KKPR<br>
+      - Dokumen Lingkungan (SPPL (OSS), UKL/UPL, AMDAL)<br>
+      - Data Penyedia Jasa Konstruksi (SBU / Arsitek Berlisensi)<br>
+      - Verifikasi pernyataan mandiri / PKKPR otomatis (dari FPR Kab. Blora)<br>
+      - KKOP (Ketentuan Keselamatan Operasi Penerbangan)<br>
+      - Persetujuan warga sekitar diketahui lurah/kepala desa, disertai dokumentasi & berita acara sosialisasi
+    </p>
+
+    <p class="manual-number">3. <span>Data Teknis Arsitektur:</span><br>
+      - Gambar dan perhitungan teknis untuk prasarana
+    </p>
+
+    <p class="manual-number">4. <span>Ketentuan Teknis Struktur:</span><br>
+      - Perhitungan teknis & gambar struktur fondasi, kolom, balok, pelat lantai, rangka atap, penutup & komponen gedung lainnya<br>
+      - Gambar detail struktur<br>
+      - Spesifikasi teknis: jenis, tipe, dan karakteristik material struktural
+    </p>
+
+    <p class="manual-number">5. <span>Data Teknis MEP:</span><br>
+      - Laporan Pemeriksaan Kelaikan Fungsi Bangunan<br>
+      - Laporan Pemeriksaan Berkala (khusus bangunan kepentingan umum)<br>
+      - Gambar as-built drawing<br>
+      - Data Tenaga Ahli Pengkaji Teknis bersertifikat
+    </p>
+  </div>
+
+  <div class="section">
+    <p class="title">2. Tahapan Pengurusan</p>
+
+    <p class="manual-number">1. Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</p>
+    <p class="manual-number">2. Mendaftar dan mengunggah dokumen di <a href="https://simbg.pu.go.id" target="_blank">simbg.pu.go.id</a></p>
+    <p class="manual-number">3. Verifikasi dokumen oleh operator dinas teknis</p>
+    <p class="manual-number">4. Penjadwalan konsultasi permohonan</p>
+    <p class="manual-number">5. Konsultasi bersama TPA/TPT</p>
+    <p class="manual-number">6. Revisi dokumen sesuai masukan teknis TPA/TPT</p>
+    <p class="manual-number">7. Persetujuan dokumen perencanaan oleh TPA/TPT</p>
+    <p class="manual-number">8. Pengunggahan final, perhitungan retribusi, dan validasi teknis</p>
+    <p class="manual-number">9. Pembayaran retribusi melalui bank persepsi / mobile banking</p>
+    <p class="manual-number">10. Penerbitan dokumen PBG di DPMPTSP & SLF di DPMPTSP</p>
+  </div>
+
 </div>
-
-
-  <!-- Info Teks -->
-
-</a>
 
 
       </form>

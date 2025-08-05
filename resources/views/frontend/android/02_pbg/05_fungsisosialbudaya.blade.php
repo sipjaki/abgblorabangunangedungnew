@@ -85,68 +85,111 @@
 
   <br>
   <!-- Info Teks -->
-<div class="flex flex-col gap-3 mt-4">
-  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Persetujuan Bangunan Gedung (PBG) - Fungsi Sosial Budaya
-  </p>
-  <p class="text-[15px] text-neutral-700 text-justify">
-    Persetujuan Bangunan Gedung (PBG) adalah dokumen legal yang wajib dimiliki sebelum pembangunan menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai dengan aspek teknis, ketentuan tata ruang, keselamatan lingkungan, serta mendapat persetujuan masyarakat sekitar.
+
+<style>
+  .card-sosialbudaya {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+    max-width: 850px;
+    margin: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-sosialbudaya .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4041DA;
+    margin-bottom: 10px;
+  }
+
+  .card-sosialbudaya .manual-number {
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+
+  .card-sosialbudaya .manual-number span {
+    font-weight: 600;
+  }
+
+  .card-sosialbudaya ul {
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .card-sosialbudaya ul li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+  }
+
+  .card-sosialbudaya a {
+    color: #1D4ED8;
+    text-decoration: underline;
+  }
+</style>
+
+<div class="card-sosialbudaya">
+
+  <p class="title">Persetujuan Bangunan Gedung (PBG) - Fungsi Sosial Budaya</p>
+
+  <p class="manual-number">
+    Persetujuan Bangunan Gedung (PBG) adalah dokumen legal yang wajib dimiliki sebelum pembangunan bangunan fungsi sosial budaya seperti menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai dengan aspek teknis, ketentuan tata ruang, keselamatan lingkungan, serta mendapat persetujuan masyarakat sekitar.
   </p>
 
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
-    Persyaratan Dokumen:
-  </p>
-  <p class="text-[15px] text-neutral-700 text-justify leading-[22px]">
-    1. <span class="font-semibold">Data Tanah</span>:<br>
-    - Sertifikat tanah<br>
-    - Izin Pemanfaatan Tanah (apabila nama pemohon berbeda dengan sertifikat)<br>
-    - Gambar kontur tanah dan sondir (khusus bangunan tidak sederhana)<br><br>
+  <p class="title">Persyaratan Dokumen:</p>
 
-    2. <span class="font-semibold">Data Umum</span>:<br>
-    - KTP / Profil Perusahaan, NIB (OSS)<br>
-    - KRK / KKPR<br>
-    - Dokumen lingkungan sesuai peraturan (SPPL, OSS, UKL/UPL, AMDAL)<br>
-    - Data penyedia jasa konstruksi: Badan Usaha (SBU) / Arsitek berlisensi<br>
-    - Verifikasi pernyataan mandiri atau PKKPR otomatis yang diterbitkan FPR Kab. Blora<br>
-    - KKOP (Ketentuan Keselamatan Operasi Penerbangan)<br>
-    - Persetujuan warga sekitar menara yang diketahui lurah/kepala desa, disertai dokumentasi & berita acara sosialisasi<br><br>
+  <p class="manual-number">1. <span>Data Tanah:</span></p>
+  <ul>
+    <li>Sertifikat tanah</li>
+    <li>Izin Pemanfaatan Tanah (apabila nama pemohon berbeda dengan sertifikat)</li>
+    <li>Gambar kontur tanah dan sondir (khusus bangunan tidak sederhana)</li>
+  </ul>
 
-    3. <span class="font-semibold">Data Teknis Arsitektur</span>:<br>
-    - Gambar dan perhitungan teknis bangunan prasarana
-  </p>
+  <p class="manual-number">2. <span>Data Umum:</span></p>
+  <ul>
+    <li>KTP / Profil Perusahaan, NIB (OSS)</li>
+    <li>KRK / KKPR</li>
+    <li>Dokumen lingkungan sesuai peraturan (SPPL, OSS, UKL/UPL, AMDAL)</li>
+    <li>Data penyedia jasa konstruksi: Badan Usaha (SBU) / Arsitek berlisensi</li>
+    <li>Verifikasi pernyataan mandiri atau PKKPR otomatis dari FPR Kabupaten Blora</li>
+    <li>KKOP (Ketentuan Keselamatan Operasi Penerbangan)</li>
+    <li>Persetujuan warga sekitar menara yang diketahui lurah/kepala desa, disertai dokumentasi & berita acara sosialisasi</li>
+  </ul>
 
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
-    Tahapan Pengurusan:
-  </p>
-  <p class="text-[15px] text-neutral-700 text-justify leading-[22px]">
-    1. Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan<br>
-    2. Mendaftar, membuat permohonan, dan mengunggah dokumen ke https://simbg.pu.go.id<br>
-    3. Menindaklanjuti hasil verifikasi operator Dinas Teknis<br>
-    4. Penjadwalan konsultasi permohonan<br>
-    5. Melakukan konsultasi bersama TPA/TPT<br>
-    6. Merevisi dokumen sesuai masukan dan saran teknis TPA/TPT<br>
-    7. TPA/TPT menyetujui dokumen perencanaan<br>
-    8. Pengunggahan dokumen final, validasi teknis, dan perhitungan retribusi<br>
-    9. Pembayaran retribusi melalui bank persepsi atau mobile banking<br>
-    10. Penerbitan dokumen PBG oleh DPMPTSP
-  </p>
+  <p class="manual-number">3. <span>Data Teknis Arsitektur:</span></p>
+  <ul>
+    <li>Gambar dan perhitungan teknis bangunan prasarana</li>
+  </ul>
 
-  {{-- <p class="text-[15px] text-neutral-700 mt-2">
+  <p class="title">Tahapan Pengurusan:</p>
+
+  <p class="manual-number">1. Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</p>
+  <p class="manual-number">2. Mendaftar, membuat permohonan, dan mengunggah dokumen ke
+    <a href="https://simbg.pu.go.id" target="_blank">https://simbg.pu.go.id</a>
+  </p>
+  <p class="manual-number">3. Menindaklanjuti hasil verifikasi operator Dinas Teknis</p>
+  <p class="manual-number">4. Penjadwalan konsultasi permohonan</p>
+  <p class="manual-number">5. Melakukan konsultasi bersama TPA/TPT</p>
+  <p class="manual-number">6. Merevisi dokumen sesuai masukan dan saran teknis TPA/TPT</p>
+  <p class="manual-number">7. TPA/TPT menyetujui dokumen perencanaan</p>
+  <p class="manual-number">8. Pengunggahan dokumen final, validasi teknis, dan perhitungan retribusi</p>
+  <p class="manual-number">9. Pembayaran retribusi melalui bank persepsi atau mobile banking</p>
+  <p class="manual-number">10. Penerbitan dokumen PBG oleh DPMPTSP</p>
+
+  <!-- Optional Info Link (jika mau diaktifkan) -->
+  <!--
+  <p class="manual-number">
     Untuk informasi lebih lanjut, kunjungi:
-    <a href="https://linktr.ee/bidangbangunangedung" target="_blank" class="text-blue-600 underline">
-      https://linktr.ee/bidangbangunangedung
-    </a>
-  </p> --}}
-</div>
+    <a href="https://linktr.ee/bidangbangunangedung" target="_blank">https://linktr.ee/bidangbangunangedung</a>
+  </p>
+  -->
 
-{{--
-  <p class="text-[15px] text-neutral-700 mt-2">
-    Untuk informasi lebih lengkap, kunjungi:
-    <a href="https://linktr.ee/bidangbangunangedung" target="_blank" class="text-blue-600 underline">https://linktr.ee/bidangbangunangedung</a>
-  </p> --}}
 </div>
-
-</a>
 
 
       </form>

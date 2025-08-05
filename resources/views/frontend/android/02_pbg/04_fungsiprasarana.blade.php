@@ -87,68 +87,118 @@
   <br>
   <!-- Info Teks -->
 
-<div class="flex flex-col gap-3 mt-4">
-  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
-    Persetujuan Bangunan Gedung (PBG) - Fungsi Prasarana
-  </p>
-  <p class="text-[15px] text-neutral-700 text-justify">
-    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan untuk mendirikan bangunan prasarana seperti menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai ketentuan teknis, tata ruang, dan lingkungan yang berlaku.
-  </p>
+<style>
+  .card-prasarana {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+    max-width: 850px;
+    margin: auto;
+  }
 
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
-    Persyaratan Dokumen:
-  </p>
-  <p class="text-[15px] text-neutral-700 text-justify leading-[22px]">
-    1. <span class="font-semibold">Data Tanah</span>:<br>
-    - Sertifikat tanah<br>
-    - Izin Pemanfaatan Tanah (jika nama pemohon berbeda dengan sertifikat)<br>
-    - Gambar kontur tanah dan sondir (khusus bangunan tidak sederhana)<br><br>
+  .card-prasarana .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4041DA;
+    margin-bottom: 10px;
+  }
 
-    2. <span class="font-semibold">Data Umum</span>:<br>
-    - KTP / Profil Perusahaan, NIB (OSS)<br>
-    - KRK / KKPR<br>
-    - Dokumen lingkungan sesuai peraturan perundangan (SPPL, OSS, UKL/UPL, AMDAL)<br>
-    - Data penyedia jasa konstruksi: Badan Usaha (SBU) / Arsitek berlisensi<br>
-    - Verifikasi pernyataan mandiri / PKKPR otomatis untuk kegiatan usaha dari FPR (Forum Penataan Ruang) Kabupaten Blora<br>
-    - KKOP (Ketentuan Keselamatan Operasi Penerbangan)<br>
-    - Persetujuan warga sekitar menara yang diketahui lurah/kepala desa, disertai dokumentasi dan berita acara sosialisasi<br><br>
+  .card-prasarana .section {
+    margin-bottom: 20px;
+  }
 
-    3. <span class="font-semibold">Data Teknis Arsitektur</span>:<br>
-    - Gambar dan perhitungan teknis untuk prasarana
-  </p>
+  .card-prasarana .manual-number {
+    margin-bottom: 10px;
+    text-align: justify;
+  }
 
-  <p class="font-semibold text-[15px] leading-[22px] text-[#4041DA]">
-    Tahapan Pengurusan:
-  </p>
-  <p class="text-[15px] text-neutral-700 text-justify leading-[22px]">
-    1. Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan<br>
-    2. Mendaftar, membuat permohonan, dan mengunggah dokumen ke https://simbg.pu.go.id<br>
-    3. Menindaklanjuti hasil verifikasi operator dinas teknis<br>
-    4. Penjadwalan konsultasi permohonan<br>
-    5. Melakukan konsultasi bersama TPA/TPT<br>
-    6. Merevisi dokumen sesuai masukan dari TPA/TPT<br>
-    7. TPA/TPT menyetujui dokumen perencanaan<br>
-    8. Pengunggahan dokumen final, validasi, dan perhitungan retribusi<br>
-    9. Pembayaran retribusi melalui bank persepsi atau mobile banking<br>
-    10. Penerbitan dokumen PBG oleh DPMPTSP
-  </p>
+  .card-prasarana .manual-number span {
+    font-weight: 600;
+  }
 
-  {{-- <p class="text-[15px] text-neutral-700 mt-2">
-    Untuk informasi lebih lanjut, silakan kunjungi:
-    <a href="https://linktr.ee/bidangbangunangedung" target="_blank" class="text-blue-600 underline">
-      https://linktr.ee/bidangbangunangedung
-    </a>
-  </p> --}}
+  .card-prasarana ul {
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .card-prasarana ul li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+  }
+
+  .card-prasarana a {
+    color: #1D4ED8;
+    text-decoration: underline;
+  }
+</style>
+
+<div class="card-prasarana">
+  <div class="section">
+    <p class="title">Persetujuan Bangunan Gedung (PBG) - Fungsi Prasarana</p>
+    <p class="manual-number">
+      Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang dibutuhkan untuk mendirikan bangunan prasarana seperti menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai ketentuan teknis, tata ruang, dan lingkungan yang berlaku.
+    </p>
+  </div>
+
+  <div class="section">
+    <p class="title">Persyaratan Dokumen:</p>
+
+    <p class="manual-number">1. <span>Data Tanah:</span></p>
+    <ul>
+      <li>Sertifikat tanah</li>
+      <li>Izin Pemanfaatan Tanah (jika nama pemohon berbeda dengan sertifikat)</li>
+      <li>Gambar kontur tanah dan sondir (khusus bangunan tidak sederhana)</li>
+    </ul>
+
+    <p class="manual-number">2. <span>Data Umum:</span></p>
+    <ul>
+      <li>KTP / Profil Perusahaan, NIB (OSS)</li>
+      <li>KRK / KKPR</li>
+      <li>Dokumen lingkungan sesuai peraturan perundangan (SPPL, OSS, UKL/UPL, AMDAL)</li>
+      <li>Data penyedia jasa konstruksi: Badan Usaha (SBU) / Arsitek berlisensi</li>
+      <li>Verifikasi pernyataan mandiri / PKKPR otomatis untuk kegiatan usaha dari FPR (Forum Penataan Ruang) Kabupaten Blora</li>
+      <li>KKOP (Ketentuan Keselamatan Operasi Penerbangan)</li>
+      <li>Persetujuan warga sekitar menara yang diketahui lurah/kepala desa, disertai dokumentasi dan berita acara sosialisasi</li>
+    </ul>
+
+    <p class="manual-number">3. <span>Data Teknis Arsitektur:</span></p>
+    <ul>
+      <li>Gambar dan perhitungan teknis untuk prasarana</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <p class="title">Tahapan Pengurusan:</p>
+
+    <p class="manual-number">1. Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</p>
+    <p class="manual-number">2. Mendaftar, membuat permohonan, dan mengunggah dokumen ke
+      <a href="https://simbg.pu.go.id" target="_blank">https://simbg.pu.go.id</a>
+    </p>
+    <p class="manual-number">3. Menindaklanjuti hasil verifikasi operator dinas teknis</p>
+    <p class="manual-number">4. Penjadwalan konsultasi permohonan</p>
+    <p class="manual-number">5. Melakukan konsultasi bersama TPA/TPT</p>
+    <p class="manual-number">6. Merevisi dokumen sesuai masukan dari TPA/TPT</p>
+    <p class="manual-number">7. TPA/TPT menyetujui dokumen perencanaan</p>
+    <p class="manual-number">8. Pengunggahan dokumen final, validasi, dan perhitungan retribusi</p>
+    <p class="manual-number">9. Pembayaran retribusi melalui bank persepsi atau mobile banking</p>
+    <p class="manual-number">10. Penerbitan dokumen PBG oleh DPMPTSP</p>
+  </div>
+
+  <!-- Link Tambahan (jika ingin ditampilkan) -->
+  <!--
+  <div class="section">
+    <p>Untuk informasi lebih lengkap, kunjungi:
+      <a href="https://linktr.ee/bidangbangunangedung" target="_blank">https://linktr.ee/bidangbangunangedung</a>
+    </p>
+  </div>
+  -->
 </div>
-
-{{--
-  <p class="text-[15px] text-neutral-700 mt-2">
-    Untuk informasi lebih lengkap, kunjungi:
-    <a href="https://linktr.ee/bidangbangunangedung" target="_blank" class="text-blue-600 underline">https://linktr.ee/bidangbangunangedung</a>
-  </p> --}}
-</div>
-
-</a>
 
 
       </form>
