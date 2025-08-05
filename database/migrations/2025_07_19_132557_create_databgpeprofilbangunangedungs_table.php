@@ -15,6 +15,13 @@ return new class extends Migration
     $table->id();
     $table->foreignId('databgkepemilikan_id')->nullable()->index(); // relasi ke data kepemilikan
 
+    $table->string('peruntukantanah')->nullable(); // KOLOM BARU BRO
+    $table->string('kdb')->nullable(); // KOLOM BARU BRO
+    $table->string('klb')->nullable(); // KOLOM BARU BRO
+    $table->string('kdh')->nullable(); // KOLOM BARU BRO
+    $table->string('ktb')->nullable(); // KOLOM BARU BRO
+
+
     $table->string('luastanah')->nullable(); // Luas Tanah
     $table->string('namabangunan')->nullable(); // Nama Bangunan Gedung
     $table->string('alamatbangunan')->nullable(); // Alamat Bangunan

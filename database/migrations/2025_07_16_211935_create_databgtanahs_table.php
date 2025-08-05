@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('databgtanahs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('databgkepemilikan_id')->nullable()->index();
+            // $table->string('tipepemilik')->nullable(); // kolom baru
             $table->string('statushaktanah')->nullable();
             $table->string('statuskepemilikan')->nullable();
             $table->string('nobuktikepemilikan')->nullable();

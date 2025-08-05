@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('databgkepemilikans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('datainstitusibangunangedung_id')->nullable();
+            $table->foreignId('datainstitusibangunangedung_id')->nullable(); // ini masih belum aktif
             $table->foreignId('user_id')->nullable()->index();
             $table->string('tanggalinput')->nullable();
-            $table->string('namainstitusi')->nullable();
-            $table->string('nopengesahanusaha')->nullable();
+            $table->string('namainstitusi')->nullable(); //
+            $table->string('legalitasbangunan')->nullable(); // ini kolom baru bro
+            $table->string('nopengesahanusaha')->nullable(); //
             $table->string('notelepon')->nullable();
             $table->string('email')->nullable();
 
