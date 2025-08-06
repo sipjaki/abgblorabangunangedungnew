@@ -3,14 +3,11 @@
 <div class="row g-4 mt-4">
     @php
         $infoItems = [
-           [
-    'icon' => 'bi-calendar-event',
-    'title' => 'Tanggal',
-    'value' => $data->tanggal
-        ? \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y')
-        : null,
-];
-
+            [
+                'icon' => 'bi-calendar-event',
+                'title' => 'Tanggal',
+                'value' => $data->tanggal ?  null,
+            ],
             [
                 'icon' => 'bi-hash',
                 'title' => 'Nomor',
