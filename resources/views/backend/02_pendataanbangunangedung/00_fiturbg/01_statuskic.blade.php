@@ -6,7 +6,7 @@
             [
                 'icon' => 'bi-calendar-event',
                 'title' => 'Tanggal',
-                'value' => $data->tanggal ?  null,
+                'value' => $data->tanggal ??  '-',
             ],
             [
                 'icon' => 'bi-hash',
