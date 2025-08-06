@@ -50,7 +50,7 @@
             [
                 'icon' => 'bi-patch-check-fill',
                 'title' => 'No Sertifikat',
-                'value' => $data->nomor_sertifikat ?? null,
+                'value' => $data->nosertifikat ?? null,
             ],
         ];
     @endphp
