@@ -37158,7 +37158,7 @@ $additionalData = [
 [1247, '--', null, 147, null, null, 'INVENTARIS', '119.000,00', '3448895.678.C / PAGAR SEKOLAH', '010101.00005.00014'],
 [1248, '--', null, 10, null, null, 'INVENTARIS', '193.317.800,00', '3448897.678.C / GEDUNG 3', '010101.00005.00014'],
 [1249, '--', null, 7, null, null, 'INVENTARIS', '15.000.000,00', '3448899.678.C / GEDUNG 2', '010101.00005.00014'],
-[1250, '01/12/2023', '--', None, 'NEGARA', null, 'PEMBELIAN', '99.296.500,00', 'Pembangunan Pagar SDN 1 Sendangrejo Kec. Bogorejo', '010101.00005.00014'],
+[1250, '01/12/2023', '--', null, 'NEGARA', null, 'PEMBELIAN', '99.296.500,00', 'Pembangunan Pagar SDN 1 Sendangrejo Kec. Bogorejo', '010101.00005.00014'],
 
 
 
