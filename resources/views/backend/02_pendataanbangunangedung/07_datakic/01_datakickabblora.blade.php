@@ -323,7 +323,7 @@ th {
                             <thead>
                                   <tr>
         <th style="background-color: #ADD8E6;">No</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Input Data</th>
+        {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Input Data</th> --}}
         {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> User ID</th> --}}
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3-fill"></i> Tanggal Input</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3-fill"></i> Satuan Kerja</th>
@@ -344,7 +344,7 @@ th {
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
 
-<td>{{ optional($item->user)->name ?? '-' }}</td>
+{{-- <td>{{ optional($item->user)->name ?? '-' }}</td> --}}
 
 {{-- Tanggal Input --}}
 <td>
