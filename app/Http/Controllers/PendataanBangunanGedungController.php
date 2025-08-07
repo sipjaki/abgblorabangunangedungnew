@@ -1787,5 +1787,23 @@ public function bedatabgmebangunancreatenew(Request $request)
     return redirect()->route('bedatabgmebangunan', ['id' => $validated['databgkepemilikan_id']]);
 }
 
+
+public function bedatabgmebangunanupdate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = databgkepemilikan::find($id);
+    $databantuanteknis = databgdokumenmepbangunan::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.02_pendataanbangunangedung.05_mep.03_updatemepdokumen', [
+        'title' => 'Perbaikan Data Dokumen MEP Bangunan Gedung ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
 }
 
