@@ -1703,7 +1703,7 @@ public function bedatabgmebangunan($id)
     // $datapbgslf = jenispengajuanpbgslfper::all();
 
     // Kirim data ke view
-    return view('backend.02_pendataanbangunangedung.05_dokumen.01_datamep', [
+    return view('backend.02_pendataanbangunangedung.05_mep.01_datameppendataan', [
         'title' => 'Informasi Data Dokumen MEP Bangunan Gedung',
         'title_halaman' => 'Informasi Data Dokumen MEP Bangunan Gedung',
         'user' => $user,
