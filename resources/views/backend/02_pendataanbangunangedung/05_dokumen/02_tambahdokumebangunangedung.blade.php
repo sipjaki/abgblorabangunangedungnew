@@ -402,6 +402,10 @@ th {
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
+@php
+    $opsi = ['Ada', 'Tidak Ada'];
+@endphp
+
 @foreach ([
     'gambar_teknis_rencana' => 'Gambar Teknis Rencana',
     'gambar_sesuai_pelaksana' => 'Gambar Sesuai Pelaksana',
@@ -417,9 +421,18 @@ th {
     'dokumen_teknis_tanah' => 'Dokumen Teknis Tanah'
 ] as $name => $label)
     <div class="col-md-6">
-        <label class="form-label"><i class="bi bi-file-earmark-text text-primary me-1"></i> {{ $label }}</label>
-        <input type="number" name="{{ $name }}" class="form-control @error($name) is-invalid @enderror" value="{{ old($name) }}" step="any" min="0">
-        @error($name)<div class="invalid-feedback">{{ $message }}</div>@enderror
+        <label class="form-label">
+            <i class="bi bi-check2-square text-primary me-1"></i> {{ $label }}
+        </label>
+        <select name="{{ $name }}" class="form-select @error($name) is-invalid @enderror">
+            <option value="">-- Pilih {{ $label }} --</option>
+            @foreach ($opsi as $val)
+                <option value="{{ $val }}" {{ old($name) == $val ? 'selected' : '' }}>{{ $val }}</option>
+            @endforeach
+        </select>
+        @error($name)
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
 @endforeach
 
