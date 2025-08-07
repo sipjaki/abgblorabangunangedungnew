@@ -1732,5 +1732,60 @@ public function bedatabgmebangunancreate($id)
     ]);
 }
 
+
+public function bedatabgmebangunancreatenew(Request $request)
+{
+    $validated = $request->validate([
+        'databgkepemilikan_id' => 'required|string',
+
+        // Lampiran dokumen
+        'dokumen_lampiran_struktur' => 'nullable|string|max:100',
+        'mpk_rdkt' => 'nullable|string|max:100',
+        'dokumen_lampiran' => 'nullable|string|max:100',
+        'penangkal_kebakaran' => 'nullable|string|max:100',
+        'no_bundel_dok_teknis' => 'nullable|string|max:100',
+        'daya_listrik' => 'nullable|string|max:100',
+        'dokumen_instalasi_listrik' => 'nullable|string|max:100',
+        'instalasi_penangkal_listrik' => 'nullable|string|max:100',
+        'dokumen_pencahayaan' => 'nullable|string|max:100',
+        'dokumen_instalasi_komunikasi' => 'nullable|string|max:100',
+        'instalasi_komunikasi' => 'nullable|string|max:100',
+        'pengolahan_limbah_domestik' => 'nullable|string|max:100',
+        'sistem_sanitasi' => 'nullable|string|max:100',
+        'pengolahan_air_hujan' => 'nullable|string|max:100',
+        'sistem_drainase' => 'nullable|string|max:100',
+        'instalasi_gas' => 'nullable|string|max:100',
+        'dokumen_lampiran_sanitasi' => 'nullable|string|max:100',
+        'sumber_air' => 'nullable|string|max:100',
+        'biaya_retribusi' => 'nullable|string|max:100',
+        'surat_advis_krk' => 'nullable|string|max:100',
+        'surat_permohonan_imb' => 'nullable|string|max:100',
+        'surat_permohonan_slf' => 'nullable|string|max:100',
+        'fotocopy_identitas_pemohon' => 'nullable|string|max:100',
+
+        // Ya/Tidak
+        'surat_kuasa_imb' => 'nullable|string|max:100',
+        'surat_k3' => 'nullable|string|max:100',
+        'rekomendasi_desa' => 'nullable|string|max:100',
+        'rekom_kecamatan' => 'nullable|string|max:100',
+        'surat_kepemilikan_tanah_sewa' => 'nullable|string|max:100',
+        'copy_sertif_tanah' => 'nullable|string|max:100',
+        'surat_pajak' => 'nullable|string|max:100',
+        'sippt' => 'nullable|string|max:100',
+        'tabel_ceklis_dokumen' => 'nullable|string|max:100',
+        'tabel_ceklis_teknis' => 'nullable|string|max:100',
+        'surat_setoran_retribusi_daerah' => 'nullable|string|max:100',
+        'surat_ketetapan_retribusi_daerah' => 'nullable|string|max:100',
+        'berita_acara_pemeriksaan' => 'nullable|string|max:100',
+    ], [
+        'databgkepemilikan_id.required' => 'ID Kepemilikan wajib diisi.',
+    ]);
+
+    databgdokumenmepbangunan::create($validated);
+
+    session()->flash('create', 'Data MEP Bangunan Gedung berhasil ditambahkan!');
+    return redirect()->route('bedatabgmebangunan', ['id' => $validated['databgkepemilikan_id']]);
+}
+
 }
 

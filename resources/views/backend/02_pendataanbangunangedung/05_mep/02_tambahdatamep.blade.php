@@ -338,7 +338,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('bedatabgstrukturcreatenew') }}" method="POST">
+<form id="formPemilik" action="{{ route('bedatabgmebangunancreatenew') }}" method="POST">
     @csrf
     <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
@@ -413,7 +413,7 @@ th {
 
         {{-- Tombol Submit --}}
         <div class="col-12 text-end mt-3">
-            <button type="button" class="button-baru" onclick="openModal()">
+            <button type="button" class="button-hijau" onclick="openModal()">
                 <i class="bi bi-save me-1"></i> Simpan Data
             </button>
         </div>

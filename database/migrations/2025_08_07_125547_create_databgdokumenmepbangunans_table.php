@@ -14,6 +14,7 @@ return new class extends Migration
 
         Schema::create('databgdokumenmepbangunans', function (Blueprint $table) {
             $table->id();
+            
             $table->foreignId('databgkepemilikan_id')->nullable()->index(); // relasi ke data kepemilikan
 
             $table->string('dokumen_lampiran_struktur')->nullable();
