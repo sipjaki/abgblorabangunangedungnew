@@ -248,73 +248,187 @@ th {
 
 <div class="row g-4">
     @forelse ($subdatapemilik as $pemilik)
-
 @php
     $infoItems = [
         [
-            'icon' => 'bi-house-door',
-            'title' => 'Struktur Bawah',
-            'value' => $pemilik->struktur_bawah ?? '-',
+            'icon' => 'bi-file-earmark-text',
+            'title' => 'Dokumen Lampiran Struktur',
+            'value' => $pemilik->dokumen_lampiran_struktur ?? '-',
         ],
         [
-            'icon' => 'bi-house',
-            'title' => 'Struktur Atas',
-            'value' => $pemilik->struktur_atas ?? '-',
+            'icon' => 'bi-diagram-2',
+            'title' => 'MPK RDKT',
+            'value' => $pemilik->mpk_rdkt ?? '-',
         ],
         [
-            'icon' => 'bi-house-add',
-            'title' => 'Struktur Atap',
-            'value' => $pemilik->struktur_atap ?? '-',
+            'icon' => 'bi-file-earmark',
+            'title' => 'Dokumen Lampiran',
+            'value' => $pemilik->dokumen_lampiran ?? '-',
         ],
         [
-            'icon' => 'bi-diagram-3',
-            'title' => 'Rangka Atap',
-            'value' => $pemilik->rangka_atap ?? '-',
+            'icon' => 'bi-shield-lock',
+            'title' => 'Penangkal Kebakaran',
+            'value' => $pemilik->penangkal_kebakaran ?? '-',
         ],
         [
-            'icon' => 'bi-border-width',
-            'title' => 'Balok',
-            'value' => $pemilik->balok ?? '-',
+            'icon' => 'bi-archive',
+            'title' => 'No Bundel Dok Teknis',
+            'value' => $pemilik->no_bundel_dok_teknis ?? '-',
         ],
         [
-            'icon' => 'bi-columns-gap',
-            'title' => 'Kolom',
-            'value' => $pemilik->kolom ?? '-',
+            'icon' => 'bi-lightning-charge',
+            'title' => 'Daya Listrik',
+            'value' => $pemilik->daya_listrik ?? '-',
         ],
         [
-            'icon' => 'bi-box',
-            'title' => 'Pondasi',
-            'value' => $pemilik->pondasi ?? '-',
+            'icon' => 'bi-plug',
+            'title' => 'Dokumen Instalasi Listrik',
+            'value' => $pemilik->dokumen_instalasi_listrik ?? '-',
         ],
         [
-            'icon' => 'bi-bricks',
-            'title' => 'Dinding',
-            'value' => $pemilik->dinding ?? '-',
+            'icon' => 'bi-lightning',
+            'title' => 'Instalasi Penangkal Petir',
+            'value' => $pemilik->instalasi_penangkal_listrik ?? '-',
         ],
         [
-            'icon' => 'bi-cloud',
-            'title' => 'Genteng',
-            'value' => $pemilik->genteng ?? '-',
+            'icon' => 'bi-lightbulb',
+            'title' => 'Dokumen Pencahayaan',
+            'value' => $pemilik->dokumen_pencahayaan ?? '-',
         ],
         [
-            'icon' => 'bi-menu-button-wide',
-            'title' => 'Plafon',
-            'value' => $pemilik->plafon ?? '-',
+            'icon' => 'bi-broadcast',
+            'title' => 'Dokumen Instalasi Komunikasi',
+            'value' => $pemilik->dokumen_instalasi_komunikasi ?? '-',
         ],
         [
-            'icon' => 'bi-grid-1x2',
-            'title' => 'Lantai',
-            'value' => $pemilik->lantai ?? '-',
+            'icon' => 'bi-wifi',
+            'title' => 'Instalasi Komunikasi',
+            'value' => $pemilik->instalasi_komunikasi ?? '-',
         ],
         [
-            'icon' => 'bi-door-open',
-            'title' => 'Pintu',
-            'value' => $pemilik->pintu ?? '-',
+            'icon' => 'bi-droplet-half',
+            'title' => 'Pengolahan Limbah Domestik',
+            'value' => $pemilik->pengolahan_limbah_domestik ?? '-',
         ],
         [
-            'icon' => 'bi-windows',
-            'title' => 'Jendela',
-            'value' => $pemilik->jendela ?? '-',
+            'icon' => 'bi-water',
+            'title' => 'Sistem Sanitasi',
+            'value' => $pemilik->sistem_sanitasi ?? '-',
+        ],
+        [
+            'icon' => 'bi-cloud-drizzle',
+            'title' => 'Pengolahan Air Hujan',
+            'value' => $pemilik->pengolahan_air_hujan ?? '-',
+        ],
+        [
+            'icon' => 'bi-droplet',
+            'title' => 'Sistem Drainase',
+            'value' => $pemilik->sistem_drainase ?? '-',
+        ],
+        [
+            'icon' => 'bi-fire',
+            'title' => 'Instalasi Gas',
+            'value' => $pemilik->instalasi_gas ?? '-',
+        ],
+        [
+            'icon' => 'bi-clipboard-check',
+            'title' => 'Dokumen Lampiran Sanitasi',
+            'value' => $pemilik->dokumen_lampiran_sanitasi ?? '-',
+        ],
+        [
+            'icon' => 'bi-droplet-fill',
+            'title' => 'Sumber Air',
+            'value' => $pemilik->sumber_air ?? '-',
+        ],
+        [
+            'icon' => 'bi-cash-stack',
+            'title' => 'Biaya Retribusi',
+            'value' => $pemilik->biaya_retribusi ?? '-',
+        ],
+        [
+            'icon' => 'bi-envelope-check',
+            'title' => 'Surat Advis KRK',
+            'value' => $pemilik->surat_advis_krk ?? '-',
+        ],
+        [
+            'icon' => 'bi-envelope',
+            'title' => 'Surat Permohonan IMB',
+            'value' => $pemilik->surat_permohonan_imb ?? '-',
+        ],
+        [
+            'icon' => 'bi-envelope-open',
+            'title' => 'Surat Permohonan SLF',
+            'value' => $pemilik->surat_permohonan_slf ?? '-',
+        ],
+        [
+            'icon' => 'bi-person-vcard',
+            'title' => 'Fotocopy Identitas Pemohon',
+            'value' => $pemilik->fotocopy_identitas_pemohon ?? '-',
+        ],
+        [
+            'icon' => 'bi-person-lines-fill',
+            'title' => 'Surat Kuasa IMB',
+            'value' => $pemilik->surat_kuasa_imb ?? '-',
+        ],
+        [
+            'icon' => 'bi-shield-shaded',
+            'title' => 'Surat K3',
+            'value' => $pemilik->surat_k3 ?? '-',
+        ],
+        [
+            'icon' => 'bi-geo-alt',
+            'title' => 'Rekomendasi Desa',
+            'value' => $pemilik->rekomendasi_desa ?? '-',
+        ],
+        [
+            'icon' => 'bi-building',
+            'title' => 'Rekomendasi Kecamatan',
+            'value' => $pemilik->rekom_kecamatan ?? '-',
+        ],
+        [
+            'icon' => 'bi-file-earmark-lock',
+            'title' => 'Surat Kepemilikan Tanah/Sewa',
+            'value' => $pemilik->surat_kepemilikan_tanah_sewa ?? '-',
+        ],
+        [
+            'icon' => 'bi-file-earmark-check',
+            'title' => 'Copy Sertifikat Tanah',
+            'value' => $pemilik->copy_sertif_tanah ?? '-',
+        ],
+        [
+            'icon' => 'bi-receipt',
+            'title' => 'Surat Pajak',
+            'value' => $pemilik->surat_pajak ?? '-',
+        ],
+        [
+            'icon' => 'bi-building-check',
+            'title' => 'SIPPT',
+            'value' => $pemilik->sippt ?? '-',
+        ],
+        [
+            'icon' => 'bi-table',
+            'title' => 'Tabel Ceklis Dokumen',
+            'value' => $pemilik->tabel_ceklis_dokumen ?? '-',
+        ],
+        [
+            'icon' => 'bi-layout-text-window',
+            'title' => 'Tabel Ceklis Teknis',
+            'value' => $pemilik->tabel_ceklis_teknis ?? '-',
+        ],
+        [
+            'icon' => 'bi-cash-coin',
+            'title' => 'Surat Setoran Retribusi Daerah',
+            'value' => $pemilik->surat_setoran_retribusi_daerah ?? '-',
+        ],
+        [
+            'icon' => 'bi-file-spreadsheet',
+            'title' => 'Surat Ketetapan Retribusi Daerah',
+            'value' => $pemilik->surat_ketetapan_retribusi_daerah ?? '-',
+        ],
+        [
+            'icon' => 'bi-journal-check',
+            'title' => 'Berita Acara Pemeriksaan',
+            'value' => $pemilik->berita_acara_pemeriksaan ?? '-',
         ],
     ];
 @endphp
