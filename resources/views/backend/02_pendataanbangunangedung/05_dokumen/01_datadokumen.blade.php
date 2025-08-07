@@ -432,12 +432,12 @@ th {
                 animation: fadeIn 0.5s ease-in-out;
             ">
                 <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-                Data Informasi Struktur Bangunan Gedung Tidak Ditemukan !!
+                Data Informasi Dokumen Bangunan Gedung Tidak Ditemukan !!
             </div>
 
             {{-- Tombol Tambah Data --}}
             <div class="text-center mt-4">
-           <a href="{{ route('bedatabgstrukturcreate', $data->id) }}" class="button-baru">
+           <a href="{{ route('bedatabgdokumencreate', $data->id) }}" class="button-baru">
     <i class="bi bi-plus-circle me-1"></i> Tambahkan Data
 </a>
  </div>
