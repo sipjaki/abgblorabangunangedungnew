@@ -333,7 +333,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #fdd100; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Perbaikan Informasi Data Struktur Bangunan Gedung
+    Perbaikan Informasi Intensitas Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
@@ -350,77 +350,116 @@ th {
 {{-- Luas Tanah --}}
 {{-- Tingkat Kompleksitas --}}
 {{-- Struktur Bawah --}}
+{{-- Nilai BG Didirikan --}}
 <div class="col-md-6">
     <label class="form-label">
-        <i class="bi bi-house-door-fill me-1" style="color: blue;"></i> Struktur Bawah
+        <i class="bi bi-currency-dollar me-1" style="color: blue;"></i> Nilai BG Didirikan
     </label>
-    <input type="text" name="struktur_bawah" class="form-control @error('struktur_bawah') is-invalid @enderror"
-           value="{{ old('struktur_bawah', $data->struktur_bawah) }}">
-    @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <input type="text" name="nilaibgdidirikan" class="form-control @error('nilaibgdidirikan') is-invalid @enderror"
+           value="{{ old('nilaibgdidirikan', $data->nilaibgdidirikan) }}">
+    @error('nilaibgdidirikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-{{-- Struktur Atas --}}
+{{-- Nilai BG Saat Ini --}}
 <div class="col-md-6">
     <label class="form-label">
-        <i class="bi bi-building me-1" style="color: blue;"></i> Struktur Atas
+        <i class="bi bi-currency-dollar me-1" style="color: blue;"></i> Nilai BG Saat Ini
     </label>
-    <select name="struktur_atas" class="form-select @error('struktur_atas') is-invalid @enderror">
-        <option value="">-- Pilih --</option>
-        @foreach(['Kayu', 'Beton', 'Baja', 'Lainnya'] as $val)
-            <option value="{{ $val }}" {{ old('struktur_atas', $data->struktur_atas) == $val ? 'selected' : '' }}>{{ $val }}</option>
-        @endforeach
-    </select>
-    @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <input type="text" name="nilaibgsaatini" class="form-control @error('nilaibgsaatini') is-invalid @enderror"
+           value="{{ old('nilaibgsaatini', $data->nilaibgsaatini) }}">
+    @error('nilaibgsaatini')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
-{{-- Struktur Atap --}}
+
+{{-- KDB --}}
 <div class="col-md-6">
     <label class="form-label">
-        <i class="bi bi-building me-1" style="color: blue;"></i> Struktur Atap
+        <i class="bi bi-percent me-1" style="color: blue;"></i> Koefisien Dasar Bangunan (KDB)
     </label>
-    <select name="struktur_atap" class="form-select @error('struktur_atap') is-invalid @enderror">
-        <option value="">-- Pilih --</option>
-        @foreach(['Kayu', 'Beton', 'Baja', 'Lainnya'] as $val)
-            <option value="{{ $val }}" {{ old('struktur_atap', $data->struktur_atap) == $val ? 'selected' : '' }}>
-                {{ $val }}
-            </option>
-        @endforeach
-    </select>
-    @error('struktur_atap')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
+    <input type="text" name="koefisien_dasar_bangunan" class="form-control @error('koefisien_dasar_bangunan') is-invalid @enderror"
+           value="{{ old('koefisien_dasar_bangunan', $data->koefisien_dasar_bangunan) }}">
+    @error('koefisien_dasar_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+{{-- KLB --}}
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-percent me-1" style="color: blue;"></i> Koefisien Lantai Bangunan (KLB)
+    </label>
+    <input type="text" name="koefisien_lantai_bangunan" class="form-control @error('koefisien_lantai_bangunan') is-invalid @enderror"
+           value="{{ old('koefisien_lantai_bangunan', $data->koefisien_lantai_bangunan) }}">
+    @error('koefisien_lantai_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+{{-- KDH --}}
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-tree-fill me-1" style="color: green;"></i> Koefisien Daerah Hijau (KDH)
+    </label>
+    <input type="text" name="koefisien_daerah_hijau" class="form-control @error('koefisien_daerah_hijau') is-invalid @enderror"
+           value="{{ old('koefisien_daerah_hijau', $data->koefisien_daerah_hijau) }}">
+    @error('koefisien_daerah_hijau')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+{{-- Koefisien Tapak Basement --}}
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-layers me-1" style="color: blue;"></i> Koefisien Tapak Basement
+    </label>
+    <input type="text" name="koefisien_tapak_basement" class="form-control @error('koefisien_tapak_basement') is-invalid @enderror"
+           value="{{ old('koefisien_tapak_basement', $data->koefisien_tapak_basement) }}">
+    @error('koefisien_tapak_basement')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+{{-- Garis Sempadan Bangunan --}}
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-bounding-box me-1" style="color: red;"></i> Garis Sempadan Bangunan (GSB)
+    </label>
+    <input type="text" name="garis_sempadan_bangunan" class="form-control @error('garis_sempadan_bangunan') is-invalid @enderror"
+           value="{{ old('garis_sempadan_bangunan', $data->garis_sempadan_bangunan) }}">
+    @error('garis_sempadan_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 
+    <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
+        <i class="bi bi-info-circle fs-5"></i>
+        <h5 class="mb-0" style="font-size: 16px;">Perbaikan Informasi Data Dokumen Bangunan Gedung </h5>
+    </div>
 {{-- Komponen Bangunan Lainnya --}}
 @php
-    $opsiKondisi = ['Baik', 'T1', 'T2', 'T3', 'T4'];
-    $atributKomponen = [
-        // 'struktur_atap' => 'Struktur Atap',
-        'rangka_atap'   => 'Rangka Atap',
-        'balok'         => 'Balok',
-        'kolom'         => 'Kolom',
-        'pondasi'       => 'Pondasi',
-        'dinding'       => 'Dinding',
-        'genteng'       => 'Genteng',
-        'plafon'        => 'Plafon',
-        'lantai'        => 'Lantai',
-        'pintu'         => 'Pintu',
-        'jendela'       => 'Jendela',
+    $opsiAdaTidak = ['Ada', 'Tidak Ada'];
+    $atributDokumenTeknis = [
+        'gambar_teknis_rencana' => 'Gambar Teknis Rencana',
+        'gambar_sesuai_pelaksana' => 'Gambar Sesuai Pelaksana',
+        'ruang_terbuka_hijau' => 'Ruang Terbuka Hijau',
+        'luas_rth' => 'Luas RTH',
+        'dokumen_rth' => 'Dokumen RTH',
+        'limbah_b3' => 'Limbah B3',
+        'sistem_penampungan_pengelolaan' => 'Sistem Penampungan & Pengelolaan',
+        'dokumen_lingkungan_amdal' => 'Dokumen Lingkungan / Amdal',
+        'dokumen_aksesibilitas' => 'Dokumen Aksesibilitas',
+        'jenis_transportasi_bg' => 'Jenis Transportasi BG',
+        'dokumen_transport_bg' => 'Dokumen Transportasi BG',
+        'dokumen_teknis_tanah' => 'Dokumen Teknis Tanah',
     ];
 @endphp
 
-@foreach($atributKomponen as $field => $label)
+@foreach($atributDokumenTeknis as $field => $label)
     <div class="col-md-6">
         <label class="form-label">
-            <i class="bi bi-check-circle me-1" style="color: blue;"></i> {{ $label }}
+            <i class="bi bi-file-earmark-check me-1" style="color: blue;"></i> {{ $label }}
         </label>
         <select name="{{ $field }}" class="form-select @error($field) is-invalid @enderror">
             <option value="">-- Pilih --</option>
-            @foreach($opsiKondisi as $val)
-                <option value="{{ $val }}" {{ old($field, $data->$field) == $val ? 'selected' : '' }}>{{ $val }}</option>
+            @foreach($opsiAdaTidak as $val)
+                <option value="{{ $val }}" {{ old($field, $data->$field) == $val ? 'selected' : '' }}>
+                    {{ $val }}
+                </option>
             @endforeach
         </select>
-        @error($field)<div class="invalid-feedback">{{ $message }}</div>@enderror
+        @error($field)
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
 @endforeach
 
