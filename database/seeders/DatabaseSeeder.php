@@ -37902,7 +37902,7 @@ for ($i = 1; $i <= 973; $i++) {
 }
 
 // DATA BARU PENDATAAN BANGUNAN GEDUNG DOKUMEN MEP STRUKTUB BANGUNAN
-for ($i = 1; $i <= 973; $i++) {
+for ($i = 1; $i <= 972; $i++) {
     databgdokumenmepbangunan::create([
         'databgkepemilikan_id' => $i,
         'dokumen_lampiran_struktur' => null,
