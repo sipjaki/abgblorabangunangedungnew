@@ -37875,7 +37875,7 @@ for ($i = 2; $i <= 114; $i++) {
 // }
 
 
-for ($i = 1; $i <= 973; $i++) {
+for ($i = 1; $i <= 972; $i++) {
     databgintensitasbangunan::create([
         'databgkepemilikan_id' => $i,
         'nilaibgdidirikan' => null,

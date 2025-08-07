@@ -1533,6 +1533,23 @@ public function bedatabgdokumen($id)
     ]);
 }
 
+public function bedatabgdokumencreate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = databgkepemilikan::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.02_pendataanbangunangedung.05_strukturbangunan.02_tambahdokumebangunangedung', [
+        'title' => 'Tambah Data Informasi Dokumen Bangunan Gedung ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 
 }
 
