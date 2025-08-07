@@ -53,6 +53,11 @@ class databgkepemilikan extends Model
         return $this->hasMany(databgstatus::class);
     }
 
+    public function databgintensitasbangunan()
+    {
+        return $this->hasMany(databgintensitasbangunan::class);
+    }
+
 
 
 }

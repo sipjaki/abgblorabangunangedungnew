@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 // namespace App\Models;
 
+use App\Models\databgintensitasbangunan;
 use App\Models\agendasertifikasi;
 use App\Models\bantuangambarinfo;
 use App\Models\agendastatus;
@@ -37872,6 +37873,33 @@ for ($i = 2; $i <= 114; $i++) {
 //         'kepadatan_lokasi' => 'Sedang'
 //     ]);
 // }
+
+
+for ($i = 1; $i <= 973; $i++) {
+    databgintensitasbangunan::create([
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ]);
+}
+
 
 // Records 115-132 (Khusus pattern)
 for ($i = 115; $i <= 132; $i++) {
