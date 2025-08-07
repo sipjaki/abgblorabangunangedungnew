@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 // namespace App\Models;
 
+use App\Models\databgdokumenmepbangunan;
 use App\Models\databgintensitasbangunan;
 use App\Models\agendasertifikasi;
 use App\Models\bantuangambarinfo;
@@ -588,8 +589,8 @@ User::create([
 
 User::create([
     'id'  => 67,
-    'name'  => 'Konsultan Pendataan Bangunan Gedung',
-    'username' => 'Konsultan Pendataan Bangunan Gedung',
+    'name'  => 'CV Duta Cahaya Design',
+    'username' => 'CV Duta Cahaya Design',
     'statusadmin_id' => '5',
     'avatar' => 'user/avatar/foto4.png',
     'email' => 'bangunandpuprkabblora11@gmail.com',
@@ -37874,7 +37875,7 @@ for ($i = 2; $i <= 114; $i++) {
 //     ]);
 // }
 
-
+// DATA DOKUMEN BANGUNAN GEDUNG
 for ($i = 1; $i <= 973; $i++) {
     databgintensitasbangunan::create([
         'databgkepemilikan_id' => $i,
@@ -37897,6 +37898,49 @@ for ($i = 1; $i <= 973; $i++) {
         'jenis_transportasi_bg' => null,
         'dokumen_transport_bg' => null,
         'dokumen_teknis_tanah' => null,
+    ]);
+}
+
+// DATA BARU PENDATAAN BANGUNAN GEDUNG DOKUMEN MEP STRUKTUB BANGUNAN
+for ($i = 1; $i <= 973; $i++) {
+    databgdokumenmepbangunan::create([
+        'databgkepemilikan_id' => $i,
+        'dokumen_lampiran_struktur' => null,
+        'mpk_rdkt' => null,
+        'dokumen_lampiran' => null,
+        'penangkal_kebakaran' => null,
+        'no_bundel_dok_teknis' => null,
+        'daya_listrik' => null,
+        'dokumen_instalasi_listrik' => null,
+        'instalasi_penangkal_listrik' => null,
+        'dokumen_pencahayaan' => null,
+        'dokumen_instalasi_komunikasi' => null,
+        'instalasi_komunikasi' => null,
+        'pengolahan_limbah_domestik' => null,
+        'sistem_sanitasi' => null,
+        'pengolahan_air_hujan' => null,
+        'sistem_drainase' => null,
+        'instalasi_gas' => null,
+        'dokumen_lampiran_sanitasi' => null,
+        'sumber_air' => null,
+        'biaya_retribusi' => null,
+        'surat_advis_krk' => null,
+        'surat_permohonan_imb' => null,
+        'surat_permohonan_slf' => null,
+        'fotocopy_identitas_pemohon' => null,
+        'surat_kuasa_imb' => null,
+        'surat_k3' => null,
+        'rekomendasi_desa' => null,
+        'rekom_kecamatan' => null,
+        'surat_kepemilikan_tanah_sewa' => null,
+        'copy_sertif_tanah' => null,
+        'surat_pajak' => null,
+        'sippt' => null,
+        'tabel_ceklis_dokumen' => null,
+        'tabel_ceklis_teknis' => null,
+        'surat_setoran_retribusi_daerah' => null,
+        'surat_ketetapan_retribusi_daerah' => null,
+        'berita_acara_pemeriksaan' => null,
     ]);
 }
 
