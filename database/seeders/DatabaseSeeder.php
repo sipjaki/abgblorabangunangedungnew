@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 // namespace App\Models;
 
+use App\Models\databgtingkatkerusahan;
 use App\Models\databgdokumenmepbangunan;
 use App\Models\databgintensitasbangunan;
 use App\Models\agendasertifikasi;
