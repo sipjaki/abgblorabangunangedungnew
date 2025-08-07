@@ -252,79 +252,108 @@ th {
 @php
     $infoItems = [
         [
-            'icon' => 'bi-house-door',
-            'title' => 'Struktur Bawah',
-            'value' => $pemilik->struktur_bawah ?? '-',
+            'icon' => 'bi-cash-coin',
+            'title' => 'Nilai BG Didirikan',
+            'value' => $pemilik->nilaibgdidirikan ?? '-',
         ],
         [
-            'icon' => 'bi-house',
-            'title' => 'Struktur Atas',
-            'value' => $pemilik->struktur_atas ?? '-',
-        ],
-        [
-            'icon' => 'bi-house-add',
-            'title' => 'Struktur Atap',
-            'value' => $pemilik->struktur_atap ?? '-',
+            'icon' => 'bi-currency-dollar',
+            'title' => 'Nilai BG Saat Ini',
+            'value' => $pemilik->nilaibgsaatini ?? '-',
         ],
         [
             'icon' => 'bi-diagram-3',
-            'title' => 'Rangka Atap',
-            'value' => $pemilik->rangka_atap ?? '-',
+            'title' => 'Koefisien Dasar Bangunan',
+            'value' => $pemilik->koefisien_dasar_bangunan ?? '-',
         ],
         [
-            'icon' => 'bi-border-width',
-            'title' => 'Balok',
-            'value' => $pemilik->balok ?? '-',
+            'icon' => 'bi-diagram-3-fill',
+            'title' => 'Koefisien Lantai Bangunan',
+            'value' => $pemilik->koefisien_lantai_bangunan ?? '-',
         ],
         [
-            'icon' => 'bi-columns-gap',
-            'title' => 'Kolom',
-            'value' => $pemilik->kolom ?? '-',
+            'icon' => 'bi-tree',
+            'title' => 'Koefisien Daerah Hijau',
+            'value' => $pemilik->koefisien_daerah_hijau ?? '-',
         ],
         [
-            'icon' => 'bi-box',
-            'title' => 'Pondasi',
-            'value' => $pemilik->pondasi ?? '-',
+            'icon' => 'bi-layers-half',
+            'title' => 'Koefisien Tapak Basement',
+            'value' => $pemilik->koefisien_tapak_basement ?? '-',
         ],
         [
-            'icon' => 'bi-bricks',
-            'title' => 'Dinding',
-            'value' => $pemilik->dinding ?? '-',
+            'icon' => 'bi-arrows-move',
+            'title' => 'Garis Sempadan Bangunan',
+            'value' => $pemilik->garis_sempadan_bangunan ?? '-',
         ],
         [
-            'icon' => 'bi-cloud',
-            'title' => 'Genteng',
-            'value' => $pemilik->genteng ?? '-',
+            'icon' => 'bi-file-earmark-text',
+            'title' => 'Gambar Teknis Rencana',
+            'value' => $pemilik->gambar_teknis_rencana ?? '-',
         ],
         [
-            'icon' => 'bi-menu-button-wide',
-            'title' => 'Plafon',
-            'value' => $pemilik->plafon ?? '-',
+            'icon' => 'bi-file-earmark-check',
+            'title' => 'Gambar Sesuai Pelaksana',
+            'value' => $pemilik->gambar_sesuai_pelaksana ?? '-',
         ],
         [
-            'icon' => 'bi-grid-1x2',
-            'title' => 'Lantai',
-            'value' => $pemilik->lantai ?? '-',
+            'icon' => 'bi-tree-fill',
+            'title' => 'Ruang Terbuka Hijau',
+            'value' => $pemilik->ruang_terbuka_hijau ?? '-',
         ],
         [
-            'icon' => 'bi-door-open',
-            'title' => 'Pintu',
-            'value' => $pemilik->pintu ?? '-',
+            'icon' => 'bi-aspect-ratio',
+            'title' => 'Luas RTH',
+            'value' => $pemilik->luas_rth ?? '-',
         ],
         [
-            'icon' => 'bi-windows',
-            'title' => 'Jendela',
-            'value' => $pemilik->jendela ?? '-',
+            'icon' => 'bi-file-earmark-richtext',
+            'title' => 'Dokumen RTH',
+            'value' => $pemilik->dokumen_rth ?? '-',
+        ],
+        [
+            'icon' => 'bi-exclamation-triangle',
+            'title' => 'Limbah B3',
+            'value' => $pemilik->limbah_b3 ?? '-',
+        ],
+        [
+            'icon' => 'bi-droplet-half',
+            'title' => 'Sistem Penampungan',
+            'value' => $pemilik->sistem_penampungan_pengelolaan ?? '-',
+        ],
+        [
+            'icon' => 'bi-journal-text',
+            'title' => 'Dokumen Lingkungan (Amdal)',
+            'value' => $pemilik->dokumen_lingkungan_amdal ?? '-',
+        ],
+        [
+            'icon' => 'bi-person-wheelchair',
+            'title' => 'Dokumen Aksesibilitas',
+            'value' => $pemilik->dokumen_aksesibilitas ?? '-',
+        ],
+        [
+            'icon' => 'bi-truck-front',
+            'title' => 'Jenis Transportasi BG',
+            'value' => $pemilik->jenis_transportasi_bg ?? '-',
+        ],
+        [
+            'icon' => 'bi-folder-symlink',
+            'title' => 'Dokumen Transportasi BG',
+            'value' => $pemilik->dokumen_transport_bg ?? '-',
+        ],
+        [
+            'icon' => 'bi-geo-alt',
+            'title' => 'Dokumen Teknis Tanah',
+            'value' => $pemilik->dokumen_teknis_tanah ?? '-',
         ],
     ];
 @endphp
-
 
         <div class="col-12 mb-4 mt-5">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
                 <div class="card-header bg-primary text-white d-flex align-items-center">
                     <i class="bi bi-person-fill me-2 fs-5"></i>
-                    <h5 style="font-size: 16px;" class="mb-0">Informasi Data Struktur Bangunan Gedung </h5>
+                    <h5 style="font-size: 16px;" class="mb-0">Informasi Data Dokumen Bangunan Gedung </h5>
                 </div>
 
                 <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
