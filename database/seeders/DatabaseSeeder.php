@@ -37875,6 +37875,59 @@ for ($i = 2; $i <= 114; $i++) {
 //     ]);
 // }
 
+// DATA BG TINGKAT KERUSAKAN BANGUNAN GEDUNG
+for ($i = 1; $i <= 973; $i++) {
+    databgtingkatkerusahan::create([
+        'databgkepemilikan_id' => $i,
+
+        // BAGIAN 1
+        'struktur_bangunan_bawah' => null,
+        'struktur_bangunan_atas' => null,
+        'struktur_atap' => null,
+        'indikasi_kerusakan1' => null,
+        'tingkat_kerusakan1' => null,
+
+        // BAGIAN 2
+        'pondasi' => null,
+        'indikasi_kerusakan2' => null,
+        'tingkat_kerusakan2' => null,
+
+        // BAGIAN 3
+        'struktur' => null,
+        'indikasi_kerusakan3' => null,
+        'tingkat_kerusakan3' => null,
+
+        // BAGIAN 4
+        'atap' => null,
+        'indikasi_kerusakan4' => null,
+        'tingkat_kerusakan4' => null,
+
+        // BAGIAN 5
+        'lantai' => null,
+        'indikasi_kerusakan5' => null,
+        'tingkat_kerusakan5' => null,
+
+        // BAGIAN 6
+        'dinding' => null,
+        'indikasi_kerusakan6' => null,
+        'tingkat_kerusakan6' => null,
+
+        // BAGIAN 7
+        'plafond' => null,
+        'indikasi_kerusakan7' => null,
+        'tingkat_kerusakan7' => null,
+
+        // BAGIAN 8
+        'utilitas' => null,
+        'indikasi_kerusakan8' => null,
+        'tingkat_kerusakan8' => null,
+
+        'finishing' => null,
+        'total_nilai_kerusakan' => null,
+    ]);
+}
+
+
 // DATA DOKUMEN BANGUNAN GEDUNG
 for ($i = 1; $i <= 973; $i++) {
     databgintensitasbangunan::create([
@@ -37902,7 +37955,7 @@ for ($i = 1; $i <= 973; $i++) {
 }
 
 // DATA BARU PENDATAAN BANGUNAN GEDUNG DOKUMEN MEP STRUKTUB BANGUNAN
-for ($i = 1; $i <= 972; $i++) {
+for ($i = 1; $i <= 973; $i++) {
     databgdokumenmepbangunan::create([
         'databgkepemilikan_id' => $i,
         'dokumen_lampiran_struktur' => null,
