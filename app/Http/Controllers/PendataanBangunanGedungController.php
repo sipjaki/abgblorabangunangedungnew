@@ -1605,7 +1605,7 @@ public function bedatabgdokumencreatenew(Request $request)
     ]);
 
     session()->flash('create', 'Data dokumen bangunan gedung berhasil ditambahkan!');
-    return redirect()->route('bedatabgstruktur', ['id' => $validated['databgkepemilikan_id']]);
+    return redirect()->route('bedatabgdokumen', ['id' => $validated['databgkepemilikan_id']]);
 }
 
 
