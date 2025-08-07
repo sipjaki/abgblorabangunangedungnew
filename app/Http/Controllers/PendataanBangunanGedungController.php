@@ -1805,5 +1805,63 @@ public function bedatabgmebangunanupdate($id)
         'user' => Auth::user()
     ]);
 }
+
+public function bedatabgmebangunanupdatenew(Request $request, $id)
+{
+    $validated = $request->validate([
+        'databgkepemilikan_id' => 'nullable|integer',
+
+        'dokumen_lampiran_struktur' => 'nullable|string|max:255',
+        'mpk_rdkt' => 'nullable|string|max:255',
+        'dokumen_lampiran' => 'nullable|string|max:255',
+        'penangkal_kebakaran' => 'nullable|string|max:255',
+        'no_bundel_dok_teknis' => 'nullable|string|max:255',
+        'daya_listrik' => 'nullable|string|max:255',
+        'dokumen_instalasi_listrik' => 'nullable|string|max:255',
+        'instalasi_penangkal_listrik' => 'nullable|string|max:255',
+        'dokumen_pencahayaan' => 'nullable|string|max:255',
+        'dokumen_instalasi_komunikasi' => 'nullable|string|max:255',
+        'instalasi_komunikasi' => 'nullable|string|max:255',
+        'pengolahan_limbah_domestik' => 'nullable|string|max:255',
+        'sistem_sanitasi' => 'nullable|string|max:255',
+        'pengolahan_air_hujan' => 'nullable|string|max:255',
+        'sistem_drainase' => 'nullable|string|max:255',
+        'instalasi_gas' => 'nullable|string|max:255',
+        'dokumen_lampiran_sanitasi' => 'nullable|string|max:255',
+        'sumber_air' => 'nullable|string|max:255',
+        'biaya_retribusi' => 'nullable|string|max:255',
+        'surat_advis_krk' => 'nullable|string|max:255',
+        'surat_permohonan_imb' => 'nullable|string|max:255',
+        'surat_permohonan_slf' => 'nullable|string|max:255',
+        'fotocopy_identitas_pemohon' => 'nullable|string|max:255',
+
+        // Pilihan YA/TIDAK
+        'surat_kuasa_imb' => 'nullable|string|max:255',
+        'surat_k3' => 'nullable|string|max:255',
+        'rekomendasi_desa' => 'nullable|string|max:255',
+        'rekom_kecamatan' => 'nullable|string|max:255',
+        'surat_kepemilikan_tanah_sewa' => 'nullable|string|max:255',
+        'copy_sertif_tanah' => 'nullable|string|max:255',
+        'surat_pajak' => 'nullable|string|max:255',
+        'sippt' => 'nullable|string|max:255',
+        'tabel_ceklis_dokumen' => 'nullable|string|max:255',
+        'tabel_ceklis_teknis' => 'nullable|string|max:255',
+        'surat_setoran_retribusi_daerah' => 'nullable|string|max:255',
+        'surat_ketetapan_retribusi_daerah' => 'nullable|string|max:255',
+        'berita_acara_pemeriksaan' => 'nullable|string|max:255',
+    ], [
+        '*.max' => 'Maksimal 255 karakter.',
+        'databgkepemilikan_id.integer' => 'ID Kepemilikan harus berupa angka.',
+    ]);
+
+    $data = databgdokumenmepbangunan::findOrFail($id);
+
+    $data->update($validated);
+
+    session()->flash('update', 'Data MEP bangunan berhasil diperbarui!');
+    return redirect()->back();
+}
+
+
 }
 
