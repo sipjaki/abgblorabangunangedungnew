@@ -1580,7 +1580,7 @@ public function bedatabgdokumencreatenew(Request $request)
         'databgkepemilikan_id.numeric' => 'ID Kepemilikan harus berupa angka.',
     ]);
 
-    databgstrukturbangunan::create([
+    databgintensitasbangunan::create([
         'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
         'nilaibgdidirikan' => $validated['nilaibgdidirikan'] ?? null,
         'nilaibgsaatini' => $validated['nilaibgsaatini'] ?? null,
