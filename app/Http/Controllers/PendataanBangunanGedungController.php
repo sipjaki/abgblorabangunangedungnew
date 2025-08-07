@@ -15,6 +15,7 @@ use App\Models\databgpeprofilbangunangedung;
 use App\Models\databgstatus;
 use App\Models\databgstrukturbangunan;
 use App\Models\databgtanah;
+use App\Models\databgtingkatkerusahan;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\kepemilikanbangunangedung;
@@ -1860,6 +1861,36 @@ public function bedatabgmebangunanupdatenew(Request $request, $id)
 
     session()->flash('update', 'Data MEP bangunan berhasil diperbarui!');
     return redirect()->back();
+}
+
+
+public function bedatabgstrukrrusak($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Cari data pbg berdasarkan ID
+    $data = databgkepemilikan::findOrFail($id);
+
+    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
+    $subdatapemilik = databgtingkatkerusahan::where('databgkepemilikan_id', $data->id)->paginate(15);
+
+    // Hitung nomor urut mulai untuk paginasi
+    $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+
+    // Ambil data jenis pengajuan
+    // $datapbgslf = jenispengajuanpbgslfper::all();
+
+    // Kirim data ke view
+    return view('backend.02_pendataanbangunangedung.05_tingkatkerusakan.01_datatingkatkerusakan', [
+        'title' => 'Informasi Data Struktur & Tingkat Kerusakan Bangunan Gedung',
+        'title_halaman' => 'Informasi Data Struktur & Tingkat Kerusakan Bangunan Gedung',
+        'user' => $user,
+        'data' => $data,
+        // 'datapbgslf' => $datapbgslf,
+        'subdatapemilik' => $subdatapemilik,
+        'start' => $start,
+    ]);
 }
 
 

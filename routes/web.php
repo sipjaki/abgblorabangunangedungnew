@@ -153,6 +153,9 @@ Route::post('/bedatabgmebangunancreatenew', [PendataanBangunanGedungController::
 Route::get('/bedatabgmebangunanupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgmebangunanupdate'])->middleware('auth')->name('bedatabgmebangunanupdate');
 Route::put('/bedatabgmebangunanupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgmebangunanupdatenew'])->middleware('auth')->name('bedatabgmebangunanupdatenew');
 
+// 04 PENDATAAN BANGUNAN GEDUNG STRUKTUR DAN TINGKAT KERUSAKAN BANGUNAN GEDUNG
+Route::get('/bedatabgstrukrrusak/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukrrusak'])->middleware('auth')->name('bedatabgstrukrrusak');
+
 // 04 PENDATAAN BANGUNAN GEDUNG STRUKTUR BANGUNAN GEDUNG
 Route::get('/bedatabgstruktur/{id}', [PendataanBangunanGedungController::class, 'bedatabgstruktur'])->middleware('auth')->name('bedatabgstruktur');
 Route::get('/bedatabgstrukturupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturupdate'])->middleware('auth')->name('bedatabgstrukturupdate');
