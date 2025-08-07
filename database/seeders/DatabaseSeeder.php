@@ -37877,7 +37877,7 @@ for ($i = 2; $i <= 114; $i++) {
 // }
 
 // DATA BG TINGKAT KERUSAKAN BANGUNAN GEDUNG
-for ($i = 1; $i <= 973; $i++) {
+for ($i = 1; $i <= 972; $i++) {
     databgtingkatkerusahan::create([
         'databgkepemilikan_id' => $i,
 
