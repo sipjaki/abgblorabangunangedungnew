@@ -1894,5 +1894,22 @@ public function bedatabgstrukrrusak($id)
 }
 
 
+public function bedatabgstrukrrusakcreate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = databgkepemilikan::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.02_pendataanbangunangedung.05_tingkatkerusakan.02_tambahdatatingkatkerusakan', [
+        'title' => 'Tambah Data Informasi Struktur & Tingkat Kerusakan Bangunan Gedung ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 }
 
