@@ -1608,6 +1608,24 @@ public function bedatabgdokumencreatenew(Request $request)
     return redirect()->route('bedatabgdokumen', ['id' => $validated['databgkepemilikan_id']]);
 }
 
+public function bedatabgdokumenupdate($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = databgkepemilikan::find($id);
+    $databantuanteknis = databgintensitasbangunan::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.02_pendataanbangunangedung.05_dokumen.03_updatedokumenbangunan', [
+        'title' => 'Perbaikan Data Dokumen Bangunan Gedung ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 
 }
 
