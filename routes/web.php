@@ -147,6 +147,8 @@ Route::put('/bedatabgdokumenupdatenew/{id}', [PendataanBangunanGedungController:
 
 // DATA DOKUMEN MEP STATUS BANGUNAN GEDUNG
 Route::get('/bedatabgmebangunan/{id}', [PendataanBangunanGedungController::class, 'bedatabgmebangunan'])->middleware('auth')->name('bedatabgmebangunan');
+Route::get('/bedatabgmebangunancreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgmebangunancreate'])->middleware('auth')->name('bedatabgmebangunancreate');
+// Route::post('/bedatabgstrukturcreatenew', [PendataanBangunanGedungController::class, 'bedatabgstrukturcreatenew'])->middleware('auth')->name('bedatabgstrukturcreatenew');
 
 // 04 PENDATAAN BANGUNAN GEDUNG STRUKTUR BANGUNAN GEDUNG
 Route::get('/bedatabgstruktur/{id}', [PendataanBangunanGedungController::class, 'bedatabgstruktur'])->middleware('auth')->name('bedatabgstruktur');

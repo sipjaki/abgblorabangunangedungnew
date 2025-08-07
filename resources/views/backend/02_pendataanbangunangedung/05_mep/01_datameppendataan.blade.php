@@ -522,7 +522,7 @@ th {
 
             {{-- Tombol Tambah Data --}}
             <div class="text-center mt-4">
-           <a href="{{ route('bedatabgstrukturcreate', $data->id) }}" class="button-baru">
+           <a href="{{ route('bedatabgmebangunancreate', $data->id) }}" class="button-baru">
     <i class="bi bi-plus-circle me-1"></i> Tambahkan Data
 </a>
  </div>
