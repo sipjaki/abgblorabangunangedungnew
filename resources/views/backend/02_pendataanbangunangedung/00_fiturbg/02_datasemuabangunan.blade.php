@@ -7,6 +7,7 @@
                 ['label' => 'Data Profil Bangunan Gedung', 'url' => '/bedatabgprofilbangunan/' . $id, 'icon' => 'bi-building-fill'],
                 ['label' => 'Klasifikasi Bangunan Gedung', 'url' => '/bedatabgklasifikasi/' . $id, 'icon' => 'bi-tags-fill'],
                 ['label' => 'Data Dokumen Bangunan Gedung', 'url' => '/bedatabgdokumen/' . $id, 'icon' => 'bi-building'], // INI FITUR MENU BARU
+          ['label' => 'Data Dokumen MEP Bangunan Gedung', 'url' => '/bedatabgmebangunan/' . $id, 'icon' => 'bi-tools'],
                 ['label' => 'Data Struktur Bangunan Gedung', 'url' => '/bedatabgstruktur/' . $id, 'icon' => 'bi-diagram-3-fill'],
                 ['label' => 'Data Status Bangunan Gedung', 'url' => '/bedatabgstatusbangunan/' . $id, 'icon' => 'bi-file-earmark-check-fill'],
             ];

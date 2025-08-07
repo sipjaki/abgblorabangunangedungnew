@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\bgkartuinventarisbangunan;
 use App\Models\databangunangedung;
+use App\Models\databgdokumenmepbangunan;
 use App\Models\databgintensitasbangunan;
 use App\Models\databgkepemilikan;
 use App\Models\databgklasifikasi;
@@ -1681,6 +1682,36 @@ public function bedatabgdokumenupdatenew(Request $request, $id)
 
     session()->flash('update', 'Data dokumen bangunan berhasil diperbarui!');
     return redirect()->back();
+}
+
+
+public function bedatabgmebangunan($id)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+    // Cari data pbg berdasarkan ID
+    $data = databgkepemilikan::findOrFail($id);
+
+    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
+    $subdatapemilik = databgdokumenmepbangunan::where('databgkepemilikan_id', $data->id)->paginate(15);
+
+    // Hitung nomor urut mulai untuk paginasi
+    $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+
+    // Ambil data jenis pengajuan
+    // $datapbgslf = jenispengajuanpbgslfper::all();
+
+    // Kirim data ke view
+    return view('backend.02_pendataanbangunangedung.05_dokumen.01_datamep', [
+        'title' => 'Informasi Data Dokumen MEP Bangunan Gedung',
+        'title_halaman' => 'Informasi Data Dokumen MEP Bangunan Gedung',
+        'user' => $user,
+        'data' => $data,
+        // 'datapbgslf' => $datapbgslf,
+        'subdatapemilik' => $subdatapemilik,
+        'start' => $start,
+    ]);
 }
 
 
