@@ -39,6 +39,9 @@ return new class extends Migration
             $table->string('surat_permohonan_imb')->nullable();
             $table->string('surat_permohonan_slf')->nullable();
             $table->string('fotocopy_identitas_pemohon')->nullable();
+
+
+            // PILIHAN YA DAN TIDAK
             $table->string('surat_kuasa_imb')->nullable();
             $table->string('surat_k3')->nullable();
             $table->string('rekomendasi_desa')->nullable();
