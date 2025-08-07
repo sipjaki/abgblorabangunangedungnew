@@ -333,7 +333,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #fdd100; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Perbaikan Informasi Data Struktur Bangunan Gedung
+    Perbaikan Informasi Data Dokumen MEP Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
@@ -346,77 +346,74 @@ th {
     <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
 <div class="row g-3 mt-2">
-    {{-- Status Hak Tanah --}}
-{{-- Luas Tanah --}}
-{{-- Tingkat Kompleksitas --}}
-{{-- Struktur Bawah --}}
-<div class="col-md-6">
-    <label class="form-label">
-        <i class="bi bi-house-door-fill me-1" style="color: blue;"></i> Struktur Bawah
-    </label>
-    <input type="text" name="struktur_bawah" class="form-control @error('struktur_bawah') is-invalid @enderror"
-           value="{{ old('struktur_bawah', $data->struktur_bawah) }}">
-    @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
 
-{{-- Struktur Atas --}}
-<div class="col-md-6">
-    <label class="form-label">
-        <i class="bi bi-building me-1" style="color: blue;"></i> Struktur Atas
-    </label>
-    <select name="struktur_atas" class="form-select @error('struktur_atas') is-invalid @enderror">
-        <option value="">-- Pilih --</option>
-        @foreach(['Kayu', 'Beton', 'Baja', 'Lainnya'] as $val)
-            <option value="{{ $val }}" {{ old('struktur_atas', $data->struktur_atas) == $val ? 'selected' : '' }}>{{ $val }}</option>
-        @endforeach
-    </select>
-    @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-{{-- Struktur Atap --}}
-<div class="col-md-6">
-    <label class="form-label">
-        <i class="bi bi-building me-1" style="color: blue;"></i> Struktur Atap
-    </label>
-    <select name="struktur_atap" class="form-select @error('struktur_atap') is-invalid @enderror">
-        <option value="">-- Pilih --</option>
-        @foreach(['Kayu', 'Beton', 'Baja', 'Lainnya'] as $val)
-            <option value="{{ $val }}" {{ old('struktur_atap', $data->struktur_atap) == $val ? 'selected' : '' }}>
-                {{ $val }}
-            </option>
-        @endforeach
-    </select>
-    @error('struktur_atap')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-
-{{-- Komponen Bangunan Lainnya --}}
 @php
-    $opsiKondisi = ['Baik', 'T1', 'T2', 'T3', 'T4'];
-    $atributKomponen = [
-        // 'struktur_atap' => 'Struktur Atap',
-        'rangka_atap'   => 'Rangka Atap',
-        'balok'         => 'Balok',
-        'kolom'         => 'Kolom',
-        'pondasi'       => 'Pondasi',
-        'dinding'       => 'Dinding',
-        'genteng'       => 'Genteng',
-        'plafon'        => 'Plafon',
-        'lantai'        => 'Lantai',
-        'pintu'         => 'Pintu',
-        'jendela'       => 'Jendela',
+    $fieldText = [
+        'dokumen_lampiran_struktur' => 'Dokumen Lampiran Struktur',
+        'mpk_rdkt' => 'MPK / RDKT',
+        'dokumen_lampiran' => 'Dokumen Lampiran',
+        'penangkal_kebakaran' => 'Penangkal Kebakaran',
+        'no_bundel_dok_teknis' => 'No. Bundel Dok. Teknis',
+        'daya_listrik' => 'Daya Listrik',
+        'dokumen_instalasi_listrik' => 'Dokumen Instalasi Listrik',
+        'instalasi_penangkal_listrik' => 'Instalasi Penangkal Petir',
+        'dokumen_pencahayaan' => 'Dokumen Pencahayaan',
+        'dokumen_instalasi_komunikasi' => 'Dokumen Instalasi Komunikasi',
+        'instalasi_komunikasi' => 'Instalasi Komunikasi',
+        'pengolahan_limbah_domestik' => 'Pengolahan Limbah Domestik',
+        'sistem_sanitasi' => 'Sistem Sanitasi',
+        'pengolahan_air_hujan' => 'Pengolahan Air Hujan',
+        'sistem_drainase' => 'Sistem Drainase',
+        'instalasi_gas' => 'Instalasi Gas',
+        'dokumen_lampiran_sanitasi' => 'Dokumen Lampiran Sanitasi',
+        'sumber_air' => 'Sumber Air',
+        'biaya_retribusi' => 'Biaya Retribusi',
+        'surat_advis_krk' => 'Surat Advis KRK',
+        'surat_permohonan_imb' => 'Surat Permohonan IMB',
+        'surat_permohonan_slf' => 'Surat Permohonan SLF',
+        'fotocopy_identitas_pemohon' => 'Fotokopi Identitas Pemohon',
     ];
+
+    $fieldSelect = [
+        'surat_kuasa_imb' => 'Surat Kuasa IMB',
+        'surat_k3' => 'Surat K3',
+        'rekomendasi_desa' => 'Rekomendasi Desa',
+        'rekom_kecamatan' => 'Rekomendasi Kecamatan',
+        'surat_kepemilikan_tanah_sewa' => 'Surat Kepemilikan Tanah / Sewa',
+        'copy_sertif_tanah' => 'Copy Sertifikat Tanah',
+        'surat_pajak' => 'Surat Pajak',
+        'sippt' => 'SIPPT',
+        'tabel_ceklis_dokumen' => 'Tabel Ceklis Dokumen',
+        'tabel_ceklis_teknis' => 'Tabel Ceklis Teknis',
+        'surat_setoran_retribusi_daerah' => 'Surat Setoran Retribusi Daerah',
+        'surat_ketetapan_retribusi_daerah' => 'Surat Ketetapan Retribusi Daerah',
+        'berita_acara_pemeriksaan' => 'Berita Acara Pemeriksaan',
+    ];
+
+    $yaTidak = ['Ya', 'Tidak'];
 @endphp
 
-@foreach($atributKomponen as $field => $label)
+{{-- INPUT TEXT --}}
+@foreach($fieldText as $field => $label)
     <div class="col-md-6">
         <label class="form-label">
-            <i class="bi bi-check-circle me-1" style="color: blue;"></i> {{ $label }}
+            <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> {{ $label }}
+        </label>
+        <input type="text" name="{{ $field }}" class="form-control @error($field) is-invalid @enderror"
+               value="{{ old($field, $data->$field) }}">
+        @error($field)<div class="invalid-feedback">{{ $message }}</div>@enderror
+    </div>
+@endforeach
+
+{{-- INPUT YA / TIDAK --}}
+@foreach($fieldSelect as $field => $label)
+    <div class="col-md-6">
+        <label class="form-label">
+            <i class="bi bi-check2-square me-1" style="color: blue;"></i> {{ $label }}
         </label>
         <select name="{{ $field }}" class="form-select @error($field) is-invalid @enderror">
             <option value="">-- Pilih --</option>
-            @foreach($opsiKondisi as $val)
+            @foreach($yaTidak as $val)
                 <option value="{{ $val }}" {{ old($field, $data->$field) == $val ? 'selected' : '' }}>{{ $val }}</option>
             @endforeach
         </select>
