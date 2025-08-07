@@ -23,6 +23,7 @@ return new class extends Migration
     $table->string('koefisien_daerah_hijau')->nullable();
     $table->string('koefisien_tapak_basement')->nullable();
     $table->string('garis_sempadan_bangunan')->nullable();
+    
     $table->string('gambar_teknis_rencana')->nullable();
     $table->string('gambar_sesuai_pelaksana')->nullable();
     $table->string('ruang_terbuka_hijau')->nullable();

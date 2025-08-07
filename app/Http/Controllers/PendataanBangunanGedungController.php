@@ -1550,6 +1550,64 @@ public function bedatabgdokumencreate($id)
     ]);
 }
 
+public function bedatabgdokumencreatenew(Request $request)
+{
+    $validated = $request->validate([
+        'databgkepemilikan_id' => 'required|string',
+
+        'nilaibgdidirikan' => 'nullable|string',
+        'nilaibgsaatini' => 'nullable|string',
+        'koefisien_dasar_bangunan' => 'nullable|string',
+        'koefisien_lantai_bangunan' => 'nullable|string',
+        'koefisien_daerah_hijau' => 'nullable|string',
+        'koefisien_tapak_basement' => 'nullable|string',
+        'garis_sempadan_bangunan' => 'nullable|string',
+
+        'gambar_teknis_rencana' => 'nullable|string',
+        'gambar_sesuai_pelaksana' => 'nullable|string',
+        'ruang_terbuka_hijau' => 'nullable|string',
+        'luas_rth' => 'nullable|string',
+        'dokumen_rth' => 'nullable|string',
+        'limbah_b3' => 'nullable|string',
+        'sistem_penampungan_pengelolaan' => 'nullable|string',
+        'dokumen_lingkungan_amdal' => 'nullable|string',
+        'dokumen_aksesibilitas' => 'nullable|string',
+        'jenis_transportasi_bg' => 'nullable|string',
+        'dokumen_transport_bg' => 'nullable|string',
+        'dokumen_teknis_tanah' => 'nullable|string',
+    ], [
+        'databgkepemilikan_id.required' => 'ID Kepemilikan wajib diisi.',
+        'databgkepemilikan_id.numeric' => 'ID Kepemilikan harus berupa angka.',
+    ]);
+
+    databgstrukturbangunan::create([
+        'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
+        'nilaibgdidirikan' => $validated['nilaibgdidirikan'] ?? null,
+        'nilaibgsaatini' => $validated['nilaibgsaatini'] ?? null,
+        'koefisien_dasar_bangunan' => $validated['koefisien_dasar_bangunan'] ?? null,
+        'koefisien_lantai_bangunan' => $validated['koefisien_lantai_bangunan'] ?? null,
+        'koefisien_daerah_hijau' => $validated['koefisien_daerah_hijau'] ?? null,
+        'koefisien_tapak_basement' => $validated['koefisien_tapak_basement'] ?? null,
+        'garis_sempadan_bangunan' => $validated['garis_sempadan_bangunan'] ?? null,
+
+        'gambar_teknis_rencana' => $validated['gambar_teknis_rencana'] ?? null,
+        'gambar_sesuai_pelaksana' => $validated['gambar_sesuai_pelaksana'] ?? null,
+        'ruang_terbuka_hijau' => $validated['ruang_terbuka_hijau'] ?? null,
+        'luas_rth' => $validated['luas_rth'] ?? null,
+        'dokumen_rth' => $validated['dokumen_rth'] ?? null,
+        'limbah_b3' => $validated['limbah_b3'] ?? null,
+        'sistem_penampungan_pengelolaan' => $validated['sistem_penampungan_pengelolaan'] ?? null,
+        'dokumen_lingkungan_amdal' => $validated['dokumen_lingkungan_amdal'] ?? null,
+        'dokumen_aksesibilitas' => $validated['dokumen_aksesibilitas'] ?? null,
+        'jenis_transportasi_bg' => $validated['jenis_transportasi_bg'] ?? null,
+        'dokumen_transport_bg' => $validated['dokumen_transport_bg'] ?? null,
+        'dokumen_teknis_tanah' => $validated['dokumen_teknis_tanah'] ?? null,
+    ]);
+
+    session()->flash('create', 'Data dokumen bangunan gedung berhasil ditambahkan!');
+    return redirect()->route('bedatabgstruktur', ['id' => $validated['databgkepemilikan_id']]);
+}
+
 
 }
 

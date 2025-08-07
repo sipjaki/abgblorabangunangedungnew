@@ -332,13 +332,13 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Informasi Data Struktur Bangunan Gedung
+    Informasi Data Intensitas Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('bedatabgstrukturcreatenew') }}" method="POST">
+<form id="formPemilik" action="{{ route('bedatabgdokumencreatenew') }}" method="POST">
     @csrf
     <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
@@ -346,35 +346,47 @@ th {
     <div class="row g-3 mt-2">
         {{-- Luas Tanah --}}
         <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-box text-primary me-1"></i> Struktur Bawah</label>
-            <input type="text" name="struktur_bawah" class="form-control @error('struktur_bawah') is-invalid @enderror" value="{{ old('struktur_bawah') }}">
-            @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
-
-
-        <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-box-seam text-primary me-1"></i> Struktur Atas</label>
-            <select name="struktur_atas" class="form-select @error('struktur_atas') is-invalid @enderror">
-                <option value="">-- Pilih Struktur Atas --</option>
-                <option value="Kayu">Kayu</option>
-                <option value="Baja">Baja</option>
-                <option value="Beton">Beton</option>
-                <option value="Campuran">Campuran</option>
-            </select>
-            @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
-
-        <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-house-gear text-primary me-1"></i> Struktur Atap</label>
-            <select name="struktur_atap" class="form-select @error('struktur_atap') is-invalid @enderror">
-                <option value="">-- Pilih Struktur Atap --</option>
-        <option value="Kayu">Kayu</option>
-        <option value="Baja">Baja</option>
-        <option value="Beton">Beton</option>
-        <option value="Campuran">Campuran</option>
-    </select>
-    @error('struktur_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <label class="form-label"><i class="bi bi-cash-coin text-primary me-1"></i> Nilai BG Didirikan</label>
+    <input type="number" name="nilaibgdidirikan" class="form-control @error('nilaibgdidirikan') is-invalid @enderror" value="{{ old('nilaibgdidirikan') }}" step="any">
+    @error('nilaibgdidirikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-currency-dollar text-primary me-1"></i> Nilai BG Saat Ini</label>
+    <input type="number" name="nilaibgsaatini" class="form-control @error('nilaibgsaatini') is-invalid @enderror" value="{{ old('nilaibgsaatini') }}" step="any">
+    @error('nilaibgsaatini')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-diagram-3 text-primary me-1"></i> Koefisien Dasar Bangunan</label>
+    <input type="number" name="koefisien_dasar_bangunan" class="form-control @error('koefisien_dasar_bangunan') is-invalid @enderror" value="{{ old('koefisien_dasar_bangunan') }}" step="any" min="0" max="1">
+    @error('koefisien_dasar_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-diagram-3-fill text-primary me-1"></i> Koefisien Lantai Bangunan</label>
+    <input type="number" name="koefisien_lantai_bangunan" class="form-control @error('koefisien_lantai_bangunan') is-invalid @enderror" value="{{ old('koefisien_lantai_bangunan') }}" step="any" min="0">
+    @error('koefisien_lantai_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-tree text-primary me-1"></i> Koefisien Daerah Hijau</label>
+    <input type="number" name="koefisien_daerah_hijau" class="form-control @error('koefisien_daerah_hijau') is-invalid @enderror" value="{{ old('koefisien_daerah_hijau') }}" step="any" min="0" max="1">
+    @error('koefisien_daerah_hijau')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-layers text-primary me-1"></i> Koefisien Tapak Basement</label>
+    <input type="number" name="koefisien_tapak_basement" class="form-control @error('koefisien_tapak_basement') is-invalid @enderror" value="{{ old('koefisien_tapak_basement') }}" step="any" min="0" max="1">
+    @error('koefisien_tapak_basement')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-arrows-move text-primary me-1"></i> Garis Sempadan Bangunan (meter)</label>
+    <input type="number" name="garis_sempadan_bangunan" class="form-control @error('garis_sempadan_bangunan') is-invalid @enderror" value="{{ old('garis_sempadan_bangunan') }}" step="0.01" min="0">
+    @error('garis_sempadan_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
 
 </div>
 
@@ -385,48 +397,38 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
     <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
         <i class="bi bi-file-earmark-text-fill me-2"></i>
-        Informasi Tingkat Kerusakan Bangunan Gedung
+        Informasi Dokumen Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
-@php
-    $opsi = ['Tinggi', 'Sedang', 'Rendah'];
-@endphp
-
 @foreach ([
-    'rangka_atap' => 'Rangka Atap',
-    'balok' => 'Balok',
-    'kolom' => 'Kolom',
-    'pondasi' => 'Pondasi',
-    'dinding' => 'Dinding',
-    'genteng' => 'Genteng',
-    'plafon' => 'Plafon',
-    'lantai' => 'Lantai',
-    'pintu' => 'Pintu',
-    'jendela' => 'Jendela'
+    'gambar_teknis_rencana' => 'Gambar Teknis Rencana',
+    'gambar_sesuai_pelaksana' => 'Gambar Sesuai Pelaksana',
+    'ruang_terbuka_hijau' => 'Ruang Terbuka Hijau',
+    'luas_rth' => 'Luas RTH',
+    'dokumen_rth' => 'Dokumen RTH',
+    'limbah_b3' => 'Limbah B3',
+    'sistem_penampungan_pengelolaan' => 'Sistem Penampungan & Pengelolaan',
+    'dokumen_lingkungan_amdal' => 'Dokumen Lingkungan (AMDAL)',
+    'dokumen_aksesibilitas' => 'Dokumen Aksesibilitas',
+    'jenis_transportasi_bg' => 'Jenis Transportasi BG',
+    'dokumen_transport_bg' => 'Dokumen Transportasi BG',
+    'dokumen_teknis_tanah' => 'Dokumen Teknis Tanah'
 ] as $name => $label)
     <div class="col-md-6">
-        <label class="form-label"><i class="bi bi-buildings text-primary me-1"></i> {{ $label }}</label>
-        <select name="{{ $name }}" class="form-select @error($name) is-invalid @enderror">
-            <option value="">-- Pilih {{ $label }} --</option>
-            @foreach ($opsi as $val)
-                <option value="{{ $val }}">{{ $val }}</option>
-            @endforeach
-        </select>
+        <label class="form-label"><i class="bi bi-file-earmark-text text-primary me-1"></i> {{ $label }}</label>
+        <input type="number" name="{{ $name }}" class="form-control @error($name) is-invalid @enderror" value="{{ old($name) }}" step="any" min="0">
         @error($name)<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 @endforeach
 
-
-        {{-- Tombol Submit --}}
-        <div class="col-12 text-end mt-3">
-            <button type="button" class="button-baru" onclick="openModal()">
-                <i class="bi bi-save me-1"></i> Simpan Data
-            </button>
-        </div>
-    </div>
-</form>
+{{-- Tombol Submit --}}
+<div class="col-12 text-end mt-3">
+    <button type="button" class="button-baru" onclick="openModal()">
+        <i class="bi bi-save me-1"></i> Simpan Data
+    </button>
+</div>
 
 {{-- Modal Konfirmasi --}}
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

@@ -141,7 +141,7 @@ Route::post('/bedatabgklasifikasicreatenew', [PendataanBangunanGedungController:
 // DATA DOKUMEN BG BANGUNAN GEDUNG
 Route::get('/bedatabgdokumen/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumen'])->middleware('auth')->name('bedatabgdokumen');
 Route::get('/bedatabgdokumencreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumencreate'])->middleware('auth')->name('bedatabgdokumencreate');
-// Route::post('/bedatabgstrukturcreatenew', [PendataanBangunanGedungController::class, 'bedatabgstrukturcreatenew'])->middleware('auth')->name('bedatabgstrukturcreatenew');
+Route::post('/bedatabgdokumencreatenew', [PendataanBangunanGedungController::class, 'bedatabgdokumencreatenew'])->middleware('auth')->name('bedatabgdokumencreatenew');
 
 
 // 04 PENDATAAN BANGUNAN GEDUNG STRUKTUR BANGUNAN GEDUNG
