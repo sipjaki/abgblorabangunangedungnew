@@ -1543,7 +1543,7 @@ public function bedatabgdokumencreate($id)
     }
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
-    return view('backend.02_pendataanbangunangedung.05_strukturbangunan.02_tambahdokumebangunangedung', [
+    return view('backend.02_pendataanbangunangedung.05_dokumen.02_tambahdokumebangunangedung', [
         'title' => 'Tambah Data Informasi Dokumen Bangunan Gedung ',
         'data' => $databantuanteknis,
         'user' => Auth::user()
