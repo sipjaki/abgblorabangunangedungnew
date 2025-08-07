@@ -143,7 +143,7 @@ Route::get('/bedatabgdokumen/{id}', [PendataanBangunanGedungController::class, '
 Route::get('/bedatabgdokumencreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumencreate'])->middleware('auth')->name('bedatabgdokumencreate');
 Route::post('/bedatabgdokumencreatenew', [PendataanBangunanGedungController::class, 'bedatabgdokumencreatenew'])->middleware('auth')->name('bedatabgdokumencreatenew');
 Route::get('/bedatabgdokumenupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumenupdate'])->middleware('auth')->name('bedatabgdokumenupdate');
-// Route::put('/bedatabgstrukturupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturupdatenew'])->middleware('auth')->name('bedatabgstrukturupdatenew');
+Route::put('/bedatabgdokumenupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumenupdatenew'])->middleware('auth')->name('bedatabgdokumenupdatenew');
 
 
 // 04 PENDATAAN BANGUNAN GEDUNG STRUKTUR BANGUNAN GEDUNG
