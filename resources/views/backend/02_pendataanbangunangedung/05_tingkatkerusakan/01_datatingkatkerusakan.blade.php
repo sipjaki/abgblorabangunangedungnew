@@ -248,102 +248,196 @@ th {
 
 <div class="row g-4">
     @forelse ($subdatapemilik as $pemilik)
-
 @php
-    $infoItems = [
-        [
-            'icon' => 'bi-house-door',
-            'title' => 'Struktur Bawah',
-            'value' => $pemilik->struktur_bawah ?? '-',
+    $strukturSections = [
+        'Bagian 1: Struktur Umum' => [
+            [
+                'icon' => 'bi-house-door',
+                'title' => 'Struktur Bangunan Bawah',
+                'value' => $pemilik->struktur_bangunan_bawah ?? '-',
+            ],
+            [
+                'icon' => 'bi-house',
+                'title' => 'Struktur Bangunan Atas',
+                'value' => $pemilik->struktur_bangunan_atas ?? '-',
+            ],
+            [
+                'icon' => 'bi-house-add',
+                'title' => 'Struktur Atap',
+                'value' => $pemilik->struktur_atap ?? '-',
+            ],
+            [
+                'icon' => 'bi-exclamation-triangle',
+                'title' => 'Indikasi Kerusakan',
+                'value' => $pemilik->indikasi_kerusakan1 ?? '-',
+            ],
+            [
+                'icon' => 'bi-bar-chart',
+                'title' => 'Tingkat Kerusakan',
+                'value' => $pemilik->tingkat_kerusakan1 ?? '-',
+            ],
         ],
-        [
-            'icon' => 'bi-house',
-            'title' => 'Struktur Atas',
-            'value' => $pemilik->struktur_atas ?? '-',
+        'Bagian 2: Pondasi' => [
+            [
+                'icon' => 'bi-box',
+                'title' => 'Pondasi',
+                'value' => $pemilik->pondasi ?? '-',
+            ],
+            [
+                'icon' => 'bi-exclamation-triangle',
+                'title' => 'Indikasi Kerusakan',
+                'value' => $pemilik->indikasi_kerusakan2 ?? '-',
+            ],
+            [
+                'icon' => 'bi-bar-chart',
+                'title' => 'Tingkat Kerusakan',
+                'value' => $pemilik->tingkat_kerusakan2 ?? '-',
+            ],
         ],
-        [
-            'icon' => 'bi-house-add',
-            'title' => 'Struktur Atap',
-            'value' => $pemilik->struktur_atap ?? '-',
+        'Bagian 3: Struktur' => [
+            [
+                'icon' => 'bi-diagram-3',
+                'title' => 'Struktur',
+                'value' => $pemilik->struktur ?? '-',
+            ],
+            [
+                'icon' => 'bi-exclamation-triangle',
+                'title' => 'Indikasi Kerusakan',
+                'value' => $pemilik->indikasi_kerusakan3 ?? '-',
+            ],
+            [
+                'icon' => 'bi-bar-chart',
+                'title' => 'Tingkat Kerusakan',
+                'value' => $pemilik->tingkat_kerusakan3 ?? '-',
+            ],
         ],
-        [
-            'icon' => 'bi-diagram-3',
-            'title' => 'Rangka Atap',
-            'value' => $pemilik->rangka_atap ?? '-',
+        'Bagian 4: Atap' => [
+            [
+                'icon' => 'bi-cloud',
+                'title' => 'Atap',
+                'value' => $pemilik->atap ?? '-',
+            ],
+            [
+                'icon' => 'bi-exclamation-triangle',
+                'title' => 'Indikasi Kerusakan',
+                'value' => $pemilik->indikasi_kerusakan4 ?? '-',
+            ],
+            [
+                'icon' => 'bi-bar-chart',
+                'title' => 'Tingkat Kerusakan',
+                'value' => $pemilik->tingkat_kerusakan4 ?? '-',
+            ],
         ],
-        [
-            'icon' => 'bi-border-width',
-            'title' => 'Balok',
-            'value' => $pemilik->balok ?? '-',
+        'Bagian 5: Lantai' => [
+            [
+                'icon' => 'bi-grid-1x2',
+                'title' => 'Lantai',
+                'value' => $pemilik->lantai ?? '-',
+            ],
+            [
+                'icon' => 'bi-exclamation-triangle',
+                'title' => 'Indikasi Kerusakan',
+                'value' => $pemilik->indikasi_kerusakan5 ?? '-',
+            ],
+            [
+                'icon' => 'bi-bar-chart',
+                'title' => 'Tingkat Kerusakan',
+                'value' => $pemilik->tingkat_kerusakan5 ?? '-',
+            ],
         ],
-        [
-            'icon' => 'bi-columns-gap',
-            'title' => 'Kolom',
-            'value' => $pemilik->kolom ?? '-',
+        'Bagian 6: Dinding' => [
+            [
+                'icon' => 'bi-bricks',
+                'title' => 'Dinding',
+                'value' => $pemilik->dinding ?? '-',
+            ],
+            [
+                'icon' => 'bi-exclamation-triangle',
+                'title' => 'Indikasi Kerusakan',
+                'value' => $pemilik->indikasi_kerusakan6 ?? '-',
+            ],
+            [
+                'icon' => 'bi-bar-chart',
+                'title' => 'Tingkat Kerusakan',
+                'value' => $pemilik->tingkat_kerusakan6 ?? '-',
+            ],
         ],
-        [
-            'icon' => 'bi-box',
-            'title' => 'Pondasi',
-            'value' => $pemilik->pondasi ?? '-',
+        'Bagian 7: Plafond' => [
+            [
+                'icon' => 'bi-menu-button-wide',
+                'title' => 'Plafond',
+                'value' => $pemilik->plafond ?? '-',
+            ],
+            [
+                'icon' => 'bi-exclamation-triangle',
+                'title' => 'Indikasi Kerusakan',
+                'value' => $pemilik->indikasi_kerusakan7 ?? '-',
+            ],
+            [
+                'icon' => 'bi-bar-chart',
+                'title' => 'Tingkat Kerusakan',
+                'value' => $pemilik->tingkat_kerusakan7 ?? '-',
+            ],
         ],
-        [
-            'icon' => 'bi-bricks',
-            'title' => 'Dinding',
-            'value' => $pemilik->dinding ?? '-',
-        ],
-        [
-            'icon' => 'bi-cloud',
-            'title' => 'Genteng',
-            'value' => $pemilik->genteng ?? '-',
-        ],
-        [
-            'icon' => 'bi-menu-button-wide',
-            'title' => 'Plafon',
-            'value' => $pemilik->plafon ?? '-',
-        ],
-        [
-            'icon' => 'bi-grid-1x2',
-            'title' => 'Lantai',
-            'value' => $pemilik->lantai ?? '-',
-        ],
-        [
-            'icon' => 'bi-door-open',
-            'title' => 'Pintu',
-            'value' => $pemilik->pintu ?? '-',
-        ],
-        [
-            'icon' => 'bi-windows',
-            'title' => 'Jendela',
-            'value' => $pemilik->jendela ?? '-',
+        'Bagian 8: Utilitas & Finishing' => [
+            [
+                'icon' => 'bi-tools',
+                'title' => 'Utilitas',
+                'value' => $pemilik->utilitas ?? '-',
+            ],
+            [
+                'icon' => 'bi-exclamation-triangle',
+                'title' => 'Indikasi Kerusakan',
+                'value' => $pemilik->indikasi_kerusakan8 ?? '-',
+            ],
+            [
+                'icon' => 'bi-bar-chart',
+                'title' => 'Tingkat Kerusakan',
+                'value' => $pemilik->tingkat_kerusakan8 ?? '-',
+            ],
+            [
+                'icon' => 'bi-paint-bucket',
+                'title' => 'Finishing',
+                'value' => $pemilik->finishing ?? '-',
+            ],
+            [
+                'icon' => 'bi-clipboard-check',
+                'title' => 'Total Nilai Kerusakan',
+                'value' => $pemilik->total_nilai_kerusakan ?? '-',
+            ],
         ],
     ];
 @endphp
 
+<div class="col-12 mb-4 mt-5">
+    <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
+        <div class="card-header bg-primary text-white d-flex align-items-center">
+            <i class="bi bi-diagram-3-fill me-2 fs-5"></i>
+            <h5 style="font-size: 16px;" class="mb-0">Data Struktur & Tingkat Kerusakan Bangunan Gedung</h5>
+        </div>
 
-        <div class="col-12 mb-4 mt-5">
-            <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
-                <div class="card-header bg-primary text-white d-flex align-items-center">
-                    <i class="bi bi-person-fill me-2 fs-5"></i>
-                    <h5 style="font-size: 16px;" class="mb-0">Informasi Data Struktur Bangunan Gedung </h5>
-                </div>
-
-                <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
-                    <div class="row g-3">
-                        @foreach ($infoItems as $item)
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-start">
-                                    <div class="me-3">
-                                        <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="fw-bold text-dark mb-1">{{ $item['title'] }}</h6>
-                                        <p class="mb-0 text-muted">{{ $item['value'] }}</p>
-                                    </div>
+        <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
+            @foreach ($strukturSections as $sectionTitle => $sectionItems)
+                <h6 class="fw-bold text-primary mt-4">{{ $sectionTitle }}</h6>
+                <div class="row g-3">
+                    @foreach ($sectionItems as $item)
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="me-3">
+                                    <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold text-dark mb-1">{{ $item['title'] }}</h6>
+                                    <p class="mb-0 text-muted">{{ $item['value'] }}</p>
                                 </div>
                             </div>
-
-                        @endforeach
-                        {{-- Khusus tampilkan Catatan jika Pilihan Catatan = tidak lengkap --}}
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
 
 
                       <a href="/bedatabgstrukturupdate/{{ $pemilik->id }}">
