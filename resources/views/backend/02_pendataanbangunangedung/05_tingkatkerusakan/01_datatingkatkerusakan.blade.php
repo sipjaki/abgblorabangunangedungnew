@@ -356,7 +356,7 @@ $bagianList = [
 </div>
 
 
-                      <a href="/bedatabgstrukturupdate/{{ $pemilik->id }}">
+                      <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->id }}">
                             <p class="button-berkas">
                                 <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
                                 Perbaikan Data
