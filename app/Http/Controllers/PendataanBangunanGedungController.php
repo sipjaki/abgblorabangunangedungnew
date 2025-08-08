@@ -1994,5 +1994,99 @@ public function bedatabgstrukrrusakupdate($id)
     ]);
 }
 
+public function bedatabgstrukrrusakupdatenew(Request $request, $id)
+{
+    $validated = $request->validate([
+        'databgkepemilikan_id'      => 'nullable|string',
+        'struktur_bangunan_bawah'   => 'nullable|string|max:255',
+        'struktur_bangunan_atas'    => 'nullable|string|max:255',
+        'struktur_atap'             => 'nullable|string|max:255',
+
+        'indikasi_kerusakan1'       => 'nullable|string|max:255',
+        'tingkat_kerusakan1'        => 'nullable|string|max:255',
+
+        'pondasi'                   => 'nullable|string|max:255',
+        'indikasi_kerusakan2'       => 'nullable|string|max:255',
+        'tingkat_kerusakan2'        => 'nullable|string|max:255',
+
+        'struktur'                  => 'nullable|string|max:255',
+        'indikasi_kerusakan3'       => 'nullable|string|max:255',
+        'tingkat_kerusakan3'        => 'nullable|string|max:255',
+
+        'atap'                      => 'nullable|string|max:255',
+        'indikasi_kerusakan4'       => 'nullable|string|max:255',
+        'tingkat_kerusakan4'        => 'nullable|string|max:255',
+
+        'lantai'                    => 'nullable|string|max:255',
+        'indikasi_kerusakan5'       => 'nullable|string|max:255',
+        'tingkat_kerusakan5'        => 'nullable|string|max:255',
+
+        'dinding'                   => 'nullable|string|max:255',
+        'indikasi_kerusakan6'       => 'nullable|string|max:255',
+        'tingkat_kerusakan6'        => 'nullable|string|max:255',
+
+        'plafond'                   => 'nullable|string|max:255',
+        'indikasi_kerusakan7'       => 'nullable|string|max:255',
+        'tingkat_kerusakan7'        => 'nullable|string|max:255',
+
+        'utilitas'                  => 'nullable|string|max:255',
+        'indikasi_kerusakan8'       => 'nullable|string|max:255',
+        'tingkat_kerusakan8'        => 'nullable|string|max:255',
+
+        'finishing'                 => 'nullable|string|max:255',
+        'total_nilai_kerusakan'     => 'nullable|string|max:255',
+    ], [
+        '*.max' => 'Maksimal 255 karakter.',
+        'databgkepemilikan_id.integer' => 'ID Kepemilikan harus berupa angka.',
+    ]);
+
+    $klasifikasi = databgtingkatkerusahan::findOrFail($id);
+
+    $klasifikasi->update([
+        'databgkepemilikan_id'      => $validated['databgkepemilikan_id'],
+        'struktur_bangunan_bawah'   => $validated['struktur_bangunan_bawah'] ?? null,
+        'struktur_bangunan_atas'    => $validated['struktur_bangunan_atas'] ?? null,
+        'struktur_atap'             => $validated['struktur_atap'] ?? null,
+
+        'indikasi_kerusakan1'       => $validated['indikasi_kerusakan1'] ?? null,
+        'tingkat_kerusakan1'        => $validated['tingkat_kerusakan1'] ?? null,
+
+        'pondasi'                   => $validated['pondasi'] ?? null,
+        'indikasi_kerusakan2'       => $validated['indikasi_kerusakan2'] ?? null,
+        'tingkat_kerusakan2'        => $validated['tingkat_kerusakan2'] ?? null,
+
+        'struktur'                  => $validated['struktur'] ?? null,
+        'indikasi_kerusakan3'       => $validated['indikasi_kerusakan3'] ?? null,
+        'tingkat_kerusakan3'        => $validated['tingkat_kerusakan3'] ?? null,
+
+        'atap'                      => $validated['atap'] ?? null,
+        'indikasi_kerusakan4'       => $validated['indikasi_kerusakan4'] ?? null,
+        'tingkat_kerusakan4'        => $validated['tingkat_kerusakan4'] ?? null,
+
+        'lantai'                    => $validated['lantai'] ?? null,
+        'indikasi_kerusakan5'       => $validated['indikasi_kerusakan5'] ?? null,
+        'tingkat_kerusakan5'        => $validated['tingkat_kerusakan5'] ?? null,
+
+        'dinding'                   => $validated['dinding'] ?? null,
+        'indikasi_kerusakan6'       => $validated['indikasi_kerusakan6'] ?? null,
+        'tingkat_kerusakan6'        => $validated['tingkat_kerusakan6'] ?? null,
+
+        'plafond'                   => $validated['plafond'] ?? null,
+        'indikasi_kerusakan7'       => $validated['indikasi_kerusakan7'] ?? null,
+        'tingkat_kerusakan7'        => $validated['tingkat_kerusakan7'] ?? null,
+
+        'utilitas'                  => $validated['utilitas'] ?? null,
+        'indikasi_kerusakan8'       => $validated['indikasi_kerusakan8'] ?? null,
+        'tingkat_kerusakan8'        => $validated['tingkat_kerusakan8'] ?? null,
+
+        'finishing'                 => $validated['finishing'] ?? null,
+        'total_nilai_kerusakan'     => $validated['total_nilai_kerusakan'] ?? null,
+    ]);
+
+    session()->flash('update', 'Data struktur bangunan & tingkat kerusakan berhasil diperbarui!');
+    return redirect()->back();
+}
+
+
 }
 
