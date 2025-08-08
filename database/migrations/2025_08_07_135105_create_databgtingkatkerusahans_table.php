@@ -20,6 +20,7 @@ return new class extends Migration
     $table->string('struktur_bangunan_bawah')->nullable();
     $table->string('struktur_bangunan_atas')->nullable();
     $table->string('struktur_atap')->nullable();
+
     $table->string('indikasi_kerusakan1')->nullable();
     $table->string('tingkat_kerusakan1')->nullable();
 
@@ -58,6 +59,7 @@ return new class extends Migration
     $table->string('indikasi_kerusakan8')->nullable();
     $table->string('tingkat_kerusakan8')->nullable();
 
+    // bagian 9
     $table->string('finishing')->nullable();
     $table->string('total_nilai_kerusakan')->nullable();
 

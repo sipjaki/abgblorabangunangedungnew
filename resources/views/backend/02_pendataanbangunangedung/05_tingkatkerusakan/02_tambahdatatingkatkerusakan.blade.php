@@ -332,7 +332,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
     <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Informasi Data Struktur Bangunan Gedung
+    Informasi Data Struktur & Tingkat Kerusakan Bangunan Gedung
 </h5>
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
@@ -345,83 +345,319 @@ th {
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
     <div class="row g-3 mt-2">
         {{-- Luas Tanah --}}
-        <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-box text-primary me-1"></i> Struktur Bawah</label>
-            <input type="text" name="struktur_bawah" class="form-control @error('struktur_bawah') is-invalid @enderror" value="{{ old('struktur_bawah') }}">
-            @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
+        <!-- ===================== BAGIAN 1 ===================== -->
+<div class="col-12">
+    <h6 class="mt-3 fw-bold text-primary"><i class="bi bi-building me-1"></i> Bagian 1 - Struktur Bangunan</h6>
+</div>
 
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-box text-primary me-1"></i> Struktur Bangunan Bawah</label>
+    <input type="text" name="struktur_bangunan_bawah" class="form-control @error('struktur_bangunan_bawah') is-invalid @enderror" value="{{ old('struktur_bangunan_bawah') }}">
+    @error('struktur_bangunan_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
 
-        <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-box-seam text-primary me-1"></i> Struktur Atas</label>
-            <select name="struktur_atas" class="form-select @error('struktur_atas') is-invalid @enderror">
-                <option value="">-- Pilih Struktur Atas --</option>
-                <option value="Kayu">Kayu</option>
-                <option value="Baja">Baja</option>
-                <option value="Beton">Beton</option>
-                <option value="Campuran">Campuran</option>
-            </select>
-            @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
-        </div>
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-box-seam text-primary me-1"></i> Struktur Bangunan Atas</label>
+    <input type="text" name="struktur_bangunan_atas" class="form-control @error('struktur_bangunan_atas') is-invalid @enderror" value="{{ old('struktur_bangunan_atas') }}">
+    @error('struktur_bangunan_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
 
-        <div class="col-md-6">
-            <label class="form-label"><i class="bi bi-house-gear text-primary me-1"></i> Struktur Atap</label>
-            <select name="struktur_atap" class="form-select @error('struktur_atap') is-invalid @enderror">
-                <option value="">-- Pilih Struktur Atap --</option>
-        <option value="Kayu">Kayu</option>
-        <option value="Baja">Baja</option>
-        <option value="Beton">Beton</option>
-        <option value="Campuran">Campuran</option>
-    </select>
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-house-gear text-primary me-1"></i> Struktur Atap</label>
+    <input type="text" name="struktur_atap" class="form-control @error('struktur_atap') is-invalid @enderror" value="{{ old('struktur_atap') }}">
     @error('struktur_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+    <select name="indikasi_kerusakan1" class="form-select @error('indikasi_kerusakan1') is-invalid @enderror">
+        <option value="">-- Pilih Indikasi --</option>
+        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+    </select>
+    @error('indikasi_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+    <select name="tingkat_kerusakan1" class="form-select @error('tingkat_kerusakan1') is-invalid @enderror">
+        <option value="">-- Pilih Tingkat Kerusakan --</option>
+        <option value="Ringan">Ringan</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Berat">Berat</option>
+        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+    </select>
+    @error('tingkat_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+<!-- ===================== BAGIAN 2 ===================== -->
+<div class="col-12 mt-4">
+    <h6 class="fw-bold text-primary"><i class="bi bi-layers me-1"></i> Bagian 2 - Pondasi</h6>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Pondasi</label>
+    <input type="text" name="pondasi" class="form-control @error('pondasi') is-invalid @enderror" value="{{ old('pondasi') }}">
+    @error('pondasi')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+    <select name="indikasi_kerusakan2" class="form-select">
+        <option value="">-- Pilih Indikasi --</option>
+        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+    </select>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+    <select name="tingkat_kerusakan2" class="form-select">
+        <option value="">-- Pilih Tingkat Kerusakan --</option>
+        <option value="Ringan">Ringan</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Berat">Berat</option>
+        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+    </select>
+</div>
+
+<!-- ===================== BAGIAN 3 ===================== -->
+<div class="col-12 mt-4">
+    <h6 class="fw-bold text-primary"><i class="bi bi-columns-gap me-1"></i> Bagian 3 - Struktur</h6>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-building text-primary me-1"></i> Struktur</label>
+    <input type="text" name="struktur" class="form-control" value="{{ old('struktur') }}">
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+    <select name="indikasi_kerusakan3" class="form-select">
+        <option value="">-- Pilih Indikasi --</option>
+        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+    </select>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+    <select name="tingkat_kerusakan3" class="form-select">
+        <option value="">-- Pilih Tingkat Kerusakan --</option>
+        <option value="Ringan">Ringan</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Berat">Berat</option>
+        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+    </select>
+</div>
+
+<!-- ===================== BAGIAN 4 ===================== -->
+<div class="col-12 mt-4">
+    <h6 class="fw-bold text-primary"><i class="bi bi-house-door me-1"></i> Bagian 4 - Atap</h6>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-house text-primary me-1"></i> Atap</label>
+    <input type="text" name="atap" class="form-control" value="{{ old('atap') }}">
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+    <select name="indikasi_kerusakan4" class="form-select">
+        <option value="">-- Pilih Indikasi --</option>
+        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+    </select>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+    <select name="tingkat_kerusakan4" class="form-select">
+        <option value="">-- Pilih Tingkat Kerusakan --</option>
+        <option value="Ringan">Ringan</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Berat">Berat</option>
+        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+    </select>
+</div>
+
+<!-- ===================== BAGIAN 5 ===================== -->
+<div class="col-12 mt-4">
+    <h6 class="fw-bold text-primary"><i class="bi bi-grid-3x3-gap me-1"></i> Bagian 5 - Lantai</h6>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-square text-primary me-1"></i> Lantai</label>
+    <input type="text" name="lantai" class="form-control" value="{{ old('lantai') }}">
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+    <select name="indikasi_kerusakan5" class="form-select">
+        <option value="">-- Pilih Indikasi --</option>
+        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+    </select>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+    <select name="tingkat_kerusakan5" class="form-select">
+        <option value="">-- Pilih Tingkat Kerusakan --</option>
+        <option value="Ringan">Ringan</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Berat">Berat</option>
+        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+    </select>
+</div>
+
+<!-- ===================== BAGIAN 6 ===================== -->
+<div class="col-12 mt-4">
+    <h6 class="fw-bold text-primary"><i class="bi bi-window me-1"></i> Bagian 6 - Plafond</h6>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-window-dock text-primary me-1"></i> Plafond</label>
+    <input type="text" name="plafond" class="form-control" value="{{ old('plafond') }}">
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+    <select name="indikasi_kerusakan6" class="form-select">
+        <option value="">-- Pilih Indikasi --</option>
+        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+    </select>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+    <select name="tingkat_kerusakan6" class="form-select">
+        <option value="">-- Pilih Tingkat Kerusakan --</option>
+        <option value="Ringan">Ringan</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Berat">Berat</option>
+        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+    </select>
+</div>
+
+<!-- ===================== BAGIAN 7 ===================== -->
+<div class="col-12 mt-4">
+    <h6 class="fw-bold text-primary"><i class="bi bi-door-closed me-1"></i> Bagian 7 - Pintu dan Jendela</h6>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-door-open text-primary me-1"></i> Pintu</label>
+    <input type="text" name="pintu" class="form-control" value="{{ old('pintu') }}">
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-windows text-primary me-1"></i> Jendela</label>
+    <input type="text" name="jendela" class="form-control" value="{{ old('jendela') }}">
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+    <select name="indikasi_kerusakan7" class="form-select">
+        <option value="">-- Pilih Indikasi --</option>
+        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+    </select>
+</div>
+
+<div class="col-md-12">
+    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+    <select name="tingkat_kerusakan7" class="form-select">
+        <option value="">-- Pilih Tingkat Kerusakan --</option>
+        <option value="Ringan">Ringan</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Berat">Berat</option>
+        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+    </select>
+</div>
+
+<!-- ===================== BAGIAN 8 ===================== -->
+<div class="col-12 mt-4">
+    <h6 class="fw-bold text-primary"><i class="bi bi-brush me-1"></i> Bagian 8 - Finishing</h6>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-paint-bucket text-primary me-1"></i> Dinding</label>
+    <input type="text" name="finishing_dinding" class="form-control" value="{{ old('finishing_dinding') }}">
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-square-half text-primary me-1"></i> Lantai</label>
+    <input type="text" name="finishing_lantai" class="form-control" value="{{ old('finishing_lantai') }}">
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-brush-fill text-primary me-1"></i> Plafond</label>
+    <input type="text" name="finishing_plafond" class="form-control" value="{{ old('finishing_plafond') }}">
+</div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+    <select name="indikasi_kerusakan8" class="form-select">
+        <option value="">-- Pilih Indikasi --</option>
+        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+    </select>
+</div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+    <select name="tingkat_kerusakan8" class="form-select">
+        <option value="">-- Pilih Tingkat Kerusakan --</option>
+        <option value="Ringan">Ringan</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Berat">Berat</option>
+        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+    </select>
+</div>
+
+<!-- ===================== BAGIAN 9 ===================== -->
+<div class="col-12 mt-4">
+    <h6 class="fw-bold text-primary"><i class="bi bi-calculator me-1"></i> Bagian 9 - Perhitungan Nilai Kerusakan</h6>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-123 text-primary me-1"></i> Total Nilai Kerusakan</label>
+    <input type="number" step="0.01" name="total_nilai_kerusakan" class="form-control" value="{{ old('total_nilai_kerusakan') }}">
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+    <select name="indikasi_kerusakan9" class="form-select">
+        <option value="">-- Pilih Indikasi --</option>
+        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+    </select>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+    <select name="tingkat_kerusakan9" class="form-select">
+        <option value="">-- Pilih Tingkat Kerusakan --</option>
+        <option value="Ringan">Ringan</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Berat">Berat</option>
+        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+    </select>
+</div>
+
+
+<!-- ===================== BAGIAN 6 sampai BAGIAN 9 ===================== -->
+<!-- Gue lanjut bikin sisa Bagian 6, 7, 8, 9 persis seperti pola di atas -->
+
 
 </div>
 
 <div class="row g-3 mt-2">
 
-
-<div class="text-center">
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
-        <i class="bi bi-file-earmark-text-fill me-2"></i>
-        Informasi Tingkat Kerusakan Bangunan Gedung
-</h5>
-</h5>
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-</div>
-@php
-    $opsi = ['Tinggi', 'Sedang', 'Rendah'];
-@endphp
-
-@foreach ([
-    'rangka_atap' => 'Rangka Atap',
-    'balok' => 'Balok',
-    'kolom' => 'Kolom',
-    'pondasi' => 'Pondasi',
-    'dinding' => 'Dinding',
-    'genteng' => 'Genteng',
-    'plafon' => 'Plafon',
-    'lantai' => 'Lantai',
-    'pintu' => 'Pintu',
-    'jendela' => 'Jendela'
-] as $name => $label)
-    <div class="col-md-6">
-        <label class="form-label"><i class="bi bi-buildings text-primary me-1"></i> {{ $label }}</label>
-        <select name="{{ $name }}" class="form-select @error($name) is-invalid @enderror">
-            <option value="">-- Pilih {{ $label }} --</option>
-            @foreach ($opsi as $val)
-                <option value="{{ $val }}">{{ $val }}</option>
-            @endforeach
-        </select>
-        @error($name)<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-@endforeach
-
-
         {{-- Tombol Submit --}}
         <div class="col-12 text-end mt-3">
-            <button type="button" class="button-baru" onclick="openModal()">
+            <button type="button" class="button-hijau" onclick="openModal()">
                 <i class="bi bi-save me-1"></i> Simpan Data
             </button>
         </div>
