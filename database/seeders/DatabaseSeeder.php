@@ -594,8 +594,8 @@ User::create([
     'username' => 'CV Duta Cahaya Design',
     'statusadmin_id' => '5',
     'avatar' => 'user/avatar/foto4.png',
-    'email' => 'bangunandpuprkabblora11@gmail.com',
-    'password' => bcrypt('adminkabblorabangunan')
+    'email' => 'putriisalmaa111@gmail.com',
+    'password' => bcrypt('Ameng120623@')
 ]);
 
 User::create([
@@ -27338,6 +27338,22 @@ databgpeprofilbangunangedung::create(['id'=>971,'databgkepemilikan_id'=>971,'lua
 databgpeprofilbangunangedung::create(['id'=>972,'databgkepemilikan_id'=>972,'luastanah'=>'14680 m2','namabangunan'=>'Gedung C','alamatbangunan'=>'','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'162 m2','totalluaslantai'=>'','tinggibangunan'=>'6 m','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'','tanggalselesaikonstruksi'=>'','tanggalrehabilitasi'=>'']);
 
 databgpeprofilbangunangedung::create(['id'=>973,'databgkepemilikan_id'=>973,'luastanah'=>'14680 m2','namabangunan'=>'Gedung B','alamatbangunan'=>'','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'108 M2','totalluaslantai'=>'','tinggibangunan'=>'6 m','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'','tanggalselesaikonstruksi'=>'','tanggalrehabilitasi'=>'']);
+
+// SAMPAI SINI UNTUK PENDATAAN BANGUNAN GEDUNG
+
+
+// databgkepemilikan::create([
+//     'id' => 1,
+//     'user_id' => 67,
+//     'kecamatanblora_id' => 14,
+//     'namainstitusi' => 'BALAI PENYULUHAN PERTANIAN',
+//     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
+//     'notelepon' => '(0296)571287',
+//     'email' => null,
+//     'legalitasbangunan' => 'Belum Berijin',
+//     'nopengesahanusaha' => '33.16.09.0001',
+//     'tanggalinput' => Carbon::now(),
+// ]);
 
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL BANGUNAN GEDUNG
