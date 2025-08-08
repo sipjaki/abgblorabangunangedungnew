@@ -510,15 +510,14 @@ th {
         <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
     </select>
 </div>
-
 <!-- ===================== BAGIAN 6 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-window me-1"></i> Bagian 6 - Plafond</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-bricks me-1"></i> Bagian 6 - Dinding</h6>
 </div>
 
 <div class="col-md-4">
-    <label class="form-label"><i class="bi bi-window-dock text-primary me-1"></i> Plafond</label>
-    <input type="text" name="plafond" class="form-control" value="{{ old('plafond') }}">
+    <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Dinding</label>
+    <input type="text" name="dinding" class="form-control" value="{{ old('dinding') }}">
 </div>
 
 <div class="col-md-4">
@@ -543,17 +542,12 @@ th {
 
 <!-- ===================== BAGIAN 7 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-door-closed me-1"></i> Bagian 7 - Pintu dan Jendela</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-window me-1"></i> Bagian 7 - Plafond</h6>
 </div>
 
 <div class="col-md-4">
-    <label class="form-label"><i class="bi bi-door-open text-primary me-1"></i> Pintu</label>
-    <input type="text" name="pintu" class="form-control" value="{{ old('pintu') }}">
-</div>
-
-<div class="col-md-4">
-    <label class="form-label"><i class="bi bi-windows text-primary me-1"></i> Jendela</label>
-    <input type="text" name="jendela" class="form-control" value="{{ old('jendela') }}">
+    <label class="form-label"><i class="bi bi-window-dock text-primary me-1"></i> Plafond</label>
+    <input type="text" name="plafond" class="form-control" value="{{ old('plafond') }}">
 </div>
 
 <div class="col-md-4">
@@ -565,7 +559,7 @@ th {
     </select>
 </div>
 
-<div class="col-md-12">
+<div class="col-md-4">
     <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
     <select name="tingkat_kerusakan7" class="form-select">
         <option value="">-- Pilih Tingkat Kerusakan --</option>
@@ -578,25 +572,15 @@ th {
 
 <!-- ===================== BAGIAN 8 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-brush me-1"></i> Bagian 8 - Finishing</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-lightning me-1"></i> Bagian 8 - Utilitas</h6>
 </div>
 
 <div class="col-md-4">
-    <label class="form-label"><i class="bi bi-paint-bucket text-primary me-1"></i> Dinding</label>
-    <input type="text" name="finishing_dinding" class="form-control" value="{{ old('finishing_dinding') }}">
+    <label class="form-label"><i class="bi bi-tools text-primary me-1"></i> Utilitas</label>
+    <input type="text" name="utilitas" class="form-control" value="{{ old('utilitas') }}">
 </div>
 
 <div class="col-md-4">
-    <label class="form-label"><i class="bi bi-square-half text-primary me-1"></i> Lantai</label>
-    <input type="text" name="finishing_lantai" class="form-control" value="{{ old('finishing_lantai') }}">
-</div>
-
-<div class="col-md-4">
-    <label class="form-label"><i class="bi bi-brush-fill text-primary me-1"></i> Plafond</label>
-    <input type="text" name="finishing_plafond" class="form-control" value="{{ old('finishing_plafond') }}">
-</div>
-
-<div class="col-md-6">
     <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
     <select name="indikasi_kerusakan8" class="form-select">
         <option value="">-- Pilih Indikasi --</option>
@@ -605,7 +589,7 @@ th {
     </select>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-4">
     <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
     <select name="tingkat_kerusakan8" class="form-select">
         <option value="">-- Pilih Tingkat Kerusakan --</option>
@@ -618,34 +602,18 @@ th {
 
 <!-- ===================== BAGIAN 9 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-calculator me-1"></i> Bagian 9 - Perhitungan Nilai Kerusakan</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-brush me-1"></i> Bagian 9 - Finishing</h6>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label"><i class="bi bi-paint-bucket text-primary me-1"></i> Finishing</label>
+    <input type="text" name="finishing" class="form-control" value="{{ old('finishing') }}">
 </div>
 
 <div class="col-md-4">
     <label class="form-label"><i class="bi bi-123 text-primary me-1"></i> Total Nilai Kerusakan</label>
     <input type="number" step="0.01" name="total_nilai_kerusakan" class="form-control" value="{{ old('total_nilai_kerusakan') }}">
 </div>
-
-<div class="col-md-4">
-    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-    <select name="indikasi_kerusakan9" class="form-select">
-        <option value="">-- Pilih Indikasi --</option>
-        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
-        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
-    </select>
-</div>
-
-<div class="col-md-4">
-    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-    <select name="tingkat_kerusakan9" class="form-select">
-        <option value="">-- Pilih Tingkat Kerusakan --</option>
-        <option value="Ringan">Ringan</option>
-        <option value="Sedang">Sedang</option>
-        <option value="Berat">Berat</option>
-        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
-    </select>
-</div>
-
 
 <!-- ===================== BAGIAN 6 sampai BAGIAN 9 ===================== -->
 <!-- Gue lanjut bikin sisa Bagian 6, 7, 8, 9 persis seperti pola di atas -->
