@@ -14,6 +14,7 @@ return new class extends Migration
 
         Schema::create('databgtingkatkerusahans', function (Blueprint $table) {
     $table->id();
+
     $table->foreignId('databgkepemilikan_id')->nullable()->index(); // relasi ke data kepemilikan
 
     // BAGIAN 1

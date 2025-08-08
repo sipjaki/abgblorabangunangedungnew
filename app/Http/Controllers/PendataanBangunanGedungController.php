@@ -1911,5 +1911,69 @@ public function bedatabgstrukrrusakcreate($id)
     ]);
 }
 
+
+public function bedatabgstrukrrusakcreatenew(Request $request)
+{
+    $validated = $request->validate([
+        'databgkepemilikan_id' => 'required|string',
+
+        // BAGIAN 1
+        'struktur_bangunan_bawah' => 'nullable|string|max:100',
+        'struktur_bangunan_atas' => 'nullable|string|max:100',
+        'struktur_atap' => 'nullable|string|max:100',
+        'indikasi_kerusakan1' => 'nullable|string|max:255',
+        'tingkat_kerusakan1' => 'nullable|string|max:100',
+
+        // BAGIAN 2
+        'pondasi' => 'nullable|string|max:100',
+        'indikasi_kerusakan2' => 'nullable|string|max:255',
+        'tingkat_kerusakan2' => 'nullable|string|max:100',
+
+        // BAGIAN 3
+        'struktur' => 'nullable|string|max:100',
+        'indikasi_kerusakan3' => 'nullable|string|max:255',
+        'tingkat_kerusakan3' => 'nullable|string|max:100',
+
+        // BAGIAN 4
+        'atap' => 'nullable|string|max:100',
+        'indikasi_kerusakan4' => 'nullable|string|max:255',
+        'tingkat_kerusakan4' => 'nullable|string|max:100',
+
+        // BAGIAN 5
+        'lantai' => 'nullable|string|max:100',
+        'indikasi_kerusakan5' => 'nullable|string|max:255',
+        'tingkat_kerusakan5' => 'nullable|string|max:100',
+
+        // BAGIAN 6
+        'dinding' => 'nullable|string|max:100',
+        'indikasi_kerusakan6' => 'nullable|string|max:255',
+        'tingkat_kerusakan6' => 'nullable|string|max:100',
+
+        // BAGIAN 7
+        'plafond' => 'nullable|string|max:100',
+        'indikasi_kerusakan7' => 'nullable|string|max:255',
+        'tingkat_kerusakan7' => 'nullable|string|max:100',
+
+        // BAGIAN 8
+        'utilitas' => 'nullable|string|max:100',
+        'indikasi_kerusakan8' => 'nullable|string|max:255',
+        'tingkat_kerusakan8' => 'nullable|string|max:100',
+
+        // BAGIAN 9
+        'finishing' => 'nullable|string|max:100',
+        'total_nilai_kerusakan' => 'nullable|string|max:100',
+    ], [
+        'databgkepemilikan_id.required' => 'ID Kepemilikan wajib diisi.',
+        'databgkepemilikan_id.exists' => 'Data kepemilikan tidak ditemukan.',
+    ]);
+
+    databgtingkatkerusahan::create($validated);
+
+    session()->flash('create', 'Data struktur bangunan berhasil ditambahkan!');
+    return redirect()->route('bedatabgstrukrrusak', [
+        'id' => $validated['databgkepemilikan_id']
+    ]);
+}
+
 }
 
