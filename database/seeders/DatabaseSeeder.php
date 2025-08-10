@@ -1180,7 +1180,7 @@ for ($i = 1; $i <= 25; $i++) {
 
 // pbgslfbangunan::create([
 //     'id' => 1,
-//     'user_id' => 46,
+//     'user_id' => 92,
 //     'jenispengajuanpbgslfper_id' => 1,
 //     'tanggalpermohonan' => $randomDate,
 //     'noregissimbg' => 'PBG-321702-24102022-01',
@@ -1234,7 +1234,7 @@ for ($i = 1; $i <= 25; $i++) {
 
 // pbgslfbangunan::create([
 //     'id' => 4,
-//     'user_id' => 46,
+//     'user_id' => 92,
 //     'jenispengajuanpbgslfper_id' => 1,
 //     'tanggalpermohonan' => $randomDate,
 //     'noregissimbg' => 'PBG-321702-24102022-04',
@@ -13124,7 +13124,7 @@ petugaspenilik::create([
 
 databgkepemilikan::create([
     'id' => 1,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'BALAI PENYULUHAN PERTANIAN',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13136,7 +13136,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 2,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'BADAN KEPEGAWAIAN DAERAH',
     'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13148,7 +13148,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 3,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'BADAN KEPEGAWAIAN DAERAH',
     'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13160,7 +13160,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 4,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'BADAN KEPEGAWAIAN DAERAH',
     'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13172,7 +13172,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 5,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'BADAN KEPEGAWAIAN DAERAH',
     'alamat' => 'Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13184,7 +13184,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 6,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS KESEHATAN',
     'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13196,7 +13196,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 7,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS KESEHATAN',
     'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13208,7 +13208,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 8,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS KESEHATAN',
     'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13220,7 +13220,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 9,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS KESEHATAN',
     'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13232,7 +13232,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 10,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS KESEHATAN',
     'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13245,7 +13245,7 @@ databgkepemilikan::create([
 databgkepemilikan::insert([
     [
         'id' => 11,
-        'user_id' => 46,
+        'user_id' => 92,
         'kecamatanblora_id' => 2,
         'namainstitusi' => 'DINAS KESEHATAN',
         'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13256,7 +13256,7 @@ databgkepemilikan::insert([
     ],
     [
         'id' => 12,
-        'user_id' => 46,
+        'user_id' => 92,
         'kecamatanblora_id' => 2,
         'namainstitusi' => 'DINAS KESEHATAN',
         'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13269,7 +13269,7 @@ databgkepemilikan::insert([
 
 databgkepemilikan::create([
     'id' => 13,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS KESEHATAN',
     'alamat' => 'Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13281,7 +13281,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 14,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS P4',
     'alamat' => 'Ds. Sendengharto, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13293,7 +13293,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 15,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS P4',
     'alamat' => 'Ds. Sendengharto, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13305,7 +13305,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 16,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS P4',
     'alamat' => 'Ds. Sendengharto, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13317,7 +13317,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 17,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS P4',
     'alamat' => 'Ds. Sendengharto, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13329,7 +13329,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 18,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS P4',
     'alamat' => 'Ds. Sendengharto, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13341,7 +13341,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 19,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PEMBERDAYAAN MASYARAKAT',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13353,7 +13353,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 20,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PENDIDIKAN',
     'alamat' => 'Ds. Karang Jati, RT: 8/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13365,7 +13365,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 21,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PENDIDIKAN',
     'alamat' => 'Ds. Karang Jati, RT: 8/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13377,7 +13377,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 22,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PENDIDIKAN',
     'alamat' => 'Ds. Karang Jati, RT: 8/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13389,7 +13389,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 23,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PENDIDIKAN',
     'alamat' => 'Ds. Karang Jati, RT: 8/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13401,7 +13401,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 24,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PENDIDIKAN',
     'alamat' => 'Ds. Karang Jati, RT: 8/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13413,7 +13413,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 25,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13425,7 +13425,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 26,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13437,7 +13437,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 27,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13449,7 +13449,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 28,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13461,7 +13461,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 29,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13473,7 +13473,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 30,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13485,7 +13485,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 31,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13497,7 +13497,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 32,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13509,7 +13509,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 33,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
     'alamat' => 'Ds. Karang Jati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13521,7 +13521,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 34,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS KOMINFO',
     'alamat' => 'Ds. Mlangsen, Kec.Blora, Kab. Blora, Jawa Tengah',
@@ -13533,7 +13533,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 35,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN BERAN',
     'alamat' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13545,7 +13545,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 36,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN BERAN',
     'alamat' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13557,7 +13557,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 37,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN BERAN',
     'alamat' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13569,7 +13569,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 38,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN BERAN',
     'alamat' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13581,7 +13581,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 39,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN BERAN',
     'alamat' => 'Ds. Beran, RT: 01/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13593,7 +13593,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 40,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN JETIS',
     'alamat' => 'Ds. Jetis, RT: 04/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13605,7 +13605,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 41,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KARANGJATI',
     'alamat' => 'Ds. Karangjati, RT: 04/RW: 04, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13617,7 +13617,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 42,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KARANGJATI',
     'alamat' => 'Ds. Karangjati, RT: 04/RW: 04, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13629,7 +13629,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 43,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KARANGJATI',
     'alamat' => 'Ds. Karangjati, RT: 04/RW: 04, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13641,7 +13641,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 44,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KAUMAN',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13653,7 +13653,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 45,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KAUMAN',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13665,7 +13665,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 46,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KAUMAN',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13677,7 +13677,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 47,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KAUMAN',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13689,7 +13689,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 48,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KAUMAN',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13701,7 +13701,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 49,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD LABORATORIUM',
     'alamat' => 'Ds. Mlangsen, RT: 3/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13713,7 +13713,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 50,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'PUSKESMAS BLORA',
     'alamat' => 'Ds. Jetis, RT: 04/RW: 02, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13725,7 +13725,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 51,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KAMOLAN',
     'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13737,7 +13737,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 52,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KAMOLAN',
     'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13749,7 +13749,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 53,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KAMOLAN',
     'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13761,7 +13761,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 54,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KAMOLAN',
     'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13773,7 +13773,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 55,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KAMOLAN',
     'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13785,7 +13785,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 56,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KAMOLAN',
     'alamat' => 'Ds. Kamolan, RT: 1/RW: 10, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13797,7 +13797,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 57,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13809,7 +13809,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 58,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13821,7 +13821,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 59,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13833,7 +13833,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 60,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13846,7 +13846,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 61,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13858,7 +13858,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 62,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13870,7 +13870,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 63,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13882,7 +13882,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 64,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13894,7 +13894,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 65,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13906,7 +13906,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 66,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13918,7 +13918,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 67,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SANGGAR KEGIATAN BELAJAR',
     'alamat' => 'Ds. Kauman, RT: 4/RW: 2, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13930,7 +13930,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 68,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 5 BLORA',
     'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13942,7 +13942,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 69,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 5 BLORA',
     'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13954,7 +13954,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 70,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 5 BLORA',
     'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13966,7 +13966,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 71,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 5 BLORA',
     'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13978,7 +13978,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 72,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 5 BLORA',
     'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -13990,7 +13990,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 73,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 5 BLORA',
     'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14002,7 +14002,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 74,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 5 BLORA',
     'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14014,7 +14014,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 75,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 5 BLORA',
     'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14026,7 +14026,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 76,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 5 BLORA',
     'alamat' => 'Ds. Kauman, RT: 5, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14038,7 +14038,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 77,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 6 BLORA',
     'alamat' => 'Ds. Karang Jati, RT: 9/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14050,7 +14050,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 78,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 6 BLORA',
     'alamat' => 'Ds. Karang Jati, RT: 9/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14062,7 +14062,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 79,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 6 BLORA',
     'alamat' => 'Ds. Karang Jati, RT: 9/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14074,7 +14074,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 80,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 6 BLORA',
     'alamat' => 'Ds. Karang Jati, RT: 9/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14086,7 +14086,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 81,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 6 BLORA',
     'alamat' => 'Ds. Karang Jati, RT: 9/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14098,7 +14098,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 82,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 7 BLORA',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14110,7 +14110,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 83,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 7 BLORA',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14122,7 +14122,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 84,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 7 BLORA',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14134,7 +14134,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 85,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 7 BLORA',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14146,7 +14146,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 86,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 7 BLORA',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14158,7 +14158,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 87,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 7 BLORA',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14170,7 +14170,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 88,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 7 BLORA',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14182,7 +14182,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 89,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14194,7 +14194,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 90,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14206,7 +14206,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 91,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14218,7 +14218,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 92,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14230,7 +14230,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 93,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14242,7 +14242,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 94,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14254,7 +14254,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 95,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14266,7 +14266,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 96,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14278,7 +14278,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 97,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14290,7 +14290,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 98,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14302,7 +14302,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 99,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14314,7 +14314,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 100,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14327,7 +14327,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 101,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14339,7 +14339,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 102,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 2 BLORA',
     'alamat' => 'Ds. Jenar, RT: 3/ RW: 3, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14351,7 +14351,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 103,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14363,7 +14363,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 104,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14375,7 +14375,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 105,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14387,7 +14387,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 106,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14399,7 +14399,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 107,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14411,7 +14411,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 108,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14423,7 +14423,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 109,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14435,7 +14435,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 110,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14447,7 +14447,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 111,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14459,7 +14459,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 112,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14471,7 +14471,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 113,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14483,7 +14483,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 114,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 3 BLORA',
     'alamat' => 'Ds. Kamolan, RT: 5/RW: 1, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14495,7 +14495,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 115,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14507,7 +14507,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 116,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14519,7 +14519,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 117,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14531,7 +14531,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 118,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14543,7 +14543,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 119,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14555,7 +14555,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 120,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14568,7 +14568,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 121,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14580,7 +14580,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 122,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14592,7 +14592,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 123,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14604,7 +14604,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 124,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14616,7 +14616,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 125,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14628,7 +14628,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 126,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14640,7 +14640,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 127,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14652,7 +14652,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 128,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14664,7 +14664,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 129,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14676,7 +14676,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 130,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14688,7 +14688,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 131,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14700,7 +14700,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 132,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14712,7 +14712,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 133,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'RSUD Dr. R SOETIJONO',
     'alamat' => 'Jl. Dr. Sutomo No. 42, Ds. Tempelan, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14724,7 +14724,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 134,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPUPR KAB. BLORA',
     'alamat' => 'Jl. Nusantara No. 62, Jetis, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14736,7 +14736,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 135,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPUPR KAB. BLORA',
     'alamat' => 'Jl. Nusantara No. 62, Jetis, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14748,7 +14748,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 136,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPUPR KAB. BLORA',
     'alamat' => 'Jl. Nusantara No. 62, Jetis, Kauman, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -14760,7 +14760,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 137,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14772,7 +14772,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 138,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14784,7 +14784,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 139,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14796,7 +14796,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 140,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14808,7 +14808,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 141,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14820,7 +14820,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 142,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14832,7 +14832,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 143,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14844,7 +14844,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 144,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14856,7 +14856,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 145,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14868,7 +14868,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 146,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14880,7 +14880,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 147,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14892,7 +14892,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 148,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14904,7 +14904,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 149,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14916,7 +14916,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 150,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14928,7 +14928,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 151,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14940,7 +14940,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 152,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14952,7 +14952,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 153,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14964,7 +14964,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 154,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14976,7 +14976,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 155,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -14988,7 +14988,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 156,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -15000,7 +15000,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 157,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -15012,7 +15012,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 158,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SETDA BLORA',
     'alamat' => 'Jl. Pemuda No.12, Mlangsen, Kec. Blora, Jawa Tengah',
@@ -15024,7 +15024,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 159,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERUMAHAN, PERMUKIMAN, DAN PERHUBUNGAN',
     'alamat' => 'Mlangsen, Kec. Blora, Kec. Blora',
@@ -15036,7 +15036,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 160,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERUMAHAN, PERMUKIMAN, DAN PERHUBUNGAN',
     'alamat' => 'Mlangsen, Kec. Blora, Kec. Blora',
@@ -15048,7 +15048,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 161,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERUMAHAN, PERMUKIMAN, DAN PERHUBUNGAN',
     'alamat' => 'Mlangsen, Kec. Blora, Kec. Blora',
@@ -15060,7 +15060,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 162,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERUMAHAN, PERMUKIMAN, DAN PERHUBUNGAN',
     'alamat' => 'Mlangsen, Kec. Blora, Kec. Blora',
@@ -15072,7 +15072,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 163,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS LINGKUNGAN HIDUP',
     'alamat' => 'Kunden, Kec. Blora, Kab. Blora',
@@ -15084,7 +15084,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 164,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS LINGKUNGAN HIDUP',
     'alamat' => 'Kunden, Kec. Blora, Kab. Blora',
@@ -15096,7 +15096,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 165,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'BAPPEDA BLORA',
     'alamat' => 'Jl. GOR No. 10 Blora, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15108,7 +15108,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 166,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS SOSIAL',
     'alamat' => 'Jl. Pemuda No. 16A, Mlangsen, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15120,7 +15120,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 167,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINPORABUDPAR',
     'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
@@ -15132,7 +15132,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 168,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINPORABUDPAR',
     'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
@@ -15144,7 +15144,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 169,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINPORABUDPAR',
     'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
@@ -15156,7 +15156,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 170,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINPORABUDPAR',
     'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
@@ -15168,7 +15168,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 171,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINPORABUDPAR',
     'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
@@ -15180,7 +15180,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 172,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINPORABUDPAR',
     'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
@@ -15192,7 +15192,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 173,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINPORABUDPAR',
     'alamat' => 'Jl. GOR No. 2, Ketanggar, Karangjati, Kec. Blora, Jawa Tengah',
@@ -15204,7 +15204,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 174,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERDAGANGAN, KOPERASI, USAHA KECIL DAN MENENGAH',
     'alamat' => 'Jl. Rembang-Blora KM. 4, Kec. Blora, Jawa Tengah',
@@ -15216,7 +15216,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 175,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERDAGANGAN, KOPERASI, USAHA KECIL DAN MENENGAH',
     'alamat' => 'Jl. Rembang-Blora KM. 4, Kec. Blora, Jawa Tengah',
@@ -15228,7 +15228,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 176,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPRD BLORA',
     'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15240,7 +15240,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 177,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPRD BLORA',
     'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15252,7 +15252,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 178,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPRD BLORA',
     'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15264,7 +15264,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 179,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPRD BLORA',
     'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15276,7 +15276,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 180,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPRD BLORA',
     'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15289,7 +15289,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 181,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPRD BLORA',
     'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15301,7 +15301,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 182,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPRD BLORA',
     'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15313,7 +15313,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 183,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPRD BLORA',
     'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15325,7 +15325,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 184,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DPRD BLORA',
     'alamat' => 'Jl. Ahmad Yani No. 36, Karangjati, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -15337,7 +15337,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 185,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2, // kemungkinan kecamatan Tempurejo, sesuaikan kalau perlu
     'namainstitusi' => 'SDN 2 TEMPUREJO',
     'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
@@ -15349,7 +15349,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 186,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMPUREJO',
     'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
@@ -15361,7 +15361,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 187,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMPUREJO',
     'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
@@ -15373,7 +15373,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 188,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMPUREJO',
     'alamat' => 'Dk, Gulingan, RT: 01/RW: 04, Tempurejo',
@@ -15385,7 +15385,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 189,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
@@ -15397,7 +15397,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 190,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
@@ -15410,7 +15410,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 191,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
@@ -15422,7 +15422,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 192,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
@@ -15434,7 +15434,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 193,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 4, Blora',
@@ -15446,7 +15446,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 194,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
@@ -15458,7 +15458,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 195,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
@@ -15470,7 +15470,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 196,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
@@ -15482,7 +15482,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 197,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
@@ -15494,7 +15494,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 198,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMPUREJO',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 3, Blora',
@@ -15506,7 +15506,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 199,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2, // asumsi kecamatan Tambaksari, sesuaikan jika beda
     'namainstitusi' => 'SDN 2 TAMBAKSARI',
     'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
@@ -15518,7 +15518,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 200,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TAMBAKSARI',
     'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
@@ -15531,7 +15531,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 201,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TAMBAKSARI',
     'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
@@ -15544,7 +15544,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 202,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TAMBAKSARI',
     'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
@@ -15557,7 +15557,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 203,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TAMBAKSARI',
     'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
@@ -15570,7 +15570,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 204,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TAMBAKSARI',
     'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
@@ -15583,7 +15583,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 205,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TAMBAKSARI',
     'alamat' => 'Jl. Patalan, Ds. Tambaksari, Blora',
@@ -15596,7 +15596,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 206,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TAMBAKSARI',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
@@ -15609,7 +15609,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 207,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TAMBAKSARI',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
@@ -15622,7 +15622,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 208,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TAMBAKSARI',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
@@ -15635,7 +15635,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 209,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TAMBAKSARI',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
@@ -15648,7 +15648,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 210,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TAMBAKSARI',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
@@ -15661,7 +15661,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 211,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TAMBAKSARI',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
@@ -15674,7 +15674,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 212,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TAMBAKSARI',
     'alamat' => 'Jl. Raya Blora-Rembang, KM. 5, Blora',
@@ -15687,7 +15687,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 213,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOSARI',
     'alamat' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
@@ -15700,7 +15700,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 214,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOSARI',
     'alamat' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
@@ -15713,7 +15713,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 215,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOSARI',
     'alamat' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
@@ -15726,7 +15726,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 216,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOSARI',
     'alamat' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
@@ -15739,7 +15739,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 217,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOSARI',
     'alamat' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
@@ -15752,7 +15752,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 218,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOSARI',
     'alamat' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
@@ -15765,7 +15765,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 219,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOSARI',
     'alamat' => 'Ds. Purwosari, RT: 01/RW: 02, Blora',
@@ -15778,7 +15778,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 220,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PATALAN',
     'alamat' => 'Ds. Patalan, RT 02/RW 06, Blora',
@@ -15791,7 +15791,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 221,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PATALAN',
     'alamat' => 'Ds. Patalan, RT 02/RW 06, Blora',
@@ -15804,7 +15804,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 222,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PATALAN',
     'alamat' => 'Ds. Patalan, RT 02/RW 06, Blora',
@@ -15817,7 +15817,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 223,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PATALAN',
     'alamat' => 'Ds. Patalan, RT 02/RW 06, Blora',
@@ -15830,7 +15830,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 224,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PATALAN',
     'alamat' => 'Ds. Patalan, RT 02/RW 06, Blora',
@@ -15843,7 +15843,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 225,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PATALAN',
     'alamat' => 'Ds. Patalan, RT 02/RW 06, Blora',
@@ -15856,7 +15856,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 226,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PATALAN',
     'alamat' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
@@ -15869,7 +15869,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 227,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PATALAN',
     'alamat' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
@@ -15882,7 +15882,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 228,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PATALAN',
     'alamat' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
@@ -15895,7 +15895,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 229,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PATALAN',
     'alamat' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
@@ -15908,7 +15908,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 230,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PATALAN',
     'alamat' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
@@ -15922,7 +15922,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 231,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PATALAN',
     'alamat' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
@@ -15935,7 +15935,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 232,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PATALAN',
     'alamat' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
@@ -15948,7 +15948,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 233,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PATALAN',
     'alamat' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
@@ -15961,7 +15961,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 234,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PATALAN',
     'alamat' => 'Jl. Tambaksari-Puledagel KM. 1,6 Ds. Patalan',
@@ -15974,7 +15974,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 235,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PURWOSARI',
     'alamat' => 'Dk. Bubak, Ds. Purwosari RT 02/RW01, Blora',
@@ -15987,7 +15987,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 236,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PURWOSARI',
     'alamat' => 'Dk. Bubak, Ds. Purwosari RT 02/RW01, Blora',
@@ -16000,7 +16000,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 237,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PURWOSARI',
     'alamat' => 'Dk. Bubak, Ds. Purwosari RT 02/RW01, Blora',
@@ -16013,7 +16013,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 238,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PURWOSARI',
     'alamat' => 'Dk. Bubak, Ds. Purwosari RT 02/RW01, Blora',
@@ -16026,7 +16026,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 239,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PURWOSARI',
     'alamat' => 'Dk. Bubak, Ds. Purwosari RT 02/RW01, Blora',
@@ -16039,7 +16039,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 240,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PURWOSARI',
     'alamat' => 'Dk. Bubak, Ds. Purwosari RT 02/RW01, Blora',
@@ -16053,7 +16053,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 241,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KARANGJATI',
     'alamat' => 'Jl. GOR Mustika No. 1, Karangjati, Blora',
@@ -16066,7 +16066,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 242,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KARANGJATI',
     'alamat' => 'Jl. GOR Mustika No. 1, Karangjati, Blora',
@@ -16079,7 +16079,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 243,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KARANGJATI',
     'alamat' => 'Jl. GOR Mustika No. 1, Karangjati, Blora',
@@ -16092,7 +16092,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 244,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KARANGJATI',
     'alamat' => 'Jl. GOR Mustika No. 1, Karangjati, Blora',
@@ -16105,7 +16105,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 245,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KARANGJATI',
     'alamat' => 'Jl. GOR Mustika No. 1, Karangjati, Blora',
@@ -16118,7 +16118,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 246,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 157, Blora',
@@ -16131,7 +16131,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 247,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 157, Blora',
@@ -16144,7 +16144,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 248,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 157, Blora',
@@ -16157,7 +16157,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 249,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 157, Blora',
@@ -16170,7 +16170,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 250,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 157, Blora',
@@ -16184,7 +16184,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 251,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 157, Blora',
@@ -16197,7 +16197,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 252,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 157, Blora',
@@ -16210,7 +16210,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 253,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMUREJO',
     'alamat' => 'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora',
@@ -16223,7 +16223,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 254,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMUREJO',
     'alamat' => 'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora',
@@ -16236,7 +16236,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 255,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMUREJO',
     'alamat' => 'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora',
@@ -16249,7 +16249,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 256,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMUREJO',
     'alamat' => 'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora',
@@ -16262,7 +16262,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 257,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMUREJO',
     'alamat' => 'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora',
@@ -16275,7 +16275,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 258,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEMUREJO',
     'alamat' => 'Jendral Cut Merah Intan, RT03/RW01, Temurejo, Blora',
@@ -16288,7 +16288,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 259,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 BANGKLE',
     'alamat' => 'Jl . Veteran Gg. Sentono, Bangkle, Blora',
@@ -16301,7 +16301,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 260,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 BANGKLE',
     'alamat' => 'Jl . Veteran Gg. Sentono, Bangkle, Blora',
@@ -16315,7 +16315,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 261,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 BANGKLE',
     'alamat' => 'Jl . Veteran Gg. Sentono, Bangkle, Blora',
@@ -16328,7 +16328,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 262,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 BANGKLE',
     'alamat' => 'Jl . Veteran Gg. Sentono, Bangkle, Blora',
@@ -16341,7 +16341,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 263,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 BANGKLE',
     'alamat' => 'Jl . Veteran Gg. Sentono, Bangkle, Blora',
@@ -16354,7 +16354,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 264,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 BANGKLE',
     'alamat' => 'Jl . Veteran Gg. Sentono, Bangkle, Blora',
@@ -16367,7 +16367,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 265,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KARANGJATI',
     'alamat' => 'Jl. A. Yani, No. 76 Blora',
@@ -16380,7 +16380,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 266,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KARANGJATI',
     'alamat' => 'Jl. A. Yani, No. 76 Blora',
@@ -16393,7 +16393,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 267,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KARANGJATI',
     'alamat' => 'Jl. A. Yani, No. 76 Blora',
@@ -16406,7 +16406,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 268,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KARANGJATI',
     'alamat' => 'Jl. A. Yani, No. 76 Blora',
@@ -16419,7 +16419,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 269,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 195, Blora',
@@ -16432,7 +16432,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 270,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 195, Blora',
@@ -16446,7 +16446,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 271,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 195, Blora',
@@ -16459,7 +16459,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 272,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 195, Blora',
@@ -16472,7 +16472,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 273,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 195, Blora',
@@ -16485,7 +16485,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 274,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 195, Blora',
@@ -16498,7 +16498,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 275,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BANGKLE',
     'alamat' => 'Jl. Jendral Sudirman no. 195, Blora',
@@ -16511,7 +16511,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 276,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 4 KARANGJATI',
     'alamat' => 'Nglawiyan, RT 01/RW 04, Karangjati, Blora',
@@ -16524,7 +16524,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 277,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 4 KARANGJATI',
     'alamat' => 'Nglawiyan, RT 01/RW 04, Karangjati, Blora',
@@ -16537,7 +16537,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 278,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 4 KARANGJATI',
     'alamat' => 'Nglawiyan, RT 01/RW 04, Karangjati, Blora',
@@ -16550,7 +16550,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 279,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 4 KARANGJATI',
     'alamat' => 'Nglawiyan, RT 01/RW 04, Karangjati, Blora',
@@ -16563,7 +16563,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 280,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 4 KARANGJATI',
     'alamat' => 'Nglawiyan, RT 01/RW 04, Karangjati, Blora',
@@ -16577,7 +16577,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 281,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN JEJERUK',
     'alamat' => 'Ds. Jejeruk, RT 01/RW01, Blora',
@@ -16590,7 +16590,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 282,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN JEJERUK',
     'alamat' => 'Ds. Jejeruk, RT 01/RW01, Blora',
@@ -16603,7 +16603,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 283,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN JEJERUK',
     'alamat' => 'Ds. Jejeruk, RT 01/RW01, Blora',
@@ -16616,7 +16616,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 284,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN JEJERUK',
     'alamat' => 'Ds. Jejeruk, RT 01/RW01, Blora',
@@ -16629,7 +16629,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 285,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 5 KARANGJATI',
     'alamat' => 'Jl. Bekisar no.17, Perumnas Karangjati, Blora',
@@ -16642,7 +16642,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 286,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 5 KARANGJATI',
     'alamat' => 'Jl. Bekisar no.17, Perumnas Karangjati, Blora',
@@ -16655,7 +16655,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 287,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 5 KARANGJATI',
     'alamat' => 'Jl. Bekisar no.17, Perumnas Karangjati, Blora',
@@ -16668,7 +16668,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 288,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 5 KARANGJATI',
     'alamat' => 'Jl. Bekisar no.17, Perumnas Karangjati, Blora',
@@ -16681,7 +16681,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 289,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 5 KARANGJATI',
     'alamat' => 'Jl. Bekisar no.17, Perumnas Karangjati, Blora',
@@ -16694,7 +16694,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 290,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 5 KARANGJATI',
     'alamat' => 'Jl. Bekisar no.17, Perumnas Karangjati, Blora',
@@ -16708,7 +16708,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 291,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 5 KARANGJATI',
     'alamat' => 'Jl. Bekisar no.17, Perumnas Karangjati, Blora',
@@ -16721,7 +16721,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 292,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 5 KARANGJATI',
     'alamat' => 'Jl. Bekisar no.17, Perumnas Karangjati, Blora',
@@ -16734,7 +16734,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 293,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEGALGUNUNG',
     'alamat' => 'Jl. Taman Makam Pahlawan No.26, Blora',
@@ -16747,7 +16747,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 294,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEGALGUNUNG',
     'alamat' => 'Jl. Taman Makam Pahlawan No.26, Blora',
@@ -16760,7 +16760,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 295,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEGALGUNUNG',
     'alamat' => 'Jl. Taman Makam Pahlawan No.26, Blora',
@@ -16773,7 +16773,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 296,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEGALGUNUNG',
     'alamat' => 'Jl. Taman Makam Pahlawan No.26, Blora',
@@ -16786,7 +16786,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 297,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PURWOREJO',
     'alamat' => 'Ds. Purworejo, RT 01/RW 05, Blora',
@@ -16799,7 +16799,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 298,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PURWOREJO',
     'alamat' => 'Ds. Purworejo, RT 01/RW 05, Blora',
@@ -16812,7 +16812,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 299,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PURWOREJO',
     'alamat' => 'Ds. Purworejo, RT 01/RW 05, Blora',
@@ -16825,7 +16825,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 300,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PURWOREJO',
     'alamat' => 'Ds. Purworejo, RT 01/RW 05, Blora',
@@ -16839,7 +16839,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 301,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN TEGALGUNUNG',
     'alamat' => 'Jl.Taman Makam Pahlawan No.32, Blora',
@@ -16852,7 +16852,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 302,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOREJO',
     'alamat' => 'Ds. Purworejo, RT 01/RW 06, Blora',
@@ -16865,7 +16865,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 303,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOREJO',
     'alamat' => 'Ds. Purworejo, RT 01/RW 06, Blora',
@@ -16878,7 +16878,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 304,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOREJO',
     'alamat' => 'Ds. Purworejo, RT 01/RW 06, Blora',
@@ -16891,7 +16891,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 305,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOREJO',
     'alamat' => 'Ds. Purworejo, RT 01/RW 06, Blora',
@@ -16904,7 +16904,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 306,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PURWOREJO',
     'alamat' => 'Ds. Purworejo, RT 01/RW 06, Blora',
@@ -16917,7 +16917,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 307,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEGALGUNUNG',
     'alamat' => 'Jl. Gunung Lawu, Lr. II No.23, Blora',
@@ -16930,7 +16930,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 308,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEGALGUNUNG',
     'alamat' => 'Jl. Gunung Lawu, Lr. II No.23, Blora',
@@ -16943,7 +16943,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 309,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEGALGUNUNG',
     'alamat' => 'Jl. Gunung Lawu, Lr. II No.23, Blora',
@@ -16956,7 +16956,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 310,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 TEGALGUNUNG',
     'alamat' => 'Jl. Gunung Lawu, Lr. II No.23, Blora',
@@ -16970,7 +16970,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 311,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 ANDONGREJO',
     'alamat' => 'Dk. Pakis, Ds. Andongrejo, Blora',
@@ -16983,7 +16983,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 312,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 ANDONGREJO',
     'alamat' => 'Dk. Pakis, Ds. Andongrejo, Blora',
@@ -16996,7 +16996,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 313,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 ANDONGREJO',
     'alamat' => 'Dk. Pakis, Ds. Andongrejo, Blora',
@@ -17009,7 +17009,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 314,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 ANDONGREJO',
     'alamat' => 'Dk. Pakis, Ds. Andongrejo, Blora',
@@ -17022,7 +17022,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 315,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 ANDONGREJO',
     'alamat' => 'Dk. Pakis, Ds. Andongrejo, Blora',
@@ -17035,7 +17035,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 316,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 ANDONGREJO',
     'alamat' => 'Dk. Pakis, Ds. Andongrejo, Blora',
@@ -17048,7 +17048,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 317,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMUREJO',
     'alamat' => 'Ds. Temurejo RT 02/RW 08, Blora',
@@ -17061,7 +17061,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 318,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMUREJO',
     'alamat' => 'Ds. Temurejo RT 02/RW 08, Blora',
@@ -17074,7 +17074,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 319,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMUREJO',
     'alamat' => 'Ds. Temurejo RT 02/RW 08, Blora',
@@ -17087,7 +17087,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 320,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMUREJO',
     'alamat' => 'Ds. Temurejo RT 02/RW 08, Blora',
@@ -17101,7 +17101,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 321,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMUREJO',
     'alamat' => 'Ds. Temurejo RT 02/RW 08, Blora',
@@ -17114,7 +17114,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 322,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 TEMUREJO',
     'alamat' => 'Ds. Temurejo RT 02/RW 08, Blora',
@@ -17127,7 +17127,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 323,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PELEM',
     'alamat' => 'Ds. Pelem RT01/RW02, Blora',
@@ -17140,7 +17140,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 324,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PELEM',
     'alamat' => 'Ds. Pelem RT01/RW02, Blora',
@@ -17153,7 +17153,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 325,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PELEM',
     'alamat' => 'Ds. Pelem RT01/RW02, Blora',
@@ -17166,7 +17166,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 326,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PELEM',
     'alamat' => 'Ds. Pelem RT01/RW02, Blora',
@@ -17179,7 +17179,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 327,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PELEM',
     'alamat' => 'Ds. Pelem RT01/RW02, Blora',
@@ -17192,7 +17192,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 328,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 PELEM',
     'alamat' => 'Ds. Pelem RT01/RW02, Blora',
@@ -17205,7 +17205,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 329,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PELEM',
     'alamat' => 'Ds. Pelem RT 03/ RW 03, Blora',
@@ -17218,7 +17218,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 330,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PELEM',
     'alamat' => 'Ds. Pelem RT 03/ RW 03, Blora',
@@ -17232,7 +17232,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 331,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PELEM',
     'alamat' => 'Ds. Pelem RT 03/ RW 03, Blora',
@@ -17245,7 +17245,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 332,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PELEM',
     'alamat' => 'Ds. Pelem RT 03/ RW 03, Blora',
@@ -17258,7 +17258,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 333,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PELEM',
     'alamat' => 'Ds. Pelem RT 03/ RW 03, Blora',
@@ -17271,7 +17271,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 334,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 PELEM',
     'alamat' => 'Ds. Pelem RT 03/ RW 03, Blora',
@@ -17284,7 +17284,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 335,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KAUMAN',
     'alamat' => 'Jl. R.A. Kartini No. 4, Blora',
@@ -17297,7 +17297,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 336,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KAUMAN',
     'alamat' => 'Jl. R.A. Kartini No. 4, Blora',
@@ -17310,7 +17310,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 337,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KAUMAN',
     'alamat' => 'Jl. R.A. Kartini No. 4, Blora',
@@ -17323,7 +17323,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 338,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KAUMAN',
     'alamat' => 'Jl. R.A. Kartini No. 4, Blora',
@@ -17336,7 +17336,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 339,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KAUMAN',
     'alamat' => 'Jl. R.A. Kartini No. 4, Blora',
@@ -17349,7 +17349,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 340,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KAUMAN',
     'alamat' => 'Jl. R.A. Kartini No. 4, Blora',
@@ -17363,7 +17363,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 341,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KAUMAN',
     'alamat' => 'Jl. R.A. Kartini No. 4, Blora',
@@ -17376,7 +17376,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 342,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 ANDONGREJO',
     'alamat' => 'Dk. Denguk, Ds. Andongrejo, Blora',
@@ -17389,7 +17389,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 343,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 ANDONGREJO',
     'alamat' => 'Dk. Denguk, Ds. Andongrejo, Blora',
@@ -17402,7 +17402,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 344,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 ANDONGREJO',
     'alamat' => 'Dk. Denguk, Ds. Andongrejo, Blora',
@@ -17415,7 +17415,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 345,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 ANDONGREJO',
     'alamat' => 'Dk. Denguk, Ds. Andongrejo, Blora',
@@ -17428,7 +17428,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 346,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 ANDONGREJO',
     'alamat' => 'Dk. Denguk, Ds. Andongrejo, Blora',
@@ -17441,7 +17441,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 347,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 ANDONGREJO',
     'alamat' => 'Dk. Denguk, Ds. Andongrejo, Blora',
@@ -17454,7 +17454,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 348,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KUNDEN',
     'alamat' => 'Jl. Gunung Slamet No. 10, Kunden, Blora',
@@ -17467,7 +17467,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 349,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KUNDEN',
     'alamat' => 'Jl. Gunung Slamet No. 10, Kunden, Blora',
@@ -17480,7 +17480,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 350,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KUNDEN',
     'alamat' => 'Jl. Gunung Slamet No. 10, Kunden, Blora',
@@ -17494,7 +17494,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 351,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 NGAMPEL',
     'alamat' => 'Jl. Raya Blora-Rembang KM 10, Ngampel, Blora',
@@ -17507,7 +17507,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 352,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 NGAMPEL',
     'alamat' => 'Jl. Raya Blora-Rembang KM 10, Ngampel, Blora',
@@ -17520,7 +17520,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 353,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 KAMOLAN',
     'alamat' => 'Jl. Putra Bangsa No.38, RT01/RW04, Kamolan, Blora',
@@ -17533,7 +17533,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 354,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 KAMOLAN',
     'alamat' => 'Jl. Putra Bangsa No.38, RT01/RW04, Kamolan, Blora',
@@ -17546,7 +17546,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 355,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 KAMOLAN',
     'alamat' => 'Jl. Putra Bangsa No.38, RT01/RW04, Kamolan, Blora',
@@ -17559,7 +17559,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 356,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 KAMOLAN',
     'alamat' => 'Jl. Putra Bangsa No.38, RT01/RW04, Kamolan, Blora',
@@ -17572,7 +17572,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 357,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 NGAMPEL',
     'alamat' => 'Dk. Tambakselo, Ds. Ngampel, RT 01/RW 06, Blora',
@@ -17585,7 +17585,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 358,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 NGAMPEL',
     'alamat' => 'Dk. Tambakselo, Ds. Ngampel, RT 01/RW 06, Blora',
@@ -17598,7 +17598,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 359,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KAMOLAN',
     'alamat' => 'Jl. Putra Bangsa RT 03/RW 01, Kamolan, Blora',
@@ -17611,7 +17611,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 360,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KAMOLAN',
     'alamat' => 'Jl. Putra Bangsa RT 03/RW 01, Kamolan, Blora',
@@ -17625,7 +17625,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 361,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KAMOLAN',
     'alamat' => 'Jl. Putra Bangsa RT 03/RW 01, Kamolan, Blora',
@@ -17638,7 +17638,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 362,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KAMOLAN',
     'alamat' => 'Jl. Putra Bangsa RT 03/RW 01, Kamolan, Blora',
@@ -17651,7 +17651,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 363,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KAMOLAN',
     'alamat' => 'Jl. Putra Bangsa RT 03/RW 01, Kamolan, Blora',
@@ -17664,7 +17664,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 364,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 KAMOLAN',
     'alamat' => 'Jl. Putra Bangsa RT 03/RW 01, Kamolan, Blora',
@@ -17677,7 +17677,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 365,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SENDANGHARJO',
     'alamat' => 'Jl. Sayuran Ds. Sendangharjo, RT 02/RW 03, Blora',
@@ -17690,7 +17690,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 366,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SENDANGHARJO',
     'alamat' => 'Jl. Sayuran Ds. Sendangharjo, RT 02/RW 03, Blora',
@@ -17703,7 +17703,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 367,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SENDANGHARJO',
     'alamat' => 'Jl. Sayuran Ds. Sendangharjo, RT 02/RW 03, Blora',
@@ -17716,7 +17716,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 368,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SENDANGHARJO',
     'alamat' => 'Jl. Sayuran Ds. Sendangharjo, RT 02/RW 03, Blora',
@@ -17729,7 +17729,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 369,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SENDANGHARJO',
     'alamat' => 'Jl. Sayuran Ds. Sendangharjo, RT 02/RW 03, Blora',
@@ -17742,7 +17742,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 370,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SENDANGHARJO',
     'alamat' => 'Jl. Sayuran Ds. Sendangharjo, RT 02/RW 03, Blora',
@@ -17756,7 +17756,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 371,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SENDANGHARJO',
     'alamat' => 'Jl. Sayuran Ds. Sendangharjo, RT 02/RW 03, Blora',
@@ -17769,7 +17769,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 372,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SENDANGHARJO',
     'alamat' => 'Jl. Sayuran Ds. Sendangharjo, RT 02/RW 03, Blora',
@@ -17782,7 +17782,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 373,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN PLANTUNGAN',
     'alamat' => 'Desa Plantungan RT 02/RW 02, Blora',
@@ -17795,7 +17795,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 374,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN PLANTUNGAN',
     'alamat' => 'Desa Plantungan RT 02/RW 02, Blora',
@@ -17808,7 +17808,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 375,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN PLANTUNGAN',
     'alamat' => 'Desa Plantungan RT 02/RW 02, Blora',
@@ -17821,7 +17821,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 376,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN PLANTUNGAN',
     'alamat' => 'Desa Plantungan RT 02/RW 02, Blora',
@@ -17834,7 +17834,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 377,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN PLANTUNGAN',
     'alamat' => 'Desa Plantungan RT 02/RW 02, Blora',
@@ -17847,7 +17847,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 378,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN PLANTUNGAN',
     'alamat' => 'Desa Plantungan RT 02/RW 02, Blora',
@@ -17860,7 +17860,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 379,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN PLANTUNGAN',
     'alamat' => 'Desa Plantungan RT 02/RW 02, Blora',
@@ -17873,7 +17873,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 380,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN PLANTUNGAN',
     'alamat' => 'Desa Plantungan RT 02/RW 02, Blora',
@@ -17887,7 +17887,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 381,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPURAN',
     'alamat' => 'Desa Tempuran RT 01/RW 01, Blora',
@@ -17900,7 +17900,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 382,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPURAN',
     'alamat' => 'Desa Tempuran RT 01/RW 01, Blora',
@@ -17913,7 +17913,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 383,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPURAN',
     'alamat' => 'Desa Tempuran RT 01/RW 01, Blora',
@@ -17926,7 +17926,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 384,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPURAN',
     'alamat' => 'Desa Tempuran RT 01/RW 01, Blora',
@@ -17939,7 +17939,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 385,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPURAN',
     'alamat' => 'Desa Tempuran RT 01/RW 01, Blora',
@@ -17952,7 +17952,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 386,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPURAN',
     'alamat' => 'Desa Tempuran RT 01/RW 01, Blora',
@@ -17965,7 +17965,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 387,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KUNDEN',
     'alamat' => 'Jl. dr. Sutomo No.4, Kunden, Blora',
@@ -17978,7 +17978,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 388,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KUNDEN',
     'alamat' => 'Jl. dr. Sutomo No.4, Kunden, Blora',
@@ -17991,7 +17991,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 389,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KUNDEN',
     'alamat' => 'Jl. dr. Sutomo No.4, Kunden, Blora',
@@ -18004,7 +18004,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 390,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KUNDEN',
     'alamat' => 'Jl. dr. Sutomo No.4, Kunden, Blora',
@@ -18018,7 +18018,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 391,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KUNDEN',
     'alamat' => 'Jl. dr. Sutomo No.4, Kunden, Blora',
@@ -18031,7 +18031,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 392,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 KUNDEN',
     'alamat' => 'Jl. dr. Sutomo No.4, Kunden, Blora',
@@ -18044,7 +18044,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 393,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'PUSKESMAS PEMBANTU KAMOLAN',
     'alamat' => 'Ds. Kamolan RT 05/RW 02, Blora',
@@ -18057,7 +18057,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 394,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'PUSKESMAS PEMBANTU KAMOLAN',
     'alamat' => 'Ds. Kamolan RT 05/RW 02, Blora',
@@ -18070,7 +18070,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 395,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'PUSKESMAS PEMBANTU PELEM',
     'alamat' => 'Ds Pelem, RT 01/RW 02, Blora',
@@ -18083,7 +18083,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 396,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'PUSKESMAS PEMBANTU KARANGJATI',
     'alamat' => 'Jl. Perkutut No.4 Prumnas, RT 05/RW 05, Karangjati, Blora',
@@ -18096,7 +18096,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 397,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N PEMBINA',
     'alamat' => 'Jl.Gor Mustika No.15, Karangjati, Blora',
@@ -18109,7 +18109,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 398,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N PEMBINA',
     'alamat' => 'Jl.Gor Mustika No.15, Karangjati, Blora',
@@ -18122,7 +18122,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 399,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N PEMBINA',
     'alamat' => 'Jl.Gor Mustika No.15, Karangjati, Blora',
@@ -18135,7 +18135,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 400,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N PEMBINA',
     'alamat' => 'Jl.Gor Mustika No.15, Karangjati, Blora',
@@ -18149,7 +18149,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 401,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N PEMBINA',
     'alamat' => 'Jl.Gor Mustika No.15, Karangjati, Blora',
@@ -18162,7 +18162,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 402,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N PEMBINA',
     'alamat' => 'Jl.Gor Mustika No.15, Karangjati, Blora',
@@ -18175,7 +18175,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 403,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N PEMBINA',
     'alamat' => 'Jl.Gor Mustika No.15, Karangjati, Blora',
@@ -18188,7 +18188,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 404,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N PEMBINA',
     'alamat' => 'Jl.Gor Mustika No.15, Karangjati, Blora',
@@ -18201,7 +18201,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 405,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N PEMBINA',
     'alamat' => 'Jl.Gor Mustika No.15, Karangjati, Blora',
@@ -18214,7 +18214,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 406,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 JETIS',
     'alamat' => 'Jl. Maluku No. 39, RT 03/RW 02, Jetis, Blora',
@@ -18227,7 +18227,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 407,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 JETIS',
     'alamat' => 'Jl. Maluku No. 39, RT 03/RW 02, Jetis, Blora',
@@ -18240,7 +18240,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 408,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 JETIS',
     'alamat' => 'Jl. Maluku No. 39, RT 03/RW 02, Jetis, Blora',
@@ -18253,7 +18253,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 409,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 JETIS',
     'alamat' => 'Jl. Maluku No. 39, RT 03/RW 02, Jetis, Blora',
@@ -18266,7 +18266,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 410,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 JETIS',
     'alamat' => 'Jl. Maluku No. 39, RT 03/RW 02, Jetis, Blora',
@@ -18280,7 +18280,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 411,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 JETIS',
     'alamat' => 'Jl. Maluku No. 39, RT 03/RW 02, Jetis, Blora',
@@ -18293,7 +18293,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 412,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N PEMBINA',
     'alamat' => 'Jl.Gor Mustika No.15, Karangjati, Blora',
@@ -18306,7 +18306,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 413,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18319,7 +18319,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 414,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18332,7 +18332,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 415,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18345,7 +18345,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 416,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18358,7 +18358,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 417,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18371,7 +18371,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 418,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18384,7 +18384,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 419,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18397,7 +18397,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 420,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18410,7 +18410,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 421,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18423,7 +18423,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 422,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18436,7 +18436,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 423,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN KEDUNGJENAR',
     'alamat' => 'Jl. Gunandar No. 9B, Kedungjenar, Blora',
@@ -18449,7 +18449,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 424,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 JEPANGREJO',
     'alamat' => 'Dk. Gusten RT 02/RW 03, Ds. Jepangrejo, Blora',
@@ -18462,7 +18462,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 425,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 JEPANGREJO',
     'alamat' => 'Dk. Gusten RT 02/RW 03, Ds. Jepangrejo, Blora',
@@ -18475,7 +18475,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 426,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 JEPANGREJO',
     'alamat' => 'Dk. Gusten RT 02/RW 03, Ds. Jepangrejo, Blora',
@@ -18488,7 +18488,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 427,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BERAN',
     'alamat' => 'Jl. Gunandar Selatan, No. 31, Beran, Blora',
@@ -18501,7 +18501,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 428,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BERAN',
     'alamat' => 'Jl. Gunandar Selatan, No. 31, Beran, Blora',
@@ -18514,7 +18514,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 429,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BERAN',
     'alamat' => 'Jl. Gunandar Selatan, No. 31, Beran, Blora',
@@ -18527,7 +18527,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 430,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BERAN',
     'alamat' => 'Jl. Gunandar Selatan, No. 31, Beran, Blora',
@@ -18540,7 +18540,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 431,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 BERAN',
     'alamat' => 'Jl. Gunandar Selatan, No. 31, Beran, Blora',
@@ -18553,7 +18553,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 432,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JETIS',
     'alamat' => 'Jl. Halmahera No.52 RT 04/RW 01, Jetis, Blora',
@@ -18566,7 +18566,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 433,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JETIS',
     'alamat' => 'Jl. Halmahera No.52 RT 04/RW 01, Jetis, Blora',
@@ -18579,7 +18579,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 434,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JETIS',
     'alamat' => 'Jl. Halmahera No.52 RT 04/RW 01, Jetis, Blora',
@@ -18592,7 +18592,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 435,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JETIS',
     'alamat' => 'Jl. Halmahera No.52 RT 04/RW 01, Jetis, Blora',
@@ -18605,7 +18605,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 436,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JETIS',
     'alamat' => 'Jl. Halmahera No.52 RT 04/RW 01, Jetis, Blora',
@@ -18618,7 +18618,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 437,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JETIS',
     'alamat' => 'Jl. Halmahera No.52 RT 04/RW 01, Jetis, Blora',
@@ -18631,7 +18631,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 438,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BERAN',
     'alamat' => 'Jl. Cendana No. 54A, RT 01/RW 02, Beran, Blora',
@@ -18644,7 +18644,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 439,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BERAN',
     'alamat' => 'Jl. Cendana No. 54A, RT 01/RW 02, Beran, Blora',
@@ -18657,7 +18657,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 440,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BERAN',
     'alamat' => 'Jl. Cendana No. 54A, RT 01/RW 02, Beran, Blora',
@@ -18671,7 +18671,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 441,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BERAN',
     'alamat' => 'Jl. Cendana No. 54A, RT 01/RW 02, Beran, Blora',
@@ -18684,7 +18684,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 442,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BERAN',
     'alamat' => 'Jl. Cendana No. 54A, RT 01/RW 02, Beran, Blora',
@@ -18697,7 +18697,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 443,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 BERAN',
     'alamat' => 'Jl. Cendana No. 54A, RT 01/RW 02, Beran, Blora',
@@ -18710,7 +18710,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 444,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 SENDANGHARJO',
     'alamat' => 'Ds. Sendangharjo RT 01/ RW 04, Blora',
@@ -18723,7 +18723,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 445,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 SENDANGHARJO',
     'alamat' => 'Ds. Sendangharjo RT 01/ RW 04, Blora',
@@ -18736,7 +18736,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 446,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 SENDANGHARJO',
     'alamat' => 'Ds. Sendangharjo RT 01/ RW 04, Blora',
@@ -18749,7 +18749,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 447,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 SENDANGHARJO',
     'alamat' => 'Ds. Sendangharjo RT 01/ RW 04, Blora',
@@ -18762,7 +18762,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 448,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 SENDANGHARJO',
     'alamat' => 'Ds. Sendangharjo RT 01/ RW 04, Blora',
@@ -18775,7 +18775,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 449,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 SENDANGHARJO',
     'alamat' => 'Ds. Sendangharjo RT 01/ RW 04, Blora',
@@ -18788,7 +18788,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 450,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN SONOREJO',
     'alamat' => 'Jl. Gatot Subroto No.115, Kel. Sonorejo RT 03/RW 01, Blora',
@@ -18802,7 +18802,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 451,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN SONOREJO',
     'alamat' => 'Jl. Gatot Subroto No.115, Kel. Sonorejo RT 03/RW 01, Blora',
@@ -18815,7 +18815,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 452,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN SONOREJO',
     'alamat' => 'Jl. Gatot Subroto No.115, Kel. Sonorejo RT 03/RW 01, Blora',
@@ -18828,7 +18828,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 453,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN SONOREJO',
     'alamat' => 'Jl. Gatot Subroto No.115, Kel. Sonorejo RT 03/RW 01, Blora',
@@ -18841,7 +18841,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 454,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN NGADIPURWO',
     'alamat' => 'Ds. Ngadipurwo, Kec. Blora, Kab. Blora',
@@ -18854,7 +18854,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 455,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN NGADIPURWO',
     'alamat' => 'Ds. Ngadipurwo, Kec. Blora, Kab. Blora',
@@ -18867,7 +18867,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 456,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN NGADIPURWO',
     'alamat' => 'Ds. Ngadipurwo, Kec. Blora, Kab. Blora',
@@ -18880,7 +18880,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 457,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN NGADIPURWO',
     'alamat' => 'Ds. Ngadipurwo, Kec. Blora, Kab. Blora',
@@ -18893,7 +18893,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 458,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN NGADIPURWO',
     'alamat' => 'Ds. Ngadipurwo, Kec. Blora, Kab. Blora',
@@ -18906,7 +18906,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 459,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN TAMBAHREJO',
     'alamat' => 'Jl. Halmahera II, No. 39 RT 03/RW 02, Tambahrejo, Blora',
@@ -18919,7 +18919,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 460,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN TAMBAHREJO',
     'alamat' => 'Jl. Halmahera II, No. 39 RT 03/RW 02, Tambahrejo, Blora',
@@ -18933,7 +18933,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 461,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN TAMBAHREJO',
     'alamat' => 'Jl. Halmahera II, No. 39 RT 03/RW 02, Tambahrejo, Blora',
@@ -18946,7 +18946,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 462,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN TAMBAHREJO',
     'alamat' => 'Jl. Halmahera II, No. 39 RT 03/RW 02, Tambahrejo, Blora',
@@ -18959,7 +18959,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 463,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN MLANGSEN',
     'alamat' => 'Jl. Mangga No. 17, Ds. Mlangsen RT08/RW02, Blora',
@@ -18972,7 +18972,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 464,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN MLANGSEN',
     'alamat' => 'Jl. Mangga No. 17, Ds. Mlangsen RT08/RW02, Blora',
@@ -18985,7 +18985,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 465,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JEPANGREJO',
     'alamat' => 'Ds. Jepangrejo, Blora',
@@ -18998,7 +18998,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 466,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JEPANGREJO',
     'alamat' => 'Ds. Jepangrejo, Blora',
@@ -19011,7 +19011,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 467,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JEPANGREJO',
     'alamat' => 'Ds. Jepangrejo, Blora',
@@ -19024,7 +19024,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 468,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JEPANGREJO',
     'alamat' => 'Ds. Jepangrejo, Blora',
@@ -19037,7 +19037,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 469,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 2 JEPANGREJO',
     'alamat' => 'Ds. Jepangrejo, Blora',
@@ -19050,7 +19050,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 470,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN MLANGSEN',
     'alamat' => 'Jl. Mr. Iskandar No.123A, Blora',
@@ -19064,7 +19064,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 471,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN MLANGSEN',
     'alamat' => 'Jl. Mr. Iskandar No.123A, Blora',
@@ -19077,7 +19077,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 472,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN MLANGSEN',
     'alamat' => 'Jl. Mr. Iskandar No.123A, Blora',
@@ -19090,7 +19090,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 473,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN MLANGSEN',
     'alamat' => 'Jl. Mr. Iskandar No.123A, Blora',
@@ -19103,7 +19103,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 474,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN MLANGSEN',
     'alamat' => 'Jl. Mr. Iskandar No.123A, Blora',
@@ -19116,7 +19116,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 475,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN MLANGSEN',
     'alamat' => 'Jl. Mr. Iskandar No.123A, Blora',
@@ -19129,7 +19129,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 476,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 JEPANGREJO',
     'alamat' => 'Ds. Jepangrejo RT 01/RW 06, Blora',
@@ -19142,7 +19142,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 477,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 JEPANGREJO',
     'alamat' => 'Ds. Jepangrejo RT 01/RW 06, Blora',
@@ -19155,7 +19155,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 478,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 JEPANGREJO',
     'alamat' => 'Ds. Jepangrejo RT 01/RW 06, Blora',
@@ -19168,7 +19168,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 479,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 JEPANGREJO',
     'alamat' => 'Ds. Jepangrejo RT 01/RW 06, Blora',
@@ -19181,7 +19181,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 480,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 3 JEPANGREJO',
     'alamat' => 'Ds. Jepangrejo RT 01/RW 06, Blora',
@@ -19195,7 +19195,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 481,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN MLANGSEN',
     'alamat' => 'Jl. Mr. Iskandar No.123A, Blora',
@@ -19208,7 +19208,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 482,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TAMBAHREJO',
     'alamat' => 'Jl. Halmahera II No. 25, Kel. Tambahrejo RT 03/RW 02, Blora',
@@ -19221,7 +19221,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 483,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TAMBAHREJO',
     'alamat' => 'Jl. Halmahera II No. 25, Kel. Tambahrejo RT 03/RW 02, Blora',
@@ -19234,7 +19234,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 484,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TAMBAHREJO',
     'alamat' => 'Jl. Halmahera II No. 25, Kel. Tambahrejo RT 03/RW 02, Blora',
@@ -19247,7 +19247,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 485,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TAMBAHREJO',
     'alamat' => 'Jl. Halmahera II No. 25, Kel. Tambahrejo RT 03/RW 02, Blora',
@@ -19260,7 +19260,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 486,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TAMBAHREJO',
     'alamat' => 'Jl. Halmahera II No. 25, Kel. Tambahrejo RT 03/RW 02, Blora',
@@ -19273,7 +19273,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 487,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TAMBAHREJO',
     'alamat' => 'Jl. Halmahera II No. 25, Kel. Tambahrejo RT 03/RW 02, Blora',
@@ -19286,7 +19286,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 488,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KORWIL BIDANG PENDIDIKAN',
     'alamat' => 'Jl. Maluku No. 39, RT 04/RW 02, Jetis, Blora',
@@ -19299,7 +19299,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 489,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD GUDANG FARMASI',
     'alamat' => 'Jl. Reksodiputro No. 14, Blora',
@@ -19312,7 +19312,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 490,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD GUDANG FARMASI',
     'alamat' => 'Jl. Reksodiputro No. 14, Blora',
@@ -19324,7 +19324,7 @@ databgkepemilikan::create([
 ]);
 databgkepemilikan::create([
     'id' => 491,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD GUDANG FARMASI',
     'alamat' => 'Jl. Reksodiputro No. 14, Blora',
@@ -19337,7 +19337,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 492,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD GUDANG FARMASI',
     'alamat' => 'Jl. Reksodiputro No. 14, Blora',
@@ -19350,7 +19350,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 493,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SONOREJO',
     'alamat' => 'Kelurahan Sonorejo RT04/RW04, Blora',
@@ -19363,7 +19363,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 494,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SONOREJO',
     'alamat' => 'Kelurahan Sonorejo RT04/RW04, Blora',
@@ -19376,7 +19376,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 495,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SONOREJO',
     'alamat' => 'Kelurahan Sonorejo RT04/RW04, Blora',
@@ -19389,7 +19389,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 496,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SONOREJO',
     'alamat' => 'Kelurahan Sonorejo RT04/RW04, Blora',
@@ -19402,7 +19402,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 497,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SONOREJO',
     'alamat' => 'Kelurahan Sonorejo RT04/RW04, Blora',
@@ -19415,7 +19415,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 498,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SONOREJO',
     'alamat' => 'Kelurahan Sonorejo RT04/RW04, Blora',
@@ -19428,7 +19428,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 499,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SONOREJO',
     'alamat' => 'Kelurahan Sonorejo RT04/RW04, Blora',
@@ -19441,7 +19441,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 500,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN 1 SONOREJO',
     'alamat' => 'Kelurahan Sonorejo RT04/RW04, Blora',
@@ -19455,7 +19455,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 501,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KUNDEN',
     'alamat' => 'Jl. R.A. Kartini No. 43, Blora',
@@ -19468,7 +19468,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 502,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KUNDEN',
     'alamat' => 'Jl. R.A. Kartini No. 43, Blora',
@@ -19481,7 +19481,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 503,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KUNDEN',
     'alamat' => 'Jl. R.A. Kartini No. 43, Blora',
@@ -19494,7 +19494,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 504,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KUNDEN',
     'alamat' => 'Jl. R.A. Kartini No. 43, Blora',
@@ -19507,7 +19507,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 505,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERPUSTAKAAN',
     'alamat' => 'Jl. A. Yani (Komplek Taman Sarbini), Blora',
@@ -19520,7 +19520,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 506,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERPUSTAKAAN',
     'alamat' => 'Jl. A. Yani (Komplek Taman Sarbini), Blora',
@@ -19533,7 +19533,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 507,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERPUSTAKAAN',
     'alamat' => 'Jl. A. Yani (Komplek Taman Sarbini), Blora',
@@ -19546,7 +19546,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 508,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PERPUSTAKAAN',
     'alamat' => 'Jl. A. Yani (Komplek Taman Sarbini), Blora',
@@ -19559,7 +19559,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 509,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD PUSKESWAN',
     'alamat' => 'Jl. Mr. Iskandar kamolan Blora',
@@ -19572,7 +19572,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 510,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS KESBANGPOL',
     'alamat' => 'Jl. KH. Ahmad Dahlan no. 27 Blora',
@@ -19586,7 +19586,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 511,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19599,7 +19599,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 512,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19612,7 +19612,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 513,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19625,7 +19625,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 514,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19638,7 +19638,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 515,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19651,7 +19651,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 516,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19664,7 +19664,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 517,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19677,7 +19677,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 518,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19690,7 +19690,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 519,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19703,7 +19703,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 520,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19717,7 +19717,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 521,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19730,7 +19730,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 522,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19743,7 +19743,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 523,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19756,7 +19756,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 524,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19769,7 +19769,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 525,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19782,7 +19782,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 526,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19795,7 +19795,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 527,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SDN TEMPELAN',
     'alamat' => 'Jl.G. Sindoro, No. 13, Blora',
@@ -19808,7 +19808,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 528,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 3,
     'namainstitusi' => 'INSPEKTORAT',
     'alamat' => 'Jln. Gor No. 11 Karangjati Blora',
@@ -19821,7 +19821,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 529,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 3,
     'namainstitusi' => 'INSPEKTORAT',
     'alamat' => 'Jln. Gor No. 11 Karangjati Blora',
@@ -19834,7 +19834,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 530,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 3,
     'namainstitusi' => 'INSPEKTORAT',
     'alamat' => 'Jln. Gor No. 11 Karangjati Blora',
@@ -19848,7 +19848,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 531,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 3,
     'namainstitusi' => 'INSPEKTORAT',
     'alamat' => 'Jln. Gor No. 11 Karangjati Blora',
@@ -19861,7 +19861,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 532,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 3,
     'namainstitusi' => 'INSPEKTORAT',
     'alamat' => 'Jln. Gor No. 11 Karangjati Blora',
@@ -19874,7 +19874,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 533,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDUKCAPIL',
     'alamat' => 'Jl. Sudarman No. 3 Mlangsen Blora',
@@ -19887,7 +19887,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 534,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDUKCAPIL',
     'alamat' => 'Jl. Sudarman No. 3 Mlangsen Blora',
@@ -19900,7 +19900,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 535,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDUKCAPIL',
     'alamat' => 'Jl. Sudarman No. 3 Mlangsen Blora',
@@ -19913,7 +19913,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 536,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDUKCAPIL',
     'alamat' => 'Jl. Sudarman No. 3 Mlangsen Blora',
@@ -19926,7 +19926,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 537,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDUKCAPIL',
     'alamat' => 'Jl. Sudarman No. 3 Mlangsen Blora',
@@ -19939,7 +19939,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 538,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDUKCAPIL',
     'alamat' => 'Jl. Sudarman No. 3 Mlangsen Blora',
@@ -19952,7 +19952,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 539,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD BALAI BENIH PERTANIAN (PADI)',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -19965,7 +19965,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 540,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD BALAI BENIH PERTANIAN (PADI)',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -19979,7 +19979,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 541,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD BALAI BENIH PERTANIAN (PADI)',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -19992,7 +19992,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 542,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD BALAI BENIH PERTANIAN (PADI)',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -20005,7 +20005,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 543,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD BALAI BENIH PERIKANAN',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -20018,7 +20018,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 544,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD BALAI BENIH PERIKANAN',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -20031,7 +20031,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 545,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD BALAI BENIH PERIKANAN',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -20044,7 +20044,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 546,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD BALAI BENIH PERIKANAN',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -20057,7 +20057,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 547,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD BALAI BENIH PERIKANAN',
     'alamat' => 'Ds. Purwosari, Kec. Blora, Kab. Blora, Jawa Tengah',
@@ -20070,7 +20070,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 548,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMPN 1 BLORA',
     'alamat' => 'Jln. Soetomo No. 38 Tempelan Blora',
@@ -20083,7 +20083,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 549,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMPN 1 BLORA',
     'alamat' => 'Jln. Soetomo No. 38 Tempelan Blora',
@@ -20096,7 +20096,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 550,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMPN 1 BLORA',
     'alamat' => 'Jln. Soetomo No. 38 Tempelan Blora',
@@ -20109,7 +20109,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 551,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMPN 1 BLORA',
     'alamat' => 'Jln. Soetomo No. 38 Tempelan Blora',
@@ -20122,7 +20122,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 552,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMPN 1 BLORA',
     'alamat' => 'Jln. Soetomo No. 38 Tempelan Blora',
@@ -20135,7 +20135,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 553,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMPN 1 BLORA',
     'alamat' => 'Jln. Soetomo No. 38 Tempelan Blora',
@@ -20148,7 +20148,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 554,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMPN 1 BLORA',
     'alamat' => 'Jln. Soetomo No. 38 Tempelan Blora',
@@ -20161,7 +20161,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 555,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMPN 1 BLORA',
     'alamat' => 'Jln. Soetomo No. 38 Tempelan Blora',
@@ -20174,7 +20174,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 556,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMPN 1 BLORA',
     'alamat' => 'Jln. Soetomo No. 38 Tempelan Blora',
@@ -20187,7 +20187,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 557,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PENGENDALIAN PENDUDUK & KB',
     'alamat' => 'Jl. Dr. Sutomo No.52, Tempelan, Blora',
@@ -20200,7 +20200,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 558,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PENGENDALIAN PENDUDUK & KB',
     'alamat' => 'Jl. Dr. Sutomo No.52, Tempelan, Blora',
@@ -20213,7 +20213,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 559,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINAS PENGENDALIAN PENDUDUK & KB',
     'alamat' => 'Jl. Dr. Sutomo No.52, Tempelan, Blora',
@@ -20226,7 +20226,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 560,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD PUSKESMAS MEDANG',
     'alamat' => 'Jln. Raya blora rembang km. 8 blora',
@@ -20240,7 +20240,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 561,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'UPTD PUSKESMAS MEDANG',
     'alamat' => 'Jln. Raya blora rembang km. 8 blora',
@@ -20253,7 +20253,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 562,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'PUSKESMAS PEMBANTU PURWOSARI',
     'alamat' => 'Ds. Purwosari 1/3 kab. Blora Jawa Tengah',
@@ -20266,7 +20266,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 563,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'PUSKESMAS PEMBANTU TAMBAKSARI',
     'alamat' => 'Jl. Raya Blora Rembang km 5',
@@ -20279,7 +20279,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 564,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KELURAHAN KEDUNGJENAR',
     'alamat' => 'Jl.Gunandar No.6, RT 03/RW 01, Kedungjenar, Blora',
@@ -20293,7 +20293,7 @@ databgkepemilikan::create([
 for ($id = 565; $id <= 568; $id++) {
     databgkepemilikan::create([
         'id' => $id,
-        'user_id' => 46,
+        'user_id' => 92,
         'kecamatanblora_id' => 2,
         'namainstitusi' => 'KECAMATAN BLORA',
         'alamat' => 'Jl. Blora - Randublatung KM. 2 Blora',
@@ -20307,7 +20307,7 @@ for ($id = 565; $id <= 568; $id++) {
 
 databgkepemilikan::create([
     'id' => 569,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KEC. BLORA (KEL. BANGKLE)',
     'alamat' => 'Jl. Blora - Randublatung KM. 2 Blora',
@@ -20320,7 +20320,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 570,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KEC. BLORA (KEL. BANGKLE)',
     'alamat' => 'Jl. Blora - Randublatung KM. 2 Blora',
@@ -20334,7 +20334,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 571,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KEC. BLORA (KEL. BANGKLE)',
     'alamat' => 'Jl. Blora - Randublatung KM. 2 Blora',
@@ -20347,7 +20347,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 572,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'KEC. BLORA (KEL. BANGKLE)',
     'alamat' => 'Jl. Blora - Randublatung KM. 2 Blora',
@@ -20360,7 +20360,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 573,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'BPPKAD BLORA',
     'alamat' => 'Jl. Gatot Subroto No.111, Blora',
@@ -20373,7 +20373,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 574,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'BPPKAD BLORA',
     'alamat' => 'Jl. Gatot Subroto No.111, Blora',
@@ -20386,7 +20386,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 575,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'BPPKAD BLORA',
     'alamat' => 'Jl. Gatot Subroto No.111, Blora',
@@ -20399,7 +20399,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 576,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N 2 BLORA (KUNDEN)',
     'alamat' => 'Jln. Agil Kusumadyo Lr. 2 rt. 3 rw. 3 Blora',
@@ -20412,7 +20412,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 577,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'TK N 2 BLORA (KUNDEN)',
     'alamat' => 'Jln. Agil Kusumadyo Lr. 2 rt. 3 rw. 3 Blora',
@@ -20425,7 +20425,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 578,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDAGKOP (PASAR HEWAN)',
     'alamat' => 'Kel. Karangjati, Blora, Blora , Jawa Tengah',
@@ -20438,7 +20438,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 579,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDAGKOP (PASAR RAJAWALI)',
     'alamat' => 'Kel. Karangjati, Blora, Blora , Jawa Tengah',
@@ -20451,7 +20451,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 580,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDAGKOP (BLOK T)',
     'alamat' => 'Kel. Karangjati, Blora, Blora , Jawa Tengah',
@@ -20465,7 +20465,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 581,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDAGKOP (PASAR SIDOMAKMUR)',
     'alamat' => 'Kel. Karangjati, Blora, Blora , Jawa Tengah',
@@ -20478,7 +20478,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 582,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDAGKOP (PASAR SIDOMAKMUR)',
     'alamat' => 'Kel. Karangjati, Blora, Blora , Jawa Tengah',
@@ -20491,7 +20491,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 583,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDAGKOP (PASAR SIDOMAKMUR)',
     'alamat' => 'Kel. Karangjati, Blora, Blora , Jawa Tengah',
@@ -20504,7 +20504,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 584,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'DINDAGKOP (PASAR SIDOMAKMUR)',
     'alamat' => 'Kel. Karangjati, Blora, Blora , Jawa Tengah',
@@ -20517,7 +20517,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 585,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20530,7 +20530,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 586,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20543,7 +20543,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 587,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20556,7 +20556,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 588,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20569,7 +20569,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 589,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20582,7 +20582,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 590,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20596,7 +20596,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 591,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20609,7 +20609,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 592,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20622,7 +20622,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 593,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20635,7 +20635,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 594,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20648,7 +20648,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 595,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20661,7 +20661,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 596,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20674,7 +20674,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 597,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20687,7 +20687,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 598,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 2,
     'namainstitusi' => 'SMP N 4 BLORA',
     'alamat' => 'Jl. Rembang-Blora KM. 5, Kec. Blora, Jawa Tengah',
@@ -20701,7 +20701,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 599,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20714,7 +20714,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 600,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20727,7 +20727,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 601,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20740,7 +20740,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 602,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20753,7 +20753,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 603,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20766,7 +20766,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 604,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20779,7 +20779,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 605,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20792,7 +20792,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 606,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20805,7 +20805,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 607,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20818,7 +20818,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 608,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20831,7 +20831,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 609,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20844,7 +20844,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 610,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20857,7 +20857,7 @@ databgkepemilikan::create([
 
 databgkepemilikan::create([
     'id' => 611,
-    'user_id' => 46,
+    'user_id' => 92,
     'kecamatanblora_id' => 4,
     'namainstitusi' => 'SMP N 2 CEPU',
     'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah',
@@ -20869,502 +20869,502 @@ databgkepemilikan::create([
 ]);
 
 // Data 612-615
-databgkepemilikan::create(['id' => 612, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 2 CEPU', 'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421421', 'email' => 'smpduacepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0014', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 613, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0015', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 614, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0016', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 615, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0017', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 612, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 2 CEPU', 'alamat' => 'Kampung Baru, Karangboyo,RT: 02/RW: 07 Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421421', 'email' => 'smpduacepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0014', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 613, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0015', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 614, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0016', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 615, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0017', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 616-620
-databgkepemilikan::create(['id' => 616, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0018', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 617, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0019', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 618, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0020', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 619, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0021', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 620, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 MULYOREJO', 'alamat' => 'Jalan Randublatung No. 16, Ds.Mulyorejo, RT:02/RW: 02, Kec.Cepu, Kab.Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0022', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 616, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0018', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 617, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0019', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 618, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0020', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 619, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 6 CEPU', 'alamat' => 'Jalan Diponegoro V/II Cepu, RT: 03/RW: 10, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)422193', 'email' => 'sdn6cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0021', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 620, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 MULYOREJO', 'alamat' => 'Jalan Randublatung No. 16, Ds.Mulyorejo, RT:02/RW: 02, Kec.Cepu, Kab.Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0022', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 621-625
-databgkepemilikan::create(['id' => 621, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 MULYOREJO', 'alamat' => 'Jalan Randublatung No. 16, Ds.Mulyorejo, RT:02/RW: 02, Kec.Cepu, Kab.Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0023', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 622, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 MULYOREJO', 'alamat' => 'Jalan Randublatung No. 16, Ds.Mulyorejo, RT:02/RW: 02, Kec.Cepu, Kab.Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0024', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 623, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 MULYOREJO', 'alamat' => 'Jalan Randublatung No. 16, Ds.Mulyorejo, RT:02/RW: 02, Kec.Cepu, Kab.Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0025', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 624, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0026', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 625, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0027', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 621, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 MULYOREJO', 'alamat' => 'Jalan Randublatung No. 16, Ds.Mulyorejo, RT:02/RW: 02, Kec.Cepu, Kab.Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0023', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 622, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 MULYOREJO', 'alamat' => 'Jalan Randublatung No. 16, Ds.Mulyorejo, RT:02/RW: 02, Kec.Cepu, Kab.Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0024', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 623, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 MULYOREJO', 'alamat' => 'Jalan Randublatung No. 16, Ds.Mulyorejo, RT:02/RW: 02, Kec.Cepu, Kab.Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0025', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 624, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0026', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 625, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0027', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 626-630
-databgkepemilikan::create(['id' => 626, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0028', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 627, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0029', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 628, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0030', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 629, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0031', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 630, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0032', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 626, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0028', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 627, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0029', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 628, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0030', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 629, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN BALUN', 'alamat' => 'Jalan Ronggolawe No.100, Ds Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421007', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0031', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 630, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0032', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 631-635
-databgkepemilikan::create(['id' => 631, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0033', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 632, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0034', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 633, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0035', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 634, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0036', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 635, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0037', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 631, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0033', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 632, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0034', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 633, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0035', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 634, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0036', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 635, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 5 CEPU', 'alamat' => 'Sidomulyo Lr.2, RT: 02/RW: 12, Kec Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421155', 'email' => 'smp5cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0037', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 636-640
-databgkepemilikan::create(['id' => 636, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KECAMATAN CEPU', 'alamat' => 'Jl. Pemda Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421005', 'email' => 'kecamatancepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0038', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 637, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KECAMATAN CEPU', 'alamat' => 'Jl. Ronggolawe No.44, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421005', 'email' => 'kecamatancepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0039', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 638, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KECAMATAN CEPU', 'alamat' => 'Jl. Ronggolawe No.44, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421005', 'email' => 'kecamatancepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0040', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 639, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KECAMATAN CEPU', 'alamat' => 'Jl. Ronggolawe No.44, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421005', 'email' => 'kecamatancepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0041', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 640, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KECAMATAN CEPU', 'alamat' => 'Jl. Ronggolawe No.44, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421005', 'email' => 'kecamatancepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0042', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 636, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KECAMATAN CEPU', 'alamat' => 'Jl. Pemda Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421005', 'email' => 'kecamatancepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0038', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 637, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KECAMATAN CEPU', 'alamat' => 'Jl. Ronggolawe No.44, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421005', 'email' => 'kecamatancepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0039', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 638, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KECAMATAN CEPU', 'alamat' => 'Jl. Ronggolawe No.44, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421005', 'email' => 'kecamatancepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0040', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 639, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KECAMATAN CEPU', 'alamat' => 'Jl. Ronggolawe No.44, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421005', 'email' => 'kecamatancepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0041', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 640, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KECAMATAN CEPU', 'alamat' => 'Jl. Ronggolawe No.44, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421005', 'email' => 'kecamatancepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0042', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 641-645
-databgkepemilikan::create(['id' => 641, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'BALAI PENYULUHAN PERTANIAN', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'bppkeccepu@gmail.co', 'nopengesahanusaha' => '33.16.05.0043', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 642, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'BALAI PENYULUHAN PERTANIAN', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'bppkeccepu@gmail.co', 'nopengesahanusaha' => '33.16.05.0044', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 643, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN TAMBAKROMO', 'alamat' => 'Ds. Tambakromo, RT: 1/RW:6, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)424375', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0045', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 644, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN TAMBAKROMO', 'alamat' => 'Ds. Tambakromo, RT: 1/RW:6, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)424375', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0046', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 645, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 01/RW: 01, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0047', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 641, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'BALAI PENYULUHAN PERTANIAN', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'bppkeccepu@gmail.co', 'nopengesahanusaha' => '33.16.05.0043', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 642, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'BALAI PENYULUHAN PERTANIAN', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'bppkeccepu@gmail.co', 'nopengesahanusaha' => '33.16.05.0044', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 643, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN TAMBAKROMO', 'alamat' => 'Ds. Tambakromo, RT: 1/RW:6, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)424375', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0045', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 644, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN TAMBAKROMO', 'alamat' => 'Ds. Tambakromo, RT: 1/RW:6, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)424375', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0046', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 645, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 01/RW: 01, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0047', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 646-650
-databgkepemilikan::create(['id' => 646, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 04/RW: 013, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0048', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 647, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 03/RW: 013, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0049', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 648, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 01/RW: 01, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0050', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 649, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 01/RW: 01, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0051', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 650, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 01/RW: 01, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0052', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 646, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 04/RW: 013, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0048', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 647, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 03/RW: 013, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0049', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 648, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 01/RW: 01, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0050', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 649, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 01/RW: 01, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0051', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 650, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 01/RW: 01, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0052', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 651-655
-databgkepemilikan::create(['id' => 651, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 01/RW: 01, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0053', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 652, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN CEPU', 'alamat' => 'Ds. Cepu, RT: 1/RW:12, Kec, Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421205', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0054', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 653, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN CEPU', 'alamat' => 'Ds. Cepu, RT: 1/RW:12, Kec, Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421205', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0055', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 654, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0056', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 655, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0057', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 651, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PUSKESMAS CEPU', 'alamat' => 'Ds. Cepu, RT: 01/RW: 01, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)42421292', 'email' => 'puskesmascepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0053', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 652, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN CEPU', 'alamat' => 'Ds. Cepu, RT: 1/RW:12, Kec, Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421205', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0054', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 653, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN CEPU', 'alamat' => 'Ds. Cepu, RT: 1/RW:12, Kec, Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421205', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0055', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 654, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0056', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 655, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0057', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 656-660
-databgkepemilikan::create(['id' => 656, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0058', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 657, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0059', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 658, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0060', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 659, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0061', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 660, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0062', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 656, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0058', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 657, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0059', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 658, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0060', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 659, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0061', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 660, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0062', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 661-665
-databgkepemilikan::create(['id' => 661, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0063', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 662, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0064', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 663, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0065', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 664, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0066', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 665, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0067', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 661, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0063', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 662, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0064', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 663, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0065', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 664, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0066', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 665, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0067', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 666-670
-databgkepemilikan::create(['id' => 666, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0068', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 667, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0069', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 668, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0070', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 669, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0071', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 670, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N JIPANG', 'alamat' => 'Ds. Jipang, RT: 01/ RW: 02, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnjipangcepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0072', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 666, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0068', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 667, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0069', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 668, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0070', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 669, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 3 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421439', 'email' => 'smp3cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0071', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 670, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N JIPANG', 'alamat' => 'Ds. Jipang, RT: 01/ RW: 02, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnjipangcepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0072', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 671-675
-databgkepemilikan::create(['id' => 671, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N JIPANG', 'alamat' => 'Ds. Jipang, RT: 01/ RW: 02, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnjipangcepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0073', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 672, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N JIPANG', 'alamat' => 'Ds. Jipang, RT: 01/ RW: 02, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnjipangcepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0074', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 673, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N JIPANG', 'alamat' => 'Ds. Jipang, RT: 01/ RW: 02, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnjipangcepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0075', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 674, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0076', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 675, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0077', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 671, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N JIPANG', 'alamat' => 'Ds. Jipang, RT: 01/ RW: 02, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnjipangcepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0073', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 672, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N JIPANG', 'alamat' => 'Ds. Jipang, RT: 01/ RW: 02, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnjipangcepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0074', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 673, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N JIPANG', 'alamat' => 'Ds. Jipang, RT: 01/ RW: 02, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnjipangcepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0075', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 674, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0076', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 675, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0077', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 676-680
-databgkepemilikan::create(['id' => 676, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0078', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 677, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0079', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 678, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0080', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 679, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0081', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 680, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0082', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 676, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0078', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 677, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0079', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 678, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0080', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 679, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0081', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 680, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0082', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 681-685
-databgkepemilikan::create(['id' => 681, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0083', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 682, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421688', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0084', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 683, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 BALUN', 'alamat' => 'Ds. Balun, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)423553', 'email' => 'sdn1balun@gmail.com', 'nopengesahanusaha' => '33.16.05.0085', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 684, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 BALUN', 'alamat' => 'Ds. Balun, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)423553', 'email' => 'sdn1balun@gmail.com', 'nopengesahanusaha' => '33.16.05.0086', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 685, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 BALUN', 'alamat' => 'Ds. Balun, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)423553', 'email' => 'sdn1balun@gmail.com', 'nopengesahanusaha' => '33.16.05.0087', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 681, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421687', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0083', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 682, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 CEPU', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421688', 'email' => 'sdn1cepu@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0084', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 683, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 BALUN', 'alamat' => 'Ds. Balun, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)423553', 'email' => 'sdn1balun@gmail.com', 'nopengesahanusaha' => '33.16.05.0085', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 684, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 BALUN', 'alamat' => 'Ds. Balun, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)423553', 'email' => 'sdn1balun@gmail.com', 'nopengesahanusaha' => '33.16.05.0086', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 685, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 BALUN', 'alamat' => 'Ds. Balun, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)423553', 'email' => 'sdn1balun@gmail.com', 'nopengesahanusaha' => '33.16.05.0087', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 686-690
-databgkepemilikan::create(['id' => 686, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 BALUN', 'alamat' => 'Ds. Balun, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)423553', 'email' => 'sdn1balun@gmail.com', 'nopengesahanusaha' => '33.16.05.0088', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 687, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KAPUAN', 'alamat' => 'Ds. Kapuan, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081225600201', 'email' => 'sdn2kapuan@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0089', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 688, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KAPUAN', 'alamat' => 'Ds. Kapuan, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081225600201', 'email' => 'sdn2kapuan@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0090', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 689, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KAPUAN', 'alamat' => 'Ds. Kapuan, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081225600201', 'email' => 'sdn2kapuan@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0091', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 690, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KAPUAN', 'alamat' => 'Ds. Kapuan, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081225600201', 'email' => 'sdn2kapuan@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0092', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 686, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 BALUN', 'alamat' => 'Ds. Balun, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)423553', 'email' => 'sdn1balun@gmail.com', 'nopengesahanusaha' => '33.16.05.0088', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 687, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KAPUAN', 'alamat' => 'Ds. Kapuan, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081225600201', 'email' => 'sdn2kapuan@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0089', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 688, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KAPUAN', 'alamat' => 'Ds. Kapuan, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081225600201', 'email' => 'sdn2kapuan@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0090', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 689, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KAPUAN', 'alamat' => 'Ds. Kapuan, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081225600201', 'email' => 'sdn2kapuan@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0091', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 690, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KAPUAN', 'alamat' => 'Ds. Kapuan, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081225600201', 'email' => 'sdn2kapuan@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0092', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 691-695
-databgkepemilikan::create(['id' => 691, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KAPUAN', 'alamat' => 'Ds. Kapuan, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081225600201', 'email' => 'sdn2kapuan@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0093', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 692, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 NGLANJUK', 'alamat' => 'Ds. Nglanjuk, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnnglanjuk@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0094', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 693, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 NGLANJUK', 'alamat' => 'Ds. Nglanjuk, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnnglanjuk@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0095', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 694, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 NGLANJUK', 'alamat' => 'Ds. Nglanjuk, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnnglanjuk@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0096', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 695, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 NGLANJUK', 'alamat' => 'Ds. Nglanjuk, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnnglanjuk@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0097', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 691, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KAPUAN', 'alamat' => 'Ds. Kapuan, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081225600201', 'email' => 'sdn2kapuan@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0093', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 692, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 NGLANJUK', 'alamat' => 'Ds. Nglanjuk, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnnglanjuk@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0094', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 693, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 NGLANJUK', 'alamat' => 'Ds. Nglanjuk, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnnglanjuk@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0095', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 694, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 NGLANJUK', 'alamat' => 'Ds. Nglanjuk, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnnglanjuk@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0096', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 695, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 NGLANJUK', 'alamat' => 'Ds. Nglanjuk, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(Tidak ada)', 'email' => 'sdnnglanjuk@yahoo.co.id', 'nopengesahanusaha' => '33.16.05.0097', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 696-700
-databgkepemilikan::create(['id' => 696, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0098', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 697, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0099', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 698, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0100', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 699, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0101', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 700, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0102', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 696, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0098', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 697, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0099', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 698, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0100', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 699, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0101', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 700, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0102', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 701-705
-databgkepemilikan::create(['id' => 701, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0103', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 702, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0104', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 703, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 4 CEPU', 'alamat' => 'Ds. Cepu, RT:1/RW:1, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)425417', 'email' => 'sdn4cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0105', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 704, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 4 CEPU', 'alamat' => 'Ds. Cepu, RT:1/RW:1, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)425418', 'email' => 'sdn4cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0106', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 705, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 4 CEPU', 'alamat' => 'Ds. Cepu, RT:1/RW:1, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)425419', 'email' => 'sdn4cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0107', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 701, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0103', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 702, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 1 GETAS', 'alamat' => 'Ds. Getas, RT:2/RW: 2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '081226294037', 'email' => 'sdngetas@gmail.com', 'nopengesahanusaha' => '33.16.05.0104', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 703, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 4 CEPU', 'alamat' => 'Ds. Cepu, RT:1/RW:1, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)425417', 'email' => 'sdn4cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0105', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 704, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 4 CEPU', 'alamat' => 'Ds. Cepu, RT:1/RW:1, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)425418', 'email' => 'sdn4cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0106', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 705, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 4 CEPU', 'alamat' => 'Ds. Cepu, RT:1/RW:1, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)425419', 'email' => 'sdn4cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0107', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 706-710
-databgkepemilikan::create(['id' => 706, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 4 CEPU', 'alamat' => 'Ds. Cepu, RT:1/RW:1, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)425420', 'email' => 'sdn4cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0108', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 707, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 4 CEPU', 'alamat' => 'Ds. Cepu, RT:1/RW:1, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)425421', 'email' => 'sdn4cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0109', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 708, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0110', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 709, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0111', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 710, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0112', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 706, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 4 CEPU', 'alamat' => 'Ds. Cepu, RT:1/RW:1, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)425420', 'email' => 'sdn4cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0108', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 707, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 4 CEPU', 'alamat' => 'Ds. Cepu, RT:1/RW:1, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)425421', 'email' => 'sdn4cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0109', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 708, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0110', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 709, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0111', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 710, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0112', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 711-715
-databgkepemilikan::create(['id' => 711, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0113', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 712, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0114', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 713, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0115', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 714, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0116', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 715, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0117', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 711, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0113', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 712, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0114', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 713, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0115', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 714, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 CEPU', 'alamat' => 'Ds. Cepu, RT:2/RW:1, Kec. Cepu, Kab Blora, Jawa Tengah', 'notelepon' => '(0296)424307', 'email' => 'sdn2cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0116', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 715, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0117', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 716-720
-databgkepemilikan::create(['id' => 716, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0118', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 717, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0119', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 718, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0120', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 719, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0121', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 720, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0122', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 716, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0118', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 717, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0119', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 718, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0120', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 719, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0121', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 720, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0122', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 721-725
-databgkepemilikan::create(['id' => 721, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0123', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 722, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0124', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 723, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0125', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 724, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0126', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 725, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0127', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 721, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0123', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 722, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0124', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 723, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 2 KARANGBOYO', 'alamat' => 'Ds. Karangboyo, RT:3/RW:2, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '085716377064', 'email' => 'sdnduakarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0125', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 724, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0126', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 725, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0127', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 726-730
-databgkepemilikan::create(['id' => 726, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0128', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 727, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0129', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 728, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0130', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 729, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0131', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 730, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0132', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 726, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0128', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 727, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0129', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 728, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0130', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 729, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0131', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 730, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0132', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 731-735
-databgkepemilikan::create(['id' => 731, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0133', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 732, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0134', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 733, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0135', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 734, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0136', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 735, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KORWIL BIDIK', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421276', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0137', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 731, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0133', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 732, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0134', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 733, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0135', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 734, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 5 CEPU', 'alamat' => 'Ds. Cepu, RT: 5/RW: 13, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '082243328039', 'email' => 'cepusdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0136', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 735, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KORWIL BIDIK', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421276', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0137', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 736-740
-databgkepemilikan::create(['id' => 736, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KORWIL BIDIK', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421276', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0138', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 737, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KORWIL BIDIK', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421276', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0139', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 738, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0140', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 739, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0141', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 740, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0142', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 736, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KORWIL BIDIK', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421276', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0138', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 737, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KORWIL BIDIK', 'alamat' => 'Ds. Cepu, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421276', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0139', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 738, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0140', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 739, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0141', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 740, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0142', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 741-745
-databgkepemilikan::create(['id' => 741, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0143', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 742, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0144', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 743, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0145', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 744, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0146', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 745, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0147', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 741, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0143', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 742, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0144', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 743, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0145', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 744, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0146', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 745, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0147', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 746-750
-databgkepemilikan::create(['id' => 746, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0148', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 747, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0149', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 748, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0150', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 749, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0151', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 750, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0152', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 746, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0148', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 747, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0149', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 748, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0150', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 749, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0151', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 750, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0152', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 751-755 (RSUD Dr. R. SOEPRAPTO)
-databgkepemilikan::create(['id' => 751, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0153', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 752, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0154', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 753, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0155', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 754, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0156', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 755, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0157', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 751, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0153', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 752, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0154', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 753, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0155', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 754, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0156', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 755, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0157', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 756-760 (RSUD Dr. R. SOEPRAPTO)
-databgkepemilikan::create(['id' => 756, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0158', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 757, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0159', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 758, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0160', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 759, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0161', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 760, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0162', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 756, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0158', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 757, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0159', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 758, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0160', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 759, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0161', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 760, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0162', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 761-765 (RSUD Dr. R. SOEPRAPTO)
-databgkepemilikan::create(['id' => 761, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0163', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 762, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0164', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 763, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0165', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 764, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0166', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 765, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0167', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 761, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0163', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 762, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0164', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 763, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0165', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 764, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0166', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 765, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0167', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 766-770 (RSUD Dr. R. SOEPRAPTO)
-databgkepemilikan::create(['id' => 766, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0168', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 767, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0169', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 768, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0170', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 769, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0171', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 770, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0172', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 766, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0168', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 767, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0169', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 768, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0170', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 769, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0171', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 770, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0172', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 771-775
-databgkepemilikan::create(['id' => 771, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0173', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 772, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421513', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0174', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 773, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421514', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0175', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 774, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421515', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0176', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 775, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421516', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0177', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 771, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'RSUD Dr. R. SOEPRAPTO', 'alamat' => 'Ds. Balun, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421026', 'email' => 'rs.soepraptocepu@gmail.com', 'nopengesahanusaha' => '33.16.09.0173', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 772, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421513', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0174', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 773, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421514', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0175', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 774, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421515', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0176', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 775, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421516', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0177', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 776-780
-databgkepemilikan::create(['id' => 776, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421517', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0178', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 777, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421518', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0179', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 778, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421519', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0180', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 779, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421520', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0181', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 780, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421521', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0182', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 776, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421517', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0178', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 777, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421518', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0179', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 778, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421519', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0180', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 779, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421520', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0181', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 780, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421521', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0182', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 781-785
-databgkepemilikan::create(['id' => 781, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421522', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0183', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 782, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421523', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0184', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 783, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN KARANGBOYO', 'alamat' => 'Jl. Kartaprasa No. 29, Karangboyo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0185', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 784, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS NGROTO', 'alamat' => 'Ngroto', 'notelepon' => '082323218189', 'email' => 'ngrotopuskesmas@yahoo.co.id', 'nopengesahanusaha' => '2311220192584', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 785, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 KARANGBOYO', 'alamat' => 'Jl. Giyanti No. 27', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatukarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0187', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 781, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421522', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0183', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 782, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421523', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0184', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 783, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN KARANGBOYO', 'alamat' => 'Jl. Kartaprasa No. 29, Karangboyo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0185', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 784, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS NGROTO', 'alamat' => 'Ngroto', 'notelepon' => '082323218189', 'email' => 'ngrotopuskesmas@yahoo.co.id', 'nopengesahanusaha' => '2311220192584', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 785, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 KARANGBOYO', 'alamat' => 'Jl. Giyanti No. 27', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatukarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0187', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 786-790
-databgkepemilikan::create(['id' => 786, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 KARANGBOYO', 'alamat' => 'Jl. Giyanti No. 28', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatukarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0188', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 787, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 KARANGBOYO', 'alamat' => 'Jl. Giyanti No. 29', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatukarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0189', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 788, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 KARANGBOYO', 'alamat' => 'Jl. Gajah Mada No. 28, Karangboyo rt 01/rw 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn.karangboyo03@gmail.com', 'nopengesahanusaha' => '33.16.05.0190', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 789, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 KARANGBOYO', 'alamat' => 'Jl. Gajah Mada No. 28, Karangboyo rt 01/rw 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn.karangboyo03@gmail.com', 'nopengesahanusaha' => '33.16.05.0191', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 790, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 KARANGBOYO', 'alamat' => 'Jl. Gajah Mada No. 28, Karangboyo rt 01/rw 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn.karangboyo03@gmail.com', 'nopengesahanusaha' => '33.16.05.0192', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 786, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 KARANGBOYO', 'alamat' => 'Jl. Giyanti No. 28', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatukarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0188', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 787, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 KARANGBOYO', 'alamat' => 'Jl. Giyanti No. 29', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatukarangboyo@gmail.com', 'nopengesahanusaha' => '33.16.05.0189', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 788, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 KARANGBOYO', 'alamat' => 'Jl. Gajah Mada No. 28, Karangboyo rt 01/rw 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn.karangboyo03@gmail.com', 'nopengesahanusaha' => '33.16.05.0190', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 789, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 KARANGBOYO', 'alamat' => 'Jl. Gajah Mada No. 28, Karangboyo rt 01/rw 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn.karangboyo03@gmail.com', 'nopengesahanusaha' => '33.16.05.0191', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 790, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 KARANGBOYO', 'alamat' => 'Jl. Gajah Mada No. 28, Karangboyo rt 01/rw 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn.karangboyo03@gmail.com', 'nopengesahanusaha' => '33.16.05.0192', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 791-795
-databgkepemilikan::create(['id' => 791, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 KARANGBOYO', 'alamat' => 'Jl. Gajah Mada No. 28, Karangboyo rt 01/rw 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn.karangboyo03@gmail.com', 'nopengesahanusaha' => '33.16.05.0193', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 792, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN KARANGBOYO', 'alamat' => 'Jl. Kartaprasa No. 29, Karangboyo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0194', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 793, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN KARANGBOYO', 'alamat' => 'Jl. Kartaprasa No. 29, Karangboyo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0195', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 794, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN NGELO', 'alamat' => 'Jl. Orde Baru, rt 01/rw 01', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0196', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 795, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN NGELO', 'alamat' => 'Jl. Orde Baru, rt 01/rw 02', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0197', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 791, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 KARANGBOYO', 'alamat' => 'Jl. Gajah Mada No. 28, Karangboyo rt 01/rw 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn.karangboyo03@gmail.com', 'nopengesahanusaha' => '33.16.05.0193', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 792, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN KARANGBOYO', 'alamat' => 'Jl. Kartaprasa No. 29, Karangboyo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0194', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 793, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN KARANGBOYO', 'alamat' => 'Jl. Kartaprasa No. 29, Karangboyo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0195', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 794, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN NGELO', 'alamat' => 'Jl. Orde Baru, rt 01/rw 01', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0196', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 795, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN NGELO', 'alamat' => 'Jl. Orde Baru, rt 01/rw 02', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0197', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 796-800
-databgkepemilikan::create(['id' => 796, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS NGROTO', 'alamat' => 'Ngroto', 'notelepon' => '082323218189', 'email' => 'ngrotopuskesmas@yahoo.co.id', 'nopengesahanusaha' => '2311220192584', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 797, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS NGROTO', 'alamat' => 'Ngroto', 'notelepon' => '082323218189', 'email' => 'ngrotopuskesmas@yahoo.co.id', 'nopengesahanusaha' => '2311220192584', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 798, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN NGROTO', 'alamat' => 'Dk. Karang, No. 7, Ngroto, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0200', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 799, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN NGROTO', 'alamat' => 'Dk. Karang, No. 7, Ngroto, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0201', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 800, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0202', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 796, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS NGROTO', 'alamat' => 'Ngroto', 'notelepon' => '082323218189', 'email' => 'ngrotopuskesmas@yahoo.co.id', 'nopengesahanusaha' => '2311220192584', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 797, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS NGROTO', 'alamat' => 'Ngroto', 'notelepon' => '082323218189', 'email' => 'ngrotopuskesmas@yahoo.co.id', 'nopengesahanusaha' => '2311220192584', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 798, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN NGROTO', 'alamat' => 'Dk. Karang, No. 7, Ngroto, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0200', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 799, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN NGROTO', 'alamat' => 'Dk. Karang, No. 7, Ngroto, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0201', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 800, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0202', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 
 // Data 801-805 (SDN 2 NGELO)
-databgkepemilikan::create(['id' => 801, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0203', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 802, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0204', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 803, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0205', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 804, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0206', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 805, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0207', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 801, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0203', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 802, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0204', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 803, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0205', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 804, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0206', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 805, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGELO', 'alamat' => 'Jl. Giyanti lr. 3 Ngelo', 'notelepon' => '(0296)424230', 'email' => 'sdn2_ngelo_cepu@yahoo.com', 'nopengesahanusaha' => '33.16.05.0207', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 806-810
-databgkepemilikan::create(['id' => 806, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGELO', 'alamat' => 'Jl. Kesambi No. 7, Ngelo', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0208', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 807, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGELO', 'alamat' => 'Jl. Kesambi No. 7, Ngelo', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0209', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 808, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGELO', 'alamat' => 'Jl. Kesambi No. 7, Ngelo', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0210', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 809, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGELO', 'alamat' => 'Jl. Kesambi No. 7, Ngelo', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0211', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 810, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGROTO', 'alamat' => 'Jl. Giyanti No. 33, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdngroto1@gmail.com', 'nopengesahanusaha' => 'LK/2168/IX/2015', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 806, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGELO', 'alamat' => 'Jl. Kesambi No. 7, Ngelo', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0208', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 807, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGELO', 'alamat' => 'Jl. Kesambi No. 7, Ngelo', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0209', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 808, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGELO', 'alamat' => 'Jl. Kesambi No. 7, Ngelo', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0210', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 809, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGELO', 'alamat' => 'Jl. Kesambi No. 7, Ngelo', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0211', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 810, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGROTO', 'alamat' => 'Jl. Giyanti No. 33, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdngroto1@gmail.com', 'nopengesahanusaha' => 'LK/2168/IX/2015', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 811-815
-databgkepemilikan::create(['id' => 811, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGROTO', 'alamat' => 'Jl. Giyanti No. 33, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdngroto1@gmail.com', 'nopengesahanusaha' => 'LK/2168/IX/2015', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 812, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGROTO', 'alamat' => 'Jl. Giyanti No. 33, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdngroto1@gmail.com', 'nopengesahanusaha' => 'LK/2168/IX/2015', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 813, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGROTO', 'alamat' => 'Jl. Giyanti No. 33, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdngroto1@gmail.com', 'nopengesahanusaha' => 'LK/2168/IX/2015', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 814, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGROTO', 'alamat' => 'Jl. Giyanti No. 33, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdngroto1@gmail.com', 'nopengesahanusaha' => 'LK/2168/IX/2015', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 815, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421516', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0217', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 811, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGROTO', 'alamat' => 'Jl. Giyanti No. 33, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdngroto1@gmail.com', 'nopengesahanusaha' => 'LK/2168/IX/2015', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 812, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGROTO', 'alamat' => 'Jl. Giyanti No. 33, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdngroto1@gmail.com', 'nopengesahanusaha' => 'LK/2168/IX/2015', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 813, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGROTO', 'alamat' => 'Jl. Giyanti No. 33, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdngroto1@gmail.com', 'nopengesahanusaha' => 'LK/2168/IX/2015', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 814, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 NGROTO', 'alamat' => 'Jl. Giyanti No. 33, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdngroto1@gmail.com', 'nopengesahanusaha' => 'LK/2168/IX/2015', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 815, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421516', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0217', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 816-820
-databgkepemilikan::create(['id' => 816, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421517', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0218', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 817, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421518', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0219', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 818, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421519', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0220', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 819, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421520', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0221', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 820, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421521', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0222', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 816, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421517', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0218', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 817, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421518', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0219', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 818, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421519', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0220', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 819, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421520', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0221', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 820, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421521', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0222', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 821-825
-databgkepemilikan::create(['id' => 821, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421522', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0223', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 822, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421523', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0224', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 823, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGROTO', 'alamat' => 'Jl. Gagakan, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdnngroto2@gmail.com', 'nopengesahanusaha' => '33.16.05.0225', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 824, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGROTO', 'alamat' => 'Jl. Gagakan, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdnngroto2@gmail.com', 'nopengesahanusaha' => '33.16.05.0226', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 825, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGROTO', 'alamat' => 'Jl. Gagakan, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdnngroto2@gmail.com', 'nopengesahanusaha' => '33.16.05.0227', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 821, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421522', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0223', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 822, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 1 CEPU', 'alamat' => 'Jl. SMPN 1 Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '(0296)421523', 'email' => 'espisasmpn1cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0224', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 823, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGROTO', 'alamat' => 'Jl. Gagakan, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdnngroto2@gmail.com', 'nopengesahanusaha' => '33.16.05.0225', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 824, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGROTO', 'alamat' => 'Jl. Gagakan, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdnngroto2@gmail.com', 'nopengesahanusaha' => '33.16.05.0226', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 825, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGROTO', 'alamat' => 'Jl. Gagakan, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdnngroto2@gmail.com', 'nopengesahanusaha' => '33.16.05.0227', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 826-830
-databgkepemilikan::create(['id' => 826, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGROTO', 'alamat' => 'Jl. Gagakan, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdnngroto2@gmail.com', 'nopengesahanusaha' => '33.16.05.0228', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 827, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGROTO', 'alamat' => 'Jl. Gagakan, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdnngroto2@gmail.com', 'nopengesahanusaha' => '33.16.05.0229', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 828, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0230', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 829, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0231', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 830, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0232', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 826, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGROTO', 'alamat' => 'Jl. Gagakan, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdnngroto2@gmail.com', 'nopengesahanusaha' => '33.16.05.0228', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 827, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 NGROTO', 'alamat' => 'Jl. Gagakan, Ngroto', 'notelepon' => '(Tidak ada)', 'email' => 'sdnngroto2@gmail.com', 'nopengesahanusaha' => '33.16.05.0229', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 828, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0230', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 829, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0231', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 830, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0232', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 831-835
-databgkepemilikan::create(['id' => 831, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0233', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 832, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0234', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 833, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0235', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 834, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0236', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 835, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0237', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 831, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0233', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 832, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0234', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 833, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0235', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 834, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0236', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 835, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 BALUN', 'alamat' => 'Jl. Aryo Jipang, Lr. IX, Balun, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnduabalun@gmail.com', 'nopengesahanusaha' => '33.16.05.0237', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 836-840
-databgkepemilikan::create(['id' => 836, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN KARANGBOYO', 'alamat' => 'Jl. Kartaprasa No. 29, Karangboyo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0238', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 837, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0239', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 838, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0240', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 839, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0241', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 840, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0242', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 836, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'KELURAHAN KARANGBOYO', 'alamat' => 'Jl. Kartaprasa No. 29, Karangboyo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0238', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 837, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0239', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 838, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0240', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 839, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0241', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 840, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0242', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 841-845
-databgkepemilikan::create(['id' => 841, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0243', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 842, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0244', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 843, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0245', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 844, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Kentong', 'alamat' => 'Ds. Kentong RT01/RW01, Cepu, Blora', 'notelepon' => '(0296)423428', 'email' => 'sdnkentong94@gmail.om', 'nopengesahanusaha' => '33.16.05.0246', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 845, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Kentong', 'alamat' => 'Ds. Kentong RT01/RW01, Cepu, Blora', 'notelepon' => '(0296)423428', 'email' => 'sdnkentong94@gmail.om', 'nopengesahanusaha' => '33.16.05.0247', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 841, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0243', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 842, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0244', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 843, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Sumberpitu', 'alamat' => 'Jl. Aryo Jipang, RT 04/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsbpt@gmail.com', 'nopengesahanusaha' => '33.16.05.0245', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 844, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Kentong', 'alamat' => 'Ds. Kentong RT01/RW01, Cepu, Blora', 'notelepon' => '(0296)423428', 'email' => 'sdnkentong94@gmail.om', 'nopengesahanusaha' => '33.16.05.0246', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 845, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Kentong', 'alamat' => 'Ds. Kentong RT01/RW01, Cepu, Blora', 'notelepon' => '(0296)423428', 'email' => 'sdnkentong94@gmail.om', 'nopengesahanusaha' => '33.16.05.0247', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 846-850
-databgkepemilikan::create(['id' => 846, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Kentong', 'alamat' => 'Ds. Kentong RT01/RW01, Cepu, Blora', 'notelepon' => '(0296)423428', 'email' => 'sdnkentong94@gmail.om', 'nopengesahanusaha' => '33.16.05.0248', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 847, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Kentong', 'alamat' => 'Ds. Kentong RT01/RW01, Cepu, Blora', 'notelepon' => '(0296)423428', 'email' => 'sdnkentong94@gmail.om', 'nopengesahanusaha' => '33.16.05.0249', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 848, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS KAPUAN', 'alamat' => 'Jl Lapangan Terbang No. 1 Kapuan, Cepu, Blora', 'notelepon' => '(0296)4271287', 'email' => 'puskesmaskapuan@gmail.com', 'nopengesahanusaha' => '33.16.05.0250', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 849, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS KAPUAN', 'alamat' => 'Jl Lapangan Terbang No. 1 Kapuan, Cepu, Blora', 'notelepon' => '(0296)4271287', 'email' => 'puskesmaskapuan@gmail.com', 'nopengesahanusaha' => '33.16.05.0251', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 850, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS KAPUAN', 'alamat' => 'Jl Lapangan Terbang No. 1 Kapuan, Cepu, Blora', 'notelepon' => '(0296)4271287', 'email' => 'puskesmaskapuan@gmail.com', 'nopengesahanusaha' => '33.16.05.0252', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 846, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Kentong', 'alamat' => 'Ds. Kentong RT01/RW01, Cepu, Blora', 'notelepon' => '(0296)423428', 'email' => 'sdnkentong94@gmail.om', 'nopengesahanusaha' => '33.16.05.0248', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 847, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN Kentong', 'alamat' => 'Ds. Kentong RT01/RW01, Cepu, Blora', 'notelepon' => '(0296)423428', 'email' => 'sdnkentong94@gmail.om', 'nopengesahanusaha' => '33.16.05.0249', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 848, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS KAPUAN', 'alamat' => 'Jl Lapangan Terbang No. 1 Kapuan, Cepu, Blora', 'notelepon' => '(0296)4271287', 'email' => 'puskesmaskapuan@gmail.com', 'nopengesahanusaha' => '33.16.05.0250', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 849, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS KAPUAN', 'alamat' => 'Jl Lapangan Terbang No. 1 Kapuan, Cepu, Blora', 'notelepon' => '(0296)4271287', 'email' => 'puskesmaskapuan@gmail.com', 'nopengesahanusaha' => '33.16.05.0251', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 850, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS KAPUAN', 'alamat' => 'Jl Lapangan Terbang No. 1 Kapuan, Cepu, Blora', 'notelepon' => '(0296)4271287', 'email' => 'puskesmaskapuan@gmail.com', 'nopengesahanusaha' => '33.16.05.0252', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 
 // Data 851-855
-databgkepemilikan::create(['id' => 851, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS KAPUAN', 'alamat' => 'Jl Lapangan Terbang No. 1 Kapuan, Cepu, Blora', 'notelepon' => '(0296)4271287', 'email' => 'puskesmaskapuan@gmail.com', 'nopengesahanusaha' => '33.16.05.0253', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 852, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0254', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 853, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0255', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 854, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0256', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 855, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0257', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 851, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PUSKESMAS KAPUAN', 'alamat' => 'Jl Lapangan Terbang No. 1 Kapuan, Cepu, Blora', 'notelepon' => '(0296)4271287', 'email' => 'puskesmaskapuan@gmail.com', 'nopengesahanusaha' => '33.16.05.0253', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 852, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0254', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 853, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0255', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 854, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0256', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 855, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0257', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 856-860
-databgkepemilikan::create(['id' => 856, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0258', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 857, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0259', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 858, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Kapuan', 'alamat' => 'Jl. Lapangan Terbang Kapuan, Kapuan RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnkapuan1@gmail.com', 'nopengesahanusaha' => '33.16.05.0260', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 859, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Kapuan', 'alamat' => 'Jl. Lapangan Terbang Kapuan, Kapuan RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnkapuan1@gmail.com', 'nopengesahanusaha' => '33.16.05.0261', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 860, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Kapuan', 'alamat' => 'Jl. Lapangan Terbang Kapuan, Kapuan RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnkapuan1@gmail.com', 'nopengesahanusaha' => '33.16.05.0262', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 856, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0258', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 857, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Cabean', 'alamat' => 'Dukuh jeruk, Desa Cabean Rt 01/Rw 02, Cepu, Blora', 'notelepon' => '081575256545', 'email' => 'cabeansdn1@gmail.com', 'nopengesahanusaha' => '33.16.05.0259', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 858, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Kapuan', 'alamat' => 'Jl. Lapangan Terbang Kapuan, Kapuan RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnkapuan1@gmail.com', 'nopengesahanusaha' => '33.16.05.0260', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 859, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Kapuan', 'alamat' => 'Jl. Lapangan Terbang Kapuan, Kapuan RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnkapuan1@gmail.com', 'nopengesahanusaha' => '33.16.05.0261', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 860, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Kapuan', 'alamat' => 'Jl. Lapangan Terbang Kapuan, Kapuan RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnkapuan1@gmail.com', 'nopengesahanusaha' => '33.16.05.0262', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 861-865
-databgkepemilikan::create(['id' => 861, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Ngloram', 'alamat' => 'Jl.Aryo Penangsang, Ds. Ngloram Rt02/Rw01, Cepu, Blora', 'notelepon' => '085727328076', 'email' => 'sdnsatungloram@gmail.com', 'nopengesahanusaha' => '33.16.05.0263', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 862, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Ngloram', 'alamat' => 'Jl.Aryo Penangsang, Ds. Ngloram Rt02/Rw01, Cepu, Blora', 'notelepon' => '085727328076', 'email' => 'sdnsatungloram@gmail.com', 'nopengesahanusaha' => '33.16.05.0264', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 863, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 Ngloram', 'alamat' => 'Jl. Bengawan Solo, Ngloram RT04/RW02, Cepu, Blora', 'notelepon' => '0895324922220', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0265', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 864, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 Ngloram', 'alamat' => 'Jl. Bengawan Solo, Ngloram RT04/RW02, Cepu, Blora', 'notelepon' => '0895324922220', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0266', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 865, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 Ngloram', 'alamat' => 'Jl. Bengawan Solo, Ngloram RT04/RW02, Cepu, Blora', 'notelepon' => '0895324922220', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0267', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 861, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Ngloram', 'alamat' => 'Jl.Aryo Penangsang, Ds. Ngloram Rt02/Rw01, Cepu, Blora', 'notelepon' => '085727328076', 'email' => 'sdnsatungloram@gmail.com', 'nopengesahanusaha' => '33.16.05.0263', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 862, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Ngloram', 'alamat' => 'Jl.Aryo Penangsang, Ds. Ngloram Rt02/Rw01, Cepu, Blora', 'notelepon' => '085727328076', 'email' => 'sdnsatungloram@gmail.com', 'nopengesahanusaha' => '33.16.05.0264', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 863, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 Ngloram', 'alamat' => 'Jl. Bengawan Solo, Ngloram RT04/RW02, Cepu, Blora', 'notelepon' => '0895324922220', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0265', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 864, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 Ngloram', 'alamat' => 'Jl. Bengawan Solo, Ngloram RT04/RW02, Cepu, Blora', 'notelepon' => '0895324922220', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0266', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 865, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 Ngloram', 'alamat' => 'Jl. Bengawan Solo, Ngloram RT04/RW02, Cepu, Blora', 'notelepon' => '0895324922220', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0267', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 866-870
-databgkepemilikan::create(['id' => 866, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 Ngloram', 'alamat' => 'Jl. Bengawan Solo, Ngloram RT04/RW02, Cepu, Blora', 'notelepon' => '0895324922220', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0268', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 867, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Ngloram', 'alamat' => 'Jl.Aryo Penangsang, Ds. Ngloram Rt02/Rw01, Cepu, Blora', 'notelepon' => '085727328076', 'email' => 'sdnsatungloram@gmail.com', 'nopengesahanusaha' => '33.16.05.0269', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 868, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Ngloram', 'alamat' => 'Jl.Aryo Penangsang, Ds. Ngloram Rt02/Rw01, Cepu, Blora', 'notelepon' => '085727328076', 'email' => 'sdnsatungloram@gmail.com', 'nopengesahanusaha' => '33.16.05.0270', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 869, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 MULYOREJO', 'alamat' => 'Jl.Randublatung KM 3, Mulyorejo RT06/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn2mulyorejo@gmail.com', 'nopengesahanusaha' => '33.16.05.0271', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 870, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 MULYOREJO', 'alamat' => 'Jl.Randublatung KM 3, Mulyorejo RT06/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn2mulyorejo@gmail.com', 'nopengesahanusaha' => '33.16.05.0272', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 866, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 Ngloram', 'alamat' => 'Jl. Bengawan Solo, Ngloram RT04/RW02, Cepu, Blora', 'notelepon' => '0895324922220', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0268', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 867, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Ngloram', 'alamat' => 'Jl.Aryo Penangsang, Ds. Ngloram Rt02/Rw01, Cepu, Blora', 'notelepon' => '085727328076', 'email' => 'sdnsatungloram@gmail.com', 'nopengesahanusaha' => '33.16.05.0269', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 868, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 Ngloram', 'alamat' => 'Jl.Aryo Penangsang, Ds. Ngloram Rt02/Rw01, Cepu, Blora', 'notelepon' => '085727328076', 'email' => 'sdnsatungloram@gmail.com', 'nopengesahanusaha' => '33.16.05.0270', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 869, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 MULYOREJO', 'alamat' => 'Jl.Randublatung KM 3, Mulyorejo RT06/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn2mulyorejo@gmail.com', 'nopengesahanusaha' => '33.16.05.0271', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 870, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 MULYOREJO', 'alamat' => 'Jl.Randublatung KM 3, Mulyorejo RT06/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn2mulyorejo@gmail.com', 'nopengesahanusaha' => '33.16.05.0272', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 871-875
-databgkepemilikan::create(['id' => 871, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 MULYOREJO', 'alamat' => 'Jl.Randublatung KM 3, Mulyorejo RT06/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn2mulyorejo@gmail.com', 'nopengesahanusaha' => '33.16.05.0273', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 872, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0274', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 873, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0275', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 874, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0276', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 875, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0277', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 871, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 2 MULYOREJO', 'alamat' => 'Jl.Randublatung KM 3, Mulyorejo RT06/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdn2mulyorejo@gmail.com', 'nopengesahanusaha' => '33.16.05.0273', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 872, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0274', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 873, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0275', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 874, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0276', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 875, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0277', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 876-880
-databgkepemilikan::create(['id' => 876, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0278', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 877, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0279', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 878, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0280', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 879, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PU WILAYAH 2', 'alamat' => 'Jl. Diponegoro No.52, Cepu RT01/RW09, Cepu, Blora', 'notelepon' => '(0296)421114', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0281', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 880, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PU WILAYAH 2', 'alamat' => 'Jl. Diponegoro No.52, Cepu RT01/RW09, Cepu, Blora', 'notelepon' => '(0296)421114', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0282', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 876, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0278', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 877, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0279', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 878, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN MERNUNG', 'alamat' => 'Jl. Randublatung KM 05, Mernung RT 01/RW 01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnmernung00@gmail.com', 'nopengesahanusaha' => '33.16.05.0280', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 879, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PU WILAYAH 2', 'alamat' => 'Jl. Diponegoro No.52, Cepu RT01/RW09, Cepu, Blora', 'notelepon' => '(0296)421114', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0281', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 880, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PU WILAYAH 2', 'alamat' => 'Jl. Diponegoro No.52, Cepu RT01/RW09, Cepu, Blora', 'notelepon' => '(0296)421114', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0282', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 881-885
-databgkepemilikan::create(['id' => 881, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PU WILAYAH 2', 'alamat' => 'Jl. Diponegoro No.52, Cepu RT01/RW09, Cepu, Blora', 'notelepon' => '(0296)421114', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0283', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 882, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PU WILAYAH 2', 'alamat' => 'Jl. Diponegoro No.52, Cepu RT01/RW09, Cepu, Blora', 'notelepon' => '(0296)421114', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0284', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 883, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0285', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 884, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0286', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 885, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0287', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 881, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PU WILAYAH 2', 'alamat' => 'Jl. Diponegoro No.52, Cepu RT01/RW09, Cepu, Blora', 'notelepon' => '(0296)421114', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0283', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 882, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'UPTD PU WILAYAH 2', 'alamat' => 'Jl. Diponegoro No.52, Cepu RT01/RW09, Cepu, Blora', 'notelepon' => '(0296)421114', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0284', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 883, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0285', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 884, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0286', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 885, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0287', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 886-890
-databgkepemilikan::create(['id' => 886, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0288', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 887, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0289', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 888, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0290', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 889, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0291', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 890, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0292', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 886, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0288', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 887, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0289', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 888, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0290', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 889, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0291', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 890, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0292', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 891-895
-databgkepemilikan::create(['id' => 891, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0293', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 892, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'TK NEGERI CEPU', 'alamat' => 'Jl. Ronggolawe No.106, Balun RT05/RW14, Cepu, Blora', 'notelepon' => '085236601574', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0294', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 893, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'TK NEGERI CEPU', 'alamat' => 'Jl. Ronggolawe No.106, Balun RT05/RW14, Cepu, Blora', 'notelepon' => '085236601574', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0295', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 894, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'TK NEGERI CEPU', 'alamat' => 'Jl. Ronggolawe No.106, Balun RT05/RW14, Cepu, Blora', 'notelepon' => '085236601574', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0296', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 895, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'TK NEGERI CEPU', 'alamat' => 'Jl. Ronggolawe No.106, Balun RT05/RW14, Cepu, Blora', 'notelepon' => '085236601574', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0297', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 891, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 3 CEPU', 'alamat' => 'Cepu, RT 04/RW 03, Cepu, Blora', 'notelepon' => '(0296)421754', 'email' => 'sd03cepoe@gmail.com', 'nopengesahanusaha' => '33.16.05.0293', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 892, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'TK NEGERI CEPU', 'alamat' => 'Jl. Ronggolawe No.106, Balun RT05/RW14, Cepu, Blora', 'notelepon' => '085236601574', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0294', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 893, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'TK NEGERI CEPU', 'alamat' => 'Jl. Ronggolawe No.106, Balun RT05/RW14, Cepu, Blora', 'notelepon' => '085236601574', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0295', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 894, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'TK NEGERI CEPU', 'alamat' => 'Jl. Ronggolawe No.106, Balun RT05/RW14, Cepu, Blora', 'notelepon' => '085236601574', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0296', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 895, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'TK NEGERI CEPU', 'alamat' => 'Jl. Ronggolawe No.106, Balun RT05/RW14, Cepu, Blora', 'notelepon' => '085236601574', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0297', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 896-900
 
-databgkepemilikan::create(['id' => 896, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0298', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 897, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0299', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 898, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0300', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 899, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0301', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 900, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0302', 'tanggalinput' => now(), 'koordinat' => ' -7.06667000, 111.38333000']);
+databgkepemilikan::create(['id' => 896, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0298', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 897, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0299', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 898, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0300', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 899, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0301', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 900, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0302', 'tanggalinput' => now(), 'koordinat' => ' -7.06667000, 111.38333000']);
 
 
 // SDN 1 TAMBAKROMO (901-905)
-databgkepemilikan::create(['id' => 901, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0303', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 902, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0304', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 903, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0305', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 904, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0306', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 905, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0307', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 901, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0303', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 902, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0304', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 903, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0305', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 904, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0306', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 905, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN 1 TAMBAKROMO', 'alamat' => 'Jl. Randublatung No.13, Tambakromo, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'sdnsatutambakromo@ymail.com', 'nopengesahanusaha' => '33.16.05.0307', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // SDN GADON (906-912)
-databgkepemilikan::create(['id' => 906, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0308', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 907, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0309', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 908, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0310', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 909, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0311', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 910, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0312', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 911, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0313', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 912, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0314', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 906, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0308', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 907, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0309', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 908, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0310', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 909, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0311', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 910, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0312', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 911, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0313', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 912, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SDN GADON', 'alamat' => 'Jl. Bengawan Solo No. 1, Gadon RT02/RW01, Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'gadonsdn5@gmail.com', 'nopengesahanusaha' => '33.16.05.0314', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // PASAR BUAH (913-914)
-databgkepemilikan::create(['id' => 913, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR BUAH', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0315', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 914, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR BUAH', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0316', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 913, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR BUAH', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0315', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 914, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR BUAH', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0316', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // PLAZA CEPU (915-926, 928-933)
-databgkepemilikan::create(['id' => 915, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0317', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 916, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0318', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 917, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0319', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 918, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0320', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 919, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0321', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 920, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0322', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 921, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0323', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 922, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0324', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 923, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0325', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 924, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0326', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 925, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0327', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 926, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0328', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 928, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0330', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 929, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0331', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 930, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0332', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 931, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0333', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 932, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0334', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 933, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0335', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 915, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0317', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 916, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0318', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 917, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0319', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 918, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0320', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 919, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0321', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 920, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0322', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 921, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0323', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 922, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0324', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 923, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0325', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 924, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0326', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 925, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0327', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 926, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0328', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 928, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0330', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 929, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0331', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 930, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0332', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 931, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0333', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 932, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0334', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 933, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PLAZA CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0335', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // PASAR INDUK CEPU (927, 934-948)
-databgkepemilikan::create(['id' => 927, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0329', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 934, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0336', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 935, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0337', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 936, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0338', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 937, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0339', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 938, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0340', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 939, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0341', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 940, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0342', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 941, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0343', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 942, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0344', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 943, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0345', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 944, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0346', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 945, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0347', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 946, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0348', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 947, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0349', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 948, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0350', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 927, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0329', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 934, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0336', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 935, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0337', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 936, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0338', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 937, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0339', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 938, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0340', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 939, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0341', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 940, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0342', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 941, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0343', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 942, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0344', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 943, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0345', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 944, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0346', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 945, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0347', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 946, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0348', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 947, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0349', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 948, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR INDUK CEPU', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0350', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // PASAR MULYOREJO (949-951)
-databgkepemilikan::create(['id' => 949, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR MULYOREJO', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0351', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 950, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR MULYOREJO', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0352', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 951, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR MULYOREJO', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0353', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 949, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR MULYOREJO', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0351', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 950, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR MULYOREJO', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0352', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 951, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'PASAR MULYOREJO', 'alamat' => 'Jl. Rembang KM 4, Blora', 'notelepon' => '(0296)531112', 'email' => 'dindagkop.blora@gmail.com', 'nopengesahanusaha' => '33.16.05.0353', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // DINAS DALDUK & KB (952)
-databgkepemilikan::create(['id' => 952, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'DINAS DALDUK & KB', 'alamat' => 'Jl Dr. Soetomo No. 52, Blora', 'notelepon' => '0296531213', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0354', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 952, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'DINAS DALDUK & KB', 'alamat' => 'Jl Dr. Soetomo No. 52, Blora', 'notelepon' => '0296531213', 'email' => '(Tidak ada)', 'nopengesahanusaha' => '33.16.05.0354', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // SMP N 4 CEPU (953-973)
-databgkepemilikan::create(['id' => 953, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0355', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 954, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0356', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 955, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0357', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 956, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0358', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 957, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0359', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 958, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0360', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 959, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0361', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 960, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0362', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 961, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0363', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 962, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0364', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 963, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0365', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 964, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0366', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 965, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0367', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 966, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0368', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 967, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0369', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 968, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0370', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 969, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0371', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 970, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0372', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 971, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0373', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 972, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0374', 'tanggalinput' => now(), 'koordinat' => '-']);
-databgkepemilikan::create(['id' => 973, 'user_id' => 46, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0375', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 953, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0355', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 954, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0356', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 955, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0357', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 956, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0358', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 957, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0359', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 958, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0360', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 959, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0361', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 960, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0362', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 961, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0363', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 962, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0364', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 963, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0365', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 964, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0366', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 965, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0367', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 966, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0368', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 967, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0369', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 968, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0370', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 969, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0371', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 970, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0372', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 971, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0373', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 972, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0374', 'tanggalinput' => now(), 'koordinat' => '-']);
+databgkepemilikan::create(['id' => 973, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SMP N 4 CEPU', 'alamat' => 'Jl. Raya Cepu-Randu KM. 3,5 Cepu, Blora', 'notelepon' => '(Tidak ada)', 'email' => 'smpn4cepu@smpn4cepu.sch.id', 'nopengesahanusaha' => '33.16.05.0375', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 
 // koordinat baru
