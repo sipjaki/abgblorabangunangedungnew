@@ -341,7 +341,9 @@ th {
         Upload SK Bupati Hibah Bangunan Gedung Kabupaten Blora
     </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+
 </div>
+
 <div class="row">
   <div class="col-md-6">
     <div class="mb-3">
