@@ -38402,6 +38402,151 @@ foreach ($additionalData as $item) {
     );
 }
 
+$additionalData = [
+    [2151, '--', null, 24, null, null, 'INVENTARIS', '10.200.000,00', '2930616.630.C / Kamar mandi dan Ruang Kelas', '010101.00004.00012'],
+    [2152, '--', null, 70, null, null, 'INVENTARIS', '710.000,00', '2930617.630.C / Pagar', '010101.00004.00012'],
+    [2153, '--', null, 60, null, null, 'PEMBELIAN', '198.519.200,00', '6063893.630.C / Pagar', '010101.00004.00012'],
+    [2154, '--', null, 150, null, null, 'INVENTARIS', '104.458.000,00', '3687050.747.C / Pagar', '010101.00007.00021'],
+    [2155, '--', null, 126, null, null, 'INVENTARIS', '310.500.000,00', '3687048.747.C / Gedung 2 (Klas 4-6, Kantor Guru)', '010101.00007.00021'],
+    [2156, '--', null, 6, null, null, 'INVENTARIS', '10.000.000,00', '3687049.747.C / Kamar Mandi', '010101.00007.00021'],
+    [2157, '--', null, 213, null, null, 'INVENTARIS', '536.794.400,00', '3687047.747.C / Gedung 1 (Klas 1-3)', '010101.00007.00021'],
+    [2158, '--', null, 6, null, null, 'PEMBELIAN', '8.325.764,00', '3687046.747.C / Bantuan Peningkatan Sarpras Sanitasi SD/SDLB (Bantuan Keuangan Provinsi)', '010101.00007.00021'],
+    [2159, '--', null, 42, null, null, 'HIBAH', '234.424.326,00', '3687051.747.C / Pembangunan Perpustakaan', '010101.00007.00021'],
+    [2160, '21/12/2020', null, 60, null, null, 'PEMBELIAN', '148.391.000,00', '8957835.747.C / Pagar DAK 2020', '010101.00007.00021'],
+    [2161, '01/12/2023', null, null, 'HAK', null, 'PEMBELIAN', '198.450.000,00', 'LAB KOMPUTER', '010101.00007.00021'],
+    [2162, '29/12/2023', '02/01/1900', null, 'HAK', null, 'PEMBELIAN', '174.386.000,00', 'RUANG GURU/TU', '010101.00007.00021'],
+    [2163, '12/12/2023', null, null, 'HAK', null, 'PEMBELIAN', '76.200.000,00', 'UKS', '010101.00007.00021'],
+    [2164, '03/07/2002', null, 49, null, null, 'PEMBELIAN', '15.000.000,00', 'Gudang', '010101.00016.00025'],
+    [2165, '07/07/2005', null, 5, null, null, 'PEMBELIAN', '15.000.000,00', 'Kamar Mandi', '010101.00016.00025'],
+    [2166, '11/02/2007', null, 63, null, null, 'PEMBELIAN', '240.677.000,00', 'Bangunan Kantor dan Kelas', '010101.00016.00025'],
+    [2167, '11/02/2007', null, 280, 'Hak Pakai', null, 'PEMBELIAN', '360.964.300,00', 'Ruang Kelas', '010101.00016.00025'],
+    [2168, '07/11/2008', null, 81, null, null, 'PEMBELIAN', '20.000.000,00', 'Rumah Dinas', '010101.00016.00025'],
+    [2169, '07/11/2012', null, 352, null, null, 'PEMBELIAN', '5.000.000,00', 'Paving', '010101.00016.00025'],
+    [2170, '01/07/2013', null, 41, null, null, 'PEMBELIAN', '10.000.000,00', 'Pagar Tembok', '010101.00016.00025'],
+    [2171, '--', null, 203, null, null, 'INVENTARIS', '100.000.000,00', '4075938.574.C / Ruang Kelas 4,5,6', '010101.00002.00031'],
+    [2172, '--', null, 9, null, null, 'INVENTARIS', '10.000.000,00', '4075939.574.C / WC Guru, WC Murid', '010101.00002.00031'],
+    [2173, '--', null, 271, null, null, 'INVENTARIS', '173.010.500,00', '4075937.574.C / Ruang Kelas 1,2,3,dan Kantor', '010101.00002.00031'],
+    [2174, '--', null, 72, null, null, 'INVENTARIS', '100.000.000,00', '4075942.574.C / Gedung Perpustakaan', '010101.00002.00031'],
+    [2175, '--', null, 4, null, null, 'INVENTARIS', '700.000,00', '4075943.574.C / Selokan U', '010101.00002.00031'],
+    [2176, '--', null, 100, null, null, 'PEMBELIAN', '5.000.000,00', '4075944.574.C / Paving', '010101.00002.00031'],
+    [2177, '--', null, 50, null, null, 'PEMBELIAN', '2.500.000,00', '4075945.574.C / Paving', '010101.00002.00031'],
+    [2178, '--', null, 75, null, null, 'PEMBELIAN', '4.560.000,00', '4075946.574.C / Tempat Sepeda', '010101.00002.00031'],
+    [2179, '30/12/2020', null, 60, null, null, 'PEMBELIAN', '199.589.250,00', '8953695.574.C / Ruang Kantor, Guru dan Kepala SD ( DAK 2020 )', '010101.00002.00031'],
+    [2180, '--', null, 56, null, null, 'INVENTARIS', '72.000.000,00', '3811732.787.C / Gedung 1', '010101.00008.00018'],
+    [2181, '--', null, 216, null, null, 'INVENTARIS', '300.000.000,00', '3811733.787.C / Gedung 2', '010101.00008.00018'],
+    [2182, '--', null, 30, null, null, 'INVENTARIS', '96.000.000,00', '3811734.787.C / Gedung 3', '010101.00008.00018'],
+    [2183, '--', null, 216, null, null, 'INVENTARIS', '7.000.000,00', '3811735.787.C / PAVING', '010101.00008.00018'],
+    [2184, '--', null, 20, null, null, 'INVENTARIS', '4.250.000,00', '3811737.787.C / Kamar Mandi/Toilet/WC', '010101.00008.00018'],
+    [2185, '--', null, 56, null, null, 'INVENTARIS', '118.820.000,00', '3811731.787.C / GEDUNG PERPUSTAKAAN', '010101.00008.00018'],
+    [2186, '--', null, 40, null, null, 'INVENTARIS', '211.105.000,00', '3811736.787.C / Pagar', '010101.00008.00018'],
+    [2187, '--', null, 8, null, null, 'PEMBELIAN', '14.000.000,00', '3811730.787.C / KAMAR MANDI / WC', '010101.00008.00018'],
+    [2188, '21/12/2020', null, 60, null, null, 'PEMBELIAN', '148.124.000,00', '8963567.787.C / Pagar DAK 2020', '010101.00008.00018'],
+    [2189, '--', null, 36, null, null, 'INVENTARIS', '50.000.000,00', '3590354.959.C / Bangunan Gedung Kantor Permanen', '010101.00013.00017'],
+    [2190, '--', null, 220, null, null, 'INVENTARIS', '245.264.000,00', '3590352.959.C / Bangunan Gedung Tempat Pendidikan Permanen', '010101.00013.00017'],
+    [2191, '--', null, 200, null, null, 'INVENTARIS', '82.900.000,00', '3590353.959.C / Bangunan Gedung Tempat Pendidikan Permanen', '010101.00013.00017'],
+    [2192, '--', null, 20, null, null, 'INVENTARIS', '11.192.000,00', '3590358.959.C / Kamar Mandi / WC', '010101.00013.00017'],
+    [2193, '--', null, 40, null, null, 'INVENTARIS', '90.000.000,00', '3590356.959.C / Bangunan Gedung Perpustakaan Permanen', '010101.00013.00017'],
+    [2194, '--', null, 37, null, null, 'INVENTARIS', '161.425.000,00', '3590357.959.C / Pagar', '010101.00013.00017'],
+    [2195, '--', null, 94, null, null, 'INVENTARIS', '4.487.000,00', '3687007.736.C / Perkerasan Halaman', '010101.00007.00010'],
+    [2196, '--', null, 49, null, null, 'INVENTARIS', '26.700.000,00', '3687005.736.C / Bangunan Gedung Tempat Ibadah Permanen', '010101.00007.00010'],
+    [2197, '--', null, 54, null, null, 'INVENTARIS', '464.628.250,00', '3686998.736.C / Bangunan Gedung Kantor Permanen', '010101.00007.00010'],
+    [2198, '--', null, 66, null, null, 'INVENTARIS', '421.417.000,00', '3687001.736.C / Bangunan Gedung Kantor Permanen', '010101.00007.00010'],
+    [2199, '--', null, 66, null, null, 'INVENTARIS', '34.325.000,00', '3687002.736.C / Bangunan Gedung Kantor Permanen', '010101.00007.00010'],
+    [2200, '--', null, 66, null, null, 'INVENTARIS', '34.325.000,00', '3687003.736.C / Bangunan Gedung Kantor Permanen', '010101.00007.00010'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [2201, '--', null, 66, null, null, 'INVENTARIS', '34.325.000,00', '3687004.736.C / Bangunan Gedung Kantor Permanen', '010101.00007.00010'],
+    [2202, '--', null, 5, null, null, 'INVENTARIS', '5.000.000,00', '3687009.736.C / Kamar Mandi Guru', '010101.00007.00010'],
+    [2203, '21/12/2020', null, 60, null, null, 'PEMBELIAN', '158.875.000,00', '8954321.736.C / Gedung Perpustakaan DAK 2020', '010101.00007.00010'],
+    [2204, '01/12/2023', null, null, 'HAK', null, 'PEMBELIAN', '198.450.000,00', 'LAB KOMPUTER', '010101.00007.00010'],
+    [2205, '12/12/2023', null, null, 'HAK', null, 'PEMBELIAN', '76.200.000,00', 'UKS', '010101.00007.00010'],
+    [2206, '--', null, 160, null, null, 'HIBAH', '96.930.000,00', '3326123.603.C / GEDUNG 1', '010101.00003.00026'],
+    [2207, '--', null, 240, null, null, 'HIBAH', '42.800.000,00', '3326124.603.C / Gedung 2', '010101.00003.00026'],
+    [2208, '--', null, 54, null, null, 'INVENTARIS', '28.700.000,00', '3326126.603.C / Perkerasan', '010101.00003.00026'],
+    [2209, '--', null, 47, null, null, 'HIBAH', '75.960.360,00', '3326119.603.C / Gedung 3', '010101.00003.00026'],
+    [2210, '--', null, 6, null, null, 'INVENTARIS', '7.100.000,00', '3326120.603.C / KM/WC', '010101.00003.00026'],
+    [2211, '--', null, 10, null, null, 'INVENTARIS', '3.300.000,00', '3326122.603.C / Parkir', '010101.00003.00026'],
+    [2212, '--', null, 24, null, null, 'HIBAH', '24.900.000,00', '3326125.603.C / Gudang', '010101.00003.00026'],
+    [2213, '--', null, 44, null, null, 'INVENTARIS', '113.869.000,00', '3326121.603.C / Pagar, GAPURA', '010101.00003.00026'],
+    [2214, '--', null, 35, null, null, 'HIBAH', '10.000.000,00', '3934663.489.C / Gudang', '010101.00001.00003'],
+    [2215, '--', null, 326, null, null, 'INVENTARIS', '229.682.800,00', '3934665.489.C / Ruang Kelas 1-6, kantor,uks', '010101.00001.00003'],
+    [2216, '--', null, 35, null, null, 'INVENTARIS', '4.800.000,00', '3934666.489.C / WC', '010101.00001.00003'],
+    [2217, '--', null, 212, null, null, 'INVENTARIS', '7.060.000,00', '3934667.489.C / Paving', '010101.00001.00003'],
+    [2218, '--', null, 50, null, null, 'INVENTARIS', '252.492.000,00', '3686948.728.C / bangunan sekolah', '010101.00007.00002'],
+    [2219, '07/02/2010', null, 77, null, null, 'INVENTARIS', '250.000.000,00', '3686950.728.C / Gedung 2', '010101.00007.00002'],
+    [2220, '04/02/2009', null, 13, null, null, 'INVENTARIS', '93.700.000,00', '3686952.728.C / kamar mandi / wc', '010101.00007.00002'],
+    [2221, '03/02/2009', null, 42, null, null, 'INVENTARIS', '4.000.000,00', '3686954.728.C / perkerasan', '010101.00007.00002'],
+    [2222, '24/12/2012', null, 539, null, null, 'INVENTARIS', '394.260.000,00', '3686949.728.C / Gedung 1', '010101.00007.00002'],
+    [2223, '05/02/1989', null, 44, null, null, 'INVENTARIS', '4.000.000,00', '3686953.728.C / Rumah Dinas', '010101.00007.00002'],
+    [2224, '02/02/2011', null, 81, null, null, 'INVENTARIS', '90.000.000,00', '3686951.728.C / Gedung Perpustakaan', '010101.00007.00002'],
+    [2225, '05/01/2012', null, 426, null, null, 'INVENTARIS', '30.000.000,00', '3686955.728.C / pagar', '010101.00007.00002'],
+    [2226, '01/12/2023', null, null, 'HAK', null, 'PEMBELIAN', '198.450.000,00', 'LAB KOMPUTER', '010101.00007.00002'],
+    [2227, '12/12/2023', null, null, 'HAK', null, 'PEMBELIAN', '76.200.000,00', 'UKS', '010101.00007.00002'],
+    [2228, '--', null, 197, null, null, 'INVENTARIS', '110.684.000,00', '3172093.1051.C / Bangunan Gedung Kantor Permanen', '010101.00014.00044'],
+    [2229, '--', null, 10, null, null, 'INVENTARIS', '7.012.000,00', '3172094.1051.C / Kamar Mandi / Toilet /WC', '010101.00014.00044'],
+    [2230, '--', null, 30, null, null, 'INVENTARIS', '173.027.000,00', '3172095.1051.C / Pagar', '010101.00014.00044'],
+    [2231, '30/12/2018', null, 60, null, null, 'PEMBELIAN', '44.569.000,00', '8954258.1051.C / KM/WC SDN 2 Kutukan Randublatung', '010101.00014.00044'],
+    [2232, '30/12/2018', null, 60, null, null, 'PEMBELIAN', '49.804.500,00', '8954257.1051.C / Ruang UKS SDN 2 Kutukan Randublatung', '010101.00014.00044'],
+    [2233, '--', null, 180, null, null, 'INVENTARIS', '222.159.800,00', '3516179.921.C / GEDUNG 2', '010101.00012.00005'],
+    [2234, '--', null, 120, null, null, 'INVENTARIS', '144.700.000,00', '3516180.921.C / GEDUNG 3', '010101.00012.00005'],
+    [2235, '--', null, 672, null, null, 'INVENTARIS', '1.990.000,00', '3516182.921.C / Pagar Halaman', '010101.00012.00005'],
+    [2236, '--', null, 6, null, null, 'INVENTARIS', '9.600.000,00', '3516184.921.C / Kamar Mandi/WC', '010101.00012.00005'],
+    [2237, '--', null, 250, null, null, 'INVENTARIS', '75.000.000,00', '3516185.921.C / GEDUNG 5', '010101.00012.00005'],
+    [2238, '--', null, 36, null, null, 'INVENTARIS', '93.100.000,00', '3516183.921.C / GEDUNG 4', '010101.00012.00005'],
+    [2239, '--', null, 20, null, null, 'INVENTARIS', '7.832.000,00', '3516187.921.C / Ruang UKS', '010101.00012.00005'],
+    [2240, '--', null, 23, null, null, 'INVENTARIS', '3.370.000,00', '3516186.921.C / Tempat Parkir', '010101.00012.00005'],
+    [2241, '12/12/2019', null, 60, null, null, 'PEMBELIAN', '99.669.000,00', '8964899.921.C / Mushola', '010101.00012.00005'],
+    [2242, '21/12/2020', null, 60, null, null, 'PEMBELIAN', '198.525.000,00', '8965114.921.C / Pagar DAK 2020', '010101.00012.00005'],
+    [2243, '--', null, 189, null, null, 'INVENTARIS', '72.700.000,00', '3044114.1004.C / Gedung Sekolah 2', '010101.00015.00017'],
+    [2244, '--', null, 8, null, null, 'INVENTARIS', '2.400.000,00', '3044117.1004.C / Toilet', '010101.00015.00017'],
+    [2245, '--', null, 168, null, null, 'INVENTARIS', '285.442.800,00', '3044113.1004.C / Gedung Sekolah 1', '010101.00015.00017'],
+    [2246, '--', null, 63, null, null, 'INVENTARIS', '47.100.000,00', '3044115.1004.C / bangunan gedung 3', '010101.00015.00017'],
+    [2247, '21/12/2020', null, 60, null, null, 'PEMBELIAN', '19.700.000,00', '8952281.1004.C / Bangunan MCK ( DAK 2020 )', '010101.00015.00017'],
+    [2248, '--', null, 18, null, null, 'INVENTARIS', '3.500.000,00', '3044209.1016.C / Kamar Madi/Toilet/WC', '010101.00015.00029'],
+    [2249, '--', null, 225, null, null, 'INVENTARIS', '182.261.475,00', '3044204.1016.C / Gedung Sekolah', '010101.00015.00029'],
+    [2250, '--', null, 185, null, null, 'INVENTARIS', '94.400.000,00', '3044205.1016.C / Gedung Sekolah', '010101.00015.00029'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
+
+
+
+
 
 
 
