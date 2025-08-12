@@ -46425,6 +46425,54 @@ foreach ($datas as $id => $data) {
 }
 
 
+$datas = [
+    991 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung O', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'105m2'],
+    992 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung G', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'126m2'],
+    993 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung S', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'12m2'],
+    994 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung M', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'56m2'],
+    995 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung L', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'63m2'],
+    996 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung H', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'49m2'],
+    997 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung A', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'245m2'],
+    998 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung V', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'8m2'],
+    999 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung E', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'126m2'],
+    1000 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung B', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'189m2'],
+    1001 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung F', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'105m2'],
+    1002 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung N', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'315m2'],
+    1003 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung Q', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'28m2'],
+    1004 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung C', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'189m2'],
+    1005 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung J', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'189m2'],
+    1006 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung D', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'189m2'],
+    1007 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung K', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'112m2'],
+    1008 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung U', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'126m2'],
+    1009 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung T1', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'12m2'],
+    1010 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung T2', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'12m2'],
+    1011 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung S1', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'12m2'],
+    1012 => ['luastanah'=>'21000m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung S2', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'12m2'],
+    1013 => ['luastanah'=>'9730m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Mushola', 'fungsibangunan'=>'Keagamaan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'65m2'],
+    1014 => ['luastanah'=>'9730m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor Guru', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'220m2'],
+    1015 => ['luastanah'=>'9730m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Multimedia', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'374,5m2'],
+    1016 => ['luastanah'=>'9730m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Lab IPA', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'374,5m2'],
+    1017 => ['luastanah'=>'9730m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Kelas A', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'567m2'],
+    1018 => ['luastanah'=>'9730m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Kelas B', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'252m2'],
+    1019 => ['luastanah'=>'9730m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Kelas', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'63m2'],
+    1020 => ['luastanah'=>'9730m2', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Kelas D + Keterampilan', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'252m2'],
+];
+
+foreach ($datas as $id => $data) {
+    databgpeprofilbangunangedung::create(array_merge([
+        'databgkepemilikan_id' => $id,
+        'kdh' => null,
+        'ktb' => null,
+        'alamatbangunan' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ], $data));
+}
+
 
 
 // SAMPAI SINI NEW
