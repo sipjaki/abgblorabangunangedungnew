@@ -40190,6 +40190,24 @@ $additionalData = [
     [3000, '01/12/2023', '--', null, 'NEGARA', '--', 'PEMBELIAN', '100.208.000,00', 'Pembangunan Pagar SDN 3 Doplang Kec. Jati', '010101.00016.00003'],
 ];
 
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
 $additionalData = [
     [5758, '--', '-', null, '--', null, 'INVENTARIS', '121.500.000,00', '13816.431.C / Gedung Kantor', '010201.00000.00000'],
     [5759, '--', '-', null, '--', null, 'INVENTARIS', '54.100.000,00', '13822.431.C / Gedung kantor', '010201.00000.00000'],
@@ -40205,6 +40223,24 @@ $additionalData = [
     [5769, '10/08/2020', '050/09.18/SP-DKK/VII/2020', 120, '--', null, 'PEMBELIAN', '861.309.000,00', '14729.431.C / Bangunan Gedung PCS', '010201.00000.00000'],
     [5770, '29/12/2022', '-', 308, '--', null, 'PEMBELIAN', '88.100.050,00', '14956.431.C / GEDUNG PERAWAT', '010201.00000.00000'],
 ];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
 
 $additionalData = [
     [5771, '--', '-', 117, '--', null, 'INVENTARIS', '54.780.000,00', '7378.1193.C / Bangunan Puskesmas Pembantu/PKD', '010201.00001.00000'],
@@ -40239,6 +40275,24 @@ $additionalData = [
     [5800, '30/04/2020', '-', 12, '--', null, 'INVENTARIS', '36.580.000,00', '14838.1157.C / BANGUNAN TEMPAT GENSET', '010201.00003.00000'],
 ];
 
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
 $additionalData = [
     [5801, '30/04/2020', '--', 6, '--', '--', 'PEMBELIAN', '30.910.000,00', '14839.1157.C / BANGUNAN TEMPAT PENAMPUNGAN LIMBAH SEMENTARA', '010201.00003.00000'],
     [5802, '31/12/2021', '-', '-', '--', '--', 'INVENTARIS', '6.393.368.000,00', '15557.1157.C / BANGUNAN POLIKLINIK PUSKESMAS*', '010201.00003.00000'],
@@ -40266,6 +40320,23 @@ $additionalData = [
     [5824, '05/09/2013', '050/03/PKD.Nglandeyan/PP/DKK/2013', 72, '--', '--', 'INVENTARIS', '133.514.200,00', '10794.462.C / Bangunan Poliklinik Desa ( PKD ) Nglandeyan', '010201.00006.00000'],
     [5825, '05/09/2013', '050/06/Pemb.Pusk.Kedungtuban/2013', 743, '--', '--', 'INVENTARIS', '510.040.550,00', '10795.462.C / Bangunan Puskesmas', '010201.00006.00000'],
 ];
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
 
 $additionalData = [
     [5826, '25/09/2014', '01/33.16/SPK-PKD/APBD/2014', 96, '--', '--', 'INVENTARIS', '149.878.300,00', '10796.462.C / Bangunan Poliklinik Desa(PKD) Wadung Kedungtuban', '010201.00006.00000'],
@@ -40294,6 +40365,24 @@ $additionalData = [
     [5849, '12/12/2018', '--', 240, '--', '--', 'INVENTARIS', '294.343.800,00', '14326.468.C / PUSKESMAS PEMBANTU MERNUNG', '010201.00008.00000'],
     [5850, '16/12/2019', '--', 22, '--', '--', 'INVENTARIS', '157.746.000,00', '15000.468.C / bangunan pagar', '010201.00008.00000'],
 ];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
 $additionalData = [
     [5851, '--', '--', '-', '--', '--', 'INVENTARIS', '4.300.000,00', '11077.1155.C / Perkerasan', '010201.00009.00000'],
     [5852, '--', '--', 14, '--', '--', 'INVENTARIS', '700.000,00', '11081.1155.C / Kamar Mandi/WC', '010201.00009.00000'],
@@ -40322,6 +40411,24 @@ $additionalData = [
     [5875, '31/12/2021', '-', '-', '--', 'PEMBELIAN', '3.845.850.000,00', '15236.465.C / Gedung Puskesmas Sambong', '010201.00011.00000'],
 ];
 
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
 $additionalData = [
     [5876, '--', '-', '-', '--', '--', 'INVENTARIS', '209.909.200,00', '12910.466.C / Bangunan Puskesmas Pembantu', '010201.00011.00001'],
     [5877, '--', '-', '-', '--', '--', 'INVENTARIS', '282.860.200,00', '12911.467.C / Bangunan Puskesmas Pembantu', '010201.00011.00002'],
@@ -40349,6 +40456,24 @@ $additionalData = [
     [5899, '--', '-', '-', '--', '--', 'INVENTARIS', '137.224.450,00', '7935.448.C / Bangunan Poliklinik Desa Semampir', '010201.00014.00000'],
     [5900, '--', '-', '-', '--', '--', 'INVENTARIS', '149.366.800,00', '7932.448.C / Rumah Dinas', '010201.00014.00000'],
 ];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
 
 $additionalData = [
     [5901, '05/09/2013', '050/03/Pemb.PKD Kemiri/PP/DKK/2013', '-', '--', '--', 'PEMBELIAN', '103444000,00', '7936.448.C / Bangunan Poliklinik Desa ( PKD ) Kemiri', '010201.00014.00000'],
@@ -40407,6 +40532,24 @@ $additionalData = [
     [5950, '--', '--', 17, '--', '--', 'INVENTARIS', '33100000,00', '5104.439.C / Rumah Dinas Dokter', '010201.00019.00000'],
 ];
 
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
 $additionalData = [
     [5951, '--', '--', 17, '--', '--', 'INVENTARIS', '26500000,00', '5106.439.C / Rumah Dinas Perawat', '010201.00019.00000'],
     [5952, '--', '--', 17, '--', '--', 'INVENTARIS', '6799000,00', '5102.439.C / Pagar', '010201.00019.00000'],
@@ -40434,6 +40577,24 @@ $additionalData = [
     [5974, '--', '--', 125, '--', '--', 'INVENTARIS', '219064300,00', '10437.1169.C / Rumah Dinas Dokter', '010201.00021.00000'],
     [5975, '14/08/2015', '--', 25, '--', '--', 'INVENTARIS', '6997750,00', '10444.1169.C / Kanopi', '010201.00021.00000'],
 ];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
 
 
 $additionalData = [
@@ -40464,6 +40625,24 @@ $additionalData = [
     [6000, '01/12/2006', '-', '-', '--', '--', 'INVENTARIS', '498563100,00', '9665.1175.C / Gedung Rawat Jalan', '010201.00023.00000'],
 ];
 
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
 
 $additionalData = [
     [6001, '01/12/2006', '-', '-', '--', '--', 'INVENTARIS', '16600000,00', '9656.1175.C / Pagar', '010201.00023.00000'],
@@ -40492,6 +40671,24 @@ $additionalData = [
     [6024, '--', '-', '-', '--', '--', 'INVENTARIS', '300585000,00', '4615.1188.C / Bangunan Puskesmas Pembantu', '010201.00025.00000'],
     [6025, '--', '-', '-', '--', '--', 'INVENTARIS', '56300000,00', '4618.1189.C / Bangunan Puskesmas Pembantu', '010201.00025.00000'],
 ];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
 
 
 $additionalData = [
@@ -40522,6 +40719,24 @@ $additionalData = [
     [6050, '--', '--', 560, '--', '--', 'INVENTARIS', '158900000,00', '3451.1200.C / Perumahan Perawat Timur (5 Unit)', '010201.00027.00000'],
 ];
 
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
 
 $additionalData = [
     [6051, '--', '--', 366, '--', '--', 'INVENTARIS', '225380600,00', '3455.1200.C / R. Parkie Kary & Genset', '010201.00027.00000'],
@@ -40551,6 +40766,24 @@ $additionalData = [
     [6075, '--', '--', 210, '--', '--', 'INVENTARIS', '1517586000,00', '3462.1200.C / Ruang Teratai', '010201.00027.00000'],
 ];
 
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
 $additionalData = [
     [6076, '--', '--', 564, '--', '--', 'INVENTARIS', '217076000,00', '3447.1200.C / Pagar', '010201.00027.00000'],
     [6077, '30/12/2007', '--', 650, '--', '--', 'HIBAH', '890548000,00', '10270.1200.C / Gedung Teratai BMN', '010201.00027.00000'],
@@ -40578,6 +40811,24 @@ $additionalData = [
     [6099, '--', '--', 420, '--', '--', 'INVENTARIS', '535713000,00', '3428.1200.C / apotek&keuangan', '010201.00027.00000'],
     [6100, '--', '--', 240, '--', '--', 'INVENTARIS', '696441866,00', '3414.1200.C / Bangunan rawat inap kelas 3', '010201.00027.00000'],
 ];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
 
 
 $additionalData = [
@@ -40608,6 +40859,24 @@ $additionalData = [
     [6125, '22/11/2019', '-', 12, '--', '--', 'INVENTARIS', '38990000,00', '8425.1200.C / Gardu Box Listrik', '010201.00027.00000'],
 ];
 
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
 
 $additionalData = [
     [6126, '27/12/2019', '--', 1500, '--', '--', 'PEMBELIAN', '575470700,00', '8430.1200.C / Tempat Parkir dan Pujasera', '010201.00027.00000'],
@@ -40637,6 +40906,24 @@ $additionalData = [
     [6150, '13/09/2022', '030/3745/2022', 180, '--', '--', 'HIBAH', '278942212,00', '11095.1200.C / Asrama Permanen', '010201.00027.00000'],
 ];
 
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
 $additionalData = [
     [6151, '13/09/2022', '030/3745/2022', 180, '--', '--', 'HIBAH', '278942212,00', '11096.1200.C / Asrama Permanen', '010201.00027.00000'],
     [6152, '13/09/2022', '030/3745/2022', 180, '--', '--', 'HIBAH', '256956620,00', '11097.1200.C / Asrama Permanen', '010201.00027.00000'],
@@ -40664,6 +40951,24 @@ $additionalData = [
     [6174, '--', '--', 880, '--', '--', 'INVENTARIS', '959773900,00', '9661.1201.C / Bangunan Kantor', '010201.00028.00000'],
     [6175, '--', '--', 43, '--', '--', 'INVENTARIS', '25700000,00', '9658.1201.C / Mushola', '010201.00028.00000'],
 ];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
 
 
 $additionalData = [
@@ -40694,6 +40999,24 @@ $additionalData = [
     [6200, '08/11/2016', '', 588, '--', '--', 'INVENTARIS', '2636309024,00', '11692.1201.C / Gedung VIP II (Anggrek)', '010201.00028.00000'],
 ];
 
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
 
 $additionalData = [
     [6201, '01/12/2016', '--', 52, '--', '--', 'INVENTARIS', '198260000,00', '11702.1201.C / Rumah Genzet', '010201.00028.00000'],
@@ -40722,6 +41045,24 @@ $additionalData = [
     [6224, '22/10/2021', '--', '-', '--', '--', 'PEMBELIAN', '8172905151,00', '15522.1201.C / Gedung IGD dan IBS', '010201.00028.00000'],
     [6225, '10/12/2021', '--', '-', '--', '--', 'PEMBELIAN', '414545348,00', '15523.1201.C / Gedung/ Kator IPSRS', '010201.00028.00000'],
 ];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
 
 
 $additionalData = [
