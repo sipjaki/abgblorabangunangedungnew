@@ -37308,6 +37308,31 @@ foreach ($dataBaru as $data) {
     ]);
 }
 
+$dataBaru = [
+    [6961, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.022301.00000.00000.2008-1.3.3.01.01.32.001', '000001', null, null, null, null, null],
+    [6962, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.022301.00000.00000.2008-1.3.3.01.01.32.001', '000002', null, null, null, null, null],
+    [6963, 'RUMAH NEGARA GOLONGAN II.RUMAH NEGARA GOLONGAN II TIPE B PERMANEN', '12.01.33.16.022301.00000.00000.2008-1.3.3.01.02.02.004', '000001', null, null, null, null, null],
+    [6964, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.022301.00000.00000.2009-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 147, 'Jl Gor Mustika Komplek Perkantoran Blora'],
+    [6965, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.022301.00000.00000.2013-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'JLn Gor Mustika Komplek Perkantoran Blora'],
+    [6966, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.022301.00000.00000.2019-1.3.3.01.01.01.005', '000001', 'BAIK', 'BERTINGKAT', 'BETON', null, 'Jl. Ahmat Yani Komplek Taman Sarbini'],
+    [6967, 'BANGUNAN TERBUKA.BANGUNAN LANTAI JEMUR PERMANEN', '12.01.33.16.022301.00000.00000.2021-1.3.3.01.01.25.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'JL. A Yani komplek Taman M Sarbini'],
+];
+
+foreach ($dataBaru as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 17,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '' || $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === 'TIDAK BERTINGKAT' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '' || $data[6] === 'TIDAK' || $data[6] === '--' || $data[6] === 'TIDAK BETON' ? null : $data[6],
+        'luaslantai' => $data[7] === null || $data[7] === '-' || $data[7] === ' -    ' || $data[7] === ' -   ' ? null : $data[7],
+        'alamat' => $data[8] === '' || $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
 
 
 
@@ -43153,6 +43178,34 @@ $additionalData = [
     [6959, '18/12/2022', '7222257/SP/02/X/2022', '-', '--', '--', 'INVENTARIS', '2849645000,00', '4396.1233.C / Fasum Alun-alun Jipang', '021901.00000.00000'],
     [6960, '30/11/2022', '8439257/PPK/02/XI/2022', '-', '--', '--', 'PEMBELIAN', '196248000,00', '4356.1233.C / Palang Pintu Parkir', '021901.00000.00000'],
 
+];
+
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [6961, '-', '-', '-', '-', '-', 'MUTASI', '119600000,00', '--', '022301.00000.00000'],
+    [6962, '-', '-', '-', '-', '-', 'MUTASI', '99700000,00', '--', '022301.00000.00000'],
+    [6963, '-', '-', '-', '-', '-', 'MUTASI', '198243200,00', '--', '022301.00000.00000'],
+    [6964, '-', '-', 147, '--', '--', 'INVENTARIS', '377739000,00', '3740468.340.C / GEDUNG ARSIP 1', '022301.00000.00000'],
+    [6965, '-', '-', 21116, '--', '--', 'INVENTARIS', '384817000,00', '3743469.340.C / Gedung Arsip 2', '022301.00000.00000'],
+    [6966, '27/12/2019', '-', '-', '--', '--', 'PEMBELIAN', '9641809295,00', '3770185.340.C / Gedung Perpustakaan', '022301.00000.00000'],
+    [6967, '27/10/2021', '027/013/2021', '-', '--', '--', 'PEMBELIAN', '423212000,00', '3770316.340.C / Paving Gedung Layanan Perpustakaan', '022301.00000.00000'],
 ];
 
 
