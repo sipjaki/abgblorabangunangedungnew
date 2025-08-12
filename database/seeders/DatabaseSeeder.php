@@ -46170,6 +46170,206 @@ databgkepemilikan::create(['id'=>1122,'user_id'=>67,'kecamatanblora_id'=>14,'nam
 databgkepemilikan::create(['id'=>1123,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 1 BRABOWAN','alamat'=>'Jln. Giyanti, RT.01/RW.01, Ds. Brabowan, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
 
 
+databgkepemilikan::create(['id'=>1124,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 1 BRABOWAN','alamat'=>'Jln. Giyanti, RT.01/RW.01, Ds. Brabowan, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1125,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 1 BRABOWAN','alamat'=>'Jln. Giyanti, RT.01/RW.01, Ds. Brabowan, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1126,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 2 BRABOWAN','alamat'=>'Ds. Brabowan, RT.02/RW.08, Kec. Sambong','notelepon'=>'085335661949','email'=>'sdn2brabowan@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1127,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 2 BRABOWAN','alamat'=>'Ds. Brabowan, RT.02/RW.08, Kec. Sambong','notelepon'=>'085335661949','email'=>'sdn2brabowan@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1128,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 2 BRABOWAN','alamat'=>'Ds. Brabowan, RT.02/RW.08, Kec. Sambong','notelepon'=>'085335661949','email'=>'sdn2brabowan@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1129,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 2 BRABOWAN','alamat'=>'Ds. Brabowan, RT.02/RW.08, Kec. Sambong','notelepon'=>'085335661949','email'=>'sdn2brabowan@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1130,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 2 BRABOWAN','alamat'=>'Ds. Brabowan, RT.02/RW.08, Kec. Sambong','notelepon'=>'085335661949','email'=>'sdn2brabowan@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1131,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 3 BRABOWAN','alamat'=>'Jalan Giyanti RT.01/RW.02 Dk. Kaliareng, Ds. Brabowan, Kec. Sambong.','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1132,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 3 BRABOWAN','alamat'=>'Jalan Giyanti RT.01/RW.02 Dk. Kaliareng, Ds. Brabowan, Kec. Sambong.','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1133,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 3 BRABOWAN','alamat'=>'Jalan Giyanti RT.01/RW.02 Dk. Kaliareng, Ds. Brabowan, Kec. Sambong.','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1134,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 3 BRABOWAN','alamat'=>'Jalan Giyanti RT.01/RW.02 Dk. Kaliareng, Ds. Brabowan, Kec. Sambong.','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1135,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SD N Giyanti','alamat'=>'Jln.Giyanti Ds.Giyanti Kec.Sambong Kab.Blora, RT.1/RW.1, Ds./Kel. Giyanti','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1136,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SD N Giyanti','alamat'=>'Jln.Giyanti Ds.Giyanti Kec.Sambong Kab.Blora, RT.1/RW.1, Ds./Kel. Giyanti','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1137,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SD N Giyanti','alamat'=>'Jln.Giyanti Ds.Giyanti Kec.Sambong Kab.Blora, RT.1/RW.1, Ds./Kel. Giyanti','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1138,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SD N Giyanti','alamat'=>'Jln.Giyanti Ds.Giyanti Kec.Sambong Kab.Blora, RT.1/RW.1, Ds./Kel. Giyanti','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1139,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SD N Giyanti','alamat'=>'Jln.Giyanti Ds.Giyanti Kec.Sambong Kab.Blora, RT.1/RW.1, Ds./Kel. Giyanti','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1140,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SD N Giyanti','alamat'=>'Jln.Giyanti Ds.Giyanti Kec.Sambong Kab.Blora, RT.1/RW.1, Ds./Kel. Giyanti','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1141,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SD N Giyanti','alamat'=>'Jln.Giyanti Ds.Giyanti Kec.Sambong Kab.Blora, RT.1/RW.1, Ds./Kel. Giyanti','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1142,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SD N Giyanti','alamat'=>'Jln.Giyanti Ds.Giyanti Kec.Sambong Kab.Blora, RT.1/RW.1, Ds./Kel. Giyanti','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1143,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 1 TEMENGENG','alamat'=>'Dk. Pucung, Ds. Temengeng, RT.03/RW.01, Kec. Sambong','notelepon'=>'085713642860','email'=>'sd1temengeng@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1144,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 1 TEMENGENG','alamat'=>'Dk. Pucung, Ds. Temengeng, RT.03/RW.01, Kec. Sambong','notelepon'=>'085713642860','email'=>'sd1temengeng@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1145,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 1 TEMENGENG','alamat'=>'Dk. Pucung, Ds. Temengeng, RT.03/RW.01, Kec. Sambong','notelepon'=>'085713642860','email'=>'sd1temengeng@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1146,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 1 TEMENGENG','alamat'=>'Dk. Pucung, Ds. Temengeng, RT.03/RW.01, Kec. Sambong','notelepon'=>'085713642860','email'=>'sd1temengeng@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1147,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 2 TEMENGENG','alamat'=>'Jl. Masjid No.03, RT.02/RW.04, Ds. Temengeng, Kec. Sambong','notelepon'=>'-','email'=>'sdn02temengeng@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1148,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 2 TEMENGENG','alamat'=>'Jl. Masjid No.03, RT.02/RW.04, Ds. Temengeng, Kec. Sambong','notelepon'=>'-','email'=>'sdn02temengeng@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1149,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 2 TEMENGENG','alamat'=>'Jl. Masjid No.03, RT.02/RW.04, Ds. Temengeng, Kec. Sambong','notelepon'=>'-','email'=>'sdn02temengeng@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1150,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 2 TEMENGENG','alamat'=>'Jl. Masjid No.03, RT.02/RW.04, Ds. Temengeng, Kec. Sambong','notelepon'=>'-','email'=>'sdn02temengeng@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1151,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'SDN 2 TEMENGENG','alamat'=>'Jl. Masjid No.03, RT.02/RW.04, Ds. Temengeng, Kec. Sambong','notelepon'=>'-','email'=>'sdn02temengeng@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1152,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'PUSKESMAS PEMBANTU BRABOWAN','alamat'=>'Jl. Giyanti, Area Sawah, Brabowan, RT.03/RW.01','notelepon'=>'082133156398','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1153,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'PUSKESMAS PEMBANTU LEDOK','alamat'=>'Ds. Ledok, RT.03/RW.03, Kec. Sambong','notelepon'=>'081236837990','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1154,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'PUSKESMAS PEMBANTU BLEBOH','alamat'=>'-','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'-','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1155,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'BALAI PENYULUH PERTANIAN KEC. SAMBONG','alamat'=>'Jl. Nasional Blora - Cepu, Watuberm, Pojokwatu, Kec. Sambong','notelepon'=>'082135597899','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1156,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'DINAS LINGKUNGAN HIDUP','alamat'=>'Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'-','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1157,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'DINAS LINGKUNGAN HIDUP','alamat'=>'Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'-','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1158,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Kelurahan Biting','alamat'=>'Jl. Giyanti, RT.02/RW.01, Mlawu, Biting, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1159,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Kelurahan Biting','alamat'=>'Jl. Giyanti, RT.02/RW.01, Mlawu, Biting, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1160,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Kelurahan Biting','alamat'=>'Jl. Giyanti, RT.02/RW.01, Mlawu, Biting, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1161,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Kelurahan Biting','alamat'=>'Jl. Giyanti, RT.02/RW.01, Mlawu, Biting, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1162,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Kelurahan Biting','alamat'=>'Jl. Giyanti, RT.02/RW.01, Mlawu, Biting, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1163,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Brabowan','alamat'=>'Jl. Giyanti RT.01/RW.01, Brabowan, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1164,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Brabowan','alamat'=>'Jl. Giyanti RT.01/RW.01, Brabowan, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1165,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Brabowan','alamat'=>'Jl. Giyanti RT.01/RW.01, Brabowan, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1166,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Brabowan','alamat'=>'Jl. Giyanti RT.01/RW.01, Brabowan, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1167,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Gadu','alamat'=>'Ds. Gadu, RT.04/RW.06, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1168,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Gadu','alamat'=>'Ds. Gadu, RT.04/RW.06, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1169,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Gadu','alamat'=>'Ds. Gadu, RT.04/RW.06, Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1170,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Gagakan','alamat'=>'Jl. Gagakan RT.03/RW.01, Kel. Gagakan, Kec. Sambong','notelepon'=>'-','email'=>'pemdesgagakan@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1171,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Gagakan','alamat'=>'Jl. Gagakan RT.03/RW.01, Kel. Gagakan, Kec. Sambong','notelepon'=>'-','email'=>'pemdesgagakan@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1172,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Giyanti','alamat'=>'Jl. Giyanti, Cancangan, Giyanti, Kec. Sambong, Kab. Blora','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1173,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Giyanti','alamat'=>'Jl. Giyanti, Cancangan, Giyanti, Kec. Sambong, Kab. Blora','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+
+
+databgkepemilikan::create(['id'=>1174,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Giyanti','alamat'=>'Jl. Giyanti, Cancangan, Giyanti, Kec. Sambong, Kab. Blora','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1175,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Giyanti','alamat'=>'Jl. Giyanti, Cancangan, Giyanti, Kec. Sambong, Kab. Blora','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1176,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Giyanti','alamat'=>'Jl. Giyanti, Cancangan, Giyanti, Kec. Sambong, Kab. Blora','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1177,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Pojokwatu','alamat'=>'Jl. Raya Pojokwatu RT.02/RW.02, Ds. Pojokwatu, Kec. Sambong 58371.','notelepon'=>'085801134105','email'=>'pemdespojokwatu24@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1178,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Pojokwatu','alamat'=>'Jl. Raya Pojokwatu RT.02/RW.02, Ds. Pojokwatu, Kec. Sambong 58371.','notelepon'=>'085801134105','email'=>'pemdespojokwatu24@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1179,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Pojokwatu','alamat'=>'Jl. Raya Pojokwatu RT.02/RW.02, Ds. Pojokwatu, Kec. Sambong 58371.','notelepon'=>'085801134105','email'=>'pemdespojokwatu24@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1180,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Kelurahan Sambong','alamat'=>'-','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'-','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1181,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Sambongrejo','alamat'=>'Desa Sambongrejo, Dk Belimbing RT.02/RW.01, Kec. Sambong','notelepon'=>'-','email'=>'sambongrejosedulursikep@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1182,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Sambongrejo','alamat'=>'Desa Sambongrejo, Dk Belimbing RT.02/RW.01, Kec. Sambong','notelepon'=>'-','email'=>'sambongrejosedulursikep@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1183,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Temengeng','alamat'=>'Dk. Pucung, RT.03/RW.01, Kec. Sambong','notelepon'=>'082234385672','email'=>'desatemengengsambong@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1184,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Temengeng','alamat'=>'Dk. Pucung, RT.03/RW.01, Kec. Sambong','notelepon'=>'082234385672','email'=>'desatemengengsambong@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1185,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Temengeng','alamat'=>'Dk. Pucung, RT.03/RW.01, Kec. Sambong','notelepon'=>'082234385672','email'=>'desatemengengsambong@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1186,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Temengeng','alamat'=>'Dk. Pucung, RT.03/RW.01, Kec. Sambong','notelepon'=>'082234385672','email'=>'desatemengengsambong@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1187,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Ledok','alamat'=>'Desa Ledok RT.03/RW.03 Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1188,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'Balai Desa Ledok','alamat'=>'Desa Ledok RT.03/RW.03 Kec. Sambong','notelepon'=>'-','email'=>'-','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+databgkepemilikan::create(['id'=>1189,'user_id'=>67,'kecamatanblora_id'=>14,'namainstitusi'=>'UPT TK/SD','alamat'=>'Jl. Raya Cepu Blora, No.17, Ds. Pojokwatu, RT.02/RW.01','notelepon'=>'422710','email'=>'korwilbiddiksambong@gmail.com','nopengesahanusaha'=>'Belum berijin','tanggalinput'=>Carbon::now()]);
+
+
+
+for ($i = 974; $i <= 1189; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'jenisbuktitanah' => '-',
+        'alamattanah' => '-',
+    ];
+
+    // Data spesifik dari daftar kamu
+    if ($i >= 981 && $i <= 989) {
+        $data['statuskepemilikan'] = 'Negara';
+    }
+    elseif ($i >= 990 && $i <= 1012) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '11.12.06.04.4.000004.';
+        $data['jenisbuktitanah'] = 'SHM';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1013 && $i <= 1028) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '11.12.06.08.4.00012.';
+        $data['jenisbuktitanah'] = 'HGP';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1038 && $i <= 1041) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['alamattanah'] = '-';
+    }
+    elseif (in_array($i, [1049, 1050, 1051])) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '11.16.05.4.00009.';
+        $data['jenisbuktitanah'] = 'HGP';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1053 && $i <= 1056) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '11.12.06.05.00592.';
+        $data['jenisbuktitanah'] = 'HGP';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1063 && $i <= 1068) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '001/LDK/IV/2008.';
+        $data['jenisbuktitanah'] = 'HGB';
+        $data['alamattanah'] = '-';
+    }
+    elseif (in_array($i, [1095, 1096, 1097, 1098, 1099])) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '31/DS-P/1/2012.';
+        $data['jenisbuktitanah'] = 'HGP';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1103 && $i <= 1106) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '174/GGK/VII/2016.';
+        $data['jenisbuktitanah'] = 'HGP';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1115 && $i <= 1119) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '11.12.06.07.4.00023.';
+        $data['jenisbuktitanah'] = 'SHM';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1131 && $i <= 1134) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '59. Kelas SIII';
+        $data['jenisbuktitanah'] = 'HGP';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1143 && $i <= 1146) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '024/TMG/V/2016.';
+        $data['jenisbuktitanah'] = 'HGP';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i == 1152) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '11.12.06.08.4.00023.';
+        $data['jenisbuktitanah'] = 'HGP';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1158 && $i <= 1162) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '11.12.06.07.4.00022';
+        $data['jenisbuktitanah'] = 'SHM';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1163 && $i <= 1166) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '11.12.06.08.01197.';
+        $data['jenisbuktitanah'] = 'HGP';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1167 && $i <= 1171) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '11.12.06.03.4.00005.';
+        $data['jenisbuktitanah'] = 'SHM';
+        $data['alamattanah'] = '-';
+    }
+    elseif ($i >= 1172 && $i <= 1176) {
+        $data['statushaktanah'] = 'Pemkab';
+        $data['statuskepemilikan'] = 'Negara';
+        $data['nobuktikepemilikan'] = '11.12.06.10.01996.';
+        $data['jenisbuktitanah'] = 'HGP';
+        $data['alamattanah'] = '-';
+    }
+    // default selain di atas tetap '-'
+
+    databgtanah::create($data);
+}
+
 // SAMPAI SINI NEW
 
 // databgklasifikasi::create([
@@ -48105,6 +48305,7 @@ foreach ($structureData as $id => $data) {
 
 
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA STRUKTUR BANGUNAN GEDUNG
+
 for ($i = 1; $i <= 598; $i++) {
     \App\Models\databgstatus::create([
         'id' => $i,

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('statushaktanah')->nullable();
             $table->string('statuskepemilikan')->nullable();
             $table->string('nobuktikepemilikan')->nullable();
+            $table->string('jenisbuktitanah')->nullable();
             $table->string('alamattanah')->nullable();
 
             $table->string('cadangan1')->nullable();
