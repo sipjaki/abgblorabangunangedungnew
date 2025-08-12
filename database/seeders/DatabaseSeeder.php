@@ -46823,19 +46823,17 @@ for ($i = 1046; $i <= 1048; $i++) {
         // All other fields remain default
     ]);
 }
-
-// Records 1049-1051
 for ($i = 1049; $i <= 1051; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
         'statushaktanah' => 'Pemkab',
         'statuskepemilikan' => 'Negara',
-        'nobuktikepemilikan'] = '11.16.05.4.00009.';
-        $data['jenisbuktitanah'] = 'HGP';
-        $data['peruntukantanah'] = 'Kesehatan';
-        $data['kdb'] = '60%';
-        $data['luastanah'] = '3340';
-        $data['fungsibangunan'] = 'Kesehatan';
+        'nobuktikepemilikan' => '11.16.05.4.00009.',
+        'jenisbuktitanah' => 'HGP',
+        'peruntukantanah' => 'Kesehatan',
+        'kdb' => '60%',
+        'luastanah' => '3340',
+        'fungsibangunan' => 'Kesehatan',
     ];
 
     switch($i) {
@@ -46862,16 +46860,17 @@ for ($i = 1049; $i <= 1051; $i++) {
     databgpeprofilbangunangedung::create($data);
 }
 
+
 // Record 1052
 databgpeprofilbangunangedung::create([
     'databgkepemilikan_id' => 1052,
     'peruntukantanah' => 'Pelayanan',
     'kdb' => '60%',
     'klb' => '0,6',
-    'namabangunan'] = 'Balai Penyuluan KB';
-    'fungsibangunan'] = 'Pelayanan';
-    'jumlahlantai'] = '1';
-    'luaslantaildasar'] = '79,35';
+    'namabangunan' => 'Balai Penyuluan KB',
+    'fungsibangunan' => 'Pelayanan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '79,35',
 ]);
 
 // Records 1053-1056
@@ -46879,15 +46878,15 @@ for ($i = 1053; $i <= 1056; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
         'statushaktanah' => 'Pemkab',
-        'statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '11.12.06.05.00592.';
-        $data['jenisbuktitanah'] = 'HGP';
-        $data['peruntukantanah'] = 'Pelayanan';
-        $data['kdb'] = '60%';
-        $data['luastanah'] = '2150';
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '11.12.06.05.00592.',
+        'jenisbuktitanah' => 'HGP',
+        'peruntukantanah' => 'Pelayanan',
+        'kdb' => '60%',
+        'luastanah' => '2150',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1053:
             $data['klb'] = '1,2';
             $data['namabangunan'] = 'Kantor Kecamatan Sambong';
@@ -46920,16 +46919,16 @@ for ($i = 1053; $i <= 1056; $i++) {
 
     databgpeprofilbangunangedung::create($data);
 }
-
 // Records 1057-1062
+
 for ($i = 1057; $i <= 1062; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '1961';
-        $data['tanggalmulaikonstruksi'] = '1966-01-01';
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '1961',
+        'tanggalmulaikonstruksi' => '1966-01-01',
     ];
 
     switch($i) {
@@ -46978,14 +46977,14 @@ for ($i = 1057; $i <= 1062; $i++) {
 for ($i = 1063; $i <= 1068; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '001/LDK/IV/2008.';
-        $data['jenisbuktitanah'] = 'HGB';
-        $data['peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '2250';
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '001/LDK/IV/2008.',
+        'jenisbuktitanah' => 'HGB',
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '2250',
     ];
 
     switch($i) {
@@ -47045,13 +47044,13 @@ for ($i = 1075; $i <= 1085; $i++) {
 for ($i = 1086; $i <= 1094; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['fungsibangunan'] = 'Sosial Budaya';
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'fungsibangunan' => 'Sosial Budaya',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1086:
             $data['luastanah'] = '800';
             $data['namabangunan'] = 'Perpus';
@@ -47115,19 +47114,19 @@ for ($i = 1086; $i <= 1094; $i++) {
 for ($i = 1095; $i <= 1099; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '31/DS-P/1/2012.';
-        $data['jenisbuktitanah'] = 'HGP';
-        $data['peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '1520';
-        $data['fungsibangunan'] = 'Sosial Budaya';
-        $data['jumlahlantai'] = '1';
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '31/DS-P/1/2012.',
+        'jenisbuktitanah' => 'HGP',
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '1520',
+        'fungsibangunan' => 'Sosial Budaya',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1095:
             $data['namabangunan'] = 'Gedung A';
             $data['luaslantaildasar'] = '147';
@@ -47165,22 +47164,22 @@ for ($i = 1100; $i <= 1102; $i++) {
 for ($i = 1103; $i <= 1106; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '174/GGK/VII/2016.';
-        $data['jenisbuktitanah'] = 'HGP';
-        $data['peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '1505';
-        $data['fungsibangunan'] = 'Sosial Budaya';
-        $data['jumlahlantai'] = '1';
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '174/GGK/VII/2016.',
+        'jenisbuktitanah' => 'HGP',
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '1505',
+        'fungsibangunan' => 'Sosial Budaya',
+        'jumlahlantai' => '1',
     ];
 
     switch($i) {
         case 1103:
             $data['namabangunan'] = 'Gedung Unit I';
-            $data['luaslantaildasar'] = '#VALUE!'; // You might want to handle this special case
+            $data['luaslantaildasar'] = '#VALUE!'; // Perlu penanganan khusus jika ini bermasalah
             break;
         case 1104:
             $data['namabangunan'] = 'Gedung Unit II';
@@ -47206,15 +47205,15 @@ for ($i = 1103; $i <= 1106; $i++) {
 for ($i = 1107; $i <= 1109; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '1750';
-        $data['fungsibangunan'] = 'Sosial Budaya';
-        $data['jumlahlantai'] = '1';
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '1750',
+        'fungsibangunan' => 'Sosial Budaya',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1107:
             $data['namabangunan'] = 'Kantor';
             $data['luaslantaildasar'] = '182';
@@ -47233,14 +47232,15 @@ for ($i = 1107; $i <= 1109; $i++) {
 }
 
 // Records 1110-1114
+// Records 1110-1114
 for ($i = 1110; $i <= 1114; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '1350';
-        $data['fungsibangunan'] = 'Sosial Budaya';
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '1350',
+        'fungsibangunan' => 'Sosial Budaya',
     ];
 
     switch($i) {
@@ -47278,15 +47278,15 @@ for ($i = 1110; $i <= 1114; $i++) {
 for ($i = 1115; $i <= 1119; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '11.12.06.07.4.00023.';
-        $data['jenisbuktitanah'] = 'SHM';
-        $data['peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '2350';
-        $data['fungsibangunan'] = 'Sosial Budaya';
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '11.12.06.07.4.00023.',
+        'jenisbuktitanah' => 'SHM',
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '2350',
+        'fungsibangunan' => 'Sosial Budaya',
     ];
 
     switch($i) {
@@ -47324,12 +47324,12 @@ for ($i = 1115; $i <= 1119; $i++) {
 for ($i = 1120; $i <= 1125; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '1430';
-        $data['fungsibangunan'] = 'Sosial Budaya';
-        $data['jumlahlantai'] = '1';
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '1430',
+        'fungsibangunan' => 'Sosial Budaya',
+        'jumlahlantai' => '1',
     ];
 
     switch($i) {
@@ -47364,40 +47364,45 @@ for ($i = 1120; $i <= 1125; $i++) {
 }
 
 // Records 1126-1130
+// Records 1126-1130
 for ($i = 1126; $i <= 1130; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '1440';
-        $data['jumlahlantai'] = '1';
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1126:
             $data['namabangunan'] = 'Gedung A';
             $data['fungsibangunan'] = 'Sosial Budaya';
+            $data['luastanah'] = '1440';
             $data['luaslantaildasar'] = '242,05';
             break;
         case 1127:
             $data['namabangunan'] = 'Gedung B';
             $data['fungsibangunan'] = 'Sosial Budaya';
+            $data['luastanah'] = '1440';
             $data['luaslantaildasar'] = '19,08';
             break;
         case 1128:
             $data['namabangunan'] = 'Gedung C';
             $data['fungsibangunan'] = 'Sosial Budaya';
+            $data['luastanah'] = '1440';
             $data['luaslantaildasar'] = '198,36';
             break;
         case 1129:
             $data['namabangunan'] = 'Mushola';
             $data['fungsibangunan'] = 'Keagamaan';
+            $data['luastanah'] = '1440';
             $data['luaslantaildasar'] = '80,1';
             break;
         case 1130:
             $data['namabangunan'] = 'Kantin';
             $data['fungsibangunan'] = 'Sosial Budaya';
+            $data['luastanah'] = '1440';
             $data['luaslantaildasar'] = '17,5';
             break;
     }
@@ -47409,19 +47414,19 @@ for ($i = 1126; $i <= 1130; $i++) {
 for ($i = 1131; $i <= 1134; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '59. Kelas SIII';
-        $data['jenisbuktitanah'] = 'HGP';
-        $data['peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '4150';
-        $data['fungsibangunan'] = 'Sosial Budaya';
-        $data['jumlahlantai'] = '1';
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '59. Kelas SIII',
+        'jenisbuktitanah' => 'HGP',
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '4150',
+        'fungsibangunan' => 'Sosial Budaya',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1131:
             $data['namabangunan'] = 'Gedung A';
             $data['luaslantaildasar'] = '182';
@@ -47447,15 +47452,15 @@ for ($i = 1131; $i <= 1134; $i++) {
 for ($i = 1135; $i <= 1142; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '2903';
-        $data['fungsibangunan'] = 'Sosial Budaya';
-        $data['jumlahlantai'] = '1';
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '2903',
+        'fungsibangunan' => 'Sosial Budaya',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1135:
             $data['namabangunan'] = 'Gedung 3';
             $data['luaslantaildasar'] = '144';
@@ -47495,22 +47500,23 @@ for ($i = 1135; $i <= 1142; $i++) {
 }
 
 // Records 1143-1146
+// Records 1143-1146
 for ($i = 1143; $i <= 1146; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '024/TMG/V/2016.';
-        $data['jenisbuktitanah'] = 'HGP';
-        $data['peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '1800';
-        $data['fungsibangunan'] = 'Sosial Budaya';
-        $data['jumlahlantai'] = '1';
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '024/TMG/V/2016.',
+        'jenisbuktitanah' => 'HGP',
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '1800',
+        'fungsibangunan' => 'Sosial Budaya',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1143:
             $data['namabangunan'] = 'Gedung A';
             $data['luaslantaildasar'] = '220,5';
@@ -47532,20 +47538,19 @@ for ($i = 1143; $i <= 1146; $i++) {
     databgpeprofilbangunangedung::create($data);
 }
 
-
 // Records 1147-1151
 for ($i = 1147; $i <= 1151; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pendidikan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '1750';
-        $data['fungsibangunan'] = 'Sosial Budaya';
-        $data['jumlahlantai'] = '1';
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '1750',
+        'fungsibangunan' => 'Sosial Budaya',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1147:
             $data['namabangunan'] = 'Gedung A';
             $data['luaslantaildasar'] = '450';
@@ -47574,49 +47579,50 @@ for ($i = 1147; $i <= 1151; $i++) {
 // Record 1152
 databgpeprofilbangunangedung::create([
     'databgkepemilikan_id' => 1152,
-    'statushaktanah'] = 'Pemkab';
-    'statuskepemilikan'] = 'Negara';
-    'nobuktikepemilikan'] = '11.12.06.08.4.00023.';
-    'jenisbuktitanah'] = 'HGP';
-    'peruntukantanah'] = 'Kesehatan';
-    'kdb'] = '60%';
-    'klb'] = '0,6';
-    'luastanah'] = '806';
-    'namabangunan'] = 'Pustu Brabowan';
-    'fungsibangunan'] = 'Kesehatan';
-    'jumlahlantai'] = '1';
-    'luaslantaildasar'] = '171';
+    'statushaktanah' => 'Pemkab',
+    'statuskepemilikan' => 'Negara',
+    'nobuktikepemilikan' => '11.12.06.08.4.00023.',
+    'jenisbuktitanah' => 'HGP',
+    'peruntukantanah' => 'Kesehatan',
+    'kdb' => '60%',
+    'klb' => '0,6',
+    'luastanah' => '806',
+    'namabangunan' => 'Pustu Brabowan',
+    'fungsibangunan' => 'Kesehatan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '171',
 ]);
 
 // Record 1153
 databgpeprofilbangunangedung::create([
     'databgkepemilikan_id' => 1153,
-    'peruntukantanah'] = 'Kesehatan';
-    'kdb'] = '60%';
-    'klb'] = '0,6';
-    'luastanah'] = '738,68';
-    'namabangunan'] = 'Pustu Ledok';
-    'fungsibangunan'] = 'Kesehatan';
-    'jumlahlantai'] = '1';
-    'luaslantaildasar'] = '127,5';
+    'peruntukantanah' => 'Kesehatan',
+    'kdb' => '60%',
+    'klb' => '0,6',
+    'luastanah' => '738,68',
+    'namabangunan' => 'Pustu Ledok',
+    'fungsibangunan' => 'Kesehatan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '127,5',
 ]);
 
 // Record 1154 (empty record)
 databgpeprofilbangunangedung::create([
     'databgkepemilikan_id' => 1154,
-    // All other fields remain default
+    // Other fields will use default/null values
 ]);
 
 // Record 1155
+// Record 1155
 databgpeprofilbangunangedung::create([
     'databgkepemilikan_id' => 1155,
-    'peruntukantanah'] = 'Pertanian';
-    'kdb'] = '60%';
-    'klb'] = '0,6';
-    'namabangunan'] = 'Balai Penyuluan Pertanian';
-    'fungsibangunan'] = 'Pelayanan';
-    'jumlahlantai'] = '1';
-    'luaslantaildasar'] = '136';
+    'peruntukantanah' => 'Pertanian',
+    'kdb' => '60%',
+    'klb' => '0,6',
+    'namabangunan' => 'Balai Penyuluan Pertanian',
+    'fungsibangunan' => 'Pelayanan',
+    'jumlahlantai' => '1',
+    'luaslantaildasar' => '136',
 ]);
 
 // Records 1156-1157 (empty records)
@@ -47631,16 +47637,16 @@ for ($i = 1156; $i <= 1157; $i++) {
 for ($i = 1158; $i <= 1162; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '11.12.06.07.4.00022';
-        $data['jenisbuktitanah'] = 'SHM';
-        $data['peruntukantanah'] = 'Pelayanan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '3565';
-        $data['fungsibangunan'] = 'Pelayanan';
-        $data['jumlahlantai'] = '1';
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '11.12.06.07.4.00022',
+        'jenisbuktitanah' => 'SHM',
+        'peruntukantanah' => 'Pelayanan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '3565',
+        'fungsibangunan' => 'Pelayanan',
+        'jumlahlantai' => '1',
     ];
 
     switch($i) {
@@ -47670,22 +47676,23 @@ for ($i = 1158; $i <= 1162; $i++) {
 }
 
 // Records 1163-1166
+// Records 1163-1166
 for ($i = 1163; $i <= 1166; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '11.12.06.08.01197.';
-        $data['jenisbuktitanah'] = 'HGP';
-        $data['peruntukantanah'] = 'Pelayanan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '417';
-        $data['fungsibangunan'] = 'Pelayanan';
-        $data['jumlahlantai'] = '1';
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '11.12.06.08.01197.',
+        'jenisbuktitanah' => 'HGP',
+        'peruntukantanah' => 'Pelayanan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '417',
+        'fungsibangunan' => 'Pelayanan',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1163:
             $data['namabangunan'] = 'Ruang Kantor';
             $data['luaslantaildasar'] = '92,88';
@@ -47712,18 +47719,18 @@ for ($i = 1163; $i <= 1166; $i++) {
 for ($i = 1167; $i <= 1171; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '11.12.06.03.4.00005.';
-        $data['jenisbuktitanah'] = 'SHM';
-        $data['peruntukantanah'] = 'Pelayanan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['fungsibangunan'] = 'Pelayanan';
-        $data['jumlahlantai'] = '1';
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '11.12.06.03.4.00005.',
+        'jenisbuktitanah' => 'SHM',
+        'peruntukantanah' => 'Pelayanan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'fungsibangunan' => 'Pelayanan',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1167:
             $data['luastanah'] = '938';
             $data['namabangunan'] = 'Pendopo';
@@ -47758,19 +47765,19 @@ for ($i = 1167; $i <= 1171; $i++) {
 for ($i = 1172; $i <= 1176; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '11.12.06.10.01996.';
-        $data['jenisbuktitanah'] = 'HGP';
-        $data['peruntukantanah'] = 'Pelayanan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '19560';
-        $data['fungsibangunan'] = 'Pelayanan';
-        $data['jumlahlantai'] = '1';
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '11.12.06.10.01996.',
+        'jenisbuktitanah' => 'HGP',
+        'peruntukantanah' => 'Pelayanan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '19560',
+        'fungsibangunan' => 'Pelayanan',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1172:
             $data['namabangunan'] = 'Ruang Kantor & Tamu';
             $data['luaslantaildasar'] = '51';
@@ -47800,15 +47807,15 @@ for ($i = 1172; $i <= 1176; $i++) {
 for ($i = 1177; $i <= 1179; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pelayanan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '351,9';
-        $data['fungsibangunan'] = 'Pelayanan';
-        $data['jumlahlantai'] = '1';
+        'peruntukantanah' => 'Pelayanan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '351,9',
+        'fungsibangunan' => 'Pelayanan',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1177:
             $data['namabangunan'] = 'Kantor Pelayanan';
             $data['luaslantaildasar'] = '112';
@@ -47836,15 +47843,15 @@ databgpeprofilbangunangedung::create([
 for ($i = 1181; $i <= 1182; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pelayanan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '1000';
-        $data['fungsibangunan'] = 'Pelayanan';
-        $data['jumlahlantai'] = '1';
+        'peruntukantanah' => 'Pelayanan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '1000',
+        'fungsibangunan' => 'Pelayanan',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1181:
             $data['namabangunan'] = 'Kantor';
             $data['luaslantaildasar'] = '127';
@@ -47862,14 +47869,14 @@ for ($i = 1181; $i <= 1182; $i++) {
 for ($i = 1183; $i <= 1186; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pelayanan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['luastanah'] = '450';
-        $data['jumlahlantai'] = '1';
+        'peruntukantanah' => 'Pelayanan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'luastanah' => '450',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1183:
             $data['namabangunan'] = 'Kantor Pelayanan';
             $data['fungsibangunan'] = 'Pelayanan';
@@ -47899,14 +47906,14 @@ for ($i = 1183; $i <= 1186; $i++) {
 for ($i = 1187; $i <= 1189; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
-        'peruntukantanah'] = 'Pelayanan';
-        $data['kdb'] = '60%';
-        $data['klb'] = '0,6';
-        $data['fungsibangunan'] = 'Pelayanan';
-        $data['jumlahlantai'] = '1';
+        'peruntukantanah' => 'Pelayanan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'fungsibangunan' => 'Pelayanan',
+        'jumlahlantai' => '1',
     ];
 
-    switch($i) {
+    switch ($i) {
         case 1187:
             $data['luastanah'] = '738,68';
             $data['namabangunan'] = 'Kantor';
@@ -47934,7 +47941,7 @@ for ($i = 1187; $i <= 1189; $i++) {
 //     'databgkepemilikan_id'=>1,
 //     'tingkat_kompleksitas'=>'',
 //     'tingkat_permanensi'=>'',
-//     'resiko_kebakaran'=>'',
+//     'resiko_kebakaran'=>'',tatus
 //     'resiko_gempa'=>'',
 //     'kepadatan_lokasi'=>'',
 // ]);
