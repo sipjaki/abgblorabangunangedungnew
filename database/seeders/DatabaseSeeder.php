@@ -40190,6 +40190,23 @@ $additionalData = [
     [3000, '01/12/2023', '--', null, 'NEGARA', '--', 'PEMBELIAN', '100.208.000,00', 'Pembangunan Pagar SDN 3 Doplang Kec. Jati', '010101.00016.00003'],
 ];
 
+$additionalData = [
+    [5758, '--', '-', null, '--', null, 'INVENTARIS', '121.500.000,00', '13816.431.C / Gedung Kantor', '010201.00000.00000'],
+    [5759, '--', '-', null, '--', null, 'INVENTARIS', '54.100.000,00', '13822.431.C / Gedung kantor', '010201.00000.00000'],
+    [5760, '--', '-', null, '--', null, 'INVENTARIS', '544.990.350,00', '13823.431.C / Gedung Kantor Dinas Kesehatan I', '010201.00000.00000'],
+    [5761, '--', '-', null, '--', null, 'INVENTARIS', '50.500.000,00', '13819.431.C / Mushola', '010201.00000.00000'],
+    [5762, '--', '-', null, '--', null, 'INVENTARIS', '158.375.000,00', '13815.431.C / Gedung Pertemuan', '010201.00000.00000'],
+    [5763, '--', '-', null, '--', null, 'INVENTARIS', '162.200.000,00', '13818.431.C / Lapangan Tenis', '010201.00000.00000'],
+    [5764, '--', '-', null, '--', null, 'INVENTARIS', '47.300.000,00', '13817.431.C / Koperasi', '010201.00000.00000'],
+    [5765, '--', '-', null, '--', null, 'INVENTARIS', '86.810.000,00', '13824.431.C / Bangunan Klinik Berhenti Merokok', '010201.00000.00000'],
+    [5766, '21/11/2013', '01/33.16/SPK-RUTIN/DKK/20`13', null, '--', null, 'INVENTARIS', '905.082.000,00', '13825.431.C / Bangunan Kantor Dinas Kesehatan II', '010201.00000.00000'],
+    [5767, '27/12/2013', '050/Pemb. Ruang Arsip/DKK/2013', null, '--', null, 'INVENTARIS', '99.504.900,00', '13826.431.C / Bangunan Ruang Arsip', '010201.00000.00000'],
+    [5768, '--', '-', null, '--', null, 'INVENTARIS', '992.719.200,00', '13827.431.C / Gedung Kantor Dinas Kesehatan III', '010201.00000.00000'],
+    [5769, '10/08/2020', '050/09.18/SP-DKK/VII/2020', 120, '--', null, 'PEMBELIAN', '861.309.000,00', '14729.431.C / Bangunan Gedung PCS', '010201.00000.00000'],
+    [5770, '29/12/2022', '-', 308, '--', null, 'PEMBELIAN', '88.100.050,00', '14956.431.C / GEDUNG PERAWAT', '010201.00000.00000'],
+];
+
+
 foreach ($additionalData as $item) {
     kicdokumen::updateOrCreate(
         ['id' => $item[0]], // kondisi pencarian (where)
