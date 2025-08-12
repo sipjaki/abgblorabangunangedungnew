@@ -24389,7 +24389,7 @@ databgtanah::create(['id'=>973,'databgkepemilikan_id'=>973,'statushaktanah'=>'Mi
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL TANAH
 
 // Records 1-10
-
+`
 databgpeprofilbangunangedung::create(['id'=>1,'databgkepemilikan_id'=>1,'luastanah'=>'128','namabangunan'=>'Kantor Balai Penyuluhan Pertanian','alamatbangunan'=>'Jl. Sonorejo No. 17, Ds. Kunden, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'85','totalluaslantai'=>'85','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>'-6.93392,111.375718','tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>2,'databgkepemilikan_id'=>2,'luastanah'=>'2350','namabangunan'=>'Gedung Kantor','alamatbangunan'=>'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'456','totalluaslantai'=>'912','tinggibangunan'=>'9','luasbasement'=>'','koordinatbangunan'=>'-6.974108,111.415106','tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>3,'databgkepemilikan_id'=>3,'luastanah'=>'2350','namabangunan'=>'Gedung Arsip dan Mushola','alamatbangunan'=>'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'166.92','totalluaslantai'=>'333.84','tinggibangunan'=>'7','luasbasement'=>'','koordinatbangunan'=>'-6.974108,111.415106','tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
@@ -46371,6 +46371,8 @@ for ($i = 974; $i <= 1189; $i++) {
 }
 
 
+
+
 // SAMPAI SINI NEW
 
 // databgklasifikasi::create([
@@ -46382,6 +46384,64 @@ for ($i = 974; $i <= 1189; $i++) {
 //     'resiko_gempa'=>'',
 //     'kepadatan_lokasi'=>'',
 // ]);
+// ----------------------- START MULAI LAGI ----------------------------------
+
+// For rows 1001-1028
+$additionalBuildings = [
+    // [luastanah, peruntukantanah, kdb, klb, kdh, ktb, namabangunan, fungsibangunan, jumlahlantai, luaslantaildasar, totalluaslantai, tinggibangunan, luasbasement, koordinatbangunan]
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung F', 'Sosial Budaya', '1', '105', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung N', 'Sosial Budaya', '1', '315', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung Q', 'Sosial Budaya', '1', '28', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung C', 'Sosial Budaya', '1', '189', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung J', 'Sosial Budaya', '1', '189', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung D', 'Sosial Budaya', '1', '189', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung K', 'Sosial Budaya', '1', '112', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung U', 'Sosial Budaya', '1', '126', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung T1', 'Sosial Budaya', '1', '12', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung T2', 'Sosial Budaya', '1', '12', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung S1', 'Sosial Budaya', '1', '12', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung S2', 'Sosial Budaya', '1', '12', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Mushola', 'Keagamaan', '1', '65', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Kantor Guru', 'Sosial Budaya', '1', '220', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Multimedia', 'Sosial Budaya', '1', '374.5', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Lab IPA', 'Sosial Budaya', '1', '374.5', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas A', 'Sosial Budaya', '1', '567', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas B', 'Sosial Budaya', '1', '252', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas', 'Sosial Budaya', '1', '63', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas D + Keterampilan', 'Sosial Budaya', '1', '252', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas F', 'Sosial Budaya', '1', '252', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas E', 'Sosial Budaya', '1', '252', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas C', 'Sosial Budaya', '1', '252', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Komputer', 'Sosial Budaya', '1', '91', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'WC', 'Sosial Budaya', '1', '40', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'WC', 'Sosial Budaya', '1', '40', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Kantin', 'Sosial Budaya', '1', '50', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'UKS', 'Sosial Budaya', '1', '96', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
+];
+
+foreach ($additionalBuildings as $building) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => 1,
+        'peruntukantanah' => $building[1],
+        'kdb' => $building[2],
+        'klb' => $building[3],
+        'kdh' => $building[4],
+        'ktb' => $building[5],
+        'luastanah' => $building[0],
+        'namabangunan' => $building[6],
+        'alamatbangunan' => '-', // Assuming same as original example
+        'fungsibangunan' => $building[7],
+        'jumlahlantai' => $building[8],
+        'luaslantaildasar' => $building[9],
+        'totalluaslantai' => $building[10],
+        'tinggibangunan' => $building[11],
+        'luasbasement' => $building[12],
+        'koordinatbangunan' => $building[13],
+        'tanggalmulaikonstruksi' => $building[14],
+        'tanggalselesaikonstruksi' => $building[15],
+        'tanggalrehabilitasi' => $building[16],
+    ]);
+}
 
 
 // Record 1 (Special case)
