@@ -40743,7 +40743,6 @@ $additionalData = [
 
 
 
-
 foreach ($additionalData as $item) {
     kicdokumen::updateOrCreate(
         ['id' => $item[0]], // kondisi pencarian (where)
@@ -40760,7 +40759,6 @@ foreach ($additionalData as $item) {
         ]
     );
 }
-
 
 // SAMPAI SINI BRO LAMA 2
 
