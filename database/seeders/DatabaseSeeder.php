@@ -41130,7 +41130,57 @@ foreach ($additionalData as $item) {
     );
 }
 
-// SAMPAI SINI BRO LAMA 2
+$additionalData = [
+    [6240, '--', '--', null, null, null, 'INVENTARIS', '149374100,00', '3783.313.C / Tugu Batas Doplang- Sulursari', '010301.00000.00000'],
+    [6241, '20/12/2016', '--', 120, null, null, 'INVENTARIS', '7467273150,00', '5465.313.C / Gedung kantor DPU Kabupaten Blora ( Tahun 2016 Rp. 2.890.642.000,00 dan tahun 2015 rp.3.974.977.150,00', '010301.00000.00000'],
+    [6242, '01/07/2022', '--', 1000, null, null, 'PEMBELIAN', '737849000,00', '6638.313.C / PEMBANGUNAN GEDUNG BPP KEC. JATI', '010301.00000.00000'],
+    [6243, '15/12/2023', '--', null, 'NEGARA', '12.01.33.16.010301.00000.00000.2006-1.3.1.01.01.04.001.000001', 'PEMBELIAN', '109718400,00', '--', '010301.00000.00000'],
+    [6244, '06/11/2023', '602.1/3858.A/2023', 70430, 'NEGARA', '12.01.33.16.010301.00000.00000.2006-1.3.1.01.01.04.001.000001', 'PEMBELIAN', '2678162900,00', '--', '010301.00000.00000'],
+    [6245, '03/10/2023', '640/BG.126/2023', null, 'NEGARA', '12.01.33.16.010301.00000.00000.2006-1.3.1.01.01.04.001.000001', 'PEMBELIAN', '86860100,00', 'Pangadaan Papan Sosialisasi Perijinan Bangunan Gedung', '010301.00000.00000'],
+    [6246, '--', '--', 5979, null, null, 'INVENTARIS', '107157500,00', '1863.314.C / Peningkatan Hutan Kota di SMAN 2 Blora Kec. Blora', '010301.00001.00000'],
+    [6247, '--', '--', 395, null, null, 'INVENTARIS', '600000,00', '1839.315.C / Gedung Exs.Ktr Ranting Peng.Tempuran', '010301.00002.00000'],
+    [6248, '--', '--', 150, null, null, 'INVENTARIS', '18000000,00', '1833.315.C / R. Jaga Bd. Gabus', '010301.00002.00000'],
+    [6249, '--', '--', 186, null, null, 'INVENTARIS', '400000,00', '1834.315.C / R. Jaga Pintu Bd. Gabus', '010301.00002.00000'],
+    [6250, '--', '--', 197, null, null, 'INVENTARIS', '400000,00', '1835.315.C / R. Jaga Bd. Glagahan', '010301.00002.00000'],
+    [6251, '--', '--', 187, null, null, 'INVENTARIS', '60500000,00', '1836.315.C / R. Jaga Pintu Bd. Kidangan', '010301.00002.00000'],
+    [6252, '--', '--', 36, null, null, 'INVENTARIS', '43300000,00', '1837.315.C / R. Jaga Bd. Mursapa', '010301.00002.00000'],
+    [6253, '--', '--', 200, null, null, 'INVENTARIS', '13400000,00', '1838.315.C / R. Jaga Pintu Embung Bruk', '010301.00002.00000'],
+    [6254, '--', '--', 138, null, null, 'INVENTARIS', '96100000,00', '1842.317.C / Kantor DPU', '010301.00004.00000'],
+    [6255, '--', '--', 3, null, null, 'INVENTARIS', '1500000,00', '1844.317.C / Km / WC', '010301.00004.00000'],
+    [6256, '--', '--', 8, null, null, 'INVENTARIS', '4400000,00', '1843.317.C / Musholla', '010301.00004.00000'],
+    [6257, '--', '--', 20, null, null, 'INVENTARIS', '4100000,00', '1846.317.C / Pos Jaga', '010301.00004.00000'],
+    [6258, '--', '--', 7, null, null, 'INVENTARIS', '4400000,00', '1845.317.C / Garasi', '010301.00004.00000'],
+    [6259, '31/12/2019', '--', 30, null, null, 'INVENTARIS', '667375000,00', '4186.318.C / gedung kantor', '010301.00005.00000'],
+    [6260, '--', '--', 70, null, null, 'INVENTARIS', '30100000,00', '1851.319.C / Bangunan Kantor', '010301.00006.00000'],
+    [6261, '--', '--', 15, null, null, 'INVENTARIS', '9900000,00', '1852.319.C / Musholla', '010301.00006.00000'],
+    [6262, '--', '--', 286, null, null, 'INVENTARIS', '372887000,00', '1855.320.C / KANTOR', '010301.00007.00000'],
+    [6263, '--', '--', 48, null, null, 'INVENTARIS', '35700000,00', '1853.320.C / BENGKEL', '010301.00007.00000'],
+    [6264, '--', '--', 108, null, null, 'INVENTARIS', '37000000,00', '1856.320.C / LABORATORIUM', '010301.00007.00000'],
+    [6265, '--', '--', 320, null, null, 'INVENTARIS', '500585584,00', '1854.320.C / GARASI', '010301.00007.00000'],
+    [6266, '31/12/2019', '--', 20, null, null, 'INVENTARIS', '199597250,00', '4249.320.C / Lapangan Tenis DPUK Blora ( Tahun 2016 Rp. 99.771.000,00 dan tahun 2015 Rp.99.826.250,00 )', '010301.00007.00000'],
+];
+
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
+
+// SAMPAI LAMA 2
 
 
 
