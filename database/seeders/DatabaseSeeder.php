@@ -37723,6 +37723,127 @@ foreach ($dataBaru as $data) {
     ]);
 }
 
+$dataBaru = [
+    [7063, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050101.00000.00000.2008-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 372, 'Jl. Gor No 10'],
+    [7064, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.050101.00000.00000.2008-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 72, 'Jl. Gor No. 10'],
+    [7065, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.050101.00000.00000.2008-1.3.3.01.01.32.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 41, 'Jl. Gor No. 10'],
+    [7066, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.050101.00000.00000.2008-1.3.3.01.01.32.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 182, 'JL. Gor No. 10'],
+    [7067, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050101.00000.00000.2015-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 7, 'Jl. Gor No. 10'],
+    [7068, 'TAMAN.TAMAN', '12.01.33.16.050101.00000.00000.2021-1.3.3.01.01.36.003', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 5, 'Kantor Bappeda Blora Jl. Gor no. 10 Blora'],
+    [7069, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH', '12.01.33.16.050101.00000.00000.2023-1.3.3.01.01.08.004', '000001', 'BAIK', 'TIDAK', 'BETON', 87, 'JL. GOR NO. 10 BLORA'],
+];
+
+
+foreach ($dataBaru as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 21,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '' || $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === 'TIDAK BERTINGKAT' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '' || $data[6] === 'TIDAK' || $data[6] === '--' || $data[6] === 'TIDAK BETON' ? null : $data[6],
+        'luaslantai' => $data[7] === null || $data[7] === '-' || $data[7] === ' -    ' || $data[7] === ' -   ' ? null : $data[7],
+        'alamat' => $data[8] === '' || $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+$dataBaru = [
+    [7070, 'BANGUNAN GEDUNG TEMPAT TINGGAL LAINNYA.BANGUNAN GEDUNG TEMPAT TINGGAL LAINNYA', '12.01.33.16.050201.00000.00000.2006-1.3.3.01.02.13.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 100, 'Jalan Rajawali 28 RT 06 RW 04 Desa Tempelan Kec.Blora Kab. Blora'],
+    [7071, 'BANGUNAN GUDANG.BANGUNAN GUDANG TERTUTUP PERMANEN', '12.01.33.16.050201.00000.00000.2013-1.3.3.01.01.02.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 55, 'Kel. Karangjati'],
+    [7072, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050201.00000.00000.2017-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 816, 'JL. GATOT SUBROTO NO. 111 BLORA'],
+    [7073, 'BANGUNAN GUDANG.BANGUNAN GUDANG TERTUTUP PERMANEN', '12.01.33.16.050201.00000.00000.2018-1.3.3.01.01.02.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '-', 'Jl. Gatot Subroto No 111 Blora'],
+    [7074, 'BANGUNAN GEDUNG TEMPAT PERTEMUAN.BANGUNAN GEDUNG PERTEMUAN PERMANEN', '12.01.33.16.050201.00000.00000.2018-1.3.3.01.01.09.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 136, 'JL. Gatot Subroto No. 111 Blora'],
+    [7075, 'BANGUNAN GEDUNG TEMPAT KERJA LAINNYA.BANGUNAN GEDUNG TEMPAT KERJA LAINNYA PERMANEN', '12.01.33.16.050201.00000.00000.2018-1.3.3.01.01.30.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 5, 'jl. Gatot Subroto No.111'],
+    [7076, 'PAGAR.PAGAR', '12.01.33.16.050201.00000.00000.2018-1.3.3.04.01.04.004', '000001', 'BAIK', 'BERTINGKAT', 'BETON', 129, 'Jl Gatot Subroto No 111 Blora'],
+    [7077, 'BANGUNAN PARKIR.BANGUNAN PARKIR TERBUKA PERMANEN', '12.01.33.16.050201.00000.00000.2019-1.3.3.01.01.33.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 80, 'JL.  GATOT SUBROTO NO.111'],
+    [7078, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.050201.00000.00000.2020-1.3.3.01.01.08.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', 77, 'JL.GATOT SUBROTO NO.111 BLORA'],
+    [7079, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.050201.00000.00000.2020-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '-', 'JL.GATOT SUBROTO NO. 111 BLORA'],
+    [7080, 'BANGUNAN FASILITAS UMUM.BANGUNAN FASILITAS UMUM', '12.01.33.16.050201.00000.00000.2021-1.3.3.01.01.32.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 15, ''],
+    [7081, 'TAMAN.TAMAN', '12.01.33.16.050201.00000.00000.2021-1.3.3.01.01.36.003', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 30, 'JL. GATOT SUBROTO NO.111 BLORA'],
+    [7082, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.050201.00001.00000.1991-1.3.3.01.01.08.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 440, 'Perumnas Blora'],
+    [7083, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 26, 'JL .Cepu - RandublatungKM 11,8'],
+    [7084, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 110, "JL .Cepu - RandublatungKM 11,5"],
+    [7085, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 154, 'Kec. Kedungtuban'],
+    [7086, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 81, 'JL .Cepu - RandublatungKM 11,7'],
+    [7087, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.01.01.001', '000005', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '-', ''],
+    [7088, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.01.01.001', '000006', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '-', 'Cepu'],
+    [7089, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 110, 'Jl. Tentara Pelajar'],
+    [7090, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.01.01.005', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '-', ''],
+    [7091, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.01.01.005', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '-', ''],
+    [7092, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.01.08.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 24, "JL .Cepu - RandublatungKM 11,5"],
+    [7093, 'RUMAH NEGARA GOLONGAN III.RUMAH NEGARA GOLONGAN III TIPE C PERMANEN', '12.01.33.16.050201.00001.00000.2006-1.3.3.01.02.03.007', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 77, "JL .Cepu - RandublatungKM 11,5"],
+    [7094, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.050201.00001.00000.2016-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 24, 'Jl.Gor No. 6 Blora'],
+    [7095, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.050201.00001.00000.2016-1.3.3.01.01.32.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 60, 'Jl. Gor No. 6 Blora'],
+];
+
+foreach ($dataBaru as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 22,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '' || $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === 'TIDAK BERTINGKAT' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '' || $data[6] === 'TIDAK' || $data[6] === '--' || $data[6] === 'TIDAK BETON' ? null : $data[6],
+        'luaslantai' => $data[7] === null || $data[7] === '-' || $data[7] === ' -    ' || $data[7] === ' -   ' ? null : $data[7],
+        'alamat' => $data[8] === '' || $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+$dataBaru = [
+    [7096, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050301.00000.00000.2015-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '-', 'Jl. Reksodiputro No.24 Blora'],
+    [7097, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050301.00000.00000.2016-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK', 'BETON', '-', '-'],
+    [7098, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050301.00000.00000.2016-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '-', 'Jl. Reksodiputro No.24 Blora'],
+    [7099, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.050301.00000.00000.2017-1.3.3.01.01.01.001', '000001', 'BAIK', 'BERTINGKAT', 'BETON', '-', 'Jl. Reksodiputro No. 24 Kel. Mlangsen Blora'],
+    [7100, 'PAGAR.PAGAR', '12.01.33.16.050301.00000.00000.2019-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '-', 'Jl. Reksodiputro No. 24'],
+];
+
+foreach ($dataBaru as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 23,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '' || $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === 'TIDAK BERTINGKAT' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '' || $data[6] === 'TIDAK' || $data[6] === '--' || $data[6] === 'TIDAK BETON' ? null : $data[6],
+        'luaslantai' => $data[7] === null || $data[7] === '-' || $data[7] === ' -    ' || $data[7] === ' -   ' ? null : $data[7],
+        'alamat' => $data[8] === '' || $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+
+$dataBaru = [
+    [7101, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.060101.00000.00000.1993-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', '180', 'Jl.Gor I / I Blora'],
+    [7102, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR SEMI PERMANEN', '12.01.33.16.060101.00000.00000.1996-1.3.3.01.01.01.002', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '45', 'Jl.Gor I / I Blora'],
+    [7103, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.060101.00000.00000.1996-1.3.3.01.01.08.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', '72', 'Jl.Gor I / I Blora'],
+    [7104, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.060101.00000.00000.1996-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', '111', 'Jl.Gor I / I Blora'],
+    [7105, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.060101.00000.00000.1996-1.3.3.01.01.10.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', '60', 'Jl.Gor I / I Blora'],
+    [7106, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG TEMPAT PENDIDIKAN', '12.01.33.16.060101.00000.00000.1996-1.3.3.01.01.10.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', '81', 'Jl.Gor I / I Blora'],
+    [7107, 'PAGAR.PAGAR', '12.01.33.16.060101.00000.00000.1996-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '-', ''],
+    [7108, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.060101.00000.00000.2016-1.3.3.01.01.01.001', '000001', 'BAIK', 'BERTINGKAT', 'BETON', '321', 'Jl. GOR No. 11 Blora'],
+    [7109, 'MESS/WISMA/BUNGALOW/TEMPAT PERISTIRAHATAN.MESS/WISMA/BUNGALOW/TEMPAT PERISTIRAHATAN', '12.01.33.16.060101.00000.00000.2020-1.3.3.01.02.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', '6', 'Jl GOr 111 Blora'],
+];
+
+foreach ($dataBaru as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 24,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '' || $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === 'TIDAK BERTINGKAT' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '' || $data[6] === 'TIDAK' || $data[6] === '--' || $data[6] === 'TIDAK BETON' ? null : $data[6],
+        'luaslantai' => $data[7] === null || $data[7] === '-' || $data[7] === ' -    ' || $data[7] === ' -   ' ? null : $data[7],
+        'alamat' => $data[8] === '' || $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
 
 
 
@@ -43756,6 +43877,133 @@ $additionalData = [
     [7061, '21/11/2022', '--', '-', '--', '--', 'PEMBELIAN', '15961000,00', '5834.279.C / Baliho Reklame Ukuran 3x4x6m', '040201.00000.00000'],
     [7062, '21/11/2022', '--', '-', '--', '--', 'PEMBELIAN', '15961000,00', '5835.279.C / Baliho Reklame Ukuran 3x4x6m', '040201.00000.00000'],
 
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [7063, '--', '--', 372, '--', '--', 'INVENTARIS', '3803727900,00', '1102.333.C / Gedung Kantor', '050101.00000.00000'],
+    [7064, '02/12/2008', '--', 72, '--', '--', 'INVENTARIS', '172368000,00', '1802.333.C / TEMPAT PARKIR UTARA', '050101.00000.00000'],
+    [7065, '10/12/2008', '--', 41, '--', '--', 'INVENTARIS', '66000000,00', '1803.333.C / T. PARKIR MOBIL BARAT', '050101.00000.00000'],
+    [7066, '02/12/2008', '--', 182, '--', '--', 'INVENTARIS', '102732000,00', '1804.333.C / T. PARKIR TIMUR', '050101.00000.00000'],
+    [7067, '15/12/2015', '--', 7, '--', '--', 'INVENTARIS', '13753243,00', '1433.333.C / Pos Satpam', '050101.00000.00000'],
+    [7068, '07/10/2021', '--', 15, '--', '--', 'PEMBELIAN', '184303267,00', '2066.333.C / Taman Bappeda', '050101.00000.00000'],
+    [7069, '24/07/2023', '027/0853/2023', 3721, 'NEGARA', '12.01.33.16.050101.00000.00000.2008-1.3.1.01.01.04.001.000001', 'PEMBELIAN', '197328450,00', 'MUSHOLA BAPPEDA BLORA', '050101.00000.00000'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [7070, '11/01/2022', '030 / 0072', 476, '--', '--', 'HIBAH', '100000000,00', '4054.475.C / Rumah Transit Timur Lap. Kridosono', '050201.00000.00000'],
+    [7071, '--', '-', 350, '--', '--', 'INVENTARIS', '783967050,00', '1244.475.C / Bangunan Gudang', '050201.00000.00000'],
+    [7072, '30/12/2017', '-', 816, '--', '--', 'INVENTARIS', '7525468359,00', '3028.475.C / GEDUNG KEUANGAN DAERAH', '050201.00000.00000'],
+    [7073, '06/11/2018', '-', 72, '--', '--', 'INVENTARIS', '115624400,00', '4052.475.C / Bangunan Gudang', '050201.00000.00000'],
+    [7074, '31/12/2018', '-', 136, '--', '--', 'INVENTARIS', '560628000,00', '3677.475.C / RUANG PERTEMUAN (KAYU)', '050201.00000.00000'],
+    [7075, '08/11/2018', '-', 5, '--', '--', 'INVENTARIS', '7500000,00', '3692.475.C / BALIHO REKLAME', '050201.00000.00000'],
+    [7076, '13/12/2018', '.', 129, '--', '--', 'INVENTARIS', '405338000,00', '3471.475.C / Pagar Parkiran', '050201.00000.00000'],
+    [7077, '29/05/2019', '-', 80, '--', '--', 'INVENTARIS', '278893500,00', '3783.475.C / Parkiran Kantor', '050201.00000.00000'],
+    [7078, '08/06/2020', '', 77, '--', '--', 'INVENTARIS', '431803000,00', '3943.475.C / MUSHOLA BPPKAD', '050201.00000.00000'],
+    [7079, '13/10/2020', '-', '-', '--', '--', 'INVENTARIS', '104320000,00', '3944.475.C / TEMPAT PARKIR BELAKANG KANTOR', '050201.00000.00000'],
+    [7080, '15/11/2021', '-', '-', '--', '--', 'INVENTARIS', '87231500,00', '3988.475.C / TEMPAT SPANDUK', '050201.00000.00000'],
+    [7081, '10/11/2021', '-', 30, '--', '--', 'INVENTARIS', '189550000,00', '3987.475.C / TAMAN KANTOR', '050201.00000.00000'],
+    [7082, '31/12/2019', '-', 440, '--', '--', 'INVENTARIS', '410202000,00', '8954449.1273.C / Masjid (Fasum) Perumnas', '050201.00001.00000'],
+    [7083, '30/10/2019', '-', 26, '--', '--', 'INVENTARIS', '10000000,00', '8954407.1273.C / Gedung PKK', '050201.00001.00000'],
+    [7084, '30/10/2019', '-', 110, '--', '--', 'INVENTARIS', '55300000,00', '8954409.1273.C / Pendopo', '050201.00001.00000'],
+    [7085, '30/10/2019', '-', 154, '--', '--', 'INVENTARIS', '153314300,00', '8954410.1273.C / gedung kantor', '050201.00001.00000'],
+    [7086, '30/10/2019', '-', 81, '--', '--', 'INVENTARIS', '33200000,00', '8954411.1273.C / gedung kantor', '050201.00001.00000'],
+    [7087, '03/01/2017', '-', '-', '--', '--', 'INVENTARIS', '1790196784,00', '2201.334.C / Gedung Kantor', '050201.00001.00000'],
+    [7088, '--', '-', 145, '--', '--', 'INVENTARIS', '74000000,00', '5103.388.C / Gedung Kantor', '050201.00001.00000'],
+    [7089, '31/12/2019', '012/226/2015', 110, '--', '--', 'INVENTARIS', '400691000,00', '8954450.1273.C / RD Wakil DPRD', '050201.00001.00000'],
+    [7090, '03/01/2017', '-', '-', '--', '--', 'INVENTARIS', '4800000,00', '2190.334.C / Tempat Parkir', '050201.00001.00000'],
+    [7091, '03/01/2017', '-', '-', '--', '--', 'INVENTARIS', '116100000,00', '2191.334.C / Pondok Istirahat / Gasebo', '050201.00001.00000'],
+    [7092, '30/10/2019', '-', 24, '--', '--', 'INVENTARIS', '8000000,00', '8954408.1273.C / Mushola', '050201.00001.00000'],
+    [7093, '30/10/2019', '-', 77, '--', '--', 'INVENTARIS', '40900000,00', '8954412.1273.C / gedung rumah dinas', '050201.00001.00000'],
+    [7094, '03/01/2017', '-', 24, '--', '--', 'INVENTARIS', '31790000,00', '8954457.1273.C / Tempat Parkir Belakang I', '050201.00001.00000'],
+    [7095, '03/01/2017', '-', 1090, '--', '--', 'INVENTARIS', '29744000,00', '8954458.1273.C / Tempat Parkir Belakang II', '050201.00001.00000'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [7096, '07/02/2015', '-', '-', '--', '-', 'INVENTARIS', '17362867,00', '816.275.C / Pos Satpam', '050301.00000.00000'],
+    [7097, '12/06/2023', '-', '-', 'NEGARA', '-', 'INVENTARIS', '2812578370,00', '-', '050301.00000.00000'],
+    [7098, '01/12/2016', '-', '-', '--', '-', 'INVENTARIS', '415973000,00', '815.275.C / Aula', '050301.00000.00000'],
+    [7099, '10/08/2017', '01.010/003/SPK/Pemb.Gd.BKD/2017', '-', '--', '-', 'INVENTARIS', '1333408400,00', '1317.275.C / Gudang Arsip dan Mushola', '050301.00000.00000'],
+    [7100, '31/12/2019', '-', '-', '--', '-', 'INVENTARIS', '181533000,00', '1420.275.C / Pagar Kantor', '050301.00000.00000'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [7101, '--', '--', 180, '--', '--', 'INVENTARIS', '193984000,00', '895.332.C / Gedung Korpri', '060101.00000.00000'],
+    [7102, '--', '--', 45, '--', '--', 'INVENTARIS', '78700000,00', '656.332.C / Tempat Parkir', '060101.00000.00000'],
+    [7103, '--', '--', 72, '--', '--', 'INVENTARIS', '174705000,00', '654.332.C / Mushola', '060101.00000.00000'],
+    [7104, '--', '--', 111, '--', '--', 'INVENTARIS', '303940000,00', '653.332.C / Gedung dan Bangunan', '060101.00000.00000'],
+    [7105, '--', '--', 60, '--', '--', 'INVENTARIS', '138300000,00', '655.332.C / Ruang Pertemuan', '060101.00000.00000'],
+    [7106, '--', '--', 81, '--', '--', 'INVENTARIS', '65000000,00', '657.332.C / Rumah Dinas', '060101.00000.00000'],
+    [7107, '--', '--', '-', '--', '--', 'INVENTARIS', '19709000,00', '658.332.C / Pagar & perkerasan', '060101.00000.00000'],
+    [7108, '26/12/2016', '--', 321, '--', '--', 'INVENTARIS', '2922723500,00', '1587.332.C / Gedung dan Bangunan', '060101.00000.00000'],
+    [7109, '26/11/2020', '0050/4.02.05/Verf-SPP', 2470, '--', '--', 'PEMBELIAN', '25670000,00', '1625.332.C / GASEBO', '060101.00000.00000'],
 ];
 
 foreach ($additionalData as $item) {
