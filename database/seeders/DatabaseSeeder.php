@@ -47934,6 +47934,7 @@ for ($i = 1187; $i <= 1189; $i++) {
 
     databgpeprofilbangunangedung::create($data);
 }
+
 // SAMPAI SINI NEW
 
 // databgklasifikasi::create([
