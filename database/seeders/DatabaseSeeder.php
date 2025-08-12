@@ -46473,7 +46473,7 @@ for ($i = 974; $i <= 1028; $i++) {
         }
     }
     elseif ($i >= 990 && $i <= 1012) {
-        // // $data['statushaktanah'] = 'Pemkab';
+        // $data['statushaktanah'] = 'Pemkab';
         // $data['statuskepemilikan'] = 'Negara';
         // $data['nobuktikepemilikan'] = '11.12.06.04.4.000004.';
         // $data['jenisbuktitanah'] = 'SHM';
@@ -47934,7 +47934,6 @@ for ($i = 1187; $i <= 1189; $i++) {
 
     databgpeprofilbangunangedung::create($data);
 }
-
 // SAMPAI SINI NEW
 
 // databgklasifikasi::create([
@@ -47942,7 +47941,7 @@ for ($i = 1187; $i <= 1189; $i++) {
 //     'databgkepemilikan_id'=>1,
 //     'tingkat_kompleksitas'=>'',
 //     'tingkat_permanensi'=>'',
-//     'resiko_kebakaran'=>'',tatus
+//     'resiko_kebakaran'=>'',
 //     'resiko_gempa'=>'',
 //     'kepadatan_lokasi'=>'',
 // ]);
