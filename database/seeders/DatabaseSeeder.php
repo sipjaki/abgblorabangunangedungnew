@@ -46371,6 +46371,60 @@ for ($i = 974; $i <= 1189; $i++) {
 }
 
 
+// Data 974-980 kosong
+for ($i = 974; $i <= 980; $i++) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => $i,
+        'luastanah' => null,
+        'peruntukantanah' => null,
+        'kdb' => null,
+        'klb' => null,
+        'kdh' => null,
+        'ktb' => null,
+        'namabangunan' => null,
+        'alamatbangunan' => null,
+        'fungsibangunan' => null,
+        'jumlahlantai' => null,
+        'luaslantaildasar' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ]);
+}
+
+// Data 981-990 (contoh sesuai data kamu)
+$datas = [
+    981 => ['luastanah' => '630m2', 'peruntukantanah' => 'Pendidikan', 'kdb' => '60%', 'klb' => '0,6', 'namabangunan' => 'Kantor & Kelas', 'fungsibangunan' => 'Sosial Budaya', 'jumlahlantai' => '1', 'luaslantaildasar' => '280m2'],
+    982 => ['luastanah' => '630m2', 'peruntukantanah' => 'Pendidikan', 'kdb' => '60%', 'klb' => '0,6', 'namabangunan' => 'WC', 'fungsibangunan' => 'Sosial Budaya', 'jumlahlantai' => '1', 'luaslantaildasar' => '20m2'],
+    983 => ['luastanah' => '2460m2', 'peruntukantanah' => 'Pendidikan', 'kdb' => '60%', 'klb' => '0,6', 'namabangunan' => 'Kantor', 'fungsibangunan' => 'Sosial Budaya', 'jumlahlantai' => '1', 'luaslantaildasar' => '279m2'],
+    984 => ['luastanah' => '2460m2', 'peruntukantanah' => 'Pendidikan', 'kdb' => '60%', 'klb' => '0,6', 'namabangunan' => 'Kelas', 'fungsibangunan' => 'Sosial Budaya', 'jumlahlantai' => '1', 'luaslantaildasar' => '209m2'],
+    985 => ['luastanah' => '2460m2', 'peruntukantanah' => 'Pendidikan', 'kdb' => '60%', 'klb' => '0,6', 'namabangunan' => 'Perpustakaan', 'fungsibangunan' => 'Sosial Budaya', 'jumlahlantai' => '1', 'luaslantaildasar' => '95m2'],
+    986 => ['luastanah' => '926m2', 'peruntukantanah' => 'Pendidikan', 'kdb' => '60%', 'klb' => '0,6', 'namabangunan' => 'Kantor', 'fungsibangunan' => 'Sosial Budaya', 'jumlahlantai' => '1', 'luaslantaildasar' => '168m2'],
+    987 => ['luastanah' => '926m2', 'peruntukantanah' => 'Pendidikan', 'kdb' => '60%', 'klb' => '0,6', 'namabangunan' => 'Perpustakaan', 'fungsibangunan' => 'Sosial Budaya', 'jumlahlantai' => '1', 'luaslantaildasar' => '67m2'],
+    988 => ['luastanah' => '926m2', 'peruntukantanah' => 'Pendidikan', 'kdb' => '60%', 'klb' => '0,6', 'namabangunan' => 'Kelas', 'fungsibangunan' => 'Sosial Budaya', 'jumlahlantai' => '1', 'luaslantaildasar' => '247,5m2'],
+    989 => ['luastanah' => '926m2', 'peruntukantanah' => 'Pendidikan', 'kdb' => '60%', 'klb' => '0,6', 'namabangunan' => 'Mushola', 'fungsibangunan' => 'Keagamaan', 'jumlahlantai' => '1', 'luaslantaildasar' => '62m2'],
+    990 => ['luastanah' => '21000m2', 'peruntukantanah' => 'Pendidikan', 'kdb' => '60%', 'klb' => '0,6', 'namabangunan' => 'Gedung R', 'fungsibangunan' => 'Keagamaan', 'jumlahlantai' => '1', 'luaslantaildasar' => '198m2'],
+];
+
+foreach ($datas as $id => $data) {
+    databgpeprofilbangunangedung::create(array_merge([
+        'databgkepemilikan_id' => $id,
+        'kdh' => null,
+        'ktb' => null,
+        'alamatbangunan' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ], $data));
+}
+
+
 
 
 // SAMPAI SINI NEW
@@ -46385,63 +46439,6 @@ for ($i = 974; $i <= 1189; $i++) {
 //     'kepadatan_lokasi'=>'',
 // ]);
 // ----------------------- START MULAI LAGI ----------------------------------
-
-// For rows 1001-1028
-$additionalBuildings = [
-    // [luastanah, peruntukantanah, kdb, klb, kdh, ktb, namabangunan, fungsibangunan, jumlahlantai, luaslantaildasar, totalluaslantai, tinggibangunan, luasbasement, koordinatbangunan]
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung F', 'Sosial Budaya', '1', '105', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung N', 'Sosial Budaya', '1', '315', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung Q', 'Sosial Budaya', '1', '28', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung C', 'Sosial Budaya', '1', '189', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung J', 'Sosial Budaya', '1', '189', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung D', 'Sosial Budaya', '1', '189', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung K', 'Sosial Budaya', '1', '112', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung U', 'Sosial Budaya', '1', '126', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung T1', 'Sosial Budaya', '1', '12', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung T2', 'Sosial Budaya', '1', '12', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung S1', 'Sosial Budaya', '1', '12', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['21000', 'Pendidikan', '60%', '0.6', '-', '-', 'Gedung S2', 'Sosial Budaya', '1', '12', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Mushola', 'Keagamaan', '1', '65', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Kantor Guru', 'Sosial Budaya', '1', '220', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Multimedia', 'Sosial Budaya', '1', '374.5', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Lab IPA', 'Sosial Budaya', '1', '374.5', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas A', 'Sosial Budaya', '1', '567', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas B', 'Sosial Budaya', '1', '252', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas', 'Sosial Budaya', '1', '63', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas D + Keterampilan', 'Sosial Budaya', '1', '252', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas F', 'Sosial Budaya', '1', '252', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas E', 'Sosial Budaya', '1', '252', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Kelas C', 'Sosial Budaya', '1', '252', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Ruang Komputer', 'Sosial Budaya', '1', '91', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'WC', 'Sosial Budaya', '1', '40', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'WC', 'Sosial Budaya', '1', '40', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'Kantin', 'Sosial Budaya', '1', '50', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-    ['9730', 'Pendidikan', '60%', '0.6', '-', '-', 'UKS', 'Sosial Budaya', '1', '96', '-', 'Tidak Ada', 'Tidak Ada', '-', '-', '-'],
-];
-
-foreach ($additionalBuildings as $building) {
-    databgpeprofilbangunangedung::create([
-        'databgkepemilikan_id' => 1,
-        'peruntukantanah' => $building[1],
-        'kdb' => $building[2],
-        'klb' => $building[3],
-        'kdh' => $building[4],
-        'ktb' => $building[5],
-        'luastanah' => $building[0],
-        'namabangunan' => $building[6],
-        'alamatbangunan' => '-', // Assuming same as original example
-        'fungsibangunan' => $building[7],
-        'jumlahlantai' => $building[8],
-        'luaslantaildasar' => $building[9],
-        'totalluaslantai' => $building[10],
-        'tinggibangunan' => $building[11],
-        'luasbasement' => $building[12],
-        'koordinatbangunan' => $building[13],
-        'tanggalmulaikonstruksi' => $building[14],
-        'tanggalselesaikonstruksi' => $building[15],
-        'tanggalrehabilitasi' => $building[16],
-    ]);
-}
 
 
 // Record 1 (Special case)
