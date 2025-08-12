@@ -27359,6 +27359,7 @@ databgpeprofilbangunangedung::create(['id'=>973,'databgkepemilikan_id'=>973,'lua
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL BANGUNAN GEDUNG
 
 // INPUT SATUAN KERJA
+
 satuankerja::create(['id' => 1, 'satuankerja' => 'Dinas Pendidikan']);
 satuankerja::create(['id' => 2, 'satuankerja' => 'Dinas Kesehatan']);
 satuankerja::create(['id' => 3, 'satuankerja' => 'Dinas Pekerjaan Umum dan Penataan Ruang']);
@@ -27564,7 +27565,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 17,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 17,
     'kodelokasi' => '022301.00000.00000',
     'bidang' => 'Dinas Perpustakaan dan Kearsipan',
@@ -27574,13 +27575,248 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 18,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 18,
     'kodelokasi' => '033112.00000.00000',
     'bidang' => 'Dinas Perindustrian dan Tenaga Kerja',
     'subbidang' => 'Dinas Perindustrian dan Tenaga Kerja',
     'tanggalinput' => Carbon::now(),
 ]);
+
+kicinduk::create([
+    'id' => 19,
+    'user_id' => 92,
+    'satuankerja_id' => 19,
+    'kodelokasi' => '040101',
+    'bidang' => 'Sekretariat Daerah',
+    'subbidang' => 'Sekretariat Daerah',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 20,
+    'user_id' => 92,
+    'satuankerja_id' => 20,
+    'kodelokasi' => '040201.00000.00000',
+    'bidang' => 'Sekretariat Dewan',
+    'subbidang' => 'Sekretariat Dewan',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 21,
+    'user_id' => 92,
+    'satuankerja_id' => 21,
+    'kodelokasi' => '050101.00000.00000',
+    'bidang' => 'Badan Perencanaan Pembangunan Daerah',
+    'subbidang' => 'Badan Perencanaan Pembangunan Daerah',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 22,
+    'user_id' => 92,
+    'satuankerja_id' => 22,
+    'kodelokasi' => '050201',
+    'bidang' => 'Badan Pendapatan Pengelolaan Keuangan dan Aset Daerah',
+    'subbidang' => 'Badan Pendapatan Pengelolaan Keuangan dan Aset Daerah',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 23,
+    'user_id' => 92,
+    'satuankerja_id' => 23,
+    'kodelokasi' => '050301.00000.00000',
+    'bidang' => 'Badan Kepegawaian Daerah',
+    'subbidang' => 'Badan Kepegawaian Daerah',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 24,
+    'user_id' => 92,
+    'satuankerja_id' => 24,
+    'kodelokasi' => '060101.00000.00000',
+    'bidang' => 'Inspektorat Daerah',
+    'subbidang' => 'Inspektorat Daerah',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 25,
+    'user_id' => 92,
+    'satuankerja_id' => 25,
+    'kodelokasi' => '070101',
+    'bidang' => 'Kecamatan Blora',
+    'subbidang' => 'Kecamatan Blora',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 26,
+    'user_id' => 92,
+    'satuankerja_id' => 26,
+    'kodelokasi' => '070102',
+    'bidang' => 'Kecamatan Jepon',
+    'subbidang' => 'Kecamatan Jepon',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 27,
+    'user_id' => 92,
+    'satuankerja_id' => 27,
+    'kodelokasi' => '070103',
+    'bidang' => 'Kecamatan Bogorejo',
+    'subbidang' => 'Kecamatan Bogorejo',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 28,
+    'user_id' => 92,
+    'satuankerja_id' => 28,
+    'kodelokasi' => '070104',
+    'bidang' => 'Kecamatan Tunjungan',
+    'subbidang' => 'Kecamatan Tunjungan',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 29,
+    'user_id' => 92,
+    'satuankerja_id' => 29,
+    'kodelokasi' => '070105',
+    'bidang' => 'Kecamatan Banjarejo',
+    'subbidang' => 'Kecamatan Banjarejo',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 30,
+    'user_id' => 92,
+    'satuankerja_id' => 30,
+    'kodelokasi' => '070106',
+    'bidang' => 'Kecamatan Cepu',
+    'subbidang' => 'Kecamatan Cepu',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 31,
+    'user_id' => 92,
+    'satuankerja_id' => 31,
+    'kodelokasi' => '070107',
+    'bidang' => 'Kecamatan Jiken',
+    'subbidang' => 'Kecamatan Jiken',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 32,
+    'user_id' => 92,
+    'satuankerja_id' => 32,
+    'kodelokasi' => '070108',
+    'bidang' => 'Kecamatan Sambong',
+    'subbidang' => 'Kecamatan Sambong',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 33,
+    'user_id' => 92,
+    'satuankerja_id' => 33,
+    'kodelokasi' => '070109',
+    'bidang' => 'Kecamatan Kedungtuban',
+    'subbidang' => 'Kecamatan Kedungtuban',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 34,
+    'user_id' => 92,
+    'satuankerja_id' => 34,
+    'kodelokasi' => '070110',
+    'bidang' => 'Kecamatan Ngawen',
+    'subbidang' => 'Kecamatan Ngawen',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 35,
+    'user_id' => 92,
+    'satuankerja_id' => 35,
+    'kodelokasi' => '070111',
+    'bidang' => 'Kecamatan Kunduran',
+    'subbidang' => 'Kecamatan Kunduran',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 36,
+    'user_id' => 92,
+    'satuankerja_id' => 36,
+    'kodelokasi' => '070112',
+    'bidang' => 'Kecamatan Todanan',
+    'subbidang' => 'Kecamatan Todanan',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 37,
+    'user_id' => 92,
+    'satuankerja_id' => 37,
+    'kodelokasi' => '070113',
+    'bidang' => 'Kecamatan Japah',
+    'subbidang' => 'Kecamatan Japah',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 38,
+    'user_id' => 92,
+    'satuankerja_id' => 38,
+    'kodelokasi' => '070114',
+    'bidang' => 'Kecamatan Randublatung',
+    'subbidang' => 'Kecamatan Randublatung',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 39,
+    'user_id' => 92,
+    'satuankerja_id' => 39,
+    'kodelokasi' => '070115',
+    'bidang' => 'Kecamatan Jati',
+    'subbidang' => 'Kecamatan Jati',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 40,
+    'user_id' => 92,
+    'satuankerja_id' => 40,
+    'kodelokasi' => '070116',
+    'bidang' => 'Kecamatan Kradenan',
+    'subbidang' => 'Kecamatan Kradenan',
+    'tanggalinput' => Carbon::now(),
+]);
+
+kicinduk::create([
+    'id' => 41,
+    'user_id' => 92,
+    'satuankerja_id' => 41,
+    'kodelokasi' => '080101.00000.00000',
+    'bidang' => 'Badan Kesatuan Bangsa dan Politik',
+    'subbidang' => 'Badan Kesatuan Bangsa dan Politik',
+    'tanggalinput' => Carbon::now(),
+]);
+
+
+
+
+
 
 // INPUT KIC
 
@@ -37334,6 +37570,38 @@ foreach ($dataBaru as $data) {
 }
 
 
+$dataBaru = [
+    [6968, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.033112.00000.00000.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', null, null],
+    [6969, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.033112.00000.00000.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', null, null],
+    [6970, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.033112.00000.00000.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', null, null],
+    [6971, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.033112.00000.00000.2006-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 30, 'Jl. Raya Blora-Cepu KM 8,5 Jepon-Blora'],
+    [6972, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.033112.00000.00000.2006-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6973, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.033112.00000.00000.2006-1.3.3.01.01.08.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', null, null],
+    [6974, 'BANGUNAN GEDUNG TEMPAT PERTEMUAN.BANGUNAN GEDUNG PERTEMUAN PERMANEN', '12.01.33.16.033112.00000.00000.2006-1.3.3.01.01.09.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', null, null],
+    [6975, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.033112.00000.00000.2009-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', null, null],
+    [6976, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.033112.00000.00000.2012-1.3.3.01.01.01.001', '000001', 'BAIK', 'BERTINGKAT', 'BETON', null, 'Jl. GOR I'],
+    [6977, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.033112.00000.00000.2012-1.3.3.01.01.01.001', '000002', 'BAIK', 'BERTINGKAT', 'BETON', null, 'Jl. GOR I'],
+    [6978, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN DAN LATIHAN', '12.01.33.16.033112.00000.00000.2019-1.3.3.01.01.10.004', '000001', 'BAIK', 'BERTINGKAT', 'BETON', null, 'Jl. Gor no 1 Blora'],
+    [6979, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN DAN LATIHAN', '12.01.33.16.033112.00000.00000.2019-1.3.3.01.01.10.004', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', null, 'Jl. Blora - Cepu Km. 6'],
+    [6980, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.033112.00000.00000.2019-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 6, 'Jl. Gor No. 1 / Belakang Gedung Penta'],
+];
+
+foreach ($dataBaru as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 18,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '' || $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === 'TIDAK BERTINGKAT' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '' || $data[6] === 'TIDAK' || $data[6] === '--' || $data[6] === 'TIDAK BETON' ? null : $data[6],
+        'luaslantai' => $data[7] === null || $data[7] === '-' || $data[7] === ' -    ' || $data[7] === ' -   ' ? null : $data[7],
+        'alamat' => $data[8] === '' || $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+
 
 
 // SAMPAI SINI BRO
@@ -43208,6 +43476,39 @@ $additionalData = [
     [6967, '27/10/2021', '027/013/2021', '-', '--', '--', 'PEMBELIAN', '423212000,00', '3770316.340.C / Paving Gedung Layanan Perpustakaan', '022301.00000.00000'],
 ];
 
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [6968, '-', '-', 396, '--', '--', 'MUTASI', '863469100,00', '1274.328.C / Gedung Kantor', '033112.00000.00000'],
+    [6969, '-', '-', 177, '--', '--', 'MUTASI', '231708600,00', '1275.328.C / Gedung Kantor', '033112.00000.00000'],
+    [6970, '-', '-', 346, '--', '--', 'MUTASI', '406894900,00', '1276.328.C / Gedung Kantor', '033112.00000.00000'],
+    [6971, '09/05/2019', '--', '-', '-', '-', 'INVENTARIS', '81700000,00', '2689.328.C / Gedung Kantor', '033112.00000.00000'],
+    [6972, '-', '-', 70, '--', '--', 'MUTASI', '73974000,00', '1278.328.C / Parkir', '033112.00000.00000'],
+    [6973, '-', '-', 16, '--', '--', 'INVENTARIS', '213238000,00', '1277.328.C / Musola', '033112.00000.00000'],
+    [6974, '-', '-', 137, '--', '--', 'MUTASI', '164116600,00', '1272.328.C / Gedung Aula', '033112.00000.00000'],
+    [6975, '-', '-', 192, '--', '--', 'INVENTARIS', '1028609500,00', '1279.328.C / Gedung Pelatihan A', '033112.00000.00000'],
+    [6976, '-', '-', 168, '--', '--', 'INVENTARIS', '695445000,00', '1280.328.C / Gedung Pelatihan B', '033112.00000.00000'],
+    [6977, '-', '-', 199, '--', '--', 'INVENTARIS', '736951000,00', '1281.328.C / Gedung Pelatihan C', '033112.00000.00000'],
+    [6978, '10/09/2019', '--', '-', '-', '-', 'PEMBELIAN', '619132000,00', '2686.328.C / Gedung Pendidikan dan Pelatihan', '033112.00000.00000'],
+    [6979, '22/11/2019', '--', '-', '-', '-', 'PEMBELIAN', '4288131000,00', '2687.328.C / Gedung Pendidikan dan Pelatihan / Jepon', '033112.00000.00000'],
+    [6980, '29/08/2019', '--', '-', '-', '-', 'INVENTARIS', '99009000,00', '2688.328.C / Tempat Parkir', '033112.00000.00000'],
+];
 
 foreach ($additionalData as $item) {
     kicdokumen::updateOrCreate(
