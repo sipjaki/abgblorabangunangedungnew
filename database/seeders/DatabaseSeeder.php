@@ -46473,10 +46473,10 @@ for ($i = 974; $i <= 1028; $i++) {
         }
     }
     elseif ($i >= 990 && $i <= 1012) {
-        $data['statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '11.12.06.04.4.000004.';
-        $data['jenisbuktitanah'] = 'SHM';
+        // // $data['statushaktanah'] = 'Pemkab';
+        // $data['statuskepemilikan'] = 'Negara';
+        // $data['nobuktikepemilikan'] = '11.12.06.04.4.000004.';
+        // $data['jenisbuktitanah'] = 'SHM';
         $data['peruntukantanah'] = 'Pendidikan';
         $data['kdb'] = '60%';
         $data['klb'] = '0,6';
@@ -46624,10 +46624,10 @@ for ($i = 974; $i <= 1028; $i++) {
         }
     }
     elseif ($i >= 1013 && $i <= 1028) {
-        $data['statushaktanah'] = 'Pemkab';
-        $data['statuskepemilikan'] = 'Negara';
-        $data['nobuktikepemilikan'] = '11.12.06.08.4.00012.';
-        $data['jenisbuktitanah'] = 'HGP';
+        // $data['statushaktanah'] = 'Pemkab';
+        // $data['statuskepemilikan'] = 'Negara';
+        // $data['nobuktikepemilikan'] = '11.12.06.08.4.00012.';
+        // $data['jenisbuktitanah'] = 'HGP';
         $data['peruntukantanah'] = 'Pendidikan';
         $data['kdb'] = '60%';
         $data['klb'] = '0,6';
