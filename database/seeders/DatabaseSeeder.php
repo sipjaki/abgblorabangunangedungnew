@@ -36459,7 +36459,7 @@ $dataBaru = [
 foreach ($dataBaru as $data) {
     kicdokumen::create([
         'id' => $data[0],
-        'kicinduk_id' => 5,
+        'kicinduk_id' => 6,
         'jenisbarang' => $data[1],
         'kodebarang' => $data[2],
         'register' => $data[3],
