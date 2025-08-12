@@ -40411,22 +40411,6 @@ $additionalData = [
     [5875, '31/12/2021', '-', '-', '--', 'PEMBELIAN', '3.845.850.000,00', '15236.465.C / Gedung Puskesmas Sambong', '010201.00011.00000'],
 ];
 
-foreach ($additionalData as $item) {
-    kicdokumen::updateOrCreate(
-        ['id' => $item[0]], // kondisi pencarian (where)
-        [
-            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
-            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
-            'luas' => $item[3],
-            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
-            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
-            'asal_usul' => $item[6],
-            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
-            'keterangan' => $item[8],
-            'nosertifikat' => $item[9],
-        ]
-    );
-}
 
 
 $additionalData = [
