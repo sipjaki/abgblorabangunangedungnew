@@ -326,6 +326,7 @@ th {
         {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Input Data</th> --}}
         {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> User ID</th> --}}
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3-fill"></i> Tanggal Input</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3-fill"></i> Input Data</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-3-fill"></i> Satuan Kerja</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill"></i> Kode Lokasi</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-diagram-2-fill"></i> Bidang</th>
@@ -350,6 +351,13 @@ th {
 <td>
   {{ $item->tanggalinput ? \Carbon\Carbon::parse($item->tanggalinput)->translatedFormat('d F Y') : '-' }}
 </td>
+
+<td>
+    {!! $item->user->name
+        ? e($item->user->name)
+        : '<button class="button-berkas" type="button">Data Belum Di Update</button>' !!}
+</td>
+
 
 {{-- Satuan Kerja (relasi) --}}
 <td>
