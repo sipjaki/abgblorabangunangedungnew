@@ -36326,6 +36326,106 @@ foreach ($additionalBuildingData as $data) {
     ]);
 }
 
+$additionalBuildingData = [
+    [6267, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6268, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6269, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6270, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6271, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.001', '000005', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6272, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.001', '000006', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6273, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.001', '000007', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6274, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.001', '000008', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6275, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.001', '000009', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Kel. Kd Jenar, Kec. Blora, Kab. Blora'],
+    [6276, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.001', '000010', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Kel. Kd Jenar, Kec. Blora, Kab. Blora'],
+    [6277, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Kel. Kd Jenar, Kec. Blora, Kab. Blora'],
+    [6278, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.01.005', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Kel. Kd Jenar, Kec. Blora, Kab. Blora'],
+    [6279, 'BANGUNAN GEDUNG TEMPAT IBADAH.BANGUNAN GEDUNG TEMPAT IBADAH PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.08.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6280, 'BANGUNAN GEDUNG TEMPAT PERTEMUAN.BANGUNAN GEDUNG PERTEMUAN PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.09.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6281, 'BANGUNAN GEDUNG PERTOKOAN/KOPERASI/PASAR.GEDUNG PERTOKOAN/KOPERASI/PASAR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.12.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6282, 'BANGUNAN GEDUNG PERTOKOAN/KOPERASI/PASAR.GEDUNG PERTOKOAN/KOPERASI/PASAR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.12.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6283, 'BANGUNAN GEDUNG PERTOKOAN/KOPERASI/PASAR.GEDUNG PERTOKOAN/KOPERASI/PASAR PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.12.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6284, 'BANGUNAN GEDUNG GARASI/POOL.GEDUNG GARASI/POOL PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.14.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Kel. Kd Jenar, Kec. Blora, Kab. Blora'],
+    [6285, 'BANGUNAN PENGUJIAN KELAIKAN.BANGUNAN PENGUJIAN KELAIKAN PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.19.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6286, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.35.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6287, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.35.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6288, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.35.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6289, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.35.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6290, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2006-1.3.3.01.01.35.001', '000005', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6291, 'PAGAR.PAGAR', '12.01.33.16.010401.00000.00000.2006-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6292, 'PAGAR.PAGAR', '12.01.33.16.010401.00000.00000.2006-1.3.3.04.01.04.004', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6293, 'BANGUNAN GEDUNG PERTOKOAN/KOPERASI/PASAR.GEDUNG PERTOKOAN/KOPERASI/PASAR PERMANEN', '12.01.33.16.010401.00000.00000.2007-1.3.3.01.01.12.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Jl. Rajawali Tempelan'],
+    [6294, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2009-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Jl. Gunandar No 6 Kedungjenar Blora'],
+    [6295, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2010-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6296, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2011-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6297, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2011-1.3.3.01.01.35.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6298, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2011-1.3.3.01.01.35.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6299, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2012-1.3.3.01.01.35.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'terminal ngawen'],
+    [6300, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2013-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'kantor Dishub kab blora'],
+];
+
+
+foreach ($additionalBuildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 4,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '' || $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === 'TIDAK BERTINGKAT' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '' || $data[6] === 'TIDAK' || $data[6] === '--' || $data[6] === 'TIDAK BETON' ? null : $data[6],
+        'luaslantai' => $data[7] === null || $data[7] === '-' || $data[7] === ' -    ' || $data[7] === ' -   ' ? null : $data[7],
+        'alamat' => $data[8] === '' || $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
+
+$additionalBuildingData = [
+    [6301, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2013-1.3.3.01.01.35.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6302, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2014-1.3.3.01.01.01.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6303, 'BANGUNAN GEDUNG TERMINAL/PELABUHAN/BANDARA.BANGUNAN GEDUNG TERMINAL/PELABUHAN/BANDARA PERMANEN', '12.01.33.16.010401.00000.00000.2014-1.3.3.01.01.18.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6304, 'PAGAR.PAGAR', '12.01.33.16.010401.00000.00000.2014-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6305, 'BANGUNAN GEDUNG INSTALASI.BANGUNAN GEDUNG INSTALASI', '12.01.33.16.010401.00000.00000.2015-1.3.3.01.01.04.006', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'DUKUH KUDU, KEC KRADENAN'],
+    [6306, 'BANGUNAN GEDUNG INSTALASI.BANGUNAN GEDUNG INSTALASI', '12.01.33.16.010401.00000.00000.2015-1.3.3.01.01.04.006', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'DUKUH KUDU, KEC KRADENAN'],
+    [6307, 'BANGUNAN GEDUNG INSTALASI.BANGUNAN GEDUNG INSTALASI', '12.01.33.16.010401.00000.00000.2015-1.3.3.01.01.04.006', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'DUKUH NGLEBAK, KEC KRADENAN'],
+    [6308, 'BANGUNAN GEDUNG INSTALASI.BANGUNAN GEDUNG INSTALASI', '12.01.33.16.010401.00000.00000.2015-1.3.3.01.01.04.006', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'DUKUH NGLEBAK, KEC KRADENAN'],
+    [6309, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2015-1.3.3.01.01.35.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6310, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2016-1.3.3.01.01.35.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'BETON', null, 'jiken'],
+    [6311, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2016-1.3.3.01.01.35.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 120, 'Randublatung'],
+    [6312, 'BANGUNAN GEDUNG KANTOR.BANGUNAN GEDUNG KANTOR PERMANEN', '12.01.33.16.010401.00000.00000.2017-1.3.3.01.01.01.001', '000001', 'BAIK', 'BERTINGKAT', 'TIDAK', null, 'Mlangsen,blora'],
+    [6313, 'BANGUNAN GEDUNG TEMPAT PENDIDIKAN.BANGUNAN GEDUNG PENDIDIKAN PERMANEN', '12.01.33.16.010401.00000.00000.2017-1.3.3.01.01.10.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Tambakromo'],
+    [6314, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2017-1.3.3.01.01.35.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Kecamatan Sambong'],
+    [6315, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2017-1.3.3.01.01.35.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Kec. Kedungtuban'],
+    [6316, 'PAGAR.PAGAR', '12.01.33.16.010401.00000.00000.2017-1.3.3.04.01.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', 36, 'jalan banyu asin'],
+    [6317, 'PAGAR.PAGAR', '12.01.33.16.010401.00000.00000.2017-1.3.3.04.01.04.004', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, '-'],
+    [6318, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2018-1.3.3.01.01.35.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'JEMBATAN NGLAWIAN,BLORA'],
+    [6319, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2018-1.3.3.01.01.35.001', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Gang Panggang Blora'],
+    [6320, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2018-1.3.3.01.01.35.001', '000003', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Prapatan Grojogan Blora'],
+    [6321, 'BANGUNAN STASIUN BUS.BANGUNAN STASIUN PERMANEN', '12.01.33.16.010401.00000.00000.2018-1.3.3.01.01.35.001', '000004', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Jembar ,Kedung Jenar Blora'],
+    [6322, 'BANGUNAN GEDUNG TERMINAL/PELABUHAN/BANDARA.BANGUNAN GEDUNG TERMINAL/PELABUHAN/BANDARA', '12.01.33.16.010401.00000.00000.2019-1.3.3.01.01.18.005', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Kec Todanan Kab Blora'],
+    [6323, 'BANGUNAN GEDUNG TERMINAL/PELABUHAN/BANDARA.BANGUNAN GEDUNG TERMINAL/PELABUHAN/BANDARA', '12.01.33.16.010401.00000.00000.2019-1.3.3.01.01.18.005', '000002', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Kec KUnduran'],
+    [6324, 'BANGUNAN FASILITAS UMUM.BANGUNAN TEMPAT PARKIR', '12.01.33.16.010401.00000.00000.2019-1.3.3.01.01.32.001', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, null],
+    [6325, 'BANGUNAN GEDUNG TERMINAL/PELABUHAN/BANDARA.BANGUNAN HALTE/SHELTER', '12.01.33.16.010401.00000.00000.2020-1.3.3.01.01.18.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'Pasar Sido Makmur'],
+    [6326, 'MESS/WISMA/BUNGALOW/TEMPAT PERISTIRAHATAN.MESS/WISMA/BUNGALOW/TEMPAT PERISTIRAHATAN', '12.01.33.16.010401.00000.00000.2020-1.3.3.01.02.04.004', '000001', 'BAIK', 'TIDAK BERTINGKAT', 'TIDAK', null, 'ngawen'],
+];
+
+
+
+foreach ($additionalBuildingData as $data) {
+    kicdokumen::create([
+        'id' => $data[0],
+        'kicinduk_id' => 4,
+        'jenisbarang' => $data[1],
+        'kodebarang' => $data[2],
+        'register' => $data[3],
+        'kondisibangunan' => $data[4] === '' || $data[4] === '--' ? null : $data[4],
+        'bertingkat' => $data[5] === '' || $data[5] === 'TIDAK BERTINGKAT' || $data[5] === '--' || $data[5] === 'TIDAK' ? null : $data[5],
+        'beton' => $data[6] === '' || $data[6] === 'TIDAK' || $data[6] === '--' || $data[6] === 'TIDAK BETON' ? null : $data[6],
+        'luaslantai' => $data[7] === null || $data[7] === '-' || $data[7] === ' -    ' || $data[7] === ' -   ' ? null : $data[7],
+        'alamat' => $data[8] === '' || $data[8] === '--' ? null : $data[8]
+    ]);
+}
+
 
 
 
@@ -41158,6 +41258,109 @@ $additionalData = [
     [6264, '--', '--', 108, null, null, 'INVENTARIS', '37000000,00', '1856.320.C / LABORATORIUM', '010301.00007.00000'],
     [6265, '--', '--', 320, null, null, 'INVENTARIS', '500585584,00', '1854.320.C / GARASI', '010301.00007.00000'],
     [6266, '31/12/2019', '--', 20, null, null, 'INVENTARIS', '199597250,00', '4249.320.C / Lapangan Tenis DPUK Blora ( Tahun 2016 Rp. 99.771.000,00 dan tahun 2015 Rp.99.826.250,00 )', '010301.00007.00000'],
+];
+
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+$additionalData = [
+    [6267, '--', '--', 38, null, null, 'MUTASI', '35200000,00', '3508.321.C / Gedung Penjaga', '010401.00000.00000'],
+    [6268, '--', '--', 285, null, null, 'MUTASI', '275583750,00', '3510.321.C / Gedung Kantor', '010401.00000.00000'],
+    [6269, '--', '--', 1232, null, null, 'MUTASI', '88247000,00', '3513.321.C / Perkerasan', '010401.00000.00000'],
+    [6270, '--', '--', 4022, null, null, 'MUTASI', '502842800,00', '3522.321.C / Gedung Kantor', '010401.00000.00000'],
+    [6271, '--', '--', 690, null, null, 'MUTASI', '22000000,00', '3544.321.C / Perkerasan', '010401.00000.00000'],
+    [6272, '--', '--', 35, null, null, 'MUTASI', '19000000,00', '3578.321.C / Kantor Permanen', '010401.00000.00000'],
+    [6273, '--', '--', 7515, null, null, 'MUTASI', '4109000,00', '3605.321.C / Perkerasan Halaman', '010401.00000.00000'],
+    [6274, '--', '--', 9975, null, null, 'MUTASI', '21600000,00', '3609.321.C / Perkerasan', '010401.00000.00000'],
+    [6275, '03/01/2017', '--', 925, null, null, 'INVENTARIS', '90700000,00', '5560.321.C / Gedung Kantor Sub Din SDA Blora', '010401.00000.00000'],
+    [6276, '03/01/2017', '--', null, null, null, 'INVENTARIS', '21100000,00', '5561.321.C / Gedung Mushola SDA Blora', '010401.00000.00000'],
+    [6277, '03/01/2017', '--', null, null, null, 'INVENTARIS', '19900000,00', '5563.321.C / Ruang Eksploitasi', '010401.00000.00000'],
+    [6278, '03/01/2017', '--', null, null, null, 'INVENTARIS', '2400000,00', '5564.321.C / KM/WC', '010401.00000.00000'],
+    [6279, '--', '--', 60, null, null, 'MUTASI', '56800000,00', '3511.321.C / Mushola', '010401.00000.00000'],
+    [6280, '03/01/2017', '--', null, null, null, 'INVENTARIS', '58200000,00', '5565.321.C / Gedung Pertemuan SDA Blora', '010401.00000.00000'],
+    [6281, '--', '--', 800, null, null, 'MUTASI', '180242000,00', '3602.321.C / kios sub Term. Kunduran', '010401.00000.00000'],
+    [6282, '--', '--', 108, null, null, 'MUTASI', '98500000,00', '3606.321.C / Ruko 1', '010401.00000.00000'],
+    [6283, '--', '--', 525, null, null, 'MUTASI', '222900000,00', '3608.321.C / Kios', '010401.00000.00000'],
+    [6284, '03/01/2017', '--', null, null, null, 'INVENTARIS', '141200000,00', '5559.321.C / Garasi KIMTARU', '010401.00000.00000'],
+    [6285, '--', '--', 480, null, null, 'MUTASI', '413200000,00', '3509.321.C / Gedung Uji', '010401.00000.00000'],
+    [6286, '--', '--', 10, null, null, 'MUTASI', '21300000,00', '3515.321.C / Ruang Tunggu', '010401.00000.00000'],
+    [6287, '--', '--', 15, null, null, 'MUTASI', '9986900,00', '3577.321.C / Shelter Bus rANDUBLATUNG', '010401.00000.00000'],
+    [6288, '--', '--', 235, null, null, 'MUTASI', '9400000,00', '3603.321.C / Halte 1', '010401.00000.00000'],
+    [6289, '--', '--', 235, null, null, 'MUTASI', '9400000,00', '3604.321.C / Halte 2', '010401.00000.00000'],
+    [6290, '--', '--', 540, null, null, 'MUTASI', '534479000,00', '3607.321.C / Gedung sub term. ngawen', '010401.00000.00000'],
+    [6291, '--', '--', 218, null, null, 'MUTASI', '56524000,00', '3556.321.C / Pagar', '010401.00000.00000'],
+    [6292, '--', '--', 500, null, null, 'MUTASI', '391635550,00', '3598.321.C / Pagar', '010401.00000.00000'],
+    [6293, '02/05/2018', '--', 308, null, null, 'INVENTARIS', '143431000,00', '7122.321.C / Panggung  (Bangunan pertokoan Eks terminal)', '010401.00000.00000'],
+    [6294, '03/01/2017', '--', 264, null, null, 'MUTASI', '450948000,00', '5689.321.C / Gedung Kantor', '010401.00000.00000'],
+    [6295, '03/01/2017', '--', null, null, null, 'INVENTARIS', '241472600,00', '5562.321.C / Gedung Kantor Bidang SDA Blora', '010401.00000.00000'],
+    [6296, '--', '--', 72, null, null, 'INVENTARIS', '183072000,00', '3514.321.C / Bangunan Kantor', '010401.00000.00000'],
+    [6297, '--', '--', 15, null, null, 'INVENTARIS', '17215000,00', '3564.321.C / Shelter', '010401.00000.00000'],
+    [6298, '--', '--', 15, null, null, 'INVENTARIS', '17215000,00', '3565.321.C / Shelter', '010401.00000.00000'],
+    [6299, '--', '--', 800, null, null, 'INVENTARIS', '198772000,00', '3571.321.C / bangunan landasan terminal', '010401.00000.00000'],
+    [6300, '--', '--', 500, null, null, 'INVENTARIS', '440799900,00', '3572.321.C / bangunan halaman kantor', '010401.00000.00000'],
+];
+
+foreach ($additionalData as $item) {
+    kicdokumen::updateOrCreate(
+        ['id' => $item[0]], // kondisi pencarian (where)
+        [
+            'tanggal' => $item[1] === '--' || $item[1] === null ? null : $item[1],
+            'nomor' => $item[2] === '--' || $item[2] === null || $item[2] === '-' ? null : $item[2],
+            'luas' => $item[3],
+            'status_tanah' => $item[4] === '--' || $item[4] === null ? null : $item[4],
+            'nomor_kode_tanah' => $item[5] === '--' || $item[5] === null ? null : $item[5],
+            'asal_usul' => $item[6],
+            'harga' => str_replace(['.', ','], '', $item[7]), // Remove thousand separators and decimal comma
+            'keterangan' => $item[8],
+            'nosertifikat' => $item[9],
+        ]
+    );
+}
+
+
+
+$additionalData = [
+    [6301, '--', '--', 15, null, null, 'INVENTARIS', '18200000,00', '3573.321.C / kontruksi shelter', '010401.00000.00000'],
+    [6302, '--', '--', 18, null, null, 'INVENTARIS', '71713945,00', '3615.321.C / KAMAR MANDI', '010401.00000.00000'],
+    [6303, '--', '--', 20, null, null, 'INVENTARIS', '9494100,00', '3611.321.C / DERMAGA', '010401.00000.00000'],
+    [6304, '--', '--', 8, null, null, 'INVENTARIS', '27439906,00', '3614.321.C / PINTU GERBANG', '010401.00000.00000'],
+    [6305, '03/01/2017', '4', null, null, null, 'PEMBELIAN', '118750000,00', '6410.321.C / RUMAH PEMBANGKIT PLTS DUKUH KUDU', '010401.00000.00000'],
+    [6306, '03/01/2017', '3', 21, null, null, 'INVENTARIS', '167841190,00', '6411.321.C / PONDASI PANEL PLTS DUKUH KUDU', '010401.00000.00000'],
+    [6307, '03/01/2017', '2', null, null, null, 'PEMBELIAN', '112100000,00', '6412.321.C / RUMAH PEMBANGKIT PLTS DUKUH NGLEBAK', '010401.00000.00000'],
+    [6308, '03/01/2017', '1', 21, null, null, 'INVENTARIS', '159886900,00', '6413.321.C / PONDASI PANEL PLTS DUKUH NGLEBAK', '010401.00000.00000'],
+    [6309, '--', '--', null, null, null, 'INVENTARIS', '24878000,00', '4977.321.C / Shelter  Randublatung', '010401.00000.00000'],
+    [6310, '25/07/2016', '--', null, null, null, 'PEMBELIAN', '24315500,00', '5336.321.C / shelter smp jiken', '010401.00000.00000'],
+    [6311, '15/12/2016', '-', null, null, null, 'INVENTARIS', '753275900,00', '5555.321.C / Terminal Wulung', '010401.00000.00000'],
+    [6312, '01/12/2017', '0', null, null, null, 'INVENTARIS', '5889292064,00', '6709.321.C / Gedung Smart House', '010401.00000.00000'],
+    [6313, '31/12/2017', '0', null, null, null, 'PEMBELIAN', '812718000,00', '7009.321.C / Gedung DDUB Rusunawa', '010401.00000.00000'],
+    [6314, '01/12/2017', '0', null, null, null, 'PEMBELIAN', '46795000,00', '7007.321.C / Halte Depan SMP N 1 Sambong', '010401.00000.00000'],
+    [6315, '01/12/2017', '0', null, null, null, 'PEMBELIAN', '46795000,00', '7008.321.C / Halte Depan SMP N 11 Kedungtuban', '010401.00000.00000'],
+    [6316, '05/09/2017', '0', 36, null, null, 'PEMBELIAN', '44500000,00', '6874.321.C / Guardrail / Pagar Pengaman', '010401.00000.00000'],
+    [6317, '31/12/2017', '--', '--', '--', '--', 'INVENTARIS', '50000000,00', '7743.321.C / Guardil/ Pengaman', '010401.00000.00000'],
+    [6318, '06/03/2018', '--', '--', '--', '--', 'PEMBELIAN', '10484100,00', '7272.321.C / Shelter', '010401.00000.00000'],
+    [6319, '10/12/2018', '--', '--', '--', '--', 'PEMBELIAN', '22882350,00', '7620.321.C / Shelter ruang publik', '010401.00000.00000'],
+    [6320, '10/12/2018', '--', '--', '--', '--', 'PEMBELIAN', '13903200,00', '7621.321.C / Shelter Trotoar', '010401.00000.00000'],
+    [6321, '10/12/2018', '--', '--', '--', '--', 'INVENTARIS', '22496150,00', '7622.321.C / Shelter Halte', '010401.00000.00000'],
+    [6322, '02/10/2019', '--', '--', '--', '--', 'INVENTARIS', '33215000,00', '8000.321.C / Pos Jaga Terminal Todanan', '010401.00000.00000'],
+    [6323, '02/10/2019', '--', '--', '--', '--', 'PEMBELIAN', '33215000,00', '8001.321.C / Pos Jaga Terminal Kunduran', '010401.00000.00000'],
+    [6324, '31/12/2019', '--', '--', '--', '--', 'PEMBELIAN', '295036857,00', '8215.321.C /  Pembangunan Tempat parkir Bidang Perhubungan', '010401.00000.00000'],
+    [6325, '07/12/2020', '--', '--', '--', '--', 'PEMBELIAN', '99084000,00', '8372.321.C / Shelter Pasar Sido Makmur', '010401.00000.00000'],
+    [6326, '07/12/2020', '--', '--', '--', '--', 'PEMBELIAN', '138455100,00', '8373.321.C / Kmr Mandi Tempat Ishoma Terminal Ngawen', '010401.00000.00000'],
 ];
 
 
