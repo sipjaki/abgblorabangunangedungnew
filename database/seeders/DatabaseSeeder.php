@@ -27404,7 +27404,7 @@ satuankerja::create(['id' => 41, 'satuankerja' => 'Badan Kesatuan Bangsa dan Pol
 
 kicinduk::create([
     'id' => 1,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 1,
     'kodelokasi' => '010101',
     'bidang' => 'Dinas Pendidikan',
@@ -27414,7 +27414,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 2,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 2,
     'kodelokasi' => '010201',
     'bidang' => 'Dinas Kesehatan',
@@ -27424,7 +27424,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 3,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 3,
     'kodelokasi' => '010301',
     'bidang' => 'Bangunan Gedung',
@@ -27434,7 +27434,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 4,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 4,
     'kodelokasi' => '010401',
     'bidang' => 'Dinas Perumahan Permukiman dan Perhubungan',
@@ -27444,7 +27444,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 5,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 5,
     'kodelokasi' => '010502.00000.00000',
     'bidang' => 'Satuan Polisi Pamong Praja',
@@ -27454,7 +27454,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 6,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 6,
     'kodelokasi' => '010503.00000.00000',
     'bidang' => 'Badan Penanggulangan Bencana Daerah',
@@ -27464,7 +27464,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 7,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 7,
     'kodelokasi' => '010602.00000.00000',
     'bidang' => 'Dinas Sosial Pemberdayaan Perempuan dan Perlindungan Anak',
@@ -27474,7 +27474,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 8,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 8,
     'kodelokasi' => '020901',
     'bidang' => 'Dinas Pangan, Pertanian, Peternakan, dan Perikanan',
@@ -27484,7 +27484,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 9,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 9,
     'kodelokasi' => '021101.00000.00000',
     'bidang' => 'Dinas Lingkungan Hidup',
@@ -27494,7 +27494,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 10,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 10,
     'kodelokasi' => '021201.00000.00000',
     'bidang' => 'Dinas Kependudukan dan Pencatatan Sipil',
@@ -27504,7 +27504,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 11,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 11,
     'kodelokasi' => '021301.00000.00000',
     'bidang' => 'Dinas Pemberdayaan Masyarakat dan Desa',
@@ -27514,7 +27514,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 12,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 12,
     'kodelokasi' => '021401.00000.00000',
     'bidang' => 'Dinas Pengendalian Penduduk dan Keluarga Berencana',
@@ -27524,7 +27524,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 13,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 13,
     'kodelokasi' => '021601.00000.00000',
     'bidang' => 'Dinas Komunikasi dan Informatika',
@@ -27534,7 +27534,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 14,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 14,
     'kodelokasi' => '021701',
     'bidang' => 'Dinas Perdagangan, Koperasi Usaha Kecil dan Menengah',
@@ -27544,7 +27544,7 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 15,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 15,
     'kodelokasi' => '021808.00000.00000',
     'bidang' => 'Dinas Penanaman Modal, Pelayanan Terpadu Satu Pintu',
@@ -27554,11 +27554,11 @@ kicinduk::create([
 
 kicinduk::create([
     'id' => 16,
-    'user_id' => 47,
+    'user_id' => 92,
     'satuankerja_id' => 16,
     'kodelokasi' => '021901',
-    'bidang' => null,
-    'subbidang' => null,
+    'bidang' => 'Dinas Kepemudaan, Olah Raga, Kebudayaan dan Pariwisata',
+    'subbidang' => 'Dinas Kepemudaan, Olah Raga, Kebudayaan dan Pariwisata',
     'tanggalinput' => Carbon::now(),
 ]);
 
@@ -27567,8 +27567,8 @@ kicinduk::create([
     'user_id' => 47,
     'satuankerja_id' => 17,
     'kodelokasi' => '022301.00000.00000',
-    'bidang' => null,
-    'subbidang' => null,
+    'bidang' => 'Dinas Perpustakaan dan Kearsipan',
+    'subbidang' => 'Dinas Perpustakaan dan Kearsipan',
     'tanggalinput' => Carbon::now(),
 ]);
 
@@ -27577,8 +27577,8 @@ kicinduk::create([
     'user_id' => 47,
     'satuankerja_id' => 18,
     'kodelokasi' => '033112.00000.00000',
-    'bidang' => null,
-    'subbidang' => null,
+    'bidang' => 'Dinas Perindustrian dan Tenaga Kerja',
+    'subbidang' => 'Dinas Perindustrian dan Tenaga Kerja',
     'tanggalinput' => Carbon::now(),
 ]);
 
