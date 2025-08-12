@@ -24389,7 +24389,7 @@ databgtanah::create(['id'=>973,'databgkepemilikan_id'=>973,'statushaktanah'=>'Mi
 // PENDATAAN BANGUNAN GEDUNG INPUT DATA PROFIL TANAH
 
 // Records 1-10
-`
+
 databgpeprofilbangunangedung::create(['id'=>1,'databgkepemilikan_id'=>1,'luastanah'=>'128','namabangunan'=>'Kantor Balai Penyuluhan Pertanian','alamatbangunan'=>'Jl. Sonorejo No. 17, Ds. Kunden, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'85','totalluaslantai'=>'85','tinggibangunan'=>'4','luasbasement'=>'','koordinatbangunan'=>'-6.93392,111.375718','tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>2,'databgkepemilikan_id'=>2,'luastanah'=>'2350','namabangunan'=>'Gedung Kantor','alamatbangunan'=>'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'456','totalluaslantai'=>'912','tinggibangunan'=>'9','luasbasement'=>'','koordinatbangunan'=>'-6.974108,111.415106','tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
 databgpeprofilbangunangedung::create(['id'=>3,'databgkepemilikan_id'=>3,'luastanah'=>'2350','namabangunan'=>'Gedung Arsip dan Mushola','alamatbangunan'=>'Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'2','luaslantaildasar'=>'166.92','totalluaslantai'=>'333.84','tinggibangunan'=>'7','luasbasement'=>'','koordinatbangunan'=>'-6.974108,111.415106','tanggalmulaikonstruksi'=>null,'tanggalselesaikonstruksi'=>null,'tanggalrehabilitasi'=>null]);
