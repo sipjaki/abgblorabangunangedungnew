@@ -42338,7 +42338,7 @@ $additionalData = [
     [5763, '--', '-', null, '--', null, 'INVENTARIS', '162.200.000,00', '13818.431.C / Lapangan Tenis', '010201.00000.00000'],
     [5764, '--', '-', null, '--', null, 'INVENTARIS', '47.300.000,00', '13817.431.C / Koperasi', '010201.00000.00000'],
     [5765, '--', '-', null, '--', null, 'INVENTARIS', '86.810.000,00', '13824.431.C / Bangunan Klinik Berhenti Merokok', '010201.00000.00000'],
-    [5766, '21/11/2013', '01/33.16/SPK-RUTIN/DKK/20`13', null, '--', null, 'INVENTARIS', '905.082.000,00', '13825.431.C / Bangunan Kantor Dinas Kesehatan II', '010201.00000.00000'],
+    [5766, '21/11/2013', '01/33.16/SPK-RUTIN/DKK/2013', null, '--', null, 'INVENTARIS', '905.082.000,00', '13825.431.C / Bangunan Kantor Dinas Kesehatan II', '010201.00000.00000'],
     [5767, '27/12/2013', '050/Pemb. Ruang Arsip/DKK/2013', null, '--', null, 'INVENTARIS', '99.504.900,00', '13826.431.C / Bangunan Ruang Arsip', '010201.00000.00000'],
     [5768, '--', '-', null, '--', null, 'INVENTARIS', '992.719.200,00', '13827.431.C / Gedung Kantor Dinas Kesehatan III', '010201.00000.00000'],
     [5769, '10/08/2020', '050/09.18/SP-DKK/VII/2020', 120, '--', null, 'PEMBELIAN', '861.309.000,00', '14729.431.C / Bangunan Gedung PCS', '010201.00000.00000'],
