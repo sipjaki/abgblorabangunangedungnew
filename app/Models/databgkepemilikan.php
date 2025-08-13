@@ -65,7 +65,7 @@ class databgkepemilikan extends Model
     }
 
     public function databgtingkatkerusahan()
-    {
+{
         return $this->hasMany(databgtingkatkerusahan::class);
     }
 

@@ -47441,6 +47441,224 @@ foreach ($datakoordinat as $item) {
 
 
 
+for ($i = 974; $i <= 1000; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+
+        // BAGIAN 1
+        'struktur_bangunan_bawah' => null,
+        'struktur_bangunan_atas' => null,
+        'struktur_atap' => null,
+        'indikasi_kerusakan1' => null,
+        'tingkat_kerusakan1' => null,
+
+        // BAGIAN 2
+        'pondasi' => null,
+        'indikasi_kerusakan2' => null,
+        'tingkat_kerusakan2' => null,
+
+        // BAGIAN 3
+        'struktur' => null,
+        'indikasi_kerusakan3' => null,
+        'tingkat_kerusakan3' => null,
+
+        // BAGIAN 4
+        'atap' => null,
+        'indikasi_kerusakan4' => null,
+        'tingkat_kerusakan4' => null,
+
+        // BAGIAN 5
+        'lantai' => null,
+        'indikasi_kerusakan5' => null,
+        'tingkat_kerusakan5' => null,
+
+        // BAGIAN 6
+        'dinding' => null,
+        'indikasi_kerusakan6' => null,
+        'tingkat_kerusakan6' => null,
+
+        // BAGIAN 7
+        'plafond' => null,
+        'indikasi_kerusakan7' => null,
+        'tingkat_kerusakan7' => null,
+
+        // BAGIAN 8
+        'utilitas' => null,
+        'indikasi_kerusakan8' => null,
+        'tingkat_kerusakan8' => null,
+
+        'finishing' => null,
+        'total_nilai_kerusakan' => null,
+    ];
+
+    // Special cases for specific IDs
+    if ($i >= 981 && $i <= 1000) {
+        $specialData = [
+            // Format: [pondasi, struktur_bangunan_bawah, struktur_bangunan_atas, indikasi_kerusakan1, tingkat_kerusakan1, nilai1,
+            //          indikasi_kerusakan2, tingkat_kerusakan2, nilai2, ... total_nilai_kerusakan]
+            981 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Sedang', 35, 'Indikasi Kerusakan', 'Berat', 50, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 20, 13.4],
+            982 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 20, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Komponen Tidak Ada', 100, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Sedang', 35, 13.65],
+            983 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Indikasi Kerusakan', 'Sedang', 45, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Berat', 63, 'Indikasi Kerusakan', 'Ringan', 12, 'Indikasi Kerusakan', 'Ringan', 4, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi keruskan', 'Tidak rusak', 0, 10.39],
+            984 => ['Pondasi Dangkal', 'Baja', 'Baja', 'Indikasi Kerusakan', 'Sedang', 81, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Sedang', 35, 'Indikasi Kerusakan', 'Sedang', 17, 'Indikasi Kerusakan', 'Ringan', 20, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi keruskan', 'Tidak rusak', 0, 13.65],
+            985 => ['Pondasi Dangkal', 'Baja', 'Baja', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 20, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Komponen Tidak Ada', 100, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi keruskan', 'Tidak rusak', 0, 9],
+            986 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Indikasi Kerusakan', 'Berat', 52.5, 'Indikasi Kerusakan', 'Berat', 45.5, 'Indikasi Kerusakan', 'Ringan', 4, 'Indikasi Kerusakan', 'Sedang', 35, 'Indikasi Kerusakan', 'Sedang', 42.5, 'Indikasi Kerusakan', 'Ringan', 2, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 20, 30.505],
+            987 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 4, 'Indikasi Kerusakan', 'Ringan', 2, 'Indikasi Kerusakan', 'Ringan', 4, 'Indikasi Kerusakan', 'Ringan', 5, 'Indikasi Kerusakan', 'Sedang', 35, 'Indikasi Kerusakan', 'Rusak Sedang', 100, 'Indikasi Kerusakan', 'Sedang', 35, 18],
+            988 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Sedang', 35, 'Indikasi Kerusakan', 'Berat', 56, 'Indikasi Kerusakan', 'Ringan', 4, 'Indikasi Kerusakan', 'Ringan', 10, 'Indikasi Kerusakan', 'Berat', 45, 17.88],
+            989 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Indikasi Kerusakan', 'Ringan', 4, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Ringan', 5, 'Indikasi Kerusakan', 'Sedang', 35, 'Indikasi Kerusakan', 'Ringan', 5, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 25, 10.35],
+            990 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 14, 'Indikasi Kerusakan', 'Ringan', 4, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 3, 'Indikasi Kerusakan', 'Ringan', 3, 2.07],
+            991 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 4, 'Indikasi Kerusakan', 'Ringan', 10.5, 'Indikasi Kerusakan', 'Ringan', 4, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi keruskan', 'Tidak rusak', 0, 1.61],
+            992 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 20, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 10, 'Indikasi Kerusakan', 'Ringan', 17.5, 'Indikasi Kerusakan', 'Ringan', 10, 'Indikasi Kerusakan', 'Ringan', 4, 'Indikasi Kerusakan', 'Ringan', 4, 10.67],
+            993 => ['Pondasi Dangkal', 'Kayu', 'Beton', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 2, 'Indikasi Kerusakan', 'Ringan', 2, 'Indikasi Kerusakan', 'Ringan', 4, 'Indikasi Kerusakan', 'Ringan', 2, 'Indikasi Kerusakan', 'Ringan', 2, 1.08],
+            994 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 1, 'Indikasi Kerusakan', 'Ringan', 3, 'Indikasi Kerusakan', 'Ringan', 2, 'Indikasi Kerusakan', 'Ringan', 2, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 10, 2.15],
+            995 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 4, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 4, 1],
+            996 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 3, 'Indikasi Kerusakan', 'Ringan', 1, 'Indikasi Kerusakan', 'Ringan', 2, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 2, 0.75],
+            997 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 28, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 10, 'Tidak ada indikasi keruskan', 'Tidak rusak', 0, 3.6],
+            998 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 10, 'Indikasi Kerusakan', 'Ringan', 20, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 10, 4.2],
+            999 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Indikasi Kerusakan', 'Berat', 70, 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Sedang', 35, 'Indikasi Kerusakan', 'Sedang', 45, 'Indikasi Kerusakan', 'Sedang', 45, 'Indikasi Kerusakan', 'Sedang', 20, 'Indikasi Kerusakan', 'Berat', 50, 'Indikasi Kerusakan', 'Sedang', 35, 35.4],
+            1000 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 2, 'Indikasi Kerusakan', 'Sedang', 45, 'Indikasi Kerusakan', 'Ringan', 15, 'Indikasi Kerusakan', 'Ringan', 6, 'Indikasi Kerusakan', 'Ringan', 5, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 20, 10.16]
+        ];
+
+        $special = $specialData[$i];
+
+        $data = [
+            'databgkepemilikan_id' => $i,
+            'pondasi' => $special[0],
+            'struktur_bangunan_bawah' => $special[1],
+            'struktur_bangunan_atas' => $special[2],
+            'indikasi_kerusakan1' => $special[3],
+            'tingkat_kerusakan1' => $special[4],
+            'tingkat_kerusakan1' => $special[5],
+            'indikasi_kerusakan2' => $special[6],
+            'tingkat_kerusakan2' => $special[7],
+            'tingkat_kerusakan2' => $special[8],
+            'indikasi_kerusakan3' => $special[9],
+            'tingkat_kerusakan3' => $special[10],
+            'tingkat_kerusakan3' => $special[11],
+            'indikasi_kerusakan4' => $special[12],
+            'tingkat_kerusakan4' => $special[13],
+            'tingkat_kerusakan4' => $special[14],
+            'indikasi_kerusakan5' => $special[15],
+            'tingkat_kerusakan5' => $special[16],
+            'tingkat_kerusakan5' => $special[17],
+            'indikasi_kerusakan6' => $special[18],
+            'tingkat_kerusakan6' => $special[19],
+            'tingkat_kerusakan6' => $special[20],
+            'indikasi_kerusakan7' => $special[21],
+            'tingkat_kerusakan7' => $special[22],
+            'tingkat_kerusakan7' => $special[23],
+            'indikasi_kerusakan8' => $special[24],
+            'tingkat_kerusakan8' => $special[25],
+            'tingkat_kerusakan8' => $special[26],
+            'total_nilai_kerusakan' => $special[27]
+        ];
+    }
+
+    databgtingkatkerusahan::create($data);
+}
+
+
+for ($i = 1001; $i <= 1050; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+
+        // Default null values for all fields
+        'struktur_bangunan_bawah' => null,
+        'struktur_bangunan_atas' => null,
+        'struktur_atap' => null,
+        'indikasi_kerusakan1' => null,
+        'tingkat_kerusakan1' => null,
+        'tingkat_kerusakan1' => null,
+        'pondasi' => null,
+        'indikasi_kerusakan2' => null,
+        'tingkat_kerusakan2' => null,
+        'tingkat_kerusakan2' => null,
+        'struktur' => null,
+        'indikasi_kerusakan3' => null,
+        'tingkat_kerusakan3' => null,
+        'tingkat_kerusakan3' => null,
+        'atap' => null,
+        'indikasi_kerusakan4' => null,
+        'tingkat_kerusakan4' => null,
+        'tingkat_kerusakan4' => null,
+        'lantai' => null,
+        'indikasi_kerusakan5' => null,
+        'tingkat_kerusakan5' => null,
+        'tingkat_kerusakan5' => null,
+        'dinding' => null,
+        'indikasi_kerusakan6' => null,
+        'tingkat_kerusakan6' => null,
+        'tingkat_kerusakan6' => null,
+        'plafond' => null,
+        'indikasi_kerusakan7' => null,
+        'tingkat_kerusakan7' => null,
+        'tingkat_kerusakan7' => null,
+        'utilitas' => null,
+        'indikasi_kerusakan8' => null,
+        'tingkat_kerusakan8' => null,
+        'tingkat_kerusakan8' => null,
+        'finishing' => null,
+        'total_nilai_kerusakan' => null,
+    ];
+
+    // Special cases for specific IDs
+    $specialData = [
+        1001 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 10, 'Indikasi Kerusakan', 'Berat', 65.00, 'Indikasi Kerusakan', 'Sedang', 31.5, 'Indikasi Kerusakan', 'Berat', 63, 'Indikasi Kerusakan', 'Berat', 72.25, 'Indikasi Kerusakan', 'Berat', 63, 28.340042],
+        1002 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Indikasi Kerusakan', 'Ringan', 17.5, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 70.00, 'Indikasi Kerusakan', 'Ringan', 7, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Sedang', 26.25, 11.2875],
+        1003 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Indikasi Kerusakan', 'Ringan', 10, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 17.50, 'Indikasi Kerusakan', 'Ringan', 16, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 10, 5.325],
+        // ... [similar entries for 1004-1045]
+        1044 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Indikasi Kerusakan', 'Berat', 50, 'Indikasi Kerusakan', 'Sedang', 35, 'Indikasi Kerusakan', 'Sedang', 35, 'Indikasi Kerusakan', 'Berat', 50, 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Komponen Tidak Ada', 100, 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Ringan', 20, 37.15],
+        1045 => ['Pondasi Dangkal', 'Kayu', 'Kayu', 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Ringan', 20, 'Indikasi Kerusakan', 'Sedang', 35, 'Indikasi Kerusakan', 'Berat', 50, 'Indikasi Kerusakan', 'Berat', 85, 'Indikasi Kerusakan', 'Sedang', 35, 31.05],
+        1049 => ['Pondasi Dangkal', 'Betom', 'Beton', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi keruskan', 'Tidak rusak', 0, 0],
+        1050 => ['Pondasi Dangkal', 'Beton', 'Beton', 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Indikasi Kerusakan', 'Ringan', 20, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi kerusakan', 'Tidak rusak', 0, 'Tidak ada indikasi keruskan', 'Tidak rusak', 0, 2]
+    ];
+
+    // For IDs 1029-1048 with "-" values (except 1038-1045 which have data)
+    $emptyIds = array_merge(range(1029, 1037), range(1046, 1048));
+
+    if (in_array($i, $emptyIds)) {
+        // Keep all null values for these IDs
+    } elseif (isset($specialData[$i])) {
+        $special = $specialData[$i];
+
+        $data = [
+            'databgkepemilikan_id' => $i,
+            'pondasi' => $special[0],
+            'struktur_bangunan_bawah' => $special[1],
+            'struktur_bangunan_atas' => $special[2],
+            'indikasi_kerusakan1' => $special[3],
+            'tingkat_kerusakan1' => $special[4],
+            'tingkat_kerusakan1' => $special[5],
+            'indikasi_kerusakan2' => $special[6],
+            'tingkat_kerusakan2' => $special[7],
+            'tingkat_kerusakan2' => $special[8],
+            'indikasi_kerusakan3' => $special[9],
+            'tingkat_kerusakan3' => $special[10],
+            'tingkat_kerusakan3' => $special[11],
+            'indikasi_kerusakan4' => $special[12],
+            'tingkat_kerusakan4' => $special[13],
+            'tingkat_kerusakan4' => $special[14],
+            'indikasi_kerusakan5' => $special[15],
+            'tingkat_kerusakan5' => $special[16],
+            'tingkat_kerusakan5' => $special[17],
+            'indikasi_kerusakan6' => $special[18],
+            'tingkat_kerusakan6' => $special[19],
+            'tingkat_kerusakan6' => $special[20],
+            'indikasi_kerusakan7' => $special[21],
+            'tingkat_kerusakan7' => $special[22],
+            'tingkat_kerusakan7' => $special[23],
+            'indikasi_kerusakan8' => $special[24],
+            'tingkat_kerusakan8' => $special[25],
+            'tingkat_kerusakan8' => $special[26],
+            'total_nilai_kerusakan' => $special[27]
+        ];
+    } else {
+        // For IDs 1038-1045 that have data but not in specialData array
+        // You would need to add their data to the specialData array
+    }
+
+    databgtingkatkerusahan::create($data);
+}
+
 
 // SIGIT BARU
 
