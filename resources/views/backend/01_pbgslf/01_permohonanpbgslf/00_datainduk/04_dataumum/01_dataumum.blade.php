@@ -303,7 +303,7 @@ th {
             $infoItems = [
                 [
                     'icon' => 'bi-person-badge',
-                    'title' => '1. Data Penyedia Jasa Perencana',
+                    'title' => '1. Data Identitas Pemilik Bangunan (KTP/KITAS)',
                     'value' => $pemilik->berkas1 ?? '-',
                 ],
                                 [
@@ -337,7 +337,7 @@ th {
                 ],
                 [
                     'icon' => 'bi-person-vcard',
-                    'title' => '4. Data Identitas Pemilik Bangunan (KTP/KITAS)',
+                    'title' => '4. Data Penyedia Jasa Konstruksi / Perseorangan',
                     'value' => $pemilik->berkas4 ?? '-',
                 ],
 
