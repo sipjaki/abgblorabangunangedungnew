@@ -47207,8 +47207,1039 @@ for ($i = 1151; $i <= 1189; $i++) {
 
 
 
+for ($i = 974; $i <= 1000; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'dokumen_lampiran_struktur' => null,
+        'mpk_rdkt' => null,
+        'dokumen_lampiran' => null,
+        'penangkal_kebakaran' => null,
+        'no_bundel_dok_teknis' => null,
+        'daya_listrik' => null,
+        'dokumen_instalasi_listrik' => null,
+        'instalasi_penangkal_listrik' => null,
+        'dokumen_pencahayaan' => null,
+        'dokumen_instalasi_komunikasi' => null,
+        'instalasi_komunikasi' => null,
+        'pengolahan_limbah_domestik' => null,
+        'sistem_sanitasi' => null,
+        'pengolahan_air_hujan' => null,
+        'sistem_drainase' => null,
+        'instalasi_gas' => null,
+        'dokumen_lampiran_sanitasi' => null,
+        'sumber_air' => null,
+        'biaya_retribusi' => null,
+        'surat_advis_krk' => null,
+        'surat_permohonan_imb' => null,
+        'surat_permohonan_slf' => null,
+        'fotocopy_identitas_pemohon' => null,
+        'surat_kuasa_imb' => null,
+        'surat_k3' => null,
+        'rekomendasi_desa' => null,
+        'rekom_kecamatan' => null,
+        'surat_kepemilikan_tanah_sewa' => null,
+        'copy_sertif_tanah' => null,
+        'surat_pajak' => null,
+        'sippt' => null,
+        'tabel_ceklis_dokumen' => null,
+        'tabel_ceklis_teknis' => null,
+        'surat_setoran_retribusi_daerah' => null,
+        'surat_ketetapan_retribusi_daerah' => null,
+        'berita_acara_pemeriksaan' => null,
+    ];
+
+    // Special cases for specific IDs
+    if ($i >= 981 && $i <= 989) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = $i <= 982 ? '450.' : '900.';
+        $data['sumber_air'] = 'Air Tanah';
+    } elseif ($i >= 990 && $i <= 1000) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = $i == 993 ? 'Beton' : 'Kayu';
+        $data['daya_listrik'] = '4400.';
+        $data['dokumen_instalasi_listrik'] = 'Ada';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sistem_drainase'] = 'Ada';
+        $data['sumber_air'] = 'PAM';
+    }
+
+    databgdokumenmepbangunan::create($data);
+}
 
 
+
+for ($i = 1001; $i <= 1050; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'dokumen_lampiran_struktur' => null,
+        'mpk_rdkt' => null,
+        'dokumen_lampiran' => null,
+        'penangkal_kebakaran' => null,
+        'no_bundel_dok_teknis' => null,
+        'daya_listrik' => null,
+        'dokumen_instalasi_listrik' => null,
+        'instalasi_penangkal_listrik' => null,
+        'dokumen_pencahayaan' => null,
+        'dokumen_instalasi_komunikasi' => null,
+        'instalasi_komunikasi' => null,
+        'pengolahan_limbah_domestik' => null,
+        'sistem_sanitasi' => null,
+        'pengolahan_air_hujan' => null,
+        'sistem_drainase' => null,
+        'instalasi_gas' => null,
+        'dokumen_lampiran_sanitasi' => null,
+        'sumber_air' => null,
+        'biaya_retribusi' => null,
+        'surat_advis_krk' => null,
+        'surat_permohonan_imb' => null,
+        'surat_permohonan_slf' => null,
+        'fotocopy_identitas_pemohon' => null,
+        'surat_kuasa_imb' => null,
+        'surat_k3' => null,
+        'rekomendasi_desa' => null,
+        'rekom_kecamatan' => null,
+        'surat_kepemilikan_tanah_sewa' => null,
+        'copy_sertif_tanah' => null,
+        'surat_pajak' => null,
+        'sippt' => null,
+        'tabel_ceklis_dokumen' => null,
+        'tabel_ceklis_teknis' => null,
+        'surat_setoran_retribusi_daerah' => null,
+        'surat_ketetapan_retribusi_daerah' => null,
+        'berita_acara_pemeriksaan' => null,
+    ];
+
+    // 1001-1012: Similar to 990-1000 pattern
+    if ($i >= 1001 && $i <= 1012) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '4400.';
+        $data['dokumen_instalasi_listrik'] = 'Ada';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sistem_drainase'] = 'Ada';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1013-1028: New pattern with 5500/11000 daya_listrik and Air Tanah
+    elseif ($i >= 1013 && $i <= 1028) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i == 1014 || $i == 1026) ? 'Baja' : 'Kayu';
+        $data['dokumen_lampiran'] = ($i == 1014 || $i == 1026) ? 'Baja' : 'Kayu';
+        $data['daya_listrik'] = ($i == 1023) ? '11000' : '5500';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sistem_drainase'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1029-1037: All null
+    // 1038-1041: New pattern with 1300 daya_listrik
+    elseif ($i >= 1038 && $i <= 1041) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i == 1041) ? '' : 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1042-1045: New pattern with 900 daya_listrik and Lain-Lain
+    elseif ($i >= 1042 && $i <= 1045) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sumber_air'] = 'Lain-Lain';
+    }
+    // 1046-1048: All null
+    // 1049-1050: New pattern with 32000 daya_listrik and PAM
+    elseif ($i >= 1049 && $i <= 1050) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i == 1049) ? 'Betom' : 'Beton'; // Note typo in 1049
+        $data['dokumen_lampiran'] = 'Beton';
+        $data['daya_listrik'] = '32000.';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'PAM';
+    }
+
+    databgdokumenmepbangunan::create($data);
+}
+
+for ($i = 1051; $i <= 1120; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'dokumen_lampiran_struktur' => null,
+        'mpk_rdkt' => null,
+        'dokumen_lampiran' => null,
+        'penangkal_kebakaran' => null,
+        'no_bundel_dok_teknis' => null,
+        'daya_listrik' => null,
+        'dokumen_instalasi_listrik' => null,
+        'instalasi_penangkal_listrik' => null,
+        'dokumen_pencahayaan' => null,
+        'dokumen_instalasi_komunikasi' => null,
+        'instalasi_komunikasi' => null,
+        'pengolahan_limbah_domestik' => null,
+        'sistem_sanitasi' => null,
+        'pengolahan_air_hujan' => null,
+        'sistem_drainase' => null,
+        'instalasi_gas' => null,
+        'dokumen_lampiran_sanitasi' => null,
+        'sumber_air' => null,
+        'biaya_retribusi' => null,
+        'surat_advis_krk' => null,
+        'surat_permohonan_imb' => null,
+        'surat_permohonan_slf' => null,
+        'fotocopy_identitas_pemohon' => null,
+        'surat_kuasa_imb' => null,
+        'surat_k3' => null,
+        'rekomendasi_desa' => null,
+        'rekom_kecamatan' => null,
+        'surat_kepemilikan_tanah_sewa' => null,
+        'copy_sertif_tanah' => null,
+        'surat_pajak' => null,
+        'sippt' => null,
+        'tabel_ceklis_dokumen' => null,
+        'tabel_ceklis_teknis' => null,
+        'surat_setoran_retribusi_daerah' => null,
+        'surat_ketetapan_retribusi_daerah' => null,
+        'berita_acara_pemeriksaan' => null,
+    ];
+
+    // 1051: Special case with additional fields
+    if ($i == 1051) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '32000.';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'PAM';
+        $data['no_bundel_dok_teknis'] = '640/381/2018.';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1052-1056: 2200 daya_listrik and PAM
+    elseif ($i >= 1052 && $i <= 1056) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = ($i == 1053 || $i == 1055) ? 'Baja' : 'Kayu';
+        $data['daya_listrik'] = '2200';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = ($i >= 1053 && $i <= 1056) ? 'Ada' : null;
+    }
+    // 1057-1062: 1300. daya_listrik and PAM
+    elseif ($i >= 1057 && $i <= 1062) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1063-1074: 900. daya_listrik and Air Tanah (with some variations)
+    elseif ($i >= 1063 && $i <= 1074) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i == 1065 || $i == 1067 || $i == 1068) ? 'Beton' :
+                           ($i == 1070 || $i == 1072) ? '' : 'Kayu';
+        $data['dokumen_lampiran'] = ($i == 1072) ? 'Baja' : 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sumber_air'] = ($i == 1074) ? '' : 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = ($i >= 1063 && $i <= 1068) ? 'Ada' : null;
+    }
+    // 1075-1085: All null
+    // 1086-1094: 450/900 daya_listrik and PAM
+    elseif ($i >= 1086 && $i <= 1094) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = ($i <= 1090) ? '450' : '900';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1095-1099: 3500. daya_listrik and PAM with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1095 && $i <= 1099) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '3500.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1100-1102: All null
+    // 1103-1106: 900. daya_listrik, PAM, and special no_bundel_dok_teknis
+    elseif ($i >= 1103 && $i <= 1106) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sumber_air'] = 'PAM';
+        $data['no_bundel_dok_teknis'] = '231/GGK/X/2016.';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1107-1109: 450. daya_listrik and Air Tanah
+    elseif ($i >= 1107 && $i <= 1109) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '450.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1110-1120: 1300. daya_listrik and PAM
+    elseif ($i >= 1110 && $i <= 1120) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = ($i == 1120) ? 'Ada' : null;
+    }
+
+    databgdokumenmepbangunan::create($data);
+}
+
+for ($i = 1121; $i <= 1189; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'dokumen_lampiran_struktur' => null,
+        'mpk_rdkt' => null,
+        'dokumen_lampiran' => null,
+        'penangkal_kebakaran' => null,
+        'no_bundel_dok_teknis' => null,
+        'daya_listrik' => null,
+        'dokumen_instalasi_listrik' => null,
+        'instalasi_penangkal_listrik' => null,
+        'dokumen_pencahayaan' => null,
+        'dokumen_instalasi_komunikasi' => null,
+        'instalasi_komunikasi' => null,
+        'pengolahan_limbah_domestik' => null,
+        'sistem_sanitasi' => null,
+        'pengolahan_air_hujan' => null,
+        'sistem_drainase' => null,
+        'instalasi_gas' => null,
+        'dokumen_lampiran_sanitasi' => null,
+        'sumber_air' => null,
+        'biaya_retribusi' => null,
+        'surat_advis_krk' => null,
+        'surat_permohonan_imb' => null,
+        'surat_permohonan_slf' => null,
+        'fotocopy_identitas_pemohon' => null,
+        'surat_kuasa_imb' => null,
+        'surat_k3' => null,
+        'rekomendasi_desa' => null,
+        'rekom_kecamatan' => null,
+        'surat_kepemilikan_tanah_sewa' => null,
+        'copy_sertif_tanah' => null,
+        'surat_pajak' => null,
+        'sippt' => null,
+        'tabel_ceklis_dokumen' => null,
+        'tabel_ceklis_teknis' => null,
+        'surat_setoran_retribusi_daerah' => null,
+        'surat_ketetapan_retribusi_daerah' => null,
+        'berita_acara_pemeriksaan' => null,
+    ];
+
+    // 1121-1124: 1300. daya_listrik, PAM, with Ada in tabel_ceklis_dokumen
+    if ($i >= 1121 && $i <= 1124) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1125: Similar to 1121-1124 but without tabel_ceklis_dokumen
+    elseif ($i == 1125) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1126-1130: 900. daya_listrik and Air Tanah
+    elseif ($i >= 1126 && $i <= 1130) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i >= 1128 && $i <= 1130) ? '' : 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1131-1134: 1300. daya_listrik with Lain-lain and Air Tanah
+    elseif ($i >= 1131 && $i <= 1134) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1135-1141: 2200. daya_listrik with Lain-lain and Lain-Lain sumber_air
+    elseif ($i >= 1135 && $i <= 1141) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200.';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'Lain-Lain';
+        $data['tabel_ceklis_dokumen'] = ($i >= 1136 && $i <= 1141) ? 'Ada' : null;
+    }
+    // 1142: Similar to 1135-1141 but with empty pengolahan_air_hujan
+    elseif ($i == 1142) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200.';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1143-1146: 900 daya_listrik, PAM with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1143 && $i <= 1146) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1147-1151: 900 daya_listrik, Air Tanah with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1147 && $i <= 1151) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = ($i <= 1151) ? 'Ada' : null;
+    }
+    // 1152: Similar to 1147-1151 but without tabel_ceklis_dokumen
+    elseif ($i == 1152) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1153: 1300 daya_listrik and Air Tanah
+    elseif ($i == 1153) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1154: All null
+    // 1155: 1600 daya_listrik and Lain-Lain
+    elseif ($i == 1155) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1600';
+        $data['sumber_air'] = 'Lain-Lain';
+    }
+    // 1156: All null
+    // 1157: All null except Ada in tabel_ceklis_dokumen
+    elseif ($i == 1157) {
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1158-1162: 2300. daya_listrik with PK Aktif and PAM
+    elseif ($i >= 1158 && $i <= 1162) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['penangkal_kebakaran'] = 'PK Aktif';
+        $data['daya_listrik'] = '2300.';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1163-1166: 1200 daya_listrik with Lain-lain and Air Tanah
+    elseif ($i >= 1163 && $i <= 1166) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i == 1163) ? 'Beton' : 'Kayu';
+        $data['dokumen_lampiran'] = ($i == 1163) ? '' : 'Kayu';
+        $data['daya_listrik'] = '1200';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1167-1171: 2200 daya_listrik and PAM with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1167 && $i <= 1171) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200';
+        $data['sumber_air'] = 'PAM';
+        $data['sistem_sanitasi'] = ($i >= 1170) ? 'Ada' : null;
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1172-1176: 900. daya_listrik, Air Tanah with SHM in tabel_ceklis_dokumen
+    elseif ($i >= 1172 && $i <= 1176) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = 'SHM';
+    }
+    // 1177-1179: 2200. daya_listrik and PAM with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1177 && $i <= 1179) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1180: All null except Ada in tabel_ceklis_dokumen
+    elseif ($i == 1180) {
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1181-1182: 1300. daya_listrik and Air Tanah
+    elseif ($i >= 1181 && $i <= 1182) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = ($i == 1181) ? 'Ada' : null;
+    }
+    // 1183-1186: 900 daya_listrik and PAM
+    elseif ($i >= 1183 && $i <= 1186) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1187: 1300. daya_listrik, Air Tanah with Beton
+    elseif ($i == 1187) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Beton';
+        $data['dokumen_lampiran'] = 'Beton';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1188: 1300. daya_listrik, Air Tanah with empty mpk_rdkt
+    elseif ($i == 1188) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = '';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1189: 900 daya_listrik and PAM
+    elseif ($i == 1189) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'PAM';
+    }
+
+    databgdokumenmepbangunan::create($data);
+}
+
+for ($i = 1121; $i <= 1189; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'dokumen_lampiran_struktur' => null,
+        'mpk_rdkt' => null,
+        'dokumen_lampiran' => null,
+        'penangkal_kebakaran' => null,
+        'no_bundel_dok_teknis' => null,
+        'daya_listrik' => null,
+        'dokumen_instalasi_listrik' => null,
+        'instalasi_penangkal_listrik' => null,
+        'dokumen_pencahayaan' => null,
+        'dokumen_instalasi_komunikasi' => null,
+        'instalasi_komunikasi' => null,
+        'pengolahan_limbah_domestik' => null,
+        'sistem_sanitasi' => null,
+        'pengolahan_air_hujan' => null,
+        'sistem_drainase' => null,
+        'instalasi_gas' => null,
+        'dokumen_lampiran_sanitasi' => null,
+        'sumber_air' => null,
+        'biaya_retribusi' => null,
+        'surat_advis_krk' => null,
+        'surat_permohonan_imb' => null,
+        'surat_permohonan_slf' => null,
+        'fotocopy_identitas_pemohon' => null,
+        'surat_kuasa_imb' => null,
+        'surat_k3' => null,
+        'rekomendasi_desa' => null,
+        'rekom_kecamatan' => null,
+        'surat_kepemilikan_tanah_sewa' => null,
+        'copy_sertif_tanah' => null,
+        'surat_pajak' => null,
+        'sippt' => null,
+        'tabel_ceklis_dokumen' => null,
+        'tabel_ceklis_teknis' => null,
+        'surat_setoran_retribusi_daerah' => null,
+        'surat_ketetapan_retribusi_daerah' => null,
+        'berita_acara_pemeriksaan' => null,
+    ];
+
+    // 1121-1124: 1300. daya_listrik, PAM, with Ada in tabel_ceklis_dokumen
+    if ($i >= 1121 && $i <= 1124) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1125: Similar to 1121-1124 but without tabel_ceklis_dokumen
+    elseif ($i == 1125) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1126-1130: 900. daya_listrik and Air Tanah
+    elseif ($i >= 1126 && $i <= 1130) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i >= 1128 && $i <= 1130) ? '' : 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1131-1134: 1300. daya_listrik with Lain-lain and Air Tanah
+    elseif ($i >= 1131 && $i <= 1134) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1135-1141: 2200. daya_listrik with Lain-lain and Lain-Lain sumber_air
+    elseif ($i >= 1135 && $i <= 1141) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200.';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'Lain-Lain';
+        $data['tabel_ceklis_dokumen'] = ($i >= 1136 && $i <= 1141) ? 'Ada' : null;
+    }
+    // 1142: Similar to 1135-1141 but with empty pengolahan_air_hujan
+    elseif ($i == 1142) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200.';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1143-1146: 900 daya_listrik, PAM with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1143 && $i <= 1146) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1147-1151: 900 daya_listrik, Air Tanah with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1147 && $i <= 1151) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = ($i <= 1151) ? 'Ada' : null;
+    }
+    // 1152: Similar to 1147-1151 but without tabel_ceklis_dokumen
+    elseif ($i == 1152) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1153: 1300 daya_listrik and Air Tanah
+    elseif ($i == 1153) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1154: All null
+    // 1155: 1600 daya_listrik and Lain-Lain
+    elseif ($i == 1155) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1600';
+        $data['sumber_air'] = 'Lain-Lain';
+    }
+    // 1156: All null
+    // 1157: All null except Ada in tabel_ceklis_dokumen
+    elseif ($i == 1157) {
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1158-1162: 2300. daya_listrik with PK Aktif and PAM
+    elseif ($i >= 1158 && $i <= 1162) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['penangkal_kebakaran'] = 'PK Aktif';
+        $data['daya_listrik'] = '2300.';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1163-1166: 1200 daya_listrik with Lain-lain and Air Tanah
+    elseif ($i >= 1163 && $i <= 1166) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i == 1163) ? 'Beton' : 'Kayu';
+        $data['dokumen_lampiran'] = ($i == 1163) ? '' : 'Kayu';
+        $data['daya_listrik'] = '1200';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1167-1171: 2200 daya_listrik and PAM with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1167 && $i <= 1171) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200';
+        $data['sumber_air'] = 'PAM';
+        $data['sistem_sanitasi'] = ($i >= 1170) ? 'Ada' : null;
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1172-1176: 900. daya_listrik, Air Tanah with SHM in tabel_ceklis_dokumen
+    elseif ($i >= 1172 && $i <= 1176) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = 'SHM';
+    }
+    // 1177-1179: 2200. daya_listrik and PAM with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1177 && $i <= 1179) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1180: All null except Ada in tabel_ceklis_dokumen
+    elseif ($i == 1180) {
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1181-1182: 1300. daya_listrik and Air Tanah
+    elseif ($i >= 1181 && $i <= 1182) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = ($i == 1181) ? 'Ada' : null;
+    }
+    // 1183-1186: 900 daya_listrik and PAM
+    elseif ($i >= 1183 && $i <= 1186) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1187: 1300. daya_listrik, Air Tanah with Beton
+    elseif ($i == 1187) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Beton';
+        $data['dokumen_lampiran'] = 'Beton';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1188: 1300. daya_listrik, Air Tanah with empty mpk_rdkt
+    elseif ($i == 1188) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = '';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1189: 900 daya_listrik and PAM
+    elseif ($i == 1189) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'PAM';
+    }
+
+    databgdokumenmepbangunan::create($data);
+}
+
+
+
+for ($i = 1121; $i <= 1189; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'dokumen_lampiran_struktur' => null,
+        'mpk_rdkt' => null,
+        'dokumen_lampiran' => null,
+        'penangkal_kebakaran' => null,
+        'no_bundel_dok_teknis' => null,
+        'daya_listrik' => null,
+        'dokumen_instalasi_listrik' => null,
+        'instalasi_penangkal_listrik' => null,
+        'dokumen_pencahayaan' => null,
+        'dokumen_instalasi_komunikasi' => null,
+        'instalasi_komunikasi' => null,
+        'pengolahan_limbah_domestik' => null,
+        'sistem_sanitasi' => null,
+        'pengolahan_air_hujan' => null,
+        'sistem_drainase' => null,
+        'instalasi_gas' => null,
+        'dokumen_lampiran_sanitasi' => null,
+        'sumber_air' => null,
+        'biaya_retribusi' => null,
+        'surat_advis_krk' => null,
+        'surat_permohonan_imb' => null,
+        'surat_permohonan_slf' => null,
+        'fotocopy_identitas_pemohon' => null,
+        'surat_kuasa_imb' => null,
+        'surat_k3' => null,
+        'rekomendasi_desa' => null,
+        'rekom_kecamatan' => null,
+        'surat_kepemilikan_tanah_sewa' => null,
+        'copy_sertif_tanah' => null,
+        'surat_pajak' => null,
+        'sippt' => null,
+        'tabel_ceklis_dokumen' => null,
+        'tabel_ceklis_teknis' => null,
+        'surat_setoran_retribusi_daerah' => null,
+        'surat_ketetapan_retribusi_daerah' => null,
+        'berita_acara_pemeriksaan' => null,
+    ];
+
+    // 1121-1124: 1300. daya_listrik, PAM, with Ada in tabel_ceklis_dokumen
+    if ($i >= 1121 && $i <= 1124) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1125: Similar to 1121-1124 but without tabel_ceklis_dokumen
+    elseif ($i == 1125) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1126-1130: 900. daya_listrik and Air Tanah
+    elseif ($i >= 1126 && $i <= 1130) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i >= 1128 && $i <= 1130) ? '' : 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1131-1134: 1300. daya_listrik with Lain-lain and Air Tanah
+    elseif ($i >= 1131 && $i <= 1134) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1135-1141: 2200. daya_listrik with Lain-lain and Lain-Lain sumber_air
+    elseif ($i >= 1135 && $i <= 1141) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200.';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'Lain-Lain';
+        $data['tabel_ceklis_dokumen'] = ($i >= 1136 && $i <= 1141) ? 'Ada' : null;
+    }
+    // 1142: Similar to 1135-1141 but with empty pengolahan_air_hujan
+    elseif ($i == 1142) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200.';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1143-1146: 900 daya_listrik, PAM with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1143 && $i <= 1146) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1147-1151: 900 daya_listrik, Air Tanah with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1147 && $i <= 1151) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = ($i <= 1151) ? 'Ada' : null;
+    }
+    // 1152: Similar to 1147-1151 but without tabel_ceklis_dokumen
+    elseif ($i == 1152) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1153: 1300 daya_listrik and Air Tanah
+    elseif ($i == 1153) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1154: All null
+    // 1155: 1600 daya_listrik and Lain-Lain
+    elseif ($i == 1155) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1600';
+        $data['sumber_air'] = 'Lain-Lain';
+    }
+    // 1156: All null
+    // 1157: All null except Ada in tabel_ceklis_dokumen
+    elseif ($i == 1157) {
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1158-1162: 2300. daya_listrik with PK Aktif and PAM
+    elseif ($i >= 1158 && $i <= 1162) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['penangkal_kebakaran'] = 'PK Aktif';
+        $data['daya_listrik'] = '2300.';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1163-1166: 1200 daya_listrik with Lain-lain and Air Tanah
+    elseif ($i >= 1163 && $i <= 1166) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i == 1163) ? 'Beton' : 'Kayu';
+        $data['dokumen_lampiran'] = ($i == 1163) ? '' : 'Kayu';
+        $data['daya_listrik'] = '1200';
+        $data['pengolahan_limbah_domestik'] = 'Lain-lain';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1167-1171: 2200 daya_listrik and PAM with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1167 && $i <= 1171) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200';
+        $data['sumber_air'] = 'PAM';
+        $data['sistem_sanitasi'] = ($i >= 1170) ? 'Ada' : null;
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1172-1176: 900. daya_listrik, Air Tanah with SHM in tabel_ceklis_dokumen
+    elseif ($i >= 1172 && $i <= 1176) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = 'SHM';
+    }
+    // 1177-1179: 2200. daya_listrik and PAM with Ada in tabel_ceklis_dokumen
+    elseif ($i >= 1177 && $i <= 1179) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '2200.';
+        $data['sumber_air'] = 'PAM';
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1180: All null except Ada in tabel_ceklis_dokumen
+    elseif ($i == 1180) {
+        $data['tabel_ceklis_dokumen'] = 'Ada';
+    }
+    // 1181-1182: 1300. daya_listrik and Air Tanah
+    elseif ($i >= 1181 && $i <= 1182) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+        $data['tabel_ceklis_dokumen'] = ($i == 1181) ? 'Ada' : null;
+    }
+    // 1183-1186: 900 daya_listrik and PAM
+    elseif ($i >= 1183 && $i <= 1186) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1187: 1300. daya_listrik, Air Tanah with Beton
+    elseif ($i == 1187) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Beton';
+        $data['dokumen_lampiran'] = 'Beton';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1188: 1300. daya_listrik, Air Tanah with empty mpk_rdkt
+    elseif ($i == 1188) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = '';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1189: 900 daya_listrik and PAM
+    elseif ($i == 1189) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900';
+        $data['sumber_air'] = 'PAM';
+    }
+
+    databgdokumenmepbangunan::create($data);
+}
 
 // SIGIT
 
@@ -47286,6 +48317,171 @@ for ($i = 1; $i <= 973; $i++) {
         'berita_acara_pemeriksaan' => null,
     ]);
 }
+
+
+for ($i = 974; $i <= 1000; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'dokumen_lampiran_struktur' => null,
+        'mpk_rdkt' => null,
+        'dokumen_lampiran' => null,
+        'penangkal_kebakaran' => null,
+        'no_bundel_dok_teknis' => null,
+        'daya_listrik' => null,
+        'dokumen_instalasi_listrik' => null,
+        'instalasi_penangkal_listrik' => null,
+        'dokumen_pencahayaan' => null,
+        'dokumen_instalasi_komunikasi' => null,
+        'instalasi_komunikasi' => null,
+        'pengolahan_limbah_domestik' => null,
+        'sistem_sanitasi' => null,
+        'pengolahan_air_hujan' => null,
+        'sistem_drainase' => null,
+        'instalasi_gas' => null,
+        'dokumen_lampiran_sanitasi' => null,
+        'sumber_air' => null,
+        'biaya_retribusi' => null,
+        'surat_advis_krk' => null,
+        'surat_permohonan_imb' => null,
+        'surat_permohonan_slf' => null,
+        'fotocopy_identitas_pemohon' => null,
+        'surat_kuasa_imb' => null,
+        'surat_k3' => null,
+        'rekomendasi_desa' => null,
+        'rekom_kecamatan' => null,
+        'surat_kepemilikan_tanah_sewa' => null,
+        'copy_sertif_tanah' => null,
+        'surat_pajak' => null,
+        'sippt' => null,
+        'tabel_ceklis_dokumen' => null,
+        'tabel_ceklis_teknis' => null,
+        'surat_setoran_retribusi_daerah' => null,
+        'surat_ketetapan_retribusi_daerah' => null,
+        'berita_acara_pemeriksaan' => null,
+    ];
+
+    // Special cases for specific IDs
+    if ($i >= 981 && $i <= 989) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = $i <= 982 ? '450.' : '900.';
+        $data['sumber_air'] = 'Air Tanah';
+    } elseif ($i >= 990 && $i <= 1000) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = $i == 993 ? 'Beton' : 'Kayu';
+        $data['daya_listrik'] = '4400.';
+        $data['dokumen_instalasi_listrik'] = 'Ada';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sistem_drainase'] = 'Ada';
+        $data['sumber_air'] = 'PAM';
+    }
+
+    databgdokumenmepbangunan::create($data);
+}
+
+
+
+for ($i = 1001; $i <= 1050; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'dokumen_lampiran_struktur' => null,
+        'mpk_rdkt' => null,
+        'dokumen_lampiran' => null,
+        'penangkal_kebakaran' => null,
+        'no_bundel_dok_teknis' => null,
+        'daya_listrik' => null,
+        'dokumen_instalasi_listrik' => null,
+        'instalasi_penangkal_listrik' => null,
+        'dokumen_pencahayaan' => null,
+        'dokumen_instalasi_komunikasi' => null,
+        'instalasi_komunikasi' => null,
+        'pengolahan_limbah_domestik' => null,
+        'sistem_sanitasi' => null,
+        'pengolahan_air_hujan' => null,
+        'sistem_drainase' => null,
+        'instalasi_gas' => null,
+        'dokumen_lampiran_sanitasi' => null,
+        'sumber_air' => null,
+        'biaya_retribusi' => null,
+        'surat_advis_krk' => null,
+        'surat_permohonan_imb' => null,
+        'surat_permohonan_slf' => null,
+        'fotocopy_identitas_pemohon' => null,
+        'surat_kuasa_imb' => null,
+        'surat_k3' => null,
+        'rekomendasi_desa' => null,
+        'rekom_kecamatan' => null,
+        'surat_kepemilikan_tanah_sewa' => null,
+        'copy_sertif_tanah' => null,
+        'surat_pajak' => null,
+        'sippt' => null,
+        'tabel_ceklis_dokumen' => null,
+        'tabel_ceklis_teknis' => null,
+        'surat_setoran_retribusi_daerah' => null,
+        'surat_ketetapan_retribusi_daerah' => null,
+        'berita_acara_pemeriksaan' => null,
+    ];
+
+    // 1001-1012: Similar to 990-1000 pattern
+    if ($i >= 1001 && $i <= 1012) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '4400.';
+        $data['dokumen_instalasi_listrik'] = 'Ada';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sistem_drainase'] = 'Ada';
+        $data['sumber_air'] = 'PAM';
+    }
+    // 1013-1028: New pattern with 5500/11000 daya_listrik and Air Tanah
+    elseif ($i >= 1013 && $i <= 1028) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i == 1014 || $i == 1026) ? 'Baja' : 'Kayu';
+        $data['dokumen_lampiran'] = ($i == 1014 || $i == 1026) ? 'Baja' : 'Kayu';
+        $data['daya_listrik'] = ($i == 1023) ? '11000' : '5500';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sistem_drainase'] = 'Ada';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1029-1037: All null
+    // 1038-1041: New pattern with 1300 daya_listrik
+    elseif ($i >= 1038 && $i <= 1041) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i == 1041) ? '' : 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '1300.';
+        $data['sumber_air'] = 'Air Tanah';
+    }
+    // 1042-1045: New pattern with 900 daya_listrik and Lain-Lain
+    elseif ($i >= 1042 && $i <= 1045) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = 'Kayu';
+        $data['dokumen_lampiran'] = 'Kayu';
+        $data['daya_listrik'] = '900.';
+        $data['sumber_air'] = 'Lain-Lain';
+    }
+    // 1046-1048: All null
+    // 1049-1050: New pattern with 32000 daya_listrik and PAM
+    elseif ($i >= 1049 && $i <= 1050) {
+        $data['dokumen_lampiran_struktur'] = 'Pondasi Dangkal';
+        $data['mpk_rdkt'] = ($i == 1049) ? 'Betom' : 'Beton'; // Note typo in 1049
+        $data['dokumen_lampiran'] = 'Beton';
+        $data['daya_listrik'] = '32000.';
+        $data['sistem_sanitasi'] = 'Ada';
+        $data['pengolahan_air_hujan'] = 'Ada';
+        $data['sumber_air'] = 'PAM';
+    }
+
+    databgdokumenmepbangunan::create($data);
+}
+
+
+
 
 
 // Records 115-132 (Khusus pattern)
