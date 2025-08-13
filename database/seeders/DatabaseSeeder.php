@@ -46568,6 +46568,127 @@ foreach ($datas as $id => $data) {
 }
 
 
+
+$datas = [
+    1103 => ['luastanah'=>'1505', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung Unit I', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>null],
+    1104 => ['luastanah'=>'1505', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung Unit II', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'266,22'],
+    1105 => ['luastanah'=>'1505', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung Unit III', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'74,4'],
+    1106 => ['luastanah'=>'1505', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'WC', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'19,84'],
+    1107 => ['luastanah'=>'1750', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'182'],
+    1108 => ['luastanah'=>'1750', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kelas', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'168'],
+    1109 => ['luastanah'=>'1750', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'WC', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'12'],
+    1110 => ['luastanah'=>'1350', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'48'],
+    1111 => ['luastanah'=>'1350', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'kelas', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'176'],
+    1112 => ['luastanah'=>'1350', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'48'],
+    1113 => ['luastanah'=>'1350', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kelas', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'176'],
+    1114 => ['luastanah'=>'1350', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Perpus', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'176'],
+    1115 => ['luastanah'=>'2350', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kelas 1', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'48'],
+    1116 => ['luastanah'=>'2350', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'R. Kantor&Kelas 2-3', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'157,5'],
+    1117 => ['luastanah'=>'2350', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'WC', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'15'],
+    1118 => ['luastanah'=>'2350', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kelas 4-6', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'157,5'],
+    1119 => ['luastanah'=>'2350', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'UKS', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'48'],
+    1120 => ['luastanah'=>'1430', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'88'],
+    1121 => ['luastanah'=>'1430', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gudang', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'56'],
+    1122 => ['luastanah'=>'1430', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Mushola', 'fungsibangunan'=>'Keagamaan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'28'],
+    1123 => ['luastanah'=>'1430', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kelas', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'72'],
+    1124 => ['luastanah'=>'1430', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kelas', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'225'],
+    1125 => ['luastanah'=>'1430', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kelas', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'135'],
+    1126 => ['luastanah'=>'1440', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung A', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'242,05'],
+    1127 => ['luastanah'=>'1440', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung B', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'19,08'],
+    1128 => ['luastanah'=>'1440', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung C', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'198,36'],
+    1129 => ['luastanah'=>'1440', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Mushola', 'fungsibangunan'=>'Keagamaan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'80,1'],
+    1130 => ['luastanah'=>'1440', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantin', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'17,5'],
+    1131 => ['luastanah'=>'4150', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung A', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'182'],
+    1132 => ['luastanah'=>'4150', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor Guru', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'56'],
+    1133 => ['luastanah'=>'4150', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Perpustakaan & Kelas 6', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'138'],
+    1134 => ['luastanah'=>'4150', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kelas 5', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'72'],
+    1135 => ['luastanah'=>'2903', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung 3', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'144'],
+    1136 => ['luastanah'=>'2903', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung 1', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'224,28'],
+    1137 => ['luastanah'=>'2903', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Mushola', 'fungsibangunan'=>'Keagamaan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'71,92'],
+    1138 => ['luastanah'=>'2903', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kamar Mandi Guru', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'18,91'],
+    1139 => ['luastanah'=>'2903', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'KM Putri', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'6,92'],
+    1140 => ['luastanah'=>'2903', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung 4', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'80,91'],
+    1141 => ['luastanah'=>'2903', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'R. Kelas & UKS', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'275,4'],
+    1142 => ['luastanah'=>'2903', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'KM Putra', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'9,66'],
+    1143 => ['luastanah'=>'1800', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung A', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'220,5'],
+    1144 => ['luastanah'=>'1800', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung C', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'52'],
+    1145 => ['luastanah'=>'1800', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung B', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'108'],
+    1146 => ['luastanah'=>'1800', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'WC', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'6,25'],
+    1147 => ['luastanah'=>'1750', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung A', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'450'],
+    1148 => ['luastanah'=>'1750', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung B', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'297'],
+    1149 => ['luastanah'=>'1750', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung C', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'49'],
+    1150 => ['luastanah'=>'1750', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung D', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'67,5'],
+];
+
+foreach ($datas as $id => $data) {
+    databgpeprofilbangunangedung::create(array_merge([
+        'databgkepemilikan_id' => $id,
+        'kdh' => null,
+        'ktb' => null,
+        'alamatbangunan' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ], $data));
+}
+
+$datas = [
+    1151 => ['luastanah'=>'1750', 'peruntukantanah'=>'Pendidikan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung E', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'6'],
+    1152 => ['luastanah'=>'806', 'peruntukantanah'=>'Kesehatan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Pustu Brabowan', 'fungsibangunan'=>'Kesehatan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'171'],
+    1153 => ['luastanah'=>'738,68', 'peruntukantanah'=>'Kesehatan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Pustu Ledok', 'fungsibangunan'=>'Kesehatan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'127,5'],
+    1155 => ['luastanah'=>null, 'peruntukantanah'=>'Pertanian', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Balai Penyuluan Pertanian', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'136'],
+    1158 => ['luastanah'=>'3565', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Gedung Kantor Desa', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'90'],
+    1159 => ['luastanah'=>'3565', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Baca', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'36'],
+    1160 => ['luastanah'=>'3565', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Perpustakaan', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'72'],
+    1161 => ['luastanah'=>'3565', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Baca', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'36'],
+    1162 => ['luastanah'=>'3565', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Pendopo', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'169'],
+    1163 => ['luastanah'=>'417', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Kantor', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'92,88'],
+    1164 => ['luastanah'=>'417', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Balai Desa', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'88'],
+    1165 => ['luastanah'=>'417', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Kades, Rapat, Dapur', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'57,54'],
+    1166 => ['luastanah'=>'417', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Mushola', 'fungsibangunan'=>'Keagamaan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'7,12'],
+    1167 => ['luastanah'=>'938', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Pendopo', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'143'],
+    1168 => ['luastanah'=>'938', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor Desa', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'96'],
+    1169 => ['luastanah'=>'938', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'PKK', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'52'],
+    1170 => ['luastanah'=>'552', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor Pelayanan', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'120'],
+    1171 => ['luastanah'=>'552', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'BPD & PKK', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'104'],
+    1172 => ['luastanah'=>'19560', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Kantor & Tamu', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'51'],
+    1173 => ['luastanah'=>'19560', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Pendopo', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'120,75'],
+    1174 => ['luastanah'=>'19560', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang PKK', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'46,8'],
+    1175 => ['luastanah'=>'19560', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Ruang Pelayanan', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'124'],
+    1176 => ['luastanah'=>'19560', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kamar Mandi', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'4'],
+    1177 => ['luastanah'=>'351,9', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor Pelayanan', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'112'],
+    1178 => ['luastanah'=>'351,9', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Pendopo', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'49,5'],
+    1179 => ['luastanah'=>'351,9', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Joglo', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'5'],
+    1181 => ['luastanah'=>'1000', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'127'],
+    1182 => ['luastanah'=>'1000', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Balai', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'110'],
+    1183 => ['luastanah'=>'450', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor Pelayanan', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'91'],
+    1184 => ['luastanah'=>'450', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Pendopo', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'160,65'],
+    1185 => ['luastanah'=>'450', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Mushola', 'fungsibangunan'=>'Keagamaan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'18'],
+    1186 => ['luastanah'=>'450', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'TK Musi Lestari', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'112'],
+    1187 => ['luastanah'=>'738,68', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'112'],
+    1188 => ['luastanah'=>'738,68', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Pendopo', 'fungsibangunan'=>'Pelayanan', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'117'],
+    1189 => ['luastanah'=>'1395', 'peruntukantanah'=>'Pelayanan', 'kdb'=>'60%', 'klb'=>'0,6', 'namabangunan'=>'Kantor', 'fungsibangunan'=>'Sosial Budaya', 'jumlahlantai'=>'1', 'luaslantaildasar'=>'230'],
+];
+
+foreach ($datas as $id => $data) {
+    databgpeprofilbangunangedung::create(array_merge([
+        'databgkepemilikan_id' => $id,
+        'kdh' => null,
+        'ktb' => null,
+        'alamatbangunan' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ], $data));
+}
+
+
 // SAMPAI SINI NEW
 
 // databgklasifikasi::create([
