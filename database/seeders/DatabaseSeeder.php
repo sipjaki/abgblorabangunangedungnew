@@ -46985,6 +46985,11 @@ for ($i = 974; $i <= 1189; $i++) {
 
 
 
+// MULAI LAGI BRO
+
+
+
+
 
 // // Records 115-132 (Khusus pattern)
 // for ($i = 115; $i <= 132; $i++) {
@@ -47077,6 +47082,994 @@ for ($i = 1; $i <= 973; $i++) {
         'dokumen_teknis_tanah' => null,
     ]);
 }
+
+
+
+
+
+for ($i = 974; $i <= 1189; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ];
+
+    // Special cases
+    switch ($i) {
+        case 981:
+            $data['koefisien_dasar_bangunan'] = 44.44;
+            $data['koefisien_lantai_bangunan'] = 0.44;
+            $data['garis_sempadan_bangunan'] = 9.5;
+            break;
+        case 982:
+            $data['koefisien_dasar_bangunan'] = 3.17;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 17.5;
+            break;
+        case 983:
+            $data['koefisien_dasar_bangunan'] = 11.34;
+            $data['koefisien_lantai_bangunan'] = 0.11;
+            $data['garis_sempadan_bangunan'] = 26;
+            break;
+        case 984:
+            $data['koefisien_dasar_bangunan'] = 8.50;
+            $data['koefisien_lantai_bangunan'] = 0.08;
+            $data['garis_sempadan_bangunan'] = 13;
+            break;
+        case 985:
+            $data['koefisien_dasar_bangunan'] = 3.86;
+            $data['koefisien_lantai_bangunan'] = 0.04;
+            $data['garis_sempadan_bangunan'] = 3;
+            break;
+        case 986:
+            $data['koefisien_dasar_bangunan'] = 18.14;
+            $data['koefisien_lantai_bangunan'] = 0.18;
+            $data['garis_sempadan_bangunan'] = 9;
+            break;
+        case 987:
+            $data['koefisien_dasar_bangunan'] = 7.24;
+            $data['koefisien_lantai_bangunan'] = 0.07;
+            $data['garis_sempadan_bangunan'] = 9;
+            break;
+        case 988:
+            $data['koefisien_dasar_bangunan'] = 26.73;
+            $data['koefisien_lantai_bangunan'] = 0.27;
+            $data['garis_sempadan_bangunan'] = 12;
+            break;
+        case 989:
+            $data['koefisien_dasar_bangunan'] = 6.70;
+            $data['koefisien_lantai_bangunan'] = 0.07;
+            $data['garis_sempadan_bangunan'] = 12;
+            break;
+        case 990:
+            $data['koefisien_dasar_bangunan'] = 0.94;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 19.2;
+            break;
+        case 991:
+            $data['koefisien_dasar_bangunan'] = 0.50;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 32.5;
+            break;
+        case 992:
+            $data['koefisien_dasar_bangunan'] = 0.60;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 32.5;
+            break;
+        case 993:
+            $data['koefisien_dasar_bangunan'] = 0.06;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 45;
+            break;
+        case 994:
+            $data['koefisien_dasar_bangunan'] = 0.27;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 45;
+            break;
+        case 995:
+            $data['koefisien_dasar_bangunan'] = 0.30;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 45;
+            break;
+        case 996:
+            $data['koefisien_dasar_bangunan'] = 0.23;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 45;
+            break;
+        case 997:
+            $data['koefisien_dasar_bangunan'] = 1.17;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 45;
+            break;
+        case 998:
+            $data['koefisien_dasar_bangunan'] = 0.04;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 45;
+            break;
+        case 999:
+            $data['koefisien_dasar_bangunan'] = 0.60;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 45;
+            break;
+        case 1000:
+            $data['koefisien_dasar_bangunan'] = 0.90;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 62;
+            break;
+        case 1001:
+            $data['koefisien_dasar_bangunan'] = 0.50;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 70.1;
+            break;
+        case 1002:
+            $data['koefisien_dasar_bangunan'] = 1.50;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 64.5;
+            break;
+        case 1003:
+            $data['koefisien_dasar_bangunan'] = 0.13;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 28;
+            break;
+        case 1004:
+            $data['koefisien_dasar_bangunan'] = 0.90;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 78.5;
+            break;
+        case 1005:
+            $data['koefisien_dasar_bangunan'] = 0.90;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 95.8;
+            break;
+        case 1006:
+            $data['koefisien_dasar_bangunan'] = 0.90;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 95.8;
+            break;
+        case 1007:
+            $data['koefisien_dasar_bangunan'] = 0.60;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 95.8;
+            break;
+        case 1008:
+            $data['koefisien_dasar_bangunan'] = 0.06;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 112.2;
+            break;
+        case 1009:
+            $data['koefisien_dasar_bangunan'] = 0.06;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 129;
+            break;
+        case 1010:
+            $data['koefisien_dasar_bangunan'] = 0.06;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 129;
+            break;
+        case 1011:
+            $data['koefisien_dasar_bangunan'] = 0.06;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 107.7;
+            break;
+        case 1012:
+            $data['koefisien_dasar_bangunan'] = 0.06;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 107.7;
+            break;
+        case 1013:
+            $data['koefisien_dasar_bangunan'] = 0.67;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 5;
+            break;
+        case 1014:
+            $data['koefisien_dasar_bangunan'] = 2.23;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 44.7;
+            break;
+        case 1015:
+            $data['koefisien_dasar_bangunan'] = 3.8;
+            $data['koefisien_lantai_bangunan'] = 0.04;
+            $data['garis_sempadan_bangunan'] = 66;
+            break;
+        case 1016:
+            $data['koefisien_dasar_bangunan'] = 4.8;
+            $data['koefisien_lantai_bangunan'] = 0.05;
+            $data['garis_sempadan_bangunan'] = 66;
+            break;
+        case 1017:
+            $data['koefisien_dasar_bangunan'] = 5.8;
+            $data['koefisien_lantai_bangunan'] = 0.06;
+            $data['garis_sempadan_bangunan'] = 57;
+            break;
+        case 1018:
+            $data['koefisien_dasar_bangunan'] = 2.6;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 98.2;
+            break;
+        case 1019:
+            $data['koefisien_dasar_bangunan'] = 0.65;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 80.7;
+            break;
+        case 1020:
+            $data['koefisien_dasar_bangunan'] = 2.6;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 98.2;
+            break;
+        case 1021:
+            $data['koefisien_dasar_bangunan'] = 2.6;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 98.2;
+            break;
+        case 1022:
+            $data['koefisien_dasar_bangunan'] = 2.6;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 98.2;
+            break;
+        case 1023:
+            $data['koefisien_dasar_bangunan'] = 0.9;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 44.8;
+            break;
+        case 1024:
+            $data['koefisien_dasar_bangunan'] = 1.11;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 66;
+            break;
+        case 1025:
+            $data['koefisien_dasar_bangunan'] = 0.41;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 105;
+            break;
+        case 1026:
+            $data['koefisien_dasar_bangunan'] = 0.4;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 110;
+            break;
+        case 1027:
+            $data['koefisien_dasar_bangunan'] = 0.5;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 111;
+            break;
+        case 1028:
+            $data['koefisien_dasar_bangunan'] = 0.99;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 112;
+            break;
+        case 1038:
+            $data['koefisien_dasar_bangunan'] = 4.90;
+            $data['koefisien_lantai_bangunan'] = 0.05;
+            $data['garis_sempadan_bangunan'] = 6.2;
+            break;
+        case 1039:
+            $data['koefisien_dasar_bangunan'] = 4.69;
+            $data['koefisien_lantai_bangunan'] = 0.05;
+            $data['garis_sempadan_bangunan'] = 49;
+            break;
+        case 1040:
+            $data['koefisien_dasar_bangunan'] = 2.10;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 41.3;
+            break;
+        case 1041:
+            $data['koefisien_dasar_bangunan'] = 0.70;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 51;
+            break;
+        case 1042:
+            $data['koefisien_dasar_bangunan'] = 15.63;
+            $data['koefisien_lantai_bangunan'] = 0.16;
+            $data['garis_sempadan_bangunan'] = 3;
+            break;
+        case 1043:
+            $data['koefisien_dasar_bangunan'] = 5.47;
+            $data['koefisien_lantai_bangunan'] = 0.05;
+            $data['garis_sempadan_bangunan'] = 46;
+            break;
+        case 1044:
+            $data['koefisien_dasar_bangunan'] = 0.56;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 43;
+            break;
+        case 1045:
+            $data['koefisien_dasar_bangunan'] = 3.13;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 60;
+            break;
+        case 1046:
+        case 1047:
+        case 1048:
+            $data['koefisien_dasar_bangunan'] = null;
+            $data['koefisien_lantai_bangunan'] = null;
+            break;
+        case 1049:
+            $data['koefisien_dasar_bangunan'] = 25.45;
+            $data['koefisien_lantai_bangunan'] = 0.25;
+            $data['garis_sempadan_bangunan'] = 22.8;
+            break;
+        case 1050:
+            $data['koefisien_dasar_bangunan'] = 4.58;
+            $data['koefisien_lantai_bangunan'] = 0.05;
+            $data['garis_sempadan_bangunan'] = 22.4;
+            $data['jenis_transportasi_bg'] = 'Tangga';
+            break;
+        case 1051:
+            $data['koefisien_dasar_bangunan'] = 0.16;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 39.8;
+            break;
+        case 1052:
+            $data['koefisien_dasar_bangunan'] = null;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 40;
+            break;
+        case 1053:
+            $data['koefisien_dasar_bangunan'] = 6.88;
+            $data['koefisien_lantai_bangunan'] = 0.07;
+            $data['garis_sempadan_bangunan'] = 18.5;
+            $data['jenis_transportasi_bg'] = 'Tangga';
+            break;
+        case 1054:
+            $data['koefisien_dasar_bangunan'] = 4.36;
+            $data['koefisien_lantai_bangunan'] = 0.04;
+            $data['garis_sempadan_bangunan'] = 18.2;
+            break;
+        case 1055:
+            $data['koefisien_dasar_bangunan'] = 1.76;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 25;
+            break;
+        case 1056:
+            $data['koefisien_dasar_bangunan'] = 0.93;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 40;
+            break;
+        case 1057:
+            $data['koefisien_dasar_bangunan'] = 2.06;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 7.1;
+            break;
+        case 1058:
+            $data['koefisien_dasar_bangunan'] = 23.66;
+            $data['koefisien_lantai_bangunan'] = 0.24;
+            $data['garis_sempadan_bangunan'] = 18.1;
+            break;
+        case 1059:
+            $data['koefisien_dasar_bangunan'] = 4.33;
+            $data['koefisien_lantai_bangunan'] = 0.04;
+            $data['garis_sempadan_bangunan'] = 35.5;
+            break;
+        case 1060:
+            $data['koefisien_dasar_bangunan'] = 2.39;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 23.5;
+            break;
+        case 1061:
+            $data['koefisien_dasar_bangunan'] = 0.81;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 43.5;
+            break;
+        case 1062:
+            $data['koefisien_dasar_bangunan'] = 1.72;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 38.5;
+            break;
+        case 1063:
+            $data['koefisien_dasar_bangunan'] = 2.4;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 7.7;
+            break;
+        case 1064:
+            $data['koefisien_dasar_bangunan'] = 0.78;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 12.5;
+            break;
+        case 1065:
+            $data['koefisien_dasar_bangunan'] = 8.06;
+            $data['koefisien_lantai_bangunan'] = 0.08;
+            $data['garis_sempadan_bangunan'] = 12.5;
+            break;
+        case 1066:
+            $data['koefisien_dasar_bangunan'] = 5.01;
+            $data['koefisien_lantai_bangunan'] = 0.05;
+            $data['garis_sempadan_bangunan'] = 12.5;
+            break;
+        case 1067:
+            $data['koefisien_dasar_bangunan'] = 2.76;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 3.73;
+            break;
+        case 1068:
+            $data['koefisien_dasar_bangunan'] = 0.96;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 21;
+            break;
+        case 1069:
+            $data['koefisien_dasar_bangunan'] = 10.52;
+            $data['koefisien_lantai_bangunan'] = 0.11;
+            $data['garis_sempadan_bangunan'] = 5;
+            break;
+        case 1070:
+            $data['koefisien_dasar_bangunan'] = 0.78;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 32;
+            break;
+        case 1071:
+            $data['koefisien_dasar_bangunan'] = 6.93;
+            $data['koefisien_lantai_bangunan'] = 0.07;
+            $data['garis_sempadan_bangunan'] = 38;
+            break;
+        case 1072:
+            $data['koefisien_dasar_bangunan'] = 3.71;
+            $data['koefisien_lantai_bangunan'] = 0.04;
+            $data['garis_sempadan_bangunan'] = 46;
+            break;
+        case 1073:
+            $data['koefisien_dasar_bangunan'] = 8.57;
+            $data['koefisien_lantai_bangunan'] = 0.09;
+            $data['garis_sempadan_bangunan'] = 46;
+            break;
+        case 1074:
+            $data['koefisien_dasar_bangunan'] = 4.29;
+            $data['koefisien_lantai_bangunan'] = 0.04;
+            $data['garis_sempadan_bangunan'] = 46;
+            break;
+        case 1075:
+        case 1076:
+        case 1077:
+        case 1078:
+        case 1079:
+        case 1080:
+        case 1081:
+        case 1082:
+        case 1083:
+        case 1084:
+        case 1085:
+            $data['koefisien_dasar_bangunan'] = null;
+            $data['koefisien_lantai_bangunan'] = null;
+            break;
+        case 1086:
+            $data['koefisien_dasar_bangunan'] = 6.5;
+            $data['koefisien_lantai_bangunan'] = 0.07;
+            $data['garis_sempadan_bangunan'] = 6;
+            break;
+        case 1087:
+            $data['koefisien_dasar_bangunan'] = 7.2;
+            $data['koefisien_lantai_bangunan'] = 0.07;
+            $data['garis_sempadan_bangunan'] = 20;
+            break;
+        case 1088:
+            $data['koefisien_dasar_bangunan'] = 2.8;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 19;
+            break;
+        case 1089:
+            $data['koefisien_dasar_bangunan'] = 26.4;
+            $data['koefisien_lantai_bangunan'] = 0.26;
+            $data['garis_sempadan_bangunan'] = 15.5;
+            break;
+        case 1090:
+            $data['koefisien_dasar_bangunan'] = 6;
+            $data['koefisien_lantai_bangunan'] = 0.06;
+            $data['garis_sempadan_bangunan'] = 6;
+            break;
+        case 1091:
+            $data['koefisien_dasar_bangunan'] = 24.80;
+            $data['koefisien_lantai_bangunan'] = 0.25;
+            $data['garis_sempadan_bangunan'] = 9.3;
+            break;
+        case 1092:
+            $data['koefisien_dasar_bangunan'] = 6.43;
+            $data['koefisien_lantai_bangunan'] = 0.06;
+            $data['garis_sempadan_bangunan'] = 33;
+            break;
+        case 1093:
+            $data['koefisien_dasar_bangunan'] = 2.14;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 33;
+            break;
+        case 1094:
+            $data['koefisien_dasar_bangunan'] = 21.12;
+            $data['koefisien_lantai_bangunan'] = 0.21;
+            $data['garis_sempadan_bangunan'] = 9.3;
+            break;
+        case 1095:
+            $data['koefisien_dasar_bangunan'] = 9.67;
+            $data['koefisien_lantai_bangunan'] = 0.10;
+            $data['garis_sempadan_bangunan'] = 7;
+            break;
+        case 1096:
+            $data['koefisien_dasar_bangunan'] = 12.43;
+            $data['koefisien_lantai_bangunan'] = 0.12;
+            $data['garis_sempadan_bangunan'] = 28;
+            break;
+        case 1097:
+            $data['koefisien_dasar_bangunan'] = 7.89;
+            $data['koefisien_lantai_bangunan'] = 0.08;
+            $data['garis_sempadan_bangunan'] = 9;
+            break;
+        case 1098:
+            $data['koefisien_dasar_bangunan'] = 3.22;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 3;
+            break;
+        case 1099:
+            $data['koefisien_dasar_bangunan'] = 0.53;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 28;
+            break;
+        case 1100:
+        case 1101:
+        case 1102:
+            $data['koefisien_dasar_bangunan'] = null;
+            $data['koefisien_lantai_bangunan'] = null;
+            break;
+        case 1103:
+            $data['koefisien_dasar_bangunan'] = 14.24;
+            $data['koefisien_lantai_bangunan'] = 0.14;
+            $data['garis_sempadan_bangunan'] = 8;
+            break;
+        case 1104:
+            $data['koefisien_dasar_bangunan'] = 17.69;
+            $data['koefisien_lantai_bangunan'] = 0.18;
+            $data['garis_sempadan_bangunan'] = 22.5;
+            break;
+        case 1105:
+            $data['koefisien_dasar_bangunan'] = 4.96;
+            $data['koefisien_lantai_bangunan'] = 0.05;
+            $data['garis_sempadan_bangunan'] = 15.5;
+            break;
+        case 1106:
+            $data['koefisien_dasar_bangunan'] = 1.32;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 30;
+            break;
+        case 1107:
+            $data['koefisien_dasar_bangunan'] = 10.4;
+            $data['koefisien_lantai_bangunan'] = 0.10;
+            $data['garis_sempadan_bangunan'] = 6;
+            break;
+        case 1108:
+            $data['koefisien_dasar_bangunan'] = 9.6;
+            $data['koefisien_lantai_bangunan'] = 0.10;
+            $data['garis_sempadan_bangunan'] = 35;
+            break;
+        case 1109:
+            $data['koefisien_dasar_bangunan'] = 0.69;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 38;
+            break;
+        case 1110:
+            $data['koefisien_dasar_bangunan'] = 10.67;
+            $data['koefisien_lantai_bangunan'] = 0.11;
+            $data['garis_sempadan_bangunan'] = 15;
+            break;
+        case 1111:
+            $data['koefisien_dasar_bangunan'] = 39.11;
+            $data['koefisien_lantai_bangunan'] = 0.39;
+            $data['garis_sempadan_bangunan'] = 15;
+            break;
+        case 1112:
+            $data['koefisien_dasar_bangunan'] = 10.67;
+            $data['koefisien_lantai_bangunan'] = 0.11;
+            $data['garis_sempadan_bangunan'] = 15;
+            break;
+        case 1113:
+            $data['koefisien_dasar_bangunan'] = 39.11;
+            $data['koefisien_lantai_bangunan'] = 0.39;
+            $data['garis_sempadan_bangunan'] = 30;
+            break;
+        case 1114:
+            $data['koefisien_dasar_bangunan'] = 39.11;
+            $data['koefisien_lantai_bangunan'] = 0.39;
+            $data['garis_sempadan_bangunan'] = 30;
+            break;
+        case 1115:
+            $data['koefisien_dasar_bangunan'] = 2.04;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 14;
+            break;
+        case 1116:
+            $data['koefisien_dasar_bangunan'] = 6.70;
+            $data['koefisien_lantai_bangunan'] = 0.07;
+            $data['garis_sempadan_bangunan'] = 22;
+            break;
+        case 1117:
+            $data['koefisien_dasar_bangunan'] = 0.64;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 47.5;
+            break;
+        case 1118:
+            $data['koefisien_dasar_bangunan'] = 6.70;
+            $data['koefisien_lantai_bangunan'] = 0.07;
+            $data['garis_sempadan_bangunan'] = 48.5;
+            break;
+        case 1119:
+            $data['koefisien_dasar_bangunan'] = 2.04;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 38;
+            break;
+        case 1120:
+            $data['koefisien_dasar_bangunan'] = 6.15;
+            $data['koefisien_lantai_bangunan'] = 0.06;
+            $data['garis_sempadan_bangunan'] = 15;
+            break;
+        case 1121:
+            $data['koefisien_dasar_bangunan'] = 3.92;
+            $data['koefisien_lantai_bangunan'] = 0.04;
+            $data['garis_sempadan_bangunan'] = 15;
+            break;
+        case 1122:
+            $data['koefisien_dasar_bangunan'] = 1.96;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 15;
+            break;
+        case 1123:
+            $data['koefisien_dasar_bangunan'] = 5.03;
+            $data['koefisien_lantai_bangunan'] = 0.05;
+            $data['garis_sempadan_bangunan'] = 30;
+            break;
+        case 1124:
+            $data['koefisien_dasar_bangunan'] = 15.73;
+            $data['koefisien_lantai_bangunan'] = 0.16;
+            $data['garis_sempadan_bangunan'] = 30;
+            break;
+        case 1125:
+            $data['koefisien_dasar_bangunan'] = 9.44;
+            $data['koefisien_lantai_bangunan'] = 0.09;
+            $data['garis_sempadan_bangunan'] = 30;
+            break;
+        case 1126:
+            $data['koefisien_dasar_bangunan'] = 16.81;
+            $data['koefisien_lantai_bangunan'] = 0.17;
+            $data['garis_sempadan_bangunan'] = 1.3;
+            break;
+        case 1127:
+            $data['koefisien_dasar_bangunan'] = 1.33;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 25.5;
+            break;
+        case 1128:
+            $data['koefisien_dasar_bangunan'] = 13.78;
+            $data['koefisien_lantai_bangunan'] = 0.14;
+            $data['garis_sempadan_bangunan'] = 9.5;
+            break;
+        case 1129:
+            $data['koefisien_dasar_bangunan'] = 5.56;
+            $data['koefisien_lantai_bangunan'] = 0.06;
+            $data['garis_sempadan_bangunan'] = 1.6;
+            break;
+        case 1130:
+            $data['koefisien_dasar_bangunan'] = 1.22;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 17.5;
+            break;
+        case 1131:
+            $data['nilaibgdidirikan'] = 'Rp92.000.000,00';
+            $data['koefisien_dasar_bangunan'] = 4.39;
+            $data['koefisien_lantai_bangunan'] = 0.04;
+            $data['garis_sempadan_bangunan'] = 24;
+            break;
+        case 1132:
+            $data['nilaibgdidirikan'] = 'Rp80.000.000,00';
+            $data['koefisien_dasar_bangunan'] = 1.39;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 24;
+            break;
+        case 1133:
+            $data['nilaibgdidirikan'] = 'Rp345.456.000,00';
+            $data['koefisien_dasar_bangunan'] = 1.73;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 24;
+            break;
+        case 1134:
+            $data['nilaibgdidirikan'] = 'Rp104.800.000,00';
+            $data['koefisien_dasar_bangunan'] = 1.73;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 24;
+            break;
+        case 1135:
+            $data['koefisien_dasar_bangunan'] = 4.96;
+            $data['koefisien_lantai_bangunan'] = 0.05;
+            $data['garis_sempadan_bangunan'] = 6;
+            break;
+        case 1136:
+            $data['koefisien_dasar_bangunan'] = 7.73;
+            $data['koefisien_lantai_bangunan'] = 0.08;
+            $data['garis_sempadan_bangunan'] = 17;
+            break;
+        case 1137:
+            $data['koefisien_dasar_bangunan'] = 2.48;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 6;
+            break;
+        case 1138:
+            $data['koefisien_dasar_bangunan'] = 0.65;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 26.5;
+            break;
+        case 1139:
+            $data['koefisien_dasar_bangunan'] = 0.24;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 26.5;
+            break;
+        case 1140:
+            $data['koefisien_dasar_bangunan'] = 2.79;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 32;
+            break;
+        case 1141:
+            $data['koefisien_dasar_bangunan'] = 9.49;
+            $data['koefisien_lantai_bangunan'] = 0.09;
+            $data['garis_sempadan_bangunan'] = 5.7;
+            break;
+        case 1142:
+            $data['koefisien_dasar_bangunan'] = 0.33;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 35.5;
+            break;
+        case 1143:
+            $data['koefisien_dasar_bangunan'] = 12.25;
+            $data['koefisien_lantai_bangunan'] = 0.12;
+            $data['garis_sempadan_bangunan'] = 8.5;
+            break;
+        case 1144:
+            $data['koefisien_dasar_bangunan'] = 2.89;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 8.5;
+            break;
+        case 1145:
+            $data['koefisien_dasar_bangunan'] = 6;
+            $data['koefisien_lantai_bangunan'] = 0.06;
+            $data['garis_sempadan_bangunan'] = 28;
+            break;
+        case 1146:
+            $data['koefisien_dasar_bangunan'] = 0.35;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 35;
+            break;
+        case 1147:
+            $data['koefisien_dasar_bangunan'] = 25.71;
+            $data['koefisien_lantai_bangunan'] = 0.26;
+            $data['garis_sempadan_bangunan'] = 5;
+            break;
+        case 1148:
+            $data['koefisien_dasar_bangunan'] = 16.97;
+            $data['koefisien_lantai_bangunan'] = 0.17;
+            $data['garis_sempadan_bangunan'] = 48;
+            break;
+        case 1149:
+            $data['koefisien_dasar_bangunan'] = 2.80;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 40;
+            break;
+        case 1150:
+            $data['koefisien_dasar_bangunan'] = 3.86;
+            $data['koefisien_lantai_bangunan'] = 0.04;
+            $data['garis_sempadan_bangunan'] = 31;
+            break;
+        case 1151:
+            $data['koefisien_dasar_bangunan'] = 0.34;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 34;
+            break;
+        case 1152:
+            $data['koefisien_dasar_bangunan'] = 21.22;
+            $data['koefisien_lantai_bangunan'] = 0.21;
+            $data['garis_sempadan_bangunan'] = 5.9;
+            break;
+        case 1153:
+            $data['koefisien_dasar_bangunan'] = 17.26;
+            $data['koefisien_lantai_bangunan'] = 0.17;
+            $data['garis_sempadan_bangunan'] = 3;
+            break;
+        case 1154:
+            $data['koefisien_dasar_bangunan'] = null;
+            $data['koefisien_lantai_bangunan'] = null;
+            break;
+        case 1155:
+            $data['koefisien_dasar_bangunan'] = 100;
+            $data['koefisien_lantai_bangunan'] = 1.00;
+            $data['garis_sempadan_bangunan'] = 14;
+            break;
+        case 1156:
+        case 1157:
+            $data['koefisien_dasar_bangunan'] = null;
+            $data['koefisien_lantai_bangunan'] = null;
+            break;
+        case 1158:
+            $data['koefisien_dasar_bangunan'] = 2.52;
+            $data['koefisien_lantai_bangunan'] = 0.03;
+            $data['garis_sempadan_bangunan'] = 54;
+            $data['gambar_teknis_rencana'] = 'Ada';
+            $data['gambar_sesuai_pelaksana'] = 'Iya';
+            break;
+        case 1159:
+            $data['koefisien_dasar_bangunan'] = 1.01;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 54;
+            $data['gambar_teknis_rencana'] = 'Ada';
+            $data['gambar_sesuai_pelaksana'] = 'Iya';
+            break;
+        case 1160:
+            $data['koefisien_dasar_bangunan'] = 2.02;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 62;
+            $data['gambar_teknis_rencana'] = 'Ada';
+            $data['gambar_sesuai_pelaksana'] = 'Iya';
+            break;
+        case 1161:
+            $data['koefisien_dasar_bangunan'] = 1.01;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 54;
+            $data['gambar_teknis_rencana'] = 'Ada';
+            $data['gambar_sesuai_pelaksana'] = 'Iya';
+            break;
+        case 1162:
+            $data['koefisien_dasar_bangunan'] = 4.74;
+            $data['koefisien_lantai_bangunan'] = 0.05;
+            $data['garis_sempadan_bangunan'] = 54;
+            $data['gambar_teknis_rencana'] = 'Ada';
+            $data['gambar_sesuai_pelaksana'] = 'Iya';
+            break;
+        case 1163:
+            $data['koefisien_dasar_bangunan'] = 22.27;
+            $data['koefisien_lantai_bangunan'] = 0.22;
+            $data['garis_sempadan_bangunan'] = 12;
+            break;
+        case 1164:
+            $data['koefisien_dasar_bangunan'] = 21.10;
+            $data['koefisien_lantai_bangunan'] = 0.21;
+            $data['garis_sempadan_bangunan'] = 6;
+            break;
+        case 1165:
+            $data['koefisien_dasar_bangunan'] = 13.80;
+            $data['koefisien_lantai_bangunan'] = 0.14;
+            $data['garis_sempadan_bangunan'] = 19.2;
+            break;
+        case 1166:
+            $data['koefisien_dasar_bangunan'] = 1.71;
+            $data['koefisien_lantai_bangunan'] = 0.02;
+            $data['garis_sempadan_bangunan'] = 3;
+            break;
+        case 1167:
+            $data['koefisien_dasar_bangunan'] = 15.25;
+            $data['koefisien_lantai_bangunan'] = 0.15;
+            $data['garis_sempadan_bangunan'] = 18;
+            break;
+        case 1168:
+            $data['koefisien_dasar_bangunan'] = 10.23;
+            $data['koefisien_lantai_bangunan'] = 0.10;
+            $data['garis_sempadan_bangunan'] = 21;
+            break;
+        case 1169:
+            $data['koefisien_dasar_bangunan'] = 5.54;
+            $data['koefisien_lantai_bangunan'] = 0.06;
+            $data['garis_sempadan_bangunan'] = 17;
+            break;
+        case 1170:
+            $data['koefisien_dasar_bangunan'] = 21.74;
+            $data['koefisien_lantai_bangunan'] = 0.22;
+            $data['garis_sempadan_bangunan'] = 25;
+            break;
+        case 1171:
+            $data['koefisien_dasar_bangunan'] = 18.84;
+            $data['koefisien_lantai_bangunan'] = 0.19;
+            $data['garis_sempadan_bangunan'] = 15;
+            break;
+        case 1172:
+            $data['koefisien_dasar_bangunan'] = 0.26;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 17;
+            break;
+        case 1173:
+            $data['koefisien_dasar_bangunan'] = 0.62;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 6;
+            break;
+        case 1174:
+            $data['koefisien_dasar_bangunan'] = 0.24;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 6;
+            break;
+        case 1175:
+            $data['koefisien_dasar_bangunan'] = 0.63;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 6;
+            break;
+        case 1176:
+            $data['koefisien_dasar_bangunan'] = 0.02;
+            $data['koefisien_lantai_bangunan'] = 0.00;
+            $data['garis_sempadan_bangunan'] = 26;
+            break;
+        case 1177:
+            $data['koefisien_dasar_bangunan'] = 31.83;
+            $data['koefisien_lantai_bangunan'] = 0.32;
+            $data['garis_sempadan_bangunan'] = 16;
+            break;
+        case 1178:
+            $data['koefisien_dasar_bangunan'] = 14.07;
+            $data['koefisien_lantai_bangunan'] = 0.14;
+            $data['garis_sempadan_bangunan'] = 16;
+            break;
+        case 1179:
+            $data['koefisien_dasar_bangunan'] = 1.42;
+            $data['koefisien_lantai_bangunan'] = 0.01;
+            $data['garis_sempadan_bangunan'] = 8.5;
+            break;
+        case 1180:
+            $data['koefisien_dasar_bangunan'] = null;
+            $data['koefisien_lantai_bangunan'] = '#VALUE!';
+            break;
+        case 1181:
+            $data['koefisien_dasar_bangunan'] = 12.7;
+            $data['koefisien_lantai_bangunan'] = 0.13;
+            $data['garis_sempadan_bangunan'] = 14;
+            break;
+        case 1182:
+            $data['koefisien_dasar_bangunan'] = 11;
+            $data['koefisien_lantai_bangunan'] = 0.11;
+            $data['garis_sempadan_bangunan'] = 14;
+            break;
+        case 1183:
+            $data['koefisien_dasar_bangunan'] = 20.22;
+            $data['koefisien_lantai_bangunan'] = 0.20;
+            $data['garis_sempadan_bangunan'] = 23.3;
+            break;
+        case 1184:
+            $data['koefisien_dasar_bangunan'] = 35.70;
+            $data['koefisien_lantai_bangunan'] = 0.36;
+            $data['garis_sempadan_bangunan'] = 8;
+            break;
+        case 1185:
+            $data['koefisien_dasar_bangunan'] = 4.00;
+            $data['koefisien_lantai_bangunan'] = 0.04;
+            $data['garis_sempadan_bangunan'] = 19.3;
+            break;
+        case 1186:
+            $data['koefisien_dasar_bangunan'] = 24.89;
+            $data['koefisien_lantai_bangunan'] = 0.25;
+            $data['garis_sempadan_bangunan'] = 19.3;
+            break;
+        case 1187:
+            $data['koefisien_dasar_bangunan'] = 15.2;
+            $data['koefisien_lantai_bangunan'] = 0.15;
+            $data['garis_sempadan_bangunan'] = 9;
+            break;
+        case 1188:
+            $data['koefisien_dasar_bangunan'] = 15.8;
+            $data['koefisien_lantai_bangunan'] = 0.16;
+            $data['garis_sempadan_bangunan'] = 10;
+            break;
+        case 1189:
+            $data['koefisien_dasar_bangunan'] = 16.49;
+            $data['koefisien_lantai_bangunan'] = 0.16;
+            $data['garis_sempadan_bangunan'] = 24;
+            break;
+    }
+
+    databgintensitasbangunan::create($data);
+}
+
+
+
 
 // DATA BARU PENDATAAN BANGUNAN GEDUNG DOKUMEN MEP STRUKTUB BANGUNAN
 for ($i = 1; $i <= 973; $i++) {
