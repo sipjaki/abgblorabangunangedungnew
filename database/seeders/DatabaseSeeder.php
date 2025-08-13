@@ -47084,9 +47084,6 @@ for ($i = 1; $i <= 973; $i++) {
 }
 
 
-
-
-
 for ($i = 974; $i <= 1189; $i++) {
     $data = [
         'databgkepemilikan_id' => $i,
@@ -48067,6 +48064,7 @@ for ($i = 974; $i <= 1189; $i++) {
 
     databgintensitasbangunan::create($data);
 }
+
 
 
 
