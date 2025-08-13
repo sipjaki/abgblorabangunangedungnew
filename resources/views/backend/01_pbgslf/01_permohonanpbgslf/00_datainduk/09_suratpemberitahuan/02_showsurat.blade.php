@@ -730,27 +730,40 @@ th {
     </tr>
     <tr>
         <td>2.</td>
-        <td>Informasi KRK/KRPR*</td>
+        <td>Dokumen Lingkungan</td>
         <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas2 ?? '-' }}</td>
         <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas2 ?? '-' }}</td>
     </tr>
-    <tr>
+    {{-- <tr>
         <td>3.</td>
         <td>Surat Perjanjian pemanfaatan tanah antara pemilik tanah dan Pemilik Bangunan Gedung (Dalam hal pemilik tanah bukan pemilik bangunan gedung)</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas3 ?? '-' }}</td>
+        <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas3 ?? '-' }}</td>
+    </tr> --}}
+    <tr>
+        <td>3.</td>
+        <td>Informasi KRK/KKPR</td>
         <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas3 ?? '-' }}</td>
         <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas3 ?? '-' }}</td>
     </tr>
     <tr>
         <td>4.</td>
-        <td>Dokumen lingkungan sesuai peraturan perundangan (AMDAL/AMDAL Lalin, UKL/UPL, SPPL)/Izin Lokasi*</td>
+        <td>Data Penyedia Jasa Perencana/ Perorangan </td>
         <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas4 ?? '-' }}</td>
         <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas4 ?? '-' }}</td>
     </tr>
     <tr>
         <td>5.</td>
-        <td>Berkas Dukung Lainnya </td>
+        <td>Surat Perjanjian Sewa Lahan</td>
         <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas5 ?? '-' }}</td>
         <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas5 ?? '-' }}</td>
+    </tr>
+    {{-- <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas5 ?? '-' }}</td> --}}
+    <tr>
+        <td>6.</td>
+        <td>Berkas Dukung Lainnya </td>
+        <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas5 ?? '-' }}</td>
+        <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas6 ?? '-' }}</td>
     </tr>
     {{-- <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas5 ?? '-' }}</td> --}}
     <tr>
