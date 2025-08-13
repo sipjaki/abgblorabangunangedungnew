@@ -404,7 +404,7 @@ th {
 
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> 1. Data Penyedia Jasa Konstruksi
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 1. Data Identitas Pemilik Bangunan (KTP/KITAS)
     </label>
 
     <div class="d-flex flex-column gap-2">
@@ -634,7 +634,7 @@ th {
 {{-- Berkas 4 --}}
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> 4. Data Identitas Pemilik Bangunan (KTP/KITAS)
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 4. Data Penyedia Jasa Konstruksi
     </label>
 
     <div class="d-flex flex-column gap-2">
