@@ -47086,10 +47086,6 @@ for ($i = 1; $i <= 973; $i++) {
 
 
 
-
-
-
-
 // DATA BARU PENDATAAN BANGUNAN GEDUNG DOKUMEN MEP STRUKTUB BANGUNAN
 for ($i = 1; $i <= 973; $i++) {
     databgdokumenmepbangunan::create([
