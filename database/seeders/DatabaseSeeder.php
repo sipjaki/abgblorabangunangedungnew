@@ -46833,7 +46833,387 @@ for ($i = 1; $i <= 973; $i++) {
 }
 
 
+for ($i = 974; $i <= 1030; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ];
+
+    // Special cases for IDs with specific values
+    if ($i >= 981 && $i <= 1030) {
+        $specificValues = [
+            981 => ['44,44', '0,44', '9,5'],
+            982 => ['3,17', '0,03', '17,5'],
+            983 => ['11,34', '0,11', '26'],
+            984 => ['8,50', '0,08', '13'],
+            985 => ['3,86', '0,04', '3'],
+            986 => ['18,14', '0,18', '9'],
+            987 => ['7,24', '0,07', '9'],
+            988 => ['26,73', '0,27', '12'],
+            989 => ['6,70', '0,07', '12'],
+            990 => ['0,94', '0,01', '19,2'],
+            991 => ['0,50', '0,01', '32,5'],
+            992 => ['0,60', '0,01', '32,5'],
+            993 => ['0,06', '0,00', '45'],
+            994 => ['0,27', '0,00', '45'],
+            995 => ['0,30', '0,00', '45'],
+            996 => ['0,23', '0,00', '45'],
+            997 => ['1,17', '0,01', '45'],
+            998 => ['0,04', '0,00', '45'],
+            999 => ['0,60', '0,01', '45'],
+            1000 => ['0,90', '0,01', '62'],
+            1001 => ['0,50', '0,01', '70,1'],
+            1002 => ['1,50', '0,02', '64,5'],
+            1003 => ['0,13', '0,00', '28'],
+            1004 => ['0,90', '0,01', '78,5'],
+            1005 => ['0,90', '0,01', '95,8'],
+            1006 => ['0,90', '0,01', '95,8'],
+            1007 => ['0,60', '0,01', '95,8'],
+            1008 => ['0,06', '0,00', '112,2'],
+            1009 => ['0,06', '0,00', '129'],
+            1010 => ['0,06', '0,00', '129'],
+            1011 => ['0,06', '0,00', '107,7'],
+            1012 => ['0,06', '0,00', '107,7'],
+            1013 => ['0,67', '0,01', '5'],
+            1014 => ['2,23', '0,02', '44,7'],
+            1015 => ['3,8', '0,04', '66'],
+            1016 => ['4,8', '0,05', '66'],
+            1017 => ['5,8', '0,06', '57'],
+            1018 => ['2,6', '0,03', '98,2'],
+            1019 => ['0,65', '0,01', '80,7'],
+            1020 => ['2,6', '0,03', '98,2'],
+            1021 => ['2,6', '0,03', '98,2'],
+            1022 => ['2,6', '0,03', '98,2'],
+            1023 => ['0,9', '0,01', '44,8'],
+            1024 => ['1,11', '0,01', '66'],
+            1025 => ['0,41', '0,00', '105'],
+            1026 => ['0,4', '0,00', '110'],
+            1027 => ['0,5', '0,01', '111'],
+            1028 => ['0,99', '0,01', '112'],
+        ];
+
+        if (array_key_exists($i, $specificValues)) {
+            $data['koefisien_dasar_bangunan'] = $specificValues[$i][0];
+            $data['koefisien_lantai_bangunan'] = $specificValues[$i][1];
+            $data['garis_sempadan_bangunan'] = $specificValues[$i][2];
+        }
+    }
+
+    databgintensitasbangunan::create($data);
+}
+
+
+for ($i = 1031; $i <= 1080; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ];
+
+    // Special cases for IDs with specific values
+    $specificValues = [
+        1038 => ['4,90', '0,05', '6,2'],
+        1039 => ['4,69', '0,05', '49'],
+        1040 => ['2,10', '0,02', '41,3'],
+        1041 => ['0,70', '0,01', '51'],
+        1042 => ['15,63', '0,16', '3'],
+        1043 => ['5,47', '0,05', '46'],
+        1044 => ['0,56', '0,01', '43'],
+        1045 => ['3,13', '0,03', '60'],
+        1046 => [null, null, null],
+        1047 => [null, null, null],
+        1048 => [null, null, null],
+        1049 => ['25,45', '0,25', '22,8'],
+        1050 => ['4,58', '0,05', '22,4', null, null, null, null, null, null, null, null, null, null, null, 'Tangga'],
+        1051 => ['0,16', '0,00', '39,8'],
+        1052 => ['', '0,00', '40'], // Empty string for first value
+        1053 => ['6,88', '0,07', '18,5', null, null, null, null, null, null, null, null, null, null, null, 'Tangga'],
+        1054 => ['4,36', '0,04', '18,2'],
+        1055 => ['1,76', '0,02', '25'],
+        1056 => ['0,93', '0,01', '40'],
+        1057 => ['2,06', '0,02', '7,1'],
+        1058 => ['23,66', '0,24', '18,1'],
+        1059 => ['4,33', '0,04', '35,5'],
+        1060 => ['2,39', '0,02', '23,5'],
+        1061 => ['0,81', '0,01', '43,5'],
+        1062 => ['1,72', '0,02', '38,5'],
+        1063 => ['2,4', '0,02', '7,7'],
+        1064 => ['0,78', '0,01', '12,5'],
+        1065 => ['8,06', '0,08', '12,5'],
+        1066 => ['5,01', '0,05', '12,5'],
+        1067 => ['2,76', '0,03', '3,73'],
+        1068 => ['0,96', '0,01', '21'],
+        1069 => ['10,52', '0,11', '5'],
+        1070 => ['0,78', '0,01', '32'],
+        1071 => ['6,93', '0,07', '38'],
+        1072 => ['3,71', '0,04', '46'],
+        1073 => ['8,57', '0,09', '46'],
+        1074 => ['4,29', '0,04', '46'],
+        1075 => [null, null, null],
+        1076 => [null, null, null],
+        1077 => [null, null, null],
+        1078 => [null, null, null],
+        1079 => [null, null, null],
+        1080 => [null, null, null],
+    ];
+
+    if (array_key_exists($i, $specificValues)) {
+        $data['koefisien_dasar_bangunan'] = $specificValues[$i][0];
+        $data['koefisien_lantai_bangunan'] = $specificValues[$i][1];
+        $data['garis_sempadan_bangunan'] = $specificValues[$i][2];
+
+        // Handle special case for ID 1050 and 1053 which have 'Tangga' value
+        if (in_array($i, [1050, 1053])) {
+            $data['dokumen_aksesibilitas'] = 'Tangga';
+        }
+    }
+
+    databgintensitasbangunan::create($data);
+}
+
+for ($i = 1081; $i <= 1150; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ];
+
+    // Special cases for IDs with specific values
+    $specificValues = [
+        1081 => [null, null, null],
+        1082 => [null, null, null],
+        1083 => [null, null, null],
+        1084 => [null, null, null],
+        1085 => [null, null, null],
+        1086 => ['6,5', '0,07', '6'],
+        1087 => ['7,2', '0,07', '20'],
+        1088 => ['2,8', '0,03', '19'],
+        1089 => ['26,4', '0,26', '15,5'],
+        1090 => ['6', '0,06', '6'],
+        1091 => ['24,80', '0,25', '9,3'],
+        1092 => ['6,43', '0,06', '33'],
+        1093 => ['2,14', '0,02', '33'],
+        1094 => ['21,12', '0,21', '9,3'],
+        1095 => ['9,67', '0,10', '7'],
+        1096 => ['12,43', '0,12', '28'],
+        1097 => ['7,89', '0,08', '9'],
+        1098 => ['3,22', '0,03', '3'],
+        1099 => ['0,53', '0,01', '28'],
+        1100 => [null, null, null],
+        1101 => [null, null, null],
+        1102 => [null, null, null],
+        1103 => ['14,24', '0,14', '8'],
+        1104 => ['17,69', '0,18', '22,5'],
+        1105 => ['4,96', '0,05', '15,5'],
+        1106 => ['1,32', '0,01', '30'],
+        1107 => ['10,4', '0,10', '6'],
+        1108 => ['9,6', '0,10', '35'],
+        1109 => ['0,69', '0,01', '38'],
+        1110 => ['10,67', '0,11', '15'],
+        1111 => ['39,11', '0,39', '15'],
+        1112 => ['10,67', '0,11', '15'],
+        1113 => ['39,11', '0,39', '30'],
+        1114 => ['39,11', '0,39', '30'],
+        1115 => ['2,04', '0,02', '14'],
+        1116 => ['6,70', '0,07', '22'],
+        1117 => ['0,64', '0,01', '47,5'],
+        1118 => ['6,70', '0,07', '48,5'],
+        1119 => ['2,04', '0,02', '38'],
+        1120 => ['6,15', '0,06', '15'],
+        1121 => ['3,92', '0,04', '15'],
+        1122 => ['1,96', '0,02', '15'],
+        1123 => ['5,03', '0,05', '30'],
+        1124 => ['15,73', '0,16', '30'],
+        1125 => ['9,44', '0,09', '30'],
+        1126 => ['16,81', '0,17', '1,3'],
+        1127 => ['1,33', '0,01', '25,5'],
+        1128 => ['13,78', '0,14', '9,5'],
+        1129 => ['5,56', '0,06', '1,6'],
+        1130 => ['1,22', '0,01', '17,5'],
+        1131 => ['4,39', '0,04', '24', 'Rp92.000.000,00'],
+        1132 => ['1,39', '0,01', '24', 'Rp80.000.000,00'],
+        1133 => ['1,73', '0,02', '24', 'Rp345.456.000,00'],
+        1134 => ['1,73', '0,02', '24', 'Rp104.800.000,00'],
+        1135 => ['4,96', '0,05', '6'],
+        1136 => ['7,73', '0,08', '17'],
+        1137 => ['2,48', '0,02', '6'],
+        1138 => ['0,65', '0,01', '26,5'],
+        1139 => ['0,24', '0,00', '26,5'],
+        1140 => ['2,79', '0,03', '32'],
+        1141 => ['9,49', '0,09', '5,7'],
+        1142 => ['0,33', '0,00', '35,5'],
+        1143 => ['12,25', '0,12', '8,5'],
+        1144 => ['2,89', '0,03', '8,5'],
+        1145 => ['6', '0,06', '28'],
+        1146 => ['0,35', '0,00', '35'],
+        1147 => ['25,71', '0,26', '5'],
+        1148 => ['16,97', '0,17', '48'],
+        1149 => ['2,80', '0,03', '40'],
+        1150 => ['3,86', '0,04', '31'],
+    ];
+
+    if (array_key_exists($i, $specificValues)) {
+        $data['koefisien_dasar_bangunan'] = $specificValues[$i][0];
+        $data['koefisien_lantai_bangunan'] = $specificValues[$i][1];
+        $data['garis_sempadan_bangunan'] = $specificValues[$i][2];
+
+        // Handle special case for IDs 1131-1134 which have nilaibgdidirikan values
+        if (in_array($i, [1131, 1132, 1133, 1134])) {
+            $data['nilaibgdidirikan'] = $specificValues[$i][3];
+        }
+    }
+
+    databgintensitasbangunan::create($data);
+}
+
+for ($i = 1151; $i <= 1189; $i++) {
+    $data = [
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ];
+
+    // Special cases for IDs with specific values
+    $specificValues = [
+        1151 => ['0,34', '0,00', '34'],
+        1152 => ['21,22', '0,21', '5,9'],
+        1153 => ['17,26', '0,17', '3'],
+        1154 => [null, null, null],
+        1155 => ['100', '1,00', '14'],
+        1156 => [null, null, null],
+        1157 => [null, null, null],
+        1158 => ['2,52', '0,03', '54', 'Ada', 'Iya'],
+        1159 => ['1,01', '0,01', '54', 'Ada', 'Iya'],
+        1160 => ['2,02', '0,02', '62', 'Ada', 'Iya'],
+        1161 => ['1,01', '0,01', '54', 'Ada', 'Iya'],
+        1162 => ['4,74', '0,05', '54', 'Ada', 'Iya'],
+        1163 => ['22,27', '0,22', '12'],
+        1164 => ['21,10', '0,21', '6'],
+        1165 => ['13,80', '0,14', '19,2'],
+        1166 => ['1,71', '0,02', '3'],
+        1167 => ['15,25', '0,15', '18'],
+        1168 => ['10,23', '0,10', '21'],
+        1169 => ['5,54', '0,06', '17'],
+        1170 => ['21,74', '0,22', '25'],
+        1171 => ['18,84', '0,19', '15'],
+        1172 => ['0,26', '0,00', '17'],
+        1173 => ['0,62', '0,01', '6'],
+        1174 => ['0,24', '0,00', '6'],
+        1175 => ['0,63', '0,01', '6'],
+        1176 => ['0,02', '0,00', '26'],
+        1177 => ['31,83', '0,32', '16'],
+        1178 => ['14,07', '0,14', '16'],
+        1179 => ['1,42', '0,01', '8,5'],
+        1180 => [null, '#VALUE!', null], // Special case for error value
+        1181 => ['12,7', '0,13', '14'],
+        1182 => ['11', '0,11', '14'],
+        1183 => ['20,22', '0,20', '23,3'],
+        1184 => ['35,70', '0,36', '8'],
+        1185 => ['4,00', '0,04', '19,3'],
+        1186 => ['24,89', '0,25', '19,3'],
+        1187 => ['15,2', '0,15', '9'],
+        1188 => ['15,8', '0,16', '10'],
+        1189 => ['16,49', '0,16', '24'],
+    ];
+
+    if (array_key_exists($i, $specificValues)) {
+        $data['koefisien_dasar_bangunan'] = $specificValues[$i][0];
+        $data['koefisien_lantai_bangunan'] = $specificValues[$i][1];
+        $data['garis_sempadan_bangunan'] = $specificValues[$i][2];
+
+        // Handle special case for IDs 1158-1162 which have additional values
+        if (in_array($i, [1158, 1159, 1160, 1161, 1162])) {
+            $data['gambar_teknis_rencana'] = $specificValues[$i][3];
+            $data['gambar_sesuai_pelaksana'] = $specificValues[$i][4];
+        }
+
+        // Handle special case for ID 1180 with #VALUE! error
+        if ($i == 1180) {
+            $data['koefisien_lantai_bangunan'] = null; // Or handle the error as needed
+        }
+    }
+
+    databgintensitasbangunan::create($data);
+}
+
+
+
+
+
+
+// SIGIT
+
 // DATA DOKUMEN BANGUNAN GEDUNG
+
 for ($i = 1; $i <= 973; $i++) {
     databgintensitasbangunan::create([
         'databgkepemilikan_id' => $i,
@@ -46858,6 +47238,8 @@ for ($i = 1; $i <= 973; $i++) {
         'dokumen_teknis_tanah' => null,
     ]);
 }
+
+
 
 
 
