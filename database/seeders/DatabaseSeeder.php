@@ -28587,6 +28587,120 @@ foreach ($kelurahans as $id => $kelurahan) {
 }
 
 
+
+for ($id = 1190; $id <= 1242; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-'
+    ]);
+}
+
+// Records with "Tidak ada copy sertf tanah" pattern (1243-1259, 1334-1336, 1348-1352)
+$tanahRecords = [
+    range(1243, 1259),
+    range(1334, 1336),
+    range(1348, 1352)
+];
+
+foreach ($tanahRecords as $range) {
+    foreach ($range as $id) {
+        databgtanah::create([
+            'id' => $id,
+            'databgkepemilikan_id' => $id,
+            'statushaktanah' => 'Tidak ada copy sertf tanah',
+            'statuskepemilikan' => 'Negara',
+            'nobuktikepemilikan' => 'Tidak ada',
+            'alamattanah' => '-'
+        ]);
+    }
+}
+
+// Empty records (1260-1333, 1337-1347, 1353-1400)
+$emptyRanges = [
+    range(1260, 1333),
+    range(1337, 1347),
+    range(1353, 1400)
+];
+
+foreach ($emptyRanges as $range) {
+    foreach ($range as $id) {
+        databgtanah::create([
+            'id' => $id,
+            'databgkepemilikan_id' => $id,
+            'statushaktanah' => '-',
+            'statuskepemilikan' => '-',
+            'nobuktikepemilikan' => '-',
+            'alamattanah' => '-'
+        ]);
+    }
+}
+
+// Empty records (1401-1491, 1497-1649)
+$emptyRanges = [
+    range(1401, 1491),
+    range(1497, 1649)
+];
+
+foreach ($emptyRanges as $range) {
+    foreach ($range as $id) {
+        databgtanah::create([
+            'id' => $id,
+            'databgkepemilikan_id' => $id,
+            'statushaktanah' => '-',
+            'statuskepemilikan' => '-',
+            'nobuktikepemilikan' => '-',
+            'alamattanah' => '-'
+        ]);
+    }
+}
+
+// Records with "Tidak ada copy sertf tanah" pattern (1492-1496)
+$tanahRecords = range(1492, 1496);
+
+foreach ($tanahRecords as $id) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => 'Tidak ada copy sertf tanah',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => 'Tidak ada',
+        'alamattanah' => '-'
+    ]);
+}
+
+// Records with "Tidak ada copy sertf tanah" pattern (1650-1655)
+$tanahRecords = range(1650, 1655);
+
+foreach ($tanahRecords as $id) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => 'Tidak ada copy sertf tanah',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => 'Tidak ada',
+        'alamattanah' => '-'
+    ]);
+}
+
+// Empty records (1656-1679)
+$emptyRange = range(1656, 1679);
+
+foreach ($emptyRange as $id) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-'
+    ]);
+}
+
+
 // SAMPAI SINI UNTUK PENDATAAN BANGUNAN
 
 
