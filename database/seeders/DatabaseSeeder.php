@@ -29028,7 +29028,7 @@ foreach ($emptyRanges as $range) {
             'resiko_kebakaran' => '-',
             'resiko_gempa' => '-',
             'kepadatan_lokasi' => '-',
-            'resiko_kehilangan' => '-' // Added this field based on your new data
+            // 'resiko_kehilangan' => '-' // Added this field based on your new data
         ]);
     }
 }
@@ -29043,7 +29043,7 @@ for ($id = 1650; $id <= 1655; $id++) {
         'resiko_kebakaran' => 'Sedang',
         'resiko_gempa' => 'Zona 3.',
         'kepadatan_lokasi' => 'Sedang',
-        'resiko_kehilangan' => 'Rendah' // Added this field based on your new data
+        // 'resiko_kehilangan' => 'Rendah' // Added this field based on your new data
     ]);
 }
 
