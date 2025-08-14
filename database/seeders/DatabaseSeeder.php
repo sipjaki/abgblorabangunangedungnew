@@ -21029,6 +21029,7 @@ databgkepemilikan::create(['id' => 724, 'user_id' => 92, 'kecamatanblora_id' => 
 databgkepemilikan::create(['id' => 725, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0127', 'tanggalinput' => now(), 'koordinat' => '-']);
 
 // Data 726-730
+
 databgkepemilikan::create(['id' => 726, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0128', 'tanggalinput' => now(), 'koordinat' => '-']);
 databgkepemilikan::create(['id' => 727, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0129', 'tanggalinput' => now(), 'koordinat' => '-']);
 databgkepemilikan::create(['id' => 728, 'user_id' => 92, 'kecamatanblora_id' => 4, 'namainstitusi' => 'SD N 3 BALUN', 'alamat' => 'Ds. Balun, RT: 3/RW: 11, Kec. Cepu, Kab. Blora, Jawa Tengah', 'notelepon' => '421828', 'email' => 'sdn3balun.cepu@gmail.com', 'nopengesahanusaha' => '33.16.05.0130', 'tanggalinput' => now(), 'koordinat' => '-']);
@@ -27334,7 +27335,1264 @@ databgpeprofilbangunangedung::create(['id'=>972,'databgkepemilikan_id'=>972,'lua
 
 databgpeprofilbangunangedung::create(['id'=>973,'databgkepemilikan_id'=>973,'luastanah'=>'14680 m2','namabangunan'=>'Gedung B','alamatbangunan'=>'','fungsibangunan'=>'Sosial Budaya','jumlahlantai'=>'1','luaslantaildasar'=>'108 M2','totalluaslantai'=>'','tinggibangunan'=>'6 m','luasbasement'=>'','koordinatbangunan'=>'','tanggalmulaikonstruksi'=>'','tanggalselesaikonstruksi'=>'','tanggalrehabilitasi'=>'']);
 
-// SAMPAI SINI UNTUK PENDATAAN BANGUNAN GEDUNG
+// Data unik pertama
+databgkepemilikan::create([
+    'id' => 1190,
+    'user_id' => 92,
+    'kecamatanblora_id' => 7,
+    'namainstitusi' => 'DINAS PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA',
+    'alamat' => 'Jl. Raya Jepon - Blora No.33A RT.04 RW.08 Kel. Jepon',
+    'notelepon' => '-',
+    'email' => '-',
+    'nopengesahanusaha' => '-',
+    'tanggalinput' => now(),
+    'koordinat' => '-'
+]);
+
+// Data unik kedua
+databgkepemilikan::create([
+    'id' => 1191,
+    'user_id' => 92,
+    'kecamatanblora_id' => 7,
+    'namainstitusi' => 'DINAS KOMUNIKASI DAN INFORMATIKA',
+    'alamat' => 'Seso Kec Jepon (3x4m), Medang Depan KUA (3x4m) dan Tempel Pom Tempel (3x4m)',
+    'notelepon' => '-',
+    'email' => '-',
+    'nopengesahanusaha' => '-',
+    'tanggalinput' => now(),
+    'koordinat' => '-'
+]);
+
+// Data Pasar Jepon yang berulang (1192-1200)
+for ($id = 1192; $id <= 1200; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'PASAR JEPON',
+        'alamat' => 'Jl. Gereja Jepon',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+
+// Data unik pertama (1201-1205)
+for ($id = 1201; $id <= 1205; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'PASAR JEPON',
+        'alamat' => 'Jl. Gereja Jepon',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// Data BLOK S (1206-1213)
+for ($id = 1206; $id <= 1213; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'BLOK S',
+        'alamat' => 'Jl. Raya Blora-Cepu (Sebelah Barat Polres)',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// Data DINAS PENANAMAN MODAL (1214-1220)
+for ($id = 1214; $id <= 1220; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'DINAS PENANAMAN MODAL, PELAYANAN TERPADU SATU PINTU',
+        'alamat' => 'JL RAYA BLORA - CEPU KM 5 JEPON',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// Data DINAS KEPEMUDAAN (1221-1226)
+for ($id = 1221; $id <= 1226; $id++) {
+    $alamat = ($id == 1221)
+        ? 'Lapangan Sepak Bola Kridhaloka Kecamatan Jepon'
+        : 'Kec Jepon';
+
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'DINAS KEPEMUDAAN, OLAH RAGA, KEBUDAYAAN DAN PARIWISATA',
+        'alamat' => $alamat,
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// Data DINAS PERINDUSTRIAN (1227-1231)
+for ($id = 1227; $id <= 1231; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+        'alamat' => 'Jl. Raya Blora-Cepu KM 8,5 Jepon-Blora',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// Data SEKRETARIAT DAERAH (1232)
+databgkepemilikan::create([
+    'id' => 1232,
+    'user_id' => 92,
+    'kecamatanblora_id' => 7,
+    'namainstitusi' => 'SEKRETARIAT DAERAH Bagian Perekonomian',
+    'alamat' => 'Jl. Gereja No. 19 Jepon-Blora',
+    'notelepon' => '-',
+    'email' => '-',
+    'nopengesahanusaha' => '-',
+    'tanggalinput' => now(),
+    'koordinat' => '-'
+]);
+
+// Data KECAMATAN JEPON (1233-1239)
+$alamatKecamatan = [
+    1233 => 'Jl. Gereja Jepon ( Tanah Negara / GG )',
+    1234 => 'Jl. Blora Cepu No 33',
+    1235 => 'Jl. Gereja Jepon ( Tanah Negara / GG )',
+    1236 => 'Jl.Raya Jepon Cepu No 33',
+    1237 => 'Jl. Blora Cepu No 33',
+    1238 => 'jl. blora-cepu no 33 a',
+    1239 => 'Jl. Blora Cepu No 33'
+];
+
+foreach ($alamatKecamatan as $id => $alamat) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'KECAMATAN JEPON',
+        'alamat' => $alamat,
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// Data KELURAHAN JEPON (1240-1242)
+databgkepemilikan::create([
+    'id' => 1240,
+    'user_id' => 92,
+    'kecamatanblora_id' => 7,
+    'namainstitusi' => 'KELURAHAN JEPON',
+    'alamat' => 'Jl. Jepon Turirejo No 49',
+    'notelepon' => '-',
+    'email' => '-',
+    'nopengesahanusaha' => '-',
+    'tanggalinput' => now(),
+    'koordinat' => '-'
+]);
+
+for ($id = 1241; $id <= 1242; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'KELURAHAN JEPON',
+        'alamat' => '-',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// Data SLTP N 1 JEPON (1243-1250)
+for ($id = 1243; $id <= 1250; $id++) {
+    $nopengesahanusaha = '33.16.08.00' . str_pad($id - 1243 + 12, 2, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SLTP N 1 JEPON',
+        'alamat' => 'Jl. Raya Jepon, No 93A, Palkembar, Seso, Kec. Jepon, RT.01, RW.03.',
+        'notelepon' => '525184',
+        'email' => 'smp1jepon_blora@yahoo.co.id',
+        'nopengesahanusaha' => $nopengesahanusaha,
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// Data SLTP N 1 JEPON (1251-1259)
+for ($id = 1251; $id <= 1259; $id++) {
+    $nopengesahanusaha = '33.16.08.00' . ($id - 1243 + 12); // Continuing from previous sequence
+
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SLTP N 1 JEPON',
+        'alamat' => 'Jl. Raya Jepon, No 93A, Palkembar, Seso, Kec. Jepon, RT.01, RW.03.',
+        'notelepon' => '525184',
+        'email' => 'smp1jepon_blora@yahoo.co.id',
+        'nopengesahanusaha' => $nopengesahanusaha,
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// Data SLTP N 2 JEPON (1260-1277)
+for ($id = 1260; $id <= 1277; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SLTP N 2 JEPON',
+        'alamat' => 'Jl Turirejo Km. 5 Jepon Blora',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// Data SLTP N 3 JEPON (1278-1300)
+for ($id = 1278; $id <= 1300; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SLTP N 3 JEPON',
+        'alamat' => 'Jalan Sayuran Km 5 Jepon, RT.7/RW.1, Dk.Pule, Ds./Kel. Puledagel',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+<?php
+
+// KANTOR CAB. DINDIK KEC. JEPON (1301-1311)
+for ($id = 1301; $id <= 1311; $id++) {
+    $alamat = ($id <= 1306)
+        ? 'Jln.Damaran Km.05 Jepon'
+        : 'JL.JATIROGO, RT.4/RW.3, Dk.NULL, Ds./Kel. jepon';
+
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'KANTOR CAB. DINDIK KEC. JEPON',
+        'alamat' => $alamat,
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 JEPON (1312-1320)
+for ($id = 1312; $id <= 1320; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 JEPON',
+        'alamat' => 'Jl Raya Blora-Cepu Km 08 Jepon, RT.1/RW.5, Dk.NGAWEN, Ds./Kel. Jepon',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 3 JEPON (1321-1333)
+for ($id = 1321; $id <= 1333; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 3 JEPON',
+        'alamat' => 'JL BENGAWAN SOLO KECAMATAN JEPON',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 4 JEPON (1334-1336)
+for ($id = 1334; $id <= 1336; $id++) {
+    $nopengesahanusaha = '33.16.08.00' . (39 + ($id - 1334));
+
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 4 JEPON',
+        'alamat' => 'JL.BATANGHARI RT.06/RW.06, RT.6/RW.6, Dk.Kidangan, Ds./Kel. Jepon',
+        'notelepon' => 'Tidak Ada',
+        'email' => 'sdn4jepon@gmail.com',
+        'nopengesahanusaha' => $nopengesahanusaha,
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 5 JEPON (1337-1346)
+for ($id = 1337; $id <= 1346; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 5 JEPON',
+        'alamat' => 'Jl. Raya Blora Cepu Km 06, RT.5/RW.8, Dk.NGELO BENER, Ds./Kel. JEPON',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 6 JEPON (1347-1352)
+for ($id = 1347; $id <= 1352; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 6 JEPON',
+        'alamat' => 'Dk. Pelangan, RT.01/RW.04, Kec.Jepon',
+        'notelepon' => 'Tidak Ada',
+        'email' => 'sd6jepon@gmail.com',
+        'nopengesahanusaha' => '33.16.08.000' . ($id - 1347 + 1),
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 TURIREJO (1353-1360)
+for ($id = 1353; $id <= 1360; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 TURIREJO',
+        'alamat' => 'Dk. Turirejo Rt.01/Rw.02.',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 TURIREJO (1361-1368)
+for ($id = 1361; $id <= 1368; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 TURIREJO',
+        'alamat' => 'Dukuh Kalirejo Rt 03/Rw 04 Ds. Turirejo Jepon Blora',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 SEMAMPIR (1369-1371)
+for ($id = 1369; $id <= 1371; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 SEMAMPIR',
+        'alamat' => 'Ds Semampir, RT.3/RW.4, Dk.Semampir, Ds./Kel. SEMAMPIR',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 SEMAMPIR (1372-1380)
+for ($id = 1372; $id <= 1380; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 SEMAMPIR',
+        'alamat' => 'Ds Semampir, RT.1/RW.1, Dk.SEMAMPIR, Ds./Kel. SEMAMPIR',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 KEMIRI JEPON (1381-1386)
+for ($id = 1381; $id <= 1386; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 KEMIRI JEPON',
+        'alamat' => 'Kemiri, RT.4/RW.4, Dk.Kemiri RT 04 RW 04, Ds./Kel. Kemiri',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 KEMIRI JEPON (1387-1390)
+for ($id = 1387; $id <= 1390; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 KEMIRI JEPON',
+        'alamat' => 'Ds Kemiri, RT.5/RW.2, Dk.NULL, Ds./Kel. Kemiri',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN PALON (1391-1396)
+for ($id = 1391; $id <= 1396; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN PALON',
+        'alamat' => 'Desa Palon, RT.3/RW.3, Dk.Palon, Ds./Kel. PALON',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 BANGSRI (1397-1400)
+for ($id = 1397; $id <= 1400; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 BANGSRI',
+        'alamat' => 'Nglorog, RT.8/RW.2, Dk.Dk.Nglorog, Ds./Kel. BANGSRI',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 BANGSRI (1401)
+databgkepemilikan::create([
+    'id' => 1401,
+    'user_id' => 92,
+    'kecamatanblora_id' => 7,
+    'namainstitusi' => 'SDN 1 BANGSRI',
+    'alamat' => 'Nglorog, RT.8/RW.2, Dk.Dk.Nglorog, Ds./Kel. BANGSRI',
+    'notelepon' => '-',
+    'email' => '-',
+    'nopengesahanusaha' => '-',
+    'tanggalinput' => now(),
+    'koordinat' => '-'
+]);
+
+// SDN 2 BANGSRI (1402-1414)
+for ($id = 1402; $id <= 1414; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 BANGSRI',
+        'alamat' => 'Nglorog, RT.5/RW.2, Dk.Dk.NGLOROG, Ds./Kel. Bangsri',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN SUMURBOTO (1415-1422)
+for ($id = 1415; $id <= 1422; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN SUMURBOTO',
+        'alamat' => 'Ds Sumurboto, RT.1/RW.1, Dk.NULL, Ds./Kel. Sumurboto',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN NGAMPON (1423-1428)
+for ($id = 1423; $id <= 1428; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN NGAMPON',
+        'alamat' => 'Ds Ngampon, RT.3/RW.2, Dk.Ngampon, Ds./Kel. Ngampon',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 JOMBLANG (1429-1435)
+for ($id = 1429; $id <= 1435; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 JOMBLANG',
+        'alamat' => 'Jomblang, RT.5/RW.1, Dk.Jomblang, Ds./Kel. JOMBLANG',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 JOMBLANG (1436-1441)
+for ($id = 1436; $id <= 1441; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 JOMBLANG',
+        'alamat' => 'Jomblang, RT.1/RW.2, Dk.NULL, Ds./Kel. JOMBLANG',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 SEMANGGI (1442-1448)
+for ($id = 1442; $id <= 1448; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 SEMANGGI',
+        'alamat' => 'Dukuh Ngodo Ds.Semanggi, RT.0/RW.0, Dk.Ngodo, Ds./Kel. SEMANGGI',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 SEMANGGI (1449-1456)
+for ($id = 1449; $id <= 1456; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 SEMANGGI',
+        'alamat' => 'DS SEMANGGI, RT.1/RW.1, Dk.Semanggi, Ds./Kel. Semanggi',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 BLUNGUN (1457-1461)
+for ($id = 1457; $id <= 1461; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 BLUNGUN',
+        'alamat' => 'DESA BLUNGUN RT 03 RW 01 KEC. JEPON KAB. BLORA',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 BLUNGUN (1462-1468)
+for ($id = 1462; $id <= 1468; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 BLUNGUN',
+        'alamat' => 'RT 06 RW 02 DESA BLUNGUN KEC. JEPON KAB. BLORA',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 3 BLUNGUN (1469-1474)
+for ($id = 1469; $id <= 1474; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 3 BLUNGUN',
+        'alamat' => 'BLUNGUN, RT.6/RW.3, Dk.Kalimiri, Ds./Kel. BLUNGUN',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 TEMPEL (1475-1477)
+for ($id = 1475; $id <= 1477; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 TEMPEL',
+        'alamat' => 'DESA TEMPELLEMAHBANG RT 04 / RW 01.',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 TEMPEL (1478-1480)
+for ($id = 1478; $id <= 1480; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 TEMPEL',
+        'alamat' => 'Ds. Tempellemahbang Kec. Jepon Kab. Blora',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 BRUMBUNG (1481-1489)
+for ($id = 1481; $id <= 1489; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 BRUMBUNG',
+        'alamat' => 'Desa BRUMBUNG, RT.11/RW.2, Dk.Cangkringan, Ds./Kel. Brumbung',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 BRUMBUNG (1490-1491)
+for ($id = 1490; $id <= 1491; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 BRUMBUNG',
+        'alamat' => 'JALAN DUKUHAN BRUMBUNG, RT.7/RW.1, Dk.DUKUHAN, Ds./Kel. BRUMBUNG',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN SESO (1492-1496)
+for ($id = 1492; $id <= 1496; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN SESO',
+        'alamat' => 'JL.RAYA BLORA-CEPU KM.5, Dk.Seso, Ds./Kel. Seso',
+        'notelepon' => 'Tidak Ada',
+        'email' => 'sdnegeriseso@gmaiil.com',
+        'nopengesahanusaha' => '33.16.08.00' . str_pad($id - 1492 + 7, 2, '0', STR_PAD_LEFT),
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN BALONG (1497-1500)
+for ($id = 1497; $id <= 1500; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN BALONG',
+        'alamat' => 'Balong, RT.2/RW.1, Dk.Balong, Ds./Kel. Balong',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN BALONG (1501-1502)
+for ($id = 1501; $id <= 1502; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN BALONG',
+        'alamat' => 'Balong, RT.2/RW.1, Dk.Balong, Ds./Kel. Balong',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 GENENG (1503-1509)
+for ($id = 1503; $id <= 1509; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 GENENG',
+        'alamat' => 'Desa Geneng Rt.02 Rw.02, RT.2/RW.2, Dk.Geneng, Ds./Kel. Geneng',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 GENENG (1510-1515)
+for ($id = 1510; $id <= 1515; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 GENENG',
+        'alamat' => 'DS. GENENG RT.05 RW. 01, RT.5/RW.1, Dk.GENENG, Ds./Kel. GENENG',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN GERSI (1516-1527)
+for ($id = 1516; $id <= 1527; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN GERSI',
+        'alamat' => 'jl Sayuran Km 2 ds. Gersi, jepon-blora Gersi, RT.4/RW.1, Dk.Gersi, Ds./Kel. Gersi',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 GEDANGDOWO (1528-1534)
+for ($id = 1528; $id <= 1534; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 GEDANGDOWO',
+        'alamat' => 'Jalan Sayuran KM 3, RT.3/RW.3, Dk.Gedangdowo, Ds./Kel. Gedangdowo',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 GEDANGDOWO (1535-1543)
+for ($id = 1535; $id <= 1543; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 GEDANGDOWO',
+        'alamat' => 'Gedangdowo, RT.1/RW.2, Dk.gedangdowo, Ds./Kel. GEDANGDOWO',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 PULEDAGEL (1544-1550)
+for ($id = 1544; $id <= 1550; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 PULEDAGEL',
+        'alamat' => 'Jln. Sayuran Km.04 Desa Puledagel, RT.1/RW.2, Dk.Lambang, Ds./Kel. Puledagel',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 PULEDAGEL (1551-1555)
+for ($id = 1551; $id <= 1555; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 PULEDAGEL',
+        'alamat' => 'JL.SAYURAN KM.04, RT.1/RW.1, Dk.PULE, Ds./Kel. Puledagel',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 KAWENGAN (1556-1562)
+for ($id = 1556; $id <= 1562; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 KAWENGAN',
+        'alamat' => 'DS KAWENGAN, RT.1/RW.1, Dk.Kawengan, Ds./Kel. Kawengan',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 KAWENGAN (1563-1566)
+for ($id = 1563; $id <= 1566; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 KAWENGAN',
+        'alamat' => 'Dk. Kolutan Ds. Kawengan Kec. Jepon Kab. Blora',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN BACEM (1567-1573)
+for ($id = 1567; $id <= 1573; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN BACEM',
+        'alamat' => 'Bacem, RT.6/RW.1, Dk.BACEM, Ds./Kel. BACEM',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 1 BACEM (1574-1581)
+for ($id = 1574; $id <= 1581; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 1 BACEM',
+        'alamat' => 'Bacem, RT.2/RW.1, Dk.BACEM, Ds./Kel. Bacem',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 2 BACEM (1582-1589)
+for ($id = 1582; $id <= 1589; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 2 BACEM',
+        'alamat' => 'Dk. Pengkol, RT.4/RW.5, Dk.PENGKOL, Ds./Kel. Bacem',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN 3 BACEM (1590-1599)
+for ($id = 1590; $id <= 1599; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN 3 BACEM',
+        'alamat' => 'Dk Wedek, RT.3/RW.3, Dk.Wedek, Ds./Kel. Bacem',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN JATIREJO (1600)
+databgkepemilikan::create([
+    'id' => 1600,
+    'user_id' => 92,
+    'kecamatanblora_id' => 7,
+    'namainstitusi' => 'SDN JATIREJO',
+    'alamat' => 'Jatirejo, RT.7/RW.1, Dk.Jatirejo, Ds./Kel. Jatirejo',
+    'notelepon' => '-',
+    'email' => '-',
+    'nopengesahanusaha' => '-',
+    'tanggalinput' => now(),
+    'koordinat' => '-'
+]);
+
+// SDN JATIREJO (1601-1605)
+for ($id = 1601; $id <= 1605; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN JATIREJO',
+        'alamat' => 'Jatirejo, RT.7/RW.1, Dk.Jatirejo, Ds./Kel. Jatirejo',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN SOKO (1606-1607)
+for ($id = 1606; $id <= 1607; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN SOKO',
+        'alamat' => 'Soko, RT.2/RW.1, Dk.Karangasem, Ds./Kel. SOKO',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN WARU (1608-1614)
+for ($id = 1608; $id <= 1614; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN WARU',
+        'alamat' => 'Desa WARU, RT.0/RW.0, Dk.Waru, Ds./Kel. Waru',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// SDN NGLAROHGUNUNG (1615-1622)
+for ($id = 1615; $id <= 1622; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SDN NGLAROHGUNUNG',
+        'alamat' => 'DS NGLAROHGUNUNG, RT.2/RW.1, Dk.NGLAROHGUNUNG, Ds./Kel. NGLAROHGUNUNG',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// TK N JEPON (1623)
+databgkepemilikan::create([
+    'id' => 1623,
+    'user_id' => 92,
+    'kecamatanblora_id' => 7,
+    'namainstitusi' => 'TK N JEPON',
+    'alamat' => 'Jl.Jatirogo DS. JEPON, RT./RW., Dk., Ds./Kel. Jepon',
+    'notelepon' => '-',
+    'email' => '-',
+    'nopengesahanusaha' => '-',
+    'tanggalinput' => now(),
+    'koordinat' => '-'
+]);
+
+// SMPN 4 JEPON SATAP (1624-1626)
+for ($id = 1624; $id <= 1626; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'SMPN 4 JEPON SATAP',
+        'alamat' => 'Dukuh Ngodo, Desa Semanggi, Kec. Jepon Kab. Blora',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// UPTD PUSKESMAS JEPON (1627-1638)
+for ($id = 1627; $id <= 1638; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'UPTD PUSKESMAS JEPON',
+        'alamat' => 'Jn. Jepon - Jatirogo KM.01, Jepon',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// PUSKESMAS PEMBANTU BLUNGUN (1639)
+databgkepemilikan::create([
+    'id' => 1639,
+    'user_id' => 92,
+    'kecamatanblora_id' => 7,
+    'namainstitusi' => 'PUSKESMAS PEMBANTU BLUNGUN',
+    'alamat' => '-',
+    'notelepon' => '-',
+    'email' => '-',
+    'nopengesahanusaha' => '-',
+    'tanggalinput' => now(),
+    'koordinat' => '-'
+]);
+
+// PUSKESMAS PEMBANTU TURIREJO (1640-1642)
+for ($id = 1640; $id <= 1642; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'PUSKESMAS PEMBANTU TURIREJO',
+        'alamat' => '-',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// UPTD PUSKESMAS PULEDAGEL (1643-1647)
+for ($id = 1643; $id <= 1647; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'UPTD PUSKESMAS PULEDAGEL',
+        'alamat' => 'Jl.seso sayuran km 4 kec.jepon, kab.blora',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// KANTOR BIDANG SDA DAN CIPTA KARYA (1648-1649)
+for ($id = 1648; $id <= 1649; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'KANTOR BIDANG SDA DAN CIPTA KARYA',
+        'alamat' => 'Ds. Kidangan Kec. Jepon, Kab. Blora',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// BADAN PENANGGULANGAN BENCANA DAERAH (1650-1653)
+for ($id = 1650; $id <= 1653; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'BADAN PENANGGULANGAN BENCANA DAERAH',
+        'alamat' => 'Jl. Nasional, Blora - Cepu, Nglobener, Seso, Kec. Jepon',
+        'notelepon' => '085229252674',
+        'email' => 'bpbdkabupatenblora@gmail.com',
+        'nopengesahanusaha' => '33.16.08.00' . (33 + ($id - 1650)),
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// DINAS KEPENDUDUKAN DAN CATATAN SIPIL (1654-1655)
+for ($id = 1654; $id <= 1655; $id++) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'Dinas Kependudukan dan Catatan Sipil',
+        'alamat' => 'Jl. Nasional Blora Cepu, No.Km 5, Nglobener, Kec Jepon',
+        'notelepon' => 'Tidak Ada',
+        'email' => 'disdukcapilblora@gmail.com',
+        'nopengesahanusaha' => '33.16.08.00' . (30 + ($id - 1654)),
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+// KELURAHAN (1656-1679)
+$kelurahans = [
+    1656 => 'Jepon',
+    1657 => 'Bacem',
+    1658 => 'Bangsri',
+    1659 => 'Blungun',
+    1660 => 'Brumbung',
+    1661 => 'Gedangdowo',
+    1662 => 'Geneng',
+    1663 => 'Gersi',
+    1664 => 'Jatirejo',
+    1665 => 'Jomblang',
+    1666 => 'Kawengan',
+    1667 => 'Kemiri',
+    1668 => 'Ngampon',
+    1669 => 'Nglarohgunung',
+    1670 => 'Palon',
+    1671 => 'Puledagel',
+    1672 => 'Semampir',
+    1673 => 'Semanggi',
+    1674 => 'Seso',
+    1675 => 'Soko',
+    1676 => 'Sumurboto',
+    1677 => 'Tempellemahbang',
+    1678 => 'Turirejo',
+    1679 => 'Waru'
+];
+
+foreach ($kelurahans as $id => $kelurahan) {
+    databgkepemilikan::create([
+        'id' => $id,
+        'user_id' => 92,
+        'kecamatanblora_id' => 7,
+        'namainstitusi' => 'Kelurahan ' . $kelurahan,
+        'alamat' => '-',
+        'notelepon' => '-',
+        'email' => '-',
+        'nopengesahanusaha' => '-',
+        'tanggalinput' => now(),
+        'koordinat' => '-'
+    ]);
+}
+
+
+// SAMPAI SINI UNTUK PENDATAAN BANGUNAN
+
+
+
 
 
 // databgkepemilikan::create([
