@@ -28701,6 +28701,354 @@ foreach ($emptyRange as $id) {
 }
 
 
+// Empty records (1190-1242, 1260-1280)
+$emptyRanges = [
+    range(1190, 1242),
+    range(1260, 1280)
+];
+
+foreach ($emptyRanges as $range) {
+    foreach ($range as $id) {
+        databgpeprofilbangunangedung::create([
+            'databgkepemilikan_id' => $id,
+            'luastanah' => '-',
+            'peruntukantanah' => '-',
+            'kdb' => '-',
+            'klb' => '-',
+            'kdh' => '-',
+            'ktb' => '-',
+            'namabangunan' => '-',
+            'alamatbangunan' => '-',
+            'fungsibangunan' => '-',
+            'jumlahlantai' => '-',
+            'luaslantaildasar' => '-',
+            'totalluaslantai' => '-',
+            'tinggibangunan' => '-',
+            'luasbasement' => '-',
+            'tanggalmulaikonstruksi' => '-',
+            'tanggalselesaikonstruksi' => '-',
+            'tanggalrehabilitasi' => '-'
+        ]);
+    }
+}
+
+// Special building records (1243-1259)
+$buildingRecords = [
+    ['Gedung A', 486, 'Sosisal Budaya', 2],
+    ['Gedung B', 455, 'Sosisal Budaya', 1],
+    ['Gedung C', 270, 'Sosisal Budaya', 1],
+    ['Gedung D', 1073, 'Sosisal Budaya', 1],
+    ['Gedung E', 270, 'Sosisal Budaya', 1],
+    ['Gedung G', 306, 'Sosisal Budaya', 1],
+    ['Gedung H', 229, '-', 1],
+    ['Gedung I', 171, '-', 1],
+    ['Gedung J', 171, '-', 1],
+    ['Gedung K', 153, '-', 1],
+    ['Gedung L', 95, '-', 1],
+    ['Gedung M', 306, '-', 1],
+    ['Gedung N', 73.5, '-', 1],
+    ['Gedung O', 380.5, '-', 1],
+    ['Gedung P', 36, '-', 1],
+    ['Gedung Q', 257, '-', 1],
+    ['Gedung R', 91, '-', 1]
+];
+
+foreach (range(1243, 1259) as $index => $id) {
+    $building = $buildingRecords[$index];
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => $id,
+        'luastanah' => '12498',
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'kdh' => '-',
+        'ktb' => '-',
+        'namabangunan' => $building[0],
+        'alamatbangunan' => '-',
+        'fungsibangunan' => $building[2],
+        'jumlahlantai' => $building[3],
+        'luaslantaildasar' => $building[1],
+        'totalluaslantai' => '-',
+        'tinggibangunan' => 'Tidak Ada',
+        'luasbasement' => 'Tidak Ada',
+        'tanggalmulaikonstruksi' => 'Tidak Ada',
+        'tanggalselesaikonstruksi' => 'Tidak Ada',
+        'tanggalrehabilitasi' => 'Tidak Ada'
+    ]);
+}
+
+
+// Empty records (1281-1333, 1337-1346, 1353-1450)
+$emptyRanges = [
+    range(1281, 1333),
+    range(1337, 1346),
+    range(1353, 1450)
+];
+
+foreach ($emptyRanges as $range) {
+    foreach ($range as $id) {
+        databgpeprofilbangunangedung::create([
+            'databgkepemilikan_id' => $id,
+            'luastanah' => '-',
+            'peruntukantanah' => '-',
+            'kdb' => '-',
+            'klb' => '-',
+            'kdh' => '-',
+            'ktb' => '-',
+            'namabangunan' => '-',
+            'alamatbangunan' => '-',
+            'fungsibangunan' => '-',
+            'jumlahlantai' => '-',
+            'luaslantaildasar' => '-',
+            'totalluaslantai' => '-',
+            'tinggibangunan' => '-',
+            'luasbasement' => '-',
+            'tanggalmulaikonstruksi' => '-',
+            'tanggalselesaikonstruksi' => '-',
+            'tanggalrehabilitasi' => '-'
+        ]);
+    }
+}
+
+// Building records for 1334-1336
+$buildingRecords1334 = [
+    ['Gedung A', 230, 'Sosisal Budaya', 1],
+    ['Gedung B', 289, 'Sosisal Budaya', 1],
+    ['Mushola', 40, 'Keagamaan', 1]
+];
+
+foreach (range(1334, 1336) as $index => $id) {
+    $building = $buildingRecords1334[$index];
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => $id,
+        'luastanah' => '3052',
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'kdh' => '-',
+        'ktb' => '-',
+        'namabangunan' => $building[0],
+        'alamatbangunan' => '-',
+        'fungsibangunan' => $building[2],
+        'jumlahlantai' => $building[3],
+        'luaslantaildasar' => $building[1],
+        'totalluaslantai' => '-',
+        'tinggibangunan' => 'Tidak Ada',
+        'luasbasement' => 'Tidak Ada',
+        'tanggalmulaikonstruksi' => 'Tidak Ada',
+        'tanggalselesaikonstruksi' => 'Tidak Ada',
+        'tanggalrehabilitasi' => 'Tidak Ada'
+    ]);
+}
+
+// Building record for 1347
+databgpeprofilbangunangedung::create([
+    'databgkepemilikan_id' => 1347,
+    'luastanah' => '1088',
+    'peruntukantanah' => 'Pendidikan',
+    'kdb' => '60%',
+    'klb' => '0,6',
+    'kdh' => '-',
+    'ktb' => '-',
+    'namabangunan' => 'Gedung A',
+    'alamatbangunan' => '-',
+    'fungsibangunan' => 'Sosisal Budaya',
+    'jumlahlantai' => 1,
+    'luaslantaildasar' => '204,4',
+    'totalluaslantai' => '-',
+    'tinggibangunan' => 'Tidak Ada',
+    'luasbasement' => 'Tidak Ada',
+    'tanggalmulaikonstruksi' => 'Tidak Ada',
+    'tanggalselesaikonstruksi' => 'Tidak Ada',
+    'tanggalrehabilitasi' => 'Tidak Ada'
+]);
+
+// Building records for 1348-1352
+$buildingRecords1348 = [
+    ['Gedung B', 168.8, 'Sosisal Budaya', 1],
+    ['Gedung C', 21, 'Sosisal Budaya', 1],
+    ['Gedung D', 39, 'Sosisal Budaya', 1],
+    ['Gedung E', 58.3, 'Sosisal Budaya', 1],
+    ['Gedung F', 26, 'Sosisal Budaya', 1]
+];
+
+foreach (range(1348, 1352) as $index => $id) {
+    $building = $buildingRecords1348[$index];
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => $id,
+        'luastanah' => '1088',
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'kdh' => '-',
+        'ktb' => '-',
+        'namabangunan' => $building[0],
+        'alamatbangunan' => '-',
+        'fungsibangunan' => $building[2],
+        'jumlahlantai' => $building[3],
+        'luaslantaildasar' => $building[1],
+        'totalluaslantai' => '-',
+        'tinggibangunan' => 'Tidak Ada',
+        'luasbasement' => 'Tidak Ada',
+        'tanggalmulaikonstruksi' => 'Tidak Ada',
+        'tanggalselesaikonstruksi' => 'Tidak Ada',
+        'tanggalrehabilitasi' => 'Tidak Ada'
+    ]);
+}
+
+$emptyRange = range(1451, 1679);
+
+foreach ($emptyRange as $id) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => $id,
+        'luastanah' => '-',
+        'peruntukantanah' => '-',
+        'kdb' => '-',
+        'klb' => '-',
+        'kdh' => '-',
+        'ktb' => '-',
+        'namabangunan' => '-',
+        'alamatbangunan' => '-',
+        'fungsibangunan' => '-',
+        'jumlahlantai' => '-',
+        'luaslantaildasar' => '-',
+        'totalluaslantai' => '-',
+        'tinggibangunan' => '-',
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => '-',
+        'tanggalselesaikonstruksi' => '-',
+        'tanggalrehabilitasi' => '-'
+    ]);
+}
+
+
+// Empty records for 1190-1242 and 1260-1300
+$emptyRange = array_merge(range(1190, 1242), range(1260, 1300));
+
+foreach ($emptyRange as $id) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => '-',
+        'tingkat_permanensi' => '-',
+        'resiko_kebakaran' => '-',
+        'resiko_gempa' => '-',
+        'kepadatan_lokasi' => '-'
+    ]);
+}
+
+// Records with data for 1243-1259
+for ($id = 1243; $id <= 1259; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Sedang',
+        'resiko_gempa' => 'Zona 3.',
+        'kepadatan_lokasi' => 'Sedang'
+    ]);
+}
+
+// Empty records for most ranges
+$emptyRanges = [
+    range(1301, 1333),
+    range(1337, 1346),
+    range(1353, 1491),
+    range(1497, 1500)
+];
+
+foreach ($emptyRanges as $range) {
+    foreach ($range as $id) {
+        databgklasifikasi::create([
+            'id' => $id,
+            'databgkepemilikan_id' => $id,
+            'tingkat_kompleksitas' => '-',
+            'tingkat_permanensi' => '-',
+            'resiko_kebakaran' => '-',
+            'resiko_gempa' => '-',
+            'kepadatan_lokasi' => '-'
+        ]);
+    }
+}
+
+// Records with data for 1334-1336
+for ($id = 1334; $id <= 1336; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Sedang',
+        'resiko_gempa' => 'Zona 3.',
+        'kepadatan_lokasi' => 'Sedang'
+    ]);
+}
+
+// Records with data for 1347-1352
+for ($id = 1347; $id <= 1352; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Sedang',
+        'resiko_gempa' => 'Zona 3',
+        'kepadatan_lokasi' => 'Sedang'
+    ]);
+}
+
+// Records with data for 1492-1496
+$zonaValues = [3, 4, 5, 6, 7];
+foreach (range(1492, 1496) as $index => $id) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Sedang',
+        'resiko_gempa' => 'Zona ' . $zonaValues[$index],
+        'kepadatan_lokasi' => 'Sedang'
+    ]);
+}
+
+// Empty records for range 1501-1650 (except 1650) and 1656-1679
+$emptyRanges = [
+    range(1501, 1649),
+    range(1656, 1679)
+];
+
+foreach ($emptyRanges as $range) {
+    foreach ($range as $id) {
+        databgklasifikasi::create([
+            'id' => $id,
+            'databgkepemilikan_id' => $id,
+            'tingkat_kompleksitas' => '-',
+            'tingkat_permanensi' => '-',
+            'resiko_kebakaran' => '-',
+            'resiko_gempa' => '-',
+            'kepadatan_lokasi' => '-',
+            'resiko_kehilangan' => '-' // Added this field based on your new data
+        ]);
+    }
+}
+
+// Records with data for 1650-1655
+for ($id = 1650; $id <= 1655; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'resiko_kebakaran' => 'Sedang',
+        'resiko_gempa' => 'Zona 3.',
+        'kepadatan_lokasi' => 'Sedang',
+        'resiko_kehilangan' => 'Rendah' // Added this field based on your new data
+    ]);
+}
+
+
+
 // SAMPAI SINI UNTUK PENDATAAN BANGUNAN
 
 
