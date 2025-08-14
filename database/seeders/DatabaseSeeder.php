@@ -27601,8 +27601,6 @@ for ($id = 1278; $id <= 1300; $id++) {
     ]);
 }
 
-<?php
-
 // KANTOR CAB. DINDIK KEC. JEPON (1301-1311)
 for ($id = 1301; $id <= 1311; $id++) {
     $alamat = ($id <= 1306)
