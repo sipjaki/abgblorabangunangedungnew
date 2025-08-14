@@ -48924,6 +48924,56 @@ for ($i = 1151; $i <= 1189; $i++) {
     databgintensitasbangunan::create($data);
 }
 
+for ($i = 1190; $i <= 1679; $i++) {
+    databgtingkatkerusahan::create([
+        'databgkepemilikan_id' => $i,
+
+        // BAGIAN 1
+        'struktur_bangunan_bawah' => null,
+        'struktur_bangunan_atas' => null,
+        'struktur_atap' => null,
+        'indikasi_kerusakan1' => null,
+        'tingkat_kerusakan1' => null,
+
+        // BAGIAN 2
+        'pondasi' => null,
+        'indikasi_kerusakan2' => null,
+        'tingkat_kerusakan2' => null,
+
+        // BAGIAN 3
+        'struktur' => null,
+        'indikasi_kerusakan3' => null,
+        'tingkat_kerusakan3' => null,
+
+        // BAGIAN 4
+        'atap' => null,
+        'indikasi_kerusakan4' => null,
+        'tingkat_kerusakan4' => null,
+
+        // BAGIAN 5
+        'lantai' => null,
+        'indikasi_kerusakan5' => null,
+        'tingkat_kerusakan5' => null,
+
+        // BAGIAN 6
+        'dinding' => null,
+        'indikasi_kerusakan6' => null,
+        'tingkat_kerusakan6' => null,
+
+        // BAGIAN 7
+        'plafond' => null,
+        'indikasi_kerusakan7' => null,
+        'tingkat_kerusakan7' => null,
+
+        // BAGIAN 8
+        'utilitas' => null,
+        'indikasi_kerusakan8' => null,
+        'tingkat_kerusakan8' => null,
+
+        'finishing' => null,
+        'total_nilai_kerusakan' => null,
+    ]);
+}
 
 
 
@@ -49155,6 +49205,119 @@ foreach ($datakoordinat as $item) {
         ['koordinat' => $item['lat'] !== null ? $item['lat'] . ', ' . $item['lng'] : null]
     );
 }
+
+
+// Empty records for most ranges
+$emptyRanges = [
+    range(1190, 1242),
+    range(1260, 1333),
+    range(1337, 1346),
+    range(1353, 1491),
+    range(1497, 1650),
+    range(1656, 1679)
+];
+
+foreach ($emptyRanges as $range) {
+    foreach ($range as $id) {
+        databgkepemilikan::updateOrCreate(
+            ['id' => $id],
+            ['koordinat' => null]
+        );
+    }
+}
+
+// Records with data for 1243-1259
+$coordinates1243to1259 = [
+    1243 => '-6.9726379, 111.4570817',
+    1244 => '-6.9726379, 111.4570817',
+    1245 => '-6.9726379, 111.4570817',
+    1246 => '-6.9726379, 111.4570817',
+    1247 => '-6.9726379, 111.4570817',
+    1248 => '-6.9726379, 111.4570817',
+    1249 => '-6.9724406, 111.4568027',
+    1250 => '-6.9723191, 111.4568051',
+    1251 => '-6.9722941, 111.4564691',
+    1252 => '-6.972573, 111.4566981',
+    1253 => '-6.9727135, 111.4566955',
+    1254 => '-6.9728679, 111.4566187',
+    1255 => '-6.9730582, 111.4561345',
+    1256 => '-6.9729567, 111.4565647',
+    1257 => '-6.972979, 111.4568235',
+    1258 => '-6.9728832, 111.4569107',
+    1259 => '-6.9729155, 111.4571142'
+];
+
+foreach ($coordinates1243to1259 as $id => $coord) {
+    databgkepemilikan::updateOrCreate(
+        ['id' => $id],
+        ['koordinat' => $coord]
+    );
+}
+
+// Records with data for 1334-1336
+$coordinates1334to1336 = [
+    1334 => '-6.9712402, 111.4745932',
+    1335 => '-6.9714119, 111.4747427',
+    1336 => '-6.9714998, 111.4744383'
+];
+
+foreach ($coordinates1334to1336 as $id => $coord) {
+    databgkepemilikan::updateOrCreate(
+        ['id' => $id],
+        ['koordinat' => $coord]
+    );
+}
+
+// Records with data for 1347-1352
+$coordinates1347to1352 = [
+    1347 => '-6.972585, 111.484257',
+    1348 => '-6.972608, 111.484099',
+    1349 => '-6.972562, 111.483955',
+    1350 => '-6.972491, 111.483986',
+    1351 => '-6.972420, 111.484015',
+    1352 => '-6.972724, 111.484201'
+];
+
+foreach ($coordinates1347to1352 as $id => $coord) {
+    databgkepemilikan::updateOrCreate(
+        ['id' => $id],
+        ['koordinat' => $coord]
+    );
+}
+
+// Records with data for 1492-1496
+$coordinates1492to1496 = [
+    1492 => '-6.9710984, 111.4550503',
+    1493 => '-6.9710984, 111.4550503',
+    1494 => '-6.9710984, 111.4550503',
+    1495 => '-6.9710984, 111.4550503',
+    1496 => '-6.9710984, 111.4550503'
+];
+
+foreach ($coordinates1492to1496 as $id => $coord) {
+    databgkepemilikan::updateOrCreate(
+        ['id' => $id],
+        ['koordinat' => $coord]
+    );
+}
+
+// Records with data for 1650-1655
+$coordinates1650to1655 = [
+    1650 => '-6.9725131, 111.4584805',
+    1651 => '-6.9725367, 111.4587893',
+    1652 => '-6.9726682, 111.4587648',
+    1653 => '-6.9726682, 111.4587648',
+    1654 => '-6.9713969, 111.461795',
+    1655 => '-6.9713969, 111.461795'
+];
+
+foreach ($coordinates1650to1655 as $id => $coord) {
+    databgkepemilikan::updateOrCreate(
+        ['id' => $id],
+        ['koordinat' => $coord]
+    );
+}
+
 
 
 
@@ -49679,7 +49842,154 @@ for ($i = 1; $i <= 973; $i++) {
 
 
 
+for ($i = 1190; $i <= 1330; $i++) {
+    databgintensitasbangunan::create([
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ]);
+}
 
+for ($i = 1331; $i <= 1500; $i++) {
+    databgintensitasbangunan::create([
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ]);
+}
+
+for ($i = 1501; $i <= 1630; $i++) {
+    databgintensitasbangunan::create([
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ]);
+}
+
+// Records with all null values (1631-1649, 1656-1679)
+for ($i = 1631; $i <= 1649; $i++) {
+    databgintensitasbangunan::create([
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ]);
+}
+
+// Special records with values (1650-1655)
+$specialRecords = [
+    1650 => ['garis_sempadan_bangunan' => 22, 'gambar_teknis_rencana' => 'Tidak ada', 'gambar_sesuai_pelaksana' => 'Tidak ada', 'ruang_terbuka_hijau' => 'Tidak ada', 'luas_rth' => 'Tidak ada', 'dokumen_rth' => 'Tidak ada', 'limbah_b3' => 'Tidak ada', 'sistem_penampungan_pengelolaan' => 'Tidak ada', 'dokumen_lingkungan_amdal' => 'Tidak ada', 'dokumen_aksesibilitas' => 'Tidak ada', 'jenis_transportasi_bg' => 'Tidak ada', 'dokumen_transport_bg' => 'Tidak ada', 'dokumen_teknis_tanah' => 'Tidak ada'],
+    1651 => ['garis_sempadan_bangunan' => 14, 'gambar_teknis_rencana' => 'Tidak ada', 'gambar_sesuai_pelaksana' => 'Tidak ada', 'ruang_terbuka_hijau' => 'Tidak ada', 'luas_rth' => 'Tidak ada', 'dokumen_rth' => 'Tidak ada', 'limbah_b3' => 'Tidak ada', 'sistem_penampungan_pengelolaan' => 'Tidak ada', 'dokumen_lingkungan_amdal' => 'Tidak ada', 'dokumen_aksesibilitas' => 'Tidak ada', 'jenis_transportasi_bg' => 'Tidak ada', 'dokumen_transport_bg' => 'Tidak ada', 'dokumen_teknis_tanah' => 'Tidak ada'],
+    1652 => ['garis_sempadan_bangunan' => 33, 'gambar_teknis_rencana' => 'Tidak ada', 'gambar_sesuai_pelaksana' => 'Tidak ada', 'ruang_terbuka_hijau' => 'Tidak ada', 'luas_rth' => 'Tidak ada', 'dokumen_rth' => 'Tidak ada', 'limbah_b3' => 'Tidak ada', 'sistem_penampungan_pengelolaan' => 'Tidak ada', 'dokumen_lingkungan_amdal' => 'Tidak ada', 'dokumen_aksesibilitas' => 'Tidak ada', 'jenis_transportasi_bg' => 'Tidak ada', 'dokumen_transport_bg' => 'Tidak ada', 'dokumen_teknis_tanah' => 'Tidak ada'],
+    1653 => ['garis_sempadan_bangunan' => 44, 'gambar_teknis_rencana' => 'Tidak ada', 'gambar_sesuai_pelaksana' => 'Tidak ada', 'ruang_terbuka_hijau' => 'Tidak ada', 'luas_rth' => 'Tidak ada', 'dokumen_rth' => 'Tidak ada', 'limbah_b3' => 'Tidak ada', 'sistem_penampungan_pengelolaan' => 'Tidak ada', 'dokumen_lingkungan_amdal' => 'Tidak ada', 'dokumen_aksesibilitas' => 'Tidak ada', 'jenis_transportasi_bg' => 'Tidak ada', 'dokumen_transport_bg' => 'Tidak ada', 'dokumen_teknis_tanah' => 'Tidak ada'],
+    1654 => ['garis_sempadan_bangunan' => 29, 'gambar_teknis_rencana' => 'Tidak ada', 'gambar_sesuai_pelaksana' => 'Tidak ada', 'ruang_terbuka_hijau' => 'Tidak ada', 'luas_rth' => 'Tidak ada', 'dokumen_rth' => 'Tidak ada', 'limbah_b3' => 'Tidak ada', 'sistem_penampungan_pengelolaan' => 'Tidak ada', 'dokumen_lingkungan_amdal' => 'Tidak ada', 'dokumen_aksesibilitas' => 'Tangga', 'jenis_transportasi_bg' => 'Tidak ada', 'dokumen_transport_bg' => 'Tidak ada', 'dokumen_teknis_tanah' => 'Tidak ada'],
+    1655 => ['garis_sempadan_bangunan' => 106, 'gambar_teknis_rencana' => 'Tidak ada', 'gambar_sesuai_pelaksana' => 'Tidak ada', 'ruang_terbuka_hijau' => 'Tidak ada', 'luas_rth' => 'Tidak ada', 'dokumen_rth' => 'Tidak ada', 'limbah_b3' => 'Tidak ada', 'sistem_penampungan_pengelolaan' => 'Tidak ada', 'dokumen_lingkungan_amdal' => 'Tidak ada', 'dokumen_aksesibilitas' => 'Tidak ada', 'jenis_transportasi_bg' => 'Tidak ada', 'dokumen_transport_bg' => 'Tidak ada', 'dokumen_teknis_tanah' => 'Tidak ada'],
+];
+
+foreach ($specialRecords as $id => $values) {
+    databgintensitasbangunan::create(array_merge([
+        'databgkepemilikan_id' => $id,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+    ], $values));
+}
+
+// Records with all null values (1656-1679)
+for ($i = 1656; $i <= 1679; $i++) {
+    databgintensitasbangunan::create([
+        'databgkepemilikan_id' => $i,
+        'nilaibgdidirikan' => null,
+        'nilaibgsaatini' => null,
+        'koefisien_dasar_bangunan' => null,
+        'koefisien_lantai_bangunan' => null,
+        'koefisien_daerah_hijau' => null,
+        'koefisien_tapak_basement' => null,
+        'garis_sempadan_bangunan' => null,
+        'gambar_teknis_rencana' => null,
+        'gambar_sesuai_pelaksana' => null,
+        'ruang_terbuka_hijau' => null,
+        'luas_rth' => null,
+        'dokumen_rth' => null,
+        'limbah_b3' => null,
+        'sistem_penampungan_pengelolaan' => null,
+        'dokumen_lingkungan_amdal' => null,
+        'dokumen_aksesibilitas' => null,
+        'jenis_transportasi_bg' => null,
+        'dokumen_transport_bg' => null,
+        'dokumen_teknis_tanah' => null,
+    ]);
+}
 
 
 // DATA BARU PENDATAAN BANGUNAN GEDUNG DOKUMEN MEP STRUKTUB BANGUNAN
@@ -50047,6 +50357,50 @@ for ($i = 1151; $i <= 1189; $i++) {
 
     databgdokumenmepbangunan::create($data);
 }
+
+
+for ($i = 1190; $i <= 1679; $i++) {
+    databgdokumenmepbangunan::create([
+        'databgkepemilikan_id' => $i,
+        'dokumen_lampiran_struktur' => null,
+        'mpk_rdkt' => null,
+        'dokumen_lampiran' => null,
+        'penangkal_kebakaran' => null,
+        'no_bundel_dok_teknis' => null,
+        'daya_listrik' => null,
+        'dokumen_instalasi_listrik' => null,
+        'instalasi_penangkal_listrik' => null,
+        'dokumen_pencahayaan' => null,
+        'dokumen_instalasi_komunikasi' => null,
+        'instalasi_komunikasi' => null,
+        'pengolahan_limbah_domestik' => null,
+        'sistem_sanitasi' => null,
+        'pengolahan_air_hujan' => null,
+        'sistem_drainase' => null,
+        'instalasi_gas' => null,
+        'dokumen_lampiran_sanitasi' => null,
+        'sumber_air' => null,
+        'biaya_retribusi' => null,
+        'surat_advis_krk' => null,
+        'surat_permohonan_imb' => null,
+        'surat_permohonan_slf' => null,
+        'fotocopy_identitas_pemohon' => null,
+        'surat_kuasa_imb' => null,
+        'surat_k3' => null,
+        'rekomendasi_desa' => null,
+        'rekom_kecamatan' => null,
+        'surat_kepemilikan_tanah_sewa' => null,
+        'copy_sertif_tanah' => null,
+        'surat_pajak' => null,
+        'sippt' => null,
+        'tabel_ceklis_dokumen' => null,
+        'tabel_ceklis_teknis' => null,
+        'surat_setoran_retribusi_daerah' => null,
+        'surat_ketetapan_retribusi_daerah' => null,
+        'berita_acara_pemeriksaan' => null,
+    ]);
+}
+
 
 // SIGIT BARU
 
