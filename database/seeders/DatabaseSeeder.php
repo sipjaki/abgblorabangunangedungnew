@@ -1111,8 +1111,8 @@ mbrgambar::create([
     'judul1' => 'MBR Bantuan Gambar',
     'berkas1' => 'assets/abgblora/logo/21.png',
     'berkas2' => 'assets/abgblora/logo/22.png',
-    'berkas3' => 'assets/abgblora/logo/23.png',
-    'berkas4' => 'assets/abgblora/logo/24.png',
+    'berkas3' => 'assets/abgblora/logo/24.png',
+    'berkas4' => 'assets/abgblora/logo/25.png',
 
 ]);
 
