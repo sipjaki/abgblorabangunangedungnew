@@ -1109,9 +1109,10 @@ petugasdinas::create([
 
 mbrgambar::create([
     'judul1' => 'MBR Bantuan Gambar',
-    'berkas1' => 'assets/abgblora/logo/01mbr.jpg',
-    'berkas2' => 'assets/abgblora/logo/001.pdf',
-    'berkas3' => 'assets/abgblora/logo/002.pdf',
+    'berkas1' => 'assets/abgblora/logo/21.png',
+    'berkas2' => 'assets/abgblora/logo/22.png',
+    'berkas3' => 'assets/abgblora/logo/23.png',
+    'berkas3' => 'assets/abgblora/logo/24.png',
 
 ]);
 
@@ -13109,6 +13110,7 @@ petugaspenilik::create([
     'skpenilik' => '900/3292-A/2024',
     'golongan2' => 'II/a',
 ]);
+
 
 // petugaspenilik::create([
 //     'id' => 5,
