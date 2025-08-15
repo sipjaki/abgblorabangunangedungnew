@@ -697,7 +697,7 @@ th {
 {{-- Cadangan 1 --}}
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> 1. Data Penyedia Jasa Perencana / Perorangan
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 5. Data Surat Perjanjian Sewa Lahan
     </label>
 
     <div class="d-flex flex-column gap-2">
@@ -724,7 +724,7 @@ th {
 {{-- Cadangan 2 --}}
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Identitas Pemilik Bangunan (KTP/KITAS)
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Surat Perjanjian Sewa Lahan
     </label>
 
     <textarea name="cadangan2" id="cadangan2" rows="3"
@@ -769,7 +769,7 @@ th {
 {{-- Berkas 5 --}}
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-file-text me-1" style="color: blue;"></i> 5. Berkas Dukung Lainnya
+        <i class="bi bi-file-text me-1" style="color: blue;"></i> 6. Berkas Dukung Lainnya
     </label>
 
     <div class="d-flex flex-column gap-2">
