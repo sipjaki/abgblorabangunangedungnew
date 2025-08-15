@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('bantuangambarinfos', function (Blueprint $table) {
             $table->id();
-              $table->string('judul1')->nullable();
-            $table->string('judul2')->nullable();
+              $table->text('judul1')->nullable();
+            $table->text('judul2')->nullable();
             $table->string('berkas1')->nullable();
             $table->string('berkas2')->nullable();
             $table->string('berkas3')->nullable();
