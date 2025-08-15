@@ -348,7 +348,17 @@ th {
                 ],
                 [
                     'icon' => 'bi-person-vcard',
-                    'title' => '5. Berkas Dukung Lainnya',
+                    'title' => '5. Surat Perjanjian Sewa Lahan ',
+                    'value' => $pemilik->cadangan1 ?? '-',
+                ],
+                [
+                    'icon' => 'bi-journal-text',
+                    'title' => 'Catatan Surat Perjanjian Sewa Lahan',
+                    'value' => $pemilik->cadangan2 ?? '-',
+                ],
+                [
+                    'icon' => 'bi-person-vcard',
+                    'title' => '6. Berkas Dukung Lainnya',
                     'value' => $pemilik->berkas5 ?? '-',
                 ],
 

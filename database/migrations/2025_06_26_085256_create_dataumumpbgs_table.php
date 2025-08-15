@@ -23,7 +23,7 @@ return new class extends Migration
                 $table->string('berkas4')->nullable();
                 $table->string('berkas5')->nullable();
 
-                $table->string('catatanberkas1')->nullable();
+                $table->string('catatanberkas1')->nullable(); // sudah di pakai
                 $table->string('catatanberkas2')->nullable();
                 $table->string('catatanberkas3')->nullable();
                 $table->string('catatanberkas4')->nullable();
@@ -37,7 +37,7 @@ return new class extends Migration
                 $table->string('berkas7')->nullable();
                 $table->string('berkas8')->nullable();
 
-                $table->string('cadangan1')->nullable();
+                $table->string('cadangan1')->nullable(); // SUDAH DI PAKAI
                 $table->string('cadangan2')->nullable();
                 $table->string('cadangan3')->nullable();
                 $table->string('cadangan4')->nullable();
