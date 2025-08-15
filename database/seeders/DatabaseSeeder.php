@@ -30238,7 +30238,7 @@ databgklasifikasi::create([
     'tingkat_kompleksitas' => 'Sederhana',
     'tingkat_permanensi' => 'Permanen',
     'kepadatan_lokasi' => 'Sedang',
-    'resiko_gebang' => 'Zona 3.',
+    'resiko_gempa' => 'Zona 3.',
     'resiko_kebakaran' => 'Rendah'
 ]);
 
