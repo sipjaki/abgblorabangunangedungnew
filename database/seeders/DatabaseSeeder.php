@@ -29048,6 +29048,1009 @@ for ($id = 1650; $id <= 1655; $id++) {
 }
 
 
+// SLTP 1 Jiken records (1680-1696)
+for ($i = 0; $i <= 16; $i++) {
+    $regNumber = '33.16.07.' . str_pad(24 + $i, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1680 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SLTP 1 Jiken',
+        'alamat' => 'Jl. Raya Jiken - Blora 58372.',
+        'notelepon' => '(0296) 525343',
+        'email' => 'smpn1jiken@yahoo.co.id',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SLTP N 2 JIKEN records (1697-1704)
+for ($i = 0; $i <= 7; $i++) {
+    databgkepemilikan::create([
+        'id' => 1697 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SLTP N 2 JIKEN',
+        'alamat' => 'Jl. Raya Bleboh, RT.0/RW.0, Dk.Bleboh, Ds./Kel. BLEBOH',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SLTP N 3 JIKEN records (1705-1715)
+for ($i = 0; $i <= 10; $i++) {
+    $regNumber = '33.16.07.' . str_pad(41 + $i, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1705 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SLTP N 3 JIKEN',
+        'alamat' => 'Jiworejo, RT.1/RW.1, Dk.Jiworejo, Ds./Kel. Jiworejo',
+        'notelepon' => '(0296) 525537',
+        'email' => 'Tidak ada',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// KANTOR CAB. DINDIK KEC. JIKEN records (1716-1721)
+for ($i = 0; $i <= 5; $i++) {
+    databgkepemilikan::create([
+        'id' => 1716 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'KANTOR CAB. DINDIK KEC. JIKEN',
+        'alamat' => 'Jiken',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 1 JIKEN records (1722-1726)
+for ($i = 0; $i <= 4; $i++) {
+    $regNumber = '33.16.07.' . str_pad(60 + $i, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1722 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 1 JIKEN',
+        'alamat' => 'Jiken, RT.4/RW.7, Dk.JIKEN, Ds./Kel. JIKEN',
+        'notelepon' => '085225204867',
+        'email' => 'sdn1jiken@gmail.com',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 2 JIKEN records (1727-1729)
+for ($i = 0; $i <= 2; $i++) {
+    $regNumber = '33.16.07.' . str_pad(54 + $i, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1727 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 2 JIKEN',
+        'alamat' => 'jl raya blora-cepu km 13 no 89. RT.04/RW.04.',
+        'notelepon' => '08989689945',
+        'email' => 'sdnjikenb@gmail.com',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+
+
+// SDN 2 JIKEN (1730-1732)
+for ($i = 0; $i <= 2; $i++) {
+    $regNumber = '33.16.07.' . str_pad(57 + $i, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1730 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 2 JIKEN',
+        'alamat' => 'jl raya blora-cepu km 13 no 89. RT.04/RW.04.',
+        'notelepon' => '08989689945',
+        'email' => 'sdnjikenb@gmail.com',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 3 JIKEN (1733-1738)
+for ($i = 0; $i <= 5; $i++) {
+    databgkepemilikan::create([
+        'id' => 1733 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 3 JIKEN',
+        'alamat' => 'JLN LAPANGAN OLAHRAGA KEC JIKEN, KAB BLORA',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 4 JIKEN (1739-1741)
+for ($i = 0; $i <= 2; $i++) {
+    $regNumber = '33.16.07.' . str_pad(21 + $i, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1739 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 4 JIKEN',
+        'alamat' => 'DK.BALONGAN RW 04.',
+        'notelepon' => null,
+        'email' => 'jikensdn4@gmail.com',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 5 JIKEN (1742-1747)
+for ($i = 0; $i <= 5; $i++) {
+    databgkepemilikan::create([
+        'id' => 1742 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 5 JIKEN',
+        'alamat' => 'JIKEN, RT.1/RW.5, Dk.SURUHAN, Ds./Kel. Jiken',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 1 BLEBOH (1748-1755)
+for ($i = 0; $i <= 7; $i++) {
+    databgkepemilikan::create([
+        'id' => 1748 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 1 BLEBOH',
+        'alamat' => 'JLN.RAYA DS.BLEBOH KEC.JIKEN',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 2 BLEBOH (1756-1761)
+for ($i = 0; $i <= 5; $i++) {
+    databgkepemilikan::create([
+        'id' => 1756 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 2 BLEBOH',
+        'alamat' => 'Bleboh, RT.1/RW.6, Dk.NANAS, Ds./Kel. BLEBOH',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 3 BLEBOH (1762-1768)
+for ($i = 0; $i <= 6; $i++) {
+    databgkepemilikan::create([
+        'id' => 1762 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 3 BLEBOH',
+        'alamat' => 'Bleboh, RT.8/RW.1, Dk.Bendo, Ds./Kel. BLEBOH',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 4 BLEBOH (1769-1775)
+for ($i = 0; $i <= 6; $i++) {
+    databgkepemilikan::create([
+        'id' => 1769 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 4 BLEBOH',
+        'alamat' => 'DK. SUMBERJO DS.BLEBOH KEC. JIKEN',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 5 BLEBOH (1776-1779)
+for ($i = 0; $i <= 3; $i++) {
+    databgkepemilikan::create([
+        'id' => 1776 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 5 BLEBOH',
+        'alamat' => 'Dk.Sambong Desa Bleboh Kec. Jiken Kabupaten Blora, RT.0/RW.0, Dk.SAMBONG, Ds./Kel. BLEBOH',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+
+// SDN 5 BLEBOH (1780)
+databgkepemilikan::create([
+    'id' => 1780,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'SDN 5 BLEBOH',
+    'alamat' => 'Dk.Sambong Desa Bleboh Kec. Jiken Kabupaten Blora, RT.0/RW.0, Dk.SAMBONG, Ds./Kel. BLEBOH',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// SDN CABAK (1781-1787)
+for ($i = 0; $i <= 6; $i++) {
+    $regNumber = '33.16.07.' . str_pad($i + 1, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1781 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN CABAK',
+        'alamat' => 'Jl. Nasional Blora Cepu km.16, Ds.Cabak, Kec. Jiken',
+        'notelepon' => '081325637578',
+        'email' => 'cabaksdn@gmail.com',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 1 NGLEBUR (1788-1795)
+for ($i = 0; $i <= 7; $i++) {
+    databgkepemilikan::create([
+        'id' => 1788 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 1 NGLEBUR',
+        'alamat' => 'DESA NGLEBUR RT 03 RW 02.',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 2 NGLEBUR (1796-1800)
+for ($i = 0; $i <= 4; $i++) {
+    databgkepemilikan::create([
+        'id' => 1796 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 2 NGLEBUR',
+        'alamat' => 'Jl. Bleboh, RT.4/RW.4, Dk.PENGKOK, Ds./Kel. NGLEBUR',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 3 NGLEBUR (1801-1807)
+for ($i = 0; $i <= 6; $i++) {
+    databgkepemilikan::create([
+        'id' => 1801 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 3 NGLEBUR',
+        'alamat' => 'Ds Nglebur Dk Pengkok',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 4 NGLEBUR (1808-1810)
+for ($i = 0; $i <= 2; $i++) {
+    databgkepemilikan::create([
+        'id' => 1808 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 4 NGLEBUR',
+        'alamat' => 'Dk Guwo, RT.3/RW.6, Dk.GUWO, Ds./Kel. Nglebur',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 1 KETRINGAN (1811-1818)
+for ($i = 0; $i <= 7; $i++) {
+    databgkepemilikan::create([
+        'id' => 1811 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 1 KETRINGAN',
+        'alamat' => 'Ketringan, RT.1/RW.1, Dk.Ketringan, Ds./Kel. KETRINGAN',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 2 KETRINGAN (1819-1824)
+for ($i = 0; $i <= 5; $i++) {
+    databgkepemilikan::create([
+        'id' => 1819 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 2 KETRINGAN',
+        'alamat' => 'Dk. Talun Ds. Ketringan',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 3 KETRINGAN (1825-1828)
+for ($i = 0; $i <= 3; $i++) {
+    databgkepemilikan::create([
+        'id' => 1825 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 3 KETRINGAN',
+        'alamat' => 'Ketringan, RT.3/RW.3, Dk.NGAGLIK, Ds./Kel. KETRINGAN',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 4 KETRINGAN (1829)
+databgkepemilikan::create([
+    'id' => 1829,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'SDN 4 KETRINGAN',
+    'alamat' => 'Dukuh Gempol Desa Ketringan, RT.2/RW.4, Dk.Dukuh Gempol, Ds./Kel. Ketringan',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+
+// SDN 4 KETRINGAN (1830-1834)
+for ($i = 0; $i <= 4; $i++) {
+    databgkepemilikan::create([
+        'id' => 1830 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 4 KETRINGAN',
+        'alamat' => 'Dukuh Gempol Desa Ketringan, RT.2/RW.4, Dk.Dukuh Gempol, Ds./Kel. Ketringan',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 1 GENJAHAN (1835-1844)
+for ($i = 0; $i <= 9; $i++) {
+    databgkepemilikan::create([
+        'id' => 1835 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 1 GENJAHAN',
+        'alamat' => 'Genjahan, RT.4/RW.1, Dk.GENJAHAN, Ds./Kel. Genjahan',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 2 GENJAHAN (1845-1850)
+for ($i = 0; $i <= 5; $i++) {
+    databgkepemilikan::create([
+        'id' => 1845 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 2 GENJAHAN',
+        'alamat' => 'Genjahan, RT.1/RW.2, Dk.Dk Klampok, Ds./Kel. Genjahan',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 1 SINGONEGORO (1851-1860)
+for ($i = 0; $i <= 9; $i++) {
+    databgkepemilikan::create([
+        'id' => 1851 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 1 SINGONEGORO',
+        'alamat' => 'Desa Singonegoro, RT.2/RW.1, Dk.Krajan, Ds./Kel. Singonegoro',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 2 SINGONEGORO (1861)
+databgkepemilikan::create([
+    'id' => 1861,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'SDN 2 SINGONEGORO',
+    'alamat' => 'Desa Singonegoro',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// SDN JIWOREJO (1862-1865)
+for ($i = 0; $i <= 3; $i++) {
+    databgkepemilikan::create([
+        'id' => 1862 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN JIWOREJO',
+        'alamat' => 'Desa Jiworejo, RT.1/RW.1, Dk.jiworejo, Ds./Kel. Jiworejo',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 1 BANGOAN (1866-1867)
+for ($i = 0; $i <= 1; $i++) {
+    databgkepemilikan::create([
+        'id' => 1866 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 1 BANGOAN',
+        'alamat' => 'Ds. Bangoan Rt. 04 Rw. 02.',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 2 BANGOAN (1868-1871)
+for ($i = 0; $i <= 3; $i++) {
+    databgkepemilikan::create([
+        'id' => 1868 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 2 BANGOAN',
+        'alamat' => 'Desa Bangoan RT 03/RW 01.',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN JANJANG (1872-1876)
+for ($i = 0; $i <= 4; $i++) {
+    databgkepemilikan::create([
+        'id' => 1872 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN JANJANG',
+        'alamat' => 'Jl. Pesarehan, RT.2/RW.3, Dk.janjang, Ds./Kel. Janjang',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SDN 1 NGLOBO (1877-1879)
+for ($i = 0; $i <= 2; $i++) {
+    $regNumber = '33.16.07.' . str_pad($i + 8, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1877 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 1 NGLOBO',
+        'alamat' => 'Desa Nglobo, RT.2/RW.4, Dk.PAYAMAN, Ds./Kel. NGLOBO',
+        'notelepon' => '081344430017',
+        'email' => 'sdn1nglobo.payaman2@gmail.com',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+
+// SDN 2 NGLOBO (1880-1884)
+for ($i = 0; $i <= 4; $i++) {
+    $regNumber = '33.16.07.' . str_pad($i + 11, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1880 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'SDN 2 NGLOBO',
+        'alamat' => 'Nglobo, RT.2/RW.1, Dk.NGLOBO, Ds./Kel. Nglobo',
+        'notelepon' => '085226852575',
+        'email' => 'sdnnglobo59@gmail.com',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// SMPN 4 JIKEN SATAP (1885)
+databgkepemilikan::create([
+    'id' => 1885,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'SMPN 4 JIKEN SATAP',
+    'alamat' => 'DK. GEMPOL RT 01 RW 02, RT.1/RW.4, Dk.Gempol, Ds./Kel. KETRINGAN',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// UPTD PUSKESMAS JIKEN (1886-1890)
+for ($i = 0; $i <= 4; $i++) {
+    databgkepemilikan::create([
+        'id' => 1886 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'UPTD PUSKESMAS JIKEN',
+        'alamat' => 'Jl. Raya Desa Jiworejo Kec. Jiken',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// PUSKESMAS PEMBANTU KETRINGAN (1891)
+databgkepemilikan::create([
+    'id' => 1891,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'PUSKESMAS PEMBANTU KETRINGAN',
+    'alamat' => '',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// PUSKESMAS PEMBANTU SINGONEGORO (1892)
+databgkepemilikan::create([
+    'id' => 1892,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'PUSKESMAS PEMBANTU SINGONEGORO',
+    'alamat' => '',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// BALAI PENYULUH PERTANIAN KEC.JIKEN (1893)
+databgkepemilikan::create([
+    'id' => 1893,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'BALAI PENYULUH PERTANIAN KEC.JIKEN',
+    'alamat' => 'Desa Jiken Kec. Jiken Kab. Blora',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN (1894)
+databgkepemilikan::create([
+    'id' => 1894,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN',
+    'alamat' => 'Jiken',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// DINAS LINGKUNGAN HIDUP (1895)
+databgkepemilikan::create([
+    'id' => 1895,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'DINAS LINGKUNGAN HIDUP',
+    'alamat' => 'Ds. Jiken',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// DINAS PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA (1896)
+databgkepemilikan::create([
+    'id' => 1896,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'DINAS PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA',
+    'alamat' => 'Jl. Jiken Suruhan RT.03 RW.04 Jiken Kec. Jiken',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// DINAS PERDAGANGAN, KOPERASI USAHA KECIL DAN MENENGAH (1897)
+databgkepemilikan::create([
+    'id' => 1897,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'DINAS PERDAGANGAN, KOPERASI USAHA KECIL DAN MENENGAH',
+    'alamat' => 'Jl. Raya Jiken Cepu',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// UPTD SD/SMP JIKEN (1898-1899)
+for ($i = 0; $i <= 1; $i++) {
+    $regNumber = '33.16.07.' . str_pad($i + 19, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1898 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'UPTD SD/SMP JIKEN',
+        'alamat' => 'Jl.Raya Blora-Cepu KM.14, No 120',
+        'notelepon' => '081227370829',
+        'email' => 'Tidak ada',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// KECAMATAN JIKEN (1900-1906)
+for ($i = 0; $i <= 6; $i++) {
+    databgkepemilikan::create([
+        'id' => 1900 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'KECAMATAN JIKEN',
+        'alamat' => 'Jl. Raya Jiken No. 40.',
+        'notelepon' => null,
+        'email' => null,
+        'nopengesahanusaha' => null,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// Kelurahan Bengowan (1907)
+databgkepemilikan::create([
+    'id' => 1907,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'Kelurahan Bengowan',
+    'alamat' => '',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// Kelurahan Bleboh (1908)
+databgkepemilikan::create([
+    'id' => 1908,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'Kelurahan Bleboh',
+    'alamat' => '',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// Balai Desa Cabak (1909-1910)
+for ($i = 0; $i <= 1; $i++) {
+    $regNumber = '33.17.' . str_pad($i + 52, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1909 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'Balai Desa Cabak',
+        'alamat' => 'Desa Cabak RT.01/RW.03, Kec. Jiken',
+        'notelepon' => '0811228504508',
+        'email' => 'desacabak02@gmail.com',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+// Kelurahan Genjahan (1911)
+databgkepemilikan::create([
+    'id' => 1911,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'Kelurahan Genjahan',
+    'alamat' => '',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// Kelurahan Janjang (1912)
+databgkepemilikan::create([
+    'id' => 1912,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'Kelurahan Janjang',
+    'alamat' => '',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// Kelurahan Jiken (1913)
+databgkepemilikan::create([
+    'id' => 1913,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'Kelurahan Jiken',
+    'alamat' => '',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// Kelurahan Jiworejo (1914)
+databgkepemilikan::create([
+    'id' => 1914,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'Kelurahan Jiworejo',
+    'alamat' => '',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// Kelurahan Ketringan (1915)
+databgkepemilikan::create([
+    'id' => 1915,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'Kelurahan Ketringan',
+    'alamat' => '',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// Kelurahan Nglebur (1916)
+databgkepemilikan::create([
+    'id' => 1916,
+    'user_id' => 92,
+    'kecamatanblora_id' => 8,
+    'namainstitusi' => 'Kelurahan Nglebur',
+    'alamat' => '',
+    'notelepon' => null,
+    'email' => null,
+    'nopengesahanusaha' => null,
+    'tanggalinput' => Carbon::now(),
+]);
+
+// Balai Desa Nglobo (1917-1918)
+for ($i = 0; $i <= 1; $i++) {
+    $regNumber = '33.16.07.' . str_pad($i + 16, 4, '0', STR_PAD_LEFT);
+
+    databgkepemilikan::create([
+        'id' => 1917 + $i,
+        'user_id' => 92,
+        'kecamatanblora_id' => 8,
+        'namainstitusi' => 'Balai Desa Nglobo',
+        'alamat' => 'Desa Nglobo RT.01/RW.02 Kec. Jiken Kab. Blora 5837' . (2 + $i),
+        'notelepon' => '085848965900',
+        'email' => 'bumdesnglobo@gmail.com',
+        'nopengesahanusaha' => $regNumber,
+        'tanggalinput' => Carbon::now(),
+    ]);
+}
+
+
+
+
+
+// Data for IDs 1680-1696
+for ($id = 1680; $id <= 1696; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => 'Tidak ada copy sertf tanah',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => 'Tidak ada',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for IDs 1697-1704 (all fields are '-')
+for ($id = 1697; $id <= 1704; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for IDs 1705-1715
+for ($id = 1705; $id <= 1715; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '11.12.07.10.4.00001.',
+        'alamattanah' => 'HGP',
+    ]);
+}
+
+// Data for IDs 1716-1720 (all fields are '-')
+for ($id = 1716; $id <= 1720; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for IDs 1721-1730
+for ($id = 1721; $id <= 1730; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => 'Tidak ada copy sertf tanah',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => 'Tidak ada',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for ID 1731
+databgtanah::create([
+    'id' => 1731,
+    'databgkepemilikan_id' => 1731,
+    'statushaktanah' => 'Tidak ada copy sertf tanah',
+    'statuskepemilikan' => 'Negara',
+    'nobuktikepemilikan' => 'Tidak ada',
+    'alamattanah' => '-',
+]);
+
+// Data for IDs 1732-1737 (all fields are '-')
+for ($id = 1732; $id <= 1737; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for IDs 1738-1740
+for ($id = 1738; $id <= 1740; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => 'Tidak ada copy sertf tanah',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => 'Tidak ada',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for IDs 1741-1786 (all fields are '-')
+for ($id = 1741; $id <= 1777; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for IDs 1780-1786
+for ($id = 1780; $id <= 1786; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => 'Pemkab',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => '11.12.07.4.00019.',
+        'alamattanah' => 'HGP',
+    ]);
+}
+
+// Data for IDs 1787-1800 (all fields are '-')
+for ($id = 1787; $id <= 1800; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for IDs 1801-1875 (all fields are '-')
+for ($id = 1801; $id <= 1875; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for IDs 1876-1883
+for ($id = 1876; $id <= 1883; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => 'Tidak ada copy sertf tanah',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => 'Tidak ada',
+        'alamattanah' => '-',
+    ]);
+}
 
 // SAMPAI SINI UNTUK PENDATAAN BANGUNAN
 
