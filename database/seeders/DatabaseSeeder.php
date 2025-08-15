@@ -30317,7 +30317,7 @@ for ($id = 1876; $id <= 1883; $id++) {
         'tingkat_kompleksitas' => 'Sederhana',
         'tingkat_permanensi' => 'Permanen',
         'kepadatan_lokasi' => 'Sedang',
-        'resiko_gebang' => 'zona 3',
+        'resiko_gempa' => 'zona 3',
         'resiko_kebakaran' => 'Rendah'
     ]);
 }
@@ -30343,7 +30343,7 @@ for ($id = 1898; $id <= 1899; $id++) {
         'tingkat_kompleksitas' => 'Sederhana',
         'tingkat_permanensi' => 'Permanen',
         'kepadatan_lokasi' => 'Sedang',
-        'resiko_gebang' => 'zona 3',
+        'resiko_gempa' => 'zona 3',
         'resiko_kebakaran' => 'Rendah'
     ]);
 }
@@ -30369,7 +30369,7 @@ for ($id = 1908; $id <= 1909; $id++) {
         'tingkat_kompleksitas' => 'Sederhana',
         'tingkat_permanensi' => 'Permanen',
         'kepadatan_lokasi' => 'Sedang',
-        'resiko_gebang' => 'zona 3',
+        'resiko_gempa' => 'zona 3',
         'resiko_kebakaran' => 'Rendah'
     ]);
 }
@@ -30395,7 +30395,7 @@ for ($id = 1916; $id <= 1918; $id++) {
         'tingkat_kompleksitas' => 'Sederhana',
         'tingkat_permanensi' => 'Permanen',
         'kepadatan_lokasi' => 'Sedang',
-        'resiko_gebang' => 'zona 3',
+        'resiko_gempa' => 'zona 3',
         'resiko_kebakaran' => 'Rendah'
     ]);
 }
