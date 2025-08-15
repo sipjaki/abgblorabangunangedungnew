@@ -29054,7 +29054,7 @@ for ($i = 0; $i <= 16; $i++) {
 
     databgkepemilikan::create([
         'id' => 1680 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SLTP 1 Jiken',
         'alamat' => 'Jl. Raya Jiken - Blora 58372.',
@@ -29069,7 +29069,7 @@ for ($i = 0; $i <= 16; $i++) {
 for ($i = 0; $i <= 7; $i++) {
     databgkepemilikan::create([
         'id' => 1697 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SLTP N 2 JIKEN',
         'alamat' => 'Jl. Raya Bleboh, RT.0/RW.0, Dk.Bleboh, Ds./Kel. BLEBOH',
@@ -29086,7 +29086,7 @@ for ($i = 0; $i <= 10; $i++) {
 
     databgkepemilikan::create([
         'id' => 1705 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SLTP N 3 JIKEN',
         'alamat' => 'Jiworejo, RT.1/RW.1, Dk.Jiworejo, Ds./Kel. Jiworejo',
@@ -29101,7 +29101,7 @@ for ($i = 0; $i <= 10; $i++) {
 for ($i = 0; $i <= 5; $i++) {
     databgkepemilikan::create([
         'id' => 1716 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'KANTOR CAB. DINDIK KEC. JIKEN',
         'alamat' => 'Jiken',
@@ -29118,7 +29118,7 @@ for ($i = 0; $i <= 4; $i++) {
 
     databgkepemilikan::create([
         'id' => 1722 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 1 JIKEN',
         'alamat' => 'Jiken, RT.4/RW.7, Dk.JIKEN, Ds./Kel. JIKEN',
@@ -29135,7 +29135,7 @@ for ($i = 0; $i <= 2; $i++) {
 
     databgkepemilikan::create([
         'id' => 1727 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 2 JIKEN',
         'alamat' => 'jl raya blora-cepu km 13 no 89. RT.04/RW.04.',
@@ -29154,7 +29154,7 @@ for ($i = 0; $i <= 2; $i++) {
 
     databgkepemilikan::create([
         'id' => 1730 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 2 JIKEN',
         'alamat' => 'jl raya blora-cepu km 13 no 89. RT.04/RW.04.',
@@ -29169,7 +29169,7 @@ for ($i = 0; $i <= 2; $i++) {
 for ($i = 0; $i <= 5; $i++) {
     databgkepemilikan::create([
         'id' => 1733 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 3 JIKEN',
         'alamat' => 'JLN LAPANGAN OLAHRAGA KEC JIKEN, KAB BLORA',
@@ -29186,7 +29186,7 @@ for ($i = 0; $i <= 2; $i++) {
 
     databgkepemilikan::create([
         'id' => 1739 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 4 JIKEN',
         'alamat' => 'DK.BALONGAN RW 04.',
@@ -29201,7 +29201,7 @@ for ($i = 0; $i <= 2; $i++) {
 for ($i = 0; $i <= 5; $i++) {
     databgkepemilikan::create([
         'id' => 1742 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 5 JIKEN',
         'alamat' => 'JIKEN, RT.1/RW.5, Dk.SURUHAN, Ds./Kel. Jiken',
@@ -29216,7 +29216,7 @@ for ($i = 0; $i <= 5; $i++) {
 for ($i = 0; $i <= 7; $i++) {
     databgkepemilikan::create([
         'id' => 1748 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 1 BLEBOH',
         'alamat' => 'JLN.RAYA DS.BLEBOH KEC.JIKEN',
@@ -29231,7 +29231,7 @@ for ($i = 0; $i <= 7; $i++) {
 for ($i = 0; $i <= 5; $i++) {
     databgkepemilikan::create([
         'id' => 1756 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 2 BLEBOH',
         'alamat' => 'Bleboh, RT.1/RW.6, Dk.NANAS, Ds./Kel. BLEBOH',
@@ -29246,7 +29246,7 @@ for ($i = 0; $i <= 5; $i++) {
 for ($i = 0; $i <= 6; $i++) {
     databgkepemilikan::create([
         'id' => 1762 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 3 BLEBOH',
         'alamat' => 'Bleboh, RT.8/RW.1, Dk.Bendo, Ds./Kel. BLEBOH',
@@ -29261,7 +29261,7 @@ for ($i = 0; $i <= 6; $i++) {
 for ($i = 0; $i <= 6; $i++) {
     databgkepemilikan::create([
         'id' => 1769 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 4 BLEBOH',
         'alamat' => 'DK. SUMBERJO DS.BLEBOH KEC. JIKEN',
@@ -29276,7 +29276,7 @@ for ($i = 0; $i <= 6; $i++) {
 for ($i = 0; $i <= 3; $i++) {
     databgkepemilikan::create([
         'id' => 1776 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 5 BLEBOH',
         'alamat' => 'Dk.Sambong Desa Bleboh Kec. Jiken Kabupaten Blora, RT.0/RW.0, Dk.SAMBONG, Ds./Kel. BLEBOH',
@@ -29291,7 +29291,7 @@ for ($i = 0; $i <= 3; $i++) {
 // SDN 5 BLEBOH (1780)
 databgkepemilikan::create([
     'id' => 1780,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'SDN 5 BLEBOH',
     'alamat' => 'Dk.Sambong Desa Bleboh Kec. Jiken Kabupaten Blora, RT.0/RW.0, Dk.SAMBONG, Ds./Kel. BLEBOH',
@@ -29307,7 +29307,7 @@ for ($i = 0; $i <= 6; $i++) {
 
     databgkepemilikan::create([
         'id' => 1781 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN CABAK',
         'alamat' => 'Jl. Nasional Blora Cepu km.16, Ds.Cabak, Kec. Jiken',
@@ -29322,7 +29322,7 @@ for ($i = 0; $i <= 6; $i++) {
 for ($i = 0; $i <= 7; $i++) {
     databgkepemilikan::create([
         'id' => 1788 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 1 NGLEBUR',
         'alamat' => 'DESA NGLEBUR RT 03 RW 02.',
@@ -29337,7 +29337,7 @@ for ($i = 0; $i <= 7; $i++) {
 for ($i = 0; $i <= 4; $i++) {
     databgkepemilikan::create([
         'id' => 1796 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 2 NGLEBUR',
         'alamat' => 'Jl. Bleboh, RT.4/RW.4, Dk.PENGKOK, Ds./Kel. NGLEBUR',
@@ -29352,7 +29352,7 @@ for ($i = 0; $i <= 4; $i++) {
 for ($i = 0; $i <= 6; $i++) {
     databgkepemilikan::create([
         'id' => 1801 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 3 NGLEBUR',
         'alamat' => 'Ds Nglebur Dk Pengkok',
@@ -29367,7 +29367,7 @@ for ($i = 0; $i <= 6; $i++) {
 for ($i = 0; $i <= 2; $i++) {
     databgkepemilikan::create([
         'id' => 1808 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 4 NGLEBUR',
         'alamat' => 'Dk Guwo, RT.3/RW.6, Dk.GUWO, Ds./Kel. Nglebur',
@@ -29382,7 +29382,7 @@ for ($i = 0; $i <= 2; $i++) {
 for ($i = 0; $i <= 7; $i++) {
     databgkepemilikan::create([
         'id' => 1811 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 1 KETRINGAN',
         'alamat' => 'Ketringan, RT.1/RW.1, Dk.Ketringan, Ds./Kel. KETRINGAN',
@@ -29397,7 +29397,7 @@ for ($i = 0; $i <= 7; $i++) {
 for ($i = 0; $i <= 5; $i++) {
     databgkepemilikan::create([
         'id' => 1819 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 2 KETRINGAN',
         'alamat' => 'Dk. Talun Ds. Ketringan',
@@ -29412,7 +29412,7 @@ for ($i = 0; $i <= 5; $i++) {
 for ($i = 0; $i <= 3; $i++) {
     databgkepemilikan::create([
         'id' => 1825 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 3 KETRINGAN',
         'alamat' => 'Ketringan, RT.3/RW.3, Dk.NGAGLIK, Ds./Kel. KETRINGAN',
@@ -29426,7 +29426,7 @@ for ($i = 0; $i <= 3; $i++) {
 // SDN 4 KETRINGAN (1829)
 databgkepemilikan::create([
     'id' => 1829,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'SDN 4 KETRINGAN',
     'alamat' => 'Dukuh Gempol Desa Ketringan, RT.2/RW.4, Dk.Dukuh Gempol, Ds./Kel. Ketringan',
@@ -29441,7 +29441,7 @@ databgkepemilikan::create([
 for ($i = 0; $i <= 4; $i++) {
     databgkepemilikan::create([
         'id' => 1830 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 4 KETRINGAN',
         'alamat' => 'Dukuh Gempol Desa Ketringan, RT.2/RW.4, Dk.Dukuh Gempol, Ds./Kel. Ketringan',
@@ -29456,7 +29456,7 @@ for ($i = 0; $i <= 4; $i++) {
 for ($i = 0; $i <= 9; $i++) {
     databgkepemilikan::create([
         'id' => 1835 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 1 GENJAHAN',
         'alamat' => 'Genjahan, RT.4/RW.1, Dk.GENJAHAN, Ds./Kel. Genjahan',
@@ -29471,7 +29471,7 @@ for ($i = 0; $i <= 9; $i++) {
 for ($i = 0; $i <= 5; $i++) {
     databgkepemilikan::create([
         'id' => 1845 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 2 GENJAHAN',
         'alamat' => 'Genjahan, RT.1/RW.2, Dk.Dk Klampok, Ds./Kel. Genjahan',
@@ -29486,7 +29486,7 @@ for ($i = 0; $i <= 5; $i++) {
 for ($i = 0; $i <= 9; $i++) {
     databgkepemilikan::create([
         'id' => 1851 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 1 SINGONEGORO',
         'alamat' => 'Desa Singonegoro, RT.2/RW.1, Dk.Krajan, Ds./Kel. Singonegoro',
@@ -29500,7 +29500,7 @@ for ($i = 0; $i <= 9; $i++) {
 // SDN 2 SINGONEGORO (1861)
 databgkepemilikan::create([
     'id' => 1861,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'SDN 2 SINGONEGORO',
     'alamat' => 'Desa Singonegoro',
@@ -29514,7 +29514,7 @@ databgkepemilikan::create([
 for ($i = 0; $i <= 3; $i++) {
     databgkepemilikan::create([
         'id' => 1862 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN JIWOREJO',
         'alamat' => 'Desa Jiworejo, RT.1/RW.1, Dk.jiworejo, Ds./Kel. Jiworejo',
@@ -29529,7 +29529,7 @@ for ($i = 0; $i <= 3; $i++) {
 for ($i = 0; $i <= 1; $i++) {
     databgkepemilikan::create([
         'id' => 1866 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 1 BANGOAN',
         'alamat' => 'Ds. Bangoan Rt. 04 Rw. 02.',
@@ -29544,7 +29544,7 @@ for ($i = 0; $i <= 1; $i++) {
 for ($i = 0; $i <= 3; $i++) {
     databgkepemilikan::create([
         'id' => 1868 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 2 BANGOAN',
         'alamat' => 'Desa Bangoan RT 03/RW 01.',
@@ -29559,7 +29559,7 @@ for ($i = 0; $i <= 3; $i++) {
 for ($i = 0; $i <= 4; $i++) {
     databgkepemilikan::create([
         'id' => 1872 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN JANJANG',
         'alamat' => 'Jl. Pesarehan, RT.2/RW.3, Dk.janjang, Ds./Kel. Janjang',
@@ -29576,7 +29576,7 @@ for ($i = 0; $i <= 2; $i++) {
 
     databgkepemilikan::create([
         'id' => 1877 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 1 NGLOBO',
         'alamat' => 'Desa Nglobo, RT.2/RW.4, Dk.PAYAMAN, Ds./Kel. NGLOBO',
@@ -29594,7 +29594,7 @@ for ($i = 0; $i <= 4; $i++) {
 
     databgkepemilikan::create([
         'id' => 1880 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'SDN 2 NGLOBO',
         'alamat' => 'Nglobo, RT.2/RW.1, Dk.NGLOBO, Ds./Kel. Nglobo',
@@ -29608,7 +29608,7 @@ for ($i = 0; $i <= 4; $i++) {
 // SMPN 4 JIKEN SATAP (1885)
 databgkepemilikan::create([
     'id' => 1885,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'SMPN 4 JIKEN SATAP',
     'alamat' => 'DK. GEMPOL RT 01 RW 02, RT.1/RW.4, Dk.Gempol, Ds./Kel. KETRINGAN',
@@ -29622,7 +29622,7 @@ databgkepemilikan::create([
 for ($i = 0; $i <= 4; $i++) {
     databgkepemilikan::create([
         'id' => 1886 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'UPTD PUSKESMAS JIKEN',
         'alamat' => 'Jl. Raya Desa Jiworejo Kec. Jiken',
@@ -29636,7 +29636,7 @@ for ($i = 0; $i <= 4; $i++) {
 // PUSKESMAS PEMBANTU KETRINGAN (1891)
 databgkepemilikan::create([
     'id' => 1891,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'PUSKESMAS PEMBANTU KETRINGAN',
     'alamat' => '',
@@ -29649,7 +29649,7 @@ databgkepemilikan::create([
 // PUSKESMAS PEMBANTU SINGONEGORO (1892)
 databgkepemilikan::create([
     'id' => 1892,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'PUSKESMAS PEMBANTU SINGONEGORO',
     'alamat' => '',
@@ -29662,7 +29662,7 @@ databgkepemilikan::create([
 // BALAI PENYULUH PERTANIAN KEC.JIKEN (1893)
 databgkepemilikan::create([
     'id' => 1893,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'BALAI PENYULUH PERTANIAN KEC.JIKEN',
     'alamat' => 'Desa Jiken Kec. Jiken Kab. Blora',
@@ -29675,7 +29675,7 @@ databgkepemilikan::create([
 // DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN (1894)
 databgkepemilikan::create([
     'id' => 1894,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN',
     'alamat' => 'Jiken',
@@ -29688,7 +29688,7 @@ databgkepemilikan::create([
 // DINAS LINGKUNGAN HIDUP (1895)
 databgkepemilikan::create([
     'id' => 1895,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'DINAS LINGKUNGAN HIDUP',
     'alamat' => 'Ds. Jiken',
@@ -29701,7 +29701,7 @@ databgkepemilikan::create([
 // DINAS PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA (1896)
 databgkepemilikan::create([
     'id' => 1896,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'DINAS PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA',
     'alamat' => 'Jl. Jiken Suruhan RT.03 RW.04 Jiken Kec. Jiken',
@@ -29714,7 +29714,7 @@ databgkepemilikan::create([
 // DINAS PERDAGANGAN, KOPERASI USAHA KECIL DAN MENENGAH (1897)
 databgkepemilikan::create([
     'id' => 1897,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'DINAS PERDAGANGAN, KOPERASI USAHA KECIL DAN MENENGAH',
     'alamat' => 'Jl. Raya Jiken Cepu',
@@ -29730,7 +29730,7 @@ for ($i = 0; $i <= 1; $i++) {
 
     databgkepemilikan::create([
         'id' => 1898 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'UPTD SD/SMP JIKEN',
         'alamat' => 'Jl.Raya Blora-Cepu KM.14, No 120',
@@ -29745,7 +29745,7 @@ for ($i = 0; $i <= 1; $i++) {
 for ($i = 0; $i <= 6; $i++) {
     databgkepemilikan::create([
         'id' => 1900 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'KECAMATAN JIKEN',
         'alamat' => 'Jl. Raya Jiken No. 40.',
@@ -29759,7 +29759,7 @@ for ($i = 0; $i <= 6; $i++) {
 // Kelurahan Bengowan (1907)
 databgkepemilikan::create([
     'id' => 1907,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'Kelurahan Bengowan',
     'alamat' => '',
@@ -29772,7 +29772,7 @@ databgkepemilikan::create([
 // Kelurahan Bleboh (1908)
 databgkepemilikan::create([
     'id' => 1908,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'Kelurahan Bleboh',
     'alamat' => '',
@@ -29788,7 +29788,7 @@ for ($i = 0; $i <= 1; $i++) {
 
     databgkepemilikan::create([
         'id' => 1909 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'Balai Desa Cabak',
         'alamat' => 'Desa Cabak RT.01/RW.03, Kec. Jiken',
@@ -29802,7 +29802,7 @@ for ($i = 0; $i <= 1; $i++) {
 // Kelurahan Genjahan (1911)
 databgkepemilikan::create([
     'id' => 1911,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'Kelurahan Genjahan',
     'alamat' => '',
@@ -29815,7 +29815,7 @@ databgkepemilikan::create([
 // Kelurahan Janjang (1912)
 databgkepemilikan::create([
     'id' => 1912,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'Kelurahan Janjang',
     'alamat' => '',
@@ -29828,7 +29828,7 @@ databgkepemilikan::create([
 // Kelurahan Jiken (1913)
 databgkepemilikan::create([
     'id' => 1913,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'Kelurahan Jiken',
     'alamat' => '',
@@ -29841,7 +29841,7 @@ databgkepemilikan::create([
 // Kelurahan Jiworejo (1914)
 databgkepemilikan::create([
     'id' => 1914,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'Kelurahan Jiworejo',
     'alamat' => '',
@@ -29854,7 +29854,7 @@ databgkepemilikan::create([
 // Kelurahan Ketringan (1915)
 databgkepemilikan::create([
     'id' => 1915,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'Kelurahan Ketringan',
     'alamat' => '',
@@ -29867,7 +29867,7 @@ databgkepemilikan::create([
 // Kelurahan Nglebur (1916)
 databgkepemilikan::create([
     'id' => 1916,
-    'user_id' => 92,
+    'user_id' => 67,
     'kecamatanblora_id' => 8,
     'namainstitusi' => 'Kelurahan Nglebur',
     'alamat' => '',
@@ -29883,7 +29883,7 @@ for ($i = 0; $i <= 1; $i++) {
 
     databgkepemilikan::create([
         'id' => 1917 + $i,
-        'user_id' => 92,
+        'user_id' => 67,
         'kecamatanblora_id' => 8,
         'namainstitusi' => 'Balai Desa Nglobo',
         'alamat' => 'Desa Nglobo RT.01/RW.02 Kec. Jiken Kab. Blora 5837' . (2 + $i),
@@ -30051,6 +30051,790 @@ for ($id = 1876; $id <= 1883; $id++) {
         'alamattanah' => '-',
     ]);
 }
+
+
+// Data for IDs 1884-1897 (all fields are '-')
+for ($id = 1884; $id <= 1897; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for IDs 1898-1899
+for ($id = 1898; $id <= 1899; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => 'Tidak ada copy sertf tanah',
+        'statuskepemilikan' => 'Negara',
+        'nobuktikepemilikan' => 'Tidak ada',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for IDs 1900-1907 (all fields are '-')
+for ($id = 1900; $id <= 1907; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for ID 1908
+databgtanah::create([
+    'id' => 1908,
+    'databgkepemilikan_id' => 1908,
+    'statushaktanah' => 'Pemkab',
+    'statuskepemilikan' => 'Negara',
+    'nobuktikepemilikan' => '11.12.07.02.4.00018',
+    'alamattanah' => 'HGP',
+]);
+
+// Data for ID 1909
+databgtanah::create([
+    'id' => 1909,
+    'databgkepemilikan_id' => 1909,
+    'statushaktanah' => 'Pemkab',
+    'statuskepemilikan' => 'Negara',
+    'nobuktikepemilikan' => '-',
+    'alamattanah' => 'HGP',
+]);
+
+// Data for IDs 1910-1915 (all fields are '-')
+for ($id = 1910; $id <= 1915; $id++) {
+    databgtanah::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'statushaktanah' => '-',
+        'statuskepemilikan' => '-',
+        'nobuktikepemilikan' => '-',
+        'alamattanah' => '-',
+    ]);
+}
+
+// Data for ID 1916
+databgtanah::create([
+    'id' => 1916,
+    'databgkepemilikan_id' => 1916,
+    'statushaktanah' => 'Pemkab',
+    'statuskepemilikan' => 'Negara',
+    'nobuktikepemilikan' => '11.12.07.01.4.00001',
+    'alamattanah' => 'HGP',
+]);
+
+// Data for ID 1917
+databgtanah::create([
+    'id' => 1917,
+    'databgkepemilikan_id' => 1917,
+    'statushaktanah' => 'Pemkab',
+    'statuskepemilikan' => 'Negara',
+    'nobuktikepemilikan' => '11.12.07.01.4.00002',
+    'alamattanah' => 'HGP',
+]);
+
+// Data for ID 1918
+databgtanah::create([
+    'id' => 1918,
+    'databgkepemilikan_id' => 1918,
+    'statushaktanah' => 'Pemkab',
+    'statuskepemilikan' => 'Negara',
+    'nobuktikepemilikan' => '11.12.07.01.4.00003',
+    'alamattanah' => 'HGP',
+]);
+
+
+
+$datas = [];
+
+// Data for IDs 1680-1696
+for ($id = 1680; $id <= 1696; $id++) {
+    $gedungName = chr(65 + ($id - 1680)); // A to Q
+    $luas = [
+        1680 => 319,
+        1681 => 180,
+        1682 => 189,
+        1683 => 180,
+        1684 => 315,
+        1685 => 90,
+        1686 => 257,
+        1687 => 110,
+        1688 => 360,
+        1689 => 283.5,
+        1690 => 81,
+        1691 => 35,
+        1692 => 36,
+        1693 => 37,
+        1694 => 108,
+        1695 => 108,
+        1696 => 108
+    ];
+
+    $datas[$id] = [
+        'kdh' => '184720',
+        'ktb' => 'pendidikan',
+        'kondisibangunan' => '60%',
+        'konstruksibangunan' => '0,6',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $luas[$id],
+        'tinggibangunan' => ($id == 1686) ? 2 : 1, // Only Gedung G has 2 floors
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => 'Gedung ' . $gedungName,
+        'kategori' => 'Sosial Budaya'
+    ];
+}
+
+// Data for IDs 1697-1704 (all empty)
+for ($id = 1697; $id <= 1704; $id++) {
+    $datas[$id] = [
+        'kdh' => '-',
+        'ktb' => '-',
+        'kondisibangunan' => '-',
+        'konstruksibangunan' => '-',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => '-',
+        'tinggibangunan' => '-',
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => '-',
+        'tanggalselesaikonstruksi' => '-',
+        'tanggalrehabilitasi' => '-',
+        'namabangunan' => '-',
+        'kategori' => '-'
+    ];
+}
+
+// Data for IDs 1705-1710
+$gedungData = [
+    1705 => ['name' => 'Gedung A', 'luas' => 355, 'kategori' => 'Sosial Budaya'],
+    1706 => ['name' => 'Gedung B', 'luas' => 270, 'kategori' => 'Sosial Budaya'],
+    1707 => ['name' => 'Gedung C', 'luas' => 340, 'kategori' => 'Sosial Budaya'],
+    1708 => ['name' => 'R Mulok', 'luas' => 180, 'kategori' => 'Sosial Budaya'],
+    1709 => ['name' => 'Mushola', 'luas' => 100, 'kategori' => 'Keagamaan'],
+    1710 => ['name' => 'Gedung D', 'luas' => 400, 'kategori' => 'Sosial Budaya']
+];
+
+foreach ($gedungData as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '6000',
+        'ktb' => 'pendidikan',
+        'kondisibangunan' => '60%.',
+        'konstruksibangunan' => '0,6.',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => 1,
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Create records using foreach
+foreach ($datas as $id => $data) {
+    databgpeprofilbangunangedung::create(array_merge([
+        'databgkepemilikan_id' => $id,
+        'kdh' => null,
+        'ktb' => null,
+        'alamatbangunan' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ], $data));
+}
+
+$datas = [];
+
+// Data for IDs 1711-1715
+$buildingData1711_1715 = [
+    1711 => ['name' => 'R penjaga', 'luas' => 58.5, 'kategori' => 'Sosial Budaya'],
+    1712 => ['name' => 'R lab ipa', 'luas' => 150, 'kategori' => 'Sosial Budaya'],
+    1713 => ['name' => 'Lab IPA', 'luas' => 150, 'kategori' => 'Sosial Budaya'],
+    1714 => ['name' => 'R guru', 'luas' => 150, 'kategori' => 'Sosial Budaya'],
+    1715 => ['name' => 'R kom', 'luas' => 150, 'kategori' => 'Sosial Budaya']
+];
+
+foreach ($buildingData1711_1715 as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '6000',
+        'ktb' => 'pendidikan',
+        'kondisibangunan' => '60%.',
+        'konstruksibangunan' => '0,6.',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => 1,
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Data for IDs 1716-1720 (all empty)
+for ($id = 1716; $id <= 1720; $id++) {
+    $datas[$id] = [
+        'kdh' => '-',
+        'ktb' => '-',
+        'kondisibangunan' => '-',
+        'konstruksibangunan' => '-',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => '-',
+        'tinggibangunan' => '-',
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => '-',
+        'tanggalselesaikonstruksi' => '-',
+        'tanggalrehabilitasi' => '-',
+        'namabangunan' => '-',
+        'kategori' => '-'
+    ];
+}
+
+// Data for IDs 1721-1725 (2500 series)
+$buildingData1721_1725 = [
+    1721 => ['name' => 'Gedung PSB', 'luas' => 63, 'kategori' => 'Sosial Budaya'],
+    1722 => ['name' => 'Gedung 1', 'luas' => 1600, 'kategori' => 'Sosial Budaya'],
+    1723 => ['name' => 'Gedung 2', 'luas' => 63, 'kategori' => 'Sosial Budaya'],
+    1724 => ['name' => 'Gedung 3', 'luas' => 24, 'kategori' => 'Sosial Budaya'],
+    1725 => ['name' => 'Mushola', 'luas' => 42, 'kategori' => 'Keagamaan']
+];
+
+foreach ($buildingData1721_1725 as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '2500',
+        'ktb' => 'pendidikan',
+        'kondisibangunan' => '60%.',
+        'konstruksibangunan' => '0,6.',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => 1,
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Data for IDs 1726-1731 (1500 series)
+$buildingData1726_1731 = [
+    1726 => ['name' => 'Gedung 1', 'luas' => 73.95, 'tinggi' => 2, 'kategori' => 'Sosial Budaya'],
+    1727 => ['name' => 'Gedung 2', 'luas' => 260.4, 'tinggi' => 1, 'kategori' => 'Sosial Budaya'],
+    1728 => ['name' => 'Gedung 3', 'luas' => 211.65, 'tinggi' => 1, 'kategori' => 'Sosial Budaya'],
+    1729 => ['name' => 'Gedung 4', 'luas' => 74.675, 'tinggi' => 1, 'kategori' => 'Sosial Budaya'],
+    1730 => ['name' => 'Gudang', 'luas' => 17.2, 'tinggi' => 1, 'kategori' => 'Sosial Budaya'],
+    1731 => ['name' => 'WC', 'luas' => 14, 'tinggi' => 1, 'kategori' => 'Sosial Budaya']
+];
+
+foreach ($buildingData1726_1731 as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '1500',
+        'ktb' => 'pendidikan',
+        'kondisibangunan' => '60%.',
+        'konstruksibangunan' => '0,6.',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => $data['tinggi'],
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Data for IDs 1732-1737 (all empty)
+for ($id = 1732; $id <= 1737; $id++) {
+    $datas[$id] = [
+        'kdh' => '-',
+        'ktb' => '-',
+        'kondisibangunan' => '-',
+        'konstruksibangunan' => '-',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => '-',
+        'tinggibangunan' => '-',
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => '-',
+        'tanggalselesaikonstruksi' => '-',
+        'tanggalrehabilitasi' => '-',
+        'namabangunan' => '-',
+        'kategori' => '-'
+    ];
+}
+
+// Data for IDs 1738-1740 (15867 series)
+$buildingData1738_1740 = [
+    1738 => ['name' => 'Gedung A', 'luas' => 108, 'kategori' => 'Sosial Budaya'],
+    1739 => ['name' => 'Gedung B', 'luas' => 460, 'kategori' => 'Sosial Budaya'],
+    1740 => ['name' => 'Perpustakaan', 'luas' => 56, 'kategori' => 'Sosial Budaya']
+];
+
+foreach ($buildingData1738_1740 as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '15867',
+        'ktb' => 'Pendidikan',
+        'kondisibangunan' => '60%',
+        'konstruksibangunan' => '0,6',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => 1,
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Data for IDs 1741-1779 (all empty)
+for ($id = 1741; $id <= 1779; $id++) {
+    $datas[$id] = [
+        'kdh' => '-',
+        'ktb' => '-',
+        'kondisibangunan' => '-',
+        'konstruksibangunan' => '-',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => '-',
+        'tinggibangunan' => '-',
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => '-',
+        'tanggalselesaikonstruksi' => '-',
+        'tanggalrehabilitasi' => '-',
+        'namabangunan' => '-',
+        'kategori' => '-'
+    ];
+}
+
+// Create records using foreach
+foreach ($datas as $id => $data) {
+    databgpeprofilbangunangedung::create(array_merge([
+        'databgkepemilikan_id' => $id,
+        'kdh' => null,
+        'ktb' => null,
+        'alamatbangunan' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ], $data));
+}
+
+
+$datas = [];
+
+// Data for IDs 1780-1786 (3196 series)
+$buildingData1780_1786 = [
+    1780 => ['name' => 'Gedung A', 'luas' => 612, 'kategori' => 'Sosial Budaya'],
+    1781 => ['name' => 'Gedung B', 'luas' => 232, 'kategori' => 'Sosial Budaya'],
+    1782 => ['name' => 'Gedung C', 'luas' => 280, 'kategori' => 'Sosial Budaya'],
+    1783 => ['name' => 'Gedung D', 'luas' => 71.25, 'kategori' => 'Sosial Budaya'],
+    1784 => ['name' => 'Gedung E', 'luas' => 40.9, 'kategori' => 'Sosial Budaya'],
+    1785 => ['name' => 'Kamar mandi siswa 1', 'luas' => 17.6, 'kategori' => 'Keagamaan'],
+    1786 => ['name' => 'Kamar mandi siswa 2', 'luas' => 19.25, 'kategori' => 'Keagamaan']
+];
+
+foreach ($buildingData1780_1786 as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '3196',
+        'ktb' => 'Pendidikan',
+        'kondisibangunan' => '60%',
+        'konstruksibangunan' => '0,6',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => 1,
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Data for IDs 1787-1850 (all empty)
+for ($id = 1787; $id <= 1850; $id++) {
+    $datas[$id] = [
+        'kdh' => '-',
+        'ktb' => '-',
+        'kondisibangunan' => '-',
+        'konstruksibangunan' => '-',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => '-',
+        'tinggibangunan' => '-',
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => '-',
+        'tanggalselesaikonstruksi' => '-',
+        'tanggalrehabilitasi' => '-',
+        'namabangunan' => '-',
+        'kategori' => '-'
+    ];
+}
+
+// Create records using foreach
+foreach ($datas as $id => $data) {
+    databgpeprofilbangunangedung::create(array_merge([
+        'databgkepemilikan_id' => $id,
+        'kdh' => null,
+        'ktb' => null,
+        'alamatbangunan' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ], $data));
+}
+
+
+$datas = [];
+
+// Data for IDs 1851-1875 (all empty)
+for ($id = 1851; $id <= 1875; $id++) {
+    $datas[$id] = [
+        'kdh' => '-',
+        'ktb' => '-',
+        'kondisibangunan' => '-',
+        'konstruksibangunan' => '-',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => '-',
+        'tinggibangunan' => '-',
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => '-',
+        'tanggalselesaikonstruksi' => '-',
+        'tanggalrehabilitasi' => '-',
+        'namabangunan' => '-',
+        'kategori' => '-'
+    ];
+}
+
+// Data for IDs 1876-1878 (2270 series)
+$buildingData1876_1878 = [
+    1876 => ['name' => 'Gedung A', 'luas' => 182, 'kategori' => 'Sosial Budaya'],
+    1877 => ['name' => 'Gedung B', 'luas' => 203, 'kategori' => 'Sosial Budaya'],
+    1878 => ['name' => 'WC', 'luas' => 19, 'kategori' => 'Sosial Budaya']
+];
+
+foreach ($buildingData1876_1878 as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '2270',
+        'ktb' => 'Pendidikan',
+        'kondisibangunan' => '60%',
+        'konstruksibangunan' => '0,6',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => 1,
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Data for IDs 1879-1883 (2878 series)
+$buildingData1879_1883 = [
+    1879 => ['name' => 'Gedung A', 'luas' => 126, 'kategori' => 'Sosial Budaya'],
+    1880 => ['name' => 'Gedung B', 'luas' => 400, 'kategori' => 'Sosial Budaya'],
+    1881 => ['name' => 'Gedung C', 'luas' => 128, 'kategori' => 'Sosial Budaya'],
+    1882 => ['name' => 'Mushola', 'luas' => 45, 'kategori' => 'Sosial Budaya'],
+    1883 => ['name' => 'Perpustakaan', 'luas' => 90, 'kategori' => 'Sosial Budaya']
+];
+
+foreach ($buildingData1879_1883 as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '2878',
+        'ktb' => 'Pendidikan',
+        'kondisibangunan' => '60%',
+        'konstruksibangunan' => '0,6',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => 1,
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Data for IDs 1884-1897 (all empty)
+for ($id = 1884; $id <= 1897; $id++) {
+    $datas[$id] = [
+        'kdh' => '-',
+        'ktb' => '-',
+        'kondisibangunan' => '-',
+        'konstruksibangunan' => '-',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => '-',
+        'tinggibangunan' => '-',
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => '-',
+        'tanggalselesaikonstruksi' => '-',
+        'tanggalrehabilitasi' => '-',
+        'namabangunan' => '-',
+        'kategori' => '-'
+    ];
+}
+
+// Data for IDs 1898-1899 (500 series)
+$buildingData1898_1899 = [
+    1898 => ['name' => 'Kantor Pelayanan', 'luas' => 255, 'kategori' => 'Pelayanan'],
+    1899 => ['name' => 'Mushola', 'luas' => 72, 'kategori' => 'Keagamaan']
+];
+
+foreach ($buildingData1898_1899 as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '500',
+        'ktb' => 'Pelayanan',
+        'kondisibangunan' => '60%',
+        'konstruksibangunan' => '0,6',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => 1,
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Data for IDs 1900-1907 (all empty)
+for ($id = 1900; $id <= 1907; $id++) {
+    $datas[$id] = [
+        'kdh' => '-',
+        'ktb' => '-',
+        'kondisibangunan' => '-',
+        'konstruksibangunan' => '-',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => '-',
+        'tinggibangunan' => '-',
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => '-',
+        'tanggalselesaikonstruksi' => '-',
+        'tanggalrehabilitasi' => '-',
+        'namabangunan' => '-',
+        'kategori' => '-'
+    ];
+}
+
+// Data for IDs 1908-1909 (486 series)
+$buildingData1908_1909 = [
+    1908 => ['name' => 'Gedung A', 'luas' => 42.24, 'tinggi' => 2, 'kategori' => 'Pelayanan'],
+    1909 => ['name' => 'Gedung B & Pendopo', 'luas' => 23.76, 'tinggi' => 1, 'kategori' => 'Pelayanan']
+];
+
+foreach ($buildingData1908_1909 as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '486',
+        'ktb' => 'Pelayanan',
+        'kondisibangunan' => '60%',
+        'konstruksibangunan' => '0,6',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => $data['tinggi'],
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Data for ID 1910 (empty)
+$datas[1910] = [
+    'kdh' => '-',
+    'ktb' => '-',
+    'kondisibangunan' => '-',
+    'konstruksibangunan' => '-',
+    'alamatbangunan' => '-',
+    'totalluaslantai' => '-',
+    'tinggibangunan' => '-',
+    'luasbasement' => '-',
+    'tanggalmulaikonstruksi' => '-',
+    'tanggalselesaikonstruksi' => '-',
+    'tanggalrehabilitasi' => '-',
+    'namabangunan' => '-',
+    'kategori' => '-'
+];
+
+// Create records using foreach
+foreach ($datas as $id => $data) {
+    databgpeprofilbangunangedung::create(array_merge([
+        'databgkepemilikan_id' => $id,
+        'kdh' => null,
+        'ktb' => null,
+        'alamatbangunan' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ], $data));
+}
+
+
+
+$datas = [];
+
+// Data for IDs 1911-1915 (all empty)
+for ($id = 1911; $id <= 1915; $id++) {
+    $datas[$id] = [
+        'kdh' => '-',
+        'ktb' => '-',
+        'kondisibangunan' => '-',
+        'konstruksibangunan' => '-',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => '-',
+        'tinggibangunan' => '-',
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => '-',
+        'tanggalselesaikonstruksi' => '-',
+        'tanggalrehabilitasi' => '-',
+        'namabangunan' => '-',
+        'kategori' => '-'
+    ];
+}
+
+// Data for IDs 1916-1918 (995 series)
+$buildingData1916_1918 = [
+    1916 => ['name' => 'Kantor Pelayanan + Perpus', 'luas' => 314.5, 'kategori' => 'Sosial Budaya'],
+    1917 => ['name' => 'pendopo', 'luas' => 127.25, 'kategori' => 'Sosial Budaya'],
+    1918 => ['name' => 'gedung PKD', 'luas' => 63, 'kategori' => 'Sosial Budaya']
+];
+
+foreach ($buildingData1916_1918 as $id => $data) {
+    $datas[$id] = [
+        'kdh' => '995',
+        'ktb' => 'Pelayanan',
+        'kondisibangunan' => '60%',
+        'konstruksibangunan' => '0.6',
+        'alamatbangunan' => '-',
+        'totalluaslantai' => $data['luas'],
+        'tinggibangunan' => 1,
+        'luasbasement' => '-',
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+        'namabangunan' => $data['name'],
+        'kategori' => $data['kategori']
+    ];
+}
+
+// Create records using foreach
+foreach ($datas as $id => $data) {
+    databgpeprofilbangunangedung::create(array_merge([
+        'databgkepemilikan_id' => $id,
+        'kdh' => null,
+        'ktb' => null,
+        'alamatbangunan' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ], $data));
+}
+
+
+
+// Data for IDs 1680-1696
+for ($id = 1680; $id <= 1696; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'kepadatan_lokasi' => 'Sedang',
+        'resiko_gempa' => 'Zona 3.',
+        'resiko_kebakaran' => 'Rendah'
+    ]);
+}
+
+// Data for IDs 1697-1704 (all empty)
+for ($id = 1697; $id <= 1704; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => '-',
+        'tingkat_permanensi' => '-',
+        'kepadatan_lokasi' => '-',
+        'resiko_gempa' => '-',
+        'resiko_kebakaran' => '-'
+    ]);
+}
+
+// Data for IDs 1705-1715
+for ($id = 1705; $id <= 1715; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'kepadatan_lokasi' => 'Sedang',
+        'resiko_gempa' => 'Zona 3.',
+        'resiko_kebakaran' => 'Rendah'
+    ]);
+}
+
+// Data for IDs 1716-1720 (all empty)
+for ($id = 1716; $id <= 1720; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => '-',
+        'tingkat_permanensi' => '-',
+        'kepadatan_lokasi' => '-',
+        'resiko_gempa' => '-',
+        'resiko_kebakaran' => '-'
+    ]);
+}
+
+// Data for IDs 1721-1730
+for ($id = 1721; $id <= 1730; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'kepadatan_lokasi' => 'Sedang',
+        'resiko_gempa' => 'Zona 3.',
+        'resiko_kebakaran' => 'Rendah'
+    ]);
+}
+
+
+
+
+
 
 // SAMPAI SINI UNTUK PENDATAAN BANGUNAN
 
