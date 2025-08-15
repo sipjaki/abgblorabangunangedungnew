@@ -30309,6 +30309,399 @@ for ($id = 1787; $id <= 1875; $id++) {
 }
 
 
+// Data for IDs 1876-1883
+for ($id = 1876; $id <= 1883; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'kepadatan_lokasi' => 'Sedang',
+        'resiko_gebang' => 'zona 3',
+        'resiko_kebakaran' => 'Rendah'
+    ]);
+}
+
+// Data for IDs 1884-1897 (all empty)
+for ($id = 1884; $id <= 1897; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => '-',
+        'tingkat_permanensi' => '-',
+        'kepadatan_lokasi' => '-',
+        'resiko_gempa' => '-',
+        'resiko_kebakaran' => '-'
+    ]);
+}
+
+// Data for IDs 1898-1899
+for ($id = 1898; $id <= 1899; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'kepadatan_lokasi' => 'Sedang',
+        'resiko_gebang' => 'zona 3',
+        'resiko_kebakaran' => 'Rendah'
+    ]);
+}
+
+// Data for IDs 1900-1907 (all empty)
+for ($id = 1900; $id <= 1907; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => '-',
+        'tingkat_permanensi' => '-',
+        'kepadatan_lokasi' => '-',
+        'resiko_gempa' => '-',
+        'resiko_kebakaran' => '-'
+    ]);
+}
+
+// Data for IDs 1908-1909
+for ($id = 1908; $id <= 1909; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'kepadatan_lokasi' => 'Sedang',
+        'resiko_gebang' => 'zona 3',
+        'resiko_kebakaran' => 'Rendah'
+    ]);
+}
+
+// Data for IDs 1910-1915 (all empty)
+for ($id = 1910; $id <= 1915; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => '-',
+        'tingkat_permanensi' => '-',
+        'kepadatan_lokasi' => '-',
+        'resiko_gempa' => '-',
+        'resiko_kebakaran' => '-'
+    ]);
+}
+
+// Data for IDs 1916-1918
+for ($id = 1916; $id <= 1918; $id++) {
+    databgklasifikasi::create([
+        'id' => $id,
+        'databgkepemilikan_id' => $id,
+        'tingkat_kompleksitas' => 'Sederhana',
+        'tingkat_permanensi' => 'Permanen',
+        'kepadatan_lokasi' => 'Sedang',
+        'resiko_gebang' => 'zona 3',
+        'resiko_kebakaran' => 'Rendah'
+    ]);
+}
+
+
+
+
+// Data 1680 - 1696 (bisa pakai loop kalau polanya sama)
+$namaGedung = [
+    'Gedung A', 'Gedung B', 'Gedung C', 'Gedung D', 'Gedung E', 'Gedung F', 'Gedung G',
+    'Gedung H', 'GedungI', 'Gedung J', 'Gedung K', 'Gedung L', 'Gedung M', 'Gedung N',
+    'Gedung O', 'Gedung P', 'Gedung Q'
+];
+
+$luasLantaiDasar = [
+    319, 180, 189, 180, 315, 90, 257, 110, 360, 283.5, 81, 35, 36, 37, 108, 108, 108
+];
+
+for ($i = 0; $i < count($namaGedung); $i++) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => 1680 + $i,
+        'luastanah' => 184720,
+        'peruntukantanah' => 'pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'kdh' => null,
+        'ktb' => null,
+        'namabangunan' => $namaGedung[$i],
+        'alamatbangunan' => null,
+        'fungsibangunan' => 'Sosial Budaya',
+        'jumlahlantai' => ($namaGedung[$i] == 'Gedung G') ? 2 : 1,
+        'luaslantaildasar' => $luasLantaiDasar[$i],
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+    ]);
+}
+
+// Data 1705 - 1710
+$namaGedung2 = [
+    'Gedung A', 'Gedung B', 'Gedung C', 'R Mulok', 'Mushola', 'Gedung D'
+];
+
+$fungsibangunan2 = [
+    'Sosial Budaya', 'Sosial Budaya', 'Sosial Budaya', 'Sosial Budaya', 'Keagamaan', 'Sosial Budaya'
+];
+
+$luasLantaiDasar2 = [
+    355, 270, 340, 180, 100, 400
+];
+
+for ($i = 0; $i < count($namaGedung2); $i++) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => 1705 + $i,
+        'luastanah' => 6000,
+        'peruntukantanah' => 'pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'kdh' => null,
+        'ktb' => null,
+        'namabangunan' => $namaGedung2[$i],
+        'alamatbangunan' => null,
+        'fungsibangunan' => $fungsibangunan2[$i],
+        'jumlahlantai' => 1,
+        'luaslantaildasar' => $luasLantaiDasar2[$i],
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+    ]);
+}
+
+
+// Data 1680 - 1696
+$namaGedung = [
+    'Gedung A', 'Gedung B', 'Gedung C', 'Gedung D', 'Gedung E', 'Gedung F', 'Gedung G',
+    'Gedung H', 'GedungI', 'Gedung J', 'Gedung K', 'Gedung L', 'Gedung M', 'Gedung N',
+    'Gedung O', 'Gedung P', 'Gedung Q'
+];
+
+$luasLantaiDasar = [
+    319, 180, 189, 180, 315, 90, 257, 110, 360, 283.5, 81, 35, 36, 37, 108, 108, 108
+];
+
+for ($i = 0; $i < count($namaGedung); $i++) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => 1680 + $i,
+        'luastanah' => 184720,
+        'peruntukantanah' => 'pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'kdh' => null,
+        'ktb' => null,
+        'namabangunan' => $namaGedung[$i],
+        'alamatbangunan' => null,
+        'fungsibangunan' => 'Sosial Budaya',
+        'jumlahlantai' => ($namaGedung[$i] == 'Gedung G') ? 2 : 1,
+        'luaslantaildasar' => $luasLantaiDasar[$i],
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+    ]);
+}
+
+// Data 1697 - 1704 (kosong/null)
+for ($id = 1697; $id <= 1704; $id++) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => $id,
+        'luastanah' => null,
+        'peruntukantanah' => null,
+        'kdb' => null,
+        'klb' => null,
+        'kdh' => null,
+        'ktb' => null,
+        'namabangunan' => null,
+        'alamatbangunan' => null,
+        'fungsibangunan' => null,
+        'jumlahlantai' => null,
+        'luaslantaildasar' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ]);
+}
+
+// Data 1705 - 1710
+$namaGedung2 = [
+    'Gedung A', 'Gedung B', 'Gedung C', 'R Mulok', 'Mushola', 'Gedung D'
+];
+
+$fungsibangunan2 = [
+    'Sosial Budaya', 'Sosial Budaya', 'Sosial Budaya', 'Sosial Budaya', 'Keagamaan', 'Sosial Budaya'
+];
+
+$luasLantaiDasar2 = [
+    355, 270, 340, 180, 100, 400
+];
+
+for ($i = 0; $i < count($namaGedung2); $i++) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => 1705 + $i,
+        'luastanah' => 6000,
+        'peruntukantanah' => 'pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'kdh' => null,
+        'ktb' => null,
+        'namabangunan' => $namaGedung2[$i],
+        'alamatbangunan' => null,
+        'fungsibangunan' => $fungsibangunan2[$i],
+        'jumlahlantai' => 1,
+        'luaslantaildasar' => $luasLantaiDasar2[$i],
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+    ]);
+}
+
+
+
+// Data 1780 - 1786
+$namaGedung = [
+    'Gedung A', 'Gedung B', 'Gedung C', 'Gedung D', 'Gedung E',
+    'Kamar mandi siswa 1', 'Kamar mandi siswa 2'
+];
+
+$fungsibangunan = [
+    'Sosial Budaya', 'Sosial Budaya', 'Sosial Budaya',
+    'Sosial Budaya', 'Sosial Budaya',
+    'Keagamaan', 'Keagamaan'
+];
+
+$luasLantaiDasar = [
+    612, 232, 280, 71.25, 40.9, 17.6, 19.25
+];
+
+for ($i = 0; $i < count($namaGedung); $i++) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => 1780 + $i,
+        'luastanah' => 3196,
+        'peruntukantanah' => 'Pendidikan',
+        'kdb' => '60%',
+        'klb' => '0,6',
+        'kdh' => null,
+        'ktb' => null,
+        'namabangunan' => $namaGedung[$i],
+        'alamatbangunan' => null,
+        'fungsibangunan' => $fungsibangunan[$i],
+        'jumlahlantai' => 1,
+        'luaslantaildasar' => $luasLantaiDasar[$i],
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => 'Tidak ada',
+        'tanggalselesaikonstruksi' => 'Tidak ada',
+        'tanggalrehabilitasi' => 'Tidak ada',
+    ]);
+}
+
+// Data 1787 - 1830 (kosong/null)
+for ($id = 1787; $id <= 1830; $id++) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => $id,
+        'luastanah' => null,
+        'peruntukantanah' => null,
+        'kdb' => null,
+        'klb' => null,
+        'kdh' => null,
+        'ktb' => null,
+        'namabangunan' => null,
+        'alamatbangunan' => null,
+        'fungsibangunan' => null,
+        'jumlahlantai' => null,
+        'luaslantaildasar' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ]);
+}
+
+
+
+for ($id = 1831; $id <= 1875; $id++) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => $id,
+        'luastanah' => null,
+        'peruntukantanah' => null,
+        'kdb' => null,
+        'klb' => null,
+        'kdh' => null,
+        'ktb' => null,
+        'namabangunan' => null,
+        'alamatbangunan' => null,
+        'fungsibangunan' => null,
+        'jumlahlantai' => null,
+        'luaslantaildasar' => null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ]);
+}
+
+
+$datas = [
+    [1876, 2270, 'Gedung A', 'Pendidikan', 60, 0.6, 1, 182],
+    [1877, 2270, 'Gedung B', 'Pendidikan', 60, 0.6, 1, 203],
+    [1878, 2270, 'WC', 'Pendidikan', 60, 0.6, 1, 19],
+    [1879, 2878, 'Gedung A', 'Pendidikan', 60, 0.6, 1, 126],
+    [1880, 2878, 'Gedung B', 'Pendidikan', 60, 0.6, 1, 400],
+    [1881, 2878, 'Gedung C', 'Pendidikan', 60, 0.6, 1, 128],
+    [1882, 2878, 'Mushola', 'Pendidikan', 60, 0.6, 1, 45],
+    [1883, 2878, 'Perpustakaan', 'Pendidikan', 60, 0.6, 1, 90],
+    [1898, 500, 'Kantor Pelayanan', 'Pelayanan', 60, 0.6, 1, 255],
+    [1899, 500, 'Mushola', 'Pelayanan', 60, 0.6, 1, 72],
+    [1908, 486, 'Gedung A', 'Pelayanan', 60, 0.6, 2, 42.24],
+    [1909, 486, 'Gedung B & Pendopo', 'Pelayanan', 60, 0.6, 1, 23.76],
+    [1916, 995, 'Kantor Pelayanan + Perpus', 'Pelayanan', 60, 0.6, 1, 314.5],
+    [1917, 995, 'Pendopo', 'Pelayanan', 60, 0.6, 1, 127.25],
+    [1918, 995, 'Gedung PKD', 'Pelayanan', 60, 0.6, 1, 63],
+];
+
+foreach ($datas as $d) {
+    databgpeprofilbangunangedung::create([
+        'databgkepemilikan_id' => $d[1],
+        'luastanah' => null,
+        'peruntukantanah' => null,
+        'kdb' => $d[4] ?? null,
+        'klb' => $d[5] ?? null,
+        'kdh' => null,
+        'ktb' => null,
+        'namabangunan' => $d[2] ?? null,
+        'alamatbangunan' => null,
+        'fungsibangunan' => $d[3] ?? null,
+        'jumlahlantai' => $d[6] ?? null,
+        'luaslantaildasar' => $d[7] ?? null,
+        'totalluaslantai' => null,
+        'tinggibangunan' => null,
+        'luasbasement' => null,
+        'tanggalmulaikonstruksi' => null,
+        'tanggalselesaikonstruksi' => null,
+        'tanggalrehabilitasi' => null,
+    ]);
+}
+
+
+
 
 // SAMPAI SINI UNTUK PENDATAAN BANGUNAN
 
