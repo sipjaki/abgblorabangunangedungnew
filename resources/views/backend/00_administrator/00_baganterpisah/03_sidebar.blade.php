@@ -886,7 +886,7 @@
   <li class="nav-item">
     <a href="/bepbgslfinformasi" class="nav-link">
         <i class="bi bi-info-circle nav-icon" style="color: white;"></i>
-        <p style="color: white; margin-left: 8px;">Informasi</p>
+        <p style="color: white; margin-left: 8px;">Informasi PBG/SLF Baru</p>
     </a>
 </li>
 
