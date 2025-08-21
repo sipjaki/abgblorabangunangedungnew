@@ -451,10 +451,10 @@ th {
     {{-- Pilih Fasilitator --}}
     <div class="col-md-6">
         <label class="form-label fw-semibold text-dark">
-            <i class="bi bi-person-badge-fill text-primary me-1"></i> Nama Petugas TPA/TPT
+            <i class="bi bi-person-badge-fill text-primary me-1"></i> Nama Petugas Penilik Bangunan Gedung
         </label>
         <select name="petugaspenilik_id" class="form-select @error('petugaspenilik_id') is-invalid @enderror">
-            <option value="" disabled selected>-- Pilih Petugas TPA/TPT --</option>
+            <option value="" disabled selected>-- Pilih Petugas Penilik Bangunan Gedung --</option>
             @foreach($fasilitators as $fasilitator)
                 <option value="{{ $fasilitator->id }}" {{ old('petugaspenilik_id') == $fasilitator->id ? 'selected' : '' }}>
                     {{ $fasilitator->namalengkap }}
