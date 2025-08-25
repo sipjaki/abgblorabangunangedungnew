@@ -827,8 +827,10 @@ th {
 </tr>
 
         <tr>
+
             <td style="text-align: center;">
-                 <div style="margin-top: 10px;">
+
+                <div style="margin-top: 10px;">
     @if($data->suratpermohonan && file_exists(public_path('storage/' . $data->suratpermohonan)))
         <!-- Display the default iframe when the file exists in the storage -->
         <iframe
