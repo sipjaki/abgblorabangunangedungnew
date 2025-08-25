@@ -538,7 +538,7 @@
 </li>
 
 
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="/404" class="nav-link">
         <!-- Icon User -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="nav-icon" viewBox="0 0 16 16">
@@ -550,7 +550,7 @@
             <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
         </p>
     </a>
-</li>
+</li> --}}
 
 
             @endcanany
