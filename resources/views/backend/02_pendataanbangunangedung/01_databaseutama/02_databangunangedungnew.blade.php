@@ -271,7 +271,7 @@ th {
 
              {{-- @canany(['superadmin', 'admin']) --}}
     @canany(['superadmin', 'admin'])
-    <a href="{{ route('bepbgslfindexindexmenu') }}">
+    <a href="{{ route('bependataanbangunangedung') }}">
         <button class="button-hitam" type="button"
             style="cursor: pointer; margin-left:5px;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
