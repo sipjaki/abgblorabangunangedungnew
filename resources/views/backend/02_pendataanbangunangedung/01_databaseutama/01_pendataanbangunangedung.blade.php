@@ -485,6 +485,26 @@
     </style>
 
 
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kecamatan</th>
+            <th>Jumlah</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($jumlahPerKecamatan as $item)
+            <tr>
+                <td>{{ $item->kecamatanblora_id }}</td>
+                <td>
+                    <span class="button-hijau">{{ $item->total }}</span>
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+
+
 <div class="container" style="margin-top: 10px;">
     <div class="stats-grid" style="display: flex; flex-wrap: wrap; gap: 16px;">
 <div class="stat-card">

@@ -220,19 +220,27 @@ public function bependataanbangunangedung(Request $request)
     $perPage = $request->input('perPage', 20);
     $jumlahDataTotal = databgkepemilikan::count();
 
-    // Ambil jumlah data unik berdasarkan namainstitusi dan hitung jumlahnya
+    // Ambil jumlah data unik berdasarkan namainstitusi
     $jumlahPerInstitusi = databgkepemilikan::select('namainstitusi', DB::raw('count(*) as total'))
-    ->groupBy('namainstitusi')
-    ->orderByDesc('total')
-    ->get();
+        ->groupBy('namainstitusi')
+        ->orderByDesc('total')
+        ->get();
+
+    // ✅ Tambahan: ambil jumlah data per kecamatanblora_id
+    $jumlahPerKecamatan = databgkepemilikan::select('kecamatanblora_id', DB::raw('count(*) as total'))
+        ->groupBy('kecamatanblora_id')
+        ->orderByDesc('total')
+        ->get();
 
     return view('backend.02_pendataanbangunangedung.01_databaseutama.01_pendataanbangunangedung', [
         'title' => 'Pendataan Bangunan Gedung',
         'user' => $user,
         'jumlahDataTotal' => $jumlahDataTotal,
-        'jumlahPerInstitusi' => $jumlahPerInstitusi
+        'jumlahPerInstitusi' => $jumlahPerInstitusi,
+        'jumlahPerKecamatan' => $jumlahPerKecamatan, // 👈 kirim ke blade
     ]);
 }
+
 
 public function bebangunangedung(Request $request)
 {
