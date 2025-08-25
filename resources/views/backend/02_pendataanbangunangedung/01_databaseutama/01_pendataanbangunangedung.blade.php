@@ -488,18 +488,18 @@
 <table class="table">
     <thead>
         <tr>
-            <th>No</th>
-            <th>Kecamatan</th>
-            <th>Jumlah</th>
+            <th style="text-align: center;">No</th>
+            <th style="text-align: center;">Kecamatan</th>
+            <th style="text-align: center;">Jumlah</th>
         </tr>
     </thead>
     <tbody>
         @foreach($jumlahPerKecamatan as $item)
             <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td>{{ $item->kecamatanblora->kecamatanblora }}</td>
+                <td><span class="button-hijau">{{ $item->kecamatanblora->kecamatanblora }}</span></td>
                 <td>
-                    <span class="button-hijau">{{ $item->total }}</span>
+                    <span class="button-hijau">{{ $item->total }} Bangunan Gedung</span>
                 </td>
             </tr>
         @endforeach
