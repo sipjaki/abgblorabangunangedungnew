@@ -488,6 +488,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>No</th>
             <th>Kecamatan</th>
             <th>Jumlah</th>
         </tr>
@@ -495,6 +496,7 @@
     <tbody>
         @foreach($jumlahPerKecamatan as $item)
             <tr>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $item->kecamatanblora_id }}</td>
                 <td>
                     <span class="button-hijau">{{ $item->total }}</span>
@@ -503,7 +505,6 @@
         @endforeach
     </tbody>
 </table>
-
 
 <div class="container" style="margin-top: 10px;">
     <div class="stats-grid" style="display: flex; flex-wrap: wrap; gap: 16px;">
