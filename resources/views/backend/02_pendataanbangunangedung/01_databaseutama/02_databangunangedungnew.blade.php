@@ -422,7 +422,7 @@ document.querySelectorAll('.break-6-words').forEach(td => {
         <i class="bi bi-eye"></i>
     </a> --}}
 
-                                        <a href="/bependataanbangunangedung/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
+                                        <a href="/bependataanbangunangedung/update/{{$item->id}}" class="button-berkas" title="Update">
                                             <i class="bi bi-pencil-square"></i> Update
                                         </a>
                                         <a href="javascript:void(0)" class="button-merah" title="Delete"
