@@ -584,7 +584,7 @@
         </div>
         <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
           <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            Data Kepemilikan Bangunan Gedung
+            Data Bangunan Gedung Kabupaten Blora
           </span>
           <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
 Berkas
