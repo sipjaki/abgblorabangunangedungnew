@@ -497,7 +497,7 @@
         @foreach($jumlahPerKecamatan as $item)
             <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td>{{ $item->kecamatanblora_id }}</td>
+                <td>{{ $item->kecamatanblora->kecamatanblora }}</td>
                 <td>
                     <span class="button-hijau">{{ $item->total }}</span>
                 </td>
