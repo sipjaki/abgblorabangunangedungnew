@@ -257,7 +257,8 @@ th {
     </tr>
                             </thead>
                               <tbody id="tableBody">
-                                @foreach ($data as $item )
+
+                                @forelse($data as $item )
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
@@ -665,17 +666,50 @@ th {
                                         <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a> --}}
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
-                                           <i class="bi bi-trash"></i>
+                                           <i class="bi bi-trash"></i>Hapus
                                         </a>
                                     </td>
                                     @endcan
 
                                 </tr>
-                                @endforeach
+
+
+        @empty
+    <tr>
+    <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
                             </tbody>
                         </table>
 
