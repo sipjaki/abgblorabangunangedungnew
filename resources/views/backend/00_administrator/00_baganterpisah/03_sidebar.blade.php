@@ -421,7 +421,7 @@
 
             @endcan
 
-            @canany(['dinas', 'pemohon'], $post)
+            @canany(['dinas', 'pemohon'])
 
             <li class="nav-header" style="color: white;">Dashboard Dinas</li>
 
