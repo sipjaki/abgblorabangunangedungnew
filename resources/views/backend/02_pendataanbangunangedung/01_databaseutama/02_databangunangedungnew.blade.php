@@ -343,7 +343,7 @@ th {
                                 @foreach ($data as $item )
 
                                 <tr class="align-middle">
-                                 <td>{{ $loop->iteration }}</td>
+                                 <td style="text-align: center;">{{ $loop->iteration }}</td>
 
     {{-- User (relasi) --}}
     <td>{{ optional($item->user)->name ?? '-' }}</td>
