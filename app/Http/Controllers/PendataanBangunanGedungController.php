@@ -2097,5 +2097,43 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $id)
 }
 
 
+    public function perkecamatanbangunan(Request $request)
+    {
+        $user = Auth::user();
+        $search = $request->input('search');
+        $perPage = $request->input('perPage', 15);
+
+        $query = databgkepemilikan::with('kecamatanblora');
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('namainstitusi', 'like', "%{$search}%")
+                  ->orWhere('alamat', 'like', "%{$search}%")
+                  ->orWhere('notelepon', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%")
+                  ->orWhere('nopengesahanusaha', 'like', "%{$search}%")
+                  ->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                      $sub->where('kecamatanblora', 'like', "%{$search}%");
+                  });
+
+                // Jika format search adalah tanggal (YYYY-MM-DD)
+                if (preg_match('/\d{4}-\d{2}-\d{2}/', $search)) {
+                    $q->orWhereDate('created_at', $search);
+                }
+            });
+        }
+
+        // Default urutkan berdasarkan created_at terbaru
+        $berkasbantek = $query->orderBy('created_at', 'desc')
+            ->paginate($perPage)
+            ->appends($request->all());
+
+        return view('backend.02_pendataanbangunangedung.01_databaseutama.02_databangunangedungnew', [
+            'title' => 'Pendataan Bangunan Gedung Perkecamaatan Kabupaten Blora',
+            'data'  => $berkasbantek,
+            'user'  => $user,
+        ]);
+    }
+
 }
 
