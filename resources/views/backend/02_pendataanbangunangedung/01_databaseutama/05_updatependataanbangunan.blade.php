@@ -196,7 +196,7 @@ th {
                         <!--begin::Quick Example-->
                <form action="{{ route('datanewpendataanbgnewupdate', $data->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
+                        {{-- @method('PUT') --}}
 
                             <input type="hidden" name="user_id" value="{{ $user->id }}">
 
