@@ -337,7 +337,9 @@ th {
   <i class="bi bi-camera-fill me-3" style="font-size: 18px;"></i>
   Foto Dokumentasi Bangunan Gedung
 </h5>
-   <div class="row text-center">
+    @method('PUT')
+
+        <div class="row text-center">
             @php
                 $fotos = [
                     'Tampak Depan' => 'tampakdepan',
@@ -358,21 +360,46 @@ th {
                             $pathPublic = public_path($foto);
                         @endphp
 
-                        @if($foto && (file_exists($pathStorage) || file_exists($pathPublic)))
-                            <img src="{{ file_exists($pathStorage) ? asset('storage/' . $foto) : asset($foto) }}"
-                                 alt="{{ $label }}"
-                                 class="img-fluid rounded mb-2"
-                                 style="max-height: 150px; object-fit: cover;">
-                        @else
-                            <div class="text-muted mb-2">Dokumentasi Belum Ada</div>
+                        <img id="preview-{{ $field }}"
+                             src="{{ ($foto && (file_exists($pathStorage) || file_exists($pathPublic))) ? (file_exists($pathStorage) ? asset('storage/' . $foto) : asset($foto)) : '' }}"
+                             alt="{{ $label }}"
+                             class="img-fluid rounded mb-2"
+                             style="max-height: 150px; object-fit: cover; {{ !$foto ? 'display:none;' : '' }}">
+
+                        @if(!$foto)
+                            <div class="text-muted mb-2" id="placeholder-{{ $field }}">Dokumentasi Belum Ada</div>
                         @endif
 
-                        <input type="file" name="{{ $field }}" class="form-control form-control-sm">
+                        <input type="file" name="{{ $field }}" class="form-control form-control-sm" onchange="previewImage(this, '{{ $field }}')">
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
+
+
+        <script>
+function previewImage(input, field) {
+    const preview = document.getElementById('preview-' + field);
+    const placeholder = document.getElementById('placeholder-' + field);
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+            if(placeholder) placeholder.style.display = 'none';
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        preview.src = '';
+        preview.style.display = 'none';
+        if(placeholder) placeholder.style.display = 'block';
+    }
+}
+</script>
 
 <div class="row g-3">
 
