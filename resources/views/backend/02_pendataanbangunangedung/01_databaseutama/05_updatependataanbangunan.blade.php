@@ -337,97 +337,47 @@ th {
   <i class="bi bi-camera-fill me-3" style="font-size: 18px;"></i>
   Foto Dokumentasi Bangunan Gedung
 </h5>
-
 <div class="row g-3 mt-4 text-center">
+    @php
+        $fotos = [
+            'Tampak Depan' => 'tampakdepan',
+            'Tampak Belakang' => 'tampakbelakang',
+            'Tampak Samping 1' => 'tampaksamping1',
+            'Tampak Samping 2' => 'tampaksamping2',
+        ];
+    @endphp
 
-  {{-- Tampak Depan --}}
-  <div class="col-md-3 mb-3">
-    <div class="card shadow-sm">
-      <div class="card-header bg-light fw-bold text-dark">Tampak Depan</div>
-      <div class="card-body p-2" style="min-height: 200px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-        <input type="file" class="form-control mb-2" name="tampakdepan" accept="image/*" onchange="previewImage(event, 'previewTampakDepan')">
+    @foreach($fotos as $label => $field)
+    <div class="col-md-3 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-header bg-light fw-bold text-dark">{{ $label }}</div>
+            <div class="card-body p-2 d-flex flex-column align-items-center justify-content-center" style="min-height: 200px;">
 
-        {{-- Preview Lama --}}
-        @if(!empty($data->tampakdepan) && file_exists(public_path('uploads/'.$data->tampakdepan)))
-          <p class="text-muted mb-1"><small>Preview Lama:</small></p>
-          <img src="{{ url('uploads/'.$data->tampakdepan) }}" class="img-fluid rounded mb-2" style="max-height:120px; object-fit:cover;">
-        @else
-          <div class="berkas-button text-muted mb-2" style="padding:20px 10px;">Dokumentasi Belum Ada</div>
-        @endif
+                {{-- Input File --}}
+                <input type="file" class="form-control mb-2" name="{{ $field }}" accept="image/*" onchange="previewImage(event, 'preview{{ $field }}')">
 
-        {{-- Preview Baru --}}
-        <p class="text-muted mb-1"><small>Preview Baru:</small></p>
-        <img id="previewTampakDepan" class="img-fluid rounded" style="max-height:120px; object-fit:cover; display:none;">
-      </div>
+                {{-- Preview Lama --}}
+                @if(!empty($data->$field) && file_exists(public_path('uploads/'.$data->$field)))
+                    <p class="text-muted mb-1"><small>Preview Lama:</small></p>
+                    <img src="{{ url('uploads/'.$data->$field) }}" class="img-fluid rounded mb-2" style="max-height:120px; object-fit:cover;">
+                @else
+                    <div class="berkas-button text-muted mb-2" style="padding:20px 10px;">Dokumentasi Belum Ada</div>
+                @endif
+
+                {{-- Preview Baru --}}
+                <p class="text-muted mb-1"><small>Preview Baru:</small></p>
+                <img id="preview{{ $field }}" class="img-fluid rounded" style="max-height:120px; object-fit:cover; display:none;">
+            </div>
+        </div>
     </div>
-  </div>
-
-  {{-- Tampak Belakang --}}
-  <div class="col-md-3 mb-3">
-    <div class="card shadow-sm">
-      <div class="card-header bg-light fw-bold text-dark">Tampak Belakang</div>
-      <div class="card-body p-2" style="min-height: 200px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-        <input type="file" class="form-control mb-2" name="tampakbelakang" accept="image/*" onchange="previewImage(event, 'previewTampakBelakang')">
-
-        @if(!empty($data->tampakbelakang) && file_exists(public_path('uploads/'.$data->tampakbelakang)))
-          <p class="text-muted mb-1"><small>Preview Lama:</small></p>
-          <img src="{{ url('uploads/'.$data->tampakbelakang) }}" class="img-fluid rounded mb-2" style="max-height:120px; object-fit:cover;">
-        @else
-          <div class="berkas-button text-muted mb-2" style="padding:20px 10px;">Dokumentasi Belum Ada</div>
-        @endif
-
-        <p class="text-muted mb-1"><small>Preview Baru:</small></p>
-        <img id="previewTampakBelakang" class="img-fluid rounded" style="max-height:120px; object-fit:cover; display:none;">
-      </div>
-    </div>
-  </div>
-
-  {{-- Tampak Samping 1 --}}
-  <div class="col-md-3 mb-3">
-    <div class="card shadow-sm">
-      <div class="card-header bg-light fw-bold text-dark">Tampak Samping 1</div>
-      <div class="card-body p-2" style="min-height: 200px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-        <input type="file" class="form-control mb-2" name="tampaksamping1" accept="image/*" onchange="previewImage(event, 'previewTampakSamping1')">
-
-        @if(!empty($data->tampaksamping1) && file_exists(public_path('uploads/'.$data->tampaksamping1)))
-          <p class="text-muted mb-1"><small>Preview Lama:</small></p>
-          <img src="{{ url('uploads/'.$data->tampaksamping1) }}" class="img-fluid rounded mb-2" style="max-height:120px; object-fit:cover;">
-        @else
-          <div class="berkas-button text-muted mb-2" style="padding:20px 10px;">Dokumentasi Belum Ada</div>
-        @endif
-
-        <p class="text-muted mb-1"><small>Preview Baru:</small></p>
-        <img id="previewTampakSamping1" class="img-fluid rounded" style="max-height:120px; object-fit:cover; display:none;">
-      </div>
-    </div>
-  </div>
-
-  {{-- Tampak Samping 2 --}}
-  <div class="col-md-3 mb-3">
-    <div class="card shadow-sm">
-      <div class="card-header bg-light fw-bold text-dark">Tampak Samping 2</div>
-      <div class="card-body p-2" style="min-height: 200px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-        <input type="file" class="form-control mb-2" name="tampaksamping2" accept="image/*" onchange="previewImage(event, 'previewTampakSamping2')">
-
-        @if(!empty($data->tampaksamping2) && file_exists(public_path('uploads/'.$data->tampaksamping2)))
-          <p class="text-muted mb-1"><small>Preview Lama:</small></p>
-          <img src="{{ url('uploads/'.$data->tampaksamping2) }}" class="img-fluid rounded mb-2" style="max-height:120px; object-fit:cover;">
-        @else
-          <div class="berkas-button text-muted mb-2" style="padding:20px 10px;">Dokumentasi Belum Ada</div>
-        @endif
-
-        <p class="text-muted mb-1"><small>Preview Baru:</small></p>
-        <img id="previewTampakSamping2" class="img-fluid rounded" style="max-height:120px; object-fit:cover; display:none;">
-      </div>
-    </div>
-  </div>
-
+    @endforeach
 </div>
 
 <script>
 function previewImage(event, previewId){
     const input = event.target;
     const preview = document.getElementById(previewId);
+
     if(input.files && input.files[0]){
         const reader = new FileReader();
         reader.onload = function(e){
@@ -441,6 +391,7 @@ function previewImage(event, previewId){
     }
 }
 </script>
+
 
 <div class="row g-3">
 
