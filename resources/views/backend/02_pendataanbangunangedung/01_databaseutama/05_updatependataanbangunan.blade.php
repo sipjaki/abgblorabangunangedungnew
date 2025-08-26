@@ -337,90 +337,70 @@ th {
   <i class="bi bi-camera-fill me-3" style="font-size: 18px;"></i>
   Foto Dokumentasi Bangunan Gedung
 </h5>
-<div class="row g-3" style="margin-top:-20px;">
+<div class="col-md-12 mt-4">
+    <div class="row text-center">
+        @php
+            $fotos = [
+                'Tampak Depan' => 'tampakdepan',
+                'Tampak Belakang' => 'tampakbelakang',
+                'Tampak Samping 1' => 'tampaksamping1',
+                'Tampak Samping 2' => 'tampaksamping2',
+            ];
+        @endphp
 
-  {{-- Tampak Depan --}}
-  <div class="col-md-6">
-    <label class="form-label">Tampak Depan</label>
-    <input type="file" class="form-control" name="tampakdepan" id="tampakdepan" accept="image/*"
-           onchange="previewImage(event, 'previewTampakDepanBaru')">
+        @foreach($fotos as $label => $field)
+        @php
+            $foto = $data->$field ?? null;
+            $pathPublic = public_path('uploads/' . ($foto ?? ''));
+        @endphp
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light fw-bold text-dark">{{ $label }}</div>
+                <div class="card-body p-2" style="min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
 
-    {{-- Preview Lama --}}
-    @if(!empty($data->tampakdepan))
-      <p class="mt-2 mb-1 text-muted"><small>Preview Lama:</small></p>
-      <img src="{{ asset('uploads/'.$data->tampakdepan) }}" class="img-thumbnail" style="max-height: 200px;">
-    @endif
+                    {{-- Input File Baru --}}
+                    <input type="file" class="form-control mb-2" name="{{ $field }}" id="{{ $field }}" accept="image/*"
+                           onchange="previewImage(event, 'preview{{ $field }}')">
 
-    {{-- Preview Baru --}}
-    <p class="mt-2 mb-1 text-muted"><small>Preview Baru:</small></p>
-    <img id="previewTampakDepanBaru" class="img-thumbnail" style="max-height: 200px; display:none;">
-  </div>
+                    {{-- Preview Lama --}}
+                    @if($foto && file_exists($pathPublic))
+                        <p class="text-muted mb-1"><small>Preview Lama:</small></p>
+                        <img src="{{ asset('uploads/'.$foto) }}" class="img-fluid rounded mb-2" style="max-height: 120px; object-fit: cover;">
+                    @else
+                        <div class="berkas-button text-muted mb-2" style="padding: 20px 10px;">
+                            Dokumentasi Belum Ada
+                        </div>
+                    @endif
 
-  {{-- Tampak Belakang --}}
-  <div class="col-md-6">
-    <label class="form-label">Tampak Belakang</label>
-    <input type="file" class="form-control" name="tampakbelakang" id="tampakbelakang" accept="image/*"
-           onchange="previewImage(event, 'previewTampakBelakangBaru')">
-
-    @if(!empty($data->tampakbelakang))
-      <p class="mt-2 mb-1 text-muted"><small>Preview Lama:</small></p>
-      <img src="{{ asset('uploads/'.$data->tampakbelakang) }}" class="img-thumbnail" style="max-height: 200px;">
-    @endif
-
-    <p class="mt-2 mb-1 text-muted"><small>Preview Baru:</small></p>
-    <img id="previewTampakBelakangBaru" class="img-thumbnail" style="max-height: 200px; display:none;">
-  </div>
-
-  {{-- Tampak Samping 1 --}}
-  <div class="col-md-6">
-    <label class="form-label">Tampak Samping 1</label>
-    <input type="file" class="form-control" name="tampaksamping1" id="tampaksamping1" accept="image/*"
-           onchange="previewImage(event, 'previewTampakSamping1Baru')">
-
-    @if(!empty($data->tampaksamping1))
-      <p class="mt-2 mb-1 text-muted"><small>Preview Lama:</small></p>
-      <img src="{{ asset('uploads/'.$data->tampaksamping1) }}" class="img-thumbnail" style="max-height: 200px;">
-    @endif
-
-    <p class="mt-2 mb-1 text-muted"><small>Preview Baru:</small></p>
-    <img id="previewTampakSamping1Baru" class="img-thumbnail" style="max-height: 200px; display:none;">
-  </div>
-
-  {{-- Tampak Samping 2 --}}
-  <div class="col-md-6">
-    <label class="form-label">Tampak Samping 2</label>
-    <input type="file" class="form-control" name="tampaksamping2" id="tampaksamping2" accept="image/*"
-           onchange="previewImage(event, 'previewTampakSamping2Baru')">
-
-    @if(!empty($data->tampaksamping2))
-      <p class="mt-2 mb-1 text-muted"><small>Preview Lama:</small></p>
-      <img src="{{ asset('uploads/'.$data->tampaksamping2) }}" class="img-thumbnail" style="max-height: 200px;">
-    @endif
-
-    <p class="mt-2 mb-1 text-muted"><small>Preview Baru:</small></p>
-    <img id="previewTampakSamping2Baru" class="img-thumbnail" style="max-height: 200px; display:none;">
-  </div>
-
+                    {{-- Preview Baru --}}
+                    <p class="text-muted mb-1"><small>Preview Baru:</small></p>
+                    <img id="preview{{ $field }}" class="img-fluid rounded" style="max-height: 120px; object-fit: cover; display:none;">
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
 </div>
 
 <script>
-  function previewImage(event, previewId) {
+function previewImage(event, previewId) {
     const input = event.target;
     const preview = document.getElementById(previewId);
 
     if (input.files && input.files[0]) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        preview.src = e.target.result;
-        preview.style.display = 'block';
-      }
-      reader.readAsDataURL(input.files[0]);
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        }
+        reader.readAsDataURL(input.files[0]);
     } else {
-      preview.src = '';
-      preview.style.display = 'none';
+        preview.src = '';
+        preview.style.display = 'none';
     }
-  }
+}
 </script>
+
 
 <div class="row g-3">
 
