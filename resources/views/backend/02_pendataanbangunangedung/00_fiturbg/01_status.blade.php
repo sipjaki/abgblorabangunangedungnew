@@ -158,7 +158,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body text-center">
-                        <img src="{{ file_exists($pathStorage) ? asset('storage/' . $foto) : asset($foto) }}" alt="{{ $index }}" class="img-fluid rounded" style="max-height: 500px; object-fit: cover;">
+                        <img src="{{ file_exists($pathStorage) ? asset('storage/' . $foto) : asset($foto) }}" alt="{{ $index }}" class="img-fluid rounded" style="max-height: 1200px; object-fit: cover;">
                     </div>
                 </div>
             </div>
