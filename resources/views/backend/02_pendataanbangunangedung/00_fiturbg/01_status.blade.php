@@ -106,7 +106,6 @@
         </div>
     @endforeach
 </div>
-
 <div class="col-md-12 mt-4">
     <div class="row text-center">
         @php
@@ -118,10 +117,10 @@
             ];
         @endphp
 
-        @foreach($fotos as $label => $foto)
+        @foreach($fotos as $index => $foto)
         <div class="col-md-3 mb-3">
             <div class="card shadow-sm">
-                <div class="card-header bg-light fw-bold text-dark">{{ $label }}</div>
+                <div class="card-header bg-light fw-bold text-dark">{{ $index }}</div>
                 <div class="card-body p-2" style="min-height: 200px; display: flex; align-items: center; justify-content: center;">
                     @if($foto)
                         @php
@@ -130,9 +129,9 @@
                         @endphp
 
                         @if(file_exists($pathStorage))
-                            <img src="{{ asset('storage/' . $foto) }}" alt="{{ $label }}" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+                            <img src="{{ asset('storage/' . $foto) }}" alt="{{ $index }}" class="img-fluid rounded" style="max-height: 200px; object-fit: cover; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#modalFoto{{ $loop->index }}">
                         @elseif(file_exists($pathPublic))
-                            <img src="{{ asset($foto) }}" alt="{{ $label }}" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+                            <img src="{{ asset($foto) }}" alt="{{ $index }}" class="img-fluid rounded" style="max-height: 200px; object-fit: cover; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#modalFoto{{ $loop->index }}">
                         @else
                             <div class="berkas-button text-muted" style="padding: 40px 10px;">
                                 Dokumentasi Belum Ada
@@ -148,6 +147,24 @@
                 </div>
             </div>
         </div>
+
+        {{-- Modal Foto --}}
+        @if($foto && (file_exists($pathStorage) || file_exists($pathPublic)))
+        <div class="modal fade" id="modalFoto{{ $loop->index }}" tabindex="-1" aria-labelledby="modalFotoLabel{{ $loop->index }}" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalFotoLabel{{ $loop->index }}">{{ $index }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="{{ file_exists($pathStorage) ? asset('storage/' . $foto) : asset($foto) }}" alt="{{ $index }}" class="img-fluid rounded" style="max-height: 500px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
         @endforeach
     </div>
 </div>
