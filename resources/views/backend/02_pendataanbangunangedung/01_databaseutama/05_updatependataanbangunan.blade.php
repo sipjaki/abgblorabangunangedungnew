@@ -337,52 +337,42 @@ th {
   <i class="bi bi-camera-fill me-3" style="font-size: 18px;"></i>
   Foto Dokumentasi Bangunan Gedung
 </h5>
+   <div class="row text-center">
+            @php
+                $fotos = [
+                    'Tampak Depan' => 'tampakdepan',
+                    'Tampak Belakang' => 'tampakbelakang',
+                    'Tampak Samping 1' => 'tampaksamping1',
+                    'Tampak Samping 2' => 'tampaksamping2',
+                ];
+            @endphp
 
-<div class="col-md-12 mt-4">
-    <div class="row text-center">
-        @php
-            $fotos = [
-                'Tampak Depan' => $data->tampakdepan ?? null,
-                'Tampak Belakang' => $data->tampakbelakang ?? null,
-                'Tampak Samping 1' => $data->tampaksamping1 ?? null,
-                'Tampak Samping 2' => $data->tampaksamping2 ?? null,
-            ];
-        @endphp
-
-        @foreach($fotos as $label => $foto)
-        <div class="col-md-3 mb-3">
-            <div class="card shadow-sm">
-                <div class="card-header bg-light fw-bold text-dark">{{ $label }}</div>
-                <div class="card-body p-2" style="min-height: 200px; display: flex; align-items: center; justify-content: center;">
-                    @if($foto)
+            @foreach($fotos as $label => $field)
+            <div class="col-md-3 mb-3">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light fw-bold text-dark">{{ $label }}</div>
+                    <div class="card-body p-2" style="min-height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
                         @php
+                            $foto = $data->$field;
                             $pathStorage = public_path('storage/' . $foto);
                             $pathPublic = public_path($foto);
                         @endphp
 
-                        @if(file_exists($pathStorage))
-                            <img src="{{ asset('storage/' . $foto) }}" alt="{{ $label }}" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
-                        @elseif(file_exists($pathPublic))
-                            <img src="{{ asset($foto) }}" alt="{{ $label }}" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+                        @if($foto && (file_exists($pathStorage) || file_exists($pathPublic)))
+                            <img src="{{ file_exists($pathStorage) ? asset('storage/' . $foto) : asset($foto) }}"
+                                 alt="{{ $label }}"
+                                 class="img-fluid rounded mb-2"
+                                 style="max-height: 150px; object-fit: cover;">
                         @else
-                            <div class="berkas-button text-muted" style="padding: 40px 10px;">
-                                Dokumentasi Belum Ada
-                            </div>
+                            <div class="text-muted mb-2">Dokumentasi Belum Ada</div>
                         @endif
-                    @else
-                        <div class="berkas-button text-muted" style="padding: 40px 10px;">
-                            <button class="button-berkas">
-                                Dokumentasi Belum Ada
-                            </button>
-                        </div>
-                    @endif
+
+                        <input type="file" name="{{ $field }}" class="form-control form-control-sm">
+                    </div>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
-    </div>
-</div>
-
 
 <div class="row g-3">
 
