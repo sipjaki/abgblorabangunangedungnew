@@ -499,14 +499,14 @@
                 <td style="text-align: center;">{{ $loop->iteration }}</td>
                 <td><span class="button-berkas">{{ $item->kecamatanblora->kecamatanblora }}</span></td>
                 <td style="text-align: center;">
-                    <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-hijau">
+                    <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-newvalidasi">
                         {{ $item->total }} Bangunan Gedung
                     </a>
                 </td>
-                <td style="text-align: center;">
+                <td class="button-hijau" style="text-align: center;">
                     {{ $item->ada }}
                 </td>
-                <td style="text-align: center;">
+                <td class="button-merah" style="text-align: center;">
                     {{ $item->kosong }}
                 </td>
             </tr>
