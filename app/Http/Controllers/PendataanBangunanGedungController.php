@@ -220,12 +220,6 @@ public function bependataanbangunangedung(Request $request)
     $perPage = $request->input('perPage', 20);
     $jumlahDataTotal = databgkepemilikan::count();
 
-public function bependataanbangunangedung(Request $request)
-{
-    $user = Auth::user();
-    $perPage = $request->input('perPage', 20);
-    $jumlahDataTotal = databgkepemilikan::count();
-
     // Ambil jumlah data unik berdasarkan namainstitusi
     $jumlahPerInstitusi = databgkepemilikan::select('namainstitusi', DB::raw('count(*) as total'))
         ->groupBy('namainstitusi')
