@@ -2166,7 +2166,7 @@ public function perkecamatanbangunan(Request $request, $kecamatan_id)
     }
 
 
-    public function datanewpendataanbgnew(Request $request, $id)
+    public function datanewpendataanbgnewupdate(Request $request, $id)
 {
     // Cari data lama
     $data = databgkepemilikan::findOrFail($id);
