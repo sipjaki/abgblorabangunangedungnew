@@ -214,34 +214,17 @@ th {
 </h5>
 
 {{-- Nama Penginput / User --}}
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="user_id">
-            <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Penginput
-        </label>
-        <input type="text" class="form-control" id="user_id_display" value="{{ Auth::user()->name }}" readonly>
-        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-    </div>
-</div>
-
-{{-- Tanggal Input Otomatis --}}
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="tanggalinput">
-            <i class="bi bi-calendar-check-fill me-2 text-info"></i> Tanggal Input
-        </label>
-        <input type="text" class="form-control" id="tanggalinput" name="tanggalinput"
-               value="{{ old('tanggalinput', \Carbon\Carbon::now()->format('Y-m-d')) }}" readonly>
-    </div>
-</div>
-
 {{-- Nama Institusi --}}
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label" for="namainstitusi">
             <i class="bi bi-bank2 me-2 text-primary"></i> Nama Institusi
         </label>
-        <input type="text" class="form-control @error('namainstitusi') is-invalid @enderror" id="namainstitusi" name="namainstitusi" value="{{ old('namainstitusi', $data->namainstitusi ?? '') }}">
+        <input type="text"
+               class="form-control @error('namainstitusi') is-invalid @enderror"
+               id="namainstitusi"
+               name="namainstitusi"
+               value="{{ old('namainstitusi', $datapbg->namainstitusi ?? '') }}">
         @error('namainstitusi') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
@@ -252,7 +235,11 @@ th {
         <label class="form-label" for="nopengesahanusaha">
             <i class="bi bi-file-earmark-check-fill me-2 text-success"></i> No HDNO
         </label>
-        <input type="text" class="form-control @error('nopengesahanusaha') is-invalid @enderror" id="nopengesahanusaha" name="nopengesahanusaha" value="{{ old('nopengesahanusaha', $data->nopengesahanusaha ?? '') }}">
+        <input type="text"
+               class="form-control @error('nopengesahanusaha') is-invalid @enderror"
+               id="nopengesahanusaha"
+               name="nopengesahanusaha"
+               value="{{ old('nopengesahanusaha', $datapbg->nopengesahanusaha ?? '') }}">
         @error('nopengesahanusaha') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
@@ -263,7 +250,11 @@ th {
         <label class="form-label" for="notelepon">
             <i class="bi bi-telephone-fill me-2 text-warning"></i> Nomor Telepon
         </label>
-        <input type="text" class="form-control @error('notelepon') is-invalid @enderror" id="notelepon" name="notelepon" value="{{ old('notelepon', $data->notelepon ?? '') }}">
+        <input type="text"
+               class="form-control @error('notelepon') is-invalid @enderror"
+               id="notelepon"
+               name="notelepon"
+               value="{{ old('notelepon', $datapbg->notelepon ?? '') }}">
         @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>
@@ -274,7 +265,11 @@ th {
         <label class="form-label" for="email">
             <i class="bi bi-envelope-fill me-2 text-danger"></i> Email
         </label>
-        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $data->email ?? '') }}">
+        <input type="email"
+               class="form-control @error('email') is-invalid @enderror"
+               id="email"
+               name="email"
+               value="{{ old('email', $datapbg->email ?? '') }}">
         @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 </div>

@@ -2161,7 +2161,7 @@ public function perkecamatanbangunan(Request $request, $kecamatan_id)
             'user'         => $user,
             'datakelurahan'=> $datakelurahan,
             'kecamatanList'=> $kecamatanList,
-            'datapbg'      => $datapbg
+            'data'      => $datapbg
         ]);
     }
 
