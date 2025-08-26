@@ -337,66 +337,72 @@ th {
   <i class="bi bi-camera-fill me-3" style="font-size: 18px;"></i>
   Foto Dokumentasi Bangunan Gedung
 </h5>
-    @method('PUT')
+<div class="row text-center">
+    @php
+        $fotos = [
+            'Tampak Depan' => 'tampakdepan',
+            'Tampak Belakang' => 'tampakbelakang',
+            'Tampak Samping 1' => 'tampaksamping1',
+            'Tampak Samping 2' => 'tampaksamping2',
+        ];
+    @endphp
 
-        <div class="row text-center">
-            @php
-                $fotos = [
-                    'Tampak Depan' => 'tampakdepan',
-                    'Tampak Belakang' => 'tampakbelakang',
-                    'Tampak Samping 1' => 'tampaksamping1',
-                    'Tampak Samping 2' => 'tampaksamping2',
-                ];
-            @endphp
+    @foreach($fotos as $label => $field)
+    <div class="col-md-3 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-header bg-light fw-bold text-dark">{{ $label }}</div>
+            <div class="card-body p-2" style="min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                @php
+                    $foto = $data->$field;
+                    $pathStorage = public_path('storage/' . $foto);
+                    $pathPublic = public_path($foto);
+                    $fotoPath = null;
+                    if($foto && file_exists($pathStorage)) {
+                        $fotoPath = asset('storage/' . $foto);
+                    } elseif($foto && file_exists($pathPublic)) {
+                        $fotoPath = asset($foto);
+                    }
+                @endphp
 
-            @foreach($fotos as $label => $field)
-            <div class="col-md-3 mb-3">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light fw-bold text-dark">{{ $label }}</div>
-                    <div class="card-body p-2" style="min-height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                        @php
-                            $foto = $data->$field;
-                            $pathStorage = public_path('storage/' . $foto);
-                            $pathPublic = public_path($foto);
-                        @endphp
+                {{-- Preview Gambar --}}
+                <img id="preview-{{ $field }}"
+                     src="{{ $fotoPath ?? '' }}"
+                     alt="{{ $label }}"
+                     class="img-fluid rounded mb-2"
+                     style="max-height: 150px; object-fit: cover; {{ !$fotoPath ? 'display:none;' : '' }}">
 
-                        <img id="preview-{{ $field }}"
-                             src="{{ ($foto && (file_exists($pathStorage) || file_exists($pathPublic))) ? (file_exists($pathStorage) ? asset('storage/' . $foto) : asset($foto)) : '' }}"
-                             alt="{{ $label }}"
-                             class="img-fluid rounded mb-2"
-                             style="max-height: 150px; object-fit: cover; {{ !$foto ? 'display:none;' : '' }}">
+                {{-- Placeholder --}}
+                @if(!$fotoPath)
+                    <div class="text-muted mb-2" id="placeholder-{{ $field }}">Dokumentasi Belum Ada</div>
+                @endif
 
-                        @if(!$foto)
-                            <div class="text-muted mb-2" id="placeholder-{{ $field }}">Dokumentasi Belum Ada</div>
-                        @endif
-
-                        <input type="file" name="{{ $field }}" class="form-control form-control-sm" onchange="previewImage(this, '{{ $field }}')">
-                    </div>
-                </div>
+                {{-- Input File --}}
+                <input type="file" name="{{ $field }}" accept="image/*"
+                       class="form-control form-control-sm"
+                       onchange="previewImage(this, '{{ $field }}')">
             </div>
-            @endforeach
         </div>
+    </div>
+    @endforeach
+</div>
 
-
-        <script>
+<script>
 function previewImage(input, field) {
     const preview = document.getElementById('preview-' + field);
     const placeholder = document.getElementById('placeholder-' + field);
 
     if (input.files && input.files[0]) {
         const reader = new FileReader();
-
         reader.onload = function(e) {
             preview.src = e.target.result;
-            preview.style.display = 'block';
-            if(placeholder) placeholder.style.display = 'none';
+            preview.style.display = 'block'; // munculin gambar
+            if (placeholder) placeholder.style.display = 'none'; // sembunyikan placeholder
         }
-
         reader.readAsDataURL(input.files[0]);
     } else {
-        preview.src = '';
-        preview.style.display = 'none';
-        if(placeholder) placeholder.style.display = 'block';
+        preview.src = "";
+        preview.style.display = "none";
+        if (placeholder) placeholder.style.display = "block";
     }
 }
 </script>
