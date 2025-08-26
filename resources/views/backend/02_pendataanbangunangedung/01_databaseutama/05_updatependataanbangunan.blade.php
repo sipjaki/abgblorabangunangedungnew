@@ -208,17 +208,12 @@ th {
 @endphp
 
 
-<div class="mb-4">
-    <!-- Button Kembali -->
-    <a href="{{ url()->previous() }}" class="btn btn-secondary me-2">
-        <i class="bi bi-arrow-left-circle me-1"></i> Kembali
-    </a>
-
-    <!-- Button Per Kecamatan -->
-    <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $data->kecamatanblora_id]) }}" class="btn btn-primary">
-        <i class="bi bi-building me-1"></i> Per Kecamatan
+<div class="mb-4 d-flex justify-content-end">
+    <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $data->kecamatanblora_id]) }}" class="button-berkas">
+        <i class="bi bi-building me-1"></i> Kembali
     </a>
 </div>
+
 <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
     <i class="bi bi-building-fill-check me-3" style="font-size: 18px;"></i>
