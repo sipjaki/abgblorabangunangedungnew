@@ -164,7 +164,7 @@ th {
 
 <!-- Modal Upload Foto -->
 <div id="uploadModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 20px 30px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+    <div style="background: white; padding: 20px 30px; border-radius: 12px; max-width: 200px; width: 50%; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
         <h6 style="font-family: 'Poppins', sans-serif; margin-bottom: 15px; color: navy;">Upload Gambar atau PDF</h6>
 
         <form id="uploadForm" action="{{ route('dokpenilikprafotoupload') }}" method="POST" enctype="multipart/form-data">
