@@ -207,12 +207,12 @@ th {
     use Illuminate\Support\Carbon;
 @endphp
 
-
-<div class="mb-4 d-flex justify-content-end">
-    <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $data->kecamatanblora_id]) }}" class="button-berkas">
-        <i class="bi bi-building me-1"></i> Kembali
+<div class="mb-2 d-flex justify-content-end">
+    <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $data->kecamatanblora_id]) }}" class="button-newvalidasi">
+        <i class="bi bi-arrow-left-circle me-1"></i> Kembali
     </a>
 </div>
+
 
 <h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
     style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
