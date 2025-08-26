@@ -92,9 +92,11 @@ Route::get('/bangunan/kecamatan/{kecamatan_id}', [PendataanBangunanGedungControl
 
 
 
+    //  PERUBAHAN INI
 
 Route::get('/bependataanbangunangedung', [PendataanBangunanGedungController::class, 'bependataanbangunangedung'])->middleware('auth')->name('bependataanbangunangedung');
-Route::get('/bependataanbangunangedung/update', [PendataanBangunanGedungController::class, 'bependataanbangunangedung'])->middleware('auth')->name('bependataanbangunangedung');
+
+Route::get('/bependataanbangunangedung/update/{id}', [PendataanBangunanGedungController::class, 'bependataanbangunangedungupdate'])->middleware('auth')->name('bependataanbangunangedungupdate');
 
 Route::get('/bebangunangedung', [PendataanBangunanGedungController::class, 'bebangunangedung'])->middleware('auth')->name('bebangunangedung');
 Route::get('/bebangunangedunginformasi/{id}', [PendataanBangunanGedungController::class, 'bebangunangedunginformasi'])->middleware('auth')->name('bebangunangedunginformasi');

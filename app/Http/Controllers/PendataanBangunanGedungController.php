@@ -1000,6 +1000,7 @@ public function bedatabgstatusbangunanupdatenew(Request $request, $id)
     return redirect()->back();
 }
 
+
 public function datanewpendataanbg(Request $request)
 {
     // Ambil user login
@@ -2134,6 +2135,35 @@ public function perkecamatanbangunan(Request $request, $kecamatan_id)
         'user'  => $user,
     ]);
 }
+
+
+ public function bependataanbangunangedungupdate(Request $request, $id)
+    {
+        // Ambil user login
+        $user = Auth::user();
+
+        // Ambil data kecamatan & kelurahan
+        $kecamatanList = kecamatanblora::all();
+        $datakelurahan = kelurahandesa::all();
+
+        // Jika request ajax untuk ambil data desa berdasarkan kecamatan
+        if ($request->ajax() && $request->has('kecamatan_id')) {
+            $desa = kelurahandesa::where('kecamatanblora_id', $request->kecamatan_id)->get();
+            return response()->json($desa);
+        }
+
+        // Cari data berdasarkan ID dari tabel databgkepemilikan
+        $datapbg = databgkepemilikan::findOrFail($id);
+
+        // Kirim data ke view
+        return view('backend.02_pendataanbangunangedung.01_databaseutama.00_dataindukpendataanbg', [
+            'title'        => 'Update Data Pendataan Bangunan Gedung',
+            'user'         => $user,
+            'datakelurahan'=> $datakelurahan,
+            'kecamatanList'=> $kecamatanList,
+            'datapbg'      => $datapbg
+        ]);
+    }
 
 }
 
