@@ -505,15 +505,16 @@
         </a>
     </td>
     <td style="text-align: center;">
-        <a class="button-hijau">{{ $item->ada }} Bangunan</a>
-        <br>
-        <small>{{ $item->persen_ada }}%</small>
-    </td>
-    <td style="text-align: center;">
-        <a class="button-merah">{{ $item->kosong }} Bangunan</a>
-        <br>
-        <small>{{ $item->persen_kosong }}%</small>
-    </td>
+    <span class="button-hijau" style="display: inline-flex; align-items: center; gap: 5px;">
+        {{ $item->ada }} Bangunan <small>({{ $item->persen_ada }}%)</small>
+    </span>
+</td>
+<td style="text-align: center;">
+    <span class="button-merah" style="display: inline-flex; align-items: center; gap: 5px;">
+        {{ $item->kosong }} Bangunan <small>({{ $item->persen_kosong }}%)</small>
+    </span>
+</td>
+
 </tr>
 @endforeach
 
