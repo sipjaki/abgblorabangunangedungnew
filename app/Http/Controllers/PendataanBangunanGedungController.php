@@ -2243,8 +2243,8 @@ public function perkecamatanbangunan(Request $request, $kecamatan_id)
 
     $data->save();
 
-    session()->flash('update', 'Data Bangunan berhasil diperbarui!');
-    return redirect()->route('bangunan.perkecamatan', ['kecamatanblora_id' => $data->kecamatanblora_id]);
+session()->flash('update', 'Data Bangunan berhasil diperbarui!');
+return back();
 
 }
 
