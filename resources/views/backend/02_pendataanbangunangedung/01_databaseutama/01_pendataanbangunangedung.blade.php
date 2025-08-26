@@ -498,7 +498,7 @@
             <tr>
                 <td style="text-align: center;">{{ $loop->iteration }}</td>
                 <td><span class="button-berkas">{{ $item->kecamatanblora->kecamatanblora }}</span></td>
-                <td>
+                <td style="text-align: center;">
                     <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-hijau">
                         {{ $item->total }} Bangunan Gedung
                     </a>
