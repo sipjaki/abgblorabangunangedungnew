@@ -220,6 +220,12 @@ public function bependataanbangunangedung(Request $request)
     $perPage = $request->input('perPage', 20);
     $jumlahDataTotal = databgkepemilikan::count();
 
+public function bependataanbangunangedung(Request $request)
+{
+    $user = Auth::user();
+    $perPage = $request->input('perPage', 20);
+    $jumlahDataTotal = databgkepemilikan::count();
+
     // Ambil jumlah data unik berdasarkan namainstitusi
     $jumlahPerInstitusi = databgkepemilikan::select('namainstitusi', DB::raw('count(*) as total'))
         ->groupBy('namainstitusi')
@@ -232,7 +238,7 @@ public function bependataanbangunangedung(Request $request)
         ->orderByDesc('total')
         ->get();
 
-    // ✅ Tambahan: ambil jumlah data ada dan kosong per kecamatan
+    // ✅ Tambahan: ambil jumlah data ada dan kosong per kecamatan + persentase
     $dataPerKecamatan = $jumlahPerKecamatan->map(function($item) {
         $ada = databgkepemilikan::where('kecamatanblora_id', $item->kecamatanblora_id)
             ->whereNotNull('nopengesahanusaha')
@@ -245,8 +251,15 @@ public function bependataanbangunangedung(Request $request)
                   ->orWhereIn('nopengesahanusaha', ['-', '--']);
             })->count();
 
+        $total = $item->total;
+        $persen_ada = $total > 0 ? round(($ada / $total) * 100, 2) : 0;
+        $persen_kosong = $total > 0 ? round(($kosong / $total) * 100, 2) : 0;
+
         $item->ada = $ada;
         $item->kosong = $kosong;
+        $item->persen_ada = $persen_ada;
+        $item->persen_kosong = $persen_kosong;
+
         return $item;
     });
 
@@ -255,10 +268,9 @@ public function bependataanbangunangedung(Request $request)
         'user' => $user,
         'jumlahDataTotal' => $jumlahDataTotal,
         'jumlahPerInstitusi' => $jumlahPerInstitusi,
-        'jumlahPerKecamatan' => $dataPerKecamatan, // sudah ada 'ada' & 'kosong'
+        'jumlahPerKecamatan' => $dataPerKecamatan, // sudah ada 'ada', 'kosong', 'persen_ada', 'persen_kosong'
     ]);
 }
-
 
 
 
