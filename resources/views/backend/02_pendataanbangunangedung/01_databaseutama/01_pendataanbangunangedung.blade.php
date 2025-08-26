@@ -504,16 +504,11 @@
                     </a>
                 </td>
                 <td style="text-align: center;">
-                    <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-newvalidasi">
-                        {{ $item->ada }} Bangunan
-                    </a>
+                    {{ $item->ada }}
                 </td>
                 <td style="text-align: center;">
-                    <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-newvalidasi">
-                        {{ $item->kosong }} Bangunan
-                    </a>
+                    {{ $item->kosong }}
                 </td>
-
             </tr>
         @endforeach
     </tbody>
