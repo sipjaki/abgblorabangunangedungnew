@@ -2156,8 +2156,8 @@ public function perkecamatanbangunan(Request $request, $kecamatan_id)
         $datapbg = databgkepemilikan::findOrFail($id);
 
         // Kirim data ke view
-        return view('backend.02_pendataanbangunangedung.01_databaseutama.00_dataindukpendataanbg', [
-            'title'        => 'Update Data Pendataan Bangunan Gedung',
+        return view('backend.02_pendataanbangunangedung.01_databaseutama.05_updatependataanbangunan', [
+            'title'        => 'Perbaikan Data Pendataan Bangunan Gedung',
             'user'         => $user,
             'datakelurahan'=> $datakelurahan,
             'kecamatanList'=> $kecamatanList,
