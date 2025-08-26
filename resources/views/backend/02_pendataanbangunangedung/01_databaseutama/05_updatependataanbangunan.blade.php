@@ -348,7 +348,7 @@ th {
     {{-- Preview Lama --}}
     @if(!empty($data->tampakdepan))
       <p class="mt-2 mb-1 text-muted"><small>Preview Lama:</small></p>
-      <img src="{{ asset('storage/'.$data->tampakdepan) }}" class="img-thumbnail" style="max-height: 200px;">
+      <img src="{{ asset('uploads/'.$data->tampakdepan) }}" class="img-thumbnail" style="max-height: 200px;">
     @endif
 
     {{-- Preview Baru --}}
@@ -364,7 +364,7 @@ th {
 
     @if(!empty($data->tampakbelakang))
       <p class="mt-2 mb-1 text-muted"><small>Preview Lama:</small></p>
-      <img src="{{ asset('storage/'.$data->tampakbelakang) }}" class="img-thumbnail" style="max-height: 200px;">
+      <img src="{{ asset('uploads/'.$data->tampakbelakang) }}" class="img-thumbnail" style="max-height: 200px;">
     @endif
 
     <p class="mt-2 mb-1 text-muted"><small>Preview Baru:</small></p>
@@ -379,7 +379,7 @@ th {
 
     @if(!empty($data->tampaksamping1))
       <p class="mt-2 mb-1 text-muted"><small>Preview Lama:</small></p>
-      <img src="{{ asset('storage/'.$data->tampaksamping1) }}" class="img-thumbnail" style="max-height: 200px;">
+      <img src="{{ asset('uploads/'.$data->tampaksamping1) }}" class="img-thumbnail" style="max-height: 200px;">
     @endif
 
     <p class="mt-2 mb-1 text-muted"><small>Preview Baru:</small></p>
@@ -394,7 +394,7 @@ th {
 
     @if(!empty($data->tampaksamping2))
       <p class="mt-2 mb-1 text-muted"><small>Preview Lama:</small></p>
-      <img src="{{ asset('storage/'.$data->tampaksamping2) }}" class="img-thumbnail" style="max-height: 200px;">
+      <img src="{{ asset('uploads/'.$data->tampaksamping2) }}" class="img-thumbnail" style="max-height: 200px;">
     @endif
 
     <p class="mt-2 mb-1 text-muted"><small>Preview Baru:</small></p>
