@@ -494,26 +494,29 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($jumlahPerKecamatan as $item)
-            <tr>
-                <td style="text-align: center;">{{ $loop->iteration }}</td>
-                <td><span class="button-berkas">{{ $item->kecamatanblora->kecamatanblora }}</span></td>
-                <td style="text-align: center;">
-                    <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-newvalidasi">
-                        {{ $item->total }} Bangunan Gedung
-                    </a>
-                </td>
-              <td style="text-align: center;">
-    <a class="button-hijau">{{ $item->ada }} Bangunan</a>
-</td>
-persentase  ada
-<td style="text-align: center;">
-    <a class="button-merah">{{ $item->kosong }} Bangunan</a>
-</td>
-persentase tidak ada
 
-            </tr>
-        @endforeach
+        @foreach($jumlahPerKecamatan as $item)
+<tr>
+    <td style="text-align: center;">{{ $loop->iteration }}</td>
+    <td><span class="button-berkas">{{ $item->kecamatanblora->kecamatanblora }}</span></td>
+    <td style="text-align: center;">
+        <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-newvalidasi">
+            {{ $item->total }} Bangunan Gedung
+        </a>
+    </td>
+    <td style="text-align: center;">
+        <a class="button-hijau">{{ $item->ada }} Bangunan</a>
+        <br>
+        <small>{{ $item->persen_ada }}%</small>
+    </td>
+    <td style="text-align: center;">
+        <a class="button-merah">{{ $item->kosong }} Bangunan</a>
+        <br>
+        <small>{{ $item->persen_kosong }}%</small>
+    </td>
+</tr>
+@endforeach
+
     </tbody>
 </table>
 
