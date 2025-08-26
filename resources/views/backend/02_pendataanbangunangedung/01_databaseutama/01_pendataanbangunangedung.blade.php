@@ -483,14 +483,14 @@
             }
         }
     </style>
-
-
 <table class="table">
     <thead>
         <tr>
             <th style="text-align: center;">No</th>
             <th style="text-align: center;">Kecamatan</th>
             <th style="text-align: center;">Jumlah</th>
+            <th style="text-align: center;">Terverifikasi</th>
+            <th style="text-align: center;">Belum Terverifikasi</th>
         </tr>
     </thead>
     <tbody>
@@ -503,10 +503,17 @@
                         {{ $item->total }} Bangunan Gedung
                     </a>
                 </td>
+                <td style="text-align: center;">
+                    {{ $item->ada }}
+                </td>
+                <td style="text-align: center;">
+                    {{ $item->kosong }}
+                </td>
             </tr>
         @endforeach
     </tbody>
 </table>
+
 
 <div class="container" style="margin-top: 10px;">
     <div class="stats-grid" style="display: flex; flex-wrap: wrap; gap: 16px;">

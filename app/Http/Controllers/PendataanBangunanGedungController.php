@@ -226,20 +226,40 @@ public function bependataanbangunangedung(Request $request)
         ->orderByDesc('total')
         ->get();
 
-    // ✅ Tambahan: ambil jumlah data per kecamatanblora_id
+    // Ambil jumlah data per kecamatanblora_id
     $jumlahPerKecamatan = databgkepemilikan::select('kecamatanblora_id', DB::raw('count(*) as total'))
         ->groupBy('kecamatanblora_id')
         ->orderByDesc('total')
         ->get();
+
+    // ✅ Tambahan: ambil jumlah data ada dan kosong per kecamatan
+    $dataPerKecamatan = $jumlahPerKecamatan->map(function($item) {
+        $ada = databgkepemilikan::where('kecamatanblora_id', $item->kecamatanblora_id)
+            ->whereNotNull('nopengesahanusaha')
+            ->whereNotIn('nopengesahanusaha', ['-', '--'])
+            ->count();
+
+        $kosong = databgkepemilikan::where('kecamatanblora_id', $item->kecamatanblora_id)
+            ->where(function($q) {
+                $q->whereNull('nopengesahanusaha')
+                  ->orWhereIn('nopengesahanusaha', ['-', '--']);
+            })->count();
+
+        $item->ada = $ada;
+        $item->kosong = $kosong;
+        return $item;
+    });
 
     return view('backend.02_pendataanbangunangedung.01_databaseutama.01_pendataanbangunangedung', [
         'title' => 'Pendataan Bangunan Gedung',
         'user' => $user,
         'jumlahDataTotal' => $jumlahDataTotal,
         'jumlahPerInstitusi' => $jumlahPerInstitusi,
-        'jumlahPerKecamatan' => $jumlahPerKecamatan, // 👈 kirim ke blade
+        'jumlahPerKecamatan' => $dataPerKecamatan, // sudah ada 'ada' & 'kosong'
     ]);
 }
+
+
 
 
 public function bebangunangedung(Request $request)
