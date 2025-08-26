@@ -2165,5 +2165,88 @@ public function perkecamatanbangunan(Request $request, $kecamatan_id)
         ]);
     }
 
+
+    public function datanewpendataanbgnew(Request $request, $id)
+{
+    // Cari data lama
+    $data = databgkepemilikan::findOrFail($id);
+
+    // Validasi input
+    $validated = $request->validate([
+        'user_id' => 'nullable|string',
+        'tanggalinput' => 'nullable|string|max:255',
+        'namainstitusi' => 'nullable|string|max:255',
+        'nopengesahanusaha' => 'nullable|string|max:255',
+        'notelepon' => 'nullable|string|max:255',
+        'email' => 'nullable|email|max:255',
+
+        'kecamatanblora_id' => 'required|string',
+        'alamat' => 'nullable|string',
+        'koordinat' => 'required|string|max:255',
+
+        // file gambar opsional, max 15MB
+        'tampakdepan' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:15120',
+        'tampakbelakang' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:15120',
+        'tampaksamping1' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:15120',
+        'tampaksamping2' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:15120',
+    ], [
+        'email.email' => 'Format email tidak valid.',
+        'kecamatanblora_id.required' => 'Kecamatan tidak ditemukan.',
+        'tampakdepan.image' => 'File tampak depan harus berupa gambar.',
+        'tampakbelakang.image' => 'File tampak belakang harus berupa gambar.',
+        'tampaksamping1.image' => 'File tampak samping 1 harus berupa gambar.',
+        'tampaksamping2.image' => 'File tampak samping 2 harus berupa gambar.',
+        'tampakdepan.max' => 'File tampak depan maksimal 15MB.',
+        'tampakbelakang.max' => 'File tampak belakang maksimal 15MB.',
+        'tampaksamping1.max' => 'File tampak samping 1 maksimal 15MB.',
+        'tampaksamping2.max' => 'File tampak samping 2 maksimal 15MB.',
+    ]);
+
+    // Folder penyimpanan file
+    $uploadPath = public_path('02_pendataan');
+    if (!file_exists($uploadPath)) mkdir($uploadPath, 0755, true);
+
+    $saveFile = function($file, $prefix, $oldFile = null) use ($uploadPath) {
+        // hapus file lama jika ada
+        if ($oldFile && file_exists(public_path($oldFile))) unlink(public_path($oldFile));
+
+        $filename = $prefix . '_' . time() . '.' . $file->getClientOriginalExtension();
+        $file->move($uploadPath, $filename);
+        return '02_pendataan/' . $filename;
+    };
+
+    // Update file jika ada upload baru
+    if ($request->hasFile('tampakdepan')) {
+        $data->tampakdepan = $saveFile($request->file('tampakdepan'), 'tampakdepan', $data->tampakdepan);
+    }
+    if ($request->hasFile('tampakbelakang')) {
+        $data->tampakbelakang = $saveFile($request->file('tampakbelakang'), 'tampakbelakang', $data->tampakbelakang);
+    }
+    if ($request->hasFile('tampaksamping1')) {
+        $data->tampaksamping1 = $saveFile($request->file('tampaksamping1'), 'tampaksamping1', $data->tampaksamping1);
+    }
+    if ($request->hasFile('tampaksamping2')) {
+        $data->tampaksamping2 = $saveFile($request->file('tampaksamping2'), 'tampaksamping2', $data->tampaksamping2);
+    }
+
+    // Update field lain
+    $data->user_id = $validated['user_id'] ?? $data->user_id;
+    $data->tanggalinput = $validated['tanggalinput'] ?? $data->tanggalinput;
+    $data->namainstitusi = $validated['namainstitusi'] ?? $data->namainstitusi;
+    $data->nopengesahanusaha = $validated['nopengesahanusaha'] ?? $data->nopengesahanusaha;
+    $data->notelepon = $validated['notelepon'] ?? $data->notelepon;
+    $data->email = $validated['email'] ?? $data->email;
+
+    $data->kecamatanblora_id = $validated['kecamatanblora_id'];
+    $data->alamat = $validated['alamat'] ?? $data->alamat;
+    $data->koordinat = $validated['koordinat'];
+
+    $data->save();
+
+    session()->flash('update', 'Data Bangunan berhasil diperbarui!');
+    return redirect()->route('bangunan.perkecamatan', ['kecamatanblora_id' => $data->kecamatanblora_id]);
+
+}
+
 }
 

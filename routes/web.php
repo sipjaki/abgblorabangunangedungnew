@@ -88,15 +88,18 @@ Route::post('/datanewpendataanbgnew', [PendataanBangunanGedungController::class,
 
 // INFORMASI PENDATAAAN BANGUNAN GEDUNG BERDASARKAN KECAMATAN KAB BLORA
 Route::get('/bangunan/kecamatan/{kecamatan_id}', [PendataanBangunanGedungController::class, 'perkecamatanbangunan'])
-     ->name('bangunan.perkecamatan');
+->name('bangunan.perkecamatan');
 
 
 
-    //  PERUBAHAN INI
+//  PERUBAHAN INI
 
 Route::get('/bependataanbangunangedung', [PendataanBangunanGedungController::class, 'bependataanbangunangedung'])->middleware('auth')->name('bependataanbangunangedung');
 
 Route::get('/bependataanbangunangedung/update/{id}', [PendataanBangunanGedungController::class, 'bependataanbangunangedungupdate'])->middleware('auth')->name('bependataanbangunangedungupdate');
+Route::post('/datanewpendataanbgnewupdate/{id}', [PendataanBangunanGedungController::class, 'datanewpendataanbgnewupdate'])
+    ->middleware('auth')
+    ->name('datanewpendataanbgnewupdate');
 
 Route::get('/bebangunangedung', [PendataanBangunanGedungController::class, 'bebangunangedung'])->middleware('auth')->name('bebangunangedung');
 Route::get('/bebangunangedunginformasi/{id}', [PendataanBangunanGedungController::class, 'bebangunangedunginformasi'])->middleware('auth')->name('bebangunangedunginformasi');
