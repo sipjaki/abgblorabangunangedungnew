@@ -503,12 +503,13 @@
                         {{ $item->total }} Bangunan Gedung
                     </a>
                 </td>
-                <td style="text-align: center;">
-                    {{ $item->ada }}
-                </td>
-                <td style="text-align: center;">
-                    {{ $item->kosong }}
-                </td>
+              <td style="text-align: center;">
+    <a class="button-hijau">{{ $item->ada }}Bangunan</a>
+</td>
+<td style="text-align: center;">
+    <a class="button-merah">{{ $item->kosong }}Bangunan</a>
+</td>
+
             </tr>
         @endforeach
     </tbody>
