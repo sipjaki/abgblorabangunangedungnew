@@ -503,12 +503,17 @@
                         {{ $item->total }} Bangunan Gedung
                     </a>
                 </td>
-                <td class="button-hijau" style="text-align: center;">
-                    {{ $item->ada }}
+                <td style="text-align: center;">
+                    <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-newvalidasi">
+                        {{ $item->ada }} Bangunan
+                    </a>
                 </td>
-                <td class="button-merah" style="text-align: center;">
-                    {{ $item->kosong }}
+                <td style="text-align: center;">
+                    <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-newvalidasi">
+                        {{ $item->kosong }} Bangunan
+                    </a>
                 </td>
+
             </tr>
         @endforeach
     </tbody>
