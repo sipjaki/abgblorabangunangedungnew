@@ -196,17 +196,18 @@ th {
                         <!--begin::Quick Example-->
                   <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data">
           @csrf
-                            <!-- begin::Body -->
-                            <div class="card-body">
-                                <div class="row">
-
-           {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
 
 <div class="mb-2 mt-2 d-flex justify-content-end">
     <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $data->kecamatanblora_id]) }}" class="button-newvalidasi">
         <i class="bi bi-arrow-left-circle me-1"></i> Kembali
     </a>
 </div>
+          <!-- begin::Body -->
+                            <div class="card-body">
+                                <div class="row">
+
+           {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
+
 
 
 <div class="card shadow-sm border-0">
