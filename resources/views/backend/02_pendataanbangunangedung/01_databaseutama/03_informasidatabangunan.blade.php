@@ -202,6 +202,13 @@ th {
 
            {{-- @include('backend.01_pbgslf.00_fiturtambahannav') --}}
 
+<div class="mb-2 d-flex justify-content-end">
+    <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $data->kecamatanblora_id]) }}" class="button-newvalidasi">
+        <i class="bi bi-arrow-left-circle me-1"></i> Kembali
+    </a>
+</div>
+
+
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
