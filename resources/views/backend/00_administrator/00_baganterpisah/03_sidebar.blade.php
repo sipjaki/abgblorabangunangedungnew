@@ -1075,7 +1075,7 @@
 <li class="nav-item">
     <a href="/bependataanbangunangedung" class="nav-link">
         <i class="bi bi-house-door nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px;">Bangunan Gedung</p>
+        <p style="color: white; margin-left: 8px;">Bangunan <br> Gedung</p>
     </a>
 </li>
 {{-- <li class="nav-item">
@@ -1088,7 +1088,7 @@
 <li class="nav-item">
     <a href="/bedatabangunankic" class="nav-link">
         <i class="bi bi-person-vcard nav-icon" style="color: white; font-size: 16px;"></i>
-        <p style="color: white; margin-left: 8px;">Kartu Identitas</p>
+        <p style="color: white; margin-left: 8px;">Kartu Inventaris <br> Barang (C)</p>
     </a>
 </li>
 
