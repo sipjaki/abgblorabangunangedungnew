@@ -359,7 +359,7 @@
     </div>
 
   </section>
-
+{{--
   <section id="featured" class="container max-w-[1130px] mx-auto flex flex-col gap-4 mt-[50px]">
     <h2 class="font-semibold" style="font-size:16px;">🧰 Agenda Pelatihan Bangunan Gedung</h2>
 
@@ -543,12 +543,11 @@
                 <!-- Card lainnya tinggal ganti classnya juga jadi "project-card" -->
     </div>
 
-</section>
-  <section id="newest" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5 mt-[50px]">
+</section> --}}
+  {{-- <section id="newest" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5 mt-[50px]">
     <div class="flex flex-col gap-4 w-full">
         <h2 class="font-semibold" style="font-size: 16px;">📰 Berita & Artikel Bangunan Gedung DPUPR Kabupaten Blora</h2>
         <div class="flex flex-col gap-3">
-            <!-- Berita 1 -->
             <div class="card hover:ring-2 hover:ring-[#6635F1] transition-all duration-300 bg-white p-5 rounded-[20px] flex flex-col sm:flex-row sm:items-center gap-[18px] w-full">
               <a href="berita-1.html" class="w-full sm:w-[200px] h-[150px] flex shrink-0 rounded-[20px] overflow-hidden bg-[#D9D9D9]">
                 <img src="/assets/iconberanda/beritaabg.jpg" class="w-full h-full object-cover" alt="Gedung Blora">
@@ -561,7 +560,6 @@
               </div>
             </div>
 
-            <!-- Berita 2 -->
             <div class="card hover:ring-2 hover:ring-[#6635F1] transition-all duration-300 bg-white p-5 rounded-[20px] flex flex-col sm:flex-row sm:items-center gap-[18px] w-full">
               <a href="berita-2.html" class="w-full sm:w-[200px] h-[150px] flex shrink-0 rounded-[20px] overflow-hidden bg-[#D9D9D9]">
                 <img src="/assets/iconberanda/beritaabg.jpg" class="w-full h-full object-cover" alt="Proyek Gedung DPU Blora">
@@ -601,6 +599,7 @@
                     <p class="text-sm leading-[21px] text-[#545768]">Admin ABG Blora</p>
                 </div>
             </div>
+             --}}
             {{-- <div class="flex items-center gap-[6px]">
                 <div class="flex items-center">
                     <div>
@@ -621,7 +620,7 @@
                     <p class="font-semibold text-sm">(893)</p>
                 </div>
             </div> --}}
-        </div>
+        {{-- </div>
         <div class="flex flex-col gap-[10px] rounded-[20px] p-[10px_14px] bg-[#030303]">
                 <a href="https://wa.me/6281321455855" target="_blank" class="font-semibold text-white hover:underline text-center" style="font-size: 14px;">Chat Sekarang</a>
 
@@ -631,7 +630,7 @@
         <div class="flex flex-col gap-3">
             <h3 class="font-semibold">Artikel Bangunan Gedung <br> ABG Blora</h3>
             <div class="flex flex-col gap-[18px]">
-<!-- Card 1 -->
+
 <a href="" class="resources-card">
     <div class="group flex gap-3 items-center">
         <div class="w-[50px] h-[50px] flex shrink-0">
@@ -640,15 +639,15 @@
         <div class="flex flex-col justify-center gap-[2px]">
             <p class="font-semibold group-hover:underline">Tantangan Pengawasan Proyek Konstruksi</p>
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="flex flex-col gap-[10px] rounded-[20px] p-[5px_14px] bg-[#030303]">
         <a href="https://wa.me/6281321455855" target="_blank" class="font-semibold text-white hover:underline text-center" style="font-size: 14px;">Download</a>
     </div> --}}
 
-</a>
+{{-- </a> --}}
 
 <!-- Card 2 -->
-<a href="" class="resources-card">
+{{-- <a href="" class="resources-card">
     <div class="group flex gap-3 items-center">
         <div class="w-[50px] h-[50px] flex shrink-0">
             <img src="/assets/new/icons/ruler&pen.svg" alt="icon">
@@ -656,15 +655,15 @@
         <div class="flex flex-col justify-center gap-[2px]">
             <p class="font-semibold group-hover:underline">Peran Jakon dalam Pembangunan Gedung Blora</p>
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="flex flex-col gap-[10px] rounded-[20px] p-[5px_14px] bg-[#030303]">
         <a href="https://wa.me/6281321455855" target="_blank" class="font-semibold text-white hover:underline text-center" style="font-size: 14px;">Download</a>
     </div> --}}
 
-</a>
+{{-- </a> --}}
 
 <!-- Card 3 -->
-<a href="" class="resources-card">
+{{-- <a href="" class="resources-card">
     <div class="group flex gap-3 items-center">
         <div class="w-[50px] h-[50px] flex shrink-0">
             <img src="/assets/new/icons/ruler&pen.svg" alt="icon">
@@ -672,15 +671,15 @@
         <div class="flex flex-col justify-center gap-[2px]">
             <p class="font-semibold group-hover:underline">Manajemen Risiko dalam Proyek Gedung Daerah</p>
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="flex flex-col gap-[10px] rounded-[20px] p-[5px_14px] bg-[#030303]">
         <a href="https://wa.me/6281321455855" target="_blank" class="font-semibold text-white hover:underline text-center" style="font-size: 14px;">Download</a>
     </div> --}}
 
-</a>
+{{-- </a> --}}
 
 <!-- Card 4 -->
-<a href="" class="resources-card">
+{{-- <a href="" class="resources-card">
     <div class="group flex gap-3 items-center">
         <div class="w-[50px] h-[50px] flex shrink-0">
             <img src="/assets/new/icons/ruler&pen.svg" alt="icon">
@@ -688,15 +687,15 @@
         <div class="flex flex-col justify-center gap-[2px]">
             <p class="font-semibold group-hover:underline">Efisiensi Anggaran pada Proyek Konstruksi Blora</p>
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="flex flex-col gap-[10px] rounded-[20px] p-[5px_14px] bg-[#030303]">
         <a href="https://wa.me/6281321455855" target="_blank" class="font-semibold text-white hover:underline text-center" style="font-size: 14px;">Download</a>
     </div> --}}
 
-</a>
+{{-- </a> --}}
 
 <!-- Card 5 -->
-<a href="" class="resources-card">
+{{-- <a href="" class="resources-card">
     <div class="group flex gap-3 items-center">
         <div class="w-[50px] h-[50px] flex shrink-0">
             <img src="/assets/new/icons/ruler&pen.svg" alt="icon">
@@ -705,15 +704,15 @@
             <p class="font-semibold group-hover:underline">Inovasi Material dalam Konstruksi Gedung Pemerintah</p>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="flex flex-col gap-[10px] rounded-[20px] p-[5px_14px] bg-[#030303]">
         <a href="https://wa.me/6281321455855" target="_blank" class="font-semibold text-white hover:underline text-center" style="font-size: 14px;">Download</a>
     </div> --}}
 
-</a>
+{{-- </a> --}}
 
 <!-- Card 6 -->
-<a href="" class="resources-card">
+{{-- <a href="" class="resources-card">
     <div class="group flex gap-3 items-center">
         <div class="w-[50px] h-[50px] flex shrink-0">
             <img src="/assets/new/icons/ruler&pen.svg" alt="icon">
@@ -721,17 +720,17 @@
         <div class="flex flex-col justify-center gap-[2px]">
             <p class="font-semibold group-hover:underline">Penerapan K3 dalam Proyek Gedung Kabupaten Blora</p>
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="flex flex-col gap-[10px] rounded-[20px] p-[5px_14px] bg-[#030303]">
         <a href="https://wa.me/6281321455855" target="_blank" class="font-semibold text-white hover:underline text-center" style="font-size: 14px;">Download</a>
     </div> --}}
 
-</a>
+{{-- </a> --}}
 
-            </div>
+            {{-- </div>
         </div>
     </div>
-  </section>
+  </section> --}}
 
   </section>
 
