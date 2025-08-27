@@ -18,7 +18,7 @@
                 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
                     @php $status = $item['validasiberkas' . $i] ?? null; @endphp
                     @if ($status == 'sudah')
-                        <button class="button-create" type="button" style="background-color: #10B981; color: black; cursor: not-allowed;" disabled>
+                        <button class="button-create" type="button" style="background-color: #10B981; color: black; cursor: not-allowed;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Sudah
                         </button>
                     @elseif ($status == 'belum')
@@ -103,7 +103,7 @@
                         @php $status = $data['validasiberkas' . $i] ?? null; @endphp
 
                         @if ($status == 'sudah')
-                            <button class="button-lolos" type="button" style="background-color: #10B981; color: black; cursor: not-allowed;" disabled>
+                            <button class="button-lolos" type="button" style="background-color: #10B981; color: black; cursor: not-allowed;" >
                                 <i class="bi bi-patch-check-fill me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @elseif ($status == 'belum')
@@ -216,7 +216,7 @@
                         @endphp
 
                         @if ($data->$field == 'sudah')
-                            <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
+                            <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
                                 <i class="bi bi-patch-check-fill me-1"></i> {{ $judulVerifikasi[$i] }}
                             </button>
                         @elseif ($data->$field == 'belum')
@@ -324,8 +324,8 @@
         background-color: #e5e7eb;
     }
 
-    /* Disabled button style */
-    button:disabled {
+    /*  button style */
+    button: {
         opacity: 0.7;
         cursor: not-allowed;
     }
@@ -356,7 +356,7 @@
 
                     <!-- Berkas Selesai (7) -->
                     @if($data->validasiberkas7 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
+                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
                         </button>
                     @elseif($data->validasiberkas7 == 'belum')
@@ -370,7 +370,7 @@
                     @endif
 
                     {{-- @if($data->validasiberkas1 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
+                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
                         </button>
                     @elseif($data->validasiberkas1 == 'belum')
@@ -385,7 +385,7 @@
 
                     <!-- Surat Pemberitahuan (2) -->
                     @if($data->validasiberkas2 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
+                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Surat Pemberitahuan Selesai
                         </button>
                     @elseif($data->validasiberkas2 == 'belum')
@@ -400,7 +400,7 @@
 
                     <!-- TPA/TPT (3) -->
                     @if($data->validasiberkas3 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
+                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> TPA/TPT Selesai
                         </button>
                     @elseif($data->validasiberkas3 == 'belum')
@@ -415,7 +415,7 @@
 
                     <!-- Surat Undangan (4) -->
                     @if($data->validasiberkas4 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
+                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Surat Undangan Selesai
                         </button>
                     @elseif($data->validasiberkas4 == 'belum')
@@ -430,7 +430,7 @@
 
                     <!-- Berita Acara (5) -->
                     @if($data->validasiberkas5 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
+                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Berita Acara Selesai
                         </button>
                     @elseif($data->validasiberkas5 == 'belum')
@@ -445,7 +445,7 @@
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas8 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
+                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Finalisasi Selesai
                         </button>
                     @elseif($data->validasiberkas8 == 'belum')
@@ -460,7 +460,7 @@
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas6 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" disabled>
+                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> SKRD Selesai
                         </button>
                     @elseif($data->validasiberkas6 == 'belum')
@@ -874,8 +874,8 @@
         background-color: #e5e7eb;
     }
 
-    /* Disabled button style */
-    button:disabled {
+    /*  button style */
+    button: {
         opacity: 0.7;
         cursor: not-allowed;
     }
