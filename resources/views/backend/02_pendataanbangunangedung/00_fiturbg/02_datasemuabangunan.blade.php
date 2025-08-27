@@ -1,7 +1,7 @@
 <div class="card shadow-sm border-0" style="background: #f0f8ff;">
     <div class="card-body" style="overflow-x: auto; white-space: nowrap; padding: 16px;">
         @php
-            $id = $data->databgkepemilikan->id ?? 0;
+            $id = $data->id ?? 0;
             $buttons = [
                 ['label' => 'Data Profil Tanah', 'url' => '/bedatabgprofiltanah/' . $id, 'icon' => 'bi-geo-alt-fill'],
                 ['label' => 'Data Profil Bangunan Gedung', 'url' => '/bedatabgprofilbangunan/' . $id, 'icon' => 'bi-building-fill'],
