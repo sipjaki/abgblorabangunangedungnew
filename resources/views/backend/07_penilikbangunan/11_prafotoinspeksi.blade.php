@@ -324,11 +324,18 @@ function previewFile() {
         </div>
     @endforelse
 </div>
-
 <!-- Modal -->
-<div id="previewModal" class="modal" style="display:none; position:fixed; z-index:1050; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.7);">
-    <div class="modal-dialog" style="margin:5% auto; max-width:80%; background:#fff; border-radius:12px; padding:20px; position:relative;">
-        <span onclick="closeModal()" style="position:absolute; top:10px; right:15px; font-size:28px; font-weight:bold; color:#000; cursor:pointer;">&times;</span>
+<div id="previewModal" class="modal"
+     style="display:none; position:fixed; z-index:1050; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.7);">
+    <div class="modal-dialog"
+         style="margin:5% auto; max-width:80%; background:#fff; border-radius:12px; padding:20px; position:relative;">
+
+        <!-- Tombol Close -->
+        <span onclick="closeModal()"
+              style="position:absolute; top:10px; right:15px; font-size:28px; font-weight:bold; color:#000; cursor:pointer;">
+            &times;
+        </span>
+
         <div id="modalContent" style="text-align:center;"></div>
     </div>
 </div>
@@ -339,7 +346,7 @@ function openModal(src, type) {
     if(type === 'image'){
         content = `<img src="${src}" style="max-width:100%; border-radius:8px;" />`;
     } else if(type === 'pdf') {
-        content = `<iframe src="${src}" width="100%" height="600px" style="border:none; border-radius:8px;"></iframe>`;
+        content = `<iframe src="${src}" width="100%" height="450px" style="border:none; border-radius:8px;"></iframe>`;
     }
     document.getElementById('modalContent').innerHTML = content;
     document.getElementById('previewModal').style.display = 'block';
@@ -349,6 +356,21 @@ function closeModal() {
     document.getElementById('previewModal').style.display = 'none';
     document.getElementById('modalContent').innerHTML = '';
 }
+
+// Tutup modal kalau klik area luar
+window.onclick = function(event) {
+    let modal = document.getElementById('previewModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
+// Tutup modal dengan tombol ESC
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeModal();
+    }
+});
 </script>
 
 <style>
