@@ -201,6 +201,12 @@ th {
                                 <div class="row">
                                     <div class="card shadow-sm border-0">
 
+<div class="mb-2 mt-2 d-flex justify-content-end">
+    <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $data->kecamatanblora_id]) }}" class="button-newvalidasi">
+        <i class="bi bi-arrow-left-circle me-1"></i> Kembali
+    </a>
+</div>
+
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
         <h5 class="mb-0" style="font-size: 16px;">Informasi Data Bangunan Gedung Kabupaten </h5>
