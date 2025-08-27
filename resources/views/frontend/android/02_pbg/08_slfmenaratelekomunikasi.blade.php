@@ -70,11 +70,11 @@
 
         <div class="flex flex-col space-y-3 px-[18px]">
             <!-- Card 1 -->
-<div class="flex flex-col space-y-[0px] px-[0px] py-[0px]" style="margin-top: -200px;">
+<div class="flex flex-col space-y-[0px] px-[0px] py-[0px]">
     @foreach ($data as $item)
         <div class="bg-white rounded-xl p-[8px] shadow-sm">
             @if ($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
-                <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain; border-radius: 8px;" />
+                <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas" style="width: 100%; height: 450px; object-fit: contain; border-radius: 8px; margin-top:-100px; margin-bottom:-100px;" />
                 <div style="text-align: center; margin-top: 2px; margin-bottom: 3px;">
                     <a href="{{ asset('storage/' . $item->berkas) }}" download class="button-baru">Download Informasi</a>
                 </div>
