@@ -415,7 +415,7 @@ document.querySelectorAll('.break-6-words').forEach(td => {
             <!-- Tombol KTP -->
 
 
-@can('superadmin')
+@canany(['superadmin', 'konsultanbangunan'])
 
 <td style="text-align: center; vertical-align: middle;">
 {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
@@ -432,7 +432,7 @@ document.querySelectorAll('.break-6-words').forEach(td => {
                                            <i class="bi bi-trash"></i>Hapus
                                         </a>
                                     </td>
-                                    @endcan
+                                    @endcanany
 
                                 </tr>
                                 @endforeach
