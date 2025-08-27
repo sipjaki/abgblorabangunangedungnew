@@ -159,7 +159,8 @@
   </a>
 
   @endforeach
-<div class="w-full px-4 md:px-6 py-6">
+
+  {{-- <div class="w-full px-4 md:px-6 py-6">
     <div class="bg-white border border-gray-300 rounded-xl shadow-md overflow-hidden text-[12px]">
         <!-- Header Judul -->
         <div class="bg-[#4041DA] text-white text-base font-semibold px-6 py-4 rounded-t-xl">
@@ -198,7 +199,7 @@
             </table>
         </div>
     </div>
-</div>
+</div> --}}
 
 </div>
 
