@@ -90,7 +90,7 @@
                 gap: 4px;
               ">
                 <p style="font-weight: 600; font-size: 14px; color: #000;">PBG/SLF</p>
-                <p style="font-size: 14px; color: #545768;">34 Permohonan</p>
+                {{-- <p style="font-size: 14px; color: #545768;">34 Permohonan</p> --}}
               </div>
 
             </div>
@@ -120,7 +120,7 @@
 
    <div style="display: flex; flex-direction: column; gap: 4px;">
                 <p style="font-weight: 600; font-size: 14px; color: #000;">Traking Permohonan</p>
-                <p style="font-size: 14px; color: #545768;">900 Persetujuan</p>
+                {{-- <p style="font-size: 14px; color: #545768;">900 Persetujuan</p> --}}
               </div>
             </div>
           </a>
@@ -148,7 +148,7 @@
 </div>
       <div style="display: flex; flex-direction: column; gap: 4px;">
                 <p style="font-weight: 600; font-size: 14px; color: #000;">Bangunan Gedung</p>
-                <p style="font-size: 14px; color: #545768;">12.345 Bangunan</p>
+                {{-- <p style="font-size: 14px; color: #545768;">12.345 Bangunan</p> --}}
               </div>
             </div>
           </a>
@@ -177,7 +177,7 @@
 
               <div style="display: flex; flex-direction: column; gap: 4px;">
                 <p style="font-weight: 600; font-size: 14px; color: #000;">Bantuan Teknis</p>
-                <p style="font-size: 14px; color: #545768;">234 Permohonan</p>
+                {{-- <p style="font-size: 14px; color: #545768;">234 Permohonan</p> --}}
               </div>
             </div>
           </a>
@@ -206,7 +206,7 @@
 
               <div style="display: flex; flex-direction: column; gap: 4px;">
                 <p style="font-weight: 600; font-size: 14px; color: #000;">Sosialisasi</p>
-                <p style="font-size: 14px; color: #545768;">234 Agenda</p>
+                {{-- <p style="font-size: 14px; color: #545768;">234 Agenda</p> --}}
               </div>
             </div>
           </a>
@@ -235,7 +235,7 @@
 
               <div style="display: flex; flex-direction: column; gap: 4px;">
                 <p style="font-weight: 600; font-size: 14px; color: #000;">KRK</p>
-                <p style="font-size: 14px; color: #545768;">432 Permohonan</p>
+                {{-- <p style="font-size: 14px; color: #545768;">432 Permohonan</p> --}}
               </div>
             </div>
           </a>
@@ -264,7 +264,7 @@
 
               <div style="display: flex; flex-direction: column; gap: 4px;">
                 <p style="font-weight: 600; font-size: 14px; color: #000;">Penililk Bangunan</p>
-                <p style="font-size: 14px; color: #545768;">65 Lokasi</p>
+                {{-- <p style="font-size: 14px; color: #545768;">65 Lokasi</p> --}}
               </div>
             </div>
           </a>
@@ -322,7 +322,7 @@
 
               <div style="display: flex; flex-direction: column; gap: 4px;">
                 <p style="font-weight: 600; font-size: 14px; color: #000;">Bantuan Gambar</p>
-                <p style="font-size: 14px; color: #545768;">63 Lokasi</p>
+                {{-- <p style="font-size: 14px; color: #545768;">63 Lokasi</p> --}}
               </div>
             </div>
           </a>
@@ -351,7 +351,7 @@
 
               <div style="display: flex; flex-direction: column; gap: 4px;">
                 <p style="font-weight: 600; font-size: 14px; color: #000;">Hibah Bangunan</p>
-                <p style="font-size: 14px; color: #545768;">9 Bangunan Gedung</p>
+                {{-- <p style="font-size: 14px; color: #545768;">9 Bangunan Gedung</p> --}}
               </div>
             </div>
           </a>
