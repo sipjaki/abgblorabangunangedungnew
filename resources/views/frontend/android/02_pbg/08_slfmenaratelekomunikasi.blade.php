@@ -70,7 +70,7 @@
 
         <div class="flex flex-col space-y-3 px-[18px]">
             <!-- Card 1 -->
-<div class="flex flex-col space-y-[0px] px-[0px] py-[0px]">
+<div class="flex flex-col space-y-[0px] px-[0px] py-[0px]" style="margin-top: -200px;">
     @foreach ($data as $item)
         <div class="bg-white rounded-xl p-[8px] shadow-sm">
             @if ($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
