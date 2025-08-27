@@ -326,13 +326,14 @@ function previewFile() {
 </div>
 <!-- Modal -->
 <div id="previewModal" class="modal"
-     style="display:none; position:fixed; z-index:1050; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.7);">
+     style="display:none; position:fixed; z-index:1050; left:0; top:0; width:100%; height:100%;
+            overflow:auto; background:rgba(0,0,0,0.7);">
     <div class="modal-dialog"
-         style="margin:5% auto; max-width:80%; background:#fff; border-radius:12px; padding:20px; position:relative;">
+         style="margin:5% auto; display:inline-block; background:#fff; border-radius:12px; padding:15px; position:relative;">
 
         <!-- Tombol Close -->
         <span onclick="closeModal()"
-              style="position:absolute; top:10px; right:15px; font-size:28px; font-weight:bold; color:#000; cursor:pointer;">
+              style="position:absolute; top:8px; right:12px; font-size:26px; font-weight:bold; color:#000; cursor:pointer;">
             &times;
         </span>
 
@@ -344,12 +345,16 @@ function previewFile() {
 function openModal(src, type) {
     let content = '';
     if(type === 'image'){
-        content = `<img src="${src}" style="max-width:100%; border-radius:8px;" />`;
+        content = `<img src="${src}"
+                        style="max-width:90vw; max-height:85vh; border-radius:8px;" />`;
     } else if(type === 'pdf') {
-        content = `<iframe src="${src}" width="75%" height="400px" style="border:none; border-radius:8px;"></iframe>`;
+        content = `<iframe src="${src}"
+                           style="width:80vw; height:80vh; border:none; border-radius:8px;"></iframe>`;
     }
     document.getElementById('modalContent').innerHTML = content;
-    document.getElementById('previewModal').style.display = 'block';
+    document.getElementById('previewModal').style.display = 'flex';
+    document.getElementById('previewModal').style.justifyContent = 'center';
+    document.getElementById('previewModal').style.alignItems = 'center';
 }
 
 function closeModal() {
