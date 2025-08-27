@@ -356,7 +356,7 @@
 
                     <!-- Berkas Selesai (7) -->
                     @if($data->validasiberkas7 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
+                        <button class="button-lolos" type="button" onclick="openModal7({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
                         </button>
                     @elseif($data->validasiberkas7 == 'belum')
@@ -385,7 +385,7 @@
 
                     <!-- Surat Pemberitahuan (2) -->
                     @if($data->validasiberkas2 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
+                        <button class="button-lolos" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Surat Pemberitahuan Selesai
                         </button>
                     @elseif($data->validasiberkas2 == 'belum')
