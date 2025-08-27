@@ -293,9 +293,17 @@ function previewFile() {
         <div class="col-6 col-md-3 text-center">
             <div class="foto-box mb-3">
                 @if (Str::endsWith(strtolower($item->foto), ['.jpg', '.jpeg', '.png', '.gif', '.svg']))
-                    <img src="{{ asset($item->foto) }}" alt="Foto Dokumentasi" class="foto-item" style="max-width: 100%; border-radius: 6px;" />
+                    <img src="{{ asset($item->foto) }}"
+                         alt="Foto Dokumentasi"
+                         class="foto-item"
+                         style="max-width: 100%; border-radius: 6px; cursor: pointer;"
+                         onclick="openModal('{{ asset($item->foto) }}','image')"/>
                 @elseif (Str::endsWith(strtolower($item->foto), '.pdf'))
-                    <iframe src="{{ asset($item->foto) }}" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
+                    <iframe src="{{ asset($item->foto) }}"
+                            width="100%"
+                            height="400px"
+                            style="border: 1px solid #ccc; border-radius: 6px; cursor:pointer;"
+                            onclick="openModal('{{ asset($item->foto) }}','pdf')"></iframe>
                 @else
                     <div class="text-danger">Format tidak dikenali</div>
                 @endif
@@ -304,7 +312,7 @@ function previewFile() {
             <form action="{{ url('/fotopradelete/' . $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus file ini?')">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-sm">
+                <button type="submit" class="button-merah">
                     <i class="bi bi-trash"></i> Hapus
                 </button>
             </form>
@@ -316,6 +324,32 @@ function previewFile() {
         </div>
     @endforelse
 </div>
+
+<!-- Modal -->
+<div id="previewModal" class="modal" style="display:none; position:fixed; z-index:1050; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.7);">
+    <div class="modal-dialog" style="margin:5% auto; max-width:80%; background:#fff; border-radius:12px; padding:20px; position:relative;">
+        <span onclick="closeModal()" style="position:absolute; top:10px; right:15px; font-size:28px; font-weight:bold; color:#000; cursor:pointer;">&times;</span>
+        <div id="modalContent" style="text-align:center;"></div>
+    </div>
+</div>
+
+<script>
+function openModal(src, type) {
+    let content = '';
+    if(type === 'image'){
+        content = `<img src="${src}" style="max-width:100%; border-radius:8px;" />`;
+    } else if(type === 'pdf') {
+        content = `<iframe src="${src}" width="100%" height="600px" style="border:none; border-radius:8px;"></iframe>`;
+    }
+    document.getElementById('modalContent').innerHTML = content;
+    document.getElementById('previewModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('previewModal').style.display = 'none';
+    document.getElementById('modalContent').innerHTML = '';
+}
+</script>
 
 <style>
 .foto-box {
