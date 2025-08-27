@@ -30,7 +30,7 @@
 
   <!-- Teks Tengah -->
   <p style="
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 22px;
     color: #000;
