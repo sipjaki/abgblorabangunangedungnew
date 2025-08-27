@@ -258,6 +258,11 @@ th {
     $infoItems = [
         [
             'icon' => 'bi-geo-fill',
+            'title' => 'ID Kepemilikan',
+            'value' => $pemilik->databgkepemilikan_id ?? '-',
+        ],
+        [
+            'icon' => 'bi-geo-fill',
             'title' => 'Status Hak Tanah',
             'value' => $pemilik->statushaktanah ?? '-',
         ],
