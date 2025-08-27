@@ -121,7 +121,7 @@ public function allakundelete($id)
     public function allakuncreate()
 {
     $user = Auth::user();
-$statusadmins = statusadmin::whereIn('id', [2, 3, 4, 5, 6, 7, 8, 9, 10])->get();
+$statusadmins = statusadmin::whereIn('id', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])->get();
 
     if (!$user) {
         return redirect()->route('login');
