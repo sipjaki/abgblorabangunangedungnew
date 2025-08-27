@@ -346,7 +346,7 @@ function openModal(src, type) {
     if(type === 'image'){
         content = `<img src="${src}" style="max-width:100%; border-radius:8px;" />`;
     } else if(type === 'pdf') {
-        content = `<iframe src="${src}" width="100%" height="450px" style="border:none; border-radius:8px;"></iframe>`;
+        content = `<iframe src="${src}" width="75%" height="400px" style="border:none; border-radius:8px;"></iframe>`;
     }
     document.getElementById('modalContent').innerHTML = content;
     document.getElementById('previewModal').style.display = 'block';
