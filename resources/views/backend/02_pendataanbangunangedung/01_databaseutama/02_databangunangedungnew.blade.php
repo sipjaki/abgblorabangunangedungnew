@@ -334,9 +334,10 @@ th {
 <th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-lock2-fill"></i> No. HDNO</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-lock2-fill"></i> Informasi Bangunan</th>
 
-    @can('superadmin')
+    @canany(['superadmin', 'konsultanbangunan'])
+
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
-            @endcan
+            @endcanany
     </tr>
                             </thead>
                               <tbody id="tableBody">
