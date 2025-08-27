@@ -50,7 +50,7 @@
 </style>
 
     <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
-        <a href="category-auth.html" class="card" style="text-decoration: none;">
+        <a href="#" class="card" style="text-decoration: none;">
             <div style="
               padding: 12px;
               background: white;
@@ -96,7 +96,7 @@
             </div>
           </a>
 
-          <a href="category-auth.html" class="card" style="text-decoration: none;">
+          <a href="#" class="card" style="text-decoration: none;">
             <div class="card-custom">
            <div style="display: flex; justify-content: center; align-items: center;">
   <div style="
@@ -125,7 +125,7 @@
             </div>
           </a>
 
-          <a href="category-auth.html" class="card" style="text-decoration: none;">
+          <a href="#" class="card" style="text-decoration: none;">
             <div class="card-custom">
                    <div style="display: flex; justify-content: center; align-items: center;">
   <div style="
@@ -153,7 +153,7 @@
             </div>
           </a>
 
-          <a href="category-auth.html" class="card" style="text-decoration: none;">
+          <a href="#" class="card" style="text-decoration: none;">
             <div class="card-custom">
                        <div style="display: flex; justify-content: center; align-items: center;">
   <div style="
@@ -182,7 +182,7 @@
             </div>
           </a>
 
-          <a href="category-auth.html" class="card" style="text-decoration: none;">
+          <a href="#" class="card" style="text-decoration: none;">
             <div class="card-custom">
                     <div style="display: flex; justify-content: center; align-items: center;">
   <div style="
@@ -211,7 +211,7 @@
             </div>
           </a>
 
-          <a href="category-auth.html" class="card" style="text-decoration: none;">
+          <a href="#" class="card" style="text-decoration: none;">
             <div class="card-custom">
                         <div style="display: flex; justify-content: center; align-items: center;">
   <div style="
@@ -240,7 +240,7 @@
             </div>
           </a>
 
-          <a href="category-auth.html" class="card" style="text-decoration: none;">
+          <a href="#" class="card" style="text-decoration: none;">
             <div class="card-custom">
                          <div style="display: flex; justify-content: center; align-items: center;">
   <div style="
@@ -269,7 +269,7 @@
             </div>
           </a>
 
-          {{-- <a href="category-auth.html" class="card" style="text-decoration: none;">
+          {{-- <a href="#" class="card" style="text-decoration: none;">
             <div class="card-custom">
                       <div style="display: flex; justify-content: center; align-items: center;">
   <div style="
@@ -298,7 +298,7 @@
             </div>
           </a> --}}
 
-          <a href="category-auth.html" class="card" style="text-decoration: none;">
+          <a href="#" class="card" style="text-decoration: none;">
             <div class="card-custom">
                          <div style="display: flex; justify-content: center; align-items: center;">
   <div style="
@@ -327,7 +327,7 @@
             </div>
           </a>
 
-          <a href="category-auth.html" class="card" style="text-decoration: none;">
+          <a href="#" class="card" style="text-decoration: none;">
             <div class="card-custom">
                         <div style="display: flex; justify-content: center; align-items: center;">
   <div style="
