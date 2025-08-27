@@ -422,7 +422,7 @@ public function bedatabgprofiltanahupdate($id)
 public function bedatabgprofiltanahupdatenew(Request $request, $id)
 {
     $validated = $request->validate([
-        'databgkepemilikan_id' => 'nullable|integer',
+        // 'databgkepemilikan_id' => 'nullable|integer',
         'statushaktanah' => 'nullable|string|max:100',
         'statuskepemilikan' => 'nullable|string|max:100',
         'nobuktikepemilikan' => 'nullable|string|max:100',
@@ -439,7 +439,7 @@ public function bedatabgprofiltanahupdatenew(Request $request, $id)
 
     // Update data
     $pemilik->update([
-        'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
+        // 'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
         'statushaktanah' => $validated['statushaktanah'],
         'statuskepemilikan' => $validated['statuskepemilikan'],
         'nobuktikepemilikan' => $validated['nobuktikepemilikan'],
