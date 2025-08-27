@@ -403,7 +403,7 @@ public function bedatabgprofiltanah($id)
 public function bedatabgprofiltanahupdate($id)
 {
     // Ambil data bantuan teknis berdasarkan ID
-    $databantuanteknis = databgkepemilikan::find($id);
+    // $databantuanteknis = databgkepemilikan::find($id);
     $databantuanteknis = databgtanah::find($id);
 
     if (!$databantuanteknis) {
