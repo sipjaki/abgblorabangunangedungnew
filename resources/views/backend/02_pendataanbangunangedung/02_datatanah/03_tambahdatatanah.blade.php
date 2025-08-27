@@ -340,7 +340,7 @@ th {
 
 <form id="formPemilik" action="{{ route('bedatabgprofiltanahcreatenew') }}" method="POST">
     @csrf
-    <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
+    <input  name="databgkepemilikan_id" value="{{ $data->id }}">
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
     <div class="row g-3 mt-2">
