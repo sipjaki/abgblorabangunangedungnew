@@ -400,7 +400,7 @@
 
                     <!-- TPA/TPT (3) -->
                     @if($data->validasiberkas3 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
+                        <button class="button-lolos" type="button" onclick="openModal3({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> TPA/TPT Selesai
                         </button>
                     @elseif($data->validasiberkas3 == 'belum')
@@ -415,7 +415,7 @@
 
                     <!-- Surat Undangan (4) -->
                     @if($data->validasiberkas4 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
+                        <button class="button-lolos" type="button" onclick="openModal4({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Surat Undangan Selesai
                         </button>
                     @elseif($data->validasiberkas4 == 'belum')
@@ -430,7 +430,7 @@
 
                     <!-- Berita Acara (5) -->
                     @if($data->validasiberkas5 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
+                        <button class="button-lolos" type="button" onclick="openModal5({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Berita Acara Selesai
                         </button>
                     @elseif($data->validasiberkas5 == 'belum')
@@ -445,7 +445,7 @@
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas8 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
+                        <button class="button-lolos" type="button" onclick="openModal8({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Finalisasi Selesai
                         </button>
                     @elseif($data->validasiberkas8 == 'belum')
@@ -460,7 +460,7 @@
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas6 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
+                        <button class="button-lolos" type="button" onclick="openModal6({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> SKRD Selesai
                         </button>
                     @elseif($data->validasiberkas6 == 'belum')
