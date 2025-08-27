@@ -30,8 +30,8 @@
 
   <!-- Teks Tengah -->
   <p style="
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     line-height: 22px;
     color: #000;
     text-align: center;
