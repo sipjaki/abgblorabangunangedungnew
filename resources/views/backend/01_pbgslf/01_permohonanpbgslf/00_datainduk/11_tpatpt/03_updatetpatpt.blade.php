@@ -394,8 +394,8 @@ th {
     @csrf
 @method('PUT')
 
-    {{-- <input  name="pbgslfbangunan_id" value="{{ $data->id }}">
-    <input  name="id" value="{{ $data->id }}"> --}}
+    <input  name="pbgslfbangunan_id" value="{{ $data->id }}">
+    <input  name="id" value="{{ $data->id }}">
 
     <div class="row g-4 mt-2">
 
@@ -505,30 +505,6 @@ th {
     </div>
   </div>
 </div>
-
-<script>
-  function toggleCatatan(radio) {
-    const catatanField = document.getElementById('catatan-field');
-    catatanField.style.display = (radio.value === 'tidak lengkap') ? 'block' : 'none';
-  }
-
-  function openModal() {
-    document.getElementById("confirmModal").style.display = "flex";
-  }
-
-  function closeModal() {
-    document.getElementById("confirmModal").style.display = "none";
-  }
-
-  function submitForm() {
-    document.getElementById('formPemilik').submit();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const selected = document.querySelector('input[name="pilihancatatan"]:checked');
-    if (selected) toggleCatatan(selected);
-  });
-</script>
 
 </div>
                  </div>

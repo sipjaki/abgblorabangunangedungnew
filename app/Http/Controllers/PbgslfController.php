@@ -4790,9 +4790,9 @@ public function bepbgtpatptupdatenew(Request $request)
     $validated = $request->validate([
         'id' => 'required|string',
         'pbgslfbangunan_id' => 'required|string',
-        'timpenilai' => 'required|string',
-        'nosk' => 'required|string',
-        'pengawas1_id' => 'required|string',
+        'timpenilai' => 'nullable|string',
+        'nosk' => 'nullable|string',
+        'pengawas1_id' => 'nullable|string',
         'pengawas2_id' => 'nullable|string',
         'pengawas3_id' => 'nullable|string',
         'pengawas4_id' => 'nullable|string',
