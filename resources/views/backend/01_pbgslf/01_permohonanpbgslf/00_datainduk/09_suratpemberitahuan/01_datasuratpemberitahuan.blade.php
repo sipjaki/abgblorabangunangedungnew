@@ -338,23 +338,23 @@ th {
                                                 Upload
                                             </button>
                                         </td> --}}
-<td style="text-align: center;">
+{{-- <td style="text-align: center;">
     <a href="{{ route('suratpemberitahuan.detail', ['id' => $item->pbgslfbangunan_id]) }}"
        onclick="saveScrollPosition()">
         <div class="button-berkas">
             <i class="bi bi-eye me-1"></i> Lihat
         </div>
     </a>
-</td>
+</td> --}}
 
-                                        {{-- <td style="text-align: center;">
+                                        <td style="text-align: center;">
     <a href="{{ route('suratpemberitahuan.detail', ['id' => $item->id]) }}"
        onclick="saveScrollPosition()">
         <div class="button-berkas">
             <i class="bi bi-eye me-1"></i> Lihat
         </div>
     </a>
-</td> --}}
+</td>
 
                                         {{-- <td class="text-center">
                                             <a href="javascript:void(0)" class="button-merah"
