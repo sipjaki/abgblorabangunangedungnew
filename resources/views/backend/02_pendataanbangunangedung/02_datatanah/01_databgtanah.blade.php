@@ -310,12 +310,12 @@ th {
                         {{-- Khusus tampilkan Catatan jika Pilihan Catatan = tidak lengkap --}}
 
 
-                      {{-- <a href="/bedatabgprofiltanahupdate/{{ $pemilik->id }}">
+                      <a href="/bedatabgprofiltanahupdate/{{ $pemilik->id }}">
                             <p class="button-berkas">
                                 <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
                                 Perbaikan Data
                             </p>
-                        </a> --}}
+                        </a>
 
 
                      @if (strtolower($pemilik->pilihancatatan) === 'tidak lengkap')
