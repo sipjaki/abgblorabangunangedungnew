@@ -332,17 +332,15 @@ th {
                                     </div>
                                 </div>
                             </div>
-
-                                                      <a href="/updatedatatpatpt/{{ $info->id }}">
-                                                        <p class="button-berkas">
-                                                            <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
-                                                            Perbaikan Penugasan TPA/TPT
-                                                        </p>
-                                                    </a>
-                        @endforeach
+                            @endforeach
 
 
-
+                                                                                  <a href="/updatedatatpatpt/{{ $item->id }}">
+                                                                                    <p class="button-berkas">
+                                                                                        <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
+                                                                                        Perbaikan Penugasan TPA/TPT
+                                                                                    </p>
+                                                                                </a>
                         {{-- <div class="col-12 text-end mt-2">
                             <a href="javascript:void(0)" title="Delete"
                                data-bs-toggle="modal" data-bs-target="#deleteModal"
