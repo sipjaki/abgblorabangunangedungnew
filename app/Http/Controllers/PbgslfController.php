@@ -2100,7 +2100,7 @@ public function bepbgsuratundanganshow(Request $request, $id)
     // Ambil user login
     $user = Auth::user();
     // Cari data pbg berdasarkan ID
-    $data = pbgslfbangunan::findOrFail($id);
+    // $data = pbgslfbangunan::findOrFail($id);
     $surat = suratudanganpbg::findOrFail($id);
     // $surat = suratpemberitahuanpbg::findOrFail($id);
     // $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->first();
@@ -2122,7 +2122,7 @@ public function bepbgsuratundanganshow(Request $request, $id)
         'title' => 'Surat Undangan ',
         'title_halaman' => 'Surat Undangan',
         'user' => $user,
-        'data' => $data,
+        // 'data' => $data,
         'subdatasuratpemberitahuan' => $surat,
         'surat' => $surat, // Kirim surat yang dipilih
         // 'subdatapemilik' => $subdatapemilik,
