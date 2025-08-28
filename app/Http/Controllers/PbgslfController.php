@@ -1701,7 +1701,8 @@ public function bepbgsuratpemberitahuanshow(Request $request, $id)
     $user = Auth::user();
     // Cari data pbg berdasarkan ID
     $data = pbgslfbangunan::findOrFail($id);
-    $surat = suratpemberitahuanpbg::firstOrNew(['pbgslfbangunan_id' => $id]);
+   $surat = suratpemberitahuanpbg::where('pbgslfbangunan_id', $id)->get();
+    // $surat = suratpemberitahuanpbg::firstOrNew(['pbgslfbangunan_id' => $id]);
     $datapemilik = datapemilik::firstOrNew(['pbgslfbangunan_id' => $id]);
 
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.09_suratpemberitahuan.02_showsurat', [
