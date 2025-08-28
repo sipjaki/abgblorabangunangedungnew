@@ -319,6 +319,7 @@ th {
                                 </tr>
                             </thead>
                             <tbody>
+
                                 @foreach ($subdatapemilik as $index => $item)
                                     <tr>
                                         <td class="text-center">{{ $index + 1 }}</td>
@@ -338,13 +339,22 @@ th {
                                             </button>
                                         </td> --}}
 <td style="text-align: center;">
-    <a href="{{ route('suratpemberitahuan.detail', ['id' => $item->id]) }}"
+    <a href="{{ route('suratpemberitahuan.detail', ['id' => $item->pbgslfbangunan_id]) }}"
        onclick="saveScrollPosition()">
         <div class="button-berkas">
             <i class="bi bi-eye me-1"></i> Lihat
         </div>
     </a>
 </td>
+
+                                        {{-- <td style="text-align: center;">
+    <a href="{{ route('suratpemberitahuan.detail', ['id' => $item->id]) }}"
+       onclick="saveScrollPosition()">
+        <div class="button-berkas">
+            <i class="bi bi-eye me-1"></i> Lihat
+        </div>
+    </a>
+</td> --}}
 
                                         {{-- <td class="text-center">
                                             <a href="javascript:void(0)" class="button-merah"
