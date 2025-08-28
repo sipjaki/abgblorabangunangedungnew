@@ -1714,6 +1714,7 @@ public function bepbgsuratpemberitahuanshow(Request $request, $id)
         'data' => $data,
         'datapemilik' => $datapemilik,
         'subdatasuratpemberitahuan' => $surat,
+        'surat' => $surat,
     ]);
 }
 
