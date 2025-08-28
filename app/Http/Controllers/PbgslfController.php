@@ -4769,6 +4769,7 @@ public function updatedatatpatpt($id)
 {
     // Ambil data bantuan teknis berdasarkan ID
     $databantuanteknis = tpatpt::find($id);
+        $pengawasList = pengawasatpt::all();
 
     if (!$databantuanteknis) {
         return abort(404, 'Data bantuan teknis tidak ditemukan');
@@ -4778,6 +4779,8 @@ public function updatedatatpatpt($id)
     return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.11_tpatpt.03_updatetpatpt', [
         'title' => 'Perbaikan Data Penugasan TPA TPT',
         'data' => $databantuanteknis,
+        'pengawasList' => $pengawasList,
+
         'user' => Auth::user()
     ]);
 }

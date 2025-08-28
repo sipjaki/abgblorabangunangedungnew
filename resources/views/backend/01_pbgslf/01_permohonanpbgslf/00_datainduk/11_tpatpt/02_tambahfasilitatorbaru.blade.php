@@ -388,6 +388,7 @@ th {
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
+
 <form id="formPemilik" action="{{ route('bepbgtpatptcreatenew') }}" method="POST">
     @csrf
 <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">

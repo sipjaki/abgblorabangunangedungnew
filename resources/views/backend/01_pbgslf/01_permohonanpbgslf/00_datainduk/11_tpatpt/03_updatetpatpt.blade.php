@@ -194,7 +194,8 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12" style="margin-top: -20px;">
                         <!--begin::Quick Example-->
-                  {{-- <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data"> --}}
+
+                        {{-- <form action="{{ route('dokhibahnew.create') }}" method="POST" enctype="multipart/form-data"> --}}
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -388,130 +389,102 @@ th {
 </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
-
-<form id="formPemilik" action="{{ route('updatedatamepnew', $data->id) }}" method="POST">
+<form id="formPemilik" action="{{ route('bepbgtpatptcreatenew') }}" method="POST">
     @csrf
     <input type="hidden" name="pbgslfbangunan_id" value="{{ $data->id }}">
     <input type="hidden" name="id" value="{{ $data->id }}">
 
-    <div class="row g-3 mt-2">
-@php
-    $judulBerkas = [
-        1 => 'Spesifikasi Teknis Mekanikal, Elektrikal dan Plumbing',
-        2 => 'Perhitungan Teknis Mekanikal Elektrikal dan Plumbing',
-        3 => 'Gambar Rencana Dan Detail Sistem Proteksi Kebakaran',
-        4 => 'Gambar Rencana Dan Detail Pengelolaan Sampah',
-        5 => 'Gambar Rencana Dan Detail Pengelolaan Drainase',
-        6 => 'Gambar Rencana Dan Detail Pengelolaan Air Limbah',
-        7 => 'Gambar Rencana Dan Detail Pengelolaan Air Hujan',
-        8 => 'Gambar Rencana Dan Detail Pengelolaan Air Bersih',
-        9 => 'Gambar Rencana Dan Detail Pencahayaan Umum dan Pencahayaan Khusus',
-        10 => 'Gambar Rencana dan Detail Sumber Listrik dan Jaringan Listrik',
-    ];
-@endphp
+    <div class="row g-4 mt-2">
 
-@for ($i = 1; $i <= 10; $i++)
-    <div class="col-md-6 mb-3">
-        <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-folder2-open me-1" style="color: blue;"></i> {{ $i }}. {{ $judulBerkas[$i] }}
-        </label>
-        <div class="d-flex flex-column gap-2">
-            <label class="custom-radio">
-                <input type="radio" name="berkas{{ $i }}" value="Lengkap"
-                    {{ old("berkas$i", $data->{'berkas' . $i}) == 'Lengkap' ? 'checked' : '' }}
-                    onclick="handleBerkas({{ $i }}, this.value)">
-                <span class="custom-box"></span> Lengkap
-            </label>
-            <label class="custom-radio">
-                <input type="radio" name="berkas{{ $i }}" value="Tidak Lengkap"
-                    {{ old("berkas$i", $data->{'berkas' . $i}) == 'Tidak Lengkap' ? 'checked' : '' }}
-                    onclick="handleBerkas({{ $i }}, this.value)">
-                <span class="custom-box"></span> Tidak Lengkap
-            </label>
-        </div>
-        @error("berkas$i")<div class="text-danger mt-2">{{ $message }}</div>@enderror
-    </div>
-
-    <div class="col-md-6 mb-3">
-        <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan {{ $judulBerkas[$i] }}
-        </label>
-        <textarea name="catatanberkas{{ $i }}" id="catatanberkas{{ $i }}" rows="3"
-            class="form-control @error("catatanberkas$i") is-invalid @enderror"
-            style="padding: 12px;">{{ old("catatanberkas$i", $data->{'catatanberkas' . $i}) }}</textarea>
-        @error("catatanberkas$i")<div class="text-danger mt-2">{{ $message }}</div>@enderror
-    </div>
-@endfor
-
-<script>
-    function handleBerkas(nomor, value) {
-        const textarea = document.getElementById('catatanberkas' + nomor);
-        if (!textarea) return;
-
-        if (value === 'Lengkap') {
-            textarea.value = '';
-            textarea.readOnly = true;
-            textarea.classList.add('button-hijau');
-        } else {
-            textarea.readOnly = false;
-            textarea.classList.remove('button-hijau');
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        for (let i = 1; i <= 10; i++) {
-            const selected = document.querySelector(`input[name="berkas${i}"]:checked`);
-            if (selected) {
-                handleBerkas(i, selected.value);
-            }
-        }
-    });
-</script>
-
-
-        {{-- Pilihan Catatan --}}
+        {{-- Tim Penilai --}}
         <div class="col-md-6">
-            <label class="form-label d-block" style="color: navy; font-weight: 600;">
-                <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
+            <label class="form-label fw-semibold text-dark">
+                <i class="bi bi-people-fill text-primary me-1"></i> Tim Penilai
             </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="pilihancatatan" value="lengkap"
-                    onchange="toggleCatatan(this)"
-                    {{ old('pilihancatatan', $data->pilihancatatan) === 'lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Sesuai
-            </label>
-
-            <label class="custom-radio">
-                <input type="radio" name="pilihancatatan" value="tidak lengkap"
-                    onchange="toggleCatatan(this)"
-                    {{ old('pilihancatatan', $data->pilihancatatan) === 'tidak lengkap' ? 'checked' : '' }}>
-                <span class="custom-box"></span> Tidak Sesuai
-            </label>
-            @error('pilihancatatan')<div class="text-danger mt-2">{{ $message }}</div>@enderror
+            <select name="timpenilai" class="form-select @error('timpenilai') is-invalid @enderror">
+                <option value="">-- Pilih Tim Penilai --</option>
+                <option value="TPA" {{ old('timpenilai', $data->timpenilai ?? '') == 'TPA' ? 'selected' : '' }}>TPA</option>
+                <option value="TPT" {{ old('timpenilai', $data->timpenilai ?? '') == 'TPT' ? 'selected' : '' }}>TPT</option>
+            </select>
+            @error('timpenilai') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
 
-        <br>
-
-        {{-- Catatan --}}
-        <div class="col-12" id="catatan-field"
-            {{-- style="display: {{ (old('pilihancatatan', $data->pilihancatatan) === 'tidak lengkap' ? 'block' : 'none' }};"> --}}
-            style="display: {{ old('pilihancatatan', $data->pilihancatatan) === 'tidak lengkap' ? 'block' : 'none' }};"
-
-            <label class="form-label"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
-            <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror"
-                rows="3" placeholder="Tuliskan catatan tambahan...">{{ old('catatan', $data->catatan) }}</textarea>
-            @error('catatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        {{-- Nomor SK --}}
+        <div class="col-md-6">
+            <label class="form-label fw-semibold text-dark">
+                <i class="bi bi-card-checklist text-primary me-1"></i> Nomor SK
+            </label>
+            <select name="nosk" class="form-select @error('nosk') is-invalid @enderror">
+                <option value="">-- Pilih Nomor SK --</option>
+                @foreach (collect($pengawasList)->unique('nosk') as $item)
+                    <option value="{{ $item->nosk }}"
+                        {{ old('nosk', $data->nosk ?? '') == $item->nosk ? 'selected' : '' }}>
+                        {{ $item->nosk }}
+                    </option>
+                @endforeach
+            </select>
+            @error('nosk') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
 
-        {{-- Tombol Submit --}}
-        <div class="col-12 text-end mt-3">
-            <button type="button" class="button-berkas" onclick="openModal()">
-                <i class="bi bi-save me-1"></i> Simpan Perbaikan Data ?
-            </button>
-        </div>
+        {{-- Pengawas 1-12 --}}
+        @php
+            $pengawasFields = [
+                1 => 'TPA/TPT 1',
+                2 => 'TPA/TPT 2',
+                3 => 'TPA/TPT 3',
+                4 => 'TPA/TPT 4',
+                5 => 'TPA/TPT 5',
+                6 => 'TPA/TPT 6',
+                7 => 'TPA/TPT 7',
+                8 => 'TPA/TPT 8',
+                9 => 'TPA/TPT 9',
+                10 => 'TPA/TPT 10',
+                11 => 'TPA/TPT 11',
+                12 => 'TPA/TPT 12',
+            ];
+        @endphp
+
+        @foreach($pengawasFields as $i => $label)
+            @if($loop->odd)
+                <div class="row g-3">
+            @endif
+
+            <div class="col-md-6">
+                <label class="form-label fw-semibold text-dark">
+                    <i class="bi bi-person-check-fill text-primary me-1"></i> {{ $label }}
+                </label>
+                <select name="pengawas{{ $i }}_id"
+                        class="form-select @error('pengawas' . $i . '_id') is-invalid @enderror">
+                    <option value="" disabled {{ old('pengawas' . $i . '_id', $data->{'pengawas'.$i.'_id'} ?? '') ? '' : 'selected' }}>
+                        -- Pilih {{ $label }} --
+                    </option>
+                    @foreach($pengawasList as $pengawas)
+                        <option value="{{ $pengawas->id }}"
+                            {{ old('pengawas' . $i . '_id', $data->{'pengawas'.$i.'_id'} ?? '') == $pengawas->id ? 'selected' : '' }}>
+                            {{ $pengawas->namalengkap }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('pengawas' . $i . '_id')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            @if($loop->even || $loop->last)
+                </div>
+            @endif
+        @endforeach
+
+    </div>
+
+    <div class="text-end mt-4">
+        <button type="button" class="button-hijau" onclick="openModal()">
+            <i class="bi bi-save me-1"></i> Simpan Surat Tugas
+        </button>
     </div>
 </form>
+
+
 
 {{-- Modal Konfirmasi --}}
 
