@@ -656,7 +656,7 @@ th {
     const y = (pageHeight - imgHeight) / 2;
 
     pdf.addImage(imgData, 'JPEG', x, y, imgWidth, imgHeight);
-    pdf.save("surat-undangan.pdf");
+    pdf.save("Berita-Acara.pdf");
   }
 </script>
 
