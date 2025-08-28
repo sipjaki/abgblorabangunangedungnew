@@ -332,15 +332,15 @@ th {
                                     </div>
                                 </div>
                             </div>
+
+                                                      <a href="/updatedatatpatpt/{{ $info->id }}">
+                                                        <p class="button-berkas">
+                                                            <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
+                                                            Perbaikan Penugasan TPA/TPT
+                                                        </p>
+                                                    </a>
                         @endforeach
 
-
-                          <a href="/updatedatatpatpt/{{ $subdatapemilik->id }}">
-                            <p class="button-berkas">
-                                <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
-                                Perbaikan Penugasan TPA/TPT
-                            </p>
-                        </a>
 
 
                         {{-- <div class="col-12 text-end mt-2">
