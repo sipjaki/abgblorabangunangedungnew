@@ -363,7 +363,7 @@ th {
       border: 1px solid red;
     }
   </style>
-  <button class="button-berkas" onclick="downloadPDF()"><i class="bi bi-download"></i> Download PDF</button>
+  <button class="button-berkas" onclick="downloadPDF()"><i class="bi bi-download"></i> Download Surat Pemberitahuan (PDF) </button>
 </div>
 
 {{-- <div class="download-container">

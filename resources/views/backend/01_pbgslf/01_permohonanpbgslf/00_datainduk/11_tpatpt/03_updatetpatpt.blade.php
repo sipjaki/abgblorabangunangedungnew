@@ -447,7 +447,7 @@ th {
             ];
         @endphp
 
-        @foreach($pengawasFields as $i => $label)
+        {{-- @foreach($pengawasFields as $i => $label)
             @if($loop->odd)
                 <div class="row g-3">
             @endif
@@ -476,13 +476,52 @@ th {
             @if($loop->even || $loop->last)
                 </div>
             @endif
-        @endforeach
+        @endforeach --}}
+
+        @foreach($pengawasFields as $i => $label)
+    @if($loop->odd)
+        <div class="row g-3">
+    @endif
+
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-dark">
+            <i class="bi bi-person-check-fill text-primary me-1"></i> {{ $label }}
+        </label>
+        <select name="pengawas{{ $i }}_id"
+                class="form-select @error('pengawas' . $i . '_id') is-invalid @enderror">
+            {{-- Default kosong --}}
+            <option value="" {{ old('pengawas' . $i . '_id', $data->{'pengawas'.$i.'_id'} ?? '') === null ? 'selected' : '' }}>
+                -- Pilih {{ $label }} --
+            </option>
+
+            {{-- Hapus TPA/TPT --}}
+            <option value="hapus" {{ old('pengawas' . $i . '_id') === 'hapus' ? 'selected' : '' }}>
+                - Hapus TPA/TPT
+            </option>
+
+            {{-- List pengawas --}}
+            @foreach($pengawasList as $pengawas)
+                <option value="{{ $pengawas->id }}"
+                    {{ old('pengawas' . $i . '_id', $data->{'pengawas'.$i.'_id'} ?? '') == $pengawas->id ? 'selected' : '' }}>
+                    {{ $pengawas->namalengkap }}
+                </option>
+            @endforeach
+        </select>
+        @error('pengawas' . $i . '_id')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    @if($loop->even || $loop->last)
+        </div>
+    @endif
+@endforeach
 
     </div>
 
     <div class="text-end mt-4">
-        <button type="button" class="button-hijau" onclick="openModal()">
-            <i class="bi bi-save me-1"></i> Simpan Surat Tugas
+        <button type="button" class="button-berkas" onclick="openModal()">
+            <i class="bi bi-save me-1"></i> Simpan Perbaikan ?
         </button>
     </div>
 </form>
