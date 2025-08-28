@@ -355,7 +355,7 @@ th {
     {{-- 1. Judul --}}
     <div style="text-align: center; font-weight: bold; font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: -15px;">
   BERITA ACARA HASIL KONSULTASI ke-{{ $surat->konsultasike ?? '-' }}<br>
-  Nomor: 050/TPA-{{ $surat->pbgslfbangunan->noregissimbg ?? 'Data Kosong' }}/{{ $surat->konsultasike ?? '1' }}/2025
+  Nomor: 050/{{ $surat->tpatpt->timpenilai ?? '-' }}-{{ $surat->pbgslfbangunan->noregissimbg ?? 'Data Kosong' }}/{{ $surat->konsultasike ?? '1' }}/2025
 </div>
 
     {{-- 2. Paragraf Pembuka --}}
