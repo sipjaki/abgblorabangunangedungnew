@@ -1185,7 +1185,8 @@ Route::post('/updatedatamepnew/{id}', [PbgslfController::class, 'updatedatamepne
 
 // PERBAIKAN TPA TPT
 Route::get('/updatedatatpatpt/{id}', [PbgslfController::class, 'updatedatatpatpt'])->middleware('auth')->name('updatedatatpatpt');
-Route::post('/updatedatatpatptnew/{id}', [PbgslfController::class, 'updatedatamepnew'])->middleware('auth')->name('updatedatamepnew');
+Route::post('/bepbgtpatptupdatenew/{id}', [PbgslfController::class, 'bepbgtpatptcreatenew'])->middleware('auth')->name('bepbgtpatptcreatenew');
+// Route::post('/updatedatatpatptnew/{id}', [PbgslfController::class, 'updatedatamepnew'])->middleware('auth')->name('updatedatamepnew');
 
 
 // DATA DOKUMEN TEKNIS JIKA DATA BANGUNAN SKL
