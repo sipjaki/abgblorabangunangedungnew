@@ -392,8 +392,8 @@ th {
 <form id="formPemilik" action="{{ route('bepbgtpatptupdatenew', $data->id) }}" method="POST">
     @csrf
 
-    <input  name="pbgslfbangunan_id" value="{{ $data->id }}">
-    <input  name="id" value="{{ $data->id }}">
+    {{-- <input  name="pbgslfbangunan_id" value="{{ $data->id }}">
+    <input  name="id" value="{{ $data->id }}"> --}}
 
     <div class="row g-4 mt-2">
 
