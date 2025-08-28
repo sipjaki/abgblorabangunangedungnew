@@ -4763,4 +4763,22 @@ public function bepbgberitaacaraonlineshow(Request $request, $id)
     ]);
 }
 
+
+
+public function updatedatatpatpt($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = tpatpt::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.11_tpatpt.03_updatetpatpt', [
+        'title' => 'Perbaikan Data Penugasan TPA TPT',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
 }

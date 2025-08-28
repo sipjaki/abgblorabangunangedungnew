@@ -1183,6 +1183,10 @@ Route::delete('/bepbgdokumeteknismepdelete/{id}', [PbgslfController::class, 'bep
 Route::get('/updatedatamep/{id}', [PbgslfController::class, 'updatedatamep'])->middleware('auth')->name('updatedatamep');
 Route::post('/updatedatamepnew/{id}', [PbgslfController::class, 'updatedatamepnew'])->middleware('auth')->name('updatedatamepnew');
 
+// PERBAIKAN TPA TPT
+Route::get('/updatedatatpatpt/{id}', [PbgslfController::class, 'updatedatatpatpt'])->middleware('auth')->name('updatedatatpatpt');
+Route::post('/updatedatatpatptnew/{id}', [PbgslfController::class, 'updatedatamepnew'])->middleware('auth')->name('updatedatamepnew');
+
 
 // DATA DOKUMEN TEKNIS JIKA DATA BANGUNAN SKL
 Route::get('/dokumenteknisslf/{id}', [PbgslfController::class, 'dokumenteknisslf'])->middleware('auth')->name('dokumenteknisslf');
