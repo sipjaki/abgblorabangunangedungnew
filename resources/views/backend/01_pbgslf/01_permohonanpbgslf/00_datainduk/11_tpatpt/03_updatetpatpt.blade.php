@@ -496,7 +496,7 @@ th {
 
             {{-- Hapus TPA/TPT --}}
             <option value="hapus" {{ old('pengawas' . $i . '_id') === 'hapus' ? 'selected' : '' }}>
-                - Hapus TPA/TPT
+                <span style="color: red;">- Hapus TPA/TPT</span>
             </option>
 
             {{-- List pengawas --}}
