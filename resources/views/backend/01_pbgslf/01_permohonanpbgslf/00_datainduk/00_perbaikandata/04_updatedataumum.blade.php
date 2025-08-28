@@ -445,7 +445,7 @@ th {
 
     <div class="col-md-6 mb-3">
         <label class="form-label d-block" style="color: black; font-weight: 600;">
-            <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Penyedia Jasa Perencana
+            <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Identitas Penilik Bangunan
         </label>
 
         <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
@@ -680,7 +680,7 @@ th {
 
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Identitas Penilik Bangunan
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i>Catatan Data Penyedia Jasa Perencana
     </label>
 
     <textarea name="catatanberkas4" id="catatanberkas4" rows="3"
