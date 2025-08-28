@@ -431,7 +431,8 @@ th {
 {{-- Catatan Berkas 1 --}}
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Penyedia Jasa Konstruksi
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Identitas Pemilik Bangunan (KTP/KITAS)
+
     </label>
 
     <textarea name="catatanberkas1" id="catatanberkas1" rows="3"
@@ -661,7 +662,7 @@ th {
 {{-- Catatan Berkas 4 --}}
 <div class="col-md-6 mb-3">
     <label class="form-label d-block" style="color: black; font-weight: 600;">
-        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Identitas Pemilik Bangunan (KTP/KITAS)
+        <i class="bi bi-journal-text me-1" style="color: blue;"></i> Catatan Data Penyedia Jasa Konstruksi
     </label>
 
     <textarea name="catatanberkas4" id="catatanberkas4" rows="3"
