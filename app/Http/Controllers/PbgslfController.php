@@ -1700,7 +1700,7 @@ public function bepbgsuratpemberitahuanshow(Request $request, $id)
     // Ambil user login
     $user = Auth::user();
     // Cari data pbg berdasarkan ID
-    $data = pbgslfbangunan::findOrFail($id);
+    // $data = pbgslfbangunan::findOrFail($id);
    $surat = suratpemberitahuanpbg::findOrFail($id);
 
        $datapemilik = datapemilik::firstOrNew(['pbgslfbangunan_id' => $id]);
@@ -1709,7 +1709,7 @@ public function bepbgsuratpemberitahuanshow(Request $request, $id)
         'title' => 'Surat Pemberitahuan',
         'title_halaman' => 'Surat Pemberitahuan',
         'user' => $user,
-        'data' => $data,
+        // 'data' => $data,
         'datapemilik' => $datapemilik,
         'subdatasuratpemberitahuan' => $surat,
         'surat' => $surat, // Kirim surat yang dipilih
