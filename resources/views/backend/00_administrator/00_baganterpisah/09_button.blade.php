@@ -408,6 +408,34 @@
     transform: translateY(-1px);
 }
 
+.button-newdata {
+    background: linear-gradient(145deg, #4a90e2, #357ABD); /* gradasi biru */
+    color: #ffffff;
+    border: 1px solid #2c5ca9;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: max-content;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-newdata:hover {
+    background: #a8c6ff !important; /* biru muda saat hover */
+    color: #1c3d7a !important;
+    border: 1px solid #2c5ca9 !important;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25);
+    transform: translateY(-1px);
+}
+
+
 
 .button-hitam {
     border: 1px solid #cacaca;
