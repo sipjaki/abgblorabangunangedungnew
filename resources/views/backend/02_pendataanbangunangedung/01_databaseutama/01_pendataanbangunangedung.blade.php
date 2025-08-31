@@ -134,10 +134,16 @@
   <table id="institusiTable" style="width: 100%; border-collapse: collapse; background-color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
     <thead>
       <tr style="background-color: #f5f5f5;">
-        <th style="padding: 12px; border-bottom: 1px solid #ddd; text-align: center;">No</th>
-        <th style="padding: 12px; border-bottom: 1px solid #ddd; text-align: left;">Nama Institusi</th>
-        <th style="padding: 12px; border-bottom: 1px solid #ddd; text-align: center;">Jumlah Aset Bangunan</th>
-      </tr>
+       <th style="padding: 12px; border-bottom: 1px solid #eee; text-align: center;">
+      <i class="bi bi-hash"></i> No
+    </th>
+    <th style="padding: 12px; border-bottom: 1px solid #eee; text-align: left;">
+      <i class="bi bi-building"></i> Nama Institusi
+    </th>
+    <th style="padding: 12px; border-bottom: 1px solid #eee; text-align: center;">
+      <i class="bi bi-clipboard-data"></i> Jumlah Aset Bangunan
+    </th>
+ </tr>
     </thead>
     <tbody id="tableBody">
       @php
@@ -161,10 +167,15 @@
   }
 </style>
 
-  <div style="margin-top: 20px; text-align: center;">
-    <button class="button-baru" onclick="prevPage()" id="prevBtn" disabled >Sebelumnya</button>
-    <button class="button-baru" onclick="nextPage()" id="nextBtn" >Berikutnya</button>
-  </div>
+  <div style="margin-top: 20px; text-align: center; display: flex; justify-content: center; gap: 10px;">
+    <button class="button-baru" onclick="prevPage()" id="prevBtn" disabled>
+        <i class="bi bi-arrow-left-circle" style="margin-right: 5px;"></i> Sebelumnya
+    </button>
+    <button class="button-baru" onclick="nextPage()" id="nextBtn">
+        Berikutnya <i class="bi bi-arrow-right-circle" style="margin-left: 5px;"></i>
+    </button>
+</div>
+
 </div>
 
 <script>
