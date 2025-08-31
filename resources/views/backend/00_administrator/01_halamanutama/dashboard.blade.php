@@ -695,7 +695,7 @@
 
             </div>
 
-            {{-- <div class="chart-container">
+            <div class="chart-container">
     <h5 class="chart-title">Jumlah Berkas Permohonan </h5>
     <div class="legend">
         <div class="legend-item">
@@ -727,7 +727,7 @@
             <span>Berkas Bantuan</span>
         </div>
     </div>
-</div> --}}
+</div>
 
         </div>
 
@@ -759,6 +759,7 @@
         });
     </script>
 
+{{--
 <div class="row">
 
     <div class="col-12 col-sm-6 col-md-3">
@@ -821,7 +822,7 @@
       </div>
 
 
-  </div>
+  </div> --}}
 
   <style>
     .info-box:hover {
