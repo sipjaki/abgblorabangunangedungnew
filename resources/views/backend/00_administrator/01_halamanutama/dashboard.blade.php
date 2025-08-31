@@ -846,7 +846,7 @@
               {{-- -------------------------------------------------------- --}}
 
 {{-- -------------------------------------------------------- --}}
-<div class="row">
+{{-- <div class="row">
 
     <div class="col-12 col-sm-6 col-md-3">
       <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
@@ -909,12 +909,12 @@
       </div>
     </div>
 
-</div>
+</div> --}}
 
               {{-- -------------------------------------------------------- --}}
 
 {{-- -------------------------------------------------------- --}}
-<div class="row">
+{{-- <div class="row">
 
     <div class="col-12 col-sm-6 col-md-3">
       <div class="info-box shadow-lg rounded-3 p-4" style="background: #000080; color: white; transition: all 0.3s ease;">
@@ -962,7 +962,7 @@
       </div>
     </div>
 
-</div>
+</div> --}}
 @endcan
               {{-- -------------------------------------------------------- --}}
 
