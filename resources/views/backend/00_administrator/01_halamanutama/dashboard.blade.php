@@ -656,22 +656,22 @@
             <div class="stat-card">
                 <div class="stat-number">3</div>
                 <div class="stat-label">Akun Pemohon</div>
-                <div class="stat-change positive">+12.5%</div>
+                {{-- <div class="stat-change positive">+12.5%</div> --}}
             </div>
             <div class="stat-card">
                 <div class="stat-number">23</div>
                 <div class="stat-label">Akun Dinas</div>
-                <div class="stat-change positive">+8.2%</div>
+                {{-- <div class="stat-change positive">+8.2%</div> --}}
             </div>
             <div class="stat-card">
                 <div class="stat-number">17</div>
                 <div class="stat-label">Akun Konsultan</div>
-                <div class="stat-change positive">2.1%</div>
+                {{-- <div class="stat-change positive">2.1%</div> --}}
             </div>
             <div class="stat-card">
                 <div class="stat-number">-</div>
                 <div class="stat-label">Permohonan</div>
-                <div class="stat-change positive">+1.8%</div>
+                {{-- <div class="stat-change positive">+1.8%</div> --}}
             </div>
         </div>
 
@@ -695,7 +695,7 @@
 
             </div>
 
-            <div class="chart-container">
+            {{-- <div class="chart-container">
     <h5 class="chart-title">Jumlah Berkas Permohonan </h5>
     <div class="legend">
         <div class="legend-item">
@@ -727,7 +727,7 @@
             <span>Berkas Bantuan</span>
         </div>
     </div>
-</div>
+</div> --}}
 
         </div>
 
