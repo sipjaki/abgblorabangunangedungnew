@@ -595,37 +595,83 @@
   }
 </style>
 
-
-<div class="container" style="margin-top: 10px;">
-    <div class="stats-grid" style="display: flex; flex-wrap: wrap; gap: 16px;">
+<div class="container" style="margin-top: 20px;">
+    <div class="stats-grid">
         <div class="stat-card">
-            <div class="stat-number">
-                {{ $jumlahDataTotal ?? 0 }}
-            </div>
-                <div class="stat-label" style="color: navy;">
-                    <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Bangunan Gedung
-                </div>
-            </div>
-        <div class="stat-card">
-            <div class="stat-number">
-                {{ $jumlahDatatanah ?? 0 }}
-            </div>
-                <div class="stat-label" style="color: navy;">
-                    <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Data Tanah
-                </div>
+            <div class="stat-number">{{ $jumlahDataTotal ?? 0 }}</div>
+            <div class="stat-label">
+                <i class="bi bi-building" style="margin-right: 6px;"></i> Bangunan Gedung
             </div>
         </div>
 
         <div class="stat-card">
-            <div class="stat-number">
-                {{ $jumlahDataprofil ?? 0 }}
-            </div>
-                <div class="stat-label" style="color: navy;">
-                    <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Data Tanah
-                </div>
+            <div class="stat-number">{{ $jumlahDatatanah ?? 0 }}</div>
+            <div class="stat-label">
+                <i class="bi bi-map-fill" style="margin-right: 6px;"></i> Data Tanah
             </div>
         </div>
+
+        <div class="stat-card">
+            <div class="stat-number">{{ $jumlahDataprofil ?? 0 }}</div>
+            <div class="stat-label">
+                <i class="bi bi-person-badge-fill" style="margin-right: 6px;"></i> Data Profil
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-number">{{ $jumlahDataklasifikasi ?? 0 }}</div>
+            <div class="stat-label">
+                <i class="bi bi-file-earmark-check-fill" style="margin-right: 6px;"></i> Data Klasifikasi
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-number">{{ $jumlahDatastruktur ?? 0 }}</div>
+            <div class="stat-label">
+                <i class="bi bi-card-checklist" style="margin-right: 6px;"></i> Data Struktur
+            </div>
+        </div>
+    </div>
 </div>
+
+<style>
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    .stat-card {
+        background: #fff;
+        border: 1px solid #E8E9EE;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .stat-number {
+        font-size: 28px;
+        font-weight: bold;
+        color: #1a237e; /* navy */
+        margin-bottom: 8px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: navy;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
 
 {{-- -------------------------------------------------------- --}}
 <div class="row g-4">
