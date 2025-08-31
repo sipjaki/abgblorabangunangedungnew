@@ -126,7 +126,9 @@
 </div>
 
 <div id="institusiTableContainer" style="margin-top: 30px; font-family: 'Poppins', sans-serif; color: black;">
-  <h3 style="font-weight: bold; margin-bottom: 15px;">Tabel Jumlah Data per Nama Institusi</h3>
+  <p style="font-size: 14px; font-weight: bold; margin-bottom: 15px; color: #333;">
+    Tabel Jumlah Data per Nama Institusi
+</p>
 
   <div style="overflow-x: auto;">
     <table id="institusiTable" style="width: 100%; border-collapse: collapse; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
