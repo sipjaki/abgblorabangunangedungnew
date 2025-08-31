@@ -614,7 +614,17 @@
                     <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Data Tanah
                 </div>
             </div>
-    </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-number">
+                {{ $jumlahDataprofil ?? 0 }}
+            </div>
+                <div class="stat-label" style="color: navy;">
+                    <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Data Tanah
+                </div>
+            </div>
+        </div>
 </div>
 
 {{-- -------------------------------------------------------- --}}
