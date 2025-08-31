@@ -491,43 +491,67 @@
             }
         }
     </style>
-<table class="table">
+<div style="overflow-x: auto;">
+  <table class="table rounded-table" style="width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid #ddd;">
     <thead>
-        <tr>
-            <th style="text-align: center;">No</th>
-            <th style="text-align: center;">Kecamatan</th>
-            <th style="text-align: center;">Jumlah</th>
-            <th style="text-align: center;">Terverifikasi</th>
-            <th style="text-align: center;">Belum Terverifikasi</th>
-        </tr>
+      <tr>
+        <th style="text-align: center;">No</th>
+        <th style="text-align: center;">Kecamatan</th>
+        <th style="text-align: center;">Jumlah</th>
+        <th style="text-align: center;">Terverifikasi</th>
+        <th style="text-align: center;">Belum Terverifikasi</th>
+      </tr>
     </thead>
     <tbody>
-
-        @foreach($jumlahPerKecamatan as $item)
-<tr>
-    <td style="text-align: center;">{{ $loop->iteration }}</td>
-    <td><span class="button-berkas">{{ $item->kecamatanblora->kecamatanblora }}</span></td>
-    <td style="text-align: center;">
-        <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-newvalidasi">
+      @foreach($jumlahPerKecamatan as $item)
+      <tr>
+        <td style="text-align: center;">{{ $loop->iteration }}</td>
+        <td><span class="button-berkas">{{ $item->kecamatanblora->kecamatanblora }}</span></td>
+        <td style="text-align: center;">
+          <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-newvalidasi">
             {{ $item->total }} Bangunan Gedung
-        </a>
-    </td>
-    <td style="text-align: center;">
-    <span class="button-hijau" style="display: inline-flex; align-items: center; gap: 5px;">
-        {{ $item->ada }} Bangunan <small>({{ $item->persen_ada }}%)</small>
-    </span>
-</td>
-<td style="text-align: center;">
-    <span class="button-merah" style="display: inline-flex; align-items: center; gap: 5px;">
-        {{ $item->kosong }} Bangunan <small>({{ $item->persen_kosong }}%)</small>
-    </span>
-</td>
-
-</tr>
-@endforeach
-
+          </a>
+        </td>
+        <td style="text-align: center;">
+          <span class="button-hijau" style="display: inline-flex; align-items: center; gap: 5px;">
+            {{ $item->ada }} Bangunan <small>({{ $item->persen_ada }}%)</small>
+          </span>
+        </td>
+        <td style="text-align: center;">
+          <span class="button-merah" style="display: inline-flex; align-items: center; gap: 5px;">
+            {{ $item->kosong }} Bangunan <small>({{ $item->persen_kosong }}%)</small>
+          </span>
+        </td>
+      </tr>
+      @endforeach
     </tbody>
-</table>
+  </table>
+</div>
+
+<style>
+  .rounded-table {
+    border-radius: 20px;
+    overflow: hidden; /* supaya border-radius muncul */
+  }
+
+  .rounded-table thead tr:first-child th:first-child {
+    border-top-left-radius: 20px;
+  }
+  .rounded-table thead tr:first-child th:last-child {
+    border-top-right-radius: 20px;
+  }
+  .rounded-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 20px;
+  }
+  .rounded-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 20px;
+  }
+
+  .rounded-table th, .rounded-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+</style>
 
 
 <div class="container" style="margin-top: 10px;">
