@@ -521,9 +521,10 @@
         <th style="text-align: center; border-bottom: 1px solid #eee;">
           <i class="bi bi-x-circle"></i> Belum Terverifikasi
         </th>
-            <th style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
-            <i class="bi bi-x-circle" style="margin-right: 6px; color: #0a3d62;"></i> Informasi Bangunan
-            </th>
+         <th style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+    <i class="bi bi-building" style="margin-right: 6px; color: #0a3d62;"></i> Informasi Bangunan
+</th>
+
     </tr>
     </thead>
     <tbody>
