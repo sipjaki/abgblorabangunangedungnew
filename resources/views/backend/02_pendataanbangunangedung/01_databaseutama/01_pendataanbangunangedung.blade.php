@@ -136,7 +136,7 @@
       <tr style="background-color: #f5f5f5;">
         <th style="padding: 12px; border-bottom: 1px solid #ddd; text-align: center;">No</th>
         <th style="padding: 12px; border-bottom: 1px solid #ddd; text-align: left;">Nama Institusi</th>
-        <th style="padding: 12px; border-bottom: 1px solid #ddd; text-align: center;">Jumlah Data</th>
+        <th style="padding: 12px; border-bottom: 1px solid #ddd; text-align: center;">Jumlah Aset Bangunan</th>
       </tr>
     </thead>
     <tbody id="tableBody">
@@ -148,7 +148,7 @@
         <tr class="table-row" style="display: {{ $index < 10 ? 'table-row' : 'none' }}; transition: background 0.3s;">
           <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">{{ $index + 1 }}</td>
           <td style="padding: 10px; border-bottom: 1px solid #eee;">{{ $item->namainstitusi ?? 'Tidak Diketahui' }}</td>
-          <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">{{ $item->total }}</td>
+          <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">{{ $item->total }} Bangunan Gedung</td>
         </tr>
       @endforeach
     </tbody>
