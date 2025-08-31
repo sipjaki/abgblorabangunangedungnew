@@ -521,7 +521,10 @@
         <th style="text-align: center; border-bottom: 1px solid #eee;">
           <i class="bi bi-x-circle"></i> Belum Terverifikasi
         </th>
-      </tr>
+            <th style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+            <i class="bi bi-x-circle" style="margin-right: 6px; color: #0a3d62;"></i> Informasi Bangunan
+            </th>
+    </tr>
     </thead>
     <tbody>
       @foreach($jumlahPerKecamatan as $item)
@@ -542,6 +545,11 @@
           <span class="button-merah" style="display: inline-flex; align-items: center; gap: 5px;">
             {{ $item->kosong }} Bangunan <small>({{ $item->persen_kosong }}%)</small>
           </span>
+        </td>
+        <td style="text-align: center; border-bottom: 1px solid #eee;">
+          <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-baru">
+            {{ $item->total }} Lihat Informasi
+          </a>
         </td>
       </tr>
       @endforeach
