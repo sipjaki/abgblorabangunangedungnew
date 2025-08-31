@@ -250,6 +250,13 @@ th {
 
 
 <div style="display: flex; justify-content: flex-end;">
+    <a href="/404" class="text-decoration-none">
+    <div
+        class="button-hijau px-3 py-2 rounded shadow-sm d-flex align-items-center"
+    >
+        <i class="bi bi-plus-square me-2"></i> Statistik Per Kecamatan
+    </div>
+</a>
     <a href="/datanewpendataanbg" class="text-decoration-none">
     <div
         class="button-hijau px-3 py-2 rounded shadow-sm d-flex align-items-center"
