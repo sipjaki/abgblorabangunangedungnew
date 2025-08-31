@@ -711,7 +711,7 @@
             <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
                 <span class="info-box-text" style="color: white;">Pendampingan Serah Terima </span>
                 <span class="info-box-number fw-bold" style="font-size: 16px;">
-                    {{ $jumlahDataIdDelapan }} Permohonan
+                    {{ $jumlahDataIdTujuh }} Permohonan
                 </span>
             </div>
         </div>
@@ -732,7 +732,7 @@
             <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
                 <span class="info-box-text" style="color: white;">Permintaan Personil Tim Teknis </span>
                 <span class="info-box-number fw-bold" style="font-size: 16px;">
-                    {{ $jumlahDataIdSatu }} Permohonan
+                    {{ $jumlahDataIdDelapan }} Permohonan
                 </span>
             </div>
         </div>
