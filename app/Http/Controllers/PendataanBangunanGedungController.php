@@ -219,6 +219,7 @@ public function bependataanbangunangedung(Request $request)
     $user = Auth::user();
     $perPage = $request->input('perPage', 20);
     $jumlahDataTotal = databgkepemilikan::count();
+    $jumlahDatatanah = databgtanah::count();
 
     // Ambil jumlah data unik berdasarkan namainstitusi
     $jumlahPerInstitusi = databgkepemilikan::select('namainstitusi', DB::raw('count(*) as total'))
@@ -263,6 +264,7 @@ public function bependataanbangunangedung(Request $request)
         'jumlahDataTotal' => $jumlahDataTotal,
         'jumlahPerInstitusi' => $jumlahPerInstitusi,
         'jumlahPerKecamatan' => $dataPerKecamatan, // sudah ada 'ada', 'kosong', 'persen_ada', 'persen_kosong'
+        'jumlahDatatanah' => $jumlahDatatanah,
     ]);
 }
 

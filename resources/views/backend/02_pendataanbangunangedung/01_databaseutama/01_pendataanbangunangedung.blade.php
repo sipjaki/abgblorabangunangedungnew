@@ -598,87 +598,25 @@
 
 <div class="container" style="margin-top: 10px;">
     <div class="stats-grid" style="display: flex; flex-wrap: wrap; gap: 16px;">
-<div class="stat-card">
-    <div class="stat-number">
-        {{ $jumlahDataTotal ?? 0 }}
-    </div>
-    <div class="stat-label" style="color: navy;">
-        <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Bangunan Gedung
-    </div>
-</div>
-
-{{--
         <div class="stat-card">
             <div class="stat-number">
-                {{
-                    ($jumlahDataIdSatu_dikembalikan ?? 0) +
-                    ($jumlahDataIdDua_dikembalikan ?? 0) +
-                    ($jumlahDataIdTiga_dikembalikan ?? 0) +
-                    ($jumlahDataIdEmpat_dikembalikan ?? 0) +
-                    ($jumlahDataIdLima_dikembalikan ?? 0) +
-                    ($jumlahDataIdEnam_dikembalikan ?? 0) +
-                    ($jumlahDataIdTujuh_dikembalikan ?? 0) +
-                    ($jumlahDataIdDelapan_dikembalikan ?? 0)
-                }}
+                {{ $jumlahDataTotal ?? 0 }}
             </div>
-            <div class="stat-label" style="color: navy;">
-                <i class="bi bi-arrow-repeat" style="margin-right: 6px;"></i> Dikembalikan
+                <div class="stat-label" style="color: navy;">
+                    <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Bangunan Gedung
+                </div>
             </div>
-        </div>
- --}}
-        {{-- <div class="stat-card">
-            <div class="stat-number">
-                {{
-                    ($jumlahDataIdSatu_doklapangan ?? 0) +
-                    ($jumlahDataIdDua_doklapangan ?? 0) +
-                    ($jumlahDataIdTiga_doklapangan ?? 0) +
-                    ($jumlahDataIdEmpat_doklapangan ?? 0) +
-                    ($jumlahDataIdLima_doklapangan ?? 0) +
-                    ($jumlahDataIdEnam_doklapangan ?? 0) +
-                    ($jumlahDataIdTujuh_doklapangan ?? 0) +
-                    ($jumlahDataIdDelapan_doklapangan ?? 0)
-                }}
-            </div>
-            <div class="stat-label" style="color: navy;">
-                <i class="bi bi-calendar-check" style="margin-right: 6px;"></i> Cek Lapangan
-            </div>
-        </div> --}}
+    </div>
 
-        {{-- <div class="stat-card">
+    <div class="stats-grid" style="display: flex; flex-wrap: wrap; gap: 16px;">
+        <div class="stat-card">
             <div class="stat-number">
-                {{
-                    ($jumlahDataIdSatu_olahdata ?? 0) +
-                    ($jumlahDataIdDua_olahdata ?? 0) +
-                    ($jumlahDataIdTiga_olahdata ?? 0) +
-                    ($jumlahDataIdEmpat_olahdata ?? 0) +
-                    ($jumlahDataIdLima_olahdata ?? 0) +
-                    ($jumlahDataIdEnam_olahdata ?? 0) +
-                    ($jumlahDataIdTujuh_olahdata ?? 0) +
-                    ($jumlahDataIdDelapan_olahdata ?? 0)
-                }}
+                {{ $jumlahDatatanah ?? 0 }}
             </div>
-            <div class="stat-label" style="color: navy;">
-                <i class="bi bi-file-earmark-check" style="margin-right: 6px;"></i> Pengolahan Data
+                <div class="stat-label" style="color: navy;">
+                    <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Data Tanah
+                </div>
             </div>
-        </div> --}}
-
-        {{-- <div class="stat-card">
-            <div class="stat-number">
-                {{
-                    ($jumlahDataIdSatu_terbit ?? 0) +
-                    ($jumlahDataIdDua_terbit ?? 0) +
-                    ($jumlahDataIdTiga_terbit ?? 0) +
-                    ($jumlahDataIdEmpat_terbit ?? 0) +
-                    ($jumlahDataIdLima_terbit ?? 0) +
-                    ($jumlahDataIdEnam_terbit ?? 0) +
-                    ($jumlahDataIdTujuh_terbit ?? 0) +
-                    ($jumlahDataIdDelapan_terbit ?? 0)
-                }}
-            </div>
-            <div class="stat-label" style="color: navy;">
-                <i class="bi bi-file-earmark-check" style="margin-right: 6px;"></i> Surat Terbit
-            </div>
-        </div> --}}
     </div>
 </div>
 
