@@ -669,7 +669,7 @@
                 <div class="stat-change positive">2.1%</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">1.345</div>
+                <div class="stat-number">-</div>
                 <div class="stat-label">Permohonan</div>
                 <div class="stat-change positive">+1.8%</div>
             </div>
