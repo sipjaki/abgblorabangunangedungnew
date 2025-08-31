@@ -606,9 +606,6 @@
                     <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Bangunan Gedung
                 </div>
             </div>
-    </div>
-
-    <div class="stats-grid" style="display: flex; flex-wrap: wrap; gap: 16px;">
         <div class="stat-card">
             <div class="stat-number">
                 {{ $jumlahDatatanah ?? 0 }}
