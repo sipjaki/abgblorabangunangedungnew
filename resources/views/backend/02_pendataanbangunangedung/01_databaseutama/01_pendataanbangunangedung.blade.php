@@ -126,34 +126,40 @@
 </div>
 
 <div id="institusiTableContainer" style="margin-top: 30px; font-family: 'Poppins', sans-serif; color: black;">
-  <p style="font-size: 14px; font-weight: bold; margin-bottom: 15px; color: #333;">
-    Tabel Jumlah Data per Nama Institusi
+  <p style="font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #333;">
+    Tabel Jumlah Data Per Nama Institusi/OPD
 </p>
 
-  <div style="overflow-x: auto;">
-    <table id="institusiTable" style="width: 100%; border-collapse: collapse; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
-      <thead>
-        <tr style="background-color: #eaeaea;">
-          <th style="padding: 12px; border: 1px solid #ccc; text-align: center;">No</th>
-          <th style="padding: 12px; border: 1px solid #ccc; text-align: left;">Nama Institusi</th>
-          <th style="padding: 12px; border: 1px solid #ccc; text-align: center;">Jumlah Data</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        @php
-          $sortedData = $jumlahPerInstitusi->sortByDesc('total')->values();
-        @endphp
+<div style="overflow-x: auto;">
+  <table id="institusiTable" style="width: 100%; border-collapse: collapse; background-color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
+    <thead>
+      <tr style="background-color: #f5f5f5;">
+        <th style="padding: 12px; border-bottom: 1px solid #ddd; text-align: center;">No</th>
+        <th style="padding: 12px; border-bottom: 1px solid #ddd; text-align: left;">Nama Institusi</th>
+        <th style="padding: 12px; border-bottom: 1px solid #ddd; text-align: center;">Jumlah Data</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      @php
+        $sortedData = $jumlahPerInstitusi->sortByDesc('total')->values();
+      @endphp
 
-        @foreach ($sortedData as $index => $item)
-          <tr class="table-row" style="display: {{ $index < 10 ? 'table-row' : 'none' }};">
-            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">{{ $index + 1 }}</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">{{ $item->namainstitusi ?? 'Tidak Diketahui' }}</td>
-            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">{{ $item->total }}</td>
-          </tr>
-        @endforeach
-      </tbody>
-    </table>
-  </div>
+      @foreach ($sortedData as $index => $item)
+        <tr class="table-row" style="display: {{ $index < 10 ? 'table-row' : 'none' }}; transition: background 0.3s;">
+          <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">{{ $index + 1 }}</td>
+          <td style="padding: 10px; border-bottom: 1px solid #eee;">{{ $item->namainstitusi ?? 'Tidak Diketahui' }}</td>
+          <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">{{ $item->total }}</td>
+        </tr>
+      @endforeach
+    </tbody>
+  </table>
+</div>
+
+<style>
+  #institusiTable tbody tr:hover {
+    background-color: #f0f8ff; /* warna hover lembut */
+  }
+</style>
 
   <div style="margin-top: 20px; text-align: center;">
     <button class="button-baru" onclick="prevPage()" id="prevBtn" disabled >Sebelumnya</button>
