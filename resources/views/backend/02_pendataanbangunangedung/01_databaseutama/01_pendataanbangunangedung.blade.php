@@ -607,42 +607,42 @@
         <div class="stat-card">
             <div class="stat-number">{{ $jumlahDatatanah ?? 0 }}</div>
             <div class="stat-label">
-                <i class="bi bi-map-fill" style="margin-right: 6px;"></i> Data Tanah <br> Bangunan Gedung
+                <i class="bi bi-map-fill" style="margin-right: 6px;"></i> Data Tanah
             </div>
         </div>
 
         <div class="stat-card">
             <div class="stat-number">{{ $jumlahDataprofil ?? 0 }}</div>
             <div class="stat-label">
-                <i class="bi bi-person-badge-fill" style="margin-right: 6px;"></i> Data Profil <br> Bangunan Gedung
+                <i class="bi bi-person-badge-fill" style="margin-right: 6px;"></i> Data Profil
             </div>
         </div>
 
         <div class="stat-card">
             <div class="stat-number">{{ $jumlahDataklasifikasi ?? 0 }}</div>
             <div class="stat-label">
-                <i class="bi bi-file-earmark-check-fill" style="margin-right: 6px;"></i> Data Klasifikasi <br> Bangunan Gedung
+                <i class="bi bi-file-earmark-check-fill" style="margin-right: 6px;"></i> Data Klasifikasi
             </div>
         </div>
 
         <div class="stat-card">
             <div class="stat-number">{{ $jumlahDatastruktur ?? 0 }}</div>
             <div class="stat-label">
-                <i class="bi bi-card-checklist" style="margin-right: 6px;"></i> Data Struktur <br> Bangunan Gedung
+                <i class="bi bi-card-checklist" style="margin-right: 6px;"></i> Data Struktur
             </div>
         </div>
 
         <div class="stat-card">
             <div class="stat-number">{{ $jumlahDatamep ?? 0 }}</div>
             <div class="stat-label">
-                <i class="bi bi-card-checklist" style="margin-right: 6px;"></i> Data MEP <br> Bangunan Gedung
+                <i class="bi bi-card-checklist" style="margin-right: 6px;"></i> Data MEP
             </div>
         </div>
 
         <div class="stat-card">
             <div class="stat-number">{{ $jumlahDatakerusakan ?? 0 }}</div>
             <div class="stat-label">
-                <i class="bi bi-card-checklist" style="margin-right: 6px;"></i> Data Kerusakan <br> Bangunan Gedung
+                <i class="bi bi-card-checklist" style="margin-right: 6px;"></i> Data Kerusakan
             </div>
         </div>
     </div>
