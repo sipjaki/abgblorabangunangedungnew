@@ -222,7 +222,9 @@ public function bependataanbangunangedung(Request $request)
     $jumlahDatatanah = databgtanah::count();
     $jumlahDataprofil = databgpeprofilbangunangedung::count();
     $jumlahDataklasifikasi = databgklasifikasi::count();
-    $jumlahDatastruktur = databgstrukturbangunan::count();
+    $jumlahDatastruktur = databgintensitasbangunan::count();
+    $jumlahDatamep = databgdokumenmepbangunan::count();
+    $jumlahDatakerusakan = databgtingkatkerusahan::count();
 
     // Ambil jumlah data unik berdasarkan namainstitusi
     $jumlahPerInstitusi = databgkepemilikan::select('namainstitusi', DB::raw('count(*) as total'))
@@ -271,6 +273,8 @@ public function bependataanbangunangedung(Request $request)
         'jumlahDataprofil' => $jumlahDataprofil,
         'jumlahDataklasifikasi' => $jumlahDataklasifikasi,
         'jumlahDatastruktur' => $jumlahDatastruktur,
+        'jumlahDatamep' => $jumlahDatamep,
+        'jumlahDatakerusakan' => $jumlahDatakerusakan,
     ]);
 }
 

@@ -631,6 +631,20 @@
                 <i class="bi bi-card-checklist" style="margin-right: 6px;"></i> Data Struktur
             </div>
         </div>
+
+        <div class="stat-card">
+            <div class="stat-number">{{ $jumlahDatamep ?? 0 }}</div>
+            <div class="stat-label">
+                <i class="bi bi-card-checklist" style="margin-right: 6px;"></i> Data MEP
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-number">{{ $jumlahDatakerusakan ?? 0 }}</div>
+            <div class="stat-label">
+                <i class="bi bi-card-checklist" style="margin-right: 6px;"></i> Data Kerusakan
+            </div>
+        </div>
     </div>
 </div>
 
@@ -674,7 +688,7 @@
 
 
 {{-- -------------------------------------------------------- --}}
-<div class="row g-4">
+{{-- <div class="row g-4">
   <!-- Card 1 -->
   <div class="col-12 col-sm-6 col-md-6">
     <a href="/bebangunangedung" style="text-decoration: none;">
@@ -696,7 +710,7 @@ Berkas
     </a>
   </div>
   </div>
-
+ --}}
 {{-- -------------------------------------------------------- --}}
 {{-- <div class="row g-4">
   <div class="col-12 col-sm-6 col-md-6">
@@ -823,7 +837,7 @@ Berkas
     </a>
   </div>
 </div> --}}
-  </div>
+  {{-- </div> --}}
 <br><br><br><br>
   <style>
     .info-box:hover {
