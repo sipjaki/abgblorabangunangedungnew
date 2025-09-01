@@ -352,10 +352,31 @@ th {
     <label class="form-label">
         <i class="bi bi-border-width me-1" style="color: blue;"></i> Luas Tanah
     </label>
-    <input type="text" name="luastanah" class="form-control @error('luastanah') is-invalid @enderror"
-           value="{{ old('luastanah', $databangunan->luastanah) }}">
+    <input type="text" name="luastanah" id="luastanah"
+           class="form-control @error('luastanah') is-invalid @enderror"
+           value="{{ old('luastanah', $databangunan->luastanah) }}"
+           placeholder="Masukkan luas tanah">
     @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+
+<script>
+    const luasTanahInput = document.getElementById('luastanah');
+
+    luasTanahInput.addEventListener('input', function() {
+        // Ambil hanya angka dari input
+        let angka = this.value.replace(/\D/g, '');
+        if(angka) {
+            this.value = angka + ' M²';
+        } else {
+            this.value = '';
+        }
+    });
+
+    // Sebelum form submit, hapus "M²"
+    luasTanahInput.form.addEventListener('submit', function() {
+        luasTanahInput.value = luasTanahInput.value.replace(/\D/g, '');
+    });
+</script>
 
 {{-- Nama Bangunan --}}
 <div class="col-md-6">
@@ -386,13 +407,13 @@ th {
            value="{{ old('fungsibangunan', $databangunan->fungsibangunan) }}">
     @error('fungsibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
-
 {{-- Jumlah Lantai --}}
 <div class="col-md-6">
     <label class="form-label">
         <i class="bi bi-columns-gap me-1" style="color: blue;"></i> Jumlah Lantai
     </label>
-    <input type="text" name="jumlahlantai" class="form-control @error('jumlahlantai') is-invalid @enderror"
+    <input type="text" name="jumlahlantai" id="jumlahlantai"
+           class="form-control @error('jumlahlantai') is-invalid @enderror"
            value="{{ old('jumlahlantai', $databangunan->jumlahlantai) }}">
     @error('jumlahlantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
@@ -402,7 +423,8 @@ th {
     <label class="form-label">
         <i class="bi bi-layers me-1" style="color: blue;"></i> Luas Lantai Dasar
     </label>
-    <input type="text" name="luaslantaildasar" class="form-control @error('luaslantaildasar') is-invalid @enderror"
+    <input type="text" name="luaslantaildasar" id="luaslantaildasar"
+           class="form-control @error('luaslantaildasar') is-invalid @enderror"
            value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}">
     @error('luaslantaildasar')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
@@ -412,7 +434,8 @@ th {
     <label class="form-label">
         <i class="bi bi-grid-3x3-gap-fill me-1" style="color: blue;"></i> Total Luas Lantai Gedung
     </label>
-    <input type="text" name="totalluaslantai" class="form-control @error('totalluaslantai') is-invalid @enderror"
+    <input type="text" name="totalluaslantai" id="totalluaslantai"
+           class="form-control @error('totalluaslantai') is-invalid @enderror"
            value="{{ old('totalluaslantai', $databangunan->totalluaslantai) }}">
     @error('totalluaslantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
@@ -422,7 +445,8 @@ th {
     <label class="form-label">
         <i class="bi bi-arrows-collapse me-1" style="color: blue;"></i> Ketinggian Bangunan
     </label>
-    <input type="text" name="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror"
+    <input type="text" name="tinggibangunan" id="tinggibangunan"
+           class="form-control @error('tinggibangunan') is-invalid @enderror"
            value="{{ old('tinggibangunan', $databangunan->tinggibangunan) }}">
     @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
@@ -432,10 +456,35 @@ th {
     <label class="form-label">
         <i class="bi bi-layers-half me-1" style="color: blue;"></i> Luas Basement
     </label>
-    <input type="text" name="luasbasement" class="form-control @error('luasbasement') is-invalid @enderror"
+    <input type="text" name="luasbasement" id="luasbasement"
+           class="form-control @error('luasbasement') is-invalid @enderror"
            value="{{ old('luasbasement', $databangunan->luasbasement) }}">
     @error('luasbasement')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+
+<script>
+    function setupField(id, suffix) {
+        const input = document.getElementById(id);
+        input.addEventListener('input', function() {
+            let angka = this.value.replace(/\D/g, '');
+            if(angka) {
+                this.value = angka + ' ' + suffix;
+            } else {
+                this.value = '';
+            }
+        });
+        // Sebelum submit, hapus suffix
+        input.form.addEventListener('submit', function() {
+            input.value = input.value.replace(/\D/g, '');
+        });
+    }
+
+    setupField('jumlahlantai', 'Lantai');
+    setupField('luaslantaildasar', 'M²');
+    setupField('totalluaslantai', 'M²');
+    setupField('tinggibangunan', 'M');
+    setupField('luasbasement', 'M²');
+</script>
 
 {{-- Koordinat Bangunan --}}
 <div class="col-md-6">
