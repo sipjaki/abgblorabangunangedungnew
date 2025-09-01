@@ -863,6 +863,7 @@ public function bedatabgklasifikasicreate($id)
 
 public function bedatabgklasifikasicreatenew(Request $request)
 {
+    // Validasi input
     $validated = $request->validate([
         'databgkepemilikan_id' => 'required|string',
         'tingkat_kompleksitas' => 'nullable|string|max:100',
@@ -875,6 +876,7 @@ public function bedatabgklasifikasicreatenew(Request $request)
         'databgkepemilikan_id.exists' => 'Data kepemilikan tidak ditemukan.',
     ]);
 
+    // Simpan data ke tabel databgklasifikasi
     databgklasifikasi::create([
         'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
         'tingkat_kompleksitas' => $validated['tingkat_kompleksitas'] ?? null,
@@ -884,8 +886,13 @@ public function bedatabgklasifikasicreatenew(Request $request)
         'kepadatan_lokasi' => $validated['kepadatan_lokasi'] ?? null,
     ]);
 
+    // Flash message
     session()->flash('create', 'Data klasifikasi bangunan berhasil ditambahkan!');
-    return redirect()->route('bedatabgklasifikasi', ['id' => $validated['databgkepemilikan_id']]);
+
+    // Redirect ke route bedatabgklasifikasi dengan parameter kepemilikanId
+    return redirect()->route('bedatabgklasifikasi', [
+        'kepemilikanId' => $validated['databgkepemilikan_id']
+    ]);
 }
 
 
