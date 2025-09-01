@@ -316,12 +316,21 @@ $bagianList = [
         ],
     ],
     [
-        'title' => ' Bagian 8 Finishing & Total Kerusakan',
+        'title' => ' Bagian 8 Finishing',
         'items' => [
             ['label' => 'Finishing', 'field' => $pemilik->finishing ?? '-', 'icon' => 'bi-palette'],
-            ['label' => 'Total Nilai Kerusakan', 'field' => $pemilik->total_nilai_kerusakan ?? '-', 'icon' => 'bi-percent'],
+            // ['label' => 'Total Nilai Kerusakan', 'field' => $pemilik->total_nilai_kerusakan ?? '-', 'icon' => 'bi-percent'],
             ['label' => 'Indikasi Kerusakan ', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan ', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
+        ],
+    ],
+    [
+        'title' => ' Total Nilai Kerusakan',
+        'items' => [
+            // ['label' => 'Finishing', 'field' => $pemilik->finishing ?? '-', 'icon' => 'bi-palette'],
+            ['label' => 'Total Nilai Kerusakan', 'field' => $pemilik->total_nilai_kerusakan ?? '-', 'icon' => 'bi-percent'],
+            // ['label' => 'Indikasi Kerusakan ', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            // ['label' => 'Tingkat Kerusakan ', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
 ];
