@@ -1,4 +1,4 @@
-<div class="card shadow-sm border-0" style="background: #f0f8ff;">
+{{-- <div class="card shadow-sm border-0" style="background: #f0f8ff;">
     <div class="card-body" style="overflow-x: auto; white-space: nowrap; padding: 16px;">
         @php
             // Ambil ID kepemilikan (relasi utama)
@@ -83,24 +83,25 @@ window.addEventListener('load', () => {
         sessionStorage.removeItem('scrollPosition');
     }
 });
-</script>
+</script> --}}
 
 
-{{-- <div class="card shadow-sm border-0" style="background: #f0f8ff;">
+<div class="card shadow-sm border-0" style="background: #f0f8ff;">
     <div class="card-body" style="overflow-x: auto; white-space: nowrap; padding: 16px;">
         @php
-            $id = $data->id ?? 0;
+            // $id = $data->id ?? 0;
+            $kepemilikanId = $data->databgkepemilikan_id ?? 0;
             $buttons = [
-                ['label' => 'Data Profil Tanah', 'url' => '/bedatabgprofiltanah/' . $id, 'icon' => 'bi-geo-alt-fill'],
-                ['label' => 'Data Profil Bangunan Gedung', 'url' => '/bedatabgprofilbangunan/' . $id, 'icon' => 'bi-building-fill'],
-                ['label' => 'Klasifikasi Bangunan Gedung', 'url' => '/bedatabgklasifikasi/' . $id, 'icon' => 'bi-tags-fill'],
-                ['label' => 'Data Dokumen Bangunan Gedung', 'url' => '/bedatabgdokumen/' . $id, 'icon' => 'bi-building'], // INI FITUR MENU BARU
+                ['label' => 'Data Profil Tanah', 'url' => '/bedatabgprofiltanah/' . $kepemilikanId, 'icon' => 'bi-geo-alt-fill'],
+                ['label' => 'Data Profil Bangunan Gedung', 'url' => '/bedatabgprofilbangunan/' . $kepemilikanId, 'icon' => 'bi-building-fill'],
+                ['label' => 'Klasifikasi Bangunan Gedung', 'url' => '/bedatabgklasifikasi/' . $kepemilikanId, 'icon' => 'bi-tags-fill'],
+                ['label' => 'Data Dokumen Bangunan Gedung', 'url' => '/bedatabgdokumen/' . $kepemilikanId, 'icon' => 'bi-building'], // INI FITUR MENU BARU
 
-                ['label' => 'Data Dokumen MEP Bangunan Gedung', 'url' => '/bedatabgmebangunan/' . $id, 'icon' => 'bi-tools'],
-                ['label' => 'Data Struktur Bangunan Gedung', 'url' => '/bedatabgstruktur/' . $id, 'icon' => 'bi-diagram-3-fill'],
-                ['label' => 'Data Struktur & Tingkat Kerusakan Bangunan Gedung', 'url' => '/bedatabgstrukrrusak/' . $id, 'icon' => 'bi-building'],
+                ['label' => 'Data Dokumen MEP Bangunan Gedung', 'url' => '/bedatabgmebangunan/' . $kepemilikanId, 'icon' => 'bi-tools'],
+                ['label' => 'Data Struktur Bangunan Gedung', 'url' => '/bedatabgstruktur/' . $kepemilikanId, 'icon' => 'bi-diagram-3-fill'],
+                ['label' => 'Data Struktur & Tingkat Kerusakan Bangunan Gedung', 'url' => '/bedatabgstrukrrusak/' . $kepemilikanId, 'icon' => 'bi-building'],
 
-                ['label' => 'Data Status Bangunan Gedung', 'url' => '/bedatabgstatusbangunan/' . $id, 'icon' => 'bi-file-earmark-check-fill'],
+                ['label' => 'Data Status Bangunan Gedung', 'url' => '/bedatabgstatusbangunan/' . $kepemilikanId, 'icon' => 'bi-file-earmark-check-fill'],
             ];
         @endphp
 
@@ -144,4 +145,4 @@ window.addEventListener('load', () => {
         sessionStorage.removeItem('scrollPosition');
     }
 });
-</script> --}}
+</script>
