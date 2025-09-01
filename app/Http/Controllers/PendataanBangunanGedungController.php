@@ -418,13 +418,25 @@ public function bedatabgprofiltanah($kepemilikanId)
     // Ambil user login
     $user = Auth::user();
 
-    // Cari data kepemilikan berdasarkan ID dari route
-    $data = databgkepemilikan::findOrFail($kepemilikanId);
+    // Cari data kepemilikan, kalau ga ada biarin null
+    $data = databgkepemilikan::find($kepemilikanId);
 
-    // Ambil data tanah berdasarkan foreign key databgkepemilikan_id
+    // Kalau id = 0 atau data null → langsung kirim kosong
+    if (!$data) {
+        return view('backend.02_pendataanbangunangedung.02_datatanah.01_databgtanah', [
+            'title' => 'Informasi Data Status Hak Tanah Bangunan Gedung',
+            'title_halaman' => 'Data Pemilik',
+            'user' => $user,
+            'data' => null,
+            'subdatapemilik' => collect([]), // data kosong
+            'start' => 0,
+        ]);
+    }
+
+    // Ambil data tanah berdasarkan foreign key
     $subdatapemilik = databgtanah::where('databgkepemilikan_id', $data->id)->paginate(15);
 
-    // Hitung nomor urut mulai untuk paginasi
+    // Hitung nomor urut untuk paginasi
     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
 
     // Kirim data ke view
