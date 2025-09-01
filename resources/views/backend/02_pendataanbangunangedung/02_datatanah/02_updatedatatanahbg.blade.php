@@ -339,9 +339,13 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('bedatabgprofiltanahupdatenew', $data->id) }}" method="POST">
+<form id="formPemilik" action="{{ route('bedatabgprofiltanahupdatenew', $databangunan->id) }}" method="POST">
     @csrf
     @method('PUT')
+
+{{-- <form id="formPemilik" action="{{ route('bedatabgprofiltanahupdatenew', $data->id) }}" method="POST">
+    @csrf
+    @method('PUT') --}}
 
     {{-- <input  name="databgkepemilikan_id" value="{{ $data->id }}"> --}}
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
