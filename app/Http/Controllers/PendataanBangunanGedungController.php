@@ -636,11 +636,10 @@ public function bedatabgprofilbangunanupdate($id)
         'user' => Auth::user(),
     ]);
 }
-
 public function bedatabgprofilbangunanupdatenew(Request $request, $id)
 {
     $validated = $request->validate([
-        'databgkepemilikan_id' => 'nullable|integer',
+        // 'databgkepemilikan_id' => 'nullable|integer',
         'luastanah' => 'nullable|string|max:255',
         'namabangunan' => 'nullable|string|max:255',
         'alamatbangunan' => 'nullable|string|max:255',
@@ -654,28 +653,14 @@ public function bedatabgprofilbangunanupdatenew(Request $request, $id)
         'tanggalmulaikonstruksi' => 'nullable|date',
         'tanggalselesaikonstruksi' => 'nullable|date',
         'tanggalrehabilitasi' => 'nullable|date',
-    ], [
-        'luastanah.max' => 'Maksimal 255 karakter.',
-        'namabangunan.max' => 'Maksimal 255 karakter.',
-        'alamatbangunan.max' => 'Maksimal 255 karakter.',
-        'fungsibangunan.max' => 'Maksimal 255 karakter.',
-        'jumlahlantai.max' => 'Maksimal 100 karakter.',
-        'luaslantaildasar.max' => 'Maksimal 255 karakter.',
-        'totalluaslantai.max' => 'Maksimal 255 karakter.',
-        'tinggibangunan.max' => 'Maksimal 255 karakter.',
-        'luasbasement.max' => 'Maksimal 255 karakter.',
-        'koordinatbangunan.max' => 'Maksimal 255 karakter.',
-        'tanggalmulaikonstruksi.date' => 'Format tanggal tidak valid.',
-        'tanggalselesaikonstruksi.date' => 'Format tanggal tidak valid.',
-        'tanggalrehabilitasi.date' => 'Format tanggal tidak valid.',
     ]);
 
-    // Ambil data berdasarkan ID
+    // Ambil data bangunan berdasarkan ID
     $bangunan = databgpeprofilbangunangedung::findOrFail($id);
 
     // Update data
     $bangunan->update([
-        'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? null,
+        // 'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? $bangunan->databgkepemilikan_id,
         'luastanah' => $validated['luastanah'] ?? null,
         'namabangunan' => $validated['namabangunan'] ?? null,
         'alamatbangunan' => $validated['alamatbangunan'] ?? null,
@@ -691,10 +676,16 @@ public function bedatabgprofilbangunanupdatenew(Request $request, $id)
         'tanggalrehabilitasi' => $validated['tanggalrehabilitasi'] ?? null,
     ]);
 
+    // Ambil parent ID untuk redirect
+    $parentId = $bangunan->databgkepemilikan_id;
+
     // Feedback
     session()->flash('update', 'Data profil bangunan berhasil diperbarui!');
-    return redirect()->back();
+
+    // Redirect ke route bedatabgprofilbangunan dengan parent ID
+    return redirect()->route('bedatabgprofilbangunan', ['kepemilikanId' => $parentId]);
 }
+
 
 
 public function bedatabgprofilbangunancreate($id)

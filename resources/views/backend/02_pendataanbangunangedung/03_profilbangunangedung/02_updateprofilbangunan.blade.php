@@ -343,7 +343,7 @@ th {
     @csrf
     @method('PUT')
 
-    <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
+    {{-- <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}"> --}}
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
 <div class="row g-3 mt-2">
     {{-- Status Hak Tanah --}}
@@ -353,7 +353,7 @@ th {
         <i class="bi bi-border-width me-1" style="color: blue;"></i> Luas Tanah
     </label>
     <input type="text" name="luastanah" class="form-control @error('luastanah') is-invalid @enderror"
-           value="{{ old('luastanah', $data->luastanah) }}">
+           value="{{ old('luastanah', $databangunan->luastanah) }}">
     @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -363,7 +363,7 @@ th {
         <i class="bi bi-building me-1" style="color: blue;"></i> Nama Bangunan Gedung
     </label>
     <input type="text" name="namabangunan" class="form-control @error('namabangunan') is-invalid @enderror"
-           value="{{ old('namabangunan', $data->namabangunan) }}">
+           value="{{ old('namabangunan', $databangunan->namabangunan) }}">
     @error('namabangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -373,7 +373,7 @@ th {
         <i class="bi bi-geo-alt-fill me-1" style="color: blue;"></i> Alamat Bangunan
     </label>
     <input type="text" name="alamatbangunan" class="form-control @error('alamatbangunan') is-invalid @enderror"
-           value="{{ old('alamatbangunan', $data->alamatbangunan) }}">
+           value="{{ old('alamatbangunan', $databangunan->alamatbangunan) }}">
     @error('alamatbangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -383,7 +383,7 @@ th {
         <i class="bi bi-gear-wide-connected me-1" style="color: blue;"></i> Fungsi Bangunan
     </label>
     <input type="text" name="fungsibangunan" class="form-control @error('fungsibangunan') is-invalid @enderror"
-           value="{{ old('fungsibangunan', $data->fungsibangunan) }}">
+           value="{{ old('fungsibangunan', $databangunan->fungsibangunan) }}">
     @error('fungsibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -393,7 +393,7 @@ th {
         <i class="bi bi-columns-gap me-1" style="color: blue;"></i> Jumlah Lantai
     </label>
     <input type="text" name="jumlahlantai" class="form-control @error('jumlahlantai') is-invalid @enderror"
-           value="{{ old('jumlahlantai', $data->jumlahlantai) }}">
+           value="{{ old('jumlahlantai', $databangunan->jumlahlantai) }}">
     @error('jumlahlantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -403,7 +403,7 @@ th {
         <i class="bi bi-layers me-1" style="color: blue;"></i> Luas Lantai Dasar
     </label>
     <input type="text" name="luaslantaildasar" class="form-control @error('luaslantaildasar') is-invalid @enderror"
-           value="{{ old('luaslantaildasar', $data->luaslantaildasar) }}">
+           value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}">
     @error('luaslantaildasar')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -413,7 +413,7 @@ th {
         <i class="bi bi-grid-3x3-gap-fill me-1" style="color: blue;"></i> Total Luas Lantai Gedung
     </label>
     <input type="text" name="totalluaslantai" class="form-control @error('totalluaslantai') is-invalid @enderror"
-           value="{{ old('totalluaslantai', $data->totalluaslantai) }}">
+           value="{{ old('totalluaslantai', $databangunan->totalluaslantai) }}">
     @error('totalluaslantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -423,7 +423,7 @@ th {
         <i class="bi bi-arrows-collapse me-1" style="color: blue;"></i> Ketinggian Bangunan
     </label>
     <input type="text" name="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror"
-           value="{{ old('tinggibangunan', $data->tinggibangunan) }}">
+           value="{{ old('tinggibangunan', $databangunan->tinggibangunan) }}">
     @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -433,7 +433,7 @@ th {
         <i class="bi bi-layers-half me-1" style="color: blue;"></i> Luas Basement
     </label>
     <input type="text" name="luasbasement" class="form-control @error('luasbasement') is-invalid @enderror"
-           value="{{ old('luasbasement', $data->luasbasement) }}">
+           value="{{ old('luasbasement', $databangunan->luasbasement) }}">
     @error('luasbasement')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -443,7 +443,7 @@ th {
         <i class="bi bi-geo me-1" style="color: blue;"></i> Koordinat Bangunan
     </label>
     <input type="text" name="koordinatbangunan" class="form-control @error('koordinatbangunan') is-invalid @enderror"
-           value="{{ old('koordinatbangunan', $data->koordinatbangunan) }}">
+           value="{{ old('koordinatbangunan', $databangunan->koordinatbangunan) }}">
     @error('koordinatbangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -453,7 +453,7 @@ th {
         <i class="bi bi-calendar-check-fill me-1" style="color: blue;"></i> Tanggal Mulai Konstruksi
     </label>
     <input type="date" name="tanggalmulaikonstruksi" class="form-control @error('tanggalmulaikonstruksi') is-invalid @enderror"
-           value="{{ old('tanggalmulaikonstruksi', $data->tanggalmulaikonstruksi) }}">
+           value="{{ old('tanggalmulaikonstruksi', $databangunan->tanggalmulaikonstruksi) }}">
     @error('tanggalmulaikonstruksi')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -463,7 +463,7 @@ th {
         <i class="bi bi-calendar2-check-fill me-1" style="color: blue;"></i> Tanggal Selesai Konstruksi
     </label>
     <input type="date" name="tanggalselesaikonstruksi" class="form-control @error('tanggalselesaikonstruksi') is-invalid @enderror"
-           value="{{ old('tanggalselesaikonstruksi', $data->tanggalselesaikonstruksi) }}">
+           value="{{ old('tanggalselesaikonstruksi', $databangunan->tanggalselesaikonstruksi) }}">
     @error('tanggalselesaikonstruksi')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -473,7 +473,7 @@ th {
         <i class="bi bi-calendar-heart me-1" style="color: blue;"></i> Tanggal Rehabilitasi
     </label>
     <input type="date" name="tanggalrehabilitasi" class="form-control @error('tanggalrehabilitasi') is-invalid @enderror"
-           value="{{ old('tanggalrehabilitasi', $data->tanggalrehabilitasi) }}">
+           value="{{ old('tanggalrehabilitasi', $databangunan->tanggalrehabilitasi) }}">
     @error('tanggalrehabilitasi')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
