@@ -346,9 +346,17 @@ th {
     <div class="row g-3 mt-2">
 {{-- Luas Tanah --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-bounding-box text-primary me-1"></i> Luas Tanah</label>
-    <input type="text" name="luastanah" class="form-control @error('luastanah') is-invalid @enderror" value="{{ old('luastanah') }}">
-    @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <label class="form-label">
+        <i class="bi bi-bounding-box text-primary me-1"></i> Luas Tanah
+    </label>
+    <div class="input-group">
+        <input type="number" name="luastanah" id="luastanah"
+            class="form-control @error('luastanah') is-invalid @enderror"
+            value="{{ old('luastanah') }}"
+            placeholder="Masukkan luas tanah">
+        <span class="input-group-text">m²</span>
+        @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    </div>
 </div>
 
 {{-- Nama Bangunan Gedung --}}
@@ -383,41 +391,67 @@ th {
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
-
 {{-- Jumlah Lantai --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-stack text-primary me-1"></i> Jumlah Lantai</label>
-    <input type="text" name="jumlahlantai" class="form-control @error('jumlahlantai') is-invalid @enderror" value="{{ old('jumlahlantai') }}">
+    <input type="text" name="jumlahlantai" id="jumlahlantai" class="form-control @error('jumlahlantai') is-invalid @enderror" value="{{ old('jumlahlantai') }}">
     @error('jumlahlantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Luas Lantai Dasar --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-arrows-collapse text-primary me-1"></i> Luas Lantai Dasar</label>
-    <input type="text" name="luaslantaildasar" class="form-control @error('luaslantaildasar') is-invalid @enderror" value="{{ old('luaslantaildasar') }}">
+    <input type="text" name="luaslantaildasar" id="luaslantaildasar" class="form-control @error('luaslantaildasar') is-invalid @enderror" value="{{ old('luaslantaildasar') }}">
     @error('luaslantaildasar')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Total Luas Lantai Gedung --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-fullscreen text-primary me-1"></i> Total Luas Lantai Gedung</label>
-    <input type="text" name="totalluaslantai" class="form-control @error('totalluaslantai') is-invalid @enderror" value="{{ old('totalluaslantai') }}">
+    <input type="text" name="totalluaslantai" id="totalluaslantai" class="form-control @error('totalluaslantai') is-invalid @enderror" value="{{ old('totalluaslantai') }}">
     @error('totalluaslantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Tinggi Bangunan --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-arrows-expand-vertical text-primary me-1"></i> Tinggi Bangunan</label>
-    <input type="text" name="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror" value="{{ old('tinggibangunan') }}">
+    <input type="text" name="tinggibangunan" id="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror" value="{{ old('tinggibangunan') }}">
     @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Luas Basement --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-layers-fill text-primary me-1"></i> Luas Basement</label>
-    <input type="text" name="luasbasement" class="form-control @error('luasbasement') is-invalid @enderror" value="{{ old('luasbasement') }}">
+    <input type="text" name="luasbasement" id="luasbasement" class="form-control @error('luasbasement') is-invalid @enderror" value="{{ old('luasbasement') }}">
     @error('luasbasement')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+
+<script>
+    function formatInput(id, suffix) {
+        const input = document.getElementById(id);
+
+        input.addEventListener("input", function () {
+            let val = this.value.replace(/\D/g, ""); // hanya angka
+            if (val) {
+                this.value = val + " " + suffix;
+            } else {
+                this.value = "";
+            }
+        });
+
+        // sebelum submit, hapus suffix
+        input.form.addEventListener("submit", function () {
+            input.value = input.value.replace(/\D/g, "");
+        });
+    }
+
+    // setup semua field
+    formatInput("jumlahlantai", "Lantai");
+    formatInput("luaslantaildasar", "M²");
+    formatInput("totalluaslantai", "M²");
+    formatInput("tinggibangunan", "M");
+    formatInput("luasbasement", "M²");
+</script>
 
 {{-- Koordinat Bangunan --}}
 <div class="col-md-6">
