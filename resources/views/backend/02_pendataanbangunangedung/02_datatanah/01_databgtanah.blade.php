@@ -202,7 +202,7 @@ th {
                                     <div class="card shadow-sm border-0">
 
 <div class="mb-2 mt-2 d-flex justify-content-end">
-    <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $data->kecamatanblora_id]) }}" class="button-newvalidasi">
+    <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $datakembali->kecamatanblora_id]) }}" class="button-newvalidasi">
         <i class="bi bi-arrow-left-circle me-1"></i> Kembali
     </a>
 </div>
