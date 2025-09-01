@@ -95,7 +95,7 @@ window.addEventListener('load', () => {
             $buttons = [
                 ['label' => 'Data Profil Tanah', 'url' => '/bedatabgprofiltanah/' . $kepemilikanId, 'icon' => 'bi-geo-alt-fill'],
                 ['label' => 'Data Profil Bangunan Gedung', 'url' => '/bedatabgprofilbangunan/' . $kepemilikanId, 'icon' => 'bi-building-fill'],
-                // ['label' => 'Klasifikasi Bangunan Gedung', 'url' => '/bedatabgklasifikasi/' . $kepemilikanId, 'icon' => 'bi-tags-fill'],
+                ['label' => 'Klasifikasi Bangunan Gedung', 'url' => '/bedatabgklasifikasi/' . $kepemilikanId, 'icon' => 'bi-tags-fill'],
                 // ['label' => 'Data Dokumen Bangunan Gedung', 'url' => '/bedatabgdokumen/' . $kepemilikanId, 'icon' => 'bi-building'], // INI FITUR MENU BARU
 
                 // ['label' => 'Data Dokumen MEP Bangunan Gedung', 'url' => '/bedatabgmebangunan/' . $kepemilikanId, 'icon' => 'bi-tools'],

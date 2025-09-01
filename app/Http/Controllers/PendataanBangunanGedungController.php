@@ -757,31 +757,34 @@ public function bedatabgprofilbangunancreatenew(Request $request)
 }
 
 
-public function bedatabgklasifikasi($id)
+public function bedatabgklasifikasi($kepemilikanId)
 {
     // Ambil user login
     $user = Auth::user();
 
-    // Cari data pbg berdasarkan ID
-    $data = databgkepemilikan::findOrFail($id);
+    // Cari data kepemilikan dulu
+    $data = databgkepemilikan::find($kepemilikanId);
 
-    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
-    $subdatapemilik = databgklasifikasi::where('databgkepemilikan_id', $data->id)->paginate(15);
+    // Kalau tidak ada kepemilikan, tetap buat object kosong biar link tambah data tetap ada
+    if (!$data) {
+        $data = new databgkepemilikan();
+        $data->id = $kepemilikanId;
+    }
 
-    // Hitung nomor urut mulai untuk paginasi
+    // Ambil data klasifikasi berdasarkan parent
+    $subdatapemilik = databgklasifikasi::where('databgkepemilikan_id', $kepemilikanId)
+                        ->paginate(15);
+
+    // Hitung nomor urut mulai
     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
-
-    // Ambil data jenis pengajuan
-    // $datapbgslf = jenispengajuanpbgslfper::all();
 
     // Kirim data ke view
     return view('backend.02_pendataanbangunangedung.04_klasfikasi.01_dataklasifikasi', [
         'title' => 'Informasi Data Klasifikasi Bangunan Gedung',
         'title_halaman' => 'Informasi Data Klasifikasi Bangunan Gedung',
         'user' => $user,
-        'data' => $data,
-        // 'datapbgslf' => $datapbgslf,
-        'subdatapemilik' => $subdatapemilik,
+        'data' => $data, // ini parent
+        'subdatapemilik' => $subdatapemilik, // ini child
         'start' => $start,
     ]);
 }

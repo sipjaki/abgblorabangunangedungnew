@@ -160,7 +160,14 @@ Route::get('/bedatabgprofilbangunancreate/{id}', [PendataanBangunanGedungControl
 Route::post('/bedatabgprofilbangunancreatenew', [PendataanBangunanGedungController::class, 'bedatabgprofilbangunancreatenew'])->middleware('auth')->name('bedatabgprofilbangunancreatenew');
 
 // 03 PENDATAAN BANGUNAN GEDUNG KLASIFIKASI BANGUNAN GEDUNG
-Route::get('/bedatabgklasifikasi/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasi'])->middleware('auth')->name('bedatabgklasifikasi');
+
+Route::get(
+    '/bedatabgklasifikasi/{kepemilikanId}',
+    [PendataanBangunanGedungController::class, 'bedatabgklasifikasi']
+)->middleware('auth')->name('bedatabgklasifikasi');
+
+// Route::get('/bedatabgklasifikasi/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasi'])->middleware('auth')->name('bedatabgklasifikasi');
+
 Route::get('/bedatabgklasifikasiupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasiupdate'])->middleware('auth')->name('bedatabgklasifikasiupdate');
 Route::put('/bedatabgklasifikasiupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasiupdatenew'])->middleware('auth')->name('bedatabgklasifikasiupdatenew');
 
