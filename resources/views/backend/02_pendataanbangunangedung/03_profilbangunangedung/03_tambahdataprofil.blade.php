@@ -347,7 +347,7 @@ th {
 {{-- Luas Tanah --}}
 <div class="col-md-6">
     <label class="form-label">
-        <i class="bi bi-bounding-box text-primary me-1"></i> Luas Tanah
+        <i class="bi bi-bounding-box text-primary me-1"></i> Luas Tanah (M<sup>2</sup>)
     </label>
     <input type="number" name="luastanah" step="0.01" min="0"
            class="form-control @error('luastanah') is-invalid @enderror"
@@ -391,7 +391,7 @@ th {
 {{-- Jumlah Lantai --}}
 {{-- Jumlah Lantai --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-stack text-primary me-1"></i> Jumlah Lantai</label>
+    <label class="form-label"><i class="bi bi-stack text-primary me-1"></i> Jumlah Lantai (Lantai) </label>
     <input type="number" name="jumlahlantai" min="0" step="1"
            class="form-control @error('jumlahlantai') is-invalid @enderror"
            placeholder="Masukkan jumlah lantai"
@@ -401,7 +401,7 @@ th {
 
 {{-- Luas Lantai Dasar --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-arrows-collapse text-primary me-1"></i> Luas Lantai Dasar</label>
+    <label class="form-label"><i class="bi bi-arrows-collapse text-primary me-1"></i> Luas Lantai Dasar (M<sup>2</sup>)</label>
     <input type="number" name="luaslantaildasar" min="0" step="0.01"
            class="form-control @error('luaslantaildasar') is-invalid @enderror"
            placeholder="Masukkan luas lantai dasar"
@@ -411,7 +411,7 @@ th {
 
 {{-- Total Luas Lantai Gedung --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-fullscreen text-primary me-1"></i> Total Luas Lantai Gedung</label>
+    <label class="form-label"><i class="bi bi-fullscreen text-primary me-1"></i> Total Luas Lantai Gedung (M<sup>2</sup>)</label>
     <input type="number" name="totalluaslantai" min="0" step="0.01"
            class="form-control @error('totalluaslantai') is-invalid @enderror"
            placeholder="Masukkan total luas lantai"
@@ -421,7 +421,7 @@ th {
 
 {{-- Tinggi Bangunan --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-arrows-expand-vertical text-primary me-1"></i> Tinggi Bangunan</label>
+    <label class="form-label"><i class="bi bi-arrows-expand-vertical text-primary me-1"></i> Tinggi Bangunan (Meter) </label>
     <input type="number" name="tinggibangunan" min="0" step="0.01"
            class="form-control @error('tinggibangunan') is-invalid @enderror"
            placeholder="Masukkan tinggi bangunan"
@@ -431,20 +431,19 @@ th {
 
 {{-- Luas Basement --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-layers-fill text-primary me-1"></i> Luas Basement</label>
+    <label class="form-label"><i class="bi bi-layers-fill text-primary me-1"></i> Luas Basement (M<sup>2</sup>)</label>
     <input type="number" name="luasbasement" min="0" step="0.01"
            class="form-control @error('luasbasement') is-invalid @enderror"
            placeholder="Masukkan luas basement"
            value="{{ old('luasbasement') }}">
     @error('luasbasement')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
-
-{{-- Koordinat Bangunan --}}
-<div class="col-md-6">
+{{-- Koordinat Bangunan (Hidden) --}}
+<div style="display:none;">
     <label class="form-label"><i class="bi bi-pin-map-fill text-primary me-1"></i> Koordinat Bangunan</label>
-    <input type="text" name="koordinatbangunan" class="form-control @error('koordinatbangunan') is-invalid @enderror" value="{{ old('koordinatbangunan') }}">
-    @error('koordinatbangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <input type="text" name="koordinatbangunan" class="form-control" value="----">
 </div>
+
 
 {{-- Tanggal Mulai Konstruksi --}}
 <div class="col-md-6">
