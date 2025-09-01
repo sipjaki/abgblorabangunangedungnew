@@ -554,11 +554,10 @@ public function bedatabgprofiltanahcreate($id)
         'user' => Auth::user()
     ]);
 }
-
 public function bedatabgprofiltanahcreatenew(Request $request)
 {
+    // Validasi input
     $validated = $request->validate([
-        // 'id' => 'required|string',
         'databgkepemilikan_id' => 'required|string',
         'statushaktanah' => 'required|string|max:100',
         'statuskepemilikan' => 'required|string|max:100',
@@ -569,8 +568,8 @@ public function bedatabgprofiltanahcreatenew(Request $request)
         'databgkepemilikan_id.exists' => 'Data kepemilikan tidak ditemukan.',
     ]);
 
+    // Simpan data ke tabel databgtanah
     databgtanah::create([
-        // 'id' => $validated['id'],
         'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
         'statushaktanah' => $validated['statushaktanah'] ?? null,
         'statuskepemilikan' => $validated['statuskepemilikan'] ?? null,
@@ -578,9 +577,15 @@ public function bedatabgprofiltanahcreatenew(Request $request)
         'alamattanah' => $validated['alamattanah'] ?? null,
     ]);
 
+    // Flash message
     session()->flash('create', 'Data tanah berhasil ditambahkan!');
-    return redirect()->route('bedatabgprofiltanah', ['id' => $validated['databgkepemilikan_id']]);
+
+    // Redirect ke route bedatabgprofiltanah sesuai route parameter
+    return redirect()->route('bedatabgprofiltanah', [
+        'kepemilikanId' => $validated['databgkepemilikan_id']
+    ]);
 }
+
 
 public function bedatabgprofilbangunan($kepemilikanId)
 {
