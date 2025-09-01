@@ -252,6 +252,7 @@ th {
 $bagianList = [
     [
         'title' => 'Struktur Bangunan Bawah & Atas',
+        'title_halaman' => 'Struktur Bangunan Bawah & Atas',
         'items' => [
             ['label' => 'Struktur Bangunan Bawah', 'field' => $pemilik->struktur_bangunan_bawah ?? '-', 'icon' => 'bi-house-door'],
             ['label' => 'Struktur Bangunan Atas', 'field' => $pemilik->struktur_bangunan_atas ?? '-', 'icon' => 'bi-house'],
@@ -261,6 +262,7 @@ $bagianList = [
     ],
     [
         'title' => 'Bagian 1 - Pondasi',
+        'title_halaman' => 'Bagian 1 - Pondasi',
         'items' => [
             ['label' => 'Pondasi', 'field' => $pemilik->pondasi ?? '-', 'icon' => 'bi-box'],
             ['label' => 'Indikasi Kerusakan 1', 'field' => $pemilik->indikasi_kerusakan2 ?? '-', 'icon' => 'bi-exclamation-triangle'],
@@ -269,6 +271,7 @@ $bagianList = [
     ],
     [
         'title' => 'Bagian 2 - Struktur',
+        'title_halaman' => 'Bagian 2 - Struktur',
         'items' => [
             ['label' => 'Struktur', 'field' => $pemilik->struktur ?? '-', 'icon' => 'bi-diagram-3'],
             ['label' => 'Indikasi Kerusakan 2', 'field' => $pemilik->indikasi_kerusakan3 ?? '-', 'icon' => 'bi-exclamation-triangle'],
@@ -277,6 +280,7 @@ $bagianList = [
     ],
     [
         'title' => 'Bagian 3 - Atap',
+        'title_halaman' => 'Bagian 3 - Atap',
         'items' => [
             ['label' => 'Atap', 'field' => $pemilik->atap ?? '-', 'icon' => 'bi-cloud'],
             ['label' => 'Indikasi Kerusakan 3', 'field' => $pemilik->indikasi_kerusakan4 ?? '-', 'icon' => 'bi-exclamation-triangle'],
@@ -285,6 +289,7 @@ $bagianList = [
     ],
     [
         'title' => 'Bagian 4 - Lantai',
+        'title_halaman' => 'Bagian 4 - Lantai',
         'items' => [
             ['label' => 'Lantai', 'field' => $pemilik->lantai ?? '-', 'icon' => 'bi-grid-1x2'],
             ['label' => 'Indikasi Kerusakan 4', 'field' => $pemilik->indikasi_kerusakan5 ?? '-', 'icon' => 'bi-exclamation-triangle'],
@@ -293,6 +298,7 @@ $bagianList = [
     ],
     [
         'title' => 'Bagian 5 - Dinding',
+        'title_halaman' => 'Bagian 5 - Dinding',
         'items' => [
             ['label' => 'Dinding', 'field' => $pemilik->dinding ?? '-', 'icon' => 'bi-bricks'],
             ['label' => 'Indikasi Kerusakan 5', 'field' => $pemilik->indikasi_kerusakan6 ?? '-', 'icon' => 'bi-exclamation-triangle'],
@@ -301,6 +307,7 @@ $bagianList = [
     ],
     [
         'title' => 'Bagian 6 - Plafon',
+        'title_halaman' => 'Bagian 6 - Plafon',
         'items' => [
             ['label' => 'Plafon', 'field' => $pemilik->plafond ?? '-', 'icon' => 'bi-menu-button-wide'],
             ['label' => 'Indikasi Kerusakan 6', 'field' => $pemilik->indikasi_kerusakan7 ?? '-', 'icon' => 'bi-exclamation-triangle'],
@@ -309,6 +316,7 @@ $bagianList = [
     ],
     [
         'title' => 'Bagian 7 - Utilitas',
+        'title_halaman' => 'Bagian 7 - Utilitas',
         'items' => [
             ['label' => 'Utilitas', 'field' => $pemilik->utilitas ?? '-', 'icon' => 'bi-lightning'],
             ['label' => 'Indikasi Kerusakan 7', 'field' => $pemilik->indikasi_kerusakan8 ?? '-', 'icon' => 'bi-exclamation-triangle'],
@@ -317,15 +325,17 @@ $bagianList = [
     ],
     [
         'title' => ' Bagian 8 Finishing',
+        'title_halaman' => ' Bagian 8 Finishing',
         'items' => [
             ['label' => 'Finishing', 'field' => $pemilik->finishing ?? '-', 'icon' => 'bi-palette'],
             // ['label' => 'Total Nilai Kerusakan', 'field' => $pemilik->total_nilai_kerusakan ?? '-', 'icon' => 'bi-percent'],
-            ['label' => 'Indikasi Kerusakan ', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
-            ['label' => 'Tingkat Kerusakan ', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Indikasi Kerusakan 8', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            ['label' => 'Tingkat Kerusakan 8', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
     [
         'title' => ' Total Nilai Kerusakan',
+        'title_halaman' => ' Total Nilai Kerusakan',
         'items' => [
             // ['label' => 'Finishing', 'field' => $pemilik->finishing ?? '-', 'icon' => 'bi-palette'],
             ['label' => 'Total Nilai Kerusakan', 'field' => $pemilik->total_nilai_kerusakan ?? '-', 'icon' => 'bi-percent'],
@@ -344,6 +354,15 @@ $bagianList = [
         </div>
         <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
             @foreach ($bagianList as $bagian)
+            <div class="text-center">
+                <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+                <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
+                    <i class="bi bi-upload" style="margin-right: 6px;"></i>
+                    {{ $bagian['title_halaman'] }}
+                </h5>
+                <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+            </div>
+
                 <h6 class="fw-bold text-dark mt-3">{{ $bagian['title'] }}</h6>
                 <div class="row g-3 mb-3">
                     @foreach ($bagian['items'] as $item)
