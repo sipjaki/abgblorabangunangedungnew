@@ -376,7 +376,7 @@ th {
    style="text-decoration: none;"
 >
 <span class="button-merah">
-   <i class="bi bi-trash" style="color: red; margin-right:4px;"></i>
+   <i class="bi bi-trash" style="color: white; margin-right:4px;"></i>
    Hapus</span>
 </a>
 
@@ -485,7 +485,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
                                  <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
                              </div>
                              <div class="modal-footer">
-                                 <button type="button" class="button-merah" data-bs-dismiss="modal">Batal</button>
+                                 <button type="button" class="button-newvalidasi" data-bs-dismiss="modal">Batal</button>
                                  <form id="deleteForm" method="POST" action="">
                                      @csrf
                                      @method('DELETE')
