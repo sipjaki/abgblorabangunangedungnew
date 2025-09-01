@@ -362,6 +362,20 @@ th {
     </div>
 </div>
 
+<script>
+    const luasTanahInput = document.getElementById('luastanah');
+
+    // Hanya angka yang bisa diketik
+    luasTanahInput.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '');
+    });
+
+    // Sebelum submit, pastikan hanya angka yang dikirim
+    luasTanahInput.form.addEventListener('submit', function() {
+        luasTanahInput.value = luasTanahInput.value.replace(/\D/g, '');
+    });
+</script>
+
 {{-- Nama Bangunan --}}
 <div class="col-md-6">
     <label class="form-label">
