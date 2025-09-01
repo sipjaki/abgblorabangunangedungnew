@@ -376,7 +376,7 @@ th {
    style="text-decoration: none;"
 >
    <i class="bi bi-trash" style="color: red; margin-right:4px;"></i>
-   <span style="color: red;">Hapus</span>
+   <span class="button-merah" style="color: red;">Hapus</span>
 </a>
 
                     </div>
