@@ -132,6 +132,9 @@ Route::get(
     [PendataanBangunanGedungController::class, 'bedatabgprofiltanah']
 )->middleware('auth')->name('bedatabgprofiltanah');
 
+
+Route::delete('/bedatabgprofiltanahdelete/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahdelete'])->middleware('auth')->name('bedatabgprofiltanahdelete');
+
 // Route::get('/bedatabgprofiltanah/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanah'])->middleware('auth')->name('bedatabgprofiltanah');
 Route::get('/bedatabgprofiltanahupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahupdate'])->middleware('auth')->name('bedatabgprofiltanahupdate');
 

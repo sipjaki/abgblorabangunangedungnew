@@ -2375,5 +2375,21 @@ public function bedatabgprofilbangunandelete($id)
     return redirect()->back()->with('error', 'Item tidak ditemukan');
 }
 
+public function bedatabgprofiltanahdelete($id)
+{
+    // Cari entri datapemilik berdasarkan id
+    $entry = databgtanah::find($id);
+
+    if ($entry) {
+        // Hapus entri
+        $entry->delete();
+
+        // Redirect back ke halaman sebelumnya
+        return redirect()->back()->with('delete', 'Data Berhasil Dihapus!');
+    }
+
+    return redirect()->back()->with('error', 'Item tidak ditemukan');
+}
+
 }
 
