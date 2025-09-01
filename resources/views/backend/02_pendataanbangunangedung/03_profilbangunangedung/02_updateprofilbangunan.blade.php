@@ -500,13 +500,22 @@ fields.forEach(id => {
 
 
 {{-- Koordinat Bangunan --}}
+
 <div class="col-md-6">
+    <!-- Label tetap bisa ditampilkan atau dihapus sesuai kebutuhan -->
     <label class="form-label">
         <i class="bi bi-geo me-1" style="color: blue;"></i> Koordinat Bangunan
     </label>
-    <input type="text" name="koordinatbangunan" class="form-control @error('koordinatbangunan') is-invalid @enderror"
-           value="{{ old('koordinatbangunan', $databangunan->koordinatbangunan) }}">
-    @error('koordinatbangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+    <!-- Tampilkan teks --- jika datanya kosong -->
+    <span>{{ $databangunan->koordinatbangunan ?? '---' }}</span>
+
+    <!-- Input hidden untuk mengirim data form -->
+    <input type="hidden" name="koordinatbangunan" value="{{ old('koordinatbangunan', $databangunan->koordinatbangunan ?? '---') }}">
+
+    @error('koordinatbangunan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 </div>
 
 {{-- Tanggal Mulai Konstruksi --}}

@@ -295,11 +295,11 @@ th {
             'title' => 'Luas Basement',
             'value' => $pemilik->luasbasement ?? '-',
         ],
-        [
-            'icon' => 'bi-geo-alt-fill',
-            'title' => 'Koordinat Bangunan',
-            'value' => $pemilik->koordinatbangunan ?? '-',
-        ],
+        // [
+        //     'icon' => 'bi-geo-alt-fill',
+        //     'title' => 'Koordinat Bangunan',
+        //     'value' => $pemilik->koordinatbangunan ?? '-',
+        // ],
         [
             'icon' => 'bi-calendar-plus',
             'title' => 'Tanggal Mulai Konstruksi',
