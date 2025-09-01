@@ -484,7 +484,7 @@ public function bedatabgprofiltanah($kepemilikanId)
 public function bedatabgprofiltanahupdate($id)
 {
     // Ambil data bantuan teknis berdasarkan ID
-    // $databantuanteknis = databgkepemilikan::find($id);
+    $data = databgkepemilikan::find($id);
     $databantuanteknis = databgtanah::find($id);
 
     if (!$databantuanteknis) {
@@ -495,6 +495,7 @@ public function bedatabgprofiltanahupdate($id)
     return view('backend.02_pendataanbangunangedung.02_datatanah.02_updatedatatanahbg', [
         'title' => 'Perbaikan Status Data Tanah ',
         'data' => $databantuanteknis,
+        'data' => $data,
         'user' => Auth::user()
     ]);
 }
