@@ -352,34 +352,15 @@ th {
     <label class="form-label">
         <i class="bi bi-border-width me-1" style="color: blue;"></i> Luas Tanah
     </label>
-    <input type="text" name="luastanah" id="luastanah"
-           class="form-control @error('luastanah') is-invalid @enderror"
-           value="{{ old('luastanah', $databangunan->luastanah) }}"
-           placeholder="Masukkan luas tanah">
-    @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <div class="input-group">
+        <input type="number" name="luastanah" id="luastanah"
+               class="form-control @error('luastanah') is-invalid @enderror"
+               value="{{ old('luastanah', $databangunan->luastanah) }}"
+               placeholder="Masukkan luas tanah" min="0" step="1">
+        <span class="input-group-text">M²</span>
+        @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    </div>
 </div>
-<script>
-function setupAutoSuffix(id, suffix) {
-    const input = document.getElementById(id);
-
-    input.addEventListener('input', function() {
-        // Ambil angka saja
-        let angka = this.value.replace(/\D/g, '');
-
-        // Tampilkan suffix hanya kalau ada angka
-        this.value = angka ? angka + ' ' + suffix : '';
-    });
-
-    // Sebelum submit, hapus semua non-angka
-    input.form.addEventListener('submit', function() {
-        input.value = input.value.replace(/\D/g, '');
-    });
-}
-
-// Terapkan untuk luasTanah
-setupAutoSuffix('luastanah', 'M²');
-</script>
-
 
 {{-- Nama Bangunan --}}
 <div class="col-md-6">
