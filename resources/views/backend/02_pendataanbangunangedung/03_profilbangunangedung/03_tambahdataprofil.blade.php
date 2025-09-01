@@ -349,15 +349,29 @@ th {
     <label class="form-label">
         <i class="bi bi-bounding-box text-primary me-1"></i> Luas Tanah
     </label>
-    <div class="input-group">
-        <input type="number" name="luastanah" id="luastanah"
-            class="form-control @error('luastanah') is-invalid @enderror"
-            value="{{ old('luastanah') }}"
-            placeholder="Masukkan luas tanah" min="0" step="0.01">
-        <span class="input-group-text">M²</span>
-        @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+    <input type="text" name="luastanah" id="luastanah"
+        class="form-control @error('luastanah') is-invalid @enderror"
+        value="{{ old('luastanah') }}"
+        placeholder="Masukkan luas tanah">
+    @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+
+<script>
+document.getElementById('luastanah').addEventListener('input', function (e) {
+    let val = this.value.replace(/[^0-9.]/g, ''); // hanya angka & titik
+    if(val) {
+        this.value = val + ' M²';
+    } else {
+        this.value = '';
+    }
+});
+
+// Saat form dikirim, hapus " M²" biar yg ke DB cuma angka
+document.querySelector('form').addEventListener('submit', function() {
+    let input = document.getElementById('luastanah');
+    input.value = input.value.replace(' M²', '');
+});
+</script>
 {{-- Nama Bangunan Gedung --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-building text-primary me-1"></i> Nama Bangunan Gedung</label>
