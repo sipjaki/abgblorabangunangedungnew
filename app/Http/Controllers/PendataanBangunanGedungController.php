@@ -419,6 +419,7 @@ public function bedatabgprofiltanah($kepemilikanId)
 
     // Cari data kepemilikan dulu
     $data = databgkepemilikan::find($kepemilikanId);
+    $datakembali = databgkepemilikan::all();
 
     // Kalau tidak ketemu, bisa langsung kasih data kosong
     if (!$data) {
@@ -442,6 +443,7 @@ public function bedatabgprofiltanah($kepemilikanId)
         'title_halaman' => 'Data Pemilik',
         'user' => $user,
         'data' => $data,
+        'datakembali' => $datakembali,
         'subdatapemilik' => $subdatapemilik,
         'start' => $start,
     ]);
