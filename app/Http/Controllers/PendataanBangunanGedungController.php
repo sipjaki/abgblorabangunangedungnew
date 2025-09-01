@@ -497,8 +497,8 @@ public function bedatabgprofiltanahupdate($id)
 
     return view('backend.02_pendataanbangunangedung.02_datatanah.02_updatedatatanahbg', [
         'title' => 'Perbaikan Status Data Tanah',
-        'kepemilikan' => $databgkepemilikan, // parent
-        'data' => $datatanah, // child
+        'data' => $databgkepemilikan, // parent
+        'databangunan' => $datatanah, // child
         'user' => Auth::user(),
     ]);
 }

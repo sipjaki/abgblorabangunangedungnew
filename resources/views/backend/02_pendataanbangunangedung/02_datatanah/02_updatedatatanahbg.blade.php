@@ -352,7 +352,7 @@ th {
             <i class="bi bi-geo-fill text-navy me-1" style="color: blue"></i> Status Hak Tanah
         </label>
         <input type="text" name="statushaktanah" class="form-control @error('statushaktanah') is-invalid @enderror"
-               value="{{ old('statushaktanah', $data->statushaktanah) }}">
+               value="{{ old('statushaktanah', $databangunan->statushaktanah) }}">
         @error('statushaktanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 
@@ -362,7 +362,7 @@ th {
             <i class="bi bi-person-badge-fill text-navy me-1" style="color: blue"></i> Status Kepemilikan
         </label>
         <input type="text" name="statuskepemilikan" class="form-control @error('statuskepemilikan') is-invalid @enderror"
-               value="{{ old('statuskepemilikan', $data->statuskepemilikan) }}">
+               value="{{ old('statuskepemilikan', $databangunan->statuskepemilikan) }}">
         @error('statuskepemilikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 
@@ -372,7 +372,7 @@ th {
             <i class="bi bi-card-text text-navy me-1" style="color: blue"></i> No Bukti Kepemilikan
         </label>
         <input type="text" name="nobuktikepemilikan" class="form-control @error('nobuktikepemilikan') is-invalid @enderror"
-               value="{{ old('nobuktikepemilikan', $data->nobuktikepemilikan) }}">
+               value="{{ old('nobuktikepemilikan', $databangunan->nobuktikepemilikan) }}">
         @error('nobuktikepemilikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 
@@ -382,7 +382,7 @@ th {
             <i class="bi bi-house-door-fill text-navy me-1" style="color: blue"></i> Alamat Tanah
         </label>
         <input type="text" name="alamattanah" class="form-control @error('alamattanah') is-invalid @enderror"
-               value="{{ old('alamattanah', $data->alamattanah) }}">
+               value="{{ old('alamattanah', $databangunan->alamattanah) }}">
         @error('alamattanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 
