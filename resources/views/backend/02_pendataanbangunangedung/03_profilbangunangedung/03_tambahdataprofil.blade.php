@@ -467,11 +467,11 @@ document.querySelector('form').addEventListener('submit', function() {
 </script>
 
 {{-- Koordinat Bangunan --}}
-<div class="col-md-6">
+{{-- <div class="col-md-6">
     <label class="form-label"><i class="bi bi-pin-map-fill text-primary me-1"></i> Koordinat Bangunan</label>
     <input type="text" name="koordinatbangunan" class="form-control @error('koordinatbangunan') is-invalid @enderror" value="{{ old('koordinatbangunan') }}">
     @error('koordinatbangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
+</div> --}}
 
 {{-- Tanggal Mulai Konstruksi --}}
 <div class="col-md-6">
