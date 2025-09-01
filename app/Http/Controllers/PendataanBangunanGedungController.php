@@ -450,16 +450,10 @@ public function bependataanbgtanah($id)
 // }
 public function bedatabgprofiltanah($kepemilikanId)
 {
-    // Cari data kepemilikan dulu
+    // Cari data kepemilikan (boleh null kalau ga ada)
     $databgkepemilikan = databgkepemilikan::find($kepemilikanId);
 
-    // Kalau tidak ada kepemilikan, tetap buat object kosong biar view tetap jalan
-    if (!$databgkepemilikan) {
-        $databgkepemilikan = new databgkepemilikan();
-        $databgkepemilikan->id = $kepemilikanId; // biar link tambah data tetap ada
-    }
-
-    // Ambil data tanah
+    // Ambil data tanah, bisa kosong (tetap jalan)
     $subdatapemilik = databgtanah::where('databgkepemilikan_id', $kepemilikanId)->paginate(15);
 
     // Hitung nomor urut mulai
@@ -472,7 +466,7 @@ public function bedatabgprofiltanah($kepemilikanId)
         'title' => 'Informasi Data Status Hak Tanah Bangunan Gedung',
         'title_halaman' => 'Data Pemilik',
         'user' => $user,
-        'data' => $databgkepemilikan,
+        'data' => $databgkepemilikan, // bisa null, jangan dipaksa jadi ID 0
         'subdatapemilik' => $subdatapemilik,
         'start' => $start,
     ]);
