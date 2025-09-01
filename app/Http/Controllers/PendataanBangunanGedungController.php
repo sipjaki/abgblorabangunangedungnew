@@ -618,19 +618,22 @@ public function bedatabgprofilbangunan($kepemilikanId)
 
 public function bedatabgprofilbangunanupdate($id)
 {
-    // Ambil data bantuan teknis berdasarkan ID
-    $databantuanteknis = databgkepemilikan::find($id);
-    $databantuanteknis = databgpeprofilbangunangedung::find($id);
+    // Cari data kepemilikan (parent)
+    $databgkepemilikan = databgkepemilikan::findOrFail($id);
 
-    if (!$databantuanteknis) {
-        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    // Cari data profil bangunan berdasarkan parent id
+    $dataprofilbangunan = databgpeprofilbangunangedung::where('databgkepemilikan_id', $id)->first();
+
+    if (!$dataprofilbangunan) {
+        return abort(404, 'Data profil bangunan tidak ditemukan');
     }
 
-    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    // Kirim data ke view
     return view('backend.02_pendataanbangunangedung.03_profilbangunangedung.02_updateprofilbangunan', [
-        'title' => 'Perbaikan Data Profil Bangunan Gedung ',
-        'data' => $databantuanteknis,
-        'user' => Auth::user()
+        'title' => 'Perbaikan Data Profil Bangunan Gedung',
+        'data' => $databgkepemilikan,        // parent
+        'databangunan' => $dataprofilbangunan, // child
+        'user' => Auth::user(),
     ]);
 }
 
