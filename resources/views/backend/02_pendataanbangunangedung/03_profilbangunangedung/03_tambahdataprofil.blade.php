@@ -349,29 +349,13 @@ th {
     <label class="form-label">
         <i class="bi bi-bounding-box text-primary me-1"></i> Luas Tanah
     </label>
-    <input type="text" name="luastanah" id="luastanah"
-        class="form-control @error('luastanah') is-invalid @enderror"
-        value="{{ old('luastanah') }}"
-        placeholder="Masukkan luas tanah">
+    <input type="number" name="luastanah" step="0.01" min="0"
+           class="form-control @error('luastanah') is-invalid @enderror"
+           value="{{ old('luastanah', $databangunan->luastanah) }}"
+           placeholder="Masukkan luas tanah">
     @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-<script>
-document.getElementById('luastanah').addEventListener('input', function (e) {
-    let val = this.value.replace(/[^0-9.]/g, ''); // hanya angka & titik
-    if(val) {
-        this.value = val + ' M²';
-    } else {
-        this.value = '';
-    }
-});
-
-// Saat form dikirim, hapus " M²" biar yg ke DB cuma angka
-document.querySelector('form').addEventListener('submit', function() {
-    let input = document.getElementById('luastanah');
-    input.value = input.value.replace(' M²', '');
-});
-</script>
 {{-- Nama Bangunan Gedung --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-building text-primary me-1"></i> Nama Bangunan Gedung</label>
@@ -407,63 +391,72 @@ document.querySelector('form').addEventListener('submit', function() {
 {{-- Jumlah Lantai --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-stack text-primary me-1"></i> Jumlah Lantai</label>
-    <input type="text" name="jumlahlantai" id="jumlahlantai" class="form-control @error('jumlahlantai') is-invalid @enderror" value="{{ old('jumlahlantai') }}">
+    <input type="text" name="jumlahlantai" id="jumlahlantai"
+           class="form-control @error('jumlahlantai') is-invalid @enderror"
+           value="{{ old('jumlahlantai', $databangunan->jumlahlantai) }}"
+           data-suffix="Lantai">
     @error('jumlahlantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Luas Lantai Dasar --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-arrows-collapse text-primary me-1"></i> Luas Lantai Dasar</label>
-    <input type="text" name="luaslantaildasar" id="luaslantaildasar" class="form-control @error('luaslantaildasar') is-invalid @enderror" value="{{ old('luaslantaildasar') }}">
+    <input type="text" name="luaslantaildasar" id="luaslantaildasar"
+           class="form-control @error('luaslantaildasar') is-invalid @enderror"
+           value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}"
+           data-suffix="M²">
     @error('luaslantaildasar')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Total Luas Lantai Gedung --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-fullscreen text-primary me-1"></i> Total Luas Lantai Gedung</label>
-    <input type="text" name="totalluaslantai" id="totalluaslantai" class="form-control @error('totalluaslantai') is-invalid @enderror" value="{{ old('totalluaslantai') }}">
+    <input type="text" name="totalluaslantai" id="totalluaslantai"
+           class="form-control @error('totalluaslantai') is-invalid @enderror"
+           value="{{ old('totalluaslantai', $databangunan->totalluaslantai) }}"
+           data-suffix="M²">
     @error('totalluaslantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Tinggi Bangunan --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-arrows-expand-vertical text-primary me-1"></i> Tinggi Bangunan</label>
-    <input type="text" name="tinggibangunan" id="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror" value="{{ old('tinggibangunan') }}">
+    <input type="text" name="tinggibangunan" id="tinggibangunan"
+           class="form-control @error('tinggibangunan') is-invalid @enderror"
+           value="{{ old('tinggibangunan', $databangunan->tinggibangunan) }}"
+           data-suffix="M">
     @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Luas Basement --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-layers-fill text-primary me-1"></i> Luas Basement</label>
-    <input type="text" name="luasbasement" id="luasbasement" class="form-control @error('luasbasement') is-invalid @enderror" value="{{ old('luasbasement') }}">
+    <input type="text" name="luasbasement" id="luasbasement"
+           class="form-control @error('luasbasement') is-invalid @enderror"
+           value="{{ old('luasbasement', $databangunan->luasbasement) }}"
+           data-suffix="M²">
     @error('luasbasement')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 <script>
-    function formatInput(id, suffix) {
-        const input = document.getElementById(id);
+function setupNumericSuffix(id) {
+    const input = document.getElementById(id);
+    const suffix = input.dataset.suffix || '';
 
-        input.addEventListener("input", function () {
-            let val = this.value.replace(/\D/g, ""); // hanya angka
-            if (val) {
-                this.value = val + " " + suffix;
-            } else {
-                this.value = "";
-            }
-        });
+    // tampilkan suffix tapi tetap bisa hapus & ketik
+    input.addEventListener('input', function() {
+        let val = this.value.replace(/[^0-9]/g, ''); // hanya angka
+        this.value = val ? val + (suffix ? ' ' + suffix : '') : '';
+    });
 
-        // sebelum submit, hapus suffix
-        input.form.addEventListener("submit", function () {
-            input.value = input.value.replace(/\D/g, "");
-        });
-    }
+    // sebelum submit, hapus suffix agar yang dikirim hanya angka
+    input.form.addEventListener('submit', function() {
+        input.value = input.value.replace(/[^0-9]/g, '');
+    });
+}
 
-    // setup semua field
-    formatInput("jumlahlantai", "Lantai");
-    formatInput("luaslantaildasar", "M²");
-    formatInput("totalluaslantai", "M²");
-    formatInput("tinggibangunan", "M");
-    formatInput("luasbasement", "M²");
+// Terapkan ke semua field
+['jumlahlantai','luaslantaildasar','totalluaslantai','tinggibangunan','luasbasement'].forEach(setupNumericSuffix);
 </script>
 
 {{-- Koordinat Bangunan --}}
