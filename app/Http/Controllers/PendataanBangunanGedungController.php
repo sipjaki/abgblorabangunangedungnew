@@ -413,41 +413,71 @@ public function bependataanbgtanah($id)
 // }
 
 
+// public function bedatabgprofiltanah($kepemilikanId)
+// {
+//     $user = Auth::user();
+
+//     // Cari data kepemilikan dulu
+//     $data = databgkepemilikan::find($kepemilikanId);
+//     // $datakembali = databgkepemilikan::all();
+
+//     // Kalau tidak ketemu, bisa langsung kasih data kosong
+//     if (!$data) {
+//         return view('backend.02_pendataanbangunangedung.02_datatanah.01_databgtanah', [
+//             'title' => 'Informasi Data Status Hak Tanah Bangunan Gedung',
+//             'title_halaman' => 'Data Pemilik',
+//             'user' => $user,
+//             'data' => null,
+//             'subdatapemilik' => collect([]),
+//             'start' => 0,
+//         ]);
+//     }
+
+//     // Ambil data tanah berdasarkan foreign key databgkepemilikan_id
+//     $subdatapemilik = databgtanah::where('databgkepemilikan_id', $kepemilikanId)->paginate(15);
+
+//     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+
+//     return view('backend.02_pendataanbangunangedung.02_datatanah.01_databgtanah', [
+//         'title' => 'Informasi Data Status Hak Tanah Bangunan Gedung',
+//         'title_halaman' => 'Data Pemilik',
+//         'user' => $user,
+//         'data' => $data,
+//         // 'datakembali' => $datakembali,
+//         'subdatapemilik' => $subdatapemilik,
+//         'start' => $start,
+//     ]);
+// }
+
 public function bedatabgprofiltanah($kepemilikanId)
 {
-    $user = Auth::user();
-
     // Cari data kepemilikan dulu
-    $data = databgkepemilikan::find($kepemilikanId);
-    // $datakembali = databgkepemilikan::all();
+    $databgkepemilikan = databgkepemilikan::find($kepemilikanId);
 
-    // Kalau tidak ketemu, bisa langsung kasih data kosong
-    if (!$data) {
-        return view('backend.02_pendataanbangunangedung.02_datatanah.01_databgtanah', [
-            'title' => 'Informasi Data Status Hak Tanah Bangunan Gedung',
-            'title_halaman' => 'Data Pemilik',
-            'user' => $user,
-            'data' => null,
-            'subdatapemilik' => collect([]),
-            'start' => 0,
-        ]);
+    if (!$databgkepemilikan) {
+        // Kalau tidak ketemu, redirect back dengan pesan error
+        return redirect()->back()->with('error', 'Data kepemilikan tidak ditemukan.');
     }
 
     // Ambil data tanah berdasarkan foreign key databgkepemilikan_id
-    $subdatapemilik = databgtanah::where('databgkepemilikan_id', $kepemilikanId)->paginate(15);
+    $subdatapemilik = databgtanah::where('databgkepemilikan_id', $databgkepemilikan->id)->paginate(15);
 
+    // Hitung nomor urut mulai
     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+
+    // Ambil user login
+    $user = Auth::user();
 
     return view('backend.02_pendataanbangunangedung.02_datatanah.01_databgtanah', [
         'title' => 'Informasi Data Status Hak Tanah Bangunan Gedung',
         'title_halaman' => 'Data Pemilik',
         'user' => $user,
-        'data' => $data,
-        // 'datakembali' => $datakembali,
+        'data' => $databgkepemilikan,
         'subdatapemilik' => $subdatapemilik,
         'start' => $start,
     ]);
 }
+
 
 public function bedatabgprofiltanahupdate($id)
 {
