@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+
        Schema::create('databgpeprofilbangunangedungs', function (Blueprint $table) {
     $table->id();
     $table->foreignId('databgkepemilikan_id')->nullable()->index(); // relasi ke data kepemilikan
