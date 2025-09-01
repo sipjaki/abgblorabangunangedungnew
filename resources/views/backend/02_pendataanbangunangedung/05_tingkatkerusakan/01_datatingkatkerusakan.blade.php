@@ -251,73 +251,73 @@ th {
 @php
 $bagianList = [
     [
-        'title' => 'Bagian 1 - Struktur Bangunan Bawah & Atas',
+        'title' => 'Struktur Bangunan Bawah & Atas',
         'items' => [
             ['label' => 'Struktur Bangunan Bawah', 'field' => $pemilik->struktur_bangunan_bawah ?? '-', 'icon' => 'bi-house-door'],
             ['label' => 'Struktur Bangunan Atas', 'field' => $pemilik->struktur_bangunan_atas ?? '-', 'icon' => 'bi-house'],
             ['label' => 'Struktur Atap', 'field' => $pemilik->struktur_atap ?? '-', 'icon' => 'bi-house-add'],
-            ['label' => 'Indikasi Kerusakan 1', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
-            ['label' => 'Tingkat Kerusakan 1', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Indikasi Kerusakan ', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            ['label' => 'Tingkat Kerusakan ', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
     [
-        'title' => 'Bagian 2 - Pondasi',
+        'title' => 'Bagian 1 - Pondasi',
         'items' => [
             ['label' => 'Pondasi', 'field' => $pemilik->pondasi ?? '-', 'icon' => 'bi-box'],
-            ['label' => 'Indikasi Kerusakan 2', 'field' => $pemilik->indikasi_kerusakan2 ?? '-', 'icon' => 'bi-exclamation-triangle'],
-            ['label' => 'Tingkat Kerusakan 2', 'field' => $pemilik->tingkat_kerusakan2 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Indikasi Kerusakan 1', 'field' => $pemilik->indikasi_kerusakan2 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            ['label' => 'Tingkat Kerusakan 1', 'field' => $pemilik->tingkat_kerusakan2 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
     [
-        'title' => 'Bagian 3 - Struktur',
+        'title' => 'Bagian 2 - Struktur',
         'items' => [
             ['label' => 'Struktur', 'field' => $pemilik->struktur ?? '-', 'icon' => 'bi-diagram-3'],
-            ['label' => 'Indikasi Kerusakan 3', 'field' => $pemilik->indikasi_kerusakan3 ?? '-', 'icon' => 'bi-exclamation-triangle'],
-            ['label' => 'Tingkat Kerusakan 3', 'field' => $pemilik->tingkat_kerusakan3 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Indikasi Kerusakan 2', 'field' => $pemilik->indikasi_kerusakan3 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            ['label' => 'Tingkat Kerusakan 2', 'field' => $pemilik->tingkat_kerusakan3 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
     [
-        'title' => 'Bagian 4 - Atap',
+        'title' => 'Bagian 3 - Atap',
         'items' => [
             ['label' => 'Atap', 'field' => $pemilik->atap ?? '-', 'icon' => 'bi-cloud'],
-            ['label' => 'Indikasi Kerusakan 4', 'field' => $pemilik->indikasi_kerusakan4 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            ['label' => 'Indikasi Kerusakan 3', 'field' => $pemilik->indikasi_kerusakan4 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan 4', 'field' => $pemilik->tingkat_kerusakan4 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
     [
-        'title' => 'Bagian 5 - Lantai',
+        'title' => 'Bagian 4 - Lantai',
         'items' => [
             ['label' => 'Lantai', 'field' => $pemilik->lantai ?? '-', 'icon' => 'bi-grid-1x2'],
-            ['label' => 'Indikasi Kerusakan 5', 'field' => $pemilik->indikasi_kerusakan5 ?? '-', 'icon' => 'bi-exclamation-triangle'],
-            ['label' => 'Tingkat Kerusakan 5', 'field' => $pemilik->tingkat_kerusakan5 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Indikasi Kerusakan 4', 'field' => $pemilik->indikasi_kerusakan5 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            ['label' => 'Tingkat Kerusakan 4', 'field' => $pemilik->tingkat_kerusakan5 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
     [
-        'title' => 'Bagian 6 - Dinding',
+        'title' => 'Bagian 5 - Dinding',
         'items' => [
             ['label' => 'Dinding', 'field' => $pemilik->dinding ?? '-', 'icon' => 'bi-bricks'],
-            ['label' => 'Indikasi Kerusakan 6', 'field' => $pemilik->indikasi_kerusakan6 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            ['label' => 'Indikasi Kerusakan 5', 'field' => $pemilik->indikasi_kerusakan6 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan6 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
     [
-        'title' => 'Bagian 7 - Plafon',
+        'title' => 'Bagian 6 - Plafon',
         'items' => [
             ['label' => 'Plafon', 'field' => $pemilik->plafond ?? '-', 'icon' => 'bi-menu-button-wide'],
-            ['label' => 'Indikasi Kerusakan 7', 'field' => $pemilik->indikasi_kerusakan7 ?? '-', 'icon' => 'bi-exclamation-triangle'],
-            ['label' => 'Tingkat Kerusakan 7', 'field' => $pemilik->tingkat_kerusakan7 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Indikasi Kerusakan 6', 'field' => $pemilik->indikasi_kerusakan7 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan7 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
     [
-        'title' => 'Bagian 8 - Utilitas',
+        'title' => 'Bagian 7 - Utilitas',
         'items' => [
             ['label' => 'Utilitas', 'field' => $pemilik->utilitas ?? '-', 'icon' => 'bi-lightning'],
-            ['label' => 'Indikasi Kerusakan 8', 'field' => $pemilik->indikasi_kerusakan8 ?? '-', 'icon' => 'bi-exclamation-triangle'],
-            ['label' => 'Tingkat Kerusakan 8', 'field' => $pemilik->tingkat_kerusakan8 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Indikasi Kerusakan 7', 'field' => $pemilik->indikasi_kerusakan8 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            ['label' => 'Tingkat Kerusakan 7', 'field' => $pemilik->tingkat_kerusakan8 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
     [
-        'title' => 'Finishing & Total Kerusakan',
+        'title' => ' Bagian 8 Finishing & Total Kerusakan',
         'items' => [
             ['label' => 'Finishing', 'field' => $pemilik->finishing ?? '-', 'icon' => 'bi-palette'],
             ['label' => 'Total Nilai Kerusakan', 'field' => $pemilik->total_nilai_kerusakan ?? '-', 'icon' => 'bi-percent'],
