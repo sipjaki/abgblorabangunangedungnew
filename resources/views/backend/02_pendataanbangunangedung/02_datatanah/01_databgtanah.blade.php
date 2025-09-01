@@ -371,10 +371,15 @@ th {
             </div>
 
             {{-- Tombol Tambah Data --}}
+
             <div class="text-center mt-4">
-           <a href="{{ route('bedatabgprofiltanahcreate', $data->id) }}" class="button-baru">
+           <a href="{{ route('bedatabgprofiltanahcreate', $data->id ?? 0) }}" class="button-baru">
     <i class="bi bi-plus-circle me-1"></i> Tambahkan Data
 </a>
+
+                {{-- <a href="{{ route('bedatabgprofiltanahcreate', $data->id) }}" class="button-baru">
+    <i class="bi bi-plus-circle me-1"></i> Tambahkan Data
+</a> --}}
  </div>
         </div>
     @endforelse
