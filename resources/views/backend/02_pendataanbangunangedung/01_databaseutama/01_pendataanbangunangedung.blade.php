@@ -559,7 +559,6 @@
             </a>
 
         </td>
-      </tr>
 
         <td style="text-align: center; border-bottom: 1px solid #eee;">
           {{-- <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-baru"> --}}
