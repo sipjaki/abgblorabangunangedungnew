@@ -353,12 +353,11 @@ th {
         <input type="number" name="luastanah" id="luastanah"
             class="form-control @error('luastanah') is-invalid @enderror"
             value="{{ old('luastanah') }}"
-            placeholder="Masukkan luas tanah">
-        <span class="input-group-text">m²</span>
+            placeholder="Masukkan luas tanah" min="0" step="0.01">
+        <span class="input-group-text">M²</span>
         @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
-
 {{-- Nama Bangunan Gedung --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-building text-primary me-1"></i> Nama Bangunan Gedung</label>
