@@ -353,10 +353,10 @@ th {
         <i class="bi bi-border-width me-1" style="color: blue;"></i> Luas Tanah
     </label>
     <div class="input-group">
-        <input type="number" name="luastanah" id="luastanah"
+        <input type="text" name="luastanah" id="luastanah"
                class="form-control @error('luastanah') is-invalid @enderror"
                value="{{ old('luastanah', $databangunan->luastanah) }}"
-               placeholder="Masukkan luas tanah" min="0" step="1">
+               placeholder="Masukkan luas tanah">
         <span class="input-group-text">M²</span>
         @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
