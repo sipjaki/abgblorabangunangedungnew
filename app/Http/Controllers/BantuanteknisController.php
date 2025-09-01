@@ -1662,7 +1662,7 @@ public function bebantekkonsultandata(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 20);
+    $perPage = $request->input('perPage', 10);
 
     $query = bujkkonsultan::query();
 
