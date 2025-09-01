@@ -90,7 +90,7 @@ window.addEventListener('load', () => {
     <div class="card-body" style="overflow-x: auto; white-space: nowrap; padding: 16px;">
         @php
             // $id = $data->id ?? 0;
-            $kepemilikanId = $data->databgkepemilikan_id ?? 0;
+            $kepemilikanId = $data->databgkepemilikan_id ?? 'Data Belum Di Buat';
             $buttons = [
                 ['label' => 'Data Profil Tanah', 'url' => '/bedatabgprofiltanah/' . $kepemilikanId, 'icon' => 'bi-geo-alt-fill'],
                 ['label' => 'Data Profil Bangunan Gedung', 'url' => '/bedatabgprofilbangunan/' . $kepemilikanId, 'icon' => 'bi-building-fill'],
