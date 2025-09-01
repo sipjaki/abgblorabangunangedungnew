@@ -485,20 +485,21 @@ public function bedatabgprofiltanah($kepemilikanId)
 
 public function bedatabgprofiltanahupdate($id)
 {
-    // Ambil data bantuan teknis berdasarkan ID
-    $data = databgkepemilikan::find($id);
-    $databantuanteknis = databgtanah::find($id);
+    // Cari data kepemilikan
+    $databgkepemilikan = databgkepemilikan::findOrFail($id);
 
-    if (!$databantuanteknis) {
-        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    // Cari data tanah berdasarkan parent id
+    $datatanah = databgtanah::where('databgkepemilikan_id', $id)->first();
+
+    if (!$datatanah) {
+        return abort(404, 'Data tanah tidak ditemukan');
     }
 
-    // Kirim data ke view form pembuatan dokumentasi cek lapangan
     return view('backend.02_pendataanbangunangedung.02_datatanah.02_updatedatatanahbg', [
-        'title' => 'Perbaikan Status Data Tanah ',
-        'data' => $databantuanteknis,
-        'data' => $data,
-        'user' => Auth::user()
+        'title' => 'Perbaikan Status Data Tanah',
+        'kepemilikan' => $databgkepemilikan, // parent
+        'data' => $datatanah, // child
+        'user' => Auth::user(),
     ]);
 }
 
