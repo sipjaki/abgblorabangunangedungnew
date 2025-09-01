@@ -521,8 +521,13 @@
         <th style="text-align: center; border-bottom: 1px solid #eee;">
           <i class="bi bi-x-circle"></i> Belum Terverifikasi
         </th>
+
          <th style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
     <i class="bi bi-building" style="margin-right: 6px; color: #0a3d62;"></i> Informasi Bangunan
+</th>
+
+         <th style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">
+    <i class="bi bi-building" style="margin-right: 6px; color: #0a3d62;"></i> Informasi Statistik
 </th>
 
     </tr>
@@ -547,9 +552,19 @@
             {{ $item->kosong }} Bangunan <small>({{ $item->persen_kosong }}%)</small>
           </span>
         </td>
+
         <td style="text-align: center; border-bottom: 1px solid #eee;">
           <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-baru">
                 <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Informasi
+            </a>
+
+        </td>
+      </tr>
+
+        <td style="text-align: center; border-bottom: 1px solid #eee;">
+          {{-- <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-baru"> --}}
+          <a class="button-newdata">
+                <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Statistik
             </a>
 
         </td>
