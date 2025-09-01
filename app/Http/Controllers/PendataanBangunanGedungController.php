@@ -448,19 +448,19 @@ public function bependataanbgtanah($id)
 //         'start' => $start,
 //     ]);
 // }
-
 public function bedatabgprofiltanah($kepemilikanId)
 {
     // Cari data kepemilikan dulu
     $databgkepemilikan = databgkepemilikan::find($kepemilikanId);
 
+    // Kalau tidak ada kepemilikan, tetap buat object kosong biar view tetap jalan
     if (!$databgkepemilikan) {
-        // Kalau tidak ketemu, redirect back dengan pesan error
-        return redirect()->back()->with('error', 'Data kepemilikan tidak ditemukan.');
+        $databgkepemilikan = new databgkepemilikan();
+        $databgkepemilikan->id = $kepemilikanId; // biar link tambah data tetap ada
     }
 
-    // Ambil data tanah berdasarkan foreign key databgkepemilikan_id
-    $subdatapemilik = databgtanah::where('databgkepemilikan_id', $databgkepemilikan->id)->paginate(15);
+    // Ambil data tanah
+    $subdatapemilik = databgtanah::where('databgkepemilikan_id', $kepemilikanId)->paginate(15);
 
     // Hitung nomor urut mulai
     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
