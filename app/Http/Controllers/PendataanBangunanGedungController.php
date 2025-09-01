@@ -582,31 +582,34 @@ public function bedatabgprofiltanahcreatenew(Request $request)
     return redirect()->route('bedatabgprofiltanah', ['id' => $validated['databgkepemilikan_id']]);
 }
 
-public function bedatabgprofilbangunan($id)
+public function bedatabgprofilbangunan($kepemilikanId)
 {
-    // Ambil user login
-    $user = Auth::user();
+    // Cari data kepemilikan dulu
+    $databgkepemilikan = databgkepemilikan::find($kepemilikanId);
 
-    // Cari data pbg berdasarkan ID
-    $data = databgkepemilikan::findOrFail($id);
+    // Kalau tidak ada kepemilikan, tetap buat object kosong biar link tambah data tetap ada
+    if (!$databgkepemilikan) {
+        $databgkepemilikan = new databgkepemilikan();
+        $databgkepemilikan->id = $kepemilikanId;
+    }
 
-    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
-    $subdatapemilik = databgpeprofilbangunangedung::where('databgkepemilikan_id', $data->id)->paginate(15);
+    // Ambil data profil bangunan berdasarkan parent
+    $subdatapemilik = databgpeprofilbangunangedung::where('databgkepemilikan_id', $kepemilikanId)
+                        ->paginate(15);
 
-    // Hitung nomor urut mulai untuk paginasi
+    // Hitung nomor urut mulai
     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
 
-    // Ambil data jenis pengajuan
-    // $datapbgslf = jenispengajuanpbgslfper::all();
+    // Ambil user login
+    $user = Auth::user();
 
     // Kirim data ke view
     return view('backend.02_pendataanbangunangedung.03_profilbangunangedung.01_dataprofilbangunan', [
         'title' => 'Informasi Data Profil Bangunan Gedung',
         'title_halaman' => 'Informasi Data Profil Bangunan Gedung',
         'user' => $user,
-        'data' => $data,
-        // 'datapbgslf' => $datapbgslf,
-        'subdatapemilik' => $subdatapemilik,
+        'data' => $databgkepemilikan, // ini parent
+        'subdatapemilik' => $subdatapemilik, // ini child
         'start' => $start,
     ]);
 }
