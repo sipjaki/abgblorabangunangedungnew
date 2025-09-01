@@ -133,7 +133,9 @@ window.addEventListener('load', () => {
     <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $data->kecamatanblora_id]) }}" class="button-merah">
         <i class="bi bi-arrow-left-circle me-1"></i>
         Kembali Ke Data Dasar Data Perkecamatan
-        <i class="bi bi-arrow-right-circle ms-1"></i>
+        <i class="bi bi-bar-chart-line-fill ms-1"></i>
+
+        {{-- <i class="bi bi-arrow-right-circle ms-1"></i> --}}
     </a>
 </div>
 
