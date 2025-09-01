@@ -65,11 +65,11 @@
 <div class="row g-4">
     @php
         $infoItems = [
-            [
-                'icon' => 'bi-person-fill',
-                'title' => 'Input Data',
-                'value' => optional($data->user)->name ?? '-',
-            ],
+            // [
+            //     'icon' => 'bi-person-fill',
+            //     'title' => 'Input Data',
+            //     'value' => optional($data->user)->name ?? '-',
+            // ],
             [
                 'icon' => 'bi-geo-alt-fill',
                 'title' => 'Kecamatan Blora',
