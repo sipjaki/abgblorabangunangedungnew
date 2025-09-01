@@ -562,10 +562,9 @@
 
         <td style="text-align: center; border-bottom: 1px solid #eee;">
           {{-- <a href="{{ url('/bangunan/kecamatan/'.$item->kecamatanblora_id) }}" class="button-baru"> --}}
-          <a class="button-newdata">
-                <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Statistik
-            </a>
-
+         <a class="button-newdata">
+    <i class="bi bi-bar-chart-line-fill" style="margin-right: 5px;"></i> Lihat Statistik
+</a>
         </td>
       </tr>
       @endforeach
