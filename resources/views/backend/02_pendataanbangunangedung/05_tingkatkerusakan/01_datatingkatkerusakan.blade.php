@@ -256,8 +256,7 @@ $bagianList = [
             ['label' => 'Struktur Bangunan Bawah', 'field' => $pemilik->struktur_bangunan_bawah ?? '-', 'icon' => 'bi-house-door'],
             ['label' => 'Struktur Bangunan Atas', 'field' => $pemilik->struktur_bangunan_atas ?? '-', 'icon' => 'bi-house'],
             ['label' => 'Struktur Atap', 'field' => $pemilik->struktur_atap ?? '-', 'icon' => 'bi-house-add'],
-            ['label' => 'Indikasi Kerusakan ', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
-            ['label' => 'Tingkat Kerusakan ', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
+
         ],
     ],
     [
@@ -321,6 +320,8 @@ $bagianList = [
         'items' => [
             ['label' => 'Finishing', 'field' => $pemilik->finishing ?? '-', 'icon' => 'bi-palette'],
             ['label' => 'Total Nilai Kerusakan', 'field' => $pemilik->total_nilai_kerusakan ?? '-', 'icon' => 'bi-percent'],
+            ['label' => 'Indikasi Kerusakan ', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+            ['label' => 'Tingkat Kerusakan ', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
         ],
     ],
 ];
