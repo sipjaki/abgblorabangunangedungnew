@@ -342,6 +342,7 @@ public function bebangunangedungdelete($id)
 {
     // Cari data berdasarkan ID
     $data = databgkepemilikan::findOrFail($id);
+    $datakembali = databgkepemilikan::findOrFail($id);
 
     // Ambil data user yang sedang login
     $user = Auth::user();
@@ -350,6 +351,7 @@ public function bebangunangedungdelete($id)
     return view('backend.02_pendataanbangunangedung.01_databaseutama.03_informasidatabangunan', [
         'title' => 'Informasi Pendataan Bangunan Gedung Kabupaten Blora',
         'data' => $data,
+        'datakembali' => $datakembali,
         'user' => $user
     ]);
 }
