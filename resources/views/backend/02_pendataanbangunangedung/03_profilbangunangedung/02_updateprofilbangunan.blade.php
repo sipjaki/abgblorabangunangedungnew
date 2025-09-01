@@ -358,25 +358,28 @@ th {
            placeholder="Masukkan luas tanah">
     @error('luastanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
-
 <script>
-    const luasTanahInput = document.getElementById('luastanah');
+function setupAutoSuffix(id, suffix) {
+    const input = document.getElementById(id);
 
-    luasTanahInput.addEventListener('input', function() {
-        // Ambil hanya angka dari input
+    input.addEventListener('input', function() {
+        // Ambil angka saja
         let angka = this.value.replace(/\D/g, '');
-        if(angka) {
-            this.value = angka + ' M²';
-        } else {
-            this.value = '';
-        }
+
+        // Tampilkan suffix hanya kalau ada angka
+        this.value = angka ? angka + ' ' + suffix : '';
     });
 
-    // Sebelum form submit, hapus "M²"
-    luasTanahInput.form.addEventListener('submit', function() {
-        luasTanahInput.value = luasTanahInput.value.replace(/\D/g, '');
+    // Sebelum submit, hapus semua non-angka
+    input.form.addEventListener('submit', function() {
+        input.value = input.value.replace(/\D/g, '');
     });
+}
+
+// Terapkan untuk luasTanah
+setupAutoSuffix('luastanah', 'M²');
 </script>
+
 
 {{-- Nama Bangunan --}}
 <div class="col-md-6">
@@ -461,30 +464,36 @@ th {
            value="{{ old('luasbasement', $databangunan->luasbasement) }}">
     @error('luasbasement')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
-
 <script>
-    function setupField(id, suffix) {
-        const input = document.getElementById(id);
-        input.addEventListener('input', function() {
-            let angka = this.value.replace(/\D/g, '');
-            if(angka) {
-                this.value = angka + ' ' + suffix;
-            } else {
-                this.value = '';
-            }
-        });
-        // Sebelum submit, hapus suffix
-        input.form.addEventListener('submit', function() {
-            input.value = input.value.replace(/\D/g, '');
-        });
-    }
+function setupField(id, suffix) {
+    const input = document.getElementById(id);
 
-    setupField('jumlahlantai', 'Lantai');
-    setupField('luaslantaildasar', 'M²');
-    setupField('totalluaslantai', 'M²');
-    setupField('tinggibangunan', 'M');
-    setupField('luasbasement', 'M²');
+    input.addEventListener('input', function() {
+        // Ambil angka saja
+        let angka = this.value.replace(/\D/g, '');
+
+        if (angka) {
+            this.value = angka + ' ' + suffix;
+        } else {
+            // Jika kosong, biarkan kosong
+            this.value = '';
+        }
+    });
+
+    // Sebelum submit, hapus semua non-angka
+    input.form.addEventListener('submit', function() {
+        input.value = input.value.replace(/\D/g, '');
+    });
+}
+
+// Setup semua field
+setupField('jumlahlantai', 'Lantai');
+setupField('luaslantaildasar', 'M²');
+setupField('totalluaslantai', 'M²');
+setupField('tinggibangunan', 'M');
+setupField('luasbasement', 'M²');
 </script>
+
 
 {{-- Koordinat Bangunan --}}
 <div class="col-md-6">
