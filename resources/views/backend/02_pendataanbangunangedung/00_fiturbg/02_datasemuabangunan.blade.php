@@ -2,7 +2,7 @@
     <div class="card-body" style="overflow-x: auto; white-space: nowrap; padding: 16px;">
         @php
             // Ambil ID kepemilikan (relasi utama)
-            $kepemilikanId = $data->databgkepemilikan_id ?? 0;
+            $kepemilikanId = $data->databgkepemilikan_id ;
 
             $buttons = [
                 [
