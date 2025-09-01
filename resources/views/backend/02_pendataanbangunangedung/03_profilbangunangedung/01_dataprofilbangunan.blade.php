@@ -469,7 +469,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
                  {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
 
-                 <br><br>
+                 <br><br><br>
 
                  <!-- Modal Konfirmasi Hapus -->
                  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -488,7 +488,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
                                  <form id="deleteForm" method="POST" action="">
                                      @csrf
                                      @method('DELETE')
-                                     <button type="submit" class="btn btn-danger">Hapus</button>
+                                     <button type="submit" class="button-merah">Hapus</button>
                                  </form>
                              </div>
                          </div>
