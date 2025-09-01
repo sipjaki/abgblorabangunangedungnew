@@ -129,14 +129,14 @@ window.addEventListener('load', () => {
             </div>
         @endforeach
     </div>
-</div>
-
-
-<div class="mb-2 mt-2 d-flex justify-content-end">
+<div class="mb-2 mt-2 d-flex justify-content-center">
     <a href="{{ route('bangunan.perkecamatan', ['kecamatan_id' => $data->kecamatanblora_id]) }}" class="button-merah">
         <i class="bi bi-arrow-left-circle me-1"></i> Kembali Ke Data Dasar
     </a>
 </div>
+
+</div>
+
 
 <script>
 // Fungsi simpan posisi scroll sebelum pindah halaman
