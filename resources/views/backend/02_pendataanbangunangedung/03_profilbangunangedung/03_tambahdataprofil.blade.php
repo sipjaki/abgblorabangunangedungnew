@@ -389,87 +389,55 @@ th {
 </div>
 {{-- Jumlah Lantai --}}
 {{-- Jumlah Lantai --}}
+{{-- Jumlah Lantai --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-stack text-primary me-1"></i> Jumlah Lantai</label>
-    <input type="text" name="jumlahlantai" id="jumlahlantai"
+    <input type="number" name="jumlahlantai" min="0" step="1"
            class="form-control @error('jumlahlantai') is-invalid @enderror"
            placeholder="Masukkan jumlah lantai"
-           data-suffix="Lantai">
+           value="{{ old('jumlahlantai') }}">
     @error('jumlahlantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Luas Lantai Dasar --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-arrows-collapse text-primary me-1"></i> Luas Lantai Dasar</label>
-    <input type="text" name="luaslantaildasar" id="luaslantaildasar"
+    <input type="number" name="luaslantaildasar" min="0" step="0.01"
            class="form-control @error('luaslantaildasar') is-invalid @enderror"
            placeholder="Masukkan luas lantai dasar"
-           data-suffix="M²">
+           value="{{ old('luaslantaildasar') }}">
     @error('luaslantaildasar')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Total Luas Lantai Gedung --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-fullscreen text-primary me-1"></i> Total Luas Lantai Gedung</label>
-    <input type="text" name="totalluaslantai" id="totalluaslantai"
+    <input type="number" name="totalluaslantai" min="0" step="0.01"
            class="form-control @error('totalluaslantai') is-invalid @enderror"
            placeholder="Masukkan total luas lantai"
-           data-suffix="M²">
+           value="{{ old('totalluaslantai') }}">
     @error('totalluaslantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Tinggi Bangunan --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-arrows-expand-vertical text-primary me-1"></i> Tinggi Bangunan</label>
-    <input type="text" name="tinggibangunan" id="tinggibangunan"
+    <input type="number" name="tinggibangunan" min="0" step="0.01"
            class="form-control @error('tinggibangunan') is-invalid @enderror"
            placeholder="Masukkan tinggi bangunan"
-           data-suffix="M">
+           value="{{ old('tinggibangunan') }}">
     @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 {{-- Luas Basement --}}
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-layers-fill text-primary me-1"></i> Luas Basement</label>
-    <input type="text" name="luasbasement" id="luasbasement"
+    <input type="number" name="luasbasement" min="0" step="0.01"
            class="form-control @error('luasbasement') is-invalid @enderror"
            placeholder="Masukkan luas basement"
-           data-suffix="M²">
+           value="{{ old('luasbasement') }}">
     @error('luasbasement')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
-
-<script>
-function setupFieldWithSuffix(id) {
-    const input = document.getElementById(id);
-    const suffix = input.dataset.suffix || '';
-
-    input.addEventListener('input', function() {
-        // Ambil angka saja
-        let numbers = this.value.replace(/\D/g, '');
-        this.dataset.rawValue = numbers; // simpan angka murni
-        this.value = numbers ? numbers + (suffix ? ' ' + suffix : '') : '';
-    });
-
-    // Sebelum submit, kirim angka murni
-    input.form.addEventListener('submit', function() {
-        input.value = input.dataset.rawValue || '';
-    });
-
-    // Saat fokus, tampilkan angka murni untuk mudah hapus/edit
-    input.addEventListener('focus', function() {
-        this.value = this.dataset.rawValue || '';
-    });
-
-    // Saat blur, tampilkan dengan suffix
-    input.addEventListener('blur', function() {
-        const val = this.dataset.rawValue || '';
-        this.value = val ? val + (suffix ? ' ' + suffix : '') : '';
-    });
-}
-
-// Terapkan ke semua field
-['jumlahlantai','luaslantaildasar','totalluaslantai','tinggibangunan','luasbasement'].forEach(setupFieldWithSuffix);
-</script>
 
 {{-- Koordinat Bangunan --}}
 <div class="col-md-6">
