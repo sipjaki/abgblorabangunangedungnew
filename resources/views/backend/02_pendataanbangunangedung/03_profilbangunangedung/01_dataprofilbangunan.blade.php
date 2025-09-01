@@ -369,7 +369,7 @@ th {
 @endif
 
 
-                     {{-- <a href="javascript:void(0)" title="Delete"
+                     <a href="javascript:void(0)" title="Delete"
    data-bs-toggle="modal" data-bs-target="#deleteModal"
    data-judul="{{ $pemilik->id }}"
    onclick="setDeleteUrl(this)"
@@ -377,7 +377,7 @@ th {
 >
    <i class="bi bi-trash" style="color: red; margin-right:4px;"></i>
    <span style="color: red;">Hapus</span>
-</a> --}}
+</a>
 
                     </div>
                 </div>
@@ -499,7 +499,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bepbgdatapemilikdelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/bedatabgprofilbangunandelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
