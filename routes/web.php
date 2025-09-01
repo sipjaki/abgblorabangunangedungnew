@@ -127,12 +127,12 @@ Route::get('/bedatakicstruktur/{id}', [PendataanBangunanGedungController::class,
 
 // 01 PENDATAAN BANGUNAN GEDUNG PROFIL STATUS TANAH
 
-// Route::get(
-//     '/bedatabgprofiltanah/{kepemilikanId}',
-//     [PendataanBangunanGedungController::class, 'bedatabgprofiltanah']
-// )->middleware('auth')->name('bedatabgprofiltanah');
+Route::get(
+    '/bedatabgprofiltanah/{kepemilikanId}',
+    [PendataanBangunanGedungController::class, 'bedatabgprofiltanah']
+)->middleware('auth')->name('bedatabgprofiltanah');
 
-Route::get('/bedatabgprofiltanah/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanah'])->middleware('auth')->name('bedatabgprofiltanah');
+// Route::get('/bedatabgprofiltanah/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanah'])->middleware('auth')->name('bedatabgprofiltanah');
 Route::get('/bedatabgprofiltanahupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahupdate'])->middleware('auth')->name('bedatabgprofiltanahupdate');
 Route::put('/bedatabgprofiltanahupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgprofiltanahupdatenew'])->middleware('auth')->name('bedatabgprofiltanahupdatenew');
 
