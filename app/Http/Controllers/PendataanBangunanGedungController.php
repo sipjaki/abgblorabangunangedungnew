@@ -503,7 +503,6 @@ public function bedatabgprofiltanahupdate($id)
 public function bedatabgprofiltanahupdatenew(Request $request, $id)
 {
     $validated = $request->validate([
-        // 'databgkepemilikan_id' => 'nullable|integer',
         'statushaktanah' => 'nullable|string|max:100',
         'statuskepemilikan' => 'nullable|string|max:100',
         'nobuktikepemilikan' => 'nullable|string|max:100',
@@ -515,24 +514,26 @@ public function bedatabgprofiltanahupdatenew(Request $request, $id)
         'alamattanah.max' => 'Maksimal 255 karakter.',
     ]);
 
-    // Ambil data berdasarkan ID
+    // Ambil data child berdasarkan ID
     $pemilik = databgtanah::findOrFail($id);
 
-    // Update data
+    // Update data child
     $pemilik->update([
-        // 'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
-        'statushaktanah' => $validated['statushaktanah'],
-        'statuskepemilikan' => $validated['statuskepemilikan'],
-        'nobuktikepemilikan' => $validated['nobuktikepemilikan'],
-        'alamattanah' => $validated['alamattanah'],
+        'statushaktanah'   => $validated['statushaktanah'],
+        'statuskepemilikan'=> $validated['statuskepemilikan'],
+        'nobuktikepemilikan'=> $validated['nobuktikepemilikan'],
+        'alamattanah'      => $validated['alamattanah'],
     ]);
+
+    // Ambil id parent dari child
+    $parentId = $pemilik->databgkepemilikan_id;
 
     // Feedback
     session()->flash('update', 'Data kepemilikan tanah berhasil diperbarui!');
-    return redirect()->back();
+    return redirect()->route('bebangunangedunginformasi', $parentId);
 }
 
-
+// perbaruan
 public function bedatabgprofiltanahcreate($id)
 {
     // Ambil data bantuan teknis berdasarkan ID
