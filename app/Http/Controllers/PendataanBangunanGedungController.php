@@ -715,7 +715,7 @@ public function bedatabgprofilbangunancreate($id)
 public function bedatabgprofilbangunancreatenew(Request $request)
 {
     $validated = $request->validate([
-        'databgkepemilikan_id' => 'required|string|exists:databgkepemilikans,id',
+        'databgkepemilikan_id' => 'required|string',
 
         'luastanah' => 'nullable|string|max:100',
         'namabangunan' => 'nullable|string|max:255',
