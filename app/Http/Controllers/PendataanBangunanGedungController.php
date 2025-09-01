@@ -711,7 +711,6 @@ public function bedatabgprofilbangunancreate($id)
     ]);
 }
 
-
 public function bedatabgprofilbangunancreatenew(Request $request)
 {
     $validated = $request->validate([
@@ -753,7 +752,9 @@ public function bedatabgprofilbangunancreatenew(Request $request)
     ]);
 
     session()->flash('create', 'Data profil bangunan berhasil ditambahkan!');
-    return redirect()->route('bedatabgprofilbangunan', ['id' => $validated['databgkepemilikan_id']]);
+
+    // Redirect ke route bedatabgprofilbangunan dengan parameter kepemilikanId
+    return redirect()->route('bedatabgprofilbangunan', ['kepemilikanId' => $validated['databgkepemilikan_id']]);
 }
 
 
