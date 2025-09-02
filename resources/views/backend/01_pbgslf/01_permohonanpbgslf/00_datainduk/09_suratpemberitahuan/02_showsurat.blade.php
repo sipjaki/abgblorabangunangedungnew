@@ -752,11 +752,17 @@ th {
         <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas4 ?? '-' }}</td>
         <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas4 ?? '-' }}</td>
     </tr>
-    <tr>
+    {{-- <tr>
         <td>5.</td>
         <td>Surat Perjanjian Sewa Lahan</td>
         <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->berkas5 ?? '-' }}</td>
         <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas5 ?? '-' }}</td>
+    </tr> --}}
+    <tr>
+        <td>5.</td>
+        <td>Surat Perjanjian Sewa Lahan</td>
+        <td style="text-align: center; text-transform: uppercase;">{{ $surat->dataumumpbg->cadangan1 ?? '-' }}</td>
+        <td style="text-align: center;">{{ $surat->dataumumpbg->cadangan2 ?? '-' }}</td>
     </tr>
     {{-- <td style="text-align: center;">{{ $surat->dataumumpbg->catatanberkas5 ?? '-' }}</td> --}}
     <tr>
