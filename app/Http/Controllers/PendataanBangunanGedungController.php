@@ -788,22 +788,24 @@ public function bedatabgklasifikasi($kepemilikanId)
         'start' => $start,
     ]);
 }
-
 public function bedatabgklasifikasiupdate($id)
 {
-    // Ambil data bantuan teknis berdasarkan ID
-    $databantuanteknis = databgkepemilikan::find($id);
-    $databantuanteknis = databgklasifikasi::find($id);
+    // Cari data kepemilikan (parent)
+    $databgkepemilikan = databgkepemilikan::findOrFail($id);
 
-    if (!$databantuanteknis) {
-        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    // Cari data klasifikasi berdasarkan parent id
+    $dataklasifikasi = databgklasifikasi::where('databgkepemilikan_id', $id)->first();
+
+    if (!$dataklasifikasi) {
+        return abort(404, 'Data klasifikasi bangunan tidak ditemukan');
     }
 
-    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    // Kirim data ke view
     return view('backend.02_pendataanbangunangedung.04_klasfikasi.02_updateklasifikasi', [
-        'title' => 'Perbaikan Data Klasifikasi Bangunan Gedung ',
-        'data' => $databantuanteknis,
-        'user' => Auth::user()
+        'title' => 'Perbaikan Data Klasifikasi Bangunan Gedung',
+        'data' => $databgkepemilikan,   // parent
+        'dataklasifikasi' => $dataklasifikasi, // child
+        'user' => Auth::user(),
     ]);
 }
 
