@@ -1,4 +1,4 @@
-    {{-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
@@ -59,63 +59,6 @@
     // map.boxZoom.disable();
     // map.keyboard.disable();
 
-</script> --}}
-
-
-
-<!-- Leaflet CSS & JS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<!-- Plugin GoogleMutant -->
-<script src="https://unpkg.com/leaflet.gridlayer.googlemutant/Leaflet.GoogleMutant.js"></script>
-
-<div class="col-md-12">
-    <div class="mb-3">
-        <label class="form-label d-flex align-items-center" for="koordinat">
-            <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
-        </label>
-        <input type="text"
-               class="form-control"
-               id="koordinat"
-               name="koordinat"
-               value="{{ old('koordinat', $data->koordinat ?? '') }}"
-               placeholder="Koordinat tidak dapat diubah"
-               readonly>
-    </div>
-    <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
-</div>
-
-<script>
-    // Inisialisasi map dengan fokus ke Kabupaten Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11); // Koordinat default Blora
-
-    // Tambahkan Google Satellite (Google Earth Style)
-    var googleSat = L.gridLayer.googleMutant({
-        type: 'satellite' // roadmap, satellite, terrain, hybrid
-    }).addTo(map);
-
-    var marker;
-    var input = document.getElementById('koordinat');
-
-    if (input.value) {
-        var coords = input.value.split(',');
-        var lat = parseFloat(coords[0].trim());
-        var lng = parseFloat(coords[1].trim());
-        if (!isNaN(lat) && !isNaN(lng)) {
-            marker = L.marker([lat, lng]).addTo(map);
-            map.setView([lat, lng], 15);
-        }
-    }
-
-    // Disable interaksi peta jika mau benar-benar pasif
-    map.off('click');
-    // map.dragging.disable();
-    // map.touchZoom.disable();
-    // map.doubleClickZoom.disable();
-    // map.scrollWheelZoom.disable();
-    // map.boxZoom.disable();
-    // map.keyboard.disable();
 </script>
 
 
