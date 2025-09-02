@@ -804,7 +804,7 @@ public function bedatabgklasifikasiupdate($id)
     return view('backend.02_pendataanbangunangedung.04_klasfikasi.02_updateklasifikasi', [
         'title' => 'Perbaikan Data Klasifikasi Bangunan Gedung',
         'data' => $databgkepemilikan,   // parent
-        'dataklasifikasi' => $dataklasifikasi, // child
+        'databangunan' => $dataklasifikasi, // child
         'user' => Auth::user(),
     ]);
 }
