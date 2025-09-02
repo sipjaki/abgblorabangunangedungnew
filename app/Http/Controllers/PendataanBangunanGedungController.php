@@ -808,10 +808,44 @@ public function bedatabgklasifikasiupdate($id)
 }
 
 
+// public function bedatabgklasifikasiupdatenew(Request $request, $id)
+// {
+//     $validated = $request->validate([
+//         // 'databgkepemilikan_id' => 'nullable|string',
+//         'tingkat_kompleksitas' => 'nullable|string|max:255',
+//         'tingkat_permanensi' => 'nullable|string|max:255',
+//         'resiko_kebakaran' => 'nullable|string|max:255',
+//         'resiko_gempa' => 'nullable|string|max:255',
+//         'kepadatan_lokasi' => 'nullable|string|max:255',
+//     ], [
+//         'tingkat_kompleksitas.max' => 'Maksimal 255 karakter.',
+//         'tingkat_permanensi.max' => 'Maksimal 255 karakter.',
+//         'resiko_kebakaran.max' => 'Maksimal 255 karakter.',
+//         'resiko_gempa.max' => 'Maksimal 255 karakter.',
+//         'kepadatan_lokasi.max' => 'Maksimal 255 karakter.',
+//     ]);
+
+//     // Ambil data berdasarkan ID
+//     $klasifikasi = databgklasifikasi::findOrFail($id);
+
+//     // Update data
+//     $klasifikasi->update([
+//         // 'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? null,
+//         'tingkat_kompleksitas' => $validated['tingkat_kompleksitas'] ?? null,
+//         'tingkat_permanensi' => $validated['tingkat_permanensi'] ?? null,
+//         'resiko_kebakaran' => $validated['resiko_kebakaran'] ?? null,
+//         'resiko_gempa' => $validated['resiko_gempa'] ?? null,
+//         'kepadatan_lokasi' => $validated['kepadatan_lokasi'] ?? null,
+//     ]);
+
+//     // Feedback
+//     session()->flash('update', 'Data klasifikasi bangunan berhasil diperbarui!');
+//     return redirect()->back();
+// }
+
 public function bedatabgklasifikasiupdatenew(Request $request, $id)
 {
     $validated = $request->validate([
-        'databgkepemilikan_id' => 'nullable|string',
         'tingkat_kompleksitas' => 'nullable|string|max:255',
         'tingkat_permanensi' => 'nullable|string|max:255',
         'resiko_kebakaran' => 'nullable|string|max:255',
@@ -825,22 +859,21 @@ public function bedatabgklasifikasiupdatenew(Request $request, $id)
         'kepadatan_lokasi.max' => 'Maksimal 255 karakter.',
     ]);
 
-    // Ambil data berdasarkan ID
+    // Ambil data klasifikasi
     $klasifikasi = databgklasifikasi::findOrFail($id);
 
     // Update data
     $klasifikasi->update([
-        'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? null,
         'tingkat_kompleksitas' => $validated['tingkat_kompleksitas'] ?? null,
-        'tingkat_permanensi' => $validated['tingkat_permanensi'] ?? null,
-        'resiko_kebakaran' => $validated['resiko_kebakaran'] ?? null,
-        'resiko_gempa' => $validated['resiko_gempa'] ?? null,
-        'kepadatan_lokasi' => $validated['kepadatan_lokasi'] ?? null,
+        'tingkat_permanensi'   => $validated['tingkat_permanensi'] ?? null,
+        'resiko_kebakaran'     => $validated['resiko_kebakaran'] ?? null,
+        'resiko_gempa'         => $validated['resiko_gempa'] ?? null,
+        'kepadatan_lokasi'     => $validated['kepadatan_lokasi'] ?? null,
     ]);
 
-    // Feedback
+    // Redirect ke halaman klasifikasi sesuai parent ID
     session()->flash('update', 'Data klasifikasi bangunan berhasil diperbarui!');
-    return redirect()->back();
+    return redirect()->route('bedatabgklasifikasi', ['kepemilikanId' => $klasifikasi->databgkepemilikan_id]);
 }
 
 
