@@ -417,10 +417,7 @@ th {
     Bagian 2 - Struktur
 </h5>
 
-<div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-columns-gap me-1"></i> Bagian 2 - Struktur</h6>
 </div>
-
 <div class="col-md-4">
     <label class="form-label"><i class="bi bi-building text-primary me-1"></i> Struktur</label>
     <input type="text" name="struktur" class="form-control" value="{{ old('struktur') }}">
