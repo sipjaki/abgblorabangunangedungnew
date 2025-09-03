@@ -371,42 +371,92 @@ th {
 
 <!-- ===================== BAGIAN 2 ===================== -->
 
-
 <div class="text-center">
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
-    <i class="bi bi-file-earmark-text-fill me-2"></i>
-    Bagian 1 - Pondasi
-</h5>
-</h5>
+    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+        <i class="bi bi-file-earmark-text-fill me-2"></i>
+        Bagian 1 - Pondasi
+    </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<div class="col-md-4">
-    <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Pondasi</label>
-    <input type="text" name="pondasi" class="form-control @error('pondasi') is-invalid @enderror" value="{{ old('pondasi') }}">
-    @error('pondasi')<div class="invalid-feedback">{{ $message }}</div>@enderror
+<div class="row">
+    <!-- Kolom Kiri -->
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label">
+                <i class="bi bi-bricks text-primary me-1"></i> Pondasi
+            </label>
+            <input type="text" name="pondasi"
+                   class="form-control @error('pondasi') is-invalid @enderror"
+                   value="{{ old('pondasi') }}">
+            @error('pondasi')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">
+                <i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan
+            </label>
+            <select name="indikasi_kerusakan2" class="form-select">
+                <option value="">-- Pilih Indikasi --</option>
+                <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+                <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">
+                <i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan
+            </label>
+            <select name="tingkat_kerusakan2" class="form-select">
+                <option value="">-- Pilih Tingkat Kerusakan --</option>
+                <option value="Ringan">Ringan</option>
+                <option value="Sedang">Sedang</option>
+                <option value="Berat">Berat</option>
+                <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Kolom Kanan -->
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label">
+                <i class="bi bi-bricks text-primary me-1"></i> Pondasi (Struktur Bawah)
+            </label>
+            <input type="file" name="struktur_bawah"
+                   class="form-control @error('struktur_bawah') is-invalid @enderror"
+                   accept="image/*"
+                   onchange="previewStrukturBawah(event)">
+            @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+            <!-- Preview Gambar -->
+            <div class="mt-3 text-center">
+                <img id="preview-struktur-bawah" src="#" alt="Preview Struktur Bawah"
+                     style="display: none; max-height: 220px; border: 1px solid #ddd; padding: 6px; border-radius: 10px;">
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="col-md-4">
-    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-    <select name="indikasi_kerusakan2" class="form-select">
-        <option value="">-- Pilih Indikasi --</option>
-        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
-        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
-    </select>
-</div>
+<script>
+    function previewStrukturBawah(event) {
+        const preview = document.getElementById('preview-struktur-bawah');
+        const file = event.target.files[0];
 
-<div class="col-md-4">
-    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-    <select name="tingkat_kerusakan2" class="form-select">
-        <option value="">-- Pilih Tingkat Kerusakan --</option>
-        <option value="Ringan">Ringan</option>
-        <option value="Sedang">Sedang</option>
-        <option value="Berat">Berat</option>
-        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
-    </select>
-</div>
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.style.display = 'block';
+                preview.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        } else {
+            preview.style.display = 'none';
+            preview.src = '#';
+        }
+    }
+</script>
 
 <!-- ===================== BAGIAN 3 ===================== -->
 
