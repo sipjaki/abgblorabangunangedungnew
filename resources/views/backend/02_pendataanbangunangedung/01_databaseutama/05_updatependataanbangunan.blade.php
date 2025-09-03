@@ -355,8 +355,8 @@ th {
     @endphp
 
     @foreach($fotos as $label => $field)
-    <p>Maksimal Ukuran Foto/Gambar 15 MB</p>
     <div class="col-md-3 mb-3">
+        <p>Maksimal Ukuran Foto/Gambar 15 MB</p>
         <div class="card shadow-sm">
             <div class="card-header bg-light fw-bold text-dark">{{ $label }}</div>
             <div class="card-body p-2" style="min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
