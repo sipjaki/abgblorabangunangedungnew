@@ -256,56 +256,45 @@ th {
             'value' => $pemilik->luastanah ?? '-',
         ],
         [
-    'icon' => 'bi-building',
-    'title' => 'Nama Bangunan Gedung',
-    'value' => $pemilik->namabangunan ?? '-',
-],
-[
-    'icon' => 'bi-geo-alt',
-    'title' => 'Alamat Bangunan',
-    'value' => $pemilik->alamatbangunan ?? '-',
-],
-[
-    'icon' => 'bi-house',
-    'title' => 'Fungsi Bangunan',
-    'value' => $pemilik->fungsibangunan ?? '-',
-],
-[
-    'icon' => 'bi-layers',
-    'title' => 'Jumlah Lantai',
-    'value' => $pemilik->jumlahlantai
-        ? $pemilik->jumlahlantai . ' Lantai'
-        : '-',
-],
-[
-    'icon' => 'bi-bounding-box-circles',
-    'title' => 'Luas Lantai Dasar',
-    'value' => $pemilik->luaslantaildasar
-        ? $pemilik->luaslantaildasar . ' M²'
-        : '-',
-],
-[
-    'icon' => 'bi-bounding-box',
-    'title' => 'Total Luas Lantai Gedung',
-    'value' => $pemilik->totalluaslantai
-        ? $pemilik->totalluaslantai . ' M²'
-        : '-',
-],
-[
-    'icon' => 'bi-arrow-up-square',
-    'title' => 'Tinggi Bangunan',
-    'value' => $pemilik->tinggibangunan
-        ? $pemilik->tinggibangunan . ' Meter'
-        : '-',
-],
-[
-    'icon' => 'bi-box',
-    'title' => 'Luas Basement',
-    'value' => $pemilik->luasbasement
-        ? $pemilik->luasbasement . ' M²'
-        : '-',
-],
-
+            'icon' => 'bi-building',
+            'title' => 'Nama Bangunan Gedung',
+            'value' => $pemilik->namabangunan ?? '-',
+        ],
+        [
+            'icon' => 'bi-geo-alt',
+            'title' => 'Alamat Bangunan',
+            'value' => $pemilik->alamatbangunan ?? '-',
+        ],
+        [
+            'icon' => 'bi-house',
+            'title' => 'Fungsi Bangunan',
+            'value' => $pemilik->fungsibangunan ?? '-',
+        ],
+        [
+            'icon' => 'bi-layers',
+            'title' => 'Jumlah Lantai',
+            'value' => $pemilik->jumlahlantai ?? '-',
+        ],
+        [
+            'icon' => 'bi-bounding-box-circles',
+            'title' => 'Luas Lantai Dasar',
+            'value' => $pemilik->luaslantaildasar ?? '-',
+        ],
+        [
+            'icon' => 'bi-bounding-box',
+            'title' => 'Total Luas Lantai Gedung',
+            'value' => $pemilik->totalluaslantai ?? '-',
+        ],
+        [
+            'icon' => 'bi-arrow-up-square',
+            'title' => 'Tinggi Bangunan',
+            'value' => $pemilik->tinggibangunan ?? '-',
+        ],
+        [
+            'icon' => 'bi-box',
+            'title' => 'Luas Basement',
+            'value' => $pemilik->luasbasement ?? '-',
+        ],
         // [
         //     'icon' => 'bi-geo-alt-fill',
         //     'title' => 'Koordinat Bangunan',
