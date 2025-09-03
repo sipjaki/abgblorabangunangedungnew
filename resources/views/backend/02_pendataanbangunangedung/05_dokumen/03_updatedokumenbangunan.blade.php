@@ -356,7 +356,7 @@ th {
         <i class="bi bi-currency-dollar me-1" style="color: blue;"></i> Nilai BG Didirikan
     </label>
     <input type="text" name="nilaibgdidirikan" class="form-control @error('nilaibgdidirikan') is-invalid @enderror"
-           value="{{ old('nilaibgdidirikan', $data->nilaibgdidirikan) }}">
+           value="{{ old('nilaibgdidirikan', $databangunan->nilaibgdidirikan) }}">
     @error('nilaibgdidirikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -366,7 +366,7 @@ th {
         <i class="bi bi-currency-dollar me-1" style="color: blue;"></i> Nilai BG Saat Ini
     </label>
     <input type="text" name="nilaibgsaatini" class="form-control @error('nilaibgsaatini') is-invalid @enderror"
-           value="{{ old('nilaibgsaatini', $data->nilaibgsaatini) }}">
+           value="{{ old('nilaibgsaatini', $databangunan->nilaibgsaatini) }}">
     @error('nilaibgsaatini')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -376,7 +376,7 @@ th {
         <i class="bi bi-percent me-1" style="color: blue;"></i> Koefisien Dasar Bangunan (KDB)
     </label>
     <input type="text" name="koefisien_dasar_bangunan" class="form-control @error('koefisien_dasar_bangunan') is-invalid @enderror"
-           value="{{ old('koefisien_dasar_bangunan', $data->koefisien_dasar_bangunan) }}">
+           value="{{ old('koefisien_dasar_bangunan', $databangunan->koefisien_dasar_bangunan) }}">
     @error('koefisien_dasar_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -386,7 +386,7 @@ th {
         <i class="bi bi-percent me-1" style="color: blue;"></i> Koefisien Lantai Bangunan (KLB)
     </label>
     <input type="text" name="koefisien_lantai_bangunan" class="form-control @error('koefisien_lantai_bangunan') is-invalid @enderror"
-           value="{{ old('koefisien_lantai_bangunan', $data->koefisien_lantai_bangunan) }}">
+           value="{{ old('koefisien_lantai_bangunan', $databangunan->koefisien_lantai_bangunan) }}">
     @error('koefisien_lantai_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -396,7 +396,7 @@ th {
         <i class="bi bi-tree-fill me-1" style="color: green;"></i> Koefisien Daerah Hijau (KDH)
     </label>
     <input type="text" name="koefisien_daerah_hijau" class="form-control @error('koefisien_daerah_hijau') is-invalid @enderror"
-           value="{{ old('koefisien_daerah_hijau', $data->koefisien_daerah_hijau) }}">
+           value="{{ old('koefisien_daerah_hijau', $databangunan->koefisien_daerah_hijau) }}">
     @error('koefisien_daerah_hijau')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -406,7 +406,7 @@ th {
         <i class="bi bi-layers me-1" style="color: blue;"></i> Koefisien Tapak Basement
     </label>
     <input type="text" name="koefisien_tapak_basement" class="form-control @error('koefisien_tapak_basement') is-invalid @enderror"
-           value="{{ old('koefisien_tapak_basement', $data->koefisien_tapak_basement) }}">
+           value="{{ old('koefisien_tapak_basement', $databangunan->koefisien_tapak_basement) }}">
     @error('koefisien_tapak_basement')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -416,7 +416,7 @@ th {
         <i class="bi bi-bounding-box me-1" style="color: red;"></i> Garis Sempadan Bangunan (GSB)
     </label>
     <input type="text" name="garis_sempadan_bangunan" class="form-control @error('garis_sempadan_bangunan') is-invalid @enderror"
-           value="{{ old('garis_sempadan_bangunan', $data->garis_sempadan_bangunan) }}">
+           value="{{ old('garis_sempadan_bangunan', $databangunan->garis_sempadan_bangunan) }}">
     @error('garis_sempadan_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -458,7 +458,7 @@ th {
         <select name="{{ $field }}" class="form-select @error($field) is-invalid @enderror">
             <option value="">-- Pilih --</option>
             @foreach($opsiAdaTidak as $val)
-                <option value="{{ $val }}" {{ old($field, $data->$field) == $val ? 'selected' : '' }}>
+                <option value="{{ $val }}" {{ old($field, $databangunan->$field) == $val ? 'selected' : '' }}>
                     {{ $val }}
                 </option>
             @endforeach
