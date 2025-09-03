@@ -614,13 +614,18 @@ th {
 
 <!-- ===================== BAGIAN 6 sampai BAGIAN 9 ===================== -->
 <!-- Gue lanjut bikin sisa Bagian 6, 7, 8, 9 persis seperti pola di atas -->
+
+</div>
+
+<div class="col-12 mt-4">
+    <h6 class="fw-bold text-primary"><i class="bi bi-brush me-1"></i> Total Nilai Kerusakan</h6>
+</div>
+
 <div class="col-md-4">
     <label class="form-label"><i class="bi bi-123 text-primary me-1"></i> Total Nilai Kerusakan</label>
     <input type="number" step="0.01" name="total_nilai_kerusakan" class="form-control" value="{{ old('total_nilai_kerusakan') }}">
 </div>
 
-
-</div>
 
 
 
