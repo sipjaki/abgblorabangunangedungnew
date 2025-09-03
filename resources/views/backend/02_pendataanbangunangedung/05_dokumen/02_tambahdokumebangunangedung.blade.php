@@ -347,7 +347,7 @@ th {
         {{-- Luas Tanah --}}
         <div class="col-md-6">
     <label class="form-label">
-        <i class="bi bi-cash-coin text-primary me-1"></i> Nilai BG Didirikan
+        <i class="bi bi-cash-coin text-primary me-1"></i> Nilai BG Didirikan (Rp/IDR)
     </label>
     <!-- input tampilan -->
     <input type="text"
@@ -364,7 +364,7 @@ th {
 
 <div class="col-md-6">
     <label class="form-label">
-        <i class="bi bi-currency-dollar text-primary me-1"></i> Nilai BG Saat Ini
+        <i class="bi bi-currency-dollar text-primary me-1"></i> Nilai BG Saat Ini (Rp/IDR)
     </label>
     <!-- input tampilan -->
     <input type="text"
@@ -399,31 +399,31 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-diagram-3 text-primary me-1"></i> Koefisien Dasar Bangunan</label>
+    <label class="form-label"><i class="bi bi-diagram-3 text-primary me-1"></i> Koefisien Dasar Bangunan (M2) </label>
     <input type="number" name="koefisien_dasar_bangunan" class="form-control @error('koefisien_dasar_bangunan') is-invalid @enderror" value="{{ old('koefisien_dasar_bangunan') }}" step="any" min="0" max="1">
     @error('koefisien_dasar_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-diagram-3-fill text-primary me-1"></i> Koefisien Lantai Bangunan</label>
+    <label class="form-label"><i class="bi bi-diagram-3-fill text-primary me-1"></i> Koefisien Lantai Bangunan (M2) </label>
     <input type="number" name="koefisien_lantai_bangunan" class="form-control @error('koefisien_lantai_bangunan') is-invalid @enderror" value="{{ old('koefisien_lantai_bangunan') }}" step="any" min="0">
     @error('koefisien_lantai_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-tree text-primary me-1"></i> Koefisien Daerah Hijau</label>
+    <label class="form-label"><i class="bi bi-tree text-primary me-1"></i> Koefisien Daerah Hijau (%) </label>
     <input type="number" name="koefisien_daerah_hijau" class="form-control @error('koefisien_daerah_hijau') is-invalid @enderror" value="{{ old('koefisien_daerah_hijau') }}" step="any" min="0" max="1">
     @error('koefisien_daerah_hijau')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-layers text-primary me-1"></i> Koefisien Tapak Basement</label>
+    <label class="form-label"><i class="bi bi-layers text-primary me-1"></i> Koefisien Tapak Basement (M2)</label>
     <input type="number" name="koefisien_tapak_basement" class="form-control @error('koefisien_tapak_basement') is-invalid @enderror" value="{{ old('koefisien_tapak_basement') }}" step="any" min="0" max="1">
     @error('koefisien_tapak_basement')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-arrows-move text-primary me-1"></i> Garis Sempadan Bangunan (meter)</label>
+    <label class="form-label"><i class="bi bi-arrows-move text-primary me-1"></i> Garis Sempadan Bangunan (Meter)</label>
     <input type="number" name="garis_sempadan_bangunan" class="form-control @error('garis_sempadan_bangunan') is-invalid @enderror" value="{{ old('garis_sempadan_bangunan') }}" step="0.01" min="0">
     @error('garis_sempadan_bangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
