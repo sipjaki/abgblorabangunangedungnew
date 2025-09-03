@@ -2197,6 +2197,7 @@ public function bedatabgstrukrrusakcreate($id)
 
 public function bedatabgstrukrrusakcreatenew(Request $request)
 {
+    // Validasi request
     $validated = $request->validate([
         'databgkepemilikan_id' => 'required|string',
 
@@ -2245,17 +2246,66 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
         // BAGIAN 9
         'finishing' => 'nullable|string|max:100',
         'total_nilai_kerusakan' => 'nullable|string|max:100',
+
+        // FOTO FOTO TABEL UTAMA
+        'cadangan1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+        'cadangan2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+
+        // FOTO FOTO TABEL KEDUA
+        'struktur_bawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+        'struktur_atas' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+        'struktur_atap' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+        'rangka_atap' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+        'balok' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+        'kolom' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
     ], [
         'databgkepemilikan_id.required' => 'ID Kepemilikan wajib diisi.',
         'databgkepemilikan_id.exists' => 'Data kepemilikan tidak ditemukan.',
+
+        'cadangan1.image' => 'File harus berupa Foto atau Gambar.',
+        'cadangan1.mimes' => 'Format gambar tidak valid. Hanya diperbolehkan: jpeg, png, jpg, gif, webp.',
+        'cadangan1.max' => 'Ukuran gambar terlalu besar. Maksimal 15 MB.',
+
+        'cadangan2.image' => 'File harus berupa Foto atau Gambar.',
+        'cadangan2.mimes' => 'Format gambar tidak valid. Hanya diperbolehkan: jpeg, png, jpg, gif, webp.',
+        'cadangan2.max' => 'Ukuran gambar terlalu besar. Maksimal 15 MB.',
     ]);
 
+    // Upload foto otomatis
+    $uploadFields = [
+        'cadangan1', 'cadangan2',       // tabel pertama
+        'struktur_bawah', 'struktur_atas', 'struktur_atap',
+        'rangka_atap', 'balok', 'kolom' // tabel kedua
+    ];
+
+    foreach ($uploadFields as $field) {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
+            $filename = $field . '_' . time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('fotofaktualbg'), $filename);
+            $validated[$field] = 'fotofaktualbg/' . $filename;
+        }
+    }
+
+    // Simpan ke tabel pertama (tingkat kerusakan)
     databgtingkatkerusahan::create($validated);
 
-    session()->flash('create', 'Data struktur bangunan berhasil ditambahkan!');
+    // Simpan ke tabel kedua (struktur bangunan), tanpa cadangan1 & cadangan2
+    databgstrukturbangunan::create([
+        'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
+        'struktur_bawah' => $validated['struktur_bawah'] ?? $validated['struktur_bangunan_bawah'] ?? null,
+        'struktur_atas' => $validated['struktur_atas'] ?? $validated['struktur_bangunan_atas'] ?? null,
+        'struktur_atap' => $validated['struktur_atap'] ?? null,
+        'rangka_atap' => $validated['rangka_atap'] ?? $validated['struktur_atap'] ?? null,
+        'balok' => $validated['balok'] ?? $validated['struktur'] ?? null,
+        'kolom' => $validated['kolom'] ?? $validated['pondasi'] ?? null,
+    ]);
+
+   session()->flash('create', 'Data struktur bangunan beserta foto berhasil ditambahkan ke kedua tabel!');
     return redirect()->route('bedatabgstrukrrusak', [
         'id' => $validated['databgkepemilikan_id']
     ]);
+
 }
 
 
