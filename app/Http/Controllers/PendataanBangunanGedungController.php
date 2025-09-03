@@ -788,6 +788,7 @@ public function bedatabgklasifikasi($kepemilikanId)
         'start' => $start,
     ]);
 }
+
 public function bedatabgklasifikasiupdate($id)
 {
     // Cari data kepemilikan (parent)
@@ -1820,19 +1821,22 @@ return redirect()->route('bedatabgdokumen', [
 
 public function bedatabgdokumenupdate($id)
 {
-    // Ambil data bantuan teknis berdasarkan ID
-    $databantuanteknis = databgkepemilikan::find($id);
-    $databantuanteknis = databgintensitasbangunan::find($id);
+    // Cari data kepemilikan (parent)
+    $databgkepemilikan = databgkepemilikan::findOrFail($id);
 
-    if (!$databantuanteknis) {
-        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    // Cari data dokumen/intensitas bangunan berdasarkan parent id
+    $datadokumen = databgintensitasbangunan::where('databgkepemilikan_id', $id)->first();
+
+    if (!$datadokumen) {
+        return abort(404, 'Data dokumen bangunan tidak ditemukan');
     }
 
-    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    // Kirim data ke view form update dokumen
     return view('backend.02_pendataanbangunangedung.05_dokumen.03_updatedokumenbangunan', [
-        'title' => 'Perbaikan Data Dokumen Bangunan Gedung ',
-        'data' => $databantuanteknis,
-        'user' => Auth::user()
+        'title' => 'Perbaikan Data Dokumen Bangunan Gedung',
+        'data' => $databgkepemilikan,   // parent
+        'databangunan' => $datadokumen, // child
+        'user' => Auth::user(),
     ]);
 }
 
