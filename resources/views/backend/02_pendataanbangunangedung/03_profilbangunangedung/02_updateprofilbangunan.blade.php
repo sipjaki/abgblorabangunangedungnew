@@ -366,22 +366,15 @@ th {
 <script>
     const luasTanahInput = document.getElementById('luastanah');
 
-    // Format angka jadi ribuan (Rupiah style)
-    function formatRupiah(angka) {
-        return angka.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
-
-    luasTanahInput.addEventListener('input', function(e) {
-        // Ambil hanya angka
-        let value = this.value.replace(/\D/g, "");
-        // Format ribuan
-        this.value = value ? formatRupiah(value) : "";
+    // Hanya angka yang bisa diketik, langsung bisa hapus
+    luasTanahInput.addEventListener('input', function() {
+        this.value = this.value.replace(/[^0-9]/g, '');
     });
 
-    // Pastikan sebelum submit hanya angka dikirim ke backend
+    // Pastikan sebelum submit hanya angka yang dikirim
     if (luasTanahInput.form) {
         luasTanahInput.form.addEventListener('submit', function() {
-            luasTanahInput.value = luasTanahInput.value.replace(/\D/g, "");
+            luasTanahInput.value = luasTanahInput.value.replace(/[^0-9]/g, '');
         });
     }
 </script>
@@ -439,35 +432,27 @@ th {
 
 {{-- Luas Lantai Dasar --}}
 <div class="col-md-6">
-    <label class="form-label">
-        <i class="bi bi-layers me-1" style="color: blue;"></i> Luas Lantai Dasar
-    </label>
+    <label class="form-label"><i class="bi bi-layers me-1" style="color: blue;"></i> Luas Lantai Dasar</label>
     <div class="input-group">
         <input type="text" name="luaslantaildasar" id="luaslantaildasar"
-            class="form-control @error('luaslantaildasar') is-invalid @enderror"
-            value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}"
-            oninput="this.value = this.value.replace(/[^0-9,\,\.]/g, '');">
+               class="form-control @error('luaslantaildasar') is-invalid @enderror"
+               value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}">
         <span class="input-group-text">M²</span>
         @error('luaslantaildasar')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
 
-
 {{-- Total Luas Lantai Gedung --}}
 <div class="col-md-6">
-    <label class="form-label">
-        <i class="bi bi-grid-3x3-gap-fill me-1" style="color: blue;"></i> Total Luas Lantai Gedung
-    </label>
+    <label class="form-label"><i class="bi bi-grid-3x3-gap-fill me-1" style="color: blue;"></i> Total Luas Lantai Gedung</label>
     <div class="input-group">
         <input type="text" name="totalluaslantai" id="totalluaslantai"
                class="form-control @error('totalluaslantai') is-invalid @enderror"
-               value="{{ old('totalluaslantai', $databangunan->totalluaslantai) }}"
-               oninput="this.value = this.value.replace(/[^0-9,\.]/g, '');">
+               value="{{ old('totalluaslantai', $databangunan->totalluaslantai) }}">
         <span class="input-group-text">M²</span>
         @error('totalluaslantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
-
 
 {{-- Tinggi Bangunan --}}
 <div class="col-md-6">
@@ -480,21 +465,38 @@ th {
         @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
+
 {{-- Luas Basement --}}
 <div class="col-md-6">
-    <label class="form-label">
-        <i class="bi bi-layers-half me-1" style="color: blue;"></i> Luas Basement
-    </label>
+    <label class="form-label"><i class="bi bi-layers-half me-1" style="color: blue;"></i> Luas Basement</label>
     <div class="input-group">
         <input type="text" name="luasbasement" id="luasbasement"
                class="form-control @error('luasbasement') is-invalid @enderror"
-               value="{{ old('luasbasement', $databangunan->luasbasement) }}"
-               oninput="this.value = this.value.replace(/[^0-9,\,\.]/g, '');">
+               value="{{ old('luasbasement', $databangunan->luasbasement) }}">
         <span class="input-group-text">M²</span>
         @error('luasbasement')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
 
+<script>
+const fields = ['jumlahlantai', 'luaslantaildasar', 'totalluaslantai', 'tinggibangunan', 'luasbasement'];
+
+fields.forEach(id => {
+    const input = document.getElementById(id);
+
+    // Hanya angka yang bisa diketik, bisa langsung hapus
+    input.addEventListener('input', () => {
+        input.value = input.value.replace(/[^0-9]/g, '');
+    });
+
+    // Sebelum submit, hapus semua non-angka
+    if(input.form) {
+        input.form.addEventListener('submit', () => {
+            input.value = input.value.replace(/[^0-9]/g, '');
+        });
+    }
+});
+</script>
 
 
 {{-- Koordinat Bangunan --}}
