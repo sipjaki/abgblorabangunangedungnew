@@ -340,7 +340,7 @@ th {
 </div>
 
 <form id="formPemilik" action="{{ route('bedatabgmebangunanupdatenew', $databangunan->id) }}" method="POST">
-    @csrf
+    @csrf   
     @method('PUT')
 
     {{-- <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}"> --}}

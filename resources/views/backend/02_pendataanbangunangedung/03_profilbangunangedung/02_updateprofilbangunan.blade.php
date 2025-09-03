@@ -366,15 +366,22 @@ th {
 <script>
     const luasTanahInput = document.getElementById('luastanah');
 
-    // Hanya angka yang bisa diketik, langsung bisa hapus
-    luasTanahInput.addEventListener('input', function() {
-        this.value = this.value.replace(/[^0-9]/g, '');
+    // Format angka jadi ribuan (Rupiah style)
+    function formatRupiah(angka) {
+        return angka.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    luasTanahInput.addEventListener('input', function(e) {
+        // Ambil hanya angka
+        let value = this.value.replace(/\D/g, "");
+        // Format ribuan
+        this.value = value ? formatRupiah(value) : "";
     });
 
-    // Pastikan sebelum submit hanya angka yang dikirim
+    // Pastikan sebelum submit hanya angka dikirim ke backend
     if (luasTanahInput.form) {
         luasTanahInput.form.addEventListener('submit', function() {
-            luasTanahInput.value = luasTanahInput.value.replace(/[^0-9]/g, '');
+            luasTanahInput.value = luasTanahInput.value.replace(/\D/g, "");
         });
     }
 </script>
@@ -431,16 +438,19 @@ th {
 </div>
 
 {{-- Luas Lantai Dasar --}}
+
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-layers me-1" style="color: blue;"></i> Luas Lantai Dasar</label>
     <div class="input-group">
         <input type="text" name="luaslantaildasar" id="luaslantaildasar"
-               class="form-control @error('luaslantaildasar') is-invalid @enderror"
-               value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}">
-        <span class="input-group-text">M²</span>
+       class="form-control @error('luaslantaildasar') is-invalid @enderror"
+       value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}"
+       oninput="this.value = this.value.replace(',', '.');">
+<span class="input-group-text">M²</span>
         @error('luaslantaildasar')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
+
 
 {{-- Total Luas Lantai Gedung --}}
 <div class="col-md-6">
