@@ -249,7 +249,6 @@ th {
 <div class="row g-4">
     @forelse ($subdatapemilik as $pemilik)
 @php
-    @php
 $infoItems = [
     [
         'icon' => 'bi-rulers',
