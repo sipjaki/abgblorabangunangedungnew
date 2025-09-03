@@ -942,7 +942,7 @@ th {
     <!-- Kolom Kiri -->
     <div class="col-md-6">
         <div class="mb-3">
-            <label class="form-label"><i class="bi bi-paint-bucket text-primary me-1"></i> Foto Faktual Finishing | Max 15 MB</label>
+            <label class="form-label"><i class="bi bi-paint-bucket text-primary me-1"></i> Finishing </label>
             <input type="text" name="finishing" class="form-control" value="{{ old('finishing') }}">
         </div>
 
@@ -972,7 +972,7 @@ th {
     <!-- Kolom Kanan -->
     <div class="col-md-6">
         <div class="mb-3">
-            <label class="form-label"><i class="bi bi-columns-gap text-warning me-1"></i> Kolom</label>
+            <label class="form-label"><i class="bi bi-columns-gap text-warning me-1"></i> Foto Faktual Finishing | Max 15 MB</label>
             <input type="file" name="kolom"
                    class="form-control @error('kolom') is-invalid @enderror"
                    accept="image/*"
