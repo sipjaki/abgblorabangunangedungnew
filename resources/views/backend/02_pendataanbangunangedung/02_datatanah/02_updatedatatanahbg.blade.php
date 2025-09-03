@@ -351,14 +351,35 @@ th {
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
 <div class="row g-3 mt-2">
     {{-- Status Hak Tanah --}}
-    <div class="col-md-6">
-        <label class="form-label">
-            <i class="bi bi-geo-fill text-navy me-1" style="color: blue"></i> Status Hak Tanah
-        </label>
-        <input type="text" name="statushaktanah" class="form-control @error('statushaktanah') is-invalid @enderror"
-               value="{{ old('statushaktanah', $databangunan->statushaktanah) }}">
-        @error('statushaktanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+<div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-card-list text-navy me-1" style="color: blue"></i> Status Hak Tanah
+    </label>
+    <select name="statushaktanah" class="form-control @error('statushaktanah') is-invalid @enderror">
+        <option value="">-- Pilih Status Hak Tanah --</option>
+        <option value="Dalam Proses" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Dalam Proses' ? 'selected' : '' }}>Dalam Proses</option>
+        <option value="Hak Milik" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Hak Milik' ? 'selected' : '' }}>Hak Milik</option>
+        <option value="Hak Milik (Pemkab/Pemda/Negara)" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Hak Milik (Pemkab/Pemda/Negara)' ? 'selected' : '' }}>Hak Milik (Pemkab/Pemda/Negara)</option>
+        <option value="Hak Pakai" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Hak Pakai' ? 'selected' : '' }}>Hak Pakai</option>
+        <option value="Hak Pakai (Milik Desa)" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Hak Pakai (Milik Desa)' ? 'selected' : '' }}>Hak Pakai (Milik Desa)</option>
+        <option value="Hak Pakai (Milik Pemkab)" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Hak Pakai (Milik Pemkab)' ? 'selected' : '' }}>Hak Pakai (Milik Pemkab)</option>
+        <option value="Milik Desa" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Milik Desa' ? 'selected' : '' }}>Milik Desa</option>
+        <option value="Milik Kelurahan" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Milik Kelurahan' ? 'selected' : '' }}>Milik Kelurahan</option>
+        <option value="Milik Negara" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Milik Negara' ? 'selected' : '' }}>Milik Negara</option>
+        <option value="Milik Pemkab" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Milik Pemkab' ? 'selected' : '' }}>Milik Pemkab</option>
+        <option value="Milik Pemkab/Pemda/Negara" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Milik Pemkab/Pemda/Negara' ? 'selected' : '' }}>Milik Pemkab/Pemda/Negara</option>
+        <option value="Pemda" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Pemda' ? 'selected' : '' }}>Pemda</option>
+        <option value="Pemdes" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Pemdes' ? 'selected' : '' }}>Pemdes</option>
+        <option value="Pemkab Blora" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Pemkab Blora' ? 'selected' : '' }}>Pemkab Blora</option>
+        <option value="Tanah Gg" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Tanah Gg' ? 'selected' : '' }}>Tanah Gg</option>
+        <option value="Tidak Mengetahui" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Tidak Mengetahui' ? 'selected' : '' }}>(Tidak Mengetahui)</option>
+        <option value="Wakaf" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Wakaf' ? 'selected' : '' }}>Wakaf</option>
+    </select>
+    @error('statushaktanah')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
 
     {{-- Status Kepemilikan --}}
     <div class="col-md-6">
