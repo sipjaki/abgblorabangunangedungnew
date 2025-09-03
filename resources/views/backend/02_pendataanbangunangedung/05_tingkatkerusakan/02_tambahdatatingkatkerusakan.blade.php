@@ -422,7 +422,7 @@ th {
     <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label">
-                <i class="bi bi-bricks text-primary me-1"></i> Pondasi (Struktur Bawah)
+                <i class="bi bi-bricks text-primary me-1"></i> Foto Faktual Pondasi | Max 15 MB
             </label>
             <input type="file" name="struktur_bawah"
                    class="form-control @error('struktur_bawah') is-invalid @enderror"
@@ -501,7 +501,7 @@ th {
     <!-- Kolom Kanan -->
     <div class="col-md-6">
         <div class="mb-3">
-            <label class="form-label"><i class="bi bi-building text-success me-1"></i> Struktur Atas</label>
+            <label class="form-label"><i class="bi bi-building text-success me-1"></i> Foto Faktual Struktur | Max 15 MB</label>
             <input type="file" name="struktur_atas"
                    class="form-control @error('struktur_atas') is-invalid @enderror"
                    accept="image/*"
@@ -578,7 +578,7 @@ th {
     <!-- Kolom Kanan -->
     <div class="col-md-6">
         <div class="mb-3">
-            <label class="form-label"><i class="bi bi-house-door text-warning me-1"></i> Struktur Atap</label>
+            <label class="form-label"><i class="bi bi-house-door text-warning me-1"></i> Foto Faktual Atap | Max 15 MB</label>
             <input type="file" name="struktur_atap"
                    class="form-control @error('struktur_atap') is-invalid @enderror"
                    accept="image/*"
@@ -656,7 +656,7 @@ th {
     <!-- Kolom Kanan -->
     <div class="col-md-6">
         <div class="mb-3">
-            <label class="form-label"><i class="bi bi-house-gear text-danger me-1"></i> Rangka Atap</label>
+            <label class="form-label"><i class="bi bi-house-gear text-danger me-1"></i> Foto Faktual Lantai | Max 15 MB</label>
             <input type="file" name="rangka_atap"
                    class="form-control @error('rangka_atap') is-invalid @enderror"
                    accept="image/*"
@@ -736,7 +736,7 @@ th {
     <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label">
-                <i class="bi bi-image text-secondary me-1"></i> Cadangan 1
+                <i class="bi bi-image text-secondary me-1"></i> Foto Faktual Dinding | Max 15 MB
             </label>
             <input type="file" name="cadangan1"
                    class="form-control @error('cadangan1') is-invalid @enderror"
@@ -814,7 +814,7 @@ th {
     <!-- Kolom Kanan -->
     <div class="col-md-6">
         <div class="mb-3">
-            <label class="form-label"><i class="bi bi-image text-success me-1"></i> Cadangan 2</label>
+            <label class="form-label"><i class="bi bi-image text-success me-1"></i> Foto Faktual Plafond | Max 15 MB</label>
             <input type="file" name="cadangan2"
                    class="form-control @error('cadangan2') is-invalid @enderror"
                    accept="image/*"
@@ -891,7 +891,7 @@ th {
     <!-- Kolom Kanan -->
     <div class="col-md-6">
         <div class="mb-3">
-            <label class="form-label"><i class="bi bi-diagram-3 text-info me-1"></i> Balok</label>
+            <label class="form-label"><i class="bi bi-diagram-3 text-info me-1"></i> Foto Faktual Utilitas | Max 15 MB</label>
             <input type="file" name="balok"
                    class="form-control @error('balok') is-invalid @enderror"
                    accept="image/*"
@@ -942,7 +942,7 @@ th {
     <!-- Kolom Kiri -->
     <div class="col-md-6">
         <div class="mb-3">
-            <label class="form-label"><i class="bi bi-paint-bucket text-primary me-1"></i> Finishing</label>
+            <label class="form-label"><i class="bi bi-paint-bucket text-primary me-1"></i> Foto Faktual Finishing | Max 15 MB</label>
             <input type="text" name="finishing" class="form-control" value="{{ old('finishing') }}">
         </div>
 
@@ -1011,6 +1011,15 @@ th {
 <!-- ===================== BAGIAN 6 sampai BAGIAN 9 ===================== -->
 <!-- Gue lanjut bikin sisa Bagian 6, 7, 8, 9 persis seperti pola di atas -->
 
+</div>
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+    <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+        <i class="bi bi-file-earmark-text-fill me-2"></i>
+        Total Nilai Kerusakan Bangunan Gedung
+    </h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
 <div class="col-12 mt-4">
