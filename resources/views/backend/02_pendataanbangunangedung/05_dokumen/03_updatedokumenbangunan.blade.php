@@ -355,20 +355,50 @@ th {
     <label class="form-label">
         <i class="bi bi-currency-dollar me-1" style="color: blue;"></i> Nilai BG Didirikan
     </label>
-    <input type="text" name="nilaibgdidirikan" class="form-control @error('nilaibgdidirikan') is-invalid @enderror"
+    <input type="text" id="nilaibgdidirikan_display"
+           class="form-control @error('nilaibgdidirikan') is-invalid @enderror"
+           value="{{ old('nilaibgdidirikan', number_format($databangunan->nilaibgdidirikan, 0, ',', '.')) }}">
+    <input type="hidden" name="nilaibgdidirikan" id="nilaibgdidirikan"
            value="{{ old('nilaibgdidirikan', $databangunan->nilaibgdidirikan) }}">
     @error('nilaibgdidirikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-{{-- Nilai BG Saat Ini --}}
 <div class="col-md-6">
     <label class="form-label">
         <i class="bi bi-currency-dollar me-1" style="color: blue;"></i> Nilai BG Saat Ini
     </label>
-    <input type="text" name="nilaibgsaatini" class="form-control @error('nilaibgsaatini') is-invalid @enderror"
+    <input type="text" id="nilaibgsaatini_display"
+           class="form-control @error('nilaibgsaatini') is-invalid @enderror"
+           value="{{ old('nilaibgsaatini', number_format($databangunan->nilaibgsaatini, 0, ',', '.')) }}">
+    <input type="hidden" name="nilaibgsaatini" id="nilaibgsaatini"
            value="{{ old('nilaibgsaatini', $databangunan->nilaibgsaatini) }}">
     @error('nilaibgsaatini')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+
+{{-- Script format rupiah --}}
+<script>
+function formatRupiah(angka) {
+    return angka.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+function onlyNumber(str) {
+    return str.replace(/\D/g, "");
+}
+
+// Untuk Nilai BG Didirikan
+document.getElementById('nilaibgdidirikan_display').addEventListener('input', function(e) {
+    let angka = onlyNumber(this.value);
+    document.getElementById('nilaibgdidirikan').value = angka; // simpan ke hidden
+    this.value = formatRupiah(angka); // tampilkan format ribuan
+});
+
+// Untuk Nilai BG Saat Ini
+document.getElementById('nilaibgsaatini_display').addEventListener('input', function(e) {
+    let angka = onlyNumber(this.value);
+    document.getElementById('nilaibgsaatini').value = angka;
+    this.value = formatRupiah(angka);
+});
+</script>
 
 {{-- KDB --}}
 <div class="col-md-6">
