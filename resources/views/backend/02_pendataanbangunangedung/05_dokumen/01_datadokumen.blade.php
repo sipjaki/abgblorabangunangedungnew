@@ -252,40 +252,55 @@ th {
 @php
     $infoItems = [
         [
-            'icon' => 'bi-cash-coin',
-            'title' => 'Nilai BG Didirikan',
-            'value' => $pemilik->nilaibgdidirikan ?? '-',
-        ],
+    'icon' => 'bi-cash-coin',
+    'title' => 'Nilai BG Didirikan',
+    'value' => $pemilik->nilaibgdidirikan
+        ? 'Rp. ' . number_format($pemilik->nilaibgdidirikan, 0, ',', '.')
+        : '-',
+],
+
+[
+    'icon' => 'bi-currency-dollar',
+    'title' => 'Nilai BG Saat Ini',
+    'value' => $pemilik->nilaibgsaatini
+        ? 'Rp. ' . number_format($pemilik->nilaibgsaatini, 0, ',', '.')
+        : '-',
+],
         [
-            'icon' => 'bi-currency-dollar',
-            'title' => 'Nilai BG Saat Ini',
-            'value' => $pemilik->nilaibgsaatini ?? '-',
-        ],
+    'icon' => 'bi-diagram-3',
+    'title' => 'Koefisien Dasar Bangunan',
+    'value' => $pemilik->koefisien_dasar_bangunan
+        ? $pemilik->koefisien_dasar_bangunan . ' M²'
+        : '-',
+],
+[
+    'icon' => 'bi-diagram-3-fill',
+    'title' => 'Koefisien Lantai Bangunan',
+    'value' => $pemilik->koefisien_lantai_bangunan
+        ? $pemilik->koefisien_lantai_bangunan . ' M²'
+        : '-',
+],
+
         [
-            'icon' => 'bi-diagram-3',
-            'title' => 'Koefisien Dasar Bangunan',
-            'value' => $pemilik->koefisien_dasar_bangunan ?? '-',
-        ],
-        [
-            'icon' => 'bi-diagram-3-fill',
-            'title' => 'Koefisien Lantai Bangunan',
-            'value' => $pemilik->koefisien_lantai_bangunan ?? '-',
-        ],
-        [
-            'icon' => 'bi-tree',
-            'title' => 'Koefisien Daerah Hijau',
-            'value' => $pemilik->koefisien_daerah_hijau ?? '-',
-        ],
+    'icon' => 'bi-tree',
+    'title' => 'Koefisien Daerah Hijau',
+    'value' => $pemilik->koefisien_daerah_hijau
+        ? $pemilik->koefisien_daerah_hijau . ' %'
+        : '-',
+],
+
         [
             'icon' => 'bi-layers-half',
             'title' => 'Koefisien Tapak Basement',
             'value' => $pemilik->koefisien_tapak_basement ?? '-',
         ],
-        [
-            'icon' => 'bi-arrows-move',
-            'title' => 'Garis Sempadan Bangunan',
-            'value' => $pemilik->garis_sempadan_bangunan ?? '-',
-        ],
+[
+    'icon' => 'bi-arrows-move',
+    'title' => 'Garis Sempadan Bangunan',
+    'value' => $pemilik->garis_sempadan_bangunan
+        ? $pemilik->garis_sempadan_bangunan . ' Meter'
+        : '-',
+],
         [
             'icon' => 'bi-file-earmark-text',
             'title' => 'Gambar Teknis Rencana',
