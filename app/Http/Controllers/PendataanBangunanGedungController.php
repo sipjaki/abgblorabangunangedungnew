@@ -1906,30 +1906,32 @@ public function bedatabgmebangunan($id)
     // Ambil user login
     $user = Auth::user();
 
-    // Cari data pbg berdasarkan ID
-    $data = databgkepemilikan::findOrFail($id);
+    // Cari data kepemilikan dulu
+    $data = databgkepemilikan::find($id);
 
-    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
-    $subdatapemilik = databgdokumenmepbangunan::where('databgkepemilikan_id', $data->id)->paginate(15);
+    // Kalau tidak ada kepemilikan, buat object kosong biar link tambah data tetap ada
+    if (!$data) {
+        $data = new databgkepemilikan();
+        $data->id = $id;
+    }
+
+    // Ambil data dokumen MEP berdasarkan parent
+    $subdatapemilik = databgdokumenmepbangunan::where('databgkepemilikan_id', $id)
+                        ->paginate(15);
 
     // Hitung nomor urut mulai untuk paginasi
     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
-
-    // Ambil data jenis pengajuan
-    // $datapbgslf = jenispengajuanpbgslfper::all();
 
     // Kirim data ke view
     return view('backend.02_pendataanbangunangedung.05_mep.01_datameppendataan', [
         'title' => 'Informasi Data Dokumen MEP Bangunan Gedung',
         'title_halaman' => 'Informasi Data Dokumen MEP Bangunan Gedung',
         'user' => $user,
-        'data' => $data,
-        // 'datapbgslf' => $datapbgslf,
-        'subdatapemilik' => $subdatapemilik,
+        'data' => $data,            // ini parent
+        'subdatapemilik' => $subdatapemilik, // ini child
         'start' => $start,
     ]);
 }
-
 
 public function bedatabgmebangunancreate($id)
 {
