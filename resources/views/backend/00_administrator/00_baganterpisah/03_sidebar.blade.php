@@ -813,7 +813,7 @@
     </a>
 </li> --}}
 <li class="nav-item">
-    <a href="/404" class="nav-link">
+    <a href="/bedatabangunankic" class="nav-link">
         <i class="bi bi-person-vcard nav-icon" style="color: white; font-size: 16px;"></i>
         <p style="color: white; margin-left: 8px;">Kartu Inventaris <br> Barang (C) </p>
     </a>
