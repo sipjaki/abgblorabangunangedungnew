@@ -445,7 +445,7 @@ th {
         <input type="text" name="luaslantaildasar" id="luaslantaildasar"
        class="form-control @error('luaslantaildasar') is-invalid @enderror"
        value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}"
-       oninput="this.value = this.value.replace(',', '.');">
+       oninput="this.value = this.value.replace(/,/g, '.').replace(/[^0-9.]/g, '');">
 <span class="input-group-text">M²</span>
         @error('luaslantaildasar')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
