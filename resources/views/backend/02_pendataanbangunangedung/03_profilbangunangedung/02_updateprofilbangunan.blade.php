@@ -446,12 +446,11 @@ th {
         <input type="text" name="luaslantaildasar" id="luaslantaildasar"
             class="form-control @error('luaslantaildasar') is-invalid @enderror"
             value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}"
-            oninput="this.value = this.value.replace(/[^0-9,\.]/g, '');">
+            oninput="this.value = this.value.replace(/[^0-9,\,\.]/g, '');">
         <span class="input-group-text">M²</span>
         @error('luaslantaildasar')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
-
 
 
 {{-- Total Luas Lantai Gedung --}}
@@ -468,6 +467,7 @@ th {
         @error('totalluaslantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
+
 
 {{-- Tinggi Bangunan --}}
 <div class="col-md-6">
@@ -489,7 +489,7 @@ th {
         <input type="text" name="luasbasement" id="luasbasement"
                class="form-control @error('luasbasement') is-invalid @enderror"
                value="{{ old('luasbasement', $databangunan->luasbasement) }}"
-               oninput="this.value = this.value.replace(/[^0-9,\.]/g, '');">
+               oninput="this.value = this.value.replace(/[^0-9,\,\.]/g, '');">
         <span class="input-group-text">M²</span>
         @error('luasbasement')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
