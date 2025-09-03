@@ -26,42 +26,42 @@ return new class extends Migration
     $table->string('tingkat_kerusakan1')->nullable();
 
     // BAGIAN 2
-    $table->string('pondasi')->nullable();
+    $table->string('pondasi')->nullable(); // struktur_bawah
     $table->string('indikasi_kerusakan2')->nullable();
     $table->string('tingkat_kerusakan2')->nullable();
 
     // BAGIAN 3
-    $table->string('struktur')->nullable();
+    $table->string('struktur')->nullable(); // struktur_atas
     $table->string('indikasi_kerusakan3')->nullable();
     $table->string('tingkat_kerusakan3')->nullable();
 
     // BAGIAN 4
-    $table->string('atap')->nullable();
+    $table->string('atap')->nullable(); // struktur_atap
     $table->string('indikasi_kerusakan4')->nullable();
     $table->string('tingkat_kerusakan4')->nullable();
 
     // BAGIAN 5
-    $table->string('lantai')->nullable();
+    $table->string('lantai')->nullable(); //rangka_atap
     $table->string('indikasi_kerusakan5')->nullable();
     $table->string('tingkat_kerusakan5')->nullable();
 
     // BAGIAN 6
-    $table->string('dinding')->nullable();
+    $table->string('dinding')->nullable(); // cadangan 1
     $table->string('indikasi_kerusakan6')->nullable();
     $table->string('tingkat_kerusakan6')->nullable();
 
     // BAGIAN 7
-    $table->string('plafond')->nullable();
+    $table->string('plafond')->nullable(); // cadangan 2
     $table->string('indikasi_kerusakan7')->nullable();
     $table->string('tingkat_kerusakan7')->nullable();
 
     // BAGIAN 8
-    $table->string('utilitas')->nullable();
+    $table->string('utilitas')->nullable(); // balok
     $table->string('indikasi_kerusakan8')->nullable();
     $table->string('tingkat_kerusakan8')->nullable();
 
     // bagian 9
-    $table->string('finishing')->nullable();
+    $table->string('finishing')->nullable(); // kolom
     $table->string('total_nilai_kerusakan')->nullable();
 
     $table->string('cadangan1')->nullable();

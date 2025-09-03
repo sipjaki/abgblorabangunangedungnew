@@ -370,8 +370,16 @@ th {
 
 
 <!-- ===================== BAGIAN 2 ===================== -->
-<div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-layers me-1"></i> Bagian 1 - Pondasi</h6>
+
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Bagian 1 - Pondasi
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
 <div class="col-md-4">
@@ -401,6 +409,14 @@ th {
 </div>
 
 <!-- ===================== BAGIAN 3 ===================== -->
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Bagian 2 - Struktur
+</h5>
+
 <div class="col-12 mt-4">
     <h6 class="fw-bold text-primary"><i class="bi bi-columns-gap me-1"></i> Bagian 2 - Struktur</h6>
 </div>
@@ -431,8 +447,15 @@ th {
 </div>
 
 <!-- ===================== BAGIAN 4 ===================== -->
-<div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-house-door me-1"></i> Bagian 3 - Atap</h6>
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Bagian 3 - Atap
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
 <div class="col-md-4">
@@ -461,9 +484,17 @@ th {
 </div>
 
 <!-- ===================== BAGIAN 5 ===================== -->
-<div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-grid-3x3-gap me-1"></i> Bagian 4 - Lantai</h6>
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Bagian 4 - Lantai
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
+
 
 <div class="col-md-4">
     <label class="form-label"><i class="bi bi-square text-primary me-1"></i> Lantai</label>
@@ -490,8 +521,15 @@ th {
     </select>
 </div>
 <!-- ===================== BAGIAN 6 ===================== -->
-<div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-bricks me-1"></i> Bagian 5 - Dinding</h6>
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Bagian 5 - Dinding
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
 <div class="col-md-4">
@@ -520,8 +558,15 @@ th {
 </div>
 
 <!-- ===================== BAGIAN 7 ===================== -->
-<div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-window me-1"></i> Bagian 6 - Plafond</h6>
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Bagian 6 - Plafond
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
 <div class="col-md-4">
@@ -550,8 +595,15 @@ th {
 </div>
 
 <!-- ===================== BAGIAN 8 ===================== -->
-<div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-lightning me-1"></i> Bagian 7 - Utilitas</h6>
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Bagian 7 - Utilitas
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
 <div class="col-md-4">
@@ -580,8 +632,16 @@ th {
 </div>
 
 <!-- ===================== BAGIAN 9 ===================== -->
-<div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-brush me-1"></i> Bagian 8 - Finishing</h6>
+
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+   <h5 class="text-primary fw-bold mt-2" style="font-size: 16px;">
+    <i class="bi bi-file-earmark-text-fill me-2"></i>
+    Bagian 8 - Finishing
+</h5>
+</h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
 <div class="col-md-4">
