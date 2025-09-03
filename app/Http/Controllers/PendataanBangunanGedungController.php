@@ -2261,7 +2261,7 @@ public function perkecamatanbangunan(Request $request, $kecamatan_id)
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
 
     $query = databgkepemilikan::with('kecamatanblora')
                 ->where('kecamatanblora_id', $kecamatan_id); // ✅ filter berdasarkan kecamatan
