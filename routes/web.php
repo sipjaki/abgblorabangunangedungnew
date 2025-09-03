@@ -191,9 +191,11 @@ Route::get(
 
         // DATA DOKUMEN MEP STATUS BANGUNAN GEDUNG
         Route::get(
-    '/bedatabgmebangunan/{id}',
+            '/bedatabgmebangunan/{id}',
     [PendataanBangunanGedungController::class, 'bedatabgmebangunan']
 )->middleware('auth')->name('bedatabgmebangunan');
+
+Route::delete('/bedatabgmebangunandelete/{id}', [PendataanBangunanGedungController::class, 'bedatabgmebangunandelete'])->middleware('auth')->name('bedatabgmebangunandelete');
 
 // Route::get('/bedatabgmebangunan/{id}', [PendataanBangunanGedungController::class, 'bedatabgmebangunan'])->middleware('auth')->name('bedatabgmebangunan');
 
