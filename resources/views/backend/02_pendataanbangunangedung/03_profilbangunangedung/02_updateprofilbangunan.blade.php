@@ -496,26 +496,6 @@ th {
 </div>
 
 
-<script>
-const fields = ['jumlahlantai', 'luaslantaildasar', 'totalluaslantai', 'tinggibangunan', 'luasbasement'];
-
-fields.forEach(id => {
-    const input = document.getElementById(id);
-
-    // Hanya angka yang bisa diketik, bisa langsung hapus
-    input.addEventListener('input', () => {
-        input.value = input.value.replace(/[^0-9]/g, '');
-    });
-
-    // Sebelum submit, hapus semua non-angka
-    if(input.form) {
-        input.form.addEventListener('submit', () => {
-            input.value = input.value.replace(/[^0-9]/g, '');
-        });
-    }
-});
-</script>
-
 
 {{-- Koordinat Bangunan --}}
 
