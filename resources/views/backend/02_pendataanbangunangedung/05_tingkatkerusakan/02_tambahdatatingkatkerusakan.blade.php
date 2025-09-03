@@ -347,7 +347,7 @@ th {
         {{-- Luas Tanah --}}
         <!-- ===================== BAGIAN 1 ===================== -->
 <div class="col-12">
-    <h6 class="mt-3 fw-bold text-primary"><i class="bi bi-building me-1"></i> Bagian 1 - Struktur Bangunan</h6>
+    <h6 class="mt-3 fw-bold text-primary"><i class="bi bi-building me-1"></i>Struktur Bangunan Bawah & Atas</h6>
 </div>
 
 <div class="col-md-4">
@@ -368,31 +368,10 @@ th {
     @error('struktur_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-    <select name="indikasi_kerusakan1" class="form-select @error('indikasi_kerusakan1') is-invalid @enderror">
-        <option value="">-- Pilih Indikasi --</option>
-        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
-        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
-    </select>
-    @error('indikasi_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-    <select name="tingkat_kerusakan1" class="form-select @error('tingkat_kerusakan1') is-invalid @enderror">
-        <option value="">-- Pilih Tingkat Kerusakan --</option>
-        <option value="Ringan">Ringan</option>
-        <option value="Sedang">Sedang</option>
-        <option value="Berat">Berat</option>
-        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
-    </select>
-    @error('tingkat_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
 
 <!-- ===================== BAGIAN 2 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-layers me-1"></i> Bagian 2 - Pondasi</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-layers me-1"></i> Bagian 1 - Pondasi</h6>
 </div>
 
 <div class="col-md-4">
@@ -423,7 +402,7 @@ th {
 
 <!-- ===================== BAGIAN 3 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-columns-gap me-1"></i> Bagian 3 - Struktur</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-columns-gap me-1"></i> Bagian 2 - Struktur</h6>
 </div>
 
 <div class="col-md-4">
@@ -453,7 +432,7 @@ th {
 
 <!-- ===================== BAGIAN 4 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-house-door me-1"></i> Bagian 4 - Atap</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-house-door me-1"></i> Bagian 3 - Atap</h6>
 </div>
 
 <div class="col-md-4">
@@ -483,7 +462,7 @@ th {
 
 <!-- ===================== BAGIAN 5 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-grid-3x3-gap me-1"></i> Bagian 5 - Lantai</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-grid-3x3-gap me-1"></i> Bagian 4 - Lantai</h6>
 </div>
 
 <div class="col-md-4">
@@ -512,7 +491,7 @@ th {
 </div>
 <!-- ===================== BAGIAN 6 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-bricks me-1"></i> Bagian 6 - Dinding</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-bricks me-1"></i> Bagian 5 - Dinding</h6>
 </div>
 
 <div class="col-md-4">
@@ -542,7 +521,7 @@ th {
 
 <!-- ===================== BAGIAN 7 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-window me-1"></i> Bagian 7 - Plafond</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-window me-1"></i> Bagian 6 - Plafond</h6>
 </div>
 
 <div class="col-md-4">
@@ -572,7 +551,7 @@ th {
 
 <!-- ===================== BAGIAN 8 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-lightning me-1"></i> Bagian 8 - Utilitas</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-lightning me-1"></i> Bagian 7 - Utilitas</h6>
 </div>
 
 <div class="col-md-4">
@@ -602,7 +581,7 @@ th {
 
 <!-- ===================== BAGIAN 9 ===================== -->
 <div class="col-12 mt-4">
-    <h6 class="fw-bold text-primary"><i class="bi bi-brush me-1"></i> Bagian 9 - Finishing</h6>
+    <h6 class="fw-bold text-primary"><i class="bi bi-brush me-1"></i> Bagian 8 - Finishing</h6>
 </div>
 
 <div class="col-md-4">
@@ -610,16 +589,40 @@ th {
     <input type="text" name="finishing" class="form-control" value="{{ old('finishing') }}">
 </div>
 
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+    <select name="indikasi_kerusakan1" class="form-select @error('indikasi_kerusakan1') is-invalid @enderror">
+        <option value="">-- Pilih Indikasi --</option>
+        <option value="Tidak Ada Indikasi Kerusakan">Tidak Ada Indikasi Kerusakan</option>
+        <option value="Indikasi Kerusakan">Indikasi Kerusakan</option>
+    </select>
+    @error('indikasi_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+<div class="col-md-6">
+    <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+    <select name="tingkat_kerusakan1" class="form-select @error('tingkat_kerusakan1') is-invalid @enderror">
+        <option value="">-- Pilih Tingkat Kerusakan --</option>
+        <option value="Ringan">Ringan</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Berat">Berat</option>
+        <option value="Tidak Ada Kerusakan">Tidak Ada Kerusakan</option>
+    </select>
+    @error('tingkat_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+
+
+<!-- ===================== BAGIAN 6 sampai BAGIAN 9 ===================== -->
+<!-- Gue lanjut bikin sisa Bagian 6, 7, 8, 9 persis seperti pola di atas -->
 <div class="col-md-4">
     <label class="form-label"><i class="bi bi-123 text-primary me-1"></i> Total Nilai Kerusakan</label>
     <input type="number" step="0.01" name="total_nilai_kerusakan" class="form-control" value="{{ old('total_nilai_kerusakan') }}">
 </div>
 
-<!-- ===================== BAGIAN 6 sampai BAGIAN 9 ===================== -->
-<!-- Gue lanjut bikin sisa Bagian 6, 7, 8, 9 persis seperti pola di atas -->
-
 
 </div>
+
+
 
 <div class="row g-3 mt-2">
 
