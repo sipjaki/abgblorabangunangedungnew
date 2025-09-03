@@ -175,7 +175,13 @@ Route::put('/bedatabgklasifikasiupdatenew/{id}', [PendataanBangunanGedungControl
 Route::get('/bedatabgklasifikasicreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasicreate'])->middleware('auth')->name('bedatabgklasifikasicreate');
 Route::post('/bedatabgklasifikasicreatenew', [PendataanBangunanGedungController::class, 'bedatabgklasifikasicreatenew'])->middleware('auth')->name('bedatabgklasifikasicreatenew');
 // DATA DOKUMEN BG BANGUNAN GEDUNG
-Route::get('/bedatabgdokumen/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumen'])->middleware('auth')->name('bedatabgdokumen');
+
+Route::get(
+    '/bedatabgdokumen/{kepemilikanId}',
+    [PendataanBangunanGedungController::class, 'bedatabgdokumen']
+)->middleware('auth')->name('bedatabgdokumen');
+
+// Route::get('/bedatabgdokumen/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumen'])->middleware('auth')->name('bedatabgdokumen');
 Route::get('/bedatabgdokumencreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumencreate'])->middleware('auth')->name('bedatabgdokumencreate');
 Route::post('/bedatabgdokumencreatenew', [PendataanBangunanGedungController::class, 'bedatabgdokumencreatenew'])->middleware('auth')->name('bedatabgdokumencreatenew');
 Route::get('/bedatabgdokumenupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumenupdate'])->middleware('auth')->name('bedatabgdokumenupdate');
