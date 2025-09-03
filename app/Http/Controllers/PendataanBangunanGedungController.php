@@ -1809,8 +1809,13 @@ public function bedatabgdokumencreatenew(Request $request)
         'dokumen_teknis_tanah' => $validated['dokumen_teknis_tanah'] ?? null,
     ]);
 
+
     session()->flash('create', 'Data dokumen bangunan gedung berhasil ditambahkan!');
-    return redirect()->route('bedatabgdokumen', ['id' => $validated['databgkepemilikan_id']]);
+    // return redirect()->route('bedatabgdokumen', ['id' => $validated['databgkepemilikan_id']]);
+return redirect()->route('bedatabgdokumen', [
+    'kepemilikanId' => $validated['databgkepemilikan_id']
+]);
+
 }
 
 public function bedatabgdokumenupdate($id)
@@ -2479,6 +2484,22 @@ public function bedatabgklasifikasidelete($id)
 {
     // Cari entri datapemilik berdasarkan id
     $entry = databgpeprofilbangunangedung::find($id);
+
+    if ($entry) {
+        // Hapus entri
+        $entry->delete();
+
+        // Redirect back ke halaman sebelumnya
+        return redirect()->back()->with('delete', 'Data Berhasil Dihapus!');
+    }
+
+    return redirect()->back()->with('error', 'Item tidak ditemukan');
+}
+
+public function bedatabgdokumendelete($id)
+{
+    // Cari entri datapemilik berdasarkan id
+    $entry = databgintensitasbangunan::find($id);
 
     if ($entry) {
         // Hapus entri

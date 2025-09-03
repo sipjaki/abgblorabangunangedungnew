@@ -167,27 +167,29 @@ Route::get(
     )->middleware('auth')->name('bedatabgklasifikasi');
 
     Route::delete('/bedatabgklasifikasidelete/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasidelete'])->middleware('auth')->name('bedatabgklasifikasidelete');
-// Route::get('/bedatabgklasifikasi/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasi'])->middleware('auth')->name('bedatabgklasifikasi');
+    // Route::get('/bedatabgklasifikasi/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasi'])->middleware('auth')->name('bedatabgklasifikasi');
 
-Route::get('/bedatabgklasifikasiupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasiupdate'])->middleware('auth')->name('bedatabgklasifikasiupdate');
-Route::put('/bedatabgklasifikasiupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasiupdatenew'])->middleware('auth')->name('bedatabgklasifikasiupdatenew');
+    Route::get('/bedatabgklasifikasiupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasiupdate'])->middleware('auth')->name('bedatabgklasifikasiupdate');
+    Route::put('/bedatabgklasifikasiupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasiupdatenew'])->middleware('auth')->name('bedatabgklasifikasiupdatenew');
 
-Route::get('/bedatabgklasifikasicreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasicreate'])->middleware('auth')->name('bedatabgklasifikasicreate');
-Route::post('/bedatabgklasifikasicreatenew', [PendataanBangunanGedungController::class, 'bedatabgklasifikasicreatenew'])->middleware('auth')->name('bedatabgklasifikasicreatenew');
-// DATA DOKUMEN BG BANGUNAN GEDUNG
+    Route::get('/bedatabgklasifikasicreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgklasifikasicreate'])->middleware('auth')->name('bedatabgklasifikasicreate');
+    Route::post('/bedatabgklasifikasicreatenew', [PendataanBangunanGedungController::class, 'bedatabgklasifikasicreatenew'])->middleware('auth')->name('bedatabgklasifikasicreatenew');
+    // DATA DOKUMEN BG BANGUNAN GEDUNG
 
-Route::get(
-    '/bedatabgdokumen/{kepemilikanId}',
-    [PendataanBangunanGedungController::class, 'bedatabgdokumen']
-)->middleware('auth')->name('bedatabgdokumen');
+    Route::get(
+        '/bedatabgdokumen/{kepemilikanId}',
+        [PendataanBangunanGedungController::class, 'bedatabgdokumen']
+        )->middleware('auth')->name('bedatabgdokumen');
 
-// Route::get('/bedatabgdokumen/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumen'])->middleware('auth')->name('bedatabgdokumen');
-Route::get('/bedatabgdokumencreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumencreate'])->middleware('auth')->name('bedatabgdokumencreate');
-Route::post('/bedatabgdokumencreatenew', [PendataanBangunanGedungController::class, 'bedatabgdokumencreatenew'])->middleware('auth')->name('bedatabgdokumencreatenew');
-Route::get('/bedatabgdokumenupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumenupdate'])->middleware('auth')->name('bedatabgdokumenupdate');
-Route::put('/bedatabgdokumenupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumenupdatenew'])->middleware('auth')->name('bedatabgdokumenupdatenew');
+        Route::delete('/bedatabgdokumendelete/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumendelete'])->middleware('auth')->name('bedatabgdokumendelete');
 
-// DATA DOKUMEN MEP STATUS BANGUNAN GEDUNG
+        // Route::get('/bedatabgdokumen/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumen'])->middleware('auth')->name('bedatabgdokumen');
+        Route::get('/bedatabgdokumencreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumencreate'])->middleware('auth')->name('bedatabgdokumencreate');
+        Route::post('/bedatabgdokumencreatenew', [PendataanBangunanGedungController::class, 'bedatabgdokumencreatenew'])->middleware('auth')->name('bedatabgdokumencreatenew');
+        Route::get('/bedatabgdokumenupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumenupdate'])->middleware('auth')->name('bedatabgdokumenupdate');
+        Route::put('/bedatabgdokumenupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgdokumenupdatenew'])->middleware('auth')->name('bedatabgdokumenupdatenew');
+
+        // DATA DOKUMEN MEP STATUS BANGUNAN GEDUNG
 Route::get('/bedatabgmebangunan/{id}', [PendataanBangunanGedungController::class, 'bedatabgmebangunan'])->middleware('auth')->name('bedatabgmebangunan');
 Route::get('/bedatabgmebangunancreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgmebangunancreate'])->middleware('auth')->name('bedatabgmebangunancreate');
 Route::post('/bedatabgmebangunancreatenew', [PendataanBangunanGedungController::class, 'bedatabgmebangunancreatenew'])->middleware('auth')->name('bedatabgmebangunancreatenew');
