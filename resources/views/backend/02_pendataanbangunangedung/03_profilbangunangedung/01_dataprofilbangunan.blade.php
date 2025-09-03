@@ -249,73 +249,86 @@ th {
 <div class="row g-4">
     @forelse ($subdatapemilik as $pemilik)
 @php
-    $infoItems = [
-        [
-            'icon' => 'bi-rulers',
-            'title' => 'Luas Tanah',
-            'value' => $pemilik->luastanah ?? '-',
-        ],
-        [
-            'icon' => 'bi-building',
-            'title' => 'Nama Bangunan Gedung',
-            'value' => $pemilik->namabangunan ?? '-',
-        ],
-        [
-            'icon' => 'bi-geo-alt',
-            'title' => 'Alamat Bangunan',
-            'value' => $pemilik->alamatbangunan ?? '-',
-        ],
-        [
-            'icon' => 'bi-house',
-            'title' => 'Fungsi Bangunan',
-            'value' => $pemilik->fungsibangunan ?? '-',
-        ],
-        [
-            'icon' => 'bi-layers',
-            'title' => 'Jumlah Lantai',
-            'value' => $pemilik->jumlahlantai ?? '-',
-        ],
-        [
-            'icon' => 'bi-bounding-box-circles',
-            'title' => 'Luas Lantai Dasar',
-            'value' => $pemilik->luaslantaildasar ?? '-',
-        ],
-        [
-            'icon' => 'bi-bounding-box',
-            'title' => 'Total Luas Lantai Gedung',
-            'value' => $pemilik->totalluaslantai ?? '-',
-        ],
-        [
-            'icon' => 'bi-arrow-up-square',
-            'title' => 'Tinggi Bangunan',
-            'value' => $pemilik->tinggibangunan ?? '-',
-        ],
-        [
-            'icon' => 'bi-box',
-            'title' => 'Luas Basement',
-            'value' => $pemilik->luasbasement ?? '-',
-        ],
-        // [
-        //     'icon' => 'bi-geo-alt-fill',
-        //     'title' => 'Koordinat Bangunan',
-        //     'value' => $pemilik->koordinatbangunan ?? '-',
-        // ],
-        [
-            'icon' => 'bi-calendar-plus',
-            'title' => 'Tanggal Mulai Konstruksi',
-            'value' => $pemilik->tanggalmulaikonstruksi ?? '-',
-        ],
-        [
-            'icon' => 'bi-calendar-check',
-            'title' => 'Tanggal Selesai Konstruksi',
-            'value' => $pemilik->tanggalselesaikonstruksi ?? '-',
-        ],
-        [
-            'icon' => 'bi-arrow-repeat',
-            'title' => 'Tanggal Rehabilitasi',
-            'value' => $pemilik->tanggalrehabilitasi ?? '-',
-        ],
-    ];
+    @php
+$infoItems = [
+    [
+        'icon' => 'bi-rulers',
+        'title' => 'Luas Tanah',
+        'value' => $pemilik->luastanah
+            ? number_format($pemilik->luastanah, 0, ',', '.') . ' m²'
+            : '-',
+    ],
+    [
+        'icon' => 'bi-building',
+        'title' => 'Nama Bangunan Gedung',
+        'value' => $pemilik->namabangunan ?? '-',
+    ],
+    [
+        'icon' => 'bi-geo-alt',
+        'title' => 'Alamat Bangunan',
+        'value' => $pemilik->alamatbangunan ?? '-',
+    ],
+    [
+        'icon' => 'bi-house',
+        'title' => 'Fungsi Bangunan',
+        'value' => $pemilik->fungsibangunan ?? '-',
+    ],
+    [
+        'icon' => 'bi-layers',
+        'title' => 'Jumlah Lantai',
+        'value' => $pemilik->jumlahlantai
+            ? number_format($pemilik->jumlahlantai, 0, ',', '.') . ' Lantai'
+            : '-',
+    ],
+    [
+        'icon' => 'bi-bounding-box-circles',
+        'title' => 'Luas Lantai Dasar',
+        'value' => $pemilik->luaslantaildasar
+            ? number_format($pemilik->luaslantaildasar, 0, ',', '.') . ' m²'
+            : '-',
+    ],
+    [
+        'icon' => 'bi-bounding-box',
+        'title' => 'Total Luas Lantai Gedung',
+        'value' => $pemilik->totalluaslantai
+            ? number_format($pemilik->totalluaslantai, 0, ',', '.') . ' m²'
+            : '-',
+    ],
+    [
+        'icon' => 'bi-arrow-up-square',
+        'title' => 'Tinggi Bangunan',
+        'value' => $pemilik->tinggibangunan
+            ? number_format($pemilik->tinggibangunan, 0, ',', '.') . ' Meter'
+            : '-',
+    ],
+    [
+        'icon' => 'bi-box',
+        'title' => 'Luas Basement',
+        'value' => $pemilik->luasbasement
+            ? number_format($pemilik->luasbasement, 0, ',', '.') . ' m²'
+            : '-',
+    ],
+    // [
+    //     'icon' => 'bi-geo-alt-fill',
+    //     'title' => 'Koordinat Bangunan',
+    //     'value' => $pemilik->koordinatbangunan ?? '-',
+    // ],
+    [
+        'icon' => 'bi-calendar-plus',
+        'title' => 'Tanggal Mulai Konstruksi',
+        'value' => $pemilik->tanggalmulaikonstruksi ?? '-',
+    ],
+    [
+        'icon' => 'bi-calendar-check',
+        'title' => 'Tanggal Selesai Konstruksi',
+        'value' => $pemilik->tanggalselesaikonstruksi ?? '-',
+    ],
+    [
+        'icon' => 'bi-arrow-repeat',
+        'title' => 'Tanggal Rehabilitasi',
+        'value' => $pemilik->tanggalrehabilitasi ?? '-',
+    ],
+];
 @endphp
 
         <div class="col-12 mb-4 mt-5">
