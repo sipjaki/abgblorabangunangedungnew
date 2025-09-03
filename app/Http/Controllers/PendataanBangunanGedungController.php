@@ -2005,30 +2005,87 @@ public function bedatabgmebangunancreatenew(Request $request)
     return redirect()->route('bedatabgmebangunan', ['id' => $validated['databgkepemilikan_id']]);
 }
 
-
 public function bedatabgmebangunanupdate($id)
 {
-    // Ambil data bantuan teknis berdasarkan ID
-    $databantuanteknis = databgkepemilikan::find($id);
-    $databantuanteknis = databgdokumenmepbangunan::find($id);
+    // Cari data kepemilikan (parent)
+    $databgkepemilikan = databgkepemilikan::findOrFail($id);
 
-    if (!$databantuanteknis) {
-        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    // Cari data dokumen MEP bangunan berdasarkan parent id
+    $datamep = databgdokumenmepbangunan::where('databgkepemilikan_id', $id)->first();
+
+    if (!$datamep) {
+        return abort(404, 'Data dokumen MEP bangunan tidak ditemukan');
     }
 
-    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    // Kirim data ke view form update dokumen MEP
     return view('backend.02_pendataanbangunangedung.05_mep.03_updatemepdokumen', [
-        'title' => 'Perbaikan Data Dokumen MEP Bangunan Gedung ',
-        'data' => $databantuanteknis,
-        'user' => Auth::user()
+        'title' => 'Perbaikan Data Dokumen MEP Bangunan Gedung',
+        'data' => $databgkepemilikan, // parent
+        'databangunan' => $datamep,   // child
+        'user' => Auth::user(),
     ]);
 }
+
+// public function bedatabgmebangunanupdatenew(Request $request, $id)
+// {
+//     $validated = $request->validate([
+//         // 'databgkepemilikan_id' => 'nullable|integer',
+
+//         'dokumen_lampiran_struktur' => 'nullable|string|max:255',
+//         'mpk_rdkt' => 'nullable|string|max:255',
+//         'dokumen_lampiran' => 'nullable|string|max:255',
+//         'penangkal_kebakaran' => 'nullable|string|max:255',
+//         'no_bundel_dok_teknis' => 'nullable|string|max:255',
+//         'daya_listrik' => 'nullable|string|max:255',
+//         'dokumen_instalasi_listrik' => 'nullable|string|max:255',
+//         'instalasi_penangkal_listrik' => 'nullable|string|max:255',
+//         'dokumen_pencahayaan' => 'nullable|string|max:255',
+//         'dokumen_instalasi_komunikasi' => 'nullable|string|max:255',
+//         'instalasi_komunikasi' => 'nullable|string|max:255',
+//         'pengolahan_limbah_domestik' => 'nullable|string|max:255',
+//         'sistem_sanitasi' => 'nullable|string|max:255',
+//         'pengolahan_air_hujan' => 'nullable|string|max:255',
+//         'sistem_drainase' => 'nullable|string|max:255',
+//         'instalasi_gas' => 'nullable|string|max:255',
+//         'dokumen_lampiran_sanitasi' => 'nullable|string|max:255',
+//         'sumber_air' => 'nullable|string|max:255',
+//         'biaya_retribusi' => 'nullable|string|max:255',
+//         'surat_advis_krk' => 'nullable|string|max:255',
+//         'surat_permohonan_imb' => 'nullable|string|max:255',
+//         'surat_permohonan_slf' => 'nullable|string|max:255',
+//         'fotocopy_identitas_pemohon' => 'nullable|string|max:255',
+
+//         // Pilihan YA/TIDAK
+//         'surat_kuasa_imb' => 'nullable|string|max:255',
+//         'surat_k3' => 'nullable|string|max:255',
+//         'rekomendasi_desa' => 'nullable|string|max:255',
+//         'rekom_kecamatan' => 'nullable|string|max:255',
+//         'surat_kepemilikan_tanah_sewa' => 'nullable|string|max:255',
+//         'copy_sertif_tanah' => 'nullable|string|max:255',
+//         'surat_pajak' => 'nullable|string|max:255',
+//         'sippt' => 'nullable|string|max:255',
+//         'tabel_ceklis_dokumen' => 'nullable|string|max:255',
+//         'tabel_ceklis_teknis' => 'nullable|string|max:255',
+//         'surat_setoran_retribusi_daerah' => 'nullable|string|max:255',
+//         'surat_ketetapan_retribusi_daerah' => 'nullable|string|max:255',
+//         'berita_acara_pemeriksaan' => 'nullable|string|max:255',
+//     ], [
+//         '*.max' => 'Maksimal 255 karakter.',
+//         // 'databgkepemilikan_id.integer' => 'ID Kepemilikan harus berupa angka.',
+//     ]);
+
+//     $data = databgdokumenmepbangunan::findOrFail($id);
+
+//     $data->update($validated);
+
+//     session()->flash('update', 'Data MEP bangunan berhasil diperbarui!');
+//     return redirect()->back();
+// }
+
 
 public function bedatabgmebangunanupdatenew(Request $request, $id)
 {
     $validated = $request->validate([
-        'databgkepemilikan_id' => 'nullable|integer',
-
         'dokumen_lampiran_struktur' => 'nullable|string|max:255',
         'mpk_rdkt' => 'nullable|string|max:255',
         'dokumen_lampiran' => 'nullable|string|max:255',
@@ -2069,17 +2126,23 @@ public function bedatabgmebangunanupdatenew(Request $request, $id)
         'berita_acara_pemeriksaan' => 'nullable|string|max:255',
     ], [
         '*.max' => 'Maksimal 255 karakter.',
-        'databgkepemilikan_id.integer' => 'ID Kepemilikan harus berupa angka.',
     ]);
 
-    $data = databgdokumenmepbangunan::findOrFail($id);
+    // Cari child data MEP
+    $datamep = databgdokumenmepbangunan::findOrFail($id);
 
-    $data->update($validated);
+    // Update data child
+    $datamep->update($validated);
 
+    // Ambil parent_id untuk redirect
+    $parentId = $datamep->databgkepemilikan_id;
+
+    // Flash message sukses
     session()->flash('update', 'Data MEP bangunan berhasil diperbarui!');
-    return redirect()->back();
-}
 
+    // Redirect ke route bedatabgmebangunan dengan parentId
+    return redirect()->route('bedatabgmebangunan', $parentId);
+}
 
 public function bedatabgstrukrrusak($id)
 {
