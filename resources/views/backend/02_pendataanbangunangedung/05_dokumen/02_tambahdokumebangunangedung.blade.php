@@ -343,19 +343,79 @@ th {
     <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
-    <div class="row g-3 mt-2">
-        {{-- Luas Tanah --}}
-        <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-cash-coin text-primary me-1"></i> Nilai BG Didirikan</label>
-    <input type="number" name="nilaibgdidirikan" class="form-control @error('nilaibgdidirikan') is-invalid @enderror" value="{{ old('nilaibgdidirikan') }}" step="any">
+    <div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-cash-coin text-primary me-1"></i> Nilai BG Didirikan
+    </label>
+    <input type="text"
+           id="nilaibgdidirikan_view"
+           class="form-control @error('nilaibgdidirikan') is-invalid @enderror"
+           value="{{ old('nilaibgdidirikan') ? number_format(old('nilaibgdidirikan'), 0, ',', '.') : '' }}">
+    <input type="hidden" name="nilaibgdidirikan" id="nilaibgdidirikan" value="{{ old('nilaibgdidirikan') }}">
     @error('nilaibgdidirikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const viewInput = document.getElementById("nilaibgdidirikan_view");
+    const hiddenInput = document.getElementById("nilaibgdidirikan");
+
+    function formatRupiah(angka) {
+        return angka.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    viewInput.addEventListener("input", function(e) {
+        // Hapus semua karakter non digit
+        let raw = this.value.replace(/\D/g, "");
+
+        // Update tampilan dengan format ribuan
+        this.value = raw ? formatRupiah(raw) : "";
+
+        // Update hidden input (angka asli tanpa titik)
+        hiddenInput.value = raw;
+    });
+});
+</script>
+
+
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-currency-dollar text-primary me-1"></i> Nilai BG Saat Ini</label>
-    <input type="number" name="nilaibgsaatini" class="form-control @error('nilaibgsaatini') is-invalid @enderror" value="{{ old('nilaibgsaatini') }}" step="any">
+    <label class="form-label">
+        <i class="bi bi-currency-dollar text-primary me-1"></i> Nilai BG Saat Ini
+    </label>
+    <!-- Input tampilan (format rupiah) -->
+    <input type="text"
+           id="nilaibgsaatini_view"
+           class="form-control @error('nilaibgsaatini') is-invalid @enderror"
+           value="{{ old('nilaibgsaatini') ? number_format(old('nilaibgsaatini'), 0, ',', '.') : '' }}">
+    <!-- Input hidden (nilai asli untuk dikirim ke server) -->
+    <input type="hidden"
+           name="nilaibgsaatini"
+           id="nilaibgsaatini"
+           value="{{ old('nilaibgsaatini') }}">
     @error('nilaibgsaatini')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    function formatRupiah(angka) {
+        return angka.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function setupRupiahInput(viewId, hiddenId) {
+        const viewInput = document.getElementById(viewId);
+        const hiddenInput = document.getElementById(hiddenId);
+
+        viewInput.addEventListener("input", function() {
+            let raw = this.value.replace(/\D/g, ""); // hapus non-digit
+            this.value = raw ? formatRupiah(raw) : ""; // tampil dengan titik
+            hiddenInput.value = raw; // hidden tetap angka asli
+        });
+    }
+
+    // Daftarkan untuk input Nilai BG Saat Ini
+    setupRupiahInput("nilaibgsaatini_view", "nilaibgsaatini");
+});
+</script>
 
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-diagram-3 text-primary me-1"></i> Koefisien Dasar Bangunan</label>

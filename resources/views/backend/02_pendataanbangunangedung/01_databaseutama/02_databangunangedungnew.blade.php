@@ -344,7 +344,7 @@ th {
 
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
             @endcanany
-    </tr>
+                        </tr>
                             </thead>
                               <tbody id="tableBody">
                                 @foreach ($data as $item )
