@@ -356,30 +356,40 @@ th {
         <i class="bi bi-card-list text-navy me-1" style="color: blue"></i> Status Hak Tanah
     </label>
     <select name="statushaktanah" class="form-control @error('statushaktanah') is-invalid @enderror">
-        <option value="">-- Pilih Status Hak Tanah --</option>
-        <option value="Dalam Proses" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Dalam Proses' ? 'selected' : '' }}>Dalam Proses</option>
-        <option value="Hak Milik" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Hak Milik' ? 'selected' : '' }}>Hak Milik</option>
-        <option value="Hak Milik (Pemkab/Pemda/Negara)" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Hak Milik (Pemkab/Pemda/Negara)' ? 'selected' : '' }}>Hak Milik (Pemkab/Pemda/Negara)</option>
-        <option value="Hak Pakai" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Hak Pakai' ? 'selected' : '' }}>Hak Pakai</option>
-        <option value="Hak Pakai (Milik Desa)" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Hak Pakai (Milik Desa)' ? 'selected' : '' }}>Hak Pakai (Milik Desa)</option>
-        <option value="Hak Pakai (Milik Pemkab)" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Hak Pakai (Milik Pemkab)' ? 'selected' : '' }}>Hak Pakai (Milik Pemkab)</option>
-        <option value="Milik Desa" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Milik Desa' ? 'selected' : '' }}>Milik Desa</option>
-        <option value="Milik Kelurahan" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Milik Kelurahan' ? 'selected' : '' }}>Milik Kelurahan</option>
-        <option value="Milik Negara" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Milik Negara' ? 'selected' : '' }}>Milik Negara</option>
-        <option value="Milik Pemkab" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Milik Pemkab' ? 'selected' : '' }}>Milik Pemkab</option>
-        <option value="Milik Pemkab/Pemda/Negara" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Milik Pemkab/Pemda/Negara' ? 'selected' : '' }}>Milik Pemkab/Pemda/Negara</option>
-        <option value="Pemda" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Pemda' ? 'selected' : '' }}>Pemda</option>
-        <option value="Pemdes" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Pemdes' ? 'selected' : '' }}>Pemdes</option>
-        <option value="Pemkab Blora" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Pemkab Blora' ? 'selected' : '' }}>Pemkab Blora</option>
-        <option value="Tanah Gg" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Tanah Gg' ? 'selected' : '' }}>Tanah Gg</option>
-        <option value="Tidak Mengetahui" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Tidak Mengetahui' ? 'selected' : '' }}>(Tidak Mengetahui)</option>
-        <option value="Wakaf" {{ old('statushaktanah', $databangunan->statushaktanah) == 'Wakaf' ? 'selected' : '' }}>Wakaf</option>
+        @php
+            $selectedValue = old('statushaktanah', $databangunan->statushaktanah);
+        @endphp
+
+        {{-- Kalau ada data lama, tampilkan dulu di paling atas --}}
+        @if($selectedValue)
+            <option value="{{ $selectedValue }}" selected>{{ $selectedValue }}</option>
+        @else
+            <option value="" selected>-- Pilih Status Hak Tanah --</option>
+        @endif
+
+        {{-- Pilihan tetap --}}
+        <option value="Dalam Proses">Dalam Proses</option>
+        <option value="Hak Milik">Hak Milik</option>
+        <option value="Hak Milik (Pemkab/Pemda/Negara)">Hak Milik (Pemkab/Pemda/Negara)</option>
+        <option value="Hak Pakai">Hak Pakai</option>
+        <option value="Hak Pakai (Milik Desa)">Hak Pakai (Milik Desa)</option>
+        <option value="Hak Pakai (Milik Pemkab)">Hak Pakai (Milik Pemkab)</option>
+        <option value="Milik Desa">Milik Desa</option>
+        <option value="Milik Kelurahan">Milik Kelurahan</option>
+        <option value="Milik Negara">Milik Negara</option>
+        <option value="Milik Pemkab">Milik Pemkab</option>
+        <option value="Milik Pemkab/Pemda/Negara">Milik Pemkab/Pemda/Negara</option>
+        <option value="Pemda">Pemda</option>
+        <option value="Pemdes">Pemdes</option>
+        <option value="Pemkab Blora">Pemkab Blora</option>
+        <option value="Tanah Gg">Tanah Gg</option>
+        <option value="Tidak Mengetahui">(Tidak Mengetahui)</option>
+        <option value="Wakaf">Wakaf</option>
     </select>
     @error('statushaktanah')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
-
 
     {{-- Status Kepemilikan --}}
     <div class="col-md-6">
