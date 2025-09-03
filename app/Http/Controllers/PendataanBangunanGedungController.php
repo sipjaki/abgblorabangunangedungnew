@@ -2445,7 +2445,7 @@ public function bedatabgprofiltanahdelete($id)
 public function bedatabgklasifikasidelete($id)
 {
     // Cari entri datapemilik berdasarkan id
-    $entry = databgklasifikasi::find($id);
+    $entry = databgpeprofilbangunangedung::find($id);
 
     if ($entry) {
         // Hapus entri
