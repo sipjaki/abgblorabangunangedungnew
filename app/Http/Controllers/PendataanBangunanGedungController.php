@@ -1839,7 +1839,6 @@ public function bedatabgdokumenupdate($id)
 public function bedatabgdokumenupdatenew(Request $request, $id)
 {
     $validated = $request->validate([
-        'databgkepemilikan_id' => 'nullable|string',
         'nilaibgdidirikan' => 'nullable|string|max:255',
         'nilaibgsaatini' => 'nullable|string|max:255',
         'koefisien_dasar_bangunan' => 'nullable|string|max:255',
@@ -1861,13 +1860,13 @@ public function bedatabgdokumenupdatenew(Request $request, $id)
         'dokumen_teknis_tanah' => 'nullable|string|max:255',
     ], [
         '*.max' => 'Maksimal 255 karakter.',
-        'databgkepemilikan_id.integer' => 'ID Kepemilikan harus berupa angka.',
     ]);
 
+    // cari data intensitas
     $klasifikasi = databgintensitasbangunan::findOrFail($id);
 
+    // update data
     $klasifikasi->update([
-        'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? null,
         'nilaibgdidirikan' => $validated['nilaibgdidirikan'] ?? null,
         'nilaibgsaatini' => $validated['nilaibgsaatini'] ?? null,
         'koefisien_dasar_bangunan' => $validated['koefisien_dasar_bangunan'] ?? null,
@@ -1889,9 +1888,13 @@ public function bedatabgdokumenupdatenew(Request $request, $id)
         'dokumen_teknis_tanah' => $validated['dokumen_teknis_tanah'] ?? null,
     ]);
 
+    // ambil kepemilikan_id buat redirect
+    $kepemilikanId = $klasifikasi->databgkepemilikan_id;
+
     session()->flash('update', 'Data dokumen bangunan berhasil diperbarui!');
-    return redirect()->back();
+    return redirect()->route('bedatabgdokumen', $kepemilikanId);
 }
+
 
 
 public function bedatabgmebangunan($id)

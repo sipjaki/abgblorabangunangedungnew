@@ -254,7 +254,7 @@ $infoItems = [
         'icon' => 'bi-rulers',
         'title' => 'Luas Tanah',
         'value' => $pemilik->luastanah
-            ? number_format($pemilik->luastanah, 0, ',', '.') . ' m²'
+            ? number_format($pemilik->luastanah, 0, ',', '.') . ' M²'
             : '-',
     ],
     [
@@ -283,14 +283,14 @@ $infoItems = [
         'icon' => 'bi-bounding-box-circles',
         'title' => 'Luas Lantai Dasar',
         'value' => $pemilik->luaslantaildasar
-            ? number_format($pemilik->luaslantaildasar, 0, ',', '.') . ' m²'
+            ? number_format($pemilik->luaslantaildasar, 0, ',', '.') . ' M²'
             : '-',
     ],
     [
         'icon' => 'bi-bounding-box',
         'title' => 'Total Luas Lantai Gedung',
         'value' => $pemilik->totalluaslantai
-            ? number_format($pemilik->totalluaslantai, 0, ',', '.') . ' m²'
+            ? number_format($pemilik->totalluaslantai, 0, ',', '.') . ' M²'
             : '-',
     ],
     [
@@ -304,7 +304,7 @@ $infoItems = [
         'icon' => 'bi-box',
         'title' => 'Luas Basement',
         'value' => $pemilik->luasbasement
-            ? number_format($pemilik->luasbasement, 0, ',', '.') . ' m²'
+            ? number_format($pemilik->luasbasement, 0, ',', '.') . ' M²'
             : '-',
     ],
     // [

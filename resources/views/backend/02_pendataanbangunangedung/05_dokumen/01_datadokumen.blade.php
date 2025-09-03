@@ -390,7 +390,7 @@ th {
                         {{-- Khusus tampilkan Catatan jika Pilihan Catatan = tidak lengkap --}}
 
 
-                      <a href="/bedatabgdokumenupdate/{{ $pemilik->id }}">
+                      <a href="/bedatabgdokumenupdate/{{ $pemilik->databgkepemilikan_id }}">
                             <p class="button-berkas">
                                 <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
                                 Perbaikan Data
