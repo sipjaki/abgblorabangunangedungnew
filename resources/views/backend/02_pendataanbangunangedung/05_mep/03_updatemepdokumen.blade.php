@@ -400,7 +400,7 @@ th {
             <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> {{ $label }}
         </label>
         <input type="text" name="{{ $field }}" class="form-control @error($field) is-invalid @enderror"
-               value="{{ old($field, $data->$field) }}">
+               value="{{ old($field, $databangunan->$field) }}">
         @error($field)<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 @endforeach
@@ -414,7 +414,7 @@ th {
         <select name="{{ $field }}" class="form-select @error($field) is-invalid @enderror">
             <option value="">-- Pilih --</option>
             @foreach($yaTidak as $val)
-                <option value="{{ $val }}" {{ old($field, $data->$field) == $val ? 'selected' : '' }}>{{ $val }}</option>
+                <option value="{{ $val }}" {{ old($field, $databangunan->$field) == $val ? 'selected' : '' }}>{{ $val }}</option>
             @endforeach
         </select>
         @error($field)<div class="invalid-feedback">{{ $message }}</div>@enderror
