@@ -438,27 +438,32 @@ th {
 </div>
 
 {{-- Luas Lantai Dasar --}}
-
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-layers me-1" style="color: blue;"></i> Luas Lantai Dasar</label>
+    <label class="form-label">
+        <i class="bi bi-layers me-1" style="color: blue;"></i> Luas Lantai Dasar
+    </label>
     <div class="input-group">
         <input type="text" name="luaslantaildasar" id="luaslantaildasar"
-       class="form-control @error('luaslantaildasar') is-invalid @enderror"
-       value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}"
-       oninput="this.value = this.value.replace(/,/g, '.').replace(/[^0-9.]/g, '');">
-<span class="input-group-text">M²</span>
+            class="form-control @error('luaslantaildasar') is-invalid @enderror"
+            value="{{ old('luaslantaildasar', $databangunan->luaslantaildasar) }}"
+            oninput="this.value = this.value.replace(/[^0-9,\.]/g, '');">
+        <span class="input-group-text">M²</span>
         @error('luaslantaildasar')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
 
 
+
 {{-- Total Luas Lantai Gedung --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-grid-3x3-gap-fill me-1" style="color: blue;"></i> Total Luas Lantai Gedung</label>
+    <label class="form-label">
+        <i class="bi bi-grid-3x3-gap-fill me-1" style="color: blue;"></i> Total Luas Lantai Gedung
+    </label>
     <div class="input-group">
         <input type="text" name="totalluaslantai" id="totalluaslantai"
                class="form-control @error('totalluaslantai') is-invalid @enderror"
-               value="{{ old('totalluaslantai', $databangunan->totalluaslantai) }}">
+               value="{{ old('totalluaslantai', $databangunan->totalluaslantai) }}"
+               oninput="this.value = this.value.replace(/[^0-9,\.]/g, '');">
         <span class="input-group-text">M²</span>
         @error('totalluaslantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
@@ -475,18 +480,21 @@ th {
         @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
-
 {{-- Luas Basement --}}
 <div class="col-md-6">
-    <label class="form-label"><i class="bi bi-layers-half me-1" style="color: blue;"></i> Luas Basement</label>
+    <label class="form-label">
+        <i class="bi bi-layers-half me-1" style="color: blue;"></i> Luas Basement
+    </label>
     <div class="input-group">
         <input type="text" name="luasbasement" id="luasbasement"
                class="form-control @error('luasbasement') is-invalid @enderror"
-               value="{{ old('luasbasement', $databangunan->luasbasement) }}">
+               value="{{ old('luasbasement', $databangunan->luasbasement) }}"
+               oninput="this.value = this.value.replace(/[^0-9,\.]/g, '');">
         <span class="input-group-text">M²</span>
         @error('luasbasement')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 </div>
+
 
 <script>
 const fields = ['jumlahlantai', 'luaslantaildasar', 'totalluaslantai', 'tinggibangunan', 'luasbasement'];
