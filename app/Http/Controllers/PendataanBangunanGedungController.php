@@ -2660,9 +2660,9 @@ public function bedatabgmebangunandelete($id)
 public function bedatabgstrukrrusakdelete($id)
 {
     try {
-        // hapus dari masing-masing tabel berdasarkan id utama
-        databgtingkatkerusahan::where('id', $id)->delete();
-        databgstrukturbangunan::where('id', $id)->delete();
+        // hapus berdasarkan foreign key databgkepemilikan_id
+        databgtingkatkerusahan::where('databgkepemilikan_id', $id)->delete();
+        databgstrukturbangunan::where('databgkepemilikan_id', $id)->delete();
 
         return redirect()->back()->with('delete', 'Data Struktur Bangunan Gedung berhasil dihapus!');
     } catch (\Exception $e) {
