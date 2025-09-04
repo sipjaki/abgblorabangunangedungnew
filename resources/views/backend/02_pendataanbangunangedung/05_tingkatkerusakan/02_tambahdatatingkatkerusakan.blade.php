@@ -745,11 +745,11 @@ th {
             <label class="form-label">
                 <i class="bi bi-image text-secondary me-1"></i> Foto Faktual Dinding | Max 15 MB
             </label>
-            <input type="file" name="cadangan1"
-                   class="form-control @error('cadangan1') is-invalid @enderror"
+            <input type="file" name="pintu"
+                   class="form-control @error('pintu') is-invalid @enderror"
                accept="image/*"
                    onchange="previewCadangan1(event)">
-            @error('cadangan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            @error('pintu')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
             <!-- Preview Gambar -->
             <div class="mt-3 text-center">
@@ -822,11 +822,11 @@ th {
     <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label"><i class="bi bi-image text-success me-1"></i> Foto Faktual Plafond | Max 15 MB</label>
-            <input type="file" name="cadangan2"
-                   class="form-control @error('cadangan2') is-invalid @enderror"
+            <input type="file" name="jendela"
+                   class="form-control @error('jendela') is-invalid @enderror"
                accept="image/*"
                    onchange="previewCadangan2(event)">
-            @error('cadangan2')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            @error('jendela')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
             <!-- Preview Gambar -->
             <div class="mt-3 text-center">

@@ -46,12 +46,12 @@ return new class extends Migration
     $table->string('tingkat_kerusakan5')->nullable();
 
     // BAGIAN 6
-    $table->string('dinding')->nullable(); // cadangan 1
+    $table->string('dinding')->nullable(); // cadangan 1 di ganti jadi pintu
     $table->string('indikasi_kerusakan6')->nullable();
     $table->string('tingkat_kerusakan6')->nullable();
 
     // BAGIAN 7
-    $table->string('plafond')->nullable(); // cadangan 2
+    $table->string('plafond')->nullable(); // cadangan 2 di ganti jadi jendela
     $table->string('indikasi_kerusakan7')->nullable();
     $table->string('tingkat_kerusakan7')->nullable();
 

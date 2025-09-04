@@ -2292,16 +2292,20 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
         // 'cadangan2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
 
                 // FOTO FOTO TABEL UTAMA
-        'cadangan1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'cadangan2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
 
-        // FOTO FOTO TABEL KEDUA
-        'struktur_bawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'struktur_atas' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'genteng' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'rangka_atap' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'balok' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'kolom' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+                // FOTO FOTO TABEL KEDUA
+                'struktur_bawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+                'struktur_atas' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+                'genteng' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+                'rangka_atap' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+
+                // PERUBAHAN BARU
+                'pintu' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+                'jendela' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+
+                // PERUBAHAN YANG LAMA
+                'balok' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+                'kolom' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
 
     ], [
         'databgkepemilikan_id.required' => 'ID Kepemilikan wajib diisi.',
@@ -2343,8 +2347,8 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
 
     // Upload foto otomatis
     $uploadFields = [
-        'cadangan1', 'cadangan2',       // tabel pertama
-        'struktur_bawah', 'struktur_atas', 'genteng',
+        // 'cadangan1', 'cadangan2',       // tabel pertama
+        'struktur_bawah', 'struktur_atas', 'genteng', 'pintu', 'jendela',
         'rangka_atap', 'balok', 'kolom' // tabel kedua
     ];
 
@@ -2365,6 +2369,8 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
         'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
         'struktur_bawah' => $validated['struktur_bawah'] ?? null,
         'struktur_atas' => $validated['struktur_atas'] ?? null,
+        'pintu' => $validated['pintu'] ?? null,
+        'jendela' => $validated['jendela'] ?? null,
         'genteng' => $validated['genteng'] ?? null,
         'rangka_atap' => $validated['rangka_atap'] ?? null,
         'balok' => $validated['balok'] ?? null,

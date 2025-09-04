@@ -310,7 +310,7 @@ th {
                     ['label' => 'Dinding', 'field' => $pemilik->dinding ?? '-', 'icon' => 'bi-bricks'],
                     ['label' => 'Indikasi Kerusakan 5', 'field' => $pemilik->indikasi_kerusakan6 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan6 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Dinding', 'field' => $pemilik->cadangan1 ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Dinding', 'field' => $pemilik->pintu ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -320,7 +320,7 @@ th {
                     ['label' => 'Plafon', 'field' => $pemilik->plafond ?? '-', 'icon' => 'bi-menu-button-wide'],
                     ['label' => 'Indikasi Kerusakan 6', 'field' => $pemilik->indikasi_kerusakan7 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan7 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Plafon', 'field' => $pemilik->cadangan2 ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Plafon', 'field' => $pemilik->jendela ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
