@@ -245,6 +245,11 @@ th {
 @include('backend.02_pendataanbangunangedung.00_fiturbg.02_datasemuabangunan')
 
 </div>
+
+@php
+    use Illuminate\Support\Str;
+@endphp
+
 <div class="row g-4">
     @forelse ($subdatapemilik as $pemilik)
         @php
@@ -329,8 +334,8 @@ th {
                 ],
             ],
             [
-                'title' => 'Bagian 8 - Finishing',
-                'title_halaman' => 'Bagian 8 - Finishing',
+                'title' => 'Bagian 8 Finishing',
+                'title_halaman' => 'Bagian 8 Finishing',
                 'items' => [
                     ['label' => 'Finishing', 'field' => $pemilik->finishing ?? '-', 'icon' => 'bi-palette'],
                     ['label' => 'Indikasi Kerusakan 8', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
@@ -376,15 +381,15 @@ th {
                                         <div style="width: 100%;">
                                             <h6 class="fw-bold text-dark mb-1">{{ $item['label'] }}</h6>
 
-                                            {{-- Jika label mengandung "Foto Faktual" tampilkan gambar --}}
+                                            {{-- Kalau label Foto Faktual tampilkan gambar --}}
                                             @if(Str::contains($item['label'], 'Foto Faktual'))
                                                 <div style="margin-top: 10px;">
-                                                    @if($item['field'] && file_exists(public_path('storage/' . $item['field'])))
+                                                    @if($item['field'] && Storage::disk('public')->exists($item['field']))
                                                         <img src="{{ asset('storage/' . $item['field']) }}" alt="Foto Faktual" style="width: 100%; max-height: 120px; object-fit: contain;" loading="lazy">
                                                     @elseif($item['field'])
                                                         <img src="{{ asset($item['field']) }}" alt="Foto Faktual" style="width: 100%; max-height: 120px; object-fit: contain;" loading="lazy">
                                                     @else
-                                                        <p style="font-size: 11px;">Tidak Ada Foto Faktual!</p>
+                                                        <p style="font-size: 11px; color:red;">Tidak Ada Foto Faktual!</p>
                                                     @endif
                                                 </div>
                                             @else
@@ -397,7 +402,7 @@ th {
                         </div>
                     @endforeach
 
-                    {{-- Tombol Edit --}}
+                    {{-- Tombol Perbaikan Data --}}
                     <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->id }}">
                         <p class="button-berkas">
                             <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
@@ -424,15 +429,16 @@ th {
 
                     {{-- Tombol Hapus --}}
                     <a href="javascript:void(0)" title="Delete"
-                        data-bs-toggle="modal" data-bs-target="#deleteModal"
-                        data-judul="{{ $pemilik->databgkepemilikan_id }}"
-                        onclick="setDeleteUrl(this)"
-                        style="text-decoration: none;">
+                       data-bs-toggle="modal" data-bs-target="#deleteModal"
+                       data-judul="{{ $pemilik->databgkepemilikan_id }}"
+                       onclick="setDeleteUrl(this)"
+                       style="text-decoration: none;">
                         <span style="color: white;" class="button-merah">
                             <i class="bi bi-trash" style="color: white; margin-right:4px;"></i>
                             Hapus
                         </span>
                     </a>
+
                 </div>
             </div>
         </div>
@@ -451,7 +457,8 @@ th {
                 border: 2px dashed #ced4da;
                 border-radius: 12px;
                 font-size: 16px;
-                animation: fadeIn 0.5s ease-in-out;">
+                animation: fadeIn 0.5s ease-in-out;
+            ">
                 <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
                 Data Informasi Struktur & Tingkat Kerusakan Bangunan Gedung Tidak Ditemukan !!
             </div>
