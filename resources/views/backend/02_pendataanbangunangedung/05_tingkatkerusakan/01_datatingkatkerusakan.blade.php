@@ -384,7 +384,7 @@ th {
                                     {{-- Kalau label Foto Faktual --}}
                                     @if(Str::contains($item['label'], 'Foto Faktual'))
                                         @if($item['field'])
-                                            <button class="btn btn-outline-primary btn-sm mt-2"
+                                            <button class="button-newdata mt-2"
                                                     data-bs-toggle="modal"
                                                     data-bs-target="#fotoModal{{ $loop->index }}">
                                                 <i class="bi bi-image me-1"></i> Lihat Foto Faktual
