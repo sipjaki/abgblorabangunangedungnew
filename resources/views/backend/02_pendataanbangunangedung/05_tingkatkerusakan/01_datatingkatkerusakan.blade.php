@@ -257,6 +257,7 @@ $bagianList = [
             ['label' => 'Struktur Bangunan Bawah', 'field' => $pemilik->struktur_bangunan_bawah ?? '-', 'icon' => 'bi-house-door'],
             ['label' => 'Struktur Bangunan Atas', 'field' => $pemilik->struktur_bangunan_atas ?? '-', 'icon' => 'bi-house'],
             ['label' => 'Struktur Atap', 'field' => $pemilik->struktur_atap ?? '-', 'icon' => 'bi-house-add'],
+            // ['label' => 'Foto Faktual Struktur Atap', 'field' => $datastruktur->struktur_bawah ?? '-', 'icon' => 'bi-house-add'],
 
         ],
     ],
@@ -267,6 +268,7 @@ $bagianList = [
             ['label' => 'Pondasi', 'field' => $pemilik->pondasi ?? '-', 'icon' => 'bi-box'],
             ['label' => 'Indikasi Kerusakan 1', 'field' => $pemilik->indikasi_kerusakan2 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan 1', 'field' => $pemilik->tingkat_kerusakan2 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Foto Faktual Pondasi', 'field' => $datastruktur->struktur_bawah ?? '-', 'icon' => 'bi-house-add'],
         ],
     ],
     [
@@ -276,6 +278,7 @@ $bagianList = [
             ['label' => 'Struktur', 'field' => $pemilik->struktur ?? '-', 'icon' => 'bi-diagram-3'],
             ['label' => 'Indikasi Kerusakan 2', 'field' => $pemilik->indikasi_kerusakan3 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan 2', 'field' => $pemilik->tingkat_kerusakan3 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Foto Faktual Struktur', 'field' => $datastruktur->struktur_atas ?? '-', 'icon' => 'bi-house-add'],
         ],
     ],
     [
@@ -285,6 +288,7 @@ $bagianList = [
             ['label' => 'Atap', 'field' => $pemilik->atap ?? '-', 'icon' => 'bi-cloud'],
             ['label' => 'Indikasi Kerusakan 3', 'field' => $pemilik->indikasi_kerusakan4 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan 4', 'field' => $pemilik->tingkat_kerusakan4 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Foto Faktual Atap', 'field' => $datastruktur->genteng ?? '-', 'icon' => 'bi-house-add'],
         ],
     ],
     [
@@ -294,6 +298,7 @@ $bagianList = [
             ['label' => 'Lantai', 'field' => $pemilik->lantai ?? '-', 'icon' => 'bi-grid-1x2'],
             ['label' => 'Indikasi Kerusakan 4', 'field' => $pemilik->indikasi_kerusakan5 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan 4', 'field' => $pemilik->tingkat_kerusakan5 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Foto Faktual Lantai', 'field' => $datastruktur->rangka_atap ?? '-', 'icon' => 'bi-house-add'],
         ],
     ],
     [
@@ -303,6 +308,7 @@ $bagianList = [
             ['label' => 'Dinding', 'field' => $pemilik->dinding ?? '-', 'icon' => 'bi-bricks'],
             ['label' => 'Indikasi Kerusakan 5', 'field' => $pemilik->indikasi_kerusakan6 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan6 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Foto Faktual Dinding', 'field' => $datastruktur->cadangan1 ?? '-', 'icon' => 'bi-house-add'],
         ],
     ],
     [
@@ -312,6 +318,7 @@ $bagianList = [
             ['label' => 'Plafon', 'field' => $pemilik->plafond ?? '-', 'icon' => 'bi-menu-button-wide'],
             ['label' => 'Indikasi Kerusakan 6', 'field' => $pemilik->indikasi_kerusakan7 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan7 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Foto Faktual Plafon', 'field' => $datastruktur->cadangan2 ?? '-', 'icon' => 'bi-house-add'],
         ],
     ],
     [
@@ -321,6 +328,7 @@ $bagianList = [
             ['label' => 'Utilitas', 'field' => $pemilik->utilitas ?? '-', 'icon' => 'bi-lightning'],
             ['label' => 'Indikasi Kerusakan 7', 'field' => $pemilik->indikasi_kerusakan8 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan 7', 'field' => $pemilik->tingkat_kerusakan8 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Foto Faktual Utilitas', 'field' => $datastruktur->balok ?? '-', 'icon' => 'bi-house-add'],
         ],
     ],
     [
@@ -331,6 +339,7 @@ $bagianList = [
             // ['label' => 'Total Nilai Kerusakan', 'field' => $pemilik->total_nilai_kerusakan ?? '-', 'icon' => 'bi-percent'],
             ['label' => 'Indikasi Kerusakan 8', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
             ['label' => 'Tingkat Kerusakan 8', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
+            ['label' => 'Foto Faktual Utilitas', 'field' => $datastruktur->kolom ?? '-', 'icon' => 'bi-house-add'],
         ],
     ],
     [
@@ -346,7 +355,42 @@ $bagianList = [
 ];
 @endphp
 
-<div class="col-12 mb-4 mt-5">
+<div class="row g-3 mb-3">
+    @foreach ($bagian['items'] as $item)
+        <div class="col-md-3">
+            <div class="d-flex align-items-start">
+                <div class="me-3">
+                    <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
+                </div>
+                <div style="width: 100%;">
+                    <h6 class="fw-bold text-dark mb-1">{{ $item['label'] }}</h6>
+
+                    {{-- Jika item label mengandung "Foto Faktual" maka tampilkan gambar --}}
+                    @if(Str::contains($item['label'], 'Foto Faktual'))
+                        <div style="margin-top: 10px;">
+                            @if($item['field'] && file_exists(public_path('storage/' . $item['field'])))
+                                <!-- Menampilkan gambar dari storage -->
+                                <img src="{{ asset('storage/' . $item['field']) }}" alt="Foto Faktual" style="width: 100%; max-height: 120px; object-fit: contain;" loading="lazy">
+                            @elseif($item['field'])
+                                <!-- Menampilkan gambar dari path luar storage -->
+                                <img src="{{ asset($item['field']) }}" alt="Foto Faktual" style="width: 100%; max-height: 120px; object-fit: contain;" loading="lazy">
+                            @else
+                                <!-- Placeholder jika tidak ada data -->
+                                <p style="font-size: 11px;">Tidak Ada Foto Faktual!</p>
+                            @endif
+                        </div>
+                    @else
+                        {{-- Kalau bukan foto faktual tampilkan teks biasa --}}
+                        <p class="mb-0 text-muted">{{ $item['field'] }}</p>
+                    @endif
+                </div>
+            </div>
+        </div>
+    @endforeach
+</div>
+
+
+{{-- <div class="col-12 mb-4 mt-5">
     <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
         <div class="card-header bg-primary text-white d-flex align-items-center">
             <i class="bi bi-building me-2 fs-5"></i>
@@ -382,7 +426,7 @@ $bagianList = [
             @endforeach
         </div>
     </div>
-</div>
+</div> --}}
 
 
                       <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->id }}">
