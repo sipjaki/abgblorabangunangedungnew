@@ -2211,7 +2211,8 @@ public function bedatabgstrukrrusak($id)
         'user' => $user,
         'data' => $data,               // parent
         'subdatapemilik' => $subdatapemilik, // child 1
-        'datastruktur' => $datastruktur,     // child 2
+        'subdatapemilik' => $datastruktur,     // child 2
+        // 'datastruktur' => $datastruktur,     // child 2
         'start' => $start,
     ]);
 }

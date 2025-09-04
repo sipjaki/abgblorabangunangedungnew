@@ -270,7 +270,7 @@ th {
                     ['label' => 'Pondasi', 'field' => $pemilik->pondasi ?? '-', 'icon' => 'bi-box'],
                     ['label' => 'Indikasi Kerusakan 1', 'field' => $pemilik->indikasi_kerusakan2 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 1', 'field' => $pemilik->tingkat_kerusakan2 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Pondasi', 'field' => $datastruktur->struktur_bawah ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Pondasi', 'field' => $pemilik->struktur_bawah ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -280,7 +280,7 @@ th {
                     ['label' => 'Struktur', 'field' => $pemilik->struktur ?? '-', 'icon' => 'bi-diagram-3'],
                     ['label' => 'Indikasi Kerusakan 2', 'field' => $pemilik->indikasi_kerusakan3 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 2', 'field' => $pemilik->tingkat_kerusakan3 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Struktur', 'field' => $datastruktur->struktur_atas ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Struktur', 'field' => $pemilik->struktur_atas ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -290,7 +290,7 @@ th {
                     ['label' => 'Atap', 'field' => $pemilik->atap ?? '-', 'icon' => 'bi-cloud'],
                     ['label' => 'Indikasi Kerusakan 3', 'field' => $pemilik->indikasi_kerusakan4 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 4', 'field' => $pemilik->tingkat_kerusakan4 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Atap', 'field' => $datastruktur->genteng ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Atap', 'field' => $pemilik->genteng ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -300,7 +300,7 @@ th {
                     ['label' => 'Lantai', 'field' => $pemilik->lantai ?? '-', 'icon' => 'bi-grid-1x2'],
                     ['label' => 'Indikasi Kerusakan 4', 'field' => $pemilik->indikasi_kerusakan5 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 4', 'field' => $pemilik->tingkat_kerusakan5 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Lantai', 'field' => $datastruktur->rangka_atap ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Lantai', 'field' => $pemilik->rangka_atap ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -310,7 +310,7 @@ th {
                     ['label' => 'Dinding', 'field' => $pemilik->dinding ?? '-', 'icon' => 'bi-bricks'],
                     ['label' => 'Indikasi Kerusakan 5', 'field' => $pemilik->indikasi_kerusakan6 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan6 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Dinding', 'field' => $datastruktur->cadangan1 ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Dinding', 'field' => $pemilik->cadangan1 ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -320,7 +320,7 @@ th {
                     ['label' => 'Plafon', 'field' => $pemilik->plafond ?? '-', 'icon' => 'bi-menu-button-wide'],
                     ['label' => 'Indikasi Kerusakan 6', 'field' => $pemilik->indikasi_kerusakan7 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan7 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Plafon', 'field' => $datastruktur->cadangan2 ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Plafon', 'field' => $pemilik->cadangan2 ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -330,7 +330,7 @@ th {
                     ['label' => 'Utilitas', 'field' => $pemilik->utilitas ?? '-', 'icon' => 'bi-lightning'],
                     ['label' => 'Indikasi Kerusakan 7', 'field' => $pemilik->indikasi_kerusakan8 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 7', 'field' => $pemilik->tingkat_kerusakan8 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Utilitas', 'field' => $datastruktur->balok ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Utilitas', 'field' => $pemilik->balok ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -340,7 +340,7 @@ th {
                     ['label' => 'Finishing', 'field' => $pemilik->finishing ?? '-', 'icon' => 'bi-palette'],
                     ['label' => 'Indikasi Kerusakan 8', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 8', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Finishing', 'field' => $datastruktur->kolom ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Finishing', 'field' => $pemilik->kolom ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
