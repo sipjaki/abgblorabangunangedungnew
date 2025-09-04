@@ -2254,7 +2254,7 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
         // FOTO FOTO TABEL KEDUA
         'struktur_bawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
         'struktur_atas' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
-        'struktur_atap' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+        'genteng' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
         'rangka_atap' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
         'balok' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
         'kolom' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
@@ -2274,7 +2274,7 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
     // Upload foto otomatis
     $uploadFields = [
         'cadangan1', 'cadangan2',       // tabel pertama
-        'struktur_bawah', 'struktur_atas', 'struktur_atap',
+        'struktur_bawah', 'struktur_atas', 'genteng',
         'rangka_atap', 'balok', 'kolom' // tabel kedua
     ];
 
@@ -2293,12 +2293,12 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
     // Simpan ke tabel kedua (struktur bangunan), tanpa cadangan1 & cadangan2
     databgstrukturbangunan::create([
         'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
-        'struktur_bawah' => $validated['struktur_bawah'] ?? $validated['struktur_bangunan_bawah'] ?? null,
-        'struktur_atas' => $validated['struktur_atas'] ?? $validated['struktur_bangunan_atas'] ?? null,
-        'struktur_atap' => $validated['struktur_atap'] ?? null,
-        'rangka_atap' => $validated['rangka_atap'] ?? $validated['struktur_atap'] ?? null,
-        'balok' => $validated['balok'] ?? $validated['struktur'] ?? null,
-        'kolom' => $validated['kolom'] ?? $validated['pondasi'] ?? null,
+        'struktur_bawah' => $validated['struktur_bawah'] ?? null,
+        'struktur_atas' => $validated['struktur_atas'] ?? null,
+        'genteng' => $validated['genteng'] ?? null,
+        'rangka_atap' => $validated['rangka_atap'] ?? null,
+        'balok' => $validated['balok'] ?? null,
+        'kolom' => $validated['kolom'] ?? null,
     ]);
 
 //    session()->flash('create', 'Data struktur bangunan beserta foto berhasil ditambahkan ke kedua tabel!');

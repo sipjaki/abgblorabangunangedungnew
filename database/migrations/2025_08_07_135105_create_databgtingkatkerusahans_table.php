@@ -36,7 +36,7 @@ return new class extends Migration
     $table->string('tingkat_kerusakan3')->nullable();
 
     // BAGIAN 4
-    $table->string('atap')->nullable(); // struktur_atap
+    $table->string('atap')->nullable(); // struktur_atap di ganti jadi genteng
     $table->string('indikasi_kerusakan4')->nullable();
     $table->string('tingkat_kerusakan4')->nullable();
 

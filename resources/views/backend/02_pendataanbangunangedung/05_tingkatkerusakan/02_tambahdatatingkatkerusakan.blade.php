@@ -579,11 +579,11 @@ th {
     <div class="col-md-6">
         <div class="mb-3">
             <label class="form-label"><i class="bi bi-house-door text-warning me-1"></i> Foto Faktual Atap | Max 15 MB</label>
-            <input type="file" name="struktur_atap"
-                   class="form-control @error('struktur_atap') is-invalid @enderror"
+            <input type="file" name="genteng"
+                   class="form-control @error('genteng') is-invalid @enderror"
                    accept="image/*"
                    onchange="previewStrukturAtap(event)">
-            @error('struktur_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            @error('genteng')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
             <!-- Preview Gambar -->
             <div class="mt-3 text-center">
