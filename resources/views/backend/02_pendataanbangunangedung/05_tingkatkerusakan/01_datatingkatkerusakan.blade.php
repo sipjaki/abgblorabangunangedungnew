@@ -408,7 +408,13 @@ th {
                                                 <p style="font-size: 11px; color:red;">Tidak Ada Foto Faktual!</p>
                                             @endif
                                         </div>
-                                    @else
+
+                                    <p>
+                                    <i class="bi bi-arrows-fullscreen me-1 text-primary"></i>
+                                    Klik Foto Untuk Memperbesar
+                                    </p>
+
+                                        @else
                                         <p class="mb-0 text-muted">{{ $item['field'] }}</p>
                                     @endif
                                 </div>
@@ -463,7 +469,7 @@ th {
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content rounded-3 shadow">
             <div class="modal-header">
-                <h5 class="modal-title" id="fotoModalLabel">Foto Faktual <br> Klik Foto Untuk Memperbesar</h5>
+                <h5 class="modal-title" id="fotoModalLabel">Foto Faktual </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
             </div>
             <div class="modal-body text-center">
