@@ -2394,7 +2394,7 @@ public function bedatabgstrukrrusakupdate($id)
     $databgkepemilikan = databgkepemilikan::findOrFail($id);
 
     // Child 1 = data struktur bangunan
-    $datastruktur = datastrukturbangunangedung::where('databgkepemilikan_id', $id)->first();
+    $datastruktur = databgstrukturbangunan::where('databgkepemilikan_id', $id)->first();
 
     // Child 2 = data tingkat kerusakan
     $datakerusakan = databgtingkatkerusahan::where('databgkepemilikan_id', $id)->first();
