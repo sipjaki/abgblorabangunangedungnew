@@ -2301,10 +2301,13 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
         'kolom' => $validated['kolom'] ?? $validated['pondasi'] ?? null,
     ]);
 
-   session()->flash('create', 'Data struktur bangunan beserta foto berhasil ditambahkan ke kedua tabel!');
-    return redirect()->route('bedatabgstrukrrusak', [
-        'id' => $validated['databgkepemilikan_id']
-    ]);
+//    session()->flash('create', 'Data struktur bangunan beserta foto berhasil ditambahkan ke kedua tabel!');
+//     return redirect()->route('bedatabgstrukrrusak', [
+//         'id' => $validated['databgkepemilikan_id']
+//     ]);
+
+session()->flash('create', 'Data struktur bangunan beserta foto berhasil ditambahkan ke kedua tabel!');
+return redirect()->route('bedatabgstrukrrusak', $validated['databgkepemilikan_id']);
 
 }
 
