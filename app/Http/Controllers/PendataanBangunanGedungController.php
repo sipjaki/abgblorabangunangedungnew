@@ -2390,21 +2390,29 @@ return redirect()->route('bedatabgstrukrrusak', $validated['databgkepemilikan_id
 
 public function bedatabgstrukrrusakupdate($id)
 {
-    // Ambil data bantuan teknis berdasarkan ID
-    $databantuanteknis = databgkepemilikan::find($id);
-    $databantuanteknis = databgtingkatkerusahan::find($id);
+    // Parent = kepemilikan
+    $databgkepemilikan = databgkepemilikan::findOrFail($id);
 
-    if (!$databantuanteknis) {
-        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    // Child 1 = data struktur bangunan
+    $datastruktur = datastrukturbangunangedung::where('databgkepemilikan_id', $id)->first();
+
+    // Child 2 = data tingkat kerusakan
+    $datakerusakan = databgtingkatkerusahan::where('databgkepemilikan_id', $id)->first();
+
+    if (!$datastruktur || !$datakerusakan) {
+        return abort(404, 'Data struktur atau tingkat kerusakan tidak ditemukan');
     }
 
-    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    // Kirim ke view
     return view('backend.02_pendataanbangunangedung.05_tingkatkerusakan.03_updatetingkatkerusakan', [
-        'title' => 'Perbaikan Data Struktur & Tingkat Kerusakan Bangunan Gedung ',
-        'data' => $databantuanteknis,
-        'user' => Auth::user()
+        'title'        => 'Perbaikan Data Struktur & Tingkat Kerusakan Bangunan Gedung',
+        'data'         => $databgkepemilikan, // parent
+        'datastruktur' => $datastruktur,      // child struktur
+        'datakerusakan'=> $datakerusakan,     // child kerusakan
+        'user'         => Auth::user(),
     ]);
 }
+
 
 public function bedatabgstrukrrusakupdatenew(Request $request, $id)
 {

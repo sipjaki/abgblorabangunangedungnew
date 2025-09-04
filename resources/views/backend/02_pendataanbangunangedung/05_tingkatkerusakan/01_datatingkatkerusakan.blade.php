@@ -408,7 +408,7 @@ th {
                                                 <p style="font-size: 11px; color:red;">Tidak Ada Foto Faktual!</p>
                                             @endif
                                         </div>
-
+<br>
                                     <p>
                                     <i class="bi bi-arrows-fullscreen me-1 text-primary"></i>
                                     Klik Foto Untuk Memperbesar
@@ -425,7 +425,7 @@ th {
             @endforeach
 
             {{-- Tombol Perbaikan Data --}}
-            <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->id }}">
+            <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->databgkepemilikan_id }}">
                 <p class="button-berkas">
                     <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
                     Perbaikan Data
