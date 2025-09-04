@@ -214,7 +214,8 @@ Route::get(
     )->middleware('auth')->name('bedatabgstrukrrusak');
 
     Route::delete('/bedatabgstrukrrusakdelete/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakdelete'])->middleware('auth')->name('bedatabgstrukrrusakdelete');
-// Route::get('/bedatabgstrukrrusak/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukrrusak'])->middleware('auth')->name('bedatabgstrukrrusak');
+
+    // Route::get('/bedatabgstrukrrusak/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukrrusak'])->middleware('auth')->name('bedatabgstrukrrusak');
 
 Route::get('/bedatabgstrukrrusakcreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakcreate'])->middleware('auth')->name('bedatabgstrukrrusakcreate');
 Route::post('/bedatabgstrukrrusakcreatenew', [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakcreatenew'])->middleware('auth')->name('bedatabgstrukrrusakcreatenew');

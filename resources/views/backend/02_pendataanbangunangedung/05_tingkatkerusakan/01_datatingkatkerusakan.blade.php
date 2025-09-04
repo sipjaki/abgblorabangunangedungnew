@@ -412,7 +412,8 @@ $bagianList = [
 
                      <a href="javascript:void(0)" title="Delete"
    data-bs-toggle="modal" data-bs-target="#deleteModal"
-   data-judul="{{ $pemilik->id }}"
+   {{-- data-judul="{{ $pemilik->id }}" --}}
+data-judul="{{ $pemilik->databgkepemilikan_id }}"
    onclick="setDeleteUrl(this)"
    style="text-decoration: none;"
 >
