@@ -463,7 +463,7 @@ th {
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content rounded-3 shadow">
             <div class="modal-header">
-                <h5 class="modal-title" id="fotoModalLabel">Foto Faktual</h5>
+                <h5 class="modal-title" id="fotoModalLabel">Foto Faktual <br> Klik Foto Untuk Memperbesar</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
             </div>
             <div class="modal-body text-center">
