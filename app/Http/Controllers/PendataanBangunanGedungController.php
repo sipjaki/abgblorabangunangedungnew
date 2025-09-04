@@ -16,6 +16,7 @@ use App\Models\databgstatus;
 use App\Models\databgstrukturbangunan;
 use App\Models\databgtanah;
 use App\Models\databgtingkatkerusahan;
+use App\Models\datastrukturbangunangedung;
 use App\Models\kecamatanblora;
 use App\Models\kelurahandesa;
 use App\Models\kepemilikanbangunangedung;
@@ -2654,6 +2655,32 @@ public function bedatabgmebangunandelete($id)
     }
 
     return redirect()->back()->with('error', 'Item tidak ditemukan');
+}
+
+public function bedatabgstrukrrusakdelete($id)
+{
+    try {
+        // Cari data di tabel tingkat kerusakan
+        $kerusakan = databgtingkatkerusahan::where('databgkepemilikan_id', $id)->first();
+
+        // Cari data di tabel struktur bangunan
+        $struktur = databgstrukturbangunan::where('databgkepemilikan_id', $id)->first();
+
+        // Hapus jika ada
+        if ($kerusakan) {
+            $kerusakan->delete();
+        }
+
+        if ($struktur) {
+            $struktur->delete();
+        }
+
+        // Redirect balik dengan pesan sukses
+        return redirect()->back()->with('delete', 'Data dari kedua tabel berhasil dihapus!');
+    } catch (\Exception $e) {
+        // Kalau error, balikin pesan
+        return redirect()->back()->with('error', 'Terjadi kesalahan saat menghapus data: ' . $e->getMessage());
+    }
 }
 
 }
