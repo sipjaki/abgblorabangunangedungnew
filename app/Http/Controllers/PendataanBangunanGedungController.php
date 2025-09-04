@@ -2145,6 +2145,40 @@ public function bedatabgmebangunanupdatenew(Request $request, $id)
     return redirect()->route('bedatabgmebangunan', $parentId);
 }
 
+// public function bedatabgstrukrrusak($id)
+// {
+//     // Ambil user login
+//     $user = Auth::user();
+
+//     // Cari data kepemilikan dulu
+//     $data = databgkepemilikan::find($id);
+
+//     // Kalau tidak ada kepemilikan, buat object kosong biar link tambah data tetap ada
+//     if (!$data) {
+//         $data = new databgkepemilikan();
+//         $data->id = $id;
+//     }
+
+//     // Ambil data tingkat kerusakan berdasarkan parent
+//     $subdatapemilik = databgtingkatkerusahan::where('databgkepemilikan_id', $id)
+//                         ->paginate(15);
+
+//     // Hitung nomor urut mulai untuk paginasi
+//     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
+
+//     // Kirim data ke view
+//     return view('backend.02_pendataanbangunangedung.05_tingkatkerusakan.01_datatingkatkerusakan', [
+//         'title' => 'Informasi Data Struktur & Tingkat Kerusakan Bangunan Gedung',
+//         'title_halaman' => 'Informasi Data Struktur & Tingkat Kerusakan Bangunan Gedung',
+//         'user' => $user,
+//         'data' => $data,             // ini parent
+//         'subdatapemilik' => $subdatapemilik, // ini child
+//         'start' => $start,
+//     ]);
+// }
+
+
+
 public function bedatabgstrukrrusak($id)
 {
     // Ambil user login
@@ -2163,6 +2197,10 @@ public function bedatabgstrukrrusak($id)
     $subdatapemilik = databgtingkatkerusahan::where('databgkepemilikan_id', $id)
                         ->paginate(15);
 
+    // Ambil data struktur bangunan berdasarkan parent
+    $datastruktur = databgstrukturbangunan::where('databgkepemilikan_id', $id)
+                        ->paginate(15);
+
     // Hitung nomor urut mulai untuk paginasi
     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
 
@@ -2171,12 +2209,12 @@ public function bedatabgstrukrrusak($id)
         'title' => 'Informasi Data Struktur & Tingkat Kerusakan Bangunan Gedung',
         'title_halaman' => 'Informasi Data Struktur & Tingkat Kerusakan Bangunan Gedung',
         'user' => $user,
-        'data' => $data,             // ini parent
-        'subdatapemilik' => $subdatapemilik, // ini child
+        'data' => $data,               // parent
+        'subdatapemilik' => $subdatapemilik, // child 1
+        'datastruktur' => $datastruktur,     // child 2
         'start' => $start,
     ]);
 }
-
 
 public function bedatabgstrukrrusakcreate($id)
 {
