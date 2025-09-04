@@ -338,7 +338,7 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('bedatabgstrukrrusakcreatenew') }}" method="POST">
+<form id="formPemilik" action="{{ route('bedatabgstrukrrusakcreatenew') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
@@ -418,25 +418,32 @@ th {
         </div>
     </div>
 
+
     <!-- Kolom Kanan -->
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label">
-                <i class="bi bi-bricks text-primary me-1"></i> Foto Faktual Pondasi | Max 15 MB
-            </label>
-            <input type="file" name="struktur_bawah"
-                   class="form-control @error('struktur_bawah') is-invalid @enderror"
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-bricks text-primary me-1"></i> Foto Faktual Pondasi | Max 15 MB
+        </label>
 
-                   onchange="previewStrukturBawah(event)">
-            @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+        <input type="file"
+               name="struktur_bawah"
+               accept="image/*"
+               class="form-control @error('struktur_bawah') is-invalid @enderror"
+               onchange="previewStrukturBawah(event)">
 
-            <!-- Preview Gambar -->
-            <div class="mt-3 text-center">
-                <img id="preview-struktur-bawah" src="#" alt="Preview Struktur Bawah"
-                     style="display: none; max-height: 220px; border: 1px solid #ddd; padding: 6px; border-radius: 10px;">
-            </div>
+        @error('struktur_bawah')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <!-- Preview Gambar -->
+        <div class="mt-3 text-center">
+            <img id="preview-struktur-bawah" src="#" alt="Preview Struktur Bawah"
+                 style="display: none; max-height: 220px; border: 1px solid #ddd; padding: 6px; border-radius: 10px;">
         </div>
     </div>
+</div>
+
 </div>
 
 <script>
@@ -504,7 +511,7 @@ th {
             <label class="form-label"><i class="bi bi-building text-success me-1"></i> Foto Faktual Struktur | Max 15 MB</label>
             <input type="file" name="struktur_atas"
                    class="form-control @error('struktur_atas') is-invalid @enderror"
-
+                    accept="image/*"
                    onchange="previewStrukturAtas(event)">
             @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
@@ -581,7 +588,7 @@ th {
             <label class="form-label"><i class="bi bi-house-door text-warning me-1"></i> Foto Faktual Atap | Max 15 MB</label>
             <input type="file" name="genteng"
                    class="form-control @error('genteng') is-invalid @enderror"
-
+               accept="image/*"
                    onchange="previewStrukturAtap(event)">
             @error('genteng')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
@@ -659,7 +666,7 @@ th {
             <label class="form-label"><i class="bi bi-house-gear text-danger me-1"></i> Foto Faktual Lantai | Max 15 MB</label>
             <input type="file" name="rangka_atap"
                    class="form-control @error('rangka_atap') is-invalid @enderror"
-
+               accept="image/*"
                    onchange="previewRangkaAtap(event)">
             @error('rangka_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
@@ -740,7 +747,7 @@ th {
             </label>
             <input type="file" name="cadangan1"
                    class="form-control @error('cadangan1') is-invalid @enderror"
-
+               accept="image/*"
                    onchange="previewCadangan1(event)">
             @error('cadangan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
@@ -817,7 +824,7 @@ th {
             <label class="form-label"><i class="bi bi-image text-success me-1"></i> Foto Faktual Plafond | Max 15 MB</label>
             <input type="file" name="cadangan2"
                    class="form-control @error('cadangan2') is-invalid @enderror"
-
+               accept="image/*"
                    onchange="previewCadangan2(event)">
             @error('cadangan2')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
@@ -894,7 +901,7 @@ th {
             <label class="form-label"><i class="bi bi-diagram-3 text-info me-1"></i> Foto Faktual Utilitas | Max 15 MB</label>
             <input type="file" name="balok"
                    class="form-control @error('balok') is-invalid @enderror"
-
+               accept="image/*"
                    onchange="previewBalok(event)">
             @error('balok')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
@@ -975,7 +982,7 @@ th {
             <label class="form-label"><i class="bi bi-columns-gap text-warning me-1"></i> Foto Faktual Finishing | Max 15 MB</label>
             <input type="file" name="kolom"
                    class="form-control @error('kolom') is-invalid @enderror"
-
+               accept="image/*"
                    onchange="previewKolom(event)">
             @error('kolom')<div class="invalid-feedback">{{ $message }}</div>@enderror
 

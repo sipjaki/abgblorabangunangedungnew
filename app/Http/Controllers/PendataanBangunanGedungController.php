@@ -2291,16 +2291,16 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
         // 'cadangan2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
 
                 // FOTO FOTO TABEL UTAMA
-        'cadangan1' => 'nullable|max:15048',
-        'cadangan2' => 'nullable|max:15048',
+        'cadangan1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'cadangan2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
 
         // FOTO FOTO TABEL KEDUA
-        'struktur_bawah' => 'nullable|max:15048',
-        'struktur_atas' => 'nullable|max:15048',
-        'genteng' => 'nullable|max:15048',
-        'rangka_atap' => 'nullable|max:15048',
-        'balok' => 'nullable|max:15048',
-        'kolom' => 'nullable|max:15048',
+        'struktur_bawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'struktur_atas' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'genteng' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'rangka_atap' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'balok' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'kolom' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
 
     ], [
         'databgkepemilikan_id.required' => 'ID Kepemilikan wajib diisi.',
