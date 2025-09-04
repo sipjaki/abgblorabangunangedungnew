@@ -245,7 +245,6 @@ th {
 @include('backend.02_pendataanbangunangedung.00_fiturbg.02_datasemuabangunan')
 
 </div>
-
 @php
     use Illuminate\Support\Str;
 @endphp
@@ -270,7 +269,7 @@ th {
                     ['label' => 'Pondasi', 'field' => $pemilik->pondasi ?? '-', 'icon' => 'bi-box'],
                     ['label' => 'Indikasi Kerusakan 1', 'field' => $pemilik->indikasi_kerusakan2 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 1', 'field' => $pemilik->tingkat_kerusakan2 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Pondasi', 'field' => $pemilik->struktur_bawah ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Pondasi', 'field' => $datastruktur->struktur_bawah ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -280,7 +279,7 @@ th {
                     ['label' => 'Struktur', 'field' => $pemilik->struktur ?? '-', 'icon' => 'bi-diagram-3'],
                     ['label' => 'Indikasi Kerusakan 2', 'field' => $pemilik->indikasi_kerusakan3 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 2', 'field' => $pemilik->tingkat_kerusakan3 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Struktur', 'field' => $pemilik->struktur_atas ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Struktur', 'field' => $datastruktur->struktur_atas ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -290,7 +289,7 @@ th {
                     ['label' => 'Atap', 'field' => $pemilik->atap ?? '-', 'icon' => 'bi-cloud'],
                     ['label' => 'Indikasi Kerusakan 3', 'field' => $pemilik->indikasi_kerusakan4 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 4', 'field' => $pemilik->tingkat_kerusakan4 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Atap', 'field' => $pemilik->genteng ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Atap', 'field' => $datastruktur->genteng ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -300,7 +299,7 @@ th {
                     ['label' => 'Lantai', 'field' => $pemilik->lantai ?? '-', 'icon' => 'bi-grid-1x2'],
                     ['label' => 'Indikasi Kerusakan 4', 'field' => $pemilik->indikasi_kerusakan5 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 4', 'field' => $pemilik->tingkat_kerusakan5 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Lantai', 'field' => $pemilik->rangka_atap ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Lantai', 'field' => $datastruktur->rangka_atap ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -310,7 +309,7 @@ th {
                     ['label' => 'Dinding', 'field' => $pemilik->dinding ?? '-', 'icon' => 'bi-bricks'],
                     ['label' => 'Indikasi Kerusakan 5', 'field' => $pemilik->indikasi_kerusakan6 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan6 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Dinding', 'field' => $pemilik->pintu ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Dinding', 'field' => $datastruktur->cadangan1 ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -320,7 +319,7 @@ th {
                     ['label' => 'Plafon', 'field' => $pemilik->plafond ?? '-', 'icon' => 'bi-menu-button-wide'],
                     ['label' => 'Indikasi Kerusakan 6', 'field' => $pemilik->indikasi_kerusakan7 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan7 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Plafon', 'field' => $pemilik->jendela ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Plafon', 'field' => $datastruktur->cadangan2 ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -330,7 +329,7 @@ th {
                     ['label' => 'Utilitas', 'field' => $pemilik->utilitas ?? '-', 'icon' => 'bi-lightning'],
                     ['label' => 'Indikasi Kerusakan 7', 'field' => $pemilik->indikasi_kerusakan8 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 7', 'field' => $pemilik->tingkat_kerusakan8 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Utilitas', 'field' => $pemilik->balok ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Utilitas', 'field' => $datastruktur->balok ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -340,7 +339,7 @@ th {
                     ['label' => 'Finishing', 'field' => $pemilik->finishing ?? '-', 'icon' => 'bi-palette'],
                     ['label' => 'Indikasi Kerusakan 8', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                     ['label' => 'Tingkat Kerusakan 8', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
-                    ['label' => 'Foto Faktual Finishing', 'field' => $pemilik->kolom ?? null, 'icon' => 'bi-house-add'],
+                    ['label' => 'Foto Faktual Finishing', 'field' => $datastruktur->kolom ?? null, 'icon' => 'bi-house-add'],
                 ],
             ],
             [
@@ -352,7 +351,6 @@ th {
             ],
         ];
         @endphp
-
 
         <div class="col-12 mb-4 mt-5">
             <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
@@ -373,58 +371,37 @@ th {
 
                         <h6 class="fw-bold text-dark mt-3">{{ $bagian['title'] }}</h6>
                         <div class="row g-3 mb-3">
-                            {{-- Kalau label Foto Faktual --}}
-@if(Str::contains($item['label'], 'Foto Faktual'))
-    @if($item['field'])
-        {{-- Thumbnail Foto --}}
-        <div class="mt-2">
-            @if(Storage::disk('public')->exists($item['field']))
-                <img src="{{ asset('storage/' . $item['field']) }}"
-                     alt="Foto Faktual"
-                     class="img-thumbnail"
-                     style="max-height: 100px; object-fit: contain;">
-            @else
-                <img src="{{ asset($item['field']) }}"
-                     alt="Foto Faktual"
-                     class="img-thumbnail"
-                     style="max-height: 100px; object-fit: contain;">
-            @endif
-        </div>
+                            @foreach ($bagian['items'] as $item)
+                                <div class="col-md-3">
+                                    <div class="d-flex align-items-start">
+                                        <div class="me-3">
+                                            <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
+                                        </div>
+                                        <div style="width: 100%;">
+                                            <h6 class="fw-bold text-dark mb-1">{{ $item['label'] }}</h6>
 
-        {{-- Tombol Modal --}}
-        <button class="btn btn-outline-primary btn-sm mt-2"
-                data-bs-toggle="modal"
-                data-bs-target="#fotoModal{{ $loop->index }}">
-            <i class="bi bi-image me-1"></i> Lihat Foto Faktual
-        </button>
-
-        <!-- Modal Foto -->
-        <div class="modal fade" id="fotoModal{{ $loop->index }}" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content shadow-lg border-0">
-                    <div class="modal-header bg-primary text-white">
-                        <h6 class="modal-title">Foto Faktual</h6>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-center">
-                        @if(Storage::disk('public')->exists($item['field']))
-                            <img src="{{ asset('storage/' . $item['field']) }}"
-                                 alt="Foto Faktual" class="img-fluid rounded shadow-sm">
-                        @else
-                            <img src="{{ asset($item['field']) }}"
-                                 alt="Foto Faktual" class="img-fluid rounded shadow-sm">
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
-    @else
-        <p style="font-size: 11px; color:red;">Tidak Ada Foto Faktual!</p>
-    @endif
-@else
-    <p class="mb-0 text-muted">{{ $item['field'] }}</p>
-@endif
-
+                                            {{-- Kalau label Foto Faktual tampilkan gambar dengan thumbnail + modal --}}
+                                            @if(Str::contains($item['label'], 'Foto Faktual'))
+                                                <div style="margin-top: 10px;">
+                                                    @if($item['field'] && Storage::disk('public')->exists($item['field']))
+                                                        <a href="{{ asset('storage/' . $item['field']) }}" target="_blank" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('{{ asset('storage/' . $item['field']) }}')">
+                                                            <img src="{{ asset('storage/' . $item['field']) }}" alt="Foto Faktual" class="img-thumbnail" style="width: 100%; max-height: 120px; object-fit: cover;" loading="lazy">
+                                                        </a>
+                                                    @elseif($item['field'])
+                                                        <a href="{{ asset($item['field']) }}" target="_blank" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('{{ asset($item['field']) }}')">
+                                                            <img src="{{ asset($item['field']) }}" alt="Foto Faktual" class="img-thumbnail" style="width: 100%; max-height: 120px; object-fit: cover;" loading="lazy">
+                                                        </a>
+                                                    @else
+                                                        <p style="font-size: 11px; color:red;">Tidak Ada Foto Faktual!</p>
+                                                    @endif
+                                                </div>
+                                            @else
+                                                <p class="mb-0 text-muted">{{ $item['field'] }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     @endforeach
 
@@ -499,12 +476,30 @@ th {
     @endforelse
 </div>
 
+{{-- Modal Gambar --}}
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" class="img-fluid rounded" style="max-height: 80vh;" alt="Preview">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showImage(src) {
+        document.getElementById('modalImage').src = src;
+    }
+</script>
+
 <style>
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 </style>
+
 
 <!-- Pagination links -->
 {{-- <div class="d-flex justify-content-center mt-4">
