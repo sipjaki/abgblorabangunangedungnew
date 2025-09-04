@@ -2248,17 +2248,22 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
         'finishing' => 'nullable|string|max:100',
         'total_nilai_kerusakan' => 'nullable|string|max:100',
 
-        // FOTO FOTO TABEL UTAMA
-        'cadangan1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
-        'cadangan2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+        // // FOTO FOTO TABEL UTAMA
+        // 'cadangan1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+        // 'cadangan2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+
+                // FOTO FOTO TABEL UTAMA
+        'cadangan1' => 'nullable|file|max:15048',
+        'cadangan2' => 'nullable|file|max:15048',
 
         // FOTO FOTO TABEL KEDUA
-        'struktur_bawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
-        'struktur_atas' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
-        'genteng' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
-        'rangka_atap' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
-        'balok' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
-        'kolom' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15048',
+        'struktur_bawah' => 'nullable|file|max:15048',
+        'struktur_atas' => 'nullable|file|max:15048',
+        'genteng' => 'nullable|file|max:15048',
+        'rangka_atap' => 'nullable|file|max:15048',
+        'balok' => 'nullable|file|max:15048',
+        'kolom' => 'nullable|file|max:15048',
+
     ], [
         'databgkepemilikan_id.required' => 'ID Kepemilikan wajib diisi.',
         'databgkepemilikan_id.exists' => 'Data kepemilikan tidak ditemukan.',
