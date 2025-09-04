@@ -377,45 +377,41 @@ th {
                 <h6 class="fw-bold text-dark mt-3">{{ $bagian['title'] }}</h6>
                 <div class="row g-3 mb-3">
                     @foreach ($bagian['items'] as $item)
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center border rounded p-2 bg-light shadow-sm">
-                                {{-- Icon & Informasi --}}
-                                <div class="flex-grow-1">
-                                    <h6 class="fw-bold text-dark mb-1">
-                                        <i class="bi {{ $item['icon'] }} text-primary me-2"></i>
-                                        {{ $item['label'] }}
-                                    </h6>
+                        <div class="col-md-3">
+                            <div class="d-flex align-items-start">
+                                <div class="me-3">
+                                    <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
+                                </div>
+                                <div style="width: 100%;">
+                                    <h6 class="fw-bold text-dark mb-1">{{ $item['label'] }}</h6>
 
-                                    {{-- Kalau bukan foto tampilkan text --}}
-                                    @if(!Str::contains($item['label'], 'Foto Faktual'))
+                                    {{-- Kalau label Foto Faktual tampilkan gambar --}}
+                                    @if(Str::contains($item['label'], 'Foto Faktual'))
+                                        <div style="margin-top: 10px;">
+                                            @if($item['field'] && Storage::disk('public')->exists($item['field']))
+                                                <img src="{{ asset('storage/' . $item['field']) }}"
+                                                     alt="Foto Faktual"
+                                                     style="width: 100%; max-height: 120px; object-fit: contain; cursor:pointer;"
+                                                     loading="lazy"
+                                                     data-bs-toggle="modal"
+                                                     data-bs-target="#fotoModal"
+                                                     onclick="showFoto('{{ asset('storage/' . $item['field']) }}')">
+                                            @elseif($item['field'])
+                                                <img src="{{ asset($item['field']) }}"
+                                                     alt="Foto Faktual"
+                                                     style="width: 100%; max-height: 120px; object-fit: contain; cursor:pointer;"
+                                                     loading="lazy"
+                                                     data-bs-toggle="modal"
+                                                     data-bs-target="#fotoModal"
+                                                     onclick="showFoto('{{ asset($item['field']) }}')">
+                                            @else
+                                                <p style="font-size: 11px; color:red;">Tidak Ada Foto Faktual!</p>
+                                            @endif
+                                        </div>
+                                    @else
                                         <p class="mb-0 text-muted">{{ $item['field'] }}</p>
                                     @endif
                                 </div>
-
-                                {{-- Thumbnail Foto di kanan --}}
-                                @if(Str::contains($item['label'], 'Foto Faktual'))
-                                    <div class="ms-3">
-                                        @if($item['field'] && Storage::disk('public')->exists($item['field']))
-                                            <img src="{{ asset('storage/' . $item['field']) }}"
-                                                 alt="Foto Faktual"
-                                                 class="img-thumbnail"
-                                                 style="width: 100px; height: 80px; object-fit: cover; cursor: pointer;"
-                                                 data-bs-toggle="modal"
-                                                 data-bs-target="#fotoModal"
-                                                 onclick="showFoto('{{ asset('storage/' . $item['field']) }}')">
-                                        @elseif($item['field'])
-                                            <img src="{{ asset($item['field']) }}"
-                                                 alt="Foto Faktual"
-                                                 class="img-thumbnail"
-                                                 style="width: 100px; height: 80px; object-fit: cover; cursor: pointer;"
-                                                 data-bs-toggle="modal"
-                                                 data-bs-target="#fotoModal"
-                                                 onclick="showFoto('{{ asset($item['field']) }}')">
-                                        @else
-                                            <p style="font-size: 11px; color:red;">Tidak Ada Foto Faktual!</p>
-                                        @endif
-                                    </div>
-                                @endif
                             </div>
                         </div>
                     @endforeach
