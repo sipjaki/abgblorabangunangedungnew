@@ -2270,6 +2270,31 @@ public function bedatabgstrukrrusakcreatenew(Request $request)
         'cadangan2.image' => 'File harus berupa Foto atau Gambar.',
         'cadangan2.mimes' => 'Format gambar tidak valid. Hanya diperbolehkan: jpeg, png, jpg, gif, webp.',
         'cadangan2.max' => 'Ukuran gambar terlalu besar. Maksimal 15 MB.',
+
+        'struktur_bawah.image' => 'File harus berupa Foto atau Gambar.',
+        'struktur_bawah.mimes' => 'Format gambar tidak valid. Hanya diperbolehkan: jpeg, png, jpg, gif, webp.',
+        'struktur_bawah.max' => 'Ukuran gambar terlalu besar. Maksimal 15 MB.',
+
+        'struktur_atas.image' => 'File harus berupa Foto atau Gambar.',
+        'struktur_atas.mimes' => 'Format gambar tidak valid. Hanya diperbolehkan: jpeg, png, jpg, gif, webp.',
+        'struktur_atas.max' => 'Ukuran gambar terlalu besar. Maksimal 15 MB.',
+
+        'genteng.image' => 'File harus berupa Foto atau Gambar.',
+        'genteng.mimes' => 'Format gambar tidak valid. Hanya diperbolehkan: jpeg, png, jpg, gif, webp.',
+        'genteng.max' => 'Ukuran gambar terlalu besar. Maksimal 15 MB.',
+
+        'rangka_atap.image' => 'File harus berupa Foto atau Gambar.',
+        'rangka_atap.mimes' => 'Format gambar tidak valid. Hanya diperbolehkan: jpeg, png, jpg, gif, webp.',
+        'rangka_atap.max' => 'Ukuran gambar terlalu besar. Maksimal 15 MB.',
+
+        'balok.image' => 'File harus berupa Foto atau Gambar.',
+        'balok.mimes' => 'Format gambar tidak valid. Hanya diperbolehkan: jpeg, png, jpg, gif, webp.',
+        'balok.max' => 'Ukuran gambar terlalu besar. Maksimal 15 MB.',
+
+        'kolom.image' => 'File harus berupa Foto atau Gambar.',
+        'kolom.mimes' => 'Format gambar tidak valid. Hanya diperbolehkan: jpeg, png, jpg, gif, webp.',
+        'kolom.max' => 'Ukuran gambar terlalu besar. Maksimal 15 MB.',
+
     ]);
 
     // Upload foto otomatis
