@@ -2660,25 +2660,15 @@ public function bedatabgmebangunandelete($id)
 public function bedatabgstrukrrusakdelete($id)
 {
     try {
-        // Cari data di tabel tingkat kerusakan
-        $kerusakan = databgtingkatkerusahan::where('databgkepemilikan_id', $id)->first();
+        // Hapus semua data terkait di tabel tingkat kerusakan
+        databgtingkatkerusahan::where('databgkepemilikan_id', $id)->delete();
 
-        // Cari data di tabel struktur bangunan
-        $struktur = databgstrukturbangunan::where('databgkepemilikan_id', $id)->first();
-
-        // Hapus jika ada
-        if ($kerusakan) {
-            $kerusakan->delete();
-        }
-
-        if ($struktur) {
-            $struktur->delete();
-        }
+        // Hapus semua data terkait di tabel struktur bangunan
+        databgstrukturbangunan::where('databgkepemilikan_id', $id)->delete();
 
         // Redirect balik dengan pesan sukses
         return redirect()->back()->with('delete', 'Data dari kedua tabel berhasil dihapus!');
     } catch (\Exception $e) {
-        // Kalau error, balikin pesan
         return redirect()->back()->with('error', 'Terjadi kesalahan saat menghapus data: ' . $e->getMessage());
     }
 }
