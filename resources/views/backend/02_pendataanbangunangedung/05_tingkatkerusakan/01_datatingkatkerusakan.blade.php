@@ -353,115 +353,82 @@ th {
         ];
         @endphp
 
- <div class="col-12 mb-4 mt-5">
-    <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
-        <div class="card-header bg-primary text-white d-flex align-items-center">
-            <i class="bi bi-building me-2 fs-5"></i>
-            <h5 style="font-size: 16px;" class="mb-0">Informasi Struktur & Tingkat Kerusakan Bangunan Gedung</h5>
-        </div>
-        <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
-            @foreach ($bagianList as $bagian)
-                <div class="text-center">
-                    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 100%; margin: auto;">
-                    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
-                        <i class="bi bi-upload" style="margin-right: 6px;"></i>
-                        {{ $bagian['title_halaman'] }}
-                    </h5>
-                    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 100%; margin: auto;">
+ <div class="row g-3 mb-3">
+    @foreach ($bagian['items'] as $item)
+        <div class="col-md-6">
+            <div class="d-flex align-items-start">
+                <div class="me-3">
+                    <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
                 </div>
+                <div style="width: 100%;">
+                    <h6 class="fw-bold text-dark mb-1">{{ $item['label'] }}</h6>
 
-                <h6 class="fw-bold text-dark mt-3">{{ $bagian['title'] }}</h6>
-                <div class="row g-3 mb-3">
-                    @foreach ($bagian['items'] as $item)
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-start">
-                                <div class="me-3">
-                                    <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
-                                </div>
-                                <div style="width: 100%;">
-                                    <h6 class="fw-bold text-dark mb-1">{{ $item['label'] }}</h6>
+                    {{-- Kalau label Foto Faktual tampilkan gambar --}}
+                    @if(Str::contains($item['label'], 'Foto Faktual'))
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{-- Data text / info --}}
+                                <p class="mb-0 text-muted">Klik tombol untuk melihat foto lebih besar</p>
 
-                                    {{-- Kalau label Foto Faktual --}}
-                                    @if(Str::contains($item['label'], 'Foto Faktual'))
-                                        @if($item['field'])
-                                            <button class="button-newdata mt-2"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#fotoModal{{ $loop->index }}">
-                                                <i class="bi bi-image me-1"></i> Lihat Foto Faktual
-                                            </button>
+                                {{-- Tombol Modal --}}
+                                <button type="button" class="btn btn-sm btn-outline-primary mt-2"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#fotoModal{{ md5($item['field']) }}">
+                                    <i class="bi bi-eye me-1"></i> Lihat Foto Faktual
+                                </button>
+                            </div>
+                            <div class="col-md-6 text-end">
+                                {{-- Thumbnail Foto --}}
+                                @if($item['field'] && Storage::disk('public')->exists($item['field']))
+                                    <img src="{{ asset('storage/' . $item['field']) }}"
+                                         alt="Foto Faktual"
+                                         class="img-thumbnail"
+                                         style="max-height: 100px; object-fit: contain;">
+                                @elseif($item['field'])
+                                    <img src="{{ asset($item['field']) }}"
+                                         alt="Foto Faktual"
+                                         class="img-thumbnail"
+                                         style="max-height: 100px; object-fit: contain;">
+                                @else
+                                    <p style="font-size: 11px; color:red;">Tidak Ada Foto Faktual!</p>
+                                @endif
+                            </div>
+                        </div>
 
-                                            <!-- Modal Foto -->
-                                            <div class="modal fade" id="fotoModal{{ $loop->index }}" tabindex="-1" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered modal-lg">
-                                                    <div class="modal-content shadow-lg border-0">
-                                                        <div class="modal-header bg-primary text-white">
-                                                            <h6 class="modal-title">Foto Faktual</h6>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body text-center">
-                                                            @if(Storage::disk('public')->exists($item['field']))
-                                                                <img src="{{ asset('storage/' . $item['field']) }}"
-                                                                     alt="Foto Faktual" class="img-fluid rounded shadow-sm">
-                                                            @else
-                                                                <img src="{{ asset($item['field']) }}"
-                                                                     alt="Foto Faktual" class="img-fluid rounded shadow-sm">
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                        {{-- Modal Foto --}}
+                        <div class="modal fade" id="fotoModal{{ md5($item['field']) }}" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content shadow-lg rounded-3 border-0">
+                                    <div class="modal-header bg-primary text-white">
+                                        <h5 class="modal-title">
+                                            <i class="bi bi-image me-2"></i> Foto Faktual
+                                        </h5>
+                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        @if($item['field'] && Storage::disk('public')->exists($item['field']))
+                                            <img src="{{ asset('storage/' . $item['field']) }}"
+                                                 alt="Foto Faktual"
+                                                 class="img-fluid rounded shadow-sm">
+                                        @elseif($item['field'])
+                                            <img src="{{ asset($item['field']) }}"
+                                                 alt="Foto Faktual"
+                                                 class="img-fluid rounded shadow-sm">
                                         @else
-                                            <p style="font-size: 11px; color:red;">Tidak Ada Foto Faktual!</p>
+                                            <p style="font-size: 14px; color:red;">Tidak Ada Foto Faktual!</p>
                                         @endif
-                                    @else
-                                        <p class="mb-0 text-muted">{{ $item['field'] }}</p>
-                                    @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @else
+                        {{-- Kalau bukan foto --}}
+                        <p class="mb-0 text-muted">{{ $item['field'] }}</p>
+                    @endif
                 </div>
-            @endforeach
-
-            {{-- Tombol Perbaikan Data --}}
-            <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->id }}">
-                <p class="button-berkas">
-                    <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
-                    Perbaikan Data
-                </p>
-            </a>
-
-            {{-- Catatan jika tidak lengkap --}}
-            @if (strtolower($pemilik->pilihancatatan) === 'tidak lengkap')
-                <div class="col-12 mt-3">
-                    <div class="p-3 border-start border-4 border-danger bg-light rounded shadow-sm">
-                        <div class="d-flex align-items-start">
-                            <i class="bi bi-journal-text text-danger fs-4 me-3"></i>
-                            <div>
-                                <h6 class="fw-bold text-dark mb-1">Catatan</h6>
-                                <p class="mb-0 text-muted" style="white-space: pre-wrap; word-wrap: break-word; text-align:justify;">
-                                    {{ $pemilik->catatan ?? '-' }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif
-
-            {{-- Tombol Hapus --}}
-            <a href="javascript:void(0)" title="Delete"
-               data-bs-toggle="modal" data-bs-target="#deleteModal"
-               data-judul="{{ $pemilik->databgkepemilikan_id }}"
-               onclick="setDeleteUrl(this)"
-               style="text-decoration: none;">
-                <span style="color: white;" class="button-merah">
-                    <i class="bi bi-trash" style="color: white; margin-right:4px;"></i>
-                    Hapus
-                </span>
-            </a>
-
+            </div>
         </div>
-    </div>
+    @endforeach
 </div>
 
     @empty
