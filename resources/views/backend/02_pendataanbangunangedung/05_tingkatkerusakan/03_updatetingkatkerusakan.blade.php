@@ -343,7 +343,7 @@ th {
 {{-- ----------- --}}
 
     <div class="container my-4">
-        <form id="formPemilik" action="{{ route('bedatabgstrukrrusakcreatenew', $datastruktur->id) }}" method="POST" enctype="multipart/form-data">
+        <form id="formPemilik" action="{{ route('bedatabgstrukrrusakcreatenew', $datakerusakan->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             {{-- <input type="hidden" name="databgkepemilikan_id" value="{{ $databangunan->id }}"> --}}
