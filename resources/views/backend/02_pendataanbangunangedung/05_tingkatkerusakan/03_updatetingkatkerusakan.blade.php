@@ -343,8 +343,14 @@ th {
 {{-- ----------- --}}
 
     <div class="container my-4">
-        <form id="formPemilik" action="{{ route('bedatabgstrukrrusakcreatenew', $datakerusakan->id) }}" method="POST" enctype="multipart/form-data">
-            @csrf
+        {{-- <form id="formPemilik" action="{{ route('bedatabgstrukrrusakcreatenew', $datakerusakan->id, $datastruktur->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf --}}
+
+            <form id="formPemilik"
+      action="{{ route('bedatabgstrukrrusakupdatenew', ['datakerusakan' => $datakerusakan->id, 'datastruktur' => $datastruktur->id]) }}"
+      method="POST"
+      enctype="multipart/form-data">
+    @csrf
 
             {{-- <input type="hidden" name="databgkepemilikan_id" value="{{ $databangunan->id }}"> --}}
 
@@ -1220,7 +1226,7 @@ function previewKolom(event) {
 
                 <div class="col-md-4">
                     <label class="form-label"><i class="bi bi-123 text-primary me-1"></i> Total Nilai Kerusakan</label>
-                    <input type="number" step="0.01" name="total_nilai_kerusakan" class="form-control" value="{{ $datakerusakan->total_nilai_kerusakan ?? old('total_nilai_kerusakan') }}">
+                    <input type="number" step="0.01" name="total_nilai_kerusakan" class="form-control" value="{{ $datastruktur->total_nilai_kerusakan ?? old('total_nilai_kerusakan') }}">
                 </div>
 
                 <!-- Tombol Submit -->

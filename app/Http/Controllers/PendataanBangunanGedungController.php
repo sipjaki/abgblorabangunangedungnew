@@ -2414,97 +2414,106 @@ public function bedatabgstrukrrusakupdate($id)
 }
 
 
-public function bedatabgstrukrrusakupdatenew(Request $request, $id)
+public function bedatabgstrukrrusakupdatenew(Request $request, $idKerusakan, $idStruktur)
 {
+    // Validasi request
     $validated = $request->validate([
-        'databgkepemilikan_id'      => 'nullable|string',
-        'struktur_bangunan_bawah'   => 'nullable|string|max:255',
-        'struktur_bangunan_atas'    => 'nullable|string|max:255',
-        'struktur_atap'             => 'nullable|string|max:255',
+        // 'databgkepemilikan_id' => 'required|string',
 
-        'indikasi_kerusakan1'       => 'nullable|string|max:255',
-        'tingkat_kerusakan1'        => 'nullable|string|max:255',
+        // BAGIAN 1
+        'struktur_bangunan_bawah' => 'nullable|string|max:100',
+        'struktur_bangunan_atas' => 'nullable|string|max:100',
+        'struktur_atap' => 'nullable|string|max:100',
+        'indikasi_kerusakan1' => 'nullable|string|max:255',
+        'tingkat_kerusakan1' => 'nullable|string|max:100',
 
-        'pondasi'                   => 'nullable|string|max:255',
-        'indikasi_kerusakan2'       => 'nullable|string|max:255',
-        'tingkat_kerusakan2'        => 'nullable|string|max:255',
+        // BAGIAN 2
+        'pondasi' => 'nullable|string|max:100',
+        'indikasi_kerusakan2' => 'nullable|string|max:255',
+        'tingkat_kerusakan2' => 'nullable|string|max:100',
 
-        'struktur'                  => 'nullable|string|max:255',
-        'indikasi_kerusakan3'       => 'nullable|string|max:255',
-        'tingkat_kerusakan3'        => 'nullable|string|max:255',
+        // BAGIAN 3
+        'struktur' => 'nullable|string|max:100',
+        'indikasi_kerusakan3' => 'nullable|string|max:255',
+        'tingkat_kerusakan3' => 'nullable|string|max:100',
 
-        'atap'                      => 'nullable|string|max:255',
-        'indikasi_kerusakan4'       => 'nullable|string|max:255',
-        'tingkat_kerusakan4'        => 'nullable|string|max:255',
+        // BAGIAN 4
+        'atap' => 'nullable|string|max:100',
+        'indikasi_kerusakan4' => 'nullable|string|max:255',
+        'tingkat_kerusakan4' => 'nullable|string|max:100',
 
-        'lantai'                    => 'nullable|string|max:255',
-        'indikasi_kerusakan5'       => 'nullable|string|max:255',
-        'tingkat_kerusakan5'        => 'nullable|string|max:255',
+        // BAGIAN 5
+        'lantai' => 'nullable|string|max:100',
+        'indikasi_kerusakan5' => 'nullable|string|max:255',
+        'tingkat_kerusakan5' => 'nullable|string|max:100',
 
-        'dinding'                   => 'nullable|string|max:255',
-        'indikasi_kerusakan6'       => 'nullable|string|max:255',
-        'tingkat_kerusakan6'        => 'nullable|string|max:255',
+        // BAGIAN 6
+        'dinding' => 'nullable|string|max:100',
+        'indikasi_kerusakan6' => 'nullable|string|max:255',
+        'tingkat_kerusakan6' => 'nullable|string|max:100',
 
-        'plafond'                   => 'nullable|string|max:255',
-        'indikasi_kerusakan7'       => 'nullable|string|max:255',
-        'tingkat_kerusakan7'        => 'nullable|string|max:255',
+        // BAGIAN 7
+        'plafond' => 'nullable|string|max:100',
+        'indikasi_kerusakan7' => 'nullable|string|max:255',
+        'tingkat_kerusakan7' => 'nullable|string|max:100',
 
-        'utilitas'                  => 'nullable|string|max:255',
-        'indikasi_kerusakan8'       => 'nullable|string|max:255',
-        'tingkat_kerusakan8'        => 'nullable|string|max:255',
+        // BAGIAN 8
+        'utilitas' => 'nullable|string|max:100',
+        'indikasi_kerusakan8' => 'nullable|string|max:255',
+        'tingkat_kerusakan8' => 'nullable|string|max:100',
 
-        'finishing'                 => 'nullable|string|max:255',
-        'total_nilai_kerusakan'     => 'nullable|string|max:255',
-    ], [
-        '*.max' => 'Maksimal 255 karakter.',
-        'databgkepemilikan_id.integer' => 'ID Kepemilikan harus berupa angka.',
+        // BAGIAN 9
+        'finishing' => 'nullable|string|max:100',
+        'total_nilai_kerusakan' => 'nullable|string|max:100',
+
+        // FOTO FOTO TABEL KEDUA
+        'struktur_bawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'struktur_atas' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'genteng' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'rangka_atap' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'pintu' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'jendela' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'balok' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'kolom' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
     ]);
 
-    $klasifikasi = databgtingkatkerusahan::findOrFail($id);
+    // Cari data lama
+    $dataKerusakan = databgtingkatkerusahan::findOrFail($idKerusakan);
+    $dataStruktur  = databgstrukturbangunan::findOrFail($idStruktur);
 
-    $klasifikasi->update([
-        'databgkepemilikan_id'      => $validated['databgkepemilikan_id'],
-        'struktur_bangunan_bawah'   => $validated['struktur_bangunan_bawah'] ?? null,
-        'struktur_bangunan_atas'    => $validated['struktur_bangunan_atas'] ?? null,
-        'struktur_atap'             => $validated['struktur_atap'] ?? null,
+    // Handle upload foto
+    $uploadFields = ['struktur_bawah', 'struktur_atas', 'genteng', 'pintu', 'jendela', 'rangka_atap', 'balok', 'kolom'];
 
-        'indikasi_kerusakan1'       => $validated['indikasi_kerusakan1'] ?? null,
-        'tingkat_kerusakan1'        => $validated['tingkat_kerusakan1'] ?? null,
+    foreach ($uploadFields as $field) {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
+            $filename = $field . '_' . time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('fotofaktualbg'), $filename);
+            $validated[$field] = 'fotofaktualbg/' . $filename;
+        } else {
+            // kalau tidak upload baru, pakai data lama
+            $validated[$field] = $dataStruktur->$field;
+        }
+    }
 
-        'pondasi'                   => $validated['pondasi'] ?? null,
-        'indikasi_kerusakan2'       => $validated['indikasi_kerusakan2'] ?? null,
-        'tingkat_kerusakan2'        => $validated['tingkat_kerusakan2'] ?? null,
+    // Update tabel pertama (tingkat kerusakan)
+    $dataKerusakan->update($validated);
 
-        'struktur'                  => $validated['struktur'] ?? null,
-        'indikasi_kerusakan3'       => $validated['indikasi_kerusakan3'] ?? null,
-        'tingkat_kerusakan3'        => $validated['tingkat_kerusakan3'] ?? null,
-
-        'atap'                      => $validated['atap'] ?? null,
-        'indikasi_kerusakan4'       => $validated['indikasi_kerusakan4'] ?? null,
-        'tingkat_kerusakan4'        => $validated['tingkat_kerusakan4'] ?? null,
-
-        'lantai'                    => $validated['lantai'] ?? null,
-        'indikasi_kerusakan5'       => $validated['indikasi_kerusakan5'] ?? null,
-        'tingkat_kerusakan5'        => $validated['tingkat_kerusakan5'] ?? null,
-
-        'dinding'                   => $validated['dinding'] ?? null,
-        'indikasi_kerusakan6'       => $validated['indikasi_kerusakan6'] ?? null,
-        'tingkat_kerusakan6'        => $validated['tingkat_kerusakan6'] ?? null,
-
-        'plafond'                   => $validated['plafond'] ?? null,
-        'indikasi_kerusakan7'       => $validated['indikasi_kerusakan7'] ?? null,
-        'tingkat_kerusakan7'        => $validated['tingkat_kerusakan7'] ?? null,
-
-        'utilitas'                  => $validated['utilitas'] ?? null,
-        'indikasi_kerusakan8'       => $validated['indikasi_kerusakan8'] ?? null,
-        'tingkat_kerusakan8'        => $validated['tingkat_kerusakan8'] ?? null,
-
-        'finishing'                 => $validated['finishing'] ?? null,
-        'total_nilai_kerusakan'     => $validated['total_nilai_kerusakan'] ?? null,
+    // Update tabel kedua (struktur bangunan)
+    $dataStruktur->update([
+        // 'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
+        'struktur_bawah' => $validated['struktur_bawah'],
+        'struktur_atas'   => $validated['struktur_atas'],
+        'pintu'          => $validated['pintu'],
+        'jendela'        => $validated['jendela'],
+        'genteng'        => $validated['genteng'],
+        'rangka_atap'    => $validated['rangka_atap'],
+        'balok'          => $validated['balok'],
+        'kolom'          => $validated['kolom'],
     ]);
 
-    session()->flash('update', 'Data struktur bangunan & tingkat kerusakan berhasil diperbarui!');
-    return redirect()->back();
+    session()->flash('update', 'Data struktur bangunan beserta foto berhasil diupdate ke kedua tabel!');
+    return redirect()->route('bedatabgstrukrrusak', $validated['databgkepemilikan_id']);
 }
 
 public function perkecamatanbangunan(Request $request, $kecamatan_id)
