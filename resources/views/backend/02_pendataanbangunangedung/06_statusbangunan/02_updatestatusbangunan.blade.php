@@ -339,11 +339,11 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('bedatabgstatusbangunanupdatenew', $data->id) }}" method="POST">
+<form id="formPemilik" action="{{ route('bedatabgstatusbangunanupdatenew', $datastatus->id) }}" method="POST">
     @csrf
     @method('PUT')
 
-    <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
+    {{-- <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}"> --}}
     {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
 <div class="row g-3 mt-2">
     {{-- Status Hak Tanah --}}
@@ -351,23 +351,23 @@ th {
 {{-- Tingkat Kompleksitas --}}
 {{-- Struktur Bawah --}}
 {{-- Dokumen Teknis Tanah --}}
+{{-- Dokumen Teknis Tanah --}}
 <div class="col-md-6 mb-3">
     <label class="form-label">
         <i class="bi bi-file-earmark-text me-1" style="color: blue;"></i> Dokumen Teknis Tanah
     </label>
     <input type="text" name="dokumen_teknis_tanah" class="form-control @error('dokumen_teknis_tanah') is-invalid @enderror"
-           value="{{ old('dokumen_teknis_tanah', $data->dokumen_teknis_tanah) }}">
+           value="{{ old('dokumen_teknis_tanah', $datastatus->dokumen_teknis_tanah) }}">
     @error('dokumen_teknis_tanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-{{-- No. HDNO --}}
+{{-- No. HDNO (Hidden input + tampilkan data sebelumnya saja) --}}
 <div class="col-md-6 mb-3">
     <label class="form-label">
         <i class="bi bi-hash me-1" style="color: blue;"></i> No. HDNO
     </label>
-    <input type="text" name="no_hdno" class="form-control @error('no_hdno') is-invalid @enderror"
-           value="{{ old('no_hdno', $data->no_hdno) }}">
-    @error('no_hdno')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <input type="hidden" name="no_hdno" value="{{ old('no_hdno', $datastatus->no_hdno) }}">
+    <input type="text" class="form-control" value="{{ $datastatus->no_hdno }}" readonly>
 </div>
 
 {{-- No. IMB/PBG --}}
@@ -376,7 +376,7 @@ th {
         <i class="bi bi-file-text me-1" style="color: blue;"></i> No. IMB/PBG
     </label>
     <input type="text" name="no_imbpbg" class="form-control @error('no_imbpbg') is-invalid @enderror"
-           value="{{ old('no_imbpbg', $data->no_imbpbg) }}">
+           value="{{ old('no_imbpbg', $datastatus->no_imbpbg) }}">
     @error('no_imbpbg')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
@@ -386,11 +386,11 @@ th {
         <i class="bi bi-patch-check me-1" style="color: blue;"></i> No. SLF
     </label>
     <input type="text" name="no_slf" class="form-control @error('no_slf') is-invalid @enderror"
-           value="{{ old('no_slf', $data->no_slf) }}">
+           value="{{ old('no_slf', $datastatus->no_slf) }}">
     @error('no_slf')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-    {{-- Tombol Submit --}}
+{{-- Tombol Submit --}}
     <div class="col-12 text-end mt-3">
         <button type="button" class="button-berkas" onclick="openModal()">
             <i class="bi bi-save me-1"></i> Simpan Perbaikan Data ?
