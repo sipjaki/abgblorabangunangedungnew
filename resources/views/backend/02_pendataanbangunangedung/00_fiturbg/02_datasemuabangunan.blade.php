@@ -102,7 +102,7 @@ window.addEventListener('load', () => {
                 // ['label' => 'Data Struktur Bangunan Gedung', 'url' => '/bedatabgstruktur/' . $kepemilikanId, 'icon' => 'bi-diagram-3-fill'],
                 ['label' => 'Data Struktur & Tingkat Kerusakan Bangunan Gedung', 'url' => '/bedatabgstrukrrusak/' . $kepemilikanId, 'icon' => 'bi-building'],
 
-                // ['label' => 'Data Status Bangunan Gedung', 'url' => '/bedatabgstatusbangunan/' . $kepemilikanId, 'icon' => 'bi-file-earmark-check-fill'],
+                ['label' => 'Data Status Bangunan Gedung', 'url' => '/bedatabgstatusbangunan/' . $kepemilikanId, 'icon' => 'bi-file-earmark-check-fill'],
             ];
         @endphp
 
