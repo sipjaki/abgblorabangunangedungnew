@@ -425,12 +425,12 @@ th {
             @endforeach
 
             {{-- Tombol Perbaikan Data --}}
-            <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->databgkepemilikan_id }}">
+            {{-- <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->databgkepemilikan_id }}">
                 <p class="button-berkas">
                     <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
                     Perbaikan Data
                 </p>
-            </a>
+            </a> --}}
 
             {{-- Catatan jika tidak lengkap --}}
             @if (strtolower($pemilik->pilihancatatan) === 'tidak lengkap')
