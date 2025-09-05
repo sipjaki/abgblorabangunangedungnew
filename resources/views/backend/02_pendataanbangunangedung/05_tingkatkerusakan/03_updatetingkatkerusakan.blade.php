@@ -412,20 +412,53 @@ th {
                     </div>
 
                     <div class="col-md-6">
-                        <div class="mb-3">
-                            <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Foto Faktual Pondasi | Max 15 MB</label>
-                            <input type="file" name="struktur_bawah" accept="image/*" class="form-control @error('struktur_bawah') is-invalid @enderror" onchange="previewStrukturBawah(event)">
-                            @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-bricks text-primary me-1"></i> Foto Faktual Pondasi | Max 15 MB
+        </label>
+        <input
+            type="file"
+            name="struktur_bawah"
+            accept="image/*"
+            class="form-control @error('struktur_bawah') is-invalid @enderror"
+            onchange="previewStrukturBawah(event)">
+        @error('struktur_bawah')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
 
-                            <div class="mt-3 text-center">
-                                @if(isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah)
-                                    <img id="preview-struktur-bawah" src="{{ asset('storage/' . $datakerusakan->struktur_bawah) }}" alt="Preview Struktur Bawah" class="preview-image" style="display: block;">
-                                @else
-                                    <img id="preview-struktur-bawah" src="#" alt="Preview Struktur Bawah" class="preview-image" style="display: none;">
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+        <div class="mt-3 text-center">
+            {{-- Kalau ada data lama, tampilkan dulu --}}
+            @if(isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah)
+                <img
+                    id="preview-struktur-bawah"
+                    src="{{ asset('storage/' . $datakerusakan->struktur_bawah) }}"
+                    alt="Preview Struktur Bawah"
+                    class="preview-image img-thumbnail"
+                    style="max-height: 200px; display: block;">
+            @else
+                <img
+                    id="preview-struktur-bawah"
+                    src="#"
+                    alt="Preview Struktur Bawah"
+                    class="preview-image img-thumbnail"
+                    style="max-height: 200px; display: none;">
+            @endif
+        </div>
+    </div>
+</div>
+
+{{-- Script Preview --}}
+<script>
+function previewStrukturBawah(event) {
+    const imgPreview = document.getElementById('preview-struktur-bawah');
+    imgPreview.style.display = "block";
+    imgPreview.src = URL.createObjectURL(event.target.files[0]);
+    imgPreview.onload = () => {
+        URL.revokeObjectURL(imgPreview.src); // biar gak makan memory
+    }
+}
+</script>
+
                 </div>
 
                 <!-- ===================== BAGIAN 3 ===================== -->
