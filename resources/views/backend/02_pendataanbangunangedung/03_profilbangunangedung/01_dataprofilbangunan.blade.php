@@ -214,31 +214,6 @@ th {
 
 @include('backend.02_pendataanbangunangedung.00_fiturbg.01_status')
 
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
-</div>
 <br><hr>
 
 {{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas') --}}
@@ -251,12 +226,12 @@ th {
 @php
 $infoItems = [
     [
-        'icon' => 'bi-rulers',
-        'title' => 'Luas Tanah',
-        'value' => $pemilik->luastanah
-            ? number_format($pemilik->luastanah, 0, ',', '.') . ' M²'
-            : '-',
-    ],
+    'icon' => 'bi-rulers',
+    'title' => 'Luas Tanah',
+    'value' => $pemilik->luastanah
+        ? number_format((float) $pemilik->luastanah, 0, ',', '.') . ' M²'
+        : '-',
+],
     [
         'icon' => 'bi-building',
         'title' => 'Nama Bangunan Gedung',
@@ -273,40 +248,41 @@ $infoItems = [
         'value' => $pemilik->fungsibangunan ?? '-',
     ],
     [
-        'icon' => 'bi-layers',
-        'title' => 'Jumlah Lantai',
-        'value' => $pemilik->jumlahlantai
-            ? number_format($pemilik->jumlahlantai, 0, ',', '.') . ' Lantai'
-            : '-',
-    ],
-    [
-        'icon' => 'bi-bounding-box-circles',
-        'title' => 'Luas Lantai Dasar',
-        'value' => $pemilik->luaslantaildasar
-            ? number_format($pemilik->luaslantaildasar, 0, ',', '.') . ' M²'
-            : '-',
-    ],
-    [
-        'icon' => 'bi-bounding-box',
-        'title' => 'Total Luas Lantai Gedung',
-        'value' => $pemilik->totalluaslantai
-            ? number_format($pemilik->totalluaslantai, 0, ',', '.') . ' M²'
-            : '-',
-    ],
-    [
-        'icon' => 'bi-arrow-up-square',
-        'title' => 'Tinggi Bangunan',
-        'value' => $pemilik->tinggibangunan
-            ? number_format($pemilik->tinggibangunan, 0, ',', '.') . ' Meter'
-            : '-',
-    ],
-    [
-        'icon' => 'bi-box',
-        'title' => 'Luas Basement',
-        'value' => $pemilik->luasbasement
-            ? number_format($pemilik->luasbasement, 0, ',', '.') . ' M²'
-            : '-',
-    ],
+    'icon' => 'bi-layers',
+    'title' => 'Jumlah Lantai',
+    'value' => $pemilik->jumlahlantai
+        ? number_format((float) $pemilik->jumlahlantai, 0, ',', '.') . ' Lantai'
+        : '-',
+],
+[
+    'icon' => 'bi-bounding-box-circles',
+    'title' => 'Luas Lantai Dasar',
+    'value' => $pemilik->luaslantaildasar
+        ? 'Rp ' . number_format((float) $pemilik->luaslantaildasar, 0, ',', '.')
+        : '-',
+],
+[
+    'icon' => 'bi-bounding-box',
+    'title' => 'Total Luas Lantai Gedung',
+    'value' => $pemilik->totalluaslantai
+        ? 'Rp ' . number_format((float) $pemilik->totalluaslantai, 0, ',', '.')
+        : '-',
+],
+[
+    'icon' => 'bi-arrow-up-square',
+    'title' => 'Tinggi Bangunan',
+    'value' => $pemilik->tinggibangunan
+        ? number_format((float) $pemilik->tinggibangunan, 0, ',', '.') . ' Meter'
+        : '-',
+],
+[
+    'icon' => 'bi-box',
+    'title' => 'Luas Basement',
+    'value' => $pemilik->luasbasement
+        ? 'Rp ' . number_format((float) $pemilik->luasbasement, 0, ',', '.')
+        : '-',
+],
+
     // [
     //     'icon' => 'bi-geo-alt-fill',
     //     'title' => 'Koordinat Bangunan',

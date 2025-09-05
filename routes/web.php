@@ -207,11 +207,10 @@ Route::put('/bedatabgmebangunanupdatenew/{id}', [PendataanBangunanGedungControll
 
 
 // 04 PENDATAAN BANGUNAN GEDUNG STRUKTUR DAN TINGKAT KERUSAKAN BANGUNAN GEDUNG
-
 Route::get(
-    '/bedatabgstrukrrusak/{id}',
+    '/bedatabgstrukrrusak/{kepemilikanId}',
     [PendataanBangunanGedungController::class, 'bedatabgstrukrrusak']
-    )->middleware('auth')->name('bedatabgstrukrrusak');
+)->middleware('auth')->name('bedatabgstrukrrusak');
 
     Route::delete('/bedatabgstrukrrusakdelete/{id}',
    [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakdelete']
