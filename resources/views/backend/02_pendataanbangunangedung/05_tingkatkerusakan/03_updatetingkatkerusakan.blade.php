@@ -427,22 +427,15 @@ th {
         @enderror
 
         <div class="mt-3 text-center">
-            {{-- Kalau ada data lama, tampilkan dulu --}}
-            @if(isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah)
-                <img
-                    id="preview-struktur-bawah"
-                    src="{{ asset('storage/' . $datakerusakan->struktur_bawah) }}"
-                    alt="Preview Struktur Bawah"
-                    class="preview-image img-thumbnail"
-                    style="max-height: 200px; display: block;">
-            @else
-                <img
-                    id="preview-struktur-bawah"
-                    src="#"
-                    alt="Preview Struktur Bawah"
-                    class="preview-image img-thumbnail"
-                    style="max-height: 200px; display: none;">
-            @endif
+            <img
+                id="preview-struktur-bawah"
+                src="{{ isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah
+                        ? asset('storage/' . $datakerusakan->struktur_bawah)
+                        : '#' }}"
+                alt="Preview Struktur Bawah"
+                class="preview-image img-thumbnail"
+                style="max-height: 200px;
+                       {{ isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah ? 'display:block;' : 'display:none;' }}">
         </div>
     </div>
 </div>
@@ -451,10 +444,13 @@ th {
 <script>
 function previewStrukturBawah(event) {
     const imgPreview = document.getElementById('preview-struktur-bawah');
-    imgPreview.style.display = "block";
-    imgPreview.src = URL.createObjectURL(event.target.files[0]);
-    imgPreview.onload = () => {
-        URL.revokeObjectURL(imgPreview.src); // biar gak makan memory
+    const file = event.target.files[0];
+    if (file) {
+        imgPreview.style.display = "block";
+        imgPreview.src = URL.createObjectURL(file);
+        imgPreview.onload = () => {
+            URL.revokeObjectURL(imgPreview.src); // biar gak makan memori
+        }
     }
 }
 </script>
