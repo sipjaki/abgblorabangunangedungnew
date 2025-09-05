@@ -351,7 +351,7 @@ th {
       method="POST"
       enctype="multipart/form-data">
     @csrf
-
+   @method('PUT')
             {{-- <input type="hidden" name="databgkepemilikan_id" value="{{ $databangunan->id }}"> --}}
 
             <div class="row g-3 mt-2">
@@ -1231,8 +1231,8 @@ function previewKolom(event) {
 
                 <!-- Tombol Submit -->
                 <div class="col-12 text-end mt-3">
-                    <button type="button" class="button-hijau" onclick="openModal()">
-                        <i class="bi bi-save me-1"></i> Simpan Data
+                    <button type="button" class="button-berkas" onclick="openModal()">
+                        <i class="bi bi-save me-1"></i> Perbaikan Data ?
                     </button>
                 </div>
             </div>
