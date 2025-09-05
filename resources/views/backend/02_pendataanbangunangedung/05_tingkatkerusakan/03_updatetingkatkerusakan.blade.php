@@ -426,33 +426,35 @@ th {
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
 
-        <div class="mt-3 text-center">
-            {{-- Foto lama tetap tampil --}}
-            @if(isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah)
+        {{-- Foto Lama --}}
+        @if(isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah)
+            <div class="mt-3 text-center">
+                <p class="fw-bold text-muted mb-1">Foto Faktual Lama</p>
                 @if(file_exists(public_path('storage/' . $datakerusakan->struktur_bawah)))
                     <img
                         src="{{ asset('storage/' . $datakerusakan->struktur_bawah) }}"
                         alt="Foto Lama Struktur Bawah"
-                        class="img-thumbnail mb-2"
-                        style="max-height: 200px; display:block;">
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
                 @else
                     <img
                         src="{{ asset($datakerusakan->struktur_bawah) }}"
                         alt="Foto Lama Struktur Bawah"
-                        class="img-thumbnail mb-2"
-                        style="max-height: 200px; display:block;">
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
                 @endif
-            @else
-                <p style="font-size: 11px; color:red;">Tidak ada foto lama!</p>
-            @endif
+            </div>
+        @endif
 
-            {{-- Foto baru hasil preview --}}
+        {{-- Foto Baru (Preview Upload) --}}
+        <div class="mt-3 text-center">
+            <p class="fw-bold text-muted mb-1">Foto Faktual Baru</p>
             <img
                 id="preview-struktur-bawah"
                 src="#"
-                alt="Preview Struktur Bawah Baru"
-                class="preview-image img-thumbnail"
-                style="max-height: 200px; display:none;">
+                alt="Preview Struktur Bawah"
+                class="img-thumbnail"
+                style="max-height: 200px; display:none; margin:auto;">
         </div>
     </div>
 </div>
