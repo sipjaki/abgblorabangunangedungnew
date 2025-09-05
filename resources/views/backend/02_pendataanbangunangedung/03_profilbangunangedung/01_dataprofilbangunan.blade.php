@@ -258,14 +258,14 @@ $infoItems = [
     'icon' => 'bi-bounding-box-circles',
     'title' => 'Luas Lantai Dasar',
     'value' => $pemilik->luaslantaildasar
-        ? 'Rp ' . number_format((float) $pemilik->luaslantaildasar, 0, ',', '.')
+        ?  number_format((float) $pemilik->luaslantaildasar, 0, ',', '.')
         : '-',
 ],
 [
     'icon' => 'bi-bounding-box',
     'title' => 'Total Luas Lantai Gedung',
     'value' => $pemilik->totalluaslantai
-        ? 'Rp ' . number_format((float) $pemilik->totalluaslantai, 0, ',', '.')
+        ?  number_format((float) $pemilik->totalluaslantai, 0, ',', '.')
         : '-',
 ],
 [
@@ -279,7 +279,7 @@ $infoItems = [
     'icon' => 'bi-box',
     'title' => 'Luas Basement',
     'value' => $pemilik->luasbasement
-        ? 'Rp ' . number_format((float) $pemilik->luasbasement, 0, ',', '.')
+        ? number_format((float) $pemilik->luasbasement, 0, ',', '.')
         : '-',
 ],
 
