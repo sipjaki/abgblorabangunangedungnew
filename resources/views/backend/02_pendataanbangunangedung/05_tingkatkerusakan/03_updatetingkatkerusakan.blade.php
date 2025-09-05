@@ -339,343 +339,676 @@ th {
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<form id="formPemilik" action="{{ route('bedatabgstrukrrusakupdatenew', $data->id) }}" method="POST">
-    @csrf
-    @method('PUT')
 
-    <input type="hidden" name="databgkepemilikan_id" value="{{ $data->id }}">
-    {{-- <input type="hidden" name="id" value="{{ $data->id }}"> --}}
-<div class="row g-3 mt-2">
+{{-- ----------- --}}
 
-    {{-- BAGIAN 1 --}}
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-house-door-fill me-1" style="color: blue;"></i> Struktur Bangunan Bawah
-        </label>
-        <input type="text" name="struktur_bangunan_bawah" class="form-control @error('struktur_bangunan_bawah') is-invalid @enderror"
-               value="{{ old('struktur_bangunan_bawah', $data->struktur_bangunan_bawah) }}">
-        @error('struktur_bangunan_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <div class="container my-4">
+        <form id="formPemilik" action="{{ route('bedatabgstrukrrusakcreatenew', $databangunan->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            {{-- <input type="hidden" name="databgkepemilikan_id" value="{{ $databangunan->id }}"> --}}
+
+            <div class="row g-3 mt-2">
+                <!-- ===================== BAGIAN 1 ===================== -->
+                <div class="col-12">
+                    <h6 class="mt-3 fw-bold text-primary"><i class="bi bi-building me-1"></i>Struktur Bangunan Bawah & Atas</h6>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label"><i class="bi bi-box text-primary me-1"></i> Struktur Bangunan Bawah</label>
+                    <input type="text" name="struktur_bangunan_bawah" class="form-control @error('struktur_bangunan_bawah') is-invalid @enderror" value="{{ $datakerusakan->struktur_bangunan_bawah ?? old('struktur_bangunan_bawah') }}">
+                    @error('struktur_bangunan_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label"><i class="bi bi-box-seam text-primary me-1"></i> Struktur Bangunan Atas</label>
+                    <input type="text" name="struktur_bangunan_atas" class="form-control @error('struktur_bangunan_atas') is-invalid @enderror" value="{{ $datakerusakan->struktur_bangunan_atas ?? old('struktur_bangunan_atas') }}">
+                    @error('struktur_bangunan_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label"><i class="bi bi-house-gear text-primary me-1"></i> Struktur Atap</label>
+                    <input type="text" name="struktur_atap" class="form-control @error('struktur_atap') is-invalid @enderror" value="{{ $datakerusakan->struktur_atap ?? old('struktur_atap') }}">
+                    @error('struktur_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                </div>
+
+                <!-- ===================== BAGIAN 2 ===================== -->
+                <div class="text-center">
+                    <hr class="my-4 section-divider">
+                    <h5 class="text-primary fw-bold mt-2 section-title">
+                        <i class="bi bi-file-earmark-text-fill me-2"></i>
+                        Bagian 1 - Pondasi
+                    </h5>
+                    <hr class="my-4 section-divider">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Pondasi</label>
+                            <input type="text" name="pondasi" class="form-control @error('pondasi') is-invalid @enderror" value="{{ $datakerusakan->pondasi ?? old('pondasi') }}">
+                            @error('pondasi')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+                            <select name="indikasi_kerusakan2" class="form-select">
+                                <option value="">-- Pilih Indikasi --</option>
+                                <option value="Tidak Ada Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan2 ?? old('indikasi_kerusakan2')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
+                                <option value="Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan2 ?? old('indikasi_kerusakan2')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+                            <select name="tingkat_kerusakan2" class="form-select">
+                                <option value="">-- Pilih Tingkat Kerusakan --</option>
+                                <option value="Ringan" {{ ($datakerusakan->tingkat_kerusakan2 ?? old('tingkat_kerusakan2')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
+                                <option value="Sedang" {{ ($datakerusakan->tingkat_kerusakan2 ?? old('tingkat_kerusakan2')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                                <option value="Berat" {{ ($datakerusakan->tingkat_kerusakan2 ?? old('tingkat_kerusakan2')) == 'Berat' ? 'selected' : '' }}>Berat</option>
+                                <option value="Tidak Ada Kerusakan" {{ ($datakerusakan->tingkat_kerusakan2 ?? old('tingkat_kerusakan2')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Foto Faktual Pondasi | Max 15 MB</label>
+                            <input type="file" name="struktur_bawah" accept="image/*" class="form-control @error('struktur_bawah') is-invalid @enderror" onchange="previewStrukturBawah(event)">
+                            @error('struktur_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+                            <div class="mt-3 text-center">
+                                @if(isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah)
+                                    <img id="preview-struktur-bawah" src="{{ asset('storage/' . $datakerusakan->struktur_bawah) }}" alt="Preview Struktur Bawah" class="preview-image" style="display: block;">
+                                @else
+                                    <img id="preview-struktur-bawah" src="#" alt="Preview Struktur Bawah" class="preview-image" style="display: none;">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================== BAGIAN 3 ===================== -->
+                <div class="text-center">
+                    <hr class="my-4 section-divider">
+                    <h5 class="text-primary fw-bold mt-2 section-title">
+                        <i class="bi bi-file-earmark-text-fill me-2"></i>
+                        Bagian 2 - Struktur
+                    </h5>
+                    <hr class="my-4 section-divider">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-building text-primary me-1"></i> Struktur</label>
+                            <input type="text" name="struktur" class="form-control" value="{{ $datakerusakan->struktur ?? old('struktur') }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+                            <select name="indikasi_kerusakan3" class="form-select">
+                                <option value="">-- Pilih Indikasi --</option>
+                                <option value="Tidak Ada Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan3 ?? old('indikasi_kerusakan3')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
+                                <option value="Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan3 ?? old('indikasi_kerusakan3')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+                            <select name="tingkat_kerusakan3" class="form-select">
+                                <option value="">-- Pilih Tingkat Kerusakan --</option>
+                                <option value="Ringan" {{ ($datakerusakan->tingkat_kerusakan3 ?? old('tingkat_kerusakan3')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
+                                <option value="Sedang" {{ ($datakerusakan->tingkat_kerusakan3 ?? old('tingkat_kerusakan3')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                                <option value="Berat" {{ ($datakerusakan->tingkat_kerusakan3 ?? old('tingkat_kerusakan3')) == 'Berat' ? 'selected' : '' }}>Berat</option>
+                                <option value="Tidak Ada Kerusakan" {{ ($datakerusakan->tingkat_kerusakan3 ?? old('tingkat_kerusakan3')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-building text-success me-1"></i> Foto Faktual Struktur | Max 15 MB</label>
+                            <input type="file" name="struktur_atas" accept="image/*" class="form-control @error('struktur_atas') is-invalid @enderror" onchange="previewStrukturAtas(event)">
+                            @error('struktur_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+                            <div class="mt-3 text-center">
+                                @if(isset($datakerusakan->struktur_atas) && $datakerusakan->struktur_atas)
+                                    <img id="preview-struktur-atas" src="{{ asset('storage/' . $datakerusakan->struktur_atas) }}" alt="Preview Struktur Atas" class="preview-image" style="display: block;">
+                                @else
+                                    <img id="preview-struktur-atas" src="#" alt="Preview Struktur Atas" class="preview-image" style="display: none;">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================== BAGIAN 4 ===================== -->
+                <div class="text-center">
+                    <hr class="my-4 section-divider">
+                    <h5 class="text-primary fw-bold mt-2 section-title">
+                        <i class="bi bi-file-earmark-text-fill me-2"></i>
+                        Bagian 3 - Atap
+                    </h5>
+                    <hr class="my-4 section-divider">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-house text-primary me-1"></i> Atap</label>
+                            <input type="text" name="atap" class="form-control" value="{{ $datakerusakan->atap ?? old('atap') }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+                            <select name="indikasi_kerusakan4" class="form-select">
+                                <option value="">-- Pilih Indikasi --</option>
+                                <option value="Tidak Ada Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan4 ?? old('indikasi_kerusakan4')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
+                                <option value="Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan4 ?? old('indikasi_kerusakan4')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+                            <select name="tingkat_kerusakan4" class="form-select">
+                                <option value="">-- Pilih Tingkat Kerusakan --</option>
+                                <option value="Ringan" {{ ($datakerusakan->tingkat_kerusakan4 ?? old('tingkat_kerusakan4')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
+                                <option value="Sedang" {{ ($datakerusakan->tingkat_kerusakan4 ?? old('tingkat_kerusakan4')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                                <option value="Berat" {{ ($datakerusakan->tingkat_kerusakan4 ?? old('tingkat_kerusakan4')) == 'Berat' ? 'selected' : '' }}>Berat</option>
+                                <option value="Tidak Ada Kerusakan" {{ ($datakerusakan->tingkat_kerusakan4 ?? old('tingkat_kerusakan4')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-house-door text-warning me-1"></i> Foto Faktual Atap | Max 15 MB</label>
+                            <input type="file" name="genteng" accept="image/*" class="form-control @error('genteng') is-invalid @enderror" onchange="previewStrukturAtap(event)">
+                            @error('genteng')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+                            <div class="mt-3 text-center">
+                                @if(isset($datakerusakan->genteng) && $datakerusakan->genteng)
+                                    <img id="preview-struktur-atap" src="{{ asset('storage/' . $datakerusakan->genteng) }}" alt="Preview Struktur Atap" class="preview-image" style="display: block;">
+                                @else
+                                    <img id="preview-struktur-atap" src="#" alt="Preview Struktur Atap" class="preview-image" style="display: none;">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================== BAGIAN 5 ===================== -->
+                <div class="text-center">
+                    <hr class="my-4 section-divider">
+                    <h5 class="text-primary fw-bold mt-2 section-title">
+                        <i class="bi bi-file-earmark-text-fill me-2"></i>
+                        Bagian 4 - Lantai
+                    </h5>
+                    <hr class="my-4 section-divider">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-square text-primary me-1"></i> Lantai</label>
+                            <input type="text" name="lantai" class="form-control" value="{{ $datakerusakan->lantai ?? old('lantai') }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+                            <select name="indikasi_kerusakan5" class="form-select">
+                                <option value="">-- Pilih Indikasi --</option>
+                                <option value="Tidak Ada Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan5 ?? old('indikasi_kerusakan5')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
+                                <option value="Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan5 ?? old('indikasi_kerusakan5')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+                            <select name="tingkat_kerusakan5" class="form-select">
+                                <option value="">-- Pilih Tingkat Kerusakan --</option>
+                                <option value="Ringan" {{ ($datakerusakan->tingkat_kerusakan5 ?? old('tingkat_kerusakan5')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
+                                <option value="Sedang" {{ ($datakerusakan->tingkat_kerusakan5 ?? old('tingkat_kerusakan5')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                                <option value="Berat" {{ ($datakerusakan->tingkat_kerusakan5 ?? old('tingkat_kerusakan5')) == 'Berat' ? 'selected' : '' }}>Berat</option>
+                                <option value="Tidak Ada Kerusakan" {{ ($datakerusakan->tingkat_kerusakan5 ?? old('tingkat_kerusakan5')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-house-gear text-danger me-1"></i> Foto Faktual Lantai | Max 15 MB</label>
+                            <input type="file" name="rangka_atap" accept="image/*" class="form-control @error('rangka_atap') is-invalid @enderror" onchange="previewRangkaAtap(event)">
+                            @error('rangka_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+                            <div class="mt-3 text-center">
+                                @if(isset($datakerusakan->rangka_atap) && $datakerusakan->rangka_atap)
+                                    <img id="preview-rangka-atap" src="{{ asset('storage/' . $datakerusakan->rangka_atap) }}" alt="Preview Rangka Atap" class="preview-image" style="display: block;">
+                                @else
+                                    <img id="preview-rangka-atap" src="#" alt="Preview Rangka Atap" class="preview-image" style="display: none;">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================== BAGIAN 6 ===================== -->
+                <div class="text-center">
+                    <hr class="my-4 section-divider">
+                    <h5 class="text-primary fw-bold mt-2 section-title">
+                        <i class="bi bi-file-earmark-text-fill me-2"></i>
+                        Bagian 5 - Dinding
+                    </h5>
+                    <hr class="my-4 section-divider">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Dinding</label>
+                                <input type="text" name="dinding" class="form-control" value="{{ $datakerusakan->dinding ?? old('dinding') }}">
+                            </div>
+
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+                                <select name="indikasi_kerusakan6" class="form-select">
+                                    <option value="">-- Pilih Indikasi --</option>
+                                    <option value="Tidak Ada Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan6 ?? old('indikasi_kerusakan6')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
+                                    <option value="Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan6 ?? old('indikasi_kerusakan6')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+                                <select name="tingkat_kerusakan6" class="form-select">
+                                    <option value="">-- Pilih Tingkat Kerusakan --</option>
+                                    <option value="Ringan" {{ ($datakerusakan->tingkat_kerusakan6 ?? old('tingkat_kerusakan6')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
+                                    <option value="Sedang" {{ ($datakerusakan->tingkat_kerusakan6 ?? old('tingkat_kerusakan6')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                                    <option value="Berat" {{ ($datakerusakan->tingkat_kerusakan6 ?? old('tingkat_kerusakan6')) == 'Berat' ? 'selected' : '' }}>Berat</option>
+                                    <option value="Tidak Ada Kerusakan" {{ ($datakerusakan->tingkat_kerusakan6 ?? old('tingkat_kerusakan6')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-image text-secondary me-1"></i> Foto Faktual Dinding | Max 15 MB</label>
+                            <input type="file" name="pintu" accept="image/*" class="form-control @error('pintu') is-invalid @enderror" onchange="previewCadangan1(event)">
+                            @error('pintu')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+                            <div class="mt-3 text-center">
+                                @if(isset($datakerusakan->pintu) && $datakerusakan->pintu)
+                                    <img id="preview-cadangan1" src="{{ asset('storage/' . $datakerusakan->pintu) }}" alt="Preview Cadangan 1" class="preview-image" style="display: block;">
+                                @else
+                                    <img id="preview-cadangan1" src="#" alt="Preview Cadangan 1" class="preview-image" style="display: none;">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================== BAGIAN 7 ===================== -->
+                <div class="text-center">
+                    <hr class="my-4 section-divider">
+                    <h5 class="text-primary fw-bold mt-2 section-title">
+                        <i class="bi bi-file-earmark-text-fill me-2"></i>
+                        Bagian 6 - Plafond
+                    </h5>
+                    <hr class="my-4 section-divider">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-window-dock text-primary me-1"></i> Plafond</label>
+                            <input type="text" name="plafond" class="form-control" value="{{ $datakerusakan->plafond ?? old('plafond') }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+                            <select name="indikasi_kerusakan7" class="form-select">
+                                <option value="">-- Pilih Indikasi --</option>
+                                <option value="Tidak Ada Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan7 ?? old('indikasi_kerusakan7')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
+                                <option value="Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan7 ?? old('indikasi_kerusakan7')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+                            <select name="tingkat_kerusakan7" class="form-select">
+                                <option value="">-- Pilih Tingkat Kerusakan --</option>
+                                <option value="Ringan" {{ ($datakerusakan->tingkat_kerusakan7 ?? old('tingkat_kerusakan7')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
+                                <option value="Sedang" {{ ($datakerusakan->tingkat_kerusakan7 ?? old('tingkat_kerusakan7')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                                <option value="Berat" {{ ($datakerusakan->tingkat_kerusakan7 ?? old('tingkat_kerusakan7')) == 'Berat' ? 'selected' : '' }}>Berat</option>
+                                <option value="Tidak Ada Kerusakan" {{ ($datakerusakan->tingkat_kerusakan7 ?? old('tingkat_kerusakan7')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-image text-success me-1"></i> Foto Faktual Plafond | Max 15 MB</label>
+                            <input type="file" name="jendela" accept="image/*" class="form-control @error('jendela') is-invalid @enderror" onchange="previewCadangan2(event)">
+                            @error('jendela')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+                            <div class="mt-3 text-center">
+                                @if(isset($datakerusakan->jendela) && $datakerusakan->jendela)
+                                    <img id="preview-cadangan2" src="{{ asset('storage/' . $datakerusakan->jendela) }}" alt="Preview Cadangan 2" class="preview-image" style="display: block;">
+                                @else
+                                    <img id="preview-cadangan2" src="#" alt="Preview Cadangan 2" class="preview-image" style="display: none;">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================== BAGIAN 8 ===================== -->
+                <div class="text-center">
+                    <hr class="my-4 section-divider">
+                    <h5 class="text-primary fw-bold mt-2 section-title">
+                        <i class="bi bi-file-earmark-text-fill me-2"></i>
+                        Bagian 7 - Utilitas
+                    </h5>
+                    <hr class="my-4 section-divider">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-tools text-primary me-1"></i> Utilitas</label>
+                            <input type="text" name="utilitas" class="form-control" value="{{ $datakerusakan->utilitas ?? old('utilitas') }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+                            <select name="indikasi_kerusakan8" class="form-select">
+                                <option value="">-- Pilih Indikasi --</option>
+                                <option value="Tidak Ada Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan8 ?? old('indikasi_kerusakan8')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
+                                <option value="Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan8 ?? old('indikasi_kerusakan8')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+                            <select name="tingkat_kerusakan8" class="form-select">
+                                <option value="">-- Pilih Tingkat Kerusakan --</option>
+                                <option value="Ringan" {{ ($datakerusakan->tingkat_kerusakan8 ?? old('tingkat_kerusakan8')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
+                                <option value="Sedang" {{ ($datakerusakan->tingkat_kerusakan8 ?? old('tingkat_kerusakan8')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                                <option value="Berat" {{ ($datakerusakan->tingkat_kerusakan8 ?? old('tingkat_kerusakan8')) == 'Berat' ? 'selected' : '' }}>Berat</option>
+                                <option value="Tidak Ada Kerusakan" {{ ($datakerusakan->tingkat_kerusakan8 ?? old('tingkat_kerusakan8')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-diagram-3 text-info me-1"></i> Foto Faktual Utilitas | Max 15 MB</label>
+                            <input type="file" name="balok" accept="image/*" class="form-control @error('balok') is-invalid @enderror" onchange="previewBalok(event)">
+                            @error('balok')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+                            <div class="mt-3 text-center">
+                                @if(isset($datakerusakan->balok) && $datakerusakan->balok)
+                                    <img id="preview-balok" src="{{ asset('storage/' . $datakerusakan->balok) }}" alt="Preview Balok" class="preview-image" style="display: block;">
+                                @else
+                                    <img id="preview-balok" src="#" alt="Preview Balok" class="preview-image" style="display: none;">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================== BAGIAN 9 ===================== -->
+                <div class="text-center">
+                    <hr class="my-4 section-divider">
+                    <h5 class="text-primary fw-bold mt-2 section-title">
+                        <i class="bi bi-file-earmark-text-fill me-2"></i>
+                        Bagian 8 - Finishing
+                    </h5>
+                    <hr class="my-4 section-divider">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-paint-bucket text-primary me-1"></i> Finishing </label>
+                            <input type="text" name="finishing" class="form-control" value="{{ $datakerusakan->finishing ?? old('finishing') }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
+                            <select name="indikasi_kerusakan1" class="form-select @error('indikasi_kerusakan1') is-invalid @enderror">
+                                <option value="">-- Pilih Indikasi --</option>
+                                <option value="Tidak Ada Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan1 ?? old('indikasi_kerusakan1')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
+                                <option value="Indikasi Kerusakan" {{ ($datakerusakan->indikasi_kerusakan1 ?? old('indikasi_kerusakan1')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
+                            </select>
+                            @error('indikasi_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
+                            <select name="tingkat_kerusakan1" class="form-select @error('tingkat_kerusakan1') is-invalid @enderror">
+                                <option value="">-- Pilih Tingkat Kerusakan --</option>
+                                <option value="Ringan" {{ ($datakerusakan->tingkat_kerusakan1 ?? old('tingkat_kerusakan1')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
+                                <option value="Sedang" {{ ($datakerusakan->tingkat_kerusakan1 ?? old('tingkat_kerusakan1')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                                <option value="Berat" {{ ($datakerusakan->tingkat_kerusakan1 ?? old('tingkat_kerusakan1')) == 'Berat' ? 'selected' : '' }}>Berat</option>
+                                <option value="Tidak Ada Kerusakan" {{ ($datakerusakan->tingkat_kerusakan1 ?? old('tingkat_kerusakan1')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
+                            </select>
+                            @error('tingkat_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-columns-gap text-warning me-1"></i> Foto Faktual Finishing | Max 15 MB</label>
+                            <input type="file" name="kolom" accept="image/*" class="form-control @error('kolom') is-invalid @enderror" onchange="previewKolom(event)">
+                            @error('kolom')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+                            <div class="mt-3 text-center">
+                                @if(isset($datakerusakan->kolom) && $datakerusakan->kolom)
+                                    <img id="preview-kolom" src="{{ asset('storage/' . $datakerusakan->kolom) }}" alt="Preview Kolom" class="preview-image" style="display: block;">
+                                @else
+                                    <img id="preview-kolom" src="#" alt="Preview Kolom" class="preview-image" style="display: none;">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================== TOTAL NILAI KERUSAKAN ===================== -->
+                <div class="text-center">
+                    <hr class="my-4 section-divider">
+                    <h5 class="text-primary fw-bold mt-2 section-title">
+                        <i class="bi bi-file-earmark-text-fill me-2"></i>
+                        Total Nilai Kerusakan Bangunan Gedung
+                    </h5>
+                    <hr class="my-4 section-divider">
+                </div>
+
+                <div class="col-12 mt-4">
+                    <h6 class="fw-bold text-primary"><i class="bi bi-brush me-1"></i> Total Nilai Kerusakan</h6>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label"><i class="bi bi-123 text-primary me-1"></i> Total Nilai Kerusakan</label>
+                    <input type="number" step="0.01" name="total_nilai_kerusakan" class="form-control" value="{{ $datakerusakan->total_nilai_kerusakan ?? old('total_nilai_kerusakan') }}">
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="col-12 text-end mt-3">
+                    <button type="button" class="button-hijau" onclick="openModal()">
+                        <i class="bi bi-save me-1"></i> Simpan Data
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-building me-1" style="color: blue;"></i> Struktur Bangunan Atas
-        </label>
-        <input type="text" name="struktur_bangunan_atas" class="form-control @error('struktur_bangunan_atas') is-invalid @enderror"
-               value="{{ old('struktur_bangunan_atas', $data->struktur_bangunan_atas) }}">
-        @error('struktur_bangunan_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
+    <!-- Modal Konfirmasi -->
+    <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">Apakah Anda ingin menyimpan data ini?</p>
+            <div style="display: flex; justify-content: center; gap: 12px;">
+                <button onclick="submitForm()" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                    <i class="bi bi-check-circle me-1"></i> Ya
+                </button>
+                <button onclick="closeModal()" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                    <i class="bi bi-x-circle me-1"></i> Batal
+                </button>
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-building me-1" style="color: blue;"></i> Struktur Atap
-        </label>
-        <input type="text" name="struktur_atap" class="form-control @error('struktur_atap') is-invalid @enderror"
-               value="{{ old('struktur_atap', $data->struktur_atap) }}">
-        @error('struktur_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+    <script>
+        // Fungsi untuk preview gambar
+        function previewStrukturBawah(event) {
+            const preview = document.getElementById('preview-struktur-bawah');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.display = 'block';
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                preview.src = '#';
+            }
+        }
 
-    {{-- Indikasi & Tingkat Kerusakan Bagian 1 --}}
-    <div class="col-md-6">
-        <label class="form-label">
-            <i class="bi bi-exclamation-circle me-1" style="color: orange;"></i> Indikasi Kerusakan 1
-        </label>
-        <select name="indikasi_kerusakan1" class="form-select @error('indikasi_kerusakan1') is-invalid @enderror">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ old('indikasi_kerusakan1', $data->indikasi_kerusakan1) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ old('indikasi_kerusakan1', $data->indikasi_kerusakan1) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-        @error('indikasi_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+        function previewStrukturAtas(event) {
+            const preview = document.getElementById('preview-struktur-atas');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.display = 'block';
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                preview.src = '#';
+            }
+        }
 
-    <div class="col-md-6">
-        <label class="form-label">
-            <i class="bi bi-bar-chart me-1" style="color: orange;"></i> Tingkat Kerusakan 1
-        </label>
-        <select name="tingkat_kerusakan1" class="form-select @error('tingkat_kerusakan1') is-invalid @enderror">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            @foreach(['Ringan', 'Sedang', 'Berat', 'Tidak Ada Kerusakan'] as $val)
-                <option value="{{ $val }}" {{ old('tingkat_kerusakan1', $data->tingkat_kerusakan1) == $val ? 'selected' : '' }}>{{ $val }}</option>
-            @endforeach
-        </select>
-        @error('tingkat_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+        function previewStrukturAtap(event) {
+            const preview = document.getElementById('preview-struktur-atap');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.display = 'block';
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                preview.src = '#';
+            }
+        }
 
-    {{-- BAGIAN 2 --}}
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-columns-gap me-1" style="color: blue;"></i> Pondasi
-        </label>
-        <input type="text" name="pondasi" class="form-control @error('pondasi') is-invalid @enderror"
-               value="{{ old('pondasi', $data->pondasi) }}">
-        @error('pondasi')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+        function previewRangkaAtap(event) {
+            const preview = document.getElementById('preview-rangka-atap');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.display = 'block';
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                preview.src = '#';
+            }
+        }
 
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-exclamation-circle me-1" style="color: orange;"></i> Indikasi Kerusakan 2
-        </label>
-        <select name="indikasi_kerusakan2" class="form-select @error('indikasi_kerusakan2') is-invalid @enderror">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ old('indikasi_kerusakan2', $data->indikasi_kerusakan2) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ old('indikasi_kerusakan2', $data->indikasi_kerusakan2) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-        @error('indikasi_kerusakan2')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+        function previewCadangan1(event) {
+            const preview = document.getElementById('preview-cadangan1');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.display = 'block';
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                preview.src = '#';
+            }
+        }
 
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-bar-chart me-1" style="color: orange;"></i> Tingkat Kerusakan 2
-        </label>
-        <select name="tingkat_kerusakan2" class="form-select @error('tingkat_kerusakan2') is-invalid @enderror">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            @foreach(['Ringan', 'Sedang', 'Berat', 'Tidak Ada Kerusakan'] as $val)
-                <option value="{{ $val }}" {{ old('tingkat_kerusakan2', $data->tingkat_kerusakan2) == $val ? 'selected' : '' }}>{{ $val }}</option>
-            @endforeach
-        </select>
-        @error('tingkat_kerusakan2')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+        function previewCadangan2(event) {
+            const preview = document.getElementById('preview-cadangan2');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.display = 'block';
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                preview.src = '#';
+            }
+        }
 
-    {{-- BAGIAN 3 --}}
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-box-seam me-1" style="color: blue;"></i> Struktur
-        </label>
-        <input type="text" name="struktur" class="form-control @error('struktur') is-invalid @enderror"
-               value="{{ old('struktur', $data->struktur) }}">
-        @error('struktur')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+        function previewBalok(event) {
+            const preview = document.getElementById('preview-balok');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.display = 'block';
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                preview.src = '#';
+            }
+        }
 
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-exclamation-circle me-1" style="color: orange;"></i> Indikasi Kerusakan 3
-        </label>
-        <select name="indikasi_kerusakan3" class="form-select @error('indikasi_kerusakan3') is-invalid @enderror">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ old('indikasi_kerusakan3', $data->indikasi_kerusakan3) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ old('indikasi_kerusakan3', $data->indikasi_kerusakan3) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-        @error('indikasi_kerusakan3')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+        function previewKolom(event) {
+            const preview = document.getElementById('preview-kolom');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.display = 'block';
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                preview.src = '#';
+            }
+        }
 
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-bar-chart me-1" style="color: orange;"></i> Tingkat Kerusakan 3
-        </label>
-        <select name="tingkat_kerusakan3" class="form-select @error('tingkat_kerusakan3') is-invalid @enderror">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            @foreach(['Ringan', 'Sedang', 'Berat', 'Tidak Ada Kerusakan'] as $val)
-                <option value="{{ $val }}" {{ old('tingkat_kerusakan3', $data->tingkat_kerusakan3) == $val ? 'selected' : '' }}>{{ $val }}</option>
-            @endforeach
-        </select>
-        @error('tingkat_kerusakan3')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+        // Fungsi untuk modal konfirmasi
+        function openModal() {
+            document.getElementById("confirmModal").style.display = "flex";
+        }
 
-    {{-- BAGIAN 4 --}}
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-house-heart me-1" style="color: blue;"></i> Atap
-        </label>
-        <input type="text" name="atap" class="form-control @error('atap') is-invalid @enderror"
-               value="{{ old('atap', $data->atap) }}">
-        @error('atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+        function closeModal() {
+            document.getElementById("confirmModal").style.display = "none";
+        }
 
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-exclamation-circle me-1" style="color: orange;"></i> Indikasi Kerusakan 4
-        </label>
-        <select name="indikasi_kerusakan4" class="form-select @error('indikasi_kerusakan4') is-invalid @enderror">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ old('indikasi_kerusakan4', $data->indikasi_kerusakan4) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ old('indikasi_kerusakan4', $data->indikasi_kerusakan4) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-        @error('indikasi_kerusakan4')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+        function submitForm() {
+            document.getElementById('formPemilik').submit();
+        }
+    </script>
 
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-bar-chart me-1" style="color: orange;"></i> Tingkat Kerusakan 4
-        </label>
-        <select name="tingkat_kerusakan4" class="form-select @error('tingkat_kerusakan4') is-invalid @enderror">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            @foreach(['Ringan', 'Sedang', 'Berat', 'Tidak Ada Kerusakan'] as $val)
-                <option value="{{ $val }}" {{ old('tingkat_kerusakan4', $data->tingkat_kerusakan4) == $val ? 'selected' : '' }}>{{ $val }}</option>
-            @endforeach
-        </select>
-        @error('tingkat_kerusakan4')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
 
-    {{-- BAGIAN 5 --}}
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-columns me-1" style="color: blue;"></i> Lantai
-        </label>
-        <input type="text" name="lantai" class="form-control @error('lantai') is-invalid @enderror"
-               value="{{ old('lantai', $data->lantai) }}">
-        @error('lantai')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
 
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-exclamation-circle me-1" style="color: orange;"></i> Indikasi Kerusakan 5
-        </label>
-        <select name="indikasi_kerusakan5" class="form-select @error('indikasi_kerusakan5') is-invalid @enderror">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ old('indikasi_kerusakan5', $data->indikasi_kerusakan5) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ old('indikasi_kerusakan5', $data->indikasi_kerusakan5) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-        @error('indikasi_kerusakan5')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
+{{-- ----------- --}}
 
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-bar-chart me-1" style="color: orange;"></i> Tingkat Kerusakan 5
-        </label>
-        <select name="tingkat_kerusakan5" class="form-select @error('tingkat_kerusakan5') is-invalid @enderror">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            @foreach(['Ringan', 'Sedang', 'Berat', 'Tidak Ada Kerusakan'] as $val)
-                <option value="{{ $val }}" {{ old('tingkat_kerusakan5', $data->tingkat_kerusakan5) == $val ? 'selected' : '' }}>{{ $val }}</option>
-            @endforeach
-        </select>
-        @error('tingkat_kerusakan5')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    {{-- BAGIAN 6 --}}
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-columns-gap me-1" style="color: blue;"></i> Dinding
-        </label>
-        <input type="text" name="dinding" class="form-control @error('dinding') is-invalid @enderror"
-               value="{{ old('dinding', $data->dinding) }}">
-        @error('dinding')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-exclamation-circle me-1" style="color: orange;"></i> Indikasi Kerusakan 6
-        </label>
-        <select name="indikasi_kerusakan6" class="form-select @error('indikasi_kerusakan6') is-invalid @enderror">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ old('indikasi_kerusakan6', $data->indikasi_kerusakan6) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ old('indikasi_kerusakan6', $data->indikasi_kerusakan6) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-        @error('indikasi_kerusakan6')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-bar-chart me-1" style="color: orange;"></i> Tingkat Kerusakan 6
-        </label>
-        <select name="tingkat_kerusakan6" class="form-select @error('tingkat_kerusakan6') is-invalid @enderror">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            @foreach(['Ringan', 'Sedang', 'Berat', 'Tidak Ada Kerusakan'] as $val)
-                <option value="{{ $val }}" {{ old('tingkat_kerusakan6', $data->tingkat_kerusakan6) == $val ? 'selected' : '' }}>{{ $val }}</option>
-            @endforeach
-        </select>
-        @error('tingkat_kerusakan6')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    {{-- BAGIAN 7 --}}
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-layout-text-window-reverse me-1" style="color: blue;"></i> Plafond
-        </label>
-        <input type="text" name="plafond" class="form-control @error('plafond') is-invalid @enderror"
-               value="{{ old('plafond', $data->plafond) }}">
-        @error('plafond')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-exclamation-circle me-1" style="color: orange;"></i> Indikasi Kerusakan 7
-        </label>
-        <select name="indikasi_kerusakan7" class="form-select @error('indikasi_kerusakan7') is-invalid @enderror">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ old('indikasi_kerusakan7', $data->indikasi_kerusakan7) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ old('indikasi_kerusakan7', $data->indikasi_kerusakan7) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-        @error('indikasi_kerusakan7')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-bar-chart me-1" style="color: orange;"></i> Tingkat Kerusakan 7
-        </label>
-        <select name="tingkat_kerusakan7" class="form-select @error('tingkat_kerusakan7') is-invalid @enderror">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            @foreach(['Ringan', 'Sedang', 'Berat', 'Tidak Ada Kerusakan'] as $val)
-                <option value="{{ $val }}" {{ old('tingkat_kerusakan7', $data->tingkat_kerusakan7) == $val ? 'selected' : '' }}>{{ $val }}</option>
-            @endforeach
-        </select>
-        @error('tingkat_kerusakan7')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    {{-- BAGIAN 8 --}}
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-wrench me-1" style="color: blue;"></i> Utilitas
-        </label>
-        <input type="text" name="utilitas" class="form-control @error('utilitas') is-invalid @enderror"
-               value="{{ old('utilitas', $data->utilitas) }}">
-        @error('utilitas')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-exclamation-circle me-1" style="color: orange;"></i> Indikasi Kerusakan 8
-        </label>
-        <select name="indikasi_kerusakan8" class="form-select @error('indikasi_kerusakan8') is-invalid @enderror">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ old('indikasi_kerusakan8', $data->indikasi_kerusakan8) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ old('indikasi_kerusakan8', $data->indikasi_kerusakan8) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-        @error('indikasi_kerusakan8')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    <div class="col-md-4">
-        <label class="form-label">
-            <i class="bi bi-bar-chart me-1" style="color: orange;"></i> Tingkat Kerusakan 8
-        </label>
-        <select name="tingkat_kerusakan8" class="form-select @error('tingkat_kerusakan8') is-invalid @enderror">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            @foreach(['Ringan', 'Sedang', 'Berat', 'Tidak Ada Kerusakan'] as $val)
-                <option value="{{ $val }}" {{ old('tingkat_kerusakan8', $data->tingkat_kerusakan8) == $val ? 'selected' : '' }}>{{ $val }}</option>
-            @endforeach
-        </select>
-        @error('tingkat_kerusakan8')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    {{-- BAGIAN 9 --}}
-    <div class="col-md-6">
-        <label class="form-label">
-            <i class="bi bi-brush me-1" style="color: blue;"></i> Finishing
-        </label>
-        <input type="text" name="finishing" class="form-control @error('finishing') is-invalid @enderror"
-               value="{{ old('finishing', $data->finishing) }}">
-        @error('finishing')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    <div class="col-md-6">
-        <label class="form-label">
-            <i class="bi bi-calculator me-1" style="color: blue;"></i> Total Nilai Kerusakan
-        </label>
-        <input type="text" name="total_nilai_kerusakan" class="form-control @error('total_nilai_kerusakan') is-invalid @enderror"
-               value="{{ old('total_nilai_kerusakan', $data->total_nilai_kerusakan) }}">
-        @error('total_nilai_kerusakan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-</div>
-
-    {{-- Tombol Submit --}}
-    <div class="col-12 text-end mt-3">
-        <button type="button" class="button-berkas" onclick="openModal()">
-            <i class="bi bi-save me-1"></i> Simpan Perbaikan Data ?
-        </button>
-    </div>
-</div>
-
-</form>
 
 {{-- Modal Konfirmasi --}}
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
