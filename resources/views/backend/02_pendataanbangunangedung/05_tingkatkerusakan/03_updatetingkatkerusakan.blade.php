@@ -410,6 +410,7 @@ th {
                             </select>
                         </div>
                     </div>
+
 <div class="col-md-6">
     <div class="mb-3">
         <label class="form-label">
@@ -426,16 +427,26 @@ th {
         @enderror
 
         <div class="mt-3 text-center">
-            {{-- Kalau ada data lama tampilkan --}}
             @if(isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah)
-                <img
-                    id="preview-struktur-bawah"
-                    src="{{ asset('storage/' . $datakerusakan->struktur_bawah) }}"
-                    alt="Preview Struktur Bawah"
-                    class="preview-image img-thumbnail"
-                    style="max-height: 200px; display:block;">
+                @if(file_exists(public_path('storage/' . $datakerusakan->struktur_bawah)))
+                    {{-- Ambil dari storage --}}
+                    <img
+                        id="preview-struktur-bawah"
+                        src="{{ asset('storage/' . $datakerusakan->struktur_bawah) }}"
+                        alt="Preview Struktur Bawah"
+                        class="preview-image img-thumbnail"
+                        style="max-height: 200px; display:block;">
+                @else
+                    {{-- Ambil langsung dari path luar storage --}}
+                    <img
+                        id="preview-struktur-bawah"
+                        src="{{ asset($datakerusakan->struktur_bawah) }}"
+                        alt="Preview Struktur Bawah"
+                        class="preview-image img-thumbnail"
+                        style="max-height: 200px; display:block;">
+                @endif
             @else
-                {{-- Kalau tidak ada data lama, kosongkan --}}
+                {{-- Kalau tidak ada data lama --}}
                 <img
                     id="preview-struktur-bawah"
                     src="#"
