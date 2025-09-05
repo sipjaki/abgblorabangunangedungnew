@@ -362,13 +362,9 @@ th {
 </div>
 
 {{-- No. HDNO (Hidden input + tampilkan data sebelumnya saja) --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label">
-        <i class="bi bi-hash me-1" style="color: blue;"></i> No. HDNO
-    </label>
-    <input type="hidden" name="no_hdno" value="{{ old('no_hdno', $datastatus->no_hdno) }}">
-    <input type="text" class="form-control" value="{{ $datastatus->no_hdno }}" readonly>
-</div>
+
+{{-- No. HDNO (disembunyikan, hanya hidden input) --}}
+<input type="hidden" name="no_hdno" value="{{ old('no_hdno', $datastatus->no_hdno) }}">
 
 {{-- No. IMB/PBG --}}
 <div class="col-md-6 mb-3">

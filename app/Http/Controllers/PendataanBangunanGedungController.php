@@ -1142,6 +1142,7 @@ public function bedatabgstatusbangunanupdate($id)
     ]);
 }
 
+
 public function bedatabgstatusbangunanupdatenew(Request $request, $id)
 {
     $validated = $request->validate([
@@ -1158,7 +1159,7 @@ public function bedatabgstatusbangunanupdatenew(Request $request, $id)
     $klasifikasi = databgstatus::findOrFail($id);
 
     $klasifikasi->update([
-        'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? null,
+        'databgkepemilikan_id' => $validated['databgkepemilikan_id'] ?? $klasifikasi->databgkepemilikan_id,
         'dokumen_teknis_tanah' => $validated['dokumen_teknis_tanah'] ?? null,
         'no_hdno' => $validated['no_hdno'] ?? null,
         'no_imbpbg' => $validated['no_imbpbg'] ?? null,
@@ -1166,8 +1167,11 @@ public function bedatabgstatusbangunanupdatenew(Request $request, $id)
     ]);
 
     session()->flash('update', 'Data berhasil diperbarui!');
-    return redirect()->back();
+    return redirect()->route('bedatabgstatusbangunan', [
+        'kepemilikanId' => $klasifikasi->databgkepemilikan_id
+    ]);
 }
+
 
 
 public function datanewpendataanbg(Request $request)
