@@ -1123,19 +1123,22 @@ public function bedatabgstatusbangunan($id)
 
 public function bedatabgstatusbangunanupdate($id)
 {
-    // Ambil data bantuan teknis berdasarkan ID
-    $databantuanteknis = databgkepemilikan::find($id);
-    $databantuanteknis = databgstatus::find($id);
+    // Cari data kepemilikan (parent)
+    $databgkepemilikan = databgkepemilikan::findOrFail($id);
 
-    if (!$databantuanteknis) {
-        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    // Cari data status bangunan berdasarkan parent id
+    $datastatus = databgstatus::where('databgkepemilikan_id', $id)->first();
+
+    if (!$datastatus) {
+        return abort(404, 'Data status bangunan gedung tidak ditemukan');
     }
 
-    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    // Kirim data ke view form update status bangunan
     return view('backend.02_pendataanbangunangedung.06_statusbangunan.02_updatestatusbangunan', [
-        'title' => 'Perbaikan Data Status Bangunan Gedung ',
-        'data' => $databantuanteknis,
-        'user' => Auth::user()
+        'title' => 'Perbaikan Data Status Bangunan Gedung',
+        'data' => $databgkepemilikan, // parent
+        'datastatus' => $datastatus,  // child
+        'user' => Auth::user(),
     ]);
 }
 

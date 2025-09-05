@@ -235,12 +235,12 @@ Route::put('/bedatabgstrukrrusak/{datakerusakan}/struktur/{datastruktur}',
 // 04 PENDATAAN BANGUNAN GEDUNG STRUKTUR BANGUNAN GEDUNG
 // DATA CONTOH VALIDASI KE 2
 
-Route::get('/bedatabgstruktur/{id}', [PendataanBangunanGedungController::class, 'bedatabgstruktur'])->middleware('auth')->name('bedatabgstruktur');
-Route::get('/bedatabgstrukturupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturupdate'])->middleware('auth')->name('bedatabgstrukturupdate');
-Route::put('/bedatabgstrukturupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturupdatenew'])->middleware('auth')->name('bedatabgstrukturupdatenew');
+// Route::get('/bedatabgstruktur/{id}', [PendataanBangunanGedungController::class, 'bedatabgstruktur'])->middleware('auth')->name('bedatabgstruktur');
+// Route::get('/bedatabgstrukturupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturupdate'])->middleware('auth')->name('bedatabgstrukturupdate');
+// Route::put('/bedatabgstrukturupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturupdatenew'])->middleware('auth')->name('bedatabgstrukturupdatenew');
 
-Route::get('/bedatabgstrukturcreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturcreate'])->middleware('auth')->name('bedatabgstrukturcreate');
-Route::post('/bedatabgstrukturcreatenew', [PendataanBangunanGedungController::class, 'bedatabgstrukturcreatenew'])->middleware('auth')->name('bedatabgstrukturcreatenew');
+// Route::get('/bedatabgstrukturcreate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukturcreate'])->middleware('auth')->name('bedatabgstrukturcreate');
+// Route::post('/bedatabgstrukturcreatenew', [PendataanBangunanGedungController::class, 'bedatabgstrukturcreatenew'])->middleware('auth')->name('bedatabgstrukturcreatenew');
 
 // 05 PENDATAAN BANGUNAN GEDUNG STATUS BANGUNAN GEDUNG
 Route::get(
