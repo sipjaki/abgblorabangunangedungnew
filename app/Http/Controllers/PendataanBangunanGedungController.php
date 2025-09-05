@@ -1307,8 +1307,12 @@ public function bedatabgstatuscreatenew(Request $request)
         'no_slf' => $validated['no_slf'] ?? null,
     ]);
 
+    // session()->flash('create', 'Data Status Bangunan Gedung berhasil ditambahkan!');
+    // return redirect()->route('bedatabgstatusbangunan', ['id' => $validated['databgkepemilikan_id']]);
+
     session()->flash('create', 'Data Status Bangunan Gedung berhasil ditambahkan!');
-    return redirect()->route('bedatabgstatusbangunan', ['id' => $validated['databgkepemilikan_id']]);
+return redirect()->route('bedatabgstatusbangunan', ['kepemilikanId' => $validated['databgkepemilikan_id']]);
+
 }
 
 
