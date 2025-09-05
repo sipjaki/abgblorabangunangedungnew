@@ -427,33 +427,32 @@ th {
         @enderror
 
         <div class="mt-3 text-center">
+            {{-- Foto lama tetap tampil --}}
             @if(isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah)
                 @if(file_exists(public_path('storage/' . $datakerusakan->struktur_bawah)))
-                    {{-- Ambil dari storage --}}
                     <img
-                        id="preview-struktur-bawah"
                         src="{{ asset('storage/' . $datakerusakan->struktur_bawah) }}"
-                        alt="Preview Struktur Bawah"
-                        class="preview-image img-thumbnail"
+                        alt="Foto Lama Struktur Bawah"
+                        class="img-thumbnail mb-2"
                         style="max-height: 200px; display:block;">
                 @else
-                    {{-- Ambil langsung dari path luar storage --}}
                     <img
-                        id="preview-struktur-bawah"
                         src="{{ asset($datakerusakan->struktur_bawah) }}"
-                        alt="Preview Struktur Bawah"
-                        class="preview-image img-thumbnail"
+                        alt="Foto Lama Struktur Bawah"
+                        class="img-thumbnail mb-2"
                         style="max-height: 200px; display:block;">
                 @endif
             @else
-                {{-- Kalau tidak ada data lama --}}
-                <img
-                    id="preview-struktur-bawah"
-                    src="#"
-                    alt="Preview Struktur Bawah"
-                    class="preview-image img-thumbnail"
-                    style="max-height: 200px; display:none;">
+                <p style="font-size: 11px; color:red;">Tidak ada foto lama!</p>
             @endif
+
+            {{-- Foto baru hasil preview --}}
+            <img
+                id="preview-struktur-bawah"
+                src="#"
+                alt="Preview Struktur Bawah Baru"
+                class="preview-image img-thumbnail"
+                style="max-height: 200px; display:none;">
         </div>
     </div>
 </div>
