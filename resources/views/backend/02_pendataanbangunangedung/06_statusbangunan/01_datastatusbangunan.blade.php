@@ -331,8 +331,9 @@ th {
    onclick="setDeleteUrl(this)"
    style="text-decoration: none;"
 >
-   <i class="bi bi-trash" style="color: red; margin-right:4px;"></i>
-   <span style="color: red;">Hapus</span>
+<span style="color: white;" class="button-merah">
+   <i class="bi bi-trash" style="color: white; margin-right:4px;"></i>
+    Hapus</span>
 </a>
 
                     </div>
