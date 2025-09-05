@@ -410,8 +410,7 @@ th {
                             </select>
                         </div>
                     </div>
-
-                    <div class="col-md-6">
+<div class="col-md-6">
     <div class="mb-3">
         <label class="form-label">
             <i class="bi bi-bricks text-primary me-1"></i> Foto Faktual Pondasi | Max 15 MB
@@ -427,15 +426,23 @@ th {
         @enderror
 
         <div class="mt-3 text-center">
-            <img
-                id="preview-struktur-bawah"
-                src="{{ isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah
-                        ? asset('storage/' . $datakerusakan->struktur_bawah)
-                        : '#' }}"
-                alt="Preview Struktur Bawah"
-                class="preview-image img-thumbnail"
-                style="max-height: 200px;
-                       {{ isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah ? 'display:block;' : 'display:none;' }}">
+            {{-- Kalau ada data lama tampilkan --}}
+            @if(isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah)
+                <img
+                    id="preview-struktur-bawah"
+                    src="{{ asset('storage/' . $datakerusakan->struktur_bawah) }}"
+                    alt="Preview Struktur Bawah"
+                    class="preview-image img-thumbnail"
+                    style="max-height: 200px; display:block;">
+            @else
+                {{-- Kalau tidak ada data lama, kosongkan --}}
+                <img
+                    id="preview-struktur-bawah"
+                    src="#"
+                    alt="Preview Struktur Bawah"
+                    class="preview-image img-thumbnail"
+                    style="max-height: 200px; display:none;">
+            @endif
         </div>
     </div>
 </div>
@@ -449,7 +456,7 @@ function previewStrukturBawah(event) {
         imgPreview.style.display = "block";
         imgPreview.src = URL.createObjectURL(file);
         imgPreview.onload = () => {
-            URL.revokeObjectURL(imgPreview.src); // biar gak makan memori
+            URL.revokeObjectURL(imgPreview.src);
         }
     }
 }
