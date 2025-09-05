@@ -351,11 +351,12 @@ th {
     @error('dokumen_teknis_tanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-<div class="col-md-6">
+<div class="col-md-6 d-none">
     <label class="form-label"><i class="bi bi-card-text text-primary me-1"></i> No. HDNO</label>
-    <input type="text" name="no_hdno" class="form-control @error('no_hdno') is-invalid @enderror" value="{{ old('no_hdno') }}">
+    <input type="hidden" name="no_hdno" value="--">
     @error('no_hdno')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+
 
 <div class="col-md-6">
     <label class="form-label"><i class="bi bi-file-check text-primary me-1"></i> No. IMB/PBG</label>

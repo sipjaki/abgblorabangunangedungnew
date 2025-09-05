@@ -1089,32 +1089,34 @@ public function bedatabgstrukturcreatenew(Request $request)
     session()->flash('create', 'Data struktur bangunan berhasil ditambahkan!');
     return redirect()->route('bedatabgstruktur', ['id' => $validated['databgkepemilikan_id']]);
 }
-
 public function bedatabgstatusbangunan($id)
 {
     // Ambil user login
     $user = Auth::user();
 
-    // Cari data pbg berdasarkan ID
-    $data = databgkepemilikan::findOrFail($id);
+    // Cari data kepemilikan dulu
+    $data = databgkepemilikan::find($id);
 
-    // Ambil data datapemilik berdasarkan foreign key pbgslfbangunan_id
-    $subdatapemilik = databgstatus::where('databgkepemilikan_id', $data->id)->paginate(15);
+    // Kalau tidak ada kepemilikan, buat object kosong biar link tambah data tetap ada
+    if (!$data) {
+        $data = new databgkepemilikan();
+        $data->id = $id;
+    }
+
+    // Ambil data status bangunan berdasarkan parent
+    $subdatapemilik = databgstatus::where('databgkepemilikan_id', $id)
+                        ->paginate(15);
 
     // Hitung nomor urut mulai untuk paginasi
     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
-
-    // Ambil data jenis pengajuan
-    // $datapbgslf = jenispengajuanpbgslfper::all();
 
     // Kirim data ke view
     return view('backend.02_pendataanbangunangedung.06_statusbangunan.01_datastatusbangunan', [
         'title' => 'Informasi Data Status Bangunan Gedung',
         'title_halaman' => 'Informasi Data Status Bangunan Gedung',
         'user' => $user,
-        'data' => $data,
-        // 'datapbgslf' => $datapbgslf,
-        'subdatapemilik' => $subdatapemilik,
+        'data' => $data,             // parent
+        'subdatapemilik' => $subdatapemilik, // child
         'start' => $start,
     ]);
 }
