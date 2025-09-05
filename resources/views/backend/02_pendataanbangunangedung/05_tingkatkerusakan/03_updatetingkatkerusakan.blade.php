@@ -352,6 +352,7 @@ th {
       enctype="multipart/form-data">
     @csrf
    @method('PUT')
+
             {{-- <input type="hidden" name="databgkepemilikan_id" value="{{ $databangunan->id }}"> --}}
 
             <div class="row g-3 mt-2">

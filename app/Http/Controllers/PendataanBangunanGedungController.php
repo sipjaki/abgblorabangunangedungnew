@@ -2512,8 +2512,12 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $idKerusakan, $id
         'kolom'          => $validated['kolom'],
     ]);
 
+    // session()->flash('update', 'Data struktur bangunan beserta foto berhasil diupdate ke kedua tabel!');
+    // return redirect()->route('bedatabgstrukrrusak', $validated['databgkepemilikan_id']);
+
     session()->flash('update', 'Data struktur bangunan beserta foto berhasil diupdate ke kedua tabel!');
-    return redirect()->route('bedatabgstrukrrusak', $validated['databgkepemilikan_id']);
+return redirect()->route('bedatabgstrukrrusak', $dataKerusakan->databgkepemilikan_id);
+
 }
 
 public function perkecamatanbangunan(Request $request, $kecamatan_id)
