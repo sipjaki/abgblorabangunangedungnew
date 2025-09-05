@@ -250,6 +250,8 @@ Route::get(
 
 // Route::get('/bedatabgstatusbangunan/{id}', [PendataanBangunanGedungController::class, 'bedatabgstatusbangunan'])->middleware('auth')->name('bedatabgstatusbangunan');
 
+        Route::delete('/bedatabgstatusbangunandelete/{id}', [PendataanBangunanGedungController::class, 'bedatabgstatusbangunandelete'])->middleware('auth')->name('bedatabgstatusbangunandelete');
+
 Route::get('/bedatabgstatusbangunanupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstatusbangunanupdate'])->middleware('auth')->name('bedatabgstatusbangunanupdate');
 Route::put('/bedatabgstatusbangunanupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgstatusbangunanupdatenew'])->middleware('auth')->name('bedatabgstatusbangunanupdatenew');
 
