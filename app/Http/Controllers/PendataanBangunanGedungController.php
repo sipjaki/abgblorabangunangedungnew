@@ -2413,13 +2413,10 @@ public function bedatabgstrukrrusakupdate($id)
     ]);
 }
 
-
-public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $datastruktur)
+public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakanId, $datastrukturId)
 {
     // Validasi request
     $validated = $request->validate([
-        // 'databgkepemilikan_id' => 'required|string',
-
         // BAGIAN 1
         'struktur_bangunan_bawah' => 'nullable|string|max:100',
         'struktur_bangunan_atas' => 'nullable|string|max:100',
@@ -2464,9 +2461,9 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $
 
         // BAGIAN 9
         'finishing' => 'nullable|string|max:100',
-        'total_nilai_kerusakan' => 'nullable|string|max:100',
+        'total_nilai_kerusakan' => 'nullable|numeric',
 
-        // FOTO FOTO TABEL KEDUA
+        // FOTO FOTO
         'struktur_bawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
         'struktur_atas' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
         'genteng' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
@@ -2478,8 +2475,17 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $
     ]);
 
     // Cari data lama
-    $dataKerusakan = databgtingkatkerusahan::findOrFail($datakerusakan);
-    $dataStruktur  = databgstrukturbangunan::findOrFail($datastruktur);
+// Cari data lama
+$dataKerusakan = databgtingkatkerusahan::find($datakerusakanId);
+$dataStruktur  = databgstrukturbangunan::find($datastrukturId);
+
+if (!$dataKerusakan) {
+    dd('Data kerusakan tidak ditemukan dengan ID: ' . $datakerusakanId);
+}
+
+if (!$dataStruktur) {
+    dd('Data struktur tidak ditemukan dengan ID: ' . $datastrukturId);
+}
 
     // Handle upload foto
     $uploadFields = ['struktur_bawah', 'struktur_atas', 'genteng', 'pintu', 'jendela', 'rangka_atap', 'balok', 'kolom'];
@@ -2488,38 +2494,67 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $
         if ($request->hasFile($field)) {
             $file = $request->file($field);
             $filename = $field . '_' . time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('fotofaktualbg'), $filename);
-            $validated[$field] = 'fotofaktualbg/' . $filename;
+
+            // Simpan file ke storage
+            $path = $file->storeAs('fotofaktualbg', $filename, 'public');
+
+            // Simpan path relatif
+            $validated[$field] = 'storage/' . $path;
         } else {
             // kalau tidak upload baru, pakai data lama
-            $validated[$field] = $dataStruktur->$field;
+            $validated[$field] = $dataKerusakan->$field;
         }
     }
 
-    // Update tabel pertama (tingkat kerusakan)
-    $dataKerusakan->update($validated);
-
-    // Update tabel kedua (struktur bangunan)
-    $dataStruktur->update([
-        // 'databgkepemilikan_id' => $validated['databgkepemilikan_id'],
+    // Update tabel pertama (tingkat kerusakan) - untuk field foto
+    $dataKerusakan->update([
         'struktur_bawah' => $validated['struktur_bawah'],
-        'struktur_atas'   => $validated['struktur_atas'],
-        'pintu'          => $validated['pintu'],
-        'jendela'        => $validated['jendela'],
-        'genteng'        => $validated['genteng'],
-        'rangka_atap'    => $validated['rangka_atap'],
-        'balok'          => $validated['balok'],
-        'kolom'          => $validated['kolom'],
+        'struktur_atas' => $validated['struktur_atas'],
+        'genteng' => $validated['genteng'],
+        'rangka_atap' => $validated['rangka_atap'],
+        'pintu' => $validated['pintu'],
+        'jendela' => $validated['jendela'],
+        'balok' => $validated['balok'],
+        'kolom' => $validated['kolom'],
     ]);
 
-    // session()->flash('update', 'Data struktur bangunan beserta foto berhasil diupdate ke kedua tabel!');
-    // return redirect()->route('bedatabgstrukrrusak', $validated['databgkepemilikan_id']);
+    // Update tabel kedua (struktur bangunan) - untuk field data struktur
+    $dataStruktur->update([
+        'struktur_bangunan_bawah' => $validated['struktur_bangunan_bawah'],
+        'struktur_bangunan_atas' => $validated['struktur_bangunan_atas'],
+        'struktur_atap' => $validated['struktur_atap'],
+        'pondasi' => $validated['pondasi'],
+        'struktur' => $validated['struktur'],
+        'atap' => $validated['atap'],
+        'lantai' => $validated['lantai'],
+        'dinding' => $validated['dinding'],
+        'plafond' => $validated['plafond'],
+        'utilitas' => $validated['utilitas'],
+        'finishing' => $validated['finishing'],
+        'indikasi_kerusakan1' => $validated['indikasi_kerusakan1'],
+        'tingkat_kerusakan1' => $validated['tingkat_kerusakan1'],
+        'indikasi_kerusakan2' => $validated['indikasi_kerusakan2'],
+        'tingkat_kerusakan2' => $validated['tingkat_kerusakan2'],
+        'indikasi_kerusakan3' => $validated['indikasi_kerusakan3'],
+        'tingkat_kerusakan3' => $validated['tingkat_kerusakan3'],
+        'indikasi_kerusakan4' => $validated['indikasi_kerusakan4'],
+        'tingkat_kerusakan4' => $validated['tingkat_kerusakan4'],
+        'indikasi_kerusakan5' => $validated['indikasi_kerusakan5'],
+        'tingkat_kerusakan5' => $validated['tingkat_kerusakan5'],
+        'indikasi_kerusakan6' => $validated['indikasi_kerusakan6'],
+        'tingkat_kerusakan6' => $validated['tingkat_kerusakan6'],
+        'indikasi_kerusakan7' => $validated['indikasi_kerusakan7'],
+        'tingkat_kerusakan7' => $validated['tingkat_kerusakan7'],
+        'indikasi_kerusakan8' => $validated['indikasi_kerusakan8'],
+        'tingkat_kerusakan8' => $validated['tingkat_kerusakan8'],
+        'total_nilai_kerusakan' => $validated['total_nilai_kerusakan'],
+    ]);
 
-session()->flash('update', 'Data struktur bangunan beserta foto berhasil diupdate ke kedua tabel !');
-return redirect()->route('bedatabgstrukrrusak', ['id' => $dataKerusakan->databgkepemilikan_id]);
-//
-
+    session()->flash('update', 'Data struktur bangunan beserta foto berhasil diupdate ke kedua tabel!');
+    return redirect()->route('bedatabgstrukrrusak', ['id' => $dataKerusakan->databgkepemilikan_id]);
 }
+
+
 
 public function perkecamatanbangunan(Request $request, $kecamatan_id)
 {
