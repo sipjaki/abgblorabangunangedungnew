@@ -2397,9 +2397,9 @@ public function bedatabgstrukrrusakupdate($id)
     $datakerusakan = databgstrukturbangunan::where('databgkepemilikan_id', $id)->first();
 
     // Child 2 = data tingkat kerusakan
-    $datakerusakan = databgtingkatkerusahan::where('databgkepemilikan_id', $id)->first();
+    $datastruktur = databgtingkatkerusahan::where('databgkepemilikan_id', $id)->first();
 
-    if (!$datakerusakan || !$datakerusakan) {
+    if (!$datastruktur || !$datastruktur) {
         return abort(404, 'Data struktur atau tingkat kerusakan tidak ditemukan');
     }
 
@@ -2407,7 +2407,7 @@ public function bedatabgstrukrrusakupdate($id)
     return view('backend.02_pendataanbangunangedung.05_tingkatkerusakan.03_updatetingkatkerusakan', [
         'title'        => 'Perbaikan Data Struktur & Tingkat Kerusakan Bangunan Gedung',
         'data'         => $databgkepemilikan, // parent
-        // 'datastruktur' => $datastruktur,      // child struktur
+        'datastruktur' => $datastruktur,      // child struktur
         'datakerusakan'=> $datakerusakan,     // child kerusakan
         'user'         => Auth::user(),
     ]);
