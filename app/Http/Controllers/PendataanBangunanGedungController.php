@@ -2414,7 +2414,7 @@ public function bedatabgstrukrrusakupdate($id)
 }
 
 
-public function bedatabgstrukrrusakupdatenew(Request $request, $idKerusakan, $idStruktur)
+public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $datastruktur)
 {
     // Validasi request
     $validated = $request->validate([
@@ -2478,8 +2478,8 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $idKerusakan, $id
     ]);
 
     // Cari data lama
-    $dataKerusakan = databgtingkatkerusahan::findOrFail($idKerusakan);
-    $dataStruktur  = databgstrukturbangunan::findOrFail($idStruktur);
+    $dataKerusakan = databgtingkatkerusahan::findOrFail($datakerusakan);
+    $dataStruktur  = databgstrukturbangunan::findOrFail($datastruktur);
 
     // Handle upload foto
     $uploadFields = ['struktur_bawah', 'struktur_atas', 'genteng', 'pintu', 'jendela', 'rangka_atap', 'balok', 'kolom'];
@@ -2512,8 +2512,12 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $idKerusakan, $id
         'kolom'          => $validated['kolom'],
     ]);
 
-  session()->flash('update', 'Data struktur bangunan beserta foto berhasil diupdate ke kedua tabel!');
-return redirect()->back();
+    // session()->flash('update', 'Data struktur bangunan beserta foto berhasil diupdate ke kedua tabel!');
+    // return redirect()->route('bedatabgstrukrrusak', $validated['databgkepemilikan_id']);
+
+session()->flash('update', 'Data struktur bangunan beserta foto berhasil diupdate ke kedua tabel !');
+return redirect()->route('bedatabgstrukrrusak', ['id' => $dataKerusakan->databgkepemilikan_id]);
+//
 
 }
 
