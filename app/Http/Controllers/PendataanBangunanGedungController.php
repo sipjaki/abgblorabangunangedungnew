@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+// use App\Models\Databgtingkatkerusahan;
+// use App\Models\Databgstrukturbangunan;
 use App\Models\bgkartuinventarisbangunan;
 use App\Models\databangunangedung;
 use App\Models\databgdokumenmepbangunan;
@@ -2413,7 +2415,7 @@ public function bedatabgstrukrrusakupdate($id)
     ]);
 }
 
-public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakanId, $datastrukturId)
+public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $datastruktur)
 {
     // Validasi request
     $validated = $request->validate([
@@ -2476,16 +2478,17 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakanId,
 
     // Cari data lama
 // Cari data lama
-$dataKerusakan = databgtingkatkerusahan::find($datakerusakanId);
-$dataStruktur  = databgstrukturbangunan::find($datastrukturId);
+ $dataKerusakan = Databgtingkatkerusahan::find($datakerusakan);
+    $dataStruktur = Databgstrukturbangunan::find($datastruktur);
 
-if (!$dataKerusakan) {
-    dd('Data kerusakan tidak ditemukan dengan ID: ' . $datakerusakanId);
-}
+    if (!$dataKerusakan) {
+        return redirect()->back()->with('error', 'Data kerusakan tidak ditemukan!');
+    }
 
-if (!$dataStruktur) {
-    dd('Data struktur tidak ditemukan dengan ID: ' . $datastrukturId);
-}
+    if (!$dataStruktur) {
+        return redirect()->back()->with('error', 'Data struktur tidak ditemukan!');
+    }
+
 
     // Handle upload foto
     $uploadFields = ['struktur_bawah', 'struktur_atas', 'genteng', 'pintu', 'jendela', 'rangka_atap', 'balok', 'kolom'];
