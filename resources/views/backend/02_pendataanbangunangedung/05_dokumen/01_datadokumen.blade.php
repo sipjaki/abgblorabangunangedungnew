@@ -251,21 +251,22 @@ th {
 
 @php
     $infoItems = [
-        [
+       [
     'icon' => 'bi-cash-coin',
     'title' => 'Nilai BG Didirikan',
-    'value' => $pemilik->nilaibgdidirikan
-        ? 'Rp. ' . number_format($pemilik->nilaibgdidirikan, 0, ',', '.')
+    'value' => is_numeric($pemilik->nilaibgdidirikan)
+        ? 'Rp. ' . number_format((float) $pemilik->nilaibgdidirikan, 0, ',', '.')
         : '-',
 ],
 
 [
     'icon' => 'bi-currency-dollar',
     'title' => 'Nilai BG Saat Ini',
-    'value' => $pemilik->nilaibgsaatini
-        ? 'Rp. ' . number_format($pemilik->nilaibgsaatini, 0, ',', '.')
+    'value' => is_numeric($pemilik->nilaibgsaatini)
+        ? 'Rp. ' . number_format((float) $pemilik->nilaibgsaatini, 0, ',', '.')
         : '-',
 ],
+
         [
     'icon' => 'bi-diagram-3',
     'title' => 'Koefisien Dasar Bangunan',
