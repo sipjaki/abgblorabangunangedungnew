@@ -685,12 +685,12 @@ th {
 
 
             {{-- Tombol Perbaikan Data --}}
-            <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->databgkepemilikan_id }}">
+            {{-- <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->databgkepemilikan_id }}">
                 <p class="button-berkas">
                     <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
                     Perbaikan Data
                 </p>
-            </a>
+            </a> --}}
 
                         {{-- Tombol Hapus --}}
                         <a href="javascript:void(0)" title="Delete"
