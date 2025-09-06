@@ -246,13 +246,18 @@ th {
 
 </div>
 
-<style>
+    <style>
         :root {
             --primary-color: #0d6efd;
             --secondary-color: #6c757d;
             --accent-color: #8bb9fe;
             --light-bg: #f8faff;
             --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: #f5f7fb;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .card {
@@ -271,25 +276,36 @@ th {
             font-weight: 600;
         }
 
-        .section-divider {
-            position: relative;
-            text-align: center;
-            margin: 2rem 0;
-            color: var(--primary-color);
-        }
-
-        .section-divider hr {
-            border-top: 2px dashed #0d6efd;
-        }
-
         .bagian-title {
             background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             color: white;
-            padding: 10px 15px;
+            padding: 12px 20px;
             border-radius: 8px;
-            margin: 25px 0 15px 0;
+            margin: 30px 0 20px 0;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+        }
+
+        .bagian-content {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .info-container {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 20px;
+        }
+
+        .photo-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .info-item {
@@ -299,19 +315,25 @@ th {
             margin-bottom: 15px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            height: 100%;
             display: flex;
-            flex-direction: column;
+            align-items: center;
         }
 
         .info-item:hover {
             box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+            transform: translateX(5px);
         }
 
         .info-icon {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-right: 15px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .info-content {
+            flex: 1;
         }
 
         .info-label {
@@ -327,26 +349,29 @@ th {
             word-break: break-word;
         }
 
-        .photo-container {
+        .photo-box {
             position: relative;
             border-radius: 8px;
             overflow: hidden;
             background: #f8f9fa;
-            min-height: 150px;
+            width: 100%;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #dee2e6;
         }
 
-        .photo-container:hover {
+        .photo-box:hover {
             transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .photo-container img {
-            max-height: 140px;
+        .photo-box img {
+            max-height: 190px;
             object-fit: contain;
             width: 100%;
         }
@@ -370,14 +395,15 @@ th {
             transition: opacity 0.3s ease;
         }
 
-        .photo-container:hover .photo-enlarge {
+        .photo-box:hover .photo-enlarge {
             opacity: 1;
         }
 
         .click-hint {
             font-size: 0.8rem;
             color: var(--primary-color);
-            margin-top: 5px;
+            text-align: center;
+            width: 100%;
         }
 
         .button-baru {
@@ -444,14 +470,35 @@ th {
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @media (max-width: 992px) {
+            .bagian-content {
+                flex-direction: column;
+            }
+
+            .info-container {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .photo-container {
+                max-width: 100%;
+            }
+        }
+
         @media (max-width: 768px) {
             .info-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .info-icon {
+                margin-right: 0;
                 margin-bottom: 10px;
             }
         }
     </style>
 
-    <div class="container py-4">
+<div class="container py-4">
         <div class="row g-4">
             @forelse ($subdatapemilik as $pemilik)
             @php
@@ -468,10 +515,14 @@ th {
                         'title' => 'Bagian 1 - Pondasi',
                         'items' => [
                             ['label' => 'Pondasi', 'field' => $pemilik->pondasi ?? '-', 'icon' => 'bi-box'],
-                            ['label' => 'Indikasi Kerusakan 1', 'field' => $pemilik->indikasi_kerusakan2 ?? '-', 'icon' => 'bi-exclamation-triangle'],
+                            ['label' => 'Indikasi Kerusakan 1', 'field' => $pemilk->indikasi_kerusakan2 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                             ['label' => 'Tingkat Kerusakan 1', 'field' => $pemilik->tingkat_kerusakan2 ?? '-', 'icon' => 'bi-activity'],
-                            ['label' => 'Foto Faktual Pondasi', 'field' => $datastruktur->struktur_bawah ?? null, 'icon' => 'bi-image'],
                         ],
+                        'foto' => [
+                            'label' => 'Foto Faktual Pondasi',
+                            'field' => $datastruktur->struktur_bawah ?? null,
+                            'icon' => 'bi-image'
+                        ]
                     ],
                     [
                         'title' => 'Bagian 2 - Struktur',
@@ -479,8 +530,12 @@ th {
                             ['label' => 'Struktur', 'field' => $pemilik->struktur ?? '-', 'icon' => 'bi-diagram-3'],
                             ['label' => 'Indikasi Kerusakan 2', 'field' => $pemilik->indikasi_kerusakan3 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                             ['label' => 'Tingkat Kerusakan 2', 'field' => $pemilik->tingkat_kerusakan3 ?? '-', 'icon' => 'bi-activity'],
-                            ['label' => 'Foto Faktual Struktur', 'field' => $datastruktur->struktur_atas ?? null, 'icon' => 'bi-image'],
                         ],
+                        'foto' => [
+                            'label' => 'Foto Faktual Struktur',
+                            'field' => $datastruktur->struktur_atas ?? null,
+                            'icon' => 'bi-image'
+                        ]
                     ],
                     [
                         'title' => 'Bagian 3 - Atap',
@@ -488,8 +543,12 @@ th {
                             ['label' => 'Atap', 'field' => $pemilik->atap ?? '-', 'icon' => 'bi-cloud'],
                             ['label' => 'Indikasi Kerusakan 3', 'field' => $pemilik->indikasi_kerusakan4 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                             ['label' => 'Tingkat Kerusakan 4', 'field' => $pemilik->tingkat_kerusakan4 ?? '-', 'icon' => 'bi-activity'],
-                            ['label' => 'Foto Faktual Atap', 'field' => $datastruktur->genteng ?? null, 'icon' => 'bi-image'],
                         ],
+                        'foto' => [
+                            'label' => 'Foto Faktual Atap',
+                            'field' => $datastruktur->genteng ?? null,
+                            'icon' => 'bi-image'
+                        ]
                     ],
                     [
                         'title' => 'Bagian 4 - Lantai',
@@ -497,8 +556,12 @@ th {
                             ['label' => 'Lantai', 'field' => $pemilik->lantai ?? '-', 'icon' => 'bi-grid-1x2'],
                             ['label' => 'Indikasi Kerusakan 4', 'field' => $pemilik->indikasi_kerusakan5 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                             ['label' => 'Tingkat Kerusakan 4', 'field' => $pemilik->tingkat_kerusakan5 ?? '-', 'icon' => 'bi-activity'],
-                            ['label' => 'Foto Faktual Lantai', 'field' => $datastruktur->rangka_atap ?? null, 'icon' => 'bi-image'],
                         ],
+                        'foto' => [
+                            'label' => 'Foto Faktual Lantai',
+                            'field' => $datastruktur->rangka_atap ?? null,
+                            'icon' => 'bi-image'
+                        ]
                     ],
                     [
                         'title' => 'Bagian 5 - Dinding',
@@ -506,8 +569,12 @@ th {
                             ['label' => 'Dinding', 'field' => $pemilik->dinding ?? '-', 'icon' => 'bi-bricks'],
                             ['label' => 'Indikasi Kerusakan 5', 'field' => $pemilik->indikasi_kerusakan6 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                             ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan6 ?? '-', 'icon' => 'bi-activity'],
-                            ['label' => 'Foto Faktual Dinding', 'field' => $datastruktur->pintu ?? null, 'icon' => 'bi-image'],
                         ],
+                        'foto' => [
+                            'label' => 'Foto Faktual Dinding',
+                            'field' => $datastruktur->pintu ?? null,
+                            'icon' => 'bi-image'
+                        ]
                     ],
                     [
                         'title' => 'Bagian 6 - Plafon',
@@ -515,8 +582,12 @@ th {
                             ['label' => 'Plafon', 'field' => $pemilik->plafond ?? '-', 'icon' => 'bi-menu-button-wide'],
                             ['label' => 'Indikasi Kerusakan 6', 'field' => $pemilik->indikasi_kerusakan7 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                             ['label' => 'Tingkat Kerusakan 6', 'field' => $pemilik->tingkat_kerusakan7 ?? '-', 'icon' => 'bi-activity'],
-                            ['label' => 'Foto Faktual Plafon', 'field' => $datastruktur->jendela ?? null, 'icon' => 'bi-image'],
                         ],
+                        'foto' => [
+                            'label' => 'Foto Faktual Plafon',
+                            'field' => $datastruktur->jendela ?? null,
+                            'icon' => 'bi-image'
+                        ]
                     ],
                     [
                         'title' => 'Bagian 7 - Utilitas',
@@ -524,8 +595,12 @@ th {
                             ['label' => 'Utilitas', 'field' => $pemilik->utilitas ?? '-', 'icon' => 'bi-lightning'],
                             ['label' => 'Indikasi Kerusakan 7', 'field' => $pemilik->indikasi_kerusakan8 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                             ['label' => 'Tingkat Kerusakan 7', 'field' => $pemilik->tingkat_kerusakan8 ?? '-', 'icon' => 'bi-activity'],
-                            ['label' => 'Foto Faktual Utilitas', 'field' => $datastruktur->balok ?? null, 'icon' => 'bi-image'],
                         ],
+                        'foto' => [
+                            'label' => 'Foto Faktual Utilitas',
+                            'field' => $datastruktur->balok ?? null,
+                            'icon' => 'bi-image'
+                        ]
                     ],
                     [
                         'title' => 'Bagian 8 - Finishing',
@@ -533,8 +608,12 @@ th {
                             ['label' => 'Finishing', 'field' => $pemilik->finishing ?? '-', 'icon' => 'bi-palette'],
                             ['label' => 'Indikasi Kerusakan 8', 'field' => $pemilik->indikasi_kerusakan1 ?? '-', 'icon' => 'bi-exclamation-triangle'],
                             ['label' => 'Tingkat Kerusakan 8', 'field' => $pemilik->tingkat_kerusakan1 ?? '-', 'icon' => 'bi-activity'],
-                            ['label' => 'Foto Faktual Finishing', 'field' => $datastruktur->kolom ?? null, 'icon' => 'bi-image'],
                         ],
+                        'foto' => [
+                            'label' => 'Foto Faktual Finishing',
+                            'field' => $datastruktur->kolom ?? null,
+                            'icon' => 'bi-image'
+                        ]
                     ],
                     [
                         'title' => 'Total Nilai Kerusakan',
@@ -556,58 +635,54 @@ th {
 
                     <div class="card-body bg-light">
                         @foreach ($bagianList as $bagian)
-                            <div class="section-divider">
-                                <hr class="my-4">
-                            </div>
-
                             <div class="bagian-title">
                                 <i class="bi bi-upload me-2"></i>{{ $bagian['title'] }}
                             </div>
 
-                            <div class="row">
-                                @foreach ($bagian['items'] as $item)
-                                    <div class="col-md-3 mb-3">
+                            <div class="bagian-content">
+                                <div class="info-container">
+                                    @foreach ($bagian['items'] as $item)
                                         <div class="info-item">
                                             <div class="info-icon">
                                                 <i class="bi {{ $item['icon'] }}"></i>
                                             </div>
-                                            <div class="info-label">{{ $item['label'] }}</div>
-
-                                            @if(Str::contains($item['label'], 'Foto Faktual'))
-                                                @if($item['field'] && Storage::disk('public')->exists($item['field']))
-                                                    <div class="photo-container" data-bs-toggle="modal" data-bs-target="#fotoModal" onclick="showFoto('{{ asset('storage/' . $item['field']) }}')">
-                                                        <img src="{{ asset('storage/' . $item['field']) }}" alt="Foto Faktual" loading="lazy">
-                                                        <span class="photo-enlarge">
-                                                            <i class="bi bi-arrows-fullscreen me-1"></i>Perbesar
-                                                        </span>
-                                                    </div>
-                                                    <div class="click-hint">
-                                                        <i class="bi bi-arrows-fullscreen me-1"></i>Klik foto untuk memperbesar
-                                                    </div>
-                                                @elseif($item['field'])
-                                                    <div class="photo-container" data-bs-toggle="modal" data-bs-target="#fotoModal" onclick="showFoto('{{ asset($item['field']) }}')">
-                                                        <img src="{{ asset($item['field']) }}" alt="Foto Faktual" loading="lazy">
-                                                        <span class="photo-enlarge">
-                                                            <i class="bi bi-arrows-fullscreen me-1"></i>Perbesar
-                                                        </span>
-                                                    </div>
-                                                    <div class="click-hint">
-                                                        <i class="bi bi-arrows-fullscreen me-1"></i>Klik foto untuk memperbesar
-                                                    </div>
-                                                @else
-                                                    <div class="photo-container">
-                                                        <div class="photo-placeholder">
-                                                            <i class="bi bi-image fs-1"></i>
-                                                            <p class="mt-2 mb-0 small">Tidak Ada Foto Faktual!</p>
-                                                        </div>
-                                                    </div>
-                                                @endif
-                                            @else
+                                            <div class="info-content">
+                                                <div class="info-label">{{ $item['label'] }}</div>
                                                 <div class="info-value">{{ $item['field'] }}</div>
-                                            @endif
+                                            </div>
                                         </div>
+                                    @endforeach
+                                </div>
+
+                                @if(isset($bagian['foto']))
+                                <div class="photo-container">
+                                    <div class="photo-box" data-bs-toggle="modal" data-bs-target="#fotoModal"
+                                         onclick="showFoto('{{ $bagian['foto']['field'] && Storage::disk('public')->exists($bagian['foto']['field']) ? asset('storage/' . $bagian['foto']['field']) : ($bagian['foto']['field'] ? asset($bagian['foto']['field']) : '') }}')">
+                                        @if($bagian['foto']['field'] && Storage::disk('public')->exists($bagian['foto']['field']))
+                                            <img src="{{ asset('storage/' . $bagian['foto']['field']) }}" alt="{{ $bagian['foto']['label'] }}" loading="lazy">
+                                            <span class="photo-enlarge">
+                                                <i class="bi bi-arrows-fullscreen me-1"></i>Perbesar
+                                            </span>
+                                        @elseif($bagian['foto']['field'])
+                                            <img src="{{ asset($bagian['foto']['field']) }}" alt="{{ $bagian['foto']['label'] }}" loading="lazy">
+                                            <span class="photo-enlarge">
+                                                <i class="bi bi-arrows-fullscreen me-1"></i>Perbesar
+                                            </span>
+                                        @else
+                                            <div class="photo-placeholder">
+                                                <i class="bi bi-image fs-1"></i>
+                                                <p class="mt-2 mb-0 small">Tidak Ada Foto Faktual!</p>
+                                            </div>
+                                        @endif
                                     </div>
-                                @endforeach
+                                    <div class="click-hint">
+                                        <i class="bi bi-arrows-fullscreen me-1"></i>Klik foto untuk memperbesar
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <div class="info-label">{{ $bagian['foto']['label'] }}</div>
+                                    </div>
+                                </div>
+                                @endif
                             </div>
                         @endforeach
 
