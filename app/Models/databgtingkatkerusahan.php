@@ -11,7 +11,7 @@ class databgtingkatkerusahan extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
-    // protected $guarded = ['id'];
+    protected $guarded = ['id'];
 
     public function databgkepemilikan()
     {
