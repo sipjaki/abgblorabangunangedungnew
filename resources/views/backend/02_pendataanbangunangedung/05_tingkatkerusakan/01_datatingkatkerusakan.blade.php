@@ -627,11 +627,11 @@ th {
             'label' => 'Status Kerusakan',
             'field' => $pemilik->total_nilai_kerusakan
                 ? (
-                    $pemilik->total_nilai_kerusakan >= 1 && $pemilik->total_nilai_kerusakan <= 30 ? 'Rusak Ringan' :
-                    ($pemilik->total_nilai_kerusakan >= 31 && $pemilik->total_nilai_kerusakan <= 45 ? 'Rusak Sedang' :
-                    ($pemilik->total_nilai_kerusakan >= 46 && $pemilik->total_nilai_kerusakan <= 65 ? 'Rusak Berat' :
-                    ($pemilik->total_nilai_kerusakan >= 66 && $pemilik->total_nilai_kerusakan <= 100 ? 'Rusak Sangat Berat' : '-'))))
-                )
+                    $pemilik->total_nilai_kerusakan <= 30 ? 'Rusak Ringan' :
+                    ($pemilik->total_nilai_kerusakan <= 45 ? 'Rusak Sedang' :
+                    ($pemilik->total_nilai_kerusakan <= 65 ? 'Rusak Berat' :
+                    'Rusak Sangat Berat'))
+                  )
                 : '-',
             'icon'  => 'bi-clipboard-check'
         ],
