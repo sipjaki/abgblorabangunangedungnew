@@ -346,11 +346,15 @@ th {
         {{-- <form id="formPemilik" action="{{ route('bedatabgstrukrrusakcreatenew', $datakerusakan->id, $datastruktur->id) }}" method="POST" enctype="multipart/form-data">
             @csrf --}}
 
-<form action="{{ route('bedatabgstrukrrusakupdatenew', ['datakerusakan' => $datakerusakan->id, 'datastruktur' => $datastruktur->id]) }}"
+   <form id="formPemilik"
+      action="{{ route('bedatabgstrukrrusakupdatenew', ['datakerusakan' => $datakerusakan->id, 'datastruktur' => $datastruktur->id]) }}"
       method="POST"
       enctype="multipart/form-data">
     @csrf
     @method('PUT')
+
+
+
             {{-- <input type="hidden" name="databgkepemilikan_id" value="{{ $databangunan->id }}"> --}}
 
             <div class="row g-3 mt-2">
