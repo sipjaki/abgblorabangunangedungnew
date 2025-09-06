@@ -2517,8 +2517,12 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $
     $dataStruktur->update($validated);
 
 
-return redirect()->route('bedatabgstrukrrusak', $dataKerusakan->databgkepemilikan_id)
-    ->with('update', 'Data struktur bangunan berhasil diperbarui!');
+// return redirect()->route('bedatabgstrukrrusak', $dataKerusakan->databgkepemilikan_id)
+//     ->with('update', 'Data struktur bangunan berhasil diperbarui!');
+
+    return redirect()->route('bedatabgstrukrrusak', [
+    'kepemilikanId' => $dataKerusakan->databgkepemilikan_id
+])->with('update', 'Data struktur bangunan berhasil diperbarui!');
 
     }
 
