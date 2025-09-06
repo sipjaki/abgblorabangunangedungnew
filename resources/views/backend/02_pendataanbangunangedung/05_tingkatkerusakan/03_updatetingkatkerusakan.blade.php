@@ -346,8 +346,7 @@ th {
         {{-- <form id="formPemilik" action="{{ route('bedatabgstrukrrusakcreatenew', $datakerusakan->id, $datastruktur->id) }}" method="POST" enctype="multipart/form-data">
             @csrf --}}
 
-   <form id="formPemilik"
-      action="{{ route('bedatabgstrukrrusakupdatenew', ['datakerusakan' => $datakerusakan->id, 'datastruktur' => $datastruktur->id]) }}"
+<form action="{{ route('bedatabgstrukrrusakupdatenew', ['datakerusakan' => $datakerusakan->id, 'datastruktur' => $datastruktur->id]) }}"
       method="POST"
       enctype="multipart/form-data">
     @csrf

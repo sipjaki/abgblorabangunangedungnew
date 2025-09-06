@@ -212,6 +212,7 @@ Route::get(
     [PendataanBangunanGedungController::class, 'bedatabgstrukrrusak']
 )->middleware('auth')->name('bedatabgstrukrrusak');
 
+
     Route::delete('/bedatabgstrukrrusakdelete/{id}',
    [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakdelete']
 )->name('bedatabgstrukrrusakdelete');
@@ -228,7 +229,12 @@ Route::get('/bedatabgstrukrrusakupdate/{id}', [PendataanBangunanGedungController
 //     [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakupdatenew']
 // )->name('bedatabgstrukrrusakupdatenew');
 
-Route::put('/bedatabgstrukrrusak/{datakerusakan}/struktur/{datastruktur}',
+// Route::put('/bedatabgstrukrrusak/{datakerusakan}/struktur/{datastruktur}',
+//     [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakupdatenew']
+// )->name('bedatabgstrukrrusakupdatenew');
+
+Route::put(
+    '/bedatabgstrukrrusak/{datakerusakan}/struktur/{datastruktur}',
     [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakupdatenew']
 )->name('bedatabgstrukrrusakupdatenew');
 
