@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 // use App\Models\Databgtingkatkerusahan;
 // use App\Models\Databgstrukturbangunan;
@@ -2432,143 +2433,92 @@ public function bedatabgstrukrrusakupdate($id)
 
 public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $datastruktur)
 {
-    // Validasi request
     $validated = $request->validate([
-        // BAGIAN 1
+        // struktur
         'struktur_bangunan_bawah' => 'nullable|string|max:100',
-        'struktur_bangunan_atas' => 'nullable|string|max:100',
-        'struktur_atap' => 'nullable|string|max:100',
+        'struktur_bangunan_atas'  => 'nullable|string|max:100',
+        'struktur_atap'           => 'nullable|string|max:100',
+        'pondasi'                 => 'nullable|string|max:100',
+        'struktur'                => 'nullable|string|max:100',
+        'atap'                    => 'nullable|string|max:100',
+        'lantai'                  => 'nullable|string|max:100',
+        'dinding'                 => 'nullable|string|max:100',
+        'plafond'                 => 'nullable|string|max:100',
+        'utilitas'                => 'nullable|string|max:100',
+        'finishing'               => 'nullable|string|max:100',
 
-        // BAGIAN 2
-        'pondasi' => 'nullable|string|max:100',
-        'indikasi_kerusakan2' => 'nullable|string|max:255',
-        'tingkat_kerusakan2' => 'nullable|string|max:100',
-
-        // BAGIAN 3
-        'struktur' => 'nullable|string|max:100',
-        'indikasi_kerusakan3' => 'nullable|string|max:255',
-        'tingkat_kerusakan3' => 'nullable|string|max:100',
-
-        // BAGIAN 4
-        'atap' => 'nullable|string|max:100',
-        'indikasi_kerusakan4' => 'nullable|string|max:255',
-        'tingkat_kerusakan4' => 'nullable|string|max:100',
-
-        // BAGIAN 5
-        'lantai' => 'nullable|string|max:100',
-        'indikasi_kerusakan5' => 'nullable|string|max:255',
-        'tingkat_kerusakan5' => 'nullable|string|max:100',
-
-        // BAGIAN 6
-        'dinding' => 'nullable|string|max:100',
-        'indikasi_kerusakan6' => 'nullable|string|max:255',
-        'tingkat_kerusakan6' => 'nullable|string|max:100',
-
-        // BAGIAN 7
-        'plafond' => 'nullable|string|max:100',
-        'indikasi_kerusakan7' => 'nullable|string|max:255',
-        'tingkat_kerusakan7' => 'nullable|string|max:100',
-
-        // BAGIAN 8
-        'utilitas' => 'nullable|string|max:100',
-        'indikasi_kerusakan8' => 'nullable|string|max:255',
-        'tingkat_kerusakan8' => 'nullable|string|max:100',
-
-        // BAGIAN 9
-        'finishing' => 'nullable|string|max:100',
+        // kerusakan
         'indikasi_kerusakan1' => 'nullable|string|max:255',
-        'tingkat_kerusakan1' => 'nullable|string|max:100',
+        'tingkat_kerusakan1'  => 'nullable|string|max:100',
+        'indikasi_kerusakan2' => 'nullable|string|max:255',
+        'tingkat_kerusakan2'  => 'nullable|string|max:100',
+        'indikasi_kerusakan3' => 'nullable|string|max:255',
+        'tingkat_kerusakan3'  => 'nullable|string|max:100',
+        'indikasi_kerusakan4' => 'nullable|string|max:255',
+        'tingkat_kerusakan4'  => 'nullable|string|max:100',
+        'indikasi_kerusakan5' => 'nullable|string|max:255',
+        'tingkat_kerusakan5'  => 'nullable|string|max:100',
+        'indikasi_kerusakan6' => 'nullable|string|max:255',
+        'tingkat_kerusakan6'  => 'nullable|string|max:100',
+        'indikasi_kerusakan7' => 'nullable|string|max:255',
+        'tingkat_kerusakan7'  => 'nullable|string|max:100',
+        'indikasi_kerusakan8' => 'nullable|string|max:255',
+        'tingkat_kerusakan8'  => 'nullable|string|max:100',
+
         'total_nilai_kerusakan' => 'nullable|numeric',
 
-        // FOTO FOTO
+        // foto
         'struktur_bawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'struktur_atas' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'genteng' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'rangka_atap' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'pintu' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'jendela' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'balok' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'kolom' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'struktur_atas'  => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'genteng'        => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'rangka_atap'    => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'pintu'          => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'jendela'        => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'balok'          => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
+        'kolom'          => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
     ]);
 
     try {
-        // Cari data lama
         $dataKerusakan = databgtingkatkerusahan::findOrFail($datakerusakan);
-        $dataStruktur = databgstrukturbangunan::findOrFail($datastruktur);
+        $dataStruktur  = databgstrukturbangunan::findOrFail($datastruktur);
 
-        // Handle upload foto
-        $uploadFields = [
-            'struktur_bawah', 'struktur_atas', 'genteng',
-            'rangka_atap', 'pintu', 'jendela', 'balok', 'kolom'
-        ];
+        // handle upload
+        $uploadFields = ['struktur_bawah','struktur_atas','genteng','rangka_atap','pintu','jendela','balok','kolom'];
 
-foreach ($uploadFields as $field) {
-    if ($request->hasFile($field)) {
-        $file = $request->file($field);
-        $filename = $field . '_' . time() . '_' . $file->getClientOriginalName();
+        foreach ($uploadFields as $field) {
+            if ($request->hasFile($field)) {
+                $file = $request->file($field);
+                $filename = $field.'_'.time().'_'.$file->getClientOriginalName();
+                $destination = public_path('fotofaktualbg');
 
-        // Simpan langsung ke folder public/fotofaktualbg
-        $destination = public_path('fotofaktualbg');
-        if (!file_exists($destination)) {
-            mkdir($destination, 0777, true); // bikin folder kalau belum ada
+                if (!file_exists($destination)) {
+                    mkdir($destination, 0777, true);
+                }
+
+                $file->move($destination, $filename);
+
+                // hapus lama
+                if ($dataKerusakan->$field && file_exists(public_path($dataKerusakan->$field))) {
+                    unlink(public_path($dataKerusakan->$field));
+                }
+
+                $dataKerusakan->$field = 'fotofaktualbg/'.$filename;
+            }
         }
 
-        $file->move($destination, $filename);
+        $dataKerusakan->save();
 
-        // Hapus file lama jika ada
-        if ($dataKerusakan->$field && file_exists(public_path($dataKerusakan->$field))) {
-            unlink(public_path($dataKerusakan->$field));
-        }
+        $dataStruktur->update($validated);
 
-        // Simpan path relatif (biar bisa dipanggil via asset() atau langsung URL)
-        $dataKerusakan->$field = 'fotofaktualbg/' . $filename;
-    }
+     return redirect()
+    ->route('bedatabgstrukrrusak', ['id' => $dataKerusakan->databgkepemilikan_id])
+    ->with('update', 'Data struktur bangunan berhasil diperbarui!');
+} catch (\Exception $e) {
+    return redirect()->back()
+        ->with('error', 'Terjadi kesalahan saat update data!')
+        ->withInput();
 }
 
-// Update data kerusakan (foto)
-if (count($uploadFields)) {
-    $dataKerusakan->save();
-}
-        // Update data struktur
-        $dataStruktur->update([
-            'struktur_bangunan_bawah' => $validated['struktur_bangunan_bawah'] ?? null,
-            'struktur_bangunan_atas' => $validated['struktur_bangunan_atas'] ?? null,
-            'struktur_atap' => $validated['struktur_atap'] ?? null,
-            'pondasi' => $validated['pondasi'] ?? null,
-            'struktur' => $validated['struktur'] ?? null,
-            'atap' => $validated['atap'] ?? null,
-            'lantai' => $validated['lantai'] ?? null,
-            'dinding' => $validated['dinding'] ?? null,
-            'plafond' => $validated['plafond'] ?? null,
-            'utilitas' => $validated['utilitas'] ?? null,
-            'finishing' => $validated['finishing'] ?? null,
-            'indikasi_kerusakan1' => $validated['indikasi_kerusakan1'] ?? null,
-            'tingkat_kerusakan1' => $validated['tingkat_kerusakan1'] ?? null,
-            'indikasi_kerusakan2' => $validated['indikasi_kerusakan2'] ?? null,
-            'tingkat_kerusakan2' => $validated['tingkat_kerusakan2'] ?? null,
-            'indikasi_kerusakan3' => $validated['indikasi_kerusakan3'] ?? null,
-            'tingkat_kerusakan3' => $validated['tingkat_kerusakan3'] ?? null,
-            'indikasi_kerusakan4' => $validated['indikasi_kerusakan4'] ?? null,
-            'tingkat_kerusakan4' => $validated['tingkat_kerusakan4'] ?? null,
-            'indikasi_kerusakan5' => $validated['indikasi_kerusakan5'] ?? null,
-            'tingkat_kerusakan5' => $validated['tingkat_kerusakan5'] ?? null,
-            'indikasi_kerusakan6' => $validated['indikasi_kerusakan6'] ?? null,
-            'tingkat_kerusakan6' => $validated['tingkat_kerusakan6'] ?? null,
-            'indikasi_kerusakan7' => $validated['indikasi_kerusakan7'] ?? null,
-            'tingkat_kerusakan7' => $validated['tingkat_kerusakan7'] ?? null,
-            'indikasi_kerusakan8' => $validated['indikasi_kerusakan8'] ?? null,
-            'tingkat_kerusakan8' => $validated['tingkat_kerusakan8'] ?? null,
-            'total_nilai_kerusakan' => $validated['total_nilai_kerusakan'] ?? null,
-        ]);
-
-        return redirect()->route('bedatabgstrukrrusak', ['id' => $dataKerusakan->databgkepemilikan_id])
-            ->with('update', 'Data struktur bangunan berhasil diperbarui!');
-
-    } catch (\Exception $e) {
-        return redirect()->back()
-            ->with('error', 'Terjadi kesalahan: ' . $e->getMessage())
-            ->withInput();
-    }
 }
 
 

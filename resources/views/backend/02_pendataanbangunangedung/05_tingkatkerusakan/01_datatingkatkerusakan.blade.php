@@ -406,41 +406,6 @@ th {
             width: 100%;
         }
 
-        .button-baru {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .button-baru:hover {
-            background: #0b5ed7;
-            transform: translateY(-2px);
-            color: white;
-        }
-
-        .button-merah {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #dc3545;
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 15px;
-        }
-
-        .button-merah:hover {
-            background: #bb2d3b;
-            transform: translateY(-2px);
-            color: white;
-        }
-
         .note-box {
             border-left: 4px solid #dc3545;
             background: linear-gradient(to right, rgba(220, 53, 69, 0.05), transparent);
