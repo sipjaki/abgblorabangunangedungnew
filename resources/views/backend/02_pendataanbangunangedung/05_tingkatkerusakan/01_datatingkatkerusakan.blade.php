@@ -358,7 +358,7 @@ th {
                     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 100%; margin: auto;">
                     <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
                         <i class="bi bi-upload" style="margin-right: 6px;"></i>
-                        {{ $bagian['title_halaman'] }}
+                        {{-- {{ $bagian['title_halaman'] }} --}}
                     </h5>
                     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 100%; margin: auto;">
                 </div>
