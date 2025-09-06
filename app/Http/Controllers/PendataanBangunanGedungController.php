@@ -2212,8 +2212,11 @@ public function bedatabgstrukrrusak($id)
                         ->paginate(15);
 
     // Ambil data struktur bangunan (child 2)
-    $datastruktur = databgstrukturbangunan::where('databgkepemilikan_id', $id)
-                        ->paginate(15);
+    // $datastruktur = databgstrukturbangunan::where('databgkepemilikan_id', $id)
+    //                     ->paginate(15);
+
+    $datastruktur = databgstrukturbangunan::where('databgkepemilikan_id', $id)->first();
+
 
     // Hitung nomor urut mulai untuk paginasi
     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
