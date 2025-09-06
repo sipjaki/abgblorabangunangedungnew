@@ -355,11 +355,15 @@ th {
     <label class="form-label">
         <i class="bi bi-currency-dollar me-1" style="color: blue;"></i> Nilai BG Didirikan
     </label>
-    <input type="text" id="nilaibgdidirikan_display"
-           class="form-control @error('nilaibgdidirikan') is-invalid @enderror"
-           value="{{ old('nilaibgdidirikan', number_format($databangunan->nilaibgdidirikan, 0, ',', '.')) }}">
-    <input type="hidden" name="nilaibgdidirikan" id="nilaibgdidirikan"
-           value="{{ old('nilaibgdidirikan', $databangunan->nilaibgdidirikan) }}">
+    {{-- Input tampilan (format rupiah) --}}
+<input type="text" id="nilaibgdidirikan_display"
+       class="form-control @error('nilaibgdidirikan') is-invalid @enderror"
+       value="{{ old('nilaibgdidirikan', $databangunan->nilaibgdidirikan ? number_format((float) $databangunan->nilaibgdidirikan, 0, ',', '.') : '') }}">
+
+{{-- Input hidden (nilai asli untuk disimpan) --}}
+<input type="hidden" name="nilaibgdidirikan" id="nilaibgdidirikan"
+       value="{{ old('nilaibgdidirikan', $databangunan->nilaibgdidirikan) }}">
+
     @error('nilaibgdidirikan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
