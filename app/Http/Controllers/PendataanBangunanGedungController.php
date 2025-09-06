@@ -2433,6 +2433,7 @@ public function bedatabgstrukrrusakupdate($id)
 
 public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $datastruktur)
 {
+    // Validasi input
     $validated = $request->validate([
         // struktur
         'struktur_bangunan_bawah' => 'nullable|string|max:100',
@@ -2478,47 +2479,46 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $
         'kolom'          => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
     ]);
 
-    try {
-        $dataKerusakan = databgtingkatkerusahan::findOrFail($datakerusakan);
-        $dataStruktur  = databgstrukturbangunan::findOrFail($datastruktur);
+    // Ambil data
+    $dataKerusakan = databgtingkatkerusahan::findOrFail($datakerusakan);
+    $dataStruktur  = databgstrukturbangunan::findOrFail($datastruktur);
 
-        // handle upload
-        $uploadFields = ['struktur_bawah','struktur_atas','genteng','rangka_atap','pintu','jendela','balok','kolom'];
+    // Daftar field file upload
+    $uploadFields = [
+        'struktur_bawah', 'struktur_atas', 'genteng', 'rangka_atap',
+        'pintu', 'jendela', 'balok', 'kolom'
+    ];
 
-        foreach ($uploadFields as $field) {
-            if ($request->hasFile($field)) {
-                $file = $request->file($field);
-                $filename = $field.'_'.time().'_'.$file->getClientOriginalName();
-                $destination = public_path('fotofaktualbg');
+    foreach ($uploadFields as $field) {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
+            $filename = $field . '_' . time() . '.' . $file->getClientOriginalExtension();
+            $destination = public_path('fotofaktualbg');
 
-                if (!file_exists($destination)) {
-                    mkdir($destination, 0777, true);
-                }
-
-                $file->move($destination, $filename);
-
-                // hapus lama
-                if ($dataKerusakan->$field && file_exists(public_path($dataKerusakan->$field))) {
-                    unlink(public_path($dataKerusakan->$field));
-                }
-
-                $dataKerusakan->$field = 'fotofaktualbg/'.$filename;
+            if (!file_exists($destination)) {
+                mkdir($destination, 0777, true);
             }
+
+            // Hapus lama kalau ada
+            if ($dataKerusakan->$field && file_exists(public_path($dataKerusakan->$field))) {
+                unlink(public_path($dataKerusakan->$field));
+            }
+
+            // Simpan baru
+            $file->move($destination, $filename);
+            $dataKerusakan->$field = 'fotofaktualbg/' . $filename;
         }
+    }
 
-        $dataKerusakan->save();
+    // Simpan perubahan
+    $dataKerusakan->fill($validated);
+    $dataKerusakan->save();
 
-        $dataStruktur->update($validated);
+    $dataStruktur->update($validated);
 
-     return redirect()
-    ->route('bedatabgstrukrrusak', ['id' => $dataKerusakan->databgkepemilikan_id])
-    ->with('update', 'Data struktur bangunan berhasil diperbarui!');
-} catch (\Exception $e) {
-    return redirect()->back()
-        ->with('error', 'Terjadi kesalahan saat update data!')
-        ->withInput();
-}
-
+    return redirect()
+        ->route('bedatabgstrukrrusak', ['id' => $dataKerusakan->databgkepemilikan_id])
+        ->with('update', 'Data struktur bangunan berhasil diperbarui!');
 }
 
 
