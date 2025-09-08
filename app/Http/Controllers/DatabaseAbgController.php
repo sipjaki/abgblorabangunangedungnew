@@ -683,13 +683,13 @@ public function beberitacreateupdatenew(Request $request, $id)
         'foto'        => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15048',
         'foto1'       => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15048',
         'foto2'       => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15048',
-        'cadangan1'   => 'nullable|string',
-        'cadangan2'   => 'nullable|string',
-        'cadangan3'   => 'nullable|string',
-        'cadangan4'   => 'nullable|string',
-        'cadangan5'   => 'nullable|string',
-        'cadangan6'   => 'nullable|string',
-        'cadangan7'   => 'nullable|string',
+        // 'cadangan1'   => 'nullable|string',
+        // 'cadangan2'   => 'nullable|string',
+        // 'cadangan3'   => 'nullable|string',
+        // 'cadangan4'   => 'nullable|string',
+        // 'cadangan5'   => 'nullable|string',
+        // 'cadangan6'   => 'nullable|string',
+        // 'cadangan7'   => 'nullable|string',
     ], [
         'user_id.required' => 'User wajib diisi.',
         'judulberita.required' => 'Judul berita wajib diisi.',
@@ -706,13 +706,13 @@ public function beberitacreateupdatenew(Request $request, $id)
     $data->judulberita = $validated['judulberita'];
     $data->tanggal     = $validated['tanggal'];
     $data->keterangan  = $validated['keterangan'];
-    $data->cadangan1   = $validated['cadangan1'] ?? null;
-    $data->cadangan2   = $validated['cadangan2'] ?? null;
-    $data->cadangan3   = $validated['cadangan3'] ?? null;
-    $data->cadangan4   = $validated['cadangan4'] ?? null;
-    $data->cadangan5   = $validated['cadangan5'] ?? null;
-    $data->cadangan6   = $validated['cadangan6'] ?? null;
-    $data->cadangan7   = $validated['cadangan7'] ?? null;
+    // $data->cadangan1   = $validated['cadangan1'] ?? null;
+    // $data->cadangan2   = $validated['cadangan2'] ?? null;
+    // $data->cadangan3   = $validated['cadangan3'] ?? null;
+    // $data->cadangan4   = $validated['cadangan4'] ?? null;
+    // $data->cadangan5   = $validated['cadangan5'] ?? null;
+    // $data->cadangan6   = $validated['cadangan6'] ?? null;
+    // $data->cadangan7   = $validated['cadangan7'] ?? null;
 
     // Folder target di public
     $basePath = public_path('99_beritaabg');
