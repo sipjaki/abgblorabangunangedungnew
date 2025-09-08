@@ -271,138 +271,83 @@ th {
 <td>{{ $loop->iteration }}</td>
 <td>{{ $item->cadangan1 ?? '-' }}</td>
 <td>{{ $item->cadangan2 ?? '-' }}</td>
-<div class="mb-3">
-    <label class="form-label" for="cadangan3">
-        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Berkas
-    </label>
-    <input type="file" id="cadangan3" name="cadangan3"
-        class="form-control @error('cadangan3') is-invalid @enderror" accept="application/pdf">
-    @error('cadangan3')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
+<td>
+    @if($item->cadangan3)
+        @php
+            $fileCad3 = file_exists(public_path('storage/' . $item->cadangan3))
+                ? asset('storage/' . $item->cadangan3)
+                : asset($item->cadangan3);
+        @endphp
 
-{{-- Tempat Preview --}}
-<div id="preview-cadangan3" class="mt-3"></div>
-
-<script>
-document.getElementById('cadangan3').addEventListener('change', function(event) {
-    let file = event.target.files[0];
-    let previewContainer = document.getElementById('preview-cadangan3');
-    previewContainer.innerHTML = ""; // reset preview
-
-    if (file) {
-        let fileURL = URL.createObjectURL(file);
-
-        // bikin iframe preview PDF
-        let iframe = document.createElement('iframe');
-        iframe.src = fileURL;
-        iframe.style.width = "100%";
-        iframe.style.height = "400px";
-        iframe.style.border = "1px solid #ccc";
-        iframe.style.borderRadius = "6px";
-
-        // bikin tombol download
-        let downloadBtn = document.createElement('a');
-        downloadBtn.href = fileURL;
-        downloadBtn.download = file.name;
-        downloadBtn.className = "btn btn-sm btn-primary mt-2";
-        downloadBtn.innerHTML = '<i class="bi bi-download me-1"></i> Download';
-
-        previewContainer.appendChild(iframe);
-        previewContainer.appendChild(downloadBtn);
-    }
-});
-</script>
+        <div class="button-berkas p-2">
+            <iframe src="{{ $fileCad3 }}" style="width:100%; height:200px; border:1px solid #ccc;" loading="lazy"></iframe>
+            <a href="{{ $fileCad3 }}" download class="btn btn-sm btn-primary mt-2">
+                <i class="bi bi-download me-1"></i> Download
+            </a>
+        </div>
+    @else
+        <span class="text-muted">-</span>
+    @endif
+</td>
 
 <!-- FOTO -->
-<!-- Cadangan 4 -->
+{{-- FOTO CADANGAN 4 --}}
 <td>
     @if($item->cadangan4)
-        <div class="button-berkas p-2">
-            @php
-                $pathCad4 = file_exists(public_path('storage/' . $item->cadangan4))
-                    ? asset('storage/' . $item->cadangan4)
-                    : asset($item->cadangan4);
+        @php
+            $fileCad4 = file_exists(public_path('storage/' . $item->cadangan4))
+                ? asset('storage/' . $item->cadangan4)
+                : asset($item->cadangan4);
+        @endphp
 
-                $extCad4 = pathinfo($pathCad4, PATHINFO_EXTENSION);
-            @endphp
-
-            @if(in_array(strtolower($extCad4), ['jpg','jpeg','png']))
-                <img src="{{ $pathCad4 }}" alt="Cadangan 4"
-                    style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-            @elseif(strtolower($extCad4) === 'pdf')
-                <iframe src="{{ $pathCad4 }}" style="width:100%; height:200px; border:1px solid #ccc;" loading="lazy"></iframe>
-                <a href="{{ $pathCad4 }}" download class="btn btn-sm btn-primary mt-2">
-                    <i class="bi bi-download me-1"></i> Download
-                </a>
-            @else
-                <a href="{{ $pathCad4 }}" target="_blank" class="btn btn-sm btn-secondary">
-                    📄 Lihat File
-                </a>
-            @endif
+        <div class="button-berkas p-2 text-center">
+            <img src="{{ $fileCad4 }}" alt="Cadangan 4"
+                 style="width: 100%; max-height: 150px; object-fit: contain;" loading="lazy">
+            <a href="{{ $fileCad4 }}" download class="btn btn-sm btn-primary mt-2">
+                <i class="bi bi-download me-1"></i> Download
+            </a>
         </div>
     @else
         <span class="text-muted">-</span>
     @endif
 </td>
 
-<!-- Cadangan 5 -->
+{{-- FOTO CADANGAN 5 --}}
 <td>
     @if($item->cadangan5)
-        <div class="button-berkas p-2">
-            @php
-                $pathCad5 = file_exists(public_path('storage/' . $item->cadangan5))
-                    ? asset('storage/' . $item->cadangan5)
-                    : asset($item->cadangan5);
+        @php
+            $fileCad5 = file_exists(public_path('storage/' . $item->cadangan5))
+                ? asset('storage/' . $item->cadangan5)
+                : asset($item->cadangan5);
+        @endphp
 
-                $extCad5 = pathinfo($pathCad5, PATHINFO_EXTENSION);
-            @endphp
-
-            @if(in_array(strtolower($extCad5), ['jpg','jpeg','png']))
-                <img src="{{ $pathCad5 }}" alt="Cadangan 5"
-                    style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-            @elseif(strtolower($extCad5) === 'pdf')
-                <iframe src="{{ $pathCad5 }}" style="width:100%; height:200px; border:1px solid #ccc;" loading="lazy"></iframe>
-                <a href="{{ $pathCad5 }}" download class="btn btn-sm btn-primary mt-2">
-                    <i class="bi bi-download me-1"></i> Download
-                </a>
-            @else
-                <a href="{{ $pathCad5 }}" target="_blank" class="btn btn-sm btn-secondary">
-                    📄 Lihat File
-                </a>
-            @endif
+        <div class="button-berkas p-2 text-center">
+            <img src="{{ $fileCad5 }}" alt="Cadangan 5"
+                 style="width: 100%; max-height: 150px; object-fit: contain;" loading="lazy">
+            <a href="{{ $fileCad5 }}" download class="btn btn-sm btn-primary mt-2">
+                <i class="bi bi-download me-1"></i> Download
+            </a>
         </div>
     @else
         <span class="text-muted">-</span>
     @endif
 </td>
 
-<!-- Cadangan 6 -->
+{{-- FOTO CADANGAN 6 --}}
 <td>
     @if($item->cadangan6)
-        <div class="button-berkas p-2">
-            @php
-                $pathCad6 = file_exists(public_path('storage/' . $item->cadangan6))
-                    ? asset('storage/' . $item->cadangan6)
-                    : asset($item->cadangan6);
+        @php
+            $fileCad6 = file_exists(public_path('storage/' . $item->cadangan6))
+                ? asset('storage/' . $item->cadangan6)
+                : asset($item->cadangan6);
+        @endphp
 
-                $extCad6 = pathinfo($pathCad6, PATHINFO_EXTENSION);
-            @endphp
-
-            @if(in_array(strtolower($extCad6), ['jpg','jpeg','png']))
-                <img src="{{ $pathCad6 }}" alt="Cadangan 6"
-                    style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-            @elseif(strtolower($extCad6) === 'pdf')
-                <iframe src="{{ $pathCad6 }}" style="width:100%; height:200px; border:1px solid #ccc;" loading="lazy"></iframe>
-                <a href="{{ $pathCad6 }}" download class="btn btn-sm btn-primary mt-2">
-                    <i class="bi bi-download me-1"></i> Download
-                </a>
-            @else
-                <a href="{{ $pathCad6 }}" target="_blank" class="btn btn-sm btn-secondary">
-                    📄 Lihat File
-                </a>
-            @endif
+        <div class="button-berkas p-2 text-center">
+            <img src="{{ $fileCad6 }}" alt="Cadangan 6"
+                 style="width: 100%; max-height: 150px; object-fit: contain;" loading="lazy">
+            <a href="{{ $fileCad6 }}" download class="btn btn-sm btn-primary mt-2">
+                <i class="bi bi-download me-1"></i> Download
+            </a>
         </div>
     @else
         <span class="text-muted">-</span>
