@@ -212,7 +212,7 @@ th {
         <i class="bi bi-card-heading text-primary me-1"></i> Judul
       </label>
       <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->judul ?? '-' }}</textarea>
-      <small class="text-muted">Maksimal 255 karakter</small>
+      <small class="text-muted"></small>
     </div>
 
     <div class="col-md-6 mb-3">
@@ -220,7 +220,7 @@ th {
         <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
       </label>
       <textarea class="form-control bg-light" rows="3" maxlength="255" readonly>{{ $item->keterangan ?? '-' }}</textarea>
-      <small class="text-muted">Maksimal 255 karakter</small>
+      <small class="text-muted"></small>
     </div>
   </div>
 
@@ -231,7 +231,7 @@ th {
         <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
       </label>
       <textarea class="form-control bg-light" rows="3" maxlength="255" readonly>{{ $item->infolanjut ?? '-' }}</textarea>
-      <small class="text-muted">Maksimal 255 karakter</small>
+      <small class="text-muted"></small>
     </div>
 
     <div class="col-md-6 mb-3">
@@ -239,7 +239,7 @@ th {
         <i class="bi bi-file-text text-secondary me-1"></i> Paragraf 1
       </label>
       <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan1 ?? '-' }}</textarea>
-      <small class="text-muted">Maksimal 255 karakter</small>
+      <small class="text-muted"></small>
     </div>
   </div>
 
@@ -248,13 +248,13 @@ th {
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 2</label>
       <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan2 ?? '-' }}</textarea>
-      <small class="text-muted">Maksimal 255 karakter</small>
+      <small class="text-muted"></small>
     </div>
 
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 3</label>
       <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan3 ?? '-' }}</textarea>
-      <small class="text-muted">Maksimal 255 karakter</small>
+      <small class="text-muted"></small>
     </div>
   </div>
 
@@ -263,13 +263,13 @@ th {
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 4</label>
       <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan4 ?? '-' }}</textarea>
-      <small class="text-muted">Maksimal 255 karakter</small>
+      <small class="text-muted"></small>
     </div>
 
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 5</label>
       <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan5 ?? '-' }}</textarea>
-      <small class="text-muted">Maksimal 255 karakter</small>
+      <small class="text-muted"></small>
     </div>
   </div>
 
@@ -278,13 +278,13 @@ th {
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 6</label>
       <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan6 ?? '-' }}</textarea>
-      <small class="text-muted">Maksimal 255 karakter</small>
+      <small class="text-muted"></small>
     </div>
 
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 7</label>
       <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan7 ?? '-' }}</textarea>
-      <small class="text-muted">Maksimal 255 karakter</small>
+      <small class="text-muted"></small>
     </div>
   </div>
 </div>
