@@ -204,11 +204,10 @@ th {
         @endif
       </div>
 
-
-      <div class="card-body">
-  {{-- Row 1: Judul, Keterangan, Info Lanjut --}}
+<div class="card-body">
+  {{-- Row 1: Judul & Keterangan --}}
   <div class="row">
-    <div class="col-md-4 mb-3">
+    <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">
         <i class="bi bi-card-heading text-primary me-1"></i> Judul
       </label>
@@ -216,38 +215,80 @@ th {
       <small class="text-muted">Maksimal 255 karakter</small>
     </div>
 
-    <div class="col-md-4 mb-3">
+    <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">
         <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
       </label>
       <textarea class="form-control bg-light" rows="3" maxlength="255" readonly>{{ $item->keterangan ?? '-' }}</textarea>
       <small class="text-muted">Maksimal 255 karakter</small>
     </div>
+  </div>
 
-    <div class="col-md-4 mb-3">
+  {{-- Row 2: Info Lanjut & Paragraf 1 --}}
+  <div class="row">
+    <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">
         <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
       </label>
       <textarea class="form-control bg-light" rows="3" maxlength="255" readonly>{{ $item->infolanjut ?? '-' }}</textarea>
       <small class="text-muted">Maksimal 255 karakter</small>
     </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">
+        <i class="bi bi-file-text text-secondary me-1"></i> Paragraf 1
+      </label>
+      <textarea class="form-control bg-light" rows="2" maxlength="255" readonly>{{ $item->cadangan1 ?? '-' }}</textarea>
+      <small class="text-muted">Maksimal 255 karakter</small>
+    </div>
   </div>
 
-  {{-- Row 2: Cadangan Fields --}}
+  {{-- Row 3: Paragraf 2 & Paragraf 3 --}}
   <div class="row">
-    @for ($i = 1; $i <= 7; $i++)
-      <div class="col-md-4 mb-3">
-        <label class="form-label fw-bold">
-          <i class="bi bi-file-text text-secondary me-1"></i> Paragraf {{ $i }}
-        </label>
-        <textarea class="form-control bg-light" rows="2" maxlength="255" readonly>
-{{ $item->{'cadangan'.$i} ?? '-' }}
-</textarea>
-        <small class="text-muted">Maksimal 255 karakter</small>
-      </div>
-    @endfor
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 2</label>
+      <textarea class="form-control bg-light" rows="2" maxlength="255" readonly>{{ $item->cadangan2 ?? '-' }}</textarea>
+      <small class="text-muted">Maksimal 255 karakter</small>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 3</label>
+      <textarea class="form-control bg-light" rows="2" maxlength="255" readonly>{{ $item->cadangan3 ?? '-' }}</textarea>
+      <small class="text-muted">Maksimal 255 karakter</small>
+    </div>
+  </div>
+
+  {{-- Row 4: Paragraf 4 & Paragraf 5 --}}
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 4</label>
+      <textarea class="form-control bg-light" rows="2" maxlength="255" readonly>{{ $item->cadangan4 ?? '-' }}</textarea>
+      <small class="text-muted">Maksimal 255 karakter</small>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 5</label>
+      <textarea class="form-control bg-light" rows="2" maxlength="255" readonly>{{ $item->cadangan5 ?? '-' }}</textarea>
+      <small class="text-muted">Maksimal 255 karakter</small>
+    </div>
+  </div>
+
+  {{-- Row 5: Paragraf 6 & Paragraf 7 --}}
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 6</label>
+      <textarea class="form-control bg-light" rows="2" maxlength="255" readonly>{{ $item->cadangan6 ?? '-' }}</textarea>
+      <small class="text-muted">Maksimal 255 karakter</small>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 7</label>
+      <textarea class="form-control bg-light" rows="2" maxlength="255" readonly>{{ $item->cadangan7 ?? '-' }}</textarea>
+      <small class="text-muted">Maksimal 255 karakter</small>
+    </div>
   </div>
 </div>
+
 
   </div>
 @endforeach
