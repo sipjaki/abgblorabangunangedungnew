@@ -247,7 +247,7 @@ th {
 <td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
 
 @foreach(range(1,6) as $i)
-    <td style="text-align:center; vertical-align:middle;">
+    <td style="text-align:center; vertical-align:middle; width:120px;">
         @php
             $foto = $item->{'foto'.$i} ?? null;
         @endphp
@@ -264,22 +264,22 @@ th {
             {{-- Preview gambar atau PDF --}}
             @if(in_array($ext, ['jpg','jpeg','png','gif']))
                 <img src="{{ $filePath }}" alt="Foto Dokumentasi {{ $i }}"
-                     style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+                     style="display:block; max-width:100px; max-height:120px; object-fit:contain; margin:auto;" loading="lazy">
             @elseif($ext === 'pdf')
-                <iframe src="{{ $filePath }}" style="width:100%; height:200px; border:1px solid #ccc;" loading="lazy"></iframe>
+                <iframe src="{{ $filePath }}" style="display:block; width:100px; height:120px; border:1px solid #ccc; margin:auto;" loading="lazy"></iframe>
             @endif
 
-            {{-- Tombol Download di bawah preview --}}
-            <div class="button-baru mt-2">
-                <a href="{{ $filePath }}" download class="btn btn-sm btn-primary">
+            {{-- Tombol Download --}}
+            <div class="button-baru mt-1">
+                <a href="{{ $filePath }}" download class="btn btn-sm btn-primary" style="font-size:10px; padding:2px 5px;">
                     <i class="bi bi-download me-1"></i> Download
                 </a>
             </div>
 
         @else
             {{-- Teks Foto Asistensi --}}
-            <div class="button-baru mt-2">
-                <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+            <div class="button-baru mt-1">
+                <p style="font-size: 11px; margin:0;">Foto Asistensi</p>
             </div>
         @endif
     </td>
