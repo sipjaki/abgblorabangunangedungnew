@@ -191,7 +191,7 @@ th {
       <input
         type="search"
         id="searchInput"
-        placeholder="Cari Berita ABG Blora ...."
+        placeholder="Cari Artikel Bangunan Gedung Kab Blora ...."
         onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 280px;"
       />
@@ -252,13 +252,12 @@ th {
              <thead>
                                   <tr>
      <th style="background-color: #ADD8E6;">No</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Dibuat Oleh</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-heading"></i> Judul Berita</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Tanggal</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-align-left"></i> Keterangan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-image"></i> Foto</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-image"></i> Foto 1</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Judul </th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-heading"></i> Keterangan</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Berkas</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-align-left"></i> Foto 1</th>
 <th style="background-color: #ADD8E6;"><i class="fas fa-image"></i> Foto 2</th>
+<th style="background-color: #ADD8E6;"><i class="fas fa-image"></i> Foto 3</th>
 
 <th style="background-color: #ADD8E6;"><i class="fas fa-cogs"></i> Aksi</th>
 
@@ -270,17 +269,16 @@ th {
                                 <tr class="align-middle">
                                  {{-- <td>{{ $loop->iteration }}</td> --}}
 <td>{{ $loop->iteration }}</td>
-<td>{{ $item->user->name ?? '-' }}</td>
-<td>{{ $item->judulberita ?? '-' }}</td>
-<td>{{ \Carbon\Carbon::parse($item->tanggal)->format('d-m-Y') ?? '-' }}</td>
-<td>{{ Str::limit($item->keterangan, 25) ?? '-' }} .... </td>
+<td>{{ $item->cadangan1 ?? '-' }}</td>
+<td>{{ $item->cadangan2 ?? '-' }}</td>
+<td>{{ $item->cadangan3 ?? '-' }}</td>
 
 <!-- FOTO -->
 <td>
-    @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
-        <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-    @elseif($item->foto)
-        <img src="{{ asset($item->foto) }}" alt="Foto" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+    @if($item->cadangan4 && file_exists(public_path('storage/' . $item->cadangan4)))
+        <img src="{{ asset('storage/' . $item->cadangan4) }}" alt="Cadangan 4" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+    @elseif($item->cadangan4)
+        <img src="{{ asset($item->cadangan4) }}" alt="Cadangan 4" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
     @else
         <span class="text-muted">-</span>
     @endif
@@ -288,10 +286,10 @@ th {
 
 <!-- FOTO1 -->
 <td>
-    @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
-        <img src="{{ asset('storage/' . $item->foto1) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-    @elseif($item->foto1)
-        <img src="{{ asset($item->foto1) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+    @if($item->cadangan5 && file_exists(public_path('storage/' . $item->cadangan5)))
+        <img src="{{ asset('storage/' . $item->cadangan5) }}" alt="Cadangan 5" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+    @elseif($item->cadangan5)
+        <img src="{{ asset($item->cadangan5) }}" alt="Cadangan 5" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
     @else
         <span class="text-muted">-</span>
     @endif
@@ -299,10 +297,10 @@ th {
 
 <!-- FOTO2 -->
 <td>
-    @if($item->foto2 && file_exists(public_path('storage/' . $item->foto2)))
-        <img src="{{ asset('storage/' . $item->foto2) }}" alt="Foto 2" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-    @elseif($item->foto2)
-        <img src="{{ asset($item->foto2) }}" alt="Foto 2" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+    @if($item->cadangan6 && file_exists(public_path('storage/' . $item->cadangan6)))
+        <img src="{{ asset('storage/' . $item->cadangan6) }}" alt="Cadangan 6" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+    @elseif($item->cadangan6)
+        <img src="{{ asset($item->cadangan6) }}" alt="Cadangan 6" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
     @else
         <span class="text-muted">-</span>
     @endif
@@ -349,7 +347,7 @@ th {
                 animation: fadeIn 0.5s ease-in-out;
             ">
                 <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-                Data Tidak Ditemukan !!
+                Data Artikel Tidak Ditemukan !!
             </div>
         </td>
     </tr>
