@@ -245,95 +245,41 @@ th {
         <td>{{ $loop->iteration }}</td>
         <td>{{ $item->kegiatan }}</td>
 <td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
-        <td>
-    <div style="margin-top: 10px;">
-        @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
-            <img src="{{ asset('storage/' . $item->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto1)
-            <img src="{{ asset($item->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-    <div class="button-berkas p-2 text-center">
-        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
-    </div>
-@endif
 
-    </div>
-</td>
+@foreach(range(1,6) as $i)
+    <td>
+        <div class="button-baru p-2 text-center" style="margin-top: 10px;">
+            @php
+                $foto = $item->{'foto'.$i} ?? null;
+            @endphp
 
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto2 && file_exists(public_path('storage/' . $item->foto2)))
-            <img src="{{ asset('storage/' . $item->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto2)
-            <img src="{{ asset($item->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-       @else
-    <div class="button-berkas p-2 text-center">
-        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
-    </div>
-@endif
+            @if($foto)
+                @php
+                    $filePath = file_exists(public_path('storage/' . $foto))
+                        ? asset('storage/' . $foto)
+                        : asset($foto);
 
-    </div>
-</td>
+                    $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
+                @endphp
 
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto3 && file_exists(public_path('storage/' . $item->foto3)))
-            <img src="{{ asset('storage/' . $item->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto3)
-            <img src="{{ asset($item->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-     @else
-    <div class="button-berkas p-2 text-center">
-        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
-    </div>
-@endif
+                @if(in_array($ext, ['jpg','jpeg','png','gif']))
+                    <img src="{{ $filePath }}" alt="Foto Dokumentasi {{ $i }}"
+                         style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+                @elseif($ext === 'pdf')
+                    <iframe src="{{ $filePath }}" style="width:100%; height:200px; border:1px solid #ccc;" loading="lazy"></iframe>
+                @endif
 
-    </div>
-</td>
+                {{-- Tombol Download --}}
+                <a href="{{ $filePath }}" download class="button-baru">
+                    <i class="bi bi-download me-1"></i> Download
+                </a>
 
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto4 && file_exists(public_path('storage/' . $item->foto4)))
-            <img src="{{ asset('storage/' . $item->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto4)
-            <img src="{{ asset($item->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-     @else
-    <div class="button-berkas p-2 text-center">
-        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
-    </div>
-@endif
-
-    </div>
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto5 && file_exists(public_path('storage/' . $item->foto5)))
-            <img src="{{ asset('storage/' . $item->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto5)
-            <img src="{{ asset($item->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-    <div class="button-berkas p-2 text-center">
-        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
-    </div>
-@endif
-
-    </div>
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto6 && file_exists(public_path('storage/' . $item->foto6)))
-            <img src="{{ asset('storage/' . $item->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto6)
-            <img src="{{ asset($item->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-       @else
-    <div class="button-berkas p-2 text-center">
-        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
-    </div>
-@endif
-
-    </div>
-</td>
+            @else
+                <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+            @endif
+        </div>
+    </td>
+@endforeach
 
 @canany(['superadmin', 'admin'])
 
