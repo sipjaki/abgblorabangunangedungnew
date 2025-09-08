@@ -198,98 +198,93 @@ th {
           @csrf
       <!-- begin::Body -->
 <div class="row">
-    <div class="col-md-6">
-        {{-- Judul Berita --}}
-        <div class="mb-3">
-            <label class="form-label" for="judulberita">
-                <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul Berita
-            </label>
-            <input type="text" id="judulberita" name="judulberita"
-                value="{{ old('judulberita', $data->judulberita ?? '') }}"
-                class="form-control @error('judulberita') is-invalid @enderror"
-                placeholder="Masukkan judul berita">
-            @error('judulberita')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
 
-        {{-- Tanggal --}}
-        <div class="mb-3">
-            <label class="form-label" for="tanggal">
-                <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal
-            </label>
-            <input type="date" id="tanggal" name="tanggal"
-                value="{{ old('tanggal', $data->tanggal ?? date('Y-m-d')) }}"
-                class="form-control @error('tanggal') is-invalid @enderror">
-            @error('tanggal')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
+        <i class="bi bi-upload" style="margin-right: 6px;"></i>
+        Informasi Artikel Bangunan Gedung
+    </h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+</div>
 
-        {{-- Foto Utama --}}
-        <div class="mb-3">
-            <label class="form-label" for="foto">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Utama
-            </label>
-            <input type="file" id="foto" name="foto"
-                class="form-control @error('foto') is-invalid @enderror">
-            @error('foto')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+<div class="col-md-6">
+    {{-- Cadangan 1 --}}
+    <div class="mb-3">
+        <label class="form-label" for="cadangan1">
+            <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul
+        </label>
+        <input type="text" id="cadangan1" name="cadangan1"
+            value="{{ old('cadangan1', $data->cadangan1 ?? '') }}"
+            class="form-control @error('cadangan1') is-invalid @enderror"
+            placeholder="Masukkan judul">
+        @error('cadangan1')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
 
-    <div class="col-md-6">
-        {{-- Keterangan --}}
-        <div class="mb-3">
-            <label class="form-label" for="keterangan">
-                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Keterangan
-            </label>
-            <textarea id="keterangan" name="keterangan" rows="6"
-                class="form-control @error('keterangan') is-invalid @enderror"
-                placeholder="Tulis keterangan lengkap">{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
-            @error('keterangan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+    {{-- Cadangan 2 --}}
+    <div class="mb-3">
+        <label class="form-label" for="cadangan2">
+            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Keterangan
+        </label>
+        <textarea id="cadangan2" name="cadangan2"
+            class="form-control @error('cadangan2') is-invalid @enderror"
+            placeholder="Masukkan keterangan">{{ old('cadangan2', $data->cadangan2 ?? '') }}</textarea>
+        @error('cadangan2')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-        {{-- Foto Tambahan 1 --}}
-        <div class="mb-3">
-            <label class="form-label" for="foto1">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 1
-            </label>
-            <input type="file" id="foto1" name="foto1"
-                class="form-control @error('foto1') is-invalid @enderror">
-            @error('foto1')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+    {{-- Cadangan 3 --}}
+    <div class="mb-3">
+        <label class="form-label" for="cadangan3">
+            <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Berkas
+        </label>
+        <input type="file" id="cadangan3" name="cadangan3"
+            class="form-control @error('cadangan3') is-invalid @enderror">
+        @error('cadangan3')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-        {{-- Foto Tambahan 2 --}}
-        <div class="mb-3">
-            <label class="form-label" for="foto2">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 2
-            </label>
-            <input type="file" id="foto2" name="foto2"
-                class="form-control @error('foto2') is-invalid @enderror">
-            @error('foto2')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+    {{-- Cadangan 4 --}}
+    <div class="mb-3">
+        <label class="form-label" for="cadangan4">
+            <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
+        </label>
+        <input type="file" id="cadangan4" name="cadangan4"
+            class="form-control @error('cadangan4') is-invalid @enderror">
+        @error('cadangan4')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    {{-- Cadangan 5 --}}
+    <div class="mb-3">
+        <label class="form-label" for="cadangan5">
+            <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
+        </label>
+        <input type="file" id="cadangan5" name="cadangan5"
+            class="form-control @error('cadangan5') is-invalid @enderror">
+        @error('cadangan5')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    {{-- Cadangan 6 --}}
+    <div class="mb-3">
+        <label class="form-label" for="cadangan6">
+            <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 3
+        </label>
+        <input type="file" id="cadangan6" name="cadangan6"
+            class="form-control @error('cadangan6') is-invalid @enderror">
+        @error('cadangan6')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
 </div>
 
-{{-- Penulis Berita (User Login) --}}
-<div class="mb-3">
-    <label class="form-label" for="user_id_display">
-        <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Penulis Berita
-    </label>
-    <input type="text" id="user_id_display"
-           class="form-control"
-           value="{{ auth()->user()->name }}"
-           readonly>
-    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-</div>
             <!-- End row -->
                             <!-- end::Body -->
 
