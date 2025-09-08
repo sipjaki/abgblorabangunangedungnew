@@ -2501,7 +2501,7 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $id)
     // ============================
     // Update data struktur (jika ada)
     // ============================
-    $dataStruktur = datastrukturbangunangedung::where('databgkepemilikan_id', $kepemilikanId)->first();
+    $dataStruktur = databgtingkatkerusahan::where('databgkepemilikan_id', $kepemilikanId)->first();
     if ($dataStruktur) {
         $dataStruktur->update([
             'struktur_bangunan_bawah' => $validated['struktur_bangunan_bawah'] ?? null,
