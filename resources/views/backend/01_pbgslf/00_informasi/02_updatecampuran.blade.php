@@ -216,7 +216,7 @@ th {
                 placeholder="Masukkan Judul"
                 maxlength="255"
             />
-            <small class="text-muted">Maksimal 255 karakter</small>
+            <small class="text-muted"></small>
             @error('judul')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -237,7 +237,7 @@ th {
                 maxlength="255"
                 placeholder="Masukkan Keterangan"
             >{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
-            <small class="text-muted">Maksimal 255 karakter</small>
+            <small class="text-muted"></small>
             @error('keterangan')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -258,7 +258,7 @@ th {
                 maxlength="255"
                 placeholder="Masukkan Info Tambahan"
             >{{ old('infolanjut', $data->infolanjut ?? '') }}</textarea>
-            <small class="text-muted">Maksimal 255 karakter</small>
+            <small class="text-muted"></small>
             @error('infolanjut')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -282,7 +282,7 @@ th {
                     maxlength="255"
                     placeholder="Masukkan Paragraf {{ $i }}"
                 >{{ old('cadangan'.$i, $data->{'cadangan'.$i} ?? '') }}</textarea>
-                <small class="text-muted">Maksimal 255 karakter</small>
+                <small class="text-muted"></small>
                 @error('cadangan'.$i)
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
