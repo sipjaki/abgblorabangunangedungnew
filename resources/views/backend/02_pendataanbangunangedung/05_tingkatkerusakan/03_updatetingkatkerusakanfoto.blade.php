@@ -347,7 +347,9 @@ th {
             @csrf --}}
 
    <form id="formPemilik"
-      action="{{ route('bedatabgstrukrrusakupdatenew', ['datakerusakan' => $datakerusakan->id, 'datastruktur' => $datastruktur->id]) }}"
+      {{-- action="{{ route('bedatabgstrukrrusakupdatenew', ['datakerusakan' => $datakerusakan->id, 'datastruktur' => $datastruktur->id]) }}" --}}
+            action="{{ route('bedatabgstrukrrusakupdatenewfoto', $datakerusakan->id)}}"
+
       method="POST"
       enctype="multipart/form-data">
     @csrf
@@ -359,27 +361,6 @@ th {
 
             <div class="row g-3 mt-2">
                 <!-- ===================== BAGIAN 1 ===================== -->
-                <div class="col-12">
-                    <h6 class="mt-3 fw-bold text-primary"><i class="bi bi-building me-1"></i>Struktur Bangunan Bawah & Atas</h6>
-                </div>
-
-              <div class="col-md-4">
-    <label class="form-label"><i class="bi bi-box text-primary me-1"></i> Struktur Bangunan Bawah</label>
-    <input type="text" name="struktur_bangunan_bawah" class="form-control @error('struktur_bangunan_bawah') is-invalid @enderror" value="{{ $datastruktur->struktur_bangunan_bawah ?? old('struktur_bangunan_bawah') }}">
-    @error('struktur_bangunan_bawah')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-<div class="col-md-4">
-    <label class="form-label"><i class="bi bi-box-seam text-primary me-1"></i> Struktur Bangunan Atas</label>
-    <input type="text" name="struktur_bangunan_atas" class="form-control @error('struktur_bangunan_atas') is-invalid @enderror" value="{{ $datastruktur->struktur_bangunan_atas ?? old('struktur_bangunan_atas') }}">
-    @error('struktur_bangunan_atas')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
-
-<div class="col-md-4">
-    <label class="form-label"><i class="bi bi-house-gear text-primary me-1"></i> Struktur Atap</label>
-    <input type="text" name="struktur_atap" class="form-control @error('struktur_atap') is-invalid @enderror" value="{{ $datastruktur->struktur_atap ?? old('struktur_atap') }}">
-    @error('struktur_atap')<div class="invalid-feedback">{{ $message }}</div>@enderror
-</div>
 
                 <!-- ===================== BAGIAN 2 ===================== -->
                 <div class="text-center">
@@ -393,35 +374,7 @@ th {
 
                 <div class="row">
 
-                  <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Pondasi</label>
-        <input type="text" name="pondasi" class="form-control @error('pondasi') is-invalid @enderror" value="{{ $datastruktur->pondasi ?? old('pondasi') }}">
-        @error('pondasi')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-        <select name="indikasi_kerusakan2" class="form-select">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan2 ?? old('indikasi_kerusakan2')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan2 ?? old('indikasi_kerusakan2')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-        <select name="tingkat_kerusakan2" class="form-select">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            <option value="Ringan" {{ ($datastruktur->tingkat_kerusakan2 ?? old('tingkat_kerusakan2')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
-            <option value="Sedang" {{ ($datastruktur->tingkat_kerusakan2 ?? old('tingkat_kerusakan2')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
-            <option value="Berat" {{ ($datastruktur->tingkat_kerusakan2 ?? old('tingkat_kerusakan2')) == 'Berat' ? 'selected' : '' }}>Berat</option>
-            <option value="Tidak Ada Kerusakan" {{ ($datastruktur->tingkat_kerusakan2 ?? old('tingkat_kerusakan2')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
-        </select>
-    </div>
-</div>
-
-<div class="col-md-6">
+<div class="col-md-12">
     <div class="mb-3">
         <label class="form-label">
             <i class="bi bi-bricks text-primary me-1"></i> Foto Faktual Pondasi | Max 15 MB
@@ -497,34 +450,9 @@ function previewStrukturBawah(event) {
                 </div>
 
                 <div class="row">
-                   <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-building text-primary me-1"></i> Struktur</label>
-        <input type="text" name="struktur" class="form-control" value="{{ $datastruktur->struktur ?? old('struktur') }}">
-    </div>
 
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-        <select name="indikasi_kerusakan3" class="form-select">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan3 ?? old('indikasi_kerusakan3')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan3 ?? old('indikasi_kerusakan3')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-    </div>
 
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-        <select name="tingkat_kerusakan3" class="form-select">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            <option value="Ringan" {{ ($datastruktur->tingkat_kerusakan3 ?? old('tingkat_kerusakan3')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
-            <option value="Sedang" {{ ($datastruktur->tingkat_kerusakan3 ?? old('tingkat_kerusakan3')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
-            <option value="Berat" {{ ($datastruktur->tingkat_kerusakan3 ?? old('tingkat_kerusakan3')) == 'Berat' ? 'selected' : '' }}>Berat</option>
-            <option value="Tidak Ada Kerusakan" {{ ($datastruktur->tingkat_kerusakan3 ?? old('tingkat_kerusakan3')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
-        </select>
-    </div>
-</div>
-
-                 <div class="col-md-6">
+                 <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label">
             <i class="bi bi-building text-success me-1"></i> Foto Faktual Struktur | Max 15 MB
@@ -601,34 +529,8 @@ function previewStrukturAtas(event) {
                 </div>
 
                 <div class="row">
-          <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-house text-primary me-1"></i> Atap</label>
-        <input type="text" name="atap" class="form-control" value="{{ $datastruktur->atap ?? old('atap') }}">
-    </div>
 
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-        <select name="indikasi_kerusakan4" class="form-select">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan4 ?? old('indikasi_kerusakan4')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan4 ?? old('indikasi_kerusakan4')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-        <select name="tingkat_kerusakan4" class="form-select">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            <option value="Ringan" {{ ($datastruktur->tingkat_kerusakan4 ?? old('tingkat_kerusakan4')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
-            <option value="Sedang" {{ ($datastruktur->tingkat_kerusakan4 ?? old('tingkat_kerusakan4')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
-            <option value="Berat" {{ ($datastruktur->tingkat_kerusakan4 ?? old('tingkat_kerusakan4')) == 'Berat' ? 'selected' : '' }}>Berat</option>
-            <option value="Tidak Ada Kerusakan" {{ ($datastruktur->tingkat_kerusakan4 ?? old('tingkat_kerusakan4')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
-        </select>
-    </div>
-</div>
-
-<div class="col-md-6">
+<div class="col-md-12">
     <div class="mb-3">
         <label class="form-label">
             <i class="bi bi-house-door text-warning me-1"></i> Foto Faktual Atap | Max 15 MB
@@ -705,34 +607,7 @@ function previewGenteng(event) {
 
                 <div class="row">
 
-                    <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-square text-primary me-1"></i> Lantai</label>
-        <input type="text" name="lantai" class="form-control" value="{{ $datastruktur->lantai ?? old('lantai') }}">
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-        <select name="indikasi_kerusakan5" class="form-select">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan5 ?? old('indikasi_kerusakan5')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan5 ?? old('indikasi_kerusakan5')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-        <select name="tingkat_kerusakan5" class="form-select">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            <option value="Ringan" {{ ($datastruktur->tingkat_kerusakan5 ?? old('tingkat_kerusakan5')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
-            <option value="Sedang" {{ ($datastruktur->tingkat_kerusakan5 ?? old('tingkat_kerusakan5')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
-            <option value="Berat" {{ ($datastruktur->tingkat_kerusakan5 ?? old('tingkat_kerusakan5')) == 'Berat' ? 'selected' : '' }}>Berat</option>
-            <option value="Tidak Ada Kerusakan" {{ ($datastruktur->tingkat_kerusakan5 ?? old('tingkat_kerusakan5')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
-        </select>
-    </div>
-</div>
-
-                    <div class="col-md-6">
+                    <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label">
             <i class="bi bi-house-gear text-danger me-1"></i> Foto Faktual Lantai | Max 15 MB
@@ -809,36 +684,8 @@ function previewRangkaAtap(event) {
 
                 <div class="row">
 
-                   <div class="col-md-6">
-    <div class="row">
-        <div class="col-md-12 mb-3">
-            <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Dinding</label>
-            <input type="text" name="dinding" class="form-control" value="{{ $datastruktur->dinding ?? old('dinding') }}">
-        </div>
 
-        <div class="col-md-12 mb-3">
-            <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-            <select name="indikasi_kerusakan6" class="form-select">
-                <option value="">-- Pilih Indikasi --</option>
-                <option value="Tidak Ada Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan6 ?? old('indikasi_kerusakan6')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-                <option value="Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan6 ?? old('indikasi_kerusakan6')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-            </select>
-        </div>
-
-        <div class="col-md-12 mb-3">
-            <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-            <select name="tingkat_kerusakan6" class="form-select">
-                <option value="">-- Pilih Tingkat Kerusakan --</option>
-                <option value="Ringan" {{ ($datastruktur->tingkat_kerusakan6 ?? old('tingkat_kerusakan6')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
-                <option value="Sedang" {{ ($datastruktur->tingkat_kerusakan6 ?? old('tingkat_kerusakan6')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
-                <option value="Berat" {{ ($datastruktur->tingkat_kerusakan6 ?? old('tingkat_kerusakan6')) == 'Berat' ? 'selected' : '' }}>Berat</option>
-                <option value="Tidak Ada Kerusakan" {{ ($datastruktur->tingkat_kerusakan6 ?? old('tingkat_kerusakan6')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
-            </select>
-        </div>
-    </div>
-</div>
-
-                    <div class="col-md-6">
+                    <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label">
             <i class="bi bi-image text-secondary me-1"></i> Foto Faktual Dinding | Max 15 MB
@@ -914,34 +761,8 @@ function previewCadangan1(event) {
                 </div>
 
                 <div class="row">
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-window-dock text-primary me-1"></i> Plafond</label>
-        <input type="text" name="plafond" class="form-control" value="{{ $datastruktur->plafond ?? old('plafond') }}">
-    </div>
 
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-        <select name="indikasi_kerusakan7" class="form-select">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan7 ?? old('indikasi_kerusakan7')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan7 ?? old('indikasi_kerusakan7')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-        <select name="tingkat_kerusakan7" class="form-select">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            <option value="Ringan" {{ ($datastruktur->tingkat_kerusakan7 ?? old('tingkat_kerusakan7')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
-            <option value="Sedang" {{ ($datastruktur->tingkat_kerusakan7 ?? old('tingkat_kerusakan7')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
-            <option value="Berat" {{ ($datastruktur->tingkat_kerusakan7 ?? old('tingkat_kerusakan7')) == 'Berat' ? 'selected' : '' }}>Berat</option>
-            <option value="Tidak Ada Kerusakan" {{ ($datastruktur->tingkat_kerusakan7 ?? old('tingkat_kerusakan7')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
-        </select>
-    </div>
-</div>
-
-<div class="col-md-6">
+<div class="col-md-12">
     <div class="mb-3">
         <label class="form-label">
             <i class="bi bi-image text-success me-1"></i> Foto Faktual Plafond | Max 15 MB
@@ -1016,34 +837,8 @@ function previewCadangan2(event) {
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-tools text-primary me-1"></i> Utilitas</label>
-        <input type="text" name="utilitas" class="form-control" value="{{ $datastruktur->utilitas ?? old('utilitas') }}">
-    </div>
 
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-        <select name="indikasi_kerusakan8" class="form-select">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan8 ?? old('indikasi_kerusakan8')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan8 ?? old('indikasi_kerusakan8')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-        <select name="tingkat_kerusakan8" class="form-select">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            <option value="Ringan" {{ ($datastruktur->tingkat_kerusakan8 ?? old('tingkat_kerusakan8')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
-            <option value="Sedang" {{ ($datastruktur->tingkat_kerusakan8 ?? old('tingkat_kerusakan8')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
-            <option value="Berat" {{ ($datastruktur->tingkat_kerusakan8 ?? old('tingkat_kerusakan8')) == 'Berat' ? 'selected' : '' }}>Berat</option>
-            <option value="Tidak Ada Kerusakan" {{ ($datastruktur->tingkat_kerusakan8 ?? old('tingkat_kerusakan8')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
-        </select>
-    </div>
-</div>
-
-<div class="col-md-6">
+<div class="col-md-12">
     <div class="mb-3">
         <label class="form-label">
             <i class="bi bi-diagram-3 text-info me-1"></i> Foto Faktual Utilitas | Max 15 MB
@@ -1119,36 +914,9 @@ function previewBalok(event) {
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-paint-bucket text-primary me-1"></i> Finishing </label>
-        <input type="text" name="finishing" class="form-control" value="{{ $datastruktur->finishing ?? old('finishing') }}">
-    </div>
 
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-exclamation-circle text-warning me-1"></i> Indikasi Kerusakan</label>
-        <select name="indikasi_kerusakan1" class="form-select @error('indikasi_kerusakan1') is-invalid @enderror">
-            <option value="">-- Pilih Indikasi --</option>
-            <option value="Tidak Ada Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan1 ?? old('indikasi_kerusakan1')) == 'Tidak Ada Indikasi Kerusakan' ? 'selected' : '' }}>Tidak Ada Indikasi Kerusakan</option>
-            <option value="Indikasi Kerusakan" {{ ($datastruktur->indikasi_kerusakan1 ?? old('indikasi_kerusakan1')) == 'Indikasi Kerusakan' ? 'selected' : '' }}>Indikasi Kerusakan</option>
-        </select>
-        @error('indikasi_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
 
-    <div class="mb-3">
-        <label class="form-label"><i class="bi bi-bar-chart text-primary me-1"></i> Tingkat Kerusakan</label>
-        <select name="tingkat_kerusakan1" class="form-select @error('tingkat_kerusakan1') is-invalid @enderror">
-            <option value="">-- Pilih Tingkat Kerusakan --</option>
-            <option value="Ringan" {{ ($datastruktur->tingkat_kerusakan1 ?? old('tingkat_kerusakan1')) == 'Ringan' ? 'selected' : '' }}>Ringan</option>
-            <option value="Sedang" {{ ($datastruktur->tingkat_kerusakan1 ?? old('tingkat_kerusakan1')) == 'Sedang' ? 'selected' : '' }}>Sedang</option>
-            <option value="Berat" {{ ($datastruktur->tingkat_kerusakan1 ?? old('tingkat_kerusakan1')) == 'Berat' ? 'selected' : '' }}>Berat</option>
-            <option value="Tidak Ada Kerusakan" {{ ($datastruktur->tingkat_kerusakan1 ?? old('tingkat_kerusakan1')) == 'Tidak Ada Kerusakan' ? 'selected' : '' }}>Tidak Ada Kerusakan</option>
-        </select>
-        @error('tingkat_kerusakan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
-    </div>
-</div>
-
-<div class="col-md-6">
+<div class="col-md-12">
     <div class="mb-3">
         <label class="form-label">
             <i class="bi bi-columns-gap text-warning me-1"></i> Foto Faktual Finishing | Max 15 MB
@@ -1214,24 +982,6 @@ function previewKolom(event) {
                 </div>
 
                 <!-- ===================== TOTAL NILAI KERUSAKAN ===================== -->
-                <div class="text-center">
-                    <hr class="my-4 section-divider">
-                    <h5 class="text-primary fw-bold mt-2 section-title">
-                        <i class="bi bi-file-earmark-text-fill me-2"></i>
-                        Total Nilai Kerusakan Bangunan Gedung
-                    </h5>
-                    <hr class="my-4 section-divider">
-                </div>
-
-                <div class="col-12 mt-4">
-                    <h6 class="fw-bold text-primary"><i class="bi bi-brush me-1"></i> Total Nilai Kerusakan</h6>
-                </div>
-
-                <div class="col-md-4">
-                    <label class="form-label"><i class="bi bi-123 text-primary me-1"></i> Total Nilai Kerusakan</label>
-                    <input type="number" step="0.01" name="total_nilai_kerusakan" class="form-control" value="{{ $datastruktur->total_nilai_kerusakan ?? old('total_nilai_kerusakan') }}">
-                </div>
-
                 <!-- Tombol Submit -->
                 <div class="col-12 text-end mt-3">
                     <button type="button" class="button-berkas" onclick="openModal()">
