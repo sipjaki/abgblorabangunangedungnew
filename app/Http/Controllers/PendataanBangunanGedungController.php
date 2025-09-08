@@ -2542,10 +2542,62 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $id)
     // ============================
     // Redirect ke halaman kepemilikan
     // ============================
-    session()->flash('update', 'Data struktur bangunan & kerusakan berhasil diperbarui!');
+    session()->flash('update', 'Data Tingkat Kerusakan Berhasil Di Perbarui !');
     return redirect()->route('bedatabgstrukrrusak', ['kepemilikanId' => $kepemilikanId]);
 }
 
+public function bedatabgstrukrrusakupdatefotonew(Request $request, $id)
+{
+    // Ambil data dari databgstrukturbangunan
+    $dataStruktur = databgstrukturbangunan::findOrFail($id);
+
+    // Simpan id kepemilikan untuk redirect
+    $kepemilikanId = $dataStruktur->databgkepemilikan_id;
+
+    // Validasi file upload (max 15 MB, hanya gambar)
+    $request->validate([
+        'struktur_bawah' => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'struktur_atas'  => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'genteng'        => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'rangka_atap'    => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'pintu'          => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'jendela'        => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'balok'          => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+        'kolom'          => 'nullable|image|mimes:jpg,jpeg,png|max:15360',
+    ]);
+
+    $fields = ['struktur_bawah', 'struktur_atas', 'genteng', 'rangka_atap', 'pintu', 'jendela', 'balok', 'kolom'];
+
+    foreach ($fields as $field) {
+        if ($request->hasFile($field)) {
+            // Hapus file lama kalau ada
+            if ($dataStruktur->$field && file_exists(base_path($dataStruktur->$field))) {
+                unlink(base_path($dataStruktur->$field));
+            }
+
+            // Tentukan folder penyimpanan di root project/update/doktingkarkerusakan/{id_kepemilikan}
+            $folderPath = base_path('update/doktingkarkerusakan/' . $kepemilikanId);
+
+            // Bikin folder kalau belum ada
+            if (!file_exists($folderPath)) {
+                mkdir($folderPath, 0777, true);
+            }
+
+            // Simpan file
+            $file = $request->file($field);
+            $filename = time() . '_' . $field . '.' . $file->getClientOriginalExtension();
+            $file->move($folderPath, $filename);
+
+            // Simpan path relatif ke DB
+            $dataStruktur->$field = 'update/doktingkarkerusakan/' . $kepemilikanId . '/' . $filename;
+        }
+    }
+
+    $dataStruktur->save();
+
+    session()->flash('update', 'Foto Tingkat Kerusakan berhasil diperbarui!');
+    return redirect()->route('bedatabgstrukrrusak', ['kepemilikanId' => $kepemilikanId]);
+}
 
 public function perkecamatanbangunan(Request $request, $kecamatan_id)
 {
