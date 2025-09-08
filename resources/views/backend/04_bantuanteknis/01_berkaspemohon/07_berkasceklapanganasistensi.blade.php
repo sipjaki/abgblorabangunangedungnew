@@ -155,7 +155,7 @@ th {
                         </button>
                     @endcan
                             @can('pemohonbantek')
-                        <button class="button-kembali"
+                        <button class="button-newvalidasi"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekpemohonasistensi') }}';"
@@ -178,13 +178,13 @@ th {
         @endcanany
 
                         @canany(['superadmin', 'admin'])
-<button class="button-lolos" type="button"
+<button class="button-hijau" type="button"
     onclick="location.href='/bebantuanteknislapangancreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
 </button>
 
-<a href="{{ url('/bebantuanteknisassistensi') }}" class="button-validasinew" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url('/bebantuanteknisassistensi') }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
         @endcanany
