@@ -247,42 +247,41 @@ th {
 <td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
 
 @foreach(range(1,6) as $i)
-    <td>
-        <div style="margin-top: 10px; text-align: center;">
+    <td style="text-align:center; vertical-align:middle;">
+        @php
+            $foto = $item->{'foto'.$i} ?? null;
+        @endphp
+
+        @if($foto)
             @php
-                $foto = $item->{'foto'.$i} ?? null;
+                $filePath = file_exists(public_path('storage/' . $foto))
+                    ? asset('storage/' . $foto)
+                    : asset($foto);
+
+                $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
             @endphp
 
-            @if($foto)
-                @php
-                    $filePath = file_exists(public_path('storage/' . $foto))
-                        ? asset('storage/' . $foto)
-                        : asset($foto);
-
-                    $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
-                @endphp
-
-                {{-- Preview --}}
-                @if(in_array($ext, ['jpg','jpeg','png','gif']))
-                    <img src="{{ $filePath }}" alt="Foto Dokumentasi {{ $i }}"
-                         style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-                @elseif($ext === 'pdf')
-                    <iframe src="{{ $filePath }}" style="width:100%; height:200px; border:1px solid #ccc;" loading="lazy"></iframe>
-                @endif
-
-                {{-- Tombol Download di bawah --}}
-                <div class="button-baru mt-2">
-                    <a href="{{ $filePath }}" download class="btn btn-sm btn-primary">
-                        <i class="bi bi-download me-1"></i> Download
-                    </a>
-                </div>
-
-            @else
-                <div class="button-baru mt-2">
-                    <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
-                </div>
+            {{-- Preview gambar atau PDF --}}
+            @if(in_array($ext, ['jpg','jpeg','png','gif']))
+                <img src="{{ $filePath }}" alt="Foto Dokumentasi {{ $i }}"
+                     style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
+            @elseif($ext === 'pdf')
+                <iframe src="{{ $filePath }}" style="width:100%; height:200px; border:1px solid #ccc;" loading="lazy"></iframe>
             @endif
-        </div>
+
+            {{-- Tombol Download di bawah preview --}}
+            <div class="button-baru mt-2">
+                <a href="{{ $filePath }}" download class="btn btn-sm btn-primary">
+                    <i class="bi bi-download me-1"></i> Download
+                </a>
+            </div>
+
+        @else
+            {{-- Teks Foto Asistensi --}}
+            <div class="button-baru mt-2">
+                <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+            </div>
+        @endif
     </td>
 @endforeach
 
