@@ -230,24 +230,56 @@ th {
 
         {{-- Foto Utama --}}
         <div class="mb-3">
-            <label class="form-label" for="foto">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Utama | Max 15 MB
-            </label>
-            <input type="file" id="foto" name="foto"
-                   class="form-control @error('foto') is-invalid @enderror">
-            @error('foto')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+    <label class="form-label" for="foto">
+        <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Utama | Max 15 MB
+    </label>
+    <input type="file" id="foto" name="foto"
+           class="form-control @error('foto') is-invalid @enderror"
+           accept="image/*" onchange="previewFotoUtama(event)">
+    @error('foto')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 
-            {{-- Preview Foto Lama --}}
-            @if (!empty($data->foto))
-                <div class="mt-2">
-                    <p class="small text-muted">Foto lama:</p>
-                    <img src="{{ asset($data->foto) }}" alt="Foto Utama Lama"
-                         style="max-height: 150px; border-radius: 8px;">
-                </div>
-            @endif
+    {{-- Preview Foto Lama --}}
+    @if (!empty($data->foto))
+        <div class="mt-2">
+            <p class="small text-muted">Foto lama:</p>
+            <img src="{{ asset($data->foto) }}" alt="Foto Utama Lama"
+                 style="max-height: 150px; border-radius: 8px;">
         </div>
+    @endif
+
+    {{-- Preview Foto Baru --}}
+    <div id="preview-foto-baru" class="mt-2" style="display:none;">
+        <p class="small text-muted">Preview foto baru:</p>
+        <img id="preview-foto-img" src="" alt="Preview Foto Baru"
+             style="max-height: 150px; border-radius: 8px;">
+    </div>
+</div>
+
+{{-- Script Preview --}}
+<script>
+    function previewFotoUtama(event) {
+        const input = event.target;
+        const previewContainer = document.getElementById('preview-foto-baru');
+        const previewImage = document.getElementById('preview-foto-img');
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                previewImage.src = e.target.result;
+                previewContainer.style.display = 'block';
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            previewContainer.style.display = 'none';
+            previewImage.src = '';
+        }
+    }
+</script>
+
     </div>
 
     <div class="col-md-6">
@@ -265,46 +297,87 @@ th {
         </div>
 
         {{-- Foto Tambahan 1 --}}
-        <div class="mb-3">
-            <label class="form-label" for="foto1">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 1 | Max 15 MB
-            </label>
-            <input type="file" id="foto1" name="foto1"
-                   class="form-control @error('foto1') is-invalid @enderror">
-            @error('foto1')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+       {{-- Foto Tambahan 1 --}}
+<div class="mb-3">
+    <label class="form-label" for="foto1">
+        <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 1 | Max 15 MB
+    </label>
+    <input type="file" id="foto1" name="foto1"
+           class="form-control @error('foto1') is-invalid @enderror"
+           accept="image/*" onchange="previewFoto(event, 'preview-foto1-baru', 'preview-foto1-img')">
+    @error('foto1')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 
-            {{-- Preview Foto Lama --}}
-            @if (!empty($data->foto1))
-                <div class="mt-2">
-                    <p class="small text-muted">Foto lama:</p>
-                    <img src="{{ asset($data->foto1) }}" alt="Foto Tambahan 1 Lama"
-                         style="max-height: 120px; border-radius: 8px;">
-                </div>
-            @endif
+    {{-- Preview Foto Lama --}}
+    @if (!empty($data->foto1))
+        <div class="mt-2">
+            <p class="small text-muted">Foto lama:</p>
+            <img src="{{ asset($data->foto1) }}" alt="Foto Tambahan 1 Lama"
+                 style="max-height: 120px; border-radius: 8px;">
         </div>
+    @endif
 
-        {{-- Foto Tambahan 2 --}}
-        <div class="mb-3">
-            <label class="form-label" for="foto2">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 2 | Max 15 MB
-            </label>
-            <input type="file" id="foto2" name="foto2"
-                   class="form-control @error('foto2') is-invalid @enderror">
-            @error('foto2')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+    {{-- Preview Foto Baru --}}
+    <div id="preview-foto1-baru" class="mt-2" style="display:none;">
+        <p class="small text-muted">Preview foto baru:</p>
+        <img id="preview-foto1-img" src="" alt="Preview Foto Tambahan 1 Baru"
+             style="max-height: 120px; border-radius: 8px;">
+    </div>
+</div>
 
-            {{-- Preview Foto Lama --}}
-            @if (!empty($data->foto2))
-                <div class="mt-2">
-                    <p class="small text-muted">Foto lama:</p>
-                    <img src="{{ asset($data->foto2) }}" alt="Foto Tambahan 2 Lama"
-                         style="max-height: 120px; border-radius: 8px;">
-                </div>
-            @endif
+{{-- Foto Tambahan 2 --}}
+<div class="mb-3">
+    <label class="form-label" for="foto2">
+        <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 2 | Max 15 MB
+    </label>
+    <input type="file" id="foto2" name="foto2"
+           class="form-control @error('foto2') is-invalid @enderror"
+           accept="image/*" onchange="previewFoto(event, 'preview-foto2-baru', 'preview-foto2-img')">
+    @error('foto2')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+    {{-- Preview Foto Lama --}}
+    @if (!empty($data->foto2))
+        <div class="mt-2">
+            <p class="small text-muted">Foto lama:</p>
+            <img src="{{ asset($data->foto2) }}" alt="Foto Tambahan 2 Lama"
+                 style="max-height: 120px; border-radius: 8px;">
         </div>
+    @endif
+
+    {{-- Preview Foto Baru --}}
+    <div id="preview-foto2-baru" class="mt-2" style="display:none;">
+        <p class="small text-muted">Preview foto baru:</p>
+        <img id="preview-foto2-img" src="" alt="Preview Foto Tambahan 2 Baru"
+             style="max-height: 120px; border-radius: 8px;">
+    </div>
+</div>
+
+{{-- Script Preview Global --}}
+<script>
+    function previewFoto(event, previewId, imgId) {
+        const input = event.target;
+        const previewContainer = document.getElementById(previewId);
+        const previewImage = document.getElementById(imgId);
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                previewImage.src = e.target.result;
+                previewContainer.style.display = 'block';
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            previewContainer.style.display = 'none';
+            previewImage.src = '';
+        }
+    }
+</script>
+
     </div>
 </div>
 
