@@ -224,7 +224,7 @@ Route::get('/bedatabgstrukrrusakcreate/{id}', [PendataanBangunanGedungController
 Route::post('/bedatabgstrukrrusakcreatenew', [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakcreatenew'])->middleware('auth')->name('bedatabgstrukrrusakcreatenew');
 
 Route::get('/bedatabgstrukrrusakupdate/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakupdate'])->middleware('auth')->name('bedatabgstrukrrusakupdate');
-// Route::put('/bedatabgstrukrrusakupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakupdatenew'])->middleware('auth')->name('bedatabgstrukrrusakupdatenew');
+Route::put('/bedatabgstrukrrusakupdatenew/{id}', [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakupdatenew'])->middleware('auth')->name('bedatabgstrukrrusakupdatenew');
 // Route::put('/bedatabgstrukrrusak/{datakerusakan}/{datastruktur}',
 //     [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakupdatenew']
 // )->name('bedatabgstrukrrusakupdatenew');
@@ -233,10 +233,10 @@ Route::get('/bedatabgstrukrrusakupdate/{id}', [PendataanBangunanGedungController
 //     [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakupdatenew']
 // )->name('bedatabgstrukrrusakupdatenew');
 
-Route::put(
-    '/bedatabgstrukrrusak/{datakerusakan}/struktur/{datastruktur}',
-    [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakupdatenew']
-)->name('bedatabgstrukrrusakupdatenew');
+// Route::put(
+//     '/bedatabgstrukrrusak/{datakerusakan}/struktur/{datastruktur}',
+//     [PendataanBangunanGedungController::class, 'bedatabgstrukrrusakupdatenew']
+// )->name('bedatabgstrukrrusakupdatenew');
 
 // 04 PENDATAAN BANGUNAN GEDUNG STRUKTUR BANGUNAN GEDUNG
 // DATA CONTOH VALIDASI KE 2

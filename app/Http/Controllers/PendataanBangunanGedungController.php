@@ -2431,7 +2431,7 @@ public function bedatabgstrukrrusakupdate($id)
     ]);
 }
 
-public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $datastruktur)
+public function bedatabgstrukrrusakupdatenew(Request $request, $id)
 {
     // Validasi input
     $validated = $request->validate([
@@ -2467,77 +2467,17 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $
         'tingkat_kerusakan8'  => 'nullable|string|max:100',
 
         'total_nilai_kerusakan' => 'nullable|numeric',
-
-        // foto
-        'struktur_bawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'struktur_atas'  => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'genteng'        => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'rangka_atap'    => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'pintu'          => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'jendela'        => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'balok'          => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
-        'kolom'          => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:15360',
     ]);
 
-    // Ambil data
-    $dataKerusakan = databgtingkatkerusahan::findOrFail($datakerusakan);
-    $dataStruktur  = databgstrukturbangunan::findOrFail($datastruktur);
+    // ============================
+    // Ambil data kerusakan
+    // ============================
+    $dataKerusakan = databgtingkatkerusahan::findOrFail($id);
 
-    // -------------------------------
-    // Update file upload untuk kerusakan
-    // -------------------------------
-    $uploadFieldsKerusakan = ['genteng', 'rangka_atap', 'pintu', 'jendela', 'balok', 'kolom'];
+    // Simpan id kepemilikan untuk redirect nanti
+    $kepemilikanId = $dataKerusakan->databgkepemilikan_id;
 
-    foreach ($uploadFieldsKerusakan as $field) {
-        if ($request->hasFile($field)) {
-            $file = $request->file($field);
-            $filename = $field . '_' . time() . '.' . $file->getClientOriginalExtension();
-            $destination = public_path('fotofaktualbg');
-
-            if (!file_exists($destination)) {
-                mkdir($destination, 0777, true);
-            }
-
-            // hapus lama kalau ada
-            if ($dataKerusakan->$field && file_exists(public_path($dataKerusakan->$field))) {
-                unlink(public_path($dataKerusakan->$field));
-            }
-
-            // simpan baru
-            $file->move($destination, $filename);
-            $dataKerusakan->$field = 'fotofaktualbg/' . $filename;
-        }
-    }
-
-    // -------------------------------
-    // Update file upload untuk struktur
-    // -------------------------------
-    $uploadFieldsStruktur = ['struktur_bawah', 'struktur_atas'];
-
-    foreach ($uploadFieldsStruktur as $field) {
-        if ($request->hasFile($field)) {
-            $file = $request->file($field);
-            $filename = $field . '_' . time() . '.' . $file->getClientOriginalExtension();
-            $destination = public_path('fotofaktualbg');
-
-            if (!file_exists($destination)) {
-                mkdir($destination, 0777, true);
-            }
-
-            // hapus lama kalau ada
-            if ($dataStruktur->$field && file_exists(public_path($dataStruktur->$field))) {
-                unlink(public_path($dataStruktur->$field));
-            }
-
-            // simpan baru
-            $file->move($destination, $filename);
-            $dataStruktur->$field = 'fotofaktualbg/' . $filename;
-        }
-    }
-
-    // -------------------------------
-    // Simpan data kerusakan
-    // -------------------------------
+    // Update data kerusakan
     $dataKerusakan->update([
         'indikasi_kerusakan1' => $validated['indikasi_kerusakan1'] ?? null,
         'tingkat_kerusakan1'  => $validated['tingkat_kerusakan1'] ?? null,
@@ -2557,32 +2497,32 @@ public function bedatabgstrukrrusakupdatenew(Request $request, $datakerusakan, $
         'tingkat_kerusakan8'  => $validated['tingkat_kerusakan8'] ?? null,
         'total_nilai_kerusakan' => $validated['total_nilai_kerusakan'] ?? null,
     ]);
-    $dataKerusakan->save();
 
-    // -------------------------------
-    // Simpan data struktur
-    // -------------------------------
-    $dataStruktur->update([
-        'struktur_bangunan_bawah' => $validated['struktur_bangunan_bawah'] ?? null,
-        'struktur_bangunan_atas'  => $validated['struktur_bangunan_atas'] ?? null,
-        'struktur_atap'           => $validated['struktur_atap'] ?? null,
-        'pondasi'                 => $validated['pondasi'] ?? null,
-        'struktur'                => $validated['struktur'] ?? null,
-        'atap'                    => $validated['atap'] ?? null,
-        'lantai'                  => $validated['lantai'] ?? null,
-        'dinding'                 => $validated['dinding'] ?? null,
-        'plafond'                 => $validated['plafond'] ?? null,
-        'utilitas'                => $validated['utilitas'] ?? null,
-        'finishing'               => $validated['finishing'] ?? null,
-    ]);
-    $dataStruktur->save();
+    // ============================
+    // Update data struktur (jika ada)
+    // ============================
+    $dataStruktur = datastrukturbangunangedung::where('databgkepemilikan_id', $kepemilikanId)->first();
+    if ($dataStruktur) {
+        $dataStruktur->update([
+            'struktur_bangunan_bawah' => $validated['struktur_bangunan_bawah'] ?? null,
+            'struktur_bangunan_atas'  => $validated['struktur_bangunan_atas'] ?? null,
+            'struktur_atap'           => $validated['struktur_atap'] ?? null,
+            'pondasi'                 => $validated['pondasi'] ?? null,
+            'struktur'                => $validated['struktur'] ?? null,
+            'atap'                    => $validated['atap'] ?? null,
+            'lantai'                  => $validated['lantai'] ?? null,
+            'dinding'                 => $validated['dinding'] ?? null,
+            'plafond'                 => $validated['plafond'] ?? null,
+            'utilitas'                => $validated['utilitas'] ?? null,
+            'finishing'               => $validated['finishing'] ?? null,
+        ]);
+    }
 
-    // -------------------------------
-    // Redirect
-    // -------------------------------
-    return redirect()->route('bedatabgstrukrrusak', [
-        'kepemilikanId' => $dataKerusakan->databgkepemilikan_id
-    ])->with('update', 'Data struktur bangunan berhasil diperbarui!');
+    // ============================
+    // Redirect ke halaman kepemilikan
+    // ============================
+    session()->flash('update', 'Data struktur bangunan & kerusakan berhasil diperbarui!');
+    return redirect()->route('bedatabgstrukrrusak', ['kepemilikanId' => $kepemilikanId]);
 }
 
 

@@ -347,7 +347,7 @@ th {
             @csrf --}}
 
    <form id="formPemilik"
-      action="{{ route('bedatabgstrukrrusakupdatenew', ['datakerusakan' => $datakerusakan->id, 'datastruktur' => $datastruktur->id]) }}"
+      action="{{ route('bedatabgstrukrrusakupdatenew', $datastruktur->id)}}"
       method="POST"
       enctype="multipart/form-data">
     @csrf
@@ -434,7 +434,7 @@ th {
                 </div>
 
                 <div class="row">
-                   <div class="col-md-6">
+                   <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label"><i class="bi bi-building text-primary me-1"></i> Struktur</label>
         <input type="text" name="struktur" class="form-control" value="{{ $datastruktur->struktur ?? old('struktur') }}">
@@ -475,7 +475,7 @@ th {
                 </div>
 
                 <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label"><i class="bi bi-house text-primary me-1"></i> Atap</label>
         <input type="text" name="atap" class="form-control" value="{{ $datastruktur->atap ?? old('atap') }}">
@@ -517,7 +517,7 @@ th {
 
                 <div class="row">
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label"><i class="bi bi-square text-primary me-1"></i> Lantai</label>
         <input type="text" name="lantai" class="form-control" value="{{ $datastruktur->lantai ?? old('lantai') }}">
@@ -559,7 +559,7 @@ th {
 
                 <div class="row">
 
-                   <div class="col-md-6">
+                   <div class="col-md-12">
     <div class="row">
         <div class="col-md-12 mb-3">
             <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Dinding</label>
@@ -602,7 +602,7 @@ th {
                 </div>
 
                 <div class="row">
-<div class="col-md-6">
+<div class="col-md-12">
     <div class="mb-3">
         <label class="form-label"><i class="bi bi-window-dock text-primary me-1"></i> Plafond</label>
         <input type="text" name="plafond" class="form-control" value="{{ $datastruktur->plafond ?? old('plafond') }}">
@@ -642,7 +642,7 @@ th {
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label"><i class="bi bi-tools text-primary me-1"></i> Utilitas</label>
         <input type="text" name="utilitas" class="form-control" value="{{ $datastruktur->utilitas ?? old('utilitas') }}">
@@ -682,7 +682,7 @@ th {
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label"><i class="bi bi-paint-bucket text-primary me-1"></i> Finishing </label>
         <input type="text" name="finishing" class="form-control" value="{{ $datastruktur->finishing ?? old('finishing') }}">
