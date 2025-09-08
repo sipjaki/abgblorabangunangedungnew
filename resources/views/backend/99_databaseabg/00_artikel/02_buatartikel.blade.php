@@ -235,14 +235,14 @@ th {
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
-
 {{-- Cadangan 3 --}}
 <div class="mb-3">
     <label class="form-label" for="cadangan3">
         <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Berkas
     </label>
     <input type="file" id="cadangan3" name="cadangan3"
-        class="form-control @error('cadangan3') is-invalid @enderror" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        class="form-control @error('cadangan3') is-invalid @enderror"
+        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
     @error('cadangan3')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -270,14 +270,14 @@ document.getElementById('cadangan3').addEventListener('change', function (event)
             img.style.marginTop = "10px";
             preview.appendChild(img);
         } else {
-            // Preview file lain (PDF, DOC, dll)
-            const link = document.createElement("a");
-            link.href = fileURL;
-            link.target = "_blank";
-            link.textContent = "📄 Lihat File: " + file.name;
-            link.style.display = "block";
-            link.style.marginTop = "10px";
-            preview.appendChild(link);
+            // Preview file PDF/DOC dll pakai iframe
+            const iframe = document.createElement("iframe");
+            iframe.src = fileURL;
+            iframe.style.width = "100%";
+            iframe.style.height = "400px";
+            iframe.style.border = "1px solid #ccc";
+            iframe.style.marginTop = "10px";
+            preview.appendChild(iframe);
         }
     }
 });
