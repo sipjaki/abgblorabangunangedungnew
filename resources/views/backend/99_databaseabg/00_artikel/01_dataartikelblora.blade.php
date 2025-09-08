@@ -209,12 +209,12 @@ th {
       <i class="bi bi-download"></i> Download Excel
     </button>
 
-    <a href="/beberitacreate" style="text-decoration: none;">
+    <a href="/beartikelcreate" style="text-decoration: none;">
       <button
         class="button-hijau"
         style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;"
       >
-        <i class="bi bi-plus-circle"></i> Buat Berita
+        <i class="bi bi-plus-circle"></i> Buat Artikel
       </button>
     </a>
   </div>

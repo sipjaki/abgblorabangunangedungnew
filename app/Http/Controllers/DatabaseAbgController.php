@@ -784,5 +784,21 @@ public function beartikel(Request $request)
     ]);
 }
 
+
+public function beartikelcreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 8)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.99_databaseabg.00_berita.02_buatartikel', [
+        'title' => 'Buat Artikel Bangunan Gedung Kab Blora',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
 }
 
