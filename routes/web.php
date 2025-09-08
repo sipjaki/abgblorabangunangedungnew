@@ -937,6 +937,7 @@ Route::get('/beartikel', [DatabaseAbgController::class, 'beartikel'])->middlewar
 Route::get('/beartikelcreate', [DatabaseAbgController::class, 'beartikelcreate'])->middleware('auth')->name('beartikelcreate');
 Route::post('/beartikelcreatenew', [DatabaseAbgController::class, 'beartikelcreatenew'])->middleware('auth')->name('beartikelcreatenew');
 
+Route::delete('/beartikeldelete/{id}', [DatabaseAbgController::class, 'beartikeldelete'])->middleware('auth')->name('beartikeldelete');
 
 
 
