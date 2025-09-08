@@ -236,53 +236,118 @@ th {
         @enderror
     </div>
 
-    {{-- Cadangan 3 --}}
-    <div class="mb-3">
-        <label class="form-label" for="cadangan3">
-            <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Berkas
-        </label>
-        <input type="file" id="cadangan3" name="cadangan3"
-            class="form-control @error('cadangan3') is-invalid @enderror">
-        @error('cadangan3')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+{{-- Cadangan 3 --}}
+<div class="mb-3">
+    <label class="form-label" for="cadangan3">
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Berkas
+    </label>
+    <input type="file" id="cadangan3" name="cadangan3"
+        class="form-control @error('cadangan3') is-invalid @enderror" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+    @error('cadangan3')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+    {{-- Preview area --}}
+    <div id="preview-cadangan3" class="mt-3"></div>
+</div>
+
+<script>
+document.getElementById('cadangan3').addEventListener('change', function (event) {
+    const preview = document.getElementById('preview-cadangan3');
+    preview.innerHTML = ""; // reset preview
+    const file = event.target.files[0];
+
+    if (file) {
+        const fileType = file.type;
+        const fileURL = URL.createObjectURL(file);
+
+        if (fileType.startsWith("image/")) {
+            // Preview gambar
+            const img = document.createElement("img");
+            img.src = fileURL;
+            img.classList.add("img-thumbnail");
+            img.style.maxWidth = "200px";
+            img.style.marginTop = "10px";
+            preview.appendChild(img);
+        } else {
+            // Preview file lain (PDF, DOC, dll)
+            const link = document.createElement("a");
+            link.href = fileURL;
+            link.target = "_blank";
+            link.textContent = "📄 Lihat File: " + file.name;
+            link.style.display = "block";
+            link.style.marginTop = "10px";
+            preview.appendChild(link);
+        }
+    }
+});
+</script>
 
     {{-- Cadangan 4 --}}
-    <div class="mb-3">
-        <label class="form-label" for="cadangan4">
-            <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
-        </label>
-        <input type="file" id="cadangan4" name="cadangan4"
-            class="form-control @error('cadangan4') is-invalid @enderror">
-        @error('cadangan4')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+{{-- Cadangan 4 --}}
+<div class="mb-3">
+    <label class="form-label" for="cadangan4">
+        <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
+    </label>
+    <input type="file" id="cadangan4" name="cadangan4"
+        class="form-control @error('cadangan4') is-invalid @enderror" accept="image/*">
+    @error('cadangan4')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+    <div id="preview-cadangan4" class="mt-3"></div>
+</div>
 
-    {{-- Cadangan 5 --}}
-    <div class="mb-3">
-        <label class="form-label" for="cadangan5">
-            <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
-        </label>
-        <input type="file" id="cadangan5" name="cadangan5"
-            class="form-control @error('cadangan5') is-invalid @enderror">
-        @error('cadangan5')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+{{-- Cadangan 5 --}}
+<div class="mb-3">
+    <label class="form-label" for="cadangan5">
+        <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
+    </label>
+    <input type="file" id="cadangan5" name="cadangan5"
+        class="form-control @error('cadangan5') is-invalid @enderror" accept="image/*">
+    @error('cadangan5')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+    <div id="preview-cadangan5" class="mt-3"></div>
+</div>
 
-    {{-- Cadangan 6 --}}
-    <div class="mb-3">
-        <label class="form-label" for="cadangan6">
-            <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 3
-        </label>
-        <input type="file" id="cadangan6" name="cadangan6"
-            class="form-control @error('cadangan6') is-invalid @enderror">
-        @error('cadangan6')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+{{-- Cadangan 6 --}}
+<div class="mb-3">
+    <label class="form-label" for="cadangan6">
+        <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 3
+    </label>
+    <input type="file" id="cadangan6" name="cadangan6"
+        class="form-control @error('cadangan6') is-invalid @enderror" accept="image/*">
+    @error('cadangan6')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+    <div id="preview-cadangan6" class="mt-3"></div>
+</div>
+
+<script>
+function previewImage(inputId, previewId) {
+    document.getElementById(inputId).addEventListener('change', function (event) {
+        const preview = document.getElementById(previewId);
+        preview.innerHTML = ""; // reset preview
+        const file = event.target.files[0];
+
+        if (file && file.type.startsWith("image/")) {
+            const fileURL = URL.createObjectURL(file);
+            const img = document.createElement("img");
+            img.src = fileURL;
+            img.classList.add("img-thumbnail");
+            img.style.maxWidth = "200px";
+            img.style.marginTop = "10px";
+            preview.appendChild(img);
+        }
+    });
+}
+
+// Aktifkan untuk semua foto
+previewImage('cadangan4', 'preview-cadangan4');
+previewImage('cadangan5', 'preview-cadangan5');
+previewImage('cadangan6', 'preview-cadangan6');
+</script>
+
 </div>
 
             <!-- End row -->
