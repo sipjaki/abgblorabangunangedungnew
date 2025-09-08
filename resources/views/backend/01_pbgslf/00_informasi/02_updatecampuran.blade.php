@@ -307,9 +307,9 @@ th {
 
         <!-- ================= TOMBOL SIMPAN ================= -->
         <div class="d-flex justify-content-end mt-4">
-            <button class="button-baru" type="button" onclick="openModal()">
+            <button class="button-berkas" type="button" onclick="openModal()">
                 <i class="bi bi-arrow-repeat me-2"></i>
-                <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
+                <span style="font-family: 'Poppins', sans-serif;">Perbaikan Data ?</span>
             </button>
         </div>
     </div>
