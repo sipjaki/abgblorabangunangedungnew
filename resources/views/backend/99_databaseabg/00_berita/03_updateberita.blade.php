@@ -194,7 +194,7 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('beberitacreatenew', $data->id) }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('beberitacreateupdatenew', $data->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
           @method('put')
 
@@ -231,7 +231,7 @@ th {
         {{-- Foto Utama --}}
         <div class="mb-3">
             <label class="form-label" for="foto">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Utama
+                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Utama | Max 15 MB
             </label>
             <input type="file" id="foto" name="foto"
                    class="form-control @error('foto') is-invalid @enderror">
@@ -267,7 +267,7 @@ th {
         {{-- Foto Tambahan 1 --}}
         <div class="mb-3">
             <label class="form-label" for="foto1">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 1
+                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 1 | Max 15 MB
             </label>
             <input type="file" id="foto1" name="foto1"
                    class="form-control @error('foto1') is-invalid @enderror">
@@ -288,7 +288,7 @@ th {
         {{-- Foto Tambahan 2 --}}
         <div class="mb-3">
             <label class="form-label" for="foto2">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 2
+                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 2 | Max 15 MB
             </label>
             <input type="file" id="foto2" name="foto2"
                    class="form-control @error('foto2') is-invalid @enderror">

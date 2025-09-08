@@ -669,6 +669,96 @@ public function beberitacreateupdate($id)
     ]);
 }
 
+public function beberitacreateupdatenew(Request $request, $id)
+{
+    // Cari data berita berdasarkan ID
+    $data = beritaabg::findOrFail($id);
+
+    // Validasi data input
+    $validated = $request->validate([
+        'user_id'     => 'nullable|string',
+        'judulberita' => 'nullable|string|max:500',
+        'tanggal'     => 'nullable|date',
+        'keterangan'  => 'nullable|string',
+        'foto'        => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15048',
+        'foto1'       => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15048',
+        'foto2'       => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15048',
+        'cadangan1'   => 'nullable|string',
+        'cadangan2'   => 'nullable|string',
+        'cadangan3'   => 'nullable|string',
+        'cadangan4'   => 'nullable|string',
+        'cadangan5'   => 'nullable|string',
+        'cadangan6'   => 'nullable|string',
+        'cadangan7'   => 'nullable|string',
+    ], [
+        'user_id.required' => 'User wajib diisi.',
+        'judulberita.required' => 'Judul berita wajib diisi.',
+        'tanggal.required' => 'Tanggal wajib diisi.',
+        'tanggal.date' => 'Format tanggal tidak valid.',
+        'keterangan.required' => 'Keterangan wajib diisi.',
+        'foto.image' => 'Foto utama harus berupa gambar.',
+        'foto1.image' => 'Foto tambahan 1 harus berupa gambar.',
+        'foto2.image' => 'Foto tambahan 2 harus berupa gambar.',
+    ]);
+
+    // Update data teks
+    $data->user_id     = $validated['user_id'];
+    $data->judulberita = $validated['judulberita'];
+    $data->tanggal     = $validated['tanggal'];
+    $data->keterangan  = $validated['keterangan'];
+    $data->cadangan1   = $validated['cadangan1'] ?? null;
+    $data->cadangan2   = $validated['cadangan2'] ?? null;
+    $data->cadangan3   = $validated['cadangan3'] ?? null;
+    $data->cadangan4   = $validated['cadangan4'] ?? null;
+    $data->cadangan5   = $validated['cadangan5'] ?? null;
+    $data->cadangan6   = $validated['cadangan6'] ?? null;
+    $data->cadangan7   = $validated['cadangan7'] ?? null;
+
+    // Folder target di public
+    $basePath = public_path('99_beritaabg');
+    if (!file_exists($basePath)) {
+        mkdir($basePath, 0755, true);
+    }
+
+    // Upload foto utama
+    if ($request->hasFile('foto')) {
+        if ($data->foto && file_exists(public_path($data->foto))) {
+            @unlink(public_path($data->foto));
+        }
+        $file = $request->file('foto');
+        $filename = 'foto_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($basePath, $filename);
+        $data->foto = '99_beritaabg/' . $filename;
+    }
+
+    // Upload foto1
+    if ($request->hasFile('foto1')) {
+        if ($data->foto1 && file_exists(public_path($data->foto1))) {
+            @unlink(public_path($data->foto1));
+        }
+        $file = $request->file('foto1');
+        $filename = 'foto1_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($basePath, $filename);
+        $data->foto1 = '99_beritaabg/' . $filename;
+    }
+
+    // Upload foto2
+    if ($request->hasFile('foto2')) {
+        if ($data->foto2 && file_exists(public_path($data->foto2))) {
+            @unlink(public_path($data->foto2));
+        }
+        $file = $request->file('foto2');
+        $filename = 'foto2_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($basePath, $filename);
+        $data->foto2 = '99_beritaabg/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('update', 'Data berita berhasil diperbarui.');
+    return redirect()->route('beberita'); // Ganti dengan route index yang sesuai
+}
+
 
 }
 
