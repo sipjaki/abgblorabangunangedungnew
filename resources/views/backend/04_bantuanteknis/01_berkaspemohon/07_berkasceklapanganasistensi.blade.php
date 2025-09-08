@@ -261,10 +261,27 @@ th {
                 $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
             @endphp
 
-            {{-- Preview gambar atau PDF --}}
             @if(in_array($ext, ['jpg','jpeg','png','gif']))
+                {{-- Preview kecil dengan click untuk modal --}}
                 <img src="{{ $filePath }}" alt="Foto Dokumentasi {{ $i }}"
-                     style="display:block; max-width:100px; max-height:120px; object-fit:contain; margin:auto;" loading="lazy">
+                     style="display:block; max-width:100px; max-height:120px; object-fit:contain; margin:auto; cursor:pointer;"
+                     data-bs-toggle="modal" data-bs-target="#modalFoto{{ $i }}" loading="lazy">
+
+                {{-- Modal --}}
+                <div class="modal fade" id="modalFoto{{ $i }}" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Foto Dokumentasi {{ $i }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body text-center">
+                        <img src="{{ $filePath }}" style="width:100%; height:auto; object-fit:contain;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             @elseif($ext === 'pdf')
                 <iframe src="{{ $filePath }}" style="display:block; width:100px; height:120px; border:1px solid #ccc; margin:auto;" loading="lazy"></iframe>
             @endif
