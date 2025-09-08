@@ -182,6 +182,29 @@ th {
       <i class="bi bi-info-circle me-2"></i> {{ $title }}
     </div>
 
+      <div class="mb-3">
+        <label class="form-label fw-bold d-block mb-2">
+          <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
+        </label>
+        @php
+          $ext = strtolower(pathinfo($item->berkas ?? '', PATHINFO_EXTENSION));
+          $filePath = $item->berkas && file_exists(public_path('storage/' . $item->berkas))
+                      ? asset('storage/' . $item->berkas)
+                      : ($item->berkas ? asset($item->berkas) : null);
+        @endphp
+
+        @if ($filePath)
+          @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
+            <img src="{{ $filePath }}" alt="Poster Gambar" class="img-fluid rounded border" style="max-height: 300px; object-fit: contain;">
+          @else
+            <iframe src="{{ $filePath }}" width="100%" height="300px" class="border rounded"></iframe>
+          @endif
+        @else
+          <div class="form-control bg-light">Belum diunggah</div>
+        @endif
+      </div>
+
+
     <div class="card-body">
       {{-- Row 1: Judul, Keterangan, Info Lanjut --}}
       <div class="row">
@@ -208,27 +231,6 @@ th {
       </div>
 
       {{-- Row 2: Berkas (Poster Gambar / File) --}}
-      <div class="mb-3">
-        <label class="form-label fw-bold d-block mb-2">
-          <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
-        </label>
-        @php
-          $ext = strtolower(pathinfo($item->berkas ?? '', PATHINFO_EXTENSION));
-          $filePath = $item->berkas && file_exists(public_path('storage/' . $item->berkas))
-                      ? asset('storage/' . $item->berkas)
-                      : ($item->berkas ? asset($item->berkas) : null);
-        @endphp
-
-        @if ($filePath)
-          @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
-            <img src="{{ $filePath }}" alt="Poster Gambar" class="img-fluid rounded border" style="max-height: 300px; object-fit: contain;">
-          @else
-            <iframe src="{{ $filePath }}" width="100%" height="300px" class="border rounded"></iframe>
-          @endif
-        @else
-          <div class="form-control bg-light">Belum diunggah</div>
-        @endif
-      </div>
     </div>
   </div>
 @endforeach
