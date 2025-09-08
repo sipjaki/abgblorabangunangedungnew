@@ -192,145 +192,212 @@ th {
                  <div class="card-body p-0">
 
         {{-- ======================================================= --}}
- <div class="col-md-12">
-    <form action="{{ route('beberitacreatenew', $data->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+                    <div class="col-md-12">
+                        <!--begin::Quick Example-->
+                  <form action="{{ route('beberitacreatenew', $data->id) }}" method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('put')
 
-        <!-- begin::Body -->
-        <div class="row">
-            <!-- Kiri -->
-            <div class="col-md-6">
-                {{-- Judul Berita --}}
-                <div class="mb-3">
-                    <label class="form-label" for="judulberita">
-                        <i class="bi bi-type text-primary me-2"></i> Judul Berita
-                    </label>
-                    <input type="text" id="judulberita" name="judulberita"
-                           value="{{ old('judulberita', $data->judulberita) }}"
-                           class="form-control @error('judulberita') is-invalid @enderror"
-                           placeholder="Masukkan judul berita">
-                    @error('judulberita')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                {{-- Tanggal --}}
-                <div class="mb-3">
-                    <label class="form-label" for="tanggal">
-                        <i class="bi bi-calendar-event text-primary me-2"></i> Tanggal
-                    </label>
-                    <input type="date" id="tanggal" name="tanggal"
-                           value="{{ old('tanggal', $data->tanggal) }}"
-                           class="form-control @error('tanggal') is-invalid @enderror">
-                    @error('tanggal')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                {{-- Foto Utama --}}
-                <div class="mb-3">
-                    <label class="form-label" for="foto">
-                        <i class="bi bi-image text-primary me-2"></i> Foto Utama
-                    </label>
-                    <input type="file" id="foto" name="foto"
-                           class="form-control @error('foto') is-invalid @enderror">
-                    @error('foto')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-
-                    {{-- Preview foto lama --}}
-                    @if ($data->foto)
-                        <div class="mt-2">
-                            <p class="small text-muted">Foto lama:</p>
-                            <img src="{{ asset($data->foto) }}" alt="Foto Lama"
-                                 style="max-height: 150px; border-radius: 8px;">
-                        </div>
-                    @endif
-                </div>
-            </div>
-
-            <!-- Kanan -->
-            <div class="col-md-6">
-                {{-- Keterangan --}}
-                <div class="mb-3">
-                    <label class="form-label" for="keterangan">
-                        <i class="bi bi-card-text text-primary me-2"></i> Keterangan
-                    </label>
-                    <textarea id="keterangan" name="keterangan" rows="6"
-                              class="form-control @error('keterangan') is-invalid @enderror"
-                              placeholder="Tulis keterangan lengkap">{{ old('keterangan', $data->keterangan) }}</textarea>
-                    @error('keterangan')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                {{-- Foto Tambahan 1 --}}
-                <div class="mb-3">
-                    <label class="form-label" for="foto1">
-                        <i class="bi bi-image text-primary me-2"></i> Foto Tambahan 1
-                    </label>
-                    <input type="file" id="foto1" name="foto1"
-                           class="form-control @error('foto1') is-invalid @enderror">
-                    @error('foto1')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-
-                    @if ($data->foto1)
-                        <div class="mt-2">
-                            <p class="small text-muted">Foto lama:</p>
-                            <img src="{{ asset($data->foto1) }}" alt="Foto Tambahan 1 Lama"
-                                 style="max-height: 120px; border-radius: 8px;">
-                        </div>
-                    @endif
-                </div>
-
-                {{-- Foto Tambahan 2 --}}
-                <div class="mb-3">
-                    <label class="form-label" for="foto2">
-                        <i class="bi bi-image text-primary me-2"></i> Foto Tambahan 2
-                    </label>
-                    <input type="file" id="foto2" name="foto2"
-                           class="form-control @error('foto2') is-invalid @enderror">
-                    @error('foto2')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-
-                    @if ($data->foto2)
-                        <div class="mt-2">
-                            <p class="small text-muted">Foto lama:</p>
-                            <img src="{{ asset($data->foto2) }}" alt="Foto Tambahan 2 Lama"
-                                 style="max-height: 120px; border-radius: 8px;">
-                        </div>
-                    @endif
-                </div>
-            </div>
-        </div>
-
-        {{-- Penulis Berita (User Login) --}}
+      <!-- begin::Body -->
+<div class="row">
+    <div class="col-md-6">
+        {{-- Judul Berita --}}
         <div class="mb-3">
-            <label class="form-label" for="user_id_display">
-                <i class="bi bi-person-check text-primary me-2"></i> Penulis Berita
+            <label class="form-label" for="judulberita">
+                <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul Berita
             </label>
-            <input type="text" id="user_id_display"
-                   class="form-control"
-                   value="{{ auth()->user()->name }}"
-                   readonly>
-            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+            <input type="text" id="judulberita" name="judulberita"
+                   value="{{ old('judulberita', $data->judulberita ?? '') }}"
+                   class="form-control @error('judulberita') is-invalid @enderror"
+                   placeholder="Masukkan judul berita">
+            @error('judulberita')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
 
-        <!-- Tombol Simpan -->
-        <div class="d-flex justify-content-end mb-4">
-            <button class="btn btn-success me-2" type="submit">
-                <i class="bi bi-save me-1"></i> Simpan Perubahan
-            </button>
-            <a href="{{ route('beberitalist') }}" class="btn btn-secondary">
-                <i class="bi bi-x-circle me-1"></i> Batal
-            </a>
+        {{-- Tanggal --}}
+        <div class="mb-3">
+            <label class="form-label" for="tanggal">
+                <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal
+            </label>
+            <input type="date" id="tanggal" name="tanggal"
+                   value="{{ old('tanggal', $data->tanggal ?? date('Y-m-d')) }}"
+                   class="form-control @error('tanggal') is-invalid @enderror">
+            @error('tanggal')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
-    </form>
-</div>
+
+        {{-- Foto Utama --}}
+        <div class="mb-3">
+            <label class="form-label" for="foto">
+                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Utama
+            </label>
+            <input type="file" id="foto" name="foto"
+                   class="form-control @error('foto') is-invalid @enderror">
+            @error('foto')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            {{-- Preview Foto Lama --}}
+            @if (!empty($data->foto))
+                <div class="mt-2">
+                    <p class="small text-muted">Foto lama:</p>
+                    <img src="{{ asset($data->foto) }}" alt="Foto Utama Lama"
+                         style="max-height: 150px; border-radius: 8px;">
                 </div>
+            @endif
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        {{-- Keterangan --}}
+        <div class="mb-3">
+            <label class="form-label" for="keterangan">
+                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Keterangan
+            </label>
+            <textarea id="keterangan" name="keterangan" rows="6"
+                      class="form-control @error('keterangan') is-invalid @enderror"
+                      placeholder="Tulis keterangan lengkap">{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
+            @error('keterangan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Foto Tambahan 1 --}}
+        <div class="mb-3">
+            <label class="form-label" for="foto1">
+                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 1
+            </label>
+            <input type="file" id="foto1" name="foto1"
+                   class="form-control @error('foto1') is-invalid @enderror">
+            @error('foto1')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            {{-- Preview Foto Lama --}}
+            @if (!empty($data->foto1))
+                <div class="mt-2">
+                    <p class="small text-muted">Foto lama:</p>
+                    <img src="{{ asset($data->foto1) }}" alt="Foto Tambahan 1 Lama"
+                         style="max-height: 120px; border-radius: 8px;">
+                </div>
+            @endif
+        </div>
+
+        {{-- Foto Tambahan 2 --}}
+        <div class="mb-3">
+            <label class="form-label" for="foto2">
+                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Tambahan 2
+            </label>
+            <input type="file" id="foto2" name="foto2"
+                   class="form-control @error('foto2') is-invalid @enderror">
+            @error('foto2')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            {{-- Preview Foto Lama --}}
+            @if (!empty($data->foto2))
+                <div class="mt-2">
+                    <p class="small text-muted">Foto lama:</p>
+                    <img src="{{ asset($data->foto2) }}" alt="Foto Tambahan 2 Lama"
+                         style="max-height: 120px; border-radius: 8px;">
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
+
+{{-- Penulis Berita (User Login) --}}
+<div class="mb-3">
+    <label class="form-label" for="user_id_display">
+        <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Penulis Berita
+    </label>
+
+    {{-- Tampilkan Nama User (editable kalau admin, readonly kalau hanya user biasa) --}}
+    <input type="text" id="user_id_display"
+           class="form-control"
+           value="{{ old('user_id', $data->user->name ?? auth()->user()->name) }}"
+           readonly>
+
+    {{-- Hidden input untuk simpan ID user --}}
+    <input type="hidden" name="user_id"
+           value="{{ old('user_id', $data->user_id ?? auth()->user()->id) }}">
+
+    {{-- Info tambahan --}}
+    @if (!empty($data->user->name))
+        <small class="text-muted">Penulis lama: {{ $data->user->name }}</small>
+    @endif
+</div>
+            <!-- End row -->
+                            <!-- end::Body -->
+
+                            <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+                                <div class="flex justify-end">
+                               <button class="button-baru" type="button" onclick="openModal()">
+                                    <i class="bi bi-save" style="margin-right: 5px;"></i>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
+                                    </button>
+
+                                </div>
+                                <!-- Modal Konfirmasi -->
+                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+                                        Apakah Anda ingin menambahkan berita ABG Blora ?
+                                    </p>
+
+                                      <!-- Tombol -->
+                                      <div style="display: flex; justify-content: center; gap: 12px;">
+                                        <button id="confirmSubmitBtn"
+                                        onclick="submitForm()"
+                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <!-- Telegram SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
+                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
+                                    </svg>
+                                    Ya
+                                </button>
+
+                                <!-- Tombol Batal dengan ikon X (SVG) -->
+                                <button type="button"
+                                        onclick="closeModal()"
+                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
+                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+                                    </svg>
+                                    Batal
+                                </button>
+
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <!-- Script -->
+                                <script>
+                                function openModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "flex";
+                                }
+
+                                function closeModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "none";
+                                }
+
+                                </script>
+
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                 </div>
 
                  {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
 
