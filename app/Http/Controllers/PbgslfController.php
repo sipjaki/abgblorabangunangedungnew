@@ -4068,23 +4068,36 @@ public function bepbghunianupdate($id)
     ]);
 }
 
-
 public function bepbghunianupdatenew(Request $request, $id)
 {
     $data = infopbg2::findOrFail($id);
 
     // Validasi input
     $request->validate([
-        'judul' => 'nullable|string|max:255',
-        'berkas' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'judul'      => 'nullable|string|max:255',
+        'berkas'     => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
         'keterangan' => 'nullable|string',
         'infolanjut' => 'nullable|string',
+
+        'cadangan1'  => 'nullable|string',
+        'cadangan2'  => 'nullable|string',
+        'cadangan3'  => 'nullable|string',
+        'cadangan4'  => 'nullable|string',
+        'cadangan5'  => 'nullable|string',
+        'cadangan6'  => 'nullable|string',
+        'cadangan7'  => 'nullable|string',
     ]);
 
     // Simpan data teks
-    $data->judul = $request->judul;
+    $data->judul      = $request->judul;
     $data->keterangan = $request->keterangan;
     $data->infolanjut = $request->infolanjut;
+
+    // Simpan cadangan1–7
+    for ($i = 1; $i <= 7; $i++) {
+        $field = "cadangan{$i}";
+        $data->$field = $request->$field;
+    }
 
     // Handle file upload
     if ($request->hasFile('berkas')) {
@@ -4106,9 +4119,9 @@ public function bepbghunianupdatenew(Request $request, $id)
     }
 
     $data->save();
-session()->flash('update', 'Informasi berhasil diperbarui!');
-return back();
 
+    session()->flash('update', 'Informasi berhasil diperbarui!');
+    return back();
 }
 
 
@@ -4155,16 +4168,30 @@ public function bepbgkeagamaanupdatenew(Request $request, $id)
 
     // Validasi input
     $request->validate([
-        'judul' => 'nullable|string|max:255',
-        'berkas' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'judul'      => 'nullable|string|max:255',
+        'berkas'     => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
         'keterangan' => 'nullable|string',
         'infolanjut' => 'nullable|string',
+
+        'cadangan1'  => 'nullable|string',
+        'cadangan2'  => 'nullable|string',
+        'cadangan3'  => 'nullable|string',
+        'cadangan4'  => 'nullable|string',
+        'cadangan5'  => 'nullable|string',
+        'cadangan6'  => 'nullable|string',
+        'cadangan7'  => 'nullable|string',
     ]);
 
     // Simpan data teks
-    $data->judul = $request->judul;
+    $data->judul      = $request->judul;
     $data->keterangan = $request->keterangan;
     $data->infolanjut = $request->infolanjut;
+
+    // Simpan cadangan1–7
+    for ($i = 1; $i <= 7; $i++) {
+        $field = "cadangan{$i}";
+        $data->$field = $request->$field;
+    }
 
     // Handle file upload
     if ($request->hasFile('berkas')) {
@@ -4186,10 +4213,11 @@ public function bepbgkeagamaanupdatenew(Request $request, $id)
     }
 
     $data->save();
-session()->flash('update', 'Informasi berhasil diperbarui!');
-return back();
 
+    session()->flash('update', 'Informasi berhasil diperbarui!');
+    return back();
 }
+
 
    public function bepbgprasarana(Request $request)
 {

@@ -194,204 +194,162 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('beslffungsiusahaupdatenew', $data->id) }}" method="POST" enctype="multipart/form-data">
-          @csrf
-                            <!-- begin::Body -->
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Left Column (6/12) -->
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="judul">
-            <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul
-        </label>
-        <input
-            type="text"
-            id="judul"
-            name="judul"
-            value="{{ old('judul', $data->judul ?? '') }}"
-            class="form-control @error('judul') is-invalid @enderror"
-            placeholder="Masukkan Judul"
-        />
-        @error('judul')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+<form action="{{ route('beslffungsiusahaupdatenew', $data->id) }}"
+{{-- action="{{ route('bepbghunianupdatenew', $data->id) }}"  --}}
+method="POST" enctype="multipart/form-data">
+    @csrf
+
+    <!-- begin::Body -->
+    <div class="card-body">
+
+        <!-- ================= BAGIAN INFORMASI UTAMA ================= -->
+        <div class="row">
+            {{-- Judul --}}
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label" for="judul">
+                        <i class="bi bi-type me-2 text-primary"></i> Judul
+                    </label>
+                    <input type="text" id="judul" name="judul"
+                           value="{{ old('judul', $data->judul ?? '') }}"
+                           class="form-control @error('judul') is-invalid @enderror"
+                           placeholder="Masukkan Judul" maxlength="255" />
+                    @error('judul') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            {{-- Keterangan --}}
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label" for="keterangan">
+                        <i class="bi bi-card-text me-2 text-primary"></i> Keterangan
+                    </label>
+                    <textarea id="keterangan" name="keterangan"
+                              class="form-control @error('keterangan') is-invalid @enderror"
+                              rows="5" maxlength="255" placeholder="Masukkan Keterangan">{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
+                    @error('keterangan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            {{-- Info Lanjut --}}
+            <div class="col-md-12">
+                <div class="mb-3">
+                    <label class="form-label" for="infolanjut">
+                        <i class="bi bi-info-circle me-2 text-primary"></i> Info Lanjut
+                    </label>
+                    <textarea id="infolanjut" name="infolanjut"
+                              class="form-control @error('infolanjut') is-invalid @enderror"
+                              rows="5" maxlength="255" placeholder="Masukkan Info Tambahan">{{ old('infolanjut', $data->infolanjut ?? '') }}</textarea>
+                    @error('infolanjut') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= BAGIAN PARAGRAF CADANGAN ================= -->
+        <div class="row">
+            @for ($i = 1; $i <= 7; $i++)
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label" for="cadangan{{ $i }}">
+                            <i class="bi bi-file-text me-2 text-primary"></i> Paragraf {{ $i }}
+                        </label>
+                        <textarea id="cadangan{{ $i }}" name="cadangan{{ $i }}"
+                                  class="form-control @error('cadangan'.$i) is-invalid @enderror"
+                                  rows="5" maxlength="255"
+                                  placeholder="Masukkan Paragraf {{ $i }}">{{ old('cadangan'.$i, $data->{'cadangan'.$i} ?? '') }}</textarea>
+                        @error('cadangan'.$i) <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+            @endfor
+        </div>
+
+        <!-- ================= SECTION UPLOAD ================= -->
+        <div class="text-center my-4">
+            <hr class="my-3" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+            <h5 class="text-primary fw-bold mt-2" style="font-size:16px;">
+                <i class="bi bi-upload me-2"></i> Upload Informasi PBG Fungsi Campuran
+            </h5>
+            <hr class="my-3" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+        </div>
+
+        <div class="row">
+            {{-- Contoh Berkas 4 --}}
+            <div class="col-md-6 mb-3">
+                <label class="form-label" for="berkas">
+                    <i class="bi bi-file-earmark-pdf text-danger me-2"></i> Upload Berkas | Maksimal 15 MB (PDF/Gambar)
+                </label>
+                <input type="file" id="berkas" name="berkas"
+                       accept="application/pdf,image/*"
+                       class="form-control @error('berkas') is-invalid @enderror"
+                       onchange="previewMixedFile(event, 'previewContainerB4', 'previewB4', 'msgB4')" />
+                @error('berkas') <div class="invalid-feedback">{{ $message }}</div> @enderror
+
+                <!-- Preview Lama -->
+                <div class="mt-3" id="previewContainerB4" style="{{ isset($data->berkas) ? '' : 'display: none;' }}">
+                    <label class="fw-bold">Data Sebelumnya:</label>
+                    @php $ext4 = pathinfo($data->berkas ?? '', PATHINFO_EXTENSION); @endphp
+                    @if (in_array(strtolower($ext4), ['jpg','jpeg','png','webp']))
+                        <img src="{{ asset($data->berkas) }}" alt="Berkas 4 Lama"
+                             style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
+                    @elseif (strtolower($ext4) === 'pdf')
+                        <iframe src="{{ asset($data->berkas) }}"
+                                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
+                    @endif
+                </div>
+
+                <!-- Pesan -->
+                <div id="msgB4" class="mt-2 text-muted fst-italic" style="{{ isset($data->berkas) ? 'display:none;' : '' }}">
+                    Data belum di update. Silahkan upload berkas 4.
+                </div>
+
+                <!-- Preview Baru -->
+                <div class="mt-3" id="previewB4" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- ================= TOMBOL SIMPAN ================= -->
+        <div class="d-flex justify-content-end mt-4">
+            <button class="button-berkas" type="button" onclick="openModal()">
+                <i class="bi bi-arrow-repeat me-2"></i>
+                <span style="font-family: 'Poppins', sans-serif;">Perbaikan Data ?</span>
+            </button>
+        </div>
     </div>
-</div>
+    <!-- end::Body -->
 
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="keterangan">
-            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Keterangan
-        </label>
-        <textarea
-            id="keterangan"
-            name="keterangan"
-            class="form-control @error('keterangan') is-invalid @enderror"
-            rows="5"
-            placeholder="Masukkan Keterangan"
-        >{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
-        @error('keterangan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+    <!-- Modal Konfirmasi -->
+    <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+            <p class="fw-semibold mb-4" style="font-size: 16px;">Apakah Anda ingin memperbaiki informasi ini ?</p>
+
+            <div class="d-flex justify-content-center gap-3">
+                <!-- Tombol Ya -->
+                <button id="confirmSubmitBtn" onclick="submitForm()"
+                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;">
+                    <i class="bi bi-check-circle me-1"></i> Ya
+                </button>
+
+                <!-- Tombol Batal -->
+                <button type="button" onclick="closeModal()"
+                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;">
+                    <i class="bi bi-x-circle me-1"></i> Batal
+                </button>
+            </div>
+        </div>
     </div>
-</div>
+</form>
 
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="infolanjut">
-            <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Info Lanjut
-        </label>
-        <textarea
-            id="infolanjut"
-            name="infolanjut"
-            class="form-control @error('infolanjut') is-invalid @enderror"
-            rows="5"
-            placeholder="Masukkan Info Tambahan"
-        >{{ old('infolanjut', $data->infolanjut ?? '') }}</textarea>
-        @error('infolanjut')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="text-center">
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
-        <i class="bi bi-upload" style="margin-right: 6px;"></i>
-        Upload Informasi PBG Fungsi Hunian
-    </h5>
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-</div>
-
-</div>
-
-<div class="row">
-  {{-- Berkas 1 --}}
-
-  {{-- Berkas 4 --}}
-  <div class="col-md-6 mb-3">
-    <label class="form-label" for="berkas">
-      <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas 4 (PDF/Gambar)
-    </label>
-    <input type="file" id="berkas" name="berkas" accept="application/pdf,image/*"
-      class="form-control @error('berkas') is-invalid @enderror"
-      onchange="previewMixedFile(event, 'previewContainerB4', 'previewB4', 'msgB4')" />
-    @error('berkas')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerB4" style="{{ isset($data->berkas) ? '' : 'display: none;' }}">
-      <label class="fw-bold">Data Sebelumnya:</label>
-      @php
-        $ext4 = pathinfo($data->berkas ?? '', PATHINFO_EXTENSION);
-      @endphp
-      @if (in_array(strtolower($ext4), ['jpg','jpeg','png','webp']))
-        <img src="{{ asset($data->berkas) }}" alt="Berkas 4 Lama" style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
-      @elseif (strtolower($ext4) === 'pdf')
-        <iframe src="{{ asset($data->berkas) }}" style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-      @endif
-    </div>
-
-    <div id="msgB4" class="mt-2" style="color: grey; font-style: italic; {{ isset($data->berkas) ? 'display:none;' : '' }}">
-      Data belum di update. Silahkan upload berkas 4.
-    </div>
-
-    <div class="mt-3" id="previewB4" style="display: none;"></div>
-  </div>
-</div>
-
-</div>
-    <script>
-function previewPDF(event, containerId, iframeId, messageId) {
-    const file = event.target.files[0];
-    const container = document.getElementById(containerId);
-    const iframe = document.getElementById(iframeId);
-    const message = document.getElementById(messageId);
-
-    if (file && file.type === "application/pdf") {
-        const fileURL = URL.createObjectURL(file);
-        iframe.src = fileURL;
-        container.style.display = 'block';
-        message.style.display = 'none';
-    } else {
-        iframe.src = '';
-        container.style.display = 'none';
-        message.style.display = 'block';
-        message.textContent = 'File harus berupa format PDF.';
-    }
+<script>
+function openModal() {
+    document.getElementById("confirmModal").style.display = "flex";
+}
+function closeModal() {
+    document.getElementById("confirmModal").style.display = "none";
+}
+function submitForm() {
+    document.querySelector('form').submit();
 }
 </script>
-
-
-                                    </div>
-                                    </div>
-                                </div>
-                                <!-- End row -->
-                            </div>
-                            <!-- end::Body -->
-
-                            <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                <div class="flex justify-end">
-                               <button class="button-baru" type="button" onclick="openModal()">
-                                    <i class="bi bi-arrow-repeat" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
-                                    </button>
-
-                                </div>
-                                <!-- Modal Konfirmasi -->
-                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin memperbaiki informasi ini ?
-                                    </p>
-
-                                      <!-- Tombol -->
-                                      <div style="display: flex; justify-content: center; gap: 12px;">
-                                        <button id="confirmSubmitBtn"
-                                        onclick="submitForm()"
-                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                    <!-- Telegram SVG -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
-                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
-                                    </svg>
-                                    Ya
-                                </button>
-
-                                <!-- Tombol Batal dengan ikon X (SVG) -->
-                                <button type="button"
-                                        onclick="closeModal()"
-                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
-                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
-                                    </svg>
-                                    Batal
-                                </button>
-
-                                      </div>
-                                    </div>
-                                </div>
-
-                                <!-- Script -->
-                                <script>
-                                function openModal() {
-                                    const modal = document.getElementById("confirmModal");
-                                    if (modal) modal.style.display = "flex";
-                                }
-
-                                function closeModal() {
-                                    const modal = document.getElementById("confirmModal");
-                                    if (modal) modal.style.display = "none";
-                                }
-
-                                </script>
-
-                            </div>
-
-
-                        </form>
 
                     </div>
                  </div>
@@ -471,3 +429,4 @@ function previewPDF(event, containerId, iframeId, messageId) {
         return XLSX.writeFile(wb, filename + '.xlsx');
     }
     </script>
+yy
