@@ -203,7 +203,6 @@ th {
           <div class="form-control bg-light">Belum diunggah</div>
         @endif
       </div>
-
 <div class="card-body">
   {{-- Row 1: Judul & Keterangan --}}
   <div class="row">
@@ -211,16 +210,18 @@ th {
       <label class="form-label fw-bold">
         <i class="bi bi-card-heading text-primary me-1"></i> Judul
       </label>
-      <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->judul ?? '-' }}</textarea>
-      <small class="text-muted"></small>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->judul ?? '-')) !!}
+      </div>
     </div>
 
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">
         <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
       </label>
-      <textarea class="form-control bg-light" rows="3" maxlength="255" readonly>{{ $item->keterangan ?? '-' }}</textarea>
-      <small class="text-muted"></small>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->keterangan ?? '-')) !!}
+      </div>
     </div>
   </div>
 
@@ -230,16 +231,18 @@ th {
       <label class="form-label fw-bold">
         <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
       </label>
-      <textarea class="form-control bg-light" rows="3" maxlength="255" readonly>{{ $item->infolanjut ?? '-' }}</textarea>
-      <small class="text-muted"></small>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->infolanjut ?? '-')) !!}
+      </div>
     </div>
 
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">
         <i class="bi bi-file-text text-secondary me-1"></i> Paragraf 1
       </label>
-      <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan1 ?? '-' }}</textarea>
-      <small class="text-muted"></small>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan1 ?? '-')) !!}
+      </div>
     </div>
   </div>
 
@@ -247,14 +250,16 @@ th {
   <div class="row">
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 2</label>
-      <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan2 ?? '-' }}</textarea>
-      <small class="text-muted"></small>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan2 ?? '-')) !!}
+      </div>
     </div>
 
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 3</label>
-      <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan3 ?? '-' }}</textarea>
-      <small class="text-muted"></small>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan3 ?? '-')) !!}
+      </div>
     </div>
   </div>
 
@@ -262,14 +267,16 @@ th {
   <div class="row">
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 4</label>
-      <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan4 ?? '-' }}</textarea>
-      <small class="text-muted"></small>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan4 ?? '-')) !!}
+      </div>
     </div>
 
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 5</label>
-      <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan5 ?? '-' }}</textarea>
-      <small class="text-muted"></small>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan5 ?? '-')) !!}
+      </div>
     </div>
   </div>
 
@@ -277,14 +284,16 @@ th {
   <div class="row">
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 6</label>
-      <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan6 ?? '-' }}</textarea>
-      <small class="text-muted"></small>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan6 ?? '-')) !!}
+      </div>
     </div>
 
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">Paragraf 7</label>
-      <textarea class="form-control bg-light" rows="6" maxlength="255" readonly>{{ $item->cadangan7 ?? '-' }}</textarea>
-      <small class="text-muted"></small>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan7 ?? '-')) !!}
+      </div>
     </div>
   </div>
 </div>
