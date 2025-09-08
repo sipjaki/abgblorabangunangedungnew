@@ -806,8 +806,8 @@ public function beartikelcreatenew(Request $request)
     // Validasi data input
     $validated = $request->validate([
         // 'user_id'    => 'required|string',
-        'cadangan1'  => 'required|string|max:500', // Judul
-        'cadangan2'  => 'required|string',         // Keterangan
+        'cadangan1'  => 'nullable|string|max:500', // Judul
+        'cadangan2'  => 'nullable|string',         // Keterangan
         'cadangan3'  => 'nullable|file|max:15360', // Berkas (15 MB)
         'cadangan4'  => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15360', // Foto 1
         'cadangan5'  => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15360', // Foto 2
