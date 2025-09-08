@@ -2567,31 +2567,31 @@ public function bedatabgstrukrrusakupdatefotonew(Request $request, $id)
     ]);
 
     $fields = ['struktur_bawah', 'struktur_atas', 'genteng', 'rangka_atap', 'pintu', 'jendela', 'balok', 'kolom'];
-
-    foreach ($fields as $field) {
-        if ($request->hasFile($field)) {
-            // Hapus file lama kalau ada
-            if ($dataStruktur->$field && file_exists(base_path($dataStruktur->$field))) {
-                unlink(base_path($dataStruktur->$field));
-            }
-
-            // Tentukan folder penyimpanan di root project/update/doktingkarkerusakan/{id_kepemilikan}
-            $folderPath = base_path('update/doktingkarkerusakan/' . $kepemilikanId);
-
-            // Bikin folder kalau belum ada
-            if (!file_exists($folderPath)) {
-                mkdir($folderPath, 0777, true);
-            }
-
-            // Simpan file
-            $file = $request->file($field);
-            $filename = time() . '_' . $field . '.' . $file->getClientOriginalExtension();
-            $file->move($folderPath, $filename);
-
-            // Simpan path relatif ke DB
-            $dataStruktur->$field = 'update/doktingkarkerusakan/' . $kepemilikanId . '/' . $filename;
+foreach ($fields as $field) {
+    if ($request->hasFile($field)) {
+        // Hapus file lama kalau ada
+        if ($dataStruktur->$field && file_exists(public_path($dataStruktur->$field))) {
+            unlink(public_path($dataStruktur->$field));
         }
+
+        // Tentukan folder penyimpanan di public/update/doktingkarkerusakan/{id_kepemilikan}
+        $folderPath = public_path('update/doktingkarkerusakan/' . $kepemilikanId);
+
+        // Bikin folder kalau belum ada
+        if (!file_exists($folderPath)) {
+            mkdir($folderPath, 0777, true);
+        }
+
+        // Simpan file
+        $file = $request->file($field);
+        $filename = time() . '_' . $field . '.' . $file->getClientOriginalExtension();
+        $file->move($folderPath, $filename);
+
+        // Simpan path relatif ke DB (biar bisa langsung dipanggil pakai asset())
+        $dataStruktur->$field = 'update/doktingkarkerusakan/' . $kepemilikanId . '/' . $filename;
     }
+}
+
 
     $dataStruktur->save();
 
