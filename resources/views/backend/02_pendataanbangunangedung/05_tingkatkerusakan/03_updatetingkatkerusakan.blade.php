@@ -393,7 +393,7 @@ th {
 
                 <div class="row">
 
-                  <div class="col-md-6">
+                  <div class="col-md-12">
     <div class="mb-3">
         <label class="form-label"><i class="bi bi-bricks text-primary me-1"></i> Pondasi</label>
         <input type="text" name="pondasi" class="form-control @error('pondasi') is-invalid @enderror" value="{{ $datastruktur->pondasi ?? old('pondasi') }}">
