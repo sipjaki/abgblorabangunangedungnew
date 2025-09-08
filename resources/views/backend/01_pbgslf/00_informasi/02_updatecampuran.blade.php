@@ -274,7 +274,7 @@ th {
             {{-- Contoh Berkas 4 --}}
             <div class="col-md-6 mb-3">
                 <label class="form-label" for="berkas">
-                    <i class="bi bi-file-earmark-pdf text-danger me-2"></i> Upload Berkas 4 (PDF/Gambar)
+                    <i class="bi bi-file-earmark-pdf text-danger me-2"></i> Upload Berkas | Maksimal 15 MB (PDF/Gambar)
                 </label>
                 <input type="file" id="berkas" name="berkas"
                        accept="application/pdf,image/*"

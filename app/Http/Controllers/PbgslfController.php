@@ -3982,7 +3982,7 @@ public function updatefungsicampurannew(Request $request, $id)
     // Validasi input
     $request->validate([
         'judul'      => 'nullable|string|max:255',
-        'berkas'     => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'berkas'     => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:15048',
         'keterangan' => 'nullable|string',
         'infolanjut' => 'nullable|string',
 
