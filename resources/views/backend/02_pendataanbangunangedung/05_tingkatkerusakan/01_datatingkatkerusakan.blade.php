@@ -693,7 +693,7 @@ th {
                 </p>
             </a>
 
-            <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->databgkepemilikan_id }}">
+            <a href="/bedatabgstrukrrusakupdatefoto/{{ $pemilik->databgkepemilikan_id }}">
                 <p class="button-berkas">
                     <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
                     Perbaikan Foto Kerusakan ?

@@ -2412,7 +2412,7 @@ public function bedatabgstrukrrusakupdate($id)
     $databgkepemilikan = databgkepemilikan::findOrFail($id);
 
     // Child 1 = data struktur bangunan
-    $datakerusakan = databgstrukturbangunan::where('databgkepemilikan_id', $id)->first();
+    // $datakerusakan = databgstrukturbangunan::where('databgkepemilikan_id', $id)->first();
 
     // Child 2 = data tingkat kerusakan
     $datastruktur = databgtingkatkerusahan::where('databgkepemilikan_id', $id)->first();
@@ -2426,8 +2426,29 @@ public function bedatabgstrukrrusakupdate($id)
         'title'        => 'Perbaikan Data Struktur & Tingkat Kerusakan Bangunan Gedung',
         'data'         => $databgkepemilikan, // parent
         'datastruktur' => $datastruktur,      // child struktur
-        'datakerusakan'=> $datakerusakan,     // child kerusakan
+        // 'datakerusakan'=> $datakerusakan,     // child kerusakan
         'user'         => Auth::user(),
+    ]);
+}
+
+public function bedatabgstrukrrusakupdatefoto($id)
+{
+    // Parent = kepemilikan
+    $databgkepemilikan = databgkepemilikan::findOrFail($id);
+
+    // Child = data struktur bangunan
+    $datakerusakan = databgstrukturbangunan::where('databgkepemilikan_id', $id)->first();
+
+    if (!$datakerusakan) {
+        return abort(404, 'Data struktur bangunan tidak ditemukan');
+    }
+
+    // Kirim ke view
+    return view('backend.02_pendataanbangunangedung.05_tingkatkerusakan.03_updatetingkatkerusakanfoto', [
+        'title'         => 'Perbaikan Dokumentasi Foto Tingkat Kerusakan Bangunan Gedung',
+        'data'          => $databgkepemilikan, // parent
+        'datakerusakan' => $datakerusakan,     // child
+        'user'          => Auth::user(),
     ]);
 }
 
