@@ -776,7 +776,7 @@ public function beartikel(Request $request)
         ]);
     }
 
-    return view('backend.99_databaseabg.00_berita.01_dataartikelblora', [
+    return view('backend.99_databaseabg.00_artikel.01_dataartikelblora', [
         'title' => 'Daftar Artikel Bangunan Gedung Kabupaten Blora',
         'data' => $data,
         'perPage' => $perPage,
