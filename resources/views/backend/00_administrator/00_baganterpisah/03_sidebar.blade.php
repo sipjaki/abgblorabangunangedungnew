@@ -423,7 +423,7 @@
 
             @canany(['dinas', 'pemohon'])
 
-            <li class="nav-header" style="color: white;">Dashboard Dinas</li>
+            <li class="nav-header" style="color: white;">Dashboard Bantek</li>
 
 
            <li class="nav-item has-treeview">
