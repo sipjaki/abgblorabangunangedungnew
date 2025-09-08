@@ -927,6 +927,8 @@ Route::delete('/beberitadelete/{id}', [DatabaseAbgController::class, 'beberitade
 Route::get('/beberitacreate', [DatabaseAbgController::class, 'beberitacreate'])->middleware('auth')->name('beberitacreate');
 Route::post('/beberitacreatenew', [DatabaseAbgController::class, 'beberitacreatenew'])->middleware('auth')->name('beberitacreatenew');
 
+Route::get('/beberitacreate/update/{id}', [DatabaseAbgController::class, 'beberitacreateupdate'])->middleware('auth')->name('beberitacreateupdate');
+
 
 Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beagendapelatihanabg'])->middleware('auth')->name('beagendapelatihanabg');
 

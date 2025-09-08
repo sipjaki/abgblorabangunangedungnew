@@ -581,6 +581,8 @@ public function beberitadelete($id)
     ]);
 }
 
+
+
 public function beberitacreatenew(Request $request)
 {
     // Validasi data input
@@ -647,6 +649,24 @@ public function beberitacreatenew(Request $request)
 
     session()->flash('create', 'Data berhasil disimpan.');
     return redirect()->route('beberita'); // Ganti dengan route index yang sesuai
+}
+
+public function beberitacreateupdate($id)
+{
+    $user = Auth::user();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    // Ambil data berita berdasarkan ID
+    $data = beritaabg::findOrFail($id);
+
+    return view('backend.99_databaseabg.00_berita.03_updateberita', [
+        'title' => 'Update Berita ABG Blora',
+        'user'  => $user,
+        'data'  => $data,
+    ]);
 }
 
 
