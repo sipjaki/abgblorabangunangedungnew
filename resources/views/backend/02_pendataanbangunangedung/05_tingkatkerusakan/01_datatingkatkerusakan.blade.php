@@ -685,12 +685,20 @@ th {
 
 
             {{-- Tombol Perbaikan Data --}}
-            {{-- <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->databgkepemilikan_id }}">
+
+            <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->databgkepemilikan_id }}">
                 <p class="button-berkas">
                     <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
-                    Perbaikan Data
+                    Perbaikan Informasi Kerusakan ?
                 </p>
-            </a> --}}
+            </a>
+
+            <a href="/bedatabgstrukrrusakupdate/{{ $pemilik->databgkepemilikan_id }}">
+                <p class="button-berkas">
+                    <i class="bi bi-pencil-square" style="margin-right: 6px; color: navy;"></i>
+                    Perbaikan Foto Kerusakan ?
+                </p>
+            </a>
 
                         {{-- Tombol Hapus --}}
                         <a href="javascript:void(0)" title="Delete"

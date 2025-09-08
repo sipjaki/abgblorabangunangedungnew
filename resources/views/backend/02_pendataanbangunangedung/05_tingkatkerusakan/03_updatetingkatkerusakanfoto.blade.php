@@ -421,6 +421,69 @@ th {
     </div>
 </div>
 
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-bricks text-primary me-1"></i> Foto Faktual Pondasi | Max 15 MB
+        </label>
+        <input
+            type="file"
+            name="struktur_bawah"
+            accept="image/*"
+            class="form-control @error('struktur_bawah') is-invalid @enderror"
+            onchange="previewStrukturBawah(event)">
+        @error('struktur_bawah')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        {{-- Foto Lama --}}
+        @if(isset($datakerusakan->struktur_bawah) && $datakerusakan->struktur_bawah)
+            <div class="mt-3 text-center">
+                <p class="fw-bold text-muted mb-1">Foto Faktual Lama</p>
+                @if(file_exists(public_path('storage/' . $datakerusakan->struktur_bawah)))
+                    <img
+                        src="{{ asset('storage/' . $datakerusakan->struktur_bawah) }}"
+                        alt="Foto Lama Struktur Bawah"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @else
+                    <img
+                        src="{{ asset($datakerusakan->struktur_bawah) }}"
+                        alt="Foto Lama Struktur Bawah"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @endif
+            </div>
+        @endif
+
+        {{-- Foto Baru (Preview Upload) --}}
+        <div class="mt-3 text-center">
+            <p class="fw-bold text-muted mb-1">Foto Faktual Baru</p>
+            <img
+                id="preview-struktur-bawah"
+                src="#"
+                alt="Preview Struktur Bawah"
+                class="img-thumbnail"
+                style="max-height: 200px; display:none; margin:auto;">
+        </div>
+    </div>
+</div>
+
+{{-- Script Preview --}}
+<script>
+function previewStrukturBawah(event) {
+    const imgPreview = document.getElementById('preview-struktur-bawah');
+    const file = event.target.files[0];
+    if (file) {
+        imgPreview.style.display = "block";
+        imgPreview.src = URL.createObjectURL(file);
+        imgPreview.onload = () => {
+            URL.revokeObjectURL(imgPreview.src);
+        }
+    }
+}
+</script>
+
                 </div>
 
                 <!-- ===================== BAGIAN 3 ===================== -->
@@ -460,6 +523,69 @@ th {
         </select>
     </div>
 </div>
+
+                 <div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-building text-success me-1"></i> Foto Faktual Struktur | Max 15 MB
+        </label>
+        <input
+            type="file"
+            name="struktur_atas"
+            accept="image/*"
+            class="form-control @error('struktur_atas') is-invalid @enderror"
+            onchange="previewStrukturAtas(event)">
+        @error('struktur_atas')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        {{-- Foto Lama --}}
+        @if(isset($datakerusakan->struktur_atas) && $datakerusakan->struktur_atas)
+            <div class="mt-3 text-center">
+                <p class="fw-bold text-muted mb-1">Foto Faktual Lama</p>
+                @if(file_exists(public_path('storage/' . $datakerusakan->struktur_atas)))
+                    <img
+                        src="{{ asset('storage/' . $datakerusakan->struktur_atas) }}"
+                        alt="Foto Lama Struktur Atas"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @else
+                    <img
+                        src="{{ asset($datakerusakan->struktur_atas) }}"
+                        alt="Foto Lama Struktur Atas"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @endif
+            </div>
+        @endif
+
+        {{-- Foto Baru --}}
+        <div class="mt-3 text-center">
+            <p class="fw-bold text-muted mb-1">Foto Faktual Baru</p>
+            <img
+                id="preview-struktur-atas"
+                src="#"
+                alt="Preview Struktur Atas"
+                class="img-thumbnail"
+                style="max-height: 200px; display:none; margin:auto;">
+        </div>
+    </div>
+</div>
+
+{{-- Script Preview --}}
+<script>
+function previewStrukturAtas(event) {
+    const imgPreview = document.getElementById('preview-struktur-atas');
+    const file = event.target.files[0];
+    if (file) {
+        imgPreview.style.display = "block";
+        imgPreview.src = URL.createObjectURL(file);
+        imgPreview.onload = () => {
+            URL.revokeObjectURL(imgPreview.src);
+        }
+    }
+}
+</script>
 
 
                 </div>
@@ -502,6 +628,68 @@ th {
     </div>
 </div>
 
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-house-door text-warning me-1"></i> Foto Faktual Atap | Max 15 MB
+        </label>
+        <input
+            type="file"
+            name="genteng"
+            accept="image/*"
+            class="form-control @error('genteng') is-invalid @enderror"
+            onchange="previewGenteng(event)">
+        @error('genteng')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        {{-- Foto Lama --}}
+        @if(isset($datakerusakan->genteng) && $datakerusakan->genteng)
+            <div class="mt-3 text-center">
+                <p class="fw-bold text-muted mb-1">Foto Faktual Lama</p>
+                @if(file_exists(public_path('storage/' . $datakerusakan->genteng)))
+                    <img
+                        src="{{ asset('storage/' . $datakerusakan->genteng) }}"
+                        alt="Foto Lama Atap"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @else
+                    <img
+                        src="{{ asset($datakerusakan->genteng) }}"
+                        alt="Foto Lama Atap"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @endif
+            </div>
+        @endif
+
+        {{-- Foto Baru --}}
+        <div class="mt-3 text-center">
+            <p class="fw-bold text-muted mb-1">Foto Faktual Baru</p>
+            <img
+                id="preview-genteng"
+                src="#"
+                alt="Preview Atap"
+                class="img-thumbnail"
+                style="max-height: 200px; display:none; margin:auto;">
+        </div>
+    </div>
+</div>
+
+{{-- Script Preview --}}
+<script>
+function previewGenteng(event) {
+    const imgPreview = document.getElementById('preview-genteng');
+    const file = event.target.files[0];
+    if (file) {
+        imgPreview.style.display = "block";
+        imgPreview.src = URL.createObjectURL(file);
+        imgPreview.onload = () => {
+            URL.revokeObjectURL(imgPreview.src);
+        }
+    }
+}
+</script>
 
                 </div>
 
@@ -544,6 +732,68 @@ th {
     </div>
 </div>
 
+                    <div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-house-gear text-danger me-1"></i> Foto Faktual Lantai | Max 15 MB
+        </label>
+        <input
+            type="file"
+            name="rangka_atap"
+            accept="image/*"
+            class="form-control @error('rangka_atap') is-invalid @enderror"
+            onchange="previewRangkaAtap(event)">
+        @error('rangka_atap')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        {{-- Foto Lama --}}
+        @if(isset($datakerusakan->rangka_atap) && $datakerusakan->rangka_atap)
+            <div class="mt-3 text-center">
+                <p class="fw-bold text-muted mb-1">Foto Faktual Lama</p>
+                @if(file_exists(public_path('storage/' . $datakerusakan->rangka_atap)))
+                    <img
+                        src="{{ asset('storage/' . $datakerusakan->rangka_atap) }}"
+                        alt="Foto Lama Rangka Atap"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @else
+                    <img
+                        src="{{ asset($datakerusakan->rangka_atap) }}"
+                        alt="Foto Lama Rangka Atap"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @endif
+            </div>
+        @endif
+
+        {{-- Foto Baru --}}
+        <div class="mt-3 text-center">
+            <p class="fw-bold text-muted mb-1">Foto Faktual Baru</p>
+            <img
+                id="preview-rangka-atap"
+                src="#"
+                alt="Preview Rangka Atap"
+                class="img-thumbnail"
+                style="max-height: 200px; display:none; margin:auto;">
+        </div>
+    </div>
+</div>
+
+{{-- Script Preview --}}
+<script>
+function previewRangkaAtap(event) {
+    const imgPreview = document.getElementById('preview-rangka-atap');
+    const file = event.target.files[0];
+    if (file) {
+        imgPreview.style.display = "block";
+        imgPreview.src = URL.createObjectURL(file);
+        imgPreview.onload = () => {
+            URL.revokeObjectURL(imgPreview.src);
+        }
+    }
+}
+</script>
 
                 </div>
 
@@ -588,6 +838,68 @@ th {
     </div>
 </div>
 
+                    <div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-image text-secondary me-1"></i> Foto Faktual Dinding | Max 15 MB
+        </label>
+        <input
+            type="file"
+            name="pintu"
+            accept="image/*"
+            class="form-control @error('pintu') is-invalid @enderror"
+            onchange="previewCadangan1(event)">
+        @error('pintu')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        {{-- Foto Lama --}}
+        @if(isset($datakerusakan->pintu) && $datakerusakan->pintu)
+            <div class="mt-3 text-center">
+                <p class="fw-bold text-muted mb-1">Foto Faktual Lama</p>
+                @if(file_exists(public_path('storage/' . $datakerusakan->pintu)))
+                    <img
+                        src="{{ asset('storage/' . $datakerusakan->pintu) }}"
+                        alt="Foto Lama Dinding"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @else
+                    <img
+                        src="{{ asset($datakerusakan->pintu) }}"
+                        alt="Foto Lama Dinding"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @endif
+            </div>
+        @endif
+
+        {{-- Foto Baru --}}
+        <div class="mt-3 text-center">
+            <p class="fw-bold text-muted mb-1">Foto Faktual Baru</p>
+            <img
+                id="preview-cadangan1"
+                src="#"
+                alt="Preview Dinding"
+                class="img-thumbnail"
+                style="max-height: 200px; display:none; margin:auto;">
+        </div>
+    </div>
+</div>
+
+{{-- Script Preview --}}
+<script>
+function previewCadangan1(event) {
+    const imgPreview = document.getElementById('preview-cadangan1');
+    const file = event.target.files[0];
+    if (file) {
+        imgPreview.style.display = "block";
+        imgPreview.src = URL.createObjectURL(file);
+        imgPreview.onload = () => {
+            URL.revokeObjectURL(imgPreview.src);
+        }
+    }
+}
+</script>
 
                 </div>
 
@@ -629,6 +941,68 @@ th {
     </div>
 </div>
 
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-image text-success me-1"></i> Foto Faktual Plafond | Max 15 MB
+        </label>
+        <input
+            type="file"
+            name="jendela"
+            accept="image/*"
+            class="form-control @error('jendela') is-invalid @enderror"
+            onchange="previewCadangan2(event)">
+        @error('jendela')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        {{-- Foto Lama --}}
+        @if(isset($datakerusakan->jendela) && $datakerusakan->jendela)
+            <div class="mt-3 text-center">
+                <p class="fw-bold text-muted mb-1">Foto Faktual Lama</p>
+                @if(file_exists(public_path('storage/' . $datakerusakan->jendela)))
+                    <img
+                        src="{{ asset('storage/' . $datakerusakan->jendela) }}"
+                        alt="Foto Lama Plafond"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @else
+                    <img
+                        src="{{ asset($datakerusakan->jendela) }}"
+                        alt="Foto Lama Plafond"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @endif
+            </div>
+        @endif
+
+        {{-- Foto Baru --}}
+        <div class="mt-3 text-center">
+            <p class="fw-bold text-muted mb-1">Foto Faktual Baru</p>
+            <img
+                id="preview-cadangan2"
+                src="#"
+                alt="Preview Plafond"
+                class="img-thumbnail"
+                style="max-height: 200px; display:none; margin:auto;">
+        </div>
+    </div>
+</div>
+
+{{-- Script Preview --}}
+<script>
+function previewCadangan2(event) {
+    const imgPreview = document.getElementById('preview-cadangan2');
+    const file = event.target.files[0];
+    if (file) {
+        imgPreview.style.display = "block";
+        imgPreview.src = URL.createObjectURL(file);
+        imgPreview.onload = () => {
+            URL.revokeObjectURL(imgPreview.src);
+        }
+    }
+}
+</script>
                 </div>
 
                 <!-- ===================== BAGIAN 8 ===================== -->
@@ -668,6 +1042,69 @@ th {
         </select>
     </div>
 </div>
+
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-diagram-3 text-info me-1"></i> Foto Faktual Utilitas | Max 15 MB
+        </label>
+        <input
+            type="file"
+            name="balok"
+            accept="image/*"
+            class="form-control @error('balok') is-invalid @enderror"
+            onchange="previewBalok(event)">
+        @error('balok')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        {{-- Foto Lama --}}
+        @if(isset($datakerusakan->balok) && $datakerusakan->balok)
+            <div class="mt-3 text-center">
+                <p class="fw-bold text-muted mb-1">Foto Faktual Lama</p>
+                @if(file_exists(public_path('storage/' . $datakerusakan->balok)))
+                    <img
+                        src="{{ asset('storage/' . $datakerusakan->balok) }}"
+                        alt="Foto Lama Balok"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @else
+                    <img
+                        src="{{ asset($datakerusakan->balok) }}"
+                        alt="Foto Lama Balok"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @endif
+            </div>
+        @endif
+
+        {{-- Foto Baru --}}
+        <div class="mt-3 text-center">
+            <p class="fw-bold text-muted mb-1">Foto Faktual Baru</p>
+            <img
+                id="preview-balok"
+                src="#"
+                alt="Preview Balok"
+                class="img-thumbnail"
+                style="max-height: 200px; display:none; margin:auto;">
+        </div>
+    </div>
+</div>
+
+{{-- Script Preview --}}
+<script>
+function previewBalok(event) {
+    const imgPreview = document.getElementById('preview-balok');
+    const file = event.target.files[0];
+    if (file) {
+        imgPreview.style.display = "block";
+        imgPreview.src = URL.createObjectURL(file);
+        imgPreview.onload = () => {
+            URL.revokeObjectURL(imgPreview.src);
+        }
+    }
+}
+</script>
 
                 </div>
 
@@ -711,6 +1148,68 @@ th {
     </div>
 </div>
 
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-columns-gap text-warning me-1"></i> Foto Faktual Finishing | Max 15 MB
+        </label>
+        <input
+            type="file"
+            name="kolom"
+            accept="image/*"
+            class="form-control @error('kolom') is-invalid @enderror"
+            onchange="previewKolom(event)">
+        @error('kolom')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        {{-- Foto Lama --}}
+        @if(isset($datakerusakan->kolom) && $datakerusakan->kolom)
+            <div class="mt-3 text-center">
+                <p class="fw-bold text-muted mb-1">Foto Faktual Lama</p>
+                @if(file_exists(public_path('storage/' . $datakerusakan->kolom)))
+                    <img
+                        src="{{ asset('storage/' . $datakerusakan->kolom) }}"
+                        alt="Foto Lama Kolom"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @else
+                    <img
+                        src="{{ asset($datakerusakan->kolom) }}"
+                        alt="Foto Lama Kolom"
+                        class="img-thumbnail"
+                        style="max-height: 200px; display:block; margin:auto;">
+                @endif
+            </div>
+        @endif
+
+        {{-- Foto Baru --}}
+        <div class="mt-3 text-center">
+            <p class="fw-bold text-muted mb-1">Foto Faktual Baru</p>
+            <img
+                id="preview-kolom"
+                src="#"
+                alt="Preview Kolom"
+                class="img-thumbnail"
+                style="max-height: 200px; display:none; margin:auto;">
+        </div>
+    </div>
+</div>
+
+{{-- Script Preview --}}
+<script>
+function previewKolom(event) {
+    const imgPreview = document.getElementById('preview-kolom');
+    const file = event.target.files[0];
+    if (file) {
+        imgPreview.style.display = "block";
+        imgPreview.src = URL.createObjectURL(file);
+        imgPreview.onload = () => {
+            URL.revokeObjectURL(imgPreview.src);
+        }
+    }
+}
+</script>
 
                 </div>
 
