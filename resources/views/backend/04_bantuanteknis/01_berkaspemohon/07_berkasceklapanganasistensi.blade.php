@@ -252,8 +252,11 @@ th {
         @elseif($item->foto1)
             <img src="{{ asset($item->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @else
-            <p style="font-size: 11px;">Tidak Ada Foto 1!</p>
-        @endif
+    <div class="button-berkas p-2 text-center">
+        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+    </div>
+@endif
+
     </div>
 </td>
 
@@ -263,9 +266,12 @@ th {
             <img src="{{ asset('storage/' . $item->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @elseif($item->foto2)
             <img src="{{ asset($item->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 2!</p>
-        @endif
+       @else
+    <div class="button-berkas p-2 text-center">
+        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+    </div>
+@endif
+
     </div>
 </td>
 
@@ -275,9 +281,12 @@ th {
             <img src="{{ asset('storage/' . $item->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @elseif($item->foto3)
             <img src="{{ asset($item->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 3!</p>
-        @endif
+     @else
+    <div class="button-berkas p-2 text-center">
+        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+    </div>
+@endif
+
     </div>
 </td>
 
@@ -287,9 +296,12 @@ th {
             <img src="{{ asset('storage/' . $item->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @elseif($item->foto4)
             <img src="{{ asset($item->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 4!</p>
-        @endif
+     @else
+    <div class="button-berkas p-2 text-center">
+        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+    </div>
+@endif
+
     </div>
 </td>
 
@@ -300,8 +312,11 @@ th {
         @elseif($item->foto5)
             <img src="{{ asset($item->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @else
-            <p style="font-size: 11px;">Tidak Ada Foto 5!</p>
-        @endif
+    <div class="button-berkas p-2 text-center">
+        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+    </div>
+@endif
+
     </div>
 </td>
 
@@ -311,9 +326,12 @@ th {
             <img src="{{ asset('storage/' . $item->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
         @elseif($item->foto6)
             <img src="{{ asset($item->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 6!</p>
-        @endif
+       @else
+    <div class="button-berkas p-2 text-center">
+        <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+    </div>
+@endif
+
     </div>
 </td>
 
@@ -326,11 +344,11 @@ th {
             <a href="/bebujkkonstruksi/update/{{ $item->id }}" class="btn btn-sm btn-warning me-2" title="Ubah Data">
                 <i class="bi bi-pencil-square"></i>
             </a> --}}
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
+            <a href="javascript:void(0)" class="button-merah" title="Hapus Data"
             data-bs-toggle="modal" data-bs-target="#deleteModal"
             data-id="{{ $item->id }}"
             onclick="setDeleteUrl(this)">
-            <i class="bi bi-trash"></i>
+            <i class="bi bi-trash"></i>Hapus
         </a>
 
         {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
