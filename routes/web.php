@@ -931,6 +931,9 @@ Route::get('/beberitacreate/update/{id}', [DatabaseAbgController::class, 'beberi
 Route::put('/beberitacreate/updatenew/{id}', [DatabaseAbgController::class, 'beberitacreateupdatenew'])->middleware('auth')->name('beberitacreateupdatenew');
 
 
+// MENU ARTIKEL BANGUNAN GEDUNG
+Route::get('/beartikel', [DatabaseAbgController::class, 'beartikel'])->middleware('auth')->name('beartikel');
+
 Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beagendapelatihanabg'])->middleware('auth')->name('beagendapelatihanabg');
 
 Route::get('/resagendapelatihan/{id}', [AgendapelatihanabgController::class, 'resagendapelatihan'])->middleware('auth');

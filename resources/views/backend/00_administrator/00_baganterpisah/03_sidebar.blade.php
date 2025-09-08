@@ -1745,7 +1745,7 @@
     <i class="bi bi-building nav-icon" style="color: white; font-size: 16px;"></i>
 
     <p style="color: white; margin-left: 8px;">
-        Berita
+        Berita & Artikel
         <i class="nav-arrow bi bi-chevron-right" style="margin-left: auto;"></i>
     </p>
 </a>
@@ -1760,7 +1760,7 @@
     </li>
 
     <li class="nav-item">
-        <a href="/bekrkindex" class="nav-link">
+        <a href="/beartikel" class="nav-link">
             <i class="bi bi-card-list nav-icon" style="color: white;"></i>
             <p style="color: white; margin-left: 8px;">Artikel</p>
         </a>

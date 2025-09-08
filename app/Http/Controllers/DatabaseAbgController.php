@@ -7,6 +7,7 @@ use App\Models\asosiasipengusaha;
 use App\Models\bantuangambarinfo;
 use App\Models\bantuanteknis;
 use App\Models\beritaabg;
+use App\Models\cadangan1;
 use App\Models\fasilitatorpbg;
 use App\Models\fungsibangunangambar;
 use App\Models\fungsibangunanpbg;
@@ -745,6 +746,43 @@ public function beberitacreateupdatenew(Request $request, $id)
     return redirect()->route('beberita'); // Ganti dengan route index yang sesuai
 }
 
+
+
+public function beartikel(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    $query = cadangan1::query();
+
+    if ($search) {
+        $query->where(function($q) use ($search) {
+            $q->where('cadangan1', 'LIKE', "%{$search}%")
+              ->orWhere('cadangan2', 'LIKE', "%{$search}%")
+              ->orWhere('cadangan3', 'LIKE', "%{$search}%")
+              ->orWhere('cadangan4', 'LIKE', "%{$search}%")
+              ->orWhere('cadangan5', 'LIKE', "%{$search}%")
+              ->orWhere('cadangan6', 'LIKE', "%{$search}%")
+              ->orWhere('cadangan7', 'LIKE', "%{$search}%");
+        });
+    }
+
+    // kalau mau tetap urutkan pakai created_at, karena tanggal sudah diganti
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.13_daftarakun.01_semuaakun.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.99_databaseabg.00_berita.01_dataartikelblora', [
+        'title' => 'Daftar Artikel Bangunan Gedung Kabupaten Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+    ]);
+}
 
 }
 
