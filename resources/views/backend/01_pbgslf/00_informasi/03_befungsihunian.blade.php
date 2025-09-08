@@ -167,7 +167,7 @@ th {
 <br>
                 @foreach ($data as $item)
 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-    <a href="{{ route('bepbghunianupdate', ['id' => $item->id]) }}" class="button-baru" style="text-decoration: none;">
+    <a href="{{ route('updatefungsicampuran', ['id' => $item->id]) }}" class="button-baru" style="text-decoration: none;">
         <i class="bi bi-arrow-repeat"></i> Update
     </a>
 </div>
@@ -182,32 +182,6 @@ th {
       <i class="bi bi-info-circle me-2"></i> {{ $title }}
     </div>
 
-    <div class="card-body">
-      {{-- Row 1: Judul, Keterangan, Info Lanjut --}}
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <label class="form-label fw-bold">
-            <i class="bi bi-card-heading text-primary me-1"></i> Judul
-          </label>
-          <div class="form-control bg-light">{{ $item->judul ?? '-' }}</div>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label class="form-label fw-bold">
-            <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
-          </label>
-          <div class="form-control bg-light">{{ $item->keterangan ?? '-' }}</div>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label class="form-label fw-bold">
-            <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
-          </label>
-          <div class="form-control bg-light">{{ $item->infolanjut ?? '-' }}</div>
-        </div>
-      </div>
-
-      {{-- Row 2: Berkas (Poster Gambar / File) --}}
       <div class="mb-3">
         <label class="form-label fw-bold d-block mb-2">
           <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
@@ -229,7 +203,102 @@ th {
           <div class="form-control bg-light">Belum diunggah</div>
         @endif
       </div>
+<div class="card-body">
+  {{-- Row 1: Judul & Keterangan --}}
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">
+        <i class="bi bi-card-heading text-primary me-1"></i> Judul
+      </label>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->judul ?? '-')) !!}
+      </div>
     </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">
+        <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
+      </label>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->keterangan ?? '-')) !!}
+      </div>
+    </div>
+  </div>
+
+  {{-- Row 2: Info Lanjut & Paragraf 1 --}}
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">
+        <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
+      </label>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->infolanjut ?? '-')) !!}
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">
+        <i class="bi bi-file-text text-secondary me-1"></i> Paragraf 1
+      </label>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan1 ?? '-')) !!}
+      </div>
+    </div>
+  </div>
+
+  {{-- Row 3: Paragraf 2 & Paragraf 3 --}}
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 2</label>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan2 ?? '-')) !!}
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 3</label>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan3 ?? '-')) !!}
+      </div>
+    </div>
+  </div>
+
+  {{-- Row 4: Paragraf 4 & Paragraf 5 --}}
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 4</label>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan4 ?? '-')) !!}
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 5</label>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan5 ?? '-')) !!}
+      </div>
+    </div>
+  </div>
+
+  {{-- Row 5: Paragraf 6 & Paragraf 7 --}}
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 6</label>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan6 ?? '-')) !!}
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label fw-bold">Paragraf 7</label>
+      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
+        {!! nl2br(e($item->cadangan7 ?? '-')) !!}
+      </div>
+    </div>
+  </div>
+</div>
+
+
   </div>
 @endforeach
 
