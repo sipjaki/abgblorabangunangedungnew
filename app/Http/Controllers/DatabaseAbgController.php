@@ -794,7 +794,7 @@ public function beartikelcreate()
         return redirect()->route('login');
     }
 
-    return view('backend.99_databaseabg.00_berita.02_buatartikel', [
+    return view('backend.99_databaseabg.00_artikel.02_buatartikel', [
         'title' => 'Buat Artikel Bangunan Gedung Kab Blora',
         'user'  => $user,
         // 'dataakun'  => $dataakun
