@@ -200,59 +200,95 @@ th {
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="judul">
-            <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul
-        </label>
-        <input
-            type="text"
-            id="judul"
-            name="judul"
-            value="{{ old('judul', $data->judul ?? '') }}"
-            class="form-control @error('judul') is-invalid @enderror"
-            placeholder="Masukkan Judul"
-        />
-        @error('judul')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+<div class="row">
+    {{-- Judul --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="judul">
+                <i class="bi bi-type" style="margin-right: 8px; color: navy;"></i> Judul
+            </label>
+            <input
+                type="text"
+                id="judul"
+                name="judul"
+                value="{{ old('judul', $data->judul ?? '') }}"
+                class="form-control @error('judul') is-invalid @enderror"
+                placeholder="Masukkan Judul"
+                maxlength="255"
+            />
+            <small class="text-muted">Maksimal 255 karakter</small>
+            @error('judul')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    {{-- Keterangan --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="keterangan">
+                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Keterangan
+            </label>
+            <textarea
+                id="keterangan"
+                name="keterangan"
+                class="form-control @error('keterangan') is-invalid @enderror"
+                rows="5"
+                maxlength="255"
+                placeholder="Masukkan Keterangan"
+            >{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
+            <small class="text-muted">Maksimal 255 karakter</small>
+            @error('keterangan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    {{-- Info Lanjut --}}
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label" for="infolanjut">
+                <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Info Lanjut
+            </label>
+            <textarea
+                id="infolanjut"
+                name="infolanjut"
+                class="form-control @error('infolanjut') is-invalid @enderror"
+                rows="5"
+                maxlength="255"
+                placeholder="Masukkan Info Tambahan"
+            >{{ old('infolanjut', $data->infolanjut ?? '') }}</textarea>
+            <small class="text-muted">Maksimal 255 karakter</small>
+            @error('infolanjut')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
     </div>
 </div>
 
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="keterangan">
-            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Keterangan
-        </label>
-        <textarea
-            id="keterangan"
-            name="keterangan"
-            class="form-control @error('keterangan') is-invalid @enderror"
-            rows="5"
-            placeholder="Masukkan Keterangan"
-        >{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
-        @error('keterangan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="infolanjut">
-            <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Info Lanjut
-        </label>
-        <textarea
-            id="infolanjut"
-            name="infolanjut"
-            class="form-control @error('infolanjut') is-invalid @enderror"
-            rows="5"
-            placeholder="Masukkan Info Tambahan"
-        >{{ old('infolanjut', $data->infolanjut ?? '') }}</textarea>
-        @error('infolanjut')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+{{-- Cadangan Paragraf 1–7 --}}
+<div class="row">
+    @for ($i = 1; $i <= 7; $i++)
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label" for="cadangan{{ $i }}">
+                    <i class="bi bi-file-text" style="margin-right: 8px; color: navy;"></i> Paragraf {{ $i }}
+                </label>
+                <textarea
+                    id="cadangan{{ $i }}"
+                    name="cadangan{{ $i }}"
+                    class="form-control @error('cadangan'.$i) is-invalid @enderror"
+                    rows="5"
+                    maxlength="255"
+                    placeholder="Masukkan Paragraf {{ $i }}"
+                >{{ old('cadangan'.$i, $data->{'cadangan'.$i} ?? '') }}</textarea>
+                <small class="text-muted">Maksimal 255 karakter</small>
+                @error('cadangan'.$i)
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+    @endfor
 </div>
 
 <div class="text-center">
