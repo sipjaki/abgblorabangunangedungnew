@@ -205,33 +205,50 @@ th {
       </div>
 
 
-    <div class="card-body">
-      {{-- Row 1: Judul, Keterangan, Info Lanjut --}}
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <label class="form-label fw-bold">
-            <i class="bi bi-card-heading text-primary me-1"></i> Judul
-          </label>
-          <div class="form-control bg-light">{{ $item->judul ?? '-' }}</div>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label class="form-label fw-bold">
-            <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
-          </label>
-          <div class="form-control bg-light">{{ $item->keterangan ?? '-' }}</div>
-        </div>
-
-        <div class="col-md-4 mb-3">
-          <label class="form-label fw-bold">
-            <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
-          </label>
-          <div class="form-control bg-light">{{ $item->infolanjut ?? '-' }}</div>
-        </div>
-      </div>
-
-      {{-- Row 2: Berkas (Poster Gambar / File) --}}
+      <div class="card-body">
+  {{-- Row 1: Judul, Keterangan, Info Lanjut --}}
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <label class="form-label fw-bold">
+        <i class="bi bi-card-heading text-primary me-1"></i> Judul
+      </label>
+      <textarea class="form-control bg-light" rows="2" maxlength="255" readonly>{{ $item->judul ?? '-' }}</textarea>
+      <small class="text-muted">Maksimal 255 karakter</small>
     </div>
+
+    <div class="col-md-4 mb-3">
+      <label class="form-label fw-bold">
+        <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
+      </label>
+      <textarea class="form-control bg-light" rows="3" maxlength="255" readonly>{{ $item->keterangan ?? '-' }}</textarea>
+      <small class="text-muted">Maksimal 255 karakter</small>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <label class="form-label fw-bold">
+        <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
+      </label>
+      <textarea class="form-control bg-light" rows="3" maxlength="255" readonly>{{ $item->infolanjut ?? '-' }}</textarea>
+      <small class="text-muted">Maksimal 255 karakter</small>
+    </div>
+  </div>
+
+  {{-- Row 2: Cadangan Fields --}}
+  <div class="row">
+    @for ($i = 1; $i <= 7; $i++)
+      <div class="col-md-4 mb-3">
+        <label class="form-label fw-bold">
+          <i class="bi bi-file-text text-secondary me-1"></i> Paragraf {{ $i }}
+        </label>
+        <textarea class="form-control bg-light" rows="2" maxlength="255" readonly>
+{{ $item->{'cadangan'.$i} ?? '-' }}
+</textarea>
+        <small class="text-muted">Maksimal 255 karakter</small>
+      </div>
+    @endfor
+  </div>
+</div>
+
   </div>
 @endforeach
 

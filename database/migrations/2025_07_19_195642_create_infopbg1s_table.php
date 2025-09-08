@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('infopbg1s', function (Blueprint $table) {
             $table->id();
-            $table->string('judul')->nullable();
             $table->string('berkas')->nullable();
+            $table->string('judul')->nullable();
             $table->text('keterangan')->nullable();
             $table->text('infolanjut')->nullable();
 
