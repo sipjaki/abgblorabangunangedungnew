@@ -935,7 +935,7 @@ Route::put('/beberitacreate/updatenew/{id}', [DatabaseAbgController::class, 'beb
 Route::get('/beartikel', [DatabaseAbgController::class, 'beartikel'])->middleware('auth')->name('beartikel');
 
 Route::get('/beartikelcreate', [DatabaseAbgController::class, 'beartikelcreate'])->middleware('auth')->name('beartikelcreate');
-Route::post('/beberitacreatenew', [DatabaseAbgController::class, 'beberitacreatenew'])->middleware('auth')->name('beberitacreatenew');
+Route::post('/beartikelcreatenew', [DatabaseAbgController::class, 'beartikelcreatenew'])->middleware('auth')->name('beartikelcreatenew');
 
 
 

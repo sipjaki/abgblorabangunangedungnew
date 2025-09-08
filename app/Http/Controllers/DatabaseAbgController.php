@@ -800,5 +800,77 @@ public function beartikelcreate()
         // 'dataakun'  => $dataakun
     ]);
 }
+
+public function beartikelcreatenew(Request $request)
+{
+    // Validasi data input
+    $validated = $request->validate([
+        // 'user_id'    => 'required|string',
+        'cadangan1'  => 'required|string|max:500', // Judul
+        'cadangan2'  => 'required|string',         // Keterangan
+        'cadangan3'  => 'nullable|file|max:15360', // Berkas (15 MB)
+        'cadangan4'  => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15360', // Foto 1
+        'cadangan5'  => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15360', // Foto 2
+        'cadangan6'  => 'nullable|image|mimes:jpeg,png,jpg,gif|max:15360', // Foto 3
+    ], [
+        // 'user_id.required'   => 'User wajib diisi.',
+        'cadangan1.required' => 'Judul wajib diisi.',
+        'cadangan2.required' => 'Keterangan wajib diisi.',
+        'cadangan3.file'     => 'Berkas harus berupa file yang valid.',
+        'cadangan4.image'    => 'Foto 1 harus berupa gambar.',
+        'cadangan5.image'    => 'Foto 2 harus berupa gambar.',
+        'cadangan6.image'    => 'Foto 3 harus berupa gambar.',
+    ]);
+
+    $data = new cadangan1(); // ganti sesuai nama model kamu
+
+    // $data->user_id   = $validated['user_id'];
+    $data->cadangan1 = $validated['cadangan1']; // Judul
+    $data->cadangan2 = $validated['cadangan2']; // Keterangan
+
+    // Folder target di public
+    $basePath = public_path('99_beritaabg');
+    if (!file_exists($basePath)) {
+        mkdir($basePath, 0755, true);
+    }
+
+    // Upload cadangan3 (Berkas)
+    if ($request->hasFile('cadangan3')) {
+        $file = $request->file('cadangan3');
+        $filename = 'cadangan3_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($basePath, $filename);
+        $data->cadangan3 = '99_beritaabg/' . $filename;
+    }
+
+    // Upload cadangan4 (Foto 1)
+    if ($request->hasFile('cadangan4')) {
+        $file = $request->file('cadangan4');
+        $filename = 'cadangan4_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($basePath, $filename);
+        $data->cadangan4 = '99_beritaabg/' . $filename;
+    }
+
+    // Upload cadangan5 (Foto 2)
+    if ($request->hasFile('cadangan5')) {
+        $file = $request->file('cadangan5');
+        $filename = 'cadangan5_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($basePath, $filename);
+        $data->cadangan5 = '99_beritaabg/' . $filename;
+    }
+
+    // Upload cadangan6 (Foto 3)
+    if ($request->hasFile('cadangan6')) {
+        $file = $request->file('cadangan6');
+        $filename = 'cadangan6_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($basePath, $filename);
+        $data->cadangan6 = '99_beritaabg/' . $filename;
+    }
+
+    $data->save();
+
+    session()->flash('create', 'Data berhasil disimpan.');
+    return redirect()->route('beartikel');
+}
+
 }
 
