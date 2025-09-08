@@ -248,7 +248,7 @@ th {
 
 @foreach(range(1,6) as $i)
     <td>
-        <div class="button-baru p-2 text-center" style="margin-top: 10px;">
+        <div style="margin-top: 10px; text-align: center;">
             @php
                 $foto = $item->{'foto'.$i} ?? null;
             @endphp
@@ -262,6 +262,7 @@ th {
                     $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
                 @endphp
 
+                {{-- Preview --}}
                 @if(in_array($ext, ['jpg','jpeg','png','gif']))
                     <img src="{{ $filePath }}" alt="Foto Dokumentasi {{ $i }}"
                          style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
@@ -269,13 +270,17 @@ th {
                     <iframe src="{{ $filePath }}" style="width:100%; height:200px; border:1px solid #ccc;" loading="lazy"></iframe>
                 @endif
 
-                {{-- Tombol Download --}}
-                <a href="{{ $filePath }}" download class="button-baru">
-                    <i class="bi bi-download me-1"></i> Download
-                </a>
+                {{-- Tombol Download di bawah --}}
+                <div class="button-baru mt-2">
+                    <a href="{{ $filePath }}" download class="btn btn-sm btn-primary">
+                        <i class="bi bi-download me-1"></i> Download
+                    </a>
+                </div>
 
             @else
-                <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+                <div class="button-baru mt-2">
+                    <p style="font-size: 12px; margin:0;">Foto Asistensi</p>
+                </div>
             @endif
         </div>
     </td>
