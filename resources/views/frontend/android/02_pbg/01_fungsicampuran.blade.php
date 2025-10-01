@@ -89,19 +89,26 @@
                 <p style="font-family: 'Poppins', sans-serif; font-weight: 600; margin: 0;">Data belum diupdate</p>
             @endif
         </div>
-    @endforeach
-</div>
+    </div>
 
-  <br>
-  <!-- Info Teks -->
-<div class="flex flex-col gap-2 mt-4">
-  <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
+    <br>
+    <!-- Info Teks -->
+    <div class="flex flex-col gap-2 mt-4">
+        <p class="font-semibold text-[16px] leading-[24px] text-[#4041DA]">
     Persetujuan Bangunan Gedung (PBG) - Fungsi Campuran
   </p>
-  <p class="text-[16px] text-neutral-700" style="text-align: justify;">
-    PBG adalah dokumen yang diperlukan untuk bangunan dengan fungsi campuran, seperti pelayanan pendidikan, kesehatan, kebudayaan, laboratorium, dan umum. Syarat pengajuan meliputi dokumen tanah, data umum (KTP, NIB, KRK), serta dokumen teknis arsitektur, struktur, dan MEP. Prosesnya dimulai dari pendaftaran via SIMBG.PU, konsultasi teknis, validasi, pembayaran retribusi, hingga penerbitan dokumen PBG.
-  </p>
+
+  <div class="container p-3 my-2 border rounded bg-light text-center">
+    <p class="mb-0">{{$item->cadangan1}}</p>
 </div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-center">
+    <p class="mb-0">{{$item->cadangan2}}</p>
+</div>
+<hr>
+
+</div>
+@endforeach
 
 </a>
 
