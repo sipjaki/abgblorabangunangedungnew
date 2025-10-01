@@ -323,32 +323,74 @@
     <a href="#" class="news-link">Lihat Semua</a>
   </div>
 
-  <div class="news-carousel">
-    @foreach ($dataartikel as $item)
-      <div class="news-card">
-        <div class="news-pdf-container" style="width: 100%; height: 200px; margin-bottom: 12px;">
-          @if ($item->berkas1 && file_exists(public_path($item->berkas1)))
-            <iframe src="{{ asset($item->berkas1) }}"
-                    style="width: 100%; height: 100%; border: none;"
-                    loading="lazy"></iframe>
-          @elseif ($item->berkas1)
-            <iframe src="{{ asset($item->berkas1) }}"
-                    style="width: 100%; height: 100%; border: none;"
-                    loading="lazy"></iframe>
-          @else
-            <p>Tidak ada berkas PDF.</p>
-          @endif
-        </div>
-
-        <div class="news-content">
-          <div class="news-meta">
-            <span class="news-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d M Y') }}</span>
+<div class="news-carousel">
+  @forelse ($dataartikel as $item)
+    <div class="news-card">
+      <div class="news-pdf-container" style="width: 100%; height: 200px; margin-bottom: 12px;">
+        @if ($item->berkas1 && file_exists(public_path($item->berkas1)))
+          <iframe src="{{ asset($item->berkas1) }}"
+                  style="width: 100%; height: 100%; border: none;"
+                  loading="lazy"></iframe>
+        @elseif ($item->berkas1)
+          <iframe src="{{ asset($item->berkas1) }}"
+                  style="width: 100%; height: 100%; border: none;"
+                  loading="lazy"></iframe>
+        @else
+          <div style="
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: 500;
+              font-family: 'Poppins', sans-serif;
+              color: #6c757d;
+              background-color: #f8f9fa;
+              border: 1px dashed #ced4da;
+              border-radius: 8px;
+          ">
+              <i class="bi bi-file-earmark-pdf" style="margin-right: 6px; font-size: 18px; color: #dc3545;"></i>
+              Tidak ada berkas PDF
           </div>
-          <h3 class="news-headline">{{ $item->judul }}</h3>
-        </div>
+        @endif
       </div>
-    @endforeach
-  </div>
+
+      <div class="news-content">
+        <div class="news-meta">
+          <span class="news-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d M Y') }}</span>
+        </div>
+        <h3 class="news-headline">{{ $item->judul }}</h3>
+      </div>
+    </div>
+  @empty
+    <div style="
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        color: #6c757d;
+        background-color: #f8f9fa;
+        border: 2px dashed #ced4da;
+        border-radius: 12px;
+        font-size: 16px;
+        animation: fadeIn 0.5s ease-in-out;
+    ">
+        <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+        Data Tidak Ditemukan !!
+    </div>
+  @endforelse
+</div>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 </div>
 
 
