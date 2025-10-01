@@ -303,7 +303,7 @@
         animation: fadeIn 0.5s ease-in-out;
     ">
         <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-        Belum Ada Berita !
+        Belum Ada Berita di Terbitkan !
     </div>
   @endforelse
 </div>
@@ -319,7 +319,7 @@
 </div>
 <div id="NewsPromo" class="news-section">
   <div class="news-header">
-    <h6 class="news-title" style="font-size: 16px;">Artikel ABG Blora</h6>
+    <h6 class="news-title" style="font-size: 16px;">Artikel Bangunan Gedung </h6>
     <a href="#" class="news-link">Lihat Semua</a>
   </div>
 
@@ -379,7 +379,7 @@
         animation: fadeIn 0.5s ease-in-out;
     ">
         <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-        Data Tidak Ditemukan !!
+        Belum Ada Artikel di Terbitkan !
     </div>
   @endforelse
 </div>
