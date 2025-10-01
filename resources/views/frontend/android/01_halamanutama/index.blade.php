@@ -104,7 +104,7 @@
             animation: fadeIn 0.5s ease-in-out;
         ">
             <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-            Belum Ada Agenda Sosialisasi !!
+            Belum Ada Agenda Sosialisasi !
         </div>
     @endforelse
 </div>
@@ -259,29 +259,26 @@
     <h6 class="news-title" style="font-size: 16px;">Berita Bangunan Gedung</h6>
     <a href="#" class="news-link">Lihat Semua</a>
   </div>
-
-  <div class="news-carousel">
-  @foreach ($data as $item)
+<div class="news-carousel">
+  @forelse ($data as $item)
     <div class="news-card">
       <div class="news-image-container">
-        {{-- <img src="{{ asset('storage/' . $item->foto) }}" class="news-image" alt="Berita Bangunan" /> --}}
-@if ($item->foto && file_exists(public_path('storage/' . $item->foto)))
-    <!-- Gambar dari storage -->
-    <img src="{{ asset('storage/' . $item->foto) }}" class="news-image" alt="Berita Bangunan" loading="lazy" />
-@elseif ($item->foto)
-    <!-- Gambar dari path luar storage -->
-    <img src="{{ asset($item->foto) }}" class="news-image" alt="Berita Bangunan" loading="lazy" />
-@else
-    <!-- Gambar default atau kosong -->
-    <img src="/assets/android/thumbnails/default.png" class="news-image" alt="Default Berita" loading="lazy" />
-@endif
+        @if ($item->foto && file_exists(public_path('storage/' . $item->foto)))
+            <!-- Gambar dari storage -->
+            <img src="{{ asset('storage/' . $item->foto) }}" class="news-image" alt="Berita Bangunan" loading="lazy" />
+        @elseif ($item->foto)
+            <!-- Gambar dari path luar storage -->
+            <img src="{{ asset($item->foto) }}" class="news-image" alt="Berita Bangunan" loading="lazy" />
+        @else
+            <!-- Gambar default -->
+            <img src="/assets/android/thumbnails/default.png" class="news-image" alt="Default Berita" loading="lazy" />
+        @endif
 
         <div class="news-overlay"></div>
+      </div>
 
-    </div>
       <div class="news-content">
         <div class="news-meta">
-          {{-- Jika ada kategori, bisa ditambahkan, kalau tidak hapus --}}
           {{-- <span class="news-category">{{ $item->kategori ?? 'Berita' }}</span> --}}
           <span class="news-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d M Y') }}</span>
         </div>
@@ -289,8 +286,35 @@
         <p class="news-excerpt">{{ Str::limit($item->keterangan, 100, '...') }}</p>
       </div>
     </div>
-  @endforeach
+  @empty
+    <div style="
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        color: #6c757d;
+        background-color: #f8f9fa;
+        border: 2px dashed #ced4da;
+        border-radius: 12px;
+        font-size: 16px;
+        animation: fadeIn 0.5s ease-in-out;
+    ">
+        <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+        Belum Ada Berita !
+    </div>
+  @endforelse
 </div>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 
 </div>
 <div id="NewsPromo" class="news-section">
