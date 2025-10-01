@@ -90,60 +90,43 @@
                 <p style="font-family: 'Poppins', sans-serif; font-weight: 600; margin: 0;">Data belum diupdate</p>
             @endif
         </div>
-    @endforeach
 </div>
 
   <br>
-  <!-- Info Teks -->
 
-<div class="card-pbg">
-  <h2>Persetujuan Bangunan Gedung (PBG) - Fungsi Hunian</h2>
-
-  <p>
-    Persetujuan Bangunan Gedung (PBG) adalah dokumen resmi yang diperlukan untuk setiap kegiatan pembangunan.
-    Untuk bangunan dengan fungsi hunian, PBG memastikan rencana teknis telah sesuai ketentuan peraturan.
-  </p>
-
-  <p class="section-title">Klasifikasi Bangunan Hunian:</p>
-  <ul>
-    <li><span>Sederhana</span>:
-      <ul class="sub-list">
-        <li>1 lantai &lt; 72 m²</li>
-        <li>2 lantai &lt; 90 m²</li>
-      </ul>
-    </li>
-    <li><span>Tidak Sederhana</span>:
-      <ul class="sub-list">
-        <li>1 atau 2 lantai ≥ 72 m² / ≥ 90 m²</li>
-      </ul>
-    </li>
-  </ul>
-
-  <p class="section-title">Persyaratan Dokumen:</p>
-  <p class="manual-number">1. <span>Data Tanah</span>: Sertifikat tanah, izin pemanfaatan tanah (jika nama pemohon tidak sesuai dengan sertifikat).</p>
-  <p class="manual-number">2. <span>Data Umum</span>: KTP/KITAS, dokumen perizinan tata ruang, KRK/KKPR, data penyedia jasa konstruksi (SBU/arsitek berlisensi).</p>
-  <p class="manual-number">3. <span>Data Teknis Arsitektur</span>: Gambar situasi, denah, potongan, tampak.</p>
-  <p class="manual-number">4. <span>Data Teknis Struktur</span>: Gambar pondasi, rangka atap, struktur.</p>
-  <p class="manual-number">5. <span>Data Teknis MEP</span>: Gambar jaringan listrik dan sanitasi.</p>
-
-  <p class="section-title">Tahapan Pengurusan:</p>
-  <p class="manual-number">1. Menyiapkan dokumen tanah, KRK/KKPR (dokumen tata ruang).</p>
-  <p class="manual-number">2. Melakukan pendaftaran dan unggah dokumen di <a href="https://simbg.pu.go.id" target="_blank">simbg.pu.go.id</a></p>
-  <p class="manual-number">3. Verifikasi dokumen oleh operator Dinas Teknis.</p>
-  <p class="manual-number">4. Penjadwalan konsultasi permohonan.</p>
-  <p class="manual-number">5. Konsultasi bersama TPA/TPT.</p>
-  <p class="manual-number">6. Revisi dokumen sesuai masukan teknis TPA/TPT.</p>
-  <p class="manual-number">7. TPA/TPT menyetujui dokumen perencanaan.</p>
-  <p class="manual-number">8. Pengunggahan berkas final, validasi, dan perhitungan retribusi.</p>
-  <p class="manual-number">9. Pembayaran retribusi melalui bank persepsi atau mobile banking.</p>
+    <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan1 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan2 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan3 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan4 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan5 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan6 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan7 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan8 !!}</p>
 </div>
 
-{{--
-  <p class="text-[15px] text-neutral-700 mt-2">
-    Untuk informasi lebih lengkap, kunjungi:
-    <a href="https://linktr.ee/bidangbangunangedung" target="_blank" class="text-blue-600 underline">https://linktr.ee/bidangbangunangedung</a>
-  </p> --}}
-</div>
+    @endforeach
 
 </a>
 

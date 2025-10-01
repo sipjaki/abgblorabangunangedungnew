@@ -129,7 +129,6 @@
   <div class="container p-3 my-2 border rounded bg-light text-left">
     <p class="mb-0">{!! $item->cadangan8 !!}</p>
 </div>
-<hr>
 
 </div>
 @endforeach
