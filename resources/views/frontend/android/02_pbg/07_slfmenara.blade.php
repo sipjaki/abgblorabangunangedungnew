@@ -89,125 +89,45 @@
                 <p style="font-family: 'Poppins', sans-serif; font-weight: 600; margin: 0;">Data belum diupdate</p>
             @endif
         </div>
-    @endforeach
+
+
 </div>
 
   <br>
 
-<style>
-  .card-slf {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    /* font-family: 'Segoe UI', sans-serif; */
-      font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    color: #333;
-    line-height: 1.6;
-    max-width: 850px;
-    margin: auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  }
-
-  .card-slf .title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #4041DA;
-    margin-bottom: 10px;
-  }
-
-  .card-slf .section {
-    margin-bottom: 20px;
-  }
-
-  .card-slf .manual-number {
-    margin-bottom: 10px;
-    text-align: justify;
-  }
-
-  .card-slf .manual-number span {
-    font-weight: 600;
-  }
-
-  .card-slf a {
-    color: #1D4ED8;
-    text-decoration: underline;
-  }
-</style>
-
-<div class="card-slf">
-
-  <div class="section">
-    <p class="title">Sertifikat Laik Fungsi (SLF) – Fungsi Usaha</p>
-    <p class="manual-number">
-      Bangunan Gedung Fungsi Usaha meliputi: Perkantoran, perdagangan, perindustrian, perhotelan, wisata dan rekreasi, terminal, bangunan tempat penyimpanan, serta peternakan.
-    </p>
-  </div>
-
-  <div class="section">
-    <p class="title">1. Klasifikasi Bangunan Gedung</p>
-    <p class="manual-number">- <span>Sederhana:</span></p>
-    <p class="manual-number">&nbsp;&nbsp;• 1 lantai &lt; 72m²</p>
-    <p class="manual-number">&nbsp;&nbsp;• 2 lantai &lt; 90m²</p>
-    <p class="manual-number">- <span>Tidak Sederhana:</span></p>
-    <p class="manual-number">&nbsp;&nbsp;• 1 lantai &gt; 72m²</p>
-    <p class="manual-number">&nbsp;&nbsp;• 2 lantai &gt; 90m²</p>
-  </div>
-
-  <div class="section">
-    <p class="title">2. Persyaratan Dokumen</p>
-
-    <p class="manual-number">1. <span>Data Tanah:</span><br>
-      - Dokumen Sertifikat Tanah<br>
-      - Izin Pemanfaatan Tanah (jika nama pemohon tidak sesuai dengan sertifikat)<br>
-      - Gambar Kontur Tanah dan Sondir (untuk bangunan tidak sederhana)
-    </p>
-
-    <p class="manual-number">2. <span>Data Umum:</span><br>
-      - KTP / KITAS, NIB (OSS)<br>
-      - KRK / KKPR<br>
-      - Dokumen lingkungan sesuai peraturan (SPPL (OSS), UKL/UPL, AMDAL)<br>
-      - Data penyedia jasa perencana konstruksi: SBU / Arsitek berlisensi
-    </p>
-
-    <p class="manual-number">3. <span>Data Teknis Arsitektur:</span><br>
-      - Konsep arsitektur<br>
-      - Gambar situasi, rencana tapak, potongan, tampak, dan detail<br>
-      - Gambar tata ruang dalam dan luar<br>
-      - Spesifikasi teknis arsitektur<br>
-      - Rekomendasi peil banjir (jika diperlukan)
-    </p>
-
-    <p class="manual-number">4. <span>Data Teknis Struktur:</span><br>
-      - Perhitungan struktur (untuk bangunan tidak sederhana)<br>
-      - Gambar detail struktur<br>
-      - Spesifikasi teknis struktur
-    </p>
-
-    <p class="manual-number">5. <span>Data Teknis MEP:</span><br>
-      - Laporan Pemeriksaan Kelaikan Fungsi Bangunan<br>
-      - Laporan Pemeriksaan Berkala (khusus bangunan kepentingan umum)<br>
-      - Gambar as-built drawing<br>
-      - Data Tenaga Ahli Pengkaji Teknis bersertifikat
-    </p>
-  </div>
-
-  <div class="section">
-    <p class="title">3. Tahapan Pengurusan</p>
-
-    <p class="manual-number">1. Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</p>
-    <p class="manual-number">2. Mendaftar dan mengunggah dokumen pada website <a href="https://simbg.pu.go.id" target="_blank">simbg.pu.go.id</a></p>
-    <p class="manual-number">3. Verifikasi dokumen oleh operator dinas teknis</p>
-    <p class="manual-number">4. Penjadwalan konsultasi permohonan</p>
-    <p class="manual-number">5. Konsultasi bersama TPA/TPT</p>
-    <p class="manual-number">6. Revisi dokumen sesuai masukan teknis dari TPA/TPT</p>
-    <p class="manual-number">7. Dokumen disetujui oleh TPA/TPT</p>
-    <p class="manual-number">8. Pengunggahan final, perhitungan retribusi, dan validasi teknis</p>
-    <p class="manual-number">9. Pembayaran retribusi melalui bank persepsi / mobile banking</p>
-    <p class="manual-number">10. Penerbitan dokumen PBG oleh DPMPTSP & SLF oleh DPUPR</p>
-  </div>
-
+    <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan1 !!}</p>
 </div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan2 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan3 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan4 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan5 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan6 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan7 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan8 !!}</p>
+</div>
+
+    @endforeach
 
 
       </form>
