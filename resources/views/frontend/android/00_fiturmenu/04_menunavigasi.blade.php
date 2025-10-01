@@ -12,7 +12,8 @@
         <a href="/respbgslfindex">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/01.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            {{-- <img src="/assets/android/menunavigasi/01.png" class="w-full h-full object-cover" alt="icon" loading="lazy"> --}}
+            <img src="/assets/android/menunavigasi/0001.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">PBG/SLF</p>
         </div>
@@ -20,7 +21,7 @@
       <a href="/resbgtracking">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/02.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/0002.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Tracking</p>
         </div>
@@ -28,7 +29,7 @@
       <a href="/bependataanbangunangedung">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/03.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/0003.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Pendataan</p>
         </div>
@@ -36,7 +37,7 @@
       <a href="/resbantekindex">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/04.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/0004.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantek</p>
         </div>
@@ -45,7 +46,7 @@
       {{-- <a href="/ressosialisasiabg"> --}}
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/05.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/0005.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Sosialisasi</p>
         </div>
@@ -53,7 +54,7 @@
       <a href="/permohonankrkusaha">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/06.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/0006.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">KRK</p>
         </div>
