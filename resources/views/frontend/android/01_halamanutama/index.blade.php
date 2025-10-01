@@ -54,41 +54,68 @@
     </div>
 
     <div class="promo-carousel">
-        @foreach ($agendapelatihan as $item)
-            <div class="promo-card">
-                <div class="card-image-container">
-                    <img src="{{ asset($item->foto) }}" class="card-image" alt="{{ $item->namakegiatan }}">
-                    <div class="card-overlay"></div>
-                    <div class="card-badge">
-                        {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d M Y') }}
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">{{ $item->namakegiatan }}</h3>
-                    <p class="card-description">
-                        {{ \Illuminate\Support\Str::limit($item->keterangan, 80) }}
-                    </p>
-
-                    @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
-    <a href="/daftaragenda/{{ $item->id }}" style="text-decoration: none;">
-        <button class="button-baru"
-            style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
-                   background-color: navy; color: black; font-weight: bold; font-size: 14px; transition: 0.3s;">
-            <i class="bi bi-pencil-square" style="font-size: 16px;"></i> Daftar
-        </button>
-    </a>
-@else
-    <button class="button-dikembalikan"
-        style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
-               background-color: #dc3545; color: white; font-weight: bold; font-size: 14px;" disabled>
-        <i class="bi bi-x-octagon" style="font-size: 16px;"></i> Ditutup
-    </button>
-@endif
-
+    @forelse ($agendapelatihan as $item)
+        <div class="promo-card">
+            <div class="card-image-container">
+                <img src="{{ asset($item->foto) }}" class="card-image" alt="{{ $item->namakegiatan }}">
+                <div class="card-overlay"></div>
+                <div class="card-badge">
+                    {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d M Y') }}
                 </div>
             </div>
-        @endforeach
-    </div>
+            <div class="card-content">
+                <h3 class="card-title">{{ $item->namakegiatan }}</h3>
+                <p class="card-description">
+                    {{ \Illuminate\Support\Str::limit($item->keterangan, 80) }}
+                </p>
+
+                @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
+                    <a href="/daftaragenda/{{ $item->id }}" style="text-decoration: none;">
+                        <button class="button-baru"
+                            style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
+                                   background-color: navy; color: black; font-weight: bold; font-size: 14px; transition: 0.3s;">
+                            <i class="bi bi-pencil-square" style="font-size: 16px;"></i> Daftar
+                        </button>
+                    </a>
+                @else
+                    <button class="button-dikembalikan"
+                        style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
+                               background-color: #dc3545; color: white; font-weight: bold; font-size: 14px;" disabled>
+                        <i class="bi bi-x-octagon" style="font-size: 16px;"></i> Ditutup
+                    </button>
+                @endif
+
+            </div>
+        </div>
+    @empty
+        <div style="
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            color: #6c757d;
+            background-color: #f8f9fa;
+            border: 2px dashed #ced4da;
+            border-radius: 12px;
+            font-size: 16px;
+            animation: fadeIn 0.5s ease-in-out;
+        ">
+            <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+            Belum Ada Agenda Sosialisasi !!
+        </div>
+    @endforelse
+</div>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 </div>
 
 <style>
