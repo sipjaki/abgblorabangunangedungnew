@@ -62,7 +62,7 @@
       <a href="/rescarigsb">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/07.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/0007.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">GSB</p>
         </div>
@@ -70,7 +70,7 @@
       <a href="/resmbrgambarindex">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/08.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/0008.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">MBR</p>
         </div>
@@ -78,7 +78,7 @@
       <a href="/feformbantuangambar">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/09.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/0009.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantuan <br> Gambar</p>
         </div>
@@ -114,7 +114,7 @@
       <a href="/web">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/11.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/0010.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Dekstop</p>
         </div>
