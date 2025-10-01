@@ -88,117 +88,45 @@
                 <p style="font-family: 'Poppins', sans-serif; font-weight: 600; margin: 0;">Data belum diupdate</p>
             @endif
         </div>
-    @endforeach
+
 </div>
 
   <br>
   <!-- Info Teks -->
 
-<style>
-  .card-sosialbudaya {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    /* font-family: 'Segoe UI', sans-serif; */
-      font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    color: #333;
-    line-height: 1.6;
-    max-width: 850px;
-    margin: auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  }
-
-  .card-sosialbudaya .title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #4041DA;
-    margin-bottom: 10px;
-  }
-
-  .card-sosialbudaya .manual-number {
-    margin-bottom: 10px;
-    text-align: justify;
-  }
-
-  .card-sosialbudaya .manual-number span {
-    font-weight: 600;
-  }
-
-  .card-sosialbudaya ul {
-    padding-left: 20px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-  }
-
-  .card-sosialbudaya ul li {
-    list-style-type: disc;
-    margin-bottom: 5px;
-  }
-
-  .card-sosialbudaya a {
-    color: #1D4ED8;
-    text-decoration: underline;
-  }
-</style>
-
-<div class="card-sosialbudaya">
-
-  <p class="title">Persetujuan Bangunan Gedung (PBG) - Fungsi Sosial Budaya</p>
-
-  <p class="manual-number">
-    Persetujuan Bangunan Gedung (PBG) adalah dokumen legal yang wajib dimiliki sebelum pembangunan bangunan fungsi sosial budaya seperti menara telekomunikasi. Dokumen ini memastikan bahwa pembangunan sesuai dengan aspek teknis, ketentuan tata ruang, keselamatan lingkungan, serta mendapat persetujuan masyarakat sekitar.
-  </p>
-
-  <p class="title">Persyaratan Dokumen:</p>
-
-  <p class="manual-number">1. <span>Data Tanah:</span></p>
-  <ul>
-    <li>Sertifikat tanah</li>
-    <li>Izin Pemanfaatan Tanah (apabila nama pemohon berbeda dengan sertifikat)</li>
-    <li>Gambar kontur tanah dan sondir (khusus bangunan tidak sederhana)</li>
-  </ul>
-
-  <p class="manual-number">2. <span>Data Umum:</span></p>
-  <ul>
-    <li>KTP / Profil Perusahaan, NIB (OSS)</li>
-    <li>KRK / KKPR</li>
-    <li>Dokumen lingkungan sesuai peraturan (SPPL, OSS, UKL/UPL, AMDAL)</li>
-    <li>Data penyedia jasa konstruksi: Badan Usaha (SBU) / Arsitek berlisensi</li>
-    <li>Verifikasi pernyataan mandiri atau PKKPR otomatis dari FPR Kabupaten Blora</li>
-    <li>KKOP (Ketentuan Keselamatan Operasi Penerbangan)</li>
-    <li>Persetujuan warga sekitar menara yang diketahui lurah/kepala desa, disertai dokumentasi & berita acara sosialisasi</li>
-  </ul>
-
-  <p class="manual-number">3. <span>Data Teknis Arsitektur:</span></p>
-  <ul>
-    <li>Gambar dan perhitungan teknis bangunan prasarana</li>
-  </ul>
-
-  <p class="title">Tahapan Pengurusan:</p>
-
-  <p class="manual-number">1. Menyiapkan dokumen tanah, KRK/KKPR, dan dokumen lingkungan</p>
-  <p class="manual-number">2. Mendaftar, membuat permohonan, dan mengunggah dokumen ke
-    <a href="https://simbg.pu.go.id" target="_blank">https://simbg.pu.go.id</a>
-  </p>
-  <p class="manual-number">3. Menindaklanjuti hasil verifikasi operator Dinas Teknis</p>
-  <p class="manual-number">4. Penjadwalan konsultasi permohonan</p>
-  <p class="manual-number">5. Melakukan konsultasi bersama TPA/TPT</p>
-  <p class="manual-number">6. Merevisi dokumen sesuai masukan dan saran teknis TPA/TPT</p>
-  <p class="manual-number">7. TPA/TPT menyetujui dokumen perencanaan</p>
-  <p class="manual-number">8. Pengunggahan dokumen final, validasi teknis, dan perhitungan retribusi</p>
-  <p class="manual-number">9. Pembayaran retribusi melalui bank persepsi atau mobile banking</p>
-  <p class="manual-number">10. Penerbitan dokumen PBG oleh DPMPTSP</p>
-
-  <!-- Optional Info Link (jika mau diaktifkan) -->
-  <!--
-  <p class="manual-number">
-    Untuk informasi lebih lanjut, kunjungi:
-    <a href="https://linktr.ee/bidangbangunangedung" target="_blank">https://linktr.ee/bidangbangunangedung</a>
-  </p>
-  -->
-
+    <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan1 !!}</p>
 </div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan2 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan3 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan4 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan5 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan6 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan7 !!}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-left">
+    <p class="mb-0">{!! $item->cadangan8 !!}</p>
+</div>
+
+    @endforeach
 
 
       </form>
