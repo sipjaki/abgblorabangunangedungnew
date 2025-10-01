@@ -3,7 +3,7 @@
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
 <div class="w-full h-[190] absolute top-0 overflow-hidden">
-  <img src="/assets/android/iconmenu/bangunanbarublora.png" alt="Bangunan Blora" class="w-full h-full object-cover" />
+  <img src="/assets/android/iconmenu/halamanabg.jpg" alt="Bangunan Blora" class="w-full h-full object-cover" />
 </div>
 
      <div class="relative z-10 flex flex-col gap-6 mt-[60px]">
