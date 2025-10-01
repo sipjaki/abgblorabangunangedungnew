@@ -126,10 +126,11 @@
     <p class="mb-0">{!! $item->cadangan8 !!}</p>
 </div>
 
-    @endforeach
+@endforeach
 
 </a>
 
+</div>
 
       </form>
 
