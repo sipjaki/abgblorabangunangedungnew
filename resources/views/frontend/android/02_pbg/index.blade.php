@@ -94,19 +94,19 @@
                     @foreach ($data1 as $item)
 
                     <div style="margin-top: 10px;">
-    @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
-        <!-- Jika file ada di storage -->
-        <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
-    @elseif($item->berkas)
-        <!-- Jika file sudah dipindah / updated -->
-        <img src="{{ asset($item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
-    @else
-        <!-- Jika tidak ada file, tampilkan tombol -->
-        <button type="button" class="btn btn-secondary" disabled>
-            <i class="bi bi-file-earmark-image"></i> Berkas
-        </button>
-    @endif
-</div>
+                        @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+                            <!-- Jika file ada di storage -->
+                            <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @elseif($item->berkas)
+                            <!-- Jika file sudah dipindah / updated -->
+                            <img src="{{ asset($item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @else
+                            <!-- Jika tidak ada file, tampilkan tombol -->
+                            <button type="button" class="btn btn-secondary" disabled>
+                                <i class="bi bi-file-earmark-image"></i> Berkas
+                            </button>
+                        @endif
+                    </div>
 
                     @endforeach
                 </div>
@@ -120,7 +120,25 @@
             <a href="/feinfohunian" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/pbgslf/PBG_FUNGSI_HUNIAN.jpg" class="object-cover w-full h-full" alt="thumbnail">
+
+                    @foreach ($data2 as $item)
+
+                    <div style="margin-top: 10px;">
+                        @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+                            <!-- Jika file ada di storage -->
+                            <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @elseif($item->berkas)
+                            <!-- Jika file sudah dipindah / updated -->
+                            <img src="{{ asset($item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @else
+                            <!-- Jika tidak ada file, tampilkan tombol -->
+                            <button type="button" class="btn btn-secondary" disabled>
+                                <i class="bi bi-file-earmark-image"></i> Berkas
+                            </button>
+                        @endif
+                    </div>
+
+                    @endforeach
                 </div>
                 <div class="flex flex-col gap-[2px]">
                   <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
@@ -132,7 +150,24 @@
             <a href="/feinfoagama" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/pbgslf/PBG_FUNGSI_KEAGAMAAN.png" class="object-cover w-full h-full" alt="thumbnail">
+    @foreach ($data3 as $item)
+
+                    <div style="margin-top: 10px;">
+                        @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+                            <!-- Jika file ada di storage -->
+                            <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @elseif($item->berkas)
+                            <!-- Jika file sudah dipindah / updated -->
+                            <img src="{{ asset($item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @else
+                            <!-- Jika tidak ada file, tampilkan tombol -->
+                            <button type="button" class="btn btn-secondary" disabled>
+                                <i class="bi bi-file-earmark-image"></i> Berkas
+                            </button>
+                        @endif
+                    </div>
+
+                    @endforeach
                 </div>
                 <div class="flex flex-col gap-[2px]">
                   <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
@@ -144,7 +179,25 @@
             <a href="/feinfoprasarana" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/pbgslf/PBG_FUNGSI_PRASARANA.png" class="object-cover w-full h-full" alt="thumbnail">
+    @foreach ($data4 as $item)
+
+                    <div style="margin-top: 10px;">
+                        @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+                            <!-- Jika file ada di storage -->
+                            <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @elseif($item->berkas)
+                            <!-- Jika file sudah dipindah / updated -->
+                            <img src="{{ asset($item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @else
+                            <!-- Jika tidak ada file, tampilkan tombol -->
+                            <button type="button" class="btn btn-secondary" disabled>
+                                <i class="bi bi-file-earmark-image"></i> Berkas
+                            </button>
+                        @endif
+                    </div>
+
+                    @endforeach
+
                 </div>
                 <div class="flex flex-col gap-[2px]">
                   <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
@@ -156,7 +209,25 @@
             <a href="/feinfososialbudaya" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/pbgslf/PBG_FUNGSI_SOSIAL_BUDAYA.png" class="object-cover w-full h-full" alt="thumbnail">
+    @foreach ($data5 as $item)
+
+                    <div style="margin-top: 10px;">
+                        @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+                            <!-- Jika file ada di storage -->
+                            <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @elseif($item->berkas)
+                            <!-- Jika file sudah dipindah / updated -->
+                            <img src="{{ asset($item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @else
+                            <!-- Jika tidak ada file, tampilkan tombol -->
+                            <button type="button" class="btn btn-secondary" disabled>
+                                <i class="bi bi-file-earmark-image"></i> Berkas
+                            </button>
+                        @endif
+                    </div>
+
+                    @endforeach
+
                 </div>
                 <div class="flex flex-col gap-[2px]">
                   <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
@@ -168,8 +239,25 @@
             <a href="/feinfofungsiusaha" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/pbgslf/PBG_FUNGSI_USAHA.jpg" class="object-cover w-full h-full" alt="thumbnail">
-                </div>
+    @foreach ($data6 as $item)
+
+                    <div style="margin-top: 10px;">
+                        @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+                            <!-- Jika file ada di storage -->
+                            <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @elseif($item->berkas)
+                            <!-- Jika file sudah dipindah / updated -->
+                            <img src="{{ asset($item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @else
+                            <!-- Jika tidak ada file, tampilkan tombol -->
+                            <button type="button" class="btn btn-secondary" disabled>
+                                <i class="bi bi-file-earmark-image"></i> Berkas
+                            </button>
+                        @endif
+                    </div>
+
+                    @endforeach
+            </div>
                 <div class="flex flex-col gap-[2px]">
                   <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (PBG) Persetujuan Bangunan Gedung</p>
                   <p class="font-semibold">PBG Fungsi Usaha</p>
@@ -180,7 +268,24 @@
             <a href="/slffungsiusaha" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/pbgslf/SLF_FUNGSI_USAHA.png" class="object-cover w-full h-full" alt="thumbnail">
+    @foreach ($data7 as $item)
+
+                    <div style="margin-top: 10px;">
+                        @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+                            <!-- Jika file ada di storage -->
+                            <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @elseif($item->berkas)
+                            <!-- Jika file sudah dipindah / updated -->
+                            <img src="{{ asset($item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @else
+                            <!-- Jika tidak ada file, tampilkan tombol -->
+                            <button type="button" class="btn btn-secondary" disabled>
+                                <i class="bi bi-file-earmark-image"></i> Berkas
+                            </button>
+                        @endif
+                    </div>
+
+                    @endforeach
                 </div>
                 <div class="flex flex-col gap-[2px]">
                   <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (SLF) Sertifikat Laik Fungsi</p>
@@ -192,7 +297,24 @@
             <a href="/slfmenara" class="bg-white rounded-xl flex flex-col p-4 hover:shadow-md transition">
               <div class="flex items-center gap-3 p-4 rounded-lg border border-[#DCDFE6]">
                 <div class="w-[60px] h-[60px] flex shrink-0 rounded-lg overflow-hidden">
-                  <img src="/assets/android/pbgslf/SLF_MENARA_TELEKOMUNIKASI.png" class="object-cover w-full h-full" alt="thumbnail">
+    @foreach ($data8 as $item)
+
+                    <div style="margin-top: 10px;">
+                        @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+                            <!-- Jika file ada di storage -->
+                            <img src="{{ asset('storage/' . $item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @elseif($item->berkas)
+                            <!-- Jika file sudah dipindah / updated -->
+                            <img src="{{ asset($item->berkas) }}" alt="Berkas Gambar" class="img-fluid rounded" style="max-height:300px;">
+                        @else
+                            <!-- Jika tidak ada file, tampilkan tombol -->
+                            <button type="button" class="btn btn-secondary" disabled>
+                                <i class="bi bi-file-earmark-image"></i> Berkas
+                            </button>
+                        @endif
+                    </div>
+
+                    @endforeach
                 </div>
                 <div class="flex flex-col gap-[2px]">
                   <p class="font-semibold text-sm leading-[21px] text-[#4041DA]">Informasi (SLF) Sertifikat Laik Fungsi</p>
