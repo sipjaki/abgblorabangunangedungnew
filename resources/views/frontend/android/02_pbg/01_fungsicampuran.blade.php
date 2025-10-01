@@ -106,6 +106,30 @@
     <p class="mb-0">{{$item->cadangan2}}</p>
 </div>
 <hr>
+  <div class="container p-3 my-2 border rounded bg-light text-center">
+    <p class="mb-0">{{$item->cadangan3}}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-center">
+    <p class="mb-0">{{$item->cadangan4}}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-center">
+    <p class="mb-0">{{$item->cadangan5}}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-center">
+    <p class="mb-0">{{$item->cadangan6}}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-center">
+    <p class="mb-0">{{$item->cadangan7}}</p>
+</div>
+<hr>
+  <div class="container p-3 my-2 border rounded bg-light text-center">
+    <p class="mb-0">{{$item->cadangan8}}</p>
+</div>
+<hr>
 
 </div>
 @endforeach
