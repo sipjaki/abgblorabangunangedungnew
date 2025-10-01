@@ -70,12 +70,29 @@ class FedashboardController extends Controller
     {
 
         $user = Auth::user();
+        $data1 = infopbg1::all();
+        $data2 = infopbg2::all();
+        $data3 = infopbg3::all();
+        $data4 = infopbg4::all();
+        $data5 = infopbg5::all();
+        $data6 = infopbg6::all();
+        $data7 = infopbg7::all();
+        $data8 = infopbg8::all();
+
         // return view('/404', [
         // return view('frontend.00_full.index', [
         return view('frontend.android.02_pbg.index', [
         // return view('frontend.android.01_halamanutama.index', [
             'title' => 'Informasi PBG/SLF Bangunan Gedung ',
             'user' => $user,
+            'data1' => $data1,
+            'data2' => $data2,
+            'data3' => $data3,
+            'data4' => $data4,
+            'data5' => $data5,
+            'data6' => $data6,
+            'data7' => $data7,
+            'data8' => $data8,
         ]);
     }
 

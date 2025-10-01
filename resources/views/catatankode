@@ -1350,3 +1350,20 @@ public function bujkkontraktorshow($namalengkap)
     to { opacity: 1; transform: translateY(0); }
 }
 </style>
+
+
+
+<div style="margin-top: 10px;">
+    @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe src="{{ asset('storage/' . $data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+    @elseif($data->peraturan)
+        <!-- Display the iframe with the updated file -->
+        <iframe src="{{ asset($data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+    @else
+        <!-- Jika tidak ada file, tampilkan tombol -->
+        <button type="button" class="btn btn-secondary" disabled>
+            <i class="bi bi-file-earmark-text"></i> Berkas
+        </button>
+    @endif
+</div>
