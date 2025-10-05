@@ -522,7 +522,7 @@ th {
 
 <!-- HALAMAN KEDUA -->
 <div class="halaman-pertama">
- <p style="margin-left: 300px;">
+ <p style="margin-left: 300px; margin-top:-30px;">
   <strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
     Nomor
   </strong> :
@@ -548,8 +548,8 @@ th {
 </p>
 
 <h5 style="
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-weight: bold;
   text-decoration: underline;
   font-family: 'Times New Roman', serif !important;
