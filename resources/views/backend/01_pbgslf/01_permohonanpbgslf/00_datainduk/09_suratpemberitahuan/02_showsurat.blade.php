@@ -614,12 +614,8 @@ th {
         <td style="width: 400px">{{ $surat->databangunanpbg->namabangunan ?? '-' }}</td>
       </tr>
       <tr>
-        <td style="width: 200px">Sub Fungsi Bangunan </td>
-        <td style="width: 400px">{{ $surat->cadangan1 ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td style="width: 200px">Luas Lantai</td>
-        <td style="width: 400px">{{ $surat->databangunanpbg->luasbangunan ?? '-' }} Meter<sup>2</sup></td>
+        <td style="width: 200px">Sub Fungsi Bangunan</td>
+        <td style="width: 400px">{{ $surat->databangunanpbg->cadangan1 ?? '-' }}</td>
       </tr>
       <tr>
         <td style="width: 200px">Tinggi Bangunan</td>
