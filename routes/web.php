@@ -1322,6 +1322,12 @@ Route::delete('/betempatkonsultasidelete/{id}', [PbgslfController::class, 'betem
 Route::get('/betempatcreate', [PbgslfController::class, 'betempatcreate'])->middleware('auth')->name('betempatcreate');
 Route::post('/betempatcreatenew', [PbgslfController::class, 'betempatcreatenew'])->middleware('auth')->name('create.betempatcreatenew');
 
+// PENGATURAN FUNGSI BANGUNAN GEDUNG
+Route::get('/befungsibangunan', [PbgslfController::class, 'befungsibangunan'])->middleware('auth')->name('befungsibangunan');
+Route::delete('/befungsibangunandelete/{id}', [PbgslfController::class, 'befungsibangunandelete'])->middleware('auth')->name('befungsibangunandelete');
+Route::get('/befungsibangunancreate', [PbgslfController::class, 'befungsibangunancreate'])->middleware('auth')->name('befungsibangunancreate');
+Route::post('/befungsibangunancreatenew', [PbgslfController::class, 'befungsibangunancreatenew'])->middleware('auth')->name('befungsibangunancreatenew');
+
 // KONSULTASI TEKNIS
 Route::get('/bepbgslfkonsultasi', [PbgslfController::class, 'bepbgslfkonsultasi'])->middleware('auth')->name('bepbgslfkonsultasi');
 Route::put('/validasipbgslfbukti/{id}', [PbgslfController::class, 'validasipbgslfbukti'])->name('validasipbgslfbukti.update');

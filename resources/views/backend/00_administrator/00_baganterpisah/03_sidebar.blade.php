@@ -959,7 +959,14 @@
 <li class="nav-item">
     <a href="/betempatkonsultasi" class="nav-link">
         <i class="bi bi-person-lines-fill nav-icon" style="color: white;"></i> <!-- cocok untuk Tempat Konsultasi -->
-        <p style="color: white; margin-left: 8px;">Tempat Konsultasi</p>
+        <p style="color: white; margin-left: 8px;">Tempat <br> Konsultasi</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/befungsibangunan" class="nav-link">
+        <i class="bi bi-person-lines-fill nav-icon" style="color: white;"></i> <!-- cocok untuk Tempat Konsultasi -->
+        <p style="color: white; margin-left: 8px;">Fungsi Bangunan</p>
     </a>
 </li>
 

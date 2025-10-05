@@ -15,6 +15,7 @@ use App\Models\dokumenteknismep;
 use App\Models\dokumenteknisslfpbg;
 use App\Models\dokumenteknisstruk;
 use App\Models\fasilitatorpbg;
+use App\Models\fungsibangunan;
 use App\Models\fungsibangunanpbg;
 use App\Models\gambarbantuan;
 use App\Models\infopbg1;
@@ -4900,4 +4901,98 @@ public function bepbgtpatptupdatenew(Request $request)
     return redirect()->route('bepbgtpatpt', ['id' => $validated['pbgslfbangunan_id']]);
 }
 
+
+public function befungsibangunan(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 20);
+
+    $query = fungsibangunanpbg::query();
+
+    if ($search) {
+        $query->where('fungsi', 'like', "%{$search}%");
+    }
+
+    $bujk = $query->latest()->paginate($perPage)->appends($request->all());
+
+    return view('backend.01_pbgslf.09_fungsibangunan.01_fungsibangunan', [
+        'title' => 'Data Fungsi Bangunan Gedung',
+        'data'  => $bujk,
+        'user'  => $user,
+    ]);
+}
+
+
+public function befungsibangunandelete($id)
+{
+    // Cari item berdasarkan judul
+    $entry = fungsibangunanpbg::where('id', $id)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+            // }
+
+            // Hapus entri dari database
+            $entry->delete();
+
+            // Redirect atau memberi respons sesuai kebutuhan
+            return redirect('/befungsibangunan')->with('delete', 'Data Berhasil Di Hapus !');
+
+        }
+
+        return redirect()->back()->with('error', 'Item not found');
+    }
+
+
+    public function befungsibangunancreate()
+{
+    $user = Auth::user();
+    // $dataakun = User::where('statusadmin_id', 4)->get();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    return view('backend.01_pbgslf.09_fungsibangunan.02_tambahfungsi', [
+        'title' => 'Tambahkan Fungsi Bangunan Gedung ',
+        'user'  => $user,
+        // 'dataakun'  => $dataakun
+    ]);
+}
+
+
+
+public function befungsibangunancreatenew(Request $request)
+{
+    $user = Auth::user();
+
+    $validated = $request->validate([
+        // 'user_id' => 'required|string',
+        'fungsi' => 'required|string',
+        // 'nosk' => 'required|string|max:255',
+        // 'status' => 'required|string|max:255',
+    ], [
+        // 'user_id.required' => 'Akun wajib dipilih.',
+        'fungsi.required' => 'Fungsi Bangunan wajib diisi.',
+        // 'nosk.required' => 'No SK wajib diisi.',
+        // 'status.required' => 'Status Petugas wajib diisi.',
+        // kamu bisa tambahkan pesan validasi lain jika perlu
+    ]);
+
+    $data = new fungsibangunanpbg();
+
+    // $data->user_id = $user->id ?? null;
+    $data->fungsi = $validated['fungsi'];
+    // $data->nosk = $validated['nosk'] ?? null;
+    // $data->status = $validated['status'] ?? null;
+
+    $data->save();
+
+    session()->flash('create', 'Data berhasil disimpan.');
+
+    return redirect()->route('befungsibangunan'); // Pastikan route ini benar
+}
 }
