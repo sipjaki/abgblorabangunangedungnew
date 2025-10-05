@@ -606,6 +606,10 @@ th {
         <td style="width: 400px">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
       </tr>
       <tr>
+        <td style="width: 200px">Sub Fungsi Bangunan</td>
+        <td style="width: 400px">{{ $surat->databangunanpbg->cadangan1 ?? '-' }}</td>
+      </tr>
+      <tr>
         <td style="width: 200px">Lokasi Bangunan</td>
         <td style="width: 400px">{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
       </tr>
