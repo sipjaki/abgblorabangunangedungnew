@@ -640,9 +640,9 @@ th {
     <thead style="font-size: 12px; font-family: 'Poppins', sans-serif;">
       <tr>
         <th style="width: 40px;">NO</th>
-        <th style="width: 200px;">DATA TANAH</th>
-        <th style="width: 100px; text-align:center;">VERIFIKASI</th>
-        <th style="width: 200px; text-align:center;">CATATAN</th>
+        <th style="width: 225px;">DATA TANAH</th>
+        <th style="width: 50px; text-align:center;">VERIFIKASI</th>
+        <th style="width: 225px; text-align:center;">CATATAN</th>
       </tr>
     </thead>
     <tbody style="font-size: 12px; font-family: 'Poppins', sans-serif;">
