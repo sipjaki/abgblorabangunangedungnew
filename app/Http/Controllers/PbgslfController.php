@@ -617,6 +617,7 @@ public function bepbgdatabangunancreatenew(Request $request)
         // Catatan
         'pilihancatatan' => 'required|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string',
+        'cadangan1' => 'nullable|string',
     ], [
         'pbgslfbangunan_id.required' => 'ID harus di pilih.',
         'jenisperkonsultasi_id.required' => 'Jenis Konsultasi Permohonan wajib diisi.',
@@ -631,6 +632,7 @@ public function bepbgdatabangunancreatenew(Request $request)
         'jumlahlantai.required' => 'Jumlah Lantai wajib diisi.',
         'internsitasbangunan.required' => 'Internsitas Bangunan wajib diisi.',
         'pilihancatatan.required' => 'Pilihan Catatan wajib dipilih!',
+        'cadangan1.required' => 'Sub Fungsi Bangunan Wajib Di Pilih!',
     ]);
 
     databangunanpbg::create([
@@ -667,6 +669,7 @@ public function bepbgdatabangunancreatenew(Request $request)
         // Catatan
         'pilihancatatan' => $validated['pilihancatatan'],
         'catatan' => $validated['catatan'] ?? null,
+        'cadangan1' => $validated['cadangan1'] ?? null,
     ]);
 
     session()->flash('create', 'Data Bangunan berhasil ditambahkan!');
