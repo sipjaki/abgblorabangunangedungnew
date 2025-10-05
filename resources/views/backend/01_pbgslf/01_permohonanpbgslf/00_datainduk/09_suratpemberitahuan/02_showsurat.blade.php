@@ -864,9 +864,9 @@ th {
     <thead>
       <tr>
         <th style="width: 40px;">NO</th>
-        <th style="width: 200px">DOKUMEN STRUKTUR </th>
+        <th style="width: 150px">DOKUMEN STRUKTUR </th>
         <th style="width: 75px; text-align:center;" >VERIFIKASI</th>
-        <th style="width: 250px; text-align:center;" >CATATAN</th>
+        <th style="width: 300px; text-align:center;" >CATATAN</th>
       </tr>
     </thead>
     <tbody>
@@ -932,13 +932,13 @@ th {
   </tbody>
   </table>
 
-  <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif;">
+  <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif; margin-top:-10px;">
     <thead>
         <tr>
             <th style="width: 40px;">NO</th>
-            <th style="width: 150px;">DOKUMEN MEKANIKAL DAN ELEKTRIKAL </th>
+            <th style="width: 175px;">DOKUMEN MEKANIKAL DAN ELEKTRIKAL </th>
         <th style="width: 75px; text-align:center;">VERIFIKASI</th>
-        <th style="width: 300px; text-align:center;">CATATAN</th>
+        <th style="width: 275px; text-align:center;">CATATAN</th>
       </tr>
   </thead>
   <tbody>
