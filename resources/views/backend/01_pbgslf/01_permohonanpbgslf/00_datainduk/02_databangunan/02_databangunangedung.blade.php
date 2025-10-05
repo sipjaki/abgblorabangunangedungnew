@@ -303,7 +303,7 @@ th {
                 ['icon' => 'bi-geo-alt', 'title' => 'Lokasi Bangunan', 'value' => $pemilik->lokasibangunan ?? '-'],
                 ['icon' => 'bi-tags', 'title' => 'Klasifikasi Bangunan', 'value' => $pemilik->klasifikasibangunan ?? '-'],
                 ['icon' => 'bi-house-door', 'title' => 'Fungsi Bangunan PBG', 'value' => $pemilik->fungsibangunanpbg->fungsi ?? '-'],
-                ['icon' => 'bi-building', 'title' => 'Tata Letak Bangunan', 'value' => $pemilik->fungsibangunanpbg->tataletakbangunan ?? '-'],
+                ['icon' => 'bi-building', 'title' => 'Sub Fungsi Bangunan Gedung', 'value' => $pemilik->fungsibangunanpbg->cadangan1 ?? '-'],
                 ['icon' => 'bi-aspect-ratio', 'title' => 'Luas Bangunan', 'value' => $pemilik->luasbangunan . ' m2' ?? '-'],
 
                 ['icon' => 'bi-file-earmark-text', 'title' => 'Jenis Permohonan', 'value' => $pemilik->jenispermohonan ?? '-'],
