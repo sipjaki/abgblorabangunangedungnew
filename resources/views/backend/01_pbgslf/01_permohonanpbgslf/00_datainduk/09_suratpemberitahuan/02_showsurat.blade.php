@@ -778,16 +778,16 @@ th {
   </tbody>
   </table>
 
-  <h6 style="margin-top: 25px; font-size: 12px; font-family: 'Poppins', sans-serif;">
+  <h6 style="margin-top: -10px; font-size: 12px; font-family: 'Poppins', sans-serif;">
       <strong>D. DOKUMEN TEKNIS </strong>
   </h6>
   <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif; margin-top:-5px;">
     <thead>
         <tr>
             <th style="width: 40px;">NO</th>
-            <th style="width: 200px;">DOKUMEN ARSITEKTUR</th>
-        <th style="width: 100px; text-align:center;">VERIFIKASI</th>
-        <th style="width: 200px; text-align:center;">CATATAN</th>
+            <th style="width: 225px;">DOKUMEN ARSITEKTUR</th>
+        <th style="width: 75px; text-align:center;">VERIFIKASI</th>
+        <th style="width: 225px; text-align:center;">CATATAN</th>
       </tr>
   </thead>
   <tbody>
