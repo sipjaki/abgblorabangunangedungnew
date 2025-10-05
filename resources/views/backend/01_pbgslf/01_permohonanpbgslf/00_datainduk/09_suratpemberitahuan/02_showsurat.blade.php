@@ -864,9 +864,9 @@ th {
     <thead>
       <tr>
         <th style="width: 40px;">NO</th>
-        <th style="width: 175px">DOKUMEN STRUKTUR </th>
+        <th style="width: 200px">DOKUMEN STRUKTUR </th>
         <th style="width: 75px; text-align:center;" >VERIFIKASI</th>
-        <th style="width: 275px; text-align:center;" >CATATAN</th>
+        <th style="width: 250px; text-align:center;" >CATATAN</th>
       </tr>
     </thead>
     <tbody>
