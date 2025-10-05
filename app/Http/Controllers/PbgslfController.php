@@ -3342,6 +3342,7 @@ public function updatedatabangunannew(Request $request, $id)
         'koordinat' => 'nullable|string|max:100',
         'pilihancatatan' => 'nullable|in:lengkap,tidak lengkap',
         'catatan' => 'nullable|string|required_if:pilihancatatan,tidak lengkap',
+        'cadangan1' => 'nullable|string|max:255',
     ]);
 
     // Cari dan update data

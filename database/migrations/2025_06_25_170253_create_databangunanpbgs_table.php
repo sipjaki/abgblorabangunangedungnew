@@ -49,7 +49,7 @@ return new class extends Migration
                 $table->string('pilihancatatan')->nullable();
                 $table->text('catatan')->nullable();
 
-            $table->string('cadangan1')->nullable();
+            $table->string('cadangan1')->nullable(); // SUDAH DI PAKAI
             $table->string('cadangan2')->nullable();
             $table->string('cadangan3')->nullable();
             $table->string('cadangan4')->nullable();

@@ -452,6 +452,20 @@ th {
         </div>
 
         <div class="col-md-6">
+    <label class="form-label">
+        <i class="bi bi-building text-primary me-1"></i> Sub Fungsi Bangunan
+    </label>
+    <input type="text"
+           name="cadangan1"
+           class="form-control @error('cadangan1') is-invalid @enderror"
+           value="{{ $data->cadangan1 ?? old('cadangan1') }}">
+    @error('cadangan1')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+    </div>
+
+
+        <div class="col-md-6">
             <label class="form-label"><i class="bi bi-aspect-ratio text-primary me-1"></i> Luas Bangunan (m²)</label>
             <input type="text" name="luasbangunan" class="form-control @error('luasbangunan') is-invalid @enderror" value="{{ $data->luasbangunan ?? old('luasbangunan') }}">
             @error('luasbangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror

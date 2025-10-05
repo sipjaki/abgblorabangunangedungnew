@@ -230,7 +230,7 @@ th {
   function searchTable() {
     let input = document.getElementById("searchInput").value;
 
-    fetch(`/datadesablora?search=${input}`)
+    fetch(`/befungsibangunan?search=${input}`)
       .then(response => response.text())
       .then(html => {
         let parser = new DOMParser();
@@ -279,11 +279,11 @@ th {
                                         {{-- <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a> --}}
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                         onclick="setDeleteUrl(this)">
-                                        <i class="bi bi-trash"></i>
+                                        <i class="bi bi-trash"></i>Hapus
                                     </a>
                                 </td>
 
