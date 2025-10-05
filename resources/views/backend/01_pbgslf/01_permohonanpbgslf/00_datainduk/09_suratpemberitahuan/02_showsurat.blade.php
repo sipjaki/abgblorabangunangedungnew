@@ -522,7 +522,7 @@ th {
 
 <!-- HALAMAN KEDUA -->
 <div class="halaman-pertama">
- <p style="margin-left: 300px; margin-top:-30px;">
+ <p style="margin-left: 250px; margin-top:-30px;">
   <strong style="font-family: 'Times New Roman', serif !important; font-size: 14px;">
     Nomor
   </strong> :
@@ -612,6 +612,10 @@ th {
       <tr>
         <td style="width: 200px">Nama Bangunan</td>
         <td style="width: 400px">{{ $surat->databangunanpbg->namabangunan ?? '-' }}</td>
+      </tr>
+      <tr>
+        <td style="width: 200px">Sub Fungsi Bangunan </td>
+        <td style="width: 400px">{{ $surat->cadangan1 ?? '-' }}</td>
       </tr>
       <tr>
         <td style="width: 200px">Luas Lantai</td>
