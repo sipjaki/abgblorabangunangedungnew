@@ -470,6 +470,12 @@ th {
     </td>
   </tr>
   <tr>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">Sub Fungsi Bangunan</td>
+    <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">
+      {{ $surat->databangunanpbg->cadangan1 ?? '-' }}
+    </td>
+  </tr>
+  <tr>
     <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">No. Telepon</td>
     <td style="font-family: 'Times New Roman', serif !important; font-size: 14px; padding: 4px;">
       {{ $surat->datapemilik->nomortelepon ?? '-' }}
@@ -604,10 +610,6 @@ th {
       <tr>
         <td style="width: 200px">Fungsi Bangunan</td>
         <td style="width: 400px">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
-      </tr>
-      <tr>
-        <td style="width: 200px">Sub Fungsi Bangunan</td>
-        <td style="width: 400px">{{ $surat->databangunanpbg->cadangan1 ?? '-' }}</td>
       </tr>
       <tr>
         <td style="width: 200px">Lokasi Bangunan</td>
