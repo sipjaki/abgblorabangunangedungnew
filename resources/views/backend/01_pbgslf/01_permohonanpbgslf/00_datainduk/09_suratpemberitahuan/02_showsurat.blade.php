@@ -565,8 +565,8 @@ th {
     <thead style="font-size: 12px; font-family: 'Poppins', sans-serif;">
       <tr>
         <th style="width: 40px;">NO</th>
-        <th>DATA BANGUNAN</th>
-        <th style="width: 200px; text-align:center;">VERIFIKASI</th>
+        <th style="width: 200px">DATA BANGUNAN</th>
+        <th style="width: 400px; text-align:center;">VERIFIKASI</th>
       </tr>
     </thead>
     <tbody>
@@ -575,20 +575,20 @@ th {
         <td colspan="2"><strong>DATA PEMILIK</strong></td>
       </tr>
       <tr>
-        <td>Nama Pemilik</td>
-            <td>{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
+        <td style="width: 200px">Nama Pemilik</td>
+            <td style="width: 400px">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
       </tr>
       <tr>
-        <td>Alamat Pemilik Bangunan</td>
-        <td>{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
+        <td style="width: 200px">Alamat Pemilik Bangunan</td>
+        <td style="width: 400px">{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
       </tr>
       <tr>
-        <td>No. Telepon</td>
-        <td>{{ $surat->datapemilik->nomortelepon ?? '-' }}</td>
+        <td style="width: 200px">No. Telepon</td>
+        <td style="width: 400px">{{ $surat->datapemilik->nomortelepon ?? '-' }}</td>
       </tr>
       <tr>
-        <td>Email</td>
-        <td>{{ $surat->datapemilik->email ?? '-' }}</td>
+        <td style="width: 200px">Email</td>
+        <td style="width: 400px">{{ $surat->datapemilik->email ?? '-' }}</td>
       </tr>
       <tr>
         <td colspan="3"><em>Catatan data pemilik :</em> {{ $surat->datapemilik->catatan ?? '-' }}</td>
@@ -598,36 +598,36 @@ th {
         <td colspan="2"><strong>DATA UMUM BANGUNAN GEDUNG</strong></td>
       </tr>
       <tr>
-        <td>Jenis Permohonan Konsultasi</td>
-        <td>{{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
+        <td style="width: 200px">Jenis Permohonan Konsultasi</td>
+        <td style="width: 400px">{{ $surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
       </tr>
       <tr>
-        <td>Fungsi Bangunan</td>
-        <td>{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
+        <td style="width: 200px">Fungsi Bangunan</td>
+        <td style="width: 400px">{{ $surat->databangunanpbg->fungsibangunanpbg->fungsi ?? '-' }}</td>
       </tr>
       <tr>
-        <td>Lokasi Bangunan</td>
-        <td>{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
+        <td style="width: 200px">Lokasi Bangunan</td>
+        <td style="width: 400px">{{ $surat->databangunanpbg->lokasibangunan ?? '-' }}</td>
       </tr>
       <tr>
-        <td>Nama Bangunan</td>
-        <td>{{ $surat->databangunanpbg->namabangunan ?? '-' }}</td>
+        <td style="width: 200px">Nama Bangunan</td>
+        <td style="width: 400px">{{ $surat->databangunanpbg->namabangunan ?? '-' }}</td>
       </tr>
       <tr>
-        <td>Luas Lantai</td>
-        <td>{{ $surat->databangunanpbg->luasbangunan ?? '-' }} Meter<sup>2</sup></td>
+        <td style="width: 200px">Luas Lantai</td>
+        <td style="width: 400px">{{ $surat->databangunanpbg->luasbangunan ?? '-' }} Meter<sup>2</sup></td>
       </tr>
       <tr>
-        <td>Tinggi Bangunan</td>
-        <td>{{ $surat->databangunanpbg->tinggibangunan ?? '-' }} Meter</td>
+        <td style="width: 200px">Tinggi Bangunan</td>
+        <td style="width: 400px">{{ $surat->databangunanpbg->tinggibangunan ?? '-' }} Meter</td>
       </tr>
       <tr>
-        <td>Jumlah Lantai</td>
-        <td>{{ $surat->databangunanpbg->jumlahlantai ?? '-' }} Lantai </td>
+        <td style="width: 200px">Jumlah Lantai</td>
+        <td style="width: 400px">{{ $surat->databangunanpbg->jumlahlantai ?? '-' }} Lantai </td>
       </tr>
       <tr>
-        <td>Perancang Dokumen Teknis</td>
-        <td style="text-align: left; text-transform:uppercase;">{{ $surat->databangunanpbg->pilihancatatan ?? '-' }}</td>
+        <td style="width: 200px">Perancang Dokumen Teknis</td>
+        <td style="width: 200px; text-transform:uppercase;">{{ $surat->databangunanpbg->pilihancatatan ?? '-' }}</td>
       </tr>
       <tr>
         <td colspan="3"><em>Catatan Data Bangunan :</em> {{ $surat->databangunanpbg->catatan ?? '-' }}</td>
