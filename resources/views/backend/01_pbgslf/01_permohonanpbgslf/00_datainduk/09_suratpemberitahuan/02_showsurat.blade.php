@@ -575,20 +575,20 @@ th {
         <td colspan="2"><strong>DATA PEMILIK</strong></td>
       </tr>
       <tr>
-        <td style="width: 200px">Nama Pemilik</td>
-            <td style="width: 400px">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
+        <td style="width: 150px">Nama Pemilik</td>
+            <td style="width: 450px">{{ $surat->datapemilik->namapemilik ?? '-' }}</td>
       </tr>
       <tr>
-        <td style="width: 200px">Alamat Pemilik Bangunan</td>
-        <td style="width: 400px">{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
+        <td style="width: 150px">Alamat Pemilik Bangunan</td>
+        <td style="width: 450px">{{ $surat->datapemilik->alamatpemilik ?? '-' }}</td>
       </tr>
       <tr>
-        <td style="width: 200px">No. Telepon</td>
-        <td style="width: 400px">{{ $surat->datapemilik->nomortelepon ?? '-' }}</td>
+        <td style="width: 150px">No. Telepon</td>
+        <td style="width: 450px">{{ $surat->datapemilik->nomortelepon ?? '-' }}</td>
       </tr>
       <tr>
-        <td style="width: 200px">Email</td>
-        <td style="width: 400px">{{ $surat->datapemilik->email ?? '-' }}</td>
+        <td style="width: 150px">Email</td>
+        <td style="width: 450px">{{ $surat->datapemilik->email ?? '-' }}</td>
       </tr>
       <tr>
         <td colspan="3"><em>Catatan data pemilik :</em> {{ $surat->datapemilik->catatan ?? '-' }}</td>
