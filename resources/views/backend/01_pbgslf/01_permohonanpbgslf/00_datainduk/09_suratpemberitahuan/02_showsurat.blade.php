@@ -860,13 +860,13 @@ th {
 
 <!-- HALAMAN KEEMPAT -->
 <div class="halaman-pertama">
-  <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif;">
+  <table class="isian" style="font-size: 12px; font-family: 'Poppins', sans-serif; margin-top: -25px;">
     <thead>
       <tr>
         <th style="width: 40px;">NO</th>
-        <th style="width: 150px">DOKUMEN STRUKTUR </th>
+        <th style="width: 175px">DOKUMEN STRUKTUR </th>
         <th style="width: 75px; text-align:center;" >VERIFIKASI</th>
-        <th style="width: 300px; text-align:center;" >CATATAN</th>
+        <th style="width: 275px; text-align:center;" >CATATAN</th>
       </tr>
     </thead>
     <tbody>
