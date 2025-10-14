@@ -378,7 +378,7 @@
                                                     <br><br><br><br><br><br>
                                                     <div style="display: inline-flex; flex-direction: column; gap: 0;">
                                                         <strong style="margin-top: -25px; text-decoration: underline; line-height: 1;">
-                                                            NIDZAMUDIN AL HUDA, ST
+                                                            NIDZAMUDIN AL HUDDA, ST
                                                         </strong>
                                                         <span style="line-height: 1; margin-top: 0;">
                                                             NIP. 19720326 200604 1 005
