@@ -2691,7 +2691,7 @@ if ($bulanFilter) {
     public function bepbgslfskrd(Request $request)
 {
     $user = Auth::user();
-    $perPage = $request->input('perPage', 20);
+    $perPage = $request->input('perPage', 10);
 
     // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
     $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
@@ -2717,10 +2717,16 @@ if ($bulanFilter) {
 $tahunIni = Carbon::now()->year;
 
 
+// $data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper']) // pastikan relasi dimuat
+//     ->where('validasiberkas5', 'sudah')
+//     ->whereYear('updated_at', $tahunIni)
+//   ->paginate($perPage);
+
 $data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper']) // pastikan relasi dimuat
     ->where('validasiberkas5', 'sudah')
     ->whereYear('updated_at', $tahunIni)
-  ->paginate($perPage);
+    ->latest('updated_at') // urutkan berdasarkan update terbaru
+    ->paginate($perPage);
 
     // ->get(); // ✅ AMBIL OBJEK
 
