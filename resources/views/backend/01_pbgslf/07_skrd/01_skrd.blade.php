@@ -333,15 +333,14 @@
 
     </tbody>
   </table>
+</div>
+
+
+
 
 </div>
+
 @include('backend.00_administrator.00_baganterpisah.07_paginations')
-
-
-
-
-</div>
-
 </div>
           <!--end::Container-->
         </div>
