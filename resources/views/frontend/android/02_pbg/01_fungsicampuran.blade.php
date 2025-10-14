@@ -6,6 +6,7 @@
 
     <div class="w-full h-[190] absolute top-0 overflow-hidden">
   <img src="/assets/android/iconmenu/halamanabg.jpg" alt="Bangunan Blora" class="w-full h-full object-cover" />
+
 </div>
 
      <div class="relative z-10 flex flex-col gap-6 mt-[60px]">

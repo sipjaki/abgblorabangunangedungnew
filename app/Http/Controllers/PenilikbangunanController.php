@@ -125,13 +125,66 @@ public function datanewpeniliknew(Request $request)
     return redirect()->route('dataallpenilikbg.index');
 }
 
+// public function dataallpenilikbg(Request $request)
+// {
+//     $user = Auth::user();
+//     $search = $request->input('search');
+//     $perPage = $request->input('perPage', 15);
+
+//     // Query dasar dengan eager loading relasi (user, kecamatanblora, kelurahandesa)
+//     $query = penilikbangunan::with(['user', 'kecamatanblora', 'kelurahandesa']);
+
+//     // Filter pencarian jika ada input 'search'
+//     if ($search) {
+//         $query->where(function ($q) use ($search) {
+//             $q->where('fungsibangunan', 'like', "%{$search}%")
+//               ->orWhere('subfungsibangunan', 'like', "%{$search}%")
+//               ->orWhere('namabangunan', 'like', "%{$search}%")
+//               ->orWhere('luasbangunan', 'like', "%{$search}%")
+//               ->orWhere('ketinggianbangunan', 'like', "%{$search}%")
+//               ->orWhere('jumlahlantai', 'like', "%{$search}%")
+//               ->orWhere('jumlahlapisbasemen', 'like', "%{$search}%")
+//               ->orWhere('luasbasemen', 'like', "%{$search}%")
+//               ->orWhere('jumlahunit', 'like', "%{$search}%")
+//               ->orWhere('estimasijumlahpenghuni', 'like', "%{$search}%")
+//               ->orWhere('nomorkkpr', 'like', "%{$search}%")
+//               ->orWhere('provinsi', 'like', "%{$search}%")
+//               ->orWhere('kabupaten', 'like', "%{$search}%")
+//               ->orWhere('alamatlengkap', 'like', "%{$search}%")
+//               ->orWhere('koordinat', 'like', "%{$search}%")
+//               ->orWhereHas('user', function ($sub) use ($search) {
+//                   $sub->where('name', 'like', "%{$search}%")
+//                       ->orWhere('email', 'like', "%{$search}%");
+//               })
+//               ->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+//                   $sub->where('nama', 'like', "%{$search}%"); // Asumsi nama kecamatan ada kolom 'nama'
+//               })
+//               ->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+//                   $sub->where('nama', 'like', "%{$search}%"); // Asumsi nama kelurahan ada kolom 'nama'
+//               });
+//         });
+//     }
+
+//     // Ambil data dengan pagination
+//     $datapenilik = $query->latest()->paginate($perPage)->appends($request->all());
+
+//     return view('backend.07_penilikbangunan.02_alldatapenilik', [
+//         'title' => 'Data Inspeksi Penilik Bangunan Gedung',
+//         'data' => $datapenilik,
+//         'user' => $user,
+//     ]);
+// }
+
 public function dataallpenilikbg(Request $request)
 {
+    // Ambil data user yang sedang login
     $user = Auth::user();
+
+    // Ambil parameter pencarian dan jumlah data per halaman
     $search = $request->input('search');
     $perPage = $request->input('perPage', 15);
 
-    // Query dasar dengan eager loading relasi (user, kecamatanblora, kelurahandesa)
+    // Query dasar dengan relasi (user, kecamatanblora, kelurahandesa)
     $query = penilikbangunan::with(['user', 'kecamatanblora', 'kelurahandesa']);
 
     // Filter pencarian jika ada input 'search'
@@ -157,17 +210,18 @@ public function dataallpenilikbg(Request $request)
                       ->orWhere('email', 'like', "%{$search}%");
               })
               ->orWhereHas('kecamatanblora', function ($sub) use ($search) {
-                  $sub->where('nama', 'like', "%{$search}%"); // Asumsi nama kecamatan ada kolom 'nama'
+                  $sub->where('nama', 'like', "%{$search}%");
               })
               ->orWhereHas('kelurahandesa', function ($sub) use ($search) {
-                  $sub->where('nama', 'like', "%{$search}%"); // Asumsi nama kelurahan ada kolom 'nama'
+                  $sub->where('nama', 'like', "%{$search}%");
               });
         });
     }
 
-    // Ambil data dengan pagination
+    // Ambil data terbaru dulu (latest = urut dari created_at DESC)
     $datapenilik = $query->latest()->paginate($perPage)->appends($request->all());
 
+    // Kirim ke view
     return view('backend.07_penilikbangunan.02_alldatapenilik', [
         'title' => 'Data Inspeksi Penilik Bangunan Gedung',
         'data' => $datapenilik,
