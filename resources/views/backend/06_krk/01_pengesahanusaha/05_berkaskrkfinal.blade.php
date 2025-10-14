@@ -218,9 +218,9 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-    <td style="text-align: center;">9</td>
+    <td style="text-align: center;">10</td>
     <td style="text-align: left;">
-        <i class="bi bi-geo-alt-fill" style="margin-right:6px;"></i> Koordinat Lokasi
+        Koordinat Lokasi
     </td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
