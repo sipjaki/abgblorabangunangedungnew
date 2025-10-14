@@ -371,6 +371,12 @@ th {
                         <td style="text-align: center;">:</td>
                         <td>{{ $item->jaringanutilitas ?? '-' }}</td>
                     </tr>
+                    <tr>
+                        <td style="text-align: center;">13</td>
+                        <td>Koordinat Lokasi </td>
+                        <td style="text-align: center;">:</td>
+                        <td>{{ $item->koordinatlokasi ?? '-' }}</td>
+                    </tr>
                 @endforeach
             @endif
         </tbody>

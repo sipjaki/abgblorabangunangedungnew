@@ -217,6 +217,17 @@
                                                                 {{ $data->lokasibangunan ? $data->lokasibangunan . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
                                                             </td>
                                                         </tr>
+                                                        <tr>
+    <td style="text-align: center;">9</td>
+    <td style="text-align: left;">
+        <i class="bi bi-geo-alt-fill" style="margin-right:6px;"></i> Koordinat Lokasi
+    </td>
+    <td style="text-align: center;">:</td>
+    <td style="text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+        {{ $data->koordinatlokasi ?? '-' }}
+    </td>
+</tr>
+
                                                     </tbody>
                                                 </table>
                                             </div>

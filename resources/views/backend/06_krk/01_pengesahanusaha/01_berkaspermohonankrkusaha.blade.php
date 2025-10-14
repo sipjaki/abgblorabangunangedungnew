@@ -689,7 +689,9 @@ th {
 </tr>
 <tr>
     <td style="text-align: center;">15</td>
-    <td style="text-align: left;"><i class="bi bi-globe" style="margin-right:6px;"></i> Koordinat Lokasi</td>
+    <td style="text-align: left;">
+        <i class="bi bi-geo-alt" style="margin-right:6px;"></i> Koordinat Lokasi
+    </td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->koordinatlokasi ?? '-' }}</td>
 </tr>
