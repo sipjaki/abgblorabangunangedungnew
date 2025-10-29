@@ -91,7 +91,7 @@
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
        <a href="{{ url()->previous() }}">
-    <button class="button-newvalidasi" type="button" style="cursor: pointer; color:white;">
+    <button class="button-modern" type="button" style="cursor: pointer; color:white;">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </a>
