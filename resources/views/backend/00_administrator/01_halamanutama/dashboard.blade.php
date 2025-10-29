@@ -847,6 +847,179 @@
     </div>
 </div>
 
+<div class="row">
+    <!-- 1. Bantek Berkas Asistensi -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-clipboard-check" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">Bantek Berkas Asistensi</p>
+                        <p class="small-text">Informasi Jumlah Berkas Asistensi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 2. Bantek Peneliti Kontrak -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-brush" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">Bantek Peneliti Kontrak</p>
+                        <p class="small-text">Informasi Jumlah Peneliti Kontrak</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 3. Bantek Perhitungan Penyusutan -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-calculator" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">Bantek Perhitungan Penyusutan</p>
+                        <p class="small-text">Informasi Jumlah Perhitungan Penyusutan</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 4. Bantek Perhitungan Tingkat Kerusakan -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-building-gear" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">Bantek Perhitungan Tingkat Kerusakan</p>
+                        <p class="small-text">Informasi Jumlah Perhitungan Tingkat Kerusakan</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <!-- 1. Bantek Perhitungan Pemeliharaan BGN -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-gear-wide-connected" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">Bantek Perhitungan Pemeliharaan BGN</p>
+                        <p class="small-text">Informasi Jumlah Perhitungan Pemeliharaan BGN</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 2. Bantek Perhitungan Konstruksi BGN -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-building-check" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">Bantek Perhitungan Konstruksi BGN</p>
+                        <p class="small-text">Informasi Jumlah Perhitungan Konstruksi BGN</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 3. Bantek Pendampingan Serah Terima -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-people" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">Bantek Pendampingan Serah Terima</p>
+                        <p class="small-text">Informasi Jumlah Pendampingan Serah Terima</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 4. Bantek Permintaan Tim Teknis -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-person-gear" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">Bantek Permintaan Tim Teknis</p>
+                        <p class="small-text">Informasi Jumlah Permintaan Tim Teknis</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
         </div>
 
         </div>
