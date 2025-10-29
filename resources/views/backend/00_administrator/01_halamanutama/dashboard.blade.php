@@ -652,82 +652,224 @@
 
     <div class="container">
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">3</div>
-                <div class="stat-label">Akun Pemohon</div>
-                {{-- <div class="stat-change positive">+12.5%</div> --}}
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">23</div>
-                <div class="stat-label">Akun Dinas</div>
-                {{-- <div class="stat-change positive">+8.2%</div> --}}
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">17</div>
-                <div class="stat-label">Akun Konsultan</div>
-                {{-- <div class="stat-change positive">2.1%</div> --}}
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">-</div>
-                <div class="stat-label">Permohonan</div>
-                {{-- <div class="stat-change positive">+1.8%</div> --}}
-            </div>
-        </div>
 
-        <div class="charts-section">
-            <div class="chart-container">
-                <h3 class="chart-title">Statistik</h3>
-               <div class="bar-chart" style="display: flex; align-items: flex-end; gap: 10px; height: 200px;">
-    <div class="bar" style="height: 60%;" data-value="60" title="Jan"></div>
-    <div class="bar" style="height: 80%;" data-value="80" title="Feb"></div>
-    <div class="bar" style="height: 45%;" data-value="45" title="Mar"></div>
-    <div class="bar" style="height: 90%;" data-value="90" title="Apr"></div>
-    <div class="bar" style="height: 75%;" data-value="75" title="Mei"></div>
-    <div class="bar" style="height: 100%;" data-value="100" title="Jun"></div>
-    <div class="bar" style="height: 50%;" data-value="50" title="Jul"></div>
-    <div class="bar" style="height: 70%;" data-value="70" title="Agu"></div>
-    <div class="bar" style="height: 65%;" data-value="65" title="Sep"></div>
-    <div class="bar" style="height: 85%;" data-value="85" title="Okt"></div>
-    <div class="bar" style="height: 55%;" data-value="55" title="Nov"></div>
-    <div class="bar" style="height: 95%;" data-value="95" title="Des"></div>
-</div>
+<!-- Tambahkan ini di dalam <head> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
+<style>
+    :root {
+        --primary-green: #42b549; /* Hijau Tokopedia */
+        --dark-green: #2c9e32;
+        --light-green: #e8f5e9;
+        --accent-green: #c8e6c9;
+    }
+
+    .dashboard-card {
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: none;
+        height: 100%;
+        position: relative;
+    }
+
+    .dashboard-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background-color: var(--primary-green);
+    }
+
+    .dashboard-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-content {
+        padding: 25px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .number-container {
+        background-color: var(--primary-green);
+        border-radius: 14px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(66, 181, 73, 0.3);
+    }
+
+    .info-icon {
+        font-size: 36px;
+        color: white;
+    }
+
+    .info-content {
+        flex-grow: 1;
+    }
+
+    .info-text {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+        color: #333;
+        letter-spacing: 0.3px;
+    }
+
+    .small-text {
+        font-size: 13px;
+        color: #777;
+    }
+
+    /* Warna khusus untuk setiap kartu */
+    .card-1 .number-container { background-color: #42b549; }
+    .card-2 .number-container { background-color: #3fa845; }
+    .card-3 .number-container { background-color: #3b9a40; }
+    .card-4 .number-container { background-color: #378d3c; }
+
+    .card-1::before { background-color: #42b549; }
+    .card-2::before { background-color: #3fa845; }
+    .card-3::before { background-color: #3b9a40; }
+    .card-4::before { background-color: #378d3c; }
+
+    @media (max-width: 576px) {
+        .number-container {
+            width: 60px;
+            height: 60px;
+        }
+
+        .info-icon {
+            font-size: 26px;
+        }
+
+        .info-text {
+            font-size: 14px;
+        }
+
+        .card-content {
+            padding: 20px 15px;
+        }
+    }
+
+    .info-text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+    }
+
+    .info-number {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--primary-green);
+        text-shadow: 0 1px 3px rgba(66, 181, 73, 0.3);
+        letter-spacing: -0.5px;
+        background: linear-gradient(to bottom right, #4caf50, #66bb6a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .info-text span {
+        font-weight: 600;
+        color: #333;
+    }
+</style>
+<div class="row">
+    <!-- 1. Berita Jakon -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-newspaper" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span> Berita Jakon
+                        </p>
+                        <p class="small-text">Informasi terkini seputar jasa konstruksi</p>
+                    </div>
+                </div>
             </div>
+        </a>
+    </div>
 
-            <div class="chart-container">
-    <h5 class="chart-title">Jumlah Berkas Permohonan </h5>
-    <div class="legend">
-        <div class="legend-item">
-            <div class="legend-color" style="background: #00087c;"></div>
-            <span>Berkas PBG SLF</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color" style="background: #a78bfa;"></div>
-            <span>Berkas KRK</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color" style="background: #34d399;"></div>
-            <span>Berkas Bantek</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color" style="background: #fbbf24;"></div>
-            <span>Berkas Penilik</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color" style="background: #f472b6;"></div>
-            <span>Berkas MBR</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color" style="background: #60a5fa;"></div>
-            <span>Berkas Hibah Bangunan</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color" style="background: #10b981;"></div>
-            <span>Berkas Bantuan</span>
-        </div>
+    <!-- 2. Artikel Jakon -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-journal-text" style="margin-right: 5px;"></i>
+                            <span class="info-number">... </span> Artikel Jakon
+                        </p>
+                        <p class="small-text">Kumpulan tulisan dan opini</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 3. Dokumentasi Jakon -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-camera-reels" style="margin-right: 5px;"></i>
+                            <span class="info-number">... </span> Dokumentasi Kegiatan
+                        </p>
+                        <p class="small-text">Kegiatan dan arsip dokumentasi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 4. BUJK Konsultasi & Konstruksi -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-building" style="margin-right: 5px;"></i>
+                            <span class="info-number"> ... </span> BUJK Konsultasi & Konstruksi
+                        </p>
+                        <p class="small-text">Data dan pengelolaan perusahaan</p>
+                    </div>
+                </div>
+            </div>
+        </a>
     </div>
 </div>
+
+        </div>
 
         </div>
 
