@@ -1,4 +1,8 @@
 <style>
+body {
+font-family: 'Poppins', sans-serif;
+}
+
 .button-modern {
     background: linear-gradient(145deg, #f9fafc, #eef3fb);
     color: #1e293b;
@@ -797,11 +801,87 @@ button-delete {
 
 
 <style>
-    .zebra-table tbody tr:hover {
-        background-color: #f5b041 !important; /* warna oranye PUPR */
-        color: white;
-        transition: background-color 0.3s ease;
-    }
+    .zebra-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #1e293b;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
+}
+
+/* Header – gradient navy to sky blue */
+.zebra-table thead {
+  background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+}
+
+.zebra-table th {
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 16px 14px;
+  letter-spacing: 0.7px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-size: 14px;
+}
+
+/* Isi tabel */
+.zebra-table td {
+  padding: 14px 14px;
+  border-bottom: 1px solid #e3e8f5;
+  color: #1e293b;
+  font-weight: 400;
+  background-color: #fff;
+}
+
+/* Zebra effect lembut */
+.zebra-table tbody tr:nth-child(even) {
+  background-color: #f3f6fb; /* lembut biru muda */
+}
+
+/* Hover lembut dengan efek transisi */
+.zebra-table tbody tr:hover {
+  background-color: #e7efff; /* hover biru muda lembut */
+  transition: all 0.3s ease;
+}
+
+/* Tanpa garis vertikal */
+.zebra-table th,
+.zebra-table td {
+  border-left: none;
+  border-right: none;
+}
+
+/* Corner radius header */
+.zebra-table th:first-child {
+  border-top-left-radius: 12px;
+}
+.zebra-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* Responsive look */
+@media (max-width: 768px) {
+  .zebra-table th,
+  .zebra-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Animasi saat muncul */
+.zebra-table {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 </style>
 
 <script>
