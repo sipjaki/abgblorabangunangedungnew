@@ -191,13 +191,14 @@ th {
     </div>
 
     <!-- Search Box -->
-    <div style="position: relative; display: inline-block;">
-      <input type="search" id="searchInput" placeholder="Cari Konsultan Perencana ...." onkeyup="searchTable()"
-        style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
-      <i class="fas fa-search"
-         style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
-      </i>
-    </div>
+      <div style="position: relative; display: inline-block; margin-right:10px;">
+    <input type="search" id="searchInput" placeholder="Cari Paket Pekerjaan ...."
+           onkeyup="searchTable()"
+           style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+    <i class="bi bi-search"
+       style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+</div>
+
 
   </div>
 
@@ -227,19 +228,19 @@ th {
     window.location.href = url.toString();
   }
 
-  function searchTable() {
-    let input = document.getElementById("searchInput").value;
+                          function searchTable() {
+                            let input = document.getElementById("searchInput").value;
 
-    fetch(`/bebantekkonsultan?search=${encodeURIComponent(input)}`)
-      .then(response => response.text())
-      .then(html => {
-        let parser = new DOMParser();
-        let doc = parser.parseFromString(html, "text/html");
-        let newTableBody = doc.querySelector("#tableBody").innerHTML;
-        document.querySelector("#tableBody").innerHTML = newTableBody;
-      })
-      .catch(error => console.error("Error fetching search results:", error));
-  }
+                            fetch(`/bebantekkonsultan?search=${input}`)
+                                .then(response => response.text())
+                                .then(html => {
+                                    let parser = new DOMParser();
+                                    let doc = parser.parseFromString(html, "text/html");
+                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                                    document.querySelector("#tableBody").innerHTML = newTableBody;
+                                })
+                                .catch(error => console.error("Error fetching search results:", error));
+                        }
 </script>
 
                 <hr>
