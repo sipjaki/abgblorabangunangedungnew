@@ -658,82 +658,163 @@
 <!-- Tambahkan ini di dalam <head> -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-
 <div class="row">
-    <!-- 1. Berita Jakon -->
+    <!-- 1. Permohonan PBG SLF -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                        <i class="bi bi-file-earmark-text-fill info-icon"></i>
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-newspaper" style="margin-right: 5px;"></i>
-                            <span class="info-number">...</span> Berita Jakon
+                            <span class="info-number">124</span> Permohonan PBG SLF
                         </p>
-                        <p class="small-text">Informasi terkini seputar jasa konstruksi</p>
+                        <p class="small-text">Total permohonan izin PBG dan SLF yang telah diajukan oleh masyarakat atau pelaku usaha.</p>
                     </div>
                 </div>
             </div>
         </a>
     </div>
 
-    <!-- 2. Artikel Jakon -->
+    <!-- 2. Pendataan Bangunan Gedung -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-1">
+            <div class="dashboard-card card-2">
                 <div class="card-content">
                     <div class="number-container">
-                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                        <i class="bi bi-building-check info-icon"></i>
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-journal-text" style="margin-right: 5px;"></i>
-                            <span class="info-number">... </span> Artikel Jakon
+                            <span class="info-number">87</span> Pendataan Bangunan Gedung
                         </p>
-                        <p class="small-text">Kumpulan tulisan dan opini</p>
+                        <p class="small-text">Jumlah bangunan yang telah terdata dalam sistem sebagai bagian dari pendataan konstruksi.</p>
                     </div>
                 </div>
             </div>
         </a>
     </div>
 
-    <!-- 3. Dokumentasi Jakon -->
+    <!-- 3. Bantuan Teknis -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-1">
+            <div class="dashboard-card card-3">
                 <div class="card-content">
                     <div class="number-container">
-                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                        <i class="bi bi-camera-reels-fill info-icon"></i>
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-camera-reels" style="margin-right: 5px;"></i>
-                            <span class="info-number">... </span> Dokumentasi Kegiatan
+                            <i class="bi bi-tools" style="margin-right: 5px;"></i>
+                            <span class="info-number">42</span> Bantuan Teknis
                         </p>
-                        <p class="small-text">Kegiatan dan arsip dokumentasi</p>
+                        <p class="small-text">Kegiatan pendampingan dan pelatihan teknis yang telah dilakukan untuk peningkatan kapasitas.</p>
                     </div>
                 </div>
             </div>
         </a>
     </div>
 
-    <!-- 4. BUJK Konsultasi & Konstruksi -->
+    <!-- 4. Keterangan Rencana Kabupaten -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-1">
+            <div class="dashboard-card card-4">
                 <div class="card-content">
                     <div class="number-container">
-                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                        <i class="bi bi-geo-alt-fill info-icon"></i>
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-building" style="margin-right: 5px;"></i>
-                            <span class="info-number"> ... </span> BUJK Konsultasi & Konstruksi
+                            <span class="info-number">56</span> Keterangan Rencana Kabupaten
                         </p>
-                        <p class="small-text">Data dan pengelolaan perusahaan</p>
+                        <p class="small-text">Informasi rencana tata ruang dan data perencanaan pembangunan wilayah Kabupaten.</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <!-- 1. Inspeksi Bangunan -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-search info-icon"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-newspaper" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span> Inspeksi Bangunan
+                        </p>
+                        <p class="small-text">Data hasil pemeriksaan kondisi fisik bangunan dan kelayakan struktur di lapangan.</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 2. Bantuan Gambar -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-2">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-brush info-icon"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-journal-text" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span> Bantuan Gambar
+                        </p>
+                        <p class="small-text">Layanan penyusunan dan konsultasi gambar teknis bangunan gedung.</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 3. Hibah Bangunan -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-3">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-gift-fill info-icon"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-camera-reels" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span> Hibah Bangunan
+                        </p>
+                        <p class="small-text">Data bangunan hasil hibah yang diterima atau diserahkan kepada pihak terkait.</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 4. Perjalanan Dinas -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-4">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-geo-alt-fill info-icon"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-building" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span> Perjalanan Dinas
+                        </p>
+                        <p class="small-text">Catatan dan data kegiatan perjalanan dinas pegawai di bidang konstruksi dan pengawasan.</p>
                     </div>
                 </div>
             </div>
