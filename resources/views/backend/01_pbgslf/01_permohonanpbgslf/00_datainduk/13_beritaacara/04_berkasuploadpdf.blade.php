@@ -413,7 +413,7 @@ th {
 </div>
 
     <div class="text-end mt-4">
-        <button type="submit" class="button-baru">
+        <button type="submit" class="button-modern">
             <i class="bi bi-save me-1"></i> Upload Berkas
         </button>
     </div>

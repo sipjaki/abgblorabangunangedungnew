@@ -27,20 +27,7 @@
         @foreach ($buttons as $btn)
             <div class="d-inline-block me-3 mb-2">
                 <a href="{{ $btn['url'] }}" onclick="saveScrollPosition()" class="text-decoration-none">
-                    <div
-                        class="px-3 py-2 rounded shadow-sm d-flex align-items-center justify-content-start"
-                        style="
-                            background: linear-gradient(145deg, #e1f0ff, #d6e9ff);
-                            color: #003366;
-                            transition: all 0.3s ease;
-                            min-width: max-content;
-                            border: 1px solid #c8dfff;
-                            border-radius: 12px;
-                            cursor: pointer;
-                        "
-                        onmouseover="this.style.background='white'; this.style.color='black';"
-                        onmouseout="this.style.background='linear-gradient(145deg, #e1f0ff, #d6e9ff)'; this.style.color='#003366';"
-                    >
+                    <div class="button-modern">
                         <i class="bi bi-folder-plus me-2"></i> {{ $btn['label'] }}
                     </div>
                 </a>
