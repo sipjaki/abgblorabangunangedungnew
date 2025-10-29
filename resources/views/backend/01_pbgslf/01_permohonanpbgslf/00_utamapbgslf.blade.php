@@ -8,7 +8,6 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('frontend.android.00_fiturmenu.06_alert')
-@include('backend.00_administrator.00_baganterpisah.09_button')
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
@@ -548,86 +547,130 @@
 </div>
 
 {{-- -------------------------------------------------------- --}}
-<!-- ======= DASHBOARD KARTU PERMOHONAN ======= -->
+<div class="row">
+    <!-- 1. Permohonan PBG SLF -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="/bepbgslfindexslf" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-file-earmark-check" style="margin-right: 5px;"></i>
+                            <span class="info-number">{{$jumlahDataIdSatu}}</span>
+                        </p>
+                        <p class="info-text">
+                            PBG ({Persetujuan Bangunan Gedung})
+                        </p>
+                        {{-- <p class="small-text">Informasi Jumlah Permohonan PBG SLF</p> --}}
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 
-<div class="row g-4">
-  <!-- Card 1 -->
-  <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bepbgslfindexslf" style="text-decoration: none;">
-      <div class="dashboard-card shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
-        <div class="number-container d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
-          <img src="/assets/icon/pupr.png" alt="icon" width="60" height="60" style="background-color:#f5f5f5; border-radius:50%; padding:8px;">
-        </div>
-        <div class="info-box-content text-center">
-          <span class="info-box-text d-block fw-semibold">(PBG) Persetujuan Bangunan Gedung</span>
-          <span class="info-box-number fw-bold mt-1 text-primary">{{ $jumlahDataIdSatu }} Permohonan</span>
-        </div>
-      </div>
-    </a>
-  </div>
+    <!-- 2. Pendataan Bangunan Gedung -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="/bepbgslfindexslfper2" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-building-check" style="margin-right: 5px;"></i>
+                            <span class="info-number">{{$jumlahDataIdDua}} </span>
+                        </p>
+                        <p class="info-text">
+                            SLF (Sertifikat Laik Fungsi)
+                        </p>
+                        {{-- <p class="small-text">Informasi Jumlah Pendataan Bangunan Gedung</p> --}}
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 
-  <!-- Card 2 -->
-  <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bepbgslfindexslfper2" style="text-decoration: none;">
-      <div class="dashboard-card shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
-        <div class="number-container d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
-          <img src="/assets/icon/pupr.png" alt="icon" width="60" height="60" style="background-color:#f5f5f5; border-radius:50%; padding:8px;">
-        </div>
-        <div class="info-box-content text-center">
-          <span class="info-box-text d-block fw-semibold">(SLF) Sertifikat Laik Fungsi</span>
-          <span class="info-box-number fw-bold mt-1 text-primary">{{ $jumlahDataIdDua }} Permohonan</span>
-        </div>
-      </div>
-    </a>
-  </div>
+    <!-- 3. Bantuan Teknis -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="/bepbgslfindexslfper3" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-tools" style="margin-right: 5px;"></i>
+                            <span class="info-number">{{$jumlahDataIdTiga }}</span>
+                        </p>
+                        <p class="info-text">
+                            SBKBG
+                        </p>
+                        {{-- <p class="small-text">Informasi Permohonan Bantuan Teknis</p> --}}
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 
-  <!-- Card 3 -->
-  <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bepbgslfindexslfper3" style="text-decoration: none;">
-      <div class="dashboard-card shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
-        <div class="number-container d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
-          <img src="/assets/icon/pupr.png" alt="icon" width="60" height="60" style="background-color:#f5f5f5; border-radius:50%; padding:8px;">
-        </div>
-        <div class="info-box-content text-center">
-          <span class="info-box-text d-block fw-semibold">(SBKBG) Surat Bukti Kepemilikan Bangunan Gedung</span>
-          <span class="info-box-number fw-bold mt-1 text-primary">{{ $jumlahDataIdTiga }} Permohonan</span>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <!-- Card 4 -->
-  <div class="col-12 col-sm-6 col-md-6">
-    <a href="/bepbgslfindexslfper4" style="text-decoration: none;">
-      <div class="dashboard-card shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
-        <div class="number-container d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
-          <img src="/assets/icon/pupr.png" alt="icon" width="60" height="60" style="background-color:#f5f5f5; border-radius:50%; padding:8px;">
-        </div>
-        <div class="info-box-content text-center">
-          <span class="info-box-text d-block fw-semibold">(RTB) Rencana Teknis Pembongkaran</span>
-          <span class="info-box-number fw-bold mt-1 text-primary">{{ $jumlahDataIdEmpat }} Permohonan</span>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <!-- Card 5 -->
-  <div class="col-12 col-sm-6 col-md-6">
-    <a href="/bepbgslfindexslfper5" style="text-decoration: none;">
-      <div class="dashboard-card shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
-        <div class="number-container d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
-          <img src="/assets/icon/pupr.png" alt="icon" width="60" height="60" style="background-color:#f5f5f5; border-radius:50%; padding:8px;">
-        </div>
-        <div class="info-box-content text-center">
-          <span class="info-box-text d-block fw-semibold">Pendataan Bangunan Gedung</span>
-          <span class="info-box-number fw-bold mt-1 text-primary">{{ $jumlahDataIdLima }} Permohonan</span>
-        </div>
-      </div>
-    </a>
-  </div>
+    <!-- 4. Keterangan Rencana Kabupaten -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="/bepbgslfindexslfper4" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-geo-alt" style="margin-right: 5px;"></i>
+                            <span class="info-number">{{$jumlahDataIdEmpat }}</span>
+                        </p>
+                        <p class="info-text">
+                            Rencana Teknis Pembongkaran
+                        </p>
+                        {{-- <p class="small-text">Data dan pengelolaan perusahaan</p> --}}
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>
 
+<div class="row">
+    <!-- 4. Keterangan Rencana Kabupaten -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="/bepbgslfindexslfper5" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-geo-alt" style="margin-right: 5px;"></i>
+                            <span class="info-number">{{$jumlahDataIdLima }}</span>
+                        </p>
+                        <p class="info-text">
+                            Pendataan Bangunan Gedung
+                        </p>
+                        {{-- <p class="small-text">Data dan pengelolaan perusahaan</p> --}}
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>
+
+
+
+  </div>
+<br><br><br><br>
+
               {{-- -------------------------------------------------------- --}}
 
 
