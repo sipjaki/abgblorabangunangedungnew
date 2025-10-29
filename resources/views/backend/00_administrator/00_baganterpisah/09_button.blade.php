@@ -1,5 +1,5 @@
 <style>
-    .button-modern {
+.button-modern {
     background: linear-gradient(145deg, #f9fafc, #eef3fb);
     color: #1e293b;
     border: 1px solid #d0d7e2;
@@ -20,15 +20,18 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
+/* 🔥 Efek hover baru: tulisan tetap hitam + glow lembut */
 .button-modern:hover {
-    background: #ffffff;
-    color: #0d47a1;
-    border: 1px solid #93c5fd;
+    background: linear-gradient(145deg, #ffffff, #f3f4f6);
+    color: #1e293b; /* tetap hitam */
+    border: 1px solid #cbd5e1;
     box-shadow:
-        0 4px 10px rgba(13, 110, 253, 0.15),
+        0 0 10px rgba(0, 0, 0, 0.1),
+        0 0 12px rgba(147, 197, 253, 0.4), /* cahaya pinggir lembut */
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
     transform: translateY(-1px);
 }
+
 .button-abgblora {
     border: none;
     padding: 10px 20px;
