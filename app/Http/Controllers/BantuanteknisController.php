@@ -1692,7 +1692,7 @@ public function bebantekkonsultandata(Request $request)
     $bujk = $query->latest()->paginate($perPage)->appends($request->all());
 
     return view('backend.04_bantuanteknis.05_datakonsultan.01_datakonsultanbantek', [
-        'title' => 'Daftar Konsultan Bantuan Teknis Asistensi',
+        'title' => 'Daftar Konsultan Perencana Teknis',
         'data'  => $bujk,
         'user'  => $user,
     ]);
