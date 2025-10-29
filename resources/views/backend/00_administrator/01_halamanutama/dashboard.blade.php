@@ -694,7 +694,10 @@
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-journal-text" style="margin-right: 5px;"></i>
-                            <span class="info-number">... </span> <br> Pendataan Bangunan Gedung
+                            <span class="info-number">... </span>
+                        </p>
+                        <p class="info-text">
+                            Pendataan Bangunan Gedung
                         </p>
                         <p class="small-text">Informasi Jumlah Pendataan Bangunan Gedung</p>
                     </div>
@@ -714,7 +717,10 @@
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-camera-reels" style="margin-right: 5px;"></i>
-                            <span class="info-number">... </span> <br> Bantuan Teknis
+                            <span class="info-number">... </span>
+                        </p>
+                        <p class="info-text">
+                            Bantuan Teknis
                         </p>
                         <p class="small-text">Informasi Permohonan Bantuan Teknis</p>
                     </div>
@@ -734,7 +740,10 @@
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-building" style="margin-right: 5px;"></i>
-                            <span class="info-number"> ... </span> <br> Keterangan Rencana Kabupaten
+                            <span class="info-number"> ... </span>
+                        </p>
+                        <p class="info-text">
+                            Keterangan Rencana Kabupaten
                         </p>
                         <p class="small-text">Data dan pengelolaan perusahaan</p>
                     </div>
@@ -756,7 +765,10 @@
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-newspaper" style="margin-right: 5px;"></i>
-                            <span class="info-number">...</span> <br> <br> Inspeksi Bangunan
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">
+                            Inspeksi Bangunan Gedung
                         </p>
                         <p class="small-text">Informasi Jumlah Inspeksi Bangunan Gedung</p>
                     </div>
@@ -776,7 +788,10 @@
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-journal-text" style="margin-right: 5px;"></i>
-                            <span class="info-number">... </span> <br> Bantuan Gambar
+                            <span class="info-number">... </span>
+                        </p>
+                        <p class="info-text">
+                            Permohonan Bantuan Gambar
                         </p>
                         <p class="small-text">Informasi Jumlah Bantuan Gambar</p>
                     </div>
@@ -796,7 +811,10 @@
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-camera-reels" style="margin-right: 5px;"></i>
-                            <span class="info-number">... </span> <br> Hibah Bangunan Gedung
+                            <span class="info-number">... </span>
+                        </p>
+                        <p class="info-text">
+                            Hibah Bangunan Gedung
                         </p>
                         <p class="small-text">Informasi Jumlah Hibah Bangunan Gedung</p>
                     </div>
@@ -816,7 +834,10 @@
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-building" style="margin-right: 5px;"></i>
-                            <span class="info-number"> ... </span> <br> Keterangan Rencana Kabupaten
+                            <span class="info-number"> ... </span>
+                        </p>
+                        <p class="info-text">
+                            Keterangan Rencana Kabupaten
                         </p>
                         <p class="small-text">Informasi Permohonan KRK Kabupaten</p>
                     </div>
