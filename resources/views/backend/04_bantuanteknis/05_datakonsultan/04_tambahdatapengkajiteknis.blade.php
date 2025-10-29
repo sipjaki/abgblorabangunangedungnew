@@ -153,7 +153,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-newvalidasi" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -202,8 +202,8 @@ th {
 <div class="row">
     <div class="col-md-6">
         {{-- Nama Badan Usaha --}}
-        <div class="mb-3">
-            <label class="form-label" for="namabadanusaha">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern " for="namabadanusaha">
                 <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Badan Usaha
             </label>
             <input
@@ -220,8 +220,8 @@ th {
         </div>
 
         {{-- Alamat --}}
-        <div class="mb-3">
-            <label class="form-label" for="alamat">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="alamat">
                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Alamat
             </label>
             <textarea
@@ -236,8 +236,8 @@ th {
         </div>
 
         {{-- Telepon --}}
-        <div class="mb-3">
-            <label class="form-label" for="telepon">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="telepon">
                 <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> Telepon
             </label>
             <input
@@ -254,8 +254,8 @@ th {
         </div>
 
         {{-- Email --}}
-        <div class="mb-3">
-            <label class="form-label" for="email">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="email">
                 <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
             </label>
             <input
@@ -272,10 +272,10 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         {{-- Direktur --}}
         <div class="mb-3">
-            <label class="form-label" for="direktur">
+            <label class="form-label-modern" for="direktur">
                 <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Nama Direktur
             </label>
             <input
@@ -292,8 +292,8 @@ th {
         </div>
 
         {{-- Subklasifikasi --}}
-        <div class="mb-3">
-            <label class="form-label" for="subklasifikasi">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="subklasifikasi">
                 <i class="bi bi-diagram-3" style="margin-right: 8px; color: navy;"></i> Subklasifikasi
             </label>
             <textarea
@@ -308,8 +308,8 @@ th {
         </div>
 
         {{-- Pengalaman --}}
-        <div class="mb-3">
-            <label class="form-label" for="pengalaman">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="pengalaman">
                 <i class="bi bi-book-half" style="margin-right: 8px; color: navy;"></i> Pengalaman
             </label>
             <textarea
@@ -331,7 +331,7 @@ th {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-baru" type="button" onclick="openModal()">
+                               <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
