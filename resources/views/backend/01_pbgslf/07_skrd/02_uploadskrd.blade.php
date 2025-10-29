@@ -406,7 +406,7 @@ th {
 
     @canany(['superadmin', 'admin'])
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
   <div class="mb-3">
     {{-- Tampilkan file sebelumnya kalau ada --}}
     @if(!empty($data->berkasskrd) && file_exists(public_path($data->berkasskrd)))
@@ -428,7 +428,7 @@ th {
       </div>
     @endif
 
-    <label class="form-label" for="berkasskrd">
+    <label class="form-label-modern" for="berkasskrd">
       <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas SKRD
     </label>
     <input type="file" id="berkasskrd" name="berkasskrd" accept="application/pdf"
