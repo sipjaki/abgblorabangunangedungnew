@@ -247,7 +247,7 @@ th {
                  <div class="card-body p-0">
            <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis"
-                        class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+                        class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
                         >
                             <thead>
                                   <tr>
