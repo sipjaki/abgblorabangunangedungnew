@@ -2697,6 +2697,17 @@ if ($bulanFilter) {
     $user = Auth::user();
     $perPage = $request->input('perPage', 10);
 
+     // Ambil keyword search dari request
+    $search = $request->input('search');
+
+    // Query data pbgslfbangunan
+    $query = pbgslfbangunan::query();
+
+    // Jika ada search, filter berdasarkan namapemohon
+    if ($search) {
+        $query->where('namapemohon', 'like', "%{$search}%");
+    }
+
     // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
     $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
         $q->where('id', 1);
@@ -2776,34 +2787,24 @@ if ($bulanFilter) {
     ]);
 }
 
-public function bepbgslfskrdcreate(Request $request, $id)
+
+public function bepbgslfskrdcreate($id)
 {
-    // Ambil keyword search dari request
-    $search = $request->input('search'); // misal dari ?search=...
-
-    // Query awal berdasarkan ID
-    $query = pbgslfbangunan::where('id', $id);
-
-    // Jika ada search, filter berdasarkan namapemohon
-    if ($search) {
-        $query->where('namapemohon', 'like', "%{$search}%");
-    }
-
-    // Ambil data
-    $databantuanteknis = $query->first();
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = pbgslfbangunan::find($id);
 
     if (!$databantuanteknis) {
         return abort(404, 'Data bantuan teknis tidak ditemukan');
     }
 
-    // Kirim data ke view
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
     return view('backend.01_pbgslf.07_skrd.02_uploadskrd', [
-        'title' => 'Upload Berkas SKRD PBG/SLF',
+        'title' => 'Upload Berkas SKRD PBG/SLF ',
         'data' => $databantuanteknis,
         'user' => Auth::user()
     ]);
-}
 
+}
 
 public function bepbgslfskrdcreatenew(Request $request, $id)
 {
