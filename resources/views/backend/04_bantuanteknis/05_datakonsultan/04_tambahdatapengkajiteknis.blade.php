@@ -274,7 +274,7 @@ th {
 
     <div class="col-md-6">
         {{-- Direktur --}}
-        <div class="form-modenr mb-3">
+        <div class="form-modern mb-3">
             <label class="form-label-modern" for="direktur">
                 <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Nama Direktur
             </label>
