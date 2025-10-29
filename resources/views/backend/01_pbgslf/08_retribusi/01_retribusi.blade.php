@@ -398,14 +398,12 @@
   </table>
 </div>
 
-
-
-
-</div>
-
-
 @include('backend.00_administrator.00_baganterpisah.07_paginations')
 </div>
+
+
+
+<br><br></div>
           <!--end::Container-->
         </div>
         <!--end::App Content-->
