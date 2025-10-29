@@ -111,7 +111,7 @@ th {
 
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -122,7 +122,7 @@ th {
 
          @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -136,7 +136,7 @@ th {
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
        <a href="{{ url()->previous() }}">
-    <button class="button-newvalidasi" type="button">
+    <button class="button-modern" type="button">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </a>
