@@ -76,9 +76,9 @@
     </select>
   </div>
 </form> --}}
+<div class="container button-modern">
 
-<div class="putih" style="margin-bottom:100px;">
-<div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+  <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
       <div style="position: relative; display: inline-block; margin-right:10px;">
     <input type="search" id="searchInput" placeholder="Cari Nama Pemohon ...."
@@ -86,7 +86,7 @@
            style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
     <i class="bi bi-search"
        style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-</div>
+        </div>
 <script>
 
                       function searchTable() {
@@ -104,7 +104,12 @@
                         }
 </script>
     <br>
-    </div>
+
+</div>
+
+</div>
+
+<div class="putih" style="margin-bottom:100px;">
 
 <div style="width: 100%; overflow-x: auto; margin-bottom: 100px; margin-top:20px;">
   <table
