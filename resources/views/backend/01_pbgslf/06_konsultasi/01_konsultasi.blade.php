@@ -276,27 +276,27 @@
 
     <thead>
       <tr>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">No</th>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>No</th>
+        <th>
           <i class="bi bi-person-fill"></i> Admin DPUPR
         </th>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan
         </th>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-hash"></i> No Registrasi SIM BG
         </th>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-calendar"></i> Tanggal Permohonan
         </th>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-check2-circle"></i> Status Permohonan
         </th>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-folder-fill"></i> Berkas
         </th>
         @can('superadmin')
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-tools"></i> Aksi
         </th>
         @endcan
