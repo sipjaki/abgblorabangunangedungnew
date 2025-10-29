@@ -1,3 +1,48 @@
+<style>
+ body {
+        font-family: 'Poppins', sans-serif;
+    }
+    .zebra-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+.zebra-table th {
+    background-color: #ADD8E6; /* biru muda */
+    color: black;
+    text-align: center;
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.zebra-table td {
+    text-align: center;
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.zebra-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.zebra-table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.zebra-table tbody tr:hover {
+    background-color: #ffd100 !important;
+}
+
+th {
+    background-color: #ADD8E6;
+}
+
+</style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -66,7 +111,7 @@
 
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-modern"
+        <button class="button-kembali"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -78,7 +123,7 @@
 
          @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-modern"
+        <button class="button-kembali"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -92,7 +137,7 @@
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
        <a href="{{ url()->previous() }}">
-    <button class="button-modern" type="button" style="cursor: pointer; color:white;">
+    <button class="button-newvalidasi" type="button" style="cursor: pointer; color:white;">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </a>
@@ -208,6 +253,11 @@
                  </div>
 
                     </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Surat Pemberitahuan Verifikasi SIMBG</title>
   <style>
     @page {
       size: A4;
@@ -291,9 +341,29 @@
       }
     }
   </style>
+</head>
+<body>
 
     <div class="download-container">
-  <button class="button-modern" onclick="downloadPDF()"><i class="bi bi-download"></i> Download Surat Pemberitahuan (PDF) </button>
+  <style>
+    .download-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid red;
+    }
+  </style>
+  <button class="button-berkas" onclick="downloadPDF()"><i class="bi bi-download"></i> Download Surat Pemberitahuan (PDF) </button>
 </div>
 
 {{-- <div class="download-container">
