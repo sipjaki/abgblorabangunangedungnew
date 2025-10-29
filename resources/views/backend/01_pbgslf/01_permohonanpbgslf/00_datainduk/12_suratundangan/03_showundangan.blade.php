@@ -436,7 +436,7 @@ th {
           Jenis Konsultasi
         </td>
         <td style="padding: 4px 8px; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-          {{ $surat->databangunanpbg->jeniskonsultasi->jenis ?? '-' }}
+          {{ $surat->databangunanpbg->jenisperkonsultasi->jenis ?? '-' }}
         </td>
     </tr>
     <tr>
