@@ -1680,13 +1680,13 @@ public function bebantekkonsultandata(Request $request)
               ->orWhere('no_pengesahan', 'like', "%{$search}%");
         });
 
-        $query->orWhereHas('bujkkonsultansub', function ($q) use ($search) {
-            $q->where('nama', 'like', "%{$search}%");
-        });
+        // $query->orWhereHas('bujkkonsultansub', function ($q) use ($search) {
+        //     $q->where('nama', 'like', "%{$search}%");
+        // });
 
-        $query->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-            $q->where('nama', 'like', "%{$search}%");
-        });
+        // $query->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+        //     $q->where('nama', 'like', "%{$search}%");
+        // });
     }
 
     $bujk = $query->latest()->paginate($perPage)->appends($request->all());
