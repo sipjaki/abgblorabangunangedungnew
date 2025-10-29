@@ -192,7 +192,7 @@ th {
 
     <!-- Search Box -->
     <div style="position: relative; display: inline-block;">
-      <input type="search" id="searchInput" placeholder="Cari Pengkaji Teknis ...." onkeyup="searchTable()"
+      <input type="search" id="searchInput" placeholder="Cari Konsultan ...." onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
       <i class="fas fa-search"
          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
@@ -203,7 +203,7 @@ th {
 
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_pengkajitekniskabupatenblora')"
+    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_pengkajiteknis')"
       class="button-baru"
       style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
       <i class="bi bi-download"></i> Download Excel
@@ -212,7 +212,7 @@ th {
     <a href="/bepengkajiteknisnew" style="text-decoration: none;">
       <button class="button-baru"
         style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
-        <i class="bi bi-plus-circle"></i> Create
+        <i class="bi bi-plus-circle"></i> Buat Baru
       </button>
     </a>
   </div>
@@ -266,7 +266,7 @@ th {
     </tr>
                             </thead>
                               <tbody id="tableBody">
-                                @foreach ($data as $item )
+                                @forelse ($data as $item )
 
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
@@ -326,8 +326,39 @@ th {
                                 @endcan
 
                                 </tr>
-                                @endforeach
-                            </tbody>
+                                   @empty
+    <tr>
+    <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+ </tbody>
                         </table>
 
                      </div>

@@ -841,12 +841,12 @@ button-delete {
 
 /* Zebra effect lembut */
 .zebra-table tbody tr:nth-child(even) {
-  background-color: #b5ccf0; /* lembut biru muda */
+  background-color: #d7e4fa; /* lembut biru muda */
 }
 
 /* 🌈 Hover 1 baris penuh dari kiri ke kanan */
 .zebra-table tbody tr:hover td {
-  background-color: #b5ccf0; /* biru langit terang */
+  background-color: #d7e4fa; /* biru langit terang */
   color: #0f172a;
   transition: all 0.3s ease;
   cursor: pointer;
