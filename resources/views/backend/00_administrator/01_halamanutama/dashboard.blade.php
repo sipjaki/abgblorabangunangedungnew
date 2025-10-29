@@ -662,17 +662,15 @@
     <!-- 1. Permohonan PBG SLF -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-1">
-                <div class="card-content">
-                    <div class="number-container">
+            <div class="dashboard-card card-1 text-center">
+                <div class="card-content flex-column">
+                    <div class="number-container mx-auto mb-3">
                         <i class="bi bi-file-earmark-text-fill info-icon"></i>
                     </div>
                     <div class="info-content">
-                        <p class="info-text">
-                            <i class="bi bi-newspaper" style="margin-right: 5px;"></i>
-                            <span class="info-number">124</span> Permohonan PBG SLF
-                        </p>
-                        <p class="small-text">Total permohonan izin PBG dan SLF yang telah diajukan oleh masyarakat atau pelaku usaha.</p>
+                        <p class="info-number mb-1">124</p>
+                        <p class="info-text mb-1">Permohonan PBG SLF</p>
+                        <p class="small-text">Data izin masuk</p>
                     </div>
                 </div>
             </div>
@@ -682,17 +680,15 @@
     <!-- 2. Pendataan Bangunan Gedung -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-2">
-                <div class="card-content">
-                    <div class="number-container">
+            <div class="dashboard-card card-2 text-center">
+                <div class="card-content flex-column">
+                    <div class="number-container mx-auto mb-3">
                         <i class="bi bi-building-check info-icon"></i>
                     </div>
                     <div class="info-content">
-                        <p class="info-text">
-                            <i class="bi bi-journal-text" style="margin-right: 5px;"></i>
-                            <span class="info-number">87</span> Pendataan Bangunan Gedung
-                        </p>
-                        <p class="small-text">Jumlah bangunan yang telah terdata dalam sistem sebagai bagian dari pendataan konstruksi.</p>
+                        <p class="info-number mb-1">87</p>
+                        <p class="info-text mb-1">Pendataan Gedung</p>
+                        <p class="small-text">Bangunan terdata</p>
                     </div>
                 </div>
             </div>
@@ -702,17 +698,15 @@
     <!-- 3. Bantuan Teknis -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-3">
-                <div class="card-content">
-                    <div class="number-container">
-                        <i class="bi bi-camera-reels-fill info-icon"></i>
+            <div class="dashboard-card card-3 text-center">
+                <div class="card-content flex-column">
+                    <div class="number-container mx-auto mb-3">
+                        <i class="bi bi-tools info-icon"></i>
                     </div>
                     <div class="info-content">
-                        <p class="info-text">
-                            <i class="bi bi-tools" style="margin-right: 5px;"></i>
-                            <span class="info-number">42</span> Bantuan Teknis
-                        </p>
-                        <p class="small-text">Kegiatan pendampingan dan pelatihan teknis yang telah dilakukan untuk peningkatan kapasitas.</p>
+                        <p class="info-number mb-1">42</p>
+                        <p class="info-text mb-1">Bantuan Teknis</p>
+                        <p class="small-text">Pelatihan & bimbingan</p>
                     </div>
                 </div>
             </div>
@@ -722,17 +716,15 @@
     <!-- 4. Keterangan Rencana Kabupaten -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-4">
-                <div class="card-content">
-                    <div class="number-container">
+            <div class="dashboard-card card-4 text-center">
+                <div class="card-content flex-column">
+                    <div class="number-container mx-auto mb-3">
                         <i class="bi bi-geo-alt-fill info-icon"></i>
                     </div>
                     <div class="info-content">
-                        <p class="info-text">
-                            <i class="bi bi-building" style="margin-right: 5px;"></i>
-                            <span class="info-number">56</span> Keterangan Rencana Kabupaten
-                        </p>
-                        <p class="small-text">Informasi rencana tata ruang dan data perencanaan pembangunan wilayah Kabupaten.</p>
+                        <p class="info-number mb-1">56</p>
+                        <p class="info-text mb-1">Rencana Kabupaten</p>
+                        <p class="small-text">Data tata ruang</p>
                     </div>
                 </div>
             </div>
