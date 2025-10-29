@@ -136,13 +136,11 @@
 
 <div style="width: 100%; overflow-x: auto; margin-bottom: 100px; margin-top:20px;">
   <table id="tabelSuratbantuanteknis"
-    class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
-
-  >
+    class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
 
     <thead>
       <tr>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">No</th>
+        <th>No</th>
         {{-- <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
           <i class="bi bi-person-fill"></i> Upload Berkas
         </th> --}}
@@ -151,32 +149,32 @@
         </th> --}}
 
 
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-file-earmark-text-fill"></i> Bulan Sidang
         </th>
 
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan
         </th>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
-          <i class="bi bi-hash"></i> No Registrasi SIM BG
+        <th>
+          <i class="bi bi-hash"></i> No Registrasi SIMBG
         </th>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-calendar"></i> Tanggal Permohonan
         </th>
 
 
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-file-earmark-text-fill"></i> Potensi Retribusi
         </th>
 
-                <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+                <th>
                   <i class="bi bi-file-earmark-text-fill"></i> Status
                 </th>
 
                 @canany(['superadmin', 'admin'])
 
-                <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+                <th>
                     <i class="bi bi-file-earmark-text-fill"></i> Status/Berkas
                 </th>
 
@@ -406,7 +404,7 @@
 </div>
 
 
-{{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
+@include('backend.00_administrator.00_baganterpisah.07_paginations')
 </div>
           <!--end::Container-->
         </div>
