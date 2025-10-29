@@ -398,8 +398,8 @@ th {
 
     <div class="row g-3 mt-2">
         {{-- Nama Pemilik --}}
-<div class="col-md-6">
-    <label class="form-label">
+<div class="form-modern col-md-6">
+    <label class="form-label-modern">
         <i class="bi bi-diagram-3-fill me-1 text-primary"></i> Jenis Permohonan Konsultasi
     </label>
     <select name="jenisperkonsultasi_id" class="form-select @error('jenisperkonsultasi_id') is-invalid @enderror">
@@ -413,19 +413,19 @@ th {
     @error('jenisperkonsultasi_id')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-house-fill text-primary me-1"></i> Nama Bangunan Gedung</label>
+<div class="form-modern col-md-6">
+    <label class="form-label-mdoern"><i class="bi bi-house-fill text-primary me-1"></i> Nama Bangunan Gedung</label>
     <input type="text" name="namabangunan" class="form-control @error('namabangunan') is-invalid @enderror" value="{{ old('namabangunan') }}">
     @error('namabangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-geo-alt-fill text-primary me-1"></i> Lokasi Bangunan</label>
+<div class="form-modern col-md-6">
+    <label class="form-label-modern"><i class="bi bi-geo-alt-fill text-primary me-1"></i> Lokasi Bangunan</label>
     <input type="text" name="lokasibangunan" class="form-control @error('lokasibangunan') is-invalid @enderror" value="{{ old('lokasibangunan') }}">
     @error('lokasibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
-<div class="col-md-6">
-    <label class="form-label">
+<div class="form-modern col-md-6">
+    <label class="form-label-modern">
         <i class="bi bi-tags-fill text-primary me-1"></i> Klasifikasi Bangunan
     </label>
     <select name="klasifikasibangunan" class="form-select @error('klasifikasibangunan') is-invalid @enderror">
@@ -436,8 +436,8 @@ th {
     @error('klasifikasibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-<div class="col-md-6">
-    <label class="form-label">
+<div class="form-modern col-md-6">
+    <label class="form-label-modern">
         <i class="bi bi-building text-primary me-1"></i> Fungsi Bangunan (PBG)
     </label>
     <select name="fungsibangunanpbg_id" class="form-select @error('fungsibangunanpbg_id') is-invalid @enderror">
@@ -451,14 +451,14 @@ th {
     @error('fungsibangunanpbg_id')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-house-fill text-primary me-1"></i> Sub Fungsi Bangunan</label>
+<div class="form-modern col-md-6">
+    <label class="form-label-modern"><i class="bi bi-house-fill text-primary me-1"></i> Sub Fungsi Bangunan</label>
     <input type="text" name="cadangan1" class="form-control @error('cadangan1') is-invalid @enderror" value="{{ old('cadangan1') }}">
     @error('cadangan1')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-aspect-ratio text-primary me-1"></i> Luas Bangunan (m²)</label>
+<div class="form-modern col-md-6">
+    <label class="form-label-modern"><i class="bi bi-aspect-ratio text-primary me-1"></i> Luas Bangunan (m²)</label>
     <input type="number" name="luasbangunan" class="form-control @error('luasbangunan') is-invalid @enderror" value="{{ old('luasbangunan') }}">
     @error('luasbangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
@@ -468,8 +468,8 @@ th {
 
 <div class="row">
     {{-- Jenis Permohonan --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label d-block" style="color: black; font-weight: 600;">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
             <i class="bi bi-pencil-square me-1" style="color: blue;"></i> Jenis Permohonan
         </label>
 
@@ -487,8 +487,8 @@ th {
     </div>
 
     {{-- Fungsi Bangunan --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label d-block" style="color: navy; font-weight: 600;">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern d-block" style="color: navy; font-weight: 600;">
             <i class="bi bi-layers-fill me-1" style="color: blue;"></i> Fungsi Bangunan
         </label>
 
@@ -507,13 +507,13 @@ th {
 </div>
 
 
-<div class="col-md-6">
-    <label class="form-label"><i class="bi bi-arrow-up-short text-primary me-1"></i> Tinggi Bangunan (meter)</label>
+<div class="form-modern col-md-6">
+    <label class="form-label-modern"><i class="bi bi-arrow-up-short text-primary me-1"></i> Tinggi Bangunan (meter)</label>
     <input type="number" name="tinggibangunan" class="form-control @error('tinggibangunan') is-invalid @enderror" value="{{ old('tinggibangunan') }}">
     @error('tinggibangunan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
-<div class="col-md-6">
-    <label class="form-label">
+<div class="form-modern col-md-6">
+    <label class="form-label-modern">
         <i class="bi bi-stack text-primary me-1"></i> Jumlah Lantai
     </label>
     <select name="jumlahlantai" class="form-select @error('jumlahlantai') is-invalid @enderror">
@@ -530,8 +530,8 @@ th {
 </div>
 
 
-<div class="col-md-6 mb-3">
-    <label class="form-label d-block" style="color: black; font-weight: 600;">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern d-block" style="color: black; font-weight: 600;">
         <i class="bi bi-box-seam me-1" style="color: blue;"></i>Kelengkapan Data Intensitas Bangunan
     </label>
 
@@ -553,14 +553,14 @@ th {
 </h5>
 
 <div class="row">
-    <div class="col-md-6 mb-3">
-        <label class="form-label"><i class="bi bi-hash text-primary me-1"></i> Nomor PKKPR</label>
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern"><i class="bi bi-hash text-primary me-1"></i> Nomor PKKPR</label>
         <input type="text" name="nomorpkkpr" class="form-control @error('nomorpkkpr') is-invalid @enderror" value="{{ old('nomorpkkpr') }}">
         @error('nomorpkkpr')<div class="invalid-feedback">{{ $message }}</div>@enderror
     </div>
 {{-- GSB --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern">
         <i class="bi bi-aspect-ratio text-primary me-1"></i> GSB (Garis Sempadan Bangunan)
     </label>
     <div class="input-group">
@@ -578,8 +578,8 @@ th {
 </div>
 
 {{-- KDB --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern">
         <i class="bi bi-box text-primary me-1"></i> KDB (Koefisien Dasar Bangunan)
     </label>
     <div class="input-group">
@@ -598,8 +598,8 @@ th {
 </div>
 
 {{-- KLB --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern">
         <i class="bi bi-bar-chart-steps text-primary me-1"></i> KLB (Koefisien Lantai Bangunan)
     </label>
     <div class="input-group">
@@ -617,8 +617,8 @@ th {
 </div>
 
 {{-- KDH --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern">
         <i class="bi bi-graph-up text-primary me-1"></i> KDH (Koefisien Daerah Hijau)
     </label>
     <div class="input-group">
@@ -652,24 +652,24 @@ th {
 <div class="row g-3">
 
     {{-- Provinsi --}}
-    <div class="col-md-4">
-        <label class="form-label">
+    <div class="form-modern col-md-4">
+        <label class="form-label-modern">
             <i class="bi bi-geo-alt-fill text-danger me-1"></i> Provinsi
         </label>
         <input type="text" name="provinsi" readonly class="form-control bg-light" value="Jawa Tengah">
     </div>
 
     {{-- Kabupaten --}}
-    <div class="col-md-4">
-        <label class="form-label">
+    <div class="form-modern col-md-4">
+        <label class="form-label-modern">
             <i class="bi bi-geo-alt text-danger me-1"></i> Kabupaten/Kota
         </label>
         <input type="text" name="kabupaten" readonly class="form-control bg-light" value="Kabupaten Blora">
     </div>
 
     {{-- Kecamatan --}}
-    <div class="col-md-4">
-        <label class="form-label d-flex align-items-center" for="kecamatanblora_id">
+    <div class="form-modern col-md-4">
+        <label class="form-label-modern d-flex align-items-center" for="kecamatanblora_id">
             <i class="fas fa-map-pin me-1" style="color: navy;"></i> Kecamatan
         </label>
         <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror">
@@ -684,8 +684,8 @@ th {
     </div>
 
     {{-- Kelurahan/Desa --}}
-    <div class="col-md-4">
-        <label for="kelurahandesa_id" class="form-label d-flex align-items-center">
+    <div class="form-modern col-md-4">
+        <label for="kelurahandesa_id" class="form-label-modern d-flex align-items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"/>
                 <path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/>
@@ -699,8 +699,8 @@ th {
     </div>
 
     {{-- Alamat Lengkap --}}
-    <div class="col-md-8">
-        <label class="form-label">
+    <div class="form-modern col-md-8">
+        <label class="form-label-modern">
             <i class="bi bi-geo text-primary me-1"></i> Alamat Lengkap
         </label>
         <input type="text" name="alamatlengkap" class="form-control @error('alamatlengkap') is-invalid @enderror" value="{{ old('alamatlengkap') }}">
@@ -708,8 +708,8 @@ th {
     </div>
 
     {{-- Koordinat --}}
-    <div class="col-md-6">
-        <label class="form-label">
+    <div class="form-modern col-md-6">
+        <label class="form-label-modern">
             <i class="bi bi-crosshair text-success me-1"></i> Koordinat (Latitude, Longitude)
         </label>
         <input type="text" name="koordinat" class="form-control @error('koordinat') is-invalid @enderror" placeholder="-6.969xxx, 111.403xxx" value="{{ old('koordinat') }}">
@@ -746,8 +746,8 @@ th {
 
 
         {{-- Pilihan Catatan --}}
-        <div class="col-md-6">
-            <label class="form-label d-block" style="color: navy; font-weight: 600;">
+        <div class="form-modern col-md-6">
+            <label class="form-label-modern d-block" style="color: navy; font-weight: 600;">
                 <i class="bi bi-check-circle-fill me-1" style="color: blue"></i> Pilihan Catatan
             </label>
 
@@ -765,15 +765,15 @@ th {
         </div>
 
         {{-- Catatan --}}
-        <div class="col-12" id="catatan-field" style="display: none;">
-            <label class="form-label"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
+        <div class="form-modern col-12" id="catatan-field" style="display: none;">
+            <label class="form-label-modern"><i class="bi bi-journal-text text-navy me-1" style="color: blue"></i> Catatan</label>
             <textarea name="catatan" class="form-control @error('catatan') is-invalid @enderror" rows="3" placeholder="Tuliskan catatan tambahan...">{{ old('catatan') }}</textarea>
             @error('catatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
         </div>
 
         {{-- Tombol Submit --}}
         <div class="col-12 text-end mt-3">
-            <button type="button" class="button-hijau" onclick="openModal()">
+            <button type="button" class="button-modern" onclick="openModal()">
                 <i class="bi bi-save me-1"></i> Simpan Data Bangunan
             </button>
         </div>
