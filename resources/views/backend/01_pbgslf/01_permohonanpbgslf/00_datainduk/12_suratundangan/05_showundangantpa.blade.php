@@ -212,10 +212,9 @@
 
 @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px; font-family: 'Times New Roman', serif !important;">
-        <button class="button-kembali"
+        <button class="button-modern"
                 type="button"
-                onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';"
-                style="cursor: pointer; color:black; font-family: 'Times New Roman', serif !important;">
+                onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
     </div>
@@ -223,10 +222,10 @@
 
 @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px; font-family: 'Times New Roman', serif !important;">
-        <button class="button-kembali"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
-                style="cursor: pointer; color:black; font-family: 'Times New Roman', serif !important;">
+                >
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
     </div>
@@ -235,7 +234,7 @@
 @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px; font-family: 'Times New Roman', serif !important;">
        <a href="{{ url()->previous() }}">
-    <button class="button-newvalidasi" type="button" style="cursor: pointer; color:white; font-family: 'Times New Roman', serif !important;">
+    <button class="button-modern" type="button" style="cursor: pointer; color:white; font-family: 'Times New Roman', serif !important;">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </a>
@@ -301,12 +300,12 @@
                     @endcan
                 </div>
             </div>
-
-<div style="text-align: center; margin: 20px; font-family: 'Times New Roman', serif !important;">
-  <button class="button-berkas" onclick="downloadPDF()">
+<div style="text-align: center; margin: 20px; font-family: 'Poppins', sans-serif !important;">
+  <button class="button-modern" onclick="downloadPDF()" style="font-family: 'Poppins', sans-serif; font-weight: 500;">
     📄 Download Surat Undangan (PDF)
   </button>
 </div>
+
 
 <!-- HALAMAN PERTAMA -->
 <div class="halaman" id="halaman-pertama" style="font-family: 'Times New Roman', serif !important;">

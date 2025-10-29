@@ -330,7 +330,7 @@ th {
 </head>
 
 <div style="text-align: center; margin: 20px;">
-  <button class="button-berkas" onclick="downloadPDF()">
+  <button class="button-modern" onclick="downloadPDF()">
     📄 Download Surat Undangan (PDF)
   </button>
 </div>
