@@ -813,7 +813,7 @@ button-delete {
   box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
 }
 
-/* Header – gradient navy to sky blue */
+/* Header – gradient navy to sky blue dengan height lebih tinggi */
 .zebra-table thead {
   background: linear-gradient(135deg, #1E3A8A, #3B82F6);
 }
@@ -822,10 +822,10 @@ button-delete {
   color: #ffffff;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 16px 14px;
+  padding: 20px 16px; /* <— diperlebar sedikit */
   letter-spacing: 0.7px;
   text-align: left;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 14px;
 }
 
@@ -836,6 +836,7 @@ button-delete {
   color: #1e293b;
   font-weight: 400;
   background-color: #fff;
+  transition: all 0.25s ease;
 }
 
 /* Zebra effect lembut */
@@ -843,9 +844,11 @@ button-delete {
   background-color: #f3f6fb; /* lembut biru muda */
 }
 
-/* Hover lembut dengan efek transisi */
+/* Hover lembut dengan efek biru tipis + glow */
 .zebra-table tbody tr:hover {
-  background-color: #e7efff; /* hover biru muda lembut */
+  background-color: #eaf2ff; /* biru sangat lembut */
+  box-shadow: inset 0 0 0 9999px rgba(59, 130, 246, 0.07); /* efek cahaya biru tipis */
+  transform: translateY(-1px);
   transition: all 0.3s ease;
 }
 
