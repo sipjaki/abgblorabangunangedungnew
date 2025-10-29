@@ -910,32 +910,17 @@ font-family: 'Poppins', sans-serif;
     }
 
     .info-text {
-    display: flex;
-    flex-direction: column; /* biar vertikal */
-    align-items: center; /* biar rata tengah */
-    text-align: center;
-}
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+        color: #333;
+        letter-spacing: 0.3px;
+    }
 
-.info-text i {
-    font-size: 1.8rem;
-    margin-bottom: 6px; /* jarak antara icon dan angka */
-}
-
-.info-number {
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 4px; /* jarak antara angka dan judul */
-}
-
-.info-text {
-    font-weight: 600;
-}
-
-.small-text {
-    text-align: center;
-    font-size: 0.85rem;
-}
+    .small-text {
+        font-size: 13px;
+        color: #777;
+    }
 
     /* Warna khusus untuk setiap kartu */
     .card-1 .number-container { background-color: #4da6ff; }

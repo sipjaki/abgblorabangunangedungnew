@@ -743,10 +743,11 @@
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-newspaper" style="margin-right: 5px;"></i>
-                            <span class="info-number">...</span> Inspeksi Bangunan
+                            <i class="bi bi-newspaper"></i>
+                            <span class="info-number">...</span>
+                            <span class="info-title">Inspeksi Bangunan</span>
                         </p>
-                        <p class="small-text">Data hasil pemeriksaan kondisi fisik bangunan dan kelayakan struktur di lapangan.</p>
+                        <p class="small-text">Data hasil pemeriksaan kondisi fisik bangunan.</p>
                     </div>
                 </div>
             </div>
@@ -763,10 +764,11 @@
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-journal-text" style="margin-right: 5px;"></i>
-                            <span class="info-number">...</span> Bantuan Gambar
+                            <i class="bi bi-journal-text"></i>
+                            <span class="info-number">...</span>
+                            <span class="info-title">Bantuan Gambar</span>
                         </p>
-                        <p class="small-text">Layanan penyusunan dan konsultasi gambar teknis bangunan gedung.</p>
+                        <p class="small-text">Layanan penyusunan dan konsultasi gambar teknis.</p>
                     </div>
                 </div>
             </div>
@@ -783,10 +785,11 @@
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-camera-reels" style="margin-right: 5px;"></i>
-                            <span class="info-number">...</span> Hibah Bangunan
+                            <i class="bi bi-camera-reels"></i>
+                            <span class="info-number">...</span>
+                            <span class="info-title">Hibah Bangunan</span>
                         </p>
-                        <p class="small-text">Data bangunan hasil hibah yang diterima atau diserahkan kepada pihak terkait.</p>
+                        <p class="small-text">Data bangunan hasil hibah yang diterima atau diserahkan.</p>
                     </div>
                 </div>
             </div>
@@ -803,16 +806,18 @@
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-building" style="margin-right: 5px;"></i>
-                            <span class="info-number">...</span> Perjalanan Dinas
+                            <i class="bi bi-building"></i>
+                            <span class="info-number">...</span>
+                            <span class="info-title">Perjalanan Dinas</span>
                         </p>
-                        <p class="small-text">Catatan dan data kegiatan perjalanan dinas pegawai di bidang konstruksi dan pengawasan.</p>
+                        <p class="small-text">Catatan kegiatan perjalanan dinas bidang konstruksi.</p>
                     </div>
                 </div>
             </div>
         </a>
     </div>
 </div>
+
 
         </div>
 
