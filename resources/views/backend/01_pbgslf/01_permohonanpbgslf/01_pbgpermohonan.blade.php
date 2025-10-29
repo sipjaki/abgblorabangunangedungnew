@@ -229,19 +229,14 @@
 
 <div style="display: flex; justify-content: flex-end;">
     <a href="/createdatapbgslf" class="text-decoration-none">
-    <div
-        class="button-modern px-3 py-2 rounded shadow-sm d-flex align-items-center"
-    >
+    <div class="button-modern">
         <i class="bi bi-plus-square me-2"></i> Buat Baru
     </div>
 </a>
 
 <div style="display: flex; justify-content: flex-end;">
     <a href="javascript:void(0)" class="text-decoration-none" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanpbgdpuprblora')">
-        <div
-            class="button-modern px-3 py-2 rounded shadow-sm d-flex align-items-center"
-            style="color: black;"
-        >
+        <div class="button-modern">
             <i class="bi bi-download me-2"></i> Download Excel
         </div>
     </a>
@@ -309,7 +304,7 @@
 {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> Status Permohonan</th> --}}
 <th><i class="bi bi-folder-fill"></i> Berkas</th>
     @can('superadmin')
-            <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
+            <th></i> Aksi</th>
             @endcan
     </tr>
                             </thead>
