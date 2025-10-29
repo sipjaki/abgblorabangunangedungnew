@@ -284,7 +284,7 @@
           <i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan
         </th>
         <th>
-          <i class="bi bi-hash"></i> No Registrasi SIM BG
+          <i class="bi bi-hash"></i> No Registrasi SIMBG
         </th>
         <th>
           <i class="bi bi-calendar"></i> Tanggal Permohonan
@@ -333,7 +333,7 @@
                data-bs-toggle="modal" data-bs-target="#deleteModal"
                data-judul="{{ $item->id }}"
                onclick="setDeleteUrl(this)"
-               style="padding: 6px 10px; background-color: #dc3545; color: white; border-radius: 6px; display: inline-block;">
+               class="button-merah">
               <i class="bi bi-trash"></i>
             </a>
           </td>
