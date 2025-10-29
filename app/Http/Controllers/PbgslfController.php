@@ -229,6 +229,7 @@ public function bepbgslfindexslf(Request $request)
             // Pencarian utama berdasarkan nomor registrasi
             $q->where('noregissimbg', 'like', "%{$search}%")
               ->orWhere('tanggalpermohonan', 'like', "%{$search}%") // Tambahkan pencarian tanggal biasa
+              ->orWhere('namapemohon', 'like', "%{$search}%") // Tambahkan pencarian tanggal biasa
 
               // Pencarian ke relasi user
               ->orWhereHas('user', function ($sub) use ($search) {
