@@ -153,7 +153,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-newvalidasi" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -203,9 +203,9 @@ th {
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
 {{-- User (Pemohon) --}}
-<div class="col-md-6">
+<div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label">
+        <label class="form-label-modern">
             <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i> Nama Pemohon
         </label>
         <input
@@ -219,9 +219,9 @@ th {
 </div>
 
 {{-- Jenis Pengajuan --}}
-<div class="col-md-6">
+<div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label">
+        <label class="form-label-modern">
             <i class="bi bi-files" style="margin-right: 8px; color: navy;"></i> Jenis Pengajuan
         </label>
         <input
@@ -235,9 +235,9 @@ th {
 </div>
 
 {{-- Nomor Registrasi SIMBG --}}
-<div class="col-md-6">
+<div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label">
+        <label class="form-label-modern">
             <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i> Nomor Registrasi SIMBG
         </label>
         <input
@@ -253,9 +253,9 @@ th {
 {{-- Tanggal Permohonan --}}
 {{-- Tanggal Permohonan --}}
 {{-- Tanggal Permohonan --}}
-<div class="col-md-6">
+<div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label">
+        <label class="form-label-modern">
             <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan
         </label>
         <input
@@ -315,32 +315,6 @@ th {
     </div>
 </div> --}}
 
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
-</div>
-
 @canany(['superadmin', 'admin'])
 
 <div class="text-center">
@@ -370,9 +344,9 @@ th {
 
 @canany(['superadmin', 'admin', 'akunskrd'])
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label" for="rupiahInput">
+        <label class="form-label-modern" for="rupiahInput">
             <i class="bi bi-cash-coin" style="margin-right: 8px; color: navy;"></i> Nilai Potensi Retribusi Permohonan (Rupiah)
         </label>
 
@@ -553,7 +527,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-baru" type="button" onclick="openModal()">
+                               <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
