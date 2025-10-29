@@ -192,7 +192,7 @@ th {
 
     <!-- Search Box -->
       <div style="position: relative; display: inline-block; margin-right:10px;">
-    <input type="search" id="searchInput" placeholder="Cari Paket Pekerjaan ...."
+    <input type="search" id="searchInput" placeholder="Cari Konsultan Perencana ...."
            onkeyup="searchTable()"
            style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
     <i class="bi bi-search"
@@ -228,19 +228,27 @@ th {
     window.location.href = url.toString();
   }
 
-                          function searchTable() {
-                            let input = document.getElementById("searchInput").value;
+             let timeout = null;
 
-                            fetch(`/bebantekkonsultan?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
-                        }
+function searchTable() {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        let input = document.getElementById("searchInput").value;
+
+        fetch(`/bebantekkonsultandata?search=${encodeURIComponent(input)}`)
+            .then(response => response.text())
+            .then(html => {
+                let parser = new DOMParser();
+                let doc = parser.parseFromString(html, "text/html");
+                let newTableBody = doc.querySelector("#tableBody");
+
+                if (newTableBody) {
+                    document.querySelector("#tableBody").innerHTML = newTableBody.innerHTML;
+                }
+            })
+            .catch(error => console.error("Error fetching search results:", error));
+    }, 300); // jeda 300ms supaya gak spam request
+}
 </script>
 
                 <hr>
