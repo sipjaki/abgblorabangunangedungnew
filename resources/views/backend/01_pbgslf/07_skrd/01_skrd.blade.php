@@ -76,7 +76,9 @@
     </select>
   </div>
 </form> --}}
-  <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+
+<div class="putih" style="margin-bottom:100px;">
+<div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
       <div style="position: relative; display: inline-block; margin-right:10px;">
     <input type="search" id="searchInput" placeholder="Cari Nama Pemohon ...."
@@ -103,7 +105,6 @@
 </script>
     <br>
     </div>
-<div class="putih" style="margin-bottom:100px;">
 
 <div style="width: 100%; overflow-x: auto; margin-bottom: 100px; margin-top:20px;">
   <table
@@ -173,7 +174,7 @@
 
       </tr>
     </thead>
-    <tbody>
+    <tbody id="tableBody">
       @forelse ($data as $item)
       {{-- ($data as $item) --}}
         <tr>
