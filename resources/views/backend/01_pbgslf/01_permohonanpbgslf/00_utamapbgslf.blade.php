@@ -8,6 +8,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('frontend.android.00_fiturmenu.06_alert')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
