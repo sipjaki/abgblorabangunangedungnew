@@ -609,7 +609,7 @@
                             <span class="info-number">{{$jumlahDataIdTiga }}</span>
                         </p>
                         <p class="info-text">
-                            SBKBG
+                            SBKBG (Surat Bukti Kepemilikan Bangunan Gedung)
                         </p>
                         {{-- <p class="small-text">Informasi Permohonan Bantuan Teknis</p> --}}
                     </div>
