@@ -855,31 +855,5 @@
     });
 </script>
 
-<style>
-    /* Button styles */
-    .button-lolos, .button-dikembalikan, .button-baru {
-        padding: 8px 12px;
-        border-radius: 6px;
-        border: 1px solid #ddd;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-weight: 500;
-    }
-
-    .button-baru {
-        background-color: #f3f4f6;
-    }
-
-    .button-baru:hover {
-        background-color: #e5e7eb;
-    }
-
-    /*  button style */
-    button: {
-        opacity: 0.7;
-        cursor: not-allowed;
-    }
-</style>
-
 
 @endcanany
