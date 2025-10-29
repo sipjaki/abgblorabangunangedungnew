@@ -846,3 +846,134 @@ font-family: 'Poppins', sans-serif;
   }
 </style>
 
+<style>
+    :root {
+        --primary-blue: #4da6ff; /* Biru langit selaras navy */
+        --dark-blue: #2c5ea8; /* Biru navy */
+        --light-blue: #e6f3ff;
+        --accent-blue: #cce4ff;
+    }
+
+    .dashboard-card {
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: none;
+        height: 100%;
+        position: relative;
+    }
+
+    .dashboard-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background-color: var(--primary-blue);
+    }
+
+    .dashboard-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-content {
+        padding: 25px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .number-container {
+        background-color: var(--primary-blue);
+        border-radius: 14px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(77, 166, 255, 0.3);
+    }
+
+    .info-icon {
+        font-size: 36px;
+        color: white;
+    }
+
+    .info-content {
+        flex-grow: 1;
+    }
+
+    .info-text {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+        color: #333;
+        letter-spacing: 0.3px;
+    }
+
+    .small-text {
+        font-size: 13px;
+        color: #777;
+    }
+
+    /* Warna khusus untuk setiap kartu */
+    .card-1 .number-container { background-color: #4da6ff; }
+    .card-2 .number-container { background-color: #4798e0; }
+    .card-3 .number-container { background-color: #3f8bcc; }
+    .card-4 .number-container { background-color: #397db8; }
+
+    .card-1::before { background-color: #4da6ff; }
+    .card-2::before { background-color: #4798e0; }
+    .card-3::before { background-color: #3f8bcc; }
+    .card-4::before { background-color: #397db8; }
+
+    @media (max-width: 576px) {
+        .number-container {
+            width: 60px;
+            height: 60px;
+        }
+
+        .info-icon {
+            font-size: 26px;
+        }
+
+        .info-text {
+            font-size: 14px;
+        }
+
+        .card-content {
+            padding: 20px 15px;
+        }
+    }
+
+    .info-text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+    }
+
+    .info-number {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--primary-blue);
+        text-shadow: 0 1px 3px rgba(77, 166, 255, 0.3);
+        letter-spacing: -0.5px;
+        background: linear-gradient(to bottom right, #4da6ff, #5eb8ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .info-text span {
+        font-weight: 600;
+        color: #333;
+    }
+</style>
