@@ -398,8 +398,8 @@
   </table>
 </div>
 
-@include('backend.00_administrator.00_baganterpisah.07_paginations')
 </div>
+@include('backend.00_administrator.00_baganterpisah.07_paginations')
 
 
 
