@@ -821,7 +821,7 @@ button-delete {
   color: #ffffff;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 35px 16px;
+  padding: 20px 16px;
   letter-spacing: 0.7px;
   text-align: center;
   font-size: 14px;
@@ -833,19 +833,20 @@ button-delete {
   border-bottom: 1px solid #e3e8f5;
   color: #1e293b;
   background-color: #fff;
-  transition: all 0.25s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Zebra lembut */
-.zebra-table tbody tr:nth-child(even) {
+.zebra-table tbody tr:nth-child(even) td {
   background-color: #f8fafc;
 }
 
-/* 🔵 Hover biru langit jelas */
-.zebra-table tbody tr:hover {
-  background-color: #a7c6ee; /* warna biru langit lembut tapi jelas */
-  transition: all 0.25s ease;
+/* 🔵 Hover biru langit hanya di dalam td */
+.zebra-table td:hover {
+  background-color: #dbeafe; /* biru langit lembut */
+  color: #0f172a; /* sedikit lebih gelap biar kontras */
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 /* Sudut header */
