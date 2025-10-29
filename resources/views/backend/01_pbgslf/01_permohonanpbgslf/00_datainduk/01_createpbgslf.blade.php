@@ -1,48 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -224,9 +179,9 @@ th {
 </div>
 
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label" for="jenispengajuanpbgslfper_id">
+        <label class="form-label-modern" for="jenispengajuanpbgslfper_id">
             <i class="bi bi-ui-checks-grid" style="margin-right: 8px; color: navy;"></i> Jenis Pengajuan PBG/SLF
         </label>
         <select
@@ -248,9 +203,9 @@ th {
     </div>
 </div>
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label" for="namapemohon">
+        <label class="form-label-modern" for="namapemohon">
             <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i> Nama Pemohon
         </label>
         <input
@@ -268,9 +223,9 @@ th {
 </div>
 
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label" for="noregissimbg">
+        <label class="form-label-modern" for="noregissimbg">
             <i class="bi bi-file-text" style="margin-right: 8px; color: navy;"></i> No. Registrasi SIMBG
         </label>
         <input
@@ -287,9 +242,9 @@ th {
     </div>
 </div>
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label" for="tanggalpermohonan">
+        <label class="form-label-modern" for="tanggalpermohonan">
             <i class="bi bi-calendar3" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan SIMBG
         </label>
         <input
@@ -305,9 +260,9 @@ th {
     </div>
 </div>
                                     <!-- Left Column (6/12) -->
-<div class="col-md-6">
+<div class="form-modern col-md-6">
 <div class="mb-3">
-    <label class="form-label" for="namauser">
+    <label class="form-label-modern" for="namauser">
         <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Pengunduh Data ABG
     </label>
     <input
@@ -322,80 +277,6 @@ th {
 
 </div>
 
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
-</div>
-{{--
-<div class="col-md-6">
-<div class="mb-3">
-    <label class="form-label" for="dokumenproposal">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Berkas Proposal Hibah Bangunan
-    </label>
-    <input type="file" id="dokumenproposal" name="dokumenproposal" accept="application/pdf"
-        class="form-control @error('dokumenproposal') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerProposal', 'iframeProposal', 'msgProposal')" />
-    @error('dokumenproposal')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerProposal" style="{{ isset($data->dokumenproposal) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Berkas Proposal Hibah Bangunan Gedung </label>
-        <iframe id="iframeProposal" src="{{ isset($data->dokumenproposal) ? asset($data->dokumenproposal) : '' }}"
-            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-    </div>
-    <div id="msgProposal" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->dokumenproposal) ? 'display:none;' : '' }}">
-        Belum Upload Berkas. Silahkan upload berkas Proposal Pengajuan Hibah Bangunan.
-    </div>
-</div>
-
-
-</div> --}}
-
-
-{{-- </div>
-    <script>
-function previewPDF(event, containerId, iframeId, messageId) {
-    const file = event.target.files[0];
-    const container = document.getElementById(containerId);
-    const iframe = document.getElementById(iframeId);
-    const message = document.getElementById(messageId);
-
-    if (file && file.type === "application/pdf") {
-        const fileURL = URL.createObjectURL(file);
-        iframe.src = fileURL;
-        container.style.display = 'block';
-        message.style.display = 'none';
-    } else {
-        iframe.src = '';
-        container.style.display = 'none';
-        message.style.display = 'block';
-        message.textContent = 'File harus berupa format PDF.';
-    }
-}
-</script>
- --}}
-
                                     </div>
                                 </div>
                                 <!-- End row -->
@@ -406,12 +287,12 @@ function previewPDF(event, containerId, iframeId, messageId) {
                                 <div class="flex justify-end">
 
                          <a href="{{ url()->previous() }}">
-    <button class="button-newvalidasi" type="button" style="cursor: pointer; margin-left:5px;">
+    <button class="button-modern" type="button" style="cursor: pointer; margin-left:5px;">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </a>
 
-                               <button class="button-hijau" type="button" onclick="openModal()">
+                               <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan Data</span>
                                     </button>
