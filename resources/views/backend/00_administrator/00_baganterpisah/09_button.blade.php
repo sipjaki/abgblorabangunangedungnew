@@ -432,7 +432,7 @@
     background: linear-gradient(145deg, #6fdc8c, #43c768);
     color: #ffffff;
     border: 1px solid #3cbf5a;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border-radius: 10px;
     font-size: 14px;
     margin: 0 5px;

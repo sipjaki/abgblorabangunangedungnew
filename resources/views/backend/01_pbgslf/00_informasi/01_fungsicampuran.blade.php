@@ -205,7 +205,7 @@ th {
       </div>
 <div class="card-body">
   {{-- Row 1: Judul & Keterangan --}}
-  <div class="row form-modern">
+  <div class="row">
     <div class="col-md-6 mb-3">
       <label class="form-label fw-bold">
         <i class="bi bi-card-heading text-primary me-1"></i> Judul
