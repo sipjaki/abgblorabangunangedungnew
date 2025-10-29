@@ -813,43 +813,53 @@ button-delete {
   box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
 }
 
-/* Header gradient dengan tinggi lebih lega */
+/* Header – gradient navy to sky blue */
 .zebra-table thead {
   background: linear-gradient(135deg, #1E3A8A, #3B82F6);
 }
+
 .zebra-table th {
   color: #ffffff;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 20px 16px;
+  padding: 18px 14px; /* 👉 sedikit lebih tinggi dari sebelumnya */
   letter-spacing: 0.7px;
   text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
   font-size: 14px;
 }
 
 /* Isi tabel */
 .zebra-table td {
-  padding: 14px 16px;
+  padding: 14px 14px;
   border-bottom: 1px solid #e3e8f5;
   color: #1e293b;
+  font-weight: 400;
   background-color: #fff;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Zebra lembut */
-.zebra-table tbody tr:nth-child(even) td {
-  background-color: #f8fafc;
+/* Zebra effect lembut */
+.zebra-table tbody tr:nth-child(even) {
+  background-color: #b5ccf0; /* lembut biru muda */
 }
 
-/* 🔵 Hover biru langit hanya di dalam td */
-.zebra-table td:hover {
-  background-color: #dbeafe; /* biru langit lembut */
-  color: #0f172a; /* sedikit lebih gelap biar kontras */
+/* 🌈 Hover 1 baris penuh dari kiri ke kanan */
+.zebra-table tbody tr:hover td {
+  background-color: #b5ccf0; /* biru langit terang */
+  color: #0f172a;
+  transition: all 0.3s ease;
   cursor: pointer;
-  transition: all 0.25s ease;
 }
 
-/* Sudut header */
+/* Tanpa garis vertikal */
+.zebra-table th,
+.zebra-table td {
+  border-left: none;
+  border-right: none;
+}
+
+/* Corner radius header */
 .zebra-table th:first-child {
   border-top-left-radius: 12px;
 }
@@ -857,13 +867,22 @@ button-delete {
   border-top-right-radius: 12px;
 }
 
-/* Responsive */
+/* Responsive look */
 @media (max-width: 768px) {
   .zebra-table th,
   .zebra-table td {
     padding: 12px;
     font-size: 14px;
   }
+}
+
+/* Animasi saat muncul */
+.zebra-table {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 </style>
