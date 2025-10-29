@@ -1,48 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -152,8 +107,30 @@ th {
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                                  <div style="position: relative; display: inline-block; margin-right:10px;">
+    <input type="search" id="searchInput" placeholder="Cari Permohonan ...."
+           onkeyup="searchTable()"
+           style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+    <i class="bi bi-search"
+       style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+</div>
 
+<script>
 
+  function searchTable() {
+                            let input = document.getElementById("searchInput").value;
+
+                            fetch(`/bepbgslfindexslf?search=${input}`)
+                                .then(response => response.text())
+                                .then(html => {
+                                    let parser = new DOMParser();
+                                    let doc = parser.parseFromString(html, "text/html");
+                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                                    document.querySelector("#tableBody").innerHTML = newTableBody;
+                                })
+                                .catch(error => console.error("Error fetching search results:", error));
+                        }
+</script>
 
                                                  <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
             <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
@@ -252,7 +229,7 @@ th {
 <div style="display: flex; justify-content: flex-end;">
     <a href="/createdatapbgslf" class="text-decoration-none">
     <div
-        class="button-hijau px-3 py-2 rounded shadow-sm d-flex align-items-center"
+        class="button-modern px-3 py-2 rounded shadow-sm d-flex align-items-center"
     >
         <i class="bi bi-plus-square me-2"></i> Buat Baru
     </div>
@@ -261,7 +238,7 @@ th {
 <div style="display: flex; justify-content: flex-end;">
     <a href="javascript:void(0)" class="text-decoration-none" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanpbgdpuprblora')">
         <div
-            class="button-baru px-3 py-2 rounded shadow-sm d-flex align-items-center"
+            class="button-modern px-3 py-2 rounded shadow-sm d-flex align-items-center"
             style="color: black;"
         >
             <i class="bi bi-download me-2"></i> Download Excel
@@ -272,7 +249,7 @@ th {
              {{-- @canany(['superadmin', 'admin']) --}}
     @canany(['superadmin', 'admin'])
     <a href="{{ route('bepbgslfindexindexmenu') }}">
-        <button class="button-newvalidasi" type="button"
+        <button class="button-modern" type="button"
             style="cursor: pointer; margin-left:5px;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>

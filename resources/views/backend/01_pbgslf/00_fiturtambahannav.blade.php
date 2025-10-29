@@ -1,8 +1,10 @@
 @canany(['superadmin', 'admin'])
 <div class="card" style="background-color: #eaf6fb; border: 1px solid #d0e3ed; border-radius: 12px; padding: 20px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); margin-bottom: 30px;">
-    <h5 style="text-align: center; color: #003049; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; gap: 8px;">
-    <i class="bi bi-building"></i> Jenis Permohonan
-</h5>
+   <h4 style="text-align: center; color: #003049; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; gap: 8px; font-family: 'Poppins', sans-serif; font-weight: 600;">
+    <i class="bi bi-building" style="color:#0077b6;"></i>
+    <span>Jenis Permohonan</span>
+</h4>
+
 
 <div class="card shadow-sm border-0">
     <div class="card-body" style="overflow-x: auto; white-space: nowrap; padding: 16px; background: #f0f8ff; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
