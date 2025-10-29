@@ -2,12 +2,11 @@
 body {
 font-family: 'Poppins', sans-serif;
 }
-
 .button-modern {
     background: linear-gradient(145deg, #f9fafc, #eef3fb);
     color: #1e293b;
     border: 1px solid #d0d7e2;
-    padding: 10px 20px;
+    padding: 10px 5px; /* 🔹 kiri-kanan sekarang cuma 5px */
     border-radius: 10px;
     font-size: 14px;
     margin: 0 5px;
@@ -23,7 +22,6 @@ font-family: 'Poppins', sans-serif;
         0 2px 4px rgba(0, 0, 0, 0.04),
         inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
-
 
 /* Card-style form wrapper */
 .form-modern {
