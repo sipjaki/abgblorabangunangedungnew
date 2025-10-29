@@ -297,17 +297,17 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table id="tabelSuratbantuanteknis" class="table zebra-table"     class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
+                        <table id="tabelSuratbantuanteknis" class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                             <thead>
                                   <tr>
-        <th style="background-color: #ADD8E6;">No</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Admin DPUPR</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Nama Pemohon</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> No Registrasi SIMBG</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> Tanggal Permohonan</th>
+        <th>No</th>
+        <th><i class="bi bi-person-fill"></i> Admin DPUPR</th>
+        <th><i class="bi bi-person-fill"></i> Nama Pemohon</th>
+<th><i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan</th>
+<th><i class="bi bi-hash"></i> No Registrasi SIMBG</th>
+<th><i class="bi bi-hash"></i> Tanggal Permohonan</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-hash"></i> Status Permohonan</th> --}}
-<th style="background-color: #ADD8E6;"><i class="bi bi-folder-fill"></i> Berkas</th>
+<th><i class="bi bi-folder-fill"></i> Berkas</th>
     @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
             @endcan
