@@ -411,7 +411,7 @@ th {
 </p>
 
 <p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin-top: 0;">
-  Dalam rangka permohonan {{$surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan}} saudara :
+  Dalam rangka permohonan {{$surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-'}} saudara :
 </p>
 
 <table style="font-size: 14px; width: 100%; border-collapse: collapse; border: 1px solid #000; font-family: 'Times New Roman', serif !important;">
@@ -436,7 +436,7 @@ th {
           Jenis Konsultasi
         </td>
         <td style="padding: 4px 8px; border: 1px solid #000; font-family: 'Times New Roman', serif !important; font-size: 14px;">
-          {{ $surat->databangunanpbg->jeniskonsultasi ?? '-' }}
+          {{ $surat->databangunanpbg->jeniskonsultasi->jenis ?? '-' }}
         </td>
     </tr>
     <tr>
