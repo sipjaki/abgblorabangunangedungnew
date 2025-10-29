@@ -203,9 +203,9 @@ th {
         <!-- ================= BAGIAN INFORMASI UTAMA ================= -->
         <div class="row">
             {{-- Judul --}}
-            <div class="col-md-6">
+            <div class="form-modern col-md-6">
                 <div class="mb-3">
-                    <label class="form-label" for="judul">
+                    <label class="form-label-modern" for="judul">
                         <i class="bi bi-type me-2 text-primary"></i> Judul
                     </label>
                     <input type="text" id="judul" name="judul"
@@ -217,9 +217,9 @@ th {
             </div>
 
             {{-- Keterangan --}}
-            <div class="col-md-6">
+            <div class="form-modern col-md-6">
                 <div class="mb-3">
-                    <label class="form-label" for="keterangan">
+                    <label class="form-label-modern" for="keterangan">
                         <i class="bi bi-card-text me-2 text-primary"></i> Keterangan
                     </label>
                     <textarea id="keterangan" name="keterangan"
@@ -230,9 +230,9 @@ th {
             </div>
 
             {{-- Info Lanjut --}}
-            <div class="col-md-12">
+            <div class="form-modern col-md-12">
                 <div class="mb-3">
-                    <label class="form-label" for="infolanjut">
+                    <label class="form-label-modern" for="infolanjut">
                         <i class="bi bi-info-circle me-2 text-primary"></i> Info Lanjut
                     </label>
                     <textarea id="infolanjut" name="infolanjut"
@@ -246,9 +246,9 @@ th {
         <!-- ================= BAGIAN PARAGRAF CADANGAN ================= -->
         <div class="row">
             @for ($i = 1; $i <= 7; $i++)
-                <div class="col-md-6">
+                <div class="form-modern col-md-6">
                     <div class="mb-3">
-                        <label class="form-label" for="cadangan{{ $i }}">
+                        <label class="form-label-modern" for="cadangan{{ $i }}">
                             <i class="bi bi-file-text me-2 text-primary"></i> Paragraf {{ $i }}
                         </label>
                         <textarea id="cadangan{{ $i }}" name="cadangan{{ $i }}"
@@ -272,8 +272,8 @@ th {
 
         <div class="row">
             {{-- Contoh Berkas 4 --}}
-            <div class="col-md-6 mb-3">
-                <label class="form-label" for="berkas">
+            <div class="form-modern col-md-6 mb-3">
+                <label class="form-label-modern" for="berkas">
                     <i class="bi bi-file-earmark-pdf text-danger me-2"></i> Upload Berkas | Maksimal 15 MB (PDF/Gambar)
                 </label>
                 <input type="file" id="berkas" name="berkas"
