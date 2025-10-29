@@ -1,4 +1,34 @@
 <style>
+    .button-modern {
+    background: linear-gradient(145deg, #f9fafc, #eef3fb);
+    color: #1e293b;
+    border: 1px solid #d0d7e2;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: max-content;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.button-modern:hover {
+    background: #ffffff;
+    color: #0d47a1;
+    border: 1px solid #93c5fd;
+    box-shadow:
+        0 4px 10px rgba(13, 110, 253, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
 .button-abgblora {
     border: none;
     padding: 10px 20px;

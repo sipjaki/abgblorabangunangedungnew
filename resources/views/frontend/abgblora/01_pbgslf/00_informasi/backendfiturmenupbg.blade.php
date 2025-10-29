@@ -3,28 +3,28 @@
 
 <div style="overflow-x: auto; black-space: nowrap; padding: 10px 0; font-size: 14px;">
 <div style="display: inline-flex; gap: 10px; font-family: 'Poppins', sans-serif;">
-  <a href="/bepbgslfinformasi" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/bepbgslfinformasi" class="button-modern" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-buildings" style="font-size: 14px;"></i> PBG Fungsi Campuran
   </a>
-  <a href="/bepbghunian" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/bepbghunian" class="button-modern" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-house-door" style="font-size: 14px;"></i> PBG Fungsi Hunian
   </a>
-  <a href="/bepbgkeagamaan" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/bepbgkeagamaan" class="button-modern" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-bank" style="font-size: 14px;"></i> PBG Fungsi Keagamaan
   </a>
-  <a href="/bepbgprasarana" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/bepbgprasarana" class="button-modern" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-diagram-3" style="font-size: 14px;"></i> PBG Fungsi Prasarana
   </a>
-  <a href="/bepbgsosialbudaya" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/bepbgsosialbudaya" class="button-modern" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-people" style="font-size: 14px;"></i> PBG Fungsi Sosial Budaya
   </a>
-  <a href="/bepbgfungsiusaha" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/bepbgfungsiusaha" class="button-modern" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-briefcase" style="font-size: 14px;"></i> PBG Fungsi Usaha
   </a>
-  <a href="/bgslffungsiusaha" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/bgslffungsiusaha" class="button-modern" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-tools" style="font-size: 14px;"></i> SLF Fungsi Usaha
   </a>
-  <a href="/bgslfmenaratelkom" class="button-baru" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
+  <a href="/bgslfmenaratelkom" class="button-modern" style="padding: 10px 20px; font-size: 14px; background-color: #007bff; color: black; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;">
     <i class="bi bi-broadcast" style="font-size: 14px;"></i> SLF Menara Telekomunikasi
   </a>
 </div>
@@ -33,11 +33,11 @@
 
 <style>
   @media (max-width: 768px) {
-    .button-baru {
+    .button-modern {
       padding: 8px 16px !important;
       font-size: 12px !important;
     }
-    .button-baru i {
+    .button-modern i {
       font-size: 12px !important;
     }
   }
