@@ -3,7 +3,7 @@
     background: linear-gradient(145deg, #f9fafc, #eef3fb);
     color: #1e293b;
     border: 1px solid #d0d7e2;
-    padding: 10px 20px;
+    padding: 5px 5px;
     border-radius: 10px;
     font-size: 14px;
     margin: 0 5px;
@@ -432,7 +432,7 @@
     background: linear-gradient(145deg, #6fdc8c, #43c768);
     color: #ffffff;
     border: 1px solid #3cbf5a;
-    padding: 10px 10px;
+    padding: 5px 5px;
     border-radius: 10px;
     font-size: 14px;
     margin: 0 5px;
