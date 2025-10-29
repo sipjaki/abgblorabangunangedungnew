@@ -547,113 +547,91 @@
 </div>
 
 {{-- -------------------------------------------------------- --}}
-<div class="row g-4">
-  <!-- Card 1 -->
-  <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bepbgslfindexslf" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-             style="background-color: #ffd100; width: 60px; height: 60px;">
-          <i class="bi bi-file-earmark-check" style="font-size: 26px; color: green;"></i>
-        </div>
-        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            (PBG) Persetujuan Bangunan Gedung
-          </span>
-          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdSatu }} Permohonan
-          </span>
-        </div>
-      </div>
-    </a>
-  </div>
+<div class="row g-3">
+    <!-- 1. Permohonan PBG SLF -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="/bepbgslfindexslf" class="text-decoration-none">
+            <div class="dashboard-card">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-file-earmark-check"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">{{ $jumlahDataIdSatu }}</span> Permohonan
+                        </p>
+                        <p class="info-text">Persetujuan Bangunan Gedung (PBG)</p>
+                        <p class="small-text">Informasi Jumlah Permohonan PBG</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 
-  <!-- Card 2 -->
-  <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bepbgslfindexslfper2" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-             style="background-color: #ffd100; width: 60px; height: 60px;">
-          <i class="bi bi-building" style="font-size: 26px; color: green;"></i>
-        </div>
-        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            (SLF) Sertifikat Laik Fungsi
-          </span>
-          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdDua }} Permohonan
-          </span>
-        </div>
-      </div>
-    </a>
-  </div>
+    <!-- 2. Pendataan Bangunan Gedung -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="/bepbgslfindexslfper5" class="text-decoration-none">
+            <div class="dashboard-card">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-building-check"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">{{ $jumlahDataIdLima }}</span> Data
+                        </p>
+                        <p class="info-text">Pendataan Bangunan Gedung</p>
+                        <p class="small-text">Informasi Jumlah Pendataan Bangunan Gedung</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 
-  <!-- Card 3 -->
-  <div class="col-12 col-sm-6 col-md-4">
-    <a href="/bepbgslfindexslfper3" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-             style="background-color: #ffd100; width: 60px; height: 60px;">
-          <i class="bi bi-award" style="font-size: 26px; color: green;"></i>
-        </div>
-        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            (SBKBG) Surat Bukti Kepemilikan Bangunan Gedung
-          </span>
-          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdTiga }} Permohonan
-          </span>
-        </div>
-      </div>
-    </a>
-  </div>
+    <!-- 3. Bantuan Teknis -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="/bepbgslfindexslfper3" class="text-decoration-none">
+            <div class="dashboard-card">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-tools"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">{{ $jumlahDataIdTiga }}</span> Permohonan
+                        </p>
+                        <p class="info-text">Bantuan Teknis</p>
+                        <p class="small-text">Informasi Permohonan Bantuan Teknis</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 
-  <!-- Card 4 -->
-  <div class="col-12 col-sm-6 col-md-6">
-    <a href="/bepbgslfindexslfper4" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-             style="background-color: #ffd100; width: 60px; height: 60px;">
-          <i class="bi bi-tools" style="font-size: 26px; color: green;"></i>
-        </div>
-        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            (RTB) Rencana Teknis Pembongkaran
-          </span>
-          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdEmpat }} Permohonan
-          </span>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <!-- Card 5 -->
-  <div class="col-12 col-sm-6 col-md-6">
-    <a href="/bepbgslfindexslfper5" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center"
-           style="background: #000080; color: white; transition: all 0.3s ease; height: 100%;">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle"
-             style="background-color: #ffd100; width: 60px; height: 60px;">
-          <i class="bi bi-house-door" style="font-size: 26px; color: green;"></i>
-        </div>
-        <div class="info-box-content text-center" style="font-family: 'Poppins', sans-serif;">
-          <span class="info-box-text d-block text-white fw-semibold" style="font-size: 13px;">
-            Pendataan Bangunan Gedung
-          </span>
-          <span class="info-box-number fw-bold mt-1" style="font-size: 16px;">
-            {{ $jumlahDataIdLima }} Permohonan
-          </span>
-        </div>
-      </div>
-    </a>
-  </div>
+    <!-- 4. Keterangan Rencana Kabupaten -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="/bepbgslfindexslfper4" class="text-decoration-none">
+            <div class="dashboard-card">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">{{ $jumlahDataIdEmpat }}</span> Data
+                        </p>
+                        <p class="info-text">Keterangan Rencana Kabupaten</p>
+                        <p class="small-text">Data dan Pengelolaan Lokasi Kabupaten</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>
-  </div>
+
+{{-- -------------------------------------------------------- --}}
+
+</div>
 <br><br><br><br>
   <style>
     .info-box:hover {
