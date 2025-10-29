@@ -660,7 +660,7 @@
 
 <div class="row">
     <!-- 1. Permohonan PBG SLF -->
-    <div class="col-md-3 col-sm-6 col-12">
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
@@ -683,7 +683,7 @@
     </div>
 
     <!-- 2. Pendataan Bangunan Gedung -->
-    <div class="col-md-3 col-sm-6 col-12">
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
@@ -706,7 +706,7 @@
     </div>
 
     <!-- 3. Bantuan Teknis -->
-    <div class="col-md-3 col-sm-6 col-12">
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
@@ -729,7 +729,7 @@
     </div>
 
     <!-- 4. Keterangan Rencana Kabupaten -->
-    <div class="col-md-3 col-sm-6 col-12">
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
@@ -755,7 +755,7 @@
 
 <div class="row">
     <!-- 1. Inspeksi Bangunan Gedung -->
-    <div class="col-md-3 col-sm-6 col-12">
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
@@ -778,7 +778,7 @@
     </div>
 
     <!-- 2. Permohonan Bantuan Gambar -->
-    <div class="col-md-3 col-sm-6 col-12">
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
@@ -801,7 +801,7 @@
     </div>
 
     <!-- 3. Hibah Bangunan Gedung -->
-    <div class="col-md-3 col-sm-6 col-12">
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
@@ -824,7 +824,7 @@
     </div>
 
     <!-- 4. Keterangan Rencana Kabupaten -->
-    <div class="col-md-3 col-sm-6 col-12">
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
