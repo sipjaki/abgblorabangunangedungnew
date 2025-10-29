@@ -251,17 +251,17 @@ th {
                         >
                             <thead>
                                   <tr>
-     <th style="background-color: #ADD8E6;">No</th>
+     <th>No</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Nama Badan Usaha</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Alamat</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> No Telepon</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> Email</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Direktur</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Subklasifikasi</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-briefcase"></i> Pengalaman</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
+<th><i class="fas fa-building"></i> Nama Badan Usaha</th>
+<th><i class="fas fa-map-marker-alt"></i> Alamat</th>
+<th><i class="fas fa-phone"></i> No Telepon</th>
+<th><i class="fas fa-envelope"></i> Email</th>
+<th><i class="fas fa-user-tie"></i> Direktur</th>
+<th><i class="fas fa-layer-group"></i> Subklasifikasi</th>
+<th><i class="fas fa-briefcase"></i> Pengalaman</th>
+<th><i class="fas fa-tools"></i> Aksi</th>
 
     </tr>
                             </thead>

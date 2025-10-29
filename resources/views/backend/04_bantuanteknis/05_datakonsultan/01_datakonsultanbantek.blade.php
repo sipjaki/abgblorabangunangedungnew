@@ -14,22 +14,6 @@
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('frontend.android.00_fiturmenu.06_alert')
 
-<style>
-
-    body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
-            min-height: 100vh;
-            color: #ffffff;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        </style>
 
    <!--begin::App Main-->
    <main class="app-main"
@@ -211,24 +195,24 @@ function searchTable() {
                  <div class="card-body p-0">
            <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis"
-                        class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+                        class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
                         >
                             <thead>
                                   <tr>
-     <th style="background-color: #ADD8E6;">No</th>
+     <th>No</th>
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
 {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Nama Lengkap</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Alamat</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> No Telepon</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> Email</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> Nomor Induk Berusaha</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Penanggung Jawab Usaha (PJU)</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-file-signature"></i> No Akta</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Tanggal</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-user-edit"></i> Nama Notaris</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-check-circle"></i> No Pengesahan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
+<th><i class="fas fa-user"></i> Nama Lengkap</th>
+<th><i class="fas fa-map-marker-alt"></i> Alamat</th>
+<th><i class="fas fa-phone"></i> No Telepon</th>
+<th><i class="fas fa-envelope"></i> Email</th>
+<th><i class="fas fa-id-card"></i> Nomor Induk Berusaha</th>
+<th><i class="fas fa-user-tie"></i> Penanggung Jawab Usaha (PJU)</th>
+<th><i class="fas fa-file-signature"></i> No Akta</th>
+<th><i class="fas fa-calendar-alt"></i> Tanggal</th>
+<th><i class="fas fa-user-edit"></i> Nama Notaris</th>
+<th><i class="fas fa-check-circle"></i> No Pengesahan</th>
+<th><i class="fas fa-tools"></i> Aksi</th>
 
     </tr>
                             </thead>
