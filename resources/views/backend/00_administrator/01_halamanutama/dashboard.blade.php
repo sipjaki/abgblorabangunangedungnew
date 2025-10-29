@@ -659,21 +659,23 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
 
-<div class="row gy-4">
-    <!-- 1. Permohonan PBG SLF -->
-    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom: 5px;">
+<div class="row">
+    <!-- 1. Berita Jakon -->
+    <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-file-earmark-check text-white" style="font-size: 2rem;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-newspaper"></i>
+                            <i class="bi bi-newspaper" style="margin-right: 5px;"></i>
                             <span class="info-number">...</span>
                         </p>
-                        <p class="info-text">Permohonan PBG SLF</p>
+                        <p class="info-text">
+                            Permohonan PBG SLF
+                        </p>
                         <p class="small-text">Informasi Jumlah Permohonan PBG SLF</p>
                     </div>
                 </div>
@@ -681,20 +683,22 @@
         </a>
     </div>
 
-    <!-- 2. Pendataan Bangunan Gedung -->
-    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom: 5px;">
+    <!-- 2. Artikel Jakon -->
+    <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-2">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-building text-white" style="font-size: 2rem;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-journal-text"></i>
-                            <span class="info-number">...</span>
+                            <i class="bi bi-journal-text" style="margin-right: 5px;"></i>
+                            <span class="info-number">... </span>
                         </p>
-                        <p class="info-text">Pendataan Bangunan Gedung</p>
+                        <p class="info-text">
+                            Pendataan Bangunan Gedung
+                        </p>
                         <p class="small-text">Informasi Jumlah Pendataan Bangunan Gedung</p>
                     </div>
                 </div>
@@ -702,20 +706,22 @@
         </a>
     </div>
 
-    <!-- 3. Bantuan Teknis -->
-    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom: 5px;">
+    <!-- 3. Dokumentasi Jakon -->
+    <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-3">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-tools text-white" style="font-size: 2rem;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-camera-reels"></i>
-                            <span class="info-number">...</span>
+                            <i class="bi bi-camera-reels" style="margin-right: 5px;"></i>
+                            <span class="info-number">... </span>
                         </p>
-                        <p class="info-text">Bantuan Teknis</p>
+                        <p class="info-text">
+                            Bantuan Teknis
+                        </p>
                         <p class="small-text">Informasi Permohonan Bantuan Teknis</p>
                     </div>
                 </div>
@@ -723,20 +729,22 @@
         </a>
     </div>
 
-    <!-- 4. Keterangan Rencana Kabupaten -->
-    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom: 5px;">
+    <!-- 4. BUJK Konsultasi & Konstruksi -->
+    <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-4">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-geo-alt text-white" style="font-size: 2rem;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-building"></i>
-                            <span class="info-number">...</span>
+                            <i class="bi bi-building" style="margin-right: 5px;"></i>
+                            <span class="info-number"> ... </span>
                         </p>
-                        <p class="info-text">Keterangan Rencana Kabupaten</p>
+                        <p class="info-text">
+                            Keterangan Rencana Kabupaten
+                        </p>
                         <p class="small-text">Data dan pengelolaan perusahaan</p>
                     </div>
                 </div>
@@ -745,19 +753,23 @@
     </div>
 </div>
 
-<div class="row g-4">
+<div class="row">
     <!-- 1. Berita Jakon -->
-    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom: 5px;">
-        <a href="#" class="dashboard-link">
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
-                <div class="card-content text-center">
-                    <img src="/assets/icon/pupr.png" alt="icon" class="card-icon">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-newspaper"></i>
+                            <i class="bi bi-newspaper" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
                         </p>
-                        <span class="info-number">...</span>
-                        <p class="info-title">Inspeksi Bangunan Gedung</p>
+                        <p class="info-text">
+                            Inspeksi Bangunan Gedung
+                        </p>
                         <p class="small-text">Informasi Jumlah Inspeksi Bangunan Gedung</p>
                     </div>
                 </div>
@@ -766,17 +778,21 @@
     </div>
 
     <!-- 2. Artikel Jakon -->
-    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom: 5px;">
-        <a href="#" class="dashboard-link">
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
-                <div class="card-content text-center">
-                    <img src="/assets/icon/pupr.png" alt="icon" class="card-icon">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-journal-text"></i>
+                            <i class="bi bi-journal-text" style="margin-right: 5px;"></i>
+                            <span class="info-number">... </span>
                         </p>
-                        <span class="info-number">...</span>
-                        <p class="info-title">Permohonan Bantuan Gambar</p>
+                        <p class="info-text">
+                            Permohonan Bantuan Gambar
+                        </p>
                         <p class="small-text">Informasi Jumlah Bantuan Gambar</p>
                     </div>
                 </div>
@@ -785,17 +801,21 @@
     </div>
 
     <!-- 3. Dokumentasi Jakon -->
-    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom: 5px;">
-        <a href="#" class="dashboard-link">
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
-                <div class="card-content text-center">
-                    <img src="/assets/icon/pupr.png" alt="icon" class="card-icon">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-camera-reels"></i>
+                            <i class="bi bi-camera-reels" style="margin-right: 5px;"></i>
+                            <span class="info-number">... </span>
                         </p>
-                        <span class="info-number">...</span>
-                        <p class="info-title">Hibah Bangunan Gedung</p>
+                        <p class="info-text">
+                            Hibah Bangunan Gedung
+                        </p>
                         <p class="small-text">Informasi Jumlah Hibah Bangunan Gedung</p>
                     </div>
                 </div>
@@ -804,17 +824,21 @@
     </div>
 
     <!-- 4. BUJK Konsultasi & Konstruksi -->
-    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom: 5px;">
-        <a href="#" class="dashboard-link">
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
-                <div class="card-content text-center">
-                    <img src="/assets/icon/pupr.png" alt="icon" class="card-icon">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-building"></i>
+                            <i class="bi bi-building" style="margin-right: 5px;"></i>
+                            <span class="info-number"> ... </span>
                         </p>
-                        <span class="info-number">...</span>
-                        <p class="info-title">Keterangan Rencana Kabupaten</p>
+                        <p class="info-text">
+                            Keterangan Rencana Kabupaten
+                        </p>
                         <p class="small-text">Informasi Permohonan KRK Kabupaten</p>
                     </div>
                 </div>
@@ -822,6 +846,7 @@
         </a>
     </div>
 </div>
+
         </div>
 
         </div>
