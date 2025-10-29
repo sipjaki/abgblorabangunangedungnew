@@ -845,6 +845,7 @@ font-family: 'Poppins', sans-serif;
     font-weight: 600;
   }
 </style>
+
 <style>
     :root {
         --primary-blue: #4da6ff; /* Biru langit selaras navy */
@@ -898,6 +899,7 @@ font-family: 'Poppins', sans-serif;
         box-shadow: 0 4px 10px rgba(77, 166, 255, 0.3);
     }
 
+
     .info-icon {
         font-size: 36px;
         color: white;
@@ -905,39 +907,19 @@ font-family: 'Poppins', sans-serif;
 
     .info-content {
         flex-grow: 1;
-        text-align: left;
     }
 
     .info-text {
-        display: flex;
-        align-items: baseline;
-        gap: 6px;
         font-size: 16px;
         font-weight: 600;
-        margin-bottom: 6px;
+        margin: 0;
         color: #333;
         letter-spacing: 0.3px;
-    }
-
-    .info-text i {
-        font-size: 1.2rem;
-        color: #333;
-    }
-
-    .info-number {
-        font-size: 20px;
-        font-weight: 800;
-        color: var(--primary-blue);
-        text-shadow: 0 1px 3px rgba(77, 166, 255, 0.3);
-        background: linear-gradient(to bottom right, #4da6ff, #5eb8ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
 
     .small-text {
         font-size: 13px;
         color: #777;
-        line-height: 1.4;
     }
 
     /* Warna khusus untuk setiap kartu */
@@ -952,16 +934,9 @@ font-family: 'Poppins', sans-serif;
     .card-4::before { background-color: #397db8; }
 
     @media (max-width: 576px) {
-        .card-content {
-            flex-direction: column;
-            text-align: center;
-        }
-
         .number-container {
             width: 60px;
             height: 60px;
-            margin-right: 0;
-            margin-bottom: 10px;
         }
 
         .info-icon {
@@ -969,12 +944,37 @@ font-family: 'Poppins', sans-serif;
         }
 
         .info-text {
-            justify-content: center;
             font-size: 14px;
         }
 
-        .small-text {
-            text-align: center;
+        .card-content {
+            padding: 20px 15px;
         }
+    }
+
+    .info-text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+    }
+
+    .info-number {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--primary-blue);
+        text-shadow: 0 1px 3px rgba(77, 166, 255, 0.3);
+        letter-spacing: -0.5px;
+        background: linear-gradient(to bottom right, #4da6ff, #5eb8ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .info-text span {
+        font-weight: 600;
+        color: #333;
     }
 </style>
