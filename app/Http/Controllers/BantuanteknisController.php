@@ -6112,7 +6112,7 @@ public function bebantekkonsultannew()
     }
 
     return view('backend.04_bantuanteknis.05_datakonsultan.02_createkonsultanasistensi', [
-        'title' => 'Create Data Konsultan Asistensi',
+        'title' => 'Tambah Data Konsultan Perencana Teknis',
         'user'  => $user,
         'dataakun'  => $dataakun
     ]);

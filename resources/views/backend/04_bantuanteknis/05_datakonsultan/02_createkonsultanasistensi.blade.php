@@ -153,7 +153,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-newvalidasi" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -204,8 +204,8 @@ th {
 
       <div class="col-md-6">
 
-        <div class="mb-3">
-    <label class="form-label" for="user_id">
+        <div class="form-modern mb-3">
+    <label class="form-label-modern" for="user_id">
         <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Pilih User (Status Admin 4)
     </label>
     <select id="user_id" name="user_id" class="form-select @error('user_id') is-invalid @enderror">
@@ -222,8 +222,8 @@ th {
     @enderror
 </div>
 
-          <div class="mb-3">
-              <label class="form-label" for="namalengkap">
+          <div class="form-modern mb-3">
+              <label class="form-label-modern" for="namalengkap">
                   <i class="bi bi-person-vcard" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
                 </label>
                 <input
@@ -239,8 +239,8 @@ th {
         @enderror
     </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="alamat">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="alamat">
             <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Alamat
         </label>
         <textarea
@@ -254,8 +254,8 @@ th {
         @enderror
     </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="no_telepon">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="no_telepon">
             <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> No. Telepon
         </label>
         <input
@@ -271,8 +271,8 @@ th {
         @enderror
     </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="email">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="email">
             <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
         </label>
         <input
@@ -288,8 +288,8 @@ th {
         @enderror
     </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="nomorindukberusaha">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="nomorindukberusaha">
             <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Nomor Induk Berusaha (NIB)
         </label>
         <input
@@ -307,8 +307,8 @@ th {
     </div>
     <div class="col-md-6">
 
-    <div class="mb-3">
-        <label class="form-label" for="pju">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern " for="pju">
             <i class="bi bi-person-lines-fill" style="margin-right: 8px; color: navy;"></i> Penanggung Jawab Usaha (PJU)
         </label>
         <input
@@ -324,8 +324,8 @@ th {
         @enderror
     </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="no_akte">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="no_akte">
             <i class="bi bi-journal-text" style="margin-right: 8px; color: navy;"></i> Nomor Akta
         </label>
         <input
@@ -341,8 +341,8 @@ th {
         @enderror
     </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="tanggal">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="tanggal">
             <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Akta
         </label>
         <input
@@ -357,8 +357,8 @@ th {
         @enderror
     </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="nama_notaris">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern " for="nama_notaris">
             <i class="bi bi-person-video3" style="margin-right: 8px; color: navy;"></i> Nama Notaris
         </label>
         <input
@@ -374,8 +374,8 @@ th {
         @enderror
     </div>
 
-    <div class="mb-3">
-        <label class="form-label" for="no_pengesahan">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="no_pengesahan">
             <i class="bi bi-patch-check" style="margin-right: 8px; color: navy;"></i> No. Pengesahan
         </label>
         <input
@@ -398,7 +398,7 @@ th {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-hijau" type="button" onclick="openModal()">
+                               <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
