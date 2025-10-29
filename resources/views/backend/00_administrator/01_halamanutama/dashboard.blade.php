@@ -671,7 +671,10 @@
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-newspaper" style="margin-right: 5px;"></i>
-                            <span class="info-number">...</span> <br> Permohonan PBG SLF
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">
+                            Permohonan PBG SLF
                         </p>
                         <p class="small-text">Informasi Jumlah Permohonan PBG SLF</p>
                     </div>
