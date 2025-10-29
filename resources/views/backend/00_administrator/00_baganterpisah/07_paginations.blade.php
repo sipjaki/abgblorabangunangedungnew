@@ -1,77 +1,99 @@
+
+
 <div class="custom-pagination-container"
-    style="margin-top: 50px; margin-bottom: 100px; display: flex; flex-direction: column; align-items: center; text-align: center; font-family: 'Poppins', sans-serif; font-size: 14px;">
+     style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 15px;">
 
-    <!-- Box Informasi Pagination -->
+    <!-- Info Box -->
     <div class="custom-pagination-info-box"
-    style="padding: 12px 20px; border-radius: 8px; margin-bottom: 15px;
-           background-color: #000080; border: 1px solid #000080; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-           display: flex; align-items: center; justify-content: center;
-           transition: all 0.3s ease-in-out;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='#000080';
-                 this.querySelector('.custom-pagination-info').style.color='#000080';"
-    onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';
-                 this.querySelector('.custom-pagination-info').style.color='white';">
-
-    <div class="custom-pagination-info"
-        style="color: white; font-weight: 600; font-size: 14px; text-align: center;">
-        📊 Data Ke <span style="color: #ffffff;">{{ $data->firstItem() }}</span>
-        Sampai <span style="color: #ffffff;">{{ $data->lastItem() }}</span>
-        Dari <span style="color: #ffffff;">{{ $data->total() }}</span> Jumlah
-        <span style="color: #ffffff;">{{$title}}</span>
+        style="padding: 12px 20px; border-radius: 8px; margin-bottom: 15px;
+               background-color: #04b347; border: 1px solid #04b347; box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+               display: flex; align-items: center; justify-content: center; transition: all 0.15s ease-in-out;">
+        <div class="custom-pagination-info" style="color: white; font-weight: 600; text-align: center;">
+            📊 Data Ke <span style="color: currentColor;">{{ $data->firstItem() }}</span>
+            Sampai <span style="color: currentColor;">{{ $data->lastItem() }}</span>
+            Dari <span style="color: currentColor;">{{ $data->total() }}</span> Jumlah
+            <span style="color: currentColor;">{{ $title }}</span>
+        </div>
     </div>
-</div>
 
-    <!-- Navigasi Pagination -->
+    <!-- Pagination Navigation -->
+    @php
+        // window = jumlah halaman di kiri/kanan halaman aktif (misal 2 => tampil -2..+2)
+        $window = 2;
+        $last = $data->lastPage();
+        $current = $data->currentPage();
+        $start = max($current - $window, 1);
+        $end = min($current + $window, $last);
+        // helper untuk menghasilkan url dengan semua query except page tetap ter-append
+        $paginator = $data->appends(request()->except('page'));
+    @endphp
+
     <ul class="custom-pagination-paginate"
-        style="display: flex; padding-left: 0; list-style: none; gap: 10px; margin: 0;">
+        style="display: flex; padding-left: 0; list-style: none; gap: 10px; margin: 0; flex-wrap: wrap; justify-content: center;">
 
-        <!-- Tombol Previous -->
-        <li class="custom-page-item {{ $data->onFirstPage() ? 'disabled' : '' }}"
-            style="display: flex; align-items: center;">
-            <a class="custom-page-link" href="{{ $data->previousPageUrl() }}"
-                style="background-color: #000080; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
-                display: flex; align-items: center; transition: all 0.3s ease; border: 1px solid #000080; font-family: 'Poppins', sans-serif; font-size: 14px;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Previous
+        {{-- Previous --}}
+        <li class="custom-page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="display:flex; align-items:center;">
+            <a class="custom-page-link" href="{{ $data->onFirstPage() ? '#' : $paginator->previousPageUrl() }}"
+               style="background-color: #04b347; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
+                      display:flex; align-items:center; transition: all 0.15s ease; border:1px solid #04b347;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" style="width:16px; height:16px; margin-right:8px;">
+                    <path d="M15 19l-7-7 7-7"/>
+                </svg>
+                Previous
             </a>
         </li>
 
-        <!-- Tombol Halaman -->
-        @foreach ($data->links()->elements[0] as $page => $url)
-        <li class="custom-page-item {{ $data->currentPage() == $page ? 'active' : '' }}" style="display: flex; align-items: center;">
-            <a class="custom-page-link" href="{{ $url }}"
-                style="background-color: {{ $data->currentPage() == $page ? '#000080' : '#374151' }};
-                color: white; padding: 8px 12px; border-radius: 5px; text-decoration: none;
-                border: 1px solid {{ $data->currentPage() == $page ? '#000080' : '#374151' }};
-                transition: all 0.3s ease; font-family: 'Poppins', sans-serif; font-size: 14px;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='{{ $data->currentPage() == $page ? '#000080' : '#374151' }}'; this.style.color='white';">
-                {{ $page }}
-            </a>
-        </li>
-        @endforeach
+        {{-- First page + leading ellipsis --}}
+        @if($start > 1)
+            <li style="display:flex; align-items:center;">
+                <a class="custom-page-link" href="{{ $paginator->url(1) }}"
+                   style="background-color:#374151;color:white;padding:8px 12px;border-radius:5px;text-decoration:none;border:1px solid #374151;">
+                    1
+                </a>
+            </li>
 
-        <!-- Tombol Next -->
-        <li class="custom-page-item {{ $data->hasMorePages() ? '' : 'disabled' }}"
-            style="display: flex; align-items: center;">
-            <a class="custom-page-link" href="{{ $data->nextPageUrl() }}"
-                style="background-color: #000080; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
-                display: flex; align-items: center; transition: all 0.3s ease; border: 1px solid #000080; font-family: 'Poppins', sans-serif; font-size: 14px;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                Next <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            @if($start > 2)
+                <li style="display:flex; align-items:center;"><span style="padding:8px 10px;">...</span></li>
+            @endif
+        @endif
+
+        {{-- Middle pages --}}
+        @for ($page = $start; $page <= $end; $page++)
+            <li class="custom-page-item {{ $page == $current ? 'active' : '' }}" style="display:flex; align-items:center;">
+                <a class="custom-page-link" href="{{ $paginator->url($page) }}"
+                   style="background-color: {{ $page == $current ? '#16A34A' : '#374151' }};
+                          color: white; padding: 8px 12px; border-radius: 5px; text-decoration: none;
+                          border: 1px solid {{ $page == $current ? '#16A34A' : '#374151' }};">
+                    {{ $page }}
+                </a>
+            </li>
+        @endfor
+
+        {{-- Trailing ellipsis + last page --}}
+        @if($end < $last)
+            @if($end < $last - 1)
+                <li style="display:flex; align-items:center;"><span style="padding:8px 10px;">...</span></li>
+            @endif
+            <li style="display:flex; align-items:center;">
+                <a class="custom-page-link" href="{{ $paginator->url($last) }}"
+                   style="background-color:#374151;color:white;padding:8px 12px;border-radius:5px;text-decoration:none;border:1px solid #374151;">
+                    {{ $last }}
+                </a>
+            </li>
+        @endif
+
+        {{-- Next --}}
+        <li class="custom-page-item {{ !$data->hasMorePages() ? 'disabled' : '' }}" style="display:flex; align-items:center;">
+            <a class="custom-page-link" href="{{ $data->hasMorePages() ? $paginator->nextPageUrl() : '#' }}"
+               style="background-color: #04b347; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
+                      display:flex; align-items:center; transition: all 0.15s ease; border:1px solid #04b347;">
+                Next
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" style="width:16px; height:16px; margin-left:8px;">
+                    <path d="M9 5l7 7-7 7"/>
+                </svg>
             </a>
         </li>
     </ul>
 </div>
-
-<style>
-    /* Style untuk tombol yang dinonaktifkan */
-    .custom-page-item.disabled .custom-page-link {
-        background-color: #9CA3AF !important;
-        color: white !important;
-        border-color: #9CA3AF !important;
-        pointer-events: none;
-    }
-</style>
