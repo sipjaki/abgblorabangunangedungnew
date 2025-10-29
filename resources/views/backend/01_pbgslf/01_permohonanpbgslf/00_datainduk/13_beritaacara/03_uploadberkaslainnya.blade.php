@@ -347,7 +347,7 @@ th {
         Data tidak ditemukan!
     </div>
   <div class="text-center mt-3">
-    <a href="{{ route('bepbgbeuploadberkasnew', $data->id) }}" class="button-baru">
+    <a href="{{ route('bepbgbeuploadberkasnew', $data->id) }}" class="button-modern">
         <i class="bi bi-upload me-2"></i> Upload Berkas
     </a>
 </div>

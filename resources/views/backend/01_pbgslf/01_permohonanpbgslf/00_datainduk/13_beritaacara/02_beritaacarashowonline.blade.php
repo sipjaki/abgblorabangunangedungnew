@@ -111,7 +111,7 @@ th {
 
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -123,7 +123,7 @@ th {
 
          @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -137,7 +137,7 @@ th {
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
        <a href="{{ url()->previous() }}">
-    <button class="button-newvalidasi" type="button" style="cursor: pointer; color:black;">
+    <button class="button-modern" type="button" style="cursor: pointer; color:black;">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </a>
@@ -331,7 +331,7 @@ th {
 </head>
 
 <div style="text-align: center; margin: 20px;">
-  <button class="button-baru" onclick="downloadPDF()" style="background-color: #e3342f; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
+  <button class="button-modern" onclick="downloadPDF()">
     📄 Download Berita Acara Online (PDF)
   </button>
 </div>

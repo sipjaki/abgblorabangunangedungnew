@@ -264,31 +264,6 @@ th {
 
 </div>
 
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
-</div>
 <br><hr>
 
 @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas')
@@ -393,8 +368,8 @@ th {
     @csrf
     @method('PUT')
 <div class="row g-4 mt-2">
-    <div class="col-md-6">
-        <label for="uploadberkaslainnya" class="form-label fw-semibold text-dark">
+    <div class="form-modern col-md-6">
+        <label for="uploadberkaslainnya" class="form-label-modern fw-semibold text-dark">
             <i class="bi bi-cloud-arrow-up text-primary me-1"></i> Upload Berkas Lainnya
         </label>
 
