@@ -234,7 +234,7 @@
 @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px; font-family: 'Times New Roman', serif !important;">
        <a href="{{ url()->previous() }}">
-    <button class="button-modern" type="button" style="cursor: pointer; color:white; font-family: 'Times New Roman', serif !important;">
+    <button class="button-modern" type="button">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
     </button>
 </a>
