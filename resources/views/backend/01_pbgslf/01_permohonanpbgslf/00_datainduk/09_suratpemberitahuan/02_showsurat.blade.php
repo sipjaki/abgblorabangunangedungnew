@@ -1,3 +1,4 @@
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -207,11 +208,6 @@
                  </div>
 
                     </div>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <title>Surat Pemberitahuan Verifikasi SIMBG</title>
   <style>
     @page {
       size: A4;
@@ -295,8 +291,6 @@
       }
     }
   </style>
-</head>
-<body>
 
     <div class="download-container">
   <button class="button-modern" onclick="downloadPDF()"><i class="bi bi-download"></i> Download Surat Pemberitahuan (PDF) </button>
