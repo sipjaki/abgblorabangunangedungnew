@@ -845,10 +845,11 @@ font-family: 'Poppins', sans-serif;
     font-weight: 600;
   }
 </style>
+
 <style>
     :root {
-        --primary-blue: #4da6ff;
-        --dark-blue: #2c5ea8;
+        --primary-blue: #4da6ff; /* Biru langit selaras navy */
+        --dark-blue: #2c5ea8; /* Biru navy */
         --light-blue: #e6f3ff;
         --accent-blue: #cce4ff;
     }
@@ -886,6 +887,7 @@ font-family: 'Poppins', sans-serif;
     }
 
     .number-container {
+        background-color: var(--primary-blue);
         border-radius: 14px;
         width: 80px;
         height: 80px;
@@ -897,53 +899,34 @@ font-family: 'Poppins', sans-serif;
         box-shadow: 0 4px 10px rgba(77, 166, 255, 0.3);
     }
 
-    .number-container img {
-        width: 40px;
-        height: auto;
-        filter: brightness(0) invert(1);
+
+    .info-icon {
+        font-size: 36px;
+        color: white;
     }
 
     .info-content {
         flex-grow: 1;
-        text-align: left;
     }
 
     .info-text {
-        display: flex;
-        align-items: baseline;
-        gap: 6px;
         font-size: 16px;
         font-weight: 600;
-        margin-bottom: 6px;
+        margin: 0;
         color: #333;
         letter-spacing: 0.3px;
-    }
-
-    .info-text i {
-        font-size: 1.2rem;
-        color: #333;
-    }
-
-    .info-number {
-        font-size: 20px;
-        font-weight: 800;
-        color: var(--primary-blue);
-        background: linear-gradient(to bottom right, #4da6ff, #5eb8ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
 
     .small-text {
         font-size: 13px;
         color: #777;
-        line-height: 1.4;
     }
 
-    /* Warna khusus tiap card */
-    .card-1 .number-container { background-color: #4da6ff; } /* Biru muda */
-    .card-2 .number-container { background-color: #4798e0; } /* Biru medium */
-    .card-3 .number-container { background-color: #3f8bcc; } /* Biru tua */
-    .card-4 .number-container { background-color: #397db8; } /* Biru navy */
+    /* Warna khusus untuk setiap kartu */
+    .card-1 .number-container { background-color: #4da6ff; }
+    .card-2 .number-container { background-color: #4798e0; }
+    .card-3 .number-container { background-color: #3f8bcc; }
+    .card-4 .number-container { background-color: #397db8; }
 
     .card-1::before { background-color: #4da6ff; }
     .card-2::before { background-color: #4798e0; }
@@ -951,25 +934,47 @@ font-family: 'Poppins', sans-serif;
     .card-4::before { background-color: #397db8; }
 
     @media (max-width: 576px) {
-        .card-content {
-            flex-direction: column;
-            text-align: center;
-        }
-
         .number-container {
             width: 60px;
             height: 60px;
-            margin-right: 0;
-            margin-bottom: 10px;
+        }
+
+        .info-icon {
+            font-size: 26px;
         }
 
         .info-text {
-            justify-content: center;
             font-size: 14px;
         }
 
-        .small-text {
-            text-align: center;
+        .card-content {
+            padding: 20px 15px;
         }
+    }
+
+    .info-text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+    }
+
+    .info-number {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--primary-blue);
+        text-shadow: 0 1px 3px rgba(77, 166, 255, 0.3);
+        letter-spacing: -0.5px;
+        background: linear-gradient(to bottom right, #4da6ff, #5eb8ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .info-text span {
+        font-weight: 600;
+        color: #333;
     }
 </style>
