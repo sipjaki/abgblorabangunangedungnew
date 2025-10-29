@@ -146,7 +146,19 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div class="button-modern">
+                    <div style="
+                    margin-bottom:10px;
+                    font-weight: 900;
+                    font-size: 16px;
+                    text-align: center;
+                    background: linear-gradient(135deg, #000080, #000080);
+                    color: white;
+                    padding: 10px 25px;
+                    border-radius: 10px;
+                    display: inline-block;
+                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                    width: 100%;
+                ">
                 <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
                 </div>
 
@@ -223,7 +235,7 @@ function searchTable() {
     timeout = setTimeout(() => {
         let input = document.getElementById("searchInput").value;
 
-        fetch(`/bebantekkonsultandata?search=${encodeURIComponent(input)}`)
+        fetch(`/bebantekkonsultan?search=${encodeURIComponent(input)}`)
             .then(response => response.text())
             .then(html => {
                 let parser = new DOMParser();
