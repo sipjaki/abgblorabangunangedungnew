@@ -152,7 +152,7 @@ th {
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-<button class="button-newvalidasi" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url('/bepbgslfinformasi') }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -205,9 +205,9 @@ method="POST" enctype="multipart/form-data">
         <!-- ================= BAGIAN INFORMASI UTAMA ================= -->
         <div class="row">
             {{-- Judul --}}
-            <div class="col-md-6">
+            <div class="form-modern col-md-6">
                 <div class="mb-3">
-                    <label class="form-label" for="judul">
+                    <label class="form-label-modern" for="judul">
                         <i class="bi bi-type me-2 text-primary"></i> Judul
                     </label>
                     <input type="text" id="judul" name="judul"
@@ -219,9 +219,9 @@ method="POST" enctype="multipart/form-data">
             </div>
 
             {{-- Keterangan --}}
-            <div class="col-md-6">
+            <div class="form-modern col-md-6">
                 <div class="mb-3">
-                    <label class="form-label" for="keterangan">
+                    <label class="form-label-modern" for="keterangan">
                         <i class="bi bi-card-text me-2 text-primary"></i> Keterangan
                     </label>
                     <textarea id="keterangan" name="keterangan"
@@ -232,9 +232,9 @@ method="POST" enctype="multipart/form-data">
             </div>
 
             {{-- Info Lanjut --}}
-            <div class="col-md-12">
+            <div class="form-modern col-md-12">
                 <div class="mb-3">
-                    <label class="form-label" for="infolanjut">
+                    <label class="form-label-modern" for="infolanjut">
                         <i class="bi bi-info-circle me-2 text-primary"></i> Info Lanjut
                     </label>
                     <textarea id="infolanjut" name="infolanjut"
@@ -248,9 +248,9 @@ method="POST" enctype="multipart/form-data">
         <!-- ================= BAGIAN PARAGRAF CADANGAN ================= -->
         <div class="row">
             @for ($i = 1; $i <= 7; $i++)
-                <div class="col-md-6">
+                <div class="form-modern col-md-6">
                     <div class="mb-3">
-                        <label class="form-label" for="cadangan{{ $i }}">
+                        <label class="form-label-modern" for="cadangan{{ $i }}">
                             <i class="bi bi-file-text me-2 text-primary"></i> Paragraf {{ $i }}
                         </label>
                         <textarea id="cadangan{{ $i }}" name="cadangan{{ $i }}"
@@ -274,8 +274,8 @@ method="POST" enctype="multipart/form-data">
 
         <div class="row">
             {{-- Contoh Berkas 4 --}}
-            <div class="col-md-6 mb-3">
-                <label class="form-label" for="berkas">
+            <div class="form-modern col-md-6 mb-3">
+                <label class="form-label-modern" for="berkas">
                     <i class="bi bi-file-earmark-pdf text-danger me-2"></i> Upload Berkas | Maksimal 15 MB (PDF/Gambar)
                 </label>
                 <input type="file" id="berkas" name="berkas"
