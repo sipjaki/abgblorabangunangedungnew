@@ -378,7 +378,7 @@
                 animation: fadeIn 0.5s ease-in-out;
             ">
                 <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-                Data Tidak Ditemukan !!
+                Belum Ada Permohonan !!
             </div>
         </td>
     </tr>
