@@ -20,6 +20,47 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
+
+/* Card-style form wrapper */
+.form-modern {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.form-modern:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Label modern */
+.form-label-modern {
+    font-weight: 600;
+    color: #1a3c34;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+/* Select modern style */
+.form-select-modern {
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    padding: 10px 14px;
+    font-size: 15px;
+    color: #1f2937;
+    transition: all 0.3s ease;
+}
+
+.form-select-modern:focus {
+    border-color: #1a3c34;
+    box-shadow: 0 0 0 3px rgba(26, 60, 52, 0.2);
+    outline: none;
+}
+
 /* 🔥 Efek hover baru: tulisan tetap hitam + glow lembut */
 .button-modern:hover {
     background: linear-gradient(145deg, #ffffff, #f3f4f6);
