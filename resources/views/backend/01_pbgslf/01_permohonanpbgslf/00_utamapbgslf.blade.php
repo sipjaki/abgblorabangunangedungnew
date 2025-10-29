@@ -8,6 +8,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('frontend.android.00_fiturmenu.06_alert')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
@@ -548,103 +549,18 @@
 
 {{-- -------------------------------------------------------- --}}
 <!-- ======= DASHBOARD KARTU PERMOHONAN ======= -->
-<style>
-  /* Animasi muncul */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Wrapper umum */
-  .info-box {
-    background: #000080;
-    color: #fff;
-    border-radius: 14px;
-    transition: all 0.35s ease;
-    height: 100%;
-    animation: fadeUp 0.6s ease forwards;
-    opacity: 0;
-  }
-
-  /* Delay animasi biar berurutan */
-  .col-12:nth-child(1) .info-box { animation-delay: 0.1s; }
-  .col-12:nth-child(2) .info-box { animation-delay: 0.2s; }
-  .col-12:nth-child(3) .info-box { animation-delay: 0.3s; }
-  .col-12:nth-child(4) .info-box { animation-delay: 0.4s; }
-  .col-12:nth-child(5) .info-box { animation-delay: 0.5s; }
-
-  /* Hover efek lembut biru langit */
-  .info-box:hover {
-    transform: translateY(-6px);
-    background: linear-gradient(135deg, #0000cc, #4f9fff);
-    box-shadow: 0 8px 22px rgba(0, 102, 255, 0.35);
-  }
-
-  /* Lingkaran ikon */
-  .info-box-icon {
-    background-color: #ffd100 !important;
-    width: 65px !important;
-    height: 65px !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-  }
-
-  /* Efek ikon pas hover */
-  .info-box:hover .info-box-icon {
-    transform: scale(1.1);
-    background-color: #ffe44d !important;
-    box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
-  }
-
-  /* Tulisan utama */
-  .info-box-text {
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px !important;
-    font-weight: 500;
-    color: #fff !important;
-  }
-
-  /* Angka jumlah */
-  .info-box-number {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 16px !important;
-    color: #ffd100 !important;
-  }
-
-  /* Hover efek untuk teks (lebih terang dikit) */
-  .info-box:hover .info-box-text,
-  .info-box:hover .info-box-number {
-    color: #fff !important;
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
-  }
-
-  /* Responsif */
-  @media (max-width: 768px) {
-    .info-box {
-      padding: 20px !important;
-    }
-    .info-box-icon {
-      width: 55px !important;
-      height: 55px !important;
-    }
-    .info-box-number {
-      font-size: 14px !important;
-    }
-  }
-</style>
 
 <div class="row g-4">
   <!-- Card 1 -->
   <div class="col-12 col-sm-6 col-md-4">
     <a href="/bepbgslfindexslf" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
-          <i class="bi bi-file-earmark-check" style="font-size: 26px; color: green;"></i>
+      <div class="dashboard-card shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
+        <div class="number-container d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
+          <img src="/assets/icon/pupr.png" alt="icon" width="60" height="60" style="background-color:#f5f5f5; border-radius:50%; padding:8px;">
         </div>
         <div class="info-box-content text-center">
           <span class="info-box-text d-block fw-semibold">(PBG) Persetujuan Bangunan Gedung</span>
-          <span class="info-box-number fw-bold mt-1">{{ $jumlahDataIdSatu }} Permohonan</span>
+          <span class="info-box-number fw-bold mt-1 text-primary">{{ $jumlahDataIdSatu }} Permohonan</span>
         </div>
       </div>
     </a>
@@ -653,13 +569,13 @@
   <!-- Card 2 -->
   <div class="col-12 col-sm-6 col-md-4">
     <a href="/bepbgslfindexslfper2" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
-          <i class="bi bi-building" style="font-size: 26px; color: green;"></i>
+      <div class="dashboard-card shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
+        <div class="number-container d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
+          <img src="/assets/icon/pupr.png" alt="icon" width="60" height="60" style="background-color:#f5f5f5; border-radius:50%; padding:8px;">
         </div>
         <div class="info-box-content text-center">
           <span class="info-box-text d-block fw-semibold">(SLF) Sertifikat Laik Fungsi</span>
-          <span class="info-box-number fw-bold mt-1">{{ $jumlahDataIdDua }} Permohonan</span>
+          <span class="info-box-number fw-bold mt-1 text-primary">{{ $jumlahDataIdDua }} Permohonan</span>
         </div>
       </div>
     </a>
@@ -668,13 +584,13 @@
   <!-- Card 3 -->
   <div class="col-12 col-sm-6 col-md-4">
     <a href="/bepbgslfindexslfper3" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
-          <i class="bi bi-award" style="font-size: 26px; color: green;"></i>
+      <div class="dashboard-card shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
+        <div class="number-container d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
+          <img src="/assets/icon/pupr.png" alt="icon" width="60" height="60" style="background-color:#f5f5f5; border-radius:50%; padding:8px;">
         </div>
         <div class="info-box-content text-center">
           <span class="info-box-text d-block fw-semibold">(SBKBG) Surat Bukti Kepemilikan Bangunan Gedung</span>
-          <span class="info-box-number fw-bold mt-1">{{ $jumlahDataIdTiga }} Permohonan</span>
+          <span class="info-box-number fw-bold mt-1 text-primary">{{ $jumlahDataIdTiga }} Permohonan</span>
         </div>
       </div>
     </a>
@@ -683,13 +599,13 @@
   <!-- Card 4 -->
   <div class="col-12 col-sm-6 col-md-6">
     <a href="/bepbgslfindexslfper4" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
-          <i class="bi bi-tools" style="font-size: 26px; color: green;"></i>
+      <div class="dashboard-card shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
+        <div class="number-container d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
+          <img src="/assets/icon/pupr.png" alt="icon" width="60" height="60" style="background-color:#f5f5f5; border-radius:50%; padding:8px;">
         </div>
         <div class="info-box-content text-center">
           <span class="info-box-text d-block fw-semibold">(RTB) Rencana Teknis Pembongkaran</span>
-          <span class="info-box-number fw-bold mt-1">{{ $jumlahDataIdEmpat }} Permohonan</span>
+          <span class="info-box-number fw-bold mt-1 text-primary">{{ $jumlahDataIdEmpat }} Permohonan</span>
         </div>
       </div>
     </a>
@@ -698,13 +614,13 @@
   <!-- Card 5 -->
   <div class="col-12 col-sm-6 col-md-6">
     <a href="/bepbgslfindexslfper5" style="text-decoration: none;">
-      <div class="info-box shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
-        <div class="info-box-icon d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
-          <i class="bi bi-house-door" style="font-size: 26px; color: green;"></i>
+      <div class="dashboard-card shadow-lg rounded-3 p-4 d-flex flex-column align-items-center justify-content-center">
+        <div class="number-container d-flex justify-content-center align-items-center mb-3 shadow-sm rounded-circle">
+          <img src="/assets/icon/pupr.png" alt="icon" width="60" height="60" style="background-color:#f5f5f5; border-radius:50%; padding:8px;">
         </div>
         <div class="info-box-content text-center">
           <span class="info-box-text d-block fw-semibold">Pendataan Bangunan Gedung</span>
-          <span class="info-box-number fw-bold mt-1">{{ $jumlahDataIdLima }} Permohonan</span>
+          <span class="info-box-number fw-bold mt-1 text-primary">{{ $jumlahDataIdLima }} Permohonan</span>
         </div>
       </div>
     </a>
@@ -712,26 +628,6 @@
 </div>
 
 </div>
-<br><br><br><br>
-  <style>
-    .info-box:hover {
-      background-color: white !important;
-      color: #000080 !important;
-      transform: translateY(-10px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-    .info-box-icon svg {
-      fill: green; /* Green color for SVG icons */
-    }
-    .info-box-text, .info-box-number {
-      color: white;
-    }
-    .info-box:hover .info-box-text,
-    .info-box:hover .info-box-number {
-      color: #000080 !important;
-    }
-  </style>
-
               {{-- -------------------------------------------------------- --}}
 
 
