@@ -270,7 +270,7 @@
 
     <div style="width: 100%; overflow-x: auto; margin-bottom: 100px; margin-top:20px;">
   <table
-    class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+    class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
 
   >
 
@@ -315,14 +315,14 @@
           </td>
           <td style="white-space: nowrap; padding: 6px; text-align: center;">
             @if ($item->validasiberkas5 === 'sudah')
-              <span style="display: inline-block; padding: 4px 8px; background-color: #198754; color: white; border-radius: 4px;">Sidang</span>
+              <span class="button-hijau">Sidang</span>
             @else
-              <span style="display: inline-block; padding: 4px 8px; background-color: #6c757d; color: white; border-radius: 4px;">Belum</span>
+              <span class="button-modern">Belum</span>
             @endif
           </td>
         <td style="white-space: nowrap; padding: 6px; text-align: center;">
   <a href="{{ route('bepbgsuratundangan', $item->id) }}"
-     class="button-baru">
+     class="button-modern">
      <i class="fas fa-eye me-1"></i> Lihat Surat Undangan
   </a>
 </td>

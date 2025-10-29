@@ -2598,7 +2598,7 @@ public function betempatcreatenew(Request $request)
     public function bepbgslfkonsultasi(Request $request)
 {
     $user = Auth::user();
-    $perPage = $request->input('perPage', 20);
+    $perPage = $request->input('perPage', 10);
 
     // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
     $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
