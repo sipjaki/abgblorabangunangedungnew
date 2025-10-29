@@ -263,7 +263,7 @@
 <div class="form-modern col-md-6">
 <div class="mb-3">
     <label class="form-label-modern" for="namauser">
-        <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Pengunduh Data ABG
+        <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Pengunduh Data Induk SIMBG
     </label>
     <input
         type="text"
