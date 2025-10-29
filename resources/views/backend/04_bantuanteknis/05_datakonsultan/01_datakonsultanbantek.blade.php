@@ -192,7 +192,7 @@ th {
 
     <!-- Search Box -->
     <div style="position: relative; display: inline-block;">
-      <input type="search" id="searchInput" placeholder="Cari Petugas ...." onkeyup="searchTable()"
+      <input type="search" id="searchInput" placeholder="Cari Konsultan Perencana ...." onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
       <i class="fas fa-search"
          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
@@ -203,14 +203,14 @@ th {
 
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarinternalbidangbangunan')"
-      class="button-baru"
+    <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_konsultanperencanateknis')"
+      class="button-modern"
       style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
       <i class="bi bi-download"></i> Download Excel
     </button>
 
     <a href="/bebantekkonsultannew" style="text-decoration: none;">
-      <button class="button-hijau"
+      <button class="button-baru"
         style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
         <i class="bi bi-plus-circle"></i> Buat Baru
       </button>
@@ -230,7 +230,7 @@ th {
   function searchTable() {
     let input = document.getElementById("searchInput").value;
 
-    fetch(`/bepetugasdinas?search=${encodeURIComponent(input)}`)
+    fetch(`/bebantekkonsultan?search=${encodeURIComponent(input)}`)
       .then(response => response.text())
       .then(html => {
         let parser = new DOMParser();
