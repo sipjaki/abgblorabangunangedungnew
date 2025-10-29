@@ -107,30 +107,7 @@
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                                  <div style="position: relative; display: inline-block; margin-right:10px;">
-    <input type="search" id="searchInput" placeholder="Cari Permohonan ...."
-           onkeyup="searchTable()"
-           style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-    <i class="bi bi-search"
-       style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-</div>
 
-<script>
-
-  function searchTable() {
-                            let input = document.getElementById("searchInput").value;
-
-                            fetch(`/bepbgslfindexslf?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
-                        }
-</script>
 
                                                  <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
             <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
@@ -157,6 +134,30 @@
                 window.location.href = url.toString();
             }
         </script>
+                         <div style="position: relative; display: inline-block; margin-right:10px;">
+    <input type="search" id="searchInput" placeholder="Cari Permohonan ...."
+           onkeyup="searchTable()"
+           style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+    <i class="bi bi-search"
+       style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+</div>
+
+<script>
+
+  function searchTable() {
+                            let input = document.getElementById("searchInput").value;
+
+                            fetch(`/bepbgslfindexslf?search=${input}`)
+                                .then(response => response.text())
+                                .then(html => {
+                                    let parser = new DOMParser();
+                                    let doc = parser.parseFromString(html, "text/html");
+                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                                    document.querySelector("#tableBody").innerHTML = newTableBody;
+                                })
+                                .catch(error => console.error("Error fetching search results:", error));
+                        }
+</script>
 
 <div style="position: relative; display: inline-block; margin-right: 10px;">
     <input type="date"
