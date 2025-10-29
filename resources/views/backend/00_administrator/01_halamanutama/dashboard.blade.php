@@ -652,8 +652,6 @@
 
     @can('superadmin')
 
-    <div class="container">
-
 
 <!-- Tambahkan ini di dalam <head> -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -837,9 +835,9 @@
                             <span class="info-number"> ... </span>
                         </p>
                         <p class="info-text">
-                            Keterangan Rencana Kabupaten
+                            Perjalanan Dinas
                         </p>
-                        <p class="small-text">Informasi Permohonan KRK Kabupaten</p>
+                        <p class="small-text">Informasi Jumlah Perjalanan Dinas</p>
                     </div>
                 </div>
             </div>
@@ -1019,12 +1017,96 @@
     </div>
 </div>
 
-
-        </div>
-
-        </div>
-
+<div class="row">
+    <!-- 1. KRK Fungsi Usaha -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-shop" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">KRK Fungsi Usaha</p>
+                        <p class="small-text">Informasi Jumlah KRK Fungsi Usaha</p>
+                    </div>
+                </div>
+            </div>
+        </a>
     </div>
+
+    <!-- 2. KRK Fungsi Hunian -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-house-heart" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">KRK Fungsi Hunian</p>
+                        <p class="small-text">Informasi Jumlah KRK Fungsi Hunian</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 3. KRK Fungsi Keagamaan -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-bank" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">KRK Fungsi Keagamaan</p>
+                        <p class="small-text">Informasi Jumlah KRK Fungsi Keagamaan</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 4. KRK Fungsi Sosial Budaya -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-people" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
+                        </p>
+                        <p class="info-text">KRK Fungsi Sosial Budaya</p>
+                        <p class="small-text">Informasi Jumlah KRK Fungsi Sosial Budaya</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+        </div>
+
+        </div>
+
 
     <script>
         // Add some interactivity
