@@ -54,7 +54,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
 
-<form method="GET" action="{{ url()->current() }}" style="margin-bottom: 20px;">
+{{-- <form method="GET" action="{{ url()->current() }}" style="margin-bottom: 20px;">
   <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
     <label for="filter_bulan" style="font-weight: 600;">Filter Bulan:</label>
     <select name="bulan" id="filter_bulan" onchange="this.form.submit()" style="
@@ -75,22 +75,22 @@
       @endforeach
     </select>
   </div>
-</form>
+</form> --}}
 
 <div class="putih" style="margin-bottom:100px;">
 
 
 <div style="width: 100%; overflow-x: auto; margin-bottom: 100px; margin-top:20px;">
   <table
-    class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+    class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
 
   >
 
     <thead>
       <tr>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">No</th>
+        <th>No</th>
         @canany(['superadmin', 'admin', 'akunskrd'])
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
             <i class="bi bi-person-fill"></i> Upload Berkas
         </th>
         @endcanany
@@ -98,7 +98,7 @@
           <i class="bi bi-person-fill"></i> Admin DPUPR
         </th> --}}
 
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-file-earmark-text-fill"></i> Potensi Retribusi
         </th>
 
@@ -106,34 +106,34 @@
           <i class="bi bi-file-earmark-text-fill"></i> Bukti Pembayaran
         </th> --}}
 
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-file-earmark-text-fill"></i> Berkas SKRD
         </th>
 
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-file-earmark-text-fill"></i> Bukti Pembayaran
         </th>
 
-                    <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+                    <th>
             <i class="bi bi-person-fill"></i> Bulan Sidang
             </th>
 
-                    <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+                    <th>
             <i class="bi bi-person-fill"></i> Nama Pemilik
             </th>
 
-            <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+            <th>
             <i class="bi bi-geo-alt-fill"></i> Lokasi Bangunan
             </th>
 
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan
         </th>
 
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-hash"></i> No Registrasi SIM BG
         </th>
-        <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
+        <th>
           <i class="bi bi-calendar"></i> Tanggal Permohonan
         </th>
         {{-- <th style="background-color: #ADD8E6; white-space: nowrap; padding: 8px; text-align: center;">
