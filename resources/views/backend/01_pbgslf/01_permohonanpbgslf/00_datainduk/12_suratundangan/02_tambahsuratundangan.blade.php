@@ -398,8 +398,8 @@ th {
 
 <div class="row g-4 mt-2">
     {{-- Konsultasi Ke --}}
-    <div class="col-md-4">
-        <label class="form-label fw-semibold text-dark">
+    <div class="form-modern col-md-4">
+        <label class="form-label-modern fw-semibold text-dark">
             <i class="bi bi-123 text-primary me-1"></i> Konsultasi Ke
         </label>
         <select name="konsultasike" class="form-select @error('konsultasike') is-invalid @enderror">
@@ -414,8 +414,8 @@ th {
     </div>
 
     {{-- Tanggal Undangan --}}
-    <div class="col-md-4">
-        <label class="form-label fw-semibold text-dark">
+    <div class="form-modern col-md-4">
+        <label class="form-label-modern fw-semibold text-dark">
             <i class="bi bi-calendar text-primary me-1"></i> Tanggal Undangan
         </label>
         <input type="date" name="tanggalundangan"
@@ -427,8 +427,8 @@ th {
     </div>
 
     {{-- Tanggal Kehadiran --}}
-    <div class="col-md-4">
-        <label class="form-label fw-semibold text-dark">
+    <div class="form-modern col-md-4">
+        <label class="form-label-modern fw-semibold text-dark">
             <i class="bi bi-calendar-check text-primary me-1"></i> Tanggal Kehadiran
         </label>
         <input type="date" name="tanggalkehadiran"
@@ -442,8 +442,8 @@ th {
 
 <div class="row g-4 mt-2">
     {{-- Tempat Konsultasi --}}
-    <div class="col-md-6">
-        <label class="form-label fw-semibold text-dark">
+    <div class="form-modern col-md-6">
+        <label class="form-label-modern fw-semibold text-dark">
             <i class="bi bi-geo-alt-fill text-primary me-1"></i> Tempat Konsultasi
         </label>
         <select name="tempatkonsultasi_id" class="form-select @error('tempatkonsultasi_id') is-invalid @enderror">
@@ -462,8 +462,8 @@ th {
 
 {{-- Pilihan Jam Undangan --}}
 <div class="row g-4 mt-2">
-    <div class="col-md-6">
-        <label class="form-label fw-semibold text-dark d-block">
+    <div class="form-modern col-md-6">
+        <label class="form-label-modern fw-semibold text-dark d-block">
             <i class="bi bi-clock text-primary me-1"></i> Jam Undangan
         </label>
         <div class="d-flex flex-column gap-2">
@@ -496,8 +496,8 @@ th {
 
 {{-- Field Catatan (Jam Lainnya) --}}
 <div class="row g-4 mt-2" id="jam-lainnya-field" style="{{ old('jamundangan') === 'lainnya' ? 'display:block;' : 'display:none;' }}">
-    <div class="col-md-6">
-        <label class="form-label fw-semibold text-dark">
+    <div class="form-modern col-md-6">
+        <label class="form-label-modern fw-semibold text-dark">
             <i class="bi bi-pencil-square text-primary me-1"></i> Jam Undangan (Lainnya)
         </label>
         <textarea name="catatan" rows="2"
@@ -511,7 +511,7 @@ th {
 
 <div class="text-end mt-4">
     <button type="button" class="button-hijau" onclick="openModal()">
-        <i class="bi bi-save me-1"></i> Simpan Surat Undangan
+        <i class="bi bi-save me-1"></i> Simpan
     </button>
 </div>
 
