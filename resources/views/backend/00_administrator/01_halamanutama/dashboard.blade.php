@@ -658,150 +658,23 @@
 <!-- Tambahkan ini di dalam <head> -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-<style>
-    :root {
-        --primary-blue: #4da6ff;
-        --dark-blue: #2c5ea8;
-        --light-blue: #e6f3ff;
-        --accent-blue: #cce4ff;
-    }
-
-    .dashboard-card {
-        background-color: white;
-        border-radius: 16px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border: none;
-        height: 100%;
-        position: relative;
-    }
-
-    .dashboard-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 6px;
-        background-color: var(--primary-blue);
-    }
-
-    .dashboard-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .card-content {
-        padding: 25px 20px;
-        display: flex;
-        align-items: center;
-    }
-
-    .number-container {
-        border-radius: 14px;
-        width: 80px;
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 20px;
-        flex-shrink: 0;
-        box-shadow: 0 4px 10px rgba(77, 166, 255, 0.3);
-    }
-
-    .number-container img {
-        width: 40px;
-        height: auto;
-        filter: brightness(0) invert(1);
-    }
-
-    .info-content {
-        flex-grow: 1;
-        text-align: left;
-    }
-
-    .info-text {
-        display: flex;
-        align-items: baseline;
-        gap: 6px;
-        font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 6px;
-        color: #333;
-        letter-spacing: 0.3px;
-    }
-
-    .info-text i {
-        font-size: 1.2rem;
-        color: #333;
-    }
-
-    .info-number {
-        font-size: 20px;
-        font-weight: 800;
-        color: var(--primary-blue);
-        background: linear-gradient(to bottom right, #4da6ff, #5eb8ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .small-text {
-        font-size: 13px;
-        color: #777;
-        line-height: 1.4;
-    }
-
-    /* Warna khusus tiap card */
-    .card-1 .number-container { background-color: #4da6ff; } /* Biru muda */
-    .card-2 .number-container { background-color: #4798e0; } /* Biru medium */
-    .card-3 .number-container { background-color: #3f8bcc; } /* Biru tua */
-    .card-4 .number-container { background-color: #397db8; } /* Biru navy */
-
-    .card-1::before { background-color: #4da6ff; }
-    .card-2::before { background-color: #4798e0; }
-    .card-3::before { background-color: #3f8bcc; }
-    .card-4::before { background-color: #397db8; }
-
-    @media (max-width: 576px) {
-        .card-content {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .number-container {
-            width: 60px;
-            height: 60px;
-            margin-right: 0;
-            margin-bottom: 10px;
-        }
-
-        .info-text {
-            justify-content: center;
-            font-size: 14px;
-        }
-
-        .small-text {
-            text-align: center;
-        }
-    }
-</style>
-
-<div class="row gy-4">
+<div class="row">
     <!-- 1. Permohonan PBG SLF -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-file-earmark-check text-white" style="font-size: 2rem;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-newspaper"></i>
+                            <i class="bi bi-file-earmark-check" style="margin-right: 5px;"></i>
                             <span class="info-number">...</span>
                         </p>
-                        <p class="info-text">Permohonan PBG SLF</p>
+                        <p class="info-text">
+                            Permohonan PBG SLF
+                        </p>
                         <p class="small-text">Informasi Jumlah Permohonan PBG SLF</p>
                     </div>
                 </div>
@@ -812,17 +685,19 @@
     <!-- 2. Pendataan Bangunan Gedung -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-2">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-building text-white" style="font-size: 2rem;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-journal-text"></i>
-                            <span class="info-number">...</span>
+                            <i class="bi bi-building-check" style="margin-right: 5px;"></i>
+                            <span class="info-number">... </span>
                         </p>
-                        <p class="info-text">Pendataan Bangunan Gedung</p>
+                        <p class="info-text">
+                            Pendataan Bangunan Gedung
+                        </p>
                         <p class="small-text">Informasi Jumlah Pendataan Bangunan Gedung</p>
                     </div>
                 </div>
@@ -833,17 +708,19 @@
     <!-- 3. Bantuan Teknis -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-3">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-tools text-white" style="font-size: 2rem;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-camera-reels"></i>
-                            <span class="info-number">...</span>
+                            <i class="bi bi-tools" style="margin-right: 5px;"></i>
+                            <span class="info-number">... </span>
                         </p>
-                        <p class="info-text">Bantuan Teknis</p>
+                        <p class="info-text">
+                            Bantuan Teknis
+                        </p>
                         <p class="small-text">Informasi Permohonan Bantuan Teknis</p>
                     </div>
                 </div>
@@ -854,17 +731,19 @@
     <!-- 4. Keterangan Rencana Kabupaten -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-4">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-geo-alt text-white" style="font-size: 2rem;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-building"></i>
-                            <span class="info-number">...</span>
+                            <i class="bi bi-geo-alt" style="margin-right: 5px;"></i>
+                            <span class="info-number"> ... </span>
                         </p>
-                        <p class="info-text">Keterangan Rencana Kabupaten</p>
+                        <p class="info-text">
+                            Keterangan Rencana Kabupaten
+                        </p>
                         <p class="small-text">Data dan pengelolaan perusahaan</p>
                     </div>
                 </div>
@@ -873,19 +752,24 @@
     </div>
 </div>
 
-<div class="row g-4">
-    <!-- 1. Berita Jakon -->
+
+<div class="row">
+    <!-- 1. Inspeksi Bangunan Gedung -->
     <div class="col-md-3 col-sm-6 col-12">
-        <a href="#" class="dashboard-link">
+        <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
-                <div class="card-content text-center">
-                    <img src="/assets/icon/pupr.png" alt="icon" class="card-icon">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-newspaper"></i>
+                            <i class="bi bi-clipboard-check" style="margin-right: 5px;"></i>
+                            <span class="info-number">...</span>
                         </p>
-                        <span class="info-number">...</span>
-                        <p class="info-title">Inspeksi Bangunan Gedung</p>
+                        <p class="info-text">
+                            Inspeksi Bangunan Gedung
+                        </p>
                         <p class="small-text">Informasi Jumlah Inspeksi Bangunan Gedung</p>
                     </div>
                 </div>
@@ -893,18 +777,22 @@
         </a>
     </div>
 
-    <!-- 2. Artikel Jakon -->
+    <!-- 2. Permohonan Bantuan Gambar -->
     <div class="col-md-3 col-sm-6 col-12">
-        <a href="#" class="dashboard-link">
+        <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
-                <div class="card-content text-center">
-                    <img src="/assets/icon/pupr.png" alt="icon" class="card-icon">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-journal-text"></i>
+                            <i class="bi bi-brush" style="margin-right: 5px;"></i>
+                            <span class="info-number">... </span>
                         </p>
-                        <span class="info-number">...</span>
-                        <p class="info-title">Permohonan Bantuan Gambar</p>
+                        <p class="info-text">
+                            Permohonan Bantuan Gambar
+                        </p>
                         <p class="small-text">Informasi Jumlah Bantuan Gambar</p>
                     </div>
                 </div>
@@ -912,18 +800,22 @@
         </a>
     </div>
 
-    <!-- 3. Dokumentasi Jakon -->
+    <!-- 3. Hibah Bangunan Gedung -->
     <div class="col-md-3 col-sm-6 col-12">
-        <a href="#" class="dashboard-link">
+        <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
-                <div class="card-content text-center">
-                    <img src="/assets/icon/pupr.png" alt="icon" class="card-icon">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-camera-reels"></i>
+                            <i class="bi bi-gift" style="margin-right: 5px;"></i>
+                            <span class="info-number">... </span>
                         </p>
-                        <span class="info-number">...</span>
-                        <p class="info-title">Hibah Bangunan Gedung</p>
+                        <p class="info-text">
+                            Hibah Bangunan Gedung
+                        </p>
                         <p class="small-text">Informasi Jumlah Hibah Bangunan Gedung</p>
                     </div>
                 </div>
@@ -931,18 +823,22 @@
         </a>
     </div>
 
-    <!-- 4. BUJK Konsultasi & Konstruksi -->
+    <!-- 4. Keterangan Rencana Kabupaten -->
     <div class="col-md-3 col-sm-6 col-12">
-        <a href="#" class="dashboard-link">
+        <a href="#" style="text-decoration: none;">
             <div class="dashboard-card card-1">
-                <div class="card-content text-center">
-                    <img src="/assets/icon/pupr.png" alt="icon" class="card-icon">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
                     <div class="info-content">
                         <p class="info-text">
-                            <i class="bi bi-building"></i>
+                            <i class="bi bi-geo-alt" style="margin-right: 5px;"></i>
+                            <span class="info-number"> ... </span>
                         </p>
-                        <span class="info-number">...</span>
-                        <p class="info-title">Keterangan Rencana Kabupaten</p>
+                        <p class="info-text">
+                            Keterangan Rencana Kabupaten
+                        </p>
                         <p class="small-text">Informasi Permohonan KRK Kabupaten</p>
                     </div>
                 </div>
