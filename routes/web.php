@@ -1187,6 +1187,7 @@ Route::post('/bgslfmenaratelkomupdatenew/{id}', [PbgslfController::class, 'bgslf
 Route::get('/fungsicampuran', [PbgslfController::class, 'fungsicampuran'])->middleware('auth', 'can:superadmin')->name('fungsicampuran');
 
 Route::get('/bepbgslfindex', [PbgslfController::class, 'bepbgslfindexmenu'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexindexmenu');
+Route::get('/bepbgslfindexsearch', [PbgslfController::class, 'bepbgslfindexsearch'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexslfindex');
 Route::get('/bepbgslfindexslf', [PbgslfController::class, 'bepbgslfindexslf'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexslfindex');
 Route::get('/bepbgslfindexslfper2', [PbgslfController::class, 'bepbgslfindexslfper2'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexslfper2');
 Route::get('/bepbgslfindexslfper3', [PbgslfController::class, 'bepbgslfindexslfper3'])->middleware('auth', 'can:superadmin')->name('bepbgslfindexslfper3');

@@ -147,7 +147,7 @@
   function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/bepbgslfindexslf?search=${input}`)
+                            fetch(`/bepbgslfindexsearch?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
