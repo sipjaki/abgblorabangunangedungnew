@@ -55,84 +55,75 @@ th {
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('frontend.android.00_fiturmenu.06_alert')
-<style>        /* Styles untuk halaman berita acara */
-        .halaman {
-            width: 21cm;
-            min-height: 29.7cm;
-            margin: 20px auto;
-            background: white;
-            padding: 2cm;
-            box-sizing: border-box;
-            border: 1px solid black;
-            font-family: 'Times New Roman', serif;
-        }
+<style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f2f2f2;
+      font-size: 12px;
+    }
+    .halaman {
+      width: 21cm;
+      height: 29.7cm;
+      margin: auto;
+      background: white;
+      padding: 2cm;
+      box-sizing: border-box;
+      border: 1px solid black;
+    }
+    .kop {
+      text-align: center;
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .kop h3 {
+      margin: 2px 0;
+      font-size: 16px;
+    }
+    .kop p {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+    .logo {
+      height: 80px;
+    }
+    .judul-surat {
+      text-align: center;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .isi-surat p {
+      text-align: justify;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .tabel-info {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .tabel-info td {
+      padding: 4px;
+    }
+    .ttd {
+      text-align: right;
+      margin-top: 40px;
+    }
+    @media print {
+      body {
+        background: white;
+      }
+    }
 
-        .kop {
-            text-align: center;
-            border-bottom: 2px solid black;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        .kop h3 {
-            margin: 2px 0;
-            font-size: 16px;
-        }
-
-        .kop p {
-            margin: 4px 0;
-            font-size: 13px;
-        }
-
-        .logo {
-            height: 80px;
-        }
-
-        .judul-surat {
-            text-align: center;
-            font-weight: bold;
-            text-decoration: underline;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .isi-surat p {
-            text-align: justify;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .tabel-info {
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-            font-size: 12px;
-        }
-
-        .tabel-info td {
-            padding: 4px;
-        }
-
-        .ttd {
-            text-align: right;
-            margin-top: 40px;
-        }
-
-        @media print {
-            body {
-                background: white;
-            }
-            .halaman {
-                margin: 0;
-                border: none;
-                box-shadow: none;
-            }
-            .no-print {
-                display: none;
-            }
-        }
-    </style>
-
+  </style>
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
         <!-- Navbar, Sidebar, dan komponen lainnya -->
@@ -151,6 +142,12 @@ th {
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Berita Acara (PDF)
                                 </button>
                             </div>
+                           <div class="no-print" style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+    <a href="{{ url()->previous() }}" class="button-modern" style="text-decoration: none; display: inline-flex; align-items: center;">
+        <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
+    </a>
+</div>
+
                         </div>
 
                         <div class="card-body">
