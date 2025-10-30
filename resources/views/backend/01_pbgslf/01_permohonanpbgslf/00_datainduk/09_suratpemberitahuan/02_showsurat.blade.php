@@ -1,4 +1,74 @@
 <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f2f2f2;
+      font-size: 12px;
+    }
+    .halaman {
+      width: 21cm;
+      height: 29.7cm;
+      margin: auto;
+      background: white;
+      padding: 2cm;
+      box-sizing: border-box;
+      border: 1px solid black;
+    }
+    .kop {
+      text-align: center;
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .kop h3 {
+      margin: 2px 0;
+      font-size: 16px;
+    }
+    .kop p {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+    .logo {
+      height: 80px;
+    }
+    .judul-surat {
+      text-align: center;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .isi-surat p {
+      text-align: justify;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .tabel-info {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .tabel-info td {
+      padding: 4px;
+    }
+    .ttd {
+      text-align: right;
+      margin-top: 40px;
+    }
+    @media print {
+      body {
+        background: white;
+      }
+    }
+  </style>
+
+<style>
+
  body {
         font-family: 'Poppins', sans-serif;
     }
