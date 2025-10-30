@@ -316,9 +316,9 @@ th {
                                     <br>
                                     <!-- Rekomendasi -->
                                     <div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top: -20px; font-size: 14px;">
-                                        <p><strong style="margin-top: 5px; font-size: 14px;">Rekomendasi:</strong></p>
-                                        <table style="border-collapse: collapse; width: 100%; font-size: 14px; margin-top: -20px;">
-                                            <tbody>
+                                        <p><strong style="margin-top: 5px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Rekomendasi:</strong></p>
+                                        <table style="border-collapse: collapse; width: 100%; font-size: 14px; margin-top: -20px; font-family: 'Times New Roman', Times, serif;">
+                                            <tbody style="font-family: 'Times New Roman', Times, serif;">
                                                 <tr style="border: 1px solid #444;">
                                                     <td style="border: 1px solid #444; padding: 2px; width: 50px; text-align: center; font-size: 14px;">☐</td>
                                                     <td style="border: 1px solid #444; padding: 2px; font-size: 14px;">Tanpa Perbaikan</td>
@@ -355,9 +355,9 @@ th {
                                     @endphp
 
                                     <p>
-                                        <strong style="margin-top: 5px; font-size: 14px;">Catatan:</strong>
+                                        <strong style="margin-top: 5px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Catatan:</strong>
                                     </p>
-                                    <div style="border: 1px solid #000; min-height: {{ 140 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px;">
+                                    <div style="border: 1px solid #000; min-height: {{ 140 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                     </div>
                                     <br>
 
@@ -365,19 +365,19 @@ th {
                                     <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: -15px;">
                                         <thead>
                                             <tr>
-                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-size: 14px;">
+                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                                     Pemohon
                                                 </th>
-                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px;">
+                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                                     Pengawas
                                                 </th>
-                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px;">
+                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                                     TTD
                                                 </th>
-                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px;">
+                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                                     Nama TPA/TPT
                                                 </th>
-                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px;">
+                                                <th style="border: 1px solid #000; text-align: center; padding: 3px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                                     TTD
                                                 </th>
                                             </tr>
@@ -386,16 +386,16 @@ th {
                                             @foreach ($listPengawas as $index => $row)
                                                 <tr>
                                                     @if ($index === 0)
-                                                        <td style="border: 1px solid #000; padding: 3px; font-size: 14px;" rowspan="{{ $jumlahBaris }}"></td>
+                                                        <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Times New Roman', Times, serif;" rowspan="{{ $jumlahBaris }}"></td>
                                                     @endif
-                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px;">
+                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                                         {{ $row['no'] }}. {{ $row['pengawas'] }}
                                                     </td>
-                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px;"></td>
-                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px;">
+                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Times New Roman', Times, serif;"></td>
+                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                                         {{ $row['no'] }}. {{ $row['tpa'] }}
                                                     </td>
-                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px;"></td>
+                                                    <td style="border: 1px solid #000; padding: 3px; font-size: 14px; font-family: 'Times New Roman', Times, serif;"></td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
