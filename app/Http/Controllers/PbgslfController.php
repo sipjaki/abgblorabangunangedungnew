@@ -212,14 +212,16 @@ $jumlahDataIdLima_terbit     = pbgslfbangunan::whereHas('jenispengajuanpbgslfper
     ]);
 }
 
-public function bepbgslfindexsearch(Request $request)
+public function bepbgslfindexslf(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
     $perPage = $request->input('perPage', 10);
 
     // Query awal: filter berdasarkan jenispengajuanbantek_id = 1
-    $query = pbgslfbangunan::all();
+    $query = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
+        $q->where('id', 1);
+    });
 
     // Jika ada pencarian
     if ($search) {
@@ -257,7 +259,8 @@ public function bepbgslfindexsearch(Request $request)
         'user'  => $user,
     ]);
 }
-public function bepbgslfindexslf(Request $request)
+
+public function bepbgslfindexsearch(Request $request)
 {
     $user = Auth::user();
     $search = $request->input('search');
