@@ -319,7 +319,7 @@ th {
                                     <!-- Rekomendasi -->
                                     <div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top: -10px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                         <p><strong style="margin-top: 5px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Rekomendasi:</strong></p>
-                                        <table style="border-collapse: collapse; width: 100%; font-size: 14px; margin-top: -20px; font-family: 'Times New Roman', Times, serif;">
+                                        <table style="border-collapse: collapse; width: 100%; font-size: 14px; margin-top: -15px; font-family: 'Times New Roman', Times, serif;">
                                             <tbody>
                                                 <tr style="border: 1px solid #444;">
                                                     <td style="border: 1px solid #444; padding: 2px; width: 50px; text-align: center; font-size: 14px; font-family: 'Times New Roman', Times, serif;">☐</td>
