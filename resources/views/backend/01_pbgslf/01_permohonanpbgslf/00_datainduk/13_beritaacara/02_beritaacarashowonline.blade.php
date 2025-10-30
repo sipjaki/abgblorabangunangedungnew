@@ -336,10 +336,10 @@ th {
       <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
       {{-- <img src="/assets/icon/pupr.png" class="logo" style="float: right;"> --}}
       <div style="display: inline-block;">
-  <h3 style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">PEMERINTAH KABUPATEN BLORA</h3>
-  <h3 style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-  <p style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-  <h3 style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">BLORA 58214</h3>
+  <h3><strong style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">PEMERINTAH KABUPATEN BLORA</strong></h3>
+  <h3><strong style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</strong></h3>
+  <p><strong style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</strong></p>
+  <h3><strong style="font-size: 18px; font-family: 'Times New Roman', serif !important; margin: 0;">BLORA 58214</strong></h3>
 </div>
 
       <div style="clear: both;"></div>
