@@ -55,17 +55,16 @@ th {
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('frontend.android.00_fiturmenu.06_alert')
-
-    <style>
+<style>        /* Styles untuk halaman berita acara */
         .halaman {
             width: 21cm;
             min-height: 29.7cm;
+            margin: 20px auto;
             background: white;
             padding: 2cm;
             box-sizing: border-box;
-            border: 1px solid black; /* 🔹 Garis hitam saat view */
+            border: 1px solid black;
             font-family: 'Times New Roman', serif;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
         .kop {
@@ -119,47 +118,21 @@ th {
             margin-top: 40px;
         }
 
-        /* Tombol print */
-        .no-print {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            z-index: 1000;
-        }
-
-        .no-print:hover {
-            background: #45a049;
-        }
-
-        /* 🔹 Style saat di-print / download PDF */
         @media print {
             body {
-                background: white !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                display: block !important;
+                background: white;
             }
             .halaman {
-                margin: 0 !important;
-                border: none !important; /* 🔥 border dihapus total saat di-download */
-                box-shadow: none !important;
-                background: white !important;
-                width: 100% !important;
-                min-height: 100vh !important;
-                padding: 2cm !important;
+                margin: 0;
+                border: none;
+                box-shadow: none;
             }
             .no-print {
-                display: none !important;
+                display: none;
             }
         }
     </style>
+
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
         <!-- Navbar, Sidebar, dan komponen lainnya -->
