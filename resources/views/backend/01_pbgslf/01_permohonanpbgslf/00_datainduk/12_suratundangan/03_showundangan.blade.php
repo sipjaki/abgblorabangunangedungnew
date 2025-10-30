@@ -397,7 +397,7 @@ th {
   Kepada Yth:
 </p>
 <p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
-  Pemohon PBG
+  Pemohon {{$surat->pbgslfbangunan->jenispengajuanpbgslfper->jenispengajuan ?? '-'}}
 </p>
 <p style="font-size: 14px; font-family: 'Times New Roman', serif !important; margin: 0;">
   Di
