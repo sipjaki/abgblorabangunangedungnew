@@ -137,18 +137,23 @@ th {
                 <div class="row" style="margin-right: 10px; margin-left:10px;">
                     <div class="card mb-4">
                         <div class="card-header">
-                            <div class="no-print" style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                                <button class="button-modern" onclick="downloadPDF()">
-                                    <i class="bi bi-download" style="margin-right: 5px;"></i> Download Berita Acara (PDF)
-                                </button>
-                            </div>
-                           <div class="no-print" style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-    <a href="{{ url()->previous() }}" class="button-modern" style="text-decoration: none; display: inline-flex; align-items: center;">
-        <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-    </a>
+    <div class="no-print"
+         style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin-bottom: 5px;">
+
+
+        <button class="button-modern" onclick="downloadPDF()" style="display: inline-flex; align-items: center;">
+            <i class="bi bi-download" style="margin-right: 5px;"></i> Download Berita Acara (PDF)
+        </button>
+
+        <a href="{{ url()->previous() }}"
+           class="button-modern"
+           style="text-decoration: none; display: inline-flex; align-items: center;">
+            <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
+        </a>
+
+    </div>
 </div>
 
-                        </div>
 
                         <div class="card-body">
                             <!-- Halaman Berita Acara -->
@@ -164,7 +169,7 @@ th {
                                     <div style="clear: both;"></div>
                                 </div>
 
-                                <div style="font-family: 'Times New Roman', serif; font-size: 12px; line-height: 1.5;">
+                                <div style="font-family: 'Times New Roman', serif; font-size: 12px; line-height: 1.0;">
                                     <!-- Judul -->
                                     <div style="text-align: center; font-weight: bold; font-size: 14px; margin-top: -15px; font-family: 'Times New Roman', Times, serif;">
                                         BERITA ACARA HASIL KONSULTASI ke-{{ $surat->konsultasike ?? '-' }}<br>
