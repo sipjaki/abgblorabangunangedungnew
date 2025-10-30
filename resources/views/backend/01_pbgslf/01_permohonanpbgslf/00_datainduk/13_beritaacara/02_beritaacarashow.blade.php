@@ -315,21 +315,21 @@ th {
 
                                     <br>
                                     <!-- Rekomendasi -->
-                                    <div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top: -20px; font-size: 14px;">
-                                        <p><strong style="margin-top: 5px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Rekomendasi:</strong></p>
+                                    <div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top: -20px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
+                                        <p><strong style="margin-top: 5px; font-size: 14px;">Rekomendasi:</strong></p>
                                         <table style="border-collapse: collapse; width: 100%; font-size: 14px; margin-top: -20px; font-family: 'Times New Roman', Times, serif;">
-                                            <tbody style="font-family: 'Times New Roman', Times, serif;">
+                                            <tbody>
                                                 <tr style="border: 1px solid #444;">
-                                                    <td style="border: 1px solid #444; padding: 2px; width: 50px; text-align: center; font-size: 14px;">☐</td>
-                                                    <td style="border: 1px solid #444; padding: 2px; font-size: 14px;">Tanpa Perbaikan</td>
+                                                    <td style="border: 1px solid #444; padding: 2px; width: 50px; text-align: center; font-size: 14px; font-family: 'Times New Roman', Times, serif;">☐</td>
+                                                    <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Tanpa Perbaikan</td>
                                                 </tr>
                                                 <tr style="border: 1px solid #444; background-color: #f9f9f9;">
-                                                    <td style="border: 1px solid #444; padding: 2px; text-align: center; font-size: 14px;">☐</td>
-                                                    <td style="border: 1px solid #444; padding: 2px; font-size: 14px;">Dengan Perbaikan</td>
+                                                    <td style="border: 1px solid #444; padding: 2px; text-align: center; font-size: 14px; font-family: 'Times New Roman', Times, serif;">☐</td>
+                                                    <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Dengan Perbaikan</td>
                                                 </tr>
                                                 <tr style="border: 1px solid #444;">
-                                                    <td style="border: 1px solid #444; padding: 2px; text-align: center; font-size: 14px;">☐</td>
-                                                    <td style="border: 1px solid #444; padding: 2px; font-size: 14px;">Permohonan Ditolak/Dikembalikan</td>
+                                                    <td style="border: 1px solid #444; padding: 2px; text-align: center; font-size: 14px; font-family: 'Times New Roman', Times, serif;">☐</td>
+                                                    <td style="border: 1px solid #444; padding: 2px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Permohonan Ditolak/Dikembalikan</td>
                                                 </tr>
                                             </tbody>
                                         </table>
