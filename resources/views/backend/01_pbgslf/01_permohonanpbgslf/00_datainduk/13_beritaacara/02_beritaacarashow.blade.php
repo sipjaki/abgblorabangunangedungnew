@@ -67,6 +67,8 @@ th {
         box-sizing: border-box;
         border: 1px solid black; /* 🔹 tetap hitam di layar */
         font-family: 'Times New Roman', serif;
+        -webkit-print-color-adjust: exact !important; /* pastikan warna tidak diubah otomatis */
+        color-adjust: exact !important;
     }
 
     .kop {
@@ -123,11 +125,14 @@ th {
     @media print {
         body {
             background: white !important;
+            -webkit-print-color-adjust: exact !important;
+            color-adjust: exact !important;
         }
         .halaman {
             margin: 0 !important;
-            border: 1px solid white !important; /* 🔹 saat di-download jadi putih */
+            border: 1px solid white !important; /* 🔹 ubah jadi putih pas di-print/download */
             box-shadow: none !important;
+            background: white !important;
         }
         .no-print {
             display: none !important;
