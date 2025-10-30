@@ -169,7 +169,7 @@ th {
                                     <div style="clear: both;"></div>
                                 </div>
 
-                                <div style="font-family: 'Times New Roman', serif; font-size: 12px; line-height: 1.0;">
+                                <div style="font-family: 'Times New Roman', serif; font-size: 12px; line-height: 1.0; margin-bottom:4px;">
                                     <!-- Judul -->
                                     <div style="text-align: center; font-weight: bold; font-size: 14px; margin-top: -15px; font-family: 'Times New Roman', Times, serif;">
                                         BERITA ACARA HASIL KONSULTASI ke-{{ $surat->konsultasike ?? '-' }}<br>
