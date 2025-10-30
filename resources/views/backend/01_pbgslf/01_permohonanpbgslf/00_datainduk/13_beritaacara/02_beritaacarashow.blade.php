@@ -178,10 +178,10 @@ th {
 
                                     <!-- Paragraf Pembuka -->
                                     <br>
-                                    <p style="margin-top: -15px; font-size: 14px; line-height: 1.5; font-family: 'Times New Roman', Times, serif;">
+                                    <p style="margin-top: -15px; font-size: 14px; line-height: 1.5;  font-family: 'Times New Roman', Times, serif;">
                                         Konsultasi {{ $surat->tpatpt->timpenilai ?? '-' }} Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
                                         {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }}
-                                        <span id="tanggal-terbilang" style="font-size: 14px;"></span>
+                                        {{-- <span id="tanggal-terbilang" style="font-size: 14px;font-family: 'Times New Roman', Times, serif;"></span> --}}
                                         bulan {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('F') }}
                                         tahun Dua Ribu Dua Puluh Lima untuk :
                                     </p>
