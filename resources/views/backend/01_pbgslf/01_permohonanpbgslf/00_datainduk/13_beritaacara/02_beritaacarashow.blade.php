@@ -1,7 +1,8 @@
 <style>
  body {
-        font-family: 'Poppins', sans-serif;
-    }
+    font-family: 'Times New Roman', Times, serif;
+}
+
     .zebra-table {
     width: 100%;
     border-collapse: collapse;
