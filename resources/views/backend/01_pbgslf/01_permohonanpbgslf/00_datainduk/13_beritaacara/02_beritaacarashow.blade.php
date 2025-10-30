@@ -56,87 +56,110 @@ th {
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('frontend.android.00_fiturmenu.06_alert')
 
-<style>
-    /* Styles untuk halaman berita acara */
-    .halaman {
-        width: 21cm;
-        min-height: 29.7cm;
-        margin: 20px auto;
-        background: white;
-        padding: 2cm;
-        box-sizing: border-box;
-        border: 1px solid black; /* 🔹 tetap hitam di layar */
-        font-family: 'Times New Roman', serif;
-    }
-
-    .kop {
-        text-align: center;
-        border-bottom: 2px solid black;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-    }
-
-    .kop h3 {
-        margin: 2px 0;
-        font-size: 16px;
-    }
-
-    .kop p {
-        margin: 4px 0;
-        font-size: 13px;
-    }
-
-    .logo {
-        height: 80px;
-    }
-
-    .judul-surat {
-        text-align: center;
-        font-weight: bold;
-        text-decoration: underline;
-        margin-bottom: 20px;
-        font-size: 14px;
-    }
-
-    .isi-surat p {
-        text-align: justify;
-        line-height: 1.6;
-        margin-bottom: 10px;
-    }
-
-    .tabel-info {
-        width: 100%;
-        margin-top: 20px;
-        border-collapse: collapse;
-        font-size: 12px;
-    }
-
-    .tabel-info td {
-        padding: 4px;
-    }
-
-    .ttd {
-        text-align: right;
-        margin-top: 40px;
-    }
-
-    /* 🔹 Style saat di-print / download PDF */
-    @media print {
-        body {
-            background: white !important;
-        }
+    <style>
         .halaman {
-            margin: 0 !important;
-            border: none !important; /* 🔥 border dihapus total saat di-download */
-            box-shadow: none !important;
-            background: white !important;
+            width: 21cm;
+            min-height: 29.7cm;
+            background: white;
+            padding: 2cm;
+            box-sizing: border-box;
+            border: 1px solid black; /* 🔹 Garis hitam saat view */
+            font-family: 'Times New Roman', serif;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .no-print {
-            display: none !important;
-        }
-    }
-</style>
 
+        .kop {
+            text-align: center;
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .kop h3 {
+            margin: 2px 0;
+            font-size: 16px;
+        }
+
+        .kop p {
+            margin: 4px 0;
+            font-size: 13px;
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .judul-surat {
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .isi-surat p {
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .tabel-info {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .tabel-info td {
+            padding: 4px;
+        }
+
+        .ttd {
+            text-align: right;
+            margin-top: 40px;
+        }
+
+        /* Tombol print */
+        .no-print {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        .no-print:hover {
+            background: #45a049;
+        }
+
+        /* 🔹 Style saat di-print / download PDF */
+        @media print {
+            body {
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: block !important;
+            }
+            .halaman {
+                margin: 0 !important;
+                border: none !important; /* 🔥 border dihapus total saat di-download */
+                box-shadow: none !important;
+                background: white !important;
+                width: 100% !important;
+                min-height: 100vh !important;
+                padding: 2cm !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
         <!-- Navbar, Sidebar, dan komponen lainnya -->
