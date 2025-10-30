@@ -253,13 +253,7 @@ th {
                  </div>
 
                     </div>
-
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Surat Tugas Fasilitator</title>
-  <style>
+<style>
     @page {
       size: A4;
       margin: 0;

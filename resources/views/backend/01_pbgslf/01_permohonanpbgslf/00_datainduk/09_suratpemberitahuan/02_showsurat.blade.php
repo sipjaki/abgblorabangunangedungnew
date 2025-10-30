@@ -448,7 +448,7 @@ th {
       <td class="header-text">
         <h3 style="font-family: 'Times New Roman', serif !important; font-size:18px;">PEMERINTAH KABUPATEN BLORA</h3>
         <h3 style="font-family: 'Times New Roman', serif !important; font-size:18px;" >DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-        <p style="font-family: 'Times New Roman', serif !important; font-size:18px;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+        <p style="font-family: 'Times New Roman', serif !important; font-size:18px;"><strong>Jl. Nusantara No. 62 Telp. (0296) 531004</strong></p>
         <h3 style="font-family: 'Times New Roman', serif !important; font-size:18px;">BLORA 58214 </h3>
       </td>
       {{-- <td style="width: 80px; text-align: right;"><img src="/assets/icon/pupr.png" alt="Logo PUPR" class="logo" /></td> --}}
