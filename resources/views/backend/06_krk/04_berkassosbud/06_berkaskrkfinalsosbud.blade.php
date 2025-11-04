@@ -227,84 +227,84 @@
 
                                             <!-- Section II: Building Information -->
                                             <h5 class="section-title" style="font-size: 12px;">II. INFORMASI INTENSITAS BANGUNAN GEDUNG</h5>
-<table class="zebra-table table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse;">
-    <thead>
-        <tr>
-            <td style="width: 5%; border: 1px solid #ccc; text-align: center;">No</td>
-            <td style="width: 35%; border: 1px solid #ccc; text-align: center;">Item</td>
-            <td style="width: 5%; border: 1px solid #ccc; text-align: center;">:</td>
-            <td style="width: 55%; border: 1px solid #ccc; text-align: center;">Keterangan</td>
-        </tr>
-    </thead>
-    <tbody>
-        @if($subdata->count())
-            @foreach($subdata as $item)
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc;">1</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">Kepadatan</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">{{ $item->kepadatan ?? '-' }}</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc;">2</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">Jumlah Lantai</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">{{ $item->luaslantaimaksimal ?? '-' }} Lantai</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc;">3</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">Luas Bangunan Maksimal</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">{{ $item->luasbangunan ? $item->luasbangunan . ' M²' : '-' }}</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc;">4</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">Luas Lantai Maksimal</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }} Lantai</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc;">5</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">Fungsi Utama Bangunan</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">{{ $item->fungsibangunan ?? 'Belum Dibuatkan' }}</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc;">6</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">(GSB) Garis Sempadan Bangunan</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">{{ $item->gsb ?? 'Belum Dibuatkan' }} Meter</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc;">7</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">(KLB) Koefisien Lantai Bangunan</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">{{ $item->kdb ?? 'Belum Dibuatkan' }}</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc;">8</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">(KDB) Koefisien Dasar Bangunan</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">{{ $item->klb ?? 'Belum Dibuatkan' }}</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc;">9</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">(KDH) Koefisien Dasar Hijau</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">{{ $item->kdh ? $item->kdh . '%' : 'Belum Dibuatkan' }}</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc;">10</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">Jaringan Utilitas Kota</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc;">{{ $item->jaringanutilitas ?? 'Belum Dibuatkan' }}</td>
-                </tr>
-            @endforeach
-        @endif
-    </tbody>
-</table>
-                                        </div>
-
+<div>
+    <table class="zebra-table table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #f4f4f4;">
+                <td style="width: 5%; padding: 4px; text-align: center; border: 1px solid #ccc;">No</td>
+                <td style="width: 35%; padding: 4px; border: 1px solid #ccc;">Item</td>
+                <td style="width: 5%; padding: 4px; text-align: center; border: 1px solid #ccc;">:</td>
+                <td style="width: 55%; padding: 4px; border: 1px solid #ccc;">Keterangan</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if($subdata->count())
+                @foreach($subdata as $item)
+                    <tr>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">1</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">Kepadatan</td>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">:</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">{{ $item->kepadatan ?? '-' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">2</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">Jumlah Lantai</td>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">:</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">{{ $item->luaslantaimaksimal ?? '-' }} Lantai</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">3</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">Luas Bangunan Maksimal</td>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">:</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">{{ $item->luasbangunan ? $item->luasbangunan . ' M²' : '-' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">4</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">Luas Lantai Maksimal</td>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">:</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }} Lantai</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">5</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">Fungsi Utama Bangunan</td>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">:</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">{{ $item->fungsibangunan ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">6</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">(GSB) Garis Sempadan Bangunan</td>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">:</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">{{ $item->gsb ?? 'Belum Dibuatkan' }} Meter</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">7</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">(KLB) Koefisien Lantai Bangunan</td>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">:</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">{{ $item->kdb ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">8</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">(KDB) Koefisien Dasar Bangunan</td>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">:</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">{{ $item->klb ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">9</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">(KDH) Koefisien Dasar Hijau</td>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">:</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">{{ $item->kdh ? $item->kdh . '%' : 'Belum Dibuatkan' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">10</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">Jaringan Utilitas Kota</td>
+                        <td style="text-align: center; padding: 3px; border: 1px solid #ddd;">:</td>
+                        <td style="text-align: left; padding: 3px; border: 1px solid #ddd;">{{ $item->jaringanutilitas ?? 'Belum Dibuatkan' }}</td>
+                    </tr>
+                @endforeach
+            @endif
+        </tbody>
+    </table>
+</div>
                                         <!-- Second Page -->
                                         <div class="halaman" style="width: 21cm; height: 29.7cm; margin: auto; background: white; padding: 2cm; box-sizing: border-box; border: 1px solid black;">
                                             <!-- Letterhead (same as first page) -->
