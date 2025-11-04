@@ -104,8 +104,8 @@
 
                                             <!-- Section I: Administrative Information -->
                                             <h5 class="section-title" style="font-size:12px;">I. INFORMASI ADMINISTRASI</h5>
-                                            <div>
-    <table class="zebra-table table-striped" style="width: 100%; font-size: 12px; line-height: 1;">
+                                            <div class="table-responsive">
+    <table class="table-informasi-krk" style="width: 100%; font-size: 12px; line-height: 1;">
         <thead>
             <tr>
                 <td style="width: 5%;">No</td>
