@@ -358,12 +358,12 @@
 
                                                     <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
                                                         <!-- TTD Kabupaten Blora agak ke kanan -->
-                                                        <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
+                                                        {{-- <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
                                                              style="position: absolute; left: 10px; top: 0; height: 90px; z-index: 1;">
 
                                                         <!-- TTD PA Huda di kanan -->
                                                         <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
-                                                             style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
+                                                             style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;"> --}}
                                                     </div>
 
                                                     <br>
