@@ -1,4 +1,5 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 
 <!--begin::Body-->
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
