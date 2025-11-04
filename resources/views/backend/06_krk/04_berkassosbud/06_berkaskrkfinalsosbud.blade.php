@@ -142,83 +142,86 @@
 
                                             <!-- Section I: Administrative Information -->
                                             <h5 class="section-title" style="font-size:12px;">I. INFORMASI ADMINISTRASI</h5>
-                                            <table class="zebra-table table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ccc;">
-    <thead>
-        <tr style="background-color: #f8f8f8; text-align: center;">
-            <th style="width: 5%; border: 1px solid #ccc; padding: 6px;">No</th>
-            <th style="width: 35%; border: 1px solid #ccc; padding: 6px;">Item</th>
-            <th style="width: 5%; border: 1px solid #ccc; padding: 6px;">:</th>
-            <th style="width: 55%; border: 1px solid #ccc; padding: 6px;">Keterangan</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if($subdata->count())
-            @foreach($subdata as $i => $item)
-                <tr>
-                    <td style="text-align: center; border: 1px solid #ccc; padding: 6px;">1</td>
-                    <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">Nomor Registrasi KRK</td>
-                    <td style="text-align: center; border: 1px solid #ccc;">:</td>
-                    <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">{{ $item->nomorregistrasi ?? '-' }}</td>
-                </tr>
-            @endforeach
-        @endif
+                                                   <div>
+    <table class="zebra-table table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #f4f4f4;">
+                <td style="width: 5%; padding: 4px; text-align: center;">No</td>
+                <td style="width: 35%; padding: 4px;">Item</td>
+                <td style="width: 5%; padding: 4px; text-align: center;">:</td>
+                <td style="width: 55%; padding: 4px;">Keterangan</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if($subdata->count())
+                @foreach($subdata as $i => $item)
+                    <tr>
+                        <td style="text-align: center; padding: 3px;">1</td>
+                        <td style="text-align: left; padding: 3px;">Nomor Registrasi KRK</td>
+                        <td style="text-align: center; padding: 3px;">:</td>
+                        <td style="text-align: left; padding: 3px;">{{ $item->nomorregistrasi ?? '-' }}</td>
+                    </tr>
+                @endforeach
+            @endif
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ccc; padding: 6px;">2</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">Tanggal KRK Dibuat</td>
-            <td style="text-align: center; border: 1px solid #ccc;">:</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">
-                {{ $data->tanggalpermohonan ? \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') : 'Belum Dibuatkan' }}
-            </td>
-        </tr>
+            <tr>
+                <td style="text-align: center; padding: 3px;">2</td>
+                <td style="text-align: left; padding: 3px;">Tanggal KRK Dibuat</td>
+                <td style="text-align: center; padding: 3px;">:</td>
+                <td style="text-align: left; padding: 3px;">
+                    {{ $data->tanggalpermohonan ? \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') : 'Belum Dibuatkan' }}
+                </td>
+            </tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ccc; padding: 6px;">3</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">Nomor Induk Kependudukan (NIK)</td>
-            <td style="text-align: center; border: 1px solid #ccc;">:</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">{{ $data->nik ?? 'Belum Dibuatkan' }}</td>
-        </tr>
+            <tr>
+                <td style="text-align: center; padding: 3px;">3</td>
+                <td style="text-align: left; padding: 3px;">Nomor Induk Kependudukan (NIK)</td>
+                <td style="text-align: center; padding: 3px;">:</td>
+                <td style="text-align: left; padding: 3px;">{{ $data->nik ?? 'Belum Dibuatkan' }}</td>
+            </tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ccc; padding: 6px;">4</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">Nama Pemohon</td>
-            <td style="text-align: center; border: 1px solid #ccc;">:</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">{{ $data->perorangan ?? 'Belum Dibuatkan' }}</td>
-        </tr>
+            <tr>
+                <td style="text-align: center; padding: 3px;">4</td>
+                <td style="text-align: left; padding: 3px;">Nama Pemohon</td>
+                <td style="text-align: center; padding: 3px;">:</td>
+                <td style="text-align: left; padding: 3px;">{{ $data->perorangan ?? 'Belum Dibuatkan' }}</td>
+            </tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ccc; padding: 6px;">5</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">Nama Pemohon a/n Perusahaan</td>
-            <td style="text-align: center; border: 1px solid #ccc;">:</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">{{ $data->perusahaan ?? 'Belum Dibuatkan' }}</td>
-        </tr>
+            <tr>
+                <td style="text-align: center; padding: 3px;">5</td>
+                <td style="text-align: left; padding: 3px;">Nama Pemohon a/n Perusahaan</td>
+                <td style="text-align: center; padding: 3px;">:</td>
+                <td style="text-align: left; padding: 3px;">{{ $data->perusahaan ?? 'Belum Dibuatkan' }}</td>
+            </tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ccc; padding: 6px;">6</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">No Telepon</td>
-            <td style="text-align: center; border: 1px solid #ccc;">:</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">{{ $data->notelepon ?? 'Belum Dibuatkan' }}</td>
-        </tr>
+            <tr>
+                <td style="text-align: center; padding: 3px;">6</td>
+                <td style="text-align: left; padding: 3px;">No Telepon</td>
+                <td style="text-align: center; padding: 3px;">:</td>
+                <td style="text-align: left; padding: 3px;">{{ $data->notelepon ?? 'Belum Dibuatkan' }}</td>
+            </tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ccc; padding: 6px;">7</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">Alamat Pemohon</td>
-            <td style="text-align: center; border: 1px solid #ccc;">:</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
-                {{ $data->alamatpemohon ? $data->alamatpemohon . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
-            </td>
-        </tr>
+            <tr>
+                <td style="text-align: center; padding: 3px;">7</td>
+                <td style="text-align: left; padding: 3px;">Alamat Pemohon</td>
+                <td style="text-align: center; padding: 3px;">:</td>
+                <td style="text-align:left; padding: 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+                    {{ $data->alamatpemohon ? $data->alamatpemohon . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
+                </td>
+            </tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ccc; padding: 6px;">8</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px;">Lokasi Bangunan</td>
-            <td style="text-align: center; border: 1px solid #ccc;">:</td>
-            <td style="text-align: left; border: 1px solid #ccc; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
-                {{ $data->lokasibangunan ? $data->lokasibangunan . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
-            </td>
-        </tr>
-    </tbody>
-</table>
+            <tr>
+                <td style="text-align: center; padding: 3px;">8</td>
+                <td style="text-align: left; padding: 3px;">Lokasi Bangunan</td>
+                <td style="text-align: center; padding: 3px;">:</td>
+                <td style="text-align:left; padding: 3px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+                    {{ $data->lokasibangunan ? $data->lokasibangunan . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 
                                             <br>
 
