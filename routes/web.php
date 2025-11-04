@@ -496,6 +496,7 @@ Route::delete('/krkhuniansuratdelete/{id}', [KrkController::class, 'krkhuniansur
 Route::put('/valberkashunian3/{id}', [KrkController::class, 'valberkashunian3'])->name('valberkashunian3.update');
 
 Route::get('/permohonankrkhunianfinal/{id}', [KrkController::class, 'permohonankrkhunianfinal'])->name('permohonan.permohonankrkhunianfinal');
+Route::get('/permohonankrkhunianfinalman/{id}', [KrkController::class, 'permohonankrkhunianfinalman'])->name('permohonan.permohonankrkhunianfinalmanual');
 
 Route::get('/krkhuniannoterbit/{id}', [KrkController::class, 'krkhuniannoterbit'])->middleware('auth')->name('krkhuniannoterbit.create');
 Route::post('/krkhuniannoterbitnew/{id}', [KrkController::class, 'krkhuniannoterbitnew'])->middleware('auth')->name('create.krkhuniannoterbitnew');

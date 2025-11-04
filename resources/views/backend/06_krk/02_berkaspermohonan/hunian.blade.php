@@ -773,7 +773,7 @@ th {
 @endif
 
 @if($subdata->where('krkhunian_id', $item->id)->count() > 0)
-    <a href="{{ route('permohonan.permohonankrkhunianfinal', $item->id) }}"
+    <a href="{{ route('permohonan.permohonankrkhunianfinalmanual', $item->id) }}"
         class="button-hijau">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Dok TTD Manual
     </a>
