@@ -70,7 +70,7 @@
                         <!-- Back buttons based on user role -->
                         @canany(['konsultanbantek'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-kembali" type="button" onclick="location.href='{{ url()->previous() }}';" style="cursor: pointer; color:black;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ url()->previous() }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -78,7 +78,7 @@
 
                         @canany(['dinas'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-kembali" type="button" onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';" style="cursor: pointer; color:black;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -86,7 +86,7 @@
 
                         @canany(['pemohonbantek'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-kembali" type="button" onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';" style="cursor: pointer; color:black;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -113,7 +113,7 @@
 
                                     <!-- PDF Download Button -->
                                     <div style="text-align: center; margin: 20px;">
-                                        <button class="button-baru" onclick="downloadPDF()" style="background-color: #e3342f; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
+                                        <button class="button-modern" onclick="downloadPDF()" style="background-color: #e3342f; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer;">
                                             📄 Download Berkas Final KRK (PDF)
                                         </button>
                                     </div>
@@ -371,7 +371,7 @@
                                                     <br>
                                                     <div style="display: inline-flex; flex-direction: column; gap: 0;">
                                                         <strong style="margin-top: -25px; text-decoration: underline; line-height: 1;">
-                                                            NIDZAMUDIN AL HUDA, ST
+                                                            NIDZAMUDIN AL HUDDA, ST
                                                         </strong>
                                                         <span style="line-height: 1; margin-top: 0;">
                                                             NIP. 19720326 200604 1 005
