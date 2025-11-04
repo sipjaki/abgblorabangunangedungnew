@@ -340,7 +340,12 @@ Route::get('/permohonanmenara', [KrkController::class, 'permohonanmenara'])->nam
 Route::post('/permohonanmenara/create', [KrkController::class, 'permohonanmenaracreate'])->name('permohonan.permohonanmenara');
 
 // MENU 02 PERMOHONAN KRK USAHA
-Route::get('/permohonankrkusaha', [KrkController::class, 'permohonankrkusaha'])->name('permohonan.krkusaha');
+// Route::get('/permohonankrkusaha', [KrkController::class, 'permohonankrkusaha'])->name('permohonan.krkusaha');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/permohonankrkusaha', [KrkController::class, 'permohonankrkusaha'])
+        ->name('permohonan.krkusaha');
+});
+
 Route::post('/permohonankrkusaha/create', [KrkController::class, 'permohonankrkusahacreate'])->name('permohonan.krkusahacreate');
 Route::post('/berkasusaha/{id}/validate', [KrkController::class, 'validateBerkasusaha'])->name('berkasusaha.validate');
 Route::get('/permohonanpengesahanusaha/{id}', [KrkController::class, 'permohonanpengesahanusaha'])->name('permohonan.pengesahanusaha');
