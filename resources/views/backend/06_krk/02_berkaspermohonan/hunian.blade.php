@@ -105,7 +105,7 @@
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Pemohon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                                <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
                             function updateEntries() {
@@ -133,7 +133,7 @@
 
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-newvalidasi" style="color: black;">
+    <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
@@ -148,47 +148,32 @@
                         <table class="table zebra-table">
                             <thead>
                                 <tr>
-                                    <th style="background-color: #ADD8E6;">No</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Pemohon</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Perusahaan</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Koordinat</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> NIK</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Tanggal Permohonan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-phone-alt"></i> Whatsapp</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Jumlah Lantai</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RT</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RW</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-city"></i> Kabupaten</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Kecamatan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-pin"></i> Kelurahan/Desa</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lokasi Bangunan</th>
+                            <th style="background-color: #ADD8E6;">No</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-person"></i> Pemohon</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-buildings"></i> Perusahaan</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-calendar-event"></i> Tanggal Permohonan</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-telephone"></i> Whatsapp</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-bank"></i> Luas Tanah</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Lokasi Bangunan</th>
 
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lihat Permohonan</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Lihat Permohonan</th>
 
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> KTP</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-address-card"></i> NPWP</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-file-alt"></i> Sertifikat Tanah</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-paperclip"></i> Lampiran OSS</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-file-invoice-dollar"></i> Bukti PBB</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-check-circle"></i> Dok Validasi DPUPR</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-drafting-compass"></i> Site Plan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-pen-fancy"></i> Tanda Tangan</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
+<th style="background-color: #ADD8E6;"><i class="bi bi-check2-square"></i> Verifikasi DPUPR</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-clipboard-data"></i> Dok Lapangan</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt"></i> Status Cek Lapangan</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-stamp"></i> Olah Data KRK</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-stamp"></i> Buat Data KRK</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-database" style="margin-right: 6px;"></i> Status Olah Data
 </th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Berkas Final KRK
 </th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Selesai
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-check-circle" style="margin-right: 6px;"></i> Selesai
 </th>
-       <th style="background-color: #ADD8E6;">Aksi</th>
+<th style="background-color: #ADD8E6;">Aksi</th>
+
                                 </tr>
                             </thead>
                               <tbody id="tableBody">
@@ -220,7 +205,7 @@
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkhunianpermohonan.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
@@ -265,7 +250,7 @@
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button class="button-modern" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -336,7 +321,7 @@
 
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkhunian.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                     <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
@@ -357,7 +342,7 @@
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
@@ -640,7 +625,7 @@
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
@@ -741,7 +726,7 @@
 @endif
 
 <a href="{{ route('dokuploadkrkhunian', $item->id) }}"
-    class="button-baru">
+    class="button-modern">
     <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
 
 </a>
@@ -765,7 +750,7 @@
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModal4({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
