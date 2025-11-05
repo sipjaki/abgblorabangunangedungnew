@@ -135,7 +135,7 @@
                      <a href="/bekrkindex" style="text-decoration: none;">
     <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
-        <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+<i class="bi bi-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
 </a>
 
@@ -430,10 +430,7 @@
                                 </button>
                                 @else
                                 <!-- Tombol SUDAH Validasi -->
-                                <button class="button-hijau"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #28a745; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#28a745'; this.style.border='1px solid #28a745';"
-                                    onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white'; this.style.border='none';">
+                                <button class="button-hijau">
                                     <i class="bi bi-check-circle-fill" style="margin-right: 5px;"></i> Silahkan Buat Dok KRK
                                 </button>
                                 @endif
@@ -539,10 +536,6 @@
         <!-- SUDAH DIVALIDASI tapi data pengesahan sudah ada, tombol hijau tapi nonaktif -->
         <button class="button-download"
             disabled
-            style="border: none; padding: 10px 25px;
-                   border-radius: 15px; font-size: 14px; cursor: not-allowed;
-                   display: flex; align-items: center; justify-content: center;
-                   opacity: 0.7;"
             title="Dokumen pengesahan sudah ada"
         >
             <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Otomatis
