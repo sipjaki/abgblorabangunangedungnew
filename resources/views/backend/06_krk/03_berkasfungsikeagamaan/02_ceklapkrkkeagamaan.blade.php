@@ -146,7 +146,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
                             @can('dinas')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekdinasasistensi') }}';"
@@ -155,7 +155,7 @@ th {
                         </button>
                     @endcan
                             @can('pemohon')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bekrkkeagamaanpemohon') }}';"
@@ -164,7 +164,7 @@ th {
                         </button>
                     @endcan
                             @can('pemohonbantek')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekpemohonasistensi') }}';"
@@ -181,7 +181,7 @@ th {
 </button>
 
    <a href="{{ url('/beakunkonsultanasistensi') }}"
-   class="button-kembali"
+   class="button-modern"
    style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
@@ -196,7 +196,7 @@ th {
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
 </button>
 
-<a href="{{ url('/bekrkkeagamaan') }}" class="button-kembali" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url('/bekrkkeagamaan') }}" class="button-modern" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
         @endcanany
