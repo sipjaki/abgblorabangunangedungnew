@@ -161,24 +161,23 @@
 </div>
 
                                             <!-- Section I: Administrative Information -->
-                                  <h5 class="section-title" style="font-size: 14px; font-weight: bold; font-family: 'Times New Roman', Times, serif; margin-bottom: 6px;">
+                             <h5 class="section-title" style="font-size: 14px; font-weight: bold; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 6px;">
     I. INFORMASI ADMINISTRASI
 </h5>
 
-
 <table class="table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd; font-family: 'Times New Roman', Times, serif;">
     <thead>
-<tr style="background-color: #f2f2f2; font-family: 'Times New Roman', Times, serif !important;">
-    <th style="width: 5%; text-align: center; border: 1px solid #ddd; padding: 6px; font-weight: bold; font-family: 'Times New Roman', Times, serif !important;">
+<tr style="background-color: #f2f2f2; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
+    <th style="width: 5%; text-align: center; border: 1px solid #ddd; padding: 6px; font-weight: bold; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
         No
     </th>
-    <th style="width: 35%; text-align: center; border: 1px solid #ddd; padding: 6px; font-weight: bold; font-family: 'Times New Roman', Times, serif !important;">
+    <th style="width: 35%; text-align: center; border: 1px solid #ddd; padding: 6px; font-weight: bold; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
         Informasi
     </th>
-    <th style="width: 5%; text-align: center; border: 1px solid #ddd; padding: 6px; font-weight: bold; font-family: 'Times New Roman', Times, serif !important;">
+    <th style="width: 5%; text-align: center; border: 1px solid #ddd; padding: 6px; font-weight: bold; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
         :
     </th>
-    <th style="width: 55%; text-align: center; border: 1px solid #ddd; padding: 6px; font-weight: bold; font-family: 'Times New Roman', Times, serif !important;">
+    <th style="width: 55%; text-align: center; border: 1px solid #ddd; padding: 6px; font-weight: bold; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
         Keterangan
     </th>
 </tr>
@@ -187,14 +186,15 @@
     <tbody>
         @if($subdata->count())
             @foreach($subdata as $i => $item)
-                <tr>
-    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">1</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Nomor Registrasi KRK</td>
-    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">
+         <tr>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">1</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Nomor Registrasi KRK</td>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
         {{ $item->nomorregistrasi ?? '-' }}
     </td>
 </tr>
+
 
             @endforeach
         @endif
