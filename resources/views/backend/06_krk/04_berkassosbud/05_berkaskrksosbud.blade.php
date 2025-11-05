@@ -294,35 +294,35 @@ th {
                 @foreach($subdata as $i => $item)
                     <tr>
                         <td style="text-align: center;">1</td>
-                        <td>Nomor Registrasi KRK</td>
+                        <td style="text-align: left;">Nomor Registrasi KRK</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->nomorregistrasi ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->nomorregistrasi ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">2</td>
-                        <td>Tanggal Permohonan</td>
+                        <td style="text-align: left;">Tanggal Permohonan</td>
                         <td style="text-align: center;">:</td>
-                        <td>
+                        <td style="text-align: left;">
                             {{ $item->tanggalpermohonan ? \Carbon\Carbon::parse($item->tanggalpermohonan)->format('d-m-Y') : '-' }}
                         </td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">3</td>
-                        <td>Kepadatan</td>
+                        <td style="text-align: left;">Kepadatan</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->kepadatan ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->kepadatan ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">4</td>
-                        <td>Jumlah Lantai Maksimal</td>
+                        <td style="text-align: left;">Jumlah Lantai Maksimal</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->luaslantaimaksimal ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->luaslantaimaksimal ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">5</td>
-                        <td>Luas Bangunan Maksimal (m²)</td>
+                        <td style="text-align: left;">Luas Bangunan Maksimal (m²)</td>
                         <td style="text-align: center;">:</td>
-                        <td>
+                        <td style="text-align: left;">
                             @if($item->luasbangunan)
                                 {{ $item->luasbangunan }} M<sup>2</sup>
                             @else
@@ -332,45 +332,45 @@ th {
                     </tr>
                     <tr>
                         <td style="text-align: center;">6</td>
-                        <td>Fungsi Utama Bangunan</td>
+                        <td style="text-align: left;">Fungsi Utama Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->fungsibangunan ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->fungsibangunan ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">7</td>
-                        <td>Lokasi Bangunan</td>
+                        <td style="text-align: left;">Lokasi Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->lokasibangunan ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->lokasibangunan ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">8</td>
-                        <td>Jenis Jalan</td>
+                        <td style="text-align: left;">Jenis Jalan</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->jenisjalan ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->jenisjalan ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">9</td>
-                        <td>(GSB) Garis Sempadan Bangunan</td>
+                        <td style="text-align: left;">(GSB) Garis Sempadan Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->gsb ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->gsb ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">10</td>
-                        <td>(KLB) Koefisien Luas Bangunan</td>
+                        <td style="text-align: left;">(KLB) Koefisien Luas Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->klb ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->klb ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">11</td>
-                        <td>(KDH) Koefisien Dasar Hijau (%)</td>
+                        <td style="text-align: left;">(KDH) Koefisien Dasar Hijau (%)</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->kdh ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->kdh ?? '-' }}</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">12</td>
-                        <td>Jaringan Utilitas Kota</td>
+                        <td style="text-align: left;">Jaringan Utilitas Kota</td>
                         <td style="text-align: center;">:</td>
-                        <td>{{ $item->jaringanutilitas ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->jaringanutilitas ?? '-' }}</td>
                     </tr>
                 @endforeach
             @endif
