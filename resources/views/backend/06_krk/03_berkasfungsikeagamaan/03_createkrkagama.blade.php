@@ -338,7 +338,7 @@ th {
                                 <div class="flex justify-end">
                                <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-plus" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Create</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan Data</span>
                                     </button>
 
                                 </div>

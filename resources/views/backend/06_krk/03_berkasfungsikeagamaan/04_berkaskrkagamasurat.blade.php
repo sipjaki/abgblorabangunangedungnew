@@ -178,8 +178,8 @@
 
                                    </script> --}}
 <a href="javascript:history.back();" style="text-decoration: none;">
-    <button class="button-validasinew">
-        <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+    <button class="button-modern">
+        <i class="bi bi-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
 </a>
 
@@ -552,8 +552,8 @@
 <!-- Tombol trigger modal -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
     <button class="button-baru" type="button" onclick="openPengesahanModal()">
-        <i class="fa fa-check-circle" style="margin-right: 5px;"></i>
-        <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
+        <i class="bi bi-check-circle" style="margin-right: 5px;"></i>
+    <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
     </button>
 </div>
 
