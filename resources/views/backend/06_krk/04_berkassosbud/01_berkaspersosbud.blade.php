@@ -1306,7 +1306,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                         <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-modern"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalFoto{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -1483,7 +1483,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-modern"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalsertifikattanah{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -1831,7 +1831,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-modern"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalBuktipbb{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -1998,7 +1998,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-modern"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalValdpupr{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -2165,7 +2165,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-modern"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalSiteplan{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
@@ -2332,7 +2332,7 @@ th {
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 <div style="display: flex; justify-content: center;">
-    <button type="button" class="button-modern"
+    <button type="button" class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalTandatangan{{ $data->id }}">
         <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
     </button>
