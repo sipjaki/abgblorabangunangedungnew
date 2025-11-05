@@ -202,7 +202,7 @@
     }
 
     .kegiatan-header {
-        background-color: #0d3b66;
+        background-color: #0C0A7A;
         color: white;
         padding: 14px 20px;
         font-weight: 600;
@@ -251,15 +251,20 @@
 
     .foto-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
     }
 
     .foto-item {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-        padding: 10px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        padding: 12px;
+        border: 1px solid #e9ecef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .foto-item img {
@@ -273,6 +278,12 @@
 
     .foto-item img:hover {
         transform: scale(1.03);
+    }
+
+    .foto-item .btn {
+        margin-top: 10px;
+        width: 100%;
+        border-radius: 8px;
     }
 
     .empty-message {
@@ -350,7 +361,7 @@
                             @if ($fotoFullPath)
                                 <div class="foto-item text-center">
                                     <img src="{{ $fotoFullPath }}" alt="Foto {{ $i }}" loading="lazy">
-                                    <button type="button" class="button-modern mt-2"
+                                    <button type="button" class="btn btn-sm btn-outline-primary"
                                         data-bs-toggle="modal" data-bs-target="#modalFoto{{ $data->id }}_{{ $i }}">
                                         <i class="bi bi-eye"></i> Lihat Foto {{ $i }}
                                     </button>
