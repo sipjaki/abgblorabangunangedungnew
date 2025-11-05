@@ -65,7 +65,7 @@
 
          @canany(['konsultanbantek'])
    <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-    <button class="button-newvalidasi"
+    <button class="button-modern"
             type="button"
             onclick="location.href='{{ url()->previous() }}';">
         <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -76,7 +76,7 @@
 
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-newvalidasi"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -88,7 +88,7 @@
 
          @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-newvalidasi"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -101,7 +101,7 @@
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
-        <button class="button-newvalidasi"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bekrkhunianindex') }}';">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -342,7 +342,7 @@
     </form>
 
     {{-- Tombol Download PDF --}}
-    <button id="downloadPdfBtn" class="button-baru">
+    <button id="downloadPdfBtn" class="button-modern">
         <i class="bi bi-download" style="margin-right: 6px;"></i> Download PDF
     </button>
 </div>
@@ -391,7 +391,7 @@
 
         // Tulis judul
         doc.setFontSize(16);
-        doc.text('I. INFORMASI DOKUMEN PERMOHONAN KRK FUNGSI USAHA', 40, 40);
+        doc.text('I. INFORMASI DOKUMEN PERMOHONAN KRK FUNGSI HUNIAN', 40, 40);
 
         // Ambil data tabel
         const res = doc.autoTableHtmlToJson(document.getElementById('dataTable'));
