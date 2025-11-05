@@ -292,7 +292,7 @@
                                     <!-- Submit Button -->
                                     <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                         <div class="flex justify-end">
-                                            <button class="button-baru" type="button" onclick="openModal()">
+                                            <button class="button-modern" type="button" onclick="openModal()">
                                                 <i class="bi bi-save" style="margin-right: 5px;"></i>
                                                 <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                             </button>
