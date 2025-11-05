@@ -177,11 +177,12 @@
                            }
 
                                    </script> --}}
-<a href="javascript:history.back();" style="text-decoration: none;">
-    <button class="button-validasinew">
-        <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+<a href="{{ url()->previous() }}" style="text-decoration: none;">
+    <button class="button-modern">
+        <i class="bi bi-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
 </a>
+
 
 
                         </div>
@@ -308,7 +309,7 @@
                         <i class="fas fa-cogs"></i> Fungsi Utama Bangunan
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Usaha" readonly>
+                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Sosial Budaya" readonly>
                     </div>
                     @error('fungsibangunan')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
@@ -551,7 +552,7 @@
       <!-- Tombol Submit -->
 <!-- Tombol trigger modal -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-    <button class="button-baru" type="button" onclick="openPengesahanModal()">
+    <button class="button-modern" type="button" onclick="openPengesahanModal()">
         <i class="fa fa-check-circle" style="margin-right: 5px;"></i>
         <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
     </button>

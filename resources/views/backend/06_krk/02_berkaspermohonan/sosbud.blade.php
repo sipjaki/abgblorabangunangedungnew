@@ -584,7 +584,7 @@ th {
         @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
     <button class="button-merah"
-        {{-- disabled --}}
+        disabled
         title="Silakan validasi terlebih dahulu"
     >
         <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Otomatis
@@ -593,7 +593,7 @@ th {
     @if($subdata->where('krksosbud_id', $item->id)->count() > 0)
         <!-- SUDAH DIVALIDASI tapi data pengesahan sudah ada, tombol hijau tapi nonaktif -->
         <button class="button-download"
-            {{-- disabled --}}
+            disabled
             title="Dokumen pengesahan sudah ada"
         >
             <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Otomatis
@@ -611,7 +611,7 @@ th {
 @if (!$item->is_validated)
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
     <button class="button-merah"
-        {{-- disabled --}}
+        disabled
        title="Silakan validasi terlebih dahulu"
     >
         <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
@@ -620,7 +620,7 @@ th {
     @if($subdata->where('krksosbud_id', $item->id)->count() > 0)
         <!-- SUDAH DIVALIDASI tapi data pengesahan sudah ada, tombol hijau tapi nonaktif -->
         <button class="button-download"
-            {{-- disabled --}}
+            disabled
             title="Dokumen pengesahan sudah ada"
         >
             <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
