@@ -662,16 +662,12 @@ th {
 
 @if($subdata->where('krkusaha_id', $item->id)->count() > 0)
     <a href="{{ route('permohonan.permohonanpengesahanusahaber', $item->id) }}"
-        class="button-hijau"
-        style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #10B981; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#10B981'; this.style.border='1px solid #10B981';"
-        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.border='none';">
+        class="button-hijau">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Pengesahan
     </a>
 @else
     <button
         class="button-merah"
-        style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Dokumen Belum Ada
     </button>
@@ -780,7 +776,6 @@ th {
 @else
     <button
         class="button-merah"
-        style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Berkas Otomatis
     </button>
@@ -788,16 +783,12 @@ th {
 
 @if($subdata->where('krkusaha_id', $item->id)->count() > 0)
     <a href="{{ route('permohonankrkusahafinalmanual', $item->id) }}"
-        class="button-hijau"
-        style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #10B981; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#10B981'; this.style.border='1px solid #10B981';"
-        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.border='none';">
+        class="button-hijau">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Dok TTD Manual
     </a>
 @else
     <button
         class="button-merah"
-        style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Berkas Manual
     </button>
