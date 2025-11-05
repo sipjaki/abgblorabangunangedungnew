@@ -361,7 +361,7 @@
                             @if ($fotoFullPath)
                                 <div class="foto-item text-center">
                                     <img src="{{ $fotoFullPath }}" alt="Foto {{ $i }}" loading="lazy">
-                                    <button type="button" class="btn btn-sm btn-outline-primary"
+                                    <button type="button" class="button-modern"
                                         data-bs-toggle="modal" data-bs-target="#modalFoto{{ $data->id }}_{{ $i }}">
                                         <i class="bi bi-eye"></i> Lihat Foto {{ $i }}
                                     </button>
