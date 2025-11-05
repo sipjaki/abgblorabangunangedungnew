@@ -70,7 +70,7 @@
                         <!-- Back buttons based on user role -->
                         @canany(['konsultanbantek'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-kembali" type="button" onclick="location.href='{{ url()->previous() }}';" style="cursor: pointer; color:black;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ url()->previous() }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -78,7 +78,7 @@
 
                         @canany(['dinas'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-kembali" type="button" onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';" style="cursor: pointer; color:black;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -86,7 +86,7 @@
 
                         @canany(['pemohonbantek'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-kembali" type="button" onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';" style="cursor: pointer; color:black;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -94,7 +94,7 @@
 
                         @canany(['superadmin', 'admin'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-                                <button class="button-newvalidasi" type="button" onclick="location.href='{{ route('bekrkkeagamaanindex') }}';" style="cursor: pointer; color:white;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('bekrkkeagamaanindex') }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -160,7 +160,7 @@
     font-family: 'Times New Roman', Times, serif !important;
 ">
     KETERANGAN RENCANA KABUPATEN <br>
-    Nomor: 640/{{ $data->id }}.FH/{{ date('Y') }}
+    Nomor: 640/{{ $data->id }}.FKA/{{ date('Y') }}
 </div>
 
                                             <!-- Section I: Administrative Information -->
@@ -416,7 +416,7 @@
     <div style="text-align: left; font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1;">
         {{-- Kabupaten Blora<br> --}}
         Plt. KEPALA DINAS<br>
-        DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br>
+        PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
 
         <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
