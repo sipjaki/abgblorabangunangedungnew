@@ -151,7 +151,7 @@
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
 </button>
 
-<a href="{{ url('/bekrkusaha') }}" class="button-newvalidasi" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url('/bekrkusaha') }}" class="button-modern" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
         @endcanany
@@ -361,6 +361,7 @@
                             @if ($fotoFullPath)
                                 <div class="foto-item text-center">
                                     <img src="{{ $fotoFullPath }}" alt="Foto {{ $i }}" loading="lazy">
+                                    <br>
                                     <button type="button" class="button-modern"
                                         data-bs-toggle="modal" data-bs-target="#modalFoto{{ $data->id }}_{{ $i }}">
                                         <i class="bi bi-eye"></i> Lihat Foto {{ $i }}
