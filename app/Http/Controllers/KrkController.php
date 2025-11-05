@@ -94,14 +94,14 @@ public function permohonankrkusaha(Request $request)
             'alamatpemohon' => 'required|string',
 
             // File validation
-            'ktp' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
-            'npwp' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
-            'sertifikattanah' => 'nullable|file|mimes:pdf|max:10048',
-            'lampiranoss' => 'nullable|file|mimes:pdf|max:10048',
-            'buktipbb' => 'nullable|file|mimes:pdf|max:10048',
-            'dokvalidasi' => 'nullable|file|mimes:pdf|max:10048',
-            'siteplan' => 'nullable|file|mimes:pdf|max:10048',
-            'tandatangan' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:10048',
+            'ktp' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:15048',
+            'npwp' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:15048',
+            'sertifikattanah' => 'nullable|file|mimes:pdf|max:15048',
+            'lampiranoss' => 'nullable|file|mimes:pdf|max:15048',
+            'buktipbb' => 'nullable|file|mimes:pdf|max:15048',
+            'dokvalidasi' => 'nullable|file|mimes:pdf|max:15048',
+            'siteplan' => 'nullable|file|mimes:pdf|max:15048',
+            'tandatangan' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:15048',
             // 'tandatangan' => 'required|string',
         ], [
             // Custom error messages

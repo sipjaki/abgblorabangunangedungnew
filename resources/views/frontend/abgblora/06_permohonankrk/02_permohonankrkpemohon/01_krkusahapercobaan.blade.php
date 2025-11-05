@@ -653,7 +653,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">Sertifikat Tanah | File  <br> .pdf | Max 10 MB</span>
+            <span class="text-sm">Sertifikat Tanah | File  <br> .pdf | Max 15 MB</span>
         </label>
         <input id="sertifikattanah" name="sertifikattanah" type="file" accept="application/pdf,image/*"
             value="{{ old('sertifikattanah') }}"
@@ -685,7 +685,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
             </svg>
-            <span class="text-sm">Lampiran OSS | File  <br> .pdf | Max 10 MB</span>
+            <span class="text-sm">Lampiran OSS | File  <br> .pdf | Max 15 MB</span>
         </label>
         <input id="lampiranoss" name="lampiranoss" type="file" accept="image/*,application/pdf"
             value="{{ old('lampiranoss') }}"
@@ -715,7 +715,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 2v20h12V2H6zm4 12H8v-2h2v2zm4-2h-2v2h2v-2zm2-6H8V4h8v4z" />
             </svg>
-            <span class="text-sm">Bukti PBB | File <br> .pdf | Max 10 MB </span>
+            <span class="text-sm">Bukti PBB | File <br> .pdf | Max 15 MB </span>
         </label>
         <input id="buktipbb" name="buktipbb" type="file" accept="image/*,application/pdf"
             value="{{ old('buktipbb') }}"
@@ -744,7 +744,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">Dok Validasi DPUPR | File  <br> .pdf | Max 10 MB </span>
+            <span class="text-sm">Dok Validasi DPUPR | File  <br> .pdf | Max 15 MB </span>
         </label>
         <input id="dokvalidasi" name="dokvalidasi" type="file" accept="application/pdf,image/*"
             value="{{ old('dokvalidasi') }}"
@@ -778,7 +778,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">Site Plan | File <br> .pdf | Max 10 MB </span>
+            <span class="text-sm">Site Plan | File <br> .pdf | Max 15 MB </span>
         </label>
         <input id="siteplan" name="siteplan" type="file" accept="application/pdf,image/*" style="margin-right:25px;"
             value="{{ old('siteplan') }}"
@@ -813,7 +813,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <!-- Text Label dan Link Download -->
       <div class="flex flex-col text-sm font-poppins">
-  <span>Upload Surat Permohonan KRK | Max 10 MB</span>
+  <span>Upload Surat Permohonan KRK | Max 15 MB</span>
   <a href="/assets/abgblora/logo/suratkrk.docx"
      download
      class="mt-1 underline hover:text-black text-red-600 transition-colors duration-150 ease-in-out" style="color: red;">
