@@ -2722,6 +2722,7 @@ th {
          </div>
          <!-- /.col -->
      </div>
+     </div>
      <!--end::Row-->
      </div>
                <!--end::Container-->
