@@ -179,7 +179,7 @@ th {
 
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-newvalidasi" style="color: black;">
+    <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
@@ -266,8 +266,8 @@ th {
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkshowpermohonan.show', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                    class="button-modern">
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
                 </a>
             </td>
                                     <style>
@@ -311,7 +311,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button class="button-modern" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -382,7 +382,7 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
@@ -403,7 +403,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
@@ -483,10 +483,7 @@ th {
                                 <!-- Tombol Triger Modal -->
                                 <button type="button"
                                     onclick="openValidationModal({{ $item->id }})"
-                                    class="button-merah"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #dc3545; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#dc3545'; this.style.border='1px solid #dc3545';"
-                                    onmouseout="this.style.backgroundColor='#dc3545'; this.style.color='black'; this.style.border='none';">
+                                    class="button-merah">
                                     <i class="bi bi-file-earmark-check" style="margin-right: 5px;"></i> Belum di Setujui !
                                 </button>
                                 @else
@@ -700,7 +697,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
@@ -807,7 +804,7 @@ th {
 @endif
 
                 <a href="{{ route('dokuploadkrkusaha', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
 
                 </a>
@@ -832,7 +829,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModal4({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
@@ -913,7 +910,7 @@ th {
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
                                            data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
-                                            <i class="bi bi-trash"></i> Hapus
+                                            <i class="bi bi-trash"></i>
                                         </a>
                                     </td>
 
