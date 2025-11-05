@@ -111,7 +111,7 @@ th {
 
          @canany(['konsultanbantek'])
    <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-    <button class="button-kembali"
+    <button class="button-modern"
             type="button"
             onclick="location.href='{{ url()->previous() }}';"
             style="cursor: pointer; color:black;">
@@ -123,7 +123,7 @@ th {
 
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -135,7 +135,7 @@ th {
 
          @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -148,7 +148,7 @@ th {
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
-        <button class="button-newvalidasi"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('krkusaha.index') }}';">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -438,7 +438,7 @@ th {
     </form>
 
     <!-- Tombol Download -->
-    <button id="downloadPdfBtn" class="button-baru">
+    <button id="downloadPdfBtn" class="button-modern">
         <i class="bi bi-download" style="margin-right:6px;"></i> Download PDF
     </button>
 </div>

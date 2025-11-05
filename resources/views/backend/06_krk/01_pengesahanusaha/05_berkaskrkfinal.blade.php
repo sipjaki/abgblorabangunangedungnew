@@ -228,6 +228,53 @@
         </tr>
     </tbody>
 </table>
+<style>
+    /* Gunakan font vector (bukan bitmap) biar gak blur */
+    * {
+        font-family: 'DejaVu Sans', 'Poppins', sans-serif;
+        color: #000;
+    }
+
+    body {
+        font-size: 12px;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .section-title {
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 15px;
+        color: #000;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #000;
+        font-size: 12px;
+        page-break-inside: avoid;
+    }
+
+    th, td {
+        border: 1px solid #000;
+        padding: 6px;
+        vertical-align: top;
+        text-align: left;
+        word-wrap: break-word;
+    }
+
+    thead {
+        background-color: #f2f2f2 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    /* Hilangkan bayangan atau efek transparansi */
+    img, svg {
+        image-rendering: optimizeQuality;
+    }
+</style>
+
 
                                             <br>
 
