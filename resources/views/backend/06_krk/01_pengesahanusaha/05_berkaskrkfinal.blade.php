@@ -404,7 +404,7 @@
 
                                             <!-- Signature section -->
                                             <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
-    <div style="text-align: left; font-size: 12px; line-height: 1;">
+    <div style="text-align: left; font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1;">
         Kabupaten Blora<br>
         Plt. KEPALA DINAS<br>
         DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br>
@@ -420,7 +420,7 @@
                  style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
         </div>
 
-        <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px;">
+        <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important;">
             <span style="text-decoration: underline; line-height: 1;">
                 NIDZAMUDIN AL HUDDA, S.T
             </span>
