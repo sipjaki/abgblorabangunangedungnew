@@ -370,35 +370,35 @@
                                             </div> --}}
 
                                             <!-- Content for second page -->
-<div class="content" style="font-size: 12px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; text-align: justify;">
-    <div class="section-title" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 4px; text-align: left;">
+<div class="content" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; text-align: justify; font-weight: normal;">
+    <div class="section-title" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 4px; text-align: left; font-weight: normal;">
         Dasar Pertimbangan
     </div>
-    <ol style="font-size: 14px; line-height: 1.2; margin-top: 0; margin-bottom: 10px; padding-left: 20px; text-align: justify;">
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Keputusan Menteri Pekerjaan Umum dan Perumahan Rakyat Nomor 1688/KPTS/M/2022 tentang Penetapan Ruas Jalan Menurut Statusnya sebagai Jalan Nasional.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Keputusan Gubernur Jawa Tengah Nomor 622 / 12 Tahun 2023 tentang Penetapan Ruas Jalan dalam Jaringan Jalan Kolektor Primer - 4, Jalan Lokal Primer, Jalan Lingkungan Primer, Jalan Arteri Sekunder, Jalan Kolektor Sekunder, Jalan Lokal Sekunder dan Jalan Lingkungan Sekunder di Provinsi Jawa Tengah.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Peraturan Daerah Kabupaten Blora Nomor 11 Tahun 2018 tentang Perubahan atas Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Peraturan Daerah Kabupaten Blora Nomor 5 Tahun 2021 tentang Rencana Tata Ruang Wilayah Kabupaten Blora.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">SK Bupati No. 620/175/2023 tentang Penetapan Status Ruas Jalan sebagai Jalan Kabupaten di Wilayah Kabupaten Blora.</li>
+    <ol style="font-size: 14px; line-height: 1.2; margin-top: 0; margin-bottom: 10px; padding-left: 20px; text-align: justify; font-weight: normal;">
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Keputusan Menteri Pekerjaan Umum dan Perumahan Rakyat Nomor 1688/KPTS/M/2022 tentang Penetapan Ruas Jalan Menurut Statusnya sebagai Jalan Nasional.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Keputusan Gubernur Jawa Tengah Nomor 622 / 12 Tahun 2023 tentang Penetapan Ruas Jalan dalam Jaringan Jalan Kolektor Primer - 4, Jalan Lokal Primer, Jalan Lingkungan Primer, Jalan Arteri Sekunder, Jalan Kolektor Sekunder, Jalan Lokal Sekunder dan Jalan Lingkungan Sekunder di Provinsi Jawa Tengah.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Peraturan Daerah Kabupaten Blora Nomor 11 Tahun 2018 tentang Perubahan atas Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Peraturan Daerah Kabupaten Blora Nomor 5 Tahun 2021 tentang Rencana Tata Ruang Wilayah Kabupaten Blora.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">SK Bupati No. 620/175/2023 tentang Penetapan Status Ruas Jalan sebagai Jalan Kabupaten di Wilayah Kabupaten Blora.</li>
     </ol>
 
     <hr style="margin: 8px 0; border: 0; border-top: 1px solid #000;">
 
-    <div class="section-title" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 4px; text-align: left;">
+    <div class="section-title" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 4px; text-align: left; font-weight: normal;">
         Ketentuan Lain-Lain
     </div>
-    <ol style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; margin-top: 0; padding-left: 20px; text-align: justify;">
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Harus menyediakan Ruang Terbuka Hijau (RTH) privat minimal seluas 10% dari luas persil.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Dilarang memperkecil atau memperbesar volume debit kapasitas saluran umum (drainase kota) dan/atau menutup saluran umum.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Rencana bangunan menyesuaikan dengan ketentuan teknik yang tercantum dalam lembar ini.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Rencana bangunan mempertimbangkan faktor keselamatan, kenyamanan, kesehatan dan kemudahan bagi pengguna bangunan.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Keharusan membuat lubang resapan biopori.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Keharusan menanam pohon pelindung dan pembuatan sumur resapan air hujan.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Perkerasan halaman harus dengan struktur yang kuat.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Wajib menyediakan tempat/area parkir.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important;">Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
+    <ol style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; margin-top: 0; padding-left: 20px; text-align: justify; font-weight: normal;">
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Harus menyediakan Ruang Terbuka Hijau (RTH) privat minimal seluas 10% dari luas persil.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Dilarang memperkecil atau memperbesar volume debit kapasitas saluran umum (drainase kota) dan/atau menutup saluran umum.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Rencana bangunan menyesuaikan dengan ketentuan teknik yang tercantum dalam lembar ini.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Rencana bangunan mempertimbangkan faktor keselamatan, kenyamanan, kesehatan dan kemudahan bagi pengguna bangunan.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Keharusan membuat lubang resapan biopori.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Keharusan menanam pohon pelindung dan pembuatan sumur resapan air hujan.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Perkerasan halaman harus dengan struktur yang kuat.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Wajib menyediakan tempat/area parkir.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
     </ol>
 </div>
 
