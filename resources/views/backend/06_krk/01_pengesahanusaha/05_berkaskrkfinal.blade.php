@@ -427,15 +427,14 @@
             <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
                  style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
         </div>
-
-        <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important;">
-            <span style="text-decoration: underline; line-height: 1;">
-                NIDZAMUDIN AL HUDDA, S.T
-            </span>
-            <span style="line-height: 1;">
-                NIP. 19720326 200604 1 005
-            </span>
-        </div>
+<div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
+    <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
+        NIDZAMUDIN AL HUDDA, S.T
+    </span>
+    <span style="line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
+        NIP. 19720326 200604 1 005
+    </span>
+</div>
     </div>
 </div>
 
