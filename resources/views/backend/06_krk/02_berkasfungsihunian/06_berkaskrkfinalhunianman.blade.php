@@ -63,14 +63,14 @@
             <div class="container-fluid">
                 <div class="putih row" style="margin-right: 10px; margin-left:10px;">
                     <div class="card mb-4">
-                        <div class="card-header">
+                         <div class="card-header">
                             @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                         </div>
 
                         <!-- Back buttons based on user role -->
                         @canany(['konsultanbantek'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-modern" type="button" onclick="location.href='{{ url()->previous() }}';">
+                                <button class="button-modern" type="button" onclick="location.href='{{ url()->previous() }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -78,7 +78,7 @@
 
                         @canany(['dinas'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -86,7 +86,7 @@
 
                         @canany(['pemohonbantek'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -94,11 +94,12 @@
 
                         @canany(['superadmin', 'admin'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-                                <button class="button-modern" type="button" onclick="location.href='{{ route('krkusaha.index') }}';">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('bekrkhunianindex') }}';" style="cursor: pointer; color:black;">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
                         @endcanany
+
                         {{-- <hr> --}}
 
                         <!-- Main content container -->
@@ -270,7 +271,7 @@
                                             <br>
 
                                             <!-- Section II: Building Information -->
-<h5 class="section-title" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; font-weight: bold; margin: 0;">
+<h5 class="section-title" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; font-weight: normal; margin: 0;">
     II. INFORMASI INTENSITAS BANGUNAN GEDUNG
 </h5>
 
