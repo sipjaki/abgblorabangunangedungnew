@@ -141,123 +141,174 @@
                                             </div>
 
                                             <!-- Section I: Administrative Information -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            font-size: 12px;
-            color: #000;
-            margin: 20px;
-        }
+                                            <h5 class="section-title" style="font-size:12px;">I. INFORMASI ADMINISTRASI</h5>
+                                          <table class="zebra-table table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd;">
+    <thead>
+        <tr style="background-color: #f2f2f2; text-align: left;">
+            <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">No</th>
+            <th style="width: 35%; border: 1px solid #ddd; padding: 8px;">Item</th>
+            <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">:</th>
+            <th style="width: 55%; border: 1px solid #ddd; padding: 8px;">Keterangan</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if($subdata->count())
+            @foreach($subdata as $i => $item)
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">1</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Nomor Registrasi KRK</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->nomorregistrasi ?? '-' }}</td>
+                </tr>
+            @endforeach
+        @endif
 
-        h5.section-title {
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
+        <tr>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">2</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Tanggal KRK Dibuat</td>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">
+                {{ $data->tanggalpermohonan ? \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') : 'Belum Dibuatkan' }}
+            </td>
+        </tr>
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid #000;
-            margin-bottom: 15px;
-        }
+        <tr>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">3</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Nomor Induk Kependudukan (NIK)</td>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $data->nik ?? 'Belum Dibuatkan' }}</td>
+        </tr>
 
-        th, td {
-            border: 1px solid #000;
-            padding: 6px 8px;
-            vertical-align: top;
-        }
+        <tr>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">4</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Nama Pemohon</td>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $data->perorangan ?? 'Belum Dibuatkan' }}</td>
+        </tr>
 
-        th {
-            background-color: #f2f2f2;
-        }
+        <tr>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">5</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Nama Pemohon a/n Perusahaan</td>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $data->perusahaan ?? 'Belum Dibuatkan' }}</td>
+        </tr>
 
-        td {
-            background-color: #fff;
-        }
+        <tr>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">6</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">No Telepon</td>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $data->notelepon ?? 'Belum Dibuatkan' }}</td>
+        </tr>
 
-        @media print {
-            body {
-                margin: 0;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
+        <tr>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">7</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Alamat Pemohon</td>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+                {{ $data->alamatpemohon ? $data->alamatpemohon . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
+            </td>
+        </tr>
 
-            table, th, td {
-                border: 1px solid #000 !important;
-            }
+        <tr>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">8</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Lokasi Bangunan</td>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+                {{ $data->lokasibangunan ? $data->lokasibangunan . ', Kabupaten Blora, Provinsi Jawa Tengah' : 'Belum Dibuatkan' }}
+            </td>
+        </tr>
 
-            th {
-                background-color: #f2f2f2 !important;
-                color: #000 !important;
-            }
+        <tr>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">9</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Koordinat Lokasi</td>
+            <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+                {{ $data->koordinatlokasi ?? '-' }}
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-            td {
-                color: #000 !important;
-                background-color: #fff !important;
-            }
+                                            <br>
 
-            /* Hindari blur scaling */
-            * {
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
-
-            @page {
-                size: A4 portrait;
-                margin: 15mm;
-            }
-        }
-    </style>
-
-    <h5 class="section-title">I. INFORMASI ADMINISTRASI</h5>
-    <table>
-        <thead>
-            <tr>
-                <th style="width:5%;">No</th>
-                <th style="width:35%;">Item</th>
-                <th style="width:5%;">:</th>
-                <th style="width:55%;">Keterangan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>1</td><td>Nomor Registrasi KRK</td><td>:</td><td>1/FH/BG/KRK/11/2025</td></tr>
-            <tr><td>2</td><td>Tanggal KRK Dibuat</td><td>:</td><td>04 November 2025</td></tr>
-            <tr><td>3</td><td>Nomor Induk Kependudukan (NIK)</td><td>:</td><td>3205270103540032</td></tr>
-            <tr><td>4</td><td>Nama Pemohon</td><td>:</td><td>percobaan intan</td></tr>
-            <tr><td>5</td><td>Nama Pemohon a/n Perusahaan</td><td>:</td><td>cv intan jaya</td></tr>
-            <tr><td>6</td><td>No Telepon</td><td>:</td><td>085226216970</td></tr>
-            <tr><td>7</td><td>Alamat Pemohon</td><td>:</td><td>Belum Dibuatkan</td></tr>
-            <tr><td>8</td><td>Lokasi Bangunan</td><td>:</td><td>Jl Veteran, Kabupaten Blora, Provinsi Jawa Tengah</td></tr>
-        </tbody>
-    </table>
-
-    <h5 class="section-title">II. INFORMASI INTENSITAS BANGUNAN GEDUNG</h5>
-    <table>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Item</th>
-                <th>:</th>
-                <th>Keterangan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>1</td><td>Kepadatan</td><td>:</td><td>RENDAH</td></tr>
-            <tr><td>2</td><td>Jumlah Lantai</td><td>:</td><td>2 Lantai</td></tr>
-            <tr><td>3</td><td>Luas Bangunan Maksimal</td><td>:</td><td>2345 M²</td></tr>
-            <tr><td>4</td><td>Luas Lantai Maksimal</td><td>:</td><td>2 Lantai</td></tr>
-            <tr><td>5</td><td>Fungsi Utama Bangunan</td><td>:</td><td>Fungsi Usaha</td></tr>
-            <tr><td>6</td><td>(GSB) Garis Sempadan Bangunan</td><td>:</td><td>10.75 Meter</td></tr>
-            <tr><td>7</td><td>(KLB) Koefisien Lantai Bangunan</td><td>:</td><td>25</td></tr>
-            <tr><td>8</td><td>(KDB) Koefisien Dasar Bangunan</td><td>:</td><td>45%</td></tr>
-            <tr><td>9</td><td>(KDH) Koefisien Dasar Hijau</td><td>:</td><td>10%</td></tr>
-            <tr><td>10</td><td>Jaringan Utilitas Kota</td><td>:</td><td>Saluran</td></tr>
-        </tbody>
-    </table>
-
-
+                                            <!-- Section II: Building Information -->
+                                            <h5 class="section-title" style="font-size: 12px;">II. INFORMASI INTENSITAS BANGUNAN GEDUNG</h5>
+<table class="zebra-table table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">No</th>
+            <th style="width: 35%; border: 1px solid #ddd; padding: 8px;">Item</th>
+            <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">:</th>
+            <th style="width: 55%; border: 1px solid #ddd; padding: 8px;">Keterangan</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if($subdata->count())
+            @foreach($subdata as $item)
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">1</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Kepadatan</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->kepadatan ?? '-' }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">2</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Jumlah Lantai</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->luaslantaimaksimal ?? '-' }} Lantai</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">3</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Luas Bangunan Maksimal</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->luasbangunan ? $item->luasbangunan . ' M²' : '-' }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">4</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Luas Lantai Maksimal</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }} Lantai</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">5</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Fungsi Utama Bangunan</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->fungsibangunan ?? 'Belum Dibuatkan' }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">6</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">(GSB) Garis Sempadan Bangunan</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->gsb ?? 'Belum Dibuatkan' }} Meter</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">7</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">(KLB) Koefisien Lantai Bangunan</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->kdb ?? 'Belum Dibuatkan' }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">8</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">(KDB) Koefisien Dasar Bangunan</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->klb ?? 'Belum Dibuatkan' }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">9</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">(KDH) Koefisien Dasar Hijau</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->kdh ? $item->kdh . '%' : 'Belum Dibuatkan' }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">10</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">Jaringan Utilitas Kota</td>
+                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px;">:</td>
+                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px;">{{ $item->jaringanutilitas ?? 'Belum Dibuatkan' }}</td>
+                </tr>
+            @endforeach
+        @endif
+    </tbody>
+</table>
                                         </div>
 
                                         <!-- Second Page -->
