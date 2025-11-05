@@ -125,24 +125,28 @@
                                             <!-- Letterhead -->
                                             <div class="kop" style="text-align: center; border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 20px;">
                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" style="float: left; height: 80px;">
-                                                <div style="display: inline-block;">
-                                                    <h3 style="margin: 2px 0; font-size: 16px;">PEMERINTAH KABUPATEN BLORA</h3>
-                                                    <h3 style="margin: 2px 0; font-size: 16px;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-                                                    <p style="margin: 4px 0; font-size: 13px;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-                                                    <h3 style="margin: 2px 0; font-size: 16px;">BLORA 58214</h3>
-                                                </div>
+                                                <div style="display: inline-block; font-family: 'Times New Roman', Times, serif;">
+                                                        <h3 style="margin: 2px 0; font-size: 16px;">PEMERINTAH KABUPATEN BLORA</h3>
+                                                        <h3 style="margin: 2px 0; font-size: 16px;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+                                                        <p style="margin: 4px 0; font-size: 13px;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+                                                        <h3 style="margin: 2px 0; font-size: 16px;">BLORA 58214</h3>
+                                                    </div>
+
                                                 <div style="clear: both;"></div>
                                             </div>
 
                                             <!-- Title -->
-                                            <div style="text-align: center; font-weight: bold; text-decoration: underline; margin-bottom: 20px; font-size: 14px;">
+                                            <div style="text-align: center; font-weight: bold; text-decoration: underline; margin-bottom: 20px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                                 KETERANGAN RENCANA KABUPATEN <br>
                                                 Nomor: 640/{{ $data->id }}.FU/{{ date('Y') }}
                                             </div>
 
                                             <!-- Section I: Administrative Information -->
-                                            <h5 class="section-title" style="font-size:12px;">I. INFORMASI ADMINISTRASI</h5>
-                                          <table class="table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd;">
+                                   <h5 class="section-title" style="font-size:12px; font-family: 'Times New Roman', Times, serif;">
+    I. INFORMASI ADMINISTRASI
+</h5>
+
+<table class="table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd; font-family: 'Times New Roman', Times, serif;">
     <thead>
         <tr style="background-color: #f2f2f2; text-align: left;">
             <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">No</th>
@@ -232,8 +236,11 @@
                                             <br>
 
                                             <!-- Section II: Building Information -->
-                                            <h5 class="section-title" style="font-size: 12px;">II. INFORMASI INTENSITAS BANGUNAN GEDUNG</h5>
-<table class="table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd;">
+<h5 class="section-title" style="font-size: 12px; font-family: 'Times New Roman', Times, serif;">
+    II. INFORMASI INTENSITAS BANGUNAN GEDUNG
+</h5>
+
+<table class="table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd; font-family: 'Times New Roman', Times, serif;">
     <thead>
         <tr style="background-color: #f2f2f2;">
             <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">No</th>
