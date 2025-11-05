@@ -97,7 +97,7 @@
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
                             @can('dinas')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekdinasasistensi') }}';"
@@ -107,7 +107,7 @@
                     @endcan
 
                             @can('pemohon')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bekrksosbudpemohon') }}';"
@@ -117,7 +117,7 @@
                     @endcan
 
                             @can('pemohonbantek')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekpemohonasistensi') }}';"
@@ -128,13 +128,13 @@
 
 
 @canany(['superadmin', 'admin'])
-<button class="button-create" type="button"
+<button class="button-modern" type="button"
     onclick="location.href='/doklapkrksosbudcreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
 </button>
 
-<a href="{{ url('/bekrksosbud') }}" class="button-kembali" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
+<a href="{{ url('/bekrksosbud') }}" class="button-modern" style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
         @endcanany

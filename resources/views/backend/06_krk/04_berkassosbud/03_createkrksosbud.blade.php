@@ -197,50 +197,93 @@ th {
                         <form action="{{ route('create.doklapkrksosbudcreatenew') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <!-- begin::Body -->
+                            <input type="hidden" name="krksosbud_id" value="{{ $data->id }}">
                             <div class="card-body">
-                                <div class="row">
-                                    <!-- Left Column (6/12) -->
-                                    <div class="col-md-6">
+                                 <div class="container">
+    <div class="row">
+        <!-- Nama Kegiatan & Tanggal Kegiatan -->
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern" for="kegiatan">
+                <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
+            </label>
+            <input type="text" id="kegiatan" name="kegiatan"
+                class="form-control @error('kegiatan') is-invalid @enderror"
+                value="{{ old('kegiatan') }}" />
+            @error('kegiatan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
-                                           {{-- Input Hidden bantuanteknis_id --}}
-                                            <input type="hidden" name="krksosbud_id" value="{{ $data->id }}">
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern" for="tanggalkegiatan">
+                <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Kegiatan
+            </label>
+            <input type="date" id="tanggalkegiatan" name="tanggalkegiatan"
+                class="form-control @error('tanggalkegiatan') is-invalid @enderror"
+                value="{{ old('tanggalkegiatan') }}" />
+            @error('tanggalkegiatan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
 
+    <hr>
 
-                                    <div class="mb-3">
-                                        <label class="form-label" for="kegiatan">
-                                            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
-                                        </label>
-                                        <input type="text" id="kegiatan" name="kegiatan" class="form-control @error('kegiatan') is-invalid @enderror" value="{{ old('kegiatan') }}" />
-                                        @error('kegiatan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-<div class="mb-3">
-    <label class="form-label" for="tanggalkegiatan">
-        <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Kegiatan
-    </label>
-    <input type="date" id="tanggalkegiatan" name="tanggalkegiatan" class="form-control @error('tanggalkegiatan') is-invalid @enderror" value="{{ old('tanggalkegiatan') }}" />
-    @error('tanggalkegiatan')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
+    <!-- Berkas 1 & Berkas 2 -->
+    <div class="row">
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern" for="berkas1">
+                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Berkas Dukung 1
+            </label>
+            <input type="file" id="berkas1" name="berkas1" accept="application/pdf"
+                class="form-control @error('berkas1') is-invalid @enderror"
+                onchange="previewBerkas(event, 'previewBerkas1')" />
+            @error('berkas1')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+            <div class="mt-3" id="previewBerkas1" style="display:none;"></div>
+        </div>
 
-<div class="mb-3">
-    <label class="form-label" for="berkas1">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Berkas Dukung 1
-    </label>
-    <input type="file" id="berkas1" name="berkas1" accept="application/pdf" class="form-control @error('berkas1') is-invalid @enderror" onchange="previewBerkas(event, 'previewBerkas1')" />
-    @error('berkas1')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern" for="berkas2">
+                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Berkas Dukung 2
+            </label>
+            <input type="file" id="berkas2" name="berkas2" accept="application/pdf"
+                class="form-control @error('berkas2') is-invalid @enderror"
+                onchange="previewBerkas(event, 'previewBerkas2')" />
+            @error('berkas2')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+            <div class="mt-3" id="previewBerkas2" style="display:none;"></div>
+        </div>
+    </div>
 
-    <!-- Tempat preview berkas -->
-    <div class="mt-3" id="previewBerkas1" style="max-width: 100%; display: none;">
-        <!-- konten preview dimasukkan via JavaScript -->
+    <hr>
+
+    <!-- Foto Dokumentasi 1–6 (2 kolom per baris) -->
+    <div class="row">
+        @for ($i = 1; $i <= 6; $i++)
+            <div class="form-modern col-md-6 mb-3">
+                <label class="form-label-modern " for="foto{{ $i }}">
+                    <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi {{ $i }}
+                </label>
+                <input type="file" id="foto{{ $i }}" name="foto{{ $i }}" accept="image/*"
+                    class="form-control @error('foto' . $i) is-invalid @enderror"
+                    onchange="previewImage(event, 'imagePreview{{ $i }}')" />
+                @error('foto' . $i)
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                <div class="mt-3">
+                    <img id="imagePreview{{ $i }}" src="#" alt="Preview Gambar"
+                        style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+                </div>
+            </div>
+        @endfor
     </div>
 </div>
 
 <script>
+    // Preview PDF
     function previewBerkas(event, previewId) {
         const input = event.target;
         const previewContainer = document.getElementById(previewId);
@@ -254,63 +297,41 @@ th {
 
         if (file.type !== 'application/pdf') {
             previewContainer.style.display = 'none';
-            previewContainer.innerHTML = '<p style="color: red;">Hanya file PDF yang diizinkan.</p>';
-            input.value = ''; // reset input
-            return;
-        }
-
-        const fileURL = URL.createObjectURL(file);
-        previewContainer.innerHTML = `
-            <embed src="${fileURL}" type="application/pdf" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 4px;" />
-        `;
-        previewContainer.style.display = 'block';
-    }
-</script>
-<div class="mb-3">
-    <label class="form-label" for="berkas2">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Berkas Dukung 2
-    </label>
-    <input type="file" id="berkas2" name="berkas2" accept="application/pdf" class="form-control @error('berkas2') is-invalid @enderror" onchange="previewBerkas(event, 'previewBerkas2')" />
-    @error('berkas2')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-
-    <!-- Tempat preview berkas -->
-    <div class="mt-3" id="previewBerkas2" style="max-width: 100%; display: none;">
-        <!-- konten preview dimasukkan via JavaScript -->
-    </div>
-</div>
-
-<script>
-    function previewBerkas(event, previewId) {
-        const input = event.target;
-        const previewContainer = document.getElementById(previewId);
-        const file = input.files[0];
-
-        if (!file) {
-            previewContainer.style.display = 'none';
-            previewContainer.innerHTML = '';
-            return;
-        }
-
-        if (file.type !== 'application/pdf') {
-            previewContainer.style.display = 'none';
-            previewContainer.innerHTML = '<p style="color: red;">Hanya file PDF yang diizinkan.</p>';
+            previewContainer.innerHTML = '<p style="color:red;">Hanya file PDF yang diizinkan.</p>';
             input.value = '';
             return;
         }
 
         const fileURL = URL.createObjectURL(file);
         previewContainer.innerHTML = `
-            <embed src="${fileURL}" type="application/pdf" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 4px;" />
+            <embed src="${fileURL}" type="application/pdf" width="100%" height="400px"
+                style="border:1px solid #ccc; border-radius:4px;" />
         `;
         previewContainer.style.display = 'block';
     }
+
+    // Preview Gambar
+    function previewImage(event, previewId) {
+        const input = event.target;
+        const preview = document.getElementById(previewId);
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            preview.src = '#';
+            preview.style.display = 'none';
+        }
+    }
 </script>
 
-
-
-</div>
+                                <!-- End row -->
+                            </div>
+{{-- </div> --}}
 
 
 <div class="col-md-6">
