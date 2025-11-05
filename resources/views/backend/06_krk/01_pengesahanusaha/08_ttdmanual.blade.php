@@ -70,7 +70,7 @@
                         <!-- Back buttons based on user role -->
                         @canany(['konsultanbantek'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-modern" type="button" onclick="location.href='{{ url()->previous() }}';" style="cursor: pointer; color:black;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ url()->previous() }}';">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -78,7 +78,7 @@
 
                         @canany(['dinas'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';" style="cursor: pointer; color:black;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -86,7 +86,7 @@
 
                         @canany(['pemohonbantek'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';" style="cursor: pointer; color:black;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';" >
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
@@ -94,7 +94,7 @@
 
                         @canany(['superadmin', 'admin'])
                             <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-                                <button class="button-modern" type="button" onclick="location.href='{{ route('krkusaha.index') }}';" style="cursor: pointer; color:white;">
+                                <button class="button-modern" type="button" onclick="location.href='{{ route('krkusaha.index') }}';">
                                     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
                                 </button>
                             </div>
