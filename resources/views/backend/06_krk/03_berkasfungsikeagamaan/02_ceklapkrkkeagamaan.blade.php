@@ -174,7 +174,7 @@ th {
                     @endcan
 
                         {{-- @canany(['konsultanbantek'])
-<button class="button-create" type="button"
+<button class="button-modern" type="button"
     onclick="location.href='/bebantuanteknislapangancreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
@@ -190,7 +190,7 @@ th {
         @endcanany --}}
 
                         @canany(['superadmin', 'admin'])
-<button class="button-create" type="button"
+<button class="button-modern" type="button"
     onclick="location.href='/doklapkrkkeagamaancreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
