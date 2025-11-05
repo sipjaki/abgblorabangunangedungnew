@@ -154,12 +154,9 @@
                             <!-- begin::Body -->
                             <input type="hidden" name="krkusaha_id" value="{{ $data->id }}">
                             <div class="card-body">
-<!-- Import Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
 <div class="container">
     <div class="row">
-        <!-- Baris 1: Nama Kegiatan & Tanggal Kegiatan -->
+        <!-- Nama Kegiatan & Tanggal Kegiatan -->
         <div class="col-md-6 mb-3">
             <label class="form-label" for="kegiatan">
                 <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
@@ -185,114 +182,90 @@
         </div>
     </div>
 
-    <!-- Baris 2: Foto Dokumentasi 1 & 2 -->
+    <hr>
+
+    <!-- Berkas 1 & Berkas 2 -->
     <div class="row">
         <div class="col-md-6 mb-3">
-            <label class="form-label" for="foto1">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 1
+            <label class="form-label" for="berkas1">
+                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Berkas Dukung 1
             </label>
-            <input type="file" id="foto1" name="foto1" accept="image/*"
-                class="form-control @error('foto1') is-invalid @enderror"
-                onchange="previewImage(event, 'imagePreview1')" />
-            @error('foto1')
+            <input type="file" id="berkas1" name="berkas1" accept="application/pdf"
+                class="form-control @error('berkas1') is-invalid @enderror"
+                onchange="previewBerkas(event, 'previewBerkas1')" />
+            @error('berkas1')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
-            <div class="mt-3 text-center">
-                <img id="imagePreview1" src="#" alt="Preview Gambar"
-                    style="max-width: 100%; display: none; border: 1px solid #ddd; border-radius: 4px; padding: 5px;" />
-            </div>
+            <div class="mt-3" id="previewBerkas1" style="display:none;"></div>
         </div>
 
         <div class="col-md-6 mb-3">
-            <label class="form-label" for="foto2">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 2
+            <label class="form-label" for="berkas2">
+                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Berkas Dukung 2
             </label>
-            <input type="file" id="foto2" name="foto2" accept="image/*"
-                class="form-control @error('foto2') is-invalid @enderror"
-                onchange="previewImage(event, 'imagePreview2')" />
-            @error('foto2')
+            <input type="file" id="berkas2" name="berkas2" accept="application/pdf"
+                class="form-control @error('berkas2') is-invalid @enderror"
+                onchange="previewBerkas(event, 'previewBerkas2')" />
+            @error('berkas2')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
-            <div class="mt-3 text-center">
-                <img id="imagePreview2" src="#" alt="Preview Gambar"
-                    style="max-width: 100%; display: none; border: 1px solid #ddd; border-radius: 4px; padding: 5px;" />
-            </div>
+            <div class="mt-3" id="previewBerkas2" style="display:none;"></div>
         </div>
     </div>
 
-    <!-- Baris 3: Foto Dokumentasi 3 & 4 -->
+    <hr>
+
+    <!-- Foto Dokumentasi 1–6 (2 kolom per baris) -->
     <div class="row">
-        <div class="col-md-6 mb-3">
-            <label class="form-label" for="foto3">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 3
-            </label>
-            <input type="file" id="foto3" name="foto3" accept="image/*"
-                class="form-control @error('foto3') is-invalid @enderror"
-                onchange="previewImage(event, 'imagePreview3')" />
-            @error('foto3')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-            <div class="mt-3 text-center">
-                <img id="imagePreview3" src="#" alt="Preview Gambar"
-                    style="max-width: 100%; display: none; border: 1px solid #ddd; border-radius: 4px; padding: 5px;" />
+        @for ($i = 1; $i <= 6; $i++)
+            <div class="col-md-6 mb-3">
+                <label class="form-label" for="foto{{ $i }}">
+                    <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi {{ $i }}
+                </label>
+                <input type="file" id="foto{{ $i }}" name="foto{{ $i }}" accept="image/*"
+                    class="form-control @error('foto' . $i) is-invalid @enderror"
+                    onchange="previewImage(event, 'imagePreview{{ $i }}')" />
+                @error('foto' . $i)
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                <div class="mt-3">
+                    <img id="imagePreview{{ $i }}" src="#" alt="Preview Gambar"
+                        style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+                </div>
             </div>
-        </div>
-
-        <div class="col-md-6 mb-3">
-            <label class="form-label" for="foto4">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 4
-            </label>
-            <input type="file" id="foto4" name="foto4" accept="image/*"
-                class="form-control @error('foto4') is-invalid @enderror"
-                onchange="previewImage(event, 'imagePreview4')" />
-            @error('foto4')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-            <div class="mt-3 text-center">
-                <img id="imagePreview4" src="#" alt="Preview Gambar"
-                    style="max-width: 100%; display: none; border: 1px solid #ddd; border-radius: 4px; padding: 5px;" />
-            </div>
-        </div>
-    </div>
-
-    <!-- Baris 4: Foto Dokumentasi 5 & 6 -->
-    <div class="row">
-        <div class="col-md-6 mb-3">
-            <label class="form-label" for="foto5">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 5
-            </label>
-            <input type="file" id="foto5" name="foto5" accept="image/*"
-                class="form-control @error('foto5') is-invalid @enderror"
-                onchange="previewImage(event, 'imagePreview5')" />
-            @error('foto5')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-            <div class="mt-3 text-center">
-                <img id="imagePreview5" src="#" alt="Preview Gambar"
-                    style="max-width: 100%; display: none; border: 1px solid #ddd; border-radius: 4px; padding: 5px;" />
-            </div>
-        </div>
-
-        <div class="col-md-6 mb-3">
-            <label class="form-label" for="foto6">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 6
-            </label>
-            <input type="file" id="foto6" name="foto6" accept="image/*"
-                class="form-control @error('foto6') is-invalid @enderror"
-                onchange="previewImage(event, 'imagePreview6')" />
-            @error('foto6')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-            <div class="mt-3 text-center">
-                <img id="imagePreview6" src="#" alt="Preview Gambar"
-                    style="max-width: 100%; display: none; border: 1px solid #ddd; border-radius: 4px; padding: 5px;" />
-            </div>
-        </div>
+        @endfor
     </div>
 </div>
 
-<!-- Script Preview Gambar -->
 <script>
+    // Preview PDF
+    function previewBerkas(event, previewId) {
+        const input = event.target;
+        const previewContainer = document.getElementById(previewId);
+        const file = input.files[0];
+
+        if (!file) {
+            previewContainer.style.display = 'none';
+            previewContainer.innerHTML = '';
+            return;
+        }
+
+        if (file.type !== 'application/pdf') {
+            previewContainer.style.display = 'none';
+            previewContainer.innerHTML = '<p style="color:red;">Hanya file PDF yang diizinkan.</p>';
+            input.value = '';
+            return;
+        }
+
+        const fileURL = URL.createObjectURL(file);
+        previewContainer.innerHTML = `
+            <embed src="${fileURL}" type="application/pdf" width="100%" height="400px"
+                style="border:1px solid #ccc; border-radius:4px;" />
+        `;
+        previewContainer.style.display = 'block';
+    }
+
+    // Preview Gambar
     function previewImage(event, previewId) {
         const input = event.target;
         const preview = document.getElementById(previewId);
