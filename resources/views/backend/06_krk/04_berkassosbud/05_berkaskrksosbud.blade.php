@@ -148,7 +148,7 @@ th {
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
-        <button class="button-validasinew"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bekrksosbudindex') }}';"
                 style="cursor: pointer; color:white;">
@@ -377,43 +377,67 @@ th {
         </tbody>
     </table>
 </div>
-
 {{-- Tombol Hapus Permohonan --}}
-<form id="deleteForm{{ $item->id }}" action="{{ route('krksosbudsuratdelete.destroy', $item->id) }}" method="POST" style="display: inline;">
+<form id="deleteForm{{ $item->id }}"
+      action="{{ route('krksosbudsuratdelete.destroy', $item->id) }}"
+      method="POST"
+      style="display: inline;">
     @csrf
     @method('DELETE')
-    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-        <button type="button" class="button-modern" style="cursor: pointer; color: black;"
-            data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $item->id }}">
-            <i class="bi bi-trash" style="margin-right: 5px;"></i> Hapus Permohonan
+
+    <div style="display: flex; justify-content: flex-start; margin-top: 10px;">
+        <button type="button"
+                class="button-modern"
+                style="cursor: pointer; color: black;"
+                data-bs-toggle="modal"
+                data-bs-target="#confirmDeleteModal{{ $item->id }}">
+            <i class="bi bi-trash" style="margin-right: 5px;"></i>
+            Hapus Permohonan
         </button>
     </div>
 </form>
 
 <!-- Modal Konfirmasi Hapus -->
-<div class="modal fade" id="confirmDeleteModal{{ $item->id }}" tabindex="-1"
-    aria-labelledby="confirmDeleteLabel{{ $item->id }}" aria-hidden="true">
+<div class="modal fade"
+     id="confirmDeleteModal{{ $item->id }}"
+     tabindex="-1"
+     aria-labelledby="confirmDeleteLabel{{ $item->id }}"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content" style="font-family: 'Times New Roman', Times, serif; font-size: 14px;">
             <div class="modal-header" style="background-color: #dc3545; color: white;">
-                <h5 class="modal-title" id="confirmDeleteLabel{{ $item->id }}">Konfirmasi Hapus</h5>
+                <h5 class="modal-title" id="confirmDeleteLabel{{ $item->id }}">
+                    Konfirmasi Hapus
+                </h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 Apakah Anda yakin ingin menghapus permohonan ini?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                <button type="button" class="btn btn-success" id="confirmDeleteBtn{{ $item->id }}">Ya, Hapus</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
+                </button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn{{ $item->id }}">
+                    <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Ya, Hapus
+                </button>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Script Konfirmasi -->
 <script>
-    document.getElementById('confirmDeleteBtn{{ $item->id }}').addEventListener('click', function () {
-        document.getElementById('deleteForm{{ $item->id }}').submit();
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    const deleteBtn = document.getElementById('confirmDeleteBtn{{ $item->id }}');
+    const deleteForm = document.getElementById('deleteForm{{ $item->id }}');
+
+    if (deleteBtn && deleteForm) {
+        deleteBtn.addEventListener('click', function() {
+            deleteForm.submit();
+        });
+    }
+});
 </script>
 
 {{-- Tombol Download PDF di kanan bawah --}}

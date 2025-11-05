@@ -2566,15 +2566,12 @@ public function perpengesahansosbudber($id)
 
 public function krksosbudsuratdelete($id)
 {
-    // Cari data berdasarkan ID
     $data = krksosbud::find($id);
 
     if ($data) {
         $data->delete();
-        // Redirect dengan flash message sukses
         return redirect()->route('bekrksosbudindex')->with('delete', 'Data berhasil dihapus.');
     } else {
-        // Redirect dengan flash message error
         return redirect()->route('bekrksosbudindex')->with('error', 'Data tidak ditemukan.');
     }
 }
