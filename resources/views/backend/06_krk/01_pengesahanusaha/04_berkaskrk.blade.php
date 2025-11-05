@@ -425,22 +425,25 @@ th {
         @endif
     </tbody>
 </table>
-
-
-    {{-- Tombol hapus tidak ikut di dalam table --}}
-    <!-- Form dan tombol trigger modal -->
-<form id="deleteForm{{ $item->id }}" action="{{ route('krkusahasurat.destroy', $item->id) }}" method="POST" style="display: inline;">
-    @csrf
-    @method('DELETE')
-    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+{{-- Tombol Aksi di Kanan (Hapus & Download PDF) --}}
+<div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin: 20px 0;">
+    <!-- Tombol Hapus -->
+    <form id="deleteForm{{ $item->id }}" action="{{ route('krkusahasurat.destroy', $item->id) }}" method="POST" style="display: inline;">
+        @csrf
+        @method('DELETE')
         <button type="button" class="button-merah"
             data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $item->id }}">
             <i class="bi bi-trash" style="margin-right: 5px;"></i> Hapus Permohonan
         </button>
-    </div>
-</form>
+    </form>
 
-<!-- Modal Konfirmasi -->
+    <!-- Tombol Download -->
+    <button id="downloadPdfBtn" class="button-baru">
+        <i class="bi bi-download" style="margin-right: 6px;"></i> Download PDF
+    </button>
+</div>
+
+<!-- Modal Konfirmasi Hapus -->
 <div class="modal fade" id="confirmDeleteModal{{ $item->id }}" tabindex="-1" aria-labelledby="confirmDeleteLabel{{ $item->id }}" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -464,15 +467,6 @@ th {
         document.getElementById('deleteForm{{ $item->id }}').submit();
     });
 </script>
-
-</div>
-
-{{-- Tombol download PDF di kanan atas bawah --}}
-<div style="display: flex; justify-content: flex-end; padding: 10px;">
-    <button id="downloadPdfBtn" class="button-baru">
-        <i class="bi bi-download" style="margin-right:6px;"></i> Download PDF
-    </button>
-</div>
 
 {{-- Load jsPDF dan AutoTable dari CDN --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
