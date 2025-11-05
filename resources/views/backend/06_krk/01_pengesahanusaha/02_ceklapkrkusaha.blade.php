@@ -202,7 +202,7 @@
     }
 
     .kegiatan-header {
-        background-color: #0C0A7A;
+        background-color: #0d3b66;
         color: white;
         padding: 14px 20px;
         font-weight: 600;
@@ -255,7 +255,14 @@
         gap: 16px;
     }
 
-    .foto-grid img {
+    .foto-item {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        padding: 10px;
+    }
+
+    .foto-item img {
         width: 100%;
         height: 180px;
         object-fit: cover;
@@ -264,7 +271,7 @@
         transition: transform 0.2s ease;
     }
 
-    .foto-grid img:hover {
+    .foto-item img:hover {
         transform: scale(1.03);
     }
 
@@ -341,7 +348,7 @@
                             @endphp
 
                             @if ($fotoFullPath)
-                                <div class="text-center">
+                                <div class="foto-item text-center">
                                     <img src="{{ $fotoFullPath }}" alt="Foto {{ $i }}" loading="lazy">
                                     <button type="button" class="button-modern mt-2"
                                         data-bs-toggle="modal" data-bs-target="#modalFoto{{ $data->id }}_{{ $i }}">
@@ -349,7 +356,7 @@
                                     </button>
                                 </div>
 
-                                <!-- Modal Foto Satu-satu -->
+                                <!-- Modal Foto Individual -->
                                 <div class="modal fade" id="modalFoto{{ $data->id }}_{{ $i }}" tabindex="-1"
                                     aria-labelledby="modalLabel{{ $data->id }}_{{ $i }}" aria-hidden="true">
                                     <div class="modal-dialog modal-lg modal-dialog-centered">
