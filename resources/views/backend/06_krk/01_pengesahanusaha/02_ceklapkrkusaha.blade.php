@@ -1,48 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -146,7 +101,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
                             @can('pemohon')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bekrkusahapemohon') }}';"
@@ -155,7 +110,7 @@ th {
                         </button>
                     @endcan
                             @can('dinas')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekdinasasistensi') }}';"
@@ -164,7 +119,7 @@ th {
                         </button>
                     @endcan
                             @can('pemohonbantek')
-                        <button class="button-kembali"
+                        <button class="button-modern"
                         type="button"
 
                         onclick="location.href='{{ url('/bebantekpemohonasistensi') }}';"
@@ -181,7 +136,7 @@ th {
 </button>
 
    <a href="{{ url('/beakunkonsultanasistensi') }}"
-   class="button-kembali"
+   class="button-modern"
    style="cursor: pointer; color:black; margin-left:5px; display: inline-flex; align-items: center; text-decoration: none;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
 </a>
@@ -190,7 +145,7 @@ th {
         @endcanany --}}
 
                         @canany(['superadmin', 'admin'])
-<button class="button-baru" type="button"
+<button class="button-modern" type="button"
     onclick="location.href='/doklapkrkusahacreate/{{ $data->id }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-file-earmark-plus" style="margin-right: 5px;"></i> Buat Dokumentasi
@@ -442,7 +397,7 @@ th {
                 animation: fadeIn 0.5s ease-in-out;
             ">
                 <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-                Belum Cek Lapangan !
+                Belum Ada Dokumentasi Lapangan !
             </div>
         </td>
     </tr>
