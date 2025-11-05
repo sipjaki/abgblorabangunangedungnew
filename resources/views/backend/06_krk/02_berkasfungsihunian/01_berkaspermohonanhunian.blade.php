@@ -112,7 +112,7 @@ th {
 
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-newvalidasi"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bekrkhunianindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -174,7 +174,7 @@ th {
 
  @canany(['pemohon'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
-        <button class="button-newvalidasi"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bekrkhunianpemohon.indexpemohon') }}';"
                 style="cursor: pointer; color:black;">
@@ -187,7 +187,7 @@ th {
 {{-- @can('pemohon')
 
            <a href="/bekrkhunianpemohon">
-    <button class="button-newvalidasi">
+    <button class="button-modern">
   Kembali
 </button>
 
@@ -1011,7 +1011,7 @@ th {
             </p>
 
             <a href="/bekrkhunianperbaikan/{{$data->id}}" style="text-decoration: none;">
-                    <button class="button-baru">
+                    <button class="button-modern">
                         <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
                     </button>
                 </a>
@@ -2545,7 +2545,7 @@ th {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                      <button class="button-baru" type="button" onclick="openModal()">
+                                      <button class="button-modern" type="button" onclick="openModal()">
                                             <i class="bi bi-save2" style="margin-right: 8px;"></i> Simpan Validasi
                                         </button>
 

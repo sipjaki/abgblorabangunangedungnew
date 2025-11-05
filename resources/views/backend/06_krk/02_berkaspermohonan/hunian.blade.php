@@ -206,7 +206,7 @@
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkhunianpermohonan.show', $item->id) }}"
                     class="button-modern">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
                                     <style>
