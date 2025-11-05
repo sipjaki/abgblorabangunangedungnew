@@ -271,57 +271,46 @@ th {
 
 <h5 style="color: navy; font-weight:800; font-size:16px;">I. INFORMASI DOKUMEN PERMOHONAN KRK FUNGSI SOSIAL BUDAYA</h5>
 <div class="table-responsive">
-    <table id="dataTable" class="zebra-table table-striped" style="width: 100%; border-collapse: collapse; font-size:16px;">
+    <table id="dataTable" class="zebra-table table-striped" style="font-size:16px; width: 100%; border-collapse: collapse;">
         <thead>
             <tr>
-                <th style="text-align: center;">
-                    <i class="bi bi-hash" style="margin-right:6px;"></i> No
-                </th>
-                <th>
-                    <i class="bi bi-card-text" style="margin-right:6px;"></i> Item
-                </th>
-                <th style="text-align: center;">
-                    <i class="bi bi-three-dots" style="margin-right:6px;"></i> :
-                </th>
-                <th>
-                    <i class="bi bi-info-circle" style="margin-right:6px;"></i> Keterangan
-                </th>
+                <td><i class="bi bi-hash" style="margin-right:6px;"></i> No</td>
+                <td><i class="bi bi-card-text" style="margin-right:6px;"></i> Item</td>
+                <td><i class="bi bi-three-dots" style="margin-right:6px;"></i> :</td>
+                <td><i class="bi bi-info-circle" style="margin-right:6px;"></i> Keterangan</td>
             </tr>
         </thead>
-
         <tbody>
             @if($subdata->count())
                 @foreach($subdata as $i => $item)
                     <tr>
-                        <td style="text-align: center;">1</td>
+                        <td>1</td>
                         <td>Nomor Registrasi KRK</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>{{ $item->nomorregistrasi ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">2</td>
+                        <td>2</td>
                         <td>Tanggal Permohonan</td>
-                        <td style="text-align: center;">:</td>
-                        <td>
-                            {{ $item->tanggalpermohonan ? \Carbon\Carbon::parse($item->tanggalpermohonan)->format('d-m-Y') : '-' }}
-                        </td>
+                        <td>:</td>
+                        <td>{{ $item->tanggalpermohonan ? \Carbon\Carbon::parse($item->tanggalpermohonan)->format('d-m-Y') : '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">3</td>
+                        <td>3</td>
                         <td>Kepadatan</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>{{ $item->kepadatan ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">4</td>
+                        <td>4</td>
                         <td>Jumlah Lantai Maksimal</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>{{ $item->luaslantaimaksimal ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">5</td>
+                        <td>5</td>
                         <td>Luas Bangunan Maksimal (m²)</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>
                             @if($item->luasbangunan)
                                 {{ $item->luasbangunan }} M<sup>2</sup>
@@ -331,99 +320,95 @@ th {
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">6</td>
+                        <td>6</td>
                         <td>Fungsi Utama Bangunan</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>{{ $item->fungsibangunan ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">7</td>
+                        <td>7</td>
                         <td>Lokasi Bangunan</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>{{ $item->lokasibangunan ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">8</td>
+                        <td>8</td>
                         <td>Jenis Jalan</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>{{ $item->jenisjalan ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">9</td>
+                        <td>9</td>
                         <td>(GSB) Garis Sempadan Bangunan</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>{{ $item->gsb ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">10</td>
+                        <td>10</td>
                         <td>(KLB) Koefisien Luas Bangunan</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>{{ $item->klb ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">11</td>
+                        <td>11</td>
                         <td>(KDH) Koefisien Dasar Hijau (%)</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>{{ $item->kdh ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">12</td>
+                        <td>12</td>
                         <td>Jaringan Utilitas Kota</td>
-                        <td style="text-align: center;">:</td>
+                        <td>:</td>
                         <td>{{ $item->jaringanutilitas ?? '-' }}</td>
                     </tr>
                 @endforeach
             @endif
         </tbody>
     </table>
-</div>
 
-{{-- Tombol Hapus Permohonan --}}
-<form id="deleteForm{{ $item->id }}" action="{{ route('krksosbudsuratdelete.destroy', $item->id) }}" method="POST" style="display: inline;">
-    @csrf
-    @method('DELETE')
-    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-        <button type="button" class="button-modern" style="cursor: pointer; color: black;"
+    <!-- Form Hapus -->
+    <form id="deleteForm{{ $item->id }}" action="{{ route('krksosbudsuratdelete.destroy', $item->id) }}" method="POST" style="margin-top: 10px;">
+        @csrf
+        @method('DELETE')
+        <button type="button" class="button-modern" style="cursor: pointer; color:black;"
             data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $item->id }}">
             <i class="bi bi-trash" style="margin-right: 5px;"></i> Hapus Permohonan
         </button>
-    </div>
-</form>
+    </form>
 
-<!-- Modal Konfirmasi Hapus -->
-<div class="modal fade" id="confirmDeleteModal{{ $item->id }}" tabindex="-1"
-    aria-labelledby="confirmDeleteLabel{{ $item->id }}" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <!-- Modal Konfirmasi -->
+    <div class="modal fade" id="confirmDeleteModal{{ $item->id }}" tabindex="-1" aria-labelledby="confirmDeleteLabel{{ $item->id }}" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header" style="background-color: #dc3545; color: white;">
-                <h5 class="modal-title" id="confirmDeleteLabel{{ $item->id }}">Konfirmasi Hapus</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Apakah Anda yakin ingin menghapus permohonan ini?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                <button type="button" class="btn btn-success" id="confirmDeleteBtn{{ $item->id }}">Ya, Hapus</button>
-            </div>
+          <div class="modal-header" style="background-color: #dc3545; color: white;">
+            <h5 class="modal-title" id="confirmDeleteLabel{{ $item->id }}">Konfirmasi Hapus</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Apakah Anda yakin ingin menghapus permohonan ini?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+            <button type="button" class="btn btn-success" id="confirmDeleteBtn{{ $item->id }}">Ya, Hapus</button>
+          </div>
         </div>
+      </div>
     </div>
+
+    <script>
+        document.getElementById('confirmDeleteBtn{{ $item->id }}').addEventListener('click', function () {
+            document.getElementById('deleteForm{{ $item->id }}').submit();
+        });
+    </script>
 </div>
 
-<script>
-    document.getElementById('confirmDeleteBtn{{ $item->id }}').addEventListener('click', function () {
-        document.getElementById('deleteForm{{ $item->id }}').submit();
-    });
-</script>
-
-{{-- Tombol Download PDF di kanan bawah --}}
-<div style="display: flex; justify-content: flex-end; padding: 10px;">
+<!-- Tombol Download PDF -->
+<div style="margin-top: 10px;">
     <button id="downloadPdfBtn" class="button-modern"
         style="padding: 8px 16px; border-radius: 15px; border: none; cursor: pointer;">
         <i class="bi bi-download" style="margin-right:6px;"></i> Download PDF
     </button>
 </div>
-
 
 {{-- Load jsPDF dan AutoTable dari CDN --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
