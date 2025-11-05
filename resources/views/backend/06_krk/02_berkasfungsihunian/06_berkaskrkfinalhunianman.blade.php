@@ -270,7 +270,7 @@
                                             <br>
 
                                             <!-- Section II: Building Information -->
-<h5 class="section-title" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; font-weight: normal; margin: 0;">
+<h5 class="section-title" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; font-weight: bold; margin: 0;">
     II. INFORMASI INTENSITAS BANGUNAN GEDUNG
 </h5>
 
