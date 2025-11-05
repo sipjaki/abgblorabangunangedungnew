@@ -460,7 +460,7 @@
             }
 
             // Save the PDF
-            pdf.save("berkas-final_krk_usaha.pdf");
+            pdf.save("berkas-final_krk_hunian.pdf");
         }
     </script>
 </body>

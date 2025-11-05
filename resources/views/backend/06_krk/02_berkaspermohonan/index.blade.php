@@ -537,7 +537,7 @@
                             <span class="info-number">{{$datajumlahkrkusaha}}</span>
                         </p>
                         <p class="info-text">
-                            Permohonan KRK Usaha
+                            KRK Fungsi Usaha
                         </p>
                         <p class="small-text">Informasi KRK Usaha</p>
                     </div>
@@ -560,7 +560,7 @@
                             <span class="info-number">{{$datajumlahkrkhunian}} </span>
                         </p>
                         <p class="info-text">
-                            Permohonan KRK Hunian
+                            KRK Fungsi Hunian
                         </p>
                         <p class="small-text">Informasi KRK Hunian</p>
                     </div>
@@ -583,7 +583,7 @@
                             <span class="info-number">{{$datajumlahkrkkeagamaan}} </span>
                         </p>
                         <p class="info-text">
-                            Permohonan KRK Keagamaan
+                            KRK Fungsi Keagamaan
                         </p>
                         <p class="small-text">Informasi KRK Keagamaan</p>
                     </div>
@@ -606,7 +606,7 @@
                             <span class="info-number">{{$datajumlahkrksosbud}}</span>
                         </p>
                         <p class="info-text">
-                            Permohonan KRK Sosial Budaya
+                            KRK Fungsi Sosial Budaya
                         </p>
                         <p class="small-text">Informasi KRK Sosial Budaya</p>
                     </div>
@@ -632,7 +632,7 @@
                             <span class="info-number">{{$datajumlahkrkmenara}}</span>
                         </p>
                         <p class="info-text">
-                            Permohonan KRK Menara Telekomunikasi
+                            KRK Menara Telekomunikasi
                         </p>
                         <p class="small-text">Informasi KRK Menara Telekomunikasi</p>
                     </div>
