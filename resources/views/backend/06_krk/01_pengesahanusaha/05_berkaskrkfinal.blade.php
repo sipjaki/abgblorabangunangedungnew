@@ -123,23 +123,23 @@
                                         <!-- First Page -->
                                         <div class="halaman" style="width: 21cm; height: 29.7cm; margin: auto; background: white; padding: 2cm; box-sizing: border-box; border: 1px solid black; page-break-after: always;">
                                             <!-- Letterhead -->
-                                            <div class="kop" style="text-align: center; border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 20px;">
+                                            <div class="kop" style="text-align: center; border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 20px; margin-top: 10px;">
                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" style="float: left; height: 80px;">
                                                 <div style="
     display: inline-block;
     font-family: 'Times New Roman', Times, serif !important;
     font-weight: normal;
 ">
-    <h3 style="margin: 2px 0; font-size: 16px; font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">
+    <h3 style="margin: 2px 0; font-size: 18px; font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">
         PEMERINTAH KABUPATEN BLORA
     </h3>
-    <h3 style="margin: 2px 0; font-size: 16px; font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">
+    <h3 style="margin: 2px 0; font-size: 18px; font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">
         DINAS PEKERJAAN UMUM DAN PENATAAN RUANG
     </h3>
-    <p style="margin: 4px 0; font-size: 13px; font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">
+    <p style="margin: 4px 0; font-size: 14px; font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">
         Jl. Nusantara No. 62 Telp. (0296) 531004
     </p>
-    <h3 style="margin: 2px 0; font-size: 16px; font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">
+    <h3 style="margin: 2px 0; font-size: 18px; font-family: 'Times New Roman', Times, serif !important; font-weight: normal;">
         BLORA 58214
     </h3>
 </div>
