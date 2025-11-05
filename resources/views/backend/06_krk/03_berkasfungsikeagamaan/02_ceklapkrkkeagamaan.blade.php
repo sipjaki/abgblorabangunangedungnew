@@ -232,234 +232,250 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-    <table id="tabelSuratbantuanteknis" class="table zebra-table" style="min-width: 900px;">
-                <thead>
-                                  <tr>
-   <th style="background-color: #ADD8E6;">No</th>
-<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Kegiatan</th>
-<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Tanggal Kegiatan</th>
-<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Berkas Dukung 1</th>
-<th style="background-color: #ADD8E6; width:75px;"><i class="bi bi-journal-text"></i> Berkas Dukung 2</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 1</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 2</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 3</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 4</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 5</th>
-<th style="background-color: #ADD8E6; width:400px;"><i class="bi bi-image"></i> Foto 6</th>
-@canany(['superadmin', 'admin'])
-<th style="background-color: #ADD8E6; width:150px;"><i class="bi bi-tools"></i> Aksi</th>
-@endcanany
-
-    </tr>
-                            </thead>
-                              <tbody id="tableBody">
-
-                                @if($subdata->isEmpty())
-<p style="
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  background-color: #f9fafb;
-  color: #dc2626;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: relative;
-">
-  <span style="
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 10s linear infinite;
-  ">
-    Cek Lapangan Belum di Laksanakan !!
-  </span>
-
-  <style>
-    @keyframes marquee {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
+     <div class="card-body p-0">
+                    <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+    <style>
+    body {
+        font-family: 'Poppins', sans-serif;
     }
-  </style>
-</p>
 
-@else
-      @foreach($subdata as $item)
-    <tr>
-        <td>{{ $loop->iteration }}</td>
-        <td>{{ $item->kegiatan }}</td>
-<td>{{ \Carbon\Carbon::parse($item->tanggalkegiatan)->translatedFormat('d F Y') }}</td>
+    .kegiatan-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        margin-bottom: 24px;
+        overflow: hidden;
+        border: 1px solid #dee2e6;
+    }
 
+    .kegiatan-header {
+        background-color: #0C0A7A;
+        color: white;
+        padding: 14px 20px;
+        font-weight: 600;
+        font-size: 18px;
+    }
 
-<td style="vertical-align: top; padding: 10px;">
-    @if ($item->berkas1 && file_exists(public_path('storage/' . $item->berkas1)))
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset('storage/' . $item->berkas1) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
+    .kegiatan-body {
+        padding: 20px;
+    }
+
+    .info-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .info-item {
+        flex: 1 1 45%;
+    }
+
+    .info-label {
+        color: #0d3b66;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    iframe {
+        border-radius: 8px;
+        border: 1px solid #ced4da;
+    }
+
+    .berkas-section,
+    .foto-section {
+        margin-top: 20px;
+    }
+
+    .berkas-card,
+    .foto-card {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 16px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .foto-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .foto-item {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        padding: 12px;
+        border: 1px solid #e9ecef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .foto-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        transition: transform 0.2s ease;
+    }
+
+    .foto-item img:hover {
+        transform: scale(1.03);
+    }
+
+    .foto-item .btn {
+        margin-top: 10px;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .empty-message {
+        text-align: center;
+        padding: 40px;
+        font-weight: 600;
+        color: #6c757d;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border: 2px dashed #ced4da;
+        font-size: 16px;
+    }
+</style>
+
+<div class="container-fluid mt-4">
+    @forelse ($subdata as $data)
+        <div class="kegiatan-card">
+            <div class="kegiatan-header">
+                <i class="bi bi-journal-text"></i> {{ $data->kegiatan }}
+            </div>
+
+            <div class="kegiatan-body">
+                <div class="info-row">
+                    <div class="info-item">
+                        <p class="info-label"><i class="bi bi-calendar-event"></i> Tanggal Kegiatan</p>
+                        <p>{{ \Carbon\Carbon::parse($data->tanggalkegiatan)->translatedFormat('d F Y') }}</p>
+                    </div>
+                </div>
+
+                {{-- BERKAS DUKUNG --}}
+                <div class="berkas-section">
+                    <h6 class="text-primary fw-bold mb-3"><i class="bi bi-file-earmark-text"></i> Berkas Dukung</h6>
+                    <div class="row">
+                        @for ($b = 1; $b <= 2; $b++)
+                            @php
+                                $berkasField = 'berkas' . $b;
+                                $berkasPath = $data->$berkasField;
+                                $berkasFull = $berkasPath && file_exists(public_path('storage/' . $berkasPath))
+                                    ? asset('storage/' . $berkasPath)
+                                    : ($berkasPath ? asset($berkasPath) : null);
+                            @endphp
+
+                            <div class="col-md-6 mb-3">
+                                <div class="berkas-card">
+                                    <h6 class="fw-semibold mb-2 text-secondary">Berkas Dukung {{ $b }}</h6>
+                                    @if ($berkasFull)
+                                        <iframe src="{{ $berkasFull }}" width="100%" height="250px"></iframe>
+                                        <div class="text-center mt-2">
+                                            <a href="{{ $berkasFull }}" download class="button-modern">
+                                                <i class="bi bi-download"></i> Download Berkas {{ $b }}
+                                            </a>
+                                        </div>
+                                    @else
+                                        <p class="text-muted text-center">Tidak Ada Berkas Dukung {{ $b }}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+
+                {{-- FOTO DOKUMENTASI --}}
+                <div class="foto-section">
+                    <h6 class="text-primary fw-bold mb-3"><i class="bi bi-image"></i> Dokumentasi Lapangan</h6>
+                    <div class="foto-grid">
+                        @for ($i = 1; $i <= 6; $i++)
+                            @php
+                                $fotoField = 'foto' . $i;
+                                $fotoPath = $data->$fotoField;
+                                $fotoFullPath = $fotoPath && file_exists(public_path('storage/' . $fotoPath))
+                                    ? asset('storage/' . $fotoPath)
+                                    : ($fotoPath ? asset($fotoPath) : null);
+                            @endphp
+
+                            @if ($fotoFullPath)
+                                <div class="foto-item text-center">
+                                    <img src="{{ $fotoFullPath }}" alt="Foto {{ $i }}" loading="lazy">
+                                    <br>
+                                    <button type="button" class="button-modern"
+                                        data-bs-toggle="modal" data-bs-target="#modalFoto{{ $data->id }}_{{ $i }}">
+                                        <i class="bi bi-eye"></i> Lihat Foto {{ $i }}
+                                    </button>
+                                </div>
+
+                                <!-- Modal Foto Individual -->
+                                <div class="modal fade" id="modalFoto{{ $data->id }}_{{ $i }}" tabindex="-1"
+                                    aria-labelledby="modalLabel{{ $data->id }}_{{ $i }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content border-0 shadow-lg rounded-3">
+                                            <div class="modal-header bg-primary text-white">
+                                                <h6 class="modal-title" id="modalLabel{{ $data->id }}_{{ $i }}">
+                                                    <i class="bi bi-image"></i> Foto Dokumentasi {{ $i }}
+                                                </h6>
+                                                <button type="button" class="btn-close btn-close-white"
+                                                    data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body text-center p-3">
+                                                <div class="card border-0">
+                                                    <img src="{{ $fotoFullPath }}" alt="Foto Dokumentasi {{ $i }}"
+                                                        style="width: 100%; border-radius: 12px; object-fit: contain;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endfor
+                    </div>
+
+                    @php
+                        $adaFoto = false;
+                        for ($f = 1; $f <= 6; $f++) {
+                            if ($data->{'foto' . $f}) {
+                                $adaFoto = true;
+                                break;
+                            }
+                        }
+                    @endphp
+
+                    @if (!$adaFoto)
+                        <p class="text-muted text-center mt-2">Tidak Ada Foto Dokumentasi</p>
+                    @endif
+                </div>
+
+                {{-- AKSI ADMIN --}}
+                @canany(['superadmin', 'admin'])
+                    <div class="text-end mt-4">
+                        <button class="button-merah" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                            data-id="{{ $data->id }}" onclick="setDeleteUrl(this)">
+                            <i class="bi bi-trash"></i> Hapus
+                        </button>
+                    </div>
+                @endcanany
+            </div>
         </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset('storage/' . $item->berkas1) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 1
-            </a>
+    @empty
+        <div class="empty-message">
+            <i class="bi bi-folder-x" style="margin-right: 8px; color: #dc3545;"></i>
+            Belum Ada Dokumentasi Lapangan!
         </div>
-    @elseif ($item->berkas1)
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset($item->berkas1) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset($item->berkas1) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 1
-            </a>
-        </div>
-    @else
-        <p class="text-muted text-center" style="font-size: 12px;">Tidak Ada Berkas Dukung 1</p>
-    @endif
-</td>
+    @endforelse
+</div>
 
-<td style="vertical-align: top; padding: 10px;">
-    @if ($item->berkas2 && file_exists(public_path('storage/' . $item->berkas2)))
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset('storage/' . $item->berkas2) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset('storage/' . $item->berkas2) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 2
-            </a>
-        </div>
-    @elseif ($item->berkas2)
-        <div style="border: 1px solid #ccc; border-radius: 6px; overflow: hidden;">
-            <iframe
-                src="{{ asset($item->berkas2) }}"
-                style="width: 100%; height: 250px; border: none;"
-                loading="lazy">
-            </iframe>
-        </div>
-        <div class="text-center mt-2">
-            <a href="{{ asset($item->berkas2) }}" download class="btn btn-sm btn-primary">
-                <i class="bi bi-download"></i> Download Berkas 2
-            </a>
-        </div>
-    @else
-        <p class="text-muted text-center" style="font-size: 12px;">Tidak Ada Berkas Dukung 2</p>
-    @endif
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
-            <img src="{{ asset('storage/' . $item->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto1)
-            <img src="{{ asset($item->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 1!</p>
-        @endif
-    </div>
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto2 && file_exists(public_path('storage/' . $item->foto2)))
-            <img src="{{ asset('storage/' . $item->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto2)
-            <img src="{{ asset($item->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 2!</p>
-        @endif
-    </div>
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto3 && file_exists(public_path('storage/' . $item->foto3)))
-            <img src="{{ asset('storage/' . $item->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto3)
-            <img src="{{ asset($item->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 3!</p>
-        @endif
-    </div>
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto4 && file_exists(public_path('storage/' . $item->foto4)))
-            <img src="{{ asset('storage/' . $item->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto4)
-            <img src="{{ asset($item->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 4!</p>
-        @endif
-    </div>
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto5 && file_exists(public_path('storage/' . $item->foto5)))
-            <img src="{{ asset('storage/' . $item->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto5)
-            <img src="{{ asset($item->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 5!</p>
-        @endif
-    </div>
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($item->foto6 && file_exists(public_path('storage/' . $item->foto6)))
-            <img src="{{ asset('storage/' . $item->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($item->foto6)
-            <img src="{{ asset($item->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 6!</p>
-        @endif
-    </div>
-</td>
-
-@canany(['superadmin', 'admin'])
-
-<td class="text-center align-middle">
-    {{-- <a href="/bebujkkonstruksi/show/{{ $item->id }}" class="btn btn-sm btn-info me-2" title="Lihat Detail">
-        <i class="bi bi-eye"></i>
-    </a>
-            <a href="/bebujkkonstruksi/update/{{ $item->id }}" class="btn btn-sm btn-warning me-2" title="Ubah Data">
-                <i class="bi bi-pencil-square"></i>
-            </a> --}}
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
-            data-bs-toggle="modal" data-bs-target="#deleteModal"
-            data-id="{{ $item->id }}"
-            onclick="setDeleteUrl(this)">
-            <i class="bi bi-trash"></i>
-        </a>
-
-        {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
-        data-bs-toggle="modal" data-bs-target="#deleteModal"
-        data-id="{{ $item->id }}"
-        onclick="setDeleteUrl(this)">
-        <i class="bi bi-trash"></i>
-    </a> --}}
-</td>
-@endcanany
-</tr>
-@endforeach
-@endif
-
-</tbody>
-                        </table>
+                    </div>
+                 </div>
 
                      </div>
                  </div>
