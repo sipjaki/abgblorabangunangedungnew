@@ -121,9 +121,9 @@
                                     <!-- PDF Content Container -->
                                     <div id="pdf-content" style="font-family: 'Times New Roman', serif;">
                                         <!-- First Page -->
-                                        <div class="halaman" style="width: 21cm; height: 29.7cm; margin: auto; background: white; padding: 2cm; box-sizing: border-box; border: 1px solid black; page-break-after: always;">
+                                        <div class="halaman" style="width: 21cm; height: 29.7cm; margin: auto; background: white; padding: 2cm; box-sizing: border-box; border: 1px solid black; page-break-after: always; margin-top:-20px;">
                                             <!-- Letterhead -->
-                                            <div class="kop" style="text-align: center; border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 20px; margin-top: 10px;">
+                                            <div class="kop" style="text-align: center; border-bottom: 2px solid black; padding-bottom: 10px; margin-bottom: 20px;">
                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" style="float: left; height: 80px;">
                                                 <div style="
     display: inline-block;
