@@ -506,7 +506,7 @@
 <!-- Tombol trigger modal -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
     <button class="button-modern" type="button" onclick="openPengesahanModal()">
-        <i class="fa fa-check-circle" style="margin-right: 5px;"></i>
+        <i class="bi bi-check-circle" style="margin-right: 5px;"></i>
         <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
     </button>
 </div>

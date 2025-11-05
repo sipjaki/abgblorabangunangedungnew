@@ -556,8 +556,7 @@
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
     <button class="button-merah"
         disabled
-        title="Silakan validasi terlebih dahulu"
-    >
+        title="Silakan validasi terlebih dahulu">
         <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
     </button>
 @else
@@ -565,12 +564,7 @@
         <!-- SUDAH DIVALIDASI tapi data pengesahan sudah ada, tombol hijau tapi nonaktif -->
         <button class="button-download"
             disabled
-            style="border: none; padding: 10px 25px;
-                   border-radius: 15px; font-size: 14px; cursor: not-allowed;
-                   display: flex; align-items: center; justify-content: center;
-                   opacity: 0.7;"
-            title="Dokumen pengesahan sudah ada"
-        >
+            title="Dokumen pengesahan sudah ada">
             <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
         </button>
     @else
