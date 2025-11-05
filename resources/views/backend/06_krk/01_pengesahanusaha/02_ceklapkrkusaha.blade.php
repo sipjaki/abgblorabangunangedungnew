@@ -202,7 +202,7 @@
     }
 
     .kegiatan-header {
-        background-color: #0d3b66;
+        background-color: #001f3f;
         color: white;
         padding: 14px 20px;
         font-weight: 600;
@@ -261,20 +261,6 @@
         border: 1px solid #ddd;
     }
 
-    .button-merah {
-        background-color: #dc3545;
-        border: none;
-        color: white;
-        border-radius: 8px;
-        padding: 6px 10px;
-        font-size: 14px;
-        transition: 0.3s;
-    }
-
-    .button-merah:hover {
-        background-color: #c82333;
-    }
-
     .btn-primary {
         background-color: #0d3b66 !important;
         border: none;
@@ -289,6 +275,38 @@
         border-radius: 12px;
         border: 2px dashed #ced4da;
         font-size: 16px;
+    }
+
+    /* Galeri foto di modal */
+    .modal-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+    }
+
+    .modal-gallery .card {
+        border: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.2s ease;
+    }
+
+    .modal-gallery .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .modal-gallery img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .modal-gallery .card-body {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+        color: #0d3b66;
     }
 </style>
 
@@ -343,6 +361,10 @@
                 <div class="foto-section">
                     <h6 class="text-primary fw-bold mb-3"><i class="bi bi-image"></i> Dokumentasi Lapangan</h6>
                     <div class="foto-grid">
+                        @php
+                            $fotoList = [];
+                        @endphp
+
                         @for ($i = 1; $i <= 6; $i++)
                             @php
                                 $fotoField = 'foto' . $i;
@@ -350,38 +372,55 @@
                                 $fotoFullPath = $fotoPath && file_exists(public_path('storage/' . $fotoPath))
                                     ? asset('storage/' . $fotoPath)
                                     : ($fotoPath ? asset($fotoPath) : null);
+
+                                if ($fotoFullPath) {
+                                    $fotoList[] = $fotoFullPath;
+                                }
                             @endphp
 
                             @if ($fotoFullPath)
-                                <div class="text-center">
-                                    <img src="{{ $fotoFullPath }}" alt="Foto {{ $i }}" loading="lazy">
-                                    <button type="button" class="btn btn-sm btn-primary mt-2" data-bs-toggle="modal"
-                                        data-bs-target="#modalFoto{{ $data->id }}{{ $i }}">
-                                        <i class="bi bi-eye"></i> Lihat
-                                    </button>
-                                </div>
-
-                                <!-- Modal Foto -->
-                                <div class="modal fade" id="modalFoto{{ $data->id }}{{ $i }}" tabindex="-1"
-                                    aria-labelledby="modalLabel{{ $data->id }}{{ $i }}" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                                        <div class="modal-content border-0 shadow-lg rounded-3">
-                                            <div class="modal-header" style="background-color: navy; color: white;">
-                                                <h6 class="modal-title" id="modalLabel{{ $data->id }}{{ $i }}">
-                                                    <i class="bi bi-image"></i> Foto Dokumentasi {{ $i }}
-                                                </h6>
-                                                <button type="button" class="btn-close btn-close-white"
-                                                    data-bs-dismiss="modal"></button>
-                                            </div>
-                                            <div class="modal-body text-center">
-                                                <img src="{{ $fotoFullPath }}" alt="Foto Dokumentasi {{ $i }}"
-                                                    class="img-fluid rounded">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <img src="{{ $fotoFullPath }}" alt="Foto {{ $i }}" loading="lazy">
                             @endif
                         @endfor
+                    </div>
+
+                    {{-- Tombol lihat semua foto --}}
+                    @if (count($fotoList) > 0)
+                        <div class="text-center mt-3">
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#modalGaleri{{ $data->id }}">
+                                <i class="bi bi-images"></i> Lihat Semua Foto
+                            </button>
+                        </div>
+                    @else
+                        <p class="text-muted text-center mt-2">Tidak Ada Foto Dokumentasi</p>
+                    @endif
+
+                    <!-- Modal Galeri -->
+                    <div class="modal fade" id="modalGaleri{{ $data->id }}" tabindex="-1"
+                        aria-labelledby="modalLabelGaleri{{ $data->id }}" aria-hidden="true">
+                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                            <div class="modal-content border-0 shadow-lg rounded-3">
+                                <div class="modal-header" style="background-color: navy; color: white;">
+                                    <h6 class="modal-title" id="modalLabelGaleri{{ $data->id }}">
+                                        <i class="bi bi-images"></i> Galeri Dokumentasi Lapangan
+                                    </h6>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-gallery">
+                                        @foreach ($fotoList as $index => $foto)
+                                            <div class="card">
+                                                <img src="{{ $foto }}" alt="Foto {{ $index + 1 }}">
+                                                <div class="card-body">
+                                                    Foto {{ $index + 1 }}
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
