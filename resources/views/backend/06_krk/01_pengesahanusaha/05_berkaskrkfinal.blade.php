@@ -405,7 +405,7 @@
                                             <!-- Signature section -->
                                             <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
     <div style="text-align: left; font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1;">
-        Kabupaten Blora<br>
+        {{-- Kabupaten Blora<br> --}}
         Plt. KEPALA DINAS<br>
         DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br>
         KABUPATEN BLORA<br><br>
