@@ -151,7 +151,7 @@ th {
         <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bekrkkeagamaanindex') }}';"
-                style="cursor: pointer; color:white;">
+                style="cursor: pointer; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
     </div>
@@ -212,24 +212,7 @@ th {
 @can('pemohon')
 
            <a href="/bekrkkeagamaanpemohon">
-    <button
-  style="
-    background: linear-gradient(45deg, #6c757d, #adb5bd);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-right:10px;
-  "
-  onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-  onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
+    <button class="button-modern"
 >
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
     viewBox="0 0 16 16">
