@@ -427,6 +427,7 @@
             <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
                  style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;"> --}}
         </div>
+        <br>
 <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px; font-family: 'Times New Roman', Times, serif !important; font-size: 14px;">
     <span style="text-decoration: underline; line-height: 1; font-family: 'Times New Roman', Times, serif !important;">
         NIDZAMUDIN AL HUDDA, S.T
