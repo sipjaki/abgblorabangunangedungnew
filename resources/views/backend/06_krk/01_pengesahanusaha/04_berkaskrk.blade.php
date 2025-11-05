@@ -271,116 +271,161 @@ th {
 <h5 style="color: navy; font-weight:800; font-size:16px;">I. INFORMASI DOKUMEN PERMOHONAN KRK FUNGSI USAHA</h5>
 
 <div class="table-responsive">
-    <table id="dataTable" class="zebra-table table-striped" style="font-size:16px; width: 100%; border-collapse: collapse;">
-        <thead>
-            <tr>
-                <td style="text-align: center;"><i class="bi bi-hash" style="margin-right:6px;"></i> No</td>
-                <td><i class="bi bi-card-text" style="margin-right:6px;"></i> Item</td>
-                <td style="text-align: center;"><i class="bi bi-three-dots" style="margin-right:6px;"></i> :</td>
-                <td><i class="bi bi-info-circle" style="margin-right:6px;"></i> Keterangan</td>
-            </tr>
-        </thead>
-        <tbody>
-            @if($subdata->count())
-                @foreach($subdata as $i => $item)
-                    <tr>
-                        <td style="text-align: center;">1</td>
-                        <td>Nomor Registrasi KRK</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->nomorregistrasi ?? '-' }}</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">2</td>
-                        <td>Tanggal Permohonan</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->tanggalpermohonan ? \Carbon\Carbon::parse($item->tanggalpermohonan)->format('d-m-Y') : '-' }}</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">3</td>
-                        <td>Kepadatan</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->kepadatan ?? '-' }}</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">4</td>
-                        <td>Jumlah Lantai Maksimal</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->luaslantaimaksimal ?? '-' }}</td>
-                    </tr>
-                    <tr>
-    <td style="text-align: center;">5</td>
-    <td>Luas Bangunan Maksimal (m²)</td>
-    <td style="text-align: center;">:</td>
-    <td>
-        @if($item->luasbangunan)
-            {{ $item->luasbangunan }} M<sup>2</sup>
-        @else
-            -
+<style>
+    /* Styling tabel modern */
+    #dataTable {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #dataTable thead tr {
+        background-color: #0C0A7A; /* navy gelap */
+        color: white;
+    }
+
+    #dataTable thead td {
+        padding: 10px 12px;
+        text-align: left;
+        font-weight: 600;
+        border-bottom: 3px solid #0A0663;
+    }
+
+    #dataTable tbody tr:nth-child(even) {
+        background-color: #f8f9fa; /* abu muda */
+    }
+
+    #dataTable tbody tr:nth-child(odd) {
+        background-color: #ffffff; /* putih */
+    }
+
+    #dataTable tbody td {
+        padding: 10px 12px;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+        color: #333;
+        vertical-align: middle;
+    }
+
+    #dataTable i {
+        color: navy;
+    }
+
+    /* Hover effect */
+    #dataTable tbody tr:hover {
+        background-color: #e8f0ff;
+        transition: 0.2s;
+    }
+</style>
+
+<table id="dataTable" class="zebra-table table-striped">
+    <thead>
+        <tr>
+            <td><i class="bi bi-hash" style="margin-right:6px;"></i> No</td>
+            <td><i class="bi bi-card-text" style="margin-right:6px;"></i> Item</td>
+            <td><i class="bi bi-three-dots" style="margin-right:6px;"></i> :</td>
+            <td><i class="bi bi-info-circle" style="margin-right:6px;"></i> Keterangan</td>
+        </tr>
+    </thead>
+    <tbody>
+        @if($subdata->count())
+            @foreach($subdata as $i => $item)
+                <tr>
+                    <td>1</td>
+                    <td>Nomor Registrasi KRK</td>
+                    <td>:</td>
+                    <td>{{ $item->nomorregistrasi ?? '-' }}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Tanggal Permohonan</td>
+                    <td>:</td>
+                    <td>{{ $item->tanggalpermohonan ? \Carbon\Carbon::parse($item->tanggalpermohonan)->format('d-m-Y') : '-' }}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Kepadatan</td>
+                    <td>:</td>
+                    <td>{{ $item->kepadatan ?? '-' }}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Jumlah Lantai Maksimal</td>
+                    <td>:</td>
+                    <td>{{ $item->luaslantaimaksimal ?? '-' }}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Luas Bangunan Maksimal (m²)</td>
+                    <td>:</td>
+                    <td>
+                        @if($item->luasbangunan)
+                            {{ $item->luasbangunan }} M<sup>2</sup>
+                        @else
+                            -
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Fungsi Utama Bangunan</td>
+                    <td>:</td>
+                    <td>{{ $item->fungsibangunan ?? '-' }}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Lokasi Bangunan</td>
+                    <td>:</td>
+                    <td>{{ $item->lokasibangunan ?? '-' }}</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Jenis Jalan</td>
+                    <td>:</td>
+                    <td>{{ $item->jenisjalan ?? '-' }}</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>(GSB) Garis Sempadan Bangunan</td>
+                    <td>:</td>
+                    <td>{{ $item->gsb ?? '-' }} Meter</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>(KDB) Koefisien Dasar Bangunan</td>
+                    <td>:</td>
+                    <td>{{ $item->klb ?? '-' }}</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>(KLB) Koefisien Lantai Bangunan</td>
+                    <td>:</td>
+                    <td>{{ $item->kdb ?? '-' }} M²</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>(KDH) Koefisien Dasar Hijau (%)</td>
+                    <td>:</td>
+                    <td>{{ $item->kdh ?? '-' }} %</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Jaringan Utilitas Kota</td>
+                    <td>:</td>
+                    <td>{{ $item->jaringanutilitas ?? '-' }}</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Koordinat Lokasi</td>
+                    <td>:</td>
+                    <td>{{ $item->koordinatlokasi ?? '-' }}</td>
+                </tr>
+            @endforeach
         @endif
-    </td>
-</tr>
+    </tbody>
+</table>
 
-                    <tr>
-                        <td style="text-align: center;">6</td>
-                        <td>Fungsi Utama Bangunan</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->fungsibangunan ?? '-' }}</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">7</td>
-                        <td>Lokasi Bangunan</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->lokasibangunan ?? '-' }}</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">8</td>
-                        <td>Jenis Jalan</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->jenisjalan ?? '-' }}</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">9</td>
-                        <td>(GSB) Garis Sempadan Bangunan</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->gsb ?? '-' }} Meter</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">10</td>
-                        <td>(KDB) Koefisien Dasar Bangunan </td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->klb ?? '-' }}</td>
-                    </tr>
-
-                    <tr>
-                        <td style="text-align: center;">11</td>
-                        <td>(KLB) Koefisien Lantai Bangunan </td>
-                        <td style="text-align: center;">:</td>
-                         <td>{{ $item->kdb ?? '-' }} M²</td>
-
-                    </tr>
-                    {{-- hati hati terbalil kbd dan klb  --}}
-                    <tr>
-                        <td style="text-align: center;">12</td>
-                        <td>(KDH) Koefisien Dasar Hijau (%)</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->kdh ?? '-' }} %</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">13</td>
-                        <td>Jaringan Utilitas Kota</td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->jaringanutilitas ?? '-' }}</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center;">13</td>
-                        <td>Koordinat Lokasi </td>
-                        <td style="text-align: center;">:</td>
-                        <td>{{ $item->koordinatlokasi ?? '-' }}</td>
-                    </tr>
-                @endforeach
-            @endif
-        </tbody>
-    </table>
 
     {{-- Tombol hapus tidak ikut di dalam table --}}
     <!-- Form dan tombol trigger modal -->
