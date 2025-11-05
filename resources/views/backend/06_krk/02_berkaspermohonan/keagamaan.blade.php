@@ -179,7 +179,7 @@ th {
 
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-newvalidasi" style="color: black;">
+    <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
@@ -266,7 +266,7 @@ th {
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkkeagamaanpermohonan.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
@@ -311,7 +311,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button class="button-modern" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -382,7 +382,7 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkkeagamaan.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
@@ -403,7 +403,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
@@ -483,18 +483,13 @@ th {
                                 <!-- Tombol Triger Modal -->
                                 <button type="button"
                                     onclick="openValidationModal({{ $item->id }})"
-                                    class="button-merah"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #dc3545; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#dc3545'; this.style.border='1px solid #dc3545';"
-                                    onmouseout="this.style.backgroundColor='#dc3545'; this.style.color='black'; this.style.border='none';">
+                                    class="button-merah">
                                     <i class="bi bi-file-earmark-check" style="margin-right: 5px;"></i> Belum di Setujui !
                                 </button>
                                 @else
                                 <!-- Tombol SUDAH Validasi -->
                                 <button class="button-hijau"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #28a745; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#28a745'; this.style.border='1px solid #28a745';"
-                                    onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white'; this.style.border='none';">
+                                    style="border-radius: 15px; padding: 8px 16px; background-color: #28a745; color: white; border: none; transition: background-color 0.3s, color 0.3s;">
                                     <i class="bi bi-check-circle-fill" style="margin-right: 5px;"></i> Silahkan Buat Dok KRK
                                 </button>
                                 @endif
@@ -637,16 +632,12 @@ th {
 
 @if($subdata->where('krkkeagamaan_id', $item->id)->count() > 0)
     <a href="{{ route('berkas.perpengesahanagamaber', $item->id) }}"
-        class="button-hijau"
-        style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #10B981; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#10B981'; this.style.border='1px solid #10B981';"
-        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.border='none';">
+        class="button-hijau">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Pengesahan
     </a>
 @else
     <button
         class="button-merah"
-        style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Dokumen Belum Ada
     </button>
@@ -671,7 +662,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
@@ -779,7 +770,7 @@ th {
 
 
 <a href="{{ route('dokuploadkrkagama', $item->id) }}"
-    class="button-baru">
+    class="button-modern">
     <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
 
 </a>
@@ -804,7 +795,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModal4({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
