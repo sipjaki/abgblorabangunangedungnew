@@ -370,65 +370,67 @@
                                             </div> --}}
 
                                             <!-- Content for second page -->
-                                            <div class="content" style="font-size: 12px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; text-align: justify;">
-    <div class="section-title" style="font-size: 14px; font-weight: bold; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 4px; text-align: left;">
+<div class="content" style="font-size: 12px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; text-align: justify;">
+    <div class="section-title" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 4px; text-align: left;">
         Dasar Pertimbangan
     </div>
     <ol style="font-size: 14px; line-height: 1.2; margin-top: 0; margin-bottom: 10px; padding-left: 20px; text-align: justify;">
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Keputusan Menteri Pekerjaan Umum dan Perumahan Rakyat Nomor 1688/KPTS/M/2022 tentang Penetapan Ruas Jalan Menurut Statusnya sebagai Jalan Nasional.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Keputusan Gubernur Jawa Tengah Nomor 622 / 12 Tahun 2023 tentang Penetapan Ruas Jalan dalam Jaringan Jalan Kolektor Primer - 4, Jalan Lokal Primer, Jalan Lingkungan Primer, Jalan Arteri Sekunder, Jalan Kolektor Sekunder, Jalan Lokal Sekunder dan Jalan Lingkungan Sekunder di Provinsi Jawa Tengah.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Peraturan Daerah Kabupaten Blora Nomor 11 Tahun 2018 tentang Perubahan atas Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Peraturan Daerah Kabupaten Blora Nomor 5 Tahun 2021 tentang Rencana Tata Ruang Wilayah Kabupaten Blora.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">SK Bupati No. 620/175/2023 tentang Penetapan Status Ruas Jalan sebagai Jalan Kabupaten di Wilayah Kabupaten Blora.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Keputusan Menteri Pekerjaan Umum dan Perumahan Rakyat Nomor 1688/KPTS/M/2022 tentang Penetapan Ruas Jalan Menurut Statusnya sebagai Jalan Nasional.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Keputusan Gubernur Jawa Tengah Nomor 622 / 12 Tahun 2023 tentang Penetapan Ruas Jalan dalam Jaringan Jalan Kolektor Primer - 4, Jalan Lokal Primer, Jalan Lingkungan Primer, Jalan Arteri Sekunder, Jalan Kolektor Sekunder, Jalan Lokal Sekunder dan Jalan Lingkungan Sekunder di Provinsi Jawa Tengah.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Peraturan Daerah Kabupaten Blora Nomor 11 Tahun 2018 tentang Perubahan atas Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Peraturan Daerah Kabupaten Blora Nomor 5 Tahun 2021 tentang Rencana Tata Ruang Wilayah Kabupaten Blora.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">SK Bupati No. 620/175/2023 tentang Penetapan Status Ruas Jalan sebagai Jalan Kabupaten di Wilayah Kabupaten Blora.</li>
     </ol>
 
     <hr style="margin: 8px 0; border: 0; border-top: 1px solid #000;">
 
-    <div class="section-title" style="font-size: 14px; font-weight: bold; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 4px; text-align: left;">
+    <div class="section-title" style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 4px; text-align: left;">
         Ketentuan Lain-Lain
     </div>
     <ol style="font-size: 14px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; margin-top: 0; padding-left: 20px; text-align: justify;">
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Harus menyediakan Ruang Terbuka Hijau (RTH) privat minimal seluas 10% dari luas persil.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Dilarang memperkecil atau memperbesar volume debit kapasitas saluran umum (drainase kota) dan/atau menutup saluran umum.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Rencana bangunan menyesuaikan dengan ketentuan teknik yang tercantum dalam lembar ini.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Rencana bangunan mempertimbangkan faktor keselamatan, kenyamanan, kesehatan dan kemudahan bagi pengguna bangunan.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Keharusan membuat lubang resapan biopori.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Keharusan menanam pohon pelindung dan pembuatan sumur resapan air hujan.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Perkerasan halaman harus dengan struktur yang kuat.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Wajib menyediakan tempat/area parkir.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
-        <li style="font-family: 'Times New Roman', Times, serif !important; ">Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Harus menyediakan Ruang Terbuka Hijau (RTH) privat minimal seluas 10% dari luas persil.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Dilarang memperkecil atau memperbesar volume debit kapasitas saluran umum (drainase kota) dan/atau menutup saluran umum.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Rencana bangunan menyesuaikan dengan ketentuan teknik yang tercantum dalam lembar ini.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Rencana bangunan mempertimbangkan faktor keselamatan, kenyamanan, kesehatan dan kemudahan bagi pengguna bangunan.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Keharusan membuat lubang resapan biopori.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Keharusan menanam pohon pelindung dan pembuatan sumur resapan air hujan.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Perkerasan halaman harus dengan struktur yang kuat.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Wajib menyediakan tempat/area parkir.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
+        <li style="font-family: 'Times New Roman', Times, serif !important;">Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
     </ol>
 </div>
 
                                             <!-- Signature section -->
                                             <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
-                                                <div style="text-align: left; font-size: 12px;">
-                                                    Kabupaten Blora<br>
-                                                    Plt. KEPALA DINAS<br>
-                                                    DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br>
-                                                    KABUPATEN BLORA<br><br>
+    <div style="text-align: left; font-size: 12px; line-height: 1;">
+        Kabupaten Blora<br>
+        Plt. KEPALA DINAS<br>
+        DINAS PEKERJAAN UMUM DAN PENATAAN RUANG<br>
+        KABUPATEN BLORA<br><br>
 
-                                                    <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
-                                                        <!-- TTD Kabupaten Blora agak ke kanan -->
-                                                        <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
-                                                             style="position: absolute; left: 10px; top: 0; height: 90px; z-index: 1;">
+        <div style="position: relative; width: 220px; height: 100px; margin-top:-15px;">
+            <!-- TTD Kabupaten Blora agak ke kanan -->
+            <img src="/assets/abgblora/logo/ttdkabblora.png" alt=""
+                 style="position: absolute; left: 10px; top: 0; height: 90px; z-index: 1;">
 
-                                                        <!-- TTD PA Huda di kanan -->
-                                                        <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
-                                                             style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
-                                                    </div><br><br>
-                                                    <div style="display: inline-flex; flex-direction: column; gap: 0;">
-                                                        <strong style="margin-top: -25px; text-decoration: underline; line-height: 1;">
-                                                            NIDZAMUDIN AL HUDDA, S.T
-                                                        </strong>
-                                                        <span style="line-height: 1; margin-top: 0;">
-                                                            NIP. 19720326 200604 1 005
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
+            <!-- TTD PA Huda di kanan -->
+            <img src="/assets/abgblora/logo/ttdpahuda.png" alt=""
+                 style="position: absolute; right: 0; top: 0; height: 80px; z-index: 2;">
+        </div>
+
+        <div style="display: inline-flex; flex-direction: column; line-height: 1; margin-top: -10px;">
+            <span style="text-decoration: underline; line-height: 1;">
+                NIDZAMUDIN AL HUDDA, S.T
+            </span>
+            <span style="line-height: 1;">
+                NIP. 19720326 200604 1 005
+            </span>
+        </div>
+    </div>
+</div>
+
                                         </div>
                                     </div>
                                 </div>
