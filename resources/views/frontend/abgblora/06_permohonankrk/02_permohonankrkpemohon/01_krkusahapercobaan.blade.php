@@ -585,7 +585,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M5 7h14M5 11h14M5 15h10M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
         </svg>
-        <span class="text-sm">KTP | File  <br> jpg, jpeg, png, pdf | Max 10MB</span>
+        <span class="text-sm">KTP | File  <br> jpg, jpeg, png, pdf | Max 15 MB</span>
     </label>
 
     <input id="ktp" name="ktp" type="file"
@@ -620,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M6 2v20h12V2H6zm4 12H8v-2h2v2zm4-2h-2v2h2v-2zm2-6H8V4h8v4z" />
         </svg>
-        <span class="text-sm">NPWP | File <br> jpg, jpeg, png, pdf | Max 10MB</span>
+        <span class="text-sm">NPWP | File <br> jpg, jpeg, png, pdf | Max 15 MB</span>
     </label>
 
     <input id="npwp" name="npwp" type="file"
