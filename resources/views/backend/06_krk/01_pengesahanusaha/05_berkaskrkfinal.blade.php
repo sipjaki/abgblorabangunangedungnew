@@ -370,33 +370,37 @@
                                             </div> --}}
 
                                             <!-- Content for second page -->
-                                            <div class="content" style="font-size: 12px;">
-                                                <div class="section-title" style="font-size:12px;">Dasar Pertimbangan</div>
-                                                <ol style="font-size:12px;">
-                                                    <li>Keputusan Menteri Pekerjaan Umum dan Perumahan Rakyat Nomor 1688/KPTS/M/2022 tentang Penetapan Ruas Jalan Menurut Statusnya sebagai Jalan Nasional.</li>
-                                                    <li>Keputusan Gubernur Jawa Tengah Nomor 622 / 12 Tahun 2023 tentang Penetapan Ruas Jalan dalam Jaringan Jalan Kolektor Primer - 4, Jalan Lokal Primer, Jalan Lingkungan Primer, Jalan Arteri Sekunder, Jalan Kolektor Sekunder, Jalan Lokal Sekunder dan Jalan Lingkungan Sekunder di Provinsi Jawa Tengah.</li>
-                                                    <li>Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
-                                                    <li>Peraturan Daerah Kabupaten Blora Nomor 11 Tahun 2018 tentang Perubahan atas Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
-                                                    <li>Peraturan Daerah Kabupaten Blora Nomor 5 Tahun 2021 tentang Rencana Tata Ruang Wilayah Kabupaten Blora.</li>
-                                                    <li>SK Bupati No. 620/175/2023 tentang Penetapan Status Ruas Jalan sebagai Jalan Kabupaten di Wilayah Kabupaten Blora.</li>
-                                                </ol>
+                                            <div class="content" style="font-size: 12px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; text-align: justify;">
+    <div class="section-title" style="font-size: 12px; font-weight: bold; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 4px; text-align: left;">
+        Dasar Pertimbangan
+    </div>
+    <ol style="font-size: 12px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; margin-top: 0; margin-bottom: 10px; padding-left: 20px; text-align: justify;">
+        <li>Keputusan Menteri Pekerjaan Umum dan Perumahan Rakyat Nomor 1688/KPTS/M/2022 tentang Penetapan Ruas Jalan Menurut Statusnya sebagai Jalan Nasional.</li>
+        <li>Keputusan Gubernur Jawa Tengah Nomor 622 / 12 Tahun 2023 tentang Penetapan Ruas Jalan dalam Jaringan Jalan Kolektor Primer - 4, Jalan Lokal Primer, Jalan Lingkungan Primer, Jalan Arteri Sekunder, Jalan Kolektor Sekunder, Jalan Lokal Sekunder dan Jalan Lingkungan Sekunder di Provinsi Jawa Tengah.</li>
+        <li>Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
+        <li>Peraturan Daerah Kabupaten Blora Nomor 11 Tahun 2018 tentang Perubahan atas Peraturan Daerah Kabupaten Blora Nomor 1 Tahun 2016 tentang Bangunan Gedung.</li>
+        <li>Peraturan Daerah Kabupaten Blora Nomor 5 Tahun 2021 tentang Rencana Tata Ruang Wilayah Kabupaten Blora.</li>
+        <li>SK Bupati No. 620/175/2023 tentang Penetapan Status Ruas Jalan sebagai Jalan Kabupaten di Wilayah Kabupaten Blora.</li>
+    </ol>
 
-                                                <hr>
+    <hr style="margin: 8px 0; border: 0; border-top: 1px solid #000;">
 
-                                                <div class="section-title" style="font-size:12px;">Ketentuan Lain-Lain</div>
-                                                <ol style="font-size:12px;">
-                                                    <li>Harus menyediakan Ruang Terbuka Hijau (RTH) privat minimal seluas 10% dari luas persil.</li>
-                                                    <li>Dilarang memperkecil atau memperbesar volume debit kapasitas saluran umum (drainase kota) dan/atau menutup saluran umum.</li>
-                                                    <li>Rencana bangunan menyesuaikan dengan ketentuan teknik yang tercantum dalam lembar ini.</li>
-                                                    <li>Rencana bangunan mempertimbangkan faktor keselamatan, kenyamanan, kesehatan dan kemudahan bagi pengguna bangunan.</li>
-                                                    <li>Keharusan membuat lubang resapan biopori.</li>
-                                                    <li>Keharusan menanam pohon pelindung dan pembuatan sumur resapan air hujan.</li>
-                                                    <li>Perkerasan halaman harus dengan struktur yang kuat.</li>
-                                                    <li>Wajib menyediakan tempat/area parkir.</li>
-                                                    <li>Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
-                                                    <li>Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
-                                                </ol>
-                                            </div>
+    <div class="section-title" style="font-size: 12px; font-weight: bold; font-family: 'Times New Roman', Times, serif !important; margin-bottom: 4px; text-align: left;">
+        Ketentuan Lain-Lain
+    </div>
+    <ol style="font-size: 12px; font-family: 'Times New Roman', Times, serif !important; line-height: 1.2; margin-top: 0; padding-left: 20px; text-align: justify;">
+        <li>Harus menyediakan Ruang Terbuka Hijau (RTH) privat minimal seluas 10% dari luas persil.</li>
+        <li>Dilarang memperkecil atau memperbesar volume debit kapasitas saluran umum (drainase kota) dan/atau menutup saluran umum.</li>
+        <li>Rencana bangunan menyesuaikan dengan ketentuan teknik yang tercantum dalam lembar ini.</li>
+        <li>Rencana bangunan mempertimbangkan faktor keselamatan, kenyamanan, kesehatan dan kemudahan bagi pengguna bangunan.</li>
+        <li>Keharusan membuat lubang resapan biopori.</li>
+        <li>Keharusan menanam pohon pelindung dan pembuatan sumur resapan air hujan.</li>
+        <li>Perkerasan halaman harus dengan struktur yang kuat.</li>
+        <li>Wajib menyediakan tempat/area parkir.</li>
+        <li>Bidang tanah yang terkena GSB dipergunakan untuk kepentingan umum.</li>
+        <li>Semua ketentuan dalam KRK ini didasarkan pada peraturan yang berlaku di Kabupaten Blora pada saat ini. Apabila dikemudian hari terdapat ketentuan yang tidak sesuai, maka akan diperbaiki sesuai dengan peraturan yang ada. KRK ini bersifat sementara.</li>
+    </ol>
+</div>
 
                                             <!-- Signature section -->
                                             <div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 40px;">
