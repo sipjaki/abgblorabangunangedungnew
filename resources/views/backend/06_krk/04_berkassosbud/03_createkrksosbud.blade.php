@@ -154,7 +154,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-kembali" type="button"
+<button class="button-modern" type="button"
     onclick="location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -331,137 +331,13 @@ th {
 
                                 <!-- End row -->
                             </div>
-{{-- </div> --}}
-
-
-<div class="col-md-6">
-
-
-                                <div class="mb-3">
-                                    <label class="form-label" for="foto1">
-                                        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 1
-                                    </label>
-                                    <input type="file" id="foto1" name="foto1" accept="image/*" class="form-control @error('foto1') is-invalid @enderror" onchange="previewImage(event, 'imagePreview1')" />
-                                    @error('foto1')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-
-                                    <!-- Tempat preview gambar -->
-                                    <div class="mt-3">
-                                        <img id="imagePreview1" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-    <label class="form-label" for="foto2">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 2
-    </label>
-    <input type="file" id="foto2" name="foto2" accept="image/*" class="form-control @error('foto2') is-invalid @enderror" onchange="previewImage(event, 'imagePreview2')" />
-    @error('foto2')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-
-    <!-- Tempat preview gambar -->
-    <div class="mt-3">
-        <img id="imagePreview2" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
-    </div>
-</div>
-
-<div class="mb-3">
-    <label class="form-label" for="foto3">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 3
-    </label>
-    <input type="file" id="foto3" name="foto3" accept="image/*" class="form-control @error('foto3') is-invalid @enderror" onchange="previewImage(event, 'imagePreview3')" />
-    @error('foto3')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-
-    <!-- Tempat preview gambar -->
-    <div class="mt-3">
-        <img id="imagePreview3" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
-    </div>
-</div>
-
-<div class="mb-3">
-    <label class="form-label" for="foto4">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 4
-    </label>
-    <input type="file" id="foto4" name="foto4" accept="image/*" class="form-control @error('foto4') is-invalid @enderror" onchange="previewImage(event, 'imagePreview4')" />
-    @error('foto4')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-
-    <!-- Tempat preview gambar -->
-    <div class="mt-3">
-        <img id="imagePreview4" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
-    </div>
-</div>
-
-<div class="mb-3">
-    <label class="form-label" for="foto5">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 5
-    </label>
-    <input type="file" id="foto5" name="foto5" accept="image/*" class="form-control @error('foto5') is-invalid @enderror" onchange="previewImage(event, 'imagePreview5')" />
-    @error('foto5')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-
-    <!-- Tempat preview gambar -->
-    <div class="mt-3">
-        <img id="imagePreview5" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
-    </div>
-</div>
-
-
-<div class="mb-3">
-    <label class="form-label" for="foto6">
-        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi 6
-    </label>
-    <input type="file" id="foto6" name="foto6" accept="image/*" class="form-control @error('foto6') is-invalid @enderror" onchange="previewImage(event, 'imagePreview6')" />
-    @error('foto6')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-
-    <!-- Tempat preview gambar -->
-    <div class="mt-3">
-        <img id="imagePreview6" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
-    </div>
-</div>
-
-
-<script>
-  function previewImage(event, previewId) {
-    const input = event.target;
-    const preview = document.getElementById(previewId);
-
-    if (input.files && input.files[0]) {
-      const reader = new FileReader();
-
-      reader.onload = function(e) {
-        preview.src = e.target.result;
-        preview.style.display = 'block';  // Tampilkan gambar preview
-      };
-
-      reader.readAsDataURL(input.files[0]);
-    } else {
-      preview.src = '#';
-      preview.style.display = 'none'; // Sembunyikan jika gak ada file
-    }
-  }
-</script>
-
-
-                                    </div>
-                                </div>
-                                <!-- End row -->
-                            </div>
                             <!-- end::Body -->
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-create" type="button" onclick="openModal()">
+                               <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-plus" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Create</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan Data</span>
                                     </button>
 
                                 </div>
