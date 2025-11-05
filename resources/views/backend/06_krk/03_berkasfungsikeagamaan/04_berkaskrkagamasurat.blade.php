@@ -308,7 +308,7 @@
                         <i class="fas fa-cogs"></i> Fungsi Utama Bangunan
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Usaha" readonly>
+                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Keagamaan" readonly>
                     </div>
                     @error('fungsibangunan')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
@@ -551,7 +551,7 @@
       <!-- Tombol Submit -->
 <!-- Tombol trigger modal -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-    <button class="button-baru" type="button" onclick="openPengesahanModal()">
+    <button class="button-modern" type="button" onclick="openPengesahanModal()">
         <i class="bi bi-check-circle" style="margin-right: 5px;"></i>
     <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
     </button>
