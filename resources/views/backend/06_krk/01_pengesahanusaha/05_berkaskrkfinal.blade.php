@@ -142,11 +142,11 @@
 
                                             <!-- Section I: Administrative Information -->
                                             <h5 class="section-title" style="font-size:12px;">I. INFORMASI ADMINISTRASI</h5>
-                                          <table class="zebra-table table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd;">
+                                          <table class="table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd;">
     <thead>
         <tr style="background-color: #f2f2f2; text-align: left;">
             <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">No</th>
-            <th style="width: 35%; border: 1px solid #ddd; padding: 8px;">Item</th>
+            <th style="width: 35%; border: 1px solid #ddd; padding: 8px;">Informasi</th>
             <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">:</th>
             <th style="width: 55%; border: 1px solid #ddd; padding: 8px;">Keterangan</th>
         </tr>
@@ -237,7 +237,7 @@
     <thead>
         <tr style="background-color: #f2f2f2;">
             <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">No</th>
-            <th style="width: 35%; border: 1px solid #ddd; padding: 8px;">Item</th>
+            <th style="width: 35%; border: 1px solid #ddd; padding: 8px;">Informasi</th>
             <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">:</th>
             <th style="width: 55%; border: 1px solid #ddd; padding: 8px;">Keterangan</th>
         </tr>
