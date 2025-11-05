@@ -233,7 +233,7 @@
 
                                             <!-- Section II: Building Information -->
                                             <h5 class="section-title" style="font-size: 12px;">II. INFORMASI INTENSITAS BANGUNAN GEDUNG</h5>
-<table class="zebra-table table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd;">
+<table class="table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd;">
     <thead>
         <tr style="background-color: #f2f2f2;">
             <th style="width: 5%; border: 1px solid #ddd; padding: 8px;">No</th>
