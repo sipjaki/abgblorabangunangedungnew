@@ -274,22 +274,22 @@ th {
     <table id="dataTable" class="zebra-table table-striped" style="width: 100%; border-collapse: collapse; font-size:16px;">
         <thead>
             <tr>
-                <th style="text-align: center;">
+                <th style="text-align: left;">
                     <i class="bi bi-hash" style="margin-right:6px;"></i> No
                 </th>
-                <th>
+                <th style="text-align: left;">
                     <i class="bi bi-card-text" style="margin-right:6px;"></i> Item
                 </th>
                 <th style="text-align: center;">
                     <i class="bi bi-three-dots" style="margin-right:6px;"></i> :
                 </th>
-                <th>
+                <th style="text-align: left;">
                     <i class="bi bi-info-circle" style="margin-right:6px;"></i> Keterangan
                 </th>
             </tr>
         </thead>
 
-        <tbody>
+        <tbody style="text-align: left;">
             @if($subdata->count())
                 @foreach($subdata as $i => $item)
                     <tr>
