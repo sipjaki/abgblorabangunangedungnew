@@ -378,24 +378,46 @@ th {
     </table>
 </div>
 {{-- Tombol Hapus Permohonan --}}
-<form id="deleteForm{{ $item->id }}"
-      action="{{ route('krksosbudsuratdelete.destroy', $item->id) }}"
-      method="POST"
-      style="display: inline;">
-    @csrf
-    @method('DELETE')
+<!-- Tombol Buka Modal -->
+<div style="display: flex; justify-content: flex-start; margin-top: 10px;">
+    <button type="button"
+            class="button-modern"
+            style="cursor: pointer; color: black;"
+            data-bs-toggle="modal"
+            data-bs-target="#confirmDeleteModal{{ $item->id }}">
+        <i class="bi bi-trash" style="margin-right: 5px;"></i>
+        Hapus Permohonan
+    </button>
+</div>
 
-    <div style="display: flex; justify-content: flex-start; margin-top: 10px;">
-        <button type="button"
-                class="button-modern"
-                style="cursor: pointer; color: black;"
-                data-bs-toggle="modal"
-                data-bs-target="#confirmDeleteModal{{ $item->id }}">
-            <i class="bi bi-trash" style="margin-right: 5px;"></i>
-            Hapus Permohonan
-        </button>
+<!-- Modal Konfirmasi -->
+<div class="modal fade" id="confirmDeleteModal{{ $item->id }}" tabindex="-1" aria-labelledby="confirmDeleteLabel{{ $item->id }}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="font-family: 'Times New Roman', Times, serif;">
+            <div class="modal-header" style="background-color: #dc3545; color: white;">
+                <h5 class="modal-title" id="confirmDeleteLabel{{ $item->id }}">Konfirmasi Hapus</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda yakin ingin menghapus permohonan ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
+                </button>
+
+                {{-- Form Delete DI DALAM Modal --}}
+                <form action="{{ route('krksosbudsuratdelete.destroy', $item->id) }}" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Ya, Hapus
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
-</form>
+</div>
 
 <!-- Modal Konfirmasi Hapus -->
 <div class="modal fade"
