@@ -132,17 +132,17 @@
     font-weight: normal;
     line-height: 1;
 ">
-    <h3 style="margin: 2px 0; font-size: 18px; font-weight: normal; font-family: 'Times New Roman', Times, serif !important;">
-        <strong>PEMERINTAH KABUPATEN BLORA</strong>
+    <h3 style="margin: 2px 0; font-size: 18px; font-weight: normal;">
+        <strong style=" font-family: 'Times New Roman', Times, serif !important;">PEMERINTAH KABUPATEN BLORA</strong>
     </h3>
-    <h3 style="margin: 2px 0; font-size: 18px; font-weight: normal; font-family: 'Times New Roman', Times, serif !important;">
-        <strong>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</strong>
+    <h3 style="margin: 2px 0; font-size: 18px; font-weight: normal;">
+        <strong style=" font-family: 'Times New Roman', Times, serif !important;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</strong>
     </h3>
-    <p style="margin: 4px 0; font-size: 14px; font-weight: normal; font-family: 'Times New Roman', Times, serif !important;">
-        <strong>Jl. Nusantara No. 62 Telp. (0296) 531004</strong>
+    <p style="margin: 4px 0; font-size: 14px; font-weight: normal;">
+        <strong style=" font-family: 'Times New Roman', Times, serif !important;">Jl. Nusantara No. 62 Telp. (0296) 531004</strong>
     </p>
-    <h3 style="margin: 2px 0; font-size: 18px; font-weight: normal; font-family: 'Times New Roman', Times, serif !important;">
-        <strong>BLORA 58214</strong>
+    <h3 style="margin: 2px 0; font-size: 18px; font-weight: normal;">
+        <strong style=" font-family: 'Times New Roman', Times, serif !important;">BLORA 58214</strong>
     </h3>
 </div>
 
