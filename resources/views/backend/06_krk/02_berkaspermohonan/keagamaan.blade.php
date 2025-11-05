@@ -194,47 +194,55 @@ th {
                         <table class="table zebra-table">
                             <thead>
                                 <tr>
-                                    <th style="background-color: #ADD8E6;">No</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Pemohon</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Perusahaan</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Koordinat</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> NIK</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Tanggal Permohonan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-phone-alt"></i> Whatsapp</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Jumlah Lantai</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RT</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RW</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-city"></i> Kabupaten</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Kecamatan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-pin"></i> Kelurahan/Desa</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lokasi Bangunan</th>
-
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lihat Permohonan</th>
-
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> KTP</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-address-card"></i> NPWP</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-file-alt"></i> Sertifikat Tanah</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-paperclip"></i> Lampiran OSS</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-file-invoice-dollar"></i> Bukti PBB</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-check-circle"></i> Dok Validasi DPUPR</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-drafting-compass"></i> Site Plan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-pen-fancy"></i> Tanda Tangan</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
+<th style="background-color: #ADD8E6;">No</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon
 </th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan
 </th>
-                             <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Selesai
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-calendar-date-fill" style="margin-right: 6px;"></i> Tanggal Permohonan
 </th>
-       <th style="background-color: #ADD8E6;">Aksi</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-bounding-box" style="margin-right: 6px;"></i> Luas Tanah
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Dok Lapangan
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-clipboard2-check-fill" style="margin-right: 6px;"></i> Status Cek Lapangan
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-stamp-fill" style="margin-right: 6px;"></i> Olah Data KRK
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-file-earmark-plus-fill" style="margin-right: 6px;"></i> Buat Data KRK
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-folder-check" style="margin-right: 6px;"></i> Berkas Final KRK
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai
+</th>
+<th style="background-color: #ADD8E6;">
+    <i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi
+</th>
                                 </tr>
                             </thead>
                               <tbody id="tableBody">
@@ -267,7 +275,7 @@ th {
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkkeagamaanpermohonan.show', $item->id) }}"
                     class="button-modern">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
                                     <style>
