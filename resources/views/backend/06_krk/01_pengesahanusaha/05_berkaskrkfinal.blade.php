@@ -186,77 +186,80 @@
         @if($subdata->count())
             @foreach($subdata as $i => $item)
                 <tr>
-                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">1</td>
-                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Nomor Registrasi KRK</td>
-                    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-                    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->nomorregistrasi ?? '-' }}</td>
-                </tr>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">1</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Nomor Registrasi KRK</td>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">
+        {{ $item->nomorregistrasi ?? '-' }}
+    </td>
+</tr>
+
             @endforeach
         @endif
+<tr>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">2</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Tanggal KRK Dibuat</td>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">
+        {{ $data->tanggalpermohonan ? \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') : 'Belum Dibuatkan' }}
+    </td>
+</tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">2</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Tanggal KRK Dibuat</td>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">
-                {{ $data->tanggalpermohonan ? \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') : 'Belum Dibuatkan' }}
-            </td>
-        </tr>
+<tr>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">3</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Nomor Induk Kependudukan (NIK)</td>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">{{ $data->nik ?? 'Belum Dibuatkan' }}</td>
+</tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">3</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Nomor Induk Kependudukan (NIK)</td>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">{{ $data->nik ?? 'Belum Dibuatkan' }}</td>
-        </tr>
+<tr>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">4</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Nama Pemohon</td>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">{{ $data->perorangan ?? 'Belum Dibuatkan' }}</td>
+</tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">4</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Nama Pemohon</td>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">{{ $data->perorangan ?? 'Belum Dibuatkan' }}</td>
-        </tr>
+<tr>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">5</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Nama Pemohon a/n Perusahaan</td>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">{{ $data->perusahaan ?? 'Belum Dibuatkan' }}</td>
+</tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">5</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Nama Pemohon a/n Perusahaan</td>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">{{ $data->perusahaan ?? 'Belum Dibuatkan' }}</td>
-        </tr>
+<tr>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">6</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">No Telepon</td>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">{{ $data->notelepon ?? 'Belum Dibuatkan' }}</td>
+</tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">6</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">No Telepon</td>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">{{ $data->notelepon ?? 'Belum Dibuatkan' }}</td>
-        </tr>
+<tr>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">7</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Alamat Pemohon</td>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; font-family: 'Times New Roman', Times, serif !important;">
+        {{ $data->alamatpemohon ?? '-' }}
+    </td>
+</tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">7</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Alamat Pemohon</td>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; font-family: 'Times New Roman', Times, serif !important;">
-                {{ $data->alamatpemohon ? $data->alamatpemohon . '-' : '-' }}
-            </td>
-        </tr>
+<tr>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">8</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Lokasi Bangunan</td>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; font-family: 'Times New Roman', Times, serif !important;">
+        {{ $data->lokasibangunan ?? '-' }}
+    </td>
+</tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">8</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Lokasi Bangunan</td>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; font-family: 'Times New Roman', Times, serif !important;">
-                {{ $data->lokasibangunan ? $data->lokasibangunan . '-' : '-' }}
-            </td>
-        </tr>
+<tr>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">9</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Koordinat Lokasi</td>
+    <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; font-family: 'Times New Roman', Times, serif !important;">
+        {{ $data->koordinatlokasi ?? '-' }}
+    </td>
+</tr>
 
-        <tr>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">9</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Koordinat Lokasi</td>
-            <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-            <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; font-family: 'Times New Roman', Times, serif !important;">
-                {{ $data->koordinatlokasi ?? '-' }}
-            </td>
-        </tr>
     </tbody>
 </table>
 
@@ -270,11 +273,12 @@
 <table class="table-striped" style="width: 100%; font-size: 12px; border-collapse: collapse; border: 1px solid #ddd; font-family: 'Times New Roman', Times, serif;">
     <thead>
         <tr style="background-color: #f2f2f2;">
-            <th style="width: 5%; border: 1px solid #ddd; padding: 8px; font-family: 'Times New Roman', Times, serif !important;">No</th>
-            <th style="width: 35%; border: 1px solid #ddd; padding: 8px; font-family: 'Times New Roman', Times, serif !important;">Informasi</th>
-            <th style="width: 5%; border: 1px solid #ddd; padding: 8px; font-family: 'Times New Roman', Times, serif !important;">:</th>
-            <th style="width: 55%; border: 1px solid #ddd; padding: 8px; font-family: 'Times New Roman', Times, serif !important;">Keterangan</th>
-        </tr>
+    <th style="width: 5%; text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">No</th>
+    <th style="width: 35%; text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Informasi</th>
+    <th style="width: 5%; text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">:</th>
+    <th style="width: 55%; text-align: center; border: 1px solid #ddd; padding: 6px; font-family: 'Times New Roman', Times, serif !important;">Keterangan</th>
+</tr>
+
     </thead>
     <tbody>
         @if($subdata->count())
