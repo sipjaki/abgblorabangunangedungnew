@@ -425,8 +425,8 @@ th {
         @endif
     </tbody>
 </table>
-{{-- Tombol Aksi di Kanan (Hapus & Download PDF) --}}
 <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin: 20px 0;">
+
     <!-- Tombol Hapus -->
     <form id="deleteForm{{ $item->id }}" action="{{ route('krkusahasurat.destroy', $item->id) }}" method="POST" style="display: inline;">
         @csrf
@@ -439,11 +439,11 @@ th {
 
     <!-- Tombol Download -->
     <button id="downloadPdfBtn" class="button-baru">
-        <i class="bi bi-download" style="margin-right: 6px;"></i> Download PDF
+        <i class="bi bi-download" style="margin-right:6px;"></i> Download PDF
     </button>
 </div>
 
-<!-- Modal Konfirmasi Hapus -->
+<!-- Modal Konfirmasi -->
 <div class="modal fade" id="confirmDeleteModal{{ $item->id }}" tabindex="-1" aria-labelledby="confirmDeleteLabel{{ $item->id }}" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
