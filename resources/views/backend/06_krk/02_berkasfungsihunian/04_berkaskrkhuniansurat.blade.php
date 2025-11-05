@@ -131,9 +131,9 @@
                            }
 
                                    </script> --}}
-<a href="javascript:history.back();" style="text-decoration: none;">
+<a href="{{ url()->previous() }}" style="text-decoration: none;">
     <button class="button-modern">
-        <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+        <i class="bi bi-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
 </a>
 

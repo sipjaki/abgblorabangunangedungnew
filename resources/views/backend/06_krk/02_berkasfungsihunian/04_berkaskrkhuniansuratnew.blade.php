@@ -1,49 +1,3 @@
-<style>
-    body {
-           font-family: 'Poppins', sans-serif;
-       }
-       .zebra-table {
-       width: 100%;
-       border-collapse: collapse;
-       font-family: 'Poppins', sans-serif;
-       font-size: 14px;
-       border: 1px solid #e5e7eb;
-   }
-
-   .zebra-table th {
-       background-color: #ADD8E6; /* biru muda */
-       color: black;
-       text-align: center;
-       padding: 8px 12px;
-       border: 1px solid #e5e7eb;
-       white-space: nowrap;
-   }
-
-   .zebra-table td {
-       text-align: center;
-       padding: 8px 12px;
-       border: 1px solid #e5e7eb;
-       white-space: nowrap;
-   }
-
-   .zebra-table tbody tr:nth-child(odd) {
-       background-color: #ffffff;
-   }
-
-   .zebra-table tbody tr:nth-child(even) {
-       background-color: #f1f1f1;
-   }
-
-   .zebra-table tbody tr:hover {
-       background-color: #ffd100 !important;
-   }
-
-   th {
-       background-color: #ADD8E6;
-   }
-
-   </style>
-
    @include('backend.00_administrator.00_baganterpisah.01_header')
 
    <!--begin::Body-->
@@ -177,9 +131,10 @@
                            }
 
                                    </script> --}}
-<a href="javascript:history.back();" style="text-decoration: none;">
-    <button class="button-validasinew">
-        <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+
+<a href="{{ url()->previous() }}" style="text-decoration: none;">
+    <button class="button-modern">
+        <i class="bi bi-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
 </a>
 
@@ -308,7 +263,7 @@
                         <i class="fas fa-cogs"></i> Fungsi Utama Bangunan
                     </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Usaha" readonly>
+                        <input type="text" class="form-control" id="fungsibangunan" name="fungsibangunan" value="Fungsi Hunian" readonly>
                     </div>
                     @error('fungsibangunan')
                     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
@@ -551,7 +506,7 @@
       <!-- Tombol Submit -->
 <!-- Tombol trigger modal -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-    <button class="button-baru" type="button" onclick="openPengesahanModal()">
+    <button class="button-modern" type="button" onclick="openPengesahanModal()">
         <i class="fa fa-check-circle" style="margin-right: 5px;"></i>
         <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
     </button>
