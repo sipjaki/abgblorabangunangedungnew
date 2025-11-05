@@ -279,78 +279,56 @@
     @endif
 </td>
 
+@for ($i = 1; $i <= 6; $i++)
+    <td class="text-center align-top">
+        <div style="margin-top: 10px;">
+            @php
+                $fotoField = 'foto' . $i;
+                $fotoPath = $data->$fotoField;
+                $fotoFullPath = $fotoPath && file_exists(public_path('storage/' . $fotoPath))
+                    ? asset('storage/' . $fotoPath)
+                    : ($fotoPath ? asset($fotoPath) : null);
+            @endphp
 
-<td>
-    <div style="margin-top: 10px;">
-        @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
-            <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($data->foto1)
-            <img src="{{ asset($data->foto1) }}" alt="Foto Dokumentasi 1" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 1!</p>
-        @endif
-    </div>
-</td>
+            @if ($fotoFullPath)
+                <img src="{{ $fotoFullPath }}" alt="Foto Dokumentasi {{ $i }}"
+                    style="width: 100%; max-height: 200px; object-fit: contain; border-radius: 4px; border: 1px solid #ddd;"
+                    loading="lazy">
 
-<td>
-    <div style="margin-top: 10px;">
-        @if($data->foto2 && file_exists(public_path('storage/' . $data->foto2)))
-            <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($data->foto2)
-            <img src="{{ asset($data->foto2) }}" alt="Foto Dokumentasi 2" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 2!</p>
-        @endif
-    </div>
-</td>
+                <!-- Tombol Lihat Foto -->
+                <button type="button" class="btn btn-sm btn-primary mt-2" data-bs-toggle="modal"
+                    data-bs-target="#modalFoto{{ $i }}"
+                    style="font-size: 12px; background-color: navy; border-color: navy;">
+                    <i class="bi bi-eye"></i> Lihat Foto
+                </button>
 
-<td>
-    <div style="margin-top: 10px;">
-        @if($data->foto3 && file_exists(public_path('storage/' . $data->foto3)))
-            <img src="{{ asset('storage/' . $data->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($data->foto3)
-            <img src="{{ asset($data->foto3) }}" alt="Foto Dokumentasi 3" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 3!</p>
-        @endif
-    </div>
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($data->foto4 && file_exists(public_path('storage/' . $data->foto4)))
-            <img src="{{ asset('storage/' . $data->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($data->foto4)
-            <img src="{{ asset($data->foto4) }}" alt="Foto Dokumentasi 4" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 4!</p>
-        @endif
-    </div>
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($data->foto5 && file_exists(public_path('storage/' . $data->foto5)))
-            <img src="{{ asset('storage/' . $data->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($data->foto5)
-            <img src="{{ asset($data->foto5) }}" alt="Foto Dokumentasi 5" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 5!</p>
-        @endif
-    </div>
-</td>
-
-<td>
-    <div style="margin-top: 10px;">
-        @if($data->foto6 && file_exists(public_path('storage/' . $data->foto6)))
-            <img src="{{ asset('storage/' . $data->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @elseif($data->foto6)
-            <img src="{{ asset($data->foto6) }}" alt="Foto Dokumentasi 6" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
-        @else
-            <p style="font-size: 11px;">Tidak Ada Foto 6!</p>
-        @endif
-    </div>
-</td>
+                <!-- Modal -->
+                <div class="modal fade" id="modalFoto{{ $i }}" tabindex="-1" aria-labelledby="modalLabel{{ $i }}"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content border-0 shadow-lg rounded-3">
+                            <div class="modal-header" style="background-color: navy; color: white;">
+                                <h6 class="modal-title" id="modalLabel{{ $i }}">
+                                    <i class="bi bi-image" style="margin-right: 8px;"></i> Foto Dokumentasi {{ $i }}
+                                </h6>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center p-3">
+                                <div class="card border-0">
+                                    <img src="{{ $fotoFullPath }}" alt="Foto Dokumentasi {{ $i }}"
+                                        style="width: 100%; height: auto; border-radius: 8px;" class="shadow-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @else
+                <p style="font-size: 11px; margin-bottom: 4px;">Tidak Ada Foto {{ $i }}!</p>
+            @endif
+        </div>
+    </td>
+@endfor
 
 @canany(['superadmin', 'admin'])
 
@@ -361,7 +339,7 @@
             <a href="/bebujkkonstruksi/update/{{ $data->id }}" class="btn btn-sm btn-warning me-2" title="Ubah Data">
                 <i class="bi bi-pencil-square"></i>
             </a> --}}
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Hapus Data"
+            <a href="javascript:void(0)" class="button-merah" title="Hapus Data"
             data-bs-toggle="modal" data-bs-target="#deleteModal"
             data-id="{{ $data->id }}"
             onclick="setDeleteUrl(this)">
