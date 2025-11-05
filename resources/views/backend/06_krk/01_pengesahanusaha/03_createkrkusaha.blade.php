@@ -157,8 +157,8 @@
 <div class="container">
     <div class="row">
         <!-- Nama Kegiatan & Tanggal Kegiatan -->
-        <div class="col-md-6 mb-3">
-            <label class="form-label" for="kegiatan">
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern" for="kegiatan">
                 <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
             </label>
             <input type="text" id="kegiatan" name="kegiatan"
@@ -169,8 +169,8 @@
             @enderror
         </div>
 
-        <div class="col-md-6 mb-3">
-            <label class="form-label" for="tanggalkegiatan">
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern" for="tanggalkegiatan">
                 <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Tanggal Kegiatan
             </label>
             <input type="date" id="tanggalkegiatan" name="tanggalkegiatan"
@@ -186,8 +186,8 @@
 
     <!-- Berkas 1 & Berkas 2 -->
     <div class="row">
-        <div class="col-md-6 mb-3">
-            <label class="form-label" for="berkas1">
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern" for="berkas1">
                 <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Berkas Dukung 1
             </label>
             <input type="file" id="berkas1" name="berkas1" accept="application/pdf"
@@ -199,8 +199,8 @@
             <div class="mt-3" id="previewBerkas1" style="display:none;"></div>
         </div>
 
-        <div class="col-md-6 mb-3">
-            <label class="form-label" for="berkas2">
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern" for="berkas2">
                 <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Berkas Dukung 2
             </label>
             <input type="file" id="berkas2" name="berkas2" accept="application/pdf"
@@ -218,8 +218,8 @@
     <!-- Foto Dokumentasi 1–6 (2 kolom per baris) -->
     <div class="row">
         @for ($i = 1; $i <= 6; $i++)
-            <div class="col-md-6 mb-3">
-                <label class="form-label" for="foto{{ $i }}">
+            <div class="form-modern col-md-6 mb-3">
+                <label class="form-label-modern " for="foto{{ $i }}">
                     <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Dokumentasi {{ $i }}
                 </label>
                 <input type="file" id="foto{{ $i }}" name="foto{{ $i }}" accept="image/*"
