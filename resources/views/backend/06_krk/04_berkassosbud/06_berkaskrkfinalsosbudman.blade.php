@@ -160,7 +160,7 @@
     font-family: 'Times New Roman', Times, serif !important;
 ">
     KETERANGAN RENCANA KABUPATEN <br>
-    Nomor: 640/{{ $data->id }}.FH/{{ date('Y') }}
+    Nomor: 640/{{ $data->id }}.FSB/{{ date('Y') }}
 </div>
 
                                             <!-- Section I: Administrative Information -->
