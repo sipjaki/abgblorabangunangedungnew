@@ -148,7 +148,7 @@ th {
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
-        <button class="button-validasinew"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bekrkkeagamaanindex') }}';"
                 style="cursor: pointer; color:white;">
@@ -418,7 +418,7 @@ th {
 
 {{-- Tombol Download PDF di bawah kanan --}}
 <div style="display: flex; justify-content: flex-end; padding: 10px;">
-    <button id="downloadPdfBtn" class="button-modern" style="padding: 8px 16px; border-radius: 15px; border: none; cursor: pointer;">
+    <button id="downloadPdfBtn" class="button-baru" style="padding: 8px 16px; border-radius: 15px; border: none; cursor: pointer;">
         <i class="bi bi-download" style="margin-right:6px;"></i> Download PDF
     </button>
 </div>
