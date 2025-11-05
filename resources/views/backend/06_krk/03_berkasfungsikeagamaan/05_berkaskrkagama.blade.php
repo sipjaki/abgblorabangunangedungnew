@@ -111,7 +111,7 @@ th {
 
          @canany(['konsultanbantek'])
    <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-    <button class="button-kembali"
+    <button class="button-modern"
             type="button"
             onclick="location.href='{{ url()->previous() }}';"
             style="cursor: pointer; color:black;">
@@ -123,7 +123,7 @@ th {
 
          @canany(['dinas'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekdinasasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -135,7 +135,7 @@ th {
 
          @canany(['pemohonbantek'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:10px;">
-        <button class="button-kembali"
+        <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bebantekpemohonasistensiindex') }}';"
                 style="cursor: pointer; color:black;">
@@ -410,8 +410,7 @@ th {
 
 {{-- Tombol download PDF di kanan atas bawah --}}
 <div style="display: flex; justify-content: flex-end; padding: 10px;">
-    <button id="downloadPdfBtn" class="button-bary"
-        style="padding: 8px 16px; border-radius: 15px; border: none; cursor: pointer; ">
+    <button id="downloadPdfBtn" class="button-modern">
         <i class="bi bi-download" style="margin-right:6px;"></i> Download PDF
     </button>
 </div>
