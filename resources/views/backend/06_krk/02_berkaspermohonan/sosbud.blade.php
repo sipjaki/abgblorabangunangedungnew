@@ -151,7 +151,7 @@ th {
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Pemohon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
                             function updateEntries() {
@@ -179,7 +179,7 @@ th {
 
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-newvalidasi" style="color: black;">
+    <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
@@ -195,44 +195,44 @@ th {
                             <thead>
                                 <tr>
                                     <th style="background-color: #ADD8E6;">No</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Pemohon</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Perusahaan</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Koordinat</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> NIK</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-alt"></i> Tanggal Permohonan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-phone-alt"></i> Whatsapp</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Jumlah Lantai</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RT</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-home"></i> RW</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-city"></i> Kabupaten</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Kecamatan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-map-pin"></i> Kelurahan/Desa</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lokasi Bangunan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-user"></i> Pemohon</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Perusahaan</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-map-marker-alt"></i> Koordinat</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-id-card"></i> NIK</th> --}}
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-calendar-alt"></i> Tanggal Permohonan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-phone-alt"></i> Whatsapp</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-landmark"></i> Luas Tanah</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-layer-group"></i> Jumlah Lantai</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-home"></i> RT</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-home"></i> RW</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-city"></i> Kabupaten</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-map-marker-alt"></i> Kecamatan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-map-pin"></i> Kelurahan/Desa</th> --}}
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Lokasi Bangunan</th>
 
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Lihat Permohonan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Lihat Permohonan</th>
 
-                                    {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-id-card"></i> KTP</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-address-card"></i> NPWP</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-file-alt"></i> Sertifikat Tanah</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-paperclip"></i> Lampiran OSS</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-file-invoice-dollar"></i> Bukti PBB</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-check-circle"></i> Dok Validasi DPUPR</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-drafting-compass"></i> Site Plan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-pen-fancy"></i> Tanda Tangan</th> --}}
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Verifikasi DPUPR</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Dok Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-tasks"></i> Status Cek Lapangan</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Olah Data KRK</th>
-                                    <th style="background-color: #ADD8E6;"><i class="fas fa-stamp"></i> Buat Data KRK</th>
+                                    {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-id-card"></i> KTP</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-address-card"></i> NPWP</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-file-alt"></i> Sertifikat Tanah</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-paperclip"></i> Lampiran OSS</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-file-invoice-dollar"></i> Bukti PBB</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-check-circle"></i> Dok Validasi DPUPR</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-drafting-compass"></i> Site Plan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-pen-fancy"></i> Tanda Tangan</th> --}}
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-tasks"></i> Verifikasi DPUPR</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-tasks"></i> Dok Lapangan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-tasks"></i> Status Cek Lapangan</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-stamp"></i> Olah Data KRK</th>
+                                    <th style="background-color: #ADD8E6;"><i class="bi bi-stamp"></i> Buat Data KRK</th>
                              <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Status Olah Data
+    <i class="bi bi-database" style="margin-right: 6px;"></i> Status Olah Data
 </th>
                              <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Berkas Final KRK
+    <i class="bi bi-database" style="margin-right: 6px;"></i> Berkas Final KRK
 </th>
                              <th style="background-color: #ADD8E6;">
-    <i class="fas fa-database" style="margin-right: 6px;"></i> Selesai
+    <i class="bi bi-database" style="margin-right: 6px;"></i> Selesai
 </th>
        <th style="background-color: #ADD8E6;">Aksi</th>
                                 </tr>
@@ -266,8 +266,8 @@ th {
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrksosbudpermohonan.show', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
+                    class="button-modern">
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
                                     <style>
@@ -311,7 +311,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button class="button-modern" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -382,7 +382,7 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrksosbud.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
@@ -403,7 +403,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
@@ -483,18 +483,12 @@ th {
                                 <!-- Tombol Triger Modal -->
                                 <button type="button"
                                     onclick="openValidationModal({{ $item->id }})"
-                                    class="button-merah"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #dc3545; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#dc3545'; this.style.border='1px solid #dc3545';"
-                                    onmouseout="this.style.backgroundColor='#dc3545'; this.style.color='black'; this.style.border='none';">
+                                    class="button-merah">
                                     <i class="bi bi-file-earmark-check" style="margin-right: 5px;"></i> Belum di Setujui !
                                 </button>
                                 @else
                                 <!-- Tombol SUDAH Validasi -->
-                                <button class="button-hijau"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #28a745; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#28a745'; this.style.border='1px solid #28a745';"
-                                    onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white'; this.style.border='none';">
+                                <button class="button-hijau">
                                     <i class="bi bi-check-circle-fill" style="margin-right: 5px;"></i> Silahkan Buat Dok KRK
                                 </button>
                                 @endif
@@ -591,10 +585,6 @@ th {
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
     <button class="button-merah"
         disabled
-        style="background-color: #dc3545; color: white; border: none; padding: 10px 25px;
-               border-radius: 15px; font-size: 14px; cursor: not-allowed;
-               display: flex; align-items: center; justify-content: center;
-               opacity: 0.6;"
         title="Silakan validasi terlebih dahulu"
     >
         <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Otomatis
@@ -604,10 +594,6 @@ th {
         <!-- SUDAH DIVALIDASI tapi data pengesahan sudah ada, tombol hijau tapi nonaktif -->
         <button class="button-download"
             disabled
-            style="border: none; padding: 10px 25px;
-                   border-radius: 15px; font-size: 14px; cursor: not-allowed;
-                   display: flex; align-items: center; justify-content: center;
-                   opacity: 0.7;"
             title="Dokumen pengesahan sudah ada"
         >
             <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Otomatis
@@ -615,13 +601,7 @@ th {
     @else
         <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
         <a href="{{ route('permohonan.perpengesahansosbud', $item->id) }}" style="text-decoration: none;">
-            <button class="button-hijau"
-                onmouseover="this.style.backgroundColor='#D1FAE5'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
-                style="background-color:#28a745; color: white; border: none; padding: 10px 25px;
-                       border-radius: 15px; font-size: 14px; cursor: pointer;
-                       display: flex; align-items: center; justify-content: center;
-                       transition: background-color 0.3s, color 0.3s;">
+            <button class="button-hijau">
                 <i class="bi bi-pencil-fill" style="margin-right: 8px;"></i> Otomatis
             </button>
         </a>
@@ -632,11 +612,7 @@ th {
     <!-- BELUM DIVALIDASI, tombol nonaktif merah -->
     <button class="button-merah"
         disabled
-        style="background-color: #dc3545; color: white; border: none; padding: 10px 25px;
-               border-radius: 15px; font-size: 14px; cursor: not-allowed;
-               display: flex; align-items: center; justify-content: center;
-               opacity: 0.6;"
-        title="Silakan validasi terlebih dahulu"
+       title="Silakan validasi terlebih dahulu"
     >
         <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
     </button>
@@ -645,10 +621,6 @@ th {
         <!-- SUDAH DIVALIDASI tapi data pengesahan sudah ada, tombol hijau tapi nonaktif -->
         <button class="button-download"
             disabled
-            style="border: none; padding: 10px 25px;
-                   border-radius: 15px; font-size: 14px; cursor: not-allowed;
-                   display: flex; align-items: center; justify-content: center;
-                   opacity: 0.7;"
             title="Dokumen pengesahan sudah ada"
         >
             <i class="bi bi-pencil-fill" style="margin-right: 5px;"></i> Manual
@@ -656,13 +628,7 @@ th {
     @else
         <!-- SUDAH DIVALIDASI dan data pengesahan belum ada, tombol aktif dan bisa diklik -->
         <a href="{{ route('perpengesahansosbudman', $item->id) }}" style="text-decoration: none;">
-            <button class="button-hijau"
-                onmouseover="this.style.backgroundColor='#D1FAE5'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
-                style="background-color:#28a745; color: white; border: none; padding: 10px 25px;
-                       border-radius: 15px; font-size: 14px; cursor: pointer;
-                       display: flex; align-items: center; justify-content: center;
-                       transition: background-color 0.3s, color 0.3s;">
+            <button class="button-hijau">
                 <i class="bi bi-pencil-fill" style="margin-right: 8px;"></i> Manual
             </button>
         </a>
@@ -678,7 +644,6 @@ th {
 @else
     <button
         class="button-merah"
-        style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Dokumen Belum Ada
     </button>
@@ -703,7 +668,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
@@ -777,16 +742,12 @@ th {
 
 @if($subdata->where('krksosbud_id', $item->id)->count() > 0)
     <a href="{{ route('permohonan.permohonankrksosbudfinal', $item->id) }}"
-        class="button-hijau"
-        style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #10B981; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#10B981'; this.style.border='1px solid #10B981';"
-        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.border='none';">
+        class="button-hijau">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Dok TTD Otomatis
     </a>
 @else
     <button
         class="button-merah"
-        style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Berkas Final Belum Ada
     </button>
@@ -794,23 +755,19 @@ th {
 
 @if($subdata->where('krksosbud_id', $item->id)->count() > 0)
     <a href="{{ route('permohonankrksosbudfinalman', $item->id) }}"
-        class="button-hijau"
-        style="text-decoration: none; border-radius: 15px; padding: 8px 16px; background-color: #10B981; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#10B981'; this.style.border='1px solid #10B981';"
-        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.style.border='none';">
+        class="button-hijau">
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Dok TTD Manual
     </a>
 @else
     <button
         class="button-merah"
-        style="cursor: not-allowed; border-radius: 15px; padding: 8px 16px; background-color: #DC3545; color: white; border: none;"
         disabled>
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Berkas Final Belum Ada
     </button>
 @endif
 
 <a href="{{ route('dokuploadkrksosbud', $item->id) }}"
-    class="button-baru">
+    class="button-modern">
     <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
 
 </a>
