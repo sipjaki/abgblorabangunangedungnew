@@ -871,7 +871,7 @@ th {
                                         </a> --}}
                                         <a href="javascript:void(0)" class="button-merah" title="Delete"
                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                           data-judul="{{ $item->namalengkap }}"
+                                           data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
                                             <i class="bi bi-trash"></i>
                                         </a>
@@ -944,12 +944,11 @@ th {
                          </div>
                      </div>
                  </div>
-
                  <script>
                  function setDeleteUrl(button) {
-                     var namalengkap = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = namalengkap;
-                     var deleteUrl = "/bebujkkonstruksi/delete/" + encodeURIComponent(namalengkap);
+                     var id = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = id;
+                     var deleteUrl = "/dokbekrksosbuddelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

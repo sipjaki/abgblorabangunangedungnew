@@ -586,6 +586,9 @@ Route::post('/krksosbufnoterbitnew/{id}', [KrkController::class, 'krksosbufnoter
 Route::put('/valberkassosbud4/{id}', [KrkController::class, 'valberkassosbud4'])->name('valberkassosbud3.update');
 
 
+Route::delete('/dokbekrksosbuddelete/{id}', [KrkController::class, 'dokbekrksosbuddelete'])->middleware('auth')->name('delete.dokbekrksosbuddelete');
+
+
 Route::get('/bekrksosbudperbaikan/{id}', [KrkController::class, 'bekrksosbudperbaikan'])->middleware('auth')->name('bekrksosbudperbaikan.perbaikan');
 Route::post('/bekrksosbudperbaikannew/{id}', [KrkController::class, 'bekrksosbudperbaikannew'])->middleware('auth')->name('bekrksosbudperbaikannewupdate');
 
