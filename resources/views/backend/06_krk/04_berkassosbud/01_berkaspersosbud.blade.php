@@ -706,6 +706,13 @@ th {
     <td style="text-align: left;">{{ $data->kabupaten ?? '-' }}</td>
 </tr>
 
+<tr>
+    <td style="text-align: center;">15</td>
+    <td style="text-align: left;"><i class="bi bi-globe" style="margin-right:6px;"></i> Alamat Pemohon</td>
+    <td style="text-align: center;">:</td>
+    <td style="text-align: left;">{{ $data->alamatpemohon ?? '-' }}</td>
+</tr>
+
 
 </table>
 
@@ -753,7 +760,8 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        {{-- <p>Data belum diupdate</p> --}}
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
 
@@ -781,7 +789,7 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
             </td>
@@ -808,7 +816,7 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
             </td>
@@ -890,7 +898,7 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
             </td>
@@ -917,7 +925,7 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
             </td>
@@ -969,7 +977,7 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
 
@@ -997,7 +1005,7 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
             </td>
