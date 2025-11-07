@@ -417,9 +417,9 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 
-<div class="row mt-3">
+<div class="form-modern row mt-3">
     <!-- Kabupaten (dikunci) -->
-    <div class="form-modern col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
+    <div class="col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
         <label class="form-label d-flex align-items-center" for="kabupaten">
             <i class="bi bi-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
         </label>
@@ -429,7 +429,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <input type="hidden" name="kabupaten" value="kabupaten blora" style="font-size: 16px;">
     </div>
 <!-- Kecamatan (dinamis dari controller) -->
-<div class="form-modern col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
+<div class="col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
 <label class="form-label d-flex align-items-center" for="kecamatanblora_id">
     <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i> Kecamatan
 </label>
@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <!-- Kelurahan/Desa -->
-<div class="form-modern col-md-4" style="margin-top: -40px;">
+<div class="col-md-4" style="margin-top: -40px;">
     <label for="kelurahandesa_id" class="form-label d-flex align-items-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"/>
