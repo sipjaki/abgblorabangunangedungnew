@@ -272,14 +272,35 @@
                         <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
                     @enderror
                 </div>
+<div class="input-group" style="position: relative;">
+    <input type="password" name="password" id="password" placeholder="Password" required
+        style="padding-right: 35px;" />
+    <i class="fas fa-lock" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i>
 
-                <div class="input-group">
-                    <input type="password" name="password" placeholder="Password" required />
-                    <i class="fas fa-lock"></i>
-                    @error('password')
-                        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
-                    @enderror
-                </div>
+    <!-- tombol show/hide -->
+    <i class="fas fa-eye" id="togglePassword"
+        style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: gray;"></i>
+
+    @error('password')
+        <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function () {
+        // ubah tipe input
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+
+        // ubah ikon
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+
 
                 <button type="submit" class="btn-login" style="font-size: 16px;">Login</button>
 
