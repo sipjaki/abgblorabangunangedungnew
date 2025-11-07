@@ -340,6 +340,66 @@ $datajumlahkrkmenara_terbit = krkmenara::where('verifikasi4', 'sudah')->count();
     ]);
 }
 
+public function bekrkindexnew()
+{
+    $user = Auth::user();
+    $data = krkusaha::paginate(15); // Data paginasi
+
+    $datajumlahkrkusaha = krkusaha::count(); // Hitung total semua data
+    $datajumlahkrkhunian = krkhunian::count(); // Hitung total semua data
+    $datajumlahkrkkeagamaan = krkkeagamaan::count(); // Hitung total semua data
+    $datajumlahkrksosbud = krksosbud::count(); // Hitung total semua data
+    $datajumlahkrkmenara = krkmenara::count(); // Hitung total semua data
+
+      $datajumlahkrkusaha_dikembalikan = krkusaha::where('verifikasi1', 'dikembalikan')->count();
+      $datajumlahkrkhunian_dikembalikan = krkhunian::where('verifikasi1', 'dikembalikan')->count();
+      $datajumlahkrkagama_dikembalikan = krkkeagamaan::where('verifikasi1', 'dikembalikan')->count();
+      $datajumlahkrksosbud_dikembalikan = krksosbud::where('verifikasi1', 'dikembalikan')->count();
+      $datajumlahkrkmenara_dikembalikan = krkmenara::where('verifikasi1', 'dikembalikan')->count();
+
+$datajumlahkrkusaha_lapangan = krkusaha::where('verifikasi2', 'sudah')->count();
+$datajumlahkrkhunian_lapangan = krkhunian::where('verifikasi2', 'sudah')->count();
+$datajumlahkrkagama_lapangan = krkkeagamaan::where('verifikasi2', 'sudah')->count();
+$datajumlahkrksosbud_lapangan = krksosbud::where('verifikasi2', 'sudah')->count();
+$datajumlahkrkmenara_lapangan = krkmenara::where('verifikasi2', 'sudah')->count();
+
+$datajumlahkrkusaha_terbit = krkusaha::where('verifikasi4', 'sudah')->count();
+$datajumlahkrkhunian_terbit = krkhunian::where('verifikasi4', 'sudah')->count();
+$datajumlahkrkagama_terbit = krkkeagamaan::where('verifikasi4', 'sudah')->count();
+$datajumlahkrksosbud_terbit = krksosbud::where('verifikasi4', 'sudah')->count();
+$datajumlahkrkmenara_terbit = krkmenara::where('verifikasi4', 'sudah')->count();
+
+    return view('backend.06_krk.00_percobaan.index', [
+        'title' => 'Permohonan KRK Bangunan Gedung',
+        'data' => $data,
+        'user' => $user,
+        'datajumlahkrkusaha' => $datajumlahkrkusaha,
+        'datajumlahkrkhunian' => $datajumlahkrkhunian,
+        'datajumlahkrkkeagamaan' => $datajumlahkrkkeagamaan,
+        'datajumlahkrksosbud' => $datajumlahkrksosbud,
+        'datajumlahkrkmenara' => $datajumlahkrkmenara,
+
+        'datajumlahkrkusaha_dikembalikan' => $datajumlahkrkusaha_dikembalikan,
+        'datajumlahkrkhunian_dikembalikan' => $datajumlahkrkhunian_dikembalikan,
+        'datajumlahkrkagama_dikembalikan' => $datajumlahkrkagama_dikembalikan,
+        'datajumlahkrksosbud_dikembalikan' => $datajumlahkrksosbud_dikembalikan,
+        'datajumlahkrkmenara_dikembalikan' => $datajumlahkrkmenara_dikembalikan,
+
+        'datajumlahkrkusaha_lapangan' => $datajumlahkrkusaha_lapangan,
+        'datajumlahkrkhunian_lapangan' => $datajumlahkrkhunian_lapangan,
+        'datajumlahkrkagama_lapangan' => $datajumlahkrkagama_lapangan,
+        'datajumlahkrksosbud_lapangan' => $datajumlahkrksosbud_lapangan,
+        'datajumlahkrkmenara_lapangan' => $datajumlahkrkmenara_lapangan,
+
+        'datajumlahkrkusaha_terbit' => $datajumlahkrkusaha_terbit,
+        'datajumlahkrkhunian_terbit' => $datajumlahkrkhunian_terbit,
+        'datajumlahkrkagama_terbit' => $datajumlahkrkagama_terbit,
+        'datajumlahkrksosbud_terbit' => $datajumlahkrksosbud_terbit,
+        'datajumlahkrkmenara_terbit' => $datajumlahkrkmenara_terbit,
+
+    ]);
+}
+
       public function bekrkusaha(Request $request)
 {
     $user = Auth::user();
@@ -2189,6 +2249,63 @@ public function bekrksosbud(Request $request)
 
     return view('backend.06_krk.02_berkaspermohonan.sosbud', [
         'title' => 'Permohonan KRK Fungsi Sosial Budaya Bangunan Gedung',
+        'data' => $berkasusaha,
+        'subdata' => $subdata,
+        'user' => $user,
+    ]);
+}
+
+public function bekrksosbudnew(Request $request)
+{
+    $user = Auth::user();
+    $search = $request->input('search');
+    $perPage = $request->input('perPage', 10);
+
+    // Query dasar
+    $query = krksosbud::query();
+
+    // Filter pencarian jika ada input 'search'
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('perorangan', 'like', "%{$search}%")
+              ->orWhere('perusahaan', 'like', "%{$search}%")
+              ->orWhere('nik', 'like', "%{$search}%")
+              ->orWhere('koordinatlokasi', 'like', "%{$search}%")
+              ->orWhere('notelepon', 'like', "%{$search}%")
+              ->orWhere('luastanah', 'like', "%{$search}%")
+              ->orWhere('jumlahlantai', 'like', "%{$search}%")
+              ->orWhere('rt', 'like', "%{$search}%")
+              ->orWhere('rw', 'like', "%{$search}%")
+              ->orWhere('kabupaten', 'like', "%{$search}%")
+              ->orWhere('lokasibangunan', 'like', "%{$search}%")
+              ->orWhereDate('tanggalpermohonan', $search);
+
+            $q->orWhereHas('kecamatanblora', function ($sub) use ($search) {
+                $sub->where('kecamatanblora', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('kelurahandesa', function ($sub) use ($search) {
+                $sub->where('desa', 'like', "%{$search}%");
+            });
+
+            $q->orWhereHas('user', function ($sub) use ($search) {
+                $sub->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%");
+            });
+        });
+    }
+
+    // Ambil data utama paginasi
+    $berkasusaha = $query->latest()->paginate($perPage)->appends($request->all());
+
+    // Ambil semua ID krkusaha yang muncul di hasil paginasi
+    $krkusahaIds = $berkasusaha->pluck('id');
+
+    // Ambil data sub dari relasi krkusahasurat
+    $subdata = krkusahasurat::whereIn('krksosbud_id', $krkusahaIds)->get();
+
+    return view('backend.06_krk.02_berkaspermohonan.sosbudnew', [
+        'title' => 'Percobaan KRK Sosbud',
         'data' => $berkasusaha,
         'subdata' => $subdata,
         'user' => $user,

@@ -468,6 +468,7 @@ Route::delete('/dokbekrkusahadelete/{id}', [KrkController::class, 'dokbekrkusaha
 
 // MENU KRK HUNIAN
 Route::get('/bekrkindex', [KrkController::class, 'bekrkindex']);
+Route::get('/bekrkindexnew', [KrkController::class, 'bekrkindexnew']);
 // -------
 Route::get('/bekrkhunian', [KrkController::class, 'bekrkhunian'])->name('bekrkhunianindex');
 
@@ -553,6 +554,7 @@ Route::delete('/dokbekrkkeagamaandelete/{id}', [KrkController::class, 'dokbekrkk
 // -------
 // MENU KRK SOSIAL BUDAYA
 Route::get('/bekrksosbud', [KrkController::class, 'bekrksosbud'])->name('bekrksosbudindex');
+Route::get('/bekrksosbudnew', [KrkController::class, 'bekrksosbudnew'])->name('bekrksosbudindexnew');
 
 Route::get('/bekrksosbudpermohonan/{id}', [KrkController::class, 'bekrksosbudpermohonan'])->middleware('auth')->name('bekrksosbudpermohonan.show');
 Route::put('/validasikrksosbud/{id}', [KrkController::class, 'validasikrksosbud'])->middleware('auth')->name('validasikrksosbud');
