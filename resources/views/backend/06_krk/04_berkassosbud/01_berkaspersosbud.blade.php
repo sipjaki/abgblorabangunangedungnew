@@ -703,8 +703,7 @@ th {
     <td style="text-align: center;">14</td>
     <td style="text-align: left;"><i class="bi bi-globe" style="margin-right:6px;"></i> Kabupaten</td>
     <td style="text-align: center;">:</td>
-    <td style="text-align: left;">{{ ucfirst($data->kabupaten ?? '-') }}</td>
-
+    <td style="text-align: left;">{{ ucwords($data->kabupaten ?? '-') }}</td>
 </tr>
 
 <tr>
@@ -769,7 +768,7 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        {{-- <p>Data belum diupdate</p> --}}
+        {{-- <p>Data Belum Di Lengkapi !!/p> --}}
         <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
@@ -883,7 +882,7 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <p>Data Belum Di Lengkapi !!/p>
     @endif
 </div>
 
@@ -1116,7 +1115,7 @@ th {
             <p style="color: red; font-weight: bold;">File tidak ditemukan di server.</p>
         @endif
     @else
-        <p style="color: red; font-weight: bold;">Data belum diupdate.</p>
+        <p style="color: red; font-weight: bold;">Data Belum Di Lengkapi !!</p>
     @endif
 </div>
 
@@ -1369,7 +1368,7 @@ th {
             <p style="color: red; font-weight: bold;">File tidak ditemukan di server.</p>
         @endif
     @else
-        <p style="color: red; font-weight: bold;">Data belum diupdate</p>
+        <p style="color: red; font-weight: bold;">Data Belum Di Lengkapi !!/p>
     @endif
 </div>
 
@@ -1535,7 +1534,7 @@ th {
                                                                     <iframe src="{{ asset($data->sertifikattanah) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
-                                                                    <p>Data belum diupdate</p>
+                                                                    <p>Data Belum Di Lengkapi !!/p>
                                                                 @endif
 
                                                                 </div>
@@ -1716,7 +1715,7 @@ th {
                                                                     <iframe src="{{ asset($data->lampiranoss) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
-                                                                    <p>Data belum diupdate</p>
+                                                                    <p>Data Belum Di Lengkapi !!/p>
                                                                 @endif
 
                                                                 </div>
@@ -1883,7 +1882,7 @@ th {
                                                                     <iframe src="{{ asset($data->buktipbb) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
-                                                                    <p>Data belum diupdate</p>
+                                                                    <p>Data Belum Di Lengkapi !!/p>
                                                                 @endif
 
                                                                 </div>
@@ -2050,7 +2049,7 @@ th {
                                                                     <iframe src="{{ asset($data->dokvalidasi) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
-                                                                    <p>Data belum diupdate</p>
+                                                                    <p>Data Belum Di Lengkapi !!/p>
                                                                 @endif
 
                                                                 </div>
@@ -2217,7 +2216,7 @@ th {
                                                                     <iframe src="{{ asset($data->siteplan) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
-                                                                    <p>Data belum diupdate</p>
+                                                                    <p>Data Belum Di Lengkapi !!/p>
                                                                 @endif
 
                                                                 </div>
@@ -2384,7 +2383,7 @@ th {
                                                                     <iframe src="{{ asset($data->tandatangan) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
-                                                                    <p>Data belum diupdate</p>
+                                                                    <p>Data Belum Di Lengkapi !!/p>
                                                                 @endif
 
                                                                 </div>
