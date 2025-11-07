@@ -252,21 +252,17 @@
             <!-- Tombol KTP -->
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-  @if($item->validasiberkas1 == 'lolos')
-    <button
-        class="button-hijau"
-        type="button"
-        disabled
-    >
-        <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
-    </button>
+<td style="text-align: center; height: 60px;">
+    @if($item->validasiberkas1 == 'lolos')
+        <button type="button" class="button-hijau" disabled>
+            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
+        </button>
     @elseif($item->validasiberkas1 == 'dikembalikan')
-        <button class="button-merah" type="button" onclick="openModal({{ $item->id }})">
+        <button type="button" class="button-merah" onclick="openModal({{ $item->id }})">
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-modern" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary" style="color: black">
+        <button type="button" class="button-modern" onclick="openModal({{ $item->id }})" style="color: black;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
