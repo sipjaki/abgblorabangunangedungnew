@@ -1,48 +1,81 @@
-<style>
-  /* pastikan header makin di atas dari sticky-col body */
-  .zebra-table thead th {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: #ADD8E6; /* header color */
-    white-space: nowrap;
-  }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .table-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            position: relative;
+        }
 
-  /* kolom pertama sticky (NO) */
-  .col-sticky {
-    position: sticky;
-    left: 0;
-    z-index: 8;              /* di bawah thead tapi di atas baris biasa */
-    background: #ffffff;     /* pastikan background putih, supaya menutupi konten di belakang */
-    white-space: nowrap;
-  }
+        .zebra-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 100%;
+        }
 
-  /* kolom ke-2 sticky (Pemohon) - sesuaikan left = lebar kolom 1 */
-  .col-sticky-2 {
-    position: sticky;
-    left: 70px;              /* sama dengan width kolom NO (70px) */
-    z-index: 7;
-    background: #ffffff;
-    white-space: nowrap;
-  }
+        .zebra-table th {
+            background-color: #ADD8E6;
+            padding: 12px 15px;
+        }
 
-  /* memastikan header sticky untuk kolom sticky terlihat (overlap z-index) */
-  .col-sticky-head { z-index: 12; }    /* header untuk col-sticky (thead th) */
-  .col-sticky-2.col-sticky-head { z-index: 11; }
+        .zebra-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #dee2e6;
+        }
 
-  /* styling umum agar tidak membentuk collapse yang merusak sticky */
-  .zebra-table { border-collapse: separate; border-spacing: 0; }
-  .zebra-table th, .zebra-table td {
-    padding: 8px 10px;
-    vertical-align: middle;
-  }
+        .zebra-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
-  /* optional: warna baris zebra */
-  .zebra-table tbody tr:nth-child(odd) { background: #fff; }
-  .zebra-table tbody tr:nth-child(even) { background: #fbfdff; }
+        .zebra-table tbody tr:hover {
+            background-color: #e9ecef;
+        }
 
-  /* PENTING: jangan punya ancestor dengan transform/translate/overflow:hidden yang mempengaruhi sticky */
-</style>
+        /* Class untuk kolom yang akan tetap */
+        .sticky-column {
+            position: sticky;
+            left: 0;
+            z-index: 10;
+            background-color: #f8f9fa;
+        }
+
+        .sticky-column-header {
+            position: sticky;
+            left: 0;
+            z-index: 11;
+            background-color: #ADD8E6;
+        }
+
+        .sticky-column-2 {
+            position: sticky;
+            left: 50px; /* Sesuaikan dengan lebar kolom pertama */
+            z-index: 9;
+            background-color: #f8f9fa;
+        }
+
+        .sticky-column-header-2 {
+            position: sticky;
+            left: 50px; /* Sesuaikan dengan lebar kolom pertama */
+            z-index: 10;
+            background-color: #ADD8E6;
+        }
+
+        .sticky-column-3 {
+            position: sticky;
+            left: 200px; /* Sesuaikan dengan lebar kolom pertama + kedua */
+            z-index: 8;
+            background-color: #f8f9fa;
+        }
+
+        .sticky-column-header-3 {
+            position: sticky;
+            left: 200px; /* Sesuaikan dengan lebar kolom pertama + kedua */
+            z-index: 9;
+            background-color: #ADD8E6;
+        }
+    </style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -223,43 +256,34 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
-            <div class="table-responsive-custom" style="overflow-x:auto; width:100%; border-radius:20px;">
-  <table class="zebra-table" style="border-collapse: separate; border-spacing: 0; width: max-content; min-width:100%;">
-    <thead>
-      <tr>
-        <!-- Kolom NO (sticky kiri) -->
-        <th class="col-sticky col-sticky-head" style="width:70px; background-color:#ADD8E6;">
-          <i class="bi bi-list-ol" style="margin-right:6px;"></i> No
-        </th>
-        <!-- Jika mau dua kolom sticky (No + Pemohon), ubah class berikut menjadi col-sticky-2 -->
-        <th class="col-sticky-2 col-sticky-head" style="min-width:220px; background-color:#ADD8E6;">
-          <i class="bi bi-person-fill" style="margin-right:6px;"></i> Pemohon
-        </th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan/Instansi</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-aspect-ratio" style="margin-right: 6px;"></i> Luas Tanah</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Dok Lapangan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-clipboard-check" style="margin-right: 6px;"></i> Status Cek Lapangan</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-database-fill-gear" style="margin-right: 6px;"></i> Olah Data KRK</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-pencil-square" style="margin-right: 6px;"></i> Buat Data KRK</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-archive-fill" style="margin-right: 6px;"></i> Berkas Final KRK</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai</th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
-      </tr>
-    </thead>
-                      <tbody id="tableBody">
+               <div class="table-container">
+            <table class="zebra-table">
+                <thead>
+                    <tr>
+                        <th class="sticky-column-header"><i class="bi bi-list-ol" style="margin-right: 6px;"></i> No</th>
+                        <th class="sticky-column-header-2"><i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon</th>
+                        <th class="sticky-column-header-3"><i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan/Instansi</th>
+                        <th><i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
+                        <th><i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp</th>
+                        <th><i class="bi bi-aspect-ratio" style="margin-right: 6px;"></i> Luas Tanah</th>
+                        <th><i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan</th>
+                        <th><i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan</th>
+                        <th><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
+                        <th><i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Dok Lapangan</th>
+                        <th><i class="bi bi-clipboard-check" style="margin-right: 6px;"></i> Status Cek Lapangan</th>
+                        <th><i class="bi bi-database-fill-gear" style="margin-right: 6px;"></i> Olah Data KRK</th>
+                        <th><i class="bi bi-pencil-square" style="margin-right: 6px;"></i> Buat Data KRK</th>
+                        <th><i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data</th>
+                        <th><i class="bi bi-archive-fill" style="margin-right: 6px;"></i> Berkas Final KRK</th>
+                        <th><i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai</th>
+                        <th><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
+                    </tr>
+                </thead>
+                              <tbody id="tableBody">
                                 @forelse ($data as $item )
                                 <tr class="align-middle">
-                                     <td class="col-sticky" style="text-align:center; background: #fff;">{{ $loop->iteration }}</td>
-
-                                    <!-- kolom kedua kalau sticky juga -->
-                                    <td class="col-sticky-2" style="text-align:left; background: #fff;">{{ $item->perorangan }}</td>
-
+                                    <td style="text-align: center;">{{ $loop->iteration }}</td>
+                                    <td style="text-align: left;">{{$item->perorangan}}</td>
                                     <td style="text-align: left;">{{$item->perusahaan}}</td>
                                     {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
                                     <td style="text-align: center;">{{$item->nik}}</td> --}}
@@ -268,19 +292,9 @@
                                     </td>
                                     <td style="text-align: left;">{{$item->notelepon}}</td>
                                     <td style="text-align: center;">
-
                                         {{ number_format($item->luastanah, 0, ',', '.') }} M²
                                     </td>
-                                    {{-- <td style="text-align: center;">{{$item->jumlahlantai}} Lantai</td>
-                                    <td style="text-align: center;">{{$item->rt}}</td>
-                                    <td style="text-align: center;">{{$item->rw}}</td>
-                                    <td style="text-align: left;">
-                                        {{ strtoupper($item->kabupaten) }}
-                                    </td>
-                                    <td style="text-align: left;">{{$item->kecamatanblora->kecamatanblora}}</td>
-                                    <td style="text-align: left;">
-                                        {{ strtoupper($item->kelurahandesa->desa) }}
-                                    </td> --}}
+
                                     <td style="text-align: left;">{{$item->lokasibangunan}}</td>
 
                                        <td style="text-align: center;">
@@ -289,30 +303,6 @@
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
-                                    <style>
-                                        .btn-secondary {
-                                            background-color: #6c757d;
-                                            color: white;
-                                            border-radius: 15px;
-                                            padding: 8px 16px;
-                                            border: none;
-                                        }
-
-                                        .btn-secondary:hover {
-                                            background-color: white;
-                                            color: black;
-                                            border: 1px solid #6c757d; /* Optional: border on hover */
-                                        }
-
-                                        .btn-secondary i {
-                                            margin-right: 5px; /* Adjust the spacing between the icon and text */
-                                        }
-                                    </style>
-
-<!-- Tombol KTP -->
-
-
-
 
 <!-- Tombol Validasi -->
 <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
