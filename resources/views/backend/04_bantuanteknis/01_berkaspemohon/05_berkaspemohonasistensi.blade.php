@@ -147,7 +147,7 @@
 
     @canany(['superadmin', 'admin'])
     <a href="{{ route('bebantuanteknisindexmenu') }}">
-        <button class="button-modern button-abgblora" type="button"
+        <button class="button-modern" type="button"
             style="cursor: pointer; margin-left:5px; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
@@ -189,7 +189,7 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table id="tabelSuratbantuanteknis" class="table zebra-table"  class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+                        <table id="tabelSuratbantuanteknis" class="zebra-table"  class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
 
                         >
                             <thead>
