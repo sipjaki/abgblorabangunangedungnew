@@ -141,7 +141,7 @@
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarjenispermohonan')"
       class="button-modern"
-      style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+      >
       <i class="bi bi-download"></i> Download Excel
     </button>
 
@@ -207,7 +207,7 @@
 <th><i class="bi bi-upload"></i> Upload Berkas Bantek</th>
 <th><i class="bi bi-journal-check"></i> Terbitkan Surat</th>
             @can('superadmin')
-            <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
+            <th><i class="bi bi-tools"></i> Aksi</th>
             @endcan
 
     </tr>
@@ -625,7 +625,7 @@
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
-                                           <i class="bi bi-trash"></i>Hapus
+                                           <i class="bi bi-trash"></i>
                                         </a>
                                     </td>
                                     @endcan
