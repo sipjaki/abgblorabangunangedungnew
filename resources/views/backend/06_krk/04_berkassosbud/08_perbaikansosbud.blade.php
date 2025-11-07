@@ -173,8 +173,8 @@
     </div>
 </div>
 
-<div class="col-md-6">
-    <div class="form-modern mb-3">
+<div class="form-modern col-md-6">
+    <div class="mb-3">
         <label class="form-label-modern " for="jumlahlantai">
             <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
         </label>
@@ -205,9 +205,9 @@
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
 
-<div class="col-md-6">
-<div class="mb-3">
-    <label class="form-label" for="ktp">
+<div class="form-modern col-md-6">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="ktp">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload KTP (PDF)
     </label>
     <input type="file" id="ktp" name="ktp" accept="application/pdf"
@@ -227,8 +227,8 @@
 </div>
 
 
-<div class="mb-3">
-    <label class="form-label" for="npwp">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="npwp">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload NPWP (PDF)
     </label>
     <input type="file" id="npwp" name="npwp" accept="application/pdf"
@@ -250,10 +250,10 @@
 
 </div>
 
-<div class="col-md-6">
+<div class="form-modern col-md-6">
 
-    <div class="mb-3">
-    <label class="form-label" for="sertifikattanah">
+    <div class="form-modern mb-3">
+    <label class="form-label-modern" for="sertifikattanah">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Sertifikat Tanah (PDF)
     </label>
     <input type="file" id="sertifikattanah" name="sertifikattanah" accept="application/pdf"
@@ -292,8 +292,8 @@
     </div>
 </div> --}}
 
-  <div class="mb-3">
-        <label class="form-label" for="dokvalidasi">
+  <div class="form-modern mb-3">
+        <label class="form-label-modern" for="dokvalidasi">
             <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Dokumen Validasi (PDF)
         </label>
         <input type="file" id="dokvalidasi" name="dokvalidasi" accept="application/pdf"
@@ -314,9 +314,9 @@
 
 
 </div>
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="buktipbb">
+<div class="form-modern col-md-6">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="buktipbb">
             <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Bukti PBB (PDF)
         </label>
         <input type="file" id="buktipbb" name="buktipbb" accept="application/pdf"
@@ -336,10 +336,10 @@
     </div>
 
 </div>
-<div class="col-md-6">
+<div class="form-modern col-md-6">
 
-    <div class="mb-3">
-    <label class="form-label" for="siteplan">
+    <div class="form-modern mb-3">
+    <label class="form-label-modern" for="siteplan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Siteplan (PDF)
     </label>
     <input type="file" id="siteplan" name="siteplan" accept="application/pdf"
@@ -357,8 +357,8 @@
         Data belum di update. Silahkan upload berkas Siteplan.
     </div>
 </div>
-<div class="mb-3">
-    <label class="form-label" for="tandatangan">
+<div class="form-modern mb-3">
+    <label class="form-label-modern " for="tandatangan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Tanda Tangan (PDF/Jpeg)
     </label>
     <input type="file" id="tandatangan" name="tandatangan" accept="application/pdf,image/jpeg,image/png,image/jpg"
