@@ -204,7 +204,7 @@ th {
                                 <tr>
                                     <th style="background-color: #ADD8E6;">No</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Pemohon</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Perusahaan</th>
+<th style="background-color: #ADD8E6;"><i class="bi bi-building"></i> Perusahaan/Instansi</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-calendar-event"></i> Tanggal Permohonan</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-telephone-fill"></i> Whatsapp</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-bounding-box"></i> Luas Tanah</th>
