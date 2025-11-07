@@ -275,12 +275,13 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </div>
 
-<div class="row mt-3" style="margin-top: -25px;">
-    <div class="col-md-6" style="margin-top: -40px;">
+<div class="form-modern row mt-3" style="margin-top: -25px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="nik">
-                <i class="bi bi-user" style="margin-right: 8px; color: navy;"></i> (NIK)/KTP/<span style="color: red;">KITAS**</span>
-            </label>
+<label class="form-label d-flex align-items-center" for="nik">
+    <i class="bi bi-person-vcard" style="margin-right: 8px; color: navy;"></i>
+    NIK / KTP / <span style="color: red;">KITAS**</span>
+</label>
             <input type="number" name="nik" id="nik" placeholder="Nomor Induk Kependudukan"
                 class="form-control @error('nik') is-invalid @enderror"
                 value="{{ old('nik') }}"
