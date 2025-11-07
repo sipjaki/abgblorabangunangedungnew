@@ -150,7 +150,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Pemohon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
@@ -178,6 +178,39 @@ th {
                                 </script>
 
 
+                                                 <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
+            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
+                {{-- <option value="10">10</option> --}}
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+                <option value="150">150</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+                <option value="2000">2000</option>
+            </select>
+        </div>
+
+
+        <script>
+                  function updateEntries() {
+                let selectedValue = document.getElementById("entries").value;
+                let url = new URL(window.location.href);
+                url.searchParams.set("perPage", selectedValue);
+                window.location.href = url.toString();
+            }
+        </script>
+
+
+                     <a href="/bekrkindex" style="text-decoration: none;">
+    <button class="button-modern" style="color: black;">
+        <!-- Ikon Kembali -->
+        <i class="bi bi-house-door" style="margin-right: 8px;"></i> Menu Utama
+    </button>
+</a>
                      <a href="/bekrkindex" style="text-decoration: none;">
     <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
