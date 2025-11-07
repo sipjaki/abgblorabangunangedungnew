@@ -252,9 +252,6 @@
         <button
             type="button"
             class="button-hijau"
-            style="background-color: #10B981; color: white; border: none; border-radius: 8px;
-                   padding: 6px 16px; font-size: 13px; display: flex; align-items: center;
-                   justify-content: center; cursor: not-allowed; box-shadow: none;"
             disabled
         >
             <i class="bi bi-patch-check-fill" style="margin-right: 6px;"></i> Lolos
@@ -265,9 +262,6 @@
             type="button"
             class="button-merah"
             onclick="openModal({{ $item->id }})"
-            style="background-color: #F87171; color: white; border: none; border-radius: 8px;
-                   padding: 6px 16px; font-size: 13px; display: flex; align-items: center;
-                   justify-content: center; box-shadow: none; transition: 0.2s;"
         >
             <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Dikembalikan
         </button>
@@ -277,9 +271,6 @@
             type="button"
             class="button-modern"
             onclick="openModal({{ $item->id }})"
-            style="background-color: #EEF2FF; color: #1E3A8A; border: 1px solid #CBD5E1; border-radius: 8px;
-                   padding: 6px 16px; font-size: 13px; display: flex; align-items: center;
-                   justify-content: center; box-shadow: none; transition: 0.2s;"
         >
             <i class="bi bi-patch-check" style="margin-right: 6px;"></i> Validasi
         </button>
