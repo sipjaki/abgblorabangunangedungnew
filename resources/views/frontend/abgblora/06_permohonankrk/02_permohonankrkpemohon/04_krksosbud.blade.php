@@ -180,8 +180,10 @@
           <!-- Label -->
           <div class="mb-3">
             <label class="form-label d-flex align-items-center fw-bold text-primary">
-              <i class="bi bi-map-marker-alt me-2"></i>
-              Pilih Koordinat Lokasi di Kabupaten Blora
+              <button class="button-modern">
+                  <i class="bi bi-map-marker-alt me-2"></i>
+                  Pilih Koordinat Lokasi di Kabupaten Blora
+                </button>
             </label>
           </div>
 
@@ -231,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '© Hak Cipta | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
+        attribution: 'Aplikasi Bangunan Gedung ©Hak Cipta | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
     }).addTo(map);
 
     let marker = null;
