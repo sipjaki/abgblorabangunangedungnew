@@ -145,14 +145,14 @@
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_konsultanperencanateknis')"
       class="button-modern"
-      style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+      >
       <i class="bi bi-download"></i> Download Excel
     </button>
 
     <a href="/bebantekkonsultannew" style="text-decoration: none;">
       <button class="button-baru"
-        style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
-        <i class="bi bi-plus-circle"></i> Buat Baru
+        >
+        <i class="bi bi-plus-circle"></i> Tambah Konsultan
       </button>
     </a>
   </div>
@@ -200,19 +200,17 @@ function searchTable() {
                             <thead>
                                   <tr>
      <th>No</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-<th><i class="fas fa-user"></i> Nama Lengkap</th>
-<th><i class="fas fa-map-marker-alt"></i> Alamat</th>
-<th><i class="fas fa-phone"></i> No Telepon</th>
-<th><i class="fas fa-envelope"></i> Email</th>
-<th><i class="fas fa-id-card"></i> Nomor Induk Berusaha</th>
-<th><i class="fas fa-user-tie"></i> Penanggung Jawab Usaha (PJU)</th>
-<th><i class="fas fa-file-signature"></i> No Akta</th>
-<th><i class="fas fa-calendar-alt"></i> Tanggal</th>
-<th><i class="fas fa-user-edit"></i> Nama Notaris</th>
-<th><i class="fas fa-check-circle"></i> No Pengesahan</th>
-<th><i class="fas fa-tools"></i> Aksi</th>
+<th><i class="bi bi-person"></i> Nama Lengkap</th>
+<th><i class="bi bi-geo-alt"></i> Alamat</th>
+<th><i class="bi bi-telephone"></i> No Telepon</th>
+<th><i class="bi bi-envelope"></i> Email</th>
+<th><i class="bi bi-credit-card-2-front"></i> Nomor Induk Berusaha</th>
+<th><i class="bi bi-person-badge"></i> Penanggung Jawab Usaha (PJU)</th>
+<th><i class="bi bi-file-earmark-text"></i> No Akta</th>
+<th><i class="bi bi-calendar3"></i> Tanggal</th>
+<th><i class="bi bi-person-vcard"></i> Nama Notaris</th>
+<th><i class="bi bi-patch-check"></i> No Pengesahan</th>
+<th><i class="bi bi-tools"></i> Aksi</th>
 
     </tr>
                             </thead>
@@ -247,7 +245,7 @@ function searchTable() {
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                         onclick="setDeleteUrl(this)">
-                                        <i class="bi bi-trash"></i> Hapus
+                                        <i class="bi bi-trash"></i>
                                     </a>
                                 </td>
 
