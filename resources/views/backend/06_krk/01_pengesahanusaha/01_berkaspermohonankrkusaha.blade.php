@@ -690,10 +690,10 @@ th {
 <tr>
     <td style="text-align: center;">15</td>
     <td style="text-align: left;">
-        <i class="bi bi-geo-alt" style="margin-right:6px;"></i> Koordinat Lokasi
+        <i class="bi bi-geo-alt" style="margin-right:6px;"></i> Alamat Pemohon
     </td>
     <td style="text-align: center;">:</td>
-    <td style="text-align: left;">{{ $data->koordinatlokasi ?? '-' }}</td>
+    <td style="text-align: left;">{{ $data->alamatpemohon ?? '-' }}</td>
 </tr>
 
 
