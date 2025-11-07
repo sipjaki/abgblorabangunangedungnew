@@ -420,7 +420,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="form-modern row mt-3">
     <!-- Kabupaten (dikunci) -->
     <div class="col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
-        <label class="form-label d-flex align-items-center" for="kabupaten">
+        <label class="form-label-modern d-flex align-items-center" for="kabupaten">
             <i class="bi bi-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
         </label>
         <select name="kabupaten" id="kabupaten" class="form-control" readonly disabled>
@@ -430,7 +430,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 <!-- Kecamatan (dinamis dari controller) -->
 <div class="col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
-<label class="form-label d-flex align-items-center" for="kecamatanblora_id">
+<label class="form-label-modern d-flex align-items-center" for="kecamatanblora_id">
     <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i> Kecamatan
 </label>
     <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror">
@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <!-- Kelurahan/Desa -->
 <div class="col-md-4" style="margin-top: -40px;">
-    <label for="kelurahandesa_id" class="form-label d-flex align-items-center">
+    <label for="kelurahandesa_id" class="form-label-modern d-flex align-items-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"/>
             <path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/>
