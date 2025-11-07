@@ -146,7 +146,7 @@
 
 <!-- Perorangan -->
 <!-- Nama Pemohon -->
-<div class="form-modern">
+<div class="form-modern" style="margin-top:-25px;">
         <label class="form-label-modern d-flex align-items-center" for="perorangan">
         <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>
         Nama Pemohon (Nama Lengkap Sesuai dengan KTP)
@@ -160,8 +160,8 @@
 </div>
 
 <!-- Instansi/Perusahaan -->
-<div style="margin-top:-25px;">
-    <label class="form-label d-flex align-items-center" for="perusahaan">
+<div class="form-modern" style="margin-top:-25px;">
+    <label class="form-label-modern d-flex align-items-center" for="perusahaan">
         <i class="bi bi-buildings-fill" style="margin-right: 8px; color: navy;"></i>
         Instansi/Perusahaan
     </label>
@@ -205,7 +205,7 @@
           </div>
 
           <!-- Input -->
-          <div class="mt-3">
+          <div class="form-modern mt-3">
             <input type="text"
                    id="koordinatlokasi"
                    name="koordinatlokasi"
