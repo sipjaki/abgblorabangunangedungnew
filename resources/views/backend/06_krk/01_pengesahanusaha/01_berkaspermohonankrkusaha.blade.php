@@ -709,7 +709,7 @@ th {
     <table class="zebra-table table-striped">
         <tr>
     <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-person-vcard" style="margin-right:6px;"></i> KTP/<span style="color: red;">KITAS**</span>
+    <i class="bi bi-person-vcard" style="margin-right:6px;"></i> <button class="button-baru">KTP/<span style="color: red;">KITAS**</span></button>
 </td>
 <td style="text-align: center; font-size:16px;">
     <i class="bi bi-file-earmark-text" style="margin-right:6px;"></i> NPWP

@@ -181,7 +181,8 @@ th {
                      <a href="/bekrkindex" style="text-decoration: none;">
     <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
-<i class="bi bi-arrow-left" style="margin-right: 8px; color: navy;"></i> Menu Utama
+<i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i>
+ Menu Utama
     </button>
 </a>
 
