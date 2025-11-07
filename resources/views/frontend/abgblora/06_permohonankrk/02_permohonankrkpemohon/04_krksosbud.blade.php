@@ -205,7 +205,7 @@
           </div>
 
           <!-- Input -->
-          <div class="form-modern mt-3">
+          <div class="mt-3">
             <input type="text"
                    id="koordinatlokasi"
                    name="koordinatlokasi"
