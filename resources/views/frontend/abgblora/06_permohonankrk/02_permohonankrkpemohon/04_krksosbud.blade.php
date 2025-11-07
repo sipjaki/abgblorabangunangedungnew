@@ -490,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <div class="form-modern" style="margin-top: -25px;">
-    <label class="form-label d-flex align-items-center" for="lokasibangunan">
+    <label class="form-label-modern d-flex align-items-center" for="lokasibangunan">
         <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
     </label>
     <input type="text" id="lokasibangunan" name="lokasibangunan" placeholder="Lokasi Bangunan Gedung"
