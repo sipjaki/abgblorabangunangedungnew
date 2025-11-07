@@ -1,14 +1,47 @@
 <style>
-  th {
+  /* pastikan header makin di atas dari sticky-col body */
+  .zebra-table thead th {
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 10;
+    background-color: #ADD8E6; /* header color */
+    white-space: nowrap;
   }
 
-  .sticky-col {
+  /* kolom pertama sticky (NO) */
+  .col-sticky {
     position: sticky;
-    background-color: #fff;
+    left: 0;
+    z-index: 8;              /* di bawah thead tapi di atas baris biasa */
+    background: #ffffff;     /* pastikan background putih, supaya menutupi konten di belakang */
+    white-space: nowrap;
   }
+
+  /* kolom ke-2 sticky (Pemohon) - sesuaikan left = lebar kolom 1 */
+  .col-sticky-2 {
+    position: sticky;
+    left: 70px;              /* sama dengan width kolom NO (70px) */
+    z-index: 7;
+    background: #ffffff;
+    white-space: nowrap;
+  }
+
+  /* memastikan header sticky untuk kolom sticky terlihat (overlap z-index) */
+  .col-sticky-head { z-index: 12; }    /* header untuk col-sticky (thead th) */
+  .col-sticky-2.col-sticky-head { z-index: 11; }
+
+  /* styling umum agar tidak membentuk collapse yang merusak sticky */
+  .zebra-table { border-collapse: separate; border-spacing: 0; }
+  .zebra-table th, .zebra-table td {
+    padding: 8px 10px;
+    vertical-align: middle;
+  }
+
+  /* optional: warna baris zebra */
+  .zebra-table tbody tr:nth-child(odd) { background: #fff; }
+  .zebra-table tbody tr:nth-child(even) { background: #fbfdff; }
+
+  /* PENTING: jangan punya ancestor dengan transform/translate/overflow:hidden yang mempengaruhi sticky */
 </style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
@@ -190,14 +223,18 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
-            <div class="table-responsive" style="overflow-x: auto; max-width: 100%; border-radius: 20px;">
-  <table class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden; width: 2000px;">
+            <div class="table-responsive-custom" style="overflow-x:auto; width:100%; border-radius:20px;">
+  <table class="zebra-table" style="border-collapse: separate; border-spacing: 0; width: max-content; min-width:100%;">
     <thead>
       <tr>
-        <th class="sticky-col" style="left: 0; z-index: 3; background-color: #ADD8E6;">
-          <i class="bi bi-list-ol" style="margin-right: 6px;"></i> No
+        <!-- Kolom NO (sticky kiri) -->
+        <th class="col-sticky col-sticky-head" style="width:70px; background-color:#ADD8E6;">
+          <i class="bi bi-list-ol" style="margin-right:6px;"></i> No
         </th>
-        <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon</th>
+        <!-- Jika mau dua kolom sticky (No + Pemohon), ubah class berikut menjadi col-sticky-2 -->
+        <th class="col-sticky-2 col-sticky-head" style="min-width:220px; background-color:#ADD8E6;">
+          <i class="bi bi-person-fill" style="margin-right:6px;"></i> Pemohon
+        </th>
         <th style="background-color: #ADD8E6;"><i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan/Instansi</th>
         <th style="background-color: #ADD8E6;"><i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
         <th style="background-color: #ADD8E6;"><i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp</th>
@@ -218,10 +255,11 @@
                       <tbody id="tableBody">
                                 @forelse ($data as $item )
                                 <tr class="align-middle">
-                                      <td class="sticky-col" style="left: 0; background-color: white; text-align: center; z-index: 2;">
-                                          {{ $loop->iteration }}
-                                        </td>
-                                        <td style="text-align: left;">{{$item->perorangan}}</td>
+                                     <td class="col-sticky" style="text-align:center; background: #fff;">{{ $loop->iteration }}</td>
+
+                                    <!-- kolom kedua kalau sticky juga -->
+                                    <td class="col-sticky-2" style="text-align:left; background: #fff;">{{ $item->perorangan }}</td>
+
                                     <td style="text-align: left;">{{$item->perusahaan}}</td>
                                     {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
                                     <td style="text-align: center;">{{$item->nik}}</td> --}}
@@ -230,6 +268,7 @@
                                     </td>
                                     <td style="text-align: left;">{{$item->notelepon}}</td>
                                     <td style="text-align: center;">
+
                                         {{ number_format($item->luastanah, 0, ',', '.') }} M²
                                     </td>
                                     {{-- <td style="text-align: center;">{{$item->jumlahlantai}} Lantai</td>
