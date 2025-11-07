@@ -20,35 +20,35 @@
         min-width: 100%;
     ">
 <a href="/permohonankrkusaha">
-    <button type="button" class="button-baru">
+    <button type="button" class="button-modern">
         <i class="bi bi-briefcase-fill" style="margin-right:10px;"></i>
         Fungsi Usaha
     </button>
 </a>
 
 <a href="/permohonankrkhunian">
-    <button type="button" class="button-baru">
+    <button type="button" class="button-modern">
         <i class="bi bi-house-door-fill" style="margin-right: 10px;"></i>
         Fungsi Hunian
     </button>
 </a>
 
 <a href="/permohonankrkagama">
-    <button type="button" class="button-baru">
+    <button type="button" class="button-modern">
         <i class="bi bi-bank" style="margin-right: 10px;"></i>
         Fungsi Keagamaan
     </button>
 </a>
 
 <a href="/permohonankrksosbud">
-    <button type="button" class="button-baru">
+    <button type="button" class="button-modern">
         <i class="bi bi-people-fill" style="margin-right:10px;"></i>
         Fungsi Sosial Budaya
     </button>
 </a>
 
 <a href="/permohonanmenara">
-    <button type="button" class="button-baru">
+    <button type="button" class="button-modern">
         <i class="bi bi-broadcast-pin" style="margin-right:10px;"></i>
         Menara Telekomunikasi
     </button>
