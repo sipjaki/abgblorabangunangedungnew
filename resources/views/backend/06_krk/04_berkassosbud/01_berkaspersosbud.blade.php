@@ -1045,11 +1045,13 @@ th {
     <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px; margin-bottom: 5px;">
         <div style="display: flex; align-items: center; gap: 15px;">
                 <p style="margin: 0;">
+                    <strong>
                     Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
+                    </strong>
                 </p>
 
                 <a href="/bekrksosbudperbaikan/{{$data->id}}" style="text-decoration: none;">
-                    <button class="button-abgblora">
+                    <button class="button-baru">
                         <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
                     </button>
                 </a>
