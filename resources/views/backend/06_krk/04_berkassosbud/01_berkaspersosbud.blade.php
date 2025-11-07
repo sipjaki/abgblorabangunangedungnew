@@ -703,7 +703,8 @@ th {
     <td style="text-align: center;">14</td>
     <td style="text-align: left;"><i class="bi bi-globe" style="margin-right:6px;"></i> Kabupaten</td>
     <td style="text-align: center;">:</td>
-    <td style="text-align: left;">{{ $data->kabupaten ?? '-' }}</td>
+    <td style="text-align: left;">{{ ucfirst($data->kabupaten ?? '-') }}</td>
+
 </tr>
 
 <tr>
