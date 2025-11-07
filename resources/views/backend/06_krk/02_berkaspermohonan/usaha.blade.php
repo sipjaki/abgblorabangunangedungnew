@@ -246,49 +246,42 @@
                     <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
                 </a>
             </td>
-                                    <style>
-                                        .btn-secondary {
-                                            background-color: #6c757d;
-                                            color: white;
-                                            border-radius: 15px;
-                                            padding: 8px 16px;
-                                            border: none;
-                                        }
-
-                                        .btn-secondary:hover {
-                                            background-color: white;
-                                            color: black;
-                                            border: 1px solid #6c757d; /* Optional: border on hover */
-                                        }
-
-                                        .btn-secondary i {
-                                            margin-right: 5px; /* Adjust the spacing between the icon and text */
-                                        }
-                                    </style>
-
-<!-- Tombol KTP -->
-
-
-
-
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-  @if($item->verifikasi1 == 'lolos')
-    <button
-        class="button-hijau"
-        type="button"
-        style="background-color: #10B981; cursor: not-allowed;"
-        disabled
-    >
-        <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
-    </button>
-    @elseif($item->verifikasi1 == 'dikembalikan')
-        <button class="button-merah" type="button" onclick="openModal({{ $item->id }})" style="background-color: #f8f8fa;">
-            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
+<td style="text-align: center; vertical-align: middle; height: 60px;">
+    @if($item->verifikasi1 == 'lolos')
+        <button
+            type="button"
+            class="button-hijau"
+            style="background-color: #10B981; color: white; border: none; border-radius: 8px;
+                   padding: 6px 16px; font-size: 13px; display: flex; align-items: center;
+                   justify-content: center; cursor: not-allowed; box-shadow: none;"
+            disabled
+        >
+            <i class="bi bi-patch-check-fill" style="margin-right: 6px;"></i> Lolos
         </button>
+
+    @elseif($item->verifikasi1 == 'dikembalikan')
+        <button
+            type="button"
+            class="button-merah"
+            onclick="openModal({{ $item->id }})"
+            style="background-color: #F87171; color: white; border: none; border-radius: 8px;
+                   padding: 6px 16px; font-size: 13px; display: flex; align-items: center;
+                   justify-content: center; box-shadow: none; transition: 0.2s;"
+        >
+            <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Dikembalikan
+        </button>
+
     @else
-        <button class="button-modern" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
-            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
+        <button
+            type="button"
+            class="button-modern"
+            onclick="openModal({{ $item->id }})"
+            style="background-color: #EEF2FF; color: #1E3A8A; border: 1px solid #CBD5E1; border-radius: 8px;
+                   padding: 6px 16px; font-size: 13px; display: flex; align-items: center;
+                   justify-content: center; box-shadow: none; transition: 0.2s;"
+        >
+            <i class="bi bi-patch-check" style="margin-right: 6px;"></i> Validasi
         </button>
     @endif
 </td>
