@@ -293,7 +293,7 @@
 <div class="input-group" style="position: relative; margin-bottom: 10px;">
     <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"
         style="padding-right: 35px; width: 100%;" />
-    {{-- <i class="fas fa-envelope" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i> --}}
+    <i class="fas fa-envelope" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i>
     @error('email')
         <div style="color: red;">{{ $message }}</div>
     @enderror

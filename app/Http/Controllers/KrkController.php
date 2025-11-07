@@ -344,7 +344,7 @@ $datajumlahkrkmenara_terbit = krkmenara::where('verifikasi4', 'sudah')->count();
 {
     $user = Auth::user();
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
 
     // Query dasar
     $query = krkusaha::query();
