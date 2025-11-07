@@ -226,7 +226,7 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table class="table zebra-table">
+                        <table class="zebra-table">
                             <thead>
                                 <tr>
                                     <th style="background-color: #ADD8E6;">No</th>
