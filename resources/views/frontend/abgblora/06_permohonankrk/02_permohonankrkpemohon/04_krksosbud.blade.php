@@ -278,10 +278,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="form-modern row mt-3" style="margin-top: -25px;">
     <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-<label class="form-label d-flex align-items-center" for="nik">
-    <i class="bi bi-person-vcard" style="margin-right: 8px; color: navy;"></i>
-    NIK / KTP / <span style="color: red;">KITAS**</span>
-</label>
+            <label class="form-label-modern d-flex align-items-center" for="nik">
+                <i class="bi bi-person-vcard" style="margin-right: 8px; color: navy;"></i>
+                NIK / KTP / <span style="color: red;">KITAS**</span>
+            </label>
             <input type="number" name="nik" id="nik" placeholder="Nomor Induk Kependudukan"
                 class="form-control @error('nik') is-invalid @enderror"
                 value="{{ old('nik') }}"
@@ -293,9 +293,9 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 
-    <div class="col-md-6" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="rw">
+            <label class="form-label-modern d-flex align-items-center" for="rw">
                 <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan
             </label>
             <input type="date" name="tanggalpermohonan" id="tanggalpermohonan" placeholder="Tanggal Permohonan"
@@ -310,10 +310,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- NIK -->
 
 <!-- RT/RW -->
-<div class="row mt-3" style="margin-top: -40px;">
-    <div class="col-md-6" style="margin-top: -40px;">
+<div class="form-modern row mt-3" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="rt">
+            <label class="form-label-modern d-flex align-items-center" for="rt">
                 <i class="bi bi-phone" style="margin-right: 8px; color: navy;"></i> No Whatsapp
             </label>
             <input type="number" name="notelepon" id="notelepon" placeholder="No Telepon"
@@ -325,9 +325,9 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 
-    <div class="col-md-6" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="luastanah_display">
+            <label class="form-label-modern d-flex align-items-center" for="luastanah_display">
                 <i class="bi bi-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Tanah M<sup>2</sup>
             </label>
 
