@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </div>
 
-<div class="form-modern row mt-3" style="margin-top: -25px;">
+<div class="row mt-3" style="margin-top: -25px;">
     <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
             <label class="form-label-modern d-flex align-items-center" for="nik">
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- NIK -->
 
 <!-- RT/RW -->
-<div class="form-modern row mt-3" style="margin-top: -40px;">
+<div class="row mt-3" style="margin-top: -40px;">
     <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
             <label class="form-label-modern d-flex align-items-center" for="rt">
@@ -366,8 +366,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="row mt-3">
     <!-- Jumlah Lantai -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="jumlahlantai">
+    <div class="form-modern col-md-4" style="margin-top: -40px;">
+        <label class="form-label-modern d-flex align-items-center" for="jumlahlantai">
             <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
         </label>
         <select name="jumlahlantai" id="jumlahlantai"
@@ -384,10 +384,10 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <!-- RT -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="rt">
-            <i class="bi bi-hashtag" style="margin-right: 8px; color: navy;"></i> RT
-        </label>
+    <div class="form-modern col-md-4" style="margin-top: -40px;">
+<label class="form-label-modern d-flex align-items-center" for="rt">
+    <i class="bi bi-pin-map-fill" style="margin-right: 8px; color: navy;"></i> RT
+</label>
         <select name="rt" id="rt" class="form-control @error('rt') is-invalid @enderror">
             <option value="" style="font-size: 14px;">-- Pilih RT --</option>
             @for ($i = 1; $i <= 25; $i++)
@@ -400,10 +400,10 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <!-- RW -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="rw">
-            <i class="bi bi-hashtag" style="margin-right: 8px; color: navy;"></i> RW
-        </label>
+    <div class="form-modern col-md-4" style="margin-top: -40px;">
+<label class="form-label-modern d-flex align-items-center" for="rw">
+    <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i> RW
+</label>
         <select name="rw" id="rw" class="form-control @error('rw') is-invalid @enderror">
             <option value="" style="font-size: 16px;">-- Pilih RW --</option>
             @for ($i = 1; $i <= 25; $i++)
@@ -419,8 +419,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="row mt-3">
     <!-- Kabupaten (dikunci) -->
-    <div class="col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
-        <label class="form-label d-flex align-items-center" for="kabupaten">
+    <div class="form-modern col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
+        <label class="form-label-modern d-flex align-items-center" for="kabupaten">
             <i class="bi bi-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
         </label>
         <select name="kabupaten" id="kabupaten" class="form-control" readonly disabled>
