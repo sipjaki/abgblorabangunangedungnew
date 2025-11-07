@@ -180,9 +180,9 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
-                    <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table class="zebra-table">
-                            <thead>
+                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+                        <table class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
+                          <thead>
                                 <tr>
                                     <th style="background-color: #ADD8E6;">No</th>
 <th style="background-color: #ADD8E6;"><i class="bi bi-person-fill"></i> Pemohon</th>
