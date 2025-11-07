@@ -491,8 +491,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="form-modern" style="margin-top: -25px;">
     <label class="form-label-modern d-flex align-items-center" for="lokasibangunan">
-        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
-    </label>
+    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
+</label>
+
     <input type="text" id="lokasibangunan" name="lokasibangunan" placeholder="Lokasi Bangunan Gedung"
         class="form-control @error('lokasibangunan') is-invalid @enderror"
         value="{{ old('lokasibangunan') }}"
@@ -504,9 +505,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="form-modern" style="margin-top: -15px;">
     <label class="form-label-modern d-flex align-items-center" for="alamatpemohon">
-        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Alamat Lengkap Pemohon
-    </label>
-    <input type="text" id="alamatpemohon" name="alamatpemohon" placeholder="Alamat Lengkap Pemohon"
+    <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Alamat Lengkap Pemohon (Sesuai dengan KTP)
+</label>
+<input type="text" id="alamatpemohon" name="alamatpemohon" placeholder="Alamat Lengkap Pemohon"
         class="form-control @error('alamatpemohon') is-invalid @enderror"
         value="{{ old('alamatpemohon') }}"
         style="margin-bottom: 0px;"/>
