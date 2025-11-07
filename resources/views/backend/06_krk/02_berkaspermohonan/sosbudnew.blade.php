@@ -1,4 +1,4 @@
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         /* Gaya untuk container tabel */
@@ -7,7 +7,6 @@
             white-space: nowrap;
             position: relative;
             max-height: 80vh;
-            border: 1px solid #dee2e6;
         }
 
         /* Gaya untuk tabel */
@@ -16,102 +15,70 @@
             border-spacing: 0;
             border-radius: 20px;
             overflow: hidden;
-            width: auto;
-            min-width: 100%;
-            margin-bottom: 0;
+            width: 100%;
+            min-width: 1500px; /* Pastikan tabel cukup lebar untuk scroll horizontal */
         }
 
         .zebra-table th {
             background-color: #ADD8E6;
             padding: 12px 15px;
             position: relative;
-            border-bottom: 1px solid #dee2e6;
-            font-weight: 600;
         }
 
         .zebra-table td {
             padding: 10px 15px;
             border-bottom: 1px solid #dee2e6;
-            background-color: inherit;
         }
 
         .zebra-table tbody tr:nth-child(even) {
-            background-color: #f8f9fa;
+            background-color: #f2f2f2;
         }
 
         .zebra-table tbody tr:hover {
             background-color: #e9ecef;
         }
 
-        /* Gaya untuk kolom tetap - SOLUSI UTAMA */
+        /* Gaya untuk kolom tetap */
         .sticky-column {
             position: sticky;
             left: 0;
             z-index: 10;
-            background-color: #f8f9fa !important;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            background-color: #f8f9fa;
         }
 
         .sticky-column-header {
             position: sticky;
             left: 0;
-            z-index: 20;
-            background-color: #ADD8E6 !important;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            z-index: 11;
+            background-color: #ADD8E6;
         }
 
         .sticky-column-2 {
             position: sticky;
-            left: var(--col1-width, 80px);
-            z-index: 10;
-            background-color: #f8f9fa !important;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            left: 60px; /* Sesuaikan dengan lebar kolom pertama */
+            z-index: 9;
+            background-color: #f8f9fa;
         }
 
         .sticky-column-header-2 {
             position: sticky;
-            left: var(--col1-width, 80px);
-            z-index: 20;
-            background-color: #ADD8E6 !important;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            left: 60px; /* Sesuaikan dengan lebar kolom pertama */
+            z-index: 10;
+            background-color: #ADD8E6;
         }
 
         .sticky-column-3 {
             position: sticky;
-            left: calc(var(--col1-width, 80px) + var(--col2-width, 200px));
-            z-index: 10;
-            background-color: #f8f9fa !important;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            left: 250px; /* Sesuaikan dengan lebar kolom pertama + kedua */
+            z-index: 8;
+            background-color: #f8f9fa;
         }
 
         .sticky-column-header-3 {
             position: sticky;
-            left: calc(var(--col1-width, 80px) + var(--col2-width, 200px));
-            z-index: 20;
-            background-color: #ADD8E6 !important;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-        }
-
-        /* Pastikan kolom tetap memiliki lebar yang konsisten */
-        .sticky-column,
-        .sticky-column-header {
-            min-width: 80px;
-            max-width: 80px;
-            width: 80px;
-        }
-
-        .sticky-column-2,
-        .sticky-column-header-2 {
-            min-width: 200px;
-            max-width: 200px;
-            width: 200px;
-        }
-
-        .sticky-column-3,
-        .sticky-column-header-3 {
-            min-width: 250px;
-            max-width: 250px;
-            width: 250px;
+            left: 250px; /* Sesuaikan dengan lebar kolom pertama + kedua */
+            z-index: 9;
+            background-color: #ADD8E6;
         }
 
         /* Gaya untuk tombol */
@@ -123,17 +90,15 @@
             border-radius: 8px;
             font-size: 14px;
             cursor: pointer;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             transition: background-color 0.3s, color 0.3s;
             text-decoration: none;
-            white-space: nowrap;
         }
 
         .button-modern:hover {
             background-color: white;
             color: black;
-            border: 1px solid #00378a;
         }
 
         .button-hijau {
@@ -144,10 +109,9 @@
             border-radius: 8px;
             font-size: 14px;
             cursor: pointer;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             transition: background-color 0.3s, color 0.3s;
-            white-space: nowrap;
         }
 
         .button-merah {
@@ -158,10 +122,42 @@
             border-radius: 8px;
             font-size: 14px;
             cursor: pointer;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             transition: background-color 0.3s, color 0.3s;
-            white-space: nowrap;
+        }
+
+        .button-download {
+            background-color: #3B82F6;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Gaya untuk modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
         }
 
         /* Animasi untuk data kosong */
@@ -184,14 +180,6 @@
             border-radius: 12px;
             font-size: 16px;
             animation: fadeIn 0.5s ease-in-out;
-        }
-
-        /* Pastikan konten di dalam kolom tetap rapi */
-        .sticky-column,
-        .sticky-column-2,
-        .sticky-column-3 {
-            white-space: normal;
-            word-wrap: break-word;
         }
     </style>
 </head>
@@ -307,13 +295,13 @@
                                     </thead>
 
                                     <tbody id="tableBody">
-
                                         @forelse ($data as $item)
                                         <tr class="align-middle">
                                             <td class="sticky-column" style="text-align: center;">{{ $loop->iteration }}</td>
                                             <td class="sticky-column-2" style="text-align: left;">{{$item->perorangan}}</td>
-                                            <td class="sticky-column-3" style="text-align: left;">{{$item->perusahaan}}</td>
-                                        <td style="text-align: center;">
+                                            <td class="sticky-column-3" style="text-align: left;">{{$item->perusahaan}}</td>          {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
+                                    <td style="text-align: center;">{{$item->nik}}</td> --}}
+                                    <td style="text-align: center;">
                                         {{ \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') }}
                                     </td>
                                     <td style="text-align: left;">{{$item->notelepon}}</td>
@@ -944,46 +932,80 @@
     to { opacity: 1; transform: translateY(0); }
 }
 </style>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
 
-                        @include('backend.00_administrator.00_baganterpisah.07_paginations')
-                        <br><br>
+                            </tbody>
+                        </table>
 
-                        <!-- Modal Konfirmasi Hapus -->
-                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
-                                        <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                        <form id="deleteForm" method="POST" action="">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+                     </div>
+                 </div>
 
-    @include('backend.00_administrator.00_baganterpisah.02_footer')
+                 @include('backend.00_administrator.00_baganterpisah.07_paginations')
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                 <br><br>
+
+
+                 <!-- Modal Konfirmasi Hapus -->
+                 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
+                                 <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                             </div>
+                             <div class="modal-body">
+                                 <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
+                             </div>
+                             <div class="modal-footer">
+                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                 <form id="deleteForm" method="POST" action="">
+                                     @csrf
+                                     @method('DELETE')
+                                     <button type="submit" class="btn btn-danger">Hapus</button>
+                                 </form>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <script>
+                 function setDeleteUrl(button) {
+                     var id = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = id;
+                     var deleteUrl = "/dokbekrksosbuddelete/" + encodeURIComponent(id);
+                     document.getElementById('deleteForm').action = deleteUrl;
+                 }
+                 </script>
+
+                 <style>
+                     .table-responsive {
+                         max-width: 100%;
+                         overflow-x: auto;
+                     }
+                 </style>
+
+             </div>
+             <!-- /.card -->
+         </div>
+         <!-- /.col -->
+     </div>
+     <!--end::Row-->
+     </div>
+               <!--end::Container-->
+     <!--end::App Content Header-->
+     <!--begin::App Content-->
+       <!--end::App Content-->
+   </main>
+   <!--end::App Main-->
+ </div>
+ </div>
+
+
+   @include('backend.00_administrator.00_baganterpisah.02_footer')
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         // Fungsi untuk update entries per halaman
@@ -997,6 +1019,7 @@
         // Fungsi untuk pencarian tabel
         function searchTable() {
             let input = document.getElementById("searchInput").value;
+
             fetch(`/bekrksosbud?search=${input}`)
                 .then(response => response.text())
                 .then(html => {
@@ -1004,8 +1027,6 @@
                     let doc = parser.parseFromString(html, "text/html");
                     let newTableBody = doc.querySelector("#tableBody").innerHTML;
                     document.querySelector("#tableBody").innerHTML = newTableBody;
-                    // Setelah update konten, hitung ulang lebar kolom
-                    calculateColumnWidths();
                 })
                 .catch(error => console.error("Error fetching search results:", error));
         }
@@ -1018,63 +1039,54 @@
             document.getElementById('deleteForm').action = deleteUrl;
         }
 
-        // FUNGSI UTAMA: Hitung lebar kolom secara dinamis
-        function calculateColumnWidths() {
+        // Script untuk menyesuaikan lebar kolom tetap secara dinamis
+        document.addEventListener('DOMContentLoaded', function() {
             const table = document.querySelector('.zebra-table');
-            if (!table) return;
+            if (table) {
+                const firstColumn = table.querySelector('th:first-child');
+                const secondColumn = table.querySelector('th:nth-child(2)');
+                const thirdColumn = table.querySelector('th:nth-child(3)');
 
-            // Dapatkan elemen header untuk mengukur lebar
-            const headerRow = table.querySelector('thead tr');
-            if (!headerRow) return;
+                // Dapatkan lebar kolom pertama, kedua, dan ketiga
+                const firstColWidth = firstColumn ? firstColumn.offsetWidth : 60;
+                const secondColWidth = secondColumn ? secondColumn.offsetWidth : 190;
+                const thirdColWidth = thirdColumn ? thirdColumn.offsetWidth : 200;
 
-            const col1 = headerRow.querySelector('.sticky-column-header');
-            const col2 = headerRow.querySelector('.sticky-column-header-2');
-            const col3 = headerRow.querySelector('.sticky-column-header-3');
+                // Atur posisi left untuk kolom kedua
+                const secondColSticky = document.querySelectorAll('.sticky-column-2, .sticky-column-header-2');
+                secondColSticky.forEach(el => {
+                    el.style.left = firstColWidth + 'px';
+                });
 
-            if (col1 && col2 && col3) {
-                const col1Width = col1.offsetWidth;
-                const col2Width = col2.offsetWidth;
-                const col3Width = col3.offsetWidth;
-
-                // Set CSS custom properties
-                document.documentElement.style.setProperty('--col1-width', col1Width + 'px');
-                document.documentElement.style.setProperty('--col2-width', col2Width + 'px');
-                document.documentElement.style.setProperty('--col3-width', col3Width + 'px');
-
-                console.log('Column widths calculated:', { col1Width, col2Width, col3Width });
+                // Atur posisi left untuk kolom ketiga
+                const thirdColSticky = document.querySelectorAll('.sticky-column-3, .sticky-column-header-3');
+                thirdColSticky.forEach(el => {
+                    el.style.left = (firstColWidth + secondColWidth) + 'px';
+                });
             }
-        }
-
-        // Inisialisasi saat dokumen siap
-        document.addEventListener('DOMContentLoaded', function() {
-            calculateColumnWidths();
-
-            // Hitung ulang setelah semua gambar dimuat
-            window.addEventListener('load', calculateColumnWidths);
-
-            // Hitung ulang saat window di-resize
-            window.addEventListener('resize', calculateColumnWidths);
-
-            // Hitung ulang setelah transisi/animasi selesai
-            setTimeout(calculateColumnWidths, 100);
         });
 
-        // Juga hitung ulang ketika konten tabel berubah
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.type === 'childList') {
-                    calculateColumnWidths();
-                }
-            });
-        });
+        // Fungsi untuk menangani resize window
+        window.addEventListener('resize', function() {
+            // Panggil ulang fungsi penyesuaian lebar kolom saat window di-resize
+            const table = document.querySelector('.zebra-table');
+            if (table) {
+                const firstColumn = table.querySelector('th:first-child');
+                const secondColumn = table.querySelector('th:nth-child(2)');
+                const thirdColumn = table.querySelector('th:nth-child(3)');
 
-        // Mulai observasi setelah DOM siap
-        document.addEventListener('DOMContentLoaded', function() {
-            const tableBody = document.getElementById('tableBody');
-            if (tableBody) {
-                observer.observe(tableBody, {
-                    childList: true,
-                    subtree: true
+                const firstColWidth = firstColumn ? firstColumn.offsetWidth : 60;
+                const secondColWidth = secondColumn ? secondColumn.offsetWidth : 190;
+                const thirdColWidth = thirdColumn ? thirdColumn.offsetWidth : 200;
+
+                const secondColSticky = document.querySelectorAll('.sticky-column-2, .sticky-column-header-2');
+                secondColSticky.forEach(el => {
+                    el.style.left = firstColWidth + 'px';
+                });
+
+                const thirdColSticky = document.querySelectorAll('.sticky-column-3, .sticky-column-header-3');
+                thirdColSticky.forEach(el => {
+                    el.style.left = (firstColWidth + secondColWidth) + 'px';
                 });
             }
         });
