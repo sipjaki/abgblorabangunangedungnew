@@ -862,7 +862,8 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data Belum Di Lengkapi !!</p>
+        {{-- <p>Data Belum Di Lengkapi !!</p> --}}
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
 
@@ -890,7 +891,8 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data Belum Di Lengkapi !!</p>
+        {{-- <p>Data Belum Di Lengkapi !!</p> --}}
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
             </td>
@@ -917,7 +919,8 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data Belum Di Lengkapi !!</p>
+        {{-- <p>Data Belum Di Lengkapi !!</p> --}}
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
             </td>
@@ -973,7 +976,8 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data Belum Di Lengkapi !!</p>
+        {{-- <p>Data Belum Di Lengkapi !!</p> --}}
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
 
@@ -1001,7 +1005,8 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data Belum Di Lengkapi !!</p>
+        {{-- <p>Data Belum Di Lengkapi !!</p> --}}
+        <button class="button-merah">Data Belum Di Lengkapi !!</button>
     @endif
 </div>
             </td>
