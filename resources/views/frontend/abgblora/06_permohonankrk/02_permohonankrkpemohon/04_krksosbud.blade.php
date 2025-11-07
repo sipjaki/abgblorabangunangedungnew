@@ -207,11 +207,13 @@
 
 
 <!-- Perorangan -->
+<!-- Nama Pemohon -->
 <div style="margin-top:-25px;">
     <label class="form-label d-flex align-items-center" for="perorangan">
-        <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> Perorangan (Nama Lengkap Sesuai KTP)
+        <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>
+        Nama Pemohon (Nama Lengkap Sesuai dengan KTP)
     </label>
-    <input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemilik/Pemohon"
+    <input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemohon KRK"
         class="form-control @error('perorangan') is-invalid @enderror"
         value="{{ old('perorangan') }}" />
     @error('perorangan')
@@ -219,12 +221,13 @@
     @enderror
 </div>
 
-<!-- Perusahaan -->
+<!-- Instansi/Perusahaan -->
 <div style="margin-top:-25px;">
     <label class="form-label d-flex align-items-center" for="perusahaan">
-        <i class="fas fa-building" style="margin-right: 8px; color: navy;"></i> Perusahaan
+        <i class="bi bi-buildings-fill" style="margin-right: 8px; color: navy;"></i>
+        Instansi/Perusahaan
     </label>
-    <input type="text" id="perusahaan" name="perusahaan" placeholder="Masukan Nama Perusahaan Pemohon/Pemilik"
+    <input type="text" id="perusahaan" name="perusahaan" placeholder="Masukan Nama Instansi/Perusahaan/OPD"
         class="form-control @error('perusahaan') is-invalid @enderror"
         value="{{ old('perusahaan') }}" />
     @error('perusahaan')
