@@ -562,8 +562,8 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
     <!-- NPWP -->
-<div class="form-modern flex flex-col w-1/3" style="margin-top:-60px;">
-    <label for="npwp" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+<div class="flex flex-col w-1/3" style="margin-top:-60px;">
+    <label class="form-label-modern" for="npwp" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
         <!-- Icon -->
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -597,7 +597,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
     <!-- Sertifikat Tanah -->
-    <div class="form-modern flex flex-col w-1/3" style="margin-top:-60px;">
+    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
         <label for="sertifikattanah" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -656,7 +656,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div> --}}
 
     <!-- Bukti PBB -->
-    <div class="form-modern flex flex-col w-1/3" style="margin-top:-60px;">
+    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
         <label for="buktipbb" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
             <!-- Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -686,7 +686,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <!-- Dok Validasi DPUPR -->
-    <div class="form-modern flex flex-col w-1/3" style="margin-top:-60px;">
+    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
         <label for="dokvalidasi" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -714,7 +714,7 @@ document.addEventListener('DOMContentLoaded', function () {
         @enderror
     </div>
 
-    <div class="form-modern flex flex-col w-1/3" style="margin-top:-60px;">
+    <div class="flex flex-col w-1/3" style="margin-top:-60px;">
         <label for="siteplan" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
             <!-- Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -748,7 +748,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <!-- Sertifikat Tanah -->
 <!-- Sertifikat Tanah dan Tanda Tangan dalam 1 baris -->
-<div class="form-modern flex flex-row gap-6 w-full">
+<div class="flex flex-row gap-6 w-full">
 
 
     <div class="flex flex-col w-1/3" style="margin-top: -40px;">
@@ -767,9 +767,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <a href="/assets/abgblora/logo/suratkrk.docx"
      download
      class="mt-1 underline hover:text-black text-red-600 transition-colors duration-150 ease-in-out" style="color: red;">
-     <button class="button-berkas">
-         Download Contoh Surat Permohonan
-        </button>
+     Download Contoh Surat Permohonan
   </a>
 </div>
 
