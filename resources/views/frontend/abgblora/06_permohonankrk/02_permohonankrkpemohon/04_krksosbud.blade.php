@@ -147,8 +147,6 @@
 <!-- Perorangan -->
 <!-- Nama Pemohon -->
 <div class="form-modern">
-
-    <div style="margin-top:-25px;">
         <label class="form-label-modern d-flex align-items-center" for="perorangan">
         <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>
         Nama Pemohon (Nama Lengkap Sesuai dengan KTP)
@@ -159,7 +157,6 @@
     @error('perorangan')
     <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
     @enderror
-</div>
 </div>
 
 <!-- Instansi/Perusahaan -->
