@@ -187,13 +187,11 @@
 
                             <thead>
                                   <tr>
-     <th>No</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Sub Kualifikasi</th> --}}
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Asosiasi Masjaki</th> --}}
-<th><i class="fas fa-user"></i> Nama Lengkap</th>
-<th><i class="fas fa-file-alt"></i> No SK</th>
-<th><i class="fas fa-info-circle"></i> Status</th>
-<th><i class="fas fa-tools"></i> Aksi</th>
+<th><i class="bi bi-list-ol" style="margin-right: 6px;"></i> No</th>
+<th><i class="bi bi-person-fill" style="margin-right: 6px;"></i> Nama Lengkap</th>
+<th><i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> No SK</th>
+<th><i class="bi bi-info-circle-fill" style="margin-right: 6px;"></i> Status</th>
+<th><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
 
     </tr>
                             </thead>
