@@ -1,23 +1,28 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
+        /* Gaya untuk container tabel */
         .table-container {
             overflow-x: auto;
             white-space: nowrap;
             position: relative;
+            max-height: 80vh;
         }
 
+        /* Gaya untuk tabel */
         .zebra-table {
             border-collapse: separate;
             border-spacing: 0;
             border-radius: 20px;
             overflow: hidden;
             width: 100%;
+            min-width: 1500px; /* Pastikan tabel cukup lebar untuk scroll horizontal */
         }
 
         .zebra-table th {
             background-color: #ADD8E6;
             padding: 12px 15px;
+            position: relative;
         }
 
         .zebra-table td {
@@ -33,7 +38,7 @@
             background-color: #e9ecef;
         }
 
-        /* Class untuk kolom yang akan tetap */
+        /* Gaya untuk kolom tetap */
         .sticky-column {
             position: sticky;
             left: 0;
@@ -50,242 +55,251 @@
 
         .sticky-column-2 {
             position: sticky;
-            left: 50px; /* Sesuaikan dengan lebar kolom pertama */
+            left: 60px; /* Sesuaikan dengan lebar kolom pertama */
             z-index: 9;
             background-color: #f8f9fa;
         }
 
         .sticky-column-header-2 {
             position: sticky;
-            left: 50px; /* Sesuaikan dengan lebar kolom pertama */
+            left: 60px; /* Sesuaikan dengan lebar kolom pertama */
             z-index: 10;
             background-color: #ADD8E6;
         }
 
         .sticky-column-3 {
             position: sticky;
-            left: 200px; /* Sesuaikan dengan lebar kolom pertama + kedua */
+            left: 250px; /* Sesuaikan dengan lebar kolom pertama + kedua */
             z-index: 8;
             background-color: #f8f9fa;
         }
 
         .sticky-column-header-3 {
             position: sticky;
-            left: 200px; /* Sesuaikan dengan lebar kolom pertama + kedua */
+            left: 250px; /* Sesuaikan dengan lebar kolom pertama + kedua */
             z-index: 9;
             background-color: #ADD8E6;
         }
+
+        /* Gaya untuk tombol */
+        .button-modern {
+            background-color: #00378a;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+        }
+
+        .button-modern:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .button-hijau {
+            background-color: #10B981;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button-merah {
+            background-color: #EF4444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button-download {
+            background-color: #3B82F6;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Gaya untuk modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Animasi untuk data kosong */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .empty-data {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            color: #6c757d;
+            background-color: #f8f9fa;
+            border: 2px dashed #ced4da;
+            border-radius: 12px;
+            font-size: 16px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
     </style>
-
-@include('backend.00_administrator.00_baganterpisah.01_header')
-
-<!--begin::Body-->
+</head>
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
- <!--begin::App Wrapper-->
- <div class="app-wrapper">
-{{-- ---------------------------------------------------------------------- --}}
+    <!--begin::App Wrapper-->
+    <div class="app-wrapper">
+        <!-- Header, Navbar, Sidebar, dll -->
+        @include('backend.00_administrator.00_baganterpisah.01_header')
+        @include('backend.00_administrator.00_baganterpisah.04_navbar')
+        @include('backend.00_administrator.00_baganterpisah.09_button')
+        @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+        @include('frontend.android.00_fiturmenu.06_alert')
 
-@include('backend.00_administrator.00_baganterpisah.04_navbar')
-@include('backend.00_administrator.00_baganterpisah.09_button')
-{{-- ---------------------------------------------------------------------- --}}
-
-   @include('backend.00_administrator.00_baganterpisah.03_sidebar')
-   @include('frontend.android.00_fiturmenu.06_alert')
-
-
-   <!--begin::App Main-->
-   <main class="app-main"
-      style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-  "
->
-     <!--begin::App Content Header-->
-     <div class="app-content-header">
-       <!--begin::Container-->
-       <div class="container-fluid">
-         <!--begin::Row-->
-         <div class="row">
-@include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
-
-           {{-- <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div> --}}
-
-         </div>
-         <!--end::Row-->
-       </div>
-       <!--end::Container-->
-     </div>
-
-     <!-- Menampilkan pesan sukses -->
-<br>
-     {{-- ======================================================= --}}
-     {{-- ALERT --}}
-
-     {{-- @include('backend.00_administrator.00_baganterpisah.06_alert') --}}
-
-     {{-- ======================================================= --}}
-
-     <div class="container-fluid">
-         <!--begin::Row-->
-         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
-             <!-- /.card -->
-             <div class="card mb-4">
-                 {{-- <div class="card-header">
-                    <div style="
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #00378a, #00378a);
-                    color: white;
-                    padding: 8px 10px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                ">
-                    ⚙️ Setting Database
-                </div> --}}
-
-                     {{-- <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                         <a href="/404">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#00378a'; this.style.color='white';"
-                             style="background-color: #00378a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-database" style="margin-right: 8px;"></i>
-                             Asosiasi
-                         </button>
-                         </a>
-
-                     </div> --}}
-                 </div>
-                 <!-- /.card-header -->
-                 <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+        <!--begin::App Main-->
+        <main class="app-main" style="
+            background: linear-gradient(to bottom, #7de3f1, #ffffff);
+            margin: 0;
+            padding: 0;
+            position: relative;
+            left: 0;
+        ">
+            <!--begin::App Content Header-->
+            <div class="app-content-header">
+                <!--begin::Container-->
+                <div class="container-fluid">
+                    <!--begin::Row-->
+                    <div class="row">
+                        @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
+                    </div>
+                    <!--end::Row-->
                 </div>
+                <!--end::Container-->
+            </div>
 
+            <div class="container-fluid">
+                <!--begin::Row-->
+                <div class="putih row" style="margin-right: 10px; margin-left:10px;">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <div style="
+                                margin-bottom:10px;
+                                font-weight: 900;
+                                font-size: 16px;
+                                text-align: center;
+                                background: linear-gradient(135deg, #000080, #000080);
+                                color: white;
+                                padding: 10px 25px;
+                                border-radius: 10px;
+                                display: inline-block;
+                                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                                width: 100%;
+                            ">
+                                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                            </div>
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                               <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
-            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
-            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
-                {{-- <option value="10">10</option> --}}
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="75">75</option>
-                <option value="100">100</option>
-                <option value="150">150</option>
-                <option value="200">200</option>
-                <option value="500">500</option>
-                <option value="1000">1000</option>
-                <option value="2000">2000</option>
-            </select>
-        </div>
+                            <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+                                    <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
+                                    <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="75">75</option>
+                                        <option value="100">100</option>
+                                        <option value="150">150</option>
+                                        <option value="200">200</option>
+                                        <option value="500">500</option>
+                                        <option value="1000">1000</option>
+                                        <option value="2000">2000</option>
+                                    </select>
+                                </div>
 
+                                <div style="position: relative; display: inline-block; margin-right:10px;">
+                                    <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                                    <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                                </div>
 
-        <script>
-                  function updateEntries() {
-                let selectedValue = document.getElementById("entries").value;
-                let url = new URL(window.location.href);
-                url.searchParams.set("perPage", selectedValue);
-                window.location.href = url.toString();
-            }
-        </script>
-
-
-                        <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                                <a href="/bekrkindex" style="text-decoration: none;">
+                                    <button class="button-modern" style="color: white;">
+                                        <i class="bi bi-house-door" style="margin-right: 8px;"></i> Menu Utama
+                                    </button>
+                                </a>
+                                <a href="/bekrkindex" style="text-decoration: none; margin-left: 10px;">
+                                    <button class="button-modern" style="color: white;">
+                                        <i class="bi bi-arrow-left-circle" style="margin-right: 8px;"></i> Kembali
+                                    </button>
+                                </a>
+                            </div>
                         </div>
-                        <script>
-                            function updateEntries() {
-                                let selectedValue = document.getElementById("entries").value;
-                                let url = new URL(window.location.href);
-                                url.searchParams.set("perPage", selectedValue);
-                                window.location.href = url.toString();
-                            }
 
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
+                        <div class="card-body p-0">
+                            <div class="table-container">
+                                <table class="zebra-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="sticky-column-header"><i class="bi bi-list-ol" style="margin-right: 6px;"></i> No</th>
+                                            <th class="sticky-column-header-2"><i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon</th>
+                                            <th class="sticky-column-header-3"><i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan/Instansi</th>
+                                            <th><i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
+                                            <th><i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp</th>
+                                            <th><i class="bi bi-aspect-ratio" style="margin-right: 6px;"></i> Luas Tanah</th>
+                                            <th><i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan</th>
+                                            <th><i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan</th>
+                                            <th><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
+                                            <th><i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Dok Lapangan</th>
+                                            <th><i class="bi bi-clipboard-check" style="margin-right: 6px;"></i> Status Cek Lapangan</th>
+                                            <th><i class="bi bi-database-fill-gear" style="margin-right: 6px;"></i> Olah Data KRK</th>
+                                            <th><i class="bi bi-pencil-square" style="margin-right: 6px;"></i> Buat Data KRK</th>
+                                            <th><i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data</th>
+                                            <th><i class="bi bi-archive-fill" style="margin-right: 6px;"></i> Berkas Final KRK</th>
+                                            <th><i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai</th>
+                                            <th><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
+                                        </tr>
+                                    </thead>
 
-                            fetch(`/bekrksosbud?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
-                        }
-
-                                </script>
-
-
-
-                     <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-modern" style="color: black;">
-        <!-- Ikon Kembali -->
-        <i class="bi bi-house-door" style="margin-right: 8px;"></i> Menu Utama
-    </button>
-</a>
-                     <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-modern" style="color: black;">
-        <!-- Ikon Kembali -->
-        <i class="bi bi-arrow-left-circle" style="margin-right: 8px;"></i> Kembali
-    </button>
-</a>
-
-                     </div>
-                 </div>
-                 <!-- /.card-header -->
-                 <div class="card-body p-0">
-               <div class="table-container">
-            <table class="zebra-table">
-                <thead>
-                    <tr>
-                        <th class="sticky-column-header"><i class="bi bi-list-ol" style="margin-right: 6px;"></i> No</th>
-                        <th class="sticky-column-header-2"><i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon</th>
-                        <th class="sticky-column-header-3"><i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan/Instansi</th>
-                        <th><i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
-                        <th><i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp</th>
-                        <th><i class="bi bi-aspect-ratio" style="margin-right: 6px;"></i> Luas Tanah</th>
-                        <th><i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan</th>
-                        <th><i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan</th>
-                        <th><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
-                        <th><i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Dok Lapangan</th>
-                        <th><i class="bi bi-clipboard-check" style="margin-right: 6px;"></i> Status Cek Lapangan</th>
-                        <th><i class="bi bi-database-fill-gear" style="margin-right: 6px;"></i> Olah Data KRK</th>
-                        <th><i class="bi bi-pencil-square" style="margin-right: 6px;"></i> Buat Data KRK</th>
-                        <th><i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data</th>
-                        <th><i class="bi bi-archive-fill" style="margin-right: 6px;"></i> Berkas Final KRK</th>
-                        <th><i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai</th>
-                        <th><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
-                    </tr>
-                </thead>
-
-                  <tbody id="tableBody">
-            @forelse ($data as $item)
-            <tr class="align-middle">
-                <td class="sticky-column" style="text-align: center;">{{ $loop->iteration }}</td>
-                <td class="sticky-column-2" style="text-align: left;">{{$item->perorangan}}</td>
-                <td class="sticky-column-3" style="text-align: left;">{{$item->perusahaan}}</td>                    {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
+                                    <tbody id="tableBody">
+                                        @forelse ($data as $item)
+                                        <tr class="align-middle">
+                                            <td class="sticky-column" style="text-align: center;">{{ $loop->iteration }}</td>
+                                            <td class="sticky-column-2" style="text-align: left;">{{$item->perorangan}}</td>
+                                            <td class="sticky-column-3" style="text-align: left;">{{$item->perusahaan}}</td>          {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
                                     <td style="text-align: center;">{{$item->nik}}</td> --}}
                                     <td style="text-align: center;">
                                         {{ \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') }}
@@ -991,28 +1005,89 @@
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Fungsi untuk update entries per halaman
+        function updateEntries() {
+            let selectedValue = document.getElementById("entries").value;
+            let url = new URL(window.location.href);
+            url.searchParams.set("perPage", selectedValue);
+            window.location.href = url.toString();
+        }
+
+        // Fungsi untuk pencarian tabel
+        function searchTable() {
+            let input = document.getElementById("searchInput").value;
+
+            fetch(`/bekrksosbud?search=${input}`)
+                .then(response => response.text())
+                .then(html => {
+                    let parser = new DOMParser();
+                    let doc = parser.parseFromString(html, "text/html");
+                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                    document.querySelector("#tableBody").innerHTML = newTableBody;
+                })
+                .catch(error => console.error("Error fetching search results:", error));
+        }
+
+        // Fungsi untuk set URL delete
+        function setDeleteUrl(button) {
+            var id = button.getAttribute('data-judul');
+            document.getElementById('itemName').innerText = id;
+            var deleteUrl = "/dokbekrksosbuddelete/" + encodeURIComponent(id);
+            document.getElementById('deleteForm').action = deleteUrl;
+        }
+
         // Script untuk menyesuaikan lebar kolom tetap secara dinamis
         document.addEventListener('DOMContentLoaded', function() {
             const table = document.querySelector('.zebra-table');
-            const firstColumn = table.querySelector('th:first-child');
-            const secondColumn = table.querySelector('th:nth-child(2)');
+            if (table) {
+                const firstColumn = table.querySelector('th:first-child');
+                const secondColumn = table.querySelector('th:nth-child(2)');
+                const thirdColumn = table.querySelector('th:nth-child(3)');
 
-            // Dapatkan lebar kolom pertama dan kedua
-            const firstColWidth = firstColumn.offsetWidth;
-            const secondColWidth = secondColumn.offsetWidth;
+                // Dapatkan lebar kolom pertama, kedua, dan ketiga
+                const firstColWidth = firstColumn ? firstColumn.offsetWidth : 60;
+                const secondColWidth = secondColumn ? secondColumn.offsetWidth : 190;
+                const thirdColWidth = thirdColumn ? thirdColumn.offsetWidth : 200;
 
-            // Atur posisi left untuk kolom kedua dan ketiga
-            const secondColSticky = document.querySelectorAll('.sticky-column-2, .sticky-column-header-2');
-            secondColSticky.forEach(el => {
-                el.style.left = firstColWidth + 'px';
-            });
+                // Atur posisi left untuk kolom kedua
+                const secondColSticky = document.querySelectorAll('.sticky-column-2, .sticky-column-header-2');
+                secondColSticky.forEach(el => {
+                    el.style.left = firstColWidth + 'px';
+                });
 
-            const thirdColSticky = document.querySelectorAll('.sticky-column-3, .sticky-column-header-3');
-            thirdColSticky.forEach(el => {
-                el.style.left = (firstColWidth + secondColWidth) + 'px';
-            });
+                // Atur posisi left untuk kolom ketiga
+                const thirdColSticky = document.querySelectorAll('.sticky-column-3, .sticky-column-header-3');
+                thirdColSticky.forEach(el => {
+                    el.style.left = (firstColWidth + secondColWidth) + 'px';
+                });
+            }
+        });
+
+        // Fungsi untuk menangani resize window
+        window.addEventListener('resize', function() {
+            // Panggil ulang fungsi penyesuaian lebar kolom saat window di-resize
+            const table = document.querySelector('.zebra-table');
+            if (table) {
+                const firstColumn = table.querySelector('th:first-child');
+                const secondColumn = table.querySelector('th:nth-child(2)');
+                const thirdColumn = table.querySelector('th:nth-child(3)');
+
+                const firstColWidth = firstColumn ? firstColumn.offsetWidth : 60;
+                const secondColWidth = secondColumn ? secondColumn.offsetWidth : 190;
+                const thirdColWidth = thirdColumn ? thirdColumn.offsetWidth : 200;
+
+                const secondColSticky = document.querySelectorAll('.sticky-column-2, .sticky-column-header-2');
+                secondColSticky.forEach(el => {
+                    el.style.left = firstColWidth + 'px';
+                });
+
+                const thirdColSticky = document.querySelectorAll('.sticky-column-3, .sticky-column-header-3');
+                thirdColSticky.forEach(el => {
+                    el.style.left = (firstColWidth + secondColWidth) + 'px';
+                });
+            }
         });
     </script>
