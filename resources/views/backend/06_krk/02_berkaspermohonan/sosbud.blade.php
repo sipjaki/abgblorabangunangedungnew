@@ -215,7 +215,7 @@ th {
                      <a href="/bekrkindex" style="text-decoration: none;">
     <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
-        <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
 </a>
 
