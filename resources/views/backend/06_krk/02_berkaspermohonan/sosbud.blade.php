@@ -260,22 +260,29 @@
 
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-  @if($item->verifikasi1 == 'lolos')
-    <button
-        class="button-hijau"
-        type="button"
-        style="background-color: #10B981; cursor: not-allowed;"
-        disabled
-    >
-        <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
-    </button>
+<td style="text-align: center; vertical-align: middle; height: 60px; padding: 0;">
+    @if($item->verifikasi1 == 'lolos')
+        <button
+            class="button-hijau"
+            type="button"
+            disabled
+        >
+            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
+        </button>
     @elseif($item->verifikasi1 == 'dikembalikan')
-        <button class="button-merah" type="button" onclick="openModal({{ $item->id }})" style="background-color: #f8f8fa;">
-            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
+        <button
+            class="button-merah"
+            type="button"
+            onclick="openModal({{ $item->id }})"
+        >
+            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Kembali
         </button>
     @else
-        <button class="button-modern" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button
+            class="button-modern"
+            type="button"
+            onclick="openModal({{ $item->id }})"
+        >
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -352,26 +359,34 @@
                 </a>
             </td>
 
-            <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-  @if($item->verifikasi2 == 'sudah')
-    <button
-        class="button-hijau"
-        type="button"
-        style="background-color: #10B981; color: white; cursor: not-allowed;"
-        disabled
-    >
-        <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
-    </button>
-  @elseif($item->verifikasi2 == 'belum')
-    <button class="button-merah" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
-        <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
-    </button>
-  @else
-    <button class="button-modern" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
-        <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
-    </button>
-  @endif
+            <td style="text-align: center; vertical-align: middle; height: 60px; padding: 0;">
+    @if($item->verifikasi2 == 'sudah')
+        <button
+            type="button"
+            class="button-hijau"
+            disabled
+        >
+            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
+        </button>
+    @elseif($item->verifikasi2 == 'belum')
+        <button
+            type="button"
+            class="button-merah"
+            onclick="openModalVerifikasi2({{ $item->id }})"
+        >
+            <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
+        </button>
+    @else
+        <button
+            type="button"
+            class="button-modern"
+            onclick="openModalVerifikasi2({{ $item->id }})"
+        >
+            <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
+        </button>
+    @endif
 </td>
+
 
 <!-- Modal Verifikasi2 -->
 <div id="confirmModalVerifikasi2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1001; justify-content: center; align-items: center;">
@@ -617,25 +632,27 @@
 </td>
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-  @if($item->verifikasi3 == 'sudah')
-    <button
-        class="button-hijau"
-        type="button"
-        style="background-color: #10B981; cursor: not-allowed;"
-        disabled
-    >
-        <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Sudah
-    </button>
-  @elseif($item->verifikasi3 == 'belum')
-    <button class="button-merah" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #f8f8fa;">
-        <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
-    </button>
-  @else
-    <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})">
-        <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
-    </button>
-  @endif
+<td style="text-align: center; height: 60px; vertical-align: middle;">
+  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+    @if($item->verifikasi3 == 'sudah')
+      <button
+          class="button-hijau"
+          type="button"
+          style="background-color: #10B981; cursor: not-allowed;"
+          disabled
+      >
+          <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Sudah
+      </button>
+    @elseif($item->verifikasi3 == 'belum')
+      <button class="button-merah" type="button" onclick="openModal3({{ $item->id }})" style="background-color: #f8f8fa;">
+          <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
+      </button>
+    @else
+      <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})">
+          <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
+      </button>
+    @endif
+  </div>
 </td>
 
 <!-- Modal Konfirmasi untuk verifikasi3 -->
@@ -741,25 +758,34 @@
 
 
 <!-- Tombol Validasi -->
-<td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-  @if($item->verifikasi4 == 'sudah')
-    <button
-        class="button-lolos"
-        type="button"
-        style="background-color: #10B981; cursor: not-allowed;"
-        disabled
-    >
-        <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Sudah
-    </button>
-  @elseif($item->verifikasi4 == 'belum')
-    <button class="button-dikembalikan" type="button" onclick="openModal4({{ $item->id }})" style="background-color: #f8f8fa;">
-        <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
-    </button>
-  @else
-    <button class="button-modern" type="button" onclick="openModal4({{ $item->id }})">
-        <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
-    </button>
-  @endif
+<td style="text-align: center; height: 60px; vertical-align: middle;">
+  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+    @if($item->verifikasi4 == 'sudah')
+      <button
+          class="button-lolos"
+          type="button"
+          disabled
+      >
+          <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Sudah
+      </button>
+    @elseif($item->verifikasi4 == 'belum')
+      <button
+          class="button-dikembalikan"
+          type="button"
+          onclick="openModal4({{ $item->id }})"
+      >
+          <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
+      </button>
+    @else
+      <button
+          class="button-modern"
+          type="button"
+          onclick="openModal4({{ $item->id }})"
+      >
+          <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
+      </button>
+    @endif
+  </div>
 </td>
 
 <!-- Modal Konfirmasi untuk verifikasi4 -->
