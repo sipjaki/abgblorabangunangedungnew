@@ -129,7 +129,7 @@
     <div style="position: relative; display: inline-block;">
       <input type="search" id="searchInput" placeholder="Cari Jenis Permohonan ...." onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
-      <i class="fas fa-search"
+      <i class="bi bi-search"
          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
       </i>
     </div>
@@ -199,7 +199,7 @@
                                 @foreach ($data as $item )
 
                                 <tr class="align-middle">
-                                 <td>{{ $loop->iteration }}</td>
+                                 <td style="text-align: center;">{{ $loop->iteration }}</td>
 <td style="text-align: left;">{{ $item->tempat ?? '-' }}</td>
 {{-- <td>{{ $item->nosk ?? '-' }}</td>
 <td>{{ $item->status ?? '-' }}</td> --}}
