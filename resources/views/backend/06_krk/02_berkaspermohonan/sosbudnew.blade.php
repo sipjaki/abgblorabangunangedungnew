@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -223,35 +177,39 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
-                    <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table class="table zebra-table">
+                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+                        <table class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
                             <thead>
                                 <tr>
-    <th style="background-color: #ADD8E6;"><i class="bi bi-list-ol" style="margin-right: 6px;"></i> No</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan/Instansi</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-aspect-ratio" style="margin-right: 6px;"></i> Luas Tanah</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Dok Lapangan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-clipboard-check" style="margin-right: 6px;"></i> Status Cek Lapangan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-database-fill-gear" style="margin-right: 6px;"></i> Olah Data KRK</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-pencil-square" style="margin-right: 6px;"></i> Buat Data KRK</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-archive-fill" style="margin-right: 6px;"></i> Berkas Final KRK</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
+                                     <th class="sticky-col" style="left: 0; z-index: 3; background-color: #ADD8E6;">
+          <i class="bi bi-list-ol" style="margin-right: 6px;"></i> No
+        </th>
+<th><i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon</th>
+<th><i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan/Instansi</th>
+<th><i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
+<th><i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp</th>
+<th><i class="bi bi-aspect-ratio" style="margin-right: 6px;"></i> Luas Tanah</th>
+<th><i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan</th>
+<th><i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan</th>
+<th><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
+<th><i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Dok Lapangan</th>
+<th><i class="bi bi-clipboard-check" style="margin-right: 6px;"></i> Status Cek Lapangan</th>
+<th><i class="bi bi-database-fill-gear" style="margin-right: 6px;"></i> Olah Data KRK</th>
+<th><i class="bi bi-pencil-square" style="margin-right: 6px;"></i> Buat Data KRK</th>
+<th><i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data</th>
+<th><i class="bi bi-archive-fill" style="margin-right: 6px;"></i> Berkas Final KRK</th>
+<th><i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai</th>
+<th><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
 
     </tr>
                             </thead>
                               <tbody id="tableBody">
                                 @forelse ($data as $item )
                                 <tr class="align-middle">
-                                    <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                    <td style="text-align: left;">{{$item->perorangan}}</td>
+                                      <td class="sticky-col" style="left: 0; background-color: white; text-align: center; z-index: 2;">
+                                          {{ $loop->iteration }}
+                                        </td>
+                                        <td style="text-align: left;">{{$item->perorangan}}</td>
                                     <td style="text-align: left;">{{$item->perusahaan}}</td>
                                     {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
                                     <td style="text-align: center;">{{$item->nik}}</td> --}}
