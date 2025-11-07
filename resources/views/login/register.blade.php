@@ -259,58 +259,69 @@
 
             <form action="/daftar" method="POST">
                 @csrf
-
-                <div class="input-group">
-                    <input type="text" name="name" placeholder="Nama Lengkap" value="{{ old('name') }}" />
-                    @error('name')
-                        <div style="color: red;">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="input-group">
-                    <input type="text" name="username" placeholder="Username" value="{{ old('username') }}" />
-                    @error('username')
-                        <div style="color: red;">{{ $message }}</div>
-                    @enderror
-                </div>
-
-
-{{-- <div class="input-group">
-    <select name="statusadmin_id"
-        style="width: 100%; background-color: #e0edff; color: black; border: none; border-radius: 8px; padding: 12px; margin-bottom: 10px; font-family: 'Poppins', sans-serif;">
-        <option value="">-- Pilih Akun --</option>
-        @foreach ($datastatusadmin as $status)
-            <option value="{{ $status->id }}" {{ old('statusadmin_id') == $status->id ? 'selected' : '' }}>
-                {{ $status->status ?? 'Status ' . $status->id }}
-            </option>
-        @endforeach
-    </select>
-    @error('statusadmin_id')
+<!-- Nama Lengkap -->
+<div class="input-group" style="position: relative; margin-bottom: 10px;">
+    <input type="text" name="name" placeholder="Nama Lengkap" value="{{ old('name') }}"
+        style="padding-right: 35px; width: 100%;" />
+    <i class="fas fa-user" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i>
+    @error('name')
         <div style="color: red;">{{ $message }}</div>
     @enderror
-</div> --}}
+</div>
 
+<!-- Username -->
+<div class="input-group" style="position: relative; margin-bottom: 10px;">
+    <input type="text" name="username" placeholder="Username" value="{{ old('username') }}"
+        style="padding-right: 35px; width: 100%;" />
+    <i class="fas fa-id-card" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i>
+    @error('username')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
 
-                <div class="input-group">
-                    <input type="text" name="phone_number" placeholder="Nomor HP" value="{{ old('phone_number') }}" />
-                    @error('phone_number')
-                        <div style="color: red;">{{ $message }}</div>
-                    @enderror
-                </div>
+<!-- Nomor HP -->
+<div class="input-group" style="position: relative; margin-bottom: 10px;">
+    <input type="text" name="phone_number" placeholder="Nomor HP" value="{{ old('phone_number') }}"
+        style="padding-right: 35px; width: 100%;" />
+    <i class="fas fa-phone" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i>
+    @error('phone_number')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
 
-                <div class="input-group">
-                    <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" />
-                    @error('email')
-                        <div style="color: red;">{{ $message }}</div>
-                    @enderror
-                </div>
+<!-- Email -->
+<div class="input-group" style="position: relative; margin-bottom: 10px;">
+    <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"
+        style="padding-right: 35px; width: 100%;" />
+    {{-- <i class="fas fa-envelope" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i> --}}
+    @error('email')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
 
-                <div class="input-group">
-                    <input type="password" name="password" placeholder="Password" />
-                    @error('password')
-                        <div style="color: red;">{{ $message }}</div>
-                    @enderror
-                </div>
+<!-- Password dengan Show/Hide -->
+<div class="input-group" style="position: relative; margin-bottom: 10px;">
+    <input type="password" name="password" id="password" placeholder="Password"
+        style="padding-right: 35px; width: 100%;" />
+    <i class="fas fa-eye" id="togglePassword"
+        style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: gray;"></i>
+    @error('password')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    // Fungsi show/hide password
+    const togglePassword = document.querySelector("#togglePassword");
+    const passwordInput = document.querySelector("#password");
+
+    togglePassword.addEventListener("click", function() {
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+    });
+</script>
 
                 <button type="submit" class="btn-login" style="font-size: 16px;">Daftar</button>
 
@@ -344,3 +355,20 @@
 
     </body>
     </html>
+
+
+
+{{-- <div class="input-group">
+    <select name="statusadmin_id"
+        style="width: 100%; background-color: #e0edff; color: black; border: none; border-radius: 8px; padding: 12px; margin-bottom: 10px; font-family: 'Poppins', sans-serif;">
+        <option value="">-- Pilih Akun --</option>
+        @foreach ($datastatusadmin as $status)
+            <option value="{{ $status->id }}" {{ old('statusadmin_id') == $status->id ? 'selected' : '' }}>
+                {{ $status->status ?? 'Status ' . $status->id }}
+            </option>
+        @endforeach
+    </select>
+    @error('statusadmin_id')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div> --}}

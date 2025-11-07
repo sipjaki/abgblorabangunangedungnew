@@ -275,7 +275,7 @@
 <div class="input-group" style="position: relative;">
     <input type="password" name="password" id="password" placeholder="Password" required
         style="padding-right: 35px;" />
-    <i class="fas fa-lock" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i>
+    {{-- <i class="fas fa-lock" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i> --}}
 
     <!-- tombol show/hide -->
     <i class="fas fa-eye" id="togglePassword"
