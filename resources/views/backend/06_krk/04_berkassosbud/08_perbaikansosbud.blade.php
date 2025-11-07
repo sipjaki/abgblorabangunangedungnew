@@ -357,7 +357,7 @@
         Data belum di update. Silahkan upload berkas Siteplan.
     </div>
 </div>
-<div class="form-modern mb-3">
+{{-- <div class="form-modern mb-3">
     <label class="form-label-modern " for="tandatangan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Tanda Tangan (PDF/Jpeg)
     </label>
@@ -366,7 +366,6 @@
         onchange="previewMixedFile(event, 'previewContainerTTD', 'previewTTD', 'msgTTD')" />
     @error('tandatangan')<div class="invalid-feedback">{{ $message }}</div>@enderror
 
-    {{-- Data Sebelumnya --}}
     <div class="mt-3" id="previewContainerTTD" style="{{ isset($data->tandatangan) ? '' : 'display: none;' }}">
         <label class="fw-bold">Data Sebelumnya:</label>
         @php
@@ -388,9 +387,9 @@
         Data belum di update. Silahkan upload berkas Tanda Tangan.
     </div>
 
-    {{-- Preview Upload Baru --}}
     <div class="mt-3" id="previewTTD" style="display: none;"></div>
-</div>
+</div> --}}
+
 </div>
     <script>
 function previewPDF(event, containerId, iframeId, messageId) {
