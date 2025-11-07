@@ -708,7 +708,9 @@ th {
 
 <tr>
     <td style="text-align: center;">15</td>
-    <td style="text-align: left;"><i class="bi bi-globe" style="margin-right:6px;"></i> Alamat Pemohon</td>
+    <td style="text-align: left;">
+        <i class="bi bi-house-door-fill" style="margin-right:6px; color: navy;"></i> Alamat Pemohon
+    </td>
     <td style="text-align: center;">:</td>
     <td style="text-align: left;">{{ $data->alamatpemohon ?? '-' }}</td>
 </tr>
@@ -726,13 +728,19 @@ th {
     <table class="zebra-table table-striped">
         <tr>
     <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-person-vcard" style="margin-right:6px;"></i> KTP/<span style="color: red;">KITAS**</span>
+        <button class="button-baru">
+            <i class="bi bi-person-vcard" style="margin-right:6px;"></i> KTP/<span style="color: red;">KITAS**</span>
+        </button>
 </td>
 <td style="text-align: center; font-size:16px;">
+<button class="button-baru">
     <i class="bi bi-file-earmark-text" style="margin-right:6px;"></i> NPWP
+</button>
 </td>
 <td style="text-align: center; font-size:16px;">
-    <i class="bi bi-house-door" style="margin-right:6px;"></i> Sertifikat Tanah
+    <button class="button-baru">
+        <i class="bi bi-house-door" style="margin-right:6px;"></i> Sertifikat Tanah
+    </button>
 </td>
 
 </tr>
@@ -838,11 +846,15 @@ th {
 </td> --}}
 
 <td style="text-align: center; font-size:16px;">
+<button class="button-baru">
     <i class="bi bi-receipt-cutoff" style="margin-right:6px;"></i> Bukti PBB
+</button>
 </td>
 
 <td style="text-align: center; font-size:16px;">
+<button class="button-baru">
     <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi DPUPR
+</button>
 </td>
 
 </tr>
@@ -945,11 +957,15 @@ th {
         <tr>
 
 <td style="text-align: center; font-size:16px;">
+<button class="button-baru">
     <i class="bi bi-map" style="margin-right:6px;"></i> Siteplan
+</button>
 </td>
 
 <td style="text-align: center; font-size:16px;">
+<button class="button-baru">
     <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Tanda Tangan
+</button>
 </td>
 
 </tr>
