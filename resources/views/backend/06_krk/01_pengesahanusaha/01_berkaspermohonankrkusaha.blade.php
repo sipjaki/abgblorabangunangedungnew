@@ -773,7 +773,8 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data Belum Di Lengkapi !!</p>
+        {{-- <p>Data Belum Di Lengkapi !!</p> --}}
+                <button class="button-merah"><p>Data Belum Di Lengkapi !!</p></button>
     @endif
 </div>
             </td>
@@ -800,7 +801,8 @@ th {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data Belum Di Lengkapi !!</p>
+        {{-- <p>Data Belum Di Lengkapi !!</p> --}}
+                <button class="button-merah"><p>Data Belum Di Lengkapi !!</p></button>
     @endif
 </div>
             </td>
