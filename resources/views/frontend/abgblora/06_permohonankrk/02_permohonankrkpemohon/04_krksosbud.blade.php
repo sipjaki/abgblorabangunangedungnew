@@ -525,7 +525,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 
-<div class="form-modern flex gap-4 w-full mt-4">
+<div class="flex gap-4 w-full mt-4">
     <!-- KTP -->
     <div class="flex flex-col w-1/3" style="margin-top:-60px;">
     <label for="ktp" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <!-- NPWP -->
 <div class="flex flex-col w-1/3" style="margin-top:-60px;">
-    <label class="form-label-modern" for="npwp" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
+    <label for="npwp" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
         <!-- Icon -->
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
