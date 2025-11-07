@@ -284,7 +284,7 @@
                 <button type="submit" class="btn-login" style="font-size: 16px;">Login</button>
 
                 <div class="footer-links" style="display: flex; justify-content: flex-end;">
-                    Belum Punya Akun ? <a href="/daftar"><strong>  Daftar ?</strong></a>
+                    Belum Punya Akun ? <a href="/daftar"><strong style="margin-left:5px;">Daftar ?</strong></a>
                 </div>
             </form>
         </div>

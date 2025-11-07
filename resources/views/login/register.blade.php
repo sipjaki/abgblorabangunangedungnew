@@ -244,10 +244,10 @@
 
       <div class="login-container">
         <div class="logo-section">
-            <img src="/assets/abgblora/logo/iconabgblora.png" alt="Kabupaten Blora" style="width: 80%;" />
+            <img src="/assets/abgblora/logo/logobangunangedung.png" alt="Kabupaten Blora" style="width: 80%;" />
           </div>
               <div class="container">
-            <h4 class="title" style="font-family: 'Poppins', sans-serif; text-align: center;">Sign in to ABG Blora</h4>
+            <h4 class="title" style="font-family: 'Poppins', sans-serif; text-align: center;">Silahkan Daftar ABG Blora</h4>
           </div>
 
           <div style="font-family: 'Poppins', sans-serif;">
@@ -315,7 +315,7 @@
                 <button type="submit" class="btn-login" style="font-size: 16px;">Daftar</button>
 
                 <div class="footer-links" style="display: flex; justify-content: flex-end;">
-                    <a href="/login">Sudah punya akun? Login</a>
+                    Sudah punya akun? <a href="/login"><strong style="margin-left: 5px;"> Login</strong></a>
                 </div>
             </form>
         </div>
