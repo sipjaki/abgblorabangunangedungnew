@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -176,7 +130,7 @@ th {
     <div style="position: relative; display: inline-block;">
       <input type="search" id="searchInput" placeholder="Cari Permohonan ...." onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
-      <i class="fas fa-search"
+      <i class="bi bi-search"
          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
       </i>
     </div>
@@ -186,14 +140,14 @@ th {
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarjenispermohonan')"
-      class="button-baru"
+      class="button-modern"
       style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
       <i class="bi bi-download"></i> Download Excel
     </button>
 
     @canany(['superadmin', 'admin'])
     <a href="{{ route('bebantuanteknisindexmenu') }}">
-        <button class="button-newvalidasi button-abgblora" type="button"
+        <button class="button-modern button-abgblora" type="button"
             style="cursor: pointer; margin-left:5px; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
@@ -216,7 +170,7 @@ th {
   function searchTable() {
     let input = document.getElementById("searchInput").value;
 
-    fetch(`/datadesablora?search=${input}`)
+    fetch(`/bebantuanteknisassistensi?search=${input}`)
       .then(response => response.text())
       .then(html => {
         let parser = new DOMParser();
@@ -240,38 +194,18 @@ th {
                         >
                             <thead>
                                   <tr>
-        <th style="background-color: #ADD8E6;">No</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Jenis Pengajuan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Pemohon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Konsultan </th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
-        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Dinas</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat Registrasi DPUPR </th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-calendar"></i> Tanggal Surat</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-toolbox"></i> Nama Paket</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Kategori Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-ruler-combined"></i> Luas Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Jumlah Lantai</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-arrows-alt-v"></i> Tinggi Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-water"></i> Bassement</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user-tag"></i> Kepemilikan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-check"></i> Tahun Pembangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Tahun Renovasi</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-briefcase"></i> Pengelola</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-map-marked-alt"></i> Lokasi Bangunan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-house-door"></i> RT</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-house"></i> RW</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt"></i> Kabupaten</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-geo"></i> Kecamatan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th> --}}
-            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i>Permohonan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Cek Berkas Perencanaan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Asistensi</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Asistensi</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Upload Berkas Bantek</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-journal-check"></i> Terbitkan Surat</th>
+      <th><i class="bi bi-list-ol"></i> No</th>
+<th><i class="bi bi-file-earmark-text"></i> Jenis Pengajuan</th>
+<th><i class="bi bi-person"></i> Pemohon</th>
+<th><i class="bi bi-person-badge"></i> Konsultan</th>
+<th><i class="bi bi-telephone"></i> Telepon</th>
+<th><i class="bi bi-envelope-paper"></i> Permohonan</th>
+<th><i class="bi bi-check2-circle"></i> Verifikasi DPUPR</th>
+<th><i class="bi bi-cpu"></i> Cek Berkas Perencanaan</th>
+<th><i class="bi bi-eye"></i> Dokumentasi Asistensi</th>
+<th><i class="bi bi-eye"></i> Verifikasi Asistensi</th>
+<th><i class="bi bi-upload"></i> Upload Berkas Bantek</th>
+<th><i class="bi bi-journal-check"></i> Terbitkan Surat</th>
             @can('superadmin')
             <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
             @endcan
@@ -311,8 +245,8 @@ th {
 
             <td style="text-align: center;">
                 <a href="{{ route('beasistensishowberkas1.show', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Permohonan
+                    class="button-modern">
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
                 </a>
             </td>
             <!-- Tombol KTP -->
@@ -323,7 +257,6 @@ th {
     <button
         class="button-hijau"
         type="button"
-        style="background-color: #10B981; color: black; cursor: not-allowed;"
         disabled
     >
         <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
@@ -333,7 +266,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary" style="color: black">
+        <button class="button-modern" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary" style="color: black">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -420,7 +353,7 @@ th {
                 <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
             </button>
         @else
-            <button class="button-newvalidasi" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+            <button class="button-modern" type="button" onclick="openModal2({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
                 <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Cek Perencanaan
             </button>
         @endif
@@ -493,8 +426,8 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('bebantuanasistensilap.show', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
+                    class="button-modern">
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
                 </a>
             </td>
 
@@ -514,7 +447,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
         </button>
         @else
-        <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Status Asistensi
         </button>
         @endif
@@ -605,7 +538,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Tidak
         </button>
     @else
-        <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
+        <button class="button-modern" type="button" onclick="openModal4({{ $item->id }})" style="color: black; background-color: #D1D5DB;">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Terbitkan !
         </button>
     @endif
@@ -677,8 +610,8 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('bebantuanteknislapangan.uploadberkas', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Upload Berkas
+                    class="button-modern">
+                    <i class="bi bi-eye" style="margin-right: 5px;"></i> Upload Berkas
                 </a>
             </td>
 
