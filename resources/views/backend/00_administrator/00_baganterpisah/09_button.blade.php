@@ -1,17 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-  th {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
-
-  .sticky-col {
-    position: sticky;
-    background-color: #fff;
-  }
-</style>
 
 <style>
 * {
