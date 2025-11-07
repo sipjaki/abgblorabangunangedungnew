@@ -1335,7 +1335,7 @@
 </li>
 
 <li class="nav-item">
-    <a href="/bekrkindex" class="nav-link" style="display: flex; align-items: center;">
+    <a href="/bekrkindexnew" class="nav-link" style="display: flex; align-items: center;">
         <i class="bi bi-building nav-icon" style="color: white; font-size: 16px; flex-shrink: 0;"></i>
         <p style="color: white; margin: 0 0 0 8px;">KRK Percobaan</p>
     </a>
