@@ -177,27 +177,27 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
-                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+                <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
-                            <thead>
+                     <thead>
                                 <tr>
-    <th style="background-color: #ADD8E6;"><i class="bi bi-list-ol" style="margin-right: 6px;"></i> No</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan/Instansi</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-aspect-ratio" style="margin-right: 6px;"></i> Luas Tanah</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Dok Lapangan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-clipboard-check" style="margin-right: 6px;"></i> Status Cek Lapangan</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-database-fill-gear" style="margin-right: 6px;"></i> Olah Data KRK</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-pencil-square" style="margin-right: 6px;"></i> Buat Data KRK</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-archive-fill" style="margin-right: 6px;"></i> Berkas Final KRK</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai</th>
-<th style="background-color: #ADD8E6;"><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
+    <th><i class="bi bi-list-ol" style="margin-right: 6px;"></i> No</th>
+<th><i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon</th>
+<th><i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan/Instansi</th>
+<th><i class="bi bi-calendar-event" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
+<th><i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp</th>
+<th><i class="bi bi-aspect-ratio" style="margin-right: 6px;"></i> Luas Tanah</th>
+<th><i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan</th>
+<th><i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan</th>
+<th><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
+<th><i class="bi bi-file-earmark-text" style="margin-right: 6px;"></i> Dok Lapangan</th>
+<th><i class="bi bi-clipboard-check" style="margin-right: 6px;"></i> Status Cek Lapangan</th>
+<th><i class="bi bi-database-fill-gear" style="margin-right: 6px;"></i> Olah Data KRK</th>
+<th><i class="bi bi-pencil-square" style="margin-right: 6px;"></i> Buat Data KRK</th>
+<th><i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data</th>
+<th><i class="bi bi-archive-fill" style="margin-right: 6px;"></i> Berkas Final KRK</th>
+<th><i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai</th>
+<th><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
 
     </tr>
                             </thead>
