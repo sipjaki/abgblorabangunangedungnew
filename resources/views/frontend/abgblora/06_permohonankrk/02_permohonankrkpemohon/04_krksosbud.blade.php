@@ -767,7 +767,9 @@ document.addEventListener('DOMContentLoaded', function () {
   <a href="/assets/abgblora/logo/suratkrk.docx"
      download
      class="mt-1 underline hover:text-black text-red-600 transition-colors duration-150 ease-in-out" style="color: red;">
-     Download Contoh Surat Permohonan
+     <button class="button-berkas">
+         Download Contoh Surat Permohonan
+        </button>
   </a>
 </div>
 
@@ -943,8 +945,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <div class="flex justify-end" style="margin-top: -40px;">
         <button type="button" class="btn-submit" onclick="openModal()">
-            <i class="fab fa-telegram-plane w-5 h-5"></i>
-            Kirim Permohonan
+          <i class="bi bi-send-fill" style="margin-right: 8px;"></i>
+    Kirim Permohonan
         </button>
     </div>
 <!-- Modal Konfirmasi -->
