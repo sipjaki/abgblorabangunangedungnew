@@ -279,13 +279,13 @@
                         <th><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
                     </tr>
                 </thead>
-                              <tbody id="tableBody">
-                                @forelse ($data as $item )
-                                <tr class="align-middle">
-                                    <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                    <td style="text-align: left;">{{$item->perorangan}}</td>
-                                    <td style="text-align: left;">{{$item->perusahaan}}</td>
-                                    {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
+
+                  <tbody id="tableBody">
+            @forelse ($data as $item)
+            <tr class="align-middle">
+                <td class="sticky-column" style="text-align: center;">{{ $loop->iteration }}</td>
+                <td class="sticky-column-2" style="text-align: left;">{{$item->perorangan}}</td>
+                <td class="sticky-column-3" style="text-align: left;">{{$item->perusahaan}}</td>                    {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
                                     <td style="text-align: center;">{{$item->nik}}</td> --}}
                                     <td style="text-align: center;">
                                         {{ \Carbon\Carbon::parse($item->tanggalpermohonan)->translatedFormat('d F Y') }}
@@ -990,3 +990,29 @@
 
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script untuk menyesuaikan lebar kolom tetap secara dinamis
+        document.addEventListener('DOMContentLoaded', function() {
+            const table = document.querySelector('.zebra-table');
+            const firstColumn = table.querySelector('th:first-child');
+            const secondColumn = table.querySelector('th:nth-child(2)');
+
+            // Dapatkan lebar kolom pertama dan kedua
+            const firstColWidth = firstColumn.offsetWidth;
+            const secondColWidth = secondColumn.offsetWidth;
+
+            // Atur posisi left untuk kolom kedua dan ketiga
+            const secondColSticky = document.querySelectorAll('.sticky-column-2, .sticky-column-header-2');
+            secondColSticky.forEach(el => {
+                el.style.left = firstColWidth + 'px';
+            });
+
+            const thirdColSticky = document.querySelectorAll('.sticky-column-3, .sticky-column-header-3');
+            thirdColSticky.forEach(el => {
+                el.style.left = (firstColWidth + secondColWidth) + 'px';
+            });
+        });
+    </script>
