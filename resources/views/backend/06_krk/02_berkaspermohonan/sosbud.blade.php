@@ -265,6 +265,7 @@
         <button
             class="button-hijau"
             type="button"
+            onclick="openModal({{ $item->id }})"
             {{-- disabled --}}
         >
             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
