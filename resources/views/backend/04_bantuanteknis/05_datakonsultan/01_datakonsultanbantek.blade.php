@@ -150,7 +150,7 @@
     </button>
 
     <a href="/bebantekkonsultannew" style="text-decoration: none;">
-      <button class="button-baru"
+      <button class="button-modern"
         >
         <i class="bi bi-plus-circle"></i> Tambah Konsultan
       </button>

@@ -265,7 +265,7 @@
         <button
             class="button-hijau"
             type="button"
-            disabled
+            {{-- disabled --}}
         >
             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Lolos
         </button>
