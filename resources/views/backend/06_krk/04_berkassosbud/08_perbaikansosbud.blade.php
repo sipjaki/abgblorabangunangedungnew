@@ -357,9 +357,9 @@
         Data belum di update. Silahkan upload berkas Siteplan.
     </div>
 </div>
-{{-- <div class="form-modern mb-3">
+<div class="form-modern mb-3">
     <label class="form-label-modern " for="tandatangan">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Tanda Tangan (PDF/Jpeg)
+        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Pernyataan KRK
     </label>
     <input type="file" id="tandatangan" name="tandatangan" accept="application/pdf,image/jpeg,image/png,image/jpg"
         class="form-control @error('tandatangan') is-invalid @enderror"
@@ -388,7 +388,7 @@
     </div>
 
     <div class="mt-3" id="previewTTD" style="display: none;"></div>
-</div> --}}
+</div>
 
 </div>
     <script>
