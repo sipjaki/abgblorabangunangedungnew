@@ -357,6 +357,32 @@
         Data belum di update. Silahkan upload berkas Siteplan.
     </div>
 </div>
+
+
+<script>
+function previewPDF(event, containerId, iframeId, messageId) {
+    const file = event.target.files[0];
+    const container = document.getElementById(containerId);
+    const iframe = document.getElementById(iframeId);
+    const message = document.getElementById(messageId);
+
+    if (file && file.type === "application/pdf") {
+        const fileURL = URL.createObjectURL(file);
+        iframe.src = fileURL;
+        container.style.display = 'block';
+        message.style.display = 'none';
+    } else {
+        iframe.src = '';
+        container.style.display = 'none';
+        message.style.display = 'block';
+        message.textContent = 'File harus berupa format PDF.';
+    }
+}
+</script>
+
+
+                                    </div>
+                                    <div class="form-modern col-md-6">
 <div class="form-modern mb-3">
     <label class="form-label-modern " for="tandatangan">
         <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Pernyataan KRK
@@ -388,32 +414,11 @@
     </div>
 
     <div class="mt-3" id="previewTTD" style="display: none;"></div>
-</div>
 
 </div>
-    <script>
-function previewPDF(event, containerId, iframeId, messageId) {
-    const file = event.target.files[0];
-    const container = document.getElementById(containerId);
-    const iframe = document.getElementById(iframeId);
-    const message = document.getElementById(messageId);
 
-    if (file && file.type === "application/pdf") {
-        const fileURL = URL.createObjectURL(file);
-        iframe.src = fileURL;
-        container.style.display = 'block';
-        message.style.display = 'none';
-    } else {
-        iframe.src = '';
-        container.style.display = 'none';
-        message.style.display = 'block';
-        message.textContent = 'File harus berupa format PDF.';
-    }
-}
-</script>
+</div>
 
-
-                                    </div>
                                 </div>
                                 <!-- End row -->
                             </div>
