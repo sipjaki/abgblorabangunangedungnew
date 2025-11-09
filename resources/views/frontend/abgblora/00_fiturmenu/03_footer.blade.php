@@ -94,7 +94,7 @@
 }
 
 .footer-widget ul li a:hover {
-    color: #007bff;
+    color: navy;
 }
 
 /* Kontak & Peta */
@@ -240,14 +240,16 @@
                         <i class="bi bi-telephone-fill" style="margin-right: 6px;"></i>
                         Kontak Kami
                     </h4>
+<div class="contact-info">
+    <i class="bi bi-geo-alt-fill" style="margin-right: 6px; color: white;"></i>
+    <span>Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</span>
+</div>
 
-                        <div class="contact-info">
-                            <p>Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <a href="mailto:kontraktor@masjakidpuprblora.co.id">bid.bangunan.gedung.blora@gmail.com</a>
-                        </div>
+<div class="contact-item">
+    <i class="bi bi-envelope-fill" style="margin-right: 6px; color: white;"></i>
+    <a href="mailto:bid.bangunan.gedung.blora@gmail.com" style="color: white;">bid.bangunan.gedung.blora@gmail.com</a>
+</div>
+
                     </div>
 
                     <!-- Google Maps -->
