@@ -300,7 +300,7 @@
     <img id="slideImage"
          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&h=400&q=80"
          alt="Perencanaan Tata Ruang Wilayah"
-         style="width: 100%; height: auto; display: block; transition: opacity 1s ease-in-out; border-radius: 10px;">
+         style="width: 100%; height: auto; display: block; transition: opacity 1s ease-in-out; border-radius: 10px; opacity: 1;">
     <div class="img-caption" id="captionText"
          style="position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; color: white; background: rgba(0,0,0,0.5); padding: 8px; font-size: 14px; font-style: italic;">
         Perencanaan Tata Ruang Wilayah
@@ -327,18 +327,32 @@
         }
     ];
 
+    // Preload semua gambar
+    const preloadImages = () => {
+        images.forEach(img => {
+            const image = new Image();
+            image.src = img.url;
+        });
+    };
+
+    preloadImages();
+
     let currentIndex = 0;
     const imgElement = document.getElementById('slideImage');
     const captionElement = document.getElementById('captionText');
 
     function showSlide(index) {
         imgElement.style.opacity = 0;
-        setTimeout(() => {
-            imgElement.src = images[index].url;
+
+        const nextImage = new Image();
+        nextImage.src = images[index].url;
+
+        nextImage.onload = () => {
+            imgElement.src = nextImage.src;
             imgElement.alt = images[index].caption;
             captionElement.textContent = images[index].caption;
             imgElement.style.opacity = 1;
-        }, 500);
+        };
     }
 
     function nextSlide() {
@@ -346,10 +360,7 @@
         showSlide(currentIndex);
     }
 
-    // tampilkan pertama kali
     showSlide(currentIndex);
-
-    // ganti otomatis tiap 5 detik
     setInterval(nextSlide, 5000);
 </script>
 
