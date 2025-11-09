@@ -234,11 +234,10 @@
                 </div>
             </div>
         </div>
-            <div class="footer-copyright" style="height: 10vh; display: flex; justify-content: center; align-items: center; background-color: #ffd100; color: white; text-align: center; padding: 0 20px;">
-                <p style="color: black;">© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah | 2025</p>
-            </div>
-
     </footer>
+    <div class="footer-copyright" style="height: 10vh; display: flex; justify-content: center; align-items: center; background-color: #ffd100; color: white; text-align: center; padding: 0 20px;">
+        <p style="color: black;">© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah | 2025</p>
+    </div>
 
     <!-- Copyright Section (Terpisah) -->
     <!-- Footer Section End -->
