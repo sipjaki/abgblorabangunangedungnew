@@ -857,14 +857,6 @@
         </div>
     </div>
 
-    <!-- Konten Halaman (contoh) -->
-    <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
-        <h1>Konten Halaman</h1>
-        <p>Ini adalah contoh konten halaman. Navbar akan tetap berada di atas saat Anda menggulir halaman.</p>
-        <p>Pada tampilan mobile, klik tombol hamburger di pojok kanan untuk membuka menu sidebar.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-
     <script>
         // Toggle dropdown untuk desktop
         function toggleDropdown(e) {
