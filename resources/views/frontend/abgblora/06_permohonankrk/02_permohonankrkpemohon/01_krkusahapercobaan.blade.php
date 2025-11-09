@@ -487,6 +487,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i>
     Kabupaten
 </label>
+
 <select name="kabupaten" id="kabupaten" class="form-control" readonly disabled>
             <option value="kabupaten blora" selected style="font-size: 14px;">Kabupaten Blora</option>
         </select>
@@ -569,10 +570,11 @@ document.addEventListener('DOMContentLoaded', function () {
     @enderror
 </div>
 
-<div class="form-modern" style="margin-top: 0px;">
+<div class="form-modern" style="margin-top: -15px;">
     <label class="form-label-modern d-flex align-items-center" for="alamatpemohon">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Alamat Lengkap Pemohon
-    </label>
+    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i>
+    Alamat Lengkap Pemohon
+</label>
     <input type="text" id="alamatpemohon" name="alamatpemohon" placeholder="Alamat Lengkap Pemohon"
         class="form-control @error('alamatpemohon') is-invalid @enderror"
         value="{{ old('alamatpemohon') }}"
@@ -584,10 +586,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -40px;">
-    <i class="fas fa-info-circle me-2"></i>
-    <div>
-        <strong>Berkas Kelengkapan Dokumen Pemohon  </strong>
-    </div>
+    <i class="bi bi-info-circle-fill me-2"></i>
+<div>
+    <strong>Berkas Kelengkapan Dokumen Pemohon</strong>
+</div>
 </div>
 
 
@@ -1008,9 +1010,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <div class="flex justify-end" style="margin-top: -40px;">
         <button type="button" class="btn-submit" onclick="openModal()">
-            <i class="fab fa-telegram-plane w-5 h-5"></i>
-            Kirim Permohonan
-        </button>
+    <i class="bi bi-send-fill" style="margin-right: 6px;"></i>
+    Kirim Permohonan
+</button>
+
     </div>
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
