@@ -298,7 +298,7 @@
                                     <!-- Image Slideshow -->
                                     <div class="card-img-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 10px;">
   <img id="slideImage"
-       src="https://picsum.photos/900/400?random=1"
+       src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80"
        alt="Perencanaan Tata Ruang Wilayah"
        style="width: 100%; height: auto; display: block; border-radius: 10px; opacity: 1; transition: opacity 0.8s ease-in-out;">
 
@@ -311,17 +311,33 @@
 
 <script>
   const images = [
-    { url: "https://picsum.photos/900/400?random=1", caption: "Perencanaan Tata Ruang Wilayah" },
-    { url: "https://picsum.photos/900/400?random=2", caption: "Zonasi Kawasan Perkotaan" },
-    { url: "https://picsum.photos/900/400?random=3", caption: "Proses Pembangunan Berdasarkan KRK" },
-    { url: "https://picsum.photos/900/400?random=4", caption: "Peta Rencana Tata Ruang Kabupaten" }
+    {
+      url: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
+      caption: "Perencanaan Tata Ruang Wilayah"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80",
+      caption: "Desain Arsitektur Bangunan Gedung"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=900&q=80",
+      caption: "Proses Perizinan PBG dan KRK"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+      caption: "Pembangunan Sesuai Rencana Tata Ruang"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1581093588401-22f8b6c2f1c2?auto=format&fit=crop&w=900&q=80",
+      caption: "Peta dan Zonasi Wilayah Bangunan"
+    }
   ];
 
   let currentIndex = 0;
   const imgElement = document.getElementById('slideImage');
   const captionElement = document.getElementById('captionText');
 
-  // preload semua gambar
+  // preload biar gambar muncul halus
   images.forEach(img => {
     const preload = new Image();
     preload.src = img.url;
@@ -341,10 +357,10 @@
     showSlide(currentIndex);
   }
 
-  // tampilkan slide awal
+  // tampil awal
   showSlide(currentIndex);
 
-  // ganti gambar tiap 5 detik
+  // ganti setiap 5 detik
   setInterval(nextSlide, 5000);
 </script>
 
