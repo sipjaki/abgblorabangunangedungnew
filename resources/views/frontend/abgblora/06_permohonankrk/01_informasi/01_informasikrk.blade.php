@@ -297,71 +297,55 @@
 
                                     <!-- Image Slideshow -->
                                     <div class="card-img-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 10px;">
-    <img id="slideImage"
-         src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&h=400&q=80"
-         alt="Perencanaan Tata Ruang Wilayah"
-         style="width: 100%; height: auto; display: block; transition: opacity 1s ease-in-out; border-radius: 10px; opacity: 1;">
-    <div class="img-caption" id="captionText"
-         style="position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; color: white; background: rgba(0,0,0,0.5); padding: 8px; font-size: 14px; font-style: italic;">
-        Perencanaan Tata Ruang Wilayah
-    </div>
+  <img id="slideImage"
+       src="https://picsum.photos/900/400?random=1"
+       alt="Perencanaan Tata Ruang Wilayah"
+       style="width: 100%; height: auto; display: block; border-radius: 10px; opacity: 1; transition: opacity 0.8s ease-in-out;">
+
+  <div id="captionText"
+       style="position: absolute; bottom: 0; left: 0; right: 0; text-align: center; color: white;
+              background: rgba(0,0,0,0.5); padding: 8px; font-size: 14px; font-style: italic;">
+    Perencanaan Tata Ruang Wilayah
+  </div>
 </div>
 
 <script>
-    const images = [
-        {
-            url: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&h=400&q=80",
-            caption: "Perencanaan Tata Ruang Wilayah"
-        },
-        {
-            url: "https://images.unsplash.com/photo-1505739772217-3c5a7b7f3d9c?auto=format&fit=crop&w=900&h=400&q=80",
-            caption: "Zonasi Kawasan Perkotaan"
-        },
-        {
-            url: "https://images.unsplash.com/photo-1581092334364-5c4bfc11b911?auto=format&fit=crop&w=900&h=400&q=80",
-            caption: "Proses Pembangunan Berdasarkan KRK"
-        },
-        {
-            url: "https://images.unsplash.com/photo-1533055640609-24b498cdf8a0?auto=format&fit=crop&w=900&h=400&q=80",
-            caption: "Peta Rencana Tata Ruang Kabupaten"
-        }
-    ];
+  const images = [
+    { url: "https://picsum.photos/900/400?random=1", caption: "Perencanaan Tata Ruang Wilayah" },
+    { url: "https://picsum.photos/900/400?random=2", caption: "Zonasi Kawasan Perkotaan" },
+    { url: "https://picsum.photos/900/400?random=3", caption: "Proses Pembangunan Berdasarkan KRK" },
+    { url: "https://picsum.photos/900/400?random=4", caption: "Peta Rencana Tata Ruang Kabupaten" }
+  ];
 
-    // Preload semua gambar
-    const preloadImages = () => {
-        images.forEach(img => {
-            const image = new Image();
-            image.src = img.url;
-        });
-    };
+  let currentIndex = 0;
+  const imgElement = document.getElementById('slideImage');
+  const captionElement = document.getElementById('captionText');
 
-    preloadImages();
+  // preload semua gambar
+  images.forEach(img => {
+    const preload = new Image();
+    preload.src = img.url;
+  });
 
-    let currentIndex = 0;
-    const imgElement = document.getElementById('slideImage');
-    const captionElement = document.getElementById('captionText');
+  function showSlide(index) {
+    imgElement.style.opacity = 0;
+    setTimeout(() => {
+      imgElement.src = images[index].url;
+      captionElement.textContent = images[index].caption;
+      imgElement.style.opacity = 1;
+    }, 500);
+  }
 
-    function showSlide(index) {
-        imgElement.style.opacity = 0;
-
-        const nextImage = new Image();
-        nextImage.src = images[index].url;
-
-        nextImage.onload = () => {
-            imgElement.src = nextImage.src;
-            imgElement.alt = images[index].caption;
-            captionElement.textContent = images[index].caption;
-            imgElement.style.opacity = 1;
-        };
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showSlide(currentIndex);
-    }
-
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
     showSlide(currentIndex);
-    setInterval(nextSlide, 5000);
+  }
+
+  // tampilkan slide awal
+  showSlide(currentIndex);
+
+  // ganti gambar tiap 5 detik
+  setInterval(nextSlide, 5000);
 </script>
 
                                     <!-- Main Content -->
