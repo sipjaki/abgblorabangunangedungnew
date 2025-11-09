@@ -1,5 +1,147 @@
+<style>
+    /* Footer utama */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+    .footer-section {
+    /* background-color: #f5f5f5; */
+      background-color: navy; /* dari #f5f5f5 diganti navy */
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
 
+/* Container Footer */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+/* Struktur utama footer */
+.footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Bagian kiri dan kanan */
+.footer-left, .footer-right {
+    flex: 1 1 300px; /* min-width 300px untuk responsif */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Logo container */
+.footer-logo-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* scroll horizontal jika sempit */
+}
+
+.footer-logo-container img {
+    height: 50px; /* ukuran logo seragam */
+    width: auto;
+    flex-shrink: 0;
+}
+
+/* Judul dan subtitle */
+.footer-title h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Footer Services */
+.footer-services {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.service-column {
+    flex: 1 1 200px;
+}
+
+.footer-widget-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-widget ul li {
+    margin-bottom: 5px;
+}
+
+.footer-widget ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.footer-widget ul li a:hover {
+    color: #007bff;
+}
+
+/* Kontak & Peta */
+.contact-info p, .contact-item a {
+    font-size: 0.9rem;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.map-container {
+    width: 100%;
+    height: 200px; /* seragam tinggi peta */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.map-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+    }
+
+    .footer-services {
+        flex-direction: column;
+    }
+
+    .footer-logo-container {
+        justify-content: flex-start;
+    }
+}
+
+</style>
+    <!-- Footer Section Start -->
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style>
