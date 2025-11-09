@@ -193,7 +193,7 @@
                 <input type="hidden" name="user_id" value="{{ $user->id }}">
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
-    <i class="fas fa-info-circle me-2"></i>
+    <i class="bi bi-info-circle me-2"></i>
     <div>
         <strong>Informasi Data Diri Pemohon KRK </strong>
     </div>
@@ -204,7 +204,7 @@
 <!-- Perorangan -->
 <div style="margin-top:-25px;">
     <label class="form-label d-flex align-items-center" for="perorangan">
-        <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> Perorangan
+        <i class="bi bi-user" style="margin-right: 8px; color: navy;"></i> Perorangan
     </label>
     <input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemilik/Pemohon"
         class="form-control @error('perorangan') is-invalid @enderror"
@@ -217,9 +217,9 @@
 <!-- Perusahaan -->
 <div style="margin-top:-25px;">
     <label class="form-label d-flex align-items-center" for="perusahaan">
-        <i class="fas fa-building" style="margin-right: 8px; color: navy;"></i> Perusahaan
+        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Perusahaan/Instansi
     </label>
-    <input type="text" id="perusahaan" name="perusahaan" placeholder="Masukan Nama Perusahaan Pemohon/Pemilik"
+    <input type="text" id="perusahaan" name="perusahaan" placeholder="Masukan Nama Perusahaan/Instansi Pemohon/Pemilik"
         class="form-control @error('perusahaan') is-invalid @enderror"
         value="{{ old('perusahaan') }}" />
     @error('perusahaan')
@@ -234,7 +234,7 @@
           <!-- Label -->
           <div class="mb-3">
             <label class="form-label d-flex align-items-center fw-bold text-primary">
-              <i class="fas fa-map-marker-alt me-2"></i>
+              <i class="bi bi-map-marker-alt me-2"></i>
               Pilih Koordinat Lokasi di Kabupaten Blora
             </label>
           </div>
@@ -249,7 +249,7 @@
 
           <!-- Info Koordinat -->
           <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
-            <i class="fas fa-info-circle me-2"></i>
+            <i class="bi bi-info-circle me-2"></i>
             <div>
               <strong>Lokasi Terpilih: </strong>
               <span id="koordinat" class="text-danger ms-1">Belum memilih lokasi</span>
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '© Hak Cipta | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
+        attribution: 'Aplikasi Bangunan Gedung © Hak Cipta | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
     }).addTo(map);
 
     let marker = null;
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px;">
-    <i class="fas fa-info-circle me-2"></i>
+    <i class="bi bi-info-circle me-2"></i>
     <div>
         <strong>Informasi Bangunan Gedung Pemohon </strong>
     </div>
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="col-md-6" style="margin-top: -40px;">
         <div>
             <label class="form-label d-flex align-items-center" for="nik">
-                <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> (NIK)/KTP/<span style="color: red;">KITAS**</span>
+                <i class="bi bi-user" style="margin-right: 8px; color: navy;"></i> (NIK)/KTP/<span style="color: red;">KITAS**</span>
             </label>
             <input type="number" name="nik" id="nik" placeholder="Nomor Induk Kependudukan"
                 class="form-control @error('nik') is-invalid @enderror"
@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="col-md-6" style="margin-top: -40px;">
         <div>
             <label class="form-label d-flex align-items-center" for="rw">
-                <i class="fas fa-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan
+                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan
             </label>
             <input type="date" name="tanggalpermohonan" id="tanggalpermohonan" placeholder="Tanggal Permohonan"
                 class="form-control @error('tanggalpermohonan') is-invalid @enderror"
@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="col-md-6" style="margin-top: -40px;">
         <div>
             <label class="form-label d-flex align-items-center" for="rt">
-                <i class="fas fa-phone" style="margin-right: 8px; color: navy;"></i> No Whatsapp
+                <i class="bi bi-phone" style="margin-right: 8px; color: navy;"></i> No Whatsapp
             </label>
             <input type="number" name="notelepon" id="notelepon" placeholder="No Telepon"
                 class="form-control @error('notelepon') is-invalid @enderror"
@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="col-md-6" style="margin-top: -40px;">
         <div>
             <label class="form-label d-flex align-items-center" for="luastanah_display">
-                <i class="fas fa-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Tanah M<sup>2</sup>
+                <i class="bi bi-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Tanah M<sup>2</sup>
             </label>
 
             <!-- Input tampilan -->
@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- Jumlah Lantai -->
     <div class="col-md-4" style="margin-top: -40px;">
         <label class="form-label d-flex align-items-center" for="jumlahlantai">
-            <i class="fas fa-building" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
+            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
         </label>
         <select name="jumlahlantai" id="jumlahlantai"
             class="form-control @error('jumlahlantai') is-invalid @enderror">
@@ -437,7 +437,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- RT -->
     <div class="col-md-4" style="margin-top: -40px;">
         <label class="form-label d-flex align-items-center" for="rt">
-            <i class="fas fa-hashtag" style="margin-right: 8px; color: navy;"></i> RT
+            <i class="bi bi-hashtag" style="margin-right: 8px; color: navy;"></i> RT
         </label>
         <select name="rt" id="rt" class="form-control @error('rt') is-invalid @enderror">
             <option value="" style="font-size: 14px;">-- Pilih RT --</option>
@@ -453,7 +453,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- RW -->
     <div class="col-md-4" style="margin-top: -40px;">
         <label class="form-label d-flex align-items-center" for="rw">
-            <i class="fas fa-hashtag" style="margin-right: 8px; color: navy;"></i> RW
+            <i class="bi bi-hashtag" style="margin-right: 8px; color: navy;"></i> RW
         </label>
         <select name="rw" id="rw" class="form-control @error('rw') is-invalid @enderror">
             <option value="" style="font-size: 16px;">-- Pilih RW --</option>
@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- Kabupaten (dikunci) -->
     <div class="col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
         <label class="form-label d-flex align-items-center" for="kabupaten">
-            <i class="fas fa-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
+            <i class="bi bi-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
         </label>
         <select name="kabupaten" id="kabupaten" class="form-control" readonly disabled>
             <option value="kabupaten blora" selected style="font-size: 14px;">Kabupaten Blora</option>
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- Kecamatan (dinamis dari controller) -->
 <div class="col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
     <label class="form-label d-flex align-items-center" for="kecamatanblora_id">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Kecamatan
+        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Kecamatan
     </label>
     <select name="kecamatanblora_id" id="kecamatanblora_id" class="form-control @error('kecamatanblora_id') is-invalid @enderror">
         <option value="" style="font-size:14px;">Pilih Kecamatan</option>
@@ -540,9 +540,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 </script>
 
-<div style="margin-top: -25px;">
+<div style="margin-top: 0px;">
     <label class="form-label d-flex align-items-center" for="lokasibangunan">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
+        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
     </label>
     <input type="text" id="lokasibangunan" name="lokasibangunan" placeholder="Lokasi Bangunan Gedung"
         class="form-control @error('lokasibangunan') is-invalid @enderror"
@@ -555,7 +555,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div style="margin-top: -15px;">
     <label class="form-label d-flex align-items-center" for="alamatpemohon">
-        <i class="fas fa-map-pin" style="margin-right: 8px; color: navy;"></i> Alamat Lengkap Pemohon
+        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Alamat Lengkap Pemohon
     </label>
     <input type="text" id="alamatpemohon" name="alamatpemohon" placeholder="Alamat Lengkap Pemohon"
         class="form-control @error('alamatpemohon') is-invalid @enderror"
@@ -568,7 +568,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -40px;">
-    <i class="fas fa-info-circle me-2"></i>
+    <i class="bi bi-info-circle me-2"></i>
     <div>
         <strong>Berkas Kelengkapan Dokumen Pemohon  </strong>
     </div>
@@ -994,10 +994,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </div> --}}
 
     <div class="flex justify-end" style="margin-top: -40px;">
-        <button type="button" class="btn-submit" onclick="openModal()">
-            <i class="fab fa-telegram-plane w-5 h-5"></i>
-            Kirim Permohonan
-        </button>
+<button type="button" class="btn-submit" onclick="openModal()">
+    <i class="bi bi-send-fill" style="margin-right: 6px;"></i>
+    Kirim Permohonan
+</button>
     </div>
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

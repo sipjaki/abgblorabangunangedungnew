@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '© Hak Cipta | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
+        attribution: 'Aplikasi Bangunan Gedung © Hak Cipta | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
     }).addTo(map);
 
     let marker = null;
@@ -540,7 +540,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 </script>
 
-<div class="form-modern" style="margin-top: -25px;">
+<div class="form-modern" style="margin-top: 0px;">
     <label class="form-label-modern d-flex align-items-center" for="lokasibangunan">
         <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
     </label>
@@ -997,10 +997,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </div> --}}
 
     <div class="flex justify-end" style="margin-top: -40px;">
-        <button type="button" class="btn-submit" onclick="openModal()">
-            <i class="fab fa-telegram-plane w-5 h-5"></i>
-            Kirim Permohonan
-        </button>
+<button type="button" class="btn-submit" onclick="openModal()">
+    <i class="bi bi-send-fill" style="margin-right: 6px;"></i>
+    Kirim Permohonan
+</button>
     </div>
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

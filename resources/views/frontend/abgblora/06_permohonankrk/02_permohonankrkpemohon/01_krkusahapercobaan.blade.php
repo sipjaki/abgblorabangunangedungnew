@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '© Hak Cipta | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
+        attribution: 'Aplikasi Bangunan Gedung © Hak Cipta | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
     }).addTo(map);
 
     let marker = null;
