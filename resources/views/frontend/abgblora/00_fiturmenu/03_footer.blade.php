@@ -155,8 +155,8 @@
                         </div>
                         <div class="footer-title">
                             <h3 style="font-family: 'Poppins', sans-serif;">
-                                <span class="abg-text">ABG</span>
-                                <span class="blora-text">BLORA</span>
+                                <span class="abg-text" style="font-family: 'Poppins', sans-serif; color:white;" >ABG</span>
+                                <span class="blora-text" style="color: white;">BLORA</span>
                             </h3>
                         </div>
                         <div class="subtitle">BANGUNAN GEDUNG</div>
@@ -166,7 +166,7 @@
                     <!-- Services Section -->
                     <div class="footer-services">
                         <div class="service-column">
-                            <h4 class="footer-widget-title">Layanan Kami</h4>
+                            <h4 class="footer-widget-title" style="color: white;">Layanan Kami</h4>
                             <div class="footer-widget">
                                 <ul class="link">
                                     <li><a href="#">Persetujuan Bangunan Gedung (PBG)</a></li>
@@ -178,7 +178,7 @@
                         </div>
 
                         <div class="service-column">
-                            <h4 class="footer-widget-title">Layanan Tambahan</h4>
+                            <h4 class="footer-widget-title" style="color: white;">Layanan Tambahan</h4>
                             <div class="footer-widget">
                                 <ul class="link">
                                     <li><a href="#">Bantuan Teknis</a></li>
@@ -204,7 +204,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-envelope"></i>
-                            <a href="mailto:kontraktor@masjakidpuprblora.co.id">kontraktor@masjakidpuprblora.co.id</a>
+                            <a href="mailto:kontraktor@masjakidpuprblora.co.id">bid.bangunan.gedung.blora@gmail.com</a>
                         </div>
                     </div>
 
