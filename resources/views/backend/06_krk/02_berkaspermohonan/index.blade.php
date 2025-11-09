@@ -522,7 +522,6 @@
     </style>
 
 
-<div class="row">
     <!-- 1. Permohonan PBG SLF -->
     <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="/bekrkusaha" style="text-decoration: none;">
@@ -614,10 +613,6 @@
             </div>
         </a>
     </div>
-</div>
-
-
-<div class="row">
     <!-- 4. Keterangan Rencana Kabupaten -->
     <div class="col-md-3 col-sm-6 col-12" style="margin-top: 5px; margin-bottom:5px;">
         <a href="/bekrkmenaratelkom" style="text-decoration: none;">
@@ -640,7 +635,6 @@
             </div>
         </a>
     </div>
-</div>
 
                 <!-- /.col -->
 
@@ -648,7 +642,7 @@
 
   {{-- ================================================================================== --}}
             <!-- /.col -->
-        </div>we
+        </div>
         <!--end::Row-->
         </div>
                   <!--end::Container-->

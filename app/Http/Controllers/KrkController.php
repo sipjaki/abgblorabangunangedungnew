@@ -283,7 +283,7 @@ public function validateBerkashunian($id)
 public function bekrkindex()
 {
     $user = Auth::user();
-    $data = krkusaha::paginate(15); // Data paginasi
+    $data = krkusaha::paginate(10); // Data paginasi
 
     $datajumlahkrkusaha = krkusaha::count(); // Hitung total semua data
     $datajumlahkrkhunian = krkhunian::count(); // Hitung total semua data
