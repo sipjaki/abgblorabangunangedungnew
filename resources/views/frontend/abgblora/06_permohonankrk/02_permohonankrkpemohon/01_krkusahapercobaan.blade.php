@@ -331,9 +331,9 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <div class="form-modern row mt-3" style="margin-top: -25px;">
-    <div class="form-label-modern col-md-6" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-<label class="form-label d-flex align-items-center" for="nik">
+<label class="form-label-modern d-flex align-items-center" for="nik">
     <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>
     (NIK)/KTP/<span style="color: red;">KITAS**</span>
 </label>
@@ -348,11 +348,13 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 
-    <div class="col-md-6" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="rw">
-                <i class="fas fa-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan
-            </label>
+            <label class="form-label-modern d-flex align-items-center" for="rw">
+    <i class="bi bi-calendar-date-fill" style="margin-right: 8px; color: navy;"></i>
+    Tanggal Permohonan
+</label>
+
             <input type="date" name="tanggalpermohonan" id="tanggalpermohonan" placeholder="Tanggal Permohonan"
                 class="form-control @error('tanggalpermohonan') is-invalid @enderror"
                 value="{{ old('tanggalpermohonan') }}">
