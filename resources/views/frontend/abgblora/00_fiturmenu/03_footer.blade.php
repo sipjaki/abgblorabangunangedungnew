@@ -166,7 +166,10 @@
                     <!-- Services Section -->
                     <div class="footer-services">
                         <div class="service-column">
-                            <h4 class="footer-widget-title" style="color: white;">Layanan Kami</h4>
+                                <h4 class="footer-widget-title" style="color: white;">
+                                    <i class="bi bi-gear-fill" style="margin-right: 6px;"></i>
+                                    Layanan Kami
+                                </h4>
                             <div class="footer-widget">
                                 <ul class="link">
                                     <li><a href="#">Persetujuan Bangunan Gedung (PBG)</a></li>
@@ -178,7 +181,10 @@
                         </div>
 
                         <div class="service-column">
-                            <h4 class="footer-widget-title" style="color: white;">Layanan Tambahan</h4>
+                                <h4 class="footer-widget-title" style="color: white;">
+                                    <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i>
+                                    Jenis Permohonan
+                                </h4>
                             <div class="footer-widget">
                                 <ul class="link">
                                     <li><a href="#">Bantuan Teknis</a></li>
@@ -197,8 +203,10 @@
                     <!-- Kontak Kami -->
                     <div class="footer-widget">
                         <h4 class="footer-widget-title">
-                            <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Kontak Kami
-                        </h4>
+                        <i class="bi bi-telephone-fill" style="margin-right: 6px;"></i>
+                        Kontak Kami
+                    </h4>
+
                         <div class="contact-info">
                             <p>Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</p>
                         </div>
@@ -211,9 +219,10 @@
                     <!-- Google Maps -->
                     <div class="footer-widget">
                         <h4 class="footer-widget-title">
-                            <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Lokasi Kami
+                            <i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i>
+                            Lokasi Kami
                         </h4>
-                        <div class="map-container">
+                    <div class="map-container">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.523764685145!2d111.4188524747965!3d-7.179069792829058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7712b6c5e5f9d7%3A0x98b939fa9f2c6b88!2sJl.%20Nusantara%20No.62%2C%20Jetis%2C%20Kauman%2C%20Kec.%20Blora%2C%20Kabupaten%20Blora%2C%20Jawa%20Tengah%2058214!5e0!3m2!1sen!2sid!4v1710000000000"
                                 class="map-iframe" allowfullscreen="" loading="lazy"
