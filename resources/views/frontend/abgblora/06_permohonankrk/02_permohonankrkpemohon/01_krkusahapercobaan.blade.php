@@ -193,20 +193,21 @@
                 <input type="hidden" name="user_id" value="{{ $user->id }}">
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px; margin-bottom: -35px;">
-    <i class="fas fa-info-circle me-2"></i>
-    <div>
-        <strong>Informasi Data Diri Pemohon KRK </strong>
-    </div>
+    <i class="bi bi-info-circle-fill me-2"></i>
+<div>
+    <strong>Informasi Data Diri Pemohon KRK</strong>
+</div>
 </div>
 
 
 
 <!-- Perorangan -->
-<div style="margin-top:-25px;">
-    <label class="form-label d-flex align-items-center" for="perorangan">
-        <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> Perorangan (Nama Lengkap Sesuai KTP)
-    </label>
-    <input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemilik/Pemohon"
+<div class="form-modern" style="margin-top:-25px;">
+    <label class="form-label-modern d-flex align-items-center" for="perorangan">
+    <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>
+    Perorangan (Nama Lengkap Sesuai KTP)
+</label>
+<input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemilik/Pemohon"
         class="form-control @error('perorangan') is-invalid @enderror"
         value="{{ old('perorangan') }}" />
     @error('perorangan')
@@ -215,9 +216,9 @@
 </div>
 
 <!-- Perusahaan -->
-<div style="margin-top:-25px;">
-    <label class="form-label d-flex align-items-center" for="perusahaan">
-        <i class="fas fa-building" style="margin-right: 8px; color: navy;"></i> Perusahaan
+<div style="form-modern margin-top:-25px;">
+    <label class="form-label-modern d-flex align-items-center" for="perusahaan">
+        <i class="fas fa-building" style="margin-right: 8px; color: navy;"></i> Perusahaan/Instansi
     </label>
     <input type="text" id="perusahaan" name="perusahaan" placeholder="Masukan Nama Perusahaan Pemohon/Pemilik"
         class="form-control @error('perusahaan') is-invalid @enderror"
