@@ -323,41 +323,21 @@
       caption: "Proses Perizinan PBG dan KRK"
     },
     {
-      url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
-      caption: "Pembangunan Sesuai Rencana Tata Ruang"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=900&q=80",
-      caption: "Peta dan Zonasi Wilayah Bangunan"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1597764699510-ef4bd3a0a2b0?auto=format&fit=crop&w=900&q=80",
-      caption: "Konsultasi Desain dan Pengajuan Dokumen"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1581091870627-3a7b1cccb3a4?auto=format&fit=crop&w=900&q=80",
-      caption: "Perencanaan Teknis Pembangunan Gedung"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1581091870629-1c94c2c21e97?auto=format&fit=crop&w=900&q=80",
-      caption: "Gambar Teknis dan Denah Struktur Bangunan"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=900&q=80",
-      caption: "Konstruksi Gedung Pemerintahan"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1600585154154-4e5c39f5b24d?auto=format&fit=crop&w=900&q=80",
-      caption: "Monitoring dan Pengawasan Lapangan"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1590642914617-8eb1d0c70a18?auto=format&fit=crop&w=900&q=80",
-      caption: "Dokumentasi Lapangan Pembangunan Gedung"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1504457047772-27f3d5f1d8f3?auto=format&fit=crop&w=900&q=80",
-      caption: "Visualisasi Akhir Bangunan Sesuai Izin"
-    }
+    url: "https://images.unsplash.com/photo-1599423300746-b62533397364?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80",
+    caption: "Konstruksi Gedung Pemerintahan"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1600585154154-4e5c39f5b24d?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80",
+    caption: "Monitoring dan Pengawasan Lapangan"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1590642914617-8eb1d0c70a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80",
+    caption: "Dokumentasi Lapangan Pembangunan Gedung"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1504457047772-27f3d5f1d8f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80",
+    caption: "Visualisasi Akhir Bangunan Sesuai Izin"
+  }
   ];
 
   let currentIndex = 0;
