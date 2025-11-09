@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -149,8 +103,33 @@ th {
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
+            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
+                {{-- <option value="10">10</option> --}}
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+                <option value="150">150</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+                <option value="2000">2000</option>
+            </select>
+        </div>
+
+        <script>
+                  function updateEntries() {
+                let selectedValue = document.getElementById("entries").value;
+                let url = new URL(window.location.href);
+                url.searchParams.set("perPage", selectedValue);
+                window.location.href = url.toString();
+            }
+        </script>
+
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Pemohon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
@@ -177,9 +156,16 @@ th {
 
                                 </script>
 
+                   <a href="/bekrkindex" style="text-decoration: none;">
+    <button class="button-modern" style="color: black;">
+        <!-- Ikon Kembali -->
+<i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i>
+ Menu Utama
+    </button>
+</a>
 
                      <a href="/bekrkindex" style="text-decoration: none;">
-    <button class="button-newvalidasi" style="color: black;">
+    <button class="button-modern" style="color: black;">
         <!-- Ikon Kembali -->
         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
     </button>
@@ -269,29 +255,10 @@ th {
 
                                        <td style="text-align: center;">
                 <a href="{{ route('bekrkmenaratelkomshow', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
             </td>
-                                    <style>
-                                        .btn-secondary {
-                                            background-color: #6c757d;
-                                            color: white;
-                                            border-radius: 15px;
-                                            padding: 8px 16px;
-                                            border: none;
-                                        }
-
-                                        .btn-secondary:hover {
-                                            background-color: white;
-                                            color: black;
-                                            border: 1px solid #6c757d; /* Optional: border on hover */
-                                        }
-
-                                        .btn-secondary i {
-                                            margin-right: 5px; /* Adjust the spacing between the icon and text */
-                                        }
-                                    </style>
 
 <!-- Tombol KTP -->
 
@@ -314,7 +281,7 @@ th {
             <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Dikembalikan
         </button>
     @else
-        <button class="button-newvalidasi" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button class="button-modern" type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
             <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
         </button>
     @endif
@@ -385,7 +352,7 @@ th {
 
   <td style="text-align: center;">
                 <a href="{{ route('doklapkrkusaha.show', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Lihat Dok Lapangan
 
                 </a>
@@ -406,7 +373,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModalVerifikasi2({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Verifikasi
     </button>
   @endif
@@ -704,7 +671,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModal3({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
@@ -776,7 +743,7 @@ th {
     <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
 
                 <a href="{{ route('dokuploadkrkmenara', $item->id) }}"
-                    class="button-baru">
+                    class="button-modern">
                 <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
 
                 </a>
@@ -801,7 +768,7 @@ th {
         <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
     </button>
   @else
-    <button class="button-newvalidasi" type="button" onclick="openModal4({{ $item->id }})">
+    <button class="button-modern" type="button" onclick="openModal4({{ $item->id }})">
         <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
     </button>
   @endif
