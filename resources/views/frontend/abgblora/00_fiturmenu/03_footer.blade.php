@@ -236,13 +236,9 @@
     </footer>
 
     <!-- Copyright Section (Terpisah) -->
-    <div class="footer-copyright">
-        <div class="footer-content">
-            <div class="copyright-text">
-                <p>© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah | 2025</p>
-            </div>
-        </div>
-    </div>
+    <div class="footer-copyright" style="height: 25vh; display: flex; justify-content: center; align-items: center; background-color: #ffd100; color: white; text-align: center; padding: 0 20px;">
+    <p>© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah | 2025</p>
+</div>
     <!-- Footer Section End -->
 </body>
 </html>
