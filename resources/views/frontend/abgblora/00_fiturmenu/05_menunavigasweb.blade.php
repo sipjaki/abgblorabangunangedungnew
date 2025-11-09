@@ -312,7 +312,7 @@
         }
 
         .sidebar-logo-text {
-            color: white;
+            color: black;
             font-weight: bold;
             font-size: 14px;
             line-height: 1.3;
@@ -321,7 +321,7 @@
         .close-sidebar {
             background: none;
             border: none;
-            color: white;
+            color: black;
             font-size: 24px;
             cursor: pointer;
         }
