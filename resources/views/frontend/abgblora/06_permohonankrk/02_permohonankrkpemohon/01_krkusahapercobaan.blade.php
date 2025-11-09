@@ -264,7 +264,7 @@
             <input type="text"
                    id="koordinatlokasi"
                    name="koordinatlokasi"
-                   class="form-control form-control-lg"
+                   class="form-label-modern form-control form-control-lg"
                    placeholder="Koordinat akan muncul di sini"
                    readonly
                    value="{{old('koordinatlokasi')}}"
@@ -324,18 +324,19 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center" style="margin-top: -100px;">
-    <i class="fas fa-info-circle me-2"></i>
-    <div>
-        <strong>Informasi Bangunan Gedung Pemohon </strong>
-    </div>
+    <i class="bi bi-info-circle-fill me-2"></i>
+<div>
+    <strong>Informasi Bangunan Gedung Pemohon</strong>
+</div>
 </div>
 
-<div class="row mt-3" style="margin-top: -25px;">
-    <div class="col-md-6" style="margin-top: -40px;">
+<div class="form-modern row mt-3" style="margin-top: -25px;">
+    <div class="form-label-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="nik">
-                <i class="fas fa-user" style="margin-right: 8px; color: navy;"></i> (NIK)/KTP/<span style="color: red;">KITAS**</span>
-            </label>
+<label class="form-label d-flex align-items-center" for="nik">
+    <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>
+    (NIK)/KTP/<span style="color: red;">KITAS**</span>
+</label>
             <input type="number" name="nik" id="nik" placeholder="Nomor Induk Kependudukan"
                 class="form-control @error('nik') is-invalid @enderror"
                 value="{{ old('nik') }}"
