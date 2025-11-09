@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -149,8 +103,32 @@ th {
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                               <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
+            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
+                {{-- <option value="10">10</option> --}}
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+                <option value="150">150</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+                <option value="2000">2000</option>
+            </select>
+        </div>
+
+        <script>
+                  function updateEntries() {
+                let selectedValue = document.getElementById("entries").value;
+                let url = new URL(window.location.href);
+                url.searchParams.set("perPage", selectedValue);
+                window.location.href = url.toString();
+            }
+        </script>
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
@@ -177,6 +155,14 @@ th {
 
                                 </script>
 
+                   <a href="/bekrkindex" style="text-decoration: none;">
+    <button class="button-modern" style="color: black;">
+        <!-- Ikon Kembali -->
+<i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i>
+ Menu Utama
+    </button>
+</a>
+
 
                      <a href="/bekrkindex" style="text-decoration: none;">
     <button class="button-modern" style="color: black;">
@@ -191,58 +177,27 @@ th {
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table class="table zebra-table">
-                            <thead>
+                        <table class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;">
+                              <thead>
                                 <tr>
-<th style="background-color: #ADD8E6;">No</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-calendar-date-fill" style="margin-right: 6px;"></i> Tanggal Permohonan
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-bounding-box" style="margin-right: 6px;"></i> Luas Tanah
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Dok Lapangan
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-clipboard2-check-fill" style="margin-right: 6px;"></i> Status Cek Lapangan
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-stamp-fill" style="margin-right: 6px;"></i> Olah Data KRK
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-file-earmark-plus-fill" style="margin-right: 6px;"></i> Buat Data KRK
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-folder-check" style="margin-right: 6px;"></i> Berkas Final KRK
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai
-</th>
-<th style="background-color: #ADD8E6;">
-    <i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi
-</th>
+<th><i class="bi bi-hash" style="margin-right: 6px;"></i> No</th>
+<th><i class="bi bi-person-fill" style="margin-right: 6px;"></i> Pemohon</th>
+<th><i class="bi bi-building" style="margin-right: 6px;"></i> Perusahaan</th>
+<th><i class="bi bi-calendar-date-fill" style="margin-right: 6px;"></i> Tanggal Permohonan</th>
+<th><i class="bi bi-telephone-fill" style="margin-right: 6px;"></i> Whatsapp</th>
+<th><i class="bi bi-bounding-box" style="margin-right: 6px;"></i> Luas Tanah</th>
+<th><i class="bi bi-geo-alt-fill" style="margin-right: 6px;"></i> Lokasi Bangunan</th>
+<th><i class="bi bi-eye-fill" style="margin-right: 6px;"></i> Lihat Permohonan</th>
+<th><i class="bi bi-check2-square" style="margin-right: 6px;"></i> Verifikasi DPUPR</th>
+<th><i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Dok Lapangan</th>
+<th><i class="bi bi-clipboard2-check-fill" style="margin-right: 6px;"></i> Status Cek Lapangan</th>
+<th><i class="bi bi-stamp-fill" style="margin-right: 6px;"></i> Olah Data KRK</th>
+<th><i class="bi bi-file-earmark-plus-fill" style="margin-right: 6px;"></i> Buat Data KRK</th>
+<th><i class="bi bi-database-fill" style="margin-right: 6px;"></i> Status Olah Data</th>
+<th><i class="bi bi-folder-check" style="margin-right: 6px;"></i> Berkas Final KRK</th>
+<th><i class="bi bi-check-circle-fill" style="margin-right: 6px;"></i> Selesai</th>
+<th><i class="bi bi-gear-fill" style="margin-right: 6px;"></i> Aksi</th>
+
                                 </tr>
                             </thead>
                               <tbody id="tableBody">
