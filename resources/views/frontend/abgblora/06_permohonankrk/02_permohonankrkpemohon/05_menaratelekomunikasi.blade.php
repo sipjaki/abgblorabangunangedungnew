@@ -183,7 +183,7 @@
                     <img src="/assets/new/icons/story.svg" alt="icon">
                 </div>
                 <p class="text-white font-normal text-sm">
-                    <span class="font-bold">Form KRK <span style="color: #0fb825;"> Fungsi Usaha</span> Bangunan Gedung </span>
+                    <span class="font-bold">Form KRK <span style="color: #0fb825;"> Fungsi Prasarana (Menara Telekomunikasi)</span> Bangunan Gedung </span>
                 </p>
             </div>
             <form id="signatureForm" action="{{ route('permohonan.permohonanmenara') }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
@@ -204,9 +204,10 @@
 <!-- Perorangan -->
 <div class="form-modern" style="margin-top:-25px;">
     <label class="form-label-modern d-flex align-items-center" for="perorangan">
-        <i class="bi bi-user" style="margin-right: 8px; color: navy;"></i> Perorangan (Nama Lengkap Sesuai KTP)
-    </label>
-    <input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemilik/Pemohon"
+    <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>
+    Perorangan (Nama Lengkap Sesuai KTP)
+</label>
+<input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemilik/Pemohon"
         class="form-control @error('perorangan') is-invalid @enderror"
         value="{{ old('perorangan') }}" />
     @error('perorangan')
@@ -285,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '© Hak Cipta | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
+        attribution: 'Aplikasi Bangunan Gedung © Hak Cipta | Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah',
     }).addTo(map);
 
     let marker = null;
@@ -331,8 +332,10 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
             <label class="form-label-modern d-flex align-items-center" for="nik">
-                <i class="bi bi-user" style="margin-right: 8px; color: navy;"></i> (NIK)/KTP/<span style="color: red;">KITAS**</span>
-            </label>
+    <i class="bi bi-person-vcard-fill" style="margin-right: 8px; color: navy;"></i>
+    (NIK)/KTP/<span style="color: red;">KITAS**</span>
+</label>
+
             <input type="number" name="nik" id="nik" placeholder="Nomor Induk Kependudukan"
                 class="form-control @error('nik') is-invalid @enderror"
                 value="{{ old('nik') }}"
@@ -378,10 +381,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label-modern d-flex align-items-center" for="luastanah_display">
-                <i class="bi bi-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Tanah M<sup>2</sup>
-            </label>
-
+<label class="form-label-modern d-flex align-items-center" for="luastanah_display">
+    <i class="bi bi-bounding-box" style="margin-right: 8px; color: navy;"></i>
+    Luas Tanah M<sup>2</sup>
+</label>
             <!-- Input tampilan -->
             <input type="text" id="luastanah_display" placeholder="Luas Tanah"
                    class="form-control"
@@ -541,10 +544,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 </script>
 
-<div class="form-modern" style="margin-top: -25px;">
+<div class="form-modern" style="margin-top: 0px;">
     <label class="form-label-modern d-flex align-items-center" for="lokasibangunan">
-        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
-    </label>
+    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i>
+    Lokasi Bangunan Gedung
+</label>
+
     <input type="text" id="lokasibangunan" name="lokasibangunan" placeholder="Lokasi Bangunan Gedung"
         class="form-control @error('lokasibangunan') is-invalid @enderror"
         value="{{ old('lokasibangunan') }}"
@@ -555,9 +560,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <div class="form-modern" style="margin-top: -15px;">
-    <label class="form-label-modern d-flex align-items-center" for="alamatpemohon">
-        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Alamat Lengkap Pemohon
-    </label>
+<label class="form-label-modern d-flex align-items-center" for="alamatpemohon">
+    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i>
+    Alamat Lengkap Pemohon
+</label>
     <input type="text" id="alamatpemohon" name="alamatpemohon" placeholder="Alamat Lengkap Pemohon"
         class="form-control @error('alamatpemohon') is-invalid @enderror"
         value="{{ old('alamatpemohon') }}"
