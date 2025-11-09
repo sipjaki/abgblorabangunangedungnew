@@ -177,7 +177,7 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table class="table zebra-table">
+                        <table class="zebra-table">
                             <thead>
                                 <tr>
 <th><i class="bi bi-hash" style="margin-right: 6px;"></i> No</th>

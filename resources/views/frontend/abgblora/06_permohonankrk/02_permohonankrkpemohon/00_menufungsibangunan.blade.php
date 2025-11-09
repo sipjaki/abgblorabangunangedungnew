@@ -1,4 +1,7 @@
 
+<!-- ✅ Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 
 <div class="flex flex-col gap-5 w-full">
     <div class="putih flex flex-col gap-5 p-5 rounded-[20px] w-full">
