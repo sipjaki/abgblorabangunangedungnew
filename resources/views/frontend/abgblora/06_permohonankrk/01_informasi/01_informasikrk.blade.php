@@ -322,23 +322,7 @@
       url: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=900&q=80",
       caption: "Proses Perizinan PBG dan KRK"
     },
-    {
-    url: "https://images.unsplash.com/photo-1599423300746-b62533397364?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80",
-    caption: "Konstruksi Gedung Pemerintahan"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1600585154154-4e5c39f5b24d?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80",
-    caption: "Monitoring dan Pengawasan Lapangan"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1590642914617-8eb1d0c70a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80",
-    caption: "Dokumentasi Lapangan Pembangunan Gedung"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1504457047772-27f3d5f1d8f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80",
-    caption: "Visualisasi Akhir Bangunan Sesuai Izin"
-  }
-  ];
+     ];
 
   let currentIndex = 0;
   const imgElement = document.getElementById('slideImage');
