@@ -202,10 +202,12 @@
 
 
 <!-- Perorangan -->
-<div style="margin-top:-25px;">
-    <label class="form-label d-flex align-items-center" for="perorangan">
-        <i class="bi bi-user" style="margin-right: 8px; color: navy;"></i> Perorangan
-    </label>
+<div class="form-modern" style="margin-top:-25px;">
+    <label class="form-label-modern d-flex align-items-center" for="perorangan">
+    <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i>
+            Nama Pemohon (Nama Lengkap Sesuai dengan KTP)
+</label>
+
     <input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemilik/Pemohon"
         class="form-control @error('perorangan') is-invalid @enderror"
         value="{{ old('perorangan') }}" />
@@ -215,8 +217,8 @@
 </div>
 
 <!-- Perusahaan -->
-<div style="margin-top:-25px;">
-    <label class="form-label d-flex align-items-center" for="perusahaan">
+<div style="form-modern margin-top:-25px;">
+    <label class="form-label-modern d-flex align-items-center" for="perusahaan">
         <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Perusahaan/Instansi
     </label>
     <input type="text" id="perusahaan" name="perusahaan" placeholder="Masukan Nama Perusahaan/Instansi Pemohon/Pemilik"
@@ -328,11 +330,13 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <div class="row mt-3" style="margin-top: -25px;">
-    <div class="col-md-6" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="nik">
-                <i class="bi bi-user" style="margin-right: 8px; color: navy;"></i> (NIK)/KTP/<span style="color: red;">KITAS**</span>
-            </label>
+       <label class="form-label-modern d-flex align-items-center" for="nik">
+    <i class="bi bi-person-vcard" style="margin-right: 8px; color: navy;"></i>
+    (NIK)/KTP/<span style="color: red;">KITAS**</span>
+</label>
+
             <input type="number" name="nik" id="nik" placeholder="Nomor Induk Kependudukan"
                 class="form-control @error('nik') is-invalid @enderror"
                 value="{{ old('nik') }}"
@@ -344,9 +348,9 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 
-    <div class="col-md-6" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="rw">
+            <label class="form-label-modern d-flex align-items-center" for="rw">
                 <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan
             </label>
             <input type="date" name="tanggalpermohonan" id="tanggalpermohonan" placeholder="Tanggal Permohonan"
@@ -362,9 +366,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <!-- RT/RW -->
 <div class="row mt-3" style="margin-top: -40px;">
-    <div class="col-md-6" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="rt">
+            <label class="form-label-modern d-flex align-items-center" for="rt">
                 <i class="bi bi-phone" style="margin-right: 8px; color: navy;"></i> No Whatsapp
             </label>
             <input type="number" name="notelepon" id="notelepon" placeholder="No Telepon"
@@ -376,9 +380,9 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 
-    <div class="col-md-6" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="luastanah_display">
+            <label class="form-label-modern d-flex align-items-center" for="luastanah_display">
                 <i class="bi bi-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Tanah M<sup>2</sup>
             </label>
 
@@ -417,8 +421,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="row mt-3">
     <!-- Jumlah Lantai -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="jumlahlantai">
+    <div class="form-modern col-md-4" style="margin-top: -40px;">
+        <label class="form-label-modern d-flex align-items-center" for="jumlahlantai">
             <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
         </label>
         <select name="jumlahlantai" id="jumlahlantai"
@@ -435,8 +439,8 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <!-- RT -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="rt">
+    <div class="form-modern col-md-4" style="margin-top: -40px;">
+        <label class="form-label-modern d-flex align-items-center" for="rt">
             <i class="bi bi-hashtag" style="margin-right: 8px; color: navy;"></i> RT
         </label>
         <select name="rt" id="rt" class="form-control @error('rt') is-invalid @enderror">
@@ -451,8 +455,8 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <!-- RW -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="rw">
+    <div class="form-modern col-md-4" style="margin-top: -40px;">
+        <label class="form-label-modern d-flex align-items-center" for="rw">
             <i class="bi bi-hashtag" style="margin-right: 8px; color: navy;"></i> RW
         </label>
         <select name="rw" id="rw" class="form-control @error('rw') is-invalid @enderror">
@@ -470,8 +474,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="row mt-3">
     <!-- Kabupaten (dikunci) -->
-    <div class="col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
-        <label class="form-label d-flex align-items-center" for="kabupaten">
+    <div class="form-modern col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
+        <label class="form-label-modern d-flex align-items-center" for="kabupaten">
             <i class="bi bi-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
         </label>
         <select name="kabupaten" id="kabupaten" class="form-control" readonly disabled>
@@ -480,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <input type="hidden" name="kabupaten" value="kabupaten blora" style="font-size: 16px;">
     </div>
 <!-- Kecamatan (dinamis dari controller) -->
-<div class="col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
+<div class="form-modern col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
     <label class="form-label d-flex align-items-center" for="kecamatanblora_id">
         <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Kecamatan
     </label>
@@ -499,8 +503,8 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <!-- Kelurahan/Desa -->
-<div class="col-md-4" style="margin-top: -40px;">
-    <label for="kelurahandesa_id" class="form-label d-flex align-items-center">
+<div class="form-modern col-md-4" style="margin-top: -40px;">
+    <label for="kelurahandesa_id" class="form-label-modern d-flex align-items-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"/>
             <path d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/>
@@ -540,10 +544,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 </script>
 
-<div style="margin-top: 0px;">
-    <label class="form-label d-flex align-items-center" for="lokasibangunan">
-        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan Gedung
-    </label>
+<div class="form-modern" style="margin-top: 0px;">
+    <label class="form-label-modern d-flex align-items-center" for="lokasibangunan">
+    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i>
+    Lokasi Bangunan Gedung
+</label>
+
     <input type="text" id="lokasibangunan" name="lokasibangunan" placeholder="Lokasi Bangunan Gedung"
         class="form-control @error('lokasibangunan') is-invalid @enderror"
         value="{{ old('lokasibangunan') }}"
@@ -553,10 +559,11 @@ document.addEventListener('DOMContentLoaded', function () {
     @enderror
 </div>
 
-<div style="margin-top: -15px;">
-    <label class="form-label d-flex align-items-center" for="alamatpemohon">
-        <i class="bi bi-map-pin" style="margin-right: 8px; color: navy;"></i> Alamat Lengkap Pemohon
-    </label>
+<div class="form-modern" style="margin-top: -15px;">
+<label class="form-label-modern d-flex align-items-center" for="alamatpemohon">
+    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i>
+    Alamat Lengkap Pemohon
+</label>
     <input type="text" id="alamatpemohon" name="alamatpemohon" placeholder="Alamat Lengkap Pemohon"
         class="form-control @error('alamatpemohon') is-invalid @enderror"
         value="{{ old('alamatpemohon') }}"

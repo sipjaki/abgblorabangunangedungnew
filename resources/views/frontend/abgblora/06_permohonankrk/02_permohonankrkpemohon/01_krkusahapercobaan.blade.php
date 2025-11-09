@@ -205,7 +205,7 @@
 <div class="form-modern" style="margin-top:-25px;">
     <label class="form-label-modern d-flex align-items-center" for="perorangan">
     <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>
-    Perorangan (Nama Lengkap Sesuai KTP)
+        Nama Pemohon (Nama Lengkap Sesuai dengan KTP)
 </label>
 <input type="text" id="perorangan" name="perorangan" placeholder="Masukan Nama Pemilik/Pemohon"
         class="form-control @error('perorangan') is-invalid @enderror"
