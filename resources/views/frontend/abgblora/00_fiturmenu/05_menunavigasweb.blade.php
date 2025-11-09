@@ -85,7 +85,7 @@
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
-            border: 2px solid #ddd;
+            border: 2px solid #003afa;
         }
 
         .profile-pic img {
