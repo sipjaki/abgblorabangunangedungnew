@@ -242,7 +242,7 @@
                     </h4>
 <div class="contact-info">
     <i class="bi bi-geo-alt-fill" style="margin-right: 6px; color: white;"></i>
-    <span>Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</span>
+    <span style="color: white;">Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</span>
 </div>
 
 <div class="contact-item">
