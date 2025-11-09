@@ -11,8 +11,7 @@
             font-family: 'Poppins', sans-serif;
             background-color: #F6F5FA;
             color: #030303;
-            padding-top: 180px;
-            overflow-x: hidden;
+            padding-top: 180px; /* Untuk mengkompensasi navbar fixed */
         }
 
         .sticky-navbar {
@@ -31,7 +30,6 @@
             width: 100%;
             background-color: #09146A;
             padding: 15px 0;
-            position: relative;
         }
 
         .custom-navbar {
@@ -77,6 +75,25 @@
             justify-content: center;
         }
 
+        .profile-section:hover {
+            color: #6635F1;
+        }
+
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid #003afa;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .auth-buttons {
             display: flex;
             gap: 15px;
@@ -102,7 +119,17 @@
             font-size: 14px;
         }
 
-        /* Menu Navigasi Desktop */
+        .auth-buttons a:hover, .auth-buttons button:hover {
+            background-color: #001f3f;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .auth-buttons .logout-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Menu Navigasi */
         .nav-menu {
             width: 100%;
             max-width: 1200px;
@@ -133,6 +160,13 @@
             gap: 5px;
         }
 
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #6635F1;
+            font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
         .dropdown {
             position: relative;
         }
@@ -155,8 +189,74 @@
             font-size: 14px;
         }
 
+        .dropdown-menu li a {
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 4px;
+        }
+
+        .dropdown-menu li a:hover {
+            color: #6635F1;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
         .dropdown.show .dropdown-menu {
             display: block;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-logo {
+            width: 80px;
+            height: auto;
+            margin: 0 auto 15px;
+        }
+
+        .modal p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .modal-button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .modal-button:hover {
+            background: white;
+            color: #007bff;
+            border: 1px solid #007bff;
         }
 
         /* Mobile Menu Toggle */
@@ -169,26 +269,22 @@
             cursor: pointer;
             padding: 5px 10px;
             z-index: 10001;
-            position: absolute;
-            right: 20px;
-            top: 15px;
         }
 
-        /* SIDEBAR - PERBAIKAN */
+        /* Sidebar Styles */
         .sidebar {
             position: fixed;
             top: 0;
             right: -100%;
             width: 85%;
             max-width: 350px;
-            height: 100vh;
-            background: linear-gradient(135deg, #09146A 0%, #1a2a8a 100%);
+            height: 100%;
+            background-color: #09146A;
             z-index: 10002;
-            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: right 0.4s ease;
             overflow-y: auto;
             padding: 20px;
-            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
-            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
         }
 
         .sidebar.active {
@@ -201,7 +297,7 @@
             align-items: center;
             margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .sidebar-logo {
@@ -211,15 +307,14 @@
         }
 
         .sidebar-logo img {
-            height: 40px;
+            height: 35px;
             width: auto;
-            filter: brightness(0) invert(1);
         }
 
         .sidebar-logo-text {
             color: white;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 14px;
             line-height: 1.3;
         }
 
@@ -229,13 +324,6 @@
             color: white;
             font-size: 24px;
             cursor: pointer;
-            padding: 5px;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-        }
-
-        .close-sidebar:hover {
-            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .sidebar-profile {
@@ -245,9 +333,7 @@
             margin-bottom: 25px;
             padding: 15px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
         }
 
         .sidebar-profile-pic {
@@ -256,7 +342,6 @@
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
-            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .sidebar-profile-pic img {
@@ -272,12 +357,6 @@
         .sidebar-profile-name {
             font-weight: 600;
             margin-bottom: 5px;
-            font-size: 16px;
-        }
-
-        .sidebar-profile-status {
-            font-size: 12px;
-            opacity: 0.8;
         }
 
         .sidebar-links {
@@ -289,43 +368,26 @@
             margin-bottom: 8px;
         }
 
-        .sidebar-links > li > a {
+        .sidebar-links a {
             color: white;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 12px 15px;
+            border-radius: 6px;
             transition: all 0.3s ease;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .sidebar-links > li > a:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateX(5px);
-            border-color: rgba(255, 255, 255, 0.3);
+        .sidebar-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #6635F1;
         }
 
         .sidebar-dropdown {
             margin-left: 20px;
-            margin-top: 8px;
-            margin-bottom: 8px;
+            margin-top: 5px;
             display: none;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .sidebar-dropdown.active {
@@ -333,38 +395,8 @@
         }
 
         .sidebar-dropdown a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            padding: 10px 15px;
             font-size: 14px;
-            background: rgba(255, 255, 255, 0.03);
-            margin-bottom: 4px;
-        }
-
-        .sidebar-dropdown a:hover {
-            background: rgba(255, 255, 255, 0.1);
-            padding-left: 20px;
-        }
-
-        .sidebar-dropdown a i {
-            font-size: 12px;
-            width: 16px;
-            text-align: center;
-        }
-
-        .dropdown-icon {
-            margin-left: auto;
-            transition: transform 0.3s ease;
-            font-size: 12px;
-        }
-
-        .sidebar-dropdown-toggle.active .dropdown-icon {
-            transform: rotate(180deg);
         }
 
         .sidebar-auth {
@@ -372,35 +404,30 @@
             flex-direction: column;
             gap: 12px;
             margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .sidebar-auth a, .sidebar-auth button {
             text-decoration: none;
             color: #09146A;
-            font-weight: 600;
+            font-weight: 500;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 14px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            gap: 8px;
+            padding: 12px;
+            border-radius: 6px;
+            background-color: white;
             border: none;
             transition: all 0.3s ease;
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
             width: 100%;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar-auth a:hover, .sidebar-auth button:hover {
-            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+            background-color: #001f3f;
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         .overlay {
@@ -409,20 +436,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 10001;
             display: none;
-            backdrop-filter: blur(5px);
         }
 
         .overlay.active {
             display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         /* Responsive Styles */
@@ -435,6 +455,15 @@
             .logo-group, .profile-section, .auth-buttons {
                 justify-content: center;
                 width: 100%;
+            }
+
+            .nav-links {
+                gap: 5px;
+            }
+
+            .nav-links a {
+                padding: 6px 10px;
+                font-size: 14px;
             }
         }
 
@@ -449,6 +478,9 @@
 
             .mobile-toggle {
                 display: block;
+                position: absolute;
+                right: 20px;
+                top: 15px;
             }
 
             .nav-menu {
@@ -472,34 +504,11 @@
             .logo-group {
                 flex-direction: column;
                 text-align: center;
-                gap: 5px;
             }
 
             .logo-text {
                 font-size: 11px;
             }
-
-            .sidebar {
-                width: 90%;
-                padding: 15px;
-            }
-        }
-
-        /* Konten demo */
-        .content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .content h1 {
-            color: #09146A;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            line-height: 1.6;
-            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -507,7 +516,7 @@
     <div class="sticky-navbar">
         <div class="navbar-wrapper">
             <div class="custom-navbar" style="background-color: white; padding: 10px; border-radius:15px;">
-                <!-- Logo dan Judul -->
+                <!-- Kiri: Logo dan Judul -->
                 <div class="logo-group">
                     <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" loading="lazy" />
                     <img src="/assets/abgblora/logo/pupr.png" alt="Logo PUPR" loading="lazy" />
@@ -517,24 +526,38 @@
                     </div>
                 </div>
 
-                <!-- Info Pengguna -->
+                <!-- Tengah: Info Pengguna -->
                 <div class="profile-section">
+                    <!-- PHP condition would go here in actual implementation -->
                     <p>Hi, Pengguna</p>
                     <div class="profile-pic">
                         <img src="/assets/abgblora/logo/iconabgblora.png" alt="Profile Photo" />
                     </div>
                 </div>
 
-                <!-- Tombol Login & Daftar -->
+                <!-- Kanan: Tombol Login & Daftar -->
                 <div class="auth-buttons">
                     <a href="/register">
                         <i class="fas fa-user-plus"></i>
                         Daftar
                     </a>
+
+                    <!-- For guest users -->
                     <a href="/login">
                         <i class="fas fa-sign-in-alt"></i>
                         Login
                     </a>
+
+                    <!-- For authenticated users -->
+                    <!--
+                    <form action="{{ url('/logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </form>
+                    -->
                 </div>
             </div>
 
@@ -543,21 +566,149 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <!-- Menu Navigasi Desktop -->
+            <!-- Menu Navigasi -->
             <nav class="nav-menu" id="navMenu">
                 <ul class="nav-links">
-                    <!-- Menu items tetap seperti sebelumnya -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">
                             <i class="fas fa-building"></i>
                             PBG/SLF
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/infopbg"><i class="fas fa-info-circle"></i> Informasi PBG & SLF</a></li>
-                            <li><a href="#" onclick="showLoginModal()"><i class="fas fa-file-alt"></i> Permohonan PBG & SLF</a></li>
+                            <li>
+                                <a href="/infopbg">
+                                    <i class="fas fa-info-circle"></i>
+                                    Informasi PBG & SLF
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="showLoginModal()">
+                                    <i class="fas fa-file-alt"></i>
+                                    Permohonan PBG & SLF
+                                </a>
+                            </li>
                         </ul>
                     </li>
-                    <!-- Menu lainnya... -->
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="fas fa-search"></i>
+                            Tracking
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/infotrakingweb">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Tracking PBG & SLF
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="fas fa-database"></i>
+                            Pendataan
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/databangunangedung">
+                                    <i class="fas fa-building"></i>
+                                    Bangunan Gedung
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pendataankicbangunangedung">
+                                    <i class="fas fa-tools"></i>
+                                    KIC Gedung & Bangunan
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="fas fa-hands-helping"></i>
+                            Bantek
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/infobantek">
+                                    <i class="fas fa-info-circle"></i>
+                                    Informasi Bantuan Teknis
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/febantuanteknis" onclick="showLoginModal()">
+                                    <i class="fas fa-file-alt"></i>
+                                    Permohonan Bantuan Teknis
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="fas fa-file-contract"></i>
+                            KRK
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/infokrkpermohonan">
+                                    <i class="fas fa-info-circle"></i>
+                                    Informasi Permohonan KRK
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/permohonankrk" onclick="showLoginModal()">
+                                    <i class="fas fa-file-alt"></i>
+                                    Permohonan KRK
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="fas fa-home"></i>
+                            MBR
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/infombrgambar">
+                                    <i class="fas fa-info-circle"></i>
+                                    Informasi MBR
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/bembrpengkajiteknis">
+                                    <i class="fas fa-user-tie"></i>
+                                    Daftar Konsultan Pengkaji Teknis
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="fas fa-question-circle"></i>
+                            Bantuan
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/infobantuangambar">
+                                    <i class="fas fa-info-circle"></i>
+                                    Informasi Bantuan Gambar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/feformbantuangambar" onclick="showLoginModal()">
+                                    <i class="fas fa-file-alt"></i>
+                                    Permohonan Bantuan Gambar
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -567,7 +718,7 @@
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo">
-                <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" />
+                <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" loading="lazy" />
                 <div class="sidebar-logo-text">
                     ABG Blora
                 </div>
@@ -583,7 +734,7 @@
             </div>
             <div class="sidebar-profile-info">
                 <div class="sidebar-profile-name">Hi, Pengguna</div>
-                <div class="sidebar-profile-status">Status: Online</div>
+                <div>Status: Online</div>
             </div>
         </div>
 
@@ -592,7 +743,7 @@
                 <a href="#" class="sidebar-dropdown-toggle">
                     <i class="fas fa-building"></i>
                     PBG/SLF
-                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
                 </a>
                 <ul class="sidebar-dropdown">
                     <li><a href="/infopbg"><i class="fas fa-info-circle"></i> Informasi PBG & SLF</a></li>
@@ -604,7 +755,7 @@
                 <a href="#" class="sidebar-dropdown-toggle">
                     <i class="fas fa-search"></i>
                     Tracking
-                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
                 </a>
                 <ul class="sidebar-dropdown">
                     <li><a href="/infotrakingweb"><i class="fas fa-map-marker-alt"></i> Tracking PBG & SLF</a></li>
@@ -615,7 +766,7 @@
                 <a href="#" class="sidebar-dropdown-toggle">
                     <i class="fas fa-database"></i>
                     Pendataan
-                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
                 </a>
                 <ul class="sidebar-dropdown">
                     <li><a href="/databangunangedung"><i class="fas fa-building"></i> Bangunan Gedung</a></li>
@@ -627,7 +778,7 @@
                 <a href="#" class="sidebar-dropdown-toggle">
                     <i class="fas fa-hands-helping"></i>
                     Bantek
-                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
                 </a>
                 <ul class="sidebar-dropdown">
                     <li><a href="/infobantek"><i class="fas fa-info-circle"></i> Informasi Bantuan Teknis</a></li>
@@ -639,7 +790,7 @@
                 <a href="#" class="sidebar-dropdown-toggle">
                     <i class="fas fa-file-contract"></i>
                     KRK
-                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
                 </a>
                 <ul class="sidebar-dropdown">
                     <li><a href="/infokrkpermohonan"><i class="fas fa-info-circle"></i> Informasi Permohonan KRK</a></li>
@@ -651,7 +802,7 @@
                 <a href="#" class="sidebar-dropdown-toggle">
                     <i class="fas fa-home"></i>
                     MBR
-                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
                 </a>
                 <ul class="sidebar-dropdown">
                     <li><a href="/infombrgambar"><i class="fas fa-info-circle"></i> Informasi MBR</a></li>
@@ -663,7 +814,7 @@
                 <a href="#" class="sidebar-dropdown-toggle">
                     <i class="fas fa-question-circle"></i>
                     Bantuan
-                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
                 </a>
                 <ul class="sidebar-dropdown">
                     <li><a href="/infobantuangambar"><i class="fas fa-info-circle"></i> Informasi Bantuan Gambar</a></li>
@@ -681,50 +832,74 @@
                 <i class="fas fa-sign-in-alt"></i>
                 Login
             </a>
+            <!-- For authenticated users -->
+            <!--
+            <form action="{{ url('/logout') }}" method="POST" style="display: inline; width: 100%;">
+                @csrf
+                <button type="submit" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </form>
+            -->
         </div>
     </div>
 
     <!-- Overlay untuk sidebar -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- Konten Halaman -->
-    {{-- <div class="content">
-        <h1>Demo Navbar Responsif dengan Sidebar</h1>
-        <p>Ini adalah contoh konten halaman. Navbar akan tetap berada di atas saat Anda menggulir halaman.</p>
-        <p>Pada tampilan mobile, klik tombol hamburger di pojok kanan untuk membuka menu sidebar.</p>
-        <p>Sidebar sekarang memiliki:</p>
-        <ul>
-            <li>Background gradient biru yang jelas</li>
-            <li>Animasi smooth saat muncul</li>
-            <li>Profil pengguna</li>
-            <li>Semua menu dengan dropdown</li>
-            <li>Tombol login/daftar di bagian bawah</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div> --}}
+    <!-- Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <img src="/assets/abgblora/logo/iconabgblora.png" alt="Logo ABG Blora" class="modal-logo">
+            <p>Silakan login atau daftar terlebih dahulu untuk mengakses layanan ini!</p>
+            <button class="modal-button" onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
 
     <script>
+        // Toggle dropdown untuk desktop
+        function toggleDropdown(e) {
+            e.preventDefault();
+            const dropdown = e.target.closest('.dropdown');
+            dropdown.classList.toggle('show');
+
+            // Close other dropdowns
+            document.querySelectorAll('.dropdown').forEach(el => {
+                if (el !== dropdown) el.classList.remove('show');
+            });
+        }
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function (e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown').forEach(el => el.classList.remove('show'));
+            }
+        });
+
         // Sidebar functionality
         const mobileToggle = document.getElementById('mobileToggle');
         const sidebar = document.getElementById('sidebar');
         const closeSidebar = document.getElementById('closeSidebar');
         const overlay = document.getElementById('overlay');
 
-        function openSidebar() {
+        mobileToggle.addEventListener('click', function() {
             sidebar.classList.add('active');
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
-        }
+        });
 
-        function closeSidebarFunc() {
+        closeSidebar.addEventListener('click', function() {
             sidebar.classList.remove('active');
             overlay.classList.remove('active');
             document.body.style.overflow = 'auto';
-        }
+        });
 
-        mobileToggle.addEventListener('click', openSidebar);
-        closeSidebar.addEventListener('click', closeSidebarFunc);
-        overlay.addEventListener('click', closeSidebarFunc);
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
 
         // Toggle sidebar dropdowns
         document.querySelectorAll('.sidebar-dropdown-toggle').forEach(toggle => {
@@ -733,50 +908,41 @@
                 const dropdown = this.nextElementSibling;
                 const icon = this.querySelector('.dropdown-icon');
 
-                // Close other dropdowns
-                document.querySelectorAll('.sidebar-dropdown').forEach(otherDropdown => {
-                    if (otherDropdown !== dropdown) {
-                        otherDropdown.classList.remove('active');
-                        otherDropdown.previousElementSibling.classList.remove('active');
-                    }
-                });
-
-                // Toggle current dropdown
                 dropdown.classList.toggle('active');
-                this.classList.toggle('active');
-            });
-        });
 
-        // Close sidebar when clicking on dropdown links
-        document.querySelectorAll('.sidebar-dropdown a').forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    closeSidebarFunc();
+                if (dropdown.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
                 }
             });
         });
 
-        // Desktop dropdown functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdown = this.closest('.dropdown');
-                dropdown.classList.toggle('show');
-            });
-        });
+        // Modal functions
+        function showLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+            // Close sidebar if open
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
 
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown').forEach(dropdown => {
-                    dropdown.classList.remove('show');
-                });
+        function redirectToLogin() {
+            window.location.href = '/login';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === document.getElementById('loginModal')) {
+                document.getElementById('loginModal').style.display = 'none';
             }
         });
 
-        // Demo function untuk modal login
-        function showLoginModal() {
-            alert('Fungsi: Redirect ke halaman login');
-            closeSidebarFunc();
-        }
+        // Add event listeners to dropdown toggles
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', toggleDropdown);
+        });
     </script>
+
