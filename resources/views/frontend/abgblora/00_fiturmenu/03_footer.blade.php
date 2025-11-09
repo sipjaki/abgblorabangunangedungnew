@@ -1,7 +1,11 @@
 <style>
     /* Footer utama */
-.footer-section {
-    background-color: #f5f5f5;
+* {
+    font-family: 'Poppins', sans-serif;
+}
+    .footer-section {
+    /* background-color: #f5f5f5; */
+      background-color: navy; /* dari #f5f5f5 diganti navy */
     padding: 40px 20px;
     font-family: 'Poppins', sans-serif;
     color: #333;
