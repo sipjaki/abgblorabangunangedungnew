@@ -312,28 +312,18 @@
             padding-bottom: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-.sidebar-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: black;
-}
 
-/* Atur ulang posisi dan ukuran saat tampilan kecil */
-@media (max-width: 768px) {
-    .sidebar-logo {
-        justify-content: flex-start;
-        padding: 10px 15px;
-        position: relative;
-        z-index: 999;
-        background: white; /* biar gak ketimpa background lain */
-    }
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: black;
+        }
 
-    .sidebar-logo img {
-        height: 30px;
-        width: auto;
-    }
-}
+        .sidebar-logo img {
+            height: 35px;
+            width: auto;
+        }
 
         .sidebar-logo-text {
             color: white;
