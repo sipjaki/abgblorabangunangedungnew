@@ -43,19 +43,32 @@
             flex-wrap: wrap;
             gap: 15px;
         }
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 250px;
 
-        .logo-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex: 1;
-            min-width: 250px;
-        }
+    flex-wrap: nowrap; /* tetap satu baris */
+    overflow-x: auto;  /* scroll horizontal jika layar kecil */
+}
 
-        .logo-group img {
-            height: 40px;
-            width: auto;
-        }
+.logo-group img {
+    height: 40px;
+    width: auto;
+    flex-shrink: 0; /* jangan mengecil saat container sempit */
+}
+
+/* opsional: hide scrollbar di webkit */
+.logo-group::-webkit-scrollbar {
+    height: 6px;
+}
+
+.logo-group::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
 
         .logo-text {
             color: black;
@@ -299,17 +312,28 @@
             padding-bottom: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+}
 
-        .sidebar-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+/* Atur ulang posisi dan ukuran saat tampilan kecil */
+@media (max-width: 768px) {
+    .sidebar-logo {
+        justify-content: flex-start;
+        padding: 10px 15px;
+        position: relative;
+        z-index: 999;
+        background: white; /* biar gak ketimpa background lain */
+    }
 
-        .sidebar-logo img {
-            height: 35px;
-            width: auto;
-        }
+    .sidebar-logo img {
+        height: 30px;
+        width: auto;
+    }
+}
 
         .sidebar-logo-text {
             color: white;
