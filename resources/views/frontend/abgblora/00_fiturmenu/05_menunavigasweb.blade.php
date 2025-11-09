@@ -268,6 +268,181 @@
             font-size: 24px;
             cursor: pointer;
             padding: 5px 10px;
+            z-index: 10001;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 350px;
+            height: 100%;
+            background-color: #09146A;
+            z-index: 10002;
+            transition: right 0.4s ease;
+            overflow-y: auto;
+            padding: 20px;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar.active {
+            right: 0;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-logo img {
+            height: 35px;
+            width: auto;
+        }
+
+        .sidebar-logo-text {
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+        .close-sidebar {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .sidebar-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .sidebar-profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .sidebar-profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar-profile-info {
+            color: white;
+        }
+
+        .sidebar-profile-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .sidebar-links {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .sidebar-links li {
+            margin-bottom: 8px;
+        }
+
+        .sidebar-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #6635F1;
+        }
+
+        .sidebar-dropdown {
+            margin-left: 20px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .sidebar-dropdown.active {
+            display: block;
+        }
+
+        .sidebar-dropdown a {
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+
+        .sidebar-auth {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .sidebar-auth a, .sidebar-auth button {
+            text-decoration: none;
+            color: #09146A;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 6px;
+            background-color: white;
+            border: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .sidebar-auth a:hover, .sidebar-auth button:hover {
+            background-color: #001f3f;
+            color: white;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
         }
 
         /* Responsive Styles */
@@ -294,7 +469,7 @@
 
         @media (max-width: 768px) {
             body {
-                padding-top: 220px;
+                padding-top: 150px;
             }
 
             .navbar-wrapper {
@@ -310,24 +485,6 @@
 
             .nav-menu {
                 display: none;
-                padding: 10px 0;
-            }
-
-            .nav-menu.active {
-                display: block;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            .dropdown-menu {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-                border-radius: 0;
-                margin-top: 5px;
             }
 
             .logo-text {
@@ -335,18 +492,11 @@
             }
 
             .profile-section {
-                flex-direction: column;
-                text-align: center;
+                display: none;
             }
 
             .auth-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .auth-buttons a, .auth-buttons button {
-                width: 100%;
-                max-width: 200px;
+                display: none;
             }
         }
 
@@ -358,11 +508,6 @@
 
             .logo-text {
                 font-size: 11px;
-            }
-
-            .profile-pic {
-                width: 40px;
-                height: 40px;
             }
         }
     </style>
@@ -569,6 +714,140 @@
         </div>
     </div>
 
+    <!-- Sidebar untuk Mobile -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" loading="lazy" />
+                <div class="sidebar-logo-text">
+                    ABG Blora
+                </div>
+            </div>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-profile">
+            <div class="sidebar-profile-pic">
+                <img src="/assets/abgblora/logo/iconabgblora.png" alt="Profile Photo" />
+            </div>
+            <div class="sidebar-profile-info">
+                <div class="sidebar-profile-name">Hi, Pengguna</div>
+                <div>Status: Online</div>
+            </div>
+        </div>
+
+        <ul class="sidebar-links">
+            <li>
+                <a href="#" class="sidebar-dropdown-toggle">
+                    <i class="fas fa-building"></i>
+                    PBG/SLF
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
+                </a>
+                <ul class="sidebar-dropdown">
+                    <li><a href="/infopbg"><i class="fas fa-info-circle"></i> Informasi PBG & SLF</a></li>
+                    <li><a href="#" onclick="showLoginModal()"><i class="fas fa-file-alt"></i> Permohonan PBG & SLF</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" class="sidebar-dropdown-toggle">
+                    <i class="fas fa-search"></i>
+                    Tracking
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
+                </a>
+                <ul class="sidebar-dropdown">
+                    <li><a href="/infotrakingweb"><i class="fas fa-map-marker-alt"></i> Tracking PBG & SLF</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" class="sidebar-dropdown-toggle">
+                    <i class="fas fa-database"></i>
+                    Pendataan
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
+                </a>
+                <ul class="sidebar-dropdown">
+                    <li><a href="/databangunangedung"><i class="fas fa-building"></i> Bangunan Gedung</a></li>
+                    <li><a href="/pendataankicbangunangedung"><i class="fas fa-tools"></i> KIC Gedung & Bangunan</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" class="sidebar-dropdown-toggle">
+                    <i class="fas fa-hands-helping"></i>
+                    Bantek
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
+                </a>
+                <ul class="sidebar-dropdown">
+                    <li><a href="/infobantek"><i class="fas fa-info-circle"></i> Informasi Bantuan Teknis</a></li>
+                    <li><a href="/febantuanteknis" onclick="showLoginModal()"><i class="fas fa-file-alt"></i> Permohonan Bantuan Teknis</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" class="sidebar-dropdown-toggle">
+                    <i class="fas fa-file-contract"></i>
+                    KRK
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
+                </a>
+                <ul class="sidebar-dropdown">
+                    <li><a href="/infokrkpermohonan"><i class="fas fa-info-circle"></i> Informasi Permohonan KRK</a></li>
+                    <li><a href="/permohonankrk" onclick="showLoginModal()"><i class="fas fa-file-alt"></i> Permohonan KRK</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" class="sidebar-dropdown-toggle">
+                    <i class="fas fa-home"></i>
+                    MBR
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
+                </a>
+                <ul class="sidebar-dropdown">
+                    <li><a href="/infombrgambar"><i class="fas fa-info-circle"></i> Informasi MBR</a></li>
+                    <li><a href="/bembrpengkajiteknis"><i class="fas fa-user-tie"></i> Daftar Konsultan Pengkaji Teknis</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" class="sidebar-dropdown-toggle">
+                    <i class="fas fa-question-circle"></i>
+                    Bantuan
+                    <i class="fas fa-chevron-down dropdown-icon" style="margin-left: auto;"></i>
+                </a>
+                <ul class="sidebar-dropdown">
+                    <li><a href="/infobantuangambar"><i class="fas fa-info-circle"></i> Informasi Bantuan Gambar</a></li>
+                    <li><a href="/feformbantuangambar" onclick="showLoginModal()"><i class="fas fa-file-alt"></i> Permohonan Bantuan Gambar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="sidebar-auth">
+            <a href="/register">
+                <i class="fas fa-user-plus"></i>
+                Daftar
+            </a>
+            <a href="/login">
+                <i class="fas fa-sign-in-alt"></i>
+                Login
+            </a>
+            <!-- For authenticated users -->
+            <!--
+            <form action="{{ url('/logout') }}" method="POST" style="display: inline; width: 100%;">
+                @csrf
+                <button type="submit" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </form>
+            -->
+        </div>
+    </div>
+
+    <!-- Overlay untuk sidebar -->
+    <div class="overlay" id="overlay"></div>
+
     <!-- Modal -->
     <div class="modal" id="loginModal">
         <div class="modal-content">
@@ -579,14 +858,15 @@
     </div>
 
     <!-- Konten Halaman (contoh) -->
-    {{-- <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
         <h1>Konten Halaman</h1>
         <p>Ini adalah contoh konten halaman. Navbar akan tetap berada di atas saat Anda menggulir halaman.</p>
+        <p>Pada tampilan mobile, klik tombol hamburger di pojok kanan untuk membuka menu sidebar.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div> --}}
+    </div>
 
     <script>
-        // Toggle dropdown
+        // Toggle dropdown untuk desktop
         function toggleDropdown(e) {
             e.preventDefault();
             const dropdown = e.target.closest('.dropdown');
@@ -605,14 +885,56 @@
             }
         });
 
-        // Mobile menu toggle
-        document.getElementById('mobileToggle').addEventListener('click', function() {
-            document.getElementById('navMenu').classList.toggle('active');
+        // Sidebar functionality
+        const mobileToggle = document.getElementById('mobileToggle');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const overlay = document.getElementById('overlay');
+
+        mobileToggle.addEventListener('click', function() {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeSidebar.addEventListener('click', function() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Toggle sidebar dropdowns
+        document.querySelectorAll('.sidebar-dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdown = this.nextElementSibling;
+                const icon = this.querySelector('.dropdown-icon');
+
+                dropdown.classList.toggle('active');
+
+                if (dropdown.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
         });
 
         // Modal functions
         function showLoginModal() {
             document.getElementById('loginModal').style.display = 'flex';
+            // Close sidebar if open
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
 
         function redirectToLogin() {
