@@ -217,7 +217,7 @@
 </div>
 
 <!-- Perusahaan -->
-<div style="form-modern margin-top:-25px;">
+<div class="form-modern" style="margin-top:-25px;">
     <label class="form-label-modern d-flex align-items-center" for="perusahaan">
         <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Perusahaan/Instansi
     </label>
@@ -1010,7 +1010,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-        Apakah Anda yakin dengan permohonan Anda?
+        Apakah Anda yakin <br> dengan permohonan Anda?
       </p>
 
       <!-- Checkbox -->
