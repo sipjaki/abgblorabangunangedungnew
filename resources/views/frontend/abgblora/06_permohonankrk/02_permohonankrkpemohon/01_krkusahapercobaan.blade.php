@@ -216,11 +216,12 @@
 </div>
 
 <!-- Perusahaan -->
-<div style="form-modern margin-top:-25px;">
+<div class="form-modern" style="margin-top:-25px;">
     <label class="form-label-modern d-flex align-items-center" for="perusahaan">
-        <i class="fas fa-building" style="margin-right: 8px; color: navy;"></i> Perusahaan/Instansi
-    </label>
-    <input type="text" id="perusahaan" name="perusahaan" placeholder="Masukan Nama Perusahaan Pemohon/Pemilik"
+    <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i>
+    Perusahaan/Instansi
+</label>
+<input type="text" id="perusahaan" name="perusahaan" placeholder="Masukan Nama Perusahaan Pemohon/Pemilik"
         class="form-control @error('perusahaan') is-invalid @enderror"
         value="{{ old('perusahaan') }}" />
     @error('perusahaan')
@@ -234,10 +235,10 @@
         <div class="petablota">
           <!-- Label -->
           <div class="mb-3">
-            <label class="form-label d-flex align-items-center fw-bold text-primary">
-              <i class="fas fa-map-marker-alt me-2"></i>
-              Pilih Koordinat Lokasi di Kabupaten Blora
-            </label>
+<label class="form-label d-flex align-items-center fw-bold text-primary">
+    <i class="bi bi-geo-alt-fill me-2"></i>
+    Pilih Koordinat Lokasi di Kabupaten Blora
+</label>
           </div>
 
           <!-- Peta -->
@@ -250,15 +251,16 @@
 
           <!-- Info Koordinat -->
           <div class="alert alert-primary mt-3 mb-2 py-2 d-flex align-items-center">
-            <i class="fas fa-info-circle me-2"></i>
-            <div>
-              <strong>Lokasi Terpilih: </strong>
-              <span id="koordinat" class="text-danger ms-1">Belum memilih lokasi</span>
-            </div>
+            <i class="bi bi-info-circle-fill me-2"></i>
+<div>
+    <strong>Lokasi Terpilih:</strong>
+    <span id="koordinat" class="text-danger ms-1">Belum memilih lokasi</span>
+</div>
+
           </div>
 
           <!-- Input -->
-          <div class="mt-3">
+          <div class="form-modern mt-3">
             <input type="text"
                    id="koordinatlokasi"
                    name="koordinatlokasi"
