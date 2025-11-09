@@ -296,10 +296,62 @@
                                     </h2> --}}
 
                                     <!-- Image Slideshow -->
-                                    <div class="card-img-container">
-                                        <img id="slideImage" src="https://source.unsplash.com/900x400/?urban,planning" alt="Perencanaan Tata Ruang">
-                                        <div class="img-caption" id="captionText">Perencanaan Tata Ruang</div>
-                                    </div>
+                                    <div class="card-img-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 10px;">
+    <img id="slideImage"
+         src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&h=400&q=80"
+         alt="Perencanaan Tata Ruang Wilayah"
+         style="width: 100%; height: auto; display: block; transition: opacity 1s ease-in-out; border-radius: 10px;">
+    <div class="img-caption" id="captionText"
+         style="position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; color: white; background: rgba(0,0,0,0.5); padding: 8px; font-size: 14px; font-style: italic;">
+        Perencanaan Tata Ruang Wilayah
+    </div>
+</div>
+
+<script>
+    const images = [
+        {
+            url: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&h=400&q=80",
+            caption: "Perencanaan Tata Ruang Wilayah"
+        },
+        {
+            url: "https://images.unsplash.com/photo-1505739772217-3c5a7b7f3d9c?auto=format&fit=crop&w=900&h=400&q=80",
+            caption: "Zonasi Kawasan Perkotaan"
+        },
+        {
+            url: "https://images.unsplash.com/photo-1581092334364-5c4bfc11b911?auto=format&fit=crop&w=900&h=400&q=80",
+            caption: "Proses Pembangunan Berdasarkan KRK"
+        },
+        {
+            url: "https://images.unsplash.com/photo-1533055640609-24b498cdf8a0?auto=format&fit=crop&w=900&h=400&q=80",
+            caption: "Peta Rencana Tata Ruang Kabupaten"
+        }
+    ];
+
+    let currentIndex = 0;
+    const imgElement = document.getElementById('slideImage');
+    const captionElement = document.getElementById('captionText');
+
+    function showSlide(index) {
+        imgElement.style.opacity = 0;
+        setTimeout(() => {
+            imgElement.src = images[index].url;
+            imgElement.alt = images[index].caption;
+            captionElement.textContent = images[index].caption;
+            imgElement.style.opacity = 1;
+        }, 500);
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showSlide(currentIndex);
+    }
+
+    // tampilkan pertama kali
+    showSlide(currentIndex);
+
+    // ganti otomatis tiap 5 detik
+    setInterval(nextSlide, 5000);
+</script>
 
                                     <!-- Main Content -->
                                     <h3 class="info-subtitle">Apa Itu KRK?</h3>
@@ -406,44 +458,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Slideshow Script -->
-<script>
-    const images = [
-        {
-            url: "https://source.unsplash.com/900x400/?urban,planning",
-            caption: "Perencanaan Tata Ruang Wilayah"
-        },
-        {
-            url: "https://source.unsplash.com/900x400/?city,architecture",
-            caption: "Zonasi Kawasan Perkotaan"
-        },
-        {
-            url: "https://source.unsplash.com/900x400/?construction,building",
-            caption: "Proses Pembangunan Berdasarkan KRK"
-        },
-        {
-            url: "https://source.unsplash.com/900x400/?map,development",
-            caption: "Peta Rencana Tata Ruang Kabupaten"
-        }
-    ];
-
-    let currentIndex = 0;
-    const imgElement = document.getElementById('slideImage');
-    const captionElement = document.getElementById('captionText');
-
-    function showSlide(index) {
-        imgElement.src = images[index].url + "&" + new Date().getTime(); // cache-busting
-        imgElement.alt = images[index].caption;
-        captionElement.textContent = images[index].caption;
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showSlide(currentIndex);
-    }
-
-    // Initial slide
-    showSlide(currentIndex);
-
-    // Auto change slide every 5 seconds
-    setInterval(nextSlide, 5000);
-</script>
