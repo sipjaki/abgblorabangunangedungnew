@@ -239,15 +239,6 @@
             }
         }
     </style>
-</head>
-<body>
-    <!-- Main content placeholder -->
-    <div style="padding: 40px 20px; min-height: 60vh;">
-        <h1 style="text-align: center; color: #09146A;">Halaman Utama</h1>
-        <p style="text-align: center; max-width: 800px; margin: 20px auto;">
-            Ini adalah contoh halaman dengan footer lengkap di bagian bawah.
-        </p>
-    </div>
 
     <!-- Footer Section Start -->
     <footer class="footer-section">
