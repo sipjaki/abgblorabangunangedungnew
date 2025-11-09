@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 </div>
 
-<div class="form-modern row mt-3" style="margin-top: -25px;">
+<div class="row mt-3" style="margin-top: -25px;">
     <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
 <label class="form-label-modern d-flex align-items-center" for="nik">
@@ -368,11 +368,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <!-- RT/RW -->
 <div class="row mt-3" style="margin-top: -40px;">
-    <div class="col-md-6" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="rt">
-                <i class="fas fa-phone" style="margin-right: 8px; color: navy;"></i> No Whatsapp
-            </label>
+         <label class="form-label-modern d-flex align-items-center" for="rt">
+    <i class="bi bi-telephone-fill" style="margin-right: 8px; color: navy;"></i>
+    No Whatsapp
+</label>
             <input type="number" name="notelepon" id="notelepon" placeholder="No Telepon"
                 class="form-control @error('notelepon') is-invalid @enderror"
                 value="{{ old('notelepon') }}">
@@ -382,11 +383,12 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 
-    <div class="col-md-6" style="margin-top: -40px;">
+    <div class="form-modern col-md-6" style="margin-top: -40px;">
         <div>
-            <label class="form-label d-flex align-items-center" for="luastanah_display">
-                <i class="fas fa-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Tanah M<sup>2</sup>
-            </label>
+            <label class="form-label-modern d-flex align-items-center" for="luastanah_display">
+    <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i>
+    Luas Tanah M<sup>2</sup>
+</label>
 
             <!-- Input tampilan -->
             <input type="text" id="luastanah_display" placeholder="Luas Tanah"
@@ -423,10 +425,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="row mt-3">
     <!-- Jumlah Lantai -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="jumlahlantai">
-            <i class="fas fa-building" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
-        </label>
+    <div class="form-modern col-md-4" style="margin-top: -40px;">
+<label class="form-label-modern d-flex align-items-center" for="jumlahlantai">
+    <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i>
+    Jumlah Lantai
+</label>
         <select name="jumlahlantai" id="jumlahlantai"
             class="form-control @error('jumlahlantai') is-invalid @enderror">
             <option value="" style="font-size:14px;"><span style="font-size:14px;">-- Pilih Jumlah Lantai --</span></option>
