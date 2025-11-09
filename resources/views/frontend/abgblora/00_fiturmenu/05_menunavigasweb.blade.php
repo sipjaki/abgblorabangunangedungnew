@@ -43,32 +43,19 @@
             flex-wrap: wrap;
             gap: 15px;
         }
-.logo-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-    min-width: 250px;
 
-    flex-wrap: nowrap; /* tetap satu baris */
-    overflow-x: auto;  /* scroll horizontal jika layar kecil */
-}
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            min-width: 250px;
+        }
 
-.logo-group img {
-    height: 40px;
-    width: auto;
-    flex-shrink: 0; /* jangan mengecil saat container sempit */
-}
-
-/* opsional: hide scrollbar di webkit */
-.logo-group::-webkit-scrollbar {
-    height: 6px;
-}
-
-.logo-group::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.2);
-    border-radius: 3px;
-}
+        .logo-group img {
+            height: 40px;
+            width: auto;
+        }
 
         .logo-text {
             color: black;
@@ -317,7 +304,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: black;
         }
 
         .sidebar-logo img {
@@ -731,6 +717,7 @@
     <!-- Sidebar untuk Mobile -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
+            <p>Menu</p>
             <div class="sidebar-logo">
                 <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" loading="lazy" />
                 <div class="sidebar-logo-text">
