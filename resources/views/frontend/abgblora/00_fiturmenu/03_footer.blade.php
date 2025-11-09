@@ -56,7 +56,7 @@
 
 .subtitle {
     font-size: 0.9rem;
-    color: #555;
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -89,7 +89,7 @@
 
 .footer-widget ul li a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-size: 0.9rem;
 }
 
@@ -101,7 +101,7 @@
 .contact-info p, .contact-item a {
     font-size: 0.9rem;
     margin: 0;
-    color: #333;
+    color: white;
     text-decoration: none;
 }
 
@@ -154,13 +154,13 @@
                             <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" class="footer-logo">
                         </div>
                         <div class="footer-title">
-                            <h3>
+                            <h3 style="font-family: 'Poppins', sans-serif;">
                                 <span class="abg-text">ABG</span>
                                 <span class="blora-text">BLORA</span>
                             </h3>
                         </div>
                         <div class="subtitle">BANGUNAN GEDUNG</div>
-                        <p>Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah</p>
+                        <p style="color: white;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah</p>
                     </div>
 
                     <!-- Services Section -->
