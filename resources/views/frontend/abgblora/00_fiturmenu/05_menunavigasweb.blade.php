@@ -14,6 +14,39 @@
             padding-top: 180px; /* Untuk mengkompensasi navbar fixed */
         }
 
+        .toggle-sidebar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: navy; /* biar kontras */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001; /* biar gak ketutup elemen lain */
+    transition: background-color 0.3s;
+}
+
+.toggle-sidebar:hover {
+    background-color: #001f4d;
+}
+
+.toggle-sidebar i {
+    font-size: 18px;
+}
+
+@media (min-width: 769px) {
+    .toggle-sidebar {
+        display: none;
+    }
+}
+
         .sticky-navbar {
             position: fixed;
             top: 0;
@@ -531,7 +564,7 @@
                     <!-- PHP condition would go here in actual implementation -->
                     <p>Hi, Pengguna</p>
                     <div class="profile-pic">
-                        <img src="/assets/abgblora/logo/iconabgblora.png" alt="Profile Photo" />
+                        <img src="/assets/abgblora/logo/logobangunangedung.png" alt="Profile Photo" />
                     </div>
                 </div>
 
@@ -714,10 +747,13 @@
         </div>
     </div>
 
+    <button class="toggle-sidebar" id="toggleSidebar">
+    <i class="bi bi-list"></i> <span class="menu-text">Menu</span>
+    </button>
+
     <!-- Sidebar untuk Mobile -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <p>Menu</p>
             <div class="sidebar-logo">
                 <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" loading="lazy" />
                 <div class="sidebar-logo-text">
@@ -731,7 +767,7 @@
 
         <div class="sidebar-profile">
             <div class="sidebar-profile-pic">
-                <img src="/assets/abgblora/logo/iconabgblora.png" alt="Profile Photo" />
+                <img src="/assets/abgblora/logo/logobangunangedung.png" alt="Profile Photo" />
             </div>
             <div class="sidebar-profile-info">
                 <div class="sidebar-profile-name">Hi, Pengguna</div>
@@ -852,7 +888,7 @@
     <!-- Modal -->
     <div class="modal" id="loginModal">
         <div class="modal-content">
-            <img src="/assets/abgblora/logo/iconabgblora.png" alt="Logo ABG Blora" class="modal-logo">
+            <img src="/assets/abgblora/logo/logobangunangedung.png" alt="Logo Aplikasi Bangunan Gedung" class="modal-logo">
             <p>Silakan login atau daftar terlebih dahulu untuk mengakses layanan ini!</p>
             <button class="modal-button" onclick="redirectToLogin()">OK</button>
         </div>
