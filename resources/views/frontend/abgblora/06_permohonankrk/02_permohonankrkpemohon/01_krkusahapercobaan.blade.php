@@ -260,7 +260,7 @@
           </div>
 
           <!-- Input -->
-          <div class="form-modern mt-3">
+          <div class="mt-3">
             <input type="text"
                    id="koordinatlokasi"
                    name="koordinatlokasi"
@@ -444,10 +444,12 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <!-- RT -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="rt">
-            <i class="fas fa-hashtag" style="margin-right: 8px; color: navy;"></i> RT
-        </label>
+    <div class="form-modern col-md-4" style="margin-top: -40px;">
+<label class="form-label-modern d-flex align-items-center" for="rt">
+    <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i>
+    RT
+</label>
+
         <select name="rt" id="rt" class="form-control @error('rt') is-invalid @enderror">
             <option value="" style="font-size: 14px;">-- Pilih RT --</option>
             @for ($i = 1; $i <= 25; $i++)
@@ -460,11 +462,12 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <!-- RW -->
-    <div class="col-md-4" style="margin-top: -40px;">
-        <label class="form-label d-flex align-items-center" for="rw">
-            <i class="fas fa-hashtag" style="margin-right: 8px; color: navy;"></i> RW
-        </label>
-        <select name="rw" id="rw" class="form-control @error('rw') is-invalid @enderror">
+    <div class="form-modern col-md-4" style="margin-top: -40px;">
+        <label class="form-label-modern d-flex align-items-center" for="rw">
+    <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i>
+    RW
+</label>
+<select name="rw" id="rw" class="form-control @error('rw') is-invalid @enderror">
             <option value="" style="font-size: 16px;">-- Pilih RW --</option>
             @for ($i = 1; $i <= 25; $i++)
                 <option value="{{ $i }}" {{ old('rw') == $i ? 'selected' : '' }}>{{ $i }}</option>
@@ -479,11 +482,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="row mt-3">
     <!-- Kabupaten (dikunci) -->
-    <div class="col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
-        <label class="form-label d-flex align-items-center" for="kabupaten">
-            <i class="fas fa-map" style="margin-right: 8px; color: navy;"></i> Kabupaten
-        </label>
-        <select name="kabupaten" id="kabupaten" class="form-control" readonly disabled>
+    <div class="form-modern col-md-4" style="margin-top: -40px; margin-bottom: -40px;">
+    <label class="form-label-modern d-flex align-items-center" for="kabupaten">
+    <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i>
+    Kabupaten
+</label>
+<select name="kabupaten" id="kabupaten" class="form-control" readonly disabled>
             <option value="kabupaten blora" selected style="font-size: 14px;">Kabupaten Blora</option>
         </select>
         <input type="hidden" name="kabupaten" value="kabupaten blora" style="font-size: 16px;">
