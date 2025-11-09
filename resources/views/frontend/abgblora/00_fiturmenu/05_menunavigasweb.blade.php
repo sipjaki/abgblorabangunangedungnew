@@ -579,11 +579,11 @@
     </div>
 
     <!-- Konten Halaman (contoh) -->
-    <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+    {{-- <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
         <h1>Konten Halaman</h1>
         <p>Ini adalah contoh konten halaman. Navbar akan tetap berada di atas saat Anda menggulir halaman.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
+    </div> --}}
 
     <script>
         // Toggle dropdown
