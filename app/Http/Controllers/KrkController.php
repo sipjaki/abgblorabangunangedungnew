@@ -2683,7 +2683,7 @@ public function perpengesahansosbudber($id)
 
 public function krksosbudsuratdelete($id)
 {
-    $data = krksosbud::find($id);
+    $data = krkusahasurat::find($id);
 
     if ($data) {
         $data->delete();
