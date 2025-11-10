@@ -283,6 +283,18 @@
                     @enderror
                 </div>
 
+                <div class="form-group row mb-4">
+                    <label for="koordinatlokasi" class="col-md-4 col-form-label">
+                        <i class="fas fa-map-marker-alt"></i> Koordinat Lokasi
+                    </label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="koordinatlokasi" value="{{$data->koordinatlokasi}}" readonly>
+                    </div>
+                    @error('koordinatlokasi')
+                    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+                    @enderror
+                </div>
+
                 <!-- Ruas Jalan -->
                 <div class="form-group row mb-4">
                     <label for="rencanagsbblora_id" class="col-md-4 col-form-label">
