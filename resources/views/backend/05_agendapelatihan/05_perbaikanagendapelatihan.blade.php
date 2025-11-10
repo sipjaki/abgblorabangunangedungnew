@@ -148,7 +148,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('bekrkusahaperbaikannewupdate', $data->id) }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('agendapelatihaneditnew', $data->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -379,7 +379,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
 
                                     </div>
-                                </div>
+
                                 <!-- End row -->
                             <!-- end::Body -->
 
