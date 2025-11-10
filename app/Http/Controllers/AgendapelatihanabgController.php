@@ -458,7 +458,7 @@ public function beagendapelatihanedit($id)
     }
 
     // Kirim data ke view form pembuatan dokumentasi cek lapangan
-    return view('backend.06_krk.05_agendapelatihan.05_perbaikanagendapelatihan', [
+    return view('backend.05_agendapelatihan.05_perbaikanagendapelatihan', [
         'title' => 'Admin Perbaikan Agenda Pelatihan Bangunan Gedung ',
         'data' => $databantuanteknis,
         'user' => Auth::user()
