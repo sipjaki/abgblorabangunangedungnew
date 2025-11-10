@@ -365,7 +365,8 @@
         <button
             type="button"
             class="button-hijau"
-            disabled
+            onclick="openModalVerifikasi2({{ $item->id }})"
+            {{-- disabled --}}
         >
             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sudah
         </button>
@@ -642,7 +643,8 @@
           class="button-hijau"
           type="button"
           style="background-color: #10B981; cursor: not-allowed;"
-          disabled
+          onclick="openModal3({{ $item->id }})"
+          {{-- disabled --}}
       >
           <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Sudah
       </button>
@@ -651,7 +653,9 @@
           <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Belum
       </button>
     @else
-      <button class="button-modern" type="button" onclick="openModal3({{ $item->id }})">
+      <button class="button-modern" type="button"
+      onclick="openModal3({{ $item->id }})"
+      >
           <i class="bi bi-patch-check" style="margin-right: 5px;"></i> Validasi
       </button>
     @endif
@@ -767,7 +771,8 @@
       <button
           class="button-lolos"
           type="button"
-          disabled
+          onclick="openModal4({{ $item->id }})"
+          {{-- disabled --}}
       >
           <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Sudah
       </button>
