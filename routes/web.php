@@ -963,7 +963,7 @@ Route::get('/resagendapelatihan/{id}', [AgendapelatihanabgController::class, 're
 Route::post('/pendaftaranpesertanew', [AgendapelatihanabgController::class, 'pendaftaranpesertanew'])->middleware('auth')->name('pendaftaranpesertanew');
 
 // EDIT AGENDA PELATIHAN BRO
-Route::get('/beagendapelatihanedit/{id}', [KrkController::class, 'beagendapelatihanedit'])->middleware('auth')->name('agendapelatihanedit');
+Route::get('/beagendapelatihanedit/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanedit'])->middleware('auth')->name('agendapelatihanedit');
 
 Route::delete('/beagendapelatihanabgdelete/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgdelete'])->middleware('auth')->name('delete.beagendapelatihanabgdelete');
 
