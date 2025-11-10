@@ -105,7 +105,7 @@
         <button class="button-modern"
                 type="button"
                 onclick="location.href='{{ route('bekrksosbudindex') }}';"
-                style="cursor: pointer; color:white;">
+                style="cursor: pointer; color:black;">
             <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
         </button>
     </div>
@@ -327,7 +327,7 @@
                         <td style="text-align: left;">{{ $item->jaringanutilitas ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">12</td>
+                        <td style="text-align: center;">13</td>
                         <td style="text-align: left;">Koordinat Lokasi</td>
                         <td style="text-align: center;">:</td>
                         <td style="text-align: left;">{{ $item->koordinatlokasi ?? '-' }}</td>
