@@ -314,11 +314,29 @@
 
         <div class="modal-footer">
             <button type="button" class="btn-cancel" id="cancelButton">Periksa Kembali</button>
-            <button type="button" class="btn-confirm" id="confirmButton">Ya, Kirim Data</button>
-        </div>
+<!-- Tombol konfirmasi -->
+<button type="button" class="btn-confirm" id="confirmButton">
+    <i class="bi bi-send-check-fill" style="margin-right: 5px;"></i> Ya, Kirim Data
+</button>        </div>
     </div>
 </div>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const confirmButton = document.getElementById('confirmButton');
+    const form = document.getElementById('pendaftaranForm');
+
+    confirmButton.addEventListener('click', function() {
+        // Konfirmasi sebelum submit
+        if (confirm('Apakah Anda yakin ingin mengirim data pendaftaran ini?')) {
+            confirmButton.disabled = true;
+            confirmButton.innerHTML = '<i class="bi bi-hourglass-split"></i> Mengirim...';
+            form.submit(); // ⬅️ ini yang mengirim langsung ke controller Laravel
+        }
+    });
+});
+</script>
 <!-- Script Validasi & Modal -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
