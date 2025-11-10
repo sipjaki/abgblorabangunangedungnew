@@ -530,19 +530,21 @@ public function beagendapelatihaneditnew(Request $request, $id)
 
 
 
-    public function daftaragendapelatihan($id)
-    {
+   public function daftaragendapelatihan($id)
+{
+    $user = Auth::user();
 
-        $user = Auth::user();
-        // return view('/404', [
-        // return view('frontend.00_full.index', [
-        return view('frontend.android.05_sosialisasi.03_formpendaftransosialisasi', [
-        // return view('frontend.android.01_halamanutama.index', [
-            'title' => 'Daftar Agenda Pelatihan',
-            'user' => $user,
+    // Ambil data agenda pelatihan berdasarkan ID
+    $agendapelatihan = agendapelatihanabg::findOrFail($id);
 
-        ]);
-    }
+    // Kirim datanya ke view
+    return view('frontend.android.05_sosialisasi.03_formpendaftransosialisasi', [
+        'title' => 'Daftar Agenda Pelatihan',
+        'user' => $user,
+        'agendapelatihan' => $agendapelatihan,
+    ]);
+}
+
 
 }
 
