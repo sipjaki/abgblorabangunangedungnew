@@ -184,7 +184,7 @@
                  <div class="card-body p-0">
            <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis"
-                        class="table zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
+                        class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
                         >
                             <thead>
                                   <tr>
@@ -226,11 +226,11 @@
 
 <td>
     @if(\Carbon\Carbon::parse($item->penutupan)->isPast())
-        <span class="btn btn-danger button-dikembalikan py-2 px-3 fs-6">
+        <span class="button-merah py-2 px-3 fs-6">
             <i class="bi bi-lock-fill me-1"></i> Ditutup
         </span>
     @else
-        <span class="btn btn-success button-lolos py-2 px-3 fs-6">
+        <span class="button-hijau py-2 px-3 fs-6">
             <i class="bi bi-unlock me-1"></i> Dibuka
         </span>
     @endif
