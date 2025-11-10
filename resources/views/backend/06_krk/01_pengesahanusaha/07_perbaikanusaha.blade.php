@@ -213,10 +213,10 @@ th {
 </div>
 
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="nomordinasasal">
-                <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Nomor Dinas Asal
+            <label class="form-label-modern" for="nomordinasasal">
+                <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Nomor Surat Dinas Asal
             </label>
             <input type="text" id="nomordinasasal" name="nomordinasasal" value="{{ old('nomordinasasal', $data->nomordinasasal ?? '') }}" class="form-control @error('nomordinasasal') is-invalid @enderror" placeholder="Masukkan nomor dinas asal">
             @error('nomordinasasal')
@@ -225,9 +225,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="perorangan">
+            <label class="form-label-modern" for="perorangan">
                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Perorangan
             </label>
             <input type="text" id="perorangan" name="perorangan" value="{{ old('perorangan', $data->perorangan ?? '') }}" class="form-control @error('perorangan') is-invalid @enderror" placeholder="Masukkan nama perorangan">
