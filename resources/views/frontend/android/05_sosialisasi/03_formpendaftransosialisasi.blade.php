@@ -206,7 +206,7 @@
 
     <div class="form-buttons">
         <button type="button" class="button-baru" id="submitButton">
-            <i class="fab fa-telegram-plane"></i> Kirim Permohonan
+            <i class="fab fa-telegram-plane"></i> Daftar
         </button>
     </div>
 </form>
@@ -406,6 +406,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 errorElement.style.display = 'none';
                 e.target.classList.remove('error-field');
             }
+        }
+    });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const confirmButton = document.getElementById('confirmButton');
+    const form = document.getElementById('pendaftaranForm');
+
+    confirmButton.addEventListener('click', function () {
+        // Konfirmasi sebelum kirim data
+        const konfirmasi = confirm("Apakah kamu yakin ingin mengirim data ini?");
+        if (konfirmasi) {
+            // Nonaktifkan tombol agar tidak diklik dua kali
+            confirmButton.disabled = true;
+            confirmButton.textContent = "Mengirim...";
+
+            // Submit form
+            form.submit();
         }
     });
 });
