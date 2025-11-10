@@ -79,6 +79,8 @@
         <div class="flex flex-col space-y-3 px-[18px]">
 <form action="{{ route('pendaftaranpesertanew') }}" method="POST" class="mobile-form" id="pendaftaranForm">
     @csrf
+
+
     <input type="hidden" name="agendapelatihanabg_id" value="{{ $agendapelatihan->id }}">
 
     <div class="form-section">
@@ -325,39 +327,33 @@
 </button>        </div>
     </div>
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('pendaftaranForm');
     const submitButton = document.getElementById('submitButton');
-    const modal = document.getElementById('confirmationModal');
-    const cancelButton = document.getElementById('cancelButton');
-    const confirmButton = document.getElementById('confirmButton');
 
-    // Klik tombol "Daftar"
+    // Klik tombol "Daftar" langsung validasi dan submit
     submitButton.addEventListener('click', function() {
         if (validateForm()) {
-            showDataPreview();
-            modal.style.display = 'flex';
+            // Tombol loading biar user tahu sedang dikirim
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="bi bi-hourglass-split"></i> Mengirim...';
+            form.submit(); // ✅ langsung submit ke Laravel
         }
     });
 
-    // Tutup modal
-    cancelButton.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    // Konfirmasi kirim data (submit langsung ke controller Laravel)
-    confirmButton.addEventListener('click', function() {
-        confirmButton.disabled = true;
-        confirmButton.innerHTML = '<i class="bi bi-hourglass-split"></i> Mengirim...';
-        form.submit(); // ✅ submit langsung
-    });
-
-    // Validasi form
+    // Fungsi validasi form
     function validateForm() {
         let isValid = true;
-        const fields = ['namalengkap', 'jenjangpendidikan_id', 'nik', 'jeniskelamin', 'tanggallahir', 'notelepon', 'instansi'];
+        const fields = [
+            'namalengkap',
+            'jenjangpendidikan_id',
+            'nik',
+            'jeniskelamin',
+            'tanggallahir',
+            'notelepon',
+            'instansi'
+        ];
 
         fields.forEach(field => {
             const input = document.getElementById(field);
@@ -373,39 +369,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Validasi khusus NIK
         const nik = document.getElementById('nik').value;
         if (nik.length !== 16 || !/^\d+$/.test(nik)) {
             const nikError = document.getElementById('nik-error');
             nikError.textContent = 'NIK harus 16 digit angka';
             nikError.style.display = 'block';
+            document.getElementById('nik').classList.add('error-field');
             isValid = false;
         }
 
+        // Validasi khusus No Telepon
         const telp = document.getElementById('notelepon').value;
         if (!/^[0-9]+$/.test(telp)) {
             const telpError = document.getElementById('notelepon-error');
             telpError.textContent = 'Nomor telepon hanya boleh angka';
             telpError.style.display = 'block';
+            document.getElementById('notelepon').classList.add('error-field');
             isValid = false;
         }
 
         return isValid;
     }
-
-    // Isi preview modal
-    function showDataPreview() {
-        document.getElementById('preview-nama').textContent = document.getElementById('namalengkap').value;
-        document.getElementById('preview-pendidikan').textContent =
-            document.getElementById('jenjangpendidikan_id').options[document.getElementById('jenjangpendidikan_id').selectedIndex].text;
-        document.getElementById('preview-nik').textContent = document.getElementById('nik').value;
-        document.getElementById('preview-jk').textContent = document.getElementById('jeniskelamin').value;
-        document.getElementById('preview-tgl').textContent = document.getElementById('tanggallahir').value;
-        document.getElementById('preview-telp').textContent = document.getElementById('notelepon').value;
-        document.getElementById('preview-instansi').textContent = document.getElementById('instansi').value;
-    }
 });
 </script>
-
 
       <br><br>
       @include('frontend.android.00_fiturmenu.05_keterangan')
