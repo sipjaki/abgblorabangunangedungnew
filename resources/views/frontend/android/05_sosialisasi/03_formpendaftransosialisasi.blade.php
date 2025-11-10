@@ -77,27 +77,118 @@
 
 
 <div class="flex flex-col space-y-3 px-[18px]">
+<style>
+    .mobile-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 25px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .form-section {
+        margin-bottom: 25px;
+    }
+
+    .section-header {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1a237e;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .form-label-modern {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 6px;
+    }
+
+    .form-modern input,
+    .form-modern select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: all 0.2s ease;
+    }
+
+    .form-modern input:focus,
+    .form-modern select:focus {
+        border-color: #1a237e;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(26,35,126,0.15);
+    }
+
+    .form-modern {
+        margin-bottom: 16px;
+    }
+
+    .required {
+        color: red;
+        margin-left: 3px;
+    }
+
+    .form-buttons {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .button-baru {
+        background-color: #1a237e;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .button-baru:hover {
+        background-color: white;
+        color: #1a237e;
+        border: 1px solid #1a237e;
+        transform: translateY(-1px);
+    }
+
+    @media (max-width: 480px) {
+        .mobile-form {
+            padding: 18px;
+        }
+    }
+</style>
+
 <form action="{{ route('pendaftaranpesertanew') }}" method="POST" class="mobile-form" id="pendaftaranForm">
     @csrf
     <input type="hidden" name="agendapelatihanabg_id" value="{{ $agendapelatihan->id }}">
 
     <div class="form-section">
         <div class="section-header">
-            <i class="bi bi-person-plus-fill" style="margin-right:6px; color:navy;"></i>
-            <strong>Formulir Pendaftaran Peserta</strong>
+            <i class="bi bi-person-plus-fill" style="margin-right:6px; color:#1a237e;"></i>
+            Formulir Pendaftaran Peserta
         </div>
 
-        <!-- Nama Lengkap -->
         <div class="form-modern">
-            <label for="namalengkap" class="form-label-modern">
-                <i class="bi bi-person-fill" style="margin-right:6px; color:navy;"></i> Nama Lengkap <span class="required">*</span>
+            <label class="form-label-modern" for="namalengkap">
+                <i class="bi bi-person-fill" style="margin-right:6px; color:#1a237e;"></i> Nama Lengkap <span class="required">*</span>
             </label>
             <input type="text" name="namalengkap" id="namalengkap" value="{{ old('namalengkap') }}" required>
         </div>
 
         <div class="form-modern">
-            <label for="jenjangpendidikan_id" class="form-label-modern">
-                <i class="bi bi-mortarboard-fill" style="margin-right:6px; color:navy;"></i> Jenjang Pendidikan <span class="required">*</span>
+            <label class="form-label-modern" for="jenjangpendidikan_id">
+                <i class="bi bi-mortarboard-fill" style="margin-right:6px; color:#1a237e;"></i> Jenjang Pendidikan <span class="required">*</span>
             </label>
             <select name="jenjangpendidikan_id" id="jenjangpendidikan_id" required>
                 <option value="">-- Pilih Jenjang Pendidikan --</option>
@@ -108,15 +199,15 @@
         </div>
 
         <div class="form-modern">
-            <label for="nik" class="form-label-modern">
-                <i class="bi bi-credit-card-2-front-fill" style="margin-right:6px; color:navy;"></i> NIK <span class="required">*</span>
+            <label class="form-label-modern" for="nik">
+                <i class="bi bi-credit-card-2-front-fill" style="margin-right:6px; color:#1a237e;"></i> NIK <span class="required">*</span>
             </label>
             <input type="text" name="nik" id="nik" minlength="16" maxlength="16" required>
         </div>
 
         <div class="form-modern">
-            <label for="jeniskelamin" class="form-label-modern">
-                <i class="bi bi-gender-ambiguous" style="margin-right:6px; color:navy;"></i> Jenis Kelamin <span class="required">*</span>
+            <label class="form-label-modern" for="jeniskelamin">
+                <i class="bi bi-gender-ambiguous" style="margin-right:6px; color:#1a237e;"></i> Jenis Kelamin <span class="required">*</span>
             </label>
             <select name="jeniskelamin" id="jeniskelamin" required>
                 <option value="">-- Pilih Jenis Kelamin --</option>
@@ -126,22 +217,22 @@
         </div>
 
         <div class="form-modern">
-            <label for="tanggallahir" class="form-label-modern">
-                <i class="bi bi-calendar-date-fill" style="margin-right:6px; color:navy;"></i> Tanggal Lahir <span class="required">*</span>
+            <label class="form-label-modern" for="tanggallahir">
+                <i class="bi bi-calendar-date-fill" style="margin-right:6px; color:#1a237e;"></i> Tanggal Lahir <span class="required">*</span>
             </label>
             <input type="date" name="tanggallahir" id="tanggallahir" required>
         </div>
 
         <div class="form-modern">
-            <label for="notelepon" class="form-label-modern">
-                <i class="bi bi-telephone-fill" style="margin-right:6px; color:navy;"></i> No Telepon <span class="required">*</span>
+            <label class="form-label-modern" for="notelepon">
+                <i class="bi bi-telephone-fill" style="margin-right:6px; color:#1a237e;"></i> No Telepon <span class="required">*</span>
             </label>
             <input type="tel" name="notelepon" id="notelepon" required pattern="[0-9]+" title="Hanya boleh angka">
         </div>
 
         <div class="form-modern">
-            <label for="instansi" class="form-label-modern">
-                <i class="bi bi-building-fill" style="margin-right:6px; color:navy;"></i> Instansi <span class="required">*</span>
+            <label class="form-label-modern" for="instansi">
+                <i class="bi bi-building-fill" style="margin-right:6px; color:#1a237e;"></i> Instansi <span class="required">*</span>
             </label>
             <input type="text" name="instansi" id="instansi" required>
         </div>
@@ -149,10 +240,11 @@
 
     <div class="form-buttons">
         <button type="submit" class="button-baru" id="submitButton">
-            <i class="bi bi-send-fill" style="margin-right:6px;"></i> <strong>Daftar</strong>
+            <i class="bi bi-send-fill" style="margin-right:6px;"></i> Kirim Pendaftaran
         </button>
     </div>
 </form>
+
 </div>
 
 
