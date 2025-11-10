@@ -3558,7 +3558,7 @@ public function bekrksosbudperbaikannewadmin(Request $request, $id)
     $bantuan = krksosbud::findOrFail($id);
 
     // Validasi input
-$request->validate([
+    $request->validate([
     'nomordinasasal'     => 'nullable|string|max:255',
     'perorangan'         => 'nullable|string|max:255',
     'perusahaan'         => 'nullable|string|max:255',

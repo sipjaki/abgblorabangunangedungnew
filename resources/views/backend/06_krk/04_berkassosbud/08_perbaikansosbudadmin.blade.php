@@ -190,7 +190,7 @@
     <div class="form-modern col-md-6">
         <div class="mb-3">
             <label class="form-label-modern" for="perusahaan">
-                <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Perusahaan
+                <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Perusahaan/Instansi
             </label>
             <input type="text" id="perusahaan" name="perusahaan"
                 value="{{ old('perusahaan', $data->perusahaan ?? '') }}"
@@ -349,7 +349,7 @@
     <div class="form-modern col-md-6">
         <div class="mb-3">
             <label class="form-label-modern" for="lokasibangunan">
-                <i class="bi bi-geo" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan
+                <i class="bi bi-geo" style="margin-right: 8px; color: navy;"></i> Alamat Lokasi Bangunan
             </label>
             <textarea id="lokasibangunan" name="lokasibangunan"
                 class="form-control @error('lokasibangunan') is-invalid @enderror"
