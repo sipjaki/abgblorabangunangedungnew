@@ -58,7 +58,7 @@
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
               <div class="flex items-center">
                 <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="photo">
+                  <img src="/assets/abgblora/logo/logobangunangedung.png" class="object-cover w-full h-full" alt="photo">
                 </div>
               </div>
               <div class="flex flex-col flex-1 gap-[2px] text-left">
@@ -85,8 +85,8 @@
 
         <!-- Nama Lengkap -->
         <div class="form-row">
-            <div class="form-group">
-                <label for="namalengkap" class="form-label">
+            <div class="form-modern">
+                <label for="namalengkap" class="form-label-modern">
                     <i class="fas fa-user"></i> Nama Lengkap <span class="required">*</span>
                 </label>
                 <input type="text" name="namalengkap" id="namalengkap" class="form-control"
@@ -383,6 +383,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
         </div>
 
 
