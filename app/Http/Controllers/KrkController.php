@@ -3585,8 +3585,20 @@ public function bekrksosbudperbaikannewadmin(Request $request, $id)
     ]);
 
     // Update input utama
-    $bantuan->luastanah = $request->luastanah;
-    $bantuan->jumlahlantai = $request->jumlahlantai;
+    $bantuan->nomordinasasal    = $request->nomordinasasal;
+$bantuan->perorangan        = $request->perorangan;
+$bantuan->perusahaan        = $request->perusahaan;
+$bantuan->nik               = $request->nik;
+$bantuan->koordinatlokasi   = $request->koordinatlokasi;
+$bantuan->tanggalpermohonan = $request->tanggalpermohonan;
+$bantuan->notelepon         = $request->notelepon;
+$bantuan->luastanah         = $request->luastanah;
+$bantuan->jumlahlantai      = $request->jumlahlantai;
+$bantuan->rt                = $request->rt;
+$bantuan->rw                = $request->rw;
+$bantuan->kabupaten         = $request->kabupaten;
+$bantuan->lokasibangunan    = $request->lokasibangunan;
+$bantuan->alamatpemohon     = $request->alamatpemohon;
 
     // Mapping dokumen ke path
     $dokumenMap = [
