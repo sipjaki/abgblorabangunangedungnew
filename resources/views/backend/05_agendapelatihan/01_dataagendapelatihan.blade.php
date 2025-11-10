@@ -280,7 +280,7 @@
             style="width: 240px; height: 160px; border-radius: 6px;" frameborder="0"></iframe>
         <div class="mt-2">
             <a href="{{ asset('storage/' . $item->suratundangan) }}" download class="btn btn-sm btn-primary">
-                <i class="fas fa-download"></i> Download Surat
+                <i class="bi bi-download"></i> Download Surat
             </a>
         </div>
     @elseif($item->suratundangan)
@@ -288,7 +288,7 @@
             style="width: 240px; height: 160px; border-radius: 6px;" frameborder="0"></iframe>
         <div class="mt-2">
             <a href="{{ asset($item->suratundangan) }}" download class="btn btn-sm btn-primary">
-                <i class="fas fa-download"></i> Download Surat
+                <i class="bi bi-download"></i> Download Surat
             </a>
         </div>
     @else
