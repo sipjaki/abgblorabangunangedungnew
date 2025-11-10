@@ -378,11 +378,6 @@ function previewPDF(event, containerId, iframeId, messageId) {
 </script>
 
 
-                                    </div>
-
-                                <!-- End row -->
-                            <!-- end::Body -->
-
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
                                <button class="button-berkas" type="button" onclick="openModal()">
