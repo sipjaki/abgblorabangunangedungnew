@@ -536,7 +536,7 @@ public function beagendapelatihaneditnew(Request $request, $id)
 
     // Ambil data agenda pelatihan berdasarkan ID
     $agendapelatihan = agendapelatihanabg::findOrFail($id);
-    $jenjangpendidikan = jenjangpendidikan::findOrFail($id);
+    $jenjangpendidikan = jenjangpendidikan::all();
 
     // Kirim datanya ke view
     return view('frontend.android.05_sosialisasi.03_formpendaftransosialisasi', [
