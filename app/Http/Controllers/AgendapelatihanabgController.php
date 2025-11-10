@@ -414,7 +414,7 @@ $jenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get
 public function pendaftaranpesertanew(Request $request)
 {
     $validated = $request->validate([
-        'agendapelatihanabg_id' => 'required|string',
+        'agendapelatihanabg_id' => 'required|integer',
         'namalengkap' => 'required|string|max:255',
         'jenjangpendidikan_id' => 'required|string',
         'nik' => 'required|string|size:16',
