@@ -154,45 +154,144 @@
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-<div class="form-modern col-md-6">
-    <div class="mb-3">
-        <label class="form-label-modern " for="luastanah">
-            <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Luas Tanah (m²)
-        </label>
-        <input
-            type="number"
-            id="luastanah"
-            name="luastanah"
-            value="{{ old('luastanah', $data->luastanah ?? '') }}"
-            class="form-control @error('luastanah') is-invalid @enderror"
-            placeholder="Masukkan luas tanah dalam meter persegi"
-        />
-        @error('luastanah')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+<div class="row">
+    <!-- Nomor Dinas Asal -->
+    <div class="form-modern col-md-6">
+        <div class="mb-3">
+            <label class="form-label-modern" for="nomordinasasal">
+                <i class="fas fa-file-alt" style="margin-right: 8px; color: navy;"></i> Nomor Dinas Asal
+            </label>
+            <input
+                type="text"
+                id="nomordinasasal"
+                name="nomordinasasal"
+                value="{{ old('nomordinasasal', $data->nomordinasasal ?? '') }}"
+                class="form-control @error('nomordinasasal') is-invalid @enderror"
+                placeholder="Masukkan nomor dinas asal"
+            />
+            @error('nomordinasasal')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
     </div>
-</div>
 
-<div class="form-modern col-md-6">
-    <div class="mb-3">
-        <label class="form-label-modern " for="jumlahlantai">
-            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
-        </label>
-        <select
-            id="jumlahlantai"
-            name="jumlahlantai"
-            class="form-control @error('jumlahlantai') is-invalid @enderror"
-        >
-            <option value="">-- Pilih Jumlah Lantai --</option>
-            @for ($i = 1; $i <= 10; $i++)
-                <option value="{{ $i }}" {{ old('jumlahlantai', $data->jumlahlantai ?? '') == $i ? 'selected' : '' }}>
-                    {{ $i }} Lantai
-                </option>
-            @endfor
-        </select>
-        @error('jumlahlantai')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+    <!-- Luas Tanah -->
+    <div class="form-modern col-md-6">
+        <div class="mb-3">
+            <label class="form-label-modern" for="luastanah">
+                <i class="fas fa-ruler-combined" style="margin-right: 8px; color: navy;"></i> Luas Tanah (m²)
+            </label>
+            <input
+                type="number"
+                id="luastanah"
+                name="luastanah"
+                value="{{ old('luastanah', $data->luastanah ?? '') }}"
+                class="form-control @error('luastanah') is-invalid @enderror"
+                placeholder="Masukkan luas tanah dalam meter persegi"
+            />
+            @error('luastanah')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    <!-- Jumlah Lantai -->
+    <div class="form-modern col-md-6">
+        <div class="mb-3">
+            <label class="form-label-modern" for="jumlahlantai">
+                <i class="fas fa-building" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
+            </label>
+            <input
+                type="text"
+                id="jumlahlantai"
+                name="jumlahlantai"
+                value="{{ old('jumlahlantai', $data->jumlahlantai ?? '') }}"
+                class="form-control @error('jumlahlantai') is-invalid @enderror"
+                placeholder="Masukkan jumlah lantai"
+            />
+            @error('jumlahlantai')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    <!-- NIK -->
+    <div class="form-modern col-md-6">
+        <div class="mb-3">
+            <label class="form-label-modern" for="nik">
+                <i class="fas fa-id-card" style="margin-right: 8px; color: navy;"></i> NIK
+            </label>
+            <input
+                type="text"
+                id="nik"
+                name="nik"
+                value="{{ old('nik', $data->nik ?? '') }}"
+                class="form-control @error('nik') is-invalid @enderror"
+                placeholder="Masukkan NIK"
+            />
+            @error('nik')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    <!-- Koordinat Lokasi -->
+    <div class="form-modern col-md-6">
+        <div class="mb-3">
+            <label class="form-label-modern" for="koordinatlokasi">
+                <i class="fas fa-map-marker-alt" style="margin-right: 8px; color: navy;"></i> Koordinat Lokasi
+            </label>
+            <input
+                type="text"
+                id="koordinatlokasi"
+                name="koordinatlokasi"
+                value="{{ old('koordinatlokasi', $data->koordinatlokasi ?? '') }}"
+                class="form-control @error('koordinatlokasi') is-invalid @enderror"
+                placeholder="Masukkan koordinat lokasi"
+            />
+            @error('koordinatlokasi')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    <!-- Tanggal Permohonan -->
+    <div class="form-modern col-md-6">
+        <div class="mb-3">
+            <label class="form-label-modern" for="tanggalpermohonan">
+                <i class="fas fa-calendar-alt" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan
+            </label>
+            <input
+                type="date"
+                id="tanggalpermohonan"
+                name="tanggalpermohonan"
+                value="{{ old('tanggalpermohonan', $data->tanggalpermohonan ?? '') }}"
+                class="form-control @error('tanggalpermohonan') is-invalid @enderror"
+            />
+            @error('tanggalpermohonan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    <!-- Telepon -->
+    <div class="form-modern col-md-6">
+        <div class="mb-3">
+            <label class="form-label-modern" for="notelepon">
+                <i class="fas fa-phone" style="margin-right: 8px; color: navy;"></i> No Telepon
+            </label>
+            <input
+                type="text"
+                id="notelepon"
+                name="notelepon"
+                value="{{ old('notelepon', $data->notelepon ?? '') }}"
+                class="form-control @error('notelepon') is-invalid @enderror"
+                placeholder="Masukkan nomor telepon"
+            />
+            @error('notelepon')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
     </div>
 </div>
 
