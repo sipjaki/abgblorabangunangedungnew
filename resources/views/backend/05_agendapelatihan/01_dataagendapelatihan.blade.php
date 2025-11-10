@@ -142,13 +142,13 @@
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_daftarinternalbidangbangunan')"
       class="button-modern"
-      style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+      >
       <i class="bi bi-download"></i> Download Excel
     </button>
 
     <a href="/beagendapelatihanabgcreate" style="text-decoration: none;">
       <button class="button-modern"
-        style="color: black; display: flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 8px; border: 1px solid #ccc; background-color: #f9f9f9; cursor: pointer;">
+        >
         <i class="bi bi-plus-circle"></i> Buat Pelatihan
       </button>
     </a>
@@ -310,7 +310,7 @@
                 {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                     <i class="bi bi-eye"></i>
                 </a> --}}
-                                        <a href="/404" class="button-berkas" title="Update">
+                                        <a href="/beagendapelatihanedit/{{$item->id}}" class="button-berkas" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
                                         <a href="javascript:void(0)" class="button-merah" title="Delete"
