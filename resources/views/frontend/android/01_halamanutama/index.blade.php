@@ -72,7 +72,7 @@
 
     <!-- Tombol -->
     @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
-        <a href="/daftaragenda/{{ $item->id }}" style="text-decoration: none; width: 100%;">
+        <a href="{{ route('daftaragenda', $item->id) }}" style="text-decoration: none; width: 100%;">
             <button class="button-modern"
                 style="display: flex; align-items: center; justify-content: center; gap: 6px;
                        width: 100%; padding: 8px 16px; border-radius: 8px;

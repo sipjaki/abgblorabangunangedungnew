@@ -956,7 +956,7 @@ Route::post('/beartikelcreatenew', [DatabaseAbgController::class, 'beartikelcrea
 Route::delete('/beartikeldelete/{id}', [DatabaseAbgController::class, 'beartikeldelete'])->middleware('auth')->name('beartikeldelete');
 
 // MENU AGENDA PELATIHAN BANGUNAN GEDUNG
-Route::get('/daftaragenda/{$id}', [AgendapelatihanabgController::class, 'daftaragendapelatihan']);
+Route::get('/daftaragenda/{id}', [AgendapelatihanabgController::class, 'daftaragendapelatihan'])->name('daftaragenda');
 
 
 Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beagendapelatihanabg'])->middleware('auth')->name('beagendapelatihanabg');
