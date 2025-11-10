@@ -458,6 +458,8 @@ Route::get('/permohonankrkusahafinalmanual/{id}', [KrkController::class, 'permoh
 Route::get('/krkusahanoterbit/{id}', [KrkController::class, 'krkusahanoterbit'])->middleware('auth')->name('krkusahanoterbit.create');
 Route::post('/krkusahanoterbitnew/{id}', [KrkController::class, 'krkusahanoterbitnew'])->middleware('auth')->name('create.krkusahanoterbitnew');
 
+// PERBAIAKN DATA DARI SISI ADMIN UNTUK KRK USAHA
+Route::get('/bekrkusahaperbaikanadmin/{id}', [KrkController::class, 'bekrkusahaperbaikanadmin'])->middleware('auth')->name('bekrkusahaperbaikan.perbaikanadmin');
 
 Route::get('/bekrkusahaperbaikan/{id}', [KrkController::class, 'bekrkusahaperbaikan'])->middleware('auth')->name('bekrkusahaperbaikan.perbaikan');
 Route::post('/bekrkusahaperbaikannew/{id}', [KrkController::class, 'bekrkusahaperbaikannewupdate'])->middleware('auth')->name('bekrkusahaperbaikannewupdate');

@@ -113,8 +113,8 @@ th {
          @canany(['superadmin', 'admin'])
     <div style="display: flex; justify-content: flex-end; margin-bottom:5px;">
 
-        <a href="/bekrkusahaperbaikan/{{$data->id}}" style="text-decoration: none;">
-            <button class="button-modern">
+        <a href="/bekrkusahaperbaikanadmin/{{$data->id}}" style="text-decoration: none;">
+            <button class="button-berkas">
                 <i class="bi bi-pencil-square" style="margin-right:5px;"></i> Perbaikan Data
             </button>
         </a>

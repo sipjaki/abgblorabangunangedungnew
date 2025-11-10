@@ -3087,6 +3087,24 @@ public function bekrkusahaperbaikan($id)
     ]);
 }
 
+
+public function bekrkusahaperbaikanadmin($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = krkusaha::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.06_krk.01_pengesahanusaha.07_perbaikanusahaadmin', [
+        'title' => 'Admin Perbaikan Data KRK Fungsi Usaha ',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 public function bekrkusahaperbaikannewupdate(Request $request, $id)
 {
     $bantuan = krkusaha::findOrFail($id);
