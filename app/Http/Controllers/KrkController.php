@@ -3469,6 +3469,23 @@ public function bekrksosbudperbaikan($id)
     ]);
 }
 
+public function bekrksosbudperbaikanadmin($id)
+{
+    // Ambil data bantuan teknis berdasarkan ID
+    $databantuanteknis = krksosbud::find($id);
+
+    if (!$databantuanteknis) {
+        return abort(404, 'Data bantuan teknis tidak ditemukan');
+    }
+
+    // Kirim data ke view form pembuatan dokumentasi cek lapangan
+    return view('backend.06_krk.04_berkassosbud.08_perbaikansosbudadmin', [
+        'title' => 'Perbaikan Data KRK Fungsi Sosial Budaya Bangunan Gedung !',
+        'data' => $databantuanteknis,
+        'user' => Auth::user()
+    ]);
+}
+
 
 public function bekrksosbudperbaikannew(Request $request, $id)
 {
