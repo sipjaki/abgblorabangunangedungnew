@@ -73,11 +73,7 @@
     <!-- Tombol -->
     @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
         <a href="/daftaragenda/{{ $item->id }}" style="text-decoration: none; width: 100%;">
-            <button class="button-baru"
-                style="display: flex; align-items: center; justify-content: center; gap: 6px;
-                       width: 100%; padding: 8px 16px; border-radius: 8px;
-                       background-color: navy; color: white; font-weight: bold;
-                       font-size: 14px; transition: 0.3s;">
+            <button class="button-modern">
                 <i class="bi bi-pencil-square" style="font-size: 16px;"></i> Daftar
             </button>
         </a>
