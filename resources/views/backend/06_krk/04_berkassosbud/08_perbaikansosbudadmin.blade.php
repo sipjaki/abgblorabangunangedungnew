@@ -152,6 +152,8 @@
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
+                                <div class="row">
+                                    <!-- Left Column (6/12) -->
     <!-- Nomor Dinas Asal -->
     <div class="form-modern col-md-6">
         <div class="mb-3">
@@ -373,7 +375,6 @@
         </div>
     </div>
 
-                         </div>
 
 <div class="text-center">
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
