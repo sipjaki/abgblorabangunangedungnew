@@ -76,11 +76,9 @@
         </div>
 
 
-        <div class="flex flex-col space-y-3 px-[18px]">
+<div class="flex flex-col space-y-3 px-[18px]">
 <form action="{{ route('pendaftaranpesertanew') }}" method="POST" class="mobile-form" id="pendaftaranForm">
     @csrf
-
-
     <input type="hidden" name="agendapelatihanabg_id" value="{{ $agendapelatihan->id }}">
 
     <div class="form-section">
@@ -89,7 +87,6 @@
             <strong>Formulir Pendaftaran Peserta</strong>
         </div>
 
-        <!-- Gaya Form -->
         <style>
             .form-modern {
                 width: 100%;
@@ -98,9 +95,7 @@
                 padding: 20px;
                 margin-bottom: 20px;
                 background-color: #fff;
-                box-sizing: border-box;
             }
-
             .form-label-modern {
                 display: block;
                 font-weight: 600;
@@ -108,7 +103,6 @@
                 color: #000;
                 font-family: 'Poppins', sans-serif;
             }
-
             .form-modern input,
             .form-modern select {
                 width: 100%;
@@ -118,25 +112,18 @@
                 font-size: 14px;
                 font-family: 'Poppins', sans-serif;
             }
-
-            .form-modern input:focus,
-            .form-modern select:focus {
-                border-color: navy;
-                outline: none;
-                box-shadow: 0 0 4px rgba(0, 0, 128, 0.3);
-            }
-
             .error-message {
                 font-size: 12px;
                 color: red;
                 margin-top: 4px;
                 display: none;
             }
-
+            .error-field {
+                border-color: red !important;
+            }
             .required {
                 color: red;
             }
-
             .button-baru {
                 width: 100%;
                 background-color: navy;
@@ -149,103 +136,29 @@
                 cursor: pointer;
                 font-family: 'Poppins', sans-serif;
             }
-
             .button-baru:hover {
                 background-color: #003399;
             }
-
-            /* Modal Styles */
-            .modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                z-index: 1000;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .modal-content {
-                background: white;
-                padding: 20px;
-                border-radius: 8px;
-                width: 90%;
-                max-width: 500px;
-                max-height: 80vh;
-                overflow-y: auto;
-            }
-
-            .modal h3 {
-                color: #003399;
-                margin-bottom: 15px;
-            }
-
-            .data-preview div {
-                margin-bottom: 8px;
-                padding-bottom: 8px;
-                border-bottom: 1px solid #eee;
-            }
-
-            .modal-footer {
-                display: flex;
-                justify-content: flex-end;
-                margin-top: 20px;
-                gap: 10px;
-            }
-
-            .btn-cancel,
-            .btn-confirm {
-                padding: 10px 18px;
-                border: none;
-                border-radius: 6px;
-                color: #fff;
-                cursor: pointer;
-                font-family: 'Poppins', sans-serif;
-            }
-
-            .btn-cancel {
-                background-color: #d9534f;
-            }
-
-            .btn-confirm {
-                background-color: #003399;
-            }
-
-            .btn-cancel:hover {
-                background-color: #c9302c;
-            }
-
-            .btn-confirm:hover {
-                background-color: #001a66;
-            }
-
-            .error-field {
-                border-color: red !important;
-            }
         </style>
 
-        <!-- Nama Lengkap -->
         <div class="form-modern">
             <label for="namalengkap" class="form-label-modern">
-                <i class="bi bi-person-fill" style="margin-right:6px; color:navy;"></i> Nama Lengkap <span class="required">*</span>
+                <i class="bi bi-person-fill" style="margin-right:6px; color:navy;"></i>
+                Nama Lengkap <span class="required">*</span>
             </label>
-            <input type="text" name="namalengkap" id="namalengkap" value="{{ old('namalengkap') }}" required>
+            <input type="text" name="namalengkap" id="namalengkap" required>
             <div class="error-message" id="namalengkap-error"></div>
         </div>
 
         <div class="form-modern">
             <label for="jenjangpendidikan_id" class="form-label-modern">
-                <i class="bi bi-mortarboard-fill" style="margin-right:6px; color:navy;"></i> Jenjang Pendidikan <span class="required">*</span>
+                <i class="bi bi-mortarboard-fill" style="margin-right:6px; color:navy;"></i>
+                Jenjang Pendidikan <span class="required">*</span>
             </label>
             <select name="jenjangpendidikan_id" id="jenjangpendidikan_id" required>
                 <option value="">-- Pilih Jenjang Pendidikan --</option>
                 @foreach ($jenjangpendidikan as $item)
-                    <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
-                        {{ $item->jenjangpendidikan }}
-                    </option>
+                    <option value="{{ $item->id }}">{{ $item->jenjangpendidikan }}</option>
                 @endforeach
             </select>
             <div class="error-message" id="jenjangpendidikan_id-error"></div>
@@ -253,96 +166,75 @@
 
         <div class="form-modern">
             <label for="nik" class="form-label-modern">
-                <i class="bi bi-credit-card-2-front-fill" style="margin-right:6px; color:navy;"></i> NIK <span class="required">*</span>
+                <i class="bi bi-credit-card-2-front-fill" style="margin-right:6px; color:navy;"></i>
+                NIK <span class="required">*</span>
             </label>
-            <input type="text" name="nik" id="nik" value="{{ old('nik') }}" required minlength="16" maxlength="16">
+            <input type="text" name="nik" id="nik" minlength="16" maxlength="16" required>
             <div class="error-message" id="nik-error"></div>
         </div>
 
         <div class="form-modern">
             <label for="jeniskelamin" class="form-label-modern">
-                <i class="bi bi-gender-ambiguous" style="margin-right:6px; color:navy;"></i> Jenis Kelamin <span class="required">*</span>
+                <i class="bi bi-gender-ambiguous" style="margin-right:6px; color:navy;"></i>
+                Jenis Kelamin <span class="required">*</span>
             </label>
             <select name="jeniskelamin" id="jeniskelamin" required>
                 <option value="">-- Pilih Jenis Kelamin --</option>
-                <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
             </select>
             <div class="error-message" id="jeniskelamin-error"></div>
         </div>
 
         <div class="form-modern">
             <label for="tanggallahir" class="form-label-modern">
-                <i class="bi bi-calendar-date-fill" style="margin-right:6px; color:navy;"></i> Tanggal Lahir <span class="required">*</span>
+                <i class="bi bi-calendar-date-fill" style="margin-right:6px; color:navy;"></i>
+                Tanggal Lahir <span class="required">*</span>
             </label>
-            <input type="date" name="tanggallahir" id="tanggallahir" value="{{ old('tanggallahir') }}" required>
+            <input type="date" name="tanggallahir" id="tanggallahir" required>
             <div class="error-message" id="tanggallahir-error"></div>
         </div>
 
         <div class="form-modern">
             <label for="notelepon" class="form-label-modern">
-                <i class="bi bi-telephone-fill" style="margin-right:6px; color:navy;"></i> No Telepon <span class="required">*</span>
+                <i class="bi bi-telephone-fill" style="margin-right:6px; color:navy;"></i>
+                No Telepon <span class="required">*</span>
             </label>
-            <input type="tel" name="notelepon" id="notelepon" value="{{ old('notelepon') }}" required>
+            <input type="tel" name="notelepon" id="notelepon" required>
             <div class="error-message" id="notelepon-error"></div>
         </div>
 
         <div class="form-modern">
             <label for="instansi" class="form-label-modern">
-                <i class="bi bi-building-fill" style="margin-right:6px; color:navy;"></i> Instansi <span class="required">*</span>
+                <i class="bi bi-building-fill" style="margin-right:6px; color:navy;"></i>
+                Instansi <span class="required">*</span>
             </label>
-            <input type="text" name="instansi" id="instansi" value="{{ old('instansi') }}" required>
+            <input type="text" name="instansi" id="instansi" required>
             <div class="error-message" id="instansi-error"></div>
         </div>
     </div>
 
     <div class="form-buttons">
         <button type="button" class="button-baru" id="submitButton">
-            <i class="bi bi-send-fill" style="margin-right:6px;"></i> <strong style="color: black">Daftar</strong>
+            <i class="bi bi-send-fill" style="margin-right:6px;"></i> <strong>Daftar</strong>
         </button>
     </div>
 </form>
-
-<!-- Modal Konfirmasi -->
-<div id="confirmationModal" class="modal">
-    <div class="modal-content">
-        <h3>Konfirmasi Data</h3>
-        <p>Apakah data yang Anda masukkan sudah benar?</p>
-
-        <div class="data-preview">
-            <div><strong>Nama:</strong> <span id="preview-nama"></span></div>
-            <div><strong>Jenjang Pendidikan:</strong> <span id="preview-pendidikan"></span></div>
-            <div><strong>NIK:</strong> <span id="preview-nik"></span></div>
-            <div><strong>Jenis Kelamin:</strong> <span id="preview-jk"></span></div>
-            <div><strong>Tanggal Lahir:</strong> <span id="preview-tgl"></span></div>
-            <div><strong>No Telepon:</strong> <span id="preview-telp"></span></div>
-            <div><strong>Instansi:</strong> <span id="preview-instansi"></span></div>
-        </div>
-
-        <div class="modal-footer">
-            <button type="button" class="btn-cancel" id="cancelButton">Periksa Kembali</button>
-<!-- Tombol konfirmasi -->
-<button type="button" class="btn-confirm" id="confirmButton">
-    <i class="bi bi-send-check-fill" style="margin-right: 5px;"></i> Ya, Kirim Data
-</button>        </div>
-    </div>
 </div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('pendaftaranForm');
     const submitButton = document.getElementById('submitButton');
 
-    // Klik tombol "Daftar" langsung validasi dan submit
     submitButton.addEventListener('click', function() {
         if (validateForm()) {
-            // Tombol loading biar user tahu sedang dikirim
             submitButton.disabled = true;
             submitButton.innerHTML = '<i class="bi bi-hourglass-split"></i> Mengirim...';
-            form.submit(); // ✅ langsung submit ke Laravel
+            form.submit(); // ✅ langsung kirim
         }
     });
 
-    // Fungsi validasi form
     function validateForm() {
         let isValid = true;
         const fields = [
@@ -360,7 +252,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const error = document.getElementById(`${field}-error`);
             error.style.display = 'none';
             input.classList.remove('error-field');
-
             if (!input.value.trim()) {
                 error.textContent = 'Field ini wajib diisi';
                 error.style.display = 'block';
@@ -369,23 +260,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Validasi khusus NIK
         const nik = document.getElementById('nik').value;
         if (nik.length !== 16 || !/^\d+$/.test(nik)) {
             const nikError = document.getElementById('nik-error');
             nikError.textContent = 'NIK harus 16 digit angka';
             nikError.style.display = 'block';
-            document.getElementById('nik').classList.add('error-field');
             isValid = false;
         }
 
-        // Validasi khusus No Telepon
         const telp = document.getElementById('notelepon').value;
         if (!/^[0-9]+$/.test(telp)) {
             const telpError = document.getElementById('notelepon-error');
             telpError.textContent = 'Nomor telepon hanya boleh angka';
             telpError.style.display = 'block';
-            document.getElementById('notelepon').classList.add('error-field');
             isValid = false;
         }
 
