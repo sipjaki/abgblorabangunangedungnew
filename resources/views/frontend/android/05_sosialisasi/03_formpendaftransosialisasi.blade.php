@@ -57,9 +57,11 @@
           <div class="flex p-4 items-center gap-4">
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
               <div class="flex items-center">
-                <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/abgblora/logo/logobangunangedung.png" class="object-cover w-full h-full" alt="photo">
-                </div>
+                <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden border border-dark shadow-sm">
+    <img src="{{ $agendapelatihan->foto ? asset($agendapelatihan->foto) : asset('/assets/abgblora/logo/logobangunangedung.png') }}"
+         class="object-cover w-full h-full"
+         alt="Foto Agenda">
+</div>
               </div>
               <div class="flex flex-col flex-1 gap-[2px] text-left">
                 <p class="font-semibold">{{$title}}</p>
@@ -291,7 +293,7 @@
 
     <div class="form-buttons">
         <button type="button" class="button-baru" id="submitButton">
-            <i class="bi bi-send-fill" style="margin-right:6px;"></i> Daftar
+            <i class="bi bi-send-fill" style="margin-right:6px;"></i> <strong style="color: black">Daftar</strong>
         </button>
     </div>
 </form>
