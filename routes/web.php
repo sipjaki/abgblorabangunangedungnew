@@ -37,7 +37,7 @@ use Illuminate\Support\Facades\Auth;
 
 // ------------------------- FRONTEND HALAMAN UTAMA ABG BLORA BANGUNAN GEDUNG --------------------------
 
-Route::get('/', [FedashboardController::class, 'index']);
+Route::get('/', [FedashboardController::class, 'index'])->name('androidmenuutama');
 Route::get('/web', [FedashboardController::class, 'web']);
 // Route::post('/qapertanyaanstore', [FedashboardController::class, 'createbarustorepertanyaan'])->middleware('auth')->name('create.storeqapertanyaanbaru');
 // Route::post('/qapertanyaanstorebaru', [FedashboardController::class, 'createstorepertanyaanpublik'])->middleware('auth')->name('createpertanyaanstorebaru');

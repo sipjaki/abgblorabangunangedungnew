@@ -443,7 +443,7 @@ public function pendaftaranpesertanew(Request $request)
     pesertapelatihan::create($validated);
 
     // Redirect ke route beagendapelatihanabg
-    return redirect()->route('resagendaabg')->with('create', 'Pendaftaran Anda Berhasil!');
+    return redirect()->route('androidmenuutama')->with('create', 'Pendaftaran Anda Berhasil!');
 }
 
 
