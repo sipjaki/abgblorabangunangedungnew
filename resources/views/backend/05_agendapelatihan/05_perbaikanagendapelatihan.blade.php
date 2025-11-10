@@ -194,7 +194,7 @@
     <textarea id="namakegiatan" name="namakegiatan"
         class="form-control @error('namakegiatan') is-invalid @enderror"
         placeholder="Masukkan nama kegiatan"
-        style="width: 100%; height: 80px; resize: vertical;">{{ old('namakegiatan', $data->namakegiatan ?? '') }}</textarea>
+        style="width: 100%; height: 150px; resize: vertical;">{{ old('namakegiatan', $data->namakegiatan ?? '') }}</textarea>
     @error('namakegiatan')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -262,17 +262,17 @@
 
 <div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label-modern" for="keterangan">
-            <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Keterangan
-        </label>
-        <input type="text" id="keterangan" name="keterangan"
-            value="{{ old('keterangan', $data->keterangan ?? '') }}"
-            class="form-control @error('keterangan') is-invalid @enderror"
-            placeholder="Tambahkan keterangan singkat">
-        @error('keterangan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+    <label class="form-label-modern" for="keterangan">
+        <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Keterangan
+    </label>
+    <textarea id="keterangan" name="keterangan"
+        class="form-control @error('keterangan') is-invalid @enderror"
+        placeholder="Tambahkan keterangan singkat"
+        style="width: 100%; height: 150px; resize: vertical;">{{ old('keterangan', $data->keterangan ?? '') }}</textarea>
+    @error('keterangan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 </div>
 
 <div class="form-modern col-md-12">
