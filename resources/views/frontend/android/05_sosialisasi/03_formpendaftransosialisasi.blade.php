@@ -1,31 +1,64 @@
 @include('frontend.android.00_fiturmenu.01_header')
+@include('backend.00_administrator.00_baganterpisah.09_button')
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[120px] relative">
-    <div class="w-full h-[184px] absolute top-0 bg-cover bg-center" style="background-image: url('/assets/android/iconmenu/belakangnew.jpg');">
-    </div>
+
+    <div class="w-full h-[190] absolute top-0 overflow-hidden">
+  <img src="/assets/android/iconmenu/halamanabg.jpg" alt="Bangunan Blora" class="w-full h-full object-cover" />
+
+</div>
+
      <div class="relative z-10 flex flex-col gap-6 mt-[60px]">
-      <div class="top-menu flex justify-between items-center px-[18px]">
-          <div class="w-[42px] h-[42px] flex shrink-0">
-            <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon">
-          </div>
-        {{-- <p class="font-semibold leading-[28px] text-white text-center" style="font-size: 18px;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora </span></p> --}}
 
-        {{-- <p class="font-semibold leading-[28px] text-black text-center" style="font-size: 17px;">Dinas Pekerjaan Umum <br> Dan Penataan Ruang <br> Kabupaten Blora </span></p> --}}
-<p class="font-semibold leading-[28px] text-black text-center" style="font-size: 17px;">Dinas Pekerjaan Umum <br> Dan Penataan Ruang <br> Kabupaten Blora </span></p>
+<div style="
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+">
+  <!-- Logo Kiri -->
+  <div style="width: 42px; height: 42px; flex-shrink: 0;">
+    <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" style="width: 100%; height: 100%; object-fit: contain;">
+  </div>
 
+  <!-- Teks Tengah -->
+  <p style="
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #000;
+    text-align: center;
+    margin: 0;
+    flex: 1;
+  ">
+    Dinas Pekerjaan Umum <br>
+    Dan Penataan Ruang <br>
+    Kabupaten Blora
+  </p>
 
-        <div class="w-[42px] h-[42px] flex shrink-0">
-            <img src="/assets/abgblora/logo/pupr.png" alt="icon">
-          </div>
-      </div>
-      {{-- <form action="success.html" id="Details" class="group result-card-container flex flex-col gap-6"> --}}
+  <!-- Logo Kanan -->
+  <div style="width: 42px; height: 42px; flex-shrink: 0;">
+    <img src="/assets/abgblora/logo/pupr.png" alt="icon" style="width: 100%; height: 100%; object-fit: contain;">
+  </div>
+</div>
+
+      <form id="Details" class="group result-card-container flex flex-col gap-6">
         <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
           <div class="flex p-4 items-center gap-4">
             <button type="button" class="contact-name accordion-button flex items-center gap-2 w-full" data-accordion="accordion-1">
               <div class="flex items-center">
                 <div class="w-12 h-12 flex shrink-0 rounded-full overflow-hidden">
-                  <img src="/assets/android/menunavigasi/004.png" class="object-cover w-full h-full" alt="photo">
+                  <img src="/assets/android/menunavigasi/03.png" class="object-cover w-full h-full" alt="photo">
                 </div>
               </div>
               <div class="flex flex-col flex-1 gap-[2px] text-left">
@@ -34,175 +67,12 @@
               </div>
             </button>
           </div>
+
         </div>
 
-        <div id="Contact-details" class="bg-white rounded-xl overflow-hidden flex flex-col mx-[18px]">
 
+        <div class="flex flex-col space-y-3 px-[18px]">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-<style>
-    .petablota {
-      position: relative;
-      min-height: 500px;
-    }
-    .petablota-map-container {
-      height: 70vh;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      position: relative;
-    }
-    #map {
-      width: 100%;
-      height: 100%;
-    }
-    #map-loader {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1000;
-      display: none;
-    }
-
-.btn-submit-hover:hover {
-    background-color: white; /* Warna putih */
-    color: black; /* Tulisan hitam */
-    border: 1px solid #2563eb; /* Border biru */
-    transition: all 0.3s ease-in-out;
-  }
-
-  .btn-cancel-hover:hover {
-    background-color: white; /* Warna putih */
-    color: black; /* Tulisan hitam */
-    border: 1px solid #9CA3AF; /* Border abu-abu */
-    transition: all 0.3s ease-in-out;
-  }
-
-.pdf-preview-wrapper {
-                max-width: 50%;
-                overflow-x: auto;
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                padding: 8px;
-                }
-
-                .pdf-preview-wrapper iframe {
-                width: 100%;
-                height: 200px;
-                border: none;
-                border-radius: 6px;
-                }
-
-              .koordinat-box {
-                margin-top: 10px;
-                font-family: Arial, sans-serif;
-                background: #f3f3f3;
-                padding: 10px;
-                border-radius: 10px;
-                border: 1px solid #ccc;
-              }
-
-              /* Sembunyikan default attribution Leaflet */
-              .leaflet-control-attribution a[href*="leaflet"] {
-                display: none !important;
-              }
-
- body {
-      font-family: 'Poppins', sans-serif;
-    }
-
-.custom-button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    background-color: #258af0;
-    color: #ffffff;
-    padding: 10px 15px;
-    border-radius: 9999px;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-  }
-
-  .custom-button:hover {
-    background-color: white;
-    color: #258af0;
-  }
-
-  .custom-button svg {
-    transition: all 0.3s;
-  }
-
-  .custom-button:hover svg {
-    fill: #258af0;
-  }
-
-    table.zebra-table {
-        border-collapse: collapse;
-        width: 100%;
-        font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
-    .zebra-table thead {
-        background-color: #2E82FE;
-        color: white;
-    }
-
-    .zebra-table th,
-    .zebra-table td {
-        padding: 6px 12px;
-        text-align: left;
-    }
-
-    .zebra-table tbody tr:nth-child(odd) {
-        background-color: #ffffff;
-    }
-
-    .zebra-table tbody tr:nth-child(even) {
-        background-color: #dfdddd;
-    }
-
-    .zebra-table tbody tr:hover {
-        background-color: #0fb825;
-    }
-</style>
-
-<section
-    id="breadcrumb"
-  style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-    margin-top: -50px;
-    margin-bottom: -45px;
-  "
->
-
- <section id="details" class="mx-auto flex flex-col sm:flex-row items-center justify-center text-center">
-   {{-- @include('frontend.abgblora.06_permohonankrk.02_permohonankrkpemohon.00_menufungsibangunan') --}}
-
-
-            <div class="flex flex-col gap-5 w-full">
-
-            <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
-                    <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
-                <div class="w-5 h-5 flex shrink-0">
-                    <img src="/assets/new/icons/story.svg" alt="icon">
-                </div>
-                <p class="text-white font-normal text-sm">
-                    <span class="font-bold">Form Permohonan Bantuan Teknis | Bangunan Gedung </span>
-                </p>
-            </div>
 <form action="{{ route('pendaftaranpesertanew') }}" method="POST" class="mobile-form" id="pendaftaranForm">
     @csrf
     <input type="hidden" name="agendapelatihanabg_id" value="{{ $agendapelatihan->id }}">
@@ -513,152 +383,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-
-<style>
-.mobile-form {
-    width: 100%;
-    max-width: 100%;
-    padding: 15px;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.form-section {
-    margin-bottom: 25px;
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.section-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    color: #1a365d;
-    font-size: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.section-header i {
-    margin-right: 10px;
-    color: #4299e1;
-}
-
-.form-row {
-    margin-bottom: 15px;
-}
-
-.form-group {
-    width: 100%;
-}
-
-.form-label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #4a5568;
-    font-weight: 500;
-}
-
-.form-label i {
-    margin-right: 10px;
-    color: #2b6cb0;
-    width: 20px;
-    text-align: center;
-}
-
-.form-label .required {
-    color: #e53e3e;
-    margin-left: 4px;
-}
-
-.form-control {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    font-size: 14px;
-    background-color: #fff;
-    transition: border-color 0.2s;
-}
-
-.form-control:focus {
-    border-color: #4299e1;
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
-}
-
-select.form-control {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 16px;
-}
-
-.invalid-feedback {
-    color: #e53e3e;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.is-invalid {
-    border-color: #e53e3e;
-}
-
-.form-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.button-baru {
-    background-color: #3182ce;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-baru:hover {
-    background-color: #2c5282;
-}
-
-.button-baru i {
-    margin-right: 8px;
-}
-
-@media (min-width: 768px) {
-    .form-row {
-        display: flex;
-        gap: 15px;
-    }
-
-    .form-group {
-        flex: 1;
-    }
-}
-</style>
-
-        </div>
-    </div>
-    </section>
-</section>
-
         </div>
 
 
-
+      <br><br>
       @include('frontend.android.00_fiturmenu.05_keterangan')
 
 
@@ -669,5 +397,3 @@ select.form-control {
   </section>
 
   @include('frontend.android.00_fiturmenu.02_footer')
-
-
