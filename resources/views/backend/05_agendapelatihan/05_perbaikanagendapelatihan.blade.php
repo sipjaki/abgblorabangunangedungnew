@@ -188,17 +188,18 @@
 
 <div class="form-modern col-md-6">
     <div class="mb-3">
-        <label class="form-label-modern" for="namakegiatan">
-            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
-        </label>
-        <input type="text" id="namakegiatan" name="namakegiatan"
-            value="{{ old('namakegiatan', $data->namakegiatan ?? '') }}"
-            class="form-control @error('namakegiatan') is-invalid @enderror"
-            placeholder="Masukkan nama kegiatan">
-        @error('namakegiatan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+    <label class="form-label-modern" for="namakegiatan">
+        <i class="bi bi-pencil-square" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
+    </label>
+    <textarea id="namakegiatan" name="namakegiatan"
+        class="form-control @error('namakegiatan') is-invalid @enderror"
+        placeholder="Masukkan nama kegiatan"
+        style="width: 100%; height: 80px; resize: vertical;">{{ old('namakegiatan', $data->namakegiatan ?? '') }}</textarea>
+    @error('namakegiatan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
 </div>
 
 <div class="form-modern col-md-6">
