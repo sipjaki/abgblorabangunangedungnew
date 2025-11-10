@@ -1,48 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -213,10 +168,10 @@ th {
 </div>
 
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="nomordinasasal">
-                <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Nomor Dinas Asal
+            <label class="form-label-modern" for="nomordinasasal">
+                <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Nomor Surat Dinas Asal
             </label>
             <input type="text" id="nomordinasasal" name="nomordinasasal" value="{{ old('nomordinasasal', $data->nomordinasasal ?? '') }}" class="form-control @error('nomordinasasal') is-invalid @enderror" placeholder="Masukkan nomor dinas asal">
             @error('nomordinasasal')
@@ -225,9 +180,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="perorangan">
+            <label class="form-label-modern" for="perorangan">
                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Perorangan
             </label>
             <input type="text" id="perorangan" name="perorangan" value="{{ old('perorangan', $data->perorangan ?? '') }}" class="form-control @error('perorangan') is-invalid @enderror" placeholder="Masukkan nama perorangan">
@@ -237,9 +192,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="perusahaan">
+            <label class="form-label-modern" for="perusahaan">
                 <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Perusahaan
             </label>
             <input type="text" id="perusahaan" name="perusahaan" value="{{ old('perusahaan', $data->perusahaan ?? '') }}" class="form-control @error('perusahaan') is-invalid @enderror" placeholder="Masukkan nama perusahaan">
@@ -249,9 +204,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="nik">
+            <label class="form-label-modern" for="nik">
                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> NIK
             </label>
             <input type="text" id="nik" name="nik" maxlength="16" value="{{ old('nik', $data->nik ?? '') }}" class="form-control @error('nik') is-invalid @enderror" placeholder="Masukkan NIK">
@@ -261,9 +216,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="koordinatlokasi">
+            <label class="form-label-modern" for="koordinatlokasi">
                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Koordinat Lokasi
             </label>
             <textarea id="koordinatlokasi" name="koordinatlokasi" class="form-control @error('koordinatlokasi') is-invalid @enderror" rows="2" placeholder="Masukkan koordinat lokasi">{{ old('koordinatlokasi', $data->koordinatlokasi ?? '') }}</textarea>
@@ -273,9 +228,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="tanggalpermohonan">
+            <label class="form-label-modern" for="tanggalpermohonan">
                 <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal Permohonan
             </label>
             <input type="date" id="tanggalpermohonan" name="tanggalpermohonan" value="{{ old('tanggalpermohonan', $data->tanggalpermohonan ?? '') }}" class="form-control @error('tanggalpermohonan') is-invalid @enderror">
@@ -285,9 +240,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="notelepon">
+            <label class="form-label-modern" for="notelepon">
                 <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> No Telepon
             </label>
             <input type="text" id="notelepon" name="notelepon" value="{{ old('notelepon', $data->notelepon ?? '') }}" class="form-control @error('notelepon') is-invalid @enderror" placeholder="Masukkan nomor telepon">
@@ -297,9 +252,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="luastanah">
+            <label class="form-label-modern" for="luastanah">
                 <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Luas Tanah (m²)
             </label>
             <input type="number" id="luastanah" name="luastanah" value="{{ old('luastanah', $data->luastanah ?? '') }}" class="form-control @error('luastanah') is-invalid @enderror" placeholder="Masukkan luas tanah">
@@ -309,9 +264,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="jumlahlantai">
+            <label class="form-label-modern" for="jumlahlantai">
                 <i class="bi bi-layers" style="margin-right: 8px; color: navy;"></i> Jumlah Lantai
             </label>
             <select id="jumlahlantai" name="jumlahlantai" class="form-control @error('jumlahlantai') is-invalid @enderror">
@@ -326,9 +281,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="rt">
+            <label class="form-label-modern" for="rt">
                 <i class="bi bi-signpost" style="margin-right: 8px; color: navy;"></i> RT
             </label>
             <input type="text" id="rt" name="rt" value="{{ old('rt', $data->rt ?? '') }}" class="form-control @error('rt') is-invalid @enderror" placeholder="RT">
@@ -338,9 +293,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="rw">
+            <label class="form-label-modern" for="rw">
                 <i class="bi bi-signpost-2" style="margin-right: 8px; color: navy;"></i> RW
             </label>
             <input type="text" id="rw" name="rw" value="{{ old('rw', $data->rw ?? '') }}" class="form-control @error('rw') is-invalid @enderror" placeholder="RW">
@@ -350,9 +305,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="form-modern col-md-6">
         <div class="mb-3">
-            <label class="form-label" for="kabupaten">
+            <label class="form-label-modern" for="kabupaten">
                 <i class="bi bi-geo-fill" style="margin-right: 8px; color: navy;"></i> Kabupaten
             </label>
             <input type="text" id="kabupaten" name="kabupaten" value="{{ old('kabupaten', $data->kabupaten ?? '') }}" class="form-control @error('kabupaten') is-invalid @enderror" placeholder="Masukkan nama kabupaten">
@@ -362,9 +317,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-12">
+    <div class="form-modern col-md-12">
         <div class="mb-3">
-            <label class="form-label" for="lokasibangunan">
+            <label class="form-label-modern" for="lokasibangunan">
                 <i class="bi bi-house" style="margin-right: 8px; color: navy;"></i> Lokasi Bangunan
             </label>
             <textarea id="lokasibangunan" name="lokasibangunan" class="form-control @error('lokasibangunan') is-invalid @enderror" rows="2" placeholder="Masukkan lokasi bangunan">{{ old('lokasibangunan', $data->lokasibangunan ?? '') }}</textarea>
@@ -374,9 +329,9 @@ th {
         </div>
     </div>
 
-    <div class="col-md-12">
+    <div class="form-modern col-md-12">
         <div class="mb-3">
-            <label class="form-label" for="alamatpemohon">
+            <label class="form-label-modern" for="alamatpemohon">
                 <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i> Alamat Pemohon
             </label>
             <textarea id="alamatpemohon" name="alamatpemohon" class="form-control @error('alamatpemohon') is-invalid @enderror" rows="2" placeholder="Masukkan alamat pemohon">{{ old('alamatpemohon', $data->alamatpemohon ?? '') }}</textarea>
