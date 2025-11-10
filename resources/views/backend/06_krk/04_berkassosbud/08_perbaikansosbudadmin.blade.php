@@ -158,7 +158,7 @@
     <div class="form-modern col-md-6">
         <div class="mb-3">
             <label class="form-label-modern" for="nomordinasasal">
-                <i class="bi bi-file-text" style="margin-right: 8px; color: navy;"></i> Nomor Dinas Asal
+                <i class="bi bi-file-text" style="margin-right: 8px; color: navy;"></i> Nomor Dinas Asal (Abaikan Jika Tidak Ada)
             </label>
             <input type="text" id="nomordinasasal" name="nomordinasasal"
                 value="{{ old('nomordinasasal', $data->nomordinasasal ?? '') }}"
