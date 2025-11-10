@@ -188,26 +188,21 @@
                         >
                             <thead>
                                   <tr>
-     <th style="background-color: #ADD8E6;">No</th>
-
-     {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-book"></i> Materi Pelatihan</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-tags"></i> Kategori Pelatihan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> User Input</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-chalkboard-teacher"></i> Nama Kegiatan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-chalkboard-teacher"></i> Status</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-calendar-times"></i> Tanggal Penutupan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-calendar-check"></i> Waktu Pelaksanaan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-users"></i> Jumlah Peserta</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-map-marker-alt"></i> Lokasi</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-info-circle"></i> Keterangan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-align-left"></i> Isi Agenda</th>
-<th style="background-color: #ADD8E6; width:300px;"><i class="fas fa-image" ></i> Foto</th>
-{{-- <th style="background-color: #ADD8E6;"><i class="fas fa-barcode"></i> Barcode Pelatihan</th> --}}
-<th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Surat Undangan</th>
-<th style="background-color: #ADD8E6;"><i class="fas fa-envelope-open-text"></i> Materi</th>
-
-<th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Aksi</th>
-
+<th>No</th>
+<th><i class="bi bi-tags"></i> Kategori Pelatihan</th>
+<th><i class="bi bi-person"></i> User Input</th>
+<th><i class="bi bi-easel2"></i> Nama Kegiatan</th>
+<th><i class="bi bi-check-circle"></i> Status</th>
+<th><i class="bi bi-calendar-x"></i> Tanggal Penutupan</th>
+<th><i class="bi bi-calendar-check"></i> Waktu Pelaksanaan</th>
+<th><i class="bi bi-people"></i> Jumlah Peserta</th>
+<th><i class="bi bi-geo-alt"></i> Lokasi</th>
+<th><i class="bi bi-info-circle"></i> Keterangan</th>
+<th><i class="bi bi-file-text"></i> Isi Agenda</th>
+<th style="width:300px;"><i class="bi bi-image"></i> Foto</th>
+<th><i class="bi bi-envelope-open"></i> Surat Undangan</th>
+<th><i class="bi bi-file-earmark-text"></i> Materi</th>
+<th><i class="bi bi-gear"></i> Aksi</th>
     </tr>
                             </thead>
                               <tbody id="tableBody">
