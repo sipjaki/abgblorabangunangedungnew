@@ -957,12 +957,12 @@ Route::delete('/beartikeldelete/{id}', [DatabaseAbgController::class, 'beartikel
 
 // MENU AGENDA PELATIHAN BANGUNAN GEDUNG
 Route::get('/daftaragenda/{id}', [AgendapelatihanabgController::class, 'daftaragendapelatihan'])->name('daftaragenda');
+Route::post('/pendaftaranpesertanew', [AgendapelatihanabgController::class, 'pendaftaranpesertanew'])->name('pendaftaranpesertanew');
 
 
 Route::get('/beagendapelatihanabg', [AgendapelatihanabgController::class, 'beagendapelatihanabg'])->middleware('auth')->name('beagendapelatihanabg');
 
 Route::get('/resagendapelatihan/{id}', [AgendapelatihanabgController::class, 'resagendapelatihan'])->middleware('auth');
-Route::post('/pendaftaranpesertanew', [AgendapelatihanabgController::class, 'pendaftaranpesertanew'])->middleware('auth')->name('pendaftaranpesertanew');
 
 // EDIT AGENDA PELATIHAN BRO
 Route::get('/beagendapelatihanedit/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanedit'])->middleware('auth')->name('agendapelatihanedit');
