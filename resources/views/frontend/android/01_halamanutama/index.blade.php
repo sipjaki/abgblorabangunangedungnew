@@ -76,7 +76,7 @@
             <button class="button-modern"
                 style="display: flex; align-items: center; justify-content: center; gap: 6px;
                        width: 100%; padding: 8px 16px; border-radius: 8px;
-                       background-color: navy; color: white; font-weight: bold;
+                       background-color: navy; color: black; font-weight: bold;
                        font-size: 14px; transition: 0.3s;">
                 <i class="bi bi-pencil-square" style="font-size: 16px;"></i> <span style="color:black;"></span> Daftar
             </button>

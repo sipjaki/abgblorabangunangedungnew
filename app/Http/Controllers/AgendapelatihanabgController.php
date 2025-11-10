@@ -528,5 +528,21 @@ public function beagendapelatihaneditnew(Request $request, $id)
     return redirect()->route('beagendapelatihanabg', ['id' => $agenda->id]);
 }
 
+
+
+    public function daftaragendapelatihan($id)
+    {
+
+        $user = Auth::user();
+        // return view('/404', [
+        // return view('frontend.00_full.index', [
+        return view('frontend.android.05_sosialisasi.03_formpendaftransosialisasi', [
+        // return view('frontend.android.01_halamanutama.index', [
+            'title' => 'Daftar Agenda Pelatihan',
+            'user' => $user,
+
+        ]);
+    }
+
 }
 
