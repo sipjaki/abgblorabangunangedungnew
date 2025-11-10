@@ -152,7 +152,6 @@
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
-                                <div class="row">
     <!-- Nomor Dinas Asal -->
     <div class="form-modern col-md-6">
         <div class="mb-3">
@@ -373,7 +372,6 @@
             @enderror
         </div>
     </div>
-</div>
 
                          </div>
 
