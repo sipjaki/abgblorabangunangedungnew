@@ -7,8 +7,8 @@
     <title>{{$title}}</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Aplikasi Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora/>
-    <meta name="author" content="ColorlibHQ" />
+    <meta name="title" content="Aplikasi Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora"/>
+    <meta name="author" content="CV. Angkasa Raya Teknik" />
     <meta
       name="description"
       content="Aplikasi Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora"
