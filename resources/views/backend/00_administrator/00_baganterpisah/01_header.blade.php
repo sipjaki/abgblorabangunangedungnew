@@ -7,15 +7,15 @@
     <title>{{$title}}</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Sistem Informasi Pembina Jasa Konstruksi Kabupaten Blora Provinsi Jawa Tengah" />
+    <meta name="title" content="Aplikasi Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora/>
     <meta name="author" content="ColorlibHQ" />
     <meta
       name="description"
-      content="Sistem Informasi Pembina Jasa Konstruksi Kabupaten Blora Provinsi Jawa Tengah"
+      content="Aplikasi Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora"
     />
     <meta
       name="keywords"
-      content="Sistem Informasi Pembina Jasa Konstruksi Kabupaten Blora Provinsi Jawa Tengah"
+      content="Aplikasi Bangunan Gedung Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora"
     />
     <!--end::Primary Meta Tags-->
     <!--begin::Fonts-->
