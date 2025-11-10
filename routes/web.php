@@ -964,6 +964,7 @@ Route::post('/pendaftaranpesertanew', [AgendapelatihanabgController::class, 'pen
 
 // EDIT AGENDA PELATIHAN BRO
 Route::get('/beagendapelatihanedit/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanedit'])->middleware('auth')->name('agendapelatihanedit');
+Route::post('/beagendapelatihaneditnew/{id}', [AgendapelatihanabgController::class, 'beagendapelatihaneditnew'])->middleware('auth')->name('agendapelatihaneditnew');
 
 Route::delete('/beagendapelatihanabgdelete/{id}', [AgendapelatihanabgController::class, 'beagendapelatihanabgdelete'])->middleware('auth')->name('delete.beagendapelatihanabgdelete');
 

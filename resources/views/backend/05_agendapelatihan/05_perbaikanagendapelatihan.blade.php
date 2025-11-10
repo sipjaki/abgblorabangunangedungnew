@@ -381,7 +381,6 @@ function previewPDF(event, containerId, iframeId, messageId) {
                                     </div>
                                 </div>
                                 <!-- End row -->
-                            </div>
                             <!-- end::Body -->
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">

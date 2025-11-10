@@ -467,5 +467,66 @@ return view('backend.05_agendapelatihan.05_perbaikanagendapelatihan', [
     ]);
 }
 
+
+public function beagendapelatihaneditnew(Request $request, $id)
+{
+    $agenda = agendapelatihanabg::findOrFail($id);
+
+    // ✅ Validasi input
+    $request->validate([
+        'kategoripelatihan_id' => 'nullable|string',
+        'namakegiatan' => 'required|string',
+        'penutupan' => 'nullable|date',
+        'waktupelaksanaan' => 'nullable|date',
+        'jumlahpeserta' => 'nullable|integer|min:1',
+        'lokasi' => 'nullable|string|max:255',
+        'keterangan' => 'nullable|string|max:500',
+        'isiagenda' => 'nullable|string',
+        'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:15048',
+        'suratundangan' => 'nullable|file|mimes:pdf|max:15048',
+    ]);
+
+    // ✅ Update data dasar
+    $agenda->kategoripelatihan_id = $request->kategoripelatihan_id;
+    $agenda->namakegiatan = $request->namakegiatan;
+    $agenda->penutupan = $request->penutupan;
+    $agenda->waktupelaksanaan = $request->waktupelaksanaan;
+    $agenda->jumlahpeserta = $request->jumlahpeserta;
+    $agenda->lokasi = $request->lokasi;
+    $agenda->keterangan = $request->keterangan;
+    $agenda->isiagenda = $request->isiagenda;
+
+    // ✅ Upload file jika ada
+    if ($request->hasFile('foto')) {
+        if ($agenda->foto && file_exists(public_path($agenda->foto))) {
+            unlink(public_path($agenda->foto));
+        }
+
+        $foto = $request->file('foto');
+        $fotoName = time() . '_foto.' . $foto->getClientOriginalExtension();
+        $fotoPath = 'uploads/agenda/foto';
+        $foto->move(public_path($fotoPath), $fotoName);
+        $agenda->foto = $fotoPath . '/' . $fotoName;
+    }
+
+    if ($request->hasFile('suratundangan')) {
+        if ($agenda->suratundangan && file_exists(public_path($agenda->suratundangan))) {
+            unlink(public_path($agenda->suratundangan));
+        }
+
+        $surat = $request->file('suratundangan');
+        $suratName = time() . '_surat.' . $surat->getClientOriginalExtension();
+        $suratPath = 'uploads/agenda/suratundangan';
+        $surat->move(public_path($suratPath), $suratName);
+        $agenda->suratundangan = $suratPath . '/' . $suratName;
+    }
+
+    $agenda->save();
+
+    // ✅ Feedback sukses
+    session()->flash('update', 'Agenda pelatihan berhasil diperbarui!');
+    return redirect()->route('beagendapelatihanabg', ['id' => $agenda->id]);
+}
+
 }
 
