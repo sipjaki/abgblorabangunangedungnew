@@ -84,97 +84,84 @@
         </div>
 
         <!-- Nama Lengkap -->
-        <div class="form-row">
-            <div class="form-modern">
-                <label for="namalengkap" class="form-label-modern">
-                    <i class="fas fa-user"></i> Nama Lengkap <span class="required">*</span>
-                </label>
-                <input type="text" name="namalengkap" id="namalengkap" class="form-control"
-                       value="{{ old('namalengkap') }}" required>
-                <div class="error-message" id="namalengkap-error"></div>
-            </div>
-        </div>
+        <div class="form-modern">
+    <label for="namalengkap" class="form-label-modern">
+        <i class="bi bi-person-fill"></i> Nama Lengkap <span class="required">*</span>
+    </label>
+    <input type="text" name="namalengkap" id="namalengkap" class="form-control"
+           value="{{ old('namalengkap') }}" required>
+    <div class="error-message" id="namalengkap-error"></div>
+</div>
 
-        <!-- Jenjang Pendidikan -->
-        <div class="form-row">
-            <div class="form-group">
-                <label for="jenjangpendidikan_id" class="form-label">
-                    <i class="fas fa-graduation-cap"></i> Jenjang Pendidikan <span class="required">*</span>
-                </label>
-                <select name="jenjangpendidikan_id" id="jenjangpendidikan_id" class="form-control" required>
-                    <option value="">-- Pilih Jenjang Pendidikan --</option>
-                    @foreach ($jenjangpendidikan as $item)
-                        <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
-                            {{ $item->jenjangpendidikan }}
-                        </option>
-                    @endforeach
-                </select>
-                <div class="error-message" id="jenjangpendidikan_id-error"></div>
-            </div>
-        </div>
+<!-- Jenjang Pendidikan -->
+<div class="form-modern">
+    <label for="jenjangpendidikan_id" class="form-label-modern">
+        <i class="bi bi-mortarboard-fill"></i> Jenjang Pendidikan <span class="required">*</span>
+    </label>
+    <select name="jenjangpendidikan_id" id="jenjangpendidikan_id" class="form-control" required>
+        <option value="">-- Pilih Jenjang Pendidikan --</option>
+        @foreach ($jenjangpendidikan as $item)
+            <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
+                {{ $item->jenjangpendidikan }}
+            </option>
+        @endforeach
+    </select>
+    <div class="error-message" id="jenjangpendidikan_id-error"></div>
+</div>
 
-        <!-- NIK -->
-        <div class="form-row">
-            <div class="form-group">
-                <label for="nik" class="form-label">
-                    <i class="fas fa-id-card"></i> NIK <span class="required">*</span>
-                </label>
-                <input type="text" name="nik" id="nik" class="form-control"
-                       value="{{ old('nik') }}" required minlength="16" maxlength="16">
-                <div class="error-message" id="nik-error"></div>
-            </div>
-        </div>
+<!-- NIK -->
+<div class="form-modern">
+    <label for="nik" class="form-label-modern">
+        <i class="bi bi-credit-card-2-front-fill"></i> NIK <span class="required">*</span>
+    </label>
+    <input type="text" name="nik" id="nik" class="form-control"
+           value="{{ old('nik') }}" required minlength="16" maxlength="16">
+    <div class="error-message" id="nik-error"></div>
+</div>
 
-        <!-- Jenis Kelamin -->
-        <div class="form-row">
-            <div class="form-group">
-                <label for="jeniskelamin" class="form-label">
-                    <i class="fas fa-venus-mars"></i> Jenis Kelamin <span class="required">*</span>
-                </label>
-                <select name="jeniskelamin" id="jeniskelamin" class="form-control" required>
-                    <option value="">-- Pilih Jenis Kelamin --</option>
-                    <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                    <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
-                </select>
-                <div class="error-message" id="jeniskelamin-error"></div>
-            </div>
-        </div>
+<!-- Jenis Kelamin -->
+<div class="form-modern">
+    <label for="jeniskelamin" class="form-label-modern">
+        <i class="bi bi-gender-ambiguous"></i> Jenis Kelamin <span class="required">*</span>
+    </label>
+    <select name="jeniskelamin" id="jeniskelamin" class="form-control" required>
+        <option value="">-- Pilih Jenis Kelamin --</option>
+        <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+        <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+    </select>
+    <div class="error-message" id="jeniskelamin-error"></div>
+</div>
 
-        <!-- Tanggal Lahir -->
-        <div class="form-row">
-            <div class="form-group">
-                <label for="tanggallahir" class="form-label">
-                    <i class="fas fa-calendar-alt"></i> Tanggal Lahir <span class="required">*</span>
-                </label>
-                <input type="date" name="tanggallahir" id="tanggallahir" class="form-control"
-                       value="{{ old('tanggallahir') }}" required>
-                <div class="error-message" id="tanggallahir-error"></div>
-            </div>
-        </div>
+<!-- Tanggal Lahir -->
+<div class="form-modern">
+    <label for="tanggallahir" class="form-label-modern">
+        <i class="bi bi-calendar-date-fill"></i> Tanggal Lahir <span class="required">*</span>
+    </label>
+    <input type="date" name="tanggallahir" id="tanggallahir" class="form-control"
+           value="{{ old('tanggallahir') }}" required>
+    <div class="error-message" id="tanggallahir-error"></div>
+</div>
 
-        <!-- No Telepon -->
-        <div class="form-row">
-            <div class="form-group">
-                <label for="notelepon" class="form-label">
-                    <i class="fas fa-phone"></i> No Telepon <span class="required">*</span>
-                </label>
-                <input type="tel" name="notelepon" id="notelepon" class="form-control"
-                       value="{{ old('notelepon') }}" required>
-                <div class="error-message" id="notelepon-error"></div>
-            </div>
-        </div>
+<!-- No Telepon -->
+<div class="form-modern">
+    <label for="notelepon" class="form-label-modern">
+        <i class="bi bi-telephone-fill"></i> No Telepon <span class="required">*</span>
+    </label>
+    <input type="tel" name="notelepon" id="notelepon" class="form-control"
+           value="{{ old('notelepon') }}" required>
+    <div class="error-message" id="notelepon-error"></div>
+</div>
 
-        <!-- Instansi -->
-        <div class="form-row">
-            <div class="form-group">
-                <label for="instansi" class="form-label">
-                    <i class="fas fa-building"></i> Instansi <span class="required">*</span>
-                </label>
-                <input type="text" name="instansi" id="instansi" class="form-control"
-                       value="{{ old('instansi') }}" required>
-                <div class="error-message" id="instansi-error"></div>
-            </div>
-        </div>
+<!-- Instansi -->
+<div class="form-modern">
+    <label for="instansi" class="form-label-modern">
+        <i class="bi bi-building-fill"></i> Instansi <span class="required">*</span>
+    </label>
+    <input type="text" name="instansi" id="instansi" class="form-control"
+           value="{{ old('instansi') }}" required>
+    <div class="error-message" id="instansi-error"></div>
+</div>
+
     </div>
 
     <div class="form-buttons">
