@@ -468,7 +468,9 @@
                                 </button>
                                 @else
                                 <!-- Tombol SUDAH Validasi -->
-                                <button class="button-hijau">
+                                <button class="button-hijau"
+                                onclick="openValidationModal({{ $item->id }})"
+                                >
                                     <i class="bi bi-check-circle-fill" style="margin-right: 5px;"></i> Silahkan Buat Dok KRK
                                 </button>
                                 @endif
