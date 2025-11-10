@@ -65,9 +65,9 @@
             </div>
             <div class="card-content">
                 <h3 class="card-title">{{ $item->namakegiatan }}</h3>
-                <p class="card-description">
+                {{-- <p class="card-description">
                     {{ \Illuminate\Support\Str::limit($item->keterangan, 80) }}
-                </p>
+                </p> --}}
 
                 @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
                     <a href="/daftaragenda/{{ $item->id }}" style="text-decoration: none;">
