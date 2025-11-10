@@ -288,6 +288,19 @@
     </div>
 </div>
 
+
+</div>
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
+        <i class="bi bi-upload" style="margin-right: 6px;"></i>
+        Upload Perbaikan Berkas Keterangan Rencana Kota (KRK) Fungsi Usaha
+    </h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+</div>
+
+<div class="col-md-6">
 <div class="form-modern col-md-6">
     <div class="mb-3">
         <label class="form-label-modern" for="foto">
@@ -328,199 +341,6 @@
 
 </div>
 
-<div class="text-center">
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
-        <i class="bi bi-upload" style="margin-right: 6px;"></i>
-        Upload Perbaikan Berkas Keterangan Rencana Kota (KRK) Fungsi Usaha
-    </h5>
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
-</div>
-
-<div class="col-md-6">
-<div class="mb-3">
-    <label class="form-label" for="ktp">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload KTP (PDF)
-    </label>
-    <input type="file" id="ktp" name="ktp" accept="application/pdf"
-        class="form-control @error('ktp') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerKTP', 'iframeKTP', 'msgKTP')" />
-    @error('ktp')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerKTP" style="{{ isset($data->ktp) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        <iframe id="iframeKTP" src="{{ isset($data->ktp) ? asset($data->ktp) : '' }}"
-            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-    </div>
-    <div id="msgKTP" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->ktp) ? 'display:none;' : '' }}">
-        Data belum di update. Silahkan upload berkas KTP.
-    </div>
-</div>
-
-
-<div class="mb-3">
-    <label class="form-label" for="npwp">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload NPWP (PDF)
-    </label>
-    <input type="file" id="npwp" name="npwp" accept="application/pdf"
-        class="form-control @error('npwp') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerNPWP', 'iframeNPWP', 'msgNPWP')" />
-    @error('npwp')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerNPWP" style="{{ isset($data->npwp) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        <iframe id="iframeNPWP" src="{{ isset($data->npwp) ? asset($data->npwp) : '' }}"
-            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-    </div>
-    <div id="msgNPWP" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->npwp) ? 'display:none;' : '' }}">
-        Data belum di update. Silahkan upload berkas NPWP.
-    </div>
-</div>
-
-
-</div>
-
-<div class="col-md-6">
-
-    <div class="mb-3">
-    <label class="form-label" for="sertifikattanah">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Sertifikat Tanah (PDF)
-    </label>
-    <input type="file" id="sertifikattanah" name="sertifikattanah" accept="application/pdf"
-        class="form-control @error('sertifikattanah') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerST', 'iframeST', 'msgST')" />
-    @error('sertifikattanah')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerST" style="{{ isset($data->sertifikattanah) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        <iframe id="iframeST" src="{{ isset($data->sertifikattanah) ? asset($data->sertifikattanah) : '' }}"
-            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-        </div>
-        <div id="msgST" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->sertifikattanah) ? 'display:none;' : '' }}">
-        Data belum di update. Silahkan upload berkas Sertifikat Tanah.
-    </div>
-</div>
-
-<div class="mb-3">
-    <label class="form-label" for="lampiranoss">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Lampiran OSS (PDF)
-    </label>
-    <input type="file" id="lampiranoss" name="lampiranoss" accept="application/pdf"
-    class="form-control @error('lampiranoss') is-invalid @enderror"
-    onchange="previewPDF(event, 'previewContainerOSS', 'iframeOSS', 'msgOSS')" />
-    @error('lampiranoss')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerOSS" style="{{ isset($data->lampiranoss) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        <iframe id="iframeOSS" src="{{ isset($data->lampiranoss) ? asset($data->lampiranoss) : '' }}"
-            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-        </div>
-        <div id="msgOSS" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->lampiranoss) ? 'display:none;' : '' }}">
-        Data belum di update. Silahkan upload berkas Lampiran OSS.
-    </div>
-</div>
-
-</div>
-<div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="buktipbb">
-            <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Bukti PBB (PDF)
-        </label>
-        <input type="file" id="buktipbb" name="buktipbb" accept="application/pdf"
-        class="form-control @error('buktipbb') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerPBB', 'iframePBB', 'msgPBB')" />
-        @error('buktipbb')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-        <div class="mt-3" id="previewContainerPBB" style="{{ isset($data->buktipbb) ? '' : 'display: none;' }}">
-            <label class="fw-bold">Data Sebelumnya:</label>
-            <iframe id="iframePBB" src="{{ isset($data->buktipbb) ? asset($data->buktipbb) : '' }}"
-                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-            </div>
-            <div id="msgPBB" class="mt-3"
-            style="color: grey; font-style: italic; {{ isset($data->buktipbb) ? 'display:none;' : '' }}">
-            Data belum di update. Silahkan upload berkas Bukti PBB.
-        </div>
-    </div>
-    <div class="mb-3">
-        <label class="form-label" for="dokvalidasi">
-            <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Dokumen Validasi (PDF)
-        </label>
-        <input type="file" id="dokvalidasi" name="dokvalidasi" accept="application/pdf"
-        class="form-control @error('dokvalidasi') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerVAL', 'iframeVAL', 'msgVAL')" />
-        @error('dokvalidasi')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-        <div class="mt-3" id="previewContainerVAL" style="{{ isset($data->dokvalidasi) ? '' : 'display: none;' }}">
-            <label class="fw-bold">Data Sebelumnya:</label>
-            <iframe id="iframeVAL" src="{{ isset($data->dokvalidasi) ? asset($data->dokvalidasi) : '' }}"
-                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-            </div>
-            <div id="msgVAL" class="mt-3"
-            style="color: grey; font-style: italic; {{ isset($data->dokvalidasi) ? 'display:none;' : '' }}">
-            Data belum di update. Silahkan upload berkas Validasi.
-        </div>
-    </div>
-
-</div>
-<div class="col-md-6">
-
-    <div class="mb-3">
-    <label class="form-label" for="siteplan">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Siteplan (PDF)
-    </label>
-    <input type="file" id="siteplan" name="siteplan" accept="application/pdf"
-        class="form-control @error('siteplan') is-invalid @enderror"
-        onchange="previewPDF(event, 'previewContainerSITE', 'iframeSITE', 'msgSITE')" />
-    @error('siteplan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    <div class="mt-3" id="previewContainerSITE" style="{{ isset($data->siteplan) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        <iframe id="iframeSITE" src="{{ isset($data->siteplan) ? asset($data->siteplan) : '' }}"
-            style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-    </div>
-    <div id="msgSITE" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->siteplan) ? 'display:none;' : '' }}">
-        Data belum di update. Silahkan upload berkas Siteplan.
-    </div>
-</div>
-<div class="mb-3">
-    <label class="form-label" for="tandatangan">
-        <i class="bi bi-file-earmark-pdf" style="color: darkred; margin-right: 8px;"></i> Upload Surat Permohonan KRK (PDF)
-    </label>
-    <input type="file" id="tandatangan" name="tandatangan" accept="application/pdf,image/jpeg,image/png,image/jpg"
-        class="form-control @error('tandatangan') is-invalid @enderror"
-        onchange="previewMixedFile(event, 'previewContainerTTD', 'previewTTD', 'msgTTD')" />
-    @error('tandatangan')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
-    {{-- Data Sebelumnya --}}
-    <div class="mt-3" id="previewContainerTTD" style="{{ isset($data->tandatangan) ? '' : 'display: none;' }}">
-        <label class="fw-bold">Data Sebelumnya:</label>
-        @php
-            $ext = pathinfo($data->tandatangan ?? '', PATHINFO_EXTENSION);
-        @endphp
-        @if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png']))
-            <img src="{{ asset($data->tandatangan) }}" alt="Tanda Tangan Lama"
-                style="max-width: 100%; border: 1px solid #ccc; border-radius: 6px;">
-        @elseif ($ext === 'pdf')
-            <iframe src="{{ asset($data->tandatangan) }}"
-                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 6px;"></iframe>
-        @else
-            <div style="color: grey; font-style: italic;">Data sebelumnya tidak bisa ditampilkan</div>
-        @endif
-    </div>
-
-    <div id="msgTTD" class="mt-3"
-        style="color: grey; font-style: italic; {{ isset($data->tandatangan) ? 'display:none;' : '' }}">
-        Data belum di update. Silahkan upload berkas Tanda Tangan.
-    </div>
-
-    {{-- Preview Upload Baru --}}
-    <div class="mt-3" id="previewTTD" style="display: none;"></div>
-</div>
 </div>
     <script>
 function previewPDF(event, containerId, iframeId, messageId) {
