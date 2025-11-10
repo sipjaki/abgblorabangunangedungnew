@@ -176,7 +176,7 @@
             <option value="">-- Pilih Kategori --</option>
             @foreach($kategoripelatihan as $kategori)
                 <option value="{{ $kategori->id }}" {{ old('kategoripelatihan_id', $data->kategoripelatihan_id ?? '') == $kategori->id ? 'selected' : '' }}>
-                    {{ $kategori->namakategori }}
+                    {{ $kategori->kategoripelatihan }}
                 </option>
             @endforeach
         </select>
@@ -295,51 +295,64 @@
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
     <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
         <i class="bi bi-upload" style="margin-right: 6px;"></i>
-        Upload Perbaikan Berkas Keterangan Rencana Kota (KRK) Fungsi Usaha
+        Upload Perbaikan Foto Kegiatan dan Surat Undangan
     </h5>
     <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
 </div>
+<div class="row">
+    <!-- Kolom Kiri: Foto -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <div class="mb-3">
+                <label class="form-label-modern" for="foto">
+                    <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Kegiatan
+                </label>
+                <input type="file" id="foto" name="foto"
+                    class="form-control @error('foto') is-invalid @enderror" accept="image/*">
 
-<div class="col-md-6">
-<div class="form-modern col-md-6">
-    <div class="mb-3">
-        <label class="form-label-modern" for="foto">
-            <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Kegiatan
-        </label>
-        <input type="file" id="foto" name="foto"
-            class="form-control @error('foto') is-invalid @enderror" accept="image/*">
-        @if(!empty($data->foto))
-            <div class="mt-2">
-                <img src="{{ asset($data->foto) }}" alt="Foto Kegiatan" style="max-width: 150px; border-radius: 6px;">
+                @if(!empty($data->foto))
+                    <div class="mt-2">
+                        <img src="{{ asset($data->foto) }}" alt="Foto Kegiatan"
+                             style="width: 100%; max-width: 250px; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                    </div>
+                @else
+                    <div class="text-muted mt-2" style="font-size: 13px;">Belum ada foto yang diunggah</div>
+                @endif
+
+                @error('foto')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
-        @endif
-        @error('foto')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+        </div>
+    </div>
+
+    <!-- Kolom Kanan: Surat Undangan -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <div class="mb-3">
+                <label class="form-label-modern" for="suratundangan">
+                    <i class="bi bi-envelope-paper" style="margin-right: 8px; color: navy;"></i> Surat Undangan (PDF)
+                </label>
+                <input type="file" id="suratundangan" name="suratundangan"
+                    class="form-control @error('suratundangan') is-invalid @enderror" accept=".pdf">
+
+                @if(!empty($data->suratundangan))
+                    <div class="mt-2">
+                        <iframe src="{{ asset($data->suratundangan) }}"
+                                style="width: 100%; height: 300px; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"></iframe>
+                    </div>
+                @else
+                    <div class="text-muted mt-2" style="font-size: 13px;">Belum ada surat undangan yang diunggah</div>
+                @endif
+
+                @error('suratundangan')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="form-modern col-md-6">
-    <div class="mb-3">
-        <label class="form-label-modern" for="suratundangan">
-            <i class="bi bi-envelope-paper" style="margin-right: 8px; color: navy;"></i> Surat Undangan (PDF)
-        </label>
-        <input type="file" id="suratundangan" name="suratundangan"
-            class="form-control @error('suratundangan') is-invalid @enderror" accept=".pdf">
-        @if(!empty($data->suratundangan))
-            <div class="mt-2">
-                <a href="{{ asset($data->suratundangan) }}" target="_blank" class="btn btn-sm btn-outline-primary">
-                    <i class="bi bi-eye"></i> Lihat Surat
-                </a>
-            </div>
-        @endif
-        @error('suratundangan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-</div>
 
 </div>
     <script>
@@ -382,7 +395,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                                       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin memperbaiki berkas permohonan KRK anda ?
+                                        Apakah Anda ingin memperbaiki Agenda Pelatihan ini ?
                                     </p>
 
                                       <!-- Tombol -->
