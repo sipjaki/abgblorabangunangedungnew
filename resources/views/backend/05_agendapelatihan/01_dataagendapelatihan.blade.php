@@ -279,7 +279,7 @@
         <iframe src="{{ asset('storage/' . $item->suratundangan) }}"
             style="width: 240px; height: 160px; border-radius: 6px;" frameborder="0"></iframe>
         <div class="mt-2">
-            <a href="{{ asset('storage/' . $item->suratundangan) }}" download class="btn btn-sm btn-primary">
+            <a href="{{ asset('storage/' . $item->suratundangan) }}" download class="button-baru">
                 <i class="bi bi-download"></i> Download Surat
             </a>
         </div>
@@ -287,7 +287,7 @@
         <iframe src="{{ asset($item->suratundangan) }}"
             style="width: 240px; height: 160px; border-radius: 6px;" frameborder="0"></iframe>
         <div class="mt-2">
-            <a href="{{ asset($item->suratundangan) }}" download class="btn btn-sm btn-primary">
+            <a href="{{ asset($item->suratundangan) }}" download class="button-baru">
                 <i class="bi bi-download"></i> Download Surat
             </a>
         </div>

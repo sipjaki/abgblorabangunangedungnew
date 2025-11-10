@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -153,7 +107,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-newvalidasi" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -205,8 +159,8 @@ th {
 
     <div class="row">
         {{-- Kategori --}}
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="kategoripelatihan_id">
+        <div class="form-modern mb-3 col-md-6">
+            <label class="form-label-modern" for="kategoripelatihan_id">
                 <i class="bi bi-tags text-primary me-1"></i> Kategori Pelatihan
             </label>
             <select id="kategoripelatihan_id" name="kategoripelatihan_id" class="form-select @error('kategoripelatihan_id') is-invalid @enderror">
@@ -223,8 +177,8 @@ th {
         </div>
 
         {{-- Nama Kegiatan --}}
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="namakegiatan">
+        <div class="form-modern mb-3 col-md-6">
+            <label class="form-label-modern" for="namakegiatan">
                 <i class="bi bi-pencil-square text-primary me-1"></i> Nama Kegiatan
             </label>
             <input type="text" name="namakegiatan" class="form-control @error('namakegiatan') is-invalid @enderror" placeholder="Masukkan nama kegiatan" value="{{ old('namakegiatan') }}">
@@ -234,8 +188,8 @@ th {
         </div>
 
         {{-- Penutupan --}}
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="penutupan">
+        <div class="form-modern mb-3 col-md-6">
+            <label class="form-label-modern" for="penutupan">
                 <i class="bi bi-calendar-x text-primary me-1"></i> Tanggal Penutupan
             </label>
             <input type="date" name="penutupan" class="form-control @error('penutupan') is-invalid @enderror" value="{{ old('penutupan') }}">
@@ -245,8 +199,8 @@ th {
         </div>
 
         {{-- Waktu Pelaksanaan --}}
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="waktupelaksanaan">
+        <div class="form-modern mb-3 col-md-6">
+            <label class="form-label-modern" for="waktupelaksanaan">
                 <i class="bi bi-calendar-event text-primary me-1"></i> Waktu Pelaksanaan
             </label>
             <input type="date" name="waktupelaksanaan" class="form-control @error('waktupelaksanaan') is-invalid @enderror" value="{{ old('waktupelaksanaan') }}">
@@ -256,8 +210,8 @@ th {
         </div>
 
         {{-- Jumlah Peserta --}}
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="jumlahpeserta">
+        <div class="form-modern mb-3 col-md-6">
+            <label class="form-label-modern" for="jumlahpeserta">
                 <i class="bi bi-people-fill text-primary me-1"></i> Jumlah Peserta
             </label>
             <input type="number" name="jumlahpeserta" class="form-control @error('jumlahpeserta') is-invalid @enderror" placeholder="Masukkan jumlah peserta" value="{{ old('jumlahpeserta') }}">
@@ -267,8 +221,8 @@ th {
         </div>
 
         {{-- Lokasi --}}
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="lokasi">
+        <div class="form-modern mb-3 col-md-6">
+            <label class="form-label-modern" for="lokasi">
                 <i class="bi bi-geo-alt text-primary me-1"></i> Lokasi
             </label>
             <input type="text" name="lokasi" class="form-control @error('lokasi') is-invalid @enderror" placeholder="Masukkan lokasi kegiatan" value="{{ old('lokasi') }}">
@@ -278,8 +232,8 @@ th {
         </div>
 
         {{-- Keterangan --}}
-        <div class="mb-3 col-md-6">
-            <label class="form-label" for="keterangan">
+        <div class="form-modern mb-3 col-md-6">
+            <label class="form-label-modern" for="keterangan">
                 <i class="bi bi-info-circle text-primary me-1"></i> Keterangan
             </label>
             <input type="text" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" placeholder="Tambahan keterangan" value="{{ old('keterangan') }}">
@@ -300,8 +254,8 @@ th {
         </div> --}}
 
         {{-- Isi Agenda --}}
-        <div class="mb-3 col-md-12">
-            <label class="form-label" for="isiagenda">
+        <div class="form-modern mb-3 col-md-12">
+            <label class="form-label-modern" for="isiagenda">
                 <i class="bi bi-file-earmark-text text-primary me-1"></i> Isi Agenda
             </label>
             <textarea name="isiagenda" rows="4" class="form-control @error('isiagenda') is-invalid @enderror" placeholder="Tulis detail agenda">{{ old('isiagenda') }}</textarea>
@@ -312,8 +266,8 @@ th {
 
         {{-- Upload Foto --}}
 {{-- Upload Poster / Gambar --}}
-<div class="mb-3 col-md-6">
-    <label class="form-label" for="foto">
+<div class="form-modern mb-3 col-md-6">
+    <label class="form-label-modern" for="foto">
         <i class="bi bi-image text-primary me-1"></i> Upload Poster / Gambar
     </label>
     <input type="file" name="foto" id="foto" class="form-control @error('foto') is-invalid @enderror" accept="image/*" onchange="previewFoto(event)">
@@ -332,8 +286,8 @@ th {
 </div>
 
 {{-- Upload Surat Undangan (PDF) --}}
-<div class="mb-3 col-md-6">
-    <label class="form-label" for="suratundangan">
+<div class="form-modern mb-3 col-md-6">
+    <label class="form-label-modern" for="suratundangan">
         <i class="bi bi-file-earmark-pdf text-primary me-1"></i> Upload Surat Undangan (PDF)/ * Jika Ada
     </label>
     <input type="file" name="suratundangan" id="suratundangan" class="form-control @error('suratundangan') is-invalid @enderror" accept=".pdf" onchange="previewPDF(event)">
@@ -385,7 +339,7 @@ th {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-baru" type="button" onclick="openModal()">
+                               <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
