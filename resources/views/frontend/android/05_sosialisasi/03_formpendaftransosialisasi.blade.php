@@ -87,153 +87,16 @@
             <strong>Formulir Pendaftaran Peserta</strong>
         </div>
 
-        <!-- Gaya Form -->
-        <style>
-            .form-modern {
-                width: 100%;
-                border: 2px solid black;
-                border-radius: 8px;
-                padding: 20px;
-                margin-bottom: 20px;
-                background-color: #fff;
-                box-sizing: border-box;
-            }
-
-            .form-label-modern {
-                display: block;
-                font-weight: 600;
-                margin-bottom: 8px;
-                color: #000;
-                font-family: 'Poppins', sans-serif;
-            }
-
-            .form-modern input,
-            .form-modern select {
-                width: 100%;
-                border: 1px solid #333;
-                border-radius: 6px;
-                padding: 10px;
-                font-size: 14px;
-                font-family: 'Poppins', sans-serif;
-            }
-
-            .form-modern input:focus,
-            .form-modern select:focus {
-                border-color: navy;
-                outline: none;
-                box-shadow: 0 0 4px rgba(0, 0, 128, 0.3);
-            }
-
-            .error-message {
-                font-size: 12px;
-                color: red;
-                margin-top: 4px;
-                display: none;
-            }
-
-            .required {
-                color: red;
-            }
-
-            .button-baru {
-                width: 100%;
-                background-color: navy;
-                color: white;
-                padding: 12px;
-                border: none;
-                border-radius: 6px;
-                font-size: 16px;
-                font-weight: 600;
-                cursor: pointer;
-                font-family: 'Poppins', sans-serif;
-            }
-
-            .button-baru:hover {
-                background-color: #003399;
-            }
-
-            /* Modal Styles */
-            .modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                z-index: 1000;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .modal-content {
-                background: white;
-                padding: 20px;
-                border-radius: 8px;
-                width: 90%;
-                max-width: 500px;
-                max-height: 80vh;
-                overflow-y: auto;
-            }
-
-            .modal h3 {
-                color: #003399;
-                margin-bottom: 15px;
-            }
-
-            .data-preview div {
-                margin-bottom: 8px;
-                padding-bottom: 8px;
-                border-bottom: 1px solid #eee;
-            }
-
-            .modal-footer {
-                display: flex;
-                justify-content: flex-end;
-                margin-top: 20px;
-                gap: 10px;
-            }
-
-            .btn-cancel,
-            .btn-confirm {
-                padding: 10px 18px;
-                border: none;
-                border-radius: 6px;
-                color: #fff;
-                cursor: pointer;
-                font-family: 'Poppins', sans-serif;
-            }
-
-            .btn-cancel {
-                background-color: #d9534f;
-            }
-
-            .btn-confirm {
-                background-color: #003399;
-            }
-
-            .btn-cancel:hover {
-                background-color: #c9302c;
-            }
-
-            .btn-confirm:hover {
-                background-color: #001a66;
-            }
-
-            .error-field {
-                border-color: red !important;
-            }
-        </style>
-
         <!-- Nama Lengkap -->
         <div class="form-modern">
             <label for="namalengkap" class="form-label-modern">
                 <i class="bi bi-person-fill" style="margin-right:6px; color:navy;"></i> Nama Lengkap <span class="required">*</span>
             </label>
-            <input type="text" name="namalengkap" id="namalengkap" value="{{ old('namalengkap') }}" required>
+            <input type="text" name="namalengkap" id="namalengkap" required>
             <div class="error-message" id="namalengkap-error"></div>
         </div>
 
+        <!-- Jenjang Pendidikan -->
         <div class="form-modern">
             <label for="jenjangpendidikan_id" class="form-label-modern">
                 <i class="bi bi-mortarboard-fill" style="margin-right:6px; color:navy;"></i> Jenjang Pendidikan <span class="required">*</span>
@@ -241,62 +104,65 @@
             <select name="jenjangpendidikan_id" id="jenjangpendidikan_id" required>
                 <option value="">-- Pilih Jenjang Pendidikan --</option>
                 @foreach ($jenjangpendidikan as $item)
-                    <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
-                        {{ $item->jenjangpendidikan }}
-                    </option>
+                    <option value="{{ $item->id }}">{{ $item->jenjangpendidikan }}</option>
                 @endforeach
             </select>
             <div class="error-message" id="jenjangpendidikan_id-error"></div>
         </div>
 
+        <!-- NIK -->
         <div class="form-modern">
             <label for="nik" class="form-label-modern">
                 <i class="bi bi-credit-card-2-front-fill" style="margin-right:6px; color:navy;"></i> NIK <span class="required">*</span>
             </label>
-            <input type="text" name="nik" id="nik" value="{{ old('nik') }}" required minlength="16" maxlength="16">
+            <input type="text" name="nik" id="nik" minlength="16" maxlength="16" required>
             <div class="error-message" id="nik-error"></div>
         </div>
 
+        <!-- Jenis Kelamin -->
         <div class="form-modern">
             <label for="jeniskelamin" class="form-label-modern">
                 <i class="bi bi-gender-ambiguous" style="margin-right:6px; color:navy;"></i> Jenis Kelamin <span class="required">*</span>
             </label>
             <select name="jeniskelamin" id="jeniskelamin" required>
                 <option value="">-- Pilih Jenis Kelamin --</option>
-                <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
             </select>
             <div class="error-message" id="jeniskelamin-error"></div>
         </div>
 
+        <!-- Tanggal Lahir -->
         <div class="form-modern">
             <label for="tanggallahir" class="form-label-modern">
                 <i class="bi bi-calendar-date-fill" style="margin-right:6px; color:navy;"></i> Tanggal Lahir <span class="required">*</span>
             </label>
-            <input type="date" name="tanggallahir" id="tanggallahir" value="{{ old('tanggallahir') }}" required>
+            <input type="date" name="tanggallahir" id="tanggallahir" required>
             <div class="error-message" id="tanggallahir-error"></div>
         </div>
 
+        <!-- No Telepon -->
         <div class="form-modern">
             <label for="notelepon" class="form-label-modern">
                 <i class="bi bi-telephone-fill" style="margin-right:6px; color:navy;"></i> No Telepon <span class="required">*</span>
             </label>
-            <input type="tel" name="notelepon" id="notelepon" value="{{ old('notelepon') }}" required>
+            <input type="tel" name="notelepon" id="notelepon" required>
             <div class="error-message" id="notelepon-error"></div>
         </div>
 
+        <!-- Instansi -->
         <div class="form-modern">
             <label for="instansi" class="form-label-modern">
                 <i class="bi bi-building-fill" style="margin-right:6px; color:navy;"></i> Instansi <span class="required">*</span>
             </label>
-            <input type="text" name="instansi" id="instansi" value="{{ old('instansi') }}" required>
+            <input type="text" name="instansi" id="instansi" required>
             <div class="error-message" id="instansi-error"></div>
         </div>
     </div>
 
     <div class="form-buttons">
         <button type="button" class="button-baru" id="submitButton">
-            <i class="bi bi-send-fill" style="margin-right:6px;"></i> <strong style="color: black">Daftar</strong>
+            <i class="bi bi-send-fill" style="margin-right:6px;"></i> <strong>Daftar</strong>
         </button>
     </div>
 </form>
@@ -305,54 +171,36 @@
 <div id="confirmationModal" class="modal">
     <div class="modal-content">
         <h3>Konfirmasi Data</h3>
-        <p>Apakah data yang Anda masukkan sudah benar?</p>
-
+        <p>Pastikan semua data sudah benar sebelum dikirim.</p>
         <div class="data-preview">
             <div><strong>Nama:</strong> <span id="preview-nama"></span></div>
-            <div><strong>Jenjang Pendidikan:</strong> <span id="preview-pendidikan"></span></div>
+            <div><strong>Pendidikan:</strong> <span id="preview-pendidikan"></span></div>
             <div><strong>NIK:</strong> <span id="preview-nik"></span></div>
             <div><strong>Jenis Kelamin:</strong> <span id="preview-jk"></span></div>
             <div><strong>Tanggal Lahir:</strong> <span id="preview-tgl"></span></div>
-            <div><strong>No Telepon:</strong> <span id="preview-telp"></span></div>
+            <div><strong>No Telp:</strong> <span id="preview-telp"></span></div>
             <div><strong>Instansi:</strong> <span id="preview-instansi"></span></div>
         </div>
 
         <div class="modal-footer">
             <button type="button" class="btn-cancel" id="cancelButton">Periksa Kembali</button>
-<!-- Tombol konfirmasi -->
-<button type="button" class="btn-confirm" id="confirmButton">
-    <i class="bi bi-send-check-fill" style="margin-right: 5px;"></i> Ya, Kirim Data
-</button>        </div>
+            <button type="button" class="btn-confirm" id="confirmButton">
+                <i class="bi bi-send-check-fill" style="margin-right: 5px;"></i> Ya, Kirim Data
+            </button>
+        </div>
     </div>
 </div>
 
-
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const confirmButton = document.getElementById('confirmButton');
+document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('pendaftaranForm');
-
-    confirmButton.addEventListener('click', function() {
-        // Konfirmasi sebelum submit
-        if (confirm('Apakah Anda yakin ingin mengirim data pendaftaran ini?')) {
-            confirmButton.disabled = true;
-            confirmButton.innerHTML = '<i class="bi bi-hourglass-split"></i> Mengirim...';
-            form.submit(); // ⬅️ ini yang mengirim langsung ke controller Laravel
-        }
-    });
-});
-</script>
-<!-- Script Validasi & Modal -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('pendaftaranForm');
-    const submitButton = document.getElementById('submitButton');
     const modal = document.getElementById('confirmationModal');
+    const submitButton = document.getElementById('submitButton');
     const cancelButton = document.getElementById('cancelButton');
     const confirmButton = document.getElementById('confirmButton');
 
-    // Klik tombol "Daftar"
-    submitButton.addEventListener('click', function() {
+    // Buka modal preview
+    submitButton.addEventListener('click', () => {
         if (validateForm()) {
             showDataPreview();
             modal.style.display = 'flex';
@@ -360,57 +208,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Tutup modal
-    cancelButton.addEventListener('click', function() {
+    cancelButton.addEventListener('click', () => {
         modal.style.display = 'none';
     });
 
     // Konfirmasi kirim data
-    confirmButton.addEventListener('click', function() {
+    confirmButton.addEventListener('click', () => {
         confirmButton.disabled = true;
-        confirmButton.textContent = "Mengirim...";
-        form.submit();
+        confirmButton.innerHTML = '<i class="bi bi-hourglass-split"></i> Mengirim...';
+        form.submit(); // ⬅️ langsung kirim ke controller Laravel
     });
 
-    // Validasi form
     function validateForm() {
-        let isValid = true;
-        const fields = ['namalengkap', 'jenjangpendidikan_id', 'nik', 'jeniskelamin', 'tanggallahir', 'notelepon', 'instansi'];
-
-        fields.forEach(field => {
-            const input = document.getElementById(field);
-            const error = document.getElementById(`${field}-error`);
-            error.style.display = 'none';
-            input.classList.remove('error-field');
-
-            if (!input.value.trim()) {
-                error.textContent = 'Field ini wajib diisi';
-                error.style.display = 'block';
-                input.classList.add('error-field');
-                isValid = false;
+        let valid = true;
+        const requiredFields = ['namalengkap', 'jenjangpendidikan_id', 'nik', 'jeniskelamin', 'tanggallahir', 'notelepon', 'instansi'];
+        requiredFields.forEach(id => {
+            const el = document.getElementById(id);
+            const err = document.getElementById(`${id}-error`);
+            err.style.display = 'none';
+            el.classList.remove('error-field');
+            if (!el.value.trim()) {
+                err.textContent = 'Wajib diisi';
+                err.style.display = 'block';
+                el.classList.add('error-field');
+                valid = false;
             }
         });
-
         const nik = document.getElementById('nik').value;
         if (nik.length !== 16 || !/^\d+$/.test(nik)) {
-            document.getElementById('nik-error').textContent = 'NIK harus 16 digit angka';
-            document.getElementById('nik-error').style.display = 'block';
-            isValid = false;
+            const err = document.getElementById('nik-error');
+            err.textContent = 'NIK harus 16 digit angka';
+            err.style.display = 'block';
+            valid = false;
         }
-
-        const telp = document.getElementById('notelepon').value;
-        if (!/^[0-9]+$/.test(telp)) {
-            document.getElementById('notelepon-error').textContent = 'Nomor telepon hanya boleh angka';
-            document.getElementById('notelepon-error').style.display = 'block';
-            isValid = false;
-        }
-
-        return isValid;
+        return valid;
     }
 
-    // Isi preview modal
     function showDataPreview() {
         document.getElementById('preview-nama').textContent = document.getElementById('namalengkap').value;
-        document.getElementById('preview-pendidikan').textContent = document.getElementById('jenjangpendidikan_id').options[document.getElementById('jenjangpendidikan_id').selectedIndex].text;
+        document.getElementById('preview-pendidikan').textContent =
+            document.getElementById('jenjangpendidikan_id').selectedOptions[0].text;
         document.getElementById('preview-nik').textContent = document.getElementById('nik').value;
         document.getElementById('preview-jk').textContent = document.getElementById('jeniskelamin').value;
         document.getElementById('preview-tgl').textContent = document.getElementById('tanggallahir').value;
