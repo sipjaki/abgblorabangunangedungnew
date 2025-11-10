@@ -3553,6 +3553,85 @@ public function bekrksosbudperbaikannew(Request $request, $id)
     return redirect()->route('bekrksosbudpermohonan.show', ['id' => $bantuan->id]);
 }
 
+public function bekrksosbudperbaikannewadmin(Request $request, $id)
+{
+    $bantuan = krksosbud::findOrFail($id);
+
+    // Validasi input
+$request->validate([
+    'nomordinasasal'     => 'nullable|string|max:255',
+    'perorangan'         => 'nullable|string|max:255',
+    'perusahaan'         => 'nullable|string|max:255',
+    'nik'                => 'nullable|string|size:16',
+    'koordinatlokasi'    => 'nullable|string',
+    'tanggalpermohonan'  => 'nullable|date',
+    'notelepon'          => 'nullable|string|max:255',
+    'luastanah'          => 'nullable|integer|min:0',
+    'jumlahlantai'       => 'nullable|string|max:10',
+    'rt'                 => 'nullable|string|max:10',
+    'rw'                 => 'nullable|string|max:10',
+    'kabupaten'          => 'nullable|string|max:255',
+    'lokasibangunan'     => 'nullable|string',
+    'alamatpemohon'      => 'nullable|string',
+
+        'ktp' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'npwp' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'sertifikattanah' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        // 'lampiranoss' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'buktipbb' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'dokvalidasi' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'siteplan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+        'tandatangan' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:10048',
+    ]);
+
+    // Update input utama
+    $bantuan->luastanah = $request->luastanah;
+    $bantuan->jumlahlantai = $request->jumlahlantai;
+
+    // Mapping dokumen ke path
+    $dokumenMap = [
+        'ktp' => '06_krk/04_krksosbud/01_ktp',
+        'npwp' => '06_krk/04_krksosbud/02_npwp',
+        'sertifikattanah' => '06_krk/04_krksosbud/03_sertifikattanah',
+        // 'lampiranoss' => '06_krk/04_krksosbud/04_lampiranoss',
+        'buktipbb' => '06_krk/04_krksosbud/05_buktipbb',
+        'dokvalidasi' => '06_krk/04_krksosbud/06_dokvalidasi',
+        'siteplan' => '06_krk/04_krksosbud/06_siteplan',
+        'tandatangan' => '06_krk/04_krksosbud/07_tandatangan',
+    ];
+
+    foreach ($dokumenMap as $field => $path) {
+        if ($request->hasFile($field)) {
+            if ($bantuan->$field && file_exists(public_path($bantuan->$field))) {
+                unlink(public_path($bantuan->$field));
+            }
+
+            $file = $request->file($field);
+            $filename = time() . '_' . $field . '.' . $file->getClientOriginalExtension();
+            $destinationPath = public_path($path);
+            $file->move($destinationPath, $filename);
+            $bantuan->$field = $path . '/' . $filename;
+        }
+    }
+
+    // Reset status verifikasi agar diverifikasi ulang
+    $bantuan->verifikasiktp = null;
+    $bantuan->verifikasinpwp = null;
+    $bantuan->verifikasisert = null;
+    // $bantuan->verifikasioss = null;
+    $bantuan->verifikasipbb = null;
+    $bantuan->verifikasidokval = null;
+    $bantuan->verifikasisiteplan = null;
+    $bantuan->verifikasittd = null;
+    $bantuan->verifikasi1 = null;
+
+    $bantuan->save();
+
+    session()->flash('update', 'Perbaikan Berkas Anda Berhasil!');
+    return redirect()->route('bekrksosbudpermohonan.show', ['id' => $bantuan->id]);
+
+}
+
 
 public function permohonankrkhuniancreate(Request $request)
     {

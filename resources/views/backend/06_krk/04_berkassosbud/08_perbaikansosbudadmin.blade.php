@@ -148,7 +148,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('bekrksosbudperbaikannewupdate', $data->id) }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('bekrksosbudperbaikannewupdateadmin', $data->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
