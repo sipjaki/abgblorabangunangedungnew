@@ -55,38 +55,45 @@
 
     <div class="promo-carousel">
     @forelse ($agendapelatihan as $item)
-        <div class="promo-card">
-            <div class="card-image-container">
-                <img src="{{ asset($item->foto) }}" class="card-image" alt="{{ $item->namakegiatan }}">
-                <div class="card-overlay"></div>
-                <div class="card-badge">
-                    {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d M Y') }}
-                </div>
-            </div>
-            <div class="card-content">
-                <h3 class="card-title">{{ $item->namakegiatan }}</h3>
-                {{-- <p class="card-description">
-                    {{ \Illuminate\Support\Str::limit($item->keterangan, 80) }}
-                </p> --}}
-
-                @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
-                    <a href="/daftaragenda/{{ $item->id }}" style="text-decoration: none;">
-                        <button class="button-baru"
-                            style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
-                                   background-color: navy; color: black; font-weight: bold; font-size: 14px; transition: 0.3s;">
-                            <i class="bi bi-pencil-square" style="font-size: 16px;"></i> Daftar
-                        </button>
-                    </a>
-                @else
-                    <button class="button-dikembalikan"
-                        style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
-                               background-color: #dc3545; color: white; font-weight: bold; font-size: 14px;" disabled>
-                        <i class="bi bi-x-octagon" style="font-size: 16px;"></i> Ditutup
-                    </button>
-                @endif
-
-            </div>
+        <div class="promo-card" style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s;">
+    <div class="card-image-container" style="position: relative;">
+        <img src="{{ asset($item->foto) }}" class="card-image" alt="{{ $item->namakegiatan }}"
+             style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="card-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+             background: rgba(0, 0, 0, 0.3);"></div>
+        <div class="card-badge" style="position: absolute; bottom: 10px; right: 10px; background-color: navy;
+             color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px;">
+            {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d M Y') }}
         </div>
+    </div>
+
+    <div class="card-content" style="padding: 15px; text-align: center; background-color: #fff;">
+        <h3 class="card-title"
+            style="font-size: 16px; font-weight: 600; color: #222; margin-bottom: 15px; font-family: 'Poppins', sans-serif;">
+            {{ $item->namakegiatan }}
+        </h3>
+
+        @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
+            <a href="/daftaragenda/{{ $item->id }}" style="text-decoration: none;">
+                <button class="button-baru"
+                    style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+                           width: 100%; padding: 10px; border: none; border-radius: 8px;
+                           background-color: navy; color: white; font-weight: 600;
+                           font-size: 14px; transition: 0.3s;">
+                    <i class="bi bi-pencil-square" style="font-size: 16px;"></i> Daftar
+                </button>
+            </a>
+        @else
+            <button class="button-dikembalikan"
+                style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+                       width: 100%; padding: 10px; border: none; border-radius: 8px;
+                       background-color: #dc3545; color: white; font-weight: 600;
+                       font-size: 14px;" disabled>
+                <i class="bi bi-x-octagon" style="font-size: 16px;"></i> Ditutup
+            </button>
+        @endif
+    </div>
+</div>
     @empty
         <div style="
             width: 100%;
