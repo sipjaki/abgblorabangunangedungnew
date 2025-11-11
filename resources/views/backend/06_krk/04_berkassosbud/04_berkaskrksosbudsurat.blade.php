@@ -449,7 +449,7 @@
         const kepadatanSelect = document.getElementById('kepadatan');
         const luasbangunanInput = document.getElementById('luasbangunan');
         const klbInput = document.getElementById('klb');
-        const kdbInput = document.getElementById('kdb'); // hasil akhir (KLB)
+        const kdbInput = document.getElementById('kdb');
 
         function hitungLuasDanKDB() {
             const kepadatan = kepadatanSelect.value;
@@ -471,20 +471,29 @@
                 jumlahLantai = 8;
             }
 
+            // 🔹 Hitung luas bangunan dan KLB
             const luasbangunan = Math.round(luastanah * persen);
-            const kdb = persen;
+            const hasilKLB = (persen * jumlahLantai).toFixed(2); // contoh: 0.75 * 8 = 6.00
 
-            // Set nilai Luas & KDB label
+            // 🔹 Tampilkan di form (pakai koma biar enak dibaca)
             luasbangunanInput.value = luasbangunan;
             klbInput.value = labelPersen;
-
-            // 🔹 Rumus KLB: persen × jumlah lantai
-            const hasilKLB = (kdb * jumlahLantai).toFixed(2).replace('.', ',');
-            kdbInput.value = hasilKLB;
+            kdbInput.value = hasilKLB.replace('.', ','); // tampil 6,00 di UI
         }
 
+        // Jalankan otomatis saat kepadatan berubah
         kepadatanSelect.addEventListener('change', hitungLuasDanKDB);
+
+        // Jalankan juga saat pertama kali halaman dimuat
         hitungLuasDanKDB();
+
+        // 🔹 Sebelum form disubmit, ubah koma jadi titik agar MySQL bisa baca sebagai float
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function () {
+                kdbInput.value = kdbInput.value.replace(',', '.');
+            });
+        }
     });
 </script>
 
@@ -595,8 +604,8 @@
 <!-- Tombol trigger modal -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
     <button class="button-modern" type="button" onclick="openPengesahanModal()">
-        <i class="fa fa-check-circle" style="margin-right: 5px;"></i>
-        <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
+  <i class="bi bi-check-circle" style="margin-right: 5px;"></i>
+          <span style="font-family: 'Poppins', sans-serif;">Setujui Pengesahan</span>
     </button>
 </div>
 
