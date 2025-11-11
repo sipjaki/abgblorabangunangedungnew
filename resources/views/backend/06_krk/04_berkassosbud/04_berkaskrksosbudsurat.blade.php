@@ -444,57 +444,49 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const luastanah = {{ $data->luastanah ?? 0 }};
-        const kepadatanSelect = document.getElementById('kepadatan');
-        const luasbangunanInput = document.getElementById('luasbangunan');
-        const klbInput = document.getElementById('klb');
-        const kdbInput = document.getElementById('kdb');
+document.addEventListener('DOMContentLoaded', function () {
+    const luastanah = {{ $data->luastanah ?? 0 }};
+    const kepadatanSelect = document.getElementById('kepadatan');
+    const luasbangunanInput = document.getElementById('luasbangunan');
+    const klbInput = document.getElementById('klb');
+    const kdbInput = document.getElementById('kdb'); // hasil akhir (KLB)
 
-        function hitungLuasDanKDB() {
-            const kepadatan = kepadatanSelect.value;
-            let persen = 0;
-            let labelPersen = '';
-            let jumlahLantai = 0;
+    function hitungLuasDanKDB() {
+        const kepadatan = kepadatanSelect.value;
+        let persen = 0;
+        let labelPersen = '';
+        let jumlahLantai = 0;
 
-            if (kepadatan === 'RENDAH') {
-                persen = 0.45;
-                labelPersen = '45%';
-                jumlahLantai = 2;
-            } else if (kepadatan === 'SEDANG') {
-                persen = 0.60;
-                labelPersen = '60%';
-                jumlahLantai = 4;
-            } else if (kepadatan === 'TINGGI') {
-                persen = 0.75;
-                labelPersen = '75%';
-                jumlahLantai = 8;
-            }
-
-            // 🔹 Hitung luas bangunan dan KLB
-            const luasbangunan = Math.round(luastanah * persen);
-            const hasilKLB = (persen * jumlahLantai).toFixed(2); // contoh: 0.75 * 8 = 6.00
-
-            // 🔹 Tampilkan di form (pakai koma biar enak dibaca)
-            luasbangunanInput.value = luasbangunan;
-            klbInput.value = labelPersen;
-            kdbInput.value = hasilKLB.replace('.', ','); // tampil 6,00 di UI
+        if (kepadatan === 'RENDAH') {
+            persen = 0.45;
+            labelPersen = '45%';
+            jumlahLantai = 2;
+        } else if (kepadatan === 'SEDANG') {
+            persen = 0.60;
+            labelPersen = '60%';
+            jumlahLantai = 4;
+        } else if (kepadatan === 'TINGGI') {
+            persen = 0.75;
+            labelPersen = '75%';
+            jumlahLantai = 8;
         }
 
-        // Jalankan otomatis saat kepadatan berubah
-        kepadatanSelect.addEventListener('change', hitungLuasDanKDB);
+        const luasbangunan = Math.round(luastanah * persen);
+        const kdb = persen;
 
-        // Jalankan juga saat pertama kali halaman dimuat
-        hitungLuasDanKDB();
+        luasbangunanInput.value = luasbangunan;
+        klbInput.value = labelPersen;
 
-        // 🔹 Sebelum form disubmit, ubah koma jadi titik agar MySQL bisa baca sebagai float
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function () {
-                kdbInput.value = kdbInput.value.replace(',', '.');
-            });
-        }
-    });
+        // ✅ KLB numerik (pakai titik)
+        const hasilKLB = (kdb * jumlahLantai).toFixed(2);
+
+        // tampilkan ke input
+        kdbInput.value = hasilKLB;
+    }
+
+    kepadatanSelect.addEventListener('change', hitungLuasDanKDB);
+    hitungLuasDanKDB();
+});
 </script>
 
 
