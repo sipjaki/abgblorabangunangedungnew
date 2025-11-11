@@ -306,13 +306,13 @@
                         <td style="text-align: center;">9</td>
                         <td style="text-align: left;">(GSB) Garis Sempadan Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td style="text-align: left;">{{ $item->gsb ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->gsb ?? '-' }} Meter</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">10</td>
                         <td style="text-align: left;">(KLB) Koefisien Lantai Bangunan</td>
                         <td style="text-align: center;">:</td>
-                        <td style="text-align: left;">{{ $item->kdb ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->kdb ?? '-' }} %</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">11</td>
@@ -324,7 +324,7 @@
                         <td style="text-align: center;">12</td>
                         <td style="text-align: left;">(KDH) Koefisien Dasar Hijau (%)</td>
                         <td style="text-align: center;">:</td>
-                        <td style="text-align: left;">{{ $item->kdh ?? '-' }}</td>
+                        <td style="text-align: left;">{{ $item->kdh ?? '-' }}%</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">13</td>
