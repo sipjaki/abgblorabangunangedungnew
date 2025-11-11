@@ -310,24 +310,30 @@
                     </tr>
                     <tr>
                         <td style="text-align: center;">10</td>
-                        <td style="text-align: left;">(KLB) Koefisien Luas Bangunan</td>
+                        <td style="text-align: left;">(KLB) Koefisien Lantai Bangunan</td>
+                        <td style="text-align: center;">:</td>
+                        <td style="text-align: left;">{{ $item->kdb ?? '-' }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">11</td>
+                        <td style="text-align: left;">(KDB) Koefisien Dasar Bangunan</td>
                         <td style="text-align: center;">:</td>
                         <td style="text-align: left;">{{ $item->klb ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">11</td>
+                        <td style="text-align: center;">12</td>
                         <td style="text-align: left;">(KDH) Koefisien Dasar Hijau (%)</td>
                         <td style="text-align: center;">:</td>
                         <td style="text-align: left;">{{ $item->kdh ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">12</td>
+                        <td style="text-align: center;">13</td>
                         <td style="text-align: left;">Jaringan Utilitas Kota</td>
                         <td style="text-align: center;">:</td>
                         <td style="text-align: left;">{{ $item->jaringanutilitas ?? '-' }}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: center;">13</td>
+                        <td style="text-align: center;">14</td>
                         <td style="text-align: left;">Koordinat Lokasi</td>
                         <td style="text-align: center;">:</td>
                         <td style="text-align: left;">{{ $item->koordinatlokasi ?? '-' }}</td>
