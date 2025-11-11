@@ -353,7 +353,7 @@
                     @enderror
                 </div>
 
-<div class="form-group row mb-4">
+{{-- <div class="form-group row mb-4">
     <label for="kdb" class="col-md-4 col-form-label">
         <i class="fas fa-cogs"></i> KLB (Koefisien Lantai Bangunan) new
     </label>
@@ -407,6 +407,68 @@
         }
 
         // Trigger on load dan saat kepadatan berubah
+        kepadatanSelect.addEventListener('change', hitungLuasDanKDB);
+        hitungLuasDanKDB();
+    });
+</script> --}}
+
+<div class="form-group row mb-4">
+    <label for="kdb" class="col-md-4 col-form-label">
+        <i class="fas fa-cogs"></i> KLB (Koefisien Lantai Bangunan)
+    </label>
+    <div class="col-md-8">
+        <div class="input-group">
+            <input type="text" class="form-control" id="kdb" name="kdb" readonly>
+            <div class="input-group-append">
+                <span class="input-group-text">Kali</span>
+            </div>
+        </div>
+    </div>
+    @error('kdb')
+    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const luastanah = {{ $data->luastanah ?? 0 }};
+        const kepadatanSelect = document.getElementById('kepadatan');
+        const luasbangunanInput = document.getElementById('luasbangunan');
+        const klbInput = document.getElementById('klb');
+        const kdbInput = document.getElementById('kdb'); // hasil akhir (KLB)
+
+        function hitungLuasDanKDB() {
+            const kepadatan = kepadatanSelect.value;
+            let persen = 0;
+            let labelPersen = '';
+            let jumlahLantai = 0;
+
+            if (kepadatan === 'RENDAH') {
+                persen = 0.45;
+                labelPersen = '45%';
+                jumlahLantai = 2;
+            } else if (kepadatan === 'SEDANG') {
+                persen = 0.60;
+                labelPersen = '60%';
+                jumlahLantai = 4;
+            } else if (kepadatan === 'TINGGI') {
+                persen = 0.75;
+                labelPersen = '75%';
+                jumlahLantai = 8;
+            }
+
+            const luasbangunan = Math.round(luastanah * persen);
+            const kdb = persen;
+
+            // Set nilai Luas & KDB label
+            luasbangunanInput.value = luasbangunan;
+            klbInput.value = labelPersen;
+
+            // 🔹 Rumus KLB: persen × jumlah lantai
+            const hasilKLB = (kdb * jumlahLantai).toFixed(2).replace('.', ',');
+            kdbInput.value = hasilKLB;
+        }
+
         kepadatanSelect.addEventListener('change', hitungLuasDanKDB);
         hitungLuasDanKDB();
     });
