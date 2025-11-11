@@ -969,7 +969,7 @@ th {
 
 <td style="text-align: center; font-size:16px;">
 <button class="button-baru">
-    <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Tanda Tangan
+    <i class="bi bi-pencil-square" style="margin-right:6px;"></i> Surat Pernyataan KRK
 </button>
 </td>
 
@@ -2358,7 +2358,7 @@ th {
                                     {{-- DOKUMEN TANDA TANGAN --}}
                                     <tr>
                                       <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-pencil-fill"></i> Tanda Tangan
+    <i class="bi bi-pencil-fill"></i> Surat Pernyataan KRK
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
