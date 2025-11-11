@@ -149,6 +149,19 @@
 <div class="container">
     <div class="card">
         <div class="card-body p-4">
+<div class="form-group row mb-4">
+    <label for="luastanah" class="col-md-4 col-form-label">
+        <i class="fas fa-id-card-alt"></i> Luas Tanah
+    </label>
+    <div class="col-md-8">
+        <input type="text" class="form-control" id="luastanah" name="luastanah"
+               value="{{ $data->luastanah }}" readonly>
+    </div>
+    @error('luastanah')
+    <div class="invalid-feedback" style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
             <form action="{{ route('perpengesahankrksosbud', ['id' => $data->id]) }}" method="POST">
                 @csrf
 
@@ -161,7 +174,8 @@
                     </ul>
                 </div>
                 @endif
-        <div class="form-group row mb-4">
+
+                <div class="form-group row mb-4">
                     <label for="nomor_registrasi" class="col-md-4 col-form-label">
                         <i class="fas fa-id-card-alt"></i> Nomor Registrasi KRK
                     </label>
@@ -420,7 +434,7 @@
         <div class="input-group">
             <input type="text" class="form-control" id="kdb" name="kdb" readonly>
             <div class="input-group-append">
-                <span class="input-group-text">Kali</span>
+                <span class="input-group-text">%</span>
             </div>
         </div>
     </div>
