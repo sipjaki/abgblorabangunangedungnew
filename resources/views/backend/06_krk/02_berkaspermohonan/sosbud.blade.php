@@ -202,11 +202,11 @@
     </tr>
                             </thead>
                               <tbody id="tableBody">
-                                @forelse ($data as $item )
+                                @forelse ($data as $item)
                                 <tr class="align-middle">
-                                    <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                    <td style="text-align: left;">{{$item->perorangan}}</td>
-                                    <td style="text-align: left;">{{$item->perusahaan}}</td>
+                                    <td style="text-align: center;">{{ $data->firstItem() + $loop->index }}</td>
+                                        <td style="text-align: left;">{{$item->perorangan}}</td>
+                                        <td style="text-align: left;">{{$item->perusahaan}}</td>
                                     {{-- <td style="text-align: center;">{{$item->koordinatlokasi}}</td>
                                     <td style="text-align: center;">{{$item->nik}}</td> --}}
                                     <td style="text-align: center;">
