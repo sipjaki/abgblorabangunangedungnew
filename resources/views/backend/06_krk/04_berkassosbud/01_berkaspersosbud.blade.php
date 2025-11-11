@@ -2377,7 +2377,7 @@ th {
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalTandatanganLbl{{ $data->id }}">Tanda Tangan</h5>
+                                                                <h5 class="modal-title" id="modalTandatanganLbl{{ $data->id }}">Surat Pernyataan KRK</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
