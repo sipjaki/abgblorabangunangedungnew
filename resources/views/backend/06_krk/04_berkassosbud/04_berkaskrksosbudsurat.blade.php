@@ -434,7 +434,7 @@
         <div class="input-group">
             <input type="text" class="form-control" id="kdb" name="kdb" readonly>
             <div class="input-group-append">
-                <span class="input-group-text">Kali</span>
+                <span class="input-group-text">%</span>
             </div>
         </div>
     </div>
