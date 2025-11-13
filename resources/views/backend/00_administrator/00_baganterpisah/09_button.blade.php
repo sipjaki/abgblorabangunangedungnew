@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<!-- Font Awesome 6.6.0 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-bxVeq5KZhdgNyyCsu7W7C7+6CdpShU2l9yvdDAtbFz/kUzGpHaTk8dJ9hx8W3e8tTQxJz1kWqL6zMZ9Hn6xYog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
 * {

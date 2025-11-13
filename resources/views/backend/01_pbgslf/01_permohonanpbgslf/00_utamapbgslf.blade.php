@@ -563,7 +563,7 @@
                             <span class="info-number">{{$jumlahDataIdSatu}}</span>
                         </p>
                         <p class="info-text">
-                            PBG ({Persetujuan Bangunan Gedung})
+                            PBG (Persetujuan Bangunan Gedung)
                         </p>
                         {{-- <p class="small-text">Informasi Jumlah Permohonan PBG SLF</p> --}}
                     </div>
