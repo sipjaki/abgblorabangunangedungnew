@@ -296,6 +296,7 @@
                             <thead>
                                   <tr>
         <th>No</th>
+        <th><i class="bi bi-person-fill"></i> Id</th>
         <th><i class="bi bi-person-fill"></i> Admin DPUPR</th>
         <th><i class="bi bi-person-fill"></i> Nama Pemohon</th>
 <th><i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan</th>
@@ -314,6 +315,7 @@
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
             {{-- <td>{{ optional($item->user)->name ?? '-' }}</td> --}}
+            <td>{{ $item->id ?? '-' }}</td>
             <td>{{ $item->user->name ?? '-' }}</td>
             <td>{{ $item->namapemohon ?? '-' }}</td>
             <td>{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
