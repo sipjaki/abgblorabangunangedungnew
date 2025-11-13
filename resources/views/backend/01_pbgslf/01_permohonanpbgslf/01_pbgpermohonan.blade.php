@@ -327,7 +327,7 @@
 <td style="text-align: center;">
     <a href="{{ route('bepbgslflihatper.show', $item->id) }}"
         class="button-baru">
-        <i class="bi bi-eye-slash" style="margin-right: 5px;"></i> Sembunyikan Permohonan
+        <i class="bi bi-eye" style="margin-right: 5px;"></i> Lihat Permohonan
     </a>
 </td>
 
