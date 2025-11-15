@@ -753,13 +753,15 @@
         <i class="bi bi-folder-x" style="margin-right: 5px;"></i> Berkas Final Belum Ada
     </button>
 @endif
-
-<a href="{{ route('dokuploadkrksosbud', $item->id) }}"
-    class="button-modern">
-    <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
-
-</a>
-
+@if (empty($item->suratuploadmanual))
+    <a href="{{ route('dokuploadkrksosbud', $item->id) }}" class="button-modern">
+        <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
+    </a>
+@else
+    <a href="{{ route('dokuploadkrksosbud', $item->id) }}" class="button-hijau">
+        <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
+    </a>
+@endif
 </div>
 </td>
 
