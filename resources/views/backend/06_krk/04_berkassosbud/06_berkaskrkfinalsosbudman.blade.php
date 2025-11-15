@@ -270,7 +270,15 @@
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
         {{-- {{ $data->koordinatlokasi ?? '-' }} --}}
-        {{ $data->luastanah ? $data->luastanah . ' M²' : '-' }}
+        @php
+    $luas = $data->luastanah ?? null;
+
+    // Jika angka → format ribuan
+    $luasFormatted = is_numeric($luas) ? number_format($luas, 0, ',', '.') . ' M²' : '-';
+@endphp
+
+{{ $luasFormatted }}
+
 
     </td>
 </tr>
@@ -332,8 +340,32 @@
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">4</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Luas Lantai Maksimal</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
-    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">{{ $item->luaslantaimaksimal ?? 'Belum Dibuatkan' }}</td>
-</tr>
+    <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
+
+    @php
+        // Ambil nilai luas bangunan
+        $luasBangunan = $item->luasbangunan ?? null;
+
+        // Ambil text lantai
+        $lantaiText = $item->luaslantaimaksimal ?? null;
+
+        // Tentukan nilai lantai sesuai aturan
+        $lantai = match($lantaiText) {
+            '2 Lantai' => 2,
+            '4 Lantai' => 4,
+            '2 - 8 Lantai' => 8,
+            default => null
+        };
+
+        // Hitung hasil kali
+        $hasil = ($luasBangunan && $lantai) ? $luasBangunan * $lantai : null;
+    @endphp
+
+    {{-- Tampilkan hasil --}}
+    {{ $hasil ? $hasil . ' M²' : '-' }}
+
+</td>
+
 <tr>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">5</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Fungsi Utama Bangunan</td>

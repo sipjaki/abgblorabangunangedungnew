@@ -270,7 +270,15 @@
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
         {{-- {{ $data->koordinatlokasi ?? '-' }} --}}
-        {{ $data->luastanah ? $data->luastanah . ' M²' : '-' }}
+        {{-- {{ $data->luastanah ? $data->luastanah . ' M²' : '-' }} --}}
+@php
+    $luas = $data->luastanah ?? null;
+
+    // Jika angka → format ribuan
+    $luasFormatted = is_numeric($luas) ? number_format($luas, 0, ',', '.') . ' M²' : '-';
+@endphp
+
+{{ $luasFormatted }}
 
     </td>
 </tr>
