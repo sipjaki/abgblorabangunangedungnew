@@ -812,9 +812,7 @@
                 type="submit"
                 name="verifikasi4"
                 value="sudah"
-                style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';"
+                class="button-hijau"
             >
                 <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Sudah
             </button>
@@ -824,9 +822,7 @@
                 type="submit"
                 name="verifikasi4"
                 value="belum"
-                style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white';"
+                class="button-merah"
             >
                 <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Belum
             </button>
