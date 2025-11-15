@@ -771,7 +771,7 @@
   <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
     @if($item->verifikasi4 == 'sudah')
       <button
-          class="button-lolos"
+          class="button-hijau"
           type="button"
           onclick="openModal4({{ $item->id }})"
           {{-- disabled --}}
@@ -780,7 +780,7 @@
       </button>
     @elseif($item->verifikasi4 == 'belum')
       <button
-          class="button-dikembalikan"
+          class="button-merah"
           type="button"
           onclick="openModal4({{ $item->id }})"
       >
@@ -812,7 +812,9 @@
                 type="submit"
                 name="verifikasi4"
                 value="sudah"
-                class="button-hijau"
+                style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';"
             >
                 <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Sudah
             </button>
@@ -822,7 +824,9 @@
                 type="submit"
                 name="verifikasi4"
                 value="belum"
-                class="button-merah"
+                style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none;"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white';"
             >
                 <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Belum
             </button>
