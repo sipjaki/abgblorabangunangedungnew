@@ -758,7 +758,7 @@
         <i class="bi bi-folder" style="margin-right: 5px;"></i> Upload Berkas Final
     </a>
 @else
-    <a href="{{ route('dokuploadkrksosbud', $item->id) }}" class="button-hijau">
+    <a href="{{ route('dokuploadkrksosbud', $item->id) }}" class="button-berkas">
         <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
     </a>
 @endif
