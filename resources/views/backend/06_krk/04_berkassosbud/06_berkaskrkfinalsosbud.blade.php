@@ -270,7 +270,7 @@
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
         {{-- {{ $data->koordinatlokasi ?? '-' }} --}}
-        {{ $item->luastanah ? $item->luastanah . ' M²' : '-' }}
+        {{ $item->luaslahan ? $item->luaslahan . ' M²' : '-' }}
 
     </td>
 </tr>
