@@ -744,13 +744,13 @@ document.addEventListener('DOMContentLoaded', function () {
         @enderror
     </div>
 
-    <!-- Dok Validasi DPUPR -->
+    <!-- Dok Validasi Tata Ruang -->
     <div class="flex flex-col w-1/3" style="margin-top:-60px;">
         <label for="dokvalidasi" class="font-semibold text-[#030303] flex items-center gap-2 mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-sm">Dok Validasi DPUPR | File  <br> .pdf | Max 15 MB </span>
+            <span class="text-sm">Dok Validasi Tata Ruang | File  <br> .pdf | Max 15 MB </span>
         </label>
         <input id="dokvalidasi" name="dokvalidasi" type="file" accept="application/pdf,image/*"
             value="{{ old('dokvalidasi') }}"

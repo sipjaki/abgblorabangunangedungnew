@@ -858,7 +858,7 @@ th {
 
 <td style="text-align: center; font-size:16px;">
 <button class="button-baru">
-    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi DPUPR
+    <i class="bi bi-check2-square" style="margin-right:6px;"></i> Validasi Tata Ruang
 </button>
 </td>
 
@@ -2021,10 +2021,10 @@ th {
                                     </tr>
 
                                     {{-- -------------------------------- --}}
-                                    {{-- DOKUMEN VALIDASI DPUPR --}}
+                                    {{-- DOKUMEN Validasi Tata Ruang --}}
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;">
-    <i class="bi bi-check2-square"></i> Bukti Validasi DPUPR
+    <i class="bi bi-check2-square"></i> Bukti Validasi Tata Ruang
 </th>
 
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -2043,7 +2043,7 @@ th {
                                                             <div class="modal-header">
                                                                 <img src="/assets/abgblora/logo/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalValdpuprLbl{{ $data->id }}">Bukti Validasi DPUPR .pdf</h5>
+                                                                <h5 class="modal-title" id="modalValdpuprLbl{{ $data->id }}">Bukti Validasi Tata Ruang .pdf</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
