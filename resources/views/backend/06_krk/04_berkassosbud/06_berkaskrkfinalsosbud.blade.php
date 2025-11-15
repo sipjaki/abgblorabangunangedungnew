@@ -341,28 +341,31 @@
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">Luas Lantai Maksimal</td>
     <td style="text-align: center; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">:</td>
     <td style="text-align: left; border: 1px solid #ddd; padding: 6px; font-size: 14px; font-family: 'Times New Roman', Times, serif !important;">
+@php
+    // Ambil nilai luas bangunan
+    $luasBangunan = $item->luasbangunan ?? null;
 
-    @php
-        // Ambil nilai luas bangunan
-        $luasBangunan = $item->luasbangunan ?? null;
+    // Ambil text lantai
+    $lantaiText = $item->luaslantaimaksimal ?? null;
 
-        // Ambil text lantai
-        $lantaiText = $item->luaslantaimaksimal ?? null;
+    // Tentukan nilai lantai sesuai aturan
+    $lantai = match($lantaiText) {
+        '2 Lantai' => 2,
+        '4 Lantai' => 4,
+        '2 - 8 Lantai' => 8,
+        default => null
+    };
 
-        // Tentukan nilai lantai sesuai aturan
-        $lantai = match($lantaiText) {
-            '2 Lantai' => 2,
-            '4 Lantai' => 4,
-            '2 - 8 Lantai' => 8,
-            default => null
-        };
+    // Hitung hasil kali
+    $hasil = (is_numeric($luasBangunan) && $lantai)
+        ? $luasBangunan * $lantai
+        : null;
 
-        // Hitung hasil kali
-        $hasil = ($luasBangunan && $lantai) ? $luasBangunan * $lantai : null;
-    @endphp
+    // Format ribuan
+    $hasilFormatted = $hasil ? number_format($hasil, 0, ',', '.') . ' M²' : '-';
+@endphp
 
-    {{-- Tampilkan hasil --}}
-    {{ $hasil ? $hasil . ' M²' : '-' }}
+{{ $hasilFormatted }}
 
 </td>
 </tr>
