@@ -154,6 +154,10 @@
         </th>
 
         <th>
+          <i class="bi bi-person-fill"></i> Nama Pemohon
+        </th>
+
+        <th>
           <i class="bi bi-file-earmark-text-fill"></i> Jenis Permohonan
         </th>
         <th>
@@ -220,6 +224,7 @@
           {{-- <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->user->name ?? '-' }}</td> --}}
 
 
+     <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->namapemohon ?? '-' }}</td>
      <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
           <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->noregissimbg ?? '-' }}</td>
           <td style="white-space: nowrap; padding: 6px; text-align: center;">
