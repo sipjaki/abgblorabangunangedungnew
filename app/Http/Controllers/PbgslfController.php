@@ -762,7 +762,7 @@ public function bepbgdatatanah($id)
     $start = ($subdatapemilik->currentPage() - 1) * $subdatapemilik->perPage() + 1;
 
     // Kirim data ke view
-    return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.03_datatanahbangunan.01_datatanah', [
+return view('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.03_datatanahbangunan.01_datatanah', [
         'title' => 'Informasi Data Tanah',
         'title_halaman' => 'Data Tanah Bangunan Gedung',
         'user' => $user,

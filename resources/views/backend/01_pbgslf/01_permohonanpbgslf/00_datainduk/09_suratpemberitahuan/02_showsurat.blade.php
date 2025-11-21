@@ -743,7 +743,7 @@ th {
             Gambar Batas tanah yang dikuasai termasuk gambar bangunan gedung yang sudah ada (eksisting) pada area/persil yang akan dibangun
         </td>
         <td style="text-align: center; text-transform:uppercase;">
-            {{ $surat->datatanahpbg->penyelidikan ?? '-' }}
+            {{ $surat->datatanahpbg->layout ?? '-' }}
         </td>
         <td style="text-align: center;">
             {{ $surat->datatanahpbg->catatanberkas2 ?? '-' }}
@@ -754,7 +754,7 @@ th {
             <td rowspan="2"></td>
             <td>Gambar dan informasi tentang hasil penyelidikan tanah untuk bangunan tidak sederhana</td>
             <td style="text-align: center; text-transform:uppercase;">
-                {{ $surat->datatanahpbg->layout ?? '-' }}
+                {{ $surat->datatanahpbg->penyelidikan ?? '-' }}
             </td>
             <td style="text-align: center;">
                 {{ $surat->datatanahpbg->catatanberkas3 ?? '-' }}
