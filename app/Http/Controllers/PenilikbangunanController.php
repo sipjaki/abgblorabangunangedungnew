@@ -182,7 +182,7 @@ public function dataallpenilikbg(Request $request)
 
     // Ambil parameter pencarian dan jumlah data per halaman
     $search = $request->input('search');
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
 
     // Query dasar dengan relasi (user, kecamatanblora, kelurahandesa)
     $query = penilikbangunan::with(['user', 'kecamatanblora', 'kelurahandesa']);

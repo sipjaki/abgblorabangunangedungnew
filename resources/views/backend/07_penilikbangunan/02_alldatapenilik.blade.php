@@ -156,93 +156,93 @@
     <i class="bi bi-person text-danger me-1"></i> Pembuat Data
 </th>
 <th>
-    <i class="bi bi-person-vcard text-primary me-1"></i> Nama Pemohon
+    <i class="bi bi-person-vcard  me-1"></i> Nama Pemohon
 </th>
 <th>
-    <i class="bi bi-person-vcard text-primary me-1"></i> Nomor Telepon
+    <i class="bi bi-person-vcard  me-1"></i> Nomor Telepon
 </th>
 {{-- <th style="background-color: #ADD8E6;">
-    <i class="bi bi-card-list text-primary me-1"></i> NIK
+    <i class="bi bi-card-list  me-1"></i> NIK
 </th> --}}
 <th>
-    <i class="bi bi-building text-primary me-1"></i> Fungsi Bangunan
+    <i class="bi bi-building  me-1"></i> Fungsi Bangunan
 </th>
 <th>
-    <i class="bi bi-building-check text-primary me-1"></i> Subfungsi Bangunan
+    <i class="bi bi-building-check  me-1"></i> Subfungsi Bangunan
 </th>
 <th>
-    <i class="bi bi-geo-alt-fill text-primary me-1"></i> Provinsi
+    <i class="bi bi-geo-alt-fill  me-1"></i> Provinsi
 </th>
 <th>
-    <i class="bi bi-geo text-primary me-1"></i> Kabupaten
+    <i class="bi bi-geo  me-1"></i> Kabupaten
 </th>
 <th>
-    <i class="bi bi-geo-alt text-primary me-1"></i> Kecamatan
+    <i class="bi bi-geo-alt  me-1"></i> Kecamatan
 </th>
 <th>
-    <i class="bi bi-geo-alt text-primary me-1"></i> Kelurahan/Desa
+    <i class="bi bi-geo-alt  me-1"></i> Kelurahan/Desa
 </th>
 <th>
-    <i class="bi bi-signpost text-primary me-1"></i> Alamat Lengkap
+    <i class="bi bi-signpost  me-1"></i> Alamat Lengkap
 </th>
 <th>
-    <i class="bi bi-crosshair text-primary me-1"></i> Koordinat
+    <i class="bi bi-crosshair  me-1"></i> Koordinat
 </th>
 <th>
-    <i class="bi bi-house-door text-primary me-1"></i> Nama Bangunan
+    <i class="bi bi-house-door  me-1"></i> Nama Bangunan
 </th>
 <th>
-    <i class="bi bi-fullscreen text-primary me-1"></i> Luas Bangunan (m²)
+    <i class="bi bi-fullscreen  me-1"></i> Luas Bangunan (m²)
 </th>
 <th>
-    <i class="bi bi-layers text-primary me-1"></i> Jumlah Lantai
+    <i class="bi bi-layers  me-1"></i> Jumlah Lantai
 </th>
 <th>
-    <i class="bi bi-signpost-2 text-primary me-1"></i> GSB (m)
+    <i class="bi bi-signpost-2  me-1"></i> GSB (m)
 </th>
 <th>
-    <i class="bi bi-file-earmark-person text-primary me-1"></i> Perbaikan
+    <i class="bi bi-file-earmark-person  me-1"></i> Perbaikan
 </th>
 <th>
-    <i class="bi bi-file-earmark-person text-primary me-1"></i> Surat Tugas
+    <i class="bi bi-file-earmark-person  me-1"></i> Surat Tugas
 </th>
 <th>
-    <i class="bi bi-camera text-primary me-1"></i> Inspeksi Pra
+    <i class="bi bi-camera  me-1"></i> Inspeksi Pra
 </th>
 <th>
-    <i class="bi bi-file-earmark-person text-primary me-1"></i> Input Reg SIMBG
+    <i class="bi bi-file-earmark-person  me-1"></i> Input Reg SIMBG
 </th>
 <th>
-    <i class="bi bi-hash text-primary me-1"></i> No Reg SIMBG
+    <i class="bi bi-hash  me-1"></i> No Reg SIMBG
 </th>
 <th>
-    <i class="bi bi-calendar-event text-primary me-1"></i> Tanggal SIMBG
+    <i class="bi bi-calendar-event  me-1"></i> Tanggal SIMBG
 </th>
 <th>
-    <i class="bi bi-file-earmark-code text-primary me-1"></i> No KRK
-</th>
-
-<th>
-    <i class="bi bi-calendar-check text-primary me-1"></i> Tanggal KRK
+    <i class="bi bi-file-earmark-code  me-1"></i> No KRK
 </th>
 
 <th>
-    <i class="bi bi-calendar-check text-primary me-1"></i> Upload Berkas PBG
+    <i class="bi bi-calendar-check  me-1"></i> Tanggal KRK
+</th>
+
+<th>
+    <i class="bi bi-calendar-check  me-1"></i> Upload Berkas PBG
 </th>
 
 
 <th>
-    <i class="bi bi-file-earmark-text text-primary me-1"></i> No PBG
+    <i class="bi bi-file-earmark-text  me-1"></i> No PBG
 </th>
 <th>
-    <i class="bi bi-calendar text-primary me-1"></i> Tanggal PBG
+    <i class="bi bi-calendar  me-1"></i> Tanggal PBG
 </th>
 <th>
-    <i class="bi bi-folder2-open text-primary me-1"></i> Berkas PBG
+    <i class="bi bi-folder2-open  me-1"></i> Berkas PBG
 </th>
 
 <th>
-    <i class="bi bi-camera text-primary me-1"></i> Inspeksi Pasca
+    <i class="bi bi-camera  me-1"></i> Inspeksi Pasca
 </th>
 
 
