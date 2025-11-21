@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -211,8 +165,8 @@ th {
 
 {{-- Nama Pemohon --}}
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="namapemohon">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="namapemohon">
             <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Pemohon
         </label>
         <input type="text" class="form-control @error('namapemohon') is-invalid @enderror" id="namapemohon" name="namapemohon" value="{{ old('namapemohon', $data->namapemohon ?? '') }}">
@@ -239,8 +193,8 @@ th {
 
 {{-- Fungsi Bangunan --}}
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="fungsibangunan">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="fungsibangunan">
             <i class="bi bi-building me-2 text-danger"></i> Fungsi Bangunan
         </label>
         <select class="form-select @error('fungsibangunan') is-invalid @enderror" id="fungsibangunan" name="fungsibangunan">
@@ -257,8 +211,8 @@ th {
 
 {{-- Subfungsi Bangunan --}}
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="subfungsibangunan">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="subfungsibangunan">
             <i class="bi bi-diagram-3 me-2 text-warning"></i> Subfungsi Bangunan
         </label>
         <input type="text" class="form-control @error('subfungsibangunan') is-invalid @enderror" id="subfungsibangunan" name="subfungsibangunan" value="{{ old('subfungsibangunan', $data->subfungsibangunan ?? '') }}">
@@ -268,8 +222,8 @@ th {
 
 {{-- Nomor Telepon --}}
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="nomortelepon">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="nomortelepon">
             <i class="bi bi-telephone-fill me-2 text-warning"></i> Nomor Telepon
         </label>
         <input type="text" class="form-control @error('nomortelepon') is-invalid @enderror" id="nomortelepon" name="nomortelepon" value="{{ old('nomortelepon', $data->nomortelepon ?? '') }}">
@@ -295,8 +249,8 @@ th {
       'kabupaten' => 'Kabupaten/Kota'
   ] as $name => $label)
       <div class="col-md-6">
-          <div class="mb-3">
-              <label class="form-label d-flex align-items-center" for="{{ $name }}">
+          <div class="form-modern mb-3">
+              <label class="form-label-modern d-flex align-items-center" for="{{ $name }}">
                 <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> {{ $label }}
               </label>
               <input
@@ -314,8 +268,8 @@ th {
 
   {{-- Kecamatan --}}
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label d-flex align-items-center" for="kecamatanblora_id">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern d-flex align-items-center" for="kecamatanblora_id">
         <i class="bi bi-geo-alt me-2 text-danger" style="font-size: 1.2rem;"></i> Kecamatan
       </label>
       <select class="form-select @error('kecamatanblora_id') is-invalid @enderror" name="kecamatanblora_id" id="kecamatanblora_id" style="min-height: 42px;">
