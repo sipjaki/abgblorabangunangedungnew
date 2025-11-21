@@ -286,8 +286,8 @@
 
   {{-- Kelurahan/Desa --}}
   <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label d-flex align-items-center" for="kelurahandesa_id">
+    <div class="form-modern mb-3">
+      <label class="form-label-modern d-flex align-items-center" for="kelurahandesa_id">
         <i class="bi bi-geo-alt me-2 text-danger" style="font-size: 1.2rem;"></i> Kelurahan/Desa
       </label>
       <select class="form-select @error('kelurahandesa_id') is-invalid @enderror" name="kelurahandesa_id" id="kelurahandesa_id" style="min-height: 42px;">
@@ -300,8 +300,8 @@
 
   {{-- Alamat Lengkap --}}
   <div class="col-12">
-      <div class="mb-3">
-          <label class="form-label d-flex align-items-center" for="alamatlengkap">
+      <div class="form-modern mb-3">
+          <label class="form-label-modern d-flex align-items-center" for="alamatlengkap">
             <i class="bi bi-house-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Alamat Lengkap
           </label>
           <textarea class="form-control @error('alamatlengkap') is-invalid @enderror" id="alamatlengkap" name="alamatlengkap" rows="3">{{ old('alamatlengkap', $data->alamatlengkap ?? '') }}</textarea>
@@ -320,8 +320,8 @@
 
     {{-- Koordinat --}}
     <div class="col-md-12">
-        <div class="mb-3">
-            <label class="form-label d-flex align-items-center" for="koordinat">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern d-flex align-items-center" for="koordinat">
                 <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
             </label>
             <input type="text" class="form-control @error('koordinat') is-invalid @enderror" id="koordinat" name="koordinat" value="{{ old('koordinat', $data->koordinat ?? '') }}">
@@ -407,8 +407,8 @@
 <div class="row">
     {{-- Nama Bangunan --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="namabangunan">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="namabangunan">
                 <i class="bi bi-bank2 me-2 text-primary"></i> Nama Bangunan
             </label>
             <input type="text" class="form-control @error('namabangunan') is-invalid @enderror" id="namabangunan" name="namabangunan" value="{{ old('namabangunan', $data->namabangunan ?? '') }}">
@@ -418,8 +418,8 @@
 
     {{-- Luas Bangunan (m2) --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="luasbangunan">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="luasbangunan">
                 <i class="bi bi-fullscreen me-2 text-success"></i> Luas Bangunan (m<sup>2</sup>)
             </label>
             <input type="text" class="form-control @error('luasbangunan') is-invalid @enderror" id="luasbangunan" name="luasbangunan" value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}">
@@ -429,8 +429,8 @@
 
     {{-- Jumlah Lantai --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="jumlahlantai">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="jumlahlantai">
                 <i class="bi bi-layers-fill me-2 text-warning"></i> Jumlah Lantai
             </label>
             <input type="text" class="form-control @error('jumlahlantai') is-invalid @enderror" id="jumlahlantai" name="jumlahlantai" value="{{ old('jumlahlantai', $data->jumlahlantai ?? '') }}">
@@ -440,8 +440,8 @@
 
     {{-- GSB (meter) --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="gsb">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="gsb">
                 <i class="bi bi-signpost-2-fill me-2 text-danger"></i> GSB (Garis Sempadan Lapangan) [m]
             </label>
             <input type="number" step="0.01" class="form-control @error('gsb') is-invalid @enderror" id="gsb" name="gsb" value="{{ old('gsb', $data->gsb ?? '') }}">
@@ -485,7 +485,7 @@
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-baru" type="button" onclick="openModal()">
+                               <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
