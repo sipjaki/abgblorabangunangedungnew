@@ -3344,7 +3344,8 @@ public function updatedatapemiliknew(Request $request, $id)
         'email' => $validated['email'],
         'noidentitas' => $validated['noidentitas'],
         'pilihancatatan' => $validated['pilihancatatan'],
-        'catatan' => $validated['catatan'] ?? null,
+          'catatan' => null, // FORCE KOSONG
+        // 'catatan' => $validated['catatan'] ?? null,
     ]);
 
 // Kirim pesan sukses
@@ -3424,6 +3425,8 @@ public function updatedatabangunannew(Request $request, $id)
         return redirect()->back()->with('error', 'Data tidak ditemukan!');
     }
 
+    $validated['catatan'] = null;
+
     $data->update($validated);
 
     return redirect()->back()->with('update', 'Data Bangunan berhasil diperbarui!');
@@ -3479,7 +3482,8 @@ public function updatedatatanahnew(Request $request, $id)
         'penyelidikan' => $validated['penyelidikan'] ?? null,
         'berkas4' => $validated['berkas4'] ?? null,
         'pilihancatatan' => $validated['pilihancatatan'] ?? null,
-        'catatan' => $validated['catatan'] ?? null,
+        // 'catatan' => $validated['catatan'] ?? null,
+         'catatan' => null, // FORCE KOSONG
         'catatanberkas1' => $validated['catatanberkas1'] ?? null,
         'catatanberkas2' => $validated['catatanberkas2'] ?? null,
         'catatanberkas3' => $validated['catatanberkas3'] ?? null,
@@ -3538,7 +3542,8 @@ public function updatedataumumnew(Request $request, $id)
         'berkas4' => $validated['berkas4'] ?? null,
         'berkas5' => $validated['berkas5'] ?? null,
         'pilihancatatan' => $validated['pilihancatatan'] ?? null,
-        'catatan' => $validated['catatan'] ?? null,
+        // 'catatan' => $validated['catatan'] ?? null,
+        'catatan' => null, // FORCE KOSONG
         'catatanberkas1' => $validated['catatanberkas1'] ?? null,
         'catatanberkas2' => $validated['catatanberkas2'] ?? null,
         'catatanberkas3' => $validated['catatanberkas3'] ?? null,
@@ -3627,7 +3632,8 @@ public function updatedataarsitekturnew(Request $request, $id)
 
         // 'berkas5' => $validated['berkas5'] ?? null,
         'pilihancatatan' => $validated['pilihancatatan'] ?? null,
-        'catatan' => $validated['catatan'] ?? null,
+        // 'catatan' => $validated['catatan'] ?? null,
+            'catatan' => null, // FORCE KOSONG
     ]);
 
     session()->flash('update', 'Data Dokumen Teknis Arsitektur berhasil diperbarui!');
@@ -3710,7 +3716,8 @@ public function updatedatastrukturnew(Request $request, $id)
 
         // 'berkas5' => $validated['berkas5'] ?? null,
         'pilihancatatan' => $validated['pilihancatatan'] ?? null,
-        'catatan' => $validated['catatan'] ?? null,
+        // 'catatan' => $validated['catatan'] ?? null,
+         'catatan' => null, // FORCE KOSONG
     ]);
 
     session()->flash('update', 'Data Dokumen Teknis Struktur berhasil diperbarui!');
@@ -3792,7 +3799,8 @@ public function updatedatamepnew(Request $request, $id)
         'catatanberkas10' => $validated['catatanberkas10'] ?? null,
         // 'berkas5' => $validated['berkas5'] ?? null,
         'pilihancatatan' => $validated['pilihancatatan'] ?? null,
-        'catatan' => $validated['catatan'] ?? null,
+        // 'catatan' => $validated['catatan'] ?? null,
+         'catatan' => null, // FORCE KOSONG
     ]);
 
     session()->flash('update', 'Data Dokumen Teknis MEP berhasil diperbarui!');
@@ -3868,7 +3876,8 @@ public function updatedataslfnew(Request $request, $id)
         // 'berkas10' => $validated['berkas10'] ?? null,
         // 'berkas5' => $validated['berkas5'] ?? null,
         'pilihancatatan' => $validated['pilihancatatan'] ?? null,
-        'catatan' => $validated['catatan'] ?? null,
+        // 'catatan' => $validated['catatan'] ?? null,
+         'catatan' => null, // FORCE KOSONG
     ]);
 
     session()->flash('update', 'Data Dokumen Teknis SLF berhasil diperbarui!');
