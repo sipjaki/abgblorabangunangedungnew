@@ -3022,6 +3022,7 @@ $nominalPenerimaan = $nominalSudahTerbayar;
         'jumlahsidangbulanan' => $jumlahsidangbulanan,
         'bulanFilter' => $bulanFilter,
         'data' => $data,
+        'totalFiltered' => $totalFiltered,
 
         'nominalRetribusiTotal' => $nominalRetribusiTotal,
 'nominalSudahTerbayar' => $nominalSudahTerbayar,
