@@ -100,7 +100,7 @@ th {
       border: 1px solid black;
     }
     .kop {
-      text-align: center;
+        text-align: center;
       border-bottom: 2px solid black;
       padding-bottom: 10px;
       margin-bottom: 20px;
@@ -117,19 +117,19 @@ th {
       height: 80px;
     }
     .judul-surat {
-      text-align: center;
+        text-align: center;
       font-weight: bold;
       text-decoration: underline;
       margin-bottom: 20px;
       font-size: 14px;
     }
     .isi-surat p {
-      text-align: justify;
+        text-align: justify;
       line-height: 1.6;
       margin-bottom: 10px;
     }
     .tabel-info {
-      width: 100%;
+        width: 100%;
       margin-top: 20px;
       border-collapse: collapse;
       font-size: 12px;
@@ -142,8 +142,9 @@ th {
       margin-top: 40px;
     }
     @media print {
-      body {
-        background: white;
+        body {
+            background: white;
+            border: 1px solid white;
       }
     }
 
@@ -288,19 +289,19 @@ th {
                                                     No
                                                 </th>
                                                 <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
-                                                    URAIAN DOKUMEN TEKNIS
+                                                    Uraian Dokumen Teknis
                                                 </th>
                                                 <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
-                                                    ADA
+                                                    Ada
                                                 </th>
                                                 <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
-                                                    TIDAK ADA
+                                                    Tidak Ada
                                                 </th>
                                                 <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
-                                                    SESUAI
+                                                    Sesuai
                                                 </th>
                                                 <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
-                                                    TIDAK SESUAI
+                                                    Tidak Sesuai
                                                 </th>
                                             </tr>
                                         </thead>
@@ -384,7 +385,7 @@ th {
                                     <p class="force-times">
                                         <strong style="margin-top: 5px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Catatan:</strong>
                                     </p>
-                                    <div class="force-times" style="border: 1px solid #000; min-height: {{ 130 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
+                                    <div class="force-times" style="border: 1px solid #000; min-height: {{ 150 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                     </div>
                                     <br>
 
