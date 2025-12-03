@@ -79,6 +79,7 @@ th {
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('frontend.android.00_fiturmenu.06_alert')
+
 <style>
     @page {
       size: A4;
@@ -144,7 +145,7 @@ th {
     @media print {
         body {
             background: white;
-            border: 1px solid white;
+            border: 1px solid white !important;
       }
     }
 
