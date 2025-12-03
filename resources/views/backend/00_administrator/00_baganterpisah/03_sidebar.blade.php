@@ -21,7 +21,7 @@
     .app-sidebar {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #000228, #01012F, #020243); /* navy gelap sesuai gambar */
+    background: linear-gradient(135deg, #020243, #020243, #020243); /* navy gelap sesuai gambar */
     background-size: 300% 300%;
     animation: sidebarGradientMove 20s ease infinite;
     min-height: 100vh;
