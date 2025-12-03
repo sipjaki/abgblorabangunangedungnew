@@ -804,62 +804,50 @@ button-delete {
 
 
 <style>
-    .zebra-table {
+.zebra-table {
   width: 100%;
   border-collapse: collapse;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
-  color: #1e293b;
+  color: #333;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Header – gradient navy to sky blue */
+/* Header dengan warna sesuai sidebar navy-orange */
 .zebra-table thead {
-  background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+  background: linear-gradient(135deg,
+      #020237,   /* navy gelap */
+      #05054D,   /* navy keunguan */
+      #0A0A70    /* biru navy terang */
+  );
+  color: #fff;
 }
 
-.zebra-table th {
-  color: #ffffff;
+.zebra-table thead th {
+  padding: 12px 16px;
   font-weight: 600;
-  text-transform: uppercase;
-  padding: 18px 14px; /* 👉 sedikit lebih tinggi dari sebelumnya */
-  letter-spacing: 0.7px;
-  text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  font-size: 14px;
+  text-align: left;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Isi tabel */
-.zebra-table td {
-  padding: 14px 14px;
-  border-bottom: 1px solid #e3e8f5;
-  color: #1e293b;
-  font-weight: 400;
-  background-color: #fff;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Hover baris dengan aksen orange */
+.zebra-table tbody tr:hover {
+  background: rgba(245, 166, 35, 0.12); /* orange lembut */
+  transition: 0.3s ease;
 }
 
-/* Zebra effect lembut */
+/* Zebra style */
 .zebra-table tbody tr:nth-child(even) {
-  background-color: #d7e4fa; /* lembut biru muda */
+  background: #f7f9fc;
 }
 
-/* 🌈 Hover 1 baris penuh dari kiri ke kanan */
-.zebra-table tbody tr:hover td {
-  background-color: #d7e4fa; /* biru langit terang */
-  color: #0f172a;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-/* Tanpa garis vertikal */
-.zebra-table th,
-.zebra-table td {
-  border-left: none;
-  border-right: none;
+.zebra-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
 }
 
 /* Corner radius header */
@@ -868,6 +856,21 @@ button-delete {
 }
 .zebra-table th:last-child {
   border-top-right-radius: 12px;
+}
+
+/* Responsive look */
+@media (max-width: 768px) {
+  .zebra-table th,
+  .zebra-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Animasi saat muncul */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive look */
