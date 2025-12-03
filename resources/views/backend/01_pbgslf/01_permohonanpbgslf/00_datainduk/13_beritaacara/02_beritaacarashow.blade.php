@@ -1,46 +1,3 @@
-<style>
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -359,7 +316,7 @@ th {
                                     <p>
                                         <strong style="margin-top: 5px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Catatan:</strong>
                                     </p>
-                                    <div style="border: 1px solid #000; min-height: {{ 140 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
+                                    <div style="border: 1px solid #000; min-height: {{ 100 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                     </div>
                                     <br>
 
