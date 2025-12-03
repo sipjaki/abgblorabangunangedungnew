@@ -1,4 +1,10 @@
 <style>
+.force-times {
+    font-family: 'Times New Roman', Times, serif !important;
+}
+</style>
+
+<style>
     .zebra-table {
     width: 100%;
     border-collapse: collapse;
@@ -160,12 +166,13 @@ th {
                             <div class="halaman">
                                 <div class="kop" style="margin-top: -55px;">
                                     <img src="/assets/abgblora/logo/logokabupatenblora.png" class="logo" style="float: left;">
-                                    <div style="display: inline-block;">
-                                        <h3><strong style="font-size: 18px; margin: 0; font-family: 'Times New Roman', Times, serif;">PEMERINTAH KABUPATEN BLORA</strong></h3>
-                                        <h3><strong style="font-size: 18px; margin: 0; font-family: 'Times New Roman', Times, serif;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</strong></h3>
-                                        <p><strong style="font-size: 18px; margin: 0; font-family: 'Times New Roman', Times, serif;">Jl. Nusantara No. 62 Telp. (0296) 531004</strong></p>
-                                        <h3><strong style="font-size: 18px; margin: 0; font-family: 'Times New Roman', Times, serif;">BLORA 58214</strong></h3>
+                                    <div style="display: inline-block;" class="force-times">
+                                        <h3><strong style="font-size: 18px; margin: 0;">PEMERINTAH KABUPATEN BLORA</strong></h3>
+                                        <h3><strong style="font-size: 18px; margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</strong></h3>
+                                        <p><strong style="font-size: 18px; margin: 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</strong></p>
+                                        <h3><strong style="font-size: 18px; margin: 0;">BLORA 58214</strong></h3>
                                     </div>
+
                                     <div style="clear: both;"></div>
                                 </div>
 
