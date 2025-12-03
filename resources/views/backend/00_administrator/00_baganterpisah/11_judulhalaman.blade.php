@@ -1,4 +1,19 @@
-<div class="button-modern">
+<div style="
+    margin-bottom:10px;
+    font-weight: 900;
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+">
     <span style="position: relative; z-index: 2;">
         📌 Halaman : {{$title}}
     </span>
