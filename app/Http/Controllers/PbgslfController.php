@@ -2911,7 +2911,7 @@ public function bepbgslfskrdcreatenew(Request $request, $id)
     public function bepbgslfretribusi(Request $request)
 {
     $user = Auth::user();
-    $perPage = $request->input('perPage', 20);
+    $perPage = $request->input('perPage', 10);
 
     // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
     $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
@@ -2944,13 +2944,29 @@ $tahunIni = Carbon::now()->year;
 
  $search = $request->search;
 
-    $data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper'])
-        ->where('validasiberkas5', 'sudah')
-        ->whereYear('updated_at', $tahunIni)
-        ->when($search, function ($query, $search) {
-            $query->where('namapemohon', 'like', "%{$search}%");
-        })
-        ->paginate($perPage);
+    // $data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper'])
+    //     ->where('validasiberkas5', 'sudah')
+    //     ->whereYear('updated_at', $tahunIni)
+    //     ->when($search, function ($query, $search) {
+    //         $query->where('namapemohon', 'like', "%{$search}%");
+    //     })
+    //     ->paginate($perPage);
+
+    $query = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper'])
+    ->where('validasiberkas5', 'sudah')
+    ->whereYear('updated_at', $tahunIni)
+    ->when($search, function ($query, $search) {
+        $query->where('namapemohon', 'like', "%{$search}%");
+    });
+
+$bulanFilter = $request->input('bulan');
+
+if ($bulanFilter) {
+    $query->whereMonth('updated_at', $bulanFilter);
+}
+
+$data = $query->paginate($perPage);
+$data->appends($request->all());
 
     // ->get(); // ✅ AMBIL OBJEK
 
