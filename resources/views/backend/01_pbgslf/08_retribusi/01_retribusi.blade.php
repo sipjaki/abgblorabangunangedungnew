@@ -285,8 +285,17 @@
     {{ $item->namapemohon ?? '-' }}
 </td>
 
-     <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
-          <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->noregissimbg ?? '-' }}</td>
+     {{-- <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td> --}}
+     <td style="
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 6px;
+    text-align: center;
+">
+    {{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}
+</td>
+
+     <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->noregissimbg ?? '-' }}</td>
           <td style="white-space: nowrap; padding: 6px; text-align: center;">
             @php $tgl = $item->tanggalpermohonan ?? null; @endphp
             {{ $tgl ? \Carbon\Carbon::parse($tgl)->translatedFormat('d F Y') : '-' }}
