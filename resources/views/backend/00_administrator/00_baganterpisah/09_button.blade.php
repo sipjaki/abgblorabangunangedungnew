@@ -828,7 +828,7 @@ button-delete {
 }
 
 .zebra-table tbody tr:hover td {
-    background-color: rgba(245, 166, 35, 0.25) !important; /* Orange PUPR */
+    background-color: rgba(228, 168, 4, 0.25) !important; /* Orange PUPR */
     color: #000; /* opsional: agar teks tetap jelas */
     transition: 0.25s ease;
 }
