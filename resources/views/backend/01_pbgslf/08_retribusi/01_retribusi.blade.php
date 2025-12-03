@@ -224,7 +224,10 @@
           {{-- <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->user->name ?? '-' }}</td> --}}
 
 
-     <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->namapemohon ?? '-' }}</td>
+     <td style="white-space: normal; word-wrap: break-word; padding: 6px; text-align: center;">
+    {{ $item->namapemohon ?? '-' }}
+</td>
+
      <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->jenispengajuanpbgslfper->jenispengajuan ?? '-' }}</td>
           <td style="white-space: nowrap; padding: 6px; text-align: center;">{{ $item->noregissimbg ?? '-' }}</td>
           <td style="white-space: nowrap; padding: 6px; text-align: center;">
