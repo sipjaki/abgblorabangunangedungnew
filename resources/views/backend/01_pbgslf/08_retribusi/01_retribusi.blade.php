@@ -457,7 +457,7 @@
 </div>
 
 </div>
-@include('backend.00_administrator.00_baganterpisah.07_paginations')
+{{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
 
 
 
