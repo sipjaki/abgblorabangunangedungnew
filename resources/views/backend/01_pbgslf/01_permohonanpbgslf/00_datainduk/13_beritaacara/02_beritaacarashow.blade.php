@@ -196,14 +196,14 @@ th {
 
                                 <div style="font-family: 'Times New Roman', serif; font-size: 12px; line-height: 1.0; margin-bottom:4px;">
                                     <!-- Judul -->
-                                    <div style="text-align: center; font-weight: bold; font-size: 14px; margin-top: -15px; font-family: 'Times New Roman', Times, serif;">
+                                    <div class="force-times" style="text-align: center; font-weight: bold; font-size: 14px; margin-top: -15px; font-family: 'Times New Roman', Times, serif;">
                                         BERITA ACARA HASIL KONSULTASI ke-{{ $surat->konsultasike ?? '-' }}<br>
                                         Nomor: 050/{{ $surat->tpatpt->timpenilai ?? '-' }}-{{ $surat->pbgslfbangunan->noregissimbg ?? 'Data Kosong' }}/{{ $surat->konsultasike ?? '1' }}/2025
                                     </div>
 
                                     <!-- Paragraf Pembuka -->
                                     <br>
-                                    <p style="margin-top: -15px; font-size: 14px; line-height: 1.5;  font-family: 'Times New Roman', Times, serif;">
+                                    <p class="force-times" style="margin-top: -15px; font-size: 14px; line-height: 1.5;  font-family: 'Times New Roman', Times, serif;">
                                         Konsultasi {{ $surat->tpatpt->timpenilai ?? '-' }} Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
                                         {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }}
                                         {{-- <span id="tanggal-terbilang" style="font-size: 14px;font-family: 'Times New Roman', Times, serif;"></span> --}}
@@ -212,7 +212,7 @@ th {
                                     </p>
 
                                     <!-- Tabel Data Informasi Umum -->
-                                    <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top:5px;">
+                                    <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top:5px;" class="force-times">
                                         <tr>
                                             <td style="width: 35%; border: 1px solid #000; padding: 2px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                                 No. Registrasi
@@ -281,7 +281,7 @@ th {
 
                                     <br>
                                     <!-- Tabel Pemeriksaan Teknis -->
-                                    <table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 14px; margin-top: -10px;">
+                                    <table style="width: 100%; border: 1px solid #000; border-collapse: collapse; font-size: 14px; margin-top: -10px;" class="force-times">
                                         <thead>
                                             <tr>
                                                 <th style="border: 1px solid #000; padding: 1.75px; text-align:center; font-size: 14px; font-family: 'Times New Roman', Times, serif;" >
@@ -342,7 +342,7 @@ th {
 
                                     <br>
                                     <!-- Rekomendasi -->
-                                    <div style="width: 100%; max-width: 700px; margin: 0 auto; margin-top: -10px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
+                                    <div class="force-times" style="width: 100%; max-width: 700px; margin: 0 auto; margin-top: -10px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                         <p><strong style="margin-top: 5px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Rekomendasi:</strong></p>
                                         <table style="border-collapse: collapse; width: 100%; font-size: 14px; margin-top: -15px; font-family: 'Times New Roman', Times, serif;">
                                             <tbody>
@@ -381,15 +381,15 @@ th {
                                         $jumlahBaris = count($listPengawas);
                                     @endphp
 
-                                    <p>
+                                    <p class="force-times">
                                         <strong style="margin-top: 5px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">Catatan:</strong>
                                     </p>
-                                    <div style="border: 1px solid #000; min-height: {{ 50 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
+                                    <div class="force-times" style="border: 1px solid #000; min-height: {{ 50 + (12 - $jumlahBaris) * 20 }}px; padding: 8px; margin-top:-15px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
                                     </div>
                                     <br>
 
                                     <!-- Tabel Tanda Tangan -->
-                                    <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: -15px;">
+                                    <table class="force-times" style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: -15px;">
                                         <thead>
                                             <tr>
                                                 <th style="border: 1px solid #000; text-align: center; padding: 3px; width: 125px; font-size: 14px; font-family: 'Times New Roman', Times, serif;">
