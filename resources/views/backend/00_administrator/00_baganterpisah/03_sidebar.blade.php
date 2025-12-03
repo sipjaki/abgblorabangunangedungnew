@@ -1,6 +1,6 @@
 <style>
     /* Background sidebar dengan animasi */
-    .app-sidebar {
+    /* .app-sidebar {
         background:
             linear-gradient(45deg,
                 rgba(0, 0, 128, 0.9) 30%,
@@ -16,7 +16,23 @@
         position: relative;
         overflow: hidden;
         animation: buildingPan 20s linear infinite;
-    }
+    } */
+
+    .app-sidebar {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #000228, #01012F, #020243); /* navy gelap sesuai gambar */
+    background-size: 300% 300%;
+    animation: sidebarGradientMove 20s ease infinite;
+    min-height: 100vh;
+    width: 280px;
+    z-index: 1;
+    box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.6),
+                5px 0 20px rgba(0, 0, 0, 0.45);
+    padding: 25px 0;
+    color: white;
+    transition: left 0.3s ease;
+}
 
     /* Animasi background */
     @keyframes buildingPan {
