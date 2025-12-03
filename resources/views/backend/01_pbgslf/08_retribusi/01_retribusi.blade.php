@@ -98,7 +98,7 @@
 
     <!-- Search Box -->
     <div style="position: relative; display: inline-block;">
-      <input type="search" id="searchInput" placeholder="Cari TPA/TPT ...." onkeyup="searchTable()"
+      <input type="search" id="searchInput" placeholder="Cari Nama Pemohon ...." onkeyup="searchTable()"
         style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
       <i class="bi bi-search"
          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
@@ -130,7 +130,7 @@
 
   <!-- Tombol Download -->
   <a href="javascript:void(0)" class="text-decoration-none" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_nominalretribusi')">
-    <div class="button-baru" style="color: black;">
+    <div class="button-berkas" style="color: black;">
       <i class="bi bi-download me-2"></i> Download Excel
     </div>
   </a>
@@ -249,7 +249,7 @@
 
       </tr>
     </thead>
-    <tbody>
+    <tbody id="tableBody">
 
         @forelse  ($data as $item)
         <tr>
