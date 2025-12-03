@@ -29,8 +29,8 @@
         {{-- Previous --}}
         <li class="custom-page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="display:flex; align-items:center;">
             <a class="custom-page-link" href="{{ $data->onFirstPage() ? '#' : $paginator->previousPageUrl() }}"
-               style="background-color: #141327; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
-                      display:flex; align-items:center; transition: all 0.15s ease; border:1px solid #141327;">
+               style="background-color: #1E3A8A; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
+                      display:flex; align-items:center; transition: all 0.15s ease; border:1px solid #1E3A8A;">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round" style="width:16px; height:16px; margin-right:8px;">
                     <path d="M15 19l-7-7 7-7"/>
