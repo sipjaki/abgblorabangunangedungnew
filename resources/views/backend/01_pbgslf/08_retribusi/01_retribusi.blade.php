@@ -56,6 +56,24 @@
 
 <div style="display: flex; justify-content: flex-start; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 10px;">
 
+
+    <!-- Dropdown Entries -->
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data :</label>
+      <select id="entries" onchange="updateEntries()"
+        style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="75">75</option>
+        <option value="100">100</option>
+        <option value="150">150</option>
+        <option value="200">200</option>
+        <option value="500">500</option>
+        <option value="1000">1000</option>
+        <option value="2000">2000</option>
+      </select>
+    </div>
+
   <!-- Form Filter Bulan -->
   <form method="GET" action="{{ url()->current() }}" style="display: flex; align-items: center; gap: 12px;">
     <label for="filter_bulan" style="font-weight: 600;">Filter Bulan:</label>
@@ -79,23 +97,6 @@
   </form>
 
 
-    <!-- Dropdown Entries -->
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data :</label>
-      <select id="entries" onchange="updateEntries()"
-        style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
-        <option value="25">25</option>
-        <option value="50">50</option>
-        <option value="75">75</option>
-        <option value="100">100</option>
-        <option value="150">150</option>
-        <option value="200">200</option>
-        <option value="500">500</option>
-        <option value="1000">1000</option>
-        <option value="2000">2000</option>
-      </select>
-    </div>
-
     <!-- Search Box -->
     <div style="position: relative; display: inline-block;">
       <input type="search" id="searchInput" placeholder="Cari Nama Pemohon ...." onkeyup="searchTable()"
@@ -104,6 +105,12 @@
          style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
       </i>
     </div>
+
+
+<div class="button-baru">
+    Total Permohonan : {{ $totalFiltered }}
+</div>
+
     <script>
   function updateEntries() {
     let selectedValue = document.getElementById("entries").value;
@@ -126,9 +133,6 @@
       .catch(error => console.error("Error fetching search results:", error));
   }
 </script>
-<div class="button-modern">
-    Total Permohonan : {{ $totalFiltered }}
-</div>
 
 
   <!-- Tombol Download -->
