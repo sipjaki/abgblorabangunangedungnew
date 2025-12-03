@@ -2937,10 +2937,20 @@ public function bepbgslfskrdcreatenew(Request $request, $id)
 $tahunIni = Carbon::now()->year;
 
 
-$data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper']) // pastikan relasi dimuat
-    ->where('validasiberkas5', 'sudah')
-    ->whereYear('updated_at', $tahunIni)
-      ->paginate($perPage);
+// $data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper']) // pastikan relasi dimuat
+//     ->where('validasiberkas5', 'sudah')
+//     ->whereYear('updated_at', $tahunIni)
+//       ->paginate($perPage);
+
+ $search = $request->search;
+
+    $data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper'])
+        ->where('validasiberkas5', 'sudah')
+        ->whereYear('updated_at', $tahunIni)
+        ->when($search, function ($query, $search) {
+            $query->where('namapemohon', 'like', "%{$search}%");
+        })
+        ->paginate($perPage);
 
     // ->get(); // ✅ AMBIL OBJEK
 
