@@ -78,7 +78,9 @@
     </select>
   </form>
 
-   <div style="display: flex; align-items: center; gap: 8px;">
+
+    <!-- Dropdown Entries -->
+    <div style="display: flex; align-items: center; gap: 8px;">
       <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data :</label>
       <select id="entries" onchange="updateEntries()"
         style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
@@ -93,6 +95,38 @@
         <option value="2000">2000</option>
       </select>
     </div>
+
+    <!-- Search Box -->
+    <div style="position: relative; display: inline-block;">
+      <input type="search" id="searchInput" placeholder="Cari TPA/TPT ...." onkeyup="searchTable()"
+        style="border: 1px solid #ccc; padding: 10px 35px 10px 15px; font-size: 14px; border-radius: 10px; width: 300px;" />
+      <i class="bi bi-search"
+         style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;">
+      </i>
+    </div>
+    <script>
+  function updateEntries() {
+    let selectedValue = document.getElementById("entries").value;
+    let url = new URL(window.location.href);
+    url.searchParams.set("perPage", selectedValue);
+    window.location.href = url.toString();
+  }
+
+  function searchTable() {
+    let input = document.getElementById("searchInput").value;
+
+    fetch(`/bepbgslfretribusi?search=${input}`)
+      .then(response => response.text())
+      .then(html => {
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(html, "text/html");
+        let newTableBody = doc.querySelector("#tableBody").innerHTML;
+        document.querySelector("#tableBody").innerHTML = newTableBody;
+      })
+      .catch(error => console.error("Error fetching search results:", error));
+  }
+</script>
+
 
   <!-- Tombol Download -->
   <a href="javascript:void(0)" class="text-decoration-none" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_nominalretribusi')">
