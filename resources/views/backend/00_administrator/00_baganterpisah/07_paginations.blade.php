@@ -4,7 +4,7 @@
     <!-- Info Box -->
     <div class="custom-pagination-info-box"
         style="padding: 12px 20px; border-radius: 8px; margin-bottom: 15px;
-               background-color: #000228; border: 1px solid #000228; box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+               background-color: #020243; border: 1px solid #020243; box-shadow: 0 4px 8px rgba(0,0,0,0.12);
                display: flex; align-items: center; justify-content: center; transition: all 0.15s ease-in-out;">
         <div class="custom-pagination-info" style="color: white; font-weight: 600; text-align: center;">
             📊 Data Ke <span style="color: currentColor;">{{ $data->firstItem() }}</span>
