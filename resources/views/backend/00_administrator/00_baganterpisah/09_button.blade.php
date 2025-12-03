@@ -820,8 +820,9 @@ button-delete {
 /* Header dengan warna sesuai sidebar navy-orange */
 .zebra-table thead {
   background: linear-gradient(135deg,
-      #020243,   /* navy gelap */
-
+      #020237,   /* navy gelap */
+      #05054D,   /* navy keunguan */
+      #0A0A70    /* biru navy terang */
   );
   color: #fff;
 }
