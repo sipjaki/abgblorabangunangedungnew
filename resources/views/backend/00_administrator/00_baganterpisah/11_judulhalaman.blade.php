@@ -4,7 +4,7 @@
     font-size: 16px;
     text-align: center;
     background: linear-gradient(135deg, #ffffff, #ffffff);
-    color: white;
+    color: black;
     padding: 10px 25px;
     border-radius: 10px;
     display: inline-block;
