@@ -78,6 +78,22 @@
     </select>
   </form>
 
+   <div style="display: flex; align-items: center; gap: 8px;">
+      <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data :</label>
+      <select id="entries" onchange="updateEntries()"
+        style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="75">75</option>
+        <option value="100">100</option>
+        <option value="150">150</option>
+        <option value="200">200</option>
+        <option value="500">500</option>
+        <option value="1000">1000</option>
+        <option value="2000">2000</option>
+      </select>
+    </div>
+
   <!-- Tombol Download -->
   <a href="javascript:void(0)" class="text-decoration-none" onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_nominalretribusi')">
     <div class="button-baru" style="color: black;">
