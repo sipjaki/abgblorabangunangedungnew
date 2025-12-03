@@ -16,7 +16,7 @@
       <!--begin::App Main-->
       <main class="app-main"
          style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -92,21 +92,21 @@
 
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-  <div style="flex: 1; background-color: #f8f9fa; border-left: 5px solid #0d6efd; border-radius: 8px; padding: 16px;">
+  <div class="button-modern" style="flex: 1; background-color: #f8f9fa; border-left: 5px solid #0d6efd; border-radius: 8px; padding: 16px;">
       <strong>💰 Nominal Retribusi:</strong><br>
       <span style="font-size: 18px; font-weight: bold;">
           Rp {{ number_format($nominalRetribusiTotal, 0, ',', '.') }}
         </span>
     </div>
 
-  <div style="flex: 1; background-color: #f8f9fa; border-left: 5px solid #198754; border-radius: 8px; padding: 16px;">
+  <div class="button-modern" style="flex: 1; background-color: #f8f9fa; border-left: 5px solid #198754; border-radius: 8px; padding: 16px;">
       <strong>✅ Sudah Terbayar:</strong><br>
       <span style="font-size: 18px; font-weight: bold; color: #198754;">
           Rp {{ number_format($nominalSudahTerbayar, 0, ',', '.') }}
         </span>
     </div>
 
-    <div style="flex: 1; background-color: #f8f9fa; border-left: 5px solid #dc3545; border-radius: 8px; padding: 16px;">
+    <div class="button-modern" style="flex: 1; background-color: #f8f9fa; border-left: 5px solid #dc3545; border-radius: 8px; padding: 16px;">
     <strong>📥 Nominal Penerimaan:</strong><br>
     <span style="font-size: 18px; font-weight: bold; color: #dc3545;">
         Rp {{ number_format($nominalPenerimaan, 0, ',', '.') }}
