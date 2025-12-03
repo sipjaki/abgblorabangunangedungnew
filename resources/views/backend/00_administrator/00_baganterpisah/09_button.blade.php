@@ -827,6 +827,12 @@ button-delete {
   color: #fff;
 }
 
+.zebra-table tbody tr:hover td {
+    background-color: rgba(245, 166, 35, 0.25) !important; /* Orange PUPR */
+    color: #000; /* opsional: agar teks tetap jelas */
+    transition: 0.25s ease;
+}
+
 .zebra-table thead th {
   padding: 12px 16px;
   font-weight: 600;
@@ -885,10 +891,6 @@ button-delete {
 /* Animasi saat muncul */
 .zebra-table {
   animation: fadeIn 0.5s ease-in-out;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 </style>
