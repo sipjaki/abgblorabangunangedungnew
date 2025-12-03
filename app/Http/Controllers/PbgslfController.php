@@ -2942,7 +2942,6 @@ $tahunIni = Carbon::now()->year;
 //     ->whereYear('updated_at', $tahunIni)
 //       ->paginate($perPage);
 
- $search = $request->search;
 
     // $data = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper'])
     //     ->where('validasiberkas5', 'sudah')
@@ -2951,12 +2950,13 @@ $tahunIni = Carbon::now()->year;
     //         $query->where('namapemohon', 'like', "%{$search}%");
     //     })
     //     ->paginate($perPage);
+$search = $request->search;
 
-    $query = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper'])
+$query = pbgslfbangunan::with(['user', 'jenispengajuanpbgslfper'])
     ->where('validasiberkas5', 'sudah')
     ->whereYear('updated_at', $tahunIni)
     ->when($search, function ($query, $search) {
-        $query->where('namapemohon', 'like', "%{$search}%");
+        return $query->where('namapemohon', 'like', "%{$search}%");
     });
 
 $bulanFilter = $request->input('bulan');
