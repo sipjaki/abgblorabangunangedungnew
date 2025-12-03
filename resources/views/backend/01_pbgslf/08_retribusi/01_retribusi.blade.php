@@ -126,6 +126,9 @@
       .catch(error => console.error("Error fetching search results:", error));
   }
 </script>
+<div class="button-modern">
+    Total Permohonan : {{ $totalFiltered }}
+</div>
 
 
   <!-- Tombol Download -->

@@ -2911,7 +2911,7 @@ public function bepbgslfskrdcreatenew(Request $request, $id)
     public function bepbgslfretribusi(Request $request)
 {
     $user = Auth::user();
-    $perPage = $request->input('perPage', 10);
+    $perPage = $request->input('perPage', 100);
 
     // Ambil jumlah data dengan jenispengajuanpbgslfper id = 1
     $jumlahDataIdSatu = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
@@ -2964,6 +2964,9 @@ $bulanFilter = $request->input('bulan');
 if ($bulanFilter) {
     $query->whereMonth('updated_at', $bulanFilter);
 }
+
+// 👉 Hitung total data setelah filter
+$totalFiltered = $query->count();
 
 $data = $query->paginate($perPage);
 $data->appends($request->all());
