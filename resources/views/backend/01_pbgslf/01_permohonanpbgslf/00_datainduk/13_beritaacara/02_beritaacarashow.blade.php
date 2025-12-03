@@ -1,7 +1,25 @@
 <style>
-.force-times {
-    font-family: 'Times New Roman', Times, serif !important;
-}
+    @font-face {
+        font-family: 'TimesNR';
+        src: url('/fonts/TimesNewRoman.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'TimesNR';
+        src: url('/fonts/TimesNewRomanBold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    .force-times {
+        font-family: 'TimesNR' !important;
+    }
+
+    .force-times * {
+        font-family: 'TimesNR' !important;
+    }
 </style>
 
 <style>
