@@ -206,10 +206,10 @@ th {
                                     <!-- Paragraf Pembuka -->
                                     <br>
                                     <p class="force-times" style="margin-top: -15px; font-size: 14px; line-height: 1.5;  font-family: 'Times New Roman', Times, serif;">
-                                        Konsultasi {{ $surat->tpatpt->timpenilai ?? '-' }} Kabupaten Blora yang memeriksa dokumen rencana teknis pada hari
+                                        Konsultasi {{ $surat->tpatpt->timpenilai ?? '-' }} Kabupaten Blora yang memeriksa dokumen rencana teknis pada Hari
                                         {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }} Tanggal {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('d') }}
                                         {{-- <span id="tanggal-terbilang" style="font-size: 14px;font-family: 'Times New Roman', Times, serif;"></span> --}}
-                                        bulan {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('F') }}
+                                        Bulan {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('F') }}
                                         tahun Dua Ribu Dua Puluh Lima untuk :
                                     </p>
 
