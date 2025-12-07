@@ -210,7 +210,7 @@ th {
                                         {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('l') }} Tanggal {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('d') }}
                                         {{-- <span id="tanggal-terbilang" style="font-size: 14px;font-family: 'Times New Roman', Times, serif;"></span> --}}
                                         Bulan {{ \Carbon\Carbon::parse($surat->tanggalkehadiran ?? now())->translatedFormat('F') }}
-                                        tahun Dua Ribu Dua Puluh Lima untuk :
+                                        Tahun Dua Ribu Dua Puluh Lima untuk :
                                     </p>
 
                                     <!-- Tabel Data Informasi Umum -->
