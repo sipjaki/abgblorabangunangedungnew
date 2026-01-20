@@ -144,7 +144,8 @@
                                 </div>
 
                                 <div class="form-modern col-md-6 mb-3">
-                                    <label class="form-label-modern">Paragraf {{ $i + 1 }}</label>
+                                    <label class="form-label-modern">
+                                        <i class="bi bi-file-text text-secondary me-1"></i>Paragraf {{ $i + 1 }}</label>
                                     <div class="p-2 bg-light border rounded min-h">
                                         {!! nl2br(e($item->{'cadangan'.($i+1)} ?? '-')) !!}
                                     </div>
