@@ -57,7 +57,7 @@
             @foreach ($data as $item)
                 <div class="card mb-4 shadow-sm">
 
-                    <div class="form-modern card-header text-white">
+                    <div class="card-header bg-primary text-white">
                         <i class="bi bi-info-circle me-2"></i> {{ $title }}
                     </div>
 
