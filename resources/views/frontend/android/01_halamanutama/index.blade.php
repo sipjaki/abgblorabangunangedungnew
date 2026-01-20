@@ -7,7 +7,7 @@
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
   <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
   <img
-    src="/assets/android/iconmenu/2bangunangedung.png"
+    src="/assets/android/iconmenu/4newbangunan.png"
     class="absolute object-cover w-full h-full rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]"
     alt="backgrounds"
     loading="lazy"
