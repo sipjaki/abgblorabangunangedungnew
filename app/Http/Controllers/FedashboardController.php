@@ -44,7 +44,7 @@ class FedashboardController extends Controller
         // return view('frontend.00_full.index', [
         // return view('frontend.abgblora.00_beranda.01_beranda', [
         return view('frontend.android.01_halamanutama.index', [
-            'title' => 'Aplikasi Bangunan Gedung DPUPR Kab Blora',
+            'title' => 'Data Bangunan Gedung Kabupaten Blora',
             'user' => $user,
             'data' => $databerita,
             'dataartikel' => $dataartikel,
