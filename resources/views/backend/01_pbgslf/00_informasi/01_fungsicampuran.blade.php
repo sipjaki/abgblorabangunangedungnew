@@ -136,7 +136,8 @@
                         @for ($i = 2; $i <= 7; $i += 2)
                             <div class="row">
                                 <div class="form-modern col-md-6 mb-3">
-                                    <label class="form-label-modern">Paragraf {{ $i }}</label>
+                                    <label class="form-label-modern">
+                                        <i class="bi bi-file-text text-secondary me-1"></i>Paragraf {{ $i }}</label>
                                     <div class="p-2 bg-light border rounded min-h">
                                         {!! nl2br(e($item->{'cadangan'.$i} ?? '-')) !!}
                                     </div>
