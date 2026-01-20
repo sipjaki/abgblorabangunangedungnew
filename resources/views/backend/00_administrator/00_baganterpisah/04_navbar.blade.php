@@ -41,16 +41,16 @@
 
 
 <li class="nav-item bungkushilang">
-    <li class="nav-item">
-        <form action="/logout" method="POST" style="display:inline;">
-    @csrf
-    <button type="submit" class="button-merah logout-btn">
-        <i class="bi bi-box-arrow-right"></i>
-        <span>Logout</span>
-    </button>
-</form>
+<li class="nav-item">
+    <form action="/logout" method="POST">
+        @csrf
+        <button type="submit" class="nav-link button-merah">
+            <i class="nav-icon bi bi-box-arrow-right"></i>
+            <p>Logout</p>
+        </button>
+    </form>
+</li>
 
-                    </li>
 </li>
 
 
