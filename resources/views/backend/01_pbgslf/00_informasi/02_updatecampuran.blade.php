@@ -66,7 +66,7 @@
                     display: inline-block;
                     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
                 ">
-                    ⚙️ Setting Database
+                    ⚙️ Setting Databas
                 </div> --}}
 
                      {{-- <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
@@ -85,7 +85,7 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-            @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+            @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
 
             </div>
 
