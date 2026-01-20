@@ -9,7 +9,7 @@
 
 .button-modern {
     background: linear-gradient(145deg, #f9fafc, #eef3fb);
-    color: #1e293b;
+    color: #5998fd;
     border: 1px solid #d0d7e2;
     padding: 10px 20px;
     border-radius: 10px;
