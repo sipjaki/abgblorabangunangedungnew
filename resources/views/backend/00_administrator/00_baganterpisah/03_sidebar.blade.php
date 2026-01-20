@@ -1929,14 +1929,14 @@
             <li class="nav-item">
                 {{-- <li class="nav-item"> --}}
                     <li class="nav-item">
-                        <form action="/logout" method="POST" style="display: inline;">
-                            @csrf  <!-- This is for CSRF protection -->
-                            <button type="submit" class="button-merah" >
-                                <!-- Ikon untuk Logout -->
-                                <i class="nav-icon bi bi-box-arrow-right text-danger"></i> <!-- Ikon untuk Logout -->
-                                <p style="color: red">Logout</p>
-                            </button>
-                        </form>
+                      <form action="/logout" method="POST" style="display:inline;">
+                                @csrf
+                                <button type="submit" class="button-merah">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Logout</span>
+                                </button>
+                            </form>
+
                     </li>
 
                   {{-- </li> --}}
