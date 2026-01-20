@@ -17,7 +17,7 @@
   <!-- Logo Kiri -->
   <a href="signup.html" class="shrink-0">
     <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
-      <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" class="w-[80%]" loading="lazy">
+      <img src="/assets/abgblora/logo/pupr.png" alt="icon" class="w-[80%]" loading="lazy">
     </div>
   </a>
 
@@ -37,11 +37,11 @@
   </div>
 
   <!-- Logo Kanan -->
-  <a href="" class="shrink-0">
+  {{-- <a href="" class="shrink-0">
     <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
       <img src="/assets/abgblora/logo/pupr.png" alt="icon" class="w-[80%]">
     </div>
-  </a>
+  </a> --}}
 </nav>
       </div>
     </header>
