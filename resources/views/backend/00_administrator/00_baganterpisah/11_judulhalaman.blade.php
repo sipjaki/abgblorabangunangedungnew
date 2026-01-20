@@ -32,7 +32,7 @@
                     font-size:13px;
                     color:#4a6f8a; /* biru keabu */
                 ">
-                    Sistem Informasi Pembina Jasa Konstruksi
+                    Aplikasi Pendataan Bangunan Gedung Kabupaten Blora
                 </div>
             </div>
         </div>

@@ -45,7 +45,7 @@
             @foreach ($data as $item)
                 <div class="d-flex justify-content-end mb-2">
                     <a href="{{ route('updatefungsicampuran', ['id' => $item->id]) }}"
-                       class="button-baru text-decoration-none">
+                       class="button-berkas">
                         <i class="bi bi-arrow-repeat"></i> Update
                     </a>
                 </div>
@@ -63,7 +63,7 @@
 
                     {{-- ================= POSTER ================= --}}
                     <div class="p-3">
-                        <label class="form-label fw-bold mb-2 d-block">
+                        <label class="form-label form-label-modern mb-2 d-block">
                             <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
                         </label>
 
@@ -92,8 +92,8 @@
 
                         {{-- ROW 1 --}}
                         <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="fw-bold">
+                            <div class="form-modern col-md-6 mb-3">
+                                <label class="form-label-modern">
                                     <i class="bi bi-card-heading text-primary me-1"></i> Judul
                                 </label>
                                 <div class="p-2 bg-light border rounded min-h">
@@ -101,8 +101,8 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 mb-3">
-                                <label class="fw-bold">
+                            <div class="form-modern col-md-6 mb-3">
+                                <label class="form-label-modern">
                                     <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
                                 </label>
                                 <div class="p-2 bg-light border rounded min-h">
@@ -113,8 +113,8 @@
 
                         {{-- ROW 2 --}}
                         <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="fw-bold">
+                            <div class="form-modern col-md-6 mb-3">
+                                <label class="form-label-modern">
                                     <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
                                 </label>
                                 <div class="p-2 bg-light border rounded min-h">
@@ -122,8 +122,8 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 mb-3">
-                                <label class="fw-bold">
+                            <div class="form-modern col-md-6 mb-3">
+                                <label class="form-label-modern">
                                     <i class="bi bi-file-text text-secondary me-1"></i> Paragraf 1
                                 </label>
                                 <div class="p-2 bg-light border rounded min-h">
@@ -135,15 +135,15 @@
                         {{-- ROW 3 – 5 --}}
                         @for ($i = 2; $i <= 7; $i += 2)
                             <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label class="fw-bold">Paragraf {{ $i }}</label>
+                                <div class="form-modern col-md-6 mb-3">
+                                    <label class="form-label-modern">Paragraf {{ $i }}</label>
                                     <div class="p-2 bg-light border rounded min-h">
                                         {!! nl2br(e($item->{'cadangan'.$i} ?? '-')) !!}
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 mb-3">
-                                    <label class="fw-bold">Paragraf {{ $i + 1 }}</label>
+                                <div class="form-modern col-md-6 mb-3">
+                                    <label class="form-label-modern">Paragraf {{ $i + 1 }}</label>
                                     <div class="p-2 bg-light border rounded min-h">
                                         {!! nl2br(e($item->{'cadangan'.($i+1)} ?? '-')) !!}
                                     </div>

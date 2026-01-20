@@ -27,29 +27,58 @@
         0 2px 4px rgba(0, 0, 0, 0.04),
         inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
-
-/* Card-style form wrapper */
 .form-modern {
     background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 16px 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #0b3c5d; /* navy utama */
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .form-modern:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* Label modern */
+/* Label tetap hitam */
 .form-label-modern {
-    font-weight: 600;
-    color: #1a3c34;
-    margin-bottom: 8px;
+    font-weight: 500;
+    color: #000000; /* tetap hitam */
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     font-size: 15px;
+}
+
+/* Input, textarea, select */
+.form-modern input,
+.form-modern textarea,
+.form-modern select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dceaf7; /* biru lembut */
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Focus / active */
+.form-modern input:focus,
+.form-modern textarea:focus,
+.form-modern select:focus {
+    outline: none;
+    border-color: #0b3c5d; /* navy */
+    box-shadow: 0 0 6px rgba(31, 111, 178, 0.35);
+}
+
+/* Select khusus */
+.form-select-modern:focus {
+    border-color: #082f49;
+    box-shadow: 0 0 0 3px rgba(31, 111, 178, 0.25);
+    outline: none;
 }
 
 /* Select modern style */
