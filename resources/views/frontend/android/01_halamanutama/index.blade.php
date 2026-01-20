@@ -24,13 +24,13 @@
   <!-- Teks Tengah -->
   <div class="flex-1 mx-2 sm:mx-4 min-w-0">
     <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
-      <p class="font-semibold text-sm sm:text-base leading-tight text-[#4041DA] truncate w-full" style="font-size:12px;">
+      {{-- <p class="font-semibold text-sm sm:text-base leading-tight text-[#4041DA] truncate w-full" style="font-size:12px;">
         ABG Blora Bangunan Gedung
-      </p>
+      </p> --}}
       <div class="flex items-center justify-center sm:justify-start">
         <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px;">
           Dinas Pekerjaan Umum Dan
-          <br> Penataan Ruang <br> Kabupaten Blora Jawa Tengah
+          <br> Penataan Ruang
         </p>
       </div>
     </div>
