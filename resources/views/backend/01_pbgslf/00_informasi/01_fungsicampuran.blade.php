@@ -57,13 +57,13 @@
             @foreach ($data as $item)
                 <div class="card mb-4 shadow-sm">
 
-                    <div class="card-header bg-primary text-white">
+                    <div class="form-modern card-header bg-primary text-white">
                         <i class="bi bi-info-circle me-2"></i> {{ $title }}
                     </div>
 
                     {{-- ================= POSTER ================= --}}
-                    <div class="p-3">
-                        <label class="form-label form-label-modern mb-2 d-block">
+                    <div class="form-modern p-3">
+                        <label class="form-label-modern mb-2 d-block">
                             <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
                         </label>
 
