@@ -29,7 +29,7 @@
 }
 .form-modern {
     background: #ffffff;
-    border-left: 6px solid #0b3c5d; /* navy utama */
+    border-left: 6px solid #61b9f3; /* navy utama */
     border-radius: 14px;
     padding: 20px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
