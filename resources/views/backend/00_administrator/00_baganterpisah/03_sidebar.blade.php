@@ -1931,7 +1931,7 @@
                     <li class="nav-item">
                         <form action="/logout" method="POST" style="display: inline;">
                             @csrf  <!-- This is for CSRF protection -->
-                            <button type="submit" class="nav-link" style="background: none; border: none; color: red;">
+                            <button type="submit" class="button-merah" >
                                 <!-- Ikon untuk Logout -->
                                 <i class="nav-icon bi bi-box-arrow-right text-danger"></i> <!-- Ikon untuk Logout -->
                                 <p style="color: red">Logout</p>

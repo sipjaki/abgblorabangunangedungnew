@@ -148,7 +148,7 @@ foreach ($dinasIds as $dinasId) {
 
 
     return view('backend.00_administrator.01_halamanutama.dashboard', array_merge([
-        'title' => 'Admin Dashboard ABG Blora Bangunan Gedung',
+        'title' => 'Dashboard Pendataan Bangunan Gedung Kabupaten Blora',
         'user' => $user,
           'dataChart' => $dataChart, // ✅ Tambahkan ini untuk mengirim data grafik ke view
     ],
