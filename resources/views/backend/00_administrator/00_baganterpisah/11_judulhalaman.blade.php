@@ -5,7 +5,7 @@
 ">
     <div class="card-header p-4" style="
         background: linear-gradient(135deg, #e7f1fb, #d6e8f7); /* biru lembut */
-        border-left: 6px solid #0b3c5d; /* navy */
+        border-left: 6px solid #61b9f3; /* navy */
         border-radius: 14px;
         display: flex;
         align-items: center;
@@ -13,7 +13,7 @@
     ">
         <div class="d-flex align-items-center gap-3 w-100">
             <div>
-                <img src="/assets/icon/masjakibaru.png" alt="icon" style="
+                <img src="/assets/abgblora/logo/logobangunangedungblora.png" alt="icon" style="
                     width:50px;
                     height:50px;
                     object-fit:contain;
