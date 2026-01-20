@@ -10,7 +10,7 @@
                 <span style="color: orange; font-weight: 800;">
                     {{ Auth::user()->statusadmin->status ?? '-' }}
                 </span>
-                ABG Blora Bangunan Gedung Kabupaten Blora
+                Pendataan Bangunan Gedung Kabupaten Blora
             </h6>
         </marquee>
     </div>
