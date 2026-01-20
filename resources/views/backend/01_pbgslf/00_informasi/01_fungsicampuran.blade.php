@@ -1,266 +1,193 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
-<!--begin::Body-->
+<!-- ================= BODY ================= -->
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
-    <div class="app-wrapper">
-        {{-- ---------------------------------------------------------------------- --}}
 
-        @include('backend.00_administrator.00_baganterpisah.04_navbar')
-        @include('backend.00_administrator.00_baganterpisah.09_button')
-        {{-- ---------------------------------------------------------------------- --}}
+<div class="app-wrapper">
 
-   @include('backend.00_administrator.00_baganterpisah.03_sidebar')
-   @include('frontend.android.00_fiturmenu.06_alert')
+    {{-- ================= NAVBAR & BUTTON ================= --}}
+    @include('backend.00_administrator.00_baganterpisah.04_navbar')
+    @include('backend.00_administrator.00_baganterpisah.09_button')
 
-   <!--begin::App Main-->
-   <main class="app-main"
-   style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
+    {{-- ================= SIDEBAR & ALERT ================= --}}
+    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+    @include('frontend.android.00_fiturmenu.06_alert')
+
+    <!-- ================= APP MAIN ================= -->
+    <main class="app-main" style="
+        background: linear-gradient(to bottom, #7de3f1, #ffffff);
+        margin: 0;
+        padding: 0;
+        position: relative;
+        left: 0;
     ">
-     <!--begin::App Content Header-->
-     <div class="app-content-header">
-       <!--begin::Container-->
-       <div class="container-fluid">
-         <!--begin::Row-->
-         <div class="row">
-             @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
 
-             {{-- <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div> --}}
-
+        <!-- ================= HEADER ================= -->
+        <div class="app-content-header">
+            <div class="container-fluid">
+                <div class="row">
+                    @include('backend.00_administrator.00_baganterpisah.10_selamatdatang')
+                </div>
             </div>
-         <!--end::Row-->
-        </div>
-       <!--end::Container-->
-    </div>
-
-    <!-- Menampilkan pesan sukses -->
-    <br>
-     {{-- ======================================================= --}}
-     {{-- ALERT --}}
-
-     {{-- @include('backend.00_administrator.00_baganterpisah.06_alert') --}}
-
-     {{-- ======================================================= --}}
-
-     <div class="container-fluid">
-         <!--begin::Row-->
-
-         @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
-         @include('frontend.abgblora.01_pbgslf.00_informasi.backendfiturmenupbg')
-
-         <br>
-                @foreach ($data as $item)
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-    <a href="{{ route('updatefungsicampuran', ['id' => $item->id]) }}" class="button-baru" style="text-decoration: none;">
-        <i class="bi bi-arrow-repeat"></i> Update
-    </a>
-</div>
-@endforeach
-</div>
-
-<hr>
-<!-- /.card-header -->
-@foreach ($data as $item)
-  <div class="card mb-4 shadow-sm">
-      <div class="card-header bg-primary text-white">
-          <i class="bi bi-info-circle me-2"></i> {{ $title }}
         </div>
 
-        <div class="mb-3">
-            <label class="form-label fw-bold d-block mb-2">
-          <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
-        </label>
-        @php
-          $ext = strtolower(pathinfo($item->berkas ?? '', PATHINFO_EXTENSION));
-          $filePath = $item->berkas && file_exists(public_path('storage/' . $item->berkas))
-                      ? asset('storage/' . $item->berkas)
-                      : ($item->berkas ? asset($item->berkas) : null);
-        @endphp
+        <br>
 
-        @if ($filePath)
-          @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
-            <img src="{{ $filePath }}" alt="Poster Gambar" class="img-fluid rounded border" style="max-height: 300px; object-fit: contain;">
-          @else
-            <iframe src="{{ $filePath }}" width="100%" height="300px" class="border rounded"></iframe>
-          @endif
-        @else
-          <div class="form-control bg-light">Belum diunggah</div>
-        @endif
-      </div>
-<div class="card-body">
-  {{-- Row 1: Judul & Keterangan --}}
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">
-        <i class="bi bi-card-heading text-primary me-1"></i> Judul
-      </label>
-      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
-        {!! nl2br(e($item->judul ?? '-')) !!}
-      </div>
-    </div>
+        <!-- ================= CONTENT ================= -->
+        <div class="container-fluid">
 
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">
-        <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
-      </label>
-      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
-        {!! nl2br(e($item->keterangan ?? '-')) !!}
-      </div>
-    </div>
-  </div>
+            @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
+            @include('frontend.abgblora.01_pbgslf.00_informasi.backendfiturmenupbg')
 
-  {{-- Row 2: Info Lanjut & Paragraf 1 --}}
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">
-        <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
-      </label>
-      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
-        {!! nl2br(e($item->infolanjut ?? '-')) !!}
-      </div>
-    </div>
+            <br>
 
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">
-        <i class="bi bi-file-text text-secondary me-1"></i> Paragraf 1
-      </label>
-      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
-        {!! nl2br(e($item->cadangan1 ?? '-')) !!}
-      </div>
-    </div>
-  </div>
+            {{-- ================= BUTTON UPDATE ================= --}}
+            @foreach ($data as $item)
+                <div class="d-flex justify-content-end mb-2">
+                    <a href="{{ route('updatefungsicampuran', ['id' => $item->id]) }}"
+                       class="button-baru text-decoration-none">
+                        <i class="bi bi-arrow-repeat"></i> Update
+                    </a>
+                </div>
+            @endforeach
 
-  {{-- Row 3: Paragraf 2 & Paragraf 3 --}}
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 2</label>
-      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
-        {!! nl2br(e($item->cadangan2 ?? '-')) !!}
-      </div>
-    </div>
+            <hr>
 
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 3</label>
-      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
-        {!! nl2br(e($item->cadangan3 ?? '-')) !!}
-      </div>
-    </div>
-  </div>
+            {{-- ================= DATA CARD ================= --}}
+            @foreach ($data as $item)
+                <div class="card mb-4 shadow-sm">
 
-  {{-- Row 4: Paragraf 4 & Paragraf 5 --}}
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 4</label>
-      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
-        {!! nl2br(e($item->cadangan4 ?? '-')) !!}
-      </div>
-    </div>
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-info-circle me-2"></i> {{ $title }}
+                    </div>
 
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 5</label>
-      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
-        {!! nl2br(e($item->cadangan5 ?? '-')) !!}
-      </div>
-    </div>
-  </div>
+                    {{-- ================= POSTER ================= --}}
+                    <div class="p-3">
+                        <label class="form-label fw-bold mb-2 d-block">
+                            <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
+                        </label>
 
-  {{-- Row 5: Paragraf 6 & Paragraf 7 --}}
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 6</label>
-      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
-        {!! nl2br(e($item->cadangan6 ?? '-')) !!}
-      </div>
-    </div>
+                        @php
+                            $ext = strtolower(pathinfo($item->berkas ?? '', PATHINFO_EXTENSION));
+                            $filePath = $item->berkas && file_exists(public_path('storage/' . $item->berkas))
+                                ? asset('storage/' . $item->berkas)
+                                : ($item->berkas ? asset($item->berkas) : null);
+                        @endphp
 
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 7</label>
-      <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
-        {!! nl2br(e($item->cadangan7 ?? '-')) !!}
-      </div>
-    </div>
-  </div>
+                        @if ($filePath)
+                            @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
+                                <img src="{{ $filePath }}" class="img-fluid rounded border"
+                                     style="max-height:300px; object-fit:contain;">
+                            @else
+                                <iframe src="{{ $filePath }}" width="100%" height="300"
+                                        class="border rounded"></iframe>
+                            @endif
+                        @else
+                            <div class="form-control bg-light">Belum diunggah</div>
+                        @endif
+                    </div>
+
+                    {{-- ================= BODY ================= --}}
+                    <div class="card-body">
+
+                        {{-- ROW 1 --}}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-bold">
+                                    <i class="bi bi-card-heading text-primary me-1"></i> Judul
+                                </label>
+                                <div class="p-2 bg-light border rounded min-h">
+                                    {!! nl2br(e($item->judul ?? '-')) !!}
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-bold">
+                                    <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
+                                </label>
+                                <div class="p-2 bg-light border rounded min-h">
+                                    {!! nl2br(e($item->keterangan ?? '-')) !!}
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- ROW 2 --}}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-bold">
+                                    <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
+                                </label>
+                                <div class="p-2 bg-light border rounded min-h">
+                                    {!! nl2br(e($item->infolanjut ?? '-')) !!}
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-bold">
+                                    <i class="bi bi-file-text text-secondary me-1"></i> Paragraf 1
+                                </label>
+                                <div class="p-2 bg-light border rounded min-h">
+                                    {!! nl2br(e($item->cadangan1 ?? '-')) !!}
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- ROW 3 – 5 --}}
+                        @for ($i = 2; $i <= 7; $i += 2)
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-bold">Paragraf {{ $i }}</label>
+                                    <div class="p-2 bg-light border rounded min-h">
+                                        {!! nl2br(e($item->{'cadangan'.$i} ?? '-')) !!}
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-bold">Paragraf {{ $i + 1 }}</label>
+                                    <div class="p-2 bg-light border rounded min-h">
+                                        {!! nl2br(e($item->{'cadangan'.($i+1)} ?? '-')) !!}
+                                    </div>
+                                </div>
+                            </div>
+                        @endfor
+
+                    </div>
+                </div>
+            @endforeach
+
+            <br><br>
+
+            {{-- ================= MODAL DELETE ================= --}}
+            <div class="modal fade" id="deleteModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <img src="/assets/icon/pupr.png" width="30" class="me-2">
+                            <h5 class="modal-title">DPUPR Kabupaten Blora</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            Apakah Anda ingin menghapus data:
+                            <strong id="itemName"></strong> ?
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <form id="deleteForm" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger">Hapus</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
 </div>
 
-
-  </div>
-@endforeach
-
-                 <br><br>
-
-
-                 <!-- Modal Konfirmasi Hapus -->
-                 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                     <div class="modal-dialog">
-                         <div class="modal-content">
-                             <div class="modal-header">
-                                 <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
-                                 <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
-                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                             </div>
-                             <div class="modal-body">
-                                 <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
-                             </div>
-                             <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                 <form id="deleteForm" method="POST" action="">
-                                     @csrf
-                                     @method('DELETE')
-                                     <button type="submit" class="btn btn-danger">Hapus</button>
-                                 </form>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-
-                 <script>
-                 function setDeleteUrl(button) {
-                     var id = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/datakecbloradelete/" + encodeURIComponent(id);
-                     document.getElementById('deleteForm').action = deleteUrl;
-                 }
-                 </script>
-
-                 <style>
-                     .table-responsive {
-                         max-width: 100%;
-                         overflow-x: auto;
-                     }
-                 </style>
-
-             </div>
-             <!-- /.card -->
-         </div>
-         <!-- /.col -->
-     </div>
-     <!--end::Row-->
-     </div>
-               <!--end::Container-->
-     <!--end::App Content Header-->
-     <!--begin::App Content-->
-       <!--end::App Content-->
-   </main>
-   <!--end::App Main-->
- </div>
- </div>
-
-
-   @include('backend.00_administrator.00_baganterpisah.02_footer')
-
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-   <script>
-    function exportTableToExcel(tableID, filename = '') {
-        var table = document.getElementById(tableID);
-        var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
-        return XLSX.writeFile(wb, filename + '.xlsx');
-    }
-    </script>
+@include('backend.00_administrator.00_baganterpisah.02_footer')
