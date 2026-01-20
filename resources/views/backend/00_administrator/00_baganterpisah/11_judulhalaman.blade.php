@@ -1,43 +1,70 @@
-<div style="
-    margin-bottom:10px;
+<div class="card mb-4" style="
+    border: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    border-radius: 14px;
+">
+    <div class="card-header p-4" style="
+        background: linear-gradient(135deg, #e7f1fb, #d6e8f7); /* biru lembut */
+        border-left: 6px solid #0b3c5d; /* navy */
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+    ">
+        <div class="d-flex align-items-center gap-3 w-100">
+            <div>
+                <img src="/assets/icon/masjakibaru.png" alt="icon" style="
+                    width:50px;
+                    height:50px;
+                    object-fit:contain;
+                ">
+            </div>
+
+            <div>
+                <div style="
+                    font-size:18px;
+                    font-weight:700;
+                    color:#0b3c5d; /* navy */
+                ">
+                    {{ $title }}
+                </div>
+                <div style="
+                    font-size:13px;
+                    color:#4a6f8a; /* biru keabu */
+                ">
+                    Sistem Informasi Pembina Jasa Konstruksi
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.halaman-title {
+    margin-bottom: 10px;
     font-weight: 900;
     font-size: 16px;
     text-align: center;
-    background: linear-gradient(135deg, #020243, #020243);
     color: white;
     padding: 10px 25px;
     border-radius: 10px;
     display: inline-block;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
-    position: relative;
-    overflow: hidden;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+        135deg,
+        #0b3c5d,
+        #1f6fb2,
+        #0b3c5d
+    ); /* navy gradient */
+    background-size: 300% 300%;
+    animation: gradientShift 6s ease infinite;
     font-family: 'Poppins', sans-serif;
-">
-    <span style="position: relative; z-index: 2;">
-        📌 Halaman : {{$title}}
-    </span>
-
-    <!-- Layer putih bergerak -->
-    <div style="
-        position: absolute;
-        top: 0; left: -50%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
-        animation: shine 2.5s linear infinite;
-        z-index: 1;
-        pointer-events: none;
-    "></div>
-
-    <style>
-        @keyframes shine {
-            0% {
-                left: -50%;
-            }
-            100% {
-                left: 100%;
-            }
-        }
-    </style>
-</div>
+}
+</style>
