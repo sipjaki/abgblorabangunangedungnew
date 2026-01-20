@@ -1,5 +1,3 @@
-<br>
-
 <div id="popular-fundrising" class="mt-20" style="display: flex; flex-direction: column; align-items: center;">
 
     <div class="px-4 flex justify-center items-center" style="display: flex; justify-content: center; align-items: center;" style="margin-top:40px;">
@@ -23,10 +21,8 @@
 
       <a href="#" class="block text-center mt-2">
         <h6 class="font-semibold text-sm text-stone-600">
-          dpuprblora @2025
+          dpuprblora @2026
         </h6>
       </a>
 
 </div>
-
-<br>
