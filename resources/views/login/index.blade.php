@@ -140,7 +140,7 @@
         }
 
         .logo {
-            height: 70px;
+            height: 100px;
             width: auto;
             filter: brightness(0) invert(1);
             transition: transform 0.3s ease;
