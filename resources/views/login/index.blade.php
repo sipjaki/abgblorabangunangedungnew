@@ -142,7 +142,7 @@
         .logo {
             height: 70px;
             width: auto;
-            filter: brightness(0) invert(1);
+            /* filter: brightness(0) invert(1); */
             transition: transform 0.3s ease;
         }
 
@@ -528,7 +528,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <div>
+        <div class="footer-logos">
             <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Kabupaten Blora" class="footer-logo">
             <img src="/assets/abgblora/logo/pupr.png" alt="PUPR" class="footer-logo">
         </div>
