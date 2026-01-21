@@ -448,8 +448,6 @@
             </div>
 
             <h1 class="title">App Bangunan Gedung</h1>
-            {{-- <p class="subtitle">Dinas Pekerjaan Umum Dan Penataan Ruang
-                <br> Kabupaten Blora</p> --}}
         </div>
 
         <!-- Form -->

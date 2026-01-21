@@ -467,15 +467,16 @@
         <!-- Header -->
         <div class="registration-header">
             <div class="logo-container">
-                <img src="/assets/abgblora/logo/logobangunangedung.png" alt="ABG Blora" class="logo">
+                <img src="/assets/abgblora/logo/logobangunangedungblora.png" alt="ABG Blora" class="logo">
             </div>
-            <h1 class="title">ABG Blora Bangunan Gedung</h1>
-            <p class="subtitle">Dinas PUPR Kabupaten Blora</p>
+
+            <h1 class="title">App Bangunan Gedung</h1>
         </div>
+
 
         <!-- Form -->
         <div class="form-container">
-            <h2 class="form-title">Silahkan Daftar ABG Blora</h2>
+            <h2 class="form-title">Silahkan Daftar Akun !</h2>
 
             <form action="/daftar" method="POST" id="registrationForm">
                 @csrf
