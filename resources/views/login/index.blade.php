@@ -446,13 +446,14 @@
             <div class="logo-container">
                 <img src="/assets/abgblora/logo/logobangunangedungblora.png" alt="ABG Blora" class="logo">
             </div>
-            <h1 class="title">ABG Blora Bangunan Gedung</h1>
-            <p class="subtitle">Dinas PUPR Kabupaten Blora</p>
+            <h1 class="title">App Bangunan Gedung</h1>
+            <p class="subtitle">Dinas Pekerjaan Umum Dan Penataan Ruang
+                <br> Kabupaten Blora</p>
         </div>
 
         <!-- Form -->
         <div class="form-container">
-            <h2 class="form-title">Masuk ke Akun Anda</h2>
+            <h2 class="form-title">Silahkan Login !</h2>
 
             <form action="/login" method="POST">
                 @csrf
