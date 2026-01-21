@@ -1,374 +1,795 @@
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-{{-- <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - ABG Blora Bangunan Gedung</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/abgblora/logo/logokabupatenblora.png" type="image/x-icon">
+    <style>
+        :root {
+            --navy-dark: #001233;
+            --navy-primary: #002855;
+            --navy-light: #023E7D;
+            --accent-blue: #0466C8;
+            --accent-light: #5C9DFF;
+            --white: #FFFFFF;
+            --gray-light: #F8F9FA;
+            --gray-border: #E0E0E0;
+            --gray-text: #6C757D;
+            --error-red: #E63946;
+            --success-green: #2A9D8F;
+        }
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    :root {
-      --primary: #000080;
-      --accent: #ffd100;
-    }
+        body {
+            background-color: var(--white);
+            color: var(--navy-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(45deg, #000428, #004e92);
-      overflow-x: hidden;
-    }
+        /* Background dengan pola geometris minimalis */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
 
-    .architect-grid {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 30px 30px;
-      animation: gridMove 40s linear infinite;
-    }
+        .background-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 100%);
+        }
 
-    @keyframes gridMove {
-      0% { background-position: 0 0; }
-      100% { background-position: 1000px 1000px; }
-    }
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+        }
 
-    .login-container {
-      position: relative;
-      max-width: 450px;
-      padding: 3rem;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-      backdrop-filter: blur(10px);
-      transform-style: preserve-3d;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      margin: 5vh auto;
-      border: 1px solid rgba(255,255,255,0.3);
-      z-index: 2;
-    }
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -100px;
+        }
 
-    .login-container::before {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(45deg, var(--primary), var(--accent), var(--primary));
-      z-index: -1;
-      border-radius: 22px;
-      animation: borderGlow 6s ease-in-out infinite;
-      filter: blur(20px);
-      opacity: 0.6;
-      background-size: 400% 400%;
-    }
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -80px;
+            left: -80px;
+        }
 
-    @keyframes borderGlow {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            left: 10%;
+        }
 
-    .logo-section {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-    }
+        .shape-4 {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            right: 15%;
+        }
 
-    .logo-section img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-      transition: transform 0.4s ease;
-    }
+        /* Registration Container */
+        .registration-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 40, 85, 0.1);
+            overflow: hidden;
+            margin: 20px;
+            z-index: 10;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .logo-section img:hover {
-      transform: scale(1.1);
-    }
+        .registration-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 40, 85, 0.15);
+        }
 
-    h1.title {
-      text-align: center;
-      color: var(--primary);
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      font-weight: 600;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+        /* Header dengan gradient navy */
+        .registration-header {
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-dark) 100%);
+            padding: 30px 40px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
 
-    .input-group {
-      position: relative;
-      margin-bottom: 1.5rem;
-    }
+        .registration-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-light) 100%);
+        }
 
-    .input-group input {
-      width: 100%;
-      padding: 1rem;
-      border: 2px solid #e0e0e0;
-      border-radius: 10px;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      background: rgba(255,255,255,0.9);
-    }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-    .input-group input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 15px rgba(0,0,128,0.1);
-      outline: none;
-    }
+        .logo {
+            height: 80px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
 
-    .input-group i {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #666;
-    }
+        .logo:hover {
+            transform: scale(1.05);
+        }
 
-    .btn-login {
-      width: 100%;
-      padding: 1rem;
-      background: linear-gradient(45deg, var(--primary), #1a237e);
-      border: none;
-      border-radius: 10px;
-      color: white;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 1rem;
-    }
+        .title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
 
-    .btn-login:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 5px 15px rgba(241, 239, 239, 0.3);
-    }
+        .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
 
-    .footer-links {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-    }
+        /* Form Container */
+        .form-container {
+            padding: 40px;
+        }
 
-    .footer-links a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy-dark);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
 
-    .footer-links a:hover {
-      color: var(--accent);
-    }
+        .form-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-blue);
+            border-radius: 2px;
+        }
 
-    @media (max-width: 576px) {
-      .login-container {
-        margin: 2rem;
-        padding: 2rem;
-      }
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
 
-      .logo-section img {
-        width: 60px;
-        height: 60px;
-      }
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--navy-dark);
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
 
-      h1.title {
-        font-size: 1.5rem;
-      }
+        .input-with-icon {
+            position: relative;
+        }
 
-      .footer-text {
-        font-size: 0.8rem;
-        padding: 1rem;
-      }
-    }
+        .form-input {
+            width: 100%;
+            padding: 15px 45px 15px 15px;
+            border: 2px solid var(--gray-border);
+            border-radius: 10px;
+            font-size: 1rem;
+            color: var(--navy-dark);
+            background-color: var(--white);
+            transition: all 0.3s ease;
+        }
 
-    .footer-text {
-      text-align: center;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.4);
-      border: 2px solid black;
-      border-radius: 10px;
-      padding: 1rem 1.5rem;
-      margin: 3rem auto 1rem auto;
-      max-width: 25%;
-      font-size: 1rem;
-      font-weight: 500;
-      backdrop-filter: blur(4px);
-      z-index: 2;
-      margin-top: 150px;
-    }
-    .footer-text {
-  max-width: 100%; /* default untuk mobile */
-}
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(4, 102, 200, 0.1);
+        }
 
-@media (min-width: 768px) {
-  .footer-text {
-    max-width: 90%;
-  }
-}
+        .input-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-text);
+            font-size: 1.1rem;
+        }
 
-@media (min-width: 992px) {
-  .footer-text {
-    max-width: 60%;
-  }
-}
+        .password-toggle {
+            cursor: pointer;
+            color: var(--navy-light);
+            transition: color 0.2s ease;
+        }
 
-@media (min-width: 1200px) {
-  .footer-text {
-    max-width: 25%;
-  }
-}
+        .password-toggle:hover {
+            color: var(--accent-blue);
+        }
 
+        .error-message {
+            color: var(--error-red);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-    .skyscraper {
-      position: fixed;
-      bottom: 0;
-      height: 30vh;
-      width: 100%;
-      background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
-      z-index: -1;
-    }
+        .error-message i {
+            font-size: 0.9rem;
+        }
+
+        /* Register Button */
+        .register-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .register-button:hover {
+            background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-primary) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 15px rgba(0, 40, 85, 0.2);
+        }
+
+        .register-button:active {
+            transform: translateY(0);
+        }
+
+        /* Login Link */
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.95rem;
+            color: var(--gray-text);
+        }
+
+        .login-link a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+            margin-left: 5px;
+        }
+
+        .login-link a:hover {
+            color: var(--navy-dark);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding: 25px 30px;
+            background-color: var(--white);
+            color: var(--navy-dark);
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            z-index: 10;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0, 40, 85, 0.08);
+            border: 1px solid rgba(0, 40, 85, 0.1);
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo {
+            height: 40px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        .footer-text strong {
+            color: var(--navy-primary);
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .registration-container {
+                max-width: 90%;
+                margin: 15px;
+            }
+
+            .registration-header {
+                padding: 25px 20px;
+            }
+
+            .logo {
+                height: 65px;
+            }
+
+            .form-container {
+                padding: 30px 25px;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .footer {
+                padding: 20px;
+                font-size: 0.85rem;
+                width: 85%;
+            }
+
+            .footer-logos {
+                gap: 15px;
+            }
+
+            .footer-logo {
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .registration-container {
+                max-width: 95%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .registration-container, .footer {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .shape {
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            animation-delay: 5s;
+        }
+
+        .shape-3 {
+            animation-delay: 10s;
+        }
+
+        .shape-4 {
+            animation-delay: 15s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Password strength indicator */
+        .password-strength {
+            margin-top: 5px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: var(--gray-border);
+            overflow: hidden;
+        }
+
+        .strength-bar {
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+
+        .strength-text {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            color: var(--gray-text);
+        }
     </style>
+</head>
+<body>
+    <!-- Background dengan pola geometris -->
+    <div class="background-container">
+        <div class="background-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-      <title>Silahkan Daftar !</title>
-      <link rel="icon" href="/assets/abgblora/logo/logokabupatenblora.png" type="image/x-icon">
+    <!-- Registration Container -->
+    <div class="registration-container">
+        <!-- Header -->
+        <div class="registration-header">
+            <div class="logo-container">
+                <img src="/assets/abgblora/logo/logobangunangedung.png" alt="ABG Blora" class="logo">
+            </div>
+            <h1 class="title">ABG Blora Bangunan Gedung</h1>
+            <p class="subtitle">Dinas PUPR Kabupaten Blora</p>
+        </div>
 
-    </head>
-    <body>
-      <div class="architect-grid"></div>
-      <div class="skyscraper"></div>
+        <!-- Form -->
+        <div class="form-container">
+            <h2 class="form-title">Silahkan Daftar ABG Blora</h2>
 
-      <div class="login-container">
-        <div class="logo-section">
-            <img src="/assets/abgblora/logo/logobangunangedung.png" alt="Kabupaten Blora" style="width: 80%;" />
-          </div>
-              <div class="container">
-            <h4 class="title" style="font-family: 'Poppins', sans-serif; text-align: center;">Silahkan Daftar ABG Blora</h4>
-          </div>
-
-          <div style="font-family: 'Poppins', sans-serif;">
-            <style>
-                input::placeholder {
-                    font-family: 'Poppins', sans-serif;
-                }
-            </style>
-
-            <form action="/daftar" method="POST">
+            <form action="/daftar" method="POST" id="registrationForm">
                 @csrf
-<!-- Nama Lengkap -->
-<div class="input-group" style="position: relative; margin-bottom: 10px;">
-    <input type="text" name="name" placeholder="Nama Lengkap" value="{{ old('name') }}"
-        style="padding-right: 35px; width: 100%;" />
-    <i class="fas fa-user" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i>
-    @error('name')
-        <div style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
 
-<!-- Username -->
-<div class="input-group" style="position: relative; margin-bottom: 10px;">
-    <input type="text" name="username" placeholder="Username" value="{{ old('username') }}"
-        style="padding-right: 35px; width: 100%;" />
-    <i class="fas fa-id-card" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i>
-    @error('username')
-        <div style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
+                <!-- Nama Lengkap -->
+                <div class="form-group">
+                    <label class="form-label" for="name">Nama Lengkap</label>
+                    <div class="input-with-icon">
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-input"
+                            placeholder="Masukkan nama lengkap Anda"
+                            value="{{ old('name') }}"
+                            required
+                        >
+                        <i class="fas fa-user input-icon"></i>
+                    </div>
+                    @error('name')
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>{{ $message }}</span>
+                        </div>
+                    @enderror
+                </div>
 
-<!-- Nomor HP -->
-<div class="input-group" style="position: relative; margin-bottom: 10px;">
-    <input type="text" name="phone_number" placeholder="Nomor HP" value="{{ old('phone_number') }}"
-        style="padding-right: 35px; width: 100%;" />
-    <i class="fas fa-phone" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i>
-    @error('phone_number')
-        <div style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
+                <!-- Username -->
+                <div class="form-group">
+                    <label class="form-label" for="username">Username</label>
+                    <div class="input-with-icon">
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            class="form-input"
+                            placeholder="Masukkan username"
+                            value="{{ old('username') }}"
+                            required
+                        >
+                        <i class="fas fa-id-card input-icon"></i>
+                    </div>
+                    @error('username')
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>{{ $message }}</span>
+                        </div>
+                    @enderror
+                </div>
 
-<!-- Email -->
-<div class="input-group" style="position: relative; margin-bottom: 10px;">
-    <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"
-        style="padding-right: 35px; width: 100%;" />
-    <i class="fas fa-envelope" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: gray;"></i>
-    @error('email')
-        <div style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
+                <!-- Nomor HP -->
+                <div class="form-group">
+                    <label class="form-label" for="phone_number">Nomor HP</label>
+                    <div class="input-with-icon">
+                        <input
+                            type="text"
+                            id="phone_number"
+                            name="phone_number"
+                            class="form-input"
+                            placeholder="Masukkan nomor handphone"
+                            value="{{ old('phone_number') }}"
+                            required
+                        >
+                        <i class="fas fa-phone input-icon"></i>
+                    </div>
+                    @error('phone_number')
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>{{ $message }}</span>
+                        </div>
+                    @enderror
+                </div>
 
-<!-- Password dengan Show/Hide -->
-<div class="input-group" style="position: relative; margin-bottom: 10px;">
-    <input type="password" name="password" id="password" placeholder="Password"
-        style="padding-right: 35px; width: 100%;" />
-    <i class="fas fa-eye" id="togglePassword"
-        style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: gray;"></i>
-    @error('password')
-        <div style="color: red;">{{ $message }}</div>
-    @enderror
-</div>
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <div class="input-with-icon">
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="Masukkan email Anda"
+                            value="{{ old('email') }}"
+                            required
+                        >
+                        <i class="fas fa-envelope input-icon"></i>
+                    </div>
+                    @error('email')
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>{{ $message }}</span>
+                        </div>
+                    @enderror
+                </div>
 
-<script>
-    // Fungsi show/hide password
-    const togglePassword = document.querySelector("#togglePassword");
-    const passwordInput = document.querySelector("#password");
+                <!-- Password -->
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <div class="input-with-icon">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="form-input"
+                            placeholder="Masukkan password"
+                            required
+                        >
+                        <i class="fas fa-eye password-toggle input-icon" id="togglePassword"></i>
+                    </div>
 
-    togglePassword.addEventListener("click", function() {
-        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-        passwordInput.setAttribute("type", type);
-        this.classList.toggle("fa-eye");
-        this.classList.toggle("fa-eye-slash");
-    });
-</script>
+                    <!-- Password Strength Indicator -->
+                    <div class="password-strength">
+                        <div class="strength-bar" id="passwordStrengthBar"></div>
+                    </div>
+                    <div class="strength-text" id="passwordStrengthText">Kekuatan password: -</div>
 
-                <button type="submit" class="btn-login" style="font-size: 16px;">Daftar</button>
+                    @error('password')
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>{{ $message }}</span>
+                        </div>
+                    @enderror
+                </div>
 
-                <div class="footer-links" style="display: flex; justify-content: flex-end;">
-                    Sudah punya akun? <a href="/login"><strong style="margin-left: 5px;"> Login</strong></a>
+                <!-- Konfirmasi Password -->
+                <div class="form-group">
+                    <label class="form-label" for="password_confirmation">Konfirmasi Password</label>
+                    <div class="input-with-icon">
+                        <input
+                            type="password"
+                            id="password_confirmation"
+                            name="password_confirmation"
+                            class="form-input"
+                            placeholder="Konfirmasi password"
+                            required
+                        >
+                        <i class="fas fa-lock input-icon"></i>
+                    </div>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-button">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Daftar</span>
+                </button>
+
+                <!-- Login Link -->
+                <div class="login-link">
+                    <span>Sudah punya akun?</span>
+                    <a href="/login">Login</a>
                 </div>
             </form>
         </div>
+    </div>
 
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-logos">
+            <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Kabupaten Blora" class="footer-logo">
+            <img src="/assets/abgblora/logo/pupr.png" alt="PUPR" class="footer-logo">
+        </div>
+        <div class="footer-text">
+            <strong>ABG Blora Bangunan Gedung</strong><br>
+            Dinas Pekerjaan Umum dan Penataan Ruang<br>
+            Kabupaten Blora, Provinsi Jawa Tengah
+        </div>
+    </div>
 
-      </div>
+    <script>
+        // Toggle Password Visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const icon = this;
 
-      {{-- <div class="footer-text" style=" font-family: 'Poppins', sans-serif;">
-        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="" width="35px;" style=" font-family: 'Poppins', sans-serif;">
-        <img src="/assets/abgblora/logo/pupr.png" alt="" width="35px;" style=" font-family: 'Poppins', sans-serif;">
+            // Toggle password visibility
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
 
-        <br>ABG Blora Bangunan Gedung <br>
+            // Toggle icon
+            if (type === 'text') {
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
 
-<br>        Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah
-      </div> --}}
-      <br>
+        // Password Strength Checker
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const strengthBar = document.getElementById('passwordStrengthBar');
+            const strengthText = document.getElementById('passwordStrengthText');
 
-      <div class="footer-text" style="font-family: 'Poppins', sans-serif; font-size: 12px; margin-top:-30px;">
-  <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" width="35">
-  <img src="/assets/abgblora/logo/pupr.png" alt="Logo PUPR" width="35">
-  <br>
-  ABG Blora Bangunan Gedung <br>
-  Dinas Pekerjaan Umum Dan Penataan Ruang <br>
-  Kabupaten Blora Provinsi Jawa Tengah
-</div>
+            // Reset strength
+            let strength = 0;
+            let color = '';
+            let text = '';
 
-    </body>
-    </html>
+            // Check password length
+            if (password.length >= 8) strength += 25;
+            if (password.length >= 12) strength += 15;
 
+            // Check for lowercase letters
+            if (/[a-z]/.test(password)) strength += 15;
 
+            // Check for uppercase letters
+            if (/[A-Z]/.test(password)) strength += 15;
 
-{{-- <div class="input-group">
-    <select name="statusadmin_id"
-        style="width: 100%; background-color: #e0edff; color: black; border: none; border-radius: 8px; padding: 12px; margin-bottom: 10px; font-family: 'Poppins', sans-serif;">
-        <option value="">-- Pilih Akun --</option>
-        @foreach ($datastatusadmin as $status)
-            <option value="{{ $status->id }}" {{ old('statusadmin_id') == $status->id ? 'selected' : '' }}>
-                {{ $status->status ?? 'Status ' . $status->id }}
-            </option>
-        @endforeach
-    </select>
-    @error('statusadmin_id')
-        <div style="color: red;">{{ $message }}</div>
-    @enderror
-</div> --}}
+            // Check for numbers
+            if (/[0-9]/.test(password)) strength += 15;
+
+            // Check for special characters
+            if (/[^A-Za-z0-9]/.test(password)) strength += 15;
+
+            // Determine strength level
+            if (strength === 0) {
+                color = '#E63946'; // Red
+                text = 'Sangat Lemah';
+            } else if (strength <= 40) {
+                color = '#F4A261'; // Orange
+                text = 'Lemah';
+            } else if (strength <= 70) {
+                color = '#E9C46A'; // Yellow
+                text = 'Cukup';
+            } else if (strength <= 90) {
+                color = '#2A9D8F'; // Green
+                text = 'Kuat';
+            } else {
+                color = '#264653'; // Dark Blue
+                text = 'Sangat Kuat';
+            }
+
+            // Update UI
+            strengthBar.style.width = strength + '%';
+            strengthBar.style.backgroundColor = color;
+            strengthText.textContent = 'Kekuatan password: ' + text;
+            strengthText.style.color = color;
+        });
+
+        // Form validation on submit
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            const name = document.getElementById('name').value;
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone_number').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('password_confirmation').value;
+
+            // Check required fields
+            if (!name || !username || !phone || !email || !password || !confirmPassword) {
+                e.preventDefault();
+                alert('Harap isi semua field yang diperlukan!');
+                return false;
+            }
+
+            // Email format validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                e.preventDefault();
+                alert('Format email tidak valid!');
+                return false;
+            }
+
+            // Phone number validation (simple)
+            const phonePattern = /^[0-9+\-\s()]{10,15}$/;
+            if (!phonePattern.test(phone)) {
+                e.preventDefault();
+                alert('Format nomor HP tidak valid!');
+                return false;
+            }
+
+            // Password confirmation check
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Password dan konfirmasi password tidak cocok!');
+                return false;
+            }
+
+            // Password length check
+            if (password.length < 8) {
+                e.preventDefault();
+                alert('Password harus minimal 8 karakter!');
+                return false;
+            }
+
+            return true;
+        });
+
+        // Real-time validation for phone number
+        document.getElementById('phone_number').addEventListener('input', function() {
+            // Remove non-numeric characters except + at the beginning
+            this.value = this.value.replace(/[^0-9+]/g, '');
+        });
+
+        // Real-time validation for username (no spaces)
+        document.getElementById('username').addEventListener('input', function() {
+            this.value = this.value.replace(/\s/g, '');
+        });
+
+        // Add focus effect to inputs
+        const inputs = document.querySelectorAll('.form-input');
+        inputs.forEach(input => {
+            // Add focus effect
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+
+            // Remove focus effect
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

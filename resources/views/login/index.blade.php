@@ -492,7 +492,7 @@
 
                 <!-- Password Input -->
                 <div class="form-group">
-                    <label class="form-label" for="password">Kata Sandi</label>
+                    <label class="form-label" for="password">Password</label>
                     <div class="input-with-icon">
                         <input
                             type="password"
