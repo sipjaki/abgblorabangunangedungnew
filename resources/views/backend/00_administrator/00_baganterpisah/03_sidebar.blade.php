@@ -710,7 +710,7 @@
 
 @can('akunskrd')
 
-<li class="nav-header" style="color: white;">MAIN MENU</li>
+<li class="nav-header" style="color: white;">Main Menu</li>
 <li class="nav-item">
     <a href="#" class="nav-link">
         <!-- Ganti SVG dengan Bootstrap Icon -->
@@ -1924,7 +1924,7 @@
 {{-- ====================================================================================================================================== --}}
 
 
-            <li class="nav-header" style="color: white;">LOGOUT</li>
+            <li class="nav-header" style="color: white;">Logout</li>
 
             <li class="nav-item">
                 {{-- <li class="nav-item"> --}}
