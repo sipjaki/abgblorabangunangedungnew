@@ -446,10 +446,7 @@
             <div class="logo-container">
                 <img src="/assets/abgblora/logo/logobangunangedungblora.png" alt="ABG Blora" class="logo">
             </div>
-        <div class="footer-logos">
-            <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Kabupaten Blora" class="footer-logo">
-            <img src="/assets/abgblora/logo/pupr.png" alt="PUPR" class="footer-logo">
-        </div>
+
             <h1 class="title">App Bangunan Gedung</h1>
             <p class="subtitle">Dinas Pekerjaan Umum Dan Penataan Ruang
                 <br> Kabupaten Blora</p>
@@ -532,7 +529,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <div class="footer-logos">
+        <div class="logo-container">
             <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Kabupaten Blora" class="footer-logo">
             <img src="/assets/abgblora/logo/pupr.png" alt="PUPR" class="footer-logo">
         </div>
