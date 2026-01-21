@@ -89,11 +89,6 @@
                     @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
             </div>
 
-
-
-
-
-
 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
 
   <!-- Bagian kiri: dropdown entries + search -->
@@ -132,13 +127,13 @@
   <!-- Bagian kanan: tombol download dan create -->
   <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_konsultanperencanateknis')"
-      class="button-modern"
+      class="button-berkas"
       >
       <i class="bi bi-download"></i> Download Excel
     </button>
 
     <a href="/bebantekkonsultannew" style="text-decoration: none;">
-      <button class="button-modern"
+      <button class="button-baru"
         >
         <i class="bi bi-plus-circle"></i> Tambah Konsultan
       </button>
@@ -183,8 +178,7 @@ function searchTable() {
                  <div class="card-body p-0">
            <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                         <table id="tabelSuratbantuanteknis"
-                        class="zebra-table" style="border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden;"
-                        >
+                        class="zebra-table">
                             <thead>
                                   <tr>
      <th>No</th>

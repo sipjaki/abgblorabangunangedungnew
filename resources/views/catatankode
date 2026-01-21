@@ -1504,3 +1504,7 @@ public function bujkkontraktorshow($namalengkap)
 </div>
 
                     <div class="form-modern card-header text-white">
+
+
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
