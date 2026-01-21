@@ -201,7 +201,8 @@ function searchTable() {
                                 @forelse ($data as $item )
 
                                 <tr class="align-middle">
-                                 <td>{{ $loop->iteration }}</td>
+                                 <td>{{ $data->firstItem() + $loop->index }}</td>
+
 {{-- <td>{{ $item->bujkkonsultansub->namasub ?? '-' }}</td> --}}
 {{-- <td>{{ $item->asosiasimasjaki->namaasosiasi ?? '-' }}</td> --}}
 <td style="text-align: left;">{{ $item->namalengkap ?? '-' }}</td>
