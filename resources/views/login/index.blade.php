@@ -332,8 +332,8 @@
         .footer-logo {
             height: 40px;
             width: auto;
-            filter: brightness(0) invert(1);
-            transition: transform 0.3s ease;
+            /* filter: brightness(0) invert(1); */
+            /* transition: transform 0.3s ease; */
         }
 
         .footer-logo:hover {
