@@ -528,7 +528,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <div class="footer-logos">
+        <div>
             <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Kabupaten Blora" class="footer-logo">
             <img src="/assets/abgblora/logo/pupr.png" alt="PUPR" class="footer-logo">
         </div>
