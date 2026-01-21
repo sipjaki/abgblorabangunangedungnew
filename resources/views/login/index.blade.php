@@ -139,17 +139,6 @@
             margin-bottom: 20px;
         }
 
-        .logo {
-            height: 70px;
-            width: auto;
-            /* filter: brightness(0) invert(1); */
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
         .title {
             font-size: 1.8rem;
             font-weight: 600;
