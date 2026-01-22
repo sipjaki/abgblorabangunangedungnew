@@ -85,6 +85,7 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
+                 <div>
             @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
             </div>
 
