@@ -1333,10 +1333,10 @@ Route::put('/validasipbgslf7/{id}', [PbgslfController::class, 'validasipbgslf7']
 Route::put('/validasipbgslf8/{id}', [PbgslfController::class, 'validasipbgslf8'])->name('validasipbgslf8.update');
 
 // PENGATURAN MENU TPA TPT
-Route::get('/betpatpt', [PbgslfController::class, 'betpatpt'])->middleware('auth')->name('betpatpt');
-Route::delete('/betpatptdelete/{id}', [PbgslfController::class, 'betpatptdelete'])->middleware('auth')->name('betpatptdelete');
-Route::get('/betpatptcreate', [PbgslfController::class, 'betpatptcreate'])->middleware('auth')->name('betpatptcreate');
-Route::post('/betpatptcreatenew', [PbgslfController::class, 'betpatptcreatenew'])->middleware('auth')->name('create.betpatptcreatenew');
+Route::get('/betpatpt', [PbgslfController::class, 'betpatpt'])->middleware('auth', 'can:admindpupr')->name('betpatpt');
+Route::delete('/betpatptdelete/{id}', [PbgslfController::class, 'betpatptdelete'])->middleware('auth', 'can:admindpupr')->name('betpatptdelete');
+Route::get('/betpatptcreate', [PbgslfController::class, 'betpatptcreate'])->middleware('auth', 'can:admindpupr')->name('betpatptcreate');
+Route::post('/betpatptcreatenew', [PbgslfController::class, 'betpatptcreatenew'])->middleware('auth', 'can:admindpupr')->name('create.betpatptcreatenew');
 
 // PENGATURAN MENU TEMPAT KONSULTASI
 Route::get('/betempatkonsultasi', [PbgslfController::class, 'betempatkonsultasi'])->middleware('auth')->name('betempatkonsultasi');
