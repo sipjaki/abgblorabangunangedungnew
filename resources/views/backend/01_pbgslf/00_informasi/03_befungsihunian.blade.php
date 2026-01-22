@@ -95,7 +95,7 @@
                 @foreach ($data as $item)
 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
     <a href="{{ route('bepbghunianupdate', ['id' => $item->id]) }}"
-    class="button-baru" style="text-decoration: none;">
+    class="button-berkas" style="text-decoration: none;">
         <i class="bi bi-arrow-repeat"></i> Update
     </a>
 </div>
