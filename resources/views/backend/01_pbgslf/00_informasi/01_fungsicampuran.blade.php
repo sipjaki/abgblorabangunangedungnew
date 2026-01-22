@@ -35,9 +35,12 @@
 
         <!-- ================= CONTENT ================= -->
         <div class="container-fluid">
+                 <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
 
-            @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
-            @include('frontend.abgblora.01_pbgslf.00_informasi.backendfiturmenupbg')
+            </div>
+
+@include('frontend.abgblora.01_pbgslf.00_informasi.backendfiturmenupbg')
 
             <br>
 

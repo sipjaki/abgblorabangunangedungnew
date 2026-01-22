@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -58,23 +12,6 @@ th {
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('frontend.android.00_fiturmenu.06_alert')
-
-<style>
-
-    body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
-            min-height: 100vh;
-            color: #ffffff;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        </style>
 
    <!--begin::App Main-->
    <main class="app-main"
@@ -146,20 +83,8 @@ th {
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
                 </div>
 
 @include('frontend.abgblora.01_pbgslf.00_informasi.backendfiturmenupbg')
@@ -170,7 +95,7 @@ th {
     <a href="{{ route('bepbgsosialbudayaupdate', ['id' => $item->id]) }}"
     {{-- href="{{ route('bepbgkeagamaanupdate', ['id' => $item->id]) }}" --}}
     {{-- href="{{ route('bepbghunianupdate', ['id' => $item->id]) }}" --}}
-    class="button-baru" style="text-decoration: none;">
+    class="button-berkas" style="text-decoration: none;">
         <i class="bi bi-arrow-repeat"></i> Update
     </a>
 </div>
@@ -185,8 +110,8 @@ th {
       <i class="bi bi-info-circle me-2"></i> {{ $title }}
     </div>
 
-      <div class="mb-3">
-        <label class="form-label fw-bold d-block mb-2">
+      <div class="form-modern mb-3">
+        <label class="form-label-modern fw-bold d-block mb-2">
           <i class="bi bi-file-earmark-image text-success me-1"></i> Poster Gambar
         </label>
         @php
@@ -209,8 +134,8 @@ th {
 <div class="card-body">
   {{-- Row 1: Judul & Keterangan --}}
   <div class="row">
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">
+    <div class="col-md-6 form-modern mb-3">
+      <label class="form-label-modern fw-bold">
         <i class="bi bi-card-heading text-primary me-1"></i> Judul
       </label>
       <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
@@ -218,8 +143,8 @@ th {
       </div>
     </div>
 
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">
+    <div class="col-md-6 form-modern mb-3">
+      <label class="form-label-modern fw-bold">
         <i class="bi bi-info-circle text-warning me-1"></i> Keterangan
       </label>
       <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
@@ -230,8 +155,8 @@ th {
 
   {{-- Row 2: Info Lanjut & Paragraf 1 --}}
   <div class="row">
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">
+    <div class="col-md-6 form-modern mb-3">
+      <label class="form-label-modern fw-bold">
         <i class="bi bi-link-45deg text-info me-1"></i> Info Lanjut
       </label>
       <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
@@ -239,8 +164,8 @@ th {
       </div>
     </div>
 
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">
+    <div class="col-md-6 form-modern mb-3">
+      <label class="form-label-modern fw-bold">
         <i class="bi bi-file-text text-secondary me-1"></i> Paragraf 1
       </label>
       <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
@@ -251,15 +176,15 @@ th {
 
   {{-- Row 3: Paragraf 2 & Paragraf 3 --}}
   <div class="row">
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 2</label>
+    <div class="col-md-6 form-modern mb-3">
+      <label class="form-label-modern fw-bold">Paragraf 2</label>
       <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
         {!! nl2br(e($item->cadangan2 ?? '-')) !!}
       </div>
     </div>
 
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 3</label>
+    <div class="col-md-6 form-modern mb-3">
+      <label class="form-label-modern fw-bold">Paragraf 3</label>
       <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
         {!! nl2br(e($item->cadangan3 ?? '-')) !!}
       </div>
@@ -268,15 +193,15 @@ th {
 
   {{-- Row 4: Paragraf 4 & Paragraf 5 --}}
   <div class="row">
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 4</label>
+    <div class="col-md-6 form-modern mb-3">
+      <label class="form-label-modern fw-bold">Paragraf 4</label>
       <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
         {!! nl2br(e($item->cadangan4 ?? '-')) !!}
       </div>
     </div>
 
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 5</label>
+    <div class="col-md-6 form-modern mb-3">
+      <label class="form-label-modern fw-bold">Paragraf 5</label>
       <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
         {!! nl2br(e($item->cadangan5 ?? '-')) !!}
       </div>
@@ -285,15 +210,15 @@ th {
 
   {{-- Row 5: Paragraf 6 & Paragraf 7 --}}
   <div class="row">
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 6</label>
+    <div class="col-md-6 form-modern mb-3">
+      <label class="form-label-modern fw-bold">Paragraf 6</label>
       <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
         {!! nl2br(e($item->cadangan6 ?? '-')) !!}
       </div>
     </div>
 
-    <div class="col-md-6 mb-3">
-      <label class="form-label fw-bold">Paragraf 7</label>
+    <div class="col-md-6 form-modern mb-3">
+      <label class="form-label-modern fw-bold">Paragraf 7</label>
       <div class="p-2 bg-light border rounded" style="min-height:120px; white-space:pre-line;">
         {!! nl2br(e($item->cadangan7 ?? '-')) !!}
       </div>
