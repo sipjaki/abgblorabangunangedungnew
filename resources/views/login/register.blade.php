@@ -470,7 +470,7 @@
                 <img src="/assets/abgblora/logo/logobangunangedungblora.png" alt="ABG Blora" class="logo">
             </div>
 
-            <h1 class="title">App Bangunan Gedung</h1>
+            <h1 class="title">Bangunan Gedung</h1>
         </div>
 
 
