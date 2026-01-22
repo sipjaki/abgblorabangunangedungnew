@@ -345,7 +345,6 @@
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan Data</span>
                                     </button>
-
                                 </div>
                                 <!-- Modal Konfirmasi -->
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

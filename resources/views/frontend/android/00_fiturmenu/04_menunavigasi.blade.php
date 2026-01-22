@@ -3,11 +3,11 @@
 <div id="Feature" class="px-[18px] relative z-10">
     <div
   class="relative p-[18px_16px] rounded-xl overflow-hidden grid grid-cols-4 gap-[27px]"
-  style="
+  {{-- style="
     background:
       linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
       url('/assets/android/iconmenu/bgbaru.png') no-repeat center/cover;
-  "
+  " --}}
 >
         <a href="/respbgslfindex">
         <div class="flex flex-col items-center gap-2">
