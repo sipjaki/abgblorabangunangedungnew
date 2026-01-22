@@ -5120,9 +5120,35 @@ public function betpatptupdatenew($id)
     $data = Tpatpt::findOrFail($id);
 
     return view('backend.01_pbgslf.04_tpatpt.03_updatedata', [
-        'title' => 'Update Petugas TPA/TPT',
+        'title' => 'Update Perbaikan Data Petugas TPA/TPT',
         'user'  => $user,
         'data'  => $data, // data lama dikirim ke view
     ]);
+}
+
+public function betpatptupdatestore(Request $request, $id)
+{
+    $user = Auth::user();
+
+    // Ambil data lama
+    $data = Tpatpt::findOrFail($id);
+
+    // Validasi
+    $request->validate([
+        'namalengkap' => 'required|string|max:255',
+        'nosk'        => 'nullable|string|max:255',
+        'status'      => 'required|in:TPA,TPT',
+    ]);
+
+    // Update data
+    $data->update([
+        'namalengkap' => $request->namalengkap,
+        'nosk'        => $request->nosk,
+        'status'      => $request->status,
+    ]);
+
+    return redirect()
+        ->back()
+        ->with('update', 'Data Petugas TPA/TPT berhasil diperbarui');
 }
 }

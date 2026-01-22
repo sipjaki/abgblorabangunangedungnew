@@ -1,49 +1,3 @@
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -63,7 +17,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -153,7 +107,7 @@ th {
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-newvalidasi" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -194,71 +148,93 @@ th {
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('create.betpatptcreatenew') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('update.betpatptupdatenew') }}" method="POST" enctype="multipart/form-data">
           @csrf
                             <!-- begin::Body -->
+<div class="row">
+    {{-- ================= NAMA LENGKAP ================= --}}
+    <div class="col-md-6">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="namalengkap">
+                <i class="bi bi-person-vcard me-2 text-primary"></i>
+                Nama Lengkap
+            </label>
+
+            <input
+                type="text"
+                id="namalengkap"
+                name="namalengkap"
+                class="form-control @error('namalengkap') is-invalid @enderror"
+                placeholder="Masukkan nama lengkap"
+                value="{{ old('namalengkap', isset($data) ? $data->namalengkap : '') }}"
+            >
+
+            @error('namalengkap')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    {{-- ================= NO SK ================= --}}
+    <div class="col-md-6">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="nosk">
+                <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                No SK
+            </label>
+
+            <input
+                type="text"
+                id="nosk"
+                name="nosk"
+                class="form-control @error('nosk') is-invalid @enderror"
+                placeholder="Masukkan nomor SK"
+                value="{{ old('nosk', isset($data) ? $data->nosk : '') }}"
+            >
+
+            @error('nosk')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    {{-- ================= STATUS ================= --}}
+    <div class="col-md-6">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="status">
+                <i class="bi bi-info-circle me-2 text-primary"></i>
+                Status Petugas
+            </label>
+
+            <select
+                id="status"
+                name="status"
+                class="form-select @error('status') is-invalid @enderror"
+            >
+                <option value="">-- Pilih Status --</option>
+
+                <option value="TPA"
+                    {{ old('status', isset($data) ? $data->status : '') == 'TPA' ? 'selected' : '' }}>
+                    TPA
+                </option>
+
+                <option value="TPT"
+                    {{ old('status', isset($data) ? $data->status : '') == 'TPT' ? 'selected' : '' }}>
+                    TPT
+                </option>
+            </select>
+
+            @error('status')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+</div>
                             <div class="card-body">
                                 <div class="row">
 
 
 
-<div class="row">
-  <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="namalengkap">
-        <i class="bi bi-person-vcard" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
-      </label>
-      <input
-        type="text"
-        id="namalengkap"
-        name="namalengkap"
-        value="{{ old('namalengkap', $data->namalengkap ?? '') }}"
-        class="form-control @error('namalengkap') is-invalid @enderror"
-        placeholder="Masukkan nama lengkap"
-      />
-      @error('namalengkap')
-      <div class="invalid-feedback">{{ $message }}</div>
-      @enderror
-    </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="mb-3">
-      <label class="form-label" for="nosk">
-        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> No SK
-      </label>
-      <input
-        type="text"
-        id="nosk"
-        name="nosk"
-        value="{{ old('nosk', $data->nosk ?? '') }}"
-        class="form-control @error('nosk') is-invalid @enderror"
-        placeholder="Masukkan nomor SK"
-      />
-      @error('nosk')
-      <div class="invalid-feedback">{{ $message }}</div>
-      @enderror
-    </div>
-  </div>
-<div class="col-md-6">
-  <div class="mb-3">
-    <label class="form-label" for="status">
-      <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Status Petugas
-    </label>
-    <select
-      id="status"
-      name="status"
-      class="form-select @error('status') is-invalid @enderror"
-    >
-      <option value="" disabled {{ old('status', $data->status ?? '') == '' ? 'selected' : '' }}>Pilih status</option>
-      <option value="TPA" {{ old('status', $data->status ?? '') == 'TPA' ? 'selected' : '' }}>TPA</option>
-      <option value="TPT" {{ old('status', $data->status ?? '') == 'TPT' ? 'selected' : '' }}>TPT</option>
-    </select>
-    @error('status')
-      <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-  </div>
-</div>
 
                   <!-- End row -->
                             </div>
@@ -266,7 +242,7 @@ th {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-baru" type="button" onclick="openModal()">
+                               <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
