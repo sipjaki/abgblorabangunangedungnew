@@ -5117,7 +5117,7 @@ public function betpatptupdatenew($id)
     }
 
     // Ambil data berdasarkan ID
-    $data = Tpatpt::findOrFail($id);
+    $data = pengawasatpt::findOrFail($id);
 
     return view('backend.01_pbgslf.04_tpatpt.03_updatedata', [
         'title' => 'Update Perbaikan Data Petugas TPA/TPT',
