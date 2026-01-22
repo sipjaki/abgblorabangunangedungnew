@@ -148,8 +148,14 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('update.betpatptupdatenew') }}" method="POST" enctype="multipart/form-data">
-          @csrf
+
+          <form
+  action="{{ route('update.betpatptupdatenew', $data->id) }}"
+  method="POST"
+  enctype="multipart/form-data"
+>
+
+                    @csrf
                             <!-- begin::Body -->
 <div class="row">
     {{-- ================= NAMA LENGKAP ================= --}}
