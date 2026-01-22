@@ -1338,6 +1338,8 @@ Route::delete('/betpatptdelete/{id}', [PbgslfController::class, 'betpatptdelete'
 Route::get('/betpatptcreate', [PbgslfController::class, 'betpatptcreate'])->middleware('auth', 'can:admindpupr')->name('betpatptcreate');
 Route::post('/betpatptcreatenew', [PbgslfController::class, 'betpatptcreatenew'])->middleware('auth', 'can:admindpupr')->name('create.betpatptcreatenew');
 
+Route::get('/betpatptupdatenew/{id}', [PbgslfController::class, 'betpatptupdatenew'])->middleware('auth', 'can:admindpupr')->name('update.betpatptnew');
+
 // PENGATURAN MENU TEMPAT KONSULTASI
 Route::get('/betempatkonsultasi', [PbgslfController::class, 'betempatkonsultasi'])->middleware('auth')->name('betempatkonsultasi');
 Route::delete('/betempatkonsultasidelete/{id}', [PbgslfController::class, 'betempatkonsultasidelete'])->middleware('auth')->name('betempatkonsultasidelete');

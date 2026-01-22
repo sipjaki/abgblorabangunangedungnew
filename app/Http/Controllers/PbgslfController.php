@@ -5107,4 +5107,22 @@ public function befungsibangunancreatenew(Request $request)
 
     return redirect()->route('befungsibangunan'); // Pastikan route ini benar
 }
+
+public function betpatptupdatenew($id)
+{
+    $user = Auth::user();
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    // Ambil data berdasarkan ID
+    $data = Tpatpt::findOrFail($id);
+
+    return view('backend.01_pbgslf.04_tpatpt.03_updatedata', [
+        'title' => 'Update Petugas TPA/TPT',
+        'user'  => $user,
+        'data'  => $data, // data lama dikirim ke view
+    ]);
+}
 }
