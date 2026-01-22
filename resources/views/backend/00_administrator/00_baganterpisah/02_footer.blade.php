@@ -7,7 +7,7 @@
     <strong>
         <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="" width="20">
         <img src="/assets/icon/pupr.png" alt="" width="20">
-        &copy; Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah &nbsp; 2025 | Built and Deployed By
+        &copy; Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah &nbsp; 2026 | Built and Deployed By
         <a href="https://wa.me/6281321455855" target="_blank" class="text-decoration-none" style="color: green"> CV. Angkasa Raya Teknik</a>.
     </strong>
     <!--end::Copyright-->
