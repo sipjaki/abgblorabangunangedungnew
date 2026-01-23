@@ -5,93 +5,47 @@
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
-
-    <header class="relative h-[380px] bg-gradient-to-b from-[#0F172A] via-[#1E293B] to-[#334155] rounded-b-3xl overflow-hidden">
-
-  <!-- Background dengan pola gelap -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-10 left-10 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-    <div class="absolute bottom-10 right-10 w-64 h-64 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-  </div>
-
-  <!-- Konten utama -->
-  <div class="relative z-10 pt-6 px-4">
-
-    <!-- Navbar Floating -->
-    <div class="mb-4">
-      {{-- <nav class="bg-white/95 backdrop-blur-lg rounded-2xl p-3 shadow-xl">
-        <div class="flex items-center justify-between">
-
-          <!-- Logo Kiri -->
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-md">
-            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-              <img src="/assets/abgblora/logo/pupr.png" alt="PUPR" class="w-8 h-8">
-            </div>
-          </div>
-
-          <!-- Teks Tengah -->
-          <div class="flex-1 mx-3 text-center">
-            <p class="text-[10px] font-medium text-gray-600">Dinas Pekerjaan Umum Dan</p>
-            <p class="text-xs font-bold text-gray-800">Penataan Ruang</p>
-            <p class="text-[9px] text-gray-500 mt-0.5">ABG Blora Bangunan Gedung</p>
-          </div>
-
-          <!-- Logo Kanan -->
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-md">
-            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-              <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Blora" class="w-8 h-8">
-            </div>
-          </div>
-
-        </div>
-      </nav> --}}
+  <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
+  <img
+    src="/assets/android/iconmenu/4newbangunan.png"
+    class="absolute object-cover w-full h-full rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]"
+    alt="backgrounds"
+    loading="lazy"
+  >
+      <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
+<nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
+  <!-- Logo Kiri -->
+  <a href="signup.html" class="shrink-0">
+    <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
+      <img src="/assets/abgblora/logo/pupr.png" alt="icon" class="w-[80%]" loading="lazy">
     </div>
+  </a>
 
-    <!-- Portfolio Card -->
-    <div class="bg-white rounded-2xl shadow-xl p-5">
-
-      <!-- Bagian Atas: Total Aset -->
-      <div class="flex justify-between items-start mb-4">
-        <div>
-          <p class="text-sm text-gray-500 font-medium">ABG Blora Bangunan Gedung</p>
-        </div>
-
-        <!-- Hadiah Box -->
-        <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-3 py-2 rounded-xl shadow-md">
-          {{-- <p class="text-[10px] font-semibold uppercase tracking-wider">HADIAH</p> --}}
-          {{-- <p class="text-lg font-bold">RP100JT</p> --}}
-        </div>
+  <!-- Teks Tengah -->
+  <div class="flex-1 mx-2 sm:mx-4 min-w-0">
+    <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
+      {{-- <p class="font-semibold text-sm sm:text-base leading-tight text-[#4041DA] truncate w-full" style="font-size:12px;">
+        ABG Blora Bangunan Gedung
+      </p> --}}
+      <div class="flex items-center justify-center sm:justify-start">
+        <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px;">
+          Dinas Pekerjaan Umum Dan
+          <br> Penataan Ruang
+        </p>
       </div>
-
-      <!-- Separator -->
-      {{-- <div class="border-t border-gray-100 pt-4">
-        <p class="text-sm text-gray-500 font-medium">Total Cash</p>
-        <div class="flex justify-between items-center mt-2">
-          <p class="text-xl font-bold text-gray-800">Rp9.993</p>
-          <button class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2.5 rounded-xl text-sm font-semibold shadow-md hover:shadow-lg active:scale-95 transition-all duration-200">
-            Deposit
-          </button>
-        </div>
-        <p class="text-xs text-gray-400 mt-2">Buying Power: <span class="text-blue-600 font-medium">Rp1.782.630</span></p>
-      </div> --}}
-
     </div>
-
   </div>
 
-</header>
+  <!-- Logo Kanan -->
+  <a href="" class="shrink-0">
+    <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
+      <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" class="w-[80%]">
+    </div>
+  </a>
+</nav>
+      </div>
+    </header>
 
-<style>
-  /* Smooth transitions */
-  button {
-    transition: all 0.2s ease;
-  }
-
-  /* Card shadow effect */
-  .shadow-xl {
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  }
-</style>
     @include('frontend.android.00_fiturmenu.04_menunavigasi')
 <div id="Promo" class="promo-section">
     <div class="promo-header">
