@@ -5,46 +5,105 @@
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
-  <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
-  <img
-    src="/assets/android/iconmenu/4newbangunan.png"
-    class="absolute object-cover w-full h-full rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]"
-    alt="backgrounds"
-    loading="lazy"
-  >
-      <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
-<nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
-  <!-- Logo Kiri -->
-  <a href="signup.html" class="shrink-0">
-    <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
-      <img src="/assets/abgblora/logo/pupr.png" alt="icon" class="w-[80%]" loading="lazy">
-    </div>
-  </a>
 
-  <!-- Teks Tengah -->
-  <div class="flex-1 mx-2 sm:mx-4 min-w-0">
-    <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
-      {{-- <p class="font-semibold text-sm sm:text-base leading-tight text-[#4041DA] truncate w-full" style="font-size:12px;">
-        ABG Blora Bangunan Gedung
-      </p> --}}
-      <div class="flex items-center justify-center sm:justify-start">
-        <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px;">
-          Dinas Pekerjaan Umum Dan
-          <br> Penataan Ruang
-        </p>
+    <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px] bg-gradient-to-b from-white to-blue-50">
+
+  <!-- Background pattern dengan nuansa soft -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-50 opacity-80"></div>
+
+  <!-- Pola dots navy soft -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#1e3a8a 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+  <!-- Gradien biru soft di bagian bawah -->
+  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-blue-50 to-transparent"></div>
+
+  <!-- Konten utama -->
+  <div class="relative z-10 w-full max-w-[640px] mt-8">
+
+    <!-- Navbar dengan nuansa navy soft -->
+    <nav class="p-4 w-full flex items-center justify-between rounded-2xl shadow-lg" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 247, 255, 0.98) 100%); border: 1px solid rgba(59, 130, 246, 0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+
+      <!-- Logo Kiri -->
+      <a href="signup.html" class="shrink-0">
+        <div class="w-14 h-14 flex overflow-hidden rounded-full items-center justify-center bg-gradient-to-br from-blue-100 to-white shadow-md p-1">
+          <img src="/assets/abgblora/logo/pupr.png" alt="icon" class="w-[85%]" loading="lazy">
+        </div>
+      </a>
+
+      <!-- Teks Tengah dengan nuansa navy -->
+      <div class="flex-1 mx-3 min-w-0">
+        <div class="flex flex-col items-center text-center">
+          <p class="font-bold text-sm leading-tight text-gray-700 truncate w-full">
+            ABG Blora Bangunan Gedung
+          </p>
+          <div class="flex items-center justify-center">
+            <p class="font-semibold text-xs leading-tight whitespace-normal text-gray-600 mt-1">
+              Dinas Pekerjaan Umum Dan
+              <br>
+              <span class="text-blue-700 font-bold">Penataan Ruang</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logo Kanan -->
+      <a href="" class="shrink-0">
+        <div class="w-14 h-14 flex overflow-hidden rounded-full items-center justify-center bg-gradient-to-br from-blue-100 to-white shadow-md p-1">
+          <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" class="w-[85%]">
+        </div>
+      </a>
+
+    </nav>
+
+    <!-- Informasi Portofolio (seperti di gambar WhatsApp) -->
+    <div class="mt-6 bg-white rounded-2xl shadow-lg p-5 border border-blue-100">
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="text-gray-500 text-sm font-medium">.</p>
+          <p class="text-2xl font-bold text-gray-800 mt-1">..</p>
+
+        </div>
+        {{-- <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-2 rounded-xl text-center">
+          <p class="text-xs font-semibold">HADIAH</p>
+          <p class="text-lg font-bold">RP100JT</p>
+        </div> --}}
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-gray-100">
+        <p class="text-gray-500 text-sm font-medium">...</p>
+        <div class="flex justify-between items-center mt-1">
+          <p class="text-xl font-bold text-gray-800">...</p>
+          <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:shadow-lg transition-shadow">
+            ..
+          </button>
+        </div>
+        <p class="text-gray-400 text-xs mt-2">Buying Power: <span class="text-blue-600 font-medium">...</span></p>
       </div>
     </div>
+
   </div>
+</header>
 
-  <!-- Logo Kanan -->
-  <a href="" class="shrink-0">
-    <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
-      <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" class="w-[80%]">
-    </div>
-  </a>
-</nav>
-      </div>
-    </header>
+<style>
+  /* Tambahan styling untuk efek halus */
+  .shadow-lg {
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.08), 0 8px 10px -6px rgba(59, 130, 246, 0.05);
+  }
+
+  /* Animasi halus untuk hover */
+  nav, .bg-gradient-to-r {
+    transition: all 0.3s ease;
+  }
+
+  nav:hover {
+    box-shadow: 0 15px 35px -5px rgba(59, 130, 246, 0.12);
+  }
+
+  .bg-gradient-to-r:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -8px rgba(37, 99, 235, 0.4);
+  }
+</style>
 
     @include('frontend.android.00_fiturmenu.04_menunavigasi')
 <div id="Promo" class="promo-section">
