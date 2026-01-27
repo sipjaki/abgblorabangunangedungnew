@@ -173,11 +173,7 @@
             'title' => 'Alamat Bangunan',
             'value' => $data->alamat ?? '-',
         ],
-        [
-            'icon'  => 'bi-info-circle-fill',
-            'title' => 'Keterangan',
-            'value' => $data->keterangan ?? '-',
-        ],
+
     ];
 @endphp
 
@@ -199,6 +195,64 @@
         </div>
     </div>
 @endforeach
+
+<div class="row g-3">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    {{-- Keterangan --}}
+    <div class="col-md-12">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern d-flex align-items-center" for="keterangan">
+                <i class="bi bi-info-circle-fill me-2 text-primary" style="font-size: 1.2rem;"></i> Keterangan
+            </label>
+            <input type="text" class="form-control" id="keterangan" name="keterangan"
+                value="{{ $data->keterangan ?? '-' }}" readonly>
+        </div>
+
+        {{-- Peta --}}
+        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
+    </div>
+
+</div>
+
+<script>
+    // Inisialisasi map, fokus ke Kabupaten Blora
+    var map = L.map('map').setView([-7.0421, 111.4046], 11);
+
+    // Layer peta dari OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
+    }).addTo(map);
+
+    // Marker (jika koordinat sudah ada)
+    var marker;
+    var koordinatInput = document.getElementById('koordinat');
+    @if(!empty($data->koordinat))
+        var coords = "{{ $data->koordinat }}".split(',');
+        marker = L.marker([coords[0], coords[1]]).addTo(map);
+        map.setView([coords[0], coords[1]], 15);
+    @endif
+
+    // Klik di peta untuk update koordinat
+    map.on('click', function(e) {
+        var latlng = e.latlng;
+
+        // Hapus marker lama
+        if (marker) map.removeLayer(marker);
+
+        // Tambahkan marker baru
+        marker = L.marker(latlng).addTo(map);
+
+        // Update input koordinat (bisa dipakai untuk submit jika perlu)
+        if(koordinatInput) {
+            koordinatInput.value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
+        }
+    });
+</script>
 
 </div>
 
