@@ -13,21 +13,20 @@
                 <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;">
                     <!-- Dokumen Lengkap (1) -->
 
+@if($data->validasiberkas1 == 'sudah')
+    <button class="button-hijau" type="button" onclick="openModal1({{ $data->id }})">
+        <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
+    </button>
+@elseif($data->validasiberkas1 == 'belum')
+    <button class="button-merah" type="button" onclick="openModal1({{ $data->id }})">
+        <i class="bi bi-x-circle me-1"></i> Dokumen Tidak Lengkap
+    </button>
+@else
+    <button class="button-modern" type="button" onclick="openModal1({{ $data->id }})">
+        <i class="bi bi-patch-check me-1"></i> Validasi Berkas
+    </button>
+@endif
 
-                    <!-- Berkas Selesai (7) -->
-                    @if($data->validasiberkas1 == 'sudah')
-                        <button class="button-hijau" type="button" onclick="openModal1({{ $data->id }})" style="background-color: #10B981; color: black;" >
-                            <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
-                        </button>
-                    @elseif($data->validasiberkas1 == 'belum')
-                        <button class="button-merah" type="button" onclick="openModal1({{ $data->id }})" style="background-color: #0400ff; color: black;">
-                            <i class="bi bi-x-circle me-1"></i> Dokumen Tidak Lengkap
-                        </button>
-                    @else
-                        <button class="button-modern" type="button" onclick="openModal1({{ $data->id }})" style="color: black;">
-                            <i class="bi bi-patch-check me-1"></i> Validasi Berkas
-                        </button>
-                    @endif
 
                     {{-- @if($data->validasiberkas1 == 'sudah')
                         <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
@@ -143,27 +142,26 @@
 <div id="confirmModal1" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
         <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai (Dokumen Lengkap)?</p>
-        <form id="validasiForm1" method="POST" action="/validasipembongkaran1/{{ $data->id }}">
-            @csrf
-            @method('PUT')
-            <input type="hidden" name="document_type" value="1">
-            <button type="submit" name="validasiberkas1" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
-                <i class="bi bi-check2-circle me-1"></i> Sudah
-            </button>
-            <button type="submit" name="validasiberkas1" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
-                <i class="bi bi-x-circle me-1"></i> Belum
-            </button>
-        </form>
-        <br><br>
-        <button type="button" onclick="closeModal1()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
-            <i class="bi bi-x-circle me-1"></i> Batal
-        </button>
+      <!-- Modal / Form Validasi Berkas 1 -->
+<form id="validasiForm1" method="POST" action="">
+    @csrf
+    @method('PUT')
+
+    <button type="submit" name="validasiberkas1" value="sudah"
+        style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
+        <i class="bi bi-check2-circle me-1"></i> Sudah
+    </button>
+
+    <button type="submit" name="validasiberkas1" value="belum"
+        style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+        onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
+        <i class="bi bi-x-circle me-1"></i> Belum
+    </button>
+</form>
+
     </div>
 </div>
 
@@ -359,20 +357,19 @@
 </div>
 
 <script>
-    // Dokumen Lengkap (1)
-    function openModal1(itemId) {
-        const modal = document.getElementById('confirmModal1');
-        const form = document.getElementById('validasiForm1');
-        form.action = `/validasipembongkaran1/${itemId}`;
-        modal.style.display = "flex";
-        document.body.style.overflow = 'hidden';
-    }
+function openModal1(itemId) {
+    const modal = document.getElementById('confirmModal1');
+    const form = document.getElementById('validasiForm1');
+    form.action = `/validasipembongkaran1/${itemId}`; // <- HARUS SAMA DENGAN ROUTE
+    modal.style.display = "flex";
+    document.body.style.overflow = 'hidden';
+}
 
-    function closeModal1() {
-        const modal = document.getElementById('confirmModal1');
-        modal.style.display = "none";
-        document.body.style.overflow = 'auto';
-    }
+function closeModal1() {
+    const modal = document.getElementById('confirmModal1');
+    modal.style.display = "none";
+    document.body.style.overflow = 'auto';
+}
 
     // Surat Pemberitahuan (2)
     function openModal2(itemId) {

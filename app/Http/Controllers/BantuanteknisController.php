@@ -6456,28 +6456,27 @@ public function bebantekpembongkaranshowdata($namapemilik, $id)
     );
 }
 
-
 public function validasipembongkaran1(Request $request, $id)
-    {
-        $data = bantekpembongkaraninduk::findOrFail($id);
+{
+    $data = bantekpembongkaraninduk::findOrFail($id);
 
-        $request->validate([
-            'validasiberkas1' => 'required|in:sudah,belum',
-        ]);
+    // Validasi input
+    $request->validate([
+        'validasiberkas1' => 'required|in:sudah,belum',
+    ]);
 
-        $data->validasiberkas1 = $request->validasiberkas1;
-        $data->save();
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas1 = $request->validasiberkas1;
+    $data->save();
 
-     if ($request->validasiberkas1 === 'sudah') {
-        session()->flash('create', '✅ Sudah Di Verifikasi !');
+    // Flash message
+    if ($request->validasiberkas1 === 'sudah') {
+        session()->flash('create', '✅ Dokumen sudah lengkap!');
     } else {
-        session()->flash('gagal', '❌ Belum Lengkap !');
+        session()->flash('gagal', '❌ Dokumen belum lengkap!');
     }
-        //    return redirect('/beserahterima');
 
-           return redirect()->back();
-
-        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
-    }
+    return redirect()->back();
+}
 
 }
