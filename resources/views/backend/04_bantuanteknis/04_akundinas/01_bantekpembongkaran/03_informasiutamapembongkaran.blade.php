@@ -258,7 +258,7 @@
 
 <br><hr>
 
-@include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas')
+@include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.03_fiturmenunavigasi')
 
 </div>
 
