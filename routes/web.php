@@ -1543,6 +1543,9 @@ Route::post('/daftar', [LoginController::class, 'register']);
 Route::get('/bantekpembongkaranbgn', [BantuanteknisController::class, 'bantekpembongkaranbgn'])->middleware('auth', 'can:admindinas')->name('bepbgslfindexslfindex');
 
 
+Route::get('/bebantekpembongkaran', [BantuanteknisController::class, 'bebantekpembongkaran'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaran');
+
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

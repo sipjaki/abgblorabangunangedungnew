@@ -132,5 +132,10 @@ class User extends Authenticatable
         return $this->hasMany(kicinduk::class);
     }
 
+    public function BantekPembongkaranInduk()
+    {
+        return $this->hasMany(BantekPembongkaranInduk::class);
+    }
+
 
 }
