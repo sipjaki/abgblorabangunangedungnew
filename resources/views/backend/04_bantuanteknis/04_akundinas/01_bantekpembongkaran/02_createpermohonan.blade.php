@@ -151,74 +151,57 @@
   <i class="bi bi-house-door-fill me-3" style="font-size: 18px;"></i>
   Data Informasi Pemohon
 </h5>
+    <div class="col-md-6">
+            <div class="form-modern mb-3">
+                <label class="form-label-modern" for="namapemilik">
+                    <i class="bi bi-person-badge-fill me-2 text-primary"></i>
+                    Nama Pemilik Bangunan
+                </label>
+                <input type="text"
+                    class="form-control @error('namapemilik') is-invalid @enderror"
+                    id="namapemilik"
+                    name="namapemilik"
+                    value="{{ old('namapemilik') }}">
+                @error('namapemilik')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
 
-{{-- Nama Pemohon --}}
-<div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="namapemohon">
-            <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Pemilik Bangunan
-        </label>
-        <input type="text" class="form-control @error('namapemohon') is-invalid @enderror" id="namapemohon" name="namapemohon" value="{{ old('namapemohon', $data->namapemohon ?? '') }}">
-        @error('namapemohon') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
-{{-- NIK --}}
-{{-- <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="nik">
-            <i class="bi bi-card-list me-2 text-success"></i> NIK
-        </label>
-        <input type="number"
-               class="form-control @error('nik') is-invalid @enderror"
-               id="nik"
-               name="nik"
-               value="{{ old('nik', $data->nik ?? '') }}"
-               minlength="16" maxlength="16"
-               oninput="this.value = this.value.slice(0, 16)"
-               placeholder="Masukkan 16 digit NIK">
-        @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div> --}}
+        {{-- Instansi (User Login) --}}
+        <div class="col-md-6">
+            <div class="form-modern mb-3">
+                <label class="form-label-modern">
+                    <i class="bi bi-building me-2 text-success"></i>
+                    Instansi
+                </label>
+                <input type="text"
+                    class="form-control"
+                    value="{{ auth()->user()->name }}"
+                    readonly>
+            </div>
+        </div>
 
-{{-- Fungsi Bangunan --}}
-<div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="fungsibangunan">
-            <i class="bi bi-building me-2 text-danger"></i> Fungsi Bangunan
-        </label>
-        <select class="form-select @error('fungsibangunan') is-invalid @enderror" id="fungsibangunan" name="fungsibangunan">
-            <option value="">-- Pilih Fungsi Bangunan --</option>
-            <option value="FUNGSI USAHA" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI USAHA' ? 'selected' : '' }}>FUNGSI USAHA</option>
-            <option value="FUNGSI HUNIAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI HUNIAN' ? 'selected' : '' }}>FUNGSI HUNIAN</option>
-            <option value="FUNGSI KEAGAMAAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI KEAGAMAAN' ? 'selected' : '' }}>FUNGSI KEAGAMAAN</option>
-            <option value="FUNGSI SOSIAL BUDAYA" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI SOSIAL BUDAYA' ? 'selected' : '' }}>FUNGSI SOSIAL BUDAYA</option>
-            <option value="FUNGSI CAMPURAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI CAMPURAN' ? 'selected' : '' }}>FUNGSI CAMPURAN</option>
-        </select>
-        @error('fungsibangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
+        {{-- Hidden user_id --}}
+        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
 
-{{-- Subfungsi Bangunan --}}
-<div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="subfungsibangunan">
-            <i class="bi bi-diagram-3 me-2 text-warning"></i> Subfungsi Bangunan
-        </label>
-        <input type="text" class="form-control @error('subfungsibangunan') is-invalid @enderror" id="subfungsibangunan" name="subfungsibangunan" value="{{ old('subfungsibangunan', $data->subfungsibangunan ?? '') }}">
-        @error('subfungsibangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
-
-{{-- Nomor Telepon --}}
-<div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="nomortelepon">
-            <i class="bi bi-telephone-fill me-2 text-warning"></i> Nomor Telepon
-        </label>
-        <input type="text" class="form-control @error('nomortelepon') is-invalid @enderror" id="nomortelepon" name="nomortelepon" value="{{ old('nomortelepon', $data->nomortelepon ?? '') }}">
-        @error('nomortelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
+        {{-- Nama Bangunan --}}
+        <div class="col-md-6">
+            <div class="form-modern mb-3">
+                <label class="form-label-modern" for="namabangunan">
+                    <i class="bi bi-house-door-fill me-2 text-warning"></i>
+                    Nama Bangunan
+                </label>
+                <input type="text"
+                    class="form-control @error('namabangunan') is-invalid @enderror"
+                    id="namabangunan"
+                    name="namabangunan"
+                    value="{{ old('namabangunan') }}">
+                @error('namabangunan')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
 
 
 
@@ -236,11 +219,11 @@
     {{-- Alamat Lengkap --}}
   <div class="col-12">
       <div class="form-modern mb-3">
-          <label class="form-label-modern d-flex align-items-center" for="alamatlengkap">
+          <label class="form-label-modern d-flex align-items-center" for="alamat">
             <i class="bi bi-house-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Alamat Lengkap
           </label>
-          <textarea class="form-control @error('alamatlengkap') is-invalid @enderror" id="alamatlengkap" name="alamatlengkap" rows="3">{{ old('alamatlengkap', $data->alamatlengkap ?? '') }}</textarea>
-          @error('alamatlengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
+          <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3">{{ old('alamat', $data->alamat ?? '') }}</textarea>
+          @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
       </div>
   </div>
 
@@ -253,14 +236,14 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-    {{-- Koordinat --}}
+    {{-- keterangan --}}
     <div class="col-md-12">
         <div class="form-modern mb-3">
-            <label class="form-label-modern d-flex align-items-center" for="koordinat">
-                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
+            <label class="form-label-modern d-flex align-items-center" for="keterangan">
+                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat Lokasi Bangunan Gedung 
             </label>
-            <input type="text" class="form-control @error('koordinat') is-invalid @enderror" id="koordinat" name="koordinat" value="{{ old('koordinat', $data->koordinat ?? '') }}">
-            @error('koordinat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <input type="text" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" name="keterangan" value="{{ old('keterangan', $data->keterangan ?? '') }}">
+            @error('keterangan') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
 
         {{-- Peta --}}
@@ -273,16 +256,16 @@
 
 <script>
     // Inisialisasi map dengan fokus ke Kabupaten Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11); // Koordinat Blora
+    var map = L.map('map').setView([-7.0421, 111.4046], 11); // keterangan Blora
 
     // Tambahkan layer peta dari OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
     }).addTo(map);
 
-    // Marker (jika sudah ada nilai awal koordinat)
+    // Marker (jika sudah ada nilai awal keterangan)
     var marker;
-    var input = document.getElementById('koordinat');
+    var input = document.getElementById('keterangan');
     if (input.value) {
         var coords = input.value.split(',');
         marker = L.marker([coords[0], coords[1]]).addTo(map);
@@ -299,8 +282,8 @@
         // Tambahkan marker baru
         marker = L.marker(latlng).addTo(map);
 
-        // Simpan koordinat ke input
-        document.getElementById('koordinat').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
+        // Simpan keterangan ke input
+        document.getElementById('keterangan').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
     });
 </script>
 
