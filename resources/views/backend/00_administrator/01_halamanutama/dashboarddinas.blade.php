@@ -167,7 +167,7 @@
 
 @can('dinas')
 <div class="row">
-    <div class="col-12 col-sm-6 col-md-3 mb-4" data-aos="zoom-out" data-aos-delay="{{ $index * 100 }}">
+    <div class="col-12 col-sm-6 col-md-3 mb-4" data-aos="zoom-out">
     <a href="/404" style="text-decoration: none;">
         <div class="dashboard-card card-1 shadow-lg transition-custom">
             <div class="card-content">
