@@ -173,7 +173,7 @@
             <div class="form-modern mb-3">
                 <label class="form-label-modern">
                     <i class="bi bi-building me-2 text-success"></i>
-                    Instansi (Terisi Otomatis)
+                    Instansi
                 </label>
                 <input type="text"
                     class="form-control"
@@ -231,81 +231,116 @@
 
 <div class="row g-3">
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<div class="col-md-12">
-    <label class="form-label-modern">
-        <i class="bi bi-geo-alt-fill text-danger me-1"></i>
-        Koordinat Bangunan Gedung
-    </label>
+    {{-- keterangan --}}
+    <div class="col-md-12">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern d-flex align-items-center" for="keterangan">
+                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat Lokasi Bangunan Gedung
+            </label>
+            <input type="text" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" name="keterangan" value="{{ old('keterangan', $data->keterangan ?? '') }}">
+            @error('keterangan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
 
-    <input type="text"
-           id="keterangan"
-           name="keterangan"
-           class="form-control mb-3"
-           value="{{ old('keterangan', $data->keterangan ?? '') }}">
+        {{-- Peta --}}
+        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
+    </div>
 
-    <div id="map" style="height:520px;border-radius:12px;border:2px solid #ccc"></div>
 </div>
 
-</div>
+
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+    // Inisialisasi map dengan fokus ke Kabupaten Blora
+    var map = L.map('map').setView([-7.0421, 111.4046], 11); // keterangan Blora
 
-    const center = [-7.0421, 111.4046];
-
-    const map = L.map('map').setView(center, 14);
-
-    // STREET MAP (NAMA JALAN PALING LENGKAP)
-    const street = L.tileLayer(
-        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        { attribution: '© OpenStreetMap contributors' }
-    ).addTo(map);
-
-    // SATELIT
-    const satellite = L.tileLayer(
-        'https://server.arcgisonline.com/ArcGIS/rest/services/' +
-        'World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        { attribution: '© ESRI' }
-    );
-
-    // Layer switcher
-    L.control.layers({
-        "Peta Jalan (Rekomendasi)": street,
-        "Satelit": satellite
+    // Tambahkan layer peta dari OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
     }).addTo(map);
 
-    let marker;
-    const input = document.getElementById("keterangan");
-
+    // Marker (jika sudah ada nilai awal keterangan)
+    var marker;
+    var input = document.getElementById('keterangan');
     if (input.value) {
-        const [lat, lng] = input.value.split(",");
-        marker = L.marker([lat, lng]).addTo(map);
-        map.setView([lat, lng], 17);
+        var coords = input.value.split(',');
+        marker = L.marker([coords[0], coords[1]]).addTo(map);
+        map.setView([coords[0], coords[1]], 15);
     }
 
-    map.on("click", function (e) {
-        if (marker) map.removeLayer(marker);
-        marker = L.marker(e.latlng).addTo(map);
+    // Event saat klik di peta
+    map.on('click', function(e) {
+        var latlng = e.latlng;
+        // Hapus marker sebelumnya
+        if (marker) {
+            map.removeLayer(marker);
+        }
+        // Tambahkan marker baru
+        marker = L.marker(latlng).addTo(map);
 
-        input.value =
-            e.latlng.lat.toFixed(6) + "," +
-            e.latlng.lng.toFixed(6);
+        // Simpan keterangan ke input
+        document.getElementById('keterangan').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
     });
-
-});
 </script>
 
 
 {{-- JQuery AJAX untuk load Kelurahan berdasarkan Kecamatan --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $('#kecamatanblora_id').on('change', function () {
+    var kecamatanID = $(this).val();
+    if (kecamatanID) {
+      $.ajax({
+        url: '{{ route("datanewpenilik.create") }}', // Sesuaikan route ajax-nya
+        type: 'GET',
+        data: { kecamatan_id: kecamatanID },
+        success: function (data) {
+          $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
+          $.each(data, function (key, value) {
+            $('#kelurahandesa_id').append('<option value="' + value.id + '">' + value.desa + '</option>');
+          });
+        }
+      });
+    } else {
+      $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
+    }
+  });
+</script>
+
 {{-- ======================================================================================================================= --}}
 
 
 {{-- ======================================================================================================================= --}}
 
+<div class="col-12">
+    {{-- <div class="mb-3">
+        <label class="form-label" for="dokumenproposal">
+            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
+        </label>
+        <input
+            type="file"
+            id="dokumenproposal"
+            name="dokumenproposal"
+            class="form-control @error('dokumenproposal') is-invalid @enderror"
+            accept=".pdf,.doc,.docx"
+        />
+        @error('dokumenproposal')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        @if (!empty($data->dokumenproposal))
+            <small class="text-muted">File saat ini:
+                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
+                    Lihat dokumen
+                </a>
+            </small>
+        @endif
+    </div> --}}
+</div>
 
                                     </div>
                                 </div>
@@ -314,11 +349,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             <!-- end::Body -->
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                <br><br>
                                 <div class="flex justify-end">
-                               <button class="button-baru" type="button" onclick="openModal()">
+                               <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Ajukan Permohonan</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
 
                                 </div>
