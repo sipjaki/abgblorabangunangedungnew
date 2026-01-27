@@ -217,76 +217,51 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        <table id="tabelSuratbantuanteknis" class="table zebra-table">
+                        <table id="tabelSuratbantuanteknis" class="zebra-table">
                             <thead>
                                   <tr>
         <th style="background-color: #ADD8E6;">No</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user"></i> Jenis Pengajuan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user-tie"></i> Dinas</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-phone"></i> Telepon</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-envelope"></i> No Surat</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-calendar"></i> Tanggal Surat</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-toolbox"></i> Nama Paket</th>
-        {{-- <th style="background-color: #ADD8E6;"><i class="fas fa-layer-group"></i> Kategori Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-ruler-combined"></i> Luas Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-landmark"></i> Luas Tanah</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-building"></i> Jumlah Lantai</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-arrows-alt-v"></i> Tinggi Bangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-water"></i> Bassement</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-user-tag"></i> Kepemilikan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-calendar-check"></i> Tahun Pembangunan</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-tools"></i> Tahun Renovasi</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-briefcase"></i> Pengelola</th>
-        <th style="background-color: #ADD8E6;"><i class="fas fa-map-marked-alt"></i> Lokasi Bangunan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-house-door"></i> RT</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-house"></i> RW</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-geo-alt"></i> Kabupaten</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-geo"></i> Kecamatan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-pin-map"></i> Kelurahan/Desa</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-envelope-paper"></i> Surat Permohonan</th> --}}
-            <th style="background-color: #ADD8E6;"><i class="bi bi-check2-circle"></i> Lihat Berkas</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Dokumentasi Asistensi</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Berita Acara</th>
-            {{-- <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Verifikasi Lapangan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Pengolahan Data</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-cpu"></i> Upload Berkas Bantek</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-journal-check"></i> Dokumentasi Lapangan</th> --}}
-            @can('superadmin')
-            <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
-            @endcan
+<th style="background-color: #ADD8E6;">
+    <i class="fas fa-user"></i> Nama Pemilik
+</th>
 
-    </tr>
+<th style="background-color: #ADD8E6;">
+    <i class="fas fa-building"></i> Instansi / Dinas
+</th>
+
+<th style="background-color: #ADD8E6;">
+    <i class="fas fa-home"></i> Nama Bangunan
+</th>
+
+<th style="background-color: #ADD8E6;">
+    <i class="fas fa-map-marker-alt"></i> Alamat
+</th>
+
+<th style="background-color: #ADD8E6;">
+    <i class="fas fa-info-circle"></i> Keterangan
+</th>
+
+
+        <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Lihat Permohonan</th>
+            <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
+        </tr>
                             </thead>
                               <tbody id="tableBody">
                                 @forelse ($data as  $item)
                                 <tr class="align-middle">
                                  <td>{{ $loop->iteration }}</td>
-            <td>{{ optional($item->jenispengajuanbantek)->jenispengajuan ?? '-' }}</td>
-            <td>{{ $item->dinas->name ?? '-' }}</td>
-            <td>{{ $item->no_telepon ?? '-' }}</td>
-            <td>{{ $item->nosurat ?? '-' }}</td>
-            <td>{{ \Carbon\Carbon::parse($item->tanggalsurat)->format('d-m-Y') }}</td>
-            <td>{{ $item->namapaket ?? '-' }}</td>
-            {{-- <td>{{ $item->kategoribangunan ?? '-' }}</td>
-            <td>{{ $item->luasbangunan ?? '-' }} m²</td>
-            <td>{{ $item->luastanahtotal ?? '-' }} m²</td>
-            <td>{{ $item->jumlahlantai ?? '-' }}</td>
-            <td>{{ $item->tinggibangunan ?? '-' }} m</td>
-            <td>{{ $item->bassement ? 'Ya' : 'Tidak' }}</td>
-            <td>{{ $item->kepemilikan ?? '-' }}</td>
-            <td>{{ $item->tahunpembangunan ?? '-' }}</td>
-            <td>{{ $item->tahunrenovasi ?? '-' }}</td>
-            <td>{{ $item->pengelola ?? '-' }}</td>
-            <td>{{ $item->alamatlokasi ?? '-' }}</td>
-            <td>{{ $item->rt ?? '-' }}</td>
-            <td>{{ $item->rw ?? '-' }}</td>
-            <td>{{ $item->kabupaten ?? '-' }}</td>
-            <td>{{ optional($item->kecamatanblora)->kecamatanblora ?? '-' }}</td>
-            <td>{{ optional($item->kelurahandesa)->desa ?? '-' }}</td> --}}
+    <td>{{ $item->namapemilik ?? '-' }}</td>
 
+<td>{{ $item->user->name ?? '-' }}</td>
+
+<td>{{ $item->namabangunan ?? '-' }}</td>
+
+<td>{{ $item->alamat ?? '-' }}</td>
+
+<td>{{ $item->keterangan ?? '-' }}</td>
 
             <td style="text-align: center;">
-                <a href="{{ route('beasistensishowberkas1.show', $item->id) }}"
+                <a href="{{ route('bebantekpembongkaranshow', $item->id) }}"
                     class="button-baru">
                     <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
                 </a>
@@ -294,72 +269,8 @@
             <!-- Tombol KTP -->
 
 
-  <td style="text-align: center;">
-                <a href="{{ route('bebantuanasistensilap.show', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Dokumentasi
-                </a>
-            </td>
-
-
-
-
-<td style="text-align: center;">
-    <button type="button"
-        class="button-baru"
-        data-bs-toggle="modal"
-        data-bs-target="#modalLihatBerkas{{ $item->id }}">
-        <i class="fas fa-eye" style="margin-right: 5px;"></i> Lihat Berkas
-    </button>
-</td>
-
 <!-- Modal -->
-<div class="modal fade" id="modalLihatBerkas{{ $item->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $item->id }}" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-     <img src="assets/abgblora/logo/logokabupatenblora.png" alt="" style="height: 20px; width: auto; margin-right:5px; ">
-<img src="assets/abgblora/logo/pupr.png" alt="" style="height: 20px; width: auto; margin-right:5px;">
-        {{-- <h5 class="modal-title" id="modalLabel{{ $item->id }}">Pemohon - ID : {{ $item->pemohon->name }}</h5> --}}
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-      </div>
-      <div class="modal-body">
-   <div style="margin-top: 10px;">
-    @php
-        $berkasPath = public_path('storage/' . $item->uploadsuratbantek);
-        $isFileExists = $item->uploadsuratbantek && file_exists($berkasPath);
-    @endphp
 
-    @if ($isFileExists)
-        <!-- Menampilkan PDF dari storage -->
-        <iframe
-            src="{{ asset('storage/' . $item->uploadsuratbantek) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @elseif ($item->uploadsuratbantek)
-        <!-- Menampilkan PDF dari path luar storage -->
-        <iframe
-            src="{{ asset($item->uploadsuratbantek) }}"
-            style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px;"
-            loading="lazy">
-        </iframe>
-    @else
-        <!-- Placeholder jika tidak ada data -->
-        <p style="font-size: 20px; color: red;">Berita Acara Belum Diterbitkan!</p>
-    @endif
-</div>
-
-</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-@can('superadmin')
 
 <td style="text-align: center; vertical-align: middle;">
     {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
@@ -375,7 +286,6 @@
                                            <i class="bi bi-trash"></i>
                                         </a>
                                     </td>
-                                    @endcan
 
                                 </tr>
 

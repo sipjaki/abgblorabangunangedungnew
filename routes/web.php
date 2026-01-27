@@ -1546,6 +1546,7 @@ Route::get('/bantekpembongkaranbgn', [BantuanteknisController::class, 'bantekpem
 Route::get('/bebantekpembongkaran', [BantuanteknisController::class, 'bebantekpembongkaran'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaran');
 Route::get('/bebantekpembongkaran/create', [BantuanteknisController::class, 'bebantekpembongkarancreate'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreate');
 Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkarancreatenew'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreatenew');
+Route::get('/bebantekpembongkaran/show', [BantuanteknisController::class, 'bebantekpembongkarancreatenew'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaranshow');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
