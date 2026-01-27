@@ -256,6 +256,10 @@
                     <span class="status-label">Data Kosong</span>
                 </div>
                 <div class="text-center">
+                    <div class="status-light yellow active" style="margin: 0 auto 5px;"></div>
+                    <span class="status-label">Verifikasi </span>
+                </div>
+                <div class="text-center">
                     <div class="status-light green active" style="margin: 0 auto 5px;"></div>
                     <span class="status-label">Lengkap</span>
                 </div>
