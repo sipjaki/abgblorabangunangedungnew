@@ -246,25 +246,12 @@
         attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
     }).addTo(map);
 
-    // Marker
-    var marker = L.marker([lat, lng]).addTo(map);
+    // Marker non-draggable
+    L.marker([lat, lng], {draggable: false}).addTo(map)
+        .bindPopup("Koordinat: " + lat.toFixed(6) + ", " + lng.toFixed(6))
+        .openPopup();
 
-    // Input koordinat
-    var koordinatInput = document.getElementById('koordinat');
-
-    // Klik peta untuk update marker & koordinat
-    map.on('click', function(e) {
-        var latlng = e.latlng;
-
-        // Hapus marker lama
-        if(marker) map.removeLayer(marker);
-
-        // Tambahkan marker baru
-        marker = L.marker(latlng).addTo(map);
-
-        // Update input koordinat
-        koordinatInput.value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
-    });
+    // Hapus event klik, jadi marker tidak bisa berpindah
 </script>
 
 </div>
