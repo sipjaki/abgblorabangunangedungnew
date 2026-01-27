@@ -167,6 +167,35 @@
 
 @can('dinas')
 <div class="row">
+    <div class="col-12 col-sm-6 col-md-3 mb-4" data-aos="zoom-out" data-aos-delay="{{ $index * 100 }}">
+    <a href="/404" style="text-decoration: none;">
+        <div class="dashboard-card card-1 shadow-lg transition-custom">
+            <div class="card-content">
+
+                <div class="number-container">
+                    <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                </div>
+
+                <div class="info-content">
+                    <p class="info-text">
+                        <i class="bi bi-file-earmark-check me-1"></i>
+                        <span class="info-number"></span>
+                    </p>
+
+                    <p class="info-text fw-bold">
+                        Pembongkaran Bangunan Gedung
+                    </p>
+
+                    <p class="small-text">
+                        Jumlah Permohonan
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </a>
+</div>
+
     @php
         $boxes = [
             ['title' => 'BANTUAN ASISTENSI PERENCANAAN', 'jumlah' => $jumlahdata1, 'href' => '/bebantekdinasasistensi'],
@@ -182,7 +211,8 @@
     @endphp
 
     @foreach ($boxes as $index => $box)
-<div class="col-12 col-sm-6 col-md-3 mb-4" data-aos="zoom-out" data-aos-delay="{{ $index * 100 }}">
+
+    <div class="col-12 col-sm-6 col-md-3 mb-4" data-aos="zoom-out" data-aos-delay="{{ $index * 100 }}">
     <a href="{{ $box['href'] }}" style="text-decoration: none;">
         <div class="dashboard-card card-1 shadow-lg transition-custom">
             <div class="card-content">
