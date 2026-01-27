@@ -256,10 +256,6 @@
                     <span class="status-label">Data Kosong</span>
                 </div>
                 <div class="text-center">
-                    <div class="status-light yellow active" style="margin: 0 auto 5px;"></div>
-                    <span class="status-label">Perbaikan Data</span>
-                </div>
-                <div class="text-center">
                     <div class="status-light green active" style="margin: 0 auto 5px;"></div>
                     <span class="status-label">Lengkap</span>
                 </div>
@@ -282,10 +278,6 @@
                         <a href="#" class="status-option red">
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
                         </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
@@ -319,10 +311,6 @@
                         <a href="#" class="status-option red">
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow active"></div>
-                            <span>Perbaikan Data</span>
                         </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green"></div>
@@ -358,10 +346,6 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
@@ -394,10 +378,6 @@
                         <a href="#" class="status-option red">
                             <div class="status-light red active"></div>
                             <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
                         </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green"></div>
@@ -435,10 +415,6 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
@@ -471,10 +447,6 @@
                         <a href="#" class="status-option red">
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow active"></div>
-                            <span>Perbaikan Data</span>
                         </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green"></div>
@@ -509,10 +481,6 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
@@ -545,10 +513,6 @@
                         <a href="#" class="status-option red">
                             <div class="status-light red active"></div>
                             <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
                         </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green"></div>
@@ -586,10 +550,6 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
@@ -623,10 +583,6 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow active"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green"></div>
                             <span>Lengkap</span>
@@ -659,10 +615,6 @@
                         <a href="#" class="status-option red">
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
                         </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
