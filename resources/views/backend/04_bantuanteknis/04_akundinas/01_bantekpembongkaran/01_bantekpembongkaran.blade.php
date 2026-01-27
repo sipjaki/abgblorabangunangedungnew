@@ -168,6 +168,7 @@
                                     class="button-baru" style="color: black;">
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
+
                                 <a href="{{ route('bebantekpembongkarancreate') }}"
                                     class="button-modern"
                                     style="color: black; text-decoration: none;">
