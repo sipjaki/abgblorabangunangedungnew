@@ -220,25 +220,26 @@
                         <table id="tabelSuratbantuanteknis" class="zebra-table">
                             <thead>
                                   <tr>
-        <th style="background-color: #ADD8E6;">No</th>
-<th style="background-color: #ADD8E6;">
-    <i class="fas fa-user"></i> Nama Pemilik
+   <th>No</th>
+
+<th>
+    <i class="bi bi-person-fill"></i> Nama Pemilik
 </th>
 
-<th style="background-color: #ADD8E6;">
-    <i class="fas fa-building"></i> Instansi / Dinas
+<th>
+    <i class="bi bi-buildings-fill"></i> Instansi / Dinas
 </th>
 
-<th style="background-color: #ADD8E6;">
-    <i class="fas fa-home"></i> Nama Bangunan
+<th>
+    <i class="bi bi-house-fill"></i> Nama Bangunan
 </th>
 
-<th style="background-color: #ADD8E6;">
-    <i class="fas fa-map-marker-alt"></i> Alamat
+<th>
+    <i class="bi bi-geo-alt-fill"></i> Alamat
 </th>
 
-<th style="background-color: #ADD8E6;">
-    <i class="fas fa-info-circle"></i> Keterangan
+<th>
+    <i class="bi bi-info-circle-fill"></i> Keterangan
 </th>
 
 
