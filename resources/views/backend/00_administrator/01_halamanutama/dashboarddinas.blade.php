@@ -182,21 +182,35 @@
     @endphp
 
     @foreach ($boxes as $index => $box)
-        <div class="col-12 col-sm-6 col-md-3 mb-4" data-aos="zoom-out" data-aos-delay="{{ $index * 100 }}">
-            <a href="{{ $box['href'] }}" style="text-decoration: none;">
-                <div class="info-box shadow-lg rounded-3 p-4 transition-custom" style="background: #000080; color: white;">
-                    <span class="info-box-icon d-flex justify-content-center align-items-center p-3 shadow-sm rounded" style="background-color: #ffd100; width: 60px; height: 60px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
-                            <path fill="green" d="M14 4V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h-2V2H4v12h8V6h2z"/>
-                        </svg>
-                    </span>
-                    <div class="info-box-content mt-3 text-center" style="font-family: 'Poppins', sans-serif;">
-                        <span class="info-box-text" style="color: white; font-size: 14px;">{{ $box['title'] }}</span>
-                        <span class="info-box-number fw-bold" style="font-size: 16px;">{{ $box['jumlah'] }} Permohonan</span>
-                    </div>
+<div class="col-12 col-sm-6 col-md-3 mb-4" data-aos="zoom-out" data-aos-delay="{{ $index * 100 }}">
+    <a href="{{ $box['href'] }}" style="text-decoration: none;">
+        <div class="dashboard-card card-1 shadow-lg transition-custom">
+            <div class="card-content">
+
+                <div class="number-container">
+                    <img src="/assets/icon/pupr.png" alt="icon" width="40">
                 </div>
-            </a>
+
+                <div class="info-content">
+                    <p class="info-text">
+                        <i class="bi bi-file-earmark-check me-1"></i>
+                        <span class="info-number">{{ $box['jumlah'] }}</span>
+                    </p>
+
+                    <p class="info-text">
+                        {{ $box['title'] }}
+                    </p>
+
+                    <p class="small-text">
+                        Informasi Jumlah Permohonan
+                    </p>
+                </div>
+
+            </div>
         </div>
+    </a>
+</div>
+
     @endforeach
 </div>
 @endcan
