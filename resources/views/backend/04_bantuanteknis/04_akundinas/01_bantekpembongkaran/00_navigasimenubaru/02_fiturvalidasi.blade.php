@@ -315,12 +315,12 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="7">
-            <button type="submit" name="validasiberkas7" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas1" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
                 <i class="bi bi-check2-circle me-1"></i> Sudah
             </button>
-            <button type="submit" name="validasiberkas7" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
+            <button type="submit" name="validasiberkas1" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
                 <i class="bi bi-x-circle me-1"></i> Belum

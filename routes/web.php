@@ -1557,6 +1557,7 @@ Route::get(
  // validasi berkas pembongkaran bangunan gedung
 
 Route::put('/validasipembongkaran7/{id}', [BantuanteknisController::class, 'validasipembongkaran7'])->name('validasipembongkaran7.update');
+
 // Route::put('/validasipbgslf3/{id}', [PbgslfController::class, 'validasipbgslf3'])->name('validasipbgslf3.update');
 // Route::put('/validasipbgslf4/{id}', [PbgslfController::class, 'validasipbgslf4'])->name('validasipbgslf4.update');
 // Route::put('/validasipbgslf5/{id}', [PbgslfController::class, 'validasipbgslf5'])->name('validasipbgslf5.update');
