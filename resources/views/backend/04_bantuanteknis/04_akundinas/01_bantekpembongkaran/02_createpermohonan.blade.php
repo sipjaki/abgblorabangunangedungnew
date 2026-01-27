@@ -315,32 +315,15 @@
 
 
 {{-- ======================================================================================================================= --}}
+<div class="flex justify-end">
+                               <button class="button-modern" type="button" onclick="openModal()">
+                                    <i class="bi bi-save" style="margin-right: 5px;"></i>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan Permohonan </span>
+                                    </button>
 
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+                                </div>
 
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
-</div>
+
 
                                     </div>
                                 </div>
@@ -349,13 +332,7 @@
                             <!-- end::Body -->
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                <div class="flex justify-end">
-                               <button class="button-modern" type="button" onclick="openModal()">
-                                    <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
-                                    </button>
 
-                                </div>
                                 <!-- Modal Konfirmasi -->
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
