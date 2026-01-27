@@ -159,17 +159,95 @@
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Berkas Persyaratan </h5>
     </div>
 </div>
 
 @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
 
        <!-- Left Column (6/12) -->
+<div class="row g-4">
 
+@php
+    $infoItems = [
+        [
+            'icon'  => 'bi-person-fill',
+            'title' => 'Nama Pemilik Bangunan',
+            'value' => $data->namapemilik ?? '-',
+        ],
+        [
+            'icon'  => 'bi-building',
+            'title' => 'Instansi / Dinas',
+            'value' => $data->user->name ?? '-',
+        ],
+        [
+            'icon'  => 'bi-house-fill',
+            'title' => 'Nama Bangunan',
+            'value' => $data->namabangunan ?? '-',
+        ],
+        [
+            'icon'  => 'bi-geo-alt-fill',
+            'title' => 'Alamat Bangunan',
+            'value' => $data->alamat ?? '-',
+        ],
+        [
+            'icon'  => 'bi-info-circle-fill',
+            'title' => 'Keterangan',
+            'value' => $data->keterangan ?? '-',
+        ],
+    ];
+@endphp
+
+@foreach ($infoItems as $item)
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
+            <div class="card-body bg-white rounded-3"
+                style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
+                <div class="d-flex align-items-start">
+                    <div class="me-3">
+                        <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold text-dark mb-1">{{ $item['title'] }}</h6>
+                        <p class="mb-0 text-muted">{{ $item['value'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
+
+</div>
+
+
+<div class="col-12">
+    {{-- <div class="mb-3">
+        <label class="form-label" for="dokumenproposal">
+            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
+        </label>
+        <input
+            type="file"
+            id="dokumenproposal"
+            name="dokumenproposal"
+            class="form-control @error('dokumenproposal') is-invalid @enderror"
+            accept=".pdf,.doc,.docx"
+        />
+        @error('dokumenproposal')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        @if (!empty($data->dokumenproposal))
+            <small class="text-muted">File saat ini:
+                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
+                    Lihat dokumen
+                </a>
+            </small>
+        @endif
+    </div> --}}
+</div>
 <br><hr>
 
-{{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas') --}}
+@include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas')
 
 </div>
 
