@@ -275,10 +275,20 @@
                     </div>
 
                     <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red"></div>
-                            <span>Data Kosong</span>
-                        </a>
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>

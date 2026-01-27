@@ -6433,29 +6433,6 @@ public function bebantekpembongkarandelete($id)
     }
 
 
-public function bebantekpembongkaranshowdata($namapemilik, $id)
-{
-    // Decode nama dari URL
-    $namapemilik = urldecode($namapemilik);
-
-    // Cari data HARUS cocok ID & nama
-    $data = bantekpembongkaraninduk::where('id', $id)
-        ->where('namapemilik', $namapemilik)
-        ->firstOrFail();
-
-    // User login
-    $user = Auth::user();
-
-    return view(
-        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.03_informasiutamapembongkaran',
-        [
-            'title' => 'Informasi Permohonan Berkas Administrasi',
-            'data'  => $data,
-            'user'  => $user
-        ]
-    );
-}
-
 public function validasipembongkaran1(Request $request, $id)
 {
     $data = bantekpembongkaraninduk::findOrFail($id);
@@ -6593,6 +6570,34 @@ public function validasipembongkaran6(Request $request, $id)
     }
 
     return redirect()->back();
+}
+
+
+
+
+public function bebantekpembongkaranshowdata($namapemilik, $id)
+{
+    // Decode nama dari URL
+    $namapemilik = urldecode($namapemilik);
+
+    // Cari data HARUS cocok ID & nama + bawa relasi bantekbongkar1
+    $data = bantekpembongkaraninduk::with('bantekbongkar1')
+        ->where('id', $id)
+        ->where('namapemilik', $namapemilik)
+        ->firstOrFail();
+
+    // User login
+    $user = Auth::user();
+
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.03_informasiutamapembongkaran',
+        [
+            'title' => 'Informasi Permohonan Berkas Administrasi',
+            'data'  => $data,          // data induk
+            'user'  => $user
+            // relasi otomatis ikut: $data->bantekbongkar1
+        ]
+    );
 }
 
 }
