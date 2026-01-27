@@ -47,75 +47,60 @@
                     <!-- TPA/TPT (3) -->
                     @if($data->validasiberkas3 == 'sudah')
                         <button class="button-lolos" type="button" onclick="openModal3({{ $data->id }})" style="background-color: #10B981; color: black;" >
-                            <i class="bi bi-patch-check-fill me-1"></i> TPA/TPT Selesai
+                            <i class="bi bi-patch-check-fill me-1"></i> Selesai
                         </button>
                     @elseif($data->validasiberkas3 == 'belum')
                         <button class="button-dikembalikan" type="button" onclick="openModal3({{ $data->id }})" style="background-color: #0400ff; color: black;">
-                            <i class="bi bi-x-circle me-1"></i> TPA/TPT Batal
+                            <i class="bi bi-x-circle me-1"></i> Dibatalkan
                         </button>
                     @else
                         <button class="button-modern" type="button" onclick="openModal3({{ $data->id }})" style="color: black;">
-                            <i class="bi bi-patch-check me-1"></i> Pemilihan TPA/TPT
+                            <i class="bi bi-patch-check me-1"></i> Survey Lapangan
                         </button>
                     @endif
 
                     <!-- Surat Undangan (4) -->
                     @if($data->validasiberkas4 == 'sudah')
                         <button class="button-lolos" type="button" onclick="openModal4({{ $data->id }})" style="background-color: #10B981; color: black;" >
-                            <i class="bi bi-patch-check-fill me-1"></i> Surat Undangan Selesai
+                            <i class="bi bi-patch-check-fill me-1"></i> Selesai
                         </button>
                     @elseif($data->validasiberkas4 == 'belum')
                         <button class="button-dikembalikan" type="button" onclick="openModal4({{ $data->id }})" style="background-color: #0400ff; color: black;">
-                            <i class="bi bi-x-circle me-1"></i> Surat Undangan Batal
+                            <i class="bi bi-x-circle me-1"></i> Dibatalkan
                         </button>
                     @else
                         <button class="button-modern" type="button" onclick="openModal4({{ $data->id }})" style="color: black;">
-                            <i class="bi bi-patch-check me-1"></i> Status Surat Undangan
+                            <i class="bi bi-patch-check me-1"></i> Konsultasi
                         </button>
                     @endif
 
                     <!-- Berita Acara (5) -->
                     @if($data->validasiberkas5 == 'sudah')
                         <button class="button-lolos" type="button" onclick="openModal5({{ $data->id }})" style="background-color: #10B981; color: black;" >
-                            <i class="bi bi-patch-check-fill me-1"></i> Berita Acara Selesai
+                            <i class="bi bi-patch-check-fill me-1"></i> Selesai
                         </button>
                     @elseif($data->validasiberkas5 == 'belum')
                         <button class="button-dikembalikan" type="button" onclick="openModal5({{ $data->id }})" style="background-color: #0400ff; color: black;">
-                            <i class="bi bi-x-circle me-1"></i> Berita Acara Batal
+                            <i class="bi bi-x-circle me-1"></i> Dibatalkan
                         </button>
                     @else
                         <button class="button-modern" type="button" onclick="openModal5({{ $data->id }})" style="color: black;">
-                            <i class="bi bi-patch-check me-1"></i> Status Berita Acara
-                        </button>
-                    @endif
-
-                    <!-- SKRD (6) -->
-                    @if($data->validasiberkas8 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal8({{ $data->id }})" style="background-color: #10B981; color: black;" >
-                            <i class="bi bi-patch-check-fill me-1"></i> Finalisasi Selesai
-                        </button>
-                    @elseif($data->validasiberkas8 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal8({{ $data->id }})" style="background-color: #0400ff; color: black;">
-                            <i class="bi bi-x-circle me-1"></i> Belum Selesai
-                        </button>
-                    @else
-                        <button class="button-modern" type="button" onclick="openModal8({{ $data->id }})" style="color: black;">
-                            <i class="bi bi-patch-check me-1"></i> Finalisasi
+                            <i class="bi bi-patch-check me-1"></i> Rekom Teknis
                         </button>
                     @endif
 
                     <!-- SKRD (6) -->
                     @if($data->validasiberkas6 == 'sudah')
                         <button class="button-lolos" type="button" onclick="openModal6({{ $data->id }})" style="background-color: #10B981; color: black;" >
-                            <i class="bi bi-patch-check-fill me-1"></i> SKRD Selesai
+                            <i class="bi bi-patch-check-fill me-1"></i> Terbit
                         </button>
                     @elseif($data->validasiberkas6 == 'belum')
                         <button class="button-dikembalikan" type="button" onclick="openModal6({{ $data->id }})" style="background-color: #0400ff; color: black;">
-                            <i class="bi bi-x-circle me-1"></i> SKRD Tidak Terbit
+                            <i class="bi bi-x-circle me-1"></i> Tidak Terbit
                         </button>
                     @else
                         <button class="button-modern" type="button" onclick="openModal6({{ $data->id }})" style="color: black;">
-                            <i class="bi bi-patch-check me-1"></i> Status SKRD
+                            <i class="bi bi-patch-check me-1"></i> Finalisasi
                         </button>
                     @endif
 
@@ -155,7 +140,7 @@
 <!-- Modal for Surat Pemberitahuan (2) -->
 <div id="confirmModal2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai (Surat Pemberitahuan)?</p>
+        <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai?</p>
         <form id="validasiForm2" method="POST" action="/validasipembongkaran2/{{ $data->id }}">
             @csrf
             @method('PUT')
@@ -180,11 +165,12 @@
     </div>
 </div>
 
-<!-- Modal for TPA/TPT (3) -->
+
+<!-- Modal Validasi Berkas 3 -->
 <div id="confirmModal3" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai (TPA/TPT)?</p>
-        <form id="validasiForm3" method="POST" action="/validasipbgslf3/{{ $data->id }}">
+        <p style="font-size: 16px; font-weight: 600;">Apakah Sudah Survey Lapangan ?</p>
+        <form id="validasiForm3" method="POST" action="/validasipembongkaran3/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="3">
@@ -208,11 +194,11 @@
     </div>
 </div>
 
-<!-- Modal for Surat Undangan (4) -->
+<!-- Modal Validasi Berkas 4 -->
 <div id="confirmModal4" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai (Surat Undangan)?</p>
-        <form id="validasiForm4" method="POST" action="/validasipbgslf4/{{ $data->id }}">
+        <p style="font-size: 16px; font-weight: 600;">Apakah Pengolahan Data Sudah Selesai ?</p>
+        <form id="validasiForm4" method="POST" action="/validasipembongkaran4/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="4">
@@ -236,11 +222,11 @@
     </div>
 </div>
 
-<!-- Modal for Berita Acara (5) -->
+<!-- Modal Validasi Berkas 5 -->
 <div id="confirmModal5" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai (Berita Acara)?</p>
-        <form id="validasiForm5" method="POST" action="/validasipbgslf5/{{ $data->id }}">
+        <p style="font-size: 16px; font-weight: 600;">Apakah Rekom Teknis Mau Diterbitkan ?</p>
+        <form id="validasiForm5" method="POST" action="/validasipembongkaran5/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="5">
@@ -264,11 +250,11 @@
     </div>
 </div>
 
-<!-- Modal for SKRD (6) -->
+<!-- Modal Validasi Berkas 6 -->
 <div id="confirmModal6" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai (SKRD)?</p>
-        <form id="validasiForm6" method="POST" action="/validasipbgslf6/{{ $data->id }}">
+        <p style="font-size: 16px; font-weight: 600;">Apakah Keputusan Bupati Sudah Terbit?</p>
+        <form id="validasiForm6" method="POST" action="/validasipembongkaran6/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="6">
@@ -292,56 +278,8 @@
     </div>
 </div>
 
-<!-- Modal for Berkas Selesai (7) -->
-<div id="confirmModal7" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah semua berkas sudah sesuai?</p>
-        <form id="validasiForm7" method="POST" action="/validasipembongkaran7/{{ $data->id }}">
-            @csrf
-            @method('PUT')
-            <input type="hidden" name="document_type" value="7">
-            <button type="submit" name="validasiberkas1" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
-                <i class="bi bi-check2-circle me-1"></i> Sudah
-            </button>
-            <button type="submit" name="validasiberkas1" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
-                <i class="bi bi-x-circle me-1"></i> Belum
-            </button>
-        </form>
 
-    </div>
-</div>
 
-<!-- Modal for Berkas Selesai (7) -->
-<div id="confirmModal8" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah semua berkas sudah selesai?</p>
-        <form id="validasiForm8" method="POST" action="/validasipbgslf8/{{ $data->id }}">
-            @csrf
-            @method('PUT')
-            <input type="hidden" name="document_type" value="8">
-            <button type="submit" name="validasiberkas8" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
-                <i class="bi bi-check2-circle me-1"></i> Sudah
-            </button>
-            <button type="submit" name="validasiberkas8" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
-                <i class="bi bi-x-circle me-1"></i> Belum
-            </button>
-        </form>
-        <br><br>
-        <button type="button" onclick="closeModal8()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
-            <i class="bi bi-x-circle me-1"></i> Batal
-        </button>
-    </div>
-</div>
 
 <script>
 function openModal1(itemId) {
@@ -377,7 +315,7 @@ function closeModal1() {
     function openModal3(itemId) {
         const modal = document.getElementById('confirmModal3');
         const form = document.getElementById('validasiForm3');
-        form.action = `/validasipbgslf3/${itemId}`;
+        form.action = `/validasipembongkaran3/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
@@ -392,7 +330,7 @@ function closeModal1() {
     function openModal4(itemId) {
         const modal = document.getElementById('confirmModal4');
         const form = document.getElementById('validasiForm4');
-        form.action = `/validasipbgslf4/${itemId}`;
+        form.action = `/validasipembongkaran4/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
@@ -407,7 +345,7 @@ function closeModal1() {
     function openModal5(itemId) {
         const modal = document.getElementById('confirmModal5');
         const form = document.getElementById('validasiForm5');
-        form.action = `/validasipbgslf5/${itemId}`;
+        form.action = `/validasipembongkaran5/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
@@ -422,43 +360,13 @@ function closeModal1() {
     function openModal6(itemId) {
         const modal = document.getElementById('confirmModal6');
         const form = document.getElementById('validasiForm6');
-        form.action = `/validasipbgslf6/${itemId}`;
+        form.action = `/validasipembongkaran6/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
 
     function closeModal6() {
         const modal = document.getElementById('confirmModal6');
-        modal.style.display = "none";
-        document.body.style.overflow = 'auto';
-    }
-
-    // Berkas Selesai (7)
-    function openModal7(itemId) {
-        const modal = document.getElementById('confirmModal7');
-        const form = document.getElementById('validasiForm7');
-        form.action = `/validasipembongkaran7/${itemId}`;
-        modal.style.display = "flex";
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal7() {
-        const modal = document.getElementById('confirmModal7');
-        modal.style.display = "none";
-        document.body.style.overflow = 'auto';
-    }
-
-    // Berkas Selesai (7)
-    function openModal8(itemId) {
-        const modal = document.getElementById('confirmModal8');
-        const form = document.getElementById('validasiForm8');
-        form.action = `/validasipbgslf8/${itemId}`;
-        modal.style.display = "flex";
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal8() {
-        const modal = document.getElementById('confirmModal8');
         modal.style.display = "none";
         document.body.style.overflow = 'auto';
     }

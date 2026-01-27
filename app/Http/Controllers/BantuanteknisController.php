@@ -6502,4 +6502,97 @@ public function validasipembongkaran2(Request $request, $id)
     return redirect()->back();
 }
 
+
+public function validasipembongkaran3(Request $request, $id)
+{
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'validasiberkas3' => 'required|in:sudah,belum',
+    ]);
+
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas3 = $request->validasiberkas3;
+    $data->save();
+
+    // Flash message
+    if ($request->validasiberkas3 === 'sudah') {
+        session()->flash('create', '✅ Dokumen sudah lengkap!');
+    } else {
+        session()->flash('gagal', '❌ Dokumen belum lengkap!');
+    }
+
+    return redirect()->back();
+}
+
+public function validasipembongkaran4(Request $request, $id)
+{
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'validasiberkas4' => 'required|in:sudah,belum',
+    ]);
+
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas4 = $request->validasiberkas4;
+    $data->save();
+
+    // Flash message
+    if ($request->validasiberkas4 === 'sudah') {
+        session()->flash('create', '✅ Dokumen sudah lengkap!');
+    } else {
+        session()->flash('gagal', '❌ Dokumen belum lengkap!');
+    }
+
+    return redirect()->back();
+}
+
+public function validasipembongkaran5(Request $request, $id)
+{
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'validasiberkas5' => 'required|in:sudah,belum',
+    ]);
+
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas5 = $request->validasiberkas5;
+    $data->save();
+
+    // Flash message
+    if ($request->validasiberkas5 === 'sudah') {
+        session()->flash('create', '✅ Dokumen sudah lengkap!');
+    } else {
+        session()->flash('gagal', '❌ Dokumen belum lengkap!');
+    }
+
+    return redirect()->back();
+}
+
+public function validasipembongkaran6(Request $request, $id)
+{
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'validasiberkas6' => 'required|in:sudah,belum',
+    ]);
+
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas6 = $request->validasiberkas6;
+    $data->save();
+
+    // Flash message
+    if ($request->validasiberkas6 === 'sudah') {
+        session()->flash('create', '✅ Dokumen sudah lengkap!');
+    } else {
+        session()->flash('gagal', '❌ Dokumen belum lengkap!');
+    }
+
+    return redirect()->back();
+}
+
 }

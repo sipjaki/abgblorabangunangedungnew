@@ -1558,6 +1558,10 @@ Route::get(
 
  Route::put('/validasipembongkaran1/{id}', [BantuanteknisController::class, 'validasipembongkaran1'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran1.update');
  Route::put('/validasipembongkaran2/{id}', [BantuanteknisController::class, 'validasipembongkaran2'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran2.update');
+ Route::put('/validasipembongkaran3/{id}', [BantuanteknisController::class, 'validasipembongkaran3'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran3.update');
+ Route::put('/validasipembongkaran4/{id}', [BantuanteknisController::class, 'validasipembongkaran4'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran4.update');
+ Route::put('/validasipembongkaran5/{id}', [BantuanteknisController::class, 'validasipembongkaran5'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran5.update');
+ Route::put('/validasipembongkaran6/{id}', [BantuanteknisController::class, 'validasipembongkaran6'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran6.update');
 
 // Route::put('/validasipbgslf3/{id}', [PbgslfController::class, 'validasipbgslf3'])->name('validasipbgslf3.update');
 // Route::put('/validasipbgslf4/{id}', [PbgslfController::class, 'validasipbgslf4'])->name('validasipbgslf4.update');
