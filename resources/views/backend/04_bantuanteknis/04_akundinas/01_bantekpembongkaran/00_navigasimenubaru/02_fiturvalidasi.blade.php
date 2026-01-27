@@ -12,28 +12,30 @@
             <td style="text-align: center; padding: 16px;">
                 <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;">
                     <!-- Surat Pemberitahuan (2) -->
+
+                    <!-- TPA/TPT (3) -->
                     @if($data->validasiberkas1 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal1({{ $data->id }})" style="background-color: #10B981; color: black;" >
-                            <i class="bi bi-patch-check-fill me-1"></i> Lolos
+                        <button class="button-hijau" type="button" onclick="openModal1({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                            <i class="bi bi-patch-check-fill me-1"></i> Survey Selesai
                         </button>
                     @elseif($data->validasiberkas1 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal1({{ $data->id }})" style="background-color: #0400ff; color: black;">
-                            <i class="bi bi-x-circle me-1"></i> Dikembalikan
+                        <button class="button-merah" type="button" onclick="openModal1({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                            <i class="bi bi-x-circle me-1"></i> Survey Dibatalkan
                         </button>
                     @else
                         <button class="button-modern" type="button" onclick="openModal1({{ $data->id }})" style="color: black;">
-                            <i class="bi bi-patch-check me-1"></i> Verifikasi Berkas
+                            <i class="bi bi-patch-check me-1"></i> Survey Lapangan
                         </button>
                     @endif
 
 
                     {{-- validasi berkas 2 --}}
                     @if($data->validasiberkas2 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal1({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-lolos" type="button" onclick="openModal10({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Lolos
                         </button>
                     @elseif($data->validasiberkas2 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal1({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-dikembalikan" type="button" onclick="openModal10({{ $data->id }})" style="background-color: #0400ff; color: black;">
                             <i class="bi bi-x-circle me-1"></i> Dikembalikan
                         </button>
                     @else
@@ -112,7 +114,7 @@
 <div id="confirmModal1" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
         <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai (Dokumen Lengkap)?</p>
-        <form id="validasiForm1" method="POST" action="/validasipbgslf1/{{ $data->id }}">
+        <form id="validasiForm1" method="POST" action="/validasipembongkaran1/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="1">
