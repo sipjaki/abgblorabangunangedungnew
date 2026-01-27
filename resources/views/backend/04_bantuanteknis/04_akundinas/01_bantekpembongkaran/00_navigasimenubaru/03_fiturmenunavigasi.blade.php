@@ -244,7 +244,7 @@
                     <i class="bi bi-clipboard-data-fill text-primary" style="font-size: 1.8rem;"></i>
                 </div>
                <div>
-                <h4 class="mb-1" style="color: #1f2937; font-size: 20px;">Dokumen Persyaratan Pembongkaran</h4>
+                <h4 class="mb-1" style="color: #1f2937; font-size: 20px;">Dokumen Persyaratan</h4>
                 <p class="text-muted mb-0" style="font-size: 16px;">Status Kelengkapan Dokumen Pembongkaran Bangunan Gedung Negara</p>
             </div>
 
@@ -283,10 +283,6 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
@@ -294,8 +290,13 @@
                     </div>
 
                     <div class="doc-actions">
-                        <button class="btn-action view">
+                        <button class="button-baru view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
+                        </button>
+                    </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
                 </div>
@@ -326,9 +327,15 @@
                         </a>
                     </div>
 
+
                     <div class="doc-actions">
-                        <button class="btn-action edit">
-                            <i class="bi bi-pencil"></i> Perbaiki Data
+                        <button class="button-baru view">
+                            <i class="bi bi-eye"></i> Lihat Dokumen
+                        </button>
+                    </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
                 </div>
@@ -360,10 +367,16 @@
                     </div>
 
                     <div class="doc-actions">
-                        <button class="btn-action view">
+                        <button class="button-baru view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
+                        </button>
+                    </div>
+
                 </div>
             </div>
 
@@ -392,9 +405,15 @@
                         </a>
                     </div>
 
+
                     <div class="doc-actions">
-                        <button class="btn-action upload">
-                            <i class="bi bi-upload"></i> Upload Dokumen
+                        <button class="button-baru view">
+                            <i class="bi bi-eye"></i> Lihat Dokumen
+                        </button>
+                    </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
                 </div>
@@ -429,8 +448,13 @@
                     </div>
 
                     <div class="doc-actions">
-                        <button class="btn-action view">
+                        <button class="button-baru view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
+                        </button>
+                    </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
                 </div>
@@ -462,8 +486,13 @@
                     </div>
 
                     <div class="doc-actions">
-                        <button class="btn-action edit">
-                            <i class="bi bi-pencil"></i> Perbaiki Data
+                        <button class="button-baru view">
+                            <i class="bi bi-eye"></i> Lihat Dokumen
+                        </button>
+                    </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
                 </div>
@@ -494,9 +523,15 @@
                         </a>
                     </div>
 
+
                     <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Gambar
+                        <button class="button-baru view">
+                            <i class="bi bi-eye"></i> Lihat Dokumen
+                        </button>
+                    </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
                 </div>
@@ -527,9 +562,15 @@
                         </a>
                     </div>
 
+
                     <div class="doc-actions">
-                        <button class="btn-action upload">
-                            <i class="bi bi-upload"></i> Upload Dokumen
+                        <button class="button-baru view">
+                            <i class="bi bi-eye"></i> Lihat Dokumen
+                        </button>
+                    </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
                 </div>
@@ -564,8 +605,13 @@
                     </div>
 
                     <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Data
+                        <button class="button-baru view">
+                            <i class="bi bi-eye"></i> Lihat Dokumen
+                        </button>
+                    </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
                 </div>
@@ -596,9 +642,15 @@
                         </a>
                     </div>
 
+
                     <div class="doc-actions">
-                        <button class="btn-action edit">
-                            <i class="bi bi-pencil"></i> Perbaiki Data
+                        <button class="button-baru view">
+                            <i class="bi bi-eye"></i> Lihat Dokumen
+                        </button>
+                    </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
                 </div>
@@ -630,8 +682,13 @@
                     </div>
 
                     <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Surat
+                        <button class="button-baru view">
+                            <i class="bi bi-eye"></i> Lihat Dokumen
+                        </button>
+                    </div>
+                    <div class="doc-actions">
+                        <button class="button-berkas view">
+                            <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
                 </div>
