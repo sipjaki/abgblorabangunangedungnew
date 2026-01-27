@@ -1,3 +1,12 @@
+<style>
+    .timeline-message {
+        font-size: 12px;
+        font-weight: 400; /* tipis */
+        color: #6c757d;
+        margin-top: 4px;
+    }
+</style>
+
 
 <div class="container" style="margin-top: 25px;">
     <h6 style="text-align:center;">Status Permohonan !</h6>
@@ -13,48 +22,47 @@
     // Data checkpoint - diupdate sesuai data PHP
     const checkpointData = [
         {
-    id: 1,
-    name: 'Berkas Permohonan',
-    status: 'completed',
-    time: '<?php echo isset($data->created_at) ? $data->created_at : date("Y-m-d H:i:s") ?>',
-    message: '<small style="font-weight:400;">Berkas Masuk</small>'
-    // message: ''
-},
-{
-    id: 2,
-    name: 'Dokumen Pemohon',
-    status: 'pending',
-    time: '<?php echo isset($data->validasiberkas1_time) ? $data->validasiberkas1_time : "" ?>',
-    message: '<small style="font-weight:400;">Menunggu Verifikasi DPUPR</small>'
-},
-{
-    id: 3,
-    name: 'Survey Lapangan',
-    status: 'pending',
-    time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
-    message: '<small style="font-weight:400;">Belum Survey</small>'
-},
-{
-    id: 4,
-    name: 'Konsultasi',
-    status: 'pending',
-    time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
-    message: '<small style="font-weight:400;">Pengolahan Data</small>'
-},
-{
-    id: 5,
-    name: 'Rekomandasi Teknis',
-    status: 'pending',
-    time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
-    message: '<small style="font-weight:400;">Menunggu Terbit</small>'
-},
-{
-    id: 6,
-    name: 'Keputusan Bupati',
-    status: 'pending',
-    time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
-    message: '<small style="font-weight:400;">Surat Belum Terbit</small>'
-},
+            id: 1,
+            name: 'Berkas Permohonan',
+            status: 'completed',
+            time: '<?php echo isset($data->created_at) ? $data->created_at : date("Y-m-d H:i:s") ?>',
+            message: ''
+        },
+        {
+            id: 2,
+            name: 'Dokumen Pemohon',
+            status: 'pending',
+            time: '<?php echo isset($data->validasiberkas1_time) ? $data->validasiberkas1_time : "" ?>',
+            message: 'Menunggu Verifikasi DPUPR'
+        },
+        {
+            id: 3,
+            name: 'Survey Lapangan',
+            status: 'pending',
+            time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
+            message: 'Belum Survey'
+        },
+        {
+            id: 4,
+            name: 'Konsultasi',
+            status: 'pending',
+            time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
+            message: 'Pengolahan Data'
+        },
+        {
+            id: 5,
+            name: 'Rekomandasi Teknis',
+            status: 'pending',
+            time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
+            message: 'Menunggu Terbit'
+        },
+        {
+            id: 6,
+            name: 'Keputusan Bupati',
+            status: 'pending',
+            time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
+            message: 'Surat Belum Terbit'
+        },
 
         // {
         //     id: 7,
