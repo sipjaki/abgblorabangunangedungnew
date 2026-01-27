@@ -237,10 +237,12 @@
 <div class="col-md-12">
     <label class="form-label-modern">
         <i class="bi bi-geo-alt-fill text-danger me-1"></i>
-        Koordinat Lokasi Bangunan Gedung
+        Koordinat Bangunan Gedung
     </label>
 
-    <input type="text" id="keterangan" name="keterangan"
+    <input type="text"
+           id="keterangan"
+           name="keterangan"
            class="form-control mb-3"
            value="{{ old('keterangan', $data->keterangan ?? '') }}">
 
@@ -256,37 +258,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const map = L.map('map').setView(center, 14);
 
-    // SATELIT (mirip Google Satellite)
-    const imagery = L.tileLayer(
-        'https://server.arcgisonline.com/ArcGIS/rest/services/' +
-        'World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            attribution: '© ESRI'
-        }
+    // STREET MAP (NAMA JALAN PALING LENGKAP)
+    const street = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        { attribution: '© OpenStreetMap contributors' }
     ).addTo(map);
 
-    // LABEL NAMA JALAN & TEMPAT
-    const labels = L.tileLayer(
-        'https://services.arcgisonline.com/ArcGIS/rest/services/' +
-        'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-            attribution: '© ESRI Labels'
-        }
-    ).addTo(map);
+    // SATELIT
+    const satellite = L.tileLayer(
+        'https://server.arcgisonline.com/ArcGIS/rest/services/' +
+        'World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        { attribution: '© ESRI' }
+    );
+
+    // Layer switcher
+    L.control.layers({
+        "Peta Jalan (Rekomendasi)": street,
+        "Satelit": satellite
+    }).addTo(map);
 
     let marker;
-    const input = document.getElementById('keterangan');
+    const input = document.getElementById("keterangan");
 
-    // Kalau ada koordinat lama
     if (input.value) {
-        const [lat, lng] = input.value.split(',');
+        const [lat, lng] = input.value.split(",");
         marker = L.marker([lat, lng]).addTo(map);
         map.setView([lat, lng], 17);
     }
 
-    map.on('click', function(e) {
+    map.on("click", function (e) {
         if (marker) map.removeLayer(marker);
         marker = L.marker(e.latlng).addTo(map);
+
         input.value =
-            e.latlng.lat.toFixed(6) + ',' +
+            e.latlng.lat.toFixed(6) + "," +
             e.latlng.lng.toFixed(6);
     });
 
