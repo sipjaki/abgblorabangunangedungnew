@@ -294,15 +294,15 @@
 
 @if (is_null($bantek))
     {{-- Data belum diisi --}}
-    <a class="status-option red">
-        <div class="status-light red active"></div>
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
         <span>Verifikasi DPUPR</span>
     </a>
 
 @elseif ($bantek->validasiberkas1 === 'belum')
     {{-- Data ada tapi dikembalikan --}}
-    <a class="status-option yellow">
-        <div class="status-light yellow active"></div>
+    <a class="status-option red">
+        <div class="status-light red active"></div>
         <span>Dikembalikan</span>
     </a>
 
