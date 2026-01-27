@@ -290,12 +290,12 @@
                     </div>
 
                     <div class="doc-actions">
-                        <button class="button-baru view">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
@@ -327,14 +327,13 @@
                         </a>
                     </div>
 
-
                     <div class="doc-actions">
-                        <button class="button-baru view">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
@@ -356,27 +355,23 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
+
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
                         </a>
                     </div>
 
-                    <div class="doc-actions">
-                        <button class="button-baru view">
+                              <div class="doc-actions">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
-
                 </div>
             </div>
 
@@ -395,27 +390,24 @@
                             <div class="status-light red active"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
+
                         <a href="#" class="status-option green">
                             <div class="status-light green"></div>
                             <span>Lengkap</span>
                         </a>
                     </div>
 
-
-                    <div class="doc-actions">
-                        <button class="button-baru view">
+                              <div class="doc-actions">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -437,23 +429,20 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
+
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
                         </a>
                     </div>
 
-                    <div class="doc-actions">
-                        <button class="button-baru view">
+                              <div class="doc-actions">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
@@ -485,13 +474,13 @@
                         </a>
                     </div>
 
-                    <div class="doc-actions">
-                        <button class="button-baru view">
+                <div class="doc-actions">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
@@ -513,24 +502,20 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
+
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
                         </a>
                     </div>
 
-
-                    <div class="doc-actions">
-                        <button class="button-baru view">
+                          <div class="doc-actions">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
@@ -552,24 +537,19 @@
                             <div class="status-light red active"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
+
                         <a href="#" class="status-option green">
                             <div class="status-light green"></div>
                             <span>Lengkap</span>
                         </a>
                     </div>
-
-
-                    <div class="doc-actions">
-                        <button class="button-baru view">
+          <div class="doc-actions">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
@@ -594,23 +574,19 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
+
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
                         </a>
                     </div>
-
-                    <div class="doc-actions">
-                        <button class="button-baru view">
+          <div class="doc-actions">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
@@ -641,15 +617,13 @@
                             <span>Lengkap</span>
                         </a>
                     </div>
-
-
-                    <div class="doc-actions">
-                        <button class="button-baru view">
+          <div class="doc-actions">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
@@ -671,23 +645,19 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
-                        <a href="#" class="status-option yellow">
-                            <div class="status-light yellow"></div>
-                            <span>Perbaikan Data</span>
-                        </a>
+
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
                         </a>
                     </div>
-
-                    <div class="doc-actions">
-                        <button class="button-baru view">
+          <div class="doc-actions">
+                        <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
                         </button>
                     </div>
                     <div class="doc-actions">
-                        <button class="button-berkas view">
+                        <button class="btn-action edit">
                             <i class="bi bi-eye"></i> Perbaikan Data
                         </button>
                     </div>
