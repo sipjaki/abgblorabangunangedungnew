@@ -322,7 +322,7 @@
                                 </div>
 <br><br>
                                 <div class="flex justify-end">
-                               <button class="button-modern" type="button" onclick="openModal()">
+                               <button class="button-berkas" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i> Simpan Permohonan
                                     </button>
 
