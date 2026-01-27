@@ -244,8 +244,8 @@
                     <i class="bi bi-clipboard-data-fill text-primary" style="font-size: 1.8rem;"></i>
                 </div>
                 <div>
-                    <h4 class="mb-1" style="color: #1f2937;">Dokumen & Data Permohonan</h4>
-                    <p class="text-muted mb-0" style="font-size: 0.9rem;">Status kelengkapan dokumen bongkar bangunan</p>
+                    <h4 class="mb-1" style="color: #1f2937;" style="font-size: 0.4rem;">Dokumen Persyaratan Pembongkaran</h4>
+                    <p class="text-muted mb-0" style="font-size: 0.9rem;">Status Kelengkapan Dokumen Pembongkaran Bangunan Gedung Negara</p>
                 </div>
             </div>
 
