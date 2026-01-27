@@ -315,18 +315,19 @@
 
 
 {{-- ======================================================================================================================= --}}
-<div class="flex justify-end">
-                               <button class="button-modern" type="button" onclick="openModal()">
-                                    <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan Permohonan </span>
-                                    </button>
-
-                                </div>
 
 
 
                                     </div>
                                 </div>
+<br><br>
+                                <div class="flex justify-end">
+                               <button class="button-modern" type="button" onclick="openModal()">
+                                    <i class="bi bi-save" style="margin-right: 5px;"></i> Simpan Permohonan
+                                    </button>
+
+                                </div>
+
                                 <!-- End row -->
                             </div>
                             <!-- end::Body -->

@@ -6312,54 +6312,6 @@ public function bepengkajiteknisnewcreate(Request $request)
 }
 
 
-public function bantekpembongkaranbgn(Request $request)
-{
-    $user = Auth::user();
-    $search = $request->input('search');
-    $perPage = $request->input('perPage', 10);
-
-    // Query awal: filter berdasarkan jenispengajuanbantek_id = 1
-    $query = pbgslfbangunan::whereHas('jenispengajuanpbgslfper', function ($q) {
-        $q->where('id', 1);
-    });
-
-    // Jika ada pencarian
-    if ($search) {
-        $query->where(function ($q) use ($search) {
-            // Pencarian utama berdasarkan nomor registrasi
-            $q->where('noregissimbg', 'like', "%{$search}%")
-              ->orWhere('tanggalpermohonan', 'like', "%{$search}%") // Tambahkan pencarian tanggal biasa
-              ->orWhere('namapemohon', 'like', "%{$search}%") // Tambahkan pencarian tanggal biasa
-
-              // Pencarian ke relasi user
-              ->orWhereHas('user', function ($sub) use ($search) {
-                  $sub->where('name', 'like', "%{$search}%");
-                    //   ->orWhere('email', 'like', "%{$search}%");
-              })
-
-              // Pencarian ke relasi jenis pengajuan
-              ->orWhereHas('jenispengajuanpbgslfper', function ($sub) use ($search) {
-                  $sub->where('jenispengajuan', 'like', "%{$search}%");
-              });
-
-            // Tambahan: jika input search terlihat seperti format tanggal (YYYY-MM-DD), gunakan whereDate
-            if (preg_match('/\d{4}-\d{2}-\d{2}/', $search)) {
-                $q->orWhereDate('tanggalpermohonan', $search);
-            }
-        });
-    }
-
-    // Ambil hasil akhir
-    $berkasbantek = $query->latest()->paginate($perPage)->appends($request->all());
-
-    // Tampilkan ke view
-    return view('backend.01_pbgslf.01_permohonanpbgslf.01_pbgpermohonan', [
-        'title' => 'Permohonan (PBG) Persetujuan Bangunan Gedung ',
-        'data'  => $berkasbantek,
-        'user'  => $user,
-    ]);
-}
-
 
 public function bebantekpembongkaran(Request $request)
 {
@@ -6414,6 +6366,28 @@ public function bebantekpembongkarancreate(Request $request)
             'title' => 'Permohonan Baru Bantuan Teknis Pembongkaran Bangunan Gedung Negara',
             'user' => $user,
     ]);
+}
+
+public function bebantekpembongkarancreatenew(Request $request)
+{
+    $request->validate([
+        'namapemilik'   => 'nullable|string|max:255',
+        'namabangunan'  => 'nullable|string|max:255',
+        'alamat'        => 'nullable|string|max:255',
+        'keterangan'    => 'nullable|string|max:255',
+    ]);
+
+    bantekpembongkaraninduk::create([
+        'namapemilik'  => $request->namapemilik,
+        'user_id'      => Auth::id(),
+        'namabangunan' => $request->namabangunan,
+        'alamat'       => $request->alamat,
+        'keterangan'   => $request->keterangan,
+    ]);
+
+    return redirect()
+        ->route('bebantekpembongkaran')
+        ->with('create', 'Data berhasil disimpan');
 }
 
 
