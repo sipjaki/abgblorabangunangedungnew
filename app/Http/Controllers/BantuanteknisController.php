@@ -6370,12 +6370,31 @@ public function bebantekpembongkarancreate(Request $request)
 
 public function bebantekpembongkarancreatenew(Request $request)
 {
-    $request->validate([
-        'namapemilik'   => 'nullable|string|max:255',
-        'namabangunan'  => 'nullable|string|max:255',
-        'alamat'        => 'nullable|string|max:255',
-        'keterangan'    => 'nullable|string|max:255',
-    ]);
+   $request->validate(
+    [
+        'namapemilik'  => 'required|string|max:255',
+        'namabangunan' => 'required|string|max:255',
+        'alamat'       => 'required|string|max:255',
+        'keterangan'   => 'required|string|max:255',
+    ],
+    [
+        'namapemilik.required'  => 'Nama pemilik bangunan wajib diisi.',
+        'namapemilik.string'    => 'Nama pemilik harus berupa teks.',
+        'namapemilik.max'       => 'Nama pemilik maksimal 255 karakter.',
+
+        'namabangunan.required' => 'Nama bangunan wajib diisi.',
+        'namabangunan.string'   => 'Nama bangunan harus berupa teks.',
+        'namabangunan.max'      => 'Nama bangunan maksimal 255 karakter.',
+
+        'alamat.required'       => 'Alamat bangunan wajib diisi.',
+        'alamat.string'         => 'Alamat harus berupa teks.',
+        'alamat.max'            => 'Alamat maksimal 255 karakter.',
+
+        'keterangan.required'   => 'Keterangan lokasi wajib diisi (koordinat peta).',
+        'keterangan.string'     => 'Keterangan harus berupa teks.',
+        'keterangan.max'        => 'Keterangan maksimal 255 karakter.',
+    ]
+);
 
     bantekpembongkaraninduk::create([
         'namapemilik'  => $request->namapemilik,
