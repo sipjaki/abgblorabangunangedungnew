@@ -17,7 +17,7 @@
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -156,7 +156,7 @@
 <div class="col-md-6">
     <div class="form-modern mb-3">
         <label class="form-label-modern" for="namapemohon">
-            <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Pemohon
+            <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Pemilik Bangunan
         </label>
         <input type="text" class="form-control @error('namapemohon') is-invalid @enderror" id="namapemohon" name="namapemohon" value="{{ old('namapemohon', $data->namapemohon ?? '') }}">
         @error('namapemohon') <div class="invalid-feedback">{{ $message }}</div> @enderror
