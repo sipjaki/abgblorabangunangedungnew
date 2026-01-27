@@ -232,133 +232,88 @@
 <div class="row g-3">
 
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
     <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    {{-- keterangan --}}
-    <div class="row g-3">
-
-    {{-- Koordinat Lokasi --}}
     <div class="col-md-12">
         <div class="form-modern mb-3">
-            <label class="form-label-modern d-flex align-items-center" for="keterangan">
-                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i>
+            <label class="form-label-modern d-flex align-items-center">
+                <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
                 Koordinat Lokasi Bangunan Gedung
             </label>
 
-            <input type="text"
-                class="form-control @error('keterangan') is-invalid @enderror"
+            <input
+                type="text"
                 id="keterangan"
                 name="keterangan"
+                class="form-control"
+                placeholder="-7.042100,111.404600"
                 value="{{ old('keterangan', $data->keterangan ?? '') }}"
-                placeholder="-7.042100,111.404600">
-
-            @error('keterangan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+            >
         </div>
 
-        {{-- Google Map --}}
-        <div id="map"
-            style="height: 500px; border-radius: 12px; border: 2px solid #ddd;">
-        </div>
+        <!-- MAP -->
+        <div id="map" style="height:500px;border-radius:12px;border:2px solid #ddd;"></div>
     </div>
 
 </div>
 
-</div>
-
 <script>
-    let map;
-    let marker;
+document.addEventListener("DOMContentLoaded", function () {
 
-    function initMap() {
-        // Default ke Kabupaten Blora
-        const blora = { lat: -7.0421, lng: 111.4046 };
+    // Fokus awal ke Blora
+    const centerBlora = [-7.0421, 111.4046];
 
-        map = new google.maps.Map(document.getElementById("map"), {
-            center: blora,
-            zoom: 13,
-            mapTypeId: 'roadmap', // GOOGLE MAPS ASLI
-        });
+    const map = L.map('map', {
+        zoomControl: true
+    }).setView(centerBlora, 13);
 
-        const input = document.getElementById('keterangan');
-
-        // Jika sudah ada koordinat
-        if (input.value) {
-            const coords = input.value.split(',');
-            const posisi = {
-                lat: parseFloat(coords[0]),
-                lng: parseFloat(coords[1])
-            };
-
-            marker = new google.maps.Marker({
-                position: posisi,
-                map: map
-            });
-
-            map.setCenter(posisi);
-            map.setZoom(16);
+    /* =========================
+       TILE SATELIT (MIRIP GOOGLE MAPS)
+       ========================= */
+    const satellite = L.tileLayer(
+        'https://server.arcgisonline.com/ArcGIS/rest/services/' +
+        'World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '© Esri | Dinas PUPR Kab. Blora'
         }
+    ).addTo(map);
 
-        // Klik peta
-        map.addListener("click", function(event) {
-            const lat = event.latLng.lat().toFixed(6);
-            const lng = event.latLng.lng().toFixed(6);
+    const street = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        { attribution: '© OpenStreetMap' }
+    );
 
-            // Hapus marker lama
-            if (marker) {
-                marker.setMap(null);
-            }
-
-            // Marker baru
-            marker = new google.maps.Marker({
-                position: event.latLng,
-                map: map
-            });
-
-            // Isi input
-            input.value = lat + ',' + lng;
-        });
-    }
-</script>
-
-
-
-<script>
-    // Inisialisasi map dengan fokus ke Kabupaten Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11); // keterangan Blora
-
-    // Tambahkan layer peta dari OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
+    // Layer switcher
+    L.control.layers({
+        "Satelit": satellite,
+        "Street": street
     }).addTo(map);
 
-    // Marker (jika sudah ada nilai awal keterangan)
-    var marker;
-    var input = document.getElementById('keterangan');
+    let marker = null;
+    const input = document.getElementById('keterangan');
+
+    // Jika sudah ada koordinat
     if (input.value) {
-        var coords = input.value.split(',');
-        marker = L.marker([coords[0], coords[1]]).addTo(map);
-        map.setView([coords[0], coords[1]], 15);
+        const [lat, lng] = input.value.split(',');
+        marker = L.marker([lat, lng]).addTo(map);
+        map.setView([lat, lng], 17);
     }
 
-    // Event saat klik di peta
+    // Klik peta → marker + simpan koordinat
     map.on('click', function(e) {
-        var latlng = e.latlng;
-        // Hapus marker sebelumnya
-        if (marker) {
-            map.removeLayer(marker);
-        }
-        // Tambahkan marker baru
-        marker = L.marker(latlng).addTo(map);
+        if (marker) map.removeLayer(marker);
 
-        // Simpan keterangan ke input
-        document.getElementById('keterangan').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
+        marker = L.marker(e.latlng).addTo(map);
+
+        input.value =
+            e.latlng.lat.toFixed(6) + ',' +
+            e.latlng.lng.toFixed(6);
     });
-</script>
 
+});
+</script>
 
 {{-- JQuery AJAX untuk load Kelurahan berdasarkan Kecamatan --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
