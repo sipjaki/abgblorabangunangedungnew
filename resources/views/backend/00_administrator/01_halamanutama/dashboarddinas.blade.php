@@ -183,11 +183,11 @@
                     </p>
 
                     <p class="info-text fw-bold">
-                        Pembongkaran Bangunan Gedung
+                        PEMBONGKARAN BANGUNAN GEDUNG
                     </p>
 
                     <p class="small-text">
-                        Jumlah Permohonan
+                        Informasi Jumlah Permohonan
                     </p>
                 </div>
 
