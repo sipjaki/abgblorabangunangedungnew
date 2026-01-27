@@ -6479,4 +6479,27 @@ public function validasipembongkaran1(Request $request, $id)
     return redirect()->back();
 }
 
+public function validasipembongkaran2(Request $request, $id)
+{
+    $data = bantekpembongkaraninduk::findOrFail($id);
+
+    // Validasi input
+    $request->validate([
+        'validasiberkas2' => 'required|in:sudah,belum',
+    ]);
+
+    // SIMPAN KE FIELD YANG BENAR
+    $data->validasiberkas2 = $request->validasiberkas2;
+    $data->save();
+
+    // Flash message
+    if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Dokumen sudah lengkap!');
+    } else {
+        session()->flash('gagal', '❌ Dokumen belum lengkap!');
+    }
+
+    return redirect()->back();
+}
+
 }

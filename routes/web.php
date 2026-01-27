@@ -1546,7 +1546,7 @@ Route::get('/bantekpembongkaranbgn', [BantuanteknisController::class, 'bantekpem
 Route::get('/bebantekpembongkaran', [BantuanteknisController::class, 'bebantekpembongkaran'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkaran');
 Route::get('/bebantekpembongkaran/create', [BantuanteknisController::class, 'bebantekpembongkarancreate'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreate');
 Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkarancreatenew'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreatenew');
-Route::delete('/bebantekpembongkarandelete/{id}', [BantuanteknisController::class, 'bebantekpembongkarandelete'])->middleware('auth')->name('delete.pembongkaran');
+Route::delete('/bebantekpembongkarandelete/{id}', [BantuanteknisController::class, 'bebantekpembongkarandelete'])->middleware('auth', 'can:admindinas')->name('delete.pembongkaran');
 
 Route::get(
     '/bebantekpembongkaran/show/{namapemilik}/{id}',
@@ -1556,8 +1556,8 @@ Route::get(
 
  // validasi berkas pembongkaran bangunan gedung
 
- Route::put('/validasipembongkaran1/{id}', [BantuanteknisController::class, 'validasipembongkaran1'])
-    ->name('validasipembongkaran1.update');
+ Route::put('/validasipembongkaran1/{id}', [BantuanteknisController::class, 'validasipembongkaran1'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran1.update');
+ Route::put('/validasipembongkaran2/{id}', [BantuanteknisController::class, 'validasipembongkaran2'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran2.update');
 
 // Route::put('/validasipbgslf3/{id}', [PbgslfController::class, 'validasipbgslf3'])->name('validasipbgslf3.update');
 // Route::put('/validasipbgslf4/{id}', [PbgslfController::class, 'validasipbgslf4'])->name('validasipbgslf4.update');

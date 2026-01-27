@@ -23,7 +23,7 @@
     </button>
 @else
     <button class="button-modern" type="button" onclick="openModal1({{ $data->id }})">
-        <i class="bi bi-patch-check me-1"></i> Validasi Berkas
+        <i class="bi bi-patch-check me-1"></i> Berkas Masuk
     </button>
 @endif
 
@@ -45,15 +45,15 @@
                     <!-- Surat Pemberitahuan (2) -->
                     @if($data->validasiberkas2 == 'sudah')
                         <button class="button-lolos" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #10B981; color: black;" >
-                            <i class="bi bi-patch-check-fill me-1"></i> Surat Pemberitahuan Selesai
+                            <i class="bi bi-patch-check-fill me-1"></i> Lolos
                         </button>
                     @elseif($data->validasiberkas2 == 'belum')
                         <button class="button-dikembalikan" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #0400ff; color: black;">
-                            <i class="bi bi-x-circle me-1"></i> Surat Pemberitahuan Batal
+                            <i class="bi bi-x-circle me-1"></i> Dikembalikan
                         </button>
                     @else
                         <button class="button-modern" type="button" onclick="openModal2({{ $data->id }})" style="color: black;">
-                            <i class="bi bi-patch-check me-1"></i> Status Surat Pemberitahuan
+                            <i class="bi bi-patch-check me-1"></i> Verifikasi Berkas
                         </button>
                     @endif
 
@@ -169,7 +169,7 @@
 <div id="confirmModal2" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
         <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai (Surat Pemberitahuan)?</p>
-        <form id="validasiForm2" method="POST" action="/validasipbgslf2/{{ $data->id }}">
+        <form id="validasiForm2" method="POST" action="/validasipembongkaran2/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="2">
@@ -375,7 +375,7 @@ function closeModal1() {
     function openModal2(itemId) {
         const modal = document.getElementById('confirmModal2');
         const form = document.getElementById('validasiForm2');
-        form.action = `/validasipbgslf2/${itemId}`;
+        form.action = `/validasipembongkaran2/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
