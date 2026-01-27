@@ -231,82 +231,60 @@
 
 <div class="row g-3">
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<div class="col-md-12">
+    <label class="form-label-modern">
+        <i class="bi bi-geo-alt-fill text-danger me-1"></i>
+        Koordinat Lokasi Bangunan Gedung
+    </label>
 
-    <div class="col-md-12">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern d-flex align-items-center">
-                <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
-                Koordinat Lokasi Bangunan Gedung
-            </label>
+    <input type="text" id="keterangan" name="keterangan"
+           class="form-control mb-3"
+           value="{{ old('keterangan', $data->keterangan ?? '') }}">
 
-            <input
-                type="text"
-                id="keterangan"
-                name="keterangan"
-                class="form-control"
-                placeholder="-7.042100,111.404600"
-                value="{{ old('keterangan', $data->keterangan ?? '') }}"
-            >
-        </div>
-
-        <!-- MAP -->
-        <div id="map" style="height:500px;border-radius:12px;border:2px solid #ddd;"></div>
-    </div>
+    <div id="map" style="height:520px;border-radius:12px;border:2px solid #ccc"></div>
+</div>
 
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Fokus awal ke Blora
-    const centerBlora = [-7.0421, 111.4046];
+    const center = [-7.0421, 111.4046];
 
-    const map = L.map('map', {
-        zoomControl: true
-    }).setView(centerBlora, 13);
+    const map = L.map('map').setView(center, 14);
 
-    /* =========================
-       TILE SATELIT (MIRIP GOOGLE MAPS)
-       ========================= */
-    const satellite = L.tileLayer(
+    // SATELIT (mirip Google Satellite)
+    const imagery = L.tileLayer(
         'https://server.arcgisonline.com/ArcGIS/rest/services/' +
         'World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            attribution: '© Esri | Dinas PUPR Kab. Blora'
+            attribution: '© ESRI'
         }
     ).addTo(map);
 
-    const street = L.tileLayer(
-        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        { attribution: '© OpenStreetMap' }
-    );
+    // LABEL NAMA JALAN & TEMPAT
+    const labels = L.tileLayer(
+        'https://services.arcgisonline.com/ArcGIS/rest/services/' +
+        'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '© ESRI Labels'
+        }
+    ).addTo(map);
 
-    // Layer switcher
-    L.control.layers({
-        "Satelit": satellite,
-        "Street": street
-    }).addTo(map);
-
-    let marker = null;
+    let marker;
     const input = document.getElementById('keterangan');
 
-    // Jika sudah ada koordinat
+    // Kalau ada koordinat lama
     if (input.value) {
         const [lat, lng] = input.value.split(',');
         marker = L.marker([lat, lng]).addTo(map);
         map.setView([lat, lng], 17);
     }
 
-    // Klik peta → marker + simpan koordinat
     map.on('click', function(e) {
         if (marker) map.removeLayer(marker);
-
         marker = L.marker(e.latlng).addTo(map);
-
         input.value =
             e.latlng.lat.toFixed(6) + ',' +
             e.latlng.lng.toFixed(6);
@@ -314,6 +292,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
 
 {{-- JQuery AJAX untuk load Kelurahan berdasarkan Kecamatan --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
