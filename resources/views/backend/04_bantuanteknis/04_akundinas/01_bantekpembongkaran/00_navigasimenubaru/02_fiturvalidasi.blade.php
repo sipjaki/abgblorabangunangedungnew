@@ -1,346 +1,6 @@
 {{-- @canany(['superadmin', 'admin']) --}}
 @canany(['admindinas'])
 
-{{-- <table class="table table-bordered" style="font-size: 13px; text-align: center;">
-    <thead>
-        <tr>
-            <th>Verifikasi 1</th>
-            <th>Verifikasi 2</th>
-            <th>Verifikasi 3</th>
-            <th>Verifikasi 4</th>
-            <th>Verifikasi 5</th>
-            <th>Verifikasi 6</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            @for ($i = 1; $i <= 6; $i++)
-                <td style="text-align: center; display: flex; justify-content: center; align-items: center; height: 60px;">
-                    @php $status = $item['validasiberkas' . $i] ?? null; @endphp
-                    @if ($status == 'sudah')
-                        <button class="button-create" type="button" style="background-color: #10B981; color: black; cursor: not-allowed;" >
-                            <i class="bi bi-patch-check-fill me-1"></i> Sudah
-                        </button>
-                    @elseif ($status == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal{{ $i }}({{ $item->id }})" style="background-color: #0400ff; color: black;">
-                            <i class="bi bi-x-circle me-1"></i> Belum
-                        </button>
-                    @else
-                        <button class="button-kembali" type="button" onclick="openModal{{ $i }}({{ $item->id }})" style="color: black">
-                            <i class="bi bi-patch-check me-1"></i> Validasi
-                        </button>
-                    @endif
-                </td>
-            @endfor
-        </tr>
-    </tbody>
-</table>
-
-@for ($i = 1; $i <= 6; $i++)
-    <div id="confirmModal{{ $i }}" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-        <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-            <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai (Verifikasi {{ $i }})?</p>
-            <form id="validasiForm{{ $i }}" method="POST">
-                @csrf
-                @method('PUT')
-
-                <button type="submit" name="validasiberkas{{ $i }}" value="lolos" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
-                    <i class="bi bi-check2-circle me-1"></i> Sudah
-                </button>
-
-                <button type="submit" name="validasiberkas{{ $i }}" value="dikembalikan" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
-                    <i class="bi bi-x-circle me-1"></i> Belum
-                </button>
-            </form>
-
-            <br><br>
-            <button type="button" onclick="closeModal{{ $i }}()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
-                <i class="bi bi-x-circle me-1"></i> Batal
-            </button>
-        </div>
-    </div>
-@endfor
-
-<script>
-    @for ($i = 1; $i <= 6; $i++)
-        function openModal{{ $i }}(itemId) {
-            const form = document.getElementById("validasiForm{{ $i }}");
-            form.action = "/validasiberkas7permohonan{{ $i }}/" + itemId;
-            document.getElementById("confirmModal{{ $i }}").style.display = "flex";
-        }
-
-        function closeModal{{ $i }}() {
-            document.getElementById("confirmModal{{ $i }}").style.display = "none";
-        }
-    @endfor
-</script> --}}
-{{--
-@include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturvalidasi') --}}
-
-{{--
-<table class="table table-bordered w-100" style="font-size: 13px;">
-    <thead>
-        <tr>
-            <th style="text-align: center;">Verifikasi Berkas</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="text-align: center; padding: 16px;">
-                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;">
-                    @php
-                        $judulVerifikasi = [
-                            1 => 'Dokumen Lengkap',
-                            2 => 'Surat Pemberitahuan',
-                            3 => 'TPA/TPT',
-                            4 => 'Surat Undangan',
-                            5 => 'Berita Acara',
-                            6 => 'SKRD',
-                        ];
-                    @endphp
-
-                    @for ($i = 1; $i <= 6; $i++)
-                        @php $status = $data['validasiberkas' . $i] ?? null; @endphp
-
-                        @if ($status == 'sudah')
-                            <button class="button-lolos" type="button" style="background-color: #10B981; color: black; cursor: not-allowed;" >
-                                <i class="bi bi-patch-check-fill me-1"></i> {{ $judulVerifikasi[$i] }}
-                            </button>
-                        @elseif ($status == 'belum')
-                            <button class="button-dikembalikan" type="button" onclick="openModal{{ $i }}({{ $data->id }})" style="background-color: #0400ff; color: black;">
-                                <i class="bi bi-x-circle me-1"></i> {{ $judulVerifikasi[$i] }}
-                            </button>
-                        @else
-                            <button class="button-modern" type="button" onclick="openModal{{ $i }}({{ $data->id }})" style="color: black;">
-                                <i class="bi bi-patch-check me-1"></i> {{ $judulVerifikasi[$i] }}
-                            </button>
-                        @endif
-                    @endfor
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-@for ($i = 1; $i <= 6; $i++)
-    <div id="confirmModal{{ $i }}" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-        <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-            <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai ({{ $judulVerifikasi[$i] }})?</p>
-            <form id="validasiForm{{ $i }}" method="POST">
-                @csrf
-                @method('PUT')
-
-                <button type="submit" name="validasiberkas{{ $i }}" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;"
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
-                    <i class="bi bi-check2-circle me-1"></i> Sudah
-                </button>
-
-                <button type="submit" name="validasiberkas{{ $i }}" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none;"
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
-                    <i class="bi bi-x-circle me-1"></i> Belum
-                </button>
-            </form>
-
-            <br><br>
-            <button type="button" onclick="closeModal{{ $i }}()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
-                <i class="bi bi-x-circle me-1"></i> Batal
-            </button>
-        </div>
-    </div>
-@endfor
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        @for ($i = 1; $i <= 6; $i++)
-            window.openModal{{ $i }} = function(itemId) {
-                const form = document.getElementById("validasiForm{{ $i }}");
-                const modal = document.getElementById("confirmModal{{ $i }}");
-
-                if (form && modal) {
-                    form.action = "/validasipbgslf{{ $i }}/" + itemId;
-                    modal.style.display = "flex";
-                } else {
-                    console.warn("Modal atau form tidak ditemukan untuk verifikasi {{ $i }}");
-                }
-            }
-
-            window.closeModal{{ $i }} = function() {
-                const modal = document.getElementById("confirmModal{{ $i }}");
-                if (modal) {
-                    modal.style.display = "none";
-                }
-            }
-        @endfor
-    });
-</script> --}}
-
-{{-- <table class="table table-bordered w-100" style="font-size: 13px;">
-    <thead>
-        <tr>
-            <th style="text-align: center;">Verifikasi Berkas</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="text-align: center; padding: 16px;">
-                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;">
-                    @php
-                        $judulVerifikasi = [
-                            1 => 'Dokumen Lengkap',
-                            2 => 'Surat Pemberitahuan',
-                            3 => 'TPA/TPT',
-                            4 => 'Surat Undangan',
-                            5 => 'Berita Acara',
-                            6 => 'SKRD',
-                        ];
-
-                        // Ensure all validasi fields exist in the data
-                        for ($i = 1; $i <= 6; $i++) {
-                            $field = "validasiberkas$i";
-                            if (!isset($data->$field)) {
-                                $data->$field = null; // Set default value if not exists
-                            }
-                        }
-                    @endphp
-
-                    @for ($i = 1; $i <= 6; $i++)
-                        @php
-                            $field = "validasiberkas$i";
-                            $modalId = "confirmModal$i";
-                            $formId = "validasiForm$i";
-                        @endphp
-
-                        @if ($data->$field == 'sudah')
-                            <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
-                                <i class="bi bi-patch-check-fill me-1"></i> {{ $judulVerifikasi[$i] }}
-                            </button>
-                        @elseif ($data->$field == 'belum')
-                            <button class="button-dikembalikan" type="button" onclick="openModal({{ $i }}, {{ $data->id }})" style="background-color: #0400ff; color: black;">
-                                <i class="bi bi-x-circle me-1"></i> {{ $judulVerifikasi[$i] }}
-                            </button>
-                        @else
-                            <button class="button-modern" type="button" onclick="openModal({{ $i }}, {{ $data->id }})" style="color: black;">
-                                <i class="bi bi-patch-check me-1"></i> {{ $judulVerifikasi[$i] }}
-                            </button>
-                        @endif
-                    @endfor
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-@for ($i = 1; $i <= 6; $i++)
-@php
-    $modalId = "confirmModal$i";
-    $formId = "validasiForm$i";
-    $fieldName = "validasiberkas$i";
-@endphp
-<!-- Modal Verifikasi Berkas {{ $i }} -->
-<div id="{{ $modalId }}" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah berkas sudah sesuai ({{ $judulVerifikasi[$i] }})?</p>
-        <form id="{{ $formId }}" method="POST" action="">
-            @csrf
-            @method('PUT')
-            <input type="hidden" name="document_type" value="{{ $i }}">
-            <button type="submit" name="{{ $fieldName }}" value="sudah" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white';">
-                <i class="bi bi-check2-circle me-1"></i> Sudah
-            </button>
-            <button type="submit" name="{{ $fieldName }}" value="belum" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#0400ff'; this.style.color='white';">
-                <i class="bi bi-x-circle me-1"></i> Belum
-            </button>
-        </form>
-        <br><br>
-        <button type="button" onclick="closeModal({{ $i }})" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
-            <i class="bi bi-x-circle me-1"></i> Batal
-        </button>
-    </div>
-</div>
-@endfor
-
-<script>
-    // Consolidated modal functions
-    function openModal(documentType, itemId) {
-        const form = document.getElementById(`validasiForm${documentType}`);
-        const modal = document.getElementById(`confirmModal${documentType}`);
-
-        // Set the correct form action based on document type
-        form.action = `/validasipbgslf${documentType}/${itemId}`;
-
-        // Display the modal
-        modal.style.display = "flex";
-
-        // Prevent background scrolling when modal is open
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal(documentType) {
-        const modal = document.getElementById(`confirmModal${documentType}`);
-        modal.style.display = "none";
-
-        // Restore background scrolling
-        document.body.style.overflow = 'auto';
-    }
-
-    // Close modal when clicking outside of it
-    window.addEventListener('click', function(event) {
-        @for ($i = 1; $i <= 6; $i++)
-            const modal{{ $i }} = document.getElementById('confirmModal{{ $i }}');
-            if (event.target === modal{{ $i }}) {
-                closeModal({{ $i }});
-            }
-        @endfor
-    });
-</script>
-
-<style>
-    /* Add some basic styling for buttons */
-    .button-lolos, .button-dikembalikan, .button-modern {
-        padding: 8px 12px;
-        border-radius: 6px;
-        border: 1px solid #ddd;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-weight: 500;
-    }
-
-    .button-modern {
-        background-color: #f3f4f6;
-    }
-
-    .button-modern:hover {
-        background-color: #e5e7eb;
-    }
-
-    /*  button style */
-    button: {
-        opacity: 0.7;
-        cursor: not-allowed;
-    }
-
-    /* Modal backdrop */
-    .modal-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.5);
-        z-index: 999;
-    }
-</style> --}}
 <table class="table table-bordered w-100" style="font-size: 13px;">
     <thead>
         <tr>
@@ -355,12 +15,12 @@
 
 
                     <!-- Berkas Selesai (7) -->
-                    @if($data->validasiberkas7 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal7({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                    @if($data->validasiberkas1 == 'sudah')
+                        <button class="button-hijau" type="button" onclick="openModal7({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
                         </button>
-                    @elseif($data->validasiberkas7 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal7({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                    @elseif($data->validasiberkas1 == 'belum')
+                        <button class="button-merah" type="button" onclick="openModal7({{ $data->id }})" style="background-color: #0400ff; color: black;">
                             <i class="bi bi-x-circle me-1"></i> Dokumen Tidak Lengkap
                         </button>
                     @else
@@ -650,8 +310,8 @@
 <!-- Modal for Berkas Selesai (7) -->
 <div id="confirmModal7" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah semua berkas sudah selesai?</p>
-        <form id="validasiForm7" method="POST" action="/validasipbgslf7/{{ $data->id }}">
+        <p style="font-size: 16px; font-weight: 600;">Apakah semua berkas sudah sesuai?</p>
+        <form id="validasiForm7" method="POST" action="/validasipembongkaran7/{{ $data->id }}">
             @csrf
             @method('PUT')
             <input type="hidden" name="document_type" value="7">
@@ -666,12 +326,7 @@
                 <i class="bi bi-x-circle me-1"></i> Belum
             </button>
         </form>
-        <br><br>
-        <button type="button" onclick="closeModal7()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none; color: black; cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#D1D5DB'; this.style.color='black';">
-            <i class="bi bi-x-circle me-1"></i> Batal
-        </button>
+
     </div>
 </div>
 
@@ -798,7 +453,7 @@
     function openModal7(itemId) {
         const modal = document.getElementById('confirmModal7');
         const form = document.getElementById('validasiForm7');
-        form.action = `/validasipbgslf7/${itemId}`;
+        form.action = `/validasipembongkaran7/${itemId}`;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }

@@ -6457,7 +6457,7 @@ public function bebantekpembongkaranshowdata($namapemilik, $id)
 }
 
 
-public function validasipembongkaran1(Request $request, $id)
+public function validasipembongkaran7(Request $request, $id)
     {
         $data = bantekpembongkaraninduk::findOrFail($id);
 
