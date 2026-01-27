@@ -106,50 +106,50 @@ if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' 
         // }
 
         // Step 3: Cek Lapangan (validasiberkas2)
-        if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' === 'sudah') {
+        if ('<?php echo isset($data->validasiberkas3) ? $data->validasiberkas3 : "" ?>' === 'sudah') {
             checkpointData[2].status = 'completed';
             checkpointData[2].message = 'Lolos';
-        } else if ('<?php echo isset($data->validasiberkas2) ? $data->validasiberkas2 : "" ?>' === 'belum') {
+        } else if ('<?php echo isset($data->validasiberkas3) ? $data->validasiberkas3 : "" ?>' === 'belum') {
             checkpointData[2].status = 'rejected';
             checkpointData[2].message = 'Berkas Di Kembalikan!';
         }
 
         // Step 4: Verifikasi Data (validasiberkas3)
-        if ('<?php echo isset($data->validasiberkas3) ? $data->validasiberkas3 : "" ?>' === 'sudah') {
+        if ('<?php echo isset($data->validasiberkas4) ? $data->validasiberkas4 : "" ?>' === 'sudah') {
             checkpointData[3].status = 'completed';
             checkpointData[3].message = 'Survey Lapangan';
-        } else if ('<?php echo isset($data->validasiberkas3) ? $data->validasiberkas3 : "" ?>' === 'belum') {
+        } else if ('<?php echo isset($data->validasiberkas4) ? $data->validasiberkas4 : "" ?>' === 'belum') {
             checkpointData[3].status = 'rejected';
             checkpointData[3].message = 'Dibatalkan !';
         }
 
         // Step 5: Penerbitan Berkas (validasiberkas4)
-        if ('<?php echo isset($data->validasiberkas4) ? $data->validasiberkas4 : "" ?>' === 'sudah') {
+        if ('<?php echo isset($data->validasiberkas5) ? $data->validasiberkas5 : "" ?>' === 'sudah') {
             checkpointData[4].status = 'completed';
             checkpointData[4].message = 'Selesai';
-        } else if ('<?php echo isset($data->validasiberkas4) ? $data->validasiberkas4 : "" ?>' === 'belum') {
+        } else if ('<?php echo isset($data->validasiberkas5) ? $data->validasiberkas5 : "" ?>' === 'belum') {
             checkpointData[4].status = 'rejected';
             checkpointData[4].message = 'Dibatalkan!';
         }
 
         // Step 6: Distribusi Surat (distribusisurat)
-        if ('<?php echo isset($data->validasiberkas5) ? $data->validasiberkas5 : "" ?>' === 'sudah') {
+        if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'sudah') {
             checkpointData[5].status = 'completed';
             checkpointData[5].message = 'Terbit';
-        } else if ('<?php echo isset($data->validasiberkas5) ? $data->validasiberkas5 : "" ?>' === 'belum') {
+        } else if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'belum') {
             checkpointData[5].status = 'pending';
             checkpointData[5].message = 'Tidak Terbit';
         }
 
 
-        // Step 7: Selesai (selesai)
-        if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'sudah') {
-            checkpointData[7].status = 'completed';
-            checkpointData[7].message = 'Permohonan Selesai';
-        } else if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'belum') {
-            checkpointData[7].status = 'pending';
-            checkpointData[7].message = 'Tidak Selesai';
-        }
+        // // Step 7: Selesai (selesai)
+        // if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'sudah') {
+        //     checkpointData[7].status = 'completed';
+        //     checkpointData[7].message = 'Permohonan Selesai';
+        // } else if ('<?php echo isset($data->validasiberkas6) ? $data->validasiberkas6 : "" ?>' === 'belum') {
+        //     checkpointData[7].status = 'pending';
+        //     checkpointData[7].message = 'Tidak Selesai';
+        // }
 
 
         // // Step 7: Selesai (selesai)
