@@ -234,17 +234,17 @@
     <i class="bi bi-house-fill"></i> Nama Bangunan
 </th>
 
-<th>
+{{-- <th>
     <i class="bi bi-geo-alt-fill"></i> Alamat
 </th>
 
 <th>
     <i class="bi bi-info-circle-fill"></i> Keterangan
-</th>
+</th> --}}
 
 
-        <th style="background-color: #ADD8E6;"><i class="bi bi-eye"></i> Lihat Permohonan</th>
-            <th style="background-color: #ADD8E6;"><i class="bi bi-tools"></i> Aksi</th>
+        <th><i class="bi bi-eye"></i> Lihat Permohonan</th>
+            <th ><i class="bi bi-tools"></i> Aksi</th>
         </tr>
                             </thead>
                               <tbody id="tableBody">
@@ -257,9 +257,9 @@
 
 <td>{{ $item->namabangunan ?? '-' }}</td>
 
-<td>{{ $item->alamat ?? '-' }}</td>
+{{-- <td>{{ $item->alamat ?? '-' }}</td>
 
-<td>{{ $item->keterangan ?? '-' }}</td>
+<td>{{ $item->keterangan ?? '-' }}</td> --}}
 
             <td style="text-align: center;">
                 <a href="{{ route('bebantekpembongkaranshow', $item->id) }}"
@@ -280,7 +280,7 @@
                                         <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                                             <i class="bi bi-pencil-square"></i>
                                         </a> --}}
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                                        <a href="javascript:void(0)" class="button-merah" title="Delete"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal"
                                         data-judul="{{ $item->id }}"
                                            onclick="setDeleteUrl(this)">
@@ -366,7 +366,7 @@
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bebantuanteknisdelete/" + encodeURIComponent(id);
+                     var deleteUrl = "/bebantekpembongkarandelete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
