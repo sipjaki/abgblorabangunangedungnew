@@ -91,7 +91,7 @@
 
 
 
-            
+
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
@@ -123,11 +123,12 @@
             }
         </script>
 
-
-                        <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                        </div>
+                @can('admindpupr')
+                <div style="position: relative; display: inline-block; margin-right:10px;">
+                    <input type="search" id="searchInput" placeholder="Cari Berkas Permohonan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                    <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                </div>
+                @endcan
                         <script>
                             function updateEntries() {
                                 let selectedValue = document.getElementById("entries").value;
@@ -163,22 +164,22 @@
     </a>
     @endcanany
 
-
-                                <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanbantuanteknis')"
+                               <button onclick="exportTableToExcel('tabelSuratbantuanteknis', 'data_permohonanbantuanteknis')"
                                     class="button-baru" style="color: black;">
                                     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
                                 </button>
+                                <a href="{{ route('bebantekpembongkarancreate') }}"
+                                    class="button-modern"
+                                    style="color: black; text-decoration: none;">
+
+                                        <i class="bi bi-plus-circle me-1"></i>
+                                        Permohonan Baru
+                                    </a>
+
 
 
              {{-- @canany(['superadmin', 'admin']) --}}
-    @canany(['superadmin', 'admin'])
-    <a href="{{ route('bebantuanteknisindexmenu') }}">
-        <button class="button-baru" type="button"
-            style="cursor: pointer; margin-left:5px; color:black;">
-            <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-        </button>
-    </a>
-@endcanany
+
 
 {{-- @endcanany --}}
 
@@ -391,7 +392,8 @@
             font-weight: bold;
         ">
             <div style="font-size: 1.2rem; margin-bottom: 10px;">
-                Data Tidak Di Temukan!
+                Belum Ada Permohonan
+                !
             </div>
 
         </div>

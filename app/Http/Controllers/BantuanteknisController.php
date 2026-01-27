@@ -6402,4 +6402,19 @@ public function bebantekpembongkaran(Request $request)
     ]);
 }
 
+
+public function bebantekpembongkarancreate(Request $request)
+{
+    // Ambil user login
+    $user = Auth::user();
+
+
+        // Kirim data ke view tanpa ambil dari database bantuanhibahbg
+        return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.02_createpermohonan', [
+            'title' => 'Permohonan Baru Bantuan Teknis Pembongkaran Bangunan Gedung Negara',
+            'user' => $user,
+    ]);
+}
+
+
 }
