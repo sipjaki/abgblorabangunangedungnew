@@ -28,27 +28,14 @@
 @endif
 
 
-                    {{-- @if($data->validasiberkas1 == 'sudah')
-                        <button class="button-lolos" type="button" style="background-color: #10B981; color: black;" >
-                            <i class="bi bi-patch-check-fill me-1"></i> Dokumen Lengkap
-                        </button>
-                    @elseif($data->validasiberkas1 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal1({{ $data->id }})" style="background-color: #0400ff; color: black;">
-                            <i class="bi bi-x-circle me-1"></i> Dokumen Lengkap
-                        </button>
-                    @else
-                        <button class="button-modern" type="button" onclick="openModal1({{ $data->id }})" style="color: black;">
-                            <i class="bi bi-patch-check me-1"></i> Dokumen Lengkap
-                        </button>
-                    @endif --}}
 
                     <!-- Surat Pemberitahuan (2) -->
                     @if($data->validasiberkas2 == 'sudah')
-                        <button class="button-lolos" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #10B981; color: black;" >
+                        <button class="button-hijau" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #10B981; color: black;" >
                             <i class="bi bi-patch-check-fill me-1"></i> Lolos
                         </button>
                     @elseif($data->validasiberkas2 == 'belum')
-                        <button class="button-dikembalikan" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #0400ff; color: black;">
+                        <button class="button-merah" type="button" onclick="openModal2({{ $data->id }})" style="background-color: #0400ff; color: black;">
                             <i class="bi bi-x-circle me-1"></i> Dikembalikan
                         </button>
                     @else

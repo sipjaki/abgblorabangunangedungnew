@@ -32,35 +32,35 @@
             id: 2,
             name: 'Dokumen Pemohon',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas1_time) ? $data->validasiberkas1_time : "" ?>',
+            time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
             message: 'Menunggu Verifikasi DPUPR'
         },
         {
             id: 3,
             name: 'Survey Lapangan',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas2_time) ? $data->validasiberkas2_time : "" ?>',
+            time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
             message: 'Belum Survey'
         },
         {
             id: 4,
             name: 'Konsultasi',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas3_time) ? $data->validasiberkas3_time : "" ?>',
+            time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
             message: 'Pengolahan Data'
         },
         {
             id: 5,
             name: 'Rekomandasi Teknis',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas4_time) ? $data->validasiberkas4_time : "" ?>',
+            time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
             message: 'Menunggu Terbit'
         },
         {
             id: 6,
             name: 'Keputusan Bupati',
             status: 'pending',
-            time: '<?php echo isset($data->validasiberkas5_time) ? $data->validasiberkas5_time : "" ?>',
+            time: '<?php echo isset($data->validasiberkas6_time) ? $data->validasiberkas6_time : "" ?>',
             message: 'Surat Belum Terbit'
         },
 
