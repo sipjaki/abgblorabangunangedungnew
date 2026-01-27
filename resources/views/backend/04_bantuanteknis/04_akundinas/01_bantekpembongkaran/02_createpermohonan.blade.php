@@ -173,7 +173,7 @@
             <div class="form-modern mb-3">
                 <label class="form-label-modern">
                     <i class="bi bi-building me-2 text-success"></i>
-                    Instansi
+                    Instansi (Terisi Otomatis)
                 </label>
                 <input type="text"
                     class="form-control"
@@ -237,20 +237,92 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     {{-- keterangan --}}
+    <div class="row g-3">
+
+    {{-- Koordinat Lokasi --}}
     <div class="col-md-12">
         <div class="form-modern mb-3">
             <label class="form-label-modern d-flex align-items-center" for="keterangan">
-                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat Lokasi Bangunan Gedung 
+                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i>
+                Koordinat Lokasi Bangunan Gedung
             </label>
-            <input type="text" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" name="keterangan" value="{{ old('keterangan', $data->keterangan ?? '') }}">
-            @error('keterangan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+
+            <input type="text"
+                class="form-control @error('keterangan') is-invalid @enderror"
+                id="keterangan"
+                name="keterangan"
+                value="{{ old('keterangan', $data->keterangan ?? '') }}"
+                placeholder="-7.042100,111.404600">
+
+            @error('keterangan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
 
-        {{-- Peta --}}
-        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
+        {{-- Google Map --}}
+        <div id="map"
+            style="height: 500px; border-radius: 12px; border: 2px solid #ddd;">
+        </div>
     </div>
 
 </div>
+
+</div>
+
+<script>
+    let map;
+    let marker;
+
+    function initMap() {
+        // Default ke Kabupaten Blora
+        const blora = { lat: -7.0421, lng: 111.4046 };
+
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: blora,
+            zoom: 13,
+            mapTypeId: 'roadmap', // GOOGLE MAPS ASLI
+        });
+
+        const input = document.getElementById('keterangan');
+
+        // Jika sudah ada koordinat
+        if (input.value) {
+            const coords = input.value.split(',');
+            const posisi = {
+                lat: parseFloat(coords[0]),
+                lng: parseFloat(coords[1])
+            };
+
+            marker = new google.maps.Marker({
+                position: posisi,
+                map: map
+            });
+
+            map.setCenter(posisi);
+            map.setZoom(16);
+        }
+
+        // Klik peta
+        map.addListener("click", function(event) {
+            const lat = event.latLng.lat().toFixed(6);
+            const lng = event.latLng.lng().toFixed(6);
+
+            // Hapus marker lama
+            if (marker) {
+                marker.setMap(null);
+            }
+
+            // Marker baru
+            marker = new google.maps.Marker({
+                position: event.latLng,
+                map: map
+            });
+
+            // Isi input
+            input.value = lat + ',' + lng;
+        });
+    }
+</script>
 
 
 
@@ -290,57 +362,11 @@
 
 {{-- JQuery AJAX untuk load Kelurahan berdasarkan Kecamatan --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $('#kecamatanblora_id').on('change', function () {
-    var kecamatanID = $(this).val();
-    if (kecamatanID) {
-      $.ajax({
-        url: '{{ route("datanewpenilik.create") }}', // Sesuaikan route ajax-nya
-        type: 'GET',
-        data: { kecamatan_id: kecamatanID },
-        success: function (data) {
-          $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
-          $.each(data, function (key, value) {
-            $('#kelurahandesa_id').append('<option value="' + value.id + '">' + value.desa + '</option>');
-          });
-        }
-      });
-    } else {
-      $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
-    }
-  });
-</script>
-
 {{-- ======================================================================================================================= --}}
 
 
 {{-- ======================================================================================================================= --}}
 
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
-</div>
 
                                     </div>
                                 </div>
@@ -349,10 +375,11 @@
                             <!-- end::Body -->
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+                                <br><br>
                                 <div class="flex justify-end">
-                               <button class="button-modern" type="button" onclick="openModal()">
+                               <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Ajukan Permohonan</span>
                                     </button>
 
                                 </div>
@@ -360,7 +387,7 @@
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                                       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin membuat data inspeksi bangunan ?
+                                        Apakah Saudara ingin mengajukan permohonan ini ?
                                     </p>
 
                                       <!-- Tombol -->
