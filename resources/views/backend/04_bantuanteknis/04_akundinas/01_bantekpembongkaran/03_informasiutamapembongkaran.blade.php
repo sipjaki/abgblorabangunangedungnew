@@ -17,7 +17,7 @@
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -137,97 +137,71 @@
                             <div class="card-body">
                                 <div class="row">
 
-           @include('backend.01_pbgslf.00_fiturtambahannav')
+           {{-- @include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.00_fiturtambahannav') --}}
 
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan Berkas Administrasi Pembongkaran Bangunan Gedung Negara </h5>
     </div>
 </div>
 
-@include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturstatus')
+@include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.01_fiturstatus')
 
        <!-- Left Column (6/12) -->
 <div class="row g-4">
 
-    @php
-        $infoItems = [
-         [
-                'icon' => 'bi-person-fill-check',
-                'title' => 'Nama Pemilik',
-                'value' => $data->namapemohon ?? '-',
-            ],
-[
-    'icon' => 'bi-ui-checks-grid',
-    'title' => 'Jenis Permohonan',
-    'value' =>
-        ($data->jenispengajuanpbgslfper->jenispengajuan ?? '-') .
-        ' - ' .
-        ($data->databangunanpbg->fungsibangunanpbg->fungsi ?? '-'),
-],
-
+@php
+    $infoItems = [
         [
-                    'icon' => 'bi-file-earmark-text-fill',
-                'title' => 'Nomor Registrasi SIM BG',
-                'value' => $data->noregissimbg ?? '-',
-            ],
-            [
-                'icon' => 'bi-calendar-date-fill',
-                'title' => 'Tanggal Permohonan',
-                'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
-            ],
+            'icon'  => 'bi-person-fill',
+            'title' => 'Nama Pemilik Bangunan',
+            'value' => $data->namapemilik ?? '-',
+        ],
+        [
+            'icon'  => 'bi-building',
+            'title' => 'Instansi / Dinas',
+            'value' => $data->user->name ?? '-',
+        ],
+        [
+            'icon'  => 'bi-house-fill',
+            'title' => 'Nama Bangunan',
+            'value' => $data->namabangunan ?? '-',
+        ],
+        [
+            'icon'  => 'bi-geo-alt-fill',
+            'title' => 'Alamat Bangunan',
+            'value' => $data->alamat ?? '-',
+        ],
+        [
+            'icon'  => 'bi-info-circle-fill',
+            'title' => 'Keterangan',
+            'value' => $data->keterangan ?? '-',
+        ],
+    ];
+@endphp
 
-        ];
-    @endphp
-
-    @foreach ($infoItems as $item)
-        <div class="col-md-6">
-            <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
-                <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
-                    <div class="d-flex align-items-start">
-                        <div class="me-3">
-                            <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
-                        </div>
-                        <div>
-                            <h6 class="fw-bold text-dark mb-1">{{ $item['title'] }}</h6>
-                            <p class="mb-0 text-muted">{{ $item['value'] }}</p>
-                        </div>
+@foreach ($infoItems as $item)
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
+            <div class="card-body bg-white rounded-3"
+                style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
+                <div class="d-flex align-items-start">
+                    <div class="me-3">
+                        <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold text-dark mb-1">{{ $item['title'] }}</h6>
+                        <p class="mb-0 text-muted">{{ $item['value'] }}</p>
                     </div>
                 </div>
             </div>
         </div>
-        {{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturvalidasi') --}}
-        @endforeach
-
     </div>
+@endforeach
 
-
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
 </div>
+
 <br><hr>
 
 @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturnavigas')
