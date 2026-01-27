@@ -1,3 +1,49 @@
+<style>
+ body {
+        font-family: 'Poppins', sans-serif;
+    }
+    .zebra-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+.zebra-table th {
+    background-color: #ADD8E6; /* biru muda */
+    color: black;
+    text-align: center;
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.zebra-table td {
+    text-align: center;
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.zebra-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.zebra-table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.zebra-table tbody tr:hover {
+    background-color: #ffd100 !important;
+}
+
+th {
+    background-color: #ADD8E6;
+}
+
+</style>
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -159,7 +205,7 @@
 <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
         <i class="bi bi-info-circle fs-5"></i>
-        <h5 class="mb-0" style="font-size: 16px;">Informasi Berkas Persyaratan </h5>
+        <h5 class="mb-0" style="font-size: 16px;">Informasi Permohonan SIMBG</h5>
     </div>
 </div>
 
@@ -168,56 +214,56 @@
        <!-- Left Column (6/12) -->
 <div class="row g-4">
 
-@php
-    $infoItems = [
-        [
-            'icon'  => 'bi-person-fill',
-            'title' => 'Nama Pemilik Bangunan',
-            'value' => $data->namapemilik ?? '-',
-        ],
-        [
-            'icon'  => 'bi-building',
-            'title' => 'Instansi / Dinas',
-            'value' => $data->user->name ?? '-',
-        ],
-        [
-            'icon'  => 'bi-house-fill',
-            'title' => 'Nama Bangunan',
-            'value' => $data->namabangunan ?? '-',
-        ],
-        [
-            'icon'  => 'bi-geo-alt-fill',
-            'title' => 'Alamat Bangunan',
-            'value' => $data->alamat ?? '-',
-        ],
-        [
-            'icon'  => 'bi-info-circle-fill',
-            'title' => 'Keterangan',
-            'value' => $data->keterangan ?? '-',
-        ],
-    ];
-@endphp
+    @php
+        $infoItems = [
+         [
+                'icon' => 'bi-person-fill-check',
+                'title' => 'Nama Pemilik',
+                'value' => $data->namapemohon ?? '-',
+            ],
+[
+    'icon' => 'bi-ui-checks-grid',
+    'title' => 'Jenis Permohonan',
+    'value' =>
+        ($data->jenispengajuanpbgslfper->jenispengajuan ?? '-') .
+        ' - ' .
+        ($data->databangunanpbg->fungsibangunanpbg->fungsi ?? '-'),
+],
 
-@foreach ($infoItems as $item)
-    <div class="col-md-6">
-        <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
-            <div class="card-body bg-white rounded-3"
-                style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
-                <div class="d-flex align-items-start">
-                    <div class="me-3">
-                        <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
-                    </div>
-                    <div>
-                        <h6 class="fw-bold text-dark mb-1">{{ $item['title'] }}</h6>
-                        <p class="mb-0 text-muted">{{ $item['value'] }}</p>
+        [
+                    'icon' => 'bi-file-earmark-text-fill',
+                'title' => 'Nomor Registrasi SIM BG',
+                'value' => $data->noregissimbg ?? '-',
+            ],
+            [
+                'icon' => 'bi-calendar-date-fill',
+                'title' => 'Tanggal Permohonan',
+                'value' => \Carbon\Carbon::parse($data->tanggalpermohonan)->translatedFormat('d F Y') ?? '-',
+            ],
+
+        ];
+    @endphp
+
+    @foreach ($infoItems as $item)
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
+                <div class="card-body bg-white rounded-3" style="background: linear-gradient(to bottom, #f8faff, #e6f0ff);">
+                    <div class="d-flex align-items-start">
+                        <div class="me-3">
+                            <i class="bi {{ $item['icon'] }} text-primary fs-3"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold text-dark mb-1">{{ $item['title'] }}</h6>
+                            <p class="mb-0 text-muted">{{ $item['value'] }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-@endforeach
+        {{-- @include('backend.01_pbgslf.01_permohonanpbgslf.00_datainduk.00_fiturvalidasi') --}}
+        @endforeach
 
-</div>
+    </div>
 
 
 <div class="col-12">
