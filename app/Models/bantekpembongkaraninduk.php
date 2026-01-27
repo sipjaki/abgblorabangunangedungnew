@@ -4,19 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class bantekpembongkaraninduk extends Model
 {
-    use HasFactory, SoftDeletes, HasApiTokens;
+    use HasFactory, SoftDeletes;
+
+    // WAJIB karena nama tabel custom
+    protected $table = 'bantekpembongkaraninduk';
 
     protected $guarded = ['id'];
 
-       public function user()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-
-
 }
