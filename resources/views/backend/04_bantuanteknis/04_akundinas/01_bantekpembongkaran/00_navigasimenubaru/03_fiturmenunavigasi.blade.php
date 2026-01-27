@@ -278,21 +278,42 @@
                     @if (is_null($data->bantekbongkar1))
                                 {{-- DATA KOSONG --}}
                                 <a class="status-option red">
-                                    <div class="status-light red"></div>
+                                    <div class="status-light red active"></div>
                                     <span>Data Kosong</span>
                                 </a>
                             @else
                                 {{-- DATA ADA --}}
                                 <a class="status-option green">
-                                    <div class="status-light green"></div>
+                                    <div class="status-light green active"></div>
                                     <span>Berkas Ada</span>
                                 </a>
                             @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
 
-                        <a href="#" class="status-option green">
-                            <div class="status-light green active"></div>
-                            <span>Lengkap</span>
-                        </a>
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
 
                     <div class="doc-actions">
