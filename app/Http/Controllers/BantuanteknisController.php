@@ -6457,7 +6457,7 @@ public function bebantekpembongkaranshowdata($namapemilik, $id)
 }
 
 
-public function validasipembongkaran7(Request $request, $id)
+public function validasipembongkaran1(Request $request, $id)
     {
         $data = bantekpembongkaraninduk::findOrFail($id);
 
@@ -6465,10 +6465,10 @@ public function validasipembongkaran7(Request $request, $id)
             'validasiberkas1' => 'required|in:sudah,belum',
         ]);
 
-        $data->validasiberkas2 = $request->validasiberkas2;
+        $data->validasiberkas1 = $request->validasiberkas1;
         $data->save();
 
-     if ($request->validasiberkas2 === 'sudah') {
+     if ($request->validasiberkas1 === 'sudah') {
         session()->flash('create', '✅ Sudah Di Verifikasi !');
     } else {
         session()->flash('gagal', '❌ Belum Lengkap !');
