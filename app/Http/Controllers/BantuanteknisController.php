@@ -6456,4 +6456,28 @@ public function bebantekpembongkaranshowdata($namapemilik, $id)
     );
 }
 
+
+public function validasipembongkaran1(Request $request, $id)
+    {
+        $data = bantekpembongkaraninduk::findOrFail($id);
+
+        $request->validate([
+            'validasiberkas1' => 'required|in:sudah,belum',
+        ]);
+
+        $data->validasiberkas2 = $request->validasiberkas2;
+        $data->save();
+
+     if ($request->validasiberkas2 === 'sudah') {
+        session()->flash('create', '✅ Sudah Di Verifikasi !');
+    } else {
+        session()->flash('gagal', '❌ Belum Lengkap !');
+    }
+        //    return redirect('/beserahterima');
+
+           return redirect()->back();
+
+        // return redirect()->back()->with('success', 'Status validasi tahap 1 berhasil diperbarui.');
+    }
+
 }

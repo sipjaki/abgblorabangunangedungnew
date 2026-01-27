@@ -1554,6 +1554,16 @@ Route::get(
 )->middleware('auth', 'can:admindinas')
  ->name('bebantekpembongkaranshow');
 
+ // validasi berkas pembongkaran bangunan gedung
+
+Route::put('/validasipembongkaran1/{id}', [BantuanteknisController::class, 'validasipembongkaran1'])->name('validasipembongkaran2.update');
+// Route::put('/validasipbgslf3/{id}', [PbgslfController::class, 'validasipbgslf3'])->name('validasipbgslf3.update');
+// Route::put('/validasipbgslf4/{id}', [PbgslfController::class, 'validasipbgslf4'])->name('validasipbgslf4.update');
+// Route::put('/validasipbgslf5/{id}', [PbgslfController::class, 'validasipbgslf5'])->name('validasipbgslf5.update');
+// Route::put('/validasipbgslf6/{id}', [PbgslfController::class, 'validasipbgslf6'])->name('validasipbgslf6.update');
+// Route::put('/validasipbgslf7/{id}', [PbgslfController::class, 'validasipbgslf7'])->name('validasipbgslf7.update');
+// Route::put('/validasipbgslf8/{id}', [PbgslfController::class, 'validasipbgslf8'])->name('validasipbgslf8.update');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
