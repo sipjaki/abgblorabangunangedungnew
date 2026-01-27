@@ -322,11 +322,19 @@
                                 </div>
 <br><br>
                                 <div class="flex justify-end">
+
                                <button class="button-berkas" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i> Simpan Permohonan
                                     </button>
 
+                                    <a href="{{ route('bebantekpembongkaran') }}" class="button-modern">
+                                        <i class="bi bi-arrow-left-circle me-1"></i>
+                                        Kembali
+                                    </a>
+
                                 </div>
+
+
 
                                 <!-- End row -->
                             </div>
