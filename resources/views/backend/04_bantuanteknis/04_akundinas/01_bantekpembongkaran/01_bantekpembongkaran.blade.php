@@ -260,13 +260,17 @@
 {{-- <td>{{ $item->alamat ?? '-' }}</td>
 
 <td>{{ $item->keterangan ?? '-' }}</td> --}}
+<td style="text-align: center;">
+    <a href="{{ route('bebantekpembongkaranshow', [
+            'namapemilik' => urlencode($item->namapemilik),
+            'id' => $item->id
+        ]) }}"
+       class="button-baru">
+        <i class="bi bi-eye me-1"></i>
+        Lihat Permohonan
+    </a>
+</td>
 
-            <td style="text-align: center;">
-                <a href="{{ route('bebantekpembongkaranshow', $item->id) }}"
-                    class="button-baru">
-                    <i class="fas fa-eye" style="margin-right: 5px;"></i> LIhat Permohonan
-                </a>
-            </td>
             <!-- Tombol KTP -->
 
 

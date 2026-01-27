@@ -6433,21 +6433,27 @@ public function bebantekpembongkarandelete($id)
     }
 
 
-
-    public function bebantekpembongkaranshowdata($id)
+public function bebantekpembongkaranshowdata($namapemilik, $id)
 {
-    // Cari data berdasarkan ID
-    $data = bantekpembongkaraninduk::findOrFail($id);
+    // Decode nama dari URL
+    $namapemilik = urldecode($namapemilik);
 
-    // Ambil data user yang sedang login
+    // Cari data HARUS cocok ID & nama
+    $data = bantekpembongkaraninduk::where('id', $id)
+        ->where('namapemilik', $namapemilik)
+        ->firstOrFail();
+
+    // User login
     $user = Auth::user();
 
-    // Tampilkan ke view dengan key-value
-    return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.03_informasiutamapembongkaran', [
-        'title' => 'Informasi Permohonan Berkas Administrasi',
-        'data' => $data,
-        'user' => $user
-    ]);
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.03_informasiutamapembongkaran',
+        [
+            'title' => 'Informasi Permohonan Berkas Administrasi',
+            'data'  => $data,
+            'user'  => $user
+        ]
+    );
 }
 
 }
