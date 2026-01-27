@@ -244,7 +244,7 @@
                     <i class="bi bi-clipboard-data-fill text-primary" style="font-size: 1.8rem;"></i>
                 </div>
                <div>
-                <h4 class="mb-1" style="color: #1f2937; font-size: 20px;">Dokumen Persyaratan</h4>
+                <h4 class="mb-1" style="color: #1f2937; font-size: 20px;">Dokumen Persyaratan Pembongkaran</h4>
                 <p class="text-muted mb-0" style="font-size: 16px;">Status Kelengkapan Dokumen Pembongkaran Bangunan Gedung Negara</p>
             </div>
 
@@ -283,6 +283,10 @@
                             <div class="status-light red"></div>
                             <span>Data Kosong</span>
                         </a>
+                        <a href="#" class="status-option yellow">
+                            <div class="status-light yellow"></div>
+                            <span>Perbaikan Data</span>
+                        </a>
                         <a href="#" class="status-option green">
                             <div class="status-light green active"></div>
                             <span>Lengkap</span>
@@ -297,7 +301,6 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
 
                 </div>
             </div>
@@ -327,6 +330,7 @@
                         </a>
                     </div>
 
+
                     <div class="doc-actions">
                         <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
@@ -335,8 +339,8 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
                 </div>
+
             </div>
 
             <!-- 3. DATA KEPIMILIKAN TANAH -->
@@ -364,6 +368,7 @@
                         </a>
                     </div>
 
+
                     <div class="doc-actions">
                         <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
@@ -372,7 +377,6 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
                 </div>
             </div>
 
@@ -410,7 +414,6 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -451,7 +454,6 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
                 </div>
             </div>
 
@@ -489,7 +491,7 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
+                </div>
             </div>
 
             <!-- 7. GAMBAR BANGUNAN GEDUNG TERBANGUN -->
@@ -526,7 +528,6 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
                 </div>
             </div>
 
@@ -564,7 +565,6 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -605,7 +605,6 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
                 </div>
             </div>
 
@@ -635,7 +634,6 @@
                     </div>
 
 
-
                     <div class="doc-actions">
                         <button class="btn-action view">
                             <i class="bi bi-eye"></i> Lihat Dokumen
@@ -644,7 +642,6 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
                 </div>
             </div>
 
@@ -682,7 +679,6 @@
                             <i class="bi bi-edit"></i> Perbaikan Data
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
