@@ -26,9 +26,9 @@ return new class extends Migration
             $table->string('validasiberkas5')->nullable();
             $table->string('validasiberkas6')->nullable();
 
-            $table->string('cadangan1')->nullable();
-            $table->string('cadangan2')->nullable();
-            $table->string('cadangan3')->nullable();
+            $table->string('cadangan1')->nullable(); // SURAT KONSULTASI
+            $table->string('cadangan2')->nullable(); // REKOMENDASI TEKNIS
+            $table->string('cadangan3')->nullable(); // PERSETUJUAN BUPATI 
 
             $table->softDeletes();
             $table->timestamps();

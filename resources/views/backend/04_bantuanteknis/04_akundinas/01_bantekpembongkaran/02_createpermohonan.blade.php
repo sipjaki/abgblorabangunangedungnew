@@ -173,7 +173,7 @@
             <div class="form-modern mb-3">
                 <label class="form-label-modern">
                     <i class="bi bi-building me-2 text-success"></i>
-                    Instansi
+                    Instansi / OPD
                 </label>
                 <input type="text"
                     class="form-control"
@@ -329,7 +329,7 @@
 
                                     <a href="{{ route('bebantekpembongkaran') }}" class="button-modern">
                                         <i class="bi bi-arrow-left-circle me-1"></i>
-                                        Kembali
+                                        <strong style="color: black">Kembali</strong>
                                     </a>
 
                                 </div>
