@@ -357,17 +357,48 @@
                     <div class="doc-title">
                         <h6>IDENTITAS PEMILIK BANGUNAN</h6>
                     </div>
+    <div class="status-options">
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red active"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green active"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
 
-                    <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red"></div>
-                            <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option green">
-                            <div class="status-light green"></div>
-                            <span>Lengkap</span>
-                        </a>
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
+
 
 
                  <div class="doc-actions">
@@ -407,17 +438,48 @@
                     <div class="doc-title">
                         <h6>DATA KEPIMILIKAN TANAH</h6>
                     </div>
+    <div class="status-options">
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red active"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green active"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
 
-                    <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red"></div>
-                            <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option green">
-                            <div class="status-light green active"></div>
-                            <span>Lengkap</span>
-                        </a>
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
+
 
 
 
@@ -459,15 +521,47 @@
                     </div>
 
                     <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red active"></div>
-                            <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option green">
-                            <div class="status-light green"></div>
-                            <span>Lengkap</span>
-                        </a>
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red active"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green active"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
+
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
+
 
 
 
@@ -511,16 +605,48 @@
                         <h6>DOKUMEN ANALISA KERUSAKAN BANGUNAN GEDUNG</h6>
                     </div>
 
-                    <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red"></div>
-                            <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option green">
-                            <div class="status-light green active"></div>
-                            <span>Lengkap</span>
-                        </a>
+                     <div class="status-options">
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red active"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green active"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
+
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
+
 
 
 
@@ -561,16 +687,48 @@
                         <h6>DOKUMEN KAJIAN KELAYAKAN BANGUNAN GEDUNG</h6>
                     </div>
 
-                    <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red"></div>
-                            <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option green">
-                            <div class="status-light green"></div>
-                            <span>Lengkap</span>
-                        </a>
+                      <div class="status-options">
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red active"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green active"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
+
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
+
 
 
 
@@ -610,16 +768,48 @@
                         <h6>GAMBAR BANGUNAN GEDUNG TERBANGUN (AS BUILT DRAWING)</h6>
                     </div>
 
-                    <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red"></div>
-                            <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option green">
-                            <div class="status-light green active"></div>
-                            <span>Lengkap</span>
-                        </a>
+                       <div class="status-options">
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red active"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green active"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
+
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
+
 
 
 
@@ -659,15 +849,46 @@
                         <h6>DOKUMEN KAJIAN TEKNIS BONGKARAN</h6>
                     </div>
 
-                    <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red active"></div>
-                            <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option green">
-                            <div class="status-light green"></div>
-                            <span>Lengkap</span>
-                        </a>
+                      <div class="status-options">
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red active"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green active"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
+
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
 
 
@@ -711,16 +932,48 @@
                         <h6>DATA PERSETUJUAN BANGUNAN GEDUNG</h6>
                     </div>
 
-                    <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red"></div>
-                            <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option green">
-                            <div class="status-light green active"></div>
-                            <span>Lengkap</span>
-                        </a>
+                      <div class="status-options">
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red active"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green active"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
+
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
+
 
 
 
@@ -760,16 +1013,48 @@
                         <h6>LAPORAN PEMERIKSAAN BERKALA BANGUNAN GEDUNG</h6>
                     </div>
 
-                    <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red"></div>
-                            <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option green">
-                            <div class="status-light green"></div>
-                            <span>Lengkap</span>
-                        </a>
+                       <div class="status-options">
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red active"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green active"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
+
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
+
 
 
 
@@ -809,15 +1094,46 @@
                         <h6>SURAT PERNYATAAN KESANGGUPAN PEMILIK BANGUNAN</h6>
                     </div>
 
-                    <div class="status-options">
-                        <a href="#" class="status-option red">
-                            <div class="status-light red"></div>
-                            <span>Data Kosong</span>
-                        </a>
-                        <a href="#" class="status-option green">
-                            <div class="status-light green active"></div>
-                            <span>Lengkap</span>
-                        </a>
+                      <div class="status-options">
+                    @if (is_null($data->bantekbongkar1))
+                                {{-- DATA KOSONG --}}
+                                <a class="status-option red">
+                                    <div class="status-light red active"></div>
+                                    <span>Data Kosong</span>
+                                </a>
+                            @else
+                                {{-- DATA ADA --}}
+                                <a class="status-option green">
+                                    <div class="status-light green active"></div>
+                                    <span>Berkas Ada</span>
+                                </a>
+                            @endif
+@php
+    $bantek = $data->bantekbongkar1 ?? null;
+@endphp
+
+@if (is_null($bantek))
+    {{-- Data belum diisi --}}
+    <a class="status-option yellow">
+        <div class="status-light yellow active"></div>
+        <span>Verifikasi DPUPR</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'belum')
+    {{-- Data ada tapi dikembalikan --}}
+    <a class="status-option red">
+        <div class="status-light red active"></div>
+        <span>Dikembalikan</span>
+    </a>
+
+@elseif ($bantek->validasiberkas1 === 'sudah')
+    {{-- Data lolos --}}
+    <a class="status-option green">
+        <div class="status-light green active"></div>
+        <span>Lolos Verifikasi</span>
+    </a>
+@endif
+
                     </div>
 
 
