@@ -168,41 +168,44 @@
             </div>
         </div>
 
-        {{-- Instansi (User Login) --}}
-        <div class="col-md-6">
-            <div class="form-modern mb-3">
-                <label class="form-label-modern">
-                    <i class="bi bi-building me-2 text-success"></i>
-                    Instansi / OPD
-                </label>
-                <input type="text"
-                    class="form-control"
-                    value="{{ auth()->user()->name }}"
-                    readonly>
-            </div>
-        </div>
+<div class="col-md-6">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">
+            <i class="bi bi-building me-2 text-success"></i>
+            Instansi / OPD
+        </label>
+
+        <textarea
+            class="form-control"
+            rows="2"
+            readonly>{{ auth()->user()->name }}</textarea>
+    </div>
+</div>
+
 
         {{-- Hidden user_id --}}
         <input type="hidden" name="user_id" value="{{ auth()->id() }}">
 
         {{-- Nama Bangunan --}}
         <div class="col-md-6">
-            <div class="form-modern mb-3">
-                <label class="form-label-modern" for="namabangunan">
-                    <i class="bi bi-house-door-fill me-2 text-warning"></i>
-                    Nama Bangunan
-                </label>
-                <input type="text"
-                    class="form-control @error('namabangunan') is-invalid @enderror"
-                    id="namabangunan"
-                    name="namabangunan"
-                    value="{{ old('namabangunan') }}">
-                @error('namabangunan')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="namabangunan">
+            <i class="bi bi-house-door-fill me-2 text-warning"></i>
+            Nama Bangunan
+        </label>
 
+        <textarea
+            class="form-control @error('namabangunan') is-invalid @enderror"
+            id="namabangunan"
+            name="namabangunan"
+            rows="3"
+            placeholder="Masukkan nama bangunan, tekan Enter untuk baris baru">{{ old('namabangunan') }}</textarea>
+
+        @error('namabangunan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
 
 
     <!-- =========================== -->
