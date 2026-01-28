@@ -7,11 +7,12 @@
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
   <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
   <img
-    src="/assets/android/iconmenu/temabaru.png"
-    class="absolute object-cover w-full h-full rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]"
-    alt="backgrounds"
-    loading="lazy"
-  >
+  src="/assets/android/iconmenu/temabaru.png"
+  class="absolute top-0 left-0 object-cover w-full h-[20vh] rounded-b-[20px]"
+  alt="backgrounds"
+  loading="lazy"
+/>
+
       <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
 <nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
   <!-- Logo Kiri -->
@@ -28,7 +29,7 @@
         ABG Blora Bangunan Gedung
       </p> --}}
       <div class="flex items-center justify-center sm:justify-start">
-        <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px;">
+        <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px; color:white;">
           Dinas Pekerjaan Umum Dan
           <br> Penataan Ruang
         </p>
