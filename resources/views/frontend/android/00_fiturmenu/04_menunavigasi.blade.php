@@ -18,7 +18,7 @@
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
             {{-- <img src="/assets/android/menunavigasi/01.png" class="w-full h-full object-cover" alt="icon" loading="lazy"> --}}
-            <img src="/assets/android/menunavigasi/NEW1.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW01.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">PBG/SLF</p>
         </div>
@@ -34,7 +34,7 @@
       <a href="/bependataanbangunangedung">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW2.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW02.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Pendataan</p>
         </div>
@@ -42,7 +42,7 @@
       <a href="/resbantekindex">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW3.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW03.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantek</p>
         </div>
@@ -51,7 +51,7 @@
       {{-- <a href="/ressosialisasiabg"> --}}
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW4.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW04.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Sosialisasi</p>
         </div>
@@ -59,7 +59,7 @@
       <a href="/permohonankrkusaha">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW5.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW05.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">KRK</p>
         </div>
@@ -67,7 +67,7 @@
       <a href="/rescarigsb">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW6.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW06.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">GSB</p>
         </div>
@@ -75,7 +75,7 @@
       <a href="/resmbrgambarindex">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW7.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW07.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">MBR</p>
         </div>
@@ -83,7 +83,7 @@
       <a href="/feformbantuangambar">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW8.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW08.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Bantuan <br> Gambar</p>
         </div>
@@ -119,7 +119,7 @@
       <a href="/web">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW9.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW09.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Dekstop</p>
         </div>
@@ -128,7 +128,7 @@
       <a href="/404">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW10.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW010.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">QnA</p>
         </div>
@@ -137,7 +137,7 @@
       <a href="/404">
         <div class="flex flex-col items-center gap-2">
           <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-            <img src="/assets/android/menunavigasi/NEW11.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
+            <img src="/assets/android/menunavigasi/NEW011.png" class="w-full h-full object-cover" alt="icon" loading="lazy">
           </div>
           <p class="font-medium text-sm text-[#757C98] leading-[21px]">Kontak Kami</p>
         </div>
