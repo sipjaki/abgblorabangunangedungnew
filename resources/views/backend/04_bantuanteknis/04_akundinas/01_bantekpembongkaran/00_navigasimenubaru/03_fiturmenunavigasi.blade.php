@@ -320,14 +320,30 @@
 
                     </div>
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
+
 
                 </div>
             </div>
@@ -354,14 +370,30 @@
                     </div>
 
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
+
                 </div>
 
             </div>
@@ -388,14 +420,31 @@
                     </div>
 
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
+
                 </div>
             </div>
 
@@ -421,14 +470,31 @@
                     </div>
 
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
+
                 </div>
             </div>
         </div>
@@ -457,14 +523,31 @@
                     </div>
 
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
+
                 </div>
             </div>
 
@@ -490,14 +573,30 @@
                     </div>
 
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
                 </div>
             </div>
 
@@ -523,14 +622,30 @@
                     </div>
 
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
                 </div>
             </div>
 
@@ -556,14 +671,30 @@
                     </div>
 
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
                 </div>
             </div>
         </div>
@@ -592,14 +723,30 @@
                     </div>
 
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
                 </div>
             </div>
 
@@ -625,14 +772,30 @@
                     </div>
 
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
                 </div>
             </div>
 
@@ -658,14 +821,30 @@
                     </div>
 
 
-                    <div class="doc-actions">
-                        <button class="btn-action view">
-                            <i class="bi bi-eye"></i> Lihat Dokumen
-                        </button>
-                        <button class="btn-action edit">
-                            <i class="bi bi-edit"></i> Perbaikan Data
-                        </button>
-                    </div>
+
+                 <div class="doc-actions">
+                            @if($data->bantekbongkar1)
+                                {{-- JIKA DATA SUDAH ADA --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.dokumen', $data->id) }}" class="btn-action view"> --}}
+                                <a  class="btn-action view">
+                                    <i class="bi bi-eye"></i> Lihat Dokumen
+                                </a>
+                            @else
+                                {{-- JIKA DATA MASIH KOSONG --}}
+                                {{-- <a href="{{ route('bantek.pembongkaran.upload', $data->id) }}" class="btn-action edit"> --}}
+                                <a  class="btn-action edit">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
+                            @endif
+
+                            @if($data->bantekbongkar1)
+                            {{-- <a href="{{ route('bantekbongkar1.edit', $data->bantekbongkar1->id) }}" class="btn-action edit"> --}}
+                            <a  class="btn-action edit">
+                                <i class="bi bi-edit"></i> Perbaikan Data
+                            </a>
+                        @endif
+
+                </div>
                 </div>
             </div>
         </div>
