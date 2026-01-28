@@ -31,7 +31,7 @@
       <div class="flex items-center justify-center sm:justify-start">
         <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px; color:white;">
           Dinas Pekerjaan Umum Dan
-          <br> Penataan Ruang <br> Bangunan Gedung
+          <br> Penataan Ruang <br> Kabupaten Blora
         </p>
       </div>
     </div>
