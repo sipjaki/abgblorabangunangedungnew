@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar - ABG Blora Bangunan Gedung</title>
+    <title>Silahkan Daftar !</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="/assets/abgblora/logo/logokabupatenblora.png" type="image/x-icon">
     <style>
         :root {
-            --navy-dark: #001233;
-            --navy-primary: #002855;
-            --navy-light: #023E7D;
-            --accent-blue: #0466C8;
-            --accent-light: #5C9DFF;
+            /* Warna utama biru Persib */
+            --persib-blue: #1B3D8F;
+            --persib-blue-dark: #0F265C;
+            --persib-blue-light: #2A5BCC;
+            --persib-accent: #E31C25; /* Warna aksen merah untuk kontras */
+
+            /* Warna netral untuk latar putih */
             --white: #FFFFFF;
-            --gray-light: #F8F9FA;
-            --gray-border: #E0E0E0;
-            --gray-text: #6C757D;
-            --error-red: #E63946;
-            --success-green: #2A9D8F;
+            --off-white: #F8FAFC;
+            --light-gray: #F1F5F9;
+            --medium-gray: #E2E8F0;
+            --gray-text: #64748B;
+            --dark-text: #1E293B;
+
+            /* Warna untuk feedback */
+            --error-red: #EF4444;
+            --success-green: #10B981;
         }
 
         * {
@@ -31,7 +37,7 @@
 
         body {
             background-color: var(--white);
-            color: var(--navy-dark);
+            color: var(--dark-text);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -39,9 +45,12 @@
             justify-content: center;
             position: relative;
             overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(241, 245, 249, 0.8) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(241, 245, 249, 0.9) 0%, transparent 20%);
         }
 
-        /* Background dengan pola geometris minimalis */
+        /* Background dengan pola minimalis */
         .background-container {
             position: fixed;
             top: 0;
@@ -56,12 +65,12 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 100%);
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--white) 100%);
         }
 
         .shape {
             position: absolute;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(27, 61, 143, 0.05);
             border-radius: 50%;
         }
 
@@ -70,6 +79,7 @@
             height: 300px;
             top: -150px;
             right: -100px;
+            background: rgba(27, 61, 143, 0.03);
         }
 
         .shape-2 {
@@ -77,6 +87,7 @@
             height: 200px;
             bottom: -80px;
             left: -80px;
+            background: rgba(27, 61, 143, 0.04);
         }
 
         .shape-3 {
@@ -84,6 +95,7 @@
             height: 150px;
             top: 40%;
             left: 10%;
+            background: rgba(27, 61, 143, 0.03);
         }
 
         .shape-4 {
@@ -91,6 +103,7 @@
             height: 100px;
             bottom: 20%;
             right: 15%;
+            background: rgba(27, 61, 143, 0.04);
         }
 
         /* Registration Container */
@@ -98,27 +111,29 @@
             width: 100%;
             max-width: 500px;
             background-color: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 40, 85, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.03);
             overflow: hidden;
             margin: 20px;
             z-index: 10;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--medium-gray);
         }
 
         .registration-container:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 40, 85, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08), 0 8px 15px rgba(0, 0, 0, 0.05);
         }
 
-        /* Header dengan gradient navy */
+        /* Header dengan aksen biru Persib */
         .registration-header {
-            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-dark) 100%);
+            background-color: var(--white);
             padding: 30px 40px;
             text-align: center;
-            color: var(--white);
+            color: var(--persib-blue);
             position: relative;
             overflow: hidden;
+            border-bottom: 1px solid var(--light-gray);
         }
 
         .registration-header::after {
@@ -128,14 +143,14 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-light) 100%);
+            background: linear-gradient(90deg, var(--persib-blue) 0%, var(--persib-blue-light) 50%, var(--persib-accent) 100%);
         }
 
         .logo-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .logo {
@@ -150,15 +165,16 @@
 
         .title {
             font-size: 1.8rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.5px;
             margin-bottom: 5px;
+            color: var(--persib-blue);
         }
 
         .subtitle {
             font-size: 0.9rem;
-            opacity: 0.8;
-            font-weight: 300;
+            color: var(--gray-text);
+            font-weight: 400;
         }
 
         /* Form Container */
@@ -169,7 +185,7 @@
         .form-title {
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--navy-dark);
+            color: var(--persib-blue-dark);
             margin-bottom: 30px;
             text-align: center;
             position: relative;
@@ -183,7 +199,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: var(--accent-blue);
+            background: var(--persib-blue);
             border-radius: 2px;
         }
 
@@ -197,7 +213,7 @@
             display: block;
             font-size: 0.9rem;
             font-weight: 500;
-            color: var(--navy-dark);
+            color: var(--dark-text);
             margin-bottom: 8px;
             padding-left: 5px;
         }
@@ -209,18 +225,18 @@
         .form-input {
             width: 100%;
             padding: 15px 45px 15px 15px;
-            border: 2px solid var(--gray-border);
+            border: 1.5px solid var(--medium-gray);
             border-radius: 10px;
             font-size: 1rem;
-            color: var(--navy-dark);
+            color: var(--dark-text);
             background-color: var(--white);
             transition: all 0.3s ease;
         }
 
         .form-input:focus {
             outline: none;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(4, 102, 200, 0.1);
+            border-color: var(--persib-blue);
+            box-shadow: 0 0 0 3px rgba(27, 61, 143, 0.1);
         }
 
         .input-icon {
@@ -234,12 +250,12 @@
 
         .password-toggle {
             cursor: pointer;
-            color: var(--navy-light);
+            color: var(--persib-blue);
             transition: color 0.2s ease;
         }
 
         .password-toggle:hover {
-            color: var(--accent-blue);
+            color: var(--persib-blue-light);
         }
 
         .error-message {
@@ -259,7 +275,7 @@
         .register-button {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-dark) 100%);
+            background: linear-gradient(135deg, var(--persib-blue) 0%, var(--persib-blue-dark) 100%);
             color: var(--white);
             border: none;
             border-radius: 10px;
@@ -276,9 +292,9 @@
         }
 
         .register-button:hover {
-            background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-primary) 100%);
+            background: linear-gradient(135deg, var(--persib-blue-light) 0%, var(--persib-blue) 100%);
             transform: translateY(-2px);
-            box-shadow: 0 7px 15px rgba(0, 40, 85, 0.2);
+            box-shadow: 0 7px 15px rgba(27, 61, 143, 0.2);
         }
 
         .register-button:active {
@@ -294,7 +310,7 @@
         }
 
         .login-link a {
-            color: var(--accent-blue);
+            color: var(--persib-blue);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s ease;
@@ -302,7 +318,7 @@
         }
 
         .login-link a:hover {
-            color: var(--navy-dark);
+            color: var(--persib-blue-light);
             text-decoration: underline;
         }
 
@@ -311,15 +327,15 @@
             margin-top: 40px;
             padding: 25px 30px;
             background-color: var(--white);
-            color: var(--navy-dark);
-            border-radius: 15px;
+            color: var(--dark-text);
+            border-radius: 12px;
             text-align: center;
             max-width: 500px;
             width: 90%;
             z-index: 10;
             margin-bottom: 20px;
-            box-shadow: 0 10px 25px rgba(0, 40, 85, 0.08);
-            border: 1px solid rgba(0, 40, 85, 0.1);
+            border: 1px solid var(--light-gray);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
         }
 
         .footer-logos {
@@ -342,12 +358,12 @@
         .footer-text {
             font-size: 0.9rem;
             line-height: 1.5;
-            opacity: 0.9;
+            color: var(--gray-text);
         }
 
         .footer-text strong {
-            color: var(--navy-primary);
-            font-weight: 600;
+            color: var(--persib-blue);
+            font-weight: 700;
         }
 
         /* Responsive Design */
@@ -355,6 +371,7 @@
             .registration-container {
                 max-width: 90%;
                 margin: 15px;
+                border-radius: 12px;
             }
 
             .registration-header {
@@ -376,7 +393,7 @@
             .footer {
                 padding: 20px;
                 font-size: 0.85rem;
-                width: 85%;
+                border-radius: 10px;
             }
 
             .footer-logos {
@@ -405,7 +422,7 @@
         }
 
         .shape {
-            animation: float 20s ease-in-out infinite;
+            animation: float 25s ease-in-out infinite;
         }
 
         .shape-1 {
@@ -413,20 +430,20 @@
         }
 
         .shape-2 {
-            animation-delay: 5s;
+            animation-delay: 6s;
         }
 
         .shape-3 {
-            animation-delay: 10s;
+            animation-delay: 12s;
         }
 
         .shape-4 {
-            animation-delay: 15s;
+            animation-delay: 18s;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
         }
 
         /* Password strength indicator */
@@ -434,7 +451,7 @@
             margin-top: 5px;
             height: 4px;
             border-radius: 2px;
-            background-color: var(--gray-border);
+            background-color: var(--light-gray);
             overflow: hidden;
         }
 
@@ -472,7 +489,6 @@
 
             <h1 class="title">Bangunan Gedung</h1>
         </div>
-
 
         <!-- Form -->
         <div class="form-container">
@@ -695,19 +711,19 @@
 
             // Determine strength level
             if (strength === 0) {
-                color = '#E63946'; // Red
+                color = '#EF4444'; // Red
                 text = 'Sangat Lemah';
             } else if (strength <= 40) {
-                color = '#F4A261'; // Orange
+                color = '#F59E0B'; // Orange
                 text = 'Lemah';
             } else if (strength <= 70) {
-                color = '#E9C46A'; // Yellow
+                color = var(--persib-blue-light); // Blue Persib
                 text = 'Cukup';
             } else if (strength <= 90) {
-                color = '#2A9D8F'; // Green
+                color = '#10B981'; // Green
                 text = 'Kuat';
             } else {
-                color = '#264653'; // Dark Blue
+                color = var(--persib-blue); // Dark Blue Persib
                 text = 'Sangat Kuat';
             }
 
