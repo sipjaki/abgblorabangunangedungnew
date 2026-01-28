@@ -5,82 +5,47 @@
 
 <body class="font-poppins text-[#070625]">
   <section id="content" class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#F8F8F8] overflow-x-hidden pb-[122px] relative">
-<header class="relative navy-gradient h-[280px] overflow-hidden">
-  <!-- Background -->
+  <header class="flex justify-center h-[376px] px-[18px] relative overflow-hidden -mb-[106px] rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]">
   <img
-    src="/assets/android/iconmenu/4newbangunan.png"
-    class="absolute object-cover w-full h-full"
+    src="/assets/android/iconmenu/temabaru.png"
+    class="absolute object-cover w-full h-full rounded-b-[20px] rounded-bl-[20px] rounded-br-[20px]"
     alt="backgrounds"
     loading="lazy"
   >
-
-  <!-- Navbar Fixed -->
-  <div class="fixed top-0 w-full max-w-[640px] z-30 px-[18px] left-1/2 transform -translate-x-1/2">
-    <nav
-      style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"
-      class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-4"
-    >
-      <!-- Logo Kiri -->
-      <a href="signup.html" class="shrink-0">
-        <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center bg-white">
-          <img src="/assets/abgblora/logo/pupr.png" alt="icon" class="w-[80%]" loading="lazy">
-        </div>
-      </a>
-
-      <!-- Teks Tengah -->
-      <div class="flex-1 mx-2 sm:mx-4 min-w-0">
-        <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
-          <div class="flex items-center justify-center sm:justify-start">
-            <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal text-white" style="font-size:12px;">
-              Dinas Pekerjaan Umum Dan
-              <br> Penataan Ruang
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Logo Kanan -->
-      <a href="" class="shrink-0">
-        <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center bg-white">
-          <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" class="w-[80%]">
-        </div>
-      </a>
-    </nav>
-  </div>
-
-  <!-- Konten "Cari BBCA Q LITE PRO" -->
-  <div class="relative z-10 pt-20 px-6">
-    <div class="mb-4">
-      <h1 class="text-white text-2xl font-bold mb-1">Cari </h1>
-      <div class="flex items-center">
-        <div class="bg-blue-400 text-white text-xs font-medium px-2 py-1 rounded mr-2">Q</div>
-        {{-- <h2 class="text-white text-xl font-semibold">LITE PRO</h2> --}}
-      </div>
+      <div class="fixed top-0 w-full max-w-[640px] px-[18px] z-30" style="margin-top: -25px;">
+<nav style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" class="p-3 sm:p-[10px_16px] h-fit w-full flex items-center justify-between rounded-full shadow-[0_8px_30px_0_#0A093212] z-10 mt-[60px]">
+  <!-- Logo Kiri -->
+  <a href="signup.html" class="shrink-0">
+    <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
+      <img src="/assets/abgblora/logo/pupr.png" alt="icon" class="w-[80%]" loading="lazy">
     </div>
+  </a>
 
-    <!-- Search Box -->
-    <div class="bg-white rounded-2xl p-4 shadow-lg">
-      <div class="flex items-center">
-        <div class="mr-3 text-blue-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </div>
-        <div class="flex-1">
-          <p class="text-gray-800 font-medium text-sm">Cari Menu</p>
-          <p class="text-gray-500 text-xs">.....</p>
-        </div>
-        <div class="ml-3">
-          <div class="bg-blue-600 text-white p-2 rounded-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-        </div>
+  <!-- Teks Tengah -->
+  <div class="flex-1 mx-2 sm:mx-4 min-w-0">
+    <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
+      {{-- <p class="font-semibold text-sm sm:text-base leading-tight text-[#4041DA] truncate w-full" style="font-size:12px;">
+        ABG Blora Bangunan Gedung
+      </p> --}}
+      <div class="flex items-center justify-center sm:justify-start">
+        <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px;">
+          Dinas Pekerjaan Umum Dan
+          <br> Penataan Ruang
+        </p>
       </div>
     </div>
   </div>
-</header>
+
+  <!-- Logo Kanan -->
+  <a href="" class="shrink-0">
+    <div class="w-12 h-12 sm:w-[54px] sm:h-[54px] flex overflow-hidden rounded-full items-center justify-center">
+      <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="icon" class="w-[80%]">
+    </div>
+  </a>
+</nav>
+      </div>
+    </header>
+
     @include('frontend.android.00_fiturmenu.04_menunavigasi')
 <div id="Promo" class="promo-section">
     <div class="promo-header">
