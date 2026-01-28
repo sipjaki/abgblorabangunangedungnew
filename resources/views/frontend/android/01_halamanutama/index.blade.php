@@ -126,6 +126,7 @@
 </div>
 
 <style>
+
 .promo-section {
   margin: 1.5rem 0;
   width: 100%;
@@ -143,9 +144,15 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(24,40,72,0.85) 0%, rgba(42,58,106,0.85) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 90, 170, 0.85) 0%,   /* Biru Persib utama */
+    rgba(0, 120, 215, 0.85) 50%, /* Biru cerah */
+    rgba(80, 170, 255, 0.85) 100% /* Biru muda */
+  );
   z-index: 0;
 }
+
 
 .promo-header {
   display: flex;
@@ -419,7 +426,12 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(24,40,72,0.85) 0%, rgba(42,58,106,0.85) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 90, 170, 0.85),
+    rgba(0, 120, 215, 0.85),
+    rgba(80, 170, 255, 0.85)
+  );
   z-index: 0;
 }
 
