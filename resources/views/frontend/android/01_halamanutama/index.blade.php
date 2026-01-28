@@ -135,7 +135,7 @@
   font-family: 'Segoe UI', system-ui, sans-serif;
   position: relative;
   overflow: hidden;
-  background: url("/assets/android/iconmenu/belakangnew.jpg") no-repeat center center;
+  background: url("/assets/android/iconmenu/temabaru.png") no-repeat center center;
   background-size: cover;
 }
 
@@ -411,7 +411,7 @@
   font-family: 'Segoe UI', system-ui, sans-serif;
   position: relative;
   overflow: hidden;
-  background: url("/assets/android/iconmenu/belakangnew.jpg") no-repeat center center;
+  background: url("/assets/android/iconmenu/temabaru.png") no-repeat center center;
   background-size: cover;
 }
 
