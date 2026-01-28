@@ -31,7 +31,7 @@
       <div class="flex items-center justify-center sm:justify-start">
         <p class="font-semibold text-sm sm:text-base leading-tight whitespace-normal" style="font-size:12px; color:white;">
           Dinas Pekerjaan Umum Dan
-          <br> Penataan Ruang
+          <br> Penataan Ruang <br> Bangunan Gedung
         </p>
       </div>
     </div>
@@ -48,81 +48,108 @@
     </header>
 
     @include('frontend.android.00_fiturmenu.04_menunavigasi')
-<div id="Promo" class="promo-section">
-    <div class="promo-header">
-        <h6 class="promo-title" style="font-size: 16px;">Agenda Sosialisasi</h6>
-        <a href="#" class="promo-link">Lihat Semua</a>
+<div id="Promo" class="promo-section" style="margin-top: 40px;">
+    <div class="promo-header" style="display: flex; justify-content: space-between; align-items: center; padding: 0 16px; margin-bottom: 16px;">
+        <h6 class="promo-title" style="font-size: 18px; font-weight: 700; color: #222; margin: 0;">Agenda Sosialisasi</h6>
+        <a href="#" class="promo-link" style="color: navy; font-size: 14px; font-weight: 600; text-decoration: none;">Lihat Semua →</a>
     </div>
 
-    <div class="promo-carousel">
-    @forelse ($agendapelatihan as $item)
-        <div class="promo-card">
-            <div class="card-image-container">
-                <img src="{{ asset($item->foto) }}" class="card-image" alt="{{ $item->namakegiatan }}">
-                <div class="card-overlay"></div>
-                <div class="card-badge">
-                    {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d M Y') }}
+    <div class="promo-carousel" style="display: flex; overflow-x: auto; padding: 0 16px 16px 16px; gap: 16px; scrollbar-width: none; -ms-overflow-style: none;">
+        @forelse ($agendapelatihan as $item)
+            <div class="promo-card" style="flex: 0 0 auto; width: 280px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); background: white;">
+                <div class="card-image-container" style="position: relative; height: 160px; overflow: hidden;">
+                    <img src="{{ asset($item->foto) }}" class="card-image" alt="{{ $item->namakegiatan }}"
+                         style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="card-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4) 100%);"></div>
+                    <div class="card-badge" style="position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.95); color: #222; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        {{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d M Y') }}
+                    </div>
+                </div>
+                <div class="card-content" style="padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+                    <!-- Nama Kegiatan -->
+                    <h3 class="card-title" style="font-size: 16px; font-weight: 600; color: #222; margin: 0; line-height: 1.4; height: 45px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                        {{ $item->namakegiatan }}
+                    </h3>
+
+                    <!-- Tombol -->
+                    @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
+                        <a href="{{ route('daftaragenda', $item->id) }}" style="text-decoration: none; display: block;">
+                            <button class="button-modern"
+                                style="width: 100%; padding: 12px; border: none; border-radius: 10px;
+                                       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                                       color: white; font-weight: 700; font-size: 14px;
+                                       cursor: pointer; transition: all 0.3s ease;
+                                       display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <svg style="width: 18px; height: 18px; fill: white;" viewBox="0 0 24 24">
+                                    <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                Daftar Sekarang
+                            </button>
+                        </a>
+                    @else
+                        <button class="button-dikembalikan"
+                            style="width: 100%; padding: 12px; border: none; border-radius: 10px;
+                                   background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+                                   color: white; font-weight: 700; font-size: 14px;
+                                   cursor: not-allowed; opacity: 0.8;
+                                   display: flex; align-items: center; justify-content: center; gap: 8px;" disabled>
+                            <svg style="width: 18px; height: 18px; fill: white;" viewBox="0 0 24 24">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                            Pendaftaran Ditutup
+                        </button>
+                    @endif
                 </div>
             </div>
-            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 12px; text-align: center;">
-    <!-- Nama Kegiatan -->
-    <h3 class="card-title"
-        style="font-size: 16px; font-weight: 600; color: #222; margin-bottom: 12px; font-family: 'Poppins', sans-serif;">
-        {{ $item->namakegiatan }}
-    </h3>
+        @empty
+            <div style="width: 100%; padding: 40px 20px; text-align: center; background: #f8f9fa; border-radius: 16px; border: 2px dashed #dee2e6; margin: 0 16px;">
+                <div style="font-size: 48px; color: #6c757d; margin-bottom: 16px;">
+                    <svg style="width: 48px; height: 48px; fill: #6c757d;" viewBox="0 0 24 24">
+                        <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/>
+                    </svg>
+                </div>
+                <p style="color: #6c757d; font-size: 16px; font-weight: 600; margin: 0;">Belum Ada Agenda Sosialisasi</p>
+                <p style="color: #adb5bd; font-size: 14px; margin-top: 8px;">Agenda akan muncul di sini</p>
+            </div>
+        @endforelse
+    </div>
 
-    <!-- Tombol -->
-    @if(\Carbon\Carbon::now()->lessThanOrEqualTo(\Carbon\Carbon::parse($item->penutupan)))
-        <a href="{{ route('daftaragenda', $item->id) }}" style="text-decoration: none; width: 100%;">
-            <button class="button-modern"
-                style="display: flex; align-items: center; justify-content: center; gap: 6px;
-                       width: 100%; padding: 8px 16px; border-radius: 8px;
-                       background-color: navy; color: black; font-weight: bold;
-                       font-size: 14px; transition: 0.3s;">
-                <i class="bi bi-pencil-square" style="font-size: 16px;"></i> <span style="color:black;"></span> Daftar
-            </button>
-        </a>
-    @else
-        <button class="button-dikembalikan"
-            style="display: flex; align-items: center; justify-content: center; gap: 6px;
-                   width: 100%; padding: 8px 16px; border-radius: 8px;
-                   background-color: #dc3545; color: white; font-weight: bold;
-                   font-size: 14px;" disabled>
-            <i class="bi bi-x-octagon" style="font-size: 16px;"></i> Ditutup
-        </button>
-    @endif
-</div>
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .promo-carousel::-webkit-scrollbar {
+            display: none;
+        }
 
-        </div>
-    @empty
-        <div style="
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            color: #6c757d;
-            background-color: #f8f9fa;
-            border: 2px dashed #ced4da;
-            border-radius: 12px;
-            font-size: 16px;
-            animation: fadeIn 0.5s ease-in-out;
-        ">
-            <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-            Belum Ada Agenda Sosialisasi !
-        </div>
-    @endforelse
-</div>
+        /* Smooth scrolling */
+        .promo-carousel {
+            scroll-behavior: smooth;
+        }
 
-<style>
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-</style>
+        /* Card hover effect */
+        .promo-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        .promo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Button hover effect */
+        .button-modern:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(30, 60, 114, 0.25);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .promo-card {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
 </div>
 
 <style>
