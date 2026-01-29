@@ -553,7 +553,7 @@
 
             <!-- 2. DATA BANGUNAN -->
             <div class="section-header mt-4">
-                <i class="bi bi-building me-2"></i> Data Bangunan
+                <i class="bi bi-building me-2"></i> Data Surat Permohonan Kajian Teknis Bangunan Gedung
             </div>
 
             <div class="row">
@@ -626,7 +626,7 @@
     @enderror
 
     <small class="text-muted d-block mt-1">
-        Format: PDF / DOCX (Maks. 15MB)
+        Format: PDF (Maks. 15MB)
     </small>
 
     <small class="text-muted d-block mb-2">
@@ -647,14 +647,14 @@
 
             <!-- 3. SURAT KESANGGUPAN -->
             <div class="section-header mt-4">
-                <i class="bi bi-file-earmark-check me-2"></i> Surat Kesanggupan
+                <i class="bi bi-file-earmark-check me-2"></i> Surat Kesanggupan Pembongkaran Bangunan Gedung
             </div>
 
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="pilihansanggup">
-                            <i class="bi bi-check-circle me-2 text-primary"></i> Pilihan Sanggup
+                            <i class="bi bi-check-circle me-2 text-primary"></i> Apakah Saudara Setuju Untuk Dilakukan Pembongkaran ?
                         </label>
                         <select class="form-select @error('pilihansanggup') is-invalid @enderror"
                                 id="pilihansanggup" name="pilihansanggup">
@@ -667,16 +667,36 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="suratkesanggupan">
-                            <i class="bi bi-upload me-2 text-primary"></i> Upload Surat Kesanggupan
-                        </label>
-                        <input type="file" class="form-control @error('suratkesanggupan') is-invalid @enderror"
-                               id="suratkesanggupan" name="suratkesanggupan" accept=".pdf,.jpg,.jpeg,.png">
-                        @error('suratkesanggupan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                        <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
-                    </div>
-                </div>
+    <div class="form-modern">
+        <label class="form-label-modern" for="suratkesanggupan">
+            <i class="bi bi-upload me-2 text-primary"></i>
+            Upload Surat Pernyataan Kesanggupan Pembongkaran Bangunan Gedung
+        </label>
+
+        <input type="file"
+               class="form-control @error('suratkesanggupan') is-invalid @enderror"
+               id="suratkesanggupan"
+               name="suratkesanggupan"
+               accept=".docx,.pdf">
+
+        @error('suratkesanggupan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: DOCX / PDF (Maks. 5MB)
+        </small>
+
+        <!-- BUTTON DOWNLOAD TEMPLATE -->
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERNYATAAN_KESANGGUPAN.docx"
+           class="btn btn-outline-primary btn-sm mt-2"
+           download>
+            <i class="bi bi-download me-1"></i> Download Template Surat
+        </a>
+    </div>
+</div>
+
+
             </div>
 
             <!-- 4. DATA PEMILIK -->
