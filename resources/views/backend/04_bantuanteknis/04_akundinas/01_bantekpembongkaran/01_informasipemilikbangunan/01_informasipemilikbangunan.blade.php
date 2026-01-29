@@ -480,10 +480,10 @@
         @csrf
 
         <!-- Hidden Input untuk ID Data Awal -->
-<input  name="id_awal" value="{{ $data->id }}">
+<input type="hidden" name="id_awal" value="{{ $data->id }}">
 
 <!-- Hidden Input untuk Nama Pemilik Data Awal -->
-<input  name="namapemilik_awal" value="{{ $data->namapemilik }}">
+<input type="hidden" name="namapemilik_awal" value="{{ $data->namapemilik }}">
 
         <input type="hidden" name="bantekpembongkaraninduk_id" value="{{ $data->id ?? '' }}">
         <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}">

@@ -6711,9 +6711,18 @@ public function informasipemilikbangunan($namapemilik, $id)
             }
         }
 
-        // SIMPAN KE DATABASE
-        $record = bantekpembongkarannew1::create($validated);
+    // Simpan ke tabel baru
+    $record = bantekpembongkarannew1::create($validated);
 
+    // Ambil data awal yang ingin dijadikan acuan untuk redirect
+    // Misal id awal dikirim via hidden input di form
+    $idAwal = $request->input('id_awal');
+    $namapemilik = $request->input('namapemilik_awal');
+
+    return redirect()->route('bebantekpembongkaranshow', [
+        'namapemilik' => $namapemilik,
+        'id' => $idAwal
+    ])->with('create', 'Data berhasil disimpan!');
         }
 
 }
