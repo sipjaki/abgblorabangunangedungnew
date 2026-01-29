@@ -17,7 +17,7 @@
    <!--begin::App Main-->
    <main class="app-main"
    style="
-    background: linear-gradient(to bottom, #7de3f1, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     margin: 0;
     padding: 0;
     position: relative;
@@ -85,21 +85,10 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #000080, #000080);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
-                </div>
+
+                    <div>
+                    @include('backend.00_administrator.00_baganterpisah.11_judulhalaman')
+            </div>
 
 
 
@@ -365,24 +354,6 @@
         }
     }
 </style>
-
-<div class="col-md-12">
-    <div class="doc-grid mb-5">
-        <!-- Header Section -->
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
-            <div class="d-flex align-items-center mb-3 mb-md-0">
-                <div class="me-3">
-                    <i class="bi bi-clipboard-data-fill text-primary" style="font-size: 2rem;"></i>
-                </div>
-                <div>
-                    <h4 class="mb-1" style="color: #1f2937; font-size: 1.5rem;">Dokumen Informasi Pemilik Bangunan </h4>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 <!-- FORM UNTUK UPLOAD DOKUMEN (Contoh untuk INFORMASI PEMILIK BANGUNAN) -->
 
 
