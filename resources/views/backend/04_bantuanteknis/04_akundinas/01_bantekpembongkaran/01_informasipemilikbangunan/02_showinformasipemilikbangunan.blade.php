@@ -772,7 +772,7 @@
 
         @php
             // Data dari database
-            $dataBangunan = $data->bantekPembongkaran ?? null;
+            $data = $data->bantekPembongkaran ?? null;
 
             // Helper function untuk mengecek file
             function fileExists($path) {
@@ -856,7 +856,7 @@
                         <i class="bi bi-hash"></i> Nomor Surat
                     </div>
                     <div>
-                        {{ $dataBangunan->bantekpembongkarannew1->nosurat ?? 'Belum diisi' }}
+                        {{ $data->bantekpembongkarannew1->nosurat ?? 'Belum diisi' }}
                     </div>
                 </div>
 
@@ -865,8 +865,8 @@
                     <div class="data-label">
                         <i class="bi bi-calendar-date"></i> Tanggal Surat
                     </div>
-                  <div class="data-value @if(empty(optional($dataBangunan)->tanggalsurat)) empty @endif">
-                        {{ optional($dataBangunan)->tanggalsurat ? \Carbon\Carbon::parse($dataBangunan->tanggalsurat)->format('d F Y') : 'Belum diisi' }}
+                  <div class="data-value @if(empty(optional($data)->tanggalsurat)) empty @endif">
+                        {{ optional($data)->tanggalsurat ? \Carbon\Carbon::parse($data->tanggalsurat)->format('d F Y') : 'Belum diisi' }}
                     </div>
 
                 </div>
@@ -884,12 +884,12 @@
                         </div>
                     </div>
 
-                    @if($dataBangunan && $dataBangunan->suratpermohonan)
+                    @if($data && $data->suratpermohonan)
                         <div class="file-actions">
-                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($dataBangunan->suratpermohonan) }}', 'Surat Permohonan')">
+                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($data->suratpermohonan) }}', 'Surat Permohonan')">
                                 <i class="bi bi-eye"></i> View Full
                             </button>
-                            <a href="{{ getFileUrl($dataBangunan->suratpermohonan) }}" download class="btn-file btn-download">
+                            <a href="{{ getFileUrl($data->suratpermohonan) }}" download class="btn-file btn-download">
                                 <i class="bi bi-download"></i> Download
                             </a>
                         </div>
@@ -897,8 +897,8 @@
                 </div>
 
                 <div class="file-preview-content">
-                    @if($dataBangunan && $dataBangunan->suratpermohonan && fileExists($dataBangunan->suratpermohonan))
-                        {!! renderFilePreview($dataBangunan->suratpermohonan, 'Surat Permohonan') !!}
+                    @if($data && $data->suratpermohonan && fileExists($data->suratpermohonan))
+                        {!! renderFilePreview($data->suratpermohonan, 'Surat Permohonan') !!}
                     @else
                         <div class="no-file-message">
                             <i class="bi bi-file-earmark-excel"></i>
@@ -927,8 +927,8 @@
                     <div class="data-label">
                         <i class="bi bi-building"></i> Nama Bangunan
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->namabangunan)) empty @endif">
-                        {{ $dataBangunan->namabangunan ?? 'Belum diisi' }}
+                    <div class="data-value @if(empty($data->namabangunan)) empty @endif">
+                        {{ $data->namabangunan ?? 'Belum diisi' }}
                     </div>
                 </div>
 
@@ -937,8 +937,8 @@
                     <div class="data-label">
                         <i class="bi bi-list-check"></i> Pilihan Bangunan
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->pilihanbangunan)) empty @endif">
-                        {{ $dataBangunan->pilihanbangunan ?? 'Belum diisi' }}
+                    <div class="data-value @if(empty($data->pilihanbangunan)) empty @endif">
+                        {{ $data->pilihanbangunan ?? 'Belum diisi' }}
                     </div>
                 </div>
             </div>
@@ -955,12 +955,12 @@
                         </div>
                     </div>
 
-                    @if($dataBangunan && $dataBangunan->suratkelayakan)
+                    @if($data && $data->suratkelayakan)
                         <div class="file-actions">
-                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($dataBangunan->suratkelayakan) }}', 'Surat Kelayakan')">
+                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($data->suratkelayakan) }}', 'Surat Kelayakan')">
                                 <i class="bi bi-eye"></i> View Full
                             </button>
-                            <a href="{{ getFileUrl($dataBangunan->suratkelayakan) }}" download class="btn-file btn-download">
+                            <a href="{{ getFileUrl($data->suratkelayakan) }}" download class="btn-file btn-download">
                                 <i class="bi bi-download"></i> Download
                             </a>
                         </div>
@@ -968,8 +968,8 @@
                 </div>
 
                 <div class="file-preview-content">
-                    @if($dataBangunan && $dataBangunan->suratkelayakan && fileExists($dataBangunan->suratkelayakan))
-                        {!! renderFilePreview($dataBangunan->suratkelayakan, 'Surat Kelayakan') !!}
+                    @if($data && $data->suratkelayakan && fileExists($data->suratkelayakan))
+                        {!! renderFilePreview($data->suratkelayakan, 'Surat Kelayakan') !!}
                     @else
                         <div class="no-file-message">
                             <i class="bi bi-file-earmark-excel"></i>
@@ -998,9 +998,9 @@
                     <div class="data-label">
                         <i class="bi bi-check-circle"></i> Status Kesanggupan
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->pilihansanggup)) empty @endif">
-                        @if($dataBangunan && $dataBangunan->pilihansanggup)
-                            @if($dataBangunan->pilihansanggup == 'Ya')
+                    <div class="data-value @if(empty($data->pilihansanggup)) empty @endif">
+                        @if($data && $data->pilihansanggup)
+                            @if($data->pilihansanggup == 'Ya')
                                 <span style="color: #10b981; font-weight: 600;">✓ Sanggup</span>
                             @else
                                 <span style="color: #ef4444; font-weight: 600;">✗ Tidak Sanggup</span>
@@ -1024,12 +1024,12 @@
                         </div>
                     </div>
 
-                    @if($dataBangunan && $dataBangunan->suratkesanggupan)
+                    @if($data && $data->suratkesanggupan)
                         <div class="file-actions">
-                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($dataBangunan->suratkesanggupan) }}', 'Surat Kesanggupan')">
+                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($data->suratkesanggupan) }}', 'Surat Kesanggupan')">
                                 <i class="bi bi-eye"></i> View Full
                             </button>
-                            <a href="{{ getFileUrl($dataBangunan->suratkesanggupan) }}" download class="btn-file btn-download">
+                            <a href="{{ getFileUrl($data->suratkesanggupan) }}" download class="btn-file btn-download">
                                 <i class="bi bi-download"></i> Download
                             </a>
                         </div>
@@ -1037,8 +1037,8 @@
                 </div>
 
                 <div class="file-preview-content">
-                    @if($dataBangunan && $dataBangunan->suratkesanggupan && fileExists($dataBangunan->suratkesanggupan))
-                        {!! renderFilePreview($dataBangunan->suratkesanggupan, 'Surat Kesanggupan') !!}
+                    @if($data && $data->suratkesanggupan && fileExists($data->suratkesanggupan))
+                        {!! renderFilePreview($data->suratkesanggupan, 'Surat Kesanggupan') !!}
                     @else
                         <div class="no-file-message">
                             <i class="bi bi-file-earmark-excel"></i>
@@ -1067,8 +1067,8 @@
                     <div class="data-label">
                         <i class="bi bi-person"></i> Nama Lengkap
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->namalengkap)) empty @endif">
-                        {{ $dataBangunan->namalengkap ?? 'Belum diisi' }}
+                    <div class="data-value @if(empty($data->namalengkap)) empty @endif">
+                        {{ $data->namalengkap ?? 'Belum diisi' }}
                     </div>
                 </div>
 
@@ -1077,8 +1077,8 @@
                     <div class="data-label">
                         <i class="bi bi-briefcase"></i> Jabatan
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->jabatan)) empty @endif">
-                        {{ $dataBangunan->jabatan ?? 'Belum diisi' }}
+                    <div class="data-value @if(empty($data->jabatan)) empty @endif">
+                        {{ $data->jabatan ?? 'Belum diisi' }}
                     </div>
                 </div>
 
@@ -1087,8 +1087,8 @@
                     <div class="data-label">
                         <i class="bi bi-geo-alt"></i> Alamat Pemilik
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->alamatpemilik)) empty @endif">
-                        {{ $dataBangunan->alamatpemilik ?? 'Belum diisi' }}
+                    <div class="data-value @if(empty($data->alamatpemilik)) empty @endif">
+                        {{ $data->alamatpemilik ?? 'Belum diisi' }}
                     </div>
                 </div>
 
@@ -1097,8 +1097,8 @@
                     <div class="data-label">
                         <i class="bi bi-telephone"></i> No. Telepon
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->notelepon)) empty @endif">
-                        {{ $dataBangunan->notelepon ?? 'Belum diisi' }}
+                    <div class="data-value @if(empty($data->notelepon)) empty @endif">
+                        {{ $data->notelepon ?? 'Belum diisi' }}
                     </div>
                 </div>
             </div>
@@ -1115,12 +1115,12 @@
                         </div>
                     </div>
 
-                    @if($dataBangunan && $dataBangunan->ktp)
+                    @if($data && $data->ktp)
                         <div class="file-actions">
-                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($dataBangunan->ktp) }}', 'KTP Pemilik')">
+                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($data->ktp) }}', 'KTP Pemilik')">
                                 <i class="bi bi-eye"></i> View Full
                             </button>
-                            <a href="{{ getFileUrl($dataBangunan->ktp) }}" download class="btn-file btn-download">
+                            <a href="{{ getFileUrl($data->ktp) }}" download class="btn-file btn-download">
                                 <i class="bi bi-download"></i> Download
                             </a>
                         </div>
@@ -1128,8 +1128,8 @@
                 </div>
 
                 <div class="file-preview-content">
-                    @if($dataBangunan && $dataBangunan->ktp && fileExists($dataBangunan->ktp))
-                        {!! renderFilePreview($dataBangunan->ktp, 'KTP Pemilik') !!}
+                    @if($data && $data->ktp && fileExists($data->ktp))
+                        {!! renderFilePreview($data->ktp, 'KTP Pemilik') !!}
                     @else
                         <div class="no-file-message">
                             <i class="bi bi-card-image"></i>
@@ -1151,12 +1151,12 @@
                         </div>
                     </div>
 
-                    @if($dataBangunan && $dataBangunan->sk)
+                    @if($data && $data->sk)
                         <div class="file-actions">
-                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($dataBangunan->sk) }}', 'Surat Kuasa/SK')">
+                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($data->sk) }}', 'Surat Kuasa/SK')">
                                 <i class="bi bi-eye"></i> View Full
                             </button>
-                            <a href="{{ getFileUrl($dataBangunan->sk) }}" download class="btn-file btn-download">
+                            <a href="{{ getFileUrl($data->sk) }}" download class="btn-file btn-download">
                                 <i class="bi bi-download"></i> Download
                             </a>
                         </div>
@@ -1164,8 +1164,8 @@
                 </div>
 
                 <div class="file-preview-content">
-                    @if($dataBangunan && $dataBangunan->sk && fileExists($dataBangunan->sk))
-                        {!! renderFilePreview($dataBangunan->sk, 'Surat Kuasa/SK') !!}
+                    @if($data && $data->sk && fileExists($data->sk))
+                        {!! renderFilePreview($data->sk, 'Surat Kuasa/SK') !!}
                     @else
                         <div class="no-file-message">
                             <i class="bi bi-file-earmark-text"></i>
@@ -1194,8 +1194,8 @@
                     <div class="data-label">
                         <i class="bi bi-rulers"></i> Luas Tanah (m²)
                     </div>
-                   <div class="data-value @if(empty(optional($dataBangunan)->luastanah)) empty @endif">
-    {{ optional($dataBangunan)->luastanah ? number_format(optional($dataBangunan)->luastanah, 2) : 'Belum diisi' }}
+                   <div class="data-value @if(empty(optional($data)->luastanah)) empty @endif">
+    {{ optional($data)->luastanah ? number_format(optional($data)->luastanah, 2) : 'Belum diisi' }}
 </div>
 
                 </div>
@@ -1205,8 +1205,8 @@
                     <div class="data-label">
                         <i class="bi bi-file-earmark-lock"></i> Status Tanah
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->statustanah)) empty @endif">
-                        {{ $dataBangunan->statustanah ?? 'Belum diisi' }}
+                    <div class="data-value @if(empty($data->statustanah)) empty @endif">
+                        {{ $data->statustanah ?? 'Belum diisi' }}
                     </div>
                 </div>
 
@@ -1215,8 +1215,8 @@
                     <div class="data-label">
                         <i class="bi bi-person-badge"></i> Nama Pemegang Hak
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->namapemeganghak)) empty @endif">
-                        {{ $dataBangunan->namapemeganghak ?? 'Belum diisi' }}
+                    <div class="data-value @if(empty($data->namapemeganghak)) empty @endif">
+                        {{ $data->namapemeganghak ?? 'Belum diisi' }}
                     </div>
                 </div>
             </div>
@@ -1233,12 +1233,12 @@
                         </div>
                     </div>
 
-                    @if($dataBangunan && $dataBangunan->sertifikattanah)
+                    @if($data && $data->sertifikattanah)
                         <div class="file-actions">
-                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($dataBangunan->sertifikattanah) }}', 'Sertifikat Tanah')">
+                            <button class="btn-file btn-view" onclick="openPreviewModal('{{ getFileUrl($data->sertifikattanah) }}', 'Sertifikat Tanah')">
                                 <i class="bi bi-eye"></i> View Full
                             </button>
-                            <a href="{{ getFileUrl($dataBangunan->sertifikattanah) }}" download class="btn-file btn-download">
+                            <a href="{{ getFileUrl($data->sertifikattanah) }}" download class="btn-file btn-download">
                                 <i class="bi bi-download"></i> Download
                             </a>
                         </div>
@@ -1246,8 +1246,8 @@
                 </div>
 
                 <div class="file-preview-content">
-                    @if($dataBangunan && $dataBangunan->sertifikattanah && fileExists($dataBangunan->sertifikattanah))
-                        {!! renderFilePreview($dataBangunan->sertifikattanah, 'Sertifikat Tanah') !!}
+                    @if($data && $data->sertifikattanah && fileExists($data->sertifikattanah))
+                        {!! renderFilePreview($data->sertifikattanah, 'Sertifikat Tanah') !!}
                     @else
                         <div class="no-file-message">
                             <i class="bi bi-file-earmark-text"></i>

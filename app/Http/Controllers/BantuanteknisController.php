@@ -6739,7 +6739,7 @@ public function informasipemilikbangunan($namapemilik, $id)
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
         [
             'title' => 'Details Informasi Pemilik Bangunan Gedung',
-            'dataBangunan' => $data
+            'data' => $data
         ]
     );
 }
