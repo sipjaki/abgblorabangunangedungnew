@@ -1004,29 +1004,59 @@
 <div class="row">
     <!-- Legalitas Bangunan -->
     <div class="col-md-6">
-        <div class="form-modern">
-            <label class="form-label-modern" for="legalitasbangunan">
-                <i class="bi bi-file-earmark-check me-2 text-primary"></i> Legalitas Bangunan
-            </label>
-            <input type="text" class="form-control @error('legalitasbangunan') is-invalid @enderror"
-                   id="legalitasbangunan" name="legalitasbangunan" value="{{ old('legalitasbangunan') }}"
-                   placeholder="Contoh: IMB/IL">
-            @error('legalitasbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+    <div class="form-modern">
+        <label class="form-label-modern" for="legalitasbangunan">
+            <i class="bi bi-file-earmark-check me-2 text-primary"></i> Legalitas Bangunan
+        </label>
+
+        <select
+            class="form-select @error('legalitasbangunan') is-invalid @enderror"
+            id="legalitasbangunan"
+            name="legalitasbangunan">
+
+            <option value="">-- Pilih Legalitas --</option>
+            <option value="Legal" {{ old('legalitasbangunan') == 'Legal' ? 'selected' : '' }}>
+                Legal
+            </option>
+            <option value="Belum Berizin" {{ old('legalitasbangunan') == 'Belum Berizin' ? 'selected' : '' }}>
+                Belum Berizin
+            </option>
+        </select>
+
+        @error('legalitasbangunan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Keterangan: Pilih status legalitas bangunan sesuai kondisi sebenarnya.
+        </small>
     </div>
+</div>
 
     <!-- Nomor PBG -->
-    <div class="col-md-6">
-        <div class="form-modern">
-            <label class="form-label-modern" for="nomorpbg">
-                <i class="bi bi-hash me-2 text-primary"></i> Nomor PBG
-            </label>
-            <input type="text" class="form-control @error('nomorpbg') is-invalid @enderror"
-                   id="nomorpbg" name="nomorpbg" value="{{ old('nomorpbg') }}"
-                   placeholder="Nomor Persetujuan Bangunan Gedung">
-            @error('nomorpbg') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+   <div class="col-md-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="nomorpbg">
+            <i class="bi bi-hash me-2 text-primary"></i> Nomor PBG
+        </label>
+
+        <input type="text"
+               class="form-control @error('nomorpbg') is-invalid @enderror"
+               id="nomorpbg"
+               name="nomorpbg"
+               value="{{ old('nomorpbg') }}"
+               placeholder="Nomor Persetujuan Bangunan Gedung">
+
+        @error('nomorpbg')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Keterangan: <em>Lewati kolom ini apabila bangunan belum memiliki PBG.</em>
+        </small>
     </div>
+</div>
+
 
     <!-- Pemilik Bangunan -->
     <div class="col-md-6">
@@ -1045,7 +1075,7 @@
     <div class="col-md-6">
         <div class="form-modern">
             <label class="form-label-modern" for="kodebarang">
-                <i class="bi bi-tag me-2 text-primary"></i> Kode Barang
+                <i class="bi bi-tag me-2 text-primary"></i> Kode Inventaris Barang
             </label>
             <input type="text" class="form-control @error('kodebarang') is-invalid @enderror"
                    id="kodebarang" name="kodebarang" value="{{ old('kodebarang') }}"
@@ -1086,10 +1116,10 @@
         @error('koordinatbangunan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
+<small class="text-muted d-block mt-1">
+    Keterangan: Data diisi secara otomatis dari Data Dasar Permohonan.
+</small>
 
-        <small class="text-muted d-block mt-1">
-            Terisi Otomatis
-        </small>
     </div>
 </div>
 
@@ -1267,17 +1297,71 @@
 </div>
 
 <div class="row">
-    <div class="col-12">
-        <div class="form-modern">
-            <label class="form-label-modern" for="kib">
-                <i class="bi bi-upload me-2 text-primary"></i> Upload KIB
-            </label>
-            <input type="file" class="form-control @error('kib') is-invalid @enderror"
-                   id="kib" name="kib" accept=".pdf,.jpg,.jpeg,.png">
-            @error('kib') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
+<div class="col-12">
+    <div class="form-modern">
+        <label class="form-label-modern" for="kib">
+            <i class="bi bi-upload me-2 text-primary"></i>
+            Upload Berkas KIB
+        </label>
+
+        <!-- INPUT TETAP ADA -->
+        <input type="file"
+               class="form-control @error('kib') is-invalid @enderror"
+               id="kib"
+               name="kib"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+        @error('kib')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF, JPG, PNG (Maks. 5MB)
+        </small>
+
+        <!-- BUTTON LIHAT CONTOH -->
+        <button type="button"
+                class="btn btn-outline-primary btn-sm mt-2"
+                data-bs-toggle="modal"
+                data-bs-target="#modalContohKIB">
+            <i class="bi bi-eye me-1"></i> Lihat Contoh Berkas KIB
+        </button>
+    </div>
+</div>
+
+<div class="modal fade" id="modalContohKIB" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">
+                    <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                    Contoh Berkas KIB
+                </h5>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_KIB.png"
+                     alt="Contoh Berkas KIB"
+                     class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+
         </div>
     </div>
+</div>
+
+
 </div>
 
 <!-- =========================
