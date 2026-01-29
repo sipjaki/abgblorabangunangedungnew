@@ -14,6 +14,6 @@ class bantekpembongkarannew1 extends Model
 
     public function bantekpembongkaraninduk()
     {
-        return $this->belongsTo(bantekpembongkaraninduk::class, 'bantekpembongkaraninduk_id');
+        return $this->hasMany(bantekpembongkaraninduk::class, 'bantekpembongkaraninduk_id');
     }
 }
