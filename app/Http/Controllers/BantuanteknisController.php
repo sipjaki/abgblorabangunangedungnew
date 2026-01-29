@@ -6727,21 +6727,24 @@ public function informasipemilikbangunan($namapemilik, $id)
         }
 
 
-        public function bebantekpembongkarandokumen($namabangunan, $id)
+
+public function bebantekpembongkarandokumen($namabangunan, $id)
 {
     $namabangunan = urldecode($namabangunan);
 
     $data = bantekpembongkarannew1::where('id', $id)
-        ->where('namabangunan', $namabangunan)
+        ->whereRaw('TRIM(LOWER(namabangunan)) = ?', [Str::lower(trim($namabangunan))])
         ->firstOrFail();
 
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
         [
             'title' => 'Details Informasi Pemilik Bangunan Gedung',
-            'dataBangunan'  => $data
+            'dataBangunan'  => $data,
+            'dataInduk'     => $data->bantekpembongkaraninduk // optional, bawa relasi induk juga
         ]
     );
 }
+
 
 }

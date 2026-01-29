@@ -1566,7 +1566,7 @@ Route::get(
     Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkaraninformasipemiliknew'])->middleware('auth', 'can:admindinas')->name('informasipemilikbangunannew.create');
 
 
-    // LIHAT SHOW DARI INFORMASI PEMILIK BANGUNAN GEDUNG 
+    // LIHAT SHOW DARI INFORMASI PEMILIK BANGUNAN GEDUNG
 Route::get(
     '/bebantekpembongkaran/dokumen/{namabangunan}/{id}',
     [BantuanteknisController::class, 'bebantekpembongkarandokumen']
