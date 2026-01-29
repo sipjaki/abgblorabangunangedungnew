@@ -148,404 +148,532 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                  <form action="{{ route('datanewpeniliknew.create') }}" method="POST" enctype="multipart/form-data">
-          @csrf
-                            <!-- begin::Body -->
-
-                            <input type="hidden" name="user_id" value="{{ $user->id }}">
-
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Left Column (6/12) -->
-<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
-    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
-  <i class="bi bi-house-door-fill me-3" style="font-size: 18px;"></i>
-  Data Informasi Pemohon
-</h5>
-
-{{-- Nama Pemohon --}}
-<div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="namapemohon">
-            <i class="bi bi-person-badge-fill me-2 text-primary"></i> Nama Pemohon
-        </label>
-        <input type="text" class="form-control @error('namapemohon') is-invalid @enderror" id="namapemohon" name="namapemohon" value="{{ old('namapemohon', $data->namapemohon ?? '') }}">
-        @error('namapemohon') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
-{{-- NIK --}}
-{{-- <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="nik">
-            <i class="bi bi-card-list me-2 text-success"></i> NIK
-        </label>
-        <input type="number"
-               class="form-control @error('nik') is-invalid @enderror"
-               id="nik"
-               name="nik"
-               value="{{ old('nik', $data->nik ?? '') }}"
-               minlength="16" maxlength="16"
-               oninput="this.value = this.value.slice(0, 16)"
-               placeholder="Masukkan 16 digit NIK">
-        @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div> --}}
-
-{{-- Fungsi Bangunan --}}
-<div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="fungsibangunan">
-            <i class="bi bi-building me-2 text-danger"></i> Fungsi Bangunan
-        </label>
-        <select class="form-select @error('fungsibangunan') is-invalid @enderror" id="fungsibangunan" name="fungsibangunan">
-            <option value="">-- Pilih Fungsi Bangunan --</option>
-            <option value="FUNGSI USAHA" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI USAHA' ? 'selected' : '' }}>FUNGSI USAHA</option>
-            <option value="FUNGSI HUNIAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI HUNIAN' ? 'selected' : '' }}>FUNGSI HUNIAN</option>
-            <option value="FUNGSI KEAGAMAAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI KEAGAMAAN' ? 'selected' : '' }}>FUNGSI KEAGAMAAN</option>
-            <option value="FUNGSI SOSIAL BUDAYA" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI SOSIAL BUDAYA' ? 'selected' : '' }}>FUNGSI SOSIAL BUDAYA</option>
-            <option value="FUNGSI CAMPURAN" {{ old('fungsibangunan', $data->fungsibangunan ?? '') == 'FUNGSI CAMPURAN' ? 'selected' : '' }}>FUNGSI CAMPURAN</option>
-        </select>
-        @error('fungsibangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
-
-{{-- Subfungsi Bangunan --}}
-<div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="subfungsibangunan">
-            <i class="bi bi-diagram-3 me-2 text-warning"></i> Subfungsi Bangunan
-        </label>
-        <input type="text" class="form-control @error('subfungsibangunan') is-invalid @enderror" id="subfungsibangunan" name="subfungsibangunan" value="{{ old('subfungsibangunan', $data->subfungsibangunan ?? '') }}">
-        @error('subfungsibangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
-
-{{-- Nomor Telepon --}}
-<div class="col-md-6">
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="nomortelepon">
-            <i class="bi bi-telephone-fill me-2 text-warning"></i> Nomor Telepon
-        </label>
-        <input type="text" class="form-control @error('nomortelepon') is-invalid @enderror" id="nomortelepon" name="nomortelepon" value="{{ old('nomortelepon', $data->nomortelepon ?? '') }}">
-        @error('nomortelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-</div>
-
-
-
-    <!-- =========================== -->
-    <!-- ALAMAT BANGUNAN GEDUNG -->
-    <!-- =========================== -->
-<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
-    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
-  <i class="bi bi-geo-alt me-3" style="font-size: 18px;"></i>
-  Alamat Bangunan Gedung Pemohon
-</h5>
-
-<div class="row g-3">
-  {{-- Provinsi dan Kabupaten --}}
-  @foreach([
-      'provinsi' => 'Provinsi',
-      'kabupaten' => 'Kabupaten/Kota'
-  ] as $name => $label)
-      <div class="col-md-6">
-          <div class="form-modern mb-3">
-              <label class="form-label-modern d-flex align-items-center" for="{{ $name }}">
-                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> {{ $label }}
-              </label>
-              <input
-                type="text"
-                class="form-control @error($name) is-invalid @enderror"
-                id="{{ $name }}"
-                name="{{ $name }}"
-                value="{{ $name === 'provinsi' ? 'Jawa Tengah' : 'Kabupaten Blora' }}"
-                readonly
-              >
-              @error($name) <div class="invalid-feedback">{{ $message }}</div> @enderror
-          </div>
-      </div>
-  @endforeach
-
-  {{-- Kecamatan --}}
-  <div class="col-md-6">
-    <div class="form-modern mb-3">
-      <label class="form-label-modern d-flex align-items-center" for="kecamatanblora_id">
-        <i class="bi bi-geo-alt me-2 text-danger" style="font-size: 1.2rem;"></i> Kecamatan
-      </label>
-      <select class="form-select @error('kecamatanblora_id') is-invalid @enderror" name="kecamatanblora_id" id="kecamatanblora_id" style="min-height: 42px;">
-        <option value="">-- Pilih Kecamatan --</option>
-        @foreach($kecamatanList as $item)
-          <option value="{{ $item->id }}" {{ old('kecamatanblora_id', $data->kecamatanblora_id ?? '') == $item->id ? 'selected' : '' }}>
-            {{ $item->kecamatanblora }}
-          </option>
-        @endforeach
-      </select>
-      @error('kecamatanblora_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-  </div>
-
-  {{-- Kelurahan/Desa --}}
-  <div class="col-md-6">
-    <div class="form-modern mb-3">
-      <label class="form-label-modern d-flex align-items-center" for="kelurahandesa_id">
-        <i class="bi bi-geo-alt me-2 text-danger" style="font-size: 1.2rem;"></i> Kelurahan/Desa
-      </label>
-      <select class="form-select @error('kelurahandesa_id') is-invalid @enderror" name="kelurahandesa_id" id="kelurahandesa_id" style="min-height: 42px;">
-        <option value="">-- Pilih Kelurahan/Desa --</option>
-        {{-- Pilihan kelurahan akan diisi lewat AJAX --}}
-      </select>
-      @error('kelurahandesa_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
-  </div>
-
-  {{-- Alamat Lengkap --}}
-  <div class="col-12">
-      <div class="form-modern mb-3">
-          <label class="form-label-modern d-flex align-items-center" for="alamatlengkap">
-            <i class="bi bi-house-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Alamat Lengkap
-          </label>
-          <textarea class="form-control @error('alamatlengkap') is-invalid @enderror" id="alamatlengkap" name="alamatlengkap" rows="3">{{ old('alamatlengkap', $data->alamatlengkap ?? '') }}</textarea>
-          @error('alamatlengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
-      </div>
-  </div>
-
-</div>
-
-<div class="row g-3">
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-    {{-- Koordinat --}}
-    <div class="col-md-12">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern d-flex align-items-center" for="koordinat">
-                <i class="bi bi-geo-alt-fill me-2 text-danger" style="font-size: 1.2rem;"></i> Koordinat
-            </label>
-            <input type="text" class="form-control @error('koordinat') is-invalid @enderror" id="koordinat" name="koordinat" value="{{ old('koordinat', $data->koordinat ?? '') }}">
-            @error('koordinat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-
-        {{-- Peta --}}
-        <div id="map" style="height: 500px; border-radius: 10px; border: 2px solid #ccc;"></div>
-    </div>
-
-</div>
-
-
-
-<script>
-    // Inisialisasi map dengan fokus ke Kabupaten Blora
-    var map = L.map('map').setView([-7.0421, 111.4046], 11); // Koordinat Blora
-
-    // Tambahkan layer peta dari OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora'
-    }).addTo(map);
-
-    // Marker (jika sudah ada nilai awal koordinat)
-    var marker;
-    var input = document.getElementById('koordinat');
-    if (input.value) {
-        var coords = input.value.split(',');
-        marker = L.marker([coords[0], coords[1]]).addTo(map);
-        map.setView([coords[0], coords[1]], 15);
+<style>
+    /* CSS Modern */
+    .doc-grid {
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        border: 1px solid #e3e6f0;
     }
 
-    // Event saat klik di peta
-    map.on('click', function(e) {
-        var latlng = e.latlng;
-        // Hapus marker sebelumnya
-        if (marker) {
-            map.removeLayer(marker);
-        }
-        // Tambahkan marker baru
-        marker = L.marker(latlng).addTo(map);
+    .doc-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        height: 100%;
+        transition: all 0.3s ease;
+        border: 2px solid #eef2ff;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
 
-        // Simpan koordinat ke input
-        document.getElementById('koordinat').value = latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6);
+    .doc-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+        border-color: #3b82f6;
+    }
+
+    .doc-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        color: white;
+        font-size: 1.8rem;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .doc-title {
+        margin-bottom: 25px;
+    }
+
+    .doc-title h4 {
+        font-weight: 600;
+        color: #1f2937;
+        font-size: 1.3rem;
+        line-height: 1.4;
+        margin-bottom: 5px;
+    }
+
+    .doc-title p {
+        color: #6b7280;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    /* Button Styles */
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .button-baru {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .button-baru:hover {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        color: white;
+    }
+
+    .button-berkas {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .button-berkas:hover {
+        background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        color: white;
+    }
+
+    .button-modern {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .button-modern:hover {
+        background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+        color: white;
+    }
+
+    /* Form Styles */
+    .form-modern {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-label-modern {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .form-label-modern i {
+        margin-right: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .form-control {
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        transition: all 0.3s;
+    }
+
+    .form-control:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .form-select {
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        transition: all 0.3s;
+    }
+
+    .form-select:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    /* Section Header */
+    .section-header {
+        font-weight: 600;
+        color: #1f2937;
+        margin: 2rem 0 1.5rem 0;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid #e5e7eb;
+        font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .doc-card {
+            padding: 20px;
+        }
+
+        .doc-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+        }
+
+        .doc-title h4 {
+            font-size: 1.1rem;
+        }
+
+        .button-container {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="doc-grid mb-5">
+        <!-- Header Section -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+            <div class="d-flex align-items-center mb-3 mb-md-0">
+                <div class="me-3">
+                    <i class="bi bi-clipboard-data-fill text-primary" style="font-size: 2rem;"></i>
+                </div>
+                <div>
+                    <h4 class="mb-1" style="color: #1f2937; font-size: 1.5rem;">Dokumen Informasi Pemilik Bangunan </h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- FORM UNTUK UPLOAD DOKUMEN (Contoh untuk INFORMASI PEMILIK BANGUNAN) -->
+<form action="{{ route('informasipemilikbangunannew.create') }}" method="POST" enctype="multipart/form-data" id="uploadForm" style="display: none;">
+    @csrf
+    <input type="hidden" name="bantekpembongkaraninduk_id" value="{{ $data->id ?? '' }}">
+    <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}">
+
+    <div class="card-body">
+        <!-- 1. DATA SURAT PERMOHONAN -->
+        <div class="section-header">
+            <i class="bi bi-file-earmark-text me-2"></i> Data Surat Permohonan
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="nosurat">
+                        <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat
+                    </label>
+                    <input type="text" class="form-control @error('nosurat') is-invalid @enderror"
+                           id="nosurat" name="nosurat" value="{{ old('nosurat') }}">
+                    @error('nosurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="tanggalsurat">
+                        <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat
+                    </label>
+                    <input type="date" class="form-control @error('tanggalsurat') is-invalid @enderror"
+                           id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
+                    @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="suratpermohonan">
+                        <i class="bi bi-upload me-2 text-primary"></i> Upload Surat Permohonan
+                    </label>
+                    <input type="file" class="form-control @error('suratpermohonan') is-invalid @enderror"
+                           id="suratpermohonan" name="suratpermohonan" accept=".pdf,.jpg,.jpeg,.png">
+                    @error('suratpermohonan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. DATA BANGUNAN -->
+        <div class="section-header mt-4">
+            <i class="bi bi-building me-2"></i> Data Bangunan
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="namabangunan">
+                        <i class="bi bi-building me-2 text-primary"></i> Nama Bangunan
+                    </label>
+                    <input type="text" class="form-control @error('namabangunan') is-invalid @enderror"
+                           id="namabangunan" name="namabangunan" value="{{ old('namabangunan') }}">
+                    @error('namabangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="pilihanbangunan">
+                        <i class="bi bi-list-check me-2 text-primary"></i> Pilihan Bangunan
+                    </label>
+                    <select class="form-select @error('pilihanbangunan') is-invalid @enderror"
+                            id="pilihanbangunan" name="pilihanbangunan">
+                        <option value="">-- Pilih --</option>
+                        <option value="Bangunan Lama" {{ old('pilihanbangunan') == 'Bangunan Lama' ? 'selected' : '' }}>Bangunan Lama</option>
+                        <option value="Bangunan Baru" {{ old('pilihanbangunan') == 'Bangunan Baru' ? 'selected' : '' }}>Bangunan Baru</option>
+                        <option value="Renovasi" {{ old('pilihanbangunan') == 'Renovasi' ? 'selected' : '' }}>Renovasi</option>
+                    </select>
+                    @error('pilihanbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="suratkelayakan">
+                        <i class="bi bi-upload me-2 text-primary"></i> Upload Surat Kelayakan
+                    </label>
+                    <input type="file" class="form-control @error('suratkelayakan') is-invalid @enderror"
+                           id="suratkelayakan" name="suratkelayakan" accept=".pdf,.jpg,.jpeg,.png">
+                    @error('suratkelayakan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. SURAT KESANGGUPAN -->
+        <div class="section-header mt-4">
+            <i class="bi bi-file-earmark-check me-2"></i> Surat Kesanggupan
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="pilihansanggup">
+                        <i class="bi bi-check-circle me-2 text-primary"></i> Pilihan Sanggup
+                    </label>
+                    <select class="form-select @error('pilihansanggup') is-invalid @enderror"
+                            id="pilihansanggup" name="pilihansanggup">
+                        <option value="">-- Pilih --</option>
+                        <option value="Ya" {{ old('pilihansanggup') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                        <option value="Tidak" {{ old('pilihansanggup') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                    </select>
+                    @error('pilihansanggup') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="suratkesanggupan">
+                        <i class="bi bi-upload me-2 text-primary"></i> Upload Surat Kesanggupan
+                    </label>
+                    <input type="file" class="form-control @error('suratkesanggupan') is-invalid @enderror"
+                           id="suratkesanggupan" name="suratkesanggupan" accept=".pdf,.jpg,.jpeg,.png">
+                    @error('suratkesanggupan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. DATA PEMILIK -->
+        <div class="section-header mt-4">
+            <i class="bi bi-person-badge me-2"></i> Data Pemilik
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="namalengkap">
+                        <i class="bi bi-person me-2 text-primary"></i> Nama Lengkap
+                    </label>
+                    <input type="text" class="form-control @error('namalengkap') is-invalid @enderror"
+                           id="namalengkap" name="namalengkap" value="{{ old('namalengkap') }}">
+                    @error('namalengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="jabatan">
+                        <i class="bi bi-briefcase me-2 text-primary"></i> Jabatan
+                    </label>
+                    <input type="text" class="form-control @error('jabatan') is-invalid @enderror"
+                           id="jabatan" name="jabatan" value="{{ old('jabatan') }}">
+                    @error('jabatan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="alamatpemilik">
+                        <i class="bi bi-geo-alt me-2 text-primary"></i> Alamat Pemilik
+                    </label>
+                    <textarea class="form-control @error('alamatpemilik') is-invalid @enderror"
+                              id="alamatpemilik" name="alamatpemilik" rows="3">{{ old('alamatpemilik') }}</textarea>
+                    @error('alamatpemilik') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="notelepon">
+                        <i class="bi bi-telephone me-2 text-primary"></i> No. Telepon
+                    </label>
+                    <input type="text" class="form-control @error('notelepon') is-invalid @enderror"
+                           id="notelepon" name="notelepon" value="{{ old('notelepon') }}">
+                    @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="ktp">
+                        <i class="bi bi-card-image me-2 text-primary"></i> Upload KTP
+                    </label>
+                    <input type="file" class="form-control @error('ktp') is-invalid @enderror"
+                           id="ktp" name="ktp" accept=".pdf,.jpg,.jpeg,.png">
+                    @error('ktp') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="sk">
+                        <i class="bi bi-file-earmark-text me-2 text-primary"></i> Upload SK
+                    </label>
+                    <input type="file" class="form-control @error('sk') is-invalid @enderror"
+                           id="sk" name="sk" accept=".pdf,.jpg,.jpeg,.png">
+                    @error('sk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. DATA TANAH -->
+        <div class="section-header mt-4">
+            <i class="bi bi-geo me-2"></i> Data Tanah
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="luastanah">
+                        <i class="bi bi-rulers me-2 text-primary"></i> Luas Tanah (m²)
+                    </label>
+                    <input type="number" step="0.01" class="form-control @error('luastanah') is-invalid @enderror"
+                           id="luastanah" name="luastanah" value="{{ old('luastanah') }}">
+                    @error('luastanah') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="statustanah">
+                        <i class="bi bi-file-earmark-lock me-2 text-primary"></i> Status Tanah
+                    </label>
+                    <select class="form-select @error('statustanah') is-invalid @enderror"
+                            id="statustanah" name="statustanah">
+                        <option value="">-- Pilih Status Tanah --</option>
+                        <option value="Hak Milik" {{ old('statustanah') == 'Hak Milik' ? 'selected' : '' }}>Hak Milik</option>
+                        <option value="Sewa" {{ old('statustanah') == 'Sewa' ? 'selected' : '' }}>Sewa</option>
+                        <option value="Hak Pakai" {{ old('statustanah') == 'Hak Pakai' ? 'selected' : '' }}>Hak Pakai</option>
+                        <option value="Hak Guna Bangunan" {{ old('statustanah') == 'Hak Guna Bangunan' ? 'selected' : '' }}>Hak Guna Bangunan</option>
+                    </select>
+                    @error('statustanah') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="namapemeganghak">
+                        <i class="bi bi-person-badge me-2 text-primary"></i> Nama Pemegang Hak
+                    </label>
+                    <input type="text" class="form-control @error('namapemeganghak') is-invalid @enderror"
+                           id="namapemeganghak" name="namapemeganghak" value="{{ old('namapemeganghak') }}">
+                    @error('namapemeganghak') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-modern">
+                    <label class="form-label-modern" for="sertifikattanah">
+                        <i class="bi bi-file-earmark-text me-2 text-primary"></i> Upload Sertifikat Tanah
+                    </label>
+                    <input type="file" class="form-control @error('sertifikattanah') is-invalid @enderror"
+                           id="sertifikattanah" name="sertifikattanah" accept=".pdf,.jpg,.jpeg,.png">
+                    @error('sertifikattanah') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Submit -->
+        <div class="mt-4 text-end">
+            <button type="button" class="btn btn-secondary me-2" onclick="hideForm()">Batal</button>
+            <button type="submit" class="button-baru">
+                <i class="bi bi-save me-2"></i> Simpan Data
+            </button>
+        </div>
+    </div>
+</form>
+
+<script>
+    // Fungsi untuk menampilkan form upload
+    function showUploadForm() {
+        document.getElementById('uploadForm').style.display = 'block';
+        window.scrollTo(0, document.getElementById('uploadForm').offsetTop);
+    }
+
+    // Fungsi untuk menyembunyikan form upload
+    function hideForm() {
+        document.getElementById('uploadForm').style.display = 'none';
+    }
+
+    // Event listener untuk tombol Upload Dokumen
+    document.querySelectorAll('.button-baru').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            showUploadForm();
+        });
     });
 </script>
-
-
-{{-- JQuery AJAX untuk load Kelurahan berdasarkan Kecamatan --}}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $('#kecamatanblora_id').on('change', function () {
-    var kecamatanID = $(this).val();
-    if (kecamatanID) {
-      $.ajax({
-        url: '{{ route("datanewpenilik.create") }}', // Sesuaikan route ajax-nya
-        type: 'GET',
-        data: { kecamatan_id: kecamatanID },
-        success: function (data) {
-          $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
-          $.each(data, function (key, value) {
-            $('#kelurahandesa_id').append('<option value="' + value.id + '">' + value.desa + '</option>');
-          });
-        }
-      });
-    } else {
-      $('#kelurahandesa_id').empty().append('<option value="">-- Pilih Kelurahan/Desa --</option>');
-    }
-  });
-</script>
-
-{{-- ======================================================================================================================= --}}
-
-
-{{-- ======================================================================================================================= --}}
-<div class="row">
-<h5 class="mt-4 mb-3 fw-bold text-primary d-flex align-items-center"
-    style="font-size:16px; border-left: 4px solid #0d6efd; padding-left: 14px; background-color: #f0f8ff; border-radius: 6px; height: 45px;">
-  <i class="bi bi-house-gear-fill me-3" style="font-size: 18px;"></i>
-  Intensitas Bangunan Gedung
-</h5>
-
-<div class="row">
-    {{-- Nama Bangunan --}}
-    <div class="col-md-6">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="namabangunan">
-                <i class="bi bi-bank2 me-2 text-primary"></i> Nama Bangunan
-            </label>
-            <input type="text" class="form-control @error('namabangunan') is-invalid @enderror" id="namabangunan" name="namabangunan" value="{{ old('namabangunan', $data->namabangunan ?? '') }}">
-            @error('namabangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-    </div>
-
-    {{-- Luas Bangunan (m2) --}}
-    <div class="col-md-6">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="luasbangunan">
-                <i class="bi bi-fullscreen me-2 text-success"></i> Luas Bangunan (m<sup>2</sup>)
-            </label>
-            <input type="text" class="form-control @error('luasbangunan') is-invalid @enderror" id="luasbangunan" name="luasbangunan" value="{{ old('luasbangunan', $data->luasbangunan ?? '') }}">
-            @error('luasbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-    </div>
-
-    {{-- Jumlah Lantai --}}
-    <div class="col-md-6">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="jumlahlantai">
-                <i class="bi bi-layers-fill me-2 text-warning"></i> Jumlah Lantai
-            </label>
-            <input type="text" class="form-control @error('jumlahlantai') is-invalid @enderror" id="jumlahlantai" name="jumlahlantai" value="{{ old('jumlahlantai', $data->jumlahlantai ?? '') }}">
-            @error('jumlahlantai') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-    </div>
-
-    {{-- GSB (meter) --}}
-    <div class="col-md-6">
-        <div class="form-modern mb-3">
-            <label class="form-label-modern" for="gsb">
-                <i class="bi bi-signpost-2-fill me-2 text-danger"></i> GSB (Garis Sempadan Lapangan) [m]
-            </label>
-            <input type="number" step="0.01" class="form-control @error('gsb') is-invalid @enderror" id="gsb" name="gsb" value="{{ old('gsb', $data->gsb ?? '') }}">
-            @error('gsb') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-    </div>
-</div>
-
-
-<div class="col-12">
-    {{-- <div class="mb-3">
-        <label class="form-label" for="dokumenproposal">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 8px; color: navy;"></i> Upload Dokumen Proposal
-        </label>
-        <input
-            type="file"
-            id="dokumenproposal"
-            name="dokumenproposal"
-            class="form-control @error('dokumenproposal') is-invalid @enderror"
-            accept=".pdf,.doc,.docx"
-        />
-        @error('dokumenproposal')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        @if (!empty($data->dokumenproposal))
-            <small class="text-muted">File saat ini:
-                <a href="{{ asset('storage/' . $data->dokumenproposal) }}" target="_blank">
-                    Lihat dokumen
-                </a>
-            </small>
-        @endif
-    </div> --}}
-</div>
-
-                                    </div>
-                                </div>
-                                <!-- End row -->
-                            </div>
-                            <!-- end::Body -->
-
-                            <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                <div class="flex justify-end">
-                               <button class="button-modern" type="button" onclick="openModal()">
-                                    <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
-                                    </button>
-
-                                </div>
-                                <!-- Modal Konfirmasi -->
-                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin membuat data inspeksi bangunan ?
-                                    </p>
-
-                                      <!-- Tombol -->
-                                      <div style="display: flex; justify-content: center; gap: 12px;">
-                                        <button id="confirmSubmitBtn"
-                                        onclick="submitForm()"
-                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                    <!-- Telegram SVG -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
-                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
-                                    </svg>
-                                    Ya
-                                </button>
-
-                                <!-- Tombol Batal dengan ikon X (SVG) -->
-                                <button type="button"
-                                        onclick="closeModal()"
-                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
-                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
-                                    </svg>
-                                    Batal
-                                </button>
-
-                                      </div>
-                                    </div>
-                                </div>
-
-                                <!-- Script -->
-                                <script>
-                                function openModal() {
-                                    const modal = document.getElementById("confirmModal");
-                                    if (modal) modal.style.display = "flex";
-                                }
-
-                                function closeModal() {
-                                    const modal = document.getElementById("confirmModal");
-                                    if (modal) modal.style.display = "none";
-                                }
-
-                                </script>
-
-                            </div>
-
-
-                        </form>
 
                     </div>
                  </div>

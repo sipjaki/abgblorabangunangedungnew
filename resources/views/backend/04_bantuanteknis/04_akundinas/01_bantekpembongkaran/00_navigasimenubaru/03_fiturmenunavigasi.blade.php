@@ -120,9 +120,16 @@
                     <!-- Button Container -->
                     <div class="button-container">
                         <!-- Upload Dokumen -->
-                        <a href="/upload-pemilik" class="button-baru">
-                            <i class="bi bi-upload"></i> Upload Dokumen
-                        </a>
+                                <a href="{{ route(
+                                    'informasipemilikbangunan',
+                                    [
+                                        urlencode($data->namapemilik),
+                                        $data->id
+                                    ]
+                                ) }}"
+                                class="button-baru">
+                                    <i class="bi bi-upload"></i> Upload Dokumen
+                                </a>
 
                         <!-- Lihat Dokumen -->
                         <a href="/lihat-pemilik" class="button-berkas">
