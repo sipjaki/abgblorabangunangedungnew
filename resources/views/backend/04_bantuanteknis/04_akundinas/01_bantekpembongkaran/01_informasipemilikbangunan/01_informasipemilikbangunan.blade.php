@@ -510,74 +510,97 @@
                     </div>
                 </div>
 
-<div class="col-12">
+
+                <div class="col-12">
     <div class="form-modern">
-        <label class="form-label-modern" for="suratPermohonanIzin">
-            <i class="bi bi-upload me-2 text-primary"></i>
-            Upload Surat Permohonan Izin Pembongkaran
+    <label class="form-label-modern" for="suratpermohonan">
+        <i class="bi bi-upload me-2 text-primary"></i>
+        Upload Surat Permohonan Izin Pembongkaran
+    </label>
+
+    <input type="file"
+           class="form-control @error('suratpermohonan') is-invalid @enderror"
+           id="suratpermohonan"
+           name="suratpermohonan"
+           accept=".pdf,.jpg,.jpeg,.png">
+
+    @error('suratpermohonan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+    <small class="text-muted d-block mt-1">
+        Format: PDF (Maks. 15MB)
+    </small>
+
+    <small class="text-muted d-block mb-2">
+        Keterangan: Silahkan download template surat ini, isi, lalu
+        <strong class="text-danger">Upload Kembali</strong>.
+    </small>
+
+    <!-- BUTTON DOWNLOAD -->
+    <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.docx"
+       class="btn btn-outline-primary btn-sm mb-3"
+       download>
+        <i class="bi bi-download me-1"></i> Download Template Surat
+    </a>
+
+    <!-- PREVIEW FILE -->
+    <div id="previewSuratPermohonan" class="mt-3 d-none">
+        <label class="form-label-modern mb-2">
+            <i class="bi bi-eye me-2 text-success"></i>
+            Preview Berkas Yang Diupload
         </label>
 
-        <input type="file"
-               class="form-control @error('suratPermohonanIzin') is-invalid @enderror"
-               id="suratPermohonanIzin"
-               name="suratPermohonanIzin"
-               accept=".pdf,.jpg,.jpeg,.png">
-
-        @error('suratPermohonanIzin')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        <small class="text-muted d-block mt-1">
-            Format: PDF (Maks. 15MB)
-        </small>
-
-        <small class="text-muted d-block mb-2">
-            Keterangan: Silahkan download template surat ini, isi, lalu
-            <strong class="text-danger">Upload Kembali</strong>.
-        </small>
-
-        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.docx"
-           class="btn btn-outline-primary btn-sm mb-3"
-           download>
-            <i class="bi bi-download me-1"></i> Download Template Surat
-        </a>
-
-        <div id="previewSuratPermohonan" class="mt-3 d-none">
-            <label class="form-label-modern mb-2">
-                <i class="bi bi-eye me-2 text-success"></i>
-                Preview Berkas Yang Diupload
-            </label>
-            <div class="border rounded-3 p-2 bg-light" id="previewSuratPermohonanBox"></div>
-        </div>
+        <div class="border rounded-3 p-2 bg-light" id="previewSuratPermohonanBox"></div>
     </div>
 </div>
 
 <script>
-(function() {
-    const input = document.getElementById('suratPermohonanIzin');
-    const wrapper = document.getElementById('previewSuratPermohonan');
-    const box = document.getElementById('previewSuratPermohonanBox');
+document.getElementById('suratpermohonan').addEventListener('change', function () {
 
-    input.addEventListener('change', function() {
-        const file = this.files[0];
-        box.innerHTML = '';
+    const file = this.files[0];
+    const previewWrap = document.getElementById('previewSuratPermohonan');
+    const previewBox  = document.getElementById('previewSuratPermohonanBox');
 
-        if (!file) { wrapper.classList.add('d-none'); return; }
+    previewBox.innerHTML = '';
 
-        const fileURL = URL.createObjectURL(file);
+    if (!file) {
+        previewWrap.classList.add('d-none');
+        return;
+    }
 
-        if (file.type === 'application/pdf') {
-            box.innerHTML = `<iframe src="${fileURL}" class="w-100 rounded" style="height:400px;" frameborder="0"></iframe>`;
-        } else if (file.type.startsWith('image/')) {
-            box.innerHTML = `<img src="${fileURL}" class="img-fluid rounded shadow-sm" alt="Preview Surat Permohonan">`;
-        } else {
-            box.innerHTML = `<p class="text-danger mb-0">File tidak bisa dipreview.</p>`;
-        }
+    const fileURL = URL.createObjectURL(file);
 
-        wrapper.classList.remove('d-none');
-    });
-})();
+    // PDF
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
+    }
+    // IMAGE
+    else if (file.type.startsWith('image/')) {
+        previewBox.innerHTML = `
+            <img src="${fileURL}"
+                 class="img-fluid rounded shadow-sm"
+                 alt="Preview Surat Permohonan">
+        `;
+    }
+    // TIDAK DIDUKUNG
+    else {
+        previewBox.innerHTML = `
+            <p class="text-danger mb-0">
+                File tidak bisa dipreview.
+            </p>
+        `;
+    }
+
+    previewWrap.classList.remove('d-none');
+});
 </script>
+
 
 </div>
 
@@ -643,23 +666,23 @@
 
 <div class="col-12">
     <div class="form-modern">
-        <label class="form-label-modern" for="suratKajianTeknis">
+        <label class="form-label-modern" for="suratpermohonan">
             <i class="bi bi-upload me-2 text-primary"></i>
             Upload Surat Permohonan Kajian Teknis Bangunan Gedung
         </label>
 
         <input type="file"
-               class="form-control @error('suratKajianTeknis') is-invalid @enderror"
-               id="suratKajianTeknis"
-               name="suratKajianTeknis"
+               class="form-control @error('suratpermohonan') is-invalid @enderror"
+               id="suratpermohonan"
+               name="suratpermohonan"
                accept=".pdf,.jpg,.jpeg,.png,.docx">
 
-        @error('suratKajianTeknis')
+        @error('suratpermohonan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
 
         <small class="text-muted d-block mt-1">
-            Format: PDF (Maks. 15MB)
+            Format: PDF(Maks. 15MB)
         </small>
 
         <small class="text-muted d-block mb-2">
@@ -667,48 +690,70 @@
             <strong class="text-danger">Upload Kembali</strong>.
         </small>
 
+        <!-- BUTTON DOWNLOAD -->
         <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_KAJIAN_TEKNIS_BANGUNAN_GEDUNG.docx"
            class="btn btn-outline-primary btn-sm mb-3"
            download>
             <i class="bi bi-download me-1"></i> Download Template Surat
         </a>
 
+        <!-- PREVIEW -->
         <div id="previewSuratKajianTeknis" class="mt-3 d-none">
             <label class="form-label-modern mb-2">
                 <i class="bi bi-eye me-2 text-success"></i>
                 Preview Berkas Yang Diupload
             </label>
-            <div class="border rounded-3 p-2 bg-light" id="previewSuratKajianTeknisBox"></div>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewSuratKajianTeknisBox"></div>
         </div>
     </div>
 </div>
 
+
 <script>
 (function() {
-    const input = document.getElementById('suratKajianTeknis');
+    // Semua variabel lokal, aman untuk preview lain
+    const input = document.getElementById('suratpermohonan');
     const wrapper = document.getElementById('previewSuratKajianTeknis');
     const box = document.getElementById('previewSuratKajianTeknisBox');
 
-    input.addEventListener('change', function() {
+    input.addEventListener('change', function () {
         const file = this.files[0];
         box.innerHTML = '';
 
-        if (!file) { wrapper.classList.add('d-none'); return; }
+        if (!file) {
+            wrapper.classList.add('d-none');
+            return;
+        }
 
         const fileURL = URL.createObjectURL(file);
 
+        // Preview PDF
         if (file.type === 'application/pdf') {
             box.innerHTML = `<iframe src="${fileURL}" class="w-100 rounded" style="height:400px;" frameborder="0"></iframe>`;
-        } else if (file.type.startsWith('image/')) {
+        }
+        // Preview Image
+        else if (file.type.startsWith('image/')) {
             box.innerHTML = `<img src="${fileURL}" class="img-fluid rounded shadow-sm" alt="Preview Surat Kajian Teknis">`;
-        } else {
-            box.innerHTML = `<div class="alert alert-warning mb-0"><i class="bi bi-file-earmark-word me-2"></i><strong>${file.name}</strong><br>File berhasil dipilih (preview tidak tersedia).</div>`;
+        }
+        // DOCX atau file lain
+        else {
+            box.innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="bi bi-file-earmark-word me-2"></i>
+                    <strong>${file.name}</strong><br>
+                    File berhasil dipilih (preview tidak tersedia).
+                </div>
+            `;
         }
 
+        // Tampilkan wrapper preview
         wrapper.classList.remove('d-none');
     });
 })();
 </script>
+
 
 
             </div>
