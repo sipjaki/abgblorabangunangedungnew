@@ -1279,147 +1279,84 @@
     <div class="col-md-6">
         <div class="form-modern">
             <label class="form-label-modern" for="apakahadapbg">
-                <i class="bi bi-question-circle me-2 text-primary"></i> Apakah Ada PBG?
+                <i class="bi bi-question-circle me-2 text-primary"></i>
+                Apakah Ada PBG?
             </label>
+
             <select class="form-select @error('apakahadapbg') is-invalid @enderror"
-                    id="apakahadapbg" name="apakahadapbg" onchange="togglePBGField()">
+                    id="apakahadapbg"
+                    name="apakahadapbg"
+                    onchange="togglePBGField()">
                 <option value="">-- Pilih --</option>
                 <option value="Ya" {{ old('apakahadapbg') == 'Ya' ? 'selected' : '' }}>Ya</option>
                 <option value="Tidak" {{ old('apakahadapbg') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
             </select>
-            @error('apakahadapbg') <div class="invalid-feedback">{{ $message }}</div> @enderror
+
+            @error('apakahadapbg')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
     </div>
 
-    <!-- Upload PBG (Tampilkan jika Ya) -->
-    <div class="col-md-6" id="pbgField" style="display: none;">
+    <!-- FIELD DINAMIS -->
+    <div class="col-md-6" id="pbgField" style="display:none;">
         <div class="form-modern">
-            <label class="form-label-modern" for="pbg">
-                <i class="bi bi-upload me-2 text-primary"></i> Upload PBG
+            <label class="form-label-modern" id="pbgLabel">
+                <i class="bi bi-upload me-2 text-primary"></i>
+                Upload PBG
             </label>
-            <input type="file" class="form-control @error('pbg') is-invalid @enderror"
-                   id="pbg" name="pbg" accept=".pdf,.jpg,.jpeg,.png">
-            @error('pbg') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
+
+            <input type="file"
+                   class="form-control @error('pbg') is-invalid @enderror"
+                   id="pbg"
+                   name="pbg"
+                   accept=".pdf,.jpg,.jpeg,.png">
+
+            @error('pbg')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+
+            <small class="text-muted d-block mt-1">
+                Format: PDF, JPG, PNG (Maks. 5MB)
+            </small>
+
+            <!-- DOWNLOAD TEMPLATE (KHUSUS TIDAK ADA PBG) -->
+            <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERNYATAAN_TIDAK_MEMPUNYAI_PBG.docx"
+               id="downloadSuratPBG"
+               class="btn btn-outline-primary btn-sm mt-2"
+               style="display:none;"
+               download>
+                <i class="bi bi-download me-1"></i>
+                Download Template Surat
+            </a>
         </div>
     </div>
 </div>
 
-
 <script>
-    // Fungsi untuk toggle PBG field
-    function togglePBGField() {
-        const pbgSelect = document.getElementById('apakahadapbg');
-        const pbgField = document.getElementById('pbgField');
+function togglePBGField() {
+    const pilihan = document.getElementById('apakahadapbg').value;
+    const field   = document.getElementById('pbgField');
+    const label   = document.getElementById('pbgLabel');
+    const downloadBtn = document.getElementById('downloadSuratPBG');
 
-        if (pbgSelect.value === 'Ya') {
-            pbgField.style.display = 'block';
-        } else {
-            pbgField.style.display = 'none';
-            document.getElementById('pbg').value = '';
-        }
+    if (pilihan === 'Ya') {
+        field.style.display = 'block';
+        label.innerHTML = '<i class="bi bi-upload me-2 text-primary"></i> Upload PBG';
+        downloadBtn.style.display = 'none';
     }
-
-    // Inisialisasi saat halaman load
-    document.addEventListener('DOMContentLoaded', function() {
-        togglePBGField(); // Set initial state
-    });
-
-    // Fungsi untuk menampilkan modal konfirmasi
-    function showConfirmationModal() {
-        if (!validateForm()) {
-            return;
-        }
-
-        document.getElementById('confirmationModal').style.display = 'flex';
-
-        const modalContent = document.querySelector('#confirmationModal > div');
-        modalContent.style.opacity = '0';
-        modalContent.style.transform = 'scale(0.9)';
-
-        setTimeout(() => {
-            modalContent.style.transition = 'all 0.3s ease';
-            modalContent.style.opacity = '1';
-            modalContent.style.transform = 'scale(1)';
-        }, 10);
+    else if (pilihan === 'Tidak') {
+        field.style.display = 'block';
+        label.innerHTML = '<i class="bi bi-file-earmark-text me-2 text-primary"></i> Upload Surat Pernyataan Tidak Mempunyai PBG';
+        downloadBtn.style.display = 'inline-block';
     }
-
-    // Fungsi untuk menutup modal konfirmasi
-    function closeConfirmationModal() {
-        const modalContent = document.querySelector('#confirmationModal > div');
-        modalContent.style.opacity = '0';
-        modalContent.style.transform = 'scale(0.9)';
-
-        setTimeout(() => {
-            document.getElementById('confirmationModal').style.display = 'none';
-            modalContent.style.opacity = '';
-            modalContent.style.transform = '';
-        }, 300);
+    else {
+        field.style.display = 'none';
     }
+}
 
-    // Fungsi untuk submit form
-    function submitForm() {
-        const submitBtn = document.querySelector('#confirmationModal button[onclick="submitForm()"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i> Menyimpan...';
-        submitBtn.disabled = true;
-
-        closeConfirmationModal();
-
-        setTimeout(() => {
-            document.getElementById('uploadForm').submit();
-        }, 500);
-    }
-
-    // Fungsi validasi form
-    function validateForm() {
-        let isValid = true;
-
-        // Reset errors
-        document.querySelectorAll('.field-error').forEach(el => el.remove());
-        document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-
-        // Validasi required fields
-        const requiredFields = [
-            'legalitasbangunan', 'pemilikbangunan', 'alamatbangunan',
-            'fungsibangunan', 'jumlahlantai', 'luasbangunan'
-        ];
-
-        requiredFields.forEach(fieldName => {
-            const field = document.getElementById(fieldName);
-            if (field && !field.value.trim()) {
-                isValid = false;
-                field.classList.add('is-invalid');
-
-                const errorDiv = document.createElement('div');
-                errorDiv.className = 'field-error text-danger mt-1';
-                errorDiv.style.fontSize = '0.85rem';
-                errorDiv.innerHTML = `<i class="bi bi-exclamation-circle me-1"></i> Field ini harus diisi`;
-                field.parentNode.appendChild(errorDiv);
-            }
-        });
-
-        // Validasi angka positif
-        const numberFields = ['jumlahlantai', 'ketinggianbangunan', 'luasbangunan'];
-        numberFields.forEach(fieldName => {
-            const field = document.getElementById(fieldName);
-            if (field && field.value) {
-                const value = parseFloat(field.value);
-                if (value <= 0) {
-                    isValid = false;
-                    field.classList.add('is-invalid');
-
-                    const errorDiv = document.createElement('div');
-                    errorDiv.className = 'field-error text-danger mt-1';
-                    errorDiv.style.fontSize = '0.85rem';
-                    errorDiv.innerHTML = `<i class="bi bi-exclamation-circle me-1"></i> Nilai harus lebih dari 0`;
-                    field.parentNode.appendChild(errorDiv);
-                }
-            }
-        });
-
-        return isValid;
-    }
+// auto trigger kalau ada old value
+document.addEventListener('DOMContentLoaded', togglePBGField);
 </script>
             <!-- Tombol Submit -->
           <div class="mt-4 text-end">
