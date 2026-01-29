@@ -510,7 +510,8 @@
                     </div>
                 </div>
 
-              <div class="col-12">
+
+                <div class="col-12">
     <div class="form-modern">
         <label class="form-label-modern" for="suratpermohonan">
             <i class="bi bi-upload me-2 text-primary"></i>
@@ -543,6 +544,7 @@
             <i class="bi bi-download me-1"></i> Download Template Surat
         </a>
     </div>
+
 </div>
 
 
@@ -566,33 +568,78 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="pilihanbangunan">
-                            <i class="bi bi-list-check me-2 text-primary"></i> Pilihan Bangunan
-                        </label>
-                        <select class="form-select @error('pilihanbangunan') is-invalid @enderror"
-                                id="pilihanbangunan" name="pilihanbangunan">
-                            <option value="">-- Pilih --</option>
-                            <option value="Bangunan Lama" {{ old('pilihanbangunan') == 'Bangunan Lama' ? 'selected' : '' }}>Bangunan Lama</option>
-                            <option value="Bangunan Baru" {{ old('pilihanbangunan') == 'Bangunan Baru' ? 'selected' : '' }}>Bangunan Baru</option>
-                            <option value="Renovasi" {{ old('pilihanbangunan') == 'Renovasi' ? 'selected' : '' }}>Renovasi</option>
-                        </select>
-                        @error('pilihanbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-                </div>
+<div class="col-md-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="pilihanbangunan">
+            <i class="bi bi-list-check me-2 text-primary"></i>
+            Jenis Kajian Teknis Bangunan Gedung
+        </label>
 
-                <div class="col-12">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="suratkelayakan">
-                            <i class="bi bi-upload me-2 text-primary"></i> Upload Surat Kelayakan
-                        </label>
-                        <input type="file" class="form-control @error('suratkelayakan') is-invalid @enderror"
-                               id="suratkelayakan" name="suratkelayakan" accept=".pdf,.jpg,.jpeg,.png">
-                        @error('suratkelayakan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                        <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
-                    </div>
-                </div>
+        <select class="form-select @error('pilihanbangunan') is-invalid @enderror"
+                id="pilihanbangunan"
+                name="pilihanbangunan">
+            <option value="">-- Pilih --</option>
+
+            <option value="Kajian Analisa Kerusakan Bangunan Gedung"
+                {{ old('pilihanbangunan') == 'Kajian Analisa Kerusakan Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Analisa Kerusakan Bangunan Gedung
+            </option>
+
+            <option value="Kajian Rencana Teknis Pembongkaran Bangunan Gedung"
+                {{ old('pilihanbangunan') == 'Kajian Rencana Teknis Pembongkaran Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Rencana Teknis Pembongkaran Bangunan Gedung
+            </option>
+
+            <option value="Kajian Kelayakan Bangunan Gedung"
+                {{ old('pilihanbangunan') == 'Kajian Kelayakan Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Kelayakan Bangunan Gedung
+            </option>
+
+            <option value="Bantuan Gambar Teknis"
+                {{ old('pilihanbangunan') == 'Bantuan Gambar Teknis' ? 'selected' : '' }}>
+                Bantuan Gambar Teknis
+            </option>
+        </select>
+
+        @error('pilihanbangunan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="form-modern">
+    <label class="form-label-modern" for="suratpermohonan">
+        <i class="bi bi-upload me-2 text-primary"></i>
+        Upload Surat Permohonan Kajian Teknis Bangunan Gedung
+    </label>
+
+    <input type="file"
+           class="form-control @error('suratpermohonan') is-invalid @enderror"
+           id="suratpermohonan"
+           name="suratpermohonan"
+           accept=".pdf,.jpg,.jpeg,.png,.docx">
+
+    @error('suratpermohonan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+    <small class="text-muted d-block mt-1">
+        Format: PDF / DOCX (Maks. 15MB)
+    </small>
+
+    <small class="text-muted d-block mb-2">
+        Keterangan: Silahkan download template surat ini, isi, lalu
+        <strong class="text-danger">Upload Kembali</strong>.
+    </small>
+
+    <!-- BUTTON DOWNLOAD -->
+    <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_KAJIAN_TEKNIS_BANGUNAN_GEDUNG.docx"
+       class="btn btn-outline-primary btn-sm"
+       download>
+        <i class="bi bi-download me-1"></i> Download Template Surat
+    </a>
+</div>
+
             </div>
 
             <!-- 3. SURAT KESANGGUPAN -->
