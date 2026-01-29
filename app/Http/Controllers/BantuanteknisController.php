@@ -6731,15 +6731,15 @@ public function informasipemilikbangunan($namapemilik, $id)
         }
 
 
-        public function bebantekpembongkarandokumen($id)
+public function bebantekpembongkarandokumen($id)
 {
-    $data = bantekpembongkarannew1::findOrFail($id);
+    $data = bantekpembongkarannew1::withTrashed()->findOrFail($id);
 
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
         [
             'title' => 'Details Informasi Pemilik Bangunan Gedung',
-            'data' => $data
+            'data'  => $data
         ]
     );
 }
