@@ -244,9 +244,5 @@
         </div>
     </div>
 
-    <a href="/bebantekpembongkaran" class="button-modern">
-    <i class="bi bi-arrow-left me-2"></i>
-    Kembali Ke Data Awal
-</a>
-
 </div>
+
