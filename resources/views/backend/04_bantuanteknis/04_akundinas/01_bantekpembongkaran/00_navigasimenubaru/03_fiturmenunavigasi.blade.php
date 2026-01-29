@@ -120,28 +120,25 @@
                     <!-- Button Container -->
                     <div class="button-container">
                         <!-- Upload Dokumen -->
-                                <a href="{{ route(
-                                    'informasipemilikbangunan',
-                                    [
-                                        urlencode($data->namapemilik),
-                                        $data->id
-                                    ]
-                                ) }}"
-                                class="button-baru">
-                                    <i class="bi bi-upload"></i> Upload Dokumen
-                                </a>
-
-                            @if($data->bantekpembongkarannew1)
-                                <a href="{{ route('bebantekpembongkarandokumen', [
-                                    'namabangunan' => urlencode($data->bantekpembongkarannew1->namabangunan),
-                                    'id' => $data->bantekpembongkarannew1->id
-                                ]) }}"
-                                class="button-berkas">
-                                    <i class="bi bi-eye"></i> Lihat Dokumen
-                                </a>
-                            @else
-                                <span class="text-muted fst-italic">Dokumen belum tersedia</span>
-                            @endif
+                             @if($data->bantekpembongkarannew1 && $data->bantekpembongkarannew1->namabangunan)
+    <!-- Tombol Lihat Dokumen -->
+    <a href="{{ route('bebantekpembongkarandokumen', [
+            'namabangunan' => urlencode($data->bantekpembongkarannew1->namabangunan),
+            'id' => $data->bantekpembongkarannew1->id
+        ]) }}"
+        class="button-berkas">
+        <i class="bi bi-eye"></i> Lihat Dokumen
+    </a>
+@else
+    <!-- Tombol Upload Dokumen -->
+    <a href="{{ route('informasipemilikbangunan', [
+            urlencode($data->namapemilik),
+            $data->id
+        ]) }}"
+        class="button-baru">
+        <i class="bi bi-upload"></i> Upload Dokumen
+    </a>
+@endif
 
 
                         <!-- Perbaikan Dokumen -->
