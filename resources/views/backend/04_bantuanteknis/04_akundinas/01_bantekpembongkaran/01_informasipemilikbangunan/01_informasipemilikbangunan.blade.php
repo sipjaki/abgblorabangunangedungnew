@@ -529,7 +529,7 @@
     @enderror
 
     <small class="text-muted d-block mt-1">
-        Format: PDF, JPG, PNG (Maks. 15MB)
+        Format: PDF (Maks. 15MB)
     </small>
 
     <small class="text-muted d-block mb-2">
@@ -683,7 +683,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
     @enderror
 
     <small class="text-muted d-block mt-1">
-        Format: PDF, JPG, PNG, DOCX (Maks. 15MB)
+        Format: PDF(Maks. 15MB)
     </small>
 
     <small class="text-muted d-block mb-2">
@@ -709,54 +709,47 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
              id="previewSuratKajianTeknisBox"></div>
     </div>
 </div>
-
 <script>
-document.getElementById('suratpermohonan').addEventListener('change', function () {
+(function() {
+    const input = document.getElementById('suratpermohonan');
+    const wrapper = document.getElementById('previewSuratKajianTeknis');
+    const box = document.getElementById('previewSuratKajianTeknisBox');
 
-    const file = this.files[0];
-    const previewWrap = document.getElementById('previewSuratKajianTeknis');
-    const previewBox  = document.getElementById('previewSuratKajianTeknisBox');
+    input.addEventListener('change', function () {
+        const file = this.files[0];
+        box.innerHTML = '';
 
-    previewBox.innerHTML = '';
+        if (!file) {
+            wrapper.classList.add('d-none');
+            return;
+        }
 
-    if (!file) {
-        previewWrap.classList.add('d-none');
-        return;
-    }
+        const fileURL = URL.createObjectURL(file);
 
-    const fileURL = URL.createObjectURL(file);
+        // PDF
+        if (file.type === 'application/pdf') {
+            box.innerHTML = `<iframe src="${fileURL}" class="w-100 rounded" style="height:400px;" frameborder="0"></iframe>`;
+        }
+        // IMAGE
+        else if (file.type.startsWith('image/')) {
+            box.innerHTML = `<img src="${fileURL}" class="img-fluid rounded shadow-sm" alt="Preview Surat Kajian Teknis">`;
+        }
+        // DOCX / LAINNYA
+        else {
+            box.innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="bi bi-file-earmark-word me-2"></i>
+                    <strong>${file.name}</strong><br>
+                    File berhasil dipilih (preview tidak tersedia).
+                </div>
+            `;
+        }
 
-    // PDF
-    if (file.type === 'application/pdf') {
-        previewBox.innerHTML = `
-            <iframe src="${fileURL}"
-                    class="w-100 rounded"
-                    style="height:400px;"
-                    frameborder="0"></iframe>
-        `;
-    }
-    // IMAGE
-    else if (file.type.startsWith('image/')) {
-        previewBox.innerHTML = `
-            <img src="${fileURL}"
-                 class="img-fluid rounded shadow-sm"
-                 alt="Preview Surat Kajian Teknis">
-        `;
-    }
-    // DOCX / LAINNYA
-    else {
-        previewBox.innerHTML = `
-            <div class="alert alert-warning mb-0">
-                <i class="bi bi-file-earmark-word me-2"></i>
-                <strong>${file.name}</strong><br>
-                File berhasil dipilih (preview tidak tersedia).
-            </div>
-        `;
-    }
-
-    previewWrap.classList.remove('d-none');
-});
+        wrapper.classList.remove('d-none');
+    });
+})();
 </script>
+
 
             </div>
             </div>
@@ -800,7 +793,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
         @enderror
 
         <small class="text-muted d-block mt-1">
-            Format: PDF, DOCX (Maks. 15MB)
+            Format: PDF(Maks. 15MB)
         </small>
 
         <small class="text-muted d-block mb-2">
@@ -1295,6 +1288,15 @@ document.getElementById('sk').addEventListener('change', function () {
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
 
+        <!-- PREVIEW FILE -->
+        <div id="previewSertifikatTanahWrapper" class="mt-2 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye me-2 text-success"></i>
+                Preview Berkas Sertifikat Tanah
+            </label>
+            <div class="border rounded-3 p-2 bg-light" id="previewSertifikatTanahBox"></div>
+        </div>
+
         <small class="text-muted d-block mt-1">
             Format: PDF, JPG, PNG (Maks. 15MB)
         </small>
@@ -1308,6 +1310,47 @@ document.getElementById('sk').addEventListener('change', function () {
         </button>
     </div>
 </div>
+
+<script>
+(function() {
+    const input = document.getElementById('sertifikattanah');
+    const wrapper = document.getElementById('previewSertifikatTanahWrapper');
+    const box = document.getElementById('previewSertifikatTanahBox');
+
+    input.addEventListener('change', function () {
+        const file = this.files[0];
+        box.innerHTML = '';
+
+        if (!file) {
+            wrapper.classList.add('d-none');
+            return;
+        }
+
+        const fileURL = URL.createObjectURL(file);
+
+        // PDF
+        if (file.type === 'application/pdf') {
+            box.innerHTML = `<iframe src="${fileURL}" class="w-100 rounded" style="height:400px;" frameborder="0"></iframe>`;
+        }
+        // IMAGE
+        else if (file.type.startsWith('image/')) {
+            box.innerHTML = `<img src="${fileURL}" class="img-fluid rounded shadow-sm" alt="Preview Sertifikat Tanah">`;
+        }
+        // FILE LAIN
+        else {
+            box.innerHTML = `
+                <div class="alert alert-warning mb-0">
+                    <i class="bi bi-file-earmark me-2"></i>
+                    <strong>${file.name}</strong><br>
+                    File berhasil dipilih (preview tidak tersedia).
+                </div>
+            `;
+        }
+
+        wrapper.classList.remove('d-none');
+    });
+})();
+</script>
 
 
 <div class="modal fade" id="modalContohSertifikatTanah" tabindex="-1" aria-hidden="true">
