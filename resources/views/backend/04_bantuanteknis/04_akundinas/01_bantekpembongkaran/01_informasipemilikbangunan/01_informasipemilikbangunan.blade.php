@@ -381,10 +381,8 @@
         </div>
 
     </div>
-</div>
 
-<!-- FORM UNTUK UPLOAD DOKUMEN (Contoh untuk INFORMASI PEMILIK BANGUNAN) -->
-<form action="{{ route('informasipemilikbangunannew.create') }}" method="POST" enctype="multipart/form-data" id="uploadForm" style="display: none;">
+    <form action="{{ route('informasipemilikbangunannew.create') }}" method="POST" enctype="multipart/form-data" id="uploadForm" style="display: none;">
     @csrf
     <input type="hidden" name="bantekpembongkaraninduk_id" value="{{ $data->id ?? '' }}">
     <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}">
@@ -653,6 +651,10 @@
         </div>
     </div>
 </form>
+
+</div>
+
+<!-- FORM UNTUK UPLOAD DOKUMEN (Contoh untuk INFORMASI PEMILIK BANGUNAN) -->
 
 <script>
     // Fungsi untuk menampilkan form upload
