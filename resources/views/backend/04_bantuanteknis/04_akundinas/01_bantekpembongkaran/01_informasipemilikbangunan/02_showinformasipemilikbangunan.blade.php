@@ -878,7 +878,7 @@
                     <div class="data-label">
                         <i class="bi bi-hash"></i> Nomor Surat
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->nosurat)) empty @endif">
+                    <div>
                         {{ $dataBangunan->nosurat ?? 'Belum diisi' }}
                     </div>
                 </div>
