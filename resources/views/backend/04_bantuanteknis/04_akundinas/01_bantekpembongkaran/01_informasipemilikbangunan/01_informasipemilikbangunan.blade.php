@@ -684,7 +684,12 @@
         @enderror
 
         <small class="text-muted d-block mt-1">
-            Format: DOCX / PDF (Maks. 5MB)
+            Format: PDF (Maks. 15MB)
+        </small>
+
+        <small class="text-muted d-block mb-2">
+            Keterangan: Silahkan download template surat ini, isi, lalu
+            <strong class="text-danger">Upload Kembali</strong>.
         </small>
 
         <!-- BUTTON DOWNLOAD TEMPLATE -->
@@ -749,29 +754,134 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="ktp">
-                            <i class="bi bi-card-image me-2 text-primary"></i> Upload KTP
-                        </label>
-                        <input type="file" class="form-control @error('ktp') is-invalid @enderror"
-                               id="ktp" name="ktp" accept=".pdf,.jpg,.jpeg,.png">
-                        @error('ktp') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                        <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
-                    </div>
-                </div>
+             <div class="col-md-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="ktp">
+            <i class="bi bi-card-image me-2 text-primary"></i>
+            Upload KTP
+        </label>
 
-                <div class="col-12">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="sk">
-                            <i class="bi bi-file-earmark-text me-2 text-primary"></i> Upload SK
-                        </label>
-                        <input type="file" class="form-control @error('sk') is-invalid @enderror"
-                               id="sk" name="sk" accept=".pdf,.jpg,.jpeg,.png">
-                        @error('sk') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                        <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
-                    </div>
-                </div>
+        <!-- INPUT TETAP ADA -->
+        <input type="file"
+               class="form-control @error('ktp') is-invalid @enderror"
+               id="ktp"
+               name="ktp"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+        @error('ktp')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF, JPG, PNG (Maks. 15MB)
+        </small>
+
+        <!-- BUTTON LIHAT CONTOH -->
+        <button type="button"
+                class="btn btn-outline-primary btn-sm mt-2"
+                data-bs-toggle="modal"
+                data-bs-target="#modalContohKTP">
+            <i class="bi bi-eye me-1"></i> Lihat Contoh KTP
+        </button>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalContohKTP" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">
+                    <i class="bi bi-card-image me-2 text-primary"></i>
+                    Contoh KTP
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_KTP.jpg"
+                     alt="Contoh KTP"
+                     class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="form-modern">
+        <label class="form-label-modern" for="sk">
+            <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+            Upload SK
+        </label>
+
+        <!-- INPUT UPLOAD -->
+        <input type="file"
+               class="form-control @error('sk') is-invalid @enderror"
+               id="sk"
+               name="sk"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+        @error('sk')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF, JPG, PNG (Maks. 5MB)
+        </small>
+
+        <!-- BUTTON LIHAT CONTOH -->
+        <button type="button"
+                class="btn btn-outline-primary btn-sm mt-2"
+                data-bs-toggle="modal"
+                data-bs-target="#modalContohSK">
+            <i class="bi bi-eye me-1"></i> Lihat Contoh SK
+        </button>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalContohSK" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">
+                    <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                    Contoh SK
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_SK.png"
+                     alt="Contoh SK"
+                     class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
             </div>
 
             <!-- 5. DATA TANAH -->
