@@ -24,4 +24,9 @@ class bantekpembongkaraninduk extends Model
     {
         return $this->belongsTo(Bantekbongkar1::class);
     }
+
+    public function bantekpembongkarannew1()
+    {
+        return $this->belongsTo(bantekpembongkarannew1::class);
+    }
 }

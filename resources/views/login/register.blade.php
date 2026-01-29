@@ -608,7 +608,7 @@
                     <div class="password-strength">
                         <div class="strength-bar" id="passwordStrengthBar"></div>
                     </div>
-                    <div class="strength-text" id="passwordStrengthText">Kekuatan password: -</div>
+                    {{-- <div class="strength-text" id="passwordStrengthText">Kekuatan password: -</div> --}}
 
                     @error('password')
                         <div class="error-message">
