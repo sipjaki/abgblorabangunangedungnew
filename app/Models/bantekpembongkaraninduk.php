@@ -25,8 +25,8 @@ class bantekpembongkaraninduk extends Model
         return $this->belongsTo(Bantekbongkar1::class);
     }
 
-    public function bantekpembongkarannew1()
+ public function bantekpembongkarannew1()
     {
-        return $this->hasOne(bantekpembongkarannew1::class);
+        return $this->hasOne(bantekpembongkarannew1::class, 'bantekpembongkaraninduk_id', 'id');
     }
 }
