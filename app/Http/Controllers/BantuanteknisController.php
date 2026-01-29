@@ -6725,21 +6725,19 @@ public function informasipemilikbangunan($namapemilik, $id)
         'id' => $idAwal
     ])->with('create', 'Data berhasil disimpan!');
         }
-
-        public function bebantekpembongkarandokumen($id)
+public function bebantekpembongkarandokumen($id)
 {
-    // Cari data berdasarkan ID
-    $data = bantekpembongkarannew1::with('bantekpembongkaraninduk')
-        ->findOrFail($id);
+    // Ambil data berdasarkan ID saja, tanpa relasi induk
+    $data = bantekpembongkarannew1::findOrFail($id);
 
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
         [
             'title' => 'Details Informasi Pemilik Bangunan Gedung',
-            'dataBangunan' => $data,
-            'dataInduk' => $data->bantekpembongkaraninduk // relasi induk optional
+            'dataBangunan' => $data
         ]
     );
 }
+
 
 }

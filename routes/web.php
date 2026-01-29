@@ -1567,6 +1567,7 @@ Route::get(
 
 
     // LIHAT SHOW DARI INFORMASI PEMILIK BANGUNAN GEDUNG
+// LIHAT SHOW DOKUMEN BERDASARKAN ID
 Route::get(
     '/bebantekpembongkaran/dokumen/{id}',
     [BantuanteknisController::class, 'bebantekpembongkarandokumen']
