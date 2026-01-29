@@ -1068,18 +1068,31 @@
     </div>
 
     <!-- Koordinat Bangunan -->
-    <div class="col-md-6">
-        <div class="form-modern">
-            <label class="form-label-modern" for="koordinatbangunan">
-                <i class="bi bi-geo-alt-fill me-2 text-primary"></i> Koordinat Bangunan
-            </label>
-            <input type="text" class="form-control @error('koordinatbangunan') is-invalid @enderror"
-                   id="koordinatbangunan" name="koordinatbangunan" value="{{ old('koordinatbangunan') }}"
-                   placeholder="Format: latitude,longitude">
-            @error('koordinatbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            <small class="text-muted">Contoh: -7.0421,111.4046</small>
-        </div>
+  <div class="col-md-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="koordinatbangunan">
+            <i class="bi bi-geo-alt-fill me-2 text-primary"></i>
+            Koordinat Bangunan
+        </label>
+
+        <input type="text"
+               class="form-control @error('koordinatbangunan') is-invalid @enderror"
+               id="koordinatbangunan"
+               name="koordinatbangunan"
+               value="{{ $data->keterangan ?? old('koordinatbangunan') }}"
+               data-sumber="keterangan"
+               readonly>
+
+        @error('koordinatbangunan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Terisi Otomatis
+        </small>
     </div>
+</div>
+
 
     <!-- Fungsi Bangunan -->
     <div class="col-md-6">
