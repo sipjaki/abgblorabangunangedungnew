@@ -683,7 +683,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
     @enderror
 
     <small class="text-muted d-block mt-1">
-        Format: PDF (Maks. 15MB)
+        Format: PDF, JPG, PNG, DOCX (Maks. 15MB)
     </small>
 
     <small class="text-muted d-block mb-2">
@@ -693,11 +693,70 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
     <!-- BUTTON DOWNLOAD -->
     <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_KAJIAN_TEKNIS_BANGUNAN_GEDUNG.docx"
-       class="btn btn-outline-primary btn-sm"
+       class="btn btn-outline-primary btn-sm mb-3"
        download>
         <i class="bi bi-download me-1"></i> Download Template Surat
     </a>
+
+    <!-- PREVIEW -->
+    <div id="previewSuratKajianTeknis" class="mt-3 d-none">
+        <label class="form-label-modern mb-2">
+            <i class="bi bi-eye me-2 text-success"></i>
+            Preview Berkas Yang Diupload
+        </label>
+
+        <div class="border rounded-3 p-2 bg-light"
+             id="previewSuratKajianTeknisBox"></div>
+    </div>
 </div>
+
+<script>
+document.getElementById('suratpermohonan').addEventListener('change', function () {
+
+    const file = this.files[0];
+    const previewWrap = document.getElementById('previewSuratKajianTeknis');
+    const previewBox  = document.getElementById('previewSuratKajianTeknisBox');
+
+    previewBox.innerHTML = '';
+
+    if (!file) {
+        previewWrap.classList.add('d-none');
+        return;
+    }
+
+    const fileURL = URL.createObjectURL(file);
+
+    // PDF
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
+    }
+    // IMAGE
+    else if (file.type.startsWith('image/')) {
+        previewBox.innerHTML = `
+            <img src="${fileURL}"
+                 class="img-fluid rounded shadow-sm"
+                 alt="Preview Surat Kajian Teknis">
+        `;
+    }
+    // DOCX / LAINNYA
+    else {
+        previewBox.innerHTML = `
+            <div class="alert alert-warning mb-0">
+                <i class="bi bi-file-earmark-word me-2"></i>
+                <strong>${file.name}</strong><br>
+                File berhasil dipilih (preview tidak tersedia).
+            </div>
+        `;
+    }
+
+    previewWrap.classList.remove('d-none');
+});
+</script>
 
             </div>
             </div>
@@ -723,7 +782,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
                     </div>
                 </div>
 
-                <div class="col-md-6">
+       <div class="col-md-6">
     <div class="form-modern">
         <label class="form-label-modern" for="suratkesanggupan">
             <i class="bi bi-upload me-2 text-primary"></i>
@@ -734,14 +793,14 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
                class="form-control @error('suratkesanggupan') is-invalid @enderror"
                id="suratkesanggupan"
                name="suratkesanggupan"
-               accept=".docx,.pdf">
+               accept=".pdf,.docx">
 
         @error('suratkesanggupan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
 
         <small class="text-muted d-block mt-1">
-            Format: PDF (Maks. 15MB)
+            Format: PDF, DOCX (Maks. 15MB)
         </small>
 
         <small class="text-muted d-block mb-2">
@@ -751,12 +810,63 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
         <!-- BUTTON DOWNLOAD TEMPLATE -->
         <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERNYATAAN_KESANGGUPAN.docx"
-           class="btn btn-outline-primary btn-sm mt-2"
+           class="btn btn-outline-primary btn-sm mb-3"
            download>
             <i class="bi bi-download me-1"></i> Download Template Surat
         </a>
+
+        <!-- PREVIEW -->
+        <div id="previewSuratKesanggupan" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye me-2 text-success"></i>
+                Preview Berkas Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewSuratKesanggupanBox"></div>
+        </div>
     </div>
 </div>
+
+<script>
+document.getElementById('suratkesanggupan').addEventListener('change', function () {
+
+    const file = this.files[0];
+    const previewWrap = document.getElementById('previewSuratKesanggupan');
+    const previewBox  = document.getElementById('previewSuratKesanggupanBox');
+
+    previewBox.innerHTML = '';
+
+    if (!file) {
+        previewWrap.classList.add('d-none');
+        return;
+    }
+
+    const fileURL = URL.createObjectURL(file);
+
+    // PDF
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
+    }
+    // DOCX / lainnya
+    else {
+        previewBox.innerHTML = `
+            <div class="alert alert-warning mb-0">
+                <i class="bi bi-file-earmark-word me-2"></i>
+                <strong>${file.name}</strong><br>
+                File berhasil dipilih (preview isi dokumen tidak tersedia).
+            </div>
+        `;
+    }
+
+    previewWrap.classList.remove('d-none');
+});
+</script>
 
 
             </div>
@@ -811,14 +921,14 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
                     </div>
                 </div>
 
-             <div class="col-md-6">
+          <div class="col-md-6">
     <div class="form-modern">
         <label class="form-label-modern" for="ktp">
             <i class="bi bi-card-image me-2 text-primary"></i>
             Upload KTP
         </label>
 
-        <!-- INPUT TETAP ADA -->
+        <!-- INPUT FILE -->
         <input type="file"
                class="form-control @error('ktp') is-invalid @enderror"
                id="ktp"
@@ -835,13 +945,103 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
         <!-- BUTTON LIHAT CONTOH -->
         <button type="button"
-                class="btn btn-outline-primary btn-sm mt-2"
+                class="btn btn-outline-primary btn-sm mt-2 me-2"
                 data-bs-toggle="modal"
                 data-bs-target="#modalContohKTP">
             <i class="bi bi-eye me-1"></i> Lihat Contoh KTP
         </button>
+
+        <!-- PREVIEW UPLOAD -->
+        <div id="previewKTPWrapper" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye-fill me-2 text-success"></i>
+                Preview KTP Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewKTPBox"></div>
+        </div>
     </div>
 </div>
+
+<!-- MODAL CONTOH KTP -->
+<div class="modal fade" id="modalContohKTP" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">
+                    <i class="bi bi-card-image me-2 text-primary"></i>
+                    Contoh KTP
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_KTP.jpg"
+                     class="img-fluid rounded shadow-sm"
+                     alt="Contoh KTP">
+            </div>
+
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('ktp').addEventListener('change', function () {
+
+    const file = this.files[0];
+    const previewWrapper = document.getElementById('previewKTPWrapper');
+    const previewBox     = document.getElementById('previewKTPBox');
+
+    previewBox.innerHTML = '';
+
+    if (!file) {
+        previewWrapper.classList.add('d-none');
+        return;
+    }
+
+    const fileURL = URL.createObjectURL(file);
+
+    // PDF
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
+    }
+    // IMAGE
+    else if (file.type.startsWith('image/')) {
+        previewBox.innerHTML = `
+            <img src="${fileURL}"
+                 class="img-fluid rounded shadow-sm"
+                 alt="Preview KTP">
+        `;
+    }
+    // FILE LAIN
+    else {
+        previewBox.innerHTML = `
+            <div class="alert alert-warning mb-0">
+                <i class="bi bi-file-earmark me-2"></i>
+                <strong>${file.name}</strong><br>
+                File berhasil dipilih.
+            </div>
+        `;
+    }
+
+    previewWrapper.classList.remove('d-none');
+});
+</script>
 
 
 <div class="modal fade" id="modalContohKTP" tabindex="-1" aria-hidden="true">
@@ -873,7 +1073,6 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
         </div>
     </div>
 </div>
-
 <div class="col-12">
     <div class="form-modern">
         <label class="form-label-modern" for="sk">
@@ -898,13 +1097,105 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
         <!-- BUTTON LIHAT CONTOH -->
         <button type="button"
-                class="btn btn-outline-primary btn-sm mt-2"
+                class="btn btn-outline-primary btn-sm mt-2 me-2"
                 data-bs-toggle="modal"
                 data-bs-target="#modalContohSK">
             <i class="bi bi-eye me-1"></i> Lihat Contoh SK
         </button>
+
+        <!-- PREVIEW UPLOAD -->
+        <div id="previewSKWrapper" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye-fill me-2 text-success"></i>
+                Preview SK Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewSKBox"></div>
+        </div>
     </div>
 </div>
+
+<!-- MODAL CONTOH SK -->
+<div class="modal fade" id="modalContohSK" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">
+                    <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                    Contoh SK
+                </h5>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_SK.png"
+                     alt="Contoh SK"
+                     class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('sk').addEventListener('change', function () {
+
+    const file = this.files[0];
+    const previewWrapper = document.getElementById('previewSKWrapper');
+    const previewBox     = document.getElementById('previewSKBox');
+
+    previewBox.innerHTML = '';
+
+    if (!file) {
+        previewWrapper.classList.add('d-none');
+        return;
+    }
+
+    const fileURL = URL.createObjectURL(file);
+
+    // PDF
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
+    }
+    // IMAGE
+    else if (file.type.startsWith('image/')) {
+        previewBox.innerHTML = `
+            <img src="${fileURL}"
+                 class="img-fluid rounded shadow-sm"
+                 alt="Preview SK">
+        `;
+    }
+    // FILE LAIN
+    else {
+        previewBox.innerHTML = `
+            <div class="alert alert-warning mb-0">
+                <i class="bi bi-file-earmark me-2"></i>
+                <strong>${file.name}</strong><br>
+                File berhasil dipilih.
+            </div>
+        `;
+    }
+
+    previewWrapper.classList.remove('d-none');
+});
+</script>
 
 
 <div class="modal fade" id="modalContohSK" tabindex="-1" aria-hidden="true">
@@ -1431,6 +1722,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <div class="row">
+
 <div class="col-12">
     <div class="form-modern">
         <label class="form-label-modern" for="kib">
@@ -1438,7 +1730,7 @@ document.addEventListener('DOMContentLoaded', function () {
             Upload Berkas KIB
         </label>
 
-        <!-- INPUT TETAP ADA -->
+        <!-- INPUT UPLOAD -->
         <input type="file"
                class="form-control @error('kib') is-invalid @enderror"
                id="kib"
@@ -1455,13 +1747,105 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <!-- BUTTON LIHAT CONTOH -->
         <button type="button"
-                class="btn btn-outline-primary btn-sm mt-2"
+                class="btn btn-outline-primary btn-sm mt-2 me-2"
                 data-bs-toggle="modal"
                 data-bs-target="#modalContohKIB">
             <i class="bi bi-eye me-1"></i> Lihat Contoh Berkas KIB
         </button>
+
+        <!-- PREVIEW UPLOAD -->
+        <div id="previewKIBWrapper" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye-fill me-2 text-success"></i>
+                Preview Berkas KIB Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewKIBBox"></div>
+        </div>
     </div>
 </div>
+
+<!-- MODAL CONTOH KIB -->
+<div class="modal fade" id="modalContohKIB" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">
+                    <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                    Contoh Berkas KIB
+                </h5>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/CONTOH_KIB.png"
+                     alt="Contoh Berkas KIB"
+                     class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="modal-footer border-0 justify-content-center">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('kib').addEventListener('change', function () {
+
+    const file = this.files[0];
+    const wrapper = document.getElementById('previewKIBWrapper');
+    const box     = document.getElementById('previewKIBBox');
+
+    box.innerHTML = '';
+
+    if (!file) {
+        wrapper.classList.add('d-none');
+        return;
+    }
+
+    const fileURL = URL.createObjectURL(file);
+
+    // PDF
+    if (file.type === 'application/pdf') {
+        box.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
+    }
+    // IMAGE
+    else if (file.type.startsWith('image/')) {
+        box.innerHTML = `
+            <img src="${fileURL}"
+                 class="img-fluid rounded shadow-sm"
+                 alt="Preview Berkas KIB">
+        `;
+    }
+    // FILE LAIN
+    else {
+        box.innerHTML = `
+            <div class="alert alert-warning mb-0">
+                <i class="bi bi-file-earmark me-2"></i>
+                <strong>${file.name}</strong><br>
+                File berhasil dipilih.
+            </div>
+        `;
+    }
+
+    wrapper.classList.remove('d-none');
+});
+</script>
 
 <div class="modal fade" id="modalContohKIB" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -1531,37 +1915,91 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <!-- FIELD DINAMIS -->
     <div class="col-md-6" id="pbgField" style="display:none;">
-        <div class="form-modern">
-            <label class="form-label-modern" id="pbgLabel">
-                <i class="bi bi-upload me-2 text-primary"></i>
-                Upload PBG
-            </label>
+    <div class="form-modern">
+        <label class="form-label-modern" id="pbgLabel">
+            <i class="bi bi-upload me-2 text-primary"></i>
+            Upload PBG
+        </label>
 
-            <input type="file"
-                   class="form-control @error('pbg') is-invalid @enderror"
-                   id="pbg"
-                   name="pbg"
-                   accept=".pdf,.jpg,.jpeg,.png">
+        <input type="file"
+               class="form-control @error('pbg') is-invalid @enderror"
+               id="pbg"
+               name="pbg"
+               accept=".pdf,.jpg,.jpeg,.png">
 
-            @error('pbg')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
+        @error('pbg')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
 
-            <small class="text-muted d-block mt-1">
-                Format: PDF, JPG, PNG (Maks. 5MB)
-            </small>
-
-            <!-- DOWNLOAD TEMPLATE (KHUSUS TIDAK ADA PBG) -->
-            <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERNYATAAN_TIDAK_MEMPUNYAI_PBG.docx"
-               id="downloadSuratPBG"
-               class="btn btn-outline-primary btn-sm mt-2"
-               style="display:none;"
-               download>
-                <i class="bi bi-download me-1"></i>
-                Download Template Surat
-            </a>
+        <!-- PREVIEW FILE -->
+        <div id="previewPBGWrapper" class="mt-2 d-none">
+            <div id="previewPBGBox"></div>
         </div>
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF, JPG, PNG (Maks. 5MB)
+        </small>
+
+        <!-- DOWNLOAD TEMPLATE SURAT -->
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERNYATAAN_TIDAK_MEMPUNYAI_PBG.docx"
+           id="downloadSuratPBG"
+           class="btn btn-outline-primary btn-sm mt-2"
+           style="display:none;"
+           download>
+            <i class="bi bi-download me-1"></i>
+            Download Template Surat
+        </a>
     </div>
+</div>
+
+
+<script>
+const pbgInput = document.getElementById('pbg');
+const previewWrapper = document.getElementById('previewPBGWrapper');
+const previewBox = document.getElementById('previewPBGBox');
+const downloadSurat = document.getElementById('downloadSuratPBG');
+
+// Preview file
+pbgInput.addEventListener('change', function () {
+    const file = this.files[0];
+    previewBox.innerHTML = '';
+
+    if (!file) {
+        previewWrapper.classList.add('d-none');
+        return;
+    }
+
+    const fileURL = URL.createObjectURL(file);
+
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `<iframe src="${fileURL}" class="w-100 rounded" style="height:400px;" frameborder="0"></iframe>`;
+    } else if (file.type.startsWith('image/')) {
+        previewBox.innerHTML = `<img src="${fileURL}" class="img-fluid rounded shadow-sm" alt="Preview Berkas PBG">`;
+    } else {
+        previewBox.innerHTML = `<div class="alert alert-warning mb-0"><i class="bi bi-file-earmark me-2"></i><strong>${file.name}</strong><br>File berhasil dipilih.</div>`;
+    }
+
+    previewWrapper.classList.remove('d-none');
+
+    // Jika ada file, sembunyikan download template
+    downloadSurat.style.display = 'none';
+});
+
+// Contoh: show template jika user tidak punya PBG (misal checkbox)
+function togglePBGField(adaPBG) {
+    if (adaPBG) {
+        document.getElementById('pbgField').style.display = 'block';
+        downloadSurat.style.display = 'none';
+    } else {
+        document.getElementById('pbgField').style.display = 'block';
+        previewWrapper.classList.add('d-none');
+        previewBox.innerHTML = '';
+        pbgInput.value = '';
+        downloadSurat.style.display = 'inline-block';
+    }
+}
+</script>
+
 </div>
 
 <script>
