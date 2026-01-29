@@ -6726,14 +6726,13 @@ public function informasipemilikbangunan($namapemilik, $id)
     ])->with('create', 'Data berhasil disimpan!');
         }
 
-
-public function bebantekpembongkarandokumen($namabangunan, $id)
+public function bebantekpembongkarandokumen($namabangunan)
 {
+    // decode URL
     $namabangunan = urldecode($namabangunan);
 
-    // Cari data berdasarkan namabangunan (case-insensitive) + id
-    $data = bantekpembongkarannew1::where('id', $id)
-        ->whereRaw('TRIM(LOWER(namabangunan)) = ?', [Str::lower(trim($namabangunan))])
+    // Cari data berdasarkan namabangunan (case-insensitive, trim)
+    $data = bantekpembongkarannew1::whereRaw('TRIM(LOWER(namabangunan)) = ?', [Str::lower(trim($namabangunan))])
         ->with('bantekpembongkaraninduk') // bawa relasi induk
         ->firstOrFail();
 
@@ -6741,8 +6740,8 @@ public function bebantekpembongkarandokumen($namabangunan, $id)
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
         [
             'title' => 'Details Informasi Pemilik Bangunan Gedung',
-            'dataBangunan'  => $data,
-            'dataInduk'     => $data->bantekpembongkaraninduk // relasi induk
+            'dataBangunan' => $data,
+            'dataInduk' => $data->bantekpembongkaraninduk // relasi induk optional
         ]
     );
 }

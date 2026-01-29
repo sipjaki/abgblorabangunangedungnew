@@ -1568,7 +1568,7 @@ Route::get(
 
     // LIHAT SHOW DARI INFORMASI PEMILIK BANGUNAN GEDUNG
 Route::get(
-    '/bebantekpembongkaran/dokumen/{namabangunan}/{id}',
+    '/bebantekpembongkaran/dokumen/{namabangunan}',
     [BantuanteknisController::class, 'bebantekpembongkarandokumen']
 )->middleware('auth', 'can:admindinas')
  ->name('bebantekpembongkarandokumen');
