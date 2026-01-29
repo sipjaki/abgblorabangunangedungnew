@@ -607,6 +607,8 @@
     </div>
 </div>
 
+
+                <div class="col-12">
 <div class="form-modern">
     <label class="form-label-modern" for="suratpermohonan">
         <i class="bi bi-upload me-2 text-primary"></i>
@@ -640,6 +642,7 @@
     </a>
 </div>
 
+            </div>
             </div>
 
             <!-- 3. SURAT KESANGGUPAN -->
