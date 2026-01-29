@@ -790,11 +790,7 @@
                 </h3>
                 <p style="color: #6b7280; margin: 0;">Detail lengkap informasi pemilik dan bangunan</p>
             </div>
-            <div>
-                <a href="{{ route('informasipemilikbangunannew.edit', $data->id) }}" class="btn btn-warning">
-                    <i class="bi bi-pencil-square me-2"></i> Edit Data
-                </a>
-            </div>
+
         </div>
 
         @php
