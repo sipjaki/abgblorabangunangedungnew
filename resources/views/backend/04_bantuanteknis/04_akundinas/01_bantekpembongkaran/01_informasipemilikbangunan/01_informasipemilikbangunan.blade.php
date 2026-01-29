@@ -468,7 +468,7 @@
 
         <!-- TOMBOL UNTUK MENAMPILKAN FORM -->
         <div class="text-center mb-4">
-            <button type="button" class="button-baru" onclick="showUploadForm()" id="showFormBtn">
+            <button type="button" class="button-berkas" onclick="showUploadForm()" id="showFormBtn">
                 <i class="bi bi-upload me-2"></i> Tampilkan Form Upload
             </button>
         </div>
@@ -510,18 +510,44 @@
                     </div>
                 </div>
 
-                <div class="col-12">
-                    <div class="form-modern">
-                        <label class="form-label-modern" for="suratpermohonan">
-                            <i class="bi bi-upload me-2 text-primary"></i> Upload Surat Permohonan
-                        </label>
-                        <input type="file" class="form-control @error('suratpermohonan') is-invalid @enderror"
-                               id="suratpermohonan" name="suratpermohonan" accept=".pdf,.jpg,.jpeg,.png">
-                        @error('suratpermohonan') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                        <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
-                    </div>
-                </div>
+              <div class="col-12">
+    <div class="form-modern">
+        <label class="form-label-modern" for="suratpermohonan">
+            <i class="bi bi-upload me-2 text-primary"></i>
+            Upload Surat Permohonan Izin Pembongkaran
+        </label>
+
+        <input type="file"
+               class="form-control @error('suratpermohonan') is-invalid @enderror"
+               id="suratpermohonan"
+               name="suratpermohonan"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+        @error('suratpermohonan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF (Maks. 15MB)
+        </small>
+
+        <small class="text-muted d-block mb-2">
+            Keterangan: Silahkan download template surat ini, isi, lalu
+            <strong class="text-danger">Upload Kembali</strong>.
+        </small>
+
+        <!-- BUTTON DOWNLOAD -->
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.pdf"
+           class="btn btn-outline-primary btn-sm"
+           download>
+            <i class="bi bi-download me-1"></i> Download Template Surat
+        </a>
+    </div>
+</div>
+
+
             </div>
+
 
             <!-- 2. DATA BANGUNAN -->
             <div class="section-header mt-4">
