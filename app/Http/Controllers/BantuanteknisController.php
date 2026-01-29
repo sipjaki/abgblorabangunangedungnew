@@ -6730,10 +6730,12 @@ public function informasipemilikbangunan($namapemilik, $id)
     ])->with('create', 'Data berhasil disimpan!');
         }
 
-
 public function bebantekpembongkarandokumen($id)
 {
-    $data = bantekpembongkarannew1::withTrashed()->findOrFail($id);
+    $data = bantekpembongkarannew1::withTrashed()
+        ->with('bantekpembongkaraninduk')
+        ->where('id', $id)
+        ->firstOrFail();
 
     return view(
         'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
@@ -6743,6 +6745,7 @@ public function bebantekpembongkarandokumen($id)
         ]
     );
 }
+
 
 
 }

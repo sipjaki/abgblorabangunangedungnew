@@ -28,3 +28,4 @@ class bantekpembongkaraninduk extends Model
         );
     }
 }
+
