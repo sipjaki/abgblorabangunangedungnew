@@ -350,58 +350,6 @@
         gap: 12px;
         margin-top: 20px;
     }
-
-    .button-baru {
-        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 12px 20px;
-        font-weight: 500;
-        font-size: 0.9rem;
-        transition: all 0.3s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        text-decoration: none;
-        text-align: center;
-        cursor: pointer;
-    }
-
-    .button-baru:hover {
-        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
-        color: white;
-    }
-
-    .button-berkas {
-        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 12px 20px;
-        font-weight: 500;
-        font-size: 0.9rem;
-        transition: all 0.3s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        text-decoration: none;
-        text-align: center;
-        cursor: pointer;
-    }
-
-    .button-berkas:hover {
-        background: linear-gradient(135deg, #059669 0%, #047857 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
-        color: white;
-    }
-
-
     /* Form Styles */
     .form-modern {
         margin-bottom: 1.5rem;
