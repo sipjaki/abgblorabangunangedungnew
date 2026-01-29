@@ -1217,9 +1217,10 @@
                     <div class="data-label">
                         <i class="bi bi-rulers"></i> Luas Tanah (m²)
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->luastanah)) empty @endif">
-                        {{ $dataBangunan->luastanah ? number_format($dataBangunan->luastanah, 2) : 'Belum diisi' }}
-                    </div>
+                   <div class="data-value @if(empty(optional($dataBangunan)->luastanah)) empty @endif">
+    {{ optional($dataBangunan)->luastanah ? number_format(optional($dataBangunan)->luastanah, 2) : 'Belum diisi' }}
+</div>
+
                 </div>
 
                 <!-- Status Tanah -->
