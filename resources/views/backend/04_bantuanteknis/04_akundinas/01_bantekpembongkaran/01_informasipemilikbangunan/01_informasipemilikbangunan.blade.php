@@ -469,7 +469,7 @@
         <!-- TOMBOL UNTUK MENAMPILKAN FORM -->
         <div class="text-center mb-4">
             <button type="button" class="button-berkas" onclick="showUploadForm()" id="showFormBtn">
-                <i class="bi bi-upload me-2"></i> Tampilkan Form Upload
+                <i class="bi bi-upload me-2"></i> Tampilkan Formulir Berkas Dokumen
             </button>
         </div>
 
@@ -663,54 +663,56 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
         @enderror
     </div>
 </div>
-
-
-                <div class="col-12">
-<div class="form-modern">
-    <label class="form-label-modern" for="suratpermohonan">
-        <i class="bi bi-upload me-2 text-primary"></i>
-        Upload Surat Permohonan Kajian Teknis Bangunan Gedung
-    </label>
-
-    <input type="file"
-           class="form-control @error('suratpermohonan') is-invalid @enderror"
-           id="suratpermohonan"
-           name="suratpermohonan"
-           accept=".pdf,.jpg,.jpeg,.png,.docx">
-
-    @error('suratpermohonan')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-
-    <small class="text-muted d-block mt-1">
-        Format: PDF(Maks. 15MB)
-    </small>
-
-    <small class="text-muted d-block mb-2">
-        Keterangan: Silahkan download template surat ini, isi, lalu
-        <strong class="text-danger">Upload Kembali</strong>.
-    </small>
-
-    <!-- BUTTON DOWNLOAD -->
-    <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_KAJIAN_TEKNIS_BANGUNAN_GEDUNG.docx"
-       class="btn btn-outline-primary btn-sm mb-3"
-       download>
-        <i class="bi bi-download me-1"></i> Download Template Surat
-    </a>
-
-    <!-- PREVIEW -->
-    <div id="previewSuratKajianTeknis" class="mt-3 d-none">
-        <label class="form-label-modern mb-2">
-            <i class="bi bi-eye me-2 text-success"></i>
-            Preview Berkas Yang Diupload
+<div class="col-12">
+    <div class="form-modern">
+        <label class="form-label-modern" for="suratpermohonan">
+            <i class="bi bi-upload me-2 text-primary"></i>
+            Upload Surat Permohonan Kajian Teknis Bangunan Gedung
         </label>
 
-        <div class="border rounded-3 p-2 bg-light"
-             id="previewSuratKajianTeknisBox"></div>
+        <input type="file"
+               class="form-control @error('suratpermohonan') is-invalid @enderror"
+               id="suratpermohonan"
+               name="suratpermohonan"
+               accept=".pdf,.jpg,.jpeg,.png,.docx">
+
+        @error('suratpermohonan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Format: PDF(Maks. 15MB)
+        </small>
+
+        <small class="text-muted d-block mb-2">
+            Keterangan: Silahkan download template surat ini, isi, lalu
+            <strong class="text-danger">Upload Kembali</strong>.
+        </small>
+
+        <!-- BUTTON DOWNLOAD -->
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_KAJIAN_TEKNIS_BANGUNAN_GEDUNG.docx"
+           class="btn btn-outline-primary btn-sm mb-3"
+           download>
+            <i class="bi bi-download me-1"></i> Download Template Surat
+        </a>
+
+        <!-- PREVIEW -->
+        <div id="previewSuratKajianTeknis" class="mt-3 d-none">
+            <label class="form-label-modern mb-2">
+                <i class="bi bi-eye me-2 text-success"></i>
+                Preview Berkas Yang Diupload
+            </label>
+
+            <div class="border rounded-3 p-2 bg-light"
+                 id="previewSuratKajianTeknisBox"></div>
+        </div>
     </div>
 </div>
+
+
 <script>
 (function() {
+    // Semua variabel lokal, aman untuk preview lain
     const input = document.getElementById('suratpermohonan');
     const wrapper = document.getElementById('previewSuratKajianTeknis');
     const box = document.getElementById('previewSuratKajianTeknisBox');
@@ -726,15 +728,15 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 
         const fileURL = URL.createObjectURL(file);
 
-        // PDF
+        // Preview PDF
         if (file.type === 'application/pdf') {
             box.innerHTML = `<iframe src="${fileURL}" class="w-100 rounded" style="height:400px;" frameborder="0"></iframe>`;
         }
-        // IMAGE
+        // Preview Image
         else if (file.type.startsWith('image/')) {
             box.innerHTML = `<img src="${fileURL}" class="img-fluid rounded shadow-sm" alt="Preview Surat Kajian Teknis">`;
         }
-        // DOCX / LAINNYA
+        // DOCX atau file lain
         else {
             box.innerHTML = `
                 <div class="alert alert-warning mb-0">
@@ -745,10 +747,12 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
             `;
         }
 
+        // Tampilkan wrapper preview
         wrapper.classList.remove('d-none');
     });
 })();
 </script>
+
 
 
             </div>
@@ -1980,7 +1984,7 @@ document.getElementById('kib').addEventListener('change', function () {
         </div>
 
         <small class="text-muted d-block mt-1">
-            Format: PDF, JPG, PNG (Maks. 5MB)
+            Format: PDF(Maks. 15MB)
         </small>
 
         <!-- DOWNLOAD TEMPLATE SURAT -->
