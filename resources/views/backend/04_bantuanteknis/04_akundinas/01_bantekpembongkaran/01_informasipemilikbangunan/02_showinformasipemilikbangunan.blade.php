@@ -856,7 +856,7 @@
                         <i class="bi bi-hash"></i> Nomor Surat
                     </div>
                     <div>
-                        {{ $dataBangunan->bantekpembongkaraninduk->nosurat ?? 'Belum diisi' }}
+                        {{ $dataBangunan->bantekpembongkarannew1->nosurat ?? 'Belum diisi' }}
                     </div>
                 </div>
 
