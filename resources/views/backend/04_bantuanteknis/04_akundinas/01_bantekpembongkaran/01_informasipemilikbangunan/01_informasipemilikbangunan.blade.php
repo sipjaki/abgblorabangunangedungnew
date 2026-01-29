@@ -485,7 +485,9 @@
 <!-- Hidden Input untuk Nama Pemilik Data Awal -->
 <input type="hidden" name="namapemilik_awal" value="{{ $data->namapemilik }}">
 
-        <input type="hidden" name="bantekpembongkaraninduk_id" value="{{ $data->id ?? '' }}">
+
+<input type="hidden" name="bantekpembongkaraninduk_id" value="{{ $data->id }}">
+
         <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}">
 
         <div class="card-body">
