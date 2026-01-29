@@ -888,9 +888,10 @@
                     <div class="data-label">
                         <i class="bi bi-calendar-date"></i> Tanggal Surat
                     </div>
-                    <div class="data-value @if(empty($dataBangunan->tanggalsurat)) empty @endif">
-                        {{ $dataBangunan->tanggalsurat ? \Carbon\Carbon::parse($dataBangunan->tanggalsurat)->format('d F Y') : 'Belum diisi' }}
+                  <div class="data-value @if(empty(optional($dataBangunan)->tanggalsurat)) empty @endif">
+                        {{ optional($dataBangunan)->tanggalsurat ? \Carbon\Carbon::parse($dataBangunan->tanggalsurat)->format('d F Y') : 'Belum diisi' }}
                     </div>
+
                 </div>
             </div>
 
