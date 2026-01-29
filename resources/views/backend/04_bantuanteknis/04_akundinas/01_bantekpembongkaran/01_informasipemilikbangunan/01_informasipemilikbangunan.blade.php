@@ -665,18 +665,18 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 </div>
 <div class="col-12">
     <div class="form-modern">
-        <label class="form-label-modern" for="suratpermohonan">
+        <label class="form-label-modern" for="suratkelayakan">
             <i class="bi bi-upload me-2 text-primary"></i>
             Upload Surat Permohonan Kajian Teknis Bangunan Gedung
         </label>
 
         <input type="file"
-               class="form-control @error('suratpermohonan') is-invalid @enderror"
-               id="suratpermohonan"
-               name="suratpermohonan"
+               class="form-control @error('suratkelayakan') is-invalid @enderror"
+               id="suratkelayakan"
+               name="suratkelayakan"
                accept=".pdf,.jpg,.jpeg,.png,.docx">
 
-        @error('suratpermohonan')
+        @error('suratkelayakan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
 
@@ -713,7 +713,7 @@ document.getElementById('suratpermohonan').addEventListener('change', function (
 <script>
 (function() {
     // Semua variabel lokal, aman untuk preview lain
-    const input = document.getElementById('suratpermohonan');
+    const input = document.getElementById('suratkelayakan');
     const wrapper = document.getElementById('previewSuratKajianTeknis');
     const box = document.getElementById('previewSuratKajianTeknisBox');
 
