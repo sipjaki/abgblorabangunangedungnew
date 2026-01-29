@@ -266,8 +266,8 @@
 
 
     <a href="/bebantekpembongkaran" class="button-modern">
-    <i class="bi bi-arrow-left me-2"></i>
-    Kembali Ke Data Awal
+    <strong style="color: black;"><i class="bi bi-arrow-left me-2"></i>
+    Kembali Ke Data Awal</strong>
 </a>
     <script>
 function previewPDF(event, containerId, iframeId, messageId) {

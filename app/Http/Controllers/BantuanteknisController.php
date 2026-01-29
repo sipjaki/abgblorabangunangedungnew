@@ -6600,4 +6600,28 @@ public function bebantekpembongkaranshowdata($namapemilik, $id)
     );
 }
 
+public function informasipemilikbangunan($namapemilik, $id)
+    {
+        // Decode nama pemilik dari URL
+        $namapemilik = urldecode($namapemilik);
+
+        // Ambil data induk + relasi
+        $data = bantekpembongkaraninduk::with('bantekpembongkarannew1')
+            ->where('id', $id)                     // kunci utama
+            ->where('namapemilik', $namapemilik)   // coinroh / pengaman
+            ->firstOrFail();
+
+        // User login
+        $user = Auth::user();
+
+        return view(
+            'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.01_informasipemilikbangunan',
+            [
+                'title' => 'Informasi Pemilik Bangunan',
+                'data'  => $data,
+                'user'  => $user
+            ]
+        );
+    }
+
 }

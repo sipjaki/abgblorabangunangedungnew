@@ -130,7 +130,7 @@
                         </a>
 
                         <!-- Perbaikan Dokumen -->
-                        <a href="/perbaikan-pemilik" class="button-modern">
+                        <a href="/perbaikan-pemilik" class="button-baru">
                             <i class="bi bi-pencil-square"></i> Perbaikan Dokumen
                         </a>
                     </div>

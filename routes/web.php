@@ -1551,10 +1551,17 @@ Route::delete('/bebantekpembongkarandelete/{id}', [BantuanteknisController::clas
 Route::get(
     '/bebantekpembongkaran/show/{namapemilik}/{id}',
     [BantuanteknisController::class, 'bebantekpembongkaranshowdata']
-)->middleware('auth', 'can:admindinas')
- ->name('bebantekpembongkaranshow');
+    )->middleware('auth', 'can:admindinas')
+    ->name('bebantekpembongkaranshow');
 
- // validasi berkas pembongkaran bangunan gedung
+    // show informasi kepemilikan bangunan gedung
+    Route::get(
+    '/bebantekpembongkaran/informasipemilikbangunan/{namapemilik}/{id}',
+    [BantuanteknisController::class, 'informasipemilikbangunan']
+)->middleware('auth', 'can:admindinas')
+ ->name('informasipemilikbangunan');
+
+// validasi berkas pembongkaran bangunan gedung
 
  Route::put('/validasipembongkaran1/{id}', [BantuanteknisController::class, 'validasipembongkaran1'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran1.update');
  Route::put('/validasipembongkaran2/{id}', [BantuanteknisController::class, 'validasipembongkaran2'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran2.update');
