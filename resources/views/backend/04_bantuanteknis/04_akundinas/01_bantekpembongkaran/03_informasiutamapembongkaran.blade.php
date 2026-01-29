@@ -259,17 +259,16 @@
 <br><hr>
 
 @include('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.00_navigasimenubaru.03_fiturmenunavigasi')
+</div>
+
+
+</div>
 
 
     <a href="/bebantekpembongkaran" class="button-modern">
     <i class="bi bi-arrow-left me-2"></i>
     Kembali Ke Data Awal
 </a>
-
-</div>
-
-
-</div>
     <script>
 function previewPDF(event, containerId, iframeId, messageId) {
     const file = event.target.files[0];
