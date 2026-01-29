@@ -121,8 +121,8 @@
                     <div class="button-container">
                         <!-- Upload Dokumen -->
 
-           @if($data)
-    <a href="{{ route('bebantekpembongkarandokumen', $data->id) }}"
+@if($data->bantekpembongkarannew1->count() > 0)
+    <a href="{{ route('bebantekpembongkarandokumen', $data->bantekpembongkarannew1->first()->id) }}"
        class="button-berkas">
         <i class="bi bi-eye"></i> Lihat Dokumen
     </a>
@@ -132,7 +132,6 @@
         <i class="bi bi-upload"></i> Upload Dokumen
     </a>
 @endif
-
 
 
 

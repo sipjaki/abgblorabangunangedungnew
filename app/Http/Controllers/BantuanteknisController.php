@@ -6576,6 +6576,8 @@ public function validasipembongkaran6(Request $request, $id)
 
 
 
+
+/// SHOW DATA AWAL
 public function bebantekpembongkaranshowdata($namapemilik, $id)
 {
     // Decode nama dari URL
@@ -6601,6 +6603,8 @@ public function bebantekpembongkaranshowdata($namapemilik, $id)
     );
 }
 
+
+// SHOW DATA BARU
 public function informasipemilikbangunan($namapemilik, $id)
     {
         // Decode nama pemilik dari URL
