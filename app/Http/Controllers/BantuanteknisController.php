@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\bantekpembongkaraninduk;
+use App\Models\bantekpembongkarannew1;
 use App\Models\bantuanteknis;
 use App\Models\bglapangan;
 use App\Models\bujkkonsultan;
@@ -6623,5 +6624,96 @@ public function informasipemilikbangunan($namapemilik, $id)
             ]
         );
     }
+
+      public function bebantekpembongkaraninformasipemiliknew(Request $request)
+    {
+        // VALIDASI SEMUA FIELD
+        $validated = $request->validate([
+            // DATA SURAT PERMOHONAN
+            'nosurat' => 'nullable|string|max:255',
+            'tanggalsurat' => 'nullable|date',
+            'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360', // 15MB
+
+            // DATA BANGUNAN
+            'namabangunan' => 'nullable|string|max:255',
+            'pilihanbangunan' => 'nullable|string|max:255',
+            'suratkelayakan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
+            // SURAT KESANGGUPAN
+            'pilihansanggup' => 'nullable|string|max:255',
+            'suratkesanggupan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
+            // DATA PEMILIK
+            'namalengkap' => 'nullable|string|max:255',
+            'jabatan' => 'nullable|string|max:255',
+            'alamatpemilik' => 'nullable|string',
+            'notelepon' => 'nullable|string|max:50',
+            'ktp' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+            'sk' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
+            // DATA TANAH
+            'luastanah' => 'nullable|numeric',
+            'statustanah' => 'nullable|string|max:255',
+            'namapemeganghak' => 'nullable|string|max:255',
+            'sertifikattanah' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
+            // DATA TEKNIS BANGUNAN
+            'legalitasbangunan' => 'nullable|string|max:255',
+            'nomorpbg' => 'nullable|string|max:255',
+            'pemilikbangunan' => 'nullable|string|max:255',
+            'kodebarang' => 'nullable|string|max:255',
+            'alamatbangunan' => 'nullable|string',
+            'koordinatbangunan' => 'nullable|string|max:255',
+            'fungsibangunan' => 'nullable|string|max:255',
+            'jumlahlantai' => 'nullable|integer',
+            'ketinggianbangunan' => 'nullable|string',
+            'luasbangunan' => 'nullable|numeric',
+            'kompleksitasbangunan' => 'nullable|string|max:255',
+            'tingkatpermanensi' => 'nullable|string|max:255',
+            'kepadatan' => 'nullable|string|max:255',
+            'tanggaldibangun' => 'nullable|date',
+            'tanggalrevovasi' => 'nullable|date',
+            'nilaibangunanbaru' => 'nullable|numeric',
+            'nilaibangunanlama' => 'nullable|numeric',
+
+            // KIB
+            'kib' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360',
+
+            // DATA PBG
+            'apakahadapbg' => 'nullable|string|max:255',
+            'pbg' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360', // 15MB sekarang
+        ]);
+
+        // BUAT FOLDER PUBLIC JIKA BELUM ADA
+        $publicPath = public_path('bantekpembongkaran');
+        if (!file_exists($publicPath)) {
+            mkdir($publicPath, 0777, true);
+        }
+
+        // UPLOAD SEMUA FILE KE PUBLIC
+        $fileFields = [
+            'suratpermohonan',
+            'suratkelayakan',
+            'suratkesanggupan',
+            'ktp',
+            'sk',
+            'sertifikattanah',
+            'kib',
+            'pbg',
+        ];
+
+        foreach ($fileFields as $field) {
+            if ($request->hasFile($field)) {
+                $file = $request->file($field);
+                $filename = time() . '_' . $file->getClientOriginalName();
+                $file->move($publicPath, $filename);
+                $validated[$field] = 'bantekpembongkaran/' . $filename; // path relatif ke public
+            }
+        }
+
+        // SIMPAN KE DATABASE
+        $record = bantekpembongkarannew1::create($validated);
+
+        }
 
 }

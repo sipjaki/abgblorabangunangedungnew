@@ -478,6 +478,13 @@
     <!-- FORM UPLOAD (Awalnya disembunyikan) -->
     <form action="{{ route('informasipemilikbangunannew.create') }}" method="POST" enctype="multipart/form-data" id="uploadForm" style="display: none; background: #f8fafc; padding: 25px; border-radius: 12px; border: 2px solid #e2e8f0;">
         @csrf
+
+        <!-- Hidden Input untuk ID Data Awal -->
+<input  name="id_awal" value="{{ $data->id }}">
+
+<!-- Hidden Input untuk Nama Pemilik Data Awal -->
+<input  name="namapemilik_awal" value="{{ $data->namapemilik }}">
+
         <input type="hidden" name="bantekpembongkaraninduk_id" value="{{ $data->id ?? '' }}">
         <input type="hidden" name="user_id" value="{{ $user->id ?? '' }}">
 
@@ -1694,9 +1701,6 @@ document.getElementById('sk').addEventListener('change', function () {
             <div class="invalid-feedback d-block">{{ $message }}</div>
         @enderror
 
-        <small class="text-muted d-block mt-1">
-            Otomatis diformat ke rupiah. Nilai disimpan sebagai angka.
-        </small>
     </div>
 </div>
 
@@ -1789,7 +1793,7 @@ document.addEventListener('DOMContentLoaded', function () {
         @enderror
 
         <small class="text-muted d-block mt-1">
-            Format: PDF, JPG, PNG (Maks. 5MB)
+            Format: PDF, JPG, PNG (Maks. 15MB)
         </small>
 
         <!-- BUTTON LIHAT CONTOH -->
