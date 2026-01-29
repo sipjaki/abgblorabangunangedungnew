@@ -6727,13 +6727,14 @@ public function informasipemilikbangunan($namapemilik, $id)
         }
 
 
-
 public function bebantekpembongkarandokumen($namabangunan, $id)
 {
     $namabangunan = urldecode($namabangunan);
 
+    // Cari data berdasarkan namabangunan (case-insensitive) + id
     $data = bantekpembongkarannew1::where('id', $id)
         ->whereRaw('TRIM(LOWER(namabangunan)) = ?', [Str::lower(trim($namabangunan))])
+        ->with('bantekpembongkaraninduk') // bawa relasi induk
         ->firstOrFail();
 
     return view(
@@ -6741,7 +6742,7 @@ public function bebantekpembongkarandokumen($namabangunan, $id)
         [
             'title' => 'Details Informasi Pemilik Bangunan Gedung',
             'dataBangunan'  => $data,
-            'dataInduk'     => $data->bantekpembongkaraninduk // optional, bawa relasi induk juga
+            'dataInduk'     => $data->bantekpembongkaraninduk // relasi induk
         ]
     );
 }

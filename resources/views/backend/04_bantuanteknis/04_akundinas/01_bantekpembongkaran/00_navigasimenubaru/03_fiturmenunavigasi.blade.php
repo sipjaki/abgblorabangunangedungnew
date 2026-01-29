@@ -120,7 +120,8 @@
                     <!-- Button Container -->
                     <div class="button-container">
                         <!-- Upload Dokumen -->
-                       @if($data->bantekpembongkarannew1 && $data->bantekpembongkarannew1->namabangunan)
+                    @if($data->bantekpembongkarannew1 && $data->bantekpembongkarannew1->namabangunan)
+    <!-- Tombol Lihat Dokumen berdasarkan namabangunan -->
     <a href="{{ route('bebantekpembongkarandokumen', [
         'namabangunan' => urlencode($data->bantekpembongkarannew1->namabangunan),
         'id' => $data->bantekpembongkarannew1->id
@@ -128,6 +129,7 @@
         <i class="bi bi-eye"></i> Lihat Dokumen
     </a>
 @else
+    <!-- Tombol Upload Dokumen -->
     <a href="{{ route('informasipemilikbangunan', [
         urlencode($data->namapemilik),
         $data->id
@@ -135,6 +137,7 @@
         <i class="bi bi-upload"></i> Upload Dokumen
     </a>
 @endif
+
 
 
 
