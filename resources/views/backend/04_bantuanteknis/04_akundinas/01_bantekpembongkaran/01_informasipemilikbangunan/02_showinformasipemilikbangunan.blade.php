@@ -425,45 +425,6 @@
     }
 </style>
 
-<div class="col-md-12">
-    <div class="doc-grid mb-5">
-        <!-- Header Section -->
-<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
-
-    <!-- JUDUL -->
-    <div class="d-flex align-items-center mb-3 mb-md-0">
-        <div class="me-3">
-            <i class="bi bi-clipboard-data-fill text-primary" style="font-size: 2rem;"></i>
-        </div>
-        <div>
-            <h4 class="mb-1" style="color: #1f2937; font-size: 1.5rem;">
-                Dokumen Informasi Pemilik Bangunan
-            </h4>
-        </div>
-    </div>
-
-    <!-- BUTTON AKSI -->
-    <div class="d-flex gap-2">
-        <!-- KEMBALI -->
-      <a href="{{ url()->previous() }}" class="button-modern">
-    <i class="bi bi-arrow-left me-1"></i> Kembali
-</a>
-
-
-
-        <!-- KEMBALI KE DATA DASAR -->
-        <a href="{{ route('bebantekpembongkaran') }}"
-           class="button-baru">
-            <i class="bi bi-folder2-open me-1"></i> Data Dasar
-        </a>
-    </div>
-
-</div>
-    </div>
-
-    <!-- FORM UPLOAD (Awalnya disembunyikan) -->
-
-</div>
 
 <style>
     /* CSS Modern untuk View Data */
@@ -791,6 +752,22 @@
                 <p style="color: #6b7280; margin: 0;">Detail lengkap informasi pemilik dan bangunan</p>
             </div>
 
+
+    <!-- BUTTON AKSI -->
+    <div class="d-flex gap-2">
+        <!-- KEMBALI -->
+      <a href="{{ url()->previous() }}" class="button-modern">
+    <i class="bi bi-arrow-left me-1"></i> Kembali
+</a>
+
+
+
+        <!-- KEMBALI KE DATA DASAR -->
+        <a href="{{ route('bebantekpembongkaran') }}"
+           class="button-baru">
+            <i class="bi bi-folder2-open me-1"></i> Data Dasar
+        </a>
+    </div>
         </div>
 
         @php
