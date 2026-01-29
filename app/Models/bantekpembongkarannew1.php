@@ -12,8 +12,8 @@ class bantekpembongkarannew1 extends Model
 
     protected $guarded = ['id'];
 
-    public function bantekpembongkaraninduk()
+    public function induk()
     {
-        return $this->belongsTo(bantekpembongkaraninduk::class, 'bantekpembongkaraninduk_id');
+        return $this->belongsTo(bantekpembongkaraninduk::class, 'bantekpembongkaraninduk_id', 'id');
     }
 }
