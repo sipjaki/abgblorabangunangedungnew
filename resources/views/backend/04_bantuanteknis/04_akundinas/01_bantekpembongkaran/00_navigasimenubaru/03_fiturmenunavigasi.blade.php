@@ -122,7 +122,7 @@
                         <!-- Upload Dokumen -->
                   @if($data->id)
     <!-- Tombol Lihat Dokumen berdasarkan ID -->
-    <a href="{{ route('bebantekpembongkarandokumen', $data->id) }}" class="button-berkas">
+    <a href="{{ route('bebantekpembongkarandokumen', $data->bantekpembongkarannew1->id) }}" class="button-berkas">
         <i class="bi bi-eye"></i> Lihat Dokumen
     </a>
 @else
