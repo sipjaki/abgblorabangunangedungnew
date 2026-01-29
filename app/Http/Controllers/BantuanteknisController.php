@@ -6581,7 +6581,7 @@ public function bebantekpembongkaranshowdata($namapemilik, $id)
     $namapemilik = urldecode($namapemilik);
 
     // Cari data HARUS cocok ID & nama + bawa relasi bantekbongkar1
-    $data = bantekpembongkaraninduk::with('bantekbongkar1')
+    $data = bantekpembongkaraninduk::with('bantekpembongkarannew1')
         ->where('id', $id)
         ->where('namapemilik', $namapemilik)
         ->firstOrFail();
