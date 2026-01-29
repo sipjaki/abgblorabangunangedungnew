@@ -484,7 +484,7 @@
         <div class="card-body">
             <!-- 1. DATA SURAT PERMOHONAN -->
             <div class="section-header">
-                <i class="bi bi-file-earmark-text me-2"></i> Data Surat Permohonan
+                <i class="bi bi-file-earmark-text me-2"></i> Data Surat Permohonan Izin Pembongkaran
             </div>
 
             <div class="row">
@@ -537,7 +537,7 @@
         </small>
 
         <!-- BUTTON DOWNLOAD -->
-        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.pdf"
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.docx"
            class="btn btn-outline-primary btn-sm"
            download>
             <i class="bi bi-download me-1"></i> Download Template Surat
