@@ -6725,9 +6725,10 @@ public function informasipemilikbangunan($namapemilik, $id)
         'id' => $idAwal
     ])->with('create', 'Data berhasil disimpan!');
         }
-public function bebantekpembongkarandokumen($id)
+
+
+        public function bebantekpembongkarandokumen($id)
 {
-    // Ambil data berdasarkan ID saja, tanpa relasi induk
     $data = bantekpembongkarannew1::findOrFail($id);
 
     return view(
