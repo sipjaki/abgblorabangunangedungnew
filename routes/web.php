@@ -1548,21 +1548,32 @@ Route::get('/bebantekpembongkaran/create', [BantuanteknisController::class, 'beb
 Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkarancreatenew'])->middleware('auth', 'can:admindinas')->name('bebantekpembongkarancreatenew');
 Route::delete('/bebantekpembongkarandelete/{id}', [BantuanteknisController::class, 'bebantekpembongkarandelete'])->middleware('auth', 'can:admindinas')->name('delete.pembongkaran');
 
+
+/// DATA PERTAMA KALI DATA DASAR
 Route::get(
     '/bebantekpembongkaran/show/{namapemilik}/{id}',
     [BantuanteknisController::class, 'bebantekpembongkaranshowdata']
     )->middleware('auth', 'can:admindinas')
     ->name('bebantekpembongkaranshow');
 
-    // show informasi kepemilikan bangunan gedung
+// FORMULIR PENGISIAN INFORMASI PEMILIK BANGUNAN GEDUNG
     Route::get(
         '/bebantekpembongkaran/informasipemilikbangunan/{namapemilik}/{id}',
     [BantuanteknisController::class, 'informasipemilikbangunan']
     )->middleware('auth', 'can:admindinas')
     ->name('informasipemilikbangunan');
-
+// MEMBUAT ISIAN DATA DARI INFORMASI PERMILIK BANGUNAN GEDUNG
     Route::post('/bebantekpembongkaran/createnew', [BantuanteknisController::class, 'bebantekpembongkaraninformasipemiliknew'])->middleware('auth', 'can:admindinas')->name('informasipemilikbangunannew.create');
-// validasi berkas pembongkaran bangunan gedung
+
+
+    // LIHAT SHOW DARI INFORMASI PEMILIK BANGUNAN GEDUNG 
+Route::get(
+    '/bebantekpembongkaran/dokumen/{namabangunan}/{id}',
+    [BantuanteknisController::class, 'bebantekpembongkarandokumen']
+)->middleware('auth', 'can:admindinas')
+ ->name('bebantekpembongkarandokumen');
+
+    // validasi berkas pembongkaran bangunan gedung
 
  Route::put('/validasipembongkaran1/{id}', [BantuanteknisController::class, 'validasipembongkaran1'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran1.update');
  Route::put('/validasipembongkaran2/{id}', [BantuanteknisController::class, 'validasipembongkaran2'])->middleware('auth', 'can:admindinas')->name('validasipembongkaran2.update');
