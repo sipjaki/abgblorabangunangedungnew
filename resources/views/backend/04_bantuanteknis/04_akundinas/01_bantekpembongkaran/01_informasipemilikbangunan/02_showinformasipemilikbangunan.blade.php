@@ -445,16 +445,14 @@
     <!-- BUTTON AKSI -->
     <div class="d-flex gap-2">
         <!-- KEMBALI -->
-        <a href="{{ route(
-            'bebantekpembongkaranshow',
-            [
-                urlencode($data->namapemilik),
-                $data->id
-            ]
-        ) }}"
-        class="button-modern">
-            <i class="bi bi-arrow-left me-1"></i> Kembali
-        </a>
+       <a href="{{ route('bebantekpembongkaranshow', [
+        'namapemilik' => urlencode($data->namapemilik),
+        'id' => $data->id
+    ]) }}"
+    class="button-modern">
+    <i class="bi bi-arrow-left me-1"></i> Kembali
+</a>
+
 
         <!-- KEMBALI KE DATA DASAR -->
         <a href="{{ route('bebantekpembongkaran') }}"
