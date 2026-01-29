@@ -994,6 +994,482 @@
 
             </div>
 
+            <!-- =========================
+     * DATA TEKNIS BANGUNAN
+     * ========================= -->
+<div class="section-header mt-4">
+    <i class="bi bi-building-gear me-2"></i> Data Teknis Bangunan
+</div>
+
+<div class="row">
+    <!-- Legalitas Bangunan -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="legalitasbangunan">
+                <i class="bi bi-file-earmark-check me-2 text-primary"></i> Legalitas Bangunan
+            </label>
+            <input type="text" class="form-control @error('legalitasbangunan') is-invalid @enderror"
+                   id="legalitasbangunan" name="legalitasbangunan" value="{{ old('legalitasbangunan') }}"
+                   placeholder="Contoh: IMB/IL">
+            @error('legalitasbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Nomor PBG -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="nomorpbg">
+                <i class="bi bi-hash me-2 text-primary"></i> Nomor PBG
+            </label>
+            <input type="text" class="form-control @error('nomorpbg') is-invalid @enderror"
+                   id="nomorpbg" name="nomorpbg" value="{{ old('nomorpbg') }}"
+                   placeholder="Nomor Persetujuan Bangunan Gedung">
+            @error('nomorpbg') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Pemilik Bangunan -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="pemilikbangunan">
+                <i class="bi bi-person-badge me-2 text-primary"></i> Pemilik Bangunan
+            </label>
+            <input type="text" class="form-control @error('pemilikbangunan') is-invalid @enderror"
+                   id="pemilikbangunan" name="pemilikbangunan" value="{{ old('pemilikbangunan') }}"
+                   placeholder="Nama pemilik bangunan">
+            @error('pemilikbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Kode Barang -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="kodebarang">
+                <i class="bi bi-tag me-2 text-primary"></i> Kode Barang
+            </label>
+            <input type="text" class="form-control @error('kodebarang') is-invalid @enderror"
+                   id="kodebarang" name="kodebarang" value="{{ old('kodebarang') }}"
+                   placeholder="Kode barang inventaris">
+            @error('kodebarang') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Alamat Bangunan -->
+    <div class="col-12">
+        <div class="form-modern">
+            <label class="form-label-modern" for="alamatbangunan">
+                <i class="bi bi-geo-alt me-2 text-primary"></i> Alamat Bangunan
+            </label>
+            <textarea class="form-control @error('alamatbangunan') is-invalid @enderror"
+                      id="alamatbangunan" name="alamatbangunan" rows="3"
+                      placeholder="Alamat lengkap bangunan">{{ old('alamatbangunan') }}</textarea>
+            @error('alamatbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Koordinat Bangunan -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="koordinatbangunan">
+                <i class="bi bi-geo-alt-fill me-2 text-primary"></i> Koordinat Bangunan
+            </label>
+            <input type="text" class="form-control @error('koordinatbangunan') is-invalid @enderror"
+                   id="koordinatbangunan" name="koordinatbangunan" value="{{ old('koordinatbangunan') }}"
+                   placeholder="Format: latitude,longitude">
+            @error('koordinatbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <small class="text-muted">Contoh: -7.0421,111.4046</small>
+        </div>
+    </div>
+
+    <!-- Fungsi Bangunan -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="fungsibangunan">
+                <i class="bi bi-building me-2 text-primary"></i> Fungsi Bangunan
+            </label>
+            <select class="form-select @error('fungsibangunan') is-invalid @enderror"
+                    id="fungsibangunan" name="fungsibangunan">
+                <option value="">-- Pilih Fungsi Bangunan --</option>
+                <option value="Perkantoran" {{ old('fungsibangunan') == 'Perkantoran' ? 'selected' : '' }}>Perkantoran</option>
+                <option value="Pendidikan" {{ old('fungsibangunan') == 'Pendidikan' ? 'selected' : '' }}>Pendidikan</option>
+                <option value="Kesehatan" {{ old('fungsibangunan') == 'Kesehatan' ? 'selected' : '' }}>Kesehatan</option>
+                <option value="Perdagangan" {{ old('fungsibangunan') == 'Perdagangan' ? 'selected' : '' }}>Perdagangan</option>
+                <option value="Industri" {{ old('fungsibangunan') == 'Industri' ? 'selected' : '' }}>Industri</option>
+                <option value="Hunian" {{ old('fungsibangunan') == 'Hunian' ? 'selected' : '' }}>Hunian</option>
+                <option value="Ibadah" {{ old('fungsibangunan') == 'Ibadah' ? 'selected' : '' }}>Ibadah</option>
+                <option value="Lainnya" {{ old('fungsibangunan') == 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
+            </select>
+            @error('fungsibangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Jumlah Lantai -->
+    <div class="col-md-4">
+        <div class="form-modern">
+            <label class="form-label-modern" for="jumlahlantai">
+                <i class="bi bi-layers me-2 text-primary"></i> Jumlah Lantai
+            </label>
+            <input type="number" class="form-control @error('jumlahlantai') is-invalid @enderror"
+                   id="jumlahlantai" name="jumlahlantai" value="{{ old('jumlahlantai') }}"
+                   min="1" max="100" placeholder="Contoh: 2">
+            @error('jumlahlantai') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Ketinggian Bangunan -->
+    <div class="col-md-4">
+        <div class="form-modern">
+            <label class="form-label-modern" for="ketinggianbangunan">
+                <i class="bi bi-arrows-vertical me-2 text-primary"></i> Ketinggian Bangunan (m)
+            </label>
+            <input type="number" step="0.01" class="form-control @error('ketinggianbangunan') is-invalid @enderror"
+                   id="ketinggianbangunan" name="ketinggianbangunan" value="{{ old('ketinggianbangunan') }}"
+                   placeholder="Contoh: 8.5">
+            @error('ketinggianbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Luas Bangunan -->
+    <div class="col-md-4">
+        <div class="form-modern">
+            <label class="form-label-modern" for="luasbangunan">
+                <i class="bi bi-rulers me-2 text-primary"></i> Luas Bangunan (m²)
+            </label>
+            <input type="number" step="0.01" class="form-control @error('luasbangunan') is-invalid @enderror"
+                   id="luasbangunan" name="luasbangunan" value="{{ old('luasbangunan') }}"
+                   placeholder="Contoh: 150.75">
+            @error('luasbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Kompleksitas Bangunan -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="kompleksitasbangunan">
+                <i class="bi bi-diagram-3 me-2 text-primary"></i> Kompleksitas Bangunan
+            </label>
+            <select class="form-select @error('kompleksitasbangunan') is-invalid @enderror"
+                    id="kompleksitasbangunan" name="kompleksitasbangunan">
+                <option value="">-- Pilih Kompleksitas --</option>
+                <option value="Sederhana" {{ old('kompleksitasbangunan') == 'Sederhana' ? 'selected' : '' }}>Sederhana</option>
+                <option value="Sedang" {{ old('kompleksitasbangunan') == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                <option value="Kompleks" {{ old('kompleksitasbangunan') == 'Kompleks' ? 'selected' : '' }}>Kompleks</option>
+                <option value="Sangat Kompleks" {{ old('kompleksitasbangunan') == 'Sangat Kompleks' ? 'selected' : '' }}>Sangat Kompleks</option>
+            </select>
+            @error('kompleksitasbangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Tingkat Permanensi -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="tingkatpermanensi">
+                <i class="bi bi-shield-check me-2 text-primary"></i> Tingkat Permanensi
+            </label>
+            <select class="form-select @error('tingkatpermanensi') is-invalid @enderror"
+                    id="tingkatpermanensi" name="tingkatpermanensi">
+                <option value="">-- Pilih Tingkat Permanensi --</option>
+                <option value="Permanen" {{ old('tingkatpermanensi') == 'Permanen' ? 'selected' : '' }}>Permanen</option>
+                <option value="Semi Permanen" {{ old('tingkatpermanensi') == 'Semi Permanen' ? 'selected' : '' }}>Semi Permanen</option>
+                <option value="Non Permanen" {{ old('tingkatpermanensi') == 'Non Permanen' ? 'selected' : '' }}>Non Permanen</option>
+            </select>
+            @error('tingkatpermanensi') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Kepadatan -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="kepadatan">
+                <i class="bi bi-people-fill me-2 text-primary"></i> Kepadatan
+            </label>
+            <select class="form-select @error('kepadatan') is-invalid @enderror"
+                    id="kepadatan" name="kepadatan">
+                <option value="">-- Pilih Kepadatan --</option>
+                <option value="Rendah" {{ old('kepadatan') == 'Rendah' ? 'selected' : '' }}>Rendah</option>
+                <option value="Sedang" {{ old('kepadatan') == 'Sedang' ? 'selected' : '' }}>Sedang</option>
+                <option value="Tinggi" {{ old('kepadatan') == 'Tinggi' ? 'selected' : '' }}>Tinggi</option>
+                <option value="Sangat Tinggi" {{ old('kepadatan') == 'Sangat Tinggi' ? 'selected' : '' }}>Sangat Tinggi</option>
+            </select>
+            @error('kepadatan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Tanggal Dibangun -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="tanggaldibangun">
+                <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Dibangun
+            </label>
+            <input type="date" class="form-control @error('tanggaldibangun') is-invalid @enderror"
+                   id="tanggaldibangun" name="tanggaldibangun" value="{{ old('tanggaldibangun') }}">
+            @error('tanggaldibangun') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Tanggal Renovasi -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="tanggalrevovasi">
+                <i class="bi bi-tools me-2 text-primary"></i> Tanggal Renovasi
+            </label>
+            <input type="date" class="form-control @error('tanggalrevovasi') is-invalid @enderror"
+                   id="tanggalrevovasi" name="tanggalrevovasi" value="{{ old('tanggalrevovasi') }}">
+            @error('tanggalrevovasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Nilai Bangunan Baru -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="nilaibangunanbaru">
+                <i class="bi bi-cash-coin me-2 text-primary"></i> Nilai Bangunan Baru (Rp)
+            </label>
+            <input type="number" step="0.01" class="form-control @error('nilaibangunanbaru') is-invalid @enderror"
+                   id="nilaibangunanbaru" name="nilaibangunanbaru" value="{{ old('nilaibangunanbaru') }}"
+                   placeholder="Contoh: 500000000">
+            @error('nilaibangunanbaru') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Nilai Bangunan Lama -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="nilaibangunanlama">
+                <i class="bi bi-cash-stack me-2 text-primary"></i> Nilai Bangunan Lama (Rp)
+            </label>
+            <input type="number" step="0.01" class="form-control @error('nilaibangunanlama') is-invalid @enderror"
+                   id="nilaibangunanlama" name="nilaibangunanlama" value="{{ old('nilaibangunanlama') }}"
+                   placeholder="Contoh: 300000000">
+            @error('nilaibangunanlama') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+</div>
+
+<!-- =========================
+     * KIB
+     * ========================= -->
+<div class="section-header mt-4">
+    <i class="bi bi-file-text me-2"></i> Kartu Inventaris Barang (KIB)
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="form-modern">
+            <label class="form-label-modern" for="kib">
+                <i class="bi bi-upload me-2 text-primary"></i> Upload KIB
+            </label>
+            <input type="file" class="form-control @error('kib') is-invalid @enderror"
+                   id="kib" name="kib" accept=".pdf,.jpg,.jpeg,.png">
+            @error('kib') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
+        </div>
+    </div>
+</div>
+
+<!-- =========================
+     * DATA PBG
+     * ========================= -->
+<div class="section-header mt-4">
+    <i class="bi bi-file-earmark-medical me-2"></i> Data Persetujuan Bangunan Gedung (PBG)
+</div>
+
+<div class="row">
+    <!-- Apakah Ada PBG -->
+    <div class="col-md-6">
+        <div class="form-modern">
+            <label class="form-label-modern" for="apakahadapbg">
+                <i class="bi bi-question-circle me-2 text-primary"></i> Apakah Ada PBG?
+            </label>
+            <select class="form-select @error('apakahadapbg') is-invalid @enderror"
+                    id="apakahadapbg" name="apakahadapbg" onchange="togglePBGField()">
+                <option value="">-- Pilih --</option>
+                <option value="Ya" {{ old('apakahadapbg') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                <option value="Tidak" {{ old('apakahadapbg') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+            </select>
+            @error('apakahadapbg') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        </div>
+    </div>
+
+    <!-- Upload PBG (Tampilkan jika Ya) -->
+    <div class="col-md-6" id="pbgField" style="display: none;">
+        <div class="form-modern">
+            <label class="form-label-modern" for="pbg">
+                <i class="bi bi-upload me-2 text-primary"></i> Upload PBG
+            </label>
+            <input type="file" class="form-control @error('pbg') is-invalid @enderror"
+                   id="pbg" name="pbg" accept=".pdf,.jpg,.jpeg,.png">
+            @error('pbg') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <small class="text-muted">Format: PDF, JPG, PNG (Maks. 5MB)</small>
+        </div>
+    </div>
+</div>
+
+<!-- Tombol Submit -->
+<div class="mt-4 text-end">
+    <button type="button" class="btn btn-secondary me-2" onclick="hideForm()">Batal</button>
+    <button type="button" class="button-baru" onclick="showConfirmationModal()">
+        <i class="bi bi-save me-2"></i> Simpan Data
+    </button>
+</div>
+
+<!-- Modal Konfirmasi -->
+<div id="confirmationModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+        <div style="display: flex; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #e5e7eb;">
+            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <i class="bi bi-question-circle-fill" style="color: white; font-size: 1.5rem;"></i>
+            </div>
+            <div>
+                <h4 style="margin: 0; color: #1f2937; font-weight: 600;">Konfirmasi Penyimpanan</h4>
+                <p style="margin: 5px 0 0 0; color: #6b7280; font-size: 0.9rem;">DPUPR Kabupaten Blora</p>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+            <p style="font-size: 16px; line-height: 1.5; color: #374151; margin-bottom: 10px;">
+                <i class="bi bi-exclamation-triangle-fill me-2" style="color: #f59e0b;"></i>
+                Apakah data yang Anda input sudah benar?
+            </p>
+            <p style="font-size: 14px; color: #6b7280; background-color: #f9fafb; padding: 12px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                <i class="bi bi-info-circle-fill me-2" style="color: #3b82f6;"></i>
+                Pastikan semua data sudah terisi dengan benar sebelum disimpan.
+            </p>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px;">
+            <button type="button" onclick="closeConfirmationModal()"
+                    style="background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; padding: 10px 20px; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.3s; display: flex; align-items: center;"
+                    onmouseover="this.style.background='#e5e7eb'; this.style.color='#1f2937';"
+                    onmouseout="this.style.background='#f3f4f6'; this.style.color='#374151';">
+                <i class="bi bi-x-circle me-2"></i> Tutup
+            </button>
+
+            <button type="button" onclick="submitForm()"
+                    style="background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; padding: 10px 25px; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.3s; display: flex; align-items: center;"
+                    onmouseover="this.style.background='linear-gradient(135deg, #059669, #047857)'; this.style.transform='translateY(-2px)';"
+                    onmouseout="this.style.background='linear-gradient(135deg, #10b981, #059669)'; this.style.transform='translateY(0)';">
+                <i class="bi bi-check-circle me-2"></i> Ya, Simpan Data
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Fungsi untuk toggle PBG field
+    function togglePBGField() {
+        const pbgSelect = document.getElementById('apakahadapbg');
+        const pbgField = document.getElementById('pbgField');
+
+        if (pbgSelect.value === 'Ya') {
+            pbgField.style.display = 'block';
+        } else {
+            pbgField.style.display = 'none';
+            document.getElementById('pbg').value = '';
+        }
+    }
+
+    // Inisialisasi saat halaman load
+    document.addEventListener('DOMContentLoaded', function() {
+        togglePBGField(); // Set initial state
+    });
+
+    // Fungsi untuk menampilkan modal konfirmasi
+    function showConfirmationModal() {
+        if (!validateForm()) {
+            return;
+        }
+
+        document.getElementById('confirmationModal').style.display = 'flex';
+
+        const modalContent = document.querySelector('#confirmationModal > div');
+        modalContent.style.opacity = '0';
+        modalContent.style.transform = 'scale(0.9)';
+
+        setTimeout(() => {
+            modalContent.style.transition = 'all 0.3s ease';
+            modalContent.style.opacity = '1';
+            modalContent.style.transform = 'scale(1)';
+        }, 10);
+    }
+
+    // Fungsi untuk menutup modal konfirmasi
+    function closeConfirmationModal() {
+        const modalContent = document.querySelector('#confirmationModal > div');
+        modalContent.style.opacity = '0';
+        modalContent.style.transform = 'scale(0.9)';
+
+        setTimeout(() => {
+            document.getElementById('confirmationModal').style.display = 'none';
+            modalContent.style.opacity = '';
+            modalContent.style.transform = '';
+        }, 300);
+    }
+
+    // Fungsi untuk submit form
+    function submitForm() {
+        const submitBtn = document.querySelector('#confirmationModal button[onclick="submitForm()"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i> Menyimpan...';
+        submitBtn.disabled = true;
+
+        closeConfirmationModal();
+
+        setTimeout(() => {
+            document.getElementById('uploadForm').submit();
+        }, 500);
+    }
+
+    // Fungsi validasi form
+    function validateForm() {
+        let isValid = true;
+
+        // Reset errors
+        document.querySelectorAll('.field-error').forEach(el => el.remove());
+        document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+
+        // Validasi required fields
+        const requiredFields = [
+            'legalitasbangunan', 'pemilikbangunan', 'alamatbangunan',
+            'fungsibangunan', 'jumlahlantai', 'luasbangunan'
+        ];
+
+        requiredFields.forEach(fieldName => {
+            const field = document.getElementById(fieldName);
+            if (field && !field.value.trim()) {
+                isValid = false;
+                field.classList.add('is-invalid');
+
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'field-error text-danger mt-1';
+                errorDiv.style.fontSize = '0.85rem';
+                errorDiv.innerHTML = `<i class="bi bi-exclamation-circle me-1"></i> Field ini harus diisi`;
+                field.parentNode.appendChild(errorDiv);
+            }
+        });
+
+        // Validasi angka positif
+        const numberFields = ['jumlahlantai', 'ketinggianbangunan', 'luasbangunan'];
+        numberFields.forEach(fieldName => {
+            const field = document.getElementById(fieldName);
+            if (field && field.value) {
+                const value = parseFloat(field.value);
+                if (value <= 0) {
+                    isValid = false;
+                    field.classList.add('is-invalid');
+
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'field-error text-danger mt-1';
+                    errorDiv.style.fontSize = '0.85rem';
+                    errorDiv.innerHTML = `<i class="bi bi-exclamation-circle me-1"></i> Nilai harus lebih dari 0`;
+                    field.parentNode.appendChild(errorDiv);
+                }
+            }
+        });
+
+        return isValid;
+    }
+</script>
             <!-- Tombol Submit -->
           <div class="mt-4 text-end">
 
