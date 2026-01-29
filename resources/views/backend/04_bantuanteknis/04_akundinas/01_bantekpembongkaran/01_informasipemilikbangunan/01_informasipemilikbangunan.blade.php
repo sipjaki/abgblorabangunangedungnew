@@ -484,14 +484,14 @@
         <div class="card-body">
             <!-- 1. DATA SURAT PERMOHONAN -->
             <div class="section-header">
-                <i class="bi bi-file-earmark-text me-2"></i> Data Surat Permohonan Izin Pembongkaran
+                <i class="bi bi-file-earmark-text me-2"></i>Surat Permohonan Izin Pembongkaran
             </div>
 
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="nosurat">
-                            <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat
+                            <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
                         </label>
                         <input type="text" class="form-control @error('nosurat') is-invalid @enderror"
                                id="nosurat" name="nosurat" value="{{ old('nosurat') }}">
@@ -502,7 +502,7 @@
                 <div class="col-md-6">
                     <div class="form-modern">
                         <label class="form-label-modern" for="tanggalsurat">
-                            <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat
+                            <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat Permohonan
                         </label>
                         <input type="date" class="form-control @error('tanggalsurat') is-invalid @enderror"
                                id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
@@ -513,37 +513,94 @@
 
                 <div class="col-12">
     <div class="form-modern">
-        <label class="form-label-modern" for="suratpermohonan">
-            <i class="bi bi-upload me-2 text-primary"></i>
-            Upload Surat Permohonan Izin Pembongkaran
+    <label class="form-label-modern" for="suratpermohonan">
+        <i class="bi bi-upload me-2 text-primary"></i>
+        Upload Surat Permohonan Izin Pembongkaran
+    </label>
+
+    <input type="file"
+           class="form-control @error('suratpermohonan') is-invalid @enderror"
+           id="suratpermohonan"
+           name="suratpermohonan"
+           accept=".pdf,.jpg,.jpeg,.png">
+
+    @error('suratpermohonan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+    <small class="text-muted d-block mt-1">
+        Format: PDF, JPG, PNG (Maks. 15MB)
+    </small>
+
+    <small class="text-muted d-block mb-2">
+        Keterangan: Silahkan download template surat ini, isi, lalu
+        <strong class="text-danger">Upload Kembali</strong>.
+    </small>
+
+    <!-- BUTTON DOWNLOAD -->
+    <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.docx"
+       class="btn btn-outline-primary btn-sm mb-3"
+       download>
+        <i class="bi bi-download me-1"></i> Download Template Surat
+    </a>
+
+    <!-- PREVIEW FILE -->
+    <div id="previewSuratPermohonan" class="mt-3 d-none">
+        <label class="form-label-modern mb-2">
+            <i class="bi bi-eye me-2 text-success"></i>
+            Preview Berkas Yang Diupload
         </label>
 
-        <input type="file"
-               class="form-control @error('suratpermohonan') is-invalid @enderror"
-               id="suratpermohonan"
-               name="suratpermohonan"
-               accept=".pdf,.jpg,.jpeg,.png">
-
-        @error('suratpermohonan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        <small class="text-muted d-block mt-1">
-            Format: PDF (Maks. 15MB)
-        </small>
-
-        <small class="text-muted d-block mb-2">
-            Keterangan: Silahkan download template surat ini, isi, lalu
-            <strong class="text-danger">Upload Kembali</strong>.
-        </small>
-
-        <!-- BUTTON DOWNLOAD -->
-        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.docx"
-           class="btn btn-outline-primary btn-sm"
-           download>
-            <i class="bi bi-download me-1"></i> Download Template Surat
-        </a>
+        <div class="border rounded-3 p-2 bg-light" id="previewSuratPermohonanBox"></div>
     </div>
+</div>
+
+<script>
+document.getElementById('suratpermohonan').addEventListener('change', function () {
+
+    const file = this.files[0];
+    const previewWrap = document.getElementById('previewSuratPermohonan');
+    const previewBox  = document.getElementById('previewSuratPermohonanBox');
+
+    previewBox.innerHTML = '';
+
+    if (!file) {
+        previewWrap.classList.add('d-none');
+        return;
+    }
+
+    const fileURL = URL.createObjectURL(file);
+
+    // PDF
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
+    }
+    // IMAGE
+    else if (file.type.startsWith('image/')) {
+        previewBox.innerHTML = `
+            <img src="${fileURL}"
+                 class="img-fluid rounded shadow-sm"
+                 alt="Preview Surat Permohonan">
+        `;
+    }
+    // TIDAK DIDUKUNG
+    else {
+        previewBox.innerHTML = `
+            <p class="text-danger mb-0">
+                File tidak bisa dipreview.
+            </p>
+        `;
+    }
+
+    previewWrap.classList.remove('d-none');
+});
+</script>
+
 
 </div>
 
@@ -1148,16 +1205,30 @@
 
     <!-- Jumlah Lantai -->
     <div class="col-md-4">
-        <div class="form-modern">
-            <label class="form-label-modern" for="jumlahlantai">
-                <i class="bi bi-layers me-2 text-primary"></i> Jumlah Lantai
-            </label>
-            <input type="number" class="form-control @error('jumlahlantai') is-invalid @enderror"
-                   id="jumlahlantai" name="jumlahlantai" value="{{ old('jumlahlantai') }}"
-                   min="1" max="100" placeholder="Contoh: 2">
-            @error('jumlahlantai') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+    <div class="form-modern">
+        <label class="form-label-modern" for="jumlahlantai">
+            <i class="bi bi-layers me-2 text-primary"></i> Jumlah Lantai
+        </label>
+
+        <select
+            class="form-select @error('jumlahlantai') is-invalid @enderror"
+            id="jumlahlantai"
+            name="jumlahlantai">
+
+            <option value="">-- Pilih Jumlah Lantai --</option>
+            @for ($i = 1; $i <= 8; $i++)
+                <option value="{{ $i }}" {{ old('jumlahlantai') == $i ? 'selected' : '' }}>
+                    {{ $i }} Lantai
+                </option>
+            @endfor
+        </select>
+
+        @error('jumlahlantai')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
+</div>
+
 
     <!-- Ketinggian Bangunan -->
     <div class="col-md-4">
@@ -1261,32 +1332,95 @@
             @error('tanggalrevovasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
     </div>
+<div class="col-md-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="nilaibangunanbaru_display">
+            <i class="bi bi-cash-coin me-2 text-primary"></i>
+            Nilai Bangunan Saat Ini (Rp)
+        </label>
 
-    <!-- Nilai Bangunan Baru -->
-    <div class="col-md-6">
-        <div class="form-modern">
-            <label class="form-label-modern" for="nilaibangunanbaru">
-                <i class="bi bi-cash-coin me-2 text-primary"></i> Nilai Bangunan Baru (Rp)
-            </label>
-            <input type="number" step="0.01" class="form-control @error('nilaibangunanbaru') is-invalid @enderror"
-                   id="nilaibangunanbaru" name="nilaibangunanbaru" value="{{ old('nilaibangunanbaru') }}"
-                   placeholder="Contoh: 500000000">
-            @error('nilaibangunanbaru') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
-    </div>
+        <!-- INPUT TAMPILAN (FORMAT RUPIAH) -->
+        <input type="text"
+               class="form-control rupiah-display"
+               id="nilaibangunanbaru_display"
+               data-real="nilaibangunanbaru"
+               placeholder="Contoh: 500.000.000">
 
-    <!-- Nilai Bangunan Lama -->
-    <div class="col-md-6">
-        <div class="form-modern">
-            <label class="form-label-modern" for="nilaibangunanlama">
-                <i class="bi bi-cash-stack me-2 text-primary"></i> Nilai Bangunan Lama (Rp)
-            </label>
-            <input type="number" step="0.01" class="form-control @error('nilaibangunanlama') is-invalid @enderror"
-                   id="nilaibangunanlama" name="nilaibangunanlama" value="{{ old('nilaibangunanlama') }}"
-                   placeholder="Contoh: 300000000">
-            @error('nilaibangunanlama') <div class="invalid-feedback">{{ $message }}</div> @enderror
-        </div>
+        <!-- INPUT ASLI (ANGKA MURNI KE DATABASE) -->
+        <input type="hidden"
+               name="nilaibangunanbaru"
+               id="nilaibangunanbaru"
+               value="{{ old('nilaibangunanbaru') }}">
+
+        @error('nilaibangunanbaru')
+            <div class="invalid-feedback d-block">{{ $message }}</div>
+        @enderror
+
+        <small class="text-muted d-block mt-1">
+            Otomatis diformat ke rupiah. Nilai disimpan sebagai angka.
+        </small>
     </div>
+</div>
+
+
+<div class="col-md-6">
+    <div class="form-modern">
+        <label class="form-label-modern" for="nilaibangunanlama_display">
+            <i class="bi bi-cash-stack me-2 text-primary"></i>
+            Nilai Bangunan Pada Saat Dibangun (Rp)
+        </label>
+
+        <!-- INPUT TAMPILAN (FORMAT RUPIAH) -->
+        <input type="text"
+               class="form-control rupiah-display"
+               id="nilaibangunanlama_display"
+               data-real="nilaibangunanlama"
+               placeholder="Contoh: 300.000.000">
+
+        <!-- INPUT ASLI (ANGKA MURNI KE DATABASE) -->
+        <input type="hidden"
+               name="nilaibangunanlama"
+               id="nilaibangunanlama"
+               value="{{ old('nilaibangunanlama') }}">
+
+        @error('nilaibangunanlama')
+            <div class="invalid-feedback d-block">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    document.querySelectorAll('.rupiah-display').forEach(function (displayInput) {
+
+        const realId = displayInput.dataset.real;
+        const realInput = document.getElementById(realId);
+
+        if (!realInput) return;
+
+        // isi ulang jika ada old value (edit / gagal validasi)
+        if (realInput.value) {
+            displayInput.value = formatRupiah(realInput.value);
+        }
+
+        displayInput.addEventListener('input', function () {
+            let angka = this.value.replace(/[^0-9]/g, '');
+            realInput.value = angka;
+            this.value = formatRupiah(angka);
+        });
+    });
+
+    function formatRupiah(angka) {
+        if (!angka) return '';
+        return angka.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+});
+</script>
+
+
 </div>
 
 <!-- =========================
