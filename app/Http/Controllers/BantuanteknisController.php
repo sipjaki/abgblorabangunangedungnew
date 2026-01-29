@@ -6733,7 +6733,7 @@ public function informasipemilikbangunan($namapemilik, $id)
 public function bebantekpembongkarandokumen($id)
 {
     $data = bantekpembongkarannew1::withTrashed()
-        ->with('bantekpembongkaraninduk')
+        ->with('induk')
         ->where('id', $id)
         ->firstOrFail();
 
