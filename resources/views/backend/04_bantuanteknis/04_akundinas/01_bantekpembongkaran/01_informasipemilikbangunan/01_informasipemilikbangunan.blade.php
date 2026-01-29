@@ -1305,55 +1305,6 @@
     </div>
 </div>
 
-<!-- Tombol Submit -->
-<div class="mt-4 text-end">
-    <button type="button" class="btn btn-secondary me-2" onclick="hideForm()">Batal</button>
-    <button type="button" class="button-baru" onclick="showConfirmationModal()">
-        <i class="bi bi-save me-2"></i> Simpan Data
-    </button>
-</div>
-
-<!-- Modal Konfirmasi -->
-<div id="confirmationModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-        <div style="display: flex; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #e5e7eb;">
-            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                <i class="bi bi-question-circle-fill" style="color: white; font-size: 1.5rem;"></i>
-            </div>
-            <div>
-                <h4 style="margin: 0; color: #1f2937; font-weight: 600;">Konfirmasi Penyimpanan</h4>
-                <p style="margin: 5px 0 0 0; color: #6b7280; font-size: 0.9rem;">DPUPR Kabupaten Blora</p>
-            </div>
-        </div>
-
-        <div style="margin-bottom: 25px;">
-            <p style="font-size: 16px; line-height: 1.5; color: #374151; margin-bottom: 10px;">
-                <i class="bi bi-exclamation-triangle-fill me-2" style="color: #f59e0b;"></i>
-                Apakah data yang Anda input sudah benar?
-            </p>
-            <p style="font-size: 14px; color: #6b7280; background-color: #f9fafb; padding: 12px; border-radius: 8px; border-left: 4px solid #3b82f6;">
-                <i class="bi bi-info-circle-fill me-2" style="color: #3b82f6;"></i>
-                Pastikan semua data sudah terisi dengan benar sebelum disimpan.
-            </p>
-        </div>
-
-        <div style="display: flex; justify-content: flex-end; gap: 12px;">
-            <button type="button" onclick="closeConfirmationModal()"
-                    style="background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; padding: 10px 20px; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.3s; display: flex; align-items: center;"
-                    onmouseover="this.style.background='#e5e7eb'; this.style.color='#1f2937';"
-                    onmouseout="this.style.background='#f3f4f6'; this.style.color='#374151';">
-                <i class="bi bi-x-circle me-2"></i> Tutup
-            </button>
-
-            <button type="button" onclick="submitForm()"
-                    style="background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; padding: 10px 25px; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.3s; display: flex; align-items: center;"
-                    onmouseover="this.style.background='linear-gradient(135deg, #059669, #047857)'; this.style.transform='translateY(-2px)';"
-                    onmouseout="this.style.background='linear-gradient(135deg, #10b981, #059669)'; this.style.transform='translateY(0)';">
-                <i class="bi bi-check-circle me-2"></i> Ya, Simpan Data
-            </button>
-        </div>
-    </div>
-</div>
 
 <script>
     // Fungsi untuk toggle PBG field
