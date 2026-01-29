@@ -6634,7 +6634,7 @@ public function informasipemilikbangunan($namapemilik, $id)
         // VALIDASI SEMUA FIELD
         $validated = $request->validate([
             // DATA SURAT PERMOHONAN
-            'bantekpembongkaraninduk_id' => 'nullable|string',
+            'bantekpembongkaraninduk_id' => 'nullable|integer',
             'nosurat' => 'nullable|string|max:255',
             'tanggalsurat' => 'nullable|date',
             'suratpermohonan' => 'nullable|file|mimes:pdf,jpg,jpeg,png,docx|max:15360', // 15MB
