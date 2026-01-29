@@ -6725,18 +6725,27 @@ public function informasipemilikbangunan($namapemilik, $id)
         'id' => $idAwal
     ])->with('create', 'Data berhasil disimpan!');
         }
+
 public function bebantekpembongkarandokumen($namabangunan)
 {
+    // decode URL
     $namabangunan = urldecode($namabangunan);
 
-    $data = bantekpembongkarannew1::whereRaw('LOWER(namabangunan) LIKE ?', ['%' . Str::lower(trim($namabangunan)) . '%'])
-        ->with('bantekpembongkaraninduk')
-        ->firstOrFail();
+    // Cari data berdasarkan namabangunan (case-insensitive + trim) menggunakan LIKE
+    $data = bantekpembongkarannew1::whereRaw(
+        'LOWER(TRIM(namabangunan)) LIKE ?',
+        ['%' . Str::lower(trim($namabangunan)) . '%']
+    )
+    ->with('bantekpembongkaraninduk') // bawa relasi induk
+    ->firstOrFail();
 
-    return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan', [
-        'title' => 'Details Informasi Pemilik Bangunan Gedung',
-        'dataBangunan' => $data,
-        'dataInduk' => $data->bantekpembongkaraninduk
-    ]);
+    return view(
+        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
+        [
+            'title' => 'Details Informasi Pemilik Bangunan Gedung',
+            'dataBangunan' => $data,
+            'dataInduk' => $data->bantekpembongkaraninduk // relasi induk optional
+        ]
+    );
 }
 }
