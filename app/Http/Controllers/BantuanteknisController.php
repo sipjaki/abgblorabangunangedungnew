@@ -6725,7 +6725,6 @@ public function informasipemilikbangunan($namapemilik, $id)
         'id' => $idAwal
     ])->with('create', 'Data berhasil disimpan!');
         }
-
 public function bebantekpembongkarandokumen($namabangunan)
 {
     $namabangunan = urldecode($namabangunan);
@@ -6734,15 +6733,10 @@ public function bebantekpembongkarandokumen($namabangunan)
         ->with('bantekpembongkaraninduk')
         ->firstOrFail();
 
-    return view(
-        'backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan',
-        [
-            'title' => 'Details Informasi Pemilik Bangunan Gedung',
-            'dataBangunan' => $data,
-            'dataInduk' => $data->bantekpembongkaraninduk
-        ]
-    );
+    return view('backend.04_bantuanteknis.04_akundinas.01_bantekpembongkaran.01_informasipemilikbangunan.02_showinformasipemilikbangunan', [
+        'title' => 'Details Informasi Pemilik Bangunan Gedung',
+        'dataBangunan' => $data,
+        'dataInduk' => $data->bantekpembongkaraninduk
+    ]);
 }
-
-
 }
