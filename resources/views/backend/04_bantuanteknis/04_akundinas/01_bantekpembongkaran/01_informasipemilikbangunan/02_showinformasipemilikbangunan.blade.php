@@ -846,6 +846,8 @@
                 <div>
                     <h4 class="section-title">Data Surat Permohonan</h4>
                     <p class="section-subtitle">Informasi surat permohonan pembongkaran</p>
+                <p>{{$dataBangunan->id }}</p>
+                <p>{{$dataBangunan->namabangunan }}</p>
                 </div>
             </div>
 
