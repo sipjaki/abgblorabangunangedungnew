@@ -138,7 +138,7 @@
                         <!--begin::Quick Example-->
                   {{-- <form action="{{ route('datanewpeniliknew.create') }}" method="POST" enctype="multipart/form-data"> --}}
                   {{-- <form action="{{ route('bantekpembongkarannew') }}" method="POST" enctype="multipart/form-data"> --}}
-    <form action="{{ url('/bebantekpembongkaran/createnew') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ url('/bebantekpembongkaran/createnewbaru') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
 
