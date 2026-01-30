@@ -2300,12 +2300,12 @@
                                                             </div>
                                                             <div class="modal-body text-center">
                                                                 <div style="margin-top: 10px;">
-                                                                    @if($data->kib && file_exists(public_path('storage/' . $data->kib)))
+                                                                    @if($data->pbg && file_exists(public_path('storage/' . $data->pbg)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $data->kib) }}" frameborder="0" width="100%" height="750px"></iframe>
-                                                                @elseif($data->kib)
+                                                                    <iframe src="{{ asset('storage/' . $data->pbg) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                @elseif($data->pbg)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($data->kib) }}" frameborder="0" width="100%" height="750px"></iframe>
+                                                                    <iframe src="{{ asset($data->pbg) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data Belum Di Lengkapi !!</p>
