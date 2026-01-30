@@ -786,7 +786,9 @@
              <!-- /.card -->
          </div>
          {{-- PEMBATAS DATA --}}
-<div class="row">
+
+     <div class="container-fluid">
+         <div class="row">
     <div class="col-12">
         <!-- isi konten di sini -->
 
@@ -2460,7 +2462,7 @@
                     @canany(['dinas', 'pemohon'])
 
 <div class="mb-3" style="margin-top: -50px;">
-    <label for="catatanvalidasi" class="form-label" style="color: navy">
+    <label for="catatan1" class="form-label" style="color: navy">
         <i class="bi bi-card-text me-1" style="color: navy;"></i>
         <span style="color: navy;">Catatan Keterangan Berkas</span>
     </label>
@@ -2476,14 +2478,14 @@
 
 
 <div class="mb-3" style="margin-top: -50px;">
-    <label for="catatanvalidasi" class="form-label">
+    <label for="catatan1" class="form-label">
         <i class="bi bi-card-text me-1"></i> Catatan Keterangan Berkas
     </label>
 
-    <textarea name="catatanvalidasi" id="catatanvalidasi" class="form-control"
+    <textarea name="catatan1" id="catatan1" class="form-control"
         rows="10"
         style="resize: vertical; width: 100%; color: red;"
-        placeholder="Tulis catatan jika diperlukan...">{{ old('catatanvalidasi', $data->catatan1 ?? '') }}</textarea>
+        placeholder="Tulis catatan jika diperlukan...">{{ old('catatan1', $data->catatan1 ?? '') }}</textarea>
 </div>
 
                     @endcanany
@@ -2491,6 +2493,7 @@
                 </td>
 
     </div>
+</div>
 </div>
 
                 @canany(['superadmin', 'admin'])
