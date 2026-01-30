@@ -493,130 +493,123 @@
         <div class="card-body">
             <!-- 1. DATA SURAT PERMOHONAN -->
             <div class="section-header">
-                <i class="bi bi-file-earmark-text me-2"></i>Dokumen Analisa Bangunan Gedung
+                <i class="bi bi-file-earmark-text me-2"></i>Surat Permohonan Izin Pembongkaran
             </div>
 
             <div class="row">
-             <div class="col-md-6">
-    <div class="form-modern">
-        <label class="form-label-modern" for="tingkat_kerusakan">
-            <i class="bi bi-percent me-2 text-primary"></i> Tingkat Kerusakan (%)
-        </label>
-
-        <div class="input-group">
-            <input type="number"
-                   step="0.01"
-                   min="0"
-                   max="100"
-                   class="form-control @error('tingkat_kerusakan') is-invalid @enderror"
-                   id="tingkat_kerusakan"
-                   name="tingkat_kerusakan"
-                   value="{{ old('tingkat_kerusakan') }}"
-                   placeholder="Contoh: 25.50">
-            <span class="input-group-text">%</span>
-        </div>
-
-        @error('tingkat_kerusakan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
+                <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="nosurat">
+                            <i class="bi bi-hash me-2 text-primary"></i> Nomor Surat Permohonan Izin Pembongkaran
+                        </label>
+                        <input type="text" class="form-control @error('nosurat') is-invalid @enderror"
+                               id="nosurat" name="nosurat" value="{{ old('nosurat') }}">
+                        @error('nosurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
 
                 <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="tanggalsurat">
+                            <i class="bi bi-calendar-date me-2 text-primary"></i> Tanggal Surat Permohonan
+                        </label>
+                        <input type="date" class="form-control @error('tanggalsurat') is-invalid @enderror"
+                               id="tanggalsurat" name="tanggalsurat" value="{{ old('tanggalsurat') }}">
+                        @error('tanggalsurat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
+
+
+                <div class="col-12">
     <div class="form-modern">
-        <label class="form-label-modern" for="status_kerusakan">
-            <i class="bi bi-exclamation-triangle me-2 text-primary"></i> Status Kerusakan
+    <label class="form-label-modern" for="suratpermohonan">
+        <i class="bi bi-upload me-2 text-primary"></i>
+        Upload Surat Permohonan Izin Pembongkaran
+    </label>
+
+    <input type="file"
+           class="form-control @error('suratpermohonan') is-invalid @enderror"
+           id="suratpermohonan"
+           name="suratpermohonan"
+           accept=".pdf,.jpg,.jpeg,.png">
+
+    @error('suratpermohonan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+    <small class="text-muted d-block mt-1">
+        Format: PDF (Maks. 15MB)
+    </small>
+
+    <small class="text-muted d-block mb-2">
+        Keterangan: Silahkan download template surat ini, isi, lalu
+        <strong class="text-danger">Upload Kembali</strong>.
+    </small>
+
+    <!-- BUTTON DOWNLOAD -->
+    <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_PERMOHONAN_IZIN_PEMBONGKARAN_BANGUNAN_GEDUNG.docx"
+       class="btn btn-outline-primary btn-sm mb-3"
+       download>
+        <i class="bi bi-download me-1"></i> Download Template Surat
+    </a>
+
+    <!-- PREVIEW FILE -->
+    <div id="previewSuratPermohonan" class="mt-3 d-none">
+        <label class="form-label-modern mb-2">
+            <i class="bi bi-eye me-2 text-success"></i>
+            Preview Berkas Yang Diupload
         </label>
 
-        <select class="form-control @error('status_kerusakan') is-invalid @enderror"
-                id="status_kerusakan"
-                name="status_kerusakan">
-            <option value="">-- Pilih Status Kerusakan --</option>
-            <option value="Ringan" {{ old('status_kerusakan') == 'Ringan' ? 'selected' : '' }}>Ringan</option>
-            <option value="Sedang" {{ old('status_kerusakan') == 'Sedang' ? 'selected' : '' }}>Sedang</option>
-            <option value="Berat" {{ old('status_kerusakan') == 'Berat' ? 'selected' : '' }}>Berat</option>
-        </select>
-
-        @error('status_kerusakan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+        <div class="border rounded-3 p-2 bg-light" id="previewSuratPermohonanBox"></div>
     </div>
 </div>
 
+<script>
+document.getElementById('suratpermohonan').addEventListener('change', function () {
 
-<div class="col-md-6">
-    <div class="form-modern">
-        <label class="form-label-modern" for="dok_kerusakan_bangunan">
-            <i class="bi bi-building-exclamation me-2 text-primary"></i>
-            Upload Dokumen Analisa Kerusakan Bangunan
-        </label>
+    const file = this.files[0];
+    const previewWrap = document.getElementById('previewSuratPermohonan');
+    const previewBox  = document.getElementById('previewSuratPermohonanBox');
 
-        <!-- INPUT FILE -->
-        <input type="file"
-               class="form-control @error('dok_kerusakan_bangunan') is-invalid @enderror"
-               id="dok_kerusakan_bangunan"
-               name="dok_kerusakan_bangunan"
-               accept=".pdf,.jpg,.jpeg,.png">
+    previewBox.innerHTML = '';
 
-        @error('dok_kerusakan_bangunan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+    if (!file) {
+        previewWrap.classList.add('d-none');
+        return;
+    }
 
-        <small class="text-muted d-block mt-1">
-            Format: PDF, JPG, PNG (Maks. 15MB)
-        </small>
+    const fileURL = URL.createObjectURL(file);
 
-        <!-- BUTTON LIHAT CONTOH -->
-        <button type="button"
-                class="btn btn-outline-primary btn-sm mt-2 me-2"
-                data-bs-toggle="modal"
-                data-bs-target="#modalContohDokKerusakan">
-            <i class="bi bi-eye me-1"></i> Lihat Contoh Dokumen
-        </button>
+    // PDF
+    if (file.type === 'application/pdf') {
+        previewBox.innerHTML = `
+            <iframe src="${fileURL}"
+                    class="w-100 rounded"
+                    style="height:400px;"
+                    frameborder="0"></iframe>
+        `;
+    }
+    // IMAGE
+    else if (file.type.startsWith('image/')) {
+        previewBox.innerHTML = `
+            <img src="${fileURL}"
+                 class="img-fluid rounded shadow-sm"
+                 alt="Preview Surat Permohonan">
+        `;
+    }
+    // TIDAK DIDUKUNG
+    else {
+        previewBox.innerHTML = `
+            <p class="text-danger mb-0">
+                File tidak bisa dipreview.
+            </p>
+        `;
+    }
 
-        <!-- PREVIEW UPLOAD -->
-        <div id="previewDokKerusakanWrapper" class="mt-3 d-none">
-            <label class="form-label-modern mb-2">
-                <i class="bi bi-eye-fill me-2 text-success"></i>
-                Preview Dokumen Yang Diupload
-            </label>
+    previewWrap.classList.remove('d-none');
+});
+</script>
 
-            <div class="border rounded-3 p-2 bg-light"
-                 id="previewDokKerusakanBox"></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalContohDokKerusakan" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content border-0 rounded-4 shadow">
-
-            <div class="modal-header border-0">
-                <h5 class="modal-title">
-                    <i class="bi bi-building-exclamation me-2 text-primary"></i>
-                    Contoh Dokumen Analisa Kerusakan Bangunan
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <div class="modal-body text-center">
-                <img src="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/DOK_ANALISA.png"
-                     class="img-fluid rounded shadow-sm"
-                     alt="Contoh Dokumen Analisa Kerusakan">
-            </div>
-
-            <div class="modal-footer border-0 justify-content-center">
-                <button type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal">
-                    Tutup
-                </button>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 </div>
 
@@ -626,130 +619,114 @@
 
             <!-- 2. DATA BANGUNAN -->
             <div class="section-header mt-4">
-                <i class="bi bi-building me-2"></i> Surat Kajian Teknis Bangunan Gedung
+                <i class="bi bi-building me-2"></i> Data Surat Permohonan Kajian Teknis Bangunan Gedung
             </div>
 
             <div class="row">
-<div class="col-md-6">
-    <div class="form-modern">
-        <label class="form-label-modern" for="nosurat">
-            <i class="bi bi-envelope-paper me-2 text-primary"></i>
-            Nomor Surat
-        </label>
-
-        <input type="text"
-               class="form-control @error('nosurat') is-invalid @enderror"
-               id="nosurat"
-               name="nosurat"
-               value="{{ old('nosurat') }}">
-
-        @error('nosurat')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+                <div class="col-md-6">
+                    <div class="form-modern">
+                        <label class="form-label-modern" for="namabangunan">
+                            <i class="bi bi-building me-2 text-primary"></i> Nama Bangunan
+                        </label>
+                        <input type="text" class="form-control @error('namabangunan') is-invalid @enderror"
+                               id="namabangunan" name="namabangunan" value="{{ old('namabangunan') }}">
+                        @error('namabangunan') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+                </div>
 
 <div class="col-md-6">
     <div class="form-modern">
-        <label class="form-label-modern" for="tanggalsurat">
-            <i class="bi bi-calendar-date me-2 text-primary"></i>
-            Tanggal Surat
+        <label class="form-label-modern" for="pilihanbangunan">
+            <i class="bi bi-list-check me-2 text-primary"></i>
+            Jenis Kajian Teknis Bangunan Gedung
         </label>
 
-        <input type="date"
-               class="form-control @error('tanggalsurat') is-invalid @enderror"
-               id="tanggalsurat"
-               name="tanggalsurat"
-               value="{{ old('tanggalsurat') }}">
+        <select class="form-select @error('pilihanbangunan') is-invalid @enderror"
+                id="pilihanbangunan"
+                name="pilihanbangunan">
+            <option value="">-- Pilih --</option>
 
-        @error('tanggalsurat')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-
-<div class="col-md-6">
-    <div class="form-modern">
-        <label class="form-label-modern" for="status_penilaian_teknis">
-            <i class="bi bi-clipboard-check me-2 text-primary"></i>
-            Status Penilaian Teknis
-        </label>
-
-        <select class="form-select @error('status_penilaian_teknis') is-invalid @enderror"
-                id="status_penilaian_teknis"
-                name="status_penilaian_teknis">
-
-            <option value="">-- Pilih Status --</option>
-
-            <option value="Layak"
-                {{ old('status_penilaian_teknis') == 'Layak' ? 'selected' : '' }}>
-                Layak
+            <option value="Kajian Analisa Kerusakan Bangunan Gedung"
+                {{ old('pilihanbangunan') == 'Kajian Analisa Kerusakan Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Analisa Kerusakan Bangunan Gedung
             </option>
 
-            <option value="Layak Bersyarat"
-                {{ old('status_penilaian_teknis') == 'Layak Bersyarat' ? 'selected' : '' }}>
-                Layak Bersyarat
+            <option value="Kajian Rencana Teknis Pembongkaran Bangunan Gedung"
+                {{ old('pilihanbangunan') == 'Kajian Rencana Teknis Pembongkaran Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Rencana Teknis Pembongkaran Bangunan Gedung
             </option>
 
-            <option value="Tidak Layak"
-                {{ old('status_penilaian_teknis') == 'Tidak Layak' ? 'selected' : '' }}>
-                Tidak Layak
+            <option value="Kajian Kelayakan Bangunan Gedung"
+                {{ old('pilihanbangunan') == 'Kajian Kelayakan Bangunan Gedung' ? 'selected' : '' }}>
+                Kajian Kelayakan Bangunan Gedung
             </option>
 
+            <option value="Bantuan Gambar Teknis"
+                {{ old('pilihanbangunan') == 'Bantuan Gambar Teknis' ? 'selected' : '' }}>
+                Bantuan Gambar Teknis
+            </option>
         </select>
 
-        @error('status_penilaian_teknis')
+        @error('pilihanbangunan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
-</div>
-
 </div>
 <div class="col-12">
     <div class="form-modern">
-        <label class="form-label-modern" for="suratpernyataankelaikan">
+        <label class="form-label-modern" for="suratkelayakan">
             <i class="bi bi-upload me-2 text-primary"></i>
-            Upload Surat Pernyataan Kelaikan Bangunan Gedung
+            Upload Surat Permohonan Kajian Teknis Bangunan Gedung
         </label>
 
-        <!-- INPUT FILE -->
         <input type="file"
-               class="form-control @error('suratpernyataankelaikan') is-invalid @enderror"
-               id="suratpernyataankelaikan"
-               name="suratpernyataankelaikan"
+               class="form-control @error('suratkelayakan') is-invalid @enderror"
+               id="suratkelayakan"
+               name="suratkelayakan"
                accept=".pdf,.jpg,.jpeg,.png,.docx">
 
-        @error('suratpernyataankelaikan')
+        @error('suratkelayakan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
 
         <small class="text-muted d-block mt-1">
-            Format: PDF, JPG, PNG, DOCX (Maks. 15MB)
+            Format: PDF(Maks. 15MB)
         </small>
 
+        <small class="text-muted d-block mb-2">
+            Keterangan: Silahkan download template surat ini, isi, lalu
+            <strong class="text-danger">Upload Kembali</strong>.
+        </small>
+
+        <!-- BUTTON DOWNLOAD -->
+        <a href="/assets/abgblora/00_dokumen/01_bantek/10_pembongkaran/SURAT_KAJIAN_TEKNIS_BANGUNAN_GEDUNG.docx"
+           class="btn btn-outline-primary btn-sm mb-3"
+           download>
+            <i class="bi bi-download me-1"></i> Download Template Surat
+        </a>
+
         <!-- PREVIEW -->
-        <div id="previewSuratPernyataanKelaikan" class="mt-3 d-none">
+        <div id="previewSuratKajianTeknis" class="mt-3 d-none">
             <label class="form-label-modern mb-2">
                 <i class="bi bi-eye me-2 text-success"></i>
                 Preview Berkas Yang Diupload
             </label>
 
             <div class="border rounded-3 p-2 bg-light"
-                 id="previewSuratPernyataanKelaikanBox"></div>
+                 id="previewSuratKajianTeknisBox"></div>
         </div>
     </div>
 </div>
 
-<script>
-(function () {
 
-    const input   = document.getElementById('suratpernyataankelaikan');
-    const wrapper = document.getElementById('previewSuratPernyataanKelaikan');
-    const box     = document.getElementById('previewSuratPernyataanKelaikanBox');
+<script>
+(function() {
+    // Semua variabel lokal, aman untuk preview lain
+    const input = document.getElementById('suratkelayakan');
+    const wrapper = document.getElementById('previewSuratKajianTeknis');
+    const box = document.getElementById('previewSuratKajianTeknisBox');
 
     input.addEventListener('change', function () {
-
         const file = this.files[0];
         box.innerHTML = '';
 
@@ -760,39 +737,32 @@
 
         const fileURL = URL.createObjectURL(file);
 
-        // PDF
+        // Preview PDF
         if (file.type === 'application/pdf') {
-            box.innerHTML = `
-                <iframe src="${fileURL}"
-                        class="w-100 rounded"
-                        style="height:400px;"
-                        frameborder="0"></iframe>
-            `;
+            box.innerHTML = `<iframe src="${fileURL}" class="w-100 rounded" style="height:400px;" frameborder="0"></iframe>`;
         }
-        // IMAGE
+        // Preview Image
         else if (file.type.startsWith('image/')) {
-            box.innerHTML = `
-                <img src="${fileURL}"
-                     class="img-fluid rounded shadow-sm"
-                     alt="Preview Surat Pernyataan Kelaikan">
-            `;
+            box.innerHTML = `<img src="${fileURL}" class="img-fluid rounded shadow-sm" alt="Preview Surat Kajian Teknis">`;
         }
-        // DOCX / FILE LAIN
+        // DOCX atau file lain
         else {
             box.innerHTML = `
                 <div class="alert alert-warning mb-0">
-                    <i class="bi bi-file-earmark-text me-2"></i>
+                    <i class="bi bi-file-earmark-word me-2"></i>
                     <strong>${file.name}</strong><br>
                     File berhasil dipilih (preview tidak tersedia).
                 </div>
             `;
         }
 
+        // Tampilkan wrapper preview
         wrapper.classList.remove('d-none');
     });
-
 })();
 </script>
+
+
 
             </div>
             </div>
