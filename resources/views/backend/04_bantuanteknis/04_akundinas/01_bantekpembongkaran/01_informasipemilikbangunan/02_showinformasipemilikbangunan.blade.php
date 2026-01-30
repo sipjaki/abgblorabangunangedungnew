@@ -50,7 +50,8 @@
             </div>
                  </div>
                  <div class="card-body p-0">
-    <style>
+
+<style>
         :root {
             --biru-persib: #1e3a8a;
             --biru-tua: #1e40af;
@@ -61,6 +62,22 @@
             --abu: #e2e8f0;
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--putih);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(30, 58, 138, 0.1);
+            overflow: hidden;
+            border: 1px solid var(--abu);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--biru-persib) 0%, var(--biru-tua) 100%);
+            color: var(--putih);
+            padding: 25px 30px;
+            text-align: center;
+        }
 
         .header h1 {
             margin: 0;
@@ -128,11 +145,132 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
         }
 
         .file-badge:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-card {
+            background: var(--putih);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--biru-persib) 0%, var(--biru-tua) 100%);
+            color: var(--putih);
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--putih);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            flex: 1;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdf-container {
+            flex: 1;
+            position: relative;
+            min-height: 500px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .modal-footer {
+            padding: 15px 25px;
+            background: var(--abu-muda);
+            border-top: 1px solid var(--abu);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--biru-muda) 0%, var(--biru-cerah) 100%);
+            color: var(--putih);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            color: var(--putih);
+        }
+
+        .filename {
+            color: var(--abu-gelap);
+            font-size: 14px;
         }
 
         @media (max-width: 768px) {
@@ -142,6 +280,11 @@
 
             .section-content {
                 grid-template-columns: 1fr;
+            }
+
+            .modal-card {
+                width: 95%;
+                max-height: 85vh;
             }
         }
     </style>
@@ -172,9 +315,11 @@
                         <div class="data-label">Surat Permohonan</div>
                         <div class="data-value">
                             @if($data->suratpermohonan)
-                                <a href="{{ asset('public/' . $data->suratpermohonan) }}" target="_blank" class="file-badge">
-                                    <i class="fas fa-file-pdf"></i> Lihat PDF
-                                </a>
+                                <button class="file-badge view-pdf"
+                                        data-url="{{ asset('public/' . $data->suratpermohonan) }}"
+                                        data-title="Surat Permohonan">
+                                    <i class="fas fa-eye"></i> Lihat PDF
+                                </button>
                             @else
                                 Data Tidak Ditemukan
                             @endif
@@ -201,9 +346,11 @@
                         <div class="data-label">Surat Kelayakan</div>
                         <div class="data-value">
                             @if($data->suratkelayakan)
-                                <a href="{{ asset('public/' . $data->suratkelayakan) }}" target="_blank" class="file-badge">
-                                    <i class="fas fa-file-pdf"></i> Lihat PDF
-                                </a>
+                                <button class="file-badge view-pdf"
+                                        data-url="{{ asset('public/' . $data->suratkelayakan) }}"
+                                        data-title="Surat Kelayakan">
+                                    <i class="fas fa-eye"></i> Lihat PDF
+                                </button>
                             @else
                                 Data Tidak Ditemukan
                             @endif
@@ -226,9 +373,11 @@
                         <div class="data-label">Surat Kesanggupan</div>
                         <div class="data-value">
                             @if($data->suratkesanggupan)
-                                <a href="{{ asset('public/' . $data->suratkesanggupan) }}" target="_blank" class="file-badge">
-                                    <i class="fas fa-file-pdf"></i> Lihat PDF
-                                </a>
+                                <button class="file-badge view-pdf"
+                                        data-url="{{ asset('public/' . $data->suratkesanggupan) }}"
+                                        data-title="Surat Kesanggupan">
+                                    <i class="fas fa-eye"></i> Lihat PDF
+                                </button>
                             @else
                                 Data Tidak Ditemukan
                             @endif
@@ -263,9 +412,11 @@
                         <div class="data-label">KTP</div>
                         <div class="data-value">
                             @if($data->ktp)
-                                <a href="{{ asset('public/' . $data->ktp) }}" target="_blank" class="file-badge">
-                                    <i class="fas fa-file-pdf"></i> Lihat PDF
-                                </a>
+                                <button class="file-badge view-pdf"
+                                        data-url="{{ asset('public/' . $data->ktp) }}"
+                                        data-title="KTP">
+                                    <i class="fas fa-eye"></i> Lihat PDF
+                                </button>
                             @else
                                 Data Tidak Ditemukan
                             @endif
@@ -275,9 +426,11 @@
                         <div class="data-label">SK</div>
                         <div class="data-value">
                             @if($data->sk)
-                                <a href="{{ asset('public/' . $data->sk) }}" target="_blank" class="file-badge">
-                                    <i class="fas fa-file-pdf"></i> Lihat PDF
-                                </a>
+                                <button class="file-badge view-pdf"
+                                        data-url="{{ asset('public/' . $data->sk) }}"
+                                        data-title="SK">
+                                    <i class="fas fa-eye"></i> Lihat PDF
+                                </button>
                             @else
                                 Data Tidak Ditemukan
                             @endif
@@ -308,9 +461,11 @@
                         <div class="data-label">Sertifikat Tanah</div>
                         <div class="data-value">
                             @if($data->sertifikattanah)
-                                <a href="{{ asset('public/' . $data->sertifikattanah) }}" target="_blank" class="file-badge">
-                                    <i class="fas fa-file-pdf"></i> Lihat PDF
-                                </a>
+                                <button class="file-badge view-pdf"
+                                        data-url="{{ asset('public/' . $data->sertifikattanah) }}"
+                                        data-title="Sertifikat Tanah">
+                                    <i class="fas fa-eye"></i> Lihat PDF
+                                </button>
                             @else
                                 Data Tidak Ditemukan
                             @endif
@@ -406,9 +561,11 @@
                         <div class="data-label">KIB</div>
                         <div class="data-value">
                             @if($data->kib)
-                                <a href="{{ asset('public/' . $data->kib) }}" target="_blank" class="file-badge">
-                                    <i class="fas fa-file-pdf"></i> Lihat PDF
-                                </a>
+                                <button class="file-badge view-pdf"
+                                        data-url="{{ asset('public/' . $data->kib) }}"
+                                        data-title="KIB">
+                                    <i class="fas fa-eye"></i> Lihat PDF
+                                </button>
                             @else
                                 Data Tidak Ditemukan
                             @endif
@@ -422,9 +579,11 @@
                         <div class="data-label">PBG</div>
                         <div class="data-value">
                             @if($data->pbg)
-                                <a href="{{ asset('public/' . $data->pbg) }}" target="_blank" class="file-badge">
-                                    <i class="fas fa-file-pdf"></i> Lihat PDF
-                                </a>
+                                <button class="file-badge view-pdf"
+                                        data-url="{{ asset('public/' . $data->pbg) }}"
+                                        data-title="PBG">
+                                    <i class="fas fa-eye"></i> Lihat PDF
+                                </button>
                             @else
                                 Data Tidak Ditemukan
                             @endif
@@ -434,6 +593,90 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal PDF Viewer -->
+    <div class="modal" id="pdfModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fas fa-file-pdf"></i>
+                    <span id="modalTitle">Dokumen PDF</span>
+                </div>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="pdf-container">
+                    <iframe class="pdf-viewer" id="pdfViewer" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="filename" id="modalFilename"></div>
+                <a href="#" class="download-btn" id="downloadPdf">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('pdfModal');
+            const pdfViewer = document.getElementById('pdfViewer');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalFilename = document.getElementById('modalFilename');
+            const downloadPdf = document.getElementById('downloadPdf');
+            const closeModal = document.getElementById('closeModal');
+
+            // Get all view PDF buttons
+            const viewPdfButtons = document.querySelectorAll('.view-pdf');
+
+            // Add click event to each PDF button
+            viewPdfButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const pdfUrl = this.getAttribute('data-url');
+                    const title = this.getAttribute('data-title');
+                    const filename = pdfUrl.split('/').pop();
+
+                    // Set modal content
+                    modalTitle.textContent = title;
+                    modalFilename.textContent = filename;
+                    pdfViewer.src = pdfUrl + '#view=FitH';
+                    downloadPdf.href = pdfUrl;
+
+                    // Show modal
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close modal when clicking X button
+            closeModal.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                pdfViewer.src = '';
+            });
+
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    pdfViewer.src = '';
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    pdfViewer.src = '';
+                }
+            });
+        });
+    </script>
 
 
 
